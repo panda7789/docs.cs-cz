@@ -1,12 +1,13 @@
 ---
-title: "x:Key – direktiva"
-ms.custom: 
+title: x:Key – direktiva
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - xKey
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - Key attribute in XAML [XAML Services]
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2c73cf28905e1dd0f3056ab0eed953d6f05b0a7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f28ed1e4077a48016ddd8d9b5eeb45d6ba25d8e5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xkey-directive"></a>x:Key – direktiva
 Jednoznačně identifikuje prvky, které jsou vytvořeny a odkazovat ve slovníku definované XAML. Přidání `x:Key` hodnotu do elementu objektu XAML je nejběžnější způsob, jak identifikovat prostředku v slovník prostředků, například v WPF <xref:System.Windows.ResourceDictionary>.  
@@ -56,10 +58,10 @@ Jednoznačně identifikuje prvky, které jsou vytvořeny a odkazovat ve slovník
 |||  
 |-|-|  
 |`stringKeyValue`|Textový řetězec sloužící jako klíč. Textový řetězec musí odpovídat [XamlName – gramatika](../../../docs/framework/xaml-services/xamlname-grammar.md).|  
-|`markupExtensionUsage`|V rámci {} značek rozšíření oddělovače použití značek rozšíření, která poskytuje objekt, který použijete jako klíč. V části poznámky.|  
+|`markupExtensionUsage`|V rámci oddělovače rozšíření značek {}, využití rozšíření značek, které obsahuje objekt, který použijete jako klíč. V části poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `x:Key`podporuje koncept slovník prostředků XAML. XAML jako jazyk nedefinuje implementace slovník prostředků, který se nechá pro konkrétní rozhraní uživatelského rozhraní. Další informace o tom, jak jsou implementované slovnících prostředků XAML v grafickém subsystému WPF najdete v tématu [XAML prostředky](../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ `x:Key` podporuje koncept slovník prostředků XAML. XAML jako jazyk nedefinuje implementace slovník prostředků, který se nechá pro konkrétní rozhraní uživatelského rozhraní. Další informace o tom, jak jsou implementované slovnících prostředků XAML v grafickém subsystému WPF najdete v tématu [XAML prostředky](../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
  V jazyce XAML 2006 a WPF `x:Key` musí být zadán jako atribut. Můžete dál používat neřetězcový klíče, ale to vyžaduje použití rozšíření značek zadejte neřetězcový hodnotu v podobě atributu. Pokud používáte XAML 2009 `x:Key` lze zadat jako element, explicitně podporují slovník s klíči objektu typy jiné než řetězce bez nutnosti – zprostředkující rozšíření značek. Najdete v části "XAML 2009" v tomto tématu. Zbývající část oddílu poznámky platí konkrétně pro implementaci XAML 2006.  
   
@@ -76,7 +78,7 @@ Jednoznačně identifikuje prvky, které jsou vytvořeny a odkazovat ve slovník
   
 -   WPF podporuje koncept slovník sloučené prostředků. Klíče lze sdílet mezi sloučené slovník a sdíleného klíče chování lze přistupovat pomocí <xref:System.Windows.FrameworkContentElement.FindResource%2A>. Další informace najdete v tématu [sloučit slovnících prostředků](../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md).  
   
- V celkové WPF XAML provádění a použití modelu klíče jedinečnosti kontrolována kompilátorem kód XAML. Místo toho chybí nebo nejedinečný `x:Key` hodnoty způsobit chyby analyzátoru XAML při načtení. Ale [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] zpracování slovník pro WPF můžete často poznamenejte si tyto chyby ve fázi návrhu.  
+ V celkové WPF XAML provádění a použití modelu klíče jedinečnosti kontrolována kompilátorem kód XAML. Místo toho chybí nebo nejedinečný `x:Key` hodnoty způsobit chyby analyzátoru XAML při načtení. Zpracování sady Visual Studio slovníků pro grafický subsystém WPF můžete často však takové chyby ve fázi návrhu.  
   
  Všimněte si, že v syntaxi uvedenou, <xref:System.Windows.ResourceDictionary> objektu je implicitní v jak procesoru WPF XAML vytvoří kolekci k naplnění <xref:System.Windows.FrameworkElement.Resources%2A> kolekce. A <xref:System.Windows.ResourceDictionary> není k dispozici obvykle explicitně jako elementu v kódu, i když může být v některých případech, pokud je potřeba pro přehlednost (je prvek kolekce objektů mezi <xref:System.Windows.FrameworkElement.Resources%2A> element vlastnosti a položky v rámci které naplnit slovník). Informace o tom, proč je objekt kolekce téměř vždy implicitní elementu v kódu najdete v tématu [XAML syntaxe v podrobností](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
   
@@ -112,14 +114,14 @@ keyObject
 |-|-|  
 |`keyObject`|Objekt elementu pro objekt, který slouží jako klíč pro danou `object` v specializované slovníku.|  
   
--   Kontejner nebo nadřízené pro tento typ použití není zobrazeny zde. `object`musí být podřízeným elementu objekt, který představuje implementaci specializované slovníku. `keyObject`musí být instanci objektu (nebo hodnota typu hodnoty), je vhodné jako klíč pro tuto implementaci konkrétní specializované slovníku.  
+-   Kontejner nebo nadřízené pro tento typ použití není zobrazeny zde. `object` musí být podřízeným elementu objekt, který představuje implementaci specializované slovníku. `keyObject` musí být instanci objektu (nebo hodnota typu hodnoty), je vhodné jako klíč pro tuto implementaci konkrétní specializované slovníku.  
   
 -   WPF neimplementuje slovníky, které vyžadují toto použití. Objekt klíče je více obecné funkce jazyka XAML, může být užitečná pro určité vlastní slovník scénářích, kdy vytváření slovníku v jazyce XAML žádoucí. WPF funkcí, jako jsou implicitní stylů, které používají jiné než řetězec klíče pro prostředky další metody pro vytvoření nebo zadání klíče existují, takže není nutné používat klíč objektu.  
   
 -   *keyObject* mohou být také na používání rozšíření značek v objektu element formuláře, nikoli instanci objektu přímo.  
   
 ## <a name="silverlight-usage-notes"></a>Poznámky pro použití programu Silverlight  
- `x:Key`pro Silverlight je popsána samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081).  
+ `x:Key` pro Silverlight je popsána samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081).  
   
 ## <a name="see-also"></a>Viz také  
  [Prostředky XAML](../../../docs/framework/wpf/advanced/xaml-resources.md)  

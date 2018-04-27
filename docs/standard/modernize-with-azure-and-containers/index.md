@@ -5,14 +5,15 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ba48579735379bfc857993cd1546f5f7125101f4
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: ac4cd9f14f046a970b6ec41c1b176e9980a960cf
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-v10"></a>Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery (1.0)
 
@@ -28,7 +29,7 @@ Copyright © Microsoft Corporation 2017
 
 Všechna práva vyhrazena. Žádná z částí obsah tato kniha může reprodukovat v žádný formulář nebo prostředky bez písemného souhlasu vydavatele.
 
-Tato kniha je k dispozici zdarma ve formě elektronická kniha (elektronická kniha) k dispozici prostřednictvím více kanálů v Microsoftu, jako je například http://dot.net/architecture.
+Tato kniha je k dispozici zdarma ve formě elektronická kniha (elektronická kniha) k dispozici prostřednictvím více typů komunikačních kanálů v Microsoftu, jako http://dot.net/architecture.
 
 Pokud máte dotazy týkající se tato kniha e-mailu v [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
 
@@ -36,7 +37,7 @@ Tato kniha je k dispozici "jako-je" a vyjadřoval zobrazení a názory vytváře
 
 Některé příklady použité v ukázkách jsou jenom ilustrativní a smyšlené. Žádný skutečný vztah nebo připojení je určený nebo událostmi.
 
-Microsoft a ochranné známky uvedené http://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft. Všechny ostatní značky jsou vlastnictvím příslušných vlastníků.
+Společnost Microsoft a ochranné známky uvedený na http://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft. Všechny ostatní značky jsou vlastnictvím příslušných vlastníků.
 
 Autor:
 > **Cesaru členka Torre**, Sr. PM, .NET produktu Team, Microsoft Corp.
@@ -95,7 +96,7 @@ Na třetí úrovni vyspělosti je konečným cílem v cloudu, ale je volitelné 
 
 Tabulka 1-1 popisuje hlavní výhody a důvody pro výběr každý migrace nebo modernizace přístup.
 
-| **Připravené pro infrastruktury cloudu** <br /> *Navýšení a posunutí* | **Cloud DevOps-Ready** <br /> *Navýšení a posunutí* | **Optimalizovaných cloudů** *Modernize/refactor/přepisování* |
+| **Připravené pro infrastruktury cloudu** <br /> *Navýšení a posunutí* | **DevOps připravené cloudu** <br /> *Navýšení a posunutí* | **Optimalizovaných cloudů** *Modernize/refactor/přepisování* |
 |---|---|---|
 | **Výpočetní cílové aplikace** |
 | Aplikace nasazené do virtuálních počítačů v Azure | Kontejnerizované monolitický nebo vícevrstvé aplikace nasazené virtuální počítače, Azure Service Fabric nebo Azure Container Service (Kubernetes) | Kontejnerizované mikroslužeb nebo regulární aplikací založených na PaaS v Azure App Service, Azure Service Fabric, Azure Container Service (Kubernetes) |
@@ -172,11 +173,11 @@ Tato příručka nepodporuje ukazují, jak pracovat s nativní cloudové aplikac
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje** (ke stažení elektronická kniha): [ *https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+- **Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje** (ke stažení elektronická kniha): [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
-- **Rozhraní .NET Mikroslužeb: Architektura pro kontejnerové aplikace .NET** (ke stažení elektronická kniha): [ *https://aka.ms/microservicesebook*](https://aka.ms/microservicesebook)
+- **Rozhraní .NET Mikroslužeb: Architektura pro kontejnerové aplikace .NET** (ke stažení elektronická kniha): [*https://aka.ms/microservicesebook*](https://aka.ms/microservicesebook)
 
-- **Architektury moderních webových aplikací pomocí ASP.NET Core a Azure** (ke stažení elektronická kniha): [ *https://aka.ms/webappebook*](https://aka.ms/webappebook)
+- **Architektury moderních webových aplikací pomocí ASP.NET Core a Azure** (ke stažení elektronická kniha): [*https://aka.ms/webappebook*](https://aka.ms/webappebook)
 
 ## <a name="who-should-use-this-guide"></a>Tato příručka, kdo by měl používat
 

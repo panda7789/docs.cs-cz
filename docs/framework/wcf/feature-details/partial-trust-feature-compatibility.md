@@ -1,30 +1,32 @@
 ---
-title: "Kompatibilita funkcí s částečnou důvěryhodností"
-ms.custom: 
+title: Kompatibilita funkcí s částečnou důvěryhodností
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-caps.latest.revision: "75"
+caps.latest.revision: 75
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1950a0c4015658affb0b9fa0d7c87a062865144b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 72282c62ad23ec825eab7054ab1909d07a062b45
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]podporuje omezenou podmnožinou funkce při spuštění v prostředí s částečně důvěryhodné. Funkce podporované v částečné důvěryhodnosti jsou uspořádaná kolem konkrétní sadu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporuje omezenou podmnožinou funkce při spuštění v prostředí s částečně důvěryhodné. Funkce podporované v částečné důvěryhodnosti jsou uspořádaná kolem konkrétní sadu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
   
 ## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje podmnožinu funkcí v aplikacích spuštěných v některé z následujících sad standardní pojmenované oprávnění:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje podmnožinu funkcí v aplikacích spuštěných v některé z následujících sad standardní pojmenované oprávnění:  
   
 -   Střední oprávnění vztahu důvěryhodnosti  
   
@@ -39,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Při použití `[ServiceKnownType]` atribut, musí být určená metoda `public`.  
   
--   `[MessageContract]`třídy a jejich členové může být `public`. Pokud `[MessageContract]` třída je definována v sestavení aplikace může být `internal` a mít `internal` členy.  
+-   `[MessageContract]` třídy a jejich členové může být `public`. Pokud `[MessageContract]` třída je definována v sestavení aplikace může být `internal` a mít `internal` členy.  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
  <xref:System.ServiceModel.BasicHttpBinding> a <xref:System.ServiceModel.WebHttpBinding> jsou plně podporovaný v prostředí s částečnou důvěryhodností. <xref:System.ServiceModel.WSHttpBinding> Je podporovaná jenom na režim zabezpečení přenosu.  
@@ -103,7 +105,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Zajistěte, aby pokud je aplikace nasazená jako plně důvěryhodné aplikace, uživatelé nemohou upravovat nastavení zabezpečení přístupu kódu ke spuštění aplikace v prostředí s částečnou důvěryhodností. Pokud se zachovají, chování nespustí a nedojde k výjimce. Aby, najdete v článku **levelfinal** možnost pomocí [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
   
- [!INCLUDE[crexample](../../../../includes/crexample-md.md)]společné chování najdete v části [postup: uzamčení mimo provoz koncovými body v podnikové síti](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
+ Příklad společné chování, naleznete v části [postup: uzamčení mimo provoz koncovými body v podnikové síti](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
   
 ## <a name="configuration"></a>Konfigurace  
  S jednou výjimkou mohou načíst pouze částečně důvěryhodného kódu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurační oddíly funkce v místní `app.config` souboru. Načíst [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace částech tento odkaz [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ConfigurationPermission(Unrestricted) vyžaduje oddílů v souboru machine.config nebo v kořenovém souboru web.config. Bez tohoto oprávnění, odkazuje na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurační oddíly (chování, vazby) mimo místní konfigurační soubor výsledky v výjimku při načtení konfigurace.  
@@ -152,10 +154,10 @@ ms.lasthandoff: 12/22/2017
 >  Aby nedošlo k zaplavení trasovací soubory s duplicitní chybami [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zakáže trasování prostředku nebo akce po prvním selhání zabezpečení. Prvním je proveden pokus o přístup k prostředku nebo provedení akce není jeden trasování výjimky pro přístup každý prostředek, který selhal.  
   
 ## <a name="wcf-service-host"></a>Hostitel služby WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Hostitel služby nepodporuje částečnou důvěryhodností. Pokud chcete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] šablona projektu knihovny služby v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvoření služby. Místo toho vytvořte nový web v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] výběrem [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webu šablony služby, která může hostovat službu na webovém serveru, na kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Hostitel služby nepodporuje částečnou důvěryhodností. Pokud chcete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] šablona projektu knihovny služby v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] k vytvoření služby. Místo toho vytvořte nový web v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] výběrem [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webu šablony služby, která může hostovat službu na webovém serveru, na kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
   
 ## <a name="other-limitations"></a>Další omezení  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]je obecně omezený na aspekty zabezpečení při jeho způsobené hostitelskou aplikaci. Například pokud [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je hostován v aplikace prohlížeče XAML (XBAP), je předmětem XBAP omezení, jak je popsáno v [zabezpečení systému Windows Presentation Foundation částečné důvěryhodnosti](http://go.microsoft.com/fwlink/?LinkId=89138).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je obecně omezený na aspekty zabezpečení při jeho způsobené hostitelskou aplikaci. Například pokud [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je hostován v aplikace prohlížeče XAML (XBAP), je předmětem XBAP omezení, jak je popsáno v [zabezpečení systému Windows Presentation Foundation částečné důvěryhodnosti](http://go.microsoft.com/fwlink/?LinkId=89138).  
   
  Při spuštění indigo2 v prostředí s částečnou důvěryhodností nejsou povoleny tyto další funkce:  
   

@@ -1,23 +1,24 @@
 ---
-title: "Použití delegátů aktivity"
-ms.custom: 
+title: Použití delegátů aktivity
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e33cf876-8979-440b-9b23-4a12d1139960
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 82aafd49528e7ce36f9cf09b7402e65d0844f797
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: efec9885ae804263f7ae4c6d1d5c3bc4f39831c9
+ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="using-activity-delegates"></a>Použití delegátů aktivity
 Delegáti aktivity povolit aktivity autorům vystavit zpětná volání s konkrétní podpisy, pro které uživatelé aktivity zadat na základě aktivity obslužné rutiny. K dispozici jsou dva typy aktivity delegáti: <xref:System.Activities.ActivityAction%601> se používá k definování delegáti aktivity, které nemají návratovou hodnotu, a <xref:System.Activities.ActivityFunc%601> se používá k definování delegáti aktivity, které mají návratovou hodnotu.  
@@ -37,7 +38,7 @@ V příkladech v tomto tématu použijte syntaxi inicializace objektu. Syntaxe i
   
  [!code-csharp[CFX_ActivityExample#7](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#7)]  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]Inicializátory objektu, najdete v části [postup: inicializovat objekty bez volání konstruktoru (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=161015) a [postupy: Deklarace objektu pomocí inicializátoru objektu](http://go.microsoft.com/fwlink/?LinkId=161016).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] Inicializátory objektu, najdete v části [postup: inicializovat objekty bez volání konstruktoru (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=161015) a [postupy: Deklarace objektu pomocí inicializátoru objektu](http://go.microsoft.com/fwlink/?LinkId=161016).  
   
  V následujícím příkladu <xref:System.Activities.Statements.TryCatch> aktivita se používá v pracovním postupu. <xref:System.ApplicationException> Je vyvolána v tomto pracovním postupu a jsou zpracována <xref:System.Activities.Statements.Catch%601> aktivity. Obslužná rutina pro <xref:System.Activities.Statements.Catch%601> aktivity aktivity akce je <xref:System.Activities.Statements.WriteLine> aktivity a podrobnosti výjimky je plynoucích prostřednictvím se pomocí `ex` <xref:System.Activities.DelegateInArgument%601>.  
   
@@ -54,7 +55,7 @@ V příkladech v tomto tématu použijte syntaxi inicializace objektu. Syntaxe i
  Existuje více obecné verzí <xref:System.Activities.Statements.InvokeAction%601> a <xref:System.Activities.ActivityAction%601> zadaná pro předání jeden nebo více argumentů.  
   
 ## <a name="using-activityfunc"></a>Pomocí ActivityFunc  
- <xref:System.Activities.ActivityAction%601>je užitečné, když není žádná hodnota výsledek z aktivity, a <xref:System.Activities.ActivityFunc%601> se používá, pokud je vrácena hodnota výsledek. Při vytváření vlastních aktivit, které definuje <xref:System.Activities.ActivityFunc%601>, použijte <xref:System.Activities.Expressions.InvokeFunc%601> modelování volání této <xref:System.Activities.ActivityFunc%601>. V následujícím příkladu `WriteFillerText` aktivity je definována. K poskytování Výplň textu, <xref:System.Activities.Expressions.InvokeFunc%601> je zadán, který používá argument celé číslo a má výsledném řetězci. Jakmile se načte text výplň, se zobrazí na pomocí konzoly <xref:System.Activities.Statements.WriteLine> aktivity.  
+ <xref:System.Activities.ActivityAction%601> je užitečné, když není žádná hodnota výsledek z aktivity, a <xref:System.Activities.ActivityFunc%601> se používá, pokud je vrácena hodnota výsledek. Při vytváření vlastních aktivit, které definuje <xref:System.Activities.ActivityFunc%601>, použijte <xref:System.Activities.Expressions.InvokeFunc%601> modelování volání této <xref:System.Activities.ActivityFunc%601>. V následujícím příkladu `WriteFillerText` aktivity je definována. K poskytování Výplň textu, <xref:System.Activities.Expressions.InvokeFunc%601> je zadán, který používá argument celé číslo a má výsledném řetězci. Jakmile se načte text výplň, se zobrazí na pomocí konzoly <xref:System.Activities.Statements.WriteLine> aktivity.  
   
  [!code-csharp[CFX_ActivityExample#3](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#3)]  
   
@@ -62,7 +63,7 @@ V příkladech v tomto tématu použijte syntaxi inicializace objektu. Syntaxe i
   
  [!code-csharp[CFX_ActivityExample#4](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#4)]  
   
- Použít `TextGenerator` aktivitu `WriteRandomText` aktivity, je zadat jako <xref:System.Activities.ActivityDelegate.Handler%2A>.  
+ Použít `TextGenerator` aktivitu `WriteFillerText` aktivity, je zadat jako <xref:System.Activities.ActivityDelegate.Handler%2A>.  
   
  [!code-csharp[CFX_ActivityExample#5](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#5)]  
   

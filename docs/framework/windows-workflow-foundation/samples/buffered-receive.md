@@ -1,23 +1,24 @@
 ---
-title: "Uložená do vyrovnávací paměti přijímat"
-ms.custom: 
+title: Uložená do vyrovnávací paměti přijímat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9d46d9b9-96c9-4531-9695-ab526b4d704a
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7a486d3fbfb520ffe3b32c392566e5147c5dfcc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9cd4dfcbfc9d417766615c624905f8bce2c10e54
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="buffered-receive"></a>Uložená do vyrovnávací paměti přijímat
 Tato ukázka ukazuje, jak připravit a nakonfigurovat funkci vyrovnávací pamětí příjmu v [!INCLUDE[wf](../../../../includes/wf-md.md)]. Uložená do vyrovnávací paměti přijímat umožňuje autorovi pracovní postup vytvoření pracovního postupu bez nutnosti starat o pořadí, ve kterém jsou přijaty zprávy. Funkci vyrovnávací pamětí příjmu vyrovnávacích pamětí zpráv místně a doručí je, když pracovní postup je připravený je přijmout.  
@@ -47,7 +48,7 @@ Tato ukázka ukazuje, jak připravit a nakonfigurovat funkci vyrovnávací pamě
   
  Služba také poskytuje metadata pro používání služby <xref:System.ServiceModel.Description.ServiceMetadataBehavior>.  
   
- Podobně je koncový bod klient konfigurován pomocí <xref:System.ServiceModel.NetMsmqBinding>. Kód klienta a konfigurace je generována pomocí **přidat odkaz na službu** funkce [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. V následujícím příkladu je koncový bod generovaného klienta v souboru App.config.  
+ Podobně je koncový bod klient konfigurován pomocí <xref:System.ServiceModel.NetMsmqBinding>. Kód klienta a konfigurace je generována pomocí **přidat odkaz na službu** funkce sady Visual Studio. V následujícím příkladu je koncový bod generovaného klienta v souboru App.config.  
   
 ```xml  
 <endpoint address="net.msmq://localhost/private/LoanService/Service1.xamlx"  
@@ -59,7 +60,7 @@ Tato ukázka ukazuje, jak připravit a nakonfigurovat funkci vyrovnávací pamě
   
 1.  [!INCLUDE[iis60](../../../../includes/iis60-md.md)]  
   
-2.  [!INCLUDE[iis60](../../../../includes/iis60-md.md)]Kompatibilita správy metabáze a kompatibilita konfigurace  
+2.  [!INCLUDE[iis60](../../../../includes/iis60-md.md)] Kompatibilita správy metabáze a kompatibilita konfigurace  
   
 3.  Webové služby, funkce pro vývoj aplikací a ASP.NET  
   

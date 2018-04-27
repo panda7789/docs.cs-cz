@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
-ms.openlocfilehash: 719fbe826b0b115b19067dbaf0d04f14e6534890
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.openlocfilehash: d66f835d57f43d2016d3b20e2205e0052d064acb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="whats-new-in-c"></a>Co je nového v jazyce C# #
 
@@ -30,8 +30,8 @@ Tato stránka obsahuje přehled nových funkcí v každé hlavní verzi jazyka C
 * [C# 7.1](csharp-7-1.md):
     - Tato stránka popisuje funkce v C# 7.1. Tyto funkce byly přidány v [Visual Studio 2017 verze 15.3](https://www.visualstudio.com/vs/whatsnew/)a v [.NET Core 2.0 SDK](../../core/whats-new/index.md).
 
-* [C# 7](csharp-7.md):
-    - Tato stránka popisuje funkce přidané v C# 7. Tyto funkce byly přidány v [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) a [.NET Core 1.0](../../core/whats-new/index.md) a novější
+* [C# 7.0](csharp-7.md):
+    - Tato stránka popisuje funkce přidané v C# 7.0. Tyto funkce byly přidány v [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) a [.NET Core 1.0](../../core/whats-new/index.md) a novější
      
 * [C# 6](csharp-6.md):
     - Tato stránka popisuje funkce přidané v C# 6. Tyto funkce jsou k dispozici v sadě Visual Studio 2015 pro vývojáře v systému Windows a na .NET Core 1.0 pro vývojáře zkoumat C# v systému macOS a Linux.
@@ -66,7 +66,7 @@ Následující seznamy klíčové funkce, které byly zavedeny v předchozích v
      - Anonymní metody, obecné typy, typy s možnou hodnotou Null, iterátory/yield `static` třídy a kovariance a opravné položky k odchylky pro delegáti.
 
  * C# 1.1, Visual Studio .NET 2003: 
-     - `#line`komentáře doc – Direktiva pragma a xml.
+     - `#line` komentáře doc – Direktiva pragma a xml.
 
  * C# 1, Visual Studio .NET 2002: 
      - První verze součásti [C#](../csharp.md).   

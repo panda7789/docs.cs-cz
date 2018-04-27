@@ -1,24 +1,26 @@
 ---
-title: "Rozšířené filtry"
-ms.custom: 
+title: Rozšířené filtry
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d81590f-e036-4f96-824a-4a187f462764
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 357b57bb39ca31b48d21cb83209a72d0b3d12a62
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a374765317751a5adc241941a0c0dc613a3ea2cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="advanced-filters"></a>Rozšířené filtry
 Tento příklad znázorňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] směrování služby. Služba směrování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] komponenty, která usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázka kalkulačku komunikovat pomocí služby směrování. Tento příklad ukazuje, jak definovat na základě obsahu směrování logiku prostřednictvím filtry zpráv a zpráva filtru tabulky.  
@@ -60,7 +62,7 @@ XPathMessageFilter xpathFilter = new XPathMessageFilter("/s12:Envelope/s12:Heade
 EndpointNameMessageFilter endpointNameFilter = new EndpointNameMessageFilter("calculatorEndpoint");  
 ```  
   
- Je třetí filtr <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>. To odpovídá všechny zprávy, které vám ukázal, na koncový bod s adresou, která odpovídá předpona adresy (nebo části front) zadaný. V tomto příkladu je předpona adresy definovaný jako "http://localhost/routingservice/router/rounding/". To znamená, že tento filtr se splní všechny příchozí zprávy, které jsou určeny k "http://localhost/routingservice/router/rounding/ *". V takovém případě je zprávy, které se zobrazí v koncovém bodě zaokrouhlení kalkulačky, který má na adresu "http://localhost/routingservice/router/rounding/calculator".  
+ Je třetí filtr <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>. To odpovídá všechny zprávy, které vám ukázal, na koncový bod s adresou, která odpovídá předpona adresy (nebo části front) zadaný. V tomto příkladu je předpona adresy definovaný jako "http://localhost/routingservice/router/rounding/". To znamená, že všechny příchozí zprávy, které jsou určeny k "http://localhost/routingservice/router/rounding/*" se splní tímto filtrem. V takovém případě je zprávy, které se zobrazí na zaokrouhlení kalkulačky koncového bodu, který má na adresu "http://localhost/routingservice/router/rounding/calculator".  
   
 ```  
 PrefixEndpointAddressMessageFilter prefixAddressFilter = new PrefixEndpointAddressMessageFilter(new EndpointAddress("http://localhost/routingservice/router/rounding/"));  
@@ -91,7 +93,7 @@ RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1"
   
 2.  Chcete-li otevřít **Průzkumníku řešení**, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
   
-3.  Stiskněte klávesu F5 nebo CTRL + SHIFT + B v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].  
+3.  Stisknutím klávesy F5 nebo CTRL + SHIFT + B v sadě Visual Studio.  
   
     1.  Pokud chcete automaticky spouštěné projekty potřebné po stisknutí klávesy F5, klikněte pravým tlačítkem na řešení a vyberte **vlastnosti**. Vyberte **spouštěný projekt** pod uzlem **společných vlastností** v levém podokně. Vyberte **více projektů po spuštění** přepínač a nastavte všechny projekty, které chcete mít **spustit** akce.  
   

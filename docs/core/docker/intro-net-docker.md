@@ -1,7 +1,7 @@
 ---
-title: "Úvod do rozhraní .NET a Docker"
+title: Úvod do rozhraní .NET a Docker
 description: Principy Docker a .NET Core
-keywords: "Rozhraní .NET, rozhraní .NET core, Docker"
+keywords: Rozhraní .NET, rozhraní .NET core, Docker
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
@@ -14,11 +14,11 @@ manager: wpickett
 ms.custom: mvc
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: dabc7c0c4a0afab8edf7d2bab410bb9635821936
-ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
+ms.openlocfilehash: 75c631cf0abac543889cb7387f6fc3fdb2624512
+ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 
@@ -89,7 +89,7 @@ Ukázky použití .NET Core 2.0. Používají Docker [více fáze sestavení](ht
 
 * To [ukázka .NET Core Docker](https://github.com/dotnet/dotnet-docker-samples/tree/master/dotnetapp-selfcontained) ukazuje osvědčených postupů vzor pro vytváření imagí Dockeru pro [nezávislý aplikace .NET Core](../deploying/index.md). Použít pro kontejner nejmenší provozní bez výhody z [sdílení základní Image mezi kontejnery](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/). Nižších vrstvách Docker však může sdílet.
 
-#### <a name="arm32--raspberry-pi"></a>ARM32 / Raspberry Pi
+#### <a name="arm32--raspberry-pi"></a>ARM32 / malin pí
 
 * [.NET core Runtime ARM32 sestavení oznámení](https://github.com/dotnet/announcements/issues/29)
 
@@ -105,15 +105,15 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 **Rozhraní .NET framework 4.7**
 
-[Dotnet – ukázka framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "text hello world" použití [4.7 rozhraní .NET Framework](../../framework/whats-new/index.md#v47). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.7 docker image](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile).
+[Dotnet – ukázka framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "text hello world" použití [4.7 rozhraní .NET Framework](../../framework/whats-new/index.md#v47). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.7 docker image](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-4.7/Dockerfile).
 
-**.NET Framework 4.6.2**
+**Rozhraní .NET framework 4.6.2**
 
-[Dotnet – ukázka framework: 4.6.2](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.6.2) ukazuje základní "text hello world" použití [rozhraní .NET Framework 4.6.2](../../framework/whats-new/index.md#v462). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.6.2 docker image](https://github.com/Microsoft/dotnet-framework-docker/tree/master/4.6.2).
+[Dotnet – ukázka framework: 4.6.2](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.6.2) ukazuje základní "text hello world" použití [rozhraní .NET Framework 4.6.2](../../framework/whats-new/index.md#v462). Ho se dozvíte, jak můžete sestavit a nasazení aplikace spoléhat na [rozhraní .NET Framework 4.6.2 docker image](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-4.6.2/Dockerfile).
 
 **Rozhraní .NET framework 3.5**
 
- [Dotnet – ukázka framework: 3.5](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-3.5) ukazuje základní "text hello world" použití [rozhraní .NET Framework 3.5](https://github.com/Microsoft/dotnet-framework-docker/tree/master/3.5). Ho ukazuje, jak můžete sestavit a nasazení projektu spoléhat na rozhraní .NET Framework 3.5 v Docker.
+ [Dotnet – ukázka framework: 3.5](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-3.5) ukazuje základní "text hello world" použití [rozhraní .NET Framework 3.5](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-3.5/dotnetapp-3.5/Dockerfile). Ho ukazuje, jak můžete sestavit a nasazení projektu spoléhat na rozhraní .NET Framework 3.5 v Docker.
 
 #### <a name="aspnet-core"></a>ASP.NET Core
 
@@ -133,7 +133,7 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 * [Image Windows Communication Framework (WCF) na DockerHub](https://hub.docker.com/r/microsoft/wcf/)
 
-* [Bitové kopie služby Windows Communication Framework (WCF) na Githubu](https://github.com/microsoft/iis-docker)
+* [Bitové kopie služby Windows Communication Framework (WCF) na Githubu](https://github.com/microsoft/wcf-docker)
 
 * [Ukázky Windows Communication Framework (WCF) Docker pomocí rozhraní .NET Full Framework 4.6.2](https://github.com/Microsoft/wcf-docker-samples)
 
@@ -141,7 +141,7 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 * [Image Internet Information Server (IIS) na DockerHub](https://hub.docker.com/r/microsoft/iis/)
 
-* [Obrázky Internet Information Server (IIS) na Githubu](https://github.com/microsoft/wcf-docker)
+* [Obrázky Internet Information Server (IIS) na Githubu](https://github.com/microsoft/iis-docker)
 
 ### <a name="interact-with-other-microsoft-stack-container-images"></a>Komunikovat s jiných Microsoft zásobníku kontejneru obrázků
 
@@ -149,9 +149,7 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 * [Spusťte Microsoft SQL Server pro Linux 2017 kontejneru image s Docker rychlý start](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker)
 
-* [Microsoft SQL Server pro Linux bitové kopie na DockerHub](https://hub.docker.com/r/microsoft/mssql-server-windows/)
-
-* [Microsoft SQL serveru pro Windows kontejnery Image na DockerHub](https://hub.docker.com/r/microsoft/mssql-server-windows/)
+* [Microsoft SQL Server pro Linux bitové kopie na DockerHub](https://hub.docker.com/r/microsoft/mssql-server-linux/)
 
 * [Microsoft SQL Server Express Edition bitových kopií pro Windows kontejnerů v DockerHub](https://hub.docker.com/r/microsoft/mssql-server-windows-express/)
 
@@ -165,9 +163,9 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 #### <a name="operations-management-suite-oms-linux-agent"></a>Agent nástroje Operations Management Suite (OMS) Linux
 
-* [Přehled agenta Operations Management Suite (OMS) Linux](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Docker-Instructions.md#overview)
+* [Přehled agenta Operations Management Suite (OMS) Linux](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Docker-Instructions.md)
 
-* [Operations Management Suite (OMS) Image na DockerHub](https://hub.docker.com/r/microsoft/vsts-agent/)
+* [Operations Management Suite (OMS) Image na DockerHub](https://hub.docker.com/r/microsoft/oms/)
 
 * [Obrázky Operations Management Suite (OMS) na Githubu](https://github.com/Microsoft/OMS-docker)
 
@@ -175,7 +173,7 @@ Toto úložiště obsahovat ukázky, která ukazují různých konfiguracích Do
 
 * [Microsoft Azure rozhraní příkazového řádku (CLI) Image na DockerHub](https://hub.docker.com/r/microsoft/azure-cli/) 
 
-* [Microsoft Azure rozhraní příkazového řádku (CLI) bitové kopie na Githubu](https://github.com/Microsoft/OMS-docker)
+* [Microsoft Azure rozhraní příkazového řádku (CLI) bitové kopie na Githubu](https://github.com/Azure/azure-cli#Docker)
 
 > [!NOTE]
 > Pokud nemáte předplatné Azure, [Přihlaste se ještě dnes](https://azure.microsoft.com/free/?b=16.48) bezplatný účet 30 dnů a 200 USD get v kredity Azure můžete vyzkoušet na libovolnou kombinaci služby Azure.

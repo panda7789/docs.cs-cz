@@ -1,12 +1,13 @@
 ---
-title: "Více zabezpečený přístup k souborům a datům ve Windows Forms"
-ms.custom: 
+title: Více zabezpečený přístup k souborům a datům ve Windows Forms
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,16 +21,17 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 335e9487468522abb3a18f51f9a089d25519e71c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 61e4893ac32d2013b090a748078ec1e3a84ea3ac
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Využívá oprávnění k ochraně prostředkům a datům. Kde vaše aplikace můžou číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí s částečnou důvěryhodností, pravděpodobně nebudete mít přístup k datům nebo možná budete muset změnit způsob přístupu k datům.  
@@ -144,7 +146,7 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 ```  
   
 > [!NOTE]
->  V [!INCLUDE[csprcs](../../../includes/csprcs-md.md)], ujistěte se, že přidáte kód, aby obslužná rutina události. Pomocí kódu z předchozího příkladu následující kód ukazuje, jak povolit obslužné rutiny události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
+>  V jazyce Visual C#, ujistěte se, že přidáte kód, aby obslužná rutina události. Pomocí kódu z předchozího příkladu následující kód ukazuje, jak povolit obslužné rutiny události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
   
 ### <a name="other-files"></a>Ostatní soubory  
  Někdy můžete potřebovat pro čtení nebo zápis do souborů, že uživatel není uveden, například když musí zachovat nastavení aplikace. V místní intranet a Internet zóny vaše aplikace nebude mít oprávnění k uložení dat v případě místního souboru. Aplikace však bude možné k ukládání dat v izolovaném úložišti. Izolované úložiště je abstraktní datového oddílu (ne umístění konkrétní úložiště), který obsahuje jeden nebo více souborů izolovaného úložiště volaných úložišť, které obsahují skutečné directory umístění, kde jsou data uložena. Soubor oprávnění k přístupu, jako je <xref:System.Security.Permissions.FileIOPermission> nejsou vyžadovány; místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> třída řídí oprávnění pro izolované úložiště. Ve výchozím nastavení může aplikace, které jsou spuštěné v místním intranetu a Internetu zón ukládat data pomocí izolované úložiště. nastavení, jako je disková kvóta se však může lišit. Další informace o izolovaného úložiště najdete v tématu [izolované úložiště](../../../docs/standard/io/isolated-storage.md).  
@@ -365,7 +367,7 @@ public void Write()
  Pokud databázi nelze přistupovat přímo, protože chcete, aby aplikace na spouštění v částečné důvěryhodnosti, můžete jako alternativní prostředek pro přístup k datům webové služby. Webová služba je softwarového produktu, který lze programově přistupovat přes síť. S webovými službami můžou aplikace sdílet data mezi zón skupiny kódu. Ve výchozím nastavení je aplikace v místním intranetu a Internetu zón uděleno oprávnění k přístupu k jejich lokality původu, která umožňuje, aby volání webové služby hostované na stejném serveru. Další informace najdete v části [webových služeb v rozhraní ASP.NET AJAX](http://msdn.microsoft.com/library/8290e543-7eff-47a4-aace-681f3c07229b) nebo [Windows Communication Foundation](http://msdn.microsoft.com/library/ms735119.aspx).  
   
 ## <a name="registry-access"></a>Přístup k registru  
- <xref:System.Security.Permissions.RegistryPermission> Třída řídí přístup k registru operačního systému. Ve výchozím nastavení můžete jenom aplikace, které běží místně přistupovat k registru.  <xref:System.Security.Permissions.RegistryPermission>aplikaci jenom uděluje práva k zkuste přístup k registru; se nezaručuje, že přístup bude úspěšné, protože operační systém stále vynucuje zabezpečení v registru.  
+ <xref:System.Security.Permissions.RegistryPermission> Třída řídí přístup k registru operačního systému. Ve výchozím nastavení můžete jenom aplikace, které běží místně přistupovat k registru.  <xref:System.Security.Permissions.RegistryPermission> aplikaci jenom uděluje práva k zkuste přístup k registru; se nezaručuje, že přístup bude úspěšné, protože operační systém stále vynucuje zabezpečení v registru.  
   
  Protože nelze získat přístup k registru v částečné důvěryhodnosti, musíte k nalezení dalších metod ukládání dat. Při ukládání nastavení aplikace pomocí izolovaného úložiště místo registru. Izolovaná úložiště lze také ukládat další soubory specifické pro aplikaci. Globální aplikace informace o serveru nebo webu původu, také můžete uložit, protože ve výchozím nastavení aplikace jsou udělena oprávnění k přístupu k původnímu serveru.  
   

@@ -5,14 +5,15 @@ ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 13f279b371bc5212a4ce9a171d37316c5e6efb77
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: bde96fd6348cf651dcca988eb546549fedf4df85
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Pracovní postup docker aplikací DevOps s nástroji Microsoft
 
@@ -32,7 +33,7 @@ Složitost vývoj kontejnerizované aplikací zvyšuje vytrvale podle obchodníc
 
 -   Spuštění automatizovaných testů v rámci vašeho kanálu sestavení v sadě Visual Studio Team Services.
 
--   Visual Studio Team Services může posílit DevOps životního cyklu pro doručení na několika prostředích, nejen pro provozní prostředí, ale také pro testování, včetně A / B experimentování, [lesknice verzích](http://martinfowler.com/bliki/CanaryRelease.html)a tak dále.
+-   Visual Studio Team Services může posílit DevOps životního cyklu pro doručení na několika prostředích, nejen pro provozní prostředí, ale také pro testování, včetně A / B experimentování, [lesknice verzích](https://martinfowler.com/bliki/CanaryRelease.html)a tak dále.
 
 -   Organizace můžou snadno zřídit Docker kontejnery z privátní bitové kopie uložené v registru kontejner Azure společně s závislost na Azure součásti (Data, PaaS atd.) pomocí nástroje, pomocí kterých jsou již šablon Azure Resource Manageru možnost práce.
 

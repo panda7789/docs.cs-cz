@@ -18,17 +18,17 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ae53d5afbca15f8adafed428d4c2141312c972ed
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5850335a13960df9094c1a6276799de043eb28f3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="thread-safe-collections"></a>Kolekce se zabezpečenými vlákny
 [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Zavádí <xref:System.Collections.Concurrent?displayProperty=nameWithType> názvů, který zahrnuje několik tříd kolekcí, které jsou bezpečné pro přístup z více vláken a škálovatelné. Více vláken může bezpečně a efektivně přidat nebo odebrat položky z těchto kolekcí, bez nutnosti další synchronizace v uživatelském kódu. Když píšete nový kód, pomocí třídy souběžných kolekce vždy, když kolekce se zápis do více vláken současně. Pokud jsou pouze čtení ze sdílené kolekce, pak můžete použít třídy v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Doporučujeme, abyste provedli třídy kolekcí verze 1.0, pokud není vyžadováno cílit na rozhraní .NET Framework 1.1 nebo starší modul runtime.  
   
 ## <a name="thread-synchronization-in-the-net-framework-10-and-20-collections"></a>Synchronizace vláken v rozhraní .NET Framework 1.0 a 2.0 kolekce  
- Kolekce zavedené v rozhraní .NET Framework 1.0 se nacházejí v <xref:System.Collections?displayProperty=nameWithType> oboru názvů. Tyto kolekce, které zahrnují běžně používané <xref:System.Collections.ArrayList> a <xref:System.Collections.Hashtable>, poskytovat některé vláken prostřednictvím `Synchronized` vlastnosti, která vrátí obálku kolem kolekce bezpečné pro přístup z více vláken. Obálku funguje tak, že na každé operace přidat nebo odebrat zamykání celou kolekci. Proto musí každý podproces, který se pokouší získat přístup ke kolekci čekat následně provést jeden zámek. Toto není škálovatelné a může způsobit významné snížení výkonu u rozsáhlých kolekcí. Návrh navíc není úplně chráněn před časování. Další informace najdete v tématu [synchronizace v obecné kolekce](http://go.microsoft.com/fwlink/?LinkID=161130) na webu MSDN.  
+ Kolekce zavedené v rozhraní .NET Framework 1.0 se nacházejí v <xref:System.Collections?displayProperty=nameWithType> oboru názvů. Tyto kolekce, které zahrnují běžně používané <xref:System.Collections.ArrayList> a <xref:System.Collections.Hashtable>, poskytovat některé vláken prostřednictvím `Synchronized` vlastnosti, která vrátí obálku kolem kolekce bezpečné pro přístup z více vláken. Obálku funguje tak, že na každé operace přidat nebo odebrat zamykání celou kolekci. Proto musí každý podproces, který se pokouší získat přístup ke kolekci čekat následně provést jeden zámek. Toto není škálovatelné a může způsobit významné snížení výkonu u rozsáhlých kolekcí. Návrh navíc není úplně chráněn před časování. Další informace najdete v tématu [synchronizace v obecné kolekce](https://blogs.msdn.microsoft.com/bclteam/2005/03/15/synchronization-in-generic-collections-brian-grunkemeyer/).  
   
  Třídy kolekcí zavedené v rozhraní .NET Framework 2.0, které se nacházejí v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Mezi ně patří <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>a tak dále. Tyto třídy poskytují lepší typu zabezpečení a výkonu ve srovnání s třídy rozhraní .NET Framework 1.0. Kolekce tříd rozhraní .NET Framework 2.0 však neposkytuje žádnou synchronizaci vláken; Při přidávání nebo odebírání ve více vláknech souběžně položky, musíte zadat uživatelský kód veškeré synchronizaci.  
   
@@ -40,7 +40,7 @@ ms.lasthandoff: 12/23/2017
  <xref:System.Collections.Concurrent.ConcurrentQueue%601> a <xref:System.Collections.Concurrent.ConcurrentStack%601> třídy nepoužívejte zámky vůbec. Místo toho spoléhají na <xref:System.Threading.Interlocked> operace pro dosažení vláken.  
   
 > [!NOTE]
->  Protože třídy souběžných kolekcí podporují <xref:System.Collections.ICollection>, poskytují implementace pro <xref:System.Collections.ICollection.IsSynchronized%2A> a <xref:System.Collections.ICollection.SyncRoot%2A> vlastnosti, i když tyto vlastnosti nejsou relevantní. `IsSynchronized`vždy vrátí hodnotu `false` a `SyncRoot` je vždy `null` (`Nothing` v jazyce Visual Basic).  
+>  Protože třídy souběžných kolekcí podporují <xref:System.Collections.ICollection>, poskytují implementace pro <xref:System.Collections.ICollection.IsSynchronized%2A> a <xref:System.Collections.ICollection.SyncRoot%2A> vlastnosti, i když tyto vlastnosti nejsou relevantní. `IsSynchronized` vždy vrátí hodnotu `false` a `SyncRoot` je vždy `null` (`Nothing` v jazyce Visual Basic).  
   
  Následující tabulka uvádí typy kolekcí v <xref:System.Collections.Concurrent?displayProperty=nameWithType> oboru názvů.  
   
@@ -58,7 +58,7 @@ ms.lasthandoff: 12/23/2017
 |Název|Popis|  
 |-----------|-----------------|  
 |[BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)|Popisuje funkce poskytované službou <xref:System.Collections.Concurrent.BlockingCollection%601> typu.|  
-|[Postupy: Přidávání a odebírání položek v ConcurrentDictionary](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|Popisuje, jak přidávat a odebírat elementů od<xref:System.Collections.Concurrent.ConcurrentDictionary%602>|  
+|[Postupy: Přidávání a odebírání položek v ConcurrentDictionary](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|Popisuje, jak přidávat a odebírat elementů od <xref:System.Collections.Concurrent.ConcurrentDictionary%602>|  
 |[Postupy: Přidávání a odebírání jednotlivých položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)|Popisuje, jak přidat a načítat položky z blokující kolekce bez použití enumerátor jen pro čtení.|  
 |[Postupy: Přidání funkcí ohraničování a blokování do kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)|Popisuje, jak chcete použít jako základní mechanismus úložiště pro všechny třídy kolekce <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> kolekce.|  
 |[Postupy: Použití příkazu ForEach k odebrání položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)|Popisuje způsob použití `foreach`, (`For Each` v jazyce Visual Basic) Chcete-li odebrat všechny položky v kolekci blokování.|  

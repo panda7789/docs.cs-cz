@@ -1,13 +1,13 @@
 ---
-title: "Návod: Použití klientských aplikačních služeb"
-ms.custom: 
+title: 'Návod: Použití klientských aplikačních služeb'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,17 +16,17 @@ helpviewer_keywords:
 - application services host [client application services]
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
-caps.latest.revision: 
+caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 71eac85d07ac54cf15edcfcc3a86de58afef5004
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: fe0e446a0005ffcbf296c2728fd93056c3e38f2a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-using-client-application-services"></a>Návod: Použití klientských aplikačních služeb
 Toto téma popisuje postup vytvoření aplikace Windows, která používá klientské aplikační služby k ověřování uživatelů a načítání uživatelských rolí a nastavení.  
@@ -57,7 +57,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 #### <a name="to-create-a-client-application-and-enable-client-application-services"></a>Vytvořit klientskou aplikaci a povolit klientské aplikační služby  
   
-1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **soubor &#124; Nové &#124; Projekt** možnost nabídky.  
+1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vyberte **soubor &#124; nový &#124; projektu** možnost nabídky.  
   
 2.  V **nový projekt** v dialogovém **typy projektů** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte možnost **Windows** typ projektu.  
   
@@ -75,7 +75,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 7.  Ujistěte se, že **ověřování pomocí formulářů** nebude vybrána a poté nastavte **umístění služby ověřování**, **role služby umístění**, a **nastavení webu umístění služby** k `http://localhost:55555/AppServices`.  
   
-8.  Pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]na **aplikace** nastavte **režim ověřování** k **definované aplikací**.  
+8.  V jazyce Visual Basic na **aplikace** nastavte **režim ověřování** k **definované aplikací**.  
   
  Návrháře ukládá nastavení zadané v souboru app.config aplikace.  
   
@@ -88,7 +88,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 #### <a name="to-create-and-configure-the-application-services-host"></a>Vytvořit a nakonfigurovat hostitel aplikačních služeb  
   
-1.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo řešení a pak na **soubor** nabídce vyberte možnost **Přidat &#124; Nový projekt**.  
+1.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo řešení a pak na **soubor** nabídce vyberte možnost **přidat &#124; nový projekt**.  
   
 2.  V **přidat nový projekt** dialogovém **typy projektů** podokně rozbalte položku **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte možnost  **Webové** typ projektu.  
   
@@ -250,7 +250,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 1.  V **Průzkumníku**, v projektu ClientAppServicesDemo přidat odkaz na sestavení System.Web.  
   
-2.  Vyberte soubor Form1 a pak vyberte **zobrazení &#124; Kód** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+2.  Vyberte soubor Form1 a pak vyberte **zobrazení &#124; kód** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
   
 3.  V editoru kódu přidejte na začátek souboru Form1 následující příkazy.  
   
@@ -315,7 +315,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
 ### <a name="creating-a-login-form"></a>Vytváření přihlašovací formulář  
  Přihlašovací údaje poskytovatele je třída, která implementuje <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> rozhraní. Toto rozhraní obsahuje jedinou metodu s názvem <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> , který vrací <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials> objektu. Následující postupy popisují, jak vytvořit dialogové okno přihlášení, který implementuje <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> zobrazení samotného a vrátíte se přihlašovací údaje zadané uživatelem.  
   
- Samostatné procedury jsou uvedeny pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] C# a protože [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] poskytuje **přihlašovací formulář** šablony. To umožňuje ušetřit nějaký čas a úsilí kódování.  
+ Jsou uvedené samostatné postupy pro Visual Basic a C#, protože poskytuje jazyka Visual Basic **přihlašovací formulář** šablony. To umožňuje ušetřit nějaký čas a úsilí kódování.  
   
 ##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-visual-basic"></a>Chcete-li vytvořit dialogové okno přihlášení jako poskytovatel pověření v jazyce Visual Basic  
   
@@ -331,7 +331,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 5.  V **vlastnosti** okno, zadejte **(název)** hodnotu `rememberMeCheckBox` a **Text** hodnotu `&Remember me`.  
   
-6.  Vyberte **zobrazení &#124; Kód** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
+6.  Vyberte **zobrazení &#124; kód** z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] hlavní nabídky.  
   
 7.  V editoru kódu přidejte následující kód do horní části souboru.  
   
@@ -379,7 +379,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
   	|Vlastnost|Hodnota|  
   	|--------------|-----------|  
-  	|**(Name)**|managerOnlyButton|  
+  	|**(Název)**|managerOnlyButton|  
   	|**Text**|& úkol Správce úloh|  
   	|**Viditelné**|`False`|  
   
@@ -407,7 +407,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
  Teď můžete aplikaci spustit a přihlaste se jako zaměstnanec zda tlačítko není objeví, a pak se přihlaste jako správce, aby tlačítko zobrazit.  
   
 ## <a name="accessing-web-settings"></a>Přístup k webové nastavení  
- V následujícím postupu přidat textové pole formuláře a navázat jej na webové nastavení. Jako předchozí kód, který používá ověřování a rolí nastavení kódu není přístup k poskytovateli nastavení přímo. Místo toho použije silného typu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) vygenerovat pro váš projekt pomocí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
+ V následujícím postupu přidat textové pole formuláře a navázat jej na webové nastavení. Jako předchozí kód, který používá ověřování a rolí nastavení kódu není přístup k poskytovateli nastavení přímo. Místo toho použije silného typu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) vygenerovat pro váš projekt pomocí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
   
 #### <a name="to-use-web-settings-in-your-user-interface"></a>Pokud chcete použít nastavení webové uživatelské rozhraní  
   
@@ -527,7 +527,7 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
     > [!NOTE]
     >  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> Metoda je pouze ke zvýšení pohodlí. Protože nemá návratovou hodnotu, nelze to označuje, zda opětovné ověření se nezdařilo. Opětovné ověření může selhat, například pokud přihlašovací údaje uživatele se změnila na serveru. V takovém případě můžete chtít obsahovat kód, který explicitně ověřuje uživatele po volání služby selže. Další informace najdete v části Nastavení webového přístupu k dříve v tomto návodu.  
   
-     Po opětovné ověření, tento kód uloží změny do místní nastavení webové voláním `SaveSettings` metoda, kterou jste přidali dříve. Potom načte žádné nové hodnoty na serveru při volání <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> metoda projektu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]).  
+     Po opětovné ověření, tento kód uloží změny do místní nastavení webové voláním `SaveSettings` metoda, kterou jste přidali dříve. Potom načte žádné nové hodnoty na serveru při volání <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> metoda projektu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic).  
   
      [!code-csharp[ClientApplicationServices#080](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#080)]
      [!code-vb[ClientApplicationServices#080](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#080)]  

@@ -22,18 +22,18 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-caps.latest.revision: ''
+caps.latest.revision: 54
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b33acfef1cabd3aa53fbe8947bd7adbe52d3b7a4
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 1b0940432d3fd201979b537752b917d60a10d22e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní číselný formátovací řetězec je formátovací řetězec, který není [standardního řetězce formátu čísel](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
@@ -41,7 +41,7 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Vlastní řetězce číselného formátu podporuje někteří přetížení `ToString` metoda všechny číselné typy. Můžete například zadat řetězec číselného formátu tak, aby <xref:System.Int32.ToString%28System.String%29> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metody <xref:System.Int32> typu. Vlastní řetězce číselného formátu jsou také podporovány pomocí .NET [funkce složeného formátování](../../../docs/standard/base-types/composite-formatting.md), který je využíván jiným některé `Write` a `WriteLine` metody <xref:System.Console> a <xref:System.IO.StreamWriter> třídy, <xref:System.String.Format%2A?displayProperty=nameWithType>metoda a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metoda. [Řetězec interpolace](../../csharp/language-reference/tokens/interpolated.md) funkce podporuje také vlastní řetězce číselného formátu.  
   
 > [!TIP]
->  Si můžete stáhnout [formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikace, která umožňuje použití formátu řetězce na hodnotu numerické nebo datum a čas hodnoty a zobrazí výsledný řetězec.  
+>  Si můžete stáhnout [formátování nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikace, která umožňuje použití formátu řetězce na hodnotu numerické nebo datum a čas hodnoty a zobrazí výsledný řetězec.  
   
 <a name="table"></a> Následující tabulka popisuje specifikátory vlastní číselného formátu a zobrazí ukázkový výstup produkovaný každým specifikátorem formátu. Najdete v článku [poznámky](#NotesCustomFormatting) části Další informace o používání vlastní řetězce číselného formátu a [příklad](#example) části komplexní ukázky jejich použití.  
   
@@ -50,10 +50,10 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
 |"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: ["0" vlastní specifikátor](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0,00" en US) -> 0.46<br /><br /> 0.45678 ("0,00", fr-FR) -> 0,46|  
 |"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že se ve výsledném řetězci nezobrazí žádná číslice, je-li odpovídající číslice ve vstupním řetězci není významný 0. Například 0003 ("###") -> 3.<br /><br /> Další informace: ["#" vlastní specifikátor](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#. ##", en US) ->.46<br /><br /> 0.45678 ("#. ##", fr-FR) -> 46|  
 |"."|Desetinná tečka|Určuje umístění oddělovače desetinných míst ve výsledném řetězci.<br /><br /> Další informace: ["." Vlastní specifikátor](#SpecifierPt).|0.45678 ("0,00" en US) -> 0.46<br /><br /> 0.45678 ("0,00", fr-FR) -> 0,46|  
-|","|Oddělovač skupin a číselné měřítko|Slouží jako oddělovač skupin a specifikátor číselného měřítka. Jako oddělovač skupin vloží znak oddělovače skupiny podle jazykové verze mezi jednotlivé skupiny. Jako specifikátor měřítka rozdělí číslo po 1000 pro každou zadanou čárku.<br /><br /> Další informace: ["," vlastní specifikátor](#SpecifierTh).|Specifikátor oddělovače skupin:<br /><br /> 2147483647 ("##, #", en US) -> 2 147 483 647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> Specifikátor měřítka:<br /><br /> 2147483647 ("#, #,," en US) -> 2 147<br /><br /> 2147483647 ("#, #, es-ES) -> 2.147|  
+|","|Oddělovač skupin a číselné měřítko|Slouží jako oddělovač skupin a specifikátor číselného měřítka. Jako oddělovač skupin vloží znak oddělovače skupiny podle jazykové verze mezi jednotlivé skupiny. Jako specifikátor měřítka rozdělí číslo po 1000 pro každou zadanou čárku.<br /><br /> Další informace: ["," vlastní specifikátor](#SpecifierTh).|Specifikátor oddělovače skupin:<br /><br /> 2147483647 ("##, #", en US) -> 2 147 483 647<br /><br /> 2147483647 ("##, #", es-ES) -> 2.147.483.647<br /><br /> Specifikátor měřítka:<br /><br /> 2147483647 ("#, #,," en US) -> 2 147<br /><br /> 2147483647 ("#, #, es-ES) -> 2.147|  
 |"%"|Zástupný znak procent|Vynásobí číslo 100 a vloží do výsledného řetězce symbol procenta podle jazykové verze.<br /><br /> Další informace: ["%" vlastní specifikátor](#SpecifierPct).|0.3697 ("% #0.00", en US) -> % 36.97<br /><br /> 0.3697 ("% #0.00", el-GR) -> % 36,97<br /><br /> 0.3697 ("##.0 %", en US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|  
 |"‰"|Zástupný symbol promile|Vynásobí číslo 1000 a vloží do výsledného řetězce symbol promile podle jazykové verze.<br /><br /> Další informace: ["‰" vlastní specifikátor](#SpecifierPerMille).|0.03697 ("#0.00‰", en US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36, 97‰|  
-|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: ["E" a "e" vlastní specifikátory](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 1.504e + 03 -> ("0.&#0;#e + 00")<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|  
+|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: ["E" a "e" vlastní specifikátory](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 1.504e + 03 -> ("0.0 ##e + 00")<br /><br /> 1.8901385E-16 ("0.0e + 00") -> 1.9e-16|  
 |"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: ["\\" řídicí znak](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|  
 |'*řetězec*.<br /><br /> "*řetězec*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.|68 ("#" stupních"") -> 68 stupňů<br /><br /> 68 ("#" stupňů. ") -> 68 stupňů|  
 |;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Část oddělovače](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|  
@@ -243,4 +243,4 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
  [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
  [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
- [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+ [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

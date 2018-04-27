@@ -1,11 +1,12 @@
 ---
-title: "Rozlišení přetěžování (Visual Basic)"
-ms.custom: 
+title: Rozlišení přetěžování (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -16,19 +17,19 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7eb71b69496e27b664fe297e9e5f105b360ce01d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e62560d853c95bc4bba6ba829d8579ee4388858e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozlišení přetěžování (Visual Basic)
-Když [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru zaznamená volání procedury, která je definována v několika verzích přetížené, kompilátor musíte rozhodnout, které přetížení volání. Dělá to pomocí následujících kroků:  
+Když Visual Basic – kompilátor dojde volání procedury, která je definována v několika verzích přetížené, kompilátor musíte rozhodnout, které přetížení volání. Dělá to pomocí následujících kroků:  
   
-1.  **Usnadnění přístupu.** Eliminuje žádné přetížení s úroveň přístupu, která brání jeho volání volající kód.  
+1.  **Přístupnost** Eliminuje žádné přetížení s úroveň přístupu, která brání jeho volání volající kód.  
   
 2.  **Počet parametrů.** Eliminuje žádné přetížení, které definuje jiný počet parametrů, než se zadávají ve volání.  
   
@@ -68,14 +69,14 @@ Když [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru zaznamená volán
 |Pole s žádné délkou (včetně prázdné pole)|`ParamArray`|  
   
 ## <a name="see-also"></a>Viz také  
- [Volitelné parametry](./optional-parameters.md)  
+ [Nepovinné parametry](./optional-parameters.md)  
  [Pole parametrů](./parameter-arrays.md)  
  [Přetížení procedury](./procedure-overloading.md)  
  [Řešení potíží s procedurami](./troubleshooting-procedures.md)  
- [Postupy: definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
- [Postupy: volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
- [Postupy: přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)  
- [Postupy: přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
+ [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
+ [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
+ [Postupy: Přetížení procedury, která přebírá nepovinné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)  
+ [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
  [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)  
- [Přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md)  
- [Metody rozšíření](./extension-methods.md)
+ [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [Rozšiřující metody](./extension-methods.md)

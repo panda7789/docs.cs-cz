@@ -1,11 +1,12 @@
 ---
-title: "Deklarované názvy elementu (Visual Basic)"
-ms.custom: 
+title: Deklarované názvy elementu (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declared elements [Visual Basic], case sensitivity
@@ -29,20 +30,20 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 22595eff2509d3954b3ce9d5038b19a681fbfbbe
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: ad883dd8e1de419c74b5bcdb8762994e762b4cf7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="declared-element-names-visual-basic"></a>Deklarované názvy elementu (Visual Basic)
 Každý element, deklarované má název, označované taky jako *identifikátor*, což je kód používá na ni odkazuje.  
   
 ## <a name="rules"></a>Pravidla  
- Název elementu v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] musí odpovídat následujícím pravidlům:  
+ Název elementu v jazyce Visual Basic musí odpovídat následujícím pravidlům:  
   
 -   Musí začínat znakem abecedy nebo podtržítkem (`_`).  
   
@@ -79,18 +80,18 @@ Každý element, deklarované má název, označované taky jako *identifikátor
  Název nesmí být na druhé straně krátké tak, že nepopisuje adekvátní element reprezentuje a jak ji používá váš kód. To je důležité pro čitelnost kódu. Pokud někdo jiný pokouší porozumět, nebo pokud sami hledáte na to dlouhou dobu, po ho napsal, můžete uložit názvy vhodný elementu značné množství času.  
   
 ## <a name="escaped-names"></a>Řídicí názvy  
- Název elementu obecně nesmí odpovídat některé z klíčových slov rezervován [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], jako například `Case` nebo `Friend`. Však můžete definovat *uvozené název*, který je do hranatých závorek (`[ ]`). Uvozený název může odpovídat žádné [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] – klíčové slovo, protože hranatých závorkách odebrat všechny nejednoznačnosti. Můžete také hranaté závorky odkazovat na název později v kódu.  
+ Název elementu obecně nesmí odpovídat některé z klíčových slov rezervován jazyka Visual Basic, jako například `Case` nebo `Friend`. Však můžete definovat *uvozené název*, který je do hranatých závorek (`[ ]`). Uvozený název může odpovídat všechny klíčové slovo jazyka Visual Basic, vzhledem k tomu, že hranatých závorkách odebrat všechny nejednoznačnosti. Můžete také hranaté závorky odkazovat na název později v kódu.  
   
  Obecně platí, měli byste použít řídicí názvy pouze tehdy, když:  
   
--   Váš kód migroval z předchozí verze [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] , není rezervovat – klíčové slovo používá jako název; nebo  
+-   Váš kód migroval z předchozí verze jazyka Visual Basic, který není rezervovat – klíčové slovo používá jako název; nebo  
   
 -   Pracujete s kódem v jiném jazyce, ve kterém není vyhrazena daným klíčovým slovem.  
   
  Jinak byste měli zvážit, přejmenování elementu, pokud jeho název je v konfliktu s klíčovým slovem. Integrované vývojové prostředí (IDE) poskytuje snadný způsob, jak to udělat. Další informace najdete v tématu [Refactoring](/visualstudio/vb-ide/refactoring-vb).  
   
 ## <a name="case-sensitivity-in-names"></a>Malá a velká písmena v názvech  
- Názvy elementu v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] se velká a malá písmena. To znamená, že když kompilátor porovná dva názvy, které se liší v abecedním případě pouze, je je interpretuje jako se stejným názvem. Například považuje `ABC` a `abc` odkazovat na stejný element deklarovaný.  
+ Názvy elementů v jazyce Visual Basic jsou velká a malá písmena. To znamená, že když kompilátor porovná dva názvy, které se liší v abecedním případě pouze, je je interpretuje jako se stejným názvem. Například považuje `ABC` a `abc` odkazovat na stejný element deklarovaný.  
   
  Modul CLR (CLR) ale používá vazba malá a velká písmena. Proto při vytváření sestavení nebo knihovny DLL a zpřístupněte ho ostatních sestavení, názvy již nejsou velká a malá písmena. Například, pokud definice třídy s prvek s názvem `ABC`, a ujistěte se, ostatních sestavení pomocí vaší třídy prostřednictvím modul common language runtime, musí odkazovat na prvek jako `ABC`. Pokud následně znovu zkompiluje třídě a změňte název elementu `abc`, ostatních sestavení pomocí vlastní třídy již přístup tohoto prvku. Proto při uvolnění aktualizovanou verzi sestavení byste neměli měnit abecedním malá jakýchkoli veřejných složek.  
   

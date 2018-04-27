@@ -1,11 +1,12 @@
 ---
-title: "Deklarace a vyvolávání událostí (Visual Basic)"
-ms.custom: 
+title: Deklarace a vyvolávání událostí (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declarations [Visual Basic], events
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0bf75cfba5102be5d837af385e2d3578f78a03c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 27db585084703607a7389f5a0aa3eba6f70dd793
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
 Tento návod ukazuje, jak deklarace a vyvolávání událostí třídy s názvem `Widget`. Po dokončení kroků, můžete chtít přečíst téma doprovodné [návod: zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), který ukazuje způsob použití události z `Widget` objekty, které chcete poskytnout informace o stavu v aplikaci.  
@@ -36,7 +37,7 @@ Tento návod ukazuje, jak deklarace a vyvolávání událostí třídy s názvem
   
 #### <a name="to-build-the-code-example-for-this-topic"></a>K vytvoření příklad kódu pro toto téma  
   
-1.  Otevřete nový [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikace Windows projektu a vytvořte formulář s názvem `Form1`.  
+1.  Otevřete nový projekt aplikace Windows Visual Basic a vytvořit s názvem `Form1`.  
   
 2.  Přidat dvě tlačítka a štítek pro `Form1`.  
   
@@ -61,7 +62,7 @@ Tento návod ukazuje, jak deklarace a vyvolávání událostí třídy s názvem
 > [!NOTE]
 >  Argumenty událostí můžou deklarovat, stejným způsobem jako argumenty procedur, s následujícími výjimkami: události nemůže mít `Optional` nebo `ParamArray` argumentů a události nemají návratové hodnoty.  
   
- `PercentDone` Událost vyvolána pomocí `LongTask` metodu `Widget` třídy. `LongTask`přebírá dva argumenty: doba metodu předstírá, že by práci a minimální časový interval před `LongTask` pozastaví zvýšit `PercentDone` událostí.  
+ `PercentDone` Událost vyvolána pomocí `LongTask` metodu `Widget` třídy. `LongTask` přebírá dva argumenty: doba metodu předstírá, že by práci a minimální časový interval před `LongTask` pozastaví zvýšit `PercentDone` událostí.  
   
 #### <a name="to-raise-the-percentdone-event"></a>Pro vyvolání události PercentDone  
   

@@ -1,5 +1,5 @@
 ---
-title: "Lokální funkce (C# Průvodce programováním)"
+title: Lokální funkce (C# Průvodce programováním)
 ms.date: 06/14/2017
 ms.prod: .net
 ms.technology:
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - local functions [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b4e95d48e451038f0f7004d0901f329b2c57fe5
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: ac18aa57f443f28f55779ff9c92a5349b9b39fd7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="local-functions-c-programming-guide"></a>Lokální funkce (C# Průvodce programováním)
 
-Od verze jazyka C# 7, C# podporuje *lokální funkce*. Lokální funkce jsou privátní metody typu, které jsou vnořené v jiného člena. Může být volána pouze z jejich obsahující člen. Lokální funkce můžete v deklarována a volat z:
+Od verze jazyka C# 7.0, C# podporuje *lokální funkce*. Lokální funkce jsou privátní metody typu, které jsou vnořené v jiného člena. Může být volána pouze z jejich obsahující člen. Lokální funkce můžete v deklarována a volat z:
 
 - Metody, hlavně iterator metody a asynchronní metody
 - Konstruktory

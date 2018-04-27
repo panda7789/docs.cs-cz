@@ -15,11 +15,11 @@ ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5a1edd7976f1e22117e1f4f31354388d5257ffc1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: c18c1ea645c9f144e2c2043af5460d6fb03f13a1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu jako řadu postupů, které jsou spouštěny v pořadí, ve skutečnosti většiny programů, jsou události řízené – znamená tok provádění je dáno externí výskytů názvem *události*.  
@@ -27,7 +27,7 @@ Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu ja
  Událost je signál, která informuje o aplikaci, která něco důležité došlo k chybě. Například když uživatel klikne na ovládací prvek na formuláři, formuláře může být spojeno `Click` událostí a volání procedury, která zpracovává událost. Události povolit také samostatné úkoly ke komunikaci. Řekněme například, že aplikace provede úlohu řazení samostatně v hlavní aplikaci. Pokud uživatel zruší řazení, vaše aplikace může odesílat události cancel instruující proces řazení zastavit.  
   
 ## <a name="event-terms-and-concepts"></a>Událost podmínky a koncepty  
- Tato část popisuje podmínky a koncepty používané s událostmi v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Tato část popisuje podmínky a koncepty používané s událostmi v jazyce Visual Basic.  
   
 ### <a name="declaring-events"></a>Deklarace událostí  
  Deklarování událostí v rámci třídy, struktury, moduly a rozhraní pomocí `Event` – klíčové slovo, jako v následujícím příkladu:  
@@ -35,7 +35,7 @@ Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu ja
  [!code-vb[VbVbalrEvents#24](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_1.vb)]  
   
 ### <a name="raising-events"></a>Vyvolání událostí  
- Událost je jako zprávu oznamující, že něco důležité došlo k chybě. Je volána v rámci všesměrové vysílání zprávy *vyvolání* události. V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], vyvolávání událostí s `RaiseEvent` příkaz jako v následujícím příkladu:  
+ Událost je jako zprávu oznamující, že něco důležité došlo k chybě. Je volána v rámci všesměrové vysílání zprávy *vyvolání* události. V jazyce Visual Basic, zvýšíte události se `RaiseEvent` příkaz jako v následujícím příkladu:  
   
  [!code-vb[VbVbalrEvents#25](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_2.vb)]  
   
@@ -47,7 +47,7 @@ Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu ja
 ### <a name="event-handlers"></a>Obslužné rutiny událostí  
  *Obslužné rutiny událostí* postupy, které se nazývají případě je odpovídající událost. Můžete vytvořit žádné platné podprogramu s odpovídajícím podpisem jako obslužnou rutinu události. Funkci nelze však použít jako obslužnou rutinu události, protože jej nelze vrátit hodnotu ke zdroji událostí.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]používá standardní zásady vytváření názvů pro obslužné rutiny událostí, které kombinuje název odesílatele událostí, podtržítko, název události. Například `Click` událostí tlačítko s názvem `button1` by s názvem `Sub button1_Click`.  
+ Visual Basic používá standardní zásady vytváření názvů pro obslužné rutiny událostí, které kombinuje název odesílatele událostí, podtržítko, název události. Například `Click` událostí tlačítko s názvem `button1` by s názvem `Sub button1_Click`.  
   
 > [!NOTE]
 >  Doporučujeme použít tyto zásady vytváření názvů při definování obslužné rutiny události pro vlastní události, ale není nutné; můžete použít libovolný platný podprogramu název.  
@@ -68,18 +68,18 @@ Při může vizualizovat [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] projektu ja
   
 -   Nelze vytvořit pole `WithEvents` proměnné.  
   
- `WithEvents`Proměnné umožňují jedné obslužné rutině událostí zpracovat jeden nebo více druh událostí nebo jeden nebo více obslužných rutin událostí pro zpracování je stejný typ události.  
+ `WithEvents` Proměnné umožňují jedné obslužné rutině událostí zpracovat jeden nebo více druh událostí nebo jeden nebo více obslužných rutin událostí pro zpracování je stejný typ události.  
   
  I když `Handles` klauzule standardní způsob přiřazení událost obslužnou rutinu, je omezený na přidružení událostí k obslužné rutiny událostí v době kompilace.  
   
- V některých případech například s událostmi přidružené formuláře nebo ovládací prvky, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automaticky zástupných procedur se prázdné obslužné rutiny a přidruží ji k události. Například když dvakrát kliknete na příkaz tlačítko ve formuláři v režimu návrhu, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vytvoří prázdné obslužné rutiny a `WithEvents` proměnné příkazového tlačítka, jako v následujícím kódu:  
+ V některých případech, jako se události související s formuláře nebo ovládací prvky, jazyka Visual Basic automaticky zástupných procedur se prázdné obslužné rutiny a přidruží ji k události. Například když dvakrát kliknete příkazového tlačítka ve formuláři v režimu návrhu, Visual Basic vytvoří prázdné obslužné rutiny a `WithEvents` proměnné příkazového tlačítka, jako v následujícím kódu:  
   
  [!code-vb[VbVbalrEvents#26](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_4.vb)]  
   
 ### <a name="addhandler-and-removehandler"></a>AddHandler a RemoveHandler  
  `AddHandler` Je podobná příkazu `Handles` klauzuli v, že oba umožňují určit obslužné rutiny události. Ale `AddHandler`, používá se s `RemoveHandler`, poskytuje větší flexibilitu, než `Handles` klauzule, což umožňuje dynamicky přidat, odebrat a změňte obslužné rutiny události přidružený k události. Pokud chcete zpracovat sdílené události nebo události z strukturu, musíte použít `AddHandler`.  
   
- `AddHandler`přebírá dva argumenty: název události od odesílatele událostí například ovládací prvek a výraz, který se vyhodnotí jako delegáta. Není potřeba explicitně zadat třídu delegáta při použití `AddHandler`, protože `AddressOf` příkaz vždy vrátí odkaz na delegáta. Následující příklad přidruží obslužnou rutinu události vyvolané objektu:  
+ `AddHandler` přebírá dva argumenty: název události od odesílatele událostí například ovládací prvek a výraz, který se vyhodnotí jako delegáta. Není potřeba explicitně zadat třídu delegáta při použití `AddHandler`, protože `AddressOf` příkaz vždy vrátí odkaz na delegáta. Následující příklad přidruží obslužnou rutinu události vyvolané objektu:  
   
  [!code-vb[VbVbalrEvents#28](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_5.vb)]  
   

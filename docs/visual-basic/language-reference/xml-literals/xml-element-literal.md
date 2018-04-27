@@ -1,9 +1,9 @@
 ---
-title: "Literál XML elementu (Visual Basic)"
+title: Literál XML elementu (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - element literal [Visual Basic]
 - XML literals [Visual Basic], element
 ms.assetid: 95039642-7893-48b7-b23f-45a6c55d8f67
-caps.latest.revision: 
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: de5825a6af1dd1b93c3c85651125cf817dc564f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 58b11c61253b199bdeeb2f373eed5f6a358b9e0e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-element-literal-visual-basic"></a>Literál XML elementu (Visual Basic)
 
@@ -111,18 +111,18 @@ Literál, který představuje <xref:System.Xml.Linq.XElement> objektu.
  Syntaxe literál XML elementu slouží k vytvoření <xref:System.Xml.Linq.XElement> objekty v kódu.  
   
 > [!NOTE]
->  Literál XML může zahrnovat více řádků bez použití znaky pokračování řádku. Tato funkce umožňuje kopírovat obsah z dokumentu XML a vložte ji přímo do [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] program.  
+>  Literál XML může zahrnovat více řádků bez použití znaky pokračování řádku. Tato funkce umožňuje kopírovat obsah z dokumentu XML a vložte jej přímo do programu Visual Basic.  
   
  Vložené výrazy ve tvaru `<%= exp %>` vám umožní přidat dynamické informace literál XML elementu. Další informace najdete v tématu [vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru převede literál XML elementu volání <xref:System.Xml.Linq.XElement.%23ctor%2A> konstruktor a, pokud je to požadováno, <xref:System.Xml.Linq.XAttribute.%23ctor%2A> konstruktor.  
+ Visual Basic – kompilátor převede literál XML elementu volání <xref:System.Xml.Linq.XElement.%23ctor%2A> konstruktor a pokud se vyžaduje, <xref:System.Xml.Linq.XAttribute.%23ctor%2A> konstruktor.  
   
 ## <a name="xml-namespaces"></a>Obory názvů XML  
  XML – předpony oboru názvů jsou užitečné při vytváření literálů XML s elementy ze stejného oboru názvů mnohokrát v kódu. Můžete použít globální předpony oboru názvů XML, které definují pomocí `Imports` příkaz nebo místní předpony, které definují pomocí `xmlns:xmlPrefix="xmlNamespace"` atribut syntaxe. Další informace najdete v tématu [příkaz Imports (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
   
  Místní předpony v souladu s oboru pravidla pro obory názvů XML, mají přednost před globální předpony. Ale pokud literál XML definuje obor názvů XML, tento obor názvů není k dispozici na výrazy, které se zobrazují v embedded výrazu. Vložené výraz můžete přistupovat pouze globální obor názvů XML.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru převede každý globální obor názvů XML, který je používán literál XML do jednu definici místní obor názvů v generovaného kódu. Globální obory názvů XML, které nepoužívají se nezobrazí v generovaného kódu.  
+ Visual Basic – kompilátor převede každý globální obor názvů XML, který je používán literál XML do jednu definici místní obor názvů v generovaného kódu. Globální obory názvů XML, které nepoužívají se nezobrazí v generovaného kódu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit jednoduché element XML, který má dva vnořené prázdné prvky.  
@@ -172,7 +172,7 @@ Literál, který představuje <xref:System.Xml.Linq.XElement> objektu.
  [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)  
  [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)  
  [Literál XML CDATA](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md)  
- [XML – literály](../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
  [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
  [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)  
- [Imports – příkaz (Namespace XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)
+ [Příkaz Imports (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)

@@ -1,27 +1,29 @@
 ---
-title: "Jeden hromadné operace kopírování"
-ms.custom: 
+title: Jeden hromadné operace kopírování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5e7ff0be-3f23-4996-a92c-bd54d65c3836
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 961981fcdf9709a336d76df99c8f65448e76b98a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 37402672a6df808cb5e1c2424817fd9ce749cc82
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="single-bulk-copy-operations"></a>Jeden hromadné operace kopírování
 Nejjednodušším přístupem při provádění operace hromadného kopírování systému SQL Server je provést najednou proti databázi. Ve výchozím nastavení, se provádí operace hromadného kopírování jako izolované operaci: způsobem, beztransakční, dojde k kopírování s distribucí nebude mít možnost zpět.  
@@ -51,7 +53,7 @@ Nejjednodušším přístupem při provádění operace hromadného kopírován�
 >  Doporučujeme, aby odpovídaly zdrojové a cílové datové typy sloupce. Pokud tyto datové typy se neshodují, **SqlBulkCopy** pokusí převést hodnotu každý zdroj cílového typu dat, pomocí pravidel zaměstnaní <xref:System.Data.SqlClient.SqlParameter.Value%2A>. Převody může ovlivnit výkon a také může způsobit neočekávané chyby. Například `Double` možné převést na datový typ `Decimal` datový typ většinu času, ale ne vždy.  
   
 ## <a name="example"></a>Příklad  
- Následující aplikace konzoly ukazuje, jak načíst data pomocí <xref:System.Data.SqlClient.SqlBulkCopy> třídy. V tomto příkladu <xref:System.Data.SqlClient.SqlDataReader> se používá ke zkopírování dat z **Production.Product** tabulky v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] **AdventureWorks** databáze do podobné tabulky ve stejné databázi.  
+ Následující aplikace konzoly ukazuje, jak načíst data pomocí <xref:System.Data.SqlClient.SqlBulkCopy> třídy. V tomto příkladu <xref:System.Data.SqlClient.SqlDataReader> se používá ke zkopírování dat z **Production.Product** tabulky v systému SQL Server**AdventureWorks** databáze do podobné tabulky ve stejné databázi.  
   
 > [!IMPORTANT]
 >  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěny ve stejné instanci systému SQL Server, je snadnější a rychlejší pomocí jazyka Transact-SQL `INSERT … SELECT` příkaz Kopírovat data.  

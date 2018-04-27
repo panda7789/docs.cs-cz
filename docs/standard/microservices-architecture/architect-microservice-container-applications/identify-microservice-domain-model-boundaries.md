@@ -1,7 +1,7 @@
 ---
-title: "Identifikace modelu domény hranice pro každou mikroslužbu"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Identifikace modelu domény hranice pro každou mikroslužbu"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Identifikace modelu domény hranice pro každou mikroslužbu
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Identifikace modelu domény hranice pro každou mikroslužbu
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,17 +11,17 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 830dd48a420a462842de57e436323a5a930c195d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 23b5ebafc5ea037568f168426d76b3ec9839040e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>Určení modelu domény hranice pro každou mikroslužbu
 
 Cílem při identifikaci hranice modelu a velikost každé mikroslužbu je nechcete dostávat nejvíce granulární oddělení možné, i když má mívají směrem k malé mikroslužeb Pokud je to možné. Místo toho vaším cílem mělo být pro zajištění smysluplných oddělení provést podle vašich znalostí domény. Důraz na velikost, ale místo toho na není obchodní možnosti. Kromě toho pokud je zrušte soudržnost potřebné pro určité oblasti aplikace založené na velký počet závislostí, určující potřebu jeden mikroslužbu, příliš. Soudržnost je způsob, jak identifikovat tom, jak rozdělit nebo skupiny společně mikroslužeb. Nakonec zatímco, získáte další informace o doméně, přizpůsobte velikost vašeho mikroslužbu interaktivně. Hledání správnou velikost není jednorázové procesu.
 
-[SAM Newman](http://samnewman.io/), rozpoznaný vykonavatel mikroslužeb a autor knihy [vytváření Mikroslužeb](http://samnewman.io/books/building_microservices/), označuje, měli byste navrhnout vaše mikroslužeb na základě vzoru ohraničenou kontextu (BC) (součást řízené domény návrhu), zavedeném dříve. V některých případech může BC skládá z několika fyzických služeb, ale ne naopak.
+[SAM Newman](https://samnewman.io/), rozpoznaný vykonavatel mikroslužeb a autor knihy [vytváření Mikroslužeb](https://samnewman.io/books/building_microservices/), označuje, měli byste navrhnout vaše mikroslužeb na základě vzoru ohraničenou kontextu (BC) (součást řízené domény návrhu), zavedeném dříve. V některých případech může BC skládá z několika fyzických služeb, ale ne naopak.
 
 Model domény s konkrétní doménu entity lze použít v rámci konkrétní BC nebo mikroslužby. BC vymezuje použitelnost modelu domény a vývojáře poskytuje členové týmu, zrušte a sdílené vysvětlení, co musí být získá na ucelenosti a co mohou být vytvořeny nezávisle. Jedná se o stejné cíle pro mikroslužeb.
 

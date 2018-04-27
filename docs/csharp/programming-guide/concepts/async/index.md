@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 5
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c9f2699646db17c9358f84f4c5407e7aab8b60cf
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 70dd5606ba81619658eda24f8c4bfd4970d29308
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -98,7 +98,7 @@ Následující charakteristiky představují shrnutí, co dělá předchozí př
   
     -   `void` Pokud píšete asynchronní obslužnou rutinu.  
 
-    -   Jiný typ, který má `GetAwaiter` – metoda (počínaje C# 7).
+    -   Jiný typ, který má `GetAwaiter` – metoda (počínaje 7.0 C#).
   
      Další informace najdete v tématu [parametry a vrátí typy](#BKMK_ReturnTypesandParameters) části.  
   
@@ -179,7 +179,7 @@ Zadáte <xref:System.Threading.Tasks.Task%601> jako návratový typ, pokud obsah
   
 Používáte <xref:System.Threading.Tasks.Task> jako návratový typ, pokud metoda má žádný příkaz return nebo který nevrací operand příkaz return.  
 
-Od verze jazyka C# 7, můžete také určit další návratový typ, za předpokladu, že daný typ obsahuje `GetAwaiter` metoda. <xref:System.Threading.Tasks.ValueTask%601> je příkladem takového typu. Je k dispozici v [System.Threading.Tasks.Extension](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) balíček NuGet.
+Od verze 7.0 C#, můžete také určit další návratový typ, za předpokladu, že daný typ obsahuje `GetAwaiter` metoda. <xref:System.Threading.Tasks.ValueTask%601> je příkladem takového typu. Je k dispozici v [System.Threading.Tasks.Extension](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) balíček NuGet.
   
  Následující příklad ukazuje, jak deklarace a volání metody, která vrací <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.Task>.  
   

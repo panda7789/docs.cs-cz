@@ -1,7 +1,7 @@
 ---
-title: "Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3aaa7eaa8bc535874369cf08414f2211cae1bed9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7a80405f0a206cfaa0462392eddfc95878353cd7
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
 
@@ -33,8 +33,8 @@ Nakonec, pokud používáte architekturu REST, [hypermédií](https://www.infoq.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Scott Hanselman. Správa verzí základní RESTful webového rozhraní API ASP.NET, umožněno**
-    <http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
+-   **Scott Hanselman. Správa verzí RESTful webová rozhraní API ASP.NET Core umožněno**
+    <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
 -   **Správa verzí RESTful webového rozhraní API**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)

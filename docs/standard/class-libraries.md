@@ -1,7 +1,7 @@
 ---
-title: "Knihovny tříd rozhraní .NET"
-description: "Zjistěte, jak knihovny tříd rozhraní .NET umožňují skupiny užitečné funkce na moduly, které můžete používat více aplikací."
-keywords: "Rozhraní .NET, .NET core"
+title: Knihovny tříd rozhraní .NET
+description: Zjistěte, jak knihovny tříd rozhraní .NET umožňují skupiny užitečné funkce na moduly, které můžete používat více aplikací.
+keywords: Rozhraní .NET, .NET core
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
@@ -13,15 +13,15 @@ ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8f7c421d2490678f7122e78bc0b83ebf3a1aa9ea
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 44d5745daed8539c5dd48b08f9f73edce4da939f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-class-libraries"></a>Knihovny tříd rozhraní .NET
 
-Knihovny tříd se [sdílenou knihovnu](http://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries) koncept pro .NET. Ty umožňují componentize užitečné funkce do modulů, které můžete používat více aplikací. Můžete také používají jako prostředek k načítání funkce, které nejsou potřeba nebo není známý při spuštění aplikace. Knihovny tříd jsou popsány pomocí [formát souboru sestavení .NET](assembly-format.md).
+Knihovny tříd se [sdílenou knihovnu](https://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries) koncept pro .NET. Ty umožňují componentize užitečné funkce do modulů, které můžete používat více aplikací. Můžete také používají jako prostředek k načítání funkce, které nejsou potřeba nebo není známý při spuštění aplikace. Knihovny tříd jsou popsány pomocí [formát souboru sestavení .NET](assembly-format.md).
 
 Existují tři typy knihovny tříd, které můžete použít:
 
@@ -43,7 +43,7 @@ Přenosné knihovny jsou podporovány na více implementace rozhraní .NET. Se s
 
 Konfigurace platformy zvolíte při vytvoření přenosné knihovny. Jedná se o sadu platformy, které potřebujete podporovat (například rozhraní .NET Framework 4.5 +, Windows Phone 8.0 +). Další platformy, které se rozhodnete podporu, méně rozhraní API a méně předpoklady platformy můžete nastavit, nejnižší společný jmenovatel. Tato vlastnost může být složitá na první pohled od osob, které jsou často uvažování "víc je lepší", ale najít další podporované platformy výsledky v menší počet dostupných rozhraní API.
 
-Celá řada vývojářů knihovny, že jste přepnuli neměly více knihoven specifické pro platformu z jednoho zdroje (pomocí direktivy Podmíněná kompilace) na přenosné knihovny. Existují [několik přístupů](http://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html) pro přístup k specifické pro platformu funkcionalitu v rámci přenosné knihovny s [návnada a přepínače](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/) maximum široce přijat technika v tomto okamžiku.
+Celá řada vývojářů knihovny, že jste přepnuli neměly více knihoven specifické pro platformu z jednoho zdroje (pomocí direktivy Podmíněná kompilace) na přenosné knihovny. Existují [několik přístupů](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html) pro přístup k specifické pro platformu funkcionalitu v rámci přenosné knihovny s [návnada a přepínače](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/) maximum široce přijat technika v tomto okamžiku.
 
 ### <a name="net-standard-class-libraries"></a>Knihovny standardní tříd rozhraní .NET
 

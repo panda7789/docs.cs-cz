@@ -1,12 +1,13 @@
 ---
-title: "Práce s binární Data (služby WCF Data Services)"
-ms.custom: 
+title: Práce s binární Data (služby WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e02a98a327947e32acd42ccf79d922f5dff6fb6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 99143200b8135d5737454de325a95399c62fd506
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binární Data (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny umožňuje načíst a aktualizovat binární data ze [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v jednom z následujících způsobů:  
@@ -33,10 +35,10 @@ ms.lasthandoff: 12/22/2017
   
 -   Jako datový proud samostatné binárního prostředku. Toto je doporučená metoda k přístupu a změna dat binární rozsáhlý objekt (BLOB), která může představovat fotografie, videa nebo jiný typ kódovaného binární data.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]implementuje streamování binární data pomocí protokolu HTTP, jak jsou definovány v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Binární data v tento mechanismus, je považován za příslušný mediální zdroj, která je oddělená od ale související s entity, která se nazývá záznam odkazu média. Další informace najdete v tématu [streamování zprostředkovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] implementuje streamování binární data pomocí protokolu HTTP, jak jsou definovány v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Binární data v tento mechanismus, je považován za příslušný mediální zdroj, která je oddělená od ale související s entity, která se nazývá záznam odkazu média. Další informace najdete v tématu [streamování zprostředkovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
   
 > [!TIP]
->  Podrobný příklad, jak vytvořit [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] klientskou aplikaci, která stáhne binární obrázkových souborů z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [Data služby streamování zprostředkovatele řady část 2: přístupu na média Datový proud prostředku z klienta](http://go.microsoft.com/fwlink/?LinkId=201637). Si můžete stáhnout ukázkový kód pro službu datového proudu fotografií data umístěná v příspěvku na blogu [vysílání datového proudu fotografií služby vzorek dat](http://go.microsoft.com/fwlink/?LinkId=198988) v galerie kódů MSDN.  
+>  Podrobný příklad toho, jak vytvořit klientskou aplikaci Windows Presentation Foundation (WPF), který stahuje binární obrázkových souborů z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [služby streamování zprostředkovatele řady-část dat 2: přístup k datový proud prostředku média z klienta](http://go.microsoft.com/fwlink/?LinkId=201637). Si můžete stáhnout ukázkový kód pro službu datového proudu fotografií data umístěná v příspěvku na blogu [vysílání datového proudu fotografií služby vzorek dat](http://go.microsoft.com/fwlink/?LinkId=198988) v galerie kódů MSDN.  
   
 ## <a name="entity-metadata"></a>Entity Metadata  
  Entita, která má datový proud prostředku související média je uvedené v metadata služby dat pomocí `HasStream` atribut použitý typ entity, který je položka odkaz na médium. V následujícím příkladu `PhotoInfo` entita je položka odkaz médií, která má související mediálního zdroje, uvedené `HasStream` atribut.  
@@ -49,7 +51,7 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny poskytuje metody pro přístup k datové proudy binárního prostředku z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby. Při stahování mediálního zdroje, můžete buď použít identifikátor URI prostředku média nebo můžete získat binární datový proud, který obsahuje samotná data prostředků média. Můžete také nahrát data prostředků média jako binárního datového proudu.  
   
 > [!TIP]
->  Podrobný příklad, jak vytvořit [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] klientskou aplikaci, která stáhne binární obrázkových souborů z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [Data služby streamování zprostředkovatele řady část 2: přístupu na média Datový proud prostředku z klienta](http://go.microsoft.com/fwlink/?LinkId=201637). Si můžete stáhnout ukázkový kód pro službu datového proudu fotografií data umístěná v příspěvku na blogu [vysílání datového proudu fotografií služby vzorek dat](http://go.microsoft.com/fwlink/?LinkId=198988) v galerie kódů MSDN.  
+>  Podrobný příklad toho, jak vytvořit klientskou aplikaci Windows Presentation Foundation (WPF), který stahuje binární obrázkových souborů z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [služby streamování zprostředkovatele řady-část dat 2: přístup k datový proud prostředku média z klienta](http://go.microsoft.com/fwlink/?LinkId=201637). Si můžete stáhnout ukázkový kód pro službu datového proudu fotografií data umístěná v příspěvku na blogu [vysílání datového proudu fotografií služby vzorek dat](http://go.microsoft.com/fwlink/?LinkId=198988) v galerie kódů MSDN.  
   
 ### <a name="getting-the-uri-of-the-binary-stream"></a>Získávání Identifikátor URI binární datový proud  
  Při načítání určitých typů médií prostředky, například bitové kopie a další soubory médií, je často jednodušší použít identifikátor URI prostředku média v aplikaci než zpracování binární datový proud sám sebe. Chcete-li získat identifikátor URI přidružený záznam udělení média odkaz datový proud prostředku, musí volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> instanci, která je sledování entity. Následující příklad ukazuje způsob volání <xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> metoda získat identifikátor URI média datový proud prostředku, který se používá k vytvoření nové bitové kopie na straně klienta:  

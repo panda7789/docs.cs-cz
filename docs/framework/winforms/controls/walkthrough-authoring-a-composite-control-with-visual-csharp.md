@@ -1,12 +1,13 @@
 ---
-title: "Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#"
-ms.custom: 
+title: 'Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - custom controls [C#]
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 880effb930943fcb8715dbc10c9676fae0bd903c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c88a9b4786fd544d175243fedb56b5071c8990f6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual C# #
 Složené ovládací prvky poskytují prostředky, pomocí kterého lze vytvořit vlastní grafické rozhraní a znovu použít. Složeného ovládacího prvku je v podstatě součást s vizuální reprezentace. Takto může obsahovat jeden nebo více Windows Forms – ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou vlastností zobrazení nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky můžete umístit v rozhraní Windows Forms stejným způsobem jako další ovládací prvky. V první části tohoto návodu, vytvořte jednoduché složeného ovládacího prvku názvem `ctlClock`. V druhé části tohoto průvodce, můžete rozšířit funkce `ctlClock` prostřednictvím dědičnosti.  
@@ -39,9 +41,9 @@ Složené ovládací prvky poskytují prostředky, pomocí kterého lze vytvoři
   
 1.  Na **soubor** nabídky, přejděte na příkaz **nový**a potom klikněte na **projektu** otevřete **nový projekt** dialogové okno.  
   
-2.  Ze seznamu [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] projekty, vyberte **knihovny ovládacích prvků Windows Forms** šablona projektu, typ `ctlClockLib` v **název** pole a pak klikněte na **OK** .  
+2.  Ze seznamu Projekty Visual C#, vyberte **knihovny ovládacích prvků Windows Forms** šablona projektu, typ `ctlClockLib` v **název** pole a pak klikněte na **OK**.  
   
-     Název projektu `ctlClockLib`, je také přiřazený k oboru názvů root ve výchozím nastavení. Kořenový obor názvů se použijí pro kvalifikaci názvy součásti v sestavení. Například, pokud dvě sestavení poskytují komponenty s názvem `ctlClock`, můžete zadat vaše `ctlClock` pomocí součásti`ctlClockLib.ctlClock.`  
+     Název projektu `ctlClockLib`, je také přiřazený k oboru názvů root ve výchozím nastavení. Kořenový obor názvů se použijí pro kvalifikaci názvy součásti v sestavení. Například, pokud dvě sestavení poskytují komponenty s názvem `ctlClock`, můžete zadat vaše `ctlClock` pomocí součásti `ctlClockLib.ctlClock.`  
   
 3.  V Průzkumníku řešení klikněte pravým tlačítkem na **UserControl1.cs**a potom klikněte na **přejmenovat**. Změňte název souboru `ctlClock.cs`. Klikněte **Ano** tlačítko po zobrazení dotazu, pokud chcete přejmenovat všechny odkazy na tento element kódu "UserControl1".  
   

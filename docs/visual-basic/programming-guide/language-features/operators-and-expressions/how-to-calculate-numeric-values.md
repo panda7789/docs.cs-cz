@@ -1,11 +1,12 @@
 ---
-title: "Postupy: Výpočet numerických hodnot (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Výpočet numerických hodnot (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - operator precedence
@@ -17,14 +18,14 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 65cd446b99018d029e8a18d69ed33d8b8ac28f8c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 322e2c9fe7f668e08a42cd707c5d81090aca627c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Postupy: Výpočet numerických hodnot (Visual Basic)
 Můžete vypočítat číselné hodnoty prostřednictvím numerických výrazů. A *číselného výrazu* je výraz, který obsahuje literály, konstanty a proměnné představující číselné hodnoty a operátory, které fungují v těchto hodnot.  
@@ -45,7 +46,7 @@ Můžete vypočítat číselné hodnoty prostřednictvím numerických výrazů.
   
      První tři řádky zobrazit literál, konstanty a proměnné. Každé z nich tvoří platný číselného výrazu samostatně. Poslední řádek zobrazuje kombinaci proměnná s dvěma literály.  
   
-     Všimněte si, že číselného výrazu netvoří úplná [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] příkaz samostatně. Výraz musí používat jako součást dokončení příkazu.  
+     Všimněte si, že číselného výrazu netvoří dokončení příkazu jazyka Visual Basic samostatně. Výraz musí používat jako součást dokončení příkazu.  
   
 #### <a name="to-store-a-numeric-value"></a>K uložení číselná hodnota  
   

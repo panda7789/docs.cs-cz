@@ -1,26 +1,26 @@
 ---
 title: Poskytovatel WMI
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-caps.latest.revision: 
+caps.latest.revision: 35
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c1b1f923b6673ead42c7c702bd50d253ea06c765
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: c1b90a5231505f7d72d10c0ab9f9f80037d48bd7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
 Tento příklad ukazuje, jak shromažďování dat ze [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby za běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), která je integrována do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tato ukázka také ukazuje, jak přidat objekt uživatelské rozhraní WMI pro službu. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak získat data z `ICalculator` služby za běhu.  
@@ -45,7 +45,7 @@ Tento příklad ukazuje, jak shromažďování dat ze [!INCLUDE[indigo1](../../.
  Přidávání objektů WMI ke službě umožňuje odhalit uživatelem definované informace společně s integrovanou informace zprostředkovatele rozhraní WMI. To se provádí pomocí aplikace Installutil.exe publikování schématu služby WMI. Pokyny k tomu, společně s další podrobnosti naleznete v pokynů pro instalaci na konci tohoto tématu.  
   
 ## <a name="accessing-wmi-information"></a>Přístup k informacím o rozhraní WMI  
- Data rozhraní WMI je přístupná mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] aplikace, aplikace C++ a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] (http://msdn.microsoft.com/library/default.asp?url=/library/wmisdk/wmi/using_wmi.asp).  
+ Data rozhraní WMI je přístupná mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, aplikacích jazyka Visual Basic, aplikací C++ a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] (http://msdn.microsoft.com/library/default.asp?url=/library/wmisdk/wmi/using_wmi.asp).  
   
  Tato ukázka používá dva skriptů jazyka Java: jednu pro zobrazení výčtu služby spuštěné v počítači spolu s některé jejich vlastností a druhou pro zobrazení dat uživatelské rozhraní WMI. Skript otevře připojení ke zprostředkovateli rozhraní WMI, analyzuje data a zobrazí údaje získané.  
   

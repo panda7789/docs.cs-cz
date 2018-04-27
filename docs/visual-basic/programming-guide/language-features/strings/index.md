@@ -15,23 +15,23 @@ ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ffa6e015339387746b0cc1c4e5d3c2b84f84720e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: eae0bec98d960dd8d6cbe5859599a3758bdbfe56
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="strings-in-visual-basic"></a>Řetězce v jazyce Visual Basic
-Tato část popisuje základní principy používání řetězců v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+Tato část popisuje základní principy používání řetězců v jazyce Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Představení řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- Seznam témat, která popisují základní koncepty za použití řetězců v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Seznam témat, která popisují základní koncepty za použití řetězců v jazyce Visual Basic.  
   
  [Postupy: vytváření řetězců pomocí StringBuilder v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-create-strings-using-a-stringbuilder.md)  
  Ukazuje, jak efektivně vytvářet dlouhý řetězec z mnoha menší řetězců.  
   
- [Postupy: vyhledávání v řetězci](../../../../visual-basic/programming-guide/language-features/strings/how-to-search-within-a-string.md)  
+ [Postupy: Vyhledávání v řetězci](../../../../visual-basic/programming-guide/language-features/strings/how-to-search-within-a-string.md)  
  Ukazuje, jak určit index prvního výskytu dílčí řetězec.  
   
  [Převod mezi řetězci a ostatními typy dat v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  

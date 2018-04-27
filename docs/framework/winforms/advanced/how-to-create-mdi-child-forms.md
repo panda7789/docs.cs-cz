@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytváření podřízených formulářů MDI"
-ms.custom: 
+title: 'Postupy: Vytváření podřízených formulářů MDI'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d0ee60e9b25ed4238ccdd738cd59a69876f6b55d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: d28a7390ea3cfbd922f029d963ad3249db399177
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytváření podřízených formulářů MDI
 Podřízených formulářů MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md), jak tyto formuláře jsou center interakce s uživatelem.  
@@ -47,7 +49,7 @@ Podřízených formulářů MDI jsou důležitou součástí [aplikace rozhraní
   
 4.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt, přejděte na **přidat**a potom vyberte **přidat novou položku**.  
   
-5.  V **přidat novou položku** dialogové okno, vyberte **formuláře Windows** (v [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] nebo v [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]) nebo **Windows Forms aplikace (.NET)** (v [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) z **šablony** podokně. V **název** pole, název formuláře **Form2**. Klikněte **otevřete** tlačítko pro přidání formuláře do projektu.  
+5.  V **přidat novou položku** dialogové okno, vyberte **formuláře Windows** (v jazyce Visual Basic nebo v jazyce Visual C#) nebo **Windows Forms aplikace (.NET)** (v [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) z  **Šablony** podokně. V **název** pole, název formuláře **Form2**. Klikněte **otevřete** tlačítko pro přidání formuláře do projektu.  
   
     > [!NOTE]
     >  Podřízené formuláře MDI, kterou jste vytvořili v tomto kroku je standardní formuláře systému Windows. Jako takový má <xref:System.Windows.Forms.Form.Opacity%2A> vlastnosti, která vám umožňuje řídit průhlednost formuláře. Ale <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost byl navržený pro windows nejvyšší úrovně. Nepoužívejte ho s podřízených formulářů MDI, protože může docházet k potížím Malování.  

@@ -1,29 +1,30 @@
 ---
-title: "Různé datové typy (Visual Basic)"
-ms.custom: 
+title: Různé datové typy (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Object data type [Visual Basic], data types
 - data types [Visual Basic], choosing
 ms.assetid: 64c71a12-9057-4dbf-baca-7379c4aada69
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b6bb86bb6d203aa4e6bdded27a4cb78a8155ddec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f80aacccab4c215b3e3917cc73097080aa6b9941
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="miscellaneous-data-types-visual-basic"></a>Různé datové typy (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje několik typů dat, které nejsou orientované na číslic nebo znaků. Místo toho budou se týkají specializované data, jako Ano/ne hodnoty, hodnoty data a času a adresy objektu.  
+Visual Basic poskytuje několik typů dat, které nejsou orientované na číslic nebo znaků. Místo toho budou se týkají specializované data, jako Ano/ne hodnoty, hodnoty data a času a adresy objektu.  
   
- Pro tabulka zobrazující porovnání vedle sebe [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] datové typy, najdete v části [datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md).  
+ Tabulka zobrazující porovnání vedle sebe Visual Basic – datové typy, najdete v části [datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md).  
   
 ## <a name="boolean-type"></a>Typem logická hodnota  
  [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) je bez znaménka hodnota, který je považován za buď `True` nebo `False`. Šířku dat závisí na implementující platformy. Pokud proměnná může obsahovat pouze hodnoty dvou stavů například true nebo false, Ano/Ne, nebo zapnutí nebo vypnutí, deklarujte ji jako `Boolean`.  
@@ -43,5 +44,5 @@ ms.lasthandoff: 11/21/2017
  [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
  [Číselné datové typy](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)  
  [Znakové datové typy](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)  
- [Řešení potíží s datové typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Statické a pozdní vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+ [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Statické a dynamické vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)

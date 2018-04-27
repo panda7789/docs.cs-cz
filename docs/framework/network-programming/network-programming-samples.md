@@ -1,80 +1,74 @@
 ---
-title: "Síťové programování ukázky"
-ms.custom: 
+title: Síťové programování ukázky
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8efacc29-7367-47c2-8638-a4f66385ad91
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: df1e1c16c52afc79219d7ea2503b200a420477df
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3e450582e85c07060d13eb90a4c069abdbd17982
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="network-programming-samples"></a>Síťové programování ukázky
-Tato část obsahuje popisy a odkazy na stažení síť programování, ukázky, která používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.PeerToPeer>, <xref:System.Net.Security> , <xref:System.Net.Sockets>a související obory názvů.  
+Tato část obsahuje popisy a odkazy na stažení síť programování, ukázky, která používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> a související obory názvů. 
   
+> [!NOTE]
+> Všechny ukázky jsou dostupné v [verze rozhraní .NET Framework SDK 2.0 ukázky Stáhnout](https://www.microsoft.com/en-us/download/confirmation.aspx?id=22181), který byl vydán pro rozhraní .NET Framework 2.0 a může být datem.
+
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Stažení Ukázky technologie indikátor průběhu](http://go.microsoft.com/fwlink/?LinkID=179556)  
+ [Stažení Ukázky technologie indikátor průběhu](https://msdn.microsoft.com/en-us/library/t8w6294a(v=vs.85).aspx)  
  Ukazuje, jak chcete-li zobrazit průběh stahování souborů.  
   
- [Ukázka technologie FTP klienta.](http://go.microsoft.com/fwlink/?LinkID=179557)  
+ [Ukázka technologie FTP klienta.](https://msdn.microsoft.com/en-us/library/b7810t5c(v=vs.85).aspx)  
  Ukazuje, jak pro nahrávání a stahování souborů do a ze serveru FTP.  
   
- [Ukázka HttpListener technologie](http://go.microsoft.com/fwlink/?LinkID=179558)  
+ [Ukázka HttpListener technologie](https://msdn.microsoft.com/en-us/library/y7cbb2y2(v=vs.85).aspx)  
  Ukazuje, jak zpracovat požadavky HTTP z v rámci aplikace.  
+ 
+ [Ukázka HttpListener ASPX hostitele aplikace](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/dd767375(v%3dvs.90))   
+ Ukazuje, jak používat funkce <xref:System.Net.HttpListener?displayProperty=nameWithType> třídy za účelem vytvoření serveru HTTP, který směruje volání do hostované aplikace ASP.NET.
   
- [Ukázka HttpListener ASPX hostitele aplikace](http://go.microsoft.com/fwlink/?LinkID=179560)  
- Ukazuje, jak používat funkce <xref:System.Net.HttpListener> třídy za účelem vytvoření serveru HTTP, který směruje volání do hostované aplikace ASP.NET.  
-  
- [Ukázka technologie poštovní modul](http://go.microsoft.com/fwlink/?LinkID=179561)  
+ [Ukázka technologie poštovní modul](https://msdn.microsoft.com/en-us/library/whw7xbk2(v=vs.85).aspx)  
  Ukazuje, jak k odesílání e-mailové zprávy z klientské aplikace.  
   
- [Ukázkový nástroj NetStat technologie](http://go.microsoft.com/fwlink/?LinkID=179562)  
+ [Ukázkový nástroj NetStat technologie](https://msdn.microsoft.com/en-us/library/ks32hs88(v=vs.85).aspx)  
  Demonstruje nástroj NCLNetStat sítě informace.  
   
- [Ukázka technologie informace o síti](http://go.microsoft.com/fwlink/?LinkID=179564)  
+ [Ukázka technologie informace o síti](https://msdn.microsoft.com/en-us/library/2xatedhd(v=vs.85).aspx)  
  Ukazuje, jak sledovat a zobrazit informace o síti.  
   
- [Ukázka technologie ping klienta](http://go.microsoft.com/fwlink/?LinkID=179565)  
+ [Ukázka technologie ping klienta](https://msdn.microsoft.com/en-us/library/5253acs7(v=vs.85).aspx)  
  Demonstruje klientskou aplikaci, která může odeslat příkaz ping vzdáleného hostitele.  
   
- [Ukázka WebClient technologie](http://go.microsoft.com/fwlink/?LinkID=179566)  
+ [Ukázka WebClient technologie](https://msdn.microsoft.com/en-us/library/fxk992zc(v=vs.85).aspx)  
  Ukazuje, jak provádět běžné operace, jako je například nahrávání nebo stahování souborů nebo data.  
   
- [Ukázka zabezpečení datové proudy](http://go.microsoft.com/fwlink/?LinkID=179567)  
+ [Ukázka zabezpečení datové proudy](https://msdn.microsoft.com/en-us/library/ms180980(v=vs.85).aspx)  
  Ukazuje, jak používat pro komunikaci mezi klientem a serverem zabezpečené datového proudu.  
   
- [Ukázka Sockets IPv6](http://go.microsoft.com/fwlink/?LinkID=179568)  
+ [Ukázka Sockets IPv6](https://msdn.microsoft.com/en-us/library/ms180981(v=vs.85).aspx)  
  Demonstruje použití sockets, pokud je povolen protokol IPv6.  
   
- [Ukázka Průzkumníka FTP technologie](http://go.microsoft.com/fwlink/?LinkID=179569)  
+ [Ukázka Průzkumníka FTP technologie](https://msdn.microsoft.com/en-us/library/ms233623(v=vs.85).aspx)  
  Ukazuje, jak zobrazit obsah serveru FTP.  
   
- [Ukázka technologie soketu výkonu](http://go.microsoft.com/fwlink/?LinkID=179570)  
- Ukazuje, jak používat vylepšení <xref:System.Net.Sockets.Socket> třída sestavit aplikaci serveru, která používá vstupně-výstupní operace asynchronní sítě k dosažení nejvyšší výkon.  
-  
- [Ukázka PeerToPeer technologie](http://go.microsoft.com/fwlink/?LinkID=179571)  
- Ukazuje, jak používat nové třídy v <xref:System.Net.PeerToPeer> oboru názvů k registraci a publikování název partnerského zařízení a potom vyřešte název partnerského zařízení.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Net>  
   
  <xref:System.Net.NetworkInformation>  
   
- <xref:System.Net.PeerToPeer>  
-  
- <xref:System.Net.Sockets>  
-  
 ## <a name="see-also"></a>Viz také  
  [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
  [Postupy: Témata programování vizuální vrstvy](../../../docs/framework/network-programming/network-programming-how-to-topics.md)  
- [Ukázky sítě pro .NET](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

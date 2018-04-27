@@ -11,15 +11,15 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 76db5388c75d4eb3b5cc23c1e57cc391a15f2934
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: cab12426308be258134e0385c5a6eb6cdb5d544b
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>Navrhování vrstvu trvalosti infrastruktury
 
-Součásti trvalosti dat poskytnout přístup k datům hostovaným v rámci hranice mikroslužbu (to znamená, databáze mikroslužbu). Obsahují skutečné implementace komponenty, například úložiště a [jednotky práce](http://martinfowler.com/eaaCatalog/unitOfWork.html) třídy, jako jsou vlastní EF DBContexts.
+Součásti trvalosti dat poskytnout přístup k datům hostovaným v rámci hranice mikroslužbu (to znamená, databáze mikroslužbu). Obsahují skutečné implementace komponenty, například úložiště a [jednotky práce](https://martinfowler.com/eaaCatalog/unitOfWork.html) třídy, jako jsou vlastní EF DBContexts.
 
 ## <a name="the-repository-pattern"></a>Vzor úložiště
 
@@ -90,7 +90,7 @@ Datový objekt přístup přímo provádí operace přístupu a trvalosti dat pr
 
 Jednotka práce, se označuje jako jediná transakce, který zahrnuje několik vložení, aktualizaci nebo odstranění operace. Jednoduše řečeno znamená to, že pro akci konkrétního uživatele (například registrace na webu), insert, update a delete transakce jsou zpracovávány v rámci jedné transakce. Toto je efektivnější než zpracování více transakcí databáze chattier způsobem.
 
-Tyto více trvalost operací později v rámci jedné akce při kódu z aplikační vrstvu příkazů ho. Rozhodnutí o provádění změn v paměti pro úložiště skutečná databáze obvykle závisí na [jednotky práce vzor](http://martinfowler.com/eaaCatalog/unitOfWork.html). V EF vzoru pracovní jednotky je implementovaný jako DBContext.
+Tyto více trvalost operací později v rámci jedné akce při kódu z aplikační vrstvu příkazů ho. Rozhodnutí o provádění změn v paměti pro úložiště skutečná databáze obvykle závisí na [jednotky práce vzor](https://martinfowler.com/eaaCatalog/unitOfWork.html). V EF vzoru pracovní jednotky je implementovaný jako DBContext.
 
 V řadě případů můžete tento vzor nebo způsob použití operace u úložiště zvýšit výkon aplikace a omezit možnost nekonzistence. Také zmenšuje transakce blokování v tabulkách databáze, protože všechny zamýšlené operace potvrzeny jako součást jedné transakce. Toto je efektivnější oproti provádění mnoho izolované operací v databázi. Vybrané ORM tedy moci optimalizovat provádění proti dané databázi seskupením několik akcí aktualizace v rámci stejné transakci oproti spuštěních mnoho malých a samostatné transakce.
 
@@ -139,7 +139,7 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
 ### <a name="the-repository-pattern"></a>Vzor úložiště
 
 -   **EDWARD Hieatt a Rob mi. Vzor úložiště.**
-    [*http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
+    [*https://martinfowler.com/eaaCatalog/repository.html*](https://martinfowler.com/eaaCatalog/repository.html)
 
 -   **Vzor úložiště**
     [*https://msdn.microsoft.com/library/ff649690.aspx*](https://msdn.microsoft.com/library/ff649690.aspx)
@@ -152,7 +152,7 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
 ### <a name="unit-of-work-pattern"></a>Jednotka práce vzor
 
 -   **Martin Fowler. Jednotka práce vzor.**
-    [*http://martinfowler.com/eaaCatalog/unitOfWork.html*](http://martinfowler.com/eaaCatalog/unitOfWork.html)
+    [*https://martinfowler.com/eaaCatalog/unitOfWork.html*](https://martinfowler.com/eaaCatalog/unitOfWork.html)
 
 <!-- -->
 
@@ -164,7 +164,7 @@ V nadcházejících částech se vysvětluje, jak implementovat vzor specifikace
 -   **Specifikace vzor.**
     [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
 
--   **Zařízení Evans Erica (2004). Domain Driven Design. Addison-Wesley. p. 224.**
+-   **Zařízení Evans Erica (2004). Doména řízené návrhu. Addison-Wesley. p. 224.**
 
 -   **Specifikace. Martin Fowler**
     [*https://www.martinfowler.com/apsupp/spec.pdf/*](https://www.martinfowler.com/apsupp/spec.pdf)

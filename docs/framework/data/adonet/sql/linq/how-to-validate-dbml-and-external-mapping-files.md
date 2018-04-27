@@ -1,27 +1,29 @@
 ---
-title: "Postupy: ověření DBML a externí mapování souborů"
-ms.custom: 
+title: 'Postupy: ověření DBML a externí mapování souborů'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d9ea37f5-0a9e-4401-8fc3-1e6fd44c49f9
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7724586c33c19654c3657a5a4604a3c74f2c8756
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4d3fc297078c9f6c1ac8b2d8a498050f294a5437
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-validate-dbml-and-external-mapping-files"></a>Postupy: ověření DBML a externí mapování souborů
-Externí mapování soubory a soubory dbml, které můžete upravit, musí být ověřený proti jejich definice příslušného schématu. Toto téma obsahuje [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] uživatelům s kroky pro implementaci procesu ověření.  
+Externí mapování soubory a soubory dbml, které můžete upravit, musí být ověřený proti jejich definice příslušného schématu. Toto téma poskytuje uživatelům sady Visual Studio s kroky k implementaci procesu ověření.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -56,7 +58,7 @@ Externí mapování soubory a soubory dbml, které můžete upravit, musí být 
      Určí, zda byly vygenerovány chyby, upozornění nebo zprávy. Pokud ne, je soubor XML platný proti definici schématu.  
   
 ## <a name="alternate-method-for-supplying-schema-definition"></a>Alternativní metoda pro zadávání definice schématu  
- Pokud z nějakého důvodu odpovídající XSD souboru není uveden v **schémat XML** dialogové okno, soubor XSD můžete stáhnout z tématu nápovědy. Následující kroky nápovědy uložte stažený soubor ve formátu Unicode vyžaduje [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] editoru XML.  
+ Pokud z nějakého důvodu odpovídající XSD souboru není uveden v **schémat XML** dialogové okno, soubor XSD můžete stáhnout z tématu nápovědy. Následující kroky umožňují Uložte stažený soubor ve formátu Unicode požadované pomocí editoru XML sady Visual Studio.  
   
 #### <a name="to-copy-a-schema-definition-file-from-a-help-topic"></a>Zkopírujte soubor definice schématu z tématu nápovědy  
   

@@ -1,10 +1,11 @@
 ---
-title: "Postupy: Volání kompilátoru příkazového řádku (Visual Basic)"
+title: 'Postupy: Volání kompilátoru příkazového řádku (Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - command-line arguments
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - Visual Basic compiler, starting
 - command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5c69860ede5620272e67bde435e6e6fa08cc81bc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f1ccf08ba58fa6af60bd8ffd7cba79b205dc0f3d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Volání kompilátoru příkazového řádku (Visual Basic)
 Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spustitelného souboru do příkazového řádku, také známé jako v systému MS-DOS. Pokud kompilujete z výchozího příkazového řádku systému Windows, musíte zadat plně kvalifikovanou cestu ke spustitelnému souboru. Pokud chcete přepsat toto výchozí chování, můžete použít [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] příkazový řádek, nebo upravit proměnné prostředí PATH. Oba umožňují zkompilovat z libovolného adresáře jednoduše zadáním názvu kompilátoru.  
@@ -54,7 +55,7 @@ Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spusti
   
 6.  Klikněte na tlačítko **OK** potvrďte provedené úpravy a zavřete dialogová okna.  
   
-     Po provedení změny proměnné prostředí PATH, můžete spustit [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru na příkazovém řádku Windows z libovolného adresáře v počítači.  
+     Po provedení změny proměnné prostředí PATH, můžete spustit kompilátoru jazyka Visual Basic v příkazovém řádku Windows z libovolného adresáře v počítači.  
   
 ### <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>K volání kompilátoru pomocí příkazového řádku systému Windows  
   

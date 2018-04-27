@@ -14,11 +14,11 @@ ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
 caps.latest.revision: 29
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: db49a602b83940cab3f87dea17accb92a2be825d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5397462994d5e684406c6de65c4f31d9d20eef22
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -39,7 +39,7 @@ Je běžné pro get indexer nebo přistupující objekt set sestává z jedné p
 
 Všimněte si, že `=>` představuje výraz text a který `get` – klíčové slovo nepoužívá. 
 
-Od verze jazyka C# 7, i get a přistupující objekt set může být implementovaná jako výraz vozidlo členy. V takovém případě obě `get` a `set` klíčová slova se musí použít. Příklad:
+Od verze jazyka C# 7.0, i get a přistupující objekt set může být implementovaná jako výraz vozidlo členy. V takovém případě obě `get` a `set` klíčová slova se musí použít. Příklad:
 
 [!code-csharp[indexers#3](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-3.cs)]  
   
@@ -59,19 +59,19 @@ Od verze jazyka C# 7, i get a přistupující objekt set může být implementov
   
 -   Indexery může mít více než jeden formální parametr, například při přístupu k dvourozměrná pole.  
   
-##  <a name="BKMK_RelatedSections"></a>Související oddíly  
+##  <a name="BKMK_RelatedSections"></a> Související oddíly  
   
 -   [Použití indexerů](../../../csharp/programming-guide/indexers/using-indexers.md)  
   
--   [Indexery v rozhraní](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
+-   [Indexery v rozhraní](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
   
 -   [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
   
--   [Omezení přístupnosti přistupujícího objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
+-   [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)

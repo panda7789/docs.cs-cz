@@ -14,11 +14,11 @@ ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c26bb7322064d0b8cdf733e74f8b37e81b1e620c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 558eae39b38161d01d599bba6c3121839560884b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="interfaces-visual-basic"></a>Rozhraní (Visual Basic)
 *Rozhraní* definovat vlastnosti, metod a události, které můžete implementovat třídy. Rozhraní umožňují definovat funkce jako malé skupiny úzce související vlastnosti, metod a událostí; To snižuje problémy s kompatibilitou, protože rozšířené implementace pro vaše rozhraní můžete vyvíjet bez ohrožující existujícího kódu. Kdykoli můžete přidat nové funkce ve vývoji implementace a další rozhraní.  
@@ -46,13 +46,13 @@ ms.lasthandoff: 10/22/2017
  [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/VisualBasic/index_1.vb)]  
   
 ## <a name="implementing-interfaces"></a>Implementace rozhraní  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Vyhrazené slovo `Implements` slouží dvěma způsoby. `Implements` Příkaz označuje, že třídu nebo strukturu implementuje rozhraní. `Implements` – Klíčové slovo označuje, že struktura člena nebo člena třídy implementuje členem konkrétní rozhraní.  
+ Visual Basic vyhrazené slovo `Implements` slouží dvěma způsoby. `Implements` Příkaz označuje, že třídu nebo strukturu implementuje rozhraní. `Implements` – Klíčové slovo označuje, že struktura člena nebo člena třídy implementuje členem konkrétní rozhraní.  
   
 ### <a name="implements-statement"></a>Implements – Příkaz  
  Pokud třídu nebo strukturu implementuje jedno nebo více rozhraní, musí obsahovat `Implements` příkaz ihned po `Class` nebo `Structure` příkaz. `Implements` Příkaz vyžaduje čárkami oddělený seznam rozhraní k implementaci třídou. Třídu nebo strukturu musí implementovat všichni členové rozhraní pomocí `Implements` – klíčové slovo.  
   
 ### <a name="implements-keyword"></a>Implements – klíčové slovo  
- `Implements` – Klíčové slovo vyžaduje čárkami oddělený seznam členů rozhraní k implementaci. Obecně platí pouze členem jedné rozhraní je zadána, ale můžete zadat více členů. Specifikace člena rozhraní se skládá z názvu rozhraní, které musí být zadané v příkazu implementuje v rámci třídy; období; a název členské funkce, vlastnost nebo událost, která má být implementována. Název člena, který implementuje rozhraní člen lze použít jakýkoliv povolený identifikátor a není omezen na `InterfaceName_MethodName` konvence použít v dřívějších verzích [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ `Implements` – Klíčové slovo vyžaduje čárkami oddělený seznam členů rozhraní k implementaci. Obecně platí pouze členem jedné rozhraní je zadána, ale můžete zadat více členů. Specifikace člena rozhraní se skládá z názvu rozhraní, které musí být zadané v příkazu implementuje v rámci třídy; období; a název členské funkce, vlastnost nebo událost, která má být implementována. Název člena, který implementuje rozhraní člen lze použít jakýkoliv povolený identifikátor a není omezen na `InterfaceName_MethodName` konvence používal v dřívějších verzích jazyka Visual Basic.  
   
  Například následující kód ukazuje, jak deklarovat podprogramu s názvem `Sub1` , která implementuje metodu rozhraní:  
   

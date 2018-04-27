@@ -1,10 +1,11 @@
 ---
-title: "Priorita operátorů v jazyce Visual Basic"
+title: Priorita operátorů v jazyce Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - arithmetic operators [Visual Basic], precedence
@@ -19,14 +20,14 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6c0fb466b404cafdd4b91d061971fd683375c715
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2d8de9deea84c7f0c11c91b55951cdfc200b017f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorita operátorů v jazyce Visual Basic
 Pokud dojde k několik operací ve výrazu, každou část je vyhodnotit a vyřešit v předurčeném pořadí názvem *operátorů*.  
@@ -95,10 +96,10 @@ Dim n3 As Integer = 96 / (8 / 4)
   
  První výraz vyhodnotí dělení 96 / 8 (což vede k 12) a pak dělení 12 / 4, což vede k tři. Protože kompilátor vyhodnotí operací pro `n1` zleva doprava vyhodnocení je stejná při tomto pořadí explicitně uvedené pro `n2`. Obě `n1` a `n2` mít výsledek tři. Naopak `n3` má výsledku 48, protože závorkách vynutit kompilátoru vyhodnotit 8 / 4 první.  
   
- Z důvodu toto chování operátory jsou označeny jako *zbývajících asociativní* v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Z důvodu toto chování operátory jsou označeny jako *zbývajících asociativní* v jazyce Visual Basic.  
   
 ## <a name="overriding-precedence-and-associativity"></a>Přepsání přednost a Asociativnost  
- Závorky můžete vynutit některé části výraz, který se vyhodnotí než jiné. To můžete přepsat pořadí priorit a levé asociativnost. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]vždycky provádí operace, které jsou uvedeny v závorkách dříve, než mimo. Ale v uvozovkách, udržuje obyčejnou přednost a asociativnost, pokud nechcete použít závorky v závorkách. Toto dokládá následující příklad.  
+ Závorky můžete vynutit některé části výraz, který se vyhodnotí než jiné. To můžete přepsat pořadí priorit a levé asociativnost. Visual Basic vždycky provádí operace, které jsou uvedeny v závorkách dříve, než mimo. Ale v uvozovkách, udržuje obyčejnou přednost a asociativnost, pokud nechcete použít závorky v závorkách. Toto dokládá následující příklad.  
   
 ```  
 Dim a, b, c, d, e, f, g As Double  
@@ -119,11 +120,11 @@ g = (a - (b + c)) / (d * e)
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [= – Operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)  
- [Is – operátor](../../../visual-basic/language-reference/operators/is-operator.md)  
- [IsNot – operátor](../../../visual-basic/language-reference/operators/isnot-operator.md)  
- [Like – operátor](../../../visual-basic/language-reference/operators/like-operator.md)  
- [Typeof – operátor](../../../visual-basic/language-reference/operators/typeof-operator.md)  
- [Await – operátor](../../../visual-basic/language-reference/operators/await-operator.md)  
+ [= – operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)  
+ [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)  
+ [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)  
+ [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
  [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

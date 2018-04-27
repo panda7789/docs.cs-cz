@@ -1,12 +1,12 @@
 ---
-title: "Číslovky v architektuře .NET Framework"
-ms.custom: 
+title: Číslovky v architektuře .NET Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - SIMD
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bd55b127f73fe1cefce9724f3a74400b5fe7488f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 074ed60a3cbc1949eea4a8d866cdb3bba7c0f196
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="numerics-in-the-net-framework"></a>Číslovky v architektuře .NET Framework
 Rozhraní .NET Framework podporuje standardní číselné integrální a s plovoucí desetinnou čárkou primitiv, a také <xref:System.Numerics.BigInteger>, typ integrální bez teoretické horní nebo dolní mez <xref:System.Numerics.Complex>, typ, který představuje komplexní čísla a sadu SIMD povoleno Vector typy v <xref:System.Numerics> oboru názvů.  
@@ -67,7 +67,7 @@ Rozhraní .NET Framework podporuje standardní číselné integrální a s plovo
  <xref:System.Double> a <xref:System.Single> typy jsou určena k použití pro hodnoty, které jsou svou povahou nepřesný (například vzdálenost mezi dvěma hvězdičkami v systému sluneční) a pro aplikace, ve kterých je vysoký stupeň přesnost a malého zaokrouhlení chyba není vyžaduje se. Měli byste použít <xref:System.Decimal?displayProperty=nameWithType> typ pro případy, kdy větší přesnost je povinná a zaokrouhlení chyba není žádoucí,  
   
 ## <a name="biginteger"></a>BigInteger  
- <xref:System.Numerics.BigInteger?displayProperty=nameWithType>je neměnné typ, který představuje celé libovolně velké, jehož hodnota teoreticky nemá žádné horní nebo dolní meze. Metody <xref:System.Numerics.BigInteger> typ úzce paralelní u celočíselných typů.  
+ <xref:System.Numerics.BigInteger?displayProperty=nameWithType> je neměnné typ, který představuje celé libovolně velké, jehož hodnota teoreticky nemá žádné horní nebo dolní meze. Metody <xref:System.Numerics.BigInteger> typ úzce paralelní u celočíselných typů.  
   
 ## <a name="complex"></a>Komplexní  
  <xref:System.Numerics.Complex> Typ představuje komplexní číslo, který je číslo s součástí reálné číslo a z části imaginary číslo. Podporuje standardní sadu aritmetické, porovnání, rovnosti, explicitní převod a operátory implicitního převodu, jakož i matematické, algebraických a trigonometrické metody.  
@@ -85,7 +85,7 @@ Rozhraní .NET Framework podporuje standardní číselné integrální a s plovo
   
  Typy povolené SimD vektoru se implementují ve IL, což vám umožní se použije na nepodporujícím SimD hardwaru a JIT kompilátory. Abyste mohli využívat SIMD pokyny, musí být zkompilovány 64bitové aplikace pomocí nového 64bitový kompilátor JIT pro spravovaný kód, který je součástí rozhraní .NET Framework 4.6; Pokud je cílem x64 přidá podporu SIMD procesory.  
   
- SIMD se dá stáhnout i jako [balíček NuGet](http://www.nuget.org/packages/System.Numerics.Vectors).  Balíček NuGET také obsahuje obecný <xref:System.Numerics.Vector%601> struktura, která vám umožní vytvořit vektoru všechny primitivní číselného typu. (Primitivní číselnými typy zahrnují všechny číselné typy v <xref:System> oboru názvů s výjimkou <xref:System.Decimal>.) Kromě toho <xref:System.Numerics.Vector%601> struktura poskytuje knihovnu usnadňující metody, které můžete volat při práci s vektory.  
+ SIMD se dá stáhnout i jako [balíček NuGet](https://www.nuget.org/packages/System.Numerics.Vectors).  Balíček NuGET také obsahuje obecný <xref:System.Numerics.Vector%601> struktura, která vám umožní vytvořit vektoru všechny primitivní číselného typu. (Primitivní číselnými typy zahrnují všechny číselné typy v <xref:System> oboru názvů s výjimkou <xref:System.Decimal>.) Kromě toho <xref:System.Numerics.Vector%601> struktura poskytuje knihovnu usnadňující metody, které můžete volat při práci s vektory.  
   
 ## <a name="see-also"></a>Viz také  
  [Základy vytváření aplikací](../../docs/standard/application-essentials.md)

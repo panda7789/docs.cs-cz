@@ -1,5 +1,5 @@
 ---
-title: "Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)"
+title: 'Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-caps.latest.revision: 
+caps.latest.revision: 22
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: eca6da96d3bf9c5c25216e442999be77a332b5c9
-ms.sourcegitcommit: 70dcc89737127e4d5f20500242409b687e51b07e
+ms.openlocfilehash: d6b740e78503d0937c9a0f38a573bb7dd778075d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)
 
@@ -28,7 +28,7 @@ Dynamické objekty vystavit členy například vlastnosti a metody za běhu, mí
   
  Dynamické objekty také poskytují pohodlný přístup k dynamické jazyků, například IronPython a IronRuby. Dynamický objekt můžete použít k odkazování na dynamické skript, který je považován za běhu.  
   
- Odkazování na dynamický objekt s použitím pozdní vazba. V jazyce C#, zadejte typ objektu pozdní vazbou jako `dynamic`. V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], zadejte typ objektu pozdní vazbou jako `Object`. Další informace najdete v tématu [dynamické](../../../csharp/language-reference/keywords/dynamic.md) a [Early a pozdní vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).  
+ Odkazování na dynamický objekt s použitím pozdní vazba. V jazyce C#, zadejte typ objektu pozdní vazbou jako `dynamic`. V jazyce Visual Basic, zadejte typ objektu pozdní vazbou jako `Object`. Další informace najdete v tématu [dynamické](../../../csharp/language-reference/keywords/dynamic.md) a [Early a pozdní vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).  
   
  Můžete vytvořit vlastní dynamických objektů pomocí třídy v <xref:System.Dynamic?displayProperty=nameWithType> oboru názvů. Například můžete vytvořit <xref:System.Dynamic.ExpandoObject> a zadejte členy tohoto objektu v době běhu. Můžete také vytvořit vlastní typ, který dědí <xref:System.Dynamic.DynamicObject> třídy. Potom můžete přepsat členů <xref:System.Dynamic.DynamicObject> třídy poskytují spuštění dynamické funkce.  
   
@@ -127,7 +127,7 @@ Je třeba [IronPython](http://ironpython.net/) pro .NET pro dokončení tohoto n
   
 #### <a name="to-create-a-sample-application-that-uses-the-custom-dynamic-object"></a>K vytvoření ukázkové aplikace, která používá vlastní dynamických objektů  
   
-1.  V **Průzkumníku řešení**, poklikejte na soubor Module1.vb, pokud používáte [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] nebo souboru Program.cs, pokud používáte Visual C#.  
+1.  V **Průzkumníku**, poklikejte na soubor Module1.vb, pokud používáte Visual Basic nebo souboru Program.cs Pokud používáte Visual C#.  
   
 2.  Přidejte následující kód do hlavní postup vytvoření instance `ReadOnlyFile` třídu pro soubory TextFile1.txt souboru. Kód používá pozdní vazba volání dynamické členy a načtení řádků textu, které obsahují řetězec "Zákazník".  
   
@@ -147,11 +147,11 @@ Další projekt, který vytvoříte v tomto návodu přistupuje k knihovny, kter
   
 2.  V **nový projekt** dialogovém **typy projektů** podokně, ujistěte se, že **Windows** je vybrána. Vyberte **konzolové aplikace** v **šablony** podokně. V **název** zadejte `DynamicIronPythonSample`a potom klikněte na **OK**. Vytvoření nového projektu.  
   
-3.  Pokud používáte [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], klikněte pravým tlačítkem na projekt DynamicIronPythonSample a pak klikněte na tlačítko **vlastnosti**. Klikněte **odkazy** kartě. Klikněte **přidat** tlačítko. Pokud používáte Visual C#, v **Průzkumníku řešení**, klikněte pravým tlačítkem myši **odkazy** složku a pak klikněte na tlačítko **přidat odkaz na**.  
+3.  Pokud používáte Visual Basic, klikněte pravým tlačítkem na projekt DynamicIronPythonSample a pak klikněte na **vlastnosti**. Klikněte **odkazy** kartě. Klikněte **přidat** tlačítko. Pokud používáte Visual C#, v **Průzkumníku řešení**, klikněte pravým tlačítkem myši **odkazy** složku a pak klikněte na tlačítko **přidat odkaz na**.  
   
 4.  Na **Procházet** kartě, přejděte do složky, kde jsou nainstalovány knihovny IronPython. Například C:\Program pro rozhraní .NET 4.0 2.6 Files\IronPython. Vyberte **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll**, a **Microsoft.Dynamic.dll** knihovny . Click **OK**.  
   
-5.  Pokud používáte [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], upravte soubor Module1.vb. Pokud používáte Visual C#, upravte soubor Program.cs.  
+5.  Pokud používáte Visual Basic, upravte soubor Module1.vb. Pokud používáte Visual C#, upravte soubor Program.cs.  
   
 6.  Na začátek souboru přidejte následující kód k importu `Microsoft.Scripting.Hosting` a `IronPython.Hosting` obory názvů v IronPython knihovny.  
   

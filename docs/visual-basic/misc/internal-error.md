@@ -1,5 +1,5 @@
 ---
-title: "Vnitřní chyba (Visual Basic)"
+title: Vnitřní chyba (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,17 +8,17 @@ ms.topic: article
 f1_keywords:
 - vbrID51
 ms.assetid: 21266dbb-f4a1-4c5d-a646-27909cf53248
-caps.latest.revision: 
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6c4023233e588da83d37c061b77cf7cb8988fd6e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 62445f6eb31b06c3d0f16e1924cab0d815e76b47
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="internal-error-visual-basic"></a>Vnitřní chyba (Visual Basic)
-Došlo k interní selhání v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+V jazyce Visual Basic došlo k interní selhání.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   

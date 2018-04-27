@@ -1,12 +1,13 @@
 ---
-title: "Import schématu pro generování tříd"
-ms.custom: 
+title: Import schématu pro generování tříd
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a872fbd5be56fed3d01481d1740c70932fd60c06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7fc755ff7f1b6c583a1e9aa1bc209495563812f0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
 Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a variace.  
@@ -63,7 +65,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
   
  Za normálních okolností veřejné typy jsou generovány ze schématu s privátním polím a odpovídající vlastnosti člena veřejná data. Chcete-li vygenerovat interní typy místo, nastavte <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> vlastnost `true`.  
   
- Následující příklad ukazuje schéma převede na interní třídy, kdy <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> je nastavena na`true.`  
+ Následující příklad ukazuje schéma převede na interní třídy, kdy <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> je nastavena na `true.`  
   
  [!code-csharp[c_SchemaImportExport#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#2)]
  [!code-vb[c_SchemaImportExport#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#2)]  
@@ -77,7 +79,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
   
  [!code-xml[c_SchemaImportExport#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  
   
- Následující příklad používá `Namespaces` vlastnost k mapování oboru názvů "http://schemas.contoso.com/carSchema" "Contoso.Cars".  
+ Následující příklad používá `Namespaces` vlastnost mapovat "http://schemas.contoso.com/carSchema" názvů "Contoso.Cars".  
   
  [!code-csharp[c_SchemaImportExport#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#8)]
  [!code-vb[c_SchemaImportExport#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#8)]  
@@ -95,7 +97,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
 #### <a name="adding-data-binding-support-enabledatabinding-or-the-enabledatabinding-switch"></a>Přidání podpory vazby dat (EnableDataBinding nebo přepínač /enableDataBinding)  
  To odpovídá **/enableDataBinding** přepínač na nástroje Svcutil.exe.  
   
- V některých případech můžete vytvořit vazbu typy generované ze schématu součásti grafické uživatelské rozhraní tak, aby všechny výskyty tyto typy automaticky aktualizuje uživatelské rozhraní. `XsdDataContractImporter` Může generovat typy, které implementují <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní tak, že všechny změny vlastností aktivuje událost. Pokud generujete typy pro použití s programovací prostředí klienta uživatelského rozhraní, která podporuje toto rozhraní (například [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)]), nastavte <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> vlastnost, která má `true` o povolení této funkce.  
+ V některých případech můžete vytvořit vazbu typy generované ze schématu součásti grafické uživatelské rozhraní tak, aby všechny výskyty tyto typy automaticky aktualizuje uživatelské rozhraní. `XsdDataContractImporter` Může generovat typy, které implementují <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní tak, že všechny změny vlastností aktivuje událost. Pokud jsou generování typů pro použití s programovací prostředí klienta uživatelského rozhraní, která podporuje toto rozhraní (například Windows Presentation Foundation (WPF)), nastavte <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> vlastnost `true` tuto funkci povolíte.  
   
  Následující příklad ukazuje `Vehicle` třída vygenerovat pomocí <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> nastavena na `true`.  
   
@@ -112,7 +114,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
  [!code-xml[C_SchemaImportExport#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
   
 > [!NOTE]
->  Přidružení, může také zvážit seznamu. Například můžete zobrazit předchozí přidružení jako seznam komplexní `city` objekty, které mají náhodou dvě pole (pole řetězce a pole celé číslo). Obě vzory mít znázornění ve schématu XSD. Neexistuje žádný způsob k rozlišení mezi seznam a přidružení, takže pokud jsou tyto vzory vždy považovány za seznamy speciální poznámky, které jsou specifické pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je k dispozici ve schématu. Anotace označuje, že se zadaným vzorem představuje přidružení. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Referenční schéma kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+>  Přidružení, může také zvážit seznamu. Například můžete zobrazit předchozí přidružení jako seznam komplexní `city` objekty, které mají náhodou dvě pole (pole řetězce a pole celé číslo). Obě vzory mít znázornění ve schématu XSD. Neexistuje žádný způsob k rozlišení mezi seznam a přidružení, takže pokud jsou tyto vzory vždy považovány za seznamy speciální poznámky, které jsou specifické pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je k dispozici ve schématu. Anotace označuje, že se zadaným vzorem představuje přidružení. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Referenční schéma kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
  Za normálních okolností se importuje seznam jako kontrakt dat kolekce, která je odvozena ze seznamu obecný nebo jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pole, v závislosti na tom, zda schéma se následující standardní pojmenování pro kolekce. To je popsáno v podrobněji [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Přidružení jsou obvykle importovat, protože buď <xref:System.Collections.Generic.Dictionary%602> nebo kontrakt dat kolekce, která je odvozena z objekt slovníku. Zvažte například následující schéma.  
   
@@ -159,7 +161,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
   
 ##### <a name="design-considerations"></a>Aspekty návrhu  
   
--   Může být obtížné pracovat přímo s slabě typovaná reprezentaci XML. Zvažte použití modul alternativní serializace, jako <xref:System.Xml.Serialization.XmlSerializer>, pracovat s schématu není kompatibilní s daty kontrakty způsobem silného typu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+-   Může být obtížné pracovat přímo s slabě typovaná reprezentaci XML. Zvažte použití modul alternativní serializace, jako <xref:System.Xml.Serialization.XmlSerializer>, pracovat s schématu není kompatibilní s daty kontrakty způsobem silného typu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
   
 -   Některé konstrukce schématu nelze importovat pomocí <xref:System.Runtime.Serialization.XsdDataContractImporter> i v případě <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je nastavena na `true`. Znovu, zvažte použití <xref:System.Xml.Serialization.XmlSerializer> takových případech.  
   
@@ -186,9 +188,9 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
 #### <a name="import-options-advanced-options"></a>Možnosti importu: Rozšířené možnosti  
  Následující pokročilé možnosti importu:  
   
--   <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A>Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> sloužící ke generování kódu pro vygenerovaný třídy. Pokusy o mechanismus import, aby se zabránilo funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastavena, kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] funkce se používá bez omezení.  
+-   <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> sloužící ke generování kódu pro vygenerovaný třídy. Pokusy o mechanismus import, aby se zabránilo funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastavena, kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] funkce se používá bez omezení.  
   
--   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A>Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace lze zadat s touto vlastností. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí procesu importu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení se používá žádné náhradní.  
+-   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace lze zadat s touto vlastností. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí procesu importu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení se používá žádné náhradní.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataContractSerializer>  

@@ -1,9 +1,9 @@
 ---
-title: "Literál komentáře XML (Visual Basic)"
+title: Literál komentáře XML (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - XML comment literal [Visual Basic]
 - XML literals [Visual Basic], comment
 ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 36be34ac22cfe926a2eea946f5e4c4eb534de696
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d5bb8c10c28a4ab864220c1b4ce4702622e55c92
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-comment-literal-visual-basic"></a>Literál komentáře XML (Visual Basic)
 Literál představující <xref:System.Xml.Linq.XComment> objektu.  
@@ -54,9 +54,9 @@ Literál představující <xref:System.Xml.Linq.XComment> objektu.
  Literál komentáře jazyka XML je možné přiřadit do proměnné, nebo můžete zahrnout do literál XML elementu.  
   
 > [!NOTE]
->  Literál XML může zahrnovat více řádků bez použití znaky pokračování řádku. Tato funkce umožňuje kopírovat obsah z dokumentu XML a vložte ji přímo do [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] program.  
+>  Literál XML může zahrnovat více řádků bez použití znaky pokračování řádku. Tato funkce umožňuje kopírovat obsah z dokumentu XML a vložte jej přímo do programu Visual Basic.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru převede literál XML komentář k volání <xref:System.Xml.Linq.XComment.%23ctor%2A> konstruktor.  
+ Visual Basic – kompilátor převede literál XML komentář k volání <xref:System.Xml.Linq.XComment.%23ctor%2A> konstruktor.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří komentáře jazyka XML, který obsahuje text "Toto je komentář".  
@@ -66,5 +66,5 @@ Literál představující <xref:System.Xml.Linq.XComment> objektu.
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Linq.XComment>  
  [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [XML – literály](../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
  [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

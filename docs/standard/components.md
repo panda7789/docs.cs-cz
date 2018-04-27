@@ -1,6 +1,6 @@
 ---
-title: "Součástí architektury .NET"
-description: "Popisuje architektury součásti rozhraní .NET, například .NET Standard, implementace rozhraní .NET, moduly runtime rozhraní .NET a nástroje."
+title: Součástí architektury .NET
+description: Popisuje architektury součásti rozhraní .NET, například .NET Standard, implementace rozhraní .NET, moduly runtime rozhraní .NET a nástroje.
 author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
@@ -10,11 +10,11 @@ ms.technology: dotnet-standard
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8a17d4c36d9c1942166b9ad889103a7942f1813d
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 51e6779d63cdaccc5633c9e81f97471d71099653
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-architectural-components"></a>Součástí architektury .NET
 
@@ -61,7 +61,7 @@ V minulosti Mono implementována větší rozhraní API rozhraní .NET Framework
 
 Mono se obvykle používá s kompilátorem za běhu, ale nabízí i úplné statické kompilátoru (napřed předčasné kompilace), který se používá na platformách, jako je iOS.
 
-Další informace o Mono, najdete v článku [Mono dokumentaci](http://www.mono-project.com/docs/).
+Další informace o Mono, najdete v článku [Mono dokumentaci](https://www.mono-project.com/docs/).
 
 ### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
@@ -86,7 +86,7 @@ Máte přístup k rozsáhlou sadu nástrojů a součásti infrastruktury, které
 - Systém .NET projektu (na základě *.csproj*, *.vbproj*, a *.fsproj* soubory)
 - [MSBuild](/visualstudio/msbuild/msbuild), modul sestavení použitý k sestavení projektů
 - [NuGet](/nuget/), Správce balíčků společnosti Microsoft pro rozhraní .NET
-- Orchestration sestavení Open source nástrojů, jako je například [DORT](http://cakebuild.net/) a [ZFALŠOVAT](https://fake.build/)
+- Orchestration sestavení Open source nástrojů, jako je například [DORT](https://cakebuild.net/) a [ZFALŠOVAT](https://fake.build/)
 
 ## <a name="see-also"></a>Viz také
 [Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace](choosing-core-framework-server.md)   

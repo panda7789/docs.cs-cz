@@ -1,27 +1,29 @@
 ---
-title: "Nejčastější dotazy"
-ms.custom: 
+title: Nejčastější dotazy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e09dd7cb3fc979a9be0165705247cc5a63a6b328
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: caccbb76f32c38f29fa4f49adc9b7b1c8fe4045d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V následujících částech zodpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -31,7 +33,7 @@ V následujících částech zodpovědět některé běžné problémy, které s
 ## <a name="cannot-connect"></a>Nelze se připojit  
  OTÁZKY. Nelze se připojit k databázi.  
   
- A. Zkontrolujte, zda je připojovací řetězec správný a že vaše [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] je spuštěna instance. Všimněte si také, že [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyžaduje, aby byl povolen protokol pojmenovaných kanálů. Další informace najdete v tématu [učení podle návody](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).  
+ A. Ujistěte se, že je připojovací řetězec správný a že je spuštěna instance systému SQL Server. Všimněte si také, že [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyžaduje, aby byl povolen protokol pojmenovaných kanálů. Další informace najdete v tématu [učení podle návody](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).  
   
 ## <a name="changes-to-database-lost"></a>Změny databáze ztráty  
  OTÁZKY. Změny provedené k datům v databázi, ale při I reran Moje aplikace, tato změna byla již existuje.  
@@ -61,12 +63,12 @@ V následujících částech zodpovědět některé běžné problémy, které s
 ## <a name="unexpected-query-results"></a>Neočekávaný dotaz výsledky  
  OTÁZKY. Můj dotaz vrací neočekávané výsledky. Jak můžete I prohlédnout co dochází?  
   
- A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]poskytuje několik nástrojů pro zkontrolujete kód SQL, který generuje. Jedním z nejdůležitějších je <xref:System.Data.Linq.DataContext.Log%2A>. Další informace najdete v tématu [podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md).  
+ A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje několik nástrojů pro zkontrolujete kód SQL, který generuje. Jedním z nejdůležitějších je <xref:System.Data.Linq.DataContext.Log%2A>. Další informace najdete v tématu [podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md).  
   
 ## <a name="unexpected-stored-procedure-results"></a>Neočekávané uložených výsledcích procedur  
  OTÁZKY. Je nutné uložené procedury, jejichž návratová hodnota je vypočítána `MAX()`. Při přetahování uložené procedury, která [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] prostor, návratová hodnota není správná.  
   
- A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nabízí dva způsoby, jak vrátit generované hodnoty prostřednictvím uložené procedury:  
+ A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nabízí dva způsoby, jak vrátit generované hodnoty prostřednictvím uložené procedury:  
   
 -   Pojmenováním výsledných výstupů.  
   
@@ -123,7 +125,7 @@ V následujících částech zodpovědět některé běžné problémy, které s
 ## <a name="avoiding-explicit-setting-of-database-generated-values-on-insert-or-update"></a>Zamezení explicitní nastavení generované hodnoty v příkazu Insert nebo Update  
  OTÁZKY. Je nutné databázové tabulky s `DateCreated` sloupec, který použije se výchozí hodnota SQL `Getdate()`. Při pokusu vložit nový záznam pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], získá nastaven na hodnotu `NULL`. Očekávaný by mohla být nastavenou na výchozí databázi.  
   
- A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zpracuje tuto situaci automaticky pro identitu (automatického přírůstku) a rowguidcol (generované GUID) a sloupce časového razítka. V ostatních případech byste měli ručně nastavit <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A> = `true` a <xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A> = <xref:System.Data.Linq.Mapping.AutoSync.Always> / <xref:System.Data.Linq.Mapping.AutoSync.OnInsert> / <xref:System.Data.Linq.Mapping.AutoSync.OnUpdate> vlastnosti.  
+ A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zpracuje tuto situaci automaticky pro identitu (automatického přírůstku) a rowguidcol (generované GUID) a sloupce časového razítka. V ostatních případech byste měli ručně nastavit <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A> = `true` a <xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A> = <xref:System.Data.Linq.Mapping.AutoSync.Always> / <xref:System.Data.Linq.Mapping.AutoSync.OnInsert> / <xref:System.Data.Linq.Mapping.AutoSync.OnUpdate> vlastnosti.  
   
 ## <a name="multiple-dataloadoptions"></a>Více DataLoadOptions  
  OTÁZKY. Můžete zadat možnosti další zátěž bez přepsal první?  
@@ -155,12 +157,12 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="provider-model"></a>Zprostředkovatel modelu  
  OTÁZKY. Model veřejného poskytovatele je k dispozici?  
   
- A. Bez veřejného poskytovatele modelu je k dispozici. V tomto okamžiku [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] a [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] pouze.  
+ A. Bez veřejného poskytovatele modelu je k dispozici. V tomto okamžiku [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje SQL Server a [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] pouze.  
   
 ## <a name="sql-injection-attacks"></a>Útok prostřednictvím injektáže SQL  
  OTÁZKY. Jak je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] chránit před útoky Injektáž SQL?  
   
- A. Injektáž SQL byl významné riziko pro tradiční dotazy SQL tvořena zřetězením vstup uživatele. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zabraňuje takové vkládání pomocí <xref:System.Data.SqlClient.SqlParameter> v dotazech. Uživatelský vstup bude převedena na hodnoty parametrů. Tento přístup škodlivý příkazy brání použití ze vstupu zákazníka.  
+ A. Injektáž SQL byl významné riziko pro tradiční dotazy SQL tvořena zřetězením vstup uživatele. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zabraňuje takové vkládání pomocí <xref:System.Data.SqlClient.SqlParameter> v dotazech. Uživatelský vstup bude převedena na hodnoty parametrů. Tento přístup škodlivý příkazy brání použití ze vstupu zákazníka.  
   
 ## <a name="changing-read-only-flag-in-dbml-files"></a>Změna příznak jen pro čtení ve soubory DBML  
  OTÁZKY. Jak se po vytvoření model objektů ze souboru DBML eliminovat setter z některé vlastnosti?  
@@ -174,7 +176,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 3.  Zkontrolujte výchozí <xref:System.Data.Linq.Mapping.UpdateCheck> hodnotu (<xref:System.Data.Linq.Mapping.UpdateCheck.Never>) k určení, zda se jedná o správnou hodnotu pro vaši aplikaci.  
   
     > [!CAUTION]
-    >  Pokud používáte [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] v [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)], změny se můžou přepsat.  
+    >  Pokud používáte [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] v sadě Visual Studio, může být přepsána změny.  
   
 ## <a name="aptca"></a>APTCA  
  OTÁZKY. Je System.Data.Linq označen pro použití částečně důvěryhodným kódem?  
@@ -186,7 +188,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="mapping-data-from-multiple-tables"></a>Mapování dat z více tabulek  
  OTÁZKY. Data v mé entity pocházejí z různých tabulek. Jak namapovat je?  
   
- A. Můžete vytvořit zobrazení v databázi a mapovat entitu na zobrazení. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]generuje stejné SQL pro zobrazení jako v případě tabulek.  
+ A. Můžete vytvořit zobrazení v databázi a mapovat entitu na zobrazení. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generuje stejné SQL pro zobrazení jako v případě tabulek.  
   
 > [!NOTE]
 >  Použití zobrazení v tomto scénáři má určitá omezení. Tento postup funguje nejvíce bezpečně provést, pokud operace na <xref:System.Data.Linq.Table%601> podporuje podkladového zobrazení. Pouze víte operací, které jsou určené. Například většina aplikací jsou jen pro čtení, a provádět jiné výraznou číslo `Create` / `Update` / `Delete` operací pouze pomocí uložené procedury proti zobrazení.  
@@ -201,7 +203,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="second-datacontext-is-not-updated"></a>Druhý DataContext se neaktualizuje  
  OTÁZKY. Mohu použít jednu instanci <xref:System.Data.Linq.DataContext> pro uložení hodnot v databázi. Ale druhý <xref:System.Data.Linq.DataContext> na stejnou databázi nezohledňuje aktualizovanými hodnotami. Druhý <xref:System.Data.Linq.DataContext> instance zdá se, že k návratu hodnot v mezipaměti.  
   
- A. Toto chování je záměrné. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nadále vrátí stejné instance nebo hodnoty, které jste viděli v první instance. Pokud provedete aktualizace, je použít optimistickou metodu souběžného. Původní data se používá ke kontrole proti aktuální stav databáze k vyhodnocení, zda je ve skutečnosti stále beze změny. Pokud se změnila, dojde ke konfliktu a aplikace ho musí vyřešit. Jednou z možností aplikace je potřeba obnovit původní stav aktuální stav databáze a opakujte aktualizaci. Další informace najdete v tématu [postupy: Správa konfliktů změnu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md).  
+ A. Toto chování je záměrné. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nadále vrátí stejné instance nebo hodnoty, které jste viděli v první instance. Pokud provedete aktualizace, je použít optimistickou metodu souběžného. Původní data se používá ke kontrole proti aktuální stav databáze k vyhodnocení, zda je ve skutečnosti stále beze změny. Pokud se změnila, dojde ke konfliktu a aplikace ho musí vyřešit. Jednou z možností aplikace je potřeba obnovit původní stav aktuální stav databáze a opakujte aktualizaci. Další informace najdete v tématu [postupy: Správa konfliktů změnu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md).  
   
  Můžete také nastavit <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> na hodnotu false, které oplátku vypnout ukládání do mezipaměti a sledování změn. Poté můžete získat nejnovější hodnoty pokaždé, když dotazujete.  
   

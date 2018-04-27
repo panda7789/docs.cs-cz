@@ -1,24 +1,26 @@
 ---
 title: Z (entita SQL)
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 115fb8dfef46c74837d774012babdef9db915341
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 64d41359ba8a4131acb38b128238065ee2545f80
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="from-entity-sql"></a>Z (entita SQL)
 Určuje kolekci použít v [vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) příkazy.  
@@ -39,7 +41,7 @@ FROM expression [ ,...n ] as C
  `FROM C as c`  
   
 ## <a name="from-clause-items"></a>Z klauzule položek  
- Každý `FROM` položka klauzule odkazuje na kolekci zdrojové v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje následující třídy `FROM` položky klauzule: jednoduchý `FROM` položky klauzule `JOIN FROM` klauzule položky a `APPLY FROM` klauzule položky. Každá z těchto `FROM` klauzule položky je podrobně popsaná v další v následujících částech.  
+ Každý `FROM` položka klauzule odkazuje na kolekci zdrojové v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje následující třídy `FROM` položky klauzule: jednoduchý `FROM` položky klauzule `JOIN FROM` klauzule položky a `APPLY FROM` klauzule položky. Každá z těchto `FROM` klauzule položky je podrobně popsaná v další v následujících částech.  
   
 ### <a name="simple-from-clause-item"></a>Jednoduché z klauzule položky  
  Nejjednodušším `FROM` položka klauzule je jeden výraz, který identifikuje do kolekce a alias. Výraz může být jednoduše sadu entit nebo poddotazu nebo jiných výraz, který je typu kolekce. Následuje příklad:  
@@ -57,7 +59,7 @@ LOB.Customers
  Pokud není zadaný žádný alias, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí generovat alias na základě kolekce výrazu.  
   
 ### <a name="join-from-clause-item"></a>PŘIPOJENÍ z položka klauzule  
- A `JOIN FROM` položka klauzule představuje spojení mezi dvěma `FROM` klauzule položky. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje křížové spojení, vnitřní spojení, levé a pravé vnější spojení a úplné vnější spojení. Všechny tyto spojení jsou podporované podobně jako způsob, jakým jsou podporovány v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]. Jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], dva `FROM` součástí klauzule položky `JOIN` musí být nezávislé. To znamená že nelze korelaci. A `CROSS APPLY` nebo `OUTER APPLY` lze použít pro tyto případy.  
+ A `JOIN FROM` položka klauzule představuje spojení mezi dvěma `FROM` klauzule položky. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje křížové spojení, vnitřní spojení, levé a pravé vnější spojení a úplné vnější spojení. Všechny tyto spojení jsou podporované podobně jako způsob, jakým jsou podporovány v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]. Jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], dva `FROM` součástí klauzule položky `JOIN` musí být nezávislé. To znamená že nelze korelaci. A `CROSS APPLY` nebo `OUTER APPLY` lze použít pro tyto případy.  
   
 #### <a name="cross-joins"></a>Křížové spojení  
  A `CROSS JOIN` dotazu výraz vytváří kartézský součin dvou kolekcí, jak je znázorněno v následujícím příkladu:  
@@ -91,7 +93,7 @@ LOB.Customers
 >  Zachování kompatibility s SQL-92 v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] – klíčové slovo vnější je volitelný. Proto `LEFT JOIN`, `RIGHT JOIN`, a `FULL JOIN` jsou synonyma pro `LEFT OUTER JOIN`, `RIGHT OUTER JOIN`, a `FULL OUTER JOIN`.  
   
 ### <a name="apply-clause-item"></a>POUŽÍT položka klauzule  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje dva typy z `APPLY`: `CROSS APPLY` a `OUTER APPLY`.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dva typy z `APPLY`: `CROSS APPLY` a `OUTER APPLY`.  
   
  A `CROSS APPLY` vytváří jedinečný párování každého prvku kolekce na levé straně s elementem kolekce vyprodukované vyhodnocení výrazu na pravé straně. S `CROSS APPLY`, výraz na pravé straně je funkčně závislé na elementu na levé straně, jak je znázorněno v následujícím příkladu přiřazené kolekce:  
   
@@ -107,7 +109,7 @@ LOB.Customers
 >  Na rozdíl od v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], není nutné explicitní příkazu unnest krok v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 > [!NOTE]
->  `CROSS`a `OUTER APPLY` operátory byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)]. V některých případech může být kanálu dotazu jazyka Transact-SQL, který obsahuje `CROSS APPLY` nebo `OUTER APPLY` operátory. Protože někteří poskytovatelé back-end, včetně verze [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] starší než [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)], nepodporují tyto operátory, takové dotazy se nedá spustit na tyto zprostředkovatele back-end.  
+>  `CROSS` a `OUTER APPLY` operátory byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)]. V některých případech může být kanálu dotazu jazyka Transact-SQL, který obsahuje `CROSS APPLY` nebo `OUTER APPLY` operátory. Protože někteří poskytovatelé back-end, včetně verze systému SQL Server starších než [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)], nepodporují tyto operátory, takové dotazy se nedá spustit na tyto zprostředkovatele back-end.  
 >   
 >  Některé typické scénáře, které mohou vést k přítomnost `CROSS APPLY` nebo `OUTER APPLY` operátory v dotazu výstupní jsou následující: korelační poddotaz s stránkování; AnyElement přes korelační poddotazu nebo přes kolekci vyprodukované navigační; LINQ dotazy, které používají seskupování metody, které přijímají selektorem elementu; dotaz, ve kterém `CROSS APPLY` nebo `OUTER APPLY` jsou explicitně určena; dotaz, který má `DEREF` vytvořit přes `REF` vytvořit.  
   
@@ -142,7 +144,7 @@ from (C as c join D as d) cross apply c.Names as e
   
  `FROM` Vytvoří logicky klauzule multimnožina řádků typu řádku (c, d, e), kde pole c, d a e považují za element typu `C`, `D`, a `c.Names`.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]představuje alias pro každý jednoduchý `FROM` položka klauzule v oboru. Například v následujícím z klauzule fragment, jsou do oboru názvů c, d a e.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představuje alias pro každý jednoduchý `FROM` položka klauzule v oboru. Například v následujícím z klauzule fragment, jsou do oboru názvů c, d a e.  
   
 ```  
 from (C as c join D as d) cross apply c.Names as e  

@@ -19,19 +19,19 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1d2a79a05f18fecf4e008aa6a95d359c719e854b
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.openlocfilehash: 00161608997abc14202775c06ecfb283d8d67013
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]je rozhraní prezentace, které slouží k vytvoření následujících typů aplikací:  
+[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] je rozhraní prezentace, které slouží k vytvoření následujících typů aplikací:  
   
 -   Samostatné aplikace (tradiční styl [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace vytvořené jako spustitelný soubor sestavení, které jsou nainstalovány na a spustit z klientského počítače).  
   
--   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)](aplikace skládá z navigace stránky, které jsou vytvořené jako spustitelný soubor sestavení a hostované ve webových prohlížečů, jako je například [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] nebo Mozilla Firefox).  
+-   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] (aplikace skládá z navigace stránky, které jsou vytvořené jako spustitelný soubor sestavení a hostované ve webových prohlížečů, jako je například [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] nebo Mozilla Firefox).  
   
 -   Vlastní ovládací prvek knihovny (obsahující opakovaně použitelných ovládacích prvků-spustitelný soubor sestavení).  
   
@@ -70,7 +70,7 @@ ms.lasthandoff: 01/29/2018
   
 <a name="WPF_Application_Resource__Content__and_Data_Files"></a>   
 ## <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]rozšiřuje podporu jádra v [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] pro vložené prostředky s podporou pro tři druhy-spustitelný soubor datových souborů: prostředků, obsah a data. Další informace najdete v tématu [prostředek aplikace WPF, obsah a datové soubory](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje základní podpora v rozhraní Microsoft .NET Framework pro vložené prostředky s podporou pro tři druhy-spustitelný soubor datových souborů: prostředků, obsah a data. Další informace najdete v tématu [prostředek aplikace WPF, obsah a datové soubory](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).  
   
  Klíčovou součástí podporu WPF-spustitelný soubor datových souborů je umožňují identifikovat a načíst pomocí jedinečný [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]. Další informace najdete v tématu [Pack identifikátory URI v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md).  
   
@@ -88,9 +88,9 @@ ms.lasthandoff: 01/29/2018
   
  Další informace najdete v tématu [WPF ve Windows – přehled](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md).  
   
- <xref:System.Windows.Window>podporuje možnost vytvořit zvláštní typ známé jako dialogové okno. Modální a nemodální dialogová okna typy lze vytvořit.  
+ <xref:System.Windows.Window> podporuje možnost vytvořit zvláštní typ známé jako dialogové okno. Modální a nemodální dialogová okna typy lze vytvořit.  
   
- Pro usnadnění práce a výhody – opětovné použití a konzistentní podmínky koncového uživatele ve všech aplikacích [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zpřístupní tři nejběžnější [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] dialogových oken: <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog>, a <xref:System.Windows.Controls.PrintDialog>.  
+ Pro usnadnění práce a výhody – opětovné použití a konzistentní podmínky koncového uživatele ve všech aplikacích [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zpřístupní tři společná dialogová okna Windows: <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog>, a <xref:System.Windows.Controls.PrintDialog>.  
   
  Okno se zprávou je zvláštní druh dialogové okno pro zobrazení důležité textové informace pro uživatele a klást otázky jednoduché Ano/Ne/OK nebo zrušit. Můžete použít <xref:System.Windows.MessageBox> třída k vytvoření a zobrazení oken zpráv.  
   
@@ -98,7 +98,7 @@ ms.lasthandoff: 01/29/2018
   
 <a name="Navigation"></a>   
 ## <a name="navigation"></a>Navigace  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]podporuje stylu webové navigace pomocí stránek (<xref:System.Windows.Controls.Page>) a hypertextové odkazy (<xref:System.Windows.Documents.Hyperlink>). Navigace, můžou se implementovat v mnoha různými způsoby, které zahrnují následující:  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje stylu webové navigace pomocí stránek (<xref:System.Windows.Controls.Page>) a hypertextové odkazy (<xref:System.Windows.Documents.Hyperlink>). Navigace, můžou se implementovat v mnoha různými způsoby, které zahrnují následující:  
   
 -   Samostatné stránky, které jsou hostované ve webovém prohlížeči.  
   
@@ -120,11 +120,11 @@ ms.lasthandoff: 01/29/2018
   
  Informace najdete v tématu [navigační přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]podporuje také zvláštním typem navigace známé jako strukturovaný navigace. Strukturované navigační slouží k volání jednu nebo více stránek, které vrátit data strukturovaných a předvídatelné tak, že je v souladu s volání funkcí. Tato funkce závisí na <xref:System.Windows.Navigation.PageFunction%601> třída, která je popsány dále v [strukturovaných navigační přehled](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md). <xref:System.Windows.Navigation.PageFunction%601>slouží také k zjednodušení vytváření složitých navigační topologie, které jsou popsány v [přehled topologie navigační](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje také zvláštním typem navigace známé jako strukturovaný navigace. Strukturované navigační slouží k volání jednu nebo více stránek, které vrátit data strukturovaných a předvídatelné tak, že je v souladu s volání funkcí. Tato funkce závisí na <xref:System.Windows.Navigation.PageFunction%601> třída, která je popsány dále v [strukturovaných navigační přehled](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md). <xref:System.Windows.Navigation.PageFunction%601> slouží také k zjednodušení vytváření složitých navigační topologie, které jsou popsány v [přehled topologie navigační](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md).  
   
 <a name="Hosting"></a>   
 ## <a name="hosting"></a>Hostování  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]je možné hostovat v [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] nebo Firefox. Každý hostitelský model má vlastní sadu požadavky a omezení, které jsou popsané v [hostitelský](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md).  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] je možné hostovat v [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] nebo Firefox. Každý hostitelský model má vlastní sadu požadavky a omezení, které jsou popsané v [hostitelský](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md).  
   
 <a name="Build_and_Deploy"></a>   
 ## <a name="build-and-deploy"></a>Sestavení a nasazení  

@@ -1,24 +1,26 @@
 ---
-title: "Návod: Manipulace s daty (C#)"
-ms.custom: 
+title: 'Návod: Manipulace s daty (C#)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 60724967cccd1209aeec1bf53b4e6d4fa5051996
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: d1851bd4c358b96cc9b49f274b31f5f69d9b8d7b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Návod: Manipulace s daty (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Kopie v ukázkové databázi Northwind použije k přidání zákazníka, změňte název zákazníka a odstranění objednávky.  
@@ -40,14 +42,14 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
      Tento soubor můžete vygenerovat pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo na SQLMetal nástroj. Tento názorný postup byla zapsána pomocí nástroje SQLMetal s následující příkazový řádek:  
   
-     **sqlmetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" /pluralize**  
+     **SqlMetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" / pluralizovat**  
   
      Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá z šesti hlavní úlohy:  
   
--   Vytváření [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)].  
+-   Vytváření [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
   
 -   Přidání souboru kódu databáze do projektu.  
   
@@ -60,11 +62,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 -   Odesílá se tyto změny v databázi Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytváření dotazu LINQ to SQL řešení  
- V této úloze první vytvoříte [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] řešení, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
+ V této úloze první vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>Chcete-li vytvořit LINQ to SQL řešení  
   
-1.  Na [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **soubor** nabídky, přejděte na příkaz **nový**a potom klikněte na **projektu**.  
+1.  V sadě Visual Studio **soubor** nabídky, přejděte na příkaz **nový**a potom klikněte na **projektu**.  
   
 2.  V **typy projektů** v podokně **nový projekt** dialogové okno, klikněte na tlačítko **Visual C#**.  
   
@@ -79,7 +81,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, které nemusí být nainstalovány ve výchozím nastavení ve vašem projektu. Pokud System.Data.Linq není uvedena jako odkaz v projektu, přidejte ho, jak je popsáno v následujících krocích:  
   
-#### <a name="to-add-systemdatalinq"></a>To add System.Data.Linq  
+#### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
   
 1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na **přidat odkaz na**.  
   
@@ -115,7 +117,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
      A **konzoly** otevře se okno.  
   
-     Aplikace můžete zavřít stisknutím klávesy Enter v **konzoly** okno, nebo kliknutím **Zastavte ladění** na [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **ladění** nabídky.  
+     Aplikace můžete zavřít stisknutím klávesy Enter v **konzoly** okno, nebo kliknutím **Zastavte ladění** v sadě Visual Studio **ladění** nabídky.  
   
 ## <a name="creating-a-new-entity"></a>Vytvoření nové Entity  
  Vytvoření nové entity je jednoduchá. Můžete vytvořit objekty (například `Customer`) pomocí `new` – klíčové slovo.  

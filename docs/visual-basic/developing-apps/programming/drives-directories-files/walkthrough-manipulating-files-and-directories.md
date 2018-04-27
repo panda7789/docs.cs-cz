@@ -1,11 +1,12 @@
 ---
-title: "Práce se soubory a adresáře v jazyce Visual Basic"
-ms.custom: 
+title: Práce se soubory a adresáře v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - files [Visual Basic], reading text
@@ -21,19 +22,19 @@ helpviewer_keywords:
 - writing to files [Visual Basic], walkthroughs
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
-caps.latest.revision: "49"
+caps.latest.revision: 49
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bd1e61503394741e7943d30d383f2e7c5ea35f68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bff2e66b1a196117117370f7620f3f55576ad19b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Návod: Práce se soubory a adresáři v jazyce Visual Basic
-Tento názorný postup obsahuje úvod do základní informace o vstupně-výstupní soubor v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. Popisuje postup vytvoření malé aplikace, která obsahuje seznam a prověří textové soubory v adresáři. Pro každý soubor vybraný text aplikace poskytuje atributy souboru a prvního řádku obsahu. Je k dispozici možnost při zápisu informací do souboru protokolu.  
+Tento názorný postup obsahuje úvod do základní informace o souboru vstupně-výstupních operací v jazyce Visual Basic. Popisuje postup vytvoření malé aplikace, která obsahuje seznam a prověří textové soubory v adresáři. Pro každý soubor vybraný text aplikace poskytuje atributy souboru a prvního řádku obsahu. Je k dispozici možnost při zápisu informací do souboru protokolu.  
   
- Tento návod používá členy `My.Computer.FileSystem Object`, které jsou k dispozici v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>. Na konci tohoto průvodce, je ekvivalentní například zadaný používající třídy z <xref:System.IO> oboru názvů.  
+ Tento návod používá členy `My.Computer.FileSystem Object`, které jsou dostupné v jazyce Visual Basic. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>. Na konci tohoto průvodce, je ekvivalentní například zadaný používající třídy z <xref:System.IO> oboru názvů.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -47,7 +48,7 @@ Tento názorný postup obsahuje úvod do základní informace o vstupně-výstup
   
 3.  V **název** zadejte `FileExplorer` nastavit název projektu a klikněte na tlačítko **OK**.  
   
-     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]přidá projekt **Průzkumníku**, a otevře v Návrháři formulářů Windows.  
+     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] přidá projekt **Průzkumníku**, a otevře v Návrháři formulářů Windows.  
   
 4.  Přidání ovládacích prvků formuláře v následující tabulce a nastavte odpovídající hodnoty pro jejich vlastnosti.  
   
@@ -56,7 +57,7 @@ Tento názorný postup obsahuje úvod do základní informace o vstupně-výstup
     |**ListBox**|**Jméno**|`filesListBox`|  
     |**Tlačítko**|**Jméno**<br /><br /> **Text**|`browseButton`<br /><br /> **Procházet**|  
     |**Tlačítko**|**Jméno**<br /><br /> **Text**|`examineButton`<br /><br /> **Zkontrolujte**|  
-    |**Zaškrtávací políčko**|**Jméno**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložení výsledků**|  
+    |**CheckBox**|**Jméno**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložení výsledků**|  
     |**FolderBrowserDialog –**|**Jméno**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Vyberte složku, a seznam souborů ve složce  
@@ -171,4 +172,4 @@ Tento názorný postup obsahuje úvod do základní informace o vstupně-výstup
  <xref:System.IO>  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>  
- [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+ [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)

@@ -1,36 +1,38 @@
 ---
-title: "Ověřování v systému SQL Server"
-ms.custom: 
+title: Ověřování v systému SQL Server
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: fa9a23f00e7ce3b52c2ff64c8b22e1b4b8727b97
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1c918df5de4a66c00f6fd9b9dd1719ac05041ce1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v systému SQL Server
-[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]podporuje dva režimy ověřování a smíšený režim a režim ověřování systému Windows.  
+Systém SQL Server podporuje dva režimy ověřování a smíšený režim a režim ověřování systému Windows.  
   
--   Ověřování systému Windows je výchozí a se často označuje jako integrované zabezpečení protože to [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] model zabezpečení je úzce integrovaná s Windows. Konkrétní účty uživatelů a skupin systému Windows jsou důvěryhodní k přihlášení k systému SQL Server. Uživatelé systému Windows, kteří již byl ověřen nemají k dispozici další přihlašovací údaje.  
+-   Ověřování systému Windows je výchozí a se často označuje jako integrované zabezpečení vzhledem k tomu, že tento model zabezpečení systému SQL Server je úzce integrovaná s Windows. Konkrétní účty uživatelů a skupin systému Windows jsou důvěryhodní k přihlášení k systému SQL Server. Uživatelé systému Windows, kteří již byl ověřen nemají k dispozici další přihlašovací údaje.  
   
--   Smíšený režim podporuje ověřování i v systému Windows a pomocí [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]. Dvojice název a heslo uživatele se udržují v rámci [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
+-   Smíšený režim podporuje ověřování Windows a systémem SQL Server. Dvojice název a heslo uživatele se udržují v systému SQL Server.  
   
 > [!IMPORTANT]
->  Doporučujeme použít ověřování systému Windows, pokud je to možné. Ověřování systému Windows používá k ověřování uživatelů v řadu šifrované zprávy [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]. Když [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlášení používají, [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlašovacích jmen a hesel se předávají v síti, který je méně bezpečné.  
+>  Doporučujeme použít ověřování systému Windows, pokud je to možné. Ověřování systému Windows používá řadu šifrované zprávy k ověřování uživatelů v systému SQL Server. Když se použije přihlášení serveru SQL, systému SQL Server přihlašovacích jmen a hesel se předávají v síti, který je méně bezpečné.  
   
- Pomocí ověřování systému Windows, uživatelé jsou již přihlášeni k systému Windows a nemají k přihlášení na samostatně na [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]. Následující `SqlConnection.ConnectionString` Určuje ověřování systému Windows bez nutnosti uživatelské jméno nebo heslo.  
+ Pomocí ověřování systému Windows uživatelé jsou již přihlášeni k systému Windows a nemají samostatně přihlásit k systému SQL Server. Následující `SqlConnection.ConnectionString` Určuje ověřování systému Windows bez nutnosti uživatelské jméno nebo heslo.  
   
 ```  
 "Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;  
@@ -46,7 +48,7 @@ ms.lasthandoff: 01/17/2018
   
 -   Aplikace a databáze jsou ve stejném počítači.  
   
--   Používáte-li instanci [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express nebo LocalDB.  
+-   Používáte instance systému SQL Server Express nebo LocalDB.  
   
  Přihlášení serveru SQL se často používají v následujících situacích:  
   
@@ -57,27 +59,27 @@ ms.lasthandoff: 01/17/2018
 -   Internetové aplikace, jako například [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].  
   
 > [!NOTE]
->  Určení ověřování systému Windows není zakázána [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlášení. Použijte příkazu ALTER LOGIN zakázat [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkaz zakázat vysoce privilegovaných [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlášení.  
+>  Zadání ověřování systému Windows není zakázána přihlášení serveru SQL. Použijte příkazu ALTER LOGIN zakázat [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkaz Zakázat přihlášení serveru SQL vysokou úrovní oprávnění.  
   
 ## <a name="login-types"></a>Typy přihlášení  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]podporuje tři typy přihlášení:  
+ Systém SQL Server podporuje tři typy přihlášení:  
   
--   Místní uživatelský účet systému Windows nebo důvěryhodné doméně účtu. [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]spoléhá na systému Windows k ověření uživatelské účty systému Windows.  
+-   Místní uživatelský účet systému Windows nebo důvěryhodné doméně účtu. SQL Server závisí na systému Windows k ověření uživatelské účty systému Windows.  
   
 -   Skupina systému Windows. Udělení přístupu ke skupině Windows uděluje přístup do všech přihlášení uživatele systému Windows, které jsou členy skupiny.  
   
--   [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]Přihlaste se. [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]ukládá uživatelské jméno a hodnotu hash hesla v hlavní databázi pomocí interní ověřování metody ověření pokusů o přihlášení.  
+-   Přihlášení systému SQL Server. SQL Server ukládá uživatelské jméno a hodnotu hash hesla v hlavní databázi pomocí interní ověřování metody ověření pokusů o přihlášení.  
   
 > [!NOTE]
->  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]poskytuje přihlášení vytvořené z certifikáty nebo asymetrické klíče, které se používají jenom pro podepisování kódu. Nelze se připojit k [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
+>  SQL Server poskytuje přihlášení vytvořené z certifikáty nebo asymetrické klíče, které se používají jenom pro podepisování kódu. Nelze použít pro připojení k systému SQL Server.  
   
 ## <a name="mixed-mode-authentication"></a>Smíšený režim ověřování  
- Pokud je potřeba použít smíšený režim ověřování, musíte vytvořit [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlášení, které jsou uloženy v systému SQL Server. Pak budete muset zadat [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] uživatelské jméno a heslo na dobu běhu.  
+ Pokud je potřeba použít smíšený režim ověřování, musíte vytvořit přihlášení systému SQL Server, které jsou uloženy v systému SQL Server. Pak budete muset zadat uživatelské jméno SQL serveru a heslo v době běhu.  
   
 > [!IMPORTANT]
->  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]nainstaluje se [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlášení s názvem `sa` (zkratka "systému správce"). Přiřaďte silné heslo, které `sa` přihlášení a nepoužívejte `sa` přihlášení ve vaší aplikaci. `sa` Přihlášení se mapuje `sysadmin` pevné role serveru, který má neodvolatelný pověření správce pro celý server. Neexistují žádná omezení týkající se možné škody, pokud útočník získá přístup jako správce systému. Všichni členové Windows `BUILTIN\Administrators` skupinu (skupiny local Administrators) jsou členy `sysadmin` roli ve výchozím nastavení, ale můžete odebrat z této role.  
+>  SQL Server nainstaluje s přihlašovacími údaji systému SQL Server s názvem `sa` (zkratka "systému správce"). Přiřaďte silné heslo, které `sa` přihlášení a nepoužívejte `sa` přihlášení ve vaší aplikaci. `sa` Přihlášení se mapuje `sysadmin` pevné role serveru, který má neodvolatelný pověření správce pro celý server. Neexistují žádná omezení týkající se možné škody, pokud útočník získá přístup jako správce systému. Všichni členové Windows `BUILTIN\Administrators` skupinu (skupiny local Administrators) jsou členy `sysadmin` roli ve výchozím nastavení, ale můžete odebrat z této role.  
   
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]poskytuje mechanismy zásady hesel systému Windows pro [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] přihlášení, když je spuštěn na [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] nebo novější verze. Zásady pro složitost hesla jsou navrženy pro odstraňovat útoky hrubou silou zvýšením počtu možná hesla. [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]můžete použít stejné zásady složitost a vypršení platnosti použít v [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] hesla použít uvnitř [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
+ SQL Server poskytuje Windows heslo zásad mechanismy pro přihlášení serveru SQL, když je spuštěn na [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] nebo novější verze. Zásady pro složitost hesla jsou navrženy pro odstraňovat útoky hrubou silou zvýšením počtu možná hesla. Systému SQL Server můžete použít stejné zásady složitost a vypršení platnosti použít v [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] hesla použit v rámci systému SQL Server.  
   
 > [!IMPORTANT]
 >  Zřetězení řetězců připojení ze vstupu uživatele můžete ponechat vám bude zranitelný vůči útoku vkládání připojovací řetězec. Použití <xref:System.Data.SqlClient.SqlConnectionStringBuilder> vytvořit syntakticky připojovací řetězce v době běhu. Další informace najdete v tématu [Tvůrci řetězců pro připojení](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
@@ -87,7 +89,7 @@ ms.lasthandoff: 01/17/2018
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Objekty](http://msdn.microsoft.com/library/bb543165.aspx) v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] zarezervuje Online|Popisuje přihlášení a další objekty zabezpečení v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].|  
+|[Objekty](http://msdn.microsoft.com/library/bb543165.aspx) v Online knihách serveru SQL|Popisuje přihlášení a další objekty zabezpečení v systému SQL Server.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  

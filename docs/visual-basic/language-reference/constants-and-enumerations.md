@@ -1,25 +1,26 @@
 ---
-title: "Konstanty a výčty (Visual Basic)"
+title: Konstanty a výčty (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - enumerations [Visual Basic]
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9fd298cc504f9e4faf5205e53ebbf2ee355a21b3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: da42d58190e8069154cd8383cf0a87e0b19f5ae4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Konstanty a výčty (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje řadu předdefinovaných konstanty a výčty pro vývojáře. Konstanty ukládat hodnoty, které zůstat konstantní po spuštění aplikace. Výčty poskytují pohodlný způsob pro práci se sadami související konstanty a přidružení konstantních hodnot k názvy.  
+Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojáře. Konstanty ukládat hodnoty, které zůstat konstantní po spuštění aplikace. Výčty poskytují pohodlný způsob pro práci se sadami související konstanty a přidružení konstantních hodnot k názvy.  
   
 ## <a name="constants"></a>Konstanty  
   
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
 |`DEBUG`|A `Boolean` hodnotu, která může být nastavena v **vlastnosti projektu** dialogové okno. Ve výchozím nastavení, konfiguraci ladění pro projekt definuje `DEBUG`. Když `DEBUG` je definován <xref:System.Diagnostics.Debug> metody třídy generovat výstup do **výstup** okno. Pokud není definován, <xref:System.Diagnostics.Debug> metody třídy nejsou kompilovány a nevygeneruje žádný výstup ladění.|  
 |`TARGET`|Řetězec představující výstupní typ pro projekt nebo nastavení příkazového řádku **/target** možnost. Možné hodnoty `TARGET` jsou:<br /><br /> -"winexe" pro aplikaci systému Windows.<br />-"exe" pro konzolové aplikace.<br />-"library" pro knihovny tříd.<br />-"module" pro modul.<br />-Na **/target** možnost může být nastavena v [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrované vývojové prostředí. Další informace najdete v tématu [/Target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
 |`TRACE`|A `Boolean` hodnotu, která může být nastavena v **vlastnosti projektu** dialogové okno. Ve výchozím nastavení, zadejte všechny konfigurace pro projekt `TRACE`. Když `TRACE` je definován <xref:System.Diagnostics.Trace> metody třídy generovat výstup do **výstup** okno. Pokud není definován, <xref:System.Diagnostics.Trace> třídy nejsou kompilovány metody a ne `Trace` nevygeneruje výstup.|  
-|`VBC_VER`|Číslo představující [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] verze v *hlavní*. *méně závažné* formátu. Číslo verze pro [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] je 8.0.|  
+|`VBC_VER`|Číslo, které představuje verzi jazyka Visual Basic, v *hlavní*. *méně závažné* formátu. Číslo verze pro [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] je 8.0.|  
   
 ### <a name="print-and-display-constants"></a>Tiskové a zobrazení konstanty  
  Při volání tisku a zobrazit funkce, můžete použít následující konstanty ve vašem kódu místo skutečných hodnot.  
@@ -52,7 +53,7 @@ ms.lasthandoff: 11/21/2017
 |`vbVerticalTab`|Není užitečné v systému Windows.|  
   
 ## <a name="enumerations"></a>Výčty  
- Následující tabulka uvádí a popisuje výčty poskytované [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Následující tabulka uvádí a popisuje výčty poskytované jazyka Visual Basic.  
   
 |Výčet|Popis|  
 |---|---|  

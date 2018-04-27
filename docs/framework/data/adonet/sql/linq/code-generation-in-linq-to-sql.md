@@ -1,24 +1,26 @@
 ---
-title: "Generování kódu v technologii LINQ to SQL"
-ms.custom: 
+title: Generování kódu v technologii LINQ to SQL
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0d1c80817bb1126d8e9828171c2a2aeee52eb672
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: ff543efecb65e61fecef0056650b35735bef83c0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Generování kódu v technologii LINQ to SQL
 Mohou generovat kód k reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroj příkazového řádku na SQLMetal. V obou případech generování kódu začátku do konce skládá ze tří fází:  
@@ -29,13 +31,13 @@ Mohou generovat kód k reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_lo
   
 3.  Pokud se zobrazí žádné chyby ověření, soubor je předán generátor kódu.  
   
- Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojáře, kteří používají [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] můžete použít také [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro generování kódu. V tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojáři pomocí sady Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ke generování kódu. V tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="dbml-extractor"></a>Extraktor  
  Je Extraktor [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] komponenty, která přebírá metadata databáze jako vstup a vytvoří soubor DBML jako výstup.  
   
 ## <a name="code-generator"></a>Generátor kódu  
- Generátor kódu je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] součást, který překládá DBML souborů do [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)], C# nebo soubory XML mapování.  
+ Generátor kódu je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] součást, který překládá DBML souborů do jazyka Visual Basic, C# nebo XML mapování souborů.  
   
 ## <a name="xml-schema-definition-file"></a>Soubor definice schématu XML  
  Souboru DBML musí být platná proti následující definice schématu jako soubor XSD.  
@@ -43,7 +45,7 @@ Mohou generovat kód k reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_lo
  Tento soubor definice schématu z definičního souboru schématu, která se používá k ověření souboru externí mapování rozlišit. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).  
   
 > [!NOTE]
->  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]Uživatelé také najít tento soubor XSD v dialogovém okně schémat XML jako "DbmlSchema.xsd". Pokud chcete použít soubor XSD správně pro ověření souboru DBML, najdete v části [postupy: ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+>  Uživatelé sady Visual Studio také najít tento soubor XSD v dialogovém okně schémat XML jako "DbmlSchema.xsd". Pokud chcete použít soubor XSD správně pro ověření souboru DBML, najdete v části [postupy: ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  

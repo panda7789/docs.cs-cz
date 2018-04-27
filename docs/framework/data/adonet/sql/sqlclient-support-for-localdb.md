@@ -1,30 +1,32 @@
 ---
 title: Podpora SqlClient LocalDB
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a3d643ac386aebf51673f937b3f47e73c749b78f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: e2564e49a90a1c8fd9fe2cc000ebf648cf90b4e7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sqlclient-support-for-localdb"></a>Podpora SqlClient LocalDB
-Počínaje [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] kódový název Denali, o odlehčenou verzi [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], názvem databáze LocalDB, bude k dispozici. Toto téma popisuje, jak se připojit k databázi LocalDB.  
+Od systému SQL Server s kódovým názvem Denali, bude k dispozici Odlehčená verze systému SQL Server, názvem databáze LocalDB. Toto téma popisuje, jak se připojit k databázi LocalDB.  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o LocalDB, včetně toho, jak LocalDB instalace a konfigurace vaší instanci LocalDB, najdete v části [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] na webu knihy Online.  
+ Další informace o LocalDB, včetně toho, jak k LocalDB instalaci a konfiguraci vaší instanci LocalDB, najdete v části SQL Server Books Online.  
   
  Chcete-li shrnout, co můžete dělat s LocalDB:  
   
@@ -40,9 +42,9 @@ Počínaje [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] k�
     server=(localdb)\\myInstance  
     ```  
   
- `User Instance=True`Při připojení k databázi LocalDB není povolen.  
+ `User Instance=True` Při připojení k databázi LocalDB není povolen.  
   
- Můžete si stáhnout LocalDB z [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065). Pokud budete používat sqlcmd.exe ke změně dat ve vaší instanci LocalDB, budete potřebovat sqlcmd z [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012, která můžete získat také z [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Feature Pack.  
+ Můžete si stáhnout LocalDB z [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065). Pokud budete používat sqlcmd.exe ke změně dat ve vaší instanci LocalDB, budete potřebovat sqlcmd z SQL serveru 2012, který můžete získat z SQL Server 2012 Feature Pack.  
   
 ## <a name="programmatically-create-a-named-instance"></a>Vytváření pojmenovanou instanci prostřednictvím kódu programu  
  Aplikace můžete vytvořit pojmenovanou instanci a zadejte databázi, následujícím způsobem:  

@@ -1,11 +1,12 @@
 ---
-title: "Odkazy a příkaz Imports (Visual Basic)"
-ms.custom: 
+title: Odkazy a příkaz Imports (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - assemblies [Visual Basic], namespaces
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - Imports statement [Visual Basic], referencing assemblies
 - assemblies [Visual Basic], references
 ms.assetid: 38149bd4-0a6f-4b31-b5f8-94a8c33f1600
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 60c62eae57ae127fcbb860fe72853604802cccd9
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 051351c2fa0648de54bbfd36b1630ec1cd49d6f0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>Odkazy a příkaz Imports (Visual Basic)
-Můžete zpřístupnit externí objekty do projektu výběrem **přidat odkaz na** příkaz na **projektu** nabídky. Odkazy na v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] může ukazovat na sestavení, které jsou jako knihovny typů ale obsahují více informací.  
+Můžete zpřístupnit externí objekty do projektu výběrem **přidat odkaz na** příkaz na **projektu** nabídky. Odkazy v jazyce Visual Basic může ukazovat na sestavení, které jsou jako knihovny typů ale obsahují více informací.  
   
 ## <a name="the-imports-statement"></a>Příkaz Imports  
  Sestavení obsahovat jeden nebo více oborů názvů. Když přidáte odkaz na sestavení, můžete také přidat `Imports` příkaz, který má modul, který určuje, zda obory názvů toto sestavení v modulu. `Imports` Příkaz poskytuje oboru kontext, který vám umožní používat jenom ta část oboru názvů, který je nutné zadat jedinečný odkaz.  
@@ -34,19 +35,19 @@ Můžete zpřístupnit externí objekty do projektu výběrem **přidat odkaz na
   
  `Imports` [`|``Aliasname` =] `Namespace`  
   
- `Aliasname`odkazuje na krátký název, který můžete použít v kódu odkazovat na importovaný obor názvů. `Namespace`je k dispozici prostřednictvím buď obor názvů odkaz na projekt, prostřednictvím definice v rámci projektu nebo předchozí `Imports` příkaz.  
+ `Aliasname` odkazuje na krátký název, který můžete použít v kódu odkazovat na importovaný obor názvů. `Namespace` je k dispozici prostřednictvím buď obor názvů odkaz na projekt, prostřednictvím definice v rámci projektu nebo předchozí `Imports` příkaz.  
   
  Modul může obsahovat libovolný počet `Imports` příkazy. Musí být po všech `Option` příkazy, pokud existuje, ale před jakýkoli jiný kód.  
   
 > [!NOTE]
->  Nezaměňujte odkazy na projekt s `Imports` příkaz nebo `Declare` příkaz. Odkazy na projekt zpřístupnit externí objekty, například objekty v sestavení, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] projekty. `Imports` Příkaz slouží k zjednodušení přístupu k odkazy na projekt, ale neposkytuje přístup k těmto objektům. `Declare` Příkaz se používá k deklaraci odkaz na externí procedura v dynamické knihovně (DLL).  
+>  Nezaměňujte odkazy na projekt s `Imports` příkaz nebo `Declare` příkaz. Odkazy na projekt zpřístupnit externí objekty, například objekty v sestaveních pro projekty Visual Basic. `Imports` Příkaz slouží k zjednodušení přístupu k odkazy na projekt, ale neposkytuje přístup k těmto objektům. `Declare` Příkaz se používá k deklaraci odkaz na externí procedura v dynamické knihovně (DLL).  
   
 ## <a name="using-aliases-with-the-imports-statement"></a>Aliasy pomocí příkaz Imports  
  `Imports` Příkaz usnadňuje přístup metody třídy odstraněním potřeba explicitně zadejte plně kvalifikované názvy odkazy. Aliasy umožňují příjemnější název přiřadit pouze jeden součástí oboru názvů. Například pořadí, které způsobí, že jedna část textu, který se má zobrazit na více řádcích vrátit znaků CR/nového řádku je součástí <xref:Microsoft.VisualBasic.ControlChars> modulu v <xref:Microsoft.VisualBasic?displayProperty=nameWithType> oboru názvů. Pokud chcete používat tuto konstanta v programu bez alias, museli byste zadáním následujícího kódu:  
   
  [!code-vb[VbVbalrApplication#3](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_1.vb)]  
   
- `Imports`příkazy musí být vždycky okamžitě následující všechny řádky první `Option` příkazy v modulu. Následující fragment kódu ukazuje, jak importovat a přiřadit na alias <xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType> modul:  
+ `Imports` příkazy musí být vždycky okamžitě následující všechny řádky první `Option` příkazy v modulu. Následující fragment kódu ukazuje, jak importovat a přiřadit na alias <xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType> modul:  
   
  [!code-vb[VbVbalrApplication#4](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_2.vb)]  
   

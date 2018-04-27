@@ -20,17 +20,17 @@ ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 458b4c94d26b7bc083c5d31fcbccf05b42bba52e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1548f74cab4589690e49517cdf96144fb6515693
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xaml-services"></a>XAML Services
 Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané se nacházejí v sestavení System.Xaml, což je sestavení zavedené [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] sadu sestavení .NET core. Služby zahrnují čtení a zápis, třídy schématu a podporu schématu, objekty Factory zapisujících třídy, vnitřní podporu jazyka XAML a další funkce jazyka XAML.  
   
 ## <a name="about-this-documentation"></a>O této dokumentace  
- Rámcová dokumentace pro rozhraní .NET Framework XAML Services předpokládá, že máte předchozí zkušenosti s jazykem XAML a jak se mohou vztahovat na určité rozhraní, například [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] nebo [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)], nebo konkrétní technologie funkci oblasti pro Příklad přizpůsobení sestavení funkce <xref:Microsoft.Build.Framework.XamlTypes>. Tato dokumentace se nebude pokoušet vysvětlují základní informace o XAML jako značka jazyka, XAML syntaxe terminologie nebo jiného materiálu úvodní. Místo toho tato dokumentace se zaměřuje na konkrétně pomocí rozhraní .NET Framework XAML Services, která jsou povolena v knihovně System.Xaml sestavení. Většina těchto rozhraní API jsou pro scénáře integrace jazyka XAML a rozšíření. To může zahrnovat některé z následujících:  
+ Rámcová dokumentace pro rozhraní .NET Framework XAML Services předpokládá, že máte předchozí zkušenosti s jazykem XAML a jak se mohou vztahovat na určité rozhraní, například [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] nebo modelu Windows Workflow Foundation, nebo konkrétní technologie funkce oblasti, například sestavení přizpůsobení funkce ve <xref:Microsoft.Build.Framework.XamlTypes>. Tato dokumentace se nebude pokoušet vysvětlují základní informace o XAML jako značka jazyka, XAML syntaxe terminologie nebo jiného materiálu úvodní. Místo toho tato dokumentace se zaměřuje na konkrétně pomocí rozhraní .NET Framework XAML Services, která jsou povolena v knihovně System.Xaml sestavení. Většina těchto rozhraní API jsou pro scénáře integrace jazyka XAML a rozšíření. To může zahrnovat některé z následujících:  
   
 -   Rozšíření možnosti základní čtečky XAML nebo zapisovače XAML (zpracování datový proud uzlu XAML přímo; odvozování vlastní XAML čtečky nebo zapisovač XAML).  
   
@@ -49,7 +49,7 @@ Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET F
  Pokud hledáte úvodní materiály v XAML jako jazyk, můžete vyzkoušet [přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md). Toto téma popisuje XAML pro cílovou skupinu, která je nové, na [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] a také pomocí značek XAML a funkce jazyka XAML. Další užitečné dokument je úvodní informace v [specifikace jazyka XAML](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ## <a name="net-framework-xaml-services-and-systemxaml-in-the-net-architecture"></a>Rozhraní .NET framework XAML Services a System.Xaml v architektuře .NET  
- V předchozích verzích [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)], podporu pro jazykové funkce jazyka XAML byl implementované architektury, které založený na [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] a [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]) a proto nejrůznější v jeho chování a rozhraní API používá v závislosti na konkrétní framework, která byla použita. To zahrnuté XAML analyzátor a jeho objekt graf vytvoření mechanismus, vnitřní funkce jazyka XAML, podporu serializace a tak dále.  
+ V předchozích verzích [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)], podporu pro jazykové funkce jazyka XAML byl implementované architektury, které založený na [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], modelu Windows Workflow Foundation a [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]) a proto nejrůznější v jeho chování a rozhraní API používá v závislosti na tom, jaké konkrétní framework jste používali. To zahrnuté XAML analyzátor a jeho objekt graf vytvoření mechanismus, vnitřní funkce jazyka XAML, podporu serializace a tak dále.  
   
  V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework XAML Services a sestavení System.Xaml definovat většinu co je potřeba pro podporu funkce jazyka XAML. To zahrnuje základní třídy pro XAML čtení a zápis XAML. Nejdůležitější funkce přidána do rozhraní .NET Framework XAML Services, který se nenachází v žádné z implementace XAML konkrétní rozhraní je reprezentace systému typu pro jazyk XAML. Typ systému reprezentace uvede XAML objektově orientované takovým způsobem, který soustředí na možnostech XAML bez nutnosti převádět závislosti na specifické možnosti rozhraní.  
   
@@ -68,11 +68,11 @@ Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET F
   
 -   Začněte s znázornění XAML ve formátu XML s kódováním UTF a uložit jako textový soubor.  
   
--   Načtení tohoto XAML do <xref:System.Xaml.XamlXmlReader>. <xref:System.Xaml.XamlXmlReader>je <xref:System.Xaml.XamlReader> podtřídy.  
+-   Načtení tohoto XAML do <xref:System.Xaml.XamlXmlReader>. <xref:System.Xaml.XamlXmlReader> je <xref:System.Xaml.XamlReader> podtřídy.  
   
 -   Výsledkem je datový proud uzlu XAML. Dostanete jednotlivé uzly použití datový proud uzlu XAML <xref:System.Xaml.XamlXmlReader>  /  <xref:System.Xaml.XamlReader> rozhraní API. Nejobvyklejším operaci je posunut prostřednictvím datový proud uzlu XAML zpracování každý uzel pomocí "aktuální záznam" jedná.  
   
--   Předat výsledné uzly z na datový proud uzlu XAML <xref:System.Xaml.XamlObjectWriter> rozhraní API. <xref:System.Xaml.XamlObjectWriter>je <xref:System.Xaml.XamlWriter> podtřídy.  
+-   Předat výsledné uzly z na datový proud uzlu XAML <xref:System.Xaml.XamlObjectWriter> rozhraní API. <xref:System.Xaml.XamlObjectWriter> je <xref:System.Xaml.XamlWriter> podtřídy.  
   
 -   <xref:System.Xaml.XamlObjectWriter> Zapíše grafu objektu, jeden objekt současně, v souladu pokroku prostřednictvím zdrojový datový proud uzlu XAML. To lze provést pomocí pomoc kontext schématu XAML a implementace, která mají přístup k sestavení a typy systém typů zálohování a framework.  
   
@@ -82,11 +82,11 @@ Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET F
   
 -   Začněte grafu objektu čas celou aplikaci spustit, obsah uživatelského rozhraní a stav doba běhu nebo menší segment reprezentace objektu celkové aplikace za běhu.  
   
--   Objekt logické spuštění, například kořenový adresář aplikace nebo kořen dokumentu zatížení objektů do <xref:System.Xaml.XamlObjectReader>. <xref:System.Xaml.XamlObjectReader>je <xref:System.Xaml.XamlReader> podtřídy.  
+-   Objekt logické spuštění, například kořenový adresář aplikace nebo kořen dokumentu zatížení objektů do <xref:System.Xaml.XamlObjectReader>. <xref:System.Xaml.XamlObjectReader> je <xref:System.Xaml.XamlReader> podtřídy.  
   
 -   Výsledkem je datový proud uzlu XAML. Dostanete jednotlivé uzly použití datový proud uzlu XAML <xref:System.Xaml.XamlObjectReader> a <xref:System.Xaml.XamlReader> rozhraní API. Nejobvyklejším operaci je posunut prostřednictvím datový proud uzlu XAML zpracování každý uzel pomocí "aktuální záznam" jedná.  
   
--   Předat výsledné uzly z na datový proud uzlu XAML <xref:System.Xaml.XamlXmlWriter> rozhraní API. <xref:System.Xaml.XamlXmlWriter>je <xref:System.Xaml.XamlWriter> podtřídy.  
+-   Předat výsledné uzly z na datový proud uzlu XAML <xref:System.Xaml.XamlXmlWriter> rozhraní API. <xref:System.Xaml.XamlXmlWriter> je <xref:System.Xaml.XamlWriter> podtřídy.  
   
 -   <xref:System.Xaml.XamlXmlWriter> Zápisů XAML v UTF XML kódování. To můžete uložit jako textový soubor, jako datový proud, nebo v jiných formulářů.  
   
@@ -101,16 +101,16 @@ Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET F
   
 -   Různé signatury <xref:System.Xaml.XamlServices.Save%2A> uložení grafu objektu a vytvoření výstupu jako datový proud, soubor, nebo <xref:System.Xml.XmlWriter> / <xref:System.IO.TextWriter> instance.  
   
--   <xref:System.Xaml.XamlServices.Transform%2A>Převede XAML pomocí propojení cestu k načtení a uložení cestu jako jednu operaci. Můžete použít různé schématu nebo jiné základní typ systému pro <xref:System.Xaml.XamlReader> a <xref:System.Xaml.XamlWriter>, který je co vliv, jak je transformovat výsledné XAML.  
+-   <xref:System.Xaml.XamlServices.Transform%2A> Převede XAML pomocí propojení cestu k načtení a uložení cestu jako jednu operaci. Můžete použít různé schématu nebo jiné základní typ systému pro <xref:System.Xaml.XamlReader> a <xref:System.Xaml.XamlWriter>, který je co vliv, jak je transformovat výsledné XAML.  
   
  Další informace o tom, jak používat <xref:System.Xaml.XamlServices>, najdete v části [třída XAMLServices a základní XAML čtení nebo zápisu](../../../docs/framework/xaml-services/xamlservices-class-and-basic-xaml-reading-or-writing.md).  
   
 ## <a name="xaml-type-system"></a>XAML – systém typů  
  Systém typů XAML poskytuje rozhraní API, které jsou nutné pro práci s danou jednotlivých uzlu datový proud uzlu XAML.  
   
- <xref:System.Xaml.XamlType>Co jsou zpracování mezi počáteční objekt uzel a end objektu uzlu je reprezentace objektu.  
+ <xref:System.Xaml.XamlType> Co jsou zpracování mezi počáteční objekt uzel a end objektu uzlu je reprezentace objektu.  
   
- <xref:System.Xaml.XamlMember>Co jsou zpracování mezi počáteční člen uzel a end člen uzlu je reprezentace objektu - člena.  
+ <xref:System.Xaml.XamlMember> Co jsou zpracování mezi počáteční člen uzel a end člen uzlu je reprezentace objektu - člena.  
   
  Rozhraní API jako třeba <xref:System.Xaml.XamlType.GetAllMembers%2A> a <xref:System.Xaml.XamlType.GetMember%2A> a <xref:System.Xaml.XamlMember.DeclaringType%2A> sestavy vztahy mezi <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>.  
   

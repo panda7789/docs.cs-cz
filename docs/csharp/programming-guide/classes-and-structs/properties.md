@@ -1,5 +1,5 @@
 ---
-title: "Vlastnosti (Průvodce programováním v C#)"
+title: Vlastnosti (Průvodce programováním v C#)
 ms.date: 03/10/2017
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-caps.latest.revision: 
+caps.latest.revision: 38
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6f40bea2c7d39d88839a70e73e391113bee86f14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 186384c0a251d72b8726b3ae2f8f3faf0e6e008f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 
@@ -51,7 +51,7 @@ Následující příklad ilustruje tohoto vzoru. V tomto příkladu `TimePeriod`
 
  [!code-csharp[Properties#2](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-2.cs)]  
 
- Od verze jazyka C# 7, jak `get` a `set` přistupujícího objektu se dají implementovat jako výraz vozidlo členy. V takovém případě `get` a `set` klíčová slova musí být přítomen. Následující příklad ukazuje použití výraz text definice pro obě přistupující objekty. Všimněte si, že `return` – klíčové slovo se nepoužívá `get` přistupujícího objektu.
+ Od verze jazyka C# 7.0, jak `get` a `set` přistupujícího objektu se dají implementovat jako výraz vozidlo členy. V takovém případě `get` a `set` klíčová slova musí být přítomen. Následující příklad ukazuje použití výraz text definice pro obě přistupující objekty. Všimněte si, že `return` – klíčové slovo se nepoužívá `get` přistupujícího objektu.
  
   [!code-csharp[Properties#3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-3.cs)]  
 
@@ -65,13 +65,13 @@ Pokud má vlastnost oba `get` a `set` přistupujícího objektu, musí být oba 
 
 ## <a name="related-sections"></a>Související oddíly  
   
--   [Pomocí vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+-   [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
   
 -   [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
   
 -   [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
   
--   [Omezení přístupnosti přistupujícího objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
+-   [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
   
 -   [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
   
@@ -79,8 +79,8 @@ Pokud má vlastnost oba `get` a `set` přistupujícího objektu, musí být oba 
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Pomocí vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
  [Indexery](../../../csharp/programming-guide/indexers/index.md)  
  [Get – klíčové slovo](../../../csharp/language-reference/keywords/get.md)    
  [set – klíčové slovo](../../../csharp/language-reference/keywords/set.md)    

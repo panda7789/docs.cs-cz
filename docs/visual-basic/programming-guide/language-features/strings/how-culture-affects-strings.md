@@ -1,27 +1,28 @@
 ---
-title: "Vliv jazykové verze na řetězce v jazyce Visual Basic"
-ms.custom: 
+title: Vliv jazykové verze na řetězce v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - locale [Visual Basic], effect on strings
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b61f008edc446445fd5873b6138b64f29e0b8b8c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c95dcc8d04725f7a072e8c8bc7fe058e53a95c05
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
-Tato stránka nápovědy popisuje jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] používá jazykové verze provést převod řetězců a porovnání.  
+Tato stránka nápovědy popisuje, jak Visual Basic používá provést převod řetězců a porovnávání informací o jazykové verzi.  
   
 ## <a name="when-to-use-culture-specific-strings"></a>Kdy použít řetězce specifické pro jazykovou verzi  
  By měl obvykle použijte řetězce specifické pro jazykovou verzi pro všechna data prezentovaná a číst od uživatelů a použijte řetězce neutrální jazykovou verzi pro interní data aplikace.  
@@ -31,7 +32,7 @@ Tato stránka nápovědy popisuje jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)
  Ale pokud aplikace odesílá data do centrální server, měli formátu řetězce podle jeden konkrétní jazykové verzi, aby nedošlo k záměně mezi formáty potenciálně jiné datum.  
   
 ## <a name="culture-sensitive-functions"></a>Jazykové funkce  
- Všechny [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] funkce Převod řetězce (s výjimkou `Str` a `Val` funkce) pomocí informací o jazykové verzi aplikace se ujistěte, že převody a porovnání jsou vhodné pro jazykovou verzi aplikace uživatele.  
+ Všechny funkce Převod řetězce jazyka Visual Basic (s výjimkou `Str` a `Val` funkce) pomocí informací o jazykové verzi aplikace se ujistěte, že převody a porovnání jsou vhodné pro jazykovou verzi aplikace uživatel.  
   
  Klíč k úspěšně pomocí funkcí převod řetězce na aplikace, které běží na počítačích s jinou jazykovou verzi nastavení je pochopit funkcích, které používají nastavení konkrétní jazykové verze a které používají nastavení aktuální jazykové verze. Všimněte si, že nastavení jazykové verze aplikace, ve výchozím nastavení, dědí z nastavení jazykové verze operačního systému. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>, <xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>, <xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Conversion.Hex%2A>, <xref:Microsoft.VisualBasic.Conversion.Oct%2A>, a [funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
   
@@ -64,7 +65,7 @@ Tato stránka nápovědy popisuje jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)
   
 -   **Zjišťuje se, pokud dva řetězce interní aplikace přesně shodovat (obvykle pro účely zabezpečení).** Pomocí operace, které ignorovat aktuální jazykovou verzi.  
   
- Oba typy porovnání s můžete provádět [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Strings.StrComp%2A> funkce. Zadejte nepovinný `Compare` argument řídit typ porovnání: `Text` pro většinu vstup a výstup `Binary` pro určení přesné shody.  
+ Můžete provádět oba typy porovnání v jazyce Visual Basic <xref:Microsoft.VisualBasic.Strings.StrComp%2A> funkce. Zadejte nepovinný `Compare` argument řídit typ porovnání: `Text` pro většinu vstup a výstup `Binary` pro určení přesné shody.  
   
  `StrComp` Funkce vrátí celé číslo, které určuje vztah mezi dvěma porovnání řetězce podle pořadí řazení. Kladné číslo pro výsledek označuje, že první řetězec je větší než druhý řetězec. Záporný výsledek označuje první řetězec je menší, a nula označuje rovnosti mezi řetězce.  
   
@@ -79,9 +80,9 @@ Tato stránka nápovědy popisuje jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)
 |Hodnota `comparisonType` argument|Typ porovnání|Kdy použít|  
 |---|---|---|  
 |`Ordinal`|Porovnání podle bajtů řetězce se součástí.|Tuto hodnotu použijte, pokud porovnávání: malá a velká písmena identifikátorů, nastavení související se zabezpečením nebo dalších mimo jazykových identifikátorů kde bajtů musí přesně shodovat.|  
-|`OrdinalIgnoreCase`|Porovnání podle bajtů řetězce se součástí.<br /><br /> `OrdinalIgnoreCase`používá informace neutrální jazykovou verzi pro určení, kdy dva znaky se liší pouze ve velkých písmen.|Tuto hodnotu použijte, pokud porovnávání: velká a malá písmena identifikátorů, související se zabezpečením nastavení a data uložená v systému Windows.|  
-|`CurrentCulture`nebo`CurrentCultureIgnoreCase`|Porovnání podle interpretace na řetězce v aktuální jazykovou verzi.|Při porovnávání používají tyto hodnoty: data, která se zobrazí uživateli, většina vstup uživatele a další data, která vyžaduje lingvistické interpretace.|  
-|`InvariantCulture`nebo`InvariantCultureIgnoreCase`|Porovnání podle interpretace na řetězce v neutrální jazykovou verzi.<br /><br /> Liší se od `Ordinal` a `OrdinalIgnoreCase`, protože neutrální jazykovou verzi považuje za odpovídající invariantní znaky znaky mimo jeho přijatém rozsahu.|Tyto hodnoty použijte, pouze při porovnávání zachování dat nebo zobrazování jazykově relevantní data, která vyžaduje pevnou řazení.|  
+|`OrdinalIgnoreCase`|Porovnání podle bajtů řetězce se součástí.<br /><br /> `OrdinalIgnoreCase` používá informace neutrální jazykovou verzi pro určení, kdy dva znaky se liší pouze ve velkých písmen.|Tuto hodnotu použijte, pokud porovnávání: velká a malá písmena identifikátorů, související se zabezpečením nastavení a data uložená v systému Windows.|  
+|`CurrentCulture` Nebo `CurrentCultureIgnoreCase`|Porovnání podle interpretace na řetězce v aktuální jazykovou verzi.|Při porovnávání používají tyto hodnoty: data, která se zobrazí uživateli, většina vstup uživatele a další data, která vyžaduje lingvistické interpretace.|  
+|`InvariantCulture` Nebo `InvariantCultureIgnoreCase`|Porovnání podle interpretace na řetězce v neutrální jazykovou verzi.<br /><br /> Liší se od `Ordinal` a `OrdinalIgnoreCase`, protože neutrální jazykovou verzi považuje za odpovídající invariantní znaky znaky mimo jeho přijatém rozsahu.|Tyto hodnoty použijte, pouze při porovnávání zachování dat nebo zobrazování jazykově relevantní data, která vyžaduje pevnou řazení.|  
   
 ### <a name="security-considerations"></a>Důležité informace o zabezpečení  
  Pokud vaše aplikace provede rozhodnutí o zabezpečení na základě výsledku porovnání nebo operace změny velikosti písmen, pak by měl použít operaci <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda a předejte jí `Ordinal` nebo `OrdinalIgnoreCase` pro `comparisonType` argument.  

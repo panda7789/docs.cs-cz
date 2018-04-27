@@ -1,12 +1,12 @@
 ---
-title: "Šifrovací služby"
-ms.custom: 
+title: Šifrovací služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - cryptography [.NET Framework]
@@ -30,21 +30,21 @@ helpviewer_keywords:
 - cryptography [.NET Framework], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-caps.latest.revision: 
+caps.latest.revision: 34
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 941dd9d130a31c997b634bce8059afef04c178d3
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 02d399d85c53cd296fc5f49ca0ec4b51b14ad677
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
-<a name="top"></a>Veřejných sítích, jako je Internet není pro zajištění zabezpečené komunikace mezi entitami. Komunikace v těchto sítích je náchylný ke čtení nebo dokonce upravovat neoprávněným třetím stranám. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda nedošlo ke změně dat, a pomáhá poskytovat zabezpečenou komunikaci přes jinak nezabezpečené kanály. Například data mohou být šifrují pomocí šifrovacího algoritmu, přenesen šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zabrání šifrovaná data, bude obtížné dekódovat.  
+<a name="top"></a> Veřejných sítích, jako je Internet není pro zajištění zabezpečené komunikace mezi entitami. Komunikace v těchto sítích je náchylný ke čtení nebo dokonce upravovat neoprávněným třetím stranám. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda nedošlo ke změně dat, a pomáhá poskytovat zabezpečenou komunikaci přes jinak nezabezpečené kanály. Například data mohou být šifrují pomocí šifrovacího algoritmu, přenesen šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zabrání šifrovaná data, bude obtížné dekódovat.  
   
  V rozhraní .NET Framework, třídy v <xref:System.Security.Cryptography?displayProperty=nameWithType> obor názvů spravovat mnoho podrobností kryptografie pro vás. Některé jsou obálek pro nespravované Microsoft Cryptography API (rozhraní CryptoAPI), zatímco jiné jsou čistě spravované implementace. Nemusíte být odborník v kryptografii k použití těchto tříd. Když vytvoříte novou instanci jednoho z šifrovací algoritmus třídy, klíče jsou vytvořeny automaticky pro snadné použití a výchozí vlastnosti jsou bezpečné a co nejvíce zabezpečené.  
   
@@ -103,7 +103,7 @@ ms.lasthandoff: 02/01/2018
   
  Šifrování tajného klíče jsou také označovány jako symetrického šifrování, protože stejný klíč se používá pro šifrování a dešifrování. Algoritmy šifrování tajného klíče jsou velmi rychlé (ve srovnání s algoritmy veřejného klíče) a je výhodné pro provedení kryptografické transformace na velkých datových proudů. Asymetrické šifrování algoritmů, například RSA jsou omezené matematicky v tom, kolik dat můžete šifrovat. Symetrický šifrovací algoritmy obvykle nemají těchto problémů.  
   
- Typ volat bloku šifrovací algoritmus tajného klíče se používá k šifrování jeden blok dat najednou. Bloky šifer, jako je například Standard DES (Data Encryption), TripleDES, a Advanced Encryption (Standard AES), kryptograficky transformují vstupní blok  *n*  bajtů do výstupního bloku zašifrovaných bajtů. Pokud chcete zašifrovat nebo dešifrovat sekvenci bajtů, je nutné provést blok po bloku. Protože  *n*  je malý (8 bajtů pro DES a TripleDES; 16 bajtů [výchozí], bajtů 24 nebo 32 bajtů pro AES), hodnot dat, které jsou větší než  *n*  musela být šifrovaná jeden blok v čase. Hodnot dat, které jsou menší než  *n*  potřeba rozšířit tak, aby  *n*  ke zpracování.  
+ Typ volat bloku šifrovací algoritmus tajného klíče se používá k šifrování jeden blok dat najednou. Bloky šifer, jako je například Standard DES (Data Encryption), TripleDES, a Advanced Encryption (Standard AES), kryptograficky transformují vstupní blok *n* bajtů do výstupního bloku zašifrovaných bajtů. Pokud chcete zašifrovat nebo dešifrovat sekvenci bajtů, je nutné provést blok po bloku. Protože *n* je malý (8 bajtů pro DES a TripleDES; 16 bajtů [výchozí], bajtů 24 nebo 32 bajtů pro AES), hodnot dat, které jsou větší než *n* musela být šifrovaná jeden blok v čase. Hodnot dat, které jsou menší než *n* potřeba rozšířit tak, aby *n* ke zpracování.  
   
  Jednoduché formu šifrování bloku se nazývá režim electronického (ECB). Režim ECB se nepovažuje za bezpečnou, protože nepoužívá inicializační vektor k chybě při inicializaci prvního bloku prostého textu. Pro daný tajný klíč *tisíc*, šifrovací jednoduchý blok, který nepoužívá inicializační vektor zašifruje stejný vstupní blok prostého textu do stejného bloku výstup šifrovaného textu. Proto pokud máte duplicitní bloky v datovém proudu vaše vstupní ve formátu prostého textu, bude mít duplicitní bloky ve vaší výstupního datového proudu ciphertext. Tyto duplicitní výstupní bloky výstrahy neoprávněným uživatelům slabé šifrování používá algoritmy, které byly použity a možné způsoby útoku. Režim šifrování ECB je proto velmi citlivé na analýzy a nakonec, klíče zjišťování.  
   
@@ -119,11 +119,11 @@ ms.lasthandoff: 02/01/2018
   
  [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Obsahuje následující třídy, které implementují algoritmy šifrování tajného klíče:  
   
--   <xref:System.Security.Cryptography.AesManaged>(počínaje [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]).  
+-   <xref:System.Security.Cryptography.AesManaged> (počínaje [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]).  
   
 -   <xref:System.Security.Cryptography.DESCryptoServiceProvider>.  
   
--   <xref:System.Security.Cryptography.HMACSHA1>(Toto je technicky algoritmu tajného klíče, protože představuje ověřovací kód zprávy, která se vypočítává pomocí kryptografické hodnoty hash funkce v kombinaci s tajným klíčem. V tématu [hodnoty Hash](#hash_values)dál v tomto tématu.)  
+-   <xref:System.Security.Cryptography.HMACSHA1> (Toto je technicky algoritmu tajného klíče, protože představuje ověřovací kód zprávy, která se vypočítává pomocí kryptografické hodnoty hash funkce v kombinaci s tajným klíčem. V tématu [hodnoty Hash](#hash_values)dál v tomto tématu.)  
   
 -   <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.  
   
@@ -163,13 +163,13 @@ ms.lasthandoff: 02/01/2018
   
 -   <xref:System.Security.Cryptography.RSACryptoServiceProvider>  
   
--   <xref:System.Security.Cryptography.ECDiffieHellman>(základní třída)  
+-   <xref:System.Security.Cryptography.ECDiffieHellman> (základní třída)  
   
 -   <xref:System.Security.Cryptography.ECDiffieHellmanCng>  
   
--   <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey>(základní třída)  
+-   <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey> (základní třída)  
   
--   <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction>(základní třída)  
+-   <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction> (základní třída)  
   
 -   <xref:System.Security.Cryptography.ECDsaCng>  
   
@@ -192,7 +192,7 @@ ms.lasthandoff: 02/01/2018
   
 -   <xref:System.Security.Cryptography.RSACryptoServiceProvider>  
   
--   <xref:System.Security.Cryptography.ECDsa>(základní třída)  
+-   <xref:System.Security.Cryptography.ECDsa> (základní třída)  
   
 -   <xref:System.Security.Cryptography.ECDsaCng>  
   
@@ -206,7 +206,7 @@ ms.lasthandoff: 02/01/2018
   
 -   Alice odesílá do zprávy ve formátu prostého textu a hodnotu hash zprávy (digitální podpis). Bob obdrží hashuje zprávy a porovnává hodnotu hash s hodnotou, kterou obdržel od Alice hodnotě hash. Pokud jsou hodnoty hash shodné, zpráva nebyla změněna. Pokud tyto hodnoty nebudou stejné, zpráva byla změněna po ho napsal Alice.  
   
-     Tato metoda bohužel nevytváří pravost odesílatele. Každý, kdo může zosobnit Alice a odeslání zprávy do Bob. Používají stejnou algoritmus hash k podepsání své zprávy a všechny, které můžete určit Bob se, zda zpráva odpovídá jeho podpis. Toto je jednu formu útok man-in-the-middle. V tématu [NIB: Příklad zabezpečené komunikace Kryptografické služby nové generace (CNG)](http://msdn.microsoft.com/library/8048e94e-054a-417b-87c6-4f5e26710e6e) Další informace.  
+     Tato metoda bohužel nevytváří pravost odesílatele. Každý, kdo může zosobnit Alice a odeslání zprávy do Bob. Používají stejnou algoritmus hash k podepsání své zprávy a všechny, které můžete určit Bob se, zda zpráva odpovídá jeho podpis. Toto je jednu formu útok man-in-the-middle. V tématu [NIB: Příklad zabezpečené komunikace Kryptografické služby nové generace (CNG)](https://msdn.microsoft.com/library/8048e94e-054a-417b-87c6-4f5e26710e6e) Další informace.  
   
 -   Alice odešle zprávu ve formátu prostého textu Bobovi přes nezabezpečený kanál veřejné. Odešle hodnotu hash zprávy Bobovi přes zabezpečený kanál privátní. Robert obdrží zprávu ve formátu prostého textu, rozdělí a porovná součet hash k soukromě výměně hash. Pokud se klíče hash shodují, Bob ví dvě věci:  
   
@@ -271,13 +271,13 @@ ms.lasthandoff: 02/01/2018
   
  Kromě toho následující třídy poskytují informace o konkrétní podpisu:  
   
--   <xref:System.Security.Cryptography.StrongNameSignatureInformation>obsahuje informace o podpis silného názvu pro manifest.  
+-   <xref:System.Security.Cryptography.StrongNameSignatureInformation> Obsahuje informace o podpis silného názvu pro manifest.  
   
--   <xref:System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation>představuje informace o podpisu Authenticode pro manifest.  
+-   <xref:System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation> představuje informace o podpisu Authenticode pro manifest.  
   
--   <xref:System.Security.Cryptography.X509Certificates.TimestampInformation>obsahuje informace o časového razítka na podpis Authenticode.  
+-   <xref:System.Security.Cryptography.X509Certificates.TimestampInformation> obsahuje informace o časového razítka na podpis Authenticode.  
   
--   <xref:System.Security.Cryptography.X509Certificates.TrustStatus>poskytuje jednoduchý způsob, jak zkontrolovat, zda je důvěryhodný podpis Authenticode.  
+-   <xref:System.Security.Cryptography.X509Certificates.TrustStatus> poskytuje jednoduchý způsob, jak zkontrolovat, zda je důvěryhodný podpis Authenticode.  
   
  [Zpět na začátek](#top)  
   
@@ -307,11 +307,11 @@ ms.lasthandoff: 02/01/2018
   
  [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] Také zahrnuje celou řadu pomocných tříd CNG, jako jsou následující:  
   
--   <xref:System.Security.Cryptography.CngProvider>udržuje zprostředkovatele úložiště klíčů.  
+-   <xref:System.Security.Cryptography.CngProvider> udržuje zprostředkovatele úložiště klíčů.  
   
--   <xref:System.Security.Cryptography.CngAlgorithm>udržuje CNG algoritmus.  
+-   <xref:System.Security.Cryptography.CngAlgorithm> udržuje CNG algoritmus.  
   
--   <xref:System.Security.Cryptography.CngProperty>udržuje často používané vlastnosti klíče.  
+-   <xref:System.Security.Cryptography.CngProperty> udržuje často používané vlastnosti klíče.  
   
  [Zpět na začátek](#top)  
   

@@ -15,18 +15,18 @@ ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f7074206baa51259592cca3fdc224d99438791f9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 620453d140e3d4ba2ee468e5bf087df6deb9aad4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-language-features"></a>Funkce jazyka Visual Basic
-Následující témata zavádět a popisují nezbytné součásti [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], objektově orientovaný programovací jazyk. Po vytvoření uživatelského rozhraní pro vaše aplikace pomocí formuláře a ovládací prvky, budete muset psát kód, který definuje chování aplikace. Stejně jako u moderní programovací jazyk, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] podporuje mnoho běžných programovací konstrukce a jazykové elementy.  
+V následujících tématech zavádět a popisují nezbytné součásti Visual Basic, objektově orientovaný programovací jazyk. Po vytvoření uživatelského rozhraní pro vaše aplikace pomocí formuláře a ovládací prvky, budete muset psát kód, který definuje chování aplikace. Stejně jako u moderní programovací jazyk, Visual Basic podporuje mnoho běžných programovací konstrukce a jazykové elementy.  
   
- Pokud máte naprogramovaný, tak v jiných jazycích, velká část uvedenými v této části vám mohou připadat seznámit. Zatímco většina konstrukce jsou podobné jako v jiných jazycích, povaze událostmi řízené [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zavádí některé jemně lišit.  
+ Pokud máte naprogramovaný, tak v jiných jazycích, velká část uvedenými v této části vám mohou připadat seznámit. Většina konstrukce jsou podobná nastavením v jiných jazycích, povaha událostmi řízené jazyka Visual Basic představuje některé jemně lišit.  
   
- Pokud jste ještě programování, materiály v této části slouží jako úvodem do základních stavebních bloků pro psaní kódu. Jakmile porozumíte základům, můžete vytvořit výkonné aplikace pomocí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Pokud jste ještě programování, materiály v této části slouží jako úvodem do základních stavebních bloků pro psaní kódu. Jakmile porozumíte základům, můžete vytvořit výkonné aplikací pomocí jazyka Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)  
@@ -50,7 +50,7 @@ Následující témata zavádět a popisují nezbytné součásti [!INCLUDE[vbpr
  [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
  Poskytuje úvod do Delegáti a jak se používají v jazyce Visual Basic.  
   
- [Statické a pozdní vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
+ [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
  Popisuje vazbu, která se provádí pomocí kompilátoru při přiřazení objektu k proměnné objektu a rozdíly mezi objekty časné vazby a pozdní vazbu.  
   
  [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)  
@@ -71,7 +71,7 @@ Následující témata zavádět a popisují nezbytné součásti [!INCLUDE[vbpr
  [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
  Popisuje elementy kódu, které pracují s hodnotu za ruku prvky, jak efektivně používat a jak kombinovat jim poskytne nové hodnoty.  
   
- [Postupy](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  Popisuje `Sub`, `Function`, `Property`, a `Operator` postupy, jakož i Pokročilá témata například rekurzivní a přetížené procedury.  
   
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
@@ -91,4 +91,4 @@ Následující témata zavádět a popisují nezbytné součásti [!INCLUDE[vbpr
  Popisuje některé typy kolekcí, které jsou poskytovány rozhraní .NET Framework. Demonstruje použití jednoduchých kolekcí a kolekcí dvojic klíč/hodnota.  
   
  [Referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
- Poskytuje referenční informace o různých aspektech [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] programování.
+ Poskytuje referenční informace o různých aspektech programování Visual Basic.

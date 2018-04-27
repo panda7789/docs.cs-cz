@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1e1c00abfec36622f5da493165259fb1786ab8d6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a13e5a0044c51700acce6b123688868443f635ae
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>Postupy: Hostování a spuštění základní služby Windows Communication Foundation Service
 Toto je třetí šesti úlohy, které jsou nutné k vytváření [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace. Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
@@ -170,7 +170,7 @@ Toto je třetí šesti úlohy, které jsou nutné k vytváření [!INCLUDE[indig
   
 ### <a name="to-verify-the-service-is-working"></a>Chcete-li ověřit, že služba funguje  
   
-1.  Spusťte konzolovou aplikaci GettingStartedHost z uvnitř [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]. Při spuštění [!INCLUDE[wv](../../../includes/wv-md.md)] a novějších operačních systémech, služba musí být spuštěn s oprávněními správce. Protože [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] byl spuštěn s oprávněním správce, GettingStartedHost je také spustit s oprávněním správce. Můžete také otevřete nový příkazový řádek s oprávněními správce a spusťte service.exe v něm.  
+1.  Spusťte konzolovou aplikaci GettingStartedHost z uvnitř [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]. Při spuštění [!INCLUDE[wv](../../../includes/wv-md.md)] a novějších operačních systémech, služba musí být spuštěn s oprávněními správce. Protože Visual Studio byla spuštěna s oprávněními správce, GettingStartedHost je také spouštět s oprávněním správce. Můžete také otevřete nový příkazový řádek s oprávněními správce a spusťte service.exe v něm.  
   
 2.  Otevřete Internet Explorer a přejděte k ladění služby stránky v `http://localhost:8000/GettingStarted/CalculatorService`.  
   
@@ -424,7 +424,7 @@ End Module
 ```  
   
 > [!NOTE]
->  Služby, jako je tento vyžadují oprávnění k registraci adresy protokolu HTTP na počítači pro naslouchání. Toto oprávnění mají účty správců, ale není správcem účty je potřeba udělit oprávnění pro obory názvů HTTP. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Postup konfigurace oboru názvů rezervace najdete v tématu [konfigurace HTTP a HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md). Při spuštění v [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], service.exe musí být spuštěn s oprávněními správce.  
+>  Služby, jako je tento vyžadují oprávnění k registraci adresy protokolu HTTP na počítači pro naslouchání. Toto oprávnění mají účty správců, ale není správcem účty je potřeba udělit oprávnění pro obory názvů HTTP. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Postup konfigurace oboru názvů rezervace najdete v tématu [konfigurace HTTP a HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md). Při spuštění v sadě Visual Studio, musí být service.exe spuštěn s oprávněními správce.  
   
  Nyní je služba spuštěná. Pokračujte [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Informace o odstraňování potíží, najdete v části [řešení potíží s kurzu Začínáme](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).  
   

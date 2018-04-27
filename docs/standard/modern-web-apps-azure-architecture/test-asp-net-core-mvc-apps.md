@@ -1,19 +1,20 @@
 ---
-title: "Testování jádro ASP.NET MVC aplikace"
-description: "Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Testování jádro ASP.NET MVC aplikace"
+title: Testování jádro ASP.NET MVC aplikace
+description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Testování jádro ASP.NET MVC aplikace
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d23d0accc33fb8335dff602d6e1d6c8689972906
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c9e71e7aeffbdb0721dae8487fe027b937b5b28a
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Testování jádro ASP.NET MVC aplikace
 

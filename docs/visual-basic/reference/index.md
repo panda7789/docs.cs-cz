@@ -12,27 +12,27 @@ ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1bef4da309f5e281b4016912d4b0da8237db6ec0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 26cb885187cff31a085e34c60c820fe7c0bdc787
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="reference-visual-basic"></a>Odkaz (Visual Basic)
-Tato část obsahuje odkazy na referenční informace o různých aspektech [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] programování.  
+Tato část obsahuje odkazy na referenční informace o různých aspektech programování v jazyce Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Referenční dokumentace jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
- Poskytuje referenční informace pro různé aspekty [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jazyk.  
+ Poskytuje referenční informace pro různé funkce jazyka Visual Basic.  
   
  [Visual Basic – kompilátor příkazového řádku](../../visual-basic/reference/command-line-compiler/index.md)  
  Obsahuje odkazy na informace o kompilátoru příkazového řádku, který představuje alternativu ke kompilace programů v prostředí Visual Studio IDE.  
   
- [Referenční dokumentace rozhraní .NET framework](../../visual-basic/reference/net-framework-reference-information.md)  
+ [Referenční informace k rozhraní .NET Framework](../../visual-basic/reference/net-framework-reference-information.md)  
  Obsahuje odkazy na informace o práci s [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.  
   
  [Specifikace jazyka Visual Basic](../../visual-basic/reference/language-specification/index.md)  
- Obsahuje odkazy na kompletní [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] specifikace jazyka, který obsahuje podrobné informace o všech aspektech jazyka.  
+ Obsahuje odkazy na dokončení specifikace jazyka Visual Basic, který obsahuje podrobné informace o všech aspektech jazyka.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=nameWithType>  

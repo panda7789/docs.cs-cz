@@ -1,7 +1,7 @@
 ---
-title: "Řazené kolekce členů – průvodce v C#"
-description: "Další informace o typech pojmenované a nepojmenované řazené kolekce členů v jazyce C#"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
+title: Řazené kolekce členů – průvodce v C#
+description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v jazyce C#
+keywords: Rozhraní .NET, rozhraní .NET core, C#
 author: BillWagner
 ms-author: wiwagn
 ms.date: 11/23/2016
@@ -10,17 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 58f76332a8f3717fe10788382552598d6693e7e3
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
+ms.openlocfilehash: 1d1fc450503dc905e6b260a2b984e3ce2315fd45
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-tuple-types"></a>Typy řazené kolekce členů C# #
 
-C# řazených kolekcí členů jsou typy, které definujete pomocí jednoduché syntaxe. Výhody zahrnují jednodušší syntaxe, pravidla pro převody na základě číslo (označované jako mohutnost) a typy elementů a konzistentní pravidla pro kopie a přiřazení. Jako kompromis řazené kolekce členů nepodporují některé idioms objektově orientované přidružené dědičnosti. V části můžete získat přehled [řazených kolekcí členů v co je nového v C# 7](whats-new/csharp-7.md#tuples) tématu.
+C# řazených kolekcí členů jsou typy, které definujete pomocí jednoduché syntaxe. Výhody zahrnují jednodušší syntaxe, pravidla pro převody na základě číslo (označované jako mohutnost) a typy elementů a konzistentní pravidla pro kopie a přiřazení. Jako kompromis řazené kolekce členů nepodporují některé idioms objektově orientované přidružené dědičnosti. V části můžete získat přehled [řazených kolekcí členů v co je nového v C# 7.0](whats-new/csharp-7.md#tuples) tématu.
 
-V tomto tématu se dozvíte jazyk pravidla pro řazených kolekcí členů v C# 7, různé způsoby použití je a počáteční pokyny o práci s řazenými kolekcemi členů.
+V tomto tématu se dozvíte jazyk pravidla pro řazených kolekcí členů v C# 7.0 a novější, různé způsoby použití je a počáteční pokyny o práci s řazenými kolekcemi členů.
 
 > [!NOTE]
 > Vyžadovat nové funkce řazených kolekcí členů <xref:System.ValueTuple> typy.

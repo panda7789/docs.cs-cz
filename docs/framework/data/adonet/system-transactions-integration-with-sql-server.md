@@ -1,36 +1,38 @@
 ---
-title: "System.Transactions – integrace s SQL serverem"
-ms.custom: 
+title: System.Transactions – integrace s SQL serverem
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 21924441c091c53a79d4b7bf8a683f8a7c74bd07
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 06f1555c8dbbdf10e8a1d0de867ddb227cb148b6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>System.Transactions – integrace s SQL serverem
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Verze 2.0 zavedená rozhraní transakce, které je přístupné prostřednictvím <xref:System.Transactions> oboru názvů. Toto rozhraní zpřístupní transakce způsobem, který je v plně integrovaná [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], včetně [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
  Kromě těchto vylepšení programovatelnosti <xref:System.Transactions> a [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] můžou spolupracovat a koordinovat optimalizace při práci s transakce. Je možné zvýšit transakce lightweight (místní) transakci, která bude automaticky povýšen na plně distribuovanou transakci na podle potřeby.  
   
- Počínaje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0, <xref:System.Data.SqlClient> podporuje možné zvýšit transakce při práci s [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Možné zvýšit transakce nevyvolá přidaném starat se o distribuované transakce Pokud přidaném režie není nutné. Možné zvýšit transakce jsou automatické a nevyžadují žádný zásah od vývojáře.  
+ Počínaje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0, <xref:System.Data.SqlClient> podporuje možné zvýšit transakce při práci s SQL serverem. Možné zvýšit transakce nevyvolá přidaném starat se o distribuované transakce Pokud přidaném režie není nutné. Možné zvýšit transakce jsou automatické a nevyžadují žádný zásah od vývojáře.  
   
- Možné zvýšit transakce jsou k dispozici pouze při použití [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (`SqlClient`) s [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
+ Možné zvýšit transakce jsou k dispozici pouze při použití [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (`SqlClient`) se systémem SQL Server.  
   
 ## <a name="creating-promotable-transactions"></a>Vytváření možné zvýšit transakcí  
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Provider pro SQL Server poskytuje podporu pro možné zvýšit transakce, které jsou zpracovány prostřednictvím třídy v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] <xref:System.Transactions> oboru názvů. Možné zvýšit transakce optimalizovat distribuované transakce odložit vytváření distribuované transakce, dokud nebude potřeba. Pokud jen jeden správce prostředků se vyžaduje, dojde k žádné distribuované transakce.  
@@ -39,7 +41,7 @@ ms.lasthandoff: 01/17/2018
 >  Ve scénáři částečně důvěryhodné <xref:System.Transactions.DistributedTransactionPermission> je požadován při transakci je povýšit na distribuovanou transakci.  
   
 ## <a name="promotable-transaction-scenarios"></a>Scénáře možné zvýšit transakce  
- Distribuované transakce obvykle využívají významné systémové prostředky, je spravováno nástrojem Microsoft Distributed Transaction Coordinator (MS DTC), která integruje všechny správce prostředků získat přístup v rámci transakce. Je možné zvýšit transakce speciální formu <xref:System.Transactions> transakci, která efektivně deleguje práce, kterou je jednoduchý [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] transakce. <xref:System.Transactions>, <xref:System.Data.SqlClient>, a [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] koordinaci pracovní zahrnuté ve zpracování transakcí, podle potřeby zvýšení jeho úrovně na úplné distribuovanou transakci.  
+ Distribuované transakce obvykle využívají významné systémové prostředky, je spravováno nástrojem Microsoft Distributed Transaction Coordinator (MS DTC), která integruje všechny správce prostředků získat přístup v rámci transakce. Je možné zvýšit transakce speciální formu <xref:System.Transactions> transakci, která efektivně deleguje práce, kterou je jednoduchý transakce SQL serveru. <xref:System.Transactions>, <xref:System.Data.SqlClient>, a SQL Server koordinovat pracovní zahrnuté ve zpracování transakcí, podle potřeby zvýšení jeho úrovně na úplné distribuovanou transakci.  
   
  Výhodou použití možné zvýšit transakcí je, že po otevření připojení pomocí aktivní <xref:System.Transactions.TransactionScope> transakce a žádná další připojení jsou otevřené, potvrzení transakce jako lightweight transakce, místo by docházelo k další Režijní náklady na úplné distribuované transakce.  
   

@@ -15,15 +15,15 @@ ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
 caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 9f0242439caa21268a6c314409f41587890c4126
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 44c15eb9d65adf10904f8777847b0653ff1dbc99
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#) #
 
-Zkontroluje, jestli je objekt kompatibilní s daného typu, nebo (C# 7 počínaje) testy výraz se vzorem.
+Zkontroluje, jestli je objekt kompatibilní s daného typu, nebo (C# 7.0 počínaje) testy výraz se vzorem.
 
 ## <a name="testing-for-type-compatibility"></a>Testování kompatibility typu ##
 
@@ -45,7 +45,7 @@ Například následující kód určuje, zda `obj` lze převést na instanci `Pe
 
 - *Expr* představuje instanci typu, která je odvozena z *typu*. Jinými slovy, výsledek *expr* může být přetypování nahoru na instanci *typu*.
 
-- *Expr* má kompilaci typ, který je základní třídě *typ*, a *expr* má typ modulu runtime, který je *typ* nebo je odvozený od *typu* . *Typu v čase kompilace* proměnné je typ proměnné, jak jsou definovány v jeho deklaraci. *Typ modulu runtime* proměnné je typ instanci, která je přiřazena k této proměnné.
+- *Expr* má kompilaci typ, který je základní třídě *typ*, a *expr* má typ modulu runtime, který je *typ* nebo je odvozený od *typu*. *Typu v čase kompilace* proměnné je typ proměnné, jak jsou definovány v jeho deklaraci. *Typ modulu runtime* proměnné je typ instanci, která je přiřazena k této proměnné.
 
 - *Expr* představuje instanci typu, který implementuje *typ* rozhraní.
 
@@ -57,14 +57,14 @@ Následující příklad ukazuje, že `is` výraz vyhodnocen jako `true` pro ka�
 
 [!code-csharp[is#2](../../../../samples/snippets/csharp/language-reference/keywords/is/is2.cs#2)]
 
-`expr`může být jakékoli výraz, který vrátí hodnotu, s výjimkou anonymní metody a výrazy lambda. Následující příklad používá `is` vyhodnotit návratovou hodnotu volání metody.   
+`expr` může být jakékoli výraz, který vrátí hodnotu, s výjimkou anonymní metody a výrazy lambda. Následující příklad používá `is` vyhodnotit návratovou hodnotu volání metody.   
 [!code-csharp[is#4](../../../../samples/snippets/csharp/language-reference/keywords/is/is4.cs#4)]
 
-Od verze jazyka C# 7, můžete použít porovnávání vzorů s [typ vzor](#type) napsat přesnější kód, který používá `is` příkaz.
+Od verze 7.0 C#, můžete použít porovnávání vzorů s [typ vzor](#type) napsat přesnější kód, který používá `is` příkaz.
 
-## <a name="pattern-matching-with-is"></a>Pro porovnávání s`is` ##
+## <a name="pattern-matching-with-is"></a>Pro porovnávání s `is` ##
 
-Od verze jazyka C# 7, `is` a [přepínače](../../../csharp/language-reference/keywords/switch.md) příkazy podpory porovnávání vzorů. `is` – Klíčové slovo podporuje následující vzorce:
+Od verze jazyka C# 7.0, `is` a [přepínače](../../../csharp/language-reference/keywords/switch.md) příkazy podpory porovnávání vzorů. `is` – Klíčové slovo podporuje následující vzorce:
 
 - [Typ vzor](#type), který kontroluje, zda výraz lze převést na zadaný typ a, pokud lze, obsahuje ji proměnné daného typu.
 
@@ -72,7 +72,7 @@ Od verze jazyka C# 7, `is` a [přepínače](../../../csharp/language-reference/k
 
 - [var – vzor](#var), shoda, který vždy úspěšné a sváže hodnotu výrazu nové místní proměnné. 
 
-### <a name="type" />Typ vzor</a>
+### <a name="type" /> Typ vzor </a>
 
 Při provádění porovnávání vzorů pomocí vzoru typ `is` testuje, zda výraz lze převést na zadaný typ a pokud jej lze obsahuje ji proměnné daného typu. Je přehledné rozšíření `is` příkaz, který umožňuje stručným typ vyhodnocení a převod. Obecná forma `is` typ vzor je:
 
@@ -88,7 +88,7 @@ kde *expr* je výraz, který se vyhodnotí na instanci typu, *typ* je název typ
 
 - *Expr* představuje instanci typu, která je odvozena z *typu*. Jinými slovy, výsledek *expr* může být přetypování nahoru na instanci *typu*.
 
-- *Expr* má kompilaci typ, který je základní třídě *typ*, a *expr* má typ modulu runtime, který je *typ* nebo je odvozený od *typu* . *Typu v čase kompilace* proměnné je typ proměnné, jak jsou definovány v jeho deklaraci. *Typ modulu runtime* proměnné je typ instanci, která je přiřazena k této proměnné.
+- *Expr* má kompilaci typ, který je základní třídě *typ*, a *expr* má typ modulu runtime, který je *typ* nebo je odvozený od *typu*. *Typu v čase kompilace* proměnné je typ proměnné, jak jsou definovány v jeho deklaraci. *Typ modulu runtime* proměnné je typ instanci, která je přiřazena k této proměnné.
 
 - *Expr* představuje instanci typu, který implementuje *typ* rozhraní.
 
@@ -110,9 +110,9 @@ Kód ekvivalentní bez odpovídající vzor vyžaduje samostatné přiřazení, 
 
 [!code-csharp[is#10](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern10.cs#10)]
 
-### <a name="a-nameconstant--constant-pattern"></a><a name="constant" />Konstantní vzor ###
+### <a name="a-nameconstant--constant-pattern"></a><a name="constant" /> Konstantní vzor ###
 
-Při provádění porovnávání s konstantní vzor vzorů `is` testuje, zda výraz rovná zadané konstanta. V jazyce C# 6 a starší verze, konstantní vzor podporuje [přepínač](switch.md) příkaz. Od verze jazyka C# 7, je podporována `is` příkaz také. Jeho syntaxe je:
+Při provádění porovnávání s konstantní vzor vzorů `is` testuje, zda výraz rovná zadané konstanta. V jazyce C# 6 a starší verze, konstantní vzor podporuje [přepínač](switch.md) příkaz. Od verze 7.0 C#, je podporována `is` příkaz také. Jeho syntaxe je:
 
 ```csharp
    expr is constant
@@ -136,7 +136,7 @@ Následující příklad kombinuje typu a konstanta vzory k ověření, zda je o
 
 [!code-csharp[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
  
-### <a name="var" />var – vzor</a>
+### <a name="var" /> var – vzor </a>
 
 Vzor shody s var vzor je vždy úspěšné. Jeho syntaxe je
 
@@ -158,5 +158,5 @@ Všimněte si, že pokud *expr* je `null`, `is` výraz stále platí a přiřad�
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [typeof](../../../csharp/language-reference/keywords/typeof.md)  
- [jako](../../../csharp/language-reference/keywords/as.md)  
+ [as](../../../csharp/language-reference/keywords/as.md)  
  [Klíčová slova operátorů](../../../csharp/language-reference/keywords/operator-keywords.md)

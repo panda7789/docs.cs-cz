@@ -1,8 +1,9 @@
 ---
-title: "Switch – klíčové slovo (referenční dokumentace jazyka C#)"
+title: Switch – klíčové slovo (referenční dokumentace jazyka C#)
 ms.date: 03/07/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - switch_CSharpKeyword
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-caps.latest.revision: "47"
+caps.latest.revision: 47
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1c345d0c6c935271600a386752e18c19a25cc389
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6506278edb782f61b83cecfccba3126282c0ecf8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="switch-c-reference"></a>switch – příkaz (referenční dokumentace jazyka C#)
-`switch`je výběr příkaz, který vybere jeden *přepnout oddíl* provést ze seznamu kandidátů na základě vzor shody s *odpovídat výrazu*. 
+`switch` je výběr příkaz, který vybere jeden *přepnout oddíl* provést ze seznamu kandidátů na základě vzor shody s *odpovídat výrazu*. 
   
  [!code-csharp[switch#1](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]  
 
@@ -53,7 +54,7 @@ Výrazy jazyka C# 6, musí být výraz, který vrací hodnotu z těchto typů:
 - integrální hodnoty, například [int](int.md) nebo [dlouho](long.md).
 - [výčtu](enum.md) hodnotu.
 
-Od verze jazyka C# 7, výrazu shody může být jakýkoli výraz nesmí být nulová.
+Od verze 7.0 C#, výrazu shody může být jakýkoli výraz nesmí být nulová.
  
 ## <a name="the-switch-section"></a>V části přepínače
  
@@ -91,7 +92,7 @@ Tento požadavek se splní obvykle explicitně ukončení části přepínač po
 
  Protože C# 6 podporuje pouze konstantní vzor a nepovoluje opakování konstantní hodnoty, případu popisky definovat vzájemně se vylučuje hodnoty a pouze jeden vzor může odpovídat výrazu shody. V důsledku toho, v jakém pořadí `case` příkazy zobrazí, je důležitý.
 
- V jazyce C# 7 ale je podporována dalšími vzory případu popisky nemusíte definovat vzájemně se vylučuje hodnoty a více vzorů může odpovídat výrazu shody. Protože jsou vykonány pouze příkazy v části přepínač, který obsahuje první odpovídající vzor, v jakém pořadí `case` příkazy zobrazí, je důležité. Pokud C# zjistí části přepínač, jehož case – příkaz nebo příkazy odpovídají nebo jsou podmnožinou tohoto předchozí příkazy, vygeneruje Chyba kompilátoru, CS8120, "případy switch již byla zpracována předchozí případem." 
+ V jazyce C# 7.0 ale je podporována dalšími vzory případu popisky nemusíte definovat vzájemně se vylučuje hodnoty a více vzorů může odpovídat výrazu shody. Protože jsou vykonány pouze příkazy v části přepínač, který obsahuje první odpovídající vzor, v jakém pořadí `case` příkazy zobrazí, je důležité. Pokud C# zjistí části přepínač, jehož case – příkaz nebo příkazy odpovídají nebo jsou podmnožinou tohoto předchozí příkazy, vygeneruje Chyba kompilátoru, CS8120, "případy switch již byla zpracována předchozí případem." 
 
  Následující příklad ilustruje `switch` příkaz, který používá celou řadu jiných vzájemně se vylučuje vzory. Pokud přesunete `case 0:` přepnout oddíl tak, aby se už v první části v `switch` příkaz, C# generuje chybu kompilátoru, protože celé číslo, jehož hodnota je nulová je podmnožinou všechny celá čísla, což je vzoru definována podle `case int val` příkaz.
 
@@ -109,9 +110,9 @@ Můžete opravit tento problém a eliminovat upozornění kompilátoru v jednom 
 
 `default` Případ se mohou objevit v libovolném pořadí, v `switch` příkaz. Bez ohledu na jeho pořadí ve zdrojovém kódu, vždy vyhodnotí poslední, po všech `case` byly vyhodnoceny popisky.
 
-## <a name="a-namepattern--pattern-matching-with-the-switch-statement"></a><a name="pattern" />Shoda vzoru se `switch` – příkaz
+## <a name="a-namepattern--pattern-matching-with-the-switch-statement"></a><a name="pattern" /> Shoda vzoru se `switch` – příkaz
   
-Každý `case` příkaz definuje vzor, který odpovídá výrazu shody vede k jeho obsahující části přepínače má být proveden. Všechny verze jazyka C# podporovat vzoru konstantní. Zbývající vzory jsou podporované od verze jazyka C# 7. 
+Každý `case` příkaz definuje vzor, který odpovídá výrazu shody vede k jeho obsahující části přepínače má být proveden. Všechny verze jazyka C# podporovat vzoru konstantní. Zbývající vzory jsou podporované od verze 7.0 C#. 
   
 ### <a name="constant-pattern"></a>Konstantní vzor 
 
@@ -159,7 +160,7 @@ kde *typ* je název typu, na který výsledek *expr* chcete převést, a *název
 
 - *Expr* představuje instanci typu, která je odvozena z *typu*. Jinými slovy, výsledek *expr* může být přetypování nahoru na instanci *typu*.
 
-- *Expr* má kompilaci typ, který je základní třídě *typ*, a *expr* má typ modulu runtime, který je *typ* nebo je odvozený od *typu* . *Typu v čase kompilace* proměnné je typ proměnné, jak jsou definovány v jeho deklaraci typu. *Typ modulu runtime* proměnné je typ instanci, která je přiřazena k této proměnné.
+- *Expr* má kompilaci typ, který je základní třídě *typ*, a *expr* má typ modulu runtime, který je *typ* nebo je odvozený od *typu*. *Typu v čase kompilace* proměnné je typ proměnné, jak jsou definovány v jeho deklaraci typu. *Typ modulu runtime* proměnné je typ instanci, která je přiřazena k této proměnné.
 
 - *Expr* představuje instanci typu, který implementuje *typ* rozhraní.
 
@@ -181,7 +182,7 @@ Bez porovnávání vzorů, může tento kód zapsat takto. Použití porovnává
 
 ## <a name="the-case-statement-and-the-when-clause"></a>`case` Příkaz a `when` – klauzule
 
-Od verze jazyka C# 7, protože case – příkazy nemusí se vzájemně vylučují, můžete přidat `when` klauzule zadejte další podmínky, které musí být splněny pro příkaz case vyhodnotit na hodnotu true. `when` Klauzule může být jakýkoli výraz, který vrací logickou hodnotu. Jeden z běžných používá pro `when` klauzule slouží k části přepínač zabránit ve spouštění, pokud je hodnota výrazu shody `null`. 
+Od verze jazyka C# 7.0, protože case – příkazy nemusí se vzájemně vylučují, můžete přidat `when` klauzule zadejte další podmínky, které musí být splněny pro příkaz case vyhodnotit na hodnotu true. `when` Klauzule může být jakýkoli výraz, který vrací logickou hodnotu. Jeden z běžných používá pro `when` klauzule slouží k části přepínač zabránit ve spouštění, pokud je hodnota výrazu shody `null`. 
 
  V následujícím příkladu definuje na základní `Shape` třída, `Rectangle` třídu odvozenou od `Shape`a `Square` třídu odvozenou od `Rectangle`. Používá `when` klauzule zajistit, aby `ShowShapeInfo` zpracovává `Rectangle` objekt, který byl přiřazen stejné délky a šířky jako `Square` i když je nebyla vytvořena instance jako `Square` objektu. Metoda nebude pokoušet o zobrazení informací o objekt, který je buď `null` nebo tvaru, jehož je nula. 
 
@@ -195,10 +196,10 @@ Všimněte si, že `when` klauzule v příkladu, který se pokusí o test zda `S
 ## <a name="see-also"></a>Viz také  
 
  [Referenční dokumentace jazyka C#](../index.md)  
- [Průvodce programováním v C#](../../programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
  [Klíčová slova jazyka C#](index.md)  
  [if-else](if-else.md)  
- [Shoda vzoru](../../pattern-matching.md)  
+ [Porovnávání vzorů](../../pattern-matching.md)  
  
 
  

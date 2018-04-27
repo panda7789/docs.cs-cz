@@ -1,24 +1,26 @@
 ---
-title: "Obvyklé kroky pro používání technologie LINQ to SQL"
-ms.custom: 
+title: Obvyklé kroky pro používání technologie LINQ to SQL
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3aedef610d8ad3f743b346a46059b15d917cf7ca
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 31daf8ee10334327070cb5bfc4068bc80e1d7ea4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>Obvyklé kroky pro používání technologie LINQ to SQL
 K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace, můžete podle kroků popsaných později v tomto tématu. Všimněte si, že mnoho kroků jsou volitelné. Je velmi možné, že můžete použít objektový model ve svém výchozím stavu.  
@@ -31,9 +33,9 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
 ### <a name="1-select-a-tool-to-create-the-model"></a>1. Vyberte nástroj k vytváření modelu.  
  Tři nástroje jsou k dispozici pro vytvoření modelu.  
   
--   Na[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
+-   na [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
   
-     Tento návrhář poskytuje bohaté uživatelské rozhraní pro vytvoření objektu modelu z existující databáze. Tento nástroj je součástí [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] IDE a je nejvhodnější pro malé a střední databáze.  
+     Tento návrhář poskytuje bohaté uživatelské rozhraní pro vytvoření objektu modelu z existující databáze. Tento nástroj je součástí prostředí Visual Studio IDE a je nejvhodnější pro malé a střední databáze.  
   
 -   Nástroj pro generování kódu SQLMetal  
   
@@ -41,13 +43,13 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
   
 -   Editor kódu  
   
-     Můžete napsat vlastní kód pomocí [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] editor kódu nebo jiný editor. Nedoporučujeme tento přístup, což může být náchylná k chybám, pokud máte existující databázi a můžete použít buď [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] nebo na SQLMetal nástroj. Editor kódu však může být vhodné upřesnění nebo úprava kód, který jste již vygenerovali pomocí jiných nástrojů. Další informace najdete v tématu [postupy: přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md).  
+     Můžete napsat vlastní kód pomocí editoru kódu v sadě Visual Studio nebo jiný editor. Nedoporučujeme tento přístup, což může být náchylná k chybám, pokud máte existující databázi a můžete použít buď [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] nebo na SQLMetal nástroj. Editor kódu však může být vhodné upřesnění nebo úprava kód, který jste již vygenerovali pomocí jiných nástrojů. Další informace najdete v tématu [postupy: přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md).  
   
 ### <a name="2-select-the-kind-of-code-you-want-to-generate"></a>2. Vyberte typ kód, který chcete vygenerovat.  
   
--   C# nebo [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] souboru zdrojového kódu pro mapování na základě atributů.  
+-   C# nebo Visual Basic soubor zdrojového kódu pro mapování na základě atributů.  
   
-     Pak zahrňte tento soubor kódu vaší [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] projektu. Další informace najdete v tématu [na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+     Potom zahrnete tento soubor kódu v projektu sady Visual Studio. Další informace najdete v tématu [na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
   
 -   Soubor XML pro externí mapování.  
   

@@ -1,5 +1,5 @@
 ---
-title: "Postupy: Zrušení bloku toku dat"
+title: 'Postupy: Zrušení bloku toku dat'
 ms.date: 03/30/2017
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -18,11 +18,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3ef7fa62513072e1ee0dc7a8fecf3e600f9c26f2
-ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
+ms.openlocfilehash: eece4992deecbf30299d6e9e96fa8c2faf16d3ab
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Postupy: Zrušení bloku toku dat
 Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příklad používá Windows Forms k zobrazení, kde jsou aktivní v kanálu toku dat a také důsledky zrušení pracovních položek.  
@@ -33,7 +33,7 @@ Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příkla
   
 1.  Vytvoření C# nebo Visual Basic **formulářové aplikace Windows** projektu. V následujících krocích projektu jmenuje `CancellationWinForms`.  
   
-2.  V návrháři formuláře pro hlavní formulář, Form1.cs (Form1.vb pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
+2.  V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb jazyka Visual Basic), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
   
 3.  Přidat <xref:System.Windows.Forms.ToolStripButton> řídit k <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> a <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **přidat pracovní položky**.  
   
@@ -48,7 +48,7 @@ Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příkla
   
 1.  Ve vašem projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
   
-2.  Ujistěte se, že Form1.cs (Form1.vb pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) obsahuje následující `using` příkazy (`Imports` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]).  
+2.  Ujistěte se, že Form1.cs (Form1.vb jazyka Visual Basic) obsahuje následující `using` příkazy (`Imports` v jazyce Visual Basic).  
   
      [!code-csharp[TPLDataflow_CancellationWinForms#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_cancellationwinforms/cs/cancellationwinforms/form1.cs#1)]
      [!code-vb[TPLDataflow_CancellationWinForms#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_cancellationwinforms/vb/cancellationwinforms/form1.vb#1)]  
@@ -92,7 +92,7 @@ Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příkla
      [!code-vb[TPLDataflow_CancellationWinForms#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_cancellationwinforms/vb/cancellationwinforms/form1.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje kód dokončení pro Form1.cs (Form1.vb pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]).  
+ Následující příklad ukazuje kód dokončení pro Form1.cs (Form1.vb jazyka Visual Basic).  
   
  [!code-csharp[TPLDataflow_CancellationWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_cancellationwinforms/cs/cancellationwinforms/form1.cs#100)]
  [!code-vb[TPLDataflow_CancellationWinForms#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_cancellationwinforms/vb/cancellationwinforms/form1.vb#100)]  

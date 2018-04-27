@@ -16,11 +16,11 @@ ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: e25f6dceb6018b719a0a8a07822b20d85a08a012
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 757c64fdc66d9c564fc151bc78fdbda23d9b6705
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="filestream-data"></a>FILESTREAM Data
 Atribut úložiště FILESTREAM je binární (binární rozsáhlý OBJEKT) data uložená v sloupce varbinary(max). Před FILESTREAM ukládání binárních dat vyžadují speciální zacházení. Nestrukturovaná data, jako jsou dokumenty text, obrázky a videa, je často uložené mimo databázi, a může ztížit správu.  
@@ -28,13 +28,13 @@ Atribut úložiště FILESTREAM je binární (binární rozsáhlý OBJEKT) data 
 > [!NOTE]
 >  Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro práci s daty FILESTREAM pomocí SqlClient.  
   
- Určení atributem FILESTREAM u sloupce varbinary(max) způsobí, že [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] k uložení dat v místním systému souborů NTFS místo v souboru databáze. I když je uložen samostatně, můžete použít stejné [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy, které jsou podporovány pro práci s daty varbinary(max), který je uložen v databázi.  
+ Určení atributem FILESTREAM u sloupce varbinary(max) způsobí, že Server SQL pro ukládání dat v místním systému souborů NTFS místo v souboru databáze. I když je uložen samostatně, můžete použít stejné [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy, které jsou podporovány pro práci s daty varbinary(max), který je uložen v databázi.  
   
 ## <a name="sqlclient-support-for-filestream"></a>Podpora SqlClient FILESTREAM  
- [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], <xref:System.Data.SqlClient>, podporuje čtení a zápis do FILESTREAM dat pomocí <xref:System.Data.SqlTypes.SqlFileStream> třídy definované v <xref:System.Data.SqlTypes> oboru názvů. `SqlFileStream` dědí z <xref:System.IO.Stream> třídy, která poskytuje metody pro čtení a zápis do datových proudů. Čtení z datového proudu přenáší data z datového proudu do struktury dat, jako je například pole bajtů. Zápis přenáší data z strukturu dat do datového proudu.  
+ [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server, <xref:System.Data.SqlClient>, podporuje čtení a zápis do FILESTREAM dat pomocí <xref:System.Data.SqlTypes.SqlFileStream> třídy definované v <xref:System.Data.SqlTypes> oboru názvů. `SqlFileStream` dědí z <xref:System.IO.Stream> třídy, která poskytuje metody pro čtení a zápis do datových proudů. Čtení z datového proudu přenáší data z datového proudu do struktury dat, jako je například pole bajtů. Zápis přenáší data z strukturu dat do datového proudu.  
   
-### <a name="creating-the-includessnoversionincludesssnoversion-mdmd-table"></a>Vytváření [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] tabulky  
- Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy vytvoří tabulku s názvem Zaměstnanci a vloží řádek s daty. Jakmile povolíte úložiště FILESTREAM, můžete pomocí této tabulky ve spojení s příklady kódu, které následují. Odkazy na zdroje informací v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] na webu knihy Online jsou umístěné na konci tohoto tématu.  
+### <a name="creating-the-sql-server-table"></a>Vytvoření tabulky serveru SQL  
+ Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy vytvoří tabulku s názvem Zaměstnanci a vloží řádek s daty. Jakmile povolíte úložiště FILESTREAM, můžete pomocí této tabulky ve spojení s příklady kódu, které následují. Odkazy na zdroje informací v Online knihách SQL Server jsou umístěné na konci tohoto tématu.  
   
 ```  
 CREATE TABLE employees  
@@ -182,8 +182,8 @@ namespace FileStreamTest
   
  Jiný příklad naleznete v tématu [uložení a načtení binární data do sloupce datového proudu souboru](http://www.codeproject.com/Articles/32216/How-to-store-and-fetch-binary-data-into-a-file-str).  
   
-## <a name="resources-in-includessnoversionincludesssnoversion-mdmd-books-online"></a>Prostředky v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] zarezervuje Online  
- Kompletní dokumentaci pro FILESTREAM je umístěný v následující části [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] na webu knihy Online.  
+## <a name="resources-in-sql-server-books-online"></a>Prostředky v Online knihách serveru SQL  
+ Kompletní dokumentaci pro FILESTREAM se nachází v následujících částech v SQL Server Books Online.  
   
 |Téma|Popis|  
 |-----------|-----------------|  

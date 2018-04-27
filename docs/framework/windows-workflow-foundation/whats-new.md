@@ -11,17 +11,17 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], what's new
 - WF [WF], what's new
 ms.assetid: 11f96014-001e-41a0-bcc2-d0684a52fa43
-caps.latest.revision: ''
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9c5026c7c3e90afa843b819fb51d7a4a7c8249a0
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 93915e8eeb46d91140198c2d51f88535a93a28cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>Co&#39;s nové v modelu Windows Workflow Foundation
 [!INCLUDE[wf](../../../includes/wf-md.md)] v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] několik vzorů vývoj změny z předchozích verzí. Pracovní postupy jsou nyní snazší vytvoření, spuštění a udržovat a implementaci hostitel nové funkce. [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi, najdete v části [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
@@ -66,4 +66,4 @@ ms.lasthandoff: 03/23/2018
 -   Obnovení čekající pracovního postupu je teď spravované pomocí <xref:System.Activities.Bookmark> objektu.  
   
 ## <a name="easier-ability-to-extend-wf-designer-experience"></a>Snazší možnost rozšíření návrháře WF prostředí  
- Nový návrhář WF je založený na [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] a nabízí jednodušší model pro použití při opětovném hostování návrháře WF mimo Visual Studio a také nabízí jednodušší mechanismy pro vytváření Návrháře vlastních aktivit. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Přizpůsobení prostředí návrhu pracovních postupů](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md).
+ Nový návrhář WF je založený na Windows Presentation Foundation (WPF) a nabízí jednodušší model pro použití při opětovném hostování návrháře WF mimo Visual Studio a také nabízí jednodušší mechanismy pro vytváření Návrháře vlastních aktivit. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Přizpůsobení prostředí návrhu pracovních postupů](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md).

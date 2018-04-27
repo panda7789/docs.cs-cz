@@ -1,7 +1,7 @@
 ---
-title: "Nativní interoperabilita"
-description: "Informace o rozhraní s nativní součásti v rozhraní .NET."
-keywords: "Rozhraní .NET, .NET core"
+title: Nativní interoperabilita
+description: Informace o rozhraní s nativní součásti v rozhraní .NET.
+keywords: Rozhraní .NET, .NET core
 author: blackdwarf
 ms.author: ronpet
 ms.date: 06/20/2016
@@ -13,11 +13,11 @@ ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 11a93f4014734130f7c4e33cf215c6d49d2554c5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d9b0fa5ebe37e51c45a8a5d8a42ce9b9688cc7c1
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="native-interoperability"></a>Nativní interoperabilita
 
@@ -26,7 +26,7 @@ V tomto dokumentu jsme se podrobně chvíli hlubší všechny tři způsoby, jak
 Existuje několik důvodů, proč byste měli volání do nativního kódu:
 
 *   Operační systémy se dodávají s velkým množstvím rozhraní API, která se nenacházejí v knihovnách spravovanou třídou. Typickým příkladem pro tento bude přístup k hardwaru nebo funkce operačního systému správy.
-*   Komunikaci s ostatními součástmi, které máte nebo můžete vytvořit bis stylu jazyka C (nativní bis ). Toto se vztahuje, například Java kód, který je zveřejněný prostřednictvím [Java nativní rozhraní (JNI)](http://docs.oracle.com/javase/8/docs/technotes/guides/jni/) nebo jakéhokoli jiného spravované jazyka, který může vytvářet nativní součásti.
+*   Komunikaci s ostatními součástmi, které máte nebo můžete vytvořit bis stylu jazyka C (nativní bis ). Toto se vztahuje, například Java kód, který je zveřejněný prostřednictvím [Java nativní rozhraní (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) nebo jakéhokoli jiného spravované jazyka, který může vytvářet nativní součásti.
 *   V systému Windows většina softwaru, který získá nainstalovali, jako je například sada Microsoft Office, zaregistruje komponenty modelu COM, které představují jejich programy a umožňují vývojářům automatizovat je nebo je používat. To také vyžaduje nativní interoperabilita.
 
 Samozřejmě seznamu výše nepopisuje všechny potenciální situace a scénáře, ve kterých vývojář by chcete/jako/potřeba rozhraní s nativní součásti. Knihovna tříd rozhraní .NET, například používá nativní interoperabilita podporu k implementaci úloha dostatečný počet jeho rozhraní API, jako je podpora konzoly a manipulaci, přístupu k systému souborů a dalších. Je ale důležité si uvědomit, že je možnost, by měl jeden ho potřebovat.
@@ -145,9 +145,9 @@ namespace ConsoleApplication1 {
 }
 ```
 
-Před jsme v našem příkladu provede, je vhodné si projít signatur potřebné pro práci s nespravovaným funkcím. Funkce, kterou chcete volat k vytvoření výčtu všech windows má následující podpis:`BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam);`
+Před jsme v našem příkladu provede, je vhodné si projít signatur potřebné pro práci s nespravovaným funkcím. Funkce, kterou chcete volat k vytvoření výčtu všech windows má následující podpis: `BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam);`
 
-První parametr je zpětné volání. Uvedené zpětného volání má následující podpis:`BOOL CALLBACK EnumWindowsProc (HWND hwnd, LPARAM lParam);`
+První parametr je zpětné volání. Uvedené zpětného volání má následující podpis: `BOOL CALLBACK EnumWindowsProc (HWND hwnd, LPARAM lParam);`
 
 Myslete na to projděme v příkladu:
 
@@ -340,6 +340,6 @@ public class StatClass {
 
 ## <a name="more-resources"></a>Další prostředky
 
-*   [PInvoke.net wiki](http://www.pinvoke.net) vynikající Wiki s informacemi o společné rozhraní Win32 API a jak je volat.
+*   [PInvoke.net wiki](https://www.pinvoke.net/) vynikající Wiki s informacemi o společné rozhraní Win32 API a jak je volat.
 *   [P/Invoke na webu MSDN](https://msdn.microsoft.com/library/zbz07712.aspx)
-*   [Na P/Invoke mono dokumentace](http://www.mono-project.com/docs/advanced/pinvoke/)
+*   [Na P/Invoke mono dokumentace](https://www.mono-project.com/docs/advanced/pinvoke/)

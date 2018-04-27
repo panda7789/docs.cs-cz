@@ -1,24 +1,25 @@
 ---
-title: "Vývoj pro proces pro Azure."
-description: "Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Vývoj pro proces pro Azure."
+title: Vývoj pro proces pro Azure.
+description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Vývoj pro proces pro Azure.
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 21826e2c90d234d873cc06bfae3bd22ce89a62d2
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: ea5e699046d603ebb765265be403fd4561aa742e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="development-process-for-azure"></a>Vývoj pro proces pro Azure.
 
 > _"S cloudem, jednotlivce a malé firmy můžete snap jejich prsty a okamžitě nastavit služby rozsáhlých."_  
-> _- Roy Stephan_
+> _-Royi Stephan_
 
  ## <a name="vision"></a>Vize
 
@@ -102,7 +103,7 @@ Nové sestavení se aktivuje na buildovacím serveru vždy, když nové potvrzen
 
 Po sestavení, protože byla úspěšná, proces CD vyzvedne, až bude sestavení artefaktů vytváří. To bude zahrnovat webového nasazení balíčku. Sestavení serveru bude nasazení tohoto balíčku do služby Azure App Service, nahraďte všechny existující služby se nově vytvořená. Obvykle tento krok cílem pracovní prostředí, ale některé aplikace nasadit přímo do produkčního prostředí prostřednictvím procesu disku CD.
 
-#### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Azure App Service. Webové aplikace.
+#### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Aplikační služba Azure. Webové aplikace.
 
 Po nasazení aplikace ASP.NET Core běží v kontextu webové aplikace Azure App Service. Tato webová aplikace je možné monitorovat a nakonfigurované pomocí portálu Azure.
 

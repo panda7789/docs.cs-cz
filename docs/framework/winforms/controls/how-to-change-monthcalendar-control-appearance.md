@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Změna ovládacího prvku Windows Forms MonthCalendar & č. 39; s vzhledu"
-ms.custom: 
+title: 'Postupy: Změna ovládacího prvku Windows Forms MonthCalendar&#39;s vzhledu'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,18 +17,19 @@ helpviewer_keywords:
 - examples [Windows Forms], calendar controls
 - MonthCalendar control [Windows Forms], formatting display
 ms.assetid: d09b95c9-e108-4608-9b31-b9100c0677bf
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 89aa2d57e7990bb2b0016fa4936cf1487578db01
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6d2a3f12368d5215f7fe7611aa2f06e6b0fb1192
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="how-to-change-the-windows-forms-monthcalendar-control39s-appearance"></a>Postupy: Změna ovládacího prvku Windows Forms MonthCalendar & č. 39; s vzhledu
+# <a name="how-to-change-the-windows-forms-monthcalendar-control39s-appearance"></a>Postupy: Změna ovládacího prvku Windows Forms MonthCalendar&#39;s vzhledu
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> řízení umožňuje přizpůsobení vzhledu kalendáře mnoha způsoby. Můžete například nastavit barevné schéma a vyberte k zobrazení nebo skrytí čísla týdne a aktuálním datem.  
   
 ### <a name="to-change-the-month-calendars-color-scheme"></a>Chcete-li změnit barevné schéma měsíční kalendář  
@@ -85,7 +87,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> řízení umožňuje př
        }  
     ```  
   
-     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.DoubleClick += new System.EventHandler(this.Form1_DoubleClick);  

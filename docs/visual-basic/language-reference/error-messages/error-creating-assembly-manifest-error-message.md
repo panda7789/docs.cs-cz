@@ -1,9 +1,9 @@
 ---
-title: "Chyba při vytváření sestavení manifestu: &lt;chybová zpráva&gt;"
+title: 'Chyba při vytváření sestavení manifestu: &lt;chybová zpráva&gt;'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,17 +13,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC30140
 ms.assetid: 1beb5aa0-7b79-4c85-946b-5c2d0a41d1d2
-caps.latest.revision: 
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5e88d28ef787eb57b71d94f4ee51c09e9751dbff
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 4032bbcbf9924eb5aad4e2cb1a6e74df9a472eca
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="error-creating-assembly-manifest-lterror-messagegt"></a>Chyba při vytváření sestavení manifestu: &lt;chybová zpráva&gt;
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru volá Linker sestavení (Al.exe, také známé jako Alink) ke generování sestavení s manifestu. Linkeru ohlásilo chybu ve fázi před emisí vytváření sestavení.  
+Visual Basic – kompilátor volá Linker sestavení (Al.exe, také známé jako Alink) ke generování sestavení s manifestu. Linkeru ohlásilo chybu ve fázi před emisí vytváření sestavení.  
   
  Tato situace může nastat, pokud dochází k problémům s souboru klíče nebo klíče zadaný kontejner. Chcete-li plně podepsání sestavení, je nutné zadat platný soubor klíče, který obsahuje informace o veřejné a soukromé klíče. Zpoždění podepsání sestavení, musíte vybrat **zpoždění podepsání** zaškrtněte políčko a zadejte platný soubor klíče, který obsahuje informace o informace o veřejném klíči. Privátní klíč není nutné, pokud je sestavení podepsané zpoždění. Další informace najdete v tématu [postupy: podepsání sestavení se silným názvem](../../../framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md).  
   

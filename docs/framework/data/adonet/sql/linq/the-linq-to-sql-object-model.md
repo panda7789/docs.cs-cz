@@ -1,27 +1,29 @@
 ---
-title: "Technologie LINQ to SQL objektový Model"
-ms.custom: 
+title: Technologie LINQ to SQL objektový Model
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 81dd0c37-e2a4-4694-83b0-f2e49e693810
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0bfaf7b08b3725f1c1cc2f0985c7612aa47a6cb4
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: cc05166cffdd7254c657f0c490afaaac4cf08fcb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="the-linq-to-sql-object-model"></a>Technologie LINQ to SQL objektový Model
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vyjádřené v programovací jazyk vývojář objektový model je namapována na datový model relační databáze. Operace s daty jsou pak provedeny podle modelu objektu.  
@@ -76,14 +78,14 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vyjádře
  Další informace najdete v tématu části přidružení atribut [na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-methods-and-database-stored-procedures"></a>Technologie LINQ to SQL metody a databáze uložené procedury  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje uložené procedury a funkce definované uživatelem. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], mapování těchto abstrakce definované databáze na objekty klienta, aby přístup jim silného typu způsobem z kódu klienta. Metoda podpisy podobat co možná nejvíce signatur procedury a funkce, které jsou definované v databázi. IntelliSense můžete použít ke zjištění těchto metod.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje uložené procedury a funkce definované uživatelem. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], mapování těchto abstrakce definované databáze na objekty klienta, aby přístup jim silného typu způsobem z kódu klienta. Metoda podpisy podobat co možná nejvíce signatur procedury a funkce, které jsou definované v databázi. IntelliSense můžete použít ke zjištění těchto metod.  
   
  Výsledek, který je nastaven vrácené voláním namapované proceduře je silného typu kolekce.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje uložené procedury a funkce metody pomocí <xref:System.Data.Linq.Mapping.FunctionAttribute> a <xref:System.Data.Linq.Mapping.ParameterAttribute> atributy. Metody představující uložené procedury rozlišují od těch, představující uživatelsky definované funkce pomocí <xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A> vlastnost. Pokud je tato vlastnost nastavena na `false` (výchozí), metoda představuje uložené procedury. Pokud je nastaven na hodnotu `true`, metoda představuje funkce databáze.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje uložené procedury a funkce metody pomocí <xref:System.Data.Linq.Mapping.FunctionAttribute> a <xref:System.Data.Linq.Mapping.ParameterAttribute> atributy. Metody představující uložené procedury rozlišují od těch, představující uživatelsky definované funkce pomocí <xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A> vlastnost. Pokud je tato vlastnost nastavena na `false` (výchozí), metoda představuje uložené procedury. Pokud je nastaven na hodnotu `true`, metoda představuje funkce databáze.  
   
 > [!NOTE]
->  Pokud používáte [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)], můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vytvoření metody, které jsou namapované na uložené procedury a uživatelem definované funkce.  
+>  Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vytvoření metody, které jsou namapované na uložené procedury a uživatelem definované funkce.  
   
 ### <a name="example"></a>Příklad  
  [!code-csharp[DLinqObjectModel#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/northwind.cs#4)]

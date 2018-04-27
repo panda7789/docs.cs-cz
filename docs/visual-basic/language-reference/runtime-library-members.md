@@ -1,5 +1,5 @@
 ---
-title: "Členové knihovny prostředí Runtime jazyka Visual Basic"
+title: Členové knihovny prostředí Runtime jazyka Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,17 +13,17 @@ helpviewer_keywords:
 - Microsoft.VisualBasic namespace
 - members [Visual Basic], Visual Basic run-time library
 ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f928a01424853dc7e3637f49cc3af4108c5afb5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 47c7af031b2169d1a259a8f96f5485bcb354aa25
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-runtime-library-members"></a>Členové knihovny prostředí Runtime jazyka Visual Basic
-`Microsoft.VisualBasic` Obor názvů obsahuje třídy, moduly, konstanty a výčty, které tvoří [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] běhové knihovny. Členové tyto knihovny poskytují postupy, vlastnosti a konstantní hodnoty, které můžete použít v kódu. Každý modul a třída představuje určité kategorie funkcí.  
+`Microsoft.VisualBasic` Obor názvů obsahuje třídy, moduly, konstanty a výčty, které tvoří jazyka Visual Basic runtime library. Členové tyto knihovny poskytují postupy, vlastnosti a konstantní hodnoty, které můžete použít v kódu. Každý modul a třída představuje určité kategorie funkcí.  
   
 ## <a name="microsoftvisualbasiccollection-class"></a>Microsoft.VisualBasic.Collection – třída  
   
@@ -197,7 +197,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:Microsoft.VisualBasic.VBMath.Randomize%2A>|<xref:Microsoft.VisualBasic.VBMath.Rnd%2A>|||  
   
 ## <a name="microsoftvisualbasic-constants-and-enumerations"></a>Microsoft.VisualBasic – konstanty a výčty  
- `Microsoft.VisualBasic` Obor názvů obsahuje konstanty a výčty v rámci [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] běhové knihovny. Můžete tyto hodnoty konstant ve vašem kódu. Každý výčet představuje určité kategorie funkcí. Další informace najdete v tématu [konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md).  
+ `Microsoft.VisualBasic` Obor názvů obsahuje konstanty a výčty v rámci běhové knihovny jazyka Visual Basic. Můžete tyto hodnoty konstant ve vašem kódu. Každý výčet představuje určité kategorie funkcí. Další informace najdete v tématu [konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md)  

@@ -1,9 +1,10 @@
 ---
-title: "Bohužel jsme tento & č. 39; t mít podrobnosti o této chybě jazyka Visual Basic"
+title: Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě jazyka Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vbc30234
@@ -3048,35 +3049,35 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 132bb3f93ae5084df73aed56b6d1483830984928
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4ab447c06504d6c3bb7c51107e422b2cba1f45e3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>Bohužel jsme tento & č. 39; t mít podrobnosti o této chybě jazyka Visual Basic
+# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě jazyka Visual Basic
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
   
  [Jazyk Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145963)  
- Poskytuje diskusní fórum pro dotazy a obecnou diskusi týkající se kompilátoru a syntaxe jazyka [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Poskytuje fórum pro dotazy týkající se a obecné diskuse o syntaxi jazyka Visual Basic a kompilátoru.  
   
  [Zprostředkovatel komunikace s objekty jazyka Visual Basic a Upgrade](http://go.microsoft.com/fwlink/?LinkId=145966)  
- Poskytuje fórum o pro otázky a problémy s aktualizací na [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] a práci s funkcí interoperability.  
+ Poskytuje fórum pro otázky o a problémů s upgradem do jazyka Visual Basic a práci s funkcemi interoperability.  
   
  [Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)  
  Poskytuje fórum pro otázky týkající se způsobu práce v prostředí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
  [Obecné jazyka Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145973)  
- Poskytuje fórum pro dotazy týkající se problémů s jazykem [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], které nejsou popsány na jiných fórech.  
+ Poskytuje fórum pro otázky o a problémů s jazykem Visual Basic, které nejsou popsané v dalších fóra.  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net)  
- Poskytuje fórum pro otázky o a problémů s [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Poskytuje fórum pro otázky o a problémů s jazykem Visual Basic.  
   
  Viz také:  
- [Další zdroje pro programátory v jazyce Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
+ [Další zdroje informací pro programátory, kteří používají Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)  

@@ -1,25 +1,26 @@
 ---
-title: "Filtrování výstupu My.Application.Log (Visual Basic)"
-ms.custom: 
+title: Filtrování výstupu My.Application.Log (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - My.Log object, filtering output
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 90fd445227e0c8290ad63fccf807d6d7bdf43ccd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6c048578b320fedd2153aee7b466b1494551abe0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování protokolování `My.Application.Log` objektu, k řízení, jaké informace jsou předány z `Log` objektu do posluchače a jaké informace jsou zapsány posluchači. I po vytvoření aplikace, můžete změnit chování protokolování, protože informace o konfiguraci je uložené v konfiguračním souboru aplikace.  
@@ -29,7 +30,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování protokolování `My.App
   
 #### <a name="to-build-the-sample-application"></a>K vytvoření ukázkové aplikace  
   
-1.  Otevřete nový [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] projekt aplikace Windows.  
+1.  Otevřete nový projekt aplikace Windows Visual Basic.  
   
 2.  Přidání tlačítka s názvem Button1 do Form1.  
   
@@ -64,11 +65,11 @@ Tento návod ukazuje, jak změnit výchozí filtrování protokolování `My.App
 |Hodnota DefaultSwitch|Závažnost zprávy, které jsou potřebné pro výstup|  
 |---|---| 
 |`Critical`|`Critical`|  
-|`Error`|`Critical`nebo`Error`|  
-|`Warning`|`Critical`, `Error`, nebo`Warning`|  
-|`Information`|`Critical`, `Error`, `Warning`, nebo`Information`|  
-|`Verbose`|`Critical`, `Error`, `Warning`, `Information`, nebo`Verbose`|  
-|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume`, nebo`Transfer`|  
+|`Error`|`Critical` Nebo `Error`|  
+|`Warning`|`Critical`, `Error`, nebo `Warning`|  
+|`Information`|`Critical`, `Error`, `Warning`, nebo `Information`|  
+|`Verbose`|`Critical`, `Error`, `Warning`, `Information`, nebo `Verbose`|  
+|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume`, nebo `Transfer`|  
 |`All`|Jsou povoleny všechny zprávy.|  
 |`Off`|Všechny zprávy jsou zablokované.|  
   
@@ -259,6 +260,6 @@ Tento návod ukazuje, jak změnit výchozí filtrování protokolování `My.App
  [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
  [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
  [Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  
- [Postupy: zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)  
- [Trasování – přepínače](../../../../framework/debug-trace-profile/trace-switches.md)  
- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+ [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)  
+ [Přepínače trasování](../../../../framework/debug-trace-profile/trace-switches.md)  
+ [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

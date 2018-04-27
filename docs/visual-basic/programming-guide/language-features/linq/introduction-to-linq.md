@@ -1,11 +1,12 @@
 ---
-title: "Představení technologie LINQ v jazyce Visual Basic"
-ms.custom: 
+title: Představení technologie LINQ v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], about LINQ in Visual Basic queries
@@ -18,19 +19,19 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0bb55aecc1faafd812da212565a7a858c714e933
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 1f41252d6f28c7b2ffb459b3374833fde56393f8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
-Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] a poskytuje jednoduché a výkonné možnosti při práci s nejrůznějších druhy data. Místo odesílání dotazu na databázi zpracovat nebo práci s syntaxe různých dotazu pro každý typ dat, které hledáte, představuje LINQ dotazů v rámci [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jazyk. Použije jednotná syntaxe bez ohledu na typ dat:  
+Language-Integrated Query (LINQ) přidá možnosti dotazu jazyka Visual Basic a poskytuje jednoduché a výkonné možnosti při práci s všechny typy dat. Místo odesílání dotazu na databázi zpracovat nebo práci s syntaxe různých dotazu pro každý typ dat, které hledáte, představuje LINQ dotazů v rámci jazyka Visual Basic. Použije jednotná syntaxe bez ohledu na typ dat:  
   
- LINQ vám umožní zadat dotaz na data z databáze serveru SQL, XML, pole v paměti a kolekcí, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, nebo jiná vzdáleného nebo místního data zdroj tohoto podporuje LINQ. Můžete k tomu všechny s běžné [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jazykové elementy. Protože jsou v dotazech [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jazyka, výsledky dotazu jsou vrácena jako objektů se silným typem. Tyto objekty podporují technologii IntelliSense, které umožňují rychlejší psaní kódu a zpracovávat chyby v dotazech v době kompilace místo v době běhu. Dotazy LINQ slouží jako zdroj další dotazy k zpřesnění výsledků. Mohou také být vázány na ovládací prvky, aby uživatelé mohou snadno zobrazit nebo upravit výsledky dotazu.  
+ LINQ vám umožní zadat dotaz na data z databáze serveru SQL, XML, pole v paměti a kolekcí, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, nebo jiná vzdáleného nebo místního data zdroj tohoto podporuje LINQ. Můžete k tomu všechny společné elementy jazyka Visual Basic. Vzhledem k tomu, že vaše dotazy se píšou v jazyce Visual Basic, výsledky dotazu jsou vrácena jako objektů se silným typem. Tyto objekty podporují technologii IntelliSense, které umožňují rychlejší psaní kódu a zpracovávat chyby v dotazech v době kompilace místo v době běhu. Dotazy LINQ slouží jako zdroj další dotazy k zpřesnění výsledků. Mohou také být vázány na ovládací prvky, aby uživatelé mohou snadno zobrazit nebo upravit výsledky dotazu.  
   
  Například následující příklad kódu ukazuje dotaz LINQ, který vrátí seznam zákazníků z kolekce a skupiny, které je založené na jejich umístění.  
   
@@ -58,27 +59,27 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
   
 -   [Postupy a návody](#HowToAndWalkthroughTopics)  
   
-##  <a name="RunningtheExamples"></a>Spuštění příkladů  
+##  <a name="RunningtheExamples"></a> Spuštění příkladů  
  Pokud chcete spustit v příkladech v úvodu a v části "Struktura z dotaz LINQ", zahrnují následující kód, který vrátí seznam Zákazníci a objednávky.  
   
  [!code-vb[VbVbalrIntroToLINQ#31](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_2.vb)]  
   
-##  <a name="LINQProviders"></a>Zprostředkovatelé LINQ  
- A *LINQ zprostředkovatele* mapuje vaší [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] dotazů LINQ ke zdroji dat, která je dotazována. Při psaní dotazu LINQ zprostředkovatel získá takový dotaz a překládá do příkazy, které zdroje dat bude možné spustit. Zprostředkovatel také převádí data ze zdroje na objekty, které tvoří výsledek dotazu. Nakonec převede objekty k datům při odesílání aktualizací na zdroj dat.  
+##  <a name="LINQProviders"></a> Zprostředkovatelé LINQ  
+ A *LINQ zprostředkovatele* mapuje své dotazy LINQ v jazyce Visual Basic ke zdroji dat, která je dotazována. Při psaní dotazu LINQ zprostředkovatel získá takový dotaz a překládá do příkazy, které zdroje dat bude možné spustit. Zprostředkovatel také převádí data ze zdroje na objekty, které tvoří výsledek dotazu. Nakonec převede objekty k datům při odesílání aktualizací na zdroj dat.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]obsahuje tyto zprostředkovatele LINQ.  
+ Visual Basic obsahuje tyto zprostředkovatele LINQ.  
   
 |Zprostředkovatel|Popis|  
 |---|---|  
-|LINQ na objekty|LINQ na objekty zprostředkovatele umožňuje dotaz na kolekce v paměti a pole. Pokud objekt podporuje buď <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní LINQ na objekty zprostředkovatele umožňuje dotazování ho.<br /><br /> LINQ na objekty zprostředkovatele můžete povolit importováním <xref:System.Linq> obor názvů, který je importován ve výchozím nastavení pro všechny [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] projekty.<br /><br /> Další informace o LINQ na objekty poskytovatele najdete v tématu [LINQ na objekty](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9).|  
-|Technologie LINQ to SQL|Technologie LINQ to SQL zprostředkovatele umožňuje dotazování a upravovat data v databázi systému SQL Server. To usnadňuje mapování objektový model pro aplikace s tabulkami a objekty v databázi.<br /><br /> [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]usnadňuje práci s technologie LINQ to SQL zahrnutím Návrhář relací objektů (Návrhář relací objektů). Tento návrhář slouží k vytvoření objektu modelu v aplikaci, která se mapuje na objekty v databázi. Návrhář relací objektů také poskytuje funkce pro mapování uložené procedury a funkce na <xref:System.Data.Linq.DataContext> objekt, který spravuje komunikaci s databází a ukládá stav pro optimistickou metodu souběžného kontroly.<br /><br /> Další informace o dotazech LINQ to SQL poskytovatele najdete v tématu [technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). Další informace o Návrhář relací objektů najdete v tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
-|Technologie LINQ to XML|Technologie LINQ to XML zprostředkovatele umožňuje dotazování a upravit XML. Můžete upravit v paměti XML nebo XML můžete načíst z a uložit XML do souboru.<br /><br /> Kromě toho umožňuje LINQ to XML zprostředkovatele literály XML a vlastnosti osy XML, které vám umožní zapisovat přímo v kódu XML vaší [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kódu. Další informace najdete v tématu [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).|  
+|LINQ na objekty|LINQ na objekty zprostředkovatele umožňuje dotaz na kolekce v paměti a pole. Pokud objekt podporuje buď <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní LINQ na objekty zprostředkovatele umožňuje dotazování ho.<br /><br /> LINQ na objekty zprostředkovatele můžete povolit importováním <xref:System.Linq> obor názvů, který je ve výchozím nastavení pro všechny projekty Visual Basic importován.<br /><br /> Další informace o LINQ na objekty poskytovatele najdete v tématu [LINQ na objekty](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9).|  
+|Technologie LINQ to SQL|Technologie LINQ to SQL zprostředkovatele umožňuje dotazování a upravovat data v databázi systému SQL Server. To usnadňuje mapování objektový model pro aplikace s tabulkami a objekty v databázi.<br /><br /> Visual Basic usnadňuje práci s technologie LINQ to SQL zahrnutím Návrhář relací objektů (Návrhář relací objektů). Tento návrhář slouží k vytvoření objektu modelu v aplikaci, která se mapuje na objekty v databázi. Návrhář relací objektů také poskytuje funkce pro mapování uložené procedury a funkce na <xref:System.Data.Linq.DataContext> objekt, který spravuje komunikaci s databází a ukládá stav pro optimistickou metodu souběžného kontroly.<br /><br /> Další informace o dotazech LINQ to SQL poskytovatele najdete v tématu [technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). Další informace o Návrhář relací objektů najdete v tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
+|Technologie LINQ to XML|Technologie LINQ to XML zprostředkovatele umožňuje dotazování a upravit XML. Můžete upravit v paměti XML nebo XML můžete načíst z a uložit XML do souboru.<br /><br /> Kromě toho umožňuje LINQ to XML zprostředkovatele literály XML a vlastnosti osy XML, které vám umožní zapisovat XML přímo v kódu jazyka Visual Basic. Další informace najdete v tématu [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).|  
 |LINQ na DataSet|LINQ na DataSet zprostředkovatele umožňuje dotazování a aktualizace dat v [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datovou sadu. Výkon LINQ můžete přidat do aplikace, které používají datové sady, aby bylo možné zjednodušit a získali další možnosti pro dotazování, agregace a aktualizace dat v datovou sadu.<br /><br /> Další informace najdete v tématu [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md).|  
   
-##  <a name="StructureOfALINQQuery"></a>Struktura dotazu LINQ  
+##  <a name="StructureOfALINQQuery"></a> Struktura dotazu LINQ  
  Dotaz LINQ, často označuje jako *dotaz výrazu*, se skládá z kombinace klauzule dotazu, které identifikují datové zdroje a iterační proměnné pro dotaz. Výraz dotazu může zahrnovat taky pokyny pro řazení, filtrování, seskupování a připojení nebo výpočty použít ke zdrojovým datům. Syntaxe výrazu dotazu syntaxe SQL, vypadá takto: Proto můžete zjistit většinu syntaxe seznámit.  
   
- Výraz dotazu začíná `From` klauzule. Tuto klauzuli identifikuje zdroj dat pro dotaz a proměnné, které se používají k odkazování na každý prvek zdrojová data jednotlivě. Tyto proměnné jsou pojmenované *rozsahu proměnné* nebo *iterační proměnné*. `From` Je vyžadována klauzule pro daný dotaz, s výjimkou `Aggregate` dotazy, kde `From` klauzule je volitelný. Po oboru a zdroj dotazu se budou identifikovat `From` nebo `Aggregate` klauzule, může obsahovat libovolnou kombinaci klauzule dotazu pro upřesnění dotazu. Podrobnosti o klauzule dotazu najdete v tématu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] operátory dotazu LINQ později v tomto tématu. Například následující dotaz identifikuje kolekci zdroje dat zákazníka, jako `customers` proměnné a proměnná iterace s názvem `cust`.  
+ Výraz dotazu začíná `From` klauzule. Tuto klauzuli identifikuje zdroj dat pro dotaz a proměnné, které se používají k odkazování na každý prvek zdrojová data jednotlivě. Tyto proměnné jsou pojmenované *rozsahu proměnné* nebo *iterační proměnné*. `From` Je vyžadována klauzule pro daný dotaz, s výjimkou `Aggregate` dotazy, kde `From` klauzule je volitelný. Po oboru a zdroj dotazu se budou identifikovat `From` nebo `Aggregate` klauzule, může obsahovat libovolnou kombinaci klauzule dotazu pro upřesnění dotazu. Podrobnosti o klauzule dotazu najdete v tématu operátory dotazu LINQ jazyka Visual Basic později v tomto tématu. Například následující dotaz identifikuje kolekci zdroje dat zákazníka, jako `customers` proměnné a proměnná iterace s názvem `cust`.  
   
  [!code-vb[VbVbalrIntroToLINQ#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_3.vb)]  
   
@@ -98,10 +99,10 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
   
  [!code-vb[VbVbalrIntroToLINQ#6](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_7.vb)]  
   
- Existuje několik dalších LINQ operátory dotazů, které můžete použít k vytvoření účinný dotazovací výrazy. V další části tohoto tématu popisuje různé klauzule dotazu, které lze zahrnout ve výrazu dotazu. Podrobnosti o [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] dotaz klauzule najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/queries.md).  
+ Existuje několik dalších LINQ operátory dotazů, které můžete použít k vytvoření účinný dotazovací výrazy. V další části tohoto tématu popisuje různé klauzule dotazu, které lze zahrnout ve výrazu dotazu. Podrobnosti o klauzule dotazu jazyka Visual Basic najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/queries.md).  
   
-##  <a name="VisualBasicLINQQueryOperators"></a>Operátory dotazů LINQ jazyka Visual Basic  
- Třídy v <xref:System.Linq> obor názvů a další obory názvů, které podporují dotazů LINQ obsahují metody, které můžete volat k vytvoření a upřesněte dotazy na základě potřeb vaší aplikace. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]klíčová slova pro nejběžnější klauzule dotazu obsahuje, jak je popsáno v následující tabulce.  
+##  <a name="VisualBasicLINQQueryOperators"></a> Operátory dotazů LINQ jazyka Visual Basic  
+ Třídy v <xref:System.Linq> obor názvů a další obory názvů, které podporují dotazů LINQ obsahují metody, které můžete volat k vytvoření a upřesněte dotazy na základě potřeb vaší aplikace. Visual Basic obsahuje klíčová slova pro nejběžnější klauzule dotazu, jak je popsáno v následující tabulce.  
   
 |Termín|Definice|  
 |---|---|  
@@ -120,7 +121,7 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
 |[Klauzule Take](../../../../visual-basic/language-reference/queries/take-clause.md)|Volitelné. Vrátí zadaný počet souvislý elementů od začátku kolekce. Příklad:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#20](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_21.vb)]|  
 |[Klauzule Take While](../../../../visual-basic/language-reference/queries/take-while-clause.md)|Volitelné. Obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a obchází zbývající elementy. Příklad:<br /><br /> [!code-vb[VbVbalrIntroToLINQ#21](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_22.vb)]|  
   
- Podrobnosti o [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] dotaz klauzule najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/queries.md).  
+ Podrobnosti o klauzule dotazu jazyka Visual Basic najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/queries.md).  
   
  Můžete vytvořit další funkce dotazů LINQ volání členové typů vyčíslitelná a dotazovatelné poskytované LINQ. Můžete tyto další funkce voláním operátor konkrétní dotaz na výsledek výrazu dotazu. Například následující příklad kódu používá <xref:System.Linq.Enumerable.Union%2A> metoda kombinovat výsledky dva dotazy do výsledku jeden dotaz. Použije <xref:System.Linq.Enumerable.ToList%2A> metoda vrátí výsledek dotazu jako obecný seznam.  
   
@@ -128,15 +129,15 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
   
  Podrobnosti o dalších možnostech LINQ najdete v tématu [standardní přehled operátory dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
   
-##  <a name="ConnectingToADatabase"></a>Připojení k databázi pomocí technologie LINQ to SQL  
- V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], identifikují objekty, databáze systému SQL Server, jako je například tabulek, zobrazení a uložených procedur, které chcete získat přístup pomocí LINQ to SQL souboru. Technologie LINQ to SQL souboru s příponou dbml.  
+##  <a name="ConnectingToADatabase"></a> Připojení k databázi pomocí technologie LINQ to SQL  
+ V jazyce Visual Basic identifikovat objekty databáze systému SQL Server, jako je například tabulek, zobrazení a uložených procedur, které chcete získat přístup pomocí LINQ to SQL souboru. Technologie LINQ to SQL souboru s příponou dbml.  
   
  Pokud máte platné připojení k databázi systému SQL Server, můžete přidat **třídy LINQ to SQL** šablony položky do projektu. Tato akce zobrazí Návrhář relací objektů (Návrhář relací objektů). Návrhář relací objektů můžete přetáhnout položky, které chcete získat přístup v kódu z **Průzkumníka serveru**/**Průzkumník databáze** na plochu návrháře. Technologie LINQ to SQL souboru přidá <xref:System.Data.Linq.DataContext> objektu do projektu. Tento objekt obsahuje vlastnosti a kolekce pro tabulky a zobrazení, která mají přístup k a metody pro uložené procedury, které chcete volat. Po uložení změn LINQ to SQL (dbml) souboru pod položkou dostanete tyto objekty v kódu <xref:System.Data.Linq.DataContext> objekt, který je definován Návrhář relací objektů. <xref:System.Data.Linq.DataContext> Objekt pro je s názvem projektu na základě názvu vaší LINQ to SQL souboru. Například LINQ to SQL souboru, který je pojmenován Northwind.dbml vytvoří <xref:System.Data.Linq.DataContext> objekt s názvem `NorthwindDataContext`.  
   
  Příklady s podrobné pokyny najdete v tématu [postupy: dotaz databáze](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md) a [postupy: volání uložené procedury](../../../../visual-basic/programming-guide/language-features/linq/how-to-call-a-stored-procedure-by-using-linq.md).  
   
-##  <a name="VisualBasicFeaturesThatSupportLINQ"></a>Funkce Visual Basic podporující LINQ  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]zahrnuje další upozorňují na důležité funkce, které využívají LINQ jednoduché a snížíte počet kód, který musíte napsat provádět dotazy LINQ. Patří mezi ně například:  
+##  <a name="VisualBasicFeaturesThatSupportLINQ"></a> Funkce Visual Basic podporující LINQ  
+ Visual Basic zahrnuje další upozorňují na důležité funkce, které využívají LINQ jednoduché a snížíte počet kód, který musíte napsat provádět dotazy LINQ. Patří mezi ně například:  
   
 -   **Anonymní typy**, které umožňují vytvořit nový typ na základě výsledku dotazu.  
   
@@ -146,7 +147,7 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
   
  Podrobnosti najdete v tématu [jazyka Visual Basic funkce, podporu LINQ](../../../../visual-basic/programming-guide/concepts/linq/features-that-support-linq.md).  
   
-##  <a name="QueryExecution"></a>Při provádění dotazu odložené a okamžitě  
+##  <a name="QueryExecution"></a> Při provádění dotazu odložené a okamžitě  
  Při provádění dotazu je oddělené od vytvoření dotazu. Po vytvoření dotazu její provedení se aktivuje samostatné mechanismus. Dotaz mohou být provedeny, jakmile je definována (*okamžité spuštění*), nebo mohou být uloženy definice a dotaz můžete spustit později (*odložené spouštění*).  
   
  Ve výchozím nastavení když vytvoříte dotaz, samotný dotaz není provedena okamžitě. Místo toho definice dotazu je uložené v proměnné, která slouží k odkazování výsledku dotazu. Pokud přístup proměnnou výsledek dotazu později v kódu, například v `For…Next` smyčky, dotaz se spustí. Tento proces se označuje jako *odložené spouštění*.  
@@ -157,8 +158,8 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
   
  Další informace o provádění dotazů najdete v tématu [zápis vaše první dotaz LINQ](../../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
   
-##  <a name="XMLInVisualBasic"></a>XML v jazyce Visual Basic  
- Soubor XML funkce [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zahrnují literály XML a vlastnosti osy XML, které umožňují snadno vytvářet, přístup, dotaz a upravovat v kódu XML. XML – literály umožňují zapisovat přímo v kódu XML. Visual Basic – kompilátor zpracovává XML jako první třídy datového objektu.  
+##  <a name="XMLInVisualBasic"></a> XML v jazyce Visual Basic  
+ Funkce XML v jazyce Visual Basic zahrnout literály XML a vlastnosti osy XML, které umožňují snadno vytvářet, přístup, dotaz a upravovat v kódu XML. XML – literály umožňují zapisovat přímo v kódu XML. Visual Basic – kompilátor zpracovává XML jako první třídy datového objektu.  
   
  Následující příklad kódu ukazuje, jak vytvářet elementu XML, přístup k jeho dílčí elementy a atributy a dotazu pomocí LINQ na obsah elementu.  
   
@@ -166,19 +167,19 @@ Language-Integrated Query (LINQ) přidá funkce dotazu pro [!INCLUDE[vbprvb](~/i
   
  Další informace najdete v tématu [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).  
   
-##  <a name="RelatedResources"></a>Související informační zdroje  
+##  <a name="RelatedResources"></a> Související informační zdroje  
   
 |Téma|Popis|  
 |---|---|  
-|[XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)|Popisuje funkce XML v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] může být dotazován a které vám umožňují zahrnout XML jako první třídy datových objektů ve vaší [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kódu.|  
-|[Dotazy](../../../../visual-basic/language-reference/queries/queries.md)|Poskytuje referenční informace o klauzule dotazu, které jsou k dispozici v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].|  
+|[XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)|Popisuje funkce XML v jazyku Visual Basic, který může být dotazován a které vám umožňují zahrnout XML jako první třídy datové objekty v kódu jazyka Visual Basic.|  
+|[Dotazy](../../../../visual-basic/language-reference/queries/queries.md)|Poskytuje referenční informace o klauzule dotazu, které jsou k dispozici v jazyce Visual Basic.|  
 |[LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)|Obsahuje obecné informace, pokyny pro programovací a ukázky pro výrazy LINQ.|  
 |[LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)|Obsahuje obecné informace, pokyny pro programovací a ukázky pro technologie LINQ to SQL.|  
 |[LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)|Obsahuje obecné informace, pokyny pro programovací a ukázky pro LINQ na objekty.|  
 |[LINQ to ADO.NET (stránka portálu)](http://msdn.microsoft.com/library/dd7d3c6a-ff98-47e9-a1a7-2d4cfc42d150)|Obsahuje odkazy na obecné informace, pokyny pro programovací a ukázky pro LINQ na [!INCLUDE[vstecado](~/includes/vstecado-md.md)].|  
 |[LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)|Obsahuje obecné informace, pokyny pro programovací a ukázky pro technologie LINQ to XML.|  
   
-##  <a name="HowToAndWalkthroughTopics"></a>Postupy a návody  
+##  <a name="HowToAndWalkthroughTopics"></a> Postupy a návody  
  [Postupy: dotaz databáze](how-to-query-a-database-by-using-linq.md)  
   
  [Postupy: volání uložené procedury](how-to-call-a-stored-procedure-by-using-linq.md)  

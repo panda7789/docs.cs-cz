@@ -1,11 +1,12 @@
 ---
-title: "Návod: Vytváření objektů modelu COM pomocí jazyka Visual Basic"
-ms.custom: 
+title: 'Návod: Vytváření objektů modelu COM pomocí jazyka Visual Basic'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - COM interop [Visual Basic], creating COM objects
@@ -14,22 +15,22 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ff7d3868a2e3ddaba06ebc6f98c8eacfc7299366
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e660d672fc32455cee349dc44ad20c3244c087b4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů modelu COM pomocí jazyka Visual Basic
-Při vytváření nové aplikace nebo součásti, je nejlepší vytvořit sestavení rozhraní .NET Framework. Ale [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] také umožňuje snadno vystavit rozhraní .NET Framework komponenty modelu COM. To umožňuje poskytovat nové součásti pro starší aplikace sady, které vyžadují COM – součásti. Tento návod ukazuje, jak používat [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vystavit [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] objekty jako objekty modelu COM, s i bez šablona třídy COM.  
+Při vytváření nové aplikace nebo součásti, je nejlepší vytvořit sestavení rozhraní .NET Framework. Ale jazyka Visual Basic také umožňuje snadno vystavit rozhraní .NET Framework komponenty modelu COM. To umožňuje poskytovat nové součásti pro starší aplikace sady, které vyžadují COM – součásti. Tento návod ukazuje, jak používat Visual Basic vystavit [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] objekty jako objekty modelu COM, s i bez šablona třídy COM.  
   
  Nejjednodušší způsob, jak vystavit objektů COM je pomocí šablony třídy COM. Šablona třídy COM vytvoří novou třídu a pak nakonfiguruje projektu pro generování tříd a interoperabilita vrstvě jako objekt COM a zaregistrovat ho u operačního systému.  
   
 > [!NOTE]
->  I když můžete také zveřejnit třídu vytvořené v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jako objekt COM pro nespravovaného kódu pro použití, není objekt true COM a nemůže být použit [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. Další informace najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+>  I když můžete také zveřejnit třídu vytvořit jako objekt COM pro nespravovaného kódu pro použití v jazyce Visual Basic, není objekt true COM a nemůže být použit jazyka Visual Basic. Další informace najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -41,11 +42,11 @@ Při vytváření nové aplikace nebo součásti, je nejlepší vytvořit sestav
   
 3.  Vyberte **přidat novou položku** z **projektu** nabídky. **Přidat novou položku** se zobrazí dialogové okno.  
   
-4.  Vyberte **třídy COM** z **šablony** seznamu a pak klikněte na tlačítko **přidat**. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]Přidá novou třídu a nakonfiguruje nového projektu pro zprostředkovatele komunikace s objekty COM.  
+4.  Vyberte **třídy COM** z **šablony** seznamu a pak klikněte na tlačítko **přidat**. Visual Basic přidá novou třídu a nakonfiguruje nového projektu pro zprostředkovatele komunikace s objekty COM.  
   
 5.  Přidejte kód například události, vlastnosti a metody pro třídu COM.  
   
-6.  Vyberte **sestavení ClassLibrary1** z **sestavení** nabídky. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]sestavení sestavení a zaregistruje objekt COM s operačním systémem.  
+6.  Vyberte **sestavení ClassLibrary1** z **sestavení** nabídky. Visual Basic sestavení sestavení a zaregistruje objekt COM s operačním systémem.  
   
 ## <a name="creating-com-objects-without-the-com-class-template"></a>Vytváření objektů modelu COM bez šablony třídy COM  
  Můžete také vytvořit třídu COM ručně místo pomocí šablony třídy COM. Tento postup je užitečné, když pracujete z příkazového řádku, nebo pokud potřebujete větší kontrolu nad jak jsou definovány COM – objekty.  
@@ -93,15 +94,15 @@ Při vytváření nové aplikace nebo součásti, je nejlepší vytvořit sestav
   
      [!code-vb[VbVbalrInterop#6](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_5.vb)]  
   
-9. Přidejte do třídy, koncová její vlastnosti, metod a události `End Class` příkaz. Vyberte **sestavit řešení** z **sestavení** nabídky. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]sestavení sestavení a zaregistruje objekt COM s operačním systémem.  
+9. Přidejte do třídy, koncová její vlastnosti, metod a události `End Class` příkaz. Vyberte **sestavit řešení** z **sestavení** nabídky. Visual Basic sestavení sestavení a zaregistruje objekt COM s operačním systémem.  
   
     > [!NOTE]
-    >  Generovat s objekty COM [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] nelze použít jiná [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikace protože nejsou true COM – objekty. Pokusy o přidání odkazů na tyto objekty COM vyvolá chybu. Podrobnosti najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+    >  Objekty COM, které můžete vygenerovat pomocí jazyka Visual Basic nelze použít jiné aplikace Visual Basic, protože nejsou true COM – objekty. Pokusy o přidání odkazů na tyto objekty COM vyvolá chybu. Podrobnosti najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.ComClassAttribute>  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
- [Návod: Implementace dědičnosti s objekty COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- [#Region – direktiva](../../../visual-basic/language-reference/directives/region-directive.md)  
+ [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
+ [Direktiva #Region](../../../visual-basic/language-reference/directives/region-directive.md)  
  [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)  
  [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)

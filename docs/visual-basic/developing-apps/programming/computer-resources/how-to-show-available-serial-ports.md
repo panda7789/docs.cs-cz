@@ -1,11 +1,12 @@
 ---
-title: "Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - serial ports, availability
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1dc12d8ad4c27eff346ccb6a7f5fd2ae3bd76701
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cda98e8261669b2f20045e51b5ccef2e5db98a72
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic
-Toto téma popisuje postup použití `My.Computer.Ports` k zobrazení dostupných sériových portů počítače v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+Toto téma popisuje postup použití `My.Computer.Ports` k zobrazení dostupných sériových portů počítače v jazyce Visual Basic.  
   
  Povolit uživatelům vyberte port, který chcete použít, jsou umístěny názvy sériových portů v <xref:System.Windows.Forms.ListBox> ovládacího prvku.  
   
@@ -53,6 +54,6 @@ Toto téma popisuje postup použití `My.Computer.Ports` k zobrazení dostupnýc
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Devices.Ports>  
- [Postupy: vytáčení modemů připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
- [Postupy: odesílání řetězců na sériové porty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
- [Postupy: příjem řetězců ze sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+ [Postupy: Vytáčení čísel na modemech připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
+ [Postupy: Posílání řetězců na sériové porty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
+ [Postupy: Příjem řetězců ze sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)

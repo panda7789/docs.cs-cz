@@ -1,23 +1,24 @@
 ---
-title: "Náborové procesu"
-ms.custom: 
+title: Náborové procesu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 30cad662a9cca679f7e8ce720cfde3d369b9ba60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8cfa23ab5f36b3a40de107a546dd4700a4523595
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hiring-process"></a>Náborové procesu
 Tento příklad ukazuje, jak implementovat obchodní proces, který používá aktivity zasílání zpráv a dvě pracovních hostované jako pracovní postup služby. Tyto pracovní postupy jsou součástí IT infrastruktury fiktivní společnosti nazývané Contoso, Inc.  
@@ -28,7 +29,7 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
   
  Tento příklad znázorňuje následující funkce sady [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]:  
   
--   <xref:System.Activities.Statements.Flowchart>a <xref:System.Activities.Statements.Sequence> pracovní postupy pro modelování obchodní procesy.  
+-   <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Sequence> pracovní postupy pro modelování obchodní procesy.  
   
 -   Služby pracovních postupů.  
   
@@ -48,9 +49,9 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
   
 -   Sestavení aktivit.  
   
--   <xref:System.Activities.Statements.Parallel>aktivity.  
+-   <xref:System.Activities.Statements.Parallel> aktivity.  
   
--   <xref:System.Activities.Statements.CancellationScope>aktivita.  
+-   <xref:System.Activities.Statements.CancellationScope> aktivita.  
   
 -   Trvanlivý časovače (<xref:System.Activities.Statements.Delay> aktivity).  
   
@@ -129,25 +130,25 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
 |Vlastní sledování|Ukázka obsahuje vlastní sledování člena, který ukládá historii `HiringRequestProcess` (to zaznamenává provést akce, kdo a kdy). Zdrojový kód je ve složce Sledování HiringRequestService.|HiringRequestService|  
 |Trasování událostí pro Windows Sledování|Poskytované systémem trasování událostí pro Windows Sledování je v souboru App.config v rámci služby HiringRequestService nakonfigurován.|HiringRequestService|  
 |Sestavení aktivit|Definice proces používá volné složení <xref:System.Activities.Activity>. Vývojový diagram obsahuje několik pořadí a paralelní aktivity, které současně obsahovat jiné aktivity (a tak dále).|HiringRequestService|  
-|Paralelní aktivity.|-   <xref:System.Activities.Statements.ParallelForEach%601>slouží k registraci v doručené poště CEO a správci oddělení lidských zdrojů paralelně (čeká na schválení krok dva HR správci).<br />-   <xref:System.Activities.Statements.Parallel>Umožňuje provést některé úlohy čištění v krocích dokončeno a byl odmítnut|HiringRequestService|  
+|Paralelní aktivity.|-   <xref:System.Activities.Statements.ParallelForEach%601> slouží k registraci v doručené poště CEO a správci oddělení lidských zdrojů paralelně (čeká na schválení krok dva HR správci).<br />-   <xref:System.Activities.Statements.Parallel> Umožňuje provést některé úlohy čištění v krocích dokončeno a byl odmítnut|HiringRequestService|  
 |Zrušení modelu|Vývojový diagram používá <xref:System.Activities.Statements.CancellationScope> vytvořit zrušení chování (v tomto případě dělá některé vyčištění.)|HiringRequestService|  
-|Zákaznickou stálost účastník|`HiringRequestPersistenceParticipant`ukládá data z proměnné pracovního postupu do tabulky uloženy v databázi personálního oddělení společnosti Contoso.|HiringRequestService|  
-|Služby pracovních postupů|`ResumeRequestService`je implementovaná pomocí služeb pracovních postupů. Informace o pracovním postupu definice a služby je obsažený v ResumeRequestService.xamlx. Služba je nakonfigurována pro použití trvalosti a sledování.|ResumeRequestService|  
-|Trvanlivý časovače|`ResumeRequestService`používá k definování dobu trvání úlohy publikování trvanlivý časovače (po vypršení časového limitu vyprší, publikování úlohy je uzavřený).|ResumeRequestService|  
-|Transakce|<xref:System.Activities.Statements.TransactionScope>slouží k zajištění konzistence dat v rámci provedení několik aktivit (při přijetí nové obnovit).|ResumeRequestService|  
+|Zákaznickou stálost účastník|`HiringRequestPersistenceParticipant` ukládá data z proměnné pracovního postupu do tabulky uloženy v databázi personálního oddělení společnosti Contoso.|HiringRequestService|  
+|Služby pracovních postupů|`ResumeRequestService` je implementovaná pomocí služeb pracovních postupů. Informace o pracovním postupu definice a služby je obsažený v ResumeRequestService.xamlx. Služba je nakonfigurována pro použití trvalosti a sledování.|ResumeRequestService|  
+|Trvanlivý časovače|`ResumeRequestService` používá k definování dobu trvání úlohy publikování trvanlivý časovače (po vypršení časového limitu vyprší, publikování úlohy je uzavřený).|ResumeRequestService|  
+|Transakce|<xref:System.Activities.Statements.TransactionScope> slouží k zajištění konzistence dat v rámci provedení několik aktivit (při přijetí nové obnovit).|ResumeRequestService|  
 |Transakce|Vlastní trvalost účastník (`HiringRequestPersistenceParticipant`) a vlastní sledování účastník (`HistoryFileTrackingParticipant`) použít stejné transakci.|HiringRequestService|  
 |Pomocí [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace.|Pracovní postupy jsou přístupné ze dvou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace.|InternalClient / CareersWebSite|  
   
 ## <a name="data-storage"></a>Úložiště dat  
  Data uložena v databázi systému SQL Server volá `ContosoHR` (skript pro vytvoření této databáze se nachází v `DbSetup` složku). Instance pracovního postupu jsou uložené v databázi systému SQL Server volá `InstanceStore` (skripty pro vytvoření instance úložiště jsou součástí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] distribuční).  
   
- Obě databáze jsou vytvořeny pomocí skriptu Setup.cmd z [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] příkazového řádku.  
+ Obě databáze jsou vytvořeny pomocí skriptu Setup.cmd z příkazového řádku Visual Studia.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
   
 #### <a name="to-create-the-databases"></a>K vytvoření databáze  
   
-1.  Otevřete [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] příkazového řádku.  
+1.  Otevřete příkazový řádek sady Visual Studio.  
   
 2.  Přejděte do složky ukázka.  
   
@@ -157,7 +158,7 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
   
 #### <a name="to-set-up-the-solution-for-execution"></a>Nastavit řešení pro spuštění  
   
-1.  Spustit [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] jako správce. Otevřete HiringRequest.sln.  
+1.  Spusťte sadu Visual Studio jako správce. Otevřete HiringRequest.sln.  
   
 2.  Pravým tlačítkem na řešení v **Průzkumníku řešení** a vyberte **vlastnosti**.  
   
@@ -221,7 +222,7 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
   
-1.  Ujistěte se, že používáte [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] s oprávněními správce.  
+1.  Ujistěte se, že používáte Visual Studio s oprávněními správce.  
   
 2.  Pokud se nepodaří řešení je sestavení, ověřte následující:  
   
@@ -237,7 +238,7 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
   
         2.  Klikněte pravým tlačítkem na **Contoso** a vyberte **aktualizace nebo webové odkazy**.  
   
-        3.  Znovu sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].  
+        3.  Znovu sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B v sadě Visual Studio.  
   
 ## <a name="uninstalling"></a>Probíhá odinstalace  
   

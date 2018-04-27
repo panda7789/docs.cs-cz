@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6281442f42b511170f83eaeb1c940a35a566e519
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0ca69ada16fbb5a6757da96a7ea64d2113c15b6f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="securing-net-microservices-and-web-applications"></a>Zabezpečení rozhraní .NET Mikroslužeb a webových aplikací
 
@@ -124,7 +124,7 @@ else
 
 Pokud se rozhodnete **individuální uživatelský účet** možnost ověřování při vytváření projektu webové aplikace ASP.NET kód v sadě Visual Studio, kód nutné se přihlásit pomocí externího poskytovatele je již v projektu, jak je znázorněno 11 obrázek-3.
 
-![https://msdnshared.BLOB.Core.Windows.NET/Media/2016/10/New-Web-App.PNG](./media/image3.png)
+![https://msdnshared.blob.core.windows.net/media/2016/10/new-web-app.png](./media/image3.png)
 
 **Obrázek 11-3**. Vyberete možnost použití externího ověřování, při vytváření projektu webové aplikace
 
@@ -136,7 +136,7 @@ Samozřejmě, je také možné, vytvořte vlastní middleware externího ověřo
 
 Ověřování pomocí ASP.NET Core Identity (nebo identitu a externí zprostředkovatelé ověřování) funguje dobře pro mnoho scénářů webové aplikace, ve kterých je vhodné ukládání informací o uživateli v souboru cookie. V dalších scénářích ale soubory cookie nejsou fyzické prostředky k uchování a přenosu dat.
 
-Například pro ASP.NET Web API Core RESTful koncových bodů, které může získat přístup k jednostránkové aplikace (SPA), která zveřejňuje nativní klienty, nebo i pomocí dalších webových rozhraní API, obvykle je vhodné místo toho použít ověřování tokenu nosiče. Tyto aplikace není pracovat se soubory cookie, ale můžete snadno získat token nosiče a její zahrnutí do hlavičce autorizace následných žádostí. Pokud chcete povolit ověřování tokenem, ASP.NET Core podporuje několik možností pro používání [OAuth 2.0](https://oauth.net/2/) a [OpenID Connect](http://openid.net/connect/).
+Například pro ASP.NET Web API Core RESTful koncových bodů, které může získat přístup k jednostránkové aplikace (SPA), která zveřejňuje nativní klienty, nebo i pomocí dalších webových rozhraní API, obvykle je vhodné místo toho použít ověřování tokenu nosiče. Tyto aplikace není pracovat se soubory cookie, ale můžete snadno získat token nosiče a její zahrnutí do hlavičce autorizace následných žádostí. Pokud chcete povolit ověřování tokenem, ASP.NET Core podporuje několik možností pro používání [OAuth 2.0](https://oauth.net/2/) a [OpenID Connect](https://openid.net/connect/).
 
 ## <a name="authenticating-with-an-openid-connect-or-oauth-20-identity-provider"></a>Ověřování pomocí zprostředkovatele OpenID Connect nebo identitu OAuth 2.0
 
@@ -231,12 +231,12 @@ Middlewaru ověřování nosiče JWT může také podporovat pokročilejší sc�
 ## <a name="additional-resources"></a>Další zdroje
 
 -   **Sdílení souborů cookie mezi aplikacemi**
-    [*https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing\# sdílení – ověřování – soubory cookie mezi – aplikace*](https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications)
+    [*https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing\#sdílení – ověřování – soubory cookie mezi – aplikace*](https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications)
 
 -   **Úvod do Identity**
     [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
 
--   **Rick Anderson. Dvoufaktorové ověřování pomocí SMS**
+-   **Rick Anderson. Dvoufaktorové ověřování pomocí serveru SMS**
     [*https://docs.microsoft.com/aspnet/core/security/authentication/2fa*](https://docs.microsoft.com/aspnet/core/security/authentication/2fa)
 
 -   **Povolení ověřování pomocí služby Facebook, Google a dalších externích zprostředkovatelů**
@@ -246,7 +246,7 @@ Middlewaru ověřování nosiče JWT může také podporovat pokročilejší sc�
     [*https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2*](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
 
 -   **AspNet.Security.OAuth.Providers** (úložiště GitHub zprostředkovatelů ASP.NET OAuth.
-    [*https://github.com/ASPNET-contrib/ASPNET.Security.OAuth.Providers/Tree/dev/src*](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src)
+    [*https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src*](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src)
 
 -   **Danny Strockis. Integrace Azure AD do webové aplikace ASP.NET Core**
     [*https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/*](https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)

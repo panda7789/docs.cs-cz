@@ -1,12 +1,12 @@
 ---
-title: "Práce s kalendáři"
-ms.custom: 
+title: Práce s kalendáři
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,18 +19,18 @@ helpviewer_keywords:
 - international applications [.NET Framework], calendars
 - culture, calendars
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c3a54d5222edca0b42f30c33584f0f62aa96f9e2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 67e0344dc3038096a5b2114790fbb0c343ba3e4f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -70,7 +70,7 @@ Všech kalendářů v rozhraní .NET jsou odvozeny od <xref:System.Globalization
 
 Kalendář lze použít jedním ze dvou způsobů:
 
-* Jako kalendář, který používá konkrétní jazyková verze. Každý <xref:System.Globalization.CultureInfo> objekt má aktuální kalendář, což je kalendář, který je aktuálně používá objekt. Řetězcové vyjádření hodnot data a času automaticky odrážejí aktuální jazykovou verzi a aktuální kalendář. Aktuálním kalendářem je obvykle výchozí kalendář dané jazykové verze. <xref:System.Globalization.CultureInfo>objekty mají také volitelné kalendáře, mezi které patří další kalendářích, které můžete použít tuto jazykovou verzi.
+* Jako kalendář, který používá konkrétní jazyková verze. Každý <xref:System.Globalization.CultureInfo> objekt má aktuální kalendář, což je kalendář, který je aktuálně používá objekt. Řetězcové vyjádření hodnot data a času automaticky odrážejí aktuální jazykovou verzi a aktuální kalendář. Aktuálním kalendářem je obvykle výchozí kalendář dané jazykové verze. <xref:System.Globalization.CultureInfo> objekty mají také volitelné kalendáře, mezi které patří další kalendářích, které můžete použít tuto jazykovou verzi.
 
 * Jako samostatný kalendář, který není závislý na konkrétní jazykové verzi. V takovém případě <xref:System.Globalization.Calendar> metody se používají k express kalendářních dat jako hodnoty, které odpovídají kalendáři.
 
@@ -204,4 +204,4 @@ V případech, kde je vyjádřen řetězec představující datum v kalendáři,
 ## <a name="see-also"></a>Viz také
 
 [Postupy: zobrazování dat v jiném než gregoriánském kalendáři](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)
-[ukázka: Kalendář nástroj rozsah týden](http://code.msdn.microsoft.com/NET-Framework-4-Calendar-3360a84a)
+[ukázka: Kalendář nástroj rozsah týden](https://code.msdn.microsoft.com/NET-Framework-4-Calendar-3360a84a)

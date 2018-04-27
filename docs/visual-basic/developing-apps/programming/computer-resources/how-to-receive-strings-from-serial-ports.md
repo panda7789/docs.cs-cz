@@ -1,28 +1,29 @@
 ---
-title: "Postupy: Příjem řetězců ze sériových portů v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Příjem řetězců ze sériových portů v jazyce Visual Basic'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - serial ports, retrieving strings
 - strings [Visual Basic], retrieving from serial ports
 - My.Resources object
 ms.assetid: 8371ce2c-e1c7-476b-a86d-9afc2614b6b7
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a58ce248404bfe4d6c55bba741b332acd7fcbf5c
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 76124654e479ae84702524d68bcced34610d1526
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-receive-strings-from-serial-ports-in-visual-basic"></a>Postupy: Příjem řetězců ze sériových portů v jazyce Visual Basic
-Toto téma popisuje postup použití `My.Computer.Ports` pro příjem řetězců ze sériových portů počítače v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+Toto téma popisuje postup použití `My.Computer.Ports` pro příjem řetězců ze sériových portů počítače v jazyce Visual Basic.  
   
 ### <a name="to-receive-strings-from-the-serial-port"></a>Pro příjem řetězců ze sériových portů  
   

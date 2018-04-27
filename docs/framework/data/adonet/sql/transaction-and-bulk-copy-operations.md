@@ -1,27 +1,29 @@
 ---
-title: "Transakce a operace hromadného kopírování"
-ms.custom: 
+title: Transakce a operace hromadného kopírování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f6f0cbc9-f7bf-4d6e-875f-ad1ba0b4aa62
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d37ea32ef1f73b84050cdd64ca026ac12813bbd2
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 40494c887ffa48c6ebc7f020cb4d42eecbd08e75
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="transaction-and-bulk-copy-operations"></a>Transakce a operace hromadného kopírování
 Operace hromadného kopírování lze provést jako izolované operace nebo jako součást více krok transakce. Tato druhou možnost umožňuje provádět více než jeden hromadné kopírování v rámci jedné transakce a také provádění jiných databázových operací (například vložení, aktualizace a odstranění) ale stále mít možnost potvrďte nebo vraťte zpět celou transakci.  
@@ -36,7 +38,7 @@ Operace hromadného kopírování lze provést jako izolované operace nebo jako
  Hromadné kopírování se spustí s <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A> vlastnost nastavena na hodnotu 10. Při operaci zaznamená neplatný řádek, je vyvolána výjimka. V tomto prvním příkladu je operace hromadného kopírování, beztransakční. Všechny dávky zkopírovat až do chvíle, chyby se potvrdí; dávka obsahuje duplicitní klíč, je vrácena zpět a operace hromadného kopírování je byl zastaven před zpracováním jiných dávek.  
   
 > [!NOTE]
->  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěné ve stejné [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instanci, je jednodušší a rychlejší použít [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT` příkaz Kopírovat data.  
+>  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěny ve stejné instanci systému SQL Server, je jednodušší a rychlejší použít [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT` příkaz Kopírovat data.  
   
  [!code-csharp[DataWorks SqlBulkCopy.DefaultTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DefaultTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.DefaultTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DefaultTransaction/VB/source.vb#1)]  
@@ -52,7 +54,7 @@ Operace hromadného kopírování lze provést jako izolované operace nebo jako
  Následující aplikace konzoly je podobně jako v předchozím příkladu s jednou výjimkou: V tomto příkladu operace hromadného kopírování spravuje vlastní transakce. Všechny dávky zkopírovat až do chvíle, chyby se potvrdí; dávka obsahuje duplicitní klíč, je vrácena zpět a operace hromadného kopírování je byl zastaven před zpracováním jiných dávek.  
   
 > [!IMPORTANT]
->  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěné ve stejné [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instanci, je jednodušší a rychlejší použít [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT` příkaz Kopírovat data.  
+>  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěny ve stejné instanci systému SQL Server, je jednodušší a rychlejší použít [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT` příkaz Kopírovat data.  
   
  [!code-csharp[DataWorks SqlBulkCopy.InternalTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.InternalTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.InternalTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.InternalTransaction/VB/source.vb#1)]  
@@ -65,7 +67,7 @@ Operace hromadného kopírování lze provést jako izolované operace nebo jako
  Následující aplikace konzoly je podobná první (beztransakční) příkladu s jednou výjimkou: v tomto příkladu je operace hromadného kopírování součástí větší, externí transakce. Když dojde k chybě porušení primárního klíče, celá transakce bude vrácena zpět a žádné řádky jsou přidány do cílové tabulky.  
   
 > [!IMPORTANT]
->  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěné ve stejné [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instanci, je jednodušší a rychlejší použít [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT` příkaz Kopírovat data.  
+>  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [hromadné kopírování příklad instalace](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je určen k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěny ve stejné instanci systému SQL Server, je jednodušší a rychlejší použít [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT` příkaz Kopírovat data.  
   
  [!code-csharp[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/VB/source.vb#1)]  

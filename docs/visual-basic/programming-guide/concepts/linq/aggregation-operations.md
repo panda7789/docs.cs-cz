@@ -1,22 +1,23 @@
 ---
-title: "Agregační operace (Visual Basic)"
-ms.custom: 
+title: Agregační operace (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f47e92c-5dd2-4007-baf4-c5fe5dc3b4a8
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9d4b07eeb1d09d7db0f75d96629c816f66dbb128
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e2f4234b9f56794b9bfe6c56029ccc9c00ae0642
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aggregation-operations-visual-basic"></a>Agregační operace (Visual Basic)
 Agregační operace vypočítá jednu hodnotu z kolekce hodnot. Příklad operace agregace je výpočet průměrné denní teploty z měsíc za denní hodnoty teploty.  
@@ -42,12 +43,12 @@ Agregační operace vypočítá jednu hodnotu z kolekce hodnot. Příklad operac
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazu dotazu  
   
 ### <a name="average"></a>Průměr  
- Následující příklad kódu používá `Aggregate Into Average` klauzuli v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vypočítat průměrnou teplotu v pole čísla, která představují teploty.  
+ Následující příklad kódu používá `Aggregate Into Average` klauzule v jazyce Visual Basic pro výpočet průměrnou teplotu v pole čísla, která představují teploty.  
   
  [!code-vb[CsLINQAggregating#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/aggregation-operations_1.vb)]  
   
 ### <a name="count"></a>Počet  
- Následující příklad kódu používá `Aggregate Into Count` klauzuli v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] můžete zjistit, kolik hodnot v pole, které jsou větší než nebo rovna hodnotě 80.  
+ Následující příklad kódu používá `Aggregate Into Count` klauzule v jazyce Visual Basic pro počet hodnot v pole, které jsou větší než nebo rovna hodnotě 80.  
   
  [!code-vb[CsLINQAggregating#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/aggregation-operations_2.vb)]  
   
@@ -74,7 +75,7 @@ Agregační operace vypočítá jednu hodnotu z kolekce hodnot. Příklad operac
 ## <a name="see-also"></a>Viz také  
  <xref:System.Linq>  
  [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [AGGREGATE – klauzule](../../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [Klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md)  
  [Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md)  
  [Postupy: počet, SUMA nebo průměr dat](../../../../visual-basic/programming-guide/language-features/linq/how-to-count-sum-or-average-data-by-using-linq.md)  
  [Postupy: hledání minimální nebo maximální hodnoty ve výsledku dotazu](../../../../visual-basic/programming-guide/language-features/linq/how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  

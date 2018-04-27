@@ -20,11 +20,11 @@ ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: dae47988e27ed4b1a714943ce1fbffe3b815066b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7c32ce34dc7d6cb662ebdb42a3d3431f8107687f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="operators-and-expressions-in-visual-basic"></a>Operátory a výrazy v jazyce Visual Basic
 *Operátor* je element kódu, který provede operaci na jeden nebo více elementy kódu, které mají hodnoty. Například prvky hodnotu proměnné, konstanty, literály, vlastnosti, vrátí z `Function` a `Operator` procedury a výrazy.  
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/21/2017
  *Výraz* je řada hodnota elementy v kombinaci s operátory, která dává novou hodnotu. Operátory fungují na elementy hodnota provedením výpočtů, porovnání nebo jiné operace.  
   
 ## <a name="types-of-operators"></a>Typy operátorů  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje následující typy operátory:  
+ Visual Basic poskytuje následující typy operátory:  
   
 -   [Aritmetické operátory](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md) provádět výpočty obeznámeni s číselných hodnot, včetně jejich bit vzory s posunem.  
   
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrOperators#56](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/index_1.vb)]  
   
- V předchozím příkladu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] provádí operace ve výrazu na pravé straně operátoru přiřazení (`=`), potom přiřadí výsledná hodnota proměnné `x` na levé straně. Neexistuje žádné praktické omezení počtu operátory, které lze spojit do výrazu, ale k pochopení [operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md) je nutné zajistit, že dostanete očekáváte, že výsledky.  
+ V předchozím příkladu, Visual Basic provádí operace ve výrazu na pravé straně operátoru přiřazení (`=`), potom přiřadí výsledná hodnota proměnné `x` na levé straně. Neexistuje žádné praktické omezení počtu operátory, které lze spojit do výrazu, ale k pochopení [operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md) je nutné zajistit, že dostanete očekáváte, že výsledky.  
   
  Další informace a příklady naleznete v tématu [operátor přetížení Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703).  
   

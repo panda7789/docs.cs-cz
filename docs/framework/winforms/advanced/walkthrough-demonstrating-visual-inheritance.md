@@ -1,12 +1,13 @@
 ---
-title: "Návod: Demonstrace vizuálního dědění"
-ms.custom: 
+title: 'Návod: Demonstrace vizuálního dědění'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7c5ef33be9841b5c74b6ae2448daf56079489b61
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: e76ddcb33980db1a6d1b6e602c1b71da60b53381
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Dědičnost vizuálních prvků umožňuje zobrazíte ovládacích prvků na formuláři základní a přidejte nové ovládací prvky. V tomto návodu vytvoříte základní formulář a kompilována knihovny tříd. Bude tato knihovna tříd importovat do jiného projektu a vytvořte nový formulář, který dědí ze základní formulář. Během tohoto návodu se dozvíte, jak:  
@@ -157,7 +159,7 @@ Dědičnost vizuálních prvků umožňuje zobrazíte ovládacích prvků na for
   
 7.  Vyberte privátní **dát sbohem všem indikované** tlačítko a Všimněte si, nemá změny velikosti obslužné rutiny. Kromě toho **vlastnosti** okně Vlastnosti toto tlačítko se šedý k označení je nelze změnit.  
   
-8.  Pokud používáte [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]:  
+8.  Pokud používáte Visual C#:  
   
     1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Form1** v **InheritanceTest** projektu a potom zvolte **odstranit**. V dialogovém okně se zobrazí, klikněte na **OK** potvrďte odstranění.  
   
@@ -172,7 +174,7 @@ Dědičnost vizuálních prvků umožňuje zobrazíte ovládacích prvků na for
 12. Stisknutím klávesy F5 spusťte aplikaci a pozorovat chování zděděné formuláře.  
   
 ## <a name="next-steps"></a>Další kroky  
- Dědičnost pro uživatelské ovládací prvky funguje stejným způsobem. Otevřete nový projekt knihovny tříd a přidat uživatelský ovládací prvek. Umístěte základních ovládacích prvků na něm a kompilaci projektu. Otevřete jiné nového projektu knihovny tříd a přidejte odkaz na knihovnu zkompilované třídy. Navíc zkuste přidat ovládací prvek zděděné (prostřednictvím **přidat nové položky** dialogové okno) do projektu a pomocí **výběr dědičnosti**. Přidat uživatelský ovládací prvek a změňte `Inherits` (`:` v [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]) příkaz. Další informace najdete v tématu [postupy: dědění Windows Forms](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md).  
+ Dědičnost pro uživatelské ovládací prvky funguje stejným způsobem. Otevřete nový projekt knihovny tříd a přidat uživatelský ovládací prvek. Umístěte základních ovládacích prvků na něm a kompilaci projektu. Otevřete jiné nového projektu knihovny tříd a přidejte odkaz na knihovnu zkompilované třídy. Navíc zkuste přidat ovládací prvek zděděné (prostřednictvím **přidat nové položky** dialogové okno) do projektu a pomocí **výběr dědičnosti**. Přidat uživatelský ovládací prvek a změňte `Inherits` (`:` v jazyce Visual C#) příkaz. Další informace najdete v tématu [postupy: dědění Windows Forms](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Dědění v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)  

@@ -1,7 +1,7 @@
 ---
-title: "Zahození – průvodce v C#"
-description: "Popisuje C# pro podporu zahození, které nepřiřazené, discardable proměnné a způsoby, ve které je možné zahození."
-keywords: "Rozhraní .NET, .NET core"
+title: Zahození – průvodce v C#
+description: Popisuje C# pro podporu zahození, které nepřiřazené, discardable proměnné a způsoby, ve které je možné zahození.
+keywords: Rozhraní .NET, .NET core
 author: rpetrusha
 ms.author: ronpet
 ms.date: 07/21/2017
@@ -9,15 +9,15 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: 800a27d2d186c738dceb6838aa669377a0c07b01
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
+ms.openlocfilehash: 94badd78485ee4d3928b170d81a80743bf84102f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="discards---c-guide"></a>Zahození – průvodce v C#
 
-Od verze jazyka C# 7, C# podporuje zahodí, které jsou dočasné, fiktivní proměnné, které jsou záměrně nepoužívané v kódu aplikace. Zahození odpovídají nepřiřazené proměnné; nemají hodnotu. Protože je pouze jeden zahození proměnnou, a tuto proměnnou i nelze přidělit úložiště, můžete snížit zahození přidělení paměti. Protože záměr vymazat kódu, zvýšit jeho přehlednosti a jeho udržovatelnost.
+Od verze 7.0 C#, C# podporuje zahodí, které jsou dočasné, fiktivní proměnné, které jsou záměrně nepoužívané v kódu aplikace. Zahození odpovídají nepřiřazené proměnné; nemají hodnotu. Protože je pouze jeden zahození proměnnou, a tuto proměnnou i nelze přidělit úložiště, můžete snížit zahození přidělení paměti. Protože záměr vymazat kódu, zvýšit jeho přehlednosti a jeho udržovatelnost.
 
 Můžete znamenat, že proměnné zahození přiřazením podtržítko (`_`) jako její název. Například následující volání metody, které vrací 3 řazenou kolekci členů ve kterém jsou hodnoty první a druhý zahození a *oblasti* je dříve deklarované proměnné na hodnotu odpovídající třetí součást vrácený  *GetCityInformation*:
 
@@ -25,7 +25,7 @@ Můžete znamenat, že proměnné zahození přiřazením podtržítko (`_`) jak
 (_, _, area) = city.GetCityInformation(cityName);
 ```
 
-V jazyce C# 7 zahození jsou podporovány v přiřazení v kontextech následující:
+V jazyce C# 7.0 zahození jsou podporovány v přiřazení v kontextech následující:
 
 - Řazené kolekce členů a objekt [deconstruction](deconstruct.md).
 - Porovnávání vzorů s [je](language-reference/keywords/is.md) a [přepínač](language-reference/keywords/switch.md).
@@ -48,7 +48,7 @@ Další informace o deconstructing řazené kolekce členů s zahození najdete 
 
 Další informace o deconstructing uživatelem definované typy s zahození najdete v tématu [Deconstructing řazených kolekcí členů a dalších typů](deconstruct.md#deconstructing-a-user-defined-type-with-discards).
 
-## <a name="pattern-matching-with-switch-and-is"></a>Porovnávání vzorů s `switch` a`is`
+## <a name="pattern-matching-with-switch-and-is"></a>Porovnávání vzorů s `switch` a `is`
 
 *Zahodit vzor* mohou být používány s porovnávání vzorů [je](language-reference/keywords/is.md) a [přepínač](language-reference/keywords/switch.md) klíčová slova. Každý výraz vždy zahození shodu.
 
@@ -86,5 +86,5 @@ Všimněte si, že `_` je také platný identifikátor. Při použití mimo kont
 
 ## <a name="see-also"></a>Viz také
 [Deconstructing řazených kolekcí členů a dalších typů](deconstruct.md)   
-[`is`– klíčové slovo](language-reference/keywords/is.md)   
-[`switch`– klíčové slovo](language-reference/keywords/switch.md)   
+[`is` – Klíčové slovo](language-reference/keywords/is.md)   
+[`switch` – Klíčové slovo](language-reference/keywords/switch.md)   

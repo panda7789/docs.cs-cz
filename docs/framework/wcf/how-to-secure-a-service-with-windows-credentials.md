@@ -1,13 +1,13 @@
 ---
-title: "Postupy: zabezpečení služby pomocí pověření systému Windows"
-ms.custom: 
+title: 'Postupy: zabezpečení služby pomocí pověření systému Windows'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-caps.latest.revision: 
+caps.latest.revision: 26
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6a5225f25ca921407d64f579bbc7c204917ff260
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbe29ed57a7eee3a74166dabd2b8931e73cd2860
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí pověření systému Windows
-Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služba, která se nachází v doméně systému Windows a je volána klienty ve stejné doméně. [!INCLUDE[crabout](../../../includes/crabout-md.md)]v tomto scénáři najdete v části [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
+Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služba, která se nachází v doméně systému Windows a je volána klienty ve stejné doméně. [!INCLUDE[crabout](../../../includes/crabout-md.md)] v tomto scénáři najdete v části [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
   
  Toto téma předpokládá máte existující rozhraní kontrakt a implementaci již definována a přidá na který. Můžete také upravit existující službu a klienta.  
   
@@ -57,17 +57,17 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
      [!code-vb[c_SecureWindowsService#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsservice/vb/secureservice.vb#1)]  
   
 ### <a name="using-the-binding-in-a-service"></a>Pomocí vazby ve službě  
- Toto je druhý postup, který ukazuje způsob použití vazby v služba s vlastním hostováním. [!INCLUDE[crabout](../../../includes/crabout-md.md)]hostování služeb najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+ Toto je druhý postup, který ukazuje způsob použití vazby v služba s vlastním hostováním. [!INCLUDE[crabout](../../../includes/crabout-md.md)] hostování služeb najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
 ##### <a name="to-use-a-binding-in-a-service"></a>Chcete-li použít vazbu ve službě  
   
 1.  Vložení kódu tento postup po kód v předchozím postupu.  
   
-2.  Vytvoření <xref:System.Type> proměnné s názvem `contractType` a přiřaďte ho typ rozhraní (`ICalculator`). Při použití [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)], použijte `GetType` operátor; při použití jazyka C#, použijte `typeof` – klíčové slovo.  
+2.  Vytvoření <xref:System.Type> proměnné s názvem `contractType` a přiřaďte ho typ rozhraní (`ICalculator`). Pokud používáte Visual Basic, použijte `GetType` operátor; při použití jazyka C#, použijte `typeof` – klíčové slovo.  
   
 3.  Vytvořte druhý `Type` proměnné s názvem `serviceType` a přiřaďte ho typ implementovaná smlouvy (`Calculator`).  
   
-4.  Vytvoření instance <xref:System.Uri> třídu s názvem `baseAddress` s základní adresa služby. Základní adresa musí mít schématu, která odpovídá přenosu. V takovém případě je schéma přenosu HTTP a adresu obsahuje speciální identifikátor URI (Uniform Resource) "localhost" a port number (8036) a také adresu základní koncový bod ("serviceModelSamples /): http://localhost:8036/serviceModelSamples /.  
+4.  Vytvoření instance <xref:System.Uri> třídu s názvem `baseAddress` s základní adresa služby. Základní adresa musí mít schématu, která odpovídá přenosu. V takovém případě je schéma přenosu HTTP a adresu obsahuje speciální identifikátor URI (Uniform Resource) "localhost" a port number (8036) a také adresu základní koncový bod ("serviceModelSamples /): http://localhost:8036/serviceModelSamples/.  
   
 5.  Vytvoření instance <xref:System.ServiceModel.ServiceHost> třídy s `serviceType` a `baseAddress` proměnné.  
   
@@ -87,7 +87,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>Chcete-li použít vazby v klientovi s kódem  
   
-1.  Použití nástroje SvcUtil.exe pro generování kódu proxy z metadat služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy server kód dědí z <xref:System.ServiceModel.ClientBase%601> třídy, která zajistí, že má každý klient nezbytné konstruktory, metod a vlastností ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. V tomto příkladu obsahuje generovaný kód `CalculatorClient` třídy, které implementuje `ICalculator` rozhraní, povolení kompatibilitu s kódu služby.  
+1.  Použití nástroje SvcUtil.exe pro generování kódu proxy z metadat služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy server kód dědí z <xref:System.ServiceModel.ClientBase%601> třídy, která zajistí, že má každý klient nezbytné konstruktory, metod a vlastností ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. V tomto příkladu obsahuje generovaný kód `CalculatorClient` třídy, které implementuje `ICalculator` rozhraní, povolení kompatibilitu s kódu služby.  
   
 2.  Tento postup kód je vložen na začátku `Main` metoda programu klienta.  
   
@@ -140,7 +140,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
   
 ##### <a name="to-use-a-binding-in-a-client-with-configuration"></a>Chcete-li použít vazby v klientovi s konfigurací  
   
-1.  Pomocí nástroje SvcUtil.exe vygenerujte soubor kódu a konfigurace proxy serveru z metadat služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+1.  Pomocí nástroje SvcUtil.exe vygenerujte soubor kódu a konfigurace proxy serveru z metadat služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 2.  Nahraďte [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) části generovaného konfiguračního souboru s kódem konfigurace z předchozí části.  
   

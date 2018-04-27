@@ -1,5 +1,5 @@
 ---
-title: "Bohužel jsme tento & č. 39; t mít podrobnosti o této chybě C#"
+title: Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -886,29 +886,29 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5f6224f661aff817b4314d832fcc2ff3938644c0
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: 4aeea86778b44cbe8e71ed64ee5a3a3a1618cccd
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Bohužel jsme tento & č. 39; t mít podrobnosti o této chybě C#
+# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
   
  [Jazyk Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
- Poskytuje diskusní fórum pro dotazy a obecnou diskusi týkající se kompilátoru a syntaxe jazyka [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
+ Poskytuje fórum pro dotazy týkající se a v obecných diskusích syntaxe jazyka Visual C# a kompilátoru.  
   
  [Visual C# IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
  Poskytuje fórum pro otázky týkající se způsobu práce v prostředí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
  [Visual C# obecné](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
- Poskytuje fórum pro dotazy týkající se problémů s jazykem [!INCLUDE[csprcs](~/includes/csprcs-md.md)], které nejsou popsány na jiných fórech.  
+ Poskytuje fórum pro otázky o a problémů s Visual C#, která nejsou popsané v dalších fóra.  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
- Poskytuje fórum pro otázky o a problémů s [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
+ Poskytuje fórum pro otázky o a problémů s Visual C#.  
   
  Viz také:  
  [Další zdroje pro programátory v jazyce Visual C#](../../csharp/getting-started/additional-resources.md)  

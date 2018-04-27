@@ -1,27 +1,29 @@
 ---
-title: "Přehled rozšíření značek pro jazyk XAML"
-ms.custom: 
+title: Přehled rozšíření značek pro jazyk XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0feef370e6b09d2f58a33f2142bd654e1d7e3402
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 464c5f547089d47906f2e227effe821357196c16
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek jsou techniku XAML pro získání hodnotu, která není primitivní ani konkrétní typ jazyka XAML. Pro použití atributu, použít rozšíření značek pořadí známé znak otevření složené závorky `{` k zadání oboru rozšíření značek a složené závorky ukončovací `}` ukončíte. Pokud používáte rozhraní .NET Framework XAML Services, můžete některé z předdefinovaných rozšíření značek jazyka XAML z System.Xaml sestavení. Můžete také podtřídou z <xref:System.Windows.Markup.MarkupExtension> třídy definované v System.Xaml a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek definované určité rozhraní, pokud jsou již odkazující na dané platformy.  
@@ -33,22 +35,22 @@ Rozšíření značek jsou techniku XAML pro získání hodnotu, která není pr
  Několik rozšíření značek jsou implementovány pomocí rozhraní .NET Framework XAML Services pro podporu jazyka XAML. Tato rozšíření značek odpovídají částí jako jazyk specifikace jazyka XAML. Toto jsou obvykle poznáte ho podle `x:` předpony v syntaxi, jak je vidět v běžných využití. Implementace rozhraní .NET Framework XAML Services pro tyto elementy jazyka XAML dědí ze <xref:System.Windows.Markup.MarkupExtension> základní třídy.  
   
 > [!NOTE]
->  `x:` Předpona se používá pro typické mapování oboru názvů jazyka XAML oboru názvů jazyka XAML, v kořenovém elementu provozní XAML. Například [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] zahájit soubor XAML pomocí této šablony projektů a stránky pro různé konkrétní rozhraní `x:` mapování. Může zvolit jinou předponu token v vlastní mapování oboru názvů jazyka XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako prostředek identifikace tyto entity, které jsou definované součástí oboru názvů jazyka XAML jazyka XAML naproti tomu konkrétní framework oboru názvů jazyka XAML výchozí nebo jiných libovolný CLR nebo XML oborech názvů.  
+>  `x:` Předpona se používá pro typické mapování oboru názvů jazyka XAML oboru názvů jazyka XAML, v kořenovém elementu provozní XAML. Například šablony sady Visual Studio projekt a stránku pro různé konkrétní rozhraní zahájit soubor XAML pomocí této `x:` mapování. Může zvolit jinou předponu token v vlastní mapování oboru názvů jazyka XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako prostředek identifikace tyto entity, které jsou definované součástí oboru názvů jazyka XAML jazyka XAML naproti tomu konkrétní framework oboru názvů jazyka XAML výchozí nebo jiných libovolný CLR nebo XML oborech názvů.  
   
 ### <a name="xtype"></a>x: Type  
- `x:Type`poskytuje <xref:System.Type> objektu pro typ s názvem. Tato funkce se nejčastěji používá v odložení mechanismy, které používají základní typ CLR a zadejte odvození jako přezdívku seskupení nebo identifikátor. WPF styly a šablony a jejich využití `TargetType` vlastnosti, jsou konkrétní příklad. Další informace najdete v tématu [x: Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md).  
+ `x:Type` poskytuje <xref:System.Type> objektu pro typ s názvem. Tato funkce se nejčastěji používá v odložení mechanismy, které používají základní typ CLR a zadejte odvození jako přezdívku seskupení nebo identifikátor. WPF styly a šablony a jejich využití `TargetType` vlastnosti, jsou konkrétní příklad. Další informace najdete v tématu [x: Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md).  
   
 ### <a name="xstatic"></a>x: Static  
- `x:Static`Vytvoří statické hodnoty z entit kód typ hodnoty, které nejsou přímo typ vlastnosti na hodnotu, ale lze vyhodnotit na typu. To je užitečné pro zadání hodnoty, které už existují jako dobře známé konstanty v definici typu. Další informace najdete v tématu [x: Static – rozšíření značek](../../../docs/framework/xaml-services/x-static-markup-extension.md).  
+ `x:Static` Vytvoří statické hodnoty z entit kód typ hodnoty, které nejsou přímo typ vlastnosti na hodnotu, ale lze vyhodnotit na typu. To je užitečné pro zadání hodnoty, které už existují jako dobře známé konstanty v definici typu. Další informace najdete v tématu [x: Static – rozšíření značek](../../../docs/framework/xaml-services/x-static-markup-extension.md).  
   
 ### <a name="xnull"></a>x: Null  
- `x:Null`Určuje `null` jako hodnotu pro člena XAML. V závislosti na konkrétní typy nebo na větší framework koncepty návrhu `null` není vždy výchozí hodnotu pro vlastnost nebo předpokládané hodnotu atributu prázdný řetězec. Další informace najdete v tématu [x: Null – rozšíření značek](../../../docs/framework/xaml-services/x-null-markup-extension.md).  
+ `x:Null` Určuje `null` jako hodnotu pro člena XAML. V závislosti na konkrétní typy nebo na větší framework koncepty návrhu `null` není vždy výchozí hodnotu pro vlastnost nebo předpokládané hodnotu atributu prázdný řetězec. Další informace najdete v tématu [x: Null – rozšíření značek](../../../docs/framework/xaml-services/x-null-markup-extension.md).  
   
 ### <a name="xarray"></a>x: Array  
- `x:Array`podporuje vytváření obecné pole v syntaxi XAML v případech, kdy je podpora kolekce, které poskytuje základní prvky a modely ovládací prvek záměrně není použita. Další informace najdete v tématu [x: Array – rozšíření značek](../../../docs/framework/xaml-services/x-array-markup-extension.md). V jazyce XAML 2009 konkrétně pole jsou dostupné jako primitiva jazyka místo jako rozšíření. Další informace najdete v tématu [funkce jazyka XAML 2009](../../../docs/framework/xaml-services/xaml-2009-language-features.md).  
+ `x:Array` podporuje vytváření obecné pole v syntaxi XAML v případech, kdy je podpora kolekce, které poskytuje základní prvky a modely ovládací prvek záměrně není použita. Další informace najdete v tématu [x: Array – rozšíření značek](../../../docs/framework/xaml-services/x-array-markup-extension.md). V jazyce XAML 2009 konkrétně pole jsou dostupné jako primitiva jazyka místo jako rozšíření. Další informace najdete v tématu [funkce jazyka XAML 2009](../../../docs/framework/xaml-services/xaml-2009-language-features.md).  
   
 ### <a name="xreference"></a>x: Reference  
- `x:Reference`je součástí XAML 2009, rozšíření původní (2006) jazykové sady. `x:Reference`představuje odkaz na jiný existující objekt v grafu objektu. Tento objekt je určený podle jeho `x:Name`. Další informace najdete v tématu [x: Reference – rozšíření značek](../../../docs/framework/xaml-services/x-reference-markup-extension.md).  
+ `x:Reference` je součástí XAML 2009, rozšíření původní (2006) jazykové sady. `x:Reference` představuje odkaz na jiný existující objekt v grafu objektu. Tento objekt je určený podle jeho `x:Name`. Další informace najdete v tématu [x: Reference – rozšíření značek](../../../docs/framework/xaml-services/x-reference-markup-extension.md).  
   
 ### <a name="other-x-constructs"></a>Další konstrukce x:  
  Další `x:` konstrukty, které podporují funkce jazyka XAML existují, avšak tyto nejsou implementované jako rozšíření značek. Další informace najdete v tématu [Namespace XAML (x:) Jazykové funkce](../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md).  
@@ -133,7 +135,7 @@ public Collate(CollationMode collationMode, object collateThis) {...}
 ## <a name="attributing-for-a-custom-markup-extension"></a>Zapisujících pro rozšíření vlastních značek  
  Pro podporu prostředí návrhu a některých scénářích objekt zapisovače XAML, má atribut typu značek rozšíření podpory s několika atributy CLR. Tyto atributy sestavy využití rozšíření určený značek.  
   
- <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>sestavy <xref:System.Type> informace pro objekt typu <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí. Čistý podpisem <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí <xref:System.Object>. Ale různé příjemci chtít přesnější informací o návratovém typu. Sem patří:  
+ <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute> sestavy <xref:System.Type> informace pro objekt typu <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí. Čistý podpisem <xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A> vrátí <xref:System.Object>. Ale různé příjemci chtít přesnější informací o návratovém typu. Sem patří:  
   
 -   Návrháři a integrovaného vývojového prostředí, který může být schopný poskytnout používající typ podporu pro použití rozšíření značek.  
   
@@ -149,11 +151,11 @@ public Collate(CollationMode collationMode, object collateThis) {...}
   
  Pokud rozšíření použití značek používá poziční argumenty, je reprezentována jako objekt počáteční hodnotou inicializace. Datový proud uzlu jako hrubý textové reprezentace, vypadá třeba takto:  
   
- `StartObject`(<xref:System.Xaml.XamlType> je typ definice rozšíření značek, její návratový typ)  
+ `StartObject` (<xref:System.Xaml.XamlType> je typ definice rozšíření značek, její návratový typ)  
   
- `StartMember`(název <xref:System.Xaml.XamlMember> je `_InitializationText`)  
+ `StartMember` (název <xref:System.Xaml.XamlMember> je `_InitializationText`)  
   
- `Value`(hodnota je poziční argumenty jako řetězec včetně použité oddělovače)  
+ `Value` (hodnota je poziční argumenty jako řetězec včetně použité oddělovače)  
   
  `EndMember`  
   

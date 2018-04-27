@@ -23,16 +23,16 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 49355c4271efc37a40c025c0f8275ec42e13723e
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: ca56291e31526a6295c4a44f930e294d71b72488
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegátů následuje návrhový vzor pozorovatel, která umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Události odesílatele doručí oznámení, že došlo k události a přijímače událostí přijetí tohoto oznámení a definuje odpověď na něj. Tento článek popisuje hlavní součásti modelu delegáta, jak zpracovávat události v aplikacích a postupy implementace událostí v kódu.  
   
- Informace o zpracování událostí v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [události a přehled směrované události (pro Windows store aplikace)](http://go.microsoft.com/fwlink/p/?LinkId=261485).  
+ Informace o zpracování událostí v aplikacích pro Windows 8.x Store najdete v tématu [přehled směrované události a události](/previous-versions/windows/apps/hh758286(v=win.10)).  
   
 ## <a name="events"></a>Události  
  Událost je zpráva odeslána objektem signál výskyt akce. Akce může být způsobeno interakci s uživatelem, například klikněte na tlačítko nebo může být aktivováno některé další program logiku, jako je například změna vlastnosti na hodnotu. Objekt, který vyvolá událost, se nazývá *odesílatele událostí*. Odesílatel událostí není známo, který objekt nebo metoda obdrží (zpracuje) události, které vyvolá. Událost je obvykle členem odesílatele událostí; například <xref:System.Web.UI.WebControls.Button.Click> událostí je členem skupiny <xref:System.Web.UI.WebControls.Button> třída a <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> událostí je členem skupiny třídu, která implementuje <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní.  
@@ -63,7 +63,7 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
 ## <a name="event-data"></a>Data události  
  Data, která je přidruženo události lze zadat prostřednictvím třídu dat události. Rozhraní .NET Framework poskytuje mnoho událostí datových tříd, které můžete použít ve svých aplikacích. Například <xref:System.IO.Ports.SerialDataReceivedEventArgs> třídy je třída dat události pro <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType> událostí. Rozhraní .NET Framework odpovídá vzoru pro pojmenovávání ukončit všechny třídy data události s `EventArgs`. Můžete určit, které třída dat události je přidruženo události prohlížením delegát pro událost. Například <xref:System.IO.Ports.SerialDataReceivedEventHandler> zahrnuje delegáta <xref:System.IO.Ports.SerialDataReceivedEventArgs> třídy jako jeden z jeho parametrů.  
   
- <xref:System.EventArgs> Třída je základní typ pro všechny třídy data události. <xref:System.EventArgs>je také třída, kterou použijete při událost nemá všechna data související s ním. Při vytváření události, které je určeno pouze pro oznámení jiné třídy, které něco se stalo a není potřeba předat žádná data, zahrnout <xref:System.EventArgs> třída jako druhý parametr v delegát. Můžete předat <xref:System.EventArgs.Empty?displayProperty=nameWithType> hodnotu, pokud je k dispozici žádná data. <xref:System.EventHandler> Zahrnuje delegáta <xref:System.EventArgs> třída jako parametr.  
+ <xref:System.EventArgs> Třída je základní typ pro všechny třídy data události. <xref:System.EventArgs> je také třída, kterou použijete při událost nemá všechna data související s ním. Při vytváření události, které je určeno pouze pro oznámení jiné třídy, které něco se stalo a není potřeba předat žádná data, zahrnout <xref:System.EventArgs> třída jako druhý parametr v delegát. Můžete předat <xref:System.EventArgs.Empty?displayProperty=nameWithType> hodnotu, pokud je k dispozici žádná data. <xref:System.EventHandler> Zahrnuje delegáta <xref:System.EventArgs> třída jako parametr.  
   
  Pokud chcete vytvořit třídu dat vlastní události, vytvořte třídu, která je odvozena z <xref:System.EventArgs>a pak zadejte žádné členy potřebné k předávání dat, která souvisí s události. Obvykle musí používat stejné vzoru pro pojmenovávání jako rozhraní .NET Framework a končit váš název třídy data události s `EventArgs`.  
   

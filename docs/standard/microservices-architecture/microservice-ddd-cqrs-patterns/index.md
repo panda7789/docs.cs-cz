@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 45f29a8d19e49685f864b7ca83e466ceb1f73a62
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8098c62ac18593d8044d52cb24c4cd8859972e68
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
 
@@ -37,33 +37,33 @@ DDD je velké téma s bohatou sadu prostředků pro učení. Můžete spustit po
 
 ##### <a name="ddd-domain-driven-design"></a>DDD (návrh řízené domény)
 
--   **Zařízení Evans Erica. Jazyk domény**
-    [*http://domainlanguage.com/*](http://domainlanguage.com/)
+-   **Zařízení Evans Erica. Jazyka domény**
+    [*https://domainlanguage.com/*](https://domainlanguage.com/)
 
--   **Martin Fowler. Domény řízené návrhu**
-    [*http://martinfowler.com/tags/domain%20driven%20design.html*](http://martinfowler.com/tags/domain%20driven%20design.html)
+-   **Martin Fowler. Funguje na základě domény**
+    [*https://martinfowler.com/tags/domain%20driven%20design.html*](https://martinfowler.com/tags/domain%20driven%20design.html)
 
 -   **Jimmy Bogard. Posílení doménu: Základy**
     [*https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/*](https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/)
 
 ##### <a name="ddd-books"></a>DDD knihy
 
--   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru**
+-   **Zařízení Evans Erica. Řízené domény návrhu: Složitost v vysílat softwaru boji se**
     [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
--   **Zařízení Evans Erica. Odkaz na základě domény návrhu: Definice a souhrny vzor**
+-   **Zařízení Evans Erica. Návrhu řízené domény – referenční informace: Definice a souhrny vzor**
     [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)
 
 -   **Vaughn Vernon. Implementace návrhu řízené domény**
     [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)
 
--   **Vaughn Vernon. Domény řízené návrhu destilovaná**
+-   **Vaughn Vernon. Řízené domény návrhu destilovaná**
     [*https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/*](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/)
 
--   **Jimmy Nilsson. Použití řízené domény návrhu a vzory**
+-   **Jimmy Nilsson. Použití řízené domény návrhu a vzorce**
     [*https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/*](https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/)
 
--   **Cesaru členka Torre. Průvodce vrstvený N architektura orientovaná na doméně s .NET**
+-   **Cesaru členka Torre. Průvodce vrstvený N architektura orientovaná na doméně s rozhraním .NET**
     [*https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/*](https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/)
 
 -   **Opisek Avram a Floyd Marinescu. Domény řízené návrhu rychle**
@@ -71,7 +71,7 @@ DDD je velké téma s bohatou sadu prostředků pro učení. Můžete spustit po
 
 DDD školení
 
--   **Julie Lerman a Steve Smith. Základy návrhu řízené domény**
+-   **Julie Lerman a Steve Smith. Základy funguje na základě domény**
     [*http://bit.ly/PS-DDD*](http://bit.ly/PS-DDD)
 
 

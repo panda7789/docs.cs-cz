@@ -12,11 +12,11 @@ ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e53ba3e1134b09edcc87a0421b7699bcf3bb1d39
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 58e63d95c2f10329f85d6150b58f196294de38d1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="get-started-with-visual-basic"></a>Začínáme s jazykem Visual Basic
 Tato část dokumentace vám pomůže začít pracovat s vývoj aplikací jazyka Visual Basic.  
@@ -55,10 +55,10 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
  Obsahuje odkazy na stránky, které představují objektově-orientované programování a popisují, jak vytvářet vlastní objekty a jak pomocí objektů zjednodušit psaní kódu.  
   
  [Ukázky](../../visual-basic/sample-applications.md)  
- Obsahuje odkazy na ukázkový kód v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Obsahuje odkazy na ukázkový kód v jazyce Visual Basic.  
   
  [Návody](../../visual-basic/walkthroughs.md)  
- Obsahuje seznam stránek nápovědy, které ukazují aspektů [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jazyk.  
+ Poskytuje seznam stránek nápovědy, které ukazují aspekty jazyka Visual Basic.  
   
  [Kontaktujte nás](/visualstudio/ide/talk-to-us)  
  Pojednává o tom, jak získat podporu a sdělit názor.  
@@ -66,7 +66,7 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
  [Visual Studio](/visualstudio/)  
  Obsahuje odkazy na [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] dokumentaci.  
   
- [C#](../../csharp/index.md) obsahuje odkazy na dokumentaci o vývoj aplikací s [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
+ [C#](../../csharp/index.md) obsahuje odkazy na dokumentaci o vývoj aplikací pomocí Visual C#.  
   
  [Visual C++](/cpp/)  
  Obsahuje odkazy na dokumentaci jazyka Visual C++.  

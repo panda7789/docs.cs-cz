@@ -1,31 +1,33 @@
 ---
-title: "Odstraňování problémů v kurzu Začínáme"
-ms.custom: 
+title: Odstraňování problémů v kurzu Začínáme
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55288074b35bcb00d6c6b453f1320ad40d26a5f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d8bc077b1ef24ecfcb4d37a9ddb8389dc705f68e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting-the-getting-started-tutorial"></a>Odstraňování problémů v kurzu Začínáme
 Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednictvím kurzu Začínáme a způsob jejich řešení.  
   
 1.  [Nedaří se mi najít soubory projektu na pevném disku.](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q1)  
   
-2.  [Probíhá pokus o spuštění služby aplikace: HTTP nebylo možné zaregistrovat http://+:8000/ServiceModelSamples/Service/ adresy URL. Váš proces nemá přístupová práva na tento obor názvů.](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q2)  
+2.  [Probíhá pokus o spuštění služby aplikace: HTTP nebylo možné zaregistrovat URL http://+:8000/ServiceModelSamples/Service/. Váš proces nemá přístupová práva na tento obor názvů.](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q2)  
   
 3.  [Pokus o použití nástroje Svcutil.exe: 'svcutil' nebyl rozpoznán jako vnitřního ani vnějšího příkazu, spustitelného programu nebo dávkového souboru.](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q3)  
   
@@ -35,14 +37,14 @@ Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednict
   
 6.  [Kompilování klientská aplikace: typu nebo oboru názvů 'CalculatorClient' nebyl nalezen (chybějící using – direktiva nebo odkaz na sestavení?)](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q6)  
   
-7.  [Spuštění klienta: neošetřená výjimka: System.ServiceModel.EndpointNotFoundException: Nelze se připojit k http://localhost: 8000/ServiceModelSamples/Service/CalculatorService. Kód chyby TCP 10061: žádné připojení může vytvořit, protože cílový počítač je aktivně odmítl.](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q7)  
+7.  [Spuštění klienta: neošetřená výjimka: System.ServiceModel.EndpointNotFoundException: Nelze se připojit k http://localhost:8000/ServiceModelSamples/Service/CalculatorService. Kód chyby TCP 10061: žádné připojení může vytvořit, protože cílový počítač je aktivně odmítl.](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md#BKMK_q7)  
   
 <a name="BKMK_q1"></a>   
 ## <a name="i-am-unable-to-find-the-project-files-on-my-hard-drive"></a>Nedaří se mi najít soubory projektu na pevném disku.  
- [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]uloží soubory v c:\users projektu\\< uživatele name\Documents\\< verze sady Visual Studio\>\Projects v [!INCLUDE[wv](../../../includes/wv-md.md)] a [!INCLUDE[win7_client_secondref](../../../includes/win7-client-secondref-md.md)]a c:\Documents and Settings\\< uživatelské jméno\>Dokumenty \My\\< verze sady Visual Studio\>\Projects v dřívějších verzích systému Windows.  
+ Visual Studio uloží soubory projektu v c:\users\\< uživatele name\Documents\\< verze sady Visual Studio\>\Projects v [!INCLUDE[wv](../../../includes/wv-md.md)] a [!INCLUDE[win7_client_secondref](../../../includes/win7-client-secondref-md.md)]a c:\Documents and Settings\\< uživatelské jméno \>Dokumenty \My\\< verze sady Visual Studio\>\Projects v dřívějších verzích systému Windows.  
   
 <a name="BKMK_q2"></a>   
-## <a name="attempting-to-run-the-service-application-http-could-not-register-url-http8000servicemodelsamplesservice-your-process-does-not-have-access-rights-to-this-namespace"></a>Probíhá pokus o spuštění služby aplikace: HTTP nebylo možné zaregistrovat http://+:8000/ServiceModelSamples/Service/ adresy URL. Váš proces nemá přístupová práva na tento obor názvů.  
+## <a name="attempting-to-run-the-service-application-http-could-not-register-url-http8000servicemodelsamplesservice-your-process-does-not-have-access-rights-to-this-namespace"></a>Probíhá pokus o spuštění služby aplikace: HTTP nebylo možné zaregistrovat URL http://+:8000/ServiceModelSamples/Service/. Váš proces nemá přístupová práva na tento obor názvů.  
  Proces, který je hostitelem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby musí být spuštěna s oprávněními správce. Pokud používáte službu z uvnitř [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] musíte spustit [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] jako správce. Klepněte na tlačítko **spustit**, klikněte pravým tlačítkem na [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a vyberte **spustit jako správce**. Pokud používáte službu z příkazového řádku řádku je nutné spustit okně příkazového řádku jako správce podobným způsobem. Klikněte na tlačítko **spustit**, klikněte pravým tlačítkem na **příkazového řádku** a vyberte **spustit jako správce**.  
   
 <a name="BKMK_q3"></a>   
@@ -62,11 +64,11 @@ Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednict
  Pokud nepřidáte soubor Proxy.cs nebo Proxy.vb do projektu klienta se tato chyba.  
   
 <a name="BKMK_q7"></a>   
-## <a name="running-the-client-unhandled-exception-systemservicemodelendpointnotfoundexception-could-not-connect-to-httplocalhost8000servicemodelsamplesservicecalculatorservice-tcp-error-code-10061-no-connection-could-be-made-because-the-target-machine-actively-refused-it"></a>Spuštění klienta: neošetřená výjimka: System.ServiceModel.EndpointNotFoundException: Nelze se připojit k http://localhost: 8000/ServiceModelSamples/Service/CalculatorService. Kód chyby TCP 10061: žádné připojení může vytvořit, protože cílový počítač je aktivně odmítl.  
+## <a name="running-the-client-unhandled-exception-systemservicemodelendpointnotfoundexception-could-not-connect-to-httplocalhost8000servicemodelsamplesservicecalculatorservice-tcp-error-code-10061-no-connection-could-be-made-because-the-target-machine-actively-refused-it"></a>Spuštění klienta: neošetřená výjimka: System.ServiceModel.EndpointNotFoundException: Nelze se připojit k http://localhost:8000/ServiceModelSamples/Service/CalculatorService. Kód chyby TCP 10061: žádné připojení může vytvořit, protože cílový počítač je aktivně odmítl.  
  K této chybě dojde, pokud spustíte klientskou aplikaci bez spuštění služby.  
   
 <a name="BKMK_q8"></a>   
-## <a name="unhandled-exception-systemservicemodelsecuritysecuritynegotiationexception-soap-security-negotiation-with-httplocalhost8000servicemodelsamplesservicecalculatorservice-for-target-httplocalhost8000servicemodelsamplesservicecalculatorservice-failed"></a>Neošetřená výjimka: System.ServiceModel.Security.SecurityNegotiationException: zabezpečení vyjednávání protokolu SOAP se "http://localhost: 8000/ServiceModelSamples/Service/CalculatorService' pro cíl"http://localhost: 8000/ServiceModelSamples/Service/CalculatorService' se nezdařilo  
+## <a name="unhandled-exception-systemservicemodelsecuritysecuritynegotiationexception-soap-security-negotiation-with-httplocalhost8000servicemodelsamplesservicecalculatorservice-for-target-httplocalhost8000servicemodelsamplesservicecalculatorservice-failed"></a>Neošetřená výjimka: System.ServiceModel.Security.SecurityNegotiationException: zabezpečení vyjednávání protokolu SOAP se 'http://localhost:8000/ServiceModelSamples/Service/CalculatorService'pro cíl'http://localhost:8000/ServiceModelSamples/Service/CalculatorService' se nezdařilo  
  K této chybě dojde v počítači připojeném k doméně, který nemá připojení k síti. Buď připojení počítače k síti nebo vypněte zabezpečení pro klienta a služby. Pro službu upravte kód, který vytvoří WSHttpBinding takto.  
   
 ```  

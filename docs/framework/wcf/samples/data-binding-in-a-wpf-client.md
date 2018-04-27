@@ -1,27 +1,29 @@
 ---
-title: "Datové vazby v klientovi Windows Presentation Foundation"
-ms.custom: 
+title: Datové vazby v klientovi Windows Presentation Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55e60aaba0ebba57668f91d692ce774bd0ef0115
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d10591866e11bd9e5ae707a0c17c3e293d7f4f71
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Datové vazby v klientovi Windows Presentation Foundation
-Tento příklad znázorňuje použití datové vazby v klientovi Windows Presentation Foundation (WPF). Ukázce se používá [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služba, která generuje náhodně pole alb se vraťte do klienta. Každé album má název, ceny a seznam album sleduje. Sleduje album mít název, doba trvání. Informace, které je vrácena službou je automaticky vázány na uživatelské rozhraní (UI) poskytované [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] klienta.  
+Tento příklad znázorňuje použití datové vazby v klientovi Windows Presentation Foundation (WPF). Ukázce se používá [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služba, která generuje náhodně pole alb se vraťte do klienta. Každé album má název, ceny a seznam album sleduje. Sleduje album mít název, doba trvání. Informace, které je vrácena službou je automaticky vázána uživatelské rozhraní (UI) poskytnutý klientem Windows Presentation Foundation (WPF).  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  

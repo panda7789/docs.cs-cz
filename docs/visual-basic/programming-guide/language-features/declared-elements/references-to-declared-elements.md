@@ -1,32 +1,33 @@
 ---
-title: "Odkazy na deklarované elementy (Visual Basic)"
-ms.custom: 
+title: Odkazy na deklarované elementy (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declared elements [Visual Basic]
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9b3847164b4e577a9265a746b9329218b4af928b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 86d25d42688cffbf4076c4fb42eccc3b917d1dc1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Odkazy na deklarované elementy (Visual Basic)
-Pokud váš kód odkazoval element deklarované [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru odpovídá názvu v vaší odkaz na odpovídající deklarace s tímto názvem. Když se stejným názvem je deklarován více než jeden element, můžete řídit, která z těchto elementů má odkazovat *opravňující* její název.  
+Pokud váš kód odkazoval element deklarované, Visual Basic – kompilátor odpovídá názvu ve vašem odkaz na odpovídající deklarace s tímto názvem. Když se stejným názvem je deklarován více než jeden element, můžete řídit, která z těchto elementů má odkazovat *opravňující* její název.  
   
  Kompilátor se pokusí o porovnání název odkaz na název deklarace s *zpomalit*. To znamená, že začne s kódem odkazu a funguje i přes následných úrovně obsahující elementy.  
   
- Následující příklad ukazuje, odkazy na dvě proměnné se stejným názvem. V příkladu deklaruje dvě proměnné, každý s názvem `totalCount`, na různých úrovních oboru v modulu `container`. Při procesu `showCount` zobrazí `totalCount` bez kvalifikace, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru přeloží odkaz na prohlášení s zpomalit, a to místní deklarace uvnitř `showCount`. Po vyfiltrování `totalCount` s modulem obsahující `container`, kompilátor vyřeší odkaz na prohlášení k širší oboru.  
+ Následující příklad ukazuje, odkazy na dvě proměnné se stejným názvem. V příkladu deklaruje dvě proměnné, každý s názvem `totalCount`, na různých úrovních oboru v modulu `container`. Při procesu `showCount` zobrazí `totalCount` bez kvalifikace, Visual Basic – kompilátor přeloží odkaz na prohlášení s zpomalit, a to místní deklarace uvnitř `showCount`. Po vyfiltrování `totalCount` s modulem obsahující `container`, kompilátor vyřeší odkaz na prohlášení k širší oboru.  
   
 ```vb  
 ' Assume these two modules are both in the same assembly.  
@@ -199,13 +200,13 @@ Dim xDoc As xD.XmlDocument
  Mnohoznačnosti názvů se můžete vyhnout tím, že všechny elementy jedinečné názvy. Pak můžete nastavit odkaz na libovolný element, aniž by museli kvalifikaci stejný název jako obor názvů, modulu nebo třída. Můžete také sníží pravděpodobnost omylem odkazující na chybný element.  
   
 ## <a name="shadowing"></a>Stínový provoz  
- Když dva programovací elementy sdílet stejný název, jednu z nich můžete skrýt, nebo *stínové*, jiný. Element stíněné není k dispozici pro referenci; Místo toho v případě, že váš kód použití názvu stíněné element [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru přeloží ji do stínového provozu elementu. Podrobnější vysvětlení s příklady najdete v tématu [stínový provoz v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ Když dva programovací elementy sdílet stejný název, jednu z nich můžete skrýt, nebo *stínové*, jiný. Element stíněné není k dispozici pro referenci; Místo toho že pokud váš kód používá název stíněné elementu, Visual Basic – kompilátor ho přeloží na stínového provozu elementu. Podrobnější vysvětlení s příklady najdete v tématu [stínový provoz v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- [Deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
  [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
- [Imports – příkaz (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [New – operátor](../../../../visual-basic/language-reference/operators/new-operator.md)  
- [Veřejné](../../../../visual-basic/language-reference/modifiers/public.md)
+ [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
+ [Public](../../../../visual-basic/language-reference/modifiers/public.md)

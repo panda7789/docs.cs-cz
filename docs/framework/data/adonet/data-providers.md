@@ -1,41 +1,43 @@
 ---
-title: "Zprostředkovatelé dat .NET framework"
-ms.custom: 
+title: Zprostředkovatelé dat .NET framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a78654f5c8de480b1eb38fbf25fbc923a30a0d25
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 69acb7b2fe4eafcce75a7b76305fab37dbb7d2f6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
-A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Výsledků buď zpracování přímo, uložena v umístění <xref:System.Data.DataSet> Chcete-li zpřístupnit pro uživatele podle potřeby, kombinované s daty z více zdrojů nebo používat vzdáleně mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatelé dat jsou lightweight, vytváření minimální vrstva mezi zdroji dat a kód, zvýšení výkonu bez omezení funkčnosti.  
+A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Výsledků buď zpracování přímo, uložena v umístění <xref:System.Data.DataSet> Chcete-li zpřístupnit pro uživatele podle potřeby, kombinované s daty z více zdrojů nebo používat vzdáleně mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat jsou lightweight, vytváření minimální vrstva mezi zdroji dat a kód, zvýšení výkonu bez omezení funkčnosti.  
   
  Následující tabulka uvádí zprostředkovatele dat, které jsou součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat|Popis|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat|Popis|  
 |-------------------------------------------------------------------------------|-----------------|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|Poskytuje přístup k datům pro Microsoft [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Používá <xref:System.Data.SqlClient> oboru názvů.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro OLE DB|Pro zdroje dat vystavené pomocí technologie OLE DB. Používá <xref:System.Data.OleDb> oboru názvů.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro rozhraní ODBC|Pro zdroje dat vystavené pomocí rozhraní ODBC. Používá <xref:System.Data.Odbc> oboru názvů.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro Oracle|Zdroje dat Oracle. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro databázi Oracle podporuje Oracle verze klientského softwaru 8.1.7 a novější a používá <xref:System.Data.OracleClient> oboru názvů.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server|Poskytuje přístup k datům pro Microsoft SQL Server. Používá <xref:System.Data.SqlClient> oboru názvů.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro OLE DB|Pro zdroje dat vystavené pomocí technologie OLE DB. Používá <xref:System.Data.OleDb> oboru názvů.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro rozhraní ODBC|Pro zdroje dat vystavené pomocí rozhraní ODBC. Používá <xref:System.Data.Odbc> oboru názvů.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro Oracle|Zdroje dat Oracle. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro databázi Oracle podporuje Oracle verze klientského softwaru 8.1.7 a novější a používá <xref:System.Data.OracleClient> oboru názvů.|  
 |Zprostředkovatel EntityClient|Poskytuje přístup k datům Entity Data Model (EDM) aplikace. Používá <xref:System.Data.EntityClient> oboru názvů.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Compact 4.0.|Poskytuje přístup k datům pro Microsoft [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Compact 4.0. Používá [System.Data.SqlServerCe](http://msdn.microsoft.com/library/system.data.sqlserverce.aspx) oboru názvů.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server Compact 4.0.|Poskytuje přístup k datům pro Microsoft SQL Server Compact 4.0. Používá [System.Data.SqlServerCe](http://msdn.microsoft.com/library/system.data.sqlserverce.aspx) oboru názvů.|  
   
 ## <a name="core-objects-of-net-framework-data-providers"></a>Základní objekty zprostředkovatelé dat .NET Framework  
  Následující tabulka uvádí čtyři základní objekty, které tvoří [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dat zprostředkovatele.  
@@ -59,8 +61,8 @@ A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkova
 |`Error`|Zveřejňuje informace o upozornění nebo chyby vrácené zdroj dat.|  
 |`ClientPermission`|Zadaná pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] atributy zabezpečení přístupu kódu dat zprostředkovatele. Základní třída pro všechny `ClientPermission` je objekty <xref:System.Data.Common.DBDataPermission> třídy.|  
   
-## <a name="net-framework-data-provider-for-includessnoversionincludesssnoversion-mdmd-sqlclient"></a>Zprostředkovatel dat .NET framework pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] (SqlClient)  
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] (SqlClient) používá vlastní protokol pro komunikaci s [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Je jednoduché a provede dobře, protože je optimalizována pro přístup k [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] přímo bez přidáním úrovně technologie OLE DB nebo připojení ODBC (Open Database). Následující obrázku uvádí vedle sebe [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Komunikuje se zdroji dat OLE DB pomocí obou OLE DB služby komponentu, která poskytuje sdružování připojení a transakce služeb a zprostředkovateli OLE DB pro zdroj dat zprostředkovatele dat pro OLE DB.  
+## <a name="net-framework-data-provider-for-sql-server-sqlclient"></a>Zprostředkovatel dat .NET framework pro SQL Server (SqlClient)  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (SqlClient) používá vlastní protokol pro komunikaci se serverem SQL. Je jednoduché a provede dobře, protože je optimalizována pro přístup k systému SQL Server přímo bez přidáním úrovně technologie OLE DB nebo připojení ODBC (Open Database). Následující obrázku uvádí vedle sebe [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Komunikuje se zdroji dat OLE DB pomocí obou OLE DB služby komponentu, která poskytuje sdružování připojení a transakce služeb a zprostředkovateli OLE DB pro zdroj dat zprostředkovatele dat pro OLE DB.  
   
 > [!NOTE]
 >  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro ODBC má podobnou architekturu k [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB; například volání do komponentu služby ODBC.  
@@ -68,9 +70,9 @@ A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkova
  ![Zprostředkovatelé dat](../../../../docs/framework/data/adonet/media/netdataproviders-bpuedev11.gif "NETDataProviders_bpuedev11")  
 Porovnání zprostředkovatele dat .NET Framework pro SQL Server a zprostředkovatele dat .NET Framework pro OLE DB  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] třídy se nacházejí v <xref:System.Data.SqlClient> oboru názvů.  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro třídy SQL serveru se nacházejí v <xref:System.Data.SqlClient> oboru názvů.  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] podporuje místní a distribuované transakce. Pro distribuované transakce [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], automaticky využívá v transakci a získá podrobnosti transakce ze služeb součásti systému Windows nebo <xref:System.Transactions>. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server podporuje místní a distribuované transakce. Pro distribuované transakce [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server, ve výchozím nastavení, automaticky využívá v transakci a získá podrobnosti transakce ze služeb součásti systému Windows nebo <xref:System.Transactions>. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
  Následující příklad kódu ukazuje, jak se zahrnuje `System.Data.SqlClient` oboru názvů ve svých aplikacích.  
   
@@ -89,7 +91,7 @@ using System.Data.SqlClient;
   
 |Ovladače|Zprostředkovatel|  
 |------------|--------------|  
-|SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
+|ZPROSTŘEDKOVATEL SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro SQL Server|  
 |MSDAORA|Zprostředkovatel Microsoft OLE DB pro Oracle|  
 |Microsoft.Jet.OLEDB.4.0|Zprostředkovatel OLE DB pro Microsoft Jet|  
   
@@ -100,7 +102,7 @@ using System.Data.SqlClient;
   
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro OLE DB pomocí zprostředkovatele OLE DB pro ODBC (MSDASQL) nefunguje. Pro přístup rozhraní ODBC zdroje dat pomocí [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], použijte [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro ODBC.  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro OLE DB třídy se nacházejí v <xref:System.Data.OleDb> oboru názvů. Následující příklad kódu ukazuje, jak se zahrnuje `System.Data.OleDb` oboru názvů ve svých aplikacích.  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro OLE DB třídy se nacházejí v <xref:System.Data.OleDb> oboru názvů. Následující příklad kódu ukazuje, jak se zahrnuje `System.Data.OleDb` oboru názvů ve svých aplikacích.  
   
 ```vb  
 Imports System.Data.OleDb  
@@ -117,11 +119,11 @@ using System.Data.OleDb;
   
 |Ovladače|  
 |------------|  
-|[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
+|SQL Server|  
 |Microsoft ODBC pro Oracle|  
-|Microsoft Access Driver (*.mdb)|  
+|Ovladače Microsoft Access (*.mdb)|  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro ODBC – třídy se nacházejí v <xref:System.Data.Odbc> oboru názvů.  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro ODBC – třídy se nacházejí v <xref:System.Data.Odbc> oboru názvů.  
   
  Následující příklad kódu ukazuje, jak se zahrnuje `System.Data.Odbc` oboru názvů ve svých aplikacích.  
   
@@ -141,7 +143,7 @@ using System.Data.Odbc;
   
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro databázi Oracle před připojením ke zdroji dat Oracle vyžaduje klientský software Oracle (verze 8.1.7 nebo novější verze) v systému.  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro Oracle třídy se nacházejí v <xref:System.Data.OracleClient> obor názvů a jsou součástí `System.Data.OracleClient.dll` sestavení. Obě musíte odkázat `System.Data.dll` a `System.Data.OracleClient.dll` při sestavování aplikaci, která používá zprostředkovatele dat.  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro Oracle třídy se nacházejí v <xref:System.Data.OracleClient> obor názvů a jsou součástí `System.Data.OracleClient.dll` sestavení. Obě musíte odkázat `System.Data.dll` a `System.Data.OracleClient.dll` při sestavování aplikaci, která používá zprostředkovatele dat.  
   
  Následující příklad kódu ukazuje, jak se zahrnuje `System.Data.OracleClient` oboru názvů ve svých aplikacích.  
   
@@ -160,10 +162,10 @@ using System.Data.OracleClient;
   
 |Zprostředkovatel|Poznámky|  
 |--------------|-----------|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|Doporučené pro aplikace střední vrstvy, které používají Microsoft [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].<br /><br /> Doporučené pro Jednoúrovňové aplikace, které používají Microsoft Database Engine (MSDE) nebo [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].<br /><br /> Doporučuje namísto použití zprostředkovatele OLE DB pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] (SQLOLEDB) s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]Zprostředkovatel dat pro OLE DB|Pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] se doporučuje namísto tohoto zprostředkovatele.<br /><br /> Doporučuje Jednoúrovňové aplikace, které používají databáze aplikace Microsoft Access. Použití databáze aplikace Access pro aplikaci střední vrstvy se nedoporučuje.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]"Zprostředkovatel dat pro rozhraní ODBC|Doporučuje pro střední a Jednoúrovňové aplikace, které používají zdroje dat ODBC.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]"Zprostředkovatele dat pro databázi Oracle|Doporučuje pro střední a Jednoúrovňové aplikace, které používají zdroje dat Oracle.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server|Doporučuje pro aplikace střední vrstvy, které používají Microsoft SQL Server.<br /><br /> Doporučuje pro Jednoúrovňové aplikace, které používají Microsoft Database Engine (MSDE) nebo SQL Server.<br /><br /> Doporučuje namísto použití zprostředkovatele OLE DB pro SQL Server (SQLOLEDB) s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro OLE DB|Pro systém SQL Server [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server se doporučuje namísto tohoto zprostředkovatele.<br /><br /> Doporučuje Jednoúrovňové aplikace, které používají databáze aplikace Microsoft Access. Použití databáze aplikace Access pro aplikaci střední vrstvy se nedoporučuje.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] "Zprostředkovatel dat pro rozhraní ODBC|Doporučuje pro střední a Jednoúrovňové aplikace, které používají zdroje dat ODBC.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] "Zprostředkovatele dat pro databázi Oracle|Doporučuje pro střední a Jednoúrovňové aplikace, které používají zdroje dat Oracle.|  
   
 ## <a name="entityclient-provider"></a>Zprostředkovatel EntityClient  
  Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework dat zprostředkovatele není komunikovat přímo se zdrojem dat. Místo toho ke komunikaci s základní poskytovatel dat používá Entity SQL. Další informace najdete v tématu [EntityClient a Entity SQL](http://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  

@@ -1,10 +1,11 @@
 ---
-title: "Datové typy výsledků operátoru (Visual Basic)"
+title: Datové typy výsledků operátoru (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - data types [Visual Basic], operator result data types
@@ -14,17 +15,17 @@ helpviewer_keywords:
 - data types [Visual Basic], ranges
 - operators [Visual Basic], result data types
 ms.assetid: 9d524533-e1a1-4aa8-b1b8-622068173d06
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 61e8fb785830152acfd7e8e2e1784294053ac66e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 508329894758436158970760ba0d13a7780f83db
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="data-types-of-operator-results-visual-basic"></a>Datové typy výsledků operátoru (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]Určuje datový typ výsledku operace založené na datové typy operandy. V některých případech to může být datový typ s větší rozsah než buď operand.  
+Visual Basic určuje datový typ výsledku operace založené na datové typy operandy. V některých případech to může být datový typ s větší rozsah než buď operand.  
   
 ## <a name="data-type-ranges"></a>Rozsahy datového typu  
  Rozsahy typů relevantních dat, v pořadí od nejmenšího po největší, jsou následující:  
@@ -45,20 +46,20 @@ ms.lasthandoff: 11/21/2017
   
 -   [Dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md) – maximální rozsah 1.7 … E + 308 (absolutní hodnota)  
   
- Další informace o [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] datové typy, najdete v části [datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md).  
+ Další informace v jazyce Visual Basic – datové typy najdete v tématu [datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md).  
   
- Pokud je výsledkem operand [nic](../../../visual-basic/language-reference/nothing.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aritmetické operátory s nimi zacházet jako nula.  
+ Pokud je výsledkem operand [nic](../../../visual-basic/language-reference/nothing.md), aritmetické operátory jazyka Visual Basic s nimi zacházet jako nula.  
   
 ## <a name="decimal-arithmetic"></a>Decimal aritmetické operace  
  Všimněte si, že [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md) je datový typ, ani s plovoucí desetinnou čárkou ani celé číslo.  
   
- Pokud buď operand `+`, `–`, `*`, `/`, nebo `Mod` operace `Decimal` a dalších není `Single` nebo `Double`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] rozšiřuje jiných operand pro `Decimal`. Provede operaci v `Decimal`, a výsledný typ dat je `Decimal`.  
+ Pokud buď operand `+`, `–`, `*`, `/`, nebo `Mod` operace je `Decimal` a dalších není `Single` nebo `Double`, Visual Basic rozšiřuje jiných operand pro `Decimal`. Provede operaci v `Decimal`, a výsledný typ dat je `Decimal`.  
   
 ## <a name="floating-point-arithmetic"></a>Aritmetické operace s plovoucí desetinnou čárkou  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]provede většinu aritmetické operace s plovoucí desetinnou čárkou v [dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md), což je nejúčinnější data zadejte pro tyto operace. Ale pokud je jeden operand [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) a dalších není `Double`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] provede operaci v `Single`. Ji rozšiřuje každý operand v případě potřeby na odpovídající datový typ před provedením operace a výsledek obsahuje datového typu.  
+ Visual Basic provádí většinu aritmetické s plovoucí desetinnou čárkou v [dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md), což je nejúčinnější data zadejte pro tyto operace. Ale pokud je jeden operand [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) a dalších není `Double`, provede operaci v jazyce Visual Basic `Single`. Ji rozšiřuje každý operand v případě potřeby na odpovídající datový typ před provedením operace a výsledek obsahuje datového typu.  
   
 ### <a name="-and--operators"></a>/ a ^ operátory  
- `/` Operátor je určená jenom pro [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md), [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md), a [dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md) datové typy. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]rozšiřuje každý operand v případě potřeby na odpovídající datový typ před operace a výsledek je datového typu.  
+ `/` Operátor je určená jenom pro [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md), [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md), a [dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md) datové typy. Visual Basic rozšiřuje každý operand v případě potřeby na odpovídající datový typ před provedením operace a výsledek obsahuje tento typ dat.  
   
  V následující tabulce jsou uvedeny výsledek datové typy pro `/` operátor. Upozorňujeme, že je tato tabulka symetrický; datový typ výsledku pro dané kombinace operand datové typy, je stejný bez ohledu na pořadí operandy.  
   
@@ -70,10 +71,10 @@ ms.lasthandoff: 11/21/2017
 |`Double`|Double|Double|Double|Double|  
 |Žádný typ celé číslo|Desetinné číslo|Single|Double|Double|  
   
- `^` Operátor je určená jenom pro `Double` datového typu. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]rozšiřuje každý operand podle potřeby k `Double` před operace a výsledek datový typ je vždy `Double`.  
+ `^` Operátor je určená jenom pro `Double` datového typu. Visual Basic rozšiřuje každý operand podle potřeby k `Double` před operace a výsledek datový typ je vždy `Double`.  
   
 ## <a name="integer-arithmetic"></a>Celočíselné aritmetiky  
- Datový typ výsledku operace celé číslo závisí na typech dat operandy. Obecně platí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] používá následující zásady pro zjištění výsledku datový typ:  
+ Datový typ výsledku operace celé číslo závisí na typech dat operandy. Obecně platí jazyka Visual Basic používá následující zásady pro zjištění výsledku datový typ:  
   
 -   Pokud oba operandy binárního operátoru mít stejný datový typ, výsledek obsahuje datového typu. Výjimkou je `Boolean`, který je nucen se `Short`.  
   
@@ -92,18 +93,18 @@ ms.lasthandoff: 11/21/2017
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|Unární`+`|krátký|SByte|Byte|krátký|Ushort –|Integer|Uinteger –|dlouhá|Ulong –|  
-|Unární`–`|krátký|SByte|krátký|krátký|Integer|Integer|dlouhá|dlouhá|Desetinné číslo|  
+|Unární `+`|krátký|SByte|Byte|krátký|Ushort –|Integer|Uinteger –|dlouhá|Ulong –|  
+|Unární `–`|krátký|SByte|krátký|krátký|Integer|Integer|dlouhá|dlouhá|Desetinné číslo|  
   
-### <a name="-and--operators"></a><\<a >> operátory  
- Následující tabulka uvádí výsledek datové typy pro dvě bitové posunutí – operátory `<<` a `>>`. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]jednotlivé bitové posunutí – operátory považuje za unární operátor na jeho levý operand (vzoru bitové posunutí).  
+### <a name="-and--operators"></a><\< a >> operátory  
+ Následující tabulka uvádí výsledek datové typy pro dvě bitové posunutí – operátory `<<` a `>>`. Visual Basic zpracovává jednotlivé bitové posunutí – operátory jako unární operátor na jeho levý operand (vzoru bitové posunutí).  
   
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
 |`<<`, `>>`|krátký|SByte|Byte|krátký|Ushort –|Integer|Uinteger –|dlouhá|Ulong –|  
   
- Pokud je levý operand `Decimal`, `Single`, `Double`, nebo `String`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pokusí převeďte ho na `Long` před operace a výsledek je datový typ `Long`. Pravý operand (počet pozic bit se posunou) musí být `Integer` nebo typ, který rozšiřuje na `Integer`.  
+ Pokud je levý operand `Decimal`, `Single`, `Double`, nebo `String`, Visual Basic pokusí převeďte ho na `Long` před operace a výsledek je datový typ `Long`. Pravý operand (počet pozic bit se posunou) musí být `Integer` nebo typ, který rozšiřuje na `Integer`.  
   
 ### <a name="binary----and-mod-operators"></a>Binární +, -, * a Mod operátory  
  V následující tabulce jsou uvedeny výsledek datové typy pro binárního souboru `+` a `–` operátory a `*` a `Mod` operátory. Upozorňujeme, že je tato tabulka symetrický; datový typ výsledku pro dané kombinace operand datové typy, je stejný bez ohledu na pořadí operandy.  
@@ -137,15 +138,15 @@ ms.lasthandoff: 11/21/2017
 |`Long`|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|  
 |`ULong`|dlouhá|dlouhá|Ulong –|dlouhá|Ulong –|dlouhá|Ulong –|dlouhá|Ulong –|  
   
- Pokud buď operand `\` operátor je [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md), [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md), nebo [dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pokusí převeďte ho na [dlouho](../../../visual-basic/language-reference/data-types/long-data-type.md) před operace a výsledek je datový typ `Long`.  
+ Pokud buď operand `\` operátor je [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md), [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md), nebo [dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md), Visual Basic pokusí převeďte ho na [dlouho](../../../visual-basic/language-reference/data-types/long-data-type.md)před operace a výsledek je datový typ `Long`.  
   
 ## <a name="relational-and-bitwise-comparisons"></a>Relační a bitové porovnání  
  Datový typ výsledku relační operace (`=`, `<>`, `<`, `>`, `<=`, `>=`) je vždy `Boolean` [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Totéž platí pro logické operace (`And`, `AndAlso`, `Not`, `Or`, `OrElse`, `Xor`) na `Boolean` operandy.  
   
- Výsledný typ dat bitová logické operace závisí na datové typy operandy. Všimněte si, že `AndAlso` a `OrElse` jsou definovány pouze pro `Boolean`, a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] převede každý operand podle potřeby k `Boolean` před provedením operace.  
+ Výsledný typ dat bitová logické operace závisí na datové typy operandy. Všimněte si, že `AndAlso` a `OrElse` jsou definovány pouze pro `Boolean`, a Visual Basic převede každý operand podle potřeby k `Boolean` před provedením operace.  
   
 ### <a name="-----and--operators"></a>= <>, \<, >, \<=, a > = operátory  
- Pokud jsou oba operandy `Boolean`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zvažuje `True` být menší než `False`. Pokud číselného typu se porovná se `String`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pokusí převést `String` k `Double` před provedením operace. A `Char` nebo `Date` operand lze porovnat pouze s jinou operand stejného datového typu. Datový typ výsledek je vždy `Boolean`.  
+ Pokud jsou oba operandy `Boolean`, Visual Basic zvažuje `True` být menší než `False`. Pokud číselného typu se porovná se `String`, Visual Basic pokusí převést `String` k `Double` před provedením operace. A `Char` nebo `Date` operand lze porovnat pouze s jinou operand stejného datového typu. Datový typ výsledek je vždy `Boolean`.  
   
 ### <a name="bitwise-not-operator"></a>Bitový operátor Not  
  V následující tabulce jsou uvedeny výsledek datové typy pro bitové hodnotě `Not` operátor.  
@@ -155,7 +156,7 @@ ms.lasthandoff: 11/21/2017
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
 |`Not`|Boolean|SByte|Byte|krátký|Ushort –|Integer|Uinteger –|dlouhá|Ulong –|  
   
- Pokud je operand `Decimal`, `Single`, `Double`, nebo `String`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pokusí převeďte ho na `Long` před operace a výsledek je datový typ `Long`.  
+ Pokud je operand `Decimal`, `Single`, `Double`, nebo `String`, Visual Basic pokusí převeďte ho na `Long` před operace a výsledek je datový typ `Long`.  
   
 ### <a name="bitwise-and-or-and-xor-operators"></a>Bitový a, nebo a Xor operátory  
  V následující tabulce jsou uvedeny výsledek datové typy pro bitové hodnotě `And`, `Or`, a `Xor` operátory. Upozorňujeme, že je tato tabulka symetrický; datový typ výsledku pro dané kombinace operand datové typy, je stejný bez ohledu na pořadí operandy.  
@@ -173,14 +174,14 @@ ms.lasthandoff: 11/21/2017
 |`Long`|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|dlouhá|  
 |`ULong`|dlouhá|dlouhá|Ulong –|dlouhá|Ulong –|dlouhá|Ulong –|dlouhá|Ulong –|  
   
- Pokud je operand `Decimal`, `Single`, `Double`, nebo `String`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pokusí převeďte ho na `Long` před operaci a výsledná data typu je stejný jako v případě, že operand byla již `Long`.  
+ Pokud je operand `Decimal`, `Single`, `Double`, nebo `String`, Visual Basic pokusí převeďte ho na `Long` před operaci a výsledná data typu je stejný jako v případě, že operand byla již `Long`.  
   
 ## <a name="miscellaneous-operators"></a>Různé operátory  
- `&` Operátor je určená jenom pro zřetězení `String` operandy. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]převede každý operand podle potřeby k `String` před operace a výsledek datový typ je vždy `String`. Pro účely `&` operátor, všechny převody k `String` jsou považovány za být rozšíření, i v případě `Option Strict` je `On`.  
+ `&` Operátor je určená jenom pro zřetězení `String` operandy. Visual Basic převede každý operand podle potřeby k `String` před operace a výsledek datový typ je vždy `String`. Pro účely `&` operátor, všechny převody k `String` jsou považovány za být rozšíření, i v případě `Option Strict` je `On`.  
   
  `Is` a `IsNot` operátory vyžadují obě operandy být odkazového typu. `TypeOf`... `Is` výraz vyžaduje první operand být odkazového typu a druhý operand jako název datového typu. Ve všech těchto případech výsledných dat je typu `Boolean`.  
   
- `Like` Operátor je určená jenom pro vzor shody `String` operandy. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]pokusí se převést každý operand podle potřeby k `String` před provedením operace. Datový typ výsledek je vždy `Boolean`.  
+ `Like` Operátor je určená jenom pro vzor shody `String` operandy. Visual Basic pokusí převést každý operand podle potřeby k `String` před provedením operace. Datový typ výsledek je vždy `Boolean`.  
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
@@ -191,5 +192,5 @@ ms.lasthandoff: 11/21/2017
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
  [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
- [Operátory porovnávání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+ [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

@@ -1,5 +1,5 @@
 ---
-title: "Postupy: Použití toku dat ve formulářové aplikaci Windows"
+title: 'Postupy: Použití toku dat ve formulářové aplikaci Windows'
 ms.date: 03/30/2017
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -15,11 +15,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8c0d44ca7933626c95603ccc81102889ba4c23cb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f28e103d6241d954dd6ac4f7e9c7fcb20a06ea0b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Postupy: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -48,9 +48,9 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 #### <a name="to-create-the-windows-forms-application"></a>K vytvoření Windows Forms aplikace  
   
-1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vytvoření [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] nebo Visual Basic **formulářové aplikace Windows** projektu. V tomto dokumentu je projekt s názvem `CompositeImages`.  
+1.  V [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], vytvořit Visual C# nebo Visual Basic **formulářové aplikace Windows** projektu. V tomto dokumentu je projekt s názvem `CompositeImages`.  
   
-2.  V návrháři formuláře pro hlavní formulář, Form1.cs (Form1.vb pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
+2.  V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb jazyka Visual Basic), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
   
 3.  Přidat <xref:System.Windows.Forms.ToolStripButton> řídit k <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> a <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **zvolte složku**.  
   
@@ -66,7 +66,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 1.  Přidáte odkaz na System.Threading.Tasks.Dataflow.dll do projektu.  
   
-2.  Ujistěte se, že Form1.cs (Form1.vb pro [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) obsahuje následující `using` (`Using` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) příkazy:  
+2.  Ujistěte se, že Form1.cs (Form1.vb jazyka Visual Basic) obsahuje následující `using` (`Using` v jazyce Visual Basic) příkazy:  
   
      [!code-csharp[TPLDataflow_CompositeImages#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#1)]  
   
@@ -87,7 +87,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
     > [!NOTE]
-    >  C# verzi `CreateCompositeBitmap` metoda používá ukazatele umožňující efektivní zpracování <xref:System.Drawing.Bitmap?displayProperty=nameWithType> objekty. Proto je nutné povolit **povolit nezabezpečený kód** možnost ve vašem projektu, aby bylo možné používat [unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) – klíčové slovo. Další informace o tom, jak povolit nezabezpečený kód [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] projektu najdete v tématu [stránka sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
+    >  C# verzi `CreateCompositeBitmap` metoda používá ukazatele umožňující efektivní zpracování <xref:System.Drawing.Bitmap?displayProperty=nameWithType> objekty. Proto je nutné povolit **povolit nezabezpečený kód** možnost ve vašem projektu, aby bylo možné používat [unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) – klíčové slovo. Další informace o tom, jak povolit nezabezpečený kód v projektu jazyka Visual C#, najdete v části [stránka sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
  Následující tabulka popisuje členy sítě.  
   
@@ -98,7 +98,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
 |`displayCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|Zobrazí složené rastrového obrázku na formuláři.|  
 |`operationCancelled`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|Zobrazí obrázek, který má znamenat, že operace je zrušená a umožňuje uživateli vybrat jinou složku.|  
   
- Používá pro připojení bloků toku dat a vytvořit síť, v tomto příkladu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> metoda. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> Metoda obsahuje přetížené verze, která přijímá <xref:System.Predicate%601> objekt, který určuje, zda cílový blok přijme nebo odmítne zprávy. Tento mechanismus filtrování umožňuje bloky zpráv přijímat jenom určité hodnoty. V tomto příkladu můžete větev sítě v jednom ze dvou způsobů. Hlavní větve načte bitové kopie z disku, vytvoří bitovou kopii složené a zobrazí této bitové kopie na formuláři. Alternativní větev zruší aktuální operace. <xref:System.Predicate%601> Objekty povolit bloků toku dat společně hlavní větve přepnout do alternativní větve odmítnutím některé zprávy. Například, pokud uživatel zruší operaci bloku toku dat `createCompositeBitmap` vytváří `null` (`Nothing` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) jako výstup. Bloku toku dat `displayCompositeBitmap` odmítne `null` vstupní hodnoty a proto zpráva se nabízí na `operationCancelled`. Bloku toku dat `operationCancelled` přijímá všechny zprávy a proto zobrazí obrázek, který se označuje, že operace je zrušená.  
+ Používá pro připojení bloků toku dat a vytvořit síť, v tomto příkladu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> metoda. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> Metoda obsahuje přetížené verze, která přijímá <xref:System.Predicate%601> objekt, který určuje, zda cílový blok přijme nebo odmítne zprávy. Tento mechanismus filtrování umožňuje bloky zpráv přijímat jenom určité hodnoty. V tomto příkladu můžete větev sítě v jednom ze dvou způsobů. Hlavní větve načte bitové kopie z disku, vytvoří bitovou kopii složené a zobrazí této bitové kopie na formuláři. Alternativní větev zruší aktuální operace. <xref:System.Predicate%601> Objekty povolit bloků toku dat společně hlavní větve přepnout do alternativní větve odmítnutím některé zprávy. Například, pokud uživatel zruší operaci bloku toku dat `createCompositeBitmap` vytváří `null` (`Nothing` v jazyce Visual Basic) jako výstup. Bloku toku dat `displayCompositeBitmap` odmítne `null` vstupní hodnoty a proto zpráva se nabízí na `operationCancelled`. Bloku toku dat `operationCancelled` přijímá všechny zprávy a proto zobrazí obrázek, který se označuje, že operace je zrušená.  
   
  Následující ilustrace znázorňuje sítě pro zpracování bitové kopie.  
   

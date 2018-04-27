@@ -1,18 +1,19 @@
 ---
-title: "Navýšení a posunutí existující aplikace Azure IaaS"
-description: "Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnerů."
+title: Navýšení a posunutí existující aplikace Azure IaaS
+description: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnerů.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6811da4b59531e27f2d832c102d37ba1383b15ab
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: d7922ad3a3cd5346f81008e1841a55b5e3663832
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="lift-and-shift-existing-apps-azure-iaas"></a>Navýšení a posunutí existující aplikace Azure IaaS
 
@@ -88,7 +89,7 @@ Obrázek 2 – 3 ukazuje spuštění několika migrací virtuálních počítač
 
 - **Datový list migrovat Azure**
 
-    [https://aka.ms/azuremigration\_datasheet](https://aka.ms/azuremigration\_datasheet)
+    [https://aka.ms/azuremigration\_Datový list](https://aka.ms/azuremigration\_datasheet)
 
 - **Migrace Azure**
 

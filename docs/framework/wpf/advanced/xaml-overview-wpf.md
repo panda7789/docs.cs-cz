@@ -1,12 +1,13 @@
 ---
-title: "Přehled XAML (WPF)"
-ms.custom: 
+title: Přehled XAML (WPF)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -26,16 +27,17 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-caps.latest.revision: "57"
+caps.latest.revision: 57
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce83713d2483320569bde0d5c9a677f0b357ebf2
-ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
+ms.workload:
+- dotnet
+ms.openlocfilehash: 87785d6bba58442a1a5ad27f5304aa63e16c1aa9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotné je větší koncept jazyk než [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -146,7 +148,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
  Zde každý <xref:System.Windows.Controls.Button> je podřízený prvek <xref:System.Windows.Controls.StackPanel>. Toto je zjednodušený a intuitivní značky, která vynechá dvě značky pro dva různé důvody.  
   
--   **Není zadán element vlastnosti StackPanel.Children:** <xref:System.Windows.Controls.StackPanel> je odvozena z <xref:System.Windows.Controls.Panel>. <xref:System.Windows.Controls.Panel>definuje <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> jako jeho XAML obsahu vlastnost.  
+-   **Není zadán element vlastnosti StackPanel.Children:** <xref:System.Windows.Controls.StackPanel> je odvozena z <xref:System.Windows.Controls.Panel>. <xref:System.Windows.Controls.Panel> definuje <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> jako jeho XAML obsahu vlastnost.  
   
 -   **Není zadán element object UIElementCollection:** <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> vlastnost trvá typ <xref:System.Windows.Controls.UIElementCollection>, který implementuje <xref:System.Collections.IList>. Značky elementu kolekce lze vynechat, na základě pravidel XAML pro zpracování kolekcí, jako <xref:System.Collections.IList>. (V tomto případě <xref:System.Windows.Controls.UIElementCollection> ve skutečnosti nelze vytvořit instance, protože nevystavuje výchozí konstruktor, a proto <xref:System.Windows.Controls.UIElementCollection> object element se zobrazí komentovaný out).  
   
@@ -192,7 +194,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
 ## <a name="type-converters"></a>Převaděče typů  
  V [XAML syntaxi Brief](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md#xaml_syntax_in_brief) části bylo uvedeno, že musí být hodnota atributu může být nastavovat řetězce. Je na základě základní, nativní ošetření jak řetězce se převedou na další typy objektů nebo primitivní hodnoty <xref:System.String> zadejte sám sebe, kromě nativní zpracování pro určité typy, jako <xref:System.DateTime> nebo <xref:System.Uri>. Ale mnoho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy nebo členy z těchto typů rozšířit atribut základní řetězce zpracování chování tak, že instance složitější typy objektů lze zadat jako řetězce a atributy.  
   
- <xref:System.Windows.Thickness> Struktura je příkladem typ, který má povolené pro použití, XAML převod typů. <xref:System.Windows.Thickness>označuje měření v rámci vnořené obdélníku a slouží jako hodnota vlastnosti, jako <xref:System.Windows.FrameworkElement.Margin%2A>. Umístěním převaděče typů na <xref:System.Windows.Thickness>, všechny vlastnosti, které používají <xref:System.Windows.Thickness> se snadněji určit v jazyce XAML, protože může být zadán jako atributy. Následující příklad používá k zadání hodnoty pro typ převodu a atribut syntaxe <xref:System.Windows.FrameworkElement.Margin%2A>:  
+ <xref:System.Windows.Thickness> Struktura je příkladem typ, který má povolené pro použití, XAML převod typů. <xref:System.Windows.Thickness> označuje měření v rámci vnořené obdélníku a slouží jako hodnota vlastnosti, jako <xref:System.Windows.FrameworkElement.Margin%2A>. Umístěním převaděče typů na <xref:System.Windows.Thickness>, všechny vlastnosti, které používají <xref:System.Windows.Thickness> se snadněji určit v jazyce XAML, protože může být zadán jako atributy. Následující příklad používá k zadání hodnoty pro typ převodu a atribut syntaxe <xref:System.Windows.FrameworkElement.Margin%2A>:  
   
  [!code-xaml[XAMLOvwSupport#MarginTCE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#margintce)]  
   
@@ -216,14 +218,14 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
  Toto použití `xmlns` k definování oboru pro využití a mapování namescope je v souladu s specifikace XML 1.0. XAML namescopes se liší od XML namescopes pouze v tomto XAML namescope také znamená něco jak namescope elementy jsou zajišťované typy při přechodu na typ překlad IP adres a analýza XAML.  
   
- Všimněte si, že `xmlns` atributy jsou jenom nezbytně nutná v kořenovém elementu každého souboru XAML. `xmlns`definice budou platit pro všechny následné elementy kořenového prvku (Toto chování je konzistentní s specifikace XML 1.0 pro znovu `xmlns`.) `xmlns` atributy jsou také povolená na další prvky pod kořenovým adresářem a by platí pro všechny následnickým elementům definující elementu. Ale často definice nebo předefinování obory názvů jazyka XAML může způsobit XAML styl značek, které je obtížné číst.  
+ Všimněte si, že `xmlns` atributy jsou jenom nezbytně nutná v kořenovém elementu každého souboru XAML. `xmlns` definice budou platit pro všechny následné elementy kořenového prvku (Toto chování je konzistentní s specifikace XML 1.0 pro znovu `xmlns`.) `xmlns` atributy jsou také povolená na další prvky pod kořenovým adresářem a by platí pro všechny následnickým elementům definující elementu. Ale často definice nebo předefinování obory názvů jazyka XAML může způsobit XAML styl značek, které je obtížné číst.  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Infrastruktura, která obsahuje informace o základních sestavení WPF obsahuje implementaci jeho XAML procesoru. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Základních sestavení se ví, obsahovat typy, které podporují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mapování oboru názvů jazyka XAML výchozí. Tato možnost je povolena prostřednictvím konfigurace, který je součástí vaší sestavení projektu soubor a WPF sestavení a projektu systémy. Proto deklarace oboru názvů jazyka XAML výchozí jako výchozí `xmlns` je všechno, co je nezbytné, aby odkazovat elementů XAML, které pocházejí z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení.  
   
 ### <a name="the-x-prefix"></a>Předpona x:  
  V předchozím příkladu kořenový element, předponu `x:` byl použit k mapování oboru názvů jazyka XAML [!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)], který je vyhrazený oboru názvů jazyka XAML, který podporuje jazyk XAML vytvoří. To `x:` předpona se používá pro mapování tento obor názvů jazyka XAML v šablonách pro projekty, příklady a dokumentaci v rámci to [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Oboru názvů jazyka XAML pro jazyk XAML obsahovat několik programovací konstrukce, které budete používat velmi často ve vašem XAML. Následuje seznam nejobvyklejší `x:` předpony programovací konstrukce, které budete používat:  
   
--   [x: Key](../../../../docs/framework/xaml-services/x-key-directive.md): Nastaví jedinečný klíč pro každý zdroj v <xref:System.Windows.ResourceDictionary> (nebo podobné slovník koncepty v jiných rozhraní). `x:Key`pravděpodobně bude účet pro 90 % `x:` použití, zobrazí se v typické aplikaci WPF značek.  
+-   [x: Key](../../../../docs/framework/xaml-services/x-key-directive.md): Nastaví jedinečný klíč pro každý zdroj v <xref:System.Windows.ResourceDictionary> (nebo podobné slovník koncepty v jiných rozhraní). `x:Key` pravděpodobně bude účet pro 90 % `x:` použití, zobrazí se v typické aplikaci WPF značek.  
   
 -   [x: Class –](../../../../docs/framework/xaml-services/x-class-directive.md): Určuje [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů a třídy pro třídu, která poskytuje kódu stránky XAML. Třídy pro podporu kódu podle programovacího modelu WPF musí mít, a proto téměř vždy zobrazí `x:` namapované, i když nejsou žádné prostředky.  
   
@@ -260,7 +262,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
 <a name="events_and_xaml_codebehind"></a>   
 ## <a name="events-and-xaml-code-behind"></a>Události a kódu XAML  
- Většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace se skládají z XAML značek a kódu. V projektu, je zapsán XAML jako `.xaml` souboru a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] jazyk jako [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)] nebo [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] se používá k zápisu souboru kódu na pozadí. Jako součást WPF programovací a aplikace modely kompilaci kódu po souboru XAML umístění kódu XAML soubor pro soubor XAML je identifikována zadání oboru názvů a třídy jako `x:Class` atribut kořenového prvku XAML.  
+ Většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace se skládají z XAML značek a kódu. V projektu, je zapsán XAML jako `.xaml` souboru a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] jazyk, jako je například Microsoft Visual Basic a C# se používá k zápisu souboru kódu na pozadí. Jako součást WPF programovací a aplikace modely kompilaci kódu po souboru XAML umístění kódu XAML soubor pro soubor XAML je identifikována zadání oboru názvů a třídy jako `x:Class` atribut kořenového prvku XAML.  
   
  V příkladech, pokud jste viděli několik tlačítek, ale žádná z těchto tlačítek byl žádné logické chování ještě s nimi spojených. Primární mechanismus úrovni aplikace pro přidání chování pro daný objekt element je používat existující událost třídy elementu a k zápisu konkrétní obslužnou rutinu pro tuto událost, která je volána, když tuto událost se vyvolá v době běhu. Název události a název obslužné rutiny používat jsou určené v kód, zatímco kód, který implementuje vaší obslužné rutiny je definována v modelu code-behind.  
   
@@ -314,13 +316,13 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
 <a name="base_classes_and_xaml"></a>   
 ## <a name="base-types-and-xaml"></a>Základní typy a XAML  
- Základní WPF XAML a jeho oboru názvů jazyka XAML je kolekci typů, které odpovídají [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty kromě prvky značek pro jazyk XAML. Ne všechny třídy však lze mapovat na elementy. Abstraktní třídy, jako například <xref:System.Windows.Controls.Primitives.ButtonBase>, a používají se pro dědičnosti v určitých neabstraktní základní třídy [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty modelu. Základní třídy, včetně těch abstraktní, jsou pro vývoj XAML stále důležité, protože každý z konkrétní elementů XAML dědí členy ze základní třídy, které se v hierarchii. Tito členové často patří vlastnosti, které lze nastavit jako atributy v elementu nebo událostí, které mohou být zpracovány. <xref:System.Windows.FrameworkElement>je konkrétní základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na úrovni framework WPF. Při navrhování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], budete používat různé tvaru, panel, dekoratéra nebo – třídy ovládacích prvků, které všechna odvozena od <xref:System.Windows.FrameworkElement>. Související základní třídu, <xref:System.Windows.FrameworkContentElement>, podporuje dokumentu zaměřené na konkrétní prvky, které fungovat i pro prezentaci rozložení toku pomocí [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] který úmyslně zrcadlení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] v <xref:System.Windows.FrameworkElement>. Kombinace atributů na úrovni elementu a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektový model poskytuje sadu společných vlastností, které jsou nastavit na nejvíce konkrétní elementů XAML, bez ohledu na konkrétní element jazyka XAML a jeho zdrojovým typem.  
+ Základní WPF XAML a jeho oboru názvů jazyka XAML je kolekci typů, které odpovídají [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty kromě prvky značek pro jazyk XAML. Ne všechny třídy však lze mapovat na elementy. Abstraktní třídy, jako například <xref:System.Windows.Controls.Primitives.ButtonBase>, a používají se pro dědičnosti v určitých neabstraktní základní třídy [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty modelu. Základní třídy, včetně těch abstraktní, jsou pro vývoj XAML stále důležité, protože každý z konkrétní elementů XAML dědí členy ze základní třídy, které se v hierarchii. Tito členové často patří vlastnosti, které lze nastavit jako atributy v elementu nebo událostí, které mohou být zpracovány. <xref:System.Windows.FrameworkElement> je konkrétní základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na úrovni framework WPF. Při navrhování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], budete používat různé tvaru, panel, dekoratéra nebo – třídy ovládacích prvků, které všechna odvozena od <xref:System.Windows.FrameworkElement>. Související základní třídu, <xref:System.Windows.FrameworkContentElement>, podporuje dokumentu zaměřené na konkrétní prvky, které fungovat i pro prezentaci rozložení toku pomocí [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] který úmyslně zrcadlení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] v <xref:System.Windows.FrameworkElement>. Kombinace atributů na úrovni elementu a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektový model poskytuje sadu společných vlastností, které jsou nastavit na nejvíce konkrétní elementů XAML, bez ohledu na konkrétní element jazyka XAML a jeho zdrojovým typem.  
   
 <a name="xaml_security"></a>   
 ## <a name="xaml-security"></a>XAML – zabezpečení  
  XAML je jazyk kódu, který přímo představuje vytvoření instance objektu a spouštění. Proto prvků vytvořených v jazyce XAML mít stejné možnost využívat systémové prostředky (přístup do sítě, soubor systému vstupně-výstupní operace, například) jako ekvivalentní, vygeneruje kód neobsahuje.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] zabezpečení framework [!INCLUDE[TLA#tla_cas](../../../../includes/tlasharptla-cas-md.md)]. To znamená, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah spuštěný v zóně internet omezila oprávnění provádění. "Ke ztrátě XAML" (stránky noncompiled XAML interpretovat při načítání, prohlížeč XAML) a [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] jsou obvykle spustit v této zóně internet a použít stejnou sadu oprávnění.  XAML načíst ve plně důvěryhodný pro aplikaci však má stejný přístup k systémovým prostředkům, stejně jako hostitelskou aplikaci. Další informace najdete v tématu [WPF částečné důvěryhodnosti zabezpečení](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] zabezpečení framework [!INCLUDE[TLA#tla_cas](../../../../includes/tlasharptla-cas-md.md)]. To znamená, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah spuštěný v zóně internet omezila oprávnění provádění. "Ke ztrátě XAML" (stránky noncompiled XAML interpretovat při načítání, prohlížeč XAML) a [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] jsou obvykle spustit v této zóně internet a použít stejnou sadu oprávnění.  XAML načíst ve plně důvěryhodný pro aplikaci však má stejný přístup k systémovým prostředkům, stejně jako hostitelskou aplikaci. Další informace najdete v tématu [WPF částečné důvěryhodnosti zabezpečení](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
 <a name="loading_xaml_from_code"></a>   
 ## <a name="loading-xaml-from-code"></a>Načítání z kódu jazyka XAML  
@@ -332,7 +334,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
  Pokud jste to ještě neudělali, zkuste praktická cvičení v kurzu tématu [návod: Můj první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md). Při vytvoření značek zaměřená na aplikace, které jsou popsané v kurzu, bude výkonu pomohli posílit řadu konceptů popsaných v tomto tématu.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používá model konkrétní aplikace, který je založen na <xref:System.Windows.Application> třídy. Podrobnosti najdete v tématu [přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá model konkrétní aplikace, který je založen na <xref:System.Windows.Application> třídy. Podrobnosti najdete v tématu [přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md).  
   
  [Vytvoření aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md) získáte další informace o tom, jak vytvářet aplikace inkluzivní XAML z příkazového řádku a s [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)].  
   

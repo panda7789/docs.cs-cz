@@ -1,12 +1,13 @@
 ---
-title: "SqlMetal.exe (nástroj pro vytváření kódu)"
-ms.custom: 
+title: SqlMetal.exe (nástroj pro vytváření kódu)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - SQLMetal [LINQ to SQL]
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-caps.latest.revision: "43"
+caps.latest.revision: 43
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c14c01c670eccbc7f13210d3c0bb7df7bec07679
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5c21c08cf76143959d11498594fbc94fb1dac55c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (nástroj pro vytváření kódu)
 Nástroj příkazového řádku na SqlMetal generuje kód a mapování [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] komponentu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Použitím možností uvedených dále v tomto tématu můžete dát nástroji SqlMetal pokyn, aby provedl několik různých úkonů, které zahrnují následující:  
@@ -103,13 +105,13 @@ sqlmetal [options] [<input file>]
   
 -   Generování výstupního souboru s kódem.  
   
-     Pomocí možnosti příkazového řádku, můžete vytvořit [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] nebo zdrojového kódu C#, nebo můžete vytvořit mapování souboru XML.  
+     Pomocí možnosti příkazového řádku, můžete vytvořit zdrojového kódu Visual Basic a C# nebo může vytvořit mapování souboru XML.  
   
  Chcete-li extrahovat metadata ze souboru .mdf, musíte zadat název souboru .mdf za všemi ostatními možnostmi.  
   
  Pokud žádné **/server** není zadaný, **localhost nebo sqlexpress** se předpokládá.  
   
- [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)]Pokud jeden nebo více z následujících podmínek jsou splněny, vyvolá výjimku:  
+ [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] Pokud jeden nebo více z následujících podmínek jsou splněny, vyvolá výjimku:  
   
 -   SqlMetal se pokusí extrahovat uloženou proceduru, která volá sama sebe.  
   

@@ -1,11 +1,12 @@
 ---
-title: "Sub – procedury (Visual Basic)"
-ms.custom: 
+title: Sub – procedury (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Sub procedures [Visual Basic], about Sub procedures
@@ -17,17 +18,17 @@ helpviewer_keywords:
 - procedures [Visual Basic], Sub
 - syntax [Visual Basic], Sub procedures
 ms.assetid: 6a0a4958-ed0a-4d3d-8d31-0772c82bda58
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4e20e0dd5ff9e2b931e5792bebb3144930826f89
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7258d57d2677042a2020097893a4f7a0adb35508
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub – procedury (Visual Basic)
-A `Sub` postup je řadu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ohraničená příkazy `Sub` a `End Sub` příkazy. `Sub` Postup provede úlohu a vrátí ovládací prvek pro volací kód, ale nevrací hodnotu volání kódu.  
+A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `End Sub` příkazy. `Sub` Postup provede úlohu a vrátí ovládací prvek pro volací kód, ale nevrací hodnotu volání kódu.  
   
  Při každém volání procedury, jeho příkazy jsou spouštěny, počínaje prvním příkazem spustitelný soubor po `Sub` prohlášení a ukončuje se první `End Sub`, `Exit Sub`, nebo `Return` byl zjištěn příkaz.  
   
@@ -38,7 +39,7 @@ A `Sub` postup je řadu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ohraničená
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe deklarace `Sub` postup je následující:  
   
- `[`*modifikátory* `] Sub` *subname* `[(` *parameterlist*  `)]`  
+ `[` *Modifikátory* `] Sub` *subname* `[(` *parameterlist*  `)]`  
   
  `' Statements of the Sub procedure.`  
   
@@ -65,7 +66,7 @@ A `Sub` postup je řadu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ohraničená
   
  Syntaxe volání `Sub` postup je následující:  
   
- `[Call]`  *subname* `[(` *argumentlist*`)]`  
+ `[Call]`  *subname* `[(` *argumentlist* `)]`  
   
  Můžete volat `Sub` metody z mimo třídu, která ho definuje. Nejprve budete muset použít `New` – klíčové slovo k vytvoření instance třídy nebo volání metody, které vrací instanci třídy. Další informace najdete v tématu [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md). Pak použijte následující syntaxi pro volání `Sub` metoda instance objektu:  
   
@@ -81,11 +82,11 @@ A `Sub` postup je řadu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ohraničená
  [!code-vb[VbVbcnProcedures#3](./codesnippet/VisualBasic/sub-procedures_2.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
- [Function – procedury](./function-procedures.md)  
- [Procedury vlastností](./property-procedures.md)  
+ [Procedury](./index.md)  
+ [Procedury funkce](./function-procedures.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Procedury operátoru](./operator-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Postupy: volání procedury, která nevrátí hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)  
+ [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)  
  [Postupy: volání obslužné rutiny událostí v jazyce Visual Basic](./how-to-call-an-event-handler.md)

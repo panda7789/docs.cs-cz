@@ -1,30 +1,32 @@
 ---
-title: "Přehled klientských aplikačních služeb"
-ms.custom: 
+title: Přehled klientských aplikačních služeb
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - client application services, classes
 - client application services, about client application services
 ms.assetid: f0a2da13-e282-4fd7-88a1-f9102c9aeab1
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55b4ab154f9f3a9b17274697c30ca826218322ab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9ddc1b505146e7ca31bca5acc5e9d19d258a860d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="client-application-services-overview"></a>Přehled klientských aplikačních služeb
-Klient aplikačních služeb poskytují zjednodušenou přístup k [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a profilu služby z aplikací Windows Forms a Windows Presentation Foundation (WPF). [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)]aplikace služby jsou součástí Microsoft ASP.NET 2.0 AJAX rozšíření, která je součástí [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] a [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Tyto služby umožňují více Web a aplikace pro systém Windows sdílet informace o uživateli a správu uživatelů funkci z jednoho serveru.  
+Klient aplikačních služeb poskytují zjednodušenou přístup k [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a profilu služby z aplikací Windows Forms a Windows Presentation Foundation (WPF). [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby jsou součástí Microsoft ASP.NET 2.0 AJAX rozšíření, která je součástí [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] a [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Tyto služby umožňují více Web a aplikace pro systém Windows sdílet informace o uživateli a správu uživatelů funkci z jednoho serveru.  
   
  Klient aplikačních služeb zahrnují poskytovatelé služeb klienta, které se připojí k model rozšíření webových služeb k povolení následujících funkcí pro aplikace založené na systému Windows:  
   
@@ -59,7 +61,7 @@ Klient aplikačních služeb poskytují zjednodušenou přístup k [!INCLUDE[aja
  Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] služby rolí, najdete v části [pomocí rolí informací pomocí Microsoft Ajax](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d).  
   
 ## <a name="settings"></a>Nastavení  
- Klient aplikačních služeb můžete použít k načtení nastavení uživatele aplikace z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby. Klient aplikačních služeb, funkce nastavení webu integruje s funkcí nastavení aplikace, který je součástí [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]. Pokud chcete načíst nastavení webu, nejprve generovat `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) pro váš projekt pomocí **nastavení** kartě [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] Návrhář projektu. Na **nastavení** kartě, můžete použít **zatížení nastavení webové** tlačítko Načíst nastavení webu a přidat je do vygenerovaného `Settings` třídy. Můžete použít nastavení webové nakonfigurovaný na používání všem ověřeným uživatelům nebo všichni anonymní uživatelé.  
+ Klient aplikačních služeb můžete použít k načtení nastavení uživatele aplikace z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby. Klient aplikačních služeb, funkce nastavení webu integruje s funkcí nastavení aplikace, který je součástí [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]. Pokud chcete načíst nastavení webu, nejprve generovat `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) pro váš projekt pomocí **nastavení** kartě [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] Návrhář projektu. Na **nastavení** kartě, můžete použít **zatížení nastavení webové** tlačítko Načíst nastavení webu a přidat je do vygenerovaného `Settings` třídy. Můžete použít nastavení webové nakonfigurovaný na používání všem ověřeným uživatelům nebo všichni anonymní uživatelé.  
   
  Další informace o nastavení aplikace najdete v tématu [přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md). Informace o tom, jak implementovat vlastní třída nastavení, místo aby generovala v [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], najdete v části [postupy: vytvoření nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md). Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby najdete v tématu [pomocí informací o profilu s Microsoft Ajax](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61).  
   

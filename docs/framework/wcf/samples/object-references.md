@@ -1,24 +1,26 @@
 ---
 title: Odkazy na objekty
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a86b442ffeeeb77a0c124b9b3e3441ba24d68e4a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: fcb34efeb7eed28f85774dc5489b3e56aeac4e6c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="object-references"></a>Odkazy na objekty
 Tento příklad znázorňuje, jak předat objekty podle odkazů mezi serverem a klientem. Ukázka použití simulated *sociálních sítí*. Sociální sítě se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých je každý friend instance `Person` třída, s vlastní seznamu přátel. Tím se vytvoří graf objektů. Službu zpřístupní operace v těchto sociálních sítích.  
@@ -103,7 +105,7 @@ public List<Person> GetCommonFriends(List<Person> people)
 ```  
   
 ## <a name="client"></a>Klient  
- Proxy server klienta je vytvořený pomocí **přidat odkaz na službu** funkce [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].  
+ Proxy server klienta je vytvořený pomocí **přidat odkaz na službu** funkce sady Visual Studio.  
   
  Sociální sítě, která se skládá z pěti `Person` vytvořeny objekty. Klient volá všechny tři metody ve službě.  
   

@@ -1,13 +1,13 @@
 ---
-title: "Sestavení aplikace WPF (WPF)"
-ms.custom: 
+title: Sestavení aplikace WPF (WPF)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-caps.latest.revision: 
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 87fc77aaa95e2d2de4b0c6eb75484ab9b4006c31
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 054f6cd6ae71428aca6b99eb510b2ac34fc6c4b6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]aplikace se dají vytvářet jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe) knihovny (DLL) nebo kombinaci obou typů sestavení. Toto téma představuje jak sestavit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace a popisuje klíčové kroky v procesu sestavení.  
+[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace se dají vytvářet jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe) knihovny (DLL) nebo kombinaci obou typů sestavení. Toto téma představuje jak sestavit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace a popisuje klíčové kroky v procesu sestavení.  
   
   
 <a name="Building_a_WPF_Application_using_Command_Line"></a>   
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  Znázornění CodeDOM nové částečné třídy je vytvořili a zkopírovali do složky obj\Release.  
   
- Kromě toho se vygeneruje soubor specifické pro jazyk kódu pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru. Například pro stránky Page1.xaml v [!INCLUDE[TLA2#tla_visualb](../../../../includes/tla2sharptla-visualb-md.md)] projektu Page1.g.vb se vygeneruje; Page1.xaml stránce v [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] projekt, Page1.g.cs se vygeneruje. ".G" v názvu souboru označuje soubor je vygenerováno, kód, který má deklaraci třídu pro element nejvyšší úrovně souboru kódu (například `Page` nebo `Window`). Třída je deklarovaný s `partial` modifikátor v [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] (`Extends` v [!INCLUDE[TLA2#tla_visualb](../../../../includes/tla2sharptla-visualb-md.md)]) k označení, je jiná deklarace pro třídu jinam, obvykle v modelu code-behind souboru Page1.xaml.cs.  
+ Kromě toho se vygeneruje soubor specifické pro jazyk kódu pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru. Například pro stránky Page1.xaml v projektu jazyka Visual Basic, je vygenerována Page1.g.vb; pro stránku Page1.xaml v projektu jazyka C# je vygenerována Page1.g.cs. ".G" v názvu souboru označuje soubor je vygenerováno, kód, který má deklaraci třídu pro element nejvyšší úrovně souboru kódu (například `Page` nebo `Window`). Třída je deklarovaný s `partial` modifikátor v jazyce C# (`Extends` v jazyce Visual Basic) k označení, je jiná deklarace pro třídu jinam, obvykle v modelu code-behind souboru Page1.xaml.cs.  
   
  Rozšiřuje třídu z příslušné základní třídy (například <xref:System.Windows.Controls.Page> pro stránku) a implementuje <xref:System.Windows.Markup.IComponentConnector?displayProperty=nameWithType> rozhraní. <xref:System.Windows.Markup.IComponentConnector> Rozhraní má metody pro inicializaci součásti a připojit názvy a události na elementy v jeho obsah. V důsledku toho soubor generovaného kódu má implementace metody takto:  
   
@@ -115,7 +115,7 @@ End Sub
   
 <a name="Pass_2_of_Markup_Compilation"></a>   
 ### <a name="markup-compilationpass-2"></a>Značky kompilace – předat 2  
- Ne všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou stránky kompilovány na během průchodu 1 kompilace kódu. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]soubory, které jste definovali místně odkazy na typ (odkazů pro typy definované v kódu jinde v rámci jednoho projektu) se nevztahují kompilace v tuto chvíli. Je to proto, že tyto místně definované typy existovat pouze ve zdroji a nebyla dosud kompilována. Chcete-li to zjistit, analyzátor používá heuristiky, které zahrnují hledá položky, jako například `x:Name` v souboru kódu. Pokud tyto instance nenajde, že dokud soubory kódu sestavili jsme, po který, odloží se kompilace kódu souboru druhý kompilace kódu předat procesy tyto soubory.  
+ Ne všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jsou stránky kompilovány na během průchodu 1 kompilace kódu. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které jste definovali místně odkazy na typ (odkazů pro typy definované v kódu jinde v rámci jednoho projektu) se nevztahují kompilace v tuto chvíli. Je to proto, že tyto místně definované typy existovat pouze ve zdroji a nebyla dosud kompilována. Chcete-li to zjistit, analyzátor používá heuristiky, které zahrnují hledá položky, jako například `x:Name` v souboru kódu. Pokud tyto instance nenajde, že dokud soubory kódu sestavili jsme, po který, odloží se kompilace kódu souboru druhý kompilace kódu předat procesy tyto soubory.  
   
 <a name="File_Classification"></a>   
 ### <a name="file-classification"></a>Klasifikace souborů  
@@ -137,7 +137,7 @@ End Sub
   
  Tyto soubory manifestu se vytváří vždy pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. Nainstalovaných aplikací, nejsou vytvořeny Pokud `GenerateManifests` vlastnost je zadaná v souboru projektu s hodnotou `true`.  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]Získejte dva další oprávnění, kromě těchto oprávnění přiřazená uživateli typické internetové zóny aplikace: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Systém sestavení deklaruje tato oprávnění v manifestu aplikace.  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] Získejte dva další oprávnění, kromě těchto oprávnění přiřazená uživateli typické internetové zóny aplikace: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Systém sestavení deklaruje tato oprávnění v manifestu aplikace.  
   
 <a name="Incremental_Build_Support"></a>   
 ## <a name="incremental-build-support"></a>Podpora přírůstkové sestavení  

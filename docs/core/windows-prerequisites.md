@@ -1,18 +1,18 @@
 ---
-title: "Předpoklady pro .NET Core v systému Windows"
-description: "Zjistěte, co závislosti, musíte na váš Windows počítače pro vývoj a spouštění aplikací .NET Core."
+title: Předpoklady pro .NET Core v systému Windows
+description: Zjistěte, co závislosti, musíte na váš Windows počítače pro vývoj a spouštění aplikací .NET Core.
 author: JRAlexander
 ms.author: johalex
-ms.date: 03/02/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: .net-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 48102f3fb7fa6e93238eefff0e7f1ecbed4d8409
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: ac898ea87c0247581154eb7de65e8cbe6ea6ba15
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core v systému Windows
 
@@ -50,7 +50,7 @@ V tématu [podporované verze operačního systému aplikace .NET Core 1.x](http
 * Instalaci .NET Core prostřednictvím *.zip* souboru. To může zahrnovat servery sestavení nebo položek konfigurace nebo disku CD.
 
 > [!NOTE]
-> *Pro systém Windows 7 a Windows Server 2008 počítače:* Ujistěte se, že je aktuální instalace systému Windows a zahrnuje opravu hotfix [KB2533623](https://support.microsoft.com/help/2533623) nainstalované prostřednictvím služby Windows Update.
+> *Windows 8.1 a starší verze, nebo Windows Server 2012 R2 a starších verzích:* Ujistěte se, že je aktuální instalace systému Windows a zahrnuje [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) který lze nainstalovat pomocí služby Windows Update. Pokud nemáte k dispozici tato aktualizace instalována, zobrazí chybu při spuštění aplikace .NET Core takto: `The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`.
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky s Visual Studio 2017
 
@@ -58,7 +58,7 @@ K vývoji aplikací .NET Core pomocí sady .NET Core SDK můžete použít všec
 
 Další informace o změnách ve Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 K vývoji aplikací .NET Core 2.x ve Visual Studio 2017:
 

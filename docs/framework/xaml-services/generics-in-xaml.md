@@ -1,34 +1,34 @@
 ---
-title: "Obecné typy v jazyku XAML"
-ms.custom: 
+title: Obecné typy v jazyku XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-caps.latest.revision: 
+caps.latest.revision: 8
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c0e5bfb4f327028f09e8c898cf07e5fec9a5f789
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e64224edcb49d5040332b7cef9649c98cf26798b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="generics-in-xaml"></a>Obecné typy v jazyku XAML
 Rozhraní .NET Framework XAML Services jak jsou implementované ve System.Xaml poskytuje podporu pro použití obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucující omezení voláním odpovídající `Add` metoda pro obecnou kolekci případy. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v jazyce XAML.  
   
 ## <a name="xtypearguments"></a>x: TypeArguments –  
- `x:TypeArguments`direktivu definované jazyk XAML. Pokud se používá jako člen skupiny typ jazyka XAML, který je zálohovaný díky obecného typu `x:TypeArguments` předává chovaly zadejte argumenty obecného konstruktoru zálohování. Pro odkaz na syntaxi, která se vztahují na rozhraní .NET Framework XAML Services použití `x:TypeArguments`, což zahrnuje příklady syntaxe, najdete v části [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
+ `x:TypeArguments` direktivu definované jazyk XAML. Pokud se používá jako člen skupiny typ jazyka XAML, který je zálohovaný díky obecného typu `x:TypeArguments` předává chovaly zadejte argumenty obecného konstruktoru zálohování. Pro odkaz na syntaxi, která se vztahují na rozhraní .NET Framework XAML Services použití `x:TypeArguments`, což zahrnuje příklady syntaxe, najdete v části [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
   
  Protože `x:TypeArguments` přebírá řetězec a má základní typ převaděče, je obvykle deklarovaný XAML využití jako atribut.  
   
@@ -53,7 +53,7 @@ Rozhraní .NET Framework XAML Services jak jsou implementované ve System.Xaml p
   
  WPF a cílení na [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], můžete použít funkce jazyka XAML 2009 společně s `x:TypeArguments`, ale jenom pro přijít XAML (XAML, který zkompiluje značek není). Zkompilovaný kód XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova jazyka XAML 2009 a funkce.  
   
- Vlastní pracovní postupy v [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] není podporována Obecná použití XAML.  
+ Vlastní pracovní postupy v modelu Windows Workflow Foundation pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] není podporována Obecná použití XAML.  
   
 ## <a name="see-also"></a>Viz také  
  [x:TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md)  

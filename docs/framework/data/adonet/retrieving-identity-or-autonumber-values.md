@@ -13,17 +13,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
-caps.latest.revision: ''
+caps.latest.revision: 7
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: 15c435d46d3695f78db27801f54ec9de475b2989
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: ef070c737f6a108aa9c9285d2cc8e0a1144479bd
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>Načítání Identity nebo hodnoty automatické číslování
 Primární klíče v relační databázi je sloupec nebo kombinace sloupců, které vždy obsahovat jedinečné hodnoty. Znalost hodnotu primárního klíče umožňuje umístit na řádek, který jej obsahuje. Relační databáze weby, jako je například SQL Server, Oracle a Microsoft Access/Jet podporují vytvoření automaticky zvyšování sloupce, které lze určit jako primární klíče. Tyto hodnoty generované serverem při přidávání řádků do tabulky. V systému SQL Server nastavte vlastnost identity sloupce v Oracle vytvoříte pořadí a v aplikaci Microsoft Access vytvořit sloupec Automatické číslo.  
@@ -35,7 +35,7 @@ Primární klíče v relační databázi je sloupec nebo kombinace sloupců, kte
  Některé databázové stroje, jako je například databázový stroj Microsoft Jet přístup, nepodporuje výstupní parametry a nemůže zpracovat více příkazů v jedné dávce. Při práci s databázový stroj, můžete načíst nová hodnota Automatické číslování vygenerované vloženého řádku spuštěním samostatný příkaz SELECT v obslužné rutiny události pro `RowUpdated` události `DataAdapter`.  
   
 > [!NOTE]
->  Alternativu k použití automaticky přírůstkovou hodnotou je použití <xref:System.Guid.NewGuid%2A> metodu <xref:System.Guid> objekt, který chcete generovat identifikátor GUID nebo globálně jedinečný identifikátor v klientském počítači, který je možné zkopírovat do serveru, jako je vložen každý nový řádek. `NewGuid` Metoda generuje 16 bajtů binární hodnotu, která je vytvořena pomocí algoritmu, který poskytuje vysokou pravděpodobnost, že žádná hodnota bude duplicitní. V databázi systému SQL Server, je identifikátor GUID uložené v `uniqueidentifier` sloupec, který systému SQL Server může automaticky generovat pomocí jazyka Transact-SQL `NEWID()` funkce. Pomocí identifikátor GUID jako primární klíč může nepříznivě ovlivnit výkon. [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] poskytuje podporu pro `NEWSEQUENTIALID()` funkci, která generuje sekvenční identifikátor GUID, který není musí být globálně jedinečný, ale který lze efektivněji indexovat.  
+>  Alternativu k použití automaticky přírůstkovou hodnotou je použití <xref:System.Guid.NewGuid%2A> metodu <xref:System.Guid> objekt, který chcete generovat identifikátor GUID nebo globálně jedinečný identifikátor v klientském počítači, který je možné zkopírovat do serveru, jako je vložen každý nový řádek. `NewGuid` Metoda generuje 16 bajtů binární hodnotu, která je vytvořena pomocí algoritmu, který poskytuje vysokou pravděpodobnost, že žádná hodnota bude duplicitní. V databázi systému SQL Server, je identifikátor GUID uložené v `uniqueidentifier` sloupec, který systému SQL Server může automaticky generovat pomocí jazyka Transact-SQL `NEWID()` funkce. Pomocí identifikátor GUID jako primární klíč může nepříznivě ovlivnit výkon. SQL Server poskytuje podporu pro `NEWSEQUENTIALID()` funkci, která generuje sekvenční identifikátor GUID, který není musí být globálně jedinečný, ale který lze efektivněji indexovat.  
   
 ## <a name="retrieving-sql-server-identity-column-values"></a>Načítání hodnot sloupce Identity serveru SQL  
  Při práci se službou Microsoft SQL Server, můžete vytvořit uložené procedury s výstupní parametr vrátit hodnotu identity pro vloženého řádku. Následující tabulka popisuje tři funkce jazyka Transact-SQL v systému SQL Server, který slouží k načtení hodnoty pro sloupec identity.  
@@ -44,7 +44,7 @@ Primární klíče v relační databázi je sloupec nebo kombinace sloupců, kte
 |--------------|-----------------|  
 |SCOPE_IDENTITY|Vrátí poslední hodnotu identity v aktuálním oboru provádění. SCOPE_IDENTITY se doporučuje pro většinu scénářů.|  
 |@@IDENTITY|Obsahuje poslední hodnotu identity vygenerovaných všechny tabulky v aktuální relaci. @@IDENTITY může být ovlivněno aktivační události a nemusí vracet hodnotu identity, které očekáváte.|  
-|IDENT_CURRENT|Vrátí poslední hodnotu identity vygenerované určité tabulky v jakékoli relace a jakémkoli oboru.|  
+|FUNKCE IDENT_CURRENT|Vrátí poslední hodnotu identity vygenerované určité tabulky v jakékoli relace a jakémkoli oboru.|  
   
  Následující uložené procedury ukazuje, jak o vložení řádku do **kategorie** tabulky a použít výstupní parametr, který vrátí novou hodnotu identity generované funkce SCOPE_IDENTITY() Transact-SQL.  
   

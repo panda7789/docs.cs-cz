@@ -1,10 +1,11 @@
 ---
-title: "Dim – příkaz (Visual Basic)"
+title: Dim – příkaz (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Dim
@@ -34,14 +35,14 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-caps.latest.revision: "72"
+caps.latest.revision: 72
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a428f8be7b62600ca8fffd3160039c1de911e34e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 36e2d416e4653bfa6fe212b75b92ae2d90775d53
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="dim-statement-visual-basic"></a>Dim – příkaz (Visual Basic)
 Deklaruje a přidělí prostor úložiště pro jeden nebo více proměnných.  
@@ -63,13 +64,13 @@ Dim [ WithEvents ] variablelist
   
      Volitelné. Může být jedna z následujících akcí:  
   
-    -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)  
+    -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
-    -   [Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)  
+    -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
     -   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
-    -   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)  
+    -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
     -   `Protected Friend`  
   
@@ -251,7 +252,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
   
  Další informace o literálech pole najdete v tématu [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-##  <a name="default"></a>Typy a hodnoty výchozí Data  
+##  <a name="default"></a> Typy a hodnoty výchozí Data  
  Následující tabulka popisuje výsledky datový typ a inicializátoru v různých kombinacích `Dim` příkaz.  
   
 |Datový typ zadaný?|Zadaný inicializační?|Příklad|Výsledek|  
@@ -261,7 +262,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 |Ano|Ne|`Dim qty As Integer`|Výchozí hodnota pro typ dat je inicializováno proměnnou. Najdete v tabulce dál v této části.|  
 |Ano|Ano|`Dim qty  As Integer = 5`|Pokud datový typ inicializátoru není převést na zadaný datový typ, dojde k chybě kompilace.|  
   
- Pokud zadáte datový typ, ale nezadávejte žádné inicializátoru, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] inicializuje proměnnou na výchozí hodnotu pro jeho datového typu. Následující tabulka uvádí výchozí hodnoty inicializace.  
+ Pokud zadáte datový typ, ale nezadávejte žádné inicializátoru, Visual Basic inicializuje proměnnou na výchozí hodnotu pro jeho datového typu. Následující tabulka uvádí výchozí hodnoty inicializace.  
   
 |Datový typ|Výchozí hodnota|  
 |---|---|  
@@ -279,8 +280,8 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 |Deklarace procedur|Proměnná inicializována|Proměnná zastaví existující|  
 |---|---|---|  
 |V modulu|Při prvním volání procedury|Pokud váš program zastaví provádění|  
-|Ve třídě nebo struktuře postup je`Shared`|První postup se nazývá na konkrétní instanci nebo na třídu nebo strukturu, sám sebe|Pokud váš program zastaví provádění|  
-|Ve třídě nebo struktuře není postup`Shared`|První postup se nazývá na konkrétní instanci|Uvolnění instance pro uvolňování paměti (GC)|  
+|Ve třídě nebo struktuře postup je `Shared`|První postup se nazývá na konkrétní instanci nebo na třídu nebo strukturu, sám sebe|Pokud váš program zastaví provádění|  
+|Ve třídě nebo struktuře není postup `Shared`|První postup se nazývá na konkrétní instanci|Uvolnění instance pro uvolňování paměti (GC)|  
   
 ## <a name="attributes-and-modifiers"></a>Atributy a modifikátory  
  Atributy lze použít pouze k členské proměnné, nikoli k lokální proměnné. Atribut přispívá informace metadat sestavení, která není smysl pro dočasné úložiště, jako je například místní proměnné.  
@@ -319,16 +320,16 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
  [!code-vb[VbVbalrStatements#145](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/dim-statement_4.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md)  
- [ReDim – příkaz](../../../visual-basic/language-reference/statements/redim-statement.md)  
- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
- [Option Infer – příkaz](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)  
+ [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)  
+ [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Stránka Kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)  
  [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
  [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- [Inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  [Anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [Inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  [Postupy: Deklarace objektu pomocí inicializátoru objektu](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)  
  [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

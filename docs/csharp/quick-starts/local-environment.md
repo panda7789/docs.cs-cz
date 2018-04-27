@@ -1,6 +1,6 @@
 ---
-title: "Kurz pro místní prostředí – C# místní – elementy QuickStart"
-description: "Tento rychlý start poskytuje základy pro spuštěn místně elementy QuickStart"
+title: Kurz pro místní prostředí – C# místní – elementy QuickStart
+description: Tento rychlý start poskytuje základy pro spuštěn místně elementy QuickStart
 author: billwagner
 ms.topic: article
 ms.date: 12/07/2017
@@ -8,11 +8,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9957f524e04f8ff64d4f640cf085b16cf9a2c0c6
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: ec70b6bca55d370d90e912793cfec82a45141c51
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="local-environment"></a>Místní prostředí
 
@@ -35,19 +35,25 @@ Můžete spustit v některé z následujících quickstarts:
 
 V [čísla v jazyce C#](numbers-in-csharp-local.md) rychlé spuštění, se se dozvíte, jak počítače ukládat čísla a jak provádět výpočty s různými číselné typy. Dozvíte se základy zaokrouhlení a jak provádět výpočty pomocí jazyka C#. 
 
-Tento rychlý start se předpokládá, že dokončení [Hello, world](hello-world.yml) kurzu.
+Tento rychlý start se předpokládá, že dokončení [Hello, world](hello-world.yml) lekce.
 
 ## <a name="branches-and-loopsbranches-and-loops-localmd"></a>[Větve a smyčky](branches-and-loops-local.md)
 
 [Větve a smyčky](branches-and-loops-local.md) rychlý start se dozvíte, jaké základní informace o výběru různé cesty provádění kódu na základě hodnot, které jsou uložené v proměnné. Dozvíte základní informace o toku řízení, což je základ jak programů rozhodnutí a zvolte různé akce. 
 
-Tato počáteční lekce předpokládá, že dokončení [Hello, World](hello-world.yml) a [čísla v jazyce C#](numbers-in-csharp-local.md) lekce.
+Tento rychlý start se předpokládá, že dokončení [Hello, world](hello-world.yml) a [čísla v jazyce C#](numbers-in-csharp-local.md) lekce.
+
+## <a name="string-interpolationinterpolated-strings-localmd"></a>[Interpolace řetězců](interpolated-strings-local.md)
+
+[Řetězec interpolace](interpolated-strings-local.md) rychlý start se dozvíte, jak vložení hodnoty do řetězce. Dozvíte se, jak vytvořit interpolované řetězce s vložené výrazy jazyka C# a jak ovládat vzhled text výsledky výraz ve výsledném řetězci.
+
+Tento rychlý start se předpokládá, že dokončení [Hello, world](hello-world.yml), [čísla v jazyce C#](numbers-in-csharp-local.md), a [větve a smyčky](branches-and-loops-local.md) lekce.
 
 ## <a name="list-collectionarrays-and-collectionsmd"></a>[Kolekce seznamu](arrays-and-collections.md)
 
 [Seznamu kolekce](arrays-and-collections.md) lekce poskytuje přehled používání typ kolekce seznamu, který ukládá pořadí dat. Dozvíte, jak přidávat a odstraňovat položky, vyhledávání položek a seznamy řazení. Budete prozkoumejte různé druhy seznamy. 
 
-Tento rychlý start začátku předpokládá, že dokončení quickstarts uvedené výše.
+Tento rychlý start předpokládá, že dokončení lekce uvedené výše.
 
 ## <a name="introduction-to-classesintroduction-to-classesmd"></a>[Úvod do tříd](introduction-to-classes.md)
 

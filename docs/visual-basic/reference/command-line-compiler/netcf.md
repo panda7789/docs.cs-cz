@@ -16,11 +16,11 @@ helpviewer_keywords:
 ms.assetid: db7cfa59-c315-401c-a59b-0daf355343d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 82a0adc9e821df3a789cf19e798d4bad9e9a69e3
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: f07fc7988c4329397e464f05d334648e98cb129d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="-netcf"></a>-netcf
 Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].  
@@ -32,12 +32,12 @@ Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `-netcf` Možnost příčiny [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru k cíli [!INCLUDE[Compact](~/includes/compact-md.md)] místo kompletní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Funkce jazyka, které je k dispozici pouze v úplném [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] je zakázána.  
+ `-netcf` Možnost způsobí, že Visual Basic – kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)] místo kompletní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Funkce jazyka, které je k dispozici pouze v úplném [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] je zakázána.  
   
  `-netcf` Možnost je určena pro použití s [- sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md). Jazykové funkce zakázal `-netcf` jsou stejné funkce jazyka, nejsou k dispozici v souborech cílit s `-sdkpath`.  
   
 > [!NOTE]
->  `-netcf` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku. `-netcf` Když je možnost nastavena [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] načtení projektu zařízení.  
+>  `-netcf` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku. `-netcf` Je možnost nastavena při načtení projektu Visual Basic zařízení.  
   
  `-netcf` Možnost změní následující funkce jazyka:  
   
@@ -53,7 +53,7 @@ Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].
   
      [!code-vb[VbVbalrCompiler#36](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/netcf_3.vb)]  
   
--   Použití klíčových slov jazyka Visual Basic 6.0, které byly odebrány z [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] generuje jiné chybě při `-netcf` se používá. Tato akce ovlivní chybové zprávy pro následující klíčová slova:  
+-   Použití klíčových slov jazyka Visual Basic 6.0, které byly odebrány z jazyka Visual Basic generuje jiné chybě při `-netcf` se používá. Tato akce ovlivní chybové zprávy pro následující klíčová slova:  
   
     -   `Open`  
   
@@ -95,6 +95,6 @@ vbc -netcf -sdkpath:"c:\Program Files\Microsoft Visual Studio .NET 2003\CompactF
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)

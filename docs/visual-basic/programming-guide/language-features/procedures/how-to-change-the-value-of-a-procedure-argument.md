@@ -1,11 +1,12 @@
 ---
-title: "Postupy: Změna hodnoty argumentu procedury (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Změna hodnoty argumentu procedury (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -19,19 +20,19 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ba23c8f0b4b0b6e751546019af902a6305b9ef53
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 93d9cc11e919e45fdd3b48dd2731b165f3466640
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Postupy: Změna hodnoty argumentu procedury (Visual Basic)
 Při volání procedury, všechny argumenty, které zadáte odpovídá jednomu z parametry definované v postupu. V některých případech můžete kód postupu změňte hodnotu základní argument volající kód. V ostatních případech postupu můžete změnit pouze místní kopie argument.  
   
- Při volání procedury, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vytvoří místní kopii každý argument, který je předán [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Pro každý argument předaný [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] poskytuje kód postup přímý odkaz na programovací element základní argument ve volání kódu.  
+ Při volání postup jazyka Visual Basic vytvoří místní kopii každý argument, který je předán [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Pro každý argument předaný [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytuje kód postup přímý odkaz na programovací element základní argument ve volání kódu.  
   
  Pokud základní element v volání kódu je upravitelnými a argument předaný `ByRef`, kód postup pomocí přímý odkaz můžete změnit hodnotu elementu v kódu volání.  
   
@@ -58,7 +59,7 @@ Při volání procedury, všechny argumenty, které zadáte odpovídá jednomu z
   
      -nebo-  
   
-     Ve volání kódu uzavřete jej v závorkách v seznamu argumentů. Vynutí se tak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] k předání argumentu podle hodnoty, i v případě, že odpovídající parametr určuje `ByRef`.  
+     Ve volání kódu uzavřete jej v závorkách v seznamu argumentů. Vynutí jazyka Visual Basic k předání argumentu podle hodnoty, i v případě, že odpovídající parametr určuje `ByRef`.  
   
 2.  V postupu kódu použijte název parametru o přiřazení hodnoty k místní kopii argument. Zadaná hodnota v volání kódu se nezmění.  
   
@@ -80,19 +81,19 @@ Při volání procedury, všechny argumenty, které zadáte odpovídá jednomu z
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Pokud předáte proměnné odkazem, je nutné použít `ByRef` – klíčové slovo zadat Tento mechanismus.  
   
- Výchozí hodnota v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je předání argumentů hodnotou. Ale je dobrým zvykem obsahovat buď programovacím [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo s každou deklarovaný parametr. To výrazně zjednodušuje kódu ke čtení.  
+ Ve výchozím nastavení v jazyce Visual Basic se předání argumentů hodnotou. Ale je dobrým zvykem obsahovat buď programovacím [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo s každou deklarovaný parametr. To výrazně zjednodušuje kódu ke čtení.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Postup ke změně hodnoty základní argument volající kód, který umožňuje existuje vždy představuje potenciální riziko. Ujistěte se, že byste měli tuto hodnotu změnit, a zkontrolujte správnost před jeho použitím připravit.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
+ [Procedury](./index.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Postupy: předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
- [Předávání argumentů podle hodnoty a podle Reference](./passing-arguments-by-value-and-by-reference.md)  
- [Rozdíly mezi upravitelnými a Neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md)  
- [Rozdíly mezi předáním argumentu podle hodnoty a podle Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md)  
- [Postupy: ochrana argumentu procedury proti změnám hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)  
- [Postupy: vynucení předání hodnotou argumentu](./how-to-force-an-argument-to-be-passed-by-value.md)  
+ [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
+ [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
+ [Rozdíly mezi upravitelnými a neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md)  
+ [Rozdíly mezi předáním argumentu podle hodnoty a podle reference](./differences-between-passing-an-argument-by-value-and-by-reference.md)  
+ [Postupy: Ochrana argumentu procedury před změnami hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)  
+ [Postupy: Vynucení předání argumentu podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)  
  [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)  
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

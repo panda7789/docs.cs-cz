@@ -1,30 +1,31 @@
 ---
-title: "Přehled aplikačního modelu jazyka Visual Basic"
+title: Přehled aplikačního modelu jazyka Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - My.Application object [Visual Basic], Visual Basic application model
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 33b0e01317a6dab18ea03047c146def32b5675ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 74a8fcfe3f49ab042b3bb4775f9f6e84374db0ae
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje dobře definovaný model pro řízení chování formulářových aplikací Windows: [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikačního modelu. Tento model zahrnuje události pro zpracování aplikace spuštění a vypnutí, a také události pro zachycení neošetřených výjimek. Také poskytuje podporu pro vývoj aplikací jedné instance. Aplikační model je rozšiřitelný, takže vývojáři, kteří potřebují větší kontrolu můžete přizpůsobit jeho přepisovatelné metody.  
+Visual Basic poskytuje dobře definovaný model pro řízení chování aplikací modelu Windows Forms: model aplikace Visual Basic. Tento model zahrnuje události pro zpracování aplikace spuštění a vypnutí, a také události pro zachycení neošetřených výjimek. Také poskytuje podporu pro vývoj aplikací jedné instance. Aplikační model je rozšiřitelný, takže vývojáři, kteří potřebují větší kontrolu můžete přizpůsobit jeho přepisovatelné metody.  
   
 ## <a name="uses-for-the-application-model"></a>Používá pro Model aplikace  
  Typická aplikace potřebuje k provádění úloh, při spuštění a vypnutí. Například při spuštění, aplikace můžete zobrazí úvodní obrazovka, vytvořit připojení k databázi, načíst do uloženého stavu a tak dále. Při vypnutí aplikace, můžete zavřít připojení databáze, uložit aktuální stav a tak dále. Kromě toho může aplikace provést určitý kód při ukončení aplikace neočekávaném ukončení, například jako během k neošetřené výjimce.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Aplikačního modelu umožňuje snadné vytváření *jedné instance* aplikace. Aplikace s jedinou instancí liší od běžné aplikace v tom, že může být pouze jedna instance aplikace spuštěná v čase. Pokus o spuštění jiná instance aplikace s jedinou instancí výsledkem původní instanci – prostřednictvím `StartupNextInstance` událostí – které byla vytvořena další pokus o spuštění. Oznámení obsahuje další instance argumenty příkazového řádku. Další instance aplikace je pak uzavřen, než dojde k všechny inicializace.  
+ Model aplikace Visual Basic umožňuje snadné vytváření *jedné instance* aplikace. Aplikace s jedinou instancí liší od běžné aplikace v tom, že může být pouze jedna instance aplikace spuštěná v čase. Pokus o spuštění jiná instance aplikace s jedinou instancí výsledkem původní instanci – prostřednictvím `StartupNextInstance` událostí – které byla vytvořena další pokus o spuštění. Oznámení obsahuje další instance argumenty příkazového řádku. Další instance aplikace je pak uzavřen, než dojde k všechny inicializace.  
   
  Aplikace s jedinou instancí spustí a zkontroluje, zda je první instance nebo další instanci aplikace:  
   
@@ -58,7 +59,7 @@ ms.lasthandoff: 11/21/2017
 -   **Vypnout aplikaci**. Aplikace poskytuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> událost, která má být signalizován je vypnout. V tomto případě obslužnou rutinu, můžete zkontrolovat, že operace, které aplikace potřebuje k provedení – zavření a uložení, například – dokončení. Můžete nakonfigurovat aplikaci vypnout hlavní formulář zavře, nebo je vypnout pouze, když zavřete všechny formuláře.  
   
 ## <a name="availability"></a>Dostupnost  
- Ve výchozím nastavení [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] model aplikace je k dispozici pro projekty Windows Forms. Pokud konfigurace aplikace pro použití různých spouštěcích objektu, nebo začněte kódu aplikace s vlastní `Sub Main`, pak tento objekt nebo třída třeba poskytnout implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy pomocí modelu aplikace. Informace o změně spouštěcí objekt najdete v tématu [stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
+ Ve výchozím nastavení je k dispozici pro projekty Windows Forms model aplikace Visual Basic. Pokud konfigurace aplikace pro použití různých spouštěcích objektu, nebo začněte kódu aplikace s vlastní `Sub Main`, pak tento objekt nebo třída třeba poskytnout implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy pomocí modelu aplikace. Informace o změně spouštěcí objekt najdete v tématu [stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  

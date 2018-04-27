@@ -1,12 +1,12 @@
 ---
-title: "Jazyková nezávislost a jazykově nezávislé komponenty"
-ms.custom: 
+title: Jazyková nezávislost a jazykově nezávislé komponenty
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,18 +19,18 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-caps.latest.revision: 
+caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 81ccf70482c8b7f4acb0b18381ed4cf07edc06af
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 1d588768f53bf5850a0fa7cc825c5ffa1114ec6f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojář, můžete vyvíjet v jednom z mnoha jazycích, které cílí na rozhraní .NET Framework, jako je například C#, C + +/ CLI, Eiffel, F #, IronPython, IronRuby, aplikace PowerBuilder, Visual Basic, Visual COBOL a prostředí Windows PowerShell. Můžete přejít na typy a členy vytvořených pro rozhraní .NET Framework, aniž by museli znát jazyk, ve kterém byly se původně zapsán a bez nutnosti postupovat podle některého z původní jazyk konvence knihovny tříd. Pokud jste vývojář součásti, příslušné součásti jsou přístupné kteroukoli aplikací rozhraní .NET Framework, bez ohledu na jeho jazyk.  
@@ -38,7 +38,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
 > [!NOTE]
 >  Tato první část Tento článek obsahuje informace o vytvoření jazykově nezávislé komponenty – to znamená, součásti, které mohou být spotřebovávána aplikace, které jsou napsané v libovolném jazyce. Můžete také vytvořit jedna součást nebo aplikace z zdrojový kód napsaný v několika jazycích; v tématu [vzájemná funkční spolupráce mezi jazyky](#CrossLang) v druhé části tohoto článku.  
   
- Plně pracovat s jinými objekty napsané v libovolném jazyce, musí objekty zpřístupnit volajícím jenom ty funkce, které jsou společné pro všechny jazyky. Tato společnou sadu funkcí je definována pomocí specifikace CLS (Common Language), což je sada pravidel, která se týkají vygenerované sestavení. Common Language Specification je definovaný v oddílu I klauzule 7 až 11 [standardy ECMA-335 standardní: Common Language Infrastructure](http://go.microsoft.com/fwlink/?LinkID=116487).  
+ Plně pracovat s jinými objekty napsané v libovolném jazyce, musí objekty zpřístupnit volajícím jenom ty funkce, které jsou společné pro všechny jazyky. Tato společnou sadu funkcí je definována pomocí specifikace CLS (Common Language), což je sada pravidel, která se týkají vygenerované sestavení. Common Language Specification je definovaný v oddílu I klauzule 7 až 11 [standardy ECMA-335 standardní: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
  Pokud vaše součást splňuje Common Language Specification, se musí být kompatibilní se specifikací CLS a je přístupný z kódu v sestavení, které jsou napsané v žádný programovací jazyk, který podporuje specifikaci CLS. Můžete určit, zda příslušné součásti vyhovuje Common Language Specification při kompilaci s použitím <xref:System.CLSCompliantAttribute> atribut ke zdrojovému kódu. Další informace najdete v tématu [atributu CLSCompliantAttribute atribut](#CLSAttribute).  
   
@@ -82,7 +82,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
   
 <a name="Rules"></a>   
 ## <a name="cls-compliance-rules"></a>Pravidla dodržování předpisů se specifikací CLS  
- Tato část popisuje pravidla pro vytváření komponentu kompatibilní se specifikací CLS. Úplný seznam pravidel, viz oddíl I 11 klauzule [standardy ECMA-335 standardní: Common Language Infrastructure](http://go.microsoft.com/fwlink/?LinkID=116487).  
+ Tato část popisuje pravidla pro vytváření komponentu kompatibilní se specifikací CLS. Úplný seznam pravidel, viz oddíl I 11 klauzule [standardy ECMA-335 standardní: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
 > [!NOTE]
 >  Common Language Specification popisuje každé pravidlo pro souladu se specifikací CLS, protože se vztahuje k příjemce (vývojáři, kteří mají přístup prostřednictvím kódu programu komponenty, která je kompatibilní se specifikací CLS), rozhraní (vývojáře, kteří používají k vytvoření kompilátoru jazyka CLS-compliant knihovny) a Extender (vývojáře, kteří jsou vytvoření nástroje, jako je kompilátor jazyka nebo analyzátor kódu, který vytváří kompatibilní se specifikací CLS součásti). Tento článek se zaměřuje na pravidla, protože se vztahují na rozhraní. Všimněte si ale, že některé z pravidel, která se týkají Extender může také použít sestavení, které jsou vytvořené pomocí Reflection.Emit.  
@@ -110,7 +110,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
   
 -   Parametry a návratové typy veřejných metod veřejné třídy a parametry a návratové typy metod, které jsou přístupné pro odvozené třídy.  
   
- V následující tabulce jsou uvedena pravidla pro souladu se specifikací CLS. Text tohoto pravidla se provede typu verbatim z [standardy ECMA-335 standardní: Common Language Infrastructure](http://go.microsoft.com/fwlink/?LinkID=116487), což je Copyright 2012 Ecma mezinárodní. Podrobnější informace o těchto pravidel je najít v následujících částech.  
+ V následující tabulce jsou uvedena pravidla pro souladu se specifikací CLS. Text tohoto pravidla se provede typu verbatim z [standardy ECMA-335 standardní: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm), což je Copyright 2012 Ecma mezinárodní. Podrobnější informace o těchto pravidel je najít v následujících částech.  
   
 |Kategorie|Další informace naleznete v tématu|Pravidlo|Číslo pravidla|  
 |--------------|---------|----------|-----------------|  
@@ -236,7 +236,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
   
  [!code-csharp[Conceptual.CLSCompliant#16](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/naming1.cs#16)]  
   
- Programovací jazyk identifikátory, třeba názvů obory názvů, typy a členy, musí odpovídat [Unicode Standard 3.0, technické sestavy 15, přílohy 7](http://www.unicode.org/reports/tr15/tr15-18.html). To znamená, že:  
+ Programovací jazyk identifikátory, třeba názvů obory názvů, typy a členy, musí odpovídat [Unicode Standard 3.0, technické sestavy 15, přílohy 7](https://www.unicode.org/reports/tr15/tr15-18.html). To znamená, že:  
   
 -   První znak identifikátoru můžete být žádné Unicode velké písmeno, malé písmeno, malá písmena title, modifikátor, jiné písmeno nebo číslo písmeno. Informace o kategoriích znakové sady Unicode, najdete v článku <xref:System.Globalization.UnicodeCategory?displayProperty=nameWithType> výčtu.  
   
@@ -372,7 +372,7 @@ Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojá�
  [!code-csharp[Conceptual.CLSCompliant#29](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/nestedgenerics2.cs#29)]
  [!code-vb[Conceptual.CLSCompliant#29](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/nestedgenerics2.vb#29)]  
   
- Ve formuláři jsou zakódovány obecného typu názvy *název\`n*, kde *název* je název typu \` znak je literál, a  *n*  je počet parametrů deklarovaná u typu nebo pro vnořené obecné typy, počet parametrů nově přináší typu. Toto kódování obecného typu názvy je primárně určen pro vývojáře, kteří pomocí reflexe kompatibilní se specifikací CLS obecné typy v knihovně.  
+ Ve formuláři jsou zakódovány obecného typu názvy *název\`n*, kde *název* je název typu \` znak je literál, a *n* je počet Parametry deklarovaná u typu, nebo pro vnořené obecné typy, počet nově zavedl parametry typu. Toto kódování obecného typu názvy je primárně určen pro vývojáře, kteří pomocí reflexe kompatibilní se specifikací CLS obecné typy v knihovně.  
   
  Pokud omezení se použijí pro obecný typ, všechny typy používané jako omezení také musí být kompatibilní se specifikací CLS. Následující příklad definuje třídu s názvem `BaseClass` není kompatibilní se specifikací CLS a obecné třídy s názvem `BaseCollection` jehož typ parametru musí být odvozeny od `BaseClass`. Ale protože `BaseClass` není kompatibilní se specifikací CLS, kompilátor vydá upozornění.  
   
@@ -572,7 +572,7 @@ csc /t:module NumberUtil.cs
   
  Další informace o syntaxi příkazového řádku kompilátoru jazyka C#, najdete v části [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  
   
- Pak použijete [nástroj Link (Link.exe)](http://msdn.microsoft.com/library/c1d51b8a-bd23-416d-81e4-900e02b2c129) zkompilovat dva moduly do sestavení:  
+ Pak použijete [nástroj Link (Link.exe)](https://msdn.microsoft.com/library/c1d51b8a-bd23-416d-81e4-900e02b2c129) zkompilovat dva moduly do sestavení:  
   
 ```  
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll   

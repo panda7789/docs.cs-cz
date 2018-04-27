@@ -1,11 +1,12 @@
 ---
-title: "Aspekty přetížení procedur (Visual Basic)"
-ms.custom: 
+title: Aspekty přetížení procedur (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - signatures [Visual Basic], ParamArray arguments
@@ -31,14 +32,14 @@ helpviewer_keywords:
 - restrictions [Visual Basic], overloading procedures
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3c9a9a4759d4ec2dd87778c49c4fd82a08c081a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ac4bc47f9e781f83c7930efffedd40d9c25c2ec2
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>Aspekty přetížení procedur (Visual Basic)
 Pokud jste přetížení procedury, je nutné použít jiné *podpis* pro každou přetížené verzi. To obvykle znamená, že každou verzi musíte zadat seznam různých parametrů. Další informace najdete v tématu "Jiný podpis" v [přetížení procedury](./procedure-overloading.md).  
@@ -50,7 +51,7 @@ Pokud jste přetížení procedury, je nutné použít jiné *podpis* pro každo
 ## <a name="alternatives-to-overloaded-versions"></a>Alternativy k přetížené verze  
  Někdy máte alternativy přetížené verze, zvláště pokud přítomnost argumentů je volitelné nebo jejich počet proměnné.  
   
- Mějte na paměti, která volitelné argumenty nejsou nezbytně nepodporuje všechny jazyky a pole parametrů jsou omezené na [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. Pokud píšete procedury, která je pravděpodobné, která se má volat z kódu napsaného v některém z několika různými jazyky, přetížený nabídka verze nejvyšší flexibilitu.  
+ Mějte na paměti, že volitelné argumenty nutně nepodporuje všechny jazyky a pole parametrů jsou omezeny na Visual Basic. Pokud píšete procedury, která je pravděpodobné, která se má volat z kódu napsaného v některém z několika různými jazyky, přetížený nabídka verze nejvyšší flexibilitu.  
   
 ### <a name="overloads-and-optional-arguments"></a>Přetížení a nepovinné argumenty  
  Při volání kód můžete volitelně zadat nebo vynechat jeden nebo více argumentů, můžete definovat několik verzí přetížené nebo použít volitelné parametry.  
@@ -104,7 +105,7 @@ Pokud jste přetížení procedury, je nutné použít jiné *podpis* pro každo
 ## <a name="implicit-overloads-for-a-paramarray-parameter"></a>Implicitní přetížení pro ParamArray parametr  
  Kompilátor zvažuje procedura se [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parametr mít libovolný počet přetížení, které se liší od sebe navzájem v co volací kód předá parametr pole, následujícím způsobem:  
   
--   Jednomu přetížení pro při volání kód neposkytuje argumentu`ParamArray`  
+-   Jednomu přetížení pro při volání kód neposkytuje argumentu `ParamArray`  
   
 -   Jednomu přetížení pro při volání kód poskytuje jednorozměrného pole `ParamArray` typ elementu  
   
@@ -130,12 +131,12 @@ Pokud jste přetížení procedury, je nutné použít jiné *podpis* pro každo
 -   Kompilátor nelze signál chybu, pokud kód volání předá datový typ, který postup nepodporuje.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
+ [Procedury](./index.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
  [Řešení potíží s procedurami](./troubleshooting-procedures.md)  
- [Postupy: definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
- [Postupy: volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
- [Postupy: přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)  
- [Postupy: přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
+ [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
+ [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
+ [Postupy: Přetížení procedury, která přebírá nepovinné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)  
+ [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
  [Řešení přetížení](./overload-resolution.md)  
- [Přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md)
+ [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)

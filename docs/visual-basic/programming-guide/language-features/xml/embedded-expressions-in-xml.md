@@ -1,13 +1,13 @@
 ---
-title: "Vložené výrazy v XML (Visual Basic)"
-ms.custom: 
+title: Vložené výrazy v XML (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vb.XmlEmbeddedExpression
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], embedded expressions
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
-caps.latest.revision: 
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b1cdba0a39a932f143ac98c2514240e1696a8fe0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3c6dff88d123f33ad4c33e91685104b760ecca3b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="embedded-expressions-in-xml-visual-basic"></a>Vložené výrazy v XML (Visual Basic)
 Vložené výrazy umožňují vytváření literálů XML, které obsahují výrazy, které jsou vyhodnocovány v době běhu. Syntaxe pro embedded výrazu je `<%=` `expression` `%>`, což je stejný jako syntaxe použít v [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)].  
@@ -43,14 +43,14 @@ Vložené výrazy umožňují vytváření literálů XML, které obsahují výr
 ## <a name="embedded-expression-location-and-validation"></a>Umístění vložených výraz a ověřování  
  Vložené výrazy se může vyskytovat pouze v určitých umístění ve výrazech literál XML. Ovládací prvky výraz umístění, které typy výraz se můžete vrátit a jak `Nothing` se zpracovává. Následující tabulka popisuje povolených umístění a typy vložené výrazy.  
   
-|Umístění v literál|Typ výrazu|Zpracování`Nothing`|  
+|Umístění v literál|Typ výrazu|Zpracování `Nothing`|  
 |---|---|---|  
 |Název elementu XML|<xref:System.Xml.Linq.XName>|Chyba|  
-|Obsah elementu XML|`Object`nebo pole`Object`|Ignorováno|  
-|Atribut název elementu XML|<xref:System.Xml.Linq.XName>|Chyba, pokud hodnota atributu je také`Nothing`|  
+|Obsah elementu XML|`Object` nebo pole `Object`|Ignorováno|  
+|Atribut název elementu XML|<xref:System.Xml.Linq.XName>|Chyba, pokud hodnota atributu je také `Nothing`|  
 |Hodnota atributu XML element|`Object`|Atribut deklarace ignorovat|  
-|Atribut XML element|<xref:System.Xml.Linq.XAttribute>nebo kolekci<xref:System.Xml.Linq.XAttribute>|Ignorováno|  
-|Kořenový element dokumentu XML|<xref:System.Xml.Linq.XElement>nebo kolekce jednoho <xref:System.Xml.Linq.XElement> objekt a libovolný počet <xref:System.Xml.Linq.XProcessingInstruction> a <xref:System.Xml.Linq.XComment> objekty|Ignorováno|  
+|Atribut XML element|<xref:System.Xml.Linq.XAttribute> nebo kolekci <xref:System.Xml.Linq.XAttribute>|Ignorováno|  
+|Kořenový element dokumentu XML|<xref:System.Xml.Linq.XElement> nebo kolekce jednoho <xref:System.Xml.Linq.XElement> objekt a libovolný počet <xref:System.Xml.Linq.XProcessingInstruction> a <xref:System.Xml.Linq.XComment> objekty|Ignorováno|  
   
 -   Příklad embedded výrazu v název elementu XML:  
   
@@ -83,7 +83,7 @@ Vložené výrazy umožňují vytváření literálů XML, které obsahují výr
  Další informace o použití vložených výrazu v konkrétní typ literál najdete v tématu [literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md), [literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
 ## <a name="scoping-rules"></a>Pravidla rozsahu  
- Kompilátor převede každý literál XML volání konstruktoru pro příslušný typ literálu. Literál obsah a vložené výrazy v literál XML jsou předány jako argumenty pro konstruktor. To znamená, že všechny [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] programovací elementy, které jsou k dispozici literál XML je také možné jeho vložené výrazy.  
+ Kompilátor převede každý literál XML volání konstruktoru pro příslušný typ literálu. Literál obsah a vložené výrazy v literál XML jsou předány jako argumenty pro konstruktor. To znamená, že všechny dostupné pro literál XML programovací elementy jazyka Visual Basic jsou také k dispozici pro jeho vložené výrazy.  
   
  V rámci literál XML, můžete přístup k oboru názvů XML, který je předpony deklarovat s `Imports` příkaz. Můžete deklarovat nový obor názvů XML nebo stínové předponu existující obor názvů XML elementu s použitím `xmlns` atribut. Nový obor názvů je k dispozici na podřízených uzlů tohoto elementu, ale ne na XML – literály v vložené výrazy.  
   
@@ -94,6 +94,6 @@ Vložené výrazy umožňují vytváření literálů XML, které obsahují výr
  [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
  [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)  
  [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Imports – příkaz (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
  [Přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md)

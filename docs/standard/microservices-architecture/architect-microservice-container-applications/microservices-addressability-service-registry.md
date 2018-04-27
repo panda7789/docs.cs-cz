@@ -1,7 +1,7 @@
 ---
-title: "Mikroslužeb adresovatelnosti a registru služby"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužeb adresovatelnosti a registru služby"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Mikroslužeb adresovatelnosti a registru služby
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužeb adresovatelnosti a registru služby
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,17 +11,17 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cc26b22d18d460fe6870da7360d73368e20f71d2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5770be2a1a6284866dc768a14c7b6ec9525be487
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="microservices-addressability-and-the-service-registry"></a>Mikroslužeb adresovatelnosti a registru služby
 
-Každý mikroslužbu má jedinečný název (URL), který se používá k překladu jeho umístění. Vaše mikroslužbu musí být adresovatelné vždy, když je spuštěná. Pokud máte myslíte o počítač, který je spuštěn konkrétní mikroslužbu, co můžete přejít chybný rychle. Stejným způsobem, že DNS přeloží adresu URL k určitému počítači musí mít jedinečný název, tak, aby jeho aktuálního umístění zjistitelný vaší mikroslužby. Mikroslužeb potřebovat adresovatelné názvy, které je nezávislé na infrastrukturu, která běží na. Z toho vyplývá, že existuje interakci mezi nasazení služby a jak se zjistí, protože je potřeba [registru služby](http://microservices.io/patterns/service-registry.html). Ve stejné souvislosti nepodaří-li počítač, služba registru musí umět označuje, kde služba je nyní spuštěna.
+Každý mikroslužbu má jedinečný název (URL), který se používá k překladu jeho umístění. Vaše mikroslužbu musí být adresovatelné vždy, když je spuštěná. Pokud máte myslíte o počítač, který je spuštěn konkrétní mikroslužbu, co můžete přejít chybný rychle. Stejným způsobem, že DNS přeloží adresu URL k určitému počítači musí mít jedinečný název, tak, aby jeho aktuálního umístění zjistitelný vaší mikroslužby. Mikroslužeb potřebovat adresovatelné názvy, které je nezávislé na infrastrukturu, která běží na. Z toho vyplývá, že existuje interakci mezi nasazení služby a jak se zjistí, protože je potřeba [registru služby](https://microservices.io/patterns/service-registry.html). Ve stejné souvislosti nepodaří-li počítač, služba registru musí umět označuje, kde služba je nyní spuštěna.
 
-[Vzor registru služby](http://microservices.io/patterns/service-registry.html) je klíčovou součástí zjišťování služby. Registr je databáze obsahující síťová umístění instancí služby. Registru služby musí být vysoce dostupné a aktuální. Klienti mohou ukládat do mezipaměti získaný z registru služby umístění v síti. Ale tyto informace nakonec přejde zastaralý a klienti mohou už zjistit instance služby. V důsledku toho služba registru se skládá z clusteru serverů, které používají protokol replikace můžete zachovat konzistenci.
+[Vzor registru služby](https://microservices.io/patterns/service-registry.html) je klíčovou součástí zjišťování služby. Registr je databáze obsahující síťová umístění instancí služby. Registru služby musí být vysoce dostupné a aktuální. Klienti mohou ukládat do mezipaměti získaný z registru služby umístění v síti. Ale tyto informace nakonec přejde zastaralý a klienti mohou už zjistit instance služby. V důsledku toho služba registru se skládá z clusteru serverů, které používají protokol replikace můžete zachovat konzistenci.
 
 V některých prostředích nasazení mikroslužbu (označovaný jako clustery, na které se vztahují v další části) je integrovaný zjišťování služby. Například v prostředí Azure Container Service Kubernetes a DC/OS s Marathon můžete zpracovat registraci instance služby a zrušení registrace. Proxy server také běží na každého hostitele clusteru, kterou hraje roli směrovače zjišťování na straně serveru. Dalším příkladem je Azure Service Fabric, která také poskytuje registru služby prostřednictvím jeho služby DNS na více systémů v poli.
 
@@ -29,8 +29,8 @@ Všimněte si, že určité překrytí registru služby a vzoru Brána rozhraní
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Jan Ryšánková. Vzor: Služba registru**
-    *http://microservices.io/patterns/service-registry.html*
+-   **Jan Ryšánková. Vzoru: Registru služby**
+    *https://microservices.io/patterns/service-registry.html*
 
 -   **Auth0. Služba registru**
     [*https://auth0.com/blog/an-introduction-to-microservices-part-3-the-service-registry/*](https://auth0.com/blog/an-introduction-to-microservices-part-3-the-service-registry/)

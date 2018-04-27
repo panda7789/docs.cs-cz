@@ -1,5 +1,5 @@
 ---
-title: "ushort (Referenční dokumentace jazyka C#)"
+title: ushort (Referenční dokumentace jazyka C#)
 ms.date: 03/14/2017
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ f1_keywords:
 helpviewer_keywords:
 - ushort keyword [C#]
 ms.assetid: 1a7dbaae-b7a0-4111-872a-c88a6d3981ac
-caps.latest.revision: 
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 83fa657303e8392997b04b7d80cdbcdbf39de887
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ee624433975df79ed5709bf40d146160c5e633b0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ushort-c-reference"></a>ushort (Referenční dokumentace jazyka C#)
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="literals"></a>Literály  
 
-Můžete deklarace a inicializace `ushort` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje C# 7) binární literálu do ní. Pokud literálu celé číslo je mimo rozsah `ushort` (tj. Pokud je menší než <xref:System.UInt16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt16.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
+Můžete deklarace a inicializace `ushort` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní. Pokud literálu celé číslo je mimo rozsah `ushort` (tj. Pokud je menší než <xref:System.UInt16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt16.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
 
 V následujícím příkladu, celá čísla rovno 65,034, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou implicitně převést z [int](../../../csharp/language-reference/keywords/int.md) k `ushort` hodnoty.    
   
@@ -39,7 +39,7 @@ V následujícím příkladu, celá čísla rovno 65,034, která jsou reprezento
 > [!NOTE] 
 > Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona.
 
-Od verze jazyka C# 7, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
+Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
  - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
  - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
 
@@ -112,7 +112,7 @@ ushort y = (ushort)3.0;
 ## <a name="see-also"></a>Viz také  
  <xref:System.UInt16>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  

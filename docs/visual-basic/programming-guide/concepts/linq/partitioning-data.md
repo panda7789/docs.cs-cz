@@ -1,22 +1,23 @@
 ---
 title: Segmentace dat (Visual Basic)
-ms.custom: 
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 69c59379-b66e-422c-b324-5b5c07760ef7
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0ea305a67765e1b11ceebbf65c48a685024a41f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 01e4e6d6db07a520b97911de5388b8e42b7e1acc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="partitioning-data-visual-basic"></a>Segmentace dat (Visual Basic)
 Vytváření oddílů v technologii LINQ odkazuje na operaci dělení vstupní pořadí na dva oddíly bez Změna uspořádání elementy a potom vrátí jeden z oddílů.  
@@ -39,29 +40,29 @@ Vytváření oddílů v technologii LINQ odkazuje na operaci dělení vstupní p
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazu dotazu  
   
 ### <a name="skip"></a>Skip  
- Následující příklad kódu používá `Skip` klauzuli v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] přeskočit přes první čtyři řetězců v pole řetězců před vrácením zbývající řetězce v poli.  
+ Následující příklad kódu používá `Skip` klauzule v jazyce Visual Basic přeskočit přes první čtyři řetězců v pole řetězců před vrácením zbývající řetězce v poli.  
   
  [!code-vb[CsLINQPartitioning#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_1.vb)]  
   
 ### <a name="skipwhile"></a>SkipWhile  
- Následující příklad kódu používá `Skip While` klauzuli v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] přeskočit řetězců v pole při první písmeno řetězce je "a". Zbývající řetězce v poli, jsou vráceny.  
+ Následující příklad kódu používá `Skip While` klauzule v jazyce Visual Basic přeskočíte řetězců v pole při první písmeno řetězec "a". Zbývající řetězce v poli, jsou vráceny.  
   
  [!code-vb[CsLINQPartitioning#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_2.vb)]  
   
 ### <a name="take"></a>Take  
- Následující příklad kódu používá `Take` klauzuli v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vracet první dva řetězce na pole řetězců.  
+ Následující příklad kódu používá `Take` klauzule v jazyce Visual Basic vracet první dva řetězce na pole řetězců.  
   
  [!code-vb[CsLINQPartitioning#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_3.vb)]  
   
 ### <a name="takewhile"></a>TakeWhile  
- Následující příklad kódu používá `Take While` klauzuli v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vrácení řetězce z pole Délka řetězce je pět nebo méně.  
+ Následující příklad kódu používá `Take While` klauzule v jazyce Visual Basic pro vrácení řetězce z pole Délka řetězce je pět nebo méně.  
   
  [!code-vb[CsLINQPartitioning#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_4.vb)]  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Linq>  
  [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [Skip – klauzule](../../../../visual-basic/language-reference/queries/skip-clause.md)  
- [Skip While – klauzule](../../../../visual-basic/language-reference/queries/skip-while-clause.md)  
- [Take – klauzule](../../../../visual-basic/language-reference/queries/take-clause.md)  
- [Take While – klauzule](../../../../visual-basic/language-reference/queries/take-while-clause.md)
+ [Klauzule Skip](../../../../visual-basic/language-reference/queries/skip-clause.md)  
+ [Klauzule Skip While](../../../../visual-basic/language-reference/queries/skip-while-clause.md)  
+ [Klauzule Take](../../../../visual-basic/language-reference/queries/take-clause.md)  
+ [Klauzule Take While](../../../../visual-basic/language-reference/queries/take-while-clause.md)

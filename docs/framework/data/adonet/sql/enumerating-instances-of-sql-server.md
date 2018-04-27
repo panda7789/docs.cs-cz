@@ -1,36 +1,38 @@
 ---
-title: "Vytváření výčtu instancí systému SQL Server (ADO.NET)"
-ms.custom: 
+title: Vytváření výčtu instancí systému SQL Server (ADO.NET)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7b0a81fd9b92e626b52c5a74c65798ddedbd94a9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7a47a3e342887a1dce3912a06ab49a88b7b9b615
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí systému SQL Server (ADO.NET)
-[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]umožňuje aplikacím najít [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instancí v rámci aktuální sítě. <xref:System.Data.Sql.SqlDataSourceEnumerator> Třída zpřístupňuje tyto informace pro vývojáře aplikací, zajištění <xref:System.Data.DataTable> obsahující informace o všech viditelné serverech. To vrácena tabulka obsahuje seznam instancí serverů, které jsou k dispozici v síti, která odpovídá seznamu zadat, když se uživatel pokusí o vytvoření nového připojení a rozbalí rozevírací seznam obsahující všechny dostupné servery na **připojení Vlastnosti** dialogové okno. Výsledky zobrazí vždy nebyly dokončeny.  
+SQL Server povoluje aplikace najít instance systému SQL Server v rámci aktuální sítě. <xref:System.Data.Sql.SqlDataSourceEnumerator> Třída zpřístupňuje tyto informace pro vývojáře aplikací, zajištění <xref:System.Data.DataTable> obsahující informace o všech viditelné serverech. To vrácena tabulka obsahuje seznam instancí serverů, které jsou k dispozici v síti, která odpovídá seznamu zadat, když se uživatel pokusí o vytvoření nového připojení a rozbalí rozevírací seznam obsahující všechny dostupné servery na **připojení Vlastnosti** dialogové okno. Výsledky zobrazí vždy nebyly dokončeny.  
   
 > [!NOTE]
->  Jako s většina služeb systému Windows, je vhodné spustit službu SQL Browser s nejmenšími možnými oprávněními. V tématu [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] knihy Online pro další informace o služba SQL Browser a jak spravovat své chování.  
+>  Jako s většina služeb systému Windows, je vhodné spustit službu SQL Browser s nejmenšími možnými oprávněními. Další informace o služba SQL Browser a jak spravovat své chování najdete v části SQL Server Books Online.  
   
 ## <a name="retrieving-an-enumerator-instance"></a>Načítání Instance enumerátor  
- Chcete-li načíst tabulku obsahující informace o dostupných [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instancí, musíte nejprve získat enumerátor pomocí sdílených/statické <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A> vlastnost:  
+ Chcete-li načíst tabulku obsahující informace o dostupných instancí systému SQL Server, musíte nejdřív načíst enumerátor pomocí sdílených/statické <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A> vlastnost:  
   
 ```vb  
 Dim instance As System.Data.Sql.SqlDataSourceEnumerator = _  
@@ -59,20 +61,20 @@ System.Data.DataTable dataTable = instance.GetDataSources();
 |**ServerName**|Název serveru.|  
 |**InstanceName**|Název instance serveru. Prázdná, pokud je server spuštěn jako výchozí instanci.|  
 |**IsClustered**|Určuje, zda je server součástí clusteru.|  
-|**Verze**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-   10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-   11.0.xx ([!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012)|  
+|**Verze**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-11.0.xx (SQL Server 2012)|  
   
 ## <a name="enumeration-limitations"></a>Omezení – výčet  
  Všechny dostupné servery může nebo nemusí být uvedena. Seznam se může lišit v závislosti na faktorech, jako je například časové limity a síťový provoz. To může způsobit seznamu jiné na dvě po sobě jdoucí volání. Objeví se pouze servery ve stejné síti. Paketů všesměrového vysílání obvykle nebude přes směrovače, proto nemusíte vidět server uvedený, ale bude stabilní napříč volání.  
   
- Uvedené servery může nebo nemusí mít další informace, jako `IsClustered` a verze. Toto je závisí na způsobu získání seznamu. Servery uvedené prostřednictvím [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] prohlížeče služba bude mít další podrobnosti, než jsou prostřednictvím infrastrukturu nástroje systému Windows, která se zobrazí seznam pouze název.  
+ Uvedené servery může nebo nemusí mít další informace, jako `IsClustered` a verze. Toto je závisí na způsobu získání seznamu. Další podrobnosti, než jsou prostřednictvím infrastrukturu nástroje systému Windows, která se zobrazí seznam pouze název bude mít servery uvedené přes službu SQL Server browser.  
   
 > [!NOTE]
 >  Výčet serveru je k dispozici pouze při spuštění v plné důvěryhodnosti. Sestavení v prostředí částečně důvěryhodné nebude možné použít, i když <xref:System.Data.SqlClient.SqlClientPermission> oprávnění zabezpečení přístupu kódu (CAS).  
   
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]poskytuje informace o <xref:System.Data.Sql.SqlDataSourceEnumerator> prostřednictvím externí službu systému Windows s názvem SQL Browser. Tato služba je ve výchozím nastavení povoleno, ale správci vypnout nebo ji zakázat, viditelnosti instance serveru pro tuto třídu.  
+ Poskytuje informace o systému SQL Server <xref:System.Data.Sql.SqlDataSourceEnumerator> prostřednictvím externí službu systému Windows s názvem SQL Browser. Tato služba je ve výchozím nastavení povoleno, ale správci vypnout nebo ji zakázat, viditelnosti instance serveru pro tuto třídu.  
   
 ## <a name="example"></a>Příklad  
- Následující konzolové aplikace načte informace o všech viditelných [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instance a zobrazí informace v okně konzoly.  
+ Následující konzolové aplikace načte informace o všech viditelné instance systému SQL Server a zobrazí informace v okně konzoly.  
   
 ```vb  
 Imports System.Data.Sql  

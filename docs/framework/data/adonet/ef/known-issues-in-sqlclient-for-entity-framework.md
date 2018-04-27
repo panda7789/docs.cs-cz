@@ -1,38 +1,40 @@
 ---
-title: "Známé problémy v SqlClient rozhraní Entity Framework"
-ms.custom: 
+title: Známé problémy v SqlClient rozhraní Entity Framework
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3fb62e266ee6f0ca7957667d7c41fbd90dd34d32
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8d5363ede9735ea805284638f795af67f2415ad0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient rozhraní Entity Framework
 Tato část popisuje známé problémy související s zprostředkovatele dat .NET Framework pro SQL Server (SqlClient).  
   
 ## <a name="trailing-spaces-in-string-functions"></a>Koncové mezery řetězcové funkce  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]ignoruje koncové mezery v řetězcové hodnoty. Proto předávání koncové mezery v řetězci může vést k vést k neočekávaným výsledkům, i selhání.  
+ SQL Server ignoruje koncové mezery v řetězcové hodnoty. Proto předávání koncové mezery v řetězci může vést k vést k neočekávaným výsledkům, i selhání.  
   
- Pokud musíte mít koncové mezery řetězec vašeho, měli byste zvážit připojování prázdný znak na konci, tak, aby [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] trim není řetězec. Pokud koncové mezery nejsou vyžadovány, má být oříznut předtím, než jsou předávány dolů kanálu dotazu.  
+ Pokud máte tak, aby měl koncové mezery ve vašem řetězci, měli byste zvážit připojování prázdný znak na konci, tak, aby SQL Server není oříznout řetězec. Pokud koncové mezery nejsou vyžadovány, má být oříznut předtím, než jsou předávány dolů kanálu dotazu.  
   
 ## <a name="right-function"></a>RIGHT – funkce  
  Pokud jinou hodnotu než`null` byla předána hodnota jako první argument a 0 je předána jako druhý argument `RIGHT(nvarchar(max)`, 0`)` nebo `RIGHT(varchar(max)`, 0`)`, `NULL` bude vrácena hodnota místo `empty` řetězec.  
   
 ## <a name="cross-and-outer-apply-operators"></a>MEZI a vnější použít operátory  
- MEZI a operátoru OUTER APPLY operátory byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)]. V některých případech může vytvořit kanál dotazu příkazu Transact-SQL, který obsahuje operátory křížové použít nebo operátoru OUTER APPLY. Protože někteří poskytovatelé back-end, včetně verze [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] starší než [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], nepodporují tyto operátory, takové dotazy se nedá spustit na tyto zprostředkovatele back-end.  
+ MEZI a operátoru OUTER APPLY operátory byly zavedeny v [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)]. V některých případech může vytvořit kanál dotazu příkazu Transact-SQL, který obsahuje operátory křížové použít nebo operátoru OUTER APPLY. Protože někteří poskytovatelé back-end, včetně verze systému SQL Server starších než [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], nepodporují tyto operátory, takové dotazy se nedá spustit na tyto zprostředkovatele back-end.  
   
  Tady jsou některé typické scénáře, které mohou vést k přítomnost mezi použít nebo operátoru OUTER APPLY operátory v dotazu výstup:  
   
@@ -68,7 +70,7 @@ SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2
 ```  
   
 ## <a name="server-generated-guid-identity-values"></a>Hodnoty Identity GUID generovaný serverem  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje hodnoty generované serverem GUID typ identity, ale zprostředkovatel musí podporovat vrácení hodnoty generované serverem identity po vložení řádku. Počínaje [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005, můžete se vrátit na typ GUID generované serverem v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] databáze prostřednictvím [klauzuli OUTPUT](http://go.microsoft.com/fwlink/?LinkId=169400) .  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje hodnoty generované serverem GUID typ identity, ale zprostředkovatel musí podporovat vrácení hodnoty generované serverem identity po vložení řádku. Od verze systému SQL Server 2005, můžete se vrátit na typ GUID generované serverem v databázi systému SQL Server prostřednictvím [klauzuli OUTPUT](http://go.microsoft.com/fwlink/?LinkId=169400) .  
   
 ## <a name="see-also"></a>Viz také  
  [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  

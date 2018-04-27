@@ -1,31 +1,33 @@
 ---
-title: "Správa verzí služby dat (služby WCF Data Services)"
-ms.custom: 
+title: Správa verzí služby dat (služby WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - versioning, WCF Data Services
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 73e394c4d0a7f78fca7c8c70f68bfc16da556d8d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: d795008e014deaa126dac1bb978ac825f2536208
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí služby dat (služby WCF Data Services)
-[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Můžete vytvořit datové služby tak, aby klienti přístup k datům jako prostředky pomocí identifikátory URI, které jsou založeny na datový model. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje také definice operací služby. Po počátečním nasazení a potenciálně několikrát během své životnosti, tato data services bude pravděpodobně nutné změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musí se zvážit, zda chcete definovat novou verzi dat služby a jak nejlepší minimalizaci dopadů na existující klientské aplikace. Toto téma obsahuje pokyny k kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpracovává exchange mezi klienty a datové služby, které podporují různé verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu.  
+[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Můžete vytvořit datové služby tak, aby klienti přístup k datům jako prostředky pomocí identifikátory URI, které jsou založeny na datový model. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje také definice operací služby. Po počátečním nasazení a potenciálně několikrát během své životnosti, tato data services bude pravděpodobně nutné změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musí se zvážit, zda chcete definovat novou verzi dat služby a jak nejlepší minimalizaci dopadů na existující klientské aplikace. Toto téma obsahuje pokyny k kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpracovává exchange mezi klienty a datové služby, které podporují různé verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu.  
   
 ## <a name="versioning-a-wcf-data-service"></a>Správa verzí služby WCF Data Service  
  Jakmile je nasazená služba dat a dat spotřebovává, změny dat služby by mohly způsobit problémy s kompatibilitou se stávajícími aplikacemi klienta. Ale protože změny jsou často vyžadované celkové obchodním potřebám služby, musíte zvážit kdy a jak vytvořit novou verzi služby data s nejmenší dopad na klientovi aplikace.  
@@ -55,16 +57,16 @@ ms.lasthandoff: 01/19/2018
 ### <a name="how-to-version-a-data-service"></a>Postup verze datové služby  
  Pokud jsou povinné, nové verze datové služby je definována vytvoření nové instance služby s aktualizovanou kontrakt nebo dat modelu. Toto nové služby je pak zpřístupněná pomocí nového identifikátoru URI koncového bodu, která odlišuje jej od předchozí verze. Příklad:  
   
--   Stará verze:`http://services.odata.org/Northwind/v1/Northwind.svc/`  
+-   Stará verze: `http://services.odata.org/Northwind/v1/Northwind.svc/`  
   
--   Nová verze:`http://services.odata.org/Northwind/v2/Northwind.svc/`  
+-   Nová verze: `http://services.odata.org/Northwind/v2/Northwind.svc/`  
   
  Při upgradování datové služby, klienti se musí taky aktualizovat založenou na nové metadata služby data a použití nového kořenového identifikátoru URI. Pokud je to možné, je vhodné ponechat předchozí verze datové služby pro podporu klientů, které dosud nebyly upgradovány na použití nové verze. Starší verze datové služby můžete odebrat, pokud už nejsou potřeba. Měli byste zvážit, udržování koncový bod služby data URI v externí konfigurační soubor.  
   
 ## <a name="odata-protocol-versions"></a>Verze protokolu OData  
  Jako nové verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou vydání, klientské aplikace nemusí používat stejnou verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol, který je podporován službou data. Starší klientské aplikace mohou přistupovat k služba dat, která podporuje novější verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Klientská aplikace může také používat na novější verzi [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny, která podporuje novější verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] než službu data, která se právě využívají.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]využívá podpora poskytovaná [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] pro zpracování takových scénářů správy verzí. Je také podpora pro vytváření a používání metadat modelu dat k vytvoření klienta datových služba tříd, když klient používá jinou verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] než služba data používá. Další informace najdete v tématu [OData: Správa verzí protokolu](http://go.microsoft.com/fwlink/?LinkId=186071).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] využívá podpora poskytovaná [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] pro zpracování takových scénářů správy verzí. Je také podpora pro vytváření a používání metadat modelu dat k vytvoření klienta datových služba tříd, když klient používá jinou verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] než služba data používá. Další informace najdete v tématu [OData: Správa verzí protokolu](http://go.microsoft.com/fwlink/?LinkId=186071).  
   
 ### <a name="version-negotiation"></a>Verze vyjednávání  
  Služba data lze nakonfigurovat pro definování nejvyšší verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol, který budou používat služby, bez ohledu na verzi, kterou klient požaduje. To provedete tak, že zadáte <xref:System.Data.Services.Common.DataServiceProtocolVersion> hodnota <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> vlastnost <xref:System.Data.Services.DataServiceBehavior> používá službu data. Další informace najdete v tématu [konfigurace službu Data](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).  
@@ -73,16 +75,16 @@ ms.lasthandoff: 01/19/2018
   
  V následující tabulce jsou verze [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] a [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] , zahrnout [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporu pro určité verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu.  
   
-|[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Verze protokolu|Podpora byla zavedená v...|  
+|[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Verze protokolu|Podpora byla zavedená v...|  
 |-----------------------------------------------------------------------------------|----------------------------|  
-|Verze 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]Aktualizace Service Pack 1 (SP1)<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)]verze 3|  
-|Verze 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-Aktualizace [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] SP1. Můžete stáhnout a nainstalovat aktualizaci z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=158125).<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)]verze 4|  
+|Verze 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Aktualizace Service Pack 1 (SP1)<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] Verze 3|  
+|Verze 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-Aktualizace [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] SP1. Můžete stáhnout a nainstalovat aktualizaci z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=158125).<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] verze 4|  
 |Verze 3|-Stáhněte a nainstalujte na předprodejní verzi, která podporuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] verze 3 z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=203885).|  
   
 ### <a name="metadata-versions"></a>Verze metadat  
- Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] verze 1.1 CSDL používá k reprezentaci datový model. Toto je vždy případ datové modely, které jsou založeny na zprostředkovatele reflexe nebo poskytovatele služeb vlastní data. Pokud je však datového modelu definované za použití [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], verzi CSDL vrátil, je stejná jako verze, který je používán [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]. Verze CSDL je dáno obor názvů [Schema element](http://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]specifikace [ \[MC CSDL\]: koncepční formátu definičního souboru schématu](http://go.microsoft.com/fwlink/?LinkId=159072).  
+ Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] verze 1.1 CSDL používá k reprezentaci datový model. Toto je vždy případ datové modely, které jsou založeny na zprostředkovatele reflexe nebo poskytovatele služeb vlastní data. Pokud je však datového modelu definované za použití [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], verzi CSDL vrátil, je stejná jako verze, který je používán [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]. Verze CSDL je dáno obor názvů [Schema element](http://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] specifikace [ \[MC CSDL\]: koncepční formátu definičního souboru schématu](http://go.microsoft.com/fwlink/?LinkId=159072).  
   
- `DataServices` Také obsahuje element vrácený metadat `DataServiceVersion` atribut, který má stejnou hodnotu jako `DataServiceVersion` záhlaví ve zprávě s odpovědí. Klientské aplikace, jako **přidat odkaz na službu** dialogovém okně [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], tyto informace slouží k vytvoření klienta data služby tříd, které fungují správně s verzí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] který hostovat službu data. Další informace najdete v tématu [OData: Správa verzí protokolu](http://go.microsoft.com/fwlink/?LinkId=186071).  
+ `DataServices` Také obsahuje element vrácený metadat `DataServiceVersion` atribut, který má stejnou hodnotu jako `DataServiceVersion` záhlaví ve zprávě s odpovědí. Klientské aplikace, jako **přidat odkaz na službu** dialogové okno v sadě Visual Studio, použijte tyto informace pro generování dat služby klienta třídy, které pracují správně s verzí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] který hostovat službu data. Další informace najdete v tématu [OData: Správa verzí protokolu](http://go.microsoft.com/fwlink/?LinkId=186071).  
   
 ## <a name="see-also"></a>Viz také  
  [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  

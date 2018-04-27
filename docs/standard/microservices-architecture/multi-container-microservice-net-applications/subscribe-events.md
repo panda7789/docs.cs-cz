@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7538c760d396349fe9b1e93a21839e3e59d7f046
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 279dd4ea2ffb36e13a22f366ece145174918b759
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -112,7 +112,7 @@ Jak je uvedeno výše v části architektura, může mít několik přístupů p
 
 -   Pomocí kompletní [Sourcing událostí vzor](https://msdn.microsoft.com/library/dn589792.aspx).
 
--   Pomocí [transakce protokolu dolování](http://www.scoop.it/t/sql-server-transaction-log-mining).
+-   Pomocí [transakce protokolu dolování](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
 -   Pomocí [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/). Toto je transakcí tabulku pro ukládání událostí integrace (rozšíření místní transakce).
 
@@ -347,7 +347,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
 
 -   **Jan Ryšánková. Vzor Sourcing událostí**
-    [*http://microservices.io/patterns/data/event-sourcing.html*](http://microservices.io/patterns/data/event-sourcing.html)
+    [*https://microservices.io/patterns/data/event-sourcing.html*](https://microservices.io/patterns/data/event-sourcing.html)
 
 -   **Představení Sourcing událostí**
     [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
@@ -384,4 +384,4 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 
 
 >[!div class="step-by-step"]
-[Previous] (rabbitmq-event-bus-development-test-environment.md) [Next] (test-aspnet-core-services-web-apps.md)
+[Předchozí] (rabbitmq-event-bus-development-test-environment.md) [Další] (test-aspnet-core-services-web-apps.md)

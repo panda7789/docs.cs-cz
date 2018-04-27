@@ -18,14 +18,14 @@ ms.assetid: 9effbcf0-80a0-4d1a-98f4-2c6920592766
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5487dc7dbe9be50e065610cfd61815242bb74ac0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 92cb2dd3f356acf89cbe62b5f3f5dc81fce271fc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="procedures-in-visual-basic"></a>Procedury v jazyce Visual Basic
-A *postup* je blok [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] příkazy uzavřena příkazem deklarace (`Function`, `Sub`, `Operator`, `Get`, `Set`) a odpovídající `End` deklarace. Všechny spustitelné příkazy v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] musí být v rámci některé procedury.  
+A *postup* je blok příkazů jazyka Visual Basic uzavřena příkazem deklarace (`Function`, `Sub`, `Operator`, `Get`, `Set`) a odpovídající `End` deklarace. Všechny spustitelné příkazy v jazyce Visual Basic musí být v rámci některé procedury.  
   
 ## <a name="calling-a-procedure"></a>Volání procedury  
  Můžete vyvolat proceduru z jiného místa v kódu. To se označuje jako *volání procedury*. Po dokončení procesu spuštění, vrátí ovládací prvek kód, který volá, která se označuje jako *volání kódu*. Volání kódu je příkaz nebo výraz v rámci příkazu, která určuje postup podle názvu a předá řízení.  
@@ -43,7 +43,7 @@ A *postup* je blok [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] příkazy uzavře
  Ve většině případů musí fungovat na různých datových pokaždé, když ji volat procedury. Tyto informace můžete předat postupu jako součást volání procedury. Postup definuje nula nebo více *parametry*, každý z představující hodnotu se očekává, že jste jí předat. Odpovídající jednotlivé parametry v definici postup je *argument* ve volání procedury. Argument představuje hodnotu, kterou předáte odpovídajícího parametru ve volání procedury dané.  
   
 ## <a name="types-of-procedures"></a>Typy postupů  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]používá několik typů postupů:  
+ Visual Basic používá několik typů postupů:  
   
 -   [Sub postupy](./sub-procedures.md) provádět různé akce, ale kód volání nevrátí hodnotu.  
   
@@ -71,10 +71,10 @@ A *postup* je blok [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] příkazy uzavře
 -   Až budete vyvíjet postupy pro použití v jedné aplikaci, můžete je používat v jiných programů, často se žádné nebo téměř žádné změny. Tím lze zabránit zdvojení kódu.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vytvoření procedury](./how-to-create-a-procedure.md)  
- [Sub – procedury](./sub-procedures.md)  
- [Function – procedury](./function-procedures.md)  
- [Procedury vlastností](./property-procedures.md)  
+ [Postupy: Vytvoření procedury](./how-to-create-a-procedure.md)  
+ [Procedury Sub](./sub-procedures.md)  
+ [Procedury funkce](./function-procedures.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Procedury operátoru](./operator-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
  [Rekurzivní procedury](./recursive-procedures.md)  

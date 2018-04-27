@@ -1,27 +1,29 @@
 ---
-title: "Práce s mezipamětí u klientů automatizace uživatelského rozhraní"
-ms.custom: 
+title: Práce s mezipamětí u klientů automatizace uživatelského rozhraní
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - UI Automation caching in clients
 - caching, UI Automation clients
 ms.assetid: 94c15031-4975-43cc-bcd5-c9439ed21c9c
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: cce1890357f5781f1772b6a0aa583e493e2cfa8b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5bbd54d4e1e8a6a1eae52f50696aecddd1f8bd8a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="caching-in-ui-automation-clients"></a>Práce s mezipamětí u klientů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -67,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="activating-the-cacherequest"></a>Aktivace Vlastnost CacheRequest  
  Ukládání do mezipaměti se provádí pouze tehdy, když <xref:System.Windows.Automation.AutomationElement> objekty jsou načteny při <xref:System.Windows.Automation.CacheRequest> je aktivní pro aktuální vlákno. Existují dva způsoby, jak aktivovat <xref:System.Windows.Automation.CacheRequest>.  
   
- Obvyklým způsobem se má volat <xref:System.Windows.Automation.CacheRequest.Activate%2A>. Tato metoda vrátí objekt, který implementuje <xref:System.IDisposable>. Žádost zůstane aktivní, dokud <xref:System.IDisposable> objekt existuje. Nejjednodušší způsob, jak řídit doba života objektu je uzavřete volání v rámci `using` ([!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)]) nebo `Using` ([!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)]) bloku. Tím se zajistí, že žádost odebrány ze zásobníku, i v případě, že dojde k výjimce.  
+ Obvyklým způsobem se má volat <xref:System.Windows.Automation.CacheRequest.Activate%2A>. Tato metoda vrátí objekt, který implementuje <xref:System.IDisposable>. Žádost zůstane aktivní, dokud <xref:System.IDisposable> objekt existuje. Nejjednodušší způsob, jak řídit doba života objektu je uzavřete volání v rámci `using` (C#) nebo `Using` blokování (Visual Basic). Tím se zajistí, že žádost odebrány ze zásobníku, i v případě, že dojde k výjimce.  
   
  Jiným způsobem, což je užitečné, když chcete vnořit požadavků na mezipaměť, je volání <xref:System.Windows.Automation.CacheRequest.Push%2A>. To vloží požadavek na zásobníku a aktivuje jej. Žádost zůstane aktivní, dokud se odebere ze zásobníku podle <xref:System.Windows.Automation.CacheRequest.Pop%2A>. Požadavek stane dočasně neaktivní, pokud jiná žádost je vloženy do zásobníku; pouze nejvyšší žádosti v zásobníku je aktivní.  
   
@@ -115,4 +117,4 @@ ms.lasthandoff: 01/19/2018
 ## <a name="see-also"></a>Viz také  
  [Události automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
  [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
- [FetchTimer Sample](http://msdn.microsoft.com/library/5b7d3294-de22-4f24-b2d6-d4785a304b90)
+ [Ukázka FetchTimer](http://msdn.microsoft.com/library/5b7d3294-de22-4f24-b2d6-d4785a304b90)

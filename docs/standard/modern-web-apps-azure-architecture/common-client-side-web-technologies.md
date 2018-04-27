@@ -1,19 +1,20 @@
 ---
-title: "Běžné webové technologie straně klienta"
-description: "Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Běžné webové technologie straně klienta"
+title: Běžné webové technologie straně klienta
+description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Běžné webové technologie straně klienta
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: e8e156552fd4aa733594c01845fb7ed1643b4aef
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c77b6fecdea3620a4f807dfa9b3501f78bb247d2
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie straně klienta
 
@@ -149,7 +150,7 @@ Rozhraní JavaScript pokračovat ve vývoji s breakneck rychlost. Použijte info
 > ### <a name="references--client-web-technologies"></a>Odkazy – klienta webové technologie
 > - **Kód HTML a CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
-> - **Sass vs. LESS**  
+> - **Sass vs. MENŠÍ**  
 > <https://www.keycdn.com/blog/sass-vs-less/>
 > - **Práce se styly aplikace ASP.NET Core s méně, Sass a úžasné písma**  
 > <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>

@@ -1,12 +1,13 @@
 ---
-title: "Streamování zprostředkovatele (služby WCF Data Services)"
-ms.custom: 
+title: Streamování zprostředkovatele (služby WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f965bc46c62742c0e2ffb0a7f8ae2e09eca5dc1c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: bc66d4154f60e46e53de8ca72596e133dc84eb97
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Streamování zprostředkovatele (služby WCF Data Services)
 Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato binární data může představovat datové proudy videa a audia, bitové kopie, soubory dokumentů nebo jiných typů médií binární. Pokud entitu v datovém modelu obsahuje jeden nebo více binárních vlastností, vrátí službu data tato binární data kódovaná jako kódování base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velké binární data tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načtení binární data nezávisle na entity, do které patří. Toho dosahuje tím, že oddělíte binární data z entity do jednoho nebo více datových proudů.  
@@ -61,7 +63,7 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
   
  Musíte taky přidat obor názvů `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` v entitě nebo do kořenového adresáře souboru EDMX nebo .csdl, který definuje datový model.  
   
- [!INCLUDE[crexample](../../../../includes/crexample-md.md)]Služba data, která využívá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele a zveřejňuje mediálního zdroje, najdete v příspěvku [datové služby streamování zprostředkovatele řady: implementace poskytovatele streamování (část 1)](http://go.microsoft.com/fwlink/?LinkID=198989).  
+ Příklad dat službu, která používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele a zveřejňuje prostředku média, najdete v příspěvku [datové služby streamování zprostředkovatele řady: implementace poskytovatele streamování (část 1)](http://go.microsoft.com/fwlink/?LinkID=198989).  
   
  **Zprostředkovatel reflexe**  
  Chcete-li znamenat, že entita záznamu odkazu na média, přidejte <xref:System.Data.Services.Common.HasStreamAttribute> na třídu, která definuje typ entity ve zprostředkovateli reflexe.  
@@ -122,7 +124,7 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
   
     -   Binární vlastnosti, která je k mediálnímu zdroji by neměly být obsažené v datovém modelu. Všechny vlastnosti v modelu dat jsou vráceny v položce v odpovědi informačního kanálu.  
   
-    -   Zlepšení výkonu pomocí velké binárního datového proudu, doporučujeme vytvořit třídu vlastního datového proudu k uložení binární data v databázi. Tato třída je vrácen rutinou vaší <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> implementaci a odešle binární data do databáze v datové dávky. Pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] databáze, doporučujeme používat FILESTREAM datový proud dat do databáze v případě, že binární data jsou větší než 1 MB.  
+    -   Zlepšení výkonu pomocí velké binárního datového proudu, doporučujeme vytvořit třídu vlastního datového proudu k uložení binární data v databázi. Tato třída je vrácen rutinou vaší <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> implementaci a odešle binární data do databáze v datové dávky. Pro databázi systému SQL Server doporučujeme použít FILESTREAM datový proud dat do databáze, když binární data jsou větší než 1MB.  
   
     -   Ujistěte se, že vaše databáze je určen k ukládání binární velké datové proudy, které mají být přijatých služby data.  
   

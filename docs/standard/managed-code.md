@@ -1,7 +1,7 @@
 ---
-title: "Co je spravovaný kód?"
-description: "Zjistěte, jak spravovaný kód je kód, jejichž spuštění je spravován nástrojem modul runtime, Common Language Runtime (CLR)."
-keywords: "Rozhraní .NET, .NET core"
+title: Co je spravovaný kód?
+description: Zjistěte, jak spravovaný kód je kód, jejichž spuštění je spravován nástrojem modul runtime, Common Language Runtime (CLR).
+keywords: Rozhraní .NET, .NET core
 author: blackdwarf
 ms.author: mairaw
 ms.date: 06/20/2016
@@ -13,17 +13,17 @@ ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ca2ae076229a1726d3a25a84e358f9cfb623a297
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 46bbe30f216ba9b0a3bc7f88267c428ec56de614
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="what-is-managed-code"></a>Co je "spravovaný kód"?
 
 Při práci s rozhraní .NET Framework, se setkají často termín "spravovaného kódu". Tento dokument vysvětluje, co znamená tento termín a další informace o kolem něj.
 
-Uvést velmi jednoduše, spravovaný kód je, že právě: kód, jejichž spuštění je spravuje modulu runtime. V takovém případě je volána v modulu runtime **modul Common Language Runtime** nebo CLR, bez ohledu na implementaci ([Mono](http://www.mono-project.com/) nebo rozhraní .NET Framework nebo .NET Core). CLR má na starosti trvá spravovaného kódu, kompilace do kódu počítače a její provedení. Nad, runtime nabízí několik důležité služby, jako je například automatická správa paměti, hranice zabezpečení typ zabezpečení atd.
+Uvést velmi jednoduše, spravovaný kód je, že právě: kód, jejichž spuštění je spravuje modulu runtime. V takovém případě je volána v modulu runtime **modul Common Language Runtime** nebo CLR, bez ohledu na implementaci ([Mono](https://www.mono-project.com/) nebo rozhraní .NET Framework nebo .NET Core). CLR má na starosti trvá spravovaného kódu, kompilace do kódu počítače a její provedení. Nad, runtime nabízí několik důležité služby, jako je například automatická správa paměti, hranice zabezpečení typ zabezpečení atd.
 
 Protějšek to způsobem, jakým byste spustili programu C/C++, označované taky jako "nespravovaného kódu". Nespravované světě programátorů má na starosti prakticky vše. Skutečný program je v podstatě binární soubor, který načte do paměti operačního systému (OS) a spustí. Všem ostatním ze správy paměti na aspekty zabezpečení jsou zatížení programátora.
 

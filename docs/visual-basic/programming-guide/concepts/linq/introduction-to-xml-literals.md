@@ -1,29 +1,30 @@
 ---
-title: "Úvod do literálů XML v Visual Basic2"
-ms.custom: 
+title: Úvod do literálů XML v Visual Basic2
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7ac96691b5b9274f67039f36bbdbfaf8abd03705
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 112c1d898c3cdf14b52d843dee8f5a51002be858
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Úvod do literálů XML v jazyce Visual Basic
-Tato část obsahuje informace o vytváření stromů XML v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+Tato část obsahuje informace o vytváření stromů XML v jazyce Visual Basic.  
   
  Informace o použití výsledky dotazů LINQ jako obsah pro strom XML najdete v tématu [funkční konstrukce (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
- Další informace o literálech XML v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], najdete v části [Přehled technologie LINQ to XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ Další informace o literálech XML v jazyce Visual Basic, najdete v části [Přehled technologie LINQ to XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
   
 ## <a name="creating-xml-trees"></a>Vytváření stromů XML  
  Následující příklad ukazuje, jak vytvořit <xref:System.Xml.Linq.XElement>, v takovém případě `contacts`:  

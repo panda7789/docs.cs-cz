@@ -1,12 +1,13 @@
 ---
-title: "Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní"
-ms.custom: 
+title: Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - control patterns, supporting in UI Automation provider
 - UI Automation, supporting control patterns in provider
 ms.assetid: 0d635c35-ffa8-4dc8-bbc9-12fcd5445776
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 9e85aa2fe36ad6fab59ae071a662755219ccbbb8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c66df9103b1edb43490a7e1a6a9d1a3cc87bfc28
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="support-control-patterns-in-a-ui-automation-provider"></a>Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]
@@ -36,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  Implementace rozhraní vhodné pro vzory ovládacích prvků, které by měly podporovat elementu, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider> pro <xref:System.Windows.Automation.InvokePattern>.  
   
-2.  Vrátí objekt obsahující implementaci každé rozhraní ovládacího prvku ve vaší implementace nástroje<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A?displayProperty=nameWithType>  
+2.  Vrátí objekt obsahující implementaci každé rozhraní ovládacího prvku ve vaší implementace nástroje <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A?displayProperty=nameWithType>  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje implementaci <xref:System.Windows.Automation.Provider.ISelectionProvider> pro jeden výběr vlastní pole. Se vrátí tři vlastnosti a získá aktuálně vybrané položky.  
@@ -45,7 +47,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[UIAFragmentProvider_snip#119](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListPattern.vb#119)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A> , který vrací implementace třídy <xref:System.Windows.Automation.Provider.ISelectionProvider>. Většina ovládací prvky seznamu by podporovat další zpracování a, ale v tomto příkladu odkaz s hodnotou null (`Nothing` v [!INCLUDE[TLA#tla_visualbnet](../../../includes/tlasharptla-visualbnet-md.md)]) se vrátí pro všechny ostatní vzor identifikátory.  
+ Následující příklad ukazuje implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A> , který vrací implementace třídy <xref:System.Windows.Automation.Provider.ISelectionProvider>. Většina ovládací prvky seznamu by podporovat další zpracování a, ale v tomto příkladu odkaz s hodnotou null (`Nothing` v aplikaci Microsoft Visual Basic .NET) se vrátí pro všechny ostatní vzor identifikátory.  
   
  [!code-csharp[UIAFragmentProvider_snip#120](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#120)]
  [!code-vb[UIAFragmentProvider_snip#120](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#120)]  

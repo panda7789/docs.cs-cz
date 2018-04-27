@@ -1,7 +1,7 @@
 ---
-title: "Vytváření složených uživatelského rozhraní založené na mikroslužeb, včetně visual tvar uživatelského rozhraní a rozložení generované více mikroslužeb"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Vytváření složených uživatelského rozhraní založené na mikroslužeb, včetně visual tvar uživatelského rozhraní a rozložení generované více mikroslužeb"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Vytváření složených uživatelského rozhraní založené na mikroslužeb, včetně visual tvar uživatelského rozhraní a rozložení generované více mikroslužeb
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Vytváření složených uživatelského rozhraní založené na mikroslužeb, včetně visual tvar uživatelského rozhraní a rozložení generované více mikroslužeb
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 12b170e9d4c46fbb697f988596af6566d33099a4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 55b643fa6f87e5e2b1f49ba201032df655195b46
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-composite-ui-based-on-microservices-including-visual-ui-shape-and-layout-generated-by-multiple-microservices"></a>Vytváření složených uživatelského rozhraní založené na mikroslužeb, včetně visual tvar uživatelského rozhraní a rozložení generované více mikroslužeb
 
@@ -47,7 +47,7 @@ Ale doporučujeme vám použít následující odkazy na další informace o slo
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Složené uživatelského rozhraní pomocí technologie ASP.NET (na konkrétní dílny)**
+-   **Složené uživatelského rozhraní pomocí technologie ASP.NET (dílny na konkrétní)**
     [*http://go.particular.net/workshop-composite-ui-demo*](http://go.particular.net/workshop-composite-ui-demo)
 
 -   **Ruben Oostinga. Monolitický front-endu v architektuře Mikroslužeb**
@@ -60,7 +60,7 @@ Ale doporučujeme vám použít následující odkazy na další informace o slo
     [*https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/*](https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/)
 
 -   **Správa front-endu v architektuře Mikroslužeb**\
-    [*http://Allegro.tech/2016/03/Managing-frontend-in-the-microservices-Architecture.HTML*](http://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
+    [*https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html*](https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
 
 
 >[!div class="step-by-step"]

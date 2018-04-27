@@ -1,28 +1,29 @@
 ---
-title: "Prázdné znaky v literálech XML (Visual Basic)"
-ms.custom: 
+title: Prázdné znaky v literálech XML (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - white space [XML in Visual Basic]
 - XML literals [Visual Basic], white space
 ms.assetid: dfe3a9ff-d69a-418e-a6b5-476f4ed84219
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d8587abb98fe33ab2c5a0cef6cea76049a00909e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e6d23aa54b150748aac9aa955f4bd86ee88358ea
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a>Prázdné znaky v literálech XML (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru zahrnuje pouze znaky významné prázdné znaky z literál XML při vytváření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Nejsou zahrnuty zanedbatelný prázdné znaky.  
+Visual Basic – kompilátor zahrnuje pouze znaky významné prázdné znaky z literál XML při vytváření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Nejsou zahrnuty zanedbatelný prázdné znaky.  
   
 ## <a name="significant-and-insignificant-white-space"></a>Významné a zanedbatelný prázdné znaky  
  Prázdné znaky v literálech XML jsou důležitá pouze tří oblastí:  
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/18/2017
  Literál XML zahrnout zanedbatelný prázdné znaky, použijte embedded výraz, který obsahuje řetězcový literál s bílými oblasti.  
   
 > [!NOTE]
->  Pokud `xml:space` atributu se zobrazí v elementu XML literálu, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru obsahuje atribut v <xref:System.Xml.Linq.XElement> objektu, ale přidání tento atribut nezmění jak kompilátor zpracovává mezer.  
+>  Pokud `xml:space` atributu se zobrazí v elementu XML literálu, Visual Basic – kompilátor obsahuje atribut v <xref:System.Xml.Linq.XElement> objektu, ale přidání tento atribut nezmění jak kompilátor zpracovává mezer.  
   
 ## <a name="examples"></a>Příklady  
  Následující příklad obsahuje dva elementy XML vnitřní a vnější. Oba elementy obsahovat prázdné znaky v jejich textového obsahu. Prázdné znaky v prvku vnější je zanedbatelný, protože obsahuje jenom prázdné znaky a XML element. Prázdné znaky v informacích o vnitřní element je důležité, protože obsahuje prázdné znaky a text.  

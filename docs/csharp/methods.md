@@ -1,7 +1,7 @@
 ---
-title: "Metody – Průvodce C#"
-description: "Přehled metod, metoda parametry a návratové hodnoty – metoda"
-keywords: .NET, .NET Core, C#
+title: Metody – Průvodce C#
+description: Přehled metod, metoda parametry a návratové hodnoty – metoda
+keywords: Rozhraní .NET, rozhraní .NET core, C#
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/26/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 48127d5168ace7733f29f78dc3f72d9c0d051e4e
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 526cd6d269c7c089f6547fcf243b43e411037d13
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="methods"></a>Metody #
 
@@ -263,7 +263,7 @@ Pokud označíte metodu s [asynchronní](language-reference/keywords/async.md) m
 > [!NOTE]
 > Asynchronní metody vrátí volající, pokud zjistí první awaited objekt, který ještě není dokončena nebo získá na konec asynchronní metody, cokoliv nastane dříve.
 
-Asynchronní metody může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo `void`. `void` Vrátí typ se používá hlavně k definování obslužné rutiny událostí, kde `void` návratový typ je požadovaná. Asynchronní metody, která vrací `void` nemůže být očekáváno, a volající metody vrácení void nelze catch výjimky, které vyvolá metoda. C# 7, po vydání, bude usnadňují toto omezení umožňující použití asynchronní metody [vrátit jakýkoli typ úlohy jako](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md).
+Asynchronní metody může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo `void`. `void` Vrátí typ se používá hlavně k definování obslužné rutiny událostí, kde `void` návratový typ je požadovaná. Asynchronní metody, která vrací `void` nemůže být očekáváno, a volající metody vrácení void nelze catch výjimky, které vyvolá metoda. C# 7.0, po vydání, bude usnadňují toto omezení umožňující použití asynchronní metody [vrátit jakýkoli typ úlohy jako](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md).
 
 V následujícím příkladu `DelayAsync` je asynchronní metody, který má návratový příkaz, který vrátí celé číslo. Protože je asynchronní metody, jeho metoda deklarace musí mít návratový typ `Task<int>`. Vzhledem k tomu, že je návratový typ `Task<int>`, vyhodnocení `await` výrazu v `DoSomethingAsync` vytváří celé jako následující `int result = await delayTask` ukazuje příkaz.
 
@@ -304,8 +304,8 @@ Další informace najdete v tématu [iterátory](programming-guide/concepts/iter
 [Statické třídy a jejich členové](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
 [dědičnost](programming-guide/classes-and-structs/inheritance.md)   
 [Abstraktní a uzavřené třídy a jejich členové](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
-[params](language-reference/keywords/params.md)   
+[Parametry](language-reference/keywords/params.md)   
 [na více systémů](language-reference/keywords/out-parameter-modifier.md)   
-[ref](language-reference/keywords/ref.md)   
+[REF](language-reference/keywords/ref.md)   
 [V](language-reference/keywords/in-parameter-modifier.md)   
 [Předávání parametrů](programming-guide/classes-and-structs/passing-parameters.md)

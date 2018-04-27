@@ -1,12 +1,13 @@
 ---
-title: "x:Type – rozšíření značek"
-ms.custom: 
+title: x:Type – rozšíření značek
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - x:TypeExtension
@@ -21,16 +22,17 @@ helpviewer_keywords:
 - TargetType attribute [XAML Services]
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a4d645d5c953c0ff33435a5648024ace099455e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: db56c2bcdca14b87de320dfe19a6c364c76ecef7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xtype-markup-extension"></a>x:Type – rozšíření značek
 Poskytuje modulu CLR <xref:System.Type> objekt, který je základní typ pro zadaný typ jazyka XAML.  
@@ -55,7 +57,7 @@ Poskytuje modulu CLR <xref:System.Type> objekt, který je základní typ pro zad
 |`typeNameValue`|Požadováno. Název typu přeložit na aktuální výchozí XAML obor názvů; nebo zadané mapování předpony Pokud `prefix` pochází.|  
   
 ## <a name="remarks"></a>Poznámky  
- `x:Type` Podobné funkce, která se má – rozšíření značek `typeof()` operátor v [!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)] nebo `GetType` operátor v [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)].  
+ `x:Type` Podobné funkce, která se má – rozšíření značek `typeof()` operátor v jazyce C# nebo `GetType` operátor v aplikaci Microsoft Visual Basic.  
   
  `x:Type` – Rozšíření značek poskytuje chování převod z řetězce pro vlastnosti, které typu <xref:System.Type>. Vstup je typ jazyka XAML. Vztah mezi vstupní typ jazyka XAML a výstup CLR <xref:System.Type> je, že výstup <xref:System.Type> je <xref:System.Xaml.XamlType.UnderlyingType%2A> vstupu <xref:System.Xaml.XamlType>, po vyhledávání nezbytné <xref:System.Xaml.XamlType> na základě kontextu schématu XAML a <xref:System.Windows.Markup.IXamlTypeResolver>service poskytuje kontext.  
   
@@ -67,7 +69,7 @@ Poskytuje modulu CLR <xref:System.Type> objekt, který je základní typ pro zad
   
  `x:Type` – Rozšíření značek mohou být používány syntaxe element objektu. V takovém případě určující hodnotu <xref:System.Windows.Markup.TypeExtension.TypeName%2A> vlastnost je potřeba správně inicializovat rozšíření.  
   
- `x:Type` – Rozšíření značek lze také jako atribut podrobné; však není toto použití typické: `<``object``property``="{x:Type TypeName=``typeNameValue``}" .../>`  
+ `x:Type` – Rozšíření značek lze také jako atribut podrobné; však není Typická tuto použijte: `<``object` `property``="{x:Type TypeName=``typeNameValue``}" .../>`  
   
 ## <a name="wpf-usage-notes"></a>Poznámky pro použití WPF  
   
@@ -82,7 +84,7 @@ Poskytuje modulu CLR <xref:System.Type> objekt, který je základní typ pro zad
 ## <a name="xaml-2009"></a>XAML 2009  
  XAML 2009 poskytuje další podporu pro obecné typy a mění chování funkce `x:TypeArguments` a `x:Type` pro tuto funkci podporují.  
   
--   `x:TypeArguments`a element přidruženého objektu pro vytváření instancí obecný objekt může být u jiných elementů než kořenu. Další informace najdete v části "XAML 2009" [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
+-   `x:TypeArguments` a element přidruženého objektu pro vytváření instancí obecný objekt může být u jiných elementů než kořenu. Další informace najdete v části "XAML 2009" [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
   
 -   XAML 2009 podporuje syntaxi pro určení omezení obecného typu v kódu. To mohou být využívána `x:TypeArguments`, pomocí `x:Type`, nebo tyto dvě funkce v kombinaci.  
   

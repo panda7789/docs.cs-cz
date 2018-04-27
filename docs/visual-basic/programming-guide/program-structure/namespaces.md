@@ -1,10 +1,10 @@
 ---
-title: "Obory názvů v jazyce Visual Basic"
-ms.custom: 
+title: Obory názvů v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -23,14 +23,14 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - namespaces
 ms.assetid: cffac744-ab8c-4f1f-ba50-732c22ab4b88
-caps.latest.revision: 
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c18d0a9abb1d8b9e3e22f3b81bf605fb8ed75cfa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0ec038a17b4a6b10dbe339fe33969c4ade57e2a7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="namespaces-in-visual-basic"></a>Obory názvů v jazyce Visual Basic
 Obory názvů uspořádat objekty definované v sestavení. Sestavení může obsahovat více obory názvů, který zase mohou obsahovat jiných oborech názvů. Obory názvů zabránilo nejednoznačnosti a zjednodušit odkazy, při použití velké skupiny objektů, například knihovny tříd.  
@@ -40,9 +40,9 @@ Obory názvů uspořádat objekty definované v sestavení. Sestavení může ob
  [!code-vb[VbVbalrApplication#6](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_1.vb)]  
   
 ## <a name="avoiding-name-collisions"></a>Zamezení kolize názvů  
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]obory názvů vyřešit problém se někdy označuje jako *znečištění oboru názvů*, ve které je na vývojáře knihovny tříd pomocí podobné názvy v jiné knihovny omezován. Tyto je v konfliktu s existující součásti se někdy označuje jako *název kolizí*.  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] obory názvů vyřešit problém se někdy označuje jako *znečištění oboru názvů*, ve které je na vývojáře knihovny tříd pomocí podobné názvy v jiné knihovny omezován. Tyto je v konfliktu s existující součásti se někdy označuje jako *název kolizí*.  
   
- Například pokud vytvoříte novou třídu s názvem `ListBox`, můžete ji použít v projektu bez kvalifikace. Ale pokud chcete použít [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.Windows.Forms.ListBox> třídy ve stejném projektu, musíte použít plně kvalifikovaný odkaz aby jedinečný odkaz. Pokud není jedinečné, odkaz na [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vytváří chyba oznamující, že název je nejednoznačný. Následující příklad kódu ukazuje, jak deklarovat tyto objekty:  
+ Například pokud vytvoříte novou třídu s názvem `ListBox`, můžete ji použít v projektu bez kvalifikace. Ale pokud chcete použít [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.Windows.Forms.ListBox> třídy ve stejném projektu, musíte použít plně kvalifikovaný odkaz aby jedinečný odkaz. Pokud není jedinečný odkaz, vyvolá jazyka Visual Basic chyba oznamující, že název je nejednoznačný. Následující příklad kódu ukazuje, jak deklarovat tyto objekty:  
   
  [!code-vb[VbVbalrApplication#7](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_2.vb)]  
   
@@ -50,9 +50,9 @@ Obory názvů uspořádat objekty definované v sestavení. Sestavení může ob
   
  ![Namespace hierarchie](../../../visual-basic/programming-guide/program-structure/media/vanamespacehierarchy.gif "vaNamespaceHierarchy")  
   
- Ve výchozím nastavení, každý spustitelný soubor vytvoříte s [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] obsahuje obor názvů se stejným názvem jako projektu. Například pokud definujete objekt v rámci projektu s názvem `ListBoxProject`, spustitelný soubor ListBoxProject.exe obsahuje obor názvů s názvem `ListBoxProject`.  
+ Ve výchozím nastavení obsahuje každý spustitelný soubor, který vytvoříte v jazyce Visual Basic obor názvů se stejným názvem jako projektu. Například pokud definujete objekt v rámci projektu s názvem `ListBoxProject`, spustitelný soubor ListBoxProject.exe obsahuje obor názvů s názvem `ListBoxProject`.  
   
- Více sestavení můžete použít stejný obor názvů. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]pracuje s nimi jako jednu sadu názvy. Například můžete definovat třídy pro obor názvů s názvem `SomeNameSpace` v sestavení s názvem `Assemb1`a definovat další třídy pro stejného oboru názvů ze sestavení s názvem `Assemb2`.  
+ Více sestavení můžete použít stejný obor názvů. Visual Basic je považuje za jednu sadu názvy. Například můžete definovat třídy pro obor názvů s názvem `SomeNameSpace` v sestavení s názvem `Assemb1`a definovat další třídy pro stejného oboru názvů ze sestavení s názvem `Assemb2`.  
   
 ## <a name="fully-qualified-names"></a>Plně kvalifikované názvy  
  Plně kvalifikované názvy jsou odkazy na objekty, které mají předponu název oboru názvů, ve kterém je definovaný objekt. Můžete použít objekty, které jsou definovány v jiné projekty, je-li vytvořit odkaz na třídu (výběrem **přidat odkaz na** z **projektu** nabídky) a pak použít plně kvalifikovaný název objektu v kódu. Následující fragment kódu ukazuje, jak použít plně kvalifikovaný název pro objekt z jiného projektu názvů:  
@@ -69,7 +69,7 @@ Obory názvů uspořádat objekty definované v sestavení. Sestavení může ob
   
  [!code-vb[VbVbalrApplication#11](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_6.vb)]  
   
- Pokud pokus o použití `Class1` bez plně kvalifikovaného, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vytvoří chybu oznamující, že název `Class1` je nejednoznačný.  
+ Pokud pokus o použití `Class1` bez plně kvalifikovaného, Visual Basic vytvoří chybu oznamující, že název `Class1` je nejednoznačný.  
   
 ## <a name="namespace-level-statements"></a>Úroveň Namespace příkazy  
  V oboru názvů můžete definovat položek, jako jsou moduly, rozhraní, třídy, delegáti, struktury, výčty a jiných oborech názvů. Nelze definovat položek, jako jsou vlastnosti, postupy, proměnné a události na úrovni oboru názvů. Tyto položky musí být deklarován v rámci kontejnery, jako jsou moduly, struktury nebo třídy.  
@@ -131,8 +131,8 @@ End Namespace
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.ListBox>  
  <xref:System.Windows.Forms?displayProperty=nameWithType>  
- [Sestavení a globální mezipaměti sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Postupy: vytvoření a použití sestavení s pomocí příkazového řádku](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4)  
+ [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [Postupy: Vytváření a použití sestavení s pomocí příkazového řádku](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4)  
  [Odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)  
- [Imports – příkaz (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [Psaní kódu v řešeních pro systém Office](https://msdn.microsoft.com/library/bb608596)
+ [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [Psaní kódu v řešeních pro systém Office](https://msdn.microsoft.com/library/bb608596)

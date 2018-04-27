@@ -1,21 +1,22 @@
 ---
-title: "Technologie LINQ to XML vs. Další Technologies3 XML"
-ms.custom: 
+title: Technologie LINQ to XML vs. Další Technologies3 XML
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 01b8e746-12d3-471d-b811-7539e4547784
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4a159c906799a61372c1a40e7464d885339b9256
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f13e2d64db9265f03aec3fa5da9f171fcb366f72
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-to-xml-vs-other-xml-technologies"></a>Technologie LINQ to XML vs. Další technologie XML
 Toto téma porovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na následující technologie XML: <xref:System.Xml.XmlReader>, XSLT, MSXML a analyzátor XmlLite. Tyto informace mohou pomoci při rozhodování, kterou technologii použít.  
@@ -23,9 +24,9 @@ Toto téma porovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na 
  Porovnání [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k modelu DOM (Document Object), najdete v části [technologie LINQ to XML vs. MODEL DOM (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md).  
   
 ## <a name="linq-to-xml-vs-xmlreader"></a>Technologie LINQ to XML vs. XmlReader  
- <xref:System.Xml.XmlReader>je analyzátor rychlé dopředné, bez ukládání do mezipaměti.  
+ <xref:System.Xml.XmlReader> je analyzátor rychlé dopředné, bez ukládání do mezipaměti.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je implementováno na <xref:System.Xml.XmlReader>, a jsou pevně integrovány. Ale můžete také použít <xref:System.Xml.XmlReader> samostatně.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je implementováno na <xref:System.Xml.XmlReader>, a jsou pevně integrovány. Ale můžete také použít <xref:System.Xml.XmlReader> samostatně.  
   
  Například předpokládejme, že jsou vytváření webové služby, který bude analýzy stovky dokumentů XML za sekundu a dokumenty mít stejnou strukturu, což znamená, že máte jenom zápisu jednu implementaci kód analyzovat kód XML. V takovém případě by pravděpodobně chcete použít <xref:System.Xml.XmlReader> samostatně.  
   
@@ -40,7 +41,7 @@ Toto téma porovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na 
   
  Až zvládnete [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz na výrazy, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] transformace jsou výkonné technologie, která je snadno použitelný. V podstatě, můžete formuláři dokumentu XML pomocí funkční konstrukce, stahování dat z různých zdrojů, vytváření <xref:System.Xml.Linq.XElement> objektů dynamicky a ty celek do novou větev XML. Transformace můžete vygenerovat zcela nový dokument. Transformace ve vytváření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je poměrně jednoduché a intuitivní, a výsledný kód je čitelná. To snižuje náklady na vývoj a údržba.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]není určena k nahrazení XSLT. XSLT je stále z nástrojů pro složité a zaměřené na dokument XML transformace, zejména v případě, že není dobře definované strukturu dokumentu.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] není určena k nahrazení XSLT. XSLT je stále z nástrojů pro složité a zaměřené na dokument XML transformace, zejména v případě, že není dobře definované strukturu dokumentu.  
   
  XSLT nabízí výhodu v podobě probíhá World Wide Web Consortium (W3C) standardní. Pokud máte požadavek používat jenom ty technologie, které jsou standardů, může být vhodnější XSLT.  
   
@@ -49,7 +50,7 @@ Toto téma porovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na 
 ## <a name="linq-to-xml-vs-msxml"></a>Technologie LINQ to XML vs. MSXML  
  MSXML je založená na modelu COM technologie pro zpracování XML, který je součástí systému Microsoft Windows. MSXML poskytuje nativní implementaci DOM s podporou jazyka XPath a XSLT. Obsahuje taky SAX2 bez ukládání do mezipaměti, na základě událostí analyzátor.  
   
- MSXML dobře provádí, je ve výchozím nastavení ve většině scénářů zabezpečené a je přístupný v aplikaci Internet Explorer pro provádění zpracování v aplikace ve stylu jazyka AJAX XML na straně klienta. Dá se použít MSXML z žádný programovací jazyk, který podporuje modelu COM, včetně C++, JavaScript, a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 6.0.  
+ MSXML dobře provádí, je ve výchozím nastavení ve většině scénářů zabezpečené a je přístupný v aplikaci Internet Explorer pro provádění zpracování v aplikace ve stylu jazyka AJAX XML na straně klienta. MSXML lze z žádný programovací jazyk, který podporuje modelu COM, včetně C++, JavaScript a Visual Basic 6.0.  
   
  MSXML se nedoporučuje pro použití ve spravovaném kódu podle common language runtime (CLR).  
   
@@ -61,4 +62,4 @@ Toto téma porovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na 
  Analyzátor XmlLite není integrovaná s [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Není yield programátorů produktivitu vylepšení, které jsou motivačních force za [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+ [Začínáme (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)

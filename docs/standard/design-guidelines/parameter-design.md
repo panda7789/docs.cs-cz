@@ -1,12 +1,12 @@
 ---
-title: "Parametr návrhu"
-ms.custom: 
+title: Parametr návrhu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - member design guidelines [.NET Framework], parameters
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f95301bab57e8bdb6b22c54140a4c02ed208b8d3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0d89ed81c06558a6bc101864a7fef3173f019fd0
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="parameter-design"></a>Parametr návrhu
 Tato část obsahuje obecné Rady ohledně návrhu parametr, včetně oddíly s pokyny pro kontrolu argumenty. Kromě toho se seznamte s podle pokynů popsaných v [pojmenování parametry](../../../docs/standard/design-guidelines/naming-parameters.md).  
@@ -82,9 +82,9 @@ Tato část obsahuje obecné Rady ohledně návrhu parametr, včetně oddíly s 
   
  Když argument je předána prostřednictvím parametru-hodnota, člen obdrží kopii skutečného argument předaný v. Pokud má argument hodnotu typu hodnoty, je kopie argumentu uložena v zásobníku. Pokud je argument typu odkazu, kopie odkaz na zprovozněn v zásobníku. Nejoblíbenější jazyky CLR, jako je C#, VB.NET a C++, výchozí nastavení předávání parametrů hodnotou.  
   
- Když je argument předaný prostřednictvím `ref` parametr člen obdrží odkaz na skutečné argument předaný v. Pokud má argument hodnotu typu hodnoty, je v zásobníku uvést odkaz na argument. Pokud je argument typu odkazu, odkaz na odkaz na zprovozněn v zásobníku. `Ref`Parametry lze povolit člena pro úpravu argumenty předaná volající funkcí.  
+ Když je argument předaný prostřednictvím `ref` parametr člen obdrží odkaz na skutečné argument předaný v. Pokud má argument hodnotu typu hodnoty, je v zásobníku uvést odkaz na argument. Pokud je argument typu odkazu, odkaz na odkaz na zprovozněn v zásobníku. `Ref` Parametry lze povolit člena pro úpravu argumenty předaná volající funkcí.  
   
- `Out`parametry jsou podobné `ref` parametry se některé malé rozdíly. Parametr je zpočátku považovat za nepřiřazené a nelze ho přečíst v těle člen před přiřazením některá z hodnot. Parametr navíc má být přiděleny určitou hodnotu, než vrátí člena.  
+ `Out` parametry jsou podobné `ref` parametry se některé malé rozdíly. Parametr je zpočátku považovat za nepřiřazené a nelze ho přečíst v těle člen před přiřazením některá z hodnot. Parametr navíc má být přiděleny určitou hodnotu, než vrátí člena.  
   
  **X nepoužívejte** pomocí `out` nebo `ref` parametry.  
   
@@ -164,7 +164,7 @@ public class String {
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
  [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  

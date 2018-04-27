@@ -1,5 +1,5 @@
 ---
-title: "uint (Referenční dokumentace jazyka C#)"
+title: uint (Referenční dokumentace jazyka C#)
 ms.date: 03/14/2017
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ f1_keywords:
 helpviewer_keywords:
 - uint keyword [C#]
 ms.assetid: e93e42c6-ec72-4b0b-89df-2fd8d36f7a7b
-caps.latest.revision: 
+caps.latest.revision: 18
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d32f7146d1f9e13d8cf0f275f4fd78b693b09d31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4a4f3439888ad3744be1633bb39e1c241343343a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="uint-c-reference"></a>uint (Referenční dokumentace jazyka C#)
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="literals"></a>Literály  
 
-Můžete deklarace a inicializace `uint` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje C# 7) binární literálu do ní. Pokud literálu celé číslo je mimo rozsah `uint` (tj. Pokud je menší než <xref:System.UInt32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
+Můžete deklarace a inicializace `uint` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní. Pokud literálu celé číslo je mimo rozsah `uint` (tj. Pokud je menší než <xref:System.UInt32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
 
 V následujícím příkladu, celá čísla rovno 3,000,000,000, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `uint` hodnoty.  
   
@@ -41,7 +41,7 @@ V následujícím příkladu, celá čísla rovno 3,000,000,000, která jsou rep
 > [!NOTE] 
 > Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona. 
 
-Od verze jazyka C# 7, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
+Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
  - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
  - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
 
@@ -55,10 +55,10 @@ Níže jsou uvedeny některé příklady.
  
 Pokud celé literál bez přípony, je její typ první z těchto typů, ve kterých může být reprezentován jeho hodnotu: 
 
-1. [celá čísla](int.md)
+1. [int](int.md)
 2. `uint`
-3. [dlouhá](../../../csharp/language-reference/keywords/long.md)
-4. [ulong –](../../../csharp/language-reference/keywords/ulong.md) 
+3. [long](../../../csharp/language-reference/keywords/long.md)
+4. [ulong](../../../csharp/language-reference/keywords/ulong.md) 
   
 ## <a name="conversions"></a>Převody  
  Je předdefinovaný implicitní převod z `uint` k [dlouho](../../../csharp/language-reference/keywords/long.md), [ulong](../../../csharp/language-reference/keywords/ulong.md), [float](../../../csharp/language-reference/keywords/float.md), [dvojité](../../../csharp/language-reference/keywords/double.md), nebo [ Decimal](../../../csharp/language-reference/keywords/decimal.md). Příklad:  
@@ -96,7 +96,7 @@ uint y = (uint)3.0;
 ## <a name="see-also"></a>Viz také  
  <xref:System.UInt32>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  

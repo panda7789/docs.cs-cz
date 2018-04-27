@@ -1,18 +1,19 @@
 ---
-title: "Co optimalizovaný pro cloudové aplikace?"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Co optimalizovaný pro cloudové aplikace?"
+title: Co optimalizovaný pro cloudové aplikace?
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Co optimalizovaný pro cloudové aplikace?
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 249da9ecbac90514647f4fdc926928ac7ad4648e
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 63eb80dc43e174f4c803f772f09f6e72d8c8e7c2
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="what-about-cloud-optimized-applications"></a>Co optimalizovaný pro cloudové aplikace?
 
@@ -72,7 +73,7 @@ Ale i ve scénářích, ve kterých mikroslužeb nabízí výkonné nasazení ne
 
 Z důvodu složitosti mikroslužeb architektura jsou vhodné pro aplikace založené na mikroslužbu jenom konkrétních scénářů a některé typy aplikací. Patří mezi ně velké a komplexní aplikace, které mají více vyvíjející se subsystémy. V těchto případech je vhodné Investujete do složitější architektura softwaru, pro dlouhodobou vyšší flexibility a efektivnější Údržba aplikace. Ale pro méně složitých scénářů, může být lepší pokračujte s přístupem monolitický aplikace nebo blíží jednodušší N-vrstvá.
 
-Jako poslední Poznámka, i jeho nebezpečí vrácení opakovaných o tento koncept nesmí si prohlédnete pomocí mikroslužeb ve svých aplikacích jako "celkovou nebo nic na všechny*.*" Můžete rozšířit a momentální stávající monolitický aplikace tak, že přidáte nový, malé scénáře podle mikroslužeb. Nemusíte začít úplně od začátku, pokud chcete začít pracovat s přístupem architektura mikroslužeb. Ve skutečnosti doporučujeme vám momentální pomocí stávající monolitický nebo vícevrstvé aplikace přidáním nové scénáře. Nakonec se analyzují aplikaci do autonomního součásti nebo mikroslužeb. Můžete začít vyvíjející se aplikace monolitický mikroslužeb směrem, krok za krokem.
+Jako poslední Poznámka, i jeho nebezpečí vrácení opakovaných o tento koncept nesmí si prohlédnete pomocí mikroslužeb ve svých aplikacích jako "celkovou nebo nic na všechny *.*" Můžete rozšířit a momentální stávající monolitický aplikace tak, že přidáte nový, malé scénáře podle mikroslužeb. Nemusíte začít úplně od začátku, pokud chcete začít pracovat s přístupem architektura mikroslužeb. Ve skutečnosti doporučujeme vám momentální pomocí stávající monolitický nebo vícevrstvé aplikace přidáním nové scénáře. Nakonec se analyzují aplikaci do autonomního součásti nebo mikroslužeb. Můžete začít vyvíjející se aplikace monolitický mikroslužeb směrem, krok za krokem.
 
 ## <a name="when-to-use-azure-app-service-for-modernizing-existing-net-apps"></a>Kdy použít Azure App Service pro modernizace existující aplikace .NET
 

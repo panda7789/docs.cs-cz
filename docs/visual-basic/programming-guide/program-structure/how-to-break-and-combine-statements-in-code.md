@@ -1,10 +1,10 @@
 ---
-title: "Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -28,14 +28,14 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-caps.latest.revision: 
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: cf6b3ce7e5f9549ca04c4980bd3c91513b343ff6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 06702cdc9073065a418b17d198dbb43be4aefca1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)
 Při psaní kódu, můžete vytvořit v některých případech zdlouhavé příkazy, které vyžadují vodorovného posouvání v editoru kódu. I když to nemá vliv způsob kód běží, je ztížíte pro vy ani nikdo jiný číst kód, jak se objevuje v monitorování. V takovém případě byste měli zvážit, rozdělení jeden dlouhý příkaz na několika řádcích.  
@@ -59,7 +59,7 @@ Při psaní kódu, můžete vytvořit v některých případech zdlouhavé pří
   
      Komentář nemůže pokračovat s použitím znak pokračování řádku. Kompilátor není zkontrolujte znaků v komentáři pro zvláštní význam. Pro více řádků komentář, opakujte symbol komentáře (`'`) na každém řádku.  
   
- I když každý příkaz umístění na samostatném řádku je doporučená metoda [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] taky umožňuje umístit více příkazů na stejném řádku.  
+ I když každý příkaz umístění na samostatném řádku je doporučená metoda, Visual Basic také umožňuje umístit více příkazů na stejném řádku.  
   
 ### <a name="to-place-multiple-statements-on-the-same-line"></a>Umístit více příkazů na stejné přímce.  
   
@@ -68,5 +68,5 @@ Při psaní kódu, můžete vytvořit v některých případech zdlouhavé pří
      [!code-vb[VbVbcnConventions#10](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_2.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Struktura programu a pravidla týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

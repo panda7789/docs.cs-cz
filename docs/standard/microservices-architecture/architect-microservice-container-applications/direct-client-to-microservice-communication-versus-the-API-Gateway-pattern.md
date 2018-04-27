@@ -1,7 +1,7 @@
 ---
-title: "Přímé komunikaci klienta mikroslužbu versus vzoru Brána rozhraní API"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Přímé komunikaci klienta mikroslužbu versus vzoru Brána rozhraní API"
-keywords: "Docker Mikroslužeb, ASP.NET, kontejner, brána rozhraní API"
+title: Přímé komunikaci klienta mikroslužbu versus vzoru Brána rozhraní API
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Přímé komunikaci klienta mikroslužbu versus vzoru Brána rozhraní API
+keywords: Docker Mikroslužeb, ASP.NET, kontejner, brána rozhraní API
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 96a02958ef5750aec7a92ff0dd145edc15a5953a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: fa3f4bb97cf942ee7698b1efa1dcd09b3f2ca571
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="direct-client-to-microservice-communication-versus-the-api-gateway-pattern"></a>Přímé komunikaci klienta mikroslužbu versus vzoru Brána rozhraní API
 
@@ -31,7 +31,7 @@ Možných přístupů je používat architekturu přímou komunikaci klienta mik
 
 V tomto přístupu. Každý mikroslužbu má veřejný koncový bod, někdy s jiný port TCP pro každou mikroslužby. Příklad adresy URL pro konkrétní službu, může být následující adresu URL v Azure:
 
-<http://eshoponcontainers.westus.cloudapp.Azure.com:88 />
+<http://eshoponcontainers.westus.cloudapp.azure.com:88/>
 
 V produkčním prostředí založené na clusteru, která umožní mapování adresy URL pro vyrovnávání zatížení použít v clusteru, který naopak rozděluje požadavky na mikroslužeb. V produkčním prostředí, můžete mít aplikaci doručení řadiče (ADC) jako [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) mezi vaší mikroslužeb a Internetem. To funguje jako transparentní vrstvy, která pouze provede Vyrovnávání zatížení, ale zabezpečuje vašim službám prostřednictvím nabídky ukončení protokolu SSL. To zvyšuje zatížení hostitele, protože snižování zátěže ukončení protokolu SSL náročná na prostředky procesoru a další směrování dávky do služby Azure Application Gateway. Nástroj pro vyrovnávání zatížení a ADC jsou v každém případě transparentní z hlediska of Architektura logické aplikace.
 
@@ -57,7 +57,7 @@ Rozhraní API více mikroslužeb nemusí dobře navrženy pro potřeby různých
 
 ## <a name="using-an-api-gateway"></a>Pomocí služby Gateway rozhraní API
 
-Při návrhu a vytvářet velká nebo složitá na základě mikroslužbu aplikace s více klientských aplikací, může být dobrým přístupem vzít v úvahu [Brána rozhraní API](http://microservices.io/patterns/apigateway.html). Toto je služba, která poskytuje jeden vstupní bod pro určité skupiny mikroslužeb. Je podobná [Facade vzor](https://en.wikipedia.org/wiki/Facade_pattern) z object‑oriented návrhu, ale v takovém případě je součástí distribuovaného systému. Vzor Brána rozhraní API se také někdy označuje jako "back-end pro front-endové" [(BFF)](http://samnewman.io/patterns/architectural/bff/) vzhledem k tomu, že vytvoříte při přemýšlení o potřebám klientské aplikace.
+Při návrhu a vytvářet velká nebo složitá na základě mikroslužbu aplikace s více klientských aplikací, může být dobrým přístupem vzít v úvahu [Brána rozhraní API](https://microservices.io/patterns/apigateway.html). Toto je služba, která poskytuje jeden vstupní bod pro určité skupiny mikroslužeb. Je podobná [Facade vzor](https://en.wikipedia.org/wiki/Facade_pattern) z object‑oriented návrhu, ale v takovém případě je součástí distribuovaného systému. Vzor Brána rozhraní API se také někdy označuje jako "back-end pro front-endové" [(BFF)](https://samnewman.io/patterns/architectural/bff/) vzhledem k tomu, že vytvoříte při přemýšlení o potřebám klientské aplikace.
 
 Obrázek 4 – 13 ukazuje, jak můžete začlenit vlastní Brána rozhraní API do architektury založené na mikroslužby.
 Je důležité, abyste měli na očích, v tomto diagramu, budete používat jeden vlastní Brána rozhraní API služby čelí více a jiné klientské aplikace. Aby fakt může být důležité riziko, protože brána rozhraní API služby bude rostoucí a vyvíjející se na základě mnoho různých požadavků z klientské aplikace. Nakonec se z důvodu těchto různé potřeby bude opakovaném a efektivně může být poměrně podobná monolitický aplikace nebo monolitický služby. To je proto velmi výrazně se doporučuje rozdělení bránou rozhraní API v několika služeb nebo více menší API bran, jeden pro každý typ faktor formuláře pro instanci.
@@ -111,15 +111,15 @@ V této příručce a referenční dokumentace ukázkovou aplikaci (eShopOnConta
 ## <a name="additional-resources"></a>Další zdroje
 
 -   **Charlese Ryšánková. Vzor: Brána rozhraní API / back-end pro front-endu**
-    [*http://microservices.io/patterns/apigateway.html*](http://microservices.io/patterns/apigateway.html)
+    [*https://microservices.io/patterns/apigateway.html*](https://microservices.io/patterns/apigateway.html)
 
 -   **Azure API Management**
     [*https://azure.microsoft.com/services/api-management/*](https://azure.microsoft.com/services/api-management/)
 
--   **UDI Dahan. Služba zaměřené na konkrétní složení**\
-    [*http://udidahan.com/2014/07/30/Service-Oriented-Composition-with-video/*](http://udidahan.com/2014/07/30/service-oriented-composition-with-video/)
+-   **Udi Dahan. Služba zaměřené na konkrétní složení**\
+    [*http://udidahan.com/2014/07/30/service-oriented-composition-with-video/*](http://udidahan.com/2014/07/30/service-oriented-composition-with-video/)
 
--   **Od Clemense Vasters. Zasílání zpráv a Mikroslužeb v GOTO 2016** (video) [ *https://www.youtube.com/watch?v=rXi5CLjIQ9k*](https://www.youtube.com/watch?v=rXi5CLjIQ9k)
+-   **Od Clemense Vasters. Zasílání zpráv a Mikroslužeb v GOTO 2016** (video) [*https://www.youtube.com/watch?v=rXi5CLjIQ9k*](https://www.youtube.com/watch?v=rXi5CLjIQ9k)
 
 
 >[!div class="step-by-step"]

@@ -1,7 +1,7 @@
 ---
-title: "Asynchronní komunikaci na základě zpráv"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Asynchronní komunikaci na základě zpráv"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Asynchronní komunikaci na základě zpráv
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Asynchronní komunikaci na základě zpráv
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7469c41afa16bf96bc81a36c571e3e005c50d904
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7c216dba3b763c310fe17e6294ae5f2b091f71f9
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikaci na základě zpráv
 
@@ -59,7 +59,7 @@ Pokud systém využívá konzistence typu případné doprovází události inte
 
 Jak jsme uvedli výše [problémy a řešení pro správu dat distribuované](#challenges-and-solutions-for-distributed-data-management) části události integrace můžete použít k implementaci pracovní úkoly, které jsou rozmístěny v několika mikroslužeb. Proto bude mít konzistence typu případné mezi tyto služby. Nakonec byl konzistentní transakce se skládá z kolekce distribuované akce. Na každou akci související mikroslužbu aktualizuje entita domény a publikuje jiný integrace událost, která vyvolá další akce v rámci stejné úlohy obchodní začátku do konce.
 
-Důležité je, že můžete chtít komunikovat s více mikroslužeb, která se připojila ke stejné události. V takovém případě můžete publikovat/odebírat zasílání zpráv na základě událostmi řízené komunikaci, jak ukazuje obrázek 4-19. Tento mechanismus publikování/přihlášení k odběru není výhradně pro architektury mikroslužby. Je podobně jako [ohraničenou kontexty](http://martinfowler.com/bliki/BoundedContext.html) v DDD musí komunikovat, nebo jako rozšířit aktualizace z databáze zápis do čtení databáze v [příkazů a dotazů odpovědnost oddělení (CQRS)](http://martinfowler.com/bliki/CQRS.html)architektura vzor. Cílem je mít konzistence typu případné mezi více zdrojů dat napříč distribuovaného systému.
+Důležité je, že můžete chtít komunikovat s více mikroslužeb, která se připojila ke stejné události. V takovém případě můžete publikovat/odebírat zasílání zpráv na základě událostmi řízené komunikaci, jak ukazuje obrázek 4-19. Tento mechanismus publikování/přihlášení k odběru není výhradně pro architektury mikroslužby. Je podobně jako [ohraničenou kontexty](https://martinfowler.com/bliki/BoundedContext.html) v DDD musí komunikovat, nebo jako rozšířit aktualizace z databáze zápis do čtení databáze v [příkazů a dotazů odpovědnost oddělení (CQRS)](https://martinfowler.com/bliki/CQRS.html)architektura vzor. Cílem je mít konzistence typu případné mezi více zdrojů dat napříč distribuovaného systému.
 
 ![](./media/image19.png)
 
@@ -81,7 +81,7 @@ Výzvy při implementaci architekturu událostmi řízené napříč více mikro
 
 -   Použití transakcí (DTC na základě) fronty jako služby MSMQ. (Je to ale starší verze přístup.)
 
--   Pomocí [transakce protokolu dolování](http://www.scoop.it/t/sql-server-transaction-log-mining).
+-   Pomocí [transakce protokolu dolování](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
 -   Pomocí úplného [Sourcing událostí](https://msdn.microsoft.com/library/dn589792.aspx) vzor.
 
@@ -91,25 +91,25 @@ Další témata vzít v úvahu při použití asynchronní komunikaci jsou zprá
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Event Driven Messaging**
-    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **Řízené zasílání zpráv událostí**
+    [*http://soapatterns.org/design\_vzory/událost\_řízené\_zasílání zpráv*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **Publish/Subscribe Channel**
+-   **Publikování a přihlášení k odběru kanálu**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **Udi Dahan. Clarified CQRS**
+-   **Udi Dahan. Vyčištěné CQRS**
     [*http://udidahan.com/2009/12/09/clarified-cqrs/*](http://udidahan.com/2009/12/09/clarified-cqrs/)
 
--   **Příkaz a dotazování odpovědnost oddělení (CQRS)**
+-   **Příkaz a dotaz odpovědnost oddělení (CQRS)**
     [*https://docs.microsoft.com/azure/architecture/patterns/cqrs*](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 
--   **Communicating Between Bounded Contexts**
+-   **Komunikace mezi ohraničené kontexty**
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **Konzistence typu případné**
     [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **Jimmy Bogard. Refactoring Towards Resilience: Evaluating Coupling**
+-   **Jimmy Bogard. Refaktoring směrem odolnost: Vyhodnocení párování**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
 

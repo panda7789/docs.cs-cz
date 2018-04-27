@@ -1,12 +1,13 @@
 ---
-title: "Dotaz na službu Data (služby WCF Data Services)"
-ms.custom: 
+title: Dotaz na službu Data (služby WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 976f1e4d8a149f8104325fd5d006d245afee04a9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 35370b5d4757d16c766499c1f3ea8254c2d90116
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotaz na službu Data (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny umožňuje spouštět dotazy na data služby pomocí známých [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] programování způsoby, včetně použití integrovaného dotazu jazyka (LINQ). Klientská knihovna překládá dotazu, která je definována v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třída do zprávy požadavku HTTP GET. Knihovny obdrží zprávu odpovědi a převede jej do instance třídy služeb dat klienta. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.  
@@ -39,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Když výsledky jsou uvedené implicitně, jako například:  
   
-    -   Pokud vlastnost <xref:System.Data.Services.Client.DataServiceContext> představující a je uvedené sady entit, například během `foreach` (C#) nebo `For Each` ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]) smyčky.  
+    -   Pokud vlastnost <xref:System.Data.Services.Client.DataServiceContext> představující a je uvedené sady entit, například během `foreach` (C#) nebo `For Each` smyčky (Visual Basic).  
   
     -   Když je přiřazen dotaz `List` kolekce.  
   
@@ -74,7 +76,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
  Další informace najdete v tématu [LINQ aspekty](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md).  
   
 ## <a name="adding-query-options"></a>Přidání možnosti dotazu  
- Data služby dotazy podporu všech dotaz možnostech, které [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]s poskytuje. Volání <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda připojit možností dotazu <xref:System.Data.Services.Client.DataServiceQuery%601> instance. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>vrátí novou <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní původní dotaz ale s nový dotaz možnost set. Následující dotaz, při spuštění, vrátí `Orders` , jsou filtrovány podle `Freight` hodnotu a seřazené podle `OrderID`, sestupně:  
+ Data služby dotazy podporu všech dotaz možnostech, které [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]s poskytuje. Volání <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda připojit možností dotazu <xref:System.Data.Services.Client.DataServiceQuery%601> instance. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> vrátí novou <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní původní dotaz ale s nový dotaz možnost set. Následující dotaz, při spuštění, vrátí `Orders` , jsou filtrovány podle `Freight` hodnotu a seřazené podle `OrderID`, sestupně:  
   
  [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptionsspecific)]  
  [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptionsspecific)]  
@@ -110,17 +112,17 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
  <xref:System.Data.Services.Client.QueryOperationResponse%601> Má také následující členy, které vám umožní přístup k dalším informacím o výsledku dotazu:  
   
--   <xref:System.Data.Services.Client.OperationResponse.Error%2A>-Získá chybu vyvolané operace, pokud žádné došlo k chybě.  
+-   <xref:System.Data.Services.Client.OperationResponse.Error%2A> -Získá chybu vyvolané operace, pokud žádné došlo k chybě.  
   
--   <xref:System.Data.Services.Client.OperationResponse.Headers%2A>-obsahuje kolekci hlaviček odpovědí HTTP přidružený k odpovědi na dotaz.  
+-   <xref:System.Data.Services.Client.OperationResponse.Headers%2A> -obsahuje kolekci hlaviček odpovědí HTTP přidružený k odpovědi na dotaz.  
   
--   <xref:System.Data.Services.Client.QueryOperationResponse.Query%2A>-Získá původní <xref:System.Data.Services.Client.DataServiceQuery%601> generovaný <xref:System.Data.Services.Client.QueryOperationResponse%601>.  
+-   <xref:System.Data.Services.Client.QueryOperationResponse.Query%2A> -Získá původní <xref:System.Data.Services.Client.DataServiceQuery%601> generovaný <xref:System.Data.Services.Client.QueryOperationResponse%601>.  
   
--   <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A>-Získá kód odpovědi HTTP pro odpověď v dotazu.  
+-   <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A> -Získá kód odpovědi HTTP pro odpověď v dotazu.  
   
--   <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A>-získá celkový počet entit v entitě nastavit, kdy <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> byla volána metoda <xref:System.Data.Services.Client.DataServiceQuery%601>.  
+-   <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> -získá celkový počet entit v entitě nastavit, kdy <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> byla volána metoda <xref:System.Data.Services.Client.DataServiceQuery%601>.  
   
--   <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A>-Vrátí <xref:System.Data.Services.Client.DataServiceQueryContinuation> objekt, který obsahuje identifikátor URI další stránky výsledků.  
+-   <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> -Vrátí <xref:System.Data.Services.Client.DataServiceQueryContinuation> objekt, který obsahuje identifikátor URI další stránky výsledků.  
   
  Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pouze vrátí data, která je explicitně vybrána v dotazu identifikátoru URI. To vám dává možnost explicitně načíst další data ze služby data, když je to potřeba. Žádost o posílá službu data pokaždé, když explicitně načíst data ze služby data. Data, která je možné explicitně načíst zahrnuje entit v relaci, data stránkové odpovědi a binární datové proudy.  
   

@@ -1,7 +1,7 @@
 ---
-title: "Data suverenity za mikroslužbu"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Data suverenity za mikroslužbu"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Data suverenity za mikroslužbu
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Data suverenity za mikroslužbu
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 76265490d7cb0d53686b43b88cb797cf887d578a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f5d782a70123a66c1579a64a37bc612ccda9c1a4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="data-sovereignty-per-microservice"></a>Data suverenity za mikroslužbu
 
@@ -37,13 +37,13 @@ Monolitický aplikace se obvykle jedné relační databáze má dvě důležité
 
 Přístup k datům stane však mnohem složitější, když přesouváte architektura mikroslužeb. Ale i v případě, že transakce ACID můžete nebo by měl použít v rámci mikroslužbu nebo ohraničenou kontextu, data vlastníkem jednotlivých mikroslužbu soukromý této mikroslužbu a můžete přistupovat pouze prostřednictvím jejího rozhraní API mikroslužby. Zapouzdření data zajišťuje, že mikroslužeb jsou volně vázány a můžete rozvíjet nezávisle na sobě. Pokud více služeb byly přístup ke stejným datům, aktualizace schématu vyžadovat koordinované aktualizace ke všem službám. Tím by došlo k přerušení nezávislé životního cyklu mikroslužby. Ale distribuované datové struktury znamená, že nemůžete provádět jednu transakci ACID napříč mikroslužeb. To zase znamená, že je nutné použít konzistence typu případné při obchodní proces zahrnuje více mikroslužeb. Toto je mnohem obtížnější než jednoduché spojení SQL; implementace Podobně řadu dalších funkcí relační databáze nejsou k dispozici napříč více mikroslužeb.
 
-Budete i pokračovat, jiný mikroslužeb často používají různé *typy* databází. Moderní aplikace úložiště a proces různé druhy dat a relační databáze není vždy nejlepší volbou. Pro některé případy použití, mohou mít pohodlnější datový model a nabízí lepší výkon a škálovatelnost než databázi SQL, jako je SQL Server nebo Azure SQL Database databáze NoSQL, jako je Azure DocumentDB nebo MongoDB. V ostatních případech relační databáze je stále nejlepší metodou. Proto na základě mikroslužeb aplikace často používají směs databáze SQL a NoSQL, která se někdy nazývá [polyglot trvalost](http://martinfowler.com/bliki/PolyglotPersistence.html) přístup.
+Budete i pokračovat, jiný mikroslužeb často používají různé *typy* databází. Moderní aplikace úložiště a proces různé druhy dat a relační databáze není vždy nejlepší volbou. Pro některé případy použití, mohou mít pohodlnější datový model a nabízí lepší výkon a škálovatelnost než databázi SQL, jako je SQL Server nebo Azure SQL Database databáze NoSQL, jako je Azure DocumentDB nebo MongoDB. V ostatních případech relační databáze je stále nejlepší metodou. Proto na základě mikroslužeb aplikace často používají směs databáze SQL a NoSQL, která se někdy nazývá [polyglot trvalost](https://martinfowler.com/bliki/PolyglotPersistence.html) přístup.
 
 Oddílů, trvalé polyglot architektura pro úložiště dat má mnoho výhod. Patří sem volně párované služby a lepší výkon, škálovatelnost, náklady a možnosti správy. Ho může způsobovat některé běžné problémy správy distribuovaných datech jako vysvětlíme v "[identifikaci hranice modelu domény](#identifying-domain-model-boundaries-for-each-microservice)" dál v této kapitole.
 
 ## <a name="the-relationship-between-microservices-and-the-bounded-context-pattern"></a>Vztah mezi mikroslužeb a vzor ohraničenou kontextu
 
-Koncept mikroslužbu je odvozena z [ohraničenou kontextu (BC) vzor](http://martinfowler.com/bliki/BoundedContext.html) v [řízené domény návrhu (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). DDD se zabývá velké modely rozdělením je na víc BCs a probíhá explicitní o jejich hranice. Každý BC musí mít svůj vlastní modelu a databázi. Podobně každý mikroslužbu vlastní související data. Kromě toho každý BC obvykle má svou vlastní [všudypřítomný jazyk](http://martinfowler.com/bliki/UbiquitousLanguage.html) ke komunikaci mezi vývojáři softwaru a odborníky domény.
+Koncept mikroslužbu je odvozena z [ohraničenou kontextu (BC) vzor](https://martinfowler.com/bliki/BoundedContext.html) v [řízené domény návrhu (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). DDD se zabývá velké modely rozdělením je na víc BCs a probíhá explicitní o jejich hranice. Každý BC musí mít svůj vlastní modelu a databázi. Podobně každý mikroslužbu vlastní související data. Kromě toho každý BC obvykle má svou vlastní [všudypřítomný jazyk](https://martinfowler.com/bliki/UbiquitousLanguage.html) ke komunikaci mezi vývojáři softwaru a odborníky domény.
 
 Tyto podmínky (hlavně domény entity) v jazyce všudypřítomný může mít odlišné názvy v různých kontextech ohraničenou, i když jiné domény entity sdílejí stejnou identitu (to znamená, jedinečné ID sloužící k načtení entity úložiště). Například v kontextu, ohraničenou profilu uživatele, může entita domény uživatele sdílet identity s entita domény kupujících v řazení ohraničenou kontextu.
 
@@ -56,15 +56,15 @@ Výhody DDD z mikroslužeb získáním skutečné hranice ve formě distribuovan
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Jan Ryšánková. Vzor: Databáze pro službu**
-    [*http://microservices.io/patterns/data/database-per-service.html*](http://microservices.io/patterns/data/database-per-service.html)
+    [*https://microservices.io/patterns/data/database-per-service.html*](https://microservices.io/patterns/data/database-per-service.html)
 
 -   **Martin Fowler. BoundedContext**
-    [*http://martinfowler.com/bliki/BoundedContext.html*](http://martinfowler.com/bliki/BoundedContext.html)
+    [*https://martinfowler.com/bliki/BoundedContext.html*](https://martinfowler.com/bliki/BoundedContext.html)
 
 -   **Martin Fowler. PolyglotPersistence**
-    [*http://martinfowler.com/bliki/PolyglotPersistence.html*](http://martinfowler.com/bliki/PolyglotPersistence.html)
+    [*https://martinfowler.com/bliki/PolyglotPersistence.html*](https://martinfowler.com/bliki/PolyglotPersistence.html)
 
--   **Alberto Brandolini. Strategické domény řízené návrhu pomocí kontextu mapování**
+-   **Alberto Brandolini. Strategické domény řízené návrh s mapování kontextu**
     [*https://www.infoq.com/articles/ddd-contextmapping*](https://www.infoq.com/articles/ddd-contextmapping)
 
 

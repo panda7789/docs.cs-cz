@@ -1,12 +1,13 @@
 ---
-title: "Delegace a zosobnění se službou WCF"
-ms.custom: 
+title: Delegace a zosobnění se službou WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-caps.latest.revision: "40"
+caps.latest.revision: 40
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6319a9793698e12a984c875670d71b2cbb0b00ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5c1acfdfdbac2660fd4de7ec391c94b39890f669
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžný postup, který služby použít k omezení klientský přístup k prostředkům doména služby. Prostředky služby domény může být buď prostředky počítače, jako je například místní soubory (zosobnění), nebo prostředku na jiném počítači, například do sdílené složky (delegování). Ukázkovou aplikaci, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění naleznete v části [postupy: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -38,19 +40,19 @@ ms.lasthandoff: 12/22/2017
  Zosobnění a delegování nutné, aby klient identitu systému Windows. Pokud klient nemá identitu systému Windows, je k dispozici pouze možnost tok identity klienta ke službě druhý.  
   
 ## <a name="impersonation-basics"></a>Základní informace o zosobnění  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]podporuje zosobnění pro celou řadu pověření klienta. Toto téma popisuje podporu modelu služby pro zosobnění volajícího během provádění metody služby. Popsány i jsou běžné scénáře nasazení zahrnující zosobnění a zabezpečení protokolu SOAP a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] možnosti v těchto scénářích.  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporuje zosobnění pro celou řadu pověření klienta. Toto téma popisuje podporu modelu služby pro zosobnění volajícího během provádění metody služby. Popsány i jsou běžné scénáře nasazení zahrnující zosobnění a zabezpečení protokolu SOAP a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] možnosti v těchto scénářích.  
   
  Toto téma se zaměřuje na zosobnění a delegování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] při použití protokolu SOAP zabezpečení. Můžete také použít zosobnění a delegování s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] při použití zabezpečení přenosu, jak je popsáno v [pomocí zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md).  
   
 ## <a name="two-methods"></a>Dvě metody  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Zabezpečení protokolu SOAP má dvě odlišné metody pro provádění zosobnění. Metoda použitá závisí na vazby. Jeden je zosobnění z tokenu Windows získané z rozhraní SSPI (Security Support Provider Interface) nebo protokolu Kerberos ověřování, které jsou pak uloženy v mezipaměti služby. Druhá je zosobnění z tokenu Windows získané z rozšíření protokolu Kerberos, se nazývají *Service-for-User* (S4U).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Zabezpečení protokolu SOAP má dvě odlišné metody pro provádění zosobnění. Metoda použitá závisí na vazby. Jeden je zosobnění z tokenu Windows získané z rozhraní SSPI (Security Support Provider Interface) nebo protokolu Kerberos ověřování, které jsou pak uloženy v mezipaměti služby. Druhá je zosobnění z tokenu Windows získané z rozšíření protokolu Kerberos, se nazývají *Service-for-User* (S4U).  
   
 ### <a name="cached-token-impersonation"></a>V mezipaměti Token zosobnění  
  Můžete provádět v mezipaměti token zosobnění s následujícími službami:  
   
 -   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> s pověření klienta systému Windows.  
   
--   <xref:System.ServiceModel.BasicHttpBinding>s <xref:System.ServiceModel.BasicHttpSecurityMode> nastavte na <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> přihlašovacích údajů nebo standardní vazby kde klient uvede název přihlašovací údaje uživatele, který službu můžete namapovat platný účet systému Windows.  
+-   <xref:System.ServiceModel.BasicHttpBinding> s <xref:System.ServiceModel.BasicHttpSecurityMode> nastavte na <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> přihlašovacích údajů nebo standardní vazby kde klient uvede název přihlašovací údaje uživatele, který službu můžete namapovat platný účet systému Windows.  
   
 -   Všechny <xref:System.ServiceModel.Channels.CustomBinding> používající pověření klienta systému Windows s `requireCancellation` nastavena na `true`. (Vlastnost je k dispozici na následující třídy: <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>, <xref:System.ServiceModel.Security.Tokens.SslSecurityTokenParameters>, a <xref:System.ServiceModel.Security.Tokens.SspiSecurityTokenParameters>.) Pokud se v vazba používá zabezpečené konverzaci, musí mít rovněž `requireCancellation` vlastnost nastavena na hodnotu `true`.  
   
@@ -68,10 +70,10 @@ ms.lasthandoff: 12/22/2017
  V rozsahu, ke které může služba zosobnit klienta závisí na oprávnění, které obsahuje účet služby, když se ho pokusí zosobnění, typ zosobnění použít a může být v rozsahu zosobnění, které umožňuje klientovi.  
   
 > [!NOTE]
->  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), když zabezpečené relace se naváže stavová kontext zabezpečení nelze zosobnit klienta tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Nicméně, pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a že stránky je hostován v [!INCLUDE[iis601](../../../../includes/iis601-md.md)] nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací pomocí tokenu kontextu zabezpečení bezstavové (SCT). Ale pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a zabezpečených relací s stavová SCTs se používají, nelze jej zosobnit klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí stavová SCTs v zabezpečené relaci, najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), když zabezpečené relace se naváže stavová kontext zabezpečení nelze zosobnit klienta tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Nicméně, pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a že stránky je hostován v [!INCLUDE[iis601](../../../../includes/iis601-md.md)] nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací pomocí tokenu kontextu zabezpečení bezstavové (SCT). Ale pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a zabezpečených relací s stavová SCTs se používají, nelze jej zosobnit klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí stavová SCTs v zabezpečené relaci, najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
 ## <a name="impersonation-in-a-service-method-declarative-model"></a>Zosobnění v metodě služby: deklarativní Model  
- Většina scénářů zosobnění zahrnovat spuštění metody služby v kontextu volajícího. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]nabízí funkci zosobnění, které usnadňuje to provedete tím, že se uživateli zadat požadavek zosobnění v <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. Například v následujícím kódu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury zosobňuje volající před provedením `Hello` metoda. Jakýkoli pokus o přístup k prostředkům nativní uvnitř `Hello` metoda úspěšné pouze v případě, že seznam řízení přístupu (ACL) prostředku umožňuje volajícímu přístup oprávnění. Chcete-li povolit zosobnění, nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost na jednu z <xref:System.ServiceModel.ImpersonationOption> hodnot výčtu, buď <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu.  
+ Většina scénářů zosobnění zahrnovat spuštění metody služby v kontextu volajícího. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí funkci zosobnění, které usnadňuje to provedete tím, že se uživateli zadat požadavek zosobnění v <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. Například v následujícím kódu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury zosobňuje volající před provedením `Hello` metoda. Jakýkoli pokus o přístup k prostředkům nativní uvnitř `Hello` metoda úspěšné pouze v případě, že seznam řízení přístupu (ACL) prostředku umožňuje volajícímu přístup oprávnění. Chcete-li povolit zosobnění, nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost na jednu z <xref:System.ServiceModel.ImpersonationOption> hodnot výčtu, buď <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu.  
   
 > [!NOTE]
 >  Když služba má vyšší pověření než vzdáleného klienta, přihlašovací údaje služby se použijí, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.Allowed>. To znamená pokud uživatel nízkými oprávněními poskytuje svoje přihlašovací údaje, vyšší úrovní oprávnění služby provede metodu pomocí přihlašovacích údajů služby a mohou používat prostředky, které uživatel nízkými oprávněními jinak nebude moci používat.  
@@ -82,13 +84,13 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktury může zosobnit volající pouze v případě, že je volající ověření pomocí přihlašovacích údajů, které lze mapovat na uživatelský účet systému Windows. Pokud služba je nakonfigurována pro ověřování pomocí přihlašovacích údajů, který nejde mapovat na účet systému Windows, není služba metodu provést.  
   
 > [!NOTE]
->  Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)], zosobnění se nezdaří, pokud stateful, SCT je vytvořen, což vede <xref:System.InvalidOperationException>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
+>  Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)], zosobnění se nezdaří, pokud stateful, SCT je vytvořen, což vede <xref:System.InvalidOperationException>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
 ## <a name="impersonation-in-a-service-method-imperative-model"></a>Zosobnění v metodě služby: imperativní modelu  
  Volající někdy nemusí zosobnit metodu celé služby pro funkce, ale pouze část ho. V takovém případě získat Windows identitu volajícího uvnitř metody služby a imperativní provést zosobnění. To provedete pomocí <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost <xref:System.ServiceModel.ServiceSecurityContext> vrátit instanci <xref:System.Security.Principal.WindowsIdentity> třídy a volání <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metoda před použitím instance.  
   
 > [!NOTE]
->  Nezapomeňte použít [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] `Using` příkaz nebo jazyka C# `using` příkaz a automaticky vracet akce zosobnění. Pokud použijete příkaz nebo pokud používáte jiné než programovací jazyk [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] nebo C#, je nutné vrátit úroveň zosobnění. Selhání k tomu můžete tvoří základ pro odepření služby a zvýšení úrovně oprávnění útoky.  
+>  Je nutné používat Visual Basicu`Using` příkaz nebo jazyka C# `using` příkaz a automaticky vracet akce zosobnění. Pokud použijete příkaz nebo pokud používáte programovací jazyk než Visual Basic a C#, je nutné vrátit úroveň zosobnění. Selhání k tomu můžete tvoří základ pro odepření služby a zvýšení úrovně oprávnění útoky.  
   
  [!code-csharp[c_ImpersonationAndDelegation#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#2)]
  [!code-vb[c_ImpersonationAndDelegation#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#2)]  
@@ -103,10 +105,10 @@ ms.lasthandoff: 12/22/2017
   
 |`ImpersonationOption`|`ImpersonateCallerForAllServiceOperations`|Chování|  
 |---------------------------|------------------------------------------------|--------------|  
-|Požadováno|není k dispozici|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zosobňuje volající|  
-|Povoleno|false|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]není zosobnit volající|  
-|Povoleno|true|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zosobňuje volající|  
-|NotAllowed|false|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]není zosobnit volající|  
+|Požadováno|není k dispozici|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zosobňuje volající|  
+|Povoleno|false|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] není zosobnit volající|  
+|Povoleno|true|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zosobňuje volající|  
+|NotAllowed|false|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] není zosobnit volající|  
 |NotAllowed|true|Povoleny. ( <xref:System.InvalidOperationException> Je vyvolána výjimka.)|  
   
 ## <a name="impersonation-level-obtained-from-windows-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získané z pověření systému Windows a uložili do mezipaměti Token zosobnění  
@@ -122,7 +124,7 @@ ms.lasthandoff: 12/22/2017
   
  Následující tabulka určuje úroveň zosobnění, které služba získává při zosobňování z token v mezipaměti.  
   
-|`AllowedImpersonationLevel`Hodnota|Služba má`SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti`ImpersonationLevel`|  
+|`AllowedImpersonationLevel` Hodnota|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |Anonymní|Ano|není k dispozici|Zosobnění|  
 |Anonymní|Ne|není k dispozici|Identifikace|  
@@ -136,7 +138,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získané z název pověření uživatele a uloží do mezipaměti Token zosobnění  
  Předáním službu jeho uživatelské jméno a heslo, klient umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se přihlásit jako tento uživatel, který je ekvivalentní nastavení `AllowedImpersonationLevel` vlastnost <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. ( `AllowedImpersonationLevel` Je k dispozici na <xref:System.ServiceModel.Security.WindowsClientCredential> a <xref:System.ServiceModel.Security.HttpDigestClientCredential> třídy.) Následující tabulka obsahuje zosobnění úroveň získat přihlašovací údaje uživatele název přijetí služby.  
   
-|`AllowedImpersonationLevel`|Služba má`SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti`ImpersonationLevel`|  
+|`AllowedImpersonationLevel`|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |není k dispozici|Ano|Ano|Delegování|  
 |není k dispozici|Ano|Ne|Zosobnění|  
@@ -144,7 +146,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Úroveň zosobnění získaný na základě S4U zosobnění  
   
-|Služba má`SeTcbPrivilege`|Služba má`SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti`ImpersonationLevel`|  
+|Služba má `SeTcbPrivilege`|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |Ano|Ano|není k dispozici|Zosobnění|  
 |Ano|Ne|není k dispozici|Identifikace|  

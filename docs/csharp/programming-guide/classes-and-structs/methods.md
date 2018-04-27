@@ -1,5 +1,5 @@
 ---
-title: "Metody (Průvodce programováním v C#)"
+title: Metody (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-caps.latest.revision: 
+caps.latest.revision: 41
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5390ee08ddd0f4725bb42bbdf7240bb99bd25301
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: dad1be88e39b708d34f454875e2cfb3ec100c430
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazy provádět volání metody a zadání argumentů požadovaná metoda. V jazyce C# každé spuštění instrukce se provádí v kontextu metody. Hlavní metoda je vstupní bod pro každou aplikaci C# a je volána metodou common language runtime (CLR) při spuštění programu.  
@@ -64,7 +64,7 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že p
 ## <a name="return-values"></a>Návratové hodnoty  
 Metody můžete vrátit hodnotu volajícímu. Pokud je návratový typ, není typu uvedené před název metody `void`, metoda může vrátit hodnotu pomocí `return` – klíčové slovo. Příkaz s `return` – klíčové slovo, za nímž následuje hodnotu, která odpovídá návratový typ, vrátí tuto hodnotu Metoda volajícímu. 
 
-Hodnota může být vrácen volajícímu hodnotu nebo, počínaje C# 7, [odkazem](ref-returns.md). Hodnoty jsou vráceny volajícímu odkazem, pokud `ref` – klíčové slovo se používá v podpis metody a postupuje každý `return` – klíčové slovo. Například následující příkaz podpisu a vraťte se metoda znamenat, že metoda vrátí názvy proměnných `estDistance` odkazem na volajícího.
+Hodnota může být vrácen volajícímu hodnotu nebo, počínaje C# 7.0, [odkazem](ref-returns.md). Hodnoty jsou vráceny volajícímu odkazem, pokud `ref` – klíčové slovo se používá v podpis metody a postupuje každý `return` – klíčové slovo. Například následující příkaz podpisu a vraťte se metoda znamenat, že metoda vrátí názvy proměnných `estDistance` odkazem na volajícího.
 
 ```csharp
 public ref double GetEstimatedDistance()

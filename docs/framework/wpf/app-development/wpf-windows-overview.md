@@ -1,13 +1,13 @@
 ---
-title: "Přehled WPF Windows"
-ms.custom: 
+title: Přehled WPF Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -36,17 +36,17 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-caps.latest.revision: 
+caps.latest.revision: 65
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c176f08904bac8e9c3877977c1e52afb57d5daca
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: ae454e54abc2c8200f33bdb0bc5537806c824074
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé komunikovat s [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] samostatné aplikace prostřednictvím služby windows. Primárním účelem okno je jako hostitele obsahu, který vizualizuje data a umožňuje uživatelům interakci s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace zadat své vlastní windows pomocí <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před pokrývajících základní informace o vytváření a správa systému windows v samostatné aplikace.  
@@ -282,7 +282,7 @@ Uživatelé komunikovat s [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptl
   
  Během časového období je možné explicitně uzavřít prostřednictvím mechanismy, které poskytuje v oblastech jiného počítače než klientského a klienta, okno lze také implicitně uzavřít v důsledku chování v dalších částí aplikace nebo [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], včetně následujících:  
   
--   Uživatel odhlásí nebo ukončí [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)].  
+-   Uživatel odhlásí nebo ukončí systému Windows.  
   
 -   Zavře vlastníka časového období (viz <xref:System.Windows.Window.Owner%2A>).  
   
@@ -315,7 +315,7 @@ Uživatelé komunikovat s [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptl
   
 -   <xref:System.Windows.WindowStartupLocation.Manual>  
   
- Pokud při spuštění je zadán jako <xref:System.Windows.WindowStartupLocation.Manual>a <xref:System.Windows.Window.Left%2A> a <xref:System.Windows.Window.Top%2A> nebyly nastaveny vlastnosti, <xref:System.Windows.Window> požádá [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] pro umístění, do kterého se zobrazí v.  
+ Pokud při spuštění je zadán jako <xref:System.Windows.WindowStartupLocation.Manual>a <xref:System.Windows.Window.Left%2A> a <xref:System.Windows.Window.Top%2A> nebyly nastaveny vlastnosti, <xref:System.Windows.Window> požádá Windows pro umístění se objeví v.  
   
 <a name="Topmost_Windows_and_Z_Order"></a>   
 ### <a name="topmost-windows-and-z-order"></a>Nejhornější Windows a pořadí Z-Order  

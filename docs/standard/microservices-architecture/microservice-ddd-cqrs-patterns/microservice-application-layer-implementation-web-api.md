@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bdb080369c26a3d7ffab97f93ba3419d6bd84754
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: b960636863ae1dcb0c955d96875d499b54b04105
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
 
@@ -158,7 +158,7 @@ public class ApplicationModule : Autofac.Module
 }
 ```
 
-Proces registrace a Koncepty jsou velmi podobně jako typy můžete zaregistrovat pomocí předdefinovaných iOS kontejneru ASP.NET Core, ale syntaxe při použití Autofac je trochu liší.
+Proces registrace a Koncepty jsou velmi podobně jako typy můžete zaregistrovat s integrovanou kontejner IoC jádro ASP.NET, ale syntaxe při použití Autofac je trochu liší.
 
 V příkladu kódu je zaregistrován abstrakci IOrderRepository společně s třída implementace OrderRepository. To znamená, že vždy, když konstruktor je deklarace závislost prostřednictvím abstrakce IOrderRepository nebo rozhraní, kontejner IoC bude instance třídy OrderRepository vložit.
 
@@ -869,7 +869,7 @@ Podobným způsobem může implementovat jiného chování pro další aspekty n
 
 ##### <a name="fluent-validation"></a>Fluent ověření
 
--   **Jeremy Skinner. FluentValidation.** Úložiště GitHub.
+-   **Jirka Skinner. FluentValidation.** Úložiště GitHub.
     [*https://github.com/JeremySkinner/FluentValidation*](https://github.com/JeremySkinner/FluentValidation)
 
 >[!div class="step-by-step"]

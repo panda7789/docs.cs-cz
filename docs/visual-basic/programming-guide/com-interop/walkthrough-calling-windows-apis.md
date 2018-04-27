@@ -1,11 +1,12 @@
 ---
-title: "Návod: Volání rozhraní API systému Windows (Visual Basic)"
-ms.custom: 
+title: 'Návod: Volání rozhraní API systému Windows (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - DLLs, calling
@@ -17,23 +18,23 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d494ad0f8bd4eb0dac57de214064fd2d208011ff
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 34bfb732e2d99b259811573a427ae66628c7fc3a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API systému Windows (Visual Basic)
 Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete použít je k provádění úloh, když je k zápisu ekvivalentní postupy. Například systém Windows nabízí funkce s názvem `FlashWindowEx` , umožňuje provádět alternativní mezi světlým a tmavým odstínech záhlaví pro aplikaci.  
   
  Výhodou použití rozhraní API systému Windows ve vašem kódu je v okamžiku vývoje si mohou uložit, protože obsahují desítek užitečné funkce, které jsou již zapsány a čekání, který se má použít. Nevýhodou je, že rozhraní API systému Windows může být složité fungovat s a nepřijímá, když dojde k potížím.  
   
- Rozhraní API systému Windows představují zvláštní kategorii interoperability. Rozhraní API systému Windows nepoužívejte spravovaného kódu, nemají předdefinované knihovny typů a použít datové typy, které se liší od těch, které používá pomocí sady Visual Studio. Z důvodu těchto rozdílů a protože rozhraní API systému Windows nejsou objekty modelu COM, interoperabilita s rozhraní API systému Windows a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] se provádí pomocí platformy vyvolání, nebo PInvoke. Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespravovaných funkcí, které jsou implementované v knihovnách DLL. Další informace najdete v tématu [využívání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md). Můžete použít PInvoke v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pomocí `Declare` příkaz nebo použití `DllImport` atribut procedury.  
+ Rozhraní API systému Windows představují zvláštní kategorii interoperability. Rozhraní API systému Windows nepoužívejte spravovaného kódu, nemají předdefinované knihovny typů a použít datové typy, které se liší od těch, které používá pomocí sady Visual Studio. Z důvodu těchto rozdílů a protože rozhraní API systému Windows nejsou objekty modelu COM, interoperabilita s rozhraní API systému Windows a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] se provádí pomocí platformy vyvolání, nebo PInvoke. Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespravovaných funkcí, které jsou implementované v knihovnách DLL. Další informace najdete v tématu [využívání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md). Můžete použít PInvoke v jazyce Visual Basic pomocí `Declare` příkaz nebo použití `DllImport` atribut procedury.  
   
- Volání rozhraní API systému Windows byly důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] programování v minulosti, ale jsou zřídka nezbytné s Visual Basic .NET. Pokud je to možné, používejte spravovaného kódu z [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k provádění úloh, namísto volání rozhraní API systému Windows. Tento názorný postup obsahuje informace pro tyto situace, ve které pomocí rozhraní API systému Windows je potřeba.  
+ Volání rozhraní API systému Windows byly důležitou součástí jazyka Visual Basic programování v minulosti, ale jsou zřídka nezbytné s Visual Basic .NET. Pokud je to možné, používejte spravovaného kódu z [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k provádění úloh, namísto volání rozhraní API systému Windows. Tento názorný postup obsahuje informace pro tyto situace, ve které pomocí rozhraní API systému Windows je potřeba.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -49,7 +50,7 @@ Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou souč
   
 2.  Otevřete nový projekt aplikace Windows tak, že kliknete na **nový** na **soubor** nabídce a potom kliknutím na **projektu**. **Nový projekt** zobrazí se dialogové okno.  
   
-3.  Vyberte **aplikace Windows** ze seznamu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] šablony projektu. Zobrazí se nový projekt.  
+3.  Vyberte **aplikace Windows** ze seznamu šablon projektu jazyka Visual Basic. Zobrazí se nový projekt.  
   
 4.  Přidejte následující `Declare` funkce buď ke třídě nebo modul, ve které chcete použít knihovnu DLL:  
   
@@ -66,13 +67,13 @@ Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou souč
   
  Zadejte `Lib` – klíčové slovo, za nímž následuje název a umístění knihovny DLL, která obsahuje funkce, které jsou volání. Není nutné zadat cestu pro soubory uložené v adresáři systému Windows.  
   
- Použití `Alias` – klíčové slovo, pokud není platný název funkce volání [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] název procedury, nebo koliduje s názvem jiných položek v aplikaci. `Alias`označuje true název funkce volána.  
+ Použití `Alias` – klíčové slovo název funkce při volání není platný název procedury jazyka Visual Basic nebo je v konfliktu s názvem jiných položek v aplikaci. `Alias` označuje true název funkce volána.  
   
 #### <a name="argument-and-data-type-declarations"></a>Argument a deklarace typu dat  
- Deklarujte argumenty a jejich datové typy. Tuto část může být náročné, protože typy dat, které používá Windows nemusí odpovídat Visual Studio datové typy. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]nemá mnoho činností, které pro vás převodem argumenty na kompatibilní datové typy, procesu označovaného jako *zařazování*. Můžete explicitně řídit, jak jsou argumenty zařazené pomocí <xref:System.Runtime.InteropServices.MarshalAsAttribute> definovaný v atributu <xref:System.Runtime.InteropServices> oboru názvů.  
+ Deklarujte argumenty a jejich datové typy. Tuto část může být náročné, protože typy dat, které používá Windows nemusí odpovídat Visual Studio datové typy. Visual Basic nepodporuje spoustu práce pro vás převodem argumenty na kompatibilní datové typy, procesu označovaného jako *zařazování*. Můžete explicitně řídit, jak jsou argumenty zařazené pomocí <xref:System.Runtime.InteropServices.MarshalAsAttribute> definovaný v atributu <xref:System.Runtime.InteropServices> oboru názvů.  
   
 > [!NOTE]
->  Předchozí verze [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] povolené deklarovat parametry `As Any`, tj. Tato data o všech datech typu může. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]vyžaduje, aby používal konkrétní datový typ pro všechny `Declare` příkazy.  
+>  Předchozí verze jazyka Visual Basic povolené deklarovat parametry `As Any`, tj. Tato data o všech datech typu může. Visual Basic vyžaduje použití určitého datového typu pro všechny `Declare` příkazy.  
   
 #### <a name="windows-api-constants"></a>Konstanty rozhraním API systému Windows  
  Některé argumenty jsou kombinace konstanty. Například `MessageBox` rozhraní API, které jsou uvedené v tomto návodu přijímá argument celé číslo názvem `Typ` která řídí, jak se zobrazí okno se zprávou. Číselná hodnota tyto konstanty můžete určit tak, že prověří `#define` příkazy v souboru WINUSER. Číselné hodnoty jsou obecně uvedené v šestnáctkové číslo, proto je vhodné k použití kalkulačky a přidejte je převést na decimal. Například, pokud chcete kombinovat konstanty pro styl vykřičníku `MB_ICONEXCLAMATION` 0x00000030 a Ano/žádné styl `MB_YESNO` 0x00000004, můžete přidat čísla a získání výsledku 0x00000034 nebo 52 decimal. I když používáte decimal výsledek přímo, je lepší deklarovat tyto hodnoty jako konstanty ve vaší aplikaci a zkombinovat pomocí `Or` operátor.  
@@ -100,7 +101,7 @@ Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou souč
 3.  Stisknutím klávesy F5 spusťte projekt. Do pole zpráva se zobrazí s oběma **Ano** a **ne** tlačítka odpovědi. Klikněte na některý.  
   
 #### <a name="data-marshaling"></a>Dat – zařazování  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]automaticky můžete použít datové typy parametry a návratové hodnoty pro volání rozhraní API systému Windows, ale převede `MarshalAs` atribut k explicitnímu zadání nespravované datové typy, které očekává rozhraní API. Další informace o zařazování spolupráce najdete v tématu [zařazování zprostředkovatel komunikace s objekty](../../../framework/interop/interop-marshaling.md).  
+ Visual Basic automaticky převede datové typy parametry a návratové hodnoty pro volání rozhraní API systému Windows, ale můžete použít `MarshalAs` atribut k explicitnímu zadání nespravované datové typy, které očekává rozhraní API. Další informace o zařazování spolupráce najdete v tématu [zařazování zprostředkovatel komunikace s objekty](../../../framework/interop/interop-marshaling.md).  
   
 ###### <a name="to-use-declare-and-marshalas-in-an-api-call"></a>Použití Declare a MarshalAs volání rozhraní API  
   
@@ -115,7 +116,7 @@ Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou souč
      [!code-vb[VbVbalrInterop#14](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_5.vb)]  
   
 ## <a name="api-calls-using-dllimport"></a>Volání rozhraní API pomocí příkazů DllImport  
- `DllImport` Atribut poskytuje druhý způsob, jak volat funkce v knihovnách DLL bez knihovny typů. `DllImport`zhruba odpovídá pomocí `Declare` příkaz ale nabízí větší kontrolu nad jak se označují jako funkce.  
+ `DllImport` Atribut poskytuje druhý způsob, jak volat funkce v knihovnách DLL bez knihovny typů. `DllImport` zhruba odpovídá pomocí `Declare` příkaz ale nabízí větší kontrolu nad jak se označují jako funkce.  
   
  Můžete použít `DllImport` s rozhraním API systému Windows pro většinu volá tak dlouho, dokud volání odkazuje na sdílenou (někdy nazývané *statické*) metoda. Metody, které vyžadují instance třídy nelze použít. Na rozdíl od `Declare` příkazy, `DllImport` volání nelze použít `MarshalAs` atribut.  
   
@@ -123,7 +124,7 @@ Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou souč
   
 1.  Otevřete nový projekt aplikace Windows tak, že kliknete na **nový** na **soubor** nabídce a potom kliknutím na **projektu**. **Nový projekt** zobrazí se dialogové okno.  
   
-2.  Vyberte **aplikace Windows** ze seznamu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] šablony projektu. Zobrazí se nový projekt.  
+2.  Vyberte **aplikace Windows** ze seznamu šablon projektu jazyka Visual Basic. Zobrazí se nový projekt.  
   
 3.  Přidání tlačítka s názvem `Button2` na formulář spuštění.  
   
@@ -158,8 +159,8 @@ Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou souč
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.InteropServices.DllImportAttribute>  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
- [Automaticky](../../../visual-basic/language-reference/modifiers/auto.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Auto](../../../visual-basic/language-reference/modifiers/auto.md)  
  [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
  [Vytváření prototypů ve spravovaném kódu](../../../framework/interop/creating-prototypes-in-managed-code.md)  

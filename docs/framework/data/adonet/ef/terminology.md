@@ -1,24 +1,26 @@
 ---
 title: Terminologie Entity Framework
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a2d55319b5463b2c9624fe22e7a16235c3d57614
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: cd85760e219e810c089ebe88c8295d79ebaf0944
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
 Toto téma definuje termíny často odkazuje v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Jsou uvedeny odkazy na související témata, kde je k dispozici další informace.  
@@ -48,14 +50,14 @@ Toto téma definuje termíny často odkazuje v [!INCLUDE[adonet_ef](../../../../
 |sada entit|Logický kontejner pro entity daný typ a jeho podtypech. Sad entit jsou namapované na tabulky v databázi.<br /><br /> Další informace najdete v tématu [Element EntitySet (CSDL)](http://msdn.microsoft.com/library/ec56db77-718d-4c0e-adc9-f1d33c896287) a [sady entit](../../../../../docs/framework/data/adonet/entity-set.md).|  
 |Entity SQL|Dialekt nezávislé na úložiště SQL, pracuje přímo s koncepční entity schémata a že podporuje konceptuálního modelu koncepty, jako je například dědičnosti a vztahy.<br /><br /> Další informace najdete v tématu [jazyk SQL Entity](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md).|  
 |Typ entity|A [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] třídu, která reprezentuje entitu definovaným v konceptuálním modelu. Typy entit může mít skalární hodnota, komplexní a navigační vlastnosti. Objekty jsou instance typů entit. Další informace najdete v tématu [práce s objekty](../../../../../docs/framework/data/adonet/ef/working-with-objects.md).|  
-|EntityType|Specifikace pro datový typ, který obsahuje klíč a pojmenovanou sadu vlastností a představuje položku nejvyšší úrovně v konceptuální model nebo model úložiště.<br /><br /> Další informace najdete v tématu [Element EntityType (CSDL)](http://msdn.microsoft.com/library/19562e9f-fd70-4b59-bc15-3e289cbb6054) a [typ entity](../../../../../docs/framework/data/adonet/entity-type.md).|  
+|Typ entity|Specifikace pro datový typ, který obsahuje klíč a pojmenovanou sadu vlastností a představuje položku nejvyšší úrovně v konceptuální model nebo model úložiště.<br /><br /> Další informace najdete v tématu [Element EntityType (CSDL)](http://msdn.microsoft.com/library/19562e9f-fd70-4b59-bc15-3e289cbb6054) a [typ entity](../../../../../docs/framework/data/adonet/entity-type.md).|  
 |explicitní načítání|Pokud objekty jsou vrácených dotazem, související objekty nebyly načteny ve stejnou dobu. Ve výchozím nastavení, že se načtou, dokud explicitně požadována pomocí `Load` metoda na navigační vlastnost.|  
 |přidružení cizího klíče|Přidružení mezi entitami, které je spravovat prostřednictvím vlastnosti cizího klíče.|  
 |Identifikace relace|Vztah, kde primární klíč objektu entity, která je součástí primární klíč závislé entity. V tento typ vztahu závislé entity nemůže existovat bez objektu entity.|  
 |nezávislá přidružení|Přidružení mezi entitami, které je reprezentována a sledovány objektem nezávislé.|  
 |klíč|Sada vlastností, nebo atribut typu entity, která určuje vlastnosti, které slouží k identifikaci jedinečné instance typu entity. Znázorněná na objektové vrstvě podle <xref:System.Data.EntityKey> třídy.<br /><br /> Další informace najdete v tématu [Element klíč (CSDL)](http://msdn.microsoft.com/library/0cdb1402-dbc7-4a04-a11e-5729cdf7431b) a [klíč entity](../../../../../docs/framework/data/adonet/entity-key.md).|  
 |opožděného načítání|Pokud objekty jsou vrácených dotazem, související objekty nebyly načteny ve stejnou dobu. Místo toho budou se automaticky načte při přístupu k navigační vlastnost.|  
-|[!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]|Syntaxe dotazu, která definuje sadu operátory dotazu, které umožňují přecházení přes filtr a projekce operations vyjádřeno v přímé a deklarativní způsob v [!INCLUDE[csprcs](../../../../../includes/csprcs-md.md)] a [!INCLUDE[vbprvb](../../../../../includes/vbprvb-md.md)].<br /><br /> Další informace najdete v tématu [technologie LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).|  
+|[!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]|Syntaxe dotazu, který definuje sadu operátory dotazu, které umožňují přecházení přes filtr a projekce operations vyjádřeno v přímé a deklarativní způsob v jazyce Visual C# a Visual Basic.<br /><br /> Další informace najdete v tématu [technologie LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).|  
 |mapování|Specifikace srovnávací mezi v konceptuálním modelu a položkami v modelu úložiště.<br /><br /> Další informace najdete v tématu [MSL specifikace](../../../../../docs/framework/data/adonet/ef/language-reference/msl-specification.md).|  
 |soubor .msl|Soubor XML, který obsahuje mapování mezi konceptuálním modelu i modelu úložiště, vyjádřené v MSL.|  
 |Mapping Specification Language (MSL)|Základě XML jazyk, který se používá k mapování položky definované v konceptuálním modelu k položkám v modelu úložiště.<br /><br /> Další informace najdete v tématu [MSL specifikace](../../../../../docs/framework/data/adonet/ef/language-reference/msl-specification.md).|  
@@ -64,13 +66,13 @@ Toto téma definuje termíny často odkazuje v [!INCLUDE[adonet_ef](../../../../
 |několik sad entit na typ|Nastavte možnosti pro typ entity být definován ve více než jedna entita.<br /><br /> Další informace najdete v tématu [Element EntitySet (CSDL)](http://msdn.microsoft.com/library/ec56db77-718d-4c0e-adc9-f1d33c896287) a [postupy: definování Model se několik sad entit na typ](http://msdn.microsoft.com/library/61aa4fca-5ac0-4f47-9bc8-46e8c2965ef7).|  
 |navigační vlastnost|Vlastnost typu entity, který představuje vztah k jinému typu entity podle definice přidružení. Navigační vlastnosti se používá k vrácení souvisejících objektů, které jako <xref:System.Data.Objects.DataClasses.EntityCollection%601> nebo <xref:System.Data.Objects.DataClasses.EntityReference%601>, v závislosti na násobnost na druhém konci přidružení.<br /><br /> Další informace najdete v tématu [Element NavigationProperty (CSDL)](http://msdn.microsoft.com/library/5829a238-a50e-4c81-901d-7b54fc00f27e) a [navigační vlastnost](../../../../../docs/framework/data/adonet/navigation-property.md).|  
 |Cesta k dotazu|Řetězcová reprezentace cesty, určuje, které související objekty, které se vrátí, když je proveden dotaz na objekt. Cestu dotazu je definován při volání <xref:System.Data.Objects.ObjectQuery%601.Include%2A> metodu <xref:System.Data.Objects.ObjectQuery%601>.<br /><br /> Další informace najdete v tématu [načítání související objekty](http://msdn.microsoft.com/library/452347d2-7b3b-44cd-9001-231299a28cb1).|  
-|objekt kontextu|Představuje kontejneru entit definované v konceptuálním modelu. Obsahuje připojení k podkladové zdroje dat a poskytuje služby, jako je sledování změn a řešení identity. Pokračování ext objektu je reprezentována instanci <xref:System.Data.Objects.ObjectContext> nebo `DbContext` třídy.<br /><br /> `DbContext`je součástí [Entity Framework 5.0](http://go.microsoft.com/fwlink/?LinkId=234900). Entity Framework 5.0 není součástí rozhraní .NET Framework, ale je založený na rozhraní .NET Framework 4.5. Entity Framework 5.0 je k dispozici jako [rozhraní Entity Framework](http://go.microsoft.com/fwlink/?LinkID=215714)[NuGet](http://go.microsoft.com/fwlink/?LinkId=232488) balíčku. Další informace najdete v tématu [Entity Framework verze a verze](http://go.microsoft.com/fwlink/?LinkId=234899).|  
+|objekt kontextu|Představuje kontejneru entit definované v konceptuálním modelu. Obsahuje připojení k podkladové zdroje dat a poskytuje služby, jako je sledování změn a řešení identity. Pokračování ext objektu je reprezentována instanci <xref:System.Data.Objects.ObjectContext> nebo `DbContext` třídy.<br /><br /> `DbContext` je součástí [Entity Framework 5.0](http://go.microsoft.com/fwlink/?LinkId=234900). Entity Framework 5.0 není součástí rozhraní .NET Framework, ale je založený na rozhraní .NET Framework 4.5. Entity Framework 5.0 je k dispozici jako [rozhraní Entity Framework](http://go.microsoft.com/fwlink/?LinkID=215714)[NuGet](http://go.microsoft.com/fwlink/?LinkId=232488) balíčku. Další informace najdete v tématu [Entity Framework verze a verze](http://go.microsoft.com/fwlink/?LinkId=234899).|  
 |objektové vrstvě|Typy entit a kontext definic objektů, které používají rozhraní Entity Framework.|  
 |dotaz na objekt|Dotaz spustit v kontextu objektu pro koncepční model, který vrátí data jako objekty.<br /><br /> Další informace najdete v tématu [objekt dotazy](http://msdn.microsoft.com/library/0768033c-876f-471d-85d5-264884349276).|  
 |objekt relační mapování|Technika transformace data z relační databáze do datové typy, které lze použít v aplikacích objektově orientované softwaru.<br /><br /> [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje služby objektu relační mapování mapování relační data, jak je definována v rámci modelu úložiště do datových typů, definovaným v konceptuálním modelu.<br /><br /> Další informace najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md).|  
 |Objekt služby|Služeb poskytovaných [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] které umožňují kódu aplikace k provozu na entity jako [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] objekty.|  
 |které ignorují trvalost objektu|Objekt, který neobsahuje žádné logiky, která má vztah k uložení dat v. Také označované jako entity objektů POCO.|  
-|POCO|Nešifrovaná původní objekt CLR. Objekt, který dědí z jiné třídy, nebo implementovat rozhraní.|  
+|OBJEKTŮ POCO|Nešifrovaná původní objekt CLR. Objekt, který dědí z jiné třídy, nebo implementovat rozhraní.|  
 |Entity objektů POCO|Entity v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] který nedědí z <xref:System.Data.Objects.DataClasses.EntityObject> nebo <xref:System.Data.Objects.DataClasses.ComplexObject> a neimplementuje [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] rozhraní. Často, jsou entity objektů POCO existující domény objekty, které používáte ve [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace. Tyto entity podporovat které trvalost. Další informace najdete v tématu [práce s entity objektů POCO](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3).|  
 |proxy – objekt|Objekt, který je odvozena od třídy objektů POCO a je generován [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] pro podporu sledování změn a opožděného načítání. Další informace najdete v tématu [požadavky pro vytváření objektů POCO proxy](http://msdn.microsoft.com/library/dcdbf982-9b9d-4582-806a-64de4a1c03c8).|  
 |referenční omezení|Omezení, která je definována v konceptuálním modelu, která určuje, že entita má závislé vztah k jiné entitě. Toto omezení znamená, že instance závislé entity nemůže existovat bez odpovídající instanci entity Princip<br /><br /> Další informace najdete v tématu [elementu ReferentialConstraint (CSDL)](http://msdn.microsoft.com/library/24f96a80-85b5-4f2e-a14c-0e3eb6796fa0) a [omezení referenční integrity](../../../../../docs/framework/data/adonet/referential-integrity-constraint.md).|  
@@ -83,8 +85,8 @@ Toto téma definuje termíny často odkazuje v [!INCLUDE[adonet_ef](../../../../
 |model úložiště|Definice pro logické model dat v na podporovaný zdroj dat, jako je například relační databáze. Model úložiště je definována v SSDL v souboru ssdl.<br /><br /> Další informace najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md) a [SSDL specifikace](../../../../../docs/framework/data/adonet/ef/language-reference/ssdl-specification.md).|  
 |ssdl souboru|Soubor XML, který obsahuje modelu úložiště, vyjádřené v SSDL.|  
 |Store Schema Definition Language (SSDL)|Nastaví jazyk formátu XML, který se používá k definování typy entit, přidružení, kontejnery entity, sad entit a přidružení modelu úložiště, která často odpovídá schématu databáze.<br /><br /> Další informace najdete v tématu [SSDL specifikace](../../../../../docs/framework/data/adonet/ef/language-reference/ssdl-specification.md).|  
-|table-per-hierarchy|Metoda modelování typ hierarchie v databázi, která zahrnuje atributy všechny typy v hierarchii v jedné tabulce.|  
-|table-per-type|Metoda modelování typ hierarchie v databázi, která používá několik tabulek s relace 1: 1 pro modelování různé typy.|  
+|Tabulka podle hierarchie|Metoda modelování typ hierarchie v databázi, která zahrnuje atributy všechny typy v hierarchii v jedné tabulce.|  
+|každý typ tabulky|Metoda modelování typ hierarchie v databázi, která používá několik tabulek s relace 1: 1 pro modelování různé typy.|  
   
 ## <a name="see-also"></a>Viz také  
  [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)  

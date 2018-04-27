@@ -5,14 +5,15 @@ ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7f49b19b0836636bf7656dc618ef2f181a0d7fff
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 8ee1918091fe72e8606be6e7503ecd850084a4ba
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro Docker aplikace
 
@@ -193,7 +194,7 @@ V tomto konkrétním případě tento soubor definuje dvě služby: webové slu�
 
 -   Webová služba propojit službu redis
 
-Používá službu redis [nejnovější bitové kopie veřejného redis](https://hub.docker.com/_/redis/) načtený z registru úložiště Docker Hub. [redis](http://redis.io/) je systém velmi oblíbených mezipaměti pro serverové aplikace.
+Používá službu redis [nejnovější bitové kopie veřejného redis](https://hub.docker.com/_/redis/) načtený z registru úložiště Docker Hub. [redis](https://redis.io/) je systém velmi oblíbených mezipaměti pro serverové aplikace.
 
 ### <a name="step-5-build-and-run-your-docker-app"></a>Krok 5: Vytvoření a spuštění aplikace Docker
 

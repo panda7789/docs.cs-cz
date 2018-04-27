@@ -1,24 +1,26 @@
 ---
-title: "Zabezpečení v technologii LINQ to SQL"
-ms.custom: 
+title: Zabezpečení v technologii LINQ to SQL
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0ee361c27bd14f0266b2b86f315f9c091e049c12
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 96951b3b3c8a6ee93a83ba24f6c6a19c3e36381c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="security-in-linq-to-sql"></a>Zabezpečení v technologii LINQ to SQL
 Rizika zabezpečení jsou vždy k dispozici, při připojení k databázi. I když technologie LINQ to SQL může zahrnovat některých nových způsobech pracovat s daty v systému SQL Server, neposkytuje žádné další bezpečnostní mechanismy.  
@@ -32,7 +34,7 @@ Rizika zabezpečení jsou vždy k dispozici, při připojení k databázi. I kdy
 ## <a name="connection-strings"></a>Připojovací řetězce  
  Použití hesel v připojovací řetězce je nutno kdykoli je to možné. Jenom je připojovací řetězec ohrožení zabezpečení v sobě, ale připojovací řetězec může také přidat ve formátu prostého textu objektový model nebo externí mapování souboru při pomocí nástroje příkazového řádku Návrhář relací objektů nebo SQLMetal. Každý, kdo má přístup k modelu objektu nebo externí mapování souboru prostřednictvím systému souborů by mohli zobrazit heslo připojení (Pokud je zahrnutý v připojovacím řetězci).  
   
- Chcete-li minimalizovat těchto rizik, použít integrované zabezpečení pro důvěryhodné spojení s [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)]. Pomocí tohoto přístupu nemáte uložit heslo v připojovacím řetězci. Další informace najdete v tématu [zabezpečení SQL serveru](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md).  
+ Chcete-li minimalizovat těchto rizik, použijte integrované zabezpečení vytvoření důvěryhodných připojení se serverem SQL Server. Pomocí tohoto přístupu nemáte uložit heslo v připojovacím řetězci. Další informace najdete v tématu [zabezpečení SQL serveru](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md).  
   
  Chybí integrované zabezpečení bude potřeba textové heslo v připojovacím řetězci. Nejlepší způsob, jak pomoc se zabezpečením připojovací řetězec, ve vzestupném pořadí rizika, vypadá takto:  
   

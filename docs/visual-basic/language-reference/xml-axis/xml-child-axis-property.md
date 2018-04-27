@@ -1,9 +1,9 @@
 ---
-title: "Vlastnost osy podřízeného souboru XML (Visual Basic)"
+title: Vlastnost osy podřízeného souboru XML (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - XML child axis property [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 89a59d00-985e-4f5c-b59f-29b47bad11cb
-caps.latest.revision: 
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ea4db763bbed651a01845b49395255586cb60113
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: dadb21f4985497a90cc62f98c5fb2abdd7cc2781
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-child-axis-property-visual-basic"></a>Vlastnost osy podřízeného souboru XML (Visual Basic)
 Poskytuje přístup k podřízené objekty daného jednu z následujících: <xref:System.Xml.Linq.XElement> objektu, <xref:System.Xml.Linq.XDocument> objektu, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.  
@@ -40,7 +40,7 @@ object.<child>
 |---|---|  
 |`object`|Požadováno. <xref:System.Xml.Linq.XElement> Objektu, <xref:System.Xml.Linq.XDocument> objektu, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.|  
 |.<|Požadováno. Označuje začátek vlastnost osy podřízeného.|  
-|`child`|Požadováno. Název podřízené uzly pro přístup k ve formátu [`prefix``:`]`name`.<br /><br /> -   `Prefix`-Volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí být globální obor názvů XML definovány se `Imports` příkaz.<br />-   `Name`-Vyžaduje. Název místní podřízený uzel. V tématu [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|`child`|Požadováno. Název podřízené uzly pro přístup k ve formátu [`prefix``:`]`name`.<br /><br /> -   `Prefix` -Volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí být globální obor názvů XML definovány se `Imports` příkaz.<br />-   `Name` -Vyžaduje. Název místní podřízený uzel. V tématu [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
 |>|Požadováno. Označuje konec vlastnost osy podřízeného.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
@@ -49,7 +49,7 @@ object.<child>
 ## <a name="remarks"></a>Poznámky  
  Můžete vlastnost osy podřízeného souboru XML pro přístup k podřízené uzly podle názvu z <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objekt, nebo z kolekce <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objekty. Použít soubor XML `Value` vlastnost pro přístup k hodnotě první podřízený uzel v vrácená kolekce. Další informace najdete v tématu [vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru převede vlastnosti osy podřízeného volání <xref:System.Xml.Linq.XContainer.Elements%2A> metoda.  
+ Visual Basic – kompilátor převede vlastnosti osy podřízeného volání <xref:System.Xml.Linq.XContainer.Elements%2A> metoda.  
   
 ## <a name="xml-namespaces"></a>Obory názvů XML  
  Název v vlastnost osy podřízeného můžete použít pouze XML – předpony oboru názvů globálně deklarovat s `Imports` příkaz. Nemůže používat lokálně deklarované v rámci elementu XML – literály XML – předpony oboru názvů. Další informace najdete v tématu [příkaz Imports (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
@@ -84,6 +84,6 @@ object.<child>
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Linq.XElement>  
  [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
- [XML – literály](../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
  [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
  [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

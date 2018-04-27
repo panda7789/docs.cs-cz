@@ -1,12 +1,13 @@
 ---
-title: "Synchronní a asynchronní operace"
-ms.custom: 
+title: Synchronní a asynchronní operace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,24 +16,25 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3d108c8c84af2563e48a9f339df2a96f8218c742
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 123186dd5f0d63693c04c0857709292ce122f918
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
   
- Mnoho aplikací volat metody asynchronně, protože umožní aplikaci pokračovat v provádění užitečné pracovní při volání metody, které běží. [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]služby a klienti mohou účastnit volání asynchronní operaci na dvou různých úrovních aplikace, které poskytují [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace i větší flexibilitu, chcete-li maximalizovat propustnost porovnán s interaktivity.  
+ Mnoho aplikací volat metody asynchronně, protože umožní aplikaci pokračovat v provádění užitečné pracovní při volání metody, které běží. [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby a klienti mohou účastnit volání asynchronní operaci na dvou různých úrovních aplikace, které poskytují [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace i větší flexibilitu, chcete-li maximalizovat propustnost porovnán s interaktivity.  
   
 ## <a name="types-of-asynchronous-operations"></a>Typy asynchronních operací  
- Všechny služby měnící [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], bez ohledu na typy parametry a návratové hodnoty, použijte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] atributy zadat vzorce výměny zpráv konkrétní mezi klientem a službou. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]automaticky směruje příchozí a odchozí zprávy do příslušné službě operaci nebo spuštění kódu klienta.  
+ Všechny služby měnící [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], bez ohledu na typy parametry a návratové hodnoty, použijte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] atributy zadat vzorce výměny zpráv konkrétní mezi klientem a službou. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] automaticky směruje příchozí a odchozí zprávy do příslušné službě operaci nebo spuštění kódu klienta.  
   
  Klient má pouze kontrakt služby, který určuje vzorce výměny zpráv pro konkrétní operaci. Klienti nabízejí jakékoli programovací model, která si vyberou, vývojář tak dlouho, dokud se zjištěnými základní vzorce výměny zpráv. Ano příliš, můžete služby implementovat operations žádným způsobem tak dlouho, dokud se zjištěnými vzoru zadané zprávy.  
   
@@ -53,7 +55,7 @@ Toto téma popisuje implementace a volání operace asynchronní služby.
   
 -   Pokud jsou volání operace v rámci stránky ASP.NET, použijte asynchronní stránky.  
   
--   Pokud jsou volání operace z jakékoli aplikace, který je zřetězený, například Windows Forms nebo [!INCLUDE[avalon1](../../../includes/avalon1-md.md)]. Při použití na základě událostí asynchronní volání modelu, výsledek událost se vyvolá při vlákna uživatelského rozhraní, aniž by bylo potřeba zpracovat více vláken, sami přidání odezvy k aplikaci.  
+-   Pokud jsou volání operace z jakékoli aplikace, který je zřetězený, jako jsou formuláře systému Windows nebo Windows Presentation Foundation (WPF). Při použití na základě událostí asynchronní volání modelu, výsledek událost se vyvolá při vlákna uživatelského rozhraní, aniž by bylo potřeba zpracovat více vláken, sami přidání odezvy k aplikaci.  
   
 -   Obecně platí Pokud máte možnost volby mezi synchronní a asynchronní volání, zvolte asynchronního volání.  
   

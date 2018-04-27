@@ -1,32 +1,34 @@
 ---
-title: "Obousměrné funkce v přehledu WPF"
-ms.custom: 
+title: Obousměrné funkce v přehledu WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b50d98d5f02a59a013d7577f0e312e6ffde35690
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: fa2349bca86676f4dc3e1703216a2b0dc50ccd59
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má řadu funkcí, které podporují rychlý vývoj obousměrného obsahu, například smíšený zleva doprava a přímo na zbývajících dat ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří vynikající prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština a hebrejština mluvení uživatele.  
   
- Následující části popisují mnoho funkcí obousměrného společně s příklady znázorňující způsob k dosažení nejlepšího zobrazení obousměrného obsahu. Většina ukázky používá [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], i když můžete snadno použít koncepty [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] nebo [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)] kódu.  
+ Následující části popisují mnoho funkcí obousměrného společně s příklady znázorňující způsob k dosažení nejlepšího zobrazení obousměrného obsahu. Většina ukázky používá [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], i když můžete snadno použít koncepty kódu jazyka C# nebo Microsoft Visual Basic.  
   
 
   
@@ -70,7 +72,7 @@ Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../..
   
  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], <xref:System.Windows.Documents.FlowDocument> je všestranné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] element, který může hostovat kombinaci text, tabulky, obrázky a další prvky. Ukázky v následujících částech použijte tento element.  
   
- Přidávání textu k <xref:System.Windows.Documents.FlowDocument> lze provést více této jedním způsobem. Je jednoduchý způsob, jak to provést prostřednictvím <xref:System.Windows.Documents.Paragraph> tedy element na úrovni bloku použít k seskupení obsahu například textu. Přidat text do elementů na úrovni ukázky použití <xref:System.Windows.Documents.Span> a <xref:System.Windows.Documents.Run>. <xref:System.Windows.Documents.Span>je vložené úrovni tok obsahu elementu používají k seskupování jiných vložených elementů, zatímco <xref:System.Windows.Documents.Run> je tok vložené úrovni obsahu určený element tak, aby obsahovala spustit neformátovaný text. A <xref:System.Windows.Documents.Span> může obsahovat více <xref:System.Windows.Documents.Run> elementy.  
+ Přidávání textu k <xref:System.Windows.Documents.FlowDocument> lze provést více této jedním způsobem. Je jednoduchý způsob, jak to provést prostřednictvím <xref:System.Windows.Documents.Paragraph> tedy element na úrovni bloku použít k seskupení obsahu například textu. Přidat text do elementů na úrovni ukázky použití <xref:System.Windows.Documents.Span> a <xref:System.Windows.Documents.Run>. <xref:System.Windows.Documents.Span> je vložené úrovni tok obsahu elementu používají k seskupování jiných vložených elementů, zatímco <xref:System.Windows.Documents.Run> je tok vložené úrovni obsahu určený element tak, aby obsahovala spustit neformátovaný text. A <xref:System.Windows.Documents.Span> může obsahovat více <xref:System.Windows.Documents.Run> elementy.  
   
  V prvním příkladu dokument obsahuje dokument, který má číslo sítě sdílet názvů; například `\\server1\folder\file.ext`. Máte-li tento odkaz sítě v dokumentu arabské nebo angličtina je vždy bude zobrazovat stejným způsobem. Následující obrázek zobrazuje odkaz v Arabský <xref:System.Windows.FlowDirection.RightToLeft> dokumentu.  
   
@@ -131,7 +133,7 @@ Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../..
   
 <a name="FlowDirectionNontext"></a>   
 ## <a name="flowdirection-with-non-text-elements"></a>FlowDirection s elementy bez textu  
- <xref:System.Windows.FlowDirection>definuje, ne jenom tok textu v textové elementu, ale také směr toku téměř každé jiné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementu. Následující grafické ukazuje <xref:System.Windows.Controls.ToolBar> , který používá vodorovných <xref:System.Windows.Media.LinearGradientBrush> k vykreslení jeho pozadí.  
+ <xref:System.Windows.FlowDirection> definuje, ne jenom tok textu v textové elementu, ale také směr toku téměř každé jiné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementu. Následující grafické ukazuje <xref:System.Windows.Controls.ToolBar> , který používá vodorovných <xref:System.Windows.Media.LinearGradientBrush> k vykreslení jeho pozadí.  
   
  **Grafické, který zobrazí panel nástrojů s zleva doprava přechodu**  
   
@@ -193,7 +195,7 @@ Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../..
   
  To je povoleno aplikací ke zpracování číselné hodnoty, aniž by bylo nutné je převést z jednoho jazyka do druhého, například může uživatel otevřít [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)] tabulky v lokalizovaných arabské [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a zobrazit čísla ve tvaru v arabština, ale otevřete ho v Evropského verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a zobrazit Evropského reprezentace stejná čísla. Toto je také nezbytné pro další symboly, například oddělovačů čárkami a procento symbolů, protože se obvykle doprovázet čísla ve stejném dokumentu.  
   
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]pokračuje v stejné tradici a přidává další podporu pro tuto funkci, která umožňuje více uživatelům ovládat kdy a jak se používá nahrazení. Když tato funkce je určena pro žádný jazyk, je užitečné zejména v obousměrných obsahu kde shaping čísla pro konkrétní jazyk je obvykle výzvu pro vývojáře aplikací z důvodu různé jazykové verze, které aplikace může spustit na.  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pokračuje v stejné tradici a přidává další podporu pro tuto funkci, která umožňuje více uživatelům ovládat kdy a jak se používá nahrazení. Když tato funkce je určena pro žádný jazyk, je užitečné zejména v obousměrných obsahu kde shaping čísla pro konkrétní jazyk je obvykle výzvu pro vývojáře aplikací z důvodu různé jazykové verze, které aplikace může spustit na.  
   
  Vlastnost základní řízení jak číslo nahrazení funguje v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> vlastnost závislosti. <xref:System.Windows.Media.NumberSubstitution> Třída určuje, jak jsou čísla v textu, který se má zobrazit. Má tři veřejné vlastnosti, které definují chování. Následuje souhrn každé z vlastností.  
   
@@ -251,7 +253,7 @@ Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../..
 |-|  
 |`<TextBlock`<br /><br /> `Name="text1" NumberSubstitution.CultureSource="Text">`<br /><br /> `1234+5679=6913`<br /><br /> `</TextBlock>`|  
   
- Do odpovídajícího [!INCLUDE[TLA2#tla_lhcshrp](../../../../includes/tla2sharptla-lhcshrp-md.md)] kódu, nastavte `Language` vlastnost například `"ar-SA"`.  
+ V odpovídající kódu C#, nastavte `Language` vlastnost například `"ar-SA"`.  
   
 ||  
 |-|  
@@ -263,13 +265,13 @@ Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../..
 |-|  
 |`text1.Language =`<br /><br /> `System.Windows.Markup.XmlLanguage.GetLanguage(`<br /><br /> `System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag);`|  
   
- <xref:System.Globalization.CultureInfo.CurrentCulture%2A>představuje aktuální jazykovou verzi používá aktuální vlákno v době běhu.  
+ <xref:System.Globalization.CultureInfo.CurrentCulture%2A> představuje aktuální jazykovou verzi používá aktuální vlákno v době běhu.  
   
  Váš koncový [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] příkladu by měla být podobně jako v následujícím příkladu.  
   
  [!code-xaml[Numbers2#Numbers2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Numbers2/CS/Window1.xaml#numbers2)]  
   
- Váš koncový [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] by měla být podobný následujícímu příkladu.  
+ Poslední příkladu C# by měl vypadat přibližně takto.  
   
  [!code-csharp[NumbersCSharp#NumbersCSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/NumbersCSharp/CSharp/Window1.xaml.cs#numberscsharp)]  
   

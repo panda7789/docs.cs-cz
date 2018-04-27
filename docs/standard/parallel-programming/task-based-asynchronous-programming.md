@@ -1,12 +1,12 @@
 ---
-title: "Asynchronní programování založené na úlohách"
-ms.custom: 
+title: Asynchronní programování založené na úlohách
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,18 +14,18 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-caps.latest.revision: 
+caps.latest.revision: 51
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8e5367c8a786d720cdf3394922527020f8d4d47a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 87c49eb1cb2b8cef7057e73eca19f74e818b043e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuje asynchronní operaci. V některých způsobech úlohu podobá vlákna nebo <xref:System.Threading.ThreadPool> pracovních položek, ale na vyšší úrovni abstrakce. Termín *úkolů paralelismus* odkazuje na jeden nebo více nezávislých úkoly, které jsou spuštěné současně. Úlohy poskytují dvě hlavní výhody:  
@@ -74,7 +74,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuj
  [!code-csharp[TPL_TaskIntro#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/startnew1.cs#3)]
  [!code-vb[TPL_TaskIntro#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/startnew1.vb#3)]  
   
- <xref:System.Threading.Tasks.Task>a <xref:System.Threading.Tasks.Task%601> každý vystavit statického <xref:System.Threading.Tasks.Task.Factory%2A> vlastnost, která vrací výchozí instanci <xref:System.Threading.Tasks.TaskFactory>, takže můžete volat metodu jako `Task.Factory.StartNew()`. Také v následujícím příkladu protože úlohy jsou typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>, každá má veřejné <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která obsahuje výsledek výpočet. Úlohy běží asynchronně a mohou být dokončeny v libovolném pořadí. Pokud <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost přistupuje předtím, než se dokončí výpočet, vlastnost blokuje volající vlákno, dokud nebude k dispozici hodnota.  
+ <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> každý vystavit statického <xref:System.Threading.Tasks.Task.Factory%2A> vlastnost, která vrací výchozí instanci <xref:System.Threading.Tasks.TaskFactory>, takže můžete volat metodu jako `Task.Factory.StartNew()`. Také v následujícím příkladu protože úlohy jsou typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>, každá má veřejné <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která obsahuje výsledek výpočet. Úlohy běží asynchronně a mohou být dokončeny v libovolném pořadí. Pokud <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost přistupuje předtím, než se dokončí výpočet, vlastnost blokuje volající vlákno, dokud nebude k dispozici hodnota.  
   
  [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
  [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]  
@@ -102,7 +102,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuj
 ## <a name="task-creation-options"></a>Možnosti vytvoření úlohy  
  Většina rozhraní API, které vytvářejí úlohy poskytují přetížení, které přijímají <xref:System.Threading.Tasks.TaskCreationOptions> parametr. Zadáním jedné z těchto možností lze dát pokyn plánovači úloh, jak naplánovat úlohy ve fondu vláken. V následující tabulce jsou uvedeny různé možnosti pro vytváření úloh.  
   
-|<xref:System.Threading.Tasks.TaskCreationOptions>Hodnota parametru|Popis|  
+|<xref:System.Threading.Tasks.TaskCreationOptions> Hodnota parametru|Popis|  
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|Výchozí hodnota, pokud není zadána jiná. Plánovač používá k plánování úlohy své výchozí heuristické metody.|  
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Určuje, že úlohy by měly být naplánovány tak, aby se úlohy vytvořené dříve pravděpodobně prováděly dříve a později vytvořené úlohy aby se s větší pravděpodobností prováděly později.|  
@@ -138,7 +138,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuj
 ## <a name="creating-task-continuations"></a>Vytváření pokračování úlohy  
  <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> metody umožňují zadat při spuštění úlohy *předchozí úlohou* dokončí. Delegát úkolů pokračování je předán odkaz na předchozí úlohou tak, aby mohl zkontrolovat stav předchozí úlohou a při získávání hodnoty <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, můžete použít výstup předchůdce jako vstup pro pokračování.  
   
- V následujícím příkladu `getData` úloha je spuštěna voláním <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> metoda. `processData` Úloha je spuštěna automaticky při `getData` dokončí, a `displayData` při spuštění `processData` dokončí. `getData`Vytvoří celočíselné pole, která je přístupná `processData` úkolů prostřednictvím `getData` úkolu <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost. `processData` Úloh zpracovává tohoto pole a vrátí výsledek, jehož typ je odvozen z návratový typ výrazu lambda předaný <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> metoda. `displayData` Úloha se spustí automaticky při `processData` dokončí a <xref:System.Tuple%603> objekt vrácený `processData` výrazu lambda je přístupné `displayData` úlohy prostřednictvím `processData` úkolu <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> Vlastnost. `displayData` Úloh trvá výsledek `processData` úkolů a vytváří výsledek, jejichž typ je odvozen podobným způsobem a který je k dispozici v programu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost.  
+ V následujícím příkladu `getData` úloha je spuštěna voláním <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> metoda. `processData` Úloha je spuštěna automaticky při `getData` dokončí, a `displayData` při spuštění `processData` dokončí. `getData` Vytvoří celočíselné pole, která je přístupná `processData` úkolů prostřednictvím `getData` úkolu <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost. `processData` Úloh zpracovává tohoto pole a vrátí výsledek, jehož typ je odvozen z návratový typ výrazu lambda předaný <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> metoda. `displayData` Úloha se spustí automaticky při `processData` dokončí a <xref:System.Tuple%603> objekt vrácený `processData` výrazu lambda je přístupné `displayData` úlohy prostřednictvím `processData` úkolu <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> Vlastnost. `displayData` Úloh trvá výsledek `processData` úkolů a vytváří výsledek, jejichž typ je odvozen podobným způsobem a který je k dispozici v programu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost.  
   
  [!code-csharp[TPL_TaskIntro#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/continuations1.cs#5)]
  [!code-vb[TPL_TaskIntro#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/continuations1.vb#5)]  
@@ -188,10 +188,10 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuj
   
  Některé přetížení umožňují zadat časový limit a jiné přijímají další <xref:System.Threading.CancellationToken> jako vstupní parametr, tak, aby mohlo být samotné čekání zrušeno buď programově, nebo jako odpověď na uživatelský vstup.  
   
- Když čekat úlohy je implicitně počkat všechny podřízené dané úlohy, které byly vytvořeny pomocí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>Vrátí okamžitě, pokud je úloha je dokončeno. Jakékoli výjimky vyvolané úloha bude vyvolané <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metoda, i když <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metoda byla volána po dokončení úlohy.  
+ Když čekat úlohy je implicitně počkat všechny podřízené dané úlohy, které byly vytvořeny pomocí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> Vrátí okamžitě, pokud je úloha je dokončeno. Jakékoli výjimky vyvolané úloha bude vyvolané <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metoda, i když <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metoda byla volána po dokončení úlohy.  
   
 ## <a name="composing-tasks"></a>Skládání úlohy  
- <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> tříd poskytuje několik metod, které vám mohou pomoci vytvořit více úloh k implementaci běžných vzorů a lepší využití asynchronní jazykové funkce, které jsou k dispozici v jazyce C#, [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]a F #. Tato část popisuje <xref:System.Threading.Tasks.Task.WhenAll%2A>, <xref:System.Threading.Tasks.Task.WhenAny%2A>, <xref:System.Threading.Tasks.Task.Delay%2A>, a <xref:System.Threading.Tasks.Task.FromResult%2A> metody.  
+ <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> tříd poskytuje několik metod, které vám mohou pomoci vytvořit více úloh k implementaci běžných vzorů a lepší využití asynchronní jazykové funkce, které jsou k dispozici C#, Visual Basic a F #. Tato část popisuje <xref:System.Threading.Tasks.Task.WhenAll%2A>, <xref:System.Threading.Tasks.Task.WhenAny%2A>, <xref:System.Threading.Tasks.Task.Delay%2A>, a <xref:System.Threading.Tasks.Task.FromResult%2A> metody.  
   
 ### <a name="taskwhenall"></a>Task.WhenAll  
  <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> Metoda asynchronně čeká více <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> objekty, které chcete dokončit. Poskytuje přetížené verze, které umožňují čekání na nerovnoměrné sady úloh. Například můžete počkat několik <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty k dokončení z volání jednu metodu.  
@@ -279,4 +279,4 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuj
   
 ## <a name="see-also"></a>Viz také  
  [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
- [Ukázky pro paralelní programování s rozhraním .NET Framework](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+ [Ukázky pro paralelní programování s rozhraním .NET Framework](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)

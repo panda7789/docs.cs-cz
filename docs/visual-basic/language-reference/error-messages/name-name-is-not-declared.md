@@ -1,9 +1,9 @@
 ---
-title: "Název & č. 39; &lt;název&gt;& č. 39; není deklarovaný"
+title: Název &#39; &lt;název&gt; &#39; není deklarovaný
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,23 +13,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30451
 ms.assetid: 765f099b-e21e-47c6-a906-a065444e56b3
-caps.latest.revision: 
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7a63ae74c7179d71756e2b9b4bf6b41a71ce12a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 26245952a2dc5341dedba6c497c47773b882b49b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="name-39ltnamegt39-is-not-declared"></a>Název & č. 39; &lt;název&gt;& č. 39; není deklarovaný
+# <a name="name-39ltnamegt39-is-not-declared"></a>Název &#39; &lt;název&gt; &#39; není deklarovaný
 Příkaz odkazuje na programovací element, ale kompilátor nelze najít element s tímto názvem přesný.  
   
  **ID chyby:** BC30451  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte správnost názvu v odkazující příkazu. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]nerozlišuje, ale jiné variace v pravopis považuje za úplně jiný název. Všimněte si, že podtržítko (`_`) je součástí názvu a proto součástí pravopis.  
+1.  Zkontrolujte správnost názvu v odkazující příkazu. Visual Basic je velká a malá písmena, ale jiné variace v pravopis považuje za úplně jiný název. Všimněte si, že podtržítko (`_`) je součástí názvu a proto součástí pravopis.  
   
 2.  Zkontrolujte, že máte operátor přístupu členů (`.`) mezi objektem a jejího člena. Pokud máte například <xref:System.Windows.Forms.TextBox> ovládací prvek s názvem `TextBox1`, přístup k jeho <xref:System.Windows.Forms.TextBoxBase.Text%2A> vlastnost byste měli zadat `TextBox1.Text`. Pokud místo toho zadáte `TextBox1Text`, jste vytvořili jiný název.  
   

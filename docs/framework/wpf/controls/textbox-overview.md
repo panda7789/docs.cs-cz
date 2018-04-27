@@ -1,30 +1,32 @@
 ---
-title: "TextBox – přehled"
-ms.custom: 
+title: TextBox – přehled
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], about TextBox control
 ms.assetid: 1ba6dc5b-11a7-4247-9213-36c6729ee35f
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 50e36192198c172843d79a4195e894b848f84c90
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 02e7a5046dec689b1088585d58e4e424751ac512
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="textbox-overview"></a>TextBox – přehled
-<xref:System.Windows.Controls.TextBox> Vám umožňuje zobrazit nebo upravit neformátovaný text. Běžně se používají <xref:System.Windows.Controls.TextBox> upravuje neformátovaný text ve formuláři. Například formulář žádostí o uživatelské jméno, telefonní číslo atd využije <xref:System.Windows.Controls.TextBox> ovládací prvky pro zadávání textu. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a obsahuje příklady použití v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)].  
+<xref:System.Windows.Controls.TextBox> Vám umožňuje zobrazit nebo upravit neformátovaný text. Běžně se používají <xref:System.Windows.Controls.TextBox> upravuje neformátovaný text ve formuláři. Například formulář žádostí o uživatelské jméno, telefonní číslo atd využije <xref:System.Windows.Controls.TextBox> ovládací prvky pro zadávání textu. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a obsahuje příklady použití v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a C#.  
   
  
   
@@ -32,7 +34,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="textbox-or-richtextbox"></a>Textové pole nebo RichTextBox?  
  Obě <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox> povolit uživatelům zadejte text, ale používají se dvou ovládacích prvků pro různé scénáře. A <xref:System.Windows.Controls.TextBox> vyžaduje méně systémových prostředků pak <xref:System.Windows.Controls.RichTextBox> tak, aby byl ideální, když je potřeba upravit pouze ve formátu prostého textu (tj. využití ve formuláři). A <xref:System.Windows.Controls.RichTextBox> je lepší volbou, pokud je nutné, aby uživatelům upravit formátovaný text, obrázky, tabulky nebo jiné podporované obsahu. Například úpravy dokumentu, článek nebo blogu, který vyžaduje formátování, Image, atd se nejlépe provádí pomocí <xref:System.Windows.Controls.RichTextBox>. Následující tabulka shrnuje primární funkce <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.TextBox>.  
   
-|Ovládací prvek|Kontrola pravopisu v reálném čase|Kontextové nabídky|Formátování příkazy, jako je <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (pev.cenu + B)|<xref:System.Windows.Documents.FlowDocument>obsah, jako jsou bitové kopie, odstavců, tabulek atd.|  
+|Ovládací prvek|Kontrola pravopisu v reálném čase|Kontextové nabídky|Formátování příkazy, jako je <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (pev.cenu + B)|<xref:System.Windows.Documents.FlowDocument> obsah, jako jsou bitové kopie, odstavců, tabulek atd.|  
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Windows.Controls.TextBox>|Ano|Ano|Ne|Ne.|  
 |<xref:System.Windows.Controls.RichTextBox>|Ano|Ano|Ano (viz [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md))|Ano (viz [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md))|  
@@ -45,7 +47,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="real-time-spellchecking"></a>Kontrola pravopisu v reálném čase  
  Můžete povolit v reálném čase kontrola pravopisu v <xref:System.Windows.Controls.TextBox> nebo <xref:System.Windows.Controls.RichTextBox>. Když je kontrola pravopisu zapnuté, red řádek se zobrazí pod všechny překlepu slova (viz následující obrázek).  
   
- ![Textové pole s pravopisu & č. 45; kontrola](../../../../docs/framework/wpf/controls/media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")  
+ ![Textové pole s pravopisu&#45;kontrola](../../../../docs/framework/wpf/controls/media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")  
   
  V tématu [povolit kontrolu pravopisu v ovládacím prvku úpravy textu](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md) se dozvíte, jak povolit kontrola pravopisu.  
   

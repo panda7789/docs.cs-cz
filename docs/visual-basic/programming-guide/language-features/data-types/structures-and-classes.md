@@ -1,11 +1,12 @@
 ---
-title: "Struktury a třídy (Visual Basic)"
-ms.custom: 
+title: Struktury a třídy (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - classes [Visual Basic], vs. structures
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - structures [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 08e31481feac7a6184c6b29269d193c749f440ff
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cf72fb0a7a34d45774cb9a58c037ebcb1c05288f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="structures-and-classes-visual-basic"></a>Struktury a třídy (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]kombinuje syntaxe struktury a třídy, s tím výsledkem, že obě entity podporují většinu stejné funkce. Existují však také důležité rozdíly mezi struktury a třídy.  
+Visual Basic kombinuje syntaxe struktury a třídy, s tím výsledkem, že obě entity podporují většinu stejné funkce. Existují však také důležité rozdíly mezi struktury a třídy.  
   
  Výhodou se odkazové typy jsou třídy – předáním odkazu na je efektivnější než předávání proměnná struktura s jeho data. Na druhé straně struktury nevyžadují přidělení paměti v haldě globální.  
   
@@ -92,13 +93,13 @@ ms.lasthandoff: 11/21/2017
   
      Elementy struktury, ale jsou izolovány. v rámci své vlastní instanci. Změny jejich hodnoty se neprojeví v žádné jiné proměnné struktury, i v jiných instance stejné `Structure` deklarace.  
   
--   **Rovnosti.** Testování rovnosti dvou struktur musí provést test pomocí elementu. Dvě proměnné objektu je možné porovnávat pomocí <xref:System.Object.Equals%2A> metoda. <xref:System.Object.Equals%2A>Označuje, zda dvě proměnné, které bodu na stejnou instanci.  
+-   **Rovnosti.** Testování rovnosti dvou struktur musí provést test pomocí elementu. Dvě proměnné objektu je možné porovnávat pomocí <xref:System.Object.Equals%2A> metoda. <xref:System.Object.Equals%2A> Označuje, zda dvě proměnné, které bodu na stejnou instanci.  
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
  [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Řešení potíží s datové typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [Struktury a ostatní programovací elementy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
  [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

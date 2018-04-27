@@ -1,27 +1,29 @@
 ---
 title: Manipulace s daty
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 65042cecc5a6841ffb9b74e471cb9f237d15373f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: e899ef34964c8bb7ae9b827f329efe60a7f83a0c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
 Před zavedením z více Active výsledek sady (MARS) vývojáři bylo nutné použít více připojení nebo kurzory na straně serveru k řešení určité scénáře. Kromě toho, když v situaci, transakční používaly více připojení, vázaný připojení (s **proceduru sp_getbindtoken** a **procedury sp_bindsession**) nebyly potřeba. Následující scénáře ukazují, jak používat připojení s MARS místo více připojení.  
@@ -33,7 +35,7 @@ Před zavedením z více Active výsledek sady (MARS) vývojáři bylo nutné po
  V příkladu otevře jednoho připojení k **AdventureWorks** databáze. Použití <xref:System.Data.SqlClient.SqlCommand> objekt, <xref:System.Data.SqlClient.SqlDataReader> je vytvořena. Jak se používá program pro čtení, a druhé <xref:System.Data.SqlClient.SqlDataReader> je otevřen pomocí dat z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtečku.  
   
 > [!NOTE]
->  Následující příklad používá vzorku **AdventureWorks** databáze součástí [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
+>  Následující příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -181,7 +183,7 @@ static void Main()
  Následující aplikace konzoly ukazuje, jak používat dvě <xref:System.Data.SqlClient.SqlDataReader> objekty s třemi <xref:System.Data.SqlClient.SqlCommand> objektů a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s MARS povolena. První objekt příkazu načte seznam dodavatelů, jejichž platební hodnocení je 5. Druhý objekt příkazu používá zadáno ID od dodavatele <xref:System.Data.SqlClient.SqlDataReader> načíst druhý <xref:System.Data.SqlClient.SqlDataReader> se všemi produktů pro konkrétní dodavatele. Každý záznam produktu je navštívené druhou <xref:System.Data.SqlClient.SqlDataReader>. Provádění výpočtu určit, jaké nové **OnOrderQty** by měl být. Třetí objekt příkazu se pak používá k aktualizaci **ProductVendor** tabulku s novou hodnotou. Tento celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
   
 > [!NOTE]
->  Následující příklad používá vzorku **AdventureWorks** databáze součástí [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
+>  Následující příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
   
 ```vb  
 Option Strict On  

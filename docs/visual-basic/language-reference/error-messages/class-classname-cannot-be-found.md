@@ -1,9 +1,9 @@
 ---
-title: "Třída & č. 39; &lt;classname&gt;& č. 39; nebyl nalezen"
+title: Třída &#39; &lt;classname&gt; &#39; nebyl nalezen
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,16 +13,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC31098
 ms.assetid: 72528d02-77b7-4b4c-8b9e-d12f666f92ef
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: aed0bc5643d0714e5994abce09b04b1910f2becc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 63dfdf0f2fe8869577d450f21c4f12b5eec125bb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="class-39ltclassnamegt39-cannot-be-found"></a>Třída & č. 39; &lt;classname&gt;& č. 39; nebyl nalezen
+# <a name="class-39ltclassnamegt39-cannot-be-found"></a>Třída &#39; &lt;classname&gt; &#39; nebyl nalezen
 Třída se\<classname >' nebyl nalezen. Tento stav je obvykle výsledkem neodpovídající 'Microsoft.VisualBasic.dll'.  
   
  Nelze najít definovaný člen.  
@@ -35,7 +35,7 @@ Třída se\<classname >' nebyl nalezen. Tento stav je obvykle výsledkem neodpov
   
 2.  Pokud se chyba objeví znovu, uložte si práci a restartujte [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
-3.  Pokud chyba přetrvává, přeinstalujte [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+3.  Pokud chyba přetrvává, přeinstalujte jazyka Visual Basic.  
   
 4.  Pokud chyba přetrvává i po přeinstalování, upozorněte služby Microsoft Product Support Services.  
   

@@ -1,7 +1,7 @@
 ---
-title: "Jazyková nezávislost a jazykově nezávislé komponenty"
-description: "Zjistěte, jak můžete vyvíjet v jednom z mnoha jazyků podporovaných v rozhraní .NET, například C#, C + +/ CLI, F #, IronPython, jazyka Visual Basic, Visual COBOL a prostředí PowerShell."
-keywords: "Rozhraní .NET, .NET core"
+title: Jazyková nezávislost a jazykově nezávislé komponenty
+description: 'Zjistěte, jak můžete vyvíjet v jednom z mnoha jazyků podporovaných v rozhraní .NET, například C#, C + +/ CLI, F #, IronPython, jazyka Visual Basic, Visual COBOL a prostředí PowerShell.'
+keywords: Rozhraní .NET, .NET core
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.date: 07/22/2016
@@ -16,11 +16,11 @@ ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0a7a37b1c8eed81866035dc6fb55db89391f25aa
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2745bc67c926f50c28f5fdfb122ee94a85f020ec
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
@@ -29,7 +29,7 @@ Rozhraní .NET je závislý na jazyce. To znamená, že jako vývojář, můžet
 > [!NOTE]
 > Tato první část tohoto článku popisuje vytvoření nezávislé na jazyku komponenty, který je součástí, které mohou být spotřebovávána aplikace, které jsou napsané v libovolném jazyce. Můžete také vytvořit jedna součást nebo aplikace z zdrojový kód napsaný v několika jazycích; v tématu [vzájemná funkční spolupráce mezi jazyky](#cross-language-interoperability) v druhé části tohoto článku. 
 
-Plně pracovat s jinými objekty napsané v libovolném jazyce, musí objekty zpřístupnit volajícím jenom ty funkce, které jsou společné pro všechny jazyky. Tato společnou sadu funkcí je definována pomocí specifikace CLS (Common Language), což je sada pravidel, která se týkají vygenerované sestavení. Common Language Specification je definovaný v oddílu I klauzule 7 až 11 [standardy ECMA-335 standardní: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm). 
+Plně pracovat s jinými objekty napsané v libovolném jazyce, musí objekty zpřístupnit volajícím jenom ty funkce, které jsou společné pro všechny jazyky. Tato společnou sadu funkcí je definována pomocí specifikace CLS (Common Language), což je sada pravidel, která se týkají vygenerované sestavení. Common Language Specification je definovaný v oddílu I klauzule 7 až 11 [standardy ECMA-335 standardní: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm). 
 
 Pokud vaše součást splňuje Common Language Specification, se musí být kompatibilní se specifikací CLS a je přístupný z kódu v sestavení, které jsou napsané v žádný programovací jazyk, který podporuje specifikaci CLS. Můžete určit, zda příslušné součásti vyhovuje Common Language Specification při kompilaci s použitím [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut ke zdrojovému kódu. Další informace najdete v tématu [atributu CLSCompliantAttribute](#the-clscompliantattribute-attribute).
 
@@ -73,7 +73,7 @@ V tomto článku:
 
 ## <a name="cls-compliance-rules"></a>Pravidla dodržování předpisů se specifikací CLS
 
-Tato část popisuje pravidla pro vytváření komponentu kompatibilní se specifikací CLS. Úplný seznam pravidel, viz oddíl I 11 klauzule [standardy ECMA-335 standardní: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).
+Tato část popisuje pravidla pro vytváření komponentu kompatibilní se specifikací CLS. Úplný seznam pravidel, viz oddíl I 11 klauzule [standardy ECMA-335 standardní: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 > [!NOTE]
 > Common Language Specification popisuje každé pravidlo pro souladu se specifikací CLS, protože se vztahuje k příjemce (vývojáři, kteří mají přístup prostřednictvím kódu programu komponenty, která je kompatibilní se specifikací CLS), rozhraní (vývojáře, kteří používají k vytvoření kompilátoru jazyka CLS-compliant knihovny) a Extender (vývojáře, kteří jsou vytvoření nástroje, jako je kompilátor jazyka nebo analyzátor kódu, který vytváří kompatibilní se specifikací CLS součásti). Tento článek se zaměřuje na pravidla, protože se vztahují na rozhraní. Upozorňujeme ale, že některé z pravidel, která se týkají Extender může také použít sestavení, které jsou vytvořené pomocí [Reflection.Emit](xref:System.Reflection.Emit). 
@@ -158,7 +158,7 @@ Knihovny veřejné rozhraní se skládá z následujících akcí:
 
 * Parametry a návratové typy veřejných metod veřejné třídy a parametry a návratové typy metod, které jsou přístupné pro odvozené třídy. 
 
-V následující tabulce jsou uvedena pravidla pro souladu se specifikací CLS. Text tohoto pravidla se provede typu verbatim z [standardy ECMA-335 standardní: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm), což je Copyright 2012 Ecma mezinárodní. Podrobnější informace o těchto pravidel je najít v následujících částech. 
+V následující tabulce jsou uvedena pravidla pro souladu se specifikací CLS. Text tohoto pravidla se provede typu verbatim z [standardy ECMA-335 standardní: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm), což je Copyright 2012 Ecma mezinárodní. Podrobnější informace o těchto pravidel je najít v následujících částech. 
 
 Kategorie | Další informace naleznete v tématu | Pravidlo | Číslo pravidla
 -------- | --- | ---- | -----------
@@ -333,7 +333,7 @@ Kompatibilní se specifikací CLS typu | Popis
 [Jeden](xref:System.Single) | Desetinnou čárkou s jednoduchou přesností
 [Double](xref:System.Double) | Dvojitá přesnost s plovoucí desetinnou čárkou
 [Logická hodnota](xref:System.Boolean) | Typ hodnoty true nebo false 
-[Char –](xref:System.Char) | Kódování UTF-16 jednotka kódu
+[Char](xref:System.Char) | Kódování UTF-16 jednotka kódu
 [Decimal](xref:System.Decimal) | Bez plovoucí čárkou desetinné číslo
 [IntPtr](xref:System.IntPtr) | Ukazatel nebo popisovač velikosti definované platformy
 [Řetězec](xref:System.String) | Kolekce nula, jednu nebo více objektů Char 
@@ -617,7 +617,7 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-Programovací jazyk identifikátory, třeba názvů obory názvů, typy a členy, musí odpovídat [Unicode Standard 3.0, technické sestavy 15, přílohy 7](http://www.unicode.org/reports/tr15/tr15-18.html). To znamená, že:
+Programovací jazyk identifikátory, třeba názvů obory názvů, typy a členy, musí odpovídat [Unicode Standard 3.0, technické sestavy 15, přílohy 7](https://www.unicode.org/reports/tr15/tr15-18.html). To znamená, že:
 
 * První znak identifikátoru můžete být žádné Unicode velké písmeno, malé písmeno, malá písmena title, modifikátor, jiné písmeno nebo číslo písmeno. Informace o kategoriích znakové sady Unicode, najdete v článku [System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) výčtu. 
 
@@ -1630,7 +1630,7 @@ End Module
 '       Outer`1+Inner1B`1[System.String,System.Int32]
 ```
 
-Ve formuláři jsou zakódovány obecného typu názvy *název*'*n*, kde *název* je název typu  *`*  je znakový literál a  *n*  je počet parametrů deklarovaná u typu nebo pro vnořené obecné typy, počet parametrů nově přináší typu. Toto kódování obecného typu názvy je primárně určen pro vývojáře, kteří pomocí reflexe kompatibilní se specifikací CLS obecné typy v knihovně. 
+Ve formuláři jsou zakódovány obecného typu názvy *název*'*n*, kde *název* je název typu *`* znak je literál, a *n* je počet parametrů deklarovaná u typu nebo pro vnořené obecné typy, počet parametrů nově přináší typu. Toto kódování obecného typu názvy je primárně určen pro vývojáře, kteří pomocí reflexe kompatibilní se specifikací CLS obecné typy v knihovně. 
 
 Pokud omezení se použijí pro obecný typ, všechny typy používané jako omezení také musí být kompatibilní se specifikací CLS. Následující příklad definuje třídu s názvem `BaseClass` není kompatibilní se specifikací CLS a obecné třídy s názvem `BaseCollection` jehož typ parametru musí být odvozeny od `BaseClass`. Ale protože `BaseClass` není kompatibilní se specifikací CLS, kompilátor vydá upozornění. 
 
@@ -1862,7 +1862,7 @@ End Class
 
 Common Language Specification ukládá konzervativní za konkretizaci model pro vnořené typy a chráněné členy. Otevřete obecné typy nemůže vystavovat pole nebo členy s podpisy, které obsahují konkrétní instanci vnořené, chráněné obecného typu. Non obecné typy, které rozšiřují konkrétní instanci obecné základní třídy nebo rozhraní nemůže vystavovat pole nebo členy s podpisy, které obsahují různé konkretizaci vnořené, chráněné obecného typu.
 
-V následujícím příkladu definuje obecného typu `C1<T>`a chráněná třída `C1<T>.N`. `C1<T>`má dvě metody, `M1` a `M2`. Ale `M1` není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objektu z `C1<T>`. Třídu sekundu `C2`, je odvozený od `C1<long>`. Nabízí dvě metody, `M3` a `M4`. `M3`není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z podtřídou třídy `C1<long>`. Všimněte si, že můžou být i víc omezující kompilátory jazyka. V tomto příkladu jazyka Visual Basic zobrazí chybu při pokusu o zkompilovat `M4`. 
+V následujícím příkladu definuje obecného typu `C1<T>`a chráněná třída `C1<T>.N`. `C1<T>` má dvě metody, `M1` a `M2`. Ale `M1` není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objektu z `C1<T>`. Třídu sekundu `C2`, je odvozený od `C1<long>`. Nabízí dvě metody, `M3` a `M4`. `M3` není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z podtřídou třídy `C1<long>`. Všimněte si, že můžou být i víc omezující kompilátory jazyka. V tomto příkladu jazyka Visual Basic zobrazí chybu při pokusu o zkompilovat `M4`. 
 
 ```csharp
 using System;
@@ -2582,7 +2582,7 @@ V konstruktoru nebo z vlastností kompatibilní se specifikací CLS atributu mů
 
 * [Bajtů](xref:System.Byte)
 
-* [Char –](xref:System.Char)
+* [Char](xref:System.Char)
 
 * [Double](xref:System.Double)
 

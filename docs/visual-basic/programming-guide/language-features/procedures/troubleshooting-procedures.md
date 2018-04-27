@@ -1,11 +1,12 @@
 ---
-title: "Řešení potíží s procedurami (Visual Basic)"
-ms.custom: 
+title: Řešení potíží s procedurami (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - troubleshooting Visual Basic, procedures
@@ -14,14 +15,14 @@ helpviewer_keywords:
 - troubleshooting procedures
 - procedures [Visual Basic], about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b838644baa5ad10f1deb917cff5751a0f625fca6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7e54c965dc15131734be2c5bcfe04ad70292bf23
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting-procedures-visual-basic"></a>Řešení potíží s procedurami (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, ke kterým dochází při práci s postupy.  
@@ -83,11 +84,11 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
   
  Následující položky, i když se týkají do seznamu parametrů nejsou součástí podpisu postup:  
   
--   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a`Static`  
+-   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
   
 -   Názvy parametrů  
   
--   Klíčová slova – modifikátor parametrů, jako například `ByRef` a`Optional`  
+-   Klíčová slova – modifikátor parametrů, jako například `ByRef` a `Optional`  
   
 -   datový typ vrácené hodnoty (s výjimkou operátora převodu)  
   
@@ -99,7 +100,7 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
  Pokud jsou přetížení procedury s jedním nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry nebo [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parametr, je nutné se neduplikovaly některé z *implicitní přetížení*. Informace najdete v tématu [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
   
 ## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a>Volání nesprávný verzi přetížené procedury  
- Pokud procedury má několik přetížené verzí, musí se seznamte s jejich seznamy parametrů a pochopit, jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] přeloží volání mezi přetížení. V opačném případě může volat přetížení než zamýšlené.  
+ Pokud procedury má několik přetížené verzí, by měl být obeznámeni s jejich seznamy parametrů a pochopit, jak Visual Basic přeloží volání mezi přetížení. V opačném případě může volat přetížení než zamýšlené.  
   
  Pokud zjistíte, které přetížení, které chcete volat, pečlivě dodržujte přitom následující pravidla:  
   
@@ -132,10 +133,10 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
  Pokud dva přetížení procedury mít identické podpisy s tím rozdílem, že je deklarovaná poslední parametr [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) v jednom a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) do druhé kompilátor přeloží volání této procedury podle nejblíže shoda. Další informace najdete v tématu [rozlišení přetížení](./overload-resolution.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
- [Sub – procedury](./sub-procedures.md)  
- [Function – procedury](./function-procedures.md)  
- [Procedury vlastností](./property-procedures.md)  
+ [Procedury](./index.md)  
+ [Procedury Sub](./sub-procedures.md)  
+ [Procedury funkce](./function-procedures.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Procedury operátoru](./operator-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
  [Přetížení procedury](./procedure-overloading.md)  

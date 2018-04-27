@@ -1,12 +1,13 @@
 ---
-title: "Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#"
-ms.custom: 
+title: 'Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - inheritance [Windows Forms], custom controls
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: adc8e4321dccea34b7d3132b2052ee9baa98a868
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: cdf472776fc293bc5dfa1db940d23c6a297767e7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-c"></a>Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C# #
 S [!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)], můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti budete moci vytvořit ovládací prvky, které nezachovají vyplývajících funkce standardní ovládací prvky Windows Forms, ale také obsahovat vlastní funkce. V tomto návodu vytvoříte jednoduchý zděděné ovládací prvek názvem `ValueButton`. Toto tlačítko bude funkce dědit ze standardní Windows Forms <xref:System.Windows.Forms.Button> řízení a zveřejní vlastní vlastnost s názvem `ButtonValue`.  
@@ -39,7 +41,7 @@ S [!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)], můžete vytvo�
   
 1.  Na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu** otevřete **nový projekt** dialogové okno.  
   
-2.  Vyberte **knihovny ovládacích prvků Windows Forms** šablona projektu ze seznamu [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] projekty a typ `ValueButtonLib` v **název** pole.  
+2.  Vyberte **knihovny ovládacích prvků Windows Forms** šablona projektu ze seznamu Projekty Visual C# a typ `ValueButtonLib` v **název** pole.  
   
      Název projektu `ValueButtonLib`, je také přiřazený k oboru názvů root ve výchozím nastavení. Kořenový obor názvů se použijí pro kvalifikaci názvy součásti v sestavení. Například, pokud dvě sestavení poskytují komponenty s názvem `ValueButton`, můžete zadat vaše `ValueButton` pomocí součásti `ValueButtonLib.ValueButton`. Další informace najdete v tématu [obory názvů](../../../csharp/programming-guide/namespaces/index.md).  
   
@@ -146,7 +148,7 @@ S [!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)], můžete vytvo�
   
 11. Z **ladění** nabídce vyberte možnost **spustit ladění**.  
   
-     `Form1`Zobrazí se.  
+     `Form1` Zobrazí se.  
   
 12. Klikněte na tlačítko `valueButton1`.  
   

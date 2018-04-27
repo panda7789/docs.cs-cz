@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Definování chování změny velikosti a polohování v rozděleném okně"
-ms.custom: 
+title: 'Postupy: Definování chování změny velikosti a polohování v rozděleném okně'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - splitter windows [Windows Forms], resizing
 - SplitContainer control [Windows Forms], resizing
 ms.assetid: 9bf73f36-ed2d-4a02-b15a-0770eff4fdfa
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ed78a49119c87c52a07cc2ade030e66087d3f420
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e62091addfb64c287154b190f02caf1600533b3b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>Postupy: Definování chování změny velikosti a polohování v rozděleném okně
 Panelů <xref:System.Windows.Forms.SplitContainer> řízení samo dobře se po změně velikosti a pracovat s nimi uživatelé. Však bude nastat situace, kdy se má k programovému řízení rozdělovače – kde je umístěný a do jaké míry lze přesunout.  
@@ -34,9 +36,9 @@ Panelů <xref:System.Windows.Forms.SplitContainer> řízení samo dobře se po z
   
 |Název|Popis|  
 |----------|-----------------|  
-|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>Vlastnost|Určuje, zda rozdělovače mobilní prostřednictvím klávesnici nebo myš.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A>Vlastnost|Určuje vzdálenost v pixelech od levého nebo horního okraje mobilní dělicí panel.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>Vlastnost|Určuje minimální vzdálenost v pixelech, že rozdělovače lze přesunout uživatelem.|  
+|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> Vlastnost|Určuje, zda rozdělovače mobilní prostřednictvím klávesnici nebo myš.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> Vlastnost|Určuje vzdálenost v pixelech od levého nebo horního okraje mobilní dělicí panel.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> Vlastnost|Určuje minimální vzdálenost v pixelech, že rozdělovače lze přesunout uživatelem.|  
   
  Následující příklad změní <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> vlastnost vytvořit efekt "uchycení rozdělovače"; když uživatel nastavuje tažením rozdělovače, navýší v jednotkách 10 pixelů a ne výchozí hodnota 1.  
   
@@ -66,7 +68,7 @@ Panelů <xref:System.Windows.Forms.SplitContainer> řízení samo dobře se po z
     }  
     ```  
   
-     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]) Vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C#) Vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.Load += new System.EventHandler(this.Form1_Load);  

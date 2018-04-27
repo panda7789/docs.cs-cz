@@ -1,7 +1,7 @@
 ---
-title: "Řazené kolekce členů (F#)"
-description: "Další informace o F # tuple, seskupení nepojmenované ale seřazené hodnoty, které by mohly mít různých typů."
-keywords: "Visual f #, f #, funkční programování"
+title: Řazené kolekce členů (F#)
+description: 'Další informace o F # tuple, seskupení nepojmenované ale seřazené hodnoty, které by mohly mít různých typů.'
+keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 35069073-9a82-410f-8dea-912e2a152e6d
-ms.openlocfilehash: 996566f2baaea8ab01e5c80e53caea82e9684714
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: e0a5e5eb08e13bd5cbe9f88a47d4cf4bba19ea22
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="tuples"></a>Řazené kolekce členů
 
@@ -89,7 +89,7 @@ int * float * string
 
 ## <a name="interoperation-with-c-tuples"></a>Vzájemná spolupráce s řazenými kolekcemi členů C#
 
-Pro jazyk C# 7 zavést řazené kolekce členů.  Řazené kolekce členů v jazyce C# jsou struktury a odpovídají struktura řazených kolekcí členů v F #.  Pokud potřebujete zajistit vzájemnou funkční spolupráci s C#, je nutné použít struktura řazené kolekce členů.
+Pro jazyk C# 7.0 zavést řazené kolekce členů.  Řazené kolekce členů v jazyce C# jsou struktury a odpovídají struktura řazených kolekcí členů v F #.  Pokud potřebujete zajistit vzájemnou funkční spolupráci s C#, je nutné použít struktura řazené kolekce členů.
 
 Toto je snadné provést.  Představte si například, že je nutné předat řazené kolekce členů třídy jazyka C# a pak využívat jeho výsledek, který je také řazené kolekce členů:
 
@@ -130,7 +130,7 @@ Tato část vysvětluje formu řazených kolekcí členů v případě, že se k
 
 ### <a name="compiled-form-of-struct-tuples"></a>Kompilované formuláře řazené kolekce členů – struktura
 
-Struktura řazených kolekcí členů (například `struct (x, y)`), se zásadně liší od odkaz řazené kolekce členů.  Že se kompilují do <xref:System.ValueTuple> typu, přetížené Arita nebo počet parametrů typu.  Jsou ekvivalentní [C# 7 řazených kolekcí členů](../../csharp/tuples.md) a [jazyka Visual Basic 2017 řazených kolekcí členů](../../visual-basic/programming-guide/language-features/data-types/tuples.md)a zajistit vzájemnou funkční spolupráci obousměrně.
+Struktura řazených kolekcí členů (například `struct (x, y)`), se zásadně liší od odkaz řazené kolekce členů.  Že se kompilují do <xref:System.ValueTuple> typu, přetížené Arita nebo počet parametrů typu.  Jsou ekvivalentní [C# 7.0 řazených kolekcí členů](../../csharp/tuples.md) a [jazyka Visual Basic 2017 řazených kolekcí členů](../../visual-basic/programming-guide/language-features/data-types/tuples.md)a zajistit vzájemnou funkční spolupráci obousměrně.
 
 ## <a name="see-also"></a>Viz také
 [Referenční dokumentace jazyka F#](index.md)

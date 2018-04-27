@@ -1,30 +1,32 @@
 ---
-title: "Přístupu ke službě z webového prohlížeče (rychlý start WCF Data Services)"
-ms.custom: 
+title: Přístupu ke službě z webového prohlížeče (rychlý start WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a6fa180-3094-4e6e-ba2b-8c80975d18d1
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 71beb254bf258da97207f14afca73cd68c6927ca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c9ae96facd79ae3d268c630ff7bf8adf411eb775
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Přístupu ke službě z webového prohlížeče (rychlý start WCF Data Services)
-V této úloze se spustí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] z [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] a volitelně zakázat kanál čtení ve webovém prohlížeči. Můžete se pak načtení dokumentu definice služby a také přístup k prostředkům služby data odesláním požadavky HTTP GET prostřednictvím webového prohlížeče na zveřejněné prostředky.  
+V této úloze se spustí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ze sady Visual Studio a volitelně zakázat kanál čtení ve webovém prohlížeči. Můžete se pak načtení dokumentu definice služby a také přístup k prostředkům služby data odesláním požadavky HTTP GET prostřednictvím webového prohlížeče na zveřejněné prostředky.  
   
 > [!NOTE]
->  Ve výchozím nastavení [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] auto přiřadí číslo portu, `localhost` URI ve vašem počítači. Tato úloha používá číslo portu `12345` v příkladech identifikátor URI. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak nastavit konkrétní číslo portu vaše [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] projektu najdete [vytváření službu Data](../../../../docs/framework/data/wcf/creating-the-data-service.md).  
+>  Ve výchozím nastavení, Visual Studio automaticky přiřadí číslo portu, `localhost` URI ve vašem počítači. Tato úloha používá číslo portu `12345` v příkladech identifikátor URI. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] jak nastavit číslo specifického portu najdete v tématu vaše sady Visual Studio projektu [vytváření službu Data](../../../../docs/framework/data/wcf/creating-the-data-service.md).  
   
 ### <a name="to-request-the-default-service-document-by-using-internet-explorer"></a>Požádat o výchozí dokument služby v aplikaci Internet Explorer  
   
@@ -35,7 +37,7 @@ V této úloze se spustí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md
     > [!NOTE]
     >  Pokud váš prohlížeč nemůže zobrazit informační kanál jako nezpracovaná data XML, měli stále mohli zobrazit informační kanál jako zdrojový kód pro stránku.  
   
-2.  V [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], stisknutím klávesy F5 spusťte ladění aplikace.  
+2.  Ve Visual Studiu stisknutím klávesy F5 spusťte ladění aplikace.  
   
 3.  Otevřete webový prohlížeč v místním počítači. Na panelu Adresa zadejte identifikátor URI následující:  
   

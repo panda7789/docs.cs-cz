@@ -1,30 +1,31 @@
 ---
-title: "Typy metod manipulace s řetězci v jazyce Visual Basic"
-ms.custom: 
+title: Typy metod manipulace s řetězci v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - strings [Visual Basic], manipulating [Visual Basic]
 - string manipulation
 ms.assetid: 905055cd-7f50-48fb-9eed-b0995af1dc1f
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b437be4a6f4a0cc9d5a4d21291a80c9cb8fffcd3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 3677c8a23e956716af4357fe79041fc96f4014f2
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Typy metod manipulace s řetězci v jazyce Visual Basic
-K analýze a manipulaci s vaší řetězce několika různými způsoby. Některé metody jsou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jazyk a jiné jsou vyplývajících z `String` třídy.  
+K analýze a manipulaci s vaší řetězce několika různými způsoby. Některé metody jsou součástí jazyka Visual Basic a jiné jsou vyplývajících z `String` třídy.  
   
 ## <a name="visual-basic-language-and-the-net-framework"></a>Jazyk Visual Basic a .NET Framework  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]metody se používají jako vyplývajících funkce jazyka. Mohou být použity bez kvalifikace ve vašem kódu. Následující příklad ukazuje typické použití [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zacházení s řetězci příkaz:  
+ Jsou použity jako vyplývajících funkce jazyka Visual Basic metody. Mohou být použity bez kvalifikace ve vašem kódu. Následující příklad ukazuje typické použití příkazu zacházení s řetězci jazyka Visual Basic:  
   
  [!code-vb[VbVbalrStrings#44](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_1.vb)]  
   

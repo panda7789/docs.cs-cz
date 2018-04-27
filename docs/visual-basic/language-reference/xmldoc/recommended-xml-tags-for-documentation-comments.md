@@ -1,10 +1,10 @@
 ---
-title: "Doporučené značky XML pro dokumentační komentáře (Visual Basic)"
-ms.custom: 
+title: Doporučené značky XML pro dokumentační komentáře (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -15,17 +15,17 @@ helpviewer_keywords:
 - XML comments, recommended tags [Visual Basic]
 - comments, recommended XML tags
 ms.assetid: 294e0736-ff1e-498e-af83-6db71ed41a72
-caps.latest.revision: 
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 54712deb8bb2a5ed1e7b1f5fb8aa073dcdaf76d6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7815d4c9fddc4e760c7495ef7a2509c55141e96e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>Doporučené značky XML pro dokumentační komentáře (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru může zpracovat dokumentační komentáře v kódu do souboru XML. Další nástroje můžete používat ke zpracování souboru XML do dokumentace.  
+Visual Basic – kompilátor může zpracovat dokumentační komentáře v kódu do souboru XML. Další nástroje můžete používat ke zpracování souboru XML do dokumentace.  
   
  XML – komentáře na kód konstruktory, jako jsou typy jsou povoleny a zadejte členy. Pro částečné typy pouze jednu část typu může mít komentáře XML, i když neexistuje žádné omezení na komentářů její členy.  
   
@@ -50,5 +50,5 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)  
- [/ DOC](../../../visual-basic/reference/command-line-compiler/doc.md)  
- [Postupy: vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
+ [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)  
+ [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)

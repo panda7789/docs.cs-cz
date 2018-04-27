@@ -12,14 +12,14 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: ''
+caps.latest.revision: 145
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4641041657e99fa64bf1b7eb5317a43660ac7e2b
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 34c7e7147ce7ae43926de1796bee433667f08331
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -35,25 +35,25 @@ Nové funkce, najdete v části [15,5 Visual Basic](#visual-basic-155)
 Visual Basic 15.3   
 Nové funkce, najdete v části [15.3 jazyka Visual Basic](#visual-basic-153)
 
-Visual Basic 2017   
+2017 Visual Basic   
 Nové funkce, najdete v části [2017 Visual Basic](#visual-basic-2017)
 
-Visual Basic / Visual Studio .NET 2015   
+Visual Basic / Visual Studio 2015 rozhraní .NET   
 Nové funkce, najdete v části [14 Visual Basic](#visual-basic-14)
 
-Visual Basic / Visual Studio .NET 2013  
+Visual Basic / Visual Studio 2013 rozhraní .NET  
 Verze Preview technologie kompilátoru platformy .NET ("Roslyn")
 
-Visual Basic / Visual Studio .NET 2012   
+Visual Basic / Visual Studio 2012 rozhraní .NET   
 `Async` a `await` klíčová slova, iterátory, volající – atributy s informacemi
 
-Visual Basic, Visual Studio .NET 2010   
+Visual Basic, Visual Studio 2010 rozhraní .NET   
 Automaticky implementované vlastnosti, Inicializátory kolekcí, implicitní pokračování řádku, dynamické, obecný co/opravné položky k odchylky, přístupu globální obor názvů
 
-Visual Basic / Visual Studio .NET 2008   
+Visual Basic / Visual Studio 2008 rozhraní .NET   
 Jazyk integrovaného dotazu (LINQ), XML – literály, odvození místního typu objektu inicializátory, anonymní typy, rozšiřující metody, místní `var` odvození výrazy lambda typu `if` operátor, částečné metody, typy hodnot s povolenou hodnotou Null  
 
-Visual Basic / Visual Studio .NET 2005   
+Visual Basic / Visual Studio 2005 rozhraní .NET   
 `My` Typy typu a pomocné rutiny (přístup k aplikaci, počítače, systém souborů, sítě)
 
 Visual Basic / Visual Studio .NET 2003   
@@ -101,7 +101,7 @@ Přiřadíte-li hodnota řazené kolekce členů elementy z proměnných, Visual
 
 Teď podporuje příkazového řádku kompilátoru Visual Basicu [ **- refout** ](../reference/command-line-compiler/refout-compiler-option.md) a [ **- refonly** ](../reference/command-line-compiler/refonly-compiler-option.md) – možnosti kompilátoru k řízení výstup referenční sestavení. **-refout** definuje výstupního adresáře sestavení odkaz a **- refonly** Určuje, že je referenční sestavení být výstupem kompilace.
 
-## <a name="visual-basic-2017"></a>Visual Basic 2017
+## <a name="visual-basic-2017"></a>2017 Visual Basic
 
 [**Řazené kolekce členů**](../programming-guide/language-features/data-types/tuples.md)
 
@@ -129,7 +129,7 @@ Další informace najdete v části "Přiřazení literálu" [bajtů](../languag
 
 **Podpora pro C# odkaz návratové hodnoty**
 
-Od verze jazyka C# 7, podporuje referenční dokumentace jazyka C# návratové hodnoty. To znamená při volání metody obdrží hodnotu vrácený odkaz, můžete změnit hodnotu odkazu. Metody s odkazem na vytváření obsahu návratové hodnoty, ale možné využívat a upravit vrácené hodnoty referenční dokumentace jazyka Visual Basic není povoleno.
+Od verze 7.0 C#, podporuje referenční dokumentace jazyka C# návratové hodnoty. To znamená při volání metody obdrží hodnotu vrácený odkaz, můžete změnit hodnotu odkazu. Metody s odkazem na vytváření obsahu návratové hodnoty, ale možné využívat a upravit vrácené hodnoty referenční dokumentace jazyka Visual Basic není povoleno.
 
 Například následující `Sentence` zahrnuje třídy, které jsou napsané v C# `FindNext` metoda, která vyhledá další aplikace word ve větě, která začíná je určený dílčí řetězec. Řetězec se vrátí jako odkaz vrátí hodnotu a `Boolean` předaná odkazu na metodu proměnná Určuje, zda byla hledání úspěšné. To znamená, že volající nelze číst jenom vrácená hodnota; potvrdí také ho upravit, a že změna se odrazí v `Sentence` třídy.
 

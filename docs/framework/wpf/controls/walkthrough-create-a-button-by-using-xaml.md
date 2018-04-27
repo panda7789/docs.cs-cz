@@ -1,34 +1,34 @@
 ---
-title: "Návod: Vytvoření tlačítka použitím XAML"
-ms.custom: 
+title: 'Návod: Vytvoření tlačítka použitím XAML'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-caps.latest.revision: 
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5c5efa9f8787e65d59e1b544632e806bf3fbbc81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94ec5e56862190026b43331488cbc699fe7dfda4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
 Cílem tohoto návodu je informace o vytváření animované tlačítko pro použití v [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace. Tento návod používá styly a šablonu pro vytvoření přizpůsobené tlačítko prostředek, který umožňuje opětovné použití kódu a oddělení tlačítko logiku z deklarace tlačítko. Tento názorný postup je zapsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
 > [!IMPORTANT]
->  Tento postup vás provede kroky pro vytvoření aplikace zadáním nebo kopírování a vkládání [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do Microsoft [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Pokud si přejete se dozvíte, jak použít nástroj návrhu (Microsoft Expression Blend) vytvořit stejnou aplikaci, najdete v článku [vytvoření tlačítka společností pomocí Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md).  
+>  Tento postup vás provede kroky pro vytvoření aplikace zadáním nebo kopírování a vkládání [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do sady Microsoft Visual Studio. Pokud si přejete se dozvíte, jak použít nástroj návrhu (Microsoft Expression Blend) vytvořit stejnou aplikaci, najdete v článku [vytvoření tlačítka společností pomocí Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md).  
   
  Následující obrázek znázorňuje tlačítka bylo dokončeno.  
   
@@ -39,7 +39,7 @@ Cílem tohoto návodu je informace o vytváření animované tlačítko pro pou�
   
 #### <a name="to-create-a-new-wpf-project-and-add-buttons-to-the-window"></a>Vytvořte nový projekt WPF a přidání tlačítek do okna  
   
-1.  Spustit[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].  
+1.  Spuštění sady Visual Studio.  
   
 2.  **Vytvořte nový projekt WPF:** na **soubor** nabídky, přejděte na příkaz **nový**a potom klikněte na **projektu**. Najít **aplikace WPF (Windows)** šablony a názvu projektu "AnimatedButton". Tím se vytvoří kostru aplikace.  
   
@@ -332,7 +332,7 @@ Cílem tohoto návodu je informace o vytváření animované tlačítko pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci a klikněte na jednu z tlačítka. Všimněte si, že zůstane tlačítko zvýrazněná po kliknutí na tlačítko ji vzhledem k tomu, že je stále fokus. Pokud klepnete na tlačítko Další, nové tlačítko získá fokus při poslední ztratí ho.  
   
-4.  **Přidání animace pro** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** další přidáme některé animací aktivačních událostí. Přidejte následující kód kdekoli v z `ControlTemplate.Triggers` bloku.  
+4.  **Přidání animace pro** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** další přidáme některé animací aktivačních událostí.   Přidejte následující kód kdekoli v z `ControlTemplate.Triggers` bloku.  
   
     ```  
     <!-- Animations that start when mouse enters and leaves button. -->  

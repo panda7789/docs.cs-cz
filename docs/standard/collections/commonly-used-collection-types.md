@@ -1,12 +1,12 @@
 ---
-title: "Běžně používané typy kolekcí"
-ms.custom: 
+title: Běžně používané typy kolekcí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - collections [.NET Framework], generic
@@ -18,18 +18,18 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cdc4e0660c5eae0a9550cf73d273d394ed71b823
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 127813e52b6e72f896ebe4f5017651467f748a04
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="commonly-used-collection-types"></a>Běžně používané typy kolekcí
 Typy kolekcí jsou běžné varianty kolekcí dat, jako je například hash – tabulky, fronty, zásobníky, sáčky, slovníky a seznamy.  
@@ -40,7 +40,7 @@ Typy kolekcí jsou běžné varianty kolekcí dat, jako je například hash – 
   
  Kolekce se mohou lišit v závislosti na tom, jak jsou uložené elementy, způsob řazení, jak se provádí vyhledávání a tvorba porovnání. <xref:System.Collections.Queue> – Třída a <xref:System.Collections.Generic.Queue%601> – obecná třída zadejte first-in-first-out seznamy při <xref:System.Collections.Stack> – třída a <xref:System.Collections.Generic.Stack%601> – obecná třída poskytují last in first out seznamy. <xref:System.Collections.SortedList> Třídy a <xref:System.Collections.Generic.SortedList%602> – obecná třída poskytují seřazené verze <xref:System.Collections.Hashtable> – třída a <xref:System.Collections.Generic.Dictionary%602> – obecná třída. Elementy <xref:System.Collections.Hashtable> nebo <xref:System.Collections.Generic.Dictionary%602> jsou přístupné jenom pro klíč elementu, ale elementy <xref:System.Collections.SortedList> nebo <xref:System.Collections.ObjectModel.KeyedCollection%602> jsou přístupné pomocí klíče nebo index elementu. Indexy ve všech kolekcích jsou od nuly, s výjimkou <xref:System.Array>, což umožňuje pole, které nejsou od nuly.  
   
- LINQ na objekty funkce umožňuje používat dotazy LINQ pro přístup k objektům v paměti, dokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzorek pro přístup k datům; Obvykle se jedná o více stručná a čitelná než standardní `foreach` cyklu; a zadejte filtrování, řazení a seskupování schopností. Výkon lze zvýšit rovněž dotazů LINQ. Další informace najdete v tématu [LINQ na objekty](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9) a [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ LINQ na objekty funkce umožňuje používat dotazy LINQ pro přístup k objektům v paměti, dokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzorek pro přístup k datům; Obvykle se jedná o více stručná a čitelná než standardní `foreach` cyklu; a zadejte filtrování, řazení a seskupování schopností. Výkon lze zvýšit rovněž dotazů LINQ. Další informace najdete v tématu [LINQ na objekty](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9) a [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
   
 ## <a name="related-topics"></a>Související témata  
   

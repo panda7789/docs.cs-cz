@@ -1,24 +1,26 @@
 ---
-title: "Poradce při potížích"
-ms.custom: 
+title: Poradce při potížích
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 56d06fa7adf2690a2cb9194342071c7814a4ec4a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5544540c6a27975a885bf4cd8b2e0a26183e192b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít ve vaší [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace a poskytuje návrhy k zamezení nebo jinak snížil dopad tyto problémy.  
@@ -26,7 +28,7 @@ Následující informace uvádí některé problémy, může dojít ve vaší [!
  Další problémy jsou řešeny v [– nejčastější dotazy](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md).  
   
 ## <a name="unsupported-standard-query-operators"></a>Nepodporované standardní operátory dotazu  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje všechny metody operátor standardní dotazů (například <xref:System.Linq.Enumerable.ElementAt%2A>). Projekty, které kompilovat v důsledku toho může vytvářet stále běhové chyby. Další informace najdete v tématu [operátor překlad dotazu na standardní](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje všechny metody operátor standardní dotazů (například <xref:System.Linq.Enumerable.ElementAt%2A>). Projekty, které kompilovat v důsledku toho může vytvářet stále běhové chyby. Další informace najdete v tématu [operátor překlad dotazu na standardní](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md).  
   
 ## <a name="memory-issues"></a>Problémy s pamětí  
  Pokud dotaz zahrnuje kolekci v paměti a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Table%601>, dotaz může provést v paměti, v závislosti na pořadí, ve kterém jsou uvedené dvě kolekce. Pokud dotaz musí být spuštěn v paměti, bude nutné data z tabulky databáze mají být načteny.  
@@ -37,10 +39,10 @@ Následující informace uvádí některé problémy, může dojít ve vaší [!
  Chcete-li zadat název vstupního souboru, přidejte název souboru do příkazového řádku jako vstupní soubor. Včetně názvu souboru v připojovacím řetězci (pomocí **/kontext** možnost) není podporován. Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="class-library-projects"></a>Projektů knihovny tříd  
- [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Vytvoří připojovací řetězec `app.config` souboru projektu. V projektů knihovny tříd `app.config` soubor se nepoužije. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]používá v době návrhu soubory v zadaném připojovacím řetězci. Změna hodnoty v `app.config` nezmění databázi, ke kterému se připojí vaše aplikace.  
+ [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Vytvoří připojovací řetězec `app.config` souboru projektu. V projektů knihovny tříd `app.config` soubor se nepoužije. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá v době návrhu soubory v zadaném připojovacím řetězci. Změna hodnoty v `app.config` nezmění databázi, ke kterému se připojí vaše aplikace.  
   
 ## <a name="cascade-delete"></a>Kaskádové odstranění  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje nebo rozpoznat kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, která má omezení u ní, musíte udělat jednu z těchto věcí:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje nebo rozpoznat kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, která má omezení u ní, musíte udělat jednu z těchto věcí:  
   
 -   Nastavte `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi.  
   
@@ -57,7 +59,7 @@ Následující informace uvádí některé problémy, může dojít ve vaší [!
   
 -   Obsahují odkaz na `System.Core.dll` a `System.Data.Linq.dll`.  
   
--   Máte `Imports` ([!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]) nebo `using` – direktiva (C#) pro <xref:System.Linq> a <xref:System.Data.Linq>.  
+-   Máte `Imports` (Visual Basic) nebo `using` – direktiva (C#) pro <xref:System.Linq> a <xref:System.Data.Linq>.  
   
 ## <a name="duplicatekeyexception"></a>DuplicateKeyException  
  V průběhu ladění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu, může procházení vztahů entity. Díky tomu přináší tyto položky do mezipaměti, a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se dozví o jejich výskytu. Při spuštění <xref:System.Data.Linq.Table%601.Attach%2A> nebo <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> nebo podobné metoda, která vytváří více řádků, které mají stejný klíč <xref:System.Data.Linq.DuplicateKeyException> je vyvolána výjimka.  

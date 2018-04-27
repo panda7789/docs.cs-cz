@@ -1,13 +1,13 @@
 ---
-title: "Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic"
-ms.custom: 
+title: 'Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - vb
@@ -18,20 +18,20 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b165de0d18cede275dfe8405b0266c1a909ac570
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 342ab60d4c3481d2154293fab9fb1254f937a934
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic
-S [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti budete moci vytvořit ovládací prvky, které nezachovají vyplývajících funkce standardní ovládací prvky Windows Forms, ale také obsahovat vlastní funkce. V tomto návodu vytvoříte jednoduchý zděděné ovládací prvek názvem `ValueButton`. Toto tlačítko bude funkce dědit ze standardní Windows Forms <xref:System.Windows.Forms.Button> řízení a zveřejní vlastní vlastnost s názvem `ButtonValue`.  
+V jazyce Visual Basic, můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti budete moci vytvořit ovládací prvky, které nezachovají vyplývajících funkce standardní ovládací prvky Windows Forms, ale také obsahovat vlastní funkce. V tomto návodu vytvoříte jednoduchý zděděné ovládací prvek názvem `ValueButton`. Toto tlačítko bude funkce dědit ze standardní Windows Forms <xref:System.Windows.Forms.Button> řízení a zveřejní vlastní vlastnost s názvem `ButtonValue`.  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
@@ -43,7 +43,7 @@ S [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], můžete vytvořit výk
   
 1.  Na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu** otevřete **nový projekt** dialogové okno.  
   
-2.  Vyberte **knihovny ovládacích prvků Windows Forms** šablona projektu ze seznamu [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] projekty a typ `ValueButtonLib` v **název** pole.  
+2.  Vyberte **knihovny ovládacích prvků Windows Forms** šablona projektu ze seznamu Projekty Visual Basic a typ `ValueButtonLib` v **název** pole.  
   
      Název projektu `ValueButtonLib`, je také přiřazený k oboru názvů root ve výchozím nastavení. Kořenový obor názvů se použijí pro kvalifikaci názvy součásti v sestavení. Například, pokud dvě sestavení poskytují komponenty s názvem `ValueButton`, můžete zadat vaše `ValueButton` pomocí součásti `ValueButtonLib.ValueButton`. Další informace najdete v tématu [obory názvů v jazyce Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).  
   
@@ -107,7 +107,7 @@ S [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], můžete vytvořit výk
   
 1.  Na **soubor** nabídky, přejděte na příkaz **přidat** a pak klikněte na **nový projekt** otevřete **přidat nový projekt** dialogové okno.  
   
-2.  Vyberte [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] projekty uzel a klikněte na tlačítko **formulářové aplikace Windows**.  
+2.  Vyberte uzel projektů jazyka Visual Basic a klikněte na tlačítko **formulářové aplikace Windows**.  
   
 3.  V **název** zadejte `Test`.  
   
@@ -153,7 +153,7 @@ S [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], můžete vytvořit výk
   
 11. Z **ladění** nabídce vyberte možnost **spustit ladění**.  
   
-     `Form1`Zobrazí se.  
+     `Form1` Zobrazí se.  
   
 12. Klikněte na tlačítko `Valuebutton1`.  
   

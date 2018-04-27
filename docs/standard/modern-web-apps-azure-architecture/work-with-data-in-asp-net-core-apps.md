@@ -6,20 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: df80dfb6029932c53e028bfb753dcfa94b548ba1
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 7d160d23808832ff6456e5c95f6e5ed5f4d44fa5
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
 > "Data drahocenný jedinou a bude trvat déle, než systémy sami."
 
-Tim Berners-Lee
+TIM Berners-Lee
 
 ## <a name="summary"></a>Souhrn
 
@@ -206,7 +207,7 @@ Je první DbContext \_catalogContext a druhý je DbContext v rámci \_integratio
 > - **EF jádra: Související Data**  
 > <https://docs.microsoft.com/ef/core/querying/related-data>
 > - **Vyhněte se opožděného načítání entity v aplikacích ASPNET**  
-> <http://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
+> <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## <a name="ef-core-or-micro-orm"></a>Základní EF nebo micro ORM?
 
@@ -270,7 +271,7 @@ Další složitost NoSQL databáze musí řešit je správa verzí. Při změně
 
 Je možné v databáze NoSQL uložit více verzí objektů, něco pevného schématu relačních databází obvykle nepodporují. Ale v tomto případě kód aplikace potřeba účet existenci předchozích verzích objektů a přidávání dalších složitost.
 
-Databáze NoSQL obvykle Nevynucovat [kyseliny](http://en.wikipedia.org/wiki/ACID), což znamená, že mají výkon a škálovatelnost výhody nad relačních databází. Jsou vhodné řešení pro velmi rozsáhlých datových sad a objektů, které nejsou vhodné řešení pro úložiště v struktury normalizovaný tabulky. Neexistuje žádný důvod, proč jednu aplikaci nelze využít výhod obě relační a vhodné databáze NoSQL, každý pomocí, kde je nejvhodnější.
+Databáze NoSQL obvykle Nevynucovat [kyseliny](https://en.wikipedia.org/wiki/ACID), což znamená, že mají výkon a škálovatelnost výhody nad relačních databází. Jsou vhodné řešení pro velmi rozsáhlých datových sad a objektů, které nejsou vhodné řešení pro úložiště v struktury normalizovaný tabulky. Neexistuje žádný důvod, proč jednu aplikaci nelze využít výhod obě relační a vhodné databáze NoSQL, každý pomocí, kde je nejvhodnější.
 
 ## <a name="azure-documentdb"></a>Azure DocumentDB
 
@@ -305,7 +306,7 @@ Také na relační a možnosti úložiště typu NoSQL aplikace ASP.NET Core slo
 -   Introduction\ úložiště Azure
     <https://docs.microsoft.com/azure/storage/storage-introduction>
 
-## <a name="caching"></a>Caching
+## <a name="caching"></a>Ukládání do mezipaměti
 
 Ve webových aplikacích každý webový požadavek by se měly dokončit v možná nejkratší době. Jedním ze způsobů jak toho docílit je omezit počet externí volání, které server musíte provést žádost dokončit. Ukládání do mezipaměti zahrnuje ukládání kopii dat na serveru (nebo jiného úložiště dat, který je více než zdroj dat snadno dotaz). Webové aplikace a hlavně-zabezpečené ověřování HESLA tradiční webových aplikací, potřebujete k vytvoření celé uživatelské rozhraní s každou žádostí. To často zahrnuje, vytvoření řadu stejné databázové dotazy opakovaně z jednoho uživatele požadavku na další. Ve většině případů tato data změní zřídka, takže je málo důvod neustále požádat o z databáze. ASP.NET Core podporuje ukládání odpovědí do mezipaměti, pro ukládání do mezipaměti celé stránky a ukládání do mezipaměti dat, která podporuje podrobnější chování ukládání do mezipaměti.
 
@@ -441,4 +442,4 @@ _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
 >[!div class="step-by-step"]
-[Previous] (develop-asp-net-core-mvc-apps.md) [Next] (test-asp-net-core-mvc-apps.md)
+[Předchozí] (develop-asp-net-core-mvc-apps.md) [Další] (test-asp-net-core-mvc-apps.md)

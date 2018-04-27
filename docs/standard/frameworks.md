@@ -1,6 +1,6 @@
 ---
-title: "Cílové rozhraní"
-description: "Další informace o cílové rozhraní pro aplikace .NET Core a knihovny."
+title: Cílové rozhraní
+description: Další informace o cílové rozhraní pro aplikace .NET Core a knihovny.
 author: richlander
 ms.author: mairaw
 ms.date: 09/22/2017
@@ -11,11 +11,11 @@ ms.technology: dotnet-standard
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 838f4f6d78b4544a538e9c4bd6c487bcc731270b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e9f47647a1d4dc82b2df2ea8905f8d0a1e705b96
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="target-frameworks"></a>Cílové rozhraní
 
@@ -51,7 +51,7 @@ Cílové rozhraní se obvykle odkazuje TFM. V následující tabulce jsou uveden
 | Windows Store              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | Malých rozhraní .NET Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
-| Windows Phone              | webové části [wp7]<br>wp7<br>wp75<br>wp8<br>wp81<br>wpa81 |
+| Windows Phone              | wp [wp7]<br>wp7<br>wp75<br>wp8<br>wp81<br>wpa81 |
 | Univerzální platforma pro Windows | uap [uap10.0]<br>uap10.0 [win10] [netcore50] |
 
 ## <a name="how-to-specify-target-frameworks"></a>Určení cílové rozhraní
@@ -141,4 +141,4 @@ Následující cílové architektury jsou zastaralé. Balíčky cílené na tyto
 [Správa verzí rozhraní .NET core](~/docs/core/versions/index.md)  
 [úložiště GitHub DotNet nebo standard](https://github.com/dotnet/standard)  
 [Úložiště GitHub nástroje NuGet](https://github.com/joelverhagen/NuGetTools)  
-[Profily Framework v rozhraní .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
+[Profily Framework v rozhraní .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)

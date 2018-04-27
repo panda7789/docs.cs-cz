@@ -1,24 +1,26 @@
 ---
-title: "Ukázka informačních kanálů streamování"
-ms.custom: 
+title: Ukázka informačních kanálů streamování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e3d2de4dd5510b212e030ea537cea0be3dce24f0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 24dfd6c7eb2c1df6605d03bfb99cc82c0a489377
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tento příklad znázorňuje postup správy informační kanály syndikace, které obsahují velkým počtem položek. Na serveru, ukázky ukazuje, jak zpoždění vytvoření jednotlivé <xref:System.ServiceModel.Syndication.SyndicationItem> objekty v rámci kanálu dokud okamžitě, než položka se zapíše do datového proudu sítě.  
@@ -27,7 +29,7 @@ Tento příklad znázorňuje postup správy informační kanály syndikace, kter
   
  K předvedení nejlépe streamování schopností syndikace rozhraní API, používá tato ukázka poněkud pravděpodobně scénář, ve kterém server zpřístupní informačního kanálu, který obsahuje nekonečné počet položek. V tomto případě server pokračuje v generování nových položek do informačního kanálu, dokud se určuje, že klient má ke čtení zadaný počet položek z informačního kanálu (ve výchozím nastavení, 10). Pro jednoduchost, klienta a serveru jsou implementované v rámci jednoho procesu a použít sdílenou `ItemCounter` má vytvořeného objektu k udržování přehledu o tom, kolik položek klienta. `ItemCounter` Typ existuje pouze pro účely povolení vzorový scénář ukončit ještě jednou a není element základní vzoru předmětem ukázky.  
   
- Ukázky využívá [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] iterátory (pomocí `yield``return` – klíčové slovo konstrukce). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]iterátory, naleznete v části "Použití iterátory" na webu MSDN.  
+ Ukázky využívá z Visual C# iterátory (pomocí `yield``return` – klíčové slovo konstrukce). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] iterátory, naleznete v části "Použití iterátory" na webu MSDN.  
   
 ## <a name="service"></a>Služba  
  Služba implementuje základní <xref:System.ServiceModel.Web.WebGetAttribute> kontrakt, který se skládá z jedné operace, jak je znázorněno v následujícím kódu.  

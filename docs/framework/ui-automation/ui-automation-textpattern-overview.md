@@ -1,36 +1,38 @@
 ---
-title: "Přehled prvku TextPattern automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled prvku TextPattern automatizace uživatelského rozhraní
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - UI Automation, TextPattern class
 - TextPattern class
 - classes, TextPattern
 ms.assetid: 41787927-df1f-4f4a-aba3-641662854fc4
-caps.latest.revision: "38"
+caps.latest.revision: 38
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dbf3e125d911a407be3b07d0ce93d5c17bd8a0b7
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1b9504dceea6987945cfb3960f756148db9ebb8f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ui-automation-textpattern-overview"></a>Přehled prvku TextPattern automatizace uživatelského rozhraní
 > [!NOTE]
 >  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vystavit textový obsah, včetně formátu a stylu atributy prvků textu v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]-podporované platformy. Tyto ovládací prvky patří, ale nejsou nijak omezené, [!INCLUDE[TLA#tla_winfx](../../../includes/tlasharptla-winfx-md.md)] <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox> a také jejich [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ekvivalenty.  
+ Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vystavit textový obsah, včetně formátu a stylu atributy prvků textu v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]-podporované platformy. Tyto ovládací prvky patří, ale nejsou omezeny na rozhraní Microsoft .NET Framework <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox> a také jejich [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ekvivalenty.  
   
- Vystavení textový obsah ovládacího prvku se provádí prostřednictvím <xref:System.Windows.Automation.TextPattern> – vzor ovládacích prvků, která představuje obsah kontejneru text jako datový proud text. Pak <xref:System.Windows.Automation.TextPattern> vyžaduje podporu <xref:System.Windows.Automation.Text.TextPatternRange> třída vystavit formátu a stylu atributy. <xref:System.Windows.Automation.Text.TextPatternRange>podporuje <xref:System.Windows.Automation.TextPattern> podle představující souvislý nebo několika nesouvislé rozpětí textu v zásobníku textu s kolekcí <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> a <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncové body. <xref:System.Windows.Automation.Text.TextPatternRange>podporuje funkce, jako je výběr, porovnání, načítání a traversal.  
+ Vystavení textový obsah ovládacího prvku se provádí prostřednictvím <xref:System.Windows.Automation.TextPattern> – vzor ovládacích prvků, která představuje obsah kontejneru text jako datový proud text. Pak <xref:System.Windows.Automation.TextPattern> vyžaduje podporu <xref:System.Windows.Automation.Text.TextPatternRange> třída vystavit formátu a stylu atributy. <xref:System.Windows.Automation.Text.TextPatternRange> podporuje <xref:System.Windows.Automation.TextPattern> podle představující souvislý nebo několika nesouvislé rozpětí textu v zásobníku textu s kolekcí <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> a <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncové body. <xref:System.Windows.Automation.Text.TextPatternRange> podporuje funkce, jako je výběr, porovnání, načítání a traversal.  
   
 > [!NOTE]
 >  <xref:System.Windows.Automation.TextPattern> Neposkytují znamená vložit nebo upravit text. Nicméně, v závislosti na ovládací prvek, to může udělat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.ValuePattern> nebo prostřednictvím přímé klávesnice vstup. Najdete v článku [ukázkový Text vložte TextPattern](http://msdn.microsoft.com/library/67353f93-7ee2-42f2-ab76-5c078cf6ca16) příklad.  
@@ -38,8 +40,8 @@ ms.lasthandoff: 01/19/2018
  Funkce popsané v tomto přehledu je životně důležité technologie usnadnění dodavatele a své koncové uživatele. Technologie pro usnadnění můžete použít [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] shromažďovat informace o uživateli formátování textu, dokončení a poskytují programový navigaci a výběr textu pomocí <xref:System.Windows.Automation.Text.TextUnit> (znak, word, řádek nebo odstavce).  
   
 <a name="UI_Automation_TextPattern_vs__Cicero"></a>   
-## <a name="ui-automation-textpattern-vs-text-services-framework"></a>UI Automation TextPattern vs. Text Services Framework  
- [!INCLUDE[TLA#tla_tsf](../../../includes/tlasharptla-tsf-md.md)]je jednoduchý a škálovatelné systému rozhraní, které umožňuje službám přirozeného jazyka a pokročilé textový vstup na ploše a v aplikacích. Kromě rozhraní pro aplikace ke zveřejnění jejich úložiště text také podporuje metadata pro toto úložiště text.  
+## <a name="ui-automation-textpattern-vs-text-services-framework"></a>TextPattern automatizace uživatelského rozhraní vs. Text Services Framework  
+ [!INCLUDE[TLA#tla_tsf](../../../includes/tlasharptla-tsf-md.md)] je jednoduchý a škálovatelné systému rozhraní, které umožňuje službám přirozeného jazyka a pokročilé textový vstup na ploše a v aplikacích. Kromě rozhraní pro aplikace ke zveřejnění jejich úložiště text také podporuje metadata pro toto úložiště text.  
   
  Ale [!INCLUDE[TLA2#tla_tsf](../../../includes/tla2sharptla-tsf-md.md)] byl navržený pro aplikace, které je třeba vložit vstup do kontextově scénáře, zatímco <xref:System.Windows.Automation.TextPattern> je jen pro čtení řešení (s omezenou řešení uvedených výše) určená k poskytování optimalizované přístupu k úložišti text pro čtečky obrazovky a Braillovo písmo zařízení.  
   
@@ -97,11 +99,11 @@ ms.lasthandoff: 01/19/2018
 ## <a name="security"></a>Zabezpečení  
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Architektura byl navržen s důrazem na bezpečnost (viz [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md)). TextPattern třídy popsané v tomto přehledu ale vyžadovat některé specifické aspekty zabezpečení.  
   
--   [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]poskytovatelé text zadat jen pro čtení rozhraní a neposkytuje možnost měnit existující text v ovládacím prvku.  
+-   [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] poskytovatelé text zadat jen pro čtení rozhraní a neposkytuje možnost měnit existující text v ovládacím prvku.  
   
 -   Klienti automatizace uživatelského rozhraní lze použít pouze [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] Pokud jsou plně "důvěryhodné". Příkladem tohoto může být chráněný plochy přihlášení, kde můžete spustit pouze známé a důvěryhodné aplikace.  
   
--   Vývojáři zprostředkovatelů automatizace uživatelského rozhraní měli vědět, že všechny informace se rozhodnete vystavit v jejich ovládacích prvcích prostřednictvím [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je v podstatě veřejné a plně přístupné jiným kódem. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]nesnaží určit že důvěryhodnost libovolného automatizace uživatelského rozhraní klienta a proto zprostředkovatele automatizace uživatelského rozhraní by neměli zveřejňovat chráněného obsahu nebo citlivé textové informace (například pole heslo).  
+-   Vývojáři zprostředkovatelů automatizace uživatelského rozhraní měli vědět, že všechny informace se rozhodnete vystavit v jejich ovládacích prvcích prostřednictvím [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je v podstatě veřejné a plně přístupné jiným kódem. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] nesnaží určit že důvěryhodnost libovolného automatizace uživatelského rozhraní klienta a proto zprostředkovatele automatizace uživatelského rozhraní by neměli zveřejňovat chráněného obsahu nebo citlivé textové informace (například pole heslo).  
   
 -   Jednou z nejvýznamnějších změn v zabezpečení pro [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] je široce označovány jako "Zabezpečení vstup" což zahrnuje technologie jako nejméně privilegovaným (nebo omezené) uživatelské účty (LUA) a uživatelského rozhraní oprávnění úroveň izolace (UIPI).  
   
@@ -121,7 +123,7 @@ ms.lasthandoff: 01/19/2018
  Formátování vlastnosti rozsahu text (například <xref:System.Windows.Automation.TextPattern.IsItalicAttribute> nebo <xref:System.Windows.Automation.TextPattern.FontNameAttribute>).  
   
  **Rozsah degenerovanou**  
- Degenerovanou rozsah je prázdné nebo nulové znak textu. Pro účely vzor TextPattern ovládacích prvků textového kurzoru (nebo systémový znak) považuje za degenerovanou rozsahu. Pokud není vybraný žádný text, <xref:System.Windows.Automation.TextPattern.GetSelection%2A> by vrátit na degenerovanou rozsah bod pro vložení textu a <xref:System.Windows.Automation.TextPattern.RangeFromPoint%2A> by vrátit degenerovanou rozsah jako svůj výchozí koncový bod. <xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>a <xref:System.Windows.Automation.TextPattern.GetVisibleRanges%2A> může vracet degenerovanou rozsahy zprostředkovatele textu nelze najít žádné textové rozsahy, které splňují danou podmínku. Tento rozsah degenerovanou slouží jako výchozí koncový bod v rámci zprostředkovatele text. <xref:System.Windows.Automation.Text.TextPatternRange.FindText%2A>a <xref:System.Windows.Automation.Text.TextPatternRange.FindAttribute%2A> vrátit odkaz s hodnotou null (`Nothing` v [!INCLUDE[TLA2#tla_visualbnet](../../../includes/tla2sharptla-visualbnet-md.md)]) k zamezení nejasnostem s rozsahem zjištěných versus degenerovanou rozsahu.  
+ Degenerovanou rozsah je prázdné nebo nulové znak textu. Pro účely vzor TextPattern ovládacích prvků textového kurzoru (nebo systémový znak) považuje za degenerovanou rozsahu. Pokud není vybraný žádný text, <xref:System.Windows.Automation.TextPattern.GetSelection%2A> by vrátit na degenerovanou rozsah bod pro vložení textu a <xref:System.Windows.Automation.TextPattern.RangeFromPoint%2A> by vrátit degenerovanou rozsah jako svůj výchozí koncový bod. <xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> a <xref:System.Windows.Automation.TextPattern.GetVisibleRanges%2A> může vracet degenerovanou rozsahy zprostředkovatele textu nelze najít žádné textové rozsahy, které splňují danou podmínku. Tento rozsah degenerovanou slouží jako výchozí koncový bod v rámci zprostředkovatele text. <xref:System.Windows.Automation.Text.TextPatternRange.FindText%2A> a <xref:System.Windows.Automation.Text.TextPatternRange.FindAttribute%2A> vrátit odkaz s hodnotou null (`Nothing` v aplikaci Microsoft Visual Basic .NET) k zamezení nejasnostem s rozsahem zjištěných versus degenerovanou rozsahu.  
   
  **Vložený objekt**  
  Existují dva typy vložené objekty v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] text modelu. Skládají se z založený na textu obsahu prvky, jako jsou například hypertextových odkazů nebo tabulky a ovládací prvky, jako jsou bitové kopie a tlačítka. Podrobnější informace najdete v části [přístup vložené objekty pomocí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md).  
@@ -129,7 +131,7 @@ ms.lasthandoff: 01/19/2018
  **Endpoint**  
  Absolutní <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> nebo <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> bodu rozsahu textu v rámci kontejneru text.  
   
- ![Výčty TextPatternRangeEndpoint &#40; počáteční a koncové &#41;. ] (../../../docs/framework/ui-automation/media/uia-textpattern-endpoints.PNG "UIA_TextPattern_Endpoints")  
+ ![Výčty TextPatternRangeEndpoint &#40;začínat a končit&#41;. ] (../../../docs/framework/ui-automation/media/uia-textpattern-endpoints.PNG "UIA_TextPattern_Endpoints")  
 Následující znázorňuje sadu počáteční a koncový bod.  
   
  **TextRange**  

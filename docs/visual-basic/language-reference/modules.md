@@ -8,17 +8,17 @@ ms.topic: article
 helpviewer_keywords:
 - modules, Visual Basic
 ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
-caps.latest.revision: 
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 62fba60aa6a9f95057010997d5f427f2c66ec178
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cd92be378894235f4753cfc52e8382a1960bd37b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="modules-visual-basic"></a>Moduly (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje několik modulů, které umožňují zjednodušit běžné úlohy v kódu, včetně manipulace s řetězci, provádění výpočty, získávání informací o systému, provádění operací se soubory a adresáře a tak dále. Následující tabulka uvádí moduly poskytované [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+Visual Basic poskytuje několik modulů, které umožňují zjednodušit běžné úlohy v kódu, včetně manipulace s řetězci, provádění výpočty, získávání informací o systému, provádění operací se soubory a adresáře a tak dále. V následující tabulce jsou uvedeny v modulech jazyka Visual Basic.  
   
 |||  
 |---|---|  

@@ -1,11 +1,12 @@
 ---
-title: "Aritmetické operátory v jazyce Visual Basic"
-ms.custom: 
+title: Aritmetické operátory v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - type safety
@@ -19,14 +20,14 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7fec98c38eebc34a0f84e051dc7c0914f537418f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cef1e3610d885a0f3a2bae718641f7b8ca1062dc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory slouží k provádění mnoha známé aritmetické operace, které zahrnují výpočet numerických hodnot reprezentována literály, proměnné, ostatní výrazy, funkce a vlastnosti volání a konstanty. Bitové posunutí – operátory, které fungují na úrovni jednotlivých bity operandy a jejich vzory bitové posunutí doleva nebo doprava taky klasifikované s aritmetické operátory jsou.  
@@ -65,7 +66,7 @@ Aritmetické operátory slouží k provádění mnoha známé aritmetické opera
   
 |Dělenec datový typ|Dělitel datový typ|Hodnota dělenec|Výsledek|  
 |---|---|---|---|  
-|`Double`|`Double`|0|<xref:System.Double.NaN>(není matematicky určené číslo)|  
+|`Double`|`Double`|0|<xref:System.Double.NaN> (není matematicky určené číslo)|  
 |`Double`|`Double`|> 0|<xref:System.Double.PositiveInfinity>|  
 |`Double`|`Double`|\< 0|<xref:System.Double.NegativeInfinity>|  
   
@@ -98,13 +99,13 @@ Aritmetické operátory slouží k provádění mnoha známé aritmetické opera
 ## <a name="type-safety"></a>Zabezpečení typů  
  Operandy by měl obvykle být stejného typu. Například, pokud byste přidávání pomocí `Integer` proměnné, měli byste přidat ho do jiného `Integer` proměnnou a měli přiřadit výsledek proměnné typu `Integer` také.  
   
- Jedním ze způsobů, aby funkční bezpečnost typů zvykem je použití [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md). Pokud nastavíte `Option Strict On`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automaticky provede *bezpečnost typů* převody. Například, pokud se pokusíte přidat `Integer` proměnnou `Double` proměnné a přiřazení hodnoty k `Double` proměnné, operace pokračuje normálně, protože `Integer` hodnotu lze převést na `Double` bez ztráty dat. Typ nezabezpečený převody na druhé straně způsobit chyby kompilátoru s `Option Strict On`. Například, pokud se pokusíte přidat `Integer` proměnnou `Double` proměnné a přiřaďte hodnota, která má `Integer` proměnné, Chyba kompilátoru výsledky, protože `Double` proměnnou nelze implicitně převést na typ `Integer`.  
+ Jedním ze způsobů, aby funkční bezpečnost typů zvykem je použití [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md). Pokud nastavíte `Option Strict On`, Visual Basic automaticky provede *bezpečnost typů* převody. Například, pokud se pokusíte přidat `Integer` proměnnou `Double` proměnné a přiřazení hodnoty k `Double` proměnné, operace pokračuje normálně, protože `Integer` hodnotu lze převést na `Double` bez ztráty dat. Typ nezabezpečený převody na druhé straně způsobit chyby kompilátoru s `Option Strict On`. Například, pokud se pokusíte přidat `Integer` proměnnou `Double` proměnné a přiřaďte hodnota, která má `Integer` proměnné, Chyba kompilátoru výsledky, protože `Double` proměnnou nelze implicitně převést na typ `Integer`.  
   
- Pokud nastavíte `Option Strict Off`, ale [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] umožňuje implicitní zužující převody proběhla, i když může způsobit neočekávané dojít ke ztrátě dat nebo přesnosti. Z tohoto důvodu doporučujeme používat `Option Strict On` při zápisu produkčním kódu. Další informace najdete v tématu [Widening a zužující převody](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
+ Pokud nastavíte `Option Strict Off`, ale jazyka Visual Basic umožňuje implicitní zužující převody proběhla, i když může způsobit neočekávané dojít ke ztrátě dat nebo přesnosti. Z tohoto důvodu doporučujeme používat `Option Strict On` při zápisu produkčním kódu. Další informace najdete v tématu [Widening a zužující převody](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
- [Operátory bitového posunutí](../../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [Operátory bitového posunu](../../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
  [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  
  [Operátory řetězení v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)  
  [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)  

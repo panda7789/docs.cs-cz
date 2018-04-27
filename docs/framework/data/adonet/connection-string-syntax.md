@@ -16,11 +16,11 @@ ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: 76d8765be1dc24f4b8c457644595796680c2f2c3
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 3939abaf376100e09d244afdb32662729a990ff7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="connection-string-syntax"></a>Syntaxi připojovacího řetězce
 Má každý zprostředkovatel dat .NET Framework `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxi konkrétní připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. Následující tabulka uvádí zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  
@@ -98,7 +98,7 @@ Data Source=MySqlServer\MSSQL1;"
 Můžete také nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> vlastnost `SqlConnectionStringBuilder` k názvu instance při sestavování připojovací řetězec. <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> Vlastnost <xref:System.Data.SqlClient.SqlConnection> objekt je jen pro čtení.  
   
 ### <a name="type-system-version-changes"></a>Typ změny verze systému  
- `Type System Version` – Klíčové slovo v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> určuje klienta reprezentace [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] typy. V tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> Další informace o `Type System Version` – klíčové slovo.  
+ `Type System Version` – Klíčové slovo v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> určuje vyjádření klienta typů systému SQL Server. V tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> Další informace o `Type System Version` – klíčové slovo.  
   
 ## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>Připojení a připojení k systému SQL Server Express uživatelské instance  
  Uživatelské instance jsou funkcí v systému SQL Server Express. Umožňují uživatele systémem nejméně privilegovaným místní účet systému Windows pro připojení a databázi systému SQL Server lze spustit bez oprávnění správce. Uživatelskou instanci se provádí pomocí přihlašovacích údajů uživatele systému Windows, ne jako službu.  
@@ -106,7 +106,7 @@ Můžete také nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.D
  Další informace o práci s uživatelské instance najdete v tématu [instance služby SQL Server Express uživatele](../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md).  
   
 ## <a name="using-trustservercertificate"></a>Pomocí TrustServerCertificate  
- `TrustServerCertificate` – Klíčové slovo je platný pouze při připojování k [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] instance pomocí platného certifikátu. Když `TrustServerCertificate` je nastaven na `true`, přenosové vrstvy budou používat protokol SSL pro šifrování kanál a nepoužívat proti řetěz certifikátů pro ověření vztahu důvěryhodnosti.  
+ `TrustServerCertificate` – Klíčové slovo je platný pouze při připojování k instanci systému SQL Server pomocí platného certifikátu. Když `TrustServerCertificate` je nastaven na `true`, přenosové vrstvy budou používat protokol SSL pro šifrování kanál a nepoužívat proti řetěz certifikátů pro ověření vztahu důvěryhodnosti.  
   
 ```  
 "TrustServerCertificate=true;"   

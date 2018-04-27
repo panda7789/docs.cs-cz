@@ -6,14 +6,15 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 230deb3869887fbcdd07e748d30601f19ec2be2a
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 1a97bd393a4df080d9e2f9fc049165e4efbff852
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací MVC ASP.NET Core
 
@@ -81,7 +82,7 @@ Pro webové rozhraní API, rozhraní ASP.NET MVC základní podporuje [ *vyjedn�
 
 ## <a name="working-with-dependencies"></a>Práce s závislosti
 
-Má integrovanou podporu pro ASP.NET Core a interně využívá techniku známou jako [vkládání závislostí](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Vkládání závislostí je technika, který povolený volné párování mezi různé části aplikace. Čím větší párování je žádoucí, protože umožňuje jednodušší izolace částí aplikace a umožňuje pro testování nebo pro nahrazení. Je také je méně pravděpodobné, že ke změně v jedné části aplikace bude mít neočekávané dopad někde jinde v aplikaci. Vkládání závislostí je založena na principu inverzi závislostí a často je klíčem k dosažení Princip otevřený nebo zavřený. Při vyhodnocování, jak vaše aplikace funguje s jeho závislé součásti, pozor [statické plevami](http://deviq.com/static-cling/) kód pach a pamatovat aphorism "[nové je spojovací](http://ardalis.com/new-is-glue)."
+Má integrovanou podporu pro ASP.NET Core a interně využívá techniku známou jako [vkládání závislostí](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Vkládání závislostí je technika, který povolený volné párování mezi různé části aplikace. Čím větší párování je žádoucí, protože umožňuje jednodušší izolace částí aplikace a umožňuje pro testování nebo pro nahrazení. Je také je méně pravděpodobné, že ke změně v jedné části aplikace bude mít neočekávané dopad někde jinde v aplikaci. Vkládání závislostí je založena na principu inverzi závislostí a často je klíčem k dosažení Princip otevřený nebo zavřený. Při vyhodnocování, jak vaše aplikace funguje s jeho závislé součásti, pozor [statické plevami](http://deviq.com/static-cling/) kód pach a pamatovat aphorism "[nové je spojovací](https://ardalis.com/new-is-glue)."
 
 Statické plevami nastane, když volat statických metod třídy nebo přístup statické vlastnosti, které mají vedlejší účinky nebo v závislosti na infrastruktuře. Například pokud máte metodu, která volá statickou metodu, která zase zapisuje do databáze, způsob je úzce párované do databáze. Všechno, co dělí tohoto volání databáze dojde k přerušení metodu. Testování tyto metody je často složité, protože tyto testy vyžadovala komerční mocking knihovny model statické volání, nebo může být testována pouze pomocí testovací databáze na místě. Statické volání, které nemají žádné závislost na infrastrukturu, především těch, které jsou zcela bezstavové jsou volání a nemají žádný vliv na párování nebo testovatelnosti (kromě spojovacích kódu statických volání sám sebe).
 
@@ -134,7 +135,7 @@ Objektový model aplikace a rozhraní musí být umístěny v ApplicationCore pr
 
 Podrobnosti implementace, například jak se provádí trvalost nebo jak může být odeslána oznámení pro uživatele, jsou uchovány v projektu infrastruktury. Tento projekt bude odkazovat na konkrétní implementace balíčků, jako jsou Entity Framework Core, ale by neměli zveřejňovat podrobnosti o těchto implementace mimo projekt. Infrastruktura služby a úložiště musí implementovat rozhraní, které jsou definovány v projektu ApplicationCore a jeho implementace trvalost jsou zodpovědní za načítání a ukládání entit definované v ApplicationCore.
 
-Samotného projektu ASP.NET Core je zodpovědná za nejasností kontaktovali úrovně uživatelského rozhraní, ale nesmí obsahovat obchodní logiku nebo infrastrukturu podrobnosti. Ve skutečnosti v ideálním případě by neměl i mít závislost na projekt infrastruktury, který vám pomůže zajistit, že žádná závislost mezi dva projekty uvádíme omylem. Toho lze dosáhnout pomocí kontejner DI jiných výrobců jako StructureMap, který umožňuje definovat pravidla DI v registru třídy v každém projektu.
+Projekt ASP.NET Core uživatelského rozhraní je zodpovědná za nejasností kontaktovali úrovně uživatelského rozhraní, ale nesmí obsahovat obchodní logiku nebo infrastrukturu podrobnosti. Ve skutečnosti v ideálním případě by neměl i mít závislost na projekt infrastruktury, který vám pomůže zajistit, že žádná závislost mezi dva projekty uvádíme omylem. Toho lze dosáhnout pomocí kontejner DI jiných výrobců jako StructureMap, který umožňuje definovat pravidla DI v registru třídy v každém projektu.
 
 Další postup pro aplikace z podrobnosti implementace oddělení je mikroslužeb volání aplikace, pravděpodobně nasazený v jednotlivých kontejnerech Docker. To poskytuje ještě větší oddělení otázky a oddělení než využití DI mezi dva projekty, ale má zvýšenou složitostí.
 

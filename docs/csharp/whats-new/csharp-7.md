@@ -1,7 +1,7 @@
 ---
-title: "Co je nového v jazyce C# 7 – průvodce v C#"
-description: "Přehled nových funkcí, bude v příštích verzí 7 jazyka C#."
-keywords: "C#, .NET, .NET Core, nejnovější funkce, co je nového"
+title: Co je nového v jazyce C# 7.0 – průvodce v C#
+description: Přehled nových funkcí, bude v příštích verzí 7 jazyka C#.
+keywords: C#, .NET, .NET Core, nejnovější funkce, co je nového
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/21/2016
@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 374ac9917464a7e83566440abab10eda8a9c8683
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
+ms.openlocfilehash: 1951c60ee11d0d5c4856f5f92eee8ba690b11f8d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="whats-new-in-c-7"></a>Co je nového v C# 7
+# <a name="whats-new-in-c-70"></a>Co je nového v C# 7.0
 
-C# 7 přidá řadu nových funkcí jazyka C#:
+C# 7.0 přidá řadu nových funkcí jazyka C#:
 * [`out` proměnné](#out-variables)
     - Je možné deklarovat `out` hodnoty vložené jako argumenty pro metodu, kdy se používá.
 * [Řazené kolekce členů](#tuples)
@@ -88,8 +88,8 @@ C# poskytuje bohaté syntaxe pro tříd a struktur, který používá k popisu v
 Nelze ověřit pole a nelze definovat vlastní metody
 
 > [!NOTE]
-> Řazené kolekce členů byly k dispozici před C# 7, ale měla neefektivní a měl neexistuje jazyková podpora.
-> Vynutila si, že prvky n-tice může být odkazováno pouze jako `Item1`, `Item2` a tak dále. C# 7 zavádí jazyková podpora pro řazené kolekce členů, která umožňuje sémantického názvy polí pomocí nové, efektivnější řazené kolekce členů typů řazené kolekce členů.
+> Řazené kolekce členů byly k dispozici před C# 7.0, ale měla neefektivní a měl neexistuje jazyková podpora.
+> Vynutila si, že prvky n-tice může být odkazováno pouze jako `Item1`, `Item2` a tak dále. C# 7.0 zavádí jazyková podpora pro řazené kolekce členů, která umožňuje sémantického názvy polí pomocí nové, efektivnější řazené kolekce členů typů řazené kolekce členů.
 
 Můžete vytvořit řazené kolekce členů přiřazením každého člena na hodnotu:
 
@@ -131,9 +131,6 @@ Deklarace pro metodu poskytuje názvy pro pole řazené kolekce členů, která 
 Může nastat situace, kdy budete chtít rozbalit členy řazené kolekce členů, kteří byly vráceny z metody.  Můžete to udělat pomocí deklarování samostatné proměnných pro každou z hodnot v řazené kolekci členů. To se označuje jako *deconstructing* řazenou kolekci členů:
 
 [!code-csharp[CallingWithDeconstructor](../../../samples/snippets/csharp/new-in-7/program.cs#10_CallingWithDeconstructor "Deconstructing a tuple")]
-
-<!-- Add wildcards here, if they are in C# 7
--->
 
 Můžete zadat taky podobné deconstruction pro libovolného typu v rozhraní .NET. To se provádí zápis `Deconstruct` jako člena třídy metodu. Aby `Deconstruct` metoda poskytuje sadu `out` argumenty pro každé z vlastností, které mají být extrahovány. Zvažte proto `Point` třídu, která poskytuje deconstructor metodu, která extrahuje `X` a `Y` souřadnice:
 
@@ -327,7 +324,7 @@ Stejným způsobem je možné použít s `async` zajistit, že vzniklých argume
 
 ## <a name="more-expression-bodied-members"></a>Další výraz vozidlo členy
 
-C# 6 zavedená [výraz vozidlo členy](csharp-6.md#expression-bodied-function-members) pro členské funkce a vlastnosti jen pro čtení. C# 7 rozšíří povolené členy, u nichž může být implementováno jako výrazy. V jazyce C# 7, můžete implementovat *konstruktory*, *finalizační metody*, a `get` a `set` přístupových objektů na *vlastnosti* a *indexery* . Následující kód ukazuje příklady jednotlivých:
+C# 6 zavedená [výraz vozidlo členy](csharp-6.md#expression-bodied-function-members) pro členské funkce a vlastnosti jen pro čtení. C# 7.0 rozšíří povolené členy, u nichž může být implementováno jako výrazy. V jazyce C# 7.0, můžete implementovat *konstruktory*, *finalizační metody*, a `get` a `set` přístupových objektů na *vlastnosti* a *indexery* . Následující kód ukazuje příklady jednotlivých:
 
 [!code-csharp[ExpressionBodiedMembers](../../../samples/snippets/csharp/new-in-7/expressionmembers.cs#36_ExpressionBodiedEverything "new expression-bodied members")]
 
@@ -338,7 +335,7 @@ Tato nová umístění pro výraz vozidlo členy představují důležité miln�
 
 ## <a name="throw-expressions"></a>Throw – výrazy
 
-V jazyce C# `throw` byla vždy příkaz. Protože `throw` je prohlášení, není výrazu, že byly konstrukce jazyka C#, kde nelze použít. Tyto zahrnuty podmíněné výrazy, null slučování výrazy a některé výrazy lambda. Přidání členů výraz vozidlo přidá další umístění kde `throw` výrazy mohla být užitečná. Tak, aby bylo možné napsat některé z těchto konstrukce, C# 7 zavádí *throw výrazy*.
+V jazyce C# `throw` byla vždy příkaz. Protože `throw` je prohlášení, není výrazu, že byly konstrukce jazyka C#, kde nelze použít. Tyto zahrnuty podmíněné výrazy, null slučování výrazy a některé výrazy lambda. Přidání členů výraz vozidlo přidá další umístění kde `throw` výrazy mohla být užitečná. Tak, aby bylo možné napsat některé z těchto konstrukce, C# 7.0 zavádí *throw výrazy*.
 
 Syntaxe je stejný, jako jste používali vždy pro `throw` příkazy. Jediným rozdílem je, že teď můžete umístit je nová umístění, jako třeba podmíněného výrazu:
 
@@ -376,7 +373,7 @@ Jak se všechna doporučení výkonu by měla otestovat obě verze před provede
 
 ## <a name="numeric-literal-syntax-improvements"></a>Vylepšení číselný literál syntaxe
 
-Číselné konstanty misreading může ztížit zjistit kód při čtení poprvé. To často dochází, pokud tato čísla se používají jako bitové masky nebo jiných symbolický místo číselné hodnoty. C# 7 obsahuje dvě nové funkce, aby bylo snazší zápis čísla způsobem nejvíce čitelný pro zamýšlené použití: *binární literály*, a *číslice oddělovačů*.
+Číselné konstanty misreading může ztížit zjistit kód při čtení poprvé. To často dochází, pokud tato čísla se používají jako bitové masky nebo jiných symbolický místo číselné hodnoty. C# 7.0 obsahuje dvě nové funkce, aby bylo snazší zápis čísla způsobem nejvíce čitelný pro zamýšlené použití: *binární literály*, a *číslice oddělovačů*.
 
 Při vytváření bitové masky nebo kdykoli binární reprezentace číslo neposkytuje pro tyto časy kód nejvíce čtení, zápisu toto číslo v binárním:
 

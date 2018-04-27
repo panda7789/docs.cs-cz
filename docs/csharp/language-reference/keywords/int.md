@@ -1,5 +1,5 @@
 ---
-title: "int (Referenční dokumentace jazyka C#)"
+title: int (Referenční dokumentace jazyka C#)
 ms.date: 03/14/2017
 ms.prod: .net
 ms.technology:
@@ -11,18 +11,18 @@ f1_keywords:
 helpviewer_keywords:
 - int keyword [C#]
 ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e7acb8bb482ebf8f5c2b508e7cfd45b5b64aae3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f3e82dd195252a8c55e4ba7b18b657b341553047
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="int-c-reference"></a>int (Referenční dokumentace jazyka C#)
 
-`int`označuje typ integrální, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
+`int` označuje typ integrální, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
   
 |Typ|Rozsah|Velikost|Typ rozhraní .NET Framework|Výchozí hodnota|  
 |----------|-----------|----------|-------------------------|-------------------|  
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="literals"></a>Literály  
  
-Můžete deklarace a inicializace `int` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje C# 7) binární literálu do ní.  Pokud literálu celé číslo je mimo rozsah `int` (tj. Pokud je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace. 
+Můžete deklarace a inicializace `int` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní.  Pokud literálu celé číslo je mimo rozsah `int` (tj. Pokud je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace. 
 
 V následujícím příkladu, celá čísla rovno 90,946, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `int` hodnoty.  
   
@@ -39,7 +39,7 @@ V následujícím příkladu, celá čísla rovno 90,946, která jsou reprezento
 > [!NOTE] 
 > Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona. 
 
-Od verze jazyka C# 7, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
+Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
  - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
  - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
 
@@ -51,8 +51,8 @@ Níže jsou uvedeny některé příklady.
 
 1. `int`
 2. [uint](../../../csharp/language-reference/keywords/uint.md)
-3. [dlouhá](../../../csharp/language-reference/keywords/long.md)
-4. [ulong –](../../../csharp/language-reference/keywords/ulong.md) 
+3. [long](../../../csharp/language-reference/keywords/long.md)
+4. [ulong](../../../csharp/language-reference/keywords/ulong.md) 
  
 V těchto příkladech je literál 90946 typu `int`.
   
@@ -87,7 +87,7 @@ int y = (int)3.0;    // OK: explicit conversion.
 ## <a name="see-also"></a>Viz také  
  <xref:System.Int32>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  

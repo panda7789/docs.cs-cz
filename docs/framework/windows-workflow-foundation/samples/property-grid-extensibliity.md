@@ -1,23 +1,24 @@
 ---
-title: "Vlastnost Extensibliity mřížky"
-ms.custom: 
+title: Vlastnost Extensibliity mřížky
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3530c3a3-756d-4712-9f10-fb2897414d3a
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e3069e97a1696b37d56728eb86161cc2487dfdfa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9393947420709590312200e8f142092c95b91b1f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="property-grid-extensibliity"></a>Vlastnost Extensibliity mřížky
 Vývojář může přizpůsobit mřížku vlastností, které se zobrazí, pokud je vybrána danou aktivitu v návrháři. To lze provést pro vytvoření bohaté úpravy prostředí. Tento příklad ukazuje, jak to lze provést.  
@@ -42,7 +43,7 @@ Vývojář může přizpůsobit mřížku vlastností, které se zobrazí, pokud
   
 -   Vytvoří typ, který je odvozen od <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor>.  
   
--   V konstruktoru <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> hodnota nastavená [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] datová šablona. To může být vázaný na šablonu XAML, ale v této ukázce kódu slouží k inicializaci datové vazby.  
+-   V konstruktoru <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> hodnota je nastavena pomocí šablony data Windows Presentation Foundation (WPF). To může být vázaný na šablonu XAML, ale v této ukázce kódu slouží k inicializaci datové vazby.  
   
 -   Šablona dat má kontext dat z <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> položky v tabulce vlastností. Poznámka: v následujícím kódu (z CustomInlineEditor.cs), která tento kontext pak sváže `Value` vlastnost.  
   

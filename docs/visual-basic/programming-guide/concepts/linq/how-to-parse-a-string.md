@@ -1,30 +1,31 @@
 ---
-title: "Postupy: Analýza řetězce (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Analýza řetězce (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10b80c72cae70437ff812c4b67b2532d708f1e69
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d0fd7c7adcfbd7e2136d1a652017d470634016b9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýza řetězce (Visual Basic)
 Toto téma ukazuje, jak vytvořit strom XML v jazyce C#.  
   
 ## <a name="example"></a>Příklad  
- Můžete analyzovat řetězec v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pomocí `XElement.Parse` metoda. Je však efektivnější použít XML – literály, jak je znázorněno v následujícím kódu, protože XML – literály se nebude vyskytovat ze stejné penalizacím výkonu jako analýzu kódu XML z řetězce.  
+ Řetězec v jazyce Visual Basic můžete analyzovat pomocí `XElement.Parse` metoda. Je však efektivnější použít XML – literály, jak je znázorněno v následujícím kódu, protože XML – literály se nebude vyskytovat ze stejné penalizacím výkonu jako analýzu kódu XML z řetězce.  
   
- Pomocí XML – literály můžete právě zkopírujte a vložte kód XML do vaší [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] program.  
+ Pomocí XML – literály můžete právě zkopírujte a vložte kód XML do programu jazyka Visual Basic.  
   
 > [!NOTE]
 >  Analýza textu nebo načítání dokumentu XML z textového souboru je míň efektivní než funkční konstrukce. Pokud se inicializace strom XML z kódu, zabere to méně času procesoru použít funkční konstrukce, než se analyzovat text.  

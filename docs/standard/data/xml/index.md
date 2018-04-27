@@ -16,11 +16,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 824e06a00c4242d8ee38bdfc5a57151a71e4f285
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 0da27afc5509af6db510b5e622ffde461ae2e0a1
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které vám umožní snadno vytvářet aplikace podporující rozhraní XML. Třídy v následujících oborů názvů podporují analýzy a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.  
@@ -35,21 +35,21 @@ Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které
   
 -   <xref:System.Xml.Linq>  
   
- Úplný seznam najdete v tématu [obory názvů System.Xml](http://msdn.microsoft.com/library/gg145036.aspx) webovou stránku.  
+ Úplný seznam najdete v tématu [obory názvů System.Xml](https://msdn.microsoft.com/library/gg145036.aspx) webovou stránku.  
   
  Třídy v tyto obory názvů podporují doporučení World Wide Web Consortium (W3C). Příklad:  
   
--   <xref:System.Xml.XmlDocument?displayProperty=nameWithType> Třída implementuje [základní úroveň 1 W3C Model Document Object (DOM)](http://www.w3.org/TR/REC-DOM-Level-1/) a [DOM úroveň 2 jádra](http://www.w3.org/TR/DOM-Level-2-Core/) doporučení.  
+-   <xref:System.Xml.XmlDocument?displayProperty=nameWithType> Třída implementuje [základní úroveň 1 W3C Model Document Object (DOM)](https://www.w3.org/TR/REC-DOM-Level-1/) a [DOM úroveň 2 jádra](https://www.w3.org/TR/DOM-Level-2-Core/) doporučení.  
   
--   <xref:System.Xml.XmlReader?displayProperty=nameWithType> a <xref:System.Xml.XmlWriter?displayProperty=nameWithType> třídy podpory [W3C XML 1.0](http://www.w3.org/TR/2006/REC-xml-20060816/) a [obory názvů v kódu XML](http://www.w3.org/TR/REC-xml-names/) doporučení.  
+-   <xref:System.Xml.XmlReader?displayProperty=nameWithType> a <xref:System.Xml.XmlWriter?displayProperty=nameWithType> třídy podpory [W3C XML 1.0](https://www.w3.org/TR/2006/REC-xml-20060816/) a [obory názvů v kódu XML](https://www.w3.org/TR/REC-xml-names/) doporučení.  
   
--   Schémata v <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> třídy podpory [W3C XML schéma část 1: struktury](http://www.w3.org/TR/xmlschema-1/) a [XML schéma část 2: datové typy](http://www.w3.org/TR/xmlschema-2/) doporučení.  
+-   Schémata v <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> třídy podpory [W3C XML schéma část 1: struktury](https://www.w3.org/TR/xmlschema-1/) a [XML schéma část 2: datové typy](https://www.w3.org/TR/xmlschema-2/) doporučení.  
   
 -   Třídy v <xref:System.Xml.Xsl?displayProperty=nameWithType> transformace XSLT podporu obor názvů, které odpovídají [W3C XSLT 1.0](http://www.w3.org/TR/xslt) doporučení.  
   
  Třídy XML v rozhraní .NET Framework poskytovat i tyto výhody:  
   
--   **Produktivitu.** [Technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) usnadňuje program s XML a poskytuje možnosti dotazu, které je podobná SQL.  
+-   **Produktivitu.** [Technologie LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) usnadňuje program s XML a poskytuje možnosti dotazu, které je podobná SQL.  
   
 -   **Rozšiřitelnost.** Třídy XML v rozhraní .NET Framework jsou extensible prostřednictvím abstraktní základní třídy a virtuální metody. Například můžete vytvořit třídu odvozenou z <xref:System.Xml.XmlUrlResolver> třídu, která ukládá stream mezipaměti na místní disk.  
   
@@ -72,7 +72,7 @@ Rozhraní .NET Framework poskytuje komplexní a integrované sadu tříd, které
  Popisuje možnosti pro zpracování dat XML.  
   
  [Zpracování dat XML v paměti](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md)  
- Popisuje tři modely pro zpracování XML data v paměti. [Technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13), <xref:System.Xml.XmlDocument> – třída (podle W3C Document Object Model) a <xref:System.Xml.XPath.XPathDocument> třídu (založenou na datovém modelu XPath).  
+ Popisuje tři modely pro zpracování XML data v paměti. [Technologie LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13), <xref:System.Xml.XmlDocument> – třída (podle W3C Document Object Model) a <xref:System.Xml.XPath.XPathDocument> třídu (založenou na datovém modelu XPath).  
   
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
  Popisuje způsob použití procesoru XSLT.  

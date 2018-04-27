@@ -6,14 +6,15 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7e63f9ca8f13129959e609c824dad1b9b9e44d8d
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 911935379fd126ccbafe825a6ce4049c2e9b5cde
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="common-web-application-architectures"></a>Společné architektury webové aplikace
 
@@ -167,7 +168,7 @@ Kromě dat implementace přístup musí obsahovat projektu OMI implementace slu�
 > ### <a name="infrastructure-types"></a>Typy infrastruktury
 > -   Základní typy EF (DbContext, migrace)
 > -   Přístup k datům implementace typů (úložiště)
-> -   Infrastructure-specific services (FileLogger, SmtpNotifier, etc.)
+> -   Specifické pro infrastrukturu služby (FileLogger, SmtpNotifier atd.)
 
 V aplikaci ASP.NET MVC základní uživatelské rozhraní vrstvě bude vstupní bod pro aplikaci a bude projektu aplikace ASP.NET MVC jádra. Tento projekt by měl odkazovat projektu základní aplikace a typy jejího musí komunikovat s infrastrukturou výhradně prostřednictvím rozhraní definované v základní aplikace. Žádné přímé vytváření instancí (nebo statické volání) musí být povolené typy vrstvy infrastruktury ve vrstvě uživatelského rozhraní.
 

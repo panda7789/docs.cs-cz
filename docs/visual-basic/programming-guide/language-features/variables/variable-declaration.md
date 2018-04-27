@@ -1,12 +1,13 @@
 ---
-title: "Deklarace proměnné v jazyce Visual Basic"
-ms.custom: 
+title: Deklarace proměnné v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], declaring
@@ -24,14 +25,14 @@ helpviewer_keywords:
 - local variables [Visual Basic], declarations
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
-caps.latest.revision: "31"
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7f7b924aed1da7db816aa5c11239e301428770b7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8edd0b65b08efd437cc35e8f58ed7ed423736920
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Deklarace proměnné v jazyce Visual Basic
 Je deklarovat proměnnou a určit její název a vlastností. Příkaz deklarace pro proměnné [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md). Její umístění a obsah zadat vlastnosti proměnnou.  
@@ -41,7 +42,7 @@ Je deklarovat proměnnou a určit její název a vlastností. Příkaz deklarace
 ## <a name="declaration-levels"></a>Deklarace úrovně  
   
 ### <a name="local-and-member-variables"></a>Místní a členské proměnné  
- A *místní proměnné* je ten, který je deklarován v rámci procedury. A *členské proměnné* je členem skupiny [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zadejte; je deklarovaný na úrovni modulu, uvnitř třídy, struktury nebo modul, ale není v rámci žádné procedury interní třídy, struktury nebo modul.  
+ A *místní proměnné* je ten, který je deklarován v rámci procedury. A *členské proměnné* je členem skupiny typu jazyka Visual Basic; je deklarovaný na úrovni modulu, uvnitř třídy, struktury nebo modul, ale není v rámci žádné procedury interní třídy, struktury nebo modul.  
   
 ### <a name="shared-and-instance-variables"></a>Sdílené a instanci proměnné  
  Ve třídě nebo struktuře kategorii členské proměnné závisí na tom, jestli je sdílené. Pokud je deklarovaný s [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) – klíčové slovo, je *sdílené proměnné*, a existuje v jedné kopie sdílí všechny instance třídu nebo strukturu.  
@@ -51,15 +52,15 @@ Je deklarovat proměnnou a určit její název a vlastností. Příkaz deklarace
 ## <a name="declaring-data-type"></a>Deklarující typ dat  
  [Jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzule příkazu deklarace umožňuje definovat datový typ nebo typ objektu proměnné jsou deklarace. Můžete zadat jakýkoli z následujících typů proměnné:  
   
--   Základní datový typ, jako například `Boolean`, `Long`, nebo`Decimal`  
+-   Základní datový typ, jako například `Boolean`, `Long`, nebo `Decimal`  
   
 -   Složené datové typu, například pole nebo struktura  
   
 -   Typ objektu nebo třída definovaná v aplikaci nebo v jiné aplikaci  
   
--   A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, jako například <xref:System.Windows.Forms.Label> nebo<xref:System.Windows.Forms.TextBox>  
+-   A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, jako například <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.TextBox>  
   
--   Typ rozhraní, jako například <xref:System.IComparable> nebo<xref:System.IDisposable>  
+-   Typ rozhraní, jako například <xref:System.IComparable> nebo <xref:System.IDisposable>  
   
  Bez nutnosti opakování datový typ je možné deklarovat několik proměnné v jednom příkazu. V následující příkazy, proměnné `i`, `j`, a `k` je deklarován jako typ `Integer`, `l` a `m` jako `Long`, a `x` a `y` jako `Single`:  
   
@@ -87,12 +88,12 @@ Dim l, m As Long, x, y As Single
  Proměnnou *úroveň přístupu* je rozsah kód, který má oprávnění k přístupu. To je dáno – modifikátor přístupu (například [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md)) použitý v `Dim` příkaz. Další informace najdete v tématu [úrovně v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: vytvoření nové proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)  
- [Postupy: Přesun dat do a z proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)  
+ [Postupy: Vytvoření nové proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)  
+ [Postupy: Přesun dat do proměnné a z proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)  
  [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Chráněný](../../../../visual-basic/language-reference/modifiers/protected.md)  
+ [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)  
  [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)  
- [Statické](../../../../visual-basic/language-reference/modifiers/static.md)  
- [Deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Static](../../../../visual-basic/language-reference/modifiers/static.md)  
+ [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
  [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
+ [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)

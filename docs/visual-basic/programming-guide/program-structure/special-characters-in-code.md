@@ -1,11 +1,12 @@
 ---
-title: "Speciální znaky v kódu (Visual Basic)"
-ms.custom: 
+title: Speciální znaky v kódu (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.)
@@ -36,17 +37,17 @@ helpviewer_keywords:
 - exclamation point operator (!)
 - Visual Basic code, special characters
 ms.assetid: 310dce0c-45b5-4e0d-83e9-32df258d2a3e
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 11c5ef9ad41fc2362d9ba4f2cb5eb5b63a9ca31c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b724c48320f74045d7192be6d6e269c00511ffc9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="special-characters-in-code-visual-basic"></a>Speciální znaky v kódu (Visual Basic)
-Někdy je nutné použít speciální znaky v kódu, který je znaků, které nejsou abecední nebo číselný. Interpunkce a speciální znaky v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] znaková sada mají různé používá z uspořádání program text, který má definice úlohy, které provádí kompilátor nebo zkompilovaný program. Nezadávejte provést operaci.  
+Někdy je nutné použít speciální znaky v kódu, který je znaků, které nejsou abecední nebo číselný. Interpunkce a speciální znaky znakové sady Visual Basic mají různé používá z uspořádání program text, který má definice úlohy, které provádí kompilátor nebo zkompilovaný program. Nezadávejte provést operaci.  
   
 ## <a name="parentheses"></a>Závorky  
  Závorky lze použít, když definujete postup, například `Sub` nebo `Function`. Všechny seznamy argumentů postupu je nutné uzavřít do závorek. Také pomocí závorek pro umístění proměnné nebo argumenty do logických skupin, zejména přepsat výchozí pořadí operátorů v složitý výraz. Toto dokládá následující příklad.  
@@ -56,7 +57,7 @@ Někdy je nutné použít speciální znaky v kódu, který je znaků, které ne
  Provedení předchozí kódu hodnotu `d` 8.225 a hodnota `e` je 3. Výpočet pro `d` používá výchozí prioritu `/` přes `+` a je ekvivalentní `d = b + (c / a)`. Závorky při výpočtu `e` změnit výchozí prioritu.  
   
 ## <a name="separators"></a>Oddělovače  
- Oddělovače udělat, co navrhuje jména: oddělit sekcí kódu. V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], oddělovací znak je dvojtečkou (`:`). Oddělovače použijte, pokud chcete zahrnout více příkazů na jeden řádek místo samostatné řádky. Tím ušetříte místo a zlepšuje čitelnost kódu. Následující příklad ukazuje tři příkazy oddělené dvojtečkou.  
+ Oddělovače udělat, co navrhuje jména: oddělit sekcí kódu. V jazyce Visual Basic znak oddělovače je dvojtečkou (`:`). Oddělovače použijte, pokud chcete zahrnout více příkazů na jeden řádek místo samostatné řádky. Tím ušetříte místo a zlepšuje čitelnost kódu. Následující příklad ukazuje tři příkazy oddělené dvojtečkou.  
   
  [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_2.vb)]  
   
@@ -96,5 +97,5 @@ Někdy je nutné použít speciální znaky v kódu, který je znaků, které ne
  `!` Znak se používá jako `Single` zadávat znaky.  
   
 ## <a name="see-also"></a>Viz také  
- [Struktura programu a pravidla týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  [Znaky typu](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)

@@ -1,27 +1,29 @@
 ---
-title: "Externí mapování"
-ms.custom: 
+title: Externí mapování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ae67c80e4637281a26b15d7faa2dbdbe7171ba1c
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 99b5a37778299f541a59707708edba244ab2f806
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="external-mapping"></a>Externí mapování
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje *externí mapování*, proces, pomocí kterého použít samostatný soubor XML pro určení mapování mezi datový model databáze a objekt modelu. Výhody používání soubor externí mapování zahrnují následující:  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje *externí mapování*, proces, pomocí kterého použít samostatný soubor XML pro určení mapování mezi datový model databáze a objekt modelu. Výhody používání soubor externí mapování zahrnují následující:  
   
 -   Mapování kódu můžete ponechat mimo kódu aplikace. Tento přístup snižuje zbytečné soubory v kódu aplikace.  
   
@@ -38,7 +40,7 @@ ms.lasthandoff: 01/17/2018
   
 -   Externí mapování přepsání na základě atributů mapování. Jinými slovy, při použití na externí mapování zdroj k vytvoření <xref:System.Data.Linq.DataContext>, <xref:System.Data.Linq.DataContext> ignoruje všechny atributy mapování, které jste vytvořili na třídách. Toto chování je hodnota true, jestli je třída součástí souboru externí mapování.  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje použití hybridní dva přístupy mapování (na základě atributů a externí).  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje použití hybridní dva přístupy mapování (na základě atributů a externí).  
   
 ## <a name="xml-schema-definition-file"></a>Soubor definice schématu XML  
  Externí mapování v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] musí být platné proti následující definice schématu XML.  
@@ -46,7 +48,7 @@ ms.lasthandoff: 01/17/2018
  Tento soubor definice schématu z definičního souboru schématu, která je použita k ověření souboru DBML rozlišit. Další informace najdete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).  
   
 > [!NOTE]
->  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]Uživatelé také najít tento soubor XSD v dialogovém okně schémat XML jako "LinqToSqlMapping.xsd". Pomocí tohoto souboru správně pro ověření souboru externí mapování, najdete v části [postupy: ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+>  Uživatelé sady Visual Studio také najít tento soubor XSD v dialogovém okně schémat XML jako "LinqToSqlMapping.xsd". Pomocí tohoto souboru správně pro ověření souboru externí mapování, najdete v části [postupy: ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  

@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c770ae0286842241288c39c003456c52879c8706
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: bec1341df85f86d5f2aa15753a11a9c4a2d0173f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -209,7 +209,7 @@ Dotaz, zda provést jediné transakce napříč agregace versus spoléhat na kon
 
 Jakékoli pravidlo, které zahrnuje agregace nebude možné očekává aktuální za všech okolností. Prostřednictvím zpracování událostí, dávkové zpracování nebo jiných mechanismů aktualizace může být další závislosti vyřešen v určité chvíli. (stránka 128)
 
-Vaughn Vernon uvádí následující [efektivní návrh agregace. Část II: Provádění agreguje pracovní společně](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
+Vaughn Vernon uvádí následující [efektivní návrh agregace. Část II: Provádění agreguje pracovní společně](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
 
 Proto pokud spouštění příkazu na jednom agregační instance vyžaduje, že další obchodní pravidla spustit na jeden nebo více agregace, použijte konzistence typu případné \[...\] Je praktický způsob, jak podporovat konzistence typu případné ve DDD model. Agregační metoda publikuje domény událost, která je v čase se doručí na jeden nebo více asynchronní odběratele.
 
@@ -347,13 +347,13 @@ Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší �
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
 -   **Vaughn Vernon. Efektivní agregační návrhu část II: Provedení agregace pracovní společně**
-    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_články/Vernon\_2011\_2. pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
+    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_články/Vernon\_2011\_2. pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
 -   **Jimmy Bogard. Posílení vaší domény: domény události**
     *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
 -   **ADAM Truong. Příklad vzoru události domény**
-    [*http://www.tonytruong.net/domain-events-pattern-example/*](http://www.tonytruong.net/domain-events-pattern-example/)
+    [*https://www.tonytruong.net/domain-events-pattern-example/*](https://www.tonytruong.net/domain-events-pattern-example/)
 
 -   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)

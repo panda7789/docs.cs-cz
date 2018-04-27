@@ -1,27 +1,29 @@
 ---
-title: "Vytváření datové služby"
-ms.custom: 
+title: Vytváření datové služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d890e4c2041ae4c70a79adfc0ab4141402fcd3f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 781def411214b0804cdc094c00b2f655b6c3823d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="creating-the-data-service"></a>Vytváření datové služby
 V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vystavit [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind. Úloha zahrnuje následující základní kroky:  
@@ -35,16 +37,16 @@ V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE
 4.  Povolte přístup ke službě data.  
   
 > [!NOTE]
->  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Spuštění webové aplikace, který vytvoříte po dokončení této úlohy [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server poskytované [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Vývojový Server podporuje pouze přístup z místního počítače. Chcete-li také usnadňují testování a řešení potíží s službu data během vývoje, zvažte spuštění aplikace, který je hostitelem služby data pomocí Internetové informační služby (IIS). Další informace najdete v tématu [postup: vývoj WCF Data Service spuštěna ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).  
+>  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Spuštění webové aplikace, který vytvoříte po dokončení této úlohy [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server poskytované sadě Visual Studio. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Vývojový Server podporuje pouze přístup z místního počítače. Chcete-li také usnadňují testování a řešení potíží s službu data během vývoje, zvažte spuštění aplikace, který je hostitelem služby data pomocí Internetové informační služby (IIS). Další informace najdete v tématu [postup: vývoj WCF Data Service spuštěna ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).  
   
 ### <a name="to-create-the-aspnet-web-application"></a>K vytvoření aplikace technologie ASP.NET  
   
-1.  V [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]na **soubor** nabídce vyberte možnost **nový**a potom vyberte **projektu**.  
+1.  V sadě Visual Studio na **soubor** nabídce vyberte možnost **nový**a potom vyberte **projektu**.  
   
-2.  V **nový projekt** dialogové okno, v části buď [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] nebo [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] vyberte **webové** šablony a potom vyberte **webové aplikace ASP.NET**.  
+2.  V **nový projekt** dialogové okno, v části jazyka Visual Basic a Visual C# vyberte **webové** šablony a potom vyberte **webové aplikace ASP.NET**.  
   
     > [!NOTE]
-    >  Pokud používáte [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] Web Developer, musíte vytvořit nový web místo novou webovou aplikaci.  
+    >  Pokud používáte Visual Studio Web Developer, musíte vytvořit nový web místo novou webovou aplikaci.  
   
 3.  Typ `NorthwindService` jako název projektu.  
   
@@ -68,9 +70,9 @@ V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE
   
 5.  Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na **Další**:  
   
-    -   Pokud jste připojení k databázi již nakonfigurována, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení databáze serveru SQL Server](http://go.microsoft.com/fwlink/?LinkId=123631). To [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] instance musí mít ukázková databáze Northwind připojen.  
+    -   Pokud jste připojení k databázi již nakonfigurována, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení databáze serveru SQL Server](http://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít ukázková databáze Northwind připojen.  
   
-         \-nebo –  
+         \- nebo –  
   
     -   Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte ze seznamu připojení toto připojení.  
   
@@ -79,7 +81,7 @@ V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE
 7.  Klikněte na tlačítko **Dokončit** zavřete průvodce.  
   
     > [!NOTE]
-    >  Tento model generované datové zpřístupní vlastnosti cizího klíče v typech entit. Datové modely, které jsou vytvořené pomocí [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] 2008 nezahrnují tyto vlastnosti cizího klíče. Z toho důvodu je nutné také aktualizovat klienta dat služby třídy klienta aplikace, které byly vytvořeny pro přístup ke službě Northwind data, která byla vytvořena pomocí [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] 2008 před pokusem o přístup k této verzi datové služby Northwind.  
+    >  Tento model generované datové zpřístupní vlastnosti cizího klíče v typech entit. Datové modely, které jsou vytvořené pomocí sady Visual Studio 2008 nezahrnují tyto vlastnosti cizího klíče. Z toho důvodu je třeba aktualizovat třídy klienta služby data všech klientských aplikací, které byly vytvořeny pro přístup ke službě Northwind data, která byla vytvořena pomocí sady Visual Studio 2008 před pokusem o přístup k této verzi datové služby Northwind.  
   
 ### <a name="to-create-the-data-service"></a>Vytvoření datové služby  
   
@@ -89,7 +91,7 @@ V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE
   
 3.  Název služby, zadejte `Northwind`.  
   
-     [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Visual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu. V **Průzkumníku**, služba bude mít název, Northwind, s příponou. svc.cs nebo. svc.vb.  
+     Visual StudioVisual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu. V **Průzkumníku**, služba bude mít název, Northwind, s příponou. svc.cs nebo. svc.vb.  
   
 4.  V kódu pro službu data, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje službu data s typem, který je kontejneru entit datového modelu, který v tomto případě je `NorthwindEntities`. Definice třídy by měl vypadat to následující:  
   
@@ -109,7 +111,7 @@ V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE
     >  Libovolného klienta, kterému mají přístup [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace může také přístup k prostředkům vystavené službu data. V produkčním datové služby aby se zabránilo neoprávněnému přístupu k prostředkům byste měli také zabezpečit vlastní aplikace. Další informace najdete v tématu [zabezpečení služby WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  
   
 ## <a name="next-steps"></a>Další kroky  
- Úspěšně jste vytvořili novou službu data, která zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind a jste povolili přístup k informačnímu kanálu pro klienty, kteří mají oprávnění na [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace. V dalším kroku se spustí službu data z [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] a budou přistupovat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu odesláním požadavky HTTP GET prostřednictvím webového prohlížeče:  
+ Úspěšně jste vytvořili novou službu data, která zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind a jste povolili přístup k informačnímu kanálu pro klienty, kteří mají oprávnění na [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace. V dalším kroku se spustí službu data ze sady Visual Studio a budou přistupovat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu odesláním požadavky HTTP GET prostřednictvím webového prohlížeče:  
   
  [Přístup ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
   

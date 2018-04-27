@@ -19,11 +19,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7760f30e8053b55c2f846c08ccb6a3d026089afb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e36d23c6dfd89b54c86d0b6062813aeccb649579
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobně jako data lze často zpracovávat efektivněji při uloženy a zpracovávány jako kolekce. Můžete použít <xref:System.Array?displayProperty=nameWithType> třídu nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable oborů názvů pro přidání, odebrání a změna jednotlivé elementy nebo rozsah elementů v kolekci.  
@@ -39,7 +39,7 @@ Podobně jako data lze často zpracovávat efektivněji při uloženy a zpracov�
   
 -   **Umožňuje výčet kolekce**  
   
-     Rozhraní .NET framework kolekce buď implementovat <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> jak povolit kolekce k být vstupní prostřednictvím. Enumerátor můžete představit jako pohyblivý ukazatel na libovolný element v kolekci. [Foreach v](~/docs/csharp/language-reference/keywords/foreach-in.md) příkaz a [For Each... Další příkaz](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) použít enumerátor vystavené <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda a skrýt složitosti manipulace s enumerátor. Kromě toho se jakoukoli kolekci, která implementuje <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> se považuje za *dotazovatelný typ* a může být dotazován s dotazy LINQ. Dotazy LINQ poskytují společný vzorek pro přístup k datům. Jsou obvykle více stručná a čitelná než standardní `foreach` v cyklu a poskytují filtrování, řazení a seskupování schopností. Výkon lze zvýšit rovněž dotazů LINQ. Další informace najdete v tématu [LINQ na objekty](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9), [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md) a [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
+     Rozhraní .NET framework kolekce buď implementovat <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> jak povolit kolekce k být vstupní prostřednictvím. Enumerátor můžete představit jako pohyblivý ukazatel na libovolný element v kolekci. [Foreach v](~/docs/csharp/language-reference/keywords/foreach-in.md) příkaz a [For Each... Další příkaz](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) použít enumerátor vystavené <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda a skrýt složitosti manipulace s enumerátor. Kromě toho se jakoukoli kolekci, která implementuje <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> se považuje za *dotazovatelný typ* a může být dotazován s dotazy LINQ. Dotazy LINQ poskytují společný vzorek pro přístup k datům. Jsou obvykle více stručná a čitelná než standardní `foreach` v cyklu a poskytují filtrování, řazení a seskupování schopností. Výkon lze zvýšit rovněž dotazů LINQ. Další informace najdete v tématu [LINQ na objekty](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9), [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md) a [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
   
 -   **Možnost Kopírovat obsah kolekce do pole**  
   
@@ -57,7 +57,7 @@ Podobně jako data lze často zpracovávat efektivněji při uloženy a zpracov�
   
 -   **Konzistentní dolní mez**  
   
-     Dolní mez kolekce je index jeho první prvek. Všechny kolekce v indexovaných <xref:System.Collections> obory názvů mít dolní mez nulové hodnoty, což znamená, jsou indexované 0. <xref:System.Array>má dolní mez nula ve výchozím nastavení, ale můžete definovat různé dolní meze, při vytváření instance **pole** pomocí <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType>.  
+     Dolní mez kolekce je index jeho první prvek. Všechny kolekce v indexovaných <xref:System.Collections> obory názvů mít dolní mez nulové hodnoty, což znamená, jsou indexované 0. <xref:System.Array> má dolní mez nula ve výchozím nastavení, ale můžete definovat různé dolní meze, při vytváření instance **pole** pomocí <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType>.  
   
 -   **Synchronizace pro přístup z více vláken** (<xref:System.Collections> pouze třídy).  
   

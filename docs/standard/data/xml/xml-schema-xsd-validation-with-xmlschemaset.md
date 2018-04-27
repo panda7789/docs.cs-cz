@@ -1,30 +1,30 @@
 ---
-title: "Ověření schématu (XSD) XML s XmlSchemaSet"
-ms.custom: 
+title: Ověření schématu (XSD) XML s XmlSchemaSet
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: 359b10eb-ec05-4cc6-ac96-c2b060afc4de
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 99e2f66a1aedafe316ab65ae302113ea553146ed
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f18852411d733d12bcbbdba2b64bc2f134ea061c
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemaset"></a>Ověření schématu (XSD) XML s XmlSchemaSet
 Dokumenty XML můžete ověřit pomocí schématu XML schéma definition language (XSD) v <xref:System.Xml.Schema.XmlSchemaSet>.  
@@ -33,7 +33,7 @@ Dokumenty XML můžete ověřit pomocí schématu XML schéma definition languag
  Dokumenty XML ověřuje <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy. K ověření dokument XML, vytvořit <xref:System.Xml.XmlReaderSettings> objekt, který obsahuje schématu XML schématu definition language (XSD) ke které má být ověření v dokumentu XML.  
   
 > [!NOTE]
->  <xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověření strom XML proti soubor XSD při použití [technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13). Další informace o ověřování dokumentů XML pomocí LINQ to XML, najdete v části [postupy: ověření pomocí XSD](http://msdn.microsoft.com/library/481a97fa-6e96-46f2-8c9a-415555fac33b).  
+>  <xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověření strom XML proti soubor XSD při použití [technologie LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13). Další informace o ověřování dokumentů XML pomocí LINQ to XML, najdete v části [postupy: ověření pomocí XSD](https://msdn.microsoft.com/library/481a97fa-6e96-46f2-8c9a-415555fac33b).  
   
  Jednotlivé schéma nebo sadu schémata (jako <xref:System.Xml.Schema.XmlSchemaSet>) mohou být přidány do <xref:System.Xml.Schema.XmlSchemaSet> předáním buď jeden jako parametr, který se <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. Všimněte si, že při ověřování dokumentu se musí shodovat cílový obor názvů dokumentu cílový obor názvů schématu v sadě schématu.  
   

@@ -1,30 +1,30 @@
 ---
-title: "Vývoj napříč platformami pomocí přenosné knihovny tříd"
-ms.custom: 
+title: Vývoj napříč platformami pomocí přenosné knihovny tříd
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Portable Class Library [.NET Framework]
 - targeting multiple platforms
 - multiple platforms, targeting
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
-caps.latest.revision: "95"
+caps.latest.revision: 95
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ea0a111727093cb65a98e48255b06b3c4516d258
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 4e6b853c3548f27bbb4056f7d59d51a6964e0d91
+ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj napříč platformami pomocí přenosné knihovny tříd
 Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual Studio vám usnadní vytváření aplikací pro různé platformy a knihovny pro platformy Microsoft snadno a rychle.  
@@ -38,7 +38,7 @@ Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual 
  Visual Studio poskytuje šablony, které umožňují vývoj pomocí přenosné knihovny tříd. V závislosti na tom, která verze sady Visual Studio používáte dostupných šablon a nabídky se může lišit od těch popsaných v tomto článku.  
   
 > [!WARNING]
->  [Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658) obsahuje aktualizace do knihovny přenosných tříd šablon. Pokud máte na dřívější verzi Visual Studio a Visual Studio 2013 nainstalovaná na stejném počítači, a pak nainstalujte Update 2, budou změny provedené **cílové rozhraní** volby se použijí pro obě verze sady Visual Studio.  
+>  Visual Studio 2013 Update 2 obsahuje aktualizace do knihovny přenosných tříd šablon. Pokud máte na dřívější verzi Visual Studio a Visual Studio 2013 nainstalovaná na stejném počítači, a pak nainstalujte Update 2, budou změny provedené **cílové rozhraní** volby se použijí pro obě verze sady Visual Studio.  
   
  V tomto tématu:  
   
@@ -59,10 +59,10 @@ Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual 
 |-----------------------|---------------------------------------------------|  
 |Visual Studio 2010, Professional, Premium nebo Ultimate|Ano, když instalujete [přenosné knihovny nástroje](https://marketplace.visualstudio.com/items?itemName=BCLTeam.PortableLibraryTools2).|  
 |Verze Visual Studio Express 2010.|Ne.|  
-|Visual Studio 2012 Professional, Premium nebo Ultimate|Ano. Pro telefonickou podporu, nainstalujte [Windows Phone SDK 8.0](http://go.microsoft.com/fwlink/?LinkId=265772).|  
+|Visual Studio 2012 Professional, Premium nebo Ultimate|Ano. Kvůli podpoře zařízení Windows Phone 8.0, nainstalujte [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471).|  
 |Visual Studio Express 2012 verze|Ne.|  
-|Visual Studio 2013 Professional, Premium nebo Ultimate|Ano. Pro podporu Windows Phone 8.1 instalovat [Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658).|  
-|Visual Studio Express 2013 for Windows|Ano, když instalujete [nejnovější verzi sady Visual Studio Express](http://go.microsoft.com/fwlink/p/?LinkId=394629), což zahrnuje Update 2, nebo přidejte [Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658).|  
+|Visual Studio 2013 Professional, Premium nebo Ultimate|Ano. Pro podporu Windows Phone 8.1, nainstalujte [nejnovější verzi sady Visual Studio 2013](https://www.visualstudio.com/vs/older-downloads/).|  
+|Visual Studio Community 2013 pro Windows|Ano, když instalujete [nejnovější verzi Visual Studio Community 2013](https://www.visualstudio.com/vs/older-downloads/), což zahrnuje Update 2.|  
   
 <a name="create_pcl"></a>   
 ## <a name="creating-a-portable-class-library-project"></a>Vytvoření projektu knihovny přenosných tříd  
@@ -152,10 +152,10 @@ Dialogové okno cíle změny v sadě Visual Studio 2012
   
  Vyžaduje ➊ [Microsoft asynchronní](https://www.nuget.org/packages/Microsoft.Bcl.Async/) balíčku  
  Vyžaduje ➋ [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression) balíčku  
- Vyžaduje ➌ [knihovny klienta HTTP Microsoft](http://www.nuget.org/packages/Microsoft.Net.Http) balíčku  
+ Vyžaduje ➌ [knihovny klienta HTTP Microsoft](https://www.nuget.org/packages/Microsoft.Net.Http) balíčku  
   
 > [!WARNING]
->  Mohou nastat chyby, když odkazujete [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression) a [knihovny klienta HTTP Microsoft](http://www.nuget.org/packages/Microsoft.Net.Http) balíčky z přenosné knihovny používá aplikace Windows Phone Silverlight 8.1. Další informace najdete v tématu [kompatibilita platformy a nejnovější změny pro aplikace Windows Phone Silverlight 8.1](http://go.microsoft.com/fwlink/p/?LinkId=394744).  
+>  Mohou nastat chyby, když odkazujete [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression) a [knihovny klienta HTTP Microsoft](https://www.nuget.org/packages/Microsoft.Net.Http) balíčky z přenosné knihovny používá aplikace Windows Phone Silverlight 8.1. Další informace najdete v tématu [kompatibilita platformy a nejnovější změny pro aplikace Windows Phone Silverlight 8.1](/previous-versions/windows/apps/dn642084(v=vs.105)).  
   
 <a name="members"></a>   
 ## <a name="supported-types-and-members"></a>Podporované typy a členy  
@@ -197,7 +197,7 @@ Například informace o verzi
  Při vytváření Windows store nebo Windows Phone aplikace odkazující sestavení knihovny přenosných tříd, vše, co potřebujete k nasazení aplikace je součástí balíčku aplikace a nejsou potřeba žádné další kroky.  
   
 ### <a name="deploying-a-net-framework-app"></a>Nasazení .NET Framework aplikace  
- Když nasadíte aplikaci rozhraní .NET Framework, která odkazuje na sestavení knihovny přenosných tříd, musíte zadat závislost na správnou verzi rozhraní .NET Framework. Určením této závislosti zajistíte instalaci požadované verze společně s vaší aplikací. Pokud cílíte na rozhraní .NET Framework 4 nebo novější, počítač musí mít rozhraní .NET Framework 4 s [aktualizace](http://go.microsoft.com/fwlink/?LinkId=210824), aktualizace 4.0.3 pro rozhraní .NET Framework 4 nebo rozhraní .NET Framework 4.5 nainstalované.  
+ Když nasadíte aplikaci rozhraní .NET Framework, která odkazuje na sestavení knihovny přenosných tříd, musíte zadat závislost na správnou verzi rozhraní .NET Framework. Určením této závislosti zajistíte instalaci požadované verze společně s vaší aplikací. Pokud cílíte na rozhraní .NET Framework 4 nebo novější, počítač musí mít rozhraní .NET Framework 4 s [aktualizace](https://www.microsoft.com/download/details.aspx?id=3556), aktualizace 4.0.3 pro rozhraní .NET Framework 4 nebo rozhraní .NET Framework 4.5 nainstalované.  
   
 -   Postup vytvoření závislosti s nasazením ClickOnce: V **Průzkumníku**, vyberte uzel projektu pro projekt, kterou chcete publikovat. (To je projekt, který odkazuje na projekt knihovny přenosných tříd.) Na řádku nabídek zvolte **projektu**, **vlastnosti**a potom zvolte **publikovat** kartě. Na **publikovat** vyberte **požadavky**. Jako předpoklad vyberte požadovanou verzi rozhraní .NET Framework (nebo aktualizace rozhraní .NET Framework 4).  
   
@@ -217,9 +217,9 @@ Například informace o verzi
     <param name="background" value="white" />  
     <param name="minRuntimeVersion" value="4.0.60129.0" />  
     <param name="autoUpgrade" value="true" />  
-    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0"   
+    <a href="https://www.microsoft.com/getsilverlight/get-started/install/"   
              style="text-decoration:none">  
-      <img src=http://go.microsoft.com/fwlink/?LinkId=161376  
+      <img src=http://download.microsoft.com/download/5/1/6/5165823D-1D79-4871-8AC2-42DDDB94A5C2/PNGs/SLMedallion_ENU.png  
              alt="Get Microsoft Silverlight" style="border-style:none"/>  
     </a>  
   </object>  

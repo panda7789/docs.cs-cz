@@ -1,11 +1,12 @@
 ---
 title: Typy hodnot a typy odkazu
-ms.custom: 
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - reference data types [Visual Basic]
@@ -16,28 +17,28 @@ helpviewer_keywords:
 - data types [Visual Basic], value types
 - data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2b54945d27d186771e8b5353e753afd74c56d71b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9cbab25e4af6b96ae22fe18d0b8a8fdbc7a7c7a7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="value-types-and-reference-types"></a>Typy hodnot a typy odkazu
-V jazyce Visual Basic – datové typy jsou implementované podle jejich klasifikace. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Datové typy můžou být klasifikované podle jestli proměnné určitého typu ukládá svá vlastní data nebo odkazy na data. Pokud ukládají svá vlastní data *typ hodnoty*; Pokud má ukazatel na data jinde v paměti je *odkazují na typ*.  
+V jazyce Visual Basic – datové typy jsou implementované podle jejich klasifikace. Datové typy jazyka Visual Basic můžou být klasifikované podle jestli proměnné určitého typu ukládá svá vlastní data nebo odkazy na data. Pokud ukládají svá vlastní data *typ hodnoty*; Pokud má ukazatel na data jinde v paměti je *odkazují na typ*.  
   
 ## <a name="value-types"></a>Typy hodnot  
  Datový typ *typ hodnoty* pokud drží dat v rámci vlastní přidělení paměti. Typy hodnot zahrnují následující:  
   
 -   Všechny číselné datové typy  
   
--   `Boolean`, `Char`, a`Date`  
+-   `Boolean`, `Char`, a `Date`  
   
 -   Všechny struktury, i když jsou jejich členové odkazové typy  
   
--   Výčty, protože jejich základní typ je vždy `SByte`, `Short`, `Integer`, `Long`, `Byte`, `UShort`, `UInteger`, nebo`ULong`  
+-   Výčty, protože jejich základní typ je vždy `SByte`, `Short`, `Integer`, `Long`, `Byte`, `UShort`, `UInteger`, nebo `ULong`  
   
  Každý struktura je hodnota typu, i v případě, že obsahuje členy typu odkaz. Z tohoto důvodu, hodnotu, jako typy `Char` a `Integer` jsou implementované struktury rozhraní .NET Framework.  
   
@@ -50,7 +51,7 @@ V jazyce Visual Basic – datové typy jsou implementované podle jejich klasifi
   
 -   Všechna pole, i když jejich prvky jsou typy hodnot  
   
--   Typy tříd, jako například<xref:System.Windows.Forms.Form>  
+-   Typy tříd, jako například <xref:System.Windows.Forms.Form>  
   
 -   Delegáty  
   
@@ -65,7 +66,7 @@ Dim totals() As Single = New Single(8) {}
 ## <a name="elements-that-are-not-types"></a>Elementy, které nejsou typy  
  Následující elementům programování nemohou být jako typy, protože některý z nich nelze zadat jako datový typ pro element deklarované:  
   
--   Obory názvů  
+-   Jmenné prostory  
   
 -   Moduly  
   
@@ -78,12 +79,12 @@ Dim totals() As Single = New Single(8) {}
 ## <a name="working-with-the-object-data-type"></a>Práce s datovým typem objektu  
  Proměnné můžete přiřadit odkazového typu nebo typ hodnoty `Object` datového typu. `Object` Proměnné vždy obsahuje ukazatel k datům, nikdy samotná data. Ale pokud přiřadíte typ hodnoty do `Object` proměnné, chová jako kdyby drží svá vlastní data. Další informace najdete v tématu [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md).  
   
- Můžete zjistit, jestli se `Object` proměnná funguje jako odkaz na typ nebo typ hodnoty předáním jeho <xref:Microsoft.VisualBasic.Information.IsReference%2A> metoda v <xref:Microsoft.VisualBasic.Information> třídu <xref:Microsoft.VisualBasic?displayProperty=nameWithType> oboru názvů. <xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=nameWithType>Vrátí `True` Pokud obsah `Object` proměnná představuje odkazového typu.  
+ Můžete zjistit, jestli se `Object` proměnná funguje jako odkaz na typ nebo typ hodnoty předáním jeho <xref:Microsoft.VisualBasic.Information.IsReference%2A> metoda v <xref:Microsoft.VisualBasic.Information> třídu <xref:Microsoft.VisualBasic?displayProperty=nameWithType> oboru názvů. <xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=nameWithType> Vrátí `True` Pokud obsah `Object` proměnná představuje odkazového typu.  
   
 ## <a name="see-also"></a>Viz také  
  [Typy hodnot s povolenou hodnotou Null](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)  
  [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)  
  [Účinné používání datových typů](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
- [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
+ [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)

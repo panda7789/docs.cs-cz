@@ -1,7 +1,7 @@
 ---
-title: "Problémy a řešení pro správu distribuovaných dat"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Problémy a řešení pro správu distribuovaných dat"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Problémy a řešení pro správu distribuovaných dat
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Problémy a řešení pro správu distribuovaných dat
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b0252586a508c059099885991b87c79346e0d809
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a26f4243acee52e493a10f13ff18899823fd03ba
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problémy a řešení pro správu distribuovaných dat
 
@@ -99,9 +99,9 @@ Další podrobnosti o později v tomto průvodci v částech je popsané použit
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
 -   **Martin Fowler. CQRS (příkaz a dotaz odpovědnost oddělení)**
-    [*http://martinfowler.com/bliki/CQRS.html*](http://martinfowler.com/bliki/CQRS.html)
+    [*https://martinfowler.com/bliki/CQRS.html*](https://martinfowler.com/bliki/CQRS.html)
 
--   **Materializovat zobrazení**
+-   **Vyhodnocená zobrazení**
     [*https://docs.microsoft.com/azure/architecture/patterns/materialized-view*](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
 
 -   **Charlese řádek. ACID vs. Základní: Parametr Shifting zpracování transakcí databáze**
@@ -110,7 +110,7 @@ Další podrobnosti o později v tomto průvodci v částech je popsané použit
 -   **Kompenzace transakce**
     [*https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction*](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
 
--   **UDI Dahan. Služba zaměřené na konkrétní složení**
+-   **Udi Dahan. Služba zaměřené na konkrétní složení**
     [*http://udidahan.com/2014/07/30/service-oriented-composition-with-video/*](http://udidahan.com/2014/07/30/service-oriented-composition-with-video/)
 
 

@@ -1,24 +1,26 @@
 ---
-title: "Zápis zabezpečené dynamické SQL v systému SQL Server"
-ms.custom: 
+title: Zápis zabezpečené dynamické SQL v systému SQL Server
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 41c396bf2101e54adb1608f938c702ff7663cb1d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5fdf41353e1772eab46e2e6b8f16ad7bfdf7a72f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL v systému SQL Server
 Injektáž SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazy jazyka Transact-SQL místo platný vstup. Pokud vstup je předán přímo k serveru bez ověřování a aplikace nechtěně spustí kód vložený, se útoku může dojít k poškození nebo zničení data.  
@@ -68,7 +70,7 @@ Injektáž SQL je proces, pomocí kterého uživatel se zlými úmysly zadá př
  Když provede uložené procedury, která má byla podepsána pomocí certifikátu, oprávnění udělená uživateli certifikát jsou sloučeny s těmi, která volajícího. Kontext spuštění zůstává stejná; Uživatel certifikát není zosobnit volající. Podepisování uložené procedury, vyžaduje několik kroků k implementaci. Pokaždé, když se mění podle postupu, musí být znovu podepisovat.  
   
 ### <a name="cross-database-access"></a>Mezi přístup k databázi  
- Řetězení mezidatabázové vlastnictví nefunguje, pokud je v případech, kde jsou vykonány dynamicky vytvořený příkazů SQL. Můžete obejít v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] vytvořením uložené procedury, která přistupuje k datům v jiné databázi a podepisování postup s certifikátem, který již existuje v obou databází. To umožňuje uživatelům přístup k databázi prostředky využívané třídou postup bez toho, abyste jim přístup k databázi nebo oprávnění.  
+ Řetězení mezidatabázové vlastnictví nefunguje, pokud je v případech, kde jsou vykonány dynamicky vytvořený příkazů SQL. Vám může tento problém vyřešit v systému SQL Server vytváření uložené procedury, která přistupuje k datům v jiné databázi a podepisování postup s certifikátem, který již existuje v obou databází. To umožňuje uživatelům přístup k databázi prostředky využívané třídou postup bez toho, abyste jim přístup k databázi nebo oprávnění.  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících zdrojích informací.  

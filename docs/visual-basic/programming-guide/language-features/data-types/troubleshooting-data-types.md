@@ -1,11 +1,12 @@
 ---
-title: "Řešení potíží s datovými typy (Visual Basic)"
-ms.custom: 
+title: Řešení potíží s datovými typy (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Char data type [Visual Basic], converting
@@ -25,14 +26,14 @@ helpviewer_keywords:
 - floating-point numbers [Visual Basic], comparison
 - floating-point numbers
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4d2fb1cd1be9c88ad0dd413eedb8a226fe59f41e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f34e7bc50a51032387cf01db3fae17ef44b8b4d9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting-data-types-visual-basic"></a>Řešení potíží s datovými typy (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, ke kterým dochází při provádění operací na vnitřní datové typy.  
@@ -74,7 +75,7 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
  Všimněte si, že není dostatečná pro deklarovat `decimalRemainder` jako `Decimal`. Musíte také vynutit literály k `Decimal`, nebo používají `Double` ve výchozím nastavení a `decimalRemainder` obdrží nesprávné stejnou hodnotu jako `doubleRemainder`.  
   
 ## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>Typem logická hodnota není převod na číselný typ přesně  
- [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) hodnoty nejsou uložené jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní na čísla. Pro kompatibilitu s předchozími verzemi [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] poskytuje klíčová slova převodu ([CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`a tak dále) pro převod mezi `Boolean` a číselnými typy. Ale jiné jazyky někdy provést tyto převody odlišně, stejně jako [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody.  
+ [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) hodnoty nejsou uložené jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní na čísla. Pro kompatibilitu s předchozími verzemi jazyka Visual Basic poskytuje klíčová slova převodu ([CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`a tak dále) pro převod mezi `Boolean` a číselnými typy. Ale jiné jazyky někdy provést tyto převody odlišně, stejně jako [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody.  
   
  Nikdy byste měli zapsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, měli byste omezit využití `Boolean` proměnné logické hodnoty, pro které jsou navrženy. Pokud musíte kombinovat `Boolean` a číselné hodnoty, ujistěte se, že rozumíte převod metoda, kterou jste vybrali.  
   
@@ -87,7 +88,7 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
  Pokud je nutné převést `Boolean` hodnoty na číselný datový typ, dávejte pozor, o jakou metodu převodu použijete.  
   
 ## <a name="character-literal-generates-compiler-error"></a>Znakový literál vygeneruje Chyba kompilátoru  
- Neexistují žádné znaky typu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] předpokládá výchozí datové typy pro literály. Výchozí typ znaku literálu – uzavřena v uvozovkách (`" "`) – je `String`.  
+ Neexistují žádné znaky typu předpokládá Visual Basic výchozí datové typy pro literály. Výchozí typ znaku literálu – uzavřena v uvozovkách (`" "`) – je `String`.  
   
  `String` Datový typ není rozšíří do [Char – datový typ](../../../../visual-basic/language-reference/data-types/char-data-type.md). To znamená, že pokud chcete přiřadit k literál `Char` proměnné, musíte provést zužující převod nebo vynutit literál k `Char` typu.  
 
@@ -102,7 +103,7 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
  Existuje vždy riziko pomocí zužující převody, protože můžou selhat v době běhu. Například převod z `String` k `Char` může selhat, pokud `String` hodnota obsahuje více než jeden znak. Proto je lepší programování používat `C` zadávat znaky.  
   
 ## <a name="string-conversion-fails-at-run-time"></a>Převod řetězce selže v době běhu  
- [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md) účastní velmi málo rozšiřující převody. `String`rozšiřuje pouze na sebe sama a `Object`a pouze `Char` a `Char()` ( `Char` pole) rozšíří do `String`. Důvodem je, že `String` proměnných a konstant může obsahovat hodnoty, které nemůže obsahovat jiné datové typy.  
+ [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md) účastní velmi málo rozšiřující převody. `String` rozšiřuje pouze na sebe sama a `Object`a pouze `Char` a `Char()` ( `Char` pole) rozšíří do `String`. Důvodem je, že `String` proměnných a konstant může obsahovat hodnoty, které nemůže obsahovat jiné datové typy.  
   
  Když je kontrola typu přepínače ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, kompilátor zakazuje všechny implicitní zužující převod. To zahrnuje ty zahrnující `String`. Váš kód můžete dál používat klíčová slova převodu, jako `CStr` a [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), které přímo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k pokusu o převod.  
   

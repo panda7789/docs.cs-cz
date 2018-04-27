@@ -1,11 +1,12 @@
 ---
-title: "Předávání argumentů podle hodnoty a odkazu (Visual Basic)"
-ms.custom: 
+title: Předávání argumentů podle hodnoty a odkazu (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - ByRef keyword [Visual Basic], passing arguments by reference
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - arguments [Visual Basic], passing by value or by reference
 - argument passing [Visual Basic], by value or by reference
 ms.assetid: fd8a9de6-7178-44d5-a9bf-458d4ad907c2
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 752c0c8e90cafe457cbd5d684bc984a1ea4632ac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f10e0e582e060c1305a9c0fe922620cb4da2c215
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>Předávání argumentů podle hodnoty a odkazu (Visual Basic)
-V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], můžete předat argument proceduře *hodnotou* nebo *odkazem*. To se označuje jako *předávání mechanismus*, a určuje, zda postupu můžete upravit programovací element základní argument ve volání kódu. Deklarace procedury určuje předávání mechanismus pro každý parametr zadáním [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo.  
+V jazyce Visual Basic, můžete předat argument proceduře *hodnotou* nebo *odkazem*. To se označuje jako *předávání mechanismus*, a určuje, zda postupu můžete upravit programovací element základní argument ve volání kódu. Deklarace procedury určuje předávání mechanismus pro každý parametr zadáním [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo.  
   
 ## <a name="distinctions"></a>Rozlišení  
  Při předávání argumentu procedury, nezapomeňte několik různých rozdíly, které spolupracují mezi sebou:  
@@ -45,7 +46,7 @@ V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], můžete předat argument procedu
   
 -   **Ochrana**. Ve výběru mezi dvěma předávání mechanismy, je nejdůležitější kritérium ohrožení volání proměnné, které chcete změnit. Výhodou předáním argumentu `ByRef` je, že postup můžete vrátit hodnotu volání kódu pomocí tohoto argumentu. Výhodou předáním argumentu `ByVal` je chrání proměnné před změnou procedurou.  
   
--   **Výkon**. I když tento mechanismus předávání mohou ovlivnit výkon kódu, je obvykle zanedbatelný rozdíl. Jedinou výjimkou je typu hodnota předaná `ByVal`. V takovém případě [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zkopíruje obsah celého datového argumentu. Proto na typ velké hodnoty, které by bylo třeba strukturou, může být efektivnější předáváme `ByRef`.  
+-   **Výkon**. I když tento mechanismus předávání mohou ovlivnit výkon kódu, je obvykle zanedbatelný rozdíl. Jedinou výjimkou je typu hodnota předaná `ByVal`. V takovém případě jazyka Visual Basic zkopíruje obsah celého datového argumentu. Proto na typ velké hodnoty, které by bylo třeba strukturou, může být efektivnější předáváme `ByRef`.  
   
      Pro odkazové typy pouze má ukazatel na data je zkopírovaný (čtyři bajtů na platformách 32-bit, osm bajtů na 64bitových platformách). Proto můžete předat argumenty typu `String` nebo `Object` hodnotou bez poškozování výkonu.  
   
@@ -54,7 +55,7 @@ V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], můžete předat argument procedu
   
  Pokud je parametr deklarovat s `ByRef`, volající kód můžete vynutit mechanismus `ByVal` uzavřením argument názvu v závorkách ve volání. Další informace najdete v tématu [postupy: vynucení předání hodnotou argumentu](./how-to-force-an-argument-to-be-passed-by-value.md).  
   
- Výchozí hodnota v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je předání argumentů hodnotou.  
+ Ve výchozím nastavení v jazyce Visual Basic se předání argumentů hodnotou.  
   
 ## <a name="when-to-pass-an-argument-by-value"></a>Když k předání argumentu podle hodnoty  
   
@@ -77,11 +78,11 @@ V [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], můžete předat argument procedu
  [!code-vb[VbVbcnProcedures#74](./codesnippet/VisualBasic/passing-arguments-by-value-and-by-reference_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
+ [Procedury](./index.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Postupy: předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
+ [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
  [Postupy: Změna hodnoty argumentu procedury](./how-to-change-the-value-of-a-procedure-argument.md)  
- [Postupy: ochrana argumentu procedury proti změnám hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)  
- [Postupy: vynucení předání hodnotou argumentu](./how-to-force-an-argument-to-be-passed-by-value.md)  
+ [Postupy: Ochrana argumentu procedury před změnami hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)  
+ [Postupy: Vynucení předání argumentu podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)  
  [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)  
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

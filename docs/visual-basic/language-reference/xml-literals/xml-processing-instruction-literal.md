@@ -1,9 +1,9 @@
 ---
-title: "Literál instrukcí pro zpracování XML (Visual Basic)"
+title: Literál instrukcí pro zpracování XML (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - XML processing instruction literal [Visual Basic]
 - processing instruction literal [Visual Basic]
 ms.assetid: cef4f7f8-0011-4f64-8602-795077ad4f15
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9ce0f2d0dff80072beefdb4f84643ea28e2cf165
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2d2df93a46d426358988b3ad7f3161c7ae0c7b9e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-processing-instruction-literal-visual-basic"></a>Literál instrukcí pro zpracování XML (Visual Basic)
 Literál představující <xref:System.Xml.Linq.XProcessingInstruction> objektu.  
@@ -59,9 +59,9 @@ Literál představující <xref:System.Xml.Linq.XProcessingInstruction> objektu.
  Můžete přiřadit XML literál instrukcí pro zpracování proměnné nebo její zahrnutí do literál dokumentu XML.  
   
 > [!NOTE]
->  Literál XML může zahrnovat více řádků bez nutnosti znaky pokračování řádku. To umožňuje kopírovat obsah z dokumentu XML a vložte ji přímo do [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] program.  
+>  Literál XML může zahrnovat více řádků bez nutnosti znaky pokračování řádku. To umožňuje kopírovat obsah z dokumentu XML a vložte jej přímo do programu Visual Basic.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru převede XML literál instrukcí pro zpracování volání <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> konstruktor.  
+ Visual Basic – kompilátor převede XML literál instrukcí pro zpracování volání <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> konstruktor.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří instrukce pro zpracování identifikace šablonu stylů pro dokument XML.  
@@ -71,5 +71,5 @@ Literál představující <xref:System.Xml.Linq.XProcessingInstruction> objektu.
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Linq.XProcessingInstruction>  
  [Literál dokumentu XML](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)  
- [XML – literály](../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
  [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

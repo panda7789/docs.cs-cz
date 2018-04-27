@@ -1,24 +1,26 @@
 ---
-title: "Aspekty zabezpečení (rozhraní Entity Framework)"
-ms.custom: 
+title: Aspekty zabezpečení (rozhraní Entity Framework)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 68b077ec6c7edd30882c9c84a10aa14060a589e8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: d70b1a6aff3e93122b5d0fb21affdfcd13d817e6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="security-considerations-entity-framework"></a>Aspekty zabezpečení (rozhraní Entity Framework)
 Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace. Také postupujte podle doporučení pro vytvoření zabezpečeného [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikace. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -84,7 +86,7 @@ Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, n
   
 -   <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimky pomocí <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
   
--   Oprávnění k otevření připojení k databázi a provést příkazy proti databázi, jako například <xref:System.Data.SqlClient.SqlClientPermission> pro [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] databáze.  
+-   Oprávnění k otevření připojení k databázi a provést příkazy proti databázi, jako například <xref:System.Data.SqlClient.SqlClientPermission> pro databázi systému SQL Server.  
   
  Další informace najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md).  
   
@@ -105,13 +107,13 @@ Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, n
 #### <a name="prevent-sql-injection-attacks"></a>Zabránit útokům Injektáž SQL.  
  Aplikace často trvat externí vstup (uživatele nebo jiné externí agenta) a provádět akce na základě těchto informací. Všechny vstup, který je přímo nebo nepřímo odvozený od uživatele nebo externí agenta může mít obsah, který se používá syntaxe jazyka cíl za účelem provedení neoprávněným akcím. Pokud cílový jazyk je jazyka SQL (Structured Query), například [!INCLUDE[tsql](../../../../../includes/tsql-md.md)], tato manipulace se říká útok prostřednictvím injektáže SQL. Uživatel se zlými úmysly můžete vložit příkazy přímo do dotazu a vyřadit tabulku databáze, způsobit odepření služby nebo v opačném případě změňte povaha prováděnou operaci.  
   
--   [!INCLUDE[esql](../../../../../includes/esql-md.md)]vkládání útoků:  
+-   [!INCLUDE[esql](../../../../../includes/esql-md.md)] vkládání útoků:  
   
      Útok prostřednictvím injektáže SQL mohou být prováděny v [!INCLUDE[esql](../../../../../includes/esql-md.md)] zadáním škodlivého zadání hodnoty, které jsou použity v predikátu dotazu a názvy parametrů. Aby nedošlo k ohrožení Injektáž SQL, doporučujeme, abyste nikdy zkombinovali vstup uživatele s [!INCLUDE[esql](../../../../../includes/esql-md.md)] text příkazu.  
   
-     [!INCLUDE[esql](../../../../../includes/esql-md.md)]dotazy přijmout všude, kde parametry, že jsou přijaty literály. Parametrizované dotazy byste měli používat místo vložení literály z externí agenta přímo do dotazu. Měli byste také zvážit použití metody Tvůrce dotazů bezpečně vytvořit [Entity SQL](http://msdn.microsoft.com/library/05685434-05e6-41c2-8d5e-8933b88a40b0).  
+     [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy přijmout všude, kde parametry, že jsou přijaty literály. Parametrizované dotazy byste měli používat místo vložení literály z externí agenta přímo do dotazu. Měli byste také zvážit použití metody Tvůrce dotazů bezpečně vytvořit [Entity SQL](http://msdn.microsoft.com/library/05685434-05e6-41c2-8d5e-8933b88a40b0).  
   
--   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]vkládání útoků:  
+-   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] vkládání útoků:  
   
      I když je možné v sestavení dotazu [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)], se provádí prostřednictvím rozhraní API modelu objektu. Na rozdíl od [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy, [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] dotazy nejsou sestavit pomocí zacházení s řetězci nebo zřetězení a nejsou náchylné k tradiční prostřednictvím injektáže SQL.  
   
@@ -161,13 +163,13 @@ Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, n
  I když hodnoty, na kterou operátor kořenové (`~`) a `DataDirectory` náhradní řetězec vyřešte by měla zůstat konstantní při běhu aplikace [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] neomezuje hostitele upravování tyto hodnoty.  
   
 #### <a name="verify-the-path-length-before-deployment"></a>Ověřte délka cesty před nasazením.  
- Před nasazením [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace, ujistěte se, že hodnoty operátoru kořenové (~) a `DataDirectory` náhradní řetězec nepřekračují omezení délky cesty v operačním systému. [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]Zprostředkovatelé dat není zajistěte, aby byl délka cesty v platné rozsahu.  
+ Před nasazením [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace, ujistěte se, že hodnoty operátoru kořenové (~) a `DataDirectory` náhradní řetězec nepřekračují omezení délky cesty v operačním systému. [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Zprostředkovatelé dat není zajistěte, aby byl délka cesty v platné rozsahu.  
   
 ## <a name="security-considerations-for-adonet-metadata"></a>Důležité informace o zabezpečení pro ADO.NET Metadata  
  Při vytváření a práci se soubory mapování a modelu, platí následující aspekty zabezpečení.  
   
 #### <a name="do-not-expose-sensitive-information-through-logging"></a>Nevystavujte citlivých informací prostřednictvím protokolování.  
- [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]součásti služby metadata nepřihlašujte nějaké soukromé informace. Pokud jsou výsledky, které nelze z důvodu omezení přístupu, databázové systémy a systémy souborů by měl vrátit nulové výsledky místo vyvolání k výjimce, která by mohla obsahovat citlivé informace.  
+ [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] součásti služby metadata nepřihlašujte nějaké soukromé informace. Pokud jsou výsledky, které nelze z důvodu omezení přístupu, databázové systémy a systémy souborů by měl vrátit nulové výsledky místo vyvolání k výjimce, která by mohla obsahovat citlivé informace.  
   
 #### <a name="do-not-accept-metadataworkspace-objects-from-untrusted-sources"></a>Nepřijímají objektu MetadataWorkspace objekty z nedůvěryhodných zdrojů.  
  Aplikace by neměla přijímat instance <xref:System.Data.Metadata.Edm.MetadataWorkspace> třídy z nedůvěryhodných zdrojů. Místo toho by měla explicitně vytvořit a naplnit prostoru z takových zdroje.  

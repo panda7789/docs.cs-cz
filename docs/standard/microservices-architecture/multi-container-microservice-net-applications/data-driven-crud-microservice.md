@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: be8644e45be8db88c99332476e74c5c968764c74
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: ca4bfd31b505754b508555ff2771a6380ae023b4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduchého mikroslužbu CRUD řízené daty
 
@@ -35,7 +35,7 @@ Příkladem tento druh jednoduché datové jednotky služby je mikroslužbu kata
 
 **Obrázek 8-5**. Jednoduché mikroslužbu data řízené/CRUD návrhu
 
-Při vývoji tento druh služby, je třeba pouze [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) a rozhraní API pro přístup k datům nebo ORM jako [Entity Framework Core](https://docs.microsoft.com/ef/core/index). Může také generovat [Swagger](http://swagger.io/) metadata automaticky přes [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) zajistit popis co nabízí služby, jak je popsáno v následující části.
+Při vývoji tento druh služby, je třeba pouze [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) a rozhraní API pro přístup k datům nebo ORM jako [Entity Framework Core](https://docs.microsoft.com/ef/core/index). Může také generovat [Swagger](https://swagger.io/) metadata automaticky přes [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) zajistit popis co nabízí služby, jak je popsáno v následující části.
 
 Všimněte si, že spuštění databázový server, jako je SQL Server v rámci kontejner Docker je skvělá pro vývojové prostředí, protože všechny závislosti může mít a bez nutnosti zřídit databázi v cloudu nebo místně. To je velmi praktické, když spouštění integrace testů. Ale pro provozní prostředí, serverem databáze v kontejneru nedoporučuje, protože se obvykle nezobrazí vysoká dostupnost s Tento přístup. Pro produkční prostředí v Azure se doporučuje používat databázi SQL Azure nebo jakékoli jiné databáze technologie, která můžete zajistit vysokou dostupnost a škálovatelnost vysoké. Například pro přístup NoSQL, můžete zvolit DocumentDB.
 
@@ -294,7 +294,7 @@ Tento mechanismus správy verzí je jednoduchý a závisí na serveru pro směro
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Scott Hanselman. Správa verzí RESTful webová rozhraní API ASP.NET Core umožněno**
-    [*http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
+    [*https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
 -   **Správa verzí RESTful webového rozhraní API**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
@@ -304,19 +304,19 @@ Tento mechanismus správy verzí je jednoduchý a závisí na serveru pro směro
 
 ## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Generování metadat Swagger popis z ASP.NET rozhraní Web API Core 
 
-[Swagger](http://swagger.io/) je běžně používané s otevřeným zdrojem framework zajišťoval velké ekosystém nástroje, které vám pomůžou návrhu, sestavení, dokumentu a používat vaše rozhraní RESTful API. Se stává stále standard pro doménu popis metadat rozhraní API. By měly obsahovat metadata Swagger popis s jakýmkoli mikroslužbu řízené daty mikroslužeb nebo pokročilejší řízené domény mikroslužeb (jak je popsáno v následující části).
+[Swagger](https://swagger.io/) je běžně používané s otevřeným zdrojem framework zajišťoval velké ekosystém nástroje, které vám pomůžou návrhu, sestavení, dokumentu a používat vaše rozhraní RESTful API. Se stává stále standard pro doménu popis metadat rozhraní API. By měly obsahovat metadata Swagger popis s jakýmkoli mikroslužbu řízené daty mikroslužeb nebo pokročilejší řízené domény mikroslužeb (jak je popsáno v následující části).
 
 Srdcem Swagger je specifikace Swagger, což je popis metadat rozhraní API v souboru YAML nebo JSON. Specifikace vytvoří RESTful kontrakt pro vaše rozhraní API s podrobnostmi o všech prostředků a operace v obou lidské a machine readable formátu pro snadný vývoj, zjišťování a integrace.
 
 Specifikace je základem z specifikace OpenAPI (OAS) a je vyvinuta v komunitě otevřené, transparentní a spolupráce pro standardizaci způsob, jakým jsou definovány rozhraní RESTful.
 
-Specifikace definuje strukturu pro jak může být zjištěn služby a jak se jeho funkce rozumí. Další informace, včetně editoru webové a příklady specifikace Swagger společností jako Spotify, Uber, Slack a společnosti Microsoft, najdete v části webu Swagger (<http://swagger.io>).
+Specifikace definuje strukturu pro jak může být zjištěn služby a jak se jeho funkce rozumí. Další informace, včetně editoru webové a příklady specifikace Swagger společností jako Spotify, Uber, Slack a společnosti Microsoft, najdete v části webu Swagger (<https://swagger.io/>).
 
 ### <a name="why-use-swagger"></a>Proč používat Swagger?
 
 Hlavních důvodů pro generování metadat Swagger pro vaše rozhraní API jsou uvedeny níže.
 
-**Možnost pro ostatní produkty automaticky využívat a integrovat vaše rozhraní API**. Desítek produktů a [komerční nástroje](http://swagger.io/commercial-tools/) a mnoho [knihoven a architektur](http://swagger.io/open-source-integrations/) podporu Swagger. Microsoft má vysoké úrovně produktů a nástroje, které mohou automaticky používat rozhraní API na základě Swagger, například následující:
+**Možnost pro ostatní produkty automaticky využívat a integrovat vaše rozhraní API**. Desítek produktů a [komerční nástroje](https://swagger.io/commercial-tools/) a mnoho [knihoven a architektur](https://swagger.io/open-source-integrations/) podporu Swagger. Microsoft má vysoké úrovně produktů a nástroje, které mohou automaticky používat rozhraní API na základě Swagger, například následující:
 
 -   [AutoRest](https://github.com/Azure/AutoRest). Může automaticky vygenerovat třídy klienta rozhraní .NET pro volání Swagger. Tento nástroj můžete použít z rozhraní příkazového řádku a je integrován se sadou Visual Studio pro snadné použití prostřednictvím grafického uživatelského rozhraní.
 
@@ -420,4 +420,4 @@ Je to snadné. A protože se automaticky vygeneroval, Swagger metadata se zvýš
 
 
 >[!div class="step-by-step"]
-[Previous] (microservice-application-design.md) [Next] (multi-container-applications-docker-compose.md)
+[Předchozí] (mikroslužbu aplikace design.md) [Další] (více-container-aplikace docker-compose.md)

@@ -1,30 +1,30 @@
 ---
-title: "Přehled konstant (Visual Basic)"
-ms.custom: 
+title: Přehled konstant (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - constants [Visual Basic]
 ms.assetid: 29016fe8-78b3-4dc8-90b8-1cfec2fa8ac9
-caps.latest.revision: 
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e6526f7270602b3e1a4e8d953732c393ff252b2c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 40330e8c2c60c866200e009a8280c7ec9c855435
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="constants-overview-visual-basic"></a>Přehled konstant (Visual Basic)
 Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládat hodnoty, které jak již název napovídá, zůstávají stejné v celé spuštění aplikace. Může výrazně zlepšit čitelnost kódu a bylo snazší spravovat pomocí konstanty. Použít na kód, který obsahuje hodnoty, které se znovu objeví nebo který závisí na určitých čísla, která je obtížné mějte na paměti, nebo nemají zřejmé význam.  
   
 ## <a name="how-to-create-and-use-constants"></a>Postup vytvoření a použití konstant  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]obsahuje řadu předdefinovaných konstanty, především pomocí pro tisk a zobrazení. Můžete také vytvořit vlastní konstanty s `Const` příkaz, pomocí stejné pokyny byste pro vytvoření název proměnné. Pokud `Option Strict` je `On`, je potřeba explicitně deklarovat typu konstanty.  
+ Visual Basic obsahuje řadu předdefinovaných konstanty, především pomocí pro tisk a zobrazení. Můžete také vytvořit vlastní konstanty s `Const` příkaz, pomocí stejné pokyny byste pro vytvoření název proměnné. Pokud `Option Strict` je `On`, je potřeba explicitně deklarovat typu konstanty.  
   
  Obor konstanta, což je sada všechen kód, který může na ni odkazuje bez určení názvu, je stejný jako u proměnná definovaná ve stejném umístění. Pokud chcete vytvořit konstanta, která existuje v rámci oboru určitého postupu, deklarujte ji uvnitř tohoto postupu. Pokud chcete vytvořit konstanta, která je k dispozici v celé aplikaci, deklarujte ji pomocí `Public` – klíčové slovo v sekci deklarace třídy.  
   
@@ -40,18 +40,18 @@ Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který
   
 |Definice|Termín|  
 |---|---|  
-|[Postupy: deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)|Vysvětluje, jak používat `Const` příkaz deklarace konstanty a nastavení jeho hodnoty; deklarováním konstanta přiřadíte hodnotě nějaký výstižný název.|  
+|[Postupy: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)|Vysvětluje, jak používat `Const` příkaz deklarace konstanty a nastavení jeho hodnoty; deklarováním konstanta přiřadíte hodnotě nějaký výstižný název.|  
 |[Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)|Popisuje, jak vytvořit vlastní konstanty, včetně informací o rozsahu a jak se vyhnout. cyklické odkazy.|  
-|[Datové typy konstanty a literálu](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)|Poskytuje informace o tom, jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru inicializuje konstanty při `Option Explicit` je vypnutý.|  
-|[Postupy: seskupení souvisejících hodnot konstant společně](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-group-related-constant-values-together.md)|Ukazuje, jak seskupit konstantní hodnoty, které se vztahují.|  
+|[Datové typy konstanty a literálu](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)|Poskytuje informace o tom, jak Visual Basic – kompilátor inicializuje konstanty při `Option Explicit` je vypnutý.|  
+|[Postupy: Seskupení souvisejících hodnot konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-group-related-constant-values-together.md)|Ukazuje, jak seskupit konstantní hodnoty, které se vztahují.|  
   
 ## <a name="reference"></a>Odkaz  
   
 |Definice|Termín|  
 |---|---|  
-|[Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)|Uvádí konstanty předdefinovaná v nástroji [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].|  
-|[Const – příkaz](../../../../visual-basic/language-reference/statements/const-statement.md)|Popisuje `Const` prohlášení a jeho použití.|  
-|[Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|Popisuje `Option Strict` prohlášení a jeho použití.|  
+|[Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)|Uvádí konstanty předdefinovaná v nástroji Visual Basic.|  
+|[Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)|Popisuje `Const` prohlášení a jeho použití.|  
+|[Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|Popisuje `Option Strict` prohlášení a jeho použití.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)  

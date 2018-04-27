@@ -1,24 +1,26 @@
 ---
-title: "Asynchronní programování"
+title: Asynchronní programování
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.topic: article
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 20e40a6705ad77dc42a70739e75abdbb058465e6
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7dbc106b96e4e695108b6178951e3d43078467bc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
-Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] (SqlClient) včetně vylepšení pro podporu asynchronní programování funkcí, které se zavedly v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (SqlClient) včetně vylepšení pro podporu asynchronní programování funkcí, které se zavedly v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 ## <a name="legacy-asynchronous-programming"></a>Starší verze asynchronní programování  
  Před verzí [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], asynchronní programování s SqlClient bylo provedeno pomocí následujících metod a `Asynchronous Processing=true` vlastnost připojení:  
@@ -33,7 +35,7 @@ Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnsh
   
  Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], už nebudou potřebovat tyto metody `Asynchronous Processing=true` v připojovacím řetězci.  
   
-## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>Asynchronní programování funkce přidané do[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]  
+## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>Asynchronní programování funkce přidané do [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]  
  Nový asynchronní programování funkce poskytuje jednoduché techniku, aby byl kód asynchronní.  
   
  Další informace o asynchronní programování funkce, která byla zavedena v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], najdete v části:  
@@ -637,7 +639,7 @@ namespace SqlBulkCopyAsyncCodeSample {
  V příkladu otevře jednoho připojení k **AdventureWorks** databáze. Použití <xref:System.Data.SqlClient.SqlCommand> objekt, <xref:System.Data.SqlClient.SqlDataReader> je vytvořena. Jak se používá program pro čtení, a druhé <xref:System.Data.SqlClient.SqlDataReader> je otevřen pomocí dat z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtečku.  
   
 > [!NOTE]
->  Následující příklad používá vzorku **AdventureWorks** databáze součástí [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
+>  Následující příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
   
 ```csharp
 using System;  
@@ -709,7 +711,7 @@ class Class1 {
  Následující aplikace konzoly ukazuje, jak používat dvě <xref:System.Data.SqlClient.SqlDataReader> objekty s třemi <xref:System.Data.SqlClient.SqlCommand> objektů a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s MARS povolena. První objekt příkazu načte seznam dodavatelů, jejichž platební hodnocení je 5. Druhý objekt příkazu používá zadáno ID od dodavatele <xref:System.Data.SqlClient.SqlDataReader> načíst druhý <xref:System.Data.SqlClient.SqlDataReader> se všemi produktů pro konkrétní dodavatele. Každý záznam produktu je navštívené druhou <xref:System.Data.SqlClient.SqlDataReader>. Provádění výpočtu určit, jaké nové **OnOrderQty** by měl být. Třetí objekt příkazu se pak používá k aktualizaci **ProductVendor** tabulku s novou hodnotou. Tento celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
   
 > [!NOTE]
->  Následující příklad používá vzorku **AdventureWorks** databáze součástí [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
+>  Následující příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
   
 ```csharp
 using System;  

@@ -1,28 +1,28 @@
 ---
-title: "Závislost oboru názvů My na typu projektu (Visual Basic)"
+title: Závislost oboru názvů My na typu projektu (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - _MYTYPE
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
-caps.latest.revision: 
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4a37bf43096931597278974099becb9be6ae133d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d931a2034d681c4e14cc35ecfbd9ad7accf5afaa
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a>Závislost oboru názvů My na typu projektu (Visual Basic)
-`My`zpřístupní pouze ty objekty, které jsou vyžadované v určitém projektu typu. Například `My.Forms` objekt je k dispozici v aplikaci Windows Forms, ale není k dispozici v konzolové aplikaci. Toto téma popisuje, které `My` objekty jsou k dispozici v různých typech projektů.  
+`My` zpřístupní pouze ty objekty, které jsou vyžadované v určitém projektu typu. Například `My.Forms` objekt je k dispozici v aplikaci Windows Forms, ale není k dispozici v konzolové aplikaci. Toto téma popisuje, které `My` objekty jsou k dispozici v různých typech projektů.  
   
 ## <a name="my-in-windows-applications-and-web-sites"></a>Moje v systému Windows aplikace a webové servery  
- `My`zpřístupní pouze objekty, které jsou užitečné v aktuálním projektu typu. Potlačí objekty, které se nedají použít. Například na následujícím obrázku `My` objektový model v projektu Windows Forms.  
+ `My` zpřístupní pouze objekty, které jsou užitečné v aktuálním projektu typu. Potlačí objekty, které se nedají použít. Například na následujícím obrázku `My` objektový model v projektu Windows Forms.  
   
  ![Tvar Moje v aplikaci Windows Forms](../../../visual-basic/developing-apps/development-with-my/media/myinwinform.png "MyInWinForm")  
   
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/21/2017
 |`My.User`|**Ano** <sup>6</sup>|**Ano** <sup>6</sup>|**Ano** <sup>6</sup>|**Ano** <sup>6</sup>|**Ano** <sup>7</sup>|**Ano** <sup>6</sup>|Ne|**Ano** <sup>7</sup>|  
 |`My.WebServices`|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|Ne|Ne|  
   
- <sup>1</sup> verzi Windows Forms `My.Application`. Je odvozena z verze konzoly (viz poznámka 3); přidává podporu pro interakci s windows aplikace a poskytuje [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikačního modelu.  
+ <sup>1</sup> verzi Windows Forms `My.Application`. Je odvozena z verze konzoly (viz poznámka 3); přidává podporu pro interakci s windows aplikace a poskytuje model aplikace Visual Basic.  
   
  <sup>2</sup> verzi knihovny `My.Application`. Poskytuje základní funkce potřebné aplikace: poskytuje členové pro zápis do protokolu aplikace a přístup k informacím o aplikaci.  
   
@@ -67,10 +67,10 @@ ms.lasthandoff: 11/21/2017
  <xref:Microsoft.VisualBasic.Devices.Computer>  
  <xref:Microsoft.VisualBasic.Logging.Log>  
  <xref:Microsoft.VisualBasic.ApplicationServices.User>  
- [Přizpůsobení výběru objektů jsou k dispozici v mé](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
+ [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
  [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
  [/ define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)  
- [My.Forms – objekt](../../../visual-basic/language-reference/objects/my-forms-object.md)  
- [My.Request – objekt](../../../visual-basic/language-reference/objects/my-request-object.md)  
- [My.Response – objekt](../../../visual-basic/language-reference/objects/my-response-object.md)  
- [My.WebServices – objekt](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+ [Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)  
+ [Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)  
+ [Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)  
+ [Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)

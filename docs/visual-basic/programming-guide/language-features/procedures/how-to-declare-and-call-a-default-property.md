@@ -1,11 +1,12 @@
 ---
-title: "Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - defaults [Visual Basic], properties
@@ -16,17 +17,17 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8baa03e37325a6ad7065ec1a60052b3ea6a46c6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9c4f471eba42e47d6bef45a4d38abc0cbd2d32bc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic
-A *výchozí vlastnost* je vlastnost třídu nebo strukturu, která může kód přistupovat bez zadání ho. Při volání kódu názvy třídu nebo strukturu, ale nejedná se o vlastnost a kontext umožňuje přístup k vlastnosti, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] přeloží přístupu na tuto třídu nebo strukturu na výchozí vlastnost, pokud existuje.  
+A *výchozí vlastnost* je vlastnost třídu nebo strukturu, která může kód přistupovat bez zadání ho. Při volání metody kód názvy třídu nebo strukturu, ale není vlastnost a kontext umožňuje přístup k vlastnosti, Visual Basic přeloží přístup třídy nebo struktury je výchozí vlastnost, pokud existuje.  
   
  Třídu nebo strukturu může mít maximálně jeden výchozí vlastnost. Můžete však přetížení výchozí vlastnost a mít více než jednu verzi.  
   
@@ -90,13 +91,13 @@ A *výchozí vlastnost* je vlastnost třídu nebo strukturu, která může kód 
  Z důvodu tyto nevýhody měli byste zvážit není definování výchozí vlastnosti. Kód čitelnější měli také zvážit vždy odkazující na všechny vlastnosti explicitně, i výchozí vlastnosti.  
   
 ## <a name="see-also"></a>Viz také  
- [Procedury vlastností](./property-procedures.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)  
- [Výchozí](../../../../visual-basic/language-reference/modifiers/default.md)  
+ [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Default](../../../../visual-basic/language-reference/modifiers/default.md)  
  [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)  
- [Postupy: vytvoření vlastnosti](./how-to-create-a-property.md)  
- [Postupy: deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)  
- [Postupy: volání procedury vlastnosti](./how-to-call-a-property-procedure.md)  
- [Postupy: vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
- [Postupy: získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+ [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)  
+ [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)  
+ [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)  
+ [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
+ [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

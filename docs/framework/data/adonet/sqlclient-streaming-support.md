@@ -1,29 +1,31 @@
 ---
-title: "Podpora streamování SqlClient"
-ms.custom: 
+title: Podpora streamování SqlClient
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f870bab357db7a425378afcfb0bedd19b0359ce1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: cfa672908248afa951ab3a429e437e0e2c0607c5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
-Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] a aplikací (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumentů, bitové kopie a mediálních souborů). A [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] databáze může uchovávat binární rozsáhlé objekty (objekty BLOB), ale načítání objektů BLOB můžete použít velké množství paměti.  
+Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumentů, bitové kopie a mediálních souborů). Databáze systému SQL Server může uchovávat binární rozsáhlé objekty (objekty BLOB), ale načítání objektů BLOB můžete použít velké množství paměti.  
   
- Podpora streamování do a z [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] usnadňuje psaní aplikací, které Streamovat data, aniž by museli plně načíst data do paměti, což je méně paměti přetečení výjimky.  
+ Podpora na SQL Server a z streamování usnadňuje psaní aplikací datový proud dat, bez nutnosti plně načíst data do paměti, což je méně paměti přetečení výjimky.  
   
  Podpora streamování také povolit vícevrstvé aplikace škálovat lepší, zejména ve scénářích, kde se objekty obchodní připojuje k SQL Azure, aby bylo možné odeslat, načtení a zpracování velkých objektů BLOB.  
   
@@ -32,10 +34,10 @@ Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversi
 >   
 >  Členy přidaná kvůli podpoře streamování slouží k načtení dat z dotazy a předat parametry dotazů a uložené procedury. Funkci streamování adresy základní scénáře migrace OLTP a data a používá se pro místní a vypnout migrations.environments místní data.  
   
-## <a name="streaming-support-from-includessnoversionincludesssnoversion-mdmd"></a>Podporu streamování z[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- Podpora z streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] zavádí nové funkce v <xref:System.Data.Common.DbDataReader> a v <xref:System.Data.SqlClient.SqlDataReader> třídy mohli <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, a <xref:System.IO.TextReader> objekty a reagovat na ně.  Tyto třídy slouží k načtení dat z dotazy. V důsledku toho streamování podporu [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] adresy OLTP scénáře a platí pro místní i mimo místní prostředí.  
+## <a name="streaming-support-from-sql-server"></a>Podporu streamování ze serveru SQL Server  
+ Podpora v systému SQL Server streamování zavádí nové funkce v <xref:System.Data.Common.DbDataReader> a v <xref:System.Data.SqlClient.SqlDataReader> třídy mohli <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, a <xref:System.IO.TextReader> objekty a reagovat na ně.  Tyto třídy slouží k načtení dat z dotazy. Podpora Streaming z SQL serveru v důsledku toho adresy OLTP scénáře a platí pro místní i mimo místní prostředí.  
   
- Byly přidány následující členy do <xref:System.Data.SqlClient.SqlDataReader> povolit podporu streamování z [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]:  
+ Byly přidány následující členy do <xref:System.Data.SqlClient.SqlDataReader> povolit podporu streamování z SQL serveru:  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
@@ -49,7 +51,7 @@ Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversi
   
 6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
- Byly přidány následující členy do <xref:System.Data.Common.DbDataReader> povolit podporu streamování z [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]:  
+ Byly přidány následující členy do <xref:System.Data.Common.DbDataReader> povolit podporu streamování z SQL serveru:  
   
 1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
@@ -57,14 +59,14 @@ Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversi
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## <a name="streaming-support-to-includessnoversionincludesssnoversion-mdmd"></a>Podporu streamování pro[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- Podpora pro streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] zavádí nové funkce v <xref:System.Data.SqlClient.SqlParameter> třídy, aby mohl přijímat a reagovat na <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, a <xref:System.IO.TextReader> objekty. <xref:System.Data.SqlClient.SqlParameter>slouží k předat parametry dotazů a uložené procedury.  
+## <a name="streaming-support-to-sql-server"></a>Podporu streamování k systému SQL Server  
+ Podpora k systému SQL Server streamování zavádí nové funkce v <xref:System.Data.SqlClient.SqlParameter> třídy, aby mohl přijímat a reagovat na <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, a <xref:System.IO.TextReader> objekty. <xref:System.Data.SqlClient.SqlParameter> slouží k předat parametry dotazů a uložené procedury.  
   
  Uvolnění <xref:System.Data.SqlClient.SqlCommand> objekt nebo volání <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musí zrušte všechny operace streamování. Pokud aplikace odešle <xref:System.Threading.CancellationToken>, zrušení není zaručena.  
   
  Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream>:  
   
--   **Binary**  
+-   **Binární**  
   
 -   **VarBinary**  
   
@@ -80,11 +82,11 @@ Podpora mezi streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversi
   
  **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typ bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.Xml.XmlReader>.  
   
- <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A>může přijmout hodnoty typu <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, a <xref:System.IO.Stream>.  
+ <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> může přijmout hodnoty typu <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, a <xref:System.IO.Stream>.  
   
  <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, A <xref:System.IO.Stream> objektu budou přeneseny až po hodnotu definované <xref:System.Data.SqlClient.SqlParameter.Size%2A>.  
   
-## <a name="sample----streaming-from-includessnoversionincludesssnoversion-mdmd"></a>Ukázka – Streamování z[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+## <a name="sample----streaming-from-sql-server"></a>Ukázka – Streamovanými ze systému SQL Server  
  Použijte následující [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
   
 ```  
@@ -108,13 +110,13 @@ GO
   
 -   Zabránění blokování vlákna uživatelského rozhraní tím, že poskytuje asynchronní způsob, jak načíst velkých souborů.  
   
--   Přenos velkých textového souboru z [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenos velkých textový soubor ze serveru SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Přenos velkých souborů XML z [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenos velkých souborů XML z SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Načtení dat z [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
+-   Načtení dat z SQL serveru.  
   
--   Přenos velkých souborů (objektů BLOB) z jednoho [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] databáze do jiné bez nutnosti spustit nedostatek paměti.  
+-   Přenos velkých souborů (objektů BLOB) z jedné databáze systému SQL Server na jiný bez nutnosti spustit nedostatek paměti.  
   
 ```  
 using System;  
@@ -305,7 +307,7 @@ namespace StreamingFromServer {
 }  
 ```  
   
-## <a name="sample----streaming-to-includessnoversionincludesssnoversion-mdmd"></a>Ukázka – Streamování[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+## <a name="sample----streaming-to-sql-server"></a>Ukázka – Streamování k systému SQL Server  
  Použijte následující [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
   
 ```  
@@ -329,9 +331,9 @@ GO
   
  Ukázka ukazuje, jak provést následující akce:  
   
--   Přenosu velkého objektu BLOB do [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenos velkých objektů BLOB k systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Přenos velkých textový soubor do [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenos velkých textový soubor do systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 -   Pomocí nové funkce asynchronní přenos velkých objektů BLOB.  
   
@@ -339,7 +341,7 @@ GO
   
 -   Zrušení přenos velkých objektů BLOB...  
   
--   Vysílání datového proudu z jednoho [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] na jiný pomocí nové funkce asynchronní.  
+-   Streamování z jednoho serveru SQL na jiný pomocí nové asynchronní funkce.  
   
 ```  
 using System;  
@@ -461,8 +463,8 @@ namespace StreamingToServer {
 }  
 ```  
   
-## <a name="sample----streaming-from-one-includessnoversionincludesssnoversion-mdmd-to-another-includessnoversionincludesssnoversion-mdmd"></a>Ukázka – Streamování z jednoho [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] do jiného[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- Tento příklad ukazuje, jak asynchronně stream velkých objektů BLOB z jednoho [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] do jiné, s podporou pro zrušení.  
+## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a>Ukázka – Streamování z jednoho serveru SQL na jiný Server SQL  
+ Tento příklad ukazuje, jak asynchronně stream velkých objektů BLOB z jednoho serveru SQL do jiné, s podporou pro zrušení.  
   
 ```  
 using System;  

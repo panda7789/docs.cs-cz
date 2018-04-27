@@ -1,12 +1,12 @@
 ---
-title: "V rozhraní .NET kódování znaků"
-ms.custom: 
+title: V rozhraní .NET kódování znaků
+ms.custom: ''
 ms.date: 12/22/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,18 +16,18 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-caps.latest.revision: 
+caps.latest.revision: 33
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ac24e3a685c20445c473f0f5222ddba72b6b098c
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 1d296920d75af2194323791c4ea571c10f1e3c7d
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="character-encoding-in-net"></a>V rozhraní .NET kódování znaků
 Znaky jsou abstraktní entit, které může být reprezentován v mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v znakovou sadu podporovaných s určitou hodnotu, která představuje tento znak. Například morseovkou je kódování této páry každý znak v latinku pomocí vzoru teček znaků a pomlčky, které jsou vhodné pro přenos přes telegrafní řádky. Kódování pro dvojice počítače každý znak v znakovou sadu podporovaných s číselnou hodnotu, která představuje tento znak znaků. Kódování znaků má dvě odlišné součásti:  
@@ -70,7 +70,7 @@ Znaky jsou abstraktní entit, které může být reprezentován v mnoha různým
 > [!NOTE]
 >  Standardu Unicode přiřadí každému znaku v každé podporované skriptu bod kódu (číslo) a název. Znak "A" je například reprezentována bod kódu U + 0041 a název "LATIN velké písmeno A". Kódování Unicode Transformation Format (UTF) definovat jak kódování tohoto bodu kódu do sekvenci jeden nebo více bajtů. Schéma kódování Unicode usnadňuje vývoj aplikací připravených, protože umožňuje znaky z libovolného znaku nastaven a nelze v jednom kódování. Vývojáři aplikací mít už ke sledování schéma kódování, které se používají k vytvoření znaků pro konkrétní jazyk nebo zápis systému a data mohou být sdílená mezi systémy mezinárodní úrovni bez poškození.  
 >   
->  Rozhraní .NET podporuje tři kódování definované ve standardu Unicode: UTF-8, UTF-16 a UTF-32. Další informace najdete v tématu ve standardu Unicode na [Unicode domovskou stránku](http://www.unicode.org/).  
+>  Rozhraní .NET podporuje tři kódování definované ve standardu Unicode: UTF-8, UTF-16 a UTF-32. Další informace najdete v tématu ve standardu Unicode na [Unicode domovskou stránku](https://www.unicode.org/).  
   
  Informace o všech kódování, které jsou k dispozici v rozhraní .NET můžete načíst pomocí volání <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> metoda. Rozhraní .NET podporuje kódování systémů uvedených v následující tabulce znaků.  
   
@@ -86,7 +86,7 @@ Znaky jsou abstraktní entit, které může být reprezentován v mnoha různým
   
  Tyto kódování umožňují pracovat s znaky znakové sady Unicode, a dále s kódováním nejčastěji používané v starší verze aplikace. Kromě toho můžete vytvořit vlastní kódování definováním třídu odvozenou z <xref:System.Text.Encoding> a přepsáním její členy.  
   
-### <a name="platform-notes-includenetcoreincludesnet-core-mdmd"></a>Poznámky k platformě:[!INCLUDE[net_core](../../../includes/net-core-md.md)]  
+### <a name="platform-notes-includenetcoreincludesnet-core-mdmd"></a>Poznámky k platformě: [!INCLUDE[net_core](../../../includes/net-core-md.md)]  
  Ve výchozím nastavení [!INCLUDE[net_core](../../../includes/net-core-md.md)] zpřístupnění žádné kódu stránky kódováním než znaková stránka 28591 a kódování Unicode, jako je UTF-8 a UTF-16. Můžete však přidat kódování kódu stránky v standardní aplikace pro Windows najít cílených .NET do aplikace. Úplné informace najdete v tématu <xref:System.Text.CodePagesEncodingProvider> tématu.  
   
 <a name="Selecting"></a>   
@@ -157,7 +157,7 @@ Znaky jsou abstraktní entit, které může být reprezentován v mnoha různým
  Přizpůsobená strategie lišit pro různé znakové stránky. Například pro některé znakové stránky znaky latinky s plnou šířkou mapu, která častější poloviční šířkou Latinské znaky. Toto mapování není provedeno pro jiné znakové stránky. I v rámci agresivní přizpůsobený strategie neexistuje žádný vůbec přizpůsobení pro některé znaky v některé kódování. Například čínština znak nemá žádné přiměřené mapování na znaková stránka 1252. V takovém případě se používá náhradní řetězec. Ve výchozím nastavení je tento řetězec pouze jeden OTAZNÍK (U + 003F).  
   
 > [!NOTE]
->  Přizpůsobená strategie nejsou podrobně popsaná v. Však několik znakové stránky jsou popsané na stránce [Unicode Consortium](http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/) webu. Přečtěte si **readme.txt** soubor v této složce popis toho, jak interpretovat soubory mapování.
+>  Přizpůsobená strategie nejsou podrobně popsaná v. Však několik znakové stránky jsou popsané na stránce [Unicode Consortium](https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/) webu. Přečtěte si **readme.txt** soubor v této složce popis toho, jak interpretovat soubory mapování.
   
  Následující příklad používá znaková stránka 1252 (kódové stránky systému Windows pro západní Evropské jazyky) pro ilustraci přizpůsobený mapování a jeho nevýhody. <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> Metoda se používá k načtení objektu kódování pro znaková stránka 1252. Ve výchozím nastavení použije přizpůsobený mapování znaky kódování Unicode nepodporuje. Tento příklad vytvoří řetězec, který obsahuje tři jiné znaky než ASCII – v KROUŽKU velké písmeno LATINKY S (U + 24C 8), horní index PĚT (U + 2075) a INFINITY (U + 221E) - oddělené mezerami. Jak ukazuje výstup z příkladu, pokud řetězec s kódováním tři původní není mezera znaky jsou nahrazovány OTAZNÍK (U + 003F), PĚT ČÍSLIC (U + 0035) a OSMI ČÍSLICE (U + 0038). ČÍSLICE OSM je zvláště nízký náhradní server pro nepodporovaný znak INFINITY a OTAZNÍK znamená, že byla k dispozici pro původní znak žádné mapování.  
   
@@ -243,7 +243,7 @@ Znaky jsou abstraktní entit, které může být reprezentován v mnoha různým
   
  Když vytvoříte vlastní záložní řešení pro kodér nebo dekodér, je nutné implementovat následující členy:  
   
--   <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> metoda. <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType>je volána službou kodér poskytnout informace o znak, který nelze dekódovat náhradní velikost vyrovnávací paměti. Znak, který má být zakódován může být náhradní pár, tato metoda je přetížena. Jedním přetížením předán znak, který má být zakódován a její index v řetězci. Druhý přetížení je předán maximální a minimální náhradník společně s jeho indexu v řetězci. <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Metoda je volána metodou dekodér poskytnout informace o bajtů, které nelze dekódovat náhradní velikost vyrovnávací paměti. Tato metoda je předán pole bajtů, které nelze dekódovat, společně s index prvním bajtem. Záložní metoda by měla vrátit `true` Pokud záložní vyrovnávací paměť můžete zadat nejvíce vyhovuje nebo nahrazení používá znak nebo znaky; jinak má být vrácen `false`. Pro záložní výjimky základní metoda by měla vyvolat výjimku.  
+-   <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> metoda. <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> je volána službou kodér poskytnout informace o znak, který nelze dekódovat náhradní velikost vyrovnávací paměti. Znak, který má být zakódován může být náhradní pár, tato metoda je přetížena. Jedním přetížením předán znak, který má být zakódován a její index v řetězci. Druhý přetížení je předán maximální a minimální náhradník společně s jeho indexu v řetězci. <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Metoda je volána metodou dekodér poskytnout informace o bajtů, které nelze dekódovat náhradní velikost vyrovnávací paměti. Tato metoda je předán pole bajtů, které nelze dekódovat, společně s index prvním bajtem. Záložní metoda by měla vrátit `true` Pokud záložní vyrovnávací paměť můžete zadat nejvíce vyhovuje nebo nahrazení používá znak nebo znaky; jinak má být vrácen `false`. Pro záložní výjimky základní metoda by měla vyvolat výjimku.  
   
 -   <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> metoda, která se nazývá opakovaně kodér nebo dekodér, chcete-li získat další znak ze záložního vyrovnávací paměti. Pokud byly vráceny všechny záložní znaky, metoda by měla vrátit U + 0000.  
   

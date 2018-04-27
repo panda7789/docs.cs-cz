@@ -1,7 +1,7 @@
 ---
-title: "Navrhování orientované DDD mikroslužbu"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navrhování orientované DDD mikroslužbu"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Navrhování orientované DDD mikroslužbu
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Navrhování orientované DDD mikroslužbu
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/06/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 38b65bc6752dd8b6ed4083c0bc5a5eccabcffbcc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d2d07abe55f30e0b12a7f0cba937abd1b7e32629
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="designing-a-ddd-oriented-microservice"></a>Navrhování orientované DDD mikroslužbu
 
@@ -57,7 +57,7 @@ Chcete navrhnout systému tak, aby každé vrstvě komunikuje jenom s některýc
 
 ### <a name="the-domain-model-layer"></a>Vrstva modelu domény
 
-Zařízení Erica Evans vynikající kniha [řízené návrhu domény](http://domainlanguage.com/ddd/) s následujícím textem o vrstva modelu domény a aplikační vrstvu.
+Zařízení Erica Evans vynikající kniha [řízené návrhu domény](https://domainlanguage.com/ddd/) s následujícím textem o vrstva modelu domény a aplikační vrstvu.
 
 **Vrstva modelu domény**: zodpovědná za představující koncepty firmy, informace o obchodní situaci a obchodní pravidla. Stav, který se vztahuje k obchodní situaci je řízena a použít se zde, i když jsou delegovanými technické informace o ukládání do infrastruktury. Tato vrstva jsou srdcem obchodní softwaru.
 
@@ -75,7 +75,7 @@ Navíc neznamená to můžete provést model určený pro relační databázi a 
 
 ### <a name="the-application-layer"></a>Aplikační vrstvu
 
-Přejdete na aplikační vrstvu, jsme můžete znovu cite zařízení Erica Evans kniha [řízené návrhu domény](http://domainlanguage.com/ddd/):
+Přejdete na aplikační vrstvu, jsme můžete znovu cite zařízení Erica Evans kniha [řízené návrhu domény](https://domainlanguage.com/ddd/):
 
 **Aplikační vrstvu:** definuje úloh softwaru by měla provést a přesměruje objekty výrazovou domény k vyřešení problémů. Úlohy, které tuto vrstvu zodpovídá za jsou důležité pro jejich podnikání nebo potřebné pro interakci s aplikačními vrstvami jiných systémů. Tuto vrstvu je udržováno dynamické. Neobsahuje obchodní pravidla nebo znalostní báze, ale pouze souřadnice úlohy a delegáti spolupracovat na spolupráce objektů domény v další vrstva dolů. Nemá stav odrážející stav firmy, ale může mít stav, který zobrazuje průběh úlohy pro uživatele nebo program.
 
@@ -107,7 +107,7 @@ Tento návrh vrstvy musí být pro každý mikroslužbu nezávislé. Jak již by
 -   **Oren Eini. Které infrastruktury**
     [*https://ayende.com/blog/3137/infrastructure-ignorance*](https://ayende.com/blog/3137/infrastructure-ignorance)
 
--   **Anděl Lopez. Architektura v řízené domény návrhu na základě**
+-   **Anděl Lopez. Vrstvená architektura v řízené domény návrhu**
     [*https://ajlopez.wordpress.com/2008/09/12/layered-architecture-in-domain-driven-design/*](https://ajlopez.wordpress.com/2008/09/12/layered-architecture-in-domain-driven-design/)
 
 

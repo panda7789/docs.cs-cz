@@ -23,11 +23,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: e9ebd1a11684afaa143d1f016f31e0a29a3478db
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: b420859380d7c3c39a7d85f94df1708d9f26bebc
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na datové proudy a souborů. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -51,7 +51,7 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
  Kromě použití těchto tříd, uživatelé jazyka Visual Basic můžete použít metody a vlastnosti poskytované <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> třídu pro vstupně-výstupní.  
   
- Najdete v části [postupy: kopírování adresářů](../../../docs/standard/io/how-to-copy-directories.md), [postupy: vytvoření adresářů](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69), a [postupy: výčet adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
+ Najdete v části [postupy: kopírování adresářů](../../../docs/standard/io/how-to-copy-directories.md), [postupy: vytvoření adresářů](https://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69), a [postupy: výčet adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
   
 ## <a name="streams"></a>Datové proudy  
  Abstraktní základní třída <xref:System.IO.Stream> podporuje čtení a zápisu bajtů. Dědí všechny třídy, které představují datové proudy <xref:System.IO.Stream> třídy. <xref:System.IO.Stream> Třídy a jejich odvozené třídy poskytují běžné zobrazení zdroje dat a úložiště a izolovat programátorů z konkrétní podrobnosti základní zařízení a operační systém.  

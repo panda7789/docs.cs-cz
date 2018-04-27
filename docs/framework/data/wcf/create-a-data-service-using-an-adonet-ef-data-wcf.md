@@ -1,32 +1,34 @@
 ---
-title: "Postupy: vytvoření služby Data pomocí zdroje dat ADO.NET Entity Framework (služby WCF Data Services)"
-ms.custom: 
+title: 'Postupy: vytvoření služby Data pomocí zdroje dat ADO.NET Entity Framework (služby WCF Data Services)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e90b11800685707460171e5e2d250ef757979c44
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5993837546b28742756ed4a5ec323e6f1a5ef782
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: vytvoření služby Data pomocí zdroje dat ADO.NET Entity Framework (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]zpřístupní entity data jako datové služby. Tato data entity zajišťuje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Pokud zdroj dat je relační databáze. Toto téma ukazuje, jak vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]– na základě datového modelu v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] webovou aplikaci, která je založena na existující databázi a použít tento datový model pro vytvoření nové datové služby.  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpřístupní entity data jako datové služby. Tato data entity zajišťuje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Pokud zdroj dat je relační databáze. Toto téma ukazuje, jak vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]– na základě datového modelu v Visual Studio webové aplikace, která je založena na existující databázi a použít tento datový model pro vytvoření nové datové služby.  
   
- [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Také poskytuje nástroj pro příkazový řádek, který může vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] modelu mimo [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] projektu. Další informace najdete v tématu [postupy: použití EdmGen.exe pro generování modelu a mapování soubory](../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
+ [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Také poskytuje nástroj pro příkazový řádek, který může vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] modelu mimo projekt sady Visual Studio. Další informace najdete v tématu [postupy: použití EdmGen.exe pro generování modelu a mapování soubory](../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
   
 ### <a name="to-add-an-entity-framework-model-that-is-based-on-an-existing-database-to-an-existing-web-application"></a>Chcete-li přidat model Entity Framework, který je založen na existující databázi a stávající webovou aplikaci  
   
@@ -59,7 +61,7 @@ ms.lasthandoff: 01/19/2018
   
 ### <a name="to-create-the-data-service-by-using-the-new-data-model"></a>Chcete-li vytvořit službu data pomocí nového datového modelu  
   
-1.  V [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], otevřete soubor EDMX, který představuje datový model.  
+1.  V sadě Visual Studio otevřete soubor EDMX, který představuje datový model.  
   
 2.  V **prohlížeče modelu**, klikněte pravým tlačítkem na model, klikněte na **vlastnosti**a poznamenejte si název kontejneru entit.  
   
@@ -69,7 +71,7 @@ ms.lasthandoff: 01/19/2018
   
 5.  Zadejte název pro službu a pak klikněte na tlačítko **OK**.  
   
-     [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu.  
+     Visual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu.  
   
 6.  V kódu pro službu data, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje službu datového typu, který dědí z <xref:System.Data.Objects.ObjectContext> třídy a který je kontejneru entit datového modelu, který byl uvedeným v kroku 2.  
   

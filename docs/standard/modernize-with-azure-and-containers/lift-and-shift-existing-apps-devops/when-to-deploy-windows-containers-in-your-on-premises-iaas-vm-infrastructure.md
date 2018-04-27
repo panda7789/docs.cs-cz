@@ -1,18 +1,19 @@
 ---
-title: "Když k nasazení Windows kontejnery v místní infrastrukturu virtuálních počítačů IaaS"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Když k nasazení Windows kontejnery v místní infrastrukturu virtuálních počítačů IaaS"
+title: Když k nasazení Windows kontejnery v místní infrastrukturu virtuálních počítačů IaaS
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Když k nasazení Windows kontejnery v místní infrastrukturu virtuálních počítačů IaaS
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1597dd02e2b36d15452b1dd56e5ecfaaae7b4552
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 1d3ad9cf3a17518ee4732b3799de2d3b103b81b7
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure"></a>Když k nasazení Windows kontejnery v místní infrastrukturu virtuálních počítačů IaaS
 

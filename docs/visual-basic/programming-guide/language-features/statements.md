@@ -1,11 +1,12 @@
 ---
-title: "Příkazy v jazyce Visual Basic"
-ms.custom: 
+title: Příkazy v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], declaring
@@ -21,17 +22,17 @@ helpviewer_keywords:
 - variables [Visual Basic], defining
 - statements [Visual Basic], about statements
 ms.assetid: fcfdee1a-82b7-4846-98f7-9ca3f5160089
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 210637105e54244ba829dabd73feab0b43ec7c6c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: beb33b8f2c30723158e41244cbb5c9cfca108a53
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="statements-in-visual-basic"></a>Příkazy v jazyce Visual Basic
-Příkaz v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je kompletní instrukcí. Může obsahovat klíčová slova, operátory, proměnné, konstanty a výrazy. Každý příkaz patří do jedné z následujících kategorií:  
+Příkaz v jazyce Visual Basic je kompletní instrukcí. Může obsahovat klíčová slova, operátory, proměnné, konstanty a výrazy. Každý příkaz patří do jedné z následujících kategorií:  
   
 -   **Deklarační příkazy**, který názvu proměnné, konstanta nebo postup a můžete také zadat datový typ.  
   
@@ -53,7 +54,7 @@ Příkaz v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je kompletní instrukcí.
  Je třetí deklaraci `Dim` příkaz, který deklaruje proměnnou `thisWidget`. Datový typ je určitý objekt, a to vytvořen objekt z `Widget` třídy. Je možné deklarovat proměnnou, do které se všechny základní datový typ nebo libovolného typu objektu, který je zveřejněný v aplikaci, kterou používáte.  
   
 ### <a name="initial-values"></a>Počáteční hodnoty  
- Při spuštění kódu, který obsahuje příkaz deklarace [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] rezervuje paměť požadovanou ke deklarovaný element. Pokud element obsahuje hodnotu, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] inicializuje na výchozí hodnotu pro jeho datového typu. Další informace najdete v tématu "Chování" v [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md).  
+ Při spuštění kódu, který obsahuje příkaz deklarace jazyka Visual Basic rezervuje paměť požadovanou ke deklarovaný element. Pokud element obsahuje hodnotu, Visual Basic inicializaci na výchozí hodnotu pro jeho datového typu. Další informace najdete v tématu "Chování" v [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md).  
   
  Jak ukazuje následující příklad můžete přiřadit počáteční hodnotu proměnné jako součást jeho deklaraci.  
   
@@ -121,7 +122,7 @@ Příkaz v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je kompletní instrukcí.
 ### <a name="type-conversions-in-assignment-statements"></a>Převody typů v příkazy přiřazení  
  Hodnota, kterou přiřadíte k proměnné, vlastnost nebo pole element musí být vhodné pro daný element cílového datového typu. Obecně platí pokuste se generuje hodnotu stejného typu dat, který cílový element. Některé typy lze převést na jiné typy, ale při přiřazení.  
   
- Informace o převodu mezi typy dat najdete v tématu [převody typů v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md). Stručně řečeno [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automaticky převede na jiný typ, do které rozšiřuje hodnotu daného typu. A *rozšiřující převod* je jeden v tom, že vždy úspěšné v době běhu a není ztratíte všechna data. Například [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] převede `Integer` hodnotu `Double` Pokud je to vhodné, protože `Integer` rozšiřuje na `Double`. Další informace najdete v tématu [Widening a zužující převody](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
+ Informace o převodu mezi typy dat najdete v tématu [převody typů v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md). Stručně řečeno Visual Basic automaticky převede hodnotu daného typu na jiný typ, do které rozšiřuje. A *rozšiřující převod* je jeden v tom, že vždy úspěšné v době běhu a není ztratíte všechna data. Například jazyka Visual Basic převede `Integer` hodnotu `Double` Pokud je to vhodné, protože `Integer` rozšiřuje na `Double`. Další informace najdete v tématu [Widening a zužující převody](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
  *Zužující převody* (ty, které nejsou rozšiřující) představuje riziko selhání v době běhu nebo ztráty dat provádění. Zužující převod můžou provádět explicitně pomocí funkci pro převod typu nebo můžete nastavit kompilátoru provést všechny konverze implicitně nastavením `Option Strict Off`. Další informace najdete v tématu [implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md).  
   
@@ -158,7 +159,7 @@ Příkaz v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je kompletní instrukcí.
 |Po `From` – klíčové slovo v inicializátoru kolekce.|[!code-vb[VbVbalrLineContinuation#13](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/statements_27.vb)]<br /><br /> Další informace najdete v tématu [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).|  
   
 ## <a name="adding-comments"></a>Přidávání komentářů  
- Zdrojový kód není vždy samovysvětlující, i pro programátory, kdo ho napsal. Pomoc při zdokumentujte svůj kód, proto většina programátory využívají volná embedded komentáře. Komentáře v kódu se vysvětlují postup či konkrétní pokyny pro každý, kdo čtení nebo ho později práce. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ignoruje během kompilace, komentáře a neovlivňují zkompilovaný kód.  
+ Zdrojový kód není vždy samovysvětlující, i pro programátory, kdo ho napsal. Pomoc při zdokumentujte svůj kód, proto většina programátory využívají volná embedded komentáře. Komentáře v kódu se vysvětlují postup či konkrétní pokyny pro každý, kdo čtení nebo ho později práce. Visual Basic ignoruje komentáře během kompilace a neovlivňují zkompilovaný kód.  
   
  Řádky poznámky začínat apostrof (`'`) nebo `REM` následované mezerou. Mohou být přidány kdekoli v kódu, s výjimkou v řetězci. Připojit komentář k výpisu, vložte apostrof nebo `REM` po příkazu, za nímž následuje komentář. Komentáře můžete také přejít na své vlastní samostatný řádek. Následující příklad ukazuje, tyto možnosti.  
   
@@ -173,5 +174,5 @@ Příkaz v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je kompletní instrukcí.
 |---|---|  
 |[Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)|Obsahuje odkazy na referenční stránky jazyk pokrývajících operátory přiřazení, jako `=`, `*=`, a `&=`.|  
 |[Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)|Ukazuje, jak má být kombinován elementů s operátorům yield nové hodnoty.|  
-|[Postupy: přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)|Ukazuje, jak rozdělit jeden příkaz na více řádků a jak umístit více příkazů na stejném řádku.|  
-|[Postupy: popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)|Ukazuje, jak pro označení řádku kódu.|
+|[Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)|Ukazuje, jak rozdělit jeden příkaz na více řádků a jak umístit více příkazů na stejném řádku.|  
+|[Postupy: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)|Ukazuje, jak pro označení řádku kódu.|

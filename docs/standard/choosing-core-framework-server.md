@@ -1,6 +1,6 @@
 ---
-title: "Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace"
-description: "Průvodce, na které implementace rozhraní .NET, byste měli zvážit při vytváření aplikace server v rozhraní .NET."
+title: Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
+description: Průvodce, na které implementace rozhraní .NET, byste měli zvážit při vytváření aplikace server v rozhraní .NET.
 author: cartermp
 ms.author: mairaw
 ms.date: 03/15/2018
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c07b0b760e2a46faea574eef3575409bac773942
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 1fba5ce14b2504ea688bdff35efa959b8a5a86ab
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
 
@@ -42,7 +42,7 @@ Podrobnější vysvětlení výše uvedená důvody pro výběr .NET Core nalezn
 
 Pokud potřebám vaší aplikace (web/service) běžela na více platforem (Windows, Linux a systému macOS), použijte .NET Core.
 
-.NET core podporuje výše uvedených operačních systémů jako stanici vývoje. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro systém Windows a systému macOS. Můžete také použít Visual Studio Code, který běží na systému macOS, Linux a Windows. Visual Studio Code podporuje .NET Core, včetně technologie IntelliSense a ladění. Většina editory třetích stran, jako je například Sublime, Emacs a VI, pracovat s .NET Core. Tyto editory třetích stran získat editor IntelliSense pomocí [Omnisharp](http://www.omnisharp.net/). Můžete také vyhnout libovolného editoru kódu a přímo použít [nástrojů příkazového řádku .NET Core](../core/tools/index.md), k dispozici pro všechny podporované platformy.
+.NET core podporuje výše uvedených operačních systémů jako stanici vývoje. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro systém Windows a systému macOS. Můžete také použít Visual Studio Code, který běží na systému macOS, Linux a Windows. Visual Studio Code podporuje .NET Core, včetně technologie IntelliSense a ladění. Většina editory třetích stran, jako je například Sublime, Emacs a VI, pracovat s .NET Core. Tyto editory třetích stran získat editor IntelliSense pomocí [Omnisharp](https://www.omnisharp.net/). Můžete také vyhnout libovolného editoru kódu a přímo použít [nástrojů příkazového řádku .NET Core](../core/tools/index.md), k dispozici pro všechny podporované platformy.
 
 ### <a name="microservices-architecture"></a>Architektura Mikroslužeb
 

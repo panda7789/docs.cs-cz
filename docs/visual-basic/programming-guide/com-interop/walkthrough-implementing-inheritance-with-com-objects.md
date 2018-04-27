@@ -1,11 +1,12 @@
 ---
-title: "Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)"
-ms.custom: 
+title: 'Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - inheritance [Visual Basic], COM reusability
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - inheritance [Visual Basic], walkthroughs
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8d6906c58431a0e844e8f430ade10ae819e77ff2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 10c6bdf46e351b23705107da3b693531718cfd37
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)
-Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, včetně těch, které jsou vytvořené v dřívějších verzích [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. Vlastnosti a metody třídy dědí z objektů COM můžete přepsat nebo přetížený stejně jako vlastnosti a metody všechny základní třídy lze přepsat nebo přetížený. Dědičnost z objektů COM je užitečné, když máte existující knihovny tříd, které nechcete znovu zkompilovat.  
+Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, včetně těch, které jsou vytvořené v dřívějších verzích jazyka Visual Basic. Vlastnosti a metody třídy dědí z objektů COM můžete přepsat nebo přetížený stejně jako vlastnosti a metody všechny základní třídy lze přepsat nebo přetížený. Dědičnost z objektů COM je užitečné, když máte existující knihovny tříd, které nechcete znovu zkompilovat.  
   
  Následující postup ukazuje, jak vytvořit objekt COM, která obsahuje třídu pomocí Visual Basic 6.0 a použít jej jako základní třída.  
   
@@ -77,14 +78,14 @@ Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, v
 10. Vytvořit a registrovat objekt COM kliknutím **zkontrolujte ComObject1.dll** na **souboru** nabídky.  
   
     > [!NOTE]
-    >  I když můžete také zveřejnit vytvořené pomocí třídy [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] jako objekt COM není true objektu COM a nelze použít v tomto návodu. Podrobnosti najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+    >  I když můžete také zveřejnit třídu vytvořit pomocí jazyka Visual Basic jako objekt COM, není objekt true COM a nelze použít v tomto návodu. Podrobnosti najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 ## <a name="interop-assemblies"></a>Sestavení spolupráce  
- V následujícím postupu vytvoříte spolupráce sestavení, která funguje jako most mezi nespravovaného kódu (například objekt COM) a spravovaný kód [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] používá. Sestavení vzájemné spolupráce, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vytvoří zpracovává mnoho podrobnosti o práci s COM objekty, jako například *zařazování spolupráce*, proces balení parametry a návratové hodnoty do ekvivalentní datové typy jako se přesouvají do a z modelu COM objekty. Odkaz v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikace odkazuje na sestavení vzájemné spolupráce, nikoli skutečné objektu COM.  
+ V následujícím postupu vytvoříte spolupráce sestavení, která funguje jako most mezi nespravovaného kódu (například objekt COM) a spravovaný kód [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] používá. Sestavení vzájemné spolupráce, který vytváří jazyka Visual Basic zpracovává mnoho podrobnosti o práci s objekty modelu COM, jako například *zařazování spolupráce*, proces balení parametry a návratové hodnoty do ekvivalentní datové typy jako se přesouvají do a z COM – objekty. Referenční dokumentace jazyka Visual Basic aplikace odkazuje na sestavení vzájemné spolupráce, nikoli skutečné objektu COM.  
   
 #### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Chcete-li objekt modelu COM pomocí jazyka Visual Basic 2005 a novějších verzích  
   
-1.  Otevřete nový [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] projekt aplikace Windows.  
+1.  Otevřete nový projekt aplikace Windows Visual Basic.  
   
 2.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz na**.  
   
@@ -124,7 +125,7 @@ Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, v
   
 3.  Stisknutím klávesy F5 spusťte projekt.  
   
- Po kliknutí na tlačítko ve formuláři `AddNumbers` metoda je nejdříve volána s `Short` datový typ čísla, a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vybere odpovídající metodu ze základní třídy. Druhé volání `AddNumbers` se přesměruje na metodu přetížení z `MathClass`. Třetí volání volání `SubtractNumbers` metoda, která rozšiřuje třídu. Je nastavena v základní třídě a hodnota se zobrazí.  
+ Po kliknutí na tlačítko ve formuláři `AddNumbers` metoda je nejdříve volána s `Short` datový typ čísla, a Visual Basic vybere odpovídající metodu ze základní třídy. Druhé volání `AddNumbers` se přesměruje na metodu přetížení z `MathClass`. Třetí volání volání `SubtractNumbers` metoda, která rozšiřuje třídu. Je nastavena v základní třídě a hodnota se zobrazí.  
   
 ## <a name="next-steps"></a>Další kroky  
  Jste si všimli, přetížené `AddNumbers` funkce zřejmě stejný datový typ. jako metodu zděděn ze základní třídy objektu COM. Je to proto argumentů a parametrů metody základní třídy jsou definovány jako 16bitové celá čísla v jazyce Visual Basic 6.0, ale jsou zveřejněné jako 16bitové celá čísla typu `Short` v novější verzi jazyka Visual Basic. Nové funkce přijímá 32bitová celá čísla a přetížení funkce základní třídy.  
@@ -139,5 +140,5 @@ Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, v
   
 ## <a name="see-also"></a>Viz také  
  [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)  
- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)  
- [Short – datový typ](../../../visual-basic/language-reference/data-types/short-data-type.md)
+ [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)  
+ [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)

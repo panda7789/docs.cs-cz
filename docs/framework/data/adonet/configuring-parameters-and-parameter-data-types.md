@@ -1,27 +1,29 @@
 ---
-title: "Konfigurace parametrů a datové typy parametrů"
-ms.custom: 
+title: Konfigurace parametrů a datové typy parametrů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a71ba7ed12196184b7e826ed70c92a9873efdb0c
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: cdb6efb428f5c096178895f95fe1256846e9c1e5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 Příkaz objekty používají parametry k předání hodnoty do příkazů SQL nebo uložené procedury, kontrola typu a ověření. Na rozdíl od text příkazu parametr vstup považovat za literálovou hodnotou, ne jako spustitelný kód. To pomáhá chránit před útoky "Injektáž SQL", ve kterých útočník vloží příkaz tohoto ohrožení zabezpečení na serveru do příkazu SQL.  
@@ -59,7 +61,7 @@ Příkaz objekty používají parametry k předání hodnoty do příkazů SQL n
 |-------------------------|------------|---------------|---------------|--------------|----------------|  
 |<xref:System.Boolean>|Boolean|Bit|Boolean|Bit|Byte|  
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|  
-|Byte]|binární|VarBinary`.` tento implicitní převod se nezdaří, pokud bajtové pole je větší než maximální velikost parametru VarBinary, což je 8 000 bajtů. Bajtová pole větší než 8 000 bajtů, explicitně nastavit <xref:System.Data.SqlDbType>.|VarBinary|binární|Nezpracovaná|  
+|Byte|binární|VarBinary`.` tento implicitní převod se nezdaří, pokud bajtové pole je větší než maximální velikost parametru VarBinary, což je 8 000 bajtů. Bajtová pole větší než 8 000 bajtů, explicitně nastavit <xref:System.Data.SqlDbType>.|VarBinary|binární|Nezpracovaná|  
 |<xref:System.Char>|``|Odvození <xref:System.Data.SqlDbType> z char není podporován.|Char|Char|Byte|  
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|  
 |<xref:System.DateTimeOffset>|DateTimeOffset|Datový typ DateTimeOffset v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z DateTimeOffset není podporována ve verzích systému SQL Server starších než SQL Server 2008.|||DateTime|  
@@ -84,13 +86,13 @@ Příkaz objekty používají parametry k předání hodnoty do příkazů SQL n
 ||StringFixedLength|NChar|WChar|NChar|NChar|  
 ||Čas|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od času není podporována ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Čas|DateTime|  
 ||VarNumeric|Odvození <xref:System.Data.SqlDbType> z VarNumeric není podporován.|VarNumeric|Odvození `OdbcType` z VarNumeric není podporován.|Číslo|  
-|uživatelem definovaný typ (objekt s<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>|Objekt nebo řetězec, v závislosti zprostředkovatele (SqlClient vždy vrátí hodnotu, k objektu, Odbc vždy vrátí řetězec, zprostředkovatele služeb OleDb spravovaná data můžete zobrazit buď|SqlDbType.Udt Pokud <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> je přítomen, jinak hodnota typu Variant|OleDbType.VarWChar (Pokud je hodnota null) jinak OleDbType.Variant.|OdbcType.NVarChar|Nepodporuje se|  
+|uživatelem definovaný typ (objekt s <xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>|Objekt nebo řetězec, v závislosti zprostředkovatele (SqlClient vždy vrátí hodnotu, k objektu, Odbc vždy vrátí řetězec, zprostředkovatele služeb OleDb spravovaná data můžete zobrazit buď|SqlDbType.Udt Pokud <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> je přítomen, jinak hodnota typu Variant|OleDbType.VarWChar (Pokud je hodnota null) jinak OleDbType.Variant.|OdbcType.NVarChar|Nepodporuje se|  
   
 > [!NOTE]
 >  Převody z decimal na jiné typy jsou zužující převody, které zaokrouhlit Desítková hodnota směrem k nule na nejbližší celé číslo. Pokud není výsledek převodu reprezentovat cílového typu, <xref:System.OverflowException> je vyvolána výjimka.  
   
 > [!NOTE]
->  Hodnota null parametru odešlete na server, je nutné zadat <xref:System.DBNull>, nikoli `null` (`Nothing` v [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]). Nulová hodnota v systému je prázdný objekt, který nemá žádnou hodnotu. <xref:System.DBNull>slouží k reprezentaci hodnoty null. Další informace o hodnoty Null databáze najdete v tématu [zpracování hodnot Null](../../../../docs/framework/data/adonet/sql/handling-null-values.md).  
+>  Hodnota null parametru odešlete na server, je nutné zadat <xref:System.DBNull>, nikoli `null` (`Nothing` v jazyce Visual Basic). Nulová hodnota v systému je prázdný objekt, který nemá žádnou hodnotu. <xref:System.DBNull> slouží k reprezentaci hodnoty null. Další informace o hodnoty Null databáze najdete v tématu [zpracování hodnot Null](../../../../docs/framework/data/adonet/sql/handling-null-values.md).  
   
 ## <a name="deriving-parameter-information"></a>Odvozování informace o parametrech  
  Parametry lze také odvodit z pomocí uložené procedury `DbCommandBuilder` třídy. Jak `SqlCommandBuilder` a `OleDbCommandBuilder` třídy zadejte statickou metodu `DeriveParameters`, který automaticky naplní kolekci parametrů příkazu objektu, který používá informace o parametrech z uložené procedury. Všimněte si, že `DeriveParameters` přepíše všechny stávající informace o parametr pro příkaz.  

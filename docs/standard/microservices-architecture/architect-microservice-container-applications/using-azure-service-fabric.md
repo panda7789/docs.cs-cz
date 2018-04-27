@@ -1,7 +1,7 @@
 ---
-title: "Pomocí Azure Service Fabric"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Pomocí Azure Service Fabric"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Pomocí Azure Service Fabric
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Pomocí Azure Service Fabric
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9480a3f67e9d0a61d0669bf34be4b66208f5e9ce
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 85c9c336b0a215dc22a9308c5726f03789f31d5a
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-azure-service-fabric"></a>Pomocí Azure Service Fabric
 
@@ -90,7 +90,7 @@ Bezstavové a stavové služby jsou vzájemně doplňují. Například se zobraz
 
 Stavové služby mají nevýhody. Úroveň složitosti, která umožňuje škálování, jež ukládají. Funkce, které by obvykle implementována systémy externí databáze je potřeba řešit pro úlohy, jako je například replikace dat mezi stavová mikroslužeb a data rozdělení do oddílů. To je však jeden z oblastí, kde orchestrator jako [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) s jeho [stavová spolehlivé služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) může pomoci nejvíce – tím, že zjednodušuje vývoj a životního cyklu stateful pomocí mikroslužeb [spolehlivé rozhraní API služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
 
-Ostatní mikroslužbu platformy, které umožňují stavové služby, které podporují vzor objektu Actor a zlepšují odolnost proti chybám a latence mezi obchodní logiku a data jsou Microsoft [Orléans](https://github.com/dotnet/orleans), z Microsoft Research a [ Akka.NET](http://getakka.net/). Obě architektury jsou aktuálně zlepšení jejich podpora pro Docker.
+Ostatní mikroslužbu platformy, které umožňují stavové služby, které podporují vzor objektu Actor a zlepšují odolnost proti chybám a latence mezi obchodní logiku a data jsou Microsoft [Orléans](https://github.com/dotnet/orleans), z Microsoft Research a [ Akka.NET](https://getakka.net/). Obě architektury jsou aktuálně zlepšení jejich podpora pro Docker.
 
 Upozorňujeme, že jsou kontejnery Docker bezstavové sami. Pokud chcete implementovat stavové služby, musíte další doporučený a vyšší úrovně rozhraní si předtím poznamenali. 
 

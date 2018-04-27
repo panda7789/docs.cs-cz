@@ -15,21 +15,21 @@ ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
 caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: be5e0156b4cacc39e1613e06fe3c138838b02700
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 19aa20097e35a780f923a84e3e5809eb2b8bb3e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objekty a třídy v jazyce Visual Basic
 *Objekt* je kombinací kód a data, která lze považovat za jednotku. Objekt může být část aplikace, jako je ovládacího prvku nebo formuláře. Celá aplikace může být také objekt.
 
-Když vytvoříte aplikaci v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], neustále práce s objekty. Můžete použít objekty poskytované [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], jako jsou například ovládací prvky, formulářů a dat přístup k objektům. Můžete taky objektů z jiných aplikací v rámci vaší [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikace. Můžete dokonce vytvořit vlastní objekty a definovat další vlastnosti a metody pro ně. Objekty fungovat stejně jako prefabrikované stavební bloky pro programy – umožňují můžete napsat kód jednou a znovu použít opakovaně.  
+Když vytvoříte aplikaci v jazyce Visual Basic, neustále práci s objekty. Můžete použít objekty knihovny jazyka Visual Basic, jako je například ovládací prvky, formulářů a dat přístup k objektům. Můžete taky objektů z jiných aplikací v rámci vaší aplikace Visual Basic. Můžete dokonce vytvořit vlastní objekty a definovat další vlastnosti a metody pro ně. Objekty fungovat stejně jako prefabrikované stavební bloky pro programy – umožňují můžete napsat kód jednou a znovu použít opakovaně.  
   
 Toto téma popisuje objekty podrobně.  
 
 ## <a name="objects-and-classes"></a>Objekty a třídy
-Každý objekt v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je definované *třída*. Třída popisuje proměnné, vlastnosti, postupy a události objektu. Objekty jsou instance třídy; můžete vytvořit libovolný počet objektů, které potřebujete, jakmile definujete třídu.
+Každý objekt v jazyce Visual Basic je definované *třída*. Třída popisuje proměnné, vlastnosti, postupy a události objektu. Objekty jsou instance třídy; můžete vytvořit libovolný počet objektů, které potřebujete, jakmile definujete třídu.
 
 Vztah mezi objektem a její třída pochopit, vezměte v úvahu řezačky souboru cookie a soubory cookie. Ořezávání soubor cookie je třída. Definuje vlastnosti každého souboru cookie, například velikost a tvar. Třída slouží k vytváření objektů. Objekty jsou soubory cookie.
 
@@ -173,7 +173,7 @@ Na druhé straně členové deklarované v rámci modul jsou veřejně dostupné
 ## <a name="reusing-classes-and-objects"></a>Opětovné použití tříd a objektů  
 Objekty umožňují deklarace proměnných a postupy jednou a pak je vždy v případě potřeby znovu použijte. Například pokud chcete přidat nástroj pro kontrolu pravopisu do aplikace můžete definovat všechny proměnné a podporovat funkce nakonfigurovánu pravopisu. Pokud vytvoříte vaše kontrola pravopisu jako třída, můžete je znovu ji v ostatních aplikacích přidáním odkazu na zkompilované sestavení. Ještě lepší nebudete moct uložit sami některé pracovní pomocí kontrola pravopisu třídu, která někdo jiný již vyvinula
 
-[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Obsahuje mnoho příklady součásti, které jsou k dispozici pro použití. Následující příklad používá <xref:System.TimeZone> třídy v <xref:System> oboru názvů. <xref:System.TimeZone>poskytuje členy, které vám umožní načíst informace o časovém pásmu aktuální počítačového systému.
+[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Obsahuje mnoho příklady součásti, které jsou k dispozici pro použití. Následující příklad používá <xref:System.TimeZone> třídy v <xref:System> oboru názvů. <xref:System.TimeZone> poskytuje členy, které vám umožní načíst informace o časovém pásmu aktuální počítačového systému.
 
 ```vb
 Public Sub examineTimeZone()
@@ -241,26 +241,26 @@ Ujistěte se, že kompilátor můžete přístup ke třídě, ze kterého chcete
 Dalším způsobem může souviset objekty je *vztah členství ve skupině*. Kontejnerové objekty zapouzdřují logicky jiné objekty. Například <xref:System.OperatingSystem> objekt logicky obsahuje <xref:System.Version> objekt, který vrátí prostřednictvím jeho <xref:System.OperatingSystem.Version%2A> vlastnost. Všimněte si, že objekt kontejneru fyzicky neobsahuje jakýkoliv jiný objekt.
 
 #### <a name="collections"></a>Kolekce
-Jeden konkrétní typ omezení objektu je reprezentována *kolekce*. Kolekce jsou podobné objekty, které jsou uvedené skupiny. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]podporuje specifickou syntaxi v [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) , které umožňuje iteraci v rámci položky kolekce. Kromě toho kolekce často umožňují používat <xref:Microsoft.VisualBasic.Collection.Item%2A> načíst elementy pomocí jejich indexu nebo je možné přidružit do jedinečného řetězce. Kolekce může být jednodušší než pole vzhledem k tomu, že umožňují přidat nebo odebrat položky bez použití indexy. Kvůli jejich snadné použití se kolekce často používají k ukládání formuláře a ovládací prvky.
+Jeden konkrétní typ omezení objektu je reprezentována *kolekce*. Kolekce jsou podobné objekty, které jsou uvedené skupiny. Podporuje specifickou syntaxi v jazyce Visual Basic [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) , které umožňuje iteraci v rámci položky kolekce. Kromě toho kolekce často umožňují používat <xref:Microsoft.VisualBasic.Collection.Item%2A> načíst elementy pomocí jejich indexu nebo je možné přidružit do jedinečného řetězce. Kolekce může být jednodušší než pole vzhledem k tomu, že umožňují přidat nebo odebrat položky bez použití indexy. Kvůli jejich snadné použití se kolekce často používají k ukládání formuláře a ovládací prvky.
 
 ## <a name="related-topics"></a>Související témata  
  [Návod: Definování tříd](../../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)  
  Poskytuje podrobný popis toho, jak vytvořit třídu.  
 
- [Vlastnosti a metody přetečení](../../../../visual-basic/programming-guide/language-features/objects-and-classes/overloaded-properties-and-methods.md)  
+ [Vlastnosti a metody přetížení](../../../../visual-basic/programming-guide/language-features/objects-and-classes/overloaded-properties-and-methods.md)  
  Vlastnosti a metody přetečení  
 
  [Základní informace o dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
  Popisuje modifikátory dědičnosti, přepsání metody a vlastnosti, MyBase a MyClass.  
 
- [Doba života objektu: Objekty vytváření a zničení](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
+ [Doba života objektu: Vytváření a zničení objektů](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
  Popisuje vytvoření a uvolnění instancí třídy.  
 
  [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
  Popisuje, jak vytvořit a použít anonymní typy, které umožňují vytvářet objekty bez nutnosti psaní definice třídy pro datový typ.  
 
- [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  Popisuje inicializátory objektů, které se používají k vytvoření instance pojmenované a anonymní typy pomocí jeden výraz.  
 
- [Postupy: odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
+ [Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
  Vysvětluje, jak odvození názvů a typů v deklaracích anonymního typu vlastností. Obsahuje příklady odvození úspěšné a neúspěšné.

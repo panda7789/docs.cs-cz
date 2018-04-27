@@ -1,23 +1,25 @@
 ---
-title: "Příklady kódu pro technologii ADO.NET"
+title: Příklady kódu pro technologii ADO.NET
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ea26b4297f587a449b8484947257081e0d11906c
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8fec055db7069a213b31b9f4443b2f0e7467dd7b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adonet-code-examples"></a>Příklady kódu pro technologii ADO.NET
 Příklady kódu v tomto tématu ukazují, jak načíst data z databáze pomocí následující technologie ADO.NET:
@@ -28,7 +30,7 @@ Příklady kódu v tomto tématu ukazují, jak načíst data z databáze pomocí
 
   - [OleDb](#oledb) (`System.Data.OleDb`)
 
-  - [Odbc](#odbc) (`System.Data.Odbc`)
+  - [ODBC](#odbc) (`System.Data.Odbc`)
 
   - [OracleClient](#oracleclient) (`System.Data.OracleClient`)
 
@@ -46,7 +48,7 @@ Příklady kódu v tomto tématu ukazují, jak načíst data z databáze pomocí
 Následující příklady kódu ukazují, jak k načtení dat z databáze pomocí zprostředkovatele dat ADO.NET. Data jsou vrácena v `DataReader`. Další informace najdete v tématu [načítání dat pomocí DataReader](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).
 
 ### <a name="sqlclient"></a>SqlClient
-Kód v tomto příkladu se předpokládá, že se může připojit k `Northwind` ukázkovou databázi na Microsoft [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Kód vytvoří <xref:System.Data.SqlClient.SqlCommand> pro výběr řádků z tabulky produktů, přidávání <xref:System.Data.SqlClient.SqlParameter> omezit výsledky na řádky s UnitPrice větší než je zadaná hodnota parametru, v takovém případě 5. <xref:System.Data.SqlClient.SqlConnection> Je otevřen uvnitř `using` blok, který zajišťuje, že jsou prostředky uzavřený a uvolněno při ukončení kód. Kód spustí příkaz pomocí <xref:System.Data.SqlClient.SqlDataReader>a zobrazí výsledky v okně konzoly.
+Kód v tomto příkladu se předpokládá, že se může připojit k `Northwind` ukázkové databáze na serveru Microsoft SQL Server. Kód vytvoří <xref:System.Data.SqlClient.SqlCommand> pro výběr řádků z tabulky produktů, přidávání <xref:System.Data.SqlClient.SqlParameter> omezit výsledky na řádky s UnitPrice větší než je zadaná hodnota parametru, v takovém případě 5. <xref:System.Data.SqlClient.SqlConnection> Je otevřen uvnitř `using` blok, který zajišťuje, že jsou prostředky uzavřený a uvolněno při ukončení kód. Kód spustí příkaz pomocí <xref:System.Data.SqlClient.SqlDataReader>a zobrazí výsledky v okně konzoly.
 
  [!code-csharp[DataWorks SampleApp.SqlClient#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.SqlClient/CS/source.cs#1)]
  [!code-vb[DataWorks SampleApp.SqlClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.SqlClient/VB/source.vb#1)]

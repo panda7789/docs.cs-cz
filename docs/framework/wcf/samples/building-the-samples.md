@@ -1,24 +1,26 @@
 ---
-title: "Ukázky vytváření Windows Communication Foundation"
-ms.custom: 
+title: Ukázky vytváření Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
-caps.latest.revision: "33"
+caps.latest.revision: 33
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d5de916aa5825625f29efe316571ad5085afb431
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d40b59faa4d0f50e59daaa71da6127da367f008b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Ukázky se dají vytvářet pomocí sady Visual Studio 2010 nebo pomocí **msbuild** příkazu z příkazového řádku. Oba postupy jsou popsány v tomto tématu.  
@@ -39,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2 a spuštění [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], je nutné spustit [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] s vyššími oprávněními. Chcete-li to provést, klikněte pravým tlačítkem myši na ikonu v nabídce Start a pak klikněte na **spustit jako správce**.  
   
-2.  Z **soubor** nabídky v [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], klikněte na tlačítko **otevřete**, pak klikněte na tlačítko **projekt nebo řešení**. Přejděte na konkrétní jazyk podadresáře v adresáři, do které jste nainstalovali vzorku a dvakrát klikněte na ikonu .sln soubor otevřete řešení v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].  
+2.  Z **soubor** nabídky v sadě Visual Studio, klikněte na tlačítko **otevřete**, pak klikněte na tlačítko **projekt nebo řešení**. Přejděte na konkrétní jazyk podadresáře v adresáři, do které jste nainstalovali vzorku a dvakrát klikněte na ikonu .sln soubor otevřete řešení v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].  
   
 3.  V **sestavení** nabídce vyberte možnost **znovu sestavit řešení**. Soubory programu klienta jsou vytvořeny tak client\bin a soubory programu služby jsou vytvořeny tak service\bin. Pokud je služba hostovaná ve službě IIS, zkopírují se k adresáři servicemodelsamples a podadresář \bin také soubory programu služby.  
   
@@ -50,10 +52,10 @@ ms.lasthandoff: 12/22/2017
  Setup.exe a Cleanup.exe dávkové soubory a skripty mají spustit z příkazového řádku Visual Studia. Několik set nahoru a vyčištění souborů provádět úlohy, které vyžadují oprávnění správce a musí být spuštěna s oprávněními správce.  
   
 ## <a name="important-security-information-about-metadata-endpoints"></a>Důležité informace o zabezpečení o koncové body metadat  
- Aby se zabránilo neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zakáže publikování metadat služby. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován. Chcete-li experimentování se ukázky jednodušší, téměř všechny ukázky vystavit zabezpečená metadata publikování koncový bod. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené spotřebitelů a musí dát pozor před nasazením těchto koncových bodů a zajistit tak veřejně předání metadata služby příslušné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publikování metadat služby najdete v článku [chování publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md) ukázka. Najdete v článku [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázku pro ukázku zabezpečení koncový bod metadat.  
+ Aby se zabránilo neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zakáže publikování metadat služby. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován. Chcete-li experimentování se ukázky jednodušší, téměř všechny ukázky vystavit zabezpečená metadata publikování koncový bod. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené spotřebitelů a musí dát pozor před nasazením těchto koncových bodů a zajistit tak veřejně předání metadata služby příslušné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] publikování metadat služby najdete v článku [chování publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md) ukázka. Najdete v článku [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázku pro ukázku zabezpečení koncový bod metadat.  
   
 ## <a name="exception-handling"></a>Zpracování výjimek  
- Obecně řečeno tyto ukázky nezahrnují tento kód se zaměřuje na předmět ukázky zpracování výjimek. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zpracování výjimek, najdete v článku [očekává výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) ukázka.  
+ Obecně řečeno tyto ukázky nezahrnují tento kód se zaměřuje na předmět ukázky zpracování výjimek. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zpracování výjimek, najdete v článku [očekává výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) ukázka.  
   
 ## <a name="regenerating-clients-and-configuration-with-svcutil"></a>Obnovuje se klienti a konfigurací s Svcutil  
  Můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) znovu vygenerovat kód klienta a konfigurace pro většinu ukázky. Některé ukázky vyžadovat ručně upravená konfiguraci. Například pokud použijete Svcutil.exe znovu vygenerovat konfiguraci pro ukázku, která používá přihlašovací údaje certifikátu klienta, ručně zadejte přihlašovací údaje předtím nakonfigurovali. Některé ukázky použít konkrétní možnosti Svcutil.exe ovlivnit generovaný kód, tyto možnosti jsou určené v konkrétní ukázka témata.  
@@ -74,7 +76,7 @@ ms.lasthandoff: 12/22/2017
     svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost:8000/servicemodelsamples/service.svc/mex /out:generatedClient.cs  
     ```  
   
-     Nahraďte http://localhost:8000/ServiceModelSamples/service.svc/mex adresu koncového bodu mex samoobslužné hostovanou službu.  
+     Nahraďte http://localhost:8000/ServiceModelSamples/service.svc/mex s adresou koncového bodu mex samoobslužné hostovanou službu.  
   
      Ke generování klienta v jazyce Visual Basic typu, použijte následující příkaz.  
   

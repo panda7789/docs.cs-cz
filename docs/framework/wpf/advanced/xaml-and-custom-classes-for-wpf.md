@@ -1,28 +1,30 @@
 ---
-title: "XAML a vlastní třídy pro WPF"
-ms.custom: 
+title: XAML a vlastní třídy pro WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - custom classes in XAML [WPF]
 - XAML [WPF], custom classes
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: da599afc94fba617d4df17c57679d8ee4bb05c61
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a7aa7ffe38f1fbd7de71dbc95ae12b8faca6e356
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 XAML, jak jsou implementované ve [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] rozhraní podporuje schopnost definovat vlastní třídu nebo strukturu v žádném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyka a poté přístup pomocí značek XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vaše vlastní typy v rámci stejného souboru značek, obvykle mapování vlastních typů na předponu oboru názvů jazyka XAML. Toto téma popisuje požadavky, které vlastní třídu, musí vyhovovat možné používat jako XAML element.  
@@ -70,7 +72,7 @@ XAML, jak jsou implementované ve [!INCLUDE[TLA#tla_clr](../../../../includes/tl
  Příklady vlastností, kde atribut syntaxe je povoleno, ale vlastnost element syntaxi, která obsahuje element, objekt je zakázaná prostřednictvím XAML jsou různé vlastnosti, které provést <xref:System.Windows.Input.Cursor> typu. <xref:System.Windows.Input.Cursor> Třída má převodník vyhrazený typ <xref:System.Windows.Input.CursorConverter>, ale nevystavuje výchozí konstruktor, proto <xref:System.Windows.FrameworkElement.Cursor%2A> vlastnost lze nastavit pouze prostřednictvím syntaxe atribut i když skutečnou <xref:System.Windows.Input.Cursor> typ je typ odkazu.  
   
 ### <a name="per-property-type-converters"></a>Převaděče typů pro vlastnosti  
- Alternativně může samotné vlastnosti deklarovat převaděče typů na úrovni vlastnost. To umožňuje "mini jazyk" vytváří instance objektů typu vložený vlastnost zpracováním jako vstup pro příchozí řetězcové hodnoty atributu <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> operace založená na příslušného typu. Obvykle to slouží k poskytování přistupujícím objektem pohodlí a stejná jako jediný prostředek povolit nastavení vlastnosti v jazyce XAML. Je však také možné použít převaděčů typů pro atributy, ve které chcete použít existující [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] typy, které není zadat výchozí konstruktor nebo s atributy typ převaděče. Příklady z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní API jsou některé vlastnosti, které provést <xref:System.Globalization.CultureInfo> typu. V takovém případě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít existující [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] <xref:System.Globalization.CultureInfo> typ lépe vyřešit kompatibilita a migrace scénáře, které byly používány v dřívějších verzích rozhraní, ale <xref:System.Globalization.CultureInfo> typ nepodporuje nezbytné konstruktory nebo úrovni převod typů možné používat jako hodnotu vlastnosti XAML přímo.  
+ Alternativně může samotné vlastnosti deklarovat převaděče typů na úrovni vlastnost. To umožňuje "mini jazyk" vytváří instance objektů typu vložený vlastnost zpracováním jako vstup pro příchozí řetězcové hodnoty atributu <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> operace založená na příslušného typu. Obvykle to slouží k poskytování přistupujícím objektem pohodlí a stejná jako jediný prostředek povolit nastavení vlastnosti v jazyce XAML. Je však také možné použít převaděčů typů pro atributy, ve které chcete použít existující [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] typy, které není zadat výchozí konstruktor nebo s atributy typ převaděče. Příklady z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní API jsou některé vlastnosti, které provést <xref:System.Globalization.CultureInfo> typu. V takovém případě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít existující rozhraní Microsoft .NET Framework <xref:System.Globalization.CultureInfo> typ lépe vyřešit kompatibilita a migrace scénáře, které byly používány v dřívějších verzích rozhraní, ale <xref:System.Globalization.CultureInfo> typ nepodporuje nezbytné konstruktory nebo převod typů úrovni typu možné používat jako hodnotu vlastnosti XAML přímo.  
   
  Vždy, když vystavit vlastnost, která má použití XAML, zejména v případě, že jsou ovládacího prvku Autor, doporučujeme raději zálohování tuto vlastnost s vlastnost závislosti. To je zvlášť hodnota true, pokud použijete existující [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implementace XAML procesoru, protože může zlepšit výkon pomocí <xref:System.Windows.DependencyProperty> zálohování. Vlastnost závislosti zveřejní funkce vlastnost systému pro vaše vlastnost, která uživatelé budou pocházet očekávat u vlastnosti přístupné XAML. To zahrnuje funkce, jako je animace, vazby dat a podpora stylu. Další informace najdete v tématu [vlastní závislosti vlastnosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md) a [načítání XAML a vlastností závislostí](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md).  
   

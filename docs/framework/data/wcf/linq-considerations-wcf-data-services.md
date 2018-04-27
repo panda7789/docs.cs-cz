@@ -1,12 +1,13 @@
 ---
-title: "Aspekty LINQ (služby WCF Data Services)"
-ms.custom: 
+title: Aspekty LINQ (služby WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,25 +17,26 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4f6742294c570501b20646c89455c7856f393f7d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: df596093333aa35b89f8d7ed36f817a457e48fda
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Aspekty LINQ (služby WCF Data Services)
-Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když používáte dotazy které LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ pro dotaz na data služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Vytvoření a spuštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v části [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když používáte dotazy které LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ pro dotaz na data služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Vytvoření a spuštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v části [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="composing-linq-queries"></a>Vytváření dotazů LINQ  
- LINQ umožňuje vytvořit dotazy na kolekci objektů, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Obě **přidat odkaz na službu** dialogovém okně [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] a nástroj DataSvcUtil.exe se používají ke generování reprezentace [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jako třída kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>, a také objekty, které představují entity, vrátí se v informačních kanálů. Tyto nástroje generovat také vlastnosti pro třídu kontejneru entity pro kolekce, které jsou zveřejněné jako kanály službou. Každý z těchto vlastností třídy, který zapouzdřuje službu data návratový <xref:System.Data.Services.Client.DataServiceQuery%601>. Protože <xref:System.Data.Services.Client.DataServiceQuery%601> třída implementuje <xref:System.Linq.IQueryable%601> rozhraní definované LINQ, můžete vytvořit dotaz LINQ proti informační kanály vystavené službu data, které jsou přeložit pomocí klientské knihovny na žádost dotazu URI, který je odešle do služby data na provádění.  
+ LINQ umožňuje vytvořit dotazy na kolekci objektů, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Obě **přidat odkaz na službu** dialogové okno v sadě Visual Studio a nástroj DataSvcUtil.exe se používají ke generování reprezentace [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jako třída kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>, a také objekty, které představují entity, vrátí se v informačních kanálů. Tyto nástroje generovat také vlastnosti pro třídu kontejneru entity pro kolekce, které jsou zveřejněné jako kanály službou. Každý z těchto vlastností třídy, který zapouzdřuje službu data návratový <xref:System.Data.Services.Client.DataServiceQuery%601>. Protože <xref:System.Data.Services.Client.DataServiceQuery%601> třída implementuje <xref:System.Linq.IQueryable%601> rozhraní definované LINQ, můžete vytvořit dotaz LINQ proti informační kanály vystavené službu data, které jsou přeložit pomocí klientské knihovny na žádost dotazu URI, který je odešle do služby data na provádění.  
   
 > [!IMPORTANT]
->  Sada vyjádřit kombinací v syntaxi LINQ dotazů je širší než ty, které v syntaxe identifikátoru URI, který je používán povolené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] datové služby. A <xref:System.NotSupportedException> se vyvolá, když dotaz nelze mapovat na ve službě data cílový identifikátor URI. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][nepodporovaných metod LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods) v tomto tématu.  
+>  Sada vyjádřit kombinací v syntaxi LINQ dotazů je širší než ty, které v syntaxe identifikátoru URI, který je používán povolené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] datové služby. A <xref:System.NotSupportedException> se vyvolá, když dotaz nelze mapovat na ve službě data cílový identifikátor URI. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [nepodporovaných metod LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods) v tomto tématu.  
   
  Následující příklad je dotaz LINQ, který vrátí `Orders` který máte nákladní náklady více než 30 $ a seřadí výsledky podle data přesouvání počínaje nejnovější datum expedice:  
   
@@ -176,14 +178,14 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |Projekce a filtrování operátory|Následující projekce a filtrování operátory, které přijímají poziční argument jsou nepodporované proti <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29>|  
 |Seskupení operátory|Nejsou podporovány pro všechny operátory seskupení <xref:System.Data.Services.Client.DataServiceQuery%601>, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A><br /><br /> Operace seskupení musí provést na straně klienta.|  
 |Agregační operátory|Všechny agregační operace jsou nepodporované proti <xref:System.Data.Services.Client.DataServiceQuery%601>, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> Agregační operace musí být provedeny buď na klientovi nebo se zapouzdřené pomocí operace služby.|  
-|Operátory stránkování|Následující stránkování operátory nejsou podporovány u <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A>**Poznámka:** stránkování operátory, které jsou spouštěny na prázdnou sekvencí vrátit hodnotu null.|  
+|Operátory stránkování|Následující stránkování operátory nejsou podporovány u <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Poznámka:** stránkování operátory, které jsou spouštěny na prázdnou sekvencí vrátit hodnotu null.|  
 |Jiné operátory|Následující dalšími operátory nejsou podporovány u <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> 1.  <xref:System.Linq.Enumerable.Empty%2A><br />2.  <xref:System.Linq.Enumerable.Range%2A><br />3.  <xref:System.Linq.Enumerable.Repeat%2A><br />4.  <xref:System.Linq.Enumerable.ToDictionary%2A><br />5.  <xref:System.Linq.Enumerable.ToLookup%2A>|  
   
 <a name="supportedExpressions"></a>   
 ## <a name="supported-expression-functions"></a>Funkce podporované výraz  
  Následující metody common language runtime (CLR) a vlastnosti jsou podporována, protože může být přeložit ve výrazu dotazu pro zahrnutí v identifikátoru URI požadavku na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby:  
   
-|<xref:System.String>Člen|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
+|<xref:System.String> Člen|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
 |-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.String.Concat%28System.String%2CSystem.String%29>|`string concat(string p0, string p1)`|  
 |<xref:System.String.Contains%28System.String%29>|`bool substringof(string p0, string p1)`|  
@@ -197,7 +199,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.String.ToUpper>|`string toupper(string p0)`|  
 |<xref:System.String.Trim>|`string trim(string p0)`|  
   
-|<xref:System.DateTime>Člen<sup>1</sup>|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
+|<xref:System.DateTime> Člen<sup>1</sup>|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
 |-------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.DateTime.Day>|`int day(DateTime p0)`|  
 |<xref:System.DateTime.Hour>|`int hour(DateTime p0)`|  
@@ -208,7 +210,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
  <sup>1</sup>ekvivalentní datum a čas vlastnosti <xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType>, a taky <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> jsou podporovány také metody v jazyce Visual Basic.  
   
-|<xref:System.Math>Člen|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
+|<xref:System.Math> Člen|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
 |---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.Math.Ceiling%28System.Decimal%29>|`decimal ceiling(decimal p0)`|  
 |<xref:System.Math.Ceiling%28System.Double%29>|`double ceiling(double p0)`|  
@@ -217,7 +219,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.Math.Round%28System.Decimal%29>|`decimal round(decimal p0)`|  
 |<xref:System.Math.Round%28System.Double%29>|`double round(double p0)`|  
   
-|<xref:System.Linq.Expressions.Expression>Člen|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
+|<xref:System.Linq.Expressions.Expression> Člen|Podporované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] – funkce|  
 |---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.Linq.Expressions.Expression.TypeIs%28System.Linq.Expressions.Expression%2CSystem.Type%29>|`bool isof(type p0)`|  
   

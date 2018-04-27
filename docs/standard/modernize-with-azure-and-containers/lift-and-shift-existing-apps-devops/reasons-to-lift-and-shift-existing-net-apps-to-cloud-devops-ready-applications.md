@@ -1,18 +1,19 @@
 ---
-title: "Důvodů, proč navýšení a shift existující aplikace .NET pro DevOps připravené pro cloudové aplikace"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Důvodů, proč navýšení a shift existující aplikace .NET pro DevOps připravené pro cloudové aplikace"
+title: Důvodů, proč navýšení a shift existující aplikace .NET pro DevOps připravené pro cloudové aplikace
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Důvodů, proč navýšení a shift existující aplikace .NET pro DevOps připravené pro cloudové aplikace
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1339264f49a065888a95e6ef6fe8575aa3c75564
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: b6a65dfff45b240e89ab22fd7eba82d6cdbc27b8
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="reasons-to-lift-and-shift-existing-net-apps-to-cloud-devops-ready-applications"></a>Důvodů, proč navýšení a shift existující aplikace .NET pro DevOps připravené pro cloudové aplikace
 

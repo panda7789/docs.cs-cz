@@ -1,10 +1,11 @@
 ---
-title: "For Each...Next – příkaz (Visual Basic)"
+title: For Each...Next – příkaz (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.ForEach
@@ -27,14 +28,14 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For Each...Next statements
 - iteration
 ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
-caps.latest.revision: "56"
+caps.latest.revision: 56
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 11601eb1caad1c6cc6d9898f590436a977a78fa1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: b1593d279d4338ebadca803fe757a201cbcd654b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů pro jednotlivé elementy v kolekci.  
@@ -97,7 +98,7 @@ Next [ element ]
   
  Můžete použít a zadat libovolný počet `Exit For` příkazy v `For Each` smyčky. Při použití uvnitř vnořené `For Each` smyčky, `Exit For` způsobí, že provádění ukončíte nejvnitřnější smyčky a přenosy ovládacího prvku na další vyšší úroveň vnoření.  
   
- `Exit For`se často používá po vyhodnocení některé podmínky, například v `If`... `Then`... `Else` struktura. Můžete chtít použít `Exit For` byly splněny následující podmínky:  
+ `Exit For` se často používá po vyhodnocení některé podmínky, například v `If`... `Then`... `Else` struktura. Můžete chtít použít `Exit For` byly splněny následující podmínky:  
   
 -   Pokračovat v procházení je zbytečné nebo dokonce znemožňují. Příčinou může být chybná hodnota nebo žádost o ukončení.  
   
@@ -133,7 +134,7 @@ Next [ element ]
   
  Datový typ `element` musí být tak, že datový typ elementů `group` lze převést na ni.  
   
- Datový typ `group` musí být typu odkaz, který odkazuje na kolekci nebo pole, které je vyčíslitelná. Nejčastěji to znamená, že `group` odkazuje na objekt, který implementuje <xref:System.Collections.IEnumerable> rozhraní `System.Collections` oboru názvů nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní `System.Collections.Generic` oboru názvů. `System.Collections.IEnumerable`definuje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metodu, která vrací objekt enumerátoru pro kolekci. Implementuje objekt enumerator `System.Collections.IEnumerator` rozhraní `System.Collections` obor názvů a zveřejňuje <xref:System.Collections.IEnumerator.Current%2A> vlastnost a <xref:System.Collections.IEnumerator.Reset%2A> a <xref:System.Collections.IEnumerator.MoveNext%2A> metody. Visual Basic používá následující procházení kolekce.  
+ Datový typ `group` musí být typu odkaz, který odkazuje na kolekci nebo pole, které je vyčíslitelná. Nejčastěji to znamená, že `group` odkazuje na objekt, který implementuje <xref:System.Collections.IEnumerable> rozhraní `System.Collections` oboru názvů nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní `System.Collections.Generic` oboru názvů. `System.Collections.IEnumerable` definuje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metodu, která vrací objekt enumerátoru pro kolekci. Implementuje objekt enumerator `System.Collections.IEnumerator` rozhraní `System.Collections` obor názvů a zveřejňuje <xref:System.Collections.IEnumerator.Current%2A> vlastnost a <xref:System.Collections.IEnumerator.Reset%2A> a <xref:System.Collections.IEnumerator.MoveNext%2A> metody. Visual Basic používá následující procházení kolekce.  
   
 ### <a name="narrowing-conversions"></a>Zužující převody  
  Když `Option Strict` je nastaven na `On`, zužující převody normálně způsobit chyby kompilátoru. V `For Each` příkaz, ale převody z elementů v `group` k `element` jsou vyhodnotit a provést v době běhu, a jsou potlačeny chyby kompilátoru způsobené zužující převody.  
@@ -149,7 +150,7 @@ Next [ element ]
   
  **Úpravy kolekce.** Objekt enumerator vrácený <xref:System.Collections.IEnumerable.GetEnumerator%2A> obvykle není umožňují změnit kolekci přidáním, odstraněním, nahraďte nebo změna žádné elementy. Pokud změníte kolekci po spuštění `For Each`... `Next` smyčky, objekt enumerator stává neplatným a další pokus o přístup k elementu způsobí, že <xref:System.InvalidOperationException> výjimka.  
   
- Toto blokování změny ale není určen podle [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], ale spíše implementace <xref:System.Collections.IEnumerable> rozhraní. Je možné implementovat `IEnumerable` způsobem, který umožňuje upravovat během iterace. Pokud uvažujete o provádění takových dynamické úpravy, ujistěte se, že rozumíte charakteristika `IEnumerable` implementace na kolekci, kterou používáte.  
+ Ale toto blokování změny, není určené ve Visual Basic, ale spíš podle implementace <xref:System.Collections.IEnumerable> rozhraní. Je možné implementovat `IEnumerable` způsobem, který umožňuje upravovat během iterace. Pokud uvažujete o provádění takových dynamické úpravy, ujistěte se, že rozumíte charakteristika `IEnumerable` implementace na kolekci, kterou používáte.  
   
  **Úpravy elementy z kolekce.** <xref:System.Collections.IEnumerator.Current%2A> Vlastností objektu enumerátor je [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md), a vrátí místní kopii každého prvku kolekce. To znamená, že nelze upravovat samotné prvky v `For Each`... `Next` smyčky. Všechny úpravy provedete ovlivňují jenom místní kopie z `Current` a nereflektují zpět do základní kolekce. Ale pokud element je typu odkaz, můžete upravit členy instance, na kterou odkazuje. Následující příklad změní `BackColor` členem všech `thisControl` elementu. Nelze, ale upravovat `thisControl` sám sebe.  
   

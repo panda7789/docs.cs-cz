@@ -1,11 +1,12 @@
 ---
-title: "Datové typy konstanty a literálu (Visual Basic)"
-ms.custom: 
+title: Datové typy konstanty a literálu (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declaring constants [Visual Basic], literal data types
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - literals [Visual Basic], coercing data type
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 554753e26d185593ce43b741b3b2f9e3cb1ad6dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 58fa1e8c6c659c80cd7998a88d07849ea223750f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Datové typy konstanty a literálu (Visual Basic)
 Literál je hodnota, která je vyjádřena jako samotný a nikoli jako hodnota proměnné nebo výsledek výrazu, například číslo 3 nebo text "Hello". Konstanta je smysluplný název, který přebírá místo literál a uchovává tento stejnou hodnotu v rámci programu, a proměnnou, jehož hodnota může změnit.  
@@ -53,7 +54,7 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
   
  [!code-vb[VbVbalrConstants#3](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_3.vb)]  
   
- Následující tabulka uvádí nadřazených znaků a typů znaků k dispozici v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Následující tabulka uvádí nadřazených znaky a znaky typu dostupné v jazyce Visual Basic.  
   
 |Datový typ|Nadřazených znak|Znak připojením typu|  
 |---|---|---|  
@@ -71,10 +72,10 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
   
 ## <a name="see-also"></a>Viz také  
  [Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)  
- [Postupy: deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)  
+ [Postupy: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)  
  [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Option Explicit – příkaz](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Explicit](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
  [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)  
  [Postupy: deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)  
  [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)  

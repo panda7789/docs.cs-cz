@@ -18,16 +18,16 @@ ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6ce0cb7cba8f05b488d47f99da51b0b5de75eb15
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 4ec3ab191942e47d5025a0e641085b0f507088c7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="control-flow-in-visual-basic"></a>Tok řízení v jazyce Visual Basic
 Oblast vlevo, program pokračuje prostřednictvím jeho příkazy od začátku do konce. Některé velmi jednoduché programy může být napsán s pouze tento jednosměrný tok. Velká část napájení a nástroj žádný programovací jazyk, však pochází z umožňuje změnit pořadí zpracování řídicí příkazy a smyčky.  
   
- Řídicí struktury umožňují regulovat tok provádění vašeho programu. Pomocí řídicí struktury, můžete napsat [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kód, který rozhoduje či, opakování akce. Ostatní řídicí struktury umožňují zaručit uvolnění prostředku nebo spuštění řady příkazů na odkaz na stejný objekt.  
+ Řídicí struktury umožňují regulovat tok provádění vašeho programu. Řídicí struktury můžete napsat kód jazyka Visual Basic, který rozhoduje či, opakování akce. Ostatní řídicí struktury umožňují zaručit uvolnění prostředku nebo spuštění řady příkazů na odkaz na stejný objekt.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  

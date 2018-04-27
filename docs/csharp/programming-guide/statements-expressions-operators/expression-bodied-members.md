@@ -1,19 +1,20 @@
 ---
-title: "Výraz vozidlo členové (C# programování průvodce)"
+title: Výraz vozidlo členové (C# programování průvodce)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ead1e474fe87bd9fbd0f972bc0f2fc4fefc12ecf
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 5690a2ddb9127bb0c9b06d3607e3d105fca9a2e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Výraz vozidlo členové (C# programovací průvodce)
 Výraz definice textu umožňují poskytovat implementace člena ve formuláři velmi stručným a čitelné. Definici výraz text můžete použít vždy, když logiku pro všechny podporované člena, jako je například metody nebo vlastnosti, se skládá z jednoho výrazu. Definici výraz text má následující obecné syntaxi:
@@ -24,16 +25,16 @@ member => expression;
 
 kde *výraz* je platný výraz. 
 
-Podpora pro výraz text definice byla zavedená pro metody a vlastnosti získat přístupové objekty v C# 6 a byla rozšířena v C# 7. Výraz definice textu lze použít s členy typu uvedené v následující tabulce: 
+Podpora pro výraz text definice byla zavedená pro metody a vlastnosti získat přístupové objekty v C# 6 a byla rozšířena v C# 7.0. Výraz definice textu lze použít s členy typu uvedené v následující tabulce: 
 
 |Člen  |Podporované od systému... |
 |---------|---------|
 |[– Metoda](#methods)  |C# 6 |
-|[Konstruktor](#constructors)   |C# 7 |
-|[Finalizační metodu](#finalizers)     |C# 7 |
+|[Konstruktor](#constructors)   |C# 7.0 |
+|[Finalizační metodu](#finalizers)     |C# 7.0 |
 |[Vlastnost Get](#property-get-statements)  |C# 6 |
-|[Sada vlastností](#property-set-statements)  |C# 7 |
-|[Indexer](#indexers)       |C# 7 |
+|[Sada vlastností](#property-set-statements)  |C# 7.0 |
+|[indexer](#indexers)       |C# 7.0 |
 
 ## <a name="methods"></a>Metody
 

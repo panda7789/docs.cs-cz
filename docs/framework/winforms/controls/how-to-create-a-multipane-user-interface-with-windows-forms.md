@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms"
-ms.custom: 
+title: 'Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], examples
 - Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f29fb5fc4f873431471cd1c037446a5157d5f07c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6011eb2d49e537a2f5dfc540611af40a30b3e721
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms
 V následujícím postupu vytvoříte více podokny uživatelské rozhraní, které je podobné použít v aplikaci Microsoft Outlook s **složky** seznamu **zprávy** podokně a **Preview** podokně. Toto uspořádání je dosaženo hlavně prostřednictvím ukotvení ovládacích prvků pomocí formuláře.  
@@ -175,7 +177,7 @@ V následujícím postupu vytvoříte více podokny uživatelské rozhraní, kte
     }  
     ```  
   
-3.  V [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], že přidáte volání procedury, kterou jste právě vytvořili `New()` postupu. V [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], přidejte tento řádek kódu do konstruktoru pro třídu formuláře.  
+3.  V jazyce Visual Basic, přidejte volání procedury, kterou jste právě vytvořili `New()` postupu. V jazyce Visual C# přidejte tento řádek kódu do konstruktoru pro třídu formuláře.  
   
     ```vb  
     ' Add this to the New procedure.  

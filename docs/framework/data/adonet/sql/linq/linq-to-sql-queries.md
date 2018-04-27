@@ -1,39 +1,41 @@
 ---
 title: Dotazy LINQ to SQL
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f4897aaa-7f44-4c20-a471-b948c2971aae
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8c32ff4040213ce73b78f7ea0f6d56e222d55b25
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 62e6252da06201e33d6f81f3160bee063272132f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-to-sql-queries"></a>Dotazy LINQ to SQL
 Můžete definovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy pomocí stejnou syntaxi jako v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]. Jediným rozdílem je, že odkazované v dotazech objekty jsou namapované na elementy v databázi. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Přeloží dotazy, které můžete psát na ekvivalentní dotazy SQL a odešle je server pro zpracování. Přesněji řečeno, vaše aplikace používá [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] rozhraní API pro žádost o spuštění dotazu. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Zprostředkovatele pak transformuje dotaz na SQL text a deleguje na poskytovatele rozhraní ADO provedení. Vrátí výsledky dotazu jako poskytovatele ADO `DataReader`. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Zprostředkovatel překládá ADO výsledky do <xref:System.Linq.IQueryable> kolekce objektů uživatele.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží dotazy, které můžete psát na ekvivalentní dotazy SQL a odešle je server pro zpracování. Přesněji řečeno, vaše aplikace používá [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] rozhraní API pro žádost o spuštění dotazu. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Zprostředkovatele pak transformuje dotaz na SQL text a deleguje na poskytovatele rozhraní ADO provedení. Vrátí výsledky dotazu jako poskytovatele ADO `DataReader`. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Zprostředkovatel překládá ADO výsledky do <xref:System.Linq.IQueryable> kolekce objektů uživatele.  
   
 > [!NOTE]
 >  Většina metody a operátory na [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] vestavěné typy mít přímý překlady do SQL. Ty, které [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] nemůže překládat generovat výjimky v době běhu. Další informace najdete v tématu [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
   
  Následující tabulka ukazuje podobnosti a rozdíly mezi [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotaz položky.  
   
-|Položka|Dotaz LINQ|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Dotaz|  
+|Položka|Dotaz LINQ|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dotaz|  
 |----------|----------------|----------------------------------------------------------------------|  
-|Návratový typ místní proměnné, která obsahuje dotaz (pro dotazy, které vracejí pořadí)|Obecné`IEnumerable`|Obecné`IQueryable`|  
-|Zadání zdroje dat|Používá `From` ([!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]) nebo `from` – klauzule (C#)|stejné|  
+|Návratový typ místní proměnné, která obsahuje dotaz (pro dotazy, které vracejí pořadí)|Obecné `IEnumerable`|Obecné `IQueryable`|  
+|Zadání zdroje dat|Používá `From` (Visual Basic) nebo `from` – klauzule (C#)|stejné|  
 |Filtrování|Používá `Where` / `where` – klauzule|stejné|  
 |Seskupování|Používá `Group…By` / `groupby` – klauzule|stejné|  
 |Výběr (projekce)|Používá `Select` / `select` – klauzule|stejné|  

@@ -1,7 +1,7 @@
 ---
-title: "Orchestrace mikroslužeb a aplikace služby kontejneru pro vysokou škálovatelnost a dostupnost"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Orchestrace mikroslužeb a aplikace služby kontejneru pro vysokou škálovatelnost a dostupnost"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Orchestrace mikroslužeb a aplikace služby kontejneru pro vysokou škálovatelnost a dostupnost
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Orchestrace mikroslužeb a aplikace služby kontejneru pro vysokou škálovatelnost a dostupnost
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ff524c6d61c6ce51a1a3e831cd666a3b61ac849e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c484372c0b5626fc20c8991a432e62353baa7a4c
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a aplikace služby kontejneru pro vysokou škálovatelnost a dostupnost
 
@@ -45,7 +45,7 @@ Koncepty cluster a plánovače jsou úzce související, takže produkty od růz
 
 Kubernetes
 
-![https://PBS.twimg.com/Media/BT\_pEfqCAAAiVyz.png](./media/image24.png)
+![https://pbs.twimg.com/media/Bt\_pEfqCAAAiVyz.png](./media/image24.png)
 
 > Kubernetes je produkt open source, který poskytuje funkce, které rozsahy z infrastruktura clusteru a kontejner plánování k funkcím Orchestrace. Umožňuje vám automatizovat nasazení, škálování a operace kontejnery aplikací napříč clustery hostitelů.
 >
@@ -55,7 +55,7 @@ Kubernetes
 
 Docker Swarm
 
-![http://rancher.com/WP-Content/Themes/rancher-2016/Assets/Images/swarm.PNG?v=2016-07-10-AM](./media/image25.png)
+![http://rancher.com/wp-content/themes/rancher-2016/assets/images/swarm.png?v=2016-07-10-am](./media/image25.png)
 
 > Docker Swarm umožňuje clusteru a naplánovat Docker kontejnery. Pomocí Swarm, můžete upravit fond hostitelů Docker na jednu virtuální hostitel Docker. Klienty můžete nastavit žádostí o rozhraní API pro Swarm stejným způsobem, že dělají na hostitele, což znamená, že Swarm usnadňuje aplikace škálovat na více hostitelů.
 >
@@ -65,7 +65,7 @@ Docker Swarm
 
 Mesosphere DC/OS
 
-![https://mesosphere.com/WP-Content/uploads/2016/04/logo-Horizontal-styled.PNG](./media/image26.png)
+![https://mesosphere.com/wp-content/uploads/2016/04/logo-horizontal-styled.png](./media/image26.png)
 
 > Mesosphere Enterprise DC/OS (podle Apache Mesos) je platforma pro produkční prostředí pro spouštění kontejnery a distribuovaných aplikací.
 >
@@ -75,7 +75,7 @@ Mesosphere DC/OS
 
 Azure Service Fabric
 
-![https://Azure.microsoft.com/svghandler/Service-Fabric?Width=600&Height=315](./media/image27.png)
+![https://azure.microsoft.com/svghandler/service-fabric?width=600&height=315](./media/image27.png)
 
 > [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma Microsoft mikroslužeb pro vytváření aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) z služby a vytvoří clustery počítačů. Service Fabric můžete nasadit služby jako kontejnery nebo jako prostý procesy. Může i kombinaci služby v procesech se službami v kontejnery v rámci stejné aplikace a cluster.
 >
@@ -124,7 +124,7 @@ Služby ACS je aktuálně dostupné pro standardní A, D, DS, G a GS řady virtu
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Úvod k hostování řešení s Azure Container Service kontejner Docker**
+-   **Úvod do kontejner Docker hostování řešení s Azure Container Service**
     [*https://docs.microsoft.com/azure/container-service/container-service-intro*](https://docs.microsoft.com/azure/container-service/container-service-intro)
 
 -   **Přehled docker Swarm**
@@ -133,11 +133,11 @@ Služby ACS je aktuálně dostupné pro standardní A, D, DS, G a GS řady virtu
 -   **Přehled režimu swarm**
     [*https://docs.docker.com/engine/swarm/*](https://docs.docker.com/engine/swarm/)
 
--   **Přehled DC/OS mesosphere**
+-   **Přehled mesosphere DC/OS**
     [*https://docs.mesosphere.com/1.7/overview/*](https://docs.mesosphere.com/1.7/overview/)
 
 -   **Kubernetes.** Oficiální web. \
-    [*http://kubernetes.IO/*](http://kubernetes.io/)
+    [*https://kubernetes.io/*](https://kubernetes.io/)
 
 
 >[!div class="step-by-step"]

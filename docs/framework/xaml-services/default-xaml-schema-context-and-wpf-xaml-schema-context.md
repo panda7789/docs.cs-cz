@@ -1,24 +1,26 @@
 ---
-title: "Výchozí kontext schématu XAML a kontext WPF schématu XAML"
-ms.custom: 
+title: Výchozí kontext schématu XAML a kontext WPF schématu XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04e06a15-09b3-4210-9bdf-9a64c2eccb83
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9ee7c83868934f1a524bb0068ea5e749e6cbfab4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ec5e29ae9022470f8b583dc1b673a0b93040c862
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>Výchozí kontext schématu XAML a kontext WPF schématu XAML
 Kontext schématu XAML je koncepční entita, která kvalifikují jak provozní XAML používající konkrétní termínů XAML komunikuje s objektem zápis chování, včetně způsobu mapování typu řeší, jak se načíst sestavení, jak určitá čtení a zápis nastavení se interpretují. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružená výchozí kontext schématu XAML, který je založený na systému typu CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro grafický subsystém WPF.  
@@ -35,7 +37,7 @@ Kontext schématu XAML je koncepční entita, která kvalifikují jak provozní 
 ## <a name="wpf-xaml-schema-context"></a>Kontext schématu WPF XAML  
  Kontext schématu WPF XAML je popsaný v tomto tématu, protože implementace WPF poskytuje ilustraci zajímavých funkcí, které mohou být způsobeny implementace bez výchozí kontext schématu XAML. Také koncepce kontext schématu XAML není velmi mnohem zabývá WPF dokumentace, která řeší WPF XAML; chování, které umožňuje kontext schématu XAML může být pouze plně nerozumí, pokud je spojen s diskuzi o tom, jak funguje výchozí kontext schématu XAML. Kontext schématu WPF XAML implementuje toto chování.  
   
- **Přepsání vyhledávání:** WPF má několik obsahu modely pro jazyk XAML tam, kde nejsou k dispozici XAML obsahu vlastnosti, které funkce aniž by musel být <xref:System.Windows.Markup.ContentPropertyAttribute> s atributy. <xref:System.Xaml.XamlType.LookupContentProperty%2A>přepsání pro grafický subsystém WPF implementovat toto chování.  
+ **Přepsání vyhledávání:** WPF má několik obsahu modely pro jazyk XAML tam, kde nejsou k dispozici XAML obsahu vlastnosti, které funkce aniž by musel být <xref:System.Windows.Markup.ContentPropertyAttribute> s atributy. <xref:System.Xaml.XamlType.LookupContentProperty%2A> přepsání pro grafický subsystém WPF implementovat toto chování.  
   
  **Odložení pro výrazů WPF:** WPF funkce několik tříd výrazu, které odložení hodnotu, dokud nebude k dispozici modul runtime kontextu. Modul runtime chování, které využívá techniky odložení je také rozšíření šablony.  
   
@@ -68,7 +70,7 @@ Kontext schématu XAML je koncepční entita, která kvalifikují jak provozní 
     -   Pokud je název nekvalifikované v mapování, volání <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
   
 #### <a name="xamlbuildtask"></a>XamlBuildTask  
- `XamlBuildTask`slouží k [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)] a [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)].  
+ `XamlBuildTask` slouží k [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)] a modelu Windows Workflow Foundation.  
   
  Všimněte si, že sestavení odkazuje na prostřednictvím `XamlBuildTask` jsou vždy úplný.  
   

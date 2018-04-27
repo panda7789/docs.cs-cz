@@ -1,7 +1,7 @@
 ---
 title: Shoda vzoru – průvodce v C#
 description: Další informace o výrazy v jazyce C# pro porovnávání
-keywords: .NET, .NET Core, C#
+keywords: Rozhraní .NET, rozhraní .NET core, C#
 ms.date: 01/24/2017
 ms.author: wiwagn
 ms.topic: article
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: c3fbc617f742e8dd5db4b2ac46b38958cdc30007
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: a0f80fc2c019cefa81506d9dcdeabc57a1e98c2b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů #
 
@@ -37,7 +37,7 @@ Z těchto struktur můžete napsat metodu, která vypočítá oblasti některé 
 
 ## <a name="the-is-type-pattern-expression"></a>`is` Zadejte vzor výrazu
 
-Před C# 7, museli byste otestujte všechny typy v řadě `if` a `is` příkazy:
+Před C# 7.0, museli byste otestujte všechny typy v řadě `if` a `is` příkazy:
 
 [!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 

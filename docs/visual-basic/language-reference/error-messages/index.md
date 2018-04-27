@@ -16,11 +16,11 @@ ms.assetid: f2dda05b-baef-41f5-8bb1-598bd7cf239f
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f7f5138d430e6737a4a8a47d4a800905dedff660
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: de52d95cfbc8135db1dc9434860f02b8992db0b4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="error-messages-visual-basic"></a>Chybové zprávy (Visual Basic)
 Při zápisu, kompilaci nebo spuštění aplikace Visual Basic, se může objevit následující typy chyb:  
@@ -34,7 +34,7 @@ Při zápisu, kompilaci nebo spuštění aplikace Visual Basic, se může objevi
  Informace o řešení potíží s konkrétní chyby najdete v tématu [další zdroje pro programátory v jazyce Visual Basic](../../../visual-basic/getting-started/additional-resources.md).  
   
 ## <a name="run-time-errors"></a>Chyby runtime  
- Pokud aplikace Visual Basic se pokusí provést akce, která systém nemůže spustit, dojde k chybě běhu, a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vyvolá `Exception` objektu. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]může generovat vlastní chyby o všech datech typ, včetně `Exception` objekty, pomocí `Throw` příkaz. Aplikace můžete identifikovat chyba zobrazením číslo chyby a zprávy zachycení výjimky. Pokud není zachycena chybu, aplikace se ukončí.  
+ Pokud aplikace Visual Basic pokusu o provedení akce, která systém nemůže spustit, dojde k chybě spuštění a Visual Basic vyvolá `Exception` objektu. Visual Basic může generovat vlastní chyby žádná data typ, včetně `Exception` objekty, pomocí `Throw` příkaz. Aplikace můžete identifikovat chyba zobrazením číslo chyby a zprávy zachycení výjimky. Pokud není zachycena chybu, aplikace se ukončí.  
   
  Kód můžete depeše a zkontrolujte chyby. Pokud je kód, který generuje chyby v uzavřít `Try` blok, můžete zachytit chyby výjimce dojde v rámci odpovídající `Catch` bloku. Informace o tom, jak depeše chyby za běhu a reagovat na ně ve vašem kódu najdete v tématu [zkuste... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   

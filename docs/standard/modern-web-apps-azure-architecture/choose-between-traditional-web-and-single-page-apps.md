@@ -1,19 +1,20 @@
 ---
-title: "Volba mezi tradiční webové aplikace a jednostránkové aplikace"
-description: "Architekti moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure"
+title: Volba mezi tradiční webové aplikace a jednostránkové aplikace
+description: Architekti moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: eb830ede1b644700a80f0e9fac2f3608deb88276
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b1472f8107d57eff8faca1b4c7de7ba43f4271c0
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradiční webové aplikace a jednostránkové aplikace (SPA)
 
@@ -93,7 +94,7 @@ Následující rozhodnutí tabulka shrnuje některé základní faktorů, které
   | Požadované Team znalost jazyka JavaScript nebo TypeScript | **minimální** | **Požadované** |
   | Podpora prohlížeče bez skriptování | **Podporované** | **Nepodporuje se** |
   | Chování minimální aplikace na straně klienta | **Well-Suited** | **Přehnaně** |
-  | Požadavky na bohatou a komplexní uživatelské rozhraní | **Limited** | **Well-Suited** |
+  | Požadavky na bohatou a komplexní uživatelské rozhraní | **Omezené** | **Well-Suited** |
 
 >[!div class="step-by-step"]
 [Předchozí] (modern-web-applications-characteristics.md) [další](architectural-principles.md)

@@ -1,11 +1,12 @@
 ---
 title: Procedury vlastnosti (Visual Basic)
-ms.custom: 
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Set statement [Visual Basic], Property procedures
@@ -19,19 +20,19 @@ helpviewer_keywords:
 - property procedures
 - Get statement [Visual Basic], property procedures
 ms.assetid: 46a98379-e1a2-45dd-a48c-b51213f5ab07
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: cbdf49d5c3eb5ef71b25a060d62f55f19098f445
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0d9df6f381c89263aa16315fb06a2b3b0d645bbf
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="property-procedures-visual-basic"></a>Procedury vlastnosti (Visual Basic)
-Procedury vlastnosti je řada [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] příkazy, které pracují s vlastní vlastnost na modul, třídu nebo strukturu. Procedury vlastností se také označují jako *přístupové objekty vlastnosti*.  
+Procedury vlastnosti je řada příkazů jazyka Visual Basic, které pracují s vlastní vlastnost na modul, třídu nebo strukturu. Procedury vlastností se také označují jako *přístupové objekty vlastnosti*.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje následující postupy vlastnost:  
+ Visual Basic poskytuje následující postupy vlastnost:  
   
 -   A `Get` postup vrátí hodnotu vlastnosti. Je volána při přístupu k vlastnosti ve výrazu.  
   
@@ -114,13 +115,13 @@ End Property
  [!code-vb[VbVbcnProcedures#9](./codesnippet/VisualBasic/property-procedures_2.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
- [Function – procedury](./function-procedures.md)  
+ [Procedury](./index.md)  
+ [Procedury funkce](./function-procedures.md)  
  [Procedury operátoru](./operator-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
  [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)  
- [Postupy: vytvoření vlastnosti](./how-to-create-a-property.md)  
- [Postupy: volání procedury vlastnosti](./how-to-call-a-property-procedure.md)  
+ [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)  
+ [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)  
  [Postupy: deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)  
- [Postupy: vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
- [Postupy: získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+ [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
+ [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

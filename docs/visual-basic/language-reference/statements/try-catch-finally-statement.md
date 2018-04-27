@@ -1,10 +1,11 @@
 ---
-title: "Try...Catch....Finally – příkaz (Visual Basic)"
+title: Try...Catch....Finally – příkaz (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Try...Catch...Finally
@@ -24,14 +25,14 @@ helpviewer_keywords:
 - Visual Basic code, handling errors while running
 - structured exception handling, Try...Catch...Finally statements
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
-caps.latest.revision: "69"
+caps.latest.revision: 69
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c297a84b37b455a4b30b1848aa9bdd30dc567ec1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 701475d41d24ad89e6c83796f7cc5cd4b7802a32
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch....Finally – příkaz (Visual Basic)
 Poskytuje způsob, jak zpracovávat některé nebo všechny možné chyby, které mohou nastat v každém bloku kódu, při stále běhu kódu.  
@@ -70,17 +71,17 @@ End Try
 ## <a name="remarks"></a>Poznámky  
  Pokud očekáváte, že konkrétní výjimka mohou nastat během určité části kódu, vložte kód `Try` blokovat a použít `Catch` blok k uchování kontroly a zpracovat výjimku, pokud k němu dojde.  
   
- A `Try…Catch` příkaz se skládá z `Try` bloku, za nímž následuje jeden nebo více `Catch` klauzule, které určují obslužné rutiny pro různé výjimky. Pokud je vyvolána výjimka `Try` bloku [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] hledá `Catch` příkaz, který zpracovává výjimku. Pokud odpovídající `Catch` příkaz nebyl nalezen, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] prozkoumá metodu, která volá metodu aktuální, a tak dále zásobníkem volání. Pokud žádné `Catch` bloku nenajde, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zobrazí uživateli zprávu neošetřené výjimky a zastaví provádění tohoto programu.  
+ A `Try…Catch` příkaz se skládá z `Try` bloku, za nímž následuje jeden nebo více `Catch` klauzule, které určují obslužné rutiny pro různé výjimky. Pokud je vyvolána výjimka `Try` blokovat, hledá jazyka Visual Basic `Catch` příkaz, který zpracovává výjimku. Pokud odpovídající `Catch` příkaz nebyl nalezen, Visual Basic prozkoumá metodu, která volá metodu aktuální, a tak dále zásobníkem volání. Pokud žádné `Catch` bloku nenajde, Visual Basic zobrazí uživateli zprávu neošetřené výjimky a zastaví provádění tohoto programu.  
   
  Můžete použít více než jednu `Catch` příkaz v `Try…Catch` příkaz. Pokud použijete tento pořadí `Catch` klauzule je důležité, protože se zkontrolují v pořadí. Před méně konkrétní ty catch konkrétnější výjimky.  
   
  Následující `Catch` příkaz podmínky jsou nejméně specifická a zachytí všechny výjimky, které jsou odvozeny od <xref:System.Exception> třídy. Jeden z těchto variant má obvykle použít jako poslední `Catch` blokovat `Try...Catch...Finally` struktura po zachycování specifických výjimek očekáváte. Tok řízení nikdy dosáhnout `Catch` blok, který odpovídá některé z těchto variant.  
   
--   `type` Je `Exception`, například:`Catch ex As Exception`  
+-   `type` Je `Exception`, například: `Catch ex As Exception`  
   
--   Příkaz neobsahuje žádné `exception` proměnných, například:`Catch`  
+-   Příkaz neobsahuje žádné `exception` proměnných, například: `Catch`  
   
- Když `Try…Catch…Finally` příkaz vnořen v jiném `Try` bloku [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] nejprve zkontroluje každý `Catch` příkaz v nejvnitřnější `Try` bloku. Pokud neexistuje odpovídající `Catch` příkaz nenajde, vyhledávání pokračuje do `Catch` ve vnějším `Try…Catch…Finally` bloku.  
+ Když `Try…Catch…Finally` příkaz vnořen v jiném `Try` bloku jazyka Visual Basic nejprve zkontroluje každý `Catch` příkaz v nejvnitřnější `Try` bloku. Pokud neexistuje odpovídající `Catch` příkaz nenajde, vyhledávání pokračuje do `Catch` ve vnějším `Try…Catch…Finally` bloku.  
   
  Lokální proměnné z `Try` nejsou k dispozici v bloku `Catch` blokovat, protože jsou samostatné bloky. Pokud chcete použití proměnné v více než jeden blok, deklarovat proměnnou mimo `Try...Catch...Finally` struktura.  
   
@@ -108,7 +109,7 @@ End Try
 ## <a name="exception-argument"></a>Výjimky argumentu  
  `Catch` Bloku `exception` argument je instance <xref:System.Exception> nebo třída odvozená z `Exception` třídy. `Exception` Odpovídá chybu, která došlo k chybě v instanci třídy `Try` bloku.  
   
- Vlastnosti `Exception` objektu nápovědy k identifikaci příčina a umístění výjimku. Například <xref:System.Exception.StackTrace%2A> seznamů vlastností vyvolání metody, které vedly k výjimce a pomáhá vám zjistit, kde došlo k chybě v kódu. <xref:System.Exception.Message%2A>vrátí zprávu, která popisuje výjimku. <xref:System.Exception.HelpLink%2A>Vrátí odkaz na související soubor nápovědy. <xref:System.Exception.InnerException%2A>Vrátí `Exception` objektu, která způsobila, že aktuální výjimku nebo vrátí `Nothing` Pokud neexistuje žádné původní `Exception`.  
+ Vlastnosti `Exception` objektu nápovědy k identifikaci příčina a umístění výjimku. Například <xref:System.Exception.StackTrace%2A> seznamů vlastností vyvolání metody, které vedly k výjimce a pomáhá vám zjistit, kde došlo k chybě v kódu. <xref:System.Exception.Message%2A> vrátí zprávu, která popisuje výjimku. <xref:System.Exception.HelpLink%2A> Vrátí odkaz na související soubor nápovědy. <xref:System.Exception.InnerException%2A> Vrátí `Exception` objektu, která způsobila, že aktuální výjimku nebo vrátí `Nothing` Pokud neexistuje žádné původní `Exception`.  
   
 ## <a name="considerations-when-using-a-trycatch-statement"></a>Informace týkající se použití bloku Try... Catch – příkaz  
  Použití `Try…Catch` příkaz pouze na signalizaci výskytem program neobvyklou nebo neočekávané události. Důvody zahrnují následující:  

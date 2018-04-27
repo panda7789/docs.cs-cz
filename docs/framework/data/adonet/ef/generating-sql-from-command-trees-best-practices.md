@@ -1,24 +1,26 @@
 ---
-title: "Generování příkazu SQL ze stromy příkazů – doporučené postupy"
-ms.custom: 
+title: Generování příkazu SQL ze stromy příkazů – doporučené postupy
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d68194ab83a6606337a33668470411ed8b1c6957
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 037d1eaa8d781d012cde7a1bd3b08aa7003edd77
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Generování příkazu SQL ze stromy příkazů – doporučené postupy
 Stromy příkazů dotazu výstup úzce model dotazů v SQL vyjádřit kombinací. Existují však určité běžné problémy pro zprostředkovatele zapisovače při generování SQL ze stromu příkazů výstupu. Toto téma popisuje tyto problémy. V dalším tématu ukázkového zprostředkovatele ukazuje, jak vyřešit tyto problémy.  
@@ -147,7 +149,7 @@ ON b.y = d.z
  Výrazy mohou být znovu použity ve stromu příkaz dotazu předaná [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Nepředpokládejte, že každý výraz zobrazí pouze jednou v dotazu strom příkazů.  
   
 ## <a name="mapping-primitive-types"></a>Mapování primitivní typy  
- Při mapování typů koncepční (EDM) na typy zprostředkovatele, by měl namapujte nejširší typ (Int32) tak, aby vyhovovaly všech možných hodnot. Vyhněte se také, mapování na typy, které nelze použít u mnoha operací, jako jsou typy objektů BLOB (například `ntext` v [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]).  
+ Při mapování typů koncepční (EDM) na typy zprostředkovatele, by měl namapujte nejširší typ (Int32) tak, aby vyhovovaly všech možných hodnot. Vyhněte se také, mapování na typy, které nelze použít u mnoha operací, jako jsou typy objektů BLOB (například `ntext` v systému SQL Server).  
   
 ## <a name="see-also"></a>Viz také  
  [Generování SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)

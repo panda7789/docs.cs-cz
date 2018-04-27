@@ -10,37 +10,37 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-caps.latest.revision: ''
+caps.latest.revision: 25
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: fb23f329906e21f3d8558139075c5f575f2f13bd
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a636734958cd73a2f158d3f25cbbe448ff703612
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="what39s-new-in-adonet"></a>Co&#39;s nového v technologii ADO.NET
 Následující funkce jsou v nové [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 ## <a name="sqlclient-data-provider"></a>Zprostředkovatel dat SqlClient  
- Následující funkce jsou v nové [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]:  
+ Následující funkce jsou v nové [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]:  
   
 -   ConnectRetryCount a ConnectRetryInterval připojovací řetězec klíčová slova (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) umožňuje řídit funkci odolnosti nečinné připojení.  
   
--   Podpora z streamování [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] aplikace podporuje scénáře, kde nestrukturovaných dat na serveru.  V tématu [podpora streamování SqlClient](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md) Další informace.  
+-   Podpora v systému SQL Server k aplikaci streamování podporuje scénáře, kde nestrukturovaných dat na serveru.  V tématu [podpora streamování SqlClient](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md) Další informace.  
   
 -   Byla přidána podpora pro asynchronní programování.  V tématu [asynchronní programování](../../../../docs/framework/data/adonet/asynchronous-programming.md) Další informace.  
   
 -   Počet selhání připojení bude nyní přihlášeni rozšířené události protokolu. Další informace najdete v tématu [Data trasování v ADO.NET](../../../../docs/framework/data/adonet/data-tracing.md).  
   
--   SqlClient teď obsahuje podporu pro [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]na vysokou dostupnost, funkce obnovení po havárii, AlwaysOn. Další informace najdete v tématu [SqlClient podporu pro vysokou dostupnost a zotavení po havárii](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).  
+-   SqlClient teď obsahuje podporu pro SQL Server vysokou dostupnost, funkce obnovení po havárii, AlwaysOn. Další informace najdete v tématu [SqlClient podporu pro vysokou dostupnost a zotavení po havárii](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).  
   
--   Heslo lze předat jako <xref:System.Security.SecureString> při použití [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] ověřování. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlCredential>.  
+-   Heslo lze předat jako <xref:System.Security.SecureString> při použití ověřování systému SQL Server. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlCredential>.  
   
--   Při `TrustServerCertificate` hodnotu false a `Encrypt` probíhá hodnotu PRAVDA, server název (nebo IP adresu) [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] certifikát SSL musí přesně shodovat, název serveru (nebo IP adresu) zadaný v připojovacím řetězci. Pokus o připojení, jinak nebude úspěšná. Další informace najdete v části Popis `Encrypt` možnost připojení v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
+-   Když `TrustServerCertificate` hodnotu false a `Encrypt` má hodnotu true, název serveru (nebo IP adresa) v certifikátu SSL systému SQL Server se musí přesně shodovat název serveru (nebo IP adresu) zadaný v připojovacím řetězci. Pokus o připojení, jinak nebude úspěšná. Další informace najdete v části Popis `Encrypt` možnost připojení v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
      Pokud se tato změna způsobí, že do již nemůže připojit existující aplikaci, můžete je vyřešit aplikace pomocí jednoho z následujících akcí:  
   

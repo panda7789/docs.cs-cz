@@ -1,27 +1,29 @@
 ---
-title: "Čítače výkonu v technologii ADO.NET"
-ms.custom: 
+title: Čítače výkonu v technologii ADO.NET
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9843d5c5edfc5ea590e4e6d0e5474a7d817e0ba6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: a36e552392f887cd4e0f6dfac822c87f08a90af7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="performance-counters-in-adonet"></a>Čítače výkonu v technologii ADO.NET
 ADO.NET 2.0 zavedená rozšířenou podporu pro čítače výkonu, který zahrnuje podporu pro obě <xref:System.Data.SqlClient> a <xref:System.Data.OracleClient>. <xref:System.Data.SqlClient> Čítače výkonu, které jsou k dispozici v předchozích verzích technologie ADO.NET byly zastaralé a nahradí nové čítače výkonu, které jsou popsané v tomto tématu. Čítače výkonu technologie ADO.NET můžete použít k monitorování stavu aplikace a prostředky připojení, které používá. Čítače výkonu pomocí sledování výkonu systému Windows se dá sledovat nebo k němu přístup programově pomocí <xref:System.Diagnostics.PerformanceCounter> třídy v <xref:System.Diagnostics> oboru názvů.  
@@ -66,7 +68,7 @@ ADO.NET 2.0 zavedená rozšířenou podporu pro čítače výkonu, který zahrnu
  Následující aplikace konzoly ukazuje, jak načíst hodnoty čítače výkonu ve vaší aplikaci. Připojení musí být otevřený a aktivní informace, které má být vrácen pro všechny čítače výkonu technologie ADO.NET.  
   
 > [!NOTE]
->  Tento příklad používá vzorku **AdventureWorks** databáze součástí [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Připojovací řetězce, který je součástí ukázkový kód předpokládají, že databáze je nainstalovaná a k dispozici v místním počítači s názvem instance SqlExpress a že jste vytvořili přihlášení serveru SQL, které se shodují s těmi, zadaný v připojovacích řetězcích. Budete muset povolit přihlášení serveru SQL, pokud je server nakonfigurovaný pomocí výchozích nastavení zabezpečení, která umožňuje pouze ověřování systému Windows. Upravte připojovací řetězce podle potřeby, aby odpovídaly vašemu prostředí.  
+>  Tento příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. Připojovací řetězce, který je součástí ukázkový kód předpokládají, že databáze je nainstalovaná a k dispozici v místním počítači s názvem instance SqlExpress a že jste vytvořili přihlášení serveru SQL, které se shodují s těmi, zadaný v připojovacích řetězcích. Budete muset povolit přihlášení serveru SQL, pokud je server nakonfigurovaný pomocí výchozích nastavení zabezpečení, která umožňuje pouze ověřování systému Windows. Upravte připojovací řetězce podle potřeby, aby odpovídaly vašemu prostředí.  
   
 ### <a name="example"></a>Příklad  
   

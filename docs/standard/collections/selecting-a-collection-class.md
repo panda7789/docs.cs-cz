@@ -1,12 +1,12 @@
 ---
-title: "Výběr třídy kolekce"
-ms.custom: 
+title: Výběr třídy kolekce
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - last-in-first-out collections
@@ -16,18 +16,18 @@ helpviewer_keywords:
 - Collections classes
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 05339b829262a6b9b3a0265e4fbd444c6d586ea3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cede57d398930684a68ad15f3e6426939bba2e08
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 Ujistěte se, že pečlivě zvolte třídě kolekce. Pomocí nesprávného typu může omezit použití kolekce. Obecně platí, nepoužívejte typy v <xref:System.Collections> obor názvů Pokud jsou konkrétně cílení na rozhraní .NET Framework verze 1.1. Obecné a souběžné verze kolekcí jsou upřednostňované z důvodu jejich vyšší bezpečnost typů a dalších vylepšení.  
@@ -72,20 +72,20 @@ Ujistěte se, že pečlivě zvolte třídě kolekce. Pomocí nesprávného typu 
   
     -   <xref:System.Collections.SortedList> Třídy a <xref:System.Collections.Generic.SortedDictionary%602> a <xref:System.Collections.Generic.SortedList%602> obecné třídy řadit jejich elementy pomocí klíče, na základě implementace <xref:System.Collections.IComparer> rozhraní a <xref:System.Collections.Generic.IComparer%601> obecné rozhraní.  
   
-    -   <xref:System.Collections.ArrayList>poskytuje <xref:System.Collections.ArrayList.Sort%2A> metody, která použije <xref:System.Collections.IComparer> implementace jako parametr. Jeho obecný protějšek <xref:System.Collections.Generic.List%601> obecná třída poskytuje <xref:System.Collections.Generic.List%601.Sort%2A> metoda, která přebírá implementaci <xref:System.Collections.Generic.IComparer%601> obecné rozhraní jako parametr.  
+    -   <xref:System.Collections.ArrayList> poskytuje <xref:System.Collections.ArrayList.Sort%2A> metody, která použije <xref:System.Collections.IComparer> implementace jako parametr. Jeho obecný protějšek <xref:System.Collections.Generic.List%601> obecná třída poskytuje <xref:System.Collections.Generic.List%601.Sort%2A> metoda, která přebírá implementaci <xref:System.Collections.Generic.IComparer%601> obecné rozhraní jako parametr.  
   
 -   Potřebujete rychle vyhledávat a načítat informace?  
   
-    -   <xref:System.Collections.Specialized.ListDictionary>je rychlejší než <xref:System.Collections.Hashtable> pro kolekce malé (10 položek nebo méně). <xref:System.Collections.Generic.Dictionary%602> Obecná třída poskytuje rychlejší vyhledávání, než <xref:System.Collections.Generic.SortedDictionary%602> obecná třída. Vícevláknová implementace je <xref:System.Collections.Concurrent.ConcurrentDictionary%602>. <xref:System.Collections.Concurrent.ConcurrentBag%601>poskytuje rychlé vícevláknové vkládání pro neuspořádaný data. Další informace o obou vícevláknových typech najdete v tématu [kdy použít kolekci s bezpečnými vlákny](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
+    -   <xref:System.Collections.Specialized.ListDictionary> je rychlejší než <xref:System.Collections.Hashtable> pro kolekce malé (10 položek nebo méně). <xref:System.Collections.Generic.Dictionary%602> Obecná třída poskytuje rychlejší vyhledávání, než <xref:System.Collections.Generic.SortedDictionary%602> obecná třída. Vícevláknová implementace je <xref:System.Collections.Concurrent.ConcurrentDictionary%602>. <xref:System.Collections.Concurrent.ConcurrentBag%601> poskytuje rychlé vícevláknové vkládání pro neuspořádaný data. Další informace o obou vícevláknových typech najdete v tématu [kdy použít kolekci s bezpečnými vlákny](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
   
 -   Potřebujete kolekce, které přijímají pouze řetězce?  
   
-    -   <xref:System.Collections.Specialized.StringCollection>(na základě <xref:System.Collections.IList>) a <xref:System.Collections.Specialized.StringDictionary> (na základě <xref:System.Collections.IDictionary>) jsou v <xref:System.Collections.Specialized> oboru názvů.  
+    -   <xref:System.Collections.Specialized.StringCollection> (na základě <xref:System.Collections.IList>) a <xref:System.Collections.Specialized.StringDictionary> (na základě <xref:System.Collections.IDictionary>) jsou v <xref:System.Collections.Specialized> oboru názvů.  
   
     -   Kromě toho můžete použít jakékoli třídy obecnou kolekci v <xref:System.Collections.Generic> oboru názvů jako silného typu řetězec kolekce tak, že zadáte <xref:System.String> třídy pro jejich argumenty obecného typu.  
   
 ## <a name="linq-to-objects-and-plinq"></a>LINQ na objekty a PLINQ  
- LINQ na objekty umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, dokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzorek pro přístup k datům, jsou obvykle více stručná a čitelná než standardní `foreach` v cyklu a poskytují filtrování, řazení a seskupování schopností. Další informace najdete v tématu [LINQ na objekty](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9).  
+ LINQ na objekty umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, dokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzorek pro přístup k datům, jsou obvykle více stručná a čitelná než standardní `foreach` v cyklu a poskytují filtrování, řazení a seskupování schopností. Další informace najdete v tématu [LINQ na objekty](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9).  
   
  PLINQ poskytuje paralelní provádění LINQ na objekty, které nabízejí rychlejší spuštění dotazu v mnoha scénářích efektivněji využívat počítačů s více jádry. Další informace najdete v tématu [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
   

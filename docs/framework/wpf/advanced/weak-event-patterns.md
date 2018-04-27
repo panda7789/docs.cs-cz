@@ -1,34 +1,36 @@
 ---
-title: "Slabý vzor událostí"
-ms.custom: 
+title: Slabý vzor událostí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - weak event pattern implementation [WPF]
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 21a36797f945f37a641e7002bbb9937a664650fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f96327f8eaad36f3faebf48db083125816589821
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
-V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroje událostí nebude v koordinaci s objektem naslouchací proces, který obslužná rutina připojen ke zdroji. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]představuje návrhový vzor, který lze tento problém vyřešit pomocí vyhrazené manager třídu pro konkrétní události a implementace rozhraní na naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabé událostí vzor*.  
+V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroje událostí nebude v koordinaci s objektem naslouchací proces, který obslužná rutina připojen ke zdroji. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] představuje návrhový vzor, který lze tento problém vyřešit pomocí vyhrazené manager třídu pro konkrétní události a implementace rozhraní na naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabé událostí vzor*.  
   
 ## <a name="why-implement-the-weak-event-pattern"></a>Proč implementovat vzor slabé událostí?  
- Naslouchání událostem může vést k nevracení paměti. Typické technika pro naslouchání na událost, je použití syntaxe pro specifický jazyk, který připojí obslužnou rutinu pro událost ve zdroji. Například v [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)], že syntaxe je: `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
+ Naslouchání událostem může vést k nevracení paměti. Typické technika pro naslouchání na událost, je použití syntaxe pro specifický jazyk, který připojí obslužnou rutinu pro událost ve zdroji. Například v jazyce C#, že syntaxe je: `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
   
  Tento postup vytvoří silné odkaz ze zdroje událostí pro událost naslouchací proces. Obvykle je připojení obslužné rutiny události pro naslouchací proces způsobí, že naslouchací proces má doba života objektu, který je ovlivněno doba života objektu zdroje (Pokud je výslovně odebrali obslužné rutiny události). Ale v některých případech můžete doba života objektu z naslouchacího procesu kontrolován dalších faktorech, například zda aktuálně patří vizuálním stromu aplikace a ne serverem životnost zdroje. Vždy, když doba života objektu zdroj přesahuje doba života objektu naslouchacího procesu, vzoru normálního událostí vede k nevrácenou pamětí: naslouchací proces je udržováno zachování delší než určená.  
   

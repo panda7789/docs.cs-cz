@@ -1,11 +1,12 @@
 ---
-title: "Implicitní a explicitní převody (Visual Basic)"
-ms.custom: 
+title: Implicitní a explicitní převody (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - conversions [Visual Basic], type
@@ -26,17 +27,17 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], implicit
 - implicit data type conversions [Visual Basic]
 ms.assetid: 77de1659-af8a-492c-967e-e7ef60ccce66
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6e9dd698e1cc84464cd12d33767feec960c511ca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9827cecce0a15d37d2ffe3ccf691404149b156fb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a>Implicitní a explicitní převody (Visual Basic)
-*Implicitní převod* nevyžaduje žádnou zvláštní syntaxi ve zdrojovém kódu. V následujícím příkladu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] implicitně převede hodnotu `k` na hodnotu s plovoucí desetinnou čárkou jednoduchou přesností před přiřazením jeho `q`.  
+*Implicitní převod* nevyžaduje žádnou zvláštní syntaxi ve zdrojovém kódu. V následujícím příkladu, Visual Basic implicitně převede hodnotu `k` na hodnotu s plovoucí desetinnou čárkou jednoduchou přesností před přiřazením jeho `q`.  
   
 ```  
 Dim k As Integer  
@@ -46,7 +47,7 @@ k = 432
 q = k  
 ```  
   
- *Explicitní převod* používá klíčového slova převodu typu. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]poskytuje několik takové klíčová slova, která coerce výrazu v závorkách na požadovaný datový typ. Tato klíčová slova fungovat stejně jako funkce, ale kompilátor generuje vložený kód tak, aby provádění mírně rychlejší než se volání funkce.  
+ *Explicitní převod* používá klíčového slova převodu typu. Visual Basic poskytuje několik takové klíčová slova, která coerce výrazu v závorkách na požadovaný datový typ. Tato klíčová slova fungovat stejně jako funkce, ale kompilátor generuje vložený kód tak, aby provádění mírně rychlejší než se volání funkce.  
   
  V následující rozšíření v předchozím příkladu `CInt` – klíčové slovo převede hodnotu `q` zpět na celé číslo před přiřazením jeho `k`.  
   
@@ -62,28 +63,28 @@ k = CInt(q)
   
 |Typ převodu – klíčové slovo|Převede výraz na datový typ|Povolené datové typy výraz, který má být převeden|  
 |---|---|---|  
-|`CBool`|[Boolean – datový typ](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `String`,`Object`|  
-|`CByte`|[Byte – datový typ](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|Všechny číselného typu (včetně `SByte` a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CChar`|[Char – datový typ](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`String`, `Object`|  
-|`CDate`|[Date – datový typ](../../../../visual-basic/language-reference/data-types/date-data-type.md)|`String`, `Object`|  
-|`CDbl`|[Double – datový typ](../../../../visual-basic/language-reference/data-types/double-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CDec`|[Decimal – datový typ](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CInt`|[Integer – datový typ](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CLng`|[Long – datový typ](../../../../visual-basic/language-reference/data-types/long-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CObj`|[Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md)|Jakýkoli typ|  
-|`CSByte`|[SByte – datový typ](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|Všechny číselného typu (včetně `Byte` a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CShort`|[Short – datový typ](../../../../visual-basic/language-reference/data-types/short-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CSng`|[Single – datový typ](../../../../visual-basic/language-reference/data-types/single-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CStr`|[String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `Char`, `Char` pole, `Date`,`Object`|  
+|`CBool`|[Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `String`, `Object`|  
+|`CByte`|[Datový typ Byte](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|Všechny číselného typu (včetně `SByte` a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CChar`|[Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`String`, `Object`|  
+|`CDate`|[Datový typ Date](../../../../visual-basic/language-reference/data-types/date-data-type.md)|`String`, `Object`|  
+|`CDbl`|[Datový typ Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CDec`|[Datový typ Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CInt`|[Datový typ Integer](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CLng`|[Datový typ Long](../../../../visual-basic/language-reference/data-types/long-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CObj`|[Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)|Jakýkoli typ|  
+|`CSByte`|[Datový typ SByte](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|Všechny číselného typu (včetně `Byte` a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CShort`|[Datový typ Short](../../../../visual-basic/language-reference/data-types/short-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CSng`|[Datový typ Single](../../../../visual-basic/language-reference/data-types/single-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CStr`|[Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `Char`, `Char` pole, `Date`, `Object`|  
 |`CType`|Zadaný typ následující čárkou (`,`)|Při převodu na *základní datový typ* (včetně pole Základní typ), stejné typy jako povolený pro odpovídající převod klíčové slovo<br /><br /> Při převodu na *složeného datového typu*, implementuje rozhraní a třídy, ze kterých dědí<br /><br /> Při převodu na třídu nebo strukturu, ve kterém mají přetížený `CType`, že třídu nebo strukturu|  
-|`CUInt`|[Uinteger – datový typ](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CULng`|[Ulong – datový typ](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
-|`CUShort`|[Ushort – datový typ](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`,`Object`|  
+|`CUInt`|[Datový typ UInteger](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CULng`|[Datový typ ULong](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
+|`CUShort`|[Datový typ UShort](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|Všechny číselného typu (včetně `Byte`, `SByte`a vytvořit její výčet typů), `Boolean`, `String`, `Object`|  
   
 ## <a name="the-ctype-function"></a>CType – funkce  
  [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) funguje na dva argumenty. První je výraz, který má být převeden, a druhá dat cílové třídy typu nebo objektu. Všimněte si, že první argument musí být výraz není typu.  
   
- `CType`je *vložená funkce*znamená zkompilovaný kód umožňuje převod, často bez generování událostí funkce volání. To zvyšuje výkon.  
+ `CType` je *vložená funkce*znamená zkompilovaný kód umožňuje převod, často bez generování událostí funkce volání. To zvyšuje výkon.  
   
  Porovnání `CType` s další typ převodu klíčová slova, přečtěte si téma [DirectCast – operátor](../../../../visual-basic/language-reference/operators/directcast-operator.md) a [TryCast – operátor](../../../../visual-basic/language-reference/operators/trycast-operator.md).  
   
@@ -109,7 +110,7 @@ h = CType(cZ, iZone)
 ```  
   
 ### <a name="array-types"></a>Typy polí  
- `CType`Můžete také převést pole datové typy, jako v následujícím příkladu.  
+ `CType` Můžete také převést pole datové typy, jako v následujícím příkladu.  
   
 ```  
 Dim v() As classV  
@@ -144,4 +145,4 @@ End If
  [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Řešení potíží s datové typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+ [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

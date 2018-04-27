@@ -1,11 +1,12 @@
 ---
-title: "Postupy: Volání procedury, která vrátí hodnotu (Visual Basic)."
-ms.custom: 
+title: 'Postupy: Volání procedury, která vrátí hodnotu (Visual Basic).'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - procedure calls [Visual Basic], returning values
@@ -13,14 +14,14 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f6d408eed67fa417f42252bb49ecea28d4458382
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cbaaa5ed17845a7ac8847786fb10111c724015ba
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Volání procedury, která vrátí hodnotu (Visual Basic).
 A `Function` postup vrátí hodnotu volání kódu. Můžete pro volání ho včetně jeho název a argumenty buď na pravé straně příkazu přiřazení nebo ve výrazu.  
@@ -48,14 +49,14 @@ A `Function` postup vrátí hodnotu volání kódu. Můžete pro volání ho vč
 4.  Hodnota vrácená v postupu je uložené v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad volání [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.Environ%2A> k načtení hodnoty proměnné prostředí operačního systému. První řádek volání `Environ` ve výrazu a druhý řádek nazve je v příkazu přiřazení. `Environ`přebírá název proměnné jako jedinou argument. Hodnota proměnné vrátí volání kódu.  
+ V následujícím příkladu volání jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> k načtení hodnoty proměnné prostředí operačního systému. První řádek volání `Environ` ve výrazu a druhý řádek nazve je v příkazu přiřazení. `Environ` přebírá název proměnné jako jedinou argument. Hodnota proměnné vrátí volání kódu.  
   
  [!code-vb[VbVbcnProcedures#7](./codesnippet/VisualBasic/how-to-call-a-procedure-that-returns-a-value_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Function – procedury](./function-procedures.md)  
+ [Procedury funkce](./function-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md)  
- [Postupy: vytvoření procedury, která vrátí hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)  
- [Postupy: vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)  
- [Postupy: volání procedury, která nevrátí hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)
+ [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Postupy: Vytvoření procedury, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)  
+ [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)  
+ [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)

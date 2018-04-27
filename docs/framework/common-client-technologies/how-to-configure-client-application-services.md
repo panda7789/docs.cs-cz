@@ -1,28 +1,28 @@
 ---
-title: "Postupy: Konfigurace klientských aplikačních služeb"
-ms.custom: 
+title: 'Postupy: Konfigurace klientských aplikačních služeb'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - client application services, configuring
 ms.assetid: 34a8688a-a32c-40d3-94be-c8e610c6a4e8
-caps.latest.revision: 
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bac21a0c9535326becfe94610db33869da89c471
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e7c6d31293109a0d778136235ccfc894aeba8574
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-configure-client-application-services"></a>Postupy: Konfigurace klientských aplikačních služeb
 Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **Návrhář projektu** povolit a nakonfigurovat klientské aplikační služby. Klient aplikačních služeb můžete použít k ověření uživatelů a načítání uživatelských rolí a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
@@ -100,7 +100,7 @@ Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-
   
      Výchozí hodnota `Data Source = |SQL/CE|` se zobrazí v textovém poli.  
   
-3.  Pokud chcete vygenerovat a používat databázi systému SQL Server Compact, ponechte výchozí hodnotu řetězce připojení. [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]bude generovat soubor databáze a umístí jej v adresáři indikován <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> vlastnost.  
+3.  Pokud chcete vygenerovat a používat databázi systému SQL Server Compact, ponechte výchozí hodnotu řetězce připojení. [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] bude generovat soubor databáze a umístí jej v adresáři indikován <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> vlastnost.  
   
 4.  Generovat a používat šifrované [!INCLUDE[ssEW](../../../includes/ssew-md.md)] databáze, přidejte `password` a `encrypt database` hodnoty do připojovacího řetězce, jak je znázorněno v následujícím příkladu.  
   
@@ -111,7 +111,7 @@ Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-
     Data Source = |SQL/CE|;password=<password>;encrypt database=true  
     ```  
   
-5.  Chcete-li použít vlastní [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] databázi, zadejte vlastní připojovací řetězec. Informace o formátech platný připojovací řetězec, najdete v článku [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] dokumentaci. Tato databáze není generován automaticky. Připojovací řetězec musí odkazovat na existující databázi, která můžete vytvořit pomocí následujících příkazů SQL.  
+5.  Pokud chcete používat vlastní databázi systému SQL Server, zadejte vlastní připojovací řetězec. Informace o formátech platný připojovací řetězec naleznete v dokumentaci k systému SQL Server. Tato databáze není generován automaticky. Připojovací řetězec musí odkazovat na existující databázi, která můžete vytvořit pomocí následujících příkazů SQL.  
   
     ```  
     CREATE TABLE ApplicationProperties (PropertyName nvarchar(256),  
@@ -127,7 +127,7 @@ Toto téma popisuje postup použití [!INCLUDE[vsprvs](../../../includes/vsprvs-
 ## <a name="using-custom-providers"></a>Použití vlastní zprostředkovatelé  
  Ve výchozím nastavení používá funkci klientských aplikací služby zprostředkovatele v <xref:System.Web.ClientServices.Providers?displayProperty=nameWithType> oboru názvů. Při konfiguraci vaší aplikace pomocí **služby** stránky **Návrhář projektu**, odkazy na tyto zprostředkovatele jsou přidány do souboru App.config. Tyto výchozí zprostředkovatele přístup odpovídající zprostředkovatele na serveru. Webové služby je často nakonfigurovaný pro přístup k datům uživatele prostřednictvím zprostředkovatele, jako <xref:System.Web.Security.SqlMembershipProvider> a <xref:System.Web.Security.SqlRoleProvider>.  
   
- Pokud chcete použít vlastní poskytovatelé, bude obvykle změnit zprostředkovatele na straně serveru, tak, aby mají vliv na všechny klientské aplikace, které přístup k serveru. Máte ale možnost pomocí jiného než výchozího zprostředkovatele na straně klienta. Vlastní zprostředkovatelé ověřování nebo role v souboru App.config vašeho projektu, můžete zadat, jak je znázorněno v následujícím postupu. Informace o tom, jak vytvořit vlastní ověřování a zprostředkovatelů rolí najdete v tématu [implementace poskytovatele členství](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582) a [implementaci zprostředkovatele rolí](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d). Můžete použít také vlastní nastavení poskytovatele změnou vašeho projektu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]). Další informace najdete v tématu [architektura nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-architecture.md).  
+ Pokud chcete použít vlastní poskytovatelé, bude obvykle změnit zprostředkovatele na straně serveru, tak, aby mají vliv na všechny klientské aplikace, které přístup k serveru. Máte ale možnost pomocí jiného než výchozího zprostředkovatele na straně klienta. Vlastní zprostředkovatelé ověřování nebo role v souboru App.config vašeho projektu, můžete zadat, jak je znázorněno v následujícím postupu. Informace o tom, jak vytvořit vlastní ověřování a zprostředkovatelů rolí najdete v tématu [implementace poskytovatele členství](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582) a [implementaci zprostředkovatele rolí](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d). Můžete použít také vlastní nastavení poskytovatele změnou vašeho projektu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic). Další informace najdete v tématu [architektura nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-architecture.md).  
   
 #### <a name="to-configure-client-application-services-to-use-non-default-providers"></a>Konfigurace klientských aplikačních služeb používat jiného než výchozího zprostředkovatele  
   

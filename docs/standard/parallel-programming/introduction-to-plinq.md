@@ -1,12 +1,12 @@
 ---
-title: "Úvod do PLINQ"
-ms.custom: 
+title: Úvod do PLINQ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,22 +14,22 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-caps.latest.revision: 
+caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6ee718737885618322c3623a80b0b091bbfc729d
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 24541b681844a2023df8d4d05f13b53d55375b80
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 ## <a name="what-is-a-parallel-query"></a>Co je paralelní dotaz?  
- Language-Integrated Query (LINQ) byla zavedená v [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].  Jeho součástí jsou jednotný model pro dotazování žádné <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat způsobem bezpečnost typů. LINQ na objekty je název pro LINQ dotazů, které jsou spouštěny proti kolekci v paměti, jako například <xref:System.Collections.Generic.List%601> a pole. Tento článek předpokládá, že máte základní znalosti o LINQ. Další informace najdete v tématu [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).  
+ Language-Integrated Query (LINQ) byla zavedená v [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].  Jeho součástí jsou jednotný model pro dotazování žádné <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat způsobem bezpečnost typů. LINQ na objekty je název pro LINQ dotazů, které jsou spouštěny proti kolekci v paměti, jako například <xref:System.Collections.Generic.List%601> a pole. Tento článek předpokládá, že máte základní znalosti o LINQ. Další informace najdete v tématu [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).  
   
  Paralelní LINQ (PLINQ) je paralelní provádění vzoru LINQ. PLINQ dotazu v mnoha směrech se podobá nejsou rovnoběžné dotazu LINQ to objekty. Dotazy PLINQ, stejně jako sekvenční [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] dotazy, pracují na všech paměťových <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> datového zdroje a mají odložené spouštění, což znamená, se nespustí dříve než dotaz zpracován. Základní rozdíl je, že PLINQ pokusí plně využívat všechny procesory systému. Dělá to pomocí vytváření oddílů zdroje dat do segmentů a spouštění dotazu v každém segmentu na samostatné pracovních vláken paralelně na více procesorů. V mnoha případech paralelní provádění znamená, že spuštění dotazu výrazně rychlejší.  
   
@@ -43,7 +43,7 @@ ms.lasthandoff: 02/27/2018
 ## <a name="the-parallelenumerable-class"></a>Třída ParallelEnumerable  
  <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> Třída zpřístupňuje téměř všechny funkce PLINQ.  To a zbytek <xref:System.Linq?displayProperty=nameWithType> obor názvů je kompilovány do sestavení System.Core.dll. Výchozí projektů C# a Visual Basic v sadě Visual Studio referenční sestavení a importovat obor názvů.  
   
- <xref:System.Linq.ParallelEnumerable> zahrnuje implementace všechny operátory standardní dotazu, které podporuje LINQ na objekty, i když se nepokusí učinit paralelní každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], najdete v části [Úvod do LINQ](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e).  
+ <xref:System.Linq.ParallelEnumerable> zahrnuje implementace všechny operátory standardní dotazu, které podporuje LINQ na objekty, i když se nepokusí učinit paralelní každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], najdete v části [Úvod do LINQ](https://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e).  
   
  Kromě standardní operátory dotazu <xref:System.Linq.ParallelEnumerable> třída obsahuje sadu metody, které umožňují specifické chování pro paralelní zpracování. Tyto metody specifické pro PLINQ jsou uvedeny v následující tabulce.  
   
@@ -93,10 +93,10 @@ ms.lasthandoff: 02/27/2018
  Některé operace vyžadují doručení zdrojová data sekvenční způsobem. <xref:System.Linq.ParallelEnumerable> Dotazu operátory vrátí do sekvenčního režimu automaticky pokud je to požadováno. Pro dotaz uživatelem definované operátory a delegáti uživatele, které vyžadují sekvenční provádění, poskytuje PLINQ <xref:System.Linq.ParallelEnumerable.AsSequential%2A> metoda. Při použití <xref:System.Linq.ParallelEnumerable.AsSequential%2A>, všechny následné operátory v dotazu se postupně, dokud <xref:System.Linq.ParallelEnumerable.AsParallel%2A> nebude volán znovu. Další informace najdete v tématu [postupy: Kombinování paralelních a sekvenčních LINQ dotazů](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md).  
   
 ## <a name="options-for-merging-query-results"></a>Možnosti sloučení výsledky dotazu  
- Když PLINQ dotazu se provede paralelně, je potřeba sloučit své výsledky z každé pracovní vlákno zpět do hlavní vlákno pro spotřeba `foreach` smyčky (`For Each` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), nebo pro vložení do seznamu nebo pole. V některých případech může být výhodné, zadejte konkrétní typ operace sloučení, například, při zahájení výroby výsledku rychleji. Pro tento účel PLINQ podporuje <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> metody a <xref:System.Linq.ParallelMergeOptions> výčtu. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
+ Když PLINQ dotazu se provede paralelně, je potřeba sloučit své výsledky z každé pracovní vlákno zpět do hlavní vlákno pro spotřeba `foreach` smyčky (`For Each` v jazyce Visual Basic), nebo pro vložení do seznamu nebo pole. V některých případech může být výhodné, zadejte konkrétní typ operace sloučení, například, při zahájení výroby výsledku rychleji. Pro tento účel PLINQ podporuje <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> metody a <xref:System.Linq.ParallelMergeOptions> výčtu. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
   
 ## <a name="the-forall-operator"></a>Operátor ForAll  
- V sekvenčních [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] dotazy, spuštění je odložení, dokud není dotaz zpracován buď v `foreach` (`For Each` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) cykly nebo podle vyvoláním metody <xref:System.Linq.ParallelEnumerable.ToList%2A> , <xref:System.Linq.ParallelEnumerable.ToArray%2A> , nebo <xref:System.Linq.ParallelEnumerable.ToDictionary%2A>. V PLINQ, můžete také použít `foreach` iteraci v rámci výsledky a provést dotaz. Ale `foreach` samotné nespustí paralelně, a proto vyžaduje, aby výstup z paralelní úlohy slučované zpět do vlákna, na kterém je spuštěn smyčky. V PLINQ, můžete použít `foreach` při musí zachovat konečné řazení výsledků dotazu, a také vždy, když zpracováváte výsledky sériovým způsobem, například když voláte `Console.WriteLine` pro jednotlivé elementy. Pro rychlejší provádění dotazu není zachováváno pořadí a při zpracování výsledků, které může být paralelizováno, použijte <xref:System.Linq.ParallelEnumerable.ForAll%2A> metodu za účelem provedení PLINQ dotazu. <xref:System.Linq.ParallelEnumerable.ForAll%2A> neprovede krok finálního sloučení. Následující příklad kódu ukazuje, jak používat <xref:System.Linq.ParallelEnumerable.ForAll%2A> metoda. <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> je zde použít, protože je optimalizovaný pro více vláken současně přidání bez pokusu o odebrání všech položek.  
+ V sekvenčních [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] dotazy, spuštění je odložení, dokud není dotaz zpracován buď v `foreach` (`For Each` v jazyce Visual Basic) cykly nebo podle vyvoláním metody <xref:System.Linq.ParallelEnumerable.ToList%2A> , <xref:System.Linq.ParallelEnumerable.ToArray%2A> , nebo <xref:System.Linq.ParallelEnumerable.ToDictionary%2A>. V PLINQ, můžete také použít `foreach` iteraci v rámci výsledky a provést dotaz. Ale `foreach` samotné nespustí paralelně, a proto vyžaduje, aby výstup z paralelní úlohy slučované zpět do vlákna, na kterém je spuštěn smyčky. V PLINQ, můžete použít `foreach` při musí zachovat konečné řazení výsledků dotazu, a také vždy, když zpracováváte výsledky sériovým způsobem, například když voláte `Console.WriteLine` pro jednotlivé elementy. Pro rychlejší provádění dotazu není zachováváno pořadí a při zpracování výsledků, které může být paralelizováno, použijte <xref:System.Linq.ParallelEnumerable.ForAll%2A> metodu za účelem provedení PLINQ dotazu. <xref:System.Linq.ParallelEnumerable.ForAll%2A> neprovede krok finálního sloučení. Následující příklad kódu ukazuje, jak používat <xref:System.Linq.ParallelEnumerable.ForAll%2A> metoda. <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> je zde použít, protože je optimalizovaný pro více vláken současně přidání bez pokusu o odebrání všech položek.  
   
  [!code-csharp[PLINQ#4](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#4)]
  [!code-vb[PLINQ#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#4)]  

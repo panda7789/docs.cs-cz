@@ -1,26 +1,26 @@
 ---
-title: "Chyby obnovitelné XSLT"
-ms.custom: 
+title: Chyby obnovitelné XSLT
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4564530cd173793519471c78105d0394595f6d5c
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 70491e86697356766b64a98201b2969883ab7ee4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="recoverable-xslt-errors"></a>Chyby obnovitelné XSLT
 Doporučení W3C XSL transformace XSLT () verze 1.0 zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelné chování. Například části 7.3 vytváření zpracování pokynů, XSLT 1.0 doporučení stavy, jedná se o chybu, pokud vytváření instancí obsah `xsl:processing-instruction` vytvoří uzly kromě textové uzly. Některé problémy je třeba 1.0 XSLT doporučení označuje, co decision provést pokud procesor rozhodne zotavit z chyby. Pro problém uveden v části 7.3 W3C říká, že můžete implementace obnovit z této chyby, bez ohledu na uzlech a jejich obsah.  
@@ -32,7 +32,7 @@ Doporučení W3C XSL transformace XSLT () verze 1.0 zahrnuje oblasti, ve kterýc
   
 -   Chyba označuje, že je pro tuto podmínku vyvolána výjimka.  
   
--   Odkazy na části lze nalézt v [W3C XSL transformace XSLT () verze 1.0 doporučení](http://www.w3.org/TR/xslt) a [W3C XSL transformace XSLT () verze 1.0 specifikace chybující](http://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
+-   Odkazy na části lze nalézt v [W3C XSL transformace XSLT () verze 1.0 doporučení](http://www.w3.org/TR/xslt) a [W3C XSL transformace XSLT () verze 1.0 specifikace chybující](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
   
 |Podmínka XSLT|Část|Chování XslCompiledTransform|  
 |--------------------|-------------|-----------------------------------|  
@@ -62,7 +62,7 @@ Doporučení W3C XSL transformace XSLT () verze 1.0 zahrnuje oblasti, ve kterýc
 |`value` Atribut `xsl:number` je NAN nekonečné nebo menší než 0,5|Chybující 24|Obnovení|  
 |Druhý argument funkce dokumentu sada uzlů je prázdný a je relativní identifikátor URI odkazu.|Chybující 14|Obnovení|  
   
- <sup>*</sup>Toto chování se liší od <xref:System.Xml.Xsl.XslTransform> třídy. Další informace najdete v tématu [implementace volitelné chování ve třídě XslTransform](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md).  
+ <sup>*</sup> Toto chování se liší od <xref:System.Xml.Xsl.XslTransform> třídy. Další informace najdete v tématu [implementace volitelné chování ve třídě XslTransform](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

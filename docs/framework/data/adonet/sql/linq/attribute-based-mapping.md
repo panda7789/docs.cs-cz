@@ -1,31 +1,33 @@
 ---
-title: "Na základě atributů mapování"
-ms.custom: 
+title: Na základě atributů mapování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a7a66b165e5bcfc605842b96295ae1721e7b3af5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 49969af962db9fb533ad316622af42104438be7d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="attribute-based-mapping"></a>Na základě atributů mapování
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje databázi systému SQL Server k [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model buď použití atributy nebo pomocí externího mapování souboru. Toto téma popisuje přístup založený na atributu.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje databázi systému SQL Server k [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model buď použití atributy nebo pomocí externího mapování souboru. Toto téma popisuje přístup založený na atributu.  
   
  Většina základní formou [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje databáze do <xref:System.Data.Linq.DataContext>, tabulku pro třídu a sloupce a vztahů s vlastností na těchto třídách. Atributy můžete také použít k mapování hierarchie dědičnosti v objektovém modelu. Další informace najdete v tématu [postupy: generování objektový Model v jazyce Visual Basic nebo C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
- Vývojáře, kteří používají [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] obvykle provádět na základě atributů mapování pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]. Můžete také použít nástroj příkazového řádku na SQLMetal, nebo můžete ručně kódu atributy sami. Další informace najdete v tématu [postupy: generování objektový Model v jazyce Visual Basic nebo C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ Vývojáři obvykle pomocí sady Visual Studio provádět na základě atributů mapování pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]. Můžete také použít nástroj příkazového řádku na SQLMetal, nebo můžete ručně kódu atributy sami. Další informace najdete v tématu [postupy: generování objektový Model v jazyce Visual Basic nebo C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
 > [!NOTE]
 >  Můžete také mapovat pomocí externího souboru XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
@@ -37,12 +39,12 @@ ms.lasthandoff: 01/17/2018
   
 |Vlastnost|Typ|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|V tématu<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Použít s jeho <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost, určuje název databáze.|  
+|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|V tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Použít s jeho <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost, určuje název databáze.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute>.  
   
 ## <a name="tableattribute-attribute"></a>Atribut TableAttribute  
- Pomocí tohoto atributu lze určit třídu jako třídu entity, který je přidružen databázové tabulky nebo zobrazení. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zpracovává tříd, které mají tento atribut jako trvalé třídy. V následující tabulce jsou popsány <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> vlastnost.  
+ Pomocí tohoto atributu lze určit třídu jako třídu entity, který je přidružen databázové tabulky nebo zobrazení. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zpracovává tříd, které mají tento atribut jako trvalé třídy. V následující tabulce jsou popsány <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> vlastnost.  
   
 |Vlastnost|Typ|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
@@ -59,7 +61,7 @@ ms.lasthandoff: 01/17/2018
   
 |Vlastnost|Typ|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|AutoSync|Nikdy|Dá pokyn modul CLR (CLR) k načtení hodnoty po operace insert nebo update.<br /><br /> Možnosti: Vždy, nikdy, OnUpdate, OnInsert.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|Funkcí automatické synchronizace|Nikdy|Dá pokyn modul CLR (CLR) k načtení hodnoty po operace insert nebo update.<br /><br /> Možnosti: Vždy, nikdy, OnUpdate, OnInsert.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>|Boolean|`true`|Označuje, že sloupec může obsahovat hodnoty null.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>|String|Typ sloupce odvozené databáze|Používá typy databáze a modifikátory k zadání typu sloupce databáze.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>|String|prázdný|Definuje počítaný sloupec v databázi.|  
@@ -72,7 +74,7 @@ ms.lasthandoff: 01/17/2018
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.ColumnAttribute>.  
   
 > [!NOTE]
->  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště rozlišují malá a velká písmena. Například zajistěte, že hodnoty atributu pro vlastnost AssociationAttribute.Storage malá a velká písmena pro odpovídající vlastnost názvy používá někde v kódu. To platí pro všechny programovacích jazyků .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně [!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)]. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
+>  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště rozlišují malá a velká písmena. Například zajistěte, že hodnoty atributu pro vlastnost AssociationAttribute.Storage malá a velká písmena pro odpovídající vlastnost názvy používá někde v kódu. To platí pro všechny programovacích jazyků .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně Visual Basic. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
 ## <a name="associationattribute-attribute"></a>Atribut AssociationAttribute  
  Tento atribut slouží k určení vlastnost, která má představovat přidružení v databázi, jako jsou cizí klíč pro vztah primární klíče. Další informace o vztazích najdete v tématu [postup: mapy databáze vztahy](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md).  
@@ -91,7 +93,7 @@ ms.lasthandoff: 01/17/2018
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.AssociationAttribute>.  
   
 > [!NOTE]
->  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště rozlišují malá a velká písmena. Například zajistěte, že hodnoty atributu pro vlastnost AssociationAttribute.Storage malá a velká písmena pro odpovídající vlastnost názvy používá někde v kódu. To platí pro všechny programovacích jazyků .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně [!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)]. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
+>  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště rozlišují malá a velká písmena. Například zajistěte, že hodnoty atributu pro vlastnost AssociationAttribute.Storage malá a velká písmena pro odpovídající vlastnost názvy používá někde v kódu. To platí pro všechny programovacích jazyků .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně Visual Basic. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
 ## <a name="inheritancemappingattribute-attribute"></a>Atribut InheritanceMappingAttribute  
  Tento atribut slouží k mapování hierarchie dědičnosti.  

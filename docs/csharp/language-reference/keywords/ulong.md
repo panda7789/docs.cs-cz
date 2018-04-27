@@ -1,5 +1,5 @@
 ---
-title: "ulong (Referenční dokumentace jazyka C#)"
+title: ulong (Referenční dokumentace jazyka C#)
 ms.date: 03/14/2017
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ f1_keywords:
 helpviewer_keywords:
 - ulong keyword [C#]
 ms.assetid: f2ece624-837a-40cf-92c5-343e7f33397c
-caps.latest.revision: 
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2058d9f6a228b13938fe08d7e2fb11e3b9f4600a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 049d1cc4b30e16535f20cee8e0ad80e5c80b4a49
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ulong-c-reference"></a>ulong (Referenční dokumentace jazyka C#)
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="literals"></a>Literály  
 
-Můžete deklarace a inicializace `ulong` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje C# 7) binární literálu do ní.  Pokud literálu celé číslo je mimo rozsah `ulong` (tj. Pokud je menší než <xref:System.UInt64.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt64.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace. 
+Můžete deklarace a inicializace `ulong` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní.  Pokud literálu celé číslo je mimo rozsah `ulong` (tj. Pokud je menší než <xref:System.UInt64.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt64.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace. 
 
 V následujícím příkladu, celá čísla rovno 7,934,076,125, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `ulong` hodnoty.  
   
@@ -39,7 +39,7 @@ V následujícím příkladu, celá čísla rovno 7,934,076,125, která jsou rep
 > [!NOTE] 
 > Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona. 
 
-Od verze jazyka C# 7, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
+Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
  - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
  - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
 
@@ -53,9 +53,9 @@ Níže jsou uvedeny některé příklady.
 
 Pokud celé literál bez přípony, je její typ první z těchto typů, ve kterých může být reprezentován jeho hodnotu: 
 
-1. [celá čísla](int.md)
+1. [int](int.md)
 2. [uint](../../../csharp/language-reference/keywords/uint.md)
-3. [dlouhá](long.md)
+3. [long](long.md)
 4. `ulong`
 
 ## <a name="compiler-overload-resolution"></a>Řešení přetížení kompilátoru
@@ -104,7 +104,7 @@ ulong y = (ulong)3.0;
 ## <a name="see-also"></a>Viz také  
  <xref:System.UInt64>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  

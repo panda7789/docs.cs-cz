@@ -1,11 +1,12 @@
 ---
-title: "Vnořené řídicí struktury (Visual Basic)"
-ms.custom: 
+title: Vnořené řídicí struktury (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, control flow
@@ -16,20 +17,20 @@ helpviewer_keywords:
 - structures [Visual Basic], nested control
 - nested control statements [Visual Basic]
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 22adf4086cd494202a540b2ec16310072329b6ca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f2c91bcdd741ef75417fe50b0c08bd0f9bd5ff80
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nested-control-structures-visual-basic"></a>Vnořené řídicí struktury (Visual Basic)
 Můžete umístit řídicí příkazy uvnitř jiné řídicí příkazy, například `If...Then...Else` blokovat v rámci `For...Next` smyčky. Příkaz Ovládací prvek umístěn uvnitř jiného příkazu ovládací prvek se říká, že *vnořené*.  
   
 ## <a name="nesting-levels"></a>Úrovně vnoření  
- Řízení struktury v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] mohou být použity pro libovolný počet úrovní. Je obvyklé, aby byl čitelnější vnořené struktury odsazením text každé z nich. Integrované vývojové prostředí (IDE) editoru automaticky tomu.  
+ Na libovolný počet úrovní můžete vnořené řídicí struktury v jazyku Visual Basic. Je obvyklé, aby byl čitelnější vnořené struktury odsazením text každé z nich. Integrované vývojové prostředí (IDE) editoru automaticky tomu.  
   
  V následujícím příkladu, postup `sumRows` přidá společně kladné elementy každý řádek matice.  
   
@@ -78,7 +79,7 @@ Next ctl
  ![Grafický diagram neplatný vnoření](../../../../visual-basic/programming-guide/language-features/control-flow/media/nestexampleinvalid.gif "NestExampleInvalid")  
 Neplatný vnořené pro a struktury  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Kompilátoru zjistí takový překrývající se ovládací prvek struktury a dá signál chyby kompilace.  
+ Visual Basic – kompilátor zjistí takové překrývající se řídicí struktury a signály chyby kompilace.  
   
 ## <a name="see-also"></a>Viz také  
  [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)  

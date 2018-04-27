@@ -1,12 +1,13 @@
 ---
-title: "Vztahy typů v operacích dotazu (Visual Basic)"
-ms.custom: 
+title: Vztahy typů v operacích dotazu (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - variable relationships [LINQ in Visual Basic]
@@ -18,14 +19,14 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1b93188475dd2bb00aea044ff178028eb87e00d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e38f51d77869dcca8a81fdcbc70aed32c4146935
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 Proměnné používané v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotazu operace jsou silného typu a musí být vzájemně kompatibilní. Silného typování se používá ve zdroji dat, v samotném dotazu a při provádění dotazu. Na následujícím obrázku identifikuje termínů používaných k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Další informace o části dotazu najdete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
@@ -35,7 +36,7 @@ Proměnné používané v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)
   
  Typ proměnné rozsahu v dotazu musí být kompatibilní s typem elementů ve zdroji dat. Typ proměnné dotazu musí být kompatibilní s element pořadí definovaný v `Select` klauzule. Nakonec typ pořadí elementů také musí být kompatibilní s typem řídicí proměnná smyčky, který se používá v `For Each` příkaz, který provede daný dotaz. Tato silného typování usnadňuje identifikace typu chyby při kompilaci.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]Díky silného typování pohodlný implementací odvození místního typu, také známé jako *implicitní zadáním*. Funkce používá v předchozím příkladu, a zobrazí se jeho používaných v celém [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a dokumentace. V jazyce Visual Basic odvození místního typu dosahuje jednoduše pomocí `Dim` příkaz bez `As` klauzule. V následujícím příkladu `city` silného jako řetězec.  
+ Visual Basic umožňuje silného typování pohodlný implementací odvození místního typu, také známé jako *implicitní zadáním*. Funkce používá v předchozím příkladu, a zobrazí se jeho používaných v celém [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a dokumentace. V jazyce Visual Basic odvození místního typu dosahuje jednoduše pomocí `Dim` příkaz bez `As` klauzule. V následujícím příkladu `city` silného jako řetězec.  
   
  [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
   

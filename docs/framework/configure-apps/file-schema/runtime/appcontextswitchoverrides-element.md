@@ -1,7 +1,7 @@
 ---
 title: '&lt;AppContextSwitchOverrides&gt; – Element'
 ms.custom: ''
-ms.date: 03/28/2018
+ms.date: 04/19/2018
 ms.prod: .net-framework
 ms.technology:
 - dotnet-bcl
@@ -19,18 +19,18 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a17d67a1c6143897802bb15b983a9a909fd5949c
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 146416a9872a8444316c2e4a754067b82030a81d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; – Element
 Definuje jeden nebo více přepínač používaný <xref:System.AppContext> třídy poskytují mechanismus vyjádření výslovného nesouhlasu pro nové funkce.  
   
  \<Konfigurace >  
  \<modul runtime >  
-\<AppContextSwitchOverrides>  
+\<AppContextSwitchOverrides >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -80,6 +80,7 @@ Definuje jeden nebo více přepínač používaný <xref:System.AppContext> tř�
 |`Switch.System.Drawing.Printing.`</br>`OptimizePrintPreview`|Ovládací prvky zda výkon <xref:System.Windows.Forms.PrintPreviewDialog> je optimalizovaná pro síťové tiskárny. Další informace najdete v tématu [printpreviewdialog – Přehled ovládacího prvku](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md).|.NET Framework 4.6|
 |`Switch.System.Globalization.NoAsyncCurrentCulture`|Určuje, zda z kontextu volající vlákno není toku asynchronní operace. Další informace najdete v tématu [CurrentCulture a CurrentUICulture tok napříč úlohy](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#currentculture-and-currentuiculture-flow-across-tasks).|.NET Framework 4.6|  
 |`Switch.System.IdentityModel.`<br/>`DisableMultipleDNSEntriesInSANCertificate`|Ovládací prvky jestli <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí o porovnání typ deklarace identity jenom s poslední položky DNS. Další informace najdete v tématu [omezení rizik: metoda X509CertificateClaimSet.FindClaims](~/docs/framework/migration-guide/mitigation-x509certificateclaimset-findclaims-method.md).|.NET Framework 4.6.1|  
+|`Switch.System.IdentityModel.`<br/>`EnableCachedEmptyDefaultAuthorizationContext`|Určuje, jestli se má povolit AuthorizationContext.Empty vrátit měnitelný objekt.|.NET Framework 4.6|  
 |`Switch.System.IO.BlockLongPaths`|Ovládací prvky zda cesty delší než `MAX_PATH` throw (260 znaků) <xref:System.IO.PathTooLongException>. Další informace najdete v tématu [dlouhá cesta podporu](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#long-path-support).|.NET Framework 4.6.2|  
 |`Switch.System.IO.Compression.ZipFile.`<br/>`UseBackslash`|Používá zpětné lomítko ("\\") namísto dopředné lomítko ("/") jako oddělovač cesty v <xref:System.IO.Compression.ZipArchiveEntry.FullName%2A?displayProperty=nameWithType> vlastnost. Další informace najdete v tématu [omezení rizik: Oddělovač cesty ZipArchiveEntry.FullName](~/docs/framework/migration-guide/mitigation-ziparchiveentry-fullname-path-separator.md).|.NET Framework 4.6.1|  
 |`Switch.System.IO.Ports.`<br/>`DoNotCatchSerialStreamThreadExceptions`|Určuje, jestli operační systém výjimky, které jsou vyvolány na vytvořené pomocí vlákna na pozadí <xref:System.IO.Ports.SerialPort> datové proudy ukončit proces.|Rozhraní .NET framework 4.7.1| 
@@ -100,10 +101,13 @@ Definuje jeden nebo více přepínač používaný <xref:System.AppContext> tř�
 |`Switch.System.ServiceModel.`<br/>`AllowUnsignedToHeader`|Určuje, zda `TransportWithMessageCredential` režim zabezpečení umožňuje zprávy s nepodepsaný "na" záhlaví. Toto je přepínač přihlášení. Další informace najdete v tématu [změny v modulu Runtime v rozhraní .NET Framework 4.6.1](https://msdn.microsoft.com/library/mt592686.aspx#WCF).|.NET Framework 4.6.1| 
 |`Switch.System.ServiceModel.`<br/>`DisableAddressHeaderCollectionValidation`>|Ovládací prvky jestli <xref:System.ServiceModel.Channels.AddressHeaderCollection.%23ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Channels.AddressHeader})> konstruktor vyvolá <xref:System.ArgumentException> Pokud jeden z elementů je `null`.|Rozhraní .NET framework 4.7.1| 
 |`Switch.System.ServiceModel.`<br />`DisableCngCertificates`|Určuje, že zda pokus o použití X509 certifikátů pomocí zprostředkovatele úložiště klíčů CSG vyvolá výjimku. Další informace najdete v tématu [zabezpečení přenosu WCF podporuje certifikáty uložené pomocí CNG](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#wcf-transport-security-supports-certificates-stored-using-cng).|.NET Framework 4.6.1|
+|`Switch.System.ServiceModel.`<br/>`DisableExplicitConnectionCloseHeader`|Při používání přenosového protokolu HTTP s vlastním hostováním službou, tuto hodnotu nastavíte na `true` způsobí, že WCF ignorovat přidání aplikace `Connection: close` hlavičky k hlavičky odpovědi pro požadavek. Nastavení této hodnoty na `false` umožňuje přidání `Connection: close` hlavičky k hlavičky odpovědi, což vede k zavření soketu požadavek po odeslání odpovědi.|.NET Framework 4.6|
 |`Switch.System.ServiceModel.`<br/>`DisableOperationContextAsyncFlow`|Zablokování obslužných rutin, které jsou výsledkem omezení instancí vícenásobné služby na jedno vlákno provádění najednou.|.NET Framework 4.6.2|
 |`Switch.System.ServiceModel.`<br/>`DisableUsingServicePointManagerSecurityProtocols`|Spolu s `Switch.System.Net.DontEnableSchUseStrongCrypto`, určuje, zda zabezpečení zpráv WCF používá protokoly TLS 1.1 a TLS 1.2.|Rozhraní .NET framework 4.7 |    
+|`Switch.System.ServiceModel.`<br/>`DontEnableSystemDefaultTlsVersions`|Hodnota `false` nastaví výchozí konfiguraci pro povolit operačnímu systému vybrat protokol. Hodnota `true` nastaví výchozí nejvyšší protokolu, které jsou k dispozici. (K dispozici také v obsluhy větve předchozí verze framework)|Rozhraní .NET framework 4.7.1|
 |`Switch.System.ServiceModel.`<br/>`UseSha1InMsmqEncryptionAlgorithm`|Určuje, zda je výchozí zprávu podpisový algoritmus pro zprávy služby MSMQ ve službě WCF SHA1 nebo SHA256.|Rozhraní .NET framework 4.7.1|
 |`Switch.System.ServiceModel.`<br/>`UseSha1InPipeConnectionGetHashAlgorithm`|Určuje, zda WCF používá ke generování náhodné názvy pro pojmenované kanály SHA1 nebo hodnotu hash SHA256.|Rozhraní .NET framework 4.7.1|
+|`Switch.System.ServiceModel.Internals`<br/>`IncludeNullExceptionMessageInETWTrace`|Určuje, zda má být vyvolána [NullReferenceException](xref:System.NullReferenceException) Pokud zpráva o výjimce má hodnotu null.|Rozhraní .NET framework 4.7|  
 |`Switch.System.ServiceProcess.`<br/>`DontThrowExceptionsOnStart`|Určuje, zda výjimky vydané na spuštění služby rozšířeny volající <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType> metoda.|Rozhraní .NET framework 4.7.1|
 |`Switch.System.Windows.Controls.Grid.`<br/>`StarDefinitionsCanExceedAvailableSpace` |Určuje, zda Windows Presentation Foundation platí staré algoritmus (`true`) nebo nového algoritmu (`false`) v přidělování místa pro \*-sloupce. Další informace najdete v tématu [omezení rizik: ovládání mřížky přidělení místa na sloupce hvězdičky](Mitigation:%20Grid%20Control's%20Space%20Allocation%20to%20Star-columns.md). |Rozhraní .NET framework 4.7 |
 |`Switch.System.Windows.Controls.TabControl.`<br/>`SelectionPropertiesCanLagBehindSelectionChangedEvent`|Ovládací prvky, jestli selektor nebo na kartě řízení vždy aktualizace hodnota jeho vlastnosti vybrané hodnoty před vyvoláním výběru událost změněné.|Rozhraní .NET framework 4.7.1|
@@ -143,5 +147,5 @@ Definuje jeden nebo více přepínač používaný <xref:System.AppContext> tř�
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.AppContext?displayProperty=nameWithType>  
- [\<runtime> Element](runtime-element.md)  
+ [\<modul runtime > elementu](runtime-element.md)  
  [\<Konfigurace > elementu](../configuration-element.md)

@@ -1,30 +1,31 @@
 ---
-title: "Interoperabilita modelů COM v aplikacích .NET Framework (Visual Basic)"
-ms.custom: 
+title: Interoperabilita modelů COM v aplikacích .NET Framework (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - interoperability, COM and .NET framework objects
 - COM interop [Visual Basic]
 - shared components
 ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0c84143e22f33f572447c50e33559a52469b181a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 25fbde3845d378d4a2bcfc13c71124ad1bc29514
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>Interoperabilita modelů COM v aplikacích .NET Framework (Visual Basic)
-Pokud chcete použít objekty COM a .NET Framework objekty ve stejné aplikaci, budete muset vyřešit rozdíly v tom, jak existují objekty v paměti. Objekt rozhraní .NET Framework je umístěn ve spravované paměti – paměť řízené modul common language runtime – a může podle potřeby přesunout modulem runtime. Objekt COM se nachází v nespravované paměti a neočekává přesunout do jiného umístění v paměti. [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] poskytují nástroje pro řízení interakce těchto spravovaných a nespravovaných součásti. Další informace o spravovaném kódu najdete v tématu [modul Common Language Runtime](../../../standard/clr.md).  
+Pokud chcete použít objekty COM a .NET Framework objekty ve stejné aplikaci, budete muset vyřešit rozdíly v tom, jak existují objekty v paměti. Objekt rozhraní .NET Framework je umístěn ve spravované paměti – paměť řízené modul common language runtime – a může podle potřeby přesunout modulem runtime. Objekt COM se nachází v nespravované paměti a neočekává přesunout do jiného umístění v paměti. [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] poskytují nástroje pro řízení interakce těchto spravovaných a nespravovaných součásti. Další informace o spravovaném kódu najdete v tématu [modul Common Language Runtime](../../../standard/clr.md).  
   
- Kromě použití objektů COM v aplikacích .NET, můžete také použít [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vyvíjet objekty, které jsou přístupné z nespravovaného kódu pomocí modelu COM.  
+ Kromě použití objektů COM v aplikacích .NET, můžete také pomocí jazyka Visual Basic pro vývoj objekty, které jsou přístupné z nespravovaného kódu pomocí modelu COM.  
   
  Odkazy na této stránce obsahují podrobné informace o interakcích mezi objekty modelu COM a .NET Framework.  
   

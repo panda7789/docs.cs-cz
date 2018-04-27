@@ -1,12 +1,12 @@
 ---
-title: "Postupy: Hodnoty data a času round-trip"
-ms.custom: 
+title: 'Postupy: Hodnoty data a času round-trip'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,18 +18,18 @@ helpviewer_keywords:
 - time [.NET Framework], round-trip values
 - formatting strings [.NET Framework], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 68667369e1c7541313a166a1066e1ad9d69b6b71
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6ded0a08970e55b7f1267cb229eaf668313392c6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
 V mnoha aplikacích hodnota data a času je určený pro jednoznačnou identifikaci jediný bod v čase. Toto téma ukazuje, jak k uložení a obnovení <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnota a datum a čas hodnotu s časem zónu informace tak, aby obnovená hodnota identifikuje ve stejnou dobu jako uložena hodnota.  
@@ -93,9 +93,9 @@ V mnoha aplikacích hodnota data a času je určený pro jednoznačnou identifik
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tyto příklady vyžadují:  
   
--   Že následujících oborů názvů naimportovat pomocí C# `using` příkazy nebo [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] `Imports` příkazy:  
+-   Že následujících oborů názvů naimportovat pomocí C# `using` příkazy nebo Visual Basic `Imports` příkazy:  
   
-    -   <xref:System>(C# pouze).  
+    -   <xref:System> (C# pouze).  
   
     -   <xref:System.Globalization?displayProperty=nameWithType>.  
   

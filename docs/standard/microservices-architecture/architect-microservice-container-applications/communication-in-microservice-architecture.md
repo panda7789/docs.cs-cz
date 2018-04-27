@@ -1,7 +1,7 @@
 ---
-title: "Komunikace v architektury mikroslužby"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Komunikace v architektura architektury mikroslužby"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Komunikace v architektury mikroslužby
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Komunikace v architektura architektury mikroslužby
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3c80ce8e3c4ccdc7e53634f54dd998581758ab07
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 6bf4de57d3431577e6c770a5a83b911f41e5a4fe
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektury mikroslužby
 
@@ -25,7 +25,7 @@ Není jedno řešení, ale některé. Jedno řešení zahrnuje izolace co nejví
 
 Aplikace založené na mikroslužeb na je distribuovaný systém systémem více procesů nebo služeb, obvykle to i v rámci více serverů nebo hostitele. Každá instance služby je obvykle proces. Proto služby musí komunikovat pomocí protokol komunikaci mezi procesy, jako je například HTTP, AMQP nebo binární protokol například TCP, v závislosti na povaze jednotlivých služeb.
 
-Mikroslužbu Společenství podporuje filosofie z "[inteligentní koncových bodů a vlečný kanály](http://simplicable.com/new/smart-endpoints-and-dumb-pipes)." Jedná o tento reklamní umožňuje návrh, který je jako odpojené možném mezi mikroslužeb a jako získá na ucelenosti nejblíže v rámci jedné mikroslužby. Jak je popsáno výše, každý mikroslužbu vlastní svá vlastní data a vlastní logiku domény. Ale mikroslužeb skládání začátku do konce aplikace jsou obvykle jednoduše choreographed pomocí komunikaci REST místo komplexní protokoly, jako je například WS -\* a centralizované flexibilní komunikace místo založeného na událostech obchodní proces orchestrators.
+Mikroslužbu Společenství podporuje filosofie z "[inteligentní koncových bodů a vlečný kanály](https://simplicable.com/new/smart-endpoints-and-dumb-pipes)." Jedná o tento reklamní umožňuje návrh, který je jako odpojené možném mezi mikroslužeb a jako získá na ucelenosti nejblíže v rámci jedné mikroslužby. Jak je popsáno výše, každý mikroslužbu vlastní svá vlastní data a vlastní logiku domény. Ale mikroslužeb skládání začátku do konce aplikace jsou obvykle jednoduše choreographed pomocí komunikaci REST místo komplexní protokoly, jako je například WS -\* a centralizované flexibilní komunikace místo založeného na událostech obchodní proces orchestrators.
 
 Dva běžně používané protokoly jsou požadavek/odpověď HTTP s prostředkem rozhraní API (při dotazování většinu všech) a lightweight asynchronní zasílání zpráv při komunikaci aktualizace napříč více mikroslužeb. Tyto jsou vysvětlené podrobněji v následujících částech.
 
@@ -43,7 +43,7 @@ Druhý osy je definování komunikace má jednoho příjemce nebo několika př�
 
 -   Jednoho příjemce. Každý požadavek musí být zpracovává přesně jeden příjemce nebo službu. Je například tato komunikace [příkaz vzor](https://en.wikipedia.org/wiki/Command_pattern).
 
--   Několika příjemců. Každý požadavek může zpracovat nula do několika příjemců. Tento typ komunikace musí být asynchronní. Příkladem je [publikování a přihlášení k odběru](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) mechanismus používaný v vypadají podobně jako [událostmi řízené architektura](http://microservices.io/patterns/data/event-driven-architecture.html). To je založené na zprostředkovatele rozhraní nebo zprávy událostí bus při šíření aktualizace dat mezi několika mikroslužeb prostřednictvím událostí; Obvykle se implementuje prostřednictvím sběrnice nebo podobné artefaktů jako [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) pomocí [témat a odběrů](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions).
+-   Několika příjemců. Každý požadavek může zpracovat nula do několika příjemců. Tento typ komunikace musí být asynchronní. Příkladem je [publikování a přihlášení k odběru](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) mechanismus používaný v vypadají podobně jako [událostmi řízené architektura](https://microservices.io/patterns/data/event-driven-architecture.html). To je založené na zprostředkovatele rozhraní nebo zprávy událostí bus při šíření aktualizace dat mezi několika mikroslužeb prostřednictvím událostí; Obvykle se implementuje prostřednictvím sběrnice nebo podobné artefaktů jako [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) pomocí [témat a odběrů](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions).
 
 Aplikace založené na mikroslužbu na se často používají kombinaci těchto styly komunikace. Nejběžnějším typem je jeden příjemce komunikace s synchronní protokol například HTTP nebo HTTPS, při vyvolání regulární služby webového rozhraní API HTTP. Mikroslužeb také běžně používají protokoly zasílání zpráv pro asynchronní komunikaci mezi mikroslužeb.
 
@@ -91,15 +91,15 @@ Pokud klient používá komunikaci požadavek a odpověď, předpokládá, že o
 
 Populární architektury styl pro komunikaci požadavek a odpověď je [REST](https://en.wikipedia.org/wiki/Representational_state_transfer). Tento přístup je založena na a úzce kombinovanou, [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) protokolu, příkaz HTTP jako GET, POST, přijetí a PUT. Při vytváření služby REST je nejčastěji používané přístup architektury komunikace. Při vývoji webové rozhraní API ASP.NET Core services můžete implementovat služby REST.
 
-Při použití služeb HTTP REST jazyka definice rozhraní je další hodnota. Například pokud použijete [Swagger metadata](http://swagger.io/) Pokud chcete popisují vaše rozhraní API služby, můžete použít nástroje, které generování zástupných procedur klienta, které můžete přímo zjištění a použití vašich služeb.
+Při použití služeb HTTP REST jazyka definice rozhraní je další hodnota. Například pokud použijete [Swagger metadata](https://swagger.io/) Pokud chcete popisují vaše rozhraní API služby, můžete použít nástroje, které generování zástupných procedur klienta, které můžete přímo zjištění a použití vašich služeb.
 
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Martin Fowler. Ryšánková vyspělosti modelu.** Popis modelu REST.
-    [*http://martinfowler.com/articles/richardsonMaturityModel.html*](http://martinfowler.com/articles/richardsonMaturityModel.html)
+    [*https://martinfowler.com/articles/richardsonMaturityModel.html*](https://martinfowler.com/articles/richardsonMaturityModel.html)
 
 -   **Swagger.** Oficiální web.
-    [*http://swagger.io/*](http://swagger.io/)
+    [*https://swagger.io/*](https://swagger.io/)
 
 ### <a name="push-and-real-time-communication-based-on-http"></a>Nabízení a komunikaci v reálném čase, které jsou založené na protokolu HTTP
 

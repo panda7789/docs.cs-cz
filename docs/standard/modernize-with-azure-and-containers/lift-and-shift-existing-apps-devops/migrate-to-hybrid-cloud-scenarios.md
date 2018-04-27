@@ -1,18 +1,19 @@
 ---
-title: "Migrace na hybridní cloudové scénáře"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Migrace na hybridní cloudové scénáře"
+title: Migrace na hybridní cloudové scénáře
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Migrace na hybridní cloudové scénáře
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/2/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6216068786745ac4ebc00263a14b4afe247193f5
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: a2fc5a2118736d3491a5a0731e47c697edd674f1
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Migrace na hybridní cloudové scénáře
 
@@ -24,7 +25,7 @@ Pokud jde o zabezpečení, můžete centralizovat správu a zabezpečení mezi h
 
 Nakonec můžete distribuovat a bezproblémově analyzovat data, používat stejné jazyky dotazu pro cloudové a místní prostředky a použít analýzy a přímý učení v Azure a rozšíření dat, bez ohledu na její zdroj.
 
-## <a name="azure-stack"></a>Azure Stack
+## <a name="azure-stack"></a>Azure zásobníku
 
 Zásobník Azure je hybridní cloudové platformy, která umožňuje poskytovat služby Azure z vaší organizace datového centra. Azure zásobníku je navržen pro podporu nové možnosti pro moderní aplikace v klíčových scénářů, jako je okraj a prostředích bez připojení nebo konkrétní požadavky zabezpečení a dodržování předpisů na schůzku.
 

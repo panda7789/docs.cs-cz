@@ -1,5 +1,5 @@
 ---
-title: "Rozšíření aplikačního modelu jazyka Visual Basic"
+title: Rozšíření aplikačního modelu jazyka Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,14 +8,14 @@ ms.topic: article
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-caps.latest.revision: 
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 15e6ea1a8b2df0b8ed1b84abceee9e6be2c556f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5ffd882c2a1d04c29483d380e972d6ce70bdb5c4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tento postup umožňuje přizpůsobit chování aplikačního modelu služby a přidejte volání vlastní metody aplikace po spuštění a vypnutí.  
@@ -25,11 +25,11 @@ Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` člen
   
  Následující obrázek zobrazuje posloupnost volání modelu aplikace ve normální aplikace Windows Forms jazyka Visual Basic. Spustí sekvenci, kdy `Sub Main` volání procedur <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metoda.  
   
- ![Aplikační Model Visual Basic & č. 45; &#45; Spustit](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelrun.gif "VB_ModelRun")  
+ ![Aplikační Model Visual Basic &#45; &#45; spustit](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelrun.gif "VB_ModelRun")  
   
  Aplikační Model Visual Basic také poskytuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> události. Následující obrázky znázorňují, tento mechanismus pro vyvolání těchto událostí.  
   
- ![Aplikační Model Visual Basic & č. 45; &#45; Další Instance](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelnext.gif "VB_ModelNext")  
+ ![Aplikační Model Visual Basic &#45; &#45; další Instance](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelnext.gif "VB_ModelNext")  
   
  ![Aplikační Model Visual Basic neošetřená výjimka](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_unhandex.gif "VB_UnhandEx")  
   
@@ -50,7 +50,7 @@ Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` člen
   
     2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>. Umožňuje designeru vyvolat kód, který inicializuje úvodní obrazovka.  
   
-         Ve výchozím nastavení tato metoda neprovede žádnou akci. Pokud vyberete úvodní obrazovka pro aplikace v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **Návrhář projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metodu se metoda, která nastaví <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A> vlastnost novou instanci třídy úvodní obrazovky formulář.  
+         Ve výchozím nastavení tato metoda neprovede žádnou akci. Pokud vyberete úvodní obrazovka pro aplikace v jazyce Visual Basic **Návrhář projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metodu se metoda, která nastaví <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A> vlastnost do nové instance formuláře úvodní obrazovky .  
   
 2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup%2A>. Poskytuje bod rozšiřitelnosti pro vyvolání `Startup` událostí. Spouštění aplikace zastaví, pokud funkce vrátí hodnotu `False`.  
   
@@ -62,7 +62,7 @@ Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` člen
   
     1.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>. Poskytuje způsob, jak návrháře pro vydávání kód, který inicializuje hlavní formulář.  
   
-         Ve výchozím nastavení tato metoda neprovede žádnou akci. Pokud však vyberete hlavní formulář pro vaši aplikaci v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **Návrhář projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> metodu se metoda, která nastaví <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> vlastnost novou instanci třídy hlavní formulář .  
+         Ve výchozím nastavení tato metoda neprovede žádnou akci. Pokud však vyberete hlavní formulář pro vaši aplikaci v jazyce Visual Basic **Návrhář projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> metodu se metoda, která nastaví <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> vlastnost novou instanci třídy hlavní formulář.  
   
     2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>. Pokud má aplikace úvodní obrazovku a je otevřené, tato metoda zavře úvodní obrazovka.  
   
@@ -85,7 +85,7 @@ Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` člen
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> Volá konstruktor <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vlastnost, která má-li určit, které modul vykreslování textu pro formulářů aplikace. Ve výchozím nastavení <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vlastnost vrátí `False`, která udává, že modul vykreslování textu GDI používat, což je výchozí hodnota v [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]. Je možné přepsat <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vlastnost vrátit `True`, což naznačuje, že se modul vykreslování textu GDI + používat, což je výchozí hodnota v jazyce Visual Basic .NET 2002 a Visual Basic .NET 2003.  
   
 ## <a name="configuring-the-application"></a>Konfigurace aplikace  
- Jako součást [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] aplikačního modelu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering> třída poskytuje chráněné vlastnosti, které konfigurace aplikace. Tyto vlastnosti musí být nastaveno v konstruktoru implementující třídu.  
+ Jako součást modelu aplikace Visual Basic <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering> třída poskytuje chráněné vlastnosti, které konfigurace aplikace. Tyto vlastnosti musí být nastaveno v konstruktoru implementující třídu.  
   
  Ve Windows Forms výchozí projekt **Návrhář projektu** vytvoří kód a nastavte vlastnosti návrháře nastavení. Vlastnosti se používá jenom v případě, že se spouští aplikace; nastavení je po spuštění aplikace nemá žádný vliv.  
   
@@ -105,4 +105,4 @@ Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` člen
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>  
  [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
- [Stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+ [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

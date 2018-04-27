@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: c627903743f8867e05bac9ce835659fc7270b94e
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: aad6b06748b02e2ea3003ca339d8a5a0b15583f8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kompilátoru platformy .NET SDK
 
@@ -40,9 +40,9 @@ Existují tři hlavní scénáře pro zápis analyzátory a opravy kódu:
 
 ## <a name="enforce-team-coding-standards"></a>Vynutit team kódování standardy
 
-Mnoho týmy mají kódování standardů, které se vynucují prostřednictvím kódu recenze s jinými členy týmu. Analyzátory a opravy kódu může být tento proces mnohem efektivnější. Kód recenze dojít v případě, že vývojář sdílí svou práci s ostatními uživateli v týmu. Mu bude investovaly všechny čas potřebný k dokončení novou funkci před získáním jakékoli komentáře. Týdny může přejít při mu posiluje návyky, které se neshodují. tým služby postupy.
+Mnoho týmy mají kódování standardů, které se vynucují prostřednictvím kódu recenze s jinými členy týmu. Analyzátory a opravy kódu může být tento proces mnohem efektivnější. Kód recenze dojít v případě, že vývojář sdílí práci s ostatními uživateli v týmu. Vývojář se investovaly všechny čas potřebný k dokončení novou funkci před získáním jakékoli komentáře. Týdny může přejít při vývojář posiluje návyky, které se neshodují. tým služby postupy.
 
-Analyzátory spustit jako vývojář zapíše kódu. Získá mu okamžitou zpětnou vazbu, která podporuje následující pokyny okamžitě. Si vytvoří zvyklosti napsat kód, kompatibilní ihned zahájí při vytváření prototypu. Když tato funkce je připraven pro člověka ke kontrole, bylo vynuceno standardní pokyny.
+Analyzátory spustit jako vývojář zapíše kódu. Vývojář získá okamžitou zpětnou vazbu, která podporuje následující pokyny okamžitě. Vývojář sestavení zvyklosti napsat kód, kompatibilní také začnou při vytváření prototypu. Když tato funkce je připraven pro člověka ke kontrole, bylo vynuceno standardní pokyny.
 
 Týmy můžete vytvořit analyzátorů a kód opravy podívejte se na tomto nejběžnější postupy, které porušují team kódování postupy. Ty lze nainstalovat na každý vývojář počítače k vynucení standardy.
 
@@ -67,7 +67,7 @@ Sada SDK kompilátoru platformu .NET zahrnuje nejnovější objektové modely ja
 
 Podrobnější informace o konceptech v sadě SDK pro platformu .NET kompilátoru v těchto tématech čtyři:
 
- - [Seznamte se s vizualizér syntaxe kódu](syntax-visualizer.md)
+ - [Prozkoumání kódu pomocí vizualizéru syntaxe](syntax-visualizer.md)
  - [Pochopení modelu rozhraní API kompilátoru](compiler-api-model.md)
  - [Práce se syntaxí](work-with-syntax.md)
  - [Práce se sémantikou](work-with-semantics.md)

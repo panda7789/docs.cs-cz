@@ -1,28 +1,28 @@
 ---
-title: "Konfigurace trasování"
-ms.custom: 
+title: Konfigurace trasování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-caps.latest.revision: 
+caps.latest.revision: 53
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3beeaec1ed9982fc49f6bf81e2717db862e7882f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7b9590096789af609e83d1a5ed736cf18e27700
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasování zdrojů pro vydávání trasování a nastavte úrovně trasování, trasování aktivit sady a šíření pro podporu trasování začátku do konce korelace a nastavte trasování – moduly naslouchání pro přístup k trasování.  
@@ -33,13 +33,13 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 >  V systému Windows 8 je nutné spustit vaší aplikace zvýšených oprávnění (Spustit jako správce), aby aplikace generují protokoly trasování.  
   
 ## <a name="enabling-tracing"></a>Povolení trasování  
- [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]výstupy následující data pro diagnostické trasování:  
+ [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] výstupy následující data pro diagnostické trasování:  
   
 -   Trasování pro milníky procesu pro všechny součásti aplikací, jako je například volání operací kód výjimky, upozornění a další důležité zpracování událostí.  
   
 -   Události systému Windows chybu při trasování funkce nefunguje správně. V tématu [protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]trasování je postavený na <xref:System.Diagnostics>. Pokud chcete používat trasování, byste měli definovat trasování zdrojů v konfiguračním souboru nebo v kódu. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]definuje zdroj trasování pro každou [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] sestavení. `System.ServiceModel` Zdroj trasování je nejvíce Obecné [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zdroj trasování a záznamů zpracování milníky napříč [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] komunikačního balíku z zadávání ponechat přenosu zadávání nebo nechat uživatelského kódu. `System.ServiceModel.MessageLogging` Zdroj trasování zaznamenává všechny zprávy, které toku prostřednictvím systému.  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] trasování je postavený na <xref:System.Diagnostics>. Pokud chcete používat trasování, byste měli definovat trasování zdrojů v konfiguračním souboru nebo v kódu. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] definuje zdroj trasování pro každou [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] sestavení. `System.ServiceModel` Zdroj trasování je nejvíce Obecné [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zdroj trasování a záznamů zpracování milníky napříč [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] komunikačního balíku z zadávání ponechat přenosu zadávání nebo nechat uživatelského kódu. `System.ServiceModel.MessageLogging` Zdroj trasování zaznamenává všechny zprávy, které toku prostřednictvím systému.  
   
  Ve výchozím nastavení není povoleno trasování. Aktivujte trasování, musíte vytvořit naslouchací proces trasování a nastaví úroveň trasování než "Off" zdroje vybraného trasování v konfiguraci. v opačném [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] negeneruje žádné trasování. Pokud nezadáte naslouchací proces, trasování se automaticky zakáže. Pokud je definována naslouchací proces, ale není zadána žádná, úroveň je nastavena na "Off", ve výchozím nastavení, což znamená, že jsou vydávány žádné trasování.  
   
@@ -66,10 +66,10 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 ```  
   
 > [!NOTE]
->  Chcete-li upravit konfigurační soubor [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] projektu služby v [!INCLUDE[vs_current_short](../../../../../includes/vs-current-short-md.md)], klikněte pravým tlačítkem na soubor konfigurace aplikace – buď soubor Web.config pro Web webové aplikace nebo Appname.exe.config pro vlastním hostováním aplikaci v  **Průzkumník řešení**. Zvolte **upravit konfiguraci WCF** položky kontextové nabídky. Spustí se [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md), což umožňuje změnit nastavení konfigurace pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služeb pomocí grafického uživatelského rozhraní.  
+>  Chcete-li upravit konfigurační soubor [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby projektu v sadě Visual Studio, klikněte pravým tlačítkem na soubor konfigurace aplikace – buď soubor Web.config pro Web webové aplikace nebo Appname.exe.config pro vlastním hostováním aplikaci v  **Průzkumník řešení**. Zvolte **upravit konfiguraci WCF** položky kontextové nabídky. Spustí se [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md), což umožňuje změnit nastavení konfigurace pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služeb pomocí grafického uživatelského rozhraní.  
   
 ## <a name="configuring-trace-sources-to-emit-traces"></a>Konfigurace trasování zdroje pro vydávání trasování  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]definuje zdroj trasování pro každé sestavení. Trasování generované v rámci sestavení jsou dostupné přes naslouchací procesy definované pro tento zdroj. Následující zdroje trasování jsou definovány:  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] definuje zdroj trasování pro každé sestavení. Trasování generované v rámci sestavení jsou dostupné přes naslouchací procesy definované pro tento zdroj. Následující zdroje trasování jsou definovány:  
   
 -   System.ServiceModel: Protokoly všech fázích [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zpracování, vždy, když je pro čtení konfigurace, zpráva se zpracuje v přenos, je zabezpečení zpracování zprávy odeslaných za uživatelského kódu a tak dále.  
   
@@ -146,16 +146,16 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 </system.diagnostics>  
 ```  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]vytváření uživatelem definované trasování zdrojů, najdete v části [rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] vytváření uživatelem definované trasování zdrojů, najdete v části [rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
   
 ## <a name="configuring-trace-listeners-to-consume-traces"></a>Konfigurace trasování – moduly naslouchání využívat trasování  
- V době běhu [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] informační kanály trasování dat naslouchací procesy, které zpracovávají data. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]nabízí několik předdefinovaných naslouchací procesy pro <xref:System.Diagnostics>, který se liší ve formátu používají pro výstup. Můžete také přidat vlastní naslouchací proces typy.  
+ V době běhu [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] informační kanály trasování dat naslouchací procesy, které zpracovávají data. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nabízí několik předdefinovaných naslouchací procesy pro <xref:System.Diagnostics>, který se liší ve formátu používají pro výstup. Můžete také přidat vlastní naslouchací proces typy.  
   
  Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V našem příkladu konfigurace jsme pojmenovali naslouchací proces `traceListener` a přidat standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) jako typ, který chcete použít. Můžete přidat libovolný počet trasování – moduly naslouchání pro každý zdroj. Naslouchací proces trasování vysílá trasování do souboru, je nutné zadat výstupní soubor umístění a název v konfiguračním souboru. To se provádí nastavením `initializeData` k názvu souboru pro tento naslouchací proces. Pokud nezadáte název souboru, je generována náhodného názvu souboru na základě typu naslouchací proces používá. Pokud <xref:System.Diagnostics.XmlWriterTraceListener> se použije, generuje se název souboru bez přípony. Pokud budete implementovat vlastní naslouchací proces, můžete také použít tento atribut přijímat data inicializace než název souboru. Například můžete zadat identifikátor databáze pro tento atribut.  
   
  Můžete nakonfigurovat vlastní naslouchací odeslat trasování v drátové síti, například ke vzdálené databázi. Jako modul pro nasazení aplikace by měl vynutit řízení správné přístupu na protokoly trasování ve vzdáleném počítači.  
   
- Můžete také nakonfigurovat naslouchací prostřednictvím kódu programu. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Postupy: vytvoření a inicializace naslouchacích procesů trasování](http://go.microsoft.com/fwlink/?LinkId=94648) a [vytváření vlastní TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239).  
+ Můžete také nakonfigurovat naslouchací prostřednictvím kódu programu. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [Postupy: vytvoření a inicializace naslouchacích procesů trasování](http://go.microsoft.com/fwlink/?LinkId=94648) a [vytváření vlastní TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239).  
   
 > [!CAUTION]
 >  Protože `System.Diagnostics.XmlWriterTraceListener` nejsou bezpečné pro vlákna, zdroj trasování může zamknutí prostředků, výhradně, při výstupu trasování. Pokud mnoho vláken výstup trasování ke zdroji trasování, který je nakonfigurován pro použití této naslouchací proces, může dojít, sporu prostředků, výsledkem problém významně zvýšit výkon. Chcete-li vyřešit tento problém, měli byste implementovat vlastní naslouchací proces, který je bezpečný pro přístup z více vláken.  
@@ -187,7 +187,7 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
   
  `propagateActivity` Atribut uvádí, zda by mělo být předáno aktivity na ostatní koncové body, které jsou součástí výměny zpráv. Nastavením této hodnoty na `true`, můžete provést trasovací soubory generované žádné dva koncové body a sledovat, jak sadu trasování na jeden koncový bod předávány sadu trasování na jiný koncový bod.  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]trasování aktivit a šíření, najdete v části [šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] trasování aktivit a šíření, najdete v části [šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
   
  Obě `propagateActivity` a `ActivityTracing` logické hodnoty, na které se týkají System.ServiceModel TraceSource. `ActivityTracing` Hodnota platí také pro libovolný zdroj trasování, včetně [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nebo uživatelem definované snímků.  
   

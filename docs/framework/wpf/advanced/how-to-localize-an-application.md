@@ -2,8 +2,9 @@
 title: 'Postupy: Lokalizace aplikace'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,12 +17,13 @@ ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 83ed8ee8b8bfd9c3d6dadfedad8889af10a86466
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3c5621de2a2d10e67f45fa2d6980cb84c388630f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace pomocí nástroje LocBaml.  
@@ -88,7 +90,7 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace pomocí nástroje LocB
 <a name="build_locbaml"></a>   
 ## <a name="build-the-locbaml-tool"></a>Nástroj LocBaml sestavení  
   
-1.  Všechny soubory potřebné k vytvoření LocBaml jsou umístěny v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ukázky. Stažení [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)] souborů z [ukázkový nástroj LocBaml](http://go.microsoft.com/fwlink/?LinkID=160016).  
+1.  Všechny soubory potřebné k vytvoření LocBaml jsou umístěny v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ukázky. Stáhnout soubory C# z [ukázkový nástroj LocBaml](http://go.microsoft.com/fwlink/?LinkID=160016).  
   
 2.  Z příkazového řádku spusťte soubor projektu (locbaml.csproj) k vytvoření nástroje:  
   
@@ -195,7 +197,7 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace pomocí nástroje LocB
   
 7.  Pokud chcete vyzkoušet nové satelitní sestavení, potřebujete změnit jazykové verze, ve kterém aplikace poběží. Toto lze provést jedním ze dvou způsobů:  
   
-    -   Změnit místní nastavení operačního systému (**spustit** &#124; **Ovládací panely** &#124; **Místní a jazykové nastavení**).  
+    -   Změnit místní nastavení operačního systému (**spustit** &#124; **ovládací panely** &#124; **místní a jazykové nastavení**).  
   
     -   V aplikaci přidejte následující kód do souboru App.xaml.cs:  
   

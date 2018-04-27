@@ -1,27 +1,29 @@
 ---
-title: "Místní transakce"
-ms.custom: 
+title: Místní transakce
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3d7865675871bafb527bb9ee85de1f96e9847402
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: d56e2a978c3b9b58eadb946ee053721435c9f2d9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="local-transactions"></a>Místní transakce
 Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete svázat více úkolů společně, aby se spustit jako na jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve se informace o objednávce aktualizuje tabulku. Druhý aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazené. Pokud selže buď úlohu, pak oba aktualizace jsou vrácena zpět.  
@@ -40,7 +42,7 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
 > [!NOTE]
 >  `EnlistDistributedTransaction` – Metoda by nemělo být použito pro místní transakce.  
   
- Rozsah transakce je omezený na připojení. Následující příklad provádí explicitní transakce, který se skládá ze dvou samostatných příkazů v `try` bloku. Příkazy spusťte příkazy INSERT s tabulkou Production.ScrapReason v AdventureWorks [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] ukázkové databáze, které jsou potvrzené, pokud jsou vyvolány žádné výjimky. Kód `catch` bloku vrátí zpět transakci Pokud je vyvolána výjimka. Pokud transakce byla přerušena, nebo připojení je ukončeno před transakce byla dokončena, je automaticky vrácena zpět.  
+ Rozsah transakce je omezený na připojení. Následující příklad provádí explicitní transakce, který se skládá ze dvou samostatných příkazů v `try` bloku. Příkazy spusťte příkazy INSERT s tabulkou Production.ScrapReason v ukázkové databázi AdventureWorks SQL Server, které jsou potvrzené, pokud jsou vyvolány žádné výjimky. Kód `catch` bloku vrátí zpět transakci Pokud je vyvolána výjimka. Pokud transakce byla přerušena, nebo připojení je ukončeno před transakce byla dokončena, je automaticky vrácena zpět.  
   
 ## <a name="example"></a>Příklad  
  Postupujte podle těchto kroků k provedení transakce.  

@@ -1,24 +1,26 @@
 ---
-title: "Učení dle návody"
-ms.custom: 
+title: Učení dle návody
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c49ecfec032a20090e8eca1c94efe9e1f35cce7d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 98373ccee7f9fde178f26c62cd77acb17676c6cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="learning-by-walkthroughs"></a>Učení dle návody
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace poskytuje několik návody. Toto téma řeší problémy některé obecné návod (včetně řešení potíží) a poskytuje odkazy na několik vstupní úrovně návody pro získání informací o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -41,20 +43,20 @@ ms.lasthandoff: 01/19/2018
 ## <a name="general"></a>Obecné  
  Tyto informace se vztahují na tyto návody obecně:  
   
--   Prostředí: Každý [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návod používá [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] jako jeho integrované vývojové prostředí (IDE).  
+-   Prostředí: Každý [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návod používá jako jeho integrované vývojové prostředí (IDE) sady Visual Studio.  
   
 -   Moduly SQL: tyto postupy jsou zapsány k implementaci pomocí SQL Server Express. Pokud nemáte, SQL Server Express, můžete stáhnout zdarma. Další informace najdete v tématu [stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
     > [!NOTE]
-    >  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]návody použít název souboru jako připojovací řetězec. Stačí zadat název souboru je pro vaše pohodlí, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje pro uživatele, systém SQL Server Express. Vždy věnujte pozornost problémy se zabezpečením. Další informace najdete v tématu [zabezpečení v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
+    >  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návody použít název souboru jako připojovací řetězec. Stačí zadat název souboru je pro vaše pohodlí, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje pro uživatele, systém SQL Server Express. Vždy věnujte pozornost problémy se zabezpečením. Další informace najdete v tématu [zabezpečení v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]návody obvykle vyžadují ukázková databáze Northwind. Další informace najdete v tématu [stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návody obvykle vyžadují ukázková databáze Northwind. Další informace najdete v tématu [stažení ukázkové databáze](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
--   Dialogová okna a příkazy nabídky můžete vidět v návody se může lišit od těch popsaných v nápovědě, v závislosti na nastavení active nebo [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] edition. Chcete-li změnit nastavení, klikněte na tlačítko **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+-   Dialogová okna a příkazy nabídky, které se zobrazí v návody se může lišit od těch popsaných v nápovědě, v závislosti na aktivním nastavení nebo edicí sady Visual Studio. Chcete-li změnit nastavení, klikněte na tlačítko **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 -   Pro návody, které řeší scénáře s několika vrstvami server musí být umístěn v počítači, který se liší od vývojovém počítači a musí mít příslušná oprávnění pro přístup k serveru.  
   
--   Název třídy, která obvykle představuje objednávky tabulky v ukázkové databázi Northwind je `[Order]`. Uvození není nutná, protože `Order` je klíčové slovo v [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)].  
+-   Název třídy, která obvykle představuje objednávky tabulky v ukázkové databázi Northwind je `[Order]`. Uvození není nutná, protože `Order` je klíčové slovo v jazyce Visual Basic.  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
  Běhové chyby může dojít, protože nemáte dostatečná oprávnění pro přístup k databázím použít v těchto kurzů. Viz následující postup nejběžnější tyto problémy vyřešit.  
@@ -68,7 +70,7 @@ ms.lasthandoff: 01/19/2018
   
 2.  V levém podokně **SQL Server Configuration Manager**, klikněte na tlačítko **služeb SQL Server 2005**.  
   
-3.  V pravém podokně klikněte pravým tlačítkem na **SQL Server (SQLEXPRESS)**a potom klikněte na **vlastnosti**.  
+3.  V pravém podokně klikněte pravým tlačítkem na **SQL Server (SQLEXPRESS)** a potom klikněte na **vlastnosti**.  
   
 4.  Klikněte **přihlášení** kartě a ověřte, jak se pokoušíte přihlásit k serveru.  
   
@@ -94,9 +96,9 @@ ms.lasthandoff: 01/19/2018
   
 1.  V levém podokně **SQL Server Configuration Manager**, klikněte na tlačítko **služeb SQL Server 2005**.  
   
-2.  V pravém podokně klikněte pravým tlačítkem na **SQL Server (SQLEXPRESS)**a potom klikněte na **Zastavit**.  
+2.  V pravém podokně klikněte pravým tlačítkem na **SQL Server (SQLEXPRESS)** a potom klikněte na **Zastavit**.  
   
-3.  Klikněte pravým tlačítkem na **SQL Server (SQLEXPRESS)**a potom klikněte na **restartujte**.  
+3.  Klikněte pravým tlačítkem na **SQL Server (SQLEXPRESS)** a potom klikněte na **restartujte**.  
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)

@@ -18,14 +18,14 @@ ms.assetid: 16b28c40-8768-423f-bd9c-22ff10de2b54
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 149959ac279f63bfd3b070461a4316941c2b7c19
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 846d9823722a3c7e93c3f45d7cc98e23832df822
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-literals-visual-basic"></a>Literály XML (Visual Basic)
-Témata v této části dokumentu syntaxe XML – literály v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. Literál XML syntaxe umožňuje začlenit přímo v kódu XML.  
+Témata v této části dokumentů syntaxe literálů XML v jazyce Visual Basic. Literál XML syntaxe umožňuje začlenit přímo v kódu XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   

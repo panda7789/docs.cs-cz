@@ -1,30 +1,30 @@
 ---
-title: "Spravovaná a nespravovaná vlákna ve Windows"
-ms.custom: 
+title: Spravovaná a nespravovaná vlákna ve Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - threading [.NET Framework], unmanaged
 - threading [.NET Framework], managed
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2ce17ef15a5b582a9df0f16d7e0ac82df626579d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 66bf8458a3f4f9dd622129e82acb659dddf8467a
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Spravovaná a nespravovaná vlákna ve Windows
 Správa všechna vlákna se provádí prostřednictvím <xref:System.Threading.Thread> třídy, včetně vláken vytvořený modul common language runtime a ty mimo modul runtime, který zadejte spravované prostředí ke spouštění kódu. Modul runtime monitoruje všechna vlákna zpracování, které někdy provedli kódu v rámci spravovaného spouštění prostředí. Žádné další podprocesy sledovat. Vláken můžete zadat spravovaného spouštění prostředí pomocí zprostředkovatele komunikace s objekty COM (protože modul runtime zpřístupní spravované objekty jako objekty COM nespravované World), modelu COM [DllGetClassObject](https://msdn.microsoft.com/library/ms680760.aspx) funkce a vyvolání platformy.  
@@ -41,7 +41,7 @@ Správa všechna vlákna se provádí prostřednictvím <xref:System.Threading.T
   
 |V systému Win32|V modulu common language runtime|  
 |--------------|------------------------------------|  
-|**CreateThread**|Kombinace **vláken** a<xref:System.Threading.ThreadStart>|  
+|**CreateThread**|Kombinace **vláken** a <xref:System.Threading.ThreadStart>|  
 |**TerminateThread**|<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>|  
 |**SuspendThread**|<xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType>|  
 |**ResumeThread**|<xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>|  
@@ -55,7 +55,7 @@ Správa všechna vlákna se provádí prostřednictvím <xref:System.Threading.T
 |Zavřete na **CoInitializeEx** (OLE32. KNIHOVNY DLL)|<xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>|  
   
 ## <a name="managed-threads-and-com-apartments"></a>Spravovaných vláknech a Apartment COM  
- Spravované vlákno, může být označen k označení, že bude hostitelem [jednovláknové](http://msdn.microsoft.com/library/windows/desktop/ms680112.aspx) nebo [vícevláknové](http://msdn.microsoft.com/library/windows/desktop/ms693421.aspx) typu apartment. (Další informace o modelu COM dělení na vlákna architektuře, najdete v části [procesy, vláken a Apartment](http://msdn.microsoft.com/library/windows/desktop/ms693344.aspx).) <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, A <xref:System.Threading.Thread.TrySetApartmentState%2A> metody <xref:System.Threading.Thread> třídy vrátit a přiřaďte stav objektu apartment vlákna. Pokud stav není nastaven, <xref:System.Threading.Thread.GetApartmentState%2A> vrátí <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType>.  
+ Spravované vlákno, může být označen k označení, že bude hostitelem [jednovláknové](https://msdn.microsoft.com/library/windows/desktop/ms680112.aspx) nebo [vícevláknové](https://msdn.microsoft.com/library/windows/desktop/ms693421.aspx) typu apartment. (Další informace o modelu COM dělení na vlákna architektuře, najdete v části [procesy, vláken a Apartment](https://msdn.microsoft.com/library/windows/desktop/ms693344.aspx).) <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, A <xref:System.Threading.Thread.TrySetApartmentState%2A> metody <xref:System.Threading.Thread> třídy vrátit a přiřaďte stav objektu apartment vlákna. Pokud stav není nastaven, <xref:System.Threading.Thread.GetApartmentState%2A> vrátí <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType>.  
   
  Vlastnost lze nastavit pouze v případě, že se <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> stavu; ho lze nastavit pouze jednou vlákna.  
   

@@ -1,24 +1,26 @@
 ---
-title: "Zpřístupnění informací"
-ms.custom: 
+title: Zpřístupnění informací
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7cf47ce71c70ab9054b1417bab7ae05d9c029188
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0af083ba1d97fcf07eab6f9d789f023a9194070c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, které informace jsou odhalil a zda jej lze použít uživatelem se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a jejich zmírnění pro každý.  
@@ -27,10 +29,10 @@ Zpřístupnění informací umožňuje útočníkovi získat cenné informace o 
  Pokud používáte zabezpečení na úrovni zpráv přes přenosové vrstvy protokolu HTTP, mějte na paměti, že zabezpečení na úrovni zpráv nechrání hlavičky protokolu HTTP. Jediný způsob, jak chránit hlavičky protokolu HTTP je použití přenos HTTPS místo protokolu HTTP. Přenos HTTPS způsobí, že celé zprávy, včetně hlavičky protokolu HTTP k šifrování pomocí protokolu Secure Sockets Layer (SSL).  
   
 ## <a name="policy-information"></a>Informace o zásadách  
- Zachování zásady zabezpečení je důležité, zejména v federační scénáře, kde je v zásadách vystaven citlivé vydán token požadavky nebo informace o tokenu vystavitele. V těchto případech doporučujeme zabezpečit koncový bod zásad federované služby pro aby útočníci nemohli získat informace o službě, jako je typ deklarace identity se umístí vystavený token, nebo přesměrovat klienty na škodlivý tokenu vystavitelů. Například může útočník zjistit párů jméno a heslo uživatele změnou řetězu federovaného vztahu důvěryhodnosti ukončit v vystavitele, provést útok man-in-the-middle. Dále je doporučeno, federované klienti, kteří získat jejich vazby prostřednictvím načtení zásad ověřte, zda důvěřují vystavitele v řetězu získaných federovaný vztah důvěryhodnosti. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]federační scénáře, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Zachování zásady zabezpečení je důležité, zejména v federační scénáře, kde je v zásadách vystaven citlivé vydán token požadavky nebo informace o tokenu vystavitele. V těchto případech doporučujeme zabezpečit koncový bod zásad federované služby pro aby útočníci nemohli získat informace o službě, jako je typ deklarace identity se umístí vystavený token, nebo přesměrovat klienty na škodlivý tokenu vystavitelů. Například může útočník zjistit párů jméno a heslo uživatele změnou řetězu federovaného vztahu důvěryhodnosti ukončit v vystavitele, provést útok man-in-the-middle. Dále je doporučeno, federované klienti, kteří získat jejich vazby prostřednictvím načtení zásad ověřte, zda důvěřují vystavitele v řetězu získaných federovaný vztah důvěryhodnosti. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] federační scénáře, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
   
 ## <a name="memory-dumps-can-reveal-claim-information"></a>Výpisy paměti může odhalit informace o deklaraci identity  
- Pokud se aplikace nezdaří, přihlaste se soubory, jako jsou ty vyprodukované zotavení po havárii. Watson, může obsahovat informace o deklaraci identity. Tyto informace by neměl být exportovány do jinými entitami, jako je například týmy podpory; jinak informace o deklaraci identity, obsahující privátní data taky exportovat. Můžete zmírnit není poslat soubory protokolu na neznámý entity. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Systému Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160).  
+ Pokud se aplikace nezdaří, přihlaste se soubory, jako jsou ty vyprodukované zotavení po havárii. Watson, může obsahovat informace o deklaraci identity. Tyto informace by neměl být exportovány do jinými entitami, jako je například týmy podpory; jinak informace o deklaraci identity, obsahující privátní data taky exportovat. Můžete zmírnit není poslat soubory protokolu na neznámý entity. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160).  
   
 ## <a name="endpoint-addresses"></a>Adresy koncových bodů  
  Adresy koncového bodu obsahuje informace potřebné ke komunikaci s koncovým bodem. Zabezpečení protokolu SOAP musí obsahovat adresu plně ve zprávách vyjednávání zabezpečení, které se vyměňují aby bylo možné vyjednávání symetrického klíče mezi klientem a serverem. Protože vyjednávání zabezpečení je spuštění procesu, hlavičky adresy nelze zašifrovat během tohoto procesu. Proto adresa nesmí obsahovat žádné důvěrných dat; jinak hodnota vede k útokům zpřístupnění informací.  
@@ -45,7 +47,7 @@ Zpřístupnění informací umožňuje útočníkovi získat cenné informace o 
   
 -   Odkazy na službu, jsou považovány za důvěryhodné. Vezměte v potaz při každém přenosu instance služby odkaz zajistit, aby nebyly zaměněny.  
   
--   Některé aplikace může být činnost koncového uživatele, který umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v referenčním a důvěryhodnosti data služby prokazuje vzdáleného hostitele. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Poskytuje rozšíření, které musí body pro taková zařízení, ale uživatel je implementována.  
+-   Některé aplikace může být činnost koncového uživatele, který umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v referenčním a důvěryhodnosti data služby prokazuje vzdáleného hostitele. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje rozšíření, které musí body pro taková zařízení, ale uživatel je implementována.  
   
 ## <a name="ntlm"></a>NTLM  
  Ve výchozím nastavení v prostředí domény systému Windows, ověřování systému Windows používá protokol Kerberos k ověřování a autorizaci uživatelů. Pokud z nějakého důvodu nelze použít protokol Kerberos, použije se jako zálohu NT LAN Manager (NTLM). Tuto funkci můžete zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`. Problémy na vzít na vědomí při povolení protokolu NTLM patří:  
@@ -57,7 +59,7 @@ Zpřístupnění informací umožňuje útočníkovi získat cenné informace o 
 ### <a name="specifying-client-credentials-or-invalid-identity-forces-ntlm-usage"></a>Zadání pověření klienta nebo neplatná identita vynutí použití protokolu NTLM  
  Při vytváření klienta, zadání přihlašovacích údajů klienta bez názvu domény, nebo zadáte neplatný server identity, způsobí, že protokol NTLM namísto protokolu Kerberos použita (Pokud `AlllowNtlm` je nastavena na `true`). Protože protokol NTLM neprovádí ověřování serveru, může být odhalena potenciálně informace.  
   
- Například je možné zadat pověření klienta Windows bez názvu domény, jak je znázorněno v následujícím [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] kódu.  
+ Například je možné zadat pověření klienta Windows bez názvu domény, jak je znázorněno v následujícím kódu jazyka Visual C#.  
   
 ```  
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");  
@@ -65,7 +67,7 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
   
  Kód není uveden název domény, a proto se použije protokol NTLM.  
   
- Pokud je zadané doméně, ale neplatný hlavní název služby je zadán pomocí funkce identitu koncového bodu, se používá protokol NTLM. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak není zadaný koncový bod identity, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pokud je zadané doméně, ale neplatný hlavní název služby je zadán pomocí funkce identitu koncového bodu, se používá protokol NTLM. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] jak není zadaný koncový bod identity, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  

@@ -1,7 +1,7 @@
 ---
-title: "Deconstructing řazených kolekcí členů a dalších typů"
-description: "Naučte se deconstruct řazených kolekcí členů a dalších typů."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
+title: Deconstructing řazených kolekcí členů a dalších typů
+description: Naučte se deconstruct řazených kolekcí členů a dalších typů.
+keywords: Rozhraní .NET, rozhraní .NET core, C#
 author: rpetrusha
 ms-author: ronpet
 ms.date: 07/18/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: e626eeb1f3de2716e1ffe4fcbec1c16558e5bf0e
-ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
+ms.openlocfilehash: 5a119f935b1cc80fe5cf738f03057c68c7eb5ba5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Deconstructing řazených kolekcí členů a dalších typů #
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/27/2017
 
 Načítání více hodnot pro pole a vlastnosti z objektu může být stejně náročná: je potřeba přiřadit hodnotu pole nebo vlastnost proměnné na základě člena člena. 
 
-Od verze jazyka C# 7, můžete načíst více prvků z řazené kolekce členů nebo načíst více pole, vlastnosti a počítaných hodnot z objektu v jedné *deconstruct* operaci. Pokud jste deconstruct řazené kolekce členů, přiřadíte jeho elementy jednotlivé proměnné. Pokud jste deconstruct objekt, přiřadíte vybrané hodnoty jednotlivých proměnné. 
+Od verze 7.0 C#, můžete načíst více prvků z řazené kolekce členů nebo načíst více pole, vlastnosti a počítaných hodnot z objektu v jedné *deconstruct* operaci. Pokud jste deconstruct řazené kolekce členů, přiřadíte jeho elementy jednotlivé proměnné. Pokud jste deconstruct objekt, přiřadíte vybrané hodnoty jednotlivých proměnné. 
 
 ## <a name="deconstructing-a-tuple"></a>Deconstructing řazené kolekce členů
 
@@ -62,7 +62,7 @@ Všimněte si, že není možné kombinovat deklarace a přiřazení do existuj�
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>Deconstructing prvky řazené kolekce členů s zahodí
 
-Často při deconstructing řazené kolekce členů, co vás zajímá hodnoty jenom některé prvky. Od verze jazyka C# 7, můžete využít výhod podpory jazyka C# na pro *zahodí*, které jsou jen pro zápis proměnné, jejichž hodnoty, které jste se rozhodli ignorovat. Zahození je určen znakem podtržítka ("\_") v přiřazení. Zahodit tolik hodnoty podle potřeby; všechny jsou reprezentované pomocí jedné zahození `_`.
+Často při deconstructing řazené kolekce členů, co vás zajímá hodnoty jenom některé prvky. Od verze 7.0 C#, můžete využít výhod podpory jazyka C# na pro *zahodí*, které jsou jen pro zápis proměnné, jejichž hodnoty, které jste se rozhodli ignorovat. Zahození je určen znakem podtržítka ("\_") v přiřazení. Zahodit tolik hodnoty podle potřeby; všechny jsou reprezentované pomocí jedné zahození `_`.
 
 Následující příklad ukazuje použití řazené kolekce členů s zahození. `QueryCityDataForYears` Metoda vrátí hodnotu 6-řazené kolekce členů s názvem města, jeho oblasti, rok, název města plnění pro tento rok, druhý roku a název města plnění pro tento druhý roku. Příklad ukazuje změnu v plnění mezi tyto dva roky. Data k dispozici z řazenou kolekci členů, jsme unconcerned oblasti města a víme název města a kalendářní data v době návrhu. V důsledku toho jsme se pouze zajímá dvě naplnění hodnotami uloženými v řazené kolekci členů a jeho zbývající hodnoty jako zahození dokáže zpracovat.  
 

@@ -1,11 +1,12 @@
 ---
 title: Propagace typu (Visual Basic)
-ms.custom: 
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declared elements [Visual Basic], scope
@@ -16,17 +17,17 @@ helpviewer_keywords:
 - type promotion
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f3a55c023afe7afe96f862f0b3cbbdb03a15b902
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ddb0d61f0f1c94e8e28493d0c62afe1e09503804
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="type-promotion-visual-basic"></a>Propagace typu (Visual Basic)
-Když je deklarovat programovací element v modulu, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zvýší úroveň jeho oboru do oboru názvů, který obsahuje modul. To se označuje jako *zadejte povýšení*.  
+Po deklarování programovací element v modulu jazyka Visual Basic zvýší úroveň jeho oboru do oboru názvů, který obsahuje modul. To se označuje jako *zadejte povýšení*.  
   
  Následující příklad ukazuje definici kostru modulu a dva členové tohoto modulu.  
   
@@ -46,7 +47,7 @@ Když je deklarovat programovací element v modulu, [!INCLUDE[vbprvb](~/includes
   
  [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
   
- V předchozím příkladu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] nelze zvýšit úroveň třída `abc` k `thisNameSpace` protože výčet na úrovni oboru názvů se stejným názvem již existuje. Pro přístup k `abcSub`, musíte použít úplnou kvalifikace řetězec `thisNamespace.thisModule.abc.abcSub`. Ale třídy `xyz` je stále povýšit, a dostanete `xyzSub` s kratší řetězec kvalifikace `thisNamespace.xyz.xyzSub`.  
+ V předchozím příkladu, Visual Basic nelze povýšit třída `abc` k `thisNameSpace` protože výčet na úrovni oboru názvů se stejným názvem již existuje. Pro přístup k `abcSub`, musíte použít úplnou kvalifikace řetězec `thisNamespace.thisModule.abc.abcSub`. Ale třídy `xyz` je stále povýšit, a dostanete `xyzSub` s kratší řetězec kvalifikace `thisNamespace.xyz.xyzSub`.  
   
 ### <a name="defeat-of-type-promotion-for-partial-types"></a>Odpojovací propagace typu pro částečné typy  
  Pokud třídu nebo strukturu uvnitř modul používá [částečné](../../../../visual-basic/language-reference/modifiers/partial.md) – klíčové slovo, propagace typu je automaticky nepotlačí pro tuto třídu nebo strukturu, zda obor názvů obsahuje člena se stejným názvem. Další prvky v modulu jsou stále vhodné pro typ akce.  
@@ -67,9 +68,9 @@ Když je deklarovat programovací element v modulu, [!INCLUDE[vbprvb](~/includes
 -   **Úplné kvalifikaci.** Při práci s moduly a další prvky v o stejný obor názvů, nejbezpečnější způsob je vždy nutné použít úplnou kvalifikaci pro všechny programovací elementy. Pokud je propagace typu nepotlačí pro člena modulu a které nemohou být plně tohoto člena, může nechtěně přístup různé programovací element.  
   
 ## <a name="see-also"></a>Viz také  
- [Module – příkaz](../../../../visual-basic/language-reference/statements/module-statement.md)  
- [Namespace – příkaz](../../../../visual-basic/language-reference/statements/namespace-statement.md)  
- [Částečné](../../../../visual-basic/language-reference/modifiers/partial.md)  
+ [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Příkaz Namespace](../../../../visual-basic/language-reference/statements/namespace-statement.md)  
+ [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
  [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Postupy: řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)  
+ [Postupy: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)  
  [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

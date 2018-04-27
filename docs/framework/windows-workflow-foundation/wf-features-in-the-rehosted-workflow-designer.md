@@ -1,26 +1,27 @@
 ---
-title: "Podpora nových funkcí Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje"
-ms.custom: 
+title: Podpora nových funkcí Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee8467eaeaef490f4c7a8bfbcb204506d71f5500
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 999c18f20264a71cf73bbd5afd352ad3104a03e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje
-[!INCLUDE[wf](../../../includes/wf-md.md)]v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená mnoha nových funkcí, včetně několik vylepšení zkušeností Návrháře pracovního postupu. V tomto tématu jsou tyto funkce jsou podporované v Návrháři opětovné hostování nástroje, a ty, které nejsou aktuálně podporovány.  
+[!INCLUDE[wf](../../../includes/wf-md.md)] v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená mnoha nových funkcí, včetně několik vylepšení zkušeností Návrháře pracovního postupu. V tomto tématu jsou tyto funkce jsou podporované v Návrháři opětovné hostování nástroje, a ty, které nejsou aktuálně podporovány.  
   
 > [!NOTE]
 >  Seznam všech nové [!INCLUDE[wf](../../../includes/wf-md.md)] funkce zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], včetně těch, které se nevztahují ke návrháře opětovného hostování, najdete v tématu [co je nového v modelu Windows Workflow Foundation v rozhraní .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).  
@@ -54,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
  Následující snímek obrazovky ukazuje `WriteLine` aktivity v `Body` z `NoPersistScope`.  
   
- ![Auto & č. 45; příkazu obklopit vyřadit umístění](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")  
+ ![Automatické&#45;obklopit rozevírací umístění](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")  
   
  Následující snímek obrazovky ukazuje automaticky vytvořený `Sequence` aktivity v `Body` při druhý `WriteLine` se snížilo pod úroveň první.  
   
@@ -75,7 +76,7 @@ ms.lasthandoff: 12/22/2017
  Více výběrů aktivitu můžete také přetahování v návrháři a můžete také zpracoval pomocí místní nabídky.  
   
 ### <a name="outline-view-of-workflow-items"></a>Zobrazení osnovy položek pracovního postupu  
- Abyste snadněji přejděte hierarchické pracovní postupy, jsou součástí pracovního postupu uvedené v stromové zobrazení osnovy. Zobrazí se v zobrazení osnovy **Osnova dokumentu** zobrazení. Chcete-li otevřít toto zobrazení v [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], v hlavní nabídce vyberte **zobrazení**, **ostatní okna**, **Osnova dokumentu**, nebo stiskněte klávesu Ctrl W, U. Kliknutím na uzel v zobrazení osnovy bude přejděte na odpovídající aktivity v Návrháři pracovních postupů a zobrazení osnovy budou aktualizovány na Zobrazit aktivity, které jsou vybrány v návrháři. Tato funkce je podporovaná v Návrháři opětovné hostování nástroje.  
+ Abyste snadněji přejděte hierarchické pracovní postupy, jsou součástí pracovního postupu uvedené v stromové zobrazení osnovy. Zobrazí se v zobrazení osnovy **Osnova dokumentu** zobrazení. Chcete-li toto zobrazení otevřít v sadě Visual Studio, z hlavní nabídky, vyberte **zobrazení**, **ostatní okna**, **Osnova dokumentu**, nebo stiskněte klávesu Ctrl W, U. Kliknutím na uzel v zobrazení osnovy bude přejděte na odpovídající aktivity v Návrháři pracovních postupů a zobrazení osnovy budou aktualizovány na Zobrazit aktivity, které jsou vybrány v návrháři. Tato funkce je podporovaná v Návrháři opětovné hostování nástroje.  
   
  Následující snímek obrazovky dokončené pracovního postupu z [kurzu Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) zobrazení osnovy s sekvenční pracovní postup.  
   
@@ -93,7 +94,7 @@ ms.lasthandoff: 12/22/2017
   
  Aktivity lze také být přetáhli připojení mezi uzly vývojový diagram a stavy k automatické vložení uzlu mezi dvěma ostatní uzly. Následující snímek obrazovky ukazuje zvýrazněný řádek připojování, kde můžete aktivity přetažení z panelu nástrojů a vyřadit.  
   
- ![Auto & č. 45; vložení zpracování pro vyřazení aktivity](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "Autoinsert")  
+ ![Automatické&#45;vložit popisovač pro vyřazení aktivity](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "Autoinsert")  
   
  Automaticky připojit a automatické vkládání jsou podporovány v Návrháři opětovné hostování nástroje.  
   
@@ -140,7 +141,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  Podpora návrháře pro vytvoření přechodu sdílené aktivační události  
   
-4.  Aktivity použít k vytvoření pracovních stavu počítače, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, a<xref:System.Activities.Statements.Transition>  
+4.  Aktivity použít k vytvoření pracovních stavu počítače, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, a <xref:System.Activities.Statements.Transition>  
   
  Následující snímek obrazovky ukazuje stavu dokončení pracovního postupu počítače z [kurzu Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) krok [postupy: vytvoření pracovního postupu stavu počítače](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md).  
   
@@ -149,7 +150,7 @@ ms.lasthandoff: 12/22/2017
  Další informace o vytváření pracovních postupů stavu počítače najdete v tématu [stavu počítače pracovních](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md). Pracovní postupy stavu počítače jsou podporovány v Návrháři opětovné hostování nástroje.  
   
 ### <a name="contract-first-workflow-development"></a>Vývoj pro první kontrakt pracovního postupu  
- Nástroj pro vývoj kontrakt první pracovní postup umožňuje vývojáři navrhnout kontraktu v kódu nejprve, pak pomocí několika kliknutí v [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], automaticky generovat šablonu aktivit v sadě nástrojů představující jednotlivých operací. Tyto aktivity jsou poté použít k vytvoření pracovního postupu, který implementuje operace definované kontrakt. Návrhář postupu provádění vyhodnotí služby pracovního postupu zajistit, že tyto operace jsou implementované a podpis pracovního postupu odpovídá podpisu smlouvy. Vývojář můžete taky přidružit kolekce implementovaná kontraktů služby pracovních postupů. Další informace o vývoj pracovního postupu první kontraktu služby najdete v tématu [postupy: vytvoření služby pracovního postupu, který využívá existující smlouvy služby](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
+ Nástroj pro vývoj kontrakt první pracovní postup umožňuje vývojáři navrhnout první kontraktu v kódu a potom pomocí několika kliknutí v sadě Visual Studio automaticky generovat šablonu aktivit v sadě nástrojů představující jednotlivých operací. Tyto aktivity jsou poté použít k vytvoření pracovního postupu, který implementuje operace definované kontrakt. Návrhář postupu provádění vyhodnotí služby pracovního postupu zajistit, že tyto operace jsou implementované a podpis pracovního postupu odpovídá podpisu smlouvy. Vývojář můžete taky přidružit kolekce implementovaná kontraktů služby pracovních postupů. Další informace o vývoj pracovního postupu první kontraktu služby najdete v tématu [postupy: vytvoření služby pracovního postupu, který využívá existující smlouvy služby](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
   
 > [!WARNING]
 >  Vývoj kontrakt první pracovního postupu není podporováno v Návrháři pracovních postupů.

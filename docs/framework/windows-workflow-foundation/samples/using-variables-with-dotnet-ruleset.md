@@ -1,23 +1,24 @@
 ---
-title: "Pomocí proměnné sada pravidel pro rozhraní .NET Framework 3.5"
-ms.custom: 
+title: Pomocí proměnné sada pravidel pro rozhraní .NET Framework 3.5
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27b56249-22fe-4252-840f-74c0d6c7a6b3
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2656cc5d8add0027d6bf038d5de735ebccd2d96d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 216136ba084505947b5ab3c985284d704cb5872f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="using-variables-with-a-net-framework-35-ruleset"></a>Pomocí proměnné sada pravidel pro rozhraní .NET Framework 3.5
 Tento příklad ukazuje, jak vytvořit pracovní postup, který používá <xref:System.Activities.Statements.Interop> aktivity integrovat vlastní aktivity napsané v [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] používající zásady a pravidla. Pracovní postup předá vlastní aktivity dat pomocí vytvoření vazby proměnných pro vlastnosti závislosti vystavené vlastní aktivity.  
@@ -26,7 +27,7 @@ Tento příklad ukazuje, jak vytvořit pracovní postup, který používá <xref
   
 #### <a name="to-examine-travelrulelibrary"></a>K prozkoumání TravelRuleLibrary  
   
-1.  Pomocí [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], otevřete soubor řešení InteropWith35RuleSet.sln.  
+1.  Pomocí sady Visual Studio, otevřete soubor řešení InteropWith35RuleSet.sln.  
   
 2.  Otevřete TravelRuleSet.cs v Návrháři pracovních postupů.  
   
@@ -38,7 +39,7 @@ Tento příklad ukazuje, jak vytvořit pracovní postup, který používá <xref
   
 4.  Klikněte pravým tlačítkem `DiscountPolicy` a vyberte **kód zobrazení** možnost prozkoumat kód vedle kódu C# pro aktivitu.  
   
-     Sledovat nastavení vlastnosti závislosti `DiscountLevel`. Jde o ekvivalent argumentů [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]argumenty, najdete v části [proměnné a argumenty](../../../../docs/framework/windows-workflow-foundation/variables-and-arguments.md).  
+     Sledovat nastavení vlastnosti závislosti `DiscountLevel`. Jde o ekvivalent argumentů [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] argumenty, najdete v části [proměnné a argumenty](../../../../docs/framework/windows-workflow-foundation/variables-and-arguments.md).  
   
 ## <a name="interopwith35ruleset"></a>InteropWith35RuleSet  
  Toto je projekt sekvenční pracovní postup, který používá <xref:System.Activities.Statements.Interop> aktivity k integraci s vlastní sady pravidel, které jsou vytvořené v `TravelRuleLibrary` projektu. Proměnné jsou vytvořené na nejvyšší úrovni <xref:System.Activities.Statements.Sequence> aktivity. <xref:System.Activities.Statements.Interop> Aktivita se používá k integraci s `TravelRuleSet` aktivity. Proměnné, které jsou deklarované v <xref:System.Activities.Statements.Sequence> slouží k vytvoření vazby na vlastnosti závislosti.  

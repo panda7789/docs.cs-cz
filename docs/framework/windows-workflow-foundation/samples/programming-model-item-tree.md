@@ -1,26 +1,27 @@
 ---
-title: "Programování modelu položka stromu"
-ms.custom: 
+title: Programování modelu položka stromu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 83e804a3ede525510b5c46b494882656c74591b8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 497aa75214bdbbefa7f09ef56fe96926c2461ed6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="programming-model-item-tree"></a>Programování modelu položka stromu
-Tento příklad znázorňuje, jak se orientovat <xref:System.Activities.Presentation.Model.ModelItem> stromu pomocí vazby deklarativní data z [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] stromové zobrazení.  
+Tento příklad znázorňuje, jak se orientovat <xref:System.Activities.Presentation.Model.ModelItem> stromu pomocí deklarativní data vazby z Windows Presentation Foundation (WPF) stromovém zobrazení.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  <xref:System.Activities.Presentation.Model.ModelItem> Stromu je abstrakce, který je používán [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] infrastruktury vystavit data o základní instanci Upravovaný. Na následujícím obrázku je popis shromažďování různé vrstvy v rámci infrastruktury [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)].  

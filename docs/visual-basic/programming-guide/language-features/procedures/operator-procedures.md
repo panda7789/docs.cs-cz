@@ -1,11 +1,12 @@
 ---
-title: "Procedury operátoru (Visual Basic)"
-ms.custom: 
+title: Procedury operátoru (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -17,22 +18,22 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 865695731dd591b0c48f4416814fa97edf4ea42e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8fba5180da6498d280fa4192937c39d3e33168e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
-Procedury operátora je řada [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] příkazy, které definují chování standardní operátoru (například `*`, `<>`, nebo `And`) na třídu nebo strukturu jste definovali. To se označuje taky jako *přetížení operátoru*.  
+Řada Visual Basic příkazů, které definují chování standardní operátor je procedury operátora (například `*`, `<>`, nebo `And`) na třídu nebo strukturu jste definovali. To se označuje taky jako *přetížení operátoru*.  
   
 ## <a name="when-to-define-operator-procedures"></a>Při definování procedury operátoru  
  Pokud jste definovali třídu nebo strukturu, můžou deklarovat proměnné, které chcete být typu třídy nebo struktura. V některých případech musí tuto proměnnou součástí operace v rámci výrazu. Chcete-li to provést, musí být operand operátoru.  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]Definuje operátory jenom na jeho základní datové typy. Můžete definovat chování operátor Pokud jeden nebo oba operandy jsou typu třídu nebo strukturu.  
+ Visual Basic definuje operátory jenom na jeho základní datové typy. Můžete definovat chování operátor Pokud jeden nebo oba operandy jsou typu třídu nebo strukturu.  
   
  Další informace najdete v tématu [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md).  
   
@@ -90,13 +91,13 @@ Procedury operátora je řada [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] přík
  Další informace a příklady naleznete v tématu [operátor přetížení Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703).  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
- [Sub – procedury](./sub-procedures.md)  
- [Function – procedury](./function-procedures.md)  
- [Procedury vlastností](./property-procedures.md)  
+ [Procedury](./index.md)  
+ [Procedury Sub](./sub-procedures.md)  
+ [Procedury funkce](./function-procedures.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Postupy: definice operátora](./how-to-define-an-operator.md)  
- [Postupy: definice operátora převodu](./how-to-define-a-conversion-operator.md)  
- [Postupy: volání procedury operátora](./how-to-call-an-operator-procedure.md)  
- [Postupy: použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)
+ [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Postupy: Definice operátoru](./how-to-define-an-operator.md)  
+ [Postupy: Definice operátoru převodu](./how-to-define-a-conversion-operator.md)  
+ [Postupy: Volání procedury operátoru](./how-to-call-an-operator-procedure.md)  
+ [Postupy: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)

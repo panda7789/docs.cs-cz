@@ -1,28 +1,29 @@
 ---
-title: "Základní informace o řetězcích v jazyce Visual Basic"
-ms.custom: 
+title: Základní informace o řetězcích v jazyce Visual Basic
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - strings [Visual Basic], Like operator
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8881ad6ab7f28689019463abdab3b867e010d51e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4a40435b76b0eee4f4eca15d5ba1a31cc58698ab
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="string-basics-in-visual-basic"></a>Základní informace o řetězcích v jazyce Visual Basic
-`String` Datový typ reprezentuje řadu znaků (každý představuje zase instanci `Char` datový typ). Toto téma představuje základní koncepty řetězců v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+`String` Datový typ reprezentuje řadu znaků (každý představuje zase instanci `Char` datový typ). Toto téma představuje základní koncepty řetězců v jazyce Visual Basic.  
   
 ## <a name="string-variables"></a>Řetězec proměnné  
  Instance řetězce lze přiřadit hodnotu literálu, která představuje posloupnost znaků. Příklad:  
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrStrings#65](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_3.vb)]  
   
- Tento kód způsobí chybu, protože kompilátor ukončí řetězec po druhé uvozovky a zbytek řetězce byl interpretován jako kód. Chcete tento problém vyřešit [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] interpretuje dva znaky uvozovek v řetězcový literál jako jeden znak uvozovek do řetězce. Následující příklad ukazuje správný způsob zahrnout znak uvozovek do řetězce:  
+ Tento kód způsobí chybu, protože kompilátor ukončí řetězec po druhé uvozovky a zbytek řetězce byl interpretován jako kód. Chcete-li tento problém vyřešit, Visual Basic interpretuje dva znaky uvozovek v řetězcový literál jako jeden znak uvozovek do řetězce. Následující příklad ukazuje správný způsob zahrnout znak uvozovek do řetězce:  
   
  [!code-vb[VbVbalrStrings#66](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_4.vb)]  
   
@@ -81,6 +82,6 @@ World]]></xml>.Value
   
 ## <a name="see-also"></a>Viz také  
  [Představení řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md)  
- [Char – datový typ](../../../../visual-basic/language-reference/data-types/char-data-type.md)  
+ [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)  
+ [Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)  
  [Základní operace s řetězci](../../../../standard/base-types/basic-string-operations.md)

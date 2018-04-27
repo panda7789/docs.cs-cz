@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9a52bafd1536783c59e9e1b92f3ad16b5000ca3b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: ea9fb2322202dfa19344e6119e748827535b0739
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 
@@ -253,7 +253,7 @@ Vyzkoušejte si to. Potom zkontrolujte, jak jste to udělali. Měli byste obdrž
 
 Jste dokončili rychlé spuštění "větve a smyčky".
 
-Můžete pokračovat [interpolované řetězce](interpolated-strings-local.md) rychlé spuštění ve vašem vývojovém prostředí.
+Můžete pokračovat [řetězec interpolace](interpolated-strings-local.md) rychlé spuštění ve vašem vývojovém prostředí.
 
 Další informace o těchto konceptech v těchto tématech:
 

@@ -1,12 +1,12 @@
 ---
-title: "Návrh výčtu"
-ms.custom: 
+title: Návrh výčtu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - type design guidelines, enumerations
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], enumerations
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3ee73e8677ca3fd48f4bb3c94bd4e15c49a564c7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c3e89567761367ddcd67078b138c15b982a0d666
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="enum-design"></a>Návrh výčtu
 Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduchý výčty a příznak výčty.  
@@ -77,7 +77,7 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
   
  **X nesmí** rozšířit <xref:System.Enum?displayProperty=nameWithType> přímo.  
   
- <xref:System.Enum?displayProperty=nameWithType>je speciální typ používaný službou modulu CLR vytvořit uživateli definované výčty. Většina programovacích jazyků zadejte programovací element, který umožňuje přístup k této funkce. Například v jazyce C# `enum` – klíčové slovo se používá k definování výčet.  
+ <xref:System.Enum?displayProperty=nameWithType> je speciální typ používaný službou modulu CLR vytvořit uživateli definované výčty. Většina programovacích jazyků zadejte programovací element, který umožňuje přístup k této funkce. Například v jazyce C# `enum` – klíčové slovo se používá k definování výčet.  
   
 <a name="design"></a>   
 ### <a name="designing-flag-enums"></a>Návrh příznak výčty  
@@ -87,7 +87,7 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
   
  **✓ ZVAŽTE** poskytování hodnot speciální výčtu pro běžně používá kombinace příznaků.  
   
- Bitové operace jsou rozšířené koncept a nesmí být požadovány pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite>je příklad speciální hodnoty.  
+ Bitové operace jsou rozšířené koncept a nesmí být požadovány pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite> je příklad speciální hodnoty.  
   
  **X nepoužívejte** vytváření výčtů příznak, kde jsou neplatné určité kombinace hodnot.  
   
@@ -105,7 +105,7 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
   
 ## <a name="see-also"></a>Viz také  
  [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  

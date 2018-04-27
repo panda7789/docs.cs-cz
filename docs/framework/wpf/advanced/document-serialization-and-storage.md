@@ -1,31 +1,33 @@
 ---
-title: "Serializace a úložiště dokumentu"
-ms.custom: 
+title: Serializace a úložiště dokumentu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - 'serialization of documents [WPF], , '
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9a232e1e2557bf1ecc6bb5f27f941e03a204aec6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e65a20323e3797d6d56ac7941e4ac9aeeb0ed473
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
-[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]poskytuje výkonné prostředí pro vytváření a zobrazování dokumentů vysoké kvality.  Rozšířené funkce, které podporují – dokumenty a toku dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s efektivní 2D a 3D grafický funkce trvat [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] aplikací na novou úroveň kvality a činnost koncového uživatele.  Schopnost spravovat flexibilně reprezentaci v paměti dokumentu je klíčovou funkcí [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)], a schopnost efektivně uložení a načtení dokumenty z jiného úložiště dat je zapotřebí téměř každé aplikace.  Proces převodu dokument k úložišti externí data z interního vyjádření v paměti se říká serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit na původní instanci v paměti se říká deserializace.  
+Rozhraní Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování dokumentů vysoké kvality.  Rozšířené funkce, které podporují – dokumenty a toku dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s efektivní 2D a 3D grafický funkce trvat [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] aplikací na novou úroveň kvality a činnost koncového uživatele.  Schopnost spravovat flexibilně reprezentaci v paměti dokumentu je klíčovou funkcí [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)], a schopnost efektivně uložení a načtení dokumenty z jiného úložiště dat je zapotřebí téměř každé aplikace.  Proces převodu dokument k úložišti externí data z interního vyjádření v paměti se říká serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit na původní instanci v paměti se říká deserializace.  
   
  
   
@@ -52,7 +54,7 @@ ms.lasthandoff: 12/22/2017
     -   Podpora uživatelské rozhraní pro vlastní nastavení spuštění a možnosti.  
   
 ### <a name="xps-print-path"></a>Cesta pro tisk XPS  
- [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] Tiskové cesta také poskytuje rozšiřitelný mechanismus pro zápis dokumentů prostřednictvím tiskový výstup.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]slouží jako obou dokumentu formát souboru a je nativní zařazování tisku formát [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]dokumenty můžete odeslat přímo na [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny bez nutnosti pro převod do formátu zprostředkující.  Najdete v článku [přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md) Další informace o tiskových cestu výstupního možnostech a funkcích.  
+ Rozhraní Microsoft .NET Framework [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tiskové cesta také poskytuje rozšiřitelný mechanismus pro zápis dokumentů prostřednictvím tiskový výstup.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] slouží jako obou dokumentu formát souboru a je nativní zařazování tisku formát [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty můžete odeslat přímo na [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny bez nutnosti pro převod do formátu zprostředkující.  Najdete v článku [přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md) Další informace o tiskových cestu výstupního možnostech a funkcích.  
   
 <a name="PluginSerializers"></a>   
 ## <a name="plug-in-serializers"></a>Modul plug-in Serializátorů  
@@ -61,7 +63,7 @@ ms.lasthandoff: 12/22/2017
  Modul plug-in serializátorů podpory vývojáři aplikace tím, že poskytuje rozšíření pro nové návrhy úložiště a formáty souborů bez nutnosti code přímo pro každý potenciální formátu v čase vytvoření buildu.  Modul plug-in serializátorů také těžit jiných společností tím, že poskytuje standardizovaná způsob, jak nasadit, nainstalovat a aktualizovat systém dostupné moduly plug-in pro vlastní nebo chráněných formátů.  
   
 ### <a name="using-a-plug-in-serializer"></a>Pomocí modulu Plug-in serializátor  
- Modul plug-in serializátorů jsou jednoduché na používání.  <xref:System.Windows.Documents.Serialization.SerializerProvider> Vytvoří výčet tříd <xref:System.Windows.Documents.Serialization.SerializerDescriptor> objekt pro každý modul plug-in nainstalované v systému.  <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> Vlastnost filtry nainstalované moduly plug-in na základě aktuální konfigurace a ověří, že serializátor můžete načíst a používá je aplikace.  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> Poskytuje také další vlastnosti, jako <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> a <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>, které aplikace můžete použít pro vyzvání uživatele při výběru serializátoru pro k dispozici výstupní formát.  Výchozí modul plug-in serializátor pro [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] se poskytuje s [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] a je vždycky vytvořit její výčet.  Poté, co uživatel vybere výstupní formát, <xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> metoda se používá k vytvoření <xref:System.Windows.Documents.Serialization.SerializerWriter> pro konkrétní formát.  <xref:System.Windows.Documents.Serialization.SerializerWriter>.<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A> Může být volána metoda do výstupního datového proudu dokumentu do úložiště dat.  
+ Modul plug-in serializátorů jsou jednoduché na používání.  <xref:System.Windows.Documents.Serialization.SerializerProvider> Vytvoří výčet tříd <xref:System.Windows.Documents.Serialization.SerializerDescriptor> objekt pro každý modul plug-in nainstalované v systému.  <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> Vlastnost filtry nainstalované moduly plug-in na základě aktuální konfigurace a ověří, že serializátor můžete načíst a používá je aplikace.  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> Poskytuje také další vlastnosti, jako <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> a <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>, které aplikace můžete použít pro vyzvání uživatele při výběru serializátoru pro k dispozici výstupní formát.  Výchozí modul plug-in serializátor pro [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] se poskytuje s [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] a je vždycky vytvořit její výčet.  Poté, co uživatel vybere výstupní formát, <xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> metoda se používá k vytvoření <xref:System.Windows.Documents.Serialization.SerializerWriter> pro konkrétní formát.  <xref:System.Windows.Documents.Serialization.SerializerWriter>.<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A> pak nelze volat metodu do výstupního datového proudu dokumentu do úložiště dat.  
   
  Následující příklad ilustruje aplikaci, která používá <xref:System.Windows.Documents.Serialization.SerializerProvider> metoda ve vlastnosti "PlugInFileFilter".  PlugInFileFilter zobrazí nainstalované moduly plug-in a vytvoří řetězec filtru k dispozici soubor možnosti, jak <xref:Microsoft.Win32.SaveFileDialog>.  
   
@@ -73,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="InstallingPluginSerializers"></a>   
 ### <a name="installing-plug-in-serializers"></a>Instalace modulu Plug-in Serializátorů  
- <xref:System.Windows.Documents.Serialization.SerializerProvider> Třída poskytuje vyšší úrovně aplikační rozhraní pro modul plug-in serializátor zjišťování a přístup.  <xref:System.Windows.Documents.Serialization.SerializerProvider>Vyhledá a poskytuje aplikace seznam serializátorů, které jsou nainstalované a dostupné v systému.  Specifikace nainstalované serializátorů jsou definovány prostřednictvím nastavení registru.  Modul plug-in serializátorů lze přidat do registru pomocí <xref:System.Windows.Documents.Serialization.SerializerProvider.RegisterSerializer%2A> metoda; nebo pokud [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] ještě není nainstalovaná, může skriptu instalace modulu plug-in přímo sadu registru hodnoty sám sebe.  <xref:System.Windows.Documents.Serialization.SerializerProvider.UnregisterSerializer%2A> Metoda slouží k odebrání již nainstalovaného modul plug-in, nebo nastavení registru mohou být resetovat podobně skript, který odinstalaci.  
+ <xref:System.Windows.Documents.Serialization.SerializerProvider> Třída poskytuje vyšší úrovně aplikační rozhraní pro modul plug-in serializátor zjišťování a přístup.  <xref:System.Windows.Documents.Serialization.SerializerProvider> Vyhledá a poskytuje aplikace seznam serializátorů, které jsou nainstalované a dostupné v systému.  Specifikace nainstalované serializátorů jsou definovány prostřednictvím nastavení registru.  Modul plug-in serializátorů lze přidat do registru pomocí <xref:System.Windows.Documents.Serialization.SerializerProvider.RegisterSerializer%2A> metoda; nebo pokud [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] ještě není nainstalovaná, může skriptu instalace modulu plug-in přímo sadu registru hodnoty sám sebe.  <xref:System.Windows.Documents.Serialization.SerializerProvider.UnregisterSerializer%2A> Metoda slouží k odebrání již nainstalovaného modul plug-in, nebo nastavení registru mohou být resetovat podobně skript, který odinstalaci.  
   
 ### <a name="creating-a-plug-in-serializer"></a>Vytváření modulu Plug-in serializátor  
  Modul plug-in serializátorů a serializátorů propojené pomocí stejné zveřejněné veřejné metody a události a stejně tak může být navržený pro použití synchronně nebo asynchronně.  Obvykle se používá k vytvoření serializátoru, modul plug-in tři základní kroky:  

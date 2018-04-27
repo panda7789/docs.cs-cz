@@ -1,13 +1,13 @@
 ---
-title: "Přehled správy aplikací"
-ms.custom: 
+title: Přehled správy aplikací
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-caps.latest.revision: 
+caps.latest.revision: 56
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a881793c50a4ce506e752774e70e0904e30525c1
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 96a1ae8dce80588b296d9ab7fc9dff60fb7a04f0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro aplikaci na implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídu pro vytváření a Správa aplikací.  
@@ -128,7 +128,7 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
  [!code-csharp[ApplicationManagementOverviewSnippets#GetCurrentAppCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/CSharp/MainWindow.xaml.cs#getcurrentappcode)]
  [!code-vb[ApplicationManagementOverviewSnippets#GetCurrentAppCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/VisualBasic/MainWindow.xaml.vb#getcurrentappcode)]  
   
- <xref:System.Windows.Application.Current%2A>Vrátí odkaz na instanci <xref:System.Windows.Application> třídy. Pokud chcete odkaz na vaši <xref:System.Windows.Application> odvozené třídy musí převést hodnotu <xref:System.Windows.Application.Current%2A> vlastnost, jak je znázorněno v následujícím příkladu.  
+ <xref:System.Windows.Application.Current%2A> Vrátí odkaz na instanci <xref:System.Windows.Application> třídy. Pokud chcete odkaz na vaši <xref:System.Windows.Application> odvozené třídy musí převést hodnotu <xref:System.Windows.Application.Current%2A> vlastnost, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[ApplicationManagementOverviewSnippets#GetSTCurrentAppCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/CSharp/MainWindow.xaml.cs#getstcurrentappcode)]
  [!code-vb[ApplicationManagementOverviewSnippets#GetSTCurrentAppCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/VisualBasic/MainWindow.xaml.vb#getstcurrentappcode)]  
@@ -159,7 +159,7 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
 <a name="Showing_a_User_Interface"></a>   
 ### <a name="showing-a-user-interface"></a>Zobrazuje uživatelské rozhraní  
- Většina samostatné [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] aplikace otevřete <xref:System.Windows.Window> kdy začnou systémem. <xref:System.Windows.Application.Startup> Obslužné rutiny události je jedno umístění, ze kterého můžete k tomu, jak je ukázáno v následujícím kódu.  
+ Většina aplikací systému Windows samostatné otevřete <xref:System.Windows.Window> kdy začnou systémem. <xref:System.Windows.Application.Startup> Obslužné rutiny události je jedno umístění, ze kterého můžete k tomu, jak je ukázáno v následujícím kódu.  
   
  [!code-xaml[AppShowWindowHardSnippets#StartupEventMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AppShowWindowHardSnippets/CSharp/App.xaml#startupeventmarkup)]  
   
@@ -195,7 +195,7 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
 <a name="Processing_Command_Line_Arguments"></a>   
 ### <a name="processing-command-line-arguments"></a>Zpracování argumentů příkazového řádku  
- V [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)], samostatné aplikace může být spuštěn z příkazového řádku nebo z plochy. V obou případech může být předán argumenty příkazového řádku k aplikaci. Následující příklad ukazuje, aplikace, který je spuštěn s jediným argumentem příkazového řádku, "/ StartMinimized":  
+ V systému Windows může být spuštěn samostatné aplikace z příkazového řádku nebo z plochy. V obou případech může být předán argumenty příkazového řádku k aplikaci. Následující příklad ukazuje, aplikace, který je spuštěn s jediným argumentem příkazového řádku, "/ StartMinimized":  
   
  `wpfapplication.exe /StartMinimized`  
   
@@ -208,11 +208,11 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
  Kód obslužné rutiny <xref:System.Windows.Application.Startup> zkontrolujte zda **/StartMinimized** byl zadaný argument příkazového řádku; Pokud ano, otevře se hlavní okno s <xref:System.Windows.WindowState> z <xref:System.Windows.WindowState.Minimized>. Všimněte si, že <xref:System.Windows.Window.WindowState%2A> musí být nastavena vlastnost prostřednictvím kódu programu, hlavní <xref:System.Windows.Window> musí být explicitně otevřen v kódu.  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]Nelze načíst a zpracovat argumenty příkazového řádku, protože jejich spouštění pomocí [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] nasazení (viz [nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)). Můžete však načíst a parametrů řetězce dotazu z adresy URL, které se používají ke spuštění je zpracovat.  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] Nelze načíst a zpracovat argumenty příkazového řádku, protože jejich spouštění pomocí [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] nasazení (viz [nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)). Můžete však načíst a parametrů řetězce dotazu z adresy URL, které se používají ke spuštění je zpracovat.  
   
 <a name="Application_Activation_and_Deactivation"></a>   
 ### <a name="application-activation-and-deactivation"></a>Aplikace aktivace a deaktivace  
- [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]umožňuje uživatelům přepínat mezi aplikacemi. Nejběžnější způsob je pomocí kombinace kláves ALT + TAB. Aplikace je možné přepnout na pouze, pokud má zobrazené <xref:System.Windows.Window> , můžete vybrat uživatele. Aktuálně vybrané <xref:System.Windows.Window> je *aktivní okno* (také označované jako *popředí okno*) a je <xref:System.Windows.Window> která přijme vstup uživatele. Aplikace s aktivní okno *aktivní aplikační* (nebo *popředí aplikace*). Aplikace se změní na aktivní aplikace v následujících případech:  
+ Windows mohou uživatelé přepínat mezi aplikacemi. Nejběžnější způsob je pomocí kombinace kláves ALT + TAB. Aplikace je možné přepnout na pouze, pokud má zobrazené <xref:System.Windows.Window> , můžete vybrat uživatele. Aktuálně vybrané <xref:System.Windows.Window> je *aktivní okno* (také označované jako *popředí okno*) a je <xref:System.Windows.Window> která přijme vstup uživatele. Aplikace s aktivní okno *aktivní aplikační* (nebo *popředí aplikace*). Aplikace se změní na aktivní aplikace v následujících případech:  
   
 -   Jeho spuštění a zobrazuje <xref:System.Windows.Window>.  
   
@@ -248,14 +248,14 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
 -   Uživatel zavře hlavní <xref:System.Windows.Window>.  
   
--   Uživatel končí [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] relace odhlášení nebo vypnutí.  
+-   Uživatel ukončí relace Windows odhlášení nebo vypnutí.  
   
 -   Byla splněna podmínka konkrétní aplikace.  
   
  Ke správě ukončení aplikace <xref:System.Windows.Application> poskytuje <xref:System.Windows.Application.Shutdown%2A> metody <xref:System.Windows.Application.ShutdownMode%2A> vlastnost a <xref:System.Windows.Application.SessionEnding> a <xref:System.Windows.Application.Exit> události.  
   
 > [!NOTE]
->  <xref:System.Windows.Application.Shutdown%2A>lze volat pouze z aplikace, které mají <xref:System.Security.Permissions.UIPermission>. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací mít vždy toto oprávnění. Ale [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] spuštěné v karanténě částečným vztahem důvěryhodnosti zabezpečení zóně Internet nepodporují.  
+>  <xref:System.Windows.Application.Shutdown%2A> lze volat pouze z aplikace, které mají <xref:System.Security.Permissions.UIPermission>. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací mít vždy toto oprávnění. Ale [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] spuštěné v karanténě částečným vztahem důvěryhodnosti zabezpečení zóně Internet nepodporují.  
   
 #### <a name="shutdown-mode"></a>Vypnutí režimu  
  Většina aplikací vypnout když jsou uzavřeny všechny systémy windows nebo pokud je hlavní okno zavřít. V některých případech však další podmínky specifické pro aplikace může určit, kdy aplikace ukončí. Můžete zadat podmínky, za kterých vaše aplikace bude ukončena nastavením <xref:System.Windows.Application.ShutdownMode%2A> s jedním z následujících <xref:System.Windows.ShutdownMode> hodnot výčtu:  
@@ -273,10 +273,10 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
  Pokud máte specifické pro aplikaci vypnutí podmínky, nastavíte <xref:System.Windows.Application.ShutdownMode%2A> k <xref:System.Windows.ShutdownMode.OnExplicitShutdown>. V takovém případě je vaší povinností vypnutí aplikace explicitně voláním <xref:System.Windows.Application.Shutdown%2A> metodu; jinak, vaše aplikace bude dále běžet i v případě, že jsou zavřeny všechny systémy windows. Všimněte si, že <xref:System.Windows.Application.Shutdown%2A> je implicitně volána, když <xref:System.Windows.Application.ShutdownMode%2A> je buď <xref:System.Windows.ShutdownMode.OnLastWindowClose> nebo <xref:System.Windows.ShutdownMode.OnMainWindowClose>.  
   
 > [!NOTE]
->  <xref:System.Windows.Application.ShutdownMode%2A>můžete nastavit od [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], ale je ignorován; [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] se vždy vypne při jeho je opuštění v prohlížeči nebo prohlížeče, který hostuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je uzavřený. Další informace najdete v tématu [navigační přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md).  
+>  <xref:System.Windows.Application.ShutdownMode%2A> můžete nastavit od [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], ale je ignorován; [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] se vždy vypne při jeho je opuštění v prohlížeči nebo prohlížeče, který hostuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je uzavřený. Další informace najdete v tématu [navigační přehled](../../../../docs/framework/wpf/app-development/navigation-overview.md).  
   
 #### <a name="session-ending"></a>Ukončování relace  
- Vypnutí podmínky, které jsou popsány <xref:System.Windows.Application.ShutdownMode%2A> vlastnost jsou specifické pro aplikaci. V některých případech ale aplikace může vypnout v důsledku podmínku externí. Nejběžnější externí podmínku nastane, když uživatel končí [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] relace následující akce:  
+ Vypnutí podmínky, které jsou popsány <xref:System.Windows.Application.ShutdownMode%2A> vlastnost jsou specifické pro aplikaci. V některých případech ale aplikace může vypnout v důsledku podmínku externí. Nejběžnější externí podmínku dojde, pokud uživatel ukončí relace systému Windows pomocí následujících akcí:  
   
 -   Odhlášení  
   
@@ -286,17 +286,17 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
 -   V režimu spánku  
   
- Rozpoznat, kdy [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] neukončí relace může zpracovat <xref:System.Windows.Application.SessionEnding> událostí, jak je znázorněno v následujícím příkladu.  
+ Chcete-li zjistit při ukončení relace systému Windows, může zpracovávat <xref:System.Windows.Application.SessionEnding> událostí, jak je znázorněno v následujícím příkladu.  
   
  [!code-xaml[ApplicationSessionEndingSnippets#HandlingSessionEndingXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/CSharp/App.xaml#handlingsessionendingxaml)]  
   
  [!code-csharp[ApplicationSessionEndingSnippets#HandlingSessionEndingCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/CSharp/App.xaml.cs#handlingsessionendingcodebehind)]
  [!code-vb[ApplicationSessionEndingSnippets#HandlingSessionEndingCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/visualbasic/application.xaml.vb#handlingsessionendingcodebehind)]  
   
- V tomto příkladu zkontroluje kód <xref:System.Windows.SessionEndingCancelEventArgs.ReasonSessionEnding%2A> vlastnosti k určení jak [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] konec relace. Tato hodnota používá k uživateli zobrazí potvrzovací zpráva. Pokud uživatel nechce relace k ukončení, nastaví kód <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> k `true` zabránit [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] relace ukončuje.  
+ V tomto příkladu zkontroluje kód <xref:System.Windows.SessionEndingCancelEventArgs.ReasonSessionEnding%2A> vlastnosti k určení, jak konec relace Windows. Tato hodnota používá k uživateli zobrazí potvrzovací zpráva. Pokud uživatel nechce relace k ukončení, nastaví kód <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> k `true` zabránit ukončování relace Windows.  
   
 > [!NOTE]
->  <xref:System.Windows.Application.SessionEnding>není aktivována pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)].  
+>  <xref:System.Windows.Application.SessionEnding> není aktivována pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)].  
   
 #### <a name="exit"></a>Ukončit  
  Při vypnutí aplikace potřebuje k provedení některých konečnému zpracování, jako je například zachování stavu aplikace. V takových situacích může zpracovat <xref:System.Windows.Application.Exit> událostí.  
@@ -311,7 +311,7 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
  Úplný příklad najdete v tématu [zachovat a obnovit vlastnosti oboru aplikace napříč relacemi aplikace](../../../../docs/framework/wpf/app-development/persist-and-restore-application-scope-properties.md).  
   
- <xref:System.Windows.Application.Exit>můžete ji zpracovat oba samostatné aplikace a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. Pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], <xref:System.Windows.Application.Exit> se vyvolá, když v následujících případech:  
+ <xref:System.Windows.Application.Exit> můžete ji zpracovat oba samostatné aplikace a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. Pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], <xref:System.Windows.Application.Exit> se vyvolá, když v následujících případech:  
   
 -   [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] Je opuštění.  
   
@@ -320,7 +320,7 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
 -   Při zavření prohlížeče.  
   
 #### <a name="exit-code"></a>Ukončovací kód  
- Aplikace jsou většinou spuštěn operační systém v reakci na žádost uživatele. Aplikaci však může být spuštěn v jiné aplikaci k provedení některých konkrétní úlohu. Při vypnutí aplikace spuštěného spuštění aplikace může chtít vědět podmínku, pod kterým aplikace spuštěného vypnout. V těchto situacích [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] umožňuje aplikacím vrátí ukončovací kód aplikace na vypnutí. Ve výchozím nastavení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace vrátit hodnotu ukončovací kód 0.  
+ Aplikace jsou většinou spuštěn operační systém v reakci na žádost uživatele. Aplikaci však může být spuštěn v jiné aplikaci k provedení některých konkrétní úlohu. Při vypnutí aplikace spuštěného spuštění aplikace může chtít vědět podmínku, pod kterým aplikace spuštěného vypnout. V těchto situacích Windows umožňuje aplikacím vrátí ukončovací kód aplikace na vypnutí. Ve výchozím nastavení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace vrátit hodnotu ukončovací kód 0.  
   
 > [!NOTE]
 >  Když ladíte [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], kód ukončení aplikace se zobrazí v **výstup** okno při vypnutí aplikace, ve zprávě, vypadá podobně jako následující:  
@@ -351,7 +351,7 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
   
 -   Pokus zachovat aplikace spuštěna.  
   
--   Nahrávání informací podrobné, uživatelsky, výjimka v [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] protokolu událostí.  
+-   Záznam podrobné, uživatelsky, informace o výjimce v protokolu událostí systému Windows.  
   
  Tato podpora implementace závisí na schopnost rozpoznat neošetřených výjimek, to znamená, co <xref:System.Windows.Application.DispatcherUnhandledException> událost se vyvolá pro.  
   
@@ -372,11 +372,11 @@ Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro
 ### <a name="application-lifetime-events"></a>Události životního cyklu aplikací  
  Samostatné aplikace a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] nemají přesně stejnou životnosti. Následující obrázek ukazuje klíče události v životnost samostatná aplikace a zobrazuje pořadí, ve kterém jsou vyvolány.  
   
- ![Samostatné aplikace & č. 45; Události aplikačního objektu](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents.png "ApplicationModelOverview_ApplicationObjectEvents")  
+ ![Samostatné aplikace &#45; události aplikačního objektu](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents.png "ApplicationModelOverview_ApplicationObjectEvents")  
   
  Podobně následující obrázek ukazuje klíče události v životnost [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]a zobrazuje pořadí, ve kterém jsou vyvolány.  
   
- ![XBAP & č. 45; Události aplikačního objektu](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents-xbap.png "ApplicationModelOverview_ApplicationObjectEvents_xbap")  
+ ![XBAP &#45; události aplikačního objektu](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents-xbap.png "ApplicationModelOverview_ApplicationObjectEvents_xbap")  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Application>  

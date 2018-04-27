@@ -1,7 +1,7 @@
 ---
-title: "Odolnost proti chybám a vysoké dostupnosti v mikroslužeb"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Odolnost proti chybám a vysoké dostupnosti v mikroslužeb"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Odolnost proti chybám a vysoké dostupnosti v mikroslužeb
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Odolnost proti chybám a vysoké dostupnosti v mikroslužeb
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cb78e98a01e413f31e6476dac77acdc4e5d4f78d
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 3ad3fc88a3e857f49283ff596e0385d0daad64b6
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost proti chybám a vysoké dostupnosti v mikroslužeb
 
@@ -43,7 +43,7 @@ Protokoly poskytují informace o tom, jak aplikace nebo služba běží, včetn�
 
 V monolitický serverové aplikace můžete jednoduše zapisuje protokoly do souboru na disku (soubor protokolu) a analyzujte je pomocí libovolného nástroje. Vzhledem k tomu, že provádění aplikací je omezený na pevné server nebo virtuální počítač, obvykle není příliš složitý pro analýzu v toku událostí. V distribuované aplikaci, kde jsou vykonány více služeb mezi mnoha uzly v clusteru služby orchestrator, schopnost korelovat distribuované události je však výzvu.
 
-Aplikace založené na mikroslužbu na by měl není pokusí uložit do výstupního datového proudu událostí nebo logfiles sám o sobě a ani spravovat směrování události, které centrální místo. Musí být transparentní, což znamená, že každý proces právě zapíše jeho datového proudu událostí standardní výstup, které pod bude shromáždit pomocí infrastruktura provedení prostředí, kde je spuštěna. Příkladem těchto směrovače datového proudu událostí je [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow), který shromažďuje streamů událostí z více zdrojů a vydává je výstup systémy. Může jít o jednoduché standardní výstup pro prostředí pro vývoj nebo cloudové systémy jako [Application Insights](https://azure.microsoft.com/services/application-insights/), [OMS](https://github.com/Azure/diagnostics-eventflow#oms-operations-management-suite) (pro místní aplikace), a [Azure Diagnostics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics). Existují také platformy analysis dobrou protokolů třetích stran a nástroje, které můžete hledat, výstrahy, sestavy a monitorování protokolů, i v reálném čase, jako jsou [Splunk](http://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
+Aplikace založené na mikroslužbu na by měl není pokusí uložit do výstupního datového proudu událostí nebo logfiles sám o sobě a ani spravovat směrování události, které centrální místo. Musí být transparentní, což znamená, že každý proces právě zapíše jeho datového proudu událostí standardní výstup, které pod bude shromáždit pomocí infrastruktura provedení prostředí, kde je spuštěna. Příkladem těchto směrovače datového proudu událostí je [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow), který shromažďuje streamů událostí z více zdrojů a vydává je výstup systémy. Může jít o jednoduché standardní výstup pro prostředí pro vývoj nebo cloudové systémy jako [Application Insights](https://azure.microsoft.com/services/application-insights/), [OMS](https://github.com/Azure/diagnostics-eventflow#oms-operations-management-suite) (pro místní aplikace), a [Azure Diagnostics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics). Existují také platformy analysis dobrou protokolů třetích stran a nástroje, které můžete hledat, výstrahy, sestavy a monitorování protokolů, i v reálném čase, jako jsou [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
 
 ### <a name="orchestrators-managing-health-and-diagnostics-information"></a>Orchestrators správu stavu a diagnostické informace
 
@@ -59,7 +59,7 @@ Různé orchestrators může zvukových podobné, ale diagnostiky a kontroly sta
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Aplikace Multi-Factor dvanácti. XI. Protokoly: Považovat za protokoly datových proudů událostí**
+-   **Aplikace Multi-Factor dvanácti. XI. Protokoly: Považovat za protokoly událostí datové proudy**
     [*https://12factor.net/logs*](https://12factor.net/logs)
 
 -   **Knihovna EventFlow Microsoft diagnostiky.** Úložiště GitHub.
@@ -72,13 +72,13 @@ Různé orchestrators může zvukových podobné, ale diagnostiky a kontroly sta
 -   **Připojení počítače se systémem Windows do služby analýzy protokolů Azure**
     [*https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents*](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents)
 
--   **Protokolování, co jste střední: Použití bloku aplikace sémantické protokolování**
-    [*https://msdn.microsoft.com/library/dn440729 (v=pandp.60).aspx*](https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx)
+-   **Protokolování, co jste střední: Používání bloku sémantické protokolování aplikace**
+    [*https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx*](https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx)
 
 -   **Splunk.** Oficiální web.
-    [*http://www.splunk.com*](http://www.splunk.com)
+    [*https://www.splunk.com/*](https://www.splunk.com/)
 
--   **EventSource – třída**. Rozhraní API pro události trasování událostí pro Windows (ETW) [ *https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](xref:System.Diagnostics.Tracing.EventSource)
+-   **EventSource – třída**. Rozhraní API pro události trasování událostí pro Windows (ETW) [*https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](xref:System.Diagnostics.Tracing.EventSource)
 
 
 

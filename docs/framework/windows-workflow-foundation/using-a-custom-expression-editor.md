@@ -1,30 +1,31 @@
 ---
-title: "Pomocí vlastního výrazu editoru"
-ms.custom: 
+title: Pomocí vlastního výrazu editoru
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5ae60b8267e60d880ccdc156566b489163d2e686
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5388ed3f55d97f3282a710ac59fe36cfb32fa49c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="using-a-custom-expression-editor"></a>Pomocí vlastního výrazu editoru
 Editor vlastního výrazu se dá implementovat zajistit výraz bohatší nebo jednodušší prostředí pro úpravy. Existuje několik situací, ve kterých můžete chtít použít editor vlastního výrazu:  
   
 -   Poskytovat podporu technologie IntelliSense a dalších bohaté funkce v Návrháři pracovních postupů opětovné hostování nástroje pro úpravy. Tato funkce je třeba zadat, protože výchozí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] editor výrazu nelze použít v opětovné hostování nástroje aplikace.  
   
--   Pro zjednodušení výraz prostředí pro obchodní analytik uživatele, pro úpravy, aby se po není, například vyžaduje další [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] nebo řešit [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] výrazy.  
+-   Pro zjednodušení výraz prostředí pro obchodní analytik uživatele, pro úpravy, aby se po není, například vyžaduje výuka Visual Basic nebo řešit výrazy jazyka Visual Basic.  
   
  Tři základní kroky, které jsou potřebné pro provedení editor vlastního výrazu:  
   

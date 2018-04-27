@@ -1,12 +1,12 @@
 ---
-title: "Standardní řetězce formátu data a času"
-ms.custom: 
+title: Standardní řetězce formátu data a času
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,18 +20,18 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-caps.latest.revision: "92"
+caps.latest.revision: 92
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 55f8f6b544a3ade0ad9423e8253cc44e0fb5fec1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5de7da12867e11fcde00089e13c98396ed279a5e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Formátovací řetězec datum a čas, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní data a času řetězec formátu; Další informace najdete v tématu [vlastní řetězců data a času formát](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:  
@@ -43,9 +43,9 @@ ms.lasthandoff: 12/23/2017
  Standardní hodnoty data a řetězce formátu časových lze použít s oběma <xref:System.DateTime> a <xref:System.DateTimeOffset> hodnoty.  
   
 > [!TIP]
->  Si můžete stáhnout [formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikace, která umožňuje použití formátu řetězce na hodnotu numerické nebo datum a čas hodnoty a zobrazí výsledný řetězec.  
+>  Si můžete stáhnout [formátování nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikace, která umožňuje použití formátu řetězce na hodnotu numerické nebo datum a čas hodnoty a zobrazí výsledný řetězec.  
   
-<a name="table"></a>Následující tabulka popisuje standardní hodnoty data a času specifikátory formátu. Pokud není uvedeno jinak, konkrétní standardní formátu data a času specifikátor vytváří identické řetězcové vyjádření bez ohledu na to, zda je použit s <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu. Najdete v článku [poznámky](#Notes) části Další informace o používání standardní řetězců data a času formátu.  
+<a name="table"></a> Následující tabulka popisuje standardní hodnoty data a času specifikátory formátu. Pokud není uvedeno jinak, konkrétní standardní formátu data a času specifikátor vytváří identické řetězcové vyjádření bez ohledu na to, zda je použit s <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu. Najdete v článku [poznámky](#Notes) části Další informace o používání standardní řetězců data a času formátu.  
   
 |Specifikátor formátu|Popis|Příklady|  
 |----------------------|-----------------|--------------|  
@@ -55,8 +55,8 @@ ms.lasthandoff: 12/23/2017
 |"F"|Vzor úplného formátu data/času (dlouhého formátu času).<br /><br /> Další informace: [úplné dlouho specifikátor data a času ("F") formát](#FullDateLongTime).|2009-06-15T13:45:30 -> pondělí 15. června 2009 1:45:30 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> LIB 15 juni 2009 13:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)|  
 |"g"|Vzor obecného formátu data/času (krátkého formátu času).<br /><br /> Další informace: [obecné data a krátkého času ("g") specifikátor formátu](#GeneralDateShortTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)|  
 |"G"|Vzor obecného formátu data a času (dlouhého formátu času).<br /><br /> Další informace: [obecné dlouho specifikátor data a času ("G") formát](#GeneralDateLongTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45:30 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)|  
-|"M", "m"|Vzor formátu měsíce/dne.<br /><br /> Další informace: [specifikátor formátu měsíci ("M", "m")](#MonthDay).|2009-06-15T13:45:30 -> 15. června (en US)<br /><br /> 2009-06-15T13:45:30 -> 15. juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> 15 Juni (id-ID)|  
-|"O", "o"|Vzor formátu data/času zpátečního převodu.<br /><br /> Další informace: [specifikátor formátu Round-trip ("O", "o")](#Roundtrip).|<xref:System.DateTime>hodnoty:<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc)--> 2009-06-15T13:45:30.0000000Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Unspecified)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset>hodnoty:<br /><br /> 2009-06-15T13:45:30-07:00--> 2009-06-15T13:45:30.0000000-07:00|  
+|"M", "m"|Vzor formátu měsíce/dne.<br /><br /> Další informace: [specifikátor formátu měsíci ("M", "m")](#MonthDay).|2009-06-15T13:45:30 -> 15. června (en US)<br /><br /> 2009-06-15T13:45:30 -&GT; 15. juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> 15 Juni (id-ID)|  
+|"O", "o"|Vzor formátu data/času zpátečního převodu.<br /><br /> Další informace: [specifikátor formátu Round-trip ("O", "o")](#Roundtrip).|<xref:System.DateTime> Hodnoty:<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc)--> 2009-06-15T13:45:30.0000000Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Unspecified)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset> Hodnoty:<br /><br /> 2009-06-15T13:45:30-07:00--&GT; 2009-06-15T13:45:30.0000000-07:00|  
 |"R", "r"|Vzor RFC1123.<br /><br /> Další informace: [RFC1123 ("R", "r") specifikátor formátu](#RFC1123).|2009-06-15T13:45:30 -> Mon, 15 června 2009 20:45:30 GMT|  
 |"s"|Vzor seřaditelného formátu data/času.<br /><br /> Další informace: [řazení ("s") specifikátor formátu](#Sortable).|2009-06-15T13:45:30 (DateTimeKind.Local) -> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) -> 2009-06-15T13:45:30|  
 |"t"|Vzor krátkého formátu času.<br /><br /> Další informace: [The krátkého času ("t") specifikátor formátu](#ShortTime).|2009-06-15T13:45:30 -> 1:45 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> 13:45 (personálního oddělení lidských zdrojů)<br /><br /> 2009-06-15T13:45:30 -> 01:45 م (ar – TEDY)|  
@@ -261,7 +261,7 @@ ms.lasthandoff: 12/23/2017
   
 -   Časové pásmo součást <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> hodnoty data a času "Z" (který zastupuje nula posun) používá k reprezentaci UTC.  
   
--   <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>hodnoty data a času mít žádné informace o časovém pásmu.  
+-   <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType> hodnoty data a času mít žádné informace o časovém pásmu.  
   
  Protože O "nebo"o"standardní formát specifikátor vyhovuje mezinárodní standard, formátování nebo analýza operace, která používá specifikátor vždy používá neutrální jazykovou verzi a gregoriánském kalendáři.  
   
@@ -426,4 +426,4 @@ ms.lasthandoff: 12/23/2017
  <xref:System.DateTimeOffset?displayProperty=nameWithType>  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
  [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
- [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+ [Ukázka: Rozhraní .NET Framework 4 formátování nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

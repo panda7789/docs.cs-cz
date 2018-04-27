@@ -1,29 +1,30 @@
 ---
-title: "Postupy: Předání procedur jiné proceduře v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Předání procedur jiné proceduře v jazyce Visual Basic'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - delegates [Visual Basic], passing procedures
 ms.assetid: 5adbba15-5a1d-413f-ab3e-3ff6cc0a4669
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4e8e205f5238aab39aa92574bc5c680e68cc8a81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 30264e0480b603b21f8f71893af0fd742af40286
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>Postupy: Předání procedur jiné proceduře v jazyce Visual Basic
 Tento příklad ukazuje způsob použití delegátů k předání procedury jiné proceduře.  
   
- Delegát je typ, který můžete použít jako libovolný jiný typ v [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. `AddressOf` Operátor vrátí objekt delegáta při použití název procedury.  
+ Delegát je typ, který můžete použít jako libovolný jiný typ v jazyce Visual Basic. `AddressOf` Operátor vrátí objekt delegáta při použití název procedury.  
   
  V tomto příkladu má procedura se parametr delegáta, který může trvat odkaz na jinou proceduru, které byly získány `AddressOf` operátor.  
   
@@ -55,6 +56,6 @@ Tento příklad ukazuje způsob použití delegátů k předání procedury jin�
   
 ## <a name="see-also"></a>Viz také  
  [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)  
- [AddressOf – operátor](../../../../visual-basic/language-reference/operators/addressof-operator.md)  
- [Delegate – příkaz](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
- [Postupy: volání metody delegáta](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)
+ [Operátor AddressOf](../../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Postupy: Volání metody delegáta](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)

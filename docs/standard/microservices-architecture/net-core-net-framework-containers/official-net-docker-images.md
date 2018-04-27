@@ -1,7 +1,7 @@
 ---
-title: "Oficiální imagí Dockeru rozhraní .NET"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Oficiální imagí Dockeru rozhraní .NET"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Oficiální imagí Dockeru rozhraní .NET
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Oficiální imagí Dockeru rozhraní .NET
+keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 42872caa1a9306187daeefd35feb9bec3fae60af
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: adbe63a2d2f93819b5b29c6dd8d8089cd35ad2f3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="official-net-docker-images"></a>Oficiální imagí Dockeru rozhraní .NET
 
@@ -41,7 +41,7 @@ Proč více bitových kopií? Při vývoji, vytváření a spouštění kontejne
 
 ### <a name="during-development-and-build"></a>Během vývoje a sestavení
 
-Během vývoje důležité je, jak rychle iterovat změny a možnost ladění změny. Velikost bitové kopie není důležité jako možnost provádět změny kódu a rychle zobrazit změny. Některé nástroje a "agenta sestavení kontejnery", použijte vývoj image ASP.NET Core (microsoft/aspnetcore sestavení) během vývoje a vytvořit proces. Při sestavování uvnitř kontejner Docker, jsou důležité aspekty prvky, které jsou nutné k kompilace aplikace. To zahrnuje kompilátor a všechny další závislosti rozhraní .NET, plus webové vývoj závislosti jako npm, Gulp a Bower.
+Během vývoje důležité je, jak rychle iterovat změny a možnost ladění změny. Velikost bitové kopie není důležité jako možnost provádět změny kódu a rychle zobrazit změny. Některé nástroje a "agenta sestavení kontejnery", použijte vývoj image ASP.NET Core (microsoft/aspnetcore sestavení) během vývoje a proces sestavení. Při sestavování uvnitř kontejner Docker, jsou důležité aspekty prvky, které jsou nutné k kompilace aplikace. To zahrnuje kompilátor a všechny další závislosti rozhraní .NET, plus webové vývoj závislosti jako npm, Gulp a Bower.
 
 Tento typ sestavení bitové kopie je důležité Nenasazujte tuto bitovou kopii do produkčního prostředí. Místo toho je obrázek, který použijete k sestavení obsahu, které umístíte do bitové kopie produkční. Tento image se použije ve vašem prostředí průběžnou integraci (CI) nebo prostředí pro sestavení. Například místo ruční instalaci všechny závislosti aplikací přímo na agentovi sestavení hostitele (virtuální počítač, např.), agent sestavení by doložit bitové kopie sestavení .NET Core s všechny závislosti, které jsou požadované pro sestavení aplikace. Agenta sestavení pouze musí vědět, jak spustit tento Docker image. To usnadňuje prostředí položek konfigurace a udělá z něj mnohem předvídatelnější.
 

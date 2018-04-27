@@ -23,17 +23,17 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-caps.latest.revision: ''
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5e6dec42d40039f9cc23ba976ecf421f6471888e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: cf1d7fda58c3bca0f9d76c3c4d3b8d22545a9912
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jejich syntaxe pravidel, účel a objektový model třídy, který je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace rozhraní .NET XAML services. Toto téma konkrétně podrobnosti rozšíření značek pro použití v jazyce XAML WPF.  
@@ -64,7 +64,7 @@ Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jeji
 -   `x:Array` poskytuje podporu pro vytvoření obecné pole v jazyce XAML syntaxi pro případy, kdy kolekce podporu poskytuje základní prvky WPF a modely ovládací prvek je úmyslně nepoužívá. Podrobnosti najdete v tématu [x: Array – rozšíření značek](../../../../docs/framework/xaml-services/x-array-markup-extension.md).  
   
 > [!NOTE]
->  `x:` Předpona se používá pro typické mapování oboru názvů jazyka XAML XAML vnitřní jazyk funkce v kořenovém elementu souboru XAML nebo produkční. Například [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] zahájit soubor XAML pomocí této šablony pro aplikace WPF `x:` mapování. Může zvolit jinou předponu token v vlastní mapování oboru názvů jazyka XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako prostředek identifikace tyto entity, které jsou definované součástí oboru názvů jazyka XAML pro jazyk XAML, na rozdíl od svazků k WPF výchozí obor názvů nebo další obory názvů jazyka XAML nesouvisí s konkrétní rozhraní.  
+>  `x:` Předpona se používá pro typické mapování oboru názvů jazyka XAML XAML vnitřní jazyk funkce v kořenovém elementu souboru XAML nebo produkční. Například šablony sady Visual Studio pro aplikace WPF zahájit soubor XAML pomocí této `x:` mapování. Může zvolit jinou předponu token v vlastní mapování oboru názvů jazyka XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako prostředek identifikace tyto entity, které jsou definované součástí oboru názvů jazyka XAML pro jazyk XAML, na rozdíl od svazků k WPF výchozí obor názvů nebo další obory názvů jazyka XAML nesouvisí s konkrétní rozhraní.  
   
 <a name="WPF_Specific_Markup_Extensions"></a>   
 ## <a name="wpf-specific-markup-extensions"></a>Rozšíření značek specifické pro grafický subsystém WPF  
@@ -112,7 +112,7 @@ Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jeji
   
 <a name="EscapeSequences"></a>   
 ## <a name="escape-sequences-and-markup-extensions"></a>Řídicí sekvence a rozšíření značek  
- Atribut v jazyce XAML procesor používá složené závorky jako indikátory rozšíření pořadí značek. Je také možné vytvořit hodnota atributu literálu složené závorky znak, v případě potřeby tak, že zadáte v řídicí sekvenci pomocí dvojici prázdný složené závorky následované literálu složených závorek. V tématu [řídicí sekvence {} – rozšíření značek](../../xaml-services/escape-sequence-markup-extension.md).  
+ Atribut v jazyce XAML procesor používá složené závorky jako indikátory rozšíření pořadí značek. Je také možné vytvořit hodnota atributu literálu složené závorky znak, v případě potřeby tak, že zadáte v řídicí sekvenci pomocí dvojici prázdný složené závorky následované literálu složených závorek. V tématu [ {} řídicí sekvence – rozšíření značek](../../xaml-services/escape-sequence-markup-extension.md).  
   
 <a name="Nesting"></a>   
 ## <a name="nesting-markup-extensions-in-xaml-usage"></a>Vnoření rozšíření značek v jazyce XAML využití  

@@ -1,21 +1,22 @@
 ---
-title: "Přístup z více vláken sdružování (C#)"
-ms.custom: 
+title: Přístup z více vláken sdružování (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 98ae68c1-ace8-44b9-9317-8920ac9ef2b6
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 09dd597e8ac7a6b336f71891ccc89984ea659614
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 56fba1197fe81e60e27f300ec43879569d0a9d48
+ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="thread-pooling-c"></a>Přístup z více vláken sdružování (C#)
 A *fondu vláken* je kolekce vláken, které lze použít k provedení některých úloh na pozadí. (Viz [zřetězení (C#)](../../../../csharp/programming-guide/concepts/threading/index.md) základní informace.) Zůstane primární bezplatné provést další úlohy asynchronně vlákno.  
@@ -60,7 +61,7 @@ private void AnotherLongTask(Object state)
 ## <a name="thread-pool-parameters-and-return-values"></a>Vlákno fondu parametry a návratové hodnoty  
  Vrácení hodnoty z vlákna, fondu vláken není jasné. Standardní způsob vrácení hodnot z volání funkce není povolena, protože `Sub` postupy jsou jediným typem procedury, která může zařazených do fronty pro fond vláken. Jedním ze způsobů, můžete zadat parametry a vrátí hodnoty, je zabalení parametry, vrácených hodnot, a metody v obálce třídy, jak je popsáno v [parametry a vrátí hodnoty pro procedury ve více vláknech (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md).  
   
- O easer způsob, jak zadat parametry a návratové hodnoty je pomocí volitelného `ByVal` proměnné objektu stavu systému <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> metoda. Pokud použijete tuto proměnnou k předání odkaz na instanci třídy, můžete členů instance upraveném vlákno fondu vláken a použít jako návratové hodnoty.  
+ Snadný způsob, jak zadat parametry a návratové hodnoty je pomocí volitelného `ByVal` proměnné objektu stavu systému <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> metoda. Pokud použijete tuto proměnnou k předání odkaz na instanci třídy, můžete členů instance upraveném vlákno fondu vláken a použít jako návratové hodnoty.  
   
  Zpočátku nemusí být zřejmé, že můžete upravit objekt, na kterou odkazuje proměnná, která je předaná hodnota. To můžete provést, protože pouze odkaz na objekt je předaná hodnota. Pokud provedete změny členům objektu, na kterou odkazuje odkaz na objekt, použít změny instance třídy skutečný.  
   

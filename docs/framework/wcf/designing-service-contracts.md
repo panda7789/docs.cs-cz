@@ -1,13 +1,13 @@
 ---
-title: "Navrhování kontraktů služby"
-ms.custom: 
+title: Navrhování kontraktů služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-caps.latest.revision: 
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 293d7f8502b39eac6508ba10b2fac128c6aa4879
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94ff361e89693f53c8d1baedcac749cf5178086e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou použité a další problémy, které vám pomůžou návrh operace, které odpovídají požadavky na vaše scénáře.  
@@ -63,9 +63,9 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
 > [!NOTE]
 >  Když je zděděný z dalších rozhraní kontraktu služby, nejde přepsat vlastnosti operace, jako je název nebo obor názvů. Když zkusíte to udělat, vytvoříte nové operace v aktuální kontrakt služby.  
   
- [!INCLUDE[crexample](../../../includes/crexample-md.md)]pomocí rozhraní pro vytvoření kontraktu služby najdete v tématu [postupy: vytvoření služby pomocí rozhraní kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-with-a-contract-interface.md).  
+ Příklad použití rozhraní k vytvoření kontraktu služby, naleznete v části [postupy: vytvoření služby pomocí rozhraní kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-with-a-contract-interface.md).  
   
- Můžete však použití třídy a definování kontraktu služby ve stejnou dobu implementace tohoto kontraktu. Výhoda vytváření vašim službám použitím <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> přímo na třídy a metody pro třídu, v uvedeném pořadí, je rychlost a jednoduchost. Nevýhodou je, že spravované třídy nepodporují vícenásobná dědičnost a v důsledku jejich můžete implementovat pouze jeden kontrakt služby najednou. Kromě toho všechny změny podpisy třída nebo metoda upravuje veřejného kontraktu pro tuto službu, která klientům zabránit, beze změny pomocí služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
+ Můžete však použití třídy a definování kontraktu služby ve stejnou dobu implementace tohoto kontraktu. Výhoda vytváření vašim službám použitím <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> přímo na třídy a metody pro třídu, v uvedeném pořadí, je rychlost a jednoduchost. Nevýhodou je, že spravované třídy nepodporují vícenásobná dědičnost a v důsledku jejich můžete implementovat pouze jeden kontrakt služby najednou. Kromě toho všechny změny podpisy třída nebo metoda upravuje veřejného kontraktu pro tuto službu, která klientům zabránit, beze změny pomocí služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
   
  Příklad, který používá třídu k vytvoření kontraktu služby a implementuje ve stejnou dobu, naleznete v části [postupy: vytvoření služby s třídou kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-contract-with-a-class.md).  
   
@@ -86,7 +86,7 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
   
  Kontrakty dat jsou výslovný souhlas styl kontrakty: žádný typ nebo data člen je serializováno, pokud použijete explicitně atribut kontraktu dat. Kontrakty dat se nevztahují k oboru přístupu spravovaného kódu: private členy můžete serializovat a odeslat jinde veřejně přístupná. (Například základní kontrakt dat najdete v části [postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md).) [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zpracovává definici základní protokolu SOAP zprávy, které operace funkci povolit, jakož i serializace datové typy do a z textu zprávy. Tak dlouho, dokud datové typy musejí být serializovatelná, není potřeba myslet podpůrné infrastruktuře exchange zpráva při navrhování vaše operace.  
   
- I když typické [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá aplikace <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontrakty dat pro operace, můžete použít jiné mechanismy serializace. Standardní <xref:System.Runtime.Serialization.ISerializable>, <xref:System.SerializableAttribute> a <xref:System.Xml.Serialization.IXmlSerializable> mechanismy všechny fungují pro zpracování serializace datové typy do základní protokolu SOAP zprávy, které je přenos z jedné aplikace do jiné. Další strategie serializace můžete použít, pokud vaše datové typy vyžadují speciální podpory. [!INCLUDE[crabout](../../../includes/crabout-md.md)]možnosti pro serializaci datových typů v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, najdete v části [zadání přenos dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
+ I když typické [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá aplikace <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontrakty dat pro operace, můžete použít jiné mechanismy serializace. Standardní <xref:System.Runtime.Serialization.ISerializable>, <xref:System.SerializableAttribute> a <xref:System.Xml.Serialization.IXmlSerializable> mechanismy všechny fungují pro zpracování serializace datové typy do základní protokolu SOAP zprávy, které je přenos z jedné aplikace do jiné. Další strategie serializace můžete použít, pokud vaše datové typy vyžadují speciální podpory. [!INCLUDE[crabout](../../../includes/crabout-md.md)] možnosti pro serializaci datových typů v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, najdete v části [zadání přenos dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
   
 #### <a name="mapping-parameters-and-return-values-to-message-exchanges"></a>Mapování parametry a návratové hodnoty na výměny zpráv  
  Operace služby jsou podporovány základní výměnou zpráv protokolu SOAP, které přenášejí data aplikací a zpět, kromě dat vyžaduje aplikaci, aby podporovala určité standardní zabezpečení, transakce a funkce související s relací. Protože to je případ, podpis operace služby stanoví určité základní *vzorce výměny zpráv* (MEP) podporující přenos dat a funkcím pro operace vyžaduje. Můžete zadat tří vzorů v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programovací model: požadavek nebo odpověď, jednosměrné a vzory duplexní zprávy.  
@@ -108,7 +108,7 @@ Function Hello (ByVal greeting As String) As String
   
  Tato operace podpisu stanoví formu základní výměny zpráv. Pokud neexistovala žádná korelace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nemůže zjistit, kterou operaci je určené návratovou hodnotu.  
   
- Všimněte si, že pokud zadáte jiný základní vzor zprávy, dokonce i operace služby, které vracejí `void` (`Nothing` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) jsou požadavek nebo odpověď výměny zpráv. Výsledek pro vaši operaci je, že pokud klient asynchronně vyvolá operaci, klient se zastaví zpracovávání, dokud je přijatá návratový zpráva, i když je prázdná v případě, že normální zpráva. Následující příklad kódu C# ukazuje operaci, která nevrátí, dokud klient přijal prázdný zprávu v odpovědi.  
+ Všimněte si, že pokud zadáte jiný základní vzor zprávy, dokonce i operace služby, které vracejí `void` (`Nothing` v jazyce Visual Basic) jsou požadavek nebo odpověď výměny zpráv. Výsledek pro vaši operaci je, že pokud klient asynchronně vyvolá operaci, klient se zastaví zpracovávání, dokud je přijatá návratový zpráva, i když je prázdná v případě, že normální zpráva. Následující příklad kódu C# ukazuje operaci, která nevrátí, dokud klient přijal prázdný zprávu v odpovědi.  
   
 ```csharp  
 [OperationContractAttribute]  
@@ -122,7 +122,7 @@ void Hello(string greeting);
 Sub Hello (ByVal greeting As String)  
 ```  
   
- V předchozím příkladu může zpomalit výkon klienta a kratší reakční doby, pokud trvá dlouhou dobu provést operaci, ale existují výhody požadavek nebo odpověď operace i když se vrátí `void`. Nejobvyklejší ten je, že chyb SOAP mohou být vráceny ve zprávě s odpovědí, který označuje, že došlo k nějaké chyby související se službou, v komunikaci nebo zpracování. SOAP chyb, které jsou určené v kontraktu služby se předávají do klientské aplikace jako <xref:System.ServiceModel.FaultException%601> objektu, kde parametr typu je typ zadaný v kontrakt služby. Díky tomu oznamující klientů o chybové stavy v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby snadné. [!INCLUDE[crabout](../../../includes/crabout-md.md)]výjimek, chyb protokolu SOAP a zpracování chyb, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). Příkladem klienta a požadavek nebo odpověď služby najdete v sekci [postupy: vytvoření kontraktu požadavku a odpovědi](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]problémy s vzor požadavku a odpovědi, najdete v části [služby požadavku a odpovědi](../../../docs/framework/wcf/feature-details/request-reply-services.md).  
+ V předchozím příkladu může zpomalit výkon klienta a kratší reakční doby, pokud trvá dlouhou dobu provést operaci, ale existují výhody požadavek nebo odpověď operace i když se vrátí `void`. Nejobvyklejší ten je, že chyb SOAP mohou být vráceny ve zprávě s odpovědí, který označuje, že došlo k nějaké chyby související se službou, v komunikaci nebo zpracování. SOAP chyb, které jsou určené v kontraktu služby se předávají do klientské aplikace jako <xref:System.ServiceModel.FaultException%601> objektu, kde parametr typu je typ zadaný v kontrakt služby. Díky tomu oznamující klientů o chybové stavy v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby snadné. [!INCLUDE[crabout](../../../includes/crabout-md.md)] výjimek, chyb protokolu SOAP a zpracování chyb, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). Příkladem klienta a požadavek nebo odpověď služby najdete v sekci [postupy: vytvoření kontraktu požadavku a odpovědi](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] problémy s vzor požadavku a odpovědi, najdete v části [služby požadavku a odpovědi](../../../docs/framework/wcf/feature-details/request-reply-services.md).  
   
 ##### <a name="one-way"></a>Jednosměrné  
  Pokud klient [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace služby by neměl počkejte na dokončení operace a nezpracovává chyb SOAP, operaci můžete zadat vzor jednosměrný zprávy. Jednosměrná operace je taková, ve kterém klienta vyvolá operace a pokračuje ve zpracování po [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zapíše zpráva k síti. Obvykle to znamená, že pokud je velmi velkých dat odeslaných v odchozí zprávy klient pokračuje, téměř okamžité spuštění (Pokud dojde k chybě při odesílání dat). Tento typ vzorce výměny zpráv podporuje chování jako událost od klienta k aplikaci služby.  
@@ -145,7 +145,7 @@ void Hello(string greeting);
 Sub Hello (ByVal greeting As String)  
 ```  
   
- Tato metoda je stejná jako předchozím příkladu požadavek nebo odpověď, ale nastavení <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `true` znamená, že i když je stejný jako metodu, operace služby neodesílá návratové zprávy a klienti vrátí okamžitě jednou odchozí zprávy předání do vrstvy kanálu. Příklad, naleznete v části [postupy: vytvoření kontraktu One-Way](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]jednosměrné vzor, najdete v části [One-Way služby](../../../docs/framework/wcf/feature-details/one-way-services.md).  
+ Tato metoda je stejná jako předchozím příkladu požadavek nebo odpověď, ale nastavení <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `true` znamená, že i když je stejný jako metodu, operace služby neodesílá návratové zprávy a klienti vrátí okamžitě jednou odchozí zprávy předání do vrstvy kanálu. Příklad, naleznete v části [postupy: vytvoření kontraktu One-Way](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] jednosměrné vzor, najdete v části [One-Way služby](../../../docs/framework/wcf/feature-details/one-way-services.md).  
   
 ##### <a name="duplex"></a>Duplex  
  Duplexní vzor je charakterizovaná schopnost službu a klienta k odesílání zpráv do sebe navzájem nezávisle zda pomocí jednosměrné nebo požadavek nebo odpověď zasílání zpráv. Tato forma obousměrné komunikace je užitečná pro služby, které musí komunikovat přímo na klienta nebo pro zajištění asynchronní prostředí serveru exchange zprávu, včetně událostí jako chování obou stranách.  
@@ -156,13 +156,13 @@ Sub Hello (ByVal greeting As String)
   
  Implementovat duplexní vzor, je nutné vytvořit druhý rozhraní, které obsahuje deklarace metody, které se nazývají na straně klienta.  
   
- [!INCLUDE[crexample](../../../includes/crexample-md.md)]vytvoření služby a klienta, který přistupuje k této službě najdete v části [postupy: vytvoření duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md) a [postupy: přístup k službám pomocí duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Pracovní vzorek, najdete v části [duplexní](../../../docs/framework/wcf/samples/duplex.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]problémy při použití duplexní kontrakty, najdete v části [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
+ Příklad vytvoření služby a klienta, který přistupuje k této službě naleznete v části [postupy: vytvoření duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md) a [postupy: přístup k službám pomocí duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Pracovní vzorek, najdete v části [duplexní](../../../docs/framework/wcf/samples/duplex.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] problémy při použití duplexní kontrakty, najdete v části [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
   
 > [!CAUTION]
 >  Když služba přijme zprávu o duplexní, vypadá na `ReplyTo` element v této příchozí zprávy k určení místa k odeslání odpovědi. Pokud není zabezpečena kanálu, který se používá k přijetí zprávy, pak nedůvěryhodného klienta může odeslat škodlivý zprávu s cílový počítač `ReplyTo`, tečka na začátku k odepření služby (DOS) tento cílový počítač.  
   
 ##### <a name="out-and-ref-parameters"></a>Parametry Ref a Out  
- Ve většině případů můžete použít `in` parametry (`ByVal` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) a `out` a `ref` parametry (`ByRef` v [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]). Protože obě `out` a `ref` parametry znamenat, že data jsou vrácena z operace, o operaci zápisu, například následující Určuje, že je požadavek nebo odpověď operace vyžaduje to i v případě, že operace podpis vrátí `void`.  
+ Ve většině případů můžete použít `in` parametry (`ByVal` v jazyce Visual Basic) a `out` a `ref` parametry (`ByRef` v jazyce Visual Basic). Protože obě `out` a `ref` parametry znamenat, že data jsou vrácena z operace, o operaci zápisu, například následující Určuje, že je požadavek nebo odpověď operace vyžaduje to i v případě, že operace podpis vrátí `void`.  
   
 ```csharp  
 [ServiceContractAttribute]  
@@ -193,7 +193,7 @@ End Interface
  Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo části zprávy) podporující služby jsou podepsané, podepsané a šifrovaná nebo odeslán bez informace podpisy nebo šifrování. Úroveň ochrany lze nastavit v různých oborech: na úrovni služby, určité operace, zprávy v rámci této operace, nebo část zprávy. Hodnoty nastavené na jeden obor stát výchozí hodnota pro menší obory, pokud není explicitně přepsána. Konfigurace vazeb nemůže poskytovat úroveň ochrany vyžaduje minimální pro kontrakt, je vyvolána výjimka. A pokud žádné hodnoty pro úroveň ochrany jsou explicitně nastavená na kontrakt, konfigurace vazeb řídí úroveň ochrany pro všechny zprávy, pokud má vazby zabezpečení zpráv. Toto je výchozí chování.  
   
 > [!IMPORTANT]
->  Rozhodnutí, jestli se explicitně nastavit různé obory kontraktu, na méně než úroveň plná ochrana <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> je obecně rozhodnutí, která obchoduje určitý stupeň zabezpečení pro zvýšení výkonu. V těchto případech musí svoje rozhodnutí o základem vaše operace a hodnoty dat, která si vyměňují. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md).  
+>  Rozhodnutí, jestli se explicitně nastavit různé obory kontraktu, na méně než úroveň plná ochrana <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> je obecně rozhodnutí, která obchoduje určitý stupeň zabezpečení pro zvýšení výkonu. V těchto případech musí svoje rozhodnutí o základem vaše operace a hodnoty dat, která si vyměňují. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md).  
   
  Například následující příklad kódu nenastaví buď <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> nebo <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A> vlastnost kontrakt.  
   
@@ -270,12 +270,12 @@ End Interface
   
 -   `GetGuid` Operace <xref:System.Guid?displayProperty=nameWithType> je vrácený v zprávu, která je šifrovaný a podepsaný.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]úrovně ochrany a je používají, naleznete [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]zabezpečení, najdete v části [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] úrovně ochrany a je používají, naleznete [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] zabezpečení, najdete v části [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
   
 ##### <a name="other-operation-signature-requirements"></a>Další požadavky operace podpisu  
  Některé funkce aplikace vyžadují konkrétní typ operace podpisu. Například <xref:System.ServiceModel.NetMsmqBinding> vazba podporuje trvanlivý služeb a klientů, ve kterých můžete aplikaci restartujte uprostřed komunikace a pokračovat tam, kde bylo přerušeno bez chybí všechny zprávy. ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).) Trvanlivý operace však vyžaduje pouze jeden `in` parametr a mít žádnou návratovou hodnotu.  
   
- Dalším příkladem je použití <xref:System.IO.Stream> typů v operacích. Protože <xref:System.IO.Stream> parametr obsahuje obsah celé zprávy, pokud vstup nebo výstup (to znamená, `ref` parametr `out` parametr nebo vrací hodnotu) je typu <xref:System.IO.Stream>, pak musí být pouze vstupu nebo výstupu, zadané v vaší operace. Kromě toho parametr nebo návratový typ musí být buď <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType>, nebo <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]datové proudy, najdete v části [velkého množství dat a Streaming](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
+ Dalším příkladem je použití <xref:System.IO.Stream> typů v operacích. Protože <xref:System.IO.Stream> parametr obsahuje obsah celé zprávy, pokud vstup nebo výstup (to znamená, `ref` parametr `out` parametr nebo vrací hodnotu) je typu <xref:System.IO.Stream>, pak musí být pouze vstupu nebo výstupu, zadané v vaší operace. Kromě toho parametr nebo návratový typ musí být buď <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType>, nebo <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] datové proudy, najdete v části [velkého množství dat a Streaming](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
 ##### <a name="names-namespaces-and-obfuscation"></a>Názvy oborů názvů a maskováním  
  Názvy a obory názvů .NET typů v definici kontrakty a operace jsou důležitá, když kontrakty se převedou na WSDL a když se vytváří a odesílají zprávy kontrakt. Proto důrazně doporučujeme, aby názvy kontraktu služby a obory názvů jsou explicitně nastavit pomocí `Name` a `Namespace` vlastnosti všech podporu smlouvy atributy, jako <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute>, <xref:System.Runtime.Serialization.DataContractAttribute>,  <xref:System.Runtime.Serialization.DataMemberAttribute>a další atributy kontrakt.  

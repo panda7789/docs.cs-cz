@@ -1,11 +1,12 @@
 ---
-title: "Rekurzivní procedury (Visual Basic)"
-ms.custom: 
+title: Rekurzivní procedury (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -16,17 +17,17 @@ helpviewer_keywords:
 - functions [Visual Basic], calling recursively
 - recursion
 ms.assetid: ba1d3962-b4c3-48d3-875e-96fdb4198327
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 444eeaf043cf3710c5154fd7e8577590e3ce7d1e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 471746f4412b61c9782e8019aa8a9ec6221afb04
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="recursive-procedures-visual-basic"></a>Rekurzivní procedury (Visual Basic)
-A *rekurzivní* postup je ten, který volá sám sebe. Obecně toto není jedním z nejúčinnějších způsobů zápis [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kódu.  
+A *rekurzivní* postup je ten, který volá sám sebe. Obecně platí tento není co nejúčinnější způsob, jak napsat kód jazyka Visual Basic.  
   
  Následující postup používá rekurze vypočítat faktoriál jeho původní argumentem.  
   
@@ -47,10 +48,10 @@ A *rekurzivní* postup je ten, který volá sám sebe. Obecně toto není jední
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.StackOverflowException>  
- [Postupy](./index.md)  
- [Sub – procedury](./sub-procedures.md)  
- [Function – procedury](./function-procedures.md)  
- [Procedury vlastností](./property-procedures.md)  
+ [Procedury](./index.md)  
+ [Procedury Sub](./sub-procedures.md)  
+ [Procedury funkce](./function-procedures.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Procedury operátoru](./operator-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
  [Přetížení procedury](./procedure-overloading.md)  

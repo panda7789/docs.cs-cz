@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: d24d190eab5896121231543e6696b6a4861b5bb8
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 0a24e8cf22bb8350777879a3adfd2757b89cd305
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -48,7 +48,7 @@ Ještě, C# pokračovat a přehrávání kousek zjištěná v jazyce Java. Java 
 
 ## <a name="c-version-30"></a>C# verze 3.0
 
-C# 3.0 verze byla v pozdní 2007, společně s Visual Studio 2008, i když úplné člun funkcí jazyka by skutečně dodávají s C# verze 3.5. Tato verze označena hlavní změnu růst jazyka C#. Zjistí-C# jako skutečně formidable programovací jazyk. Podívejme se na některé hlavní funkce v této verzi:
+C# 3.0 verze byla v pozdní 2007, společně s Visual Studio 2008, i když úplné člun funkcí jazyka by ve skutečnosti součástí rozhraní .NET Framework verze 3.5. Tato verze označena hlavní změnu růst jazyka C#. Zjistí-C# jako skutečně formidable programovací jazyk. Podívejme se na některé hlavní funkce v této verzi:
 
 - [Automaticky implementované vlastnosti](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)

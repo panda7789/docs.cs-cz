@@ -1,25 +1,25 @@
 ---
-title: "Nástroje Generátor serializátor XML (Sgen.exe)"
-ms.custom: 
+title: Nástroje Generátor serializátor XML (Sgen.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 10914281632a6651b3872485b795d9a636dc6bd0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 90b9a4fdbf5c341d128f768ed6825d1e2e465a82
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Nástroje Generátor serializátor XML (Sgen.exe)
 Vytvoří generátor serializátor XML sestavení serializace XML pro typy v zadané sestavení s cílem zlepšit výkon při spuštění <xref:System.Xml.Serialization.XmlSerializer> při serializuje nebo deserializuje objekty zadaného typů.  
@@ -37,15 +37,15 @@ sgen [options]
 |**/a**[**ssembly**] **: *** filename*|Generuje kód serializace pro všechny typy, které jsou součástí sestavení nebo spustitelný soubor určený podle *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
 |**/c [ompiler]:** *možnosti*|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny možnosti csc.exe jsou podporovány při předání kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  
 |**/d**[**ebug**]|Generuje obrázek, který lze použít se ladicí program.|  
-|**/f[orce]**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
+|**/f [orce]**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
 |**/ help nebo /?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/k**[**eep**]|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
-|**/n**[**ologo**]|Potlačí zobrazování úvodní nápis společnosti Microsoft.|  
-|**/o**[**ut**]**:***path*|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:** název generovaného sestavení se skládá z název vstupní sestavení plus "xmlSerializers.dll".|  
+|**/k**[**achovat**]|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
+|**/ n**[**ologo**]|Potlačí zobrazování úvodní nápis společnosti Microsoft.|  
+|**/o**[**ut**] **: *** cesta*|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:** název generovaného sestavení se skládá z název vstupní sestavení plus "xmlSerializers.dll".|  
 |**/p**[**roxytypes**]|Generuje kód serializace pouze pro typy XML webové služby proxy serveru.|  
-|**/r**[**eference**]**:***assemblyfiles*|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
+|**/r**[**rnovat**] **: *** assemblyfiles*|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
 |**/s**[**ilent**]|Potlačí zobrazování zpráv o úspěšném dokončení.|  
-|**/t**[**ype**]**:***type*|Generuje kód serializace pouze u zadaného typu.|  
+|**/t**[**adejte**] **: *** typu*|Generuje kód serializace pouze u zadaného typu.|  
 |**/v**[**erbose**]|Zobrazí podrobné informace pro ladění. Zobrazí seznam typů z cílového sestavení, které nelze serializovat, s <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
@@ -69,5 +69,5 @@ sgen Data.dll
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [Přehled webové služby XML](http://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d)  
+ [Přehled webové služby XML](https://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

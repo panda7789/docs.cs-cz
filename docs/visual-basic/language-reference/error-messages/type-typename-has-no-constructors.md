@@ -1,9 +1,9 @@
 ---
-title: "Typ & č. 39; &lt;typename&gt;& č. 39; nemá žádné konstruktory"
+title: Typ &#39; &lt;typename&gt; &#39; nemá žádné konstruktory
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,16 +13,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-caps.latest.revision: 
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d2c1bfcc4af928fff6a10ca3d97957e75cbd7355
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 03f8c0d958696abdb6043b65f8f1359897dcf5fd
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="type-39lttypenamegt39-has-no-constructors"></a>Typ & č. 39; &lt;typename&gt;& č. 39; nemá žádné konstruktory
+# <a name="type-39lttypenamegt39-has-no-constructors"></a>Typ &#39; &lt;typename&gt; &#39; nemá žádné konstruktory
 Typ nepodporuje volání `Sub New()`. Možnou příčinou je poškozená kompilátoru nebo binárního souboru.  
   
  **ID chyby:** BC30251  
@@ -33,7 +33,7 @@ Typ nepodporuje volání `Sub New()`. Možnou příčinou je poškozená kompil�
   
 2.  Pokud je typ ve stejném projektu, znovu zkompiluje sestavení obsahující typ.  
   
-3.  Pokud se chyba objeví znovu, přeinstalujte [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru.  
+3.  Pokud se chyba objeví znovu, přeinstalujte kompilátoru jazyka Visual Basic.  
   
 4.  Pokud potíže potrvají, shromažďovat informace o okolnostech a upozornění služby Microsoft Product Support Services.  
   

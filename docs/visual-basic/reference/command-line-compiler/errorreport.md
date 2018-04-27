@@ -13,14 +13,14 @@ helpviewer_keywords:
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59dc833299161eac7b119e654c94534f202b1cb7
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 5dc321f7f927d68a9f270076640cbc6d31d2f6d5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="-errorreport"></a>-errorreport
-Určuje, jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru by měl zprávy o chybách interní kompilátoru.  
+Určuje, jak by měla Visual Basic – kompilátor zprávy o chybách interní kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,7 +29,7 @@ Určuje, jak [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] kompilátoru by měl zp
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tato možnost nabízí pohodlný způsob, jak sestavu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vnitřní chyba kompilátoru (LED) k [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] týmu ve společnosti Microsoft. Ve výchozím nastavení kompilátoru odešle žádné informace společnosti Microsoft. Ale pokud dojde k chybě vnitřní kompilátoru, tato možnost umožňuje společnosti Microsoft zprávu o chybě. Tyto informace vám pomohou určit příčinu pracovníci společnosti Microsoft a může pomoct zlepšit další verzi [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
+ Tuto možnost nabízí pohodlný způsob, jak sestavy chybu interní kompilátoru jazyka Visual Basic (LED) týmu Visual Basic v Microsoftu. Ve výchozím nastavení kompilátoru odešle žádné informace společnosti Microsoft. Ale pokud dojde k chybě vnitřní kompilátoru, tato možnost umožňuje společnosti Microsoft zprávu o chybě. Tyto informace vám pomohou určit příčinu pracovníci společnosti Microsoft a může pomoct zlepšit další verzi jazyka Visual Basic.  
   
  Schopnost uživatele odesílat zprávy závisí na oprávnění zásad počítače a uživatele.  
   
@@ -57,6 +57,6 @@ vbc -errorreport:prompt t2.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)
