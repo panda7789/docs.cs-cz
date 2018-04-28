@@ -1,0 +1,1 @@
+<span data-ttu-id="c754d-101">Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="c754d-101">Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>

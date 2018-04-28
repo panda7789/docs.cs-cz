@@ -1,0 +1,1 @@
+<span data-ttu-id="9ec09-101">Rastrový obrázek (BMP)</span><span class="sxs-lookup"><span data-stu-id="9ec09-101">Bitmap (BMP)</span></span>

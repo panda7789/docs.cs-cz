@@ -1,35 +1,37 @@
 ---
-title: "Řízení front zpráv do WCF"
-ms.custom: 
+title: Řízení front zpráv do WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a4b63dd620d071b875caa255f681bdd5fb867f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6a29c0225117c57079b5048705f58dcde4a06426
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="message-queuing-to-windows-communication-foundation"></a><span data-ttu-id="3d13e-102">Řízení front zpráv do WCF</span><span class="sxs-lookup"><span data-stu-id="3d13e-102">Message Queuing to Windows Communication Foundation</span></span>
-<span data-ttu-id="3d13e-103">Tento příklad ukazuje, jak můžete k aplikaci služby Řízení front zpráv (MSMQ) odešle zprávu služby MSMQ pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.</span><span class="sxs-lookup"><span data-stu-id="3d13e-103">This sample demonstrates how a Message Queuing (MSMQ) application can send an MSMQ message to a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service.</span></span> <span data-ttu-id="3d13e-104">Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.</span><span class="sxs-lookup"><span data-stu-id="3d13e-104">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  
+# <a name="message-queuing-to-windows-communication-foundation"></a><span data-ttu-id="8600a-102">Řízení front zpráv do WCF</span><span class="sxs-lookup"><span data-stu-id="8600a-102">Message Queuing to Windows Communication Foundation</span></span>
+<span data-ttu-id="8600a-103">Tento příklad ukazuje, jak můžete k aplikaci služby Řízení front zpráv (MSMQ) odešle zprávu služby MSMQ pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.</span><span class="sxs-lookup"><span data-stu-id="8600a-103">This sample demonstrates how a Message Queuing (MSMQ) application can send an MSMQ message to a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service.</span></span> <span data-ttu-id="8600a-104">Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.</span><span class="sxs-lookup"><span data-stu-id="8600a-104">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  
   
- <span data-ttu-id="3d13e-105">Kontrakt služby je `IOrderProcessor`, která definuje jednosměrné služby, který je vhodný pro použití s front.</span><span class="sxs-lookup"><span data-stu-id="3d13e-105">The service contract is `IOrderProcessor`, which defines a one-way service that is suitable for use with queues.</span></span> <span data-ttu-id="3d13e-106">Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ kontrakty operaci.</span><span class="sxs-lookup"><span data-stu-id="3d13e-106">An MSMQ message does not have an Action header, so it is not possible to map different MSMQ messages to operation contracts automatically.</span></span> <span data-ttu-id="3d13e-107">Proto může být pouze jeden kontrakt operaci.</span><span class="sxs-lookup"><span data-stu-id="3d13e-107">Therefore, there can be only one operation contract.</span></span> <span data-ttu-id="3d13e-108">Pokud chcete definovat více než jeden kontrakt operace služby, aplikace musí poskytovat informace o tom, které záhlaví zprávy služby MSMQ (například popisek nebo correlationID) slouží k rozhodnout, které operace kontrakt k odeslání.</span><span class="sxs-lookup"><span data-stu-id="3d13e-108">If you want to define more than one operation contract for the service, the application must provide information as to which header in the MSMQ message (for example, the label or correlationID) can be used to decide which operation contract to dispatch.</span></span> <span data-ttu-id="3d13e-109">Tento postup je znázorněn v [vlastní Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span><span class="sxs-lookup"><span data-stu-id="3d13e-109">This is demonstrated in the [Custom Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span></span>  
+ <span data-ttu-id="8600a-105">Kontrakt služby je `IOrderProcessor`, která definuje jednosměrné služby, který je vhodný pro použití s front.</span><span class="sxs-lookup"><span data-stu-id="8600a-105">The service contract is `IOrderProcessor`, which defines a one-way service that is suitable for use with queues.</span></span> <span data-ttu-id="8600a-106">Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ kontrakty operaci.</span><span class="sxs-lookup"><span data-stu-id="8600a-106">An MSMQ message does not have an Action header, so it is not possible to map different MSMQ messages to operation contracts automatically.</span></span> <span data-ttu-id="8600a-107">Proto může být pouze jeden kontrakt operaci.</span><span class="sxs-lookup"><span data-stu-id="8600a-107">Therefore, there can be only one operation contract.</span></span> <span data-ttu-id="8600a-108">Pokud chcete definovat více než jeden kontrakt operace služby, aplikace musí poskytovat informace o tom, které záhlaví zprávy služby MSMQ (například popisek nebo correlationID) slouží k rozhodnout, které operace kontrakt k odeslání.</span><span class="sxs-lookup"><span data-stu-id="8600a-108">If you want to define more than one operation contract for the service, the application must provide information as to which header in the MSMQ message (for example, the label or correlationID) can be used to decide which operation contract to dispatch.</span></span> <span data-ttu-id="8600a-109">Tento postup je znázorněn v [vlastní Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span><span class="sxs-lookup"><span data-stu-id="8600a-109">This is demonstrated in the [Custom Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span></span>  
   
- <span data-ttu-id="3d13e-110">Zprávy služby MSMQ neobsahuje informace o tom, které hlavičky jsou namapované na různé parametry operace kontrakt.</span><span class="sxs-lookup"><span data-stu-id="3d13e-110">The MSMQ message does not contain information as to which headers are mapped to the different parameters of the operation contract.</span></span> <span data-ttu-id="3d13e-111">Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), která obsahuje základní zprávy služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="3d13e-111">The parameter is of type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), which contains the underlying MSMQ message.</span></span> <span data-ttu-id="3d13e-112">Typ "T" v <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) třída reprezentuje data, která je serializován do textu zprávy služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="3d13e-112">The type "T" in the <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) class represents the data that is serialized into the MSMQ message body.</span></span> <span data-ttu-id="3d13e-113">V této ukázce `PurchaseOrder` typ serializován do textu zprávy služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="3d13e-113">In this sample, the `PurchaseOrder` type is serialized into the MSMQ message body.</span></span>  
+ <span data-ttu-id="8600a-110">Zprávy služby MSMQ neobsahuje informace o tom, které hlavičky jsou namapované na různé parametry operace kontrakt.</span><span class="sxs-lookup"><span data-stu-id="8600a-110">The MSMQ message does not contain information as to which headers are mapped to the different parameters of the operation contract.</span></span> <span data-ttu-id="8600a-111">Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), která obsahuje základní zprávy služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="8600a-111">The parameter is of type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), which contains the underlying MSMQ message.</span></span> <span data-ttu-id="8600a-112">Typ "T" v <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) třída reprezentuje data, která je serializován do textu zprávy služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="8600a-112">The type "T" in the <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) class represents the data that is serialized into the MSMQ message body.</span></span> <span data-ttu-id="8600a-113">V této ukázce `PurchaseOrder` typ serializován do textu zprávy služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="8600a-113">In this sample, the `PurchaseOrder` type is serialized into the MSMQ message body.</span></span>  
   
- <span data-ttu-id="3d13e-114">Následující vzorový kód ukazuje kontrakt služby pořadí zpracování služby.</span><span class="sxs-lookup"><span data-stu-id="3d13e-114">The following sample code shows the service contract of the order processing service.</span></span>  
-  
-```  
+ <span data-ttu-id="8600a-114">Následující vzorový kód ukazuje kontrakt služby pořadí zpracování služby.</span><span class="sxs-lookup"><span data-stu-id="8600a-114">The following sample code shows the service contract of the order processing service.</span></span>  
+
+```csharp
 // Define a service contract.  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 [ServiceKnownType(typeof(PurchaseOrder))]  
@@ -38,11 +40,11 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-```  
-  
- <span data-ttu-id="3d13e-115">Služba je sám sebou hostované.</span><span class="sxs-lookup"><span data-stu-id="3d13e-115">The service is self hosted.</span></span> <span data-ttu-id="3d13e-116">Při použití služby MSMQ, používá fronty musí být vytvořeny předem.</span><span class="sxs-lookup"><span data-stu-id="3d13e-116">When using MSMQ, the queue used must be created in advance.</span></span> <span data-ttu-id="3d13e-117">Tento krok můžete provést ručně nebo prostřednictvím kódu.</span><span class="sxs-lookup"><span data-stu-id="3d13e-117">This can be done manually or through code.</span></span> <span data-ttu-id="3d13e-118">V této ukázce služba zkontroluje existenci fronty a v případě potřeby ji vytvoří.</span><span class="sxs-lookup"><span data-stu-id="3d13e-118">In this sample, the service checks for the existence of the queue and creates it if required.</span></span> <span data-ttu-id="3d13e-119">Název fronty je číst z konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="3d13e-119">The queue name is read from the configuration file.</span></span>  
-  
-```  
+```
+
+ <span data-ttu-id="8600a-115">Služba je sám sebou hostované.</span><span class="sxs-lookup"><span data-stu-id="8600a-115">The service is self hosted.</span></span> <span data-ttu-id="8600a-116">Při použití služby MSMQ, používá fronty musí být vytvořeny předem.</span><span class="sxs-lookup"><span data-stu-id="8600a-116">When using MSMQ, the queue used must be created in advance.</span></span> <span data-ttu-id="8600a-117">Tento krok můžete provést ručně nebo prostřednictvím kódu.</span><span class="sxs-lookup"><span data-stu-id="8600a-117">This can be done manually or through code.</span></span> <span data-ttu-id="8600a-118">V této ukázce služba zkontroluje existenci fronty a v případě potřeby ji vytvoří.</span><span class="sxs-lookup"><span data-stu-id="8600a-118">In this sample, the service checks for the existence of the queue and creates it if required.</span></span> <span data-ttu-id="8600a-119">Název fronty je číst z konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="8600a-119">The queue name is read from the configuration file.</span></span>  
+
+```csharp
 public static void Main()  
 {  
     // Get the MSMQ queue name from the application settings in   
@@ -53,11 +55,11 @@ public static void Main()
         MessageQueue.Create(queueName, true);  
     …  
 }  
-```  
-  
- <span data-ttu-id="3d13e-120">Služba vytvoří a otevře <xref:System.ServiceModel.ServiceHost> pro `OrderProcessorService`, jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="3d13e-120">The service creates and opens a <xref:System.ServiceModel.ServiceHost> for the `OrderProcessorService`, as shown in the following sample code.</span></span>  
-  
-```  
+```
+
+ <span data-ttu-id="8600a-120">Služba vytvoří a otevře <xref:System.ServiceModel.ServiceHost> pro `OrderProcessorService`, jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="8600a-120">The service creates and opens a <xref:System.ServiceModel.ServiceHost> for the `OrderProcessorService`, as shown in the following sample code.</span></span>  
+
+```csharp
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))  
 {  
     serviceHost.Open();  
@@ -66,12 +68,12 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
     Console.ReadLine();  
     serviceHost.Close();  
 }  
-```  
-  
- <span data-ttu-id="3d13e-121">Název fronty služby MSMQ je zadaný v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázka konfigurace.</span><span class="sxs-lookup"><span data-stu-id="3d13e-121">The MSMQ queue name is specified in an appSettings section of the configuration file, as shown in the following sample configuration.</span></span>  
+```
+
+ <span data-ttu-id="8600a-121">Název fronty služby MSMQ je zadaný v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázka konfigurace.</span><span class="sxs-lookup"><span data-stu-id="8600a-121">The MSMQ queue name is specified in an appSettings section of the configuration file, as shown in the following sample configuration.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="3d13e-122">Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty.</span><span class="sxs-lookup"><span data-stu-id="3d13e-122">The queue name uses a dot (.) for the local computer and backslash separators in its path.</span></span> <span data-ttu-id="3d13e-123">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Adresa koncového bodu určuje schématu msmq.formatname a používá localhost pro místní počítač.</span><span class="sxs-lookup"><span data-stu-id="3d13e-123">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint address specifies a msmq.formatname scheme, and uses localhost for the local computer.</span></span> <span data-ttu-id="3d13e-124">Adresu fronty pro každý název formátu MSMQ adresování pokyny následuje msmq.formatname schéma.</span><span class="sxs-lookup"><span data-stu-id="3d13e-124">The address of the queue for each MSMQ Format Name addressing guidelines follows the msmq.formatname scheme.</span></span>  
+>  <span data-ttu-id="8600a-122">Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty.</span><span class="sxs-lookup"><span data-stu-id="8600a-122">The queue name uses a dot (.) for the local computer and backslash separators in its path.</span></span> <span data-ttu-id="8600a-123">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Adresa koncového bodu určuje schématu msmq.formatname a používá localhost pro místní počítač.</span><span class="sxs-lookup"><span data-stu-id="8600a-123">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint address specifies a msmq.formatname scheme, and uses localhost for the local computer.</span></span> <span data-ttu-id="8600a-124">Adresu fronty pro každý název formátu MSMQ adresování pokyny následuje msmq.formatname schéma.</span><span class="sxs-lookup"><span data-stu-id="8600a-124">The address of the queue for each MSMQ Format Name addressing guidelines follows the msmq.formatname scheme.</span></span>  
   
 ```xml  
 <appSettings>  
@@ -79,9 +81,9 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 </appSettings>  
 ```  
   
- <span data-ttu-id="3d13e-125">Klientská aplikace je aplikace služby MSMQ, která používá <xref:System.Messaging.MessageQueue.Send%2A> metoda odeslání odolné a transakční zprávy do fronty, jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="3d13e-125">The client application is an MSMQ application that uses the <xref:System.Messaging.MessageQueue.Send%2A> method to send a durable and transactional message to the queue, as shown in the following sample code.</span></span>  
-  
-```  
+ <span data-ttu-id="8600a-125">Klientská aplikace je aplikace služby MSMQ, která používá <xref:System.Messaging.MessageQueue.Send%2A> metoda odeslání odolné a transakční zprávy do fronty, jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="8600a-125">The client application is an MSMQ application that uses the <xref:System.Messaging.MessageQueue.Send%2A> method to send a durable and transactional message to the queue, as shown in the following sample code.</span></span>  
+
+```csharp
 //Connect to the queue.  
 MessageQueue orderQueue = new MessageQueue(ConfigurationManager.AppSettings["orderQueueName"]);  
   
@@ -119,52 +121,52 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
 Console.WriteLine("Placed the order:{0}", po);  
 Console.WriteLine("Press <ENTER> to terminate client.");  
 Console.ReadLine();  
-```  
+```
+
+ <span data-ttu-id="8600a-126">Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta.</span><span class="sxs-lookup"><span data-stu-id="8600a-126">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="8600a-127">Uvidíte služby přijmout zprávy z klienta.</span><span class="sxs-lookup"><span data-stu-id="8600a-127">You can see the service receive messages from the client.</span></span> <span data-ttu-id="8600a-128">Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.</span><span class="sxs-lookup"><span data-stu-id="8600a-128">Press ENTER in each console window to shut down the service and client.</span></span> <span data-ttu-id="8600a-129">Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu.</span><span class="sxs-lookup"><span data-stu-id="8600a-129">Note that because queuing is in use, the client and service do not have to be up and running at the same time.</span></span> <span data-ttu-id="8600a-130">Například můžete spustit klienta, vypněte ho a potom spuštění služby a je stále by přijímat jeho zprávy.</span><span class="sxs-lookup"><span data-stu-id="8600a-130">For example, you could run the client, shut it down, and then start up the service and it would still receive its messages.</span></span>  
   
- <span data-ttu-id="3d13e-126">Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta.</span><span class="sxs-lookup"><span data-stu-id="3d13e-126">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="3d13e-127">Uvidíte služby přijmout zprávy z klienta.</span><span class="sxs-lookup"><span data-stu-id="3d13e-127">You can see the service receive messages from the client.</span></span> <span data-ttu-id="3d13e-128">Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.</span><span class="sxs-lookup"><span data-stu-id="3d13e-128">Press ENTER in each console window to shut down the service and client.</span></span> <span data-ttu-id="3d13e-129">Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu.</span><span class="sxs-lookup"><span data-stu-id="3d13e-129">Note that because queuing is in use, the client and service do not have to be up and running at the same time.</span></span> <span data-ttu-id="3d13e-130">Například můžete spustit klienta, vypněte ho a potom spuštění služby a je stále by přijímat jeho zprávy.</span><span class="sxs-lookup"><span data-stu-id="3d13e-130">For example, you could run the client, shut it down, and then start up the service and it would still receive its messages.</span></span>  
+### <a name="to-setup-build-and-run-the-sample"></a><span data-ttu-id="8600a-131">Instalační program, sestavení a spuštění vzorku</span><span class="sxs-lookup"><span data-stu-id="8600a-131">To setup, build, and run the sample</span></span>  
   
-### <a name="to-setup-build-and-run-the-sample"></a><span data-ttu-id="3d13e-131">Instalační program, sestavení a spuštění vzorku</span><span class="sxs-lookup"><span data-stu-id="3d13e-131">To setup, build, and run the sample</span></span>  
+1.  <span data-ttu-id="8600a-132">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="8600a-132">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-1.  <span data-ttu-id="3d13e-132">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="3d13e-132">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+2.  <span data-ttu-id="8600a-133">Pokud je služba spuštěna první, zkontroluje Ujistěte se, zda je k dispozici fronty.</span><span class="sxs-lookup"><span data-stu-id="8600a-133">If the service is run first, it will check to ensure that the queue is present.</span></span> <span data-ttu-id="8600a-134">Pokud fronta neexistuje, vytvoří služba jeden.</span><span class="sxs-lookup"><span data-stu-id="8600a-134">If the queue is not present, the service will create one.</span></span> <span data-ttu-id="8600a-135">Můžete spustit služby nejprve vytvořit frontu, nebo můžete vytvořit jeden prostřednictvím správce front služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="8600a-135">You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager.</span></span> <span data-ttu-id="8600a-136">Postupujte podle těchto kroků můžete vytvořit frontu v systému Windows 2008.</span><span class="sxs-lookup"><span data-stu-id="8600a-136">Follow these steps to create a queue in Windows 2008.</span></span>  
   
-2.  <span data-ttu-id="3d13e-133">Pokud je služba spuštěna první, zkontroluje Ujistěte se, zda je k dispozici fronty.</span><span class="sxs-lookup"><span data-stu-id="3d13e-133">If the service is run first, it will check to ensure that the queue is present.</span></span> <span data-ttu-id="3d13e-134">Pokud fronta neexistuje, vytvoří služba jeden.</span><span class="sxs-lookup"><span data-stu-id="3d13e-134">If the queue is not present, the service will create one.</span></span> <span data-ttu-id="3d13e-135">Můžete spustit služby nejprve vytvořit frontu, nebo můžete vytvořit jeden prostřednictvím správce front služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="3d13e-135">You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager.</span></span> <span data-ttu-id="3d13e-136">Postupujte podle těchto kroků můžete vytvořit frontu v systému Windows 2008.</span><span class="sxs-lookup"><span data-stu-id="3d13e-136">Follow these steps to create a queue in Windows 2008.</span></span>  
+    1.  <span data-ttu-id="8600a-137">Otevřete správce serveru v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8600a-137">Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
   
-    1.  <span data-ttu-id="3d13e-137">Otevřete správce serveru v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="3d13e-137">Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
+    2.  <span data-ttu-id="8600a-138">Rozbalte **funkce** kartě.</span><span class="sxs-lookup"><span data-stu-id="8600a-138">Expand the **Features** tab.</span></span>  
   
-    2.  <span data-ttu-id="3d13e-138">Rozbalte **funkce** kartě.</span><span class="sxs-lookup"><span data-stu-id="3d13e-138">Expand the **Features** tab.</span></span>  
+    3.  <span data-ttu-id="8600a-139">Klikněte pravým tlačítkem na **soukromé fronty zpráv**a vyberte **nový**, **soukromou frontu**.</span><span class="sxs-lookup"><span data-stu-id="8600a-139">Right-click **Private Message Queues**, and select **New**, **Private Queue**.</span></span>  
   
-    3.  <span data-ttu-id="3d13e-139">Klikněte pravým tlačítkem na **soukromé fronty zpráv**a vyberte **nový**, **soukromou frontu**.</span><span class="sxs-lookup"><span data-stu-id="3d13e-139">Right-click **Private Message Queues**, and select **New**, **Private Queue**.</span></span>  
+    4.  <span data-ttu-id="8600a-140">Zkontrolujte **transakcí** pole.</span><span class="sxs-lookup"><span data-stu-id="8600a-140">Check the **Transactional** box.</span></span>  
   
-    4.  <span data-ttu-id="3d13e-140">Zkontrolujte **transakcí** pole.</span><span class="sxs-lookup"><span data-stu-id="3d13e-140">Check the **Transactional** box.</span></span>  
+    5.  <span data-ttu-id="8600a-141">Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.</span><span class="sxs-lookup"><span data-stu-id="8600a-141">Enter `ServiceModelSamplesTransacted` as the name of the new queue.</span></span>  
   
-    5.  <span data-ttu-id="3d13e-141">Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.</span><span class="sxs-lookup"><span data-stu-id="3d13e-141">Enter `ServiceModelSamplesTransacted` as the name of the new queue.</span></span>  
+3.  <span data-ttu-id="8600a-142">Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="8600a-142">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  <span data-ttu-id="3d13e-142">Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="3d13e-142">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+4.  <span data-ttu-id="8600a-143">Spustit ukázku v konfiguraci jednoho počítače, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="8600a-143">To run the sample in a single- computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-4.  <span data-ttu-id="3d13e-143">Spustit ukázku v konfiguraci jednoho počítače, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="3d13e-143">To run the sample in a single- computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="8600a-144">Ke spuštění ukázky mezi počítači</span><span class="sxs-lookup"><span data-stu-id="8600a-144">To run the sample across computers</span></span>  
   
-### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="3d13e-144">Ke spuštění ukázky mezi počítači</span><span class="sxs-lookup"><span data-stu-id="3d13e-144">To run the sample across computers</span></span>  
+1.  <span data-ttu-id="8600a-145">Zkopírujte soubory programu služby ve složce \service\bin\ ve složce pro specifický jazyk k počítači služby.</span><span class="sxs-lookup"><span data-stu-id="8600a-145">Copy the service program files from the \service\bin\ folder, under the language-specific folder, to the service computer.</span></span>  
   
-1.  <span data-ttu-id="3d13e-145">Zkopírujte soubory programu služby ve složce \service\bin\ ve složce pro specifický jazyk k počítači služby.</span><span class="sxs-lookup"><span data-stu-id="3d13e-145">Copy the service program files from the \service\bin\ folder, under the language-specific folder, to the service computer.</span></span>  
+2.  <span data-ttu-id="8600a-146">Zkopírujte soubory programu klienta ve složce \client\bin\ ve složce jazyka na klientský počítač.</span><span class="sxs-lookup"><span data-stu-id="8600a-146">Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.</span></span>  
   
-2.  <span data-ttu-id="3d13e-146">Zkopírujte soubory programu klienta ve složce \client\bin\ ve složce jazyka na klientský počítač.</span><span class="sxs-lookup"><span data-stu-id="3d13e-146">Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.</span></span>  
+3.  <span data-ttu-id="8600a-147">V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba místo ".".</span><span class="sxs-lookup"><span data-stu-id="8600a-147">In the Client.exe.config file, change the orderQueueName to specify the service computer name instead of ".".</span></span>  
   
-3.  <span data-ttu-id="3d13e-147">V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba místo ".".</span><span class="sxs-lookup"><span data-stu-id="3d13e-147">In the Client.exe.config file, change the orderQueueName to specify the service computer name instead of ".".</span></span>  
+4.  <span data-ttu-id="8600a-148">Na počítači se službou spusťte z příkazového řádku Service.exe.</span><span class="sxs-lookup"><span data-stu-id="8600a-148">On the service computer, launch Service.exe from a command prompt.</span></span>  
   
-4.  <span data-ttu-id="3d13e-148">Na počítači se službou spusťte z příkazového řádku Service.exe.</span><span class="sxs-lookup"><span data-stu-id="3d13e-148">On the service computer, launch Service.exe from a command prompt.</span></span>  
-  
-5.  <span data-ttu-id="3d13e-149">Na klientském počítači spusťte z příkazového řádku Client.exe.</span><span class="sxs-lookup"><span data-stu-id="3d13e-149">On the client computer, launch Client.exe from a command prompt.</span></span>  
+5.  <span data-ttu-id="8600a-149">Na klientském počítači spusťte z příkazového řádku Client.exe.</span><span class="sxs-lookup"><span data-stu-id="8600a-149">On the client computer, launch Client.exe from a command prompt.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="3d13e-150">Ukázky může být již nainstalován ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="3d13e-150">The samples may already be installed on your computer.</span></span> <span data-ttu-id="3d13e-151">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="3d13e-151">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="8600a-150">Ukázky může být již nainstalován ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="8600a-150">The samples may already be installed on your computer.</span></span> <span data-ttu-id="8600a-151">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="8600a-151">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="3d13e-152">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="3d13e-152">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="3d13e-153">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="3d13e-153">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="8600a-152">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="8600a-152">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="8600a-153">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="8600a-153">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MsmqToWcf`  
   
-## <a name="see-also"></a><span data-ttu-id="3d13e-154">Viz také</span><span class="sxs-lookup"><span data-stu-id="3d13e-154">See Also</span></span>  
- [<span data-ttu-id="3d13e-155">Fronty ve WCF</span><span class="sxs-lookup"><span data-stu-id="3d13e-155">Queues in WCF</span></span>](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
- [<span data-ttu-id="3d13e-156">Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front</span><span class="sxs-lookup"><span data-stu-id="3d13e-156">How to: Exchange Messages with WCF Endpoints and Message Queuing Applications</span></span>](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
- [<span data-ttu-id="3d13e-157">Služba Řízení front zpráv</span><span class="sxs-lookup"><span data-stu-id="3d13e-157">Message Queuing</span></span>](http://go.microsoft.com/fwlink/?LinkId=94968)
+## <a name="see-also"></a><span data-ttu-id="8600a-154">Viz také</span><span class="sxs-lookup"><span data-stu-id="8600a-154">See Also</span></span>  
+ [<span data-ttu-id="8600a-155">Fronty ve WCF</span><span class="sxs-lookup"><span data-stu-id="8600a-155">Queues in WCF</span></span>](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
+ [<span data-ttu-id="8600a-156">Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front</span><span class="sxs-lookup"><span data-stu-id="8600a-156">How to: Exchange Messages with WCF Endpoints and Message Queuing Applications</span></span>](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [<span data-ttu-id="8600a-157">Služba Řízení front zpráv</span><span class="sxs-lookup"><span data-stu-id="8600a-157">Message Queuing</span></span>](http://go.microsoft.com/fwlink/?LinkId=94968)

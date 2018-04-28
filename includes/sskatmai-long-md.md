@@ -1,0 +1,1 @@
+<span data-ttu-id="cdf21-101">Microsoft SQL Server 2008</span><span class="sxs-lookup"><span data-stu-id="cdf21-101">Microsoft SQL Server 2008</span></span>

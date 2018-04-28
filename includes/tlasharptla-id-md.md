@@ -1,0 +1,1 @@
+<span data-ttu-id="94b06-101">Identifikátor (ID)</span><span class="sxs-lookup"><span data-stu-id="94b06-101">identifier (ID)</span></span>

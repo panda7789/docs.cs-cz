@@ -1,0 +1,1 @@
+<span data-ttu-id="6574b-101">XSD (XML Schema Definition)</span><span class="sxs-lookup"><span data-stu-id="6574b-101">XML Schema Definition (XSD)</span></span>

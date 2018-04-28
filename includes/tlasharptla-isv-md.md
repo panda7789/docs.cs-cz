@@ -1,0 +1,1 @@
+<span data-ttu-id="321d8-101">Nezávislý výrobce softwaru (ISV)</span><span class="sxs-lookup"><span data-stu-id="321d8-101">independent software vendor (ISV)</span></span>

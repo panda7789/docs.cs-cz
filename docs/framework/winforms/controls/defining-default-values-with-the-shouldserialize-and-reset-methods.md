@@ -1,12 +1,13 @@
 ---
-title: "Definování výchozích hodnot pomocí metod ShouldSerialize a Reset"
-ms.custom: 
+title: Definování výchozích hodnot pomocí metod ShouldSerialize a Reset
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,30 +16,31 @@ helpviewer_keywords:
 - custom controls [Windows Forms], property methods
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a654fef461d92c4b93db131e303bb07a1e839d34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a28cd84c88cd7434eaca3fdaa7b4406006c44dad
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a><span data-ttu-id="fab9b-102">Definování výchozích hodnot pomocí metod ShouldSerialize a Reset</span><span class="sxs-lookup"><span data-stu-id="fab9b-102">Defining Default Values with the ShouldSerialize and Reset Methods</span></span>
-<span data-ttu-id="fab9b-103">`ShouldSerialize`a `Reset` jsou volitelné metody, které můžete zadat u vlastnosti, pokud vlastnost nemá mají jednoduchý výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="fab9b-103">`ShouldSerialize` and `Reset` are optional methods that you can provide for a property, if the property does not a have simple default value.</span></span> <span data-ttu-id="fab9b-104">Pokud má vlastnost jednoduché výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu atributu konstruktoru třídy.</span><span class="sxs-lookup"><span data-stu-id="fab9b-104">If the property has a simple default value, you should apply the <xref:System.ComponentModel.DefaultValueAttribute> and supply the default value to the attribute class constructor instead.</span></span> <span data-ttu-id="fab9b-105">Některé z těchto mechanismů povoluje následující funkce v Návrháři:</span><span class="sxs-lookup"><span data-stu-id="fab9b-105">Either of these mechanisms enables the following features in the designer:</span></span>  
+# <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a><span data-ttu-id="5486a-102">Definování výchozích hodnot pomocí metod ShouldSerialize a Reset</span><span class="sxs-lookup"><span data-stu-id="5486a-102">Defining Default Values with the ShouldSerialize and Reset Methods</span></span>
+<span data-ttu-id="5486a-103">`ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat u vlastnosti, pokud vlastnost nemá mají jednoduchý výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="5486a-103">`ShouldSerialize` and `Reset` are optional methods that you can provide for a property, if the property does not a have simple default value.</span></span> <span data-ttu-id="5486a-104">Pokud má vlastnost jednoduché výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu atributu konstruktoru třídy.</span><span class="sxs-lookup"><span data-stu-id="5486a-104">If the property has a simple default value, you should apply the <xref:System.ComponentModel.DefaultValueAttribute> and supply the default value to the attribute class constructor instead.</span></span> <span data-ttu-id="5486a-105">Některé z těchto mechanismů povoluje následující funkce v Návrháři:</span><span class="sxs-lookup"><span data-stu-id="5486a-105">Either of these mechanisms enables the following features in the designer:</span></span>  
   
--   <span data-ttu-id="fab9b-106">Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila z výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fab9b-106">The property provides visual indication in the property browser if it has been modified from its default value.</span></span>  
+-   <span data-ttu-id="5486a-106">Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila z výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="5486a-106">The property provides visual indication in the property browser if it has been modified from its default value.</span></span>  
   
--   <span data-ttu-id="fab9b-107">Uživatel můžete kliknout pravým tlačítkem na vlastnosti a zvolte **resetovat** vlastnost obnovíte jeho výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="fab9b-107">The user can right-click on the property and choose **Reset** to restore the property to its default value.</span></span>  
+-   <span data-ttu-id="5486a-107">Uživatel můžete kliknout pravým tlačítkem na vlastnosti a zvolte **resetovat** vlastnost obnovíte jeho výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="5486a-107">The user can right-click on the property and choose **Reset** to restore the property to its default value.</span></span>  
   
--   <span data-ttu-id="fab9b-108">Návrhář generuje efektivnější kód.</span><span class="sxs-lookup"><span data-stu-id="fab9b-108">The designer generates more efficient code.</span></span>  
+-   <span data-ttu-id="5486a-108">Návrhář generuje efektivnější kód.</span><span class="sxs-lookup"><span data-stu-id="5486a-108">The designer generates more efficient code.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="fab9b-109">Buď použít <xref:System.ComponentModel.DefaultValueAttribute> nebo zadejte `Reset` *PropertyName* a `ShouldSerialize` *PropertyName* metody.</span><span class="sxs-lookup"><span data-stu-id="fab9b-109">Either apply the <xref:System.ComponentModel.DefaultValueAttribute> or provide `Reset`*PropertyName* and `ShouldSerialize`*PropertyName* methods.</span></span> <span data-ttu-id="fab9b-110">Nepoužívejte obě.</span><span class="sxs-lookup"><span data-stu-id="fab9b-110">Do not use both.</span></span>  
+    >  <span data-ttu-id="5486a-109">Buď použít <xref:System.ComponentModel.DefaultValueAttribute> nebo zadejte `Reset` *PropertyName* a `ShouldSerialize` *PropertyName* metody.</span><span class="sxs-lookup"><span data-stu-id="5486a-109">Either apply the <xref:System.ComponentModel.DefaultValueAttribute> or provide `Reset`*PropertyName* and `ShouldSerialize`*PropertyName* methods.</span></span> <span data-ttu-id="5486a-110">Nepoužívejte obě.</span><span class="sxs-lookup"><span data-stu-id="5486a-110">Do not use both.</span></span>  
   
- <span data-ttu-id="fab9b-111">`Reset` *PropertyName* metoda vlastnost nastaví na výchozí hodnotu, jak je znázorněno v následující fragment kódu.</span><span class="sxs-lookup"><span data-stu-id="fab9b-111">The `Reset`*PropertyName* method sets a property to its default value, as shown in the following code fragment.</span></span>  
+ <span data-ttu-id="5486a-111">`Reset` *PropertyName* metoda vlastnost nastaví na výchozí hodnotu, jak je znázorněno v následující fragment kódu.</span><span class="sxs-lookup"><span data-stu-id="5486a-111">The `Reset`*PropertyName* method sets a property to its default value, as shown in the following code fragment.</span></span>  
   
 ```vb  
 Public Sub ResetMyFont()  
@@ -53,9 +55,9 @@ public void ResetMyFont() {
 ```  
   
 > [!NOTE]
->  <span data-ttu-id="fab9b-112">Pokud vlastnost nemá `Reset` metoda, není označen atributem <xref:System.ComponentModel.DefaultValueAttribute>a nemá výchozí hodnotu. zadaná v jeho deklaraci `Reset` možnost pro tuto vlastnost je zakázána v místní nabídce **vlastnosti** okno Windows Forms designerem v [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].</span><span class="sxs-lookup"><span data-stu-id="fab9b-112">If a property does not have a `Reset` method, is not marked with a <xref:System.ComponentModel.DefaultValueAttribute>, and does not have a default value supplied in its declaration, the `Reset` option for that property is disabled in the shortcut menu of the **Properties** window of the Windows Forms Designer in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].</span></span>  
+>  <span data-ttu-id="5486a-112">Pokud vlastnost nemá `Reset` metoda, není označen atributem <xref:System.ComponentModel.DefaultValueAttribute>a nemá výchozí hodnotu. zadaná v jeho deklaraci `Reset` možnost pro tuto vlastnost je zakázána v místní nabídce **vlastnosti** okno Windows Forms designerem v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="5486a-112">If a property does not have a `Reset` method, is not marked with a <xref:System.ComponentModel.DefaultValueAttribute>, and does not have a default value supplied in its declaration, the `Reset` option for that property is disabled in the shortcut menu of the **Properties** window of the Windows Forms Designer in Visual Studio.</span></span>  
   
- <span data-ttu-id="fab9b-113">Návrháři jako [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] použít `ShouldSerialize` *PropertyName* metoda zkontrolujte, zda vlastnost byl změněn z výchozí hodnoty a napsat kód do formuláře pouze tehdy, pokud vlastnost mění, což umožňuje označení efektivnější generování kódu.</span><span class="sxs-lookup"><span data-stu-id="fab9b-113">Designers such as [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] use the `ShouldSerialize`*PropertyName* method to check whether a property has changed from its default value and write code into the form only if a property is changed, thus allowing for more efficient code generation.</span></span> <span data-ttu-id="fab9b-114">Příklad:</span><span class="sxs-lookup"><span data-stu-id="fab9b-114">For example:</span></span>  
+ <span data-ttu-id="5486a-113">Návrháři třeba v sadě Visual Studio používají `ShouldSerialize` *PropertyName* metoda zkontrolujte, zda vlastnost byl změněn z výchozí hodnoty a napsat kód do formuláře pouze tehdy, pokud vlastnost mění, což umožňuje efektivnější kódu generování.</span><span class="sxs-lookup"><span data-stu-id="5486a-113">Designers such as Visual Studio use the `ShouldSerialize`*PropertyName* method to check whether a property has changed from its default value and write code into the form only if a property is changed, thus allowing for more efficient code generation.</span></span> <span data-ttu-id="5486a-114">Příklad:</span><span class="sxs-lookup"><span data-stu-id="5486a-114">For example:</span></span>  
   
 ```vb  
 'Returns true if the font has changed; otherwise, returns false.  
@@ -73,7 +75,7 @@ public bool ShouldSerializeMyFont() {
 }  
 ```  
   
- <span data-ttu-id="fab9b-115">Následuje příklad dokončení kódu.</span><span class="sxs-lookup"><span data-stu-id="fab9b-115">A complete code example follows.</span></span>  
+ <span data-ttu-id="5486a-115">Následuje příklad dokončení kódu.</span><span class="sxs-lookup"><span data-stu-id="5486a-115">A complete code example follows.</span></span>  
   
 ```vb  
 Option Explicit  
@@ -152,9 +154,9 @@ public class MyControl : Control {
 }  
 ```  
   
- <span data-ttu-id="fab9b-116">V tomto případě i v případě, že hodnota soukromé proměnné přístup `MyFont` vlastnost je `null`, prohlížeč vlastností nezobrazí `null`; místo toho se zobrazí <xref:System.Windows.Forms.Control.Font%2A> vlastnost nadřazeným prvkem, pokud není `null`, nebo výchozí <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>.</span><span class="sxs-lookup"><span data-stu-id="fab9b-116">In this case, even when the value of the private variable accessed by the `MyFont` property is `null`, the property browser does not display `null`; instead, it displays the <xref:System.Windows.Forms.Control.Font%2A> property of the parent, if it is not `null`, or the default <xref:System.Windows.Forms.Control.Font%2A> value defined in <xref:System.Windows.Forms.Control>.</span></span> <span data-ttu-id="fab9b-117">Proto výchozí hodnota pro `MyFont` nelze jednoduše nastavit a <xref:System.ComponentModel.DefaultValueAttribute> nelze použít pro tuto vlastnost.</span><span class="sxs-lookup"><span data-stu-id="fab9b-117">Thus the default value for `MyFont` cannot be simply set, and a <xref:System.ComponentModel.DefaultValueAttribute> cannot be applied to this property.</span></span> <span data-ttu-id="fab9b-118">Místo toho `ShouldSerialize` a `Reset` metod, musí být implementována pro `MyFont` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="fab9b-118">Instead, the `ShouldSerialize` and `Reset` methods must be implemented for the `MyFont` property.</span></span>  
+ <span data-ttu-id="5486a-116">V tomto případě i v případě, že hodnota soukromé proměnné přístup `MyFont` vlastnost je `null`, prohlížeč vlastností nezobrazí `null`; místo toho se zobrazí <xref:System.Windows.Forms.Control.Font%2A> vlastnost nadřazeným prvkem, pokud není `null`, nebo výchozí <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>.</span><span class="sxs-lookup"><span data-stu-id="5486a-116">In this case, even when the value of the private variable accessed by the `MyFont` property is `null`, the property browser does not display `null`; instead, it displays the <xref:System.Windows.Forms.Control.Font%2A> property of the parent, if it is not `null`, or the default <xref:System.Windows.Forms.Control.Font%2A> value defined in <xref:System.Windows.Forms.Control>.</span></span> <span data-ttu-id="5486a-117">Proto výchozí hodnota pro `MyFont` nelze jednoduše nastavit a <xref:System.ComponentModel.DefaultValueAttribute> nelze použít pro tuto vlastnost.</span><span class="sxs-lookup"><span data-stu-id="5486a-117">Thus the default value for `MyFont` cannot be simply set, and a <xref:System.ComponentModel.DefaultValueAttribute> cannot be applied to this property.</span></span> <span data-ttu-id="5486a-118">Místo toho `ShouldSerialize` a `Reset` metod, musí být implementována pro `MyFont` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="5486a-118">Instead, the `ShouldSerialize` and `Reset` methods must be implemented for the `MyFont` property.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fab9b-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="fab9b-119">See Also</span></span>  
- [<span data-ttu-id="fab9b-120">Vlastnosti v ovládacích prvcích Windows Forms</span><span class="sxs-lookup"><span data-stu-id="fab9b-120">Properties in Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
- [<span data-ttu-id="fab9b-121">Definování vlastnosti</span><span class="sxs-lookup"><span data-stu-id="fab9b-121">Defining a Property</span></span>](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
- [<span data-ttu-id="fab9b-122">Události změny vlastnosti</span><span class="sxs-lookup"><span data-stu-id="fab9b-122">Property-Changed Events</span></span>](../../../../docs/framework/winforms/controls/property-changed-events.md)
+## <a name="see-also"></a><span data-ttu-id="5486a-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="5486a-119">See Also</span></span>  
+ [<span data-ttu-id="5486a-120">Vlastnosti v ovládacích prvcích Windows Forms</span><span class="sxs-lookup"><span data-stu-id="5486a-120">Properties in Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
+ [<span data-ttu-id="5486a-121">Definování vlastnosti</span><span class="sxs-lookup"><span data-stu-id="5486a-121">Defining a Property</span></span>](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
+ [<span data-ttu-id="5486a-122">Události změny vlastnosti</span><span class="sxs-lookup"><span data-stu-id="5486a-122">Property-Changed Events</span></span>](../../../../docs/framework/winforms/controls/property-changed-events.md)

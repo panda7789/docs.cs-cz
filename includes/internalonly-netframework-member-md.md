@@ -1,0 +1,1 @@
+<span data-ttu-id="0a17a-101">Tento člen podporuje infrastrukturu rozhraní .NET Framework a není určen pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="0a17a-101">This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>

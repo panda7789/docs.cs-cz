@@ -1,0 +1,1 @@
+<span data-ttu-id="4ea87-101">Pole identifikátoru vlastnosti závislosti:</span><span class="sxs-lookup"><span data-stu-id="4ea87-101">Dependency property identifier field:</span></span>

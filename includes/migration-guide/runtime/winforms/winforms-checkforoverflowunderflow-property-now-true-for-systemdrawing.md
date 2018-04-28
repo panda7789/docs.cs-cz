@@ -1,0 +1,10 @@
+### <a name="winforms-checkforoverflowunderflow-property-is-now-true-for-systemdrawing"></a><span data-ttu-id="a7e4b-101">Vlastnost CheckForOverflowUnderflow na WinForm je nyní pro System.Drawing hodnotu true.</span><span class="sxs-lookup"><span data-stu-id="a7e4b-101">WinForm's CheckForOverflowUnderflow property is now true for System.Drawing</span></span>
+
+|   |   |
+|---|---|
+|<span data-ttu-id="a7e4b-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="a7e4b-102">Details</span></span>|<span data-ttu-id="a7e4b-103">Vlastnost CheckForOverflowUnderflow pro sestavení System.Drawing.dll je nastavena na hodnotu true.</span><span class="sxs-lookup"><span data-stu-id="a7e4b-103">The CheckForOverflowUnderflow property for the System.Drawing.dll assembly is set to true.</span></span>|
+|<span data-ttu-id="a7e4b-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="a7e4b-104">Suggestion</span></span>|<span data-ttu-id="a7e4b-105">Dříve v případě, že dojde k přetečení, by výsledkem bylo tiché zkrácení.</span><span class="sxs-lookup"><span data-stu-id="a7e4b-105">Previously when overflows occurred, the result would be silently truncated.</span></span> <span data-ttu-id="a7e4b-106">Teď <xref:System.OverflowException?displayProperty=name> je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="a7e4b-106">Now an <xref:System.OverflowException?displayProperty=name> exception is thrown.</span></span>|
+|<span data-ttu-id="a7e4b-107">Rozsah</span><span class="sxs-lookup"><span data-stu-id="a7e4b-107">Scope</span></span>|<span data-ttu-id="a7e4b-108">Edge</span><span class="sxs-lookup"><span data-stu-id="a7e4b-108">Edge</span></span>|
+|<span data-ttu-id="a7e4b-109">Version</span><span class="sxs-lookup"><span data-stu-id="a7e4b-109">Version</span></span>|<span data-ttu-id="a7e4b-110">4.5</span><span class="sxs-lookup"><span data-stu-id="a7e4b-110">4.5</span></span>|
+|<span data-ttu-id="a7e4b-111">Typ</span><span class="sxs-lookup"><span data-stu-id="a7e4b-111">Type</span></span>|<span data-ttu-id="a7e4b-112">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="a7e4b-112">Runtime</span></span>|
+
