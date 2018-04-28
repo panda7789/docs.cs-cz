@@ -10,6 +10,5 @@
 ## [Obecní delegáti](generic-delegates.md)
 ## [Rozdíly mezi šablonami C++ a obecnými typy C#](differences-between-cpp-templates-and-csharp-generics.md)
 ## [Obecné typy v běhovém prostředí](generics-in-the-run-time.md)
-## [Obecné typy v knihovně tříd rozhraní .NET Framework](generics-in-the-net-framework-class-library.md)
 ## [Obecné typy a reflexe](generics-and-reflection.md)
 ## [Obecné typy a atributy](generics-and-attributes.md)
