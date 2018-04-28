@@ -1,43 +1,43 @@
 ---
-title: "Pracovní postup sledování a trasování"
-ms.custom: 
+title: Pracovní postup sledování a trasování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c7383d899af741e4a6c85b40e2316a6b759aa416
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7c969c414428ed0dbbe5c408c999809b672d3409
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="workflow-tracking-and-tracing"></a>Pracovní postup sledování a trasování
 Sledování pracovní postup systému je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o spuštění pracovního postupu. Poskytuje sledování infrastruktury ke sledování provádění instanci pracovního postupu. Sledování infrastruktury WF instruments transparentně pracovního postupu pro vydávání záznamy odrážející klíče události během provádění. Tato funkce je dostupná ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Je potřeba provést žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování proběhnout. Je pouze stačit rozhodnutí, jaké množství dat sledování, které chcete dostávat. Pokud instance pracovního postupu spustí nebo dokončí zpracování sledování jsou vygenerované záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například pokud pracovní postup představuje pořadí zpracování systému, pořadí ID lze extrahovat spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování usnadňuje diagnostiku nebo obchodní analytická data nelze přistupovat ze spuštění pracovního postupu.  
   
  Toto sledování součásti jsou ekvivalentní službě sledování v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)]. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], vylepšila výkon a zjednodušená programovací model pro funkci sledování WF. Modul runtime sledování instruments instanci pracovního postupu pro vydávání událostí související pracovní postup životní cyklus, aktivity pracovního postupu a vlastních událostí.  
   
- Windows Server App Fabric taky poskytuje možnost monitorovat služby WCF a pracovní postup. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server App Fabric monitorování](http://go.microsoft.com/fwlink/?LinkId=201273) a [monitorování aplikací s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201287)  
+ Windows Server App Fabric taky poskytuje možnost monitorovat služby WCF a pracovní postup. Další informace najdete v tématu [Windows Server App Fabric monitorování](http://go.microsoft.com/fwlink/?LinkId=201273) a [monitorování aplikací s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201287)  
   
- Chcete-li vyřešit modulu runtime pracovního postupu, můžete zapnout trasování postupu diagnostiky. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Trasování pracovního postupu](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md).  
+ Chcete-li vyřešit modulu runtime pracovního postupu, můžete zapnout trasování postupu diagnostiky. Další informace najdete v tématu [trasování pracovního postupu](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md).  
   
  Zjistit programovací model primární součásti sledování infrastruktury jsou popsané v tomto tématu:  
   
--   <xref:System.Activities.Tracking.TrackingRecord>objekty vygenerované z modulu runtime pracovního postupu. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Sledování záznamů](../../../docs/framework/windows-workflow-foundation/tracking-records.md).  
+-   <xref:System.Activities.Tracking.TrackingRecord> objekty vygenerované z modulu runtime pracovního postupu. Další informace najdete v tématu [sledování záznamů](../../../docs/framework/windows-workflow-foundation/tracking-records.md).  
   
--   <xref:System.Activities.Tracking.TrackingParticipant>přihlášení k odběru objektů <xref:System.Activities.Tracking.TrackingRecord> objekty. Sledování účastníků obsahují logiku ke zpracování datové části z <xref:System.Activities.Tracking.TrackingRecord> objekty (například se může zvolit k zápisu do souboru). [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Sledování účastníky](../../../docs/framework/windows-workflow-foundation/tracking-participants.md).  
+-   <xref:System.Activities.Tracking.TrackingParticipant> přihlášení k odběru objektů <xref:System.Activities.Tracking.TrackingRecord> objekty. Sledování účastníků obsahují logiku ke zpracování datové části z <xref:System.Activities.Tracking.TrackingRecord> objekty (například se může zvolit k zápisu do souboru). Další informace najdete v tématu [sledování účastníky](../../../docs/framework/windows-workflow-foundation/tracking-participants.md).  
   
--   <xref:System.Activities.Tracking.TrackingProfile>objekty filtrování záznamů sledování vygenerované z instance pracovního postupu. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Sledování profily](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
+-   <xref:System.Activities.Tracking.TrackingProfile> objekty filtrování záznamů sledování vygenerované z instance pracovního postupu. Další informace najdete v tématu [sledování profily](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
   
 ## <a name="workflow-tracking-infrastructure"></a>Pracovní postup sledování infrastruktury  
  Sledování infrastruktury pracovního postupu následuje zlepší se publikovat a odebírat. Instance pracovního postupu je vydavatel sledování záznamů, při sledování záznamů Odběratelé, kteří jsou registrované jako rozšíření do pracovního postupu. Tato rozšíření by pro přihlášení k odběru <xref:System.Activities.Tracking.TrackingRecord> objekty se nazývají sledování účastníky. Sledování účastníků jsou body rozšiřitelnosti, která přistupují k <xref:System.Activities.Tracking.TrackingRecord> objekty a jejich zpracování v jakýmkoli způsobem jsou zapsané do učinit. Sledování infrastruktury umožňuje použití filtru v odchozí sledování záznamy, které chcete povolit účastníka k odběru podmnožinu záznamy. Tento mechanismus filtrování se provádí prostřednictvím sledování souboru profilu.  

@@ -5,14 +5,16 @@ author: mlacouture
 manager: wpickett
 ms.author: johalex
 ms.date: 01/19/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.custom: mvc
-ms.openlocfilehash: 21fcc1190ee4586a8d7eb6fb8d63a7c312e63825
-ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 2e33cdbcbe9c81e6c3af84f8f2795ee3dc6e28ae
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-additional-tools"></a>Další nástroje .NET core
 

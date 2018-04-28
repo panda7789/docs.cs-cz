@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4aa77a0135cea18847c4d4425171b0bdcf447988
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: fa529ddbdfa05ce876c99efd4a717c6136cf6686
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation-in-net-45"></a>Co&#39;s nové v modelu Windows Workflow Foundation v rozhraní .NET 4.5
 Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavádí mnoha nových funkcí, jako je například nové aktivity, návrháře možnosti a modely vývoj pracovního postupu. Mnoho, ale ne všechny nové funkce pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)] nové funkce, které jsou podporované, najdete v části [podporu pro nové funkce Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi, najdete v části [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md). Toto téma poskytuje přehled nových funkcí pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
@@ -40,7 +40,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
   
 -   Dynamická aktualizace uvádíme, který poskytuje mechanismus pro aktualizaci definice instance trvalou pracovního postupu. Další informace najdete v tématu [dynamická aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md) a [postupy: aktualizovat definice instanci pracovního postupu spuštění](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md).  
   
--   SqlWorkflowInstanceStoreSchemaUpgrade.sql databázového skriptu je zadán pro upgrade trvalost databází vytvořených přes [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze skripty. Tento skript aktualizace [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] trvalost databáze podporují nové možnosti správy verzí, počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Instance pracovního postupu trvalý v databázi mají výchozí hodnoty verze a mohl účastnit spuštění vedle sebe a dynamické aktualizace. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Upgrade rozhraní .NET Framework 4 trvalost databáze podporující pracovní postup správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).  
+-   SqlWorkflowInstanceStoreSchemaUpgrade.sql databázového skriptu je zadán pro upgrade trvalost databází vytvořených přes [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze skripty. Tento skript aktualizace [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] trvalost databáze podporují nové možnosti správy verzí, počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Instance pracovního postupu trvalý v databázi mají výchozí hodnoty verze a mohl účastnit spuštění vedle sebe a dynamické aktualizace. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databáze na podporu pracovních postupů správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).  
   
 ##  <a name="BKMK_NewActivities"></a> aktivity  
  Knihovna předdefinovaných aktivit obsahuje nové aktivity a nové funkce pro stávající aktivity.  

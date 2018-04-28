@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 94ff361e89693f53c8d1baedcac749cf5178086e
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: df3e207cdca3a40bb0cfaff1890f6e010bd0790c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou použité a další problémy, které vám pomůžou návrh operace, které odpovídají požadavky na vaše scénáře.  
@@ -65,7 +65,7 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
   
  Příklad použití rozhraní k vytvoření kontraktu služby, naleznete v části [postupy: vytvoření služby pomocí rozhraní kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-with-a-contract-interface.md).  
   
- Můžete však použití třídy a definování kontraktu služby ve stejnou dobu implementace tohoto kontraktu. Výhoda vytváření vašim službám použitím <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> přímo na třídy a metody pro třídu, v uvedeném pořadí, je rychlost a jednoduchost. Nevýhodou je, že spravované třídy nepodporují vícenásobná dědičnost a v důsledku jejich můžete implementovat pouze jeden kontrakt služby najednou. Kromě toho všechny změny podpisy třída nebo metoda upravuje veřejného kontraktu pro tuto službu, která klientům zabránit, beze změny pomocí služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
+ Můžete však použití třídy a definování kontraktu služby ve stejnou dobu implementace tohoto kontraktu. Výhoda vytváření vašim službám použitím <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> přímo na třídy a metody pro třídu, v uvedeném pořadí, je rychlost a jednoduchost. Nevýhodou je, že spravované třídy nepodporují vícenásobná dědičnost a v důsledku jejich můžete implementovat pouze jeden kontrakt služby najednou. Kromě toho všechny změny podpisy třída nebo metoda upravuje veřejného kontraktu pro tuto službu, která klientům zabránit, beze změny pomocí služby. Další informace najdete v tématu [implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md).  
   
  Příklad, který používá třídu k vytvoření kontraktu služby a implementuje ve stejnou dobu, naleznete v části [postupy: vytvoření služby s třídou kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-contract-with-a-class.md).  
   
@@ -193,7 +193,7 @@ End Interface
  Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo části zprávy) podporující služby jsou podepsané, podepsané a šifrovaná nebo odeslán bez informace podpisy nebo šifrování. Úroveň ochrany lze nastavit v různých oborech: na úrovni služby, určité operace, zprávy v rámci této operace, nebo část zprávy. Hodnoty nastavené na jeden obor stát výchozí hodnota pro menší obory, pokud není explicitně přepsána. Konfigurace vazeb nemůže poskytovat úroveň ochrany vyžaduje minimální pro kontrakt, je vyvolána výjimka. A pokud žádné hodnoty pro úroveň ochrany jsou explicitně nastavená na kontrakt, konfigurace vazeb řídí úroveň ochrany pro všechny zprávy, pokud má vazby zabezpečení zpráv. Toto je výchozí chování.  
   
 > [!IMPORTANT]
->  Rozhodnutí, jestli se explicitně nastavit různé obory kontraktu, na méně než úroveň plná ochrana <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> je obecně rozhodnutí, která obchoduje určitý stupeň zabezpečení pro zvýšení výkonu. V těchto případech musí svoje rozhodnutí o základem vaše operace a hodnoty dat, která si vyměňují. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md).  
+>  Rozhodnutí, jestli se explicitně nastavit různé obory kontraktu, na méně než úroveň plná ochrana <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> je obecně rozhodnutí, která obchoduje určitý stupeň zabezpečení pro zvýšení výkonu. V těchto případech musí svoje rozhodnutí o základem vaše operace a hodnoty dat, která si vyměňují. Další informace najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
   
  Například následující příklad kódu nenastaví buď <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> nebo <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A> vlastnost kontrakt.  
   
@@ -273,7 +273,7 @@ End Interface
  [!INCLUDE[crabout](../../../includes/crabout-md.md)] úrovně ochrany a je používají, naleznete [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] zabezpečení, najdete v části [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
   
 ##### <a name="other-operation-signature-requirements"></a>Další požadavky operace podpisu  
- Některé funkce aplikace vyžadují konkrétní typ operace podpisu. Například <xref:System.ServiceModel.NetMsmqBinding> vazba podporuje trvanlivý služeb a klientů, ve kterých můžete aplikaci restartujte uprostřed komunikace a pokračovat tam, kde bylo přerušeno bez chybí všechny zprávy. ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).) Trvanlivý operace však vyžaduje pouze jeden `in` parametr a mít žádnou návratovou hodnotu.  
+ Některé funkce aplikace vyžadují konkrétní typ operace podpisu. Například <xref:System.ServiceModel.NetMsmqBinding> vazba podporuje trvanlivý služeb a klientů, ve kterých můžete aplikaci restartujte uprostřed komunikace a pokračovat tam, kde bylo přerušeno bez chybí všechny zprávy. (Další informace najdete v tématu [fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).) Trvanlivý operace však vyžaduje pouze jeden `in` parametr a mít žádnou návratovou hodnotu.  
   
  Dalším příkladem je použití <xref:System.IO.Stream> typů v operacích. Protože <xref:System.IO.Stream> parametr obsahuje obsah celé zprávy, pokud vstup nebo výstup (to znamená, `ref` parametr `out` parametr nebo vrací hodnotu) je typu <xref:System.IO.Stream>, pak musí být pouze vstupu nebo výstupu, zadané v vaší operace. Kromě toho parametr nebo návratový typ musí být buď <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType>, nebo <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] datové proudy, najdete v části [velkého množství dat a Streaming](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   

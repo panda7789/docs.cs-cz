@@ -1,21 +1,20 @@
 ---
-title: "Přehled sady SDK rozhraní .NET core"
-description: "Zjistěte informace o rozhraní .NET Core SDK, což je sada knihoven a nástroje pro vytváření projektů .NET Core."
-keywords: "Rozhraní .NET, .NET core"
+title: Přehled sady SDK rozhraní .NET core
+description: Zjistěte informace o rozhraní .NET Core SDK, což je sada knihoven a nástroje pro vytváření projektů .NET Core.
 author: blackdwarf
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 26bc9822-e42b-48ec-b0d6-499dc604add7
-ms.workload: dotnetcore
-ms.openlocfilehash: f32f4c50f5b3fef8f38560ea3516265f7a4ac008
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: e75774f24b18796a618264eb7cca64d3aa243e5e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-sdk-overview"></a>Přehled sady SDK rozhraní .NET core 
 

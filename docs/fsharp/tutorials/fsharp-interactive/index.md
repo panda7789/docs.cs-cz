@@ -1,20 +1,17 @@
 ---
 title: Interaktivní referenční dokumentace F# (fsi.exe)
 description: 'Zjistěte, jak F # interaktivní (fsi.exe) se používá interaktivní spuštění F # – kód v konzole nebo spuštění skriptů F #.'
-keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 36af8d1b-dc08-4a37-9497-d23c0a0ac11c
-ms.openlocfilehash: a18f339d898374a59858cd774154b3846594d183
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: e745562e4165ce6744fcb6d07268b1a5761194aa
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="interactive-programming-with-f"></a>Interaktivní programování s jazykem F# #
 
@@ -59,7 +56,7 @@ Některé direktivy, které jsou k dispozici při spuštění skriptů v jazyce 
 |**#load**|Přečte zdrojový soubor, zkompiluje jej a spustí.|
 |**#quit**|Ukončí relaci jazyka F# Interactive.|
 |**#r**|Odkazuje na sestavení.|
-|**#time ["na" &#124;" vypnuto"]**|Samostatně **#time** přepíná, jestli se má zobrazit informace o výkonu. Pokud je povolena, jazyk F# Interactive měří reálný čas, čas procesoru a informace uvolňování paměti pro každou část kódu, která je interpretována a spuštěna.|
+|**#time ["na"&#124;"vypnuto"]**|Samostatně **#time** přepíná, jestli se má zobrazit informace o výkonu. Pokud je povolena, jazyk F# Interactive měří reálný čas, čas procesoru a informace uvolňování paměti pro každou část kódu, která je interpretována a spuštěna.|
 
 Pokud v jazyce F# Interactive určíte soubory nebo cesty, očekává se textový literál. Proto musí být soubory a cesty v uvozovkách a musí být použity obvyklé řídicí znaky. Lze také použít znak @, který způsobí, že jazyk F# Interactive interpretuje řetězec obsahující cestu jako doslovný řetězec. To způsobí, že jazyk F# Interactive ignoruje jakékoli řídicí znaky.
 

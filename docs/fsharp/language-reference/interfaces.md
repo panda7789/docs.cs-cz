@@ -1,20 +1,17 @@
 ---
-title: "Rozhraní (F#)"
-description: "Zjistěte, jak zadat F # rozhraní sady souvisejících členů, které implementují jiné třídy."
-keywords: "Visual f #, f #, funkční programování"
+title: Rozhraní (F#)
+description: 'Zjistěte, jak zadat F # rozhraní sady souvisejících členů, které implementují jiné třídy.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 3a082459-17d4-45cf-9153-0b7550a154ec
-ms.openlocfilehash: d7c95e5f5cc0bc6c7f6393af990427ac491c5b79
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fa299a7e37d4e1e3800a02bf5a77831db9146daf
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="interfaces"></a>Rozhraní
 
@@ -94,7 +91,7 @@ Rozhraní může dědit vlastnosti z jednoho nebo více základní rozhraní.
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2805.fs)]
     
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Objektové výrazy](object-expressions.md)
 

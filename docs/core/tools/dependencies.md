@@ -1,21 +1,20 @@
 ---
-title: "Správa závislostí v nástrojů .NET Core"
-description: "Vysvětluje, jak spravovat svoje závislosti pomocí nástrojů .NET Core."
-keywords: "Rozhraní příkazového řádku, rozšiřitelnosti, vlastní příkazy, .NET Core"
+title: Správa závislostí v nástrojů .NET Core
+description: Vysvětluje, jak spravovat svoje závislosti pomocí nástrojů .NET Core.
 author: blackdwarf
 ms.author: mairaw
 ms.date: 03/06/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 74b87cdb-a244-4c13-908c-539118bfeef9
-ms.workload: dotnetcore
-ms.openlocfilehash: a064ae72a077583cfb544309700555ebd9d398a6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 5da4f5e4d837be874323ef700093b0d01c8ac98f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="managing-dependencies-with-net-core-sdk-10"></a>Správa závislostí s .NET Core SDK 1.0
 

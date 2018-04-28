@@ -1,5 +1,5 @@
 ---
-title: "Úvod do obecných typů (Průvodce programováním v C#)"
+title: Úvod do obecných typů (Průvodce programováním v C#)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -8,17 +8,17 @@ ms.topic: article
 helpviewer_keywords:
 - generics [C#], about generics
 ms.assetid: a1ad761e-42f7-41dd-a62f-452a2de26b9d
-caps.latest.revision: 
+caps.latest.revision: 32
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 61baf26c9f942a59e3787ca55a2ac6a824410608
-ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
+ms.openlocfilehash: 30184edbcba47203d8416609b5a28648adf7cbaa
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="introduction-to-generics-c-programming-guide"></a>Úvod do obecných typů (Průvodce programováním v C#)
-Obecné třídy a metody kombinovat – opětovné použití, bezpečnost typů a efektivitu způsobem, který nelze jejich neobecné protějšky. Obecné typy jsou nejčastěji používá s kolekcí a metody, které pracovat s nimi. Knihovna tříd rozhraní .NET Framework verze 2.0 poskytuje nový obor názvů, <xref:System.Collections.Generic>, která obsahuje několik nové třídy kolekcí založených na obecné. Je doporučeno, všechny aplikace, která cílí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 2.0 a vyšší použít nové třídy obecnou kolekci místo starší svými protějšky neobecnou například <xref:System.Collections.ArrayList>. Další informace najdete v tématu [obecné typy v knihovně tříd rozhraní .NET Framework](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md).  
+Obecné třídy a metody kombinovat – opětovné použití, bezpečnost typů a efektivitu způsobem, který nelze jejich neobecné protějšky. Obecné typy jsou nejčastěji používá s kolekcí a metody, které pracovat s nimi. Knihovna tříd rozhraní .NET Framework verze 2.0 poskytuje nový obor názvů, <xref:System.Collections.Generic>, která obsahuje několik nové třídy kolekcí založených na obecné. Doporučuje se, že všechny aplikace, jejichž cílem rozhraní .NET Framework 2.0 a pozdější použití nové obecnou kolekci třídy místo starší svými protějšky neobecnou, jako <xref:System.Collections.ArrayList>. Další informace najdete v tématu [obecné typy v rozhraní .NET](../../../standard/generics/index.md).  
   
  Samozřejmě můžete také vytvořit vlastní obecné typy a metody, které poskytují vlastní zobecněn řešení a vzory návrhu, které jsou bezpečnost typů a efektivní. Následující příklad kódu ukazuje jednoduchý obecné třídy-list pro demonstrační účely. (Ve většině případů byste měli použít <xref:System.Collections.Generic.List%601> poskytuje knihovna tříd rozhraní .NET Framework místo vytvoření vlastní třídy.) Parametr typu `T` se používá na různých místech, kde na konkrétní typ. by obvykle bylo použito k označení typ položky uložené v seznamu. Použije se následujícími způsoby:  
   

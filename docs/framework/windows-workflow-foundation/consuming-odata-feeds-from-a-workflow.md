@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2057e2b1c03a1ebcd68d7d59be8839171305707f
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 09eb22c0c4bfaf549bd18cccae0c84957e730aa6
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využívání OData informační kanály z pracovního postupu
 Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] , umožňuje vytvářet služby, které používají Open Data Protocol (OData) vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantiky representational stavu transfer (REST). OData zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Všechny aplikace mohou komunikovat s služby OData na základě dat Pokud můžete odeslat požadavek HTTP a zpracování datového kanálu OData, vrátí datové služby. Kromě toho služby WCF Data Services zahrnuje klientské knihovny, které poskytují bohatší programovací prostředí spotřebuje informační kanály OData z [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace. Toto téma poskytuje přehled o využívání OData kanálu v pracovním postupu s i bez použití knihovny klienta.  
@@ -37,13 +37,13 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  Všimněte si, že neexistují žádné operace služby vystavený službou a v **služby** položky seznamu jsou představující entity zveřejněné službu Northwind data. Při přidání odkazu na službu pro tyto entity se generují třídy, a použít v kódu klienta. V příkladech v tomto tématu použijte tyto třídy a `NorthwindEntities` třída provádět dotazy.  
   
 > [!NOTE]
->  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Generování dat služby klientské knihovny (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkID=191611).  
+>  Další informace najdete v tématu [generování dat služby klientské knihovny (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkID=191611).  
   
 ### <a name="using-asynchronous-methods"></a>Použití asynchronních metod  
  K odstranění problémů možnou latenci, které mohou nastat při přístupu k prostředkům prostřednictvím webu, že doporučujeme, abyste přístup ke službám WCF Data asynchronně. Knihovny klienta služby WCF Data Services zahrnout asynchronní metody pro vyvolání dotazy, a poskytuje Windows Workflow Foundation (WF) <xref:System.Activities.AsyncCodeActivity> třídu pro vytváření asynchronní aktivity. <xref:System.Activities.AsyncCodeActivity> odvozené aktivity je možné zapsat do využít výhod [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] tříd, které mají asynchronní metody nebo kód, který se spustí asynchronně můžete umístit do metody a vyvolána pomocí delegáta. Tato část obsahuje dva příklady <xref:System.Activities.AsyncCodeActivity> odvozené aktivity; ten, který používá asynchronní metody knihoven klienta datových služeb WCF a jeden, který používá delegáta.  
   
 > [!NOTE]
->  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Asynchronní operace (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193396) a [vytváření asynchronní aktivit](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md).  
+>  Další informace najdete v tématu [asynchronních operací (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193396) a [vytváření asynchronní aktivity](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md).  
   
 ### <a name="using-client-library-asynchronous-methods"></a>Pomocí klientské knihovny asynchronních metod  
  <xref:System.Data.Services.Client.DataServiceQuery%601> Třída poskytuje <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> a <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metody pro dotazování služby OData asynchronně. Tyto metody lze volat z <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> přepsání <xref:System.Activities.AsyncCodeActivity> odvozené třídy. Když <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> přepsání vrátí pracovního postupu můžete přejít nečinnosti (ale nezachovají) a při dokončení asynchronní pracovní <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> vyvolání modulem runtime.  

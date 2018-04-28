@@ -1,32 +1,34 @@
 ---
-title: "Postupy: Zabezpečené koncové body metadat"
-ms.custom: 
+title: 'Postupy: Zabezpečené koncové body metadat'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 6923703230d6792d8938de149f64c41a3bf95699
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 50a62366063123de9e1773b2926f79b76a1b1c3b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Postupy: Zabezpečené koncové body metadat
 Metadata pro služby mohou obsahovat citlivé údaje o vaší aplikaci, které můžete využít uživatel se zlými úmysly. Příjemci vaší služby také může vyžadovat zabezpečené mechanismus pro získání metadat o služby. Někdy je proto potřeba publikovat metadata pomocí zabezpečený koncový bod.  
   
- Koncové body metadat jsou obecně zabezpečené pomocí mechanismů standardní zabezpečení, které jsou definované v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pro zabezpečení koncových bodů aplikace. ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md).)  
+ Koncové body metadat jsou obecně zabezpečené pomocí mechanismů standardní zabezpečení, které jsou definované v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pro zabezpečení koncových bodů aplikace. (Další informace najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md).)  
   
  Toto téma vás provede kroky k vytvoření koncového bodu zabezpečeny certifikát Secure Sockets Layer (SSL) nebo jinými slovy, koncový bod HTTPS.  
   

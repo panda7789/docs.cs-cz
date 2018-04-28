@@ -1,13 +1,13 @@
 ---
-title: "Kontrakty dat s dopřednou kompatibilitou"
-ms.custom: 
+title: Kontrakty dat s dopřednou kompatibilitou
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], forward compatibility
 ms.assetid: 413c9044-26f8-4ecb-968c-18495ea52cd9
-caps.latest.revision: 
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5ffd4a09de508a2353af356863f9e4f41fc253e8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 554176d2b6ac0c1d5cbe817721c55d06f88457cc
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="forward-compatible-data-contracts"></a>Kontrakty dat s dopřednou kompatibilitou
-Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] systém kontraktu dat je, že kontrakty můžete vyvíjet pevných způsoby se v čase. To znamená klient se starší verzí systému kontraktu dat může komunikovat se službou novější verzi stejné kontrakt dat nebo klient novější verzi kontraktu dat může komunikovat s starší verze stejné kontrakt dat. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
+Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] systém kontraktu dat je, že kontrakty můžete vyvíjet pevných způsoby se v čase. To znamená klient se starší verzí systému kontraktu dat může komunikovat se službou novější verzi stejné kontrakt dat nebo klient novější verzi kontraktu dat může komunikovat s starší verze stejné kontrakt dat. Další informace najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
   
  Většina funkcí správy verzí na podle potřeby můžete použít při vytváření nové verze existující smlouvy data. Ale jedna z funkcí správy verzí, *odezvy*, musí být typu z první verze součástí správné fungování.  
   

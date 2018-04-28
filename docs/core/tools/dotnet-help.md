@@ -1,18 +1,19 @@
 ---
-title: "příkaz nápovědy DotNet - .NET Core rozhraní příkazového řádku"
-description: "Příkaz help dotnet ukazuje podrobnější dokumentaci online zadaný příkaz."
+title: příkaz nápovědy DotNet - .NET Core rozhraní příkazového řádku
+description: Příkaz help dotnet ukazuje podrobnější dokumentaci online zadaný příkaz.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/17/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 47b7b53b9f13935bbd2cf508c7c57d00584822d0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 189eeea87babbce16751c5875f62c990ebecc10a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-help-reference"></a>odkaz na nápovědu DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet help`-Li zobrazit podrobnější dokumentaci online zadaný příkaz.
+`dotnet help` -Li zobrazit podrobnější dokumentaci online zadaný příkaz.
 
 ## <a name="synopsis"></a>Stručný obsah
 

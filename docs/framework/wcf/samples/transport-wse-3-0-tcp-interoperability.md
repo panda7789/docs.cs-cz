@@ -1,24 +1,26 @@
 ---
-title: "Přenos: Součinnost TCP ve WSE 3.0"
-ms.custom: 
+title: 'Přenos: Součinnost TCP ve WSE 3.0'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 63641f7a99b7c567e871d6a67dd72380f0c077ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 510d523cea78aa16a16adc8572c839e95059c068
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
 Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexní relace TCP jako vlastní [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] přenosu. Také ukazuje, jak můžete použít rozšíření vrstvy kanálu rozhraní přenášených v síti s existující nasazené systémy. Následující kroky ukazují, jak vytvořit toto vlastní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přenosu:  
@@ -31,10 +33,10 @@ Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexn
   
 4.  Ujistěte se, že jsou všechny výjimky sítě normalizovány na příslušné odvozené třídy z <xref:System.ServiceModel.CommunicationException>.  
   
-5.  Přidáte element vazby, který přidá vlastní přenos do zásobníku kanálu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Přidání prvku vazby].  
+5.  Přidáte element vazby, který přidá vlastní přenos do zásobníku kanálu. Další informace najdete v tématu [přidávání Element vazby].  
   
 ## <a name="creating-iduplexsessionchannel"></a>Vytváření IDuplexSessionChannel  
- Prvním krokem při psaní WSE 3.0 TCP interoperabilita přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> na <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel`odvozená z <xref:System.ServiceModel.Channels.ChannelBase>. Logiku odesílání zprávy se skládá ze dvou částí hlavní: (1) do bajtů a (2) formulování těchto bajtů a je pošlete přenášený kódování zprávy.  
+ Prvním krokem při psaní WSE 3.0 TCP interoperabilita přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> na <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` odvozená z <xref:System.ServiceModel.Channels.ChannelBase>. Logiku odesílání zprávy se skládá ze dvou částí hlavní: (1) do bajtů a (2) formulování těchto bajtů a je pošlete přenášený kódování zprávy.  
   
  `ArraySegment<byte> encodedBytes = EncodeMessage(message);`  
   
@@ -42,13 +44,13 @@ Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexn
   
  Kromě toho zámek se provede tak, aby volání Send() zachovat záruky IDuplexSessionChannel v daném pořadí a tak, aby správně synchronizovaní volání základní soketu.  
   
- `WseTcpDuplexSessionChannel`používá <xref:System.ServiceModel.Channels.MessageEncoder> pro převod <xref:System.ServiceModel.Channels.Message> do a z byte []. Protože je na přenos `WseTcpDuplexSessionChannel` zodpovídá taky za použití nakonfigurovaný kanál pomocí vzdálené adresy. `EncodeMessage`zapouzdří logiku pro tento převod.  
+ `WseTcpDuplexSessionChannel` používá <xref:System.ServiceModel.Channels.MessageEncoder> pro převod <xref:System.ServiceModel.Channels.Message> do a z byte []. Protože je na přenos `WseTcpDuplexSessionChannel` zodpovídá taky za použití nakonfigurovaný kanál pomocí vzdálené adresy. `EncodeMessage` zapouzdří logiku pro tento převod.  
   
  `this.RemoteAddress.ApplyTo(message);`  
   
  `return encoder.WriteMessage(message, maxBufferSize, bufferManager);`  
   
- Jednou <xref:System.ServiceModel.Channels.Message> je zakódován do bajtů, je třeba přenést v drátové síti. To vyžaduje systém pro definování hranice zpráv. WSE 3.0 používá verzi [DIME](http://go.microsoft.com/fwlink/?LinkId=94999) jako jeho rámcovacích protokol. `WriteData`zapouzdří logice rámcovacích zabalit byte [] do sady záznamů DIME.  
+ Jednou <xref:System.ServiceModel.Channels.Message> je zakódován do bajtů, je třeba přenést v drátové síti. To vyžaduje systém pro definování hranice zpráv. WSE 3.0 používá verzi [DIME](http://go.microsoft.com/fwlink/?LinkId=94999) jako jeho rámcovacích protokol. `WriteData` zapouzdří logice rámcovacích zabalit byte [] do sady záznamů DIME.  
   
  Logika pro příjem zprávy je velmi podobné. Hlavní složitost zpracovává fakt, že soket čtení může vrátit menší počet bajtů, než se požadovaly. Pro příjem zprávy, `WseTcpDuplexSessionChannel` čte bajtů vypnout sítě, dekóduje rámcovacích DIME a pak použije <xref:System.ServiceModel.Channels.MessageEncoder> pro zapnutí byte [] do <xref:System.ServiceModel.Channels.Message>.  
   
@@ -63,7 +65,7 @@ Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexn
 ## <a name="channel-factory"></a>Vytvoření postupu kanálu  
  Dalším krokem při psaní přenos TCP je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro klienta kanály.  
   
--   `WseTcpChannelFactory`odvozená z <xref:System.ServiceModel.Channels.ChannelFactoryBase> \<IDuplexSessionChannel >. Je objekt factory, který přepíše `OnCreateChannel` k vytvoření klienta kanály.  
+-   `WseTcpChannelFactory` odvozená z <xref:System.ServiceModel.Channels.ChannelFactoryBase> \<IDuplexSessionChannel >. Je objekt factory, který přepíše `OnCreateChannel` k vytvoření klienta kanály.  
   
  `protected override IDuplexSessionChannel OnCreateChannel(EndpointAddress remoteAddress, Uri via)`  
   
@@ -73,7 +75,7 @@ Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexn
   
  `}`  
   
--   `ClientWseTcpDuplexSessionChannel`Přidá do základní logiku `WseTcpDuplexSessionChannel` pro připojení k serveru TCP `channel.Open` čas. Nejprve je přeložit na IP adresu, název hostitele, jak je znázorněno v následujícím kódu.  
+-   `ClientWseTcpDuplexSessionChannel` Přidá do základní logiku `WseTcpDuplexSessionChannel` pro připojení k serveru TCP `channel.Open` čas. Nejprve je přeložit na IP adresu, název hostitele, jak je znázorněno v následujícím kódu.  
   
  `hostEntry = Dns.GetHostEntry(Via.Host);`  
   
@@ -90,7 +92,7 @@ Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexn
 ## <a name="channel-listener"></a>Naslouchací proces kanálu  
  Dalším krokem při psaní přenos TCP je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelListener> pro přijetí serveru kanály.  
   
--   `WseTcpChannelListener`odvozená z <xref:System.ServiceModel.Channels.ChannelListenerBase> \<IDuplexSessionChannel > a přepsání na otevřete [Begin] a [Begin] zavřete na řídí životnost jeho naslouchání soketu. V při otevření je tak, aby naslouchala na IP_ANY vytvořili soketu. Pokročilejší implementace můžete vytvořit druhý soketu také naslouchat na IPv6. Můžete povolit také IP adresu, kterou být zadaný v názvu hostitele.  
+-   `WseTcpChannelListener` odvozená z <xref:System.ServiceModel.Channels.ChannelListenerBase> \<IDuplexSessionChannel > a přepsání na otevřete [Begin] a [Begin] zavřete na řídí životnost jeho naslouchání soketu. V při otevření je tak, aby naslouchala na IP_ANY vytvořili soketu. Pokročilejší implementace můžete vytvořit druhý soketu také naslouchat na IPv6. Můžete povolit také IP adresu, kterou být zadaný v názvu hostitele.  
   
  `IPEndPoint localEndpoint = new IPEndPoint(IPAddress.Any, uri.Port);`  
   

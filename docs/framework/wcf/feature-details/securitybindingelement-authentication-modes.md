@@ -1,30 +1,32 @@
 ---
-title: "Režimy ověřování SecurityBindingElement"
-ms.custom: 
+title: Režimy ověřování SecurityBindingElement
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 12300bf4-c730-4405-9f65-d286f68b5a43
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 05b44d9972a393b36a97fd5afcb6581229332df9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8ca854d6b0431b5fe4972972d9d39de934f64b4d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="securitybindingelement-authentication-modes"></a>Režimy ověřování SecurityBindingElement
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje několik režimy, které služby a klienti ověřování jednu na druhou. Můžete vytvořit bezpečnostní prvky vazeb pro tyto režimy ověřování pomocí statické metody <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy nebo prostřednictvím konfigurace. Toto téma stručně popisuje režimy ověřování 18.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje několik režimy, které služby a klienti ověřování jednu na druhou. Můžete vytvořit bezpečnostní prvky vazeb pro tyto režimy ověřování pomocí statické metody <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy nebo prostřednictvím konfigurace. Toto téma stručně popisuje režimy ověřování 18.  
   
  Příklad použití elementu pro jeden z režimů ověřování, naleznete v části [postupy: vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
@@ -60,7 +62,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[c_CustomBindingsAuthMode#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombindingsauthmode/cs/source.cs#3)]
      [!code-vb[c_CustomBindingsAuthMode#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombindingsauthmode/vb/source.vb#3)]  
   
-3.  Pro vytvoření vlastní vazby pomocí elementu vazby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+3.  Pro vytvoření vlastní vazby pomocí elementu vazby. Další informace najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 ## <a name="mode-descriptions"></a>Popisy režimu  
   
@@ -89,7 +91,7 @@ ms.lasthandoff: 12/22/2017
  Klient se ověří do služby pomocí lístek protokolu Kerberos s Tento režim ověřování. Tento stejný lístek taky poskytuje ověřování serveru. Element vazby zabezpečení `SymmetricSecurityBindingElement` vrácené <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> metoda. Alternativně nastavte `authenticationMode` atribut `Kerberos`.  
   
 > [!NOTE]
->  Chcete-li použít tento režim ověřování, musí být přidružen hlavní název služby (SPN) účtu služby. K tomu, spusťte službu pod účtem síťové služby nebo účtu LOCAL SYSTEM. Chcete-li vytvořit název SPN pro účet služby můžete taky pomocí nástroje SetSpn.exe. V obou případech musí klient použít správný název SPN [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element, nebo pomocí <xref:System.ServiceModel.EndpointAddress> konstruktor. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Služby identit a ověření](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+>  Chcete-li použít tento režim ověřování, musí být přidružen hlavní název služby (SPN) účtu služby. K tomu, spusťte službu pod účtem síťové služby nebo účtu LOCAL SYSTEM. Chcete-li vytvořit název SPN pro účet služby můžete taky pomocí nástroje SetSpn.exe. V obou případech musí klient použít správný název SPN [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element, nebo pomocí <xref:System.ServiceModel.EndpointAddress> konstruktor. Další informace najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 > [!NOTE]
 >  Když `Kerberos` se používá režim ověřování, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous> a <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> úrovní zosobnění nejsou podporovány.  
@@ -98,7 +100,7 @@ ms.lasthandoff: 12/22/2017
  Klient se ověří do služby pomocí lístek protokolu Kerberos s Tento režim ověřování. Token protokolu Kerberos se zobrazí ve vrstvě protokolu SOAP jako tokenu či identifikaci podpůrné; To znamená, token, který podepisuje podpis zprávy. Služba je ověřen pomocí certifikátu X.509. certifikát v přenosové vrstvě. Element vazby zabezpečení `TransportSecurityBindingElement` vrácené <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosOverTransportBindingElement%2A> metoda. Alternativně nastavte `authenticationMode` atribut `KerberosOverTransport`.  
   
 > [!NOTE]
->  Chcete-li použít tento režim ověřování, musí být přidružen název SPN účtu služby. K tomu, spusťte službu pod účtem síťové služby nebo účtu LOCAL SYSTEM. Chcete-li vytvořit název SPN pro účet služby můžete taky pomocí nástroje SetSpn.exe. V obou případech musí klient použít správný název SPN [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element, nebo pomocí <xref:System.ServiceModel.EndpointAddress> konstruktor. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Služby identit a ověření](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+>  Chcete-li použít tento režim ověřování, musí být přidružen název SPN účtu služby. K tomu, spusťte službu pod účtem síťové služby nebo účtu LOCAL SYSTEM. Chcete-li vytvořit název SPN pro účet služby můžete taky pomocí nástroje SetSpn.exe. V obou případech musí klient použít správný název SPN [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element, nebo pomocí <xref:System.ServiceModel.EndpointAddress> konstruktor. Další informace najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ### <a name="mutualcertificate"></a>MutualCertificate  
  Tento režim ověřování klient se ověří pomocí certifikát X.509, který se zobrazí jako tokenu či identifikaci podpůrné; ve vrstvě protokolu SOAP To znamená, token, který podepisuje podpis zprávy. Služba je také ověřit pomocí certifikátu X.509. Element vazby zabezpečení `SymmetricSecurityBindingElement` vrácené <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A> metoda. Alternativně nastavte `authenticationMode` atribut `MutualCertificate`.  

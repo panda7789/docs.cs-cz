@@ -1,13 +1,13 @@
 ---
-title: "Zadání adresy koncového bodu"
-ms.custom: 
+title: Zadání adresy koncového bodu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-caps.latest.revision: 
+caps.latest.revision: 41
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 403ff897de4dc9ee95a854d9658bdee344755d59
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 09a3bf2d552b49e36375210e3036e344a9702405
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby dojde k prostřednictvím své koncové body. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operací, které jsou k dispozici. Vazba Určuje, jak se komunikovat se službou a adresu určuje, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje identifikátor URI (Uniform Resource) představující adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, který představuje identitu zabezpečení služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelné záhlaví obsahují podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncovým bodem. Například záhlaví můžete určit, jak zpracovávat příchozí zprávy, kde má koncový bod odeslat zprávu odpovědi nebo které instanci služby pro použití ke zpracování příchozí zprávy z určitého uživatele, když jsou k dispozici více instancí.  
@@ -33,7 +33,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
 ## <a name="definition-of-an-endpoint-address"></a>Definice adresu koncového bodu  
  V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], <xref:System.ServiceModel.EndpointAddress> modelů odkaz na koncový bod (EPR), jak je definované ve standardu adresování WS.  
   
- Adresa URI pro většinu přenosy má čtyři části. Tento identifikátor URI, "http://www.fabrikam.com:322/mathservice.svc/secureEndpoint" má například následující čtyři části:  
+ Adresa URI pro většinu přenosy má čtyři části. Například tento identifikátor URI "http://www.fabrikam.com:322/mathservice.svc/secureEndpoint" má následující čtyři části:  
   
 -   Schéma: http:  
   
@@ -49,7 +49,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
   
  Existují dva způsoby k zadání adresy koncového bodu služby v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Můžete zadat absolutní adresu pro každý koncový bod spojené s touto službou, nebo můžete zadat bázové adresy pro <xref:System.ServiceModel.ServiceHost> služby a pak zadejte adresu pro každý koncový bod přidruženého k této službě, která je definována relativně k této základní Adresa. Všechny tyto postupy můžete použít k určení adresy koncových bodů pro službu s konfigurací nebo kódu. Pokud nezadáte relativní adresa, služba používá základní adresu. Také může mít více základní adresy pro služby, ale každá služba je povolen pouze jeden základní adresa pro každý přenos. Pokud máte několik koncových bodů, z nichž každý je nakonfigurován s jinou vazbou, jejich adresy musí být jedinečný. Koncové body, které používají stejné vazby ale odlišným kontrakty můžete použít stejné adresy.  
   
- Při hostování službou IIS, kterou spravujete <xref:System.ServiceModel.ServiceHost> instance sami. Základní adresa je vždy adresu určenou v souboru .svc pro službu při hostování ve službě IIS. Proto je nutné použít relativní koncový bod adresy pro koncové body služby hostované službou IIS. Poskytuje adresu plně kvalifikovaný koncového bodu může vést k chybám v nasazení služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Nasazení WCF hostované Internetovou informační službou](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).  
+ Při hostování službou IIS, kterou spravujete <xref:System.ServiceModel.ServiceHost> instance sami. Základní adresa je vždy adresu určenou v souboru .svc pro službu při hostování ve službě IIS. Proto je nutné použít relativní koncový bod adresy pro koncové body služby hostované službou IIS. Poskytuje adresu plně kvalifikovaný koncového bodu může vést k chybám v nasazení služby. Další informace najdete v tématu [nasazení služby WCF Internet Information Services-Hosted](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).  
   
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Definování adresy koncových bodů v konfiguraci  
  Chcete-li definovat koncový bod v konfiguračním souboru, použijte [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element.  
@@ -93,7 +93,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
 ## <a name="using-default-endpoints"></a>Pomocí výchozí koncové body  
  Pokud nejsou zadány žádné koncové body, v kódu nebo v konfiguraci modulu runtime poskytuje výchozí koncové body přidáním jeden výchozí koncový bod na každé základní adresa pro každý kontrakt služby implementované službu. Základní adresa může být určený v kódu nebo v konfiguraci a jsou výchozí koncové body se přidají při <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> se volá na <xref:System.ServiceModel.ServiceHost>.  
   
- Pokud jsou k dispozici explicitně koncových bodů, jsou výchozí koncové body může být přidán voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Pokud jsou k dispozici explicitně koncových bodů, jsou výchozí koncové body může být přidán voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.EndpointAddress>  

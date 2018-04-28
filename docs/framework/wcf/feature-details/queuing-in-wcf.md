@@ -1,24 +1,26 @@
 ---
 title: Fronty ve WCF
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3c50bbc54d56d3fdc7a848af0e77cfbb2c15c9bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 01dc36c73d9e668dd98cb5ba8b275d3d5177ba61
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="queuing-in-wcf"></a>Fronty ve WCF
 Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -49,19 +51,19 @@ Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1
   
  Fronty služby MSMQ lze také zabezpečit pomocí zaregistrována adresářové služby Active Directory identitu systému Windows. Při instalaci služby MSMQ, můžete nainstalovat integrace služby Active Directory, který vyžaduje počítač součástí domény sítě systému Windows.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]MSMQ, najdete v části [instalaci řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] MSMQ, najdete v části [instalaci řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md).  
   
 ### <a name="netmsmqbinding"></a>– NetMsmqBinding  
  [ \<– NetMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) je ve frontě vazby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje pro dvě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncových bodů na komunikaci pomocí služby MSMQ. Vazba, tedy zpřístupní vlastnosti, které jsou specifické pro služby MSMQ. Ale ne všechny funkce služby MSMQ a vlastnosti jsou přístupné `NetMsmqBinding`. Compact `NetMsmqBinding` slouží optimální sadou funkcí, které by měl zjistit dostatečná většina zákazníků.  
   
- `NetMsmqBinding` Manifesty základní koncepty služby Řízení front doposud popsané ve formě vlastnosti na vazby. Tyto vlastnosti se pak komunikovat s MSMQ postup přenosu a doručení zprávy. Popis kategorie vlastnost je v následujících částech. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]koncepční témata, která popisují specifické vlastnosti více úplně.  
+ `NetMsmqBinding` Manifesty základní koncepty služby Řízení front doposud popsané ve formě vlastnosti na vazby. Tyto vlastnosti se pak komunikovat s MSMQ postup přenosu a doručení zprávy. Popis kategorie vlastnost je v následujících částech. Další informace najdete v tématu koncepční témata, která popisují specifické vlastnosti více úplně.  
   
 #### <a name="exactlyonce-and-durable-properties"></a>ExactlyOnce a trvanlivé vlastnosti  
  `ExactlyOnce` a `Durable` vlastnosti vliv na způsob přenosu zpráv mezi fronty:  
   
 -   `ExactlyOnce`: Pokud nastavíte hodnotu `true` (výchozí), ve frontě kanál zajistí, že není duplikovaná zprávu, pokud doručit,. Také zajistí, že zpráva není ztraceny. Pokud zprávu nelze doručit, nebo před zprávy mohou být zajišťovány vyprší platnost zprávy čas k za provozu, neúspěšné zpráva spolu s důvodem selhání doručení se zaznamená do fronty nedoručených zpráv. Pokud nastavíte hodnotu `false`, díky snaze přenosu zprávy ve frontě kanál. V takovém případě můžete volitelně vybrat frontu nedoručených zpráv.  
   
--   `Durable:`Pokud nastavíte hodnotu `true` (výchozí), ve frontě kanál zajistí, že služby MSMQ ukládá zprávy spolehlivě na disk. Proto pokud služby MSMQ zastavit a restartovat, zprávy na disku je přenést do cílové fronty nebo doručit do služby. Pokud nastavíte hodnotu `false`, zprávy jsou uloženy v úložišti volatile a jsou v zastavením a restartováním služby MSMQ ztraceny.  
+-   `Durable:` Pokud nastavíte hodnotu `true` (výchozí), ve frontě kanál zajistí, že služby MSMQ ukládá zprávy spolehlivě na disk. Proto pokud služby MSMQ zastavit a restartovat, zprávy na disku je přenést do cílové fronty nebo doručit do služby. Pokud nastavíte hodnotu `false`, zprávy jsou uloženy v úložišti volatile a jsou v zastavením a restartováním služby MSMQ ztraceny.  
   
  Pro `ExactlyOnce` spolehlivé přenos MSMQ vyžaduje fronty využívat transakce. Také MSMQ vyžaduje transakce čtení z fronty transakcí. Jako takový, když použijete `NetMsmqBinding`, mějte na paměti, že transakce je potřeba odesílat nebo přijímat zprávy při `ExactlyOnce` je nastaven na `true`. Podobně MSMQ vyžaduje fronty být netransakční pro záruky best effort, například kdy `ExactlyOnce` je `false` a volatile zasílání zpráv. Proto při nastavování `ExactlyOnce` k `false` nebo trvanlivý k `false`, nelze odesílat a přijímat pomocí transakce.  
   
@@ -77,19 +79,19 @@ Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1
   
  Vazba má dvě vlastnosti, které vás zajímají:  
   
--   `DeadLetterQueue`: Tato vlastnost je výčet, který označuje, zda je fronta nedoručených zpráv. Pokud požadovaná, výčtu obsahuje také druh frontu nedoručených zpráv. Hodnoty jsou `None`, `System`, a `Custom`. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]výklad těchto vlastností najdete v části [pomocí fronty nedoručených zpráv pro zpracování chyb přenosu zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+-   `DeadLetterQueue`: Tato vlastnost je výčet, který označuje, zda je fronta nedoručených zpráv. Pokud požadovaná, výčtu obsahuje také druh frontu nedoručených zpráv. Hodnoty jsou `None`, `System`, a `Custom`. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] výklad těchto vlastností najdete v části [pomocí fronty nedoručených zpráv pro zpracování chyb přenosu zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
   
 -   `CustomDeadLetterQueue`: Tato vlastnost je identifikátor URI (Uniform Resource) adresa fronty nedoručených zpráv specifické pro aplikaci. To je potřeba, pokud `DeadLetterQueue`.`Custom` je vybrán.  
   
 #### <a name="poison-message-handling-properties"></a>Zacházení s nezpracovatelnými vlastnosti zpracování zpráv  
- Při službu čte zprávy z cílové fronty v rámci transakce, službu může dojít k selhání zpracování zprávy z různých důvodů. Zpráva je pak vrátit zpět do fronty se znovu načíst. Jak nakládat s zprávy, které nesplní opakovaného sadu zpracování zpráv poison vlastnosti mohou být konfigurovány vazba. Existují čtyři vlastnosti: `ReceiveRetryCount`, `MaxRetryCycles`, `RetryCycleDelay`, a `ReceiveErrorHandling`. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Tyto vlastnosti, najdete v části [zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md).  
+ Při službu čte zprávy z cílové fronty v rámci transakce, službu může dojít k selhání zpracování zprávy z různých důvodů. Zpráva je pak vrátit zpět do fronty se znovu načíst. Jak nakládat s zprávy, které nesplní opakovaného sadu zpracování zpráv poison vlastnosti mohou být konfigurovány vazba. Existují čtyři vlastnosti: `ReceiveRetryCount`, `MaxRetryCycles`, `RetryCycleDelay`, a `ReceiveErrorHandling`. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tyto vlastnosti, najdete v části [zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md).  
   
 #### <a name="security-properties"></a>Vlastnosti zabezpečení  
- MSMQ zpřístupňuje vlastní model zabezpečení, jako je seznamy řízení přístupu (ACL) ve frontě nebo odesílání zprávy ověřený. `NetMsmqBinding` Zpřístupní tyto vlastnosti zabezpečení jako součást nastavení zabezpečení přenosu. Existují dvě vlastnosti ve vazbě pro zabezpečení přenosu: `MsmqAuthenticationMode` a `MsmqProtectionLevel`. Nastavení v těchto vlastností závisí na konfiguraci služby MSMQ. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md).  
+ MSMQ zpřístupňuje vlastní model zabezpečení, jako je seznamy řízení přístupu (ACL) ve frontě nebo odesílání zprávy ověřený. `NetMsmqBinding` Zpřístupní tyto vlastnosti zabezpečení jako součást nastavení zabezpečení přenosu. Existují dvě vlastnosti ve vazbě pro zabezpečení přenosu: `MsmqAuthenticationMode` a `MsmqProtectionLevel`. Nastavení v těchto vlastností závisí na konfiguraci služby MSMQ. Další informace najdete v tématu [zabezpečení zabezpečení zprávy přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md).  
   
- Kromě zabezpečení přenosu skutečné samotnou zprávu protokolu SOAP se dají zabezpečit zabezpečení zpráv. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zabezpečení zpráv pomocí zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md).  
+ Kromě zabezpečení přenosu skutečné samotnou zprávu protokolu SOAP se dají zabezpečit zabezpečení zpráv. Další informace najdete v tématu [zabezpečení zabezpečení zprávy zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md).  
   
- `MsmqTransportSecurity`také poskytuje dvě vlastnosti `MsmqEncryptionAlgorithm` a `MsmqHashAlgorithm`. Jedná se o výčty různé algoritmy zvolit pro algoritmu hash podpisů a šifrování fronty fronty přenosu zpráv.  
+ `MsmqTransportSecurity` také poskytuje dvě vlastnosti `MsmqEncryptionAlgorithm` a `MsmqHashAlgorithm`. Jedná se o výčty různé algoritmy zvolit pro algoritmu hash podpisů a šifrování fronty fronty přenosu zpráv.  
   
 #### <a name="other-properties"></a>Ostatní vlastnosti  
  Kromě předchozích vlastnosti další vlastnosti specifické pro službu MSMQ v zahrnout vazby:  
@@ -100,7 +102,7 @@ Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1
   
 -   `QueueTransferProtocol`: Výčet protokolu používaných pro přenosy mezi zprávu fronty fronty. MSMQ implementuje protokol nativní fronty fronty přenosu a protokol založený na protokolu SOAP názvem protokol spolehlivého zasílání zpráv na protokolu SOAP (SRMP). SRMP se používá při použití přenos HTTP pro přenosy fronty fronty. SRMP zabezpečení se používá při použití protokolu HTTPS pro přenosy fronty fronty.  
   
--   `UseActiveDirectory`: Logická hodnota označující, zda služby Active Directory musí být použit pro překlad adres fronty. Ve výchozím nastavení to je vypnuto. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Služby koncových bodů a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
+-   `UseActiveDirectory`: Logická hodnota označující, zda služby Active Directory musí být použit pro překlad adres fronty. Ve výchozím nastavení to je vypnuto. Další informace najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
  `MsmqIntegrationBinding` Se používá, pokud chcete, aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncového bodu pro komunikaci s existující služby MSMQ aplikace napsané v C, C++, COM nebo System.Messaging rozhraní API.  

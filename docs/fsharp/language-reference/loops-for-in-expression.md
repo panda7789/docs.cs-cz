@@ -1,20 +1,17 @@
 ---
-title: "Smyčky: Výraz for...in (F#)"
-description: "V tématu Jak F # for... ve výrazu opakování ve smyčce konstrukce je použít k iteraci nad na odpovídá vzoru v kolekci vyčíslitelná."
-keywords: "Visual f #, f #, funkční programování"
+title: 'Smyčky: Výraz for...in (F#)'
+description: 'V tématu Jak F # for... ve výrazu opakování ve smyčce konstrukce je použít k iteraci nad na odpovídá vzoru v kolekci vyčíslitelná.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: f54e3228-4aec-4d0a-ae37-bc3376508284
-ms.openlocfilehash: d86aeb3bdd975261e59004d636354a740bd95c47
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: eaf0f4fc6419d8e0bff46795120ee5e42c4efe1d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="loops-forin-expression"></a>Smyčky: Výraz for...in
 
@@ -138,11 +135,11 @@ Výstup je následující.
 Number of elements in list1: 5
 ```
 
-`Note`Můžete použít `for...in` v pořadí výrazy a další výpočetní výrazy v takovém případě přizpůsobená verze `for...in` použit výraz. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výpočetní výrazy](computation-expressions.md).
+`Note` Můžete použít `for...in` v pořadí výrazy a další výpočetní výrazy v takovém případě přizpůsobená verze `for...in` použit výraz. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výpočetní výrazy](computation-expressions.md).
 
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Smyčky: `for...to` výraz](loops-for-to-expression.md)
 

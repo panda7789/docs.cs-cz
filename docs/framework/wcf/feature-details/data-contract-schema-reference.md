@@ -12,23 +12,23 @@ ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: ''
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 57ccc812aab5df0a9acd99bdcde327d56e4bad8d
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 739046945a019541f279b15d2d1b945f526861fb
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci XML.  
   
 ## <a name="datacontractserializer-mappings"></a>Mapování DataContractSerializer  
- `DataContractSerializer` Mapuje typy CLR XSD při exportu metadata z [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby pomocí koncový bod metadat nebo [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md).  
+ `DataContractSerializer` Mapuje typy CLR XSD při exportu metadata z [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby pomocí koncový bod metadat nebo [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Další informace najdete v tématu [serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md).  
   
  `DataContractSerializer` Také mapuje XSD typy CLR při Svcutil.exe se používá pro přístup k webové služby popis Language (WSDL) nebo XSD dokumentů a generovat kontrakty dat pro služby nebo klientů.  
   
@@ -53,7 +53,7 @@ Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runt
   
 ### <a name="xsschema-attributes"></a>\<xs:Schema >: atributy  
   
-|Atribut|DataContract|  
+|Atribut|Kontraktu|  
 |---------------|------------------|  
 |`attributeFormDefault`|Ignorovat.|  
 |`blockDefault`|Ignorovat.|  
@@ -239,7 +239,7 @@ Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runt
 |`list`|Podporováno. Mapuje příznak kontrakty dat výčtu. Najdete v článku `xs:simpleType` uvádí oddíl.|  
 |`union`|Je zakázané.|  
   
-### <a name="xsrestriction"></a>\<xs:restriction>  
+### <a name="xsrestriction"></a>\<xs:restriction >  
   
 -   Komplexní typ omezení jsou podporovány pouze pro základní = "`xs:anyType`".  
   

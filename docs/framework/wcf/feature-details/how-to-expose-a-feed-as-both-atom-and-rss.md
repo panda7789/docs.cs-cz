@@ -1,34 +1,36 @@
 ---
-title: "Postupy: vystavení informačního kanálu jako Atom a RSS"
-ms.custom: 
+title: 'Postupy: vystavení informačního kanálu jako Atom a RSS'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6584f71450917669024c965c121edebb7dffc677
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5a2ca8d6ce6cf907538c534f97300e418f5e825f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>Postupy: vystavení informačního kanálu jako Atom a RSS
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje syndikace kanálu pomocí RSS 2.0 a Atom 1.0. Tato služba zpřístupní jeden koncový bod, který může vrátit buď syndikace formátu. Pro zjednodušení službu používanou v této ukázce je sám sebou hostované. V produkčním prostředí by se v rámci služby IIS nebo WAS hostované služby tohoto typu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]různými [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hostování možnosti, najdete v části [hostitelský](../../../../docs/framework/wcf/feature-details/hosting.md).  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje syndikace kanálu pomocí RSS 2.0 a Atom 1.0. Tato služba zpřístupní jeden koncový bod, který může vrátit buď syndikace formátu. Pro zjednodušení službu používanou v této ukázce je sám sebou hostované. V produkčním prostředí by se v rámci služby IIS nebo WAS hostované služby tohoto typu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] různými [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hostování možnosti, najdete v části [hostitelský](../../../../docs/framework/wcf/feature-details/hosting.md).  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Vytvoření služby základní syndikace  
   
-1.  Definování kontraktu služby pomocí rozhraní označené jako <xref:System.ServiceModel.Web.WebGetAttribute> atribut. Každé operace, který je zveřejněný jako syndikace kanálu vrátí <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> objektu. Poznámka: parametry <xref:System.ServiceModel.Web.WebGetAttribute>. `UriTemplate`Určuje adresu URL použije k vyvolání operace této služby. Řetězec pro tento parametr obsahuje literály a proměnnou v závorkách ({*formát*}). Tato proměnná odpovídá operace služby `format` parametr. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.UriTemplate>. `BodyStyle`ovlivňuje, jak se zapisují zprávy, které tuto operaci služby odesílá a přijímá. <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare>Určuje, že data odesílaná do a z této operace služby nejsou zabalené službou infrastruktury definované elementů XML. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.Web.WebMessageBodyStyle>.  
+1.  Definování kontraktu služby pomocí rozhraní označené jako <xref:System.ServiceModel.Web.WebGetAttribute> atribut. Každé operace, který je zveřejněný jako syndikace kanálu vrátí <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> objektu. Poznámka: parametry <xref:System.ServiceModel.Web.WebGetAttribute>. `UriTemplate` Určuje adresu URL použije k vyvolání operace této služby. Řetězec pro tento parametr obsahuje literály a proměnnou v závorkách ({*formát*}). Tato proměnná odpovídá operace služby `format` parametr. Další informace naleznete v tématu <xref:System.UriTemplate>. `BodyStyle` ovlivňuje, jak se zapisují zprávy, které tuto operaci služby odesílá a přijímá. <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare> Určuje, že data odesílaná do a z této operace služby nejsou zabalené službou infrastruktury definované elementů XML. Další informace naleznete v tématu <xref:System.ServiceModel.Web.WebMessageBodyStyle>.  
   
      [!code-csharp[htAtomRss#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#0)]
      [!code-vb[htAtomRss#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#0)]  
@@ -75,9 +77,9 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-call-getblog-with-an-http-get"></a>K volání GetBlog s HTTP GET  
   
-1.  Otevřete Internet Explorer, zadejte následující adresu URL a stiskněte klávesu ENTER. http://localhost: 8000/BlogService/GetBlog  
+1.  Otevřete Internet Explorer, zadejte následující adresu URL a stiskněte klávesu ENTER. http://localhost:8000/BlogService/GetBlog  
   
-     Adresa URL obsahuje základní adresa služby (http://localhost: 8000/BlogService), relativní adresa koncového bodu a volat operace služby.  
+     Adresa URL obsahuje základní adresa služby (http://localhost:8000/BlogService), relativní adresa koncového bodu a volat operace služby.  
   
 ### <a name="to-call-getblog-from-code"></a>GetBlog() volat z kódu  
   

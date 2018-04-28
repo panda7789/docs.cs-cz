@@ -1,26 +1,27 @@
 ---
-title: "Pomocí WorkflowIdentity a správa verzí"
-ms.custom: 
+title: Pomocí WorkflowIdentity a správa verzí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 02620abf421256b53fb5919b39f441f7346a2e7c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bc527fe59468544cf94256d100a1f90dd3cd44dd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Pomocí WorkflowIdentity a správa verzí
-<xref:System.Activities.WorkflowIdentity>poskytuje způsob pro pracovní postup vývojáři aplikace k přidružit název a <xref:System.Version> s definicí pracovního postupu a pro tyto informace k být přidružen k instanci pracovního postupu trvalý. Tyto informace identity lze použít vývojáři aplikace pracovního postupu povolit scénáře, jako je vedle sebe spouštění více verzí definice pracovního postupu a poskytuje základním kamenem pro další funkce, jako je například dynamická aktualizace. Toto téma poskytuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o provádění vedle sebe definice pracovního postupu v služby pracovního postupu v tématu [správu verzí vedle sebe v hostitele služby pracovního postupu](../../../docs/framework/wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, najdete v části [dynamické aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md).  
+<xref:System.Activities.WorkflowIdentity> poskytuje způsob pro pracovní postup vývojáři aplikace k přidružit název a <xref:System.Version> s definicí pracovního postupu a pro tyto informace k být přidružen k instanci pracovního postupu trvalý. Tyto informace identity lze použít vývojáři aplikace pracovního postupu povolit scénáře, jako je vedle sebe spouštění více verzí definice pracovního postupu a poskytuje základním kamenem pro další funkce, jako je například dynamická aktualizace. Toto téma poskytuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o provádění vedle sebe definice pracovního postupu v služby pracovního postupu v tématu [správu verzí vedle sebe v hostitele služby pracovního postupu](../../../docs/framework/wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, najdete v části [dynamické aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
@@ -32,8 +33,8 @@ ms.lasthandoff: 12/22/2017
   
     -   [Aktualizace schématu databáze](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#ToUpgrade)  
   
-##  <a name="UsingWorkflowIdentity"></a>Pomocí WorkflowIdentity  
- Chcete-li použít <xref:System.Activities.WorkflowIdentity>, vytvoření instance, konfiguraci a přidružte ji s <xref:System.Activities.WorkflowApplication> instance. A <xref:System.Activities.WorkflowIdentity> instance obsahuje tři identifikační údaje. <xref:System.Activities.WorkflowIdentity.Name%2A>a <xref:System.Activities.WorkflowIdentity.Version%2A> obsahovat název a <xref:System.Version> a jsou povinné, a <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a může sloužit k určení požadovaných další řetězec obsahující informace, jako je název sestavení nebo jiné informace. A <xref:System.Activities.WorkflowIdentity> je jedinečný, pokud jsou některé jeho vlastnosti tři liší od jiného <xref:System.Activities.WorkflowIdentity>.  
+##  <a name="UsingWorkflowIdentity"></a> Pomocí WorkflowIdentity  
+ Chcete-li použít <xref:System.Activities.WorkflowIdentity>, vytvoření instance, konfiguraci a přidružte ji s <xref:System.Activities.WorkflowApplication> instance. A <xref:System.Activities.WorkflowIdentity> instance obsahuje tři identifikační údaje. <xref:System.Activities.WorkflowIdentity.Name%2A> a <xref:System.Activities.WorkflowIdentity.Version%2A> obsahovat název a <xref:System.Version> a jsou povinné, a <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a může sloužit k určení požadovaných další řetězec obsahující informace, jako je název sestavení nebo jiné informace. A <xref:System.Activities.WorkflowIdentity> je jedinečný, pokud jsou některé jeho vlastnosti tři liší od jiného <xref:System.Activities.WorkflowIdentity>.  
   
 > [!IMPORTANT]
 >  A <xref:System.Activities.WorkflowIdentity> nesmí obsahovat žádné identifikovatelné osobní údaje (PII). Informace o <xref:System.Activities.WorkflowIdentity> použít k vytvoření instance je pro všechny nakonfigurované sledování životního cyklu služeb v několika různých místech aktivity vygenerované modulem runtime. WF sledování nemá žádný mechanismus skrýt PII (citlivé uživatelských dat). Proto <xref:System.Activities.WorkflowIdentity> instance nesmí obsahovat žádná data PII tak, jak bude vygenerované modulem runtime v sledování záznamů a mohou být viditelná pro každý, kdo má přístup k zobrazení záznamů sledování.  
@@ -87,13 +88,13 @@ wfApp.Load(instanceId);
  Při spuštění předchozího kódu, následující <xref:System.Activities.VersionMismatchException> je vyvolána výjimka.  
   
  **WorkflowIdentity ('MortgageWorkflow v1; Verze = 1.0.0.0') načíst instance neodpovídá WorkflowIdentity ('MortgageWorkflow v2; Verze = 2.0.0.0') z definice pracovního postupu zadané. Instanci lze načíst pomocí jiné definice nebo aktualizovat pomocí dynamické aktualizace.**  
-###  <a name="SxS"></a>Pomocí WorkflowIdentity spuštění vedle sebe  
- <xref:System.Activities.WorkflowIdentity>můžete ji použít pro usnadnění provádění více verzí pracovní postup-souběžného. Jeden běžný scénář mění obchodní požadavky na dlouhodobé pracovního postupu. Velký počet instancí pracovního postupu může být spuštěn při nasazení aktualizované verze. Hostitelskou aplikaci může být konfigurovaná pro použití definice aktualizované pracovního postupu při spouštění nové instance a je zodpovědností hostitelskou aplikaci můžete při obnovení instance definice pracovního postupu správné. <xref:System.Activities.WorkflowIdentity>slouží k identifikaci a zadejte odpovídající definice pracovního postupu při obnovení instancí pracovních postupů.  
+###  <a name="SxS"></a> Pomocí WorkflowIdentity spuštění vedle sebe  
+ <xref:System.Activities.WorkflowIdentity> můžete ji použít pro usnadnění provádění více verzí pracovní postup-souběžného. Jeden běžný scénář mění obchodní požadavky na dlouhodobé pracovního postupu. Velký počet instancí pracovního postupu může být spuštěn při nasazení aktualizované verze. Hostitelskou aplikaci může být konfigurovaná pro použití definice aktualizované pracovního postupu při spouštění nové instance a je zodpovědností hostitelskou aplikaci můžete při obnovení instance definice pracovního postupu správné. <xref:System.Activities.WorkflowIdentity> slouží k identifikaci a zadejte odpovídající definice pracovního postupu při obnovení instancí pracovních postupů.  
   
  Načíst <xref:System.Activities.WorkflowIdentity> instance trvalou pracovního postupu, <xref:System.Activities.WorkflowApplication.GetInstance%2A> metoda se používá. <xref:System.Activities.WorkflowApplication.GetInstance%2A> Metoda trvá <xref:System.Activities.WorkflowApplication.Id%2A> instance trvalou pracovního postupu a <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> který obsahuje trvalý instanci a vrátí <xref:System.Activities.WorkflowApplicationInstance>. A <xref:System.Activities.WorkflowApplicationInstance> obsahuje informace o instanci trvalou pracovního postupu, včetně přidružené <xref:System.Activities.WorkflowIdentity>. To přidružené <xref:System.Activities.WorkflowIdentity> lze použít pro hostitele k poskytování definice pracovního postupu správné načítání a obnovení k instanci pracovního postupu.  
   
 > [!NOTE]
->  Null <xref:System.Activities.WorkflowIdentity> je platný a můžete použít pro hostitele k mapování instancí, které byly nastavené jako trvalé bez přidružené <xref:System.Activities.WorkflowIdentity> k definici správné pracovního postupu. Tato situace může nastat, když aplikace pracovního postupu nebyla původně zapsána s pracovní postup správy verzí, nebo když je aplikace upgradovali z [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Upgrade rozhraní .NET Framework 4 trvalost databáze podporující pracovní postup správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).  
+>  Null <xref:System.Activities.WorkflowIdentity> je platný a můžete použít pro hostitele k mapování instancí, které byly nastavené jako trvalé bez přidružené <xref:System.Activities.WorkflowIdentity> k definici správné pracovního postupu. Tato situace může nastat, když aplikace pracovního postupu nebyla původně zapsána s pracovní postup správy verzí, nebo když je aplikace upgradovali z [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databáze na podporu pracovních postupů správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).  
   
  V následujícím příkladu `Dictionary<WorkflowIdentity, Activity>` je použito k přidružení <xref:System.Activities.WorkflowIdentity> pomocí je spuštěna instance s jejich odpovídající definice pracovního postupu a pracovní postup `MortgageWorkflow` definice pracovního postupu, který je přidružen `identityV1` <xref:System.Activities.WorkflowIdentity>.  
   
@@ -148,17 +149,17 @@ wfApp.Load(instance);
 // Resume the workflow...  
 ```  
   
-##  <a name="UpdatingWF4PersistenceDatabases"></a>Upgrade rozhraní .NET Framework 4 trvalost databáze podporující pracovní postup správy verzí  
+##  <a name="UpdatingWF4PersistenceDatabases"></a> Upgrade rozhraní .NET Framework 4 trvalost databáze podporující pracovní postup správy verzí  
  SqlWorkflowInstanceStoreSchemaUpgrade.sql databázového skriptu je zadán pro upgrade trvalost databází vytvořených přes [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze skripty. Tento skript aktualizace databáze podporují nové možnosti správy verzí, počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Všechny instance pracovního postupu trvalý v databázích mají výchozí hodnoty verze a můžete pak podílet na spuštění vedle sebe a dynamické aktualizace.  
   
  Pokud [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] pracovní postup aplikace pokusí žádné trvalost operace, které používají nové funkce správy verzí v trvalost databázi, která nebyla upgradována, pomocí poskytnutého skriptu <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> je vyvolána s zpráva podobná následující zpráva.  
   
  **SqlWorkflowInstanceStore má verzi databáze, 4.0.0.0'. InstancePersistenceCommand 'System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand' nelze spustit pro tuto verzi databáze.  Upgradujte databázi na '4.5.0.0'.**  
-###  <a name="ToUpgrade"></a>Aktualizace schématu databáze  
+###  <a name="ToUpgrade"></a> Aktualizace schématu databáze  
   
 1.  Otevřete aplikaci SQL Server Management Studio a připojte se k serveru databáze trvalost například **. \SQLEXPRESS**.  
   
-2.  Zvolte **otevřete**, **soubor** z **souboru** nabídky. Přejděte do následující složky:`C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
+2.  Zvolte **otevřete**, **soubor** z **souboru** nabídky. Přejděte do následující složky: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
   
 3.  Vyberte **SqlWorkflowInstanceStoreSchemaUpgrade.sql** a klikněte na tlačítko **otevřete**.  
   

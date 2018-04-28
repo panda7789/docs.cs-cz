@@ -1,20 +1,18 @@
 ---
-title: "Výjimky: Funkce invalidArg (F#)"
+title: 'Výjimky: Funkce invalidArg (F#)'
 description: "Zjistěte, jak funkce 'invalidArg' F # vygeneruje výjimku argument."
-keywords: "Visual f #, f #, funkční programování"
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
 ms.assetid: d375b704-6b27-493e-bd1d-ee217a53c4b5
-ms.openlocfilehash: 107bef361a6bd034e3d6a2227e18cf64b1b04576
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fc7b1d25adf71bc1704a3f2db4359006f0ba1670
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="exceptions-the-invalidarg-function"></a>Výjimky: Funkce invalidArg
 

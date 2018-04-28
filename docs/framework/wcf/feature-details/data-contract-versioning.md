@@ -1,12 +1,13 @@
 ---
-title: "Správa verzí kontraktů dat"
-ms.custom: 
+title: Správa verzí kontraktů dat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-caps.latest.revision: "35"
+caps.latest.revision: 35
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e9773725a0d4626a8488249ead6440ad67a2a14a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f232cb1cf98fe01aa0542c2a4b459fb7fc7b5089
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
 Jak vyvíjet aplikace, budete také muset změnit data měnící použití služby. Toto téma vysvětluje, jak kontrakty dat verze. Toto téma popisuje mechanismy Správa verzí kontraktů dat. Úplný přehled a správa verzí závazné pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
@@ -114,16 +116,16 @@ Jak vyvíjet aplikace, budete také muset změnit data měnící použití služ
   
  Mnoho změn považuje za pevná jsou ve skutečnosti nejnovější Pokud stoprocentní schématu je potřeba. V předchozím příkladu `CarV1` instanci s jenom na `Model` element by vyhodnotit proti `CarV2` schématu (které má oba `Model` a `Horsepower`, ale obě jsou volitelné). Naopak však není pravda: `CarV2` instance dojde k selhání ověření na základě `CarV1` schématu.  
   
- Odezvy také zahrnuje několik dalších důležitých informací. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]"Schématu aspekty" kapitoly [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Odezvy také zahrnuje několik dalších důležitých informací. Další informace najdete v části "Schématu aspekty" v [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ### <a name="other-permitted-changes"></a>Ostatní povolené změny  
- Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní je pevných změnu. Ale odezvy podporu neexistuje pro verze typu starší než verze, ve kterém <xref:System.Runtime.Serialization.IExtensibleDataObject> byl implementován. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Kontraktů dat s dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní je pevných změnu. Ale odezvy podporu neexistuje pro verze typu starší než verze, ve kterém <xref:System.Runtime.Serialization.IExtensibleDataObject> byl implementován. Další informace najdete v tématu [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ## <a name="enumerations"></a>Výčty  
- Přidání nebo odebrání člena výčtu je narušující změně. Změna názvu člena výčtu je porušením, pokud jeho název smlouvy je udržováno stejné jako v předchozí verzi aplikace pomocí `EnumMemberAtttribute` atribut. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
+ Přidání nebo odebrání člena výčtu je narušující změně. Změna názvu člena výčtu je porušením, pokud jeho název smlouvy je udržováno stejné jako v předchozí verzi aplikace pomocí `EnumMemberAtttribute` atribut. Další informace najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
   
 ## <a name="collections"></a>Kolekce  
- Většinu změn kolekce jsou pevných protože většina typy kolekcí se zaměňovat navzájem v datovém modelu kontrakt. Ale provedení noncustomized kolekce přizpůsobit nebo naopak je narušující změně. Změna nastavení přizpůsobení kolekce je taky narušující změně; To znamená změna jeho názvu kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu název elementu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]kolekce přizpůsobení, najdete v části [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
+ Většinu změn kolekce jsou pevných protože většina typy kolekcí se zaměňovat navzájem v datovém modelu kontrakt. Ale provedení noncustomized kolekce přizpůsobit nebo naopak je narušující změně. Změna nastavení přizpůsobení kolekce je taky narušující změně; To znamená změna jeho názvu kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu název elementu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kolekce přizpůsobení, najdete v části [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
 Změna kontrakt dat obsahu kolekce (například změna ze seznamu celých čísel na seznam řetězců) je samozřejmě narušující změně.  
   
 ## <a name="see-also"></a>Viz také  

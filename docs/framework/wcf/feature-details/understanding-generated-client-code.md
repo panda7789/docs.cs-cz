@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f7716921be5ff97c2353b3b31d841c0c8dc01658
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 95e27941cece3bfb96c4567516d07bcbe07c7490
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="understanding-generated-client-code"></a>Principy generovaného klientského kódu
 [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje kód klienta a konfigurační soubor aplikace klienta pro použití při vytváření klientské aplikace. Toto téma obsahuje přehled používání příklady generovaný kód pro scénáře kontraktu služby na úrovni standard. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vytvoření klientských aplikací pomocí generovaného kódu, najdete v části [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md).  
@@ -52,14 +52,14 @@ ms.lasthandoff: 04/27/2018
   
  [!code-csharp[C_GeneratedCodeFiles#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#12)]  
   
- Můžete použít rozhraní kontrakt generovaný služby spolu s <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> třídy za účelem vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál objektu, se kterým má být vyvolán operací služby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Postupy: použití třídy ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md).  
+ Můžete použít rozhraní kontrakt generovaný služby spolu s <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> třídy za účelem vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál objektu, se kterým má být vyvolán operací služby. Další informace najdete v tématu [postupy: použití třídy ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md).  
   
 ### <a name="finding-wcf-client-classes"></a>Hledání třídy klienta WCF  
  Vyhledejte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta třídu, která implementuje kontrakt služby, kterou chcete použít, hledání pro rozšíření <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>, kde parametr typu je kontrakt služby rozhraní, kterou jste dříve nachází, a který rozšiřuje tohoto rozhraní. Následující příklad kódu ukazuje <xref:System.ServiceModel.ClientBase%601> – třída typu `ISampleService`.  
   
  [!code-csharp[C_GeneratedCodeFiles#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#14)]  
   
- Můžete to použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta vytvořením novou instanci a volání metod implementuje. Tyto metody vyvolání operace služby, pomocí kterého je navržena a nakonfigurovat tak, aby komunikovat. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Klienti WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md).  
+ Můžete to použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta vytvořením novou instanci a volání metod implementuje. Tyto metody vyvolání operace služby, pomocí kterého je navržena a nakonfigurovat tak, aby komunikovat. Další informace najdete v tématu [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md).  
   
 > [!NOTE]
 >  Pokud SvcUtil.exe vygeneruje třídy klienta WCF, přidá <xref:System.Diagnostics.DebuggerStepThroughAttribute> k třídě klienta, která zabraňuje ladicí programy z procházení třída klienta WCF.  

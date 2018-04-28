@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 054f6cd6ae71428aca6b99eb510b2ac34fc6c4b6
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b7003756e5c805c21fc5f4013deccf64b5ba8811
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace se dají vytvářet jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe) knihovny (DLL) nebo kombinaci obou typů sestavení. Toto téma představuje jak sestavit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace a popisuje klíčové kroky v procesu sestavení.  
@@ -51,7 +51,7 @@ ms.lasthandoff: 04/26/2018
 ### <a name="pre-build-initializations"></a>Před sestavením Inicializacích  
  Před vytvořením, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] Určuje umístění důležité nástroje a knihovny, včetně následujících:  
   
--   [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)].  
+-   Rozhraní .NET Framework.  
   
 -   [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Adresáře.  
   
@@ -63,7 +63,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="Resolving_references"></a>   
 ### <a name="resolving-references"></a>Řešení odkazů  
- Proces sestavení vyhledá a sváže sestavení požadovaná pro sestavení projektu aplikace. Tato logika je součástí `ResolveAssemblyReference` úloh. Ve všech sestaveních deklarován jako `Reference` v souboru projektu, které jsou uvedeny úlohy spolu s informace o cesty pro hledání a metadata sestavení, které jsou již v systému nainstalována. Úloha vyhledá sestavení a používá metadata nainstalované sestavení filtrovat tyto základní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení, které potřebují není zobrazit nahoru v manifestech výstup. Děje se tak aby se zabránilo redundantní informace v manifestech ClickOnce. Například vzhledem k tomu, že knihovně PresentationFramework.dll lze považovat za zástupce aplikace vytvořené a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a kromě toho od všech [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení existovat ve stejném umístění na každý počítač, který má [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] nainstalovaná, není nutné zahrnout všechny informace o všech [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] referenční sestavení v manifestech.  
+ Proces sestavení vyhledá a sváže sestavení požadovaná pro sestavení projektu aplikace. Tato logika je součástí `ResolveAssemblyReference` úloh. Ve všech sestaveních deklarován jako `Reference` v souboru projektu, které jsou uvedeny úlohy spolu s informace o cesty pro hledání a metadata sestavení, které jsou již v systému nainstalována. Úloha vyhledá sestavení a používá metadata nainstalované sestavení filtrovat tyto základní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení, které potřebují není zobrazit nahoru v manifestech výstup. Děje se tak aby se zabránilo redundantní informace v manifestech ClickOnce. Například vzhledem k tomu, že knihovně PresentationFramework.dll lze považovat za zástupce aplikace vytvořené a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a kromě toho od všech [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení existovat ve stejném umístění na každý počítač, který má rozhraní .NET Framework nainstalovaná, není nutné zahrnout všechny informace o všech referenční sestavení rozhraní .NET Framework v manifestech.  
   
 <a name="Markup_Compilation___Pass_1"></a>   
 ### <a name="markup-compilationpass-1"></a>Značky kompilace – předat 1  

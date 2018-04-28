@@ -1,27 +1,29 @@
 ---
-title: "Vytváření služeb WCF AJAX bez ASP.NET"
-ms.custom: 
+title: Vytváření služeb WCF AJAX bez ASP.NET
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ba4a7d1b-e277-4978-9f62-37684e6dc934
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a9e321a3ea972208bb136c76e52168d89da8d162
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b652bcd522a8eea81b3d1218fbd054ee0b2caea8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="creating-wcf-ajax-services-without-aspnet"></a>Vytváření služeb WCF AJAX bez ASP.NET
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Služby AJAX je přístupná z webové stránky povolen jazyk JavaScript, bez nutnosti prvku ASP.NET AJAX. Toto téma popisuje, jak vytvořit, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Služby AJAX je přístupná z webové stránky povolen jazyk JavaScript, bez nutnosti prvku ASP.NET AJAX. Toto téma popisuje, jak vytvořit, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
  Pokyny k používání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí prvku ASP.NET AJAX, najdete v části [vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md).  
   
@@ -82,7 +84,7 @@ string[] GetCities(string firstLetters);
   
  Tato operace je přístupný pomocí HTTP POST do `http://serviceaddress/endpointaddress/GetCities` a vrátí zprávu XML.  
   
- Úplný Model programování webových můžete přizpůsobit tyto základní aspekty. Například můžete použít <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy řízení příkaz protokolu HTTP, na který odpoví operaci nebo použít `UriTemplate` vlastnost tyto příslušné atributy, které se mají zadat vlastní identifikátory URI. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md) tématu.  
+ Úplný Model programování webových můžete přizpůsobit tyto základní aspekty. Například můžete použít <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy řízení příkaz protokolu HTTP, na který odpoví operaci nebo použít `UriTemplate` vlastnost tyto příslušné atributy, které se mají zadat vlastní identifikátory URI. Další informace najdete v tématu [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md) tématu.  
   
  Formát dat JSON se často používá v služby AJAX. Chcete-li vytvořit operace, která vrátí JSON místo XML, nastavte <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> (nebo <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A>) vlastnost <xref:System.ServiceModel.Web.WebMessageFormat.Json>. [Serializace JSON samostatné](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md) téma ukazuje, jak předdefinované .NET typy a data kontrakt typy mapy do formátu JSON.  
   
@@ -113,7 +115,7 @@ string[] GetCities(string firstLetters, int maxNumber);
 ```  
   
 ## <a name="accessing-ajax-services"></a>Přístup ke službám AJAX  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Koncové body AJAX vždy příjem požadavků JSON a XML.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncové body AJAX vždy příjem požadavků JSON a XML.  
   
  Požadavky HTTP POST s obsah typ "application/json" se považují za JSON a obsah typ, který označuje XML (například "text/xml") se považují za XML.  
   

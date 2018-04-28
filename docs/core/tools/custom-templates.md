@@ -1,20 +1,20 @@
 ---
-title: "Vlastní šablony pro nové dotnet."
-description: "Další informace o vlastních šablon pro jakýkoli typ rozhraní .NET projektu nebo soubory."
-keywords: "DotNet nový, rozhraní příkazového řádku, rozhraní příkazového řádku příkaz .NET Core, šablony, ukázka"
+title: Vlastní šablony pro nové dotnet.
+description: Další informace o vlastních šablon pro jakýkoli typ rozhraní .NET projektu nebo soubory.
 author: guardrex
 ms.author: mairaw
 ms.date: 08/11/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.workload: dotnetcore
-ms.openlocfilehash: f2b712f1b8b7800f2f02c9529114e92f77e32286
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 1915c2609391d0aa1ff32ea9ebb011cf0f925aa8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro nové dotnet.
 
@@ -90,8 +90,8 @@ Obsah složky projektu, společně s jeho *.template.config/template.json* soubo
 | ------------------ | ------ | ----------- |
 | **\<Autoři >**     | odkazy řetězců | Seznam balíčků autoři, odpovídající profil názvy v nuget.org oddělených čárkami. Autoři jsou zobrazeny v galerii NuGet v nuget.org a jsou používané pro křížovou balíčky autory stejné. |
 | **\<Popis >** | odkazy řetězců | Dlouhý popis balíčku pro zobrazení uživatelského rozhraní. |
-| **\<ID >**          | odkazy řetězců | Identifikátor balíčku velká a malá písmena, která musí být jedinečný v rámci nuget.org nebo jiná bude balíček nacházet v galerii. ID nesmí obsahovat mezery ani znaky, které nejsou platné pro adresu URL a obecně se řídí pravidly obor názvů .NET. V tématu [výběr balíčku jedinečný identifikátor a nastavení číslo verze](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) pokyny. |
-| **\<packageType >** | odkazy řetězců | Umístěte tento element uvnitř  **\<packageTypes >** element mezi  **\<metadata >** elementy. Nastavte `name` atribut  **\<packageType >** element `Template`. |
+| **\<id>**          | odkazy řetězců | Identifikátor balíčku velká a malá písmena, která musí být jedinečný v rámci nuget.org nebo jiná bude balíček nacházet v galerii. ID nesmí obsahovat mezery ani znaky, které nejsou platné pro adresu URL a obecně se řídí pravidly obor názvů .NET. V tématu [výběr balíčku jedinečný identifikátor a nastavení číslo verze](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) pokyny. |
+| **\<packageType>** | odkazy řetězců | Umístěte tento element uvnitř  **\<packageTypes >** element mezi  **\<metadata >** elementy. Nastavte `name` atribut  **\<packageType >** element `Template`. |
 | **\<verze >**     | odkazy řetězců | Verze balíčku, následující vzoru major.minor.patch. Čísla verzí může zahrnovat příponu předběžné verze, jak je popsáno v [předprodejní verze](/nuget/create-packages/prerelease-packages#semantic-versioning) tématu. |
 
 Najdete v článku [odkaz příponou .nuspec](/nuget/schema/nuspec) pro kompletní *nuspec* schéma souboru. Příklad *nuspec* soubor pro šablonu se zobrazí v [vytvoření nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.

@@ -1,28 +1,28 @@
 ---
-title: "Náhrady kontraktů dat"
-ms.custom: 
+title: Náhrady kontraktů dat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f6fcae1989b75a668fd6ff38596b06feca7be9e8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6b372b998d7b3a91189032947a9ad8c68074b5d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu. Tato funkce je určena pro typ přizpůsobení a nahrazování v situacích, kde chcete změnit, jak je serializováno typu, deserializovat nebo předpokládané do metadata uživatele. Některé scénáře, kde lze použít náhradní je při kontraktu dat nebyl zadán pro typ, pole a vlastnosti nejsou označené jako <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatele chcete dynamicky vytvořte variace schématu.  
@@ -75,7 +75,7 @@ Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu
   
  `targetType` Parametr odkazuje na deklarovaný typ člena. Tento parametr je surrogated typ vrácený <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> metoda. Serializátor nevynucuje, zda je objekt vrácený přiřadit k tomuto typu. `obj` Parametr je objekt k serializaci a bude převeden na jeho náhradní v případě potřeby. Tato metoda musí vrátit vstupního objektu, pokud surrogated nezpracovává objektu. Nový objekt náhradní, jinak bude vrácen. Náhradní není volána, pokud objekt má hodnotu null. Řada náhradní mapování pro různé instance může být definován v rámci této metody.  
   
- Při vytváření <xref:System.Runtime.Serialization.DataContractSerializer>, můžete určit, aby ho chcete zachovat odkazy na objekty. ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).) To se provádí nastavením `preserveObjectReferences` parametr v jeho konstruktor `true`. V takovém případě náhradní je volat pouze jednou pro objekt vzhledem k tomu, že odkaz na všechny následné serializations právě zápisu do datového proudu. Pokud `preserveObjectReferences` je nastaven na `false`, pak náhradní nazývá pokaždé, když je zjištěna instance.  
+ Při vytváření <xref:System.Runtime.Serialization.DataContractSerializer>, můžete určit, aby ho chcete zachovat odkazy na objekty. (Další informace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).) To se provádí nastavením `preserveObjectReferences` parametr v jeho konstruktor `true`. V takovém případě náhradní je volat pouze jednou pro objekt vzhledem k tomu, že odkaz na všechny následné serializations právě zápisu do datového proudu. Pokud `preserveObjectReferences` je nastaven na `false`, pak náhradní nazývá pokaždé, když je zjištěna instance.  
   
  Pokud typ serializovat instance se liší od deklarovaný typ, jsou informace o typu zapsána do datového proudu, například `xsi:type` umožňující instance rekonstrukce na druhém konci. Tento proces probíhá, zda je objekt surrogated nebo ne.  
   
@@ -144,7 +144,7 @@ Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu
 ### <a name="getknowncustomdatatypes-method"></a>GetKnownCustomDataTypes – metoda  
  Tato metoda získá z schéma definované vlastní datové typy. Metoda je volitelné pro import schématu.  
   
- Metoda je volána na začátku schématu exportu a importu. Metoda vrátí vlastní datové typy používá ve schématu exportovat nebo importovat. Byla předána metodě <xref:System.Collections.ObjectModel.Collection%601> ( `customDataTypes` parametr), což je kolekci typů. Metoda měli přidat další známé typy k této kolekci. Známé vlastní datové typy jsou potřebná k povolení serializace a deserializace pomocí vlastních dat <xref:System.Runtime.Serialization.DataContractSerializer>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Metoda je volána na začátku schématu exportu a importu. Metoda vrátí vlastní datové typy používá ve schématu exportovat nebo importovat. Byla předána metodě <xref:System.Collections.ObjectModel.Collection%601> ( `customDataTypes` parametr), což je kolekci typů. Metoda měli přidat další známé typy k této kolekci. Známé vlastní datové typy jsou potřebná k povolení serializace a deserializace pomocí vlastních dat <xref:System.Runtime.Serialization.DataContractSerializer>. Další informace najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
 ## <a name="implementing-a-surrogate"></a>Implementace náhradní  
  Chcete-li použít náhradní kontraktu dat v rámci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], je třeba provést několik zvláštní postupy.  

@@ -17,17 +17,17 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-caps.latest.revision: ''
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e74bd7d90d5653890fd5cf48e76c81d0227c6172
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 528c1661b99ff5f50d42bb7a42371c302e335c90
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], jsou seznamy může být reprezentován pomocí pole nebo celou řadu dalších typů (obecný seznam, obecného <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro danou zákazníka. Tato kolekce se nazývají *seznam kolekcí*, bez ohledu na to jejich skutečným typem.  
@@ -40,7 +40,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
  Další požadavky na typy kolekcí, jako je například s metodu s názvem `Add` a výchozí konstruktor, jsou podrobněji v následujících částech. To zajistí, že typy kolekcí může být současně serializaci a deserializaci. To znamená, že některé kolekce nepodporuje přímo, jako je například obecná <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> (protože nemá žádné výchozí konstruktor). Ale informace o obcházení tato omezení, najdete v části "Použití kolekce rozhraní typy a jen pro čtení kolekce" dál v tomto tématu.  
   
- Typy obsažené v kolekcích musí být typy kontraktů dat nebo jinak být serializovatelný. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Typy podporované systémem serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+ Typy obsažené v kolekcích musí být typy kontraktů dat nebo jinak být serializovatelný. Další informace najdete v tématu [typy nepodporuje serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Co je a co se nepovažuje za platnou kolekci, stejně jako o tom, jak se serializují kolekcí, přečtěte si informace o serializaci kolekce v části "pravidla shromažďování Advanced" v tomto tématu.  
   
@@ -152,7 +152,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
 </cust_list>  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] později v tomto tématu v části "pravidla shromažďování pokročilé".  
+ Další informace najdete v části "pravidla shromažďování Advanced" dál v tomto tématu.  
   
 ### <a name="customizing-the-repeating-element-name-in-list-collections"></a>Přizpůsobení opakovaný název elementu v seznamu kolekce  
  Seznam kolekcí obsahovat opakující se položky. Každý záznam opakující se za normálních okolností je reprezentována jako element s názvem podle název kontraktu dat typu obsažené v kolekci.  
@@ -378,7 +378,7 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 -   Probíhá pokus o nastavení <xref:System.Runtime.Serialization.CollectionDataContractAttribute.KeyName%2A> nebo <xref:System.Runtime.Serialization.CollectionDataContractAttribute.ValueName%2A> na <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut použitý typ jiný adresář.  
   
-### <a name="polymorphism-rules"></a>Polymorphism Rules  
+### <a name="polymorphism-rules"></a>Polymorfismus pravidla  
  Jak už jsme zmínili, přizpůsobení kolekce pomocí <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut mohou ovlivňovat zaměnitelnost kolekce. Dva typy uzpůsobenou kolekci lze pouze považovat za ekvivalentní, pokud se jejich název, obor názvů, název položky, jakož i názvy klíčů a hodnot (pokud jsou kolekce slovníku) shodují.  
   
  Z důvodu úprav je možné nechtěně použít kontrakt dat jednu kolekci jiné, kde je očekávána. To je nutno. Zobrazíte následující typy.  

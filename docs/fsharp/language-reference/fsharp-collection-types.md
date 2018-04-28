@@ -1,20 +1,17 @@
 ---
-title: "Typy kolekcí F#"
-description: "Další informace o typy kolekcí F # a jak se liší od typy kolekcí v rozhraní .NET Framework."
-keywords: "Visual f #, f #, funkční programování"
+title: Typy kolekcí F#
+description: 'Další informace o typy kolekcí F # a jak se liší od typy kolekcí v rozhraní .NET Framework.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: cdf6a7e6-6b3d-4c44-b7b6-773a2b700331
-ms.openlocfilehash: c22178641a88c304e0f666b07aca94e620161071
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0baad5bdf88e8f381240b822a3f6132898dc9ff9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="f-collection-types"></a>Typy kolekcí F#
 
@@ -30,11 +27,11 @@ V následující tabulce jsou uvedeny typy kolekcí F #.
 
 |Typ|Popis|Související odkazy|
 |----|-----------|-------------|
-|[Seznam](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Seřazený, neměnné řada elementů stejného typu. Implementovaný jako odkazovaného seznamu.|[Seznamy](lists.md)<br /><br />[List – modul](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
+|[seznam](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Seřazený, neměnné řada elementů stejného typu. Implementovaný jako odkazovaného seznamu.|[Seznamy](lists.md)<br /><br />[List – modul](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
 |[Pole](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Pevné velikosti, počítáno od nuly, měnitelnou kolekci po sobě jdoucích datové prvky, které jsou všechny stejného typu.|[Pole](arrays.md)<br /><br />[Array – modul](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Array2d – modul](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Array3d – modul](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
-|[SEQ](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Logické řadu prvky, které jsou všechny jednoho typu. Pořadí jsou zvláště užitečné, když máte velký, seřazené shromažďování dat, ale nejsou nezbytně očekávat používat všechny elementy. Jednotlivé pořadí, které elementy se vypočítávají pouze jako povinné, tak můžete lépe než seznam provádět sekvenci, není-li se používají všechny elementy. Pořadí jsou reprezentované pomocí `seq<'T>` typu, který je alias pro `IEnumerable<T>`. Proto žádný typ rozhraní .NET Framework, který implementuje `System.Collections.Generic.IEnumerable<'T>` lze použít jako sekvenci.|[Pořadí](sequences.md)<br /><br />[SEQ – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Mapy](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Neměnné slovník elementů. Elementy jsou dostupné přes klíč.|[Map – modul](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[Nastavení](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Neměnné sadu, která je založená na binární stromy, kde porovnání je F # strukturální porovnání, který používá potenciálně implementace `System.IComparable` rozhraní na klíčové hodnoty.|[Set – modul](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[SEQ](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Logické řadu prvky, které jsou všechny jednoho typu. Pořadí jsou zvláště užitečné, když máte velký, seřazené shromažďování dat, ale nejsou nezbytně očekávat používat všechny elementy. Jednotlivé pořadí, které elementy se vypočítávají pouze jako povinné, tak můžete lépe než seznam provádět sekvenci, není-li se používají všechny elementy. Pořadí jsou reprezentované pomocí `seq<'T>` typu, který je alias pro `IEnumerable<T>`. Proto žádný typ rozhraní .NET Framework, který implementuje `System.Collections.Generic.IEnumerable<'T>` lze použít jako sekvenci.|[Sekvence](sequences.md)<br /><br />[SEQ – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
+|[mapy](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Neměnné slovník elementů. Elementy jsou dostupné přes klíč.|[Map – modul](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
+|[nastavení](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Neměnné sadu, která je založená na binární stromy, kde porovnání je F # strukturální porovnání, který používá potenciálně implementace `System.IComparable` rozhraní na klíčové hodnoty.|[Set – modul](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
 
 ### <a name="table-of-functions"></a>Tabulka funkcí
 Tato část obsahuje porovnání funkcí, které jsou k dispozici na typy kolekcí F #. Výpočetní složitost funkce není uveden, kde N je velikost první kolekce a M je velikost druhé kolekci, pokud existuje. Pomlčkou (-) označuje, že tato funkce není k dispozici v kolekci. Protože vyhodnocují líné pořadí, funkce, jako je například SEQ.DISTINCT – pravděpodobně o(1), která vrátí okamžitě, i když stále ovlivňuje výkon pořadí při výčtu.
@@ -62,8 +59,8 @@ Tato část obsahuje porovnání funkcí, které jsou k dispozici na typy kolekc
 |vytvoření|O(N)|-|-|-|-|Vytvoří pole celou elementů, které jsou všechny původně předané hodnoty.|
 |Zpoždění|-|-|O(1), KTERÁ|-|-|Vrátí sekvenci, která vychází z daného zpožděné specifikaci pořadí.|
 |rozdíl|-|-|-|-|O (M &#42; protokolu N)|Vrátí novou sadu, kdy elementy druhé sadě odebrány z první sady.|
-|Odlišné|||O(1), KTERÁ &#42;|||Vrátí pořadí, které obsahuje neobsahoval duplicitní položky podle obecné porovnání rovnosti a hodnotu hash na položky. Pokud element vyskytuje opakovaně v pořadí, novější události se zahodí.|
-|distinctby –|||O(1), KTERÁ &#42;|||Vrátí pořadí, které obsahuje neobsahoval duplicitní položky podle obecné porovnání hodnoty hash a rovnosti na klíčů, které vrátí danou funkci generování klíče. Pokud element vyskytuje opakovaně v pořadí, novější události se zahodí.|
+|Odlišné|||O(1), KTERÁ&AMP;#42;|||Vrátí pořadí, které obsahuje neobsahoval duplicitní položky podle obecné porovnání rovnosti a hodnotu hash na položky. Pokud element vyskytuje opakovaně v pořadí, novější události se zahodí.|
+|distinctby –|||O(1), KTERÁ&AMP;#42;|||Vrátí pořadí, které obsahuje neobsahoval duplicitní položky podle obecné porovnání hodnoty hash a rovnosti na klíčů, které vrátí danou funkci generování klíče. Pokud element vyskytuje opakovaně v pořadí, novější události se zahodí.|
 |empty|O(1), KTERÁ|O(1), KTERÁ|O(1), KTERÁ|O(1), KTERÁ|O(1), KTERÁ|Vytvoří prázdnou kolekci.|
 |existuje|O(N)|O(N)|O(N)|O (protokol N)|O (protokol N)|Ověřuje, zda libovolný element pořadí splňuje daného predikátu.|
 |exists2 –|O(min(N,M))|-|O(min(N,M))|||Ověřuje, zda žádném páru odpovídající elementů vstupních sekvencí splňuje daného predikátu.|
@@ -83,7 +80,7 @@ Tato část obsahuje porovnání funkcí, které jsou k dispozici na typy kolekc
 |Init –|O(N)|O(N)|O(1), KTERÁ|-|-|Vytvoří kolekci daného dimenze a generátor funkce pro výpočet elementy.|
 |initinfinite –|-|-|O(1), KTERÁ|-|-|Generuje pořadí, pokud vstupní, vrátí následných elementy voláním danou funkci.|
 |Intersect|-|-|-|-|O (protokolu N &#42; protokolu M)|Vypočítá průnik dvou sad.|
-|intersectmany –|-|-|-|-|O (N1 &#42; N2...)|Vypočítá průnik pořadí sad. Pořadí nesmí být prázdný.|
+|intersectmany –|-|-|-|-|O (N1 &AMP;#42; N2...)|Vypočítá průnik pořadí sad. Pořadí nesmí být prázdný.|
 |IsEmpty –|O(1), KTERÁ|O(1), KTERÁ|O(1), KTERÁ|O(1), KTERÁ|-|Vrátí `true` Pokud kolekce je prázdná.|
 |ispropersubset –|-|-|-|-|O (M &#42; protokolu N)|Vrátí `true` Pokud jsou všechny elementy z první sady v druhé sadě a alespoň jeden element druhé sadě není v první sady.|
 |ispropersuperset –|-|-|-|-|O (M &#42; protokolu N)|Vrátí `true` Pokud všechny elementy druhé sady jsou v sadě první a alespoň jeden prvek z první sady není v druhé sadě.|
@@ -146,7 +143,7 @@ Tato část obsahuje porovnání funkcí, které jsou k dispozici na typy kolekc
 |trypick –|O(N)|O(N)|O(N)|O (protokol N)|-|Dané funkce se vztahuje na následných elementy, vrátí první výsledek, kde funkce vrátí hodnotu `Some` pro určitou hodnotu. Pokud žádný takový prvek existuje, vrátí operaci `None`.|
 |unfold –|-|-|O(N)|-|-|Vrátí pořadí, které obsahuje prvky, které generuje dané výpočet.|
 |sjednocení|-|-|-|-|O (M &#42; protokolu N)|Vypočítá sjednocení dvou sad.|
-|unionmany –|-|-|-|-|O (N1 &#42; N2...)|Vypočítá sjednocení pořadí sad.|
+|unionmany –|-|-|-|-|O (N1 &AMP;#42; N2...)|Vypočítá sjednocení pořadí sad.|
 |Rozbalte|O(N)|O(N)|O(N)|-|-|Seznam párů rozdělí na dva seznamy.|
 |unzip3 –|O(N)|O(N)|O(N)|-|-|Rozdělí seznam triples na tři seznamy.|
 |oddílové|-|-|O(N)|-|-|Vrátí pořadí, které dává posuvné windows z obsahující prvky, které jsou vykreslovány z vstupní pořadí. Každé okno se vrátí jako novou pole.|
@@ -154,7 +151,7 @@ Tato část obsahuje porovnání funkcí, které jsou k dispozici na typy kolekc
 |zip3 –|O(N)|O(N)|O(N)|-|-|Kombinuje tři kolekce do seznamu triples. Seznamy musí mít stejnou délku.|
 
 ## <a name="see-also"></a>Viz také
-[Typy F #](fsharp-types.md)
+[Typy F#](fsharp-types.md)
 
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 

@@ -16,16 +16,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1e81a8eb27725edeccf3e5c7489109ba47b70dec
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 4e2afa9e868c1f561aed699a2bdf7d09c17898b3
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby mohou být hostovány v žádném [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace. Samoobslužné služby hostování je nejpružnější hostování možnost, protože vyžaduje minimálně infrastrukturu pro nasazování. Je však také alespoň robustní hostování možnost, protože spravované aplikace neposkytují pokročilých funkcí správy a hostování další možnosti hostování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například Internetové informační služby (IIS) a služby systému Windows.  
   
- Služba s vlastním hostováním, vytvořte a spusťte instanci <xref:System.ServiceModel.ServiceHost>, který spustí službu naslouchání pro zprávy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Postupy: hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).  
+ Služba s vlastním hostováním, vytvořte a spusťte instanci <xref:System.ServiceModel.ServiceHost>, který spustí službu naslouchání pro zprávy. Další informace najdete v tématu [postupy: hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).  
   
  Úplný příklad o tom, jak definovat kontrakt, implementaci kontraktu a hostitelem služby v rámci spravované aplikace najdete v článku [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md) a [hostování na vlastním](../../../../docs/framework/wcf/samples/self-host.md).  
   

@@ -33,11 +33,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 87785d6bba58442a1a5ad27f5304aa63e16c1aa9
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ec0c7645d4d6a1affe78e23a9498ea5f5f8d5235
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotné je větší koncept jazyk než [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -46,7 +46,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
 <a name="what_is_xaml"></a>   
 ## <a name="what-is-xaml"></a>Co je XAML?  
- XAML je deklarativní jazyk. Jako použít pro [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] programovací model, XAML zjednodušuje vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] aplikace. Můžete vytvořit viditelné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementy v deklarativní XAML a pak samostatné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] definice z logiky běhu pomocí kódu souborů, připojený k kód prostřednictvím definice třídu. XAML přímo představuje vytváření instancí objektů v konkrétní sadu zálohování typy definované v sestavení. To je rozdíl oproti většina jiných značek jazyky, které jsou obvykle interpretovaný jazyk bez přímé vazbě na systém typ zálohování. Umožňuje XAML pracovního postupu, kde můžete samostatné strany pracovat na [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a logiku aplikace, pomocí potenciálně různých nástrojů.  
+ XAML je deklarativní jazyk. Jako použít pro programovací model rozhraní .NET Framework, XAML zjednodušuje vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro aplikace .NET Framework. Můžete vytvořit viditelné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementy v deklarativní XAML a pak samostatné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] definice z logiky běhu pomocí kódu souborů, připojený k kód prostřednictvím definice třídu. XAML přímo představuje vytváření instancí objektů v konkrétní sadu zálohování typy definované v sestavení. To je rozdíl oproti většina jiných značek jazyky, které jsou obvykle interpretovaný jazyk bez přímé vazbě na systém typ zálohování. Umožňuje XAML pracovního postupu, kde můžete samostatné strany pracovat na [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a logiku aplikace, pomocí potenciálně různých nástrojů.  
   
  Při reprezentován jako text, jsou soubory XAML soubory XML, které mají obvykle `.xaml` rozšíření. Soubory mohou být zakódován žádné XML kódování, ale kódování v typických UTF-8.  
   

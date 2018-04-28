@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-caps.latest.revision: ''
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ac77fe2c83828d2cc9473417d2b29b2d2e540923
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: b0fedb812cee5cfa1e4c2ff921a78beb2a6c1beb
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate a UriTemplateTable
 Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, který své služby reagovat na. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Přidá dva nové třídy pro umožnění vývojáři kontroly nad jejich identifikátory URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> tvoří základ, na základě identifikátoru URI odesílání stroje v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tyto třídy lze také na své vlastní, povolení vývojáři využít šablon a mechanismus mapování URI bez implementace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
@@ -51,7 +51,7 @@ Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, k
   
  <xref:System.UriTemplate.PathSegmentVariableNames%2A> Vlastnost obsahuje kolekci názvů proměnných používaných v rámci segmenty cesty v řetězci šablony.  
   
- <xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29> přijímá <xref:System.UriTemplate> jako parametr a vrací logickou hodnotu, která určuje, zda dvě šablony jsou ekvivalentní. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] část šablony ekvivalenční později v tomto tématu.  
+ <xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29> přijímá <xref:System.UriTemplate> jako parametr a vrací logickou hodnotu, která určuje, zda dvě šablony jsou ekvivalentní. Další informace najdete v části šablony ekvivalenční později v tomto tématu.  
   
  <xref:System.UriTemplate> je navržen pro práci s žádné schéma identifikátoru URI, který vyhovuje gramatika HTTP URI. Následují příklady podporována schémata identifikátoru URI.  
   
@@ -131,13 +131,13 @@ Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, k
   
 -   /{filename}.jpg/  
   
--   /{filename}.{ext}/  
+-   / {filename}. {ext} /  
   
 -   / {a}. {b}someLiteral{c}({d}) /  
   
  Následují příklady segmentů platná cesta UNC.  
   
--   /{} - Musí mít název proměnné.  
+-   /{} -Musí mít název proměnné.  
   
 -   / {čelisti} {člun} - proměnných musí být odděleny literál.  
   
@@ -202,7 +202,7 @@ foreach (string key in m1.BoundVariables.AllKeys)
 ```  
   
 > [!NOTE]
->  Identifikátor URI, jako je například http://localhost: 8000 / / / neodpovídá šabloně uvedené v předchozí kód, ale identifikátor URI, jako je například http://localhost: 8000 / nemá.  
+>  Identifikátor URI, jako http://localhost:8000/// neodpovídá šabloně uvedené v předchozí kód, ale identifikátor URI, jako http://localhost:8000/ nepodporuje.  
   
  Následující kód ukazuje, jak výchozí hodnoty proměnných jsou zpracovávány při vytváření identifikátorů URI pomocí šablony.  
   
@@ -290,19 +290,19 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
  Následující sady řetězce dotazu jsou jednoznačné v rámci sami:  
   
--   ?x=1  
+-   ? x = 1  
   
--   ?x=2  
+-   ? x = 2  
   
--   ?x=3  
+-   ? x = 3  
   
 -   ? x = 1 & y = {var}  
   
--   ?x=2&z={var}  
+-   ? x = 2 & z = {var}  
   
--   ?x=3  
+-   ? x = 3  
   
--   ?x=1  
+-   ? x = 1  
   
 -   ?  
   
@@ -312,35 +312,35 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
 -   ? m = get & c = rss  
   
--   ?m=put&c=rss  
+-   ? m = put & c = rss  
   
 -   ? m = get & c = atom  
   
--   ?m=put&c=atom  
+-   ? m = put & c = atom  
   
  Následující sady šablon řetězec dotazu jsou nejednoznačné v rámci sami:  
   
--   ?x=1  
+-   ? x = 1  
   
--   ?x={var}  
+-   ? x = {var}  
   
  "x = 1"-odpovídá obě šablony.  
   
--   ?x=1  
+-   ? x = 1  
   
 -   ? y = 2  
   
  "x = 1 & y = 2" odpovídá obě šablony. Je to proto, že řetězec dotazu může obsahovat další proměnné řetězce dotazu, pak odpovídá šabloně.  
   
--   ?x=1  
+-   ? x = 1  
   
 -   ? x = 1 & y = {var}  
   
  "x = 1 & y = 3" odpovídá obě šablony.  
   
--   ?x=3&y=4  
+-   ? x = 3 & y = 4  
   
--   ?x=3&z=5  
+-   ? x = 3 & z = 5  
   
 > [!NOTE]
 >  Znaky funkce a funkce se považují za různých znaků, když se zobrazí jako část cesty identifikátor URI nebo <xref:System.UriTemplate> segment cesty literálu (ale a znaky a A jsou považovány za stejnou). Znaky funkce a funkce se považují za stejné znaky, když se zobrazí jako součást <xref:System.UriTemplate> {variableName} nebo řetězec dotazu (a a serverem se také považují za stejné znaky).  

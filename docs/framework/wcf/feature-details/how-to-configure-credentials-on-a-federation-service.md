@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Konfigurace pověření ve službě Federation Service"
-ms.custom: 
+title: 'Postupy: Konfigurace pověření ve službě Federation Service'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,25 +16,26 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 243dbd73d60577cbda2d8cf4fad1fd2e510d87ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ffb33ea70f67e209648e470656a2719404dd7f2d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Postupy: Konfigurace pověření ve službě Federation Service
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vytvoření federované služby se skládá z následujících postupů hlavní:  
   
-1.  Konfigurace <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření odpovídající vazby, najdete v části [postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).  
+1.  Konfigurace <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vytváření odpovídající vazby, najdete v části [postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).  
   
 2.  Konfigurace <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> který určuje, jak vystavené tokeny, které jsou uvedené ve službě jsou ověřeni.  
   
- Toto téma obsahuje podrobné informace o druhém kroku. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Jak funguje federované služby, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Toto téma obsahuje podrobné informace o druhém kroku. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Jak funguje federované služby, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
   
 ### <a name="to-set-the-properties-of-issuedtokenservicecredential-in-code"></a>Chcete-li nastavit vlastnosti IssuedTokenServiceCredential v kódu  
   
@@ -78,9 +80,9 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vytvoření federovan
   
 -   Při podpisu vystavený token používá X.509 vystavitele sériové číslo, identifikátor klíče subjektu X.509 nebo identifikátor zabezpečení kryptografický otisk X.509, vydaný token musí být podepsané certifikátem v kolekci vrácené <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost <xref:System.ServiceModel.Security.IssuedTokenServiceCredential>třídy.  
   
--   Při vydaný token je podepsaná pomocí certifikátu X.509, musíte ověřit certifikát na sémantiku zadaný hodnotou <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> vlastnost, bez ohledu na to, jestli se certifikát odešle k předávající straně jako <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause> nebo byl získán z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Ověření certifikátu X.509, najdete v části [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+-   Při vydaný token je podepsaná pomocí certifikátu X.509, musíte ověřit certifikát na sémantiku zadaný hodnotou <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> vlastnost, bez ohledu na to, jestli se certifikát odešle k předávající straně jako <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause> nebo byl získán z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Ověření certifikátu X.509, najdete v části [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
- Například nastavení <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> k <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerTrust> by ověření všechny vydané token, jejichž podpisový certifikát se nachází ve `TrustedPeople` úložiště certifikátů. V takovém případě nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.TrustedStoreLocation%2A> vlastnost, která má buď <xref:System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser> nebo <xref:System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine>. Můžete vybrat jiné režimy, včetně <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>. Když `Custom` je vybrána, je nutné přiřadit instanci <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy k <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CustomCertificateValidator%2A> vlastnost. Vlastní validátor můžete ověřit certifikáty pomocí všechna kritéria, která ho líbí. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: vytvoření služby, který využívá validátor vlastní certifikát](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
+ Například nastavení <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> k <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerTrust> by ověření všechny vydané token, jejichž podpisový certifikát se nachází ve `TrustedPeople` úložiště certifikátů. V takovém případě nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.TrustedStoreLocation%2A> vlastnost, která má buď <xref:System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser> nebo <xref:System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine>. Můžete vybrat jiné režimy, včetně <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>. Když `Custom` je vybrána, je nutné přiřadit instanci <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy k <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CustomCertificateValidator%2A> vlastnost. Vlastní validátor můžete ověřit certifikáty pomocí všechna kritéria, která ho líbí. Další informace najdete v tématu [postupy: vytvoření služby, který využívá validátor certifikátu vlastní](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Federace](../../../../docs/framework/wcf/feature-details/federation.md)  

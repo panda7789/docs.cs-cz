@@ -1,13 +1,13 @@
 ---
-title: "Strukturální přehled přenosu dat"
-ms.custom: 
+title: Strukturální přehled přenosu dat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
-caps.latest.revision: 
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 829635bd7fd73b58004c59862f4d589e95f67f9b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cb64b871b8e4ba3036d70f3b84e2fde1667f4529
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]lze považovat za infrastrukturu zasílání zpráv. Může přijímat zprávy, jejich zpracování a jejich odesílání do uživatelského kódu pro další akce nebo můžete vytvořit zprávy z data zadána pomocí uživatelského kódu a jejich doručování do cílového umístění. Toto téma, které je určeno pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a obsahují data. Jednodušší, orientované na úlohy zobrazení jak odesílat a přijímat data, najdete v části [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] lze považovat za infrastrukturu zasílání zpráv. Může přijímat zprávy, jejich zpracování a jejich odesílání do uživatelského kódu pro další akce nebo můžete vytvořit zprávy z data zadána pomocí uživatelského kódu a jejich doručování do cílového umístění. Toto téma, které je určeno pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a obsahují data. Jednodušší, orientované na úlohy zobrazení jak odesílat a přijímat data, najdete v části [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
   
 > [!NOTE]
 >  Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podrobnosti implementace, které nejsou viditelné tak, že prověří [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objektový model. Dvě slova upozornění jsou v pořadí s ohledem na podrobnosti zdokumentovaných implementace. Nejprve popisy jednodušší; Skutečná implementace může být složitější z důvodu optimalizace nebo z jiných důvodů. Druhý, můžete se nikdy spoléhají na konkrétní implementace podrobnosti i popsané, protože tyto mohou změnit bez předchozího upozornění z verze na verzi nebo i v servisní verze.  
@@ -94,17 +94,17 @@ ms.lasthandoff: 12/22/2017
 |------------------|--------------------------|--------------------------------------------------|-------------------------------------------------------|  
 |Odchozí, vytvořené z nonstreamed programovací model|Data potřebná k zápisu zprávy (například objekt a <xref:System.Runtime.Serialization.DataContractSerializer> instance, které jsou potřebné k serializaci ji) *|Vlastní logika k zapsání zprávy založené na uložená data (například volání `WriteObject` na `DataContractSerializer` případě serializátoru, který je používán) *|Volání `OnWriteBodyContents`, výsledky ukládat do vyrovnávací paměti, vraťte se čtecí modul XML přes vyrovnávací paměti|  
 |Odchozí, vytvořené z přenášené datovými proudy programovací model|`Stream` s daty, která má být zapsán *|Zápis dat z datového proudu uložené pomocí <xref:System.Xml.IStreamProvider> mechanismus *|Volání `OnWriteBodyContents`, výsledky ukládat do vyrovnávací paměti, vraťte se čtecí modul XML přes vyrovnávací paměti|  
-|Příchozí z datových proudů kanál zásobníku|A `Stream` objekt, který představuje data procházející přes síť s <xref:System.Xml.XmlReader> nad ním|Zapsat obsah z uložené `XmlReader` pomocí`WriteNode`|Vrátí uložené`XmlReader`|  
-|Příchozí z nonstreaming kanál zásobníku|Vyrovnávací paměť, která obsahuje data textu s `XmlReader` nad ním|Zapíše obsah z uložené `XmlReader` pomocí`WriteNode`|Vrátí uložené jazyk|  
+|Příchozí z datových proudů kanál zásobníku|A `Stream` objekt, který představuje data procházející přes síť s <xref:System.Xml.XmlReader> nad ním|Zapsat obsah z uložené `XmlReader` pomocí `WriteNode`|Vrátí uložené `XmlReader`|  
+|Příchozí z nonstreaming kanál zásobníku|Vyrovnávací paměť, která obsahuje data textu s `XmlReader` nad ním|Zapíše obsah z uložené `XmlReader` pomocí `WriteNode`|Vrátí uložené jazyk|  
   
- \*Tyto položky nejsou implementované přímo v `Message` podtřídy, ale v podtřídách z <xref:System.ServiceModel.Channels.BodyWriter> třídy. Další informace o <xref:System.ServiceModel.Channels.BodyWriter>, najdete v části [používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
+ \* Tyto položky nejsou implementované přímo v `Message` podtřídy, ale v podtřídách z <xref:System.ServiceModel.Channels.BodyWriter> třídy. Další informace o <xref:System.ServiceModel.Channels.BodyWriter>, najdete v části [používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
   
 ## <a name="message-headers"></a>Hlavičky zpráv  
  Zpráva může obsahovat záhlaví. Záhlaví logicky se skládá z XML informační sadu, která souvisí s název oboru názvů a několik dalších vlastností. Hlavičky zpráv ke kterým se přistupuje pomocí `Headers` vlastnost <xref:System.ServiceModel.Channels.Message>. Každá hlavička je reprezentována <xref:System.ServiceModel.Channels.MessageHeader> třídy. Za normálních okolností hlavičky zpráv jsou namapované na záhlaví zprávy SOAP při použití kanálu zásobníku, nakonfigurováno pro práci s protokolu SOAP zprávy.  
   
  Vložení informací do záhlaví zprávy a extrahování informací z ní je podobný používání tělo zprávy. Proces je poněkud jednodušší, protože streamování není podporován. Je možné k přístupu k obsahu stejné hlavičky více než jednou a hlavičky jsou přístupné z libovolného pořadí, vynucení záhlaví vždycky být ukládán do vyrovnávací paměti. Neexistuje žádný pro obecné účely mechanismus, který je k dispozici pro získání čtecí modul XML na záhlaví, ale je `MessageHeader` vnitřní podtřídy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] čitelný hlavička s takové funkce, která představuje. Tento typ `MessageHeader` zásobníku kanálu se vytvoří, když zprávu s vlastní aplikaci hlavičky se dodává. To umožňuje architektura služby použít modul deserializace, jako <xref:System.Runtime.Serialization.DataContractSerializer>, interpretovat tyto hlavičky.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
+ Další informace najdete v tématu [používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
   
 ## <a name="message-properties"></a>Vlastnosti zprávy  
  Zpráva může obsahovat vlastnosti. A *vlastnost* libovolnou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekt, který je přidružen názvu řetězce. Vlastnosti jsou přístupné prostřednictvím `Properties` vlastnost `Message`.  
@@ -113,7 +113,7 @@ ms.lasthandoff: 12/22/2017
   
  Například HTTP přenosu channel, které jsou součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je schopné různé stavové kódy HTTP, jako například "404 (není nalezena)" a "500 (vnitřní chyba serveru)," při odesílání odpovědi na klienty. Před odesláním zprávy s odpovědí, zkontroluje, zda `Properties` z `Message` obsahovat vlastnost s názvem "httpResponse", který obsahuje objekt typu <xref:System.ServiceModel.Channels.HttpResponseMessageProperty>. Pokud je tato vlastnost nalezena, bude vypadat na <xref:System.ServiceModel.Channels.HttpResponseMessageProperty.StatusCode%2A> vlastnost a použít tento kód stavu. Pokud nebyl nalezen, výchozí hodnota "200 (OK)" kód používá.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
+ Další informace najdete v tématu [používání třídy Message](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
   
 ### <a name="the-message-as-a-whole"></a>Zprávu jako celek  
  Pokud budeme mít popsané metody pro přístup k různých částí zprávy v izolaci. Ale <xref:System.ServiceModel.Channels.Message> třída rovněž poskytuje metody pro práci s celé zprávy jako celek. Například `WriteMessage` Metoda zapíše celou zprávu do zapisovače XML.  
@@ -148,7 +148,7 @@ ms.lasthandoff: 12/22/2017
   
  Jak jsme uvedli dříve, může být nejrůznější akce: odesílání nebo přijímání síťových paketů pomocí různých protokolů, čtení nebo zápisu se zprávou v databázi, nebo služby Řízení front nebo vyřazení zprávu ve frontě služby Řízení front zpráv, zajistit ale několik příkladů. Všechny tyto akce mají společnou jednou z věcí: vyžadují transformace mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] `Message` instance a skupinu skutečného bajtů, které lze odeslat, přijme, číst, zapisovat, zařazených do fronty nebo vyjmutou. Proces převodu `Message` do skupiny bajtů se nazývá *kódování*a zpětnou procesem vytvoření `Message` ze skupiny bajtů je volána *dekódování*.  
   
- Většina přenosové kanály pomocí součásti názvem *zprávy kodéry* provedete kódování a dekódování pracovní. Kodér zpráv je podtřídou třídy <xref:System.ServiceModel.Channels.MessageEncoder> třídy. `MessageEncoder`zahrnuje různé `ReadMessage` a `WriteMessage` přetížení metody pro převod mezi `Message` a skupiny bajtů.  
+ Většina přenosové kanály pomocí součásti názvem *zprávy kodéry* provedete kódování a dekódování pracovní. Kodér zpráv je podtřídou třídy <xref:System.ServiceModel.Channels.MessageEncoder> třídy. `MessageEncoder` zahrnuje různé `ReadMessage` a `WriteMessage` přetížení metody pro převod mezi `Message` a skupiny bajtů.  
   
  Na straně odesílání vyrovnávací paměti přenosu kanálu předá `Message` objekt, který obdržel z kanál nad jeho `WriteMessage`. Získá zpět pole bajtů, které se pak použije k jeho akci (například balení těchto bajtů jako platný pakety TCP a je pošlete na správnou cílovou). Streamování přenosu kanál, který první vytvoří `Stream` (například přes odchozí připojení TCP) a pak předá i `Stream` a `Message` musí se poslat odpovídající `WriteMessage` přetížení, která zapíše zpráva .  
   
@@ -168,7 +168,7 @@ ms.lasthandoff: 12/22/2017
   
  Kodéry mohou provádět také další funkce. Například kodéry může vytvořit fond XML čtení a zápis. Je nákladné pokaždé, když je zapotřebí vytvořit nový čtecí modul XML nebo zapisovač. Proto kodéry normálně udržovat fond čtečky a fond zapisovače konfigurovat velikost. V popisech kodér operace popsané vždy, když frázi "vytvořit čtecí modul XML nebo zapisovač" se používá, obvykle znamená "provést jednu z fondu, nebo, pokud žádný není k dispozici vytvořit." Kodér (a `Message` podtřídy vytvoří při dekódování) obsahují logiku vrátit čtení a zápis do fondů, jakmile už nejsou potřeba (například když `Message` je uzavřený).  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje tři kodéry zpráva, i když je možné vytvořit další vlastní typy. Zadané typy jsou Text, Binary a zpráva přenosu optimalizace mechanismus (MTOM). Tyto možnosti jsou popsány v části [výběr kodéru zprávy](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje tři kodéry zpráva, i když je možné vytvořit další vlastní typy. Zadané typy jsou Text, Binary a zpráva přenosu optimalizace mechanismus (MTOM). Tyto možnosti jsou popsány v části [výběr kodéru zprávy](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md).  
   
 ### <a name="the-istreamprovider-interface"></a>Rozhraní IStreamProvider  
  Při psaní odchozí zprávy, který obsahuje přenášené datovými proudy text do zapisovače XML <xref:System.ServiceModel.Channels.Message> používá pořadí volání podobný následujícímu v jeho <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%28System.Xml.XmlDictionaryWriter%29> implementace:  
@@ -231,7 +231,7 @@ ms.lasthandoff: 12/22/2017
  Akce = "*" řádku efektivně vypne odeslání zpráv a zajistí, že všechny zprávy odeslané do `IForwardingService` kontrakt zkontrolujte jejich způsob, jak `ForwardMessage` operaci. (Za normálních okolností dispečera by Zkontrolujte záhlaví zprávy "Action" k určení operace, která je určena pro. Akce = "\*" znamená "všech možných hodnot hlavičky akce".) Kombinace akce = "\*" a pomocí zprávy jako parametr se označuje jako "universal kontrakt", protože je schopný přijímat všechny možné zprávy. Abyste mohli odeslat všechny možné zprávy, zprávu použít jako návratová hodnota a nastavte `ReplyAction` na "\*". Tím se zabrání rozhraní služby přidání vlastní hlavičky akce umožňuje řídit tento záhlaví pomocí `Message` objektu vrátíte.  
   
 ### <a name="3-message-contracts"></a>3. Kontrakty zpráv  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje deklarativní programovací model pro s popisem zprávy, označované jako *zprávy kontrakty*. Tento model je podrobně popsaná v [pomocí kontrakty zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md). V podstatě představuje celé zprávy jedné [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ, který používá atributů, například <xref:System.ServiceModel.MessageBodyMemberAttribute> a <xref:System.ServiceModel.MessageHeaderAttribute> k popisu, které části třídou kontraktu zpráva by měla být mapována ke které části zprávy.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje deklarativní programovací model pro s popisem zprávy, označované jako *zprávy kontrakty*. Tento model je podrobně popsaná v [pomocí kontrakty zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md). V podstatě představuje celé zprávy jedné [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ, který používá atributů, například <xref:System.ServiceModel.MessageBodyMemberAttribute> a <xref:System.ServiceModel.MessageHeaderAttribute> k popisu, které části třídou kontraktu zpráva by měla být mapována ke které části zprávy.  
   
  Kontrakty zpráv poskytují spoustu kontrolu nad výsledná `Message` instance (i když samozřejmě mnohem ovládací prvek, pomocí `Message` přímo třídu). Například těla zprávy jsou často skládá z více položek informací, každý reprezentován vlastní – element XML. Tyto prvky může dojít, buď přímo v těle (*úplné* režim), případně může být *zabalené* včetně elementu XML. Pomocí kontrakt zprávy programovací model umožňuje provést úplné porovnání zabalené rozhodnutí a řídit název obálku názvem a oborem názvů.  
   
@@ -240,7 +240,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[C_DataArchitecture#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_dataarchitecture/cs/source.cs#9)]
  [!code-vb[C_DataArchitecture#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_dataarchitecture/vb/source.vb#9)]  
   
- Položky označena k serializaci (s <xref:System.ServiceModel.MessageBodyMemberAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute>, nebo dalších atributů v relaci) musí být serializovatelný zapojit se do kontrakt zprávy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v části "Serializace" dál v tomto tématu.  
+ Položky označena k serializaci (s <xref:System.ServiceModel.MessageBodyMemberAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute>, nebo dalších atributů v relaci) musí být serializovatelný zapojit se do kontrakt zprávy. Další informace najdete v části "Serializace" dál v tomto tématu.  
   
 ### <a name="4-parameters"></a>4. Parametry  
  Vývojáři, který chce popisují operaci, která funguje na více částí dat často, není nutné stupeň kontroly, které poskytují kontrakty zpráv. Například při vytváření nové služby, jeden nechce obvykle provést úplné porovnání zabalené rozhodnutí a rozhodnout, název elementu obálku. Tyto rozhodování často vyžaduje hluboké znalosti webových služeb a protokolu SOAP.  
@@ -255,7 +255,7 @@ ms.lasthandoff: 12/22/2017
  Popisuje informace, které mají být odesílané nebo přijímané jako jednoduchý seznam parametrů kontrakt operaci se o doporučený postup, pokud existují zvláštní důvody pro přesun do kontrakt zprávy složitější nebo `Message`– na základě programovacích modelů.  
   
 ### <a name="5-stream"></a>5. Stream  
- Pomocí `Stream` nebo jeden z jeho podtřídy ve smlouvě operaci nebo jako jedinou zpráva části textu v kontrakt zprávy lze považovat za samostatný programovací model z těm, které jsou popsané výše. Pomocí `Stream` tímto způsobem je jediný způsob, jak zaručit, že smlouva bude možné použít přenášené datovými proudy způsobem souborem zápis vlastní streamování kompatibilní s `Message` podtřídy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Velkého množství dat a vysílání datového proudu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
+ Pomocí `Stream` nebo jeden z jeho podtřídy ve smlouvě operaci nebo jako jedinou zpráva části textu v kontrakt zprávy lze považovat za samostatný programovací model z těm, které jsou popsané výše. Pomocí `Stream` tímto způsobem je jediný způsob, jak zaručit, že smlouva bude možné použít přenášené datovými proudy způsobem souborem zápis vlastní streamování kompatibilní s `Message` podtřídy. Další informace najdete v tématu [velkého množství dat a Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
  Když `Stream` nebo jeden z jeho podtřídy tímto způsobem je použít, není vyvolána serializátor. Odchozí zprávy, speciální streamování `Message` podtřídami je vytvořen a je do datového proudu odhlašování, jak je popsáno v části na zapisovat <xref:System.Xml.IStreamProvider> rozhraní. Pro příchozí zprávy, vytvoří rozhraní služby `Stream` podtřídami přes příchozí zprávy a poskytuje pro operaci.  
   
@@ -279,11 +279,11 @@ ms.lasthandoff: 12/22/2017
 ## <a name="serialization"></a>Serializace  
  Vždy, když používáte kontrakty zpráv nebo parametry k popisu obsah zprávy, musíte použít serializace pro převod mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy a reprezentaci XML informační sadu. Serializace se používá na jiných místech [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], například <xref:System.ServiceModel.Channels.Message> má obecný <xref:System.ServiceModel.Channels.Message.GetBody%2A> metodu, kterou můžete použít k načtení celého obsahu zprávy deserializovat do objektu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje dvě technologie serializace "předinstalované" pro serializaci a deserializaci parametry a částí zprávy: <xref:System.Runtime.Serialization.DataContractSerializer> a `XmlSerializer`. Kromě toho můžete napsat vlastní serializátorů. Však dalších částí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (například obecná `GetBody` metoda nebo SOAP poruch serializace) může být omezen na používání jenom <xref:System.Runtime.Serialization.XmlObjectSerializer> podtřídy (<xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>, ale ne <xref:System.Xml.Serialization.XmlSerializer>), nebo může být i pevně zakódovaná na používání jenom <xref:System.Runtime.Serialization.DataContractSerializer>.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje dvě technologie serializace "předinstalované" pro serializaci a deserializaci parametry a částí zprávy: <xref:System.Runtime.Serialization.DataContractSerializer> a `XmlSerializer`. Kromě toho můžete napsat vlastní serializátorů. Však dalších částí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (například obecná `GetBody` metoda nebo SOAP poruch serializace) může být omezen na používání jenom <xref:System.Runtime.Serialization.XmlObjectSerializer> podtřídy (<xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>, ale ne <xref:System.Xml.Serialization.XmlSerializer>), nebo může být i pevně zakódovaná na používání jenom <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
- `XmlSerializer` Se používá pro Serializační stroj v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby. `DataContractSerializer` Je nové Serializační stroj, že jste srozuměni s tím nový model programování kontraktu dat. `DataContractSerializer`výchozí volba, a rozhodnout použít pro `XmlSerializer` můžete provedeny na každou operaci zvlášť pomocí <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractFormatAttribute%2A> atribut.  
+ `XmlSerializer` Se používá pro Serializační stroj v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby. `DataContractSerializer` Je nové Serializační stroj, že jste srozuměni s tím nový model programování kontraktu dat. `DataContractSerializer` výchozí volba, a rozhodnout použít pro `XmlSerializer` můžete provedeny na každou operaci zvlášť pomocí <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractFormatAttribute%2A> atribut.  
   
- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> odpovídají operaci chování pro zapojení formátování zpráv pro `DataContractSerializer` a `XmlSerializer`, v uvedeném pořadí. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> Chování lze provozovat ve skutečnosti se žádné serializátor, která je odvozena od <xref:System.Runtime.Serialization.XmlObjectSerializer>, včetně <xref:System.Runtime.Serialization.NetDataContractSerializer> (podrobně popsané v pomocí samostatného serializace). Chování volání mezi `CreateSerializer` přetížení virtuální metody k získání serializátoru. Zařadit jiný serializátor, vytvořte novou <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> podtřídami a přepsání `CreateSerializer` přetížení.  
+ <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> odpovídají operaci chování pro zapojení formátování zpráv pro `DataContractSerializer` a `XmlSerializer`, v uvedeném pořadí. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> Chování lze provozovat ve skutečnosti se žádné serializátor, která je odvozena od <xref:System.Runtime.Serialization.XmlObjectSerializer>, včetně <xref:System.Runtime.Serialization.NetDataContractSerializer> (podrobně popsané v pomocí samostatného serializace). Chování volání mezi `CreateSerializer` přetížení virtuální metody k získání serializátoru. Zařadit jiný serializátor, vytvořte novou <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> podtřídami a přepsání `CreateSerializer` přetížení.  
   
 ## <a name="see-also"></a>Viz také  
  [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

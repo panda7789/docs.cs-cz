@@ -1,30 +1,32 @@
 ---
-title: "Postupy: Vytvoření základního kanálu RSS"
-ms.custom: 
+title: 'Postupy: Vytvoření základního kanálu RSS'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 431879b8-a5f8-4947-ad1e-4768c726aca8
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 79e5bc1bedbe6fd0911931c83878ed20bc4bd17e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a730bb0087ecfa396442dedf48fb64b1ab3ac512
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-basic-rss-feed"></a>Postupy: Vytvoření základního kanálu RSS
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje RSS syndikace informačního kanálu.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje RSS syndikace informačního kanálu.  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Vytvoření služby základní syndikace  
   
@@ -34,7 +36,7 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[htRssBasic#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Všechny operace služby, které se vztahují <xref:System.ServiceModel.Web.WebGetAttribute> atribut jsou namapované na požadavky HTTP GET. Pokud chcete mapovat tuto operaci na jinou metodu HTTP, používat <xref:System.ServiceModel.Web.WebInvokeAttribute> místo. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: vytvoření webové služby HTTP WCF základní](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
+    >  Všechny operace služby, které se vztahují <xref:System.ServiceModel.Web.WebGetAttribute> atribut jsou namapované na požadavky HTTP GET. Pokud chcete mapovat tuto operaci na jinou metodu HTTP, používat <xref:System.ServiceModel.Web.WebInvokeAttribute> místo. Další informace najdete v tématu [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
   
 2.  Implementujte kontrakt služby.  
   
@@ -75,7 +77,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-call-getblog-with-an-http-get"></a>K volání GetBlog() s HTTP GET  
   
-1.  Otevřete Internet Explorer, zadejte následující adresu URL a stiskněte klávesu ENTER: http://localhost: 8000/BlogService/GetBlog. Adresa URL obsahuje základní adresa služby (http://localhost: 8000/BlogService), relativní adresa koncového bodu a volat operace služby.  
+1.  Otevřete Internet Explorer, zadejte následující adresu URL a stiskněte klávesu ENTER: http://localhost:8000/BlogService/GetBlog. Adresa URL obsahuje základní adresa služby (http://localhost:8000/BlogService), relativní adresa koncového bodu a volat operace služby.  
   
 ### <a name="to-call-getblog-from-code"></a>GetBlog() volat z kódu  
   

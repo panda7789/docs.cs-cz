@@ -1,20 +1,17 @@
 ---
-title: "Události (F#)"
-description: "Zjistěte, jak F # události umožňují volání funkce přidružit uživatele akcí, které jsou důležité při programování pro grafické uživatelské rozhraní."
-keywords: "Visual f #, f #, funkční programování"
+title: Události (F#)
+description: 'Zjistěte, jak F # události umožňují volání funkce přidružit uživatele akcí, které jsou důležité při programování pro grafické uživatelské rozhraní.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 28b588f2-0c9e-4c0d-babf-901ed934638a
-ms.openlocfilehash: 9465f33bac6fa8234f684ddefe24cbe4d6c71028
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5c5f152830d4d91a25c79a09800263cdd85ed8b7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="events"></a>Události
 
@@ -33,7 +30,7 @@ Typ `Add` je metoda `('a -> unit) -> unit`. Proto obslužná rutina události p�
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3602.fs)]
     
 ## <a name="creating-custom-events"></a>Vytváření vlastních událostí
-F # události jsou reprezentované pomocí F # [událostí](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) třídy, které implementuje [ievent –](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) rozhraní. `IEvent`je sám rozhraní, které kombinuje funkce dvě jiných rozhraní `System.IObservable<'T>` a [idelegateevent –](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto `Event`y mají ekvivalentní funkce Delegáti v jiných jazycích, plus další funkce `IObservable`, to znamená, že událostí F # podporu filtrování událostí a pomocí funkce prvotřídní F # a výrazy lambda jako obslužné rutiny událostí. Tato funkce je součástí [událostí modulu](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+F # události jsou reprezentované pomocí F # [událostí](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) třídy, které implementuje [ievent –](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) rozhraní. `IEvent` je sám rozhraní, které kombinuje funkce dvě jiných rozhraní `System.IObservable<'T>` a [idelegateevent –](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto `Event`y mají ekvivalentní funkce Delegáti v jiných jazycích, plus další funkce `IObservable`, to znamená, že událostí F # podporu filtrování událostí a pomocí funkce prvotřídní F # a výrazy lambda jako obslužné rutiny událostí. Tato funkce je součástí [událostí modulu](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
 
 Pokud chcete vytvořit událost na třídu, která funguje stejně jako všechny ostatní události rozhraní .NET Framework, přidejte do třídy `let` vazby, která definuje `Event` jako pole v třídě. Můžete zadat požadovaný typ argumentu události jako typ argumentu, nebo jej ponechat prázdný a odvodit odpovídající typ pomocí kompilátoru. Musíte také definovat člen události, který zpřístupňuje událost jako událost typu CLI. Tento člen musí mít [clievent –](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) atribut. Je deklarován jako vlastnost a její implementace je právě volání [publikovat](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) vlastnosti události. Uživatelé vaší třídy mohou používat `Add` metody publikovanou události pro přidání obslužné rutiny. Argument pro `Add` metoda může být výraz lambda. Můžete použít `Trigger` vlastnost události k vyvolání události, předání argumentů obslužné rutiny. Následující příklad kódu to dokládá. V tomto příkladu je odvozeným argumentem typu události řazená kolekce, která představuje argumenty pro výraz lambda.
 
@@ -180,7 +177,7 @@ Application.Run(appForm)
 ```
 
 ## <a name="see-also"></a>Viz také
-[Členy](index.md)
+[Členové](index.md)
 
 [Zpracování a generování událostí](../../../../docs/standard/events/index.md)
 
@@ -188,6 +185,6 @@ Application.Run(appForm)
 
 [Control.Event – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
 
-[Control.Event – & č. 60;. T & č. 62; – Třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
+[Control.Event –&#60;'T&#62; – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
 
-[Control.Event – & č. 60;. Delegát, se argumentů & č. 62; – Třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)
+[Control.Event –&#60;'Delegáta,' argumentů&#62; – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

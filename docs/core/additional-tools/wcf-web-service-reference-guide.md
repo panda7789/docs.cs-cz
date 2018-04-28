@@ -5,14 +5,16 @@ author: mlacouture
 manager: wpickett
 ms.author: johalex
 ms.date: 04/19/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.custom: mvc
-ms.openlocfilehash: acf9e97c05dabc46da26ed2ea580e7d341b0f2dc
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 34d46130e25af6f264ea842072b96bbb6d46cc78
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="microsoft-wcf-web-service-reference-provider-tool"></a>Nástroj zprostředkovatele Microsoft WCF webové služby odkaz
 

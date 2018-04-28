@@ -1,20 +1,17 @@
 ---
 title: Sekvence (F#)
-description: "Další informace o použití F # pořadí, když máte velký, seřazené shromažďování dat, ale není nutně očekávat používat všechny elementy."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Další informace o použití F # pořadí, když máte velký, seřazené shromažďování dat, ale není nutně očekávat používat všechny elementy.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 23dc7d75-cd26-4df2-9be3-9d1aba5c4443
-ms.openlocfilehash: b0562a6efbd2398cd8730bb835a1833955fee1c7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a3521037112d40998ed00cd6fed376882c2f2c88
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="sequences"></a>Sekvence
 
@@ -90,7 +87,7 @@ Výstup
 0 10 20 30 40
 ```
 
-Pomocí [SEQ.ofarray –](https://msdn.microsoft.com/library/299cd4d9-be72-4511-aac8-089e1ddaac99) a [SEQ.oflist – & č. 60;. T & č. 62; Funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/seq.oflist%5b%27t%5d-function-%5bfsharp%5d), můžete vytvořit pořadí z poli a seznamy. Ale můžete také převést poli a seznamy pořadí pomocí operátor přetypování. Obě tyto metody jsou uvedené v následující kód.
+Pomocí [SEQ.ofarray –](https://msdn.microsoft.com/library/299cd4d9-be72-4511-aac8-089e1ddaac99) a [SEQ.oflist –&#60;'T&#62; funkce](https://msdn.microsoft.com/visualfsharpdocs/conceptual/seq.oflist%5b%27t%5d-function-%5bfsharp%5d), můžete vytvořit pořadí z poli a seznamy. Ale můžete také převést poli a seznamy pořadí pomocí operátor přetypování. Obě tyto metody jsou uvedené v následující kód.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet11.fs)]
 
@@ -102,7 +99,7 @@ Můžete definovat nekonečné pořadí pomocí [SEQ.initinfinite –](https://m
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet13.fs)]
 
-[SEQ.unfold –](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21) generuje sekvenci z výpočetní funkce, která přebírá stavu a převede jej k vytvoření každý následující prvek v pořadí. Stav je právě hodnotu, která se používá k výpočtu každý prvek a můžete změnit, protože každý prvek je počítaný. Druhý argument `Seq.unfold` je počáteční hodnota, která se používá ke spuštění pořadí. `Seq.unfold`používá typ možnosti pro stav, který umožňuje ukončit sekvenci vrácením `None` hodnotu. Následující kód ukazuje dva příklady pořadí, `seq1` a `fib`, které jsou generovány nástrojem `unfold` operaci. První, `seq1`, je stejně jednoduché pořadí s číslic obsahující až 100. Druhá s názvem `fib`, používá `unfold` k výpočtu Fibonacciho pořadí. Protože každý prvek v pořadí Fibonacciho je součet hodnot předchozích dvou čísel Fibonacciho, je hodnota stavu řazené kolekce členů, která se skládá z předchozích dvou čísel v pořadí. Počáteční hodnota je `(1,1)`, první dvě čísla v pořadí.
+[SEQ.unfold –](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21) generuje sekvenci z výpočetní funkce, která přebírá stavu a převede jej k vytvoření každý následující prvek v pořadí. Stav je právě hodnotu, která se používá k výpočtu každý prvek a můžete změnit, protože každý prvek je počítaný. Druhý argument `Seq.unfold` je počáteční hodnota, která se používá ke spuštění pořadí. `Seq.unfold` používá typ možnosti pro stav, který umožňuje ukončit sekvenci vrácením `None` hodnotu. Následující kód ukazuje dva příklady pořadí, `seq1` a `fib`, které jsou generovány nástrojem `unfold` operaci. První, `seq1`, je stejně jednoduché pořadí s číslic obsahující až 100. Druhá s názvem `fib`, používá `unfold` k výpočtu Fibonacciho pořadí. Protože každý prvek v pořadí Fibonacciho je součet hodnot předchozích dvou čísel Fibonacciho, je hodnota stavu řazené kolekce členů, která se skládá z předchozích dvou čísel v pořadí. Počáteční hodnota je `(1,1)`, první dvě čísla v pořadí.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet14.fs)]
 
@@ -198,7 +195,7 @@ Následující kód ukazuje použití `Seq.compareWith`.
 
 V předchozí kód pouze první prvek je počítaný a zkontrolován a výsledkem je, -1.
 
-[SEQ.countby –](https://msdn.microsoft.com/library/721702a5-150e-4fe8-81cd-ffbf8476cc1f) trvá funkci, která generuje hodnotu s názvem *klíč* pro jednotlivé elementy. Klíč se generuje pro každý prvek voláním této funkce pro každý element. `Seq.countBy`Vrátí pořadí, který obsahuje hodnoty klíče a počet prvků, které vygenerovány každou hodnotu klíče.
+[SEQ.countby –](https://msdn.microsoft.com/library/721702a5-150e-4fe8-81cd-ffbf8476cc1f) trvá funkci, která generuje hodnotu s názvem *klíč* pro jednotlivé elementy. Klíč se generuje pro každý prvek voláním této funkce pro každý element. `Seq.countBy` Vrátí pořadí, který obsahuje hodnoty klíče a počet prvků, které vygenerovány každou hodnotu klíče.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet201.fs)]
 
@@ -210,7 +207,7 @@ Výstup je následující.
 
 Předchozí výstup ukazuje, že byly 34 elementy původní pořadí, které vytvořil klíč 1, 33 hodnoty, které vytvořil klíč 2 a 33 hodnoty, které vytvořil klíč 0.
 
-Elementy pořadí můžete seskupovat podle volání [SEQ.GroupBy –](https://msdn.microsoft.com/library/d46a04df-1a42-40cc-a368-058c9c5806fd). `Seq.groupBy`provede sekvenci a funkci, která vygeneruje klíč z elementu. Funkce je provést pro každý element pořadí. `Seq.groupBy`Vrátí pořadí řazené kolekce členů, kde první prvek každá řazená kolekce členů je klíč a druhý je pořadí prvků, které vytvářejí klíči.
+Elementy pořadí můžete seskupovat podle volání [SEQ.GroupBy –](https://msdn.microsoft.com/library/d46a04df-1a42-40cc-a368-058c9c5806fd). `Seq.groupBy` provede sekvenci a funkci, která vygeneruje klíč z elementu. Funkce je provést pro každý element pořadí. `Seq.groupBy` Vrátí pořadí řazené kolekce členů, kde první prvek každá řazená kolekce členů je klíč a druhý je pořadí prvků, které vytvářejí klíči.
 
 Následující příklad kódu ukazuje použití `Seq.groupBy` při vytváření oddílů pořadí čísel od 1 do 100 do tří skupin, které mají odlišné hodnoty klíče, 0, 1, 2.
 
@@ -224,7 +221,7 @@ Výstup je následující.
 
 Můžete vytvořit sekvenci, která eliminuje elementy s duplicitním voláním [SEQ.DISTINCT –](https://msdn.microsoft.com/library/99d01014-7e0e-4e7b-9d0a-41a61d93f401). Nebo můžete použít [SEQ.distinctby –](https://msdn.microsoft.com/library/9293293b-9420-49c8-848f-401a9cd49b75), což trvá generování klíče funkce k volání na jednotlivé prvky. Výsledné pořadí obsahuje prvky původní pořadí, které mají jedinečné klíče; novější prvky, které vytváří duplicitní klíč pro starší element budou odstraněny.
 
-Následující příklad kódu ukazuje použití `Seq.distinct`. `Seq.distinct`ukazují generování pořadí, které představují binární čísla, a pak zobrazující, že jsou pouze různých elementů 0 a 1.
+Následující příklad kódu ukazuje použití `Seq.distinct`. `Seq.distinct` ukazují generování pořadí, které představují binární čísla, a pak zobrazující, že jsou pouze různých elementů 0 a 1.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet22.fs)]
 
@@ -233,7 +230,7 @@ Následující kód ukazuje `Seq.distinctBy` počínaje sekvenci, která obsahuj
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet23.fs)]
     
 ## <a name="readonly-and-cached-sequences"></a>Jen pro čtení a uložené v mezipaměti pořadí
-[SEQ.ReadOnly –](https://msdn.microsoft.com/library/88059cb4-3bb0-4126-9448-fbcd48fe13a7) vytvoří kopii sekvenci jen pro čtení. `Seq.readonly`je užitečné, když máte kolekci pro čtení a zápis, jako je například pole, a nechcete upravit původní kolekci. Tato funkce umožňuje zachovat data zapouzdření. V následujícím příkladu kódu se vytvoří typ, který obsahuje pole. Zpřístupní vlastnosti pole, ale místo vrací pole, vrátí sekvenci, která je vytvořená z pole pomocí `Seq.readonly`.
+[SEQ.ReadOnly –](https://msdn.microsoft.com/library/88059cb4-3bb0-4126-9448-fbcd48fe13a7) vytvoří kopii sekvenci jen pro čtení. `Seq.readonly` je užitečné, když máte kolekci pro čtení a zápis, jako je například pole, a nechcete upravit původní kolekci. Tato funkce umožňuje zachovat data zapouzdření. V následujícím příkladu kódu se vytvoří typ, který obsahuje pole. Zpřístupní vlastnosti pole, ale místo vrací pole, vrátí sekvenci, která je vytvořená z pole pomocí `Seq.readonly`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet24.fs)]
 
@@ -246,6 +243,6 @@ Jednoduché aritmetické operace jsou například ty, seznamů, jako například
 [SEQ.fold –](https://msdn.microsoft.com/library/30c4c95a-9563-4c96-bbe1-f7aacfd026e3), [SEQ.reduce –](https://msdn.microsoft.com/library/a2ad4f64-ac69-47d2-92f0-7173d9dfeae9), a [SEQ.Scan –](https://msdn.microsoft.com/library/7e2d23e9-f153-4411-a884-b6d415ff627e) jsou jako odpovídající funkce, které jsou k dispozici pro seznamy. Pořadí podporovat podmnožině úplné variace tyto funkce, která uvádí podpory. Další informace a příklady naleznete v tématu [uvádí](lists.md).
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
-[Typy F #](fsharp-types.md)
+[Typy F#](fsharp-types.md)

@@ -1,20 +1,17 @@
 ---
 title: Vlastnosti (F#)
-description: "Další informace o F # vlastnosti, které jsou členy, které reprezentují hodnoty přidružené k objektu."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Další informace o F # vlastnosti, které jsou členy, které reprezentují hodnoty přidružené k objektu.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 98b363a5-ee6a-4b7b-b8ae-b244f2a0b316
-ms.openlocfilehash: 53b93b20310c557ad9c30226bc08f85cbf2f3010
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 6cad5d0e32958374e080f9b8046f7eb73b6bf615
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="properties"></a>Vlastnosti
 
@@ -74,7 +71,7 @@ Pro vlastnosti čtení/zápisu, které oba `get` a `set` metoda, pořadí `get` 
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3203.fs)]
 
-Soukromé hodnoty tohoto uchování data pro vlastnosti se nazývají *záložnímu úložišti*. Pokud chcete, aby kompilátoru záložní úložiště vytvářet automaticky, použijte klíčová slova `member val`, vynechejte vlastní identifikátor, a zadejte výraz k inicializaci vlastnosti. Pokud má-li být měnitelný vlastnost, zahrnout `with get, set`. Například následující typ třídy obsahuje dvě automaticky implementované vlastnosti. `Property1`je jen pro čtení a je inicializováno argument poskytnutý primární konstruktoru, a `Property2` se nastavit vlastnost inicializovat na prázdný řetězec:
+Soukromé hodnoty tohoto uchování data pro vlastnosti se nazývají *záložnímu úložišti*. Pokud chcete, aby kompilátoru záložní úložiště vytvářet automaticky, použijte klíčová slova `member val`, vynechejte vlastní identifikátor, a zadejte výraz k inicializaci vlastnosti. Pokud má-li být měnitelný vlastnost, zahrnout `with get, set`. Například následující typ třídy obsahuje dvě automaticky implementované vlastnosti. `Property1` je jen pro čtení a je inicializováno argument poskytnutý primární konstruktoru, a `Property2` se nastavit vlastnost inicializovat na prázdný řetězec:
 
 ```fsharp
 type MyClass(property1 : int) =
@@ -98,7 +95,7 @@ printfn "class1.ExplicitProperty = %d" class1.ExplicitProperty
 printfn "class1.ExplicitProperty = %d" class1.ExplicitProperty
 ```
 
-**Výstup**
+**Output**
 
 ```
 class1.AutoProperty = 1853799794
@@ -151,6 +148,6 @@ Vlastnosti mohou být abstraktní. Stejně jako u metod `abstract` právě zname
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3207.fs)]
 
 ## <a name="see-also"></a>Viz také
-[Členy](index.md)
+[Členové](index.md)
 
 [Metody](methods.md)

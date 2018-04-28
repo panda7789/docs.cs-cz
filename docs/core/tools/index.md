@@ -4,16 +4,16 @@ description: Přehled funkcí a nástrojů .NET Core rozhraní příkazového ř
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: d1bb4eb3b18fe08f38c2cf99a642afb516a797ff
-ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
+ms.openlocfilehash: 9d84858c800d50a99b2327f71212833f7160b1e1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET core nástrojů rozhraní příkazového řádku (CLI)
 
@@ -32,16 +32,16 @@ Ve výchozím nastavení nainstaluje rozhraní příkazového řádku (SxS) způ
 
 Ve výchozím nastavení instalují se následující příkazy:
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 **Základní příkazy**
 
 * [new](dotnet-new.md)
 * [restore](dotnet-restore.md)
 * [Sestavení](dotnet-build.md)
-* [publish](dotnet-publish.md)
-* [run](dotnet-run.md)
-* [test](dotnet-test.md)
+* [Publikování](dotnet-publish.md)
+* [Spustit](dotnet-run.md)
+* [Test](dotnet-test.md)
 * [vstest](dotnet-vstest.md)
 * [pack](dotnet-pack.md)
 * [Migrace](dotnet-migrate.md)
@@ -73,9 +73,9 @@ Ve výchozím nastavení instalují se následující příkazy:
 * [new](dotnet-new.md)
 * [restore](dotnet-restore.md)
 * [Sestavení](dotnet-build.md)
-* [publish](dotnet-publish.md)
-* [run](dotnet-run.md)
-* [test](dotnet-test.md)
+* [Publikování](dotnet-publish.md)
+* [Spustit](dotnet-run.md)
+* [Test](dotnet-test.md)
 * [vstest](dotnet-vstest.md)
 * [pack](dotnet-pack.md)
 * [Migrace](dotnet-migrate.md)
@@ -106,7 +106,7 @@ Rozhraní příkazového řádku přijme model rozšiřitelnosti, které vám um
 
 Struktura rozhraní příkazového řádku příkaz se skládá z [ovladače ("dotnet")](#driver), [příkazu (nebo "akce")](#command-verb)a případně příkaz [argumenty](#arguments) a [možnosti](#options). Zobrazí tento vzor většinu operací rozhraní příkazového řádku, jako je například vytváření novou konzolovou aplikaci a spuštění z příkazového řádku jako následující příkazy, zobrazit, když je proveden z adresáře, s názvem *my_app*:
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 ```console
 dotnet new console
@@ -152,5 +152,5 @@ Pokud jste použili Preview 2 nástrojů k vytvoření *project.json*– na zák
 
 ## <a name="see-also"></a>Viz také
 
- [dotnet/CLI GitHub Repository](https://github.com/dotnet/cli/)  
+ [DotNet nebo rozhraní příkazového řádku úložiště GitHub](https://github.com/dotnet/cli/)  
  [Průvodce instalací .NET core](https://aka.ms/dotnetcoregs)  

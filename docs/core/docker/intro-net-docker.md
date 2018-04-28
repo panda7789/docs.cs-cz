@@ -1,24 +1,22 @@
 ---
 title: Úvod do rozhraní .NET a Docker
 description: Principy Docker a .NET Core
-keywords: Rozhraní .NET, rozhraní .NET core, Docker
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
-ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 75c631cf0abac543889cb7387f6fc3fdb2624512
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.openlocfilehash: 3ceeead391c3e64db6849236a0f6821eb03abc3c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod do rozhraní .NET a Docker
 

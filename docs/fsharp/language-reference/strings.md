@@ -1,27 +1,24 @@
 ---
-title: "Řetězce (F#)"
+title: Řetězce (F#)
 description: "Zjistěte, jak typu 'řetězec' F # představuje neměnné text jako posloupnosti znaků Unicode."
-keywords: "Visual f #, f #, funkční programování"
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: df7624e5-ca6c-4e77-9e2b-87ca7e5e6f52
-ms.openlocfilehash: 96a398ebcd53681481b10d1a2bee5f1e5442a5cd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: bf3c15db43c6419222dc3e5b32ac8947a53982f0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="strings"></a>Řetězce
 
 > [!NOTE]
 Referenční dokumentace rozhraní API odkazů v tomto článku se dostanete na webu MSDN.  Referenční dokumentace rozhraní API docs.microsoft.com není dokončena.
 
-`string` Typ představuje neměnné text jako posloupnosti znaků Unicode. `string`je alias `System.String` v rozhraní .NET Framework.
+`string` Typ představuje neměnné text jako posloupnosti znaků Unicode. `string` je alias `System.String` v rozhraní .NET Framework.
 
 ## <a name="remarks"></a>Poznámky
 Textové literály jsou odděleny znak dvojité uvozovky ("). Znak zpětného lomítka (\) se používá ke kódování některé speciální znaky. Zpětné lomítko a další znak, který je společně se označují jako *řídicí sekvenci*. Řídicí sekvence v F # řetězec, který v následující tabulce jsou uvedeny literály podporovány.
@@ -92,4 +89,4 @@ Pomocí `Chars` vlastnost `System.String`, dostanete jednotlivé znaky v řetěz
 Další funkce pro zpracování řetězce je součástí `String` modulu v `FSharp.Core` oboru názvů. Další informace najdete v tématu [Core.String – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)

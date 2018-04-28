@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-caps.latest.revision: ''
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 70d1b76108c9eab0280e6499ab2b4d0c70def853
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: ba8a2eb97b071608b16b5549ead403b578329ee5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Programovací model WEB HTTP poskytuje základní prvky potřebné k vytvoření webové služby HTTP s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEBOVÉ služby HTTP jsou navržené tak, ke kterým přistupují širokou škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  
@@ -33,13 +33,13 @@ ms.lasthandoff: 03/26/2018
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP programovací model rozšiřuje rozsah [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro scénáře styl webové stránky, které zahrnují HTTP webové služby, služby AJAX a JSON a informační kanály syndikace (ATOM/RSS). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Služba AJAX a JSON, viz [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Syndikace, najdete v části [syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md).  
   
- Neexistují žádná další omezení na typy dat, která lze vrátit ze HTTP webové služby. Jakýkoli serializovatelný typ mohou být vráceny z operace HTTP webové služby. Webový prohlížeč, který je omezení toho, jaká data typy lze zadat v adrese URL vyvolejte, protože mohou být operace HTTP webové služby. Další informace o jaké typy jsou podporovány ve výchozím nastavení najdete v článku **UriTemplate parametrů řetězce dotazu a adresy URL** části níže. Výchozí chování lze změnit tím, že poskytuje vlastní T:System.ServiceModel.Dispatcher.QueryStringConverter implementace, která určuje, jak převést parametry zadané v adrese URL skutečný parametr typu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
+ Neexistují žádná další omezení na typy dat, která lze vrátit ze HTTP webové služby. Jakýkoli serializovatelný typ mohou být vráceny z operace HTTP webové služby. Webový prohlížeč, který je omezení toho, jaká data typy lze zadat v adrese URL vyvolejte, protože mohou být operace HTTP webové služby. Další informace o jaké typy jsou podporovány ve výchozím nastavení najdete v článku **UriTemplate parametrů řetězce dotazu a adresy URL** části níže. Výchozí chování lze změnit tím, že poskytuje vlastní T:System.ServiceModel.Dispatcher.QueryStringConverter implementace, která určuje, jak převést parametry zadané v adrese URL skutečný parametr typu. Další informace najdete v tématu <xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
 >  Služby, které jsou napsané pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model WEB HTTP nepoužívejte protokolu SOAP zprávy. Protože protokolu SOAP se nepoužívá, funkce zabezpečení poskytované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nelze použít. Můžete ale použít zabezpečení na základě přenosu hostováním služby prostřednictvím protokolu HTTPS. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
 > [!WARNING]
->  Instalace rozšíření WebDAV pro službu IIS může způsobit vrátí chybu HTTP 405 jako protokol WebDAV rozšíření pokusí zpracovat všechny požadavky PUT HTTP webové služby. Chcete-li vyřešit tento problém můžete odinstalovat rozšíření WebDAV nebo zakázat rozšíření WebDAV pro svůj web. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Službu IIS a protokolu WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
+>  Instalace rozšíření WebDAV pro službu IIS může způsobit vrátí chybu HTTP 405 jako protokol WebDAV rozšíření pokusí zpracovat všechny požadavky PUT HTTP webové služby. Chcete-li vyřešit tento problém můžete odinstalovat rozšíření WebDAV nebo zakázat rozšíření WebDAV pro svůj web. Další informace najdete v tématu [služby IIS a protokolu WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
   
 ## <a name="uri-processing-with-uritemplate-and-uritemplatetable"></a>Identifikátor URI zpracování s UriTemplate a UriTemplateTable  
  Identifikátor URI šablony poskytují efektivní syntaxe pro vyjádření velkých sad strukturálně podobné identifikátory URI. Například následující šablony vyjadřoval sadu všechny tři segment URI, které začínají řetězcem "a" a "c" bez ohledu na hodnotu zprostředkující segmentu na konci: / {segmentovat} /c  
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/26/2018
   
 -   a/x/c  
   
--   a/y/c  
+-   / y/c  
   
 -   a/z/c  
   

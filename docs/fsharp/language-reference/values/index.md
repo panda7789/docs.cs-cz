@@ -1,20 +1,17 @@
 ---
 title: Hodnoty (F#)
 description: 'Zjistěte, jak jsou množství, které mají určitý typ hodnoty v jazyce F #.'
-keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 5e1e73c3-5adb-4bba-9976-d57f1ff6cd8d
-ms.openlocfilehash: a1e077552ba39a483be3129c89af48b547219733
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b40e4a0409a9161a4ef48c8d4ad82b4da346538e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="values"></a>Hodnoty
 
@@ -49,10 +46,10 @@ Počáteční hodnotu na měnitelnou proměnnou lze přiřadit pomocí `let` –
 
 |Název|Popis|
 |-----|-----------|
-|[let – vazby](../functions/let-bindings.md)|Poskytuje informace o používání `let` – klíčové slovo k vytvoření vazby. názvy hodnot a funkce.|
+|[Vazby let](../functions/let-bindings.md)|Poskytuje informace o používání `let` – klíčové slovo k vytvoření vazby. názvy hodnot a funkce.|
 |[Funkce](../functions/index.md)|Poskytuje přehled funkcí v F #.|
 
 ## <a name="see-also"></a>Viz také
 [Hodnoty Null](null-Values.md)
 
-[Referenční dokumentace jazyka F #](../index.md)
+[Referenční dokumentace jazyka F#](../index.md)

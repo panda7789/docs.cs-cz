@@ -1,21 +1,19 @@
 ---
 title: Portování do .NET Core z rozhraní .NET Framework
 description: Princip přenosem a zjistit nástroje, které vás může být užitečná při portování rozhraní .NET Framework projektu na .NET Core.
-keywords: Rozhraní .NET, .NET core
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 00d00d38-99af-44f4-a75f-defcd9729dc5
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 3413b73c2a0a3c3ebf49b0b3ec81d00c6558d9a8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2f943caff23ddbfcd5c845c9f517d24aea089850
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="porting-to-net-core-from-net-framework"></a>Portování do .NET Core z rozhraní .NET Framework
 

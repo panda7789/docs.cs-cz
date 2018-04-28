@@ -1,26 +1,27 @@
 ---
-title: "Postupy: spuštění pracovního postupu"
-ms.custom: 
+title: 'Postupy: spuštění pracovního postupu'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-caps.latest.revision: "33"
+caps.latest.revision: 33
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a41bf5c1f7a12e98ac10295af5b2608c8bf3a46
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 88c8adc74b707891a93e34aa135db82715da968e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-run-a-workflow"></a>Postupy: spuštění pracovního postupu
 Toto téma je pokračování kurzu Windows Workflow Foundation Začínáme a popisuje, jak vytvořit hostitele pracovního postupu a spuštění pracovního postupu definované v předchozím [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) tématu.  
@@ -72,7 +73,7 @@ Toto téma je pokračování kurzu Windows Workflow Foundation Začínáme a pop
     WorkflowInvoker.Invoke(workflow1);  
     ```  
   
-     Tato vygenerována hostování kód používá <xref:System.Activities.WorkflowInvoker>. <xref:System.Activities.WorkflowInvoker>poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication>poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. Tento příklad používá záložky a <xref:System.Activities.WorkflowApplication> se používá k hostování pracovní postup. Přidejte následující `using` nebo **importy** příkaz v horní části **Program.cs** nebo **Module1.vb** pod existující **pomocí** nebo **importy** příkazy.  
+     Tato vygenerována hostování kód používá <xref:System.Activities.WorkflowInvoker>. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication> poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. Tento příklad používá záložky a <xref:System.Activities.WorkflowApplication> se používá k hostování pracovní postup. Přidejte následující `using` nebo **importy** příkaz v horní části **Program.cs** nebo **Module1.vb** pod existující **pomocí** nebo **importy** příkazy.  
   
     ```vb  
     Imports NumberGuessWorkflowActivities  
@@ -109,7 +110,7 @@ Toto téma je pokračování kurzu Windows Workflow Foundation Začínáme a pop
      [!code-csharp[CFX_WF_GettingStarted#6](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]  
   
-     Tento slovník obsahuje jeden element s klíčem `MaxNumber`. Klíče ve slovníku vstupní odpovídají vstupní argumenty na kořenové aktivity pracovního postupu. `MaxNumber`v tomto pracovním postupu se používá k určení horní mez pro náhodně generovaným číslem.  
+     Tento slovník obsahuje jeden element s klíčem `MaxNumber`. Klíče ve slovníku vstupní odpovídají vstupní argumenty na kořenové aktivity pracovního postupu. `MaxNumber` v tomto pracovním postupu se používá k určení horní mez pro náhodně generovaným číslem.  
   
 ### <a name="to-retrieve-output-arguments-of-a-workflow"></a>Načíst výstup argumenty pracovního postupu  
   
@@ -133,7 +134,7 @@ Toto téma je pokračování kurzu Windows Workflow Foundation Začínáme a pop
      Pokaždé, když pracovní postup bude nečinnosti čekání na další odhad, se nazývá této obslužné rutiny a `idleAction` <xref:System.Threading.AutoResetEvent> nastavena. Kód v následujícím kroku používá `idleEvent` a `syncEvent` k určení, zda pracovní postup se čeká na další odhad nebo dokončení.  
   
     > [!NOTE]
-    >  V tomto příkladu používá hostitelskou aplikaci automatickým vynulováním události v <xref:System.Activities.WorkflowApplication.Completed%2A> a <xref:System.Activities.WorkflowApplication.Idle%2A> obslužné rutiny pro synchronizaci hostitelskou aplikaci s průběh pracovního postupu. Není nutné blokovat a počkejte, pracovní postup na nečinnost před obnovením záložku, ale v tomto příkladu události synchronizace jsou vyžaduje, aby hostitel věděli, jestli dokončení pracovního postupu nebo jestli je čekání na další vstup uživatele pomocí <xref:System.Activities.Bookmark>. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Záložky](../../../docs/framework/windows-workflow-foundation/bookmarks.md).  
+    >  V tomto příkladu používá hostitelskou aplikaci automatickým vynulováním události v <xref:System.Activities.WorkflowApplication.Completed%2A> a <xref:System.Activities.WorkflowApplication.Idle%2A> obslužné rutiny pro synchronizaci hostitelskou aplikaci s průběh pracovního postupu. Není nutné blokovat a počkejte, pracovní postup na nečinnost před obnovením záložku, ale v tomto příkladu události synchronizace jsou vyžaduje, aby hostitel věděli, jestli dokončení pracovního postupu nebo jestli je čekání na další vstup uživatele pomocí <xref:System.Activities.Bookmark>. Další informace najdete v tématu [záložky](../../../docs/framework/windows-workflow-foundation/bookmarks.md).  
   
 3.  Odeberte volání `WaitOne`a nahraďte ji metodou kód shromažďovat vstup od uživatele a obnovit <xref:System.Activities.Bookmark>.  
   
@@ -147,7 +148,7 @@ Toto téma je pokračování kurzu Windows Workflow Foundation Začínáme a pop
      [!code-csharp[CFX_WF_GettingStarted#11](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#11)]
      [!code-vb[CFX_WF_GettingStarted#11](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#11)]  
   
-##  <a name="BKMK_ToRunTheApplication"></a>Sestavení a spuštění aplikace  
+##  <a name="BKMK_ToRunTheApplication"></a> Sestavení a spuštění aplikace  
   
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a vyberte **nastavit jako spouštěný projekt**.  
   

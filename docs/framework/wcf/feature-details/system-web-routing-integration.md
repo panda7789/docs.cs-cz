@@ -1,27 +1,29 @@
 ---
 title: System.Web.Routing Integration
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8f74a0f9d7a39d7d5ccb97d7f4ef022b32bbf4fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9c3a5b9965f63a9fc501025493b3a323013ea2a4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="systemwebrouting-integration"></a>System.Web.Routing Integration
-Při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v Internetové informační služby (IIS) umístit soubor .svc ve virtuálním adresáři. Tento soubor .svc určuje vytváření hostitele služby a také třídu, která implementuje službu používat. Při zasílání požadavků na službu zadáte soubor .svc v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není optimální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádné rozšíření. <xref:System.Web.Routing> Funkce integrace umožňuje hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby REST, která reaguje na identifikátory URI bez přípony. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]směrování najdete [směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) ukázka.  
+Při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v Internetové informační služby (IIS) umístit soubor .svc ve virtuálním adresáři. Tento soubor .svc určuje vytváření hostitele služby a také třídu, která implementuje službu používat. Při zasílání požadavků na službu zadáte soubor .svc v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není optimální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádné rozšíření. <xref:System.Web.Routing> Funkce integrace umožňuje hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby REST, která reaguje na identifikátory URI bez přípony. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] směrování najdete [směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) ukázka.  
   
 ## <a name="using-systemwebrouting-integration"></a>Pomocí integrace System.Web.Routing  
  Použít <xref:System.Web.Routing> funkce integrace použijete <xref:System.ServiceModel.Activation.ServiceRoute> třídy vytvořit jednu nebo víc tras a přidat je do <xref:System.Web.Routing.RouteTable> v souboru Global.asax. Tyto trasy zadejte relativní identifikátory URI, který služba reaguje na. Následující příklad ukazuje, jak to provést.  
@@ -60,7 +62,7 @@ Při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby
     </system.webServer>  
 ```  
   
- Tento kód načte modul a obslužná rutina vyžaduje pro směrování. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Směrování](../../../../docs/framework/wcf/feature-details/routing.md). Je nutné také nastavit `aspNetCompatibilityEnabled` atribut `true` v `<serviceHostingEnvironment>` element, jak je znázorněno v následujícím příkladu.  
+ Tento kód načte modul a obslužná rutina vyžaduje pro směrování. Další informace najdete v tématu [směrování](../../../../docs/framework/wcf/feature-details/routing.md). Je nutné také nastavit `aspNetCompatibilityEnabled` atribut `true` v `<serviceHostingEnvironment>` element, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <system.serviceModel>  

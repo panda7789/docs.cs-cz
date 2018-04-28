@@ -1,19 +1,19 @@
 ---
-title: "příkaz SLN – DotNet - .NET Core rozhraní příkazového řádku"
-description: "Příkaz dotnet sln poskytuje vhodnou možnost přidávat, odstraňovat a seznam projekty v řešení souboru."
+title: příkaz SLN – DotNet - .NET Core rozhraní příkazového řádku
+description: Příkaz dotnet sln poskytuje vhodnou možnost přidávat, odstraňovat a seznam projekty v řešení souboru.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: deb66ff52074630616c7be47f1a9751246db501d
-ms.sourcegitcommit: 70dcc89737127e4d5f20500242409b687e51b07e
+ms.openlocfilehash: 837d47c38119f9a7aa75c74576ed75b8ef3813dd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-sln"></a>SLN – DotNet.
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/11/2018
 
 ## <a name="name"></a>Název
 
-`dotnet sln`-Upravuje soubor řešení .NET Core.
+`dotnet sln` -Upravuje soubor řešení .NET Core.
 
 ## <a name="synopsis"></a>Stručný obsah
 

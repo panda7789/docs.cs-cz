@@ -1,23 +1,24 @@
 ---
-title: "Pomocí zprostředkovatele komunikace s objekty aktivity v pracovním postupu rozhraní .NET Framework 4"
-ms.custom: 
+title: Pomocí zprostředkovatele komunikace s objekty aktivity v pracovním postupu rozhraní .NET Framework 4
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9bb747f0-eb33-4f70-84cd-317382372dcd
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a02d6dbc7c6f6583a174bd10853d8c8070ac273
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ebef74097d22c9624a29470f4cda231bbb32fe90
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v pracovním postupu rozhraní .NET Framework 4
 Aktivity vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] nebo [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] mohou být používány [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovní postup pomocí <xref:System.Activities.Statements.Interop> aktivity. Toto téma obsahuje základní informace o použití <xref:System.Activities.Statements.Interop> aktivity.  
@@ -256,7 +257,7 @@ Rule3: IF this.DiscountPercent > 0
     ```  
   
     > [!NOTE]
-    >  `Subtotal`, `DiscountPercent`, A `Total` vlastnosti `DiscountCalculator` aktivity jsou prezentované jako argumenty <xref:System.Activities.Statements.Interop> aktivity a proměnných vázaná na místní pracovní postup ve <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityProperties%2A> kolekce. `Subtotal`je přidána jako <xref:System.Activities.ArgumentDirection.In> argument protože `Subtotal` tok dat do <xref:System.Activities.Statements.Interop> aktivitu, a `DiscountPercent` a `Total` jsou přidány jako <xref:System.Activities.ArgumentDirection.Out> argumenty vzhledem k tomu, že jejich data proudí mimo <xref:System.Activities.Statements.Interop> aktivity. Všimněte si, že dva <xref:System.Activities.ArgumentDirection.Out> argumenty jsou přidány s názvy `DiscountPercentOut` a `TotalOut` k označení, že představují <xref:System.Activities.ArgumentDirection.Out> argumenty. `DiscountCalculator` Typ určený jako <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityType%2A>.  
+    >  `Subtotal`, `DiscountPercent`, A `Total` vlastnosti `DiscountCalculator` aktivity jsou prezentované jako argumenty <xref:System.Activities.Statements.Interop> aktivity a proměnných vázaná na místní pracovní postup ve <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityProperties%2A> kolekce. `Subtotal` je přidána jako <xref:System.Activities.ArgumentDirection.In> argument protože `Subtotal` tok dat do <xref:System.Activities.Statements.Interop> aktivitu, a `DiscountPercent` a `Total` jsou přidány jako <xref:System.Activities.ArgumentDirection.Out> argumenty vzhledem k tomu, že jejich data proudí mimo <xref:System.Activities.Statements.Interop> aktivity. Všimněte si, že dva <xref:System.Activities.ArgumentDirection.Out> argumenty jsou přidány s názvy `DiscountPercentOut` a `TotalOut` k označení, že představují <xref:System.Activities.ArgumentDirection.Out> argumenty. `DiscountCalculator` Typ určený jako <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityType%2A>.  
   
 5.  Stisknutím klávesy CTRL + F5 sestavení a spuštění aplikace. Nahraďte různé hodnoty pro `Subtotal` hodnotu k otestování úrovní záznamu do různých slevu poskytované `DiscountCalculator` aktivity.  
   
@@ -370,10 +371,10 @@ Rule3: IF this.DiscountPercent > 0
 |Funkce pravidel|Dokumentace|  
 |-------------------|-------------------|  
 |Přehled pravidel|[Úvod k modulu Windows Workflow Foundation pravidla](http://go.microsoft.com/fwlink/?LinkID=152836)|  
-|Sada pravidel pro|[Použití sady pravidel v pracovních postupech](http://go.microsoft.com/fwlink/?LinkId=178516) a<xref:System.Workflow.Activities.Rules.RuleSet>|  
+|Sada pravidel pro|[Použití sady pravidel v pracovních postupech](http://go.microsoft.com/fwlink/?LinkId=178516) a <xref:System.Workflow.Activities.Rules.RuleSet>|  
 |Vyhodnocení pravidla|[Vyhodnocení pravidla v sady pravidel](http://go.microsoft.com/fwlink/?LinkId=178517)|  
 |Pravidla řetězení|[Předat dál řetězení řízení](http://go.microsoft.com/fwlink/?LinkId=178518) a [dál řetězení pravidel](http://go.microsoft.com/fwlink/?LinkId=178519)|  
 |Zpracování kolekce pravidel|[Zpracování kolekce pravidel](http://go.microsoft.com/fwlink/?LinkId=178520)|  
-|Pomocí aktivitě PolicyActivity|[Pomocí aktivity aktivitě PolicyActivity](http://go.microsoft.com/fwlink/?LinkId=178521) a<xref:System.Workflow.Activities.PolicyActivity>|  
+|Pomocí aktivitě PolicyActivity|[Pomocí aktivity aktivitě PolicyActivity](http://go.microsoft.com/fwlink/?LinkId=178521) a <xref:System.Workflow.Activities.PolicyActivity>|  
   
- Pracovní postupy vytvořené v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] nepoužívejte všechny pravidla funkce poskytované [!INCLUDE[wf1](../../../includes/wf1-md.md)], jako jsou podmínky deklarativní aktivity a podmíněného aktivity, jako <xref:System.Workflow.Activities.ConditionedActivityGroup> a <xref:System.Workflow.Activities.ReplicatorActivity>. V případě potřeby, tato funkce je dostupná pro pracovní postupy vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).
+ Pracovní postupy vytvořené v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] nepoužívejte všechny pravidla funkce poskytované [!INCLUDE[wf1](../../../includes/wf1-md.md)], jako jsou podmínky deklarativní aktivity a podmíněného aktivity, jako <xref:System.Workflow.Activities.ConditionedActivityGroup> a <xref:System.Workflow.Activities.ReplicatorActivity>. V případě potřeby, tato funkce je dostupná pro pracovní postupy vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Další informace najdete v tématu [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).

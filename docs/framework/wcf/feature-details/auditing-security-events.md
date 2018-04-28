@@ -1,35 +1,35 @@
 ---
-title: "Auditování událostí zabezpečení"
-ms.custom: 
+title: Auditování událostí zabezpečení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-caps.latest.revision: 
+caps.latest.revision: 27
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: cb8f112c71c743fd6650baf04b8db55ceaeef4ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 948ff11cf1b7ecacc6f9f5fdebfc3a0cbd1ef5b1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] může protokolovat události zabezpečení (úspěch, chyba nebo obě) se funkci auditování. Události se zapisují do protokolu událostí systému Windows a může být prověřen pomocí prohlížeče událostí.  
   
  Auditování poskytuje způsob, jak správce ke zjištění útoku, který má již došlo k chybě nebo právě probíhá. Kromě toho audit může pomoct vývojář pro ladění problémů souvisejících se zabezpečením. Například pokud k chybě v konfiguraci ověřování nebo Zásady vracení se změnami omylem odepře přístup k autorizovaným uživatelem, Vývojář můžete rychle zjistit a najít příčinu této chyby kontrolou protokolu událostí.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)][!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="audit-level-and-behavior"></a>Úroveň auditování a chování  
  Existují dvě úrovně audity zabezpečení:  
@@ -41,11 +41,11 @@ Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] m
  Můžete zkontrolovat obě audit úrovně pro úspěch nebo selhání, která se označuje jako *audit chování*.  
   
 ## <a name="audit-log-location"></a>Umístění protokolu auditování  
- Jakmile určíte, chování a úroveň auditování, můžete zadat umístění pro protokol auditu vy (nebo správce). Zahrnout tři možnosti: výchozí, aplikace a zabezpečení. Když zadáte výchozí, skutečný protokolu závisí na systém, který používáte a jestli systém podporuje zápis do protokolu zabezpečení. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v části "Operační systém" dál v tomto tématu.  
+ Jakmile určíte, chování a úroveň auditování, můžete zadat umístění pro protokol auditu vy (nebo správce). Zahrnout tři možnosti: výchozí, aplikace a zabezpečení. Když zadáte výchozí, skutečný protokolu závisí na systém, který používáte a jestli systém podporuje zápis do protokolu zabezpečení. Další informace najdete v části "Operační systém" dál v tomto tématu.  
   
  Zápis do protokolu zabezpečení vyžaduje `SeAuditPrivilege`. Ve výchozím nastavení pouze místní systém a Network Service účty mít toto oprávnění. Ke správě funkcí protokolu zabezpečení `read` a `delete` vyžaduje `SeSecurityPrivilege`. Ve výchozím nastavení je toto oprávnění mají pouze správci.  
   
- Naproti tomu ověřené uživatele můžete číst a zapisovat do protokolu aplikace. [!INCLUDE[wxp](../../../../includes/wxp-md.md)]zápisy auditovat události v protokolu aplikací ve výchozím nastavení. Protokol může také obsahovat osobní informace, které jsou viditelné pro všechny ověřené uživatele.  
+ Naproti tomu ověřené uživatele můžete číst a zapisovat do protokolu aplikace. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] zápisy auditovat události v protokolu aplikací ve výchozím nastavení. Protokol může také obsahovat osobní informace, které jsou viditelné pro všechny ověřené uživatele.  
   
 ## <a name="suppressing-audit-failures"></a>Potlačení selhání auditu  
  Další možností při auditování je, jestli se má potlačit jakákoli chyba auditu. Ve výchozím nastavení neovlivňuje chybu auditu aplikace. V případě potřeby však můžete nastavit možnost `false`, což způsobí, že vyvolání výjimky.  
@@ -86,10 +86,10 @@ Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] m
 </configuration>  
 ```  
   
- Pokud je povoleno auditování a `auditLogLocation` není zadána, je výchozí název protokolu "Zabezpečení" protokolu pro platformu podporující zápis do protokolu zabezpečení, jinak hodnota je "Aplikace" protokolu. Pouze [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wv](../../../../includes/wv-md.md)] operační systémy podporují zápis do protokolu zabezpečení. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v části "Operační systém" dál v tomto tématu.  
+ Pokud je povoleno auditování a `auditLogLocation` není zadána, je výchozí název protokolu "Zabezpečení" protokolu pro platformu podporující zápis do protokolu zabezpečení, jinak hodnota je "Aplikace" protokolu. Pouze [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wv](../../../../includes/wv-md.md)] operační systémy podporují zápis do protokolu zabezpečení. Další informace najdete v části "Operační systém" dál v tomto tématu.  
   
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení  
- Pokud uživatel se zlými úmysly ví, že je povoleno auditování, útočník odeslat neplatná zprávy, které způsobí položky auditu k zapsání. Pokud protokol auditu tímto způsobem, systém auditování selže. Toto riziko lze nastavit <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true` a použití vlastností prohlížeče událostí můžete řídit chování auditování. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]Článek Microsoft Support na zobrazování a správu protokolů událostí pomocí prohlížeče událostí v systému Windows XP k dispozici na [postup zobrazení a správě protokolů událostí v prohlížeči událostí v systému Windows XP](http://go.microsoft.com/fwlink/?LinkId=89150).  
+ Pokud uživatel se zlými úmysly ví, že je povoleno auditování, útočník odeslat neplatná zprávy, které způsobí položky auditu k zapsání. Pokud protokol auditu tímto způsobem, systém auditování selže. Toto riziko lze nastavit <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true` a použití vlastností prohlížeče událostí můžete řídit chování auditování. Další informace najdete v tématu Článek Microsoft Support na zobrazování a správu protokolů událostí pomocí prohlížeče událostí v systému Windows XP k dispozici na [postup zobrazení a správě protokolů událostí v prohlížeči událostí v systému Windows XP](http://go.microsoft.com/fwlink/?LinkId=89150).  
   
  Události auditu, které se zapisují do aplikačního protokolu na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] jsou viditelné pro všechny ověřené uživatele.  
   
@@ -100,8 +100,8 @@ Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] m
   
 |Systém|Protokolu aplikace|Protokolu zabezpečení|  
 |------------|---------------------|------------------|  
-|[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]nebo novější|Podporováno|Nepodporováno|  
-|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)]a[!INCLUDE[wv](../../../../includes/wv-md.md)]|Podporováno|Musíte mít přístup z více vláken kontextu`SeAuditPrivilege`|  
+|[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] nebo novější|Podporováno|Nepodporováno|  
+|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)] A [!INCLUDE[wv](../../../../includes/wv-md.md)]|Podporováno|Musíte mít přístup z více vláken kontextu `SeAuditPrivilege`|  
   
 #### <a name="other-factors"></a>Další faktory  
  Kromě operační systém následující tabulka popisuje další nastavení, které řídí povolování protokolování.  

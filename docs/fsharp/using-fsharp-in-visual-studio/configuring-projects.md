@@ -1,20 +1,17 @@
 ---
-title: "Konfigurace projektů (F #)"
-description: "Naučte se používat v Návrháři projektu při práci s projekty F # v sadě Visual Studio."
-keywords: "Visual f #, f #, funkční programování"
+title: 'Konfigurace projektů (F #)'
+description: 'Naučte se používat v Návrháři projektu při práci s projekty F # v sadě Visual Studio.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 8b2ed206-34e4-4256-a6ce-0c2499561165
-ms.openlocfilehash: f56fed1e16b4de1d97766f37cb1c72297d5502d5
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: eac5b61d6b61d2aa1cb7b1606d60995a0355e975
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuring-projects-in-visual-studio"></a>Konfigurace projektů v sadě Visual Studio
 
@@ -28,9 +25,9 @@ Toto téma obsahuje informace o tom, jak používat **Návrhář projektu** při
 
 |Stránka Návrhář projektu|Související odkazy|Popis|
 |---------------------|-------------|-----------|
-|`Application`|[Stránka aplikace, Návrhář projektu &#40; C &#35; &#41;](https://msdn.microsoft.com/library/ms247046.aspx)|Umožňuje zadat nastavení na úrovni aplikace a vlastnosti, například zda vytváříte knihovnu nebo spustitelného souboru, jaká verze rozhraní .NET Framework cílení aplikace a informace o kde prostředek soubory, které aplikace ukládají se používá.|
-|`Build`|[Vytvořit stránku, Návrhář projektu &#40; C &#35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|Umožňuje řídit, jak je zkompilovat kód.|
-|`Build Events`|[Vytvoření stránky události, Návrhář projektu &#40; C &#35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|Umožňuje zadat příkazy, pomocí před nebo po kompilace.|
+|`Application`|[Stránka aplikace, Návrhář projektu &#40;C&#35;&#41;](https://msdn.microsoft.com/library/ms247046.aspx)|Umožňuje zadat nastavení na úrovni aplikace a vlastnosti, například zda vytváříte knihovnu nebo spustitelného souboru, jaká verze rozhraní .NET Framework cílení aplikace a informace o kde prostředek soubory, které aplikace ukládají se používá.|
+|`Build`|[Stránka sestavení, Návrhář projektu &#40;C&#35;&#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|Umožňuje řídit, jak je zkompilovat kód.|
+|`Build Events`|[Stránka události sestavení, Návrhář projektu &#40;C&#35;&#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|Umožňuje zadat příkazy, pomocí před nebo po kompilace.|
 |`Debug`|[Stránka Ladění, Návrhář projektu](https://msdn.microsoft.com/library/2wcdezs5.aspx)|Umožňuje řídit, jak je aplikace spuštěná během ladění. To zahrnuje co příkazového řádku mají být použity a co je spouštěcí adresář vaší aplikace a všechny speciální ladění režimy, které chcete povolit, jako je například nativního kódu a SQL.|
 |`Reference Paths`|[Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)|Umožňuje určit, kam k vyhledání sestavení, která kód závisí na.|
 

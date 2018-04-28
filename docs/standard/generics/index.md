@@ -1,12 +1,8 @@
 ---
-title: Obecné typy v architektuře .NET Framework
-ms.custom: ''
+title: Obecné typy v .NET
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -39,16 +35,17 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d06c2ae074045ae750c079383f43c3d6aa6f726c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ba9149da420b7b7bdad01e1376793c64adaf1c8d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="generics-in-the-net-framework"></a>Obecné typy v architektuře .NET Framework
-<a name="top"></a>Obecné typy umožňují přizpůsobit metoda, třída, struktura nebo rozhraní na přesné datový typ, kterým se pracuje. Například místo použití <xref:System.Collections.Hashtable> třídy, což umožňuje klíče a hodnoty k být jakéhokoli typu, můžete použít <xref:System.Collections.Generic.Dictionary%602> obecné třídy a zadat typ povolené pro klíč a typ povolené pro hodnotu. Mezi výhody obecných typů jsou vyšší kódu – opětovné použití a typ zabezpečení.  
+# <a name="generics-in-net"></a>Obecné typy v .NET
+
+<a name="top"></a> Obecné typy umožňují přizpůsobit metoda, třída, struktura nebo rozhraní na přesné datový typ, kterým se pracuje. Například místo použití <xref:System.Collections.Hashtable> třídy, což umožňuje klíče a hodnoty k být jakéhokoli typu, můžete použít <xref:System.Collections.Generic.Dictionary%602> obecné třídy a zadat typ povolené pro klíč a typ povolené pro hodnotu. Mezi výhody obecných typů jsou vyšší kódu – opětovné použití a typ zabezpečení.  
   
- Toto téma obsahuje přehled obecných typů v rozhraní .NET Framework a souhrn obecná typů nebo metody. Obsahuje následující oddíly:  
+ Toto téma obsahuje přehled obecných typů v rozhraní .NET a souhrn obecná typů nebo metody. Obsahuje následující oddíly:  
   
 -   [Definování a použití obecných typů](#defining_and_using_generics)  
   
@@ -78,7 +75,7 @@ ms.lasthandoff: 12/23/2017
   
 <a name="generics_terminology"></a>   
 ### <a name="generics-terminology"></a>Terminologie obecných typů  
- K popisu obecných typů v rozhraní .NET Framework se používají následující termíny:  
+ K popisu obecných typů v rozhraní .NET, se používají následující termíny:  
   
 -   A *definice obecného typu* je třída, struktura nebo deklarace rozhraní, která funguje jako šablona, se zástupnými symboly pro typy, které může obsahovat nebo použít. Například <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> třídy může obsahovat dva typy: klíče a hodnoty. Vzhledem k definici obecného typu je pouze šablonu, nelze vytvořit instance třídy, struktury nebo rozhraní, které je definice obecného typu.  
   
@@ -145,11 +142,11 @@ ms.lasthandoff: 12/23/2017
   
 <a name="class_library_and_language_support"></a>   
 ## <a name="class-library-and-language-support"></a>Knihovny tříd a jazyková podpora  
- Rozhraní .NET Framework poskytuje řadu obecné třídy kolekcí v následujících oborů názvů:  
+ Rozhraní .NET poskytuje řadu obecné třídy kolekcí v následujících oborů názvů:  
   
--   <xref:System.Collections.Generic> Obor názvů obsahuje většinu typů obecnou kolekci, poskytuje rozhraní .NET Framework, jako <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602> obecné třídy.  
+-   <xref:System.Collections.Generic> Obor názvů obsahuje většinu typů obecnou kolekci poskytované .NET, například <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602> obecné třídy.  
   
--   <xref:System.Collections.ObjectModel> Obor názvů katalogizuje další obecné typy kolekcí, jako <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obecná třída, která se hodí pro zpřístupnění objektové modely uživatelům vaší třídy.  
+-   <xref:System.Collections.ObjectModel> Obor názvů obsahuje další obecné typy kolekcí, jako jsou například <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obecná třída, která se hodí pro zpřístupnění objektové modely uživatelům vaší třídy.  
   
  Obecná rozhraní pro provádění porovnání rovnosti a řazení jsou součástí <xref:System> oboru názvů, společně s obecný delegát typy obslužných rutin událostí, převody a predikáty vyhledávání.  
   
@@ -172,11 +169,11 @@ ms.lasthandoff: 12/23/2017
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Generování kolekcí v architektuře .NET Framework](../../../docs/standard/generics/collections.md)|Popisuje obecnou kolekci třídy a jiné obecné typy v rozhraní .NET Framework.|  
+|[Obecné kolekce na platformě .NET](../../../docs/standard/generics/collections.md)|Popisuje obecnou kolekci třídy a jiné obecné typy v rozhraní .NET.|  
 |[Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|Popisuje obecní delegáti převody, predikáty vyhledávání a akce, které budou provedeny na elementy pole nebo kolekce.|  
 |[Obecná rozhraní](../../../docs/standard/generics/interfaces.md)|Popisuje obecná rozhraní, které tvoří běžné funkce celé řady obecných typů.|  
 |[Kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md)|Popisuje kovariance a kontravariance v parametry obecného typu.|  
-|[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Poskytuje souhrnné informace o vlastnostech a scénáře použití typy kolekcí v rozhraní .NET Framework, včetně obecné typy.|  
+|[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Poskytuje souhrnné informace o vlastnostech a scénáře použití typy kolekcí v rozhraní .NET, včetně obecné typy.|  
 |[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje obecná pravidla pro určování, kdy použít obecné typy kolekcí.|  
 |[Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Vysvětluje, jak vygenerovat dynamická sestavení, které zahrnují obecné typy a metody.|  
 |[Obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md)|Popisuje funkce obecných typů pro uživatele, Visual Basic, včetně témat s postupy pro používání a definice obecných typů.|  

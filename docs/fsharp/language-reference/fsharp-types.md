@@ -1,20 +1,17 @@
 ---
 title: Typy F#
-description: "Další informace o typy, které se používají v F # a jak jsou s názvem a popsané typů F #."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Další informace o typy, které se používají v F # a jak jsou s názvem a popsané typů F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: c7272a0d-5ab6-4eae-bceb-e49af498b917
-ms.openlocfilehash: 9b7235637f301f91ae2cc8fbc59adc27cdfd5bd0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 42521ed75a76753af81d3bbb9693ec5af29536ad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="f-types"></a>Typy F#
 
@@ -51,12 +48,12 @@ V následující tabulce jsou uvedeny aspektů typ syntaxe typů F #.
 |pole|*Název typu*[] nebo<br /><br />*Název typu* pole|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
 |Dvourozměrná pole|*Název typu*[,]|`int[,]`<br /><br />`float[,]`|
 |trojrozměrné pole|*Název typu*[,]|`float[,,]`|
-|řazené kolekce členů|*Typ název1* &#42; *typ name2* ...|Například `(1,'b',3)` má typ`int * char * int`|
+|řazené kolekce členů|*Typ name1* &#42; *typ name2* ...|Například `(1,'b',3)` má typ `int * char * int`|
 |Obecný typ|*parametr typu* *název obecného typu*<br /><br />or<br /><br />*název obecného typu*&lt;*seznam parametrů typu*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
 |vytvořený typ (obecného typu, který má zadaný argument konkrétního typu)|*argument typu* *název obecného typu*<br /><br />or<br /><br />*název obecného typu*&lt;*seznam typu argumentů*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
-|typ funkce, který má jeden parametr|*Parametr type1*  - &gt; *návratový typ*|Funkce, která přebírá `int` a vrátí `string` má typ`int -> string`|
-|typ funkce, která má několik parametrů|*Parametr type1*  - &gt; *parametr type2*  - &gt; ... -&gt; *návratový typ*|Funkce, která přebírá `int` a `float` a vrátí `string` má typ`int -> float -> string`|
-|vyšší pořadí funkce jako parametr|(*typ funkce*)|`List.map`má typ`('a -> 'b) -> 'a list -> 'b list`|
+|typ funkce, který má jeden parametr|*Parametr type1*  - &gt; *návratový typ*|Funkce, která přebírá `int` a vrátí `string` má typ `int -> string`|
+|typ funkce, která má několik parametrů|*Parametr type1*  - &gt; *parametr type2*  - &gt; ... -&gt; *návratový typ*|Funkce, která přebírá `int` a `float` a vrátí `string` má typ `int -> float -> string`|
+|vyšší pořadí funkce jako parametr|(*typ funkce*)|`List.map` má typ `('a -> 'b) -> 'a list -> 'b list`|
 |delegát|Delegovat z *typ funkce*|`delegate of unit -> int`|
 |flexibilní typu|#*Název typu*|`#System.Windows.Forms.Control`<br /><br />`#seq<int>`|
 
@@ -66,12 +63,12 @@ V následující tabulce jsou uvedeny aspektů typ syntaxe typů F #.
 |Téma|Popis|
 |-----|-----------|
 |[Primitivní typy](primitive-types.md)|Popisuje předdefinované jednoduché typy, jako je například integrální typy, typem logická hodnota a typů znaků.|
-|[Typ jednotky.](unit-type.md)|Popisuje `unit` typu, typ, který má jednu hodnotu a je indikován (); ekvivalent `void` v jazyce C# a `Nothing` v jazyce Visual Basic.|
+|[Typ jednotky](unit-type.md)|Popisuje `unit` typu, typ, který má jednu hodnotu a je indikován (); ekvivalent `void` v jazyce C# a `Nothing` v jazyce Visual Basic.|
 |[Řazené kolekce členů](tuples.md)|Popisuje typ řazené kolekce členů, typ, který se skládá z přidružené hodnoty libovolného typu seskupené do párů, triples, quadruples a tak dále.|
 |[Možnosti](options.md)|Popisuje typ možnosti, typ, který může mít hodnotu nebo být prázdný.|
 |[Seznamy](lists.md)|Popisuje seznamy, které jsou seřazené, neměnné řadu elementy všechny stejného typu.|
 |[Pole](arrays.md)|Popisuje pole, které jsou seřazené sady měnitelný elementů stejného typu, které zabírají blok souvislé paměti a mají pevnou velikost.|
-|[Pořadí](sequences.md)|Popisuje pořadí typu, který představuje řadu logických hodnot. jednotlivé hodnoty se vypočítávají pouze v případě potřeby.|
+|[Sekvence](sequences.md)|Popisuje pořadí typu, který představuje řadu logických hodnot. jednotlivé hodnoty se vypočítávají pouze v případě potřeby.|
 |[Záznamy](records.md)|Popisuje typ záznamu, malé agregace s názvem hodnot.|
 |[Rozlišovaná sjednocení](discriminated-unions.md)|Popisuje rozlišovaná sjednocení typu, typ, jejichž hodnoty může být jakýkoli sadu možné typy.|
 |[Funkce](functions/index.md)|Popisuje funkce hodnot.|

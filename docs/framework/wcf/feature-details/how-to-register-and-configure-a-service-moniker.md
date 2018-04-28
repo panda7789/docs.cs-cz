@@ -1,27 +1,29 @@
 ---
-title: "Postupy: registrace a konfigurace Monikeru služby"
-ms.custom: 
+title: 'Postupy: registrace a konfigurace Monikeru služby'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6e5c57927a455b5d2a253becac35b1bf9033933f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 52b3ec27560ca2dc47b7951cb209f33f307fa7ea
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: registrace a konfigurace Monikeru služby
 Před použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] monikeru služby v rámci aplikace modelu COM s typem kontrakt, je nutné zaregistrovat požadované s atributy typy v modelu COM a nakonfigurovat aplikaci COM a moniker s konfigurací požadovaná vazba.  
@@ -36,7 +38,7 @@ Před použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] moniker
     [assembly: ComVisible(true)]  
     ```  
   
-3.  Kompilace spravovaný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta jako sestavení se silným názvem. To vyžaduje podepsání pomocí páru kryptografických klíčů. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Podepsání sestavení silným názvem](http://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
+3.  Kompilace spravovaný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta jako sestavení se silným názvem. To vyžaduje podepsání pomocí páru kryptografických klíčů. Další informace najdete v tématu [podepsání sestavení se silným názvem](http://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
   
 4.  Použijte nástroj Assembly Registration (Regasm.exe) s `/tlb` možnost zaregistrovat typy v sestavení s COM.  
   

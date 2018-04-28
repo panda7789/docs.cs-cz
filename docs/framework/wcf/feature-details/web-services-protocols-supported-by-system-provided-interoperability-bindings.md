@@ -14,17 +14,17 @@ helpviewer_keywords:
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-caps.latest.revision: ''
+caps.latest.revision: 39
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4bfc4342435580796423056889b1c3bd22153740
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 754915d5ba596b5121c47be3533ee679b4f9594b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Pro zjednodušení konfigurace služby pro interoperabilita osvědčených postupů, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zavádí tři umožňuje vzájemnou spolupráci vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro spolupráci s organizace rozvoj z strukturovaných informace standardy (OASIS) standardů [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje jednu vzájemná spolupráce poskytnutými systémem vazbu: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje dvě umožňuje vzájemnou spolupráci vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma uvádí specifikace, které podporují umožňuje vzájemnou spolupráci vazby poskytované systémem.  
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/26/2018
 |Přenos|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`, `WSHttpBinding`, a `WS2007HttpBinding` použít přenosy HTTP a HTTPS.|  
 |Zasílání zpráv|MTOM|[MTOM](http://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`, `wsHttpBinding`, a `ws2007HttpBinding` podporu zpráva přenosu optimalizace mechanismus (MTOM). Nepoužívá se ve výchozím nastavení. Chcete-li použít MTOM, nastavte `messageEncoding` atribut `"Mtom"`.<br /><br /> Příklad:<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
 |Metadata|WSDL 1.1|[WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Webové služby popis Language (WSDL) používá k popisu služby.|  
-|Metadata|WS-zásad|[WS-Policy](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu se používá k popisu služby požadavky a možnosti.|  
+|Metadata|WS-zásad|[WS-zásad](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu se používá k popisu služby požadavky a možnosti.|  
 |Metadata|WS-Policy 1.5|[WS-Policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu se používá k popisu služby požadavky a možnosti.|  
 |Metadata|WS-PolicyAttachment|[WS-PolicyAttachment](http://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje WS-PolicyAttachment připojit výrazy zásad v různých oborech v webové služby popis Language (WSDL).|  
 |Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
@@ -71,7 +71,7 @@ ms.lasthandoff: 03/26/2018
 |Zabezpečení|WS-Trust|[WS-Trust](http://go.microsoft.com/fwlink/?LinkId=95318)<br /><br /> Používá WS-SecureConversation (viz výše).|  
 |Spolehlivé zasílání zpráv|WS-ReliableMessaging|[WS-ReliableMessaging](http://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> Použijte, pokud vazba je nakonfigurovaný na použití `reliableSession`.<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
 |Transakce|WS-AtomicTransaction|[WS-AtomicTransaction](http://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Používáno pro komunikaci mezi správci transakcí. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a klienti vždy používají místní transakce správce.|  
-|Transakce|WS-spolupráce|[WS-Coordination](http://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Pomocí toku kontext transakce při `flowTransactions` je atribut nastaven na "Povoleno" nebo "Požadováno".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
+|Transakce|WS-spolupráce|[WS-spolupráce](http://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Pomocí toku kontext transakce při `flowTransactions` je atribut nastaven na "Povoleno" nebo "Požadováno".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
   
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>– wsFederationHttpBinding a – ws2007FederationHttpBinding  
  [ \<– WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a [ \<– ws2007FederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elementy byly zavedeny kvůli zajištění podpory pro federovaných scénářích, kde třetí strany vydá token používá k ověření klienta. Kromě protokolech používaných `wsHttpBinding`, `wsFederationHttpBinding` využívá:  
@@ -96,7 +96,7 @@ ms.lasthandoff: 03/26/2018
 </wsFederationHttpBinding>  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Federační](../../../../docs/framework/wcf/feature-details/federation.md) .  
+ Další informace najdete v tématu [Federation](../../../../docs/framework/wcf/feature-details/federation.md) .  
   
 ## <a name="system-provided-metadata-bindings"></a>Vazby poskytované systémem metadat  
  Následující tabulky popisují protokoly nepodporuje vazby poskytované systémem umožňuje vzájemnou spolupráci metadata vystavené <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType> třídy.  

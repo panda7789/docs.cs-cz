@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Konfigurace portu certifikát protokolu SSL"
-ms.custom: 
+title: 'Postupy: Konfigurace portu certifikát protokolu SSL'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,23 +17,24 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3fbd3b640e90ecf0ff5857bd33465e8c60135eac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bbf3d4b9888d07a89d1b6a8225a7f7415e8c67cc
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu certifikát protokolu SSL
-Při vytváření vlastním hostováním [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby s <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu tohoto používá, musíte taky nakonfigurovat port společně s certifikátem X.509. Pokud nejsou vytváření samoobslužných hostované služby, můžete hostovat služby v Internetové informační služby (IIS). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+Při vytváření vlastním hostováním [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby s <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu tohoto používá, musíte taky nakonfigurovat port společně s certifikátem X.509. Pokud nejsou vytváření samoobslužných hostované služby, můžete hostovat služby v Internetové informační služby (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  Konfigurace portu, na nástroj, který používáte závisí na operační systém, který běží na vašem počítači.  
   
- Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)], použijte nástroj HttpCfg.exe. S [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] tento nástroj je nainstalován. S [!INCLUDE[wxp](../../../../includes/wxp-md.md)], si můžete stáhnout nástroj na [nástrojů podpory systému Windows XP Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=88606). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Httpcfg přehled](http://go.microsoft.com/fwlink/?LinkId=88605). [Dokumentace nástrojů podpory systému Windows](http://go.microsoft.com/fwlink/?LinkId=94840) vysvětluje syntaxe pro nástroj Httpcfg.exe.  
+ Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)], použijte nástroj HttpCfg.exe. S [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] tento nástroj je nainstalován. S [!INCLUDE[wxp](../../../../includes/wxp-md.md)], si můžete stáhnout nástroj na [nástrojů podpory systému Windows XP Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=88606). Další informace najdete v tématu [Httpcfg přehled](http://go.microsoft.com/fwlink/?LinkId=88605). [Dokumentace nástrojů podpory systému Windows](http://go.microsoft.com/fwlink/?LinkId=94840) vysvětluje syntaxe pro nástroj Httpcfg.exe.  
   
  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], pomocí nástroje Netsh.exe, který už je nainstalovaný.  
   
@@ -66,9 +68,9 @@ Při vytváření vlastním hostováním [!INCLUDE[indigo1](../../../../includes
   
 ### <a name="to-get-a-certificates-thumbprint"></a>Chcete-li získat kryptografický otisk certifikátu  
   
-1.  Pomocí modulu snap-in Certifikáty konzoly MMC najít certifikát X.509, který je zamýšlený účel ověřování klienta. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+1.  Pomocí modulu snap-in Certifikáty konzoly MMC najít certifikát X.509, který je zamýšlený účel ověřování klienta. Další informace najdete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
-2.  Přístup k kryptografický otisk certifikátu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
+2.  Přístup k kryptografický otisk certifikátu. Další informace najdete v tématu [postupy: načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
   
 3.  Zkopírujte kryptografický otisk certifikátu do textového editoru, například Poznámkový blok.  
   

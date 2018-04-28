@@ -1,28 +1,30 @@
 ---
-title: "Zabezpečení služeb"
-ms.custom: 
+title: Zabezpečení služeb
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - configuration [WCF], securing services
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 2b8e84fe75f812cdcb97dcc24a0edad2d238515b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d5fed0e842abd815d0483e26e1e1f350899d1506
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se skládá ze dvou primární požadavky: přenos zabezpečení a autorizaci. (Třetí požadavek, auditování událostí zabezpečení, je popsaný v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno zabezpečení přenosu zahrnuje ověření (ověření identity služby a klient), důvěrnost (šifrování zpráv) a integrita (digitální podepisování, které zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení jenom mohou uživatelé s oprávněním ke čtení souboru. Pomocí funkce [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], jsou požadavky na dva primární snadno implementovat.  
@@ -49,13 +51,13 @@ Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se sk
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Infrastruktury umožňuje použít tyto mechanismy zabezpečení systému Windows. Proto při vytváření služby, který je nasazen na intranetu, a jehož klienti omezen na členy domény systému Windows, zabezpečení je snadno implementovat. Jenom oprávnění uživatelé můžou přihlásit k doméně. Po přihlášení uživatele, řadičem Kerberos umožňuje každého uživatele k navázání zabezpečeného kontexty s jinými počítači nebo aplikace. V místním počítači můžete snadno vytvořit skupiny, a při ochraně určitých složek, tyto skupiny můžete použít k přiřazování přístupovými oprávněními v počítači.  
   
 ## <a name="implementing-windows-security-on-intranet-services"></a>Implementace zabezpečení systému Windows na intranetu služby  
- Chcete-li zabezpečit aplikaci spuštěnou výhradně v doméně systému Windows, můžete použít výchozí nastavení zabezpečení buď <xref:System.ServiceModel.WSHttpBinding> nebo <xref:System.ServiceModel.NetTcpBinding> vazby. Ve výchozím nastavení, kdokoli ve stejné doméně systému Windows přístup [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Protože tyto uživatelé přihlásí k síti, jsou důvěryhodné. Zprávy mezi službou a klienta jsou utajení šifrována a podepsaný integritu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]jak vytvořit službu, která využívá zabezpečení systému Windows, najdete v části [postupy: zabezpečení služby s pověřeními Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
+ Chcete-li zabezpečit aplikaci spuštěnou výhradně v doméně systému Windows, můžete použít výchozí nastavení zabezpečení buď <xref:System.ServiceModel.WSHttpBinding> nebo <xref:System.ServiceModel.NetTcpBinding> vazby. Ve výchozím nastavení, kdokoli ve stejné doméně systému Windows přístup [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Protože tyto uživatelé přihlásí k síti, jsou důvěryhodné. Zprávy mezi službou a klienta jsou utajení šifrována a podepsaný integritu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] jak vytvořit službu, která využívá zabezpečení systému Windows, najdete v části [postupy: zabezpečení služby s pověřeními Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
   
 ### <a name="authorization-using-the-principalpermissionattribute-class"></a>Autorizace pomocí třídy PrincipalPermissionAttribute  
- Pokud potřebujete omezit přístup k prostředkům v počítači, nejjednodušším způsobem je použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> třídy. Tento atribut umožňuje omezit volání náročných operací služby, které uživatel bude v zadané skupině Windows nebo role, nebo na konkrétního uživatele. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Postupy: omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).  
+ Pokud potřebujete omezit přístup k prostředkům v počítači, nejjednodušším způsobem je použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> třídy. Tento atribut umožňuje omezit volání náročných operací služby, které uživatel bude v zadané skupině Windows nebo role, nebo na konkrétního uživatele. Další informace najdete v tématu [postupy: omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).  
   
 ### <a name="impersonation"></a>Zosobnění  
- Zosobnění je jiný mechanismus, který můžete použít k řízení přístupu k prostředkům. Ve výchozím nastavení spustí službě hostované službou IIS s identitou účtu ASPNET. U účtu ASPNET můžete přístup pouze k prostředkům, pro které má oprávnění. Nicméně je možné nastavit seznam řízení přístupu pro složku vyloučit ASPNET účet služby, ale povolit určité identity pro přístup do složky. Otázka pak stane jak umožnit uživatelům přístup ke složce, pokud uděláte to tak není povoleno účtu ASPNET. Odpověď je použití zosobnění, které je povoleno službu používat pověření klienta pro přístup k určitému prostředku. Dalším příkladem je při přístupu k databázi systému SQL Server, ke kterému mají jenom určitým uživatelům oprávnění. [!INCLUDE[crabout](../../../includes/crabout-md.md)]pomocí zosobnění, najdete v tématu [postupy: zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md) a [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Zosobnění je jiný mechanismus, který můžete použít k řízení přístupu k prostředkům. Ve výchozím nastavení spustí službě hostované službou IIS s identitou účtu ASPNET. U účtu ASPNET můžete přístup pouze k prostředkům, pro které má oprávnění. Nicméně je možné nastavit seznam řízení přístupu pro složku vyloučit ASPNET účet služby, ale povolit určité identity pro přístup do složky. Otázka pak stane jak umožnit uživatelům přístup ke složce, pokud uděláte to tak není povoleno účtu ASPNET. Odpověď je použití zosobnění, které je povoleno službu používat pověření klienta pro přístup k určitému prostředku. Dalším příkladem je při přístupu k databázi systému SQL Server, ke kterému mají jenom určitým uživatelům oprávnění. [!INCLUDE[crabout](../../../includes/crabout-md.md)] pomocí zosobnění, najdete v tématu [postupy: zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md) a [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="security-on-the-internet"></a>Zabezpečení Internetu  
  Zabezpečení na Internetu se skládá ze stejné požadavky jako zabezpečení v síti intranet. Služba potřebuje pro svoje přihlašovací údaje k prokázání své pravosti k dispozici, a klienti se musí k prokázání své identity ke službě. Jakmile je ověřené identity klienta, můžete řídit službu kolik přístup k prostředkům má klient. Kvůli heterogenní povaha Internetu, však přihlašovací údaje lišit od těch, které používá v doméně systému Windows. Zatímco zpracovává řadič protokolu Kerberos k ověřování uživatelů v doméně s lístky pro přihlašovací údaje na Internetu, služeb a klientů závisí na některý ze několik různých způsobů, jak přihlašovací údaje k dispozici. Cílem tohoto tématu, ale je k dispozici běžný postup, který umožňuje vytvářet [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] službu, která je přístupné z Internetu.  
@@ -69,17 +71,17 @@ Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se sk
 ### <a name="credentials-used-by-iis"></a>Přihlašovací údaje používané službou IIS  
  Na rozdíl od založenou na protokolu Kerberos řadiče domény systému Windows Internet je prostředí bez jeden řadič pro správu miliony uživatelů přihlásit kdykoli. Místo toho přihlašovací údaje na Internetu jsou nejčastěji ve formě certifikáty X.509 (také označované jako (Secure Sockets Layer) nebo SSL, certifikáty). Tyto certifikáty jsou obvykle vydává *certifikační autority*, může být jiné společnosti, která se zaručuje za pravost certifikát a uživatel je vystavený pro. Chcete-li vystavit služby v síti Internet, je nutné zadat také důvěryhodný certifikát k ověření služby.  
   
- Otázka v tomto okamžiku dojde, jak můžete získat tento certifikát? Jeden z přístupů je přejít na certifikační autority, například Authenticode nebo VeriSign, až budete připraveni k nasazení služby a zakupte certifikát pro vaši službu. Ale pokud jste ve fázi vývoje s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a není ještě připraven pro potvrzení při nákupu certifikát, nástroje a techniky existují pro vytváření certifikátů X.509, které můžete použít k simulaci produkčním nasazení. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Otázka v tomto okamžiku dojde, jak můžete získat tento certifikát? Jeden z přístupů je přejít na certifikační autority, například Authenticode nebo VeriSign, až budete připraveni k nasazení služby a zakupte certifikát pro vaši službu. Ale pokud jste ve fázi vývoje s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a není ještě připraven pro potvrzení při nákupu certifikát, nástroje a techniky existují pro vytváření certifikátů X.509, které můžete použít k simulaci produkčním nasazení. Další informace najdete v tématu [práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="security-modes"></a>Režimy zabezpečení  
  Programování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zabezpečení zahrnuje několik důležitých rozhodovací body. Jeden z Většina základních je volba *režim zabezpečení*. Jsou dva režimy hlavní zabezpečení *režim přenosu* a *režim zprávy*.  
   
  Je třetí režimu, který kombinuje sémantika oba hlavní režimy, *přenosu s režimem přihlašovací údaje zpráva*.  
   
- Režim zabezpečení určuje, jak jsou zabezpečené zprávy, a každou volbu obsahuje výhody a nevýhody, jak je popsáno níže. [!INCLUDE[crabout](../../../includes/crabout-md.md)]nastavení režimu zabezpečení, najdete v části [postupy: nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
+ Režim zabezpečení určuje, jak jsou zabezpečené zprávy, a každou volbu obsahuje výhody a nevýhody, jak je popsáno níže. [!INCLUDE[crabout](../../../includes/crabout-md.md)] nastavení režimu zabezpečení, najdete v části [postupy: nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
   
 #### <a name="transport-mode"></a>Režim přenosu  
- Existuje několik vrstev mezi sítí a aplikace. Jedním z nich je *přenosu* vrstvy*,* které spravuje přenos zpráv mezi koncovými body. K dispozici účelu je jenom potřeba, abyste rozuměli tomu, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá několik přenosové protokoly, z nichž každý můžete zabezpečit přenos zpráv. ([!INCLUDE[crabout](../../../includes/crabout-md.md)] přenosy, najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).)  
+ Existuje několik vrstev mezi sítí a aplikace. Jedním z nich je *přenosu* vrstvy *,* které spravuje přenos zpráv mezi koncovými body. K dispozici účelu je jenom potřeba, abyste rozuměli tomu, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá několik přenosové protokoly, z nichž každý můžete zabezpečit přenos zpráv. ([!INCLUDE[crabout](../../../includes/crabout-md.md)] přenosy, najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).)  
   
  Běžně používané protokol je HTTP; Další je TCP. Každý z těchto protokolů můžete zabezpečit přenos mechanismus (nebo mechanismy) konkrétní zprávu protokolu. Například je protokol HTTP zabezpečené pomocí protokolu SSL přes protokol HTTP, často se používá zkratka jako "Protokol HTTPS." Pokud vyberete režim přenosu pro zabezpečení, jsou proto rozhodnete použít mechanismus, jak je stanoveno protokolem. Například, pokud jste vybrali <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte režim zabezpečení na přenos, vybíráte SSL přes protokol HTTP (HTTPS) jako mechanismus zabezpečení. Výhodou režim přenosu je, že je efektivnější než režim zprávy protože zabezpečení je integrované srovnatelně nízké úrovni. Pokud používáte režim přenosu, musí být implementována mechanismus zabezpečení podle specifikace pro přenos, a proto zprávy můžete procházet bezpečně jenom z typu point-to-point prostřednictvím přenosu.  
   
@@ -102,12 +104,12 @@ Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se sk
  A *pověření hodnota* je skutečnou pověření používá služby. Po zadání typ přihlašovacích údajů, můžete také nakonfigurovat služby s aktuálními pověřeními. Pokud jste vybrali systému Windows (a služba bude spuštěna v doméně systému Windows), pak nezadáte hodnotu skutečné přihlašovacích údajů.  
   
 ## <a name="identity"></a>Identita  
- V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], termín *identity* má odlišný význam na server a klienta. Stručně řečeno při kterém běží služba, identity je přiřazený k kontext zabezpečení po ověření. Chcete-li zobrazit skutečné identitu, zkontrolujte <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> a <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> vlastnosti <xref:System.ServiceModel.ServiceSecurityContext> třídy. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Postupy: prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md).  
+ V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], termín *identity* má odlišný význam na server a klienta. Stručně řečeno při kterém běží služba, identity je přiřazený k kontext zabezpečení po ověření. Chcete-li zobrazit skutečné identitu, zkontrolujte <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> a <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> vlastnosti <xref:System.ServiceModel.ServiceSecurityContext> třídy. Další informace najdete v tématu [postupy: prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md).  
   
- Na klientovi, na rozdíl od identity slouží k ověření služby. V době návrhu, můžete nastavit vývojář klienta [ \<identity >](../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element na hodnotu získat ze služby. V době běhu klient zkontroluje hodnota elementu proti skutečné identitu služby. Pokud kontrola selže, ukončí klient komunikace. Hodnota může být hlavní název uživatele (UPN), pokud je služba spuštěna pod identitou konkrétní uživatele nebo hlavní název služby (SPN), pokud je služba spuštěna pod účtem počítače. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Služby identit a ověření](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md). Přihlašovací údaje mohou být také certifikát nebo pole na certifikát, který identifikuje certifikát nalezen.  
+ Na klientovi, na rozdíl od identity slouží k ověření služby. V době návrhu, můžete nastavit vývojář klienta [ \<identity >](../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element na hodnotu získat ze služby. V době běhu klient zkontroluje hodnota elementu proti skutečné identitu služby. Pokud kontrola selže, ukončí klient komunikace. Hodnota může být hlavní název uživatele (UPN), pokud je služba spuštěna pod identitou konkrétní uživatele nebo hlavní název služby (SPN), pokud je služba spuštěna pod účtem počítače. Další informace najdete v tématu [identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md). Přihlašovací údaje mohou být také certifikát nebo pole na certifikát, který identifikuje certifikát nalezen.  
   
 ## <a name="protection-levels"></a>Úrovně ochrany  
- `ProtectionLevel` Vlastnost proběhne několik třídy atributů (například <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy). Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo části zprávy) podporující služby jsou podepsané, podepsané a šifrovaná nebo odeslán bez informace podpisy nebo šifrování. [!INCLUDE[crabout](../../../includes/crabout-md.md)]vlastnost, najdete v části [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md)a programovací příklady najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]navrhování kontrakt služby s `ProtectionLevel` v kontextu, najdete v části [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
+ `ProtectionLevel` Vlastnost proběhne několik třídy atributů (například <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy). Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo části zprávy) podporující služby jsou podepsané, podepsané a šifrovaná nebo odeslán bez informace podpisy nebo šifrování. [!INCLUDE[crabout](../../../includes/crabout-md.md)] vlastnost, najdete v části [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md)a programovací příklady najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] navrhování kontrakt služby s `ProtectionLevel` v kontextu, najdete v části [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel>  

@@ -1,20 +1,17 @@
 ---
 title: Konstruktory (F#)
-description: "Zjistěte, jak definovat a použít konstruktory v jazyce F # k vytvoření a inicializace třídy a struktury objektů."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Zjistěte, jak definovat a použít konstruktory v jazyce F # k vytvoření a inicializace třídy a struktury objektů.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: e0da2250-29de-4145-a1be-e5faff080759
-ms.openlocfilehash: 60ed93f1c1dc15e99465d969c9e4fd3e61c28ffa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d9062ae747c37bdc14104658ad0ec7d11f5545f0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="constructors"></a>Konstruktory
 
@@ -94,4 +91,4 @@ Když je zděděný z databáze třídu, která má konstruktor, je nutné zadat
 Kromě určení kód pro vytváření objektů, statické `let` a `do` vazby mohou být vytvořeny v typy tříd, které se spouští před typ poprvé použila k provedení inicializace na úrovni typu. Další informace najdete v tématu [ `let` vazby do ve třídách](let-bindings-in-classes.md) a [ `do` vazby do ve třídách](do-bindings-in-classes.md).
 
 ## <a name="see-also"></a>Viz také
-[Členy](index.md)
+[Členové](index.md)

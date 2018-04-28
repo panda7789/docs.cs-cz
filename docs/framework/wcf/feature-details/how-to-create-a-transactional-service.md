@@ -1,24 +1,26 @@
 ---
-title: "Postupy: Vytvoření transakční služby"
-ms.custom: 
+title: 'Postupy: Vytvoření transakční služby'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4a61c1c4aeba63baee3c5e2ba5110710ed9f45f2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9e39ecd346b5d5fb4113fd17abe9bde715a12aa4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-transactional-service"></a>Postupy: Vytvoření transakční služby
 Tento příklad znázorňuje různé aspekty vytvoření transakční služby a použití transakci iniciované klientem ke koordinaci operací služby.  
@@ -76,7 +78,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     }  
     ```  
   
-3.  V konfiguračním souboru, určující, zda by měl plynoucích kontext transakce a protokoly, který se má použít k tomu, nakonfigurujte vazby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Konfigurace transakcí ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md). Konkrétně je typ vazby zadaný v elementu koncový bod `binding` atribut. [ \<Endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) obsahuje element `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `transactionalOleTransactionsTcpBinding`, jak ukazuje následující ukázka konfigurace.  
+3.  V konfiguračním souboru, určující, zda by měl plynoucích kontext transakce a protokoly, který se má použít k tomu, nakonfigurujte vazby. Další informace najdete v tématu [konfigurace transakcí ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md). Konkrétně je typ vazby zadaný v elementu koncový bod `binding` atribut. [ \<Endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) obsahuje element `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `transactionalOleTransactionsTcpBinding`, jak ukazuje následující ukázka konfigurace.  
   
     ```xml  
     <service name="CalculatorService">  
@@ -193,7 +195,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
   
 ### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Řízení životního cyklu instance služby zasílání transakčních  
   
-1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti k určení, zda je základní instance služby vydané po dokončení transakce. Vzhledem k tomu, že se `true`, pokud není uvedeno jinak, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vykazuje aktivaci "v běhu" efektivní a předvídatelné chování. Volání do služby na následné transakce jsou zajištěná nové instance služby se žádné zbytky stav předchozí transakce. Přestože se často užitečné, v některých případech může chcete zachovat stav v rámci instance služby nad rámec dokončení transakce. Příklady tohoto by po nákladné načíst nebo rekonstruovat požadované stavu nebo obslužných rutin k prostředkům. To provedete nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Toto nastavení, instanci a všechny přidružené stavu bude k dispozici pro následující volání. Při použití tohoto nástroje věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to udělat Údržba instance s `runningTotal` proměnné.  
+1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti k určení, zda je základní instance služby vydané po dokončení transakce. Vzhledem k tomu, že se `true`, pokud není uvedeno jinak, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vykazuje aktivaci "v běhu" efektivní a předvídatelné chování. Volání do služby na následné transakce jsou zajištěná nové instance služby se žádné zbytky stav předchozí transakce. Přestože se často užitečné, v některých případech může chcete zachovat stav v rámci instance služby nad rámec dokončení transakce. Příklady tohoto by po nákladné načíst nebo rekonstruovat požadované stavu nebo obslužných rutin k prostředkům. To provedete nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Toto nastavení, instanci a všechny přidružené stavu bude k dispozici pro následující volání. Při použití tohoto nástroje věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to udělat Údržba instance s `runningTotal` proměnné.  
   
     ```  
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  

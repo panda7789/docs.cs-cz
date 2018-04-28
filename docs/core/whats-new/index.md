@@ -1,19 +1,18 @@
 ---
 title: Co je nového v rozhraní .NET 2.0 jádra
 description: Další informace o nových funkcích v .NET Core nalezen.
-keywords: Rozhraní .NET, .NET core
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 749f0502b5c80ed3d6b81d2036e7591e3f1fe08a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f99b053f69c4e06606cee5c78e3da7749c427e6c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="whats-new-in-net-core"></a>Co je nového v .NET Core
 

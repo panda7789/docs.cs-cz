@@ -4,15 +4,15 @@ description: Další informace o identifikátoru Runtime (RID) a použití ident
 author: mairaw
 ms.author: mairaw
 ms.date: 09/07/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 9343d475319084ddfe3450b4c1d2bbcbd394ad1f
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 42707d96744ff765c2ea6ae2298da3e8b27f912f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-rid-catalog"></a>.NET core identifikátorů RID katalogu
 
@@ -91,7 +91,7 @@ Nejnovější a kompletní verze, najdete v článku [runtime.json](https://gith
 
 V následujícím seznamu jsou nejběžnější identifikátorů RID, použít pro každý operační systém. Ho nezahrnuje `arm` nebo `corert` hodnoty.
 
-## <a name="windows-rids"></a>Windows RIDs
+## <a name="windows-rids"></a>Windows identifikátorů RID
 
 - Přenositelností
   - `win-x86`
@@ -99,15 +99,15 @@ V následujícím seznamu jsou nejběžnější identifikátorů RID, použít p
 - Windows 7 / Windows Server 2008 R2
   - `win7-x64`
   - `win7-x86`
-- Windows 8 / Windows Server 2012
+- Windows 8 nebo Windows Server 2012
   - `win8-x64`
   - `win8-x86`
   - `win8-arm`
-- Windows 8.1 / Windows Server 2012 R2
+- Windows 8.1 nebo Windows Server 2012 R2
   - `win81-x64`
   - `win81-x86`
   - `win81-arm`
-- Windows 10 / Windows Server 2016
+- Windows 10 nebo Windows Server 2016
   - `win10-x64`
   - `win10-x86`
   - `win10-arm`
@@ -169,7 +169,7 @@ V tématu [požadavky pro .NET Core v systému Windows](windows-prerequisites.md
 
 V tématu [požadavky pro .NET Core v systému Linux](linux-prerequisites.md) Další informace.
 
-## <a name="macos-rids"></a>macOS RIDs
+## <a name="macos-rids"></a>systému macOS identifikátorů RID
 
 systému macOS RID použijte starší branding "OSX".
 

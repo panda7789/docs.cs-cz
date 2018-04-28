@@ -4,15 +4,14 @@ description: 'Naučte se vytvářet jednoduché řešení vícenásobného proje
 author: cartermp
 ms.author: phcart
 ms.date: 03/26/2018
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.openlocfilehash: e48e1291bbe91da0d9ca2adbb08662bd106c8fb4
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 767385be605d863644db563a2e86a41ca80527c4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s F # pomocí rozhraní příkazového řádku .NET Core
 

@@ -1,22 +1,21 @@
 ---
 title: Vytvoření aplikace Hello World s .NET Core a Visual Basic v Visual Studio 2017
 description: Naučte se vytvářet jednoduché konzolové aplikace .NET Core pomocí jazyka Visual Basic pomocí Visual Studio 2017.
-keywords: .NET core, aplikace konzoly .NET Core, Visual Studio 2017
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/07/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: devlang-vb
 dev_langs:
 - vb
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: c3775fccf8d6e7c544cbd0b05df7043752e8bef9
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: a72af4bc391b39a38018ce1c383a87ab36bd2109
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="build-a-visual-basic-hello-world-application-with-net-core-in-visual-studio-2017"></a>Vytvoření aplikace Visual Basic Hello World s .NET Core v Visual Studio 2017
 

@@ -1,35 +1,37 @@
 ---
-title: "Dynamické povolování analytického sledování"
-ms.custom: 
+title: Dynamické povolování analytického sledování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 18dda3f63a12a9f9a2320f413137943e5864ad27
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d070c66eebbf1a067254c38c6e5bfc7f40742863
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>Dynamické povolování analytického sledování
 Pomocí nástrojů, které jsou součástí operačního systému Windows, můžete povolit nebo zakázat trasování dynamicky použitím události trasování událostí pro Windows (ETW). Pro všechny [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby, analytické trasování může být povolení i Zakázaní dynamicky bez úpravy souboru Web.config aplikace nebo restartování služby. To umožňuje aplikaci, který vysílá události trasování, které zůstanou nepřerušeného.  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]podobným způsobem můžete nakonfigurovat možnosti sledování. Například můžete změnit úroveň závažnosti z **chyba** k **informace** bez narušení aplikace. To lze provést pomocí následující nástroje:  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] podobným způsobem můžete nakonfigurovat možnosti sledování. Například můžete změnit úroveň závažnosti z **chyba** k **informace** bez narušení aplikace. To lze provést pomocí následující nástroje:  
   
--   **Logman** – nástroj pro příkazový řádek pro konfiguraci, řízení a dotazování dat trasování. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Logman vytvoří trasování](http://go.microsoft.com/fwlink/?LinkId=165426) a [aktualizace Logman trasování](http://go.microsoft.com/fwlink/?LinkId=165427).  
+-   **Logman** – nástroj pro příkazový řádek pro konfiguraci, řízení a dotazování dat trasování. Další informace najdete v tématu [trasování vytvořit Logman](http://go.microsoft.com/fwlink/?LinkId=165426) a [Logman aktualizace trasování](http://go.microsoft.com/fwlink/?LinkId=165427).  
   
--   **Prohlížení událostí** – nástroj pro správu grafického rozhraní systému Windows pro zobrazení výsledků trasování. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Služby WCF a trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) a [Prohlížeč událostí](http://go.microsoft.com/fwlink/?LinkId=165428).  
+-   **Prohlížení událostí** – nástroj pro správu grafického rozhraní systému Windows pro zobrazení výsledků trasování. Další informace najdete v tématu [služby WCF a trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) a [Prohlížeč událostí](http://go.microsoft.com/fwlink/?LinkId=165428).  
   
--   **Perfmon** – nástroj správu grafického rozhraní systému Windows, který používá čítače, které se čítačů sledování trasování a důsledky trasování na výkon. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Ručně vytvořit sadu kolekcí dat](http://go.microsoft.com/fwlink/?LinkId=165429).  
+-   **Perfmon** – nástroj správu grafického rozhraní systému Windows, který používá čítače, které se čítačů sledování trasování a důsledky trasování na výkon. Další informace najdete v tématu [dat kolekce nastavit ručně vytvořit](http://go.microsoft.com/fwlink/?LinkId=165429).  
   
 ### <a name="keywords"></a>Klíčová slova  
  Při použití <xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> třídy rozhraní .NET Framework trasovací zprávy jsou obecně filtrovány podle úroveň závažnosti (například chyby, upozornění a informace). Trasování událostí pro Windows podporuje koncept úrovně závažnosti, ale zavádí nové, flexibilní filtru mechanismus pomocí klíčových slov. Klíčová slova jsou libovolné textové hodnoty, které umožní poskytli další kontext, o co znamená, že událost – události trasování.  
@@ -49,7 +51,7 @@ Pomocí nástrojů, které jsou součástí operačního systému Windows, můž
 |`UserEvents`|Události vygenerované pomocí uživatelského kódu a ne [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)].|  
 |`ServiceModel`|Události vygenerované pomocí [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] modulu runtime.|  
 |`ServiceHost`|Události vygenerované pomocí hostitele služby.|  
-|`WCFMessageLogging`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]zpráva protokolování událostí.|  
+|`WCFMessageLogging`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zpráva protokolování událostí.|  
   
 ## <a name="see-also"></a>Viz také  
  [Služby WCF a Trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)

@@ -1,20 +1,17 @@
 ---
 title: Možnosti kompilátoru (F#)
 description: 'K řízení kompilace aplikacím F # a knihovny, použijte možnosti F # kompilátoru příkazového řádku.'
-keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: c797cf0b-5953-4053-8626-0558e9eaf10f
-ms.openlocfilehash: 23731832141bc2f74a04c5f4027fc210b5589537
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 5feab5ff6d6c6179a67ba0cbc566c10475804e5f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="compiler-options"></a>Možnosti kompilátoru
 
@@ -35,7 +32,7 @@ V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abec
 |**--crossoptimize**[**+**&#124;**-**]|Povolí nebo zakáže cross-module optimalizace.|
 |**--delaysign**[**+**&#124;**-**]|Podepíše sestavení pomocí veřejné části složitý název klíče.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;delaysign &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/ta1sxwy8.aspx).|
 |**--checked**[**+**&#124;**-**]|Povolí nebo zakáže generování kontroly přetečení.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;zaškrtnutí &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/h25wtyxf.aspx).|
-|**--debug**[**+**&#124;**-**]<br /><br />**-g**[**+**&#124;**-**]<br /><br />**--debug**:[**full**&#124;**pdbonly**]<br /><br />**-g:** [**full**&#124;**pdbonly**]|Povolí nebo zakáže generování ladicích informací nebo určuje typ ladicí informace pro generování. Výchozí hodnota je úplná, což umožňuje připojení ke spuštěným programem. Zvolte **pdbonly** omezené ladění informace uložené v souboru pdb (databázi programu).<br /><br />Ekvivalent možnosti kompilátoru C# se stejným názvem. Další informace naleznete v tématu<br /><br />[&#47;ladění &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/8cw0bt21.aspx).|
+|**--debug**[**+**&#124;**-**]<br /><br />**-g**[**+**&#124;**-**]<br /><br />**– ladění**: [**úplné**&#124;**pdbonly**]<br /><br />**-g:** [**úplné**&#124;**pdbonly**]|Povolí nebo zakáže generování ladicích informací nebo určuje typ ladicí informace pro generování. Výchozí hodnota je úplná, což umožňuje připojení ke spuštěným programem. Zvolte **pdbonly** omezené ladění informace uložené v souboru pdb (databázi programu).<br /><br />Ekvivalent možnosti kompilátoru C# se stejným názvem. Další informace naleznete v tématu<br /><br />[&#47;ladění &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/8cw0bt21.aspx).|
 |**--definovat:&lt;řetězec&gt;**<br /><br />**-d:&lt;řetězec&gt;**|Definuje symbol pro použití v Podmíněná kompilace.|
 |**--deterministic**[**+**&#124;**-**]|Vytvořit deterministickou sestavení (včetně verze modulu GUID a časové razítko).  To nelze použít s čísla verzí zástupný znak a podporuje pouze vložené a přenosné ladění typy|
 |**--doc:&lt;xmldoc-filename&gt;**|Dá pokyn kompilátoru generovat dokumentační komentáře XML do zadaného souboru. Další informace najdete v tématu [dokumentace XML](xml-documentation.md).<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;doc &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/3260k4x7.aspx).|
@@ -43,21 +40,21 @@ V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abec
 |**– Nápověda**<br /><br />**-?**|Zobrazí informace o využití, včetně všech možností kompilátoru stručný popis.|
 |**--highentropyva**[**+**&#124;**-**]|Povolí nebo zakáže adresu vysokou entropií místo rozložení náhodného přeskupování (technologie ASLR), o funkci Rozšířené zabezpečení. Operační systém randomizes umístění v paměti, ve kterém jsou načtená infrastruktury pro aplikace (například zásobníku a haldy). Pokud povolíte tuto možnost, operačních systémů můžete použít tento náhodného přeskupování využít úplná adresa 64-bit místo na 64bitový počítač.|
 |**keycontainer –:&lt;řetězec&gt;**|Určuje kontejner klíče se silným názvem.|
-|**--keyfile:&lt;filename&gt;**|Určuje název souboru veřejného klíče pro podepisování vygenerované sestavení.|
-|**--lib:&lt;folder-name&gt;**<br /><br />**-I:&lt;název složky&gt;**|Určuje adresář, který má být vyhledán sestavení, které odkazují.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;lib &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/s5bac5fx.aspx).|
-|**--linkresource**:**&lt;resource-info&gt;**|Zadaný prostředek odkazuje na sestavení. Formát prostředku údajů je *filename*[,*název*[,*veřejné*&#124;*privátní*]]<br /><br />Propojování jeden prostředek pomocí této možnosti je alternativa k vložení souboru celý zdroj **– prostředek** možnost.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;linkresource &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/xawyf94k.aspx).|
+|**keyfile –:&lt;filename&gt;**|Určuje název souboru veřejného klíče pro podepisování vygenerované sestavení.|
+|**--lib:&lt;název složky&gt;**<br /><br />**-I:&lt;název složky&gt;**|Určuje adresář, který má být vyhledán sestavení, které odkazují.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;lib &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/s5bac5fx.aspx).|
+|**linkresource –**:**&lt;informace prostředků&gt;**|Zadaný prostředek odkazuje na sestavení. Formát prostředku údajů je *filename*[,*název*[,*veřejné*&#124;*privátní*]]<br /><br />Propojování jeden prostředek pomocí této možnosti je alternativa k vložení souboru celý zdroj **– prostředek** možnost.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;linkresource &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/xawyf94k.aspx).|
 |**mlcompatibility –**|Ignoruje upozornění, která se při použití funkce, které jsou navrženy pro kompatibilitu s jinými verzemi ML.|
 |**--noframework**|Zakáže výchozí odkaz na sestavení rozhraní .NET Framework.|
 |**--nointerfacedata**|Dá pokyn kompilátoru vynechat prostředků obvykle přidá k sestavení, která zahrnuje F # – konkrétních metadat.|
 |**--nologo**|Při spuštění kompilátor a ta nezobrazí text hlavičky.|
 |**--nooptimizationdata**|Dá pokyn kompilátoru zahrnout pouze optimalizace, které jsou nezbytné k implementaci vložená konstrukce. Omezuje cross-module vložené ale binární kompatibilitu.|
 |**--nowin32manifest**|Dá pokyn kompilátoru vynechat manifest Win32 výchozí.|
-|**--nowarn:&lt;int-list&gt;**|Zakáže konkrétní varování uvedené podle čísla. Všechna čísla upozornění oddělte čárkou. Můžete zjistit počet upozornění pro všechna upozornění týkající se z výstupu kompilace.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;nowarn &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/7f28x9z3.aspx).|
+|**nowarn –:&lt;int seznamu&gt;**|Zakáže konkrétní varování uvedené podle čísla. Všechna čísla upozornění oddělte čárkou. Můžete zjistit počet upozornění pro všechna upozornění týkající se z výstupu kompilace.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;nowarn &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/7f28x9z3.aspx).|
 |**--optimize**[**+**&#124;**-**]**[&lt;string-list&gt;]**<br /><br />**-O [+&#124;-] [&lt;seznamu řetězců&gt;]**|Povolí nebo zakáže optimalizace. Některé možnosti optimalizace můžete zakázat nebo povolit selektivně tak, že je uvedete. Jsou to: **nojitoptimize**, **nojittracking**, **nolocaloptimize**, **nocrossoptimize**, **notailcalls**.|
 |**– out:&lt;název výstupního souboru&gt;**<br /><br />**-o:&lt;název výstupního souboru&gt;**|Určuje název kompilované sestavení nebo modul.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;out &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/bw3t50f3.aspx).|
 |**--pdb:&lt;pdb-filename&gt;**|Názvy výstupního souboru PDB (databázi programu) ladění. Tato možnost platí pouze při **– ladění** zapnuta.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;pdb &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/ms228625.aspx).|
 |**--platformy:&lt;název platformy&gt;**|Určuje, že generovaný kód lze spustit pouze v zadanou platformu (**x86**, **Itanium**, nebo **x64**), nebo pokud název platformy **anycpu**je vybrána, určuje, že generovaný kód můžete spustit na jakékoli platformě.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;platformy &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/zekwfyz4.aspx).|
-|**--preferreduilang:&lt;lang&gt;**| Určuje název jazykové verze jazyka upřednostňované výstup (například es-ES, ja-JP). |
+|**preferreduilang –:&lt;jazyk&gt;**| Určuje název jazykové verze jazyka upřednostňované výstup (například es-ES, ja-JP). |
 |**--quotations-debug**|Určuje, že by měl pro výrazy, které jsou odvozeny od uvozovek literály F # a reflektován definice vygenerované velmi ladicí informace. Informace o ladění se přidá do vlastní atributy uzlu stromu výraz F #. V tématu [Code uvozovky](code-quotations.md) a [Expr.CustomAttributes –](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
 |**– referenční dokumentace:&lt;filename sestavení&gt;**<br /><br />**-r** &lt; **filename sestavení&gt;**|Zpřístupní kódu ze sestavení F # nebo rozhraní .NET Framework se zkompilování kódu.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;odkaz &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/yabyz3h4.aspx).|
 |**--prostředků:&lt;filename prostředků&gt;**|Vloží soubor spravovaných prostředků do vygenerované sestavení.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;prostředků &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/c0tyye07.aspx).|
@@ -71,9 +68,9 @@ V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abec
 |**--časy**|Zobrazí informace o časování pro kompilaci.|
 |**--utf8output**|Umožňuje tisk výstupu kompilátoru s kódováním UTF-8.|
 |**--Upozornit:&lt;úroveň upozornění&gt;**|Nastaví úroveň pro upozornění (0 až 5). Výchozí úroveň je 3. Každé upozornění se přiřadí úroveň na základě jejich jeho závažnosti. Úroveň 5 nabízí další, ale méně závažné, upozornění než úroveň 1.<br /><br />Upozornění na úrovni 5 jsou: (rekurzivní použijte zaškrtnutí za běhu) 21, 22 (**umožní rec** vyhodnotit mimo pořadí), 45 (abstrakce úplné) a 52 (Obranným kopie). Všechny další upozornění jsou úroveň 2.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;upozornit &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/13b90fz7.aspx).|
-|**--warnon:&lt;int-list&gt;**|Povolte konkrétní varování, které může být vypnuto ve výchozím nastavení nebo zakázal jinou možnost příkazového řádku. V F # 3.0 pouze upozornění. 1182 (nepoužívané proměnné) je vypnuto ve výchozím nastavení.|
+|**--warnon:&lt;int seznamu&gt;**|Povolte konkrétní varování, které může být vypnuto ve výchozím nastavení nebo zakázal jinou možnost příkazového řádku. V F # 3.0 pouze upozornění. 1182 (nepoužívané proměnné) je vypnuto ve výchozím nastavení.|
 |**--warnaserror**[**+**&#124;**-**] [**&lt;int-list&gt;**]|Povolí nebo zakáže možnost sestavy upozornění jako chyby. Můžete zadat konkrétní čísel upozornění na zakázat nebo povolit. Možnosti později v příkazovém řádku přepsat možnosti dříve v příkazovém řádku. Například pokud chcete nastavit upozornění, které nechcete použít hlášen jako chyby, zadejte **– warnaserror + warnaserror –-:&lt;int seznamu&gt;**.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;warnaserror &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/406xhdz3.aspx).|
-|**--win32manifest:manifest-filename**|Přidá soubor manifestu Win32 kompilace. Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;win32manifest &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/bb545961.aspx).|
+|**--win32manifest:manifest – název souboru**|Přidá soubor manifestu Win32 kompilace. Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;win32manifest &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/bb545961.aspx).|
 |**--win32res:resource – název souboru**|Přidá zdrojového souboru Win32 kompilace.<br /><br />Tato možnost kompilátoru je ekvivalentem možnosti kompilátoru C# se stejným názvem. Další informace najdete v tématu [ &#47;win32res (&#40;C & #35); Možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/8f2f5x2e.aspx).|
 
 ## <a name="related-topics"></a>Související témata

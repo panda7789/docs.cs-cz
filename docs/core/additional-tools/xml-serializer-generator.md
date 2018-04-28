@@ -1,18 +1,20 @@
 ---
-title: "Pomocí generátoru serializátor Microsoft XML na .NET Core"
-description: "Přehled generátor serializátor XML společnosti Microsoft."
+title: Pomocí generátoru serializátor Microsoft XML na .NET Core
+description: Přehled generátor serializátor XML společnosti Microsoft.
 author: mlacouture
 manager: wpickett
 ms.author: johalex
 ms.date: 01/19/2017
 ms.topic: tutorial
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.custom: mvc
-ms.openlocfilehash: b2f52a068d128b2eb978c9e086508bd87e103ebc
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: d7332546cf7643ff808a29c83d13050571447666
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Pomocí generátoru serializátor Microsoft XML na .NET Core
 
@@ -112,7 +114,7 @@ Zadejte následující příkaz v okně konzoly:
  $ dotnet run
  ```
 > [!NOTE]
-> [`dotnet run`](../tools/dotnet-run.md)volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby sestavení, které se sestavily cíle a poté zavolá `dotnet <assembly.dll>` ke spuštění cílová aplikace.
+> [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby sestavení, které se sestavily cíle a poté zavolá `dotnet <assembly.dll>` ke spuštění cílová aplikace.
 
 > [!IMPORTANT]
 > Příkazy a postupy v tomto kurzu ke spuštění vaší aplikace se používají pouze dobu vývoj. Jakmile budete připraveni k nasazení své aplikace, prohlédněte si různými [strategie nasazení](../deploying/index.md) pro aplikace .NET Core a [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz.

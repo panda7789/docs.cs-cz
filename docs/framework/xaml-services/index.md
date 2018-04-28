@@ -20,11 +20,11 @@ ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1548f74cab4589690e49517cdf96144fb6515693
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: f36f22e8bf68520f5f57280d33cf37990feb2df6
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="xaml-services"></a>XAML Services
 Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané se nacházejí v sestavení System.Xaml, což je sestavení zavedené [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] sadu sestavení .NET core. Služby zahrnují čtení a zápis, třídy schématu a podporu schématu, objekty Factory zapisujících třídy, vnitřní podporu jazyka XAML a další funkce jazyka XAML.  
@@ -49,7 +49,7 @@ Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET F
  Pokud hledáte úvodní materiály v XAML jako jazyk, můžete vyzkoušet [přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md). Toto téma popisuje XAML pro cílovou skupinu, která je nové, na [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] a také pomocí značek XAML a funkce jazyka XAML. Další užitečné dokument je úvodní informace v [specifikace jazyka XAML](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ## <a name="net-framework-xaml-services-and-systemxaml-in-the-net-architecture"></a>Rozhraní .NET framework XAML Services a System.Xaml v architektuře .NET  
- V předchozích verzích [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)], podporu pro jazykové funkce jazyka XAML byl implementované architektury, které založený na [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], modelu Windows Workflow Foundation a [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]) a proto nejrůznější v jeho chování a rozhraní API používá v závislosti na tom, jaké konkrétní framework jste používali. To zahrnuté XAML analyzátor a jeho objekt graf vytvoření mechanismus, vnitřní funkce jazyka XAML, podporu serializace a tak dále.  
+ V předchozích verzích [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)], podporu pro jazykové funkce jazyka XAML byl implementované architektury, které založený na [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], modelu Windows Workflow Foundation a Windows Communication Foundation (WCF)) a proto nejrůznější v jeho chování a rozhraní API používá v závislosti na tom, jaké konkrétní framework jste používali. To zahrnuté XAML analyzátor a jeho objekt graf vytvoření mechanismus, vnitřní funkce jazyka XAML, podporu serializace a tak dále.  
   
  V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework XAML Services a sestavení System.Xaml definovat většinu co je potřeba pro podporu funkce jazyka XAML. To zahrnuje základní třídy pro XAML čtení a zápis XAML. Nejdůležitější funkce přidána do rozhraní .NET Framework XAML Services, který se nenachází v žádné z implementace XAML konkrétní rozhraní je reprezentace systému typu pro jazyk XAML. Typ systému reprezentace uvede XAML objektově orientované takovým způsobem, který soustředí na možnostech XAML bez nutnosti převádět závislosti na specifické možnosti rozhraní.  
   

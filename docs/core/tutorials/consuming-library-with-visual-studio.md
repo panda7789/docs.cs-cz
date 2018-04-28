@@ -1,20 +1,21 @@
 ---
-title: "Použití knihovny tříd s .NET Core v Visual Studio 2017"
-description: "Zjistěte, jak volat členy v knihovny tříd s Visual Studio 2017."
+title: Použití knihovny tříd s .NET Core v Visual Studio 2017
+description: Zjistěte, jak volat členy v knihovny tříd s Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 dev_langs:
 - csharp
 - vb
-ms.workload: dotnetcore
-ms.openlocfilehash: 1525bd3f9d249fe39fd65b53bc8d1e8eddb09ab9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 7364f9a4dadf7c4a28dab0cff2fca80d0f3af62c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="consuming-a-class-library-with-net-core-in-visual-studio-2017"></a>Použití knihovny tříd s .NET Core v Visual Studio 2017
 
@@ -61,7 +62,7 @@ Stejně jako jste zahrnuli testy jednotek ve stejném řešení jako knihovny t�
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
 1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v [vytváření třídy knihovny jazyka Visual Basic a .NET Core ve Visual Studio 2017](vb-library-with-visual-studio.md) tématu. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **ClassLibraryProjects** řešení a vyberte **přidat** > **nový projekt** z v místní nabídce.
 
-1. V **přidat nový projekt** dialogové okno, rozbalte **jazyka Visual Basic** uzel a vyberte možnost **.NET Core** následuje uzlu **konzolové aplikace (.NET Core)**šablona projektu. V **název** textového pole zadejte "Představením" a vyberte **OK** tlačítko.
+1. V **přidat nový projekt** dialogové okno, rozbalte **jazyka Visual Basic** uzel a vyberte možnost **.NET Core** následuje uzlu **konzolové aplikace (.NET Core)** šablona projektu. V **název** textového pole zadejte "Představením" a vyberte **OK** tlačítko.
 
    ![Přidat dialogové okno Nový projekt](./media/consuming-library-with-visual-studio/vb-addnewproject.png)
 

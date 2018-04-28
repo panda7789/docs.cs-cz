@@ -1,20 +1,17 @@
 ---
-title: "Bitové operátory (F#)"
-description: "Další informace o bitové operátory, které jsou k dispozici v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Bitové operátory (F#)
+description: 'Další informace o bitové operátory, které jsou k dispozici v programovací jazyk F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 8a2c87f5-b4c7-47fe-8580-82c956f605e5
-ms.openlocfilehash: 61a8e6bafe97a229480c967a4afb5d2a256474c8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4d5abff564a5d1dcbe52b99edf431ca10e442061
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="bitwise-operators"></a>Bitové operátory
 
@@ -35,7 +32,7 @@ Následující tabulka popisuje bitové operátory, které jsou podporovány pro
 Bitové operátory můžete použít následující typy: `byte`, `sbyte`, `int16`, `uint16`, `int32 (int)`, `uint32`, `int64`, `uint64`, `nativeint`, a `unativeint`.
 
 ## <a name="see-also"></a>Viz také
-[Operátor referenční dokumentace symbolů a](index.md)
+[Referenční dokumentace symbolů a operátorů](index.md)
 
 [Aritmetické operátory](arithmetic-operators.md)
 

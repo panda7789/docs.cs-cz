@@ -1,24 +1,26 @@
 ---
 title: Architektura syndikace
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22df793bd5873d6f69c3a2e86e96d4a1cefcff0d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bcb64a4e03cae5e6186754dacb87e17a22d13001
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndikace
 Rozhraní API syndikace určená k poskytování formátu jazykově neutrální programovací model, který umožňuje syndikovaný obsah má být zapsán k přenosu v různých formátech. Abstraktní datového modelu se skládá z následujících tříd:  
@@ -41,7 +43,7 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
  [!code-csharp[S_UE_SyndicationBoth#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_syndicationboth/cs/service.cs#0)]  
   
- Podpora syndikace je postavený na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, která definuje <xref:System.ServiceModel.WebHttpBinding> vazby, který se používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior> chcete zpřístupnit informační kanály jako služby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)][!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, najdete v části [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
+ Podpora syndikace je postavený na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, která definuje <xref:System.ServiceModel.WebHttpBinding> vazby, který se používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior> chcete zpřístupnit informační kanály jako služby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, najdete v části [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
   
 > [!NOTE]
 >  Specifikace Atom 1.0 umožňuje zadat v některém z jeho datum konstrukce zlomků sekund. Při serializaci a deserializaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace ignoruje zlomků sekund.  
@@ -86,7 +88,7 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
 ## <a name="extensibility"></a>Rozšiřitelnost  
   
--   Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definovány v specifikacích. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Programovací model syndikace nabízí dva způsoby práce s vlastní atributy a rozšíření: odvozování novou třídu a volného typu přístup. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
+-   Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definovány v specifikacích. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Programovací model syndikace nabízí dva způsoby práce s vlastní atributy a rozšíření: odvozování novou třídu a volného typu přístup. Další informace najdete v tématu [rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  

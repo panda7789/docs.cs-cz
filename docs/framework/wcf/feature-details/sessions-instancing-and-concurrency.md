@@ -1,24 +1,26 @@
 ---
-title: "Relace, vytváření instancí a souběžnost"
-ms.custom: 
+title: Relace, vytváření instancí a souběžnost
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5d4559f177b05f7d238c9f30649a5b01af7fb6f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6dd96ea552bb92dd90c1c47abac744c55e2e67e5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *Vytváření instancí* odkazuje na řízení životnost služby uživatelem definované objekty a jejich související <xref:System.ServiceModel.InstanceContext> objekty. *Concurrency* je termín určený k ovládacímu prvku počet vláken, které jsou prováděny v době <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  
@@ -28,7 +30,7 @@ A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *
 ## <a name="sessions"></a>Relace  
  Když kontraktu služby nastaví <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.SessionMode.Required?displayProperty=nameWithType>, tento kontrakt vlastně říká, že všechna volání (který je základní výměny zpráv podporující volání) musí být součástí stejné konverzaci. Pokud kontrakt Určuje, že umožňuje relace, ale nevyžaduje jeden, klienti mohou připojit a buď vytvořit relaci, nebo ne. Pokud relace skončí a a odeslání zprávy pomocí stejných na bázi relací, že se vyvolala výjimku kanálu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]relace mají následující hlavní koncepční funkce:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relace mají následující hlavní koncepční funkce:  
   
 -   Jsou explicitně iniciované a ukončila příkazem volající aplikace.  
   
@@ -40,11 +42,11 @@ A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *
   
  Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace a funkce, poskytuje, můžete si všimnout, následující rozdíly mezi tento druh relace a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relace:  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]relace jsou vždy iniciovaných serverem.  
+-   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou vždy iniciovaných serverem.  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]jsou implicitně neuspořádaný relace.  
+-   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] jsou implicitně neuspořádaný relace.  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]relace poskytují mechanismus obecné datové úložiště napříč požadavky.  
+-   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace poskytují mechanismus obecné datové úložiště napříč požadavky.  
   
  Klientské aplikace a aplikace služby spolupracovat s relací různými způsoby. Klientské aplikace zahájení relace a pak přijímat a zpracování zpráv odeslaných v rámci relace. Aplikace služby můžete použít relace jako bod rozšiřitelnosti, chcete-li přidat další chování. K tomu je potřeba pracovat přímo s <xref:System.ServiceModel.InstanceContext> nebo implementaci zprostředkovatele kontextu vlastní instanci.  
   
@@ -93,7 +95,7 @@ public class CalculatorService : ICalculatorInstance
 -   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: Každá instance služby zpracovává jednu zprávu najednou, ale přijímá volání operací vícenásobně. Služba přijímá těchto volání pouze, když se volají pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta.  
   
 > [!NOTE]
->  Princip fungování a způsob vývoje kód, který je bezpečně používá více než jedno vlákno, může být obtížné úspěšně zapisovat. Před použitím <xref:System.ServiceModel.ConcurrencyMode.Multiple> nebo <xref:System.ServiceModel.ConcurrencyMode.Reentrant> hodnoty, ujistěte se, že služby správně navržena pro tyto režimy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>.  
+>  Princip fungování a způsob vývoje kód, který je bezpečně používá více než jedno vlákno, může být obtížné úspěšně zapisovat. Před použitím <xref:System.ServiceModel.ConcurrencyMode.Multiple> nebo <xref:System.ServiceModel.ConcurrencyMode.Reentrant> hodnoty, ujistěte se, že služby správně navržena pro tyto režimy. Další informace naleznete v tématu <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>.  
   
  Použití souběžného zpracování se týká zřizování instancí režimu. V <xref:System.ServiceModel.InstanceContextMode.PerCall> vytváření instancí, souběžnosti není relevantní, protože každá zpráva se zpracuje pomocí nové <xref:System.ServiceModel.InstanceContext> a proto je aktivní v nikdy více než jedno vlákno <xref:System.ServiceModel.InstanceContext>.  
   

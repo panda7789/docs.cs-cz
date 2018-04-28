@@ -1,20 +1,17 @@
 ---
-title: "Informace o subjektu volajícím (F #)"
-description: "Popisuje, jak použít volající informace Argument atributy získat informace o subjektu volajícím z metody."
-keywords: "Visual f #, f #, funkční programování"
+title: 'Informace o subjektu volajícím (F #)'
+description: Popisuje, jak použít volající informace Argument atributy získat informace o subjektu volajícím z metody.
 author: cartermp
 ms.author: phcart
 ms.date: 04/25/2017
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: a3dcc335-433b-4672-ac2d-ae6b11b816f3
-ms.openlocfilehash: 533d2f0429ddb31e6d1dd7efca2f0760069a2945
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 840c6c6308c55fe2a2dbefd52b159a32fb92f787
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="caller-information"></a>Informace o subjektu volajícím
 

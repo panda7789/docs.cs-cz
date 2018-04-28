@@ -4,16 +4,14 @@ description: 'Tato příručka poskytuje přehled o různých studijních materi
 author: jackfoxy
 ms.author: phcart
 ms.date: 03/19/2018
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: ea27fb37-dad1-4bd4-a3cc-4f5c70767ae9
-ms.openlocfilehash: a101233f396368c0bc25937c49f77699cb9f8cf2
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 9c03148d42f3cf8731580e36990aa21c68f705f6
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="f-guide"></a>Průvodce jazykem F#
 

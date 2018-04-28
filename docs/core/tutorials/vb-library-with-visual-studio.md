@@ -1,22 +1,21 @@
 ---
-title: "Vytvoření knihovny tříd jazyka Visual Basic a .NET Core v Visual Studio 2017"
-description: "Naučte se vytvářet napsané v jazyce Visual Basic, Visual Studio 2017 pomocí knihovny tříd"
-keywords: ".NET core, .NET Standard třídy knihovny, Visual Studio 2017, Visual Basic"
+title: Vytvoření knihovny tříd jazyka Visual Basic a .NET Core v Visual Studio 2017
+description: Naučte se vytvářet napsané v jazyce Visual Basic, Visual Studio 2017 pomocí knihovny tříd
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/07/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: devlang-vb
 dev_langs:
 - vb
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: b8d87e3a97e2ffeb8e8712bfa5d178bb855f402d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 149be4788d924afee8affc816eede075cbe4e3a1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="building-a-class-library-with-visual-basic-and-net-core-in-visual-studio-2017"></a>Vytvoření knihovny tříd jazyka Visual Basic a .NET Core v Visual Studio 2017
 

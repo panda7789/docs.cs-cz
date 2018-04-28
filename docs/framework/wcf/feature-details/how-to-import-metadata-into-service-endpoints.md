@@ -1,24 +1,26 @@
 ---
-title: "Postupy: Import metadat do koncových bodů služby"
-ms.custom: 
+title: 'Postupy: Import metadat do koncových bodů služby'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b69dbe20-92a1-4911-89d8-ffbc3dad4663
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2fa1831885eb24effc5f4267c208b8bffa9f0b75
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b86f31217812767b0fbbd785a0f3ff96c2948854
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a>Postupy: Import metadat do koncových bodů služby
 Toto téma vysvětluje, jak importovat metadata do kolekce koncové body služby a používat službu definované v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V tomto tématu ukazují, jak vytvořit klientskou aplikaci, která importuje metadata ze služby a poté zavolá `Add` metoda ve službě.  
@@ -38,7 +40,7 @@ Toto téma vysvětluje, jak importovat metadata do kolekce koncové body služby
      [!code-csharp[UE_ImportMetadata#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/ue_importmetadata/cs/client.cs#2)]  
   
     > [!NOTE]
-    >  Po importu metadat, nebude možné vytvořit kanál klienta nebo exportovat metadata. Je to proto, že v tomto okamžiku je k dispozici žádné informace o typu. Informace o typu, je potřeba ve skutečnosti komunikovat se službou nebo export metadat. Chcete-li generovat informace o typu, je potřeba generovat kód, uvedené v kroku 4 a 5. Alternativně můžete použít <xref:System.ServiceModel.Description.MetadataResolver> pomocná třída. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: použití třídy MetadataResolver k dynamickému získání metadat vazby](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md).  
+    >  Po importu metadat, nebude možné vytvořit kanál klienta nebo exportovat metadata. Je to proto, že v tomto okamžiku je k dispozici žádné informace o typu. Informace o typu, je potřeba ve skutečnosti komunikovat se službou nebo export metadat. Chcete-li generovat informace o typu, je potřeba generovat kód, uvedené v kroku 4 a 5. Alternativně můžete použít <xref:System.ServiceModel.Description.MetadataResolver> pomocná třída. Další informace najdete v tématu [postupy: použití třídy MetadataResolver k získání vazby Metadata dynamicky](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md).  
   
 4.  Generovat informace o typu pro každý kontrakt.  
   

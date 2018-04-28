@@ -1,28 +1,28 @@
 ---
-title: "Používání protokolu WS-AtomicTransaction"
-ms.custom: 
+title: Používání protokolu WS-AtomicTransaction
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WS-AT protocol [WCF]
 ms.assetid: 04a4c200-0af0-4c5d-a3d9-87cb7339e054
-caps.latest.revision: 
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 124c5dc0f6db94ae459fe140bd7a4290aa56e04a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d437b0bf3b14b60899028e293feecf5b1e36f766
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-ws-atomictransaction"></a>Používání protokolu WS-AtomicTransaction
 WS-AtomicTransaction (WS-AT) je protokol umožňuje vzájemnou spolupráci transakce. Umožňuje toku distribuované transakce prostřednictvím zpráv, webové služby a koordinovat způsobem umožňuje vzájemnou spolupráci mezi infrastruktury heterogenní transakce. WS-AT používá protokol dvoufázový zápis k řízení atomic výsledek mezi distribuovaných aplikací, správci transakcí a správci prostředků.  
@@ -37,7 +37,7 @@ WS-AtomicTransaction (WS-AT) je protokol umožňuje vzájemnou spolupráci trans
   
 -   Síťový protokol použitý ke spuštění protokolu dvoufázového potvrzení mezi správce transakcí klienta a transakce serveru, aby bylo možné vyřešit výsledek transakce.  
   
- Pokud serveru a klienta jsou zapsány pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], není potřeba použít WS-AT. Místo toho můžete použít výchozí nastavení `NetTcpBinding` s `TransactionFlow` povoleno, atribut, který bude používat `OleTransactions` místo protokolu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md). Jinak pokud jsou toku transakcí k webovým službám založen na technologiích třetích stran, musíte použít WS-AT.  
+ Pokud serveru a klienta jsou zapsány pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], není potřeba použít WS-AT. Místo toho můžete použít výchozí nastavení `NetTcpBinding` s `TransactionFlow` povoleno, atribut, který bude používat `OleTransactions` místo protokolu. Další informace najdete v tématu [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md). Jinak pokud jsou toku transakcí k webovým službám založen na technologiích třetích stran, musíte použít WS-AT.  
   
 ## <a name="see-also"></a>Viz také  
  [Konfigurace podpory protokolu WS-AtomicTransaction](../../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)

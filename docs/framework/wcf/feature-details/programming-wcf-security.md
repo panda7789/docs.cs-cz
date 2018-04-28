@@ -1,13 +1,13 @@
 ---
-title: "Programování zabezpečení WCF"
-ms.custom: 
+title: Programování zabezpečení WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-caps.latest.revision: 
+caps.latest.revision: 25
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4b296d9bf9b52dfc8e782f6e324be1de8c76d349
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c8769511f608834c7539779d83977880e1d4093
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
 Toto téma popisuje základní programovací úlohy použité k vytvoření zabezpečeného [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace. Toto téma popisuje pouze ověřování, důvěrnost a integritu, souhrnně označované jako *přenosu zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
@@ -48,26 +48,26 @@ Toto téma popisuje základní programovací úlohy použité k vytvoření zabe
   
     1.  `Transport`  
   
-         Zabezpečení přenosu závisí na mechanismu, který používá vazby, které jste vybrali. Například, pokud používáte `WSHttpBinding` je mechanismus zabezpečení Secure Sockets Layer (SSL) (také mechanismus pro protokol HTTPS). Hlavní výhodou zabezpečení přenosu je obecně řečeno, zajišťuje dobrý propustnost, bez ohledu na to, které přenosu používáte. Však obsahuje dvě omezení: první je, že přenosový mechanismus Určuje typ pověření pro ověření uživatele. Toto je nevýhodou pouze v případě, že služba potřebuje pro spolupráci s jinými službami, které potřebují různé typy přihlašovacích údajů. Druhá je, že, protože zabezpečení není použita na úrovni zpráv, zabezpečení je implementovaná v segmentu směrování způsobem spíše než začátku do konce. Toto omezení druhé je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje prostředníci. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]přenos, které chcete použít, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí zabezpečení přenosu, najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
+         Zabezpečení přenosu závisí na mechanismu, který používá vazby, které jste vybrali. Například, pokud používáte `WSHttpBinding` je mechanismus zabezpečení Secure Sockets Layer (SSL) (také mechanismus pro protokol HTTPS). Hlavní výhodou zabezpečení přenosu je obecně řečeno, zajišťuje dobrý propustnost, bez ohledu na to, které přenosu používáte. Však obsahuje dvě omezení: první je, že přenosový mechanismus Určuje typ pověření pro ověření uživatele. Toto je nevýhodou pouze v případě, že služba potřebuje pro spolupráci s jinými službami, které potřebují různé typy přihlašovacích údajů. Druhá je, že, protože zabezpečení není použita na úrovni zpráv, zabezpečení je implementovaná v segmentu směrování způsobem spíše než začátku do konce. Toto omezení druhé je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje prostředníci. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] přenos, které chcete použít, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí zabezpečení přenosu, najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
   
     2.  `Message`  
   
          Zabezpečení zpráv znamená, že každá zpráva obsahuje potřebné hlavičky a zabezpečení dat, které chcete zachovat zprávy. Vzhledem k tomu, že se liší složení záhlaví může obsahovat libovolný počet přihlašovací údaje. Faktor to stane, pokud jste se spolupráce s jinými službami této poptávky typ určité pověření, který nelze zadat přenosový mechanismus, nebo pokud zprávy musí být použit s více než jedna služba, kde každá služba vyžaduje typ různých přihlašovacích údajů.  
   
-         [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
+         Další informace najdete v tématu [zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
   
     3.  `TransportWithMessageCredential`  
   
          Tato volba používá přenosové vrstvy zabezpečit přenos zpráv, při každé zprávy je i bohaté přihlašovací údaje potřebovat další služby. Kombinuje výkon výhod zabezpečení přenosu s výhodou bohaté pověření zabezpečení zpráv. Toto je k dispozici následující vazby: <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding>, <xref:System.ServiceModel.NetPeerTcpBinding>, a <xref:System.ServiceModel.WSHttpBinding>.  
   
-3.  Pokud se rozhodnete použít zabezpečení přenosu pro protokol HTTP (jinými slovy, HTTPS), musíte také nakonfigurovat certifikát SSL hostitele a povolit protokol SSL na portu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+3.  Pokud se rozhodnete použít zabezpečení přenosu pro protokol HTTP (jinými slovy, HTTPS), musíte také nakonfigurovat certifikát SSL hostitele a povolit protokol SSL na portu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
 4.  Pokud používáte <xref:System.ServiceModel.WSHttpBinding> a není potřeba navázat zabezpečené relaci, nastavte <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost `false`.  
   
      Zabezpečené relace nastane, když klient a služba vytvoření kanálu pomocí symetrického klíče (klient i server používají stejný klíč délky konverzace, dokud nezavřete dialogové okno).  
   
 ## <a name="setting-the-client-credential-type"></a>Nastavení typu pověření klienta  
- Vyberte typ pověření klienta podle potřeby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md). K dispozici jsou následující typy pověření klienta:  
+ Vyberte typ pověření klienta podle potřeby. Další informace najdete v tématu [výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md). K dispozici jsou následující typy pověření klienta:  
   
 -   `Windows`  
   

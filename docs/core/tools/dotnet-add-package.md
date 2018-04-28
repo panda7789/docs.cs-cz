@@ -1,18 +1,19 @@
 ---
-title: "příkaz balíček - .NET Core rozhraní příkazového řádku přidejte DotNet."
-description: "Příkaz 'dotnet. Přidejte balíček' poskytuje vhodnou možnost Přidat odkaz na balíček NuGet do projektu."
+title: příkaz balíček - .NET Core rozhraní příkazového řádku přidejte DotNet.
+description: Příkaz 'dotnet. Přidejte balíček' poskytuje vhodnou možnost Přidat odkaz na balíček NuGet do projektu.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/11/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 3b372b55cbdd8e0e6cc6a6b1089915e0da802489
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 3a8752ff83e069d21ebbda346efef34b17360e3b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-add-package"></a>Přidejte balíček DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet add package`-Přidá balíček odkaz na soubor projektu.
+`dotnet add package` -Přidá balíček odkaz na soubor projektu.
 
 ## <a name="synopsis"></a>Stručný obsah
 

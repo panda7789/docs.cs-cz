@@ -1,12 +1,13 @@
 ---
-title: "Použití kontraktů dat"
-ms.custom: 
+title: Použití kontraktů dat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,24 +17,25 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-caps.latest.revision: "38"
+caps.latest.revision: 38
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7541f04279bbe9d85b7e2ecca841d9f5a14fc9a3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 839227e9a67d904ea4613f841deac5a9a3f6f9ea
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
 A *kontrakt dat* formální dohodu mezi službou a klienta, který abstraktně popisuje data, která mají být vyměňují. To znamená komunikovat, klient a služba nemají sdílet stejné typy stejné kontrakty dat. Přesněji definuje kontrakt dat, pro každý parametr nebo návratový typ, jaká data se serializovat (převedena na XML) k výměně.  
   
 ## <a name="data-contract-basics"></a>Základy kontraktu dat  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]modul serializace názvem serializátor kontraktu dat ve výchozím nastavení se používá k serializaci a deserializaci dat (ji převést do a z XML). Všechny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] primitivní typy, jako je celá čísla a řetězce, a také některé typy zacházet jako primitiva, například <xref:System.DateTime> a <xref:System.Xml.XmlElement>, lze serializovat bez další přípravy a jsou považovány za tak, že má kontrakty dat výchozí. Mnoho [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy také mít kontrakty existující data. Úplný seznam Serializovatelné typy najdete v tématu [typy nepodporuje serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] modul serializace názvem serializátor kontraktu dat ve výchozím nastavení se používá k serializaci a deserializaci dat (ji převést do a z XML). Všechny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] primitivní typy, jako je celá čísla a řetězce, a také některé typy zacházet jako primitiva, například <xref:System.DateTime> a <xref:System.Xml.XmlElement>, lze serializovat bez další přípravy a jsou považovány za tak, že má kontrakty dat výchozí. Mnoho [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy také mít kontrakty existující data. Úplný seznam Serializovatelné typy najdete v tématu [typy nepodporuje serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
- Nové komplexní typy, které vytvoříte, musí mít kontraktu dat definované mohly být serializovatelný. Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> odvodí kontrakt dat a serializuje všechny typy veřejně viditelný. Všechny veřejné vlastnosti a pole typu se serializují. Můžete chodit členy z serializace pomocí <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>. Kontrakt dat můžete vytvořit také explicitně pomocí <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy. To se obvykle provádí s použitím <xref:System.Runtime.Serialization.DataContractAttribute> atributu typu. Tento atribut lze použít k tříd, struktur a výčty. <xref:System.Runtime.Serialization.DataMemberAttribute> Atributu se musí pak použít pro každého člena typu kontraktu dat, to znamená, že je *– datový člen*, to znamená, že ho by měly být serializovány. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+ Nové komplexní typy, které vytvoříte, musí mít kontraktu dat definované mohly být serializovatelný. Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> odvodí kontrakt dat a serializuje všechny typy veřejně viditelný. Všechny veřejné vlastnosti a pole typu se serializují. Můžete chodit členy z serializace pomocí <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>. Kontrakt dat můžete vytvořit také explicitně pomocí <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy. To se obvykle provádí s použitím <xref:System.Runtime.Serialization.DataContractAttribute> atributu typu. Tento atribut lze použít k tříd, struktur a výčty. <xref:System.Runtime.Serialization.DataMemberAttribute> Atributu se musí pak použít pro každého člena typu kontraktu dat, to znamená, že je *– datový člen*, to znamená, že ho by měly být serializovány. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
 ### <a name="example"></a>Příklad  
  Následující příklad ukazuje kontraktu služby (rozhraní), ke kterému <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> explicitně použít atributů. Příklad ukazuje, že primitivní typy nevyžadují kontraktu dat při nemá komplexního typu.  

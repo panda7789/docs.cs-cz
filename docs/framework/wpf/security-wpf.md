@@ -1,12 +1,13 @@
 ---
-title: "Zabezpečení (WPF)"
-ms.custom: 
+title: Zabezpečení (WPF)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - XAML files [WPF], sandbox behavior
@@ -20,23 +21,24 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-caps.latest.revision: "38"
+caps.latest.revision: 38
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fae5c8553cc395268b1c6afb1b64727014756975
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 134efba11742ab9cc8da2dfab77c233b52f1bcf1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
-<a name="introduction"></a>Při vývoji [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] samostatné a webové aplikace, musíte zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]spuštění samostatné aplikace s neomezená oprávnění ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sadě oprávnění), jestli nasadit pomocí Instalační služby systému Windows (.msi), XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce není podporováno. Plné důvěryhodnosti hostitelskou aplikaci však můžete vytvořit s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [WPF doplňky přehled](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
+<a name="introduction"></a> Při vývoji [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] samostatné a webové aplikace, musíte zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spuštění samostatné aplikace s neomezená oprávnění ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sadě oprávnění), jestli nasadit pomocí Instalační služby systému Windows (.msi), XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce není podporováno. Plné důvěryhodnosti hostitelskou aplikaci však můžete vytvořit s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [WPF doplňky přehled](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]aplikace hostované prohlížečem hostuje [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] nebo Firefox, a může být buď [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] nebo přijít [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty, kde najdete další informace najdete v tématu [přehled aplikace prohlížeče XAML WPF](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem hostuje [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] nebo Firefox, a může být buď [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] nebo přijít [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty, kde najdete další informace najdete v tématu [přehled aplikace prohlížeče XAML WPF](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]aplikace hostované prohlížečem provést v rámci izolovaného prostoru zabezpečení částečné důvěryhodnosti, ve výchozím nastavení, která je omezená na výchozí [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **Internet** oprávnění sady zón. To efektivně izoluje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem z klientského počítače stejným způsobem, kterou byste očekávali typické webové aplikace k izolaci. XBAP můžete zvýšit oprávnění, až úplný vztah důvěryhodnosti, v závislosti na zóny zabezpečení adresu nasazení a konfigurace zabezpečení klienta. Další informace najdete v tématu [WPF částečné důvěryhodnosti zabezpečení](../../../docs/framework/wpf/wpf-partial-trust-security.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem provést v rámci izolovaného prostoru zabezpečení částečné důvěryhodnosti, ve výchozím nastavení, která je omezená na výchozí [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **Internet** oprávnění sady zón. To efektivně izoluje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem z klientského počítače stejným způsobem, kterou byste očekávali typické webové aplikace k izolaci. XBAP můžete zvýšit oprávnění, až úplný vztah důvěryhodnosti, v závislosti na zóny zabezpečení adresu nasazení a konfigurace zabezpečení klienta. Další informace najdete v tématu [WPF částečné důvěryhodnosti zabezpečení](../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
  Toto téma popisuje model zabezpečení pro [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] samostatné a webové aplikace.  
   
@@ -100,9 +102,9 @@ ms.lasthandoff: 12/22/2017
 ## <a name="web-browsing-software-security-settings"></a>Nastavení zabezpečení webové procházení softwaru  
  Nastavení zabezpečení ve vašem počítači určit přístup, který je povolen libovolný pro webové procházení softwaru. Pro webové procházení softwaru zahrnuje všechny aplikace nebo součásti, která používá [WinINet](http://go.microsoft.com/fwlink/?LinkId=179379) nebo [UrlMon](http://go.microsoft.com/fwlink/?LinkId=179383) rozhraní API, včetně aplikace Internet Explorer a PresentationHost.exe.  
   
- [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]poskytuje mechanismus, pomocí kterého můžete nakonfigurovat funkce, které je povoleno spustit pomocí nebo z [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)], včetně následujících:  
+ [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] poskytuje mechanismus, pomocí kterého můžete nakonfigurovat funkce, které je povoleno spustit pomocí nebo z [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)], včetně následujících:  
   
--   [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]-spolehlivé součásti  
+-   Rozhraní .NET framework spolehlivé součásti  
   
 -   Moduly plug-in a ovládacích prvků ActiveX  
   
@@ -131,7 +133,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  Do dialogového okna Možnosti Internetu můžete získat také z aplikace Internet Explorer. Klikněte na tlačítko **nástroje** a pak klikněte na **Možnosti Internetu**.  
   
- Počínaje [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)], konkrétně pro následující nastavení zabezpečení [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] jsou zahrnuty:  
+ Počínaje [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)], jsou zahrnuty následující nastavení zabezpečení speciálně pro rozhraní .NET Framework:  
   
 -   **Ke ztrátě XAML**. Ovládací prvky zda [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] můžete přejít k a ztrátě [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] soubory. (Povolit, zakázat a výzvu možnosti).  
   
@@ -231,7 +233,7 @@ ms.lasthandoff: 12/22/2017
   
  Je však možné APTCA sestavení vykazovat chyba zabezpečení po nainstalování do [!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)]. Po zjištění chyby zabezpečení vydavatelů sestavení může vytvořit aktualizaci zabezpečení vyřešte problém na existující instalace a k ochraně proti instalace, které po problému může dojít ke zjištění. Jednou z možností pro aktualizaci je odinstaluje sestavení, i když, je možné ukončit jiné plně důvěryhodný pro klientské aplikace používající sestavení.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]poskytuje mechanismus, pomocí kterého je možné zakázat APTCA sestavení pro částečně důvěryhodné [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] bez odinstalace APTCA sestavení.  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytuje mechanismus, pomocí kterého je možné zakázat APTCA sestavení pro částečně důvěryhodné [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] bez odinstalace APTCA sestavení.  
   
  Chcete-li zakázat APTCA sestavení, budete muset vytvořte klíč registru speciální:  
   
@@ -252,7 +254,7 @@ ms.lasthandoff: 12/22/2017
  Pokud má být zakázána klientské částečně důvěryhodné aplikace sestavení, můžete napsat aktualizaci, která vytvoří klíč registru a hodnoty.  
   
 > [!NOTE]
->  Základní [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] sestavení nemá vliv zakázání tímto způsobem, protože jsou potřebné pro spouštění spravovaných aplikací. Podpora pro zakázání APTCA sestavení je primárně určeno k aplikacím třetích stran.  
+>  Sestavení rozhraní .NET Framework Core nemá vliv zakázání tímto způsobem, protože jsou potřebné pro spouštění spravovaných aplikací. Podpora pro zakázání APTCA sestavení je primárně určeno k aplikacím třetích stran.  
   
 <a name="LooseContentSandboxing"></a>   
 ## <a name="sandbox-behavior-for-loose-xaml-files"></a>Chování izolovaného prostoru pro soubory přijít XAML  

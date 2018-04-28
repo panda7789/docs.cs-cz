@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3669260d34aac0783f2ebd735c79ced91741408a
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: b0042d9b90066553d6fc962bba1b7a7b990ca242
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, jaké klientské aplikace provést, jak nakonfigurovat, vytvořit a použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] klienta a jak zabezpečit klientské aplikace.  
@@ -83,7 +83,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  Tato třída můžete vytvořit jako objekt místní pomocí jednoho z konstruktorů, nakonfigurovat a pak použít pro připojení ke službě typu `ISampleService`.  
   
- Doporučujeme, abyste vytvořili vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta, objekt a pak ho použít a zavřete uvnitř bloku try/catch – jeden. Neměli byste používat `using` – příkaz (`Using` v jazyce Visual Basic) vzhledem k tomu, že ho může maskování výjimky v určité režimy selhání. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] v následujících částech jsou také jako [vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
+ Doporučujeme, abyste vytvořili vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta, objekt a pak ho použít a zavřete uvnitř bloku try/catch – jeden. Neměli byste používat `using` – příkaz (`Using` v jazyce Visual Basic) vzhledem k tomu, že ho může maskování výjimky v určité režimy selhání. Další informace najdete v následujících částech a také [vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
   
 ### <a name="contracts-bindings-and-addresses"></a>Kontrakty, vazeb a adresy  
  Před vytvořením [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objektu klienta, je nutné nakonfigurovat klientského objektu. Konkrétně musí mít služby *koncový bod* používat. Koncový bod je kombinace kontraktu služby, vazbu a adresu. ([!INCLUDE[crabout](../../../includes/crabout-md.md)] koncové body, najdete v části [koncové body: adresy, vazby a kontrakty](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md).) Tyto informace se obvykle nachází ve [ \<endpoint >](../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md) element v souboru konfigurace aplikace klienta, jako je třeba nástroje Svcutil.exe generuje a že je načtený automaticky při vytváření vašeho klienta objekt. Obě [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] typů klientů také mají přetížení, které vám umožní prostřednictvím kódu programu zadejte tyto informace.  
@@ -140,7 +140,7 @@ Namespace Microsoft.ServiceModel.Samples
 End Interface  
 ```  
   
- Vytvořením můžete volat operace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta a volání jeho metod, jak ukazuje následující příklad kódu. Všimněte si, že zahájení, volání a zavření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta objekt vyskytuje v rámci bloku try/catch – jeden. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md) a [vyhnout se tak problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
+ Vytvořením můžete volat operace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta a volání jeho metod, jak ukazuje následující příklad kódu. Všimněte si, že zahájení, volání a zavření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta objekt vyskytuje v rámci bloku try/catch – jeden. Další informace najdete v tématu [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md) a [vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
   
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   
@@ -167,7 +167,7 @@ End Interface
   
  Duplexní [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta objekty funkce stejně jako jejich podavače protějšky, s tím rozdílem, že jejich zpřístupnění potřebných k podpoře zpětná volání, včetně konfiguraci této služby zpětného volání funkce.  
   
- Například můžete ovládat různé aspekty zpětného volání objektu modul runtime chování pomocí vlastnosti <xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType> atribut k třídě zpětného volání. Dalším příkladem je použití <xref:System.ServiceModel.Description.CallbackDebugBehavior?displayProperty=nameWithType> třída povolit vrácení informací o výjimce do služby, které volají objekt zpětného volání. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md). Kompletní příklad, najdete v části [duplexní](../../../docs/framework/wcf/samples/duplex.md).  
+ Například můžete ovládat různé aspekty zpětného volání objektu modul runtime chování pomocí vlastnosti <xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType> atribut k třídě zpětného volání. Dalším příkladem je použití <xref:System.ServiceModel.Description.CallbackDebugBehavior?displayProperty=nameWithType> třída povolit vrácení informací o výjimce do služby, které volají objekt zpětného volání. Další informace najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md). Kompletní příklad, najdete v části [duplexní](../../../docs/framework/wcf/samples/duplex.md).  
   
  V počítačích se systémem Windows XP systémem Internetové informační služby (IIS) 5.1, duplexní klienti musí zadat základní adresu klienta pomocí <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType> je vyvolána třída nebo výjimku. Následující příklad kódu ukazuje, jak to udělat v kódu.  
   
@@ -179,7 +179,7 @@ End Interface
  [!code-csharp[S_DualHttp#134](../../../samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#134)]  
   
 ## <a name="calling-services-asynchronously"></a>Asynchronní volání služby  
- Jak se nazývají operace, záleží zcela vývojáře klienta. Je to proto, že zprávy, které tvoří operace lze mapovat na synchronní nebo asynchronní metody vyjádřené ve spravovaném kódu. Proto, pokud chcete vytvořit klienta, který volá asynchronní operace, můžete použít Svcutil.exe Generovat asynchronní klienta kódu pomocí `/async` možnost. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
+ Jak se nazývají operace, záleží zcela vývojáře klienta. Je to proto, že zprávy, které tvoří operace lze mapovat na synchronní nebo asynchronní metody vyjádřené ve spravovaném kódu. Proto, pokud chcete vytvořit klienta, který volá asynchronní operace, můžete použít Svcutil.exe Generovat asynchronní klienta kódu pomocí `/async` možnost. Další informace najdete v tématu [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
 ## <a name="calling-services-using-wcf-client-channels"></a>Volání služby prostřednictvím kanálů klienta WCF  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] rozšíření typů klientů <xref:System.ServiceModel.ClientBase%601>, které je odvozena z <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> rozhraní vystavit podkladový systém kanálu. Můžete vyvolat služby pomocí cíl kontrakt služby s <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> třídy. Podrobnosti najdete v tématu [Architektura klienta WCF](../../../docs/framework/wcf/feature-details/client-architecture.md).  

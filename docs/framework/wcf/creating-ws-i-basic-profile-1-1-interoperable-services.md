@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fa561e5019bcf90e93da669f93cbce51d02e89dc
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: fd08dca74ddb3f77e37a3aa4d67cf6d495bf5d16
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="creating-ws-i-basic-profile-11-interoperable-services"></a>Vytváření interoperabilních služeb WS-I Basic Profile 1.1
 Ke konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] koncový bod služby jako vzájemná spolupráce s [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] webových služeb klientům:  
@@ -42,7 +42,7 @@ Ke konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] koncový bod
   
 -   Řídí zabezpečení zpráv <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> hodnota poskytuje podporu WS-zabezpečení, které jsou kompatibilní s WS-I Basic 1.0 profil zabezpečení. V jeho výchozí hodnotu, která je ponechte tuto vlastnost <xref:System.ServiceModel.SecurityMode.Transport?displayProperty=nameWithType> nechcete použít WS-zabezpečení.  
   
- Chcete, aby metadata pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, které jsou k dispozici pro [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], pomocí nástrojů generování klienta webové služby: [Web Services Description Language Tool (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88), [(nástroj pro zjišťování webové služby Disco.exe)](http://msdn.microsoft.com/library/acd88078-c581-42bc-94ca-6633e2851979)a `Add Web Reference` funkce v sadě Visual Studio; je nutné povolit metadata publikace. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Publikování kocových bodů metadat](../../../docs/framework/wcf/publishing-metadata-endpoints.md).  
+ Chcete, aby metadata pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, které jsou k dispozici pro [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], pomocí nástrojů generování klienta webové služby: [Web Services Description Language Tool (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88), [(nástroj pro zjišťování webové služby Disco.exe)](http://msdn.microsoft.com/library/acd88078-c581-42bc-94ca-6633e2851979)a `Add Web Reference` funkce v sadě Visual Studio; je nutné povolit metadata publikace. Další informace najdete v tématu [publikování kocových bodů metadat](../../../docs/framework/wcf/publishing-metadata-endpoints.md).  
   
 ## <a name="example"></a>Příklad  
   

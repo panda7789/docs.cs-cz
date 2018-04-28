@@ -4,16 +4,16 @@ description: Nový příkaz dotnet vytvoří nové projekty .NET Core na základ
 author: mairaw
 ms.author: mairaw
 ms.date: 03/26/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 4432587c0015c353a34816eee4206dc53cdefba9
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: ab8d6f779a428aab7bd2739105dcf08b51d14ab9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/09/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET core 2.0](#tab/netcore2x)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
@@ -52,16 +52,16 @@ Příkaz volání [modulu šablon](https://github.com/dotnet/templating) vytvoř
 
 Šablona pro vytvoření instance při vyvolání příkazu. Každá šablona může mít specifické možnosti, které lze předat. Další informace najdete v tématu [možnosti šablony](#template-options).
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET core 2.0](#tab/netcore2x)
 
 Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalované .NET Core 2.0 SDK. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
 |Popis šablony                          | Název šablony | Jazyky     |
 |----------------------------------------------|---------------|---------------|
-| Konzolová aplikace                          | `console`     | [C#], F#, VB  |
-| Knihovna tříd                                | `classlib`    | [C#], F#, VB  |
-| Projektu testování částí                            | `mstest`      | [C#], F#, VB  |
-| xUnit testovacího projektu                           | `xunit`       | [C#], F#, VB  |
+| Konzolová aplikace                          | `console`     | [C#], F #, VB  |
+| Knihovna tříd                                | `classlib`    | [C#], F #, VB  |
+| Projektu testování částí                            | `mstest`      | [C#], F #, VB  |
+| xUnit testovacího projektu                           | `xunit`       | [C#], F #, VB  |
 | ASP.NET Core prázdný                           | `web`         | [C#], F #      |
 | Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`         | [C#], F #      |
 | Webové aplikace ASP.NET Core                         | `razor`       | [C#]          |
@@ -69,7 +69,7 @@ Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -l` získat 
 | ASP.NET Core s React.js                   | `react`       | [C#]          |
 | ASP.NET Core s React.js a – obnovení         | `reactredux`  | [C#]          |
 | Jádro ASP.NET Web API                         | `webapi`      | [C#], F #      |
-| global.json file                             | `globaljson`  |               |
+| soubor Global.JSON                             | `globaljson`  |               |
 | Konfigurace Nuget                                 | `nugetconfig` |               |
 | Webové konfigurace                                   | `webconfig`   |               |
 | Soubor řešení                                | `sln`         |               |
@@ -98,7 +98,7 @@ Příkaz obsahuje seznam výchozích šablon. Použití `dotnet new -all` získa
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET core 2.0](#tab/netcore2x)
 
 `--force`
 
@@ -180,7 +180,7 @@ Umístění pro generovaný výstup. Výchozí je aktuální adresář.
 
 Každá šablona projektu může mít další možnosti, které jsou k dispozici. Základní šablony mají následující možnosti:
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET core 2.0](#tab/netcore2x)
 
 **konzole úhlová, reagovat, reactredux**
 
@@ -192,7 +192,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 `--no-restore` -Nepodporuje provedení implicitní obnovení během vytváření projektu.
 
-**mstest, xunit**
+**mstestu xunit**
 
 `-p|--enable-pack` – Umožňuje vytváření balíčků pro projekt pomocí [dotnet pack](dotnet-pack.md).
 
@@ -288,7 +288,7 @@ Každá šablona projektu může mít další možnosti, které jsou k dispozici
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 
-**console, xunit, mstest, web, webapi**
+**konzola, xunit, mstestu, web, webapi**
 
 `-f|--framework` -Určuje [framework](../../standard/frameworks.md) k cíli. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
@@ -336,5 +336,5 @@ Instalace verze 2.0 šablon jedné stránky aplikace ASP.NET Core (příkaz mož
 
 [Vlastní šablony pro nové dotnet.](custom-templates.md)  
 [Vytvoření vlastní šablony pro dotnet new](~/docs/core/tutorials/create-custom-template.md)  
-[dotnet/dotnet-template-samples GitHub repo](https://github.com/dotnet/dotnet-template-samples)  
+[úložiště GitHub DotNet/dotnet šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
 [Dostupné šablony pro nové dotnet.](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new)

@@ -1,19 +1,19 @@
 ---
-title: "příkaz odkaz DotNet remove - .NET Core rozhraní příkazového řádku"
-description: "Příkaz dotnet odebrat odkaz poskytuje vhodnou možnost odebrat odkazy na projekt na projekt."
-keywords: "příkaz DotNet-remove, rozhraní příkazového řádku, rozhraní příkazového řádku, .NET Core"
+title: příkaz odkaz DotNet remove - .NET Core rozhraní příkazového řádku
+description: Příkaz dotnet odebrat odkaz poskytuje vhodnou možnost odebrat odkazy na projekt na projekt.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 691fd77c7605b6476adc764f20e59b51abd7d914
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 0b7fb2788ccc04b54bf02f0387141d501612c16d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-remove-reference"></a>Odebrat odkaz DotNet.
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet remove reference`– Odebere odkazy na projekt na projekt.
+`dotnet remove reference` – Odebere odkazy na projekt na projekt.
 
 ## <a name="synopsis"></a>Stručný obsah
 

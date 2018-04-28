@@ -1,30 +1,32 @@
 ---
-title: "Sdílení portů Net.TCP"
-ms.custom: 
+title: Sdílení portů Net.TCP
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 013c9e963ca75cc612d869a55b33d69aebbcad33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c7abf272cb1d069b0fbdcd561256580de5a82c29
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje nový protokol sítě založené na protokolu TCP (net.tcp://) pro komunikaci s vysokým výkonem. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]také zavádí novou součást systému, služba Net.TCP Port Sharing umožňující portů net.tcp ke sdílení více procesy uživatele.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje nový protokol sítě založené na protokolu TCP (net.tcp://) pro komunikaci s vysokým výkonem. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také zavádí novou součást systému, služba Net.TCP Port Sharing umožňující portů net.tcp ke sdílení více procesy uživatele.  
   
 ## <a name="background-and-motivation"></a>Pozadí a motivace  
  Když protokol TCP/IP byla poprvé použita, pouze malý počet aplikací protokoly provedené jeho použití. TCP/IP používá k rozlišení mezi aplikace přidělením jedinečné 16bitové číslo portu pro každý protokol aplikace čísla portů. Například přenos HTTP se ještě dnes standardizované využívá TCP port 80, SMTP používá TCP port 25 a server FTP použije porty TCP 20 a 21. Jiné aplikace pomocí protokolu TCP přenos můžete si vybrat jiný dostupný port číslo podle konvence nebo prostřednictvím formální standardizace.  
@@ -49,12 +51,12 @@ ms.lasthandoff: 12/22/2017
  Když [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, která používá sdílení, portu net.tcp:// [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury přenosu protokolu TCP v procesu aplikace přímo neotevře TCP soketu. Místo toho infrastruktura přenosu zaregistruje základní adresu identifikátoru URI (Uniform Resource) se služba Net.TCP Port Sharing a čeká na služby přijímat zprávy jeho jménem sdílení portů.  Služby Sdílení portů expeduje zprávy adresované do služba aplikace, když dorazí.  
   
 ## <a name="installing-port-sharing"></a>Instalace sdílení portů  
- Služba Net.TCP Port Sharing je k dispozici ve všech operačních systémech, které podporují [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], ale služba není ve výchozím nastavení povolena. Jako bezpečnostní opatření musí správce ručně povolit službu Net.TCP Port Sharing před první použití. Služba Net.TCP Port Sharing zpřístupní možnosti konfigurace, které umožňují pracovat s několik vlastností sítě soketů, které vlastní služby Sdílení portů. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).  
+ Služba Net.TCP Port Sharing je k dispozici ve všech operačních systémech, které podporují [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], ale služba není ve výchozím nastavení povolena. Jako bezpečnostní opatření musí správce ručně povolit službu Net.TCP Port Sharing před první použití. Služba Net.TCP Port Sharing zpřístupní možnosti konfigurace, které umožňují pracovat s několik vlastností sítě soketů, které vlastní služby Sdílení portů. Další informace najdete v tématu [postupy: povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).  
   
 ## <a name="using-nettcp-port-sharing-in-an-application"></a>Použití v aplikaci pro sdílení portů Net.tcp  
  Nejjednodušší způsob, jak používat port net.tcp:// sdílení v vaše [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace je vystavit služby pomocí <xref:System.ServiceModel.NetTcpBinding> a potom povolit služby Sdílení portů Net.TCP pomocí <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> vlastnost.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak to udělat, najdete v části [postupy: Konfigurace používání sdílení portů ve službě WCF](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] jak to udělat, najdete v části [postupy: Konfigurace používání sdílení portů ve službě WCF](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md).  
   
 ## <a name="security-implications-of-port-sharing"></a>Sdílení portů vliv na zabezpečení  
  I když služba Net.TCP Port Sharing zajišťuje vrstvu zpracování mezi aplikacemi a sítě, musí být aplikace, které používají sdílení portů stále zabezpečený, jako kdyby byly přímo naslouchání v síti. Aplikace, které používají sdílení portů konkrétně byste měli zvážit, proces oprávnění, pod kterým poběží. Zvažte spuštění vaší aplikace pomocí vestavěný účet Síťová služba, který se spouští s minimálním počtem proces oprávnění požadovaná pro síťovou komunikaci.  

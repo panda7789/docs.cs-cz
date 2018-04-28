@@ -1,21 +1,19 @@
 ---
 title: .NET core kurzy
 description: Výukové programy pro učení .NET Core k sestavení aplikace a knihovny na Mac, Linux a Windows.
-keywords: Rozhraní .NET, .NET core
 author: richlander
 ms.author: mairaw
 ms.date: 03/16/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 267cac338263f964006b424bb855d1022990498c
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 251c03e278b56922efaf912f9f5692114929549d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-tutorials"></a>.NET core kurzy
 

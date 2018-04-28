@@ -1,20 +1,19 @@
 ---
-title: "Testy spuštění selektivní jednotek"
-description: "Ukazuje, jak se použije ke spuštění testů jednotek selektivní test příkazem dotnet výraz filtru."
-keywords: "Testování částí rozhraní .NET, .NET core, selektivní testu"
+title: Testy spuštění selektivní jednotek
+description: Ukazuje, jak se použije ke spuštění testů jednotek selektivní test příkazem dotnet výraz filtru.
 author: smadala
 ms.author: mairaw
 ms.date: 03/22/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 13d01272-bbf8-456c-a97a-560001d1a7f2
-ms.workload: dotnetcore
-ms.openlocfilehash: a650e971afd63171b0cc12f679d81bc222a609a5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 77ac7ab5a46150bd3654d50e6686087c804b8440
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="running-selective-unit-tests"></a>Testy spuštění selektivní jednotek
 
@@ -55,7 +54,7 @@ namespace MSTestNamespace
 | `dotnet test --filter TestCategory=CategoryA` | Spustí testy, které jsou opatřen poznámkou `[TestCategory("CategoryA")]`. |
 | `dotnet test --filter Priority=3` | Spustí testy, které jsou opatřen poznámkou `[Priority(3)]`.<br>**Poznámka:** `Priority~3` je neplatná hodnota, protože není řetězec. |
 
-**Podmíněné operátory pomocí | a&amp;**
+**Podmíněné operátory pomocí | a &amp;**
 
 | Výraz | Výsledek |
 | ---------- | ------ |
@@ -100,7 +99,7 @@ V příkladu kódu, jsou definované vlastnosti s klíči `Category` a `Priority
 | `dotnet test --filter XUnit` | Spuštění testů, jehož `FullyQualifiedName` obsahuje `XUnit`.  K dispozici v `vstest 15.1+`. |
 | `dotnet test --filter Category=bvt` | Spustí testy, které mají `[Trait("Category", "bvt")]`. |
 
-**Podmíněné operátory pomocí | a&amp;**
+**Podmíněné operátory pomocí | a &amp;**
 
 | Výraz | Výsledek |
 | ---------- | ------ |

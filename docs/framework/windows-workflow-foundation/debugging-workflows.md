@@ -14,20 +14,20 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 866fe3ebcec295b57444f937b3b6fd6677bfe0f4
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 8fa22db7fe613279fcf8487abaf57691250b7d80
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="debugging-workflows"></a>Ladění pracovních postupů
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] nabízí několik možností pro ladění pracovních postupů běžících z vývojového prostředí. Pracovní postupy můžete ladit v návrháři, v jazyce XAML a v kódu.  
   
 ## <a name="debugging-in-the-workflow-designer"></a>Ladění v Návrháři pracovních postupů  
- Zarážky lze nastavit u aktivity v Návrháři pracovních postupů zvýraznění aktivity a stisknutím klávesy **F9** nebo pomocí aktivity kontextové nabídky. Spuštění pracovního postupu pak zalomení při spuštění v režimu ladění hostitele pracovního postupu. Na následujícím snímku obrazovky je na zarážce pozastavena spuštění pracovního postupu. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Ladění pracovních postupů pomocí návrháře pracovních postupů](/visualstudio/workflow-designer/debugging-workflows-with-the-workflow-designer).  
+ Zarážky lze nastavit u aktivity v Návrháři pracovních postupů zvýraznění aktivity a stisknutím klávesy **F9** nebo pomocí aktivity kontextové nabídky. Spuštění pracovního postupu pak zalomení při spuštění v režimu ladění hostitele pracovního postupu. Na následujícím snímku obrazovky je na zarážce pozastavena spuštění pracovního postupu. Další informace najdete v tématu [ladění pracovních postupů pomocí návrháře pracovních postupů](/visualstudio/workflow-designer/debugging-workflows-with-the-workflow-designer).  
   
 ## <a name="debugging-in-xaml"></a>Ladění v jazyce XAML  
- Pokud u zarážky v Návrháři má pozastaví pracovní postup, můžete v jazyce XAML ladit pracovního postupu. Chcete-li zobrazit bodu provádění v jazyce XAML, vyberte **zobrazení jazyka XAML** v Návrháři pracovních postupů při spuštění pracovního postupu je pozastavena. Ladění je možné přepnout zpět do návrháře opakovaným otevřením workflow v Návrháři v Průzkumníku řešení. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Postupy: ladění kódu XAML pomocí návrháře pracovních postupů](/visualstudio/workflow-designer/how-to-debug-xaml-with-the-workflow-designer).  
+ Pokud u zarážky v Návrháři má pozastaví pracovní postup, můžete v jazyce XAML ladit pracovního postupu. Chcete-li zobrazit bodu provádění v jazyce XAML, vyberte **zobrazení jazyka XAML** v Návrháři pracovních postupů při spuštění pracovního postupu je pozastavena. Ladění je možné přepnout zpět do návrháře opakovaným otevřením workflow v Návrháři v Průzkumníku řešení. Další informace najdete v tématu [postupy: ladění XAML pomocí návrháře pracovních postupů](/visualstudio/workflow-designer/how-to-debug-xaml-with-the-workflow-designer).  
   
 ## <a name="debugging-in-code"></a>Ladění v kódu  
  Mohou být používány kód zarážky [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] stejným způsobem, že je lze použít v ostatních aplikacích imperativní. Klikněte na levém okraji podokna kód k vytvoření zarážku kód, nebo stiskněte klávesu **F9** umístěte zarážku v umístění kurzoru.  
@@ -42,4 +42,4 @@ ms.lasthandoff: 04/27/2018
 >  Pokud je pracovní postup aplikace určena x86 architektura a je hostovaná v počítači se systémem 64bitový operační systém, pak vzdálené ladění nebude fungovat, pokud je na vzdáleném počítači nainstalované sady Visual Studio nebo cíle pro aplikace pracovního postupu se změní na **Žádné procesoru**.  
   
 ## <a name="extending-the-workflow-debugging-service"></a>Rozšíření ladění služby pracovního postupu  
- Ladicí program služby pracovního postupu je teď veřejná a slouží k vytváření vlastních aplikací, jako jsou monitorování, simulace a ladění znovu hostované Designer. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] <xref:System.Activities.Presentation.Debug.DebuggerService> tématu.
+ Ladicí program služby pracovního postupu je teď veřejná a slouží k vytváření vlastních aplikací, jako jsou monitorování, simulace a ladění znovu hostované Designer. Další informace najdete v tématu <xref:System.Activities.Presentation.Debug.DebuggerService> tématu.

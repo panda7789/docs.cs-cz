@@ -1,20 +1,19 @@
 ---
-title: "Nasazení aplikace .NET core pomocí sady Visual Studio"
-description: "Další nasazení aplikace .NET Core pomocí sady Visual Studio"
-keywords: "Nasazení .NET Core .NET, .NET core"
+title: Nasazení aplikace .NET core pomocí sady Visual Studio
+description: Další nasazení aplikace .NET Core pomocí sady Visual Studio
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 01049a21-fd50-4419-9ab2-0e4a2e091050
-ms.workload: dotnetcore
-ms.openlocfilehash: a2706aecb80f079e6e735310b09c1062a6953901
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 238e43149eebb59ecbb25dfc3976f912e0ae8b01
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="deploying-net-core-apps-with-visual-studio"></a>Nasazení .NET základní aplikace pomocí sady Visual Studio
 
@@ -79,7 +78,7 @@ Nasazení nasazení framework závislé na jeden nebo více třetích stran záv
 
 Upozorňujeme, že nasazení závislé na framework se závislostmi třetí strany se pouze jako přenosný jeho závislé součásti třetích stran. Například pokud knihovnu třetích stran podporuje pouze systému macOS, aplikace není přenosné pro systémy Windows. To se stane, když závislost třetích stran, samotné závisí na nativního kódu. Dobrým příkladem tohoto objektu je [Kestrel server](http://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Když disketové jednotky se vytvoří pro aplikace s tímto typem závislosti třetích stran, publikované výstup obsahuje složku pro každý [identifikátor Runtime (RID)](../rid-catalog.md) podporující nativní závislost (a která existuje v jeho balíčku NuGet).
 
-## <a name="simpleSelf"></a>Samostatná nasazení bez závislosti na třetích stran
+## <a name="simpleSelf"></a> Samostatná nasazení bez závislosti na třetích stran
 
 Nasazení samostatná nasazení nemá žádné závislosti třetích stran zahrnuje vytvoření projektu, úprava *csproj* souborů, vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v C# znázorňuje proces. 
 

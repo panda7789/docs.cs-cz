@@ -4,16 +4,16 @@ description: Příkaz 'dotnet úložiště, ukládá na zadaná sestavení v úl
 author: bleroy
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 80ea40dfbedba3dca0e767b66e14f5de22374d4f
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 6baa28256535d6a9d653d9df743cd3cdf45ab910
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-store"></a>úložiště DotNet.
 

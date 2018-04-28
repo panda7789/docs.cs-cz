@@ -1,30 +1,32 @@
 ---
-title: "Důležité informace o zabezpečení pro data"
-ms.custom: 
+title: Důležité informace o zabezpečení pro data
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: bb7a40bc38a3fdf3f7be2b31e30e768e26be2d15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: aa0692c130fdfcf3685c152cdcb73a07d041ab9b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="security-considerations-for-data"></a>Důležité informace o zabezpečení pro data
-Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], je nutné zvážit mnoho kategorií hrozeb. Následující tabulka uvádí nejdůležitější třídy hrozeb, které se vztahují ke zpracování dat. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje nástroje ke zmírnění tyto hrozby.  
+Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], je nutné zvážit mnoho kategorií hrozeb. Následující tabulka uvádí nejdůležitější třídy hrozeb, které se vztahují ke zpracování dat. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje nástroje ke zmírnění tyto hrozby.  
   
  Odmítnutí služby  
  Při přijetí nedůvěryhodných dat, může způsobit data straně příjmu pro přístup k nesoustředil příliš velký objem různé prostředky, například paměť, vláken, dostupná připojení nebo cyklů procesoru tím, že na zdlouhavé výpočty. Odmítnutí služby útoku proti serveru může způsobit havárií, a nebude možné zpracovat zprávy od klientů, které legitimní.  
@@ -44,7 +46,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
  Ujistěte se, že žádný škodlivý kód je připojen do různých body rozšiřitelnosti. To je obzvláště důležité, při spuštění v částečné důvěryhodnosti, plánování práce s typy z částečně důvěryhodného sestavení nebo vytváření použitelné součásti částečně důvěryhodný kód. Další informace najdete v tématu "Částečné důvěryhodnosti hrozby" v další části.  
   
- Poznámka: při spuštění v částečné důvěryhodnosti, infrastruktura serializace kontraktu dat podporuje pouze omezenou podmnožinou dat kontrakt programovacího modelu – například private členy nebo typy pomocí <xref:System.SerializableAttribute> atribut nejsou podporovány. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Částečnou důvěryhodností](../../../../docs/framework/wcf/feature-details/partial-trust.md).  
+ Poznámka: při spuštění v částečné důvěryhodnosti, infrastruktura serializace kontraktu dat podporuje pouze omezenou podmnožinou dat kontrakt programovacího modelu – například private členy nebo typy pomocí <xref:System.SerializableAttribute> atribut nejsou podporovány. Další informace najdete v tématu [částečné důvěryhodnosti](../../../../docs/framework/wcf/feature-details/partial-trust.md).  
   
 ## <a name="avoiding-unintentional-information-disclosure"></a>Zamezení neúmyslnému přístup k informacím  
  Při navrhování Serializovatelné typy s důrazem na bezpečnost, zpřístupnění informací je možné problémy.  
@@ -78,7 +80,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
  Všimněte si také, že `MaxReceivedMessageSize` neumístí horní mez na jednotlivé zprávy využití paměti, ale její omezení v rámci konstantní faktor. Například pokud `MaxReceivedMessageSize` je 1 MB a je přijatá zpráva 1 MB a pak je potřeba obsahovat deserializovaný objekt grafu, což vede k celkové paměti spotřeba také více než 1 MB deserializovat, další paměť. Z tohoto důvodu Vyhněte se vytváření Serializovatelné typy, které by mohly způsobit významné paměťové nároky bez množství příchozích dat. Například kontrakt dat "MyContract" 50 volitelnými daty člen pole a další 100 privátní pole může být vytvořena s konstrukce XML "\<MyContract / >". Tato konfigurace XML má za následek paměti přistupuje 150 polí. Upozorňujeme, že jsou ve výchozím nastavení volitelné datových členů. Tento problém nastane, když je takového typu součástí pole.  
   
- `MaxReceivedMessageSize`samostatně není dostatečně k útokům denial of service. Deserializátor může vynutit k deserializaci hluboko vnořený objekt graf (objekt, který obsahuje jiný objekt, který obsahuje ještě jiný a tak dále), například pomocí příchozí zprávy. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> volat metody vnořené způsobem k deserializaci takové grafy. Hluboká vnoření volání metod může mít za následek k neodstranitelné <xref:System.StackOverflowException>. Tuto hrozbu zmírnit nastavení <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> kvóty pro omezení úroveň vnoření XML, jak je popsáno v části "Použití XML bezpečně" později v tomto tématu.  
+ `MaxReceivedMessageSize` samostatně není dostatečně k útokům denial of service. Deserializátor může vynutit k deserializaci hluboko vnořený objekt graf (objekt, který obsahuje jiný objekt, který obsahuje ještě jiný a tak dále), například pomocí příchozí zprávy. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> volat metody vnořené způsobem k deserializaci takové grafy. Hluboká vnoření volání metod může mít za následek k neodstranitelné <xref:System.StackOverflowException>. Tuto hrozbu zmírnit nastavení <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> kvóty pro omezení úroveň vnoření XML, jak je popsáno v části "Použití XML bezpečně" později v tomto tématu.  
   
  Nastavení dodatečných kvótách `MaxReceivedMessageSize` je zvlášť důležité při použití binárního kódování XML. Použití binárního kódování odpovídá poněkud komprese: malou skupinu bajtů příchozí zpráva může představovat velké množství dat. Proto i zprávu hodí do `MaxReceivedMessageSize` limit může trvat až mnohem víc paměti ve plně rozšířené formuláře. Zmírnit hrozby takové specifické XML, všechny kvóty čtečky XML musí být nastavena správně, jak je popsáno v části "Použití XML bezpečně" dál v tomto tématu.  
   
@@ -90,12 +92,12 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
 ### <a name="maxbuffersize-details"></a>Podrobnosti o MaxBufferSize  
  `MaxBufferSize` Vlastnost omezuje žádné hromadné ukládání do vyrovnávací paměti [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje. Například [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vždy vyrovnávacích pamětí hlavičky SOAP a chyb protokolu SOAP a také všechny části MIME najít tak, aby nebyl v pořadí fyzická čtení zprávy zpráva přenosu optimalizace mechanismus (MTOM). Toto nastavení omezuje množství ukládání do vyrovnávací paměti ve všech těchto případech.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]dosahuje tak, že předávání `MaxBufferSize` hodnotu pro různé součásti, které může ukládat do vyrovnávací paměti. Například některé <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> přetížení <xref:System.ServiceModel.Channels.Message> proveďte třídy `maxSizeOfHeaders` parametr. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]předá `MaxBufferSize` hodnotu tohoto parametru a omezit tak velikost hlavičky SOAP ukládání do vyrovnávací paměti. Je důležité při použití nastavte tento parametr <xref:System.ServiceModel.Channels.Message> přímo třídu. Obecně platí, že při použití komponenty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] , která má parametry kvót, je důležité pochopit bezpečnostních důsledcích tyto parametry a tyto hodnoty správně nastaveny.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dosahuje tak, že předávání `MaxBufferSize` hodnotu pro různé součásti, které může ukládat do vyrovnávací paměti. Například některé <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> přetížení <xref:System.ServiceModel.Channels.Message> proveďte třídy `maxSizeOfHeaders` parametr. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] předá `MaxBufferSize` hodnotu tohoto parametru a omezit tak velikost hlavičky SOAP ukládání do vyrovnávací paměti. Je důležité při použití nastavte tento parametr <xref:System.ServiceModel.Channels.Message> přímo třídu. Obecně platí, že při použití komponenty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] , která má parametry kvót, je důležité pochopit bezpečnostních důsledcích tyto parametry a tyto hodnoty správně nastaveny.  
   
  Kodér zpráv MTOM má také `MaxBufferSize` nastavení. Při použití standardní vazby, to je automaticky nastaven na úrovni přenosu `MaxBufferSize` hodnotu. Ale při použití prvku vazby MTOM zpráva encoder můžete vytvořit vlastní vazby, je důležité nastavit `MaxBufferSize` vlastnost na hodnotu bezpečné při streamování se používá.  
   
 ## <a name="xml-based-streaming-attacks"></a>Streamování útoky založenými na XML  
- `MaxBufferSize`samostatně není dostatečně zajistit, aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nelze vynutit do ukládání do vyrovnávací paměti při streamování se očekává. Například [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] čtečky XML vždy vyrovnávací paměti celý počáteční značky elementu XML při spouštění číst nového elementu. To se provádí tak, aby správně zpracovat obory názvů a atributy. Pokud `MaxReceivedMessageSize` je nakonfigurovaný jako velký (například povolit velký soubor přímo na disk streamování scénář), škodlivé zprávy může zkonstruovat kde text celé zprávy je velký počáteční značky elementu XML. Pokus o čtení ho vede <xref:System.OutOfMemoryException>. Toto je jedna z mnoha možné na základě XML denial-of-service útoků, které lze všechny zmírnit pomocí kvóty čtečky XML, které jsou popsané v části "Použití XML bezpečně" dál v tomto tématu. Při streamování, je velmi důležité nastavit všechny tyto kvóty.  
+ `MaxBufferSize` samostatně není dostatečně zajistit, aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nelze vynutit do ukládání do vyrovnávací paměti při streamování se očekává. Například [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] čtečky XML vždy vyrovnávací paměti celý počáteční značky elementu XML při spouštění číst nového elementu. To se provádí tak, aby správně zpracovat obory názvů a atributy. Pokud `MaxReceivedMessageSize` je nakonfigurovaný jako velký (například povolit velký soubor přímo na disk streamování scénář), škodlivé zprávy může zkonstruovat kde text celé zprávy je velký počáteční značky elementu XML. Pokus o čtení ho vede <xref:System.OutOfMemoryException>. Toto je jedna z mnoha možné na základě XML denial-of-service útoků, které lze všechny zmírnit pomocí kvóty čtečky XML, které jsou popsané v části "Použití XML bezpečně" dál v tomto tématu. Při streamování, je velmi důležité nastavit všechny tyto kvóty.  
   
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>Kombinování streamování a ukládání do vyrovnávací paměti modely programování  
  Řada možných útoků jsou vyvolány kombinování streamování a streamování programovací modely v rámci stejné služby. Předpokládejme, že je kontrakt služby s dvěma operacemi: jeden trvá <xref:System.IO.Stream> a jiné přijímá pole vlastní typu. Předpokládejme také který `MaxReceivedMessageSize` je nastaven na velké hodnoty, aby první operaci ke zpracování velkých datových proudů. Bohužel to znamená, velké můžete nyní odesílání zpráv i druhá operace a data vyrovnávací paměti deserializátor v paměti jako pole předtím, než se nazývá operaci. Toto je možný útok denial of service: `MaxBufferSize` kvóty neomezuje velikost těla zprávy, což je deserializátor pracuje s.  
@@ -121,7 +123,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
 ### <a name="slow-stream-attacks"></a>Útoky pomalé datového proudu  
  Třída útoků odmítnutí služby streamování nezahrnuje využití paměti. Místo toho útoku zahrnuje pomalé odesílatel nebo příjemce data. Při čekání na data, která mají být odesílané nebo přijímané, vyčerpání prostředků, jako je například vláken a dostupné připojení. Tato situace může nastat v důsledku napadením se zlými úmysly nebo z legitimní odesílatel/příjemce na pomalé síťové připojení.  
   
- Zmírnit tyto útoky, správně nastavené časové limity přenosu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Přenosu kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md). Za druhé, nikdy nepoužívejte synchronní `Read` nebo `Write` operace při práci s datovými proudy v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Zmírnit tyto útoky, správně nastavené časové limity přenosu. Další informace najdete v tématu [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md). Za druhé, nikdy nepoužívejte synchronní `Read` nebo `Write` operace při práci s datovými proudy v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ## <a name="using-xml-safely"></a>Bezpečně pomocí XML  
   
@@ -129,7 +131,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
 >  I když tato část se týká XML, informace platí také pro dokumenty JavaScript Object Notation (JSON). Kvóty fungují podobně, pomocí [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).  
   
 ### <a name="secure-xml-readers"></a>Zabezpečení čtečky XML  
- Informační sadu XML je základem veškeré zpracování zpráv v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Pokud existují přijímá data XML z nedůvěryhodného zdroje, počet možnosti útok s cílem služby, musí být omezeny. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje speciální a zabezpečené čtečky XML. Tyto čtečky automaticky vytvoří při použití jednu standardní kódování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (text, binary nebo MTOM).  
+ Informační sadu XML je základem veškeré zpracování zpráv v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Pokud existují přijímá data XML z nedůvěryhodného zdroje, počet možnosti útok s cílem služby, musí být omezeny. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje speciální a zabezpečené čtečky XML. Tyto čtečky automaticky vytvoří při použití jednu standardní kódování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (text, binary nebo MTOM).  
   
  Některé z funkcí zabezpečení na těchto čtečky jsou vždy aktivní. Například čtečky nikdy zpracovat definice typu dokumentu (DTD), které jsou potenciální zdroj útoky DOS a by se nikdy zobrazit v legitimní protokolu SOAP zprávy. Další funkce zabezpečení zahrnují kvóty čtečky, které musí být nakonfigurován, které jsou popsané v následující části.  
   
@@ -143,12 +145,12 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
 -   Název elementu a jeho atributy jsou vždy do vyrovnávací paměti v paměti při jejich přečtení. Proto je důležité nastavit tuto kvótu správně při streamování režimu, aby se zabránilo nadměrnému ukládání do vyrovnávací paměti při streamování se očekává. Najdete v článku `MaxDepth` části kvóta informace o skutečné množství ukládání do vyrovnávací paměti, který probíhá.  
   
--   Má příliš mnoho atributů XML může použít až nesoustředil příliš velký doba zpracování, protože názvy atributů musí být vráceny jedinečnosti. `MaxBytesPerRead`omezuje tuto hrozbu.  
+-   Má příliš mnoho atributů XML může použít až nesoustředil příliš velký doba zpracování, protože názvy atributů musí být vráceny jedinečnosti. `MaxBytesPerRead` omezuje tuto hrozbu.  
   
 #### <a name="maxdepth"></a>MaxDepth  
- Tato kvóta omezuje maximální hloubky vnoření elementů XML. Například v dokumentu "\<A >\<B >\<C / >\</B >\</A >" se hloubky vnoření tří. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>je důležité z následujících důvodů:  
+ Tato kvóta omezuje maximální hloubky vnoření elementů XML. Například v dokumentu "\<A >\<B >\<C / >\</B >\</A >" se hloubky vnoření tří. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> je důležité z následujících důvodů:  
   
--   `MaxDepth`komunikuje s `MaxBytesPerRead`: Čtečka vždy uchovává data v paměti pro aktuální prvek a veškeré jeho předchůdců, je spotřeba maximální paměť čtečky úměrný tato dvě nastavení.  
+-   `MaxDepth` komunikuje s `MaxBytesPerRead`: Čtečka vždy uchovává data v paměti pro aktuální prvek a veškeré jeho předchůdců, je spotřeba maximální paměť čtečky úměrný tato dvě nastavení.  
   
 -   Při deserializaci hluboko vnořený objekt grafu, pro přístup k celý zásobník a throw k neodstranitelné je nucen deserializátor <xref:System.StackOverflowException>. Přímá korelace mezi vnoření XML a objekt vnoření obě existuje <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer>. Použití `MaxDepth` pro zmírnění této hrozby.  
   
@@ -177,17 +179,17 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
  <xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>, `MaxStringContentLength`, A `MaxArrayLength` vlastnosti pouze omezení využití paměti. Jsou obvykle není vyžadována zmírnit všechny hrozby využití datového proudu, protože využití paměti je již omezena `MaxReceivedMessageSize`. Ale `MaxReceivedMessageSize` počty předběžné rozšíření bajtů. Když binárního kódování se používá, využití paměti může potenciálně jdou nad rámec `MaxReceivedMessageSize`omezené jenom faktorem <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize%2A>. Z tohoto důvodu je důležité vždy nastavit všechny čtečky kvóty (zejména <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>) při použití binárního kódování.  
   
- Při použití binárního kódování společně s <xref:System.Runtime.Serialization.DataContractSerializer>, `IExtensibleDataObject` rozhraní můžete došlo ke zneužití připojit slovníkový útok rozšíření. Toto rozhraní v podstatě poskytuje neomezené úložiště pro libovolná data, která není součástí kontraktu. Pokud nelze nastavit kvóty nízké tak, aby `MaxSessionSize` násobí hodnotou `MaxReceivedMessageSize` neobsahuje představovat problém, zakažte `IExtensibleDataObject` funkce při použití binárního kódování. Nastavte `IgnoreExtensionDataObject` vlastnost `true` na `ServiceBehaviorAttribute` atribut. Alternativně neimplementují `IExtensibleDataObject` rozhraní. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Kontraktů dat s dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Při použití binárního kódování společně s <xref:System.Runtime.Serialization.DataContractSerializer>, `IExtensibleDataObject` rozhraní můžete došlo ke zneužití připojit slovníkový útok rozšíření. Toto rozhraní v podstatě poskytuje neomezené úložiště pro libovolná data, která není součástí kontraktu. Pokud nelze nastavit kvóty nízké tak, aby `MaxSessionSize` násobí hodnotou `MaxReceivedMessageSize` neobsahuje představovat problém, zakažte `IExtensibleDataObject` funkce při použití binárního kódování. Nastavte `IgnoreExtensionDataObject` vlastnost `true` na `ServiceBehaviorAttribute` atribut. Alternativně neimplementují `IExtensibleDataObject` rozhraní. Další informace najdete v tématu [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ### <a name="quotas-summary"></a>Souhrn kvóty  
  Následující tabulka shrnuje informace o kvóty.  
   
 |Podmínka|Chcete-li nastavit důležité kvóty|  
 |---------------|-----------------------------|  
-|Žádné streamování nebo streamování malých zpráv, text nebo kódování MTOM|`MaxReceivedMessageSize`, `MaxBytesPerRead`, a`MaxDepth`|  
-|Žádné streamování nebo streamování malých zpráv, binární kódování|`MaxReceivedMessageSize`, `MaxSessionSize`a všechny`ReaderQuotas`|  
-|Streamování velké zprávy, text nebo kódování MTOM|`MaxBufferSize`a všechny`ReaderQuotas`|  
-|Streamování velké zprávy, binární kódování|`MaxBufferSize`, `MaxSessionSize`a všechny`ReaderQuotas`|  
+|Žádné streamování nebo streamování malých zpráv, text nebo kódování MTOM|`MaxReceivedMessageSize`, `MaxBytesPerRead`, a `MaxDepth`|  
+|Žádné streamování nebo streamování malých zpráv, binární kódování|`MaxReceivedMessageSize`, `MaxSessionSize`a všechny `ReaderQuotas`|  
+|Streamování velké zprávy, text nebo kódování MTOM|`MaxBufferSize` a všechny `ReaderQuotas`|  
+|Streamování velké zprávy, binární kódování|`MaxBufferSize`, `MaxSessionSize`a všechny `ReaderQuotas`|  
   
 -   Vypršení časových limitů transportní vrstvy musí být vždycky nastavená a nikdy nepoužívejte synchronní čtení/zápisu při streamování se používá, bez ohledu na to, jestli jsou streamování velké nebo malé zprávy.  
   
@@ -214,11 +216,11 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
  Kromě toho <xref:System.Runtime.Serialization.DataContractSerializer> podporuje polymorfismus. Člen dat může být deklarována jako <xref:System.Object>, ale může obsahovat příchozích dat `Customer` instance. To je možné, pouze pokud `Customer` typ byl proveden "známé" deserializátor prostřednictvím jednoho z těchto mechanismů:  
   
--   <xref:System.Runtime.Serialization.KnownTypeAttribute>Atribut použitý k typu.  
+-   <xref:System.Runtime.Serialization.KnownTypeAttribute> Atribut použitý k typu.  
   
--   `KnownTypeAttribute`atribut určení metodu, která vrátí seznam typů.  
+-   `KnownTypeAttribute` atribut určení metodu, která vrátí seznam typů.  
   
--   `ServiceKnownTypeAttribute`atribut.  
+-   `ServiceKnownTypeAttribute` atribut.  
   
 -   `KnownTypes` Konfigurační oddíl.  
   
@@ -228,7 +230,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
  Jakmile známý typ je v oboru, mohou být načteny kdykoli a nelze vytvořit instance typu, i když kontrakt zakazuje ve skutečnosti jeho použití. Předpokládejme například, typ, který "MyDangerousType" je přidán do seznamu známých typů pomocí jedné z výše uvedených mechanismů. To znamená, že:  
   
--   `MyDangerousType`instaluje se a jeho spuštěním konstruktoru třídy.  
+-   `MyDangerousType` instaluje se a jeho spuštěním konstruktoru třídy.  
   
 -   I když deserializaci kontraktu dat s členem řetězec dat, škodlivé zprávy může způsobit stále instanci `MyDangerousType` k vytvoření. Kód na `MyDangerousType`, například nastavením vlastností, může spustit. Po dokončení, pokusí se deserializátor přiřadit tato instance řetězec – datový člen a selhat s výjimkou.  
   
@@ -259,7 +261,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
 -   Když <xref:System.Runtime.Serialization.DataContractSerializer> deserializuje Většina tříd, konstruktory se nespustí. Nespoléhejte proto na jakékoli správy stavu v konstruktoru.  
   
--   Zpětná volání použijte k zajištění, že objekt je v platném stavu. Zpětné volání označené jako <xref:System.Runtime.Serialization.OnDeserializedAttribute> atribut je obzvláště užitečná, protože se spustí po dokončení a možnost zkontrolujte a opravte celkový stav deserializace. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Verze-zpětná volání serializace tolerantní](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
+-   Zpětná volání použijte k zajištění, že objekt je v platném stavu. Zpětné volání označené jako <xref:System.Runtime.Serialization.OnDeserializedAttribute> atribut je obzvláště užitečná, protože se spustí po dokončení a možnost zkontrolujte a opravte celkový stav deserializace. Další informace najdete v tématu [verze proti chybám zpětná volání serializace tolerantní](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
   
 -   Design typy kontraktů dat moct spolehnout na žádné konkrétní pořadí, ve kterých se vlastnosti musí být voláno setter.  
   
@@ -267,10 +269,10 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
 -   Nespoléhejte na <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost `DataMemberAttribute` atribut zaručit přítomnosti dat jde stavu zabezpečení. Data mohou být vždy `null`, `zero`, nebo `invalid`.  
   
--   Nikdy důvěryhodnosti grafu objektu deserializovat z nedůvěryhodného zdroje bez nejprve její ověřování. Každý jednotlivý objekt může být v konzistentním stavu, ale grafu objektů jako celek nesmí být. Kromě toho i v případě režimu zachování grafu objektu je zakázané, deserializovat graf může mít několik odkazů na stejný objekt nebo mít cyklické odkazy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+-   Nikdy důvěryhodnosti grafu objektu deserializovat z nedůvěryhodného zdroje bez nejprve její ověřování. Každý jednotlivý objekt může být v konzistentním stavu, ale grafu objektů jako celek nesmí být. Kromě toho i v případě režimu zachování grafu objektu je zakázané, deserializovat graf může mít několik odkazů na stejný objekt nebo mít cyklické odkazy. Další informace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 ### <a name="using-the-netdatacontractserializer-securely"></a>Pomocí NetDataContractSerializer bezpečně  
- <xref:System.Runtime.Serialization.NetDataContractSerializer> Serializace modul, který používá úzkou párování na typy. Toto je podobná <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. To znamená, určí, který typ instance načtením [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] název sestavení a typu z příchozí data. I když je součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], není nijak zadaný zapojení tento modul serializace; musí být napsané vlastní kód. `NetDataContractSerializer` Zajišťuje především pro usnadnění migrace z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Vzdálená komunikace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v příslušné části v [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+ <xref:System.Runtime.Serialization.NetDataContractSerializer> Serializace modul, který používá úzkou párování na typy. Toto je podobná <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. To znamená, určí, který typ instance načtením [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] název sestavení a typu z příchozí data. I když je součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], není nijak zadaný zapojení tento modul serializace; musí být napsané vlastní kód. `NetDataContractSerializer` Zajišťuje především pro usnadnění migrace z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Vzdálená komunikace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Další informace najdete v části relevantní v [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
  Protože samotnou zprávu může znamenat lze načíst libovolného typu, <xref:System.Runtime.Serialization.NetDataContractSerializer> mechanismus je ze své podstaty nezabezpečené a musí být použit pouze s důvěryhodné data. Je možné zabezpečit napsáním vazač zabezpečené, typ omezení typu, který umožňuje pouze bezpečné typy načíst (pomocí <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> vlastnost).  
   
@@ -308,7 +310,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
   
 -   Fakt, na který <xref:System.Runtime.Serialization.ExtensionDataObject> typ má žádné veřejné členy neznamená, že je zabezpečení dat v něm. Například pokud deserializovat ze zdroje dat privilegované do objektu, ve které některá data nachází, pak pracovní, tento objekt částečně důvěryhodného kódu částečně důvěryhodného kódu můžete číst data v `ExtensionDataObject` pomocí serializace objektu. Zvažte nastavení <xref:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject%2A> k `true` při deserializaci ze zdroje dat privilegované do objektu, který je novější předaný částečně důvěryhodného kódu.  
   
--   <xref:System.Runtime.Serialization.DataContractSerializer>a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporu serializace privátní, chráněné, interní a veřejné členy v režimu plné důvěryhodnosti. V částečné důvěryhodnosti, jde však serializovat pouze veřejné členy. A `SecurityException` je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.  
+-   <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporu serializace privátní, chráněné, interní a veřejné členy v režimu plné důvěryhodnosti. V částečné důvěryhodnosti, jde však serializovat pouze veřejné členy. A `SecurityException` je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.  
   
      Umožnit vnitřního nebo chráněné vnitřní členy k serializaci v částečné důvěryhodnosti, použijte `System.Runtime.CompilerServices.InternalsVisibleTo` atributu sestavení. Tento atribut umožňuje sestavení deklarovat, že její interní členové jsou viditelné pro některé jiné sestavení. V takovém případě sestavení, které chce mít jeho vnitřní členy serializovat prohlašuje, že jsou viditelné pro System.Runtime.Serialization.dll její vnitřní členy.  
   
@@ -350,7 +352,7 @@ Při plánování práce s daty v [!INCLUDE[indigo1](../../../../includes/indigo
 -   Při použití JavaScript koncový bod, informace citlivé a privátní může uchovávají v klientovi mezipaměti webového prohlížeče.  
   
 ## <a name="a-note-on-components"></a>Poznámka: na komponenty  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]je systém flexibilní a přizpůsobit. Většina obsah tohoto tématu soustředit na nejběžnější [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] scénáře použití. Je však možné kombinovat součásti [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje mnoha různými způsoby. Je důležité porozumět zabezpečení důsledky použití jednotlivých součástí. Zejména:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je systém flexibilní a přizpůsobit. Většina obsah tohoto tématu soustředit na nejběžnější [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] scénáře použití. Je však možné kombinovat součásti [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje mnoha různými způsoby. Je důležité porozumět zabezpečení důsledky použití jednotlivých součástí. Zejména:  
   
 -   Pokud musíte použít čtečky XML, použijte čtečky <xref:System.Xml.XmlDictionaryReader> třída poskytuje rozdíl od jiných čtenářů. Bezpečné čtečky jsou vytvořené pomocí <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>, <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>, nebo <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> metody. Nepoužívejte <xref:System.Xml.XmlReader.Create%2A> metoda. Vždy konfigurujte čtečky s bezpečné kvóty. Serializace motory ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jsou zabezpečené jenom při použití s zabezpečené čtečky XML z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   

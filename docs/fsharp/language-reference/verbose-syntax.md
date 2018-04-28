@@ -1,20 +1,17 @@
 ---
-title: "Podrobná syntaxe (F#)"
-description: "Informace o rozdílu mezi podrobné a jednoduchý syntaxe v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Podrobná syntaxe (F#)
+description: 'Informace o rozdílu mezi podrobné a jednoduchý syntaxe v programovací jazyk F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 0a6792b3-b312-4453-a025-21d9760eee5d
-ms.openlocfilehash: 2cef359a879897825733a3186be97b38896f5953
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fd040a66a789bc6717fd14e6a9f28274c9e3542b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 
@@ -353,7 +350,7 @@ module <module-name> =
 
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Direktivy kompilátoru](compiler-directives.md)
 

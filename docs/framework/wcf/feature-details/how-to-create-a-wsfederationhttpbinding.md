@@ -1,12 +1,13 @@
 ---
-title: "Postupy: vytvoření třídy WSFederationHttpBinding"
-ms.custom: 
+title: 'Postupy: vytvoření třídy WSFederationHttpBinding'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22322c7b8cd03abcf3a98c49b9d43125b37d956d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8962564bbefc3f43261a2979ae9765369b211f15
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>Postupy: vytvoření třídy WSFederationHttpBinding
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceModel.WSFederationHttpBinding> – třída ([\<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, služby, která vyžaduje ověření pomocí tokenu zabezpečení vydaného služby tokenů zabezpečení klientů. Toto téma ukazuje, jak nastavit <xref:System.ServiceModel.WSFederationHttpBinding> v kódu a konfigurace. Po vytvoření vazby, můžete nastavit koncový bod pro tuto vazbu používají.  
@@ -36,7 +38,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
     > [!NOTE]
     >  <xref:System.ServiceModel.WSFederationHttpBinding> Také podporuje `None` jako režim zabezpečení. Tento režim není zabezpečená a se poskytuje pouze pro účely ladění. Pokud koncový bod služby se nasazuje s <xref:System.ServiceModel.WSFederationHttpBinding> s režim zabezpečení, který je nastavený na `None`, výsledná klient vazby (vygenerované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)) je <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> s režimem zabezpečení z `None`.  
   
-     Na rozdíl od jiných vazby poskytované systémem není nutné vyberte typ pověření klienta při použití `WSFederationHttpBinding`. Je to proto typu pověření klienta je vždy vystavený token. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Získá token zabezpečení ze zadaného vystavitele a uvede tento token ke službě pro ověření klienta.  
+     Na rozdíl od jiných vazby poskytované systémem není nutné vyberte typ pověření klienta při použití `WSFederationHttpBinding`. Je to proto typu pověření klienta je vždy vystavený token. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Získá token zabezpečení ze zadaného vystavitele a uvede tento token ke službě pro ověření klienta.  
   
 2.  U federovaných klientů, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> na adresu URL služby tokenů zabezpečení. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> pro vazbu na použití ke komunikaci s služby tokenů zabezpečení.  
   
@@ -44,9 +46,9 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
   
      Pokud není zadán žádný typ. tokenu, klienti generovat WS-Trust žádosti o tokeny zabezpečení (RSTs) bez typ tokenu URI a služby očekávat ověřování klientů pomocí token zabezpečení kontrolní výrazy Markup Language (SAML) 1.1 ve výchozím nastavení.  
   
-     Identifikátor URI pro token SAML 1.1 je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1".  
+     Je identifikátor URI pro SAML 1.1 token "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1".  
   
-4.  Volitelné. Na federovaným službám, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> vlastnost na adresu URL metadat služby tokenů zabezpečení. Koncový bod metadat umožňuje klientům služby vyberte dvojici odpovídající vazby nebo koncového bodu, pokud služba je nakonfigurována pro publikování metadat. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publikování metadat, najdete v části [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
+4.  Volitelné. Na federovaným službám, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> vlastnost na adresu URL metadat služby tokenů zabezpečení. Koncový bod metadat umožňuje klientům služby vyberte dvojici odpovídající vazby nebo koncového bodu, pokud služba je nakonfigurována pro publikování metadat. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] publikování metadat, najdete v části [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
   
  Můžete také nastavit další vlastnosti, včetně typu klíč používaný jako doklad klíč v vydaných tokenu, algoritmus suite používat mezi klientem a služby, zda Pokud chcete vyjednávání nebo explicitně zadat přihlašovací údaje služby, deklarací žádné konkrétní službu očekává vystavený token, který má obsahovat a další prvky XML, které musí být přidaný do žádosti, které klient odešle do služby tokenů zabezpečení.  
   
@@ -63,7 +65,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
   
 4.  Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> vlastnost <xref:System.IdentityModel.Tokens.SecurityKeyType> `SymmetricKey` nebo.`AsymmetricKey` podle potřeby.  
   
-5.  Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> vlastnost na odpovídající hodnotu. Pokud není nastavena žádná hodnota, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] výchozí hodnota je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1", které označuje tokeny SAML 1.1.  
+5.  Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> vlastnost na odpovídající hodnotu. Pokud není nastavena žádná hodnota, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] výchozí nastavení je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1", což naznačuje, tokeny SAML 1.1.  
   
 6.  V klientovi požadováno, pokud není zadán žádný místního vystavitele; volitelné služby. Vytvoření <xref:System.ServiceModel.EndpointAddress> obsahující informace o adrese a identitě služby tokenů zabezpečení a přiřaďte <xref:System.ServiceModel.EndpointAddress> instance k <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> vlastnost.  
   
@@ -99,9 +101,9 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
   
 11. Volitelné. Přidat `<identity>` podřízený element a zadejte identitu služby tokenů zabezpečení  
   
-12. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Služby identit a ověření](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+12. Další informace najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
-13. V klientovi požadováno, pokud není zadán žádný místního vystavitele; nepoužívá se na službu. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) element v části vazby, který slouží ke komunikaci s služby tokenů zabezpečení. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Vytvoření vazby, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+13. V klientovi požadováno, pokud není zadán žádný místního vystavitele; nepoužívá se na službu. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) element v části vazby, který slouží ke komunikaci s služby tokenů zabezpečení. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Vytvoření vazby, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
 14. Zadání vazby vytvořený v předchozím kroku nastavení `binding` a `bindingConfiguration` atributy `<issuer>` elementu.  
   

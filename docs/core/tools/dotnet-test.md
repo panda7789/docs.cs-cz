@@ -4,16 +4,16 @@ description: Příkaz dotnet testu se používá k provedení testů jednotek v 
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 6102281c4daf149f31e65ef8360831fe9e0ef4f6
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 04af96bb53cc4fdac2e52311f9197eb1ee2b112d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-test"></a>test DotNet.
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/28/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 
 ```
@@ -57,7 +57,7 @@ Určuje cestu pro projekt test. Při vynechání je použita k aktuálnímu adre
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -191,8 +191,8 @@ Spouštět testy v `test1` projektu:
 
 | Test Framework | Podporovaných vlastností                                                                                      |
 | :------------: | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>Položka FullyQualifiedName</li><li>Název</li><li>ClassName</li><li>Priorita</li><li>TestCategory</li></ul> |
-| xunit          | <ul><li>Položka FullyQualifiedName</li><li>DisplayName</li><li>Vlastnosti</li></ul>                                   |
+| MSTest         | <ul><li>Položka FullyQualifiedName</li><li>Název</li><li>Název třídy</li><li>Priorita</li><li>TestCategory</li></ul> |
+| xunit          | <ul><li>Položka FullyQualifiedName</li><li>displayName</li><li>Vlastnosti</li></ul>                                   |
 
 `<operator>` Popisuje vztah mezi vlastnosti a hodnotu:
 

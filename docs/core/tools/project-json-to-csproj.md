@@ -1,21 +1,20 @@
 ---
-title: "porovnání Project.JSON a csproj - .NET Core"
-description: "V tématu mapování mezi elementy project.json a csproj."
-keywords: "Project.JSON, csproj .NET Core, nástroje MSBuild"
+title: porovnání Project.JSON a csproj - .NET Core
+description: V tématu mapování mezi elementy project.json a csproj.
 author: natemcmaster
 ms.author: mairaw
 ms.date: 03/13/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
-ms.workload: dotnetcore
-ms.openlocfilehash: 655f74def4d6163959d7dbbe605f7322fb0573c8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: c5753d73f062aa107d7afbec6146ea3452901fb1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi project.json a csproj vlastnosti
 
@@ -351,7 +350,7 @@ Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/i
 ```
 
 > [!NOTE]
-> `imports`nástroje, nejsou podporovány v csproj. Nástroje, které je třeba importy nebude fungovat s novým `Microsoft.NET.Sdk`.
+> `imports` nástroje, nejsou podporovány v csproj. Nástroje, které je třeba importy nebude fungovat s novým `Microsoft.NET.Sdk`.
 
 ## <a name="buildoptions"></a>buildOptions
 
@@ -619,9 +618,9 @@ Všechny nástroje MSBuild `ItemGroup` podporují elementy `Include`, `Exclude`,
 
 Můžete změnit rozložení balíček uvnitř .nupkg `PackagePath="path"`.
 
-S výjimkou `Content`, většina skupiny položek vyžadují explicitně přidání `Pack="true"` mají být zahrnuty v balíčku. `Content`budou umístěny do *obsah* složky v balíčku od MSBuild `<IncludeContentInPack>` je nastavena na `true` ve výchozím nastavení. Další informace najdete v tématu [včetně obsahu v balíčku](/nuget/schema/msbuild-targets#including-content-in-a-package).
+S výjimkou `Content`, většina skupiny položek vyžadují explicitně přidání `Pack="true"` mají být zahrnuty v balíčku. `Content` budou umístěny do *obsah* složky v balíčku od MSBuild `<IncludeContentInPack>` je nastavena na `true` ve výchozím nastavení. Další informace najdete v tématu [včetně obsahu v balíčku](/nuget/schema/msbuild-targets#including-content-in-a-package).
 
-`PackagePath="%(Identity)"`je krátký způsob nastavení na cestu k souboru projektu relativní cestu k balíčku.
+`PackagePath="%(Identity)"` je krátký způsob nastavení na cestu k souboru projektu relativní cestu k balíčku.
 
 ## <a name="testrunner"></a>testRunner
 

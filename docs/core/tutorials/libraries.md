@@ -1,21 +1,20 @@
 ---
-title: "Vývoj knihovny s křížové nástrojů platformy"
-description: "Naučte se vytvářet knihovny pro .NET pomocí nástrojů příkazového řádku .NET Core."
-keywords: "Rozhraní .NET, .NET core"
+title: Vývoj knihovny s křížové nástrojů platformy
+description: Naučte se vytvářet knihovny pro .NET pomocí nástrojů příkazového řádku .NET Core.
 author: cartermp
 ms.author: mairaw
 ms.date: 05/01/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
-ms.workload: dotnetcore
-ms.openlocfilehash: 8b809fbe73dfd382d568aba5d0f074915d727546
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 6bdb5b11a54ce23c676d10ef6e440fa46ea12f72
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihovny s křížové nástrojů platformy
 

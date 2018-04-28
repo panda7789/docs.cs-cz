@@ -1,20 +1,17 @@
 ---
 title: 'Začínáme s Azure Blob storage pomocí F #'
 description: Ukládání nestrukturovaných dat v cloudu s Azure Blob storage.
-keywords: 'Visual f #, f #, funkční programování, .NET, .NET Core, Azure'
 author: sylvanc
 ms.author: phcart
 ms.date: 09/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: c5b74a4f-dcd1-4849-930c-904b6c8a04e1
-ms.openlocfilehash: 14ccba36638c724536793a6a589cf1c0a6186eeb
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 0414f0ca4aa2c2b75e80b3fd6531be74924fb60f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage pomocí F # #
 

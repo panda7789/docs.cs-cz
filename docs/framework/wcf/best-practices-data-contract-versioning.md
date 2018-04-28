@@ -1,12 +1,13 @@
 ---
-title: "Osvědčené postupy: Správa verzí kontraktů dat"
-ms.custom: 
+title: 'Osvědčené postupy: Správa verzí kontraktů dat'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - data contracts
@@ -14,19 +15,20 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 78373d482aaaa0121a6c2708f543188d9cc9464d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dfb3d781a570db6a929a7d984aa45c224dda66bd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="best-practices-data-contract-versioning"></a>Osvědčené postupy: Správa verzí kontraktů dat
-Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. [!INCLUDE[crabout](../../../includes/crabout-md.md)]kontrakty dat naleznete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. [!INCLUDE[crabout](../../../includes/crabout-md.md)] kontrakty dat naleznete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="note-on-schema-validation"></a>Poznámka: v ověřování schématu  
  V hovoříte o Správa verzí kontraktů dat, je důležité si uvědomit, že data smlouvy schématu exportované sadou [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] nemá žádné podporu správy verzí, než fakt, že ve výchozím nastavení jsou označená jako volitelná elementy.  
@@ -46,7 +48,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
  I když v těchto příkladech jsou názvy měnit (přidáním "2"), doporučuje se změnit obory názvů namísto názvů přidáním nové obory názvů s číslem verze nebo datum. Například `http://schemas.contoso.com/2005/05/21/PurchaseOrder` kontrakt dat změní na `http://schemas.contoso.com/2005/10/14/PurchaseOrder` kontrakt dat.  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]Osvědčené postupy: [verze služby](../../../docs/framework/wcf/service-versioning.md).  
+ Další informace najdete v tématu osvědčené postupy: [verze služby](../../../docs/framework/wcf/service-versioning.md).  
   
  V některých případech striktní schématu dodržování předpisů pro zprávy odeslané aplikace musí zaručit, ale nelze spoléhat na příchozí zprávy, které mají být úplně schématu kompatibilní. V tomto případě je nebezpečí, že příchozí zprávy může obsahovat nadbytečné data. Nadbytečné hodnoty jsou uloženy a vrácený [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a proto výsledkem odesílány zprávy neplatné schéma. K tomuto problému nedošlo, by měl být vypnuté funkci odezvy. Chcete-li to provést dvěma způsoby.  
   
@@ -54,7 +56,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
 -   Použít <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut vaše kontrakt služby s <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> vlastnost nastavena na hodnotu `true`.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]odezvy, najdete v části [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] odezvy, najdete v části [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ## <a name="versioning-when-schema-validation-is-not-required"></a>Správa verzí, když se nevyžaduje ověření schématu  
  Dodržování předpisů striktní schématu se zřídka vyžaduje. Řada platforem tolerovat dodatečné prvky, které nejsou popsané ve schématu. Také to je dovoleno, úplnou sadu funkcí popsaných v [Správa verzí kontraktů dat](../../../docs/framework/wcf/feature-details/data-contract-versioning.md) a [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md) lze použít. Doporučuje se podle následujících pokynů.  
@@ -65,9 +67,9 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
 2.  Použití dědičnosti společně s kontrakty dat je povolen, za předpokladu, že dědičnosti není používána jako mechanismus Správa verzí a dodržíte určitá pravidla. Pokud je typ odvozena z určité základní typ, neprovádějte je odvozena od různých základní typ v budoucí verzi (Pokud má stejné datové kontrakt). Jedinou výjimkou je: typ můžete vložit do hierarchie mezi typ kontraktu dat a jeho základní typ, ale jenom v případě, že neobsahuje datových členů, stejné názvy jako ostatní členové všechny možné verze jiné typy v hierarchii. Obecně platí pomocí datových členů se stejnými názvy s různou úrovní stejné hierarchie dědičnosti může vést k vážným Správa verzí problémům a je nutno.  
   
-3.  Počínaje první verze součásti kontraktu dat vždy implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> povolit odezvy. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Kontraktů dat s dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Pokud jeden nebo více verzí typu mít vydání bez implementace tohoto rozhraní, implementaci v příští verzi typu.  
+3.  Počínaje první verze součásti kontraktu dat vždy implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> povolit odezvy. Další informace najdete v tématu [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Pokud jeden nebo více verzí typu mít vydání bez implementace tohoto rozhraní, implementaci v příští verzi typu.  
   
-4.  V novějších verzích neměňte název kontraktu dat nebo obor názvů. Pokud změníte název nebo obor názvů typu základní kontrakt dat, je nutné zachovat název kontraktu dat a oboru názvů pomocí příslušné mechanismy, jako <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]pojmenování, najdete v části [názvy datových kontraktů](../../../docs/framework/wcf/feature-details/data-contract-names.md).  
+4.  V novějších verzích neměňte název kontraktu dat nebo obor názvů. Pokud změníte název nebo obor názvů typu základní kontrakt dat, je nutné zachovat název kontraktu dat a oboru názvů pomocí příslušné mechanismy, jako <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] pojmenování, najdete v části [názvy datových kontraktů](../../../docs/framework/wcf/feature-details/data-contract-names.md).  
   
 5.  V novějších verzích Neměňte názvy všech datových členů. Pokud změníte název pole, vlastnost nebo událostí základní datový člen, použijte `Name` vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> zachovat stávající název člena data.  
   
@@ -79,7 +81,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
     1.  <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> Vlastnost by měla být vždy ponechány na jeho výchozí hodnotu `false`.  
   
-    2.  Pokud výchozí hodnota je `null` nebo nula pro člena nepřijatelný, metody zpětného volání by je třeba zadat pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute> zajistit přiměřené výchozí v případě, že člen není k dispozici v příchozím datovém proudu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]zpětné volání, najdete v části [verze proti chybám zpětná volání serializace tolerantní](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
+    2.  Pokud výchozí hodnota je `null` nebo nula pro člena nepřijatelný, metody zpětného volání by je třeba zadat pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute> zajistit přiměřené výchozí v případě, že člen není k dispozici v příchozím datovém proudu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] zpětné volání, najdete v části [verze proti chybám zpětná volání serializace tolerantní](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
   
     3.  `Order` Vlastnost `DataMemberAttribute` se má použít k zajištění všech nově přidaných datových členů zobrazení po existující datových členů. Doporučený způsob to to vypadá takto: žádná z datových členů v první verzi kontrakt dat by měl mít jejich `Order` sadu vlastností. Všechny členy data přidána do verze 2 kontrakt dat by měl mít jejich `Order` vlastnost nastavena na hodnotu 2. Všechny členy data přidána do verze 3 kontrakt dat by měl mít jejich `Order` nastavena na hodnotu 3 a tak dále. Je přípustné mít více než jednoho člena dat se nastaví na stejnou `Order` číslo.  
   

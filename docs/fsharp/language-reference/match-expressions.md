@@ -5,14 +5,13 @@ author: cartermp
 ms.author: phcart
 ms.date: 04/19/2018
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.openlocfilehash: f843e6fde98eae8a10235dd5cae38ffc10a4fb9f
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: f6930f782384464f0d44b205ea77cbaf43898213
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="match-expressions"></a>Výrazy shody
 

@@ -1,27 +1,26 @@
 ---
-title: "skriptů instalace DotNet."
-description: "Další informace o skriptů dotnet instalace k instalaci nástroje příkazového řádku .NET Core a sdílený modul runtime."
-keywords: DotNet. instalace, skripty dotnet. nainstalujte .NET Core
+title: skriptů instalace DotNet.
+description: Další informace o skriptů dotnet instalace k instalaci nástroje příkazového řádku .NET Core a sdílený modul runtime.
 author: blackdwarf
 ms.author: mairaw
 ms.date: 09/11/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
-ms.workload: dotnetcore
-ms.openlocfilehash: bc38ca7b9f00c6c252ff4963c42519a64c456b43
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 96336df087ea2ad01584010f0715ad31e079b663
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-install-scripts-reference"></a>referenční skriptů instalace DotNet.
 
 ## <a name="name"></a>Název
 
-`dotnet-install.ps1` | `dotnet-install.sh`-Skriptu použít k instalaci nástroje příkazového řádku .NET Core a sdílený modul runtime.
+`dotnet-install.ps1` | `dotnet-install.sh` -Skriptu použít k instalaci nástroje příkazového řádku .NET Core a sdílený modul runtime.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -39,8 +38,8 @@ systému macOS/Linux:
 
 Doporučujeme použít stabilní verze, která je hostovaná na [hlavní webové stránky .NET Core](https://dot.net). Přímé cest k skripty jsou:
 
-* https://dot.NET/v1/DotNet-Install.SH (bash, UNIX)
-* https://dot.NET/v1/DotNet-Install.ps1 (prostředí Powershell, Windows)
+* https://dot.net/v1/dotnet-install.sh (bash, UNIX)
+* https://dot.net/v1/dotnet-install.ps1 (Powershell, Windows)
 
 Hlavní užitečnost tyto skripty se automatizace scénáře a instalace bez oprávnění správce. Existují dva skripty: jeden je skript prostředí PowerShell, který funguje v systému Windows. Další skript je bash skript, který funguje na systému Linux nebo macOS. Oba skripty mají stejné chování. Skript bash také přečte přepínače prostředí PowerShell, abyste je mohli používat přepínače prostředí PowerShell pomocí skriptu v systémech Linux/systému macOS. 
 
@@ -58,8 +57,8 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
 
 Určuje zdroj kanál pro instalaci. Možné hodnoty jsou:
 
-- `Current`-Aktuální verzi
-- `LTS`-Dlouhodobé podporu kanál (aktuální podporovanou verzi)
+- `Current` -Aktuální verzi
+- `LTS` -Dlouhodobé podporu kanál (aktuální podporovanou verzi)
 - Dvě části verze ve formátu X.Y představující konkrétní vydání (například `2.0` nebo `1.0`)
 - Název větve [například `release/2.0.0`, `release/2.0.0-preview2`, nebo `master` nejnovější z `master` větve ("vykrvení edge" noční verzích)]
 
@@ -69,9 +68,9 @@ Výchozí hodnota je `LTS`. Další informace o kanály podpory rozhraní .NET n
 
 Představuje verzi konkrétní sestavení. Možné hodnoty jsou:
 
-- `latest`-Nejnovější sestavení na kanálu (používá se `-Channel` možnost)
-- `coherent`-Nejnovější souvislý sestavení na kanálu; používá kombinaci nejnovější stabilní balíčku (použít s názvu větve `-Channel` možnosti)
-- Verze třemi částmi ve formátu X.Y.Z představující konkrétní sestavení verze; nahrazuje `-Channel` možnost. Například:`2.0.0-preview2-006120`
+- `latest` -Nejnovější sestavení na kanálu (používá se `-Channel` možnost)
+- `coherent` -Nejnovější souvislý sestavení na kanálu; používá kombinaci nejnovější stabilní balíčku (použít s názvu větve `-Channel` možnosti)
+- Verze třemi částmi ve formátu X.Y.Z představující konkrétní sestavení verze; nahrazuje `-Channel` možnost. Například: `2.0.0-preview2-006120`
 
 Pokud tento parametr vynechán, `-Version` výchozí `latest`.
 

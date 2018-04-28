@@ -1,24 +1,22 @@
 ---
-title: "Vytváření bitových kopií Docker .NET Core"
-description: "Seznámení s imagí Dockeru a .NET Core"
-keywords: "Rozhraní .NET, rozhraní .NET core, Docker"
+title: Vytváření bitových kopií Docker .NET Core
+description: Seznámení s imagí Dockeru a .NET Core
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
-ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: d5631bdbc0334640b290c08df17cba0bfe99fe85
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: c1983be59b4a961cabd94915852e0cab7811682c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
 
@@ -163,7 +161,7 @@ cd aspnetapp
 dotnet run
 ```
 
-Po spuštění aplikace, navštivte **http://localhost: 5000** ve webovém prohlížeči.
+Po spuštění aplikace, navštivte **http://localhost:5000** ve webovém prohlížeči.
 
 ### <a name="build-and-run-the-sample-with-docker-for-linux-containers"></a>Sestavení a spuštění vzorového Linux kontejnerů pomocí Docker
 
@@ -178,7 +176,7 @@ docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 > [!NOTE]
 > `docker run` '-P' argument port 5000 na místním počítači na port 80 v kontejneru mapy (formulář mapování portů `host:container`). Další informace najdete v tématu [docker spustit](https://docs.docker.com/engine/reference/commandline/exec/) odkazu na parametry příkazového řádku.
 
-Po spuštění aplikace, navštivte **http://localhost: 5000** ve webovém prohlížeči.
+Po spuštění aplikace, navštivte **http://localhost:5000** ve webovém prohlížeči.
 
 ### <a name="build-and-run-the-sample-with-docker-for-windows-containers"></a>Sestavení a spuštění vzorového s kontejnery Docker pro Windows
 
@@ -191,7 +189,7 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 ```
 
 > [!IMPORTANT]
-> Je nutné na Přejít **kontejneru IP adresu** (na rozdíl od http://localhost) v prohlížeči přímo při použití Windows kontejnerů. Můžete získat IP adresu vašeho kontejneru pomocí následujících kroků:
+> Je nutné na Přejít **kontejneru IP adresu** (Naproti tomu http://localhost) v prohlížeči přímo při použití Windows kontejnerů. Můžete získat IP adresu vašeho kontejneru pomocí následujících kroků:
 
 * Otevřete jiného příkazového řádku.
 * Spustit `docker ps` zobrazíte spuštěných kontejnerů. Kontejner "aspnetcore_sample" by měla existovat.

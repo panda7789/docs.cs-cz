@@ -1,20 +1,17 @@
 ---
-title: "Aktivní vzorky (F#)"
-description: "Další informace o použití aktivní vzorky k definování pojmenované oddíly, které rozdělit vstupní data v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Aktivní vzorky (F#)
+description: 'Další informace o použití aktivní vzorky k definování pojmenované oddíly, které rozdělit vstupní data v programovací jazyk F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 11a724ff-f9ff-4056-b5e0-87e9ed986f4a
-ms.openlocfilehash: 845184e6150cf0b93393038ca3d39f0e6d898a2e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.openlocfilehash: 66e1e39c4822ec7262642d301ceb1deea17fcb8c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 
@@ -135,7 +132,7 @@ Hello, George!
 ```
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Výrazy shody](match-expressions.md)
 

@@ -1,31 +1,31 @@
 ---
-title: "Volba přenosu"
-ms.custom: 
+title: Volba přenosu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-caps.latest.revision: 
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d41e9d2416ddbbd4c729b8c2a23754d19f0630d3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7b051cdeebf83b34b6e503d8d9cb54a38a46a2a6
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="choosing-a-transport"></a>Volba přenosu
-Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jsou součástí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]: HTTP, TCP a pojmenované kanály. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]také zahrnuje přenosu služby Řízení front zpráv (MSMQ), ale tento dokument nepopisuje služby Řízení front zpráv.  
+Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jsou součástí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]: HTTP, TCP a pojmenované kanály. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také zahrnuje přenosu služby Řízení front zpráv (MSMQ), ale tento dokument nepopisuje služby Řízení front zpráv.  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Programovací model odděluje operace koncového bodu (jak je vyjádřen v kontraktu služby) od přenosový mechanismus, který se připojuje dva koncové body. To vám dává možnost rozhodnout, jak vystavit vaší služby k síti.  
   
@@ -33,17 +33,17 @@ Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jso
   
  Pokud se musí připojit do existujícího klienta nebo serveru, nemusí mít volba o použití konkrétního přenosu. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb mohou být přístupné přes několik koncových bodů, každý s různé přenosové. Pokud jeden přenos nepokrývá předpokládanou cílovou skupinou pro vaši službu, zvažte, vystavení službu přes několik koncových bodů. Klientské aplikace pak může použít k koncového bodu, který je nejvhodnější pro ně.  
   
- Po kliknutí na přenos, je nutné vybrat vazbu, která jej používá. Můžete zvolit vazby poskytované systémem (najdete v části [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md)), nebo můžete vytvořit vlastní vlastní vazby (najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)). Můžete také vytvořit vlastní vazby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Vytváření uživatelem definovaných vazeb](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
+ Po kliknutí na přenos, je nutné vybrat vazbu, která jej používá. Můžete zvolit vazby poskytované systémem (najdete v části [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md)), nebo můžete vytvořit vlastní vlastní vazby (najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)). Můžete také vytvořit vlastní vazby. Další informace najdete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
   
 ## <a name="advantages-of-each-transport"></a>Výhody každý přenosu  
  Tato část popisuje hlavních důvodů pro výběr některého tři hlavní přenosy, včetně podrobné rozhodovací graf pro výběr mezi nimi.  
   
 ### <a name="when-to-use-http-transport"></a>Kdy použít přenos HTTP  
- HTTP je požadavek a odpověď protokolu mezi klienty a servery. Nejběžnější aplikace se skládá z webového prohlížeče klienty, kteří komunikují webového serveru. Klient odešle požadavek na server, které přijímají zprávy požadavku klienta. Když server přijme požadavek, vrátí odpověď, která obsahuje stav žádosti. Pokud úspěšné, vrátí se volitelná data, například na webové stránce, chybovou zprávu nebo Další informace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]protokol HTTP, najdete v části [HTTP - Hypertext Transfer Protocol](http://go.microsoft.com/fwlink/?LinkId=94858).  
+ HTTP je požadavek a odpověď protokolu mezi klienty a servery. Nejběžnější aplikace se skládá z webového prohlížeče klienty, kteří komunikují webového serveru. Klient odešle požadavek na server, které přijímají zprávy požadavku klienta. Když server přijme požadavek, vrátí odpověď, která obsahuje stav žádosti. Pokud úspěšné, vrátí se volitelná data, například na webové stránce, chybovou zprávu nebo Další informace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] protokol HTTP, najdete v části [HTTP - Hypertext Transfer Protocol](http://go.microsoft.com/fwlink/?LinkId=94858).  
   
  Protokol HTTP není založeného na připojení – po odeslání odpovědi je žádný stav není zachován. Pro zpracování transakcí několika page, aplikace musí zachovat všechny nezbytné stavu.  
   
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přenos HTTP vazba je optimalizovaná pro spolupráci s starší jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] systémy. Pokud používáte všem zúčastněným stranám komunikuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], na základě protokolu TCP nebo pojmenované kanály na základě vazby je rychlejší. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding>.  
+ V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přenos HTTP vazba je optimalizovaná pro spolupráci s starší jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] systémy. Pokud používáte všem zúčastněným stranám komunikuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], na základě protokolu TCP nebo pojmenované kanály na základě vazby je rychlejší. Další informace naleznete v tématu <xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding>.  
   
 ### <a name="when-to-use-the-tcp-transport"></a>Kdy použít přenos TCP  
  TCP je služba doručení založeného na připojení, orientovaný datový proud s rozpoznávání a opravy chyb začátku do konce. *Na základě připojení* znamená, že je před zahájením výměny dat navázat relaci komunikace mezi hostiteli. Hostitel je jakékoli zařízení v síti TCP/IP identifikovaný logické IP adresu.  
@@ -66,11 +66,11 @@ Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jso
 |Atribut|Popis|Podporuje přenosy|  
 |---------------|-----------------|------------------------|  
 |Diagnostika|Diagnostika umožňují automaticky zjišťovat potíže s připojením k přenosu. Všechny přenosy podporují schopnost posílání informací back selhání, který popisuje připojení. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nezahrnuje diagnostické nástroje pro zkoumání problémů se sítí.|Žádné|  
-|Hostování|Všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body musí být umístěn uvnitř aplikace. [!INCLUDE[iis601](../../../../includes/iis601-md.md)]a starší podpora pouze hostování aplikací, které používají přenos HTTP. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], dojde k přidání podpory pro hostování všech [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přepravě, včetně TCP a pojmenované kanály. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) a [hostování v aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
+|Hostování|Všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body musí být umístěn uvnitř aplikace. [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a starší podpora pouze hostování aplikací, které používají přenos HTTP. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], dojde k přidání podpory pro hostování všech [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přepravě, včetně TCP a pojmenované kanály. Další informace najdete v tématu [hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) a [hostování v aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
 |Kontroly|Kontroly je možnost extrahovat a zpracování informací z zprávy během přenosu. Protokol HTTP odděluje směrování a řízení informace z dat, což usnadňuje sestavení nástroje, které kontrolují a analyzovat zprávy. Přenosy, které se snadno zkontrolovat může také vyžadovat méně výpočetní výkon v síťových zařízení. Úroveň zabezpečení používá ovlivňuje, jestli může být prověřovány zprávy.|HTTP|  
 |Čekací doba|Latence je minimální množství času potřebné pro dokončení výměny zpráv. Všechny síťové operace mají vyšší nebo nižší latenci v závislosti na volba přenosu. Duplexní nebo jednosměrnou komunikaci pomocí přenosu, jejichž vzorce výměny zpráv nativní je, že požadavek odpověď, jako je například HTTP, může způsobit další latence kvůli vynucené korelace zpráv. V této situaci zvažte použití přenosu, jejichž vzorce výměny zpráv nativní je duplexní, jako je například protokol TCP.|TCP, s názvem<br /><br /> kanálu|  
-|Reach|Rozsah přenos odráží, jak podporující přenosu je v připojení s jinými systémy. Pojmenovaný kanál přenosu má velmi malé reach; lze připojit pouze k služby spuštěné na stejném počítači. Přenosy TCP a HTTP mít vynikající reach a můžete proniknout některé konfigurace NAT a brány firewall. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Práce se zařízeními NAT a brány firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md).|PROTOKOLU HTTP, TCP|  
-|Zabezpečení|Zabezpečení je možnost chránit zprávy při přenosu zadáním důvěrnost, integritu a ověřování. Důvěrnost chrání zprávu z se zkontrolován, integritu chrání zprávu nebylo možné měnit a ověřování umožňuje záruky o odesílatele a příjemce zprávy.<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zabezpečení přenosu podporuje jak na úrovni zpráv a na úrovni přenosu. Zabezpečení zpráv vytvoří se přenos, zda přenos podporuje režim přenosu ve vyrovnávací paměti. Podpora pro zabezpečení přenosu se liší v závislosti na zvolené přenosu. HTTP, TCP a přenosy pojmenovaný kanál mít přiměřené paritní v podpoře pro zabezpečení přenosu.|Všechny|  
+|Reach|Rozsah přenos odráží, jak podporující přenosu je v připojení s jinými systémy. Pojmenovaný kanál přenosu má velmi malé reach; lze připojit pouze k služby spuštěné na stejném počítači. Přenosy TCP a HTTP mít vynikající reach a můžete proniknout některé konfigurace NAT a brány firewall. Další informace najdete v tématu [práce se zařízeními NAT a brány firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md).|PROTOKOLU HTTP, TCP|  
+|Zabezpečení|Zabezpečení je možnost chránit zprávy při přenosu zadáním důvěrnost, integritu a ověřování. Důvěrnost chrání zprávu z se zkontrolován, integritu chrání zprávu nebylo možné měnit a ověřování umožňuje záruky o odesílatele a příjemce zprávy.<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení přenosu podporuje jak na úrovni zpráv a na úrovni přenosu. Zabezpečení zpráv vytvoří se přenos, zda přenos podporuje režim přenosu ve vyrovnávací paměti. Podpora pro zabezpečení přenosu se liší v závislosti na zvolené přenosu. HTTP, TCP a přenosy pojmenovaný kanál mít přiměřené paritní v podpoře pro zabezpečení přenosu.|Všechny|  
 |Propustnost|Propustnost měří množství dat, které mohou být odeslány a zpracovány v zadaném časovém období. Latence, jako je zvolený přenos může ovlivnit propustnost pro operace služby. Maximální využití propustnost pro přenos vyžaduje minimalizaci režie přenosu obsahu a také minimalizovat čas strávený čekání na dokončení výměny zpráv. TCP i přenosy pojmenovaný kanál přidejte malé nároky na text zprávy a podporují nativní duplexní tvar, který snižuje čekání odpovědí na zprávy.|TCP, pojmenovaný kanál|  
 |Nástrojů|Nástrojů představuje podporu aplikace třetích stran pro protokol pro vývoj, diagnostiku, hostování a dalšími aktivitami. Vývoj nástrojů a softwaru pro práci s protokolem HTTP označuje zvlášť velké investice.|HTTP|  
   

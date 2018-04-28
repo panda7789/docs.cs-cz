@@ -1,21 +1,19 @@
 ---
-title: "Portování do .NET Core - knihovny"
-description: "Zjistěte, jak k portu projektů knihovny z rozhraní .NET Framework na .NET Core."
-keywords: "Rozhraní .NET, .NET core"
+title: Portování do .NET Core - knihovny
+description: Zjistěte, jak k portu projektů knihovny z rozhraní .NET Framework na .NET Core.
 author: cartermp
 ms.author: mairaw
 ms.date: 07/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 24c74f0396dd7bfdf19fc0e11a29110fdbf27173
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: ca71ed4b2423846db4b2c2fc0ba87c49330b7d14
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="porting-to-net-core---libraries"></a>Portování do .NET Core - knihovny
 
@@ -185,7 +183,7 @@ Nejlepší způsob, jak zkontrolujte, zda že vše funguje, když jste přenést
 - [NUnit](http://www.nunit.org/)
   * [Začínáme](https://github.com/nunit/docs/wiki/Installation)
   * [Příspěvku na blogu o migraci z Mstestu na NUnit](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
-- [MSTest](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
+- [Mstestu](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
 
 ## <a name="recommended-approach-to-porting"></a>Doporučeným přístupem k portování
 

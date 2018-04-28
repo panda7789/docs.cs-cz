@@ -4,16 +4,16 @@ description: Další informace o příkazu dotnet (obecný ovladač pro rozhran�
 author: mairaw
 ms.author: mairaw
 ms.date: 03/20/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2d22124cb613152df402046541650f3262e7e202
-ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
+ms.openlocfilehash: bf69be7eb8dfe454823236012113fa53ed39f2f4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-command"></a>příkaz DotNet.
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
     [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
@@ -47,7 +47,7 @@ Pouze `dotnet` slouží jako příkaz svoje vlastní je spuštění [framework z
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 `--additional-deps <PATH>`
 
@@ -121,7 +121,7 @@ Vytiskne verzi rozhraní .NET Core SDK používá.
 
 ### <a name="general"></a>Obecné
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -202,7 +202,7 @@ Spustit framework závislé aplikace s názvem `myapp.dll`:
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 `DOTNET_PACKAGES`
 

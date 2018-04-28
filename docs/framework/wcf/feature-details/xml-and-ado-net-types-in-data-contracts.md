@@ -1,27 +1,29 @@
 ---
 title: Typy XML a ADO.NET v kontraktech dat
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c4641815687f2c510aa664a287a79f64dc86d769
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3a1fceb1017c5225b4e1de6891d6609c9ad5062e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>Typy XML a ADO.NET v kontraktech dat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Modelu kontraktu dat podporuje určité typy, které představují XML přímo. Když jsou tyto typy serializován do formátu XML, serializátoru, který zapíše obsah XML z těchto typů bez dalšího zpracování. Podporované typy jsou <xref:System.Xml.XmlElement>, pole <xref:System.Xml.XmlNode> (ale ne `XmlNode` zadejte sám sebe), stejně jako typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Data.DataSet> a <xref:System.Data.DataTable> typu, jakož i typové datové sady, běžně se používají při programování pro databázi. Tyto typy implementovat `IXmlSerializable` rozhraní a jsou proto serializovatelný v datech smlouvy modelu. Na konci tohoto tématu jsou uvedeny některé důležité informace pro tyto typy.  
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
  XML fragment, musí být deserializovat do `XmlElement` definuje všech předpon, které používá a nevyžaduje žádné definice předpony z nadřazenými prvky. Jedná se o problém jenom při použití `DataContractSerializer` k XML z jiné (jinou hodnotu než`DataContractSerializer`) zdroje.  
   
- Při použití s `DataContractSerializer`, `XmlElement` přiřazeni polymorphically, ale jenom na člena typu <xref:System.Object>. I když implementuje <xref:System.Collections.IEnumerable>, `XmlElement` nelze použít jako typ kolekce a nemůže být přiřazen <xref:System.Collections.IEnumerable> – datový člen. Stejně jako u všech polymorfní přiřazení, `DataContractSerializer` vysílá název kontraktu dat ve výsledném souboru XML – v takovém případě je "XmlElement" v oboru názvů "http://schemas.datacontract.org/2004/07/System.Xml".  
+ Při použití s `DataContractSerializer`, `XmlElement` přiřazeni polymorphically, ale jenom na člena typu <xref:System.Object>. I když implementuje <xref:System.Collections.IEnumerable>, `XmlElement` nelze použít jako typ kolekce a nemůže být přiřazen <xref:System.Collections.IEnumerable> – datový člen. Stejně jako u všech polymorfní přiřazení, `DataContractSerializer` vysílá název kontraktu dat ve výsledném souboru XML – v takovém případě je "XmlElement" v "http://schemas.datacontract.org/2004/07/System.Xml" oboru názvů.  
   
  S `NetDataContractSerializer`, všechny platné polymorfní přiřazení `XmlElement` (na `Object` nebo `IEnumerable`) je podporováno.  
   
@@ -98,7 +100,7 @@ ms.lasthandoff: 12/22/2017
   
  Naplnění dat člen typu <xref:System.Array> z `Object` nebo `Array` z `IEnumerable` s `XmlNode` instance nevede datový člen zacházeno jako `Array` z `XmlNode` instance. Každý člen pole je samostatně serializovat.  
   
- Při použití s `DataContractSerializer`, pole `XmlNode` lze přiřadit polymorphically, ale jenom na člena typu `Object`. I když implementuje `IEnumerable`, pole `XmlNode` nelze použít jako typ kolekce a přiřadit `IEnumerable` – datový člen. Stejně jako u všech polymorfní přiřazení, `DataContractSerializer` vysílá název kontraktu dat ve výsledném souboru XML – v takovém případě je "ArrayOfXmlNode" v oboru názvů "http://schemas.datacontract.org/2004/07/System.Xml". Při použití s `NetDataContractSerializer`, všechny platné přiřazení `XmlNode` podporuje se pole.  
+ Při použití s `DataContractSerializer`, pole `XmlNode` lze přiřadit polymorphically, ale jenom na člena typu `Object`. I když implementuje `IEnumerable`, pole `XmlNode` nelze použít jako typ kolekce a přiřadit `IEnumerable` – datový člen. Stejně jako u všech polymorfní přiřazení, `DataContractSerializer` vysílá název kontraktu dat ve výsledném souboru XML – v takovém případě je "ArrayOfXmlNode" v "http://schemas.datacontract.org/2004/07/System.Xml" oboru názvů. Při použití s `NetDataContractSerializer`, všechny platné přiřazení `XmlNode` podporuje se pole.  
   
 ### <a name="schema-considerations"></a>Důležité informace o schématu  
  Podrobnosti o schéma mapování typů XML najdete v tématu [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Tato část obsahuje přehled důležitých bodů.  
@@ -148,16 +150,16 @@ ms.lasthandoff: 12/22/2017
 ### <a name="schema-considerations-for-ixmlserializable-content-types"></a>Důležité informace o schématu pro typy obsahu IXmlSerializable  
  Při exportu schématu `IXmlSerializable` typ obsahu, je volána metoda zprostředkovatele schématu. <xref:System.Xml.Schema.XmlSchemaSet> Předaný schématu metoda zprostředkovatele. Metodu můžete přidat všechny platné schéma do sady schématu. Sada schématu obsahuje schéma, které je již znám v době, kdy dojde k exportu schématu. Když metoda zprostředkovatele schématu musíte přidat položku do sady schéma, musíte určit Pokud <xref:System.Xml.Schema.XmlSchema> s odpovídající obor názvů již existuje v sadě. Pokud ano, metoda zprostředkovatele schématu musíte přidat novou položku do existující `XmlSchema`. V ostatních případech musíte vytvořit nový `XmlSchema` instance. To je důležité, pokud pole `IXmlSerializable` typy jsou používány. Pokud máte například `IXmlSerializable` typ, který získá exportovány jako typ "A" v oboru názvů "B", je možné, že na době metoda zprostředkovatele schématu se nazývá schéma nastavit již obsahuje schéma pro "B" typ "ArrayOfA".  
   
- Kromě přidání typů tak, aby <xref:System.Xml.Schema.XmlSchemaSet>, metoda zprostředkovatele schématu pro typy obsahu, musí vracet hodnotu než null. Můžete vrátit <xref:System.Xml.XmlQualifiedName> určující název typu schématu pro v dané `IXmlSerializable` typu. Tento kvalifikovaný název slouží taky jako data smlouvy názvem a oborem názvů pro typ. Je povoleno návratový typ, který neexistuje ve schématu nastavená, okamžitě, pokud metoda zprostředkovatele schématu vrátí. Ale očekává se, že na době, všechny související typy jsou exportovány ( <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> metoda je volána pro všechny typy relevantní na <xref:System.Runtime.Serialization.XsdDataContractExporter> a <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> získat přístup k vlastnosti), typ existuje v sadě schématu. Přístup k `Schemas` vlastnost před všechny relevantní `Export` byly provedeny volání může mít za následek <xref:System.Xml.Schema.XmlSchemaException>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Proces exportu, najdete v části [export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).  
+ Kromě přidání typů tak, aby <xref:System.Xml.Schema.XmlSchemaSet>, metoda zprostředkovatele schématu pro typy obsahu, musí vracet hodnotu než null. Můžete vrátit <xref:System.Xml.XmlQualifiedName> určující název typu schématu pro v dané `IXmlSerializable` typu. Tento kvalifikovaný název slouží taky jako data smlouvy názvem a oborem názvů pro typ. Je povoleno návratový typ, který neexistuje ve schématu nastavená, okamžitě, pokud metoda zprostředkovatele schématu vrátí. Ale očekává se, že na době, všechny související typy jsou exportovány ( <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> metoda je volána pro všechny typy relevantní na <xref:System.Runtime.Serialization.XsdDataContractExporter> a <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> získat přístup k vlastnosti), typ existuje v sadě schématu. Přístup k `Schemas` vlastnost před všechny relevantní `Export` byly provedeny volání může mít za následek <xref:System.Xml.Schema.XmlSchemaException>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Proces exportu, najdete v části [export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).  
   
  Metoda zprostředkovatele schéma můžete se taky vrátit <xref:System.Xml.Schema.XmlSchemaType> používat. Typ může nebo nemusí být anonymní. Pokud je anonymní, schéma pro `IXmlSerializable` typu se exportuje jako anonymní typ pokaždé, když `IXmlSerializable` typ se používá jako člena. `IXmlSerializable` Typ stále má název kontraktu dat a oboru názvů. (To je určit, jak je popsáno v [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md) s tím rozdílem, že <xref:System.Runtime.Serialization.DataContractAttribute> nelze atribut použít k přizpůsobení názvu.) Pokud není anonymní, musí být jeden z typů v `XmlSchemaSet`. Tento případ je ekvivalentní vrací `XmlQualifiedName` typu.  
   
- Navíc se pro typ exportují deklaraci globálním elementem. Pokud typ nemá <xref:System.Xml.Serialization.XmlRootAttribute> atribut použitý k němu element se stejným názvem a oborem názvů jako kontrakt dat a jeho "povolenou" vlastnost na hodnotu true. Jedinou výjimkou je obor názvů schématu ("http://www.w3.org/2001/XMLSchema") – Pokud kontrakt dat typ je v tomto oboru názvů, odpovídající globální element je v oboru názvů prázdné, protože je zakázán pro přidání nových elementů do schématu obor názvů. Pokud má typ `XmlRootAttribute` atribut použitý k němu deklaraci globální element exportu pomocí následujících: <xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>, <xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A> a <xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A> vlastnosti. Výchozí hodnoty s `XmlRootAttribute` použít jsou název kontraktu dat, prázdné obor názvů a "povolenou" Probíhá hodnotu true.  
+ Navíc se pro typ exportují deklaraci globálním elementem. Pokud typ nemá <xref:System.Xml.Serialization.XmlRootAttribute> atribut použitý k němu element se stejným názvem a oborem názvů jako kontrakt dat a jeho "povolenou" vlastnost na hodnotu true. Jedinou výjimkou je obor názvů schématu ("http://www.w3.org/2001/XMLSchema") – Pokud kontrakt dat typ je v tomto oboru názvů, odpovídající globální element je v oboru názvů prázdné, protože je zakázán pro přidání nových elementů do oboru názvů schématu. Pokud má typ `XmlRootAttribute` atribut použitý k němu deklaraci globální element exportu pomocí následujících: <xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>, <xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A> a <xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A> vlastnosti. Výchozí hodnoty s `XmlRootAttribute` použít jsou název kontraktu dat, prázdné obor názvů a "povolenou" Probíhá hodnotu true.  
   
  Stejná pravidla deklarace globální element platí pro typy starší verze datové sady. Všimněte si, že `XmlRootAttribute` nejde přepsat globální element deklarace přidány prostřednictvím vlastní kód, buď přidat do `XmlSchemaSet` pomocí metody poskytovatele schématu nebo pomocí `GetSchema` pro typy starší verze datové sady.  
   
 ### <a name="ixmlserializable-element-types"></a>IXmlSerializable Element typy  
- `IXmlSerializable`Element typy mít buď `IsAny` vlastnost nastavena na hodnotu `true` nebo jejich metoda zprostředkovatele schématu vrátit `null`.  
+ `IXmlSerializable` Element typy mít buď `IsAny` vlastnost nastavena na hodnotu `true` nebo jejich metoda zprostředkovatele schématu vrátit `null`.  
   
  Serializace a deserializace typ elementu je velmi podobné serializaci a deserializaci typ obsahu. Existují však několik důležitých rozdílů:  
   
@@ -165,11 +167,11 @@ ms.lasthandoff: 12/22/2017
   
 -   `ReadXml` Implementace by neměl čtení prvku obálku. Očekává se číst jeden element který `WriteXml` vytváří.  
   
--   Při serializaci typu elementu pravidelně (například jako člena dat ve smlouvě data), serializátor výstupy element obálky před voláním `WriteXml`, stejně jako u typy obsahu. Ale při serializaci typ elementu na nejvyšší úrovni, serializátoru, který není výstup normálně element obálku kolem elementu vůbec, `WriteXml` zapíše, pokud název kořenové domény a oboru názvů byly explicitně zadány při vytváření serializátor v `DataContractSerializer` nebo `NetDataContractSerializer` konstruktory. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+-   Při serializaci typu elementu pravidelně (například jako člena dat ve smlouvě data), serializátor výstupy element obálky před voláním `WriteXml`, stejně jako u typy obsahu. Ale při serializaci typ elementu na nejvyšší úrovni, serializátoru, který není výstup normálně element obálku kolem elementu vůbec, `WriteXml` zapíše, pokud název kořenové domény a oboru názvů byly explicitně zadány při vytváření serializátor v `DataContractSerializer` nebo `NetDataContractSerializer` konstruktory. Další informace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 -   Při serializaci typ elementu na nejvyšší úrovni bez zadání název kořenové domény a oboru názvů v době konstrukce <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A> a <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> v podstatě neprovede žádnou akci a <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A> volání `WriteXml`. V tomto režimu serializovaného objektu nemůže mít hodnotu null a nelze jí přiřadit polymorphically. Také, nemůže objekt grafu zachovávání povolena a `NetDataContractSerializer` nelze použít.  
   
--   Při deserializaci typ elementu na nejvyšší úrovni bez zadání název kořenové domény a oboru názvů v době konstrukce <xref:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject%2A> vrátí `true` Pokud nemůže najít začátek libovolný element. <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A>pomocí `verifyObjectName` parametr nastaven na `true` se chová stejně jako `IsStartObject` před ve skutečnosti čtení objektu. `ReadObject`pak předá řízení `ReadXml` metoda.  
+-   Při deserializaci typ elementu na nejvyšší úrovni bez zadání název kořenové domény a oboru názvů v době konstrukce <xref:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject%2A> vrátí `true` Pokud nemůže najít začátek libovolný element. <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> pomocí `verifyObjectName` parametr nastaven na `true` se chová stejně jako `IsStartObject` před ve skutečnosti čtení objektu. `ReadObject` pak předá řízení `ReadXml` metoda.  
   
  Schéma exportovat za účelem typy elementu je stejná jako u `XmlElement` zadejte, jak je popsáno v předchozí části, s tím rozdílem, že metoda zprostředkovatele schéma můžete přidat žádné další schéma, aby <xref:System.Xml.Schema.XmlSchemaSet> stejně jako u typy obsahu. Pomocí `XmlRootAttribute` atribut s typy element není povolen, a globální element deklarace jsou nikdy vygenerované pro tyto typy.  
   
@@ -200,7 +202,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Všechny zapisovače XML dodává s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] odmítnout pokyny pro zpracování XML (\<? … ? >) a zadejte definice dokumentu (\<! … >), protože nejsou povoleny v protokolu SOAP zprávy. Znovu můžete použít vlastní kódování mechanismus k vyřešení tohoto omezení. Pokud musí obsahovat tyto v výsledný soubor XML, můžete napsat vlastní kodér, který používá zapisovače XML, které je podporují.  
   
--   Při implementaci `WriteXml`, vyhněte se volání <xref:System.Xml.XmlWriter.WriteRaw%2A> metoda zapisovače XML. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá různých XML kódování (včetně binární), je velmi obtížné nebo dokonce znemožňují použít `WriteRaw` tak, že výsledkem je použitelná v jakémkoli kódování.  
+-   Při implementaci `WriteXml`, vyhněte se volání <xref:System.Xml.XmlWriter.WriteRaw%2A> metoda zapisovače XML. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá různých XML kódování (včetně binární), je velmi obtížné nebo dokonce znemožňují použít `WriteRaw` tak, že výsledkem je použitelná v jakémkoli kódování.  
   
 -   Při implementaci `WriteXml`, nepoužívejte <xref:System.Xml.XmlWriter.WriteEntityRef%2A> a <xref:System.Xml.XmlWriter.WriteNmToken%2A> metody, které jsou v zapisovače XML součástí podporována [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
@@ -209,7 +211,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Schéma pro tyto typy (zejména <xref:System.Data.DataSet> a jeho typu odvozené třídy) nemusí být vzájemná spolupráce s některé jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] platformy, nebo může mít za následek nízký použitelnost při použití s tyto platformy. Kromě toho používání `DataSet` typu může mít vliv na výkon. Nakonec se může to ztížit pro vás na verzi aplikace v budoucnu. Zvažte použití explicitně definované datové typy kontraktů místo `DataSet` typy v vaše smlouvy.  
   
--   Při importu `DataSet` nebo `DataTable` schématu, je důležité, chcete-li tyto typy. Pomocí příkazového řádku nástroje Svcutil.exe můžete to provést pomocí předání názvu sestavení System.Data.dll `/reference` přepínače. Pokud import schématu typové datové sady, musí být uveden typ typové datové sady. S Svcutil.exe, předat umístění sestavení typové datové sady `/reference` přepínače. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]odkazování na typy, najdete v článku [import schématu pro generování tříd](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
+-   Při importu `DataSet` nebo `DataTable` schématu, je důležité, chcete-li tyto typy. Pomocí příkazového řádku nástroje Svcutil.exe můžete to provést pomocí předání názvu sestavení System.Data.dll `/reference` přepínače. Pokud import schématu typové datové sady, musí být uveden typ typové datové sady. S Svcutil.exe, předat umístění sestavení typové datové sady `/reference` přepínače. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] odkazování na typy, najdete v článku [import schématu pro generování tříd](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
   
  Podpora pro typové datové sady v datovém modelu kontrakt je omezená. Typové datové sady lze serializovat a deserializovat a můžete exportovat jejich schématu. Kontrakt dat import schématu se nepodařilo vygenerovat nový však zadané datovou sadu typy ze schématu, jako je pouze znovu použít existující. Může ukazovat na existující typové datové sady pomocí `/r` přepínač na Svcutil.exe. Pokud pokus o použití Svcutil.exe bez `/r` přepnout na službu, která používá typové datové sady, je automaticky vybrána serializátor alternativní (XmlSerializer). Pokud musíte použít objektu DataContractSerializer a musíte vygenerovat datové sady ze schématu, můžete použít následující postup: generování typů typové datové sady (pomocí nástroje Xsd.exe s `/d` přepínač na službu), zkompilovat typy a pak přejděte na je pomocí `/r` přepínač na Svcutil.exe.  
   

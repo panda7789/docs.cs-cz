@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3834f48c407f799fc5fede17182f47652f49747f
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 082fa083dbba601cefc00e40bad7b91e14a45d44
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="best-practices-for-queued-communication"></a>Doporučené postupy pro komunikaci ve frontě
 Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Následující části popisují doporučené postupy z hlediska scénář.  
@@ -33,7 +33,7 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[i
   
  Kromě toho můžete není zabývat náklady zápisy na disk nastavením <xref:System.ServiceModel.MsmqBindingBase.Durable%2A> vlastnost `false`.  
   
- Zabezpečení má dopad na výkon. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Faktory ovlivňující výkon](../../../../docs/framework/wcf/feature-details/performance-considerations.md).  
+ Zabezpečení má dopad na výkon. Další informace najdete v tématu [faktory ovlivňující výkon](../../../../docs/framework/wcf/feature-details/performance-considerations.md).  
   
 ## <a name="reliable-end-to-end-queued-messaging"></a>Spolehlivé začátku do konce zasílání zpráv zařazených do fronty.  
  Následující části popisují doporučené postupy pro scénáře, které vyžadují začátku do konce spolehlivé zasílání zpráv.  
@@ -49,21 +49,21 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[i
   
  Vypnutí fronty nedoručených zpráv pro komunikaci spolehlivé začátku do konce se nedoporučuje.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md).  
+ Další informace najdete v tématu [pomocí fronty nedoručených zpráv pro zpracování chyb přenosu zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md).  
   
 ### <a name="use-of-poison-message-handling"></a>Použití zpracování Poison zpráv  
  Zpracování zpráv Poison poskytuje možnost obnovení po selhání zpracování zpráv.  
   
  Když používáte funkci zpracování zpráv poison, ujistěte se, že <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> je nastavena na odpovídající hodnotu. Jeho nastavení na hodnotu <xref:System.ServiceModel.ReceiveErrorHandling.Drop> znamená data budou ztracena. Na druhé straně jeho nastavení na hodnotu <xref:System.ServiceModel.ReceiveErrorHandling.Fault> závady hostitele služby, když zjistí poškozená zpráva. Pomocí služby MSMQ 3.0 <xref:System.ServiceModel.ReceiveErrorHandling.Fault> je nejlepší možnost nedošlo ke ztrátě dat a přesuňte nezpracovatelná zpráva stranou. Pomocí služby MSMQ 4.0 <xref:System.ServiceModel.ReceiveErrorHandling.Move> se o doporučený postup. <xref:System.ServiceModel.ReceiveErrorHandling.Move> Přesune poškozená po zprávu z fronty, tak, aby služba můžou dál zpracovávat nové zprávy. Služba poison zpráva může pak zpracovat nezpracovatelná zpráva samostatně.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md).  
+ Další informace najdete v tématu [zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md).  
   
 ## <a name="achieving-high-throughput"></a>Dosahuje vysoké propustnosti  
  K dosažení vysoké propustnosti na jednom koncovém bodě, použijte tento příkaz:  
   
--   Transakční dávkování. Dávkové zajistí, že mnoho zpráv lze číst v rámci jedné transakce. Tím se optimalizuje potvrzení transakcí, zvýšit celkový výkon. Náklady na dávkování je, že pokud dojde k selhání do jedné zprávy v dávce, pak celý batch je vrácena zpět a zprávy musí být zpracovaná jeden po druhém, dokud je bezpečné batch znovu. Ve většině případů jsou taková situace vzácná, poškozených zpráv, takže dávkování je upřednostňovaný způsob, jak zvýšit výkon systému, zejména v případě, že máte další správci prostředků, které jsou součástí transakce. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md).  
+-   Transakční dávkování. Dávkové zajistí, že mnoho zpráv lze číst v rámci jedné transakce. Tím se optimalizuje potvrzení transakcí, zvýšit celkový výkon. Náklady na dávkování je, že pokud dojde k selhání do jedné zprávy v dávce, pak celý batch je vrácena zpět a zprávy musí být zpracovaná jeden po druhém, dokud je bezpečné batch znovu. Ve většině případů jsou taková situace vzácná, poškozených zpráv, takže dávkování je upřednostňovaný způsob, jak zvýšit výkon systému, zejména v případě, že máte další správci prostředků, které jsou součástí transakce. Další informace najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md).  
   
--   Souběžnosti. Concurrency zvyšuje propustnost, ale souběžnosti ovlivní také kolizí ke sdíleným prostředkům. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Concurrency](../../../../docs/framework/wcf/samples/concurrency.md).  
+-   Souběžnosti. Concurrency zvyšuje propustnost, ale souběžnosti ovlivní také kolizí ke sdíleným prostředkům. Další informace najdete v tématu [souběžnosti](../../../../docs/framework/wcf/samples/concurrency.md).  
   
 -   Omezení šířky pásma. Pro optimální výkon omezit počet zpráv v dispečeru kanálu. Příklad toho, jak to provést, naleznete v části [omezování](../../../../docs/framework/wcf/samples/throttling.md).  
   
@@ -73,12 +73,12 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[i
   
  Při použití farmy, mějte na paměti, že služby MSMQ 3.0 nepodporuje vzdálené zpracovaných čtení. MSMQ 4.0 podporuje vzdálené zpracovaných čtení.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md) a [rozdíly funkcí front zpráv v systému Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).  
+ Další informace najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md) a [rozdíly služby Řízení front funkcí v systému Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).  
   
 ## <a name="queuing-with-unit-of-work-semantics"></a>Služba Řízení front s jednotkou pracovní sémantiku  
  V některých případech může souviset skupinu zpráv ve frontě, a proto je důležité pořadí těchto zpráv. V takových případech zpracovat skupinu související zprávy společně jako jednu jednotku: buď všechny zprávy úspěšně zpracovat, nebo žádný. Chcete-li implementovat takové chování, použijte relace s fronty.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md).  
+ Další informace najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md).  
   
 ## <a name="correlating-request-reply-messages"></a>Korelace zprávy požadavku a odpovědi  
  I když fronty jsou obvykle jednosměrné, v některých případech můžete chtít korelovat odpověď přijata na žádost odeslány dříve. Pokud budete potřebovat takové korelace, doporučujeme, abyste použili vlastní záhlaví zprávy protokolu SOAP, který obsahuje informace o korelace se zprávou. Obvykle odesílatel připojí tuto hlavičku se zprávou a příjemce při zpracování zprávy a odeslání odpovědi zpět s novou zprávu ve frontě s odpovědí, připojí záhlaví zprávy odesílatele, obsahující informace o korelace tak, aby odesílatel možné Identifikujte zprávu odpovědi s zprávu požadavku.  

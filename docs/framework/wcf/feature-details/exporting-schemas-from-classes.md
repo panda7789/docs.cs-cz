@@ -1,12 +1,13 @@
 ---
-title: "Export schémat ze tříd"
-ms.custom: 
+title: Export schémat ze tříd
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF, schema import and export
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: bb57b962-70c1-45a9-93d5-e721e340a13f
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 01e841e76c4a6cf06169113422921367d671ea98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d9e63223fce7f86b0cf2a64ba4e7aa2e54ca6219
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="exporting-schemas-from-classes"></a>Export schémat ze tříd
 Chcete-li vygenerovat schématu XML definition language (XSD) schémat ze třídy, které se používají v datovém modelu kontrakt, použijte <xref:System.Runtime.Serialization.XsdDataContractExporter> třídy. Toto téma popisuje proces pro vytváření schémat.  
@@ -54,18 +56,18 @@ Chcete-li vygenerovat schématu XML definition language (XSD) schémat ze tříd
 ## <a name="export-options"></a>Možnosti exportu  
  Můžete nastavit <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> vlastnost <xref:System.Runtime.Serialization.XsdDataContractExporter> na instanci systému <xref:System.Runtime.Serialization.ExportOptions> třídy ovládat různé aspekty procesu exportu. Konkrétně můžete nastavit následující možnosti:  
   
--   <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>. Tato kolekce `Type` představuje známé typy pro typy, která je exportována. ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).) Tyto známé typy exportují se na každý `Export` volání navíc k typům předaný `Export` metoda.  
+-   <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>. Tato kolekce `Type` představuje známé typy pro typy, která je exportována. (Další informace najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).) Tyto známé typy exportují se na každý `Export` volání navíc k typům předaný `Export` metoda.  
   
--   <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>. <xref:System.Runtime.Serialization.IDataContractSurrogate> Můžete zadat pomocí této vlastnosti, která bude přizpůsobení procesu exportu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení se používá žádné náhradní.  
+-   <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>. <xref:System.Runtime.Serialization.IDataContractSurrogate> Můžete zadat pomocí této vlastnosti, která bude přizpůsobení procesu exportu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení se používá žádné náhradní.  
   
 ## <a name="helper-methods"></a>Pomocné metody  
  Kromě jeho primární roli exportu schématu `XsdDataContractExporter` poskytuje několik užitečné pomocné metody, které poskytují informace o typech. Mezi ně patří:  
   
--   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A>Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> představující název kořenového elementu a obor názvů, který se použije, pokud se tento typ serializovat jako kořenový objekt.  
+-   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A> Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> představující název kořenového elementu a obor názvů, který se použije, pokud se tento typ serializovat jako kořenový objekt.  
   
--   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A>Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> představující název typ schématu XSD, který se použije, pokud byly exportovány tento typ schématu. Pro <xref:System.Xml.Serialization.IXmlSerializable> typy reprezentován jako anonymní typy ve schématu, tato metoda vrátí `null`.  
+-   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A> Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> představující název typ schématu XSD, který se použije, pokud byly exportovány tento typ schématu. Pro <xref:System.Xml.Serialization.IXmlSerializable> typy reprezentován jako anonymní typy ve schématu, tato metoda vrátí `null`.  
   
--   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType%2A>Metoda. Tato metoda funguje jenom s <xref:System.Xml.Serialization.IXmlSerializable> typy, které jsou reprezentovány jako anonymní typy ve schématu a vrátí `null` pro všechny ostatní typy. Anonymní typy, tato metoda vrátí hodnotu <xref:System.Xml.Schema.XmlSchemaType> představující danou `Type`.  
+-   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType%2A> Metoda. Tato metoda funguje jenom s <xref:System.Xml.Serialization.IXmlSerializable> typy, které jsou reprezentovány jako anonymní typy ve schématu a vrátí `null` pro všechny ostatní typy. Anonymní typy, tato metoda vrátí hodnotu <xref:System.Xml.Schema.XmlSchemaType> představující danou `Type`.  
   
  Možnosti exportu mít vliv na všechny z těchto metod.  
   

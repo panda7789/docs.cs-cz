@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytvoření služby tokenů zabezpečení"
-ms.custom: 
+title: 'Postupy: Vytvoření služby tokenů zabezpečení'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,33 +16,34 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 53ae64af0612cb905a2342491761b1e27ef19c06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e043b9b9a3b09bec0d7484fb732e33571b5aaf0c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
 Služby tokenů zabezpečení implementuje protokol definovaný ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a vzory exchange zprávu pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení poskytuje jeden nebo více z těchto funkcí. Toto téma vypadá nejvíce běžný scénář: implementace vystavování tokenů.  
   
 ## <a name="issuing-tokens"></a>Vydávání tokenů  
- WS-Trust definuje formáty zpráv, na základě `RequestSecurityToken` schématu XML definition language (XSD) schématu elementu, a `RequestSecurityTokenResponse` element schématu XSD pro provádění vystavování tokenů. Kromě toho definuje přidružené akce identifikátory Uniform Resource (Identifier). Akce přidružené k identifikátoru URI `RequestSecurityToken` http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue je zpráva. Akce přidružené k identifikátoru URI `RequestSecurityTokenResponse` http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue je zpráva.  
+ WS-Trust definuje formáty zpráv, na základě `RequestSecurityToken` schématu XML definition language (XSD) schématu elementu, a `RequestSecurityTokenResponse` element schématu XSD pro provádění vystavování tokenů. Kromě toho definuje přidružené akce identifikátory Uniform Resource (Identifier). Akce přidružené k identifikátoru URI `RequestSecurityToken` zpráva http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue. Akce přidružené k identifikátoru URI `RequestSecurityTokenResponse` zpráva http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue.  
   
 ### <a name="request-message-structure"></a>Struktura zprávy požadavku  
  Struktura zprávy požadavku problém se obvykle skládá z následujících položek:  
   
--   Žádost o typem identifikátor URI s hodnotou http://schemas.xmlsoap.org/ws/2005/02/trust/Issue.  
+-   Žádost o zadejte identifikátor URI s hodnotou http://schemas.xmlsoap.org/ws/2005/02/trust/Issue.  
   
--   Token typ identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy Markup Language (SAML) 1.1 je http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1 hodnota tento identifikátor URI.  
+-   Token typ identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy Markup Language (SAML) 1.1, hodnota tento identifikátor URI je http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1.  
   
 -   Velikost klíče hodnotu, která určuje počet bitů klíč, který chcete přidružit vydaný token.  
   
--   Klíče typu identifikátor URI. Hodnota tento identifikátor URI pro symetrické klíče, je http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey.  
+-   Klíče typu identifikátor URI. Symetrické klíče, je hodnota tento identifikátor URI http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey.  
   
  Kromě toho může být několik další položky k dispozici:  
   
@@ -109,7 +111,7 @@ Služby tokenů zabezpečení implementuje protokol definovaný ve specifikaci W
  [!code-csharp[c_CreateSTS#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#4)]
  [!code-vb[c_CreateSTS#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#4)]  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Další informace najdete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
 ## <a name="creating-response-messages"></a>Vytváření odpovědí na zprávy  
  Jakmile služby tokenů zabezpečení zpracuje žádost o problému a vytvoří token, který má být vydaný společně s doklad klíčem, zprávu odpovědi musí zkonstruovat, včetně alespoň požadovaný token, doklad token a odkazy na vydaných tokenů. Vystavený token je obvykle <xref:System.IdentityModel.Tokens.SamlSecurityToken> vytvořené z <xref:System.IdentityModel.Tokens.SamlAssertion>, jak je znázorněno v následujícím příkladu.  
@@ -122,7 +124,7 @@ Služby tokenů zabezpečení implementuje protokol definovaný ve specifikaci W
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Postup vytvoření doklad token, pokud obě služby klienta a token zabezpečení poskytne klíče pro sdílený klíč, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Postup vytvoření doklad token, pokud obě služby klienta a token zabezpečení poskytne klíče pro sdílený klíč, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
  Vystavený token odkazy se vytvářejí pomocí instancí <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> třídy.  
   

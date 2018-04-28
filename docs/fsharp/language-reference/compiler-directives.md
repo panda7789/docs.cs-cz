@@ -1,20 +1,17 @@
 ---
-title: "Direktivy kompilátoru (F#)"
-description: "Další informace o F # jazyka direktivy preprocesoru, podmíněná kompilace direktivy, direktivy řádku a direktivy kompilátoru."
-keywords: "Visual f #, f #, funkční programování"
+title: Direktivy kompilátoru (F#)
+description: 'Další informace o F # jazyka direktivy preprocesoru, podmíněná kompilace direktivy, direktivy řádku a direktivy kompilátoru.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 93aef07a-6747-4ce4-a10f-a05168978af6
-ms.openlocfilehash: c7ec056f407f3af34528205a5abb1cdef7d43fef
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 03fe3598f04025cf6dfaf2424b9fcb33ed4b3859
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 

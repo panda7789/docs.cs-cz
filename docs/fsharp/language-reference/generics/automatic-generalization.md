@@ -1,20 +1,17 @@
 ---
-title: "Automatická generalizace (F#)"
-description: "Zjistěte, jak F # automaticky umožňuje zobecnit argumentů a typy funkce tak, aby fungovaly s více typy, pokud je to možné."
-keywords: "Visual f #, f #, funkční programování"
+title: Automatická generalizace (F#)
+description: 'Zjistěte, jak F # automaticky umožňuje zobecnit argumentů a typy funkce tak, aby fungovaly s více typy, pokud je to možné.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 14a3554c-3fad-4eba-a93d-8ba07d1245b4
-ms.openlocfilehash: d60831084cef76ce29f64322362b4920520f71d2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9b599fd9fe1220b41987bc14a420ed5740aa05f5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="automatic-generalization"></a>Automatická generalizace
 

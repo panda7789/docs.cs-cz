@@ -1,20 +1,17 @@
 ---
-title: "Explicitní pole: Klíčové slovo val (F#)"
+title: 'Explicitní pole: Klíčové slovo val (F#)'
 description: "Další informace o F # 'val' – klíčové slovo, které se používá k deklaraci umístění pro uložení hodnotu v typu třídu nebo strukturu nebyl zadán typ."
-keywords: "Visual f #, f #, funkční programování"
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 3bdbc745-436b-407f-bf54-5d11ca829cd0
-ms.openlocfilehash: cee53a48f08aec89b0bdd40189ed331cadee877d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: dc277680121976c0469b18c77bd84443cd251afb
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Klíčové slovo val
 
@@ -49,7 +46,7 @@ Pro měnitelný pole je reprezentace .NET zkompilovat pole rozhraní .NET.
 
 
 >[!WARNING] 
-`Note`Obor názvů rozhraní .NET Framework `System.ComponentModel` obsahuje atribut, který má stejný název. Informace o tento atribut najdete v tématu `System.ComponentModel.DefaultValueAttribute`.
+`Note` Obor názvů rozhraní .NET Framework `System.ComponentModel` obsahuje atribut, který má stejný název. Informace o tento atribut najdete v tématu `System.ComponentModel.DefaultValueAttribute`.
 
 
 Následující kód ukazuje použití explicitní pole a pro porovnání, `let` vazby ve třídy, která má primární konstruktor. Všimněte si, že `let`-vázané pole `myInt1` je soukromé. Když `let`-vázané pole `myInt1` se odkazuje z metody člen, vlastní identifikátor `this` se nevyžaduje. Když odkazujete explicitní pole, ale `myInt2` a `myString`, je vyžadován vlastní identifikátor.
@@ -83,6 +80,6 @@ Když klíčová slova `member val` objeví spolu v definici typu je definice au
 ## <a name="see-also"></a>Viz také
 [Vlastnosti](properties.md)
 
-[Členy](index.md)
+[Členové](index.md)
 
-[`let`Vazby do ve třídách](let-bindings-in-classes.md)
+[`let` Vazby do ve třídách](let-bindings-in-classes.md)

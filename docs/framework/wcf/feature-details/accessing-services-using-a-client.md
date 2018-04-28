@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5258f2eaf9ca60dc43ff8182c058d9c68043200f
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2138a412af30812b4ff443963604dda52eafea11
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
 Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta nebo kanál objektů komunikovat se službami. [Klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základní klienta a kanál objektů a jejich používání.  
@@ -53,7 +53,7 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
 > [!NOTE]
 >  Pokusu explicitně zjistit chybný relacemi kanály není obvykle užitečné, protože když jsou upozorněni závisí na implementaci relace. Například protože <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> (s spolehlivé relace zakázán) poskytuje relace připojení TCP, pokud naslouchání na <xref:System.ServiceModel.ICommunicationObject.Faulted?displayProperty=nameWithType> událostí na službu nebo klienta, budete pravděpodobně rychle upozorněni v případě selhání sítě. Ale spolehlivé relace (vymezenému vazby, ve kterém <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> je povoleno) jsou navrženy pro izolovat služby selhání malou síť. Pokud relace můžete je znovu vytvořit v přiměřené době běhu stejnou vazbu – nakonfigurovaný pro spolehlivé relace – nemusí poruch dokud narušení chodu dál pro delší časové období.  
   
- Většina vazby poskytované systémem, (které vystavit kanály na aplikační vrstvu) používá relace ve výchozím nastavení, ale <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> neexistuje. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Použití relací](../../../../docs/framework/wcf/using-sessions.md).  
+ Většina vazby poskytované systémem, (které vystavit kanály na aplikační vrstvu) používá relace ve výchozím nastavení, ale <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> neexistuje. Další informace najdete v tématu [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  
   
 ### <a name="the-proper-use-of-sessions"></a>Správné použití relací  
  Relace poskytují způsob, jak vědět, pokud skončí exchange celou zprávu, a pokud na obou stranách považuje za úspěšnou. Doporučujeme volající aplikace otevřete kanál, použijte ji a zavřete kanál uvnitř bloku try jeden. Pokud kanál relace je otevřené a <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> metoda je volána jednou a že volání vrátí úspěšně a pak relace byla úspěšná. Úspěšné v tomto případě znamená, že všechny doručení zaručuje určená vazba byly splněny, a druhá strana nezavolalo <xref:System.ServiceModel.ICommunicationObject.Abort%2A?displayProperty=nameWithType> na kanálu před voláním <xref:System.ServiceModel.ICommunicationObject.Close%2A>.  
@@ -64,7 +64,7 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
  Zpracování výjimek v klientských aplikacích je jednoduchá. Pokud kanál, který je otevřené, používat a uzavřen uvnitř bloku try, pak konverzace proběhla úspěšně, pokud je vyvolána výjimka. Obvykle Pokud je vyvolána výjimka konverzace byl přerušen.  
   
 > [!NOTE]
->  Použití `using` – příkaz (`Using` v jazyce Visual Basic) se nedoporučuje. Důvodem je, že konci `using` příkaz může způsobit výjimky, které můžete maskování dalších výjimkách, budete muset vědět o. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Vyhnout se tak problémům s příkazem Using](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
+>  Použití `using` – příkaz (`Using` v jazyce Visual Basic) se nedoporučuje. Důvodem je, že konci `using` příkaz může způsobit výjimky, které můžete maskování dalších výjimkách, budete muset vědět o. Další informace najdete v tématu [vyhnout problémům s příkazem Using](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
   
  Následující příklad kódu ukazuje vzoru klienta doporučenou pomocí bloku try/catch a ne `using` příkaz.  
   
@@ -79,7 +79,7 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
  Podrobnější informace o práci s informace o chybě na úrovni aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) popisuje očekávané výjimky a ukazuje, jak k jejich zpracování. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zpracování chyb při vývoji kanály najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
   
 ### <a name="client-blocking-and-performance"></a>Blokování klienta a výkonu  
- Když aplikace synchronně volá operaci požadavku a odpovědi, klientské bloky, dokud není přijata návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikace synchronně vyvolá operace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta nebo kanálu klienta nevrací dokud vrstvy kanálu můžete zapsat data do sítě, nebo dokud je vyvolána výjimka. A při vzorce výměny zpráv jednosměrný (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) můžete provést některé klienty rychlejšího, Jednosměrná operace můžete taky zablokovat, v závislosti na vazby a co zprávy již byly Odeslat. Jednosměrná operace jsou pouze o zpráva systému exchange, ne další a ne menší. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Jednosměrné služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
+ Když aplikace synchronně volá operaci požadavku a odpovědi, klientské bloky, dokud není přijata návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikace synchronně vyvolá operace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta nebo kanálu klienta nevrací dokud vrstvy kanálu můžete zapsat data do sítě, nebo dokud je vyvolána výjimka. A při vzorce výměny zpráv jednosměrný (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) můžete provést některé klienty rychlejšího, Jednosměrná operace můžete taky zablokovat, v závislosti na vazby a co zprávy již byly Odeslat. Jednosměrná operace jsou pouze o zpráva systému exchange, ne další a ne menší. Další informace najdete v tématu [One-Way služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
   
  Bloky velkých objemů dat může zpomalit zpracování bez ohledu na to, co vzorce výměny zpráv na straně klienta. Chcete-li pochopit, jak zpracovávat tyto problémy, přečtěte si téma [velkého množství dat a Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   

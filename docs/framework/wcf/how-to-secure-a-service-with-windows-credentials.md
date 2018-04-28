@@ -21,11 +21,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: cbe29ed57a7eee3a74166dabd2b8931e73cd2860
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c754a4ec57751b2ca5a809c771b2fb5235ec0510
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí pověření systému Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služba, která se nachází v doméně systému Windows a je volána klienty ve stejné doméně. [!INCLUDE[crabout](../../../includes/crabout-md.md)] v tomto scénáři najdete v části [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
@@ -87,7 +87,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>Chcete-li použít vazby v klientovi s kódem  
   
-1.  Použití nástroje SvcUtil.exe pro generování kódu proxy z metadat služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy server kód dědí z <xref:System.ServiceModel.ClientBase%601> třídy, která zajistí, že má každý klient nezbytné konstruktory, metod a vlastností ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. V tomto příkladu obsahuje generovaný kód `CalculatorClient` třídy, které implementuje `ICalculator` rozhraní, povolení kompatibilitu s kódu služby.  
+1.  Použití nástroje SvcUtil.exe pro generování kódu proxy z metadat služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy server kód dědí z <xref:System.ServiceModel.ClientBase%601> třídy, která zajistí, že má každý klient nezbytné konstruktory, metod a vlastností ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. V tomto příkladu obsahuje generovaný kód `CalculatorClient` třídy, které implementuje `ICalculator` rozhraní, povolení kompatibilitu s kódu služby.  
   
 2.  Tento postup kód je vložen na začátku `Main` metoda programu klienta.  
   
@@ -140,7 +140,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
   
 ##### <a name="to-use-a-binding-in-a-client-with-configuration"></a>Chcete-li použít vazby v klientovi s konfigurací  
   
-1.  Pomocí nástroje SvcUtil.exe vygenerujte soubor kódu a konfigurace proxy serveru z metadat služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+1.  Pomocí nástroje SvcUtil.exe vygenerujte soubor kódu a konfigurace proxy serveru z metadat služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 2.  Nahraďte [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) části generovaného konfiguračního souboru s kódem konfigurace z předchozí části.  
   

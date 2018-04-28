@@ -1,20 +1,17 @@
 ---
 title: 'Pomocí F # na Azure'
 description: 'Průvodce pomocí služeb Azure s F #'
-keywords: 'Azure cloud, visual f #, f # funkční programování, .NET, .NET Core'
 author: sylvanc
 ms.author: phcart
 ms.date: 09/22/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: FAD4D11E-703A-42D4-9F72-893D9E0F569B
-ms.openlocfilehash: fdb2378a731a13894cf71356a2713c62a5c2064e
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 7e11ec533c6b1fc535e26024a97ac056dff29bb1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-f-on-azure"></a>Pomocí F # na Azure
 

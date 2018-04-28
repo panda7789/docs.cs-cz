@@ -1,20 +1,17 @@
 ---
 title: Parametry a argumenty (F#)
-description: "Další informace o F # jazyková podpora pro definování parametry a předání argumentů do funkce, metod a vlastností."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Další informace o F # jazyková podpora pro definování parametry a předání argumentů do funkce, metod a vlastností.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 9b37a5c4-9263-4513-822a-fbb0d1004254
-ms.openlocfilehash: 50f54bacd9ba7ec20a7151794734f93200df9f2d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e146ec4e877bb89f10e2f3daad2d8356c29fa81f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 
@@ -167,4 +164,4 @@ true
 ```
 
 ## <a name="see-also"></a>Viz také
-[Členy](members/index.md)
+[Členové](members/index.md)

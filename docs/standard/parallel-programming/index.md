@@ -1,33 +1,28 @@
 ---
 title: Paralelní programování v .NET
-ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - parallel programming
-ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1e649bcb37b711d01199bd4e4823a9bb0cac60b4
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 679ffe40e525884070ee62662b7a7e5acd7e58ad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
-Mnoho osobních počítačů a pracovních stanic má dvě nebo čtyři jádra (CPU) umožňující provádění více vláken současně. V blízké budoucnosti se očekává, že počítače budou mít mnohem více jader. V rámci využití výhod dostupného hardwaru lze kód paralelizovat a distribuovat tak práci mezi více procesorů. V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] rozšiřují podporu pro paralelní programování poskytnutím nový modul runtime, nových typů knihovny tříd a nové diagnostické nástroje. Tyto funkce zjednodušují vývoj paralelních aplikací tak, aby bylo možné psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken. Následující obrázek poskytuje podrobný přehled architektury paralelní programování v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+
+Mnoho osobní počítače a pracovní stanice mají několik jader procesoru, které umožňují více vláken současně. V blízké budoucnosti se očekává, že počítače budou mít mnohem více jader. V rámci využití výhod dostupného hardwaru lze kód paralelizovat a distribuovat tak práci mezi více procesorů. V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. Visual Studio 2010 a rozhraní .NET Framework 4 rozšiřují podporu pro paralelní programování poskytnutím nový modul runtime, nových typů knihovny tříd a nové diagnostické nástroje. Tyto funkce zjednodušují vývoj paralelních aplikací tak, aby bylo možné psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken. Následující obrázek poskytuje podrobný přehled architektury paralelní programování v rozhraní .NET Framework 4.
   
- ![Paralelní programování architektura .NET](../../../docs/standard/parallel-programming/media/tpl-architecture.png "TPL_Architecture")  
+ ![Paralelní programování architektura .NET](./media/tpl-architecture.png "TPL_Architecture")  
   
 ## <a name="related-topics"></a>Související témata  
   
@@ -40,8 +35,8 @@ Mnoho osobních počítačů a pracovních stanic má dvě nebo čtyři jádra (
 |[Vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)|Popisuje, jak pracují rozdělovače a jak nakonfigurovat výchozí rozdělovače nebo vytvořit nový rozdělovač.|  
 |[Plánovače úloh](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)|Popisuje, jak pracují plánovače a jak lze nakonfigurovat výchozí plánovače.|  
 |[Výrazy lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)|Poskytuje stručný přehled výrazů lambda v jazyce C# a Visual Basic a ukazuje způsob jejich použití v PLINQ a Task Parallel Library.|  
-|[Pro další čtení](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|Obsahuje odkazy na další dokumentaci a zdroje ukázek pro paralelní programování v rozhraní .NET Framework.|  
-  
+|[Pro další čtení](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|Obsahuje odkazy na další informace a ukázkové prostředky pro paralelní programování v rozhraní .NET.|  
+
 ## <a name="see-also"></a>Viz také  
- [Vzory pro paralelní programování: Princip fungování a způsob použití paralelní vzory s rozhraním .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222)  
- [Ukázky pro paralelní programování s rozhraním .NET Framework](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+ [Async – přehled](../async.md)  
+ [Dělení na spravovaná vlákna](../threading/index.md)  

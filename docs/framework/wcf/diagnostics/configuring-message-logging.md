@@ -1,34 +1,34 @@
 ---
-title: "Konfigurace protokolování zpráv"
-ms.custom: 
+title: Konfigurace protokolování zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-caps.latest.revision: 
+caps.latest.revision: 40
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a867d5f85177ad9a19a5766c65a8f1f98c04cd17
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 63bdbc68851ace71b3afef30e274b9821ed1ad5f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro různé scénáře.  
   
 ## <a name="enabling-message-logging"></a>Povolení protokolování zpráv  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ve výchozím nastavení neprotokoluje zprávy. K aktivaci protokolování zpráv, je nutné přidat naslouchací k `System.ServiceModel.MessageLogging` zdroj trasování a nastavit atributy `<messagelogging>` element v konfiguračním souboru.  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ve výchozím nastavení neprotokoluje zprávy. K aktivaci protokolování zpráv, je nutné přidat naslouchací k `System.ServiceModel.MessageLogging` zdroj trasování a nastavit atributy `<messagelogging>` element v konfiguračním souboru.  
   
  Následující příklad ukazuje, jak povolit protokolování a nastavte další možnosti.  
   
@@ -58,7 +58,7 @@ Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro růz
 </system.serviceModel>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]nastavení protokolování zpráv najdete v tématu [doporučená nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nastavení protokolování zpráv najdete v tématu [doporučená nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).  
   
  Můžete použít `add` a zadat název a typ naslouchací proces, který chcete použít. V konfiguraci příklad naslouchací proces má název "zprávy" a přidá standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) jako typ, který má použít. Pokud používáte `System.Diagnostics.XmlWriterTraceListener`, je nutné zadat umístění výstupního souboru a název v konfiguračním souboru. To se provádí nastavením `initializeData` k názvu souboru protokolu. V systému, jinak vyvolá výjimku. Můžete také implementovat vlastní naslouchací proces, který vysílá protokoluje události do souboru výchozí.  
   
@@ -73,14 +73,14 @@ Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro růz
 <source name="System.ServiceModel.MessageLogging" switchValue="Verbose">  
 ```  
   
- Pokud chcete zakázat zdroj trasování, měli byste použít `logMessagesAtServiceLevel`, `logMalformedMessages`, a `logMessagesAtTransportLevel` atributy `messageLogging` element místo. Měli byste nastavit tyto atributy hodnotu `false`. To můžete provést pomocí konfiguračního souboru v předchozím příkladu kódu, přes rozhraní Editor konfigurací uživatelského rozhraní nebo pomocí rozhraní WMI. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Nástroj Configuration Editor, najdete v části [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Rozhraní WMI, najdete v části [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ Pokud chcete zakázat zdroj trasování, měli byste použít `logMessagesAtServiceLevel`, `logMalformedMessages`, a `logMessagesAtTransportLevel` atributy `messageLogging` element místo. Měli byste nastavit tyto atributy hodnotu `false`. To můžete provést pomocí konfiguračního souboru v předchozím příkladu kódu, přes rozhraní Editor konfigurací uživatelského rozhraní nebo pomocí rozhraní WMI. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Nástroj Configuration Editor, najdete v části [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Rozhraní WMI, najdete v části [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
 ## <a name="logging-levels-and-options"></a>Úrovně protokolování a možnosti  
  Pro příchozí zprávy protokolování dojde ihned po zprávy je vytvořen, bezprostředně před zpráva získá kódu uživatele na úrovni služby, a při zjištění poškozených zpráv.  
   
  Odchozí zprávy protokolování se stane ihned po zpráva opustí uživatelského kódu a bezprostředně před zpráva je uložena v drátové síti.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zaznamenává zprávy na dvou různých úrovních, služby a přenosu. Také se protokolují poškozených zpráv. Tři kategorie jsou od sebe navzájem nezávislé a může být aktivovaný nezávisle v konfiguraci.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zaznamenává zprávy na dvou různých úrovních, služby a přenosu. Také se protokolují poškozených zpráv. Tři kategorie jsou od sebe navzájem nezávislé a může být aktivovaný nezávisle v konfiguraci.  
   
  Úroveň protokolování lze řídit nastavení `logMessagesAtServiceLevel`, `logMalformedMessages`, a `logMessagesAtTransportLevel` atributy `messageLogging` elementu.  
   
@@ -91,7 +91,7 @@ Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro růz
  Kódování nebo dekódovat pro nebo po Transport přenášený připraveni zprávy zaznamenané v této vrstvě. Pokud byly definovány filtry, jsou protokolovány jen zprávy, které splňují podmínky filtrů. Jinak jsou protokolovány všechny zprávy v přenosové vrstvě. Všechny zprávy infrastruktury jsou protokolovány v této vrstvě, včetně zpráv spolehlivého zasílání zpráv. V proudu zpráv jsou protokolovány pouze záhlaví. Kromě toho zabezpečených zpráv jsou protokolovány jako zašifrovaná na této úrovni, kromě případu, kdy zabezpečený přenos, jako se používá protokol HTTPS.  
   
 ### <a name="malformed-level"></a>Chybná úroveň  
- Poškozených zpráv jsou zprávy, které jsou odmítnut [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zásobníku v jakékoli fázi zpracování. Chybná zprávy se zaznamenávají jako-se: zašifrované, pokud jsou tedy XML bez správné a tak dále. `maxSizeOfMessageToLog`velikost zprávy, která je zaznamenána jako CDATA definován. Ve výchozím nastavení `maxSizeOfMessageToLog` je rovna 256 kB. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Tento atribut, najdete v části Další možnosti.  
+ Poškozených zpráv jsou zprávy, které jsou odmítnut [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zásobníku v jakékoli fázi zpracování. Chybná zprávy se zaznamenávají jako-se: zašifrované, pokud jsou tedy XML bez správné a tak dále. `maxSizeOfMessageToLog` velikost zprávy, která je zaznamenána jako CDATA definován. Ve výchozím nastavení `maxSizeOfMessageToLog` je rovna 256 kB. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tento atribut, najdete v části Další možnosti.  
   
 ### <a name="other-options"></a>Další možnosti  
  Kromě úrovně protokolování můžete uživatele určete následující možnosti:  
@@ -107,7 +107,7 @@ Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro růz
   
  Pokud žádné naslouchací proces trasování je definována v konfiguračním souboru, nevygeneruje žádný výstup protokolování bez ohledu na zadanou úroveň.  
   
- Možnosti protokolování zpráv, jako je například atributy popsaných v této části můžete změnit za běhu pomocí služby Windows Management Instrumentation (WMI). To lze provést pomocí přístupu k [AppDomainInfo](../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) instanci, která zpřístupňuje tyto logická hodnota vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`, a `LogMalformedMessages`. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale nastavit tyto možnosti pro `false` v konfiguraci, můžete později změnit, aby `true` při spuštění aplikace. To umožňuje efektivní protokolování zpráv za běhu. Podobně pokud povolíte protokolování v konfiguračním souboru zpráv, ji můžete vypnout v době běhu pomocí služby WMI. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ Možnosti protokolování zpráv, jako je například atributy popsaných v této části můžete změnit za běhu pomocí služby Windows Management Instrumentation (WMI). To lze provést pomocí přístupu k [AppDomainInfo](../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) instanci, která zpřístupňuje tyto logická hodnota vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`, a `LogMalformedMessages`. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale nastavit tyto možnosti pro `false` v konfiguraci, můžete později změnit, aby `true` při spuštění aplikace. To umožňuje efektivní protokolování zpráv za běhu. Podobně pokud povolíte protokolování v konfiguračním souboru zpráv, ji můžete vypnout v době běhu pomocí služby WMI. Další informace najdete v tématu [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
  `source` Určuje pole v protokolu zpráv v kontextu, která je zaznamenána zpráva: při odesílání nebo přijímání zprávu požadavku pro požadavek odpověď nebo 1 pro dvoucestné žádost, ve model nebo přenos vrstvě služby nebo v případě chybnou zprávu.  
   

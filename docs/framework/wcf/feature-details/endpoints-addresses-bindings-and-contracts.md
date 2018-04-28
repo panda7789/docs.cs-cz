@@ -1,28 +1,30 @@
 ---
-title: "Koncové body: adresy, vazby a kontrakty"
-ms.custom: 
+title: 'Koncové body: adresy, vazby a kontrakty'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - endpoints [WCF]
 - Windows Communication Foundation [WCF], endpoints
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: af82cb934570b371d332c0e08ebc9b2338d0c0d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 477c23facd846580bac698ce6e61d02e11afe430
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce nabízené sítěmi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
@@ -48,7 +50,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
   
     -   <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnosti, která představuje identitu zabezpečení služby a kolekci hlaviček volitelné zprávy. Záhlaví volitelné zpráv slouží k poskytnutí dalších a podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncovým bodem.  
   
-     [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zadání adresy koncového bodu](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
+     Další informace najdete v tématu [zadání adresy koncového bodu](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
   
 -   Vazba: Vazba Určuje, jak ke komunikaci s koncovým bodem. Sem patří:  
   
@@ -58,7 +60,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
   
     -   Požadavky na nezbytné zabezpečení (například protokol SSL nebo SOAP zabezpečení zpráv).  
   
-     [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Vazby WCF – přehled](../../../../docs/framework/wcf/bindings-overview.md). Vazba je znázorněná [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objektový model abstraktní základní třída <xref:System.ServiceModel.Channels.Binding>. Pro většinu scénářů uživatelé mohou používat jednu z vazby poskytované systémem. Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
+     Další informace najdete v tématu [vazby WCF – přehled](../../../../docs/framework/wcf/bindings-overview.md). Vazba je znázorněná [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objektový model abstraktní základní třída <xref:System.ServiceModel.Channels.Binding>. Pro většinu scénářů uživatelé mohou používat jednu z vazby poskytované systémem. Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
   
 -   Kontrakty: Kontrakt popisuje, jaké funkce koncový bod vystavuje klienta. Kontrakt určuje:  
   
@@ -72,10 +74,10 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
   
      Další informace o definování kontraktu najdete v tématu [navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md).  
   
--   Chování: Koncový bod chování můžete použít k přizpůsobení chování místní koncový bod služby. Koncový bod chování dosáhnout účastí procesu vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]modulu runtime. Je například chování koncového bodu <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnosti, která umožňuje zadat adresu odlišnou naslouchání adresu protokolu SOAP nebo webové služby popis Language (WSDL). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
+-   Chování: Koncový bod chování můžete použít k přizpůsobení chování místní koncový bod služby. Koncový bod chování dosáhnout účastí procesu vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]modulu runtime. Je například chování koncového bodu <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnosti, která umožňuje zadat adresu odlišnou naslouchání adresu protokolu SOAP nebo webové služby popis Language (WSDL). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
   
 ## <a name="defining-endpoints"></a>Definování koncové body  
- Zadaný koncový bod služby buď imperativní pomocí kódu nebo deklarativně pomocí konfigurace. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) a [postupy: vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
+ Zadaný koncový bod služby buď imperativní pomocí kódu nebo deklarativně pomocí konfigurace. Další informace najdete v tématu [postupy: vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) a [postupy: vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  Tato část popisuje účel vazby, koncových bodů a adresy; ukazuje, jak nakonfigurovat vazbu a koncový bod; a ukazuje, jak používat `ClientVia` chování a `ListenUri` vlastnost.  

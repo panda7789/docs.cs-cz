@@ -1,12 +1,13 @@
 ---
-title: "Přehled aplikací Prohlížeče WPF XAML"
-ms.custom: 
+title: Přehled aplikací Prohlížeče WPF XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,20 +18,21 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-caps.latest.revision: "47"
+caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0f4f410f0f6c209dbc43642a15ae85a788390f4a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0afdce00cc169a5be9224a7b675e4666c1349bd5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]kombinuje funkce webových aplikací a bohaté klientské aplikace. Aplikace XBAP můžete jako webové aplikace nasazené na webový server a spuštěné z aplikace Internet Explorer nebo Firefox. Jako plně funkčního klienta aplikace XBAP můžete využít výhod funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Vývoj aplikace XBAP je také podobná vývoj plně funkčního klienta. Toto téma poskytuje jednoduché, vysoké úrovně Úvod k XBAP vývoj a popisuje, kde XBAP vývoj se liší od standardní vývoj plně funkčního klienta.  
+[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] kombinuje funkce webových aplikací a bohaté klientské aplikace. Aplikace XBAP můžete jako webové aplikace nasazené na webový server a spuštěné z aplikace Internet Explorer nebo Firefox. Jako plně funkčního klienta aplikace XBAP můžete využít výhod funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Vývoj aplikace XBAP je také podobná vývoj plně funkčního klienta. Toto téma poskytuje jednoduché, vysoké úrovně Úvod k XBAP vývoj a popisuje, kde XBAP vývoj se liší od standardní vývoj plně funkčního klienta.  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -63,7 +65,7 @@ ms.lasthandoff: 01/19/2018
 |Manifest aplikace (manifest)|To obsahuje metadata spojená s aplikací a má příponu manifest.|  
 |Manifest nasazení (.xbap)|Tento soubor obsahuje informace, [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] používá k nasazení aplikace a má příponu .xbap.|  
   
- Například nasadit aplikace XBAP na webový server, [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo novější verze. Není nutné instalovat [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] na webovém serveru, ale nutné provést registraci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] typy a název souboru rozšíření. Další informace najdete v tématu [konfigurace služby IIS 5.0 a IIS 6.0 do nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
+ Například nasadit aplikace XBAP na webový server, [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo novější verze. Chcete-li nainstalovat rozhraní .NET Framework na webovém serveru nemáte, ale je nutné provést registraci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] typy a název souboru rozšíření. Další informace najdete v tématu [konfigurace služby IIS 5.0 a IIS 6.0 do nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
   
  Při přípravě nasazení vaší XBAP, zkopírujte .exe a přidružené manifesty na webový server. Vytvořte stránku HTML, který obsahuje hypertextový odkaz otevřete manifest nasazení, který je soubor, který má příponu .xbap. Když uživatel klikne na odkaz k souboru .xbap [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] automaticky zpracovává mechanismů stažení a spuštění aplikace. Následující příklad kódu ukazuje stránku HTML, který obsahuje hypertextový odkaz, který odkazuje na XBAP.  
   
@@ -152,7 +154,7 @@ ms.lasthandoff: 01/19/2018
   
 -   Vlastní ovládací prvek ActiveX může mít problémy s komunikací, protože WPF aplikace běží v samostatné vlákno.  
   
--   <xref:System.Windows.Interop.HwndHost.MessageHook>získat vyvolá není, protože <xref:System.Windows.Interop.HwndHost> nelze podtřídami okno spuštěné v jiné vlákno nebo proces.  
+-   <xref:System.Windows.Interop.HwndHost.MessageHook> získat vyvolá není, protože <xref:System.Windows.Interop.HwndHost> nelze podtřídami okno spuštěné v jiné vlákno nebo proces.  
   
 ### <a name="creating-a-full-trust-xbap"></a>Vytváření XBAP plné důvěryhodnosti  
  Pokud vaše XBAP vyžaduje úplný vztah důvěryhodnosti, můžete změnit projektu pro toto oprávnění povolit. Následující kroky popisují, jak povolit úplný vztah důvěryhodnosti:  

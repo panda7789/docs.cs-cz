@@ -1,20 +1,17 @@
 ---
-title: "Uvozovky kódu (F#)"
-description: "Další informace o F # uvozovky kódu, funkce jazyka, která umožňuje generovat a pracovat s výrazy kódu F # prostřednictvím kódu programu."
-keywords: "Visual f #, f #, funkční programování"
+title: Uvozovky kódu (F#)
+description: 'Další informace o F # uvozovky kódu, funkce jazyka, která umožňuje generovat a pracovat s výrazy kódu F # prostřednictvím kódu programu.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 4559e659-2b04-48bd-8a0b-8527920eec95
-ms.openlocfilehash: f7a08013bc6487b570a62576bb01ca2dd65ce8b1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cfa2e4b9a4ad1776315dfa8ea82fb8fc3f13a552
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="code-quotations"></a>Uvozovky kódu
 
@@ -88,7 +85,7 @@ let f = fun (x:System.Int32) -> x + 10 in f 10
 ## <a name="example"></a>Příklad
 
 ### <a name="description"></a>Popis
-Můžete také tři aktivní vzorky v [exprshape – modul](https://msdn.microsoft.com/library/7685150e-2432-4d39-9338-57292eff18de) procházení stromů výrazů s méně aktivní vzorky. Tyto vzory aktivní může být užitečné, když chcete procházení stromu, ale není nutné všechny informace ve většině uzlů. Použijete-li tyto vzory, jakýkoli výraz F # odpovídá jednomu z následujících tří vzorů: `ShapeVar` li výraz proměnnou, `ShapeLambda` li výraz výraz lambda nebo `ShapeCombination` Pokud je výraz jiný. Pokud jste pomocí aktivní vzorky jako v předchozím příkladu kódu procházejí strom výrazu, budete muset použít mnoho další vzory pro zpracování všech možných typů F # výraz a váš kód bude složitější. Další informace najdete v tématu [ExprShape.ShapeVar &#124; Shapelambda – &#124; Shapecombination – aktivní vzor](https://msdn.microsoft.com/visualfsharpdocs/conceptual/exprshape.shapevarhshapelambdahshapecombination-active-pattern-%5bfsharp%5d).
+Můžete také tři aktivní vzorky v [exprshape – modul](https://msdn.microsoft.com/library/7685150e-2432-4d39-9338-57292eff18de) procházení stromů výrazů s méně aktivní vzorky. Tyto vzory aktivní může být užitečné, když chcete procházení stromu, ale není nutné všechny informace ve většině uzlů. Použijete-li tyto vzory, jakýkoli výraz F # odpovídá jednomu z následujících tří vzorů: `ShapeVar` li výraz proměnnou, `ShapeLambda` li výraz výraz lambda nebo `ShapeCombination` Pokud je výraz jiný. Pokud jste pomocí aktivní vzorky jako v předchozím příkladu kódu procházejí strom výrazu, budete muset použít mnoho další vzory pro zpracování všech možných typů F # výraz a váš kód bude složitější. Další informace najdete v tématu [ExprShape.ShapeVar&#124;shapelambda –&#124;shapecombination – aktivní vzor](https://msdn.microsoft.com/visualfsharpdocs/conceptual/exprshape.shapevarhshapelambdahshapecombination-active-pattern-%5bfsharp%5d).
 
 Následující příklad kódu můžete použít jako základ pro složitější traversals. V tomto kódu strom výrazu se vytvoří pro výraz, který zahrnuje volání funkce `add`. [Specificcall –](https://msdn.microsoft.com/library/05a77b21-20fe-4b9a-8e07-aa999538198d) – aktivní vzor slouží ke zjištění všech volání `add` ve stromové struktuře výraz. Tato – aktivní vzor přiřadí argumenty volání `exprList` hodnotu. V takovém případě jsou uvedeny pouze dvě, tak, aby tyto jsou vyžádat a funkce se volá rekurzivní na argumenty. Výsledky jsou vloženy do uvozovek kód, který představuje volání `mul` pomocí operátoru uživatele programu splice (`%%`). `println` Funkce z předchozího příkladu se používá k zobrazení výsledků.
 
@@ -106,5 +103,5 @@ Kód v jiných – aktivní vzor větví právě regeneruje stejném stromu pro 
 ```
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 

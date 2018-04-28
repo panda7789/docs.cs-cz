@@ -1,26 +1,26 @@
 ---
-title: "Objemná data a vysílání datových proudů"
-ms.custom: 
+title: Objemná data a vysílání datových proudů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-caps.latest.revision: 
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e9551fcf4f302be899dcee8737b3bcfad15f1210
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: b37af67a3deeed4e55939ff1c1baf73752233e94
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je založený na jazyce XML komunikaci infrastruktury. Protože XML data je běžně zakódován ve formátu standardního textu definované v [XML 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojáři a architektům jsou obvykle zajímá přenosová nároků (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje speciální výzvy pro efektivní přenos binární data.  
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/01/2018
   
  V důsledku toho rozhodování mezi textu nebo binárních není poměrně stejně snadná jako za předpokladu, že binární zprávy jsou vždy menší než XML textové zprávy.  
   
- Vymazat výhodou XML textové zprávy je, že jsou na základě standardů a nabízejí nejširší výběr možností kombinací a podporu platforem. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v části "Kódování" dál v tomto tématu.  
+ Vymazat výhodou XML textové zprávy je, že jsou na základě standardů a nabízejí nejširší výběr možností kombinací a podporu platforem. Další informace najdete v části "Kódování" dál v tomto tématu.  
   
 ### <a name="binary-content"></a>Binární obsah  
  Jeden oblasti, kde binárního kódování hodnotu větší než založený na textu kódování z hlediska výsledná velikost zprávy jsou velké binární data položkám, jako jsou obrázky, videa, zvukových klipů nebo jakoukoli jinou formu neprůhledné, binární data, která musí být vyměňují mezi službami a jejich Příjemci knihovny. Aby se tyto typy dat do textu XML, je běžný postup zakódovat je pomocí kódování Base64.  
@@ -52,7 +52,7 @@ ms.lasthandoff: 02/01/2018
   
  Zprávu MTOM SOAP se liší od jeho zrušení kódovaného verze tak, aby speciální element značky, které odkazují na části odpovídající standardu MIME má nahradit původní elementů v zprávu, která obsahovala binární data. V důsledku toho zprávu SOAP odkazuje na binární obsah tak, že odkazuje na části MIME odeslané s ním, ale jinak právě představuje textová data XML. Protože tento model je úzce zarovnán s modelem zavedené SMTP, je široká podpora ke kódování a dekódování zprávy MTOM na spoustě platforem, proto je velmi interoperabilní volba nástrojů.  
   
- Stále stejně jako u Base64, MTOM také obsahuje některé potřebné režijní náklady na formát MIME tak, aby výhody používání MTOM se zobrazují pouze, když velikost binární datový prvek překračuje asi 1 KB. Z důvodu režijní náklady může být vyšší než zprávy, které používají kódování Base64 pro binární data, pokud zůstane binární datové části v rámci této prahové hodnoty kódování MTOM zprávy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v části "Kódování" dál v tomto tématu.  
+ Stále stejně jako u Base64, MTOM také obsahuje některé potřebné režijní náklady na formát MIME tak, aby výhody používání MTOM se zobrazují pouze, když velikost binární datový prvek překračuje asi 1 KB. Z důvodu režijní náklady může být vyšší než zprávy, které používají kódování Base64 pro binární data, pokud zůstane binární datové části v rámci této prahové hodnoty kódování MTOM zprávy. Další informace najdete v části "Kódování" dál v tomto tématu.  
   
 ### <a name="large-data-content"></a>Obsah velkých objemů dat  
  Přenosová nároky z produkce, datové části výše uvedených 500 MB také představuje skvělý místní výzvu v pro tuto službu a klienta. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpracovává zprávy v *režim s vyrovnávací pamětí*. To znamená, že celý obsah zprávy, které je obsažená v paměti před odesláním nebo po přijetí. Přesto, že je strategii je dobré pro většinu scénářů a potřeby zasílání zpráv funkcí, jako jsou digitální podpisy i spolehlivá doručení, může vyčerpat velké zprávy systémové prostředky.  
@@ -67,7 +67,7 @@ ms.lasthandoff: 02/01/2018
   
 -   Nejsou k dispozici v plné výši při zahájení přenosu.  
   
- Pro data, která nemá těchto omezení je obvykle lepší odeslat pořadí zpráv v rámci oboru relace než jedna velká zpráva. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]později v tomto tématu v části "Streamování Data".  
+ Pro data, která nemá těchto omezení je obvykle lepší odeslat pořadí zpráv v rámci oboru relace než jedna velká zpráva. Další informace najdete v části "Data streamování" dále v tomto tématu.  
   
  Při odesílání velkých objemů dat je potřeba nastavit `maxAllowedContentLength` nastavení služby IIS (Další informace najdete v části [konfigurace omezení počtu požadavků služby IIS](http://go.microsoft.com/fwlink/?LinkId=253165)) a `maxReceivedMessageSize` vazby nastavení (například [ System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) nebo <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). `maxAllowedContentLength` Výchozí hodnoty vlastností pro 28.6 M a `maxReceivedMessageSize` výchozí hodnoty vlastností na 64 KB.  
   
@@ -246,7 +246,7 @@ public class UploadStreamMessage
   
  Proto omezení maximální velikost příchozí zprávy není dostatek v tomto případě. `MaxBufferSize` Vlastnost je potřeba omezit paměť, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyrovnávací paměti. Je důležité, abyste tuto možnost nastavíte na hodnotu bezpečné (nebo jej zachovat na výchozí hodnota) při streamování. Předpokládejme například, musí přijmout služby souborů až do 4 GB velikost a jejich uložení na místní disk. Také Předpokládejme, že vaše paměti je omezené tak, že můžete pouze buffer 64 KB dat najednou. Potom byste měli nastavit `MaxReceivedMessageSize` do 4 GB a `MaxBufferSize` na 64 KB. Také v implementaci služby musíte zajistit číst pouze z příchozího datového proudu v bloky dat 64 KB a nečtěte další blok před předchozí byl zapsaný na disk a zrušených z paměti.  
   
- Je také důležité si uvědomit, že tato kvóta pouze to, do vyrovnávací paměti provádí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a nemůže chránit proti žádné ukládání do vyrovnávací paměti, abyste provedli v implementaci vlastní služba nebo klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]dodatečné informace o zabezpečení, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+ Je také důležité si uvědomit, že tato kvóta pouze to, do vyrovnávací paměti provádí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a nemůže chránit proti žádné ukládání do vyrovnávací paměti, abyste provedli v implementaci vlastní služba nebo klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] dodatečné informace o zabezpečení, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
   
 > [!NOTE]
 >  Rozhodnutí použít ve vyrovnávací paměti nebo přenášené datovými proudy přenosy je místní rozhodnutí koncového bodu. Pro přenosy protokolu HTTP režim přenosu nešířily připojení nebo proxy servery a jiných zprostředkovatelů. Nastavení režimu přenosu se nereflektují v popisu rozhraní služby. Po generování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta ke službě, je nutné upravit konfigurační soubor pro služby určena pro použití s přenášené datovými proudy přenosy nastavení režimu. TCP a přenosy pojmenovaný kanál režim přenosu rozšířena jako výraz zásad.  

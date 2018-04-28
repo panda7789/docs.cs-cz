@@ -23,11 +23,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: df596093333aa35b89f8d7ed36f817a457e48fda
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c20817e791ae95efecd00a41a44c14eedec017d4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Aspekty LINQ (služby WCF Data Services)
 Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když používáte dotazy které LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ pro dotaz na data služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Vytvoření a spuštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v části [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
@@ -36,7 +36,7 @@ Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když použ
  LINQ umožňuje vytvořit dotazy na kolekci objektů, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Obě **přidat odkaz na službu** dialogové okno v sadě Visual Studio a nástroj DataSvcUtil.exe se používají ke generování reprezentace [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jako třída kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>, a také objekty, které představují entity, vrátí se v informačních kanálů. Tyto nástroje generovat také vlastnosti pro třídu kontejneru entity pro kolekce, které jsou zveřejněné jako kanály službou. Každý z těchto vlastností třídy, který zapouzdřuje službu data návratový <xref:System.Data.Services.Client.DataServiceQuery%601>. Protože <xref:System.Data.Services.Client.DataServiceQuery%601> třída implementuje <xref:System.Linq.IQueryable%601> rozhraní definované LINQ, můžete vytvořit dotaz LINQ proti informační kanály vystavené službu data, které jsou přeložit pomocí klientské knihovny na žádost dotazu URI, který je odešle do služby data na provádění.  
   
 > [!IMPORTANT]
->  Sada vyjádřit kombinací v syntaxi LINQ dotazů je širší než ty, které v syntaxe identifikátoru URI, který je používán povolené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] datové služby. A <xref:System.NotSupportedException> se vyvolá, když dotaz nelze mapovat na ve službě data cílový identifikátor URI. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [nepodporovaných metod LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods) v tomto tématu.  
+>  Sada vyjádřit kombinací v syntaxi LINQ dotazů je širší než ty, které v syntaxe identifikátoru URI, který je používán povolené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] datové služby. A <xref:System.NotSupportedException> se vyvolá, když dotaz nelze mapovat na ve službě data cílový identifikátor URI. Další informace najdete v tématu [nepodporovaných metod LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods) v tomto tématu.  
   
  Následující příklad je dotaz LINQ, který vrátí `Orders` který máte nákladní náklady více než 30 $ a seřadí výsledky podle data přesouvání počínaje nejnovější datum expedice:  
   

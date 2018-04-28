@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 90999867ee1dd678e279832d73d7ecaaa416fe7b
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: af520c1520f605d34076e6ecabdf84deb52fbfd0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>Pomocí WorkflowInvoker a WorkflowApplication
 Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication> poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  
@@ -35,7 +35,7 @@ Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovníc
 > [!NOTE]
 >  <xref:System.TimeoutException> Je vyvolána pouze, pokud uplyne časový limit a pracovní postup bude nečinnosti během provádění. Pracovní postup, který trvá déle než zadaný časový interval pro dokončení se úspěšně dokončena, pokud pracovní postup nečinný.  
   
- <xref:System.Activities.WorkflowInvoker> také poskytuje asynchronní verze metodu invoke. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> a <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A>.  
+ <xref:System.Activities.WorkflowInvoker> také poskytuje asynchronní verze metodu invoke. Další informace naleznete v tématu <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> a <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A>.  
   
 ### <a name="setting-input-arguments-of-a-workflow"></a>Nastavení vstupní argumenty pracovního postupu  
  Data mohou být předána do pracovního postupu pomocí slovník vstupních parametrů klíčovány pomocí názvu argument, které jsou mapovány na vstupní argumenty pracovního postupu. V tomto příkladu <xref:System.Activities.Statements.WriteLine> je volána a hodnota jeho <xref:System.Activities.Statements.WriteLine.Text%2A> je zadán argument pomocí slovníku vstupní parametry.  

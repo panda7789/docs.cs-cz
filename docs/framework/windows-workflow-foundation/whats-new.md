@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 605e1401eb2f2fdee7bb39c6636c0245154041a4
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 6604c4fccec50369d83cede58ff2931c2015c5b9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>Co&#39;s nové v modelu Windows Workflow Foundation
 Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] několik vzorů vývoj změny z předchozích verzí. Pracovní postupy jsou nyní snazší vytvoření, spuštění a udržovat a implementaci hostitel nové funkce. [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi, najdete v části [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
@@ -44,7 +44,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/net
 -   Nové aktivity zasílání zpráv, jako <xref:System.ServiceModel.Activities.SendContent> a <xref:System.ServiceModel.Activities.ReceiveReply>.  
   
 ## <a name="explicit-activity-data-model"></a>Datový Model explicitní aktivity  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] obsahuje nové možnosti pro ukládání nebo přesun dat. Data se uloží v aktivity pomocí <xref:System.Activities.Variable>. Při přesunu dat do aplikace a z aktivity, typy specializované argumentů se používají k určení směru data, která je přesunutí. Tyto typy jsou <xref:System.Activities.InArgument>, <xref:System.Activities.InOutArgument>, a <xref:System.Activities.OutArgument>. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Windows Workflow Foundation datový Model](../../../docs/framework/windows-workflow-foundation/data-model.md).  
+ [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] obsahuje nové možnosti pro ukládání nebo přesun dat. Data se uloží v aktivity pomocí <xref:System.Activities.Variable>. Při přesunu dat do aplikace a z aktivity, typy specializované argumentů se používají k určení směru data, která je přesunutí. Tyto typy jsou <xref:System.Activities.InArgument>, <xref:System.Activities.InOutArgument>, a <xref:System.Activities.OutArgument>. Další informace najdete v tématu [Windows Workflow Foundation datový Model](../../../docs/framework/windows-workflow-foundation/data-model.md).  
   
 ## <a name="enhanced-hosting-persistence-and-tracking-options"></a>Rozšířené možnosti sledování a hostování, trvalosti,  
  [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] obsahuje vylepšení trvalost například následující:  
@@ -66,4 +66,4 @@ Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/net
 -   Obnovení čekající pracovního postupu je teď spravované pomocí <xref:System.Activities.Bookmark> objektu.  
   
 ## <a name="easier-ability-to-extend-wf-designer-experience"></a>Snazší možnost rozšíření návrháře WF prostředí  
- Nový návrhář WF je založený na Windows Presentation Foundation (WPF) a nabízí jednodušší model pro použití při opětovném hostování návrháře WF mimo Visual Studio a také nabízí jednodušší mechanismy pro vytváření Návrháře vlastních aktivit. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Přizpůsobení prostředí návrhu pracovních postupů](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md).
+ Nový návrhář WF je založený na Windows Presentation Foundation (WPF) a nabízí jednodušší model pro použití při opětovném hostování návrháře WF mimo Visual Studio a také nabízí jednodušší mechanismy pro vytváření Návrháře vlastních aktivit. Další informace najdete v tématu [přizpůsobení prostředí návrhu pracovních postupů](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md).

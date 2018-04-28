@@ -1,12 +1,13 @@
 ---
 title: Tokeny a deklarace SAML
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a2b35ba4da503663a2bb92597ed193c408e7c99b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9bd10fe663ccb4c78af775baf3e76663ef9a91bd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
 Zabezpečení kontrolní výrazy Markup Language (SAML) *tokeny* jsou reprezentace XML deklarací identity. Ve výchozím nastavení, tokeny SAML [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] se používá ve scénářích federované zabezpečení *vystavené tokeny*.  
@@ -48,7 +50,7 @@ Zabezpečení kontrolní výrazy Markup Language (SAML) *tokeny* jsou reprezenta
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  
   
 > [!NOTE]
->  Při tokeny SAML se serializují ve zprávách, při vydávání pomocí služby tokenů zabezpečení nebo poté, co se zobrazí klienty pro služby v rámci ověřování, kvóta maximální velikosti zprávy musí být dostatečně velký pro uložení tokenu SAML a ostatní části zprávy. V případech, normální výchozích kvót velikost zprávy je dostatečné. V případech, kdy je SAML token velké vzhledem k tomu, že obsahuje stovky deklarace identity, můžete však zvýšit kvóty pro přizpůsobení serializovaný token. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+>  Při tokeny SAML se serializují ve zprávách, při vydávání pomocí služby tokenů zabezpečení nebo poté, co se zobrazí klienty pro služby v rámci ověřování, kvóta maximální velikosti zprávy musí být dostatečně velký pro uložení tokenu SAML a ostatní části zprávy. V případech, normální výchozích kvót velikost zprávy je dostatečné. V případech, kdy je SAML token velké vzhledem k tomu, že obsahuje stovky deklarace identity, můžete však zvýšit kvóty pro přizpůsobení serializovaný token. Další informace najdete v tématu [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
   
 ## <a name="from-samlattributes-to-claims"></a>Z SamlAttributes do deklarací identity  
  Když ve zprávách přijme tokeny SAML, jsou různé příkazy v tokenu SAML převedena na <xref:System.IdentityModel.Policy.IAuthorizationPolicy> objekty, které se umístí do <xref:System.IdentityModel.Policy.AuthorizationContext>. Deklarace identity z každý příkaz SAML se vrátí pomocí <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> vlastnost <xref:System.IdentityModel.Policy.AuthorizationContext> a můžete prověřit, abyste zjistili, jestli se k ověřování a autorizaci uživatele.  

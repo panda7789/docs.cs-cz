@@ -1,22 +1,20 @@
 ---
 title: Model rozšiřitelnosti .NET core rozhraní příkazového řádku
 description: Zjistěte, jak můžete rozšířit nástroje rozhraní příkazového řádku (CLI).
-keywords: Rozhraní příkazového řádku, rozšiřitelnosti, vlastní příkazy, .NET Core
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 53329c302066891c240a234156c2572acc66e7ab
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 11cf9843f5c10ed7114d45a8c6be0ffeff2b6bad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů .NET core rozhraní příkazového řádku
 

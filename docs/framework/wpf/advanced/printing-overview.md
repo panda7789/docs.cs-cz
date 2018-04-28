@@ -29,11 +29,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8694c646cabfd6637325035e563298b0619dac14
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 639e1bbac049e4186faa2b243200f7ef544add38
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Pomocí rozhraní Microsoft .NET Framework, vývojáři aplikace pomocí [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] mít širokou škálu nového systému správy tisku a tiskového [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskový systém jsou také k dispozici pro vývojáře vytváření [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikací a vývojáře, kteří používají nespravovaného kódu. Základem tato nová funkce je nové [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tiskové cestu.  
@@ -60,7 +60,7 @@ Pomocí rozhraní Microsoft .NET Framework, vývojáři aplikace pomocí [!INCLU
   
 -   Nativní podpora profilů pokročilé barev, které zahrnují 32 bitů na kanál, CMYK, s názvem barvy, n barvy a nativní podporu průhlednosti a přechody.  
   
--   Zvýšení výkonu tiskového pro obě [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] a [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikace založené na.  
+-   Zvýšení výkonu tiskového pro obě rozhraní .NET Framework a [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikace založené na.  
   
 -   Oborový standard [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátu.  
   
@@ -73,7 +73,7 @@ Pomocí rozhraní Microsoft .NET Framework, vývojáři aplikace pomocí [!INCLU
 -   Kanál Extensible filtru. [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] Tiskárny ovladač (XPSDrv) filtru kanálu byl navržených k povolení přímé a škálovatelné tisk z [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty. (Vyhledávání "XPSDrv" v [Kit ovladačů systému Windows](https://msdn.microsoft.com/library/windows/hardware/ff557573.aspx).)  
   
 ### <a name="print-path-architecture"></a>Architektura cesta tisku  
- I při [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] aplikace podporují [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)], [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a používat aplikace Windows Forms [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] k [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] převod před vytvořením [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátovaný obsah pro [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] ovladač tiskárny (XPSDrv). Tyto aplikace nemusí používat [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] tiskových cestu a můžete dál používat [!INCLUDE[TLA#tla_emf](../../../../includes/tlasharptla-emf-md.md)] na základě tisku. Ale většina [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] funkce a vylepšení, jsou dostupné jenom pro aplikace, které cílí [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] tiskové cestu.  
+ I při [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a rozhraní .NET Framework aplikace podporují [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)], [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a používat aplikace Windows Forms [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] k [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] převod před vytvořením [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátovaný obsah pro [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)]ovladač tiskárny (XPSDrv). Tyto aplikace nemusí používat [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] tiskových cestu a můžete dál používat [!INCLUDE[TLA#tla_emf](../../../../includes/tlasharptla-emf-md.md)] na základě tisku. Ale většina [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] funkce a vylepšení, jsou dostupné jenom pro aplikace, které cílí [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] tiskové cestu.  
   
  Povolit používání na základě XPSDrv tiskárny pomocí [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a aplikace Windows Forms [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] ovladač tiskárny (XPSDrv) podporuje počítačový převod [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] k [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] formátu. XPSDrv model také poskytuje převaděč pro [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] k [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] formátu tak, aby [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace můžete vytisknout [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty. Pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, převod [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] k [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] formátu probíhá automaticky <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter> třídy vždy, když tiskové fronty cíl operace zápisu nemá. má XPSDrv ovladač. (Formulářových aplikací Windows nelze tisknout [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty.)  
   

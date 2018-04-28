@@ -22,11 +22,11 @@ ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6425685083c3b73d75d2d7c8a4509ae035542085
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 34d48e7de0269449bd4ed6eedb83a7464b6d3d50
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ jazyka XAML a XAML zapisovače použít ke generování součásti grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentované jinak v datový proud uzlu XAML. V této dokumentaci sady, převaděčů typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převodníky hodnot.  
@@ -45,7 +45,7 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
   
 <a name="type_converters"></a>   
 ## <a name="type-converters"></a>Převaděče typů  
- V definici rozhraní .NET Framework XAML Services převaděče typů jsou třídy, které jsou odvozeny od CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] dříve, než vznikla XAML. Původnímu účelu se na podporu vlastnost windows a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Zavedení XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> převést na objekt textových syntaxi (jak se nachází v hodnotě atributu nebo hodnotu uzlu XAML). <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na text syntaxe. <xref:System.ComponentModel.TypeConverter> byla také použita v předchozích implementacích XAML konkrétní rozhraní v [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] a [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]. Další informace o <xref:System.ComponentModel.TypeConverter> v jazyce XAML, najdete v části [převaděčů typů pro jazyk XAML přehled](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md).  
+ V definici rozhraní .NET Framework XAML Services převaděče typů jsou třídy, které jsou odvozeny od CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] dříve, než vznikla XAML. Původnímu účelu se na podporu vlastnost windows a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Zavedení XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> převést na objekt textových syntaxi (jak se nachází v hodnotě atributu nebo hodnotu uzlu XAML). <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na text syntaxe. <xref:System.ComponentModel.TypeConverter> byla také použita v předchozích implementacích XAML konkrétní rozhraní v [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] a Windows Communication Foundation (WCF). Další informace o <xref:System.ComponentModel.TypeConverter> v jazyce XAML, najdete v části [převaděčů typů pro jazyk XAML přehled](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md).  
   
 <a name="markup_extensions"></a>   
 ## <a name="markup-extensions"></a>Rozšíření značek  

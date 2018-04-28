@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3df15e80a550857adbfbf30ebf8b6ef902426a1a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e8fd88edd711513d1b143029d8088401c9945d13
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI).  
@@ -160,7 +160,7 @@ ms.lasthandoff: 04/26/2018
 Whoami /user  
 ```  
   
- To poskytuje SID aktuálního uživatele, ale tuto metodu nelze použít k získání SID na každý libovolný uživatel. Další možností, jak získat identifikátor SID je použití [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) nástroje z [Windows 2000 Resource Kit Tools pro úlohy správy](http://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná SID dva uživatele (místní nebo doménový) a jako straně vliv vytiskne dva identifikátory SID na příkazový řádek. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [Dobře známé identifikátory SID](http://go.microsoft.com/fwlink/?LinkId=186468).  
+ To poskytuje SID aktuálního uživatele, ale tuto metodu nelze použít k získání SID na každý libovolný uživatel. Další možností, jak získat identifikátor SID je použití [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) nástroje z [Windows 2000 Resource Kit Tools pro úlohy správy](http://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná SID dva uživatele (místní nebo doménový) a jako straně vliv vytiskne dva identifikátory SID na příkazový řádek. Další informace najdete v tématu [také známé identifikátory SID](http://go.microsoft.com/fwlink/?LinkId=186468).  
   
 ## <a name="accessing-remote-wmi-object-instances"></a>Přístup k rozhraní WMI Vzdálená instance objektů  
  Pokud budete potřebovat pro přístup k [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] instance rozhraní WMI na vzdáleném počítači, je nutné povolit paket o ochraně osobních údajů nástroje, které používáte pro přístup. Následující část popisuje, jak tyto dosáhnout pomocí WMI CIM Studio, testování služby WMI, jakož i rozhraní .NET SDK 2.0.  

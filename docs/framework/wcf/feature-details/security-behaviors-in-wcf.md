@@ -1,24 +1,26 @@
 ---
-title: "Chování zabezpečení ve WCF"
-ms.custom: 
+title: Chování zabezpečení ve WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 19d67d99ddf6bab69aa1e5f993917142a4378105
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 98323b4d29b68d57d3c01e9a007b5f0f9fc08377
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chování při spuštění na úrovni služby, nebo na úrovni koncového bodu. ([!INCLUDE[crabout](../../../../includes/crabout-md.md)] chování obecně naleznete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* kontrolu nad přihlašovací údaje, ověřování, autorizaci a auditování protokoly. Chování můžete použít buď programování, nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcí zabezpečení:  
@@ -64,10 +66,10 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
 ### <a name="servicecertificate-element"></a>\<serviceCertificate > elementu  
  Tento prvek slouží k určení certifikát X.509, který slouží k ověřování klientů pomocí režim zabezpečení zprávy. Pokud používáte certifikát, který je pravidelně obnovovat, pak změny jeho kryptografický otisk. V takovém případě použijte název subjektu, jako `X509FindType` vzhledem k tomu, že certifikát můžete ho znova vydat se stejným názvem subjektu.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí elementu, najdete v tématu [postupy: určení hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí elementu, najdete v tématu [postupy: určení hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
 ### <a name="certificate-of-clientcertificate-element"></a>\<certifikát > z \<clientCertificate > elementu  
- Použití [ \<certifikátu >](../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md) elementu, pokud služba musí mít certifikát klienta předem pro bezpečnou komunikaci s klientem. K tomu dochází, když pomocí vzoru duplexní komunikace. Ve vzoru typičtější požadavku a odpovědi klient zahrne svůj certifikát v žádosti, které služba používá k zabezpečení odpověď zpět klientovi. Duplexní komunikace vzor, ale nemá žádné požadavky a odpovědi. Službu nelze odvodit certifikát klienta z komunikace a proto služba vyžaduje, aby certifikát klienta předem k zabezpečení zprávy, které mají klienta. Musíte získat certifikát klienta způsobem out-of-band a zadat certifikát pomocí tohoto elementu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]duplexní služby, najdete v části [postupy: vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).  
+ Použití [ \<certifikátu >](../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md) elementu, pokud služba musí mít certifikát klienta předem pro bezpečnou komunikaci s klientem. K tomu dochází, když pomocí vzoru duplexní komunikace. Ve vzoru typičtější požadavku a odpovědi klient zahrne svůj certifikát v žádosti, které služba používá k zabezpečení odpověď zpět klientovi. Duplexní komunikace vzor, ale nemá žádné požadavky a odpovědi. Službu nelze odvodit certifikát klienta z komunikace a proto služba vyžaduje, aby certifikát klienta předem k zabezpečení zprávy, které mají klienta. Musíte získat certifikát klienta způsobem out-of-band a zadat certifikát pomocí tohoto elementu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] duplexní služby, najdete v části [postupy: vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).  
   
 ### <a name="authentication-of-clientcertificate-element"></a>\<ověřování > z \<clientCertificate > elementu  
  [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) element umožňuje přizpůsobit, jak klienti se ověřují. Můžete nastavit `CertificateValidationMode` atribut `None`, `ChainTrust`, `PeerOrChainTrust`, `PeerTrust`, nebo `Custom`. Ve výchozím nastavení je úroveň nastavena na `ChainTrust`, která určuje, že každý certifikát, je nutné nalézt v hierarchii certifikátů končí na *kořenová autorita* v horní části řetězu. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu `PeerOrChainTrust`, která určuje, že samoobslužné vydaných certifikátů (peer vztahu důvěryhodnosti) jsou přijaty a také certifikáty, které jsou v důvěryhodné řetězu. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samoobslužné vydaných certifikátů nemusí zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte `ChainTrust` místo hodnoty. Můžete také nastavit hodnotu `Custom`. Pokud nastavíte `Custom` hodnotu, je nutné také nastavit `CustomCertificateValidatorType` atribut sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
@@ -93,9 +95,9 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
   
 -   Zadejte sadu platné identifikátory URI přidáním identifikátory URI k této kolekci. Chcete-li to provést, vložte [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md) pro každý identifikátor URI  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
+ Další informace naleznete v tématu <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Pomocí tohoto elementu konfigurace najdete v tématu [postupy: Konfigurace pověření ve službě Federation](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Pomocí tohoto elementu konfigurace najdete v tématu [postupy: Konfigurace pověření ve službě Federation](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
 #### <a name="allowing-anonymous-cardspace-users"></a>Povolení CardSpace anonymní uživatelé  
  Nastavení `AllowUntrustedRsaIssuers` atribut `<IssuedTokenAuthentication>` element `true` explicitně umožňuje libovolného klienta k dispozici vystavený token podepsané libovolný pár klíče RSA. Vystavitel je *nedůvěryhodné* vzhledem k tomu, že klíč neobsahuje žádná data vystavitele s ním spojená. A [!INCLUDE[infocard](../../../../includes/infocard-md.md)] uživatel může vytvářet samostatně vydané karty, která zahrnuje samoobslužné zadané deklarace identity. Používejte tuto funkci opatrně. Pokud chcete tuto funkci použít, považuje za bezpečnější heslo, které by měly být uložené v databázi společně s uživatelské jméno veřejného klíče RSA. Před povolením klientský přístup ke službě, ověření klienta uvedené veřejným klíčem RSA porovnáním se souborem uložené veřejný klíč pro vidění uživatelské jméno. Toto předpokládá, že jste vytvořili procesu registrace, které uživatelé mohou registrovat svá uživatelská jména a přidružit vystavený veřejné klíče RSA.  
@@ -103,7 +105,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
 ## <a name="client-credentials"></a>Pověření klienta  
  Pověření klienta slouží k ověření klienta ke službám v případech, kdy je potřeba vzájemné ověřování. V části můžete použít k určení certifikáty služby pro scénáře, kde klient musíte zabezpečit zprávy služby pomocí certifikátu služby.  
   
- Klienta můžete také nakonfigurovat jako součást scénář federace použití vystavené tokeny z zabezpečené tokenu služby nebo místního vystavitele tokenů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]federovaných scénářích najdete v části [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md). Všechny přihlašovací údaje klienta se nacházejí v části [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md), jak je znázorněno v následujícím kódu.  
+ Klienta můžete také nakonfigurovat jako součást scénář federace použití vystavené tokeny z zabezpečené tokenu služby nebo místního vystavitele tokenů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] federovaných scénářích najdete v části [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md). Všechny přihlašovací údaje klienta se nacházejí v části [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md), jak je znázorněno v následujícím kódu.  
   
 ```xml  
 <behaviors>  
@@ -126,16 +128,16 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
 ```  
   
 #### <a name="clientcertifictate-element"></a>\<clientCertifictate > elementu  
- Nastavte certifikát používaný k ověření klienta s tímto elementem. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: zadání hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ Nastavte certifikát používaný k ověření klienta s tímto elementem. Další informace najdete v tématu [postupy: určení hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
 #### <a name="httpdigest"></a>\<httpDigest >  
- Musí být povolena tato funkce se službou Active Directory ve Windows a Internetové informační služby (IIS). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Ve službě IIS 6.0 ověřování algoritmem digest](http://go.microsoft.com/fwlink/?LinkId=88443).  
+ Musí být povolena tato funkce se službou Active Directory ve Windows a Internetové informační služby (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](http://go.microsoft.com/fwlink/?LinkId=88443).  
   
 #### <a name="issuedtoken-element"></a>\<issuedToken > elementu  
  [ \<IssuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md) obsahuje prvky, které konfigurace místního vystavitele tokeny nebo chování použít s služby tokenů zabezpečení. Pokyny týkající se konfigurace klienta pomocí místního vystavitele najdete v tématu [postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
 #### <a name="localissueraddress"></a>\<localIssuerAddress >  
- Určuje výchozí adresu služby tokenů zabezpečení. Používá se při <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL pro službu tokenů zabezpečení, nebo když adresa vystavitele federované vazby je http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous nebo `null`. V takových případech <xref:System.ServiceModel.Description.ClientCredentials> musí být nakonfigurované na adresu místního vystavitele a vazby, které používají ke komunikaci s této vystavitele.  
+ Určuje výchozí adresu služby tokenů zabezpečení. Používá se při <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL služby tokenů zabezpečení, nebo pokud je adresa vystavitele federované vazby http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous nebo `null`. V takových případech <xref:System.ServiceModel.Description.ClientCredentials> musí být nakonfigurované na adresu místního vystavitele a vazby, které používají ke komunikaci s této vystavitele.  
   
 #### <a name="issuerchannelbehaviors"></a>\<issuerChannelBehaviors >  
  Použití [ \<issuerChannelBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md) přidat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] chování klienta použít při komunikaci s služby tokenů zabezpečení. Určení chování klienta v [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) části. Chcete-li použít definované chování, přidejte <`add`> elementu, který chcete `<issuerChannelBehaviors>` element s dva atributy. Nastavte `issuerAddress` na adresu URL služby tokenů zabezpečení a sadu `behaviorConfiguration` atribut název chování definované koncového bodu, jak je znázorněno v následujícím příkladu.  
@@ -155,9 +157,9 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
   
  Použití [ \<scopedCertificates >](../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md) a [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-scopedcertificates-element.md) nastavit certifikáty služby, které jsou spojeny s určitým službám. `<add>` Obsahuje element `targetUri` atribut, který se používá k přidružení certifikátu služby.  
   
- [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element určuje úroveň důvěryhodnosti používá k ověření certifikátů. Ve výchozím nastavení je úroveň nastavena na "ChainTrust", která určuje, že každý certifikát, je nutné nalézt v hierarchii certifikátů končí na důvěryhodné certifikační autority v horní části řetězu. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu "PeerOrChainTrust", která určuje, že jsou přijaty samoobslužné vydaných certifikátů (peer vztahu důvěryhodnosti), a také certifikáty, které jsou v důvěryhodné řetězu. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samoobslužné vydaných certifikátů nemusí zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte místo toho hodnotu "ChainTrust". Můžete také nastavit hodnotu "Vlastní" nebo "None." Pokud chcete použít hodnotu "Vlastní", musíte taky nastavit `CustomCertificateValidatorType` atribut sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: vytvoření služby, který využívá validátor vlastní certifikát](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
+ [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element určuje úroveň důvěryhodnosti používá k ověření certifikátů. Ve výchozím nastavení je úroveň nastavena na "ChainTrust", která určuje, že každý certifikát, je nutné nalézt v hierarchii certifikátů končí na důvěryhodné certifikační autority v horní části řetězu. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu "PeerOrChainTrust", která určuje, že jsou přijaty samoobslužné vydaných certifikátů (peer vztahu důvěryhodnosti), a také certifikáty, které jsou v důvěryhodné řetězu. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samoobslužné vydaných certifikátů nemusí zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte místo toho hodnotu "ChainTrust". Můžete také nastavit hodnotu "Vlastní" nebo "None." Pokud chcete použít hodnotu "Vlastní", musíte taky nastavit `CustomCertificateValidatorType` atribut sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Další informace najdete v tématu [postupy: vytvoření služby, který využívá validátor certifikátu vlastní](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
   
- [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) obsahuje element `RevocationMode` atribut, který určuje, jak certifikáty jsou zaškrtnutá políčka pro odvolání. Výchozí hodnota je "online", což naznačuje, že certifikáty jsou automaticky zkontrolovány pro odvolání. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) obsahuje element `RevocationMode` atribut, který určuje, jak certifikáty jsou zaškrtnutá políčka pro odvolání. Výchozí hodnota je "online", což naznačuje, že certifikáty jsou automaticky zkontrolovány pro odvolání. Další informace najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="serviceauthorization"></a>ServiceAuthorization  
  [ \<ServiceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) prvek obsahuje prvky, které ovlivňují autorizace, vlastní roli zprostředkovatele a zosobnění.  
@@ -199,7 +201,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
 ```  
   
 ## <a name="configuring-security-audits"></a>Konfigurace auditování zabezpečení  
- Použití [ \<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) k určení zapisovat do protokolu a jaké typy událostí do protokolu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ Použití [ \<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) k určení zapisovat do protokolu a jaké typy událostí do protokolu. Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ```xml  
 <system.serviceModel>  
@@ -215,7 +217,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], chování změny chov
 ```  
   
 ## <a name="secure-metadata-exchange"></a>Zabezpečená výměna metadat  
- Export metadat klientům je vhodné pro vývojáře klienta a služby, protože umožňuje stahování kódu konfigurace a klienta. Aby se snížila zranitelnost služby uživatelům se zlými úmysly, je možné zabezpečit přenos pomocí protokolu SSL přes protokol HTTP (HTTPS) mechanismus. To pokud chcete udělat, je třeba nejprve svázat vhodný certifikát X.509 konkrétní port, na počítači, který je hostitelem služby. ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).) Druhý, přidejte [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) do konfigurace služby a nastavte `HttpsGetEnabled` atribut `true`. Nakonec nastavte `HttpsGetUrl` atribut na adresu URL metadat koncového bodu služby, jak je znázorněno v následujícím příkladu.  
+ Export metadat klientům je vhodné pro vývojáře klienta a služby, protože umožňuje stahování kódu konfigurace a klienta. Aby se snížila zranitelnost služby uživatelům se zlými úmysly, je možné zabezpečit přenos pomocí protokolu SSL přes protokol HTTP (HTTPS) mechanismus. To pokud chcete udělat, je třeba nejprve svázat vhodný certifikát X.509 konkrétní port, na počítači, který je hostitelem služby. (Další informace najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).) Druhý, přidejte [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) do konfigurace služby a nastavte `HttpsGetEnabled` atribut `true`. Nakonec nastavte `HttpsGetUrl` atribut na adresu URL metadat koncového bodu služby, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <behaviors>  

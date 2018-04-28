@@ -1,20 +1,17 @@
 ---
 title: Řazené kolekce členů (F#)
 description: 'Další informace o F # tuple, seskupení nepojmenované ale seřazené hodnoty, které by mohly mít různých typů.'
-keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 35069073-9a82-410f-8dea-912e2a152e6d
-ms.openlocfilehash: e0a5e5eb08e13bd5cbe9f88a47d4cf4bba19ea22
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 9710f4996a952fdeaab07a30916215f27969e1a3
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="tuples"></a>Řazené kolekce členů
 

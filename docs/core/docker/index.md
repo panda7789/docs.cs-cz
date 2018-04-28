@@ -1,22 +1,20 @@
 ---
 title: Docker a .NET Core
 description: Další informace o použití těchto .NET Core pomocí Docker fun kurzy.
-keywords: Docker, .NET, .NET Core
 author: jralexander
 ms.author: johalex
 ms.date: 01/10/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
-ms.assetid: cae32148-aef4-4e64-a7f0-88072bad4400
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 97c3a412e1625dad6984d34ea8793ccb901b36bd
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
+ms.openlocfilehash: 68032ece7a5e5e84f9f670ac69638ae103aa0385
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="docker-and-net-core"></a>Docker a .NET Core 
 

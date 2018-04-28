@@ -1,33 +1,33 @@
 ---
-title: "Výběr typu pověření"
-ms.custom: 
+title: Výběr typu pověření
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-caps.latest.revision: 
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9e6b3d84db619ba1b4b5785b134cfe87d1b15cdc
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 9858475520b949d5b9ee62ecdc0994bbb9398953
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které government problémy k prokázání přístupem v zemi nebo oblasti. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přihlašovací údaje mohou mít mnoho forem, jako je například uživatelské jméno tokeny a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
   
  V mnoha jiných zemí a oblastí licence ovladače je příkladem pověření. Licence obsahuje data, která představuje identitu uživatele a možnosti. Obsahuje důkaz vlastnictví ve formě obrázku vlastník. Licence je vydán důvěryhodnou autoritou, většinou vládních oddělení licencování. Licence je zapečetěná a může obsahovat hologram, zobrazující, že nebyla manipulováno nebo padělat.  
   
- Prezentace pověření zahrnuje prezentací data a ověření vlastní data. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje celou řadu typů přihlašovacích údajů při přepravě a zpráva úrovně zabezpečení. Představte si třeba dva typy podporovaných v pověření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
+ Prezentace pověření zahrnuje prezentací data a ověření vlastní data. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje celou řadu typů přihlašovacích údajů při přepravě a zpráva úrovně zabezpečení. Představte si třeba dva typy podporovaných v pověření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
   
  Pro název přihlašovací údaje uživatele uživatelské jméno představuje deklarovaná identita a heslo zajišťuje důkazy o u sebe. Jako důvěryhodnou autoritu v tomto případě je systém, který ověří uživatelské jméno a heslo.  
   
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/01/2018
 |Žádné|Určuje, že klient nemusí k dispozici žádné pověření. Výsledkem anonymním klientem.|  
 |Základní|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu HTTP: Basic a ověřování algoritmem Digest](http://go.microsoft.com/fwlink/?LinkID=88313).|  
 |Ověřování algoritmem Digest|Určuje, ověřování hodnotou hash pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu HTTP: Basic a ověřování algoritmem Digest](http://go.microsoft.com/fwlink/?LinkID=88313).|  
-|Ntlm|Určuje NT LAN Manager (NTLM) authentication. To se používá, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Můžete také zakázat jeho použití jako zálohu nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, které příčiny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
+|NTLM|Určuje NT LAN Manager (NTLM) authentication. To se používá, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Můžete také zakázat jeho použití jako zálohu nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, které příčiny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
 |Windows|Určuje ověřování systému Windows. Chcete-li zadat pouze protokol Kerberos v doméně systému Windows, nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false` (výchozí hodnota je `true`).|  
 |certifikát|Provede ověření klienta pomocí certifikátu X.509.|  
 |Heslo|Uživatel musí zadat uživatelské jméno a heslo. Ověření dvojici jméno a heslo uživatele pomocí ověřování systému Windows nebo jiné vlastní řešení.|  
@@ -53,9 +53,9 @@ ms.lasthandoff: 02/01/2018
 |-------------|-----------------|  
 |Žádné|Určuje, že klient nemusí pověření k dispozici. Výsledkem anonymním klientem.|  
 |Windows|Umožňuje výměny zpráv protokolu SOAP proběhnout v kontextu zabezpečení vytvořených pomocí pověření systému Windows.|  
-|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s názvem pověření uživatele. Všimněte si, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny kryptografické operace s uživatelskými jmény, například generování podpis nebo šifrování dat není povoleno. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zajišťuje, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
+|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s názvem pověření uživatele. Všimněte si, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny kryptografické operace s uživatelskými jmény, například generování podpis nebo šifrování dat není povoleno. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zajišťuje, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
 |certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu X.509.|  
-|Vydané tokenu|Vlastní token typ nakonfigurovaný podle zásady zabezpečení. Výchozí typ tokenu je zabezpečení kontrolní výrazy Markup Language (SAML). Token je vydaný služby tokenu zabezpečení. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|Vydané tokenu|Vlastní token typ nakonfigurovaný podle zásady zabezpečení. Výchozí typ tokenu je zabezpečení kontrolní výrazy Markup Language (SAML). Token je vydaný služby tokenu zabezpečení. Další informace najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>Model vyjednávání pověření služby  
  *Vyjednávání* je proces vytvoření vztahu důvěryhodnosti mezi sebou klient a služba nahrazením přihlašovací údaje. Proces je provést opakované mezi klientem a službu, která zveřejnit pouze informace potřebné pro další krok v procesu vyjednávání. V praxi konečný výsledek je doručování služby pověření klienta, který se má použít v další operacích.  
@@ -77,7 +77,7 @@ ms.lasthandoff: 02/01/2018
  V závislosti na tom, jestli jsou programování služby nebo klienta metoda pro nastavení hodnoty přihlašovacích údajů se mírně liší.  
   
 ### <a name="setting-service-credentials"></a>Nastavení pověření služby  
- Pokud používáte režim přenosu a používáte protokol HTTP jako přenos, musíte použít buď Internetové informační služby (IIS) nebo port konfigurovat pomocí certifikátu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md) a [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+ Pokud používáte režim přenosu a používáte protokol HTTP jako přenos, musíte použít buď Internetové informační služby (IIS) nebo port konfigurovat pomocí certifikátu. Další informace najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md) a [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  Ke zřízení služby s přihlašovacími údaji v kódu, vytvořte instanci <xref:System.ServiceModel.ServiceHost> třídy a zadejte příslušná pověření pomocí <xref:System.ServiceModel.Description.ServiceCredentials> třída, přistupovat prostřednictvím <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost.  
   

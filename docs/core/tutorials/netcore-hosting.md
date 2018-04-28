@@ -1,21 +1,19 @@
 ---
 title: Hostování rozhraní .NET Core
 description: Hostování na .NET Core runtime z nativního kódu
-keywords: .NET, .NET Core, Hosting, Hosting .NET Core
 author: mjrousos
-ms.author: mikerou
+ms.author: mairaw
 ms.date: 2/3/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 5ff2e8e4da12b2a9822b595abbb2bdb0f583cf02
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e09c849699bed63f0a271dfeede1e9e4b66e716f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="hosting-net-core"></a>Hostování rozhraní .NET Core
 

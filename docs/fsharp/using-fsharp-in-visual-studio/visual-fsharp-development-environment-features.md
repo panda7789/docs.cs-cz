@@ -1,20 +1,17 @@
 ---
-title: "F# – funkce vývojového prostředí"
-description: "Další informace, které funkce sady Visual Studio 2012 jsou podporovány v jazyce F #."
-keywords: "Visual f #, f #, funkční programování"
+title: F# – funkce vývojového prostředí
+description: 'Další informace, které funkce sady Visual Studio 2012 jsou podporovány v jazyce F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 809e9a34-b271-4c87-8356-2426b44f4721
-ms.openlocfilehash: 05727bf11eccfd64f823dd280b1a19210815ca5a
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: dd5c3165a73bd4f821a26d183094829dab7eaeae
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="visual-f-development-environment-features"></a>Visual F # – funkce vývojového prostředí
 
@@ -109,7 +106,7 @@ Následující tabulka shrnuje podporu pro F # v sadě Visual Studio tools.
 |Metriky kódu|Shromažďuje informace o kódu, jako jsou počty řádků.|Ne|
 |zobrazení tříd|Poskytuje založený na typu zobrazení kódu v projektu.|Ne|
 |[Okno Seznam chyb](/visualstudio/ide/reference/error-list-window)|Zobrazí seznam chyb v kódu.|Ano|
-|[F # interaktivní](../tutorials/fsharp-interactive/index.md)|Umožňuje vám zadejte (nebo zkopírujte a vložte) F # code a spustit okamžitě, nezávisle na vytvoření projektu. F # interaktivních okna je pro čtení, hodnocení, tisk smyčky (REPL).|Ano|
+|[F# Interactive](../tutorials/fsharp-interactive/index.md)|Umožňuje vám zadejte (nebo zkopírujte a vložte) F # code a spustit okamžitě, nezávisle na vytvoření projektu. F # interaktivních okna je pro čtení, hodnocení, tisk smyčky (REPL).|Ano|
 |prohlížeč objektů|Umožňuje zobrazit typy v sestavení.|Typy F # jak se zobrazují v kompilovaném sestavení se nezobrazí přesně tak, jak je vytváříte. Můžete procházet kompilované reprezentace typů F #, ale typy nelze zobrazit, jak vypadají z F #.|
 |[Okno Výstup](/visualstudio/ide/reference/output-window)|Zobrazí sestavení výstupu.|Ano|
 |Analýza výkonu|Poskytuje nástroje pro měření výkonu vašeho kódu.|Ano|

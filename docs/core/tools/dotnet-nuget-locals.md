@@ -1,18 +1,19 @@
 ---
-title: "příkaz místní hodnoty – DotNet nuget - .NET Core rozhraní příkazového řádku"
-description: "Příkaz dotnet nuget místní hodnoty – vymaže nebo vypíše místní prostředky NuGet například mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému."
+title: příkaz místní hodnoty – DotNet nuget - .NET Core rozhraní příkazového řádku
+description: Příkaz dotnet nuget místní hodnoty – vymaže nebo vypíše místní prostředky NuGet například mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému.
 author: karann-msft
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 9c8df8e457a9883b86abd0505c0c682d849bc7b1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 1dfa50ff0971a82b3f6aafd86492fd57d8cf6a82
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-nuget-locals"></a>místní hodnoty nuget DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet nuget locals`-Vymaže nebo vypíše místní prostředky NuGet.
+`dotnet nuget locals` -Vymaže nebo vypíše místní prostředky NuGet.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -36,10 +37,10 @@ ms.lasthandoff: 12/23/2017
 
 Jedna z následujících hodnot:
 
-* `all`-Určuje, že zadaná operace platí pro všechny typy mezipaměti: mezipaměti požadavek http, globální balíčky mezipaměti a dočasnou vyrovnávací paměť.
-* `http-cache`-Určuje, že zadaná operace platí pouze do mezipaměti v požadavku http. Ovlivněné nejsou jiných umístění mezipaměti.
-* `global-packages`-Určuje, že zadaná operace se aplikuje jenom na globální balíčky mezipaměti. Ovlivněné nejsou jiných umístění mezipaměti.
-* `temp`-Určuje, že zadaná operace se aplikuje jenom na dočasnou vyrovnávací paměť. Ovlivněné nejsou jiných umístění mezipaměti.
+* `all` -Určuje, že zadaná operace platí pro všechny typy mezipaměti: mezipaměti požadavek http, globální balíčky mezipaměti a dočasnou vyrovnávací paměť.
+* `http-cache` -Určuje, že zadaná operace platí pouze do mezipaměti v požadavku http. Ovlivněné nejsou jiných umístění mezipaměti.
+* `global-packages` -Určuje, že zadaná operace se aplikuje jenom na globální balíčky mezipaměti. Ovlivněné nejsou jiných umístění mezipaměti.
+* `temp` -Určuje, že zadaná operace se aplikuje jenom na dočasnou vyrovnávací paměť. Ovlivněné nejsou jiných umístění mezipaměti.
 
 ## <a name="options"></a>Možnosti
 

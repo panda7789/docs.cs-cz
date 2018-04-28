@@ -1,31 +1,32 @@
 ---
-title: "Postupy: povolení trvalost SQL pro pracovní postupy a služeb pracovních postupů"
-ms.custom: 
+title: 'Postupy: povolení trvalost SQL pro pracovní postupy a služeb pracovních postupů'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-caps.latest.revision: "36"
+caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 60fac3cba4da35b5146f777abd912ad15f0f29eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5d687c00edd9d495f3b7715474d7eb2e107c23f0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalost SQL pro pracovní postupy a služeb pracovních postupů
 Toto téma popisuje postup konfigurace úložiště Instance pracovního postupu SQL funkci tak, aby zapnout stálost pro vaše pracovní postupy a pracovní postup služby prostřednictvím kódu programu a pomocí konfiguračního souboru.  
   
- Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Konfigurace trvalosti infrastruktury aplikace](http://go.microsoft.com/fwlink/?LinkId=201204)  
+ Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. Další informace najdete v tématu [konfigurace trvalosti infrastruktury aplikace](http://go.microsoft.com/fwlink/?LinkId=201204)  
   
  Před použitím funkce ukládání Instance pracovního postupu SQL, vytvořte databázi, která používá funkci k zachování instancí pracovních postupů. [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Nastavení program zkopíruje soubory skriptu SQL přidružené k funkci úložiště Instance pracovního postupu SQL do složky %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN. Spustit tyto soubory skriptu pro databázi systému SQL Server 2005 nebo SQL Server 2008, které chcete úložiště Instance SQL pracovního postupu, který chcete použít k uchování instancí pracovních postupů. Nejprve spustit soubor SqlWorkflowInstanceStoreSchema.sql a potom spusťte soubor SqlWorkflowInstanceStoreLogic.sql.  
   
@@ -40,7 +41,7 @@ Toto téma popisuje postup konfigurace úložiště Instance pracovního postupu
 >   
 >  System.Data.SqlClient.SqlException: Nelze nalézt uloženou proceduru 'System.Activities.DurableInstancing.CreateLockOwner.  
   
- Následující části popisují postup povolení trvalosti pro pracovní postupy a pomocí ukládání Instance pracovního postupu SQL služby pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)]vlastnosti úložiště Instance pracovního postupu SQL, najdete v části [vlastnosti z pracovní postup Instance úložiště SQL](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md).  
+ Následující části popisují postup povolení trvalosti pro pracovní postupy a pomocí ukládání Instance pracovního postupu SQL služby pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)] vlastnosti úložiště Instance pracovního postupu SQL, najdete v části [vlastnosti z pracovní postup Instance úložiště SQL](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md).  
   
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>Povolení trvalosti pro pracovní postupy Self-Hosted, použít WorkflowApplication  
  Můžete povolit trvalost vlastním hostováním pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> programově pomocí <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> objektový model. Následující postup obsahuje kroky, jak to provést.  

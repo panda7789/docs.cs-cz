@@ -1,24 +1,26 @@
 ---
-title: "Přehled zjišťování WCF"
-ms.custom: 
+title: Přehled zjišťování WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 28bf67b3840cb37c918198dd0910db9d592a6823
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7b44a1587c704b0995821c7126f0264695861558
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wcf-discovery-overview"></a>Přehled zjišťování WCF
 Zjišťování rozhraní API poskytuje jednotný programovací model pro dynamické publikace a zjišťování webové služby pomocí protokolu WS-Discovery. Tato rozhraní API umožňují služby k publikování sami a klienti najít publikované služby. Jakmile služba je k zjistitelný, služba má možnost zasílání oznámení a také naslouchat a reagovat na požadavky na zjišťování. Zjistitelný služby může odesílat zprávy Hello oznamujeme jejich přijetí v síti a zprávy Bye oznamujeme jejich přesun ze sítě. Pokud chcete vyhledat služby, klienti odesílají `Probe` požadavek, který obsahuje určitá kritéria, například typ kontraktu služby, klíčová slova a oboru v síti. Přijímat služby `Probe` žádosti a určit, zda se shodují se kritéria. Pokud služba odpovídá, odpoví odesláním `ProbeMatch` zprávy zpět do klienta se informace potřebné k kontaktovat službu. Klienty můžete také odeslat `Resolve` požadavků, které mohly najít služby, které mohl změnit jejich adresa koncového bodu. Odpovídající služby reagovat na `Resolve` požadavky odesláním `ResolveMatch` zprávy zpět do klienta.  
@@ -157,7 +159,7 @@ class Client
 ```  
   
 ## <a name="discovery-and-message-level-security"></a>Zjišťování a úrovně zabezpečení zpráv  
- Při použití zabezpečení na úrovni zprávy je nutné zadat <xref:System.ServiceModel.EndpointIdentity> na koncový bod zjišťování služby a odpovídající <xref:System.ServiceModel.EndpointIdentity> na koncový bod zjišťování klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]úroveň zabezpečení zpráv najdete v tématu [zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
+ Při použití zabezpečení na úrovni zprávy je nutné zadat <xref:System.ServiceModel.EndpointIdentity> na koncový bod zjišťování služby a odpovídající <xref:System.ServiceModel.EndpointIdentity> na koncový bod zjišťování klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] úroveň zabezpečení zpráv najdete v tématu [zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
   
 ## <a name="discovery-and-web-hosted-services"></a>Zjišťování a webové hostovaných služeb  
  V pořadí pro služby WCF zjistitelné musí být spuštěn. Služby WCF hostované v rámci služby IIS nebo WAS se nespustí, dokud služba IIS / byl přijme zprávu o vázaný službu, takže nemohou být zjistitelný ve výchozím nastavení.  Existují dvě možnosti pro provádění zjistitelný hostované webové služby:  
@@ -166,9 +168,9 @@ class Client
   
 2.  Použít proxy server zjišťování komunikovat jménem služby  
   
- Windows Server AppFabric má o funkci automatického spuštění, která vám umožní službu spustit před příjmem všechny zprávy. Pomocí automatického spuštění nastavit službu IIS nebo WAS hostované službu lze nakonfigurovat zjistitelné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Viz funkce automatického spuštění, [Windows Server AppFabric automatického – spuštění funkce](http://go.microsoft.com/fwlink/?LinkId=205545). Společně s zapnout funkci automatického spuštění, musíte nakonfigurovat službu pro zjišťování. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: programové přidání možností rozpoznání do klienta a služby WCF](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[konfigurace zjišťování v konfiguračním souboru](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
+ Windows Server AppFabric má o funkci automatického spuštění, která vám umožní službu spustit před příjmem všechny zprávy. Pomocí automatického spuštění nastavit službu IIS nebo WAS hostované službu lze nakonfigurovat zjistitelné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Viz funkce automatického spuštění, [Windows Server AppFabric automatického – spuštění funkce](http://go.microsoft.com/fwlink/?LinkId=205545). Společně s zapnout funkci automatického spuštění, musíte nakonfigurovat službu pro zjišťování. Další informace najdete v tématu [postupy: programové přidání možnosti rozpoznání do klienta a služby WCF](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[konfigurace zjišťování v konfiguračním souboru](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
   
- Zjišťování proxy umožňuje komunikovat jménem služby WCF, pokud služba není spuštěna. Proxy server může sledovat u testu paměti nebo vyřešit zprávy a reagovat na klientovi. Klient pak může odesílat zprávy přímo ke službě. Když klient odešle zprávu do služby bude vytvořena instance reagovat na zprávu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]implementace proxy zjišťování najdete [implementace Proxy zjišťování](../../../../docs/framework/wcf/feature-details/implementing-a-discovery-proxy.md).  
+ Zjišťování proxy umožňuje komunikovat jménem služby WCF, pokud služba není spuštěna. Proxy server může sledovat u testu paměti nebo vyřešit zprávy a reagovat na klientovi. Klient pak může odesílat zprávy přímo ke službě. Když klient odešle zprávu do služby bude vytvořena instance reagovat na zprávu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] implementace proxy zjišťování najdete [implementace Proxy zjišťování](../../../../docs/framework/wcf/feature-details/implementing-a-discovery-proxy.md).  
   
 > [!NOTE]
 >  Zjišťování WCF fungovat správně musí mít všechny síťové adaptéry (řadiče síťového rozhraní) pouze 1 IP adresu.

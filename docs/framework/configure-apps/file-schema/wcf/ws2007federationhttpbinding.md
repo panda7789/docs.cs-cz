@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9af4ec79-cdef-457e-9dca-09d5eb821594
-caps.latest.revision: ''
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b1f85d4cc45075f82035fa5b8c0c95341ba142d6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 3025eec9c01d325d7d00a7355ff908eb1e19e410
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="ltws2007federationhttpbindinggt"></a>&lt;ws2007FederationHttpBinding&gt;
 Zabezpečení a vzájemná spolupráce vazbu, která je odvozena z [ \<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a podporuje federované zabezpečení.  
@@ -103,7 +103,7 @@ Zabezpečení a vzájemná spolupráce vazbu, která je odvozena z [ \<– wsFed
 |[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje kolekci standardní a vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Federace se nachází možnost identity sdílet mezi více podniky nebo vztahu důvěryhodnosti domény pro ověřování a autorizaci. Protokol WS-Trust používá k mapování reprezentace identity z jednom vztahu důvěryhodnosti domény do druhého. Federované vazby HTTP podporuje zabezpečení protokolu SOAP, jakož i ve smíšeném režimu zabezpečení, ale nepodporuje zabezpečení přenosu. Nakonfigurované s touto vazbou služby musíte použít přenos HTTP. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+ Federace se nachází možnost identity sdílet mezi více podniky nebo vztahu důvěryhodnosti domény pro ověřování a autorizaci. Protokol WS-Trust používá k mapování reprezentace identity z jednom vztahu důvěryhodnosti domény do druhého. Federované vazby HTTP podporuje zabezpečení protokolu SOAP, jakož i ve smíšeném režimu zabezpečení, ale nepodporuje zabezpečení přenosu. Nakonfigurované s touto vazbou služby musíte použít přenos HTTP. Další informace najdete v tématu [ \<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
 ## <a name="example"></a>Příklad  
   

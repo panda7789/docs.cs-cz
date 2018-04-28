@@ -1,21 +1,19 @@
 ---
 title: .NET core migrace do formátu csproj
 description: .NET core project.json csproj migrace
-keywords: Rozhraní .NET, .NET core .NET Core migrace
 author: blackdwarf
 ms.author: mairaw
 ms.date: 07/19/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 46373d1d100a71cbc43fcdfe6ce16a7ecd796573
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 102b875072ed77a328bdb6a62ed6cc98612ff059
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="migrating-net-core-projects-to-the-csproj-format"></a>Migrace .NET Core projekty do formátu .csproj
 
@@ -61,7 +59,7 @@ V tématu [mapování mezi project.json a csproj vlastnosti](../tools/project-js
 
 - Pokud dojde k chybě: "žádný spustitelný soubor nalezen odpovídající příkaz dotnet-migrovat":
 
-Spustit `dotnet --version` zobrazíte kterou verzi, kterou používáte. [`dotnet migrate`](../tools/dotnet-migrate.md)vyžaduje rozhraní .NET Core rozhraní příkazového řádku RC3 nebo vyšší.
+Spustit `dotnet --version` zobrazíte kterou verzi, kterou používáte. [`dotnet migrate`](../tools/dotnet-migrate.md) vyžaduje rozhraní .NET Core rozhraní příkazového řádku RC3 nebo vyšší.
 Budete se tato chyba, pokud máte *global.json* souboru v aktuální nebo nadřazený adresář a `sdk` verze je nastaveno na starší verze.
 
 ## <a name="migration-from-dnx-to-csproj"></a>Migrace ze DNX csproj
@@ -78,7 +76,7 @@ Formát csproj .NET Core je změna a vyvíjející se každý nový předběžn�
 
 * Odeberte vlastnost verze nástroje pro z `<Project>` elementu, pokud existuje. 
 * Odebrat obor názvů XML (`xmlns`) z `<Project>` elementu.
-* Pokud neexistuje, přidejte `Sdk` atribut `<Project>` elementu a nastavte ji na `Microsoft.NET.Sdk` nebo `Microsoft.NET.Sdk.Web`. Tento atribut určuje, že projektu používá sady SDK k použití. `Microsoft.NET.Sdk.Web`používá se pro webové aplikace.
+* Pokud neexistuje, přidejte `Sdk` atribut `<Project>` elementu a nastavte ji na `Microsoft.NET.Sdk` nebo `Microsoft.NET.Sdk.Web`. Tento atribut určuje, že projektu používá sady SDK k použití. `Microsoft.NET.Sdk.Web` používá se pro webové aplikace.
 * Odeberte `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` a `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` příkazy z horní a dolní projektu. Import, tyto příkazy jsou implicitní sadou SDK, takže není nutné, aby se v projektu. 
 * Pokud máte `Microsoft.NETCore.App` nebo `NETStandard.Library` `<PackageReference>` položek ve vašem projektu, odstraňte je. Tyto odkazy balíčku jsou [implicitní SDK](https://aka.ms/sdkimplicitrefs). 
 * Odeberte `Microsoft.NET.Sdk` `<PackageReference>` elementu, pokud existuje. Odkaz na sadu SDK přicházejí `Sdk` atributu u `<Project>` elementu. 

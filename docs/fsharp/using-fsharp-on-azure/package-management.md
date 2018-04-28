@@ -1,20 +1,17 @@
 ---
-title: "Pomocí správy balíčků F # pro Azure."
-description: "Ke správě závislosti F # Azure použijte stáhnout nebo Nuget"
-keywords: "Visual f #, f #, funkční programování, .NET, .NET Core, Azure"
+title: 'Pomocí správy balíčků F # pro Azure.'
+description: 'Ke správě závislosti F # Azure použijte stáhnout nebo Nuget'
 author: sylvanc
 ms.author: phcart
 ms.date: 09/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: dd32ef9c-5416-467e-9fa3-c9ee3bb08456
-ms.openlocfilehash: d1a807053f5c4c45492f206739922aacdf6d4122
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: da6938c6ee29292571f4269c68a9148c13738422
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>Balíček správy pro závislosti Azure F #
 

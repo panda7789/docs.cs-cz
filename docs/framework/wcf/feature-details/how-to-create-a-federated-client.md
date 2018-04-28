@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytvoření federovaného klienta"
-ms.custom: 
+title: 'Postupy: Vytvoření federovaného klienta'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,21 +16,22 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7fda534d591ae5142fb732607c7e248ef3cc71bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 38436a83bf58c4903a931ecafebf922800d230c1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-federated-client"></a>Postupy: Vytvoření federovaného klienta
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vytvoření klienta pro *Federovaná služba* zahrnuje tři hlavní kroky:  
   
-1.  Konfigurace [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) nebo podobné vlastní vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření odpovídající vazby, najdete v části [postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md). Alternativně spusťte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod metadat federované služby pro generování konfigurační soubor pro komunikaci s federované služby a jeden nebo více služby tokenů zabezpečení.  
+1.  Konfigurace [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) nebo podobné vlastní vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vytváření odpovídající vazby, najdete v části [postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md). Alternativně spusťte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod metadat federované služby pro generování konfigurační soubor pro komunikaci s federované služby a jeden nebo více služby tokenů zabezpečení.  
   
 2.  Nastavit vlastnosti <xref:System.ServiceModel.Security.IssuedTokenClientCredential> která řídí různé aspekty klienta interakci s služby tokenů zabezpečení.  
   
@@ -38,7 +40,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vytvoření klienta p
 > [!NOTE]
 >  A <xref:System.Security.Cryptography.CryptographicException> mohou být vyvolány, pokud klient používá zosobněnou přihlašovací údaje, <xref:System.ServiceModel.WSFederationHttpBinding> vazba nebo vydala vlastní token a asymetrické klíče. Asymetrické klíče se používají s <xref:System.ServiceModel.WSFederationHttpBinding> vazby a vlastní vystavené tokeny, kdy <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> a <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> vlastností, jsou nastavenými na hodnoty <xref:System.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey>. <xref:System.Security.Cryptography.CryptographicException> Se vyvolá, když se klient pokusí odeslat zprávu a neexistuje uživatelský profil pro identitu, který zosobňuje klienta. Ke zmírnění tohoto problému, přihlaste se k počítači klienta nebo volání `LoadUserProfile` před odesláním zprávy.  
   
- Toto téma obsahuje podrobné informace o těchto postupů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření odpovídající vazby, najdete v části [postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Jak funguje federované služby, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Toto téma obsahuje podrobné informace o těchto postupů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vytváření odpovídající vazby, najdete v části [postupy: vytvoření třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Jak funguje federované služby, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
   
 ### <a name="to-generate-and-examine-the-configuration-for-a-federated-service"></a>Generovat a zkontrolujte konfiguraci pro federované služby  
   
@@ -163,13 +165,13 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vytvoření klienta p
 ## <a name="localissuer-required"></a>LocalIssuer vyžaduje  
  Pokud klienti budou vždy nutné použít místního vystavitele, vezměte na vědomí následující: Výchozí výstup výsledků Svcutil.exe v místního vystavitele nepoužívala Pokud služby tokenů zabezpečení sekundu poslední v řetězu určuje vystavitele adresy nebo adresu metadat vystavitele.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]nastavení <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A>, <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A>, a <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A> vlastnosti <xref:System.ServiceModel.Security.IssuedTokenClientCredential> třídy najdete v tématu [postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nastavení <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A>, <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A>, a <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A> vlastnosti <xref:System.ServiceModel.Security.IssuedTokenClientCredential> třídy najdete v tématu [postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
 ## <a name="scoped-certificates"></a>Vymezená certifikáty  
  Pokud certifikáty služby musí být určeny pro komunikaci s žádným z služby tokenu zabezpečení, obvykle vyjednávání certifikátu není používán, že je možné zadat pomocí <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> vlastnost <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential> třídy. <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetDefaultCertificate%2A> Metoda trvá <xref:System.Uri> a <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> jako parametry. Zadaný certifikát se používá při komunikaci s koncovými body na zadaný identifikátor URI. Alternativně můžete použít <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetScopedCertificate%2A> metoda přidat certifikát do kolekce vrácené <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> vlastnost.  
   
 > [!NOTE]
->  Rada klientských certifikátů, která jsou omezená na daný identifikátor URI platí jenom pro aplikace, které jsou odchozí volání ke službám, které zveřejňují koncových bodů na tyto identifikátory URI. Nevztahuje se na certifikáty, které se používají k podpisu vystavené tokeny, například nakonfigurovaným na serveru v kolekci vrácené <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: Konfigurace pověření ve službě Federation](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
+>  Rada klientských certifikátů, která jsou omezená na daný identifikátor URI platí jenom pro aplikace, které jsou odchozí volání ke službám, které zveřejňují koncových bodů na tyto identifikátory URI. Nevztahuje se na certifikáty, které se používají k podpisu vystavené tokeny, například nakonfigurovaným na serveru v kolekci vrácené <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy. Další informace najdete v tématu [postupy: Konfigurace pověření ve službě Federation](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)  

@@ -1,13 +1,13 @@
 ---
-title: "Určování přenosu dat v kontraktech služby"
-ms.custom: 
+title: Určování přenosu dat v kontraktech služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-caps.latest.revision: 
+caps.latest.revision: 38
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c650a59402099e1fe71a0292dd0ccfc409d3448d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fc64ff14c321bd2053b0a97b3cf1ac075b02e973
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Lze považovat za infrastrukturu zasílání zpráv. Operace služby můžete přijímat zprávy, jejich zpracování a jejich odeslání zprávy. Zprávy jsou popsány použití kontraktů operaci. Zvažte například následující kontrakt.  
@@ -65,7 +65,7 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- Kromě toho můžete použít odkaz na parametry aby parametr součástí požadavku a odpovědi. Parametry musí být typy, které lze serializovat (převést na XML). Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá komponenty s názvem <xref:System.Runtime.Serialization.DataContractSerializer> třída provést tento převod. Většina primitivní typy (například `int`, `string`, `float`, a `DateTime`.) jsou podporovány. Uživatelem definované typy musí mít normálně kontraktu dat. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Kromě toho můžete použít odkaz na parametry aby parametr součástí požadavku a odpovědi. Parametry musí být typy, které lze serializovat (převést na XML). Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá komponenty s názvem <xref:System.Runtime.Serialization.DataContractSerializer> třída provést tento převod. Většina primitivní typy (například `int`, `string`, `float`, a `DateTime`.) jsou podporovány. Uživatelem definované typy musí mít normálně kontraktu dat. Další informace najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ```csharp
 public interface IAirfareQuoteService  
@@ -100,7 +100,7 @@ Public Interface IAirfareQuoteService
 End Interface  
 ```  
   
- V některých případech `DataContractSerializer` není vhodný k serializaci vaší typy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje modul alternativní serializace <xref:System.Xml.Serialization.XmlSerializer>, který můžete použít také k serializaci parametrů. <xref:System.Xml.Serialization.XmlSerializer> Umožňuje používat větší kontrolu nad výsledné XML pomocí atributů, jako `XmlAttributeAttribute`. Chcete-li přejít k používání <xref:System.Xml.Serialization.XmlSerializer> určité operace nebo s celou službou, použít <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut operace nebo službu. Příklad:  
+ V některých případech `DataContractSerializer` není vhodný k serializaci vaší typy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje modul alternativní serializace <xref:System.Xml.Serialization.XmlSerializer>, který můžete použít také k serializaci parametrů. <xref:System.Xml.Serialization.XmlSerializer> Umožňuje používat větší kontrolu nad výsledné XML pomocí atributů, jako `XmlAttributeAttribute`. Chcete-li přejít k používání <xref:System.Xml.Serialization.XmlSerializer> určité operace nebo s celou službou, použít <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut operace nebo službu. Příklad:  
   
 ```csharp  
 [ServiceContract]  
@@ -137,7 +137,7 @@ Class Itinerary
 End Class  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md). Mějte na paměti, že ručně přepnutí na <xref:System.Xml.Serialization.XmlSerializer> jak je vidět tady se nedoporučuje, pokud máte konkrétní důvodů, proč se tak podrobné v tomto tématu.  
+ Další informace najdete v tématu [používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md). Mějte na paměti, že ručně přepnutí na <xref:System.Xml.Serialization.XmlSerializer> jak je vidět tady se nedoporučuje, pokud máte konkrétní důvodů, proč se tak podrobné v tomto tématu.  
   
  Pokud chcete izolovat názvy parametrů .NET z názvů kontraktu, můžete použít <xref:System.ServiceModel.MessageParameterAttribute> atribut a použít `Name` vlastnost nastavující název kontraktu. Například následující operace kontrakt je ekvivalentní v prvním příkladu v tomto tématu.  
   
@@ -254,7 +254,7 @@ Public Class Itinerary
 End Class  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
+ Další informace najdete v tématu [pomocí kontrakty zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
   
  V předchozím příkladu <xref:System.Runtime.Serialization.DataContractSerializer> třída se stále používá ve výchozím nastavení. <xref:System.Xml.Serialization.XmlSerializer> Třídu lze také použít s kontrakty zpráv. K tomu použít <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut operaci nebo smlouvy a používat kompatibilní s typy <xref:System.Xml.Serialization.XmlSerializer> třídy v záhlaví zpráv a členy textu.  
   
@@ -314,7 +314,7 @@ Public Class UploadFileMessage
 End Class  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Velkého množství dat a vysílání datového proudu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
+ Další informace najdete v tématu [velkého množství dat a Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
 ## <a name="using-the-message-class"></a>Používání třídy Message  
  Chcete-li mít úplnou programový kontrolu nad odeslané a přijaté zprávy, můžete použít <xref:System.ServiceModel.Channels.Message> třídy přímo, jak je znázorněno v následujícím příkladu kódu.  
@@ -381,7 +381,7 @@ Public Class
 End Class  
 ```  
   
- Tyto další chyby může být generována vyvolání <xref:System.ServiceModel.FaultException%601> typu kontraktu příslušná data. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
+ Tyto další chyby může být generována vyvolání <xref:System.ServiceModel.FaultException%601> typu kontraktu příslušná data. Další informace najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
   
  Nelze použít <xref:System.Xml.Serialization.XmlSerializer> třída k popisu chyby. <xref:System.ServiceModel.XmlSerializerFormatAttribute> Nemá žádný vliv na kontrakty selhání.  
   
@@ -440,12 +440,12 @@ End Class
   
  Můžete použít <xref:System.Xml.Serialization.XmlIncludeAttribute> atributu při použití <xref:System.Xml.Serialization.XmlSerializer>.  
   
- Můžete použít <xref:System.ServiceModel.ServiceKnownTypeAttribute> atribut operace nebo celé služby. Přijímá buď typ nebo název metody k volání k získání seznamu ze známých typů, stejně jako <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Můžete použít <xref:System.ServiceModel.ServiceKnownTypeAttribute> atribut operace nebo celé služby. Přijímá buď typ nebo název metody k volání k získání seznamu ze známých typů, stejně jako <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut. Další informace najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
 ## <a name="specifying-the-use-and-style"></a>Určení použití a stylu  
  Při popisu služby pomocí webové služby WSDL (Description Language), dva běžně používané styly jsou dokumentu a volání vzdálených procedur (RPC). V dokumentu styl textu celé zprávy je popsán pomocí schématu a schématu WSDL popisuje různých částí textu zprávy tím, že odkazuje na elementy v rámci schéma této. Ve stylu RPC schématu WSDL odkazuje na typ schématu pro každou část zprávy, nikoli element. V některých případech budete muset ručně vyberte jednu z těchto stylů. To provedete použitím <xref:System.ServiceModel.DataContractFormatAttribute> atribut a nastavení `Style` vlastnost (při <xref:System.Runtime.Serialization.DataContractSerializer> se používá), nebo nastavením `Style` na <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut (při použití <xref:System.Xml.Serialization.XmlSerializer>).  
   
- Kromě toho <xref:System.Xml.Serialization.XmlSerializer> podporuje dvě formy serializovaných XML: `Literal` a `Encoded`. `Literal`je nejčastěji přijatý formuláře a je jediným <xref:System.Runtime.Serialization.DataContractSerializer> podporuje. `Encoded`je starší verze formuláře popsané v části 5 specifikace protokolu SOAP a nedoporučuje se používat pro nové služby. Přejděte na `Encoded` nastaven režim, `Use` vlastnost <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut `Encoded`.  
+ Kromě toho <xref:System.Xml.Serialization.XmlSerializer> podporuje dvě formy serializovaných XML: `Literal` a `Encoded`. `Literal` je nejčastěji přijatý formuláře a je jediným <xref:System.Runtime.Serialization.DataContractSerializer> podporuje. `Encoded` je starší verze formuláře popsané v části 5 specifikace protokolu SOAP a nedoporučuje se používat pro nové služby. Přejděte na `Encoded` nastaven režim, `Use` vlastnost <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut `Encoded`.  
   
  Ve většině případů byste neměli měnit výchozí nastavení `Style` a `Use` vlastnosti.  
   
@@ -453,7 +453,7 @@ End Class
  Můžete to udělat několik věcí, chcete-li přizpůsobit způsob, jakým se serializovat data.  
   
 ### <a name="changing-server-serialization-settings"></a>Změna nastavení serveru serializace  
- Pokud výchozí <xref:System.Runtime.Serialization.DataContractSerializer> je používán, můžete řídit některé aspekty procesu serializace ve službě s použitím <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut ke službě. Konkrétně můžete použít `MaxItemsInObjectGraph` vlastnost možné nastavit kvótu, která omezuje maximální počet objektů, které <xref:System.Runtime.Serialization.DataContractSerializer> deserializuje. Můžete použít `IgnoreExtensionDataObject` vlastnost vypnout funkci správy verzí odezvy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]kvóty, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]odezvy, najdete v části [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Pokud výchozí <xref:System.Runtime.Serialization.DataContractSerializer> je používán, můžete řídit některé aspekty procesu serializace ve službě s použitím <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut ke službě. Konkrétně můžete použít `MaxItemsInObjectGraph` vlastnost možné nastavit kvótu, která omezuje maximální počet objektů, které <xref:System.Runtime.Serialization.DataContractSerializer> deserializuje. Můžete použít `IgnoreExtensionDataObject` vlastnost vypnout funkci správy verzí odezvy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kvóty, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] odezvy, najdete v části [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ```csharp  
 [ServiceBehavior(MaxItemsInObjectGraph=100000)]  
@@ -479,7 +479,7 @@ End Interface
 ### <a name="serialization-behaviors"></a>Chování serializace  
  Jsou k dispozici ve dvou chování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> , jsou automaticky připojena v závislosti na serializátoru, který je používán pro konkrétní operaci. Protože tyto chování platí automaticky, obvykle nemáte zajímat, z nich.  
   
- Ale `DataContractSerializerOperationBehavior` má `MaxItemsInObjectGraph`, `IgnoreExtensionDataObject`, a `DataContractSurrogate` vlastnosti, které můžete použít k přizpůsobení procesu serializace. První dvě vlastnosti mají stejný význam, jak je popsáno v předchozí části. Můžete použít `DataContractSurrogate` vlastnost umožňující náhrady kontraktů dat, které jsou výkonný mechanismus pro přizpůsobení a rozšíření procesu serializace. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
+ Ale `DataContractSerializerOperationBehavior` má `MaxItemsInObjectGraph`, `IgnoreExtensionDataObject`, a `DataContractSurrogate` vlastnosti, které můžete použít k přizpůsobení procesu serializace. První dvě vlastnosti mají stejný význam, jak je popsáno v předchozí části. Můžete použít `DataContractSurrogate` vlastnost umožňující náhrady kontraktů dat, které jsou výkonný mechanismus pro přizpůsobení a rozšíření procesu serializace. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
   
  Můžete použít `DataContractSerializerOperationBehavior` přizpůsobit serializace klient i server. Následující příklad ukazuje, jak zvýšit `MaxItemsInObjectGraph` kvóta na straně klienta.  
   
@@ -585,7 +585,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
 3.  Před otevřením hostitele služby nebo vytvoření kanálu klienta, odeberte existující <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> chování a moduly vlastní odvozené třídy, kterou jste vytvořili v předchozích krocích.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Rozšířené koncepty serializace, najdete v části [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Rozšířené koncepty serializace, najdete v části [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)  

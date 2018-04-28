@@ -1,27 +1,29 @@
 ---
-title: "Používání třídy Message"
-ms.custom: 
+title: Používání třídy Message
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5c3e33f4db403fdc4ad1d4efd14282fe2beac8dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c63a0a88997a1c35b24562bcca3e0fdb40ebfd41
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-message-class"></a>Používání třídy Message
 <xref:System.ServiceModel.Channels.Message> Třída je nezbytné, aby [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Veškerá komunikace mezi klienty a služby ve výsledku <xref:System.ServiceModel.Channels.Message> instancí se odesílají a přijímají.  
@@ -76,7 +78,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="creating-messages-with-bodywriter"></a>Vytváření zprávy s BodyWriter  
  Jeden `CreateMessage` přetížení trvá `BodyWriter` instance k popisu tělo zprávy. A `BodyWriter` je abstraktní třída, která lze odvodit přizpůsobit vytváření zpráv. Můžete vytvořit vlastní `BodyWriter` odvozené třídy k popisu těla zprávy vlastním způsobem. Je nutné přepsat `BodyWriter.OnWriteBodyContents` metody, která použije <xref:System.Xml.XmlDictionaryWriter>; tato metoda je zodpovědné za zápis na text.  
   
- Můžete do vyrovnávací paměti zapisovače textu nebo bez vyrovnávací paměti (streamování). Zapisovače textu ve vyrovnávací paměti můžete zapsat jejich obsah libovolný počet dobu, během přenášené datovými proudy ty můžete zapsat jejich obsah pouze jednou. `IsBuffered` Vlastnost určuje, zda je zapisovač textu do vyrovnávací paměti nebo ne. Můžete nastavit to pro vaše zapisovač textu voláním chráněné `BodyWriter` konstruktor, který přebírá `isBuffered` logického parametru. Zapisovače textu podporují vytváření zapisovač textu ve vyrovnávací paměti z zapisovač textu bez vyrovnávací paměti. Je možné přepsat `OnCreateBufferedCopy` metodu za účelem přizpůsobení tohoto procesu. Ve výchozím nastavení, v paměti vyrovnávací paměti, který obsahuje XML vrácený `OnWriteBodyContents` se používá. `OnCreateBufferedCopy`přijímá `maxBufferSize` celé číslo parametru; Pokud tuto metodu přepíšete, nesmí vytvoříte vyrovnávací paměti větší než této maximální velikosti.  
+ Můžete do vyrovnávací paměti zapisovače textu nebo bez vyrovnávací paměti (streamování). Zapisovače textu ve vyrovnávací paměti můžete zapsat jejich obsah libovolný počet dobu, během přenášené datovými proudy ty můžete zapsat jejich obsah pouze jednou. `IsBuffered` Vlastnost určuje, zda je zapisovač textu do vyrovnávací paměti nebo ne. Můžete nastavit to pro vaše zapisovač textu voláním chráněné `BodyWriter` konstruktor, který přebírá `isBuffered` logického parametru. Zapisovače textu podporují vytváření zapisovač textu ve vyrovnávací paměti z zapisovač textu bez vyrovnávací paměti. Je možné přepsat `OnCreateBufferedCopy` metodu za účelem přizpůsobení tohoto procesu. Ve výchozím nastavení, v paměti vyrovnávací paměti, který obsahuje XML vrácený `OnWriteBodyContents` se používá. `OnCreateBufferedCopy` přijímá `maxBufferSize` celé číslo parametru; Pokud tuto metodu přepíšete, nesmí vytvoříte vyrovnávací paměti větší než této maximální velikosti.  
   
  `BodyWriter` Třída poskytuje `WriteBodyContents` a `CreateBufferedCopy` metody, které jsou v podstatě dynamicky obálky kolem `OnWriteBodyContents` a `OnCreateBufferedCopy` metody, v uvedeném pořadí. Tyto metody provedení stavu kontrole zajistíte zapisovač textu bez vyrovnávací paměti není přístup k více než jednou. Tyto metody jsou pouze při vytváření vlastní volat přímo `Message` odvozených třídách na základě `BodyWriters`.  
   
@@ -107,9 +109,9 @@ ms.lasthandoff: 12/22/2017
   
  Dva další pomocné metody zapsat určité značky elementu spuštění protokolu SOAP. Tyto metody k přístupu ke tělo zprávy a proto mohou změnit stav zprávy. Mezi ně patří:  
   
--   <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A>zapíše elementu počáteční body, například `<soap:Body>`.  
+-   <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A> zapíše elementu počáteční body, například `<soap:Body>`.  
   
--   <xref:System.ServiceModel.Channels.Message.WriteStartEnvelope%2A>zapíše počáteční obálky prvek, například `<soap:Envelope>`.  
+-   <xref:System.ServiceModel.Channels.Message.WriteStartEnvelope%2A> zapíše počáteční obálky prvek, například `<soap:Envelope>`.  
   
  Zápis odpovídající koncové značky elementu, volání `WriteEndElement` na odpovídající zapisovače XML. Tyto metody jsou zřídka volat přímo.  
   
@@ -162,7 +164,7 @@ ms.lasthandoff: 12/22/2017
  Můžete použít <xref:System.ServiceModel.Channels.Message.GetBodyAttribute%28System.String%2CSystem.String%29> metody přístup konkrétní atribut v prvku body obálku (například `<soap:Body>`) identifikovaný konkrétní názvem a oborem názvů. Pokud není nalezen takový atribut, `null` je vrácen. Tuto metodu lze volat pouze tehdy, když `Message` je ve stavu vytvořen (Pokud je text zprávy nebyl ještě využívány).  
   
 ## <a name="working-with-headers"></a>Práce s hlavičky  
- A `Message` může obsahovat libovolný počet pojmenované fragmenty XML názvem *hlavičky*. Každý fragment obvykle mapuje hlavičku protokolu SOAP. Hlavičky jsou přístupné prostřednictvím `Headers` vlastnost typu <xref:System.ServiceModel.Channels.MessageHeaders>. <xref:System.ServiceModel.Channels.MessageHeaders>je kolekce <xref:System.ServiceModel.Channels.MessageHeaderInfo> objekty a jednotlivých záhlaví je přístupná přes jeho <xref:System.Collections.IEnumerable> rozhraní nebo pomocí jeho indexer. Například následující kód obsahuje názvy všech záhlaví v `Message`.  
+ A `Message` může obsahovat libovolný počet pojmenované fragmenty XML názvem *hlavičky*. Každý fragment obvykle mapuje hlavičku protokolu SOAP. Hlavičky jsou přístupné prostřednictvím `Headers` vlastnost typu <xref:System.ServiceModel.Channels.MessageHeaders>. <xref:System.ServiceModel.Channels.MessageHeaders> je kolekce <xref:System.ServiceModel.Channels.MessageHeaderInfo> objekty a jednotlivých záhlaví je přístupná přes jeho <xref:System.Collections.IEnumerable> rozhraní nebo pomocí jeho indexer. Například následující kód obsahuje názvy všech záhlaví v `Message`.  
   
  [!code-csharp[C_UsingTheMessageClass#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#8)]
  [!code-vb[C_UsingTheMessageClass#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#8)]  
@@ -172,7 +174,7 @@ ms.lasthandoff: 12/22/2017
   
  Načíst konkrétní hlavičky pomocí <xref:System.ServiceModel.Channels.MessageHeaders.FindHeader%2A> metoda. Tato metoda přebírá názvem a oborem názvů hlavičky k najít a vrátí její index. Pokud hlavička vyskytuje více než jednou, je vyvolána výjimka. Pokud hlavička nebyla nalezena, vrátí hodnotu -1.  
   
- V modelu hlavičky SOAP, může mít hlavičky `Actor` hodnotu, která určuje zamýšlený příjemce hlavičky. Nejzákladnější `FindHeader` přetížení vyhledá pouze záhlaví určený pro ultimate příjemce zprávy. Ale jiné přetížení umožňuje určit, které `Actor` hodnoty jsou zahrnuty v hledání. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]Specifikace protokolu SOAP.  
+ V modelu hlavičky SOAP, může mít hlavičky `Actor` hodnotu, která určuje zamýšlený příjemce hlavičky. Nejzákladnější `FindHeader` přetížení vyhledá pouze záhlaví určený pro ultimate příjemce zprávy. Ale jiné přetížení umožňuje určit, které `Actor` hodnoty jsou zahrnuty v hledání. Další informace najdete v tématu Specifikace protokolu SOAP.  
   
  A <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> metoda zajišťuje zkopírujte hlaviček z <xref:System.ServiceModel.Channels.MessageHeaders> kolekci na pole <xref:System.ServiceModel.Channels.MessageHeaderInfo> objekty.  
   
@@ -187,7 +189,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="defining-the-message-body-contents"></a>Definování obsah zprávy  
  Existují tři primární techniky pro přístup k datům v rámci tělo zprávy: zápis, čtení a kopírování do vyrovnávací paměti. Tyto operace konečným výsledkem <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>, <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents%2A>, a <xref:System.ServiceModel.Channels.Message.OnCreateBufferedCopy%2A> metody volané, v uvedeném pořadí, v odvozené třídě z `Message`. Základní `Message` třída zaručuje, že pouze jeden z těchto metod je volána pro každou `Message` instance, a že není volaná víc než jednou. Základní třídy taky zajišťuje, že metody nejsou zavolána pro zprávu uzavřené. Není nutné sledovat stav zpráv v implementaci.  
   
- <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>je abstraktní metodu a musí být implementována. Zápis pomocí této metody je nejzákladnější způsob, jak definovat obsah textu zprávy. Například následující zpráva obsahuje 100 000 náhodných čísel od 1 až 20 číslic.  
+ <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> je abstraktní metodu a musí být implementována. Zápis pomocí této metody je nejzákladnější způsob, jak definovat obsah textu zprávy. Například následující zpráva obsahuje 100 000 náhodných čísel od 1 až 20 číslic.  
   
  [!code-csharp[C_UsingTheMessageClass#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#9)]
  [!code-vb[C_UsingTheMessageClass#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#9)]  

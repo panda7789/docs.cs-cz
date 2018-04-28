@@ -1,20 +1,17 @@
 ---
 title: Struktury (F#)
-description: "Další informace o F # strukturu, typ compact objektu, který je často efektivnější než třída pro typy s malé množství dat a jednoduché chování."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Další informace o F # strukturu, typ compact objektu, který je často efektivnější než třída pro typy s malé množství dat a jednoduché chování.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 50819506-3210-418f-9602-0ee1c9a52177
-ms.openlocfilehash: 542b69a5aacb8fcfb0e8f6d6c943fe1954c4c59c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 14a4799b13c40e363dd400f7effd53264acc5614
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="structures"></a>Struktury
 
@@ -59,10 +56,10 @@ Následující příklady kódu ilustrují definice struktury.
 Od verze 4.1 F #, může představovat [záznamy](records.md) a [Rozlišované sjednocení](discriminated-unions.md) jako struktury s `[<Struct>]` atribut.  V každé článku Další informace.
     
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Třídy](classes.md)
 
 [Záznamy](records.md)
 
-[Členy](members/index.md)
+[Členové](members/index.md)

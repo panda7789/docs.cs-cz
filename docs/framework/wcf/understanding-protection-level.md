@@ -1,12 +1,13 @@
 ---
-title: "Princip úrovně ochrany"
-ms.custom: 
+title: Princip úrovně ochrany
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c379cf39f30bf7e75907dba5fb06ba4e3862e299
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4b079d7f6e22f0c1904433c2822b92da91923ef2
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
 `ProtectionLevel` Vlastnost nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost řídí, jak je chráněný část (nebo celé) zprávy. Toto téma vysvětluje [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] funkce a jak to funguje.  
@@ -84,7 +86,7 @@ ms.lasthandoff: 12/22/2017
  Programu `ProtectionLevel` v libovolném bodě v hierarchii, jednoduše nastavte vlastnost na hodnotu odpovídající při použití atributu. Příklady najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md).  
   
 > [!NOTE]
->  Nastavení vlastnosti na chyb a zpráva kontrakty vyžaduje pochopení, jak tyto funkce fungují. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md) a [použití kontraktů zpráv](../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
+>  Nastavení vlastnosti na chyb a zpráva kontrakty vyžaduje pochopení, jak tyto funkce fungují. Další informace najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md) a [pomocí kontrakty zpráv](../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
   
 ## <a name="ws-addressing-dependency"></a>Adresování WS závislostí  
  Ve většině případů pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta zajišťuje, aby byly identické kontrakty klienta a služby. Však zdánlivě identické kontrakty může způsobit, že klient vyvolá výjimku. K tomu dochází vždy, když vazbu nepodporuje specifikaci WS-Addressing a zadávají se na kontrakt několik úrovní ochrany. Například <xref:System.ServiceModel.BasicHttpBinding> třída nepodporuje specifikace, nebo pokud vytvoříte vlastní vazby, který nepodporuje adresování WS. `ProtectionLevel` Funkce závisí na specifikaci WS-Addressing povolit různých úrovních ochrany na jeden kontrakt. Pokud vazba nepodporuje specifikaci WS-Addressing, všechny úrovně se nastaví na stejnou úroveň ochrany. Úroveň účinnou ochranu pro všechny obory ve smlouvě bude nastavena na nejvyšší úroveň ochrany použít na kontrakt.  

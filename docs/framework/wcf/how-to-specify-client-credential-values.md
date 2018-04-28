@@ -1,27 +1,29 @@
 ---
-title: "Postupy: Zadání hodnot přihlašovacích údajů klienta"
-ms.custom: 
+title: 'Postupy: Zadání hodnot přihlašovacích údajů klienta'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 82293d7f-471a-4549-8f19-0be890e7b074
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cd818a2342ff5b44e4e8ab1b237f7c657d3bf438
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 35244032a36af8d3d23fd9d88006ea032a99b44b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-specify-client-credential-values"></a>Postupy: Zadání hodnot přihlašovacích údajů klienta
 Pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], službu, můžete určit, jak je ověření klienta ke službě. Službu můžete například stanovení, ověření klienta s certifikátem.  
@@ -32,7 +34,7 @@ Pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], službu, můžete 
   
 2.  Otevřete konfigurační soubor XML. Pokud používáte nástroje Svcutil.exe, výchozí název souboru je Output.config.  
   
-3.  Najít  **\<zabezpečení >** element s **režimu** atribut (**< režim zabezpečení =** `MessageOrTransport`  **>**  kde `MessageOrTransport` je nastavena na jeden z režimů zabezpečení.  
+3.  Najít  **\<zabezpečení >** element s **režimu** atribut (**< režim zabezpečení =** `MessageOrTransport` **>** kde `MessageOrTransport` je nastavena na jeden z režimů zabezpečení.  
   
 4.  Najděte podřízený element, který odpovídá hodnotě režimu. Například, pokud režim je nastaven na **zpráva**, Najít  **\<zpráva >** obsažené v elementu  **\<zabezpečení >** element.  
   
@@ -50,7 +52,7 @@ Pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], službu, můžete 
 ```  
   
 ## <a name="example-tcp-transport-mode-with-certificate-as-client-credential"></a>Příklad: Režim přenosu protokolu TCP s certifikátem jako pověření klienta  
- Tento příklad nastaví režim zabezpečení pro režim přenosu a nastaví hodnotu přihlašovacích údajů klienta s certifikátem X.509. Následující postupy ukazují, jak nastavit hodnotu přihlašovacích údajů klienta na straně klienta v kódu a konfigurace. Předpokladem je, že jste použili [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vrátit metadata (kódu a konfigurace) ze služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+ Tento příklad nastaví režim zabezpečení pro režim přenosu a nastaví hodnotu přihlašovacích údajů klienta s certifikátem X.509. Následující postupy ukazují, jak nastavit hodnotu přihlašovacích údajů klienta na straně klienta v kódu a konfigurace. Předpokladem je, že jste použili [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vrátit metadata (kódu a konfigurace) ze služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 #### <a name="to-specify-the-client-credential-value-on-the-client-in-code"></a>Zadejte hodnotu přihlašovacích údajů klienta na straně klienta v kódu  
   
@@ -73,7 +75,7 @@ Pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], službu, můžete 
   
 3.  Přidat [ \<clientCertificate >](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) elementu, který chcete [ \<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) element.  
   
-4.  Nastavte následující atributy odpovídající hodnoty: `storeLocation`, `storeName`, `x509FindType`, a `findValue`, jak je znázorněno v následujícím kódu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]certifikáty, najdete v části [práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+4.  Nastavte následující atributy odpovídající hodnoty: `storeLocation`, `storeName`, `x509FindType`, a `findValue`, jak je znázorněno v následujícím kódu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] certifikáty, najdete v části [práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
     ```xml  
     <behaviors>  

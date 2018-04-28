@@ -1,20 +1,17 @@
 ---
-title: "Opožděné výpočty (F#)"
-description: "Zjistěte, jak vylepšit výkon aplikace a knihovny F # opožděné výpočty."
-keywords: "Visual f #, f #, funkční programování"
+title: Opožděné výpočty (F#)
+description: 'Zjistěte, jak vylepšit výkon aplikace a knihovny F # opožděné výpočty.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 3499293e-1d53-4b02-b764-f687fbdaa7fe
-ms.openlocfilehash: 984c96ab68a8919e2382eefe8260b07f191027dd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 72dc5a14a845b52ae2512314d730516ca0cf4b9d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="lazy-computations"></a>Opožděné výpočty
 
@@ -32,7 +29,7 @@ V předchozích syntaxi *výraz* je kód, který se vyhodnotí jenom v případ�
 
 Opožděné výpočty umožňují vylepšit výkon, omezení provádění výpočtu pouze situací, ve kterých je potřeba výsledku.
 
-Chcete-li vynutit výpočet provést, volejte metodu `Force`. `Force`způsobí, že provádění provést pouze jednou. Následující volání `Force` vrátí stejné vést, ale nemůžou provést žádný kód.
+Chcete-li vynutit výpočet provést, volejte metodu `Force`. `Force` způsobí, že provádění provést pouze jednou. Následující volání `Force` vrátí stejné vést, ale nemůžou provést žádný kód.
 
 Následující kód ukazuje použití opožděné výpočty a použití `Force`. V tomto kódu typ `result` je `Lazy<int>`a `Force` metoda vrátí `int`.
 
@@ -42,6 +39,6 @@ Opožděné vyhodnocení, ale ne `Lazy` typem, se taky používá pro pořadí. 
 
 ## <a name="see-also"></a>Viz také
 
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Lazyextensions – modul](https://msdn.microsoft.com/library/86671f40-84a0-402a-867d-ae596218d948)

@@ -1,20 +1,19 @@
 ---
-title: "Úložiště balíčku modulu runtime"
-description: "Toto téma vysvětluje runtime balíček úložiště a cílový manifesty používané .NET Core."
-keywords: "Rozhraní .NET, .NET core dotnet úložiště, úložiště balíček modulu runtime"
+title: Úložiště balíčku modulu runtime
+description: Toto téma vysvětluje runtime balíček úložiště a cílový manifesty používané .NET Core.
 author: bleroy
 ms.author: mairaw
 ms.date: 08/12/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 9521d8b4-25fc-412b-a65b-4c975ebf6bfd
-ms.workload: dotnetcore
-ms.openlocfilehash: de1aa4d29abae6bc6c26c0686bafe9bd9cc10ee1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 8fa3d309b16bd0c3b2b872f6447b7e99956abd81
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčku modulu runtime
 

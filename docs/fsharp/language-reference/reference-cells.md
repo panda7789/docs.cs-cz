@@ -1,20 +1,17 @@
 ---
-title: "Referenční buňky (F#)"
-description: "Zjistěte, jak referenční buňky F # jsou umístění úložiště, které vám umožní vytvořit měnitelný hodnoty s sémantiku odkaz."
-keywords: "Visual f #, f #, funkční programování"
+title: Referenční buňky (F#)
+description: 'Zjistěte, jak referenční buňky F # jsou umístění úložiště, které vám umožní vytvořit měnitelný hodnoty s sémantiku odkaz.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 09a0b221-ea21-45c4-bae8-5e4a339750c4
-ms.openlocfilehash: c7470c9a36cf2cd24dd89ceffcf6e90c6dc4d2dd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e017adb2a031dff996892e2bb6585fc95f644ff9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
@@ -58,11 +55,11 @@ V následující tabulce jsou uvedeny funkce, které jsou u odkazové buňky d
 
 |Operátor, člen nebo pole|Popis|Typ|Definice|
 |--------------------------|-----------|----|----------|
-|`!`(operátoru zrušení)|Vrátí zdrojovou hodnotu.|`'a ref -> 'a`|`let (!) r = r.contents`|
-|`:=`(operátor přiřazení)|Změní zdrojovou hodnotu.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|
-|`ref`(operátor)|Zapouzdří hodnotu do nové odkazové buňky.|`'a -> 'a ref`|`let ref x = { contents = x }`|
-|`Value`(vlastnost)|Získá nebo nastaví zdrojovou hodnotu.|`unit -> 'a`|`member x.Value = x.contents`|
-|`contents`(záznam pole)|Získá nebo nastaví zdrojovou hodnotu.|`'a`|`let ref x = { contents = x }`|
+|`!` (operátoru zrušení)|Vrátí zdrojovou hodnotu.|`'a ref -> 'a`|`let (!) r = r.contents`|
+|`:=` (operátor přiřazení)|Změní zdrojovou hodnotu.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|
+|`ref` (operátor)|Zapouzdří hodnotu do nové odkazové buňky.|`'a -> 'a ref`|`let ref x = { contents = x }`|
+|`Value` (vlastnost)|Získá nebo nastaví zdrojovou hodnotu.|`unit -> 'a`|`member x.Value = x.contents`|
+|`contents` (záznam pole)|Získá nebo nastaví zdrojovou hodnotu.|`'a`|`let ref x = { contents = x }`|
 Ke zdrojové hodnotě lze získat přístup několika způsoby. Hodnota vrácená operátorem dereference (`!`) není přiřadit hodnotu. Proto pokud měníte základní hodnotu, musíte použít operátor přiřazení (`:=`) místo.
 
 Obě `Value` vlastnost a `contents` pole jsou Přiřaditelné hodnoty. Můžete je proto použít ke zpřístupnění nebo změně zdrojové hodnoty, jak znázorňuje následující kód.
@@ -135,8 +132,8 @@ let f (x: byref<int>) = &x
 Aktuálně neexistuje žádný způsob, jak vygenerovat `ref` návratový v jazyce F # které by mohly spotřebovat v jazyce C#.
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [Parametry a argumenty](parameters-and-arguments.md)
 
-[Operátor referenční dokumentace symbolů a](symbol-and-operator-reference/index.md)
+[Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)

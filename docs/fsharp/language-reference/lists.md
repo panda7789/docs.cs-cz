@@ -1,20 +1,17 @@
 ---
 title: Seznamy (F#)
-description: "Další informace o F # seznamy, seřazené, neměnné řadu elementy stejného typu."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Další informace o F # seznamy, seřazené, neměnné řadu elementy stejného typu.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: a1a6075f-064d-4aee-8222-2b59ff16cc12
-ms.openlocfilehash: 5802a5a1c48ad05c1765c4c0fa2e8a81a92dee8d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e29dbdac5e920c009bf7758fd2cc1ad486041cad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="lists"></a>Seznamy
 
@@ -71,8 +68,8 @@ Typ seznamu podporuje následující vlastnosti:
 |Vlastnost|Typ|Popis|
 |--------|----|-----------|
 |[HEAD](https://msdn.microsoft.com/library/5f9414fd-6bdb-470a-8b72-40016db30740)|`'T`|První prvek.|
-|[Prázdný](https://msdn.microsoft.com/library/44406ecb-1918-4d32-b32a-ca1f69840386)|`'T list`|Statické vlastnosti, která vrací prázdný seznam příslušného typu.|
-|[IsEmpty –](https://msdn.microsoft.com/library/3ba087b2-2fc2-406d-b10a-cff6a19322da)|`bool`|`true`Pokud seznam obsahuje žádné elementy.|
+|[prázdný](https://msdn.microsoft.com/library/44406ecb-1918-4d32-b32a-ca1f69840386)|`'T list`|Statické vlastnosti, která vrací prázdný seznam příslušného typu.|
+|[IsEmpty –](https://msdn.microsoft.com/library/3ba087b2-2fc2-406d-b10a-cff6a19322da)|`bool`|`true` Pokud seznam obsahuje žádné elementy.|
 |[Položka](https://msdn.microsoft.com/library/bdb2553a-0e54-4ff8-baed-ab1aac8f5dae)|`'T`|Element v zadaném indexu (počítáno od nuly).|
 |[Délka](https://msdn.microsoft.com/library/25f715c8-9daa-4c4d-a6c7-26772f9dab4d)|`int`|Počet elementů.|
 |[Tail](https://msdn.microsoft.com/library/2a6f8eb9-dc32-41aa-8b62-2baffaface91)|`'T list`|Seznam bez první prvek.|
@@ -109,7 +106,7 @@ Primes Up To 100:
 ```
 
 ## <a name="module-functions"></a>Funkce modulu
-[Modul seznam](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788) poskytuje funkce, které přístup k elementům seznamu. Head element je nejrychlejší a nejjednodušší přístup. Použijte vlastnost [Head](https://msdn.microsoft.com/library/5f9414fd-6bdb-470a-8b72-40016db30740) nebo funkce modulu [list.HEAD –](https://msdn.microsoft.com/library/22514cc5-0511-498b-a2cc-837b688a6da2). Máte přístup k konec seznamu pomocí [Tail](https://msdn.microsoft.com/library/2a6f8eb9-dc32-41aa-8b62-2baffaface91) vlastnost nebo [list.Tail –](https://msdn.microsoft.com/library/da0a0638-4420-4571-84b6-d09ae601f601) funkce. Chcete-li při vyhledávání prvku pomocí indexu, použijte [List.nth](https://msdn.microsoft.com/library/1f717d57-89be-4007-a971-9cf5a28d83b1) funkce. `List.nth`prochází seznamu. Proto je O (*n*). Pokud váš kód používá `List.nth` často, můžete chtít zvážit použití pole místo seznam. O(1), která je element přístup v polích.
+[Modul seznam](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788) poskytuje funkce, které přístup k elementům seznamu. Head element je nejrychlejší a nejjednodušší přístup. Použijte vlastnost [Head](https://msdn.microsoft.com/library/5f9414fd-6bdb-470a-8b72-40016db30740) nebo funkce modulu [list.HEAD –](https://msdn.microsoft.com/library/22514cc5-0511-498b-a2cc-837b688a6da2). Máte přístup k konec seznamu pomocí [Tail](https://msdn.microsoft.com/library/2a6f8eb9-dc32-41aa-8b62-2baffaface91) vlastnost nebo [list.Tail –](https://msdn.microsoft.com/library/da0a0638-4420-4571-84b6-d09ae601f601) funkce. Chcete-li při vyhledávání prvku pomocí indexu, použijte [List.nth](https://msdn.microsoft.com/library/1f717d57-89be-4007-a971-9cf5a28d83b1) funkce. `List.nth` prochází seznamu. Proto je O (*n*). Pokud váš kód používá `List.nth` často, můžete chtít zvážit použití pole místo seznam. O(1), která je element přístup v polích.
 
 
 ### <a name="boolean-operations-on-lists"></a>Na seznamu logických operací
@@ -160,9 +157,9 @@ false
 ```
 
 ### <a name="sort-operations-on-lists"></a>Operace řazení v seznamech
-[List.Sort –](https://msdn.microsoft.com/library/17f1030e-aa7e-41dd-94ea-72cb6c04fd3d), [list.sortby –](https://msdn.microsoft.com/library/955bfc5f-ad9c-4f2d-a7ab-91e43eb21359), a [list.sortwith –](https://msdn.microsoft.com/library/1d806a54-9166-4198-906d-15101f7916c7) funkce seřadit seznamy. Funkce třídění určuje, které z těchto tří funkcí používat. `List.sort`používá výchozí obecné porovnání. Obecné porovnání pro porovnání hodnot používá globální operátory podle funkce obecné porovnání. Efektivní funguje se širokou škálu element typy, jako je jednoduchý číselnými typy, řazené kolekce členů, záznamy, rozlišovaná sjednocení, seznamy, pole a žádný typ, který implementuje `System.IComparable`. Pro typy, které implementují `System.IComparable`, používá obecné porovnání `System.IComparable.CompareTo()` funkce. Obecné porovnání také funguje s řetězci, ale s pořadí řazení nezávislé na jazykové verzi. Obecné porovnání není vhodné používat na nepodporované typy, jako jsou typy funkce. Navíc výkon obecné výchozím porovnáním je nejvhodnější pro malé strukturovaných typy; pro větší strukturovaných typy, které třeba porovnání a seřazeny často, zvažte implementaci `System.IComparable` a zajištění efektivní provádění `System.IComparable.CompareTo()` metoda.
+[List.Sort –](https://msdn.microsoft.com/library/17f1030e-aa7e-41dd-94ea-72cb6c04fd3d), [list.sortby –](https://msdn.microsoft.com/library/955bfc5f-ad9c-4f2d-a7ab-91e43eb21359), a [list.sortwith –](https://msdn.microsoft.com/library/1d806a54-9166-4198-906d-15101f7916c7) funkce seřadit seznamy. Funkce třídění určuje, které z těchto tří funkcí používat. `List.sort` používá výchozí obecné porovnání. Obecné porovnání pro porovnání hodnot používá globální operátory podle funkce obecné porovnání. Efektivní funguje se širokou škálu element typy, jako je jednoduchý číselnými typy, řazené kolekce členů, záznamy, rozlišovaná sjednocení, seznamy, pole a žádný typ, který implementuje `System.IComparable`. Pro typy, které implementují `System.IComparable`, používá obecné porovnání `System.IComparable.CompareTo()` funkce. Obecné porovnání také funguje s řetězci, ale s pořadí řazení nezávislé na jazykové verzi. Obecné porovnání není vhodné používat na nepodporované typy, jako jsou typy funkce. Navíc výkon obecné výchozím porovnáním je nejvhodnější pro malé strukturovaných typy; pro větší strukturovaných typy, které třeba porovnání a seřazeny často, zvažte implementaci `System.IComparable` a zajištění efektivní provádění `System.IComparable.CompareTo()` metoda.
 
-`List.sortBy`provede funkci, která vrátí hodnotu, která se používá jako kritérium řazení a `List.sortWith` přijímá jako argument funkce porovnání. Tyto pozdější dvě funkce jsou užitečné, když pracujete s typy, které nepodporují porovnání nebo při porovnání vyžaduje složitější sémantiku porovnání, jako v případě podporující jazykové verze řetězce.
+`List.sortBy` provede funkci, která vrátí hodnotu, která se používá jako kritérium řazení a `List.sortWith` přijímá jako argument funkce porovnání. Tyto pozdější dvě funkce jsou užitečné, když pracujete s typy, které nepodporují porovnání nebo při porovnání vyžaduje složitější sémantiku porovnání, jako v případě podporující jazykové verze řetězce.
 
 Následující příklad ukazuje použití `List.sort`.
 
@@ -377,7 +374,7 @@ Můžete také použít [list.Filter –](https://msdn.microsoft.com/library/11a
 
 V rozevíracím seznamu je `[2; 4; 6]`.
 
-V kombinaci mapy a filtr [list.Choose –](https://msdn.microsoft.com/library/2e21d3fb-ce35-4824-8a57-c4404616093d) vám umožňuje transformovat a vybrat elementy ve stejnou dobu. `List.choose`funkci, která vrátí možnost každý prvek seznamu a vrátí nový seznam výsledky pro elementy při funkce vrátí hodnotu možnost se vztahuje `Some`.
+V kombinaci mapy a filtr [list.Choose –](https://msdn.microsoft.com/library/2e21d3fb-ce35-4824-8a57-c4404616093d) vám umožňuje transformovat a vybrat elementy ve stejnou dobu. `List.choose` funkci, která vrátí možnost každý prvek seznamu a vrátí nový seznam výsledky pro elementy při funkce vrátí hodnotu možnost se vztahuje `Some`.
 
 Následující kód ukazuje použití `List.choose` vyberte převedených na velká písmena slova mimo seznam slov.
 
@@ -411,7 +408,7 @@ Následující příklad ukazuje použití `List.fold2`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet28.fs)]
 
-`List.fold`a [list.Scan –](https://msdn.microsoft.com/library/21f636db-885c-4a72-970e-e3841f33a1b8) se liší v tom, že `List.fold` vrátí poslední hodnotu speciálním parametrem, ale `List.scan` vrátí seznam pomocných hodnot (spolu s konečná hodnota) navíc parametru.
+`List.fold` a [list.Scan –](https://msdn.microsoft.com/library/21f636db-885c-4a72-970e-e3841f33a1b8) se liší v tom, že `List.fold` vrátí poslední hodnotu speciálním parametrem, ale `List.scan` vrátí seznam pomocných hodnot (spolu s konečná hodnota) navíc parametru.
 
 Každá z těchto funkcí zpětného variace, například zahrnuje [list.foldback –](https://msdn.microsoft.com/library/b9a58e66-efe1-445f-a90c-ac9ffb9d40c7), který se liší v pořadí, ve které je seznam vyčerpán a pořadí argumentů. Navíc `List.fold` a `List.foldBack` mají varianty, [list.fold2 –](https://msdn.microsoft.com/library/6cfcd043-a65d-4423-805a-2ab234cb5343) a [list.foldback2 –](https://msdn.microsoft.com/library/56371d3e-5271-4183-9e8c-15a02eda9aa2), které přebírají dva seznamy stejné délky. Funkce, která spustí pro každý element můžete použít odpovídající elementy oba seznamy k provedení několika akcí. Element typy dva seznamy může být jiné, jako v následujícím příkladu, ve kterém jeden seznam obsahuje objemy transakcí pro účet bank a další seznam obsahuje typ transakce: uložení nebo stažení.
 
@@ -425,7 +422,7 @@ Následující příklad vrátí příkladu bankovní účet. Tentokrát je při
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet34.fs)]
 
-Funkce [list.reduce –](https://msdn.microsoft.com/library/048e1f95-691b-49cb-bb99-fb85f68f3d8b) je něco jako `List.fold` a `List.scan`kromě toho, že místo předávání kolem samostatné akumulátoru, `List.reduce` trvá funkci, která má dva argumenty typu prvku místo jenom jeden a jeden z těchto argumentů funguje jako je zásobník, což znamená, ukládá zprostředkující výsledek výpočet. `List.reduce`spustí na provoz na prvních dvou seznam prvků a potom pomocí výsledek operace spolu s další prvek. Protože samostatné akumulátorová, který má vlastní typ není `List.reduce` lze místě `List.fold` pouze když je zásobník a typ elementu mají stejného typu. Následující kód ukazuje použití `List.reduce`. `List.reduce`vyvolá výjimku, pokud zadaný seznam obsahuje žádné elementy.
+Funkce [list.reduce –](https://msdn.microsoft.com/library/048e1f95-691b-49cb-bb99-fb85f68f3d8b) je něco jako `List.fold` a `List.scan`kromě toho, že místo předávání kolem samostatné akumulátoru, `List.reduce` trvá funkci, která má dva argumenty typu prvku místo jenom jeden a jeden z těchto argumentů funguje jako je zásobník, což znamená, ukládá zprostředkující výsledek výpočet. `List.reduce` spustí na provoz na prvních dvou seznam prvků a potom pomocí výsledek operace spolu s další prvek. Protože samostatné akumulátorová, který má vlastní typ není `List.reduce` lze místě `List.fold` pouze když je zásobník a typ elementu mají stejného typu. Následující kód ukazuje použití `List.reduce`. `List.reduce` vyvolá výjimku, pokud zadaný seznam obsahuje žádné elementy.
 
 V následujícím kódu první volání výrazu lambda získá argumenty, 2 a 4 a vrátí hodnotu 6, a další volání je zadané argumenty 6 a 10, tak, aby výsledkem 16.
 
@@ -440,11 +437,11 @@ Informace o dalších operacích v seznamech najdete v tématu v referenčním t
 
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
-[Typy F #](fsharp-types.md)
+[Typy F#](fsharp-types.md)
 
-[Pořadí](sequences.md)
+[Sekvence](sequences.md)
 
 [Pole](arrays.md)
 

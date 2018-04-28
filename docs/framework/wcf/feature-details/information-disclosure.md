@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 0af083ba1d97fcf07eab6f9d789f023a9194070c
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c603032e175fd8390abea2db625321d3e3558c1a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, které informace jsou odhalil a zda jej lze použít uživatelem se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a jejich zmírnění pro každý.  
@@ -32,7 +32,7 @@ Zpřístupnění informací umožňuje útočníkovi získat cenné informace o 
  Zachování zásady zabezpečení je důležité, zejména v federační scénáře, kde je v zásadách vystaven citlivé vydán token požadavky nebo informace o tokenu vystavitele. V těchto případech doporučujeme zabezpečit koncový bod zásad federované služby pro aby útočníci nemohli získat informace o službě, jako je typ deklarace identity se umístí vystavený token, nebo přesměrovat klienty na škodlivý tokenu vystavitelů. Například může útočník zjistit párů jméno a heslo uživatele změnou řetězu federovaného vztahu důvěryhodnosti ukončit v vystavitele, provést útok man-in-the-middle. Dále je doporučeno, federované klienti, kteří získat jejich vazby prostřednictvím načtení zásad ověřte, zda důvěřují vystavitele v řetězu získaných federovaný vztah důvěryhodnosti. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] federační scénáře, najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
   
 ## <a name="memory-dumps-can-reveal-claim-information"></a>Výpisy paměti může odhalit informace o deklaraci identity  
- Pokud se aplikace nezdaří, přihlaste se soubory, jako jsou ty vyprodukované zotavení po havárii. Watson, může obsahovat informace o deklaraci identity. Tyto informace by neměl být exportovány do jinými entitami, jako je například týmy podpory; jinak informace o deklaraci identity, obsahující privátní data taky exportovat. Můžete zmírnit není poslat soubory protokolu na neznámý entity. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160).  
+ Pokud se aplikace nezdaří, přihlaste se soubory, jako jsou ty vyprodukované zotavení po havárii. Watson, může obsahovat informace o deklaraci identity. Tyto informace by neměl být exportovány do jinými entitami, jako je například týmy podpory; jinak informace o deklaraci identity, obsahující privátní data taky exportovat. Můžete zmírnit není poslat soubory protokolu na neznámý entity. Další informace najdete v tématu [systému Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160).  
   
 ## <a name="endpoint-addresses"></a>Adresy koncových bodů  
  Adresy koncového bodu obsahuje informace potřebné ke komunikaci s koncovým bodem. Zabezpečení protokolu SOAP musí obsahovat adresu plně ve zprávách vyjednávání zabezpečení, které se vyměňují aby bylo možné vyjednávání symetrického klíče mezi klientem a serverem. Protože vyjednávání zabezpečení je spuštění procesu, hlavičky adresy nelze zašifrovat během tohoto procesu. Proto adresa nesmí obsahovat žádné důvěrných dat; jinak hodnota vede k útokům zpřístupnění informací.  

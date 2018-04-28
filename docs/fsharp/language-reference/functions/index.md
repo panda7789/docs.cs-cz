@@ -1,20 +1,17 @@
 ---
 title: Funkce (F#)
 description: 'Informace o funkcích v F # a jak F # podporuje společné funkční programovací konstrukce.'
-keywords: 'Visual f #, f #, funkční programování'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 6dea2c3e-2f9d-4c9d-97a2-d8f9a72b6f4c
-ms.openlocfilehash: adb2b0b3680c97582dfefda41c43735f9f09e6c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4cdab85dd63cc74a4c6e7abf660f8f32cc088120
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="functions"></a>Funkce
 
@@ -115,7 +112,7 @@ By pak zadáte další argument podle potřeby pro různých délek kanálu pro 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet107.fs)]
     
 ## <a name="recursive-functions"></a>Rekurzivní funkce
-*Rekurzivní funkce* jsou funkce, které volání sebe sama. Potřebují, zda jste zadali **rec** následující – klíčové slovo **let** – klíčové slovo. Vyvolání funkce rekurzivní z v textu funkce stejně, jako by vyvolání jakékoli volání funkce. Následující funkce rekurzivní vypočítá  *n* tý Fibonacciho číslo. Pořadí Fibonacciho číslo je známo, od antiquity a je pořadí, ve kterém všechna po sobě jdoucí čísla je součet hodnot předchozích dvou čísel v pořadí.
+*Rekurzivní funkce* jsou funkce, které volání sebe sama. Potřebují, zda jste zadali **rec** následující – klíčové slovo **let** – klíčové slovo. Vyvolání funkce rekurzivní z v textu funkce stejně, jako by vyvolání jakékoli volání funkce. Následující funkce rekurzivní vypočítá *n*tý Fibonacciho číslo. Pořadí Fibonacciho číslo je známo, od antiquity a je pořadí, ve kterém všechna po sobě jdoucí čísla je součet hodnot předchozích dvou čísel v pořadí.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 

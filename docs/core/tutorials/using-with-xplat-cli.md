@@ -1,22 +1,20 @@
 ---
 title: Začínáme s .NET Core pomocí rozhraní příkazového řádku
 description: Podrobný kurz znázorňující postup Začínáme s .NET Core v systému Windows, Linux nebo systému macOS pomocí rozhraní .NET Core příkazového řádku (CLI).
-keywords: .NET core, rozhraní příkazového řádku
 author: cartermp
 ms.author: mairaw
 ms.date: 03/08/2017
 ms.topic: get-started-article
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: c5082806c907a6c6d4f51bf77e54deee08de3d8b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 23aec1b951c4b65d62bd4da4b4c94043b1411cf3
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core v systému Windows nebo Linux/macOS pomocí příkazového řádku
 
@@ -26,7 +24,7 @@ Pokud jste obeznámeni s .NET Core rozhraní příkazového řádku sady nástro
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET Core SDK 1.0](https://www.microsoft.com/net/download/core).
+- [.NET core SDK 1.0](https://www.microsoft.com/net/download/core).
 - Textového editoru nebo editoru kódu podle svého výběru.
 
 ## <a name="hello-console-app"></a>Hello, konzolovou aplikaci!

@@ -1,22 +1,20 @@
 ---
-title: ".NET core rozhraní příkazového řádku nástroje telemetrie"
-description: "Seznamte se s funkcemi telemetrie nástroje .NET Core, která shromažďují informace o využití za účelem analýzy, která data se shromažďují a jak ji zakázat."
-keywords: .NET,.NET Core,telemetry
+title: .NET core rozhraní příkazového řádku nástroje telemetrie
+description: Seznamte se s funkcemi telemetrie nástroje .NET Core, která shromažďují informace o využití za účelem analýzy, která data se shromažďují a jak ji zakázat.
 author: richlander
 ms.author: mairaw
 ms.date: 08/04/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 9a78ec370fd53260f26a5d8c15707a5d611e458f
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: b3da69a7fc8de095b3845428af742870e7e737ad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-cli-tools-telemetry"></a>.NET core rozhraní příkazového řádku nástroje telemetrie
 
@@ -49,20 +47,20 @@ Ve výchozím nastavení je povolena funkce telemetrie nástrojů příkazového
 
 Funkci shromažďuje následující data:
 
-- Časové razítko volání &#8224;
-- Příkaz vyvolat (například "sestavení") &#8224;
-- Tři octet adresa IP použitá k určení zeměpisné umístění &#8224;
-- `ExitCode`příkaz
+- Časové razítko volání&#8224;
+- Příkaz vyvolat (například "sestavení")&#8224;
+- Tři octet adresa IP použitá k určení zeměpisné umístění&#8224;
+- `ExitCode` příkaz
 - Spuštění testu (pro testovací projekty)
-- Operační systém a verze &#8224;
+- Operační systém a verze&#8224;
 - Jestli se nacházejí v uzlu moduly runtime ID modulu runtime
-- Verze rozhraní .NET core SDK &#8224;
+- Verze rozhraní .NET core SDK&#8224;
 
-&#8224; Tato metrika je publikován.
+&#8224;Tato metrika je publikován.
 
 Od verze rozhraní .NET Core SDK 2.0, se shromažďují nové datové body:
 
-- `dotnet`příkaz Možnosti a argumenty: pouze známé argumenty a možnosti jsou shromážděná (ne libovolný řetězce).
+- `dotnet` příkaz Možnosti a argumenty: pouze známé argumenty a možnosti jsou shromážděná (ne libovolný řetězce).
 - Zda je spuštěna sada SDK v kontejneru.
 - Cílové architektury.
 - Adresu MAC s použitím algoritmu hash: kryptograficky (SHA256) anonymní a jedinečné ID pro počítač. Tato metrika není publikována.
@@ -84,20 +82,20 @@ Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v [Data o využití
 - OSVersion
 - SDKVersion
 
-&#8224; *Výskytů* sloupec zobrazuje agregovaná počet tento příkaz použijte pro tento řádek metriky daný den. 
+&#8224;*Výskytů* sloupec zobrazuje agregovaná počet tento příkaz použijte pro tento řádek metriky daný den. 
 
-&#8225; Obvykle *Geography* sloupec zobrazuje název země. V některých případech se zobrazí na kontinentě Antarktida v tomto sloupci, buď z důvodu výzkumných pracovníků pomocí .NET Core Antarktida nebo data nesprávné umístění.
+&#8225;Obvykle *Geography* sloupec zobrazuje název země. V některých případech se zobrazí na kontinentě Antarktida v tomto sloupci, buď z důvodu výzkumných pracovníků pomocí .NET Core Antarktida nebo data nesprávné umístění.
 
 ### <a name="example"></a>Příklad
 
 | časové razítko      | Výskytů | Příkaz | Geography | Atribut OSFamily | RuntimeID     | OSVersion | SDKVersion |
 | -------------- | ----------- | ------- | --------- | -------- | ------------- | --------- | ---------- |
-| 4/16/2017 0:00 | 8           | Spustit     | Uganda    | Darwin   | osx.10.12-x64 | 10.12     | 1.0.1      |
+| 4/16/2017 0:00 | 8           | Spustit     | Ugandy    | Darwin   | osx.10.12-x64 | 10.12     | 1.0.1      |
 
 ### <a name="datasets"></a>Datové sady
 
-[2016 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)  
-[2016 - Q4](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)  
+[2016 - 3. ČTVRTLETÍ](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)  
+[2016 - 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)  
 [2017 - 1.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q1.tsv)  
 [2017 - DOTAZ Č. 2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)
 
@@ -107,13 +105,13 @@ Další datové sady jsou odeslány standardní formátu adresy URL. Nahraďte `
 https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-<YEAR>-q<QUARTER>.tsv
 ```
 
-## <a name="license"></a>License
+## <a name="license"></a>Licence
 
 Distribuce Microsoft .NET Core má licenci na [smlouvy EULA KNIHOVNY MICROSOFT .NET](https://aka.ms/dotnet-core-eula). Tuto licenci zahrnuje v části "DATA" Povolit telemetrii (zobrazené dole).
 
 [Balíčky NuGet pro rozhraní .NET](https://www.nuget.org/profiles/dotnetframework) použít licence, které jsou stejné, ale nepovolíte telemetrie (najdete v části [oboru](#scope)).
 
-> 2. DATA. Software může shromažďovat informace o vás a používání softwaru a který odesílat společnosti Microsoft. Microsoft může tyto informace využívat ke zlepšování našich produktů a služeb. Můžete získat další informace o shromažďování dat a použít v prohlášení o ochraně osobních údajů v http://go.microsoft.com/fwlink/?LinkId=528096 a v nápovědě. Používání softwaru funguje jako svůj souhlas s tyto postupy.
+> 2. DATA. Software může shromažďovat informace o vás a používání softwaru a který odesílat společnosti Microsoft. Microsoft může tyto informace využívat ke zlepšování našich produktů a služeb. Můžete získat další informace o shromažďování dat a použít v dokumentaci nápovědy a prohlášení o ochraně osobních údajů na adrese http://go.microsoft.com/fwlink/?LinkId=528096. Používání softwaru funguje jako svůj souhlas s tyto postupy.
 
 ## <a name="disclosure"></a>Zpřístupnění
 

@@ -1,21 +1,19 @@
 ---
 title: Nasazení aplikace .NET core
 description: Nasazení aplikace .NET Core.
-keywords: Nasazení .NET Core .NET, .NET core
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 87a70ac246e37c646f9be578a03dda7037cfdd2d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5b8d49fd70b6e6b136a00aa0f7d7070bdd5a401a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 

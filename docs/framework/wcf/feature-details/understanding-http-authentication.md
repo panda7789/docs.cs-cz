@@ -1,24 +1,26 @@
 ---
-title: "Princip ověřování HTTP"
-ms.custom: 
+title: Princip ověřování HTTP
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 32d7df95c6acbe34a677cbd2951fd912466d015f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0fe72ad1aab35a8cb384248e90500cf5410c0774
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="understanding-http-authentication"></a>Princip ověřování HTTP
 Ověřování je proces identifikace, zda je vhodné pro přístup k prostředkům klienta. Protokol HTTP podporuje ověřování jako způsob vyjednávání přístup k zabezpečení prostředků.  
@@ -35,7 +37,7 @@ Ověřování je proces identifikace, zda je vhodné pro přístup k prostředk�
 |Ověřování algoritmem Digest|Ověřování hodnotou hash je výzvy a odezvy schématu, která má nahradit základní ověřování. Server odešle řetězec náhodná data názvem *hodnotu nonce* klientovi jako výzvu. Klient odpoví hodnotu hash, která obsahuje uživatelské jméno, heslo a hodnotu nonce mezi Další informace. Složitost, kterou představuje tento exchange a dat, výpočtu hodnoty hash je obtížné více ukrást a opakovaně používat přihlašovací údaje uživatele se toto schéma ověřování.<br /><br /> Ověřování algoritmem Digest vyžaduje použití účtů domény Windows. Daný výtah *sféry* je název domény systému Windows. Proto nelze použít server běžící na operační systém, který nepodporuje domény systému Windows, například Windows XP Home Edition s ověřování hodnotou hash. Naopak pokud klient se spouští na operační systém, který nepodporuje doménách systému Windows, účet domény musí být explicitně zadaná během ověřování.|  
 |NTLM|NT LAN Manager (NTLM) authentication je schéma výzvy a odezvy, který je securer varianta ověřování hodnotou hash. NTLM používá přihlašovací údaje systému Windows pro transformaci dat výzvy místo nekódovaného uživatelské jméno a heslo. Ověřování protokolem NTLM vyžaduje víc výměn mezi klientem a serverem. Server a všechny použité proxy musí podporovat trvalé připojení k úspěšnému provedení ověřování.|  
 |Vyjednávání|Vyjednávání ověřování automaticky vybere mezi protokolu Kerberos a ověřování NTLM, v závislosti na dostupnosti. Protokol Kerberos se používá, pokud je k dispozici. v opačném případě se pokus o protokolu NTLM. Ověřování protokolem Kerberos se výrazně zvyšuje na protokol NTLM. Ověřování protokolem Kerberos se rychleji než pomocí protokolu NTLM a umožňuje použití vzájemného ověření a delegování pověření na vzdálených počítačích.|  
-|Windows Live ID|Základní služba Windows HTTP zahrnuje ověřování pomocí protokolů federované. Přenosy, ale standardního protokolu HTTP v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporují použití schémat federovaného ověřování, jako je například Microsoft Windows Live ID. Podpora pro tuto funkci je aktuálně k dispozici prostřednictvím zabezpečení zpráv. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|Windows Live ID|Základní služba Windows HTTP zahrnuje ověřování pomocí protokolů federované. Přenosy, ale standardního protokolu HTTP v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporují použití schémat federovaného ověřování, jako je například Microsoft Windows Live ID. Podpora pro tuto funkci je aktuálně k dispozici prostřednictvím zabezpečení zpráv. Další informace najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ## <a name="choosing-an-authentication-scheme"></a>Výběr příslušné schéma ověřování  
  Když vyberete potenciální schémat ověřování pro HTTP server, několik položek vzít v úvahu, patří:  

@@ -1,35 +1,35 @@
 ---
-title: "Analytické trasování – přehled"
-ms.custom: 
+title: Analytické trasování – přehled
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - analytic tracing [WCF], overview
 ms.assetid: ae55e9cc-0809-442f-921f-d644290ebf15
-caps.latest.revision: 
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3492821d56f7089c2aa53bba566690ded02f8a5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c29065ebe03617e288d7ebde3dc6b42cbfcf6061
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="analytic-tracing-overview"></a>Analytické trasování – přehled
 Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] je vysoký výkon a nízkou podrobností trasování funkce nastavit nad událostí trasování pro Windows (ETW). Trasování událostí pro Windows se spustí na úrovni jádra k výrazně snížit režii trasování operací. Ho efektivně ukládá do vyrovnávací paměti události režimu uživatele a jádra a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování je k dispozici v případě, že byl vygenerované a přijaté protokoly za ním.  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]Trasování událostí pro Windows, najdete v části [vylepšení ladění a optimalizace výkonu s ETW](http://go.microsoft.com/fwlink/?LinkId=164781).  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] Trasování událostí pro Windows, najdete v části [vylepšení ladění a optimalizace výkonu s ETW](http://go.microsoft.com/fwlink/?LinkId=164781).  
   
- Kromě použití protokolů událostí systému Windows, zabezpečení a aplikace pro analýzu aplikace, [!INCLUDE[wv](../../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavedená další protokoly pod uzlem protokoly aplikací a služeb nejvyšší úrovně. Účelem tyto nové protokoly je k uložení událostí pro konkrétní aplikaci nebo konkrétní součást místo globální události, které mají vliv systémové (jako je například typ události, které může záznam v protokolu událostí zabezpečení). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)]kombinuje a korelaci protokolování [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] události trasování, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] protokolů zpráv a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů protokoly aplikací a služeb.  
+ Kromě použití protokolů událostí systému Windows, zabezpečení a aplikace pro analýzu aplikace, [!INCLUDE[wv](../../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavedená další protokoly pod uzlem protokoly aplikací a služeb nejvyšší úrovně. Účelem tyto nové protokoly je k uložení událostí pro konkrétní aplikaci nebo konkrétní součást místo globální události, které mají vliv systémové (jako je například typ události, které může záznam v protokolu událostí zabezpečení). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] kombinuje a korelaci protokolování [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] události trasování, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] protokolů zpráv a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů protokoly aplikací a služeb.  
   
 ## <a name="concepts-and-capabilities"></a>Koncepty a funkce  
  Následující koncepty a možnosti použít [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] analytické trasování.  
@@ -54,10 +54,10 @@ Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/
  `ServiceModelReg.exe -i -c:etw`  
   
 ### <a name="dynamic-configuration"></a>Dynamické konfigurace  
- Trasování událostí pro Windows infrastruktury umožňuje trasování být povolené a nakonfigurované dynamické pomocí standardních nástrojů systému Windows. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Dynamické povolování analytického sledování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).  
+ Trasování událostí pro Windows infrastruktury umožňuje trasování být povolené a nakonfigurované dynamické pomocí standardních nástrojů systému Windows. Další informace najdete v tématu [dynamické povolování analytického trasování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).  
   
 ### <a name="message-flow-tracing"></a>Trasování toku zpráv  
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]Povolit trasování toku zpráv najdete v tématu [Konfigurace trasování toku zpráv](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md).  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] Povolit trasování toku zpráv najdete v tématu [Konfigurace trasování toku zpráv](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md).  
   
 ### <a name="keywords"></a>Klíčová slova  
- Klíčová slova se používají k filtrování zprávy trasování a definovat jakou součást [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] vygenerované události. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Dynamické povolování analytického sledování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).
+ Klíčová slova se používají k filtrování zprávy trasování a definovat jakou součást [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] vygenerované události. Další informace najdete v tématu [dynamické povolování analytického trasování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).

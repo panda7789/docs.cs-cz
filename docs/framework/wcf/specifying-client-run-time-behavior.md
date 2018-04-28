@@ -1,13 +1,13 @@
 ---
-title: "Nastavení běhového chování klienta"
-ms.custom: 
+title: Nastavení běhového chování klienta
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a8c05dc56ec8fac0a77b1a21536d815b5b65f830
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb6ba82af23f51e43da57adb0e65c77ee3436676
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]jako klienti, [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby, lze nakonfigurovat tak, abyste upravili chování běhové tak, aby vyhovovala klientská aplikace. Tři atributy jsou k dispozici pro určení chování klienta. Můžete použít objekty zpětné volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributy změnit jejich chování. Pro atribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, lze použít k oddělení logické cílové z cílového okamžitou síť. Kromě toho můžete použít typů zpětného volání duplexní klientů některá chování straně služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Určení chování služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] jako klienti, [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby, lze nakonfigurovat tak, abyste upravili chování běhové tak, aby vyhovovala klientská aplikace. Tři atributy jsou k dispozici pro určení chování klienta. Můžete použít objekty zpětné volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributy změnit jejich chování. Pro atribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, lze použít k oddělení logické cílové z cílového okamžitou síť. Kromě toho můžete použít typů zpětného volání duplexní klientů některá chování straně služby. Další informace najdete v tématu [určení chování služby Run-Time](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
   
 ## <a name="using-the-callbackbehaviorattribute"></a>Pomocí třídy CallbackBehaviorAttribute  
  Můžete nakonfigurovat nebo rozšíření pomocí chování při spuštění implementace kontraktu zpětného volání v aplikaci klienta <xref:System.ServiceModel.CallbackBehaviorAttribute> třídy. Tento atribut provádí podobné funkce pro třídu zpětného volání, jako <xref:System.ServiceModel.ServiceBehaviorAttribute> třída, s výjimkou vytváření instancí nastavení chování a transakce.  

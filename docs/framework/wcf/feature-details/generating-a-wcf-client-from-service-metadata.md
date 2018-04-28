@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-caps.latest.revision: ''
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9eedf84d1dccb8bc2540aca7e6bd338b4e58326d
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 3f48de4b4073a6b34671b3eab5e07890790c71ce
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Generování klienta WCF z metadat služby
 Toto téma popisuje, jak používat různé přepínače v Svcutil.exe generovat klienty z dokumentů metadat.  
@@ -44,14 +44,14 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/ reference:\<cesta k souboru >**|Typy odkazů v zadaném sestavení. Generování klienty, když pomocí této možnosti zadejte sestavení, která může obsahovat typy, které představují metadata importována.<br /><br /> Krátkých úseků: `/r`|  
-|**/excludeType:\<type>**|Určuje název plně kvalifikovaný nebo sestavení kvalifikovaný typ mají být vyloučeny z typů odkazované kontrakt.<br /><br /> Krátkých úseků: `/et`|  
+|**/excludeType:\<typ >**|Určuje název plně kvalifikovaný nebo sestavení kvalifikovaný typ mají být vyloučeny z typů odkazované kontrakt.<br /><br /> Krátkých úseků: `/et`|  
   
 ## <a name="choosing-a-serializer"></a>Výběr označuje, že serializátor  
   
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/serializer:Auto**|Automaticky vybere serializátor. Se používá `DataContract` serializátor. Pokud se to nezdaří, `XmlSerializer` se používá.<br /><br /> Krátkých úseků: `/ser:Auto`|  
-|**/serializer:DataContractSerializer**|Generuje datové typy, které používají `DataContract` serializátor k serializaci a deserializaci.<br /><br /> Krátkých úseků: `/ser:DataContractSerializer`|  
+|**/serializer:dataContractSerializer**|Generuje datové typy, které používají `DataContract` serializátor k serializaci a deserializaci.<br /><br /> Krátkých úseků: `/ser:DataContractSerializer`|  
 |**/serializer:XmlSerializer**|Generuje datové typy, které používají `XmlSerializer` k serializaci a deserializaci.<br /><br /> Krátkých úseků: `/ser:XmlSerializer`|  
 |**/importXmlTypes**|Nakonfiguruje `DataContract` serializátor import jinou hodnotu než`DataContract` typy jako `IXmlSerializable` typy.<br /><br /> Krátkých úseků: `/ixt`|  
 |**/dataContractOnly**|Generuje kód pro `DataContract` pouze typy. `ServiceContract` typy jsou generovány.<br /><br /> Musíte zadat pouze místních metadat soubory pro tuto možnost.<br /><br /> Krátkých úseků: `/dconly`|  
@@ -60,7 +60,7 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/Language:\<jazyka >**|Určuje programovací jazyk, který chcete použít pro generování kódu. Zadejte název jazyka zaregistrovat v souboru Machine.config nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: c#, cs, csharp, vb, vbs, visualbasic, vbscript, javascript, c ++, mc, cpp<br /><br /> Výchozí: csharp<br /><br /> Krátkých úseků: `/l`<br /><br /> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Třída CodeDomProvider](http://go.microsoft.com/fwlink/?LinkId=94778).|  
+|**/Language:\<jazyka >**|Určuje programovací jazyk, který chcete použít pro generování kódu. Zadejte název jazyka zaregistrovat v souboru Machine.config nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: c#, cs, csharp, vb, vbs, visualbasic, vbscript, javascript, c ++, mc, cpp<br /><br /> Výchozí: csharp<br /><br /> Krátkých úseků: `/l`<br /><br /> Další informace najdete v tématu [CodeDomProvider třída](http://go.microsoft.com/fwlink/?LinkId=94778).|  
   
 ## <a name="choosing-a-namespace-for-the-client"></a>Výběr Namespace pro klienta  
   
@@ -78,7 +78,7 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/config:\<configFile>**|Určuje název souboru pro generovaný konfiguračního souboru.<br /><br /> Výchozí: output.config|  
+|**/ config:\<configFile >**|Určuje název souboru pro generovaný konfiguračního souboru.<br /><br /> Výchozí: output.config|  
 |**/mergeConfig**|Vygenerovaný konfigurace sloučí existující soubor, místo přepsal existující soubor.|  
 |**/ noconfig**|Nevydávají konfigurační soubory.|  
   

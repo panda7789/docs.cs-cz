@@ -1,13 +1,13 @@
 ---
-title: "Použití relací"
-ms.custom: 
+title: Použití relací
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,25 +15,25 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-caps.latest.revision: 
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f5f6df22918dedf32738a8cb9d73af2e625923a4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9f6a6a819b4667bc60ab0abb575d6fff397d67fe
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-sessions"></a>Použití relací
-V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korelaci skupinu zpráv k konverzaci. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]relace se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací a jejich použití.  
+V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korelaci skupinu zpráv k konverzaci. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] relace se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací a jejich použití.  
   
 ## <a name="sessions-in-windows-communication-foundation-applications"></a>Relace v aplikacích Windows Communication Foundation  
  Při kontrakt služby specifikuje, že vyžaduje relaci, je této smlouvy určující, zda všechna volání (který je základní výměny zpráv podporující volání) musí být součástí stejné konverzaci. Pokud kontrakt Určuje, že umožňuje relace, ale nevyžaduje jeden, klienti mohou připojit a buď vytvořit relaci nebo není vytvořit relaci. Pokud relace skončí a je odeslána zpráva prostřednictvím stejného kanálu, který je vyvolána výjimka.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]relace mají následující hlavní koncepční funkce:  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] relace mají následující hlavní koncepční funkce:  
   
 -   Jsou explicitně iniciované a ukončila příkazem volající aplikace (klienta WCF).  
   
@@ -45,11 +45,11 @@ V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korela
   
  Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace a funkce, poskytuje, můžete si všimnout, následující rozdíly mezi tento druh relace a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] relace:  
   
--   [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]relace jsou vždy iniciovaných serverem.  
+-   [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] relace jsou vždy iniciovaných serverem.  
   
--   [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]jsou implicitně neuspořádaný relace.  
+-   [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] jsou implicitně neuspořádaný relace.  
   
--   [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]relace poskytují mechanismus obecné datové úložiště napříč požadavky.  
+-   [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] relace poskytují mechanismus obecné datové úložiště napříč požadavky.  
   
  Toto téma popisuje:  
   
@@ -73,15 +73,15 @@ V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korela
 ## <a name="system-provided-session-types"></a>Typy relace poskytované systémem  
  Vazba na bázi relací podporuje přidružení výchozí instanci služby s konkrétní relací. Různé vazby na bázi relací však podporují různé funkce kromě povolení na bázi relací zřizování instancí řízení popsaných výše.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]poskytuje následující typy chování na základě relace aplikace:  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje následující typy chování na základě relace aplikace:  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> Podporuje zabezpečení na základě relací, ve kterých obou konců komunikace uzavřeli na konkrétní zabezpečenou konverzaci. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md). Například <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType> vazby, který obsahuje podporu pro zabezpečení relací a spolehlivé relace, ve výchozím nastavení používá jenom zabezpečené relace, který šifruje a digitálně podepíše zprávy.  
+-   <xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> Podporuje zabezpečení na základě relací, ve kterých obou konců komunikace uzavřeli na konkrétní zabezpečenou konverzaci. Další informace najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md). Například <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType> vazby, který obsahuje podporu pro zabezpečení relací a spolehlivé relace, ve výchozím nastavení používá jenom zabezpečené relace, který šifruje a digitálně podepíše zprávy.  
   
 -   <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> Vazba podporuje založené na protokolu TCP relací zajistit, že jsou všechny zprávy korelační připojení na úrovni soketu.  
   
--   <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> Element, který implementuje specifikace protokolu WS-ReliableMessaging, poskytuje podporu pro spolehlivé relace, ve kterých je možné nakonfigurovat zprávy na doručit v pořadí a přesně po zajištění i v případě, že zprávy při přenosu jsou přijaty zprávy. mezi několika uzly během konverzace. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Spolehlivé relace](../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
+-   <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> Element, který implementuje specifikace protokolu WS-ReliableMessaging, poskytuje podporu pro spolehlivé relace, ve kterých je možné nakonfigurovat zprávy na doručit v pořadí a přesně po zajištění i v případě, že zprávy při přenosu jsou přijaty zprávy. mezi několika uzly během konverzace. Další informace najdete v tématu [spolehlivé relace](../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
   
--   <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> Vazby poskytuje relací datagram MSMQ. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
+-   <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> Vazby poskytuje relací datagram MSMQ. Další informace najdete v tématu [fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
   
  Nastavení <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> vlastnost neurčuje typ relace kontrakt vyžaduje, jen to vyžaduje jeden.  
   
@@ -121,33 +121,33 @@ V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korela
 > [!NOTE]
 >  I když výchozí chování nenese podobný místní konstruktory a destruktory, je pouze podobají. Všechny [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] operace služby může být inicializaci nebo ukončování operace nebo oba ve stejnou dobu. Kromě toho v případě výchozí spouštění operací lze volat libovolný počet časy v libovolném pořadí; žádné další relace jsou vytvořeny po vytvoření a přidružené instance, pokud explicitně řídí životnost instance služby relace (manipulací <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> objekt). Nakonec stav je přidružena k relaci a není objektu služby.  
   
- Například `ICalculatorSession` smlouvy používat v předchozím příkladu vyžaduje, aby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] první volání objektu klienta `Clear` operaci před všechny ostatní operace a zda relace s to [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta by měl ukončit při volání `Equals` operaci. Následující příklad kódu ukazuje kontrakt, který vynucuje tyto požadavky. `Clear`musí být nejdříve volána k zahájení relace, a že ukončení relace při `Equals` je volána.  
+ Například `ICalculatorSession` smlouvy používat v předchozím příkladu vyžaduje, aby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] první volání objektu klienta `Clear` operaci před všechny ostatní operace a zda relace s to [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta by měl ukončit při volání `Equals` operaci. Následující příklad kódu ukazuje kontrakt, který vynucuje tyto požadavky. `Clear` musí být nejdříve volána k zahájení relace, a že ukončení relace při `Equals` je volána.  
   
  [!code-csharp[SCA.IsInitiatingIsTerminating#1](../../../samples/snippets/csharp/VS_Snippets_CFX/sca.isinitiatingisterminating/cs/service.cs#1)]
  [!code-vb[SCA.IsInitiatingIsTerminating#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/sca.isinitiatingisterminating/vb/service.vb#1)]  
   
  Služby nelze spustit relace s klienty. V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klientské aplikace, existuje přímé vztah mezi životnost kanál na bázi relací a doba platnosti relace, sám sebe. Klienti jako takový vytvořit nové relace vytvářejí nové kanály na bázi relací a přerušit existující relace řádně ukončením relace na základě kanály. Klient spustí relaci s koncového bodu služby voláním jednu z těchto možností:  
   
--   <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType>na kanálu vrácený volání <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>.  
+-   <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> na kanálu vrácený volání <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>.  
   
--   <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType>na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta, které jsou generované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
+-   <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta, které jsou generované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 -   Operace inicializace na některý typ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta (ve výchozím nastavení, jsou všechny operace inicializace). Při první operace je volána, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klient automaticky otevře kanál a inicializuje relaci.  
   
  Klient obvykle ukončí relaci s koncového bodu služby voláním jednu z těchto možností:  
   
--   <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType>na kanálu vrácený volání <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>.  
+-   <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> na kanálu vrácený volání <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>.  
   
--   <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType>na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] generované Svcutil.exe objekt klienta.  
+-   <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType> na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] generované Svcutil.exe objekt klienta.  
   
 -   Ukončování operace na některý typ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta (ve výchozím nastavení, jsou žádné operace ukončení; kontrakt nutné explicitně zadat ukončování operace). Při první operace je volána, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klient automaticky otevře kanál a inicializuje relaci.  
   
  Příklady najdete v tématu [postupy: vytváření služby, vyžaduje relací](../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md) společně s [výchozí chování služby](../../../docs/framework/wcf/samples/default-service-behavior.md) a [Instancing](../../../docs/framework/wcf/samples/instancing.md) ukázky.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]Klienti a relace, najdete v části [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] Klienti a relace, najdete v části [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
 ## <a name="sessions-interact-with-instancecontext-settings"></a>Relace interakci s InstanceContext nastavení  
- Je interakci mezi <xref:System.ServiceModel.SessionMode> výčet ve kontraktu a <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnosti, která řídí přidružení mezi kanály a objekty konkrétní služby. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Relace, vytváření instancí a souběžnost](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md).  
+ Je interakci mezi <xref:System.ServiceModel.SessionMode> výčet ve kontraktu a <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnosti, která řídí přidružení mezi kanály a objekty konkrétní služby. Další informace najdete v tématu [relací, Instancing a souběžnost](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md).  
   
 ### <a name="sharing-instancecontext-objects"></a>Sdílení InstanceContext objekty  
  Můžete taky řídit, které na bázi relací kanál nebo volání je přidružen který <xref:System.ServiceModel.InstanceContext> objektu tak, že provedete toto přidružení sami. Úplný příklad najdete v tématu [InstanceContextSharing](http://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230).  

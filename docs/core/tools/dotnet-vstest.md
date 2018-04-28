@@ -1,18 +1,19 @@
 ---
-title: "příkaz vstest DotNet - .NET Core rozhraní příkazového řádku"
-description: "Příkaz vstest dotnet sestavení projektu a všechny jeho závislé součásti."
+title: příkaz vstest DotNet - .NET Core rozhraní příkazového řádku
+description: Příkaz vstest dotnet sestavení projektu a všechny jeho závislé součásti.
 author: guardrex
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: f2ad875430b2dc7f0ffbadfb9a39dd83854557cb
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: e11b193ff7a8c639078c5cf279b7fbbeab553c92
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-vstest"></a>vstest DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="name"></a>Název
 
-`dotnet-vstest`-Spustí testy ze zadané soubory.
+`dotnet-vstest` -Spustí testy ze zadané soubory.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -64,7 +65,7 @@ Spustíte testy paralelně. Standardně jsou všechny dostupné jader na počít
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Testy, které odpovídají daného výrazu. `<Expression>`je ve formátu `<property>Operator<value>[|&<Expression>]`, kde operátor je jedním z `=`, `!=`, nebo `~`.  Operátor `~` má "obsahuje" sémantiku a použít u vlastnosti řetězce jako `DisplayName`. Závorky `()` se používají k dílčí výrazy skupiny.
+Testy, které odpovídají daného výrazu. `<Expression>` je ve formátu `<property>Operator<value>[|&<Expression>]`, kde operátor je jedním z `=`, `!=`, nebo `~`.  Operátor `~` má "obsahuje" sémantiku a použít u vlastnosti řetězce jako `DisplayName`. Závorky `()` se používají k dílčí výrazy skupiny.
 
 `-?|--Help|/?|/Help`
 

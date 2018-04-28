@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2fa6efdc61620647d5c6318746e61e09cdde7a46
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: d9650fd6a4fa40cb425c9f15d4a12e6c73d8c599
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], může odesílat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  
@@ -44,7 +44,7 @@ ms.lasthandoff: 04/27/2018
  Při vytváření takové aplikace bylo možné před existenci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] usnadňuje vývoj koncových bodů než kdy dřív. Souhrnně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je určená k poskytování spravovaného přístupu k vytvoření webové služby a klienty webové služby.  
   
 ## <a name="features-of-wcf"></a>Funkce služby WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] obsahuje následující sadu funkcí. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] obsahuje následující sadu funkcí. Další informace najdete v tématu [podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).  
   
 -   **Orientaci na služby**  
   
@@ -60,15 +60,15 @@ ms.lasthandoff: 04/27/2018
   
 -   **Metadata služby**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje publikování metadat služby pomocí formáty zadaný v průmyslové standardy, jako je například WSDL, schématu XML a WS-zásady. Tato metadata lze použít k automatickému generování a konfigurace klientů pro přístup k [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Metadata lze publikovat prostřednictvím protokolu HTTP a HTTPS nebo přes standardní webové služby Metadata Exchange. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Metadata](../../../docs/framework/wcf/feature-details/metadata.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje publikování metadat služby pomocí formáty zadaný v průmyslové standardy, jako je například WSDL, schématu XML a WS-zásady. Tato metadata lze použít k automatickému generování a konfigurace klientů pro přístup k [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Metadata lze publikovat prostřednictvím protokolu HTTP a HTTPS nebo přes standardní webové služby Metadata Exchange. Další informace najdete v tématu [Metadata](../../../docs/framework/wcf/feature-details/metadata.md).  
   
 -   **Kontrakty dat**  
   
-     Protože [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je sestaven pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], zahrnuje také popisný kód metody poskytnutí kontrakty chcete vynutit. Jeden z typů universal smluv je kontrakt dat. V podstatě jak používáte kódové vaši službu pomocí Visual C# nebo Visual Basic, nejjednodušší způsob, jak zpracovávat data je vytvořením tříd, které představují data entity s vlastnostmi, které patří do dat entity. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] obsahuje komplexní systém pro práci s daty tímto způsobem snadno. Po vytvoření třídy, které představují data služby automaticky vytvoří metadata, která umožňuje klientům v souladu se datové typy, které jste vytvořili. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+     Protože [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je sestaven pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], zahrnuje také popisný kód metody poskytnutí kontrakty chcete vynutit. Jeden z typů universal smluv je kontrakt dat. V podstatě jak používáte kódové vaši službu pomocí Visual C# nebo Visual Basic, nejjednodušší způsob, jak zpracovávat data je vytvořením tříd, které představují data entity s vlastnostmi, které patří do dat entity. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] obsahuje komplexní systém pro práci s daty tímto způsobem snadno. Po vytvoření třídy, které představují data služby automaticky vytvoří metadata, která umožňuje klientům v souladu se datové typy, které jste vytvořili. Další informace najdete v tématu [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
   
 -   **Zabezpečení**  
   
-     Zprávy se můžou šifrovat k ochraně osobních údajů a může vyžadovat uživatelům ověřit dříve, než mohou přijímat zprávy. Zabezpečení se dají implementovat pomocí známých standardy, jako je protokol SSL nebo WS-SecureConversation. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md).  
+     Zprávy se můžou šifrovat k ochraně osobních údajů a může vyžadovat uživatelům ověřit dříve, než mohou přijímat zprávy. Zabezpečení se dají implementovat pomocí známých standardy, jako je protokol SSL nebo WS-SecureConversation. Další informace najdete v tématu [zabezpečení](../../../docs/framework/wcf/feature-details/security.md).  
   
 -   **Více přenosy a kódování**  
   
@@ -80,7 +80,7 @@ ms.lasthandoff: 04/27/2018
   
 -   **Trvanlivý zprávy**  
   
-     Trvanlivý zpráva je ten, který se nikdy ztraceno v důsledku přerušení v komunikaci. Zprávy ve tvaru trvanlivý zpráva se vždy uloží do databáze. Pokud dojde k narušení služeb, databáze můžete obnovit výměny zpráv, když se obnoví připojení. Můžete také vytvořit trvanlivý zprávy pomocí Windows Workflow Foundation (WF). [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Služby pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).  
+     Trvanlivý zpráva je ten, který se nikdy ztraceno v důsledku přerušení v komunikaci. Zprávy ve tvaru trvanlivý zpráva se vždy uloží do databáze. Pokud dojde k narušení služeb, databáze můžete obnovit výměny zpráv, když se obnoví připojení. Můžete také vytvořit trvanlivý zprávy pomocí Windows Workflow Foundation (WF). Další informace najdete v tématu [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).  
   
 -   **Transakce**  
   

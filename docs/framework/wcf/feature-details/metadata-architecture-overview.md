@@ -1,37 +1,37 @@
 ---
-title: "Přehled architektury metadat"
-ms.custom: 
+title: Přehled architektury metadat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - metadata [WCF], overview
 ms.assetid: 1d37645e-086d-4d68-a358-f3c5b6e8205e
-caps.latest.revision: 
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a8890cc05ec6b0b889dafcb787e216b50a681876
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bce838d9584480028c7b02d1ba19547fe208bf2c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="metadata-architecture-overview"></a>Přehled architektury metadat
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohaté infrastrukturu pro export, publikování, načítání a Import metadata služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby používají metadata k popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, může automaticky generovat kód klienta pro přístup k službě.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje bohaté infrastrukturu pro export, publikování, načítání a Import metadata služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby používají metadata k popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, může automaticky generovat kód klienta pro přístup k službě.  
   
  Většina typů, které tvoří [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury metadata jsou umístěny ve <xref:System.ServiceModel.Description> oboru názvů.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá <xref:System.ServiceModel.Description.ServiceEndpoint> třída k popisu koncových bodů ve službě. Můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ke generování metadat pro koncové body služby nebo importovat metadata služby ke generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá <xref:System.ServiceModel.Description.ServiceEndpoint> třída k popisu koncových bodů ve službě. Můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ke generování metadat pro koncové body služby nebo importovat metadata služby ke generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]představuje metadata pro služby jako instanci <xref:System.ServiceModel.Description.MetadataSet> typu, jejichž struktura je důrazně vázaný na formát serializace metadata definované v WS-MetadataExchange. <xref:System.ServiceModel.Description.MetadataSet> Typ obsahuje metadata skutečné služby, jako jsou webové služby popis Language (WSDL) dokumenty, dokumentech schémat XML nebo výrazy WS-Policy, ureitou jako kolekce <xref:System.ServiceModel.Description.MetadataSection> instance. Každý <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> instance obsahuje dialekt konkrétních metadat a identifikátor. A <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> může obsahovat následující položky v jeho <xref:System.ServiceModel.Description.MetadataSection.Metadata%2A?displayProperty=nameWithType> vlastnost:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] představuje metadata pro služby jako instanci <xref:System.ServiceModel.Description.MetadataSet> typu, jejichž struktura je důrazně vázaný na formát serializace metadata definované v WS-MetadataExchange. <xref:System.ServiceModel.Description.MetadataSet> Typ obsahuje metadata skutečné služby, jako jsou webové služby popis Language (WSDL) dokumenty, dokumentech schémat XML nebo výrazy WS-Policy, ureitou jako kolekce <xref:System.ServiceModel.Description.MetadataSection> instance. Každý <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> instance obsahuje dialekt konkrétních metadat a identifikátor. A <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> může obsahovat následující položky v jeho <xref:System.ServiceModel.Description.MetadataSection.Metadata%2A?displayProperty=nameWithType> vlastnost:  
   
 -   Nezpracovaná metadata.  
   
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 -   A <xref:System.ServiceModel.Description.MetadataLocation> instance.  
   
- A <xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType> instance, přejděte na jiný koncový bod metadat exchange (MEX) a <xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> instancí bodu k dokumentu metadat pomocí adresy URL protokolu HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje použití dokumentů WSDL k popisu koncové body služby, kontraktů služby, vazby, zprávu výměna vzory, zpráv a chybové zprávy, které jsou implementované služby. Datové typy, které používá služba jsou popsané v dokumentech WSDL pomocí schématu XML. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Import a Export schémat](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md). Můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro export a import rozšíření schématu WSDL pro chování služby, smlouvy chování a prvky vazeb, které rozšiřují funkce služby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Export vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md).  
+ A <xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType> instance, přejděte na jiný koncový bod metadat exchange (MEX) a <xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> instancí bodu k dokumentu metadat pomocí adresy URL protokolu HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje použití dokumentů WSDL k popisu koncové body služby, kontraktů služby, vazby, zprávu výměna vzory, zpráv a chybové zprávy, které jsou implementované služby. Datové typy, které používá služba jsou popsané v dokumentech WSDL pomocí schématu XML. Další informace najdete v tématu [Import a Export schémat](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md). Můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro export a import rozšíření schématu WSDL pro chování služby, smlouvy chování a prvky vazeb, které rozšiřují funkce služby. Další informace najdete v tématu [export vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md).  
   
 ## <a name="exporting-service-metadata"></a>Export metadat služby  
  V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], *export metadat* je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Pro export metadat z <xref:System.ServiceModel.Description.ServiceEndpoint> instance slouží provádění <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy. A <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> implementace generuje metadata, která je zapouzdřené v <xref:System.ServiceModel.Description.MetadataSet> instance.  
@@ -53,13 +53,13 @@ ms.lasthandoff: 12/22/2017
  Export vlastních metadat WSDL nebo rozšíření WSDL pro koncový bod chování, kontrakt chování nebo prvky vazeb v koncového bodu služby, můžete implementovat <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní. <xref:System.ServiceModel.Description.WsdlExporter> Zjistí <xref:System.ServiceModel.Description.ServiceEndpoint> instance pro vazby prvky, operace chování, kontrakt chování a koncový bod chování, které implementují <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní při generování souboru WSDL.  
   
 ## <a name="publishing-service-metadata"></a>Publikování metadat služby  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby publikování metadat díky zpřístupnění jeden nebo více koncových bodů metadat. Publikování metadat služby zpřístupní metadata služby pomocí standardizovaných protokolů, jako jsou žádosti o MEX a HTTP/GET. Koncové body metadat jsou podobná další koncové body služby v tom, že mají adresy, vazby a kontraktu. Koncové body metadat můžete přidat na hostitele služby v konfiguraci nebo v kódu.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby publikování metadat díky zpřístupnění jeden nebo více koncových bodů metadat. Publikování metadat služby zpřístupní metadata služby pomocí standardizovaných protokolů, jako jsou žádosti o MEX a HTTP/GET. Koncové body metadat jsou podobná další koncové body služby v tom, že mají adresy, vazby a kontraktu. Koncové body metadat můžete přidat na hostitele služby v konfiguraci nebo v kódu.  
   
  Publikování kocových bodů metadat pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, je nejprve nutno přidat instanci <xref:System.ServiceModel.Description.ServiceMetadataBehavior> služby chování ke službě. Přidání <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> instance služby rozšiřuje služby umožňuje publikování metadat díky zpřístupnění jeden nebo více koncových bodů metadat. Jakmile přidáte <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> chování služby můžete pak vystavit koncové body metadat, které podporují MEX protokolu nebo metadat koncových bodů, které reagují na požadavky HTTP/GET.  
   
  Přidat koncové body metadat, které používají protokol MEX, přidejte do vaší hostitele služby využívající kontrakt služby s názvem IMetadataExchange koncové body služby.[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] definuje <xref:System.ServiceModel.Description.IMetadataExchange> rozhraní, které má tento název kontraktu služby. Koncové body služby WS-MetadataExchange, nebo MEX koncových bodů, můžete použít jednu z vazby čtyři výchozí vystavené factory statické metody na <xref:System.ServiceModel.Description.MetadataExchangeBindings> třídy tak, aby odpovídala výchozí vazby používané [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nástroje, jako je například Svcutil.exe. Můžete také nakonfigurovat koncové body metadat MEX použití vlastní vazby.  
   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Používá <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> pro export metadat pro všechny koncové body služby ve službě. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Export metadat ze služby, najdete v části [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Používá <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> pro export metadat pro všechny koncové body služby ve službě. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Export metadat ze služby, najdete v části [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
   
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Rozšiřuje vaše hostitele služby přidáním <xref:System.ServiceModel.Description.ServiceMetadataExtension> instance jako rozšíření na hostiteli služby. <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> Poskytuje implementaci pro publikování protokoly metadat. Můžete také použít <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> se získat metadata služby za běhu přímým přístupem <xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A> vlastnost.  
   
@@ -80,7 +80,7 @@ ms.lasthandoff: 12/22/2017
 > -   Jeden z oborů názvů na operace nastavenou na jiný obor názvů pomocí <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> vlastnost.  
   
 ## <a name="retrieving-service-metadata"></a>Načítání metadat služby  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]můžete načíst metadata služby pomocí standardizovaných protokolů, jako je WS-MetadataExchange a HTTP. Obě tyto protokoly jsou podporovány <xref:System.ServiceModel.Description.MetadataExchangeClient> typu. Načtení služby metadat pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> typ poskytnutím adresy a volitelné vazby. Vazby používané <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance může být jedna z vazeb výchozí z <xref:System.ServiceModel.Description.MetadataExchangeBindings> statická třída, vazbu uživatelem zadané nebo vazbu načtené ze konfigurace koncového bodu pro `IMetadataExchange` kontrakt. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Můžete také vyřešit odkazy na základní adresy URL metadat pomocí <xref:System.Net.HttpWebRequest> typu.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] můžete načíst metadata služby pomocí standardizovaných protokolů, jako je WS-MetadataExchange a HTTP. Obě tyto protokoly jsou podporovány <xref:System.ServiceModel.Description.MetadataExchangeClient> typu. Načtení služby metadat pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> typ poskytnutím adresy a volitelné vazby. Vazby používané <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance může být jedna z vazeb výchozí z <xref:System.ServiceModel.Description.MetadataExchangeBindings> statická třída, vazbu uživatelem zadané nebo vazbu načtené ze konfigurace koncového bodu pro `IMetadataExchange` kontrakt. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Můžete také vyřešit odkazy na základní adresy URL metadat pomocí <xref:System.Net.HttpWebRequest> typu.  
   
  Ve výchozím nastavení <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance je vázaný na jednu <xref:System.ServiceModel.Channels.ChannelFactoryBase> instance. Můžete změnit nebo nahradit <xref:System.ServiceModel.Channels.ChannelFactoryBase> instanci použitou <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> přepsáním <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> virtuální metoda. Podobně můžete změnit nebo nahradit <xref:System.Net.HttpWebRequest?displayProperty=nameWithType> instanci použitou <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> provádět požadavky HTTP/GET přepsáním <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType> virtuální metoda.  
   

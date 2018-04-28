@@ -1,30 +1,32 @@
 ---
-title: "Zabezpečení zpráv pomocí klientských certifikátů"
-ms.custom: 
+title: Zabezpečení zpráv pomocí klientských certifikátů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: e778b48b3ff00c3053992f8e754f674cd7705ece
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9bb7efa82e14f899ddcbb2fdfd26eba2023bdd61
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
-Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Distribuované aplikace zabezpečení](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).  
+Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).  
   
  Ukázkovou aplikaci, najdete v části [certifikát zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-certificate.md).  
   
@@ -33,7 +35,7 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení.|Zpráva|  
-|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]pouze|  
+|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Pouze|  
 |Ověřování (Server)|Pomocí certifikátu služby|  
 |Ověřování (klient)|Pomocí klientského certifikátu|  
 |Integrita|Ano|  
@@ -112,7 +114,7 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace Určuje certifikát klienta pomocí chování koncového bodu. Další informace o certifikátech najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Kód také používá <`identity`> elementu, který chcete zadat systému DNS (Domain Name) identity očekávané serveru. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]identity, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Následující konfigurace Určuje certifikát klienta pomocí chování koncového bodu. Další informace o certifikátech najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Kód také používá <`identity`> elementu, který chcete zadat systému DNS (Domain Name) identity očekávané serveru. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] identity, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

@@ -1,12 +1,13 @@
 ---
-title: "Ladění chyb ověřování systému Windows"
-ms.custom: 
+title: Ladění chyb ověřování systému Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b24d5a8ebccbd454579394a986614e0d40d8d0e6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e6efcb5097729ac5f096e78883e9bc49598c9a37
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování systému Windows jako vhodný mechanismus zabezpečení, rozhraní pro zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Při výskytu chyb zabezpečení ve vrstvě rozhraní SSPI, jsou prezentované podle [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Toto téma obsahuje framework a sadu otázky, které pomohou diagnostikovat chyby.  
@@ -73,11 +75,11 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
 ### <a name="kerberos-protocol"></a>Protokol Kerberos  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Hlavní název služby/UPN problémy s protokolem Kerberos  
- Pokud používáte ověřování systému Windows a protokol je použít nebo vyjednaném rozhraní SSPI protokolu Kerberos, musí obsahovat adresu URL koncového bodu klienta používá plně kvalifikovaný název domény hostitele služby uvnitř adresu URL služby. Předpokladem je, že účet, pod kterým běží služba má přístup k klíč služby (SPN) pro hlavní název počítače (výchozí), který se vytvoří, když je počítač přidán do domény Active Directory, která se nejčastěji provádí spuštěním služby v rámci Účet služby sítě. Pokud služba nemá přístup ke klíči počítače hlavní název služby, je třeba zadat správný hlavní název služby nebo uživatele hlavní název (UPN) účtu, pod kterým je služba spuštěná v identitu koncového bodu klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funguje s SPN a UPN, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pokud používáte ověřování systému Windows a protokol je použít nebo vyjednaném rozhraní SSPI protokolu Kerberos, musí obsahovat adresu URL koncového bodu klienta používá plně kvalifikovaný název domény hostitele služby uvnitř adresu URL služby. Předpokladem je, že účet, pod kterým běží služba má přístup k klíč služby (SPN) pro hlavní název počítače (výchozí), který se vytvoří, když je počítač přidán do domény Active Directory, která se nejčastěji provádí spuštěním služby v rámci Účet služby sítě. Pokud služba nemá přístup ke klíči počítače hlavní název služby, je třeba zadat správný hlavní název služby nebo uživatele hlavní název (UPN) účtu, pod kterým je služba spuštěná v identitu koncového bodu klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funguje s SPN a UPN, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
  Ve službě Vyrovnávání zatížení případech, například webových farem nebo webové zahrada běžnou praxí je definovat jedinečný účet pro každou aplikaci, k tomuto účtu přiřadit název SPN a ujistěte se, že všechny aplikace služby spuštěny v daném účtu.  
   
- Pokud chcete získat název SPN pro účet služby, musíte být správcem domény služby Active Directory. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Kerberos Technical Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkID=88330).  
+ Pokud chcete získat název SPN pro účet služby, musíte být správcem domény služby Active Directory. Další informace najdete v tématu [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkID=88330).  
   
 #### <a name="kerberos-protocol-direct-requires-the-service-to-run-under-a-domain-machine-account"></a>Protokol Kerberos Direct vyžaduje službu, kterou chcete spustit pod účtem počítače domény  
  K tomu dojde při `ClientCredentialType` je nastavena na `Windows` a <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> je nastavena na `false`, jak je znázorněno v následujícím kódu.  
@@ -102,7 +104,7 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
   
 3.  Vyžadovat vyjednávání SSPI pro použití protokolu Kerberos, protože je zakázáno použití protokolu NTLM:  
   
-    1.  To lze proveďte v kódu, pomocí následujícího příkazu:`ChannelFactory.Credentials.Windows.AllowNtlm = false`  
+    1.  To lze proveďte v kódu, pomocí následujícího příkazu: `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   
     2.  Nebo můžete provést v konfiguračním souboru nastavením `allowNtlm` atribut `false`. Tento atribut je součástí [ \<windows >](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md).  
   
@@ -132,7 +134,7 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
  [!code-csharp[C_DebuggingWindowsAuth#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#6)]
  [!code-vb[C_DebuggingWindowsAuth#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#6)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zosobnění, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zosobnění, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
  Můžete taky klient používá jako služby systému Windows, pomocí předdefinovaného účtu SYSTEM.  
   

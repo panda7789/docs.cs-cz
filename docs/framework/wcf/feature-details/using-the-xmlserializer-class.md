@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c541c44f0043000ccd4e7edb0d38eba2c66d0844
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 15e958a3bfe4dfdeebfaaad83130a604c56932c7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Chcete-li data v aplikaci do souboru XML, která se přenášejí mezi klienty a službách, procesu označovaného jako serializace můžete použít dvě různé serializace technologie.  
@@ -45,10 +45,10 @@ ms.lasthandoff: 04/27/2018
   
  Mnoho [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy spadají do poslední dvě kategorie a jsou tedy serializable. Pole Serializovatelné typy jsou také serializable. Úplný seznam najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
   
- <xref:System.Runtime.Serialization.DataContractSerializer>, Použít společně s datové typy kontraktů, je doporučeným způsobem, jak napsat nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ <xref:System.Runtime.Serialization.DataContractSerializer>, Použít společně s datové typy kontraktů, je doporučeným způsobem, jak napsat nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Další informace najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="when-to-use-the-xmlserializer-class"></a>Kdy použít třídy XmlSerializer  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje také <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby použijte. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad výsledný soubor XML a podporuje mnohem víc schématu XML definice jazyka (XSD) standardní. Také nevyžaduje žádné deklarativní atributy na Serializovatelné typy. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] v tématu serializace XML [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dokumentaci. <xref:System.Xml.Serialization.XmlSerializer> Třída nepodporuje datové typy kontrakt.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje také <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby použijte. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad výsledný soubor XML a podporuje mnohem víc schématu XML definice jazyka (XSD) standardní. Také nevyžaduje žádné deklarativní atributy na Serializovatelné typy. Další informace najdete v tématu serializace XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dokumentaci. <xref:System.Xml.Serialization.XmlSerializer> Třída nepodporuje datové typy kontrakt.  
   
  Při použití Svcutil.exe nebo **přidat odkaz na službu** funkce v sadě Visual Studio pro generování kódu klienta pro službu třetí strany, nebo pro přístup schématu třetích stran, příslušné serializátor je automaticky vybrána pro vás. Pokud schéma není kompatibilní s <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Xml.Serialization.XmlSerializer> je vybrána.  
   
@@ -150,7 +150,7 @@ ms.lasthandoff: 04/27/2018
   
 -   `ReadXml` Implementace by neměl čtení prvku obálku. Očekává se číst jeden element který `WriteXml` vytváří.  
   
--   Při serializaci typu elementu pravidelně (například jako člena dat ve smlouvě data), serializátor výstupy element obálky před voláním `WriteXml`, stejně jako u typy obsahu. Ale při serializaci typ elementu na nejvyšší úrovni, serializátoru, který není výstup normálně element obálku kolem elementu vůbec, `WriteXml` zapíše, pokud název kořenové domény a oboru názvů se explicitně zadat při vytváření serializátoru, který je v `DataContractSerializer` nebo `NetDataContractSerializer` konstruktory. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+-   Při serializaci typu elementu pravidelně (například jako člena dat ve smlouvě data), serializátor výstupy element obálky před voláním `WriteXml`, stejně jako u typy obsahu. Ale při serializaci typ elementu na nejvyšší úrovni, serializátoru, který není výstup normálně element obálku kolem elementu vůbec, `WriteXml` zapíše, pokud název kořenové domény a oboru názvů se explicitně zadat při vytváření serializátoru, který je v `DataContractSerializer` nebo `NetDataContractSerializer` konstruktory. Další informace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 -   Při serializaci typ elementu na nejvyšší úrovni bez zadání název kořenové domény a oboru názvů v době konstrukce <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A> a <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> v podstatě nic nestane a <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A> volání `WriteXml`. V tomto režimu nelze serializovaného objektu `null` a nelze jí přiřadit polymorphically. Také, nemůže objekt grafu zachovávání povolena a `NetDataContractSerializer` nelze použít.  
   

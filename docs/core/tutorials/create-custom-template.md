@@ -1,21 +1,19 @@
 ---
 title: Vytvoření nové vlastní šablony pro dotnet.
 description: Naučte se vytvořit vlastní šablonu pro nový příkaz dotnet. v této fun kurzu.
-keywords: Šablona .NET, .NET core, ukázka, kurz, dotnet nové
 author: guardrex
 ms.author: mairaw
 ms.date: 08/12/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 519b910a-6efe-4394-9b81-0546aa3e7462
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 7830a437b46d2080efc65f43f9112503add4c305
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 9ff58634daa6d51c10df9a3c9a1af0fd6420c69c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření nové vlastní šablony pro dotnet.
 
@@ -216,6 +214,6 @@ dotnet new -u C:\Users\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate
 ## <a name="see-also"></a>Viz také
 
 [úložiště GitHub DotNet/ukázka Wiki](https://github.com/dotnet/templating/wiki)  
-[dotnet/dotnet-template-samples GitHub repo](https://github.com/dotnet/dotnet-template-samples)  
+[úložiště GitHub DotNet/dotnet šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
 [Jak vytvořit nové vlastní šablony pro dotnet.](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
 [*Template.JSON* schématu na úložiště schématu JSON](http://json.schemastore.org/template)  

@@ -1,32 +1,33 @@
 ---
 title: OperationScope
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 56206a21-1e63-422d-b92a-e5d8b713e707
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 837be2de516f604dd6869449d99df238fb6dbd24
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3bf92d7a726a53c5d625f31b0386e11c941cdde9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="operationscope"></a>OperationScope
 Tento příklad ukazuje, jak aktivity, zasílání zpráv <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> můžete použít k vystavení existující vlastní aktivity jako operaci v služby pracovních postupů. Tato ukázka obsahuje novou vlastní aktivitu volána `OperationScope`. Je určena k usnadnění vývoje služby pracovního postupu tak, že umožníte uživatelům vytvářet text činnosti samostatně jako vlastní aktivity a pak je snadno vystavení jako operací služby pomocí `OperationScope` aktivity. Například vlastní `Add` aktivity, která přebírá dva `in` argumentů a vrátí jeden `out` může dojít k vystavení argument jako `Add` provozní stav služby pracovního postupu umístěním do `OperationScope`.  
   
  Obor funguje tak, že zkontrolujete aktivity zadaný jako její text. Žádné nevázaných `in` argumenty se předpokládá, že vstupy z příchozí zprávy. Všechny `out` argumenty, bez ohledu na to, jestli je vázána, se předpokládá, že výstupy v následných odpovědi. Název zveřejněné operace jsou převzaty z zobrazovaný název `OperationScope` aktivity. Konečným výsledkem je, že aktivita textu je uzavřen do <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> s parametry ze zprávy vázána na argumenty aktivity.  
   
- Tato ukázka zpřístupní služby pracovního postupu pomocí koncových bodů protokolu HTTP. Pokud chcete spustit, je nutné přidat seznamy ACL správnou adresu URL. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Konfigurace HTTP a HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353). Provádění řádku se zvýšenými oprávněními následující příkaz přidá příslušné seznamy ACL (zajistit, aby uživatelské jméno a doména jsou nahrazována pro domény %\\% UserName %).  
+ Tato ukázka zpřístupní služby pracovního postupu pomocí koncových bodů protokolu HTTP. Pokud chcete spustit, je nutné přidat seznamy ACL správnou adresu URL. Další informace najdete v tématu [konfigurace HTTP a HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353). Provádění řádku se zvýšenými oprávněními následující příkaz přidá příslušné seznamy ACL (zajistit, aby uživatelské jméno a doména jsou nahrazována pro domény %\\% UserName %).  
   
- **netsh http přidejte adresu url urlacl = http: / / +: 8000 / uživatele domény % =\\% UserName %**  
+ **netsh http přidejte adresu url urlacl =http://+:8000/ uživatele domény % =\\% UserName %**  
   
 ### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   

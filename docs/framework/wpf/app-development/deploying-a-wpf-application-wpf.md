@@ -19,19 +19,19 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3beb8ee0869384f9f453023fe549b2339c126898
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bf92f12e415b937c36dfc518af4a4c1795c8b789
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
-Po [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace jsou vytvářeny, které potřebují k nasazení. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] zahrnují několik technologií nasazení. Nasazení technologie, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma obsahuje stručný přehled technologie každé nasazení a jak se používají ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typ aplikace.  
+Po [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace jsou vytvářeny, které potřebují k nasazení. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologií nasazení. Nasazení technologie, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma obsahuje stručný přehled technologie každé nasazení a jak se používají ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typ aplikace.  
   
    
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologie nasazení  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] zahrnují několik technologií nasazení, včetně:  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologií nasazení, včetně:  
   
 -   XCopy nasazení.  
   
@@ -126,13 +126,13 @@ Po [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace 
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
- Ke spuštění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, musí být na klientovi nainstalované rozhraní Microsoft .NET Framework. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] automaticky zjišťuje, zda klienti jsou instalováni pomocí [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] při [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] jsou vnímány – aplikace hostované prohlížečem. Pokud [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] není nainstalovaná, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] vyzve uživatele k jeho instalaci.  
+ Ke spuštění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, musí být na klientovi nainstalované rozhraní Microsoft .NET Framework. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] automaticky zjišťuje, zda klienti jsou instalováni pomocí rozhraní .NET Framework při [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] jsou vnímány – aplikace hostované prohlížečem. Pokud není nainstalované rozhraní .NET Framework, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] vyzve uživatele k jeho instalaci.  
   
- Ke zjištění jestli [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] je nainstalovaná, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] zahrnuje zaváděcího nástroje aplikace, která je registrována jako záložní [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] obslužnou rutinu pro soubory obsahu s těmito příponami: XAML, XPS, .xbap a .application. Pokud přejdete do tyto typy souborů a [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] není nainstalován v klientovi aplikace zaváděcího nástroje požádá o oprávnění k její instalaci. Pokud není zadaný oprávnění, ani [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] ani je aplikace nainstalována.  
+ Chcete-li zjistit, zda je nainstalována rozhraní .NET Framework, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] zahrnuje zaváděcího nástroje aplikace, která je registrována jako záložní [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] obslužnou rutinu pro soubory obsahu s těmito příponami: XAML, XPS, .xbap a .application. Pokud přejdete na tyto typy souborů a na klientovi není nainstalované rozhraní .NET Framework, aplikace zaváděcího nástroje požádá o oprávnění k její instalaci. Pokud není k dispozici oprávnění, je nainstalované rozhraní .NET Framework ani aplikace.  
   
- Pokud je povoleno, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] stáhne a nainstaluje [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] pomocí [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)]. Po úspěšné instalaci [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)], původně požadovaný soubor je otevřen v nové okno prohlížeče.  
+ Pokud je povoleno, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] stáhne a nainstaluje s použitím rozhraní .NET Framework [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)]. Po úspěšné instalaci rozhraní .NET Framework je původně požadovaný soubor otevřít v novém okně prohlížeče.  
   
- [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] Automatické zjišťování je k dispozici na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)], a [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] klienti, kteří mají [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] nainstalovaný nebo novější.  
+ Automatické zjišťování rozhraní .NET framework je k dispozici na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)], a [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] klienti, kteří mají [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] nainstalovaný nebo novější.  
   
  Další informace najdete v tématu [nasazení rozhraní .NET Framework a aplikace](../../../../docs/framework/deployment/index.md).  
   

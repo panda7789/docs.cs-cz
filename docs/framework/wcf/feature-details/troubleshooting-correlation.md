@@ -1,24 +1,26 @@
 ---
-title: "Řešení potíží – korelace"
-ms.custom: 
+title: Řešení potíží – korelace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76b6178d3190165e711f46af60a6541a82ad0bd7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5bdf111e6802692aef893cf9dcae88f0f51aa467
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá k propojení zpráv služby pracovního postupu se vzájemně k sobě a k instanci pracovního postupu správný, ale pokud není správně nakonfigurována, nebude přijaty zprávy a aplikace nebude správně fungovat. Toto téma obsahuje přehled několik metod pro řešení potíží s korelace a také uvádí některé běžné problémy, které může dojít, když používáte korelace.  
@@ -89,7 +91,7 @@ host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
   
  Sledování účastník například ConsoleTrackingParticipant je užitečné pro služeb vlastním hostováním pracovních postupů, které mají okna konzoly. Pro hostované webové služby, třeba použít sledování účastník, který zaznamenává informace o sledování odolná úložiště, jako je například integrované <xref:System.Activities.Tracking.EtwTrackingParticipant>, nebo vlastní sledování člena, který protokoluje informace do souboru, například `TextWriterTrackingParticpant` z [ Sledování pomocí textového souboru](../../../../docs/framework/windows-workflow-foundation/samples/tracking-using-a-text-file.md) ukázka.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]sledování a konfigurace sledování pro službu Web hostovaný pracovní postup, najdete v části [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md), [konfigurace sledování pro pracovní postup](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)a [sledování &#91; Ukázky WF &#93; ](../../../../docs/framework/windows-workflow-foundation/samples/tracking.md) ukázky.  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] sledování a konfigurace sledování pro službu Web hostovaný pracovní postup, najdete v části [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md), [konfigurace sledování pro pracovní postup](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)a [sledování &#91;WF Ukázky&#93; ](../../../../docs/framework/windows-workflow-foundation/samples/tracking.md) ukázky.  
   
 ## <a name="use-wcf-tracing"></a>Pomocí trasování WCF  
  Trasování WCF poskytuje trasování toku zpráv do a ze služby pracovních postupů. Tyto informace trasování jsou užitečné při řešení problémů korelace, hlavně pro korelace na základě obsahu. Povolení trasování, zadejte požadované trasování – moduly naslouchání v `system.diagnostics` části `web.config` souboru pokud hostované webové služby pracovního postupu nebo `app.config` soubor, pokud se hostuje sama služby pracovního postupu. Chcete-li zahrnout obsah zprávy v trasovacím souboru, zadejte `true` pro `logEntireMessage` v `messageLogging` element v `diagnostics` části `system.serviceModel`. V následujícím příkladu je nakonfigurované informace trasování, včetně obsahu zprávy, k zápisu do souboru, který je pojmenován `service.svclog`.  
@@ -127,7 +129,7 @@ host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
 </configuration>  
 ```  
   
- Chcete-li zobrazit informace trasování, která je součástí `service.svclog`, [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) se používá. To je obzvláště užitečná při řešení potíží – korelace na základě obsahu problémy, protože můžete zobrazit obsah zprávy a zobrazit přesně co je předávána, a zda odpovídá <xref:System.ServiceModel.CorrelationQuery> pro korelace na základě obsahu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WCF trasování, najdete v části [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md), [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md), a [pomocí trasování řešení vaše aplikace](../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).  
+ Chcete-li zobrazit informace trasování, která je součástí `service.svclog`, [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) se používá. To je obzvláště užitečná při řešení potíží – korelace na základě obsahu problémy, protože můžete zobrazit obsah zprávy a zobrazit přesně co je předávána, a zda odpovídá <xref:System.ServiceModel.CorrelationQuery> pro korelace na základě obsahu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] WCF trasování, najdete v části [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md), [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md), a [pomocí trasování řešení vaše aplikace](../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).  
   
 ## <a name="common-context-exchange-correlation-issues"></a>Běžné problémy korelace Exchange kontextu  
  Určité typy korelace vyžadují, aby určitý typ vazby se používá pro korelaci fungovala správně. Mezi příklady patří korelace požadavku a odpovědi, které vyžaduje obousměrný vazbu, jako <xref:System.ServiceModel.BasicHttpBinding>a korelace kontextové výměny, který vyžaduje, na základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>. Většina vazby podporu obousměrný operací, nejedná se o běžné problémy, se pro korelace požadavku a odpovědi, ale existují jen někteří z nich na základě kontextu vazby, včetně <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding>, a <xref:System.ServiceModel.NetTcpContextBinding>. Jednu z těchto vazeb se nepoužívá, počáteční volání služby pracovního postupu bude úspěšné, ale následná volání nebudou úspěšná s následující <xref:System.ServiceModel.FaultException>.  
@@ -141,7 +143,7 @@ supports the context protocol and has a valid context initialized.
   
  Informace o kontextu, který slouží pro korelaci kontext může být vrácen pouze <xref:System.ServiceModel.Activities.SendReply> k <xref:System.ServiceModel.Activities.Receive> aktivity, která inicializuje kontext korelace, když pomocí obousměrné operaci, nebo ji lze zadat volající Pokud byla operace jednosměrná. Pokud není kontextu poslal volající nebo vrácené služby pracovního postupu pak stejné <xref:System.ServiceModel.FaultException> popsané dříve bude vrácen, pokud následné operace je volána.  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md).  
+ Další informace najdete v tématu [kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md).  
   
 ## <a name="common-request-reply-correlation-issues"></a>Běžné problémy korelace požadavku a odpovědi  
  Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár implementovat obousměrný operace ve službě pracovního postupu a s <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár, který vyvolá obousměrný operaci v jiný Web Služba. Při vyvolání obousměrný operace ve službě WCF, služba může být buď tradiční imperativní založené na kódu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, nebo může být služby pracovních postupů. Použít korelace požadavku a odpovědi vazba obousměrná musí být použita, jako například <xref:System.ServiceModel.BasicHttpBinding>, a operace musí být obousměrné.  
@@ -176,7 +178,7 @@ SendReply ReplyToStartOrder = new SendReply
   
  Mezi není povolena trvalost <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár nebo <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár. Je vytvořena zóna no-persist trvající až do dokončení obou aktivity. Pokud aktivity, jako je například aktivitu zpoždění je v této zóně no-persist a pracovní postup na nečinnost, pracovní postup neuchovává i v případě, pokud hostitel je nakonfigurovaný pro uchování pracovních postupů, kdy se stanou nečinné. Pokud aktivity, jako je například aktivitu zachovat pokusí explicitně zachovat v zóně ne zachovat, závažná je vyvolána výjimka, přerušení pracovního postupu a <xref:System.ServiceModel.FaultException> je vrácen volajícímu. Zpráva o závažné výjimce "System.InvalidOperationException: zachování aktivity nemůžou být obsažené v rámci bloků žádné trvalost.". Tato výjimka není vrácen volajícímu ale může být dodržen, pokud je povoleno sledování. Zpráva pro <xref:System.ServiceModel.FaultException> vrácen volajícímu je "operaci nelze provést, protože instance pracovního postupu '5836145b-7da2 - 49 d 0-a052-a49162adeab6' byla dokončena".  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace požadavku a odpovědi, najdete v části [požadavku a odpovědi](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] korelace požadavku a odpovědi, najdete v části [požadavku a odpovědi](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md).  
   
 ## <a name="common-content-correlation-issues"></a>Běžné problémy obsahu korelace  
  Korelace na základě obsahu se používá při služby pracovního postupu přijímá více zpráv a část dat v výměně zpráv určuje požadovanou instanci. Korelace na základě obsahu používá tato data ve zprávě, jako je například číslo nebo pořadí ID zákazníka, pro směrování zpráv do instance správný pracovního postupu. Tato část popisuje několik běžné problémy, které mohou nastat při použití korelace na základě obsahu.  
@@ -261,4 +263,4 @@ sm:header()/tempuri:CartId
 </Receive>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace na základě obsahu najdete v části [na základě obsahu](../../../../docs/framework/wcf/feature-details/content-based-correlation.md) a [korelační kalkulačky](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md) ukázka.
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] korelace na základě obsahu najdete v části [na základě obsahu](../../../../docs/framework/wcf/feature-details/content-based-correlation.md) a [korelační kalkulačky](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md) ukázka.

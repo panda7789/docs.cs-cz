@@ -1,21 +1,20 @@
 ---
-title: "Ladění jazyka C# nebo Visual Basic Hello World .NET Core aplikace s Visual Studio 2017"
-description: "Postup ladění aplikace Hello World napsané v C# nebo Visual Basic s Visual Studio 2017."
-keywords: ".NET core, .NET Core Konzolová aplikace, ladění v rozhraní .NET Core"
+title: Ladění jazyka C# nebo Visual Basic Hello World .NET Core aplikace s Visual Studio 2017
+description: Postup ladění aplikace Hello World napsané v C# nebo Visual Basic s Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/15/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.assetid: cb213625-cc60-438b-9b9e-49aed0e4a974
-ms.workload: dotnetcore
-ms.openlocfilehash: 6c8e1de4e0053ae6f74dc6c74fe37b6d7661932e
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 20f84c049236d2d3526901466ab406c40855c269
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Ladění aplikace Hello World s Visual Studio 2017
 
@@ -180,7 +179,7 @@ Visual Studio také umožňuje krok řádek po řádku prostřednictvím program
 
    V tomto okamžiku **automobily** ukazuje, že váš program je definovaný jenom jednu proměnnou `args`. Protože žádných argumentů příkazového řádku nebyly předány programu, jeho hodnota může být pole prázdný řetězec. Kromě toho Visual Studio otevřel okna konzoly prázdné.
 
-1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args`zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args` zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
 
    ![Visual Studio – okno](./media/debugging-with-visual-studio/stepinto2.png)
 
@@ -204,7 +203,7 @@ Visual Studio také umožňuje krok řádek po řádku prostřednictvím program
 
    Na tento bod, protože nebyly předána žádných argumentů příkazového řádku programu, **automobily** okno ukazuje, že hodnota `args` proměnné je pole prázdný řetězec. Kromě toho Visual Studio otevřel okna konzoly prázdné.
 
-1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args`zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
+1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu F11. Visual Studio teď klade důraz na další řádek provádění. Jak ukazuje obrázek, trvá méně než jeden milisekundu ke spouštění kódu vytvořeného mezi poslední příkaz a tato. `args` zůstane pouze deklarované proměnnou, a v okně konzoly zůstává prázdné.
 
    ![Visual Studio – okno](./media/debugging-with-visual-studio/vb-stepinto2.png)
 

@@ -1,19 +1,19 @@
 ---
-title: "příkaz - .NET Core rozhraní příkazového řádku publikování DotNet."
-description: "Příkaz Publikovat dotnet publikuje do adresáře projektu .NET Core."
+title: příkaz - .NET Core rozhraní příkazového řádku publikování DotNet.
+description: Příkaz Publikovat dotnet publikuje do adresáře projektu .NET Core.
 author: mairaw
 ms.author: mairaw
 ms.date: 03/10/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2aa69217e949b970b632c4fad72838b63c2a8988
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: fca05b22495f41ed85e89b077faad367a901e009
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-publish"></a>publikování DotNet.
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies] [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
@@ -62,7 +62,7 @@ Projekt k publikování, výchozí nastavení k aktuálnímu adresáři, není-l
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
 
 `-c|--configuration {Debug|Release}`
 

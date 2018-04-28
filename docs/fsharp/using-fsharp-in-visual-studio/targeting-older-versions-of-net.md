@@ -1,20 +1,17 @@
 ---
-title: "Cílení na rozhraní .NET Framework 2.0 v systému Windows 8"
-description: "Informace o cílení na starší verzi rozhraní .NET Framework, při použití F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Cílení na rozhraní .NET Framework 2.0 v systému Windows 8
+description: 'Informace o cílení na starší verzi rozhraní .NET Framework, při použití F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 63989543-95c3-4ab7-81f3-3834a8b15010
-ms.openlocfilehash: 2c0191267da5bee7b844c11cdee168ccfb3321c4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7c9bd8087da94a476105729b6f5b050fc66629a2
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="targeting-older-versions-of-net"></a>Cílení na starší verze rozhraní .NET
 
@@ -73,4 +70,4 @@ Chcete-li tuto chybu vyřešit, můžete buď cílový novější verzi rozhran�
 <br />  Další informace najdete v tématu [instalaci sady Visual Studio](https://msdn.microsoft.com/library/e2h7fzkw.aspx).
 <br />
 ## <a name="see-also"></a>Viz také
-[Visual F #](../index.md)
+[Visual F#](../index.md)

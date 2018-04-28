@@ -1,20 +1,17 @@
 ---
 title: Hodnoty Null (F#)
-description: "Zjistěte, jak se používá hodnota null v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Zjistěte, jak se používá hodnota null v programovací jazyk F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 68ebd261-51cf-4582-b2dc-44c84d1c2500
-ms.openlocfilehash: 01c14de00eb5efd0952145ffc8aabe69d65a3a48
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8d302cc78c5de582f58c6f9b9dea7b23ee7ddfea
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="null-values"></a>Hodnoty Null
 

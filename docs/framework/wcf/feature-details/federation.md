@@ -1,12 +1,13 @@
 ---
 title: Federace
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3c87fa08a698350d601f72d5d19ef353bd4257a9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0e7aef1f53675089ee311aa79a54abf60441b728
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="federation"></a>Federace
 Toto téma obsahuje stručný přehled koncept federované zabezpečení. Také popisuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporu pro nasazení architektury federované zabezpečení. Ukázkovou aplikaci, která demonstruje federace, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
@@ -32,7 +34,7 @@ Toto téma obsahuje stručný přehled koncept federované zabezpečení. Také 
 ## <a name="definition-of-federated-security"></a>Definice federované zabezpečení  
  Federované zabezpečení umožňuje čistou oddělení mezi službu, kterou klient přistupuje a přidružené postupů ověřování a autorizace. Federované zabezpečení taky umožňuje spolupráci mezi více systémy, sítě a organizace v různých důvěryhodnosti sfér.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje podporu pro vytváření a nasazování distribuovaných systémů, které využívají federované zabezpečení.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje podporu pro vytváření a nasazování distribuovaných systémů, které využívají federované zabezpečení.  
   
 ### <a name="elements-of-a-federated-security-architecture"></a>Prvky architektury federované zabezpečení  
  Architektura federované zabezpečení má tři klíčové prvky, jak je popsáno v následující tabulce.  
@@ -71,14 +73,14 @@ Toto téma obsahuje stručný přehled koncept federované zabezpečení. Také 
   
  V architektuře federované zabezpečení uživatele organizaci A vědět, že pokud chtějí přístup k webové službě v organizaci B, který se musí představovat platný zabezpečení token zabezpečení ze služby tokenů zabezpečení v organizaci B, který provádí ověřování a autorizaci svůj přístup k konkrétní službu.  
   
- Na kontaktování služby tokenů zabezpečení B, uživatelé přijímat jinou úroveň dereference z zásady přidružené Služba tokenů zabezpečení. Se musí představovat platný zabezpečení od služby tokenů zabezpečení A (tedy sféry klienta vztahu důvěryhodnosti) token před B služby tokenů zabezpečení můžete vydat, je token zabezpečení. Toto je důsledkem této vztah důvěryhodnosti mezi dvěma organizacemi a znamená, že organizace B nemá spravovat identity pro uživatele z organizace A. V praxi, STS B, obvykle má hodnotu null `issuerAddress` a `issuerMetadataAddress`. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). V takovém případě klienta zajímají místní zásady najít službu tokenů zabezpečení A. Tato konfigurace se nazývá *domácí sféry federace* a škáluje líp, protože není nutné udržovat informace o STS A. B služby tokenů zabezpečení  
+ Na kontaktování služby tokenů zabezpečení B, uživatelé přijímat jinou úroveň dereference z zásady přidružené Služba tokenů zabezpečení. Se musí představovat platný zabezpečení od služby tokenů zabezpečení A (tedy sféry klienta vztahu důvěryhodnosti) token před B služby tokenů zabezpečení můžete vydat, je token zabezpečení. Toto je důsledkem této vztah důvěryhodnosti mezi dvěma organizacemi a znamená, že organizace B nemá spravovat identity pro uživatele z organizace A. V praxi, STS B, obvykle má hodnotu null `issuerAddress` a `issuerMetadataAddress`. Další informace najdete v tématu [postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). V takovém případě klienta zajímají místní zásady najít službu tokenů zabezpečení A. Tato konfigurace se nazývá *domácí sféry federace* a škáluje líp, protože není nutné udržovat informace o STS A. B služby tokenů zabezpečení  
   
  Uživatelé pak, obraťte se na službu tokenů zabezpečení v organizaci A a získat token zabezpečení prezentací ověřování přihlašovacích údajů, které standardně používáte k získání přístupu k jakémukoli prostředku, v rámci organizace A. To také řeší problém uživatelů bude potřeba udržovat několik sad přihlašovacích údajů, nebo pomocí stejné sady přihlašovacích údajů ve více lokalitách služby.  
   
  Jakmile se uživatelé získat token zabezpečení od služby tokenů zabezpečení A, se nachází token, který má služba tokenů zabezpečení B. organizace B pokračuje k autorizaci požadavků uživatelů a vydá token zabezpečení pro uživatele z vlastní sadu tokenů zabezpečení. Uživatele můžete prezentovat token k prostředku v organizaci B a přístup ke službě.  
   
 ## <a name="support-for-federated-security-in-wcf"></a>Podpora pro federované zabezpečení ve WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]To podporuje pro nasazení architektury federované zabezpečení prostřednictvím [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] To podporuje pro nasazení architektury federované zabezpečení prostřednictvím [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
  [ \<– WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) element poskytuje bezpečné, spolehlivé a umožňuje vzájemnou spolupráci vazby, která se používá jako podkladový přenosový mechanismus pro komunikaci styl požadavku a odpovědi HTTP nasazení jako přenosový formát pro kódování textu a XML.  
   

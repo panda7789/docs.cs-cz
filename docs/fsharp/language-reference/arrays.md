@@ -1,20 +1,17 @@
 ---
 title: Pole (F#)
-description: "Zjistěte, jak vytvořit a použít pole v programovací jazyk F #."
-keywords: "Visual f #, f #, funkční programování"
+description: 'Zjistěte, jak vytvořit a použít pole v programovací jazyk F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 61fa9084-abdc-4cf5-8213-91ec1211866b
-ms.openlocfilehash: 7c9d8405230f4d765d3afdeaa154ddc598d0d1ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 650321e864556ff0ba8591e09ffa34877c8a39b7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="arrays"></a>Pole
 
@@ -68,7 +65,7 @@ Typ všechny F # pole je typ rozhraní .NET Framework <xref:System.Array?display
 Modul knihovny [ `Microsoft.FSharp.Collections.Array` ](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1) podporuje operací na jednorozměrná pole. Moduly `Array2D`, `Array3D`, a `Array4D` obsahují funkce, které podporují operace v rámci polí dva, tři a čtyři dimenze, v uvedeném pořadí. Můžete vytvořit pole pořadí větší než čtyři pomocí <xref:System.Array?displayProperty=nameWithType>.
 
 ### <a name="simple-functions"></a>Jednoduché funkce
-[`Array.get`](https://msdn.microsoft.com/library/dd93e85d-7e80-4d76-8de0-b6d45bcf07bc)Získá element. [`Array.length`](https://msdn.microsoft.com/library/0d775b6a-4a8f-4bd1-83e5-843b3251725f)poskytuje délka pole. [`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)element se nastaví na zadanou hodnotu. Následující příklad kódu ukazuje použití těchto funkcí.
+[`Array.get`](https://msdn.microsoft.com/library/dd93e85d-7e80-4d76-8de0-b6d45bcf07bc) Získá element. [`Array.length`](https://msdn.microsoft.com/library/0d775b6a-4a8f-4bd1-83e5-843b3251725f) poskytuje délka pole. [`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790) element se nastaví na zadanou hodnotu. Následující příklad kódu ukazuje použití těchto funkcí.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet9.fs)]
 
@@ -80,7 +77,7 @@ Výstup je následující.
 
 ### <a name="functions-that-create-arrays"></a>Funkce, které vytváření polí
 
-Několik funkcí vytváření pole bez nutnosti existující pole. [`Array.empty`](https://msdn.microsoft.com/library/c3694b92-1c16-4c54-9bf2-fe398fadce32)Vytvoří nové pole, která neobsahuje žádné elementy. [`Array.create`](https://msdn.microsoft.com/library/e848c8d6-1142-4080-9727-8dacc26066be)Vytvoří pole zadané velikosti a nastaví všechny elementy zadaných hodnot. [`Array.init`](https://msdn.microsoft.com/library/ee898089-63b0-40aa-910c-5ae7e32f6665)Vytvoří pole, daného dimenze a funkci, kterou chcete vygenerovat elementy. [`Array.zeroCreate`](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2)Vytvoří pole, ve kterém jsou všechny prvky inicializována tak, aby nulová hodnota pro typ tohoto pole. Následující kód ukazuje tyto funkce.
+Několik funkcí vytváření pole bez nutnosti existující pole. [`Array.empty`](https://msdn.microsoft.com/library/c3694b92-1c16-4c54-9bf2-fe398fadce32) Vytvoří nové pole, která neobsahuje žádné elementy. [`Array.create`](https://msdn.microsoft.com/library/e848c8d6-1142-4080-9727-8dacc26066be) Vytvoří pole zadané velikosti a nastaví všechny elementy zadaných hodnot. [`Array.init`](https://msdn.microsoft.com/library/ee898089-63b0-40aa-910c-5ae7e32f6665) Vytvoří pole, daného dimenze a funkci, kterou chcete vygenerovat elementy. [`Array.zeroCreate`](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2) Vytvoří pole, ve kterém jsou všechny prvky inicializována tak, aby nulová hodnota pro typ tohoto pole. Následující kód ukazuje tyto funkce.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet91.fs)]
 
@@ -92,7 +89,7 @@ Area of floats set to 5.0: [|5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0|]
 Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 ```
 
-[`Array.copy`](https://msdn.microsoft.com/library/9d0202f1-1ea0-475e-9d66-4f8ccc3c5b5f)Vytvoří nové pole, která obsahuje elementy, které jsou zkopírovány z existující pole. Všimněte si, kopie je bez podstruktury kopie, což znamená, že pokud je typ elementu typu odkazu, pouze odkaz zkopírován, není podkladových objektů. Následující příklad kódu to dokládá.
+[`Array.copy`](https://msdn.microsoft.com/library/9d0202f1-1ea0-475e-9d66-4f8ccc3c5b5f) Vytvoří nové pole, která obsahuje elementy, které jsou zkopírovány z existující pole. Všimněte si, kopie je bez podstruktury kopie, což znamená, že pokud je typ elementu typu odkazu, pouze odkaz zkopírován, není podkladových objektů. Následující příklad kódu to dokládá.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet11.fs)]
 
@@ -105,7 +102,7 @@ Výstup předchozí kód je následující:
 
 Řetězec `Test1` se zobrazí jenom v prvním poli, protože operace vytváření nového elementu přepíše odkaz v `firstArray` , ale nemá vliv na původní odkaz na prázdný řetězec, který se stále nachází na `secondArray`. Řetězec `Test2` se zobrazí v obou pole, protože `Insert` operace na <xref:System.Text.StringBuilder?displayProperty=nameWithType> typu ovlivňuje základní <xref:System.Text.StringBuilder?displayProperty=nameWithType> objekt, který se odkazuje do obou polí.
 
-[`Array.sub`](https://msdn.microsoft.com/library/40fb12ba-41d7-4ef0-b33a-56727deeef9d)generuje nové pole z Podoblast sady pole. Zadáte Podoblast sady zadáním počáteční index a délka. Následující kód ukazuje použití `Array.sub`.
+[`Array.sub`](https://msdn.microsoft.com/library/40fb12ba-41d7-4ef0-b33a-56727deeef9d) generuje nové pole z Podoblast sady pole. Zadáte Podoblast sady zadáním počáteční index a délka. Následující kód ukazuje použití `Array.sub`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet12.fs)]
 
@@ -114,7 +111,7 @@ Výstup ukazuje, že subarray spustí v prvku 5 a obsahuje 10 elementy.
 ```
 [|5; 6; 7; 8; 9; 10; 11; 12; 13; 14|]
 ```
-[`Array.append`](https://msdn.microsoft.com/library/08836310-5036-4474-b9a2-2c73e2293911)kombinací dvou existujícím polím vytvoří nové pole.
+[`Array.append`](https://msdn.microsoft.com/library/08836310-5036-4474-b9a2-2c73e2293911) kombinací dvou existujícím polím vytvoří nové pole.
 
 Následující kód ukazuje **Array.append**.
 
@@ -126,7 +123,7 @@ Výstup předchozí kód je následující.
 [|1; 2; 3; 4; 5; 6|]
 ```
 
-[`Array.choose`](https://msdn.microsoft.com/library/f5c8a5e2-637f-44d4-b35c-be96a6618b09)Vybere prvky pole pro zahrnutí do nové pole. Následující kód ukazuje `Array.choose`. Všimněte si, že typ elementu pole nemusí být stejný typ hodnoty vrácené v typu možnost. V tomto příkladu je typ elementu `int` a možnost je výsledkem polynomické funkce, `elem*elem - 1`, jako plovoucí bodu číslo.
+[`Array.choose`](https://msdn.microsoft.com/library/f5c8a5e2-637f-44d4-b35c-be96a6618b09) Vybere prvky pole pro zahrnutí do nové pole. Následující kód ukazuje `Array.choose`. Všimněte si, že typ elementu pole nemusí být stejný typ hodnoty vrácené v typu možnost. V tomto příkladu je typ elementu `int` a možnost je výsledkem polynomické funkce, `elem*elem - 1`, jako plovoucí bodu číslo.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet14.fs)]
 
@@ -136,7 +133,7 @@ Výstup předchozí kód je následující.
 [|3.0; 15.0; 35.0; 63.0; 99.0|]
 ```
 
-[`Array.collect`](https://msdn.microsoft.com/library/c3b60c3b-9455-48c9-bc2b-e88f0434342a)Spustí zadaný funkci pro každý element pole existující pole a shromažďuje elementy generované funkce a sloučí je do nové pole. Následující kód ukazuje `Array.collect`.
+[`Array.collect`](https://msdn.microsoft.com/library/c3b60c3b-9455-48c9-bc2b-e88f0434342a) Spustí zadaný funkci pro každý element pole existující pole a shromažďuje elementy generované funkce a sloučí je do nové pole. Následující kód ukazuje `Array.collect`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet15.fs)]
 
@@ -146,7 +143,7 @@ Výstup předchozí kód je následující.
 [|0; 1; 0; 1; 2; 3; 4; 5; 0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10|]
 ```
 
-[`Array.concat`](https://msdn.microsoft.com/library/f7219b79-1ec8-4a25-96b1-edbedb358302)trvá pořadí polí a sloučí je do jednoho pole. Následující kód ukazuje `Array.concat`.
+[`Array.concat`](https://msdn.microsoft.com/library/f7219b79-1ec8-4a25-96b1-edbedb358302) trvá pořadí polí a sloučí je do jednoho pole. Následující kód ukazuje `Array.concat`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet16.fs)]
 
@@ -157,7 +154,7 @@ Výstup předchozí kód je následující.
 (3, 2, 6); (3, 3, 9)|]
 ```
 
-[`Array.filter`](https://msdn.microsoft.com/library/b885b214-47fc-4639-9664-b8c183a39ede)provede logickou podmínky a vygeneruje nové pole, která obsahuje pouze elementy ze vstupní pole, pro kterou je podmínka vyhodnocena jako true. Následující kód ukazuje `Array.filter`.
+[`Array.filter`](https://msdn.microsoft.com/library/b885b214-47fc-4639-9664-b8c183a39ede) provede logickou podmínky a vygeneruje nové pole, která obsahuje pouze elementy ze vstupní pole, pro kterou je podmínka vyhodnocena jako true. Následující kód ukazuje `Array.filter`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet17.fs)]
 
@@ -167,7 +164,7 @@ Výstup předchozí kód je následující.
 [|2; 4; 6; 8; 10|]
 ```
 
-[`Array.rev`](https://msdn.microsoft.com/library/1bbf822c-763b-4794-af21-97d2e48ef709)vygeneruje nové pole obrácení směru existující pole. Následující kód ukazuje `Array.rev`.
+[`Array.rev`](https://msdn.microsoft.com/library/1bbf822c-763b-4794-af21-97d2e48ef709) vygeneruje nové pole obrácení směru existující pole. Následující kód ukazuje `Array.rev`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet18.fs)]  
 
@@ -334,7 +331,7 @@ false
 
 ### <a name="searching-arrays"></a>Hledání pole
 
-[`Array.find`](https://msdn.microsoft.com/library/db6d920a-de19-4520-85a4-d83de77c1b33)přebere logická funkce a vrátí první prvek, pro kterou vrátí funkce `true`, nebo vyvolá <xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType> Pokud nebyl nalezen žádný prvek, který splňuje podmínku. [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f)je třeba `Array.find`, s tím rozdílem, že vrátí index prvku místo elementu samotného.
+[`Array.find`](https://msdn.microsoft.com/library/db6d920a-de19-4520-85a4-d83de77c1b33) přebere logická funkce a vrátí první prvek, pro kterou vrátí funkce `true`, nebo vyvolá <xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType> Pokud nebyl nalezen žádný prvek, který splňuje podmínku. [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f) je třeba `Array.find`, s tím rozdílem, že vrátí index prvku místo elementu samotného.
 
 Následující kód používá `Array.find` a `Array.findIndex` vyhledejte číslo, které je přesně čtvercový i ideální datové krychle.
 
@@ -346,7 +343,7 @@ Výstup je následující.
 The first element that is both a square and a cube is 64 and its index is 62.
 ```
 
-[`Array.tryFind`](https://msdn.microsoft.com/library/7bd65f6c-df77-454c-ac3a-6f7baecec9d9)je třeba `Array.find`kromě toho, že její výsledek je typ možnost, a vrátí `None` Pokud nebyl nalezen žádný prvek. `Array.tryFind`slouží místo `Array.find` Pokud si nejste jisti, zda je v poli odpovídající element. Podobně [ `Array.tryFindIndex` ](https://msdn.microsoft.com/library/da82f7fe-95e9-4fd5-a924-cd3c9d10618a) jako [ `Array.findIndex` ](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f) s tím rozdílem, že typ možnost je návratovou hodnotu. Pokud nebyl nalezen žádný prvek, je možnost `None`.
+[`Array.tryFind`](https://msdn.microsoft.com/library/7bd65f6c-df77-454c-ac3a-6f7baecec9d9) je třeba `Array.find`kromě toho, že její výsledek je typ možnost, a vrátí `None` Pokud nebyl nalezen žádný prvek. `Array.tryFind` slouží místo `Array.find` Pokud si nejste jisti, zda je v poli odpovídající element. Podobně [ `Array.tryFindIndex` ](https://msdn.microsoft.com/library/da82f7fe-95e9-4fd5-a924-cd3c9d10618a) jako [ `Array.findIndex` ](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f) s tím rozdílem, že typ možnost je návratovou hodnotu. Pokud nebyl nalezen žádný prvek, je možnost `None`.
 
 Následující kód ukazuje použití `Array.tryFind`. Tento kód závisí na předchozí kód.
 
@@ -380,7 +377,7 @@ Found an element 4096 with square root 64 and cube root 16.
 
 Použití [ `Array.max` ](https://msdn.microsoft.com/library/f03fbda0-fce6-40e2-a85d-79c9d81f710b) nebo [ `Array.min` ](https://msdn.microsoft.com/library/d6b3da5f-bac0-4355-9846-4b72d95bc3fd) získat maximální nebo minimální elementu, pokud ji podporuje typ elementu. Podobně [ `Array.maxBy` ](https://msdn.microsoft.com/library/18dbe7c5-482e-4766-8e01-12a76f847045) a [ `Array.minBy` ](https://msdn.microsoft.com/library/24091583-be78-4cc9-9fab-de6d7506af4f) povolit funkci nejprve provést, případně k transformaci na typ, který podporuje porovnání.
 
-[`Array.sum`](https://msdn.microsoft.com/library/4ffdb8c8-cd94-4b0b-9e5c-a7c9c17963c2)Přidá elementy pole, a [ `Array.sumBy` ](https://msdn.microsoft.com/library/41698ba6-1adc-4169-8cc5-7a0e3f8de56b) volá funkci pro každý element a přidá výsledky společně.
+[`Array.sum`](https://msdn.microsoft.com/library/4ffdb8c8-cd94-4b0b-9e5c-a7c9c17963c2) Přidá elementy pole, a [ `Array.sumBy` ](https://msdn.microsoft.com/library/41698ba6-1adc-4169-8cc5-7a0e3f8de56b) volá funkci pro každý element a přidá výsledky společně.
 
 Chcete-li spustit funkci na každý prvek v poli bez ukládání vrácené hodnoty, použijte [ `Array.iter` ](https://msdn.microsoft.com/library/94eba0f1-ecd7-459f-b89f-ed2a2923e516). Pro funkci zahrnující dvěma poli stejnou délku, použijte [ `Array.iter2` ](https://msdn.microsoft.com/library/018aa9b9-f186-4142-be8a-a62462794fdc). Pokud potřebujete ponechat pole výsledky funkce, použijte [ `Array.map` ](https://msdn.microsoft.com/library/38cbe824-0480-47be-85fd-df3afdd97a45) nebo [ `Array.map2` ](https://msdn.microsoft.com/library/bb7aafe8-4a1f-45b9-92fc-1af9eafbea5c), který funguje na dvě pole v čase.
 
@@ -392,7 +389,7 @@ Tyto funkce pro provádění výpočtů odpovídají funkce se stejným názvem 
 
 ### <a name="modifying-arrays"></a>Úprava pole
 
-[`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)element se nastaví na zadanou hodnotu. [`Array.fill`](https://msdn.microsoft.com/library/c83c9886-81d9-44f9-a195-61c7b87f7df2)Nastaví rozsah elementů v matici zadanou hodnotou. Následující kód představuje příklad `Array.fill`.
+[`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790) element se nastaví na zadanou hodnotu. [`Array.fill`](https://msdn.microsoft.com/library/c83c9886-81d9-44f9-a195-61c7b87f7df2) Nastaví rozsah elementů v matici zadanou hodnotou. Následující kód představuje příklad `Array.fill`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet28.fs)]
 
@@ -406,7 +403,7 @@ Můžete použít [ `Array.blit` ](https://msdn.microsoft.com/library/675e13e4-7
 
 ### <a name="converting-to-and-from-other-types"></a>Převod na a z dalších typů
 
-[`Array.ofList`](https://msdn.microsoft.com/library/e7225239-f561-45a4-b0b5-69a1cdcae78b)Vytvoří pole ze seznamu. [`Array.ofSeq`](https://msdn.microsoft.com/library/6bedf5e0-4b22-46da-b09c-6aa09eff220c)Vytvoří pole z sekvenci. [`Array.toList`](https://msdn.microsoft.com/library/4deff724-0be4-4688-92e7-9d67a1097786)a [ `Array.toSeq` ](https://msdn.microsoft.com/library/ac28dbab-406c-4fe0-ab08-c1ce5e247af4) převést na tyto typy kolekcí z typ pole.
+[`Array.ofList`](https://msdn.microsoft.com/library/e7225239-f561-45a4-b0b5-69a1cdcae78b) Vytvoří pole ze seznamu. [`Array.ofSeq`](https://msdn.microsoft.com/library/6bedf5e0-4b22-46da-b09c-6aa09eff220c) Vytvoří pole z sekvenci. [`Array.toList`](https://msdn.microsoft.com/library/4deff724-0be4-4688-92e7-9d67a1097786) a [ `Array.toSeq` ](https://msdn.microsoft.com/library/ac28dbab-406c-4fe0-ab08-c1ce5e247af4) převést na tyto typy kolekcí z typ pole.
 
 ### <a name="sorting-arrays"></a>Řazení polí
 
@@ -414,13 +411,13 @@ Použití [ `Array.sort` ](https://msdn.microsoft.com/library/c6679075-e7eb-463c
 
 ### <a name="arrays-and-tuples"></a>Pole a řazených kolekcí členů
 
-Funkce [ `Array.zip` ](https://msdn.microsoft.com/library/23e086b8-b266-4db2-8b68-e88e6a8e2187) a [ `Array.unzip` ](https://msdn.microsoft.com/library/a529b47c-2e2b-4f79-ad44-c578432d2f48) převést pole párů řazené kolekce členů řazených kolekcí členů polí a naopak. [`Array.zip3`](https://msdn.microsoft.com/library/1745744a-d2ca-4c3e-b825-3f15d9f4000d)a [ `Array.unzip3` ](https://msdn.microsoft.com/library/bc3e6db0-f334-444f-8c30-813942880677) jsou podobné, s tím rozdílem, že fungují s řazenými kolekcemi členů z uvedených položek nebo řazené kolekce členů tří polí.
+Funkce [ `Array.zip` ](https://msdn.microsoft.com/library/23e086b8-b266-4db2-8b68-e88e6a8e2187) a [ `Array.unzip` ](https://msdn.microsoft.com/library/a529b47c-2e2b-4f79-ad44-c578432d2f48) převést pole párů řazené kolekce členů řazených kolekcí členů polí a naopak. [`Array.zip3`](https://msdn.microsoft.com/library/1745744a-d2ca-4c3e-b825-3f15d9f4000d) a [ `Array.unzip3` ](https://msdn.microsoft.com/library/bc3e6db0-f334-444f-8c30-813942880677) jsou podobné, s tím rozdílem, že fungují s řazenými kolekcemi členů z uvedených položek nebo řazené kolekce členů tří polí.
 
 ## <a name="parallel-computations-on-arrays"></a>Paralelní výpočty na pole
 
 Modul [ `Array.Parallel` ](https://msdn.microsoft.com/library/60f30b77-5af4-4050-9a5c-bcdb3f5cbb09) obsahuje funkce pro provádění paralelní výpočty na pole. Tento modul není k dispozici v aplikacích, které cílové verze rozhraní .NET Framework starší než verze 4.
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)
 
 [F #. Typy](fsharp-types.md)

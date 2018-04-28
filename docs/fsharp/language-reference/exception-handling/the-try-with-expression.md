@@ -1,20 +1,17 @@
 ---
-title: "Výjimky: Výraz try...with (F#)"
+title: 'Výjimky: Výraz try...with (F#)'
 description: "Naučte se používat pro zpracovávání výjimek v jazyce F # 'try... with' výraz."
-keywords: "Visual f #, f #, funkční programování"
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 36721076-95cd-4636-ae43-79dd512bee6c
-ms.openlocfilehash: 163dfab49d4aaf23123800246fae2cad33e2257c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 06e40b79fc1958918dc0615ce9d1004e0a6e74a5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="exceptions-the-trywith-expression"></a>Výjimky: Výraz try...with
 
@@ -49,7 +46,7 @@ Výjimky může být výjimky .NET, nebo mohou být výjimky F #. Můžete taky 
 |:? *Typ výjimky*|Odpovídá zadaný typ výjimky .NET.|
 |:? *Typ výjimky* jako *identifikátor*|Odpovídá zadaný typ výjimky .NET, ale dává výjimka pojmenované hodnotě.|
 |*název výjimky*(*argumenty*)|Odpovídá typ výjimky F # a sváže argumenty.|
-|*identifikátor*|Odpovídá jakékoli výjimky a sváže název objekt výjimky. Ekvivalentní **:? System.Exception jako***identifikátor*|
+|*Identifikátor*|Odpovídá jakékoli výjimky a sváže název objekt výjimky. Ekvivalentní **:? System.Exception jako *** identifikátor*|
 |*identifikátor* při *podmínky*|Odpovídá jakékoli výjimky, pokud je podmínka vyhodnocena jako true.|
 
 ## <a name="examples"></a>Příklady

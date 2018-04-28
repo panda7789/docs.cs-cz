@@ -21,11 +21,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7416f8429f347d0b8dc6227415ad366b3ff63986
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 19bb6d4a172568611f73e3a50d0c526016c65aac
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
 Následující části uvádějí osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zabezpečení, najdete v části [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
@@ -60,7 +60,7 @@ Následující části uvádějí osvědčené postupy, které je třeba zváži
  Ujistěte se, kterým důvěřujete zdroj metadata a ujistěte se, že nikdo neoprávněně metadata. Metadata načíst pomocí protokolu HTTP je odesláno jako nezašifrovaný text a může být úmyslně poškozena. Pokud služba používá <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> a <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> vlastnosti, použijte adresu URL zadanou tvůrcem služby ke stahování dat pomocí protokolu HTTPS.  
   
 ## <a name="publish-metadata-using-security"></a>Publikování metadat pomocí zabezpečení  
- Chcete-li zabránit manipulaci s metadaty publikované služby, zabezpečený koncový bod metadat exchange s přenos nebo zabezpečení na úrovni zpráv. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Publikování kocových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md) a [postupy: publikování metadat služby promocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
+ Chcete-li zabránit manipulaci s metadaty publikované služby, zabezpečený koncový bod metadat exchange s přenos nebo zabezpečení na úrovni zpráv. Další informace najdete v tématu [publikování kocových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md) a [postupy: publikování metadat služby pomocí kód](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
   
 ## <a name="ensure-use-of-local-issuer"></a>Ujistěte se pomocí místního vystavitele  
  Pokud adresu vystavitele a vazby jsou zadané pro danou vazbu, místního vystavitele se nepoužije pro koncové body, které tuto vazbu používají. Klienti, kteří měli vždycky používat místního vystavitele zkontrolujte nepoužívají takovou vazbu nebo jejich Upravit vazby tak, že adresa Vystavitel je null.  

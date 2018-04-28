@@ -1,23 +1,24 @@
 ---
-title: "Výjimky"
-ms.custom: 
+title: Výjimky
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 065205cc-52dd-4f30-9578-b17d8d113136
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bf2c6e12dac2130a26aa01efc21b8f58f509294a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9e78546a10e1a8cdff780c44898fd209ca829c6c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="exceptions"></a>Výjimky
 Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch> aktivity zpracování výjimek, které jsou vyvolány během spouštění pracovního postupu. Tyto odchylky mohou být zpracovány nebo se může být znovu vyvolána, pomocí <xref:System.Activities.Statements.Rethrow> aktivity. Aktivity v <xref:System.Activities.Statements.TryCatch.Finally%2A> části jsou spuštěna při buď <xref:System.Activities.Statements.TryCatch.Try%2A> části nebo <xref:System.Activities.Statements.TryCatch.Catches%2A> části dokončení. Pracovní postupy hostované <xref:System.Activities.WorkflowApplication> instance můžete také použít <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> obslužné rutiny události pro zpracování výjimek, které nejsou zpracovávány <xref:System.Activities.Statements.TryCatch> aktivity.  
@@ -58,7 +59,7 @@ Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch>
 -   Výjimka není zpracováván na vyšší úrovni <xref:System.Activities.Statements.TryCatch>, řídicí sekvence kořenu pracovního postupu a pracovní postup je nakonfigurovaný zrušit místo provedení příkazu ukončit nebo přerušení. Pracovní postupy, které jsou hostované pomocí <xref:System.Activities.WorkflowApplication> to můžete nakonfigurovat zpracování <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> a vrátí <xref:System.Activities.UnhandledExceptionAction.Cancel>. Příkladem zpracování <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> je uvedené dříve v tomto tématu. Služby pracovních postupů to můžete nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> a zadání <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Cancel>. Příklad konfigurace <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>, najdete v části [rozšíření hostitele služby pracovního postupu](../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md).  
   
 ## <a name="exception-handling-versus-compensation"></a>Porovnání kompenzace zpracování výjimek  
- Rozdíl mezi výjimek a kompenzace je, že při provádění aktivity k výjimek. Kompenzace nastane po úspěšném dokončení aktivity. Zpracovávání výjimek v jazyce poskytuje možnost Vyčištění po aktivity vyvolá výjimku, zatímco kompenzace poskytuje mechanismus, pomocí kterého lze úspěšně dokončila práci při dříve dokončené aktivity vrátit zpět. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Kompenzace](../../../docs/framework/windows-workflow-foundation/compensation.md).  
+ Rozdíl mezi výjimek a kompenzace je, že při provádění aktivity k výjimek. Kompenzace nastane po úspěšném dokončení aktivity. Zpracovávání výjimek v jazyce poskytuje možnost Vyčištění po aktivity vyvolá výjimku, zatímco kompenzace poskytuje mechanismus, pomocí kterého lze úspěšně dokončila práci při dříve dokončené aktivity vrátit zpět. Další informace najdete v tématu [kompenzace](../../../docs/framework/windows-workflow-foundation/compensation.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.Statements.TryCatch>  

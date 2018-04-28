@@ -1,21 +1,19 @@
 ---
-title: "Balení distribuční .NET core"
-description: "Informace k balíčkování, název a verze .NET Core pro distribuci."
-keywords: "Zdroj rozhraní .NET, .NET core, sestavení"
+title: Balení distribuční .NET core
+description: Informace k balíčkování, název a verze .NET Core pro distribuci.
 author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 71b9d722-c5a8-4271-9ce1-d87e7ae2494d
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: e511ea13c578ab44c65a5ba78f666cce1ab6a0c4
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 63ff542dbde30f8ff72a2d257a16a18b2a9e71b8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-distribution-packaging"></a>Balení distribuční .NET core
 
@@ -84,12 +82,12 @@ Následující tabulky uvádí doporučené balíčky.
 | Název                                    | Příklad                | Případ použití: nainstalujte...           | Obsahuje           | Závislosti                                   | Version            |
 |-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
 | dotnet-sdk-[major]                      | dotnet-sdk-2           | Nejnovější sady sdk pro hlavní modulu runtime    |                    | dotnet-sdk-[major].[latestminor]               | \<verze sady SDK >     |
-| dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Nejnovější sady sdk pro konkrétní modul runtime |                    | dotnet-sdk-[major].[minor].[latest sdk feat]xx | \<verze sady SDK >     |
-| dotnet-sdk-[major].[minor].[sdk feat]xx | dotnet-sdk-2.1.3xx     | Funkce verze konkrétní sady sdk    | (3),(4)            | aspnetcore-runtime-[major].[minor]             | \<verze sady SDK >     |
-| aspnetcore-runtime-[major].[minor]      | aspnetcore. modul runtime 2.1 | Konkrétní ASP.NET Core runtime   | (6),[(7)]          | dotnet-runtime-[major].[minor]                 | \<verze runtime > |
-| dotnet-runtime-[major].[minor]          | dotnet-runtime-2.1     | Konkrétní modul runtime                | (5)                | hostitele fxr:\<verzi modulu runtime > +                   | \<verze runtime > |
+| dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Nejnovější sady sdk pro konkrétní modul runtime |                    | DotNet - sdk-[hlavní]. [vedlejší]. [nejnovější sady sdk feat] xx | \<verze sady SDK >     |
+| DotNet - sdk-[hlavní]. [vedlejší]. xx [sdk feat] | dotnet-sdk-2.1.3xx     | Funkce verze konkrétní sady sdk    | (3),(4)            | aspnetcore - runtime-[hlavní]. [menší]             | \<verze sady SDK >     |
+| aspnetcore - runtime-[hlavní]. [menší]      | aspnetcore. modul runtime 2.1 | Konkrétní ASP.NET Core runtime   | (6),[(7)]          | DotNet - runtime-[hlavní]. [menší]                 | \<verze runtime > |
+| DotNet - runtime-[hlavní]. [menší]          | DotNet. modul runtime 2.1     | Konkrétní modul runtime                | (5)                | hostitele fxr:\<verzi modulu runtime > +                   | \<verze runtime > |
 | dotnet-host-fxr                         | dotnet-host-fxr        | _závislosti_                    | (2)                | hostitele:\<verzi modulu runtime > +                       | \<verze runtime > |
-| dotnet-host                             | dotnet-host            | _závislosti_                    | (1),(8),(9),(10)   |                                                | \<verze runtime > |
+| hostitele DotNet.                             | hostitele DotNet.            | _závislosti_                    | (1),(8),(9),(10)   |                                                | \<verze runtime > |
 
 Většina distribuce vyžadují všechny artefakty má být sestaven ze zdroje. To má dopad na některé u balíčků:
 
@@ -111,19 +109,19 @@ V následující tabulce jsou uvedeny doporučené balíčky a **oprava balíčk
 
 | Název                                           | Příklad                  | Obsahuje         | Závislosti                                              |
 |------------------------------------------------|--------------------------|------------------|-----------------------------------------------------------|
-| dotnet-sdk-[major]                             | dotnet-sdk-2             |                  | dotnet-sdk-[major].[latest sdk minor]                     |
-| dotnet-sdk-[major].[minor]                     | dotnet-sdk-2.1           |                  | dotnet-sdk-[major].[minor].[latest sdk feat]xx            |
-| dotnet-sdk-[major].[minor].[sdk feat]xx        | dotnet-sdk-2.1.3xx       |                  | dotnet-sdk-[major].[minor].[latest sdk patch]             |
+| dotnet-sdk-[major]                             | dotnet-sdk-2             |                  | DotNet - sdk-[hlavní]. [menší nejnovější sdk]                     |
+| dotnet-sdk-[major].[minor]                     | dotnet-sdk-2.1           |                  | DotNet - sdk-[hlavní]. [vedlejší]. [nejnovější sady sdk feat] xx            |
+| DotNet - sdk-[hlavní]. [vedlejší]. xx [sdk feat]        | dotnet-sdk-2.1.3xx       |                  | DotNet - sdk-[hlavní]. [vedlejší]. [nejnovější opravy sdk]             |
 | **dotnet-sdk-[major].[minor].[patch]**         | dotnet-sdk-2.1.300       | (3),(4)          | aspnetcore - runtime-[hlavní]. [vedlejší]. [opravy runtime sdk]    |
-| aspnetcore-runtime-[major].[minor]             | aspnetcore. modul runtime 2.1   |                  | aspnetcore-runtime-[major].[minor].[latest runtime patch] |
-| **aspnetcore-runtime-[major].[minor].[patch]** | aspnetcore-runtime-2.1.0 | (6),[(7)]        | dotnet-runtime-[major].[minor].[patch]                    |
-| dotnet-runtime-[major].[minor]                 | dotnet-runtime-2.1       |                  | dotnet-runtime-[major].[minor].[latest runtime patch]     |
+| aspnetcore - runtime-[hlavní]. [menší]             | aspnetcore. modul runtime 2.1   |                  | aspnetcore - runtime-[hlavní]. [vedlejší]. [nejnovější opravy runtime] |
+| **aspnetcore-runtime-[major].[minor].[patch]** | aspnetcore. modul runtime 2.1.0 | (6),[(7)]        | dotnet-runtime-[major].[minor].[patch]                    |
+| DotNet - runtime-[hlavní]. [menší]                 | DotNet. modul runtime 2.1       |                  | DotNet - runtime-[hlavní]. [vedlejší]. [nejnovější opravy runtime]     |
 | **dotnet-runtime-[major].[minor].[patch]**     | dotnet-runtime-2.1.0     | (5)              | hostitele fxr:\<verzi modulu runtime > +                              |
 | dotnet-host-fxr                                | dotnet-host-fxr          | (2)              | hostitele:\<verzi modulu runtime > +                                  |
-| dotnet-host                                    | dotnet-host              | (1),(8),(9),(10) |                                                           |
+| hostitele DotNet.                                    | hostitele DotNet.              | (1),(8),(9),(10) |                                                           |
 
 Alternativu k použití balíčky opravy je _Připnutí_ balíčky na konkrétní verzi pomocí Správce balíčků. Pokud chcete vyhnout, které mají vliv na ostatní aplikace nebo uživatele, můžete tyto aplikace vytvořené a nasazené v kontejneru.
 
 ## <a name="building-packages"></a>Vytváření balíčků
 
-Https://github.com/dotnet/source-build úložiště obsahuje pokyny, jak vytvořit zdroj tarball .NET Core SDK a všech jeho součástí. Výstup sestavení zdroje úložiště odpovídá rozložení popsané v první části tohoto článku.
+https://github.com/dotnet/source-build Úložiště obsahuje pokyny, jak vytvořit zdroj tarball .NET Core SDK a všech jeho součástí. Výstup sestavení zdroje úložiště odpovídá rozložení popsané v první části tohoto článku.

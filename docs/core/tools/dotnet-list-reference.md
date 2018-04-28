@@ -1,18 +1,19 @@
 ---
-title: "příkaz odkaz DotNet seznamu - .NET Core rozhraní příkazového řádku"
-description: "Příkaz dotnet seznamu odkaz poskytuje vhodnou možnost do seznamu odkazy na projekt na projekt."
+title: příkaz odkaz DotNet seznamu - .NET Core rozhraní příkazového řádku
+description: Příkaz dotnet seznamu odkaz poskytuje vhodnou možnost do seznamu odkazy na projekt na projekt.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: a4ceadb6d070d7997e75b472624bbe2c1650396d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 946d3d523443fbe673b95dba95dbca327fde1699
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-list-reference"></a>referenční seznam DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="name"></a>Název
 
-`dotnet list reference`-Obsahuje seznam odkazů projektu do projektu.
+`dotnet list reference` -Obsahuje seznam odkazů projektu do projektu.
 
 ## <a name="synopsis"></a>Stručný obsah
 

@@ -1,13 +1,13 @@
 ---
-title: "Identita a ověřování služby"
-ms.custom: 
+title: Identita a ověřování služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-caps.latest.revision: 
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 579f41a213564dd18dae719a14170100903efd92
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: a0229ce5c6b7081ae493af22b0daeee444736783
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové služby popis Language (WSDL). Tato hodnota, rozšíří do libovolného klienta se používá k ověřování. Jakmile klient inicializuje komunikaci pro koncový bod a služby se ověří na klienta, klient porovná hodnotu identitu koncového bodu se proces ověřování koncového bodu vrácená hodnota. Pokud se shodují, klient jistotu, že nekontaktoval koncový bod očekávanou službu. To funguje jako ochrana proti *phishing* tak, že zabrání se přesměruje na koncový bod hostitelem škodlivý služba klienta.  
@@ -48,7 +48,7 @@ Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové sl
  <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost <xref:System.ServiceModel.EndpointAddress> třída reprezentuje identitu služby nazvaná klientem. Publikuje službu <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Při spuštění klienta Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod služby vygenerované konfigurace obsahuje hodnotu služby <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktury (Pokud je nakonfigurovaná s zabezpečení) ověří, zda má služba identita zadaná.  
   
 > [!IMPORTANT]
->  Metadata obsahuje Očekávaná identita služby, proto se doporučuje vystavit metadata služby prostřednictvím zabezpečené prostředky, například tak, že vytvoříte koncový bod HTTPS pro službu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Postupy: zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
+>  Metadata obsahuje Očekávaná identita služby, proto se doporučuje vystavit metadata služby prostřednictvím zabezpečené prostředky, například tak, že vytvoříte koncový bod HTTPS pro službu. Další informace najdete v tématu [postupy: zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
   
 ## <a name="identity-types"></a>Typy identity  
  Služba může poskytnout šest typů identit. Každý typ identity odpovídá element, který může být obsažený uvnitř `<identity>` element v konfiguraci. Typ použitý závisí na scénáře a požadavky na zabezpečení služby. Následující tabulka popisuje každý typ identity.  

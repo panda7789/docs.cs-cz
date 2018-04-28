@@ -1,29 +1,31 @@
 ---
 title: Element &lt;httpDigest&gt;
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 95e6a7d31949bd7a6badb029e3f768a63fbaf924
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 75579a583b774896f43099d3cc30f1679b10a889
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="lthttpdigestgt-element"></a>Element &lt;httpDigest&gt;
 Určuje výtah zadejte pověření používaná při ověřování klienta ke službě.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<endpointBehaviors >  
 \<chování >  
@@ -57,7 +59,7 @@ Určuje výtah zadejte pověření používaná při ověřování klienta ke sl
 ## <a name="remarks"></a>Poznámky  
  Algoritmu digest je hodnota hash určit pomocí algoritmu a sadu vstupy. Ověřovatele a ověřený odsouhlaste algoritmu a výměnu dat použít jako vstupy. Klienta můžete vypočítat hodnotu hash a odeslat do služby. Služba také vypočte hash a porovnává hodnoty. Shoda ověří klienta.  
   
- Musí být povolena tato funkce se službou Active Directory ve Windows a Internetové informační služby (IIS). [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Ve službě IIS 6.0 ověřování algoritmem digest](http://go.microsoft.com/fwlink/?LinkId=88443).  
+ Musí být povolena tato funkce se službou Active Directory ve Windows a Internetové informační služby (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](http://go.microsoft.com/fwlink/?LinkId=88443).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  

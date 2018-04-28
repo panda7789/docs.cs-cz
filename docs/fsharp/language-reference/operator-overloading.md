@@ -1,20 +1,17 @@
 ---
-title: "Přetížení operátoru (F#)"
-description: "Naučte se přetížení aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni v jazyce F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Přetížení operátoru (F#)
+description: 'Naučte se přetížení aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni v jazyce F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 019277ed-f649-4fa5-ad43-097865f449d9
-ms.openlocfilehash: 76ddab5339e11d71bb326b60d727017eb838ccf4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 45fcb4d2acce29caa6b38d08ae4f166884f20147
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="operator-overloading"></a>Přetížení operátoru
 
@@ -163,4 +160,4 @@ Vzhledem k tomu, že pravidla oboru jazyka F# nařizují, že nově definované 
 U globálních operátorů, které mnohdy představují malé funkce, jež jsou nejlépe začlenitelné do volaného kódu, se často používá klíčové slovo `inline`. Vložení funkcí operátoru umožňuje operátorům pracovat se staticky řešenými typy parametrů za účelem vytvoření staticky řešeného generického kódu. Další informace najdete v tématu [vložené funkce](functions/inline-functions.md) a [statisticky vyřešené parametry typu](generics/statically-resolved-type-parameters.md).
 
 ## <a name="see-also"></a>Viz také
-[Členy](members/index.md)
+[Členové](members/index.md)

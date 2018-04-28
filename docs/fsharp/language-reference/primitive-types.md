@@ -1,20 +1,17 @@
 ---
-title: "Primitivní typy (F#)"
-description: "Zjistit základní primitivní typy, které se používají v jazyce F #."
-keywords: "Visual f #, f #, funkční programování"
+title: Primitivní typy (F#)
+description: 'Zjistit základní primitivní typy, které se používají v jazyce F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 2f23d98b-551b-4fd2-9f4f-0fd7254288ed
-ms.openlocfilehash: b493cdf7116d94f66940d03b86e584bcecbbb0f1
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.openlocfilehash: 7832151ee211f56547ecad98fc31f1454cb18870
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="primitive-types"></a>Primitivní typy
 
@@ -45,7 +42,7 @@ Následující tabulka shrnuje vlastnosti primitivních typů F #.
 |`float, double`|`System.Double`|64bitová verze plovoucí bod typu.|
 
 >[!NOTE]
-Výpočty s celými čísly příliš velký pro typ 64bitové celé číslo můžete provádět pomocí [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa) typu. `bigint`není považována za primitivní typ; je zkratkou pro `System.Numerics.BigInteger`.
+Výpočty s celými čísly příliš velký pro typ 64bitové celé číslo můžete provádět pomocí [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa) typu. `bigint` není považována za primitivní typ; je zkratkou pro `System.Numerics.BigInteger`.
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)

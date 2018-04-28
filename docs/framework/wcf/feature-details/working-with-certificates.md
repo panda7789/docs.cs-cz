@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ba49d990c9f067ae2c10ae2a60cbad24b30f43eb
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e731fd31f2a247466891abbf75d67a61dba7f286
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, digitální certifikáty X.509 jsou běžně používá k ověření klientů a serverů, šifrování a digitálnímu podepisování zpráv. Toto téma vysvětluje stručně funkce digitální certifikát X.509 a jejich v použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a obsahuje odkazy na témata, která popisují tyto další koncepty nebo která ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a certifikáty.  
@@ -37,7 +37,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
  Certifikáty musí být vydaný certifikační autoritou, což se často stává třetích stran vystavitelů certifikátů. V doméně systému Windows, je součástí certifikační autority, slouží k vydávání certifikátů pro počítače v doméně.  
   
 ## <a name="viewing-certificates"></a>Zobrazení certifikátů  
- Pro práci s certifikáty, je často potřeba zobrazit a zkontrolovat jejich vlastnosti. Snadno se provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+ Pro práci s certifikáty, je často potřeba zobrazit a zkontrolovat jejich vlastnosti. Snadno se provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). Další informace najdete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
 ## <a name="certificate-stores"></a>Úložiště certifikátů  
  Certifikáty se nacházejí v úložištích. Dva hlavní úložiště umístění zabývajících se dále dělí do dílčí úložiště. Pokud jste správce v počítači, můžete zobrazit oba hlavní úložiště pomocí modulu snap-in nástroje konzoly MMC. Všichni uživatelé můžete zobrazit pouze aktuální úložiště uživatele.  
@@ -96,7 +96,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
 ## <a name="custom-authentication"></a>Vlastního ověřování  
  `CertificateValidationMode` Vlastnost také umožňuje přizpůsobit, jak se ověřují certifikáty. Ve výchozím nastavení je úroveň nastavena na `ChainTrust`. Použít <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> hodnotu, je nutné také nastavit `CustomCertificateValidatorType` atribut sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
   
- Při vytváření vlastní ověřovací, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metoda. Příklad vlastní ověřování, naleznete v části [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) ukázka. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
+ Při vytváření vlastní ověřovací, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metoda. Příklad vlastní ověřování, naleznete v části [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) ukázka. Další informace najdete v tématu [vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
   
 ## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Pomocí Makecert.exe vytvořit řetěz certifikátů  
  Nástroj pro vytvoření certifikátu (Makecert.exe) vytvoří certifikáty X.509 a privátní klíč a veřejného páry klíčů. Můžete uložit privátní klíč, aby na disku a použít ho k vystavování a podepsat nové certifikáty, proto simulaci hierarchie zřetězené certifikáty. Nástroj je určen pro použití pouze jako pomocný při vývoji služeb a by měl být nikdy použit k vytvoření certifikátů, pro skutečné nasazení. Při vývoji [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, použijte následující postup k vytvoření řetěz s Makecert.exe.  

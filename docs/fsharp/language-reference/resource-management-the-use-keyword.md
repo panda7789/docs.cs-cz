@@ -1,20 +1,17 @@
 ---
-title: "Správa prostředků: Klíčové slovo use (F#)"
+title: 'Správa prostředků: Klíčové slovo use (F#)'
 description: "Další informace o F # – klíčové slovo 'použití' a 'pomocí, funkce, která můžete ovládat inicializace a verzi zdroje."
-keywords: "Visual f #, f #, funkční programování"
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 00c3040e-859f-4dad-a7b5-7b8d44dc232c
-ms.openlocfilehash: d4e8626f07f1c77e52e8fabd5ccc07dbf1fa8ddd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0e134bf5b302911324dd224316941fee693b787b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="resource-management-the-use-keyword"></a>Správa prostředků: Klíčové slovo use
 
@@ -44,7 +41,7 @@ Můžete použít `use` v výpočetní výrazy, v takovém případě přizpůso
 ## <a name="using-function"></a>pomocí funkce
 `using` Funkce má následující formát:
 
-`using`(*expression1*) *funkce nebo lambda*
+`using` (*expression1*) *funkce nebo lambda*
 
 V `using` výrazu *expression1* vytvoří objekt, který je nutné odstranit. Výsledek *expression1* (objekt, který je nutné odstranit) se změní na argument, *hodnotu*do *funkce nebo lambda*, který je buď funkci, která očekává jedné argument typu, který odpovídá hodnotě zbývající vyprodukované *expression1*, nebo výrazu lambda, která očekává argument daného typu. Na konci provádění funkce volá modul runtime `Dispose` a uvolní prostředky (Pokud není hodnota `null`, v takovém případě není pokus o volání metody Dispose).
 
@@ -64,4 +61,4 @@ Upozorňujeme, že funkce může být funkci, která má některé argumenty ji�
 
 
 ## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F #](index.md)
+[Referenční dokumentace jazyka F#](index.md)

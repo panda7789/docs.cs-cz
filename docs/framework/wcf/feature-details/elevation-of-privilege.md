@@ -1,27 +1,29 @@
 ---
-title: "Zvýšení oprávnění"
-ms.custom: 
+title: Zvýšení oprávnění
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4225460698d36b3b56b9b0b03cde34e4502b13c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6d93a8ae074e4016d7d8ec4b8734f0d14ead938f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="elevation-of-privilege"></a>Zvýšení oprávnění
 *Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto původně udělí oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvyšuje sadu "pro čtení a zápisu."  
@@ -29,7 +31,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="trusted-sts-should-sign-saml-token-claims"></a>Důvěryhodné služby tokenů zabezpečení by měl přihlásit deklarací tokenu SAML  
  Token zabezpečení kontrolní výrazy Markup Language (SAML) je obecný token XML, který je výchozím typem pro vydané tokeny. SAML token lze sestavit pomocí zabezpečení tokenu služby (STS), end webová služba vztahy důvěryhodnosti v typické systému exchange. Tokeny SAML obsahují deklarace identity v příkazech. Útočník může kopírovat deklarace identity z platný token, vytvořit nový token SAML a podepište ho pomocí různých vystavitele. Je cílem zjistit, zda server ověřuje vystavitelů a pokud ne, využívat slabinu vytvořit tokeny SAML, které umožňují oprávnění nad rámec těchto určený pomocí důvěryhodné služby tokenů zabezpečení.  
   
- <xref:System.IdentityModel.Tokens.SamlAssertion> Třída ověřuje digitální podpis obsažených v tokenu SAML a ve výchozím nastavení <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> vyžaduje, aby tokeny SAML být podepsány certifikátem X.509, který je platný, kdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třída je nastaven na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>. `ChainTrust`režim samostatně je nedostatečná pro určení, zda je důvěryhodného vystavitele tokenu SAML. Služby, které vyžadují podrobnější model důvěryhodnosti můžete buď použít ověřování a vynucování zásad pro kontrolu vystavitele deklarace identity sady vyprodukované vydaných tokenů ověřování nebo nastavení ověření X.509 na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> omezit sadu povoleno, podpisové certifikáty. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md) a [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+ <xref:System.IdentityModel.Tokens.SamlAssertion> Třída ověřuje digitální podpis obsažených v tokenu SAML a ve výchozím nastavení <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> vyžaduje, aby tokeny SAML být podepsány certifikátem X.509, který je platný, kdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třída je nastaven na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>. `ChainTrust` režim samostatně je nedostatečná pro určení, zda je důvěryhodného vystavitele tokenu SAML. Služby, které vyžadují podrobnější model důvěryhodnosti můžete buď použít ověřování a vynucování zásad pro kontrolu vystavitele deklarace identity sady vyprodukované vydaných tokenů ověřování nebo nastavení ověření X.509 na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> omezit sadu povoleno, podpisové certifikáty. Další informace najdete v tématu [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md) a [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="switching-identity-without-a-security-context"></a>Přepínání Identity bez kontextu zabezpečení  
  Následující se vztahují pouze na [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
@@ -57,7 +59,7 @@ ms.lasthandoff: 12/22/2017
 >  Při použití `BeginOpen` metoda, přihlašovací údaje zachytit nemůže zaručit jako přihlašovací údaje proces, který volá metodu.  
   
 ## <a name="token-caches-allow-replay-using-obsolete-data"></a>Token mezipamětí povolit opětovného přehrání pomocí zastaralá Data  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá místní autority zabezpečení (LSA) `LogonUser` funkce k ověření uživatele podle uživatelského jména a hesla. Protože funkce přihlášení je nákladná operace, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje mezipaměti tokeny, které představují ověřeným uživatelům zvýšit výkon. Ukládání do mezipaměti mechanismus uloží výsledky z `LogonUser` pro další použití. Tento mechanismus vypnutá ve výchozím nastavení; Chcete-li ji povolit, nastavte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> vlastnost `true`, nebo použijte `cacheLogonTokens` atribut [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá místní autority zabezpečení (LSA) `LogonUser` funkce k ověření uživatele podle uživatelského jména a hesla. Protože funkce přihlášení je nákladná operace, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje mezipaměti tokeny, které představují ověřeným uživatelům zvýšit výkon. Ukládání do mezipaměti mechanismus uloží výsledky z `LogonUser` pro další použití. Tento mechanismus vypnutá ve výchozím nastavení; Chcete-li ji povolit, nastavte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> vlastnost `true`, nebo použijte `cacheLogonTokens` atribut [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).  
   
  Můžete nastavit dobu to Live (TTL) pro uložené v mezipaměti tokeny pomocí nastavení <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> vlastnosti <xref:System.TimeSpan>, nebo použijte `cachedLogonTokenLifetime` atribut `userNameAuthentication` element; výchozí hodnota je 15 minut. Všimněte si, že i když token se uloží do mezipaměti, libovolného klienta, který představuje stejné uživatelské jméno a heslo lze použít s tokenem, i v případě, že uživatelský účet je odstraněn ze systému Windows, nebo došlo ke změně jeho heslo. Dokud hodnota TTL nevyprší a token se odebere z mezipaměti, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje ověření (potenciálně škodlivý) uživatele.  
   

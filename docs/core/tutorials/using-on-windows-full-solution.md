@@ -1,20 +1,19 @@
 ---
-title: "Vytvoření kompletního řešení .NET Core do systému Windows, pomocí Visual Studio 2017"
-description: "Zjistěte, jak sestavit kompletní .NET Core řešení ve Visual Studio 2017 v systému Windows."
-keywords: "Rozhraní .NET, .NET core"
+title: Vytvoření kompletního řešení .NET Core do systému Windows, pomocí Visual Studio 2017
+description: Zjistěte, jak sestavit kompletní .NET Core řešení ve Visual Studio 2017 v systému Windows.
 author: bleroy
 ms.author: mairaw
 ms.date: 11/16/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
-ms.workload: dotnetcore
-ms.openlocfilehash: e922a2c91fab5c513f5c560920d37d77da2d6f84
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 8e37eb578f9c4ac63fbc120e6227098ea69d169d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core do systému Windows, pomocí Visual Studio 2017
 
@@ -36,7 +35,7 @@ Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites
 
 4. Vyberte "nuget.org" jako **zdroj balíčku**a vyberte **Procházet** kartě. Vyhledejte **Newtonsoft.Json**. Klikněte na tlačítko **nainstalovat**a přijměte licenční smlouvu. Balíček by se měla zobrazit v části **závislosti nebo NuGet** a automaticky obnovit.
 
-5. Přejmenujte `Class1.cs` do souboru `Thing.cs`. Přijměte přejmenování třídy. Přidání metody:`public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
+5. Přejmenujte `Class1.cs` do souboru `Thing.cs`. Přijměte přejmenování třídy. Přidání metody: `public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
 
 7. Na **sestavení** nabídce zvolte **sestavit řešení**.
 

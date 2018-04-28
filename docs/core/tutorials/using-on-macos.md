@@ -1,21 +1,19 @@
 ---
 title: Začínáme s .NET Core v systému macOS
 description: Tento dokument obsahuje kroky a pracovní postup pro vytvoření základní řešení .NET pomocí Visual Studio Code.
-keywords: Rozhraní .NET, .NET core, Mac, systému macOS, Visual Studio Code
 author: bleroy
 ms.author: mairaw
 ms.date: 03/23/2017
 ms.topic: get-started-article
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: d130ef34961d19c450dd7142c8a5996c83465646
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 18f825e75e7d32198a52a091948bc9dd064dacbd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="getting-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
 

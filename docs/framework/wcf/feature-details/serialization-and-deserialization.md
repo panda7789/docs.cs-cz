@@ -1,36 +1,38 @@
 ---
 title: Serializace a deserializace
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a73fa30f1ebae805abd6f3e7e397d005d5b7130d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4d5caa913a49205c387c22a615b2b8da2dba0a77
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje nové Serializační stroj <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje nové Serializační stroj <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
   
  Při serializaci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty, serializátor rozumí celou řadu serializace programovací modely, včetně nové *kontrakt dat* modelu. Úplný seznam podporovaných typů najdete v tématu [typy nepodporuje serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Úvod do kontrakty dat, najdete v části [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
  Při deserializaci XML, používá serializátor <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy. Podporuje také <xref:System.Xml.XmlDictionaryReader> a <xref:System.Xml.XmlDictionaryWriter> třídy k povolení ji k vytvoření optimalizované XML v některých případech, například při použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] binární formát XML.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zahrnuje také doprovodné serializátor, <xref:System.Runtime.Serialization.NetDataContractSerializer>. <xref:System.Runtime.Serialization.NetDataContractSerializer> Je podobná <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializátorů protože také vysílá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zadejte názvy v rámci serializovaná data. Používá se při stejné typy jsou sdíleny serializaci a deserializaci elementy end. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer> odvozena z běžných základní třídy, <xref:System.Runtime.Serialization.XmlObjectSerializer>.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje také doprovodné serializátor, <xref:System.Runtime.Serialization.NetDataContractSerializer>. <xref:System.Runtime.Serialization.NetDataContractSerializer> Je podobná <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializátorů protože také vysílá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zadejte názvy v rámci serializovaná data. Používá se při stejné typy jsou sdíleny serializaci a deserializaci elementy end. Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer> odvozena z běžných základní třídy, <xref:System.Runtime.Serialization.XmlObjectSerializer>.  
   
 > [!WARNING]
 >  <xref:System.Runtime.Serialization.DataContractSerializer> Serializuje řetězců obsahujících řídicí znaky s hexadecimální hodnotu nižší než 20 jako entity XML. Při odesílání těchto dat na službu WCF může dojít k potížím s klienta bez WCF.  
@@ -52,7 +54,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[c_StandaloneDataContractSerializer#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_standalonedatacontractserializer/vb/source.vb#2)]  
   
 ### <a name="specifying-known-types"></a>Zadání známé typy  
- Pokud Polymorfismus je součástí serializována typy, které již nejsou zpracovávány pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut nebo jinému kontrolnímu mechanismu, musí být seznam možných známé typy předaný konstruktoru serializátor pomocí `knownTypes` parametr. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]známé typy, najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Pokud Polymorfismus je součástí serializována typy, které již nejsou zpracovávány pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut nebo jinému kontrolnímu mechanismu, musí být seznam možných známé typy předaný konstruktoru serializátor pomocí `knownTypes` parametr. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] známé typy, najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
  Následující příklad ukazuje třídu, `LibraryPatron`, který obsahuje kolekci určitého typu, `LibraryItem`. Definuje třídu sekundu `LibraryItem` typu. Třetí a čtyřmi třídy (`Book` a `Newspaper`) dědí `LibraryItem` třídy.  
   
@@ -85,12 +87,12 @@ ms.lasthandoff: 12/22/2017
  Tyto hodnoty lze předat jako řetězce nebo instance <xref:System.Xml.XmlDictionaryString> třídu, která umožňuje jejich optimalizace v binárním formátu XML.  
   
 ### <a name="setting-the-maximum-objects-quota"></a>Nastavení kvóty maximální objekty  
- Některé `DataContractSerializer` mají přetížení konstruktor `maxItemsInObjectGraph` parametr. Tento parametr určuje maximální počet objektů serializátoru, který serializuje a deserializuje do jedné <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> volání metody. (Metodu vždy čte jeden kořenový objekt, ale tento objekt může mít jiné objekty v jeho datových členů. Tyto objekty může mít jiné objekty atd.) Výchozí hodnota je 65536. Všimněte si, že při serializaci nebo deserializaci pole, každá položka pole počítá jako samostatný objekt. Všimněte si také, že některé objekty může mít znázornění velké paměti, a proto nemusí být tato kvóta samostatně dostačující k zabránění útoku DOS. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). Pokud je potřeba zvýšit tato kvóta nad výchozí hodnotu, je důležité učinit odeslání (serializaci) a obdrželi stranách (deserializaci), protože se vztahuje na obou při čtení a zápis dat.  
+ Některé `DataContractSerializer` mají přetížení konstruktor `maxItemsInObjectGraph` parametr. Tento parametr určuje maximální počet objektů serializátoru, který serializuje a deserializuje do jedné <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> volání metody. (Metodu vždy čte jeden kořenový objekt, ale tento objekt může mít jiné objekty v jeho datových členů. Tyto objekty může mít jiné objekty atd.) Výchozí hodnota je 65536. Všimněte si, že při serializaci nebo deserializaci pole, každá položka pole počítá jako samostatný objekt. Všimněte si také, že některé objekty může mít znázornění velké paměti, a proto nemusí být tato kvóta samostatně dostačující k zabránění útoku DOS. Další informace najdete v tématu [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). Pokud je potřeba zvýšit tato kvóta nad výchozí hodnotu, je důležité učinit odeslání (serializaci) a obdrželi stranách (deserializaci), protože se vztahuje na obou při čtení a zápis dat.  
   
 ### <a name="round-trips"></a>Odezev  
  A *odezvy* nastane, když je objekt deserializován a znovu serializovat v rámci jedné operace. Proto přejde ze souboru XML na instanci objektu a zpět znovu do datový proud XML.  
   
- Některé `DataContractSerializer` mají přetížení konstruktor `ignoreExtensionDataObject` parametr, který je nastaven na `false` ve výchozím nastavení. V tomto režimu výchozí odesláním dat na dobu odezvy z novější verze sady kontraktu dat prostřednictvím starší verzi a zpět na novější verzi, bez ztráty, tak dlouho, dokud kontraktu dat implementuje <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní. Předpokládejme například, že verze 1 `Person` obsahuje kontrakt dat `Name` a `PhoneNumber` přidá datových členů a verze 2 `Nickname` člen. Pokud `IExtensibleDataObject` je implementována, při odesílání informací z verze 2 verze 1, `Nickname` data jsou uložená a pak znovu vygenerované při dat je serializováno znovu; proto je při výměně zpráv ztracena žádná data. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Kontraktů dat s dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md) a [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).  
+ Některé `DataContractSerializer` mají přetížení konstruktor `ignoreExtensionDataObject` parametr, který je nastaven na `false` ve výchozím nastavení. V tomto režimu výchozí odesláním dat na dobu odezvy z novější verze sady kontraktu dat prostřednictvím starší verzi a zpět na novější verzi, bez ztráty, tak dlouho, dokud kontraktu dat implementuje <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní. Předpokládejme například, že verze 1 `Person` obsahuje kontrakt dat `Name` a `PhoneNumber` přidá datových členů a verze 2 `Nickname` člen. Pokud `IExtensibleDataObject` je implementována, při odesílání informací z verze 2 verze 1, `Nickname` data jsou uložená a pak znovu vygenerované při dat je serializováno znovu; proto je při výměně zpráv ztracena žádná data. Další informace najdete v tématu [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md) a [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).  
   
 #### <a name="security-and-schema-validity-concerns-with-round-trips"></a>Zabezpečení a aspekty platnosti schématu s odezev  
  Odezev může mít vliv na zabezpečení. Například při deserializaci a ukládání velkých objemů dat nadbytečné může být bezpečnostní riziko. Může být zabezpečení se o opětovné generování tato data se způsob, jak ověřit, zejména v případě, že se jedná o digitální podpisy. Například v předchozím scénáři může být podepisování koncový bod verze 1 `Nickname` hodnotu, která obsahuje škodlivá data. Navíc může být ke schématu platnosti obavy: koncový bod může být vhodné vždy emitování data, která výhradně dodržuje její stanovené smlouvy a nejsou žádné další hodnoty. V předchozím příkladu verze 1 koncového bodu kontraktu říká, že vysílá pouze `Name` a `PhoneNumber`a pokud se používá ověřování schématu, generování nadbytečné `Nickname` hodnota způsobuje selhání ověření.  
@@ -152,7 +154,7 @@ ms.lasthandoff: 12/22/2017
 >  Při `preserveObjectReferences` režim povolený, je velmi důležité nastavit `maxItemsInObjectGraph` hodnota, která má správné kvótu. Vzhledem ke způsobu pole jsou zpracovávány v tomto režimu, je snadné pro útočníka vytvořit malé škodlivý zprávu, která má za následek omezený pouze systémem spotřeby velké paměti `maxItemsInObjectGraph` kvóty.  
   
 ### <a name="specifying-a-data-contract-surrogate"></a>Určení náhradní kontraktu dat  
- Některé `DataContractSerializer` mají přetížení konstruktor `dataContractSurrogate` parametr, který může být nastaven na `null`. Jinak můžete použít k určení *náhradní kontraktu dat*, což je typ, který implementuje <xref:System.Runtime.Serialization.IDataContractSurrogate> rozhraní. Pak můžete použít rozhraní přizpůsobit serializaci a deserializaci procesu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
+ Některé `DataContractSerializer` mají přetížení konstruktor `dataContractSurrogate` parametr, který může být nastaven na `null`. Jinak můžete použít k určení *náhradní kontraktu dat*, což je typ, který implementuje <xref:System.Runtime.Serialization.IDataContractSurrogate> rozhraní. Pak můžete použít rozhraní přizpůsobit serializaci a deserializaci procesu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
   
 ## <a name="serialization"></a>Serializace  
  Následující informace platí pro všechny třídy, která dědí z <xref:System.Runtime.Serialization.XmlObjectSerializer>, včetně <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer> třídy.  
@@ -265,7 +267,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Runtime.Serialization.NetDataContractSerializer.Serialize%2A> a <xref:System.Runtime.Serialization.NetDataContractSerializer.Deserialize%2A> metody jsou aliasy pro <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%2A> a <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> metody. Tyto existovat více konzistentní programovací model poskytnout binární nebo SOAP serializace.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Tyto funkce, najdete v části [binární serializace](../../../../docs/standard/serialization/binary-serialization.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tyto funkce, najdete v části [binární serializace](../../../../docs/standard/serialization/binary-serialization.md).  
   
  Formáty XML, který `NetDataContractSerializer` a `DataContractSerializer` použití obvykle nejsou kompatibilní. To znamená pokus o s jedním z těchto serializátorů serializaci a deserializaci k ostatním není podporováno.  
   

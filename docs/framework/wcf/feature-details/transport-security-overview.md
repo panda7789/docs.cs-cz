@@ -13,17 +13,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-caps.latest.revision: ''
+caps.latest.revision: 23
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 71325089f2c72f6f01b2179bd150d21a98b3a8e2
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 5619041ccf4ce4d899f3c9a478d125a1a2d8d32a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Přenosu mechanismy zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] závisí na vazby a přenosu používá. Například při použití <xref:System.ServiceModel.WSHttpBinding> třída, přenos, je HTTP a primární mechanismus pro zabezpečení přenosu je Secure Sockets Layer (SSL) prostřednictvím protokolu HTTP, označovaného jako protokol HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenos, který je používán [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby poskytované systémem.  
@@ -72,10 +72,10 @@ Přenosu mechanismy zabezpečení v [!INCLUDE[indigo1](../../../../includes/indi
  To odpovídá integrované ověřování systému Windows ve službě IIS. Pokud nastavíte tuto hodnotu, server také musí existovat v doméně systému Windows, který používá protokol Kerberos jako řadič domény. Pokud server není připojen k doméně založenou na protokolu Kerberos, nebo pokud systému Kerberos nezdaří, můžete použít hodnoty NT LAN Manager (NTLM) popsané v další části. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iis601](../../../../includes/iis601-md.md)], najdete v části [integrované ověřování systému Windows ve službě IIS 6.0](http://go.microsoft.com/fwlink/?LinkId=88597). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iisver](../../../../includes/iisver-md.md)], najdete v části [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](http://go.microsoft.com/fwlink/?LinkId=88595).  
   
 #### <a name="ntlm"></a>NTLM  
- Díky tomu může server pro ověřování pomocí protokolu NTLM, pokud se protokol Kerberos nezdaří. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Konfigurace služby IIS v [!INCLUDE[iis601](../../../../includes/iis601-md.md)], najdete v části [vynucení ověřování protokolem NTLM](http://go.microsoft.com/fwlink/?LinkId=88598). Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], ověřování systému Windows obsahuje ověřování NTLM. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Služba IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](http://go.microsoft.com/fwlink/?LinkID=88595).  
+ Díky tomu může server pro ověřování pomocí protokolu NTLM, pokud se protokol Kerberos nezdaří. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Konfigurace služby IIS v [!INCLUDE[iis601](../../../../includes/iis601-md.md)], najdete v části [vynucení ověřování protokolem NTLM](http://go.microsoft.com/fwlink/?LinkId=88598). Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], ověřování systému Windows obsahuje ověřování NTLM. Další informace najdete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](http://go.microsoft.com/fwlink/?LinkID=88595).  
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
- <xref:System.ServiceModel.WSHttpBinding> Třída je určená pro vzájemná spolupráce pomocí služby, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu Secure Sockets Layer (SSL) je protokol HTTP nebo HTTPS. Chcete-li vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, která používá protokol SSL, který bude hostovat aplikaci používají službu IIS. Případně pokud vytváříte vlastním hostováním aplikací, použijte nástroj HttpCfg.exe pro vazbu certifikátu X.509 konkrétní port, na počítači. Číslo portu je zadaný jako součást [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace jako adresy koncového bodu. Pokud používáte režim přenosu, adresa koncového bodu musí obsahovat protokol HTTPS nebo k výjimce v době běhu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+ <xref:System.ServiceModel.WSHttpBinding> Třída je určená pro vzájemná spolupráce pomocí služby, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu Secure Sockets Layer (SSL) je protokol HTTP nebo HTTPS. Chcete-li vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, která používá protokol SSL, který bude hostovat aplikaci používají službu IIS. Případně pokud vytváříte vlastním hostováním aplikací, použijte nástroj HttpCfg.exe pro vazbu certifikátu X.509 konkrétní port, na počítači. Číslo portu je zadaný jako součást [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace jako adresy koncového bodu. Pokud používáte režim přenosu, adresa koncového bodu musí obsahovat protokol HTTPS nebo k výjimce v době běhu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  Pro ověřování klientů, nastavte <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.HttpTransportSecurity> třída na jednu z <xref:System.ServiceModel.HttpClientCredentialType> hodnot výčtu. Hodnoty výčtu jsou shodné s typy pověření klienta pro <xref:System.ServiceModel.BasicHttpBinding> a jsou navrženy pro hostování s služby IIS.  
   
@@ -84,7 +84,7 @@ Přenosu mechanismy zabezpečení v [!INCLUDE[indigo1](../../../../includes/indi
  [!code-csharp[c_ProgrammingSecurity#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_programmingsecurity/cs/source.cs#11)]
  [!code-vb[c_ProgrammingSecurity#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_programmingsecurity/vb/source.vb#11)]  
   
-## <a name="wsdualhttpbinding"></a>WSDualHttpBinding  
+## <a name="wsdualhttpbinding"></a>– WSDualHttpBinding  
  Tuto vazbu poskytuje zabezpečení pouze úroveň zprávy, není transportní vrstvy zabezpečení.  
   
 ## <a name="nettcpbinding"></a>NetTcpBinding  
@@ -124,7 +124,7 @@ Přenosu mechanismy zabezpečení v [!INCLUDE[indigo1](../../../../includes/indi
 ## <a name="netnamedpipebinding"></a>NetNamedPipeBinding  
  <xref:System.ServiceModel.NetNamedPipeBinding> Třída slouží k efektivní komunikace uvnitř počítače; to znamená, pro procesy spuštění na stejném počítači, i když s názvem kanálu kanály můžete vytvořit mezi dvěma počítači ve stejné síti. Tato vazba poskytuje jenom zabezpečení na úrovni přenosu. Při vytváření aplikace, které používají tuto vazbu, adresy koncových bodů musí obsahovat "net.pipe" jako protokol adresa koncového bodu.  
   
-## <a name="wsfederationhttpbinding"></a>WSFederationHttpBinding  
+## <a name="wsfederationhttpbinding"></a>– WSFederationHttpBinding  
  Při použití zabezpečení přenosu, této vazby používá protokol SSL přes protokol HTTP, označuje jako HTTPS k tokenu vydaných (<xref:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential>). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] aplikacemi, najdete v části [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="netpeertcpbinding"></a>NetPeerTcpBinding  
