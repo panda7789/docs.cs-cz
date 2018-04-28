@@ -1,53 +1,52 @@
 ---
-title: "Snižuje závislosti balíčků s project.json"
-description: "Snížení závislosti balíčků, při vytváření obsahu na základě project.json knihovny."
-keywords: "Rozhraní .NET, .NET core"
+title: Snižuje závislosti balíčků s project.json
+description: Snížení závislosti balíčků, při vytváření obsahu na základě project.json knihovny.
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 916251e3-87f9-4eee-81ec-94076215e6fa
-ms.workload: dotnetcore
-ms.openlocfilehash: 858fc77d9652bfa59ed0bb3159260f40c76156a4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 647d850c1629cddc1584a2044174838930b2fb1d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="reducing-package-dependencies-with-projectjson"></a><span data-ttu-id="6e024-104">Snižuje závislosti balíčků s project.json</span><span class="sxs-lookup"><span data-stu-id="6e024-104">Reducing Package Dependencies with project.json</span></span>
+# <a name="reducing-package-dependencies-with-projectjson"></a><span data-ttu-id="9a4e9-103">Snižuje závislosti balíčků s project.json</span><span class="sxs-lookup"><span data-stu-id="9a4e9-103">Reducing Package Dependencies with project.json</span></span>
 
-<span data-ttu-id="6e024-105">Tento článek popisuje, co potřebujete vědět o snižuje vaše závislosti balíčků, při vytváření `project.json` knihovny.</span><span class="sxs-lookup"><span data-stu-id="6e024-105">This article covers what you need to know about reducing your package dependencies when authoring `project.json` libraries.</span></span> <span data-ttu-id="6e024-106">Na konci tohoto článku se dozvíte, jak vytvořit knihovnu tak, že používá jenom závislosti, které potřebuje.</span><span class="sxs-lookup"><span data-stu-id="6e024-106">By the end of this article, you will learn how to compose your library such that it only uses the dependencies it needs.</span></span> 
+<span data-ttu-id="9a4e9-104">Tento článek popisuje, co potřebujete vědět o snižuje vaše závislosti balíčků, při vytváření `project.json` knihovny.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-104">This article covers what you need to know about reducing your package dependencies when authoring `project.json` libraries.</span></span> <span data-ttu-id="9a4e9-105">Na konci tohoto článku se dozvíte, jak vytvořit knihovnu tak, že používá jenom závislosti, které potřebuje.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-105">By the end of this article, you will learn how to compose your library such that it only uses the dependencies it needs.</span></span> 
 
-## <a name="why-its-important"></a><span data-ttu-id="6e024-107">Proč je důležité</span><span class="sxs-lookup"><span data-stu-id="6e024-107">Why it's Important</span></span>
+## <a name="why-its-important"></a><span data-ttu-id="9a4e9-106">Proč je důležité</span><span class="sxs-lookup"><span data-stu-id="9a4e9-106">Why it's Important</span></span>
 
-<span data-ttu-id="6e024-108">.NET core je produkt skládá z balíčků NuGet.</span><span class="sxs-lookup"><span data-stu-id="6e024-108">.NET Core is a product made up of NuGet packages.</span></span>  <span data-ttu-id="6e024-109">Je nezbytné balíček [. NETStandard.Library metapackage](https://www.nuget.org/packages/NETStandard.Library), které se balíček NuGet skládá z dalších balíčků.</span><span class="sxs-lookup"><span data-stu-id="6e024-109">An essential package is the [.NETStandard.Library metapackage](https://www.nuget.org/packages/NETStandard.Library), which is a NuGet package composed of other packages.</span></span>  <span data-ttu-id="6e024-110">Poskytuje sadu balíčky, které zaručeně pracovat na více implementace rozhraní .NET, například rozhraní .NET Framework, .NET Core a Xamarin/Mono.</span><span class="sxs-lookup"><span data-stu-id="6e024-110">It provides you with the set of packages that are guaranteed to work on multiple .NET implementations, such as .NET Framework, .NET Core and Xamarin/Mono.</span></span>
+<span data-ttu-id="9a4e9-107">.NET core je produkt skládá z balíčků NuGet.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-107">.NET Core is a product made up of NuGet packages.</span></span>  <span data-ttu-id="9a4e9-108">Je nezbytné balíček [. NETStandard.Library metapackage](https://www.nuget.org/packages/NETStandard.Library), které se balíček NuGet skládá z dalších balíčků.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-108">An essential package is the [.NETStandard.Library metapackage](https://www.nuget.org/packages/NETStandard.Library), which is a NuGet package composed of other packages.</span></span>  <span data-ttu-id="9a4e9-109">Poskytuje sadu balíčky, které zaručeně pracovat na více implementace rozhraní .NET, například rozhraní .NET Framework, .NET Core a Xamarin/Mono.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-109">It provides you with the set of packages that are guaranteed to work on multiple .NET implementations, such as .NET Framework, .NET Core and Xamarin/Mono.</span></span>
 
-<span data-ttu-id="6e024-111">Je však dobré šance, že vaše knihovna nebude používat každý jeden balíček, které obsahuje.</span><span class="sxs-lookup"><span data-stu-id="6e024-111">However, there's a good chance that your library won't use every single package it contains.</span></span>  <span data-ttu-id="6e024-112">Při vytváření knihovny a distribuci přes NuGet, je osvědčeným postupem "trim" závislostmi dolů jenom balíčky skutečně používáte.</span><span class="sxs-lookup"><span data-stu-id="6e024-112">When authoring a library and distributing it over NuGet, it's a best practice to "trim" your dependencies down to only the packages you actually use.</span></span>  <span data-ttu-id="6e024-113">Výsledkem je menší celkové nároky na balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="6e024-113">This results in a smaller overall footprint for NuGet packages.</span></span>
+<span data-ttu-id="9a4e9-110">Je však dobré šance, že vaše knihovna nebude používat každý jeden balíček, které obsahuje.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-110">However, there's a good chance that your library won't use every single package it contains.</span></span>  <span data-ttu-id="9a4e9-111">Při vytváření knihovny a distribuci přes NuGet, je osvědčeným postupem "trim" závislostmi dolů jenom balíčky skutečně používáte.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-111">When authoring a library and distributing it over NuGet, it's a best practice to "trim" your dependencies down to only the packages you actually use.</span></span>  <span data-ttu-id="9a4e9-112">Výsledkem je menší celkové nároky na balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-112">This results in a smaller overall footprint for NuGet packages.</span></span>
 
-## <a name="how-to-do-it"></a><span data-ttu-id="6e024-114">Jak to udělat</span><span class="sxs-lookup"><span data-stu-id="6e024-114">How to do it</span></span>
+## <a name="how-to-do-it"></a><span data-ttu-id="9a4e9-113">Jak to udělat</span><span class="sxs-lookup"><span data-stu-id="9a4e9-113">How to do it</span></span>
 
-<span data-ttu-id="6e024-115">V současné době není žádná oficiální `dotnet` příkaz, který ořízne balíček odkazuje.</span><span class="sxs-lookup"><span data-stu-id="6e024-115">Currently, there is no official `dotnet` command which trims package references.</span></span>  <span data-ttu-id="6e024-116">Místo toho budete muset provést ručně.</span><span class="sxs-lookup"><span data-stu-id="6e024-116">Instead, you'll have to do it manually.</span></span>  <span data-ttu-id="6e024-117">Obecný postup vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="6e024-117">The general process looks like the following:</span></span>
+<span data-ttu-id="9a4e9-114">V současné době není žádná oficiální `dotnet` příkaz, který ořízne balíček odkazuje.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-114">Currently, there is no official `dotnet` command which trims package references.</span></span>  <span data-ttu-id="9a4e9-115">Místo toho budete muset provést ručně.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-115">Instead, you'll have to do it manually.</span></span>  <span data-ttu-id="9a4e9-116">Obecný postup vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="9a4e9-116">The general process looks like the following:</span></span>
 
-1. <span data-ttu-id="6e024-118">Referenční dokumentace `NETStandard.Library` verze `1.6.0` v `dependencies` část vaší `project.json`.</span><span class="sxs-lookup"><span data-stu-id="6e024-118">Reference `NETStandard.Library` version `1.6.0` in a `dependencies` section of your `project.json`.</span></span>
-2. <span data-ttu-id="6e024-119">Obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="6e024-119">Restore packages with `dotnet restore` ([see note](#dotnet-restore-note)) from the command line.</span></span>
-3. <span data-ttu-id="6e024-120">Zkontrolujte `project.lock.json` souboru a najděte `NETSTandard.Library` části.</span><span class="sxs-lookup"><span data-stu-id="6e024-120">Inspect the `project.lock.json` file and find the `NETSTandard.Library` section.</span></span>  <span data-ttu-id="6e024-121">Je na začátku souboru.</span><span class="sxs-lookup"><span data-stu-id="6e024-121">It's near the beginning of the file.</span></span>
-4. <span data-ttu-id="6e024-122">Zkopírujte všechny balíčky uvedené v části `dependencies`.</span><span class="sxs-lookup"><span data-stu-id="6e024-122">Copy all of the listed packages under `dependencies`.</span></span>
-5. <span data-ttu-id="6e024-123">Odeberte `.NETStandard.Library` odkazovat a nahraďte ji metodou zkopírovaný balíčky.</span><span class="sxs-lookup"><span data-stu-id="6e024-123">Remove the `.NETStandard.Library` reference and replace it with the copied packages.</span></span>
-6. <span data-ttu-id="6e024-124">Odeberte odkazy na balíčky, které nepotřebujete.</span><span class="sxs-lookup"><span data-stu-id="6e024-124">Remove references to packages you don't need.</span></span>
+1. <span data-ttu-id="9a4e9-117">Referenční dokumentace `NETStandard.Library` verze `1.6.0` v `dependencies` část vaší `project.json`.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-117">Reference `NETStandard.Library` version `1.6.0` in a `dependencies` section of your `project.json`.</span></span>
+2. <span data-ttu-id="9a4e9-118">Obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-118">Restore packages with `dotnet restore` ([see note](#dotnet-restore-note)) from the command line.</span></span>
+3. <span data-ttu-id="9a4e9-119">Zkontrolujte `project.lock.json` souboru a najděte `NETSTandard.Library` části.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-119">Inspect the `project.lock.json` file and find the `NETSTandard.Library` section.</span></span>  <span data-ttu-id="9a4e9-120">Je na začátku souboru.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-120">It's near the beginning of the file.</span></span>
+4. <span data-ttu-id="9a4e9-121">Zkopírujte všechny balíčky uvedené v části `dependencies`.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-121">Copy all of the listed packages under `dependencies`.</span></span>
+5. <span data-ttu-id="9a4e9-122">Odeberte `.NETStandard.Library` odkazovat a nahraďte ji metodou zkopírovaný balíčky.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-122">Remove the `.NETStandard.Library` reference and replace it with the copied packages.</span></span>
+6. <span data-ttu-id="9a4e9-123">Odeberte odkazy na balíčky, které nepotřebujete.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-123">Remove references to packages you don't need.</span></span>
 
 
-<span data-ttu-id="6e024-125">Můžete zjistit balíčky, které nepotřebujete pomocí jedné z následujících způsobů:</span><span class="sxs-lookup"><span data-stu-id="6e024-125">You can find out which packages you don't need by one of the following ways:</span></span>
+<span data-ttu-id="9a4e9-124">Můžete zjistit balíčky, které nepotřebujete pomocí jedné z následujících způsobů:</span><span class="sxs-lookup"><span data-stu-id="9a4e9-124">You can find out which packages you don't need by one of the following ways:</span></span>
 
-1. <span data-ttu-id="6e024-126">Zkušební verze a došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="6e024-126">Trial and error.</span></span>  <span data-ttu-id="6e024-127">To zahrnuje odstranění balíčku, obnovení, zobrazuje, pokud vaše knihovna stále zkompiluje a opakováním tohoto procesu.</span><span class="sxs-lookup"><span data-stu-id="6e024-127">This involves removing a package, restoring, seeing if your library still compiles, and repeating this process.</span></span>
-2. <span data-ttu-id="6e024-128">Pomocí některého nástroje, jako třeba [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) k zobrazení náhledu odkazy na zjistit, co váš kód ve skutečnosti používá.</span><span class="sxs-lookup"><span data-stu-id="6e024-128">Using a tool such as [ILSpy](http://ilspy.net) or [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) to peek at references to see what your code is actually using.</span></span>  <span data-ttu-id="6e024-129">Potom můžete odebrat balíčky, které si odpovídají typy, které používáte.</span><span class="sxs-lookup"><span data-stu-id="6e024-129">You can then remove packages which don't correspond to types you're using.</span></span>
+1. <span data-ttu-id="9a4e9-125">Zkušební verze a došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-125">Trial and error.</span></span>  <span data-ttu-id="9a4e9-126">To zahrnuje odstranění balíčku, obnovení, zobrazuje, pokud vaše knihovna stále zkompiluje a opakováním tohoto procesu.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-126">This involves removing a package, restoring, seeing if your library still compiles, and repeating this process.</span></span>
+2. <span data-ttu-id="9a4e9-127">Pomocí některého nástroje, jako třeba [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) k zobrazení náhledu odkazy na zjistit, co váš kód ve skutečnosti používá.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-127">Using a tool such as [ILSpy](http://ilspy.net) or [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) to peek at references to see what your code is actually using.</span></span>  <span data-ttu-id="9a4e9-128">Potom můžete odebrat balíčky, které si odpovídají typy, které používáte.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-128">You can then remove packages which don't correspond to types you're using.</span></span>
 
-## <a name="example"></a><span data-ttu-id="6e024-130">Příklad</span><span class="sxs-lookup"><span data-stu-id="6e024-130">Example</span></span> 
+## <a name="example"></a><span data-ttu-id="9a4e9-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="9a4e9-129">Example</span></span> 
 
-<span data-ttu-id="6e024-131">Představte si, že jste napsali jste knihovnu, která poskytuje další funkce pro obecné typy kolekcí.</span><span class="sxs-lookup"><span data-stu-id="6e024-131">Imagine that you wrote a library which provided additional functionality to generic collection types.</span></span>  <span data-ttu-id="6e024-132">Tuto knihovnu by bylo potřeba závisí na balíčky, jako `System.Collections`, ale vůbec záviset na balíčky, jako `System.Net.Http`.</span><span class="sxs-lookup"><span data-stu-id="6e024-132">Such a library would need to depend on packages such as `System.Collections`, but may not at all depend on packages such as `System.Net.Http`.</span></span>  <span data-ttu-id="6e024-133">Jako takový bylo by dobré oříznout závislosti balíčků dolů co tato knihovna je požadován, pouze!</span><span class="sxs-lookup"><span data-stu-id="6e024-133">As such, it would be good to trim package dependencies down to only what this library required!</span></span>
+<span data-ttu-id="9a4e9-130">Představte si, že jste napsali jste knihovnu, která poskytuje další funkce pro obecné typy kolekcí.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-130">Imagine that you wrote a library which provided additional functionality to generic collection types.</span></span>  <span data-ttu-id="9a4e9-131">Tuto knihovnu by bylo potřeba závisí na balíčky, jako `System.Collections`, ale vůbec záviset na balíčky, jako `System.Net.Http`.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-131">Such a library would need to depend on packages such as `System.Collections`, but may not at all depend on packages such as `System.Net.Http`.</span></span>  <span data-ttu-id="9a4e9-132">Jako takový bylo by dobré oříznout závislosti balíčků dolů co tato knihovna je požadován, pouze!</span><span class="sxs-lookup"><span data-stu-id="9a4e9-132">As such, it would be good to trim package dependencies down to only what this library required!</span></span>
 
-<span data-ttu-id="6e024-134">Abyste mohli trim této knihovny, spusťte s `project.json` souboru a přidejte odkaz na `NETStandard.Library` verze `1.6.0`.</span><span class="sxs-lookup"><span data-stu-id="6e024-134">To trim this library, you start with the `project.json` file and add a reference to `NETStandard.Library` version `1.6.0`.</span></span>
+<span data-ttu-id="9a4e9-133">Abyste mohli trim této knihovny, spusťte s `project.json` souboru a přidejte odkaz na `NETStandard.Library` verze `1.6.0`.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-133">To trim this library, you start with the `project.json` file and add a reference to `NETStandard.Library` version `1.6.0`.</span></span>
 
 ```json
 {
@@ -61,9 +60,9 @@ ms.lasthandoff: 12/23/2017
 }
 ```
 
-<span data-ttu-id="6e024-135">V dalším kroku obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)), zkontrolujte `project.lock.json` souboru a najít všechny balíčky obnovit pro `NETSTandard.Library`.</span><span class="sxs-lookup"><span data-stu-id="6e024-135">Next, you restore packages with `dotnet restore` ([see note](#dotnet-restore-note)), inspect the `project.lock.json` file, and find all the packages restored for `NETSTandard.Library`.</span></span>
+<span data-ttu-id="9a4e9-134">V dalším kroku obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)), zkontrolujte `project.lock.json` souboru a najít všechny balíčky obnovit pro `NETSTandard.Library`.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-134">Next, you restore packages with `dotnet restore` ([see note](#dotnet-restore-note)), inspect the `project.lock.json` file, and find all the packages restored for `NETSTandard.Library`.</span></span>
 
-<span data-ttu-id="6e024-136">Zde je v jaké v příslušné části `project.lock.json` soubor vypadá jako při cílení na `netstandard1.0`:</span><span class="sxs-lookup"><span data-stu-id="6e024-136">Here's what the relevant section in the `project.lock.json` file looks like when targeting `netstandard1.0`:</span></span>
+<span data-ttu-id="9a4e9-135">Zde je v jaké v příslušné části `project.lock.json` soubor vypadá jako při cílení na `netstandard1.0`:</span><span class="sxs-lookup"><span data-stu-id="9a4e9-135">Here's what the relevant section in the `project.lock.json` file looks like when targeting `netstandard1.0`:</span></span>
 
 ```json
 "NETStandard.Library/1.6.0":{
@@ -96,7 +95,7 @@ ms.lasthandoff: 12/23/2017
 }
 ```
 
-<span data-ttu-id="6e024-137">Zkopírujte přes odkazy na balíček do `dependencies` části knihovně `project.json` souboru, nahraďte `NETStandard.Library` odkaz:</span><span class="sxs-lookup"><span data-stu-id="6e024-137">Next, copy over the package references into the `dependencies` section of the library's `project.json` file, replacing the `NETStandard.Library` reference:</span></span>
+<span data-ttu-id="9a4e9-136">Zkopírujte přes odkazy na balíček do `dependencies` části knihovně `project.json` souboru, nahraďte `NETStandard.Library` odkaz:</span><span class="sxs-lookup"><span data-stu-id="9a4e9-136">Next, copy over the package references into the `dependencies` section of the library's `project.json` file, replacing the `NETStandard.Library` reference:</span></span>
 
 ```json
 {
@@ -132,9 +131,9 @@ ms.lasthandoff: 12/23/2017
 }
 ```
 
-<span data-ttu-id="6e024-138">To je velmi velký balíčky, řadu které který určitě nejsou potřebné pro rozšíření typy kolekcí.</span><span class="sxs-lookup"><span data-stu-id="6e024-138">That's quite a lot of packages, many of which which certainly aren't necessary for extending collection types.</span></span>  <span data-ttu-id="6e024-139">Můžete odebrat balíčky ručně nebo pomocí nástroje, jako například [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčků kódu.</span><span class="sxs-lookup"><span data-stu-id="6e024-139">You can either remove packages manually or use a tool such as [ILSpy](http://ilspy.net) or [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) to identify which packages your code actually uses.</span></span>
+<span data-ttu-id="9a4e9-137">To je velmi velký balíčky, řadu které který určitě nejsou potřebné pro rozšíření typy kolekcí.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-137">That's quite a lot of packages, many of which which certainly aren't necessary for extending collection types.</span></span>  <span data-ttu-id="9a4e9-138">Můžete odebrat balíčky ručně nebo pomocí nástroje, jako například [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčků kódu.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-138">You can either remove packages manually or use a tool such as [ILSpy](http://ilspy.net) or [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) to identify which packages your code actually uses.</span></span>
 
-<span data-ttu-id="6e024-140">Zde je, jak může vypadat oříznutý balíčku:</span><span class="sxs-lookup"><span data-stu-id="6e024-140">Here's what a trimmed package could look like:</span></span>
+<span data-ttu-id="9a4e9-139">Zde je, jak může vypadat oříznutý balíčku:</span><span class="sxs-lookup"><span data-stu-id="9a4e9-139">Here's what a trimmed package could look like:</span></span>
 
 ```json
 {
@@ -156,7 +155,7 @@ ms.lasthandoff: 12/23/2017
 }
 ```
 
-<span data-ttu-id="6e024-141">Teď má menší nároky než pokud měl závisí na `NETStandard.Library` metapackage.</span><span class="sxs-lookup"><span data-stu-id="6e024-141">Now, it has a smaller footprint than if it had depended on the `NETStandard.Library` metapackage.</span></span>
+<span data-ttu-id="9a4e9-140">Teď má menší nároky než pokud měl závisí na `NETStandard.Library` metapackage.</span><span class="sxs-lookup"><span data-stu-id="9a4e9-140">Now, it has a smaller footprint than if it had depended on the `NETStandard.Library` metapackage.</span></span>
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

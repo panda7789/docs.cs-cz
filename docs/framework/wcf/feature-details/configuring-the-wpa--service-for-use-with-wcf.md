@@ -1,48 +1,50 @@
 ---
-title: "Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation"
-ms.custom: 
+title: Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 12df9e3760774b4dc8d4e8f73a09df5e79c2453e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 727ad032482829350b5cf88175c34d8ccc7b98b9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a><span data-ttu-id="2d63f-102">Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="2d63f-102">Configuring the Windows Process Activation Service for Use with Windows Communication Foundation</span></span>
-<span data-ttu-id="2d63f-103">Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] hostitele [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, které není komunikaci pomocí protokolu HTTP síťových protokolů.</span><span class="sxs-lookup"><span data-stu-id="2d63f-103">This topic describes the steps required to set up Windows Process Activation Service (also known as WAS) in [!INCLUDE[wv](../../../../includes/wv-md.md)] to host [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services that do not communicate over HTTP network protocols.</span></span> <span data-ttu-id="2d63f-104">Následující oddíly popisují kroky pro tuto konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="2d63f-104">The following sections outline the steps for this configuration:</span></span>  
+# <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a><span data-ttu-id="10914-102">Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="10914-102">Configuring the Windows Process Activation Service for Use with Windows Communication Foundation</span></span>
+<span data-ttu-id="10914-103">Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] hostitele [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, které není komunikaci pomocí protokolu HTTP síťových protokolů.</span><span class="sxs-lookup"><span data-stu-id="10914-103">This topic describes the steps required to set up Windows Process Activation Service (also known as WAS) in [!INCLUDE[wv](../../../../includes/wv-md.md)] to host [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services that do not communicate over HTTP network protocols.</span></span> <span data-ttu-id="10914-104">Následující oddíly popisují kroky pro tuto konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="10914-104">The following sections outline the steps for this configuration:</span></span>  
   
--   <span data-ttu-id="2d63f-105">Nainstalovat (nebo potvrďte instalace) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] požadované součásti aktivace.</span><span class="sxs-lookup"><span data-stu-id="2d63f-105">Install (or confirm the installation of) the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] activation components required.</span></span>  
+-   <span data-ttu-id="10914-105">Nainstalovat (nebo potvrďte instalace) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] požadované součásti aktivace.</span><span class="sxs-lookup"><span data-stu-id="10914-105">Install (or confirm the installation of) the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] activation components required.</span></span>  
   
--   <span data-ttu-id="2d63f-106">Vytvořit web WAS s vazeb síťových protokolů, které chcete použít, nebo přidat novou vazbu protokolu na existující web.</span><span class="sxs-lookup"><span data-stu-id="2d63f-106">Create a WAS site with the network protocol bindings you wish to use, or add a new protocol binding to an existing site.</span></span>  
+-   <span data-ttu-id="10914-106">Vytvořit web WAS s vazeb síťových protokolů, které chcete použít, nebo přidat novou vazbu protokolu na existující web.</span><span class="sxs-lookup"><span data-stu-id="10914-106">Create a WAS site with the network protocol bindings you wish to use, or add a new protocol binding to an existing site.</span></span>  
   
--   <span data-ttu-id="2d63f-107">Vytvořte aplikaci pro hostování vaší služeb a povolte tuto aplikaci používat požadovaných síťových protokolů.</span><span class="sxs-lookup"><span data-stu-id="2d63f-107">Create an application to host your services and enable that application to use the required network protocols.</span></span>  
+-   <span data-ttu-id="10914-107">Vytvořte aplikaci pro hostování vaší služeb a povolte tuto aplikaci používat požadovaných síťových protokolů.</span><span class="sxs-lookup"><span data-stu-id="10914-107">Create an application to host your services and enable that application to use the required network protocols.</span></span>  
   
--   <span data-ttu-id="2d63f-108">Sestavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, která zveřejňuje koncový bod jiným protokolem než HTTP.</span><span class="sxs-lookup"><span data-stu-id="2d63f-108">Build a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that exposes a non-HTTP endpoint.</span></span>  
+-   <span data-ttu-id="10914-108">Sestavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, která zveřejňuje koncový bod jiným protokolem než HTTP.</span><span class="sxs-lookup"><span data-stu-id="10914-108">Build a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that exposes a non-HTTP endpoint.</span></span>  
   
-## <a name="configuring-a-site-with-non-http-bindings"></a><span data-ttu-id="2d63f-109">Konfigurace sítě s jiným protokolem než HTTP vazby</span><span class="sxs-lookup"><span data-stu-id="2d63f-109">Configuring a Site with Non-HTTP bindings</span></span>  
- <span data-ttu-id="2d63f-110">Pokud chcete použít vazbu jiným protokolem než HTTP službou WAS, musí konfigurace WAS přidat vazby webu.</span><span class="sxs-lookup"><span data-stu-id="2d63f-110">To use a non-HTTP binding with WAS, the site binding must be added to the WAS configuration.</span></span> <span data-ttu-id="2d63f-111">Konfigurace úložiště pro WAS je soubor applicationHost.config umístěný v adresáři %windir%\system32\inetsrv\config.</span><span class="sxs-lookup"><span data-stu-id="2d63f-111">The configuration store for WAS is the applicationHost.config file, located in the %windir%\system32\inetsrv\config directory.</span></span> <span data-ttu-id="2d63f-112">Toto úložiště konfigurace sdílí WAS a IIS 7.0.</span><span class="sxs-lookup"><span data-stu-id="2d63f-112">This configuration store is shared by both WAS and IIS 7.0.</span></span>  
+## <a name="configuring-a-site-with-non-http-bindings"></a><span data-ttu-id="10914-109">Konfigurace sítě s jiným protokolem než HTTP vazby</span><span class="sxs-lookup"><span data-stu-id="10914-109">Configuring a Site with Non-HTTP bindings</span></span>  
+ <span data-ttu-id="10914-110">Pokud chcete použít vazbu jiným protokolem než HTTP službou WAS, musí konfigurace WAS přidat vazby webu.</span><span class="sxs-lookup"><span data-stu-id="10914-110">To use a non-HTTP binding with WAS, the site binding must be added to the WAS configuration.</span></span> <span data-ttu-id="10914-111">Konfigurace úložiště pro WAS je soubor applicationHost.config umístěný v adresáři %windir%\system32\inetsrv\config.</span><span class="sxs-lookup"><span data-stu-id="10914-111">The configuration store for WAS is the applicationHost.config file, located in the %windir%\system32\inetsrv\config directory.</span></span> <span data-ttu-id="10914-112">Toto úložiště konfigurace sdílí WAS a IIS 7.0.</span><span class="sxs-lookup"><span data-stu-id="10914-112">This configuration store is shared by both WAS and IIS 7.0.</span></span>  
   
- <span data-ttu-id="2d63f-113">applicationHost.config je textový soubor s XML, který lze otevřít v libovolném standardního textového editoru (například Poznámkový blok).</span><span class="sxs-lookup"><span data-stu-id="2d63f-113">applicationHost.config is an XML text file that can be opened with any standard text editor (such as Notepad).</span></span> <span data-ttu-id="2d63f-114">Ale [!INCLUDE[iisver](../../../../includes/iisver-md.md)] nástroje příkazového řádku konfigurace (appcmd.exe) je upřednostňovaný způsob, jak přidat vazby webu jiným protokolem než HTTP.</span><span class="sxs-lookup"><span data-stu-id="2d63f-114">However, the [!INCLUDE[iisver](../../../../includes/iisver-md.md)] command-line configuration tool (appcmd.exe) is the preferred way to add non-HTTP site bindings.</span></span>  
+ <span data-ttu-id="10914-113">applicationHost.config je textový soubor s XML, který lze otevřít v libovolném standardního textového editoru (například Poznámkový blok).</span><span class="sxs-lookup"><span data-stu-id="10914-113">applicationHost.config is an XML text file that can be opened with any standard text editor (such as Notepad).</span></span> <span data-ttu-id="10914-114">Ale [!INCLUDE[iisver](../../../../includes/iisver-md.md)] nástroje příkazového řádku konfigurace (appcmd.exe) je upřednostňovaný způsob, jak přidat vazby webu jiným protokolem než HTTP.</span><span class="sxs-lookup"><span data-stu-id="10914-114">However, the [!INCLUDE[iisver](../../../../includes/iisver-md.md)] command-line configuration tool (appcmd.exe) is the preferred way to add non-HTTP site bindings.</span></span>  
   
- <span data-ttu-id="2d63f-115">Následující příkaz přidá vazbu net.tcp lokality na výchozí web pomocí appcmd.exe (Tento příkaz je zadán jako jeden řádek).</span><span class="sxs-lookup"><span data-stu-id="2d63f-115">The following command adds a net.tcp site binding to the default Web site using appcmd.exe (this command is entered as a single line).</span></span>  
+ <span data-ttu-id="10914-115">Následující příkaz přidá vazbu net.tcp lokality na výchozí web pomocí appcmd.exe (Tento příkaz je zadán jako jeden řádek).</span><span class="sxs-lookup"><span data-stu-id="10914-115">The following command adds a net.tcp site binding to the default Web site using appcmd.exe (this command is entered as a single line).</span></span>  
   
 ```  
 appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']  
 ```  
   
- <span data-ttu-id="2d63f-116">Tento příkaz přidá novou vazbu net.tcp výchozí web přidáním řádku níže uvedeného v souboru applicationHost.config.</span><span class="sxs-lookup"><span data-stu-id="2d63f-116">This command adds the new net.tcp binding to the default Web site by adding the line indicated below to the applicationHost.config file.</span></span>  
+ <span data-ttu-id="10914-116">Tento příkaz přidá novou vazbu net.tcp výchozí web přidáním řádku níže uvedeného v souboru applicationHost.config.</span><span class="sxs-lookup"><span data-stu-id="10914-116">This command adds the new net.tcp binding to the default Web site by adding the line indicated below to the applicationHost.config file.</span></span>  
   
 ```xml  
 <sites>  
@@ -56,16 +58,16 @@ appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInf
 </sites>  
 ```  
   
-## <a name="enabling-an-application-to-use-non-http-protocols"></a><span data-ttu-id="2d63f-117">Povolení aplikace pro použití jiných protokolů než HTTP</span><span class="sxs-lookup"><span data-stu-id="2d63f-117">Enabling an Application to Use Non-HTTP Protocols</span></span>  
- <span data-ttu-id="2d63f-118">Můžete povolit nebo zakázat jednotlivým síťovým protocolsat na úrovni aplikace.</span><span class="sxs-lookup"><span data-stu-id="2d63f-118">You can enable or disable individual network protocolsat the application level.</span></span> <span data-ttu-id="2d63f-119">Následující příkaz ukazuje, jak povolit protokoly HTTP i net.tcp pro aplikaci, která běží v `Default Web Site`.</span><span class="sxs-lookup"><span data-stu-id="2d63f-119">The following command illustrates how to enable both the HTTP and net.tcp protocols for an application that runs in the `Default Web Site`.</span></span>  
+## <a name="enabling-an-application-to-use-non-http-protocols"></a><span data-ttu-id="10914-117">Povolení aplikace pro použití jiných protokolů než HTTP</span><span class="sxs-lookup"><span data-stu-id="10914-117">Enabling an Application to Use Non-HTTP Protocols</span></span>  
+ <span data-ttu-id="10914-118">Můžete povolit nebo zakázat jednotlivým síťovým protocolsat na úrovni aplikace.</span><span class="sxs-lookup"><span data-stu-id="10914-118">You can enable or disable individual network protocolsat the application level.</span></span> <span data-ttu-id="10914-119">Následující příkaz ukazuje, jak povolit protokoly HTTP i net.tcp pro aplikaci, která běží v `Default Web Site`.</span><span class="sxs-lookup"><span data-stu-id="10914-119">The following command illustrates how to enable both the HTTP and net.tcp protocols for an application that runs in the `Default Web Site`.</span></span>  
   
 ```  
 appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp  
 ```  
   
- <span data-ttu-id="2d63f-120">Seznam Povolené protokoly lze nastavit i v \<applicationDefaults > elementu XML konfigurace lokality uložené v souboru ApplicationHost.config.</span><span class="sxs-lookup"><span data-stu-id="2d63f-120">The list of enabled protocols can also be set in the \<applicationDefaults> element of the site’s XML configuration stored in ApplicationHost.config.</span></span>  
+ <span data-ttu-id="10914-120">Seznam Povolené protokoly lze nastavit i v \<applicationDefaults > elementu XML konfigurace lokality uložené v souboru ApplicationHost.config.</span><span class="sxs-lookup"><span data-stu-id="10914-120">The list of enabled protocols can also be set in the \<applicationDefaults> element of the site’s XML configuration stored in ApplicationHost.config.</span></span>  
   
- <span data-ttu-id="2d63f-121">Následující kód XML ze souboru applicationHost.config znázorňuje lokality vázána na protokolu HTTP a jiných protokolů než HTTP.</span><span class="sxs-lookup"><span data-stu-id="2d63f-121">The following XML code from applicationHost.config illustrates a site bound to both HTTP and non-HTTP protocols.</span></span> <span data-ttu-id="2d63f-122">Další konfigurace vyžadovaná pro podporu jiných protokolů než HTTP se nazývá s komentáři.</span><span class="sxs-lookup"><span data-stu-id="2d63f-122">The additional configuration required to support non-HTTP protocols is called out with comments.</span></span>  
+ <span data-ttu-id="10914-121">Následující kód XML ze souboru applicationHost.config znázorňuje lokality vázána na protokolu HTTP a jiných protokolů než HTTP.</span><span class="sxs-lookup"><span data-stu-id="10914-121">The following XML code from applicationHost.config illustrates a site bound to both HTTP and non-HTTP protocols.</span></span> <span data-ttu-id="10914-122">Další konfigurace vyžadovaná pro podporu jiných protokolů než HTTP se nazývá s komentáři.</span><span class="sxs-lookup"><span data-stu-id="10914-122">The additional configuration required to support non-HTTP protocols is called out with comments.</span></span>  
   
 ```xml  
 <sites>  
@@ -94,19 +96,19 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
 </sites>  
 ```  
   
- <span data-ttu-id="2d63f-123">Pokud se pokusíte aktivovat službu pomocí WAS Aktivace jiným protokolem než HTTP a ještě nainstalován a nakonfigurován WAS mohou se zobrazit chybová zpráva:</span><span class="sxs-lookup"><span data-stu-id="2d63f-123">If you attempt to activate a service using WAS for Non-HTTP activation and you have not installed and configured WAS you may see the following error:</span></span>  
+ <span data-ttu-id="10914-123">Pokud se pokusíte aktivovat službu pomocí WAS Aktivace jiným protokolem než HTTP a ještě nainstalován a nakonfigurován WAS mohou se zobrazit chybová zpráva:</span><span class="sxs-lookup"><span data-stu-id="10914-123">If you attempt to activate a service using WAS for Non-HTTP activation and you have not installed and configured WAS you may see the following error:</span></span>  
   
 ```Output  
 [InvalidOperationException: The protocol 'net.tcp' does not have an implementation of HostedTransportConfiguration type registered.]   System.ServiceModel.AsyncResult.End(IAsyncResult result) +15778592   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result) +15698937   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, Boolean flowContext) +265   System.ServiceModel.Activation.HttpModule.ProcessRequest(Object sender, EventArgs e) +227   System.Web.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +80   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +171  
 ```  
   
- <span data-ttu-id="2d63f-124">Pokud se zobrazí tato chyba, zkontrolujte WAS pro aktivace jiným protokolem než HTTP je nainstalován a nakonfigurován správně.</span><span class="sxs-lookup"><span data-stu-id="2d63f-124">If you see this error ensure WAS for Non-HTTP Activation is installed and configured properly.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="2d63f-125">[Postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).</span><span class="sxs-lookup"><span data-stu-id="2d63f-125"> [How to: Install and Configure WCF Activation Components](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).</span></span>  
+ <span data-ttu-id="10914-124">Pokud se zobrazí tato chyba, zkontrolujte WAS pro aktivace jiným protokolem než HTTP je nainstalován a nakonfigurován správně.</span><span class="sxs-lookup"><span data-stu-id="10914-124">If you see this error ensure WAS for Non-HTTP Activation is installed and configured properly.</span></span> <span data-ttu-id="10914-125">Další informace najdete v tématu [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).</span><span class="sxs-lookup"><span data-stu-id="10914-125">For more information, see [How to: Install and Configure WCF Activation Components](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).</span></span>  
   
-## <a name="building-a-wcf-service-that-uses-was-for-non-http-activation"></a><span data-ttu-id="2d63f-126">Vytváření WCF služby, používá se pro aktivace jiným protokolem než HTTP</span><span class="sxs-lookup"><span data-stu-id="2d63f-126">Building a WCF Service That Uses WAS for Non-HTTP activation</span></span>  
- <span data-ttu-id="2d63f-127">Po provedení kroků k instalaci a konfiguraci služby WAS (najdete v části [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), konfigurace služby k použití WAS pro aktivace je podobná konfigurace služby, který je hostován ve službě IIS.</span><span class="sxs-lookup"><span data-stu-id="2d63f-127">Once you perform the steps to install and configure WAS (see [How to: Install and Configure WCF Activation Components](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), configuring a service to use WAS for activation is similar to configuring a service that is hosted in IIS.</span></span>  
+## <a name="building-a-wcf-service-that-uses-was-for-non-http-activation"></a><span data-ttu-id="10914-126">Vytváření WCF služby, používá se pro aktivace jiným protokolem než HTTP</span><span class="sxs-lookup"><span data-stu-id="10914-126">Building a WCF Service That Uses WAS for Non-HTTP activation</span></span>  
+ <span data-ttu-id="10914-127">Po provedení kroků k instalaci a konfiguraci služby WAS (najdete v části [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), konfigurace služby k použití WAS pro aktivace je podobná konfigurace služby, který je hostován ve službě IIS.</span><span class="sxs-lookup"><span data-stu-id="10914-127">Once you perform the steps to install and configure WAS (see [How to: Install and Configure WCF Activation Components](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), configuring a service to use WAS for activation is similar to configuring a service that is hosted in IIS.</span></span>  
   
- <span data-ttu-id="2d63f-128">Podrobné pokyny o vytváření WAS aktivované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] najdete v tématu [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).</span><span class="sxs-lookup"><span data-stu-id="2d63f-128">For detailed instructions about building a WAS-activated [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, see [How to: Host a WCF Service in WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).</span></span>  
+ <span data-ttu-id="10914-128">Podrobné pokyny o vytváření WAS aktivované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] najdete v tématu [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).</span><span class="sxs-lookup"><span data-stu-id="10914-128">For detailed instructions about building a WAS-activated [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, see [How to: Host a WCF Service in WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2d63f-129">Viz také</span><span class="sxs-lookup"><span data-stu-id="2d63f-129">See Also</span></span>  
- [<span data-ttu-id="2d63f-130">Hostování v Aktivační službě procesů systému Windows</span><span class="sxs-lookup"><span data-stu-id="2d63f-130">Hosting in Windows Process Activation Service</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
- [<span data-ttu-id="2d63f-131">Hostování funkcí systému Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="2d63f-131">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a><span data-ttu-id="10914-129">Viz také</span><span class="sxs-lookup"><span data-stu-id="10914-129">See Also</span></span>  
+ [<span data-ttu-id="10914-130">Hostování v Aktivační službě procesů systému Windows</span><span class="sxs-lookup"><span data-stu-id="10914-130">Hosting in Windows Process Activation Service</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
+ [<span data-ttu-id="10914-131">Hostování funkcí systému Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="10914-131">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)
