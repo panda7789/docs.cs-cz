@@ -21,14 +21,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3dc83697a27bf99a63305bf89a57fbcb4d459b45
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 80fd6163db1b7b168be4e19b01c8eb9f15865f04
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech zabezpečení možnostech, které [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vytváření vlastních vazeb, najdete v části [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech zabezpečení možnostech, které [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
   
 > [!WARNING]
 >  <xref:System.ServiceModel.Channels.SecurityBindingElement> nepodporuje <xref:System.ServiceModel.Channels.IDuplexSessionChannel> kanálu tvar, který se používá výchozí kanál obrazce pomocí protokolu TCP při přenosu <xref:System.ServiceModel.TransferMode> je nastaven na <xref:System.ServiceModel.TransferMode.Buffered>. Je nutné nastavit <xref:System.ServiceModel.TransferMode> k <xref:System.ServiceModel.TransferMode.Streamed> Chcete-li použít <xref:System.ServiceModel.Channels.SecurityBindingElement> v tomto scénáři.  
