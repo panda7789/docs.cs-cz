@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3f7e12f3a6c5d722b2eda1eaaeb390ee3284a70e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3317bc47c03e0b100d094ba1d929a003dddab055
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="endpoint-creation-overview"></a>Přehled vytváření koncových bodů
 Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nabídky služeb. Tato část popisuje strukturu koncový bod a popisuje, jak definovat koncový bod v konfiguraci a v kódu.  
@@ -37,7 +37,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] slu�
   
 -   **Vazba**. Vazba Určuje, jak ke komunikaci s koncovým bodem. Vazba Určuje, jak koncový bod komunikuje s na světě, včetně které přenosový protokol použít (například TCP nebo HTTP), které kódování určené k použití pro zprávy (například textu nebo binárních) a jsou nezbytné (pro které požadavky na zabezpečení například Secure Sockets Layer [SSL] nebo zabezpečení protokolu SOAP zprávy). Další informace najdete v tématu [pomocí vazby na konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   
--   **Kontrakt služby**. Kontrakt služby popisuje, jaké funkce koncový bod vystavuje klienta. Kontrakt určuje operace, které můžete volat klienta, formulář zprávy a typ vstupní parametry nebo data potřebná k volání operace a typ zpracování nebo zprávu odpovědi, které můžete očekávat klienta. Tři základní typy kontraktů odpovídají základní zpráva exchange vzory (MEPs): datagram (jednocestné), požadavek nebo odpověď a duplexní režim (obousměrné). Kontrakt služby můžete také použít kontraktů dat a zpráv tak, aby vyžadovala konkrétní datové typy a formáty zpráv, pokud přistupuje. [!INCLUDE[crabout](../../../includes/crabout-md.md)] definování kontraktu služby najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md). Všimněte si, že klient může rovněž vyžaduje, aby implementace kontraktu služby definované, názvem kontraktu zpětného volání pro příjem zpráv z služby v rámci duplexní MEP. Další informace najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
+-   **Kontrakt služby**. Kontrakt služby popisuje, jaké funkce koncový bod vystavuje klienta. Kontrakt určuje operace, které můžete volat klienta, formulář zprávy a typ vstupní parametry nebo data potřebná k volání operace a typ zpracování nebo zprávu odpovědi, které můžete očekávat klienta. Tři základní typy kontraktů odpovídají základní zpráva exchange vzory (MEPs): datagram (jednocestné), požadavek nebo odpověď a duplexní režim (obousměrné). Kontrakt služby můžete také použít kontraktů dat a zpráv tak, aby vyžadovala konkrétní datové typy a formáty zpráv, pokud přistupuje. Další informace o tom, jak definování kontraktu služby najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md). Všimněte si, že klient může rovněž vyžaduje, aby implementace kontraktu služby definované, názvem kontraktu zpětného volání pro příjem zpráv z služby v rámci duplexní MEP. Další informace najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
   
  Koncový bod pro službu lze imperativní pomocí kódu nebo deklarativně pomocí konfigurace. Pokud nejsou zadány žádné koncové body modulu runtime poskytuje výchozí koncové body přidáním jeden výchozí koncový bod pro každou základní adresu pro každý kontrakt služby implementované službu. Definování koncové body v kódu obvykle není praktické protože jsou obvykle liší od těch, které používá při služby je vyvíjen vazeb a adresy pro v nasazené službě. Obecně je praktičtější definovat koncové body služby pomocí konfigurace, nikoli kódu. Zachování vazby a adresování informace mimo kód vám umožní se změnit bez nutnosti znovu zkompiluje a znovu nasaďte aplikaci.  
   
@@ -209,7 +209,7 @@ Dim echoUri As Uri = New Uri("http://localhost:8000/")
 serviceHost.Open()  
 ```  
   
- Pokud jsou k dispozici explicitně koncových bodů, jsou výchozí koncové body může být přidán voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] výchozí koncové body, najdete v části [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Pokud jsou k dispozici explicitně koncových bodů, jsou výchozí koncové body může být přidán voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Další informace o výchozí koncové body najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)

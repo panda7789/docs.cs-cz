@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 19d1f7630c96f557791f0682fbc0c5d7286c7eb7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c2c0d17c7274cc9fdaf1b5080950ddb4f69f539a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] konfigurace klienta a zadejte adresy, vazby chování, smlouvy, "ABC" vlastnosti klienta koncového bodu, který používají klienti k připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jehož atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsané v části "Konfigurace koncových bodů" v tomto tématu.  
@@ -97,14 +97,14 @@ Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] konfig
   
  Každý koncový bod musí mít adresu přidruženo vyhledat a identifikovat koncový bod. `address` Atributu lze zadat adresu URL, která poskytuje umístění koncového bodu. Ale adresu pro koncový bod služby můžete také zadat v kódu tak, že vytvoříte identifikátor URI (Uniform Resource) a přidají se do <xref:System.ServiceModel.ServiceHost> pomocí jedné z <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metody. Další informace najdete v tématu [adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md). Jak uvádí, že zavedení, [ \<hlavičky >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) elementy jsou součástí <xref:System.ServiceModel.EndpointAddress> a jsou popsány i v [ Adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md) tématu.  
   
- `binding` Atribut určuje typ vazby koncového bodu očekává, že má použít při připojení ke službě. Tento typ musí mít registrovaný konfigurační oddíl, pokud je na něj odkazovat. V předchozím příkladu je to [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) část, která označuje, že používá koncový bod <xref:System.ServiceModel.WSHttpBinding>. Ale může být více než jednu vazbu daného typu, který můžete použít koncový bod. Každá z nich má svou vlastní [ \<vazby >](../../../../docs/framework/misc/binding.md) v rámci prvku typu (vazby). `bindingconfiguration` Atribut slouží k rozlišení mezi vazby stejného typu. Její hodnota je nalezena shoda s `name` atribut [ \<vazby >](../../../../docs/framework/misc/binding.md) element. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Postup konfigurace klienta vazby pomocí konfigurace, najdete v části [postupy: zadání klientské vazby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md).  
+ `binding` Atribut určuje typ vazby koncového bodu očekává, že má použít při připojení ke službě. Tento typ musí mít registrovaný konfigurační oddíl, pokud je na něj odkazovat. V předchozím příkladu je to [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) část, která označuje, že používá koncový bod <xref:System.ServiceModel.WSHttpBinding>. Ale může být více než jednu vazbu daného typu, který můžete použít koncový bod. Každá z nich má svou vlastní [ \<vazby >](../../../../docs/framework/misc/binding.md) v rámci prvku typu (vazby). `bindingconfiguration` Atribut slouží k rozlišení mezi vazby stejného typu. Její hodnota je nalezena shoda s `name` atribut [ \<vazby >](../../../../docs/framework/misc/binding.md) element. Další informace o tom, jak nakonfigurovat klienta vazby pomocí konfigurace, najdete v části [postupy: zadání klientské vazby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md).  
   
  `behaviorConfiguration` Atribut slouží k určení, které [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) z [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) by měl používat koncový bod. Její hodnota je nalezena shoda s `name` atribut [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) element. Příklad použití konfigurace k určení chování klienta, naleznete v části [konfigurace chování klientů](../../../../docs/framework/wcf/configuring-client-behaviors.md).  
   
  `contract` Určuje atribut, který kontrakt koncový bod je vystavení. Tato hodnota se mapuje <xref:System.ServiceModel.ServiceContractAttribute.ConfigurationName%2A> z <xref:System.ServiceModel.ServiceContractAttribute>. Výchozí hodnota je název úplné typu třídy, která implementuje službu.  
   
 ### <a name="configuring-metadata"></a>Konfigurace metadat  
- [ \<Metadata >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element se používá k určení nastavení použitá pro zaregistrování metadata importovat rozšíření. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] rozšíření systému metadat, najdete v části[rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
+ [ \<Metadata >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element se používá k určení nastavení použitá pro zaregistrování metadata importovat rozšíření. Další informace o rozšíření systému metadat najdete v tématu[rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  

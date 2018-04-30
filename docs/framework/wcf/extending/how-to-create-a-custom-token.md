@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytvoření vlastního tokenu"
-ms.custom: 
+title: 'Postupy: Vytvoření vlastního tokenu'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,31 +18,32 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0aeed7e1beac1a290aebec46a356952ddf994ed7
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c270b63586809044f1bb3e56841ae8cf590e7bb1
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak integrovat s zprostředkovatele tokenu vlastní zabezpečovací a ověřovací data. Kompletní příklad najdete v článku [vlastní tokenu](../../../../docs/framework/wcf/samples/custom-token.md) ukázka.  
   
- A *token zabezpečení* je v podstatě elementu XML, který je používán [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] framework zabezpečení představují deklarace identity o odesílateli v zprávu protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]funkce zabezpečení poskytuje různé tokeny pro režimy ověřování poskytované systémem. Mezi příklady patří token zabezpečení certifikátu X.509 reprezentována <xref:System.IdentityModel.Tokens.X509SecurityToken> třídu nebo token zabezpečení uživatelské jméno reprezentována <xref:System.IdentityModel.Tokens.UserNameSecurityToken> – třída.  
+ A *token zabezpečení* je v podstatě elementu XML, který je používán [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] framework zabezpečení představují deklarace identity o odesílateli v zprávu protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce zabezpečení poskytuje různé tokeny pro režimy ověřování poskytované systémem. Mezi příklady patří token zabezpečení certifikátu X.509 reprezentována <xref:System.IdentityModel.Tokens.X509SecurityToken> třídu nebo token zabezpečení uživatelské jméno reprezentována <xref:System.IdentityModel.Tokens.UserNameSecurityToken> – třída.  
   
  Zadané typy nepodporuje někdy režim ověřování nebo pověření. V takovém případě je potřeba vytvořit token zabezpečení vlastní zajistit reprezentaci XML vlastní pověření uvnitř zprávu protokolu SOAP.  
   
  Následující postupy ukazují, jak vytvořit token vlastní zabezpečení a jak integrovat s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení. Toto téma vytvoří platební karty token, který slouží k předávání informací o platební karty klienta k serveru.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vlastní pověření a Správce tokenu zabezpečení, najdete v části [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+ Další informace o vlastní pověření a Správce tokenů zabezpečení najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
  Najdete v článku <xref:System.IdentityModel.Tokens> obor názvů pro více tříd, které představují tokeny zabezpečení.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]přihlašovací údaje Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací, viz [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
+ Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací najdete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## <a name="procedures"></a>Procedury  
  Klientská aplikace je třeba zadat způsob, jak určit informace o platební karty pro zabezpečení infrastruktury. Tyto informace je k dispozici pro aplikaci třídou přihlašovací údaje vlastního klienta. Prvním krokem je vytvoření třídy představující informace o kreditní kartě pro přihlašovací údaje vlastního klienta.  
@@ -91,7 +93,7 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
      [!code-csharp[c_CustomToken#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#2)]
      [!code-vb[c_CustomToken#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#2)]  
   
- Tokeny zabezpečení, se přenáší uvnitř protokolu SOAP zprávy, které vyžaduje mechanismus překlad mezi reprezentace tokenu zabezpečení v paměti a na síťové vyjádření. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá serializátoru tokenů zabezpečení k provedení této úlohy. Každý vlastní token musí být doplněn vlastní zabezpečovací tokenu serializátoru, který lze serializaci a deserializaci token zabezpečení vlastní zprávu protokolu SOAP.  
+ Tokeny zabezpečení, se přenáší uvnitř protokolu SOAP zprávy, které vyžaduje mechanismus překlad mezi reprezentace tokenu zabezpečení v paměti a na síťové vyjádření. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá serializátoru tokenů zabezpečení k provedení této úlohy. Každý vlastní token musí být doplněn vlastní zabezpečovací tokenu serializátoru, který lze serializaci a deserializaci token zabezpečení vlastní zprávu protokolu SOAP.  
   
 > [!NOTE]
 >  Odvozené klíče jsou ve výchozím nastavení povolené. Pokud chcete vytvořit token vlastní zabezpečení a použít jako primární token [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] odvozena z něj klíč. Při to uděláte, zavolá serializátoru tokenů zabezpečení vlastní k zápisu <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> pro token vlastní zabezpečení při serializaci `DerivedKeyToken` k drátové síti. Na koncové straně příjmu, při deserializaci token vypnutí přenosu `DerivedKeyToken` serializátor očekává `SecurityTokenReference` element jako podřízený objekt nejvyšší úrovně v rámci samotného. Pokud serializátoru tokenů zabezpečení vlastní nebyla přidána `SecurityTokenReference` elementu při serializaci typ klauzule, je vyvolána výjimka.  
@@ -115,14 +117,14 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
   
 #### <a name="to-integrate-the-custom-security-token-with-a-security-token-provider"></a>Pro integraci token zabezpečení vlastní poskytovatele tokenu zabezpečení  
   
-1.  Zprostředkovatel tokenu zabezpečení vytvoří, změní (v případě potřeby) a vrací instanci třídy token. Pokud chcete vytvořit vlastní poskytovatele pro token vlastní zabezpečení, vytvořte třídu, která dědí z <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy. Následující příklad přepíše <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metoda vrátí instanci `CreditCardToken`. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]poskytovatelé tokenů vlastní zabezpečení, najdete v části [postupy: vytvoření vlastního poskytovatele tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
+1.  Zprostředkovatel tokenu zabezpečení vytvoří, změní (v případě potřeby) a vrací instanci třídy token. Pokud chcete vytvořit vlastní poskytovatele pro token vlastní zabezpečení, vytvořte třídu, která dědí z <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy. Následující příklad přepíše <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metoda vrátí instanci `CreditCardToken`. Další informace o poskytovatele tokenů vlastní zabezpečení najdete v tématu [postupy: vytvoření vlastního poskytovatele tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
   
      [!code-csharp[c_CustomToken#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#6)]
      [!code-vb[c_CustomToken#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#6)]  
   
 #### <a name="to-integrate-the-custom-security-token-with-a-security-token-authenticator"></a>Pro integraci token zabezpečení vlastního ověřovacího modulu tokenu zabezpečení  
   
-1.  Ověřovacího modulu tokenu zabezpečení ověří obsah token zabezpečení, když je extrahována ze zprávy. Pokud chcete vytvořit vlastní ověřovací token vlastní zabezpečení, vytvořte třídu, která dědí z <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> třídy. Následující příklad přepíše <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.ValidateTokenCore%2A> metoda. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vlastní zabezpečovací token ověřovací data, najdete v části [postupy: vytvoření vlastní ověřovací Token zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md).  
+1.  Ověřovacího modulu tokenu zabezpečení ověří obsah token zabezpečení, když je extrahována ze zprávy. Pokud chcete vytvořit vlastní ověřovací token vlastní zabezpečení, vytvořte třídu, která dědí z <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> třídy. Následující příklad přepíše <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.ValidateTokenCore%2A> metoda. Další informace o ověřovací data tokenu vlastní zabezpečení najdete v tématu [postupy: vytvoření vlastní ověřovací Token zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md).  
   
      [!code-csharp[c_CustomToken#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#7)]
      [!code-vb[c_CustomToken#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#7)]  
@@ -132,7 +134,7 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
   
 #### <a name="to-integrate-the-custom-security-token-with-a-security-token-manager"></a>Pro integraci token zabezpečení vlastní Správce tokenů zabezpečení  
   
-1.  Správce tokenů zabezpečení vytvoří odpovídající zprostředkovatel tokenu, nástroj pro ověření zabezpečení a instance serializátoru tokenů. Pokud chcete vytvořit vlastní Správce tokenů, vytvořte třídu, která dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy. Primární metody použití třídy <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> vytvoření příslušného poskytovatele a klienta služby Windows nebo pověření. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]token správce vlastní zabezpečení, najdete v části [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+1.  Správce tokenů zabezpečení vytvoří odpovídající zprostředkovatel tokenu, nástroj pro ověření zabezpečení a instance serializátoru tokenů. Pokud chcete vytvořit vlastní Správce tokenů, vytvořte třídu, která dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy. Primární metody použití třídy <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> vytvoření příslušného poskytovatele a klienta služby Windows nebo pověření. Další informace o správcích tokenu zabezpečení vlastní najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
      [!code-csharp[c_CustomToken#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#8)]
      [!code-vb[c_CustomToken#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#8)]  
@@ -142,7 +144,7 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
   
 #### <a name="to-integrate-the-custom-security-token-with-custom-client-and-service-credentials"></a>Pro integraci token vlastní zabezpečení vlastního klienta a pověření služby  
   
-1.  Vlastního klienta a pověření služby musí být přidaný do poskytují rozhraní API pro aplikace umožňující zadání vlastní tokenu informace, které se používá vlastní zabezpečovací tokenu infrastruktura předtím vytvořili pro účely poskytování a ověření vlastní zabezpečení Token obsah. Následující ukázky ukazují, jak to lze provést. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vlastního klienta a pověření služby najdete v části [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+1.  Vlastního klienta a pověření služby musí být přidaný do poskytují rozhraní API pro aplikace umožňující zadání vlastní tokenu informace, které se používá vlastní zabezpečovací tokenu infrastruktura předtím vytvořili pro účely poskytování a ověření vlastní zabezpečení Token obsah. Následující ukázky ukazují, jak to lze provést. Další informace o vlastních klienta a pověření služby najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
      [!code-csharp[c_CustomToken#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#10)]
      [!code-vb[c_CustomToken#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#10)]  

@@ -21,14 +21,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: c754a4ec57751b2ca5a809c771b2fb5235ec0510
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2828b6b9df313bab5a904712ad4e97cc7062f387
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí pověření systému Windows
-Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služba, která se nachází v doméně systému Windows a je volána klienty ve stejné doméně. [!INCLUDE[crabout](../../../includes/crabout-md.md)] v tomto scénáři najdete v části [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
+Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služba, která se nachází v doméně systému Windows a je volána klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
   
  Toto téma předpokládá máte existující rozhraní kontrakt a implementaci již definována a přidá na který. Můžete také upravit existující službu a klienta.  
   
@@ -57,7 +57,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu na [!INCLUDE[indigo1](../
      [!code-vb[c_SecureWindowsService#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsservice/vb/secureservice.vb#1)]  
   
 ### <a name="using-the-binding-in-a-service"></a>Pomocí vazby ve službě  
- Toto je druhý postup, který ukazuje způsob použití vazby v služba s vlastním hostováním. [!INCLUDE[crabout](../../../includes/crabout-md.md)] hostování služeb najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+ Toto je druhý postup, který ukazuje způsob použití vazby v služba s vlastním hostováním. Další informace o hostování služeb najdete v části [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
 ##### <a name="to-use-a-binding-in-a-service"></a>Chcete-li použít vazbu ve službě  
   

@@ -1,27 +1,29 @@
 ---
 title: Architektura klienta
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 02624403-0d77-41cb-9a86-ab55e98c7966
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6418c3b5c82ac42fb7e6d3ce85913896a3f76442
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 12db0d4f5717287439b66810e6354b12a4c68b77
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="client-architecture"></a>Architektura klienta
-Aplikace používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] objekty klienta k vyvolání operace služby. Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta kanály a jejich vztahů s základní architektury kanálu. Pro základní přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta, najdete v části [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vrstvy kanálu, najdete v části [rozšíření vrstvy kanálu](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  
+Aplikace používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] objekty klienta k vyvolání operace služby. Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta kanály a jejich vztahů s základní architektury kanálu. Pro základní přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta, najdete v části [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md). Další informace o vrstvy kanálu najdete v tématu [rozšíření vrstvy kanálu](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  
   
 ## <a name="overview"></a>Přehled  
  Vytvoří model služby běh [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů, které se skládají z následujících akcí:  
@@ -37,7 +39,7 @@ Aplikace používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obje
 ## <a name="client-objects-and-client-channels"></a>Objekty klienta a klient kanály  
  Základní rozhraní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů je <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> rozhraní, které zpřístupňuje základní funkce klienta a také funkce objekt základní komunikace <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType>, funkce kontextu <xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType>a rozšiřitelného chování <xref:System.ServiceModel.IExtensibleObject%601?displayProperty=nameWithType>.  
   
- <xref:System.ServiceModel.IClientChannel> Rozhraní, ale nedefinuje kontraktu služby, sám sebe. Ty jsou deklarovaná rozhraní kontraktu služby (obvykle vygeneruje z metadat služby pomocí nástroje, například [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]rozšíření typů klientů, obě <xref:System.ServiceModel.IClientChannel> a cílové rozhraní kontraktu služby umožnit aplikacím volání operací přímo a také mít přístup k funkcím runtime klienta. Vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient poskytne [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> objekty s informace potřebné k vytvoření dobu spuštění, které se můžete připojit a interakci s koncovým bodem konfigurovaných služeb.  
+ <xref:System.ServiceModel.IClientChannel> Rozhraní, ale nedefinuje kontraktu služby, sám sebe. Ty jsou deklarovaná rozhraní kontraktu služby (obvykle vygeneruje z metadat služby pomocí nástroje, například [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíření typů klientů, obě <xref:System.ServiceModel.IClientChannel> a cílové rozhraní kontraktu služby umožnit aplikacím volání operací přímo a také mít přístup k funkcím runtime klienta. Vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient poskytne [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> objekty s informace potřebné k vytvoření dobu spuštění, které se můžete připojit a interakci s koncovým bodem konfigurovaných služeb.  
   
  Jak už bylo zmíněno dříve, dva [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] typů klientů musí být nakonfigurované tak, abyste mohli používat. Nejjednodušším [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] typů klientů jsou objekty, které jsou odvozeny od <xref:System.ServiceModel.ClientBase%601> (nebo <xref:System.ServiceModel.DuplexClientBase%601> Pokud duplexního kontraktu kontrakt služby). Můžete vytvořit tyto typy pomocí konstruktoru nakonfigurované prostřednictvím kódu programu, nebo pomocí konfiguračního souboru a pak volat přímo k vyvolání operace služby. Pro základní přehled <xref:System.ServiceModel.ClientBase%601> objekty, najdete v části [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md).  
   
@@ -48,7 +50,7 @@ Aplikace používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obje
   
  Je důležité si pamatovat o objekty Factory kanál je, že se vytvořit nové instance třídy klienta kanály pro konfiguraci poskytuje k nim před voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>. Jakmile zavoláte <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> (nebo <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.ClientBase%601.CreateChannel%2A?displayProperty=nameWithType>, nebo všechny operace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta), nemůžete upravovat vytváření kanálů a můžete očekávat kanály pro instance různé služby, i když měníte jenom cíl Adresa koncového bodu. Pokud chcete vytvořit objekt klienta nebo kanálem klienta s jinou konfiguraci, je nutné nejprve vytvořit novou kanálu.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]různé problémy s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta kanály, najdete v části [přístup k službám pomocí klienta WCF](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+ Další informace o různých problémy s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta kanály, najdete v části [přístup k službám pomocí klienta WCF](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
  Následující dvě části popisují vytvoření a použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty kanálu klienta.  
   

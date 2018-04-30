@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-caps.latest.revision: ''
+caps.latest.revision: 40
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d71a373d3410c90f405a37e104e7d1b440a7aa14
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 7bf6512be6fabb87797fb6338f64320d5787d547
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-web-http-programming-object-model"></a>Programovací objektový model WCF Web HTTP
 WCF WEB HTTP programovací Model umožňuje vývojářům vystavit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] webové služby prostřednictvím základních požadavků HTTP bez nutnosti protokolu SOAP. WCF WEB HTTP programovací Model je postavená na existující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] model rozšiřitelnosti. Definuje následující třídy:  
@@ -110,7 +110,7 @@ WCF WEB HTTP programovací Model umožňuje vývojářům vystavit [!INCLUDE[ind
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Model programování webových HTTP nepoužívá založený na protokolu SOAP zprávy a proto nepodporuje WS-* protokoly. Ale můžete zpřístupnit stejné smlouvy ve dvou různých koncový bod: jeden pomocí protokolu SOAP a jiné ne pomocí protokolu SOAP. V tématu [postupy: vystavení kontraktu protokolu SOAP a webovými klienty](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) příklad.  
   
 ## <a name="security"></a>Zabezpečení  
- Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Model programování webových HTTP nepodporuje WS-* protokoly jediným způsobem, jak zabezpečit webová služba založená na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Model programování webových HTTP je vystavit služby pomocí protokolu SSL. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] najdete v části [implementaci protokolu SSL ve službě IIS](http://go.microsoft.com/fwlink/?LinkId=131613)  
+ Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Model programování webových HTTP nepodporuje WS-* protokoly jediným způsobem, jak zabezpečit webová služba založená na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Model programování webových HTTP je vystavit služby pomocí protokolu SSL. Další informace o nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] najdete v části [implementaci protokolu SSL ve službě IIS](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WebHttpBinding>  

@@ -1,28 +1,28 @@
 ---
-title: "Vazby poskytované systémem"
-ms.custom: 
+title: Vazby poskytované systémem
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
-caps.latest.revision: 
+caps.latest.revision: 60
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c5f8df31e31c9617fe7bcd92789671d220382a82
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ccdab56a90f4114836dd9f0a56cc495657ee9c8
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="system-provided-bindings"></a>Vazby poskytované systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit k koncový bod. Vazba obsahuje následující prvky:  
@@ -33,7 +33,7 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
   
 -   Kódování určuje přenosová kódování použité pro zprávy, které se odesílají do koncového bodu, například, text/XML, binární nebo zpráva přenosu optimalizace mechanismus (MTOM).  
   
- Toto téma představuje všechny poskytované systémem [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vazby. Pokud žádná z nich splňuje přesný kritéria pro vaši aplikaci, můžete vytvořit vlastní vazby. [!INCLUDE[crabout](../../../includes/crabout-md.md)]vytváření vlastních vazeb, najdete v části [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Toto téma představuje všechny poskytované systémem [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vazby. Pokud žádná z nich splňuje přesný kritéria pro vaši aplikaci, můžete vytvořit vlastní vazby. Další informace o vytváření vlastních vazeb najdete v tématu [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
   
  Vazbu zabezpečené a vzájemná spolupráce, který podporuje protokol WS-Federation umožňuje organizacím, které jsou ve federaci efektivní ověřování a autorizaci uživatelů.  
   
@@ -48,10 +48,10 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
   
 |Vazba|Konfigurační Element|Popis|  
 |-------------|---------------------------|-----------------|  
-|<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|Vazba, který je vhodný pro komunikaci s profilu WS-Basic vyhovující webové služby, například webových služeb ASP.NET (ASMX) – na základě služby. Tato vazba používá protokol HTTP jako přenosu a text/XML jako výchozí kódování zprávy.|  
-|<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Zabezpečení a vzájemná spolupráce vazby, který je vhodný pro kontraktů služby duplexní režim.|  
-|<xref:System.ServiceModel.WSDualHttpBinding>|[\<– wsDualHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)|Zabezpečení a vzájemná spolupráce vazby, který je vhodný pro služby duplexní kontrakty nebo komunikaci prostřednictvím protokolu SOAP zprostředkovatelů.|  
-|<xref:System.ServiceModel.WSFederationHttpBinding>|[\<– wsFederationHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|Zabezpečení a vzájemná spolupráce vazbu, podporuje protokol WS-Federation, který umožňuje organizacím, které jsou ve federaci efektivní ověřování a autorizaci uživatelů.|  
+|<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|Vazba, který je vhodný pro komunikaci s profilu WS-Basic vyhovující webové služby, například webových služeb ASP.NET (ASMX) – na základě služby. Tato vazba používá protokol HTTP jako přenosu a text/XML jako výchozí kódování zprávy.|  
+|<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Zabezpečení a vzájemná spolupráce vazby, který je vhodný pro kontraktů služby duplexní režim.|  
+|<xref:System.ServiceModel.WSDualHttpBinding>|[\<wsDualHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)|Zabezpečení a vzájemná spolupráce vazby, který je vhodný pro služby duplexní kontrakty nebo komunikaci prostřednictvím protokolu SOAP zprostředkovatelů.|  
+|<xref:System.ServiceModel.WSFederationHttpBinding>|[\<wsFederationHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|Zabezpečení a vzájemná spolupráce vazbu, podporuje protokol WS-Federation, který umožňuje organizacím, které jsou ve federaci efektivní ověřování a autorizaci uživatelů.|  
 |<xref:System.ServiceModel.NetHttpBinding>|\<netHttpBinding >|Vazba určená pro použití protokolu HTTP nebo protokolu WebSocket služeb, která používá binárního kódování ve výchozím nastavení.|  
 |<xref:System.ServiceModel.NetHttpsBinding>|\<netHttpsBinding >|Zabezpečené vazby určené pro použití protokolu HTTP nebo protokolu WebSocket služeb, která používá binárního kódování ve výchozím nastavení.|  
 |<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|Zabezpečení a optimalizované vazbu vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace.|  
@@ -61,7 +61,7 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
 |<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding >](../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|Vazba, který je vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace a stávající aplikace služby Řízení front zpráv.|  
 |<xref:System.ServiceModel.BasicHttpContextBinding>|[\<Vazba basicHttpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpcontextbinding.md)|Vazbu, která je vhodná pro komunikaci s vyhovující profilu WS – základní webové služby umožňující soubory cookie protokolu HTTP, který se použije pro kontext výměny.|  
 |<xref:System.ServiceModel.NetTcpContextBinding>|[\<netTcpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpcontextbinding.md)|Zabezpečení a optimalizované vazbu vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, které umožňuje hlavičky SOAP pro kontext výměny.|  
-|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Vazba použitá ke konfiguraci koncových bodů pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] webové služby, které se zveřejňují přes požadavky HTTP místo protokolu SOAP zprávy.|  
+|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Vazba použitá ke konfiguraci koncových bodů pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] webové služby, které se zveřejňují přes požadavky HTTP místo protokolu SOAP zprávy.|  
 |<xref:System.ServiceModel.WSHttpContextBinding>|[\<wsHttpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpcontextbinding.md)|Zabezpečený a |<xref:System.ServiceModel.UdpBinding>|\<udpBinding >|Vazba pro odesílání shluku jednoduché zpráv velký počet klientů najednou.|  
   
  V následující tabulce jsou uvedené funkce jednotlivých vazby poskytované systémem. Vazby se nacházejí ve sloupcích tabulky; funkce jsou uvedené na řádky a popsané v druhé tabulce. Následující tabulka poskytuje klíč pro zkratky vazby použít. Vyberte vazbu, určete, který sloupec splňuje všechny funkce řádků, které potřebujete.  
@@ -85,7 +85,7 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
 |<xref:System.ServiceModel.UdpBinding>|Rozhraní .NET **Poznámka:** interoperabilita dosáhnout implementací standardní specifikace protokolu SOAP. přes UDP, která implementuje tuto vazbu.|(Žádný)|(Žádný)|(Žádný)|není k dispozici|(Text)|Ne|  
   
 > [!IMPORTANT]
->  <xref:System.ServiceModel.NetHttpBinding>používá binární kódování ve výchozím nastavení je vazbu pro využívání služeb HTTP nebo protokolu WebSocket. <xref:System.ServiceModel.NetHttpBinding>rozpozná, jestli se používá s kontraktu požadavku a odpovědi nebo duplexního kontraktu a změnit své chování tak, aby odpovídaly – HTTP se bude používat pro požadavek odpověď a WebSockets pro duplexní režim. Toto chování lze přepsat pomocí <!--zz <xref:System.ServiceModel.NetHttpBinding.WebSocketTransportUsage%2A>--> `System.ServiceModel.NetHttpBinding.WebSocketTransportUsage` vazby nastavení: dovolené - Toto je výchozí hodnota a chová, jak je popsáno výše. NotAllowed – to zabraňuje objekty WebSockets. Pokus o použití duplexního kontraktu s tímto nastavením bude mít za následek výjimku. Vyžaduje - vynutí objekty WebSockets použije i pro kontraktů požadavek odpověď. NetHttpBinding podporuje spolehlivé relace v HTTP režimu i režimu protokolu WebSocket. V protokolu WebSocket relace režimu jsou poskytovány přenosu.  
+>  <xref:System.ServiceModel.NetHttpBinding> používá binární kódování ve výchozím nastavení je vazbu pro využívání služeb HTTP nebo protokolu WebSocket. <xref:System.ServiceModel.NetHttpBinding> rozpozná, jestli se používá s kontraktu požadavku a odpovědi nebo duplexního kontraktu a změnit své chování tak, aby odpovídaly – HTTP se bude používat pro požadavek odpověď a WebSockets pro duplexní režim. Toto chování lze přepsat pomocí <!--zz <xref:System.ServiceModel.NetHttpBinding.WebSocketTransportUsage%2A>--> `System.ServiceModel.NetHttpBinding.WebSocketTransportUsage` vazby nastavení: dovolené - Toto je výchozí hodnota a chová, jak je popsáno výše. NotAllowed – to zabraňuje objekty WebSockets. Pokus o použití duplexního kontraktu s tímto nastavením bude mít za následek výjimku. Vyžaduje - vynutí objekty WebSockets použije i pro kontraktů požadavek odpověď. NetHttpBinding podporuje spolehlivé relace v HTTP režimu i režimu protokolu WebSocket. V protokolu WebSocket relace režimu jsou poskytovány přenosu.  
   
  Následující tabulka vysvětluje funkcí uvedených v předchozí tabulce.  
   

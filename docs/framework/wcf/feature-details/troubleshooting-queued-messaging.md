@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d7de2912029efb61135d5329f186ed2c1ca95840
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1342f2383e7cf2aa15ea60be03c93044e4332612
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 Tato část obsahuje běžné otázky a řešení potíží pomoci při používání front v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -125,7 +125,7 @@ Tato část obsahuje běžné otázky a řešení potíží pomoci při použív
   
  **Otázka:** kde na MSMQ najdete odpovědi na časté otázky?  
   
- **Odpověď:** [!INCLUDE[crabout](../../../../includes/crabout-md.md)] MSMQ, najdete v části [služby Řízení front zpráv Microsoft](http://go.microsoft.com/fwlink/?LinkId=87810).  
+ **Odpověď:** Další informace o MSMQ najdete v tématu [služby Řízení front zpráv Microsoft](http://go.microsoft.com/fwlink/?LinkId=87810).  
   
  **Otázka:** Proč mé služby throw `ProtocolException` při čtení z fronty, která obsahuje oba relace zpráv zařazených do fronty a datagram zpráv zařazených do fronty?  
   

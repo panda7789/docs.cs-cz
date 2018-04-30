@@ -1,24 +1,26 @@
 ---
-title: "Postupy: Programové přidání možností rozpoznání do klienta a služby WCF"
-ms.custom: 
+title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a0a59788544a32b78e75ac25e787dcbae478451e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3c0da3598b115df4f135ac3fab516447df85e258
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: Programové přidání možností rozpoznání do klienta a služby WCF
 Toto téma vysvětluje, jak vytvořit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby zjistitelný. Je založena na [hostování na vlastním](http://go.microsoft.com/fwlink/?LinkId=145523) ukázka.  
@@ -69,7 +71,7 @@ Toto téma vysvětluje, jak vytvořit [!INCLUDE[indigo1](../../../../includes/in
   
 1.  Přidat novou konzolovou aplikaci k řešení názvem `DiscoveryClientApp`.  
   
-2.  Přidat odkaz na `System.ServiceModel.dll` a`System.ServiceModel.Discovery.dll`  
+2.  Přidat odkaz na `System.ServiceModel.dll` a `System.ServiceModel.Discovery.dll`  
   
 3.  Zkopírujte soubory GeneratedClient.cs a App.config z existujícího projektu klienta do nového projektu DiscoveryClientApp. K tomu, klikněte pravým tlačítkem na soubory v **Průzkumníku řešení**, vyberte **kopie**a pak vyberte **DiscoveryClientApp** projektu klikněte pravým tlačítkem a vyberte **Vložení**.  
   
@@ -231,7 +233,7 @@ Toto téma vysvětluje, jak vytvořit [!INCLUDE[indigo1](../../../../includes/in
     ```  
   
 ## <a name="example"></a>Příklad  
- Následuje seznam kód pro tuto ukázku. Vzhledem k tomu, že je na základě tohoto kódu [hostování na vlastním](http://go.microsoft.com/fwlink/?LinkId=145523) ukázku, jsou uvedeny pouze soubory, které se změnily. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Ukázka hostování na vlastním serveru, najdete v části [pokyny k instalaci](http://go.microsoft.com/fwlink/?LinkId=145522).  
+ Následuje seznam kód pro tuto ukázku. Vzhledem k tomu, že je na základě tohoto kódu [hostování na vlastním](http://go.microsoft.com/fwlink/?LinkId=145523) ukázku, jsou uvedeny pouze soubory, které se změnily. Další informace o ukázka hostování na vlastním serveru najdete v tématu [pokyny k instalaci](http://go.microsoft.com/fwlink/?LinkId=145522).  
   
 ```csharp  
 // Service.cs  

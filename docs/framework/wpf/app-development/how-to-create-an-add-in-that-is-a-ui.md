@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Vytvoření doplňku tvořící uživatelské rozhraní"
-ms.custom: 
+title: 'Postupy: Vytvoření doplňku tvořící uživatelské rozhraní'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - creating an add-in that is a UI [WPF]
@@ -16,19 +17,20 @@ helpviewer_keywords:
 - implementing UI add-ins [WPF]
 - pipeline segments [WPF], creating add-ins
 ms.assetid: 86375525-282b-4039-8352-8680051a10ea
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fea1c718eedb12d49eced9964e4f9045badf07ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: cadb992a68f4ee9f06ad37adf71856cdc4f46503
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-an-add-in-that-is-a-ui"></a>Postupy: Vytvoření doplňku tvořící uživatelské rozhraní
-Tento příklad ukazuje, jak vytvořit doplněk, který je [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] který je hostován [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace.  
+Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation Foundation (WPF), který je hostován [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace.  
   
  Doplněk je [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] tedy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] uživatelský ovládací prvek. Obsah uživatelského ovládacího prvku je jedné tlačítko, která po kliknutí na zobrazí okno se zprávou. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Samostatné aplikace je hostitelem doplněk [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] jako obsah hlavního okna aplikace.  
   
@@ -64,7 +66,7 @@ Tento příklad ukazuje, jak vytvořit doplněk, který je [!INCLUDE[TLA#tla_wpf
   
  [!code-csharp[SimpleAddInIsAUISample#AddInSideAdapterCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.cs#addinsideadaptercode)]  
   
- V modelu doplňku kde doplněk, vrátí [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] (najdete v části [vytvořit doplněk, vrátí uživatelského rozhraní](../../../../docs/framework/wpf/app-development/how-to-create-an-add-in-that-returns-a-ui.md)), je adaptér převést <xref:System.Windows.FrameworkElement> k <xref:System.AddIn.Contract.INativeHandleContract> voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>. <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>je také nutné volat v tomto modelu, i když potřebujete implementovat metodu ze kterého chcete napsat kód pro volání. To uděláte přepsáním <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> a implementace kód, který volá <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> Pokud kód, který volá <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> očekává <xref:System.AddIn.Contract.INativeHandleContract>. V takovém případě bude volající adaptér straně hostitele, který je popsaná v následující dílčí části.  
+ V modelu doplňku kde doplněk, vrátí [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] (najdete v části [vytvořit doplněk, vrátí uživatelského rozhraní](../../../../docs/framework/wpf/app-development/how-to-create-an-add-in-that-returns-a-ui.md)), je adaptér převést <xref:System.Windows.FrameworkElement> k <xref:System.AddIn.Contract.INativeHandleContract> voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>. <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> je také nutné volat v tomto modelu, i když potřebujete implementovat metodu ze kterého chcete napsat kód pro volání. To uděláte přepsáním <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> a implementace kód, který volá <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> Pokud kód, který volá <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> očekává <xref:System.AddIn.Contract.INativeHandleContract>. V takovém případě bude volající adaptér straně hostitele, který je popsaná v následující dílčí části.  
   
 > [!NOTE]
 >  Je také nutné přepsat <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> v tomto modelu k povolení přecházení mezi hostitelskou aplikaci pomocí tabulátoru [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a doplněk [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Další informace najdete v tématu "WPF Add-In omezení" v [WPF doplňky přehled](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  

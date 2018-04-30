@@ -1,27 +1,29 @@
 ---
-title: "Zabezpečení zpráv ve WCF"
-ms.custom: 
+title: Zabezpečení zpráv ve WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92422e40742909dbf338ec2660e5494ffcdd31cc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3ef96dd25903076fedc59ad1507674dd40dcfcc5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="message-security-in-wcf"></a>Zabezpečení zpráv ve WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]obsahuje dva hlavní režimy pro zajištění zabezpečení (`Transport` a `Message`) a třetí režim (`TransportWithMessageCredential`), kombinací obou. Toto téma popisuje zabezpečení zpráv a důvodů, proč ji používat.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obsahuje dva hlavní režimy pro zajištění zabezpečení (`Transport` a `Message`) a třetí režim (`TransportWithMessageCredential`), kombinací obou. Toto téma popisuje zabezpečení zpráv a důvodů, proč ji používat.  
   
 ## <a name="what-is-message-security"></a>Co je zabezpečení zpráv?  
  Zabezpečení zpráv pomocí specifikace WS-zabezpečení zabezpečené zprávy. WS-Securityspecification popisuje vylepšení protokolu SOAP zprávy k zajištění důvěrnosti, integrity a ověřování na úrovni protokolu SOAP zprávy (namísto transportní).  
@@ -37,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Podpora pro více přenosy. Můžete odeslat zabezpečené zprávy přes mnoho různých přenosy, jako jsou pojmenované kanály a TCP, aniž byste museli spoléhat na protokol pro zabezpečení. Zabezpečení transportní vrstvy všechny informace o zabezpečení je omezená na jedno konkrétní přenosové spojení a není k dispozici z samotný obsah zprávy. Zabezpečení zpráv umožňuje zprávu zabezpečení bez ohledu na to, jaký přenos použijete k přenosu zprávy a kontext zabezpečení je přímo vložena do zprávy.  
   
--   Podpora pro celou sadu přihlašovacích údajů a deklarace identity. Specifikaci WS-zabezpečení, která poskytuje rozšiřitelný rámec přenášet libovolného typu deklarace identity uvnitř zprávu SOAP vychází zabezpečení zpráv. Na rozdíl od zabezpečení přenosu není omezený sadu mechanismy ověřování nebo deklarace identity, které můžete použít možnosti přenosu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zabezpečení zpráv obsahuje více typů ověřování a deklarace identity přenos a lze rozšířit na podporovat další typy podle potřeby. Z těchto důvodů například, scénáři federované přihlašovacích údajů není možné bez zabezpečení zpráv. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]podporuje scénáře federační WCF najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+-   Podpora pro celou sadu přihlašovacích údajů a deklarace identity. Specifikaci WS-zabezpečení, která poskytuje rozšiřitelný rámec přenášet libovolného typu deklarace identity uvnitř zprávu SOAP vychází zabezpečení zpráv. Na rozdíl od zabezpečení přenosu není omezený sadu mechanismy ověřování nebo deklarace identity, které můžete použít možnosti přenosu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení zpráv obsahuje více typů ověřování a deklarace identity přenos a lze rozšířit na podporovat další typy podle potřeby. Z těchto důvodů například, scénáři federované přihlašovacích údajů není možné bez zabezpečení zpráv. Další informace o federační scénáře WCF podporuje, naleznete v části [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="how-message-and-transport-security-compare"></a>Jak porovnat zprávu a zabezpečení přenosu  
   

@@ -1,12 +1,13 @@
 ---
-title: "Přehled obrázků"
-ms.custom: 
+title: Přehled obrázků
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -28,24 +29,25 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c7d0a880dd30fe737a1bd4d1368dde16ed0df1e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8715f04f6cdec84e74d53213c0a5a5ff360c7d28
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
-Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]umožňuje uživatelům zobrazit, transformace a formátování bitové kopie.  
+Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] umožňuje uživatelům zobrazit, transformace a formátování bitové kopie.  
   
   
 <a name="_wpfImaging"></a>   
 ## <a name="wpf-imaging-component"></a>Součást zpracování obrázků WPF  
- [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]poskytuje významná vylepšení imaging možnosti v rámci [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]. Byly dříve závisí na Imaging možnosti, například zobrazení rastrový obrázek nebo pomocí bitovou kopii na běžného ovládacího prvku [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] nebo [!INCLUDE[TLA#tla_gdiplus](../../../../includes/tlasharptla-gdiplus-md.md)] knihovny. Tyto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] poskytnout základní funkce pro zpracování obrázků, ale chybí funkce, jako je podpora pro rozšiřitelnost kodeků a podpora přesnější zobrazení obrázků. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]slouží k překonání nedostatků z [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] a [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] a zadejte novou sadu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] zobrazení a použití bitové kopie v rámci vaší aplikace.  
+ [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] poskytuje významná vylepšení imaging možnosti v rámci [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]. Byly dříve závisí na Imaging možnosti, například zobrazení rastrový obrázek nebo pomocí bitovou kopii na běžného ovládacího prvku [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] nebo [!INCLUDE[TLA#tla_gdiplus](../../../../includes/tlasharptla-gdiplus-md.md)] knihovny. Tyto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] poskytnout základní funkce pro zpracování obrázků, ale chybí funkce, jako je podpora pro rozšiřitelnost kodeků a podpora přesnější zobrazení obrázků. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] slouží k překonání nedostatků z [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] a [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] a zadejte novou sadu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] zobrazení a použití bitové kopie v rámci vaší aplikace.  
   
  Existují dva způsoby pro přístup [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], spravovaná a nespravovaná součásti. Nespravované součást poskytuje následující funkce.  
   
@@ -61,7 +63,7 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
   
 -   Podpora pro metadata v souboru, vlastní.  
   
--   Spravované součásti využívá nespravované infrastruktury k poskytování obrázků bezproblémovou integraci s jinými [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkce, jako [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a obrázky. Spravované součásti také výhody z [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] vytváření bitové kopie model rozšiřitelnosti kodeků, které umožňuje automatické rozpoznávání novou bitovou kopii formáty v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.  
+-   Spravované součásti využívá nespravované infrastruktury k poskytování obrázků bezproblémovou integraci s jinými [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkce, jako [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a obrázky. Spravované součásti také výhody z Windows Presentation Foundation (WPF) pro zpracování obrázků kodeků rozšiřitelnost modelu umožňující automatické rozpoznávání nové formáty obrázků v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.  
   
  Většina spravovaný [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou umístěny ve <xref:System.Windows.Media.Imaging?displayProperty=nameWithType> obor názvů, i když některé důležité typy, jako například <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.ImageDrawing> jsou umístěny ve <xref:System.Windows.Media?displayProperty=nameWithType> obor názvů a <xref:System.Windows.Controls.Image> se nachází v <xref:System.Windows.Controls?displayProperty=nameWithType> oboru názvů.  
   
@@ -69,9 +71,9 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
   
 <a name="_imageformats"></a>   
 ## <a name="wpf-image-formats"></a>Formáty obrázků WPF  
- Kodek slouží k dekódování nebo kódování formátu konkrétní média. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]zahrnuje kodeků pro [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)], [!INCLUDE[TLA2#tla_jpeg](../../../../includes/tla2sharptla-jpeg-md.md)], [!INCLUDE[TLA2#tla_png](../../../../includes/tla2sharptla-png-md.md)], [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)], [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)], [!INCLUDE[TLA2#tla_gif](../../../../includes/tla2sharptla-gif-md.md)]a ikona bitové kopie formátů. Každý z těchto kodeky umožňují aplikacím dekódovat a s výjimkou ikonu, kódovat jejich formáty příslušného obrázku.  
+ Kodek slouží k dekódování nebo kódování formátu konkrétní média. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] zahrnuje kodeků pro [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)], [!INCLUDE[TLA2#tla_jpeg](../../../../includes/tla2sharptla-jpeg-md.md)], [!INCLUDE[TLA2#tla_png](../../../../includes/tla2sharptla-png-md.md)], [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)], [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)], [!INCLUDE[TLA2#tla_gif](../../../../includes/tla2sharptla-gif-md.md)]a ikona bitové kopie formátů. Každý z těchto kodeky umožňují aplikacím dekódovat a s výjimkou ikonu, kódovat jejich formáty příslušného obrázku.  
   
- <xref:System.Windows.Media.Imaging.BitmapSource>je důležité třída použít v dekódování a kódování bitových kopií. Je základním stavebním blokem [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] kanálu a představuje jediné konstantní sady pixelů na velikost a řešení. A <xref:System.Windows.Media.Imaging.BitmapSource> může být jednotlivý snímek více obrázku rámečku, nebo může být výsledkem transformace provést na <xref:System.Windows.Media.Imaging.BitmapSource>. Jedná o nadřazený mnoha primární třídy používané v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvořením bitové kopie, jako <xref:System.Windows.Media.Imaging.BitmapFrame>.  
+ <xref:System.Windows.Media.Imaging.BitmapSource> je důležité třída použít v dekódování a kódování bitových kopií. Je základním stavebním blokem [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] kanálu a představuje jediné konstantní sady pixelů na velikost a řešení. A <xref:System.Windows.Media.Imaging.BitmapSource> může být jednotlivý snímek více obrázku rámečku, nebo může být výsledkem transformace provést na <xref:System.Windows.Media.Imaging.BitmapSource>. Jedná o nadřazený mnoha primární třídy používané v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvořením bitové kopie, jako <xref:System.Windows.Media.Imaging.BitmapFrame>.  
   
  A <xref:System.Windows.Media.Imaging.BitmapFrame> se používá k ukládání skutečná data bitmapy z formátu bitové kopie. Mnoho formátů obrázku podporují pouze jeden <xref:System.Windows.Media.Imaging.BitmapFrame>, i když formátů, jako [!INCLUDE[TLA2#tla_gif](../../../../includes/tla2sharptla-gif-md.md)] a [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] podporují několik snímků za bitové kopie. Rámce používají dekodérů jako vstupní data a jsou předávány kodéry pro vytvoření bitové kopie souborů.  
   
@@ -90,7 +92,7 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
  [!code-vb[BmpBitmapDecoderEncoder#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/VB/BitmapFrame.vb#5)]  
   
 ### <a name="image-format-encoding"></a>Bitovou kopii formátu kódování  
- Kódování bitové kopie je překlad bitovou kopii dat do formátu konkrétní image. Data kódovaného obrázku pak slouží k vytvoření nové soubory bitové kopie. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]poskytuje kodéry pro každý formát obrázku popsané výše.  
+ Kódování bitové kopie je překlad bitovou kopii dat do formátu konkrétní image. Data kódovaného obrázku pak slouží k vytvoření nové soubory bitové kopie. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] poskytuje kodéry pro každý formát obrázku popsané výše.  
   
  Následující příklad ukazuje použití kodér uložte nově vytvořený rastrového obrázku.  
   
@@ -100,25 +102,25 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
   
 <a name="_displayingimages"></a>   
 ## <a name="displaying-images-in-wpf"></a>Zobrazení obrázků v grafickém subsystému WPF  
- Chcete-li zobrazit obrázek v několika způsoby [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace. Bitové kopie lze zobrazit pomocí <xref:System.Windows.Controls.Image> řízení, vykresluje na visual pomocí <xref:System.Windows.Media.ImageBrush>, nebo vykreslovány pomocí <xref:System.Windows.Media.ImageDrawing>.  
+ Chcete-li zobrazit obrázek v aplikaci Windows Presentation Foundation (WPF) několika způsoby. Bitové kopie lze zobrazit pomocí <xref:System.Windows.Controls.Image> řízení, vykresluje na visual pomocí <xref:System.Windows.Media.ImageBrush>, nebo vykreslovány pomocí <xref:System.Windows.Media.ImageDrawing>.  
   
 ### <a name="using-the-image-control"></a>Použití ovládacího prvku obrázek  
- <xref:System.Windows.Controls.Image>je framework element a primární způsob zobrazení obrázků v aplikacích. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], <xref:System.Windows.Controls.Image> mohou být používány dva způsoby, jak; atribut syntaxe nebo vlastnost syntaxe. Následující příklad ukazuje, jak Vykreslit obrázek 200 pixelů pomocí syntaxe atribut a syntaxe značek vlastnost. Další informace o syntaxi atributů a vlastnost syntaxi najdete v části [přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+ <xref:System.Windows.Controls.Image> je framework element a primární způsob zobrazení obrázků v aplikacích. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], <xref:System.Windows.Controls.Image> mohou být používány dva způsoby, jak; atribut syntaxe nebo vlastnost syntaxe. Následující příklad ukazuje, jak Vykreslit obrázek 200 pixelů pomocí syntaxe atribut a syntaxe značek vlastnost. Další informace o syntaxi atributů a vlastnost syntaxi najdete v části [přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
  [!code-xaml[ImageElementExample_snip#ImageSimpleExampleInlineMarkup](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml#imagesimpleexampleinlinemarkup)]  
   
- Mnoho příkladů použití <xref:System.Windows.Media.Imaging.BitmapImage> objekt, který má odkazovat na soubor obrázku. <xref:System.Windows.Media.Imaging.BitmapImage>je speciální <xref:System.Windows.Media.Imaging.BitmapSource> která je optimalizovaná pro [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] načítání a je snadný způsob, jak zobrazit obrázky, jako <xref:System.Windows.Controls.Image.Source%2A> z <xref:System.Windows.Controls.Image> ovládacího prvku.  
+ Mnoho příkladů použití <xref:System.Windows.Media.Imaging.BitmapImage> objekt, který má odkazovat na soubor obrázku. <xref:System.Windows.Media.Imaging.BitmapImage> je speciální <xref:System.Windows.Media.Imaging.BitmapSource> která je optimalizovaná pro [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] načítání a je snadný způsob, jak zobrazit obrázky, jako <xref:System.Windows.Controls.Image.Source%2A> z <xref:System.Windows.Controls.Image> ovládacího prvku.  
   
  Následující příklad ukazuje, jak Vykreslit obrázek 200 pixelů pomocí kódu.  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Imaging.BitmapImage>implementuje <xref:System.ComponentModel.ISupportInitialize> rozhraní k optimalizaci inicializace na víc vlastností. Změny vlastností může dojít pouze během inicializace objektu. Volání <xref:System.Windows.Media.Imaging.BitmapImage.BeginInit%2A> signál, že inicializace zahájení a <xref:System.Windows.Media.Imaging.BitmapImage.EndInit%2A> signál, že inicializace byla dokončena. Jakmile inicializován, změny vlastností se ignorují.  
+>  <xref:System.Windows.Media.Imaging.BitmapImage> implementuje <xref:System.ComponentModel.ISupportInitialize> rozhraní k optimalizaci inicializace na víc vlastností. Změny vlastností může dojít pouze během inicializace objektu. Volání <xref:System.Windows.Media.Imaging.BitmapImage.BeginInit%2A> signál, že inicializace zahájení a <xref:System.Windows.Media.Imaging.BitmapImage.EndInit%2A> signál, že inicializace byla dokončena. Jakmile inicializován, změny vlastností se ignorují.  
   
  [!code-csharp[ImageElementExample_snip#ImageSimpleExampleInlineCode1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml.cs#imagesimpleexampleinlinecode1)]
  [!code-vb[ImageElementExample_snip#ImageSimpleExampleInlineCode1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample_snip/VB/ImageSimpleExample.xaml.vb#imagesimpleexampleinlinecode1)]  
   
 #### <a name="rotating-converting-and-cropping-images"></a>Otáčení, převod a oříznutí obrázků  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]umožňuje uživatelům transformace bitové kopie pomocí vlastnosti <xref:System.Windows.Media.Imaging.BitmapImage> nebo pomocí dalších <xref:System.Windows.Media.Imaging.BitmapSource> objekty, jako <xref:System.Windows.Media.Imaging.CroppedBitmap> nebo <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>. Tyto bitové kopie transformace můžete škálovat nebo otočit bitovou kopii, změnit Pixelový formát obrázku nebo oříznutí obrázku.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje uživatelům transformace bitové kopie pomocí vlastnosti <xref:System.Windows.Media.Imaging.BitmapImage> nebo pomocí dalších <xref:System.Windows.Media.Imaging.BitmapSource> objekty, jako <xref:System.Windows.Media.Imaging.CroppedBitmap> nebo <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>. Tyto bitové kopie transformace můžete škálovat nebo otočit bitovou kopii, změnit Pixelový formát obrázku nebo oříznutí obrázku.  
   
  Otočení bitové kopie se provádí pomocí <xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapImage>. Otočení lze provést pouze v přírůstcích 90 stupňů. V následujícím příkladu bitová kopie je otočený o 90 stupňů.  
   
@@ -177,7 +179,7 @@ Různá nastavení stretch
 ## <a name="image-metadata"></a>Image Metadata  
  Některé soubory, image obsahovat metadata, která popisuje obsah nebo vlastnosti souboru. Většina digitální fotoaparáty můžete například vytvořit Image, které obsahují metadata o značku a model fotoaparátu používá k zachycení bitové kopie. Každý formát obrázku zpracovává metadata jiným způsobem, ale [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] poskytuje uniform způsob ukládání a načítání metadat pro každý podporovaný bitovou kopii formátu.  
   
- Přístup k metadatům je zajišťováno prostřednictvím <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapSource> objektu. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A>Vrátí <xref:System.Windows.Media.Imaging.BitmapMetadata> objekt, který zahrnuje všechny metadat obsažených bitovou kopii. Tato data mohou být v jedno schéma metadata nebo jejich kombinaci různých schémat. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]podporuje následující schémata metadata image: [!INCLUDE[TLA#tla_exif](../../../../includes/tlasharptla-exif-md.md)], tEXt (PNG textových dat), [!INCLUDE[TLA#tla_ifd](../../../../includes/tlasharptla-ifd-md.md)], [!INCLUDE[TLA#tla_iptc](../../../../includes/tlasharptla-iptc-md.md)], a [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)].  
+ Přístup k metadatům je zajišťováno prostřednictvím <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapSource> objektu. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> Vrátí <xref:System.Windows.Media.Imaging.BitmapMetadata> objekt, který zahrnuje všechny metadat obsažených bitovou kopii. Tato data mohou být v jedno schéma metadata nebo jejich kombinaci různých schémat. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] podporuje následující schémata metadata image: [!INCLUDE[TLA#tla_exif](../../../../includes/tlasharptla-exif-md.md)], tEXt (PNG textových dat), [!INCLUDE[TLA#tla_ifd](../../../../includes/tlasharptla-ifd-md.md)], [!INCLUDE[TLA#tla_iptc](../../../../includes/tlasharptla-iptc-md.md)], a [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)].  
   
  Aby bylo možné zjednodušit proces načítání metadat, <xref:System.Windows.Media.Imaging.BitmapMetadata> poskytuje několik s názvem vlastnosti, které jsou snadno přístupné, jako <xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>, <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A>, a <xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>. Mnoho z těchto vlastností s názvem také slouží k zápisu metadat. Další podpora pro čtení metadat poskytuje metadata dotazu čtečky. <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> Metoda se používá k načtení metadat dotazu čtečka čipových karet tím, že poskytuje řetězec dotazu, jako *"/ app1/exif /"*. V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> slouží k získání text uložený ve *"/ Text/popis"* umístění.  
   
@@ -185,7 +187,7 @@ Různá nastavení stretch
  [!code-csharp[BitmapMetadata#GetQuery](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#getquery)]
  [!code-vb[BitmapMetadata#GetQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#getquery)]  
   
- Zápis metadata, se používá zapisovač dotazu metadat. <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A>Získá zapisovač dotazu a nastaví požadovanou hodnotu. V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A> se používá k zápisu text uložený ve *"/ Text/popis"* umístění.  
+ Zápis metadata, se používá zapisovač dotazu metadat. <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A> Získá zapisovač dotazu a nastaví požadovanou hodnotu. V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A> se používá k zápisu text uložený ve *"/ Text/popis"* umístění.  
   
  [!code-cpp[BitmapMetadata#SetQuery](../../../../samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
  [!code-csharp[BitmapMetadata#SetQuery](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]

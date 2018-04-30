@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8db31e8559d22e35f0d754a44ce425e144487296
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bbc9fdfff5b5c6ab6e56af12269061f06bb79404
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="messaging-activities"></a>Aktivity zasílání zpráv
 Zasílání zpráv aktivity umožňují pracovní postupy pro odesílání a přijímání zpráv WCF. Přidáním aktivity zasílání zpráv do pracovního postupu můžete model žádné libovolně komplexní zpráva exchange vzory (MEP).  
@@ -114,7 +114,7 @@ Request = rcv
  To make setting up a request/response MEP on the client and service easier, [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] provides two messaging activity templates. <xref:System.ServiceModel.Activities.Design.ReceiveAndSendReply> is used on the service and <xref:System.ServiceModel.Activities.Design.SendAndReceiveReply> is used on the client. In both cases the templates add the appropriate messaging activities to your workflow. On the service, the <xref:System.ServiceModel.Activities.Design.ReceiveAndSendReply> adds a <xref:System.ServiceModel.Activities.Receive> activity followed by a <xref:System.ServiceModel.Activities.SendReply> activity. The <xref:System.ServiceModel.Activities.SendReply.Request> property is automatically set to the <xref:System.ServiceModel.Activities.Receive> activity. On the client, the <xref:System.ServiceModel.Activities.Design.SendAndReceiveReply> adds a <xref:System.ServiceModel.Activities.Send> activity followed by a <xref:System.ServiceModel.Activities.ReceiveReply>. The <xref:System.ServiceModel.Activities.ReceiveReply.Request%2A> property is automatically set to the <xref:System.ServiceModel.Activities.Send> activity. To use these templates, just drag and drop the appropriate template onto your workflow.  
 -->
 ## <a name="messaging-activities-and-transactions"></a>Aktivity zasílání zpráv a transakce  
- Při volání služby pracovního postupu můžete toku transakci operaci služby. Chcete toto místo <xref:System.ServiceModel.Activities.Receive> aktivita v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Obsahuje aktivitu `Receive` aktivity a text. Transakce předávány vedlejším v průběhu provádění textu služby zůstane <xref:System.ServiceModel.Activities.TransactedReceiveScope>. Transakce byla dokončena, když text dokončí provádění. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pracovní postupy a transakcí viz [pracovního postupu transakce](../../../../docs/framework/windows-workflow-foundation/workflow-transactions.md).  
+ Při volání služby pracovního postupu můžete toku transakci operaci služby. Chcete toto místo <xref:System.ServiceModel.Activities.Receive> aktivita v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Obsahuje aktivitu `Receive` aktivity a text. Transakce předávány vedlejším v průběhu provádění textu služby zůstane <xref:System.ServiceModel.Activities.TransactedReceiveScope>. Transakce byla dokončena, když text dokončí provádění. Další informace o pracovních postupů a transakce v tématu [pracovního postupu transakce](../../../../docs/framework/windows-workflow-foundation/workflow-transactions.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Jak odesílat a přijímat chyb v služeb pracovních postupů](http://go.microsoft.com/fwlink/?LinkId=189151)  

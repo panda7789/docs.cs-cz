@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5d687c00edd9d495f3b7715474d7eb2e107c23f0
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3e5872be7e8b686a744832bf63a98e97a99cf9b6
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalost SQL pro pracovní postupy a služeb pracovních postupů
 Toto téma popisuje postup konfigurace úložiště Instance pracovního postupu SQL funkci tak, aby zapnout stálost pro vaše pracovní postupy a pracovní postup služby prostřednictvím kódu programu a pomocí konfiguračního souboru.  
@@ -41,7 +41,7 @@ Toto téma popisuje postup konfigurace úložiště Instance pracovního postupu
 >   
 >  System.Data.SqlClient.SqlException: Nelze nalézt uloženou proceduru 'System.Activities.DurableInstancing.CreateLockOwner.  
   
- Následující části popisují postup povolení trvalosti pro pracovní postupy a pomocí ukládání Instance pracovního postupu SQL služby pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)] vlastnosti úložiště Instance pracovního postupu SQL, najdete v části [vlastnosti z pracovní postup Instance úložiště SQL](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md).  
+ Následující části popisují postup povolení trvalosti pro pracovní postupy a pomocí ukládání Instance pracovního postupu SQL služby pracovních postupů. Další informace o vlastnostech ukládání Instance pracovního postupu SQL najdete v tématu [vlastnosti z pracovní postup Instance úložiště SQL](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md).  
   
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>Povolení trvalosti pro pracovní postupy Self-Hosted, použít WorkflowApplication  
  Můžete povolit trvalost vlastním hostováním pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> programově pomocí <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> objektový model. Následující postup obsahuje kroky, jak to provést.  

@@ -1,35 +1,37 @@
 ---
-title: "Určování chování služby za běhu"
-ms.custom: 
+title: Určování chování služby za běhu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c2c1534b161f81fa90dce52c825b0417dc8fd35d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e45c35d0b19833b6fd43c7fd5794ecf8bd3a9769
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
-Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementace vašeho kontrakt služby ([implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operaci služby modulu runtime. Toto téma popisuje funkce služby poskytované systémem a operace chování a popisuje, kde najít další informace o vytvoření nové chování. Když některé chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Konfigurace aplikace služby najdete v části [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
+Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementace vašeho kontrakt služby ([implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operaci služby modulu runtime. Toto téma popisuje funkce služby poskytované systémem a operace chování a popisuje, kde najít další informace o vytvoření nové chování. Když některé chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
   
 ## <a name="overview"></a>Přehled  
  Kontrakt definuje vstupy, výstupy, datové typy a funkce služby daného typu. Implementace kontraktu služby vytvoří třídu, která při konfiguraci s vazbou na adresu, plnit kontrakt implementuje. Smluvními, vazby a informace o adrese jsou všechny známé klientem; bez, nelze provádět klienta pomocí služby.  
   
- Specifika operace, jako je například dělení na vlákna problémy nebo Správa instancí jsou však neprůhledného klientům. Když naimplementujete vaše kontrakt služby, můžete nakonfigurovat velký počet charakteristik operace pomocí *chování*. Chování jsou objekty, které upravují [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] modulu runtime, a to nastavením vlastnosti runtime nebo vložením typu přizpůsobení do modulu runtime. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Úprava modulu runtime tak, že vytvoříte vlastní chování najdete v části [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+ Specifika operace, jako je například dělení na vlákna problémy nebo Správa instancí jsou však neprůhledného klientům. Když naimplementujete vaše kontrakt služby, můžete nakonfigurovat velký počet charakteristik operace pomocí *chování*. Chování jsou objekty, které upravují [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] modulu runtime, a to nastavením vlastnosti runtime nebo vložením typu přizpůsobení do modulu runtime. Další informace o změně modulu runtime tak, že vytvoříte vlastní chování najdete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
   
  <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> a <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> atributy jsou nejčastěji užitečné chování a zveřejněte nejčastěji požadované funkce operaci. Protože jsou atributy, je použít na implementaci služby nebo operace. Další chování, jako <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>, jsou obvykle použije pomocí konfiguračního souboru aplikace, přestože je možné použít prostřednictvím kódu programu.  
   

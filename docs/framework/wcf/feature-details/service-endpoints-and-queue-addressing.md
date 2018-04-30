@@ -1,24 +1,26 @@
 ---
-title: "Koncové body služby a adresování front"
-ms.custom: 
+title: Koncové body služby a adresování front
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8488e802ee191c261b65388d48bd26aa37d18206
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: f2244ccb1637f944f9e3349cf0d94caa2f6676bf
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapování koncových bodů služby do fronty. Připomínáme, následující obrázek znázorňuje classic [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zařazených do fronty nasazení aplikace.  
@@ -32,7 +34,7 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Názvy cest jsou namapované na "FormatNames" k určení dalších aspektů na adresu, včetně směrování a fronty přenosu protokolu správce. Správce front podporuje dva protokoly přenosu: nativní protokol služby MSMQ a protokol spolehlivého zasílání zpráv na protokolu SOAP (SRMP).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Cesta a formát názvy služby MSMQ, najdete v části [o služby Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=94837).  
+ Další informace o názvech služby MSMQ cestu a formát najdete v tématu [o služby Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=94837).  
   
 ## <a name="netmsmqbinding-and-service-addressing"></a>– NetMsmqBinding a adresování služeb  
  Při přiřazování zpráv do služby, je zvolen schéma v identifikátoru URI v závislosti na přenos používá pro komunikaci. Každý přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] má jedinečné schéma. Schéma musí odrážet povaha přenos používá pro komunikaci. Například net.tcp net.pipe, HTTP a tak dále.  
@@ -41,7 +43,7 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Adresování fronty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle vzoru následující:  
   
- net.msmq: // \<*host-name*> / [private/] \<*queue-name*>  
+ NET.MSMQ: / / \< *název hostitele*> / [privátní /] \< *název fronty*>  
   
  kde:  
   
@@ -84,8 +86,8 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
 |Adresa WCF URI na základě fronty|Použijte vlastnost služby Active Directory|Vlastnost fronty přenosu protokolu|Výsledný názvy ve formátu služby MSMQ|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
 |Net.msmq://\<machine-name>/private/abc|NEPRAVDA (výchozí)|Nativní (výchozí)|DIRECT=OS:machine-name\private$\abc|  
-|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
-|Net.msmq://\<machine-name>/private/abc|True|Nativní|VEŘEJNÉ = některá guid (identifikátor GUID fronty)|  
+|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT =http://machine/msmq/private$/ abc|  
+|Net.msmq://\<machine-name>/private/abc|Hodnota TRUE|Nativní|VEŘEJNÉ = některá guid (identifikátor GUID fronty)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Čtení zpráv z fronty nedoručených zpráv nebo Poison zprávy fronty  
  Chcete-li čtení zpráv z fronty poison zpráva, která je dílčí fronta cílové fronty, otevřete `ServiceHost` s adresou dílčí fronta.  
@@ -98,20 +100,20 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Pokud používáte vlastní frontu nedoručených zpráv, Všimněte si, že frontu nedoručených zpráv musí nacházet na místním počítači. Identifikátor URI pro frontu nedoručených zpráv jako takový je omezen na formulář:  
   
- net.msmq: //localhost/ [private/]  \<*custom-dead-letter-queue-name*>.  
+ NET.MSMQ: //localhost/ [privátní /] \< *vlastní zpráv písmeno fronty name*>.  
   
  A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby ověřuje, že všechny zprávy obdrží byla provedena do konkrétní fronty naslouchá na. Pokud cílovou frontu zprávy fronty, kterou je ve službě neodpovídá, službu nezpracovává zprávy. Jedná se o problém, který služby naslouchání do fronty nedoručených zpráv musí řešit, protože jakékoli zprávy do fronty nedoručených zpráv byl určen pro doručena jinde. Ke čtení zpráv z fronty nedoručených zpráv nebo z poškozených fronty, `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr je nutné použít. Příklad, naleznete v části [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding a adresování služeb  
  `MsmqIntegrationBinding` Se používá ke komunikaci s tradiční aplikacím služby MSMQ. K usnadnění vzájemná spolupráce pomocí stávající aplikaci služby MSMQ, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje pouze formátu název adresy. Proto musí odpovídat zprávy odeslané používá tuto vazbu schéma identifikátoru URI:  
   
- msmq.formatname:\<*MSMQ-format-name*>>  
+ MSMQ.formatname:\<*název formátu MSMQ*>>  
   
  Název formátu MSMQ je ve formátu zadaný službou MSMQ v [o služby Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=94837).  
   
  Všimněte si, že můžete použít pouze formátované názvy a názvy ve formátu veřejné a privátní (vyžaduje integrace služby Active Directory) při přijímání zpráv z fronty pomocí `MsmqIntegrationBinding`. Doporučujeme však používat názvy v přímém formátu. Například na [!INCLUDE[wv](../../../../includes/wv-md.md)], pomocí jiných názvu formátu způsobuje chybu, protože se systém pokusí otevřít dílčí fronta, který lze otevřít pouze pomocí přímého názvu formátu.  
   
- Při zadávání adresy pomocí SRMP `MsmqIntegrationBinding`, není potřeba, chcete-li přidat /msmq/ v přímém formátu názvu usnadní odeslání Internetové informační služby (IIS). Příklad: při adresování fronty abc pomocí SRMP protokolu místo přímé = http://adatum.com/msmq/private$ / abc, měli byste použít přímo = http://adatum.com/private$ / abc.  
+ Při zadávání adresy pomocí SRMP `MsmqIntegrationBinding`, není potřeba, chcete-li přidat /msmq/ v přímém formátu názvu usnadní odeslání Internetové informační služby (IIS). Příklad: při adresování fronty abc pomocí SRMP protokolu místo přímé =http://adatum.com/msmq/private$/ abc, měli byste použít DIRECT =http://adatum.com/private$/ abc.  
   
  Všimněte si, že nemůžete použít net.msmq:// adresování s `MsmqIntegrationBinding`. Protože `MsmqIntegrationBinding` podporuje vlastní MSMQ formát název adresy, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, která používá tuto vazbu funkce vícesměrového vysílání a distribučního seznamu používat služby MSMQ. Jedinou výjimkou je zadání `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí být typu net.msmq:// formuláře, podobně jako na to, jak je zadán pomocí `NetMsmqBinding`.  
   

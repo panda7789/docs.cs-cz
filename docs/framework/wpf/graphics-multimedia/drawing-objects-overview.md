@@ -1,12 +1,13 @@
 ---
-title: "Přehled vykreslovaných objektů"
-ms.custom: 
+title: Přehled vykreslovaných objektů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - ImageDrawing objects [WPF]
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - Drawing objects [WPF]
 - DrawingGroup objects [WPF]
 ms.assetid: 9b5ce5c0-e204-4320-a7a8-0b2210d62f88
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c9b77b47a3f3ade27f2ba86304b1868a8d388482
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3672e4b1deacd8fb50a5318270854daae9c74761
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="drawing-objects-overview"></a>Přehled vykreslovaných objektů
 Toto téma představuje <xref:System.Windows.Media.Drawing> objekty a popisuje, jak je použít k efektivní kreslení tvarů, rastrové obrázky, text a média. Použít <xref:System.Windows.Media.Drawing> objekty, když vytvoříte klip obrázky, Malování <xref:System.Windows.Media.DrawingBrush>, nebo použijte <xref:System.Windows.Media.Visual> objekty.  
@@ -36,17 +38,17 @@ Toto téma představuje <xref:System.Windows.Media.Drawing> objekty a popisuje, 
 ## <a name="what-is-a-drawing-object"></a>Co je objekt kreslení?  
  A <xref:System.Windows.Media.Drawing> objekt popisuje viditelný obsah, například obrazce, rastrového obrázku, videa nebo na řádku textu. Různé typy výkresů popisují různé typy obsahu. Následuje seznam s různými typy kreslení objektů.  
   
--   <xref:System.Windows.Media.GeometryDrawing>– Kreslení obrazce.  
+-   <xref:System.Windows.Media.GeometryDrawing> – Kreslení obrazce.  
   
--   <xref:System.Windows.Media.ImageDrawing>– Nakreslí obrázek.  
+-   <xref:System.Windows.Media.ImageDrawing> – Nakreslí obrázek.  
   
--   <xref:System.Windows.Media.GlyphRunDrawing>– Nevykresluje text.  
+-   <xref:System.Windows.Media.GlyphRunDrawing> – Nevykresluje text.  
   
--   <xref:System.Windows.Media.VideoDrawing>– Hraje soubor zvuku a videa.  
+-   <xref:System.Windows.Media.VideoDrawing> – Hraje soubor zvuku a videa.  
   
--   <xref:System.Windows.Media.DrawingGroup>– Nevykresluje kresby na další. Použijte skupinu kreslení kombinovat jiné kresby do jedné složené kreslení.  
+-   <xref:System.Windows.Media.DrawingGroup> – Nevykresluje kresby na další. Použijte skupinu kreslení kombinovat jiné kresby do jedné složené kreslení.  
   
- <xref:System.Windows.Media.Drawing>objekty jsou univerzální; Existuje mnoho způsobů, které můžete použít <xref:System.Windows.Media.Drawing> objektu.  
+ <xref:System.Windows.Media.Drawing> objekty jsou univerzální; Existuje mnoho způsobů, které můžete použít <xref:System.Windows.Media.Drawing> objektu.  
   
 -   Můžete ji zobrazit jako bitovou kopii pomocí <xref:System.Windows.Media.DrawingImage> a <xref:System.Windows.Controls.Image> ovládacího prvku.  
   
@@ -86,7 +88,7 @@ Objekt GeometryDrawing sestávající
   
  Následující příklad nevykresluje bitovou kopii do obdélníku umístěný v bodu (75,75) tedy 100 x 100 pixelů. Následující obrázek ukazuje <xref:System.Windows.Media.ImageDrawing> vytvořené v příkladu. Šedé ohraničení byla přidána do zobrazit hranice <xref:System.Windows.Media.ImageDrawing>.  
   
- ![100 × 100 ImageDrawing vykreslovat &#40; 75,75 &#41; ] (../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-simple-imagedrawing-offset.png "graphicsmm_simple_imagedrawing_offset")  
+ ![100 × 100 ImageDrawing vykreslovat &#40;75,75&#41;](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-simple-imagedrawing-offset.png "graphicsmm_simple_imagedrawing_offset")  
 ImageDrawing 100 x 100  
   
  [!code-csharp[DrawingMiscSnippets_snip#ImageDrawing100by100Inline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/ImageDrawingExample.cs#imagedrawing100by100inline)]
@@ -180,7 +182,7 @@ Složené kreslení
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMSimpleDrawingGroupExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/DrawingGroupExample.cs#graphicsmmsimpledrawinggroupexample)]
  [!code-xaml[DrawingMiscSnippets_snip#GraphicsMMSimpleDrawingGroupExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DrawingGroupExample.xaml#graphicsmmsimpledrawinggroupexample)]  
   
- A <xref:System.Windows.Media.DrawingGroup> taky umožňuje použít masky krytí, transformací, důsledky rastrového obrázku a dalších operací k jejímu obsahu. <xref:System.Windows.Media.DrawingGroup>operace se použijí v uvedeném pořadí: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>, <xref:System.Windows.Media.DrawingGroup.Opacity%2A>, <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>, <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>, <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>a potom <xref:System.Windows.Media.DrawingGroup.Transform%2A>.  
+ A <xref:System.Windows.Media.DrawingGroup> taky umožňuje použít masky krytí, transformací, důsledky rastrového obrázku a dalších operací k jejímu obsahu. <xref:System.Windows.Media.DrawingGroup> operace se použijí v uvedeném pořadí: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>, <xref:System.Windows.Media.DrawingGroup.Opacity%2A>, <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>, <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>, <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>a potom <xref:System.Windows.Media.DrawingGroup.Transform%2A>.  
   
  Následující příklad uvádí pořadí, ve kterém <xref:System.Windows.Media.DrawingGroup> operace se použijí.  
   
@@ -232,7 +234,7 @@ Objekt GeometryDrawing sestávající použít s DrawingBrush
 ## <a name="drawingcontext-objects"></a>DrawingContext objekty  
  <xref:System.Windows.Media.DrawingContext> Třída umožňuje naplnit <xref:System.Windows.Media.Visual> nebo <xref:System.Windows.Media.Drawing> s visual obsahem. Mnoho tyto objekty grafiky nižší úrovně použít <xref:System.Windows.Media.DrawingContext> protože velmi efektivně popisuje grafického obsahu.  
   
- I když <xref:System.Windows.Media.DrawingContext> metody kreslení zobrazí podobná metody kreslení <xref:System.Drawing.Graphics?displayProperty=nameWithType> typu, jsou ve skutečnosti odlišné. <xref:System.Windows.Media.DrawingContext>se používá systém grafiky udržených režimu, při <xref:System.Drawing.Graphics?displayProperty=nameWithType> typ se používá systém grafiky přímý režim. Při použití <xref:System.Windows.Media.DrawingContext> objektu kreslení příkazy, jsou ve skutečnosti ukládání sada pokynů vykreslování (i když tento mechanismus přesný úložiště závisí na typu objektu, který poskytuje <xref:System.Windows.Media.DrawingContext>), budou používat později grafiky systému; nejsou kreslení na obrazovku v reálném čase. Další informace o tom, jak [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] grafika systému funguje, najdete v článku [vykreslování přehled grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md).  
+ I když <xref:System.Windows.Media.DrawingContext> metody kreslení zobrazí podobná metody kreslení <xref:System.Drawing.Graphics?displayProperty=nameWithType> typu, jsou ve skutečnosti odlišné. <xref:System.Windows.Media.DrawingContext> se používá systém grafiky udržených režimu, při <xref:System.Drawing.Graphics?displayProperty=nameWithType> typ se používá systém grafiky přímý režim. Při použití <xref:System.Windows.Media.DrawingContext> objektu kreslení příkazy, jsou ve skutečnosti ukládání sada pokynů vykreslování (i když tento mechanismus přesný úložiště závisí na typu objektu, který poskytuje <xref:System.Windows.Media.DrawingContext>), budou používat později grafiky systému; nejsou kreslení na obrazovku v reálném čase. Další informace o tom, jak funguje v systému Windows Presentation Foundation (WPF) grafiky, najdete v článku [vykreslování přehled grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md).  
   
  Nikdy přímo instance <xref:System.Windows.Media.DrawingContext>; můžete, ale získat kreslení kontext z některé metody, jako <xref:System.Windows.Media.DrawingGroup.Open%2A?displayProperty=nameWithType> a <xref:System.Windows.Media.DrawingVisual.RenderOpen%2A?displayProperty=nameWithType>.  
   

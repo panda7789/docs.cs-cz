@@ -1,12 +1,13 @@
 ---
-title: "Definice a určení chyb"
-ms.custom: 
+title: Definice a určení chyb
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,19 +16,20 @@ helpviewer_keywords:
 - handling faults [WCF], specifying
 - handling faults [WCF], defining
 ms.assetid: c00c84f1-962d-46a7-b07f-ebc4f80fbfc1
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 713b9594ac628c2c256e8592d3894feee8029332
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6c200ad587d437875f510adc4f05b30bdb7ab089
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="defining-and-specifying-faults"></a>Definice a určení chyb
-Chyb SOAP nesou podmínku informace o chybě ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsahu a určit, které operace vrátit. [!INCLUDE[crabout](../../../includes/crabout-md.md)]jak služba nebo duplexní klienta, může poslat tyto chyby a jak klienta služby nebo aplikace zpracovává těchto chyb, najdete v části [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled zpracování chyb v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+Chyb SOAP nesou podmínku informace o chybě ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsahu a určit, které operace vrátit. Další informace o tom, jak služba nebo duplexní klienta, můžete odeslat těchto chyb a jak klienta služby nebo aplikace zpracovává tyto chyby najdete v tématu [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled zpracování chyb v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
   
 ## <a name="overview"></a>Přehled  
  Deklarovaný chyb SOAP jsou ty, ve kterých se operace <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> určující vlastního typu chybu protokolu SOAP. Nedeklarovaný chyb SOAP jsou ty, které nejsou uvedené ve smlouvě operace. Toto téma vám pomůže identifikovat tyto chybové stavy a vytvoření kontraktu selhání služby, který můžou klienti používat správně zpracovat tyto chybové stavy při upozornění podle vlastních chyb SOAP. Základní úlohy jsou v pořadí:  
@@ -77,7 +79,7 @@ End Class
  [!code-csharp[Faults#2](../../../samples/snippets/csharp/VS_Snippets_CFX/faults/cs/service.cs#2)]
  [!code-vb[Faults#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faults/vb/service.vb#2)]  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]jak ověřit data je serializovatelný naleznete [zadání přenos dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Seznam serializaci podpory, který <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> poskytuje, najdete v části [typy nepodporuje serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+ Další informace o je serializovatelný jak ověřit vaše data, najdete v části [zadání přenos dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Seznam serializaci podpory, který <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> poskytuje, najdete v části [typy nepodporuje serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
 ### <a name="mark-operations-to-establish-the-fault-contract"></a>Operace označit k navázání chyba – kontrakt  
  Jakmile serializovatelný datová struktura, která je vrácena, jako je definována část vlastní chybu protokolu SOAP, posledním krokem je označit smlouva operace jako byla vrácena chyba protokolu SOAP daného typu. Chcete-li to provést, použijte <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> atribut a předejte typ vlastní datový typ, který jste vytvořili. Následující příklad kódu ukazuje, jak používat <xref:System.ServiceModel.FaultContractAttribute> atribut určíte, že `Divide` operace může vrátit chybu protokolu SOAP typu `MathFault`. Jiné na základě matematické operace nyní můžete také určit, že budou vracet `MathFault`.  
@@ -96,7 +98,7 @@ End Class
   
  Podle protokolu SOAP standard, může mít chybu `Action`, `Code`a `Reason`. `Action` Řídí <xref:System.ServiceModel.FaultContractAttribute.Action%2A> vlastnost. <xref:System.ServiceModel.FaultException.Code%2A> Vlastnost a <xref:System.ServiceModel.FaultException.Reason%2A> vlastnost jsou obě vlastnosti <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> třída, která je nadřazená třída obecná <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>. `Code` Zahrnuje vlastnost <xref:System.ServiceModel.FaultCode.SubCode%2A> člen.  
   
- Při přístupu k jiné services generujících chyb, existují určitá omezení. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]podporuje pouze chyb s typy podrobností popisující schéma a které jsou kompatibilní s kontrakty dat. Například jako uvedených výše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nepodporuje chyb, které se používají atributy XML v jejich podrobnosti typy nebo chyb s více než jeden element nejvyšší úrovně v sekci podrobností.  
+ Při přístupu k jiné services generujících chyb, existují určitá omezení. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje pouze chyb s typy podrobností popisující schéma a které jsou kompatibilní s kontrakty dat. Například jako uvedených výše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nepodporuje chyb, které se používají atributy XML v jejich podrobnosti typy nebo chyb s více než jeden element nejvyšší úrovně v sekci podrobností.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.FaultContractAttribute>  

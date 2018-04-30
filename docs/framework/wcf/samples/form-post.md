@@ -1,24 +1,26 @@
 ---
-title: "Zpracování odeslaného formuláře"
-ms.custom: 
+title: Zpracování odeslaného formuláře
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fa6f84f9-2e07-4e3c-92d0-a245308b7dff
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fe1be9177f3e811a3037377360f46f42904d5af3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 31d2ebbdb6f899390d7b3af485c1583fb80ae6dc
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="form-post"></a>Zpracování odeslaného formuláře
 Tento příklad znázorňuje postup rozšíření programovací model REST WCF pro nové formáty příchozí žádosti o podporu. Ukázka také zahrnuje implementaci formátovací modul, který může deserializovat požadavek z post formuláře HTML do [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typu. Kromě toho příklad používá šablony T4 vrátit stránku HTML, který poskytuje formuláře HTML, který uživatelé vystavit zpět ke službě WCF REST.  
@@ -38,7 +40,7 @@ Tento příklad znázorňuje postup rozšíření programovací model REST WCF p
   
  Tento projekt konzolové aplikace rozšiřuje [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka. Ukázka základní služby prostředků ukazuje, jak vystavit prostředek způsobem, který využívá programovací model REST WCF. V ukázce základní služba prostředků je prostředek kolekce zákazníka zpřístupněná tak, aby zákazníci v kolekci můžete vytvořit, načíst, aktualizovat a odstranit. Ukázka základní služby prostředků používá jenom dva nativně podporované příchozí požadavek formáty, XML a JSON.  
   
- Konzolové aplikace v této ukázce Post formuláře využívá vlastní formátování v knihovně HtmlFormProcessing, což umožňuje uživatelům vytvářet zákazníkům odesláním požadavku z post formuláře HTML pomocí prohlížeče. Také přidá operace, která vrátí stránku HTML, obsahující formulář odeslán zpět ke službě. Tuto stránku HTML, je generována pomocí předběžně zpracované T4 šablonu, která se skládá z soubor .tt a .cs automaticky generovaný soubor. Soubor .tt umožňuje vývojáři k zápisu odpovědi v podobě šablony, který obsahuje proměnné a řízení struktury. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]T4, najdete v části [generování artefaktů podle pomocí textových šablon](http://go.microsoft.com/fwlink/?LinkId=178139).  
+ Konzolové aplikace v této ukázce Post formuláře využívá vlastní formátování v knihovně HtmlFormProcessing, což umožňuje uživatelům vytvářet zákazníkům odesláním požadavku z post formuláře HTML pomocí prohlížeče. Také přidá operace, která vrátí stránku HTML, obsahující formulář odeslán zpět ke službě. Tuto stránku HTML, je generována pomocí předběžně zpracované T4 šablonu, která se skládá z soubor .tt a .cs automaticky generovaný soubor. Soubor .tt umožňuje vývojáři k zápisu odpovědi v podobě šablony, který obsahuje proměnné a řízení struktury. Další informace o T4 najdete v tématu [generování artefaktů podle pomocí textových šablon](http://go.microsoft.com/fwlink/?LinkId=178139).  
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   

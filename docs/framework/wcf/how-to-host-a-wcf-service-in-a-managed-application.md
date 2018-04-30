@@ -1,36 +1,38 @@
 ---
-title: "Postupy: Hostování služby WCF ve spravované aplikaci"
-ms.custom: 
+title: 'Postupy: Hostování služby WCF ve spravované aplikaci'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-caps.latest.revision: "42"
+caps.latest.revision: 42
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6491faa6134c1e80e07294d8f888200c04fa8704
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5f2671dc381e0d3ef8f55ced01268de6205fcb7d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-application"></a>Postupy: Hostování služby WCF ve spravované aplikaci
 K hostování služby ve spravované aplikaci, vkládat kód pro službu uvnitř kódu spravované aplikace, definujte koncový bod služby buď imperativní v kódu deklarativně prostřednictvím konfigurace, nebo pomocí výchozí koncové body a pak vytvořte instance <xref:System.ServiceModel.ServiceHost>.  
   
  Chcete-li začít přijímat zprávy, volejte <xref:System.ServiceModel.ICommunicationObject.Open%2A> na <xref:System.ServiceModel.ServiceHost>. Tím se vytvoří a otevře naslouchací proces pro danou službu. Hostitelská služba tímto způsobem se často označuje jako "vlastní hostování" protože spravované aplikace provádí hostování práce sám sebe. Službu zavřete volání <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.ServiceHost>.  
   
- Služba může být hostovaný také ve spravované službě Windows, v Internetové informační služby (IIS) nebo v procesu aktivace služby WAS (Windows). [!INCLUDE[crabout](../../../includes/crabout-md.md)]hostování možnosti pro služby, najdete v části [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+ Služba může být hostovaný také ve spravované službě Windows, v Internetové informační služby (IIS) nebo v procesu aktivace služby WAS (Windows). Další informace o hostování možnosti pro služby najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
- Hostování ve spravované aplikaci služby je nejvíce flexibilní možnost, protože vyžaduje minimálně infrastrukturu pro nasazování. [!INCLUDE[crabout](../../../includes/crabout-md.md)]hostování služeb ve spravovaných aplikacích, najdete v části [hostování ve spravované aplikaci](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md).  
+ Hostování ve spravované aplikaci služby je nejvíce flexibilní možnost, protože vyžaduje minimálně infrastrukturu pro nasazování. Další informace o hostování služeb ve spravovaných aplikacích najdete v tématu [hostování ve spravované aplikaci](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md).  
   
  Následující postup ukazuje, jak implementovat samoobslužné hostovanou službu v konzolové aplikaci.  
   
@@ -58,7 +60,7 @@ K hostování služby ve spravované aplikaci, vkládat kód pro službu uvnitř
      [!code-vb[CFX_SelfHost4#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#2)]  
   
     > [!NOTE]
-    >  [!INCLUDE[crabout](../../../includes/crabout-md.md)]definování a implementovat rozhraní služby naleznete v tématu [postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md) a [postupy: implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md).  
+    >  Další informace o tom, jak definovat a implementovat rozhraní služby najdete v tématu [postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md) a [postupy: implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md).  
   
 7.  V horní části `Main` metody vytvoření instance <xref:System.Uri> se základní adresa pro službu.  
   
@@ -71,7 +73,7 @@ K hostování služby ve spravované aplikaci, vkládat kód pro službu uvnitř
      [!code-vb[CFX_SelfHost4#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#4)]       
   
     > [!NOTE]
-    >  Tento příklad používá výchozí koncové body a žádný konfigurační soubor je vyžadovaný pro tuto službu. Pokud jsou nakonfigurované žádné koncové body, modul runtime vytvoří jeden koncový bod pro každou základní adresu pro každý kontrakt služby implementované službu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]výchozí koncové body, najdete v části [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+    >  Tento příklad používá výchozí koncové body a žádný konfigurační soubor je vyžadovaný pro tuto službu. Pokud jsou nakonfigurované žádné koncové body, modul runtime vytvoří jeden koncový bod pro každou základní adresu pro každý kontrakt služby implementované službu. Další informace o výchozí koncové body najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 9. Stisknutím kombinace kláves CTRL + SHIFT + B řešení sestavíte.  
   

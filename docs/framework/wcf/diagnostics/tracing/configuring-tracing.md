@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2ad8a3a79967c42b8e8afdd9b9d796a7a1dfdd79
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 23dbf9808976496686dfe9d595487110da41730b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasování zdrojů pro vydávání trasování a nastavte úrovně trasování, trasování aktivit sady a šíření pro podporu trasování začátku do konce korelace a nastavte trasování – moduly naslouchání pro přístup k trasování.  
@@ -146,7 +146,7 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 </system.diagnostics>  
 ```  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] vytváření uživatelem definované trasování zdrojů, najdete v části [rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
+ Další informace o vytváření uživatelem definované trasování zdrojů najdete v tématu [rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
   
 ## <a name="configuring-trace-listeners-to-consume-traces"></a>Konfigurace trasování – moduly naslouchání využívat trasování  
  V době běhu [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] informační kanály trasování dat naslouchací procesy, které zpracovávají data. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nabízí několik předdefinovaných naslouchací procesy pro <xref:System.Diagnostics>, který se liší ve formátu používají pro výstup. Můžete také přidat vlastní naslouchací proces typy.  
@@ -187,7 +187,7 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
   
  `propagateActivity` Atribut uvádí, zda by mělo být předáno aktivity na ostatní koncové body, které jsou součástí výměny zpráv. Nastavením této hodnoty na `true`, můžete provést trasovací soubory generované žádné dva koncové body a sledovat, jak sadu trasování na jeden koncový bod předávány sadu trasování na jiný koncový bod.  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] trasování aktivit a šíření, najdete v části [šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
+ Další informace o trasování aktivity a šíření najdete v tématu [šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
   
  Obě `propagateActivity` a `ActivityTracing` logické hodnoty, na které se týkají System.ServiceModel TraceSource. `ActivityTracing` Hodnota platí také pro libovolný zdroj trasování, včetně [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nebo uživatelem definované snímků.  
   

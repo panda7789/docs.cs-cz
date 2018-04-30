@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: af520c1520f605d34076e6ecabdf84deb52fbfd0
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d0b12fc6c91f57ec49050a0a37b16f64d0e54e6d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>Pomocí WorkflowInvoker a WorkflowApplication
-Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication> poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  
+Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication> poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. Další informace o hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  
   
 ## <a name="using-workflowinvoker"></a>Pomocí WorkflowInvoker  
  <xref:System.Activities.WorkflowInvoker> poskytuje model pro provádění pracovního postupu, jako by šlo volání metody. K vyvolání pracovního postupu pomocí <xref:System.Activities.WorkflowInvoker>, volání <xref:System.Activities.WorkflowInvoker.Invoke%2A> metoda a předejte jí definice pracovního postupu pracovního postupu k vyvolání. V tomto příkladu <xref:System.Activities.Statements.WriteLine> aktivity vyvolání pomocí <xref:System.Activities.WorkflowInvoker>.  
@@ -78,7 +78,7 @@ Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovníc
  [!code-csharp[CFX_WorkflowApplicationExample#21](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#21)]  
   
 > [!NOTE]
->  <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowInvoker> trvat slovník vstupní argumenty a vrátí slovník `out` argumenty. Tyto slovník parametrů, vlastnosti a návratové hodnoty jsou typu `IDictionary<string, object>`. Skutečné instance třídy slovník, který se předává v může být jakákoli třída, která implementuje `IDictionary<string, object>`. V těchto příkladech `Dictionary<string, object>` se používá. [!INCLUDE[crabout](../../../includes/crabout-md.md)] slovník, najdete v části <xref:System.Collections.Generic.IDictionary%602> a <xref:System.Collections.Generic.Dictionary%602>.  
+>  <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowInvoker> trvat slovník vstupní argumenty a vrátí slovník `out` argumenty. Tyto slovník parametrů, vlastnosti a návratové hodnoty jsou typu `IDictionary<string, object>`. Skutečné instance třídy slovník, který se předává v může být jakákoli třída, která implementuje `IDictionary<string, object>`. V těchto příkladech `Dictionary<string, object>` se používá. Další informace o slovnících najdete v tématu <xref:System.Collections.Generic.IDictionary%602> a <xref:System.Collections.Generic.Dictionary%602>.  
   
 ### <a name="passing-data-into-a-running-workflow-using-bookmarks"></a>Předávání dat do pracovního postupu spuštění použití záložek  
  Záložky jsou mechanismus, pomocí kterého aktivity může být obnoven pasivně čekat a jsou mechanismus pro předávání dat do spuštěné instance pracovního postupu. Pokud aktivita čeká na data, můžete vytvořit <xref:System.Activities.Bookmark> a metody zpětného volání, která se má volat při registraci <xref:System.Activities.Bookmark> obnovena, jak je znázorněno v následujícím příkladu.  

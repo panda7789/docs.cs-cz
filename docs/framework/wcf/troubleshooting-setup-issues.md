@@ -1,24 +1,26 @@
 ---
-title: "Odstraňování potíží s instalací"
-ms.custom: 
+title: Odstraňování potíží s instalací
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 284805f8ca1fb9778dc6bccd9807fa86dc7e2d77
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9238c1a1c9092e6806ee941bd7c992071cf98e09
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
 Toto téma popisuje postupy řešení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] nastavit problémy.  
@@ -63,7 +65,7 @@ Toto téma popisuje postupy řešení [!INCLUDE[indigo1](../../../includes/indig
   
  Chcete-li vyřešit problém popsaný dřív musí být zadán následující kroky.  
   
-1.  Spustit [diagnostická utilita WMI, verze 2.0](http://go.microsoft.com/fwlink/?LinkId=94685) k opravě služby WMI. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Pomocí tohoto nástroje najdete v článku [diagnostická utilita WMI](http://go.microsoft.com/fwlink/?LinkId=94686) tématu.  
+1.  Spustit [diagnostická utilita WMI, verze 2.0](http://go.microsoft.com/fwlink/?LinkId=94685) k opravě služby WMI. Další informace o použití tohoto nástroje najdete v tématu [diagnostická utilita WMI](http://go.microsoft.com/fwlink/?LinkId=94686) tématu.  
   
  Opravte instalaci rozhraní .NET Framework 3.0 pomocí **přidat nebo odebrat programy** aplet umístěný v **ovládací panely**, nebo odinstalování a nová instalace rozhraní .NET Framework 3.0.  
   

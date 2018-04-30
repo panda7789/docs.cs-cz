@@ -1,12 +1,13 @@
 ---
-title: "Spolehlivé služby"
-ms.custom: 
+title: Spolehlivé služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], reliable messaging
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], reliable sessions
 - service contracts [WCF], reliable services
 ms.assetid: 07814ed0-0775-47f2-987b-d8134fdd5099
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 408801e28fec71f133c2dddd3f30b2509ab5896c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d9cbaef77f4dce609d36ba4b679d8c569b648fa5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="reliable-services"></a>Spolehlivé služby
 Fronty a spolehlivé relace jsou [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] funkce, které implementují spolehlivé zasílání zpráv. Toto téma popisuje funkce spolehlivého zasílání zpráv [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
@@ -46,14 +48,14 @@ Fronty a spolehlivé relace jsou [!INCLUDE[indigo1](../../../includes/indigo1-md
 ## <a name="reliable-sessions"></a>Spolehlivé relace  
  Spolehlivé relace zadejte začátku do konce spolehlivé přenosu zpráv mezi zdrojem a cílem pomocí protokolu WS-spolehlivé zasílání zpráv, bez ohledu na počet a typ prostředníci, které oddělují koncové body zasílání zpráv (zdrojové a cílové). To zahrnuje všechny prostředníci přenosu, které nepoužívají protokolu SOAP (například HTTP proxy) nebo prostředníci používající SOAP (například založený na protokolu SOAP směrovače nebo mosty), které jsou požadovány pro zprávy tok mezi koncových bodů. Spolehlivé relace použijte okno s přenosy v paměti na selhání úroveň zprávy protokolu SOAP maska a znovu vytvořte připojení v případě selhání přenosu.  
   
- Spolehlivé relace poskytují spolehlivé zpráv s nízkou latencí přenosů. Poskytují protokolu SOAP zprávy přes všechny proxy servery nebo prostředníci, ekvivalent jaké TCP poskytuje pro pakety prostřednictvím mostů IP. [!INCLUDE[crabout](../../../includes/crabout-md.md)]spolehlivé relace, najdete v části [spolehlivé relace](../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
+ Spolehlivé relace poskytují spolehlivé zpráv s nízkou latencí přenosů. Poskytují protokolu SOAP zprávy přes všechny proxy servery nebo prostředníci, ekvivalent jaké TCP poskytuje pro pakety prostřednictvím mostů IP. Další informace o spolehlivé relace najdete v tématu [spolehlivé relace](../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
   
 ### <a name="queues"></a>Fronty  
- Fronty v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zadejte oba spolehlivé přenosu zpráv a oddělení mezi zdroje a cíle za cenu vysokou latencí. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]komunikace ve frontě je založený na řízení front zpráv (MSMQ).  
+ Fronty v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zadejte oba spolehlivé přenosu zpráv a oddělení mezi zdroje a cíle za cenu vysokou latencí. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] komunikace ve frontě je založený na řízení front zpráv (MSMQ).  
   
  MSMQ dodává jako volitelná komponenta s Windows. Služba MSMQ spouští jako služby systému Windows. Se zaznamená zprávy k přenosu v přenosové frontě jménem zdroji a doručí do cílové fronty. Cílová fronta přijímá zprávy jménem cíl pro pozdější doručení kdykoliv cíl zprávy. Správci služby MSMQ implementovat protokol spolehlivého přenos zpráv tak, aby zprávy nejsou ztrátě při přenosu. Protokol může být nativní nebo protokol založený na protokolu SOAP názvem protokol spolehlivého zasílání zpráv na protokolu SOAP (SRMP).  
   
- Oddělení, spolu s spolehlivé zpráva přenosy mezi front, umožňuje aplikacím, které jsou volně vázány spolehlivě komunikovat. Na rozdíl od spolehlivé relace zdrojové a cílové nemusí být spuštěna ve stejnou dobu. Implicitně to umožňuje scénáře, kde fronty, ve skutečnosti slouží jako vhodný mechanismus Vyrovnávání zatížení při míra zdroje provozních zpráv a cíle tempo spotřeby zpráva se neshodují. [!INCLUDE[crabout](../../../includes/crabout-md.md)]fronty, najdete v části [fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
+ Oddělení, spolu s spolehlivé zpráva přenosy mezi front, umožňuje aplikacím, které jsou volně vázány spolehlivě komunikovat. Na rozdíl od spolehlivé relace zdrojové a cílové nemusí být spuštěna ve stejnou dobu. Implicitně to umožňuje scénáře, kde fronty, ve skutečnosti slouží jako vhodný mechanismus Vyrovnávání zatížení při míra zdroje provozních zpráv a cíle tempo spotřeby zpráva se neshodují. Další informace o frontách najdete v tématu [fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled spolehlivých relací](../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)  

@@ -1,28 +1,28 @@
 ---
-title: "Zabezpečení přenosu s ověřováním certifikátu"
-ms.custom: 
+title: Zabezpečení přenosu s ověřováním certifikátu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - vb
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-caps.latest.revision: 
+caps.latest.revision: 20
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 632d4cc19c19342363228a1e86b1ba6445d14ac9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 19b54739d82fe7363319211d3f753416e0966aed
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Zabezpečení přenosu s ověřováním certifikátu
 Toto téma popisuje, když pomocí zabezpečení přenosu pomocí certifikátů X.509 pro server a ověření klienta. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikáty X.509](http://msdn.microsoft.com/library/bb540819\(VS.85\).aspx). Certifikáty musí být vydaný certifikační autoritou, což se často stává třetích stran vystavitelů certifikátů. V doméně systému Windows Server Active Directory Certificate Services slouží k vydávání certifikátů pro klientské počítače v doméně. Další informace najdete v části [certifikační služby systému Windows 2008 R2](http://go.microsoft.com/fwlink/?LinkID=209949&clcid=0x409). V tomto scénáři je služba hostována v části Internetové informační služby (IIS), který je konfigurován s vrstvy SSL (Secure Sockets). Služba je nakonfigurována pomocí certifikátu protokolu SSL (X.509), aby se klienti k ověření identity serveru. Klient je také nakonfigurovaný se certifikát X.509, který umožňuje službě k ověření identity klienta. Klient musí důvěřovat certifikátu serveru a certifikát klienta musí být důvěryhodný pro server. Skutečné mechanismů jak klienta a služby ověří identitu uživatele toho druhého je nad rámec tohoto tématu. Další informace najdete v části [digitální podpis na webu Wikipedia](http://go.microsoft.com/fwlink/?LinkId=253157).  
@@ -31,7 +31,7 @@ Toto téma popisuje, když pomocí zabezpečení přenosu pomocí certifikátů 
   
  ![Zabezpečení přenosu pomocí certifikátů](../../../../docs/framework/wcf/feature-details/media/8f7b8968-899f-4538-a9e8-0eaa872a291c.gif "8f7b8968-899f-4538-a9e8-0eaa872a291c")  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí certifikátu se službou, najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md). Následující tabulka popisuje různé vlastnosti scénáře.  
+ Další informace o certifikát pomocí služby najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md). Následující tabulka popisuje různé vlastnosti scénáře.  
   
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
@@ -40,7 +40,7 @@ Toto téma popisuje, když pomocí zabezpečení přenosu pomocí certifikátů 
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí certifikátu protokolu SSL)<br /><br /> Ano (pomocí certifikátu X.509)|  
 |Integritu dat|Ano|  
 |Důvěrnost dat|Ano|  
-|Přenos|PROTOKOL HTTPS|  
+|Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>Konfigurace služby  

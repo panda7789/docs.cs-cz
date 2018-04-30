@@ -1,13 +1,13 @@
 ---
-title: "Postupy: Přístup ke službám pomocí duplexního kontraktu"
-ms.custom: 
+title: 'Postupy: Přístup ke službám pomocí duplexního kontraktu'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
-caps.latest.revision: 
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 425d17fa34b61985ad3600f992e028e156f6adb9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c80980ff5a5b1011c021bcaf0688747178ec5b9b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-access-services-with-a-duplex-contract"></a>Postupy: Přístup ke službám pomocí duplexního kontraktu
 Jedna z funkcí systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je schopnost vytvářet služby, která používá vzor duplexní zasílání zpráv. Tento vzor umožňuje službě ke komunikaci s klientem prostřednictvím zpětné volání. Toto téma ukazuje postup vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta v třídě klienta, který implementuje rozhraní zpětného volání.  
@@ -36,7 +36,7 @@ Jedna z funkcí systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
   
 ### <a name="to-access-a-duplex-service"></a>Pro přístup k duplexní služby  
   
-1.  Vytvoření služby, který obsahuje dvě rozhraní. První rozhraní je pro službu, druhý pro zpětné volání. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Vytvoření duplexní služby, najdete v části [postupy: vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).  
+1.  Vytvoření služby, který obsahuje dvě rozhraní. První rozhraní je pro službu, druhý pro zpětné volání. Další informace o vytvoření duplexní služby najdete v tématu [postupy: vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).  
   
 2.  Spusťte službu.  
   

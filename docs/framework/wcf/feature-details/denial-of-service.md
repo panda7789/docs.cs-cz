@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fb9f542d931f5febc2c04d1b0e093cc20f487c57
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 4734407868d9dae2acc422c0f07aad57d42d4566
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu přetížena systému.  
@@ -57,7 +57,7 @@ Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se 
 ## <a name="auditing-event-log-can-be-filled"></a>Může být vyplněna auditování protokolu událostí  
  Pokud uživatel se zlými úmysly plně chápe, že je povoleno auditování, útočník odeslat neplatná zprávy, které způsobí položky auditu k zapsání. Pokud protokol auditu tímto způsobem, systém auditování selže.  
   
- Toto riziko lze nastavit <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true` a použití vlastností prohlížeče událostí můžete řídit chování auditování. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí prohlížeče událostí k zobrazení a správě protokolů událostí, najdete v tématu [Prohlížeč událostí](http://go.microsoft.com/fwlink/?LinkId=186123). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ Toto riziko lze nastavit <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true` a použití vlastností prohlížeče událostí můžete řídit chování auditování. Další informace o prohlížeči událostí k zobrazení a správě protokolů událostí najdete v tématu [Prohlížeč událostí](http://go.microsoft.com/fwlink/?LinkId=186123). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-hangs"></a>Neplatný implementace IAuthorizationPolicy může příčina služby zablokování  
  Volání <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metodu vadný provádění <xref:System.IdentityModel.Policy.IAuthorizationPolicy> rozhraní může způsobit, že služba přestane reagovat.  
@@ -74,7 +74,7 @@ Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se 
   
  Toto riziko lze snížit odkazovat na přesný certifikát pomocí přesnější kritérium hledání na [ \<– serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Například použít <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> možnost a určete certifikát, jeho jedinečné kryptografickým (hodnota hash).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] funkce automatického zápisu najdete v části [automatického zápisu certifikátů ve Windows serveru 2003](http://go.microsoft.com/fwlink/?LinkId=95166).  
+ Další informace o funkci automatického zápisu najdete v tématu [automatického zápisu certifikátů ve Windows serveru 2003](http://go.microsoft.com/fwlink/?LinkId=95166).  
   
 ## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>Posledních několik názvů subjektu alternativní použít k ověřování  
  Ve výjimečných případu při certifikát X.509 obsahuje více názvů alternativní subjektu a autorizaci pomocí v alternativním názvu subjektu, autorizace se pravděpodobně nezdaří.  
@@ -88,7 +88,7 @@ Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se 
  Když klient úspěšně ověření služby a zabezpečené relace je vytvořených pomocí služby, uchovává informace o této relaci, dokud klient zruší ho nebo platnosti relace služby. Každý navázanou relaci započítává limit pro maximální počet aktivních souběžných relací se službou. Když je dosaženo tento limit, klienti, kteří se pokusí o vytvoření nové relace s touto službou odmítnuty až jeden nebo více aktivních relací vypršení platnosti nebo došlo ke zrušení klientem. Klient může mít více relací se službou a každé z nich těchto relací počty směrem k limit.  
   
 > [!NOTE]
->  Při použití stavová relací nevztahuje předchozím odstavci. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Stavová relace, najdete v části [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Při použití stavová relací nevztahuje předchozím odstavci. Další informace o stavových relací najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
  Toto riziko lze nastavit tento limit pro maximální počet aktivních relací a maximální doba života pro relaci a nastavením <xref:System.ServiceModel.Channels.SecurityBindingElement> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
   

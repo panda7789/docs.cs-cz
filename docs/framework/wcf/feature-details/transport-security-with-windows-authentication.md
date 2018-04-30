@@ -1,30 +1,32 @@
 ---
-title: "Zabezpečení přenosu pomocí ověřování systému Windows"
-ms.custom: 
+title: Zabezpečení přenosu pomocí ověřování systému Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 4f5f81617a8962eeb8748e2c5c35ea34f7a1705f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5effb18435241b00c3036fd23e15ef5ce485b646
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="transport-security-with-windows-authentication"></a>Zabezpečení přenosu pomocí ověřování systému Windows
-Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby Zabezpečené zabezpečení systému Windows. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]programování, najdete v části [postupy: zabezpečení služby s pověřeními Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
+Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby Zabezpečené zabezpečení systému Windows. Další informace o programování najdete v tématu [postupy: zabezpečení služby s pověřeními Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
   
  Intranet webové služby zobrazí informace lidských zdrojů. Klient je aplikace formuláře Windows. Aplikace je nasazená v doméně pomocí protokolu Kerberos řadiče domény zabezpečení.  
   
@@ -33,7 +35,7 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení.|Přenos|  
-|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]pouze|  
+|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Pouze|  
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí integrovaného ověřování systému Windows)<br /><br /> Ano (pomocí integrovaného ověřování systému Windows)|  
 |Integrita|Ano|  
 |Důvěrnost|Ano|  

@@ -16,17 +16,17 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: d033a3e22def60c5d82191fd7fcc93bd67f4548b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 393730ffe57c4678f53d16e67b8b8f64ad16509c
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="security-considerations-with-metadata"></a>Informace o zabezpečení pro metadata
 Když pomocí metadat funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vezměte v úvahu bezpečnostních důsledcích publikování, načítání a pomocí služby metadat.  
   
 ## <a name="when-to-publish-metadata"></a>Při publikování metadat  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nepublikujte metadata ve výchozím nastavení. Metadata pro publikování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby je potřeba explicitně povolit publikování metadat přidáním koncové body metadat do služby (najdete v části [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)). Opouštění publikování metadat zakázána snižuje prostor pro útoky u služby a snižuje riziko zpřístupnění neúmyslnému informací. Ne všechny služby musíte publikovat metadat. Pokud nemáte publikování metadat, zvažte, ponechejte vypnutý. Všimněte si, že stále mohou generovat kód pro metadata a klienta přímo z vaší služby sestavení s využitím [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí Svcutil.exe pro export metadat, najdete v tématu [postupy: použití Svcutil.exe pro Export metadat z zkompilovat kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nepublikujte metadata ve výchozím nastavení. Metadata pro publikování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby je potřeba explicitně povolit publikování metadat přidáním koncové body metadat do služby (najdete v části [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)). Opouštění publikování metadat zakázána snižuje prostor pro útoky u služby a snižuje riziko zpřístupnění neúmyslnému informací. Ne všechny služby musíte publikovat metadat. Pokud nemáte publikování metadat, zvažte, ponechejte vypnutý. Všimněte si, že stále mohou generovat kód pro metadata a klienta přímo z vaší služby sestavení s využitím [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Další informace o používání Svcutil.exe pro export metadat najdete v tématu [postupy: použití Svcutil.exe pro Export metadat z zkompilovat kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md).  
   
 ## <a name="publishing-metadata-using-a-secure-binding"></a>Publikování metadat pomocí zabezpečené vazby  
  Výchozí metadat vazby, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje zabezpečení a umožňují anonymní přístup k metadatům. Metadata služby, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] publikuje služby obsahuje podrobný popis týkající se služby a mohou už úmyslně nebo náhodně obsahovat citlivé informace. Metadata služby může například obsahovat informace o operacích infrastruktury, který není určen pro veřejně všesměrového vysílání. Metadata služby ochrany před neoprávněným přístupem, můžete vytvořit vazbu zabezpečení pro svůj koncový bod metadat. Koncové body metadat reagovat na požadavky HTTP/GET, které vám pomůže zabezpečit metadata vrstvy SSL (Secure Sockets). Další informace najdete v tématu [postupy: zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  

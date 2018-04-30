@@ -27,20 +27,20 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 134efba11742ab9cc8da2dfab77c233b52f1bcf1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 51b940d4a2463be7aaea9d0ff8e48e2b9f47363a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
-<a name="introduction"></a> Při vývoji [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] samostatné a webové aplikace, musíte zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spuštění samostatné aplikace s neomezená oprávnění ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sadě oprávnění), jestli nasadit pomocí Instalační služby systému Windows (.msi), XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce není podporováno. Plné důvěryhodnosti hostitelskou aplikaci však můžete vytvořit s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [WPF doplňky přehled](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
+<a name="introduction"></a> Při vývoji samostatné Windows Presentation Foundation (WPF) a webové aplikace, musíte zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spuštění samostatné aplikace s neomezená oprávnění ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sadě oprávnění), jestli nasadit pomocí Instalační služby systému Windows (.msi), XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce není podporováno. Plné důvěryhodnosti hostitelskou aplikaci však můžete vytvořit s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [WPF doplňky přehled](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem hostuje [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] nebo Firefox, a může být buď [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] nebo přijít [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty, kde najdete další informace najdete v tématu [přehled aplikace prohlížeče XAML WPF](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem provést v rámci izolovaného prostoru zabezpečení částečné důvěryhodnosti, ve výchozím nastavení, která je omezená na výchozí [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **Internet** oprávnění sady zón. To efektivně izoluje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem z klientského počítače stejným způsobem, kterou byste očekávali typické webové aplikace k izolaci. XBAP můžete zvýšit oprávnění, až úplný vztah důvěryhodnosti, v závislosti na zóny zabezpečení adresu nasazení a konfigurace zabezpečení klienta. Další informace najdete v tématu [WPF částečné důvěryhodnosti zabezpečení](../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
- Toto téma popisuje model zabezpečení pro [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] samostatné a webové aplikace.  
+ Toto téma popisuje model zabezpečení pro samostatné Windows Presentation Foundation (WPF) a webové aplikace.  
   
  Toto téma obsahuje následující oddíly:  
   

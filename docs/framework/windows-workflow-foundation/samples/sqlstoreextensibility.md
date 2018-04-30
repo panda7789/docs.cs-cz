@@ -1,23 +1,24 @@
 ---
 title: SQLStoreExtensibility
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5da1b5a3-f144-41ba-b9c4-02818b28b15d
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f4d3776c4cc3fb61fc01b84ee90bb714e1acb4fa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 722c7cda49b2efc4c146970c69cc5e3c7bbad9b0
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="sqlstoreextensibility"></a>SQLStoreExtensibility
 Tento příklad znázorňuje použití a konfiguraci propagovaných vlastností v úložišti instance SQL pracovního postupu. Ukládání instance pracovního postupu SQL je na základě SQL implementace instance úložiště. Umožňuje instanci pro uložení stavu a načtení stavu do a z databáze systému SQL Server nebo SQL Server Express. Funkce rozšiřitelnost úložiště umožňuje uživateli definovat vlastnosti, které jsou uložené v úložišti instance. Tyto vlastnosti jsou zobrazeny v zobrazení propagovaných vlastnosti, která umožňuje uživatelům dotazu pro ně.  
@@ -36,7 +37,7 @@ Tento příklad znázorňuje použití a konfiguraci propagovaných vlastností 
   
  Ke zvýšení úrovně hodnota čítače jako vlastní vlastnost, musí být přijata následující kroky:  
   
-1.  Třída `CounterStatus` definuje rozšíření instance typu <xref:System.Activities.Persistence.PersistenceParticipant>, který je využíván jiným aktivity k poskytování proměnné stavu. `Count`je definován jako hodnotu pouze pro zápis. Instance pracovního postupu vycházejí trvalost bodu, uloží rozšíření instance `Count` vlastnost do kolekce dat trvalost.  
+1.  Třída `CounterStatus` definuje rozšíření instance typu <xref:System.Activities.Persistence.PersistenceParticipant>, který je využíván jiným aktivity k poskytování proměnné stavu. `Count` je definován jako hodnotu pouze pro zápis. Instance pracovního postupu vycházejí trvalost bodu, uloží rozšíření instance `Count` vlastnost do kolekce dat trvalost.  
   
 2.  Při vytváření úložiště instance, novou vlastnost `CountStatus`, je definována pomocí `store.Promote()` metoda.  
   
@@ -62,7 +63,7 @@ Tento příklad znázorňuje použití a konfiguraci propagovaných vlastností 
   
 ### <a name="to-verify-the-sample-is-working-correctly"></a>Ověření ukázku pracuje správně.  
   
-1.  Použít SQL Server Management Studio k zobrazení obsahu tabulky instance výběrem **databáze**, **InstanceStore**a potom  **System.ServiceModel.Activities.DurableInstancing.InstanceTable** v Průzkumníku objektů, klikněte pravým tlačítkem na **System.ServiceModel.Activities.DurableInstancing.InstanceTable** a vyberte  **Vybrat prvních 1 000 řádků**. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SQL Server Management Studio, najdete v části [představení SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645)  
+1.  Použít SQL Server Management Studio k zobrazení obsahu tabulky instance výběrem **databáze**, **InstanceStore**a potom  **System.ServiceModel.Activities.DurableInstancing.InstanceTable** v Průzkumníku objektů, klikněte pravým tlačítkem na **System.ServiceModel.Activities.DurableInstancing.InstanceTable** a vyberte  **Vybrat prvních 1 000 řádků**. Další informace o SQL Server Management Studio najdete v tématu [představení SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645)  
   
 2.  Sledujte instancí pracovních postupů, které jsou uvedené.  
   

@@ -23,11 +23,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f232cb1cf98fe01aa0542c2a4b459fb7fc7b5089
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: fd1679bb50a0dc6ee4997f7ae427c1cbdc0948ef
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
 Jak vyvíjet aplikace, budete také muset změnit data měnící použití služby. Toto téma vysvětluje, jak kontrakty dat verze. Toto téma popisuje mechanismy Správa verzí kontraktů dat. Úplný přehled a správa verzí závazné pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
@@ -125,7 +125,7 @@ Jak vyvíjet aplikace, budete také muset změnit data měnící použití služ
  Přidání nebo odebrání člena výčtu je narušující změně. Změna názvu člena výčtu je porušením, pokud jeho název smlouvy je udržováno stejné jako v předchozí verzi aplikace pomocí `EnumMemberAtttribute` atribut. Další informace najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
   
 ## <a name="collections"></a>Kolekce  
- Většinu změn kolekce jsou pevných protože většina typy kolekcí se zaměňovat navzájem v datovém modelu kontrakt. Ale provedení noncustomized kolekce přizpůsobit nebo naopak je narušující změně. Změna nastavení přizpůsobení kolekce je taky narušující změně; To znamená změna jeho názvu kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu název elementu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kolekce přizpůsobení, najdete v části [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
+ Většinu změn kolekce jsou pevných protože většina typy kolekcí se zaměňovat navzájem v datovém modelu kontrakt. Ale provedení noncustomized kolekce přizpůsobit nebo naopak je narušující změně. Změna nastavení přizpůsobení kolekce je taky narušující změně; To znamená změna jeho názvu kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu název elementu. Další informace o přizpůsobení kolekce najdete v tématu [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
 Změna kontrakt dat obsahu kolekce (například změna ze seznamu celých čísel na seznam řetězců) je samozřejmě narušující změně.  
   
 ## <a name="see-also"></a>Viz také  

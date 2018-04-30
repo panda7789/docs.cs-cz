@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e6efcb5097729ac5f096e78883e9bc49598c9a37
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 39c033d45488b827a4aee7439904db8094795db4
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování systému Windows jako vhodný mechanismus zabezpečení, rozhraní pro zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Při výskytu chyb zabezpečení ve vrstvě rozhraní SSPI, jsou prezentované podle [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Toto téma obsahuje framework a sadu otázky, které pomohou diagnostikovat chyby.  
@@ -75,7 +75,7 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
 ### <a name="kerberos-protocol"></a>Protokol Kerberos  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Hlavní název služby/UPN problémy s protokolem Kerberos  
- Pokud používáte ověřování systému Windows a protokol je použít nebo vyjednaném rozhraní SSPI protokolu Kerberos, musí obsahovat adresu URL koncového bodu klienta používá plně kvalifikovaný název domény hostitele služby uvnitř adresu URL služby. Předpokladem je, že účet, pod kterým běží služba má přístup k klíč služby (SPN) pro hlavní název počítače (výchozí), který se vytvoří, když je počítač přidán do domény Active Directory, která se nejčastěji provádí spuštěním služby v rámci Účet služby sítě. Pokud služba nemá přístup ke klíči počítače hlavní název služby, je třeba zadat správný hlavní název služby nebo uživatele hlavní název (UPN) účtu, pod kterým je služba spuštěná v identitu koncového bodu klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funguje s SPN a UPN, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pokud používáte ověřování systému Windows a protokol je použít nebo vyjednaném rozhraní SSPI protokolu Kerberos, musí obsahovat adresu URL koncového bodu klienta používá plně kvalifikovaný název domény hostitele služby uvnitř adresu URL služby. Předpokladem je, že účet, pod kterým běží služba má přístup k klíč služby (SPN) pro hlavní název počítače (výchozí), který se vytvoří, když je počítač přidán do domény Active Directory, která se nejčastěji provádí spuštěním služby v rámci Účet služby sítě. Pokud služba nemá přístup ke klíči počítače hlavní název služby, je třeba zadat správný hlavní název služby nebo uživatele hlavní název (UPN) účtu, pod kterým je služba spuštěná v identitu koncového bodu klienta. Další informace o tom, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funguje s SPN a UPN, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
  Ve službě Vyrovnávání zatížení případech, například webových farem nebo webové zahrada běžnou praxí je definovat jedinečný účet pro každou aplikaci, k tomuto účtu přiřadit název SPN a ujistěte se, že všechny aplikace služby spuštěny v daném účtu.  
   
@@ -134,7 +134,7 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
  [!code-csharp[C_DebuggingWindowsAuth#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#6)]
  [!code-vb[C_DebuggingWindowsAuth#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#6)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zosobnění, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Další informace o zosobnění najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
  Můžete taky klient používá jako služby systému Windows, pomocí předdefinovaného účtu SYSTEM.  
   

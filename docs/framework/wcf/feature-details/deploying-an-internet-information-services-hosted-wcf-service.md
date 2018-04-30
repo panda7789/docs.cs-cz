@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ca37e8b3f59875ed912c02d0a8237a040bf79518
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 49ee6091b18dfcf2a5b46c173490b317fe770554
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 Vývoj a nasazení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, který je hostován v Internetové informační služby (IIS) se skládá z následujících úloh:  
@@ -38,7 +38,7 @@ Vývoj a nasazení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služ
  Podrobný návod hostované službou IIS vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] najdete v tématu [postupy: hostování služby WCF ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
   
 ## <a name="ensure-that-iis-aspnet-and-wcf-are-correctly-installed-and-registered"></a>Zajistěte, aby služba IIS, ASP.NET a WCF správně nainstalovaný a registrovaný  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], Musí být nainstalována služba IIS a ASP.NET hostované službou IIS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, aby správně fungoval. Postupy pro instalaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (jako součást [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]), ASP.NET a IIS lišit v závislosti na verzi operačního systému používá. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] instalace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], najdete v části [instalačního programu webové rozhraní Microsoft .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=201185). Pokyny k instalaci služby IIS najdete na [instalace služby IIS](http://go.microsoft.com/fwlink/?LinkId=201188).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], Musí být nainstalována služba IIS a ASP.NET hostované službou IIS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, aby správně fungoval. Postupy pro instalaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (jako součást [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]), ASP.NET a IIS lišit v závislosti na verzi operačního systému používá. Další informace o instalaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], najdete v části [instalačního programu webové rozhraní Microsoft .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=201185). Pokyny k instalaci služby IIS najdete na [instalace služby IIS](http://go.microsoft.com/fwlink/?LinkId=201188).  
   
  Proces instalace [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] zaregistruje automaticky [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službou IIS, pokud služba IIS již na tomto počítači. Pokud po instalaci služby IIS [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], další krok je nutný k registraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službou IIS a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]. Můžete to udělat takto, v závislosti na operačním systému:  
   
@@ -51,9 +51,9 @@ Vývoj a nasazení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služ
  Nakonec je třeba ověřit, že technologie ASP.NET je nakonfigurovaný na použití rozhraní .NET Framework verze 4. To uděláte tak, že spustíte nástroj ASPNET_Regiis s – i možnost. Další informace najdete v tématu [ASP.NET IIS Registration Tool](http://go.microsoft.com/fwlink/?LinkId=201186)  
   
 ## <a name="create-a-new-iis-application-or-reuse-an-existing-aspnet-application"></a>Vytvoření nové aplikace služby IIS nebo znovu použijte stávající aplikaci ASP.NET  
- Hostované službou IIS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se musí nacházet v rámci aplikace služby IIS. Můžete vytvořit novou aplikaci služby IIS na hostitele [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] výhradně služeb. Alternativně můžete nasadit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby do existující aplikace, která již hostuje [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] obsahu (například stránky .aspx a webových služeb ASP.NET [ASMX]). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tyto možnosti najdete v článku "hostitelský WCF-souběžného s technologií ASP.NET" a "Hostování WCF Services v ASP.NET režim kompatibility" části [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).  
+ Hostované službou IIS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se musí nacházet v rámci aplikace služby IIS. Můžete vytvořit novou aplikaci služby IIS na hostitele [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] výhradně služeb. Alternativně můžete nasadit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby do existující aplikace, která již hostuje [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] obsahu (například stránky .aspx a webových služeb ASP.NET [ASMX]). Další informace o těchto možnostech najdete v článku "hostitelský WCF-souběžného s technologií ASP.NET" a "Hostitelských služeb WCF v režimu kompatibility ASP.NET" v částech [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).  
   
- Všimněte si, že [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a novějších verzích pravidelně restartovala izolované objektově orientované programování aplikace. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71,582 minut. Tento restart můžete zakázat. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tato vlastnost, najdete v článku [PeriodicRestartTime](http://go.microsoft.com/fwlink/?LinkId=109968).  
+ Všimněte si, že [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a novějších verzích pravidelně restartovala izolované objektově orientované programování aplikace. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71,582 minut. Tento restart můžete zakázat. Další informace o této vlastnosti najdete v tématu [PeriodicRestartTime](http://go.microsoft.com/fwlink/?LinkId=109968).  
   
 ## <a name="create-an-svc-file-for-the-wcf-service"></a>Vytvořte soubor .svc služby WCF  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované ve službě IIS, jsou reprezentovány jako speciální soubory obsahu (souborů .svc) uvnitř aplikace služby IIS. Tento model je podobná způsob, jakým jsou v rámci aplikace IIS jako souborů .asmx reprezentované ASMX stránky. Obsahuje soubor .svc [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]– direktivy konkrétní zpracování ([@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)), který umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hostování infrastruktury aktivovat hostované služby v reakci na příchozí zprávy. Nejběžnější syntaxe pro soubor .svc je v následujícím příkazu.  
@@ -70,7 +70,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
   
  Můžete také provést další konfiguraci hostování, jako je například vytváření seznam základní adresy pro službu. Můžete také použít vlastní <xref:System.ServiceModel.Activation.ServiceHostFactory> rozšířit směrnice pro použití s vlastní řešení hostování. Aplikace služby IIS, které jsou hostiteli [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nejsou zodpovědní za správu vytváření a dobu života <xref:System.ServiceModel.ServiceHost> instance. Spravovaný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hosting infrastruktury vytvoří nezbytné <xref:System.ServiceModel.ServiceHost> instance dynamicky při prvním požadavku je pro soubor .svc. Instance není vydala, dokud buď je uzavřený explicitně pomocí kódu nebo pokud je aplikace recykluje.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Syntaxe souborů .svc, najdete v části [ @ServiceHost ](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md).  
+ Další informace o syntaxi souborů .svc najdete v tématu [ @ServiceHost ](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md).  
   
 ## <a name="deploy-the-service-implementation-to-the-iis-application"></a>Nasazení implementace služby do aplikace služby IIS  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované ve službě IIS použít stejný model dynamická kompilace jako [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]. Jenom jako s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], můžete nasadit kód implementace pro hostované službou IIS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb několika způsoby v různých umístěních, následujícím způsobem:  
@@ -81,7 +81,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
   
 -   Jak přímo v souboru .svc umístit zrušení zkompilovaný kód. Implementace kód může být také součástí textu v souboru .svc služby po @ServiceHost – direktiva. Všechny změny vloženého kódu způsobit, že aplikace recyklované a překompilovat, při příští žádosti o přijetí.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] kompilace modelu, najdete v části [kompilace ASP.NET: Přehled](http://go.microsoft.com/fwlink/?LinkId=94773).  
+ Další informace o [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] kompilace modelu, najdete v části [kompilace ASP.NET: Přehled](http://go.microsoft.com/fwlink/?LinkId=94773).  
   
 ## <a name="configure-the-wcf-service"></a>Konfigurace služby WCF  
  Hostované službou IIS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby ukládat své konfigurace v souboru Web.config aplikace. Hostované službou IIS služby používat stejnou syntaxi jako a konfigurace – elementy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované mimo služby IIS. Nicméně jsou jedinečné pro hostitelské prostředí služby IIS následující omezení:  

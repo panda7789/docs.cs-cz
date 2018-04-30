@@ -1,27 +1,29 @@
 ---
-title: "Hostování v aplikaci služby pro Windows"
-ms.custom: 
+title: Hostování v aplikaci služby pro Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d1a39162097c21f20c0dd04f3911442602871436
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c1f0d2336c2682bd525a66c6e5b12ce2d17ad219
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
-Služby systému Windows (dříve označované jako služby systému Windows NT) zadejte procesu modelu zvlášť vhodné pro aplikace, které musí za provozu v spustitelný soubor dlouho běžící a nezobrazovat jakoukoli formu uživatelské rozhraní. Doba platnosti procesu systému Windows služby aplikaci spravuje správce řízení služeb (SCM), která umožňuje spustit, zastavit a pozastavit aplikace služby systému Windows. Můžete nakonfigurovat službu procesů systému Windows spustit automaticky při spuštění počítače, takže je vhodné hostitelské prostředí pro aplikace "always on". [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Aplikace služby systému Windows, najdete v části [aplikace služby systému Windows](http://go.microsoft.com/fwlink/?LinkId=89450).  
+Služby systému Windows (dříve označované jako služby systému Windows NT) zadejte procesu modelu zvlášť vhodné pro aplikace, které musí za provozu v spustitelný soubor dlouho běžící a nezobrazovat jakoukoli formu uživatelské rozhraní. Doba platnosti procesu systému Windows služby aplikaci spravuje správce řízení služeb (SCM), která umožňuje spustit, zastavit a pozastavit aplikace služby systému Windows. Můžete nakonfigurovat službu procesů systému Windows spustit automaticky při spuštění počítače, takže je vhodné hostitelské prostředí pro aplikace "always on". Další informace o aplikace služby systému Windows najdete v tématu [aplikace služby systému Windows](http://go.microsoft.com/fwlink/?LinkId=89450).  
   
  Aplikace, které jsou hostiteli dlouho běžící [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby sdílejí mnoho vlastností službou systému Windows. Konkrétně [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby jsou dlouho běžící spustitelné soubory serveru, které není komunikovat přímo s uživatelem a proto neimplementují jakoukoli formu uživatelské rozhraní. Jako takový, který je hostitelem [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v rámci aplikace služby systému Windows je jednou z možností pro vytvoření robustní, dlouhotrvajících, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace.  
   

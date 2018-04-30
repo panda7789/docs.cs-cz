@@ -1,28 +1,28 @@
 ---
-title: "Konfigurace vazeb pro služby Windows Communication Foundation"
-ms.custom: 
+title: Konfigurace vazeb pro služby Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-caps.latest.revision: 
+caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b11810e0a39c5b6091a63ef33e5abfccb95b7555
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f98d7c7b7d816687487a652f0527886300f0ee86
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Konfigurace vazeb pro služby Windows Communication Foundation
 Při vytváření aplikace, budete chtít často odložení rozhodnutí, která správci po nasazení aplikace. Například je často žádný způsob, jak předem zjistit, co služba adresu nebo identifikátor URI (Uniform Resource), bude. Místo pevně kódováno adresu, je vhodnější umožňují správcům udělat po vytvoření služby. Tato možnost se provádí prostřednictvím konfigurace.  
@@ -47,13 +47,13 @@ Při vytváření aplikace, budete chtít často odložení rozhodnutí, která 
 ```  
   
 ### <a name="servicemodel-elements"></a>Elementy ServiceModel  
- Můžete použít v části ohraničené `system.ServiceModel` elementu, který chcete nakonfigurovat jeden nebo více koncových bodů, jakož i nastavení služby typu služby. Každý koncový body, můžete pak nakonfigurovat s adresu, kontrakt a vazbu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Koncové body, najdete v části [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). Pokud nejsou zadány žádné koncové body, modul runtime přidá výchozí koncové body. [!INCLUDE[crabout](../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Můžete použít v části ohraničené `system.ServiceModel` elementu, který chcete nakonfigurovat jeden nebo více koncových bodů, jakož i nastavení služby typu služby. Každý koncový body, můžete pak nakonfigurovat s adresu, kontrakt a vazbu. Další informace o koncových bodech najdete v tématu [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). Pokud nejsou zadány žádné koncové body, modul runtime přidá výchozí koncové body. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
  Vazba určuje přenosy (HTTP, TCP, kanály, služby Řízení front zpráv) a protokoly (zabezpečení, spolehlivost, transakce toky) a se skládá z elementů, z nichž každý určuje aspekt jak koncový bod komunikuje s ostatními vazby.  
   
  Například zadání [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element označuje na používání protokolu HTTP jako přenosu pro koncový bod. To se používá k přenosu do koncového bodu v době běhu, když je otevřen služby pomocí tento koncový bod.  
   
- Existují dva typy vazeb: předdefinované a vlastní. Předdefinované vazby obsahovat užitečné kombinace elementů, které se používají v běžné scénáře. Pro seznam předdefinovaných vazby typy, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Pokud žádná vazba předdefinované kolekce má správnou kombinaci funkcí, které potřebuje aplikace služby, můžete vytvořit vlastní vazby splnění aplikace. [!INCLUDE[crabout](../../../includes/crabout-md.md)]vlastní vazby, najdete v části [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+ Existují dva typy vazeb: předdefinované a vlastní. Předdefinované vazby obsahovat užitečné kombinace elementů, které se používají v běžné scénáře. Pro seznam předdefinovaných vazby typy, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Pokud žádná vazba předdefinované kolekce má správnou kombinaci funkcí, které potřebuje aplikace služby, můžete vytvořit vlastní vazby splnění aplikace. Další informace o vlastních vazeb najdete v tématu [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
  Následující čtyři příklady ilustrují nejběžnější konfigurace vazby používá pro nastavení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
   
@@ -71,7 +71,7 @@ Při vytváření aplikace, budete chtít často odložení rozhodnutí, která 
 </service>  
 ```  
   
- V tomto příkladu `name` atribut určuje, jaký typ služby, konfigurace je pro. Při vytváření služby v kódu pomocí `HelloWorld` kontrakt, je inicializován s koncové body definované v příklad konfigurace. Pokud sestavení implementuje pouze jeden kontrakt služby, `name` atribut můžete tento parametr vynechán, protože služba používá k dispozici pouze typu. Atribut přebírá řetězec, který musí být ve formátu`Namespace.Class, AssemblyName, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`  
+ V tomto příkladu `name` atribut určuje, jaký typ služby, konfigurace je pro. Při vytváření služby v kódu pomocí `HelloWorld` kontrakt, je inicializován s koncové body definované v příklad konfigurace. Pokud sestavení implementuje pouze jeden kontrakt služby, `name` atribut můžete tento parametr vynechán, protože služba používá k dispozici pouze typu. Atribut přebírá řetězec, který musí být ve formátu `Namespace.Class, AssemblyName, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`  
   
  `address` Atribut určuje identifikátor URI, který ostatní koncové body, používat pro komunikaci ve službě. Identifikátor URI může být absolutní nebo relativní cestu. Pokud je zadaný relativní adresa, hostitel se očekává poskytování základní adresu, která je vhodná pro používané vazba schéma přenosu. Pokud adresa není nakonfigurována, základní adresu se považuje za adresu pro tohoto koncového bodu.  
   

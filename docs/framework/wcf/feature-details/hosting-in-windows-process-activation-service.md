@@ -1,33 +1,33 @@
 ---
-title: "Hostování v Aktivační službě procesů systému Windows"
-ms.custom: 
+title: Hostování v Aktivační službě procesů systému Windows
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 40122670c84f87590a31b79f39695e9626ea9883
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a31d66cd4b4430ec838b34fcd77d712698f9e1dc
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace, které hostují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby využívají protokoly HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která běží ve WAS hostování prostředí, najdete v části [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
+ Další informace o vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která běží ve WAS hostování prostředí, najdete v části [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
   
  Model procesu WAS poskytuje několik funkcí, které umožňují aplikacím pro hostování způsobem, který je robustnější, lepší správu bitlockeru a efektivně používající prostředky:  
   
@@ -39,7 +39,7 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu ži
   
 -   Umožňuje aplikacím využívat výhod procesní model IIS bez nutnosti nasazení otisk úplné instalace služby IIS.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Funkce WAS najdete [IIS 7.0 Beta: správu webu služby IIS 7.0](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
+ Další informace o funkcích WAS najdete v tématu [IIS 7.0 Beta: správu webu služby IIS 7.0](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
   
  [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496) pracuje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] a proces aktivace služby WAS (Windows) k poskytování hostování prostředí služeb NET4 WCF a WF bohaté aplikace. Tyto výhody patří správa životního cyklu procesu, recyklace procesů, sdílené hostování, rychlou ochranu před chybami, osamocení proces, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](http://go.microsoft.com/fwlink/?LinkId=196495).  
   

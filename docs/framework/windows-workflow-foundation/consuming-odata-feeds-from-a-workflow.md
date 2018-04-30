@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 09eb22c0c4bfaf549bd18cccae0c84957e730aa6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ce7d7812eadea2d9472a62bd007d2eca6ae07891
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využívání OData informační kanály z pracovního postupu
 Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] , umožňuje vytvářet služby, které používají Open Data Protocol (OData) vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantiky representational stavu transfer (REST). OData zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Všechny aplikace mohou komunikovat s služby OData na základě dat Pokud můžete odeslat požadavek HTTP a zpracování datového kanálu OData, vrátí datové služby. Kromě toho služby WCF Data Services zahrnuje klientské knihovny, které poskytují bohatší programovací prostředí spotřebuje informační kanály OData z [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace. Toto téma poskytuje přehled o využívání OData kanálu v pracovním postupu s i bez použití knihovny klienta.  
@@ -78,7 +78,7 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  V následujícím příkladu `ListCustomers` aktivity je definována. Tato aktivita dotazuje službu ukázka Northwind data a vrátí `List<Customer>` obsahující všechny zákazníky v databázi Northwind. Asynchronní pracovní provádí `GetCustomers` metoda. Tato metoda dotazuje službu pro všechny zákazníky a pak zkopíruje je do `List<Customer>`. Pak zkontroluje, pokud jsou výsledky stránkovaného fondu. Pokud ano, dotazuje službu pro další stránky výsledků, se přidají do seznamu a bude pokračovat, dokud všechny zákaznická data načíst.  
   
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)] stránkování v datových služeb WCF, najdete v článku. [Postupy: načtení stránkovaného výsledky (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193452).  
+>  Další informace o stránkování v datových služeb WCF najdete v tématu. [Postupy: načtení stránkovaného výsledky (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193452).  
   
  Jakmile jsou přidány všechny zákazníky, je vrácena v seznamu. `GetCustomers` Metoda je zadán v rámci aktivity <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> přepsat. Vzhledem k tomu, že metoda má návratovou hodnotu, `Func<string, List<Customer>>` se vytvoří určíte metodu.  
   
@@ -143,4 +143,4 @@ Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../include
  **\<odkaz relativní = "edit" title = "Order" href="Orders(10643)" / >**  
  **\<odkaz relativní = "http://schemas.microsoft.com/ado/2007/08/dataservices/related/Customer"**  
  **typ = "application/atom + xml; zadejte = entry" title = "Zákazník" href = "Objednávky (10643) nebo zákazníka" / >**  
-**...**  Tento příklad obsahuje jednu metodu, pomocí aplikace autoři pracovního postupu můžete využívat nezpracovaná data vrácená z služby OData. [!INCLUDE[crabout](../../../includes/crabout-md.md)] přístup ke službám WCF Data pomocí identifikátory URI, najdete v části [přístup k prostředkům služby dat (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193397) a [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).
+**...**  Tento příklad obsahuje jednu metodu, pomocí aplikace autoři pracovního postupu můžete využívat nezpracovaná data vrácená z služby OData. Další informace o přístup ke službám WCF Data pomocí identifikátory URI najdete v tématu [přístup k prostředkům služby dat (služby WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193397) a [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).

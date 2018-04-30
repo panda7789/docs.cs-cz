@@ -19,15 +19,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 00161608997abc14202775c06ecfb283d8d67013
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 22d0b54fa6e75e47fa62b6323c64ec86ddd07008
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="application-development"></a>Vývoj aplikací
-<a name="introduction"></a>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] je rozhraní prezentace, které slouží k vytvoření následujících typů aplikací:  
+<a name="introduction"></a> Windows Presentation Foundation (WPF) je rozhraní prezentace, které slouží k vytvoření následujících typů aplikací:  
   
 -   Samostatné aplikace (tradiční styl [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace vytvořené jako spustitelný soubor sestavení, které jsou nainstalovány na a spustit z klientského počítače).  
   

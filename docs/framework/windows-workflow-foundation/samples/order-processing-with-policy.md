@@ -1,23 +1,24 @@
 ---
-title: "Pořadí zpracování pomocí zásad"
-ms.custom: 
+title: Pořadí zpracování pomocí zásad
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 66833724-dc36-4fad-86b0-59ffeaa3ba6a
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d86c7890af651ba9f0ee0ec2a1763f9c579bac89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f99db44a636a5255990f734d34266b3b2e4a678b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="order-processing-with-policy"></a>Pořadí zpracování pomocí zásad
 Příklad pořadí zpracování zásad ukazuje některé klíčové funkce byla zavedená v [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF). Následující funkce jsou nové pro modul pravidla pracovního postupu:  
@@ -29,12 +30,12 @@ Příklad pořadí zpracování zásad ukazuje některé klíčové funkce byla 
 -   Podpora pro rozšíření metod, jak se uživateli při volání metody rozšíření z pravidel WF kompatibilní s kódování styly C#.  
   
 > [!NOTE]
->  Tato ukázka vyžaduje, aby [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] je nainstalovaná pro sestavení a spuštění. [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]je potřeba otevřít soubory projektu a řešení.  
+>  Tato ukázka vyžaduje, aby [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] je nainstalovaná pro sestavení a spuštění. [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] je potřeba otevřít soubory projektu a řešení.  
   
  Ukázka ukazuje `OrderProcessingPolicy` projektu v pořadí zákazníka, které se skládá z číslovaný seznam dostupné položky a PSČ, je zadána. Pořadí je úspěšně zpracovat, pokud jsou obě položky správné; jinak zásady vytvoří objekty chyby, využívá přetížené `+` operátor a metoda předdefinované rozšíření informovat uživatele chyby.  
   
 > [!NOTE]
->  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]rozšiřující metody, najdete v části [C# verze 3.0 specifikace](http://go.microsoft.com/fwlink/?LinkId=95402).  
+>  Další informace o metodách rozšíření najdete v tématu [C# verze 3.0 specifikace](http://go.microsoft.com/fwlink/?LinkId=95402).  
   
  Ukázka se skládá z následujících projektech:  
   

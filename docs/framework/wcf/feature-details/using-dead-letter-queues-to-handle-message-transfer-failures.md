@@ -1,27 +1,29 @@
 ---
-title: "Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv"
-ms.custom: 
+title: Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f10b3895fcdea0c3ab80617acd9874953b7665e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b51999b1984dedf1baf23e41c1592382849c431b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
 Zprávy ve frontě může selhat doručení. Tyto zprávy se nezdařila se zaznamenávají do fronty nedoručených zpráv. Selhání doručení může být způsobeno z důvodů, například selhání sítě, odstraněné fronty, plné frontě, selhání ověřování nebo selhání při doručení na času.  
@@ -54,7 +56,7 @@ Zprávy ve frontě může selhat doručení. Tyto zprávy se nezdařila se zazna
   
 -   Ke čtení zpráv z fronty nedoručených zpráv vlastní, musí být identifikátor URI formuláře: net.msmq://localhost/private/\<*Vlastní-DLQ se name*> kde *Vlastní-DLQ se name* je název vlastní frontu nedoručených zpráv.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Adresa front najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
+ Další informace o tom, jak adresu front najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Zásobníku na odpovídá adresy příjemce, které služba naslouchá na s adresou na zprávu. Pokud se adresy shodují, je zpráva odeslána; Pokud ne, není-li odeslat zprávu. To může způsobit problémy při čtení z fronty nedoručených zpráv, protože zprávy do fronty nedoručených zpráv jsou obvykle adresovaných službu a ne službu frontu nedoručených zpráv. Proto služba čtení z fronty nedoručených zpráv musí nainstalovat filtr adres `ServiceBehavior` , dá pokyn zásobníku tak, aby odpovídaly všechny zprávy ve frontě nezávisle na adresát. Konkrétně je nutné přidat `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr ke službě čtení zpráv z fronty nedoručených zpráv.  
   

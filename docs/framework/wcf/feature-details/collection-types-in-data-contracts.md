@@ -23,11 +23,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 528c1661b99ff5f50d42bb7a42371c302e335c90
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c771d78c5e78feabcfe883934ed7ea3589c938d2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], jsou seznamy může být reprezentován pomocí pole nebo celou řadu dalších typů (obecný seznam, obecného <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro danou zákazníka. Tato kolekce se nazývají *seznam kolekcí*, bez ohledu na to jejich skutečným typem.  
@@ -42,7 +42,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
  Typy obsažené v kolekcích musí být typy kontraktů dat nebo jinak být serializovatelný. Další informace najdete v tématu [typy nepodporuje serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Co je a co se nepovažuje za platnou kolekci, stejně jako o tom, jak se serializují kolekcí, přečtěte si informace o serializaci kolekce v části "pravidla shromažďování Advanced" v tomto tématu.  
+ Další informace o novinky a co se nepovažuje za platnou kolekci, a také o tom, jak se serializují kolekcí najdete v tématu informace o serializaci kolekce v části "pravidla shromažďování Advanced" v tomto tématu.  
   
 ## <a name="interchangeable-collections"></a>Zaměňovat kolekce  
  Všechny kolekce seznamu stejného typu jsou považovány za stejná data kontrakt (Pokud se jsou přizpůsobit pomocí <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atributu, jak je popsáno dále v tomto tématu). Proto například následující kontrakty dat jsou ekvivalentní.  
@@ -91,7 +91,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
 ## <a name="customizing-collection-types"></a>Přizpůsobení typy kolekcí  
  Typy kolekcí lze přizpůsobit pomocí <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut, který se dá použít několika způsoby.  
   
- Poznámka: Tento přizpůsobení kolekci typů ohrožení kolekce zaměnitelnost, tak obecně se doporučuje Vyhněte se použití tohoto atributu, kdykoli je to možné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tento problém, naleznete v části "pravidla shromažďování Advanced" dál v tomto tématu.  
+ Poznámka: Tento přizpůsobení kolekci typů ohrožení kolekce zaměnitelnost, tak obecně se doporučuje Vyhněte se použití tohoto atributu, kdykoli je to možné. Další informace o tomto problému najdete v části "pravidla shromažďování Advanced" dál v tomto tématu.  
   
 ### <a name="collection-data-contract-naming"></a>Kontrakt dat kolekce pojmenování  
  Pravidla pro pojmenovávání typy kolekcí jsou podobná těm pro pojmenování regulární datové typy kontrakt, jak je popsáno v [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md), i když existuje několik důležitých rozdílů:  
@@ -203,7 +203,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
 </CountriesOrRegionsWithCapitals>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kolekce slovníku, najdete v části "pravidla shromažďování Advanced" dál v tomto tématu.  
+ Další informace o kolekcích slovník najdete v části "pravidla shromažďování Advanced" dál v tomto tématu.  
   
 ## <a name="collections-and-known-types"></a>Kolekce a známé typy  
  Není nutné přidat typy kolekcí do známé typy při použití polymorphically místo ostatní kolekce nebo rozhraní pro kolekce. Například, pokud je deklarovat členem datového typu <xref:System.Collections.IEnumerable> a použít ho k odeslání instanci <xref:System.Collections.ArrayList>, není potřeba přidat <xref:System.Collections.ArrayList> na známé typy.  
@@ -318,7 +318,7 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 -   Kombinování typy kolekcí (s kolekcí kolekcí) je povolen. Vícenásobná pole jsou považovány za kolekce kolekcí. Multidimenzionální pole nejsou podporována.  
   
--   Pole bajtů a pole <xref:System.Xml.XmlNode> jsou pole speciální typy, které jsou zpracovány jako primitiva, není kolekcí. Serializace pole bajtů výsledky v jednom elementu XML, který obsahuje bloku dat kódováním Base64, místo samostatných element pro každou bajtů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] jak pole <xref:System.Xml.XmlNode> je zpracováván, najdete v části [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md). Samozřejmě, tyto speciální typy můžete sami účastnit kolekcí: pole pole bajtů za následek více elementů XML, pomocí každý obsahující bloků dat s kódováním Base64.  
+-   Pole bajtů a pole <xref:System.Xml.XmlNode> jsou pole speciální typy, které jsou zpracovány jako primitiva, není kolekcí. Serializace pole bajtů výsledky v jednom elementu XML, který obsahuje bloku dat kódováním Base64, místo samostatných element pro každou bajtů. Další informace o tom, pole <xref:System.Xml.XmlNode> je zpracováván, najdete v části [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md). Samozřejmě, tyto speciální typy můžete sami účastnit kolekcí: pole pole bajtů za následek více elementů XML, pomocí každý obsahující bloků dat s kódováním Base64.  
   
 -   Pokud <xref:System.Runtime.Serialization.DataContractAttribute> je použit atribut typu kolekce, typ je považován za regulární datového typu kontraktu, ne jako kolekce.  
   
@@ -361,7 +361,7 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 -   Výchozí název pro seznam kolekce datové kontrakty, není-li přepsat pomocí názvu, je řetězec, který kombinaci "ArrayOf" s název kontraktu dat typu obsažené v kolekci. Například název kontraktu dat obecné seznamu celá je "ArrayOfint". Mějte na paměti, že název kontraktu dat `Object` je "anyType", aby jako název kontraktu dat neobecnou seznamů <xref:System.Collections.ArrayList> je "ArrayOfanyType".  
   
- Výchozí název pro slovník dat kolekce měnící, není-li přepsat pomocí `Name`, je "ArrayOfKeyValueOf" v kombinaci s názvem kontraktu dat typ klíče, za nímž následuje název kontraktu dat hodnota typu řetězec. Například data "ArrayOfKeyValueOfstringint" je název kontraktu pro obecné slovník řetězec a celé číslo. Navíc pokud klíč nebo typy hodnot nejsou primitivní typy, připojí se k názvu hash obor názvů oborů názvů kontraktu dat typů klíč a hodnotu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] obor názvů hodnoty hash, najdete v části [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md).  
+ Výchozí název pro slovník dat kolekce měnící, není-li přepsat pomocí `Name`, je "ArrayOfKeyValueOf" v kombinaci s názvem kontraktu dat typ klíče, za nímž následuje název kontraktu dat hodnota typu řetězec. Například data "ArrayOfKeyValueOfstringint" je název kontraktu pro obecné slovník řetězec a celé číslo. Navíc pokud klíč nebo typy hodnot nejsou primitivní typy, připojí se k názvu hash obor názvů oborů názvů kontraktu dat typů klíč a hodnotu. Další informace o hodnotách hash obor názvů najdete v tématu [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md).  
   
  Každý kontrakt dat kolekce slovníku má doprovodné kontraktu dat, která představuje jednu položku ve slovníku. Jeho název je stejné jako slovník dat kontrakt, s výjimkou předponu "ArrayOf" a její obor názvů je stejné jako pro kontrakt dat slovníku. Například pro kontrakt dat slovník "ArrayOfKeyValueOfstringint", kontrakt dat "KeyValueofstringint" představuje jednu položku ve slovníku. Název tohoto kontraktu dat lze přizpůsobit pomocí `ItemName` vlastnost, jak je popsáno v následující části.  
   

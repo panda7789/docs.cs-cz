@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7b051cdeebf83b34b6e503d8d9cb54a38a46a2a6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 989ae3d70bce2a4cb374904ee6b2f30f770ccf8a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="choosing-a-transport"></a>Volba přenosu
 Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jsou součástí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]: HTTP, TCP a pojmenované kanály. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také zahrnuje přenosu služby Řízení front zpráv (MSMQ), ale tento dokument nepopisuje služby Řízení front zpráv.  
@@ -39,7 +39,7 @@ Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jso
  Tato část popisuje hlavních důvodů pro výběr některého tři hlavní přenosy, včetně podrobné rozhodovací graf pro výběr mezi nimi.  
   
 ### <a name="when-to-use-http-transport"></a>Kdy použít přenos HTTP  
- HTTP je požadavek a odpověď protokolu mezi klienty a servery. Nejběžnější aplikace se skládá z webového prohlížeče klienty, kteří komunikují webového serveru. Klient odešle požadavek na server, které přijímají zprávy požadavku klienta. Když server přijme požadavek, vrátí odpověď, která obsahuje stav žádosti. Pokud úspěšné, vrátí se volitelná data, například na webové stránce, chybovou zprávu nebo Další informace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] protokol HTTP, najdete v části [HTTP - Hypertext Transfer Protocol](http://go.microsoft.com/fwlink/?LinkId=94858).  
+ HTTP je požadavek a odpověď protokolu mezi klienty a servery. Nejběžnější aplikace se skládá z webového prohlížeče klienty, kteří komunikují webového serveru. Klient odešle požadavek na server, které přijímají zprávy požadavku klienta. Když server přijme požadavek, vrátí odpověď, která obsahuje stav žádosti. Pokud úspěšné, vrátí se volitelná data, například na webové stránce, chybovou zprávu nebo Další informace. Další informace o protokolu HTTP, najdete v části [HTTP - Hypertext Transfer Protocol](http://go.microsoft.com/fwlink/?LinkId=94858).  
   
  Protokol HTTP není založeného na připojení – po odeslání odpovědi je žádný stav není zachován. Pro zpracování transakcí několika page, aplikace musí zachovat všechny nezbytné stavu.  
   

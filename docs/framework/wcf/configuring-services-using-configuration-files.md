@@ -18,18 +18,18 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 46bafbb0063f72b56f647caaa9dd0fa2944f3298
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 62a8774ab2843d0b1f0a19ad04fc0a76abb7cac5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfiguračním souborem vám umožní poskytovat chování data koncový bod a služby v okamžiku nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
   
  A [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba je konfigurovatelná pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] technologie konfigurace. Nejčastěji, jsou přidány elementy XML v souboru Web.config pro stránku Internetové informační služby (IIS), který je hostitelem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Prvky umožňují změnit podrobnosti, například adresy koncových bodů (skutečná adresami používaný ke komunikaci se službou) na základě počítače podle počítače. Kromě toho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] obsahuje několik poskytované systémem prvky, které vám umožní rychle vybrat nejzákladnější funkce pro služby. Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] se dodává s nový model výchozí konfigurace, který zjednodušuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] požadavky na konfiguraci. Pokud nezadáte žádné [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurace pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s některými standardní koncové body a výchozí chování nebo vazby. V praxi, zápis konfigurace je hlavní část programování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací.  
   
- Další informace najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md). Seznam nejčastějších běžně používané elementy, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Další informace najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md). Seznam nejčastějších běžně používané elementy, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 > [!IMPORTANT]
 >  Při nasazení scénářů vedle sebe, kde se nasadí dvě různé verze služby, je nutné zadat částečné názvy sestavení odkazovaných v konfiguračních souborech. Je to proto, že konfigurační soubor je sdílena mezi všemi verzemi služby a může být spuštěno různé verze rozhraní .NET Framework.  
@@ -41,7 +41,7 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
   
  V sadě Visual Studio soubor s názvem souboru App.config slouží k vytvoření souboru finální konfiguraci. Název poslední ve skutečnosti použili při konfiguraci závisí na název sestavení. Například sestavení s názvem "Cohowinery.exe" má název souboru finální konfiguraci "Cohowinery.exe.config". Ale stačí pro změnu souboru App.config. Změny provedené v souboru jsou automaticky vytvářeny do konfiguračního souboru konečné aplikace v době kompilace.  
   
- Pomocí App.config, soubor konfigurační systém při spuštění aplikace a používá konfiguraci sloučí soubor App.config s obsahem souboru Machine.config. Tento mechanismus umožňuje celého systému a jak jsou definovány v souboru Machine.config. Použít soubor App.config pro přepsání nastavení souboru Machine.config; tak, aby získat používají, můžete uzamknout nastavení v souboru Machine.config. V případě Web.config sloučí konfigurační systém souborů Web.config ve všech adresářích vedoucí k adresáři aplikace do konfigurace, který se použije. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Konfigurace a nastavení priority, najdete v tématech v <xref:System.Configuration> oboru názvů.  
+ Pomocí App.config, soubor konfigurační systém při spuštění aplikace a používá konfiguraci sloučí soubor App.config s obsahem souboru Machine.config. Tento mechanismus umožňuje celého systému a jak jsou definovány v souboru Machine.config. Použít soubor App.config pro přepsání nastavení souboru Machine.config; tak, aby získat používají, můžete uzamknout nastavení v souboru Machine.config. V případě Web.config sloučí konfigurační systém souborů Web.config ve všech adresářích vedoucí k adresáři aplikace do konfigurace, který se použije. Další informace o konfiguraci a nastavení priority tématech v <xref:System.Configuration> oboru názvů.  
   
 ## <a name="major-sections-of-the-configuration-file"></a>Hlavní části konfiguračního souboru  
  Hlavní části v konfiguračním souboru zahrnují následující prvky.  
@@ -114,7 +114,7 @@ Konfigurace [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby s konfi
 ### <a name="the-binding-element"></a>\<Vazby > elementu  
  `binding` Elementů obsažených v `bindings` prvek může být buď jedné vazby poskytované systémem (najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md)) nebo vlastní vazby (najdete v části [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md)). `binding` Element má `name` atribut, který korelaci vazba s zadaného v koncového bodu `bindingConfiguration` atribut `endpoint` elementu. Pokud není zadán žádný název, potom vazbou odpovídá na výchozí hodnoty tohoto typu vazby.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Konfigurace služeb a klientů, najdete v části [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+ Další informace o konfiguraci služeb a klientů najdete v tématu [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
   
  [\<Vazba >](../../../docs/framework/misc/binding.md)  
   

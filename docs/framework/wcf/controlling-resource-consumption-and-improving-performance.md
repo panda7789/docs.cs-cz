@@ -1,30 +1,32 @@
 ---
-title: "Řízení spotřeby prostředků a zlepšení výkonu"
-ms.custom: 
+title: Řízení spotřeby prostředků a zlepšení výkonu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ecb8ae5edfb35ccaffecbfb4e960d3f4a46bad0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6e864e0a90dbb46f440e2eba2b676413c72e0da9
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Řízení spotřeby prostředků a zlepšení výkonu
 Toto téma popisuje různé vlastnosti v jiné oblasti [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architekturu, která pracují pro řízení spotřeby prostředků a ovlivnit metriky výkonu.  
   
 ## <a name="properties-that-constrain-resource-consumption-in-wcf"></a>Vlastnosti, které omezit spotřeby prostředků ve službě WCF  
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]platí omezení na určité typy procesů pro účely zabezpečení a výkonu. Tato omezení mají dvě hlavní formy, kvóty a omezení. *Kvóty* jsou limity, které při dosažena nebo překročena spuštění okamžitou výjimky v určitém okamžiku v systému. *Omezí generovaný* jsou limity, které okamžitě nezpůsobí vyvolání výjimky. Místo toho po dosažení limit omezení zpracování pokračuje ale v rámci omezení nastavuje tuto hodnotu omezení. Omezené zpracování může aktivovat jinde výjimku, ale to závisí na aplikaci.  
+ [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] platí omezení na určité typy procesů pro účely zabezpečení a výkonu. Tato omezení mají dvě hlavní formy, kvóty a omezení. *Kvóty* jsou limity, které při dosažena nebo překročena spuštění okamžitou výjimky v určitém okamžiku v systému. *Omezí generovaný* jsou limity, které okamžitě nezpůsobí vyvolání výjimky. Místo toho po dosažení limit omezení zpracování pokračuje ale v rámci omezení nastavuje tuto hodnotu omezení. Omezené zpracování může aktivovat jinde výjimku, ale to závisí na aplikaci.  
   
  Kromě rozdíl mezi kvóty a omezení některé omezující vlastnosti jsou umístěné na úrovni serializace, některé na úrovni přenosu a některé na úrovni aplikace. Například kvótu <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType>, které je implementované všechny prvky vazeb přenosu poskytnuté systémem, je 65 536 bajtů ve výchozím nastavení má bránit škodlivý klienti účastnit denial-of-service útoky na služby tím, že na příliš mnoho paměti Spotřeba. (Obvykle, můžete zvýšit výkon snížením tuto hodnotu.)  
   
@@ -55,7 +57,7 @@ Toto téma popisuje různé vlastnosti v jiné oblasti [!INCLUDE[indigo1](../../
  [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) lze vylepšit výkon spuštění pro tyto aplikace generování kódu nezbytné serializace z kompilované sestavení pro aplikaci. Další informace najdete v tématu [postupy: zlepšení spuštění čas klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
   
 ## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>Problémy s výkonem při hostování služby WCF v rámci technologie ASP.NET  
- Když je služba WCF hostované na IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit nároky na propustnost a paměti služby WCF.  [!INCLUDE[crabout](../../../includes/crabout-md.md)]Výkonu technologie ASP.NET, najdete v části [zlepšení výkonu technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, která může mít nežádoucích důsledků je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud vaše aplikace má pevnou nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 může poskytovat nárůst propustnosti na počítači s více procesory, který má využití procesoru blíží 100 %. Toto zvýšení výkonu dodává se s náklady: také způsobí nárůst využití paměti, které by mohly snížit škálovatelnost.  
+ Když je služba WCF hostované na IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit nároky na propustnost a paměti služby WCF.  Další informace o výkonu technologie ASP.NET najdete v tématu [zlepšení výkonu technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, která může mít nežádoucích důsledků je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud vaše aplikace má pevnou nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 může poskytovat nárůst propustnosti na počítači s více procesory, který má využití procesoru blíží 100 %. Toto zvýšení výkonu dodává se s náklady: také způsobí nárůst využití paměti, které by mohly snížit škálovatelnost.  
   
 ## <a name="see-also"></a>Viz také  
  [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  

@@ -1,35 +1,35 @@
 ---
-title: "Terminologie zabezpečení WCF"
-ms.custom: 
+title: Terminologie zabezpečení WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - security [WCF], terminology
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 352615238d95cf02788cf88ef412a11ffd2faf37
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 46f70ad623d852e051ff69fb68690114f8c39381
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Může být obeznámeni některé z technologiím použitým když hovoříte o zabezpečení. Toto téma poskytuje krátké vysvětlení některých termínů zabezpečení, ale není určená k poskytování komplexní dokumentaci pro každou položku.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] termínů používaných v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dokumentaci najdete v tématu [základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md).  
+ Další informace o termínů používaných v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dokumentaci najdete v tématu [základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md).  
   
  seznam řízení přístupu (ACL)  
  Seznam ochranu zabezpečení, která se vztahuje k objektu. (Objekt může být soubor, procesů, události či něco jinak museli popisovač zabezpečení.) Položku v seznamu ACL je položka řízení přístupu (ACE). Existují dva typy seznamů řízení přístupu: volitelný a systému.  
@@ -105,7 +105,7 @@ Může být obeznámeni některé z technologiím použitým když hovoříte o 
  ve formátu prostého textu  
  Zpráva, která nejsou šifrována. Zprávy ve formátu prostého textu se někdy označují jako *nezašifrovaný text* zprávy.  
   
- privilege  
+ oprávnění  
  Práva uživatele k provedení různých operací souvisejících s systému, například vypínání systému, načítání ovladače zařízení nebo změně systémového času. Přístupový token uživatele obsahuje seznam oprávnění, že uživatel nebo uživatele skupiny uchování.  
   
  privátní klíč  

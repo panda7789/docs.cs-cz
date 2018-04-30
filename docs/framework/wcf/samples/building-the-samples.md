@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b8b3e3006072855673c37786ffb763fcd610e40c
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: fcc57d28c109801cc5f995bebd31c49fcbdbe19c
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Ukázky se dají vytvářet pomocí sady Visual Studio 2010 nebo pomocí **msbuild** příkazu z příkazového řádku. Oba postupy jsou popsány v tomto tématu.  
@@ -52,10 +52,10 @@ ms.lasthandoff: 04/27/2018
  Setup.exe a Cleanup.exe dávkové soubory a skripty mají spustit z příkazového řádku Visual Studia. Několik set nahoru a vyčištění souborů provádět úlohy, které vyžadují oprávnění správce a musí být spuštěna s oprávněními správce.  
   
 ## <a name="important-security-information-about-metadata-endpoints"></a>Důležité informace o zabezpečení o koncové body metadat  
- Aby se zabránilo neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zakáže publikování metadat služby. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován. Chcete-li experimentování se ukázky jednodušší, téměř všechny ukázky vystavit zabezpečená metadata publikování koncový bod. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené spotřebitelů a musí dát pozor před nasazením těchto koncových bodů a zajistit tak veřejně předání metadata služby příslušné. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] publikování metadat služby najdete v článku [chování publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md) ukázka. Najdete v článku [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázku pro ukázku zabezpečení koncový bod metadat.  
+ Aby se zabránilo neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zakáže publikování metadat služby. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován. Chcete-li experimentování se ukázky jednodušší, téměř všechny ukázky vystavit zabezpečená metadata publikování koncový bod. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené spotřebitelů a musí dát pozor před nasazením těchto koncových bodů a zajistit tak veřejně předání metadata služby příslušné. Další informace o publikování metadat služby najdete v tématu [chování publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md) ukázka. Najdete v článku [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázku pro ukázku zabezpečení koncový bod metadat.  
   
 ## <a name="exception-handling"></a>Zpracování výjimek  
- Obecně řečeno tyto ukázky nezahrnují tento kód se zaměřuje na předmět ukázky zpracování výjimek. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zpracování výjimek, najdete v článku [očekává výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) ukázka.  
+ Obecně řečeno tyto ukázky nezahrnují tento kód se zaměřuje na předmět ukázky zpracování výjimek. Další informace o zpracování výjimek najdete v tématu [očekává výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) ukázka.  
   
 ## <a name="regenerating-clients-and-configuration-with-svcutil"></a>Obnovuje se klienti a konfigurací s Svcutil  
  Můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) znovu vygenerovat kód klienta a konfigurace pro většinu ukázky. Některé ukázky vyžadovat ručně upravená konfiguraci. Například pokud použijete Svcutil.exe znovu vygenerovat konfiguraci pro ukázku, která používá přihlašovací údaje certifikátu klienta, ručně zadejte přihlašovací údaje předtím nakonfigurovali. Některé ukázky použít konkrétní možnosti Svcutil.exe ovlivnit generovaný kód, tyto možnosti jsou určené v konkrétní ukázka témata.  

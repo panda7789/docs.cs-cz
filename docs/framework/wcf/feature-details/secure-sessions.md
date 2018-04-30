@@ -16,14 +16,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9506e791cf4da947eaadaff1669e5f2f975431c8
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 068615510d7e1d73ae260441ccef6536ee6ff317
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="secure-sessions"></a>Zabezpečené relace
-Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je spolehlivé relace, které zaručit, jsou přijaty zprávy v pořadí, které byly odeslány. Témata v této části popisují vliv zabezpečení, které je třeba zvážit při vytváření spolehlivé relace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] spolehlivé relace, najdete v části [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  
+Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je spolehlivé relace, které zaručit, jsou přijaty zprávy v pořadí, které byly odeslány. Témata v této části popisují vliv zabezpečení, které je třeba zvážit při vytváření spolehlivé relace. Další informace o spolehlivé relace najdete v tématu [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  
   
 > [!NOTE]
 >  Když zosobnění je potřeba na systému Windows XP, použijte zabezpečené relace bez tokenu kontextu zabezpečení stavová (SCT). V případě stavová SCTs používají s zosobnění, <xref:System.InvalidOperationException> je vyvolána výjimka. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  

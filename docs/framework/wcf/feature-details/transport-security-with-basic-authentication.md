@@ -1,30 +1,32 @@
 ---
-title: "Zabezpečení přenosu se základním ověřováním"
-ms.custom: 
+title: Zabezpečení přenosu se základním ověřováním
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: fe6b996c37e66f41c3946b8ef3437f8fa82c5201
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7430767c80515d14ae23e17ae2b94e0acc97ff30
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpečení přenosu se základním ověřováním
-Následující obrázek znázorňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby. Server vyžaduje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Navíc webová služba již má implementaci protokolu SSL, který lze použít. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Povolení základního ověřování v Internetové informační služby (IIS), najdete v části [http://go.microsoft.com/fwlink/?LinkId=83822](http://go.microsoft.com/fwlink/?LinkId=83822).  
+Následující obrázek znázorňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby. Server vyžaduje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Navíc webová služba již má implementaci protokolu SSL, který lze použít. Další informace o povolení základní ověřování v Internetové informační služby (IIS) najdete v tématu [ http://go.microsoft.com/fwlink/?LinkId=83822 ](http://go.microsoft.com/fwlink/?LinkId=83822).  
   
  ![Přenosu zabezpečení se základním ověřováním](../../../../docs/framework/wcf/feature-details/media/securedbyusername.gif "SecuredbyUsername")  
   
@@ -35,7 +37,7 @@ Následující obrázek znázorňuje [!INCLUDE[indigo1](../../../../includes/ind
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí protokolu HTTPS)<br /><br /> Ano (prostřednictvím uživatelské jméno a heslo)|  
 |Integrita|Ano|  
 |Důvěrnost|Ano|  
-|Přenos|PROTOKOL HTTPS|  
+|Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Služba  

@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2a9c34f67de6f4f8b4a8d22dac7e8bf1c9555498
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 5e477b11893d2b74ebe1674225e05b13cb9f67ca
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="implementing-service-contracts"></a>Implementace kontraktů služeb
 Služba je třída, která poskytuje funkce, které jsou k dispozici pro klienty na jeden nebo více koncových bodů. Pokud chcete vytvořit službu, zápis třídu, která implementuje [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] kontrakt. Provedete to jedním ze dvou způsobů. Můžete definovat kontrakt samostatně jako rozhraní a pak vytvořte třídu, která implementuje rozhraní. Alternativně můžete vytvořit třídu a kontrakt přímo tím, že <xref:System.ServiceModel.ServiceContractAttribute> atributu na vlastní třídy a <xref:System.ServiceModel.OperationContractAttribute> atribut pro metody, které jsou k dispozici pro klienty služby.  
@@ -68,7 +68,7 @@ class MathService
   
  Pár věcí můžete nastavit na služby a operace implementace úrovně, jako je například souběžnosti a vytváření instancí. Další informace najdete v tématu [návrh a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md).  
   
- Po implementaci kontraktu služby, je nutné vytvořit jeden nebo více koncových bodů pro službu. Další informace najdete v tématu [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] spuštění služby najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+ Po implementaci kontraktu služby, je nutné vytvořit jeden nebo více koncových bodů pro službu. Další informace najdete v tématu [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). Další informace o tom, jak spustit služby najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)  

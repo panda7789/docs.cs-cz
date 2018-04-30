@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b0042d9b90066553d6fc962bba1b7a7b990ca242
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 7f083ea44b9bdbd9bf85d65c42d663d87af8d812
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, jaké klientské aplikace provést, jak nakonfigurovat, vytvořit a použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] klienta a jak zabezpečit klientské aplikace.  
@@ -86,13 +86,13 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
  Doporučujeme, abyste vytvořili vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta, objekt a pak ho použít a zavřete uvnitř bloku try/catch – jeden. Neměli byste používat `using` – příkaz (`Using` v jazyce Visual Basic) vzhledem k tomu, že ho může maskování výjimky v určité režimy selhání. Další informace najdete v následujících částech a také [vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
   
 ### <a name="contracts-bindings-and-addresses"></a>Kontrakty, vazeb a adresy  
- Před vytvořením [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objektu klienta, je nutné nakonfigurovat klientského objektu. Konkrétně musí mít služby *koncový bod* používat. Koncový bod je kombinace kontraktu služby, vazbu a adresu. ([!INCLUDE[crabout](../../../includes/crabout-md.md)] koncové body, najdete v části [koncové body: adresy, vazby a kontrakty](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md).) Tyto informace se obvykle nachází ve [ \<endpoint >](../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md) element v souboru konfigurace aplikace klienta, jako je třeba nástroje Svcutil.exe generuje a že je načtený automaticky při vytváření vašeho klienta objekt. Obě [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] typů klientů také mají přetížení, které vám umožní prostřednictvím kódu programu zadejte tyto informace.  
+ Před vytvořením [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objektu klienta, je nutné nakonfigurovat klientského objektu. Konkrétně musí mít služby *koncový bod* používat. Koncový bod je kombinace kontraktu služby, vazbu a adresu. (Další informace o koncových bodech najdete v tématu [koncové body: adresy, vazby a kontrakty](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md).) Tyto informace se obvykle nachází ve [ \<endpoint >](../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md) element v souboru konfigurace aplikace klienta, jako je třeba nástroje Svcutil.exe generuje a že je načtený automaticky při vytváření vašeho klienta objekt. Obě [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] typů klientů také mají přetížení, které vám umožní prostřednictvím kódu programu zadejte tyto informace.  
   
  Například vygenerovaný konfigurační soubor pro `ISampleService` použít v předchozím příklady obsahuje následující informace o koncový bod.  
   
  [!code-xml[C_GeneratedCodeFiles#19](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
   
- Tento konfigurační soubor Určuje koncový bod cíl v `<client>` elementu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] pomocí několika cílové koncové body, najdete v tématu <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType> konstruktory.  
+ Tento konfigurační soubor Určuje koncový bod cíl v `<client>` elementu. Další informace o používání více cílové koncové body, najdete v článku <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType> konstruktory.  
   
 ## <a name="calling-operations"></a>Volání operace  
  Jakmile klientský objekt vytvořený a nakonfigurovaný, vytvořit blok try/catch –, volání operací stejným způsobem, který by kdyby místní a zavřete objekt [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt klienta. Když klientské aplikace volá operaci první, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] automaticky otevře základní kanálu a základní kanál je uzavřen, pokud je objekt recykluje. (Alternativně můžete také explicitně otevřete a zavřete kanál před nebo po volání jiné operace.)  
@@ -145,14 +145,14 @@ End Interface
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   
 ## <a name="handling-errors"></a>Zpracování chyb  
- Výjimky může dojít v aplikaci klienta, když otevírání základní klienta kanálu (jestli explicitně nebo automaticky voláním operace), pomocí objektu klienta nebo kanál volat operace, nebo při zavření základní kanálem klienta. Se minimálně doporučuje, aby aplikace očekávají, že pro zpracování možné <xref:System.TimeoutException?displayProperty=nameWithType> a <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> výjimky kromě žádné <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objekty vyvolána výjimka v důsledku chyb SOAP vrácených operací. Pro klientské aplikace, jako jsou vyvolány SOAP chyb uvedených ve smlouvě operace <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> kde parametr typu je typ podrobnosti o chybě protokolu SOAP. [!INCLUDE[crabout](../../../includes/crabout-md.md)] zpracování chybové stavy v aplikaci klienta, najdete v části [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Úplná ukázka služby zobrazí způsob zpracování chyb v klientovi, najdete v části [očekává výjimky](../../../docs/framework/wcf/samples/expected-exceptions.md).  
+ Výjimky může dojít v aplikaci klienta, když otevírání základní klienta kanálu (jestli explicitně nebo automaticky voláním operace), pomocí objektu klienta nebo kanál volat operace, nebo při zavření základní kanálem klienta. Se minimálně doporučuje, aby aplikace očekávají, že pro zpracování možné <xref:System.TimeoutException?displayProperty=nameWithType> a <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> výjimky kromě žádné <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objekty vyvolána výjimka v důsledku chyb SOAP vrácených operací. Pro klientské aplikace, jako jsou vyvolány SOAP chyb uvedených ve smlouvě operace <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> kde parametr typu je typ podrobnosti o chybě protokolu SOAP. Další informace o zpracování chybové stavy v aplikaci klienta najdete v tématu [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Úplná ukázka služby zobrazí způsob zpracování chyb v klientovi, najdete v části [očekává výjimky](../../../docs/framework/wcf/samples/expected-exceptions.md).  
   
 ## <a name="configuring-and-securing-clients"></a>Konfigurace a zabezpečení klientů  
  Konfigurace klienta začíná načítání požadované informace o cílové koncový bod pro klienta nebo kanál objektu, která obvykle z konfiguračního souboru, i když můžete také načíst tyto informace programově pomocí konstruktorů klienta a vlastnosti. Však jsou zapotřebí další konfigurační kroky, chcete-li povolit určité chování klienta a pro mnoho scénářů zabezpečení.  
   
  Například požadavky na zabezpečení pro kontraktů služby jsou deklarované v rozhraní kontraktu služby, a pokud Svcutil.exe vytvořit konfigurační soubor, že soubor obvykle obsahuje vazbu, který podporuje požadavky na zabezpečení služby. V některých případech ale další konfigurace zabezpečení může být vyžadovat, například konfigurace pověření klienta. Úplné informace o konfiguraci zabezpečení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klientů naleznete v tématu [zabezpečení klientů](../../../docs/framework/wcf/securing-clients.md).  
   
- Kromě toho lze v klientských aplikacích, jako je například vlastní chování běhové povolit vlastní úpravy. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Konfigurace chování vlastní klienta najdete v tématu [konfigurace chování klientů](../../../docs/framework/wcf/configuring-client-behaviors.md).  
+ Kromě toho lze v klientských aplikacích, jako je například vlastní chování běhové povolit vlastní úpravy. Další informace o tom, jak nakonfigurovat chování vlastní klienta najdete v tématu [konfigurace chování klientů](../../../docs/framework/wcf/configuring-client-behaviors.md).  
   
 ## <a name="creating-callback-objects-for-duplex-services"></a>Vytváření objektů zpětného volání pro duplexní služby  
  Duplexní služby zadejte kontraktu zpětného volání, které klientská aplikace musí implementovat, aby bylo možné poskytnout objekt zpětného volání pro službu, kterou chcete volat podle požadavků kontrakt. I když zpětného volání objekty nejsou úplné služby (například nelze inicializovat, kanál s objektem zpětného volání), za účelem implementace a konfigurace se může považovat za typ služby.  

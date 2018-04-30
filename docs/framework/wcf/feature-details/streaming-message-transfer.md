@@ -1,27 +1,29 @@
 ---
-title: "Streamování přenosu zpráv"
-ms.custom: 
+title: Streamování přenosu zpráv
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a751245f0a933fda649d5919bab86abf2969dbf6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ed2aa57e044910ab9fd9c60dfd47eb7aaa0ce75e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="streaming-message-transfer"></a>Streamování přenosu zpráv
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]přenosy podporují dva režimy pro přenos zpráv:  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] přenosy podporují dva režimy pro přenos zpráv:  
   
 -   Ve vyrovnávací paměti přenosy uložení celé zprávy vyrovnávací paměť v až do dokončení přenosu. Zprávu ve vyrovnávací paměti musí být zcela doručována předtím, než příjemce může číst.  
   
@@ -52,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
  Některé [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce, jako je spolehlivé zasílání zpráv, transakce a zabezpečení na úrovni zprávu protokolu SOAP, závisí na ukládání do vyrovnávací paměti zpráv pro přenosy. Používání těchto funkcí může omezit nebo odstranit výkonu výhody pomocí vysílání datového proudu. K zabezpečení přenášené datovými proudy přenosu, použijte pouze zabezpečení na úrovni přenosu nebo použijte zabezpečení transportní vrstvy a zabezpečení jen ověřování zpráv.  
   
- Hlavičky SOAP jsou vždy do vyrovnávací paměti, i když přenos režim je nastaven na přenášené datovými proudy. Hlavičky pro zprávu nesmí překročit velikost `MaxBufferSize` kvóty přenosu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Toto nastavení, najdete v části [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md).  
+ Hlavičky SOAP jsou vždy do vyrovnávací paměti, i když přenos režim je nastaven na přenášené datovými proudy. Hlavičky pro zprávu nesmí překročit velikost `MaxBufferSize` kvóty přenosu. Další informace o tomto nastavení najdete v tématu [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md).  
   
 ## <a name="differences-between-buffered-and-streamed-transfers"></a>Rozdíly mezi přenosy ve vyrovnávací paměti a přenášené datovými proudy  
  Změna režimu přenosu z vyrovnávací paměti pro streamování také změní tvar nativní kanálu TCP a přenosy pojmenovaný kanál. Pro přenosy ve vyrovnávací paměti, je tvar nativní kanálu <xref:System.ServiceModel.Channels.IDuplexSessionChannel>. Pro přenášené datovými proudy přenosy jsou nativní kanály <xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>. Změna režimu přenosu v existující aplikaci, která používá tyto přenosy, přímo (tedy ne prostřednictvím smlouvy o poskytování služeb) vyžaduje změna tvaru očekávané kanál pro kanál továrny a naslouchací procesy.  

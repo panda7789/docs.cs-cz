@@ -1,24 +1,26 @@
 ---
-title: "Spouštění ukázek Windows Communication Foundation"
-ms.custom: 
+title: Spouštění ukázek Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 603a6dce17d527a3f14e408da19006509514df52
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2aca4555277a1b365ddee1c672a6375edfde9f34
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Ukázky můžete spustit v jednom počítači nebo počítači konfiguraci. Zadaný, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je potřeba upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak spustit ukázku ve stejném počítači a počítači konfigurace. Všimněte si, že jsou rozdíly v kroků pro služby hostované v Internetové informační služby (IIS) a vlastním hostováním ukázky. Většina ukázky jsou hostované ve službě IIS; Zobrazit informace o ukázkový soubor readme k určení, jak je hostovaná.  
@@ -64,7 +66,7 @@ ms.lasthandoff: 01/19/2018
   
     1.  Pokud služba není spuštěna pod účtem domény, otevřete konfigurační soubor klienta a změňte hodnotu adresu definice koncového bodu tak, aby odpovídala nové adresy vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
-    2.  Pokud služba běží pod účtem domény, znovu vygenerujte konfigurace klienta spuštěním Svcutil.exe proti službu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]spuštění Svcutil.exe, najdete v části [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Použijte vygenerovaný soubor místo konfiguračního souboru ve vzorku. Vygenerovaný konfigurační soubor obsahuje informace o dalších identity a obsahuje všechna nastavení, které jsou potřebné pro připojení ke koncovému bodu služby, i když jsou výchozí nastavení. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]informace o identitě, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md), a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md).  
+    2.  Pokud služba běží pod účtem domény, znovu vygenerujte konfigurace klienta spuštěním Svcutil.exe proti službu. Další informace o spouštění Svcutil.exe najdete v tématu [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Použijte vygenerovaný soubor místo konfiguračního souboru ve vzorku. Vygenerovaný konfigurační soubor obsahuje informace o dalších identity a obsahuje všechna nastavení, které jsou potřebné pro připojení ke koncovému bodu služby, i když jsou výchozí nastavení. Další informace o informace o identitě najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md), a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md).  
   
 4.  V klientském počítači spusťte z příkazového řádku Client.exe.  
   
@@ -74,7 +76,7 @@ ms.lasthandoff: 01/19/2018
   
 2.  Pokud je služba hostovaná ve službě IIS:  
   
-    1.  Aktivujte službu pomocí prohlížeče zadáním adresy http://localhost/servicemodelsamples/service.svc.  
+    1.  Aktivovat službu pomocí prohlížeče tak, že zadáte adresu http://localhost/servicemodelsamples/service.svc.  
   
     2.  V řešení, vyberte **ladění** nabídky a **připojit k procesu** položku nabídky.  
   

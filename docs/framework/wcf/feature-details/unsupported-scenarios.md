@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7738eba66619e8a312ed2f9bd43142dbb097b259
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: cfeca11f7d78e8aa2d201238e3a485576b3e0c82
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje rozhraní SSPI nebo Kerberos ověřovacích protokolů a proto [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spuštěna služba pomocí ověřování systému Windows na této platformě nepodporuje. Další mechanismy ověřování, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP nebo HTTPS jsou podporovány při spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pod Windows XP Home Edition.  
@@ -58,7 +58,7 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
 >  Výchozí hodnota <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třída je <xref:System.Security.Principal.TokenImpersonationLevel.Identification>. Ve většině případů kontextu zosobnění identifikace úroveň nemá práva k načtení všech dalších sestavení. Toto je výchozí hodnota, to je velmi běžné podmínku, která má být vědomi. Identifikace úroveň zosobnění dojde i v případě zosobnění proces nemá `SeImpersonate` oprávnění. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ### <a name="delegation-requires-credential-negotiation"></a>Delegování vyžaduje vyjednávání pověření  
- Pokud chcete používat ověřování protokolu Kerberos s delegováním, musí implementovat protokol Kerberos s vyjednávání pověření (někdy nazývané více větev nebo vícekrokový protokolu Kerberos). Pokud budete implementovat ověřování protokolem Kerberos bez vyjednávání pověření (někdy nazývané jednorázové nebo jedním větev protokolu Kerberos), je vyvolána výjimka. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] tom, jak implementovat vyjednávání pověření, najdete v části [ladění chyb ověřování systému Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
+ Pokud chcete používat ověřování protokolu Kerberos s delegováním, musí implementovat protokol Kerberos s vyjednávání pověření (někdy nazývané více větev nebo vícekrokový protokolu Kerberos). Pokud budete implementovat ověřování protokolem Kerberos bez vyjednávání pověření (někdy nazývané jednorázové nebo jedním větev protokolu Kerberos), je vyvolána výjimka. Další informace o tom, jak implementovat vyjednávání pověření najdete v tématu [ladění chyb ověřování systému Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
   
 ## <a name="cryptography"></a>Kryptografie  
   

@@ -1,28 +1,29 @@
 ---
 title: Expressions2
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 43a85905-77b5-4893-bb38-1cb9b293d69d
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a22cf5ae3434e0f79a4cba1b772b02316ccdb007
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c8470a3bb93385724f50e18d25c148ee609c3a77
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="expressions"></a>Výrazy
 Tento příklad znázorňuje, jak používat základní výrazy v pracovním postupu. Skládá se z pracovního postupu, který vypočítá Základní mzda statistiky pro dva zaměstnanci fiktivní společnosti. Dvě třídy `Employee` a `SalaryStats`, jsou definovány v Employee.cs a SalaryStats.cs. Tyto třídy se používají v pracovním postupu, který ukazuje, jak provádět jednoduché aritmetické a řetězec operace na vlastnosti proměnných komplexních typů.  
   
- Pracovní postup výpočtu mzda je definován v jazyce XAML i v jazyce C# k předvedení dvě vytváření stylů. Verze XAML se nachází v SalaryCalculation.xaml a jde prohlížet a upravovat v Návrháři pracovních postupů. Verze jazyka C# se nachází v souboru Program.cs. Výrazy použité v jazyce XAML odpovídat syntaxe jazyka Visual Basic a používat <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> výraz aktivity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Výrazy jazyka Visual Basic najdete [výrazy jazyka Visual Basic](http://go.microsoft.com/fwlink/?LinkId=165912). Na druhé straně výrazy v jazyce C# se zapisují jako lambda – výrazy a použít <xref:System.Activities.Expressions.LambdaValue%601> a <xref:System.Activities.Expressions.LambdaReference%601> výraz aktivity. Zapisují se výrazy jako výrazy lambda umožňuje zajistit zvýraznění syntaxe kompilátor jazyka C# a statické ověření. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]výrazy lambda v jazyce C#, najdete v části [výrazy Lambda (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=182082). Pokud pracovní postup je vytvořené v kódu jazyka Visual Basic, se používají výrazy lambda v jazyce Visual Basic. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]výrazy lambda v jazyce Visual Basic, najdete v části [výrazy Lambda (Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=152437). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]o vytváření pracovních postupů pomocí kódu, najdete v části [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kód](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).  
+ Pracovní postup výpočtu mzda je definován v jazyce XAML i v jazyce C# k předvedení dvě vytváření stylů. Verze XAML se nachází v SalaryCalculation.xaml a jde prohlížet a upravovat v Návrháři pracovních postupů. Verze jazyka C# se nachází v souboru Program.cs. Výrazy použité v jazyce XAML odpovídat syntaxe jazyka Visual Basic a používat <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> výraz aktivity. Další informace o najdete výrazy jazyka Visual Basic [výrazy jazyka Visual Basic](http://go.microsoft.com/fwlink/?LinkId=165912). Na druhé straně výrazy v jazyce C# se zapisují jako lambda – výrazy a použít <xref:System.Activities.Expressions.LambdaValue%601> a <xref:System.Activities.Expressions.LambdaReference%601> výraz aktivity. Zapisují se výrazy jako výrazy lambda umožňuje zajistit zvýraznění syntaxe kompilátor jazyka C# a statické ověření. Další informace o výrazy lambda v jazyce C#, najdete v části [výrazy Lambda (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=182082). Pokud pracovní postup je vytvořené v kódu jazyka Visual Basic, se používají výrazy lambda v jazyce Visual Basic. Další informace o výrazy lambda v jazyce Visual Basic najdete v tématu [výrazy Lambda (Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=152437). Další informace o vytváření pracovních postupů pomocí kódu najdete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kód](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).  
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   

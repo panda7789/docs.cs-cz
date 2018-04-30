@@ -1,24 +1,26 @@
 ---
-title: "Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF"
-ms.custom: 
+title: 'Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2ca8dbbffdb48c33160e3c4f7495057b9ce60c13
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2b728e6283a2f038b7e5ef4c535da41f4eb8ebef
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF
 Toto téma popisuje postupy k migraci základní služby prvku ASP.NET AJAX ekvivalentní podporou AJAXU [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Ukazuje, jak vytvořit funkčně srovnatelný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] verzi služby prvku ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe, nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby lze použít k nahrazení služba ASP.NET AJAX.  
@@ -33,7 +35,7 @@ Toto téma popisuje postupy k migraci základní služby prvku ASP.NET AJAX ekvi
   
  Kód, který vyplývá z postupů uvedených v tomto tématu najdete v příkladu postupy.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vystavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přes koncový bod povolený AJAX, podívejte [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.  
+ Další informace o vystavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přes koncový bod povolený AJAX, podívejte [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.  
   
 ### <a name="to-create-and-test-the-aspnet-web-service-application"></a>Vytvoření a testování aplikace ASP.NET – webové služby  
   
@@ -204,9 +206,9 @@ d.Add("two", 2);
   
  Tohoto slovníku je reprezentována v objekty JSON, jak je znázorněno v následujícím seznamu:  
   
--   [{"Klíč": "1", "Value": 1}, {"Klíč": "Dva", "Value": 2}] pomocí<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>  
+-   [{"Klíč": "1", "Value": 1}, {"Klíč": "Dva", "Value": 2}] pomocí <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>  
   
--   {"1": 1, "dva": 2} pomocí prvku ASP.NET AJAX<xref:System.Web.Script.Serialization.JavaScriptSerializer>  
+-   {"1": 1, "dva": 2} pomocí prvku ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>  
   
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Účinnější v tom smyslu, že je můžete zpracovat slovník kde klíče typem není řetězec, zatímco <xref:System.Web.Script.Serialization.JavaScriptSerializer> nelze. Ale k tomu je JSON popisný.  
   
@@ -215,11 +217,11 @@ d.Add("two", 2);
 |Kategorie rozdílů|DataContractJsonSerializer|ASP.NET AJAX JavaScriptSerializer|  
 |-----------------------------|--------------------------------|---------------------------------------|  
 |Při deserializaci prázdný vyrovnávací paměti (nové byte[0]) do <xref:System.Object> (nebo <xref:System.Uri>, nebo některé jiné třídy).|Serializationexception –|null|  
-|Serializace<xref:System.DBNull.Value>|{} (nebo {"__type": "#System"})|Null|  
+|Serializace <xref:System.DBNull.Value>|{} (nebo {"__type": "#System"})|Null|  
 |Serializace soukromých členů typů [Serializable].|serializovat|nelze serializovat.|  
 |Serializace veřejné vlastnosti <xref:System.Runtime.Serialization.ISerializable> typy.|nelze serializovat.|serializovat|  
 |"Rozšíření" JSON|Dodržuje specifikaci JSON, která vyžaduje uvozovky na člen názvy objektů ({"a": "hello"}).|Podporuje názvy členové objektu bez uvozovek ({a: "text hello"}).|  
-|<xref:System.DateTime>Koordinovaný světový čas (UTC)|Formát není podporován "\\/Date(123456789U)\\/" nebo "\\/Date\\(\d+ (P &#124; (\\+\\-[\d\{4\]}))?\\) \\\\/)".|Podporuje formát "\\/Date(123456789U)\\/" a "\\/Date\\(\d+ (P &#124; (\\+\\-[\d\{4\]}))?\\) \\ \\nebo) "jako hodnoty data a času.|  
+|<xref:System.DateTime> Koordinovaný světový čas (UTC)|Formát není podporován "\\/Date(123456789U)\\/" nebo "\\/Date\\(\d+ (U&#124;(\\+\\-[\d{4}]))?\\) \\\\/)".|Podporuje formát "\\/Date(123456789U)\\/" a "\\/Date\\(\d+ (U&#124;(\\+\\-[\d{4}]))?\\) \\ \\nebo) "jako hodnoty data a času.|  
 |Reprezentace slovníků|Pole KeyValuePair\<tisíc, V >, zpracovává typy klíčů, které nejsou typu řetězec.|Jako skutečných objektů JSON -, ale pouze klíče typy obslužných rutin, které jsou řetězce.|  
 |Uvozený znaků|Vždy s escape dopředné lomítko (/); nikdy umožňuje zrušení uvozený neplatné znaky JSON, jako je například "\n".|Pomocí escape dopředné lomítko (/) pro hodnoty data a času.|  
   

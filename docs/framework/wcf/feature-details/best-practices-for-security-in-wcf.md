@@ -21,14 +21,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 19bb6d4a172568611f73e3a50d0c526016c65aac
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0545ff40247b7ff86cb6227fa8cf4af8666c3629
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
-Následující části uvádějí osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zabezpečení, najdete v části [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
+Následující části uvádějí osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Další informace o zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
   
 ## <a name="identify-services-performing-windows-authentication-with-spns"></a>Identifikoval služby, provádění ověřování systému Windows s SPN  
  Služby lze identifikovat pomocí hlavních názvů uživatelů (UPN) nebo hlavní názvy služby (SPN). Služby spuštěné pod účty počítače, jako je síťová služba mít SPN identity odpovídající počítači, na kterém se používáte. Služby spuštěné pod uživatelské účty mají identitu UPN odpovídající uživatel, který se spouští jako, i když `setspn` nástroje lze přiřadit název SPN pro uživatelský účet. Konfigurace služby tak, aby ho bylo možné identifikovat pomocí hlavního názvu služby a konfiguraci klientů připojení ke službě, aby používali tuto SPN provádět určité útokům obtížnější. Tyto pokyny platí pro vazby vyjednání protokolu Kerberos nebo rozhraní SSPI.  Klienti musí určovat název SPN stále v případě, kdy SSPI spadne zpět na protokol NTLM.  
@@ -66,7 +66,7 @@ Následující části uvádějí osvědčené postupy, které je třeba zváži
  Pokud adresu vystavitele a vazby jsou zadané pro danou vazbu, místního vystavitele se nepoužije pro koncové body, které tuto vazbu používají. Klienti, kteří měli vždycky používat místního vystavitele zkontrolujte nepoužívají takovou vazbu nebo jejich Upravit vazby tak, že adresa Vystavitel je null.  
   
 ## <a name="saml-token-size-quotas"></a>Kvóty velikost tokenu SAML  
- Když tokeny zabezpečení kontrolní výrazy Markup Language (SAML) se serializují ve zprávách, buď při vydávání podle zabezpečení tokenu služby (STS), nebo když klienti k dispozici je ke službám v rámci ověřování, kvóta maximální velikosti zprávy musí být dostatečně k tomuto tokenu SAML a dalšími částmi zprávy dostačující. V případech, normální výchozích kvót velikost zprávy je dostatečné. Však v případech, kdy je SAML token velké vzhledem k tomu, že obsahuje stovky deklarace identity, kvóty by měl být skutečnost zohlednit zvýšením serializovaný token. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kvóty, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+ Když tokeny zabezpečení kontrolní výrazy Markup Language (SAML) se serializují ve zprávách, buď při vydávání podle zabezpečení tokenu služby (STS), nebo když klienti k dispozici je ke službám v rámci ověřování, kvóta maximální velikosti zprávy musí být dostatečně k tomuto tokenu SAML a dalšími částmi zprávy dostačující. V případech, normální výchozích kvót velikost zprávy je dostatečné. Však v případech, kdy je SAML token velké vzhledem k tomu, že obsahuje stovky deklarace identity, kvóty by měl být skutečnost zohlednit zvýšením serializovaný token. Další informace o kvótách najdete v tématu [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
   
 ## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>Nastavit SecurityBindingElement.IncludeTimestamp na hodnotu True u vlastních vazeb  
  Když vytvoříte vlastní vazby, je nutné nastavit <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> k `true`. Jinak, pokud <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> je nastaven na `false`, a klient používá asymetrické na základě klíčů token například X509 certifikát, nesmí být podepsané zprávy.  

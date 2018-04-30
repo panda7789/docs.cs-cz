@@ -1,30 +1,32 @@
 ---
-title: "Postupy: Implementace operace asynchronní služby"
-ms.custom: 
+title: 'Postupy: Implementace operace asynchronní služby'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4e5d2ea5-d8f8-4712-bd18-ea3c5461702c
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3ba82242d0d3d42d4a2e3774186f2a282e279938
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: fe823fc8b86dd20cfa344c9889eca9dff21514ec
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>Postupy: Implementace operace asynchronní služby
-V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, služby operaci lze provést synchronně nebo asynchronně bez diktování klientovi jejich volání. Například operace asynchronní služby můžete volání synchronně, a operací synchronní služby je možné volat asynchronně. Příklad, který ukazuje, jak asynchronní volání operace v aplikaci klienta, naleznete v části [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]synchronní a asynchronní operace, najdete v části [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md) a [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md). Toto téma popisuje základní strukturu operace asynchronní služby, kód není úplný. Kompletní příklad, jak si služba a klient strany najdete v části [asynchronního](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7).  
+V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, služby operaci lze provést synchronně nebo asynchronně bez diktování klientovi jejich volání. Například operace asynchronní služby můžete volání synchronně, a operací synchronní služby je možné volat asynchronně. Příklad, který ukazuje, jak asynchronní volání operace v aplikaci klienta, naleznete v části [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o synchronní a asynchronní operace najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md) a [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md). Toto téma popisuje základní strukturu operace asynchronní služby, kód není úplný. Kompletní příklad, jak si služba a klient strany najdete v části [asynchronního](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7).  
   
 ### <a name="implement-a-service-operation-asynchronously"></a>Asynchronně implementovat operaci služby  
   

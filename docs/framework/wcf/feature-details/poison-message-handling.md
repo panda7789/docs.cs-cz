@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 14b3eebb83115617ce32ab0ff45184cd6754e58c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6fa35209b2dafc088605848a0dc96a53a2813dfd
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace mohou vzniknout, když aplikace založenou na fronty nemůže zpracovat zprávu z důvodu chyb. Splňovat požadavky na spolehlivost, aplikace přijímá zprávy v rámci transakce. Ruší se transakce, ve kterém byl přijat zprávu ve frontě zanechává zprávy ve frontě, zpráva se pokus o pod novou transakci. Pokud není problém, která způsobila zrušení vyřešen, může být zablokován má přijímající aplikace v smyčku přijímáním a přerušení stejná zpráva, dokud byl překročen maximální počet pokusů o doručení a výsledky poškozená zpráva.  
@@ -104,7 +104,7 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
  Relaci projde stejné opakování a postupy zpracování zpráv poison jako do jedné zprávy. Vlastnosti dříve uvedené pro poškozených zpráv se vztahují na celé relace. To znamená, že se pokus o celé relace a přejde na poslední poison zprávy fronty nebo fronty nedoručených zpráv odesílatele, pokud se odmítne zprávy.  
   
 ## <a name="batching-and-poison-messages"></a>Dávkování a poškozených zpráv  
- Pokud zpráva stane poškozených zpráv a je součástí dávky, celý batch je vrácena zpět a kanál vrátí do čtení jednu zprávu najednou. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] dávkování, najdete v části [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
+ Pokud zpráva stane poškozených zpráv a je součástí dávky, celý batch je vrácena zpět a kanál vrátí do čtení jednu zprávu najednou. Další informace o dávkování najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
   
 ## <a name="poison-message-handling-for-messages-in-a-poison-queue"></a>Zpracování zpráv ve frontě poškozených Poison zpráv  
  Zpracování zpráv Poison nemá na konci při umístění zprávu do fronty poison zpráv. Zprávy ve frontě poison zprávy musí být stále číst a zpracovávat. Při čtení zpráv z poslední poškozených dílčí fronta můžete podmnožinu nastavení zpracování poison zpráv. Použít nastavení `ReceiveRetryCount` a `ReceiveErrorHandling`. Můžete nastavit `ReceiveErrorHandling` vyřadit, odmítněte, nebo poruch. `MaxRetryCycles` je ignorován a je vyvolána výjimka, pokud `ReceiveErrorHandling` je nastaven na přesunutí.  

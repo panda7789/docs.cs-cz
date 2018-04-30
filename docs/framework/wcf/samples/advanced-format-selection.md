@@ -1,30 +1,32 @@
 ---
-title: "Rozšířený výběr formátu"
-ms.custom: 
+title: Rozšířený výběr formátu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e02d9082-4d55-41d8-9329-98f6d1c77f06
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 124bf59f29ff04e643200edf686f79f573937a03
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 93d7fe0742e16abd92682094ca20d51488516e6e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="advanced-format-selection"></a>Rozšířený výběr formátu
 Tento příklad ukazuje, jak rozšířit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] programovací model REST pro podporu nových odchozí odpovědi formátů. Kromě toho Ukázka používá šablony T4 k vrácení odpovědi jako stránku XHTML ukázka, jak se dají implementovat programovací model styl zobrazení.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Ukázkový soubor obsahuje jednoduché služby společně s kód klienta, který slouží k žádosti o službu.  Služba podporuje jedné operace [WebGet], který má označení následující metody:`Message EchoListWithGet(string list);`  
+ Ukázkový soubor obsahuje jednoduché služby společně s kód klienta, který slouží k žádosti o službu.  Služba podporuje jedné operace [WebGet], který má označení následující metody: `Message EchoListWithGet(string list);`  
   
  Když klient odešle požadavek na službu, poskytuje seznam položek z textový soubor s oddělovači `list` parametr s řetězcem dotazu a službu vrátí tento stejný seznam v jednom z následujících formátů: XML, JSON, Atom, XHTML nebo jpeg.  
   
@@ -32,7 +34,7 @@ Tento příklad ukazuje, jak rozšířit [!INCLUDE[indigo1](../../../../includes
   
  Návratový typ operace je vhodné poznamenat. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Jenom nativně programovací model REST podporuje formáty XML a JSON odpovědi při operace vrátí typ, jiné než <xref:System.ServiceModel.Channels.Message>. Ale při použití <xref:System.ServiceModel.Channels.Message> jako návratový typ vývojář má plnou kontrolu nad formátování obsah zprávy.  
   
- Ukázce se používá <xref:System.ServiceModel.Web.WebOperationContext.CreateXmlResponse%2A>, <xref:System.ServiceModel.Web.WebOperationContext.CreateJsonResponse%2A> a <xref:System.ServiceModel.Web.WebOperationContext.CreateAtom10Response%2A> metody k serializaci seznam řetězců do XML, JSON a ATOM zpráv v uvedeném pořadí. Pro formát odpovědi jpeg <xref:System.ServiceModel.Web.WebOperationContext.CreateStreamResponse%2A> metoda se používá a je obrázek uložen do datového proudu. Pro odpověď v kódu XHTML <xref:System.ServiceModel.Web.WebOperationContext.CreateTextResponse%2A> se používá spolu s předběžně zpracované T4 šablonu, která se skládá z soubor .tt a .cs automaticky generovaný soubor. Soubor .tt umožňuje vývojáři k zápisu odpovědi v podobě šablony, který obsahuje proměnné a řízení struktury. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]T4, najdete v části [generování artefaktů podle pomocí textových šablon](http://go.microsoft.com/fwlink/?LinkId=166023).  
+ Ukázce se používá <xref:System.ServiceModel.Web.WebOperationContext.CreateXmlResponse%2A>, <xref:System.ServiceModel.Web.WebOperationContext.CreateJsonResponse%2A> a <xref:System.ServiceModel.Web.WebOperationContext.CreateAtom10Response%2A> metody k serializaci seznam řetězců do XML, JSON a ATOM zpráv v uvedeném pořadí. Pro formát odpovědi jpeg <xref:System.ServiceModel.Web.WebOperationContext.CreateStreamResponse%2A> metoda se používá a je obrázek uložen do datového proudu. Pro odpověď v kódu XHTML <xref:System.ServiceModel.Web.WebOperationContext.CreateTextResponse%2A> se používá spolu s předběžně zpracované T4 šablonu, která se skládá z soubor .tt a .cs automaticky generovaný soubor. Soubor .tt umožňuje vývojáři k zápisu odpovědi v podobě šablony, který obsahuje proměnné a řízení struktury. Další informace o T4 najdete v tématu [generování artefaktů podle pomocí textových šablon](http://go.microsoft.com/fwlink/?LinkId=166023).  
   
  Ukázkový soubor obsahuje služba s vlastním hostováním a klienta, který běží v konzolové aplikaci. Konzolové aplikace běží, klient odešle žádosti o službu a zapisuje příslušné informace z odpovědi do okna konzoly.  
   

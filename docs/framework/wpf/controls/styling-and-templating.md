@@ -1,12 +1,13 @@
 ---
-title: "Styly a šablony"
-ms.custom: 
+title: Styly a šablony
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,19 +23,20 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c33739d0e753146ffdc8b825d88c6ca7ba63fa1a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7aafd709bfc1da63d11a56ada59aedf0ada12f3a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují vývojářů a návrhářů, k vytvoření zajímavé vizuální efekty a k vytvoření konzistentního vzhledu jejich produktu. I když vývojáři a nebo Návrháři můžete přizpůsobit vzhled hojně na základě aplikace aplikace, je nutné povolit sdílení výskytu v rámci i mezi aplikacemi a údržby silné stylů a Ukázka modelu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje tento model.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují vývojářů a návrhářů, k vytvoření zajímavé vizuální efekty a k vytvoření konzistentního vzhledu jejich produktu. I když vývojáři a nebo Návrháři můžete přizpůsobit vzhled hojně na základě aplikace aplikace, je nutné povolit sdílení výskytu v rámci i mezi aplikacemi a údržby silné stylů a Ukázka modelu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje tento model.  
   
  Jiné funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stylů modelu je oddělení prezentační a logiku. To znamená, že Designer můžete na vzhled aplikace fungují jenom pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ve stejnou dobu, která vývojářům pracovat na logice programování s použitím jazyka C# nebo Visual Basic.  
   
@@ -181,15 +183,15 @@ ms.lasthandoff: 12/22/2017
  ![Snímek obrazovky stylů](../../../../docs/framework/wpf/controls/media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")  
   
 ### <a name="multitriggers-datatriggers-and-multidatatriggers"></a>MultiTriggers, DataTriggers a MultiDataTriggers  
- Kromě <xref:System.Windows.Trigger> a <xref:System.Windows.EventTrigger>, se objeví jiné typy služby aktivačních událostí. <xref:System.Windows.MultiTrigger>Umožňuje nastavit hodnoty vlastností na základě více podmínek. Používáte <xref:System.Windows.DataTrigger> a <xref:System.Windows.MultiDataTrigger> Pokud je vlastnost vaše podmínky vázané na data.  
+ Kromě <xref:System.Windows.Trigger> a <xref:System.Windows.EventTrigger>, se objeví jiné typy služby aktivačních událostí. <xref:System.Windows.MultiTrigger> Umožňuje nastavit hodnoty vlastností na základě více podmínek. Používáte <xref:System.Windows.DataTrigger> a <xref:System.Windows.MultiDataTrigger> Pokud je vlastnost vaše podmínky vázané na data.  
   
 <a name="styling_themes"></a>   
 ## <a name="shared-resources-and-themes"></a>Sdílené prostředky a motivů  
- Typické [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace může mít různé uživatelské rozhraní (UI) prostředky, které se použijí v celé aplikaci. Tuto sadu prostředků souhrnně, lze považovat motivu pro aplikaci. [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]poskytuje podporu pro balení uživatelské rozhraní (UI) prostředky jako motiv pomocí slovník prostředků, který je jako zapouzdřený <xref:System.Windows.ResourceDictionary> třídy.  
+ Typická aplikace Windows Presentation Foundation (WPF) může mít různé uživatelské rozhraní (UI) prostředky, které se použijí v celé aplikaci. Tuto sadu prostředků souhrnně, lze považovat motivu pro aplikaci. Windows Presentation Foundation (WPF) poskytuje podporu pro balení uživatelské rozhraní (UI) prostředky jako motiv pomocí slovník prostředků, který je jako zapouzdřený <xref:System.Windows.ResourceDictionary> třídy.  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]Motivy jsou definovány pomocí mechanizmu styly a ukázka a který [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] vystaví pro přizpůsobení vizuály žádná položka.  
+ Windows Presentation Foundation (WPF) motivy jsou definované za použití ukázka mechanismus, který zveřejňuje Windows Presentation Foundation (WPF) a stylů pro přizpůsobení vizuály žádná položka.  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]motiv prostředky jsou uloženy ve slovnících vložený prostředek. Tyto slovnících prostředků musí být vložen v podepsané sestavení a můžete buď vložit do stejného sestavení jako samotný kód nebo v souběžně sdílená sestavení. V případě knihovně PresentationFramework.dll, sestavení, které obsahuje [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ovládacích prvků, motivů prostředky jsou v řadě souběžně sdílená sestavení.  
+ Windows Presentation Foundation (WPF) motiv prostředky jsou uloženy ve slovnících vložený prostředek. Tyto slovnících prostředků musí být vložen v podepsané sestavení a můžete buď vložit do stejného sestavení jako samotný kód nebo v souběžně sdílená sestavení. V případě knihovně PresentationFramework.dll, sestavení, které obsahuje ovládací prvky Windows Presentation Foundation (WPF), motiv prostředky jsou v řadě souběžně sdílená sestavení.  
   
  Motiv se změní poslední místem při hledání styl elementu. Obvykle hledání budou začněte tím, že proti nahoru k elementu vyhledávání pro odpovídající prostředek, potom vyhledejte v kolekci prostředků aplikace a nakonec dotaz na systém. To poskytuje vývojářům aplikací možnost změnit definici stylu pro libovolný objekt na úrovni stromu nebo aplikace před dosažením motiv.  
   

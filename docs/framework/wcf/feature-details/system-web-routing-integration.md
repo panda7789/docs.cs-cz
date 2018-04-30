@@ -16,14 +16,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9c3a5b9965f63a9fc501025493b3a323013ea2a4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 72403671fe6700ae26cae4471a1d0ac100005f3a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="systemwebrouting-integration"></a>System.Web.Routing Integration
-Při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v Internetové informační služby (IIS) umístit soubor .svc ve virtuálním adresáři. Tento soubor .svc určuje vytváření hostitele služby a také třídu, která implementuje službu používat. Při zasílání požadavků na službu zadáte soubor .svc v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není optimální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádné rozšíření. <xref:System.Web.Routing> Funkce integrace umožňuje hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby REST, která reaguje na identifikátory URI bez přípony. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] směrování najdete [směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) ukázka.  
+Při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v Internetové informační služby (IIS) umístit soubor .svc ve virtuálním adresáři. Tento soubor .svc určuje vytváření hostitele služby a také třídu, která implementuje službu používat. Při zasílání požadavků na službu zadáte soubor .svc v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není optimální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádné rozšíření. <xref:System.Web.Routing> Funkce integrace umožňuje hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby REST, která reaguje na identifikátory URI bez přípony. Další informace o směrování najdete [směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) ukázka.  
   
 ## <a name="using-systemwebrouting-integration"></a>Pomocí integrace System.Web.Routing  
  Použít <xref:System.Web.Routing> funkce integrace použijete <xref:System.ServiceModel.Activation.ServiceRoute> třídy vytvořit jednu nebo víc tras a přidat je do <xref:System.Web.Routing.RouteTable> v souboru Global.asax. Tyto trasy zadejte relativní identifikátory URI, který služba reaguje na. Následující příklad ukazuje, jak to provést.  

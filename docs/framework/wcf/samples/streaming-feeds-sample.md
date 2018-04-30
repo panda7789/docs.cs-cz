@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 24dfd6c7eb2c1df6605d03bfb99cc82c0a489377
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1eb5d8e0b19bc32ea5158d1614447b76f4924440
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tento příklad znázorňuje postup správy informační kanály syndikace, které obsahují velkým počtem položek. Na serveru, ukázky ukazuje, jak zpoždění vytvoření jednotlivé <xref:System.ServiceModel.Syndication.SyndicationItem> objekty v rámci kanálu dokud okamžitě, než položka se zapíše do datového proudu sítě.  
@@ -29,7 +29,7 @@ Tento příklad znázorňuje postup správy informační kanály syndikace, kter
   
  K předvedení nejlépe streamování schopností syndikace rozhraní API, používá tato ukázka poněkud pravděpodobně scénář, ve kterém server zpřístupní informačního kanálu, který obsahuje nekonečné počet položek. V tomto případě server pokračuje v generování nových položek do informačního kanálu, dokud se určuje, že klient má ke čtení zadaný počet položek z informačního kanálu (ve výchozím nastavení, 10). Pro jednoduchost, klienta a serveru jsou implementované v rámci jednoho procesu a použít sdílenou `ItemCounter` má vytvořeného objektu k udržování přehledu o tom, kolik položek klienta. `ItemCounter` Typ existuje pouze pro účely povolení vzorový scénář ukončit ještě jednou a není element základní vzoru předmětem ukázky.  
   
- Ukázky využívá z Visual C# iterátory (pomocí `yield``return` – klíčové slovo konstrukce). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] iterátory, naleznete v části "Použití iterátory" na webu MSDN.  
+ Ukázky využívá z Visual C# iterátory (pomocí `yield``return` – klíčové slovo konstrukce). Další informace o iterátory naleznete v tématu "Pomocí iterátory" na webu MSDN.  
   
 ## <a name="service"></a>Služba  
  Služba implementuje základní <xref:System.ServiceModel.Web.WebGetAttribute> kontrakt, který se skládá z jedné operace, jak je znázorněno v následujícím kódu.  

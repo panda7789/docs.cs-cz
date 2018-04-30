@@ -1,31 +1,33 @@
 ---
-title: "Webhosting frontové aplikace"
-ms.custom: 
+title: Webhosting frontové aplikace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a12348c3c49c29812530bc568bb5873ec53f7eb5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7b7168d5283a0dbe1001631f855e493335576a80
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="web-hosting-a-queued-application"></a>Webhosting frontové aplikace
 Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace, které hostují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby využívají protokoly HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
   
  BYL zahrnuje služba Aktivace řízení front zpráv (MSMQ), která aktivuje aplikace ve frontě, když jeden nebo více zpráv ukládány v jednom z fronty používá aplikace. Aktivace služby MSMQ je služby NT, který se automaticky spustí ve výchozím nastavení.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WAS a jeho výhody, najdete v části [hostování v aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]MSMQ, najdete v části [fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ Další informace o WAS a výhod najdete v tématu [hostování v aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md). Další informace o MSMQ najdete v tématu [fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
   
 ## <a name="queue-addressing-in-was"></a>Fronty adresování ve WAS  
  BYLA aplikací mít adresy identifikátor URI (Uniform Resource). Adresy aplikací mít dvě části: základní předpony identifikátoru URI a specifické pro aplikaci, relativní adresu (cesta). Tyto dvě části zadejte externí adresu pro aplikaci, když propojeny. Základní předpony identifikátoru URI je vytvořený z vazby webu a používá se pro všechny aplikace v rámci lokality, například "net.msmq://localhost", "msmq.formatname://localhost" nebo "net.tcp://localhost". Aplikace adresy se pak vytvářejí provedením fragmenty cesta specifické pro aplikaci (například "/ applicationOne") a jejich připojení k základní identifikátor URI předpona, která přicházejí na úplný identifikátor URI aplikace, například "net.msmq://localhost/applicationOne".  

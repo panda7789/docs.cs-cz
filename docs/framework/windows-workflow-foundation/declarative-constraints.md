@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f5ab784498805473830b46962d9e02591fc3eace
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 4406bbbe7780fabc8872718ca21e8d755ea85c59
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="declarative-constraints"></a>Deklarativní omezení
 Deklarativní omezení poskytují výkonný metodu ověření pro aktivitu a jeho vztahů s dalšími aktivitami. Omezení jsou nakonfigurovány pro aktivitu během procesu vytváření, ale další omezení lze zadat také od hostitele pracovního postupu. Toto téma obsahuje přehled používání deklarativní omezení pro ověřování aktivity.  
@@ -188,4 +188,4 @@ else
 }  
 ```  
   
- Pokud <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> je `true`, pak pouze zadané další omezení jsou vyhodnocována po ověření je vyvolán při volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. To může být užitečné pro zkontrolujete pracovní postupy pro ověřování podle konfigurace. Všimněte si ale, že po vyvolání pracovního postupu logiku ověření nakonfigurované v pracovním postupu vyhodnotí a musí projít pro pracovní postup úspěšně zahájíte. [!INCLUDE[crabout](../../../includes/crabout-md.md)] volání ověření, najdete v části [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).
+ Pokud <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> je `true`, pak pouze zadané další omezení jsou vyhodnocována po ověření je vyvolán při volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. To může být užitečné pro zkontrolujete pracovní postupy pro ověřování podle konfigurace. Všimněte si ale, že po vyvolání pracovního postupu logiku ověření nakonfigurované v pracovním postupu vyhodnotí a musí projít pro pracovní postup úspěšně zahájíte. Další informace o vyvolání ověření najdete v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).

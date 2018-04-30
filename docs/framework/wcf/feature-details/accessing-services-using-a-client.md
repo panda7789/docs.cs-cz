@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2138a412af30812b4ff443963604dda52eafea11
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 209d10f9545be65870f584fa79444f7fab90211a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
 Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta nebo kanál objektů komunikovat se službami. [Klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základní klienta a kanál objektů a jejich používání.  
@@ -76,7 +76,7 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
   
  Kanály datagram nikdy poruch i v případě výjimky dojít, když jsou uzavřeny. Kromě toho-duplexní režim klientů, které se nepodařilo ověřit pomocí zabezpečenou konverzaci obvykle throw <xref:System.ServiceModel.Security.MessageSecurityException?displayProperty=nameWithType>. Ale pokud se ověření nezdaří duplexní klienta pomocí zabezpečenou konverzaci, klient přijme <xref:System.TimeoutException?displayProperty=nameWithType> místo.  
   
- Podrobnější informace o práci s informace o chybě na úrovni aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) popisuje očekávané výjimky a ukazuje, jak k jejich zpracování. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zpracování chyb při vývoji kanály najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
+ Podrobnější informace o práci s informace o chybě na úrovni aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) popisuje očekávané výjimky a ukazuje, jak k jejich zpracování. Další informace o tom, jak zpracovávat chyby při vývoji kanály najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
   
 ### <a name="client-blocking-and-performance"></a>Blokování klienta a výkonu  
  Když aplikace synchronně volá operaci požadavku a odpovědi, klientské bloky, dokud není přijata návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikace synchronně vyvolá operace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta nebo kanálu klienta nevrací dokud vrstvy kanálu můžete zapsat data do sítě, nebo dokud je vyvolána výjimka. A při vzorce výměny zpráv jednosměrný (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) můžete provést některé klienty rychlejšího, Jednosměrná operace můžete taky zablokovat, v závislosti na vazby a co zprávy již byly Odeslat. Jednosměrná operace jsou pouze o zpráva systému exchange, ne další a ne menší. Další informace najdete v tématu [One-Way služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
@@ -85,7 +85,7 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
   
  Pokud vaše aplikace musí provést další práci při dokončení operace, měli byste vytvořit dvojici asynchronní metody na rozhraní kontraktu služby, vaše [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje klienta. Nejjednodušším způsobem je použití `/async` přepínač na [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Příklad, naleznete v části [postupy: asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zvýšení výkonu klienta, najdete v části [klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).  
+ Další informace o většího výkonu klienta najdete v tématu [klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).  
   
 ### <a name="enabling-the-user-to-select-credentials-dynamically"></a>Povolení uživatelům dynamicky vyberte přihlašovací údaje  
  <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> Rozhraní umožňuje aplikacím, které chcete zobrazit uživatelské rozhraní, které umožňuje uživatelům vyberte přihlašovací údaje, pomocí kterých se vytvoří kanál před časovače časový limit spuštění.  

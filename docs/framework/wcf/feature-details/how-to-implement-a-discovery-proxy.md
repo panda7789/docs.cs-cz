@@ -1,27 +1,29 @@
 ---
-title: "Postupy: Implementace zjišťování proxy"
-ms.custom: 
+title: 'Postupy: Implementace zjišťování proxy'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 25db6b46758e11c194952fbca03286891a5914d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2e984a55137aec0042f8de0d69aa1310ed43a0df
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>Postupy: Implementace zjišťování proxy
-Toto téma vysvětluje postup implementace zjišťování proxy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]funkci zjišťování v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], najdete v části [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Zjišťování proxy může být implementována vytváření třídu, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídy. Existuje několik dalších podporu tříd definovaný a použít v této ukázce. `OnResolveAsyncResult`, `OnFindAsyncResult`, a `AsyncResult`. Tyto třídy implementovat <xref:System.IAsyncResult> rozhraní. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<xref:System.IAsyncResult> najdete v části [System.IAsyncResult rozhraní](xref:System.IAsyncResult).
+Toto téma vysvětluje postup implementace zjišťování proxy. Další informace o funkci zjišťování v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], najdete v části [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Zjišťování proxy může být implementována vytváření třídu, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídy. Existuje několik dalších podporu tříd definovaný a použít v této ukázce. `OnResolveAsyncResult`, `OnFindAsyncResult`, a `AsyncResult`. Tyto třídy implementovat <xref:System.IAsyncResult> rozhraní. Další informace o <xref:System.IAsyncResult> najdete v části [System.IAsyncResult rozhraní](xref:System.IAsyncResult).
   
  Implementace proxy zjišťování je rozdělit do tří hlavních částí v tomto tématu:  
   

@@ -16,17 +16,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e8fd88edd711513d1b143029d8088401c9945d13
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2e01418844db4197cea2f9292f72b9089e77a596
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI).  
   
 ## <a name="enabling-wmi"></a>Povolení služby WMI  
- Služba WMI je implementace Web-Based Enterprise Management (WBEM) standardní společnosti Microsoft. [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] Sada SDK rozhraní WMI najdete v části [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM je oborový standard pro jak aplikace vystavit WMI pro externí nástroje pro správu.  
+ Služba WMI je implementace Web-Based Enterprise Management (WBEM) standardní společnosti Microsoft. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM je oborový standard pro jak aplikace vystavit WMI pro externí nástroje pro správu.  
   
  Zprostředkovatel rozhraní WMI je součást, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Obsahuje sadu objektů rozhraní WMI, které mají dvojice atribut hodnota. Dvojice může mít několik jednoduchých typů. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
   

@@ -20,14 +20,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2aa8adc0ce197c3776b8314009fcaa061bed884d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 91b22cbcabba95d8cc91ffbc0b74b51e61dae393
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-feature-details"></a>Podrobnosti o funkcích WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]základní programování, viz [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  

@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 861e0c9eb4e9afa5f9924160efed428d565bac4e
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 2ed51d14c56358e283d6c014f036a8aff73d2bfe
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="compensation"></a>kompenzace
 Náhrada v systému Windows Workflow Foundation (WF) je mechanismus, pomocí kterého dříve dokončené práce odvolat nebo kompenzované (následující logiky definované aplikací.) Pokud dojde k následující chybě. Tato část popisuje postup použití kompenzace v pracovních postupech.  
@@ -27,7 +27,7 @@ Náhrada v systému Windows Workflow Foundation (WF) je mechanismus, pomocí kte
  Transakce můžete kombinovat více operací do jedné jednotky práce. Pomocí transakce dává možnost přerušit všechny změny, které jsou spuštěny uvnitř transakce při výskytu chyby během libovolná součást procesu transakce (pouze vrácení) vaší aplikace. Použití transakcí však nemusí být vhodné v případě práce dlouho spuštěný. Například cesta plánování aplikace je implementováno jako pracovní postup. Rezervace letu, čekají na schválení správce a pak platícího pro letu může obsahovat kroky pracovního postupu. Tento proces může trvat dlouho a není praktické kroky rezervace a platebního pro let k účasti ve stejné transakci. Ve scénáři jako je tato kompenzace může vrátit zpět rezervaci krok pracovního postupu, pokud dojde k selhání později ve zpracování.  
   
 > [!NOTE]
->  Toto téma popisuje kompenzace v pracovních postupech. [!INCLUDE[crabout](../../../includes/crabout-md.md)] transakce v pracovních postupech najdete v části [transakce](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md) a <xref:System.Activities.Statements.TransactionScope>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] transakce, najdete v části <xref:System.Transactions?displayProperty=nameWithType> a <xref:System.Transactions.Transaction?displayProperty=nameWithType>.  
+>  Toto téma popisuje kompenzace v pracovních postupech. Další informace o transakcích v pracovních postupech najdete v tématu [transakce](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md) a <xref:System.Activities.Statements.TransactionScope>. Další informace o transakcích najdete v tématu <xref:System.Transactions?displayProperty=nameWithType> a <xref:System.Transactions.Transaction?displayProperty=nameWithType>.  
   
 ## <a name="using-compensableactivity"></a>Pomocí CompensableActivity  
  <xref:System.Activities.Statements.CompensableActivity> je základní kompenzace aktivity v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Všech aktivit, které provádějí práci, kterou muset kompenzovat se umístí do <xref:System.Activities.Statements.CompensableActivity.Body%2A> z <xref:System.Activities.Statements.CompensableActivity>. V tomto příkladu je umístěn krok rezervace nákup cestě do <xref:System.Activities.Statements.CompensableActivity.Body%2A> z <xref:System.Activities.Statements.CompensableActivity> a zrušení rezervace je umístěn do <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A>. Hned <xref:System.Activities.Statements.CompensableActivity> v pracovním postupu jsou dvě aktivity, které čekat na schválení správce a pak dokončete nákupu krok letu. Pokud se chybová podmínka způsobí, že v pracovním postupu zrušit po <xref:System.Activities.Statements.CompensableActivity> bylo úspěšně dokončeno, pak aktivity v <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> jsou naplánovány obslužné rutiny a zrušení letu.  
@@ -177,7 +177,7 @@ Activity wf = new Sequence()
 **Pracovní postup neošetřená výjimka:**   
 **System.ApplicationException: Simulované chybový stav v pracovním postupu.**   
 **CancelCreditCard: Zrušit poplatky platební karty.**   
-**Pracovního postupu byla úspěšně dokončena se stavem: zrušena.**  [!INCLUDE[crabout](../../../includes/crabout-md.md)] zrušení, najdete v části [zrušení](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md).  
+**Pracovního postupu byla úspěšně dokončena se stavem: zrušena.**  Další informace o zrušení najdete v tématu [zrušení](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md).  
   
 ### <a name="explicit-compensation-using-the-compensate-activity"></a>Pomocí explicitní kompenzace odpovídajícím způsobem aktivity  
  V předchozím oddílu byla zahrnutých implicitní honoráře. Implicitní kompenzace může být vhodné pro jednoduchého scénáře, ale pokud podrobnější je potřeba řízení nad plánováním kompenzace pak zpracování <xref:System.Activities.Statements.Compensate> lze aktivity. Zahájíte proces kompenzace <xref:System.Activities.Statements.Compensate> aktivity, <xref:System.Activities.Statements.CompensationToken> z <xref:System.Activities.Statements.CompensableActivity> pro které kompenzace se požaduje se používá. <xref:System.Activities.Statements.Compensate> Aktivity lze použít k zahájení kompenzace na žádném Dokončit <xref:System.Activities.Statements.CompensableActivity> které nebyly potvrzeny ani kompenzované. Například <xref:System.Activities.Statements.Compensate> aktivity může být používány <xref:System.Activities.Statements.TryCatch.Catches%2A> části <xref:System.Activities.Statements.TryCatch> aktivity nebo kdykoli po dokončení <xref:System.Activities.Statements.CompensableActivity> byla dokončena. V tomto příkladu <xref:System.Activities.Statements.Compensate> aktivita se používá v <xref:System.Activities.Statements.TryCatch.Catches%2A> části <xref:System.Activities.Statements.TryCatch> aktivitu pro vrácení akce <xref:System.Activities.Statements.CompensableActivity>.  

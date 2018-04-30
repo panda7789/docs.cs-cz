@@ -1,27 +1,29 @@
 ---
-title: "Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric"
-ms.custom: 
+title: 'Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fc7af813f7fff422a2513c58c9e3cba6376de060
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ef60a291af39a39d3427d74b8a6ea7d00382c8d6
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric
-Hostování služeb pracovních postupů v App Fabric je podobná hostování v rámci služby IIS / byla. Jediným rozdílem je, nástroje, které poskytuje App Fabric pro nasazení, monitorování a správu služeb pracovních postupů. Toto téma používá služby pracovního postupu, které jsou vytvořené v [vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md). Toto téma vás procesem vytvoření služby pracovních postupů. Toto téma vysvětluje, jak hostitele služby pracovního postupu pomocí App Fabric. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric, najdete v části [dokumentaci systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409). Před dokončením následujících kroků zkontrolujte, zda že máte nainstalovaný Windows Server App Fabric.  Pokud chcete provést tuto, otevřete si Internetová informační služba (inetmgr.exe), klikněte na název serveru v **připojení** zobrazení, klikněte na tlačítko weby a klikněte na **Default Web Site**. Na pravé straně obrazovky byste měli vidět části s názvem **App Fabric**. Pokud nevidíte v této části (je nahoře v pravém podokně) nemáte App Fabric nainstalována. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]instalace systému Windows Server App Fabric najdete v části [instalace systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193136).  
+Hostování služeb pracovních postupů v App Fabric je podobná hostování v rámci služby IIS / byla. Jediným rozdílem je, nástroje, které poskytuje App Fabric pro nasazení, monitorování a správu služeb pracovních postupů. Toto téma používá služby pracovního postupu, které jsou vytvořené v [vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md). Toto téma vás procesem vytvoření služby pracovních postupů. Toto téma vysvětluje, jak hostitele služby pracovního postupu pomocí App Fabric. Další informace o systému Windows Server App Fabric najdete v tématu [dokumentaci systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409). Před dokončením následujících kroků zkontrolujte, zda že máte nainstalovaný Windows Server App Fabric.  Pokud chcete provést tuto, otevřete si Internetová informační služba (inetmgr.exe), klikněte na název serveru v **připojení** zobrazení, klikněte na tlačítko weby a klikněte na **Default Web Site**. Na pravé straně obrazovky byste měli vidět části s názvem **App Fabric**. Pokud nevidíte v této části (je nahoře v pravém podokně) nemáte App Fabric nainstalována. Další informace o instalaci systému Windows Server App Fabric najdete v části [instalace systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193136).  
   
 ### <a name="creating-a-simple-workflow-service"></a>Vytvoření jednoduchého pracovního postupu služby  
   
@@ -51,37 +53,37 @@ Hostování služeb pracovních postupů v App Fabric je podobná hostování v 
   
      ![Aplikace monitorování konfigurace infrastruktury karta](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-monitoring.gif "AppFabricConfiguration monitorování")  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Konfigurace pracovního postupu služby monitorování v nástroji App Fabric najdete v části [konfiguraci monitorování pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=193153).  
+     Další informace o konfiguraci služby pracovního postupu v tématu monitorování v nástroji App Fabric [konfiguraci monitorování pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=193153).  
   
 6.  Vyberte **pracovního postupu trvalost** kartě. To umožňuje konfiguraci aplikace na použití App Fabric výchozí trvalost poskytovatele, jak je znázorněno na následujícím snímku obrazovky.  
   
-     ![Konfigurace infrastruktury aplikace & č. 45; Trvalost](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-persistence.gif "AppFabricConfiguration trvalost")  
+     ![Konfigurace infrastruktury aplikace &#45; trvalost](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-persistence.gif "AppFabricConfiguration trvalost")  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Konfigurace trvalosti pracovního postupu v systému Windows Server App Fabric najdete v části [konfigurace trvalosti pracovního postupu v App Fabric](http://go.microsoft.com/fwlink/?LinkId=193148).  
+     Další informace o konfigurování trvalosti pracovního postupu v systému Windows Server App Fabric najdete v části [konfigurace trvalosti pracovního postupu v App Fabric](http://go.microsoft.com/fwlink/?LinkId=193148).  
   
 7.  Vyberte **správu hostitele pracovního postupu** kartě. Můžete určit, když instance služby nečinnosti pracovního postupu by měla být uvolněna a jako trvalý, jak je znázorněno na následujícím snímku obrazovky.  
   
      ![Správa hostitele pracovního postupu konfigurace App Fabric](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-management.gif "AppFabricConfiguration-Management")  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]viz konfigurace správy hostitele pracovního postupu [konfigurace správy hostitele pracovního postupu v App Fabric](http://go.microsoft.com/fwlink/?LinkId=193151).  
+     Další informace o konfiguraci správy hostitele pracovního postupu v tématu [konfigurace správy hostitele pracovního postupu v App Fabric](http://go.microsoft.com/fwlink/?LinkId=193151).  
   
 8.  Vyberte **automatického spuštění** kartě. To umožňuje určit nastavení automatického spouštění služby pracovních postupů v aplikaci, jak je znázorněno na následujícím snímku obrazovky.  
   
-     ![Aplikace Fabric automaticky & č. 45; počáteční konfigurace](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationautostart.gif "AppFabricConfigurationAutostart")  
+     ![Aplikace Fabric automaticky&#45;spustit konfigurování](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationautostart.gif "AppFabricConfigurationAutostart")  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Konfigurace automatického spouštění najdete v části [konfigurace automatického – spuštění pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=193150).  
+     Další informace o konfiguraci automatického spouštění naleznete v části [konfigurace automatického – spuštění pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=193150).  
   
 9. Vyberte **omezování** kartě. To umožňuje konfigurovat nastavení omezení pro službu pracovní postup, jak je znázorněno na následujícím snímku obrazovky.  
   
      ![Omezení configuration App Fabric](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationthrottling.gif "AppFabricConfigurationThrottling")  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Konfigurace omezení najdete v části [konfigurace omezování pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=193149).  
+     Další informace o konfiguraci omezování najdete v části [konfigurace omezování pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=193149).  
   
 10. Vyberte **zabezpečení** kartě. To umožňuje konfigurovat nastavení zabezpečení pro aplikace, jak je znázorněno na následujícím snímku obrazovky.  
   
      ![Konfigurace zabezpečení aplikace infrastruktury](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-security.gif "AppFabricConfiguration zabezpečení")  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Konfigurace zabezpečení pomocí systému Windows Server App Fabric najdete v části [konfigurace zabezpečení s App Fabric](http://go.microsoft.com/fwlink/?LinkId=193152).  
+     Další informace o konfiguraci zabezpečení pomocí systému Windows Server App Fabric najdete v části [konfigurace zabezpečení s App Fabric](http://go.microsoft.com/fwlink/?LinkId=193152).  
   
 ### <a name="using-windows-server-app-fabric"></a>Pomocí Windows Server App Fabric  
   

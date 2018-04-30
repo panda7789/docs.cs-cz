@@ -1,28 +1,30 @@
 ---
-title: "Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru"
-ms.custom: 
+title: Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - server-side UI Automation provider implementation
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-caps.latest.revision: "39"
+caps.latest.revision: 39
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d25f561444cd672e8842711025f4299c375d6bb4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0068efb6f45fca15232be61a8a997f6df94f99a5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 > [!NOTE]
@@ -30,7 +32,7 @@ ms.lasthandoff: 01/19/2018
   
  Tato část popisuje postupy pro implementaci zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek.  
   
- Implementace pro [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] elementy a jiných-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elementy (jsou určené pro [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) se podstatně liší. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]elementy poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím třídy odvozené od <xref:System.Windows.Automation.Peers.AutomationPeer>. Jinou hodnotu než[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elementy poskytovat podporu prostřednictvím implementace rozhraní poskytovatele.  
+ Implementace pro elementy Windows Presentation Foundation (WPF) a jiný-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elementy (například určené pro [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) se zásadně liší. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elementy poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím třídy odvozené od <xref:System.Windows.Automation.Peers.AutomationPeer>. Jinou hodnotu než[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elementy poskytovat podporu prostřednictvím implementace rozhraní poskytovatele.  
   
 <a name="Security_Considerations"></a>   
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení  
@@ -80,7 +82,7 @@ ms.lasthandoff: 01/19/2018
   
 |Funkce|Implementace|  
 |-------------------|--------------------|  
-|Vystavení zprostředkovatele, který se[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|V reakci na WM_GETOBJECT zprávy odeslané do okna Ovládací prvek, vrátí objekt, který implementuje <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (nebo odvozené rozhraní). Pro fragmenty musí se jednat zprostředkovatele pro kořenovou fragment.|  
+|Vystavení zprostředkovatele, který se [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|V reakci na WM_GETOBJECT zprávy odeslané do okna Ovládací prvek, vrátí objekt, který implementuje <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (nebo odvozené rozhraní). Pro fragmenty musí se jednat zprostředkovatele pro kořenovou fragment.|  
 |Zadejte hodnoty vlastností|Implementace <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A> k poskytování nebo hodnoty přepsání.|  
 |Povolit klientům komunikovat pomocí ovládacího prvku|Implementace rozhraní, které podporují vzory ovládacích prvků, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider>. Vrátí tyto zprostředkovatele vzor ve vaši implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A>.|  
 |Vyvolávání událostí|Volání jednoho z statických metod <xref:System.Windows.Automation.Provider.AutomationInteropProvider> vyvolat událost, který může klient naslouchat.|  
@@ -89,7 +91,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Property_Values_in_Non_WPF_Providers"></a>   
 ### <a name="property-values-in-non-wpf-providers"></a>Hodnoty vlastností ve zprostředkovatelích grafického subsystému WPF  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]zprostředkovatelé pro vlastní ovládací prvky musí podporovat některé vlastnosti, které lze použít systém automatizace a klientské aplikace. U elementů, které jsou hostované v systému windows (HWND) [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] můžete načíst některé vlastnosti od výchozího zprostředkovatele okno, ale ostatní musí získat z vlastního zprostředkovatele.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zprostředkovatelé pro vlastní ovládací prvky musí podporovat některé vlastnosti, které lze použít systém automatizace a klientské aplikace. U elementů, které jsou hostované v systému windows (HWND) [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] můžete načíst některé vlastnosti od výchozího zprostředkovatele okno, ale ostatní musí získat z vlastního zprostředkovatele.  
   
  Zprostředkovatelé pro ovládací prvky HWND na základě nemusíte obvykle zadejte následující vlastnosti (identifikovaný hodnoty polí):  
   
@@ -124,7 +126,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Events_in_Non_WPF_Providers"></a>   
 ### <a name="events-in-non-wpf-providers"></a>Události ve zprostředkovatelích grafického subsystému WPF  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Zprostředkovatelé by měla vyvolat události oznámení klientských aplikací změny ve stavu uživatelského rozhraní. Následující metody se používají k vyvolávání událostí.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Zprostředkovatelé by měla vyvolat události oznámení klientských aplikací změny ve stavu uživatelského rozhraní. Následující metody se používají k vyvolávání událostí.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
@@ -156,7 +158,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Non_WPF_Provider_Reparenting"></a>   
 ### <a name="non-wpf-provider-reparenting"></a>Reparenting zprostředkovatele grafického subsystému WPF  
- Automaticky otevíraná okna jsou ve skutečnosti nejvyšší úrovně windows a to znamená ve výchozím nastavení se zobrazí v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu jako podřízené objekty plochy. V mnoha případech automaticky otevíraná okna jsou však logicky podřízené některé jiné ovládacímu prvku. Rozevírací seznam pole se seznamem je například logicky Podřízená pole se seznamem. Podobně kontextovou nabídku je logicky podřízenou v nabídce. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje podporu pro Nadřadit automaticky otevíraná okna tak, aby se zobrazí jako podřízené objekty přidruženého ovládacího prvku.  
+ Automaticky otevíraná okna jsou ve skutečnosti nejvyšší úrovně windows a to znamená ve výchozím nastavení se zobrazí v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu jako podřízené objekty plochy. V mnoha případech automaticky otevíraná okna jsou však logicky podřízené některé jiné ovládacímu prvku. Rozevírací seznam pole se seznamem je například logicky Podřízená pole se seznamem. Podobně kontextovou nabídku je logicky podřízenou v nabídce. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytuje podporu pro Nadřadit automaticky otevíraná okna tak, aby se zobrazí jako podřízené objekty přidruženého ovládacího prvku.  
   
  Chcete-li Nadřadit automaticky otevírané okno:  
   
@@ -174,7 +176,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Non_WPF_Provider_Repositioning"></a>   
 ### <a name="non-wpf-provider-repositioning"></a>Zprostředkovatel grafického subsystému WPF přemístění  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]fragmenty může obsahovat minimálně dva elementy, které jsou všechny obsažené v okně (HWND). Protože každý HWND má svou vlastní výchozího zprostředkovatele, který zvažuje HWND jako podřízenou obsahující HWND, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, ve výchozím nastavení, zobrazí HWND ve fragmentu jako podřízené objekty nadřazeného okna. Ve většině případů to je žádoucí chování, ale v některých případech může vést k záměně protože neodpovídá logické struktury [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fragmenty může obsahovat minimálně dva elementy, které jsou všechny obsažené v okně (HWND). Protože každý HWND má svou vlastní výchozího zprostředkovatele, který zvažuje HWND jako podřízenou obsahující HWND, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, ve výchozím nastavení, zobrazí HWND ve fragmentu jako podřízené objekty nadřazeného okna. Ve většině případů to je žádoucí chování, ale v některých případech může vést k záměně protože neodpovídá logické struktury [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
  Dobrým příkladem tohoto objektu je ovládacím prvkem matrice. Matrice obsahuje pruhy, z nichž každá pak může obsahovat ovládacího prvku na základě HWND například panel nástrojů, textové pole nebo pole se seznamem. Okno výchozího zprostředkovatele pro matrice HWND vidí vzdálené řízení HWND jako podřízené objekty a poskytovateli matrice uvidí pásma jako podřízené objekty. Vzhledem k poskytovateli HWND a poskytovateli matrice jsou práci současně a kombinování jejich podřízené, pásma a ovládací prvky založené na HWND zobrazí jako podřízené objekty matrice. Logicky ale pouze pásma mají zobrazit jako podřízené objekty matrice a každý zprostředkovatele pro vzdálenou správu by měla kombinaci s HWND výchozího zprostředkovatele pro ovládací prvek, který obsahuje.  
   

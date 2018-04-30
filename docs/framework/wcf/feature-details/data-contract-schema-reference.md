@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 739046945a019541f279b15d2d1b945f526861fb
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 075f8d89caccd7723f3a1dc54fde695a8fb624ab
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci XML.  
@@ -245,7 +245,7 @@ Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runt
   
 -   Jednoduchý typ omezení u `xs:string` které nemají žádné omezení omezující než `xs:enumeration` jsou namapované na kontrakty dat výčtu.  
   
--   Další omezení jednoduchého typu jsou namapované na typy, které omezují. Například omezení u `xs:int` mapuje na typ integer, stejně jako `xs:int` sám nemá. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] primitivní typ mapování, najdete v části typ nebo primitivní mapování.  
+-   Další omezení jednoduchého typu jsou namapované na typy, které omezují. Například omezení u `xs:int` mapuje na typ integer, stejně jako `xs:int` sám nemá. Další informace o mapování primitivní typ najdete v části typ nebo primitivní mapování.  
   
 ### <a name="xsrestriction-attributes"></a>\<xs:restriction >: atributy  
   
@@ -549,7 +549,7 @@ public class Employee : Person
 </xs:complexType>  
 ```  
   
- Volitelný atribut `ser:FactoryType` deklarované v serializaci kontraktu dat schématu odkazuje na třídu objektů factory, který může deserializovat daný typ. Třídu objektů factory musí být součástí kolekce známé typy `DataContractSerializer` instance, používá. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] známé typy, najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Volitelný atribut `ser:FactoryType` deklarované v serializaci kontraktu dat schématu odkazuje na třídu objektů factory, který může deserializovat daný typ. Třídu objektů factory musí být součástí kolekce známé typy `DataContractSerializer` instance, používá. Další informace o známé typy najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
 ## <a name="datacontract-serialization-schema"></a>Schéma serializace kontraktu  
  Počet schémata exportované sadou `DataContractSerializer` použijte typy elementů a atributů z speciální obor názvů kontraktu serializace dat:  

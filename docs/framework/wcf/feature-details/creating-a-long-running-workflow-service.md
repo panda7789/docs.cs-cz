@@ -1,24 +1,26 @@
 ---
-title: "Vytvoření dlouhodobé služby pracovního postupu"
-ms.custom: 
+title: Vytvoření dlouhodobé služby pracovního postupu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 94a62a54fb138e394d8e9fa944e49e6526ae7152
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1cd7cc70c50ac2aa56d8cca55037769aa0b6a64a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící služeb pracovních postupů mohou spustit pro dlouhou dobu. V určitém okamžiku pracovní postup může se stát, nečinnosti čeká se na některé další informace. V takovém případě pracovního postupu uložena v databázi SQL a bude odebrán z paměti. Jakmile bude k dispozici další informace k instanci pracovního postupu je načteno zpět do paměti a pokračuje v provádění.  V tomto scénáři jsou implementace velmi zjednodušené řazení systému.  Klient odešle zprávu počáteční služby pracovního postupu spustit pořadí. Vrátí pořadí ID klienta. V tomto okamžiku služby pracovního postupu se čeká na další zprávu od klienta a klient se přepne do stavu nečinnosti a uložena v databázi systému SQL Server.  Když klient odešle na další zprávu pořadí položku, služby pracovního postupu je načteno zpět do paměti a dokončí zpracování pořadí. V ukázce kódu vrátí řetězec s informacemi o tom, že položka se přidal do pořadí. Ukázka kódu není určené jako aplikace skutečných technologie, ale spíš jednoduchý příklad, který znázorňuje dlouhotrvající služeb pracovních postupů. Toto téma předpokládá, že víte, jak vytvořit [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] projekty a řešení.  
@@ -30,7 +32,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
   
 2.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]  
   
-3.  Microsoft[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]  
+3.  Microsoft  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]  
   
 4.  Jste obeznámeni s použitím technologie WCF a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] a vědět, jak vytvářet projekty nebo řešení.  
   
@@ -82,7 +84,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
   
          ![Sada přijímat vlastnosti aktivity](../../../../docs/framework/wcf/feature-details/media/setreceiveproperties.png "SetReceiveProperties")  
   
-         Vlastnost DisplayName nastaví název zobrazený Receive aktivity v návrháři. Vlastnosti ServiceContractName a OperationName zadejte název kontraktu služby a operace, které jsou implementované pomocí aktivity Receive. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]použití kontraktů v pracovním postupu služeb najdete v tématu [použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  
+         Vlastnost DisplayName nastaví název zobrazený Receive aktivity v návrháři. Vlastnosti ServiceContractName a OperationName zadejte název kontraktu služby a operace, které jsou implementované pomocí aktivity Receive. Další informace o použití kontraktů v služeb pracovních postupů v tématu [použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  
   
     2.  Klikněte **definovat...**  odkaz **ReceiveStartOrder** aktivity a nastavte vlastnosti zobrazené na následujícím obrázku.  Všimněte si, že **parametry** přepínače, parametr s názvem `p_customerName` je vázána `customerName` proměnné. Tím se nakonfiguruje **Receive** aktivity přijímat některá data a vytvoření vazby dat k lokální proměnné.  
   
@@ -120,13 +122,13 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
   
          ![Určení parametrů pro druhý přijímat](../../../../docs/framework/wcf/feature-details/media/addreceive2parameters.png "AddReceive2Parameters")  
   
-    4.  Klikněte **CorrelateOn** třemi tečkami tlačítko a zadejte `orderIdHandle`. V části **dotazů XPath**, klikněte na šipku rozevíracího seznamu a vyberte `p_orderId`. Tím se nakonfiguruje korelaci na druhé stránce přijímat aktivity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace najdete [korelace](../../../../docs/framework/wcf/feature-details/correlation.md).  
+    4.  Klikněte **CorrelateOn** třemi tečkami tlačítko a zadejte `orderIdHandle`. V části **dotazů XPath**, klikněte na šipku rozevíracího seznamu a vyberte `p_orderId`. Tím se nakonfiguruje korelaci na druhé stránce přijímat aktivity. Další informace o korelace najdete v části [korelace](../../../../docs/framework/wcf/feature-details/correlation.md).  
   
          ![Nastavení vlastnosti CorrelatesOn](../../../../docs/framework/wcf/feature-details/media/correlateson.png "CorrelatesOn")  
   
     5.  Přetáhnout myší **Pokud** aktivity ihned po **ReceiveAddItem** aktivity. Tato aktivita funguje stejně jako Pokud příkaz.  
   
-        1.  Nastavte **podmínku** vlastnosti`itemId=="Zune HD" (itemId="Zune HD" for Visual Basic)`  
+        1.  Nastavte **podmínku** vlastnosti `itemId=="Zune HD" (itemId="Zune HD" for Visual Basic)`  
   
         2.  Přetáhnout myší **přiřadit** aktivitu v **pak** části a druhý do **Else** oddíl nastavit vlastnosti **přiřadit** aktivity, jak je znázorněno na následujícím obrázku.  
   

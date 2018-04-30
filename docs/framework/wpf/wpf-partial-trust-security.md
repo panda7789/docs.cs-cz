@@ -29,14 +29,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 740146bffe869dc30bbf8e8472c30be317ce6f7c
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 023de9e20206411f7dd6774553ae39eefaa508a0
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
-<a name="introduction"></a> Obecně platí Internetové aplikace by měla být omezeno mají přímý přístup k důležitým systémovým prostředkům, aby nedošlo k poškození škodlivý. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a skriptovací jazyky klienta nejsou mít přístup k důležitým systémovým prostředkům. Protože [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] webové aplikace může být spuštěn z prohlížeče, by měl odpovídat podobnou sadu omezení. K vynucení těchto omezení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spoléhá na obou [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)] a [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] (najdete v části [strategie zabezpečení WPF - platformy zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované prohlížečem žádostí zóně Internet [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] sadu oprávnění, bez ohledu na to, jestli jsou spouštěny z Internetu, místní intranet nebo místního počítače. Aplikace, které používají něco menší než úplnou sadu oprávnění jsou uvedená, aby byl spuštěn s částečnou důvěryhodností.  
+<a name="introduction"></a> Obecně platí Internetové aplikace by měla být omezeno mají přímý přístup k důležitým systémovým prostředkům, aby nedošlo k poškození škodlivý. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a skriptovací jazyky klienta nejsou mít přístup k důležitým systémovým prostředkům. Protože aplikace hostované prohlížečem Windows Presentation Foundation (WPF) může být spuštěn z prohlížeče, by měl odpovídat podobnou sadu omezení. K vynucení těchto omezení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spoléhá na obou [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)] a [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] (najdete v části [strategie zabezpečení WPF - platformy zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované prohlížečem žádostí zóně Internet [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] sadu oprávnění, bez ohledu na to, jestli jsou spouštěny z Internetu, místní intranet nebo místního počítače. Aplikace, které používají něco menší než úplnou sadu oprávnění jsou uvedená, aby byl spuštěn s částečnou důvěryhodností.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytuje širokou škálu podporu k zajištění, že tolik funkce co lze bezpečně v částečné důvěryhodnosti a spolu s [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)], poskytuje další podporu pro programování částečnou důvěryhodností.  
   
@@ -50,7 +50,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="WPF_Feature_Partial_Trust_Support"></a>   
 ## <a name="wpf-feature-partial-trust-support"></a>Podpora částečnou důvěryhodností funkce WPF  
- Následující tabulka uvádí základní funkce [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] , které jsou bezpečné pro použití v rámci omezení oprávnění sady zón Internetu.  
+ Následující tabulka uvádí základní funkce Windows Presentation Foundation (WPF), které jsou bezpečné pro použití v rámci omezení oprávnění sady zón Internetu.  
   
  Tabulka 1: WPF funkce, které jsou bezpečné v částečné důvěryhodnosti  
   

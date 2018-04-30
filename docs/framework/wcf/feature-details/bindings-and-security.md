@@ -21,23 +21,23 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5eb1019694f6228edbe3656849b85dfa7611ef18
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 440bbcf03eef8f32a28073bfc9f5aeeb824a50fd
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem, který je součástí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nabízejí rychlý způsob, jak program [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. S jednou výjimkou mít všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro potřebné požadavky na zabezpečení.  
   
- Přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí vazby, najdete v tématu [programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
+ Přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí vazby, najdete v tématu [programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
   
  Pokud jste již vybrali vazbu, najdete další informace o běhu chování, které jsou přidruženy zabezpečení v [chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).  
   
  Některé funkce zabezpečení nejsou programovatelný pomocí vazby poskytované systémem. Použití vlastní vazby další ovládací prvek, najdete v části [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
   
 ## <a name="security-functions-of-bindings"></a>Funkce zabezpečení vazeb  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje několik vazeb poskytovaných systémem, které splňují většinu potřeb. Pokud konkrétní vazba není stačí, můžete také vytvořit vlastní vazby. Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vlastní vazby, najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje několik vazeb poskytovaných systémem, které splňují většinu potřeb. Pokud konkrétní vazba není stačí, můžete také vytvořit vlastní vazby. Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Další informace o vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
  Každé vazby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] má dvě formy: jako rozhraní API a jako element XML, který je použit v konfiguračním souboru. Například `WSHttpBinding` (API) má protějšek v [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   

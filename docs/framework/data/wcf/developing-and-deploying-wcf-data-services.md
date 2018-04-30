@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d20d4c39a6cca744ac981d1a143d2847d9b20e5a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bc962b328f2321d1cfb016b78a53307b43fac30d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Vývoj a nasazení služby WCF Data Services
 Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pro další základní informace o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], najdete v části [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) a [přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  
@@ -80,7 +80,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
 3.  **Windows Azure vývojové prostředí**  
   
-     Nástroje systému Windows Azure pro sadu Visual Studio obsahuje integrované sadu nástrojů pro vývoj služby Windows Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datové služby, které lze nasazovat na platformě Azure, a před nasazením je otestovat v místním počítači. Pomocí těchto nástrojů, když pomocí sady Visual Studio pro vývoj služba dat, která běží na platformě Windows Azure. Nástroje systému Windows Azure si můžete stáhnout pro sadu Visual Studio pomocí [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=201848). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vývoj služba dat, která běží na systému Windows Azure, najdete v příspěvku [nasazení služby OData v systému Windows Azure](http://go.microsoft.com/fwlink/?LinkId=201847).  
+     Nástroje systému Windows Azure pro sadu Visual Studio obsahuje integrované sadu nástrojů pro vývoj služby Windows Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datové služby, které lze nasazovat na platformě Azure, a před nasazením je otestovat v místním počítači. Pomocí těchto nástrojů, když pomocí sady Visual Studio pro vývoj služba dat, která běží na platformě Windows Azure. Nástroje systému Windows Azure si můžete stáhnout pro sadu Visual Studio pomocí [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=201848). Další informace o vývoji služba dat, která běží na systému Windows Azure, najdete v příspěvku [nasazení služby OData v systému Windows Azure](http://go.microsoft.com/fwlink/?LinkId=201847).  
   
 ### <a name="development-tips"></a>Tipy pro vývoj  
  Při vývoji datových služeb je vhodné zvážit následující faktory:  
@@ -116,21 +116,21 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
         -   [XCopy](http://msdn.microsoft.com/library/4312c651-2119-49be-bbeb-ee28bdbfe71e)  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Možnosti nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, najdete v části [Přehled nasazení webu pro Visual Studio a ASP.NET](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).  
+     Další informace o možnosti nasazení [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, najdete v části [Přehled nasazení webu pro Visual Studio a ASP.NET](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).  
   
     > [!TIP]
     >  Než datovou službu nasadíte do služby IIS, nezapomeňte otestovat nasazení na webový server, na kterém je spuštěna služba IIS. Další informace najdete v tématu [postup: vývoj WCF Data Service spuštěna ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).  
   
 -   **Windows Azure**  
   
-     Datové služby můžete nasadit do systému Windows Azure pomocí nástroje systému Windows Azure pro sadu Visual Studio. Nástroje systému Windows Azure si můžete stáhnout pro sadu Visual Studio pomocí [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=201848). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nasazení služby data do služby Windows Azure, najdete v příspěvku [nasazení služby OData v systému Windows Azure](http://go.microsoft.com/fwlink/?LinkId=201847).  
+     Datové služby můžete nasadit do systému Windows Azure pomocí nástroje systému Windows Azure pro sadu Visual Studio. Nástroje systému Windows Azure si můžete stáhnout pro sadu Visual Studio pomocí [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=201848). Další informace o nasazení služby data do služby Windows Azure, najdete v příspěvku [nasazení služby OData v systému Windows Azure](http://go.microsoft.com/fwlink/?LinkId=201847).  
   
 ### <a name="deployment-considerations"></a>Důležité informace o nasazení  
  Při nasazování datových služeb je vhodné zvážit následující faktory:  
   
 -   Pokud nasadíte službu data, která používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset rozšířit datové struktury, data, nebo obě s daty nasazení služby. Visual Studio může automaticky vytvářet skripty (soubory .sql) k tomu v cílové databázi, a tyto skripty může být zahrnutý v balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [NIB: postupy: nasazení databáze s projekt webové aplikace](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, můžete to provedete pomocí **Průvodce publikováním databáze** v sadě Visual Studio. Další informace najdete v tématu [nasazení databáze pomocí Průvodce publikováním databáze](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).  
   
--   Protože [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace, můžete použít Windows Server AppFabric monitorovat datové služby nasadit do IIS a běžící v systému Windows Server. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí sledování na data služby Windows Server AppFabric najdete v příspěvku [sledování služby WCF Data Services s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005).  
+-   Protože [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace, můžete použít Windows Server AppFabric monitorovat datové služby nasadit do IIS a běžící v systému Windows Server. Další informace o používání Windows Server AppFabric ke sledování datové služby, najdete v příspěvku [sledování služby WCF Data Services s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005).  
   
 ## <a name="see-also"></a>Viz také  
  [Hostování datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  

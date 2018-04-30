@@ -1,24 +1,26 @@
 ---
-title: "Zabezpečení přenosu HTTP"
-ms.custom: 
+title: Zabezpečení přenosu HTTP
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: f81a95546d593cd5a0acb6a89edf2f6c763f07df
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2787c38603fd0f88878596a809d7e3c5cfdfb350
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implementace Secure Sockets Layer (SSL). SSL je široce používaných na Internetu k ověřování klienta a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje protokol SSL a jak jsou implementované v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -61,7 +63,7 @@ Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implem
 ### <a name="using-httpcfg-for-ssl"></a>Pomocí HttpCfg pro protokol SSL  
  Pokud vytváříte vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, stáhněte si nástroj HttpCfg.exe k dispozici [lokality nástrojů podpory systému Windows XP Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=29002).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pomocí nástroje HttpCfg.exe nastavit port společně s certifikátem X.509, najdete v tématu [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+ Další informace o použití nástroje HttpCfg.exe nastavit port společně s certifikátem X.509 najdete v tématu [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)  

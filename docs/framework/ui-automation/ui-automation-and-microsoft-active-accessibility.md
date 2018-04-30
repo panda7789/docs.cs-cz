@@ -21,11 +21,11 @@ ms.author: mhopkins
 manager: markl
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2028f312433e3a4cf8c90f2e6809ed29288d7819
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 581fe3272808da84fcf31667f8191f3cc6322033
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="Support_in_Windows_Presentation_Foundation_"></a>   
 ## <a name="support-in-windows-presentation-foundation"></a>Podpora v systému Windows Presentation Foundation  
- [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] je nový model pro vytvoření uživatelského rozhraní. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prvky neobsahují nativní podpora pro [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)]; ale podporují [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], což zahrnuje podporu pro přemostění [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů. Pouze klienti, které jsou napsané konkrétně pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] můžete využít všech výhod funkce pro usnadnění přístupu [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], jako například bohaté podporu pro text.  
+ Windows Presentation Foundation (WPF) je nový model pro vytvoření uživatelského rozhraní. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prvky neobsahují nativní podpora pro [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)]; ale podporují [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], což zahrnuje podporu pro přemostění [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] klientů. Pouze klienti, které jsou napsané konkrétně pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] můžete využít všech výhod funkce pro usnadnění přístupu [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], jako například bohaté podporu pro text.  
   
 <a name="Servers_and_Clients_compare"></a>   
 ## <a name="servers-and-clients"></a>Servery a klienty  

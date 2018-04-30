@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fa529ddbdfa05ce876c99efd4a717c6136cf6686
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d862865057f9978a0b815f3026f2ba67c87eac7d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation-in-net-45"></a>Co&#39;s nové v modelu Windows Workflow Foundation v rozhraní .NET 4.5
-Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavádí mnoha nových funkcí, jako je například nové aktivity, návrháře možnosti a modely vývoj pracovního postupu. Mnoho, ale ne všechny nové funkce pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)] nové funkce, které jsou podporované, najdete v části [podporu pro nové funkce Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi, najdete v části [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md). Toto téma poskytuje přehled nových funkcí pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
+Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavádí mnoha nových funkcí, jako je například nové aktivity, návrháře možnosti a modely vývoj pracovního postupu. Mnoho, ale ne všechny nové funkce pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích, které jsou podporovány, naleznete v části [podporu pro nové funkce Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md). Další informace o migraci rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi najdete v tématu [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md). Toto téma poskytuje přehled nových funkcí pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
   
 > [!WARNING]
 >  Nové funkce Windows Workflow Foundation byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nejsou k dispozici pro projekty, které cílí na předchozích verzích rozhraní. Pokud projektu, jehož cílem [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] znovu cílí na předchozí verzi rozhraní framework situace může nastat několik problémů.  
@@ -158,7 +158,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
   
  Výrazy jazyka C# se ověřují v době návrhu. Chyby ve výrazech jazyka C#, budou označeny červenou vlnovkou.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] C# výrazy, najdete v části [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).  
+ Další informace o výrazy jazyka C#, najdete v části [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).  
   
 ###  <a name="BKMK_Visibility"></a> Další kontrolu nad viditelnost panelu prostředí a záhlaví položky  
  Opětovné hostování nástroje Designer některé standardní ovládací prvky uživatelského rozhraní nemusí mít význam pro daný pracovní postup a může být vypnutý. V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], tato přizpůsobení je podporovaná jenom rozhraním prostředí panelu v dolní části návrháře. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], viditelnost prostředí položky hlavičky v horní části návrháře lze upravit nastavením <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> s příslušnou <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> hodnotu.  

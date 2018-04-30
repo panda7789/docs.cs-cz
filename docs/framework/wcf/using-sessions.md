@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9f6a6a819b4667bc60ab0abb575d6fff397d67fe
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 172ef71bd3ae09e3c9f15cb0bdb48728a587605e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-sessions"></a>Použití relací
 V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korelaci skupinu zpráv k konverzaci. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] relace se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací a jejich použití.  
@@ -144,7 +144,7 @@ V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korela
   
  Příklady najdete v tématu [postupy: vytváření služby, vyžaduje relací](../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md) společně s [výchozí chování služby](../../../docs/framework/wcf/samples/default-service-behavior.md) a [Instancing](../../../docs/framework/wcf/samples/instancing.md) ukázky.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Klienti a relace, najdete v části [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+ Další informace o klientech a relací najdete v tématu [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
 ## <a name="sessions-interact-with-instancecontext-settings"></a>Relace interakci s InstanceContext nastavení  
  Je interakci mezi <xref:System.ServiceModel.SessionMode> výčet ve kontraktu a <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnosti, která řídí přidružení mezi kanály a objekty konkrétní služby. Další informace najdete v tématu [relací, Instancing a souběžnost](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md).  

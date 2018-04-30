@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9a215be76002b9e8fca8ac4a9073885b3b30a97b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a36b8a6bdf1a024f4ddee91bd937afac516e391f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="serializing-workflows-and-activities-to-and-from-xaml"></a>Serializace pracovních postupů a aktivit do a z XAML
 Kromě se zkompiluje do typy, které jsou součástí sestavení, definice pracovního postupu také serializovat lze do jazyka XAML. Tyto serializovaných definice můžete znovu pro úpravy nebo kontroly, předaný systém sestavení pro kompilaci, nebo načíst a volána. Toto téma poskytuje přehled o serializaci definice pracovního postupu a práce s XAML pracovního postupu definice.  
@@ -84,7 +84,7 @@ sw.Close();
  **25 + 15**  
 **40**    
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)] vyvolání pracovních s vstupní a výstupní argumenty, najdete v části [pomocí WorkflowInvoker a WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md) a <xref:System.Activities.WorkflowInvoker.Invoke%2A>.  
+>  Další informace o vyvolání pracovních s vstupní a výstupní argumenty najdete v tématu [pomocí WorkflowInvoker a WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md) a <xref:System.Activities.WorkflowInvoker.Invoke%2A>.  
   
  Pokud serializovaných pracovní postup obsahuje C# výrazy, pak <xref:System.Activities.XamlIntegration.ActivityXamlServicesSettings> instanci s jeho <xref:System.Activities.XamlIntegration.ActivityXamlServicesSettings.CompileExpressions%2A> vlastnost nastavena na hodnotu `true` musí být předán jako parametr pro <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A?displayProperty=nameWithType>, jinak hodnota <xref:System.NotSupportedException> bude vyvolána s zprávu podobnou té následující: `Expression Activity type 'CSharpValue`1 vyžaduje kompilace aby bylo možné spustit.  Zkontrolujte, že pracovní postup byl zkompilován. "  
   

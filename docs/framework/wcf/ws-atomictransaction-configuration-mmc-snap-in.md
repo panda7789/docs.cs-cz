@@ -1,24 +1,26 @@
 ---
 title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 73db4b201aba6e07891803aa86c56403f135f863
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2e8b127e0d3c241a1e37ac2161d9fadcea990425
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 Modul Snap-in konzoly MMC WS-AtomicTransaction Configuration slouží ke konfiguraci hodnot nastavení, WS-AtomicTransaction na místních i vzdálených počítačích.  
@@ -42,9 +44,9 @@ regasm.exe /codebase WsatUI.dll
   
  Tento nástroj můžete upravit nastavení základního WS-AtomicTransaction. Například můžete povolit a zakázat podpory protokolu WS-AtomicTransaction, nakonfigurovat porty HTTP pro WS-AT, vazby certifikátu SSL pro HTTP port, konfigurace certifikátů zadáním názvy předmětu certifikátu, vybrat režim trasování a nastavení výchozí a maximální počet časových limitů.  
   
- Pokud nakonfigurujete musí podpory protokolu WS-AtomicTransaction pouze v místním počítači, můžete použít příkaz verze tohoto nástroje. [!INCLUDE[crabout](../../../includes/crabout-md.md)]nástroje příkazového řádku najdete v článku [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) tématu.  
+ Pokud nakonfigurujete musí podpory protokolu WS-AtomicTransaction pouze v místním počítači, můžete použít příkaz verze tohoto nástroje. Další informace o nástroji příkazového řádku najdete v tématu [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) tématu.  
   
- Je třeba si uvědomit, že jak modul Snap-in konzoly MMC a nástroje příkazového řádku nepodporují nastavení WS-AT. Tato nastavení lze upravit pouze pomocí úpravy registru přímo. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Tato nastavení registru najdete v části [konfigurace podpory WS-Atomic Transactions](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
+ Je třeba si uvědomit, že jak modul Snap-in konzoly MMC a nástroje příkazového řádku nepodporují nastavení WS-AT. Tato nastavení lze upravit pouze pomocí úpravy registru přímo. Další informace o těchto nastaveních registru najdete v tématu [konfigurace podpory WS-Atomic Transactions](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
   
 ### <a name="user-interface-description"></a>Popis rozhraní uživatele  
  **Povolit podporu sítě WS-Atomic Transactions**:  
@@ -95,7 +97,7 @@ regasm.exe /codebase WsatUI.dll
 > [!NOTE]
 >  Pokud jiný příjemce trasování používá zprostředkovatel trasování WS-AT, nelze vytvořit novou relaci protokolování pro trasování událostí. Pokusy o konfiguraci protokolování během této doby výsledků v chybové zprávě "se nepodařilo povolit zprostředkovatele. Kód chyby: 1".  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]trasování a protokolování, najdete v části [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
+ Další informace o trasování a protokolování najdete v tématu [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Konfigurace podpory protokolu WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)  

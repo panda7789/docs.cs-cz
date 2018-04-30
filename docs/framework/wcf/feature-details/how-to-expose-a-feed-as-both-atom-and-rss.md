@@ -19,14 +19,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5a2ca8d6ce6cf907538c534f97300e418f5e825f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 14059ebc3efe57a38a093faed9cfbd254c372920
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>Postupy: vystavení informačního kanálu jako Atom a RSS
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje syndikace kanálu pomocí RSS 2.0 a Atom 1.0. Tato služba zpřístupní jeden koncový bod, který může vrátit buď syndikace formátu. Pro zjednodušení službu používanou v této ukázce je sám sebou hostované. V produkčním prostředí by se v rámci služby IIS nebo WAS hostované služby tohoto typu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] různými [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hostování možnosti, najdete v části [hostitelský](../../../../docs/framework/wcf/feature-details/hosting.md).  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje syndikace kanálu pomocí RSS 2.0 a Atom 1.0. Tato služba zpřístupní jeden koncový bod, který může vrátit buď syndikace formátu. Pro zjednodušení službu používanou v této ukázce je sám sebou hostované. V produkčním prostředí by se v rámci služby IIS nebo WAS hostované služby tohoto typu. Další informace o různých [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hostování možnosti, najdete v části [hostitelský](../../../../docs/framework/wcf/feature-details/hosting.md).  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Vytvoření služby základní syndikace  
   

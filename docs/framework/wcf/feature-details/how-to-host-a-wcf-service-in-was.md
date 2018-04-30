@@ -1,29 +1,31 @@
 ---
-title: "Postupy: Hostování služby WCF ve WAS"
-ms.custom: 
+title: 'Postupy: Hostování služby WCF ve WAS'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3bfa798bf2f2c758905512df32e03214634b6c2e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c4613587d829b082ee7182cc32e34d2d2d563241
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
-Toto téma popisuje základní kroky potřebné k vytvořit proces aktivace služby Windows (WAS) hostovaná [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. BYL je nová služba aktivace procesů, která je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá ke komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje rozhraní adaptér naslouchání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například TCP, pojmenované kanály a služby Řízení front zpráv.  
+Toto téma popisuje základní kroky potřebné k vytvořit proces aktivace služby Windows (WAS) hostovaná [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. BYL je nová služba aktivace procesů, která je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá ke komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje rozhraní adaptér naslouchání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například TCP, pojmenované kanály a služby Řízení front zpráv.  
   
- Tato hostování možnost vyžaduje součásti aktivace WAS správně nainstalován a nakonfigurován, ale nevyžaduje žádné hostování kódu má být zapsán v rámci aplikace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]instalace a konfigurace WAS, najdete v části [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
+ Tato hostování možnost vyžaduje součásti aktivace WAS správně nainstalován a nakonfigurován, ale nevyžaduje žádné hostování kódu má být zapsán v rámci aplikace. Další informace o instalaci a konfiguraci WAS najdete v tématu [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
   
 > [!WARNING]
 >  BYLA aktivace není podporováno, pokud kanál pro zpracování požadavku webový server je nastaven na klasickém režimu. Kanál pro zpracování požadavku webový server musí být nastavena pro integrovaný režim, pokud je aktivace WAS pro použití.  

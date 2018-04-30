@@ -21,14 +21,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: dfb3d781a570db6a929a7d984aa45c224dda66bd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6ea139f6b854a299760df4c7cb8c315b58701ab8
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="best-practices-data-contract-versioning"></a>Osvědčené postupy: Správa verzí kontraktů dat
-Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. [!INCLUDE[crabout](../../../includes/crabout-md.md)] kontrakty dat naleznete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. Další informace o kontraktech dat najdete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="note-on-schema-validation"></a>Poznámka: v ověřování schématu  
  V hovoříte o Správa verzí kontraktů dat, je důležité si uvědomit, že data smlouvy schématu exportované sadou [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] nemá žádné podporu správy verzí, než fakt, že ve výchozím nastavení jsou označená jako volitelná elementy.  
@@ -56,7 +56,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
 -   Použít <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut vaše kontrakt služby s <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> vlastnost nastavena na hodnotu `true`.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] odezvy, najdete v části [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Další informace o odezvy najdete v tématu [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ## <a name="versioning-when-schema-validation-is-not-required"></a>Správa verzí, když se nevyžaduje ověření schématu  
  Dodržování předpisů striktní schématu se zřídka vyžaduje. Řada platforem tolerovat dodatečné prvky, které nejsou popsané ve schématu. Také to je dovoleno, úplnou sadu funkcí popsaných v [Správa verzí kontraktů dat](../../../docs/framework/wcf/feature-details/data-contract-versioning.md) a [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md) lze použít. Doporučuje se podle následujících pokynů.  
@@ -69,7 +69,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
 3.  Počínaje první verze součásti kontraktu dat vždy implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> povolit odezvy. Další informace najdete v tématu [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Pokud jeden nebo více verzí typu mít vydání bez implementace tohoto rozhraní, implementaci v příští verzi typu.  
   
-4.  V novějších verzích neměňte název kontraktu dat nebo obor názvů. Pokud změníte název nebo obor názvů typu základní kontrakt dat, je nutné zachovat název kontraktu dat a oboru názvů pomocí příslušné mechanismy, jako <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>. [!INCLUDE[crabout](../../../includes/crabout-md.md)] pojmenování, najdete v části [názvy datových kontraktů](../../../docs/framework/wcf/feature-details/data-contract-names.md).  
+4.  V novějších verzích neměňte název kontraktu dat nebo obor názvů. Pokud změníte název nebo obor názvů typu základní kontrakt dat, je nutné zachovat název kontraktu dat a oboru názvů pomocí příslušné mechanismy, jako <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>. Další informace o zadávání názvů najdete v tématu [názvy datových kontraktů](../../../docs/framework/wcf/feature-details/data-contract-names.md).  
   
 5.  V novějších verzích Neměňte názvy všech datových členů. Pokud změníte název pole, vlastnost nebo událostí základní datový člen, použijte `Name` vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> zachovat stávající název člena data.  
   
@@ -81,7 +81,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
     1.  <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> Vlastnost by měla být vždy ponechány na jeho výchozí hodnotu `false`.  
   
-    2.  Pokud výchozí hodnota je `null` nebo nula pro člena nepřijatelný, metody zpětného volání by je třeba zadat pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute> zajistit přiměřené výchozí v případě, že člen není k dispozici v příchozím datovém proudu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] zpětné volání, najdete v části [verze proti chybám zpětná volání serializace tolerantní](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
+    2.  Pokud výchozí hodnota je `null` nebo nula pro člena nepřijatelný, metody zpětného volání by je třeba zadat pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute> zajistit přiměřené výchozí v případě, že člen není k dispozici v příchozím datovém proudu. Další informace o zpětné volání, najdete v části [verze proti chybám zpětná volání serializace tolerantní](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
   
     3.  `Order` Vlastnost `DataMemberAttribute` se má použít k zajištění všech nově přidaných datových členů zobrazení po existující datových členů. Doporučený způsob to to vypadá takto: žádná z datových členů v první verzi kontrakt dat by měl mít jejich `Order` sadu vlastností. Všechny členy data přidána do verze 2 kontrakt dat by měl mít jejich `Order` vlastnost nastavena na hodnotu 2. Všechny členy data přidána do verze 3 kontrakt dat by měl mít jejich `Order` nastavena na hodnotu 3 a tak dále. Je přípustné mít více než jednoho člena dat se nastaví na stejnou `Order` číslo.  
   

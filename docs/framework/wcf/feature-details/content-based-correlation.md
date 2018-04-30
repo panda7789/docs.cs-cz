@@ -1,24 +1,26 @@
 ---
-title: "Korelace na základě obsahu"
-ms.custom: 
+title: Korelace na základě obsahu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f46a2b68-8d24-4122-bbee-9573fc3f9fb4
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72c7233a1c667b7ee3a1f00cc2fdf3c78f58e789
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4b4ebd49fbed12f1e8120e67f32496cd782531da
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="content-based-correlation"></a>Korelace na základě obsahu
 Když pracovní postup služby komunikaci s klienty a další služby, je často některá data v výměně zpráv, který jednoznačně zpráva má vztah k určité instance. Korelace na základě obsahu používá tato data ve zprávě, jako je například číslo nebo pořadí ID zákazníka, pro směrování zpráv do instance správné pracovního postupu. Toto téma vysvětluje, jak používat korelace na základě obsahu v pracovních postupech.  
@@ -27,7 +29,7 @@ Když pracovní postup služby komunikaci s klienty a další služby, je často
  Korelace na základě obsahu se používá, když pracovní postup služby má několik metod, které jsou dostupné přes jednoho klienta a část dat v výměně zpráv určuje požadovanou instanci.  
   
 > [!NOTE]
->  Korelace na základě obsahu je užitečné, když korelace kontextu nelze použít, protože vazba není jedním z podporovaných kontext vazby exchange. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace kontextu, najdete v části [kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md).  
+>  Korelace na základě obsahu je užitečné, když korelace kontextu nelze použít, protože vazba není jedním z podporovaných kontext vazby exchange. Další informace o kontextu korelace najdete v tématu [kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md).  
   
  Každá zasílání zpráv aktivita používá v tyto komunikace musíte zadat umístění dat ve zprávě, která jednoznačně identifikuje instanci. To se provádí zadáním <xref:System.ServiceModel.MessageQuerySet>, buď pomocí <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> nebo <xref:System.ServiceModel.Activities.Receive.CorrelatesOn%2A>, který dotazuje zprávu pro část nebo kusy data, která jednoznačně instance.  
   

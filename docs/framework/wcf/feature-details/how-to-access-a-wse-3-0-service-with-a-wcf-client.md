@@ -1,32 +1,34 @@
 ---
-title: "Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF"
-ms.custom: 
+title: 'Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1f9bcd9b-8f8f-47fa-8f1e-0d47236eb800
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 49ff6378bcd35ab2d4e2adf3783a1c4e73025d3a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 382762917e790d54dca31158f2b7ffde560c1427
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Microsoft .NET služeb, když jsou klienti úroveň kompatibilní s Web Services vylepšení (WSE) 3.0 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienti jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing. Však služby WSE 3.0 nepodporuje protokol exchange (MEX) metadata, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta se nepoužije nastavení zabezpečení generovaný objekt [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Proto je třeba zadat nastavení zabezpečení, které WSE 3.0 služba vyžaduje, aby po [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient je generován.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Microsoft .NET služeb, když jsou klienti úroveň kompatibilní s Web Services vylepšení (WSE) 3.0 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienti jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing. Však služby WSE 3.0 nepodporuje protokol exchange (MEX) metadata, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta se nepoužije nastavení zabezpečení generovaný objekt [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Proto je třeba zadat nastavení zabezpečení, které WSE 3.0 služba vyžaduje, aby po [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient je generován.  
   
- Tato nastavení zabezpečení můžete použít s využitím vlastní vazby vzít v úvahu službě WSE 3.0 požadavky a požadavky na umožňuje vzájemnou spolupráci mezi službou WSE 3.0 a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Tyto požadavky na interoperabilitu zahrnují zmíněnými použití v srpnu 2004 specifikaci WS-Addressing a WSE 3.0default zprávy ochranu <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>. Výchozí zprávu ochrana pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Toto téma podrobnosti o tom, jak vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby, která umožňuje spolupráci službě WSE 3.0. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]také poskytuje ukázku, která zahrnuje tuto vazbu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Tato ukázka najdete v části [spolupráce s webovými službami ASMX](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md).  
+ Tato nastavení zabezpečení můžete použít s využitím vlastní vazby vzít v úvahu službě WSE 3.0 požadavky a požadavky na umožňuje vzájemnou spolupráci mezi službou WSE 3.0 a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Tyto požadavky na interoperabilitu zahrnují zmíněnými použití v srpnu 2004 specifikaci WS-Addressing a WSE 3.0default zprávy ochranu <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>. Výchozí zprávu ochrana pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Toto téma podrobnosti o tom, jak vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby, která umožňuje spolupráci službě WSE 3.0. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také poskytuje ukázku, která zahrnuje tuto vazbu. Další informace o této ukázky najdete v tématu [spolupráce s webovými službami ASMX](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md).  
   
 ### <a name="to-access-a-wse-30-web-service-with-a-wcf-client"></a>Pro přístup ke službě WSE 3.0 Web pomocí klienta WCF  
   
@@ -34,7 +36,7 @@ ms.lasthandoff: 01/19/2018
   
      Pro WSE 3.0 webové služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta se vytvoří. Protože WSE 3.0 nepodporuje protokol MEX, nelze použít nástroj načíst požadavky na zabezpečení pro webovou službu. Vývojář aplikace musíte přidat nastavení zabezpečení pro klienta.  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, najdete v článku [postupy: vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+     Další informace o vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, najdete v článku [postupy: vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 2.  Vytvořte třídu, která představuje vazbu, který může komunikovat s WSE 3.0 Web services.  
   

@@ -21,11 +21,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6c8769511f608834c7539779d83977880e1d4093
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 63f5c2c61a374b92b018419c83c9429e6ad796d8
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
 Toto téma popisuje základní programovací úlohy použité k vytvoření zabezpečeného [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace. Toto téma popisuje pouze ověřování, důvěrnost a integritu, souhrnně označované jako *přenosu zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
@@ -48,7 +48,7 @@ Toto téma popisuje základní programovací úlohy použité k vytvoření zabe
   
     1.  `Transport`  
   
-         Zabezpečení přenosu závisí na mechanismu, který používá vazby, které jste vybrali. Například, pokud používáte `WSHttpBinding` je mechanismus zabezpečení Secure Sockets Layer (SSL) (také mechanismus pro protokol HTTPS). Hlavní výhodou zabezpečení přenosu je obecně řečeno, zajišťuje dobrý propustnost, bez ohledu na to, které přenosu používáte. Však obsahuje dvě omezení: první je, že přenosový mechanismus Určuje typ pověření pro ověření uživatele. Toto je nevýhodou pouze v případě, že služba potřebuje pro spolupráci s jinými službami, které potřebují různé typy přihlašovacích údajů. Druhá je, že, protože zabezpečení není použita na úrovni zpráv, zabezpečení je implementovaná v segmentu směrování způsobem spíše než začátku do konce. Toto omezení druhé je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje prostředníci. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] přenos, které chcete použít, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí zabezpečení přenosu, najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
+         Zabezpečení přenosu závisí na mechanismu, který používá vazby, které jste vybrali. Například, pokud používáte `WSHttpBinding` je mechanismus zabezpečení Secure Sockets Layer (SSL) (také mechanismus pro protokol HTTPS). Hlavní výhodou zabezpečení přenosu je obecně řečeno, zajišťuje dobrý propustnost, bez ohledu na to, které přenosu používáte. Však obsahuje dvě omezení: první je, že přenosový mechanismus Určuje typ pověření pro ověření uživatele. Toto je nevýhodou pouze v případě, že služba potřebuje pro spolupráci s jinými službami, které potřebují různé typy přihlašovacích údajů. Druhá je, že, protože zabezpečení není použita na úrovni zpráv, zabezpečení je implementovaná v segmentu směrování způsobem spíše než začátku do konce. Toto omezení druhé je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje prostředníci. Další informace o které přenosu použít, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Další informace o používání zabezpečení přenosu najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
   
     2.  `Message`  
   

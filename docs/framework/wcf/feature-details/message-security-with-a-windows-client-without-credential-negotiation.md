@@ -1,27 +1,29 @@
 ---
-title: "Zabezpečení zpráv u klienta Windows bez vyjednávání pověření"
-ms.custom: 
+title: Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: f069ff100a2fba1f6bace1d9a81ed69314261eae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 056e743ff1849457f8a0e8ee509a56475f09435c
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
 Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby zabezpečené pomocí protokolu Kerberos.  
@@ -61,7 +63,7 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
   
 2.  Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě musíte vytvořit název SPN pro příslušný účet domény. Jeden způsob, jak to provést, je pomocí nástroje Setspn.exe nástroj. Po vytvoření názvu SPN pro účet služby konfigurace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] publikovat tento hlavní název služby klientům služby prostřednictvím jeho metadata (WSDL). To se provádí nastavením identitu koncového bodu pro zveřejněné koncový bod, buď když konfiguračního souboru aplikace nebo kódu. Následující příklad publikuje identitu prostřednictvím kódu programu.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Hlavní názvy služby SPN, protokol Kerberos a služby Active Directory, najdete v části [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]koncový bod identity, najdete v části [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
+ Další informace o SPN, protokol Kerberos a služby Active Directory, naleznete v části [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330). Další informace o identitách koncový bod, najdete v části [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
   
  [!code-csharp[C_SecurityScenarios#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#12)]
  [!code-vb[C_SecurityScenarios#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#12)]  
@@ -117,9 +119,9 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
  Následující kód konfiguruje klienta. Režim zabezpečení je nastaven na zprávu, a typu pověření klienta je nastaven na hodnotu Windows. Všimněte si, že <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnosti jsou nastaveny na `false`.  
   
 > [!NOTE]
->  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, musí být klient nakonfigurované účtu služby SPN před zahájením komunikace se službou. Klient použije SPN se získat token protokolu Kerberos k ověřování a k zabezpečení komunikace se službou. Následující příklad ukazuje, jak nakonfigurovat klienta služby SPN. Pokud používáte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta, názvu služby SPN se automaticky rozšíří do klienta z metadat služby (WSDL), pokud obsahuje metadata služby Tyto informace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Postup konfigurace služby, které chcete zahrnout jeho SPN služby metadata, najdete v části "Služba" dál v tomto tématu.  
+>  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, musí být klient nakonfigurované účtu služby SPN před zahájením komunikace se službou. Klient použije SPN se získat token protokolu Kerberos k ověřování a k zabezpečení komunikace se službou. Následující příklad ukazuje, jak nakonfigurovat klienta služby SPN. Pokud používáte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta, názvu služby SPN se automaticky rozšíří do klienta z metadat služby (WSDL), pokud obsahuje metadata služby Tyto informace. Další informace o tom, jak nakonfigurovat službu, kterou chcete zahrnout jeho SPN služby metadata najdete v části "Služba" dál v tomto tématu.  
 >   
->  Další informace o SPN, protokolu Kerberos a služby Active Directory najdete v tématu [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]koncový bod identity, najdete v části [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md) tématu.  
+>  Další informace o SPN, protokolu Kerberos a služby Active Directory najdete v tématu [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330). Další informace o identitách koncový bod, najdete v části [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md) tématu.  
   
  [!code-csharp[C_SecurityScenarios#19](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#19)]
  [!code-vb[C_SecurityScenarios#19](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#19)]  

@@ -1,24 +1,26 @@
 ---
-title: "Vlastní kodéry"
-ms.custom: 
+title: Vlastní kodéry
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f1c8223ea7900ba0a89ee2c5c48895a1782d18a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 90926fd334eb5ccef3a63f637d5273c408c0c13e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="custom-encoders"></a>Vlastní kodéry
 Toto téma popisuje, jak vytvořit vlastní kodéry.  
@@ -32,20 +34,20 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
  Při připojování k dříve existující klient nebo server, nemusí mít volba o pomocí konkrétní zprávu kódování. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb mohou být přístupné přes několik koncových bodů, každý s kodéru různé zprávy. Při jednom kodér nepokrývá celou cílovou skupinu pro vaši službu, vezměte v úvahu vystavení služby přes několik koncových bodů. Klientské aplikace můžete pak vybrat koncový bod, který je nejvhodnější pro ně. Pomocí několik koncových bodů můžete kombinovat s jinými prvky vazby výhod kodéry jiná zpráva.  
   
 ## <a name="system-provided-encoders"></a>Kodéry poskytované systémem  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje několik vazeb poskytovaných systémem, které jsou navrženy tak, aby pokrývalo nejběžnějších scénářů aplikace. Každý z těchto vazeb kombinovat přenos, kodér zpráv a další možnosti (například zabezpečení). Toto téma popisuje, jak rozšířit `Text`, `Binary`, a `MTOM` zprávy kodéry, které jsou součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], nebo vytvořit vlastní kodér. Kodér textu zprávy podporuje prostý kódování XML jak kódování SOAP. Kodér POX ("prostý formát XML") ho odlišuje od založený na textu protokolu SOAP kódování se nazývá prostý režim kódování XML kodér textu zprávy.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje několik vazeb poskytovaných systémem, které jsou navrženy tak, aby pokrývalo nejběžnějších scénářů aplikace. Každý z těchto vazeb kombinovat přenos, kodér zpráv a další možnosti (například zabezpečení). Toto téma popisuje, jak rozšířit `Text`, `Binary`, a `MTOM` zprávy kodéry, které jsou součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], nebo vytvořit vlastní kodér. Kodér textu zprávy podporuje prostý kódování XML jak kódování SOAP. Kodér POX ("prostý formát XML") ho odlišuje od založený na textu protokolu SOAP kódování se nazývá prostý režim kódování XML kodér textu zprávy.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]kombinace prvky vazeb poskytovaných vazby poskytované systémem najdete v části odpovídající v [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Další informace o kombinace prvky vazeb poskytovaných vazby poskytované systémem, najdete v části odpovídající v [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
 ## <a name="how-to-work-with-system-provided-encoders"></a>Jak pracovat s kodéry poskytované systémem  
  Kódování se přidá do vazbu pomocí třídy odvozené od <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje následující typy odvozené z elementů vazby <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> třídu, která může poskytnout pro text, binary a kódování zpráv přenosu optimalizace mechanismus (MTOM):  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje následující typy odvozené z elementů vazby <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> třídu, která může poskytnout pro text, binary a kódování zpráv přenosu optimalizace mechanismus (MTOM):  
   
 -   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: Interoperabilních nejvíce, ale alespoň efektivní kodéru zpráv XML. Webová služba nebo klient webové služby lze obecně pochopit textovou XML. Ale přenos velkých bloků binárních dat jako text není efektivní.  
   
 -   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>: Představuje vazby elementu, který určuje kódování znaků a správa verzí používá pro zprávy XML, binární zprávy. Toto je nejúčinnější možnosti kódování, ale alespoň interoperabilní, protože je podporován pouze pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body.  
   
--   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement -->`System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>: představuje element vazby, který určuje kódování znaků a správa verzí zpráv použít pro zprávu pomocí kódování zpráv přenosu optimalizace mechanismus (MTOM). MTOM je technologie efektivní přenosu zpráv binární data v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy. Kodér MTOM pokusí rovnováha mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové podobě, ale optimalizuje velkých bloků binárních dat tím, že je jako přenosu-je, bez převodu na text.  
+-   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>: představuje element vazby, který určuje kódování znaků a správa verzí zpráv použít pro zprávu pomocí kódování zpráv přenosu optimalizace mechanismus (MTOM). MTOM je technologie efektivní přenosu zpráv binární data v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy. Kodér MTOM pokusí rovnováha mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové podobě, ale optimalizuje velkých bloků binárních dat tím, že je jako přenosu-je, bez převodu na text.  
   
  Element vazby vytvoří binární, MTOM nebo text <xref:System.ServiceModel.Channels.MessageEncoderFactory>. Vytvoří objekt factory binární, MTOM nebo text <xref:System.ServiceModel.Channels.MessageEncoderFactory> instance. Obvykle je pouze jedna instance. Ale pokud relací se používají, může poskytovat různé kodér každé relaci. Binární kodér využívá tohoto ke koordinaci dynamické slovník (viz XML infrastruktury).  
   
@@ -61,7 +63,7 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
 ### <a name="pooling"></a>Sdružování  
  Každý z implementace kodér pokusí fond co nejvíc. Omezení přidělení je klíče způsob, jak zlepšit výkon spravovaného kódu. K provedení této sdružování, implementace použít `SynchronizedPool` třídy. Soubor C# obsahuje popis Další optimalizace použitou touto třídou.  
   
- `XmlDictionaryReader`a `XmlDictionaryWriter` instance jsou ve fondu a znovu inicializován, aby se zabránilo přidělování nové pro každou zprávu. Pro čtečky `OnClose` zpětného volání získá čtečky při `Close()` je volána. Kodér recyklování také některé objekty stavu zpráv použitý při sestavování zprávy. Velikosti tyto fondy se dají konfigurovat pomocí `MaxReadPoolSize` a `MaxWritePoolSize` vlastnosti na všech tří třídy odvozené od <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
+ `XmlDictionaryReader` a `XmlDictionaryWriter` instance jsou ve fondu a znovu inicializován, aby se zabránilo přidělování nové pro každou zprávu. Pro čtečky `OnClose` zpětného volání získá čtečky při `Close()` je volána. Kodér recyklování také některé objekty stavu zpráv použitý při sestavování zprávy. Velikosti tyto fondy se dají konfigurovat pomocí `MaxReadPoolSize` a `MaxWritePoolSize` vlastnosti na všech tří třídy odvozené od <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
 ### <a name="binary-encoding"></a>Binární kódování  
  Když binární kódování relace používá dynamický slovník řetězec musí sdělit k příjemce zprávy. To se provádí pomocí prefixu zprávu s řetězci dynamický slovník. Příjemce odstraní vypnout řetězce, je přidá do relace a zprávu zpracuje. Správně předávání řetězce slovník vyžaduje, aby přenosu do vyrovnávací paměti.  
@@ -90,9 +92,9 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
   
 -   Klíče metody této třídy, které je nutné přepsat jsou následující:  
   
--   <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A>které trvá <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> objektu a zapíše ho do <xref:System.IO.Stream> objektu.  
+-   <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> které trvá <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> objektu a zapíše ho do <xref:System.IO.Stream> objektu.  
   
--   <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A>které trvá <xref:System.IO.Stream> objekt a velikost maximální záhlaví a vrátí <xref:System.ServiceModel.Channels.Message> objektu.  
+-   <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A> které trvá <xref:System.IO.Stream> objekt a velikost maximální záhlaví a vrátí <xref:System.ServiceModel.Channels.Message> objektu.  
   
  Je kód napsaný v těchto metod, který zpracovává převod mezi standardní přenosový protokol a vlastní kódování.  
   

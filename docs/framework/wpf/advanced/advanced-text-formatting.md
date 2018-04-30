@@ -1,12 +1,13 @@
 ---
-title: "Upřesněné formátování textu"
-ms.custom: 
+title: Upřesněné formátování textu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,19 +17,20 @@ helpviewer_keywords:
 - text [WPF]
 - typography [WPF], text formatting
 ms.assetid: f0a7986e-f5b2-485c-a27d-f8e922022212
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9bb2664b267301fdf1e3a67e385595a5d28212bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 15b5d74c7607c59f7a4b568774e3d870138e56a4
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="advanced-text-formatting"></a>Upřesněné formátování textu
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Poskytuje výkonnou sadu [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Controls.TextBlock>zadejte nejobvyklejší a obecné použít elementy pro prezentaci text. Kreslení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, umožňují pro včetně formátovaný text v kresby. Nejvýše pokročilé úrovni [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování modul řídit všechny aspekty text prezentací, jako je Správa textových úložiště, správy formátování textu spustit a správa vložený objekt rozšiřitelné textu.  
+Windows Presentation Foundation (WPF), poskytuje výkonnou sadu [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Controls.TextBlock>zadejte nejobvyklejší a obecné použít elementy pro prezentaci text. Kreslení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, umožňují pro včetně formátovaný text v kresby. Nejvýše pokročilé úrovni [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování modul řídit všechny aspekty text prezentací, jako je Správa textových úložiště, správy formátování textu spustit a správa vložený objekt rozšiřitelné textu.  
   
  Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu. Zaměřuje se na implementace klienta a použití [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] modul formátování textu.  
   
@@ -43,20 +45,20 @@ ms.lasthandoff: 12/22/2017
   
 <a name="section1"></a>   
 ## <a name="advanced-text-formatting"></a>Upřesněné formátování textu  
- Rozložení textu a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládacích prvků do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zadejte formátování vlastnosti, které vám umožní snadno formátovaný text do aplikace zahrnout. Tyto ovládací prvky vystavit počet vlastností pro zpracování prezentaci textu, což zahrnuje jeho řez písma, velikosti a barvy. Za běžných okolností může zpracovávat tyto ovládací prvky Většina textu prezentace v aplikaci. Ale některé pokročilé scénáře vyžadovat kontrolu nad úložiště text a také text prezentace. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]poskytuje text na extensible formátování modul pro tento účel.  
+ Rozložení textu a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládacích prvků do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zadejte formátování vlastnosti, které vám umožní snadno formátovaný text do aplikace zahrnout. Tyto ovládací prvky vystavit počet vlastností pro zpracování prezentaci textu, což zahrnuje jeho řez písma, velikosti a barvy. Za běžných okolností může zpracovávat tyto ovládací prvky Většina textu prezentace v aplikaci. Ale některé pokročilé scénáře vyžadovat kontrolu nad úložiště text a také text prezentace. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje text na extensible formátování modul pro tento účel.  
   
  Najít pokročilých funkcí formátování textu v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obsahují text formátování modul, text úložiště, spustí textu a formátování vlastnosti. Text formátování modul, <xref:System.Windows.Media.TextFormatting.TextFormatter>, vytvoří řádků textu, který se má použít pro prezentaci. Toho se dosáhne Zahajování procesu formátování řádku a volání formátování textu <xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A>. Formátování textu načte spustí text z textového store voláním úložiště <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A> metoda. <xref:System.Windows.Media.TextFormatting.TextRun> Objekty jsou pak vytvořen do <xref:System.Windows.Media.TextFormatting.TextLine> objekty podle formátování textu a přidělený k aplikaci pro kontroly nebo zobrazení.  
   
 <a name="section2"></a>   
 ## <a name="using-the-text-formatter"></a>Pomocí formátování textu  
- <xref:System.Windows.Media.TextFormatting.TextFormatter>je [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu, modul a poskytuje služby pro formátování a nejnovější řádky textu. Formátování textu může zpracovávat jiné textových formátů znak a styly odstavce a zahrnuje podporu pro rozložení mezinárodní textu.  
+ <xref:System.Windows.Media.TextFormatting.TextFormatter> je [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu, modul a poskytuje služby pro formátování a nejnovější řádky textu. Formátování textu může zpracovávat jiné textových formátů znak a styly odstavce a zahrnuje podporu pro rozložení mezinárodní textu.  
   
  Na rozdíl od tradičních text [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)], <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje s klientem rozložení textu pomocí sady metody zpětného volání. Vyžaduje klienta k poskytování těchto metod v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientská aplikace a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
  ![Diagram klienta rozložení textu a objektu TextFormatter](../../../../docs/framework/wpf/advanced/media/textformatter01.png "TextFormatter01")  
 Interakce mezi aplikací a objektu TextFormatter  
   
- Formátování textu slouží k načtení řádků formátovaný text z textového úložiště, který je implementací <xref:System.Windows.Media.TextFormatting.TextSource>. K tomu je potřeba první vytvoření instance formátování textu s použitím <xref:System.Windows.Media.TextFormatting.TextFormatter.Create%2A> metoda. Tato metoda vytvoří instanci formátování textu a nastaví maximální řádku hodnoty výškou a šířkou. Jakmile je vytvořena instance formátování textu, se spustí proces tvorby v řádku volání <xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A> metoda. <xref:System.Windows.Media.TextFormatting.TextFormatter>zavolá zpátky ke zdroji textu k načtení textu a formátování parametry pro spuštění textu Tato forma řádku.  
+ Formátování textu slouží k načtení řádků formátovaný text z textového úložiště, který je implementací <xref:System.Windows.Media.TextFormatting.TextSource>. K tomu je potřeba první vytvoření instance formátování textu s použitím <xref:System.Windows.Media.TextFormatting.TextFormatter.Create%2A> metoda. Tato metoda vytvoří instanci formátování textu a nastaví maximální řádku hodnoty výškou a šířkou. Jakmile je vytvořena instance formátování textu, se spustí proces tvorby v řádku volání <xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A> metoda. <xref:System.Windows.Media.TextFormatting.TextFormatter> zavolá zpátky ke zdroji textu k načtení textu a formátování parametry pro spuštění textu Tato forma řádku.  
   
  V následujícím příkladu se zobrazí proces formátování textu úložiště. <xref:System.Windows.Media.TextFormatting.TextFormatter> Objekt se používá k načtení řádků textu z obchodu text a pak naformátovat řádku textu pro kreslení do <xref:System.Windows.Media.DrawingContext>.  
   
@@ -67,7 +69,7 @@ Interakce mezi aplikací a objektu TextFormatter
 ## <a name="implementing-the-client-text-store"></a>Implementace úložiště Text klienta  
  Když rozšíříte modul formátování textu, musíte implementovat a spravovat všechny aspekty text úložiště. Toto není jednoduchý úkol. Text úložiště je zodpovědná za sledování spustit vlastnosti, vlastnosti odstavce, vložené objekty a další podobné obsah textu. Poskytuje také formátování textu u jednotlivých <xref:System.Windows.Media.TextFormatting.TextRun> objekty, které text formátovací modul používá k vytvoření <xref:System.Windows.Media.TextFormatting.TextLine> objekty.  
   
- Pro zpracování virtualizace úložiště text, úložišti textu musí být odvozen od <xref:System.Windows.Media.TextFormatting.TextSource>. <xref:System.Windows.Media.TextFormatting.TextSource>definuje metodu, kterou formátování textu používá k načtení textu spustí z obchodu text. <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A>je způsob, jímž formátování textu k načtení textu, spustí použité při formátování řádku. Volání <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A> je opakovaně provedené při formátování textu, dokud nenastane některá z následujících podmínek:  
+ Pro zpracování virtualizace úložiště text, úložišti textu musí být odvozen od <xref:System.Windows.Media.TextFormatting.TextSource>. <xref:System.Windows.Media.TextFormatting.TextSource> definuje metodu, kterou formátování textu používá k načtení textu spustí z obchodu text. <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A> je způsob, jímž formátování textu k načtení textu, spustí použité při formátování řádku. Volání <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A> je opakovaně provedené při formátování textu, dokud nenastane některá z následujících podmínek:  
   
 -   A <xref:System.Windows.Media.TextFormatting.TextEndOfLine> nebo je vrácena podtřídy.  
   
@@ -103,7 +105,7 @@ Interakce mezi aplikací a objektu TextFormatter
   
 <a name="section5"></a>   
 ## <a name="specifying-formatting-properties"></a>Zadání vlastnosti formátování  
- <xref:System.Windows.Media.TextFormatting.TextRun>objekty jsou formátovaná pomocí vlastností poskytované úložišti text. Tyto vlastnosti mají dva typy <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties>. <xref:System.Windows.Media.TextFormatting.TextParagraphProperties>například zpracovat odstavce včetně vlastnosti <xref:System.Windows.TextAlignment> a <xref:System.Windows.FlowDirection>. <xref:System.Windows.Media.TextFormatting.TextRunProperties>jsou vlastnosti, které mohou být různé pro každý text spustit v rámci odstavce, jako je například popředí štětce <xref:System.Windows.Media.Typeface>a velikost písma. Chcete-li implementovat vlastní odstavec a vlastní text spustit typy vlastností, musíte vytvořit aplikace třídy, které jsou odvozeny od <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties> v uvedeném pořadí.  
+ <xref:System.Windows.Media.TextFormatting.TextRun> objekty jsou formátovaná pomocí vlastností poskytované úložišti text. Tyto vlastnosti mají dva typy <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties>. <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> například zpracovat odstavce včetně vlastnosti <xref:System.Windows.TextAlignment> a <xref:System.Windows.FlowDirection>. <xref:System.Windows.Media.TextFormatting.TextRunProperties> jsou vlastnosti, které mohou být různé pro každý text spustit v rámci odstavce, jako je například popředí štětce <xref:System.Windows.Media.Typeface>a velikost písma. Chcete-li implementovat vlastní odstavec a vlastní text spustit typy vlastností, musíte vytvořit aplikace třídy, které jsou odvozeny od <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties> v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také  
  [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  

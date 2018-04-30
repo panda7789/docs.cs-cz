@@ -1,23 +1,24 @@
 ---
-title: "Imperativní ověření založené na kódu"
-ms.custom: 
+title: Imperativní ověření založené na kódu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae12537c-455e-42b1-82f4-cea4c46c023e
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 79e50c9cc756915ffc1a2f376d6b46469c85dbf5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5dde4c75d2cf9432c750a8988c2495cd72eb2770
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="imperative-code-based-validation"></a>Imperativní ověření založené na kódu
 Imperativní ověřování založené na kódu poskytuje jednoduchý způsob, jak aktivity pro ověřování o samotné a je k dispozici pro aktivity, které jsou odvozeny od <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, a <xref:System.Activities.NativeActivity>. Ověřovací kód, který určuje všechny chyby ověření nebo upozornění je přidána do aktivity.  
@@ -59,7 +60,7 @@ public sealed class CreateProduct : CodeActivity
   
  Ve výchozím nastavení, je chyba ověření do metadat při <xref:System.Activities.CodeActivityMetadata.AddValidationError%2A> je volána. K přidání upozornění ověření použijte <xref:System.Activities.CodeActivityMetadata.AddValidationError%2A> přetížení, které přijímá <xref:System.Activities.Validation.ValidationError>a určit, že <xref:System.Activities.Validation.ValidationError> představuje upozornění nastavením <xref:System.Activities.Validation.ValidationError.IsWarning%2A> vlastnost.  
   
- Ověření nastane, když pracovní postup se mění v Návrháři pracovních postupů a všechny chyby ověření nebo upozornění se zobrazí v Návrháři pracovních postupů. Ověřování také dochází za běhu, při vyvolání pracovního postupu, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověření výchozí vyvolá výjimku. [!INCLUDE[crabout](../../../includes/crabout-md.md)]volání ověření a přístup k žádné ověření upozornění ani chyby, najdete v části [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
+ Ověření nastane, když pracovní postup se mění v Návrháři pracovních postupů a všechny chyby ověření nebo upozornění se zobrazí v Návrháři pracovních postupů. Ověřování také dochází za běhu, při vyvolání pracovního postupu, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověření výchozí vyvolá výjimku. Další informace o vyvolání ověření a přístup k žádné ověření varování nebo chyby najdete v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
   
  Jakékoli výjimky, které jsou vyvolány z <xref:System.Activities.CodeActivity.CacheMetadata%2A> nejsou považovány za chyby ověření. Tyto výjimky bude vyhnuli z volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a musí být zpracována volající.  
   

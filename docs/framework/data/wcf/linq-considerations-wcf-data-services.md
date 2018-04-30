@@ -23,14 +23,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c20817e791ae95efecd00a41a44c14eedec017d4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 365bab484be17fd7bd1466a39d5af53f116ad06f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Aspekty LINQ (služby WCF Data Services)
-Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když používáte dotazy které LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ pro dotaz na data služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Vytvoření a spuštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v části [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když používáte dotazy které LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ pro dotaz na data služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Další informace o vytvoření a spuštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v části [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="composing-linq-queries"></a>Vytváření dotazů LINQ  
  LINQ umožňuje vytvořit dotazy na kolekci objektů, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Obě **přidat odkaz na službu** dialogové okno v sadě Visual Studio a nástroj DataSvcUtil.exe se používají ke generování reprezentace [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jako třída kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>, a také objekty, které představují entity, vrátí se v informačních kanálů. Tyto nástroje generovat také vlastnosti pro třídu kontejneru entity pro kolekce, které jsou zveřejněné jako kanály službou. Každý z těchto vlastností třídy, který zapouzdřuje službu data návratový <xref:System.Data.Services.Client.DataServiceQuery%601>. Protože <xref:System.Data.Services.Client.DataServiceQuery%601> třída implementuje <xref:System.Linq.IQueryable%601> rozhraní definované LINQ, můžete vytvořit dotaz LINQ proti informační kanály vystavené službu data, které jsou přeložit pomocí klientské knihovny na žádost dotazu URI, který je odešle do služby data na provádění.  

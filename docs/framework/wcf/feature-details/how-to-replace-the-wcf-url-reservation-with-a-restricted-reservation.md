@@ -1,27 +1,29 @@
 ---
-title: "Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací"
-ms.custom: 
+title: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e4cfae36dfcb65dfd93dfc4fb1d6b64ba01e1b11
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b1f17a5c21888a9fc778d9649f62478d43ba0e86
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
-Rezervaci adresy URL můžete omezit, kdo může přijímat zprávy z adresy URL nebo sadu adres URL. Rezervace se skládá z šablony adresu URL, seznam řízení přístupu (ACL) a sadu příznaků. Adresa URL Šablona definuje adresy URL, které ovlivňuje rezervace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak se zpracovávají šablony adresu URL, najdete v části [směrování příchozích požadavků](http://go.microsoft.com/fwlink/?LinkId=136764). Seznam řízení přístupu řídí, jaké uživatel nebo skupina uživatelů je povoleno přijímat zprávy ze zadaných adres URL. V příznacích označuje, zda rezervace udělit oprávnění uživatele nebo skupinu tak, aby naslouchala na adresu URL přímo, nebo chcete delegovat oprávnění pro naslouchání na jiný proces.  
+Rezervaci adresy URL můžete omezit, kdo může přijímat zprávy z adresy URL nebo sadu adres URL. Rezervace se skládá z šablony adresu URL, seznam řízení přístupu (ACL) a sadu příznaků. Adresa URL Šablona definuje adresy URL, které ovlivňuje rezervace. Další informace o způsobu zpracování adresy URL šablony najdete v tématu [směrování příchozích požadavků](http://go.microsoft.com/fwlink/?LinkId=136764). Seznam řízení přístupu řídí, jaké uživatel nebo skupina uživatelů je povoleno přijímat zprávy ze zadaných adres URL. V příznacích označuje, zda rezervace udělit oprávnění uživatele nebo skupinu tak, aby naslouchala na adresu URL přímo, nebo chcete delegovat oprávnění pro naslouchání na jiný proces.  
   
  Jako součást výchozí konfigurace operačního systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vytvoří rezervace globálně přístupné pro port 80 povolit všem uživatelům spouštět aplikace, které používají duální vazby HTTP pro duplexní komunikace. Vzhledem k tomu, že seznam řízení přístupu na tuto rezervaci je pro všechny uživatele, správci nelze explicitně povolí nebo zakáže oprávnění tak, aby naslouchala na adresu URL nebo sadu adres URL. Toto téma vysvětluje, jak odstranit tuto rezervaci a jak znovu vytvořit rezervaci s seznam ACL pro s omezeným přístupem.  
   
@@ -35,13 +37,13 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
             SDDL: D:(A;;GX;;;WD)  
 ```  
   
- Rezervace se skládá z adresy URL použije šablona, kdy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace používá dva vazbu HTTP pro duplexní komunikace. Adresy URL tento formulář slouží k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu pro odeslání zprávy zpět do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta při komunikaci přes duální vazbu protokolu HTTP. Všichni uděleno oprávnění tak, aby naslouchala na adresu URL, ale ne na delegovat naslouchání jiný proces. Nakonec seznamu ACL je popsána v zabezpečení popisovač Definition Language (SSDL). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SSDL, najdete v části [SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)  
+ Rezervace se skládá z adresy URL použije šablona, kdy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace používá dva vazbu HTTP pro duplexní komunikace. Adresy URL tento formulář slouží k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu pro odeslání zprávy zpět do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta při komunikaci přes duální vazbu protokolu HTTP. Všichni uděleno oprávnění tak, aby naslouchala na adresu URL, ale ne na delegovat naslouchání jiný proces. Nakonec seznamu ACL je popsána v zabezpečení popisovač Definition Language (SSDL). Další informace o SSDL najdete v tématu [SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)  
   
 ### <a name="to-delete-the-wcf-url-reservation"></a>Odstranit rezervaci adresy URL WCF  
   
 1.  Klikněte na tlačítko **spustit**, přejděte na příkaz **všechny programy**, klikněte na tlačítko **Příslušenství**, klikněte pravým tlačítkem na **příkazového řádku** a klikněte na tlačítko **spustit jako Správce** v místní nabídce, který se zobrazí. Klikněte na tlačítko **pokračovat** v okně Řízení uživatelských účtů (UAC), které vás může požádat oprávnění pokračujte.  
   
-2.  Zadejte **netsh http odstranit urlacl url = http: / / +:80/Temporary_Listen_Addresses/** v okně příkazového řádku.  
+2.  Zadejte **netsh http odstranit urlacl url =http://+:80/Temporary_Listen_Addresses/**  v okně příkazového řádku.  
   
 3.  Pokud rezervace byla úspěšně odstraněna, zobrazí se následující zpráva. **Rezervaci adresy URL se úspěšně odstranil**  
   
@@ -66,6 +68,6 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1.  Klikněte na tlačítko **spustit**, přejděte na příkaz **všechny programy**, klikněte na tlačítko **Příslušenství**, klikněte pravým tlačítkem na **příkazového řádku** a klikněte na tlačítko **spustit jako Správce** v místní nabídce, který se zobrazí. Klikněte na tlačítko **pokračovat** v okně Řízení uživatelských účtů (UAC), které vás může požádat oprávnění pokračujte.  
   
-2.  Zadejte **netsh http přidejte adresu url urlacl = http: / / +: 80/Temporary_Listen_Addresses/uživatel = "\<název počítače >\\< název skupiny zabezpečení\>**  na příkazovém řádku. Nahrazení  **\<název počítače >** s názvem počítače, na kterém musí být skupina vytvořena a  **\<název skupiny zabezpečení >** s názvem skupiny zabezpečení, kterou jste vytvořili dříve.  
+2.  Zadejte **netsh http přidejte adresu url urlacl =http://+:80/Temporary_Listen_Addresses/ uživatel = "\<název počítače >\\< název skupiny zabezpečení\>**  na příkazovém řádku. Nahrazení  **\<název počítače >** s názvem počítače, na kterém musí být skupina vytvořena a  **\<název skupiny zabezpečení >** s názvem skupiny zabezpečení, kterou jste vytvořili dříve.  
   
 3.  Pokud rezervace byla úspěšně vytvořena, zobrazí se následující zpráva. **Rezervaci adresy URL úspěšně přidal**.

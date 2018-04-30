@@ -38,14 +38,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7c84c5742fcbb0d1554bd6fc379fc44f3b9cb055
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bf7ec6cc18461a906e889a997968677d0c63df20
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="navigation-overview"></a>Přehled navigace
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] podporuje navigační stylu prohlížeče, který lze použít v dva typy aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. Obsah balíčku pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít na jednom <xref:System.Windows.Controls.Page> do jiného deklarativně, pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, pomocí <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá deník pamatovat stránek, které byly zpřístupněny z a přejděte zpět na ně.  
+Windows Presentation Foundation (WPF) podporuje navigační stylu prohlížeče, který lze použít v dva typy aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. Obsah balíčku pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít na jednom <xref:System.Windows.Controls.Page> do jiného deklarativně, pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, pomocí <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá deník pamatovat stránek, které byly zpřístupněny z a přejděte zpět na ně.  
   
  <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Navigation.NavigationService>, a deník tvoří základní navigační podpory, které nabízí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Tento přehled zde tyto funkce podrobně popsány před pokrývajících podporu pokročilé navigace, což zahrnuje navigaci na přijít [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory, [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] souborů a objektů.  
   

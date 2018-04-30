@@ -20,16 +20,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9c66e7d8f610126e2702a6c593a93ee496108ecf
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2dbf3ddb903600df6094c8486fda7183eac2abe7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Témata obsažené v této části jsou určeny tak, abyste získali rychlý vystavení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klientské aplikace. Služba vystavuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby specifikuje adresu, kde můžete najít službu, vazbu, která obsahuje informace, které popisují, jak klient musí komunikovat s službu a kontrakt, který definuje funkci poskytovaný službou svým klientům.  
   
- Po absolvování řady témat v tomto kurzu budete mít funkční službu a klienta, který volá službu. První tři témata popisují postup definování kontraktu služby, jak implementovat kontrakt služby a k hostování služby. Vytvořená služba se hostuje sama v konzolové aplikaci. Služby může být také hostovaný v rámci Internetové informační služby (IIS). [!INCLUDE[crabout](../../../includes/crabout-md.md)] jak to udělat, najdete v části [postupy: hostování služby WCF ve službě IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md). Služba je nakonfigurována v kódu; služby však lze také nastavit v konfiguračním souboru. [!INCLUDE[crabout](../../../includes/crabout-md.md)] použití konfiguračního souboru najdete v části [konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md).  
+ Po absolvování řady témat v tomto kurzu budete mít funkční službu a klienta, který volá službu. První tři témata popisují postup definování kontraktu služby, jak implementovat kontrakt služby a k hostování služby. Vytvořená služba se hostuje sama v konzolové aplikaci. Služby může být také hostovaný v rámci Internetové informační služby (IIS). Další informace o tom, jak to udělat najdete v tématu [postupy: hostování služby WCF ve službě IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md). Služba je nakonfigurována v kódu; služby však lze také nastavit v konfiguračním souboru. Další informace o použití konfiguračního souboru naleznete v části [konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md).  
   
  Následující tři témata popisují, jak vytvořit proxy klienta, nakonfigurovat klientskou aplikaci a používat proxy server klienta volat operace služby, které jsou vystavené službu. Služby publikování metadat, které definují informace, které klientské aplikace potřebuje ke komunikaci se službou. [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] automatizuje proces přístup k tato metadata a použije ho k vytvořit a nakonfigurovat klientskou aplikaci pro službu. Pokud nepoužíváte [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vytvořit a nakonfigurovat klientskou aplikaci pro službu.  
   

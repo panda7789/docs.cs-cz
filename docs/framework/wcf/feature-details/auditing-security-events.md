@@ -18,18 +18,18 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 948ff11cf1b7ecacc6f9f5fdebfc3a0cbd1ef5b1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 69b013389511ac2cfb31e22f7a39e98eb22fb977
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] může protokolovat události zabezpečení (úspěch, chyba nebo obě) se funkci auditování. Události se zapisují do protokolu událostí systému Windows a může být prověřen pomocí prohlížeče událostí.  
   
  Auditování poskytuje způsob, jak správce ke zjištění útoku, který má již došlo k chybě nebo právě probíhá. Kromě toho audit může pomoct vývojář pro ladění problémů souvisejících se zabezpečením. Například pokud k chybě v konfiguraci ověřování nebo Zásady vracení se změnami omylem odepře přístup k autorizovaným uživatelem, Vývojář můžete rychle zjistit a najít příčinu této chyby kontrolou protokolu událostí.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+ Další informace o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="audit-level-and-behavior"></a>Úroveň auditování a chování  
  Existují dvě úrovně audity zabezpečení:  

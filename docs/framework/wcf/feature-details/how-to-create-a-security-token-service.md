@@ -22,11 +22,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: e043b9b9a3b09bec0d7484fb732e33571b5aaf0c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 827fef90a6277387ceac1c8f1d6df00a69a5d612
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
 Služby tokenů zabezpečení implementuje protokol definovaný ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a vzory exchange zprávu pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení poskytuje jeden nebo více z těchto funkcí. Toto téma vypadá nejvíce běžný scénář: implementace vystavování tokenů.  
@@ -124,7 +124,7 @@ Služby tokenů zabezpečení implementuje protokol definovaný ve specifikaci W
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Postup vytvoření doklad token, pokud obě služby klienta a token zabezpečení poskytne klíče pro sdílený klíč, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Další informace o tom, jak vytvořit doklad token, když klienta a služby tokenů zabezpečení poskytují materiál klíče pro sdílený klíč najdete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
  Vystavený token odkazy se vytvářejí pomocí instancí <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> třídy.  
   

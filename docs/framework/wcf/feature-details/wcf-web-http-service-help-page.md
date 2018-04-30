@@ -1,27 +1,29 @@
 ---
-title: "Stránka nápovědy webové služby HTTP WCF"
-ms.custom: 
+title: Stránka nápovědy webové služby HTTP WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cdd05397990c2b1bfc89493235804e14f6d41a1f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dabb5e7a949cb26c619ad02dc73d0405222d08cf
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]poskytuje automatickou stránku nápovědy pro služby WCF WEB HTTP. Tato stránka nápovědy obsahuje popis každé operace, požadavku a odpovědi formátů a schémata. Tato funkce je ve výchozím nastavení vypnutý. Když uživatel přejde k služby WCF WEB HTTP a připojí "/ Help" na konec adresy URL, například http://localhost: 8000/zákazníků nebo potřebujete pomoc, zobrazí se stránka nápovědy podobně jako tento.  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje automatickou stránku nápovědy pro služby WCF WEB HTTP. Tato stránka nápovědy obsahuje popis každé operace, požadavku a odpovědi formátů a schémata. Tato funkce je ve výchozím nastavení vypnutý. Když uživatel přejde k služby WCF WEB HTTP a připojí "/ Help" na konec adresy URL, například http://localhost:8000/Customers/Help, stránku nápovědy, jako se zobrazí následující.  
   
  ![Stránka nápovědy WCF REST](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.gif "WCFRESTHELPPAGEMAIN")  
   
@@ -251,4 +253,4 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
 </xs:schema>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]schéma serializace dat kontrakt, najdete v části [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).
+ Další informace o schématu serializace kontraktu dat najdete v tématu [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).

@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: faeb05045049e9a53babf754f1ec058c6aac2f05
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2c55d88eb6c3b41c703bddfd09e6224f3a6aefe2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="fundamental-windows-workflow-concepts"></a>Základní Windows Workflow koncepty
 Vývoj pro pracovní postup v [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] používá koncepty, které může být nový někteří vývojáři. Toto téma popisuje některé koncepty a jak jsou implementované.  
@@ -63,7 +63,7 @@ Vývoj pro pracovní postup v [!INCLUDE[netfx_current_long](../../../includes/ne
  Aktivity získat přístup k prostředí runtime pracovního postupu pomocí odpovídající <xref:System.Activities.ActivityContext> odvozené třídy, jako například <xref:System.Activities.NativeActivityContext> nebo <xref:System.Activities.CodeActivityContext>. To používají pro překlad argumenty a proměnné pro plánování podřízené aktivity a mnoha dalším účelům.  
   
 ## <a name="services"></a>Služby  
- Pracovní postupy poskytují přirozené způsob, jak implementovat a získat přístup ke službám volně vázány pomocí zasílání zpráv aktivit. Zasílání zpráv aktivity jsou postaveny na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a primární mechanizmus použít k získání dat do a z pracovního postupu. Můžete vytvořit zasílání zpráv aktivity společně pro modelování jakýkoli druh vzorce výměny zpráv, které chcete. Další informace najdete v tématu najdete v části [zasílání zpráv aktivity](../../../docs/framework/wcf/feature-details/messaging-activities.md). Služby pracovních postupů jsou hostované pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. Další informace najdete v tématu [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] pracovní postup služby najdete v tématu [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ Pracovní postupy poskytují přirozené způsob, jak implementovat a získat přístup ke službám volně vázány pomocí zasílání zpráv aktivit. Zasílání zpráv aktivity jsou postaveny na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a primární mechanizmus použít k získání dat do a z pracovního postupu. Můžete vytvořit zasílání zpráv aktivity společně pro modelování jakýkoli druh vzorce výměny zpráv, které chcete. Další informace najdete v tématu najdete v části [zasílání zpráv aktivity](../../../docs/framework/wcf/feature-details/messaging-activities.md). Služby pracovních postupů jsou hostované pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. Další informace najdete v tématu [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md). Další informace o službách pracovního postupu v tématu [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md)  
   
 ## <a name="persistence-unloading-and-long-running-workflows"></a>Trvalost, uvolnění a dlouhodobé pracovních postupů  
  Pracovní postup prostředí Windows zjednodušuje vytváření dlouhodobé reaktivní programy tím, že poskytuje:  

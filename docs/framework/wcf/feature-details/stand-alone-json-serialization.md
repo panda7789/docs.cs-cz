@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1a0a11d613ffb8f71437edd73a8be64fb5f55a4c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 4d3c7234c25b0a968ca67b58a560e8c8b55bb73d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="stand-alone-json-serialization"></a>Samostatná serializace JSON
 JSON (JavaScript Object Notation) je formát dat, která je určená speciálně pro používat kód JavaScript spuštěný na webových stránkách otvírala v prohlížeči. Je výchozí formát dat používaný pomocí prvku ASP.NET AJAX služeb vytvořených v rámci [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -53,7 +53,7 @@ JSON (JavaScript Object Notation) je formát dat, která je určená speciálně
 |`Null` hodnota pro jakýkoli typ|Null|Typy s možnou hodnotou Null jsou podporovány také a mapovat do formátu JSON stejným způsobem jako typy neumožňující hodnotu Null.|  
   
 ### <a name="enumerations-and-json"></a>Výčty a JSON  
- Člen hodnoty výčtu jsou považovány za čísel ve formátu JSON, který se liší od jak jsou považovány v kontraktech dat tam, kde jsou zahrnuty jako názvy členů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] data smlouvy zacházení, najdete v části [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
+ Člen hodnoty výčtu jsou považovány za čísel ve formátu JSON, který se liší od jak jsou považovány v kontraktech dat tam, kde jsou zahrnuty jako názvy členů. Další informace o zacházení kontraktu dat najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
   
 -   Pokud máte například `public enum Color {red, green, blue, yellow, pink}`, serializaci `yellow` vytvoří čísla 3 a není řetězec "žlutá".  
   

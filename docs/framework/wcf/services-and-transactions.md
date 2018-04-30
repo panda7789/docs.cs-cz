@@ -1,33 +1,33 @@
 ---
-title: "Služby a transakce"
-ms.custom: 
+title: Služby a transakce
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
-caps.latest.revision: 
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f6256db06825a79b5235b92e2ed205608f04aac7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c39c9f6e56dc4c2bf2feb5340d7d1bb1b96f5ab6
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="services-and-transactions"></a>Služby a transakce
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]aplikace můžete zahájit transakci ze v rámci klienta a koordinovat transakce v rámci operace služby. Klienty můžete zahájit transakci a vyvolání několik operací služby a ujistěte se, že operace služby jsou buď potvrzena nebo vrácena zpět jako na jednu jednotku.  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace můžete zahájit transakci ze v rámci klienta a koordinovat transakce v rámci operace služby. Klienty můžete zahájit transakci a vyvolání několik operací služby a ujistěte se, že operace služby jsou buď potvrzena nebo vrácena zpět jako na jednu jednotku.  
   
- Chování transakce v kontrakt služby můžete povolit zadáním <xref:System.ServiceModel.ServiceBehaviorAttribute> a nastavení jeho <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> vlastnosti pro operace služby, které vyžadují transakce klienta. <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> Parametr určuje, zda je transakce, ve kterém metoda spustí automaticky dokončit, pokud jsou vyvolány žádné neošetřené výjimky. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Tyto atributy, najdete v části [atributy transakce ServiceModel](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
+ Chování transakce v kontrakt služby můžete povolit zadáním <xref:System.ServiceModel.ServiceBehaviorAttribute> a nastavení jeho <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> vlastnosti pro operace služby, které vyžadují transakce klienta. <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> Parametr určuje, zda je transakce, ve kterém metoda spustí automaticky dokončit, pokud jsou vyvolány žádné neošetřené výjimky. Další informace o těchto atributů najdete v tématu [atributy transakce ServiceModel](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
   
  Práce, které se provádí v operací služby a spravuje správce prostředků, jako je například protokolování aktualizace databáze je součástí klienta transakce.  
   

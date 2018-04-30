@@ -16,14 +16,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 912bfae4ab867540c01af798f883a0249ec297f7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: cffa0e1c18fd3e1207b40c699684ebaa49511384
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje používat deklarativní ukládání do mezipaměti mechanismus, který je již k dispozici v technologii ASP.NET v službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z vaší operací služby WCF Web HTTP. Když uživatel odešle do služby, který je nakonfigurován pro ukládání do mezipaměti GET protokolu HTTP, ASP.NET zašle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, se nazývá metodu služby a ještě jednou do mezipaměti odpovědi. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Ukládání do mezipaměti, ASP.NET, najdete v části [přehled ukládání do mezipaměti technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152534)  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje používat deklarativní ukládání do mezipaměti mechanismus, který je již k dispozici v technologii ASP.NET v službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z vaší operací služby WCF Web HTTP. Když uživatel odešle do služby, který je nakonfigurován pro ukládání do mezipaměti GET protokolu HTTP, ASP.NET zašle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, se nazývá metodu služby a ještě jednou do mezipaměti odpovědi. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [přehled ukládání do mezipaměti technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=152534)  
   
 ## <a name="basic-web-http-service-caching"></a>Základní webové služby HTTP ukládání do mezipaměti  
  Povolit HTTP webové služby ukládání do mezipaměti je třeba nejprve povolit režim kompatibility ASP.NET použitím <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> na nastavení služby <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> k <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.  
@@ -71,7 +71,7 @@ public class Service
 </system.web>  
 ```  
   
- Toto je stejný element konfigurace, který je k dispozici pro aplikace ASP.NET. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Profilech mezipaměti ASP.NET, najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. Webové služby HTTP jsou nejdůležitější atributy v mezipaměti profilu: `cacheDuration` a `varyByParam`. Obě tyto atributy se vyžadují. `cacheDuration` Nastaví množství času, které do mezipaměti odpovědi v sekundách. `varyByParam` Umožňuje zadat parametr řetězce dotazu, který se používá k odpovědi v mezipaměti. Všechny požadavky vytvořené s hodnotami parametrů řetězce dotazu jsou samostatně do mezipaměti. Například po počáteční žádosti http://MyServer/MyHttpService/MyOperation?param=10 všechny následné žádosti se stejným identifikátorem URI by byla vrácena odpověď uložená v mezipaměti (tak dlouho, dokud není uplynul doba uložení do mezipaměti). V odpovědi na podobné požadavek, který je stejný, ale má jinou hodnotu pro parametr řetězce dotazu parametr samostatně mezipaměti. Pokud nechcete, aby tento samostatné chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
+ Toto je stejný element konfigurace, který je k dispozici pro aplikace ASP.NET. Další informace o profilech mezipaměti ASP.NET najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. Webové služby HTTP jsou nejdůležitější atributy v mezipaměti profilu: `cacheDuration` a `varyByParam`. Obě tyto atributy se vyžadují. `cacheDuration` Nastaví množství času, které do mezipaměti odpovědi v sekundách. `varyByParam` Umožňuje zadat parametr řetězce dotazu, který se používá k odpovědi v mezipaměti. Všechny požadavky vytvořené s hodnotami parametrů řetězce dotazu jsou samostatně do mezipaměti. Například po počáteční žádosti http://MyServer/MyHttpService/MyOperation?param=10 všechny následné žádosti se stejným identifikátorem URI by byla vrácena odpověď uložená v mezipaměti (tak dlouho, dokud není uplynul doba uložení do mezipaměti). V odpovědi na podobné požadavek, který je stejný, ale má jinou hodnotu pro parametr řetězce dotazu parametr samostatně mezipaměti. Pokud nechcete, aby tento samostatné chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
   
 ## <a name="sql-cache-dependency"></a>Závislost SQL mezipaměti  
  Webové HTTP služby odezvy také do mezipaměti se závislostí mezipaměti SQL. Pokud vaše webové služby WCF HTTP závisí na data uložená v databázi SQL, můžete ukládat do mezipaměti odpovědi služby a zrušit platnost odpověď uložená v mezipaměti, když data v SQL databázi změny tabulky. Toto chování je úplně nakonfigurován v souboru Web.config. Nejdřív je nutné definovat připojovací řetězec <`connectionStrings`> elementu.  

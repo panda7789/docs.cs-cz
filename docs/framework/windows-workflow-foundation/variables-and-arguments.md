@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c81d05120f8cf0decc7c6036e2a722ba6271dab8
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 66b11dda1b245fa88548cf70268a6ca10ee27708
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="variables-and-arguments"></a>Proměnné a argumenty
 V systému Windows Workflow Foundation (WF), proměnné představují úložiště dat a argumenty představují tok dat do a z aktivity. Aktivita má sadu argumentů a jejich tvoří podpis aktivity. Kromě toho aktivitu můžete spravovat seznam proměnné, do kterých vývojář lze přidávat nebo odebírat proměnné při návrhu pracovního postupu. Argument je svázán pomocí výraz, který vrátí hodnotu.  
@@ -152,4 +152,4 @@ public sealed class Add : CodeActivity<int>
 }  
 ```  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Práce s argumenty, proměnné a výrazy v kódu, najdete v části [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md) a [vyžaduje argumenty a přetížení skupiny](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md).
+ Další informace o práci s argumenty, proměnné a výrazy v kódu najdete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md) a [vyžaduje argumenty a přetížení skupiny](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md).

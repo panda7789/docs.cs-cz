@@ -1,31 +1,31 @@
 ---
-title: "Fronty ve službě Windows Communication Foundation"
-ms.custom: 
+title: Fronty ve službě Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-caps.latest.revision: 
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4dfc78d355db4bd8c9d43541545e6fac35086b39
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 82eb421b86f57cfe7c9a23de3ab24de2d4c470cb
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
-Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporu pro fronty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje podporu pro službu Řízení front s využitím Microsoft služby Řízení front zpráv (dříve označované jako MSMQ) jako přenosového mechanismu a umožňuje následující scénáře:  
+Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporu pro fronty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje podporu pro službu Řízení front s využitím Microsoft služby Řízení front zpráv (dříve označované jako MSMQ) jako přenosového mechanismu a umožňuje následující scénáře:  
   
 -   Volně párované aplikace. Odeslání aplikace mohou zasílat zprávy do fronty, aniž by museli vědět, zda má přijímající aplikace je k dispozici pro zpracování zprávy. Fronty poskytuje nezávislost zpracování, který umožňuje aplikacím k odesílání zpráv do fronty s rychlostí, která není závislá na rychlost přijímací aplikace dokáže zpracovat zprávy. Celkové dostupnosti systému zvýší při odesílání zpráv do fronty není pevně pro zpracování zprávy.  
   
@@ -35,7 +35,7 @@ Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo
   
 -   Odpojené operace. Odesílání, příjem a operace zpracování může odpojují při komunikaci přes s vysokou latencí sítě nebo omezené dostupnosti sítě, například v případě mobilních zařízení. Fronty mohly tyto operace pokračovat, i když jsou odpojené koncových bodů. Když je znovu navázat připojení, fronty přeposílá zprávy na přijímající aplikace.  
   
- Použití funkce fronty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, můžete použít jednu standardní vazby, nebo můžete vytvořit vlastní vytvoření vazby, pokud jedna z vazeb standardní nevyhovuje vašim požadavkům. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]relevantní standardní vazby a jak zvolit jednu, najdete v části [postup: Exchange zpráv pomocí koncových bodů WCF a aplikace služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření vlastních vazeb, najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Použití funkce fronty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, můžete použít jednu standardní vazby, nebo můžete vytvořit vlastní vytvoření vazby, pokud jedna z vazeb standardní nevyhovuje vašim požadavkům. Další informace o příslušných standardní vazby a vyberte jednu najdete v tématu [postup: Exchange zpráv pomocí koncových bodů WCF a aplikace služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md). Další informace o vytváření vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  

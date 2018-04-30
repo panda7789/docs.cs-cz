@@ -16,14 +16,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b0c59c0688fca53a7c7623330f3fdba4f5defd88
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6eb5381438aa082eae8b4252bbd1cf343ba0ebf7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="workflow-services-overview"></a>Služby pracovních postupů – přehled
-Služby pracovních postupů jsou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]– na základě služby, které jsou implementovány pomocí pracovních postupů. Služby pracovních postupů jsou pracovní postupy, které používají zasílání zpráv aktivity pro odesílání a přijímání [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zprávy. Rozhraní .NET framework 4.5 zavádí několik zasílání zpráv aktivit, které umožňují odesílat a přijímat zprávy v rámci pracovního postupu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] aktivity zasílání zpráv a jak se lze použít k implementaci vzory exchange jiná zpráva, najdete v části [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md).  
+Služby pracovních postupů jsou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]– na základě služby, které jsou implementovány pomocí pracovních postupů. Služby pracovních postupů jsou pracovní postupy, které používají zasílání zpráv aktivity pro odesílání a přijímání [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zprávy. Rozhraní .NET framework 4.5 zavádí několik zasílání zpráv aktivit, které umožňují odesílat a přijímat zprávy v rámci pracovního postupu. Další informace o zasílání zpráv aktivity a jak se lze použít k implementaci vzory jiná zpráva exchange najdete v tématu [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md).  
   
 ## <a name="benefits-of-using-workflow-services"></a>Výhody použití služby pracovních postupů  
  Jako stále stát distribuovat aplikace, budou jednotlivé služby zodpovědná za volání jinými službami a snižování zátěže část práce. Implementace těchto volání jako asynchronní operace zavádí některé složitost do kódu. Zpracování chyb přidá další složitosti ve formě zpracování výjimek a poskytuje podrobné informace o sledování. Některé služby jsou často dlouho běžící a může trvat až cenné systémové prostředky při čekání na vstup. Kvůli těmto problémům distribuované aplikace jsou často velmi složitá a obtížná k zápisu a údržbu. Pracovní postupy jsou přirozené způsoby, jak vyjádřit koordinaci asynchronní práce, zejména volání externích služeb. Pracovní postupy jsou také efektivní v představující dlouho běžící obchodní procesy. Je tyto vlastnosti, které je pracovní postup skvělé asset k vytváření služeb v distribuovaném prostředí.  

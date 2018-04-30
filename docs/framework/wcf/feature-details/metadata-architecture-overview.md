@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bce838d9584480028c7b02d1ba19547fe208bf2c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: df603da0f4feedeacc59198c156322c78fd2f388
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="metadata-architecture-overview"></a>Přehled architektury metadat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje bohaté infrastrukturu pro export, publikování, načítání a Import metadata služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby používají metadata k popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, může automaticky generovat kód klienta pro přístup k službě.  
@@ -59,7 +59,7 @@ ms.lasthandoff: 04/28/2018
   
  Přidat koncové body metadat, které používají protokol MEX, přidejte do vaší hostitele služby využívající kontrakt služby s názvem IMetadataExchange koncové body služby.[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] definuje <xref:System.ServiceModel.Description.IMetadataExchange> rozhraní, které má tento název kontraktu služby. Koncové body služby WS-MetadataExchange, nebo MEX koncových bodů, můžete použít jednu z vazby čtyři výchozí vystavené factory statické metody na <xref:System.ServiceModel.Description.MetadataExchangeBindings> třídy tak, aby odpovídala výchozí vazby používané [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nástroje, jako je například Svcutil.exe. Můžete také nakonfigurovat koncové body metadat MEX použití vlastní vazby.  
   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Používá <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> pro export metadat pro všechny koncové body služby ve službě. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Export metadat ze služby, najdete v části [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Používá <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> pro export metadat pro všechny koncové body služby ve službě. Další informace o exportu metadat ze služby najdete v tématu [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
   
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Rozšiřuje vaše hostitele služby přidáním <xref:System.ServiceModel.Description.ServiceMetadataExtension> instance jako rozšíření na hostiteli služby. <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> Poskytuje implementaci pro publikování protokoly metadat. Můžete také použít <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> se získat metadata služby za běhu přímým přístupem <xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A> vlastnost.  
   

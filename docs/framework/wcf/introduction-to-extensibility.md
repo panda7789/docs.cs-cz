@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 331e71f26b1c703f7df27086d943e799b4eb13e2
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 991c3879990fd5b6562a2270c65e1560efadc022
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="introduction-to-extensibility"></a>Úvod do rozšíření
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Aplikačního modelu je proto, aby vyřešila větší část požadavky na komunikaci všechny distribuované aplikace. Ale stále existují scénáře, které výchozí aplikačního modelu a implementace poskytované systémem nepodporují. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Model rozšiřitelnosti je určená pro podporu vlastní scénáře tím, že umožňuje, abyste upravili chování systému na všech úrovních, a to i do bodu nahrazení modelu celou aplikaci. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  
@@ -43,7 +43,7 @@ ms.lasthandoff: 04/28/2018
   
  Zprávy aplikace obsahovat data, která je určena pro klienta nebo operace služby, který jste nebo zákazníkovi vytvořil. Tyto zprávy jsou k dispozici pro systém rozšíření na úrovni aplikací v podobě zprávy nebo objekt, v závislosti na vašich potřeb.  
   
- Všechny zprávy předat prostřednictvím kanálu systému; pouze zprávy aplikace jsou předávány ze systému kanálu do aplikace. Chcete-li vytvořit nové funkce na úrovni kanálů, musíte rozšířit systému kanál. Pokud chcete vytvořit nové funkce na úrovni aplikace, musíte rozšířit runtime služba nebo klienta (dispečerů a továren kanál v uvedeném pořadí). [!INCLUDE[crabout](../../../includes/crabout-md.md)] rozšíření modulu runtime aplikace, najdete v části [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+ Všechny zprávy předat prostřednictvím kanálu systému; pouze zprávy aplikace jsou předávány ze systému kanálu do aplikace. Chcete-li vytvořit nové funkce na úrovni kanálů, musíte rozšířit systému kanál. Pokud chcete vytvořit nové funkce na úrovni aplikace, musíte rozšířit runtime služba nebo klienta (dispečerů a továren kanál v uvedeném pořadí). Další informace o rozšíření doba spuštění aplikace najdete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
   
 #### <a name="extending-security"></a>Rozšíření zabezpečení  
  Pokud chcete vytvořit vlastní zabezpečovací mechanismy, například tokeny a přihlašovací údaje, musíte rozšířit zabezpečení systému. Další informace najdete v tématu [rozšíření zabezpečení](../../../docs/framework/wcf/extending/extending-security.md).  

@@ -1,12 +1,13 @@
 ---
-title: "Přehled dialogových oken"
-ms.custom: 
+title: Přehled dialogových oken
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 112a9badaf9a64b2c6d3f73d64c27fbc36ec48a3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dfe22dec0827f0ceb880b9410b64668f219a422f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, přes které aplikace funguje a zpřístupňuje funkci pro zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy jako řádky nabídek, panely nástrojů a stavové řádky. Netriviální aplikace může také zobrazit další okna udělat následující:  
@@ -43,7 +45,7 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
   
  A *nemodální* dialogové okno, na druhé straně nezabrání uživatele aktivace jiné systému windows je otevřen. Například pokud chce uživatel vyhledat určité slovo v dokumentu, hlavní okno bude často otevřete dialogové okno požádat uživatele, jaké aplikace word, které potřebují. Od hledání slovo není uživateli zabránit v úpravy dokumentu, ale není musí být modální dialogové okno. Dialogové okno nemodální alespoň poskytuje **zavřete** tlačítko zavřete dialogové okno a může poskytnout další tlačítka provést specifické funkce, jako například **najít další** tlačítko Najít další aplikace word, odpovídá kritériím hledání slovo hledání.  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]Umožňuje vytvořit několik typů dialogových oken, včetně okna zpráv, společná dialogová okna a vlastní dialogová okna. Toto téma popisuje a [dialogové okno pole ukázka](http://go.microsoft.com/fwlink/?LinkID=159984) obsahuje odpovídající příklady.  
+ Windows Presentation Foundation (WPF) můžete vytvořit několik typů dialogových oken, včetně okna zpráv, společná dialogová okna a vlastní dialogová okna. Toto téma popisuje a [dialogové okno pole ukázka](http://go.microsoft.com/fwlink/?LinkID=159984) obsahuje odpovídající příklady.  
   
  
   
@@ -53,7 +55,7 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
   
  ![Dialogové okno textový editor](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure1.png "DialogBoxesOverviewFigure1")  
   
- Chcete-li vytvořit okno se zprávou, je použít <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox>Umožňuje konfigurovat pole text zprávy, název, ikona a tlačítka, pomocí kódu podobně jako tento.  
+ Chcete-li vytvořit okno se zprávou, je použít <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox> Umožňuje konfigurovat pole text zprávy, název, ikona a tlačítka, pomocí kódu podobně jako tento.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxconfigurecodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxconfigurecodebehind)]  
@@ -72,13 +74,13 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
   
  I když <xref:System.Windows.MessageBox> může nabízet jednoduché dialogové okno pole činnost koncového uživatele, výhodou použití <xref:System.Windows.MessageBox> je, který je jediným typem okno, které lze zobrazit aplikace, které jsou spuštěny v izolovaném prostoru zabezpečení částečné důvěryhodnosti (viz [zabezpečení](../../../../docs/framework/wpf/security-wpf.md)), jako například [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
   
- Většina dialogová okna zobrazení a shromažďování dat složitější než výsledek okno se zprávou, včetně textu, výběr (zaškrtávací políčka), vzájemně se vylučuje výběr (přepínače) a seznamu výběru (seznamy, pole se seznamem, rozevírací seznamy). Pro tyto [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] poskytuje několik běžných dialogových oken a vám umožní vytvořit vlastní dialogových oken, i když použití buď je omezeno na aplikace spuštěné s úplným vztahem důvěryhodnosti.  
+ Většina dialogová okna zobrazení a shromažďování dat složitější než výsledek okno se zprávou, včetně textu, výběr (zaškrtávací políčka), vzájemně se vylučuje výběr (přepínače) a seznamu výběru (seznamy, pole se seznamem, rozevírací seznamy). Pro tyto Windows Presentation Foundation (WPF) poskytuje několik běžných dialogových oken a vám umožní vytvořit vlastní dialogových oken, i když použití buď je omezeno na aplikace spuštěné s úplným vztahem důvěryhodnosti.  
   
 <a name="Common_Dialogs"></a>   
 ## <a name="common-dialog-boxes"></a>Společná dialogová okna  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]implementuje celou řadu opakovaně použitelné dialogových oken, které jsou společné pro všechny aplikace, včetně dialogová okna pro otevírání souborů, ukládání souborů a tisku. Vzhledem k tomu, že tyto dialogy jsou implementované v operačním systému, mohou být sdílená mezi všechny aplikace spuštěné na operačním systému, která pomáhá uživatelské prostředí konzistence; Když uživatelé obeznámeni s používáním poskytované operačním systémem dialogového okna v jedné aplikaci, nemusí se dozvíte, jak používat toto okno zobrazené v ostatních aplikacích. Protože tyto dialogy jsou k dispozici pro všechny aplikace, a protože pomáhají zajistit konzistentní prostředí, se označují jako *společná dialogová okna*.  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] implementuje celou řadu opakovaně použitelné dialogových oken, které jsou společné pro všechny aplikace, včetně dialogová okna pro otevírání souborů, ukládání souborů a tisku. Vzhledem k tomu, že tyto dialogy jsou implementované v operačním systému, mohou být sdílená mezi všechny aplikace spuštěné na operačním systému, která pomáhá uživatelské prostředí konzistence; Když uživatelé obeznámeni s používáním poskytované operačním systémem dialogového okna v jedné aplikaci, nemusí se dozvíte, jak používat toto okno zobrazené v ostatních aplikacích. Protože tyto dialogy jsou k dispozici pro všechny aplikace, a protože pomáhají zajistit konzistentní prostředí, se označují jako *společná dialogová okna*.  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]zapouzdří soubor otevřít, uložte soubor a společná dialogová okna tiskové a zpřístupňuje je jako spravované třídy pro použití v samostatné aplikace. Toto téma obsahuje stručný přehled jednotlivých.  
+ Windows Presentation Foundation (WPF) zapouzdří otevření souboru, uložit soubor a tisk společná dialogová okna a zpřístupňuje je jako spravované třídy pro použití v samostatné aplikace. Toto téma obsahuje stručný přehled jednotlivých.  
   
 <a name="Open_File_Dialog"></a>   
 ### <a name="open-file-dialog"></a>Dialogové okno otevření souboru  
@@ -94,7 +96,7 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
  Další informace o dialogové okno otevření souboru, najdete v části <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  <xref:Microsoft.Win32.OpenFileDialog>aplikace s částečnou důvěryhodností lze bezpečně načíst názvy souborů (viz [zabezpečení](../../../../docs/framework/wpf/security-wpf.md)).  
+>  <xref:Microsoft.Win32.OpenFileDialog> aplikace s částečnou důvěryhodností lze bezpečně načíst názvy souborů (viz [zabezpečení](../../../../docs/framework/wpf/security-wpf.md)).  
   
 <a name="Save_File_Dialog"></a>   
 ### <a name="save-file-dialog-box"></a>Soubor dialogové okno uložení  
@@ -124,7 +126,7 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
   
 <a name="Custom_Dialog_Boxes"></a>   
 ## <a name="custom-dialog-boxes"></a>Vlastní dialogová okna  
- Společná dialogová okna jsou užitečné i a by měl použít, pokud je to možné, které nepodporují požadavky specifické pro doménu dialogových oken. V takových případech musíte vytvořit vlastní dialogová okna. Ukážeme, je dialogové okno s zvláštní chování. <xref:System.Windows.Window>implementuje tyto chování a v důsledku toho používáte <xref:System.Windows.Window> vytvořit vlastní modální a nemodální dialogová okna.  
+ Společná dialogová okna jsou užitečné i a by měl použít, pokud je to možné, které nepodporují požadavky specifické pro doménu dialogových oken. V takových případech musíte vytvořit vlastní dialogová okna. Ukážeme, je dialogové okno s zvláštní chování. <xref:System.Windows.Window> implementuje tyto chování a v důsledku toho používáte <xref:System.Windows.Window> vytvořit vlastní modální a nemodální dialogová okna.  
   
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
 ### <a name="creating-a-modal-custom-dialog-box"></a>Vytváření modálních dialogových vlastní pole  
@@ -221,7 +223,7 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
   
  ![Neplatný levým okrajem](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure7.png "DialogBoxesOverviewFigure7")  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]neomezuje uživatele na neplatný ovládací prvek, dokud zadali platná data. Toto je dobré chování pro dialogové okno; Uživatel by mohli volně přejděte ovládacích prvků v dialogovém okně, zda data jsou platná. To znamená však může uživatel zadat neplatná data a stiskněte klávesu **OK** tlačítko. Z tohoto důvodu kódu také je nutné ověřit všechny ovládací prvky v dialogu když **OK** stisknutí tlačítka ve zpracování <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] neomezuje uživatele na neplatný ovládací prvek, dokud zadali platná data. Toto je dobré chování pro dialogové okno; Uživatel by mohli volně přejděte ovládacích prvků v dialogovém okně, zda data jsou platná. To znamená však může uživatel zadat neplatná data a stiskněte klávesu **OK** tlačítko. Z tohoto důvodu kódu také je nutné ověřit všechny ovládací prvky v dialogu když **OK** stisknutí tlačítka ve zpracování <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind1)]  
@@ -307,7 +309,7 @@ Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, př
  Na rozdíl od <xref:System.Windows.Window.ShowDialog%2A>, <xref:System.Windows.Window.Show%2A> vrátí okamžitě. Okno volání v důsledku toho nelze zjistit, když nemodálního dialogu se zavře a proto nebude vědět, kdy se mají kontrolovat výsledku dialogové okno pole nebo získat data z dialogového okna pro další zpracování. Místo toho musí dialogové okno vytvořit alternativní způsob vrátit data do okna volání pro zpracování.  
   
 #### <a name="processing-data-returned-from-a-modeless-dialog-box"></a>Zpracování Data vrácená z nemodálního dialogové okno  
- V tomto příkladu `FindDialogBox` může vrátit jednu nebo více Najít výsledky do hlavního okna, v závislosti na text se hledají bez žádné konkrétní frekvence. Jak se modální dialogové okno, může vrátit nemodální dialogové okno výsledků pomocí vlastnosti. Okně, které vlastní dialogové okno však musí vědět, kdy mají být vyhledávána tyto vlastnosti. Je možné povolit pro dialogové okno pro implementaci událost, která se vyvolá, vždy, když je nalezen text. `FindDialogBox`implementuje `TextFoundEvent` pro tento účel, který první vyžaduje delegáta.  
+ V tomto příkladu `FindDialogBox` může vrátit jednu nebo více Najít výsledky do hlavního okna, v závislosti na text se hledají bez žádné konkrétní frekvence. Jak se modální dialogové okno, může vrátit nemodální dialogové okno výsledků pomocí vlastnosti. Okně, které vlastní dialogové okno však musí vědět, kdy mají být vyhledávána tyto vlastnosti. Je možné povolit pro dialogové okno pro implementaci událost, která se vyvolá, vždy, když je nalezen text. `FindDialogBox` implementuje `TextFoundEvent` pro tento účel, který první vyžaduje delegáta.  
   
  [!code-csharp[DialogBoxSample#TextFoundEventHandlerCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/TextFoundEventHandler.cs#textfoundeventhandlercode)]
  [!code-vb[DialogBoxSample#TextFoundEventHandlerCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/TextFoundEventHandler.vb#textfoundeventhandlercode)]  

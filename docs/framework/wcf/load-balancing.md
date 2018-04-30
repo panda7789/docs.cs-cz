@@ -1,36 +1,36 @@
 ---
-title: "Vyrovnávání zatížení"
-ms.custom: 
+title: Vyrovnávání zatížení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-caps.latest.revision: 
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5874d7237608331e5d8284a4ad1cd94ba6fb3451
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fe13c4aee41cd7af188ccaea77b3c0af07603e2c
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
-Jeden ze způsobů, jak zvýšit kapacitu [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikací je odhlašování škálovat podle jejich nasazení do Vyrovnávání zatížení sítě serverové farmy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]aplikace může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.  
+Jeden ze způsobů, jak zvýšit kapacitu [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikací je odhlašování škálovat podle jejich nasazení do Vyrovnávání zatížení sítě serverové farmy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.  
   
  Následující části popisují důležité informace pro vyrovnávání zatížení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace vytvořené pomocí různých vazby poskytované systémem.  
   
 ## <a name="load-balancing-with-the-basic-http-binding"></a>Vyrovnávání zatížení s vazby základní HTTP  
- Z hlediska vyrovnávání zatížení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, které komunikují pomocí <xref:System.ServiceModel.BasicHttpBinding> nejsou jiné než jiné běžné typy HTTP síťový provoz (statický obsah HTML, stránek ASP.NET nebo webovými službami ASMX). [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]kanály, které tuto vazbu používají jsou ze své podstaty bezstavové a ukončit jejich připojení Zavře kanál. Jako takový <xref:System.ServiceModel.BasicHttpBinding> pracuje s existující HTTP rozložení zátěže techniky.  
+ Z hlediska vyrovnávání zatížení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, které komunikují pomocí <xref:System.ServiceModel.BasicHttpBinding> nejsou jiné než jiné běžné typy HTTP síťový provoz (statický obsah HTML, stránek ASP.NET nebo webovými službami ASMX). [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kanály, které tuto vazbu používají jsou ze své podstaty bezstavové a ukončit jejich připojení Zavře kanál. Jako takový <xref:System.ServiceModel.BasicHttpBinding> pracuje s existující HTTP rozložení zátěže techniky.  
   
  Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> pošle hlavičku připojení protokolu HTTP v zprávy s `Keep-Alive` hodnotu, která umožňuje klientům vytvořit trvalé připojení ke službám, které je podporují. Tato konfigurace nabízí lepší propustnost, protože dříve vytvořeno, že připojení lze opětovně použít k odeslání dalších zpráv na stejném serveru. Opakované použití připojení však může způsobit klientů se důrazně přidružené k určitému serveru ve farmě Vyrovnávání zatížení sítě, což snižuje efektivitu Vyrovnávání zatížení pomocí kruhového dotazování. Pokud je toto chování žádoucí, HTTP `Keep-Alive` lze vypnout na serveru pomocí <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> vlastnost s <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelsky definovaných <xref:System.ServiceModel.Channels.Binding>. Následující příklad ukazuje, jak to provést pomocí konfigurace.  
   
@@ -90,7 +90,7 @@ Jeden ze způsobů, jak zvýšit kapacitu [!INCLUDE[indigo1](../../../includes/i
 </configuration>  
 ```  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="load-balancing-with-the-wshttp-binding-and-the-wsdualhttp-binding"></a>Vyrovnávání zatížení s WSHttp vazby a WSDualHttp vazby  
  Jak <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> může být s vyrovnáváním zatížení pomocí techniky Vyrovnávání zatížení HTTP zadaný několik úprav výchozí vazby konfigurace.  

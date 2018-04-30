@@ -1,24 +1,24 @@
 ---
-title: "SendMail vlastní aktivity"
-ms.custom: 
+title: SendMail vlastní aktivity
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-caps.latest.revision: 
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6086ca0ccb31603874feda6df1384b9346adb49d
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 46038466233e7039229890b15b0ad6ca9d1a717f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="sendmail-custom-activity"></a>SendMail vlastní aktivity
 Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která je odvozena od <xref:System.Activities.AsyncCodeActivity> k odesílání pošty přes protokol SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronně odesílat e-mailu a odesílat e-maily s ověřováním. Poskytuje také některé funkce koncového uživatele jako testování režim tokenu nahrazení, soubor šablony a otestovat rozevírací cestu.  
@@ -29,7 +29,7 @@ Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která je odvozena od 
 |-|-|-|  
 |Hostitel|String|Adresa hostitele serveru SMTP.|  
 |port|String|Port služby SMTP na hostiteli.|  
-|EnableSsl|bool|Určuje, zda <xref:System.Net.Mail.SmtpClient> používá k šifrování připojení Secure Sockets Layer (SSL).|  
+|enableSsl|bool|Určuje, zda <xref:System.Net.Mail.SmtpClient> používá k šifrování připojení Secure Sockets Layer (SSL).|  
 |UserName|String|Uživatelské jméno k nastavení pověření pro ověření odesílatel <xref:System.Net.Mail.SmtpClient.Credentials%2A> vlastnost.|  
 |Heslo|String|Heslo k nastavení pověření pro ověření odesílatel <xref:System.Net.Mail.SmtpClient.Credentials%2A> vlastnost.|  
 |Předmět|<xref:System.Activities.InArgument%601>\<řetězec >|Předmět zprávy.|  
@@ -116,9 +116,9 @@ new SendMail
 ## <a name="set-up-instructions"></a>Pokyny k instalaci  
  Je vyžadován pro tato ukázka přístup k serveru SMTP.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nastavení serveru SMTP, naleznete na následujících odkazech.  
+ Další informace o nastavení serveru SMTP v následujících tématech.  
   
--   [Microsoft Technet](http://go.microsoft.com/fwlink/?LinkId=166060)  
+-   [Webu Microsoft Technet](http://go.microsoft.com/fwlink/?LinkId=166060)  
   
 -   [Konfigurace služby SMTP (IIS 6.0)](http://go.microsoft.com/fwlink/?LinkId=150456)  
   

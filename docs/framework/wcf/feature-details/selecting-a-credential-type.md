@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9858475520b949d5b9ee62ecdc0994bbb9398953
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ae5eb9a10f438f1bb76c51c3c9da68273d94ab57
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které government problémy k prokázání přístupem v zemi nebo oblasti. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přihlašovací údaje mohou mít mnoho forem, jako je například uživatelské jméno tokeny a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
@@ -108,7 +108,7 @@ ms.lasthandoff: 04/28/2018
 > [!IMPORTANT]
 >  Je situaci znát při nelze přepnout identity (to znamená, když vytvoření zabezpečení kontext je na výchozí chování). Pokud vytvoříte službu, která komunikuje s druhou služby, identita použitý k otevření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta ke službě druhý nelze změnit. Pokud je povoleno více klientů používat první službu a službu zosobňuje klienti při přístupu ke službě druhý to všechno bude problém. Pokud službu znovu použije stejného klienta pro všechny volající, všechna volání do druhé služby hotovi s identitou první volající, který byl použitý k otevření klienta ke službě druhý. Jinými slovy služba používá identity první klienta pro všechny jeho klienty komunikovat se službou druhý. To může vést ke zvýšení úrovně oprávnění. Pokud není toto chování žádoucí vaší služby, musíte sledovat každou volajícího a vytvořit nového klienta ke službě druhý pro každý odlišné volajícího a zajistit, aby používal službu pouze správné klienta pro správné volající komunikovat se službou druhý.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] přihlašovací údaje a zabezpečených relací, najdete v části [důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
+ Další informace o pověření a zabezpečených relací najdete v tématu [důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  

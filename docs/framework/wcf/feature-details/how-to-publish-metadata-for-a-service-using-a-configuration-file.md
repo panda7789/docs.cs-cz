@@ -1,24 +1,26 @@
 ---
-title: "Postupy: publikování metadat služby promocí konfiguračního souboru"
-ms.custom: 
+title: 'Postupy: publikování metadat služby promocí konfiguračního souboru'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 42f70cd34f65d5393d79b8ace4f9eb704f309d0f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d30031db590b424688cc0af6a573c1042099e64e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: publikování metadat služby promocí konfiguračního souboru
 Toto je jedna z dva postupy: témata, která ukazují publikování metadat pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Existují dva způsoby, jak určit, jak by měla služba publikování metadat, použití konfiguračního souboru a pomocí kódu. Toto téma ukazuje, jak publikování metadat služby promocí konfiguračního souboru.  
@@ -26,7 +28,7 @@ Toto je jedna z dva postupy: témata, která ukazují publikování metadat pro 
 > [!CAUTION]
 >  Toto téma ukazuje, jak publikování metadat nezabezpečená způsobem. Jakýkoli klient může načíst metadata ze služby. Pokud budete potřebovat k službě pro publikování metadat zabezpečeným způsobem, najdete v části [vlastní zabezpečený koncový bod metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publikování metadat v kódu, najdete v části [postupy: publikování metadat služby pomocí kód](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md). Publikování metadat umožňuje klientům pro načtení metadat pomocí žádost o přenos WS získat nebo žádosti o protokolu HTTP nebo získat pomocí `?wsdl` řetězec dotazu. Ujistěte se, zda je funkční kód, vytvoření základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Pro jednoduchost základní služba s vlastním hostováním zajišťuje v následujícím kódu.  
+ Další informace o publikování metadat v kódu najdete v tématu [postupy: publikování metadat služby pomocí kód](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md). Publikování metadat umožňuje klientům pro načtení metadat pomocí žádost o přenos WS získat nebo žádosti o protokolu HTTP nebo získat pomocí `?wsdl` řetězec dotazu. Ujistěte se, zda je funkční kód, vytvoření základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Pro jednoduchost základní služba s vlastním hostováním zajišťuje v následujícím kódu.  
   
 ```csharp  
 using System;  
@@ -115,7 +117,7 @@ namespace Metadata.Samples
   
   
   
-4.  Přidat `<serviceMetadata>` elementu, který chcete `<behavior>` elementu. Nastavte `httpGetEnabled` atribut `true` a `policyVersion` atribut Policy15. `httpGetEnabled`umožňuje službě reagovat na požadavky na metadata požadavek HTTP GET. `policyVersion`informuje službu tak, aby odpovídala WS-Policy 1.5 při generování metadat.  
+4.  Přidat `<serviceMetadata>` elementu, který chcete `<behavior>` elementu. Nastavte `httpGetEnabled` atribut `true` a `policyVersion` atribut Policy15. `httpGetEnabled` umožňuje službě reagovat na požadavky na metadata požadavek HTTP GET. `policyVersion` informuje službu tak, aby odpovídala WS-Policy 1.5 při generování metadat.  
   
   
   
@@ -159,13 +161,13 @@ namespace Metadata.Samples
   
 7.  Pro koncové body metadat přidali v předchozím kroku, nastavte `binding` atribut jednu z následujících:  
   
-    -   `mexHttpBinding`pro publikaci HTTP.  
+    -   `mexHttpBinding` pro publikaci HTTP.  
   
-    -   `mexHttpsBinding`pro publikaci HTTPS.  
+    -   `mexHttpsBinding` pro publikaci HTTPS.  
   
-    -   `mexNamedPipeBinding`pro publikaci pojmenovaný kanál.  
+    -   `mexNamedPipeBinding` pro publikaci pojmenovaný kanál.  
   
-    -   `mexTcpBinding`pro publikaci TCP.  
+    -   `mexTcpBinding` pro publikaci TCP.  
   
 8.  Pro koncové body metadat přidali v předchozím kroku nastavte adresu rovno:  
   
@@ -177,7 +179,7 @@ namespace Metadata.Samples
   
 9. Sestavte a spusťte konzolovou aplikaci.  
   
-10. Základní adresa služby (http://localhost:8001/MetadataSample v této ukázce) a ověřte, jestli je zapnutá publikování metadat pomocí aplikace Internet Explorer. Pokud není, zobrazí se zpráva v horní části výsledné stránky: "publikování metadat pro tato služba je aktuálně zakázaná."  
+10. Použijte Internet Explorer a přejděte do základní adresa služby (http://localhost:8001/MetadataSample v této ukázce) a ověřte, jestli je zapnutá publikování metadat. Pokud není, zobrazí se zpráva v horní části výsledné stránky: "publikování metadat pro tato služba je aktuálně zakázaná."  
   
 ### <a name="to-use-default-endpoints"></a>Chcete-li použít výchozí koncové body  
   
@@ -198,7 +200,7 @@ namespace Metadata.Samples
     </configuration>  
     ```  
   
-     Protože služba má <xref:System.ServiceModel.Description.ServiceMetadataBehavior> s `httpGetEnabled` nastavena na `true`, služba má povoleno publikování metadat a vzhledem k tomu, že byly přidané žádné koncové body, modul runtime přidá výchozí koncové body. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     Protože služba má <xref:System.ServiceModel.Description.ServiceMetadataBehavior> s `httpGetEnabled` nastavena na `true`, služba má povoleno publikování metadat a vzhledem k tomu, že byly přidané žádné koncové body, modul runtime přidá výchozí koncové body. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje implementaci základního [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a konfigurační soubor, který publikuje metadata pro službu.  

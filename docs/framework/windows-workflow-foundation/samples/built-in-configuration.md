@@ -1,23 +1,24 @@
 ---
-title: "Předdefinované konfigurace"
-ms.custom: 
+title: Předdefinované konfigurace
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 34e85c9b-088d-4347-816c-0f77cb73ef2f
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3ddf9b316074a69a88f08a0d7f519533f2db0002
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0c414f34da0cd4bbf484c0a439f8832f02a5ae58
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="built-in-configuration"></a>Předdefinované konfigurace
 Tento příklad znázorňuje použití a konfigurace úložiště SQL instance pracovního postupu. Ukládání instance pracovního postupu SQL je na základě SQL implementace instance úložiště. Umožňuje instanci pro uložení a načtení stavu do a z databáze systému SQL Server nebo SQL Server Express.  
@@ -36,7 +37,7 @@ Tento příklad znázorňuje použití a konfigurace úložiště SQL instance p
   
  Počítání pracovního postupu je samoobslužně hostovaná hostitel služby pracovního postupu. Program `Main` metoda vytvoří instanci hostitele služby pracovního postupu, který je hostitelem počítání pracovního postupu. Definuje koncové body, za kterých bude možné spojit počítání pracovního postupu. Potom definuje SQL pracovního postupu instance úložiště chování, které slouží ke konfiguraci úložiště instance SQL pracovního postupu. V dalším kroku program vytvoří klienta, který volá metodu start počítání pracovního postupu.  
   
- Po spuštění programu, čítač, automaticky spustí, počítání. Všimněte si, že může trvat několik sekund, načítání instance a konfiguraci úložiště instance pracovního postupu SQL. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]úložiště instance pracovního postupu, najdete v části [úložiště Instance pracovního postupu SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).  
+ Po spuštění programu, čítač, automaticky spustí, počítání. Všimněte si, že může trvat několik sekund, načítání instance a konfiguraci úložiště instance pracovního postupu SQL. Další informace o ukládání instance pracovního postupu najdete v tématu [úložiště Instance pracovního postupu SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).  
   
  Ukázka se skládá ze dvou částí:  
   

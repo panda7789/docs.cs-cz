@@ -1,29 +1,31 @@
 ---
-title: "&lt;serviceCertificate&gt; – &lt;serviceCredentials&gt;"
-ms.custom: 
+title: '&lt;serviceCertificate&gt; – &lt;serviceCredentials&gt;'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 597ae6d5-4938-4950-9f5e-b2280e816182
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e5b6baca250e4fadc2a66bb0fe83b076522f82ee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 16c5c065e805cb672f85dd9ff28f5b5d82d1ffba
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="ltservicecertificategt-of-ltservicecredentialsgt"></a>&lt;serviceCertificate&gt; – &lt;serviceCredentials&gt;
 Zadejte certifikát X.509, který se použije k ověřování klientů pomocí režim zabezpečení zprávy.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  
@@ -64,7 +66,7 @@ x509FindType="FindByThumbprint/FindBySubjectName/FindBySubjectDistinguishedName/
 ## <a name="remarks"></a>Poznámky  
  Tento prvek slouží k určení certifikát X.509, který se použije k ověřování klientů pomocí režim zabezpečení zprávy. Pokud používáte certifikát, který se bude pravidelně obnovovat, se změní jeho kryptografický otisk. V takovém případě použijte název subjektu, jako `x509FindType` vzhledem k tomu, že certifikát můžete ho znova vydat se stejným názvem subjektu.  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]pomocí elementu, najdete v tématu [postupy: určení hodnot přihlašovacích údajů klienta](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ Další informace o použití elementu najdete v tématu [postupy: určení hodnot přihlašovacích údajů klienta](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.X509RecipientCertificateServiceElement>  

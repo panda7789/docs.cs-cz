@@ -1,13 +1,13 @@
 ---
-title: "Přehled štětců WPF"
-ms.custom: 
+title: Přehled štětců WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-caps.latest.revision: 
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ec7e566e6f56c215bbaeafdfb5c5e97cc0add0bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1ef53da1febd6a49af8404e5889a728a1b7c649b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
 Všechno viditelný na obrazovce je viditelný, protože byl vykresluje podle štětce. Například štětce se používá k popisu tlačítka, popředí textu a vyplnění obrazce na pozadí. Toto téma představuje koncepty Malování s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stopy a obsahuje příklady. Štětce umožňují malovat [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty s vše od jednoduchých, plné barvy pro komplexní skupiny vzory a bitové kopie.  
@@ -142,7 +142,7 @@ Obdélníku vykresluje pomocí VisualBrush
   
 <a name="paintwithpredefinedbrushesandsystemcolors"></a>   
 ## <a name="paint-using-predefined-and-system-brushes"></a>Malování pomocí předem definovaná a systému štětce  
- Pro usnadnění práce [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] poskytuje sadu předdefinovaných a systému stopy používané k vyplnění objekty.  
+ Pro usnadnění Windows Presentation Foundation (WPF) obsahuje sadu předdefinovaných a systému stopy používané k vyplnění objekty.  
   
 -   Seznam předdefinovaných štětce k dispozici, najdete v článku <xref:System.Windows.Media.Brushes> třídy. Příkladem zobrazujícím postup používání předdefinovaných štětce, najdete v části [malovat oblast plnou barvou](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md).  
   
@@ -150,7 +150,7 @@ Obdélníku vykresluje pomocí VisualBrush
   
 <a name="commonbrushfeatures"></a>   
 ## <a name="common-brush-features"></a>Společné funkce štětce  
- <xref:System.Windows.Media.Brush>Zadejte objekty <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost, která lze použít k vytvoření štětce transparentní nebo částečně transparentní. <xref:System.Windows.Media.Brush.Opacity%2A> Hodnotě 0 je zcela transparentní, při štětce <xref:System.Windows.Media.Brush.Opacity%2A> hodnotu 1 bude štětce zcela neprůhledná. Následující příklad používá <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost, aby <xref:System.Windows.Media.SolidColorBrush> neprůhledného 25 procent.  
+ <xref:System.Windows.Media.Brush> Zadejte objekty <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost, která lze použít k vytvoření štětce transparentní nebo částečně transparentní. <xref:System.Windows.Media.Brush.Opacity%2A> Hodnotě 0 je zcela transparentní, při štětce <xref:System.Windows.Media.Brush.Opacity%2A> hodnotu 1 bude štětce zcela neprůhledná. Následující příklad používá <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost, aby <xref:System.Windows.Media.SolidColorBrush> neprůhledného 25 procent.  
   
  [!code-xaml[BrushOverviewExamples_snip#OpacityExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/OpacityExample.xaml#opacityexample1xaml)]  
   

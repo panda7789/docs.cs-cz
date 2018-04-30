@@ -31,14 +31,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 61197255c11745c2c3f6f60db084b96dc812cb00
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 8d4606023c1a9f3252e9039da547f384d27b7ecd
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
-Při [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] nabízí mnoho služeb zabezpečení, také využívá funkce zabezpečení, základní platformy, která obsahuje operační systém, [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy kombinovat zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] model zabezpečení silné a obrany zabezpečení, který se pokouší vyhnout žádné jediný bod selhání, jak je znázorněno na následujícím obrázku:  
+Zatímco Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, také využívá funkce zabezpečení, základní platformy, která obsahuje operační systém, [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy kombinovat zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] model zabezpečení silné a obrany zabezpečení, který se pokouší vyhnout žádné jediný bod selhání, jak je znázorněno na následujícím obrázku:  
   
  ![Obrázek zabezpečení WPF](../../../docs/framework/wpf/media/windowplatformsecurity.PNG "windowplatformsecurity")  
   

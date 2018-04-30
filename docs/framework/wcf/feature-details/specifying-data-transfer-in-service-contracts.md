@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fc64ff14c321bd2053b0a97b3cf1ac075b02e973
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 852519dc1edc499511652f4027f4cd4eed6eef98
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Lze považovat za infrastrukturu zasílání zpráv. Operace služby můžete přijímat zprávy, jejich zpracování a jejich odeslání zprávy. Zprávy jsou popsány použití kontraktů operaci. Zvažte například následující kontrakt.  
@@ -453,7 +453,7 @@ End Class
  Můžete to udělat několik věcí, chcete-li přizpůsobit způsob, jakým se serializovat data.  
   
 ### <a name="changing-server-serialization-settings"></a>Změna nastavení serveru serializace  
- Pokud výchozí <xref:System.Runtime.Serialization.DataContractSerializer> je používán, můžete řídit některé aspekty procesu serializace ve službě s použitím <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut ke službě. Konkrétně můžete použít `MaxItemsInObjectGraph` vlastnost možné nastavit kvótu, která omezuje maximální počet objektů, které <xref:System.Runtime.Serialization.DataContractSerializer> deserializuje. Můžete použít `IgnoreExtensionDataObject` vlastnost vypnout funkci správy verzí odezvy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kvóty, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] odezvy, najdete v části [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Pokud výchozí <xref:System.Runtime.Serialization.DataContractSerializer> je používán, můžete řídit některé aspekty procesu serializace ve službě s použitím <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut ke službě. Konkrétně můžete použít `MaxItemsInObjectGraph` vlastnost možné nastavit kvótu, která omezuje maximální počet objektů, které <xref:System.Runtime.Serialization.DataContractSerializer> deserializuje. Můžete použít `IgnoreExtensionDataObject` vlastnost vypnout funkci správy verzí odezvy. Další informace o kvótách najdete v tématu [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). Další informace o odezvy najdete v tématu [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ```csharp  
 [ServiceBehavior(MaxItemsInObjectGraph=100000)]  
@@ -585,7 +585,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
 3.  Před otevřením hostitele služby nebo vytvoření kanálu klienta, odeberte existující <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> chování a moduly vlastní odvozené třídy, kterou jste vytvořili v předchozích krocích.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Rozšířené koncepty serializace, najdete v části [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+ Další informace o konceptech pokročilé serializace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)  

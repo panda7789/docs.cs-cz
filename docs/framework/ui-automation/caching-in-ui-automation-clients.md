@@ -19,11 +19,11 @@ ms.author: mhopkins
 manager: markl
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5bbd54d4e1e8a6a1eae52f50696aecddd1f8bd8a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2db81007b745a1c3ee8434b400ab92a01aeeb6e2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="caching-in-ui-automation-clients"></a>Práce s mezipamětí u klientů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.lasthandoff: 04/26/2018
   
  V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], ukládání do mezipaměti znamená předem načítání dat. Data lze přistupovat bez další komunikace mezi procesy. Ukládání do mezipaměti se obvykle používá v klientských aplikacích automatizace uživatelského rozhraní pro načtení vlastnosti a vzory ovládacích prvků hromadně. Je pak načíst informace z mezipaměti podle potřeby. Aplikace aktualizace mezipaměti pravidelně, obvykle v reakci na události což svědčí o tom to něco v [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] došlo ke změně.  
   
- Výhody ukládání do mezipaměti, jsou nejvíce patrné s [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] a vlastních ovládacích prvků, které mají zprostředkovatele automatizace uživatelského rozhraní na straně serveru. Při přístupu k zprostředkovatele na straně klienta jako je například výchozí zprostředkovatele pro menší výhoda je [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládací prvky.  
+ Výhody ukládání do mezipaměti, jsou nejvíce patrné s Windows Presentation Foundation (WPF) a vlastních ovládacích prvků, které mají zprostředkovatele automatizace uživatelského rozhraní na straně serveru. Při přístupu k zprostředkovatele na straně klienta jako je například výchozí zprostředkovatele pro menší výhoda je [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládací prvky.  
   
  Ukládání do mezipaměti nastane, když se aktivuje aplikaci <xref:System.Windows.Automation.CacheRequest> a pak používá žádné metody nebo vlastnosti, která vrací <xref:System.Windows.Automation.AutomationElement>, například <xref:System.Windows.Automation.AutomationElement.FindFirst%2A>, <xref:System.Windows.Automation.AutomationElement.FindAll%2A>. Metody <xref:System.Windows.Automation.TreeWalker> třídy jsou výjimku; ukládání do mezipaměti je možné pouze pokud <xref:System.Windows.Automation.CacheRequest> je zadána jako parametr (například <xref:System.Windows.Automation.TreeWalker.GetFirstChild%28System.Windows.Automation.AutomationElement%2CSystem.Windows.Automation.CacheRequest%29?displayProperty=nameWithType>.  
   

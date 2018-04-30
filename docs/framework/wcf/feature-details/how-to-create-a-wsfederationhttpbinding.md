@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8962564bbefc3f43261a2979ae9765369b211f15
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: f43b95df73b35b7dc7c34c2e16364dfa7bbdbee4
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>Postupy: vytvoření třídy WSFederationHttpBinding
 V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceModel.WSFederationHttpBinding> – třída ([\<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, služby, která vyžaduje ověření pomocí tokenu zabezpečení vydaného služby tokenů zabezpečení klientů. Toto téma ukazuje, jak nastavit <xref:System.ServiceModel.WSFederationHttpBinding> v kódu a konfigurace. Po vytvoření vazby, můžete nastavit koncový bod pro tuto vazbu používají.  
@@ -48,7 +48,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
   
      Je identifikátor URI pro SAML 1.1 token "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1".  
   
-4.  Volitelné. Na federovaným službám, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> vlastnost na adresu URL metadat služby tokenů zabezpečení. Koncový bod metadat umožňuje klientům služby vyberte dvojici odpovídající vazby nebo koncového bodu, pokud služba je nakonfigurována pro publikování metadat. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] publikování metadat, najdete v části [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
+4.  Volitelné. Na federovaným službám, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> vlastnost na adresu URL metadat služby tokenů zabezpečení. Koncový bod metadat umožňuje klientům služby vyberte dvojici odpovídající vazby nebo koncového bodu, pokud služba je nakonfigurována pro publikování metadat. Další informace o publikování metadat najdete v tématu [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
   
  Můžete také nastavit další vlastnosti, včetně typu klíč používaný jako doklad klíč v vydaných tokenu, algoritmus suite používat mezi klientem a služby, zda Pokud chcete vyjednávání nebo explicitně zadat přihlašovací údaje služby, deklarací žádné konkrétní službu očekává vystavený token, který má obsahovat a další prvky XML, které musí být přidaný do žádosti, které klient odešle do služby tokenů zabezpečení.  
   
@@ -103,7 +103,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
   
 12. Další informace najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
-13. V klientovi požadováno, pokud není zadán žádný místního vystavitele; nepoužívá se na službu. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) element v části vazby, který slouží ke komunikaci s služby tokenů zabezpečení. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Vytvoření vazby, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+13. V klientovi požadováno, pokud není zadán žádný místního vystavitele; nepoužívá se na službu. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) element v části vazby, který slouží ke komunikaci s služby tokenů zabezpečení. Další informace o vytváření vazby najdete v tématu [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
 14. Zadání vazby vytvořený v předchozím kroku nastavení `binding` a `bindingConfiguration` atributy `<issuer>` elementu.  
   

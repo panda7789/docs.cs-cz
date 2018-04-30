@@ -1,27 +1,29 @@
 ---
-title: "Postupy: Hostování služby WCF ve spravované službě Windows"
-ms.custom: 
+title: 'Postupy: Hostování služby WCF ve spravované službě Windows'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f4b2c8daa176ef1f9aef24cac3125d59fcc02fa9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: aab9780a0d40ab71710d454deb3144219557450f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Postupy: Hostování služby WCF ve spravované službě Windows
 Toto téma popisuje základní kroky potřebné pro vytvoření [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služba, která je hostitelem služby systému Windows. Ve spravovaných hostování možnost, která je dlouho běžící služby systému Windows je povoleno scénáři [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované v zabezpečeném prostředí, která není zpráv, ve aktivovat mimo Internetové informační služby (IIS). Doba platnosti služby místo toho řídí operační systém. Tento hostitelský možnost je dostupná ve všech verzích systému Windows.  
@@ -61,7 +63,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření [!INCLUDE[indigo
      [!code-csharp[c_HowTo_HostInNTService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#2)]
      [!code-vb[c_HowTo_HostInNTService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#2)]  
   
-8.  Vytvořte novou třídu s názvem `CalculatorWindowsService` který dědí z <xref:System.ServiceProcess.ServiceBase> třídy. Přidat místní proměnné s názvem `serviceHost` k odkazu <xref:System.ServiceModel.ServiceHost> instance. Definování `Main` metoda, která volá`ServiceBase.Run(new CalculatorWindowsService)`  
+8.  Vytvořte novou třídu s názvem `CalculatorWindowsService` který dědí z <xref:System.ServiceProcess.ServiceBase> třídy. Přidat místní proměnné s názvem `serviceHost` k odkazu <xref:System.ServiceModel.ServiceHost> instance. Definování `Main` metoda, která volá `ServiceBase.Run(new CalculatorWindowsService)`  
   
      [!code-csharp[c_HowTo_HostInNTService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#3)]
      [!code-vb[c_HowTo_HostInNTService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#3)]  
@@ -122,7 +124,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření [!INCLUDE[indigo
   
      Klikněte pravým tlačítkem v souboru App.config **Průzkumníku řešení** a vyberte **vlastnosti**. V části **kopírovat do výstupního adresáře** vyberte **kopírovat, pokud je novější**.  
   
-     Tento příklad explicitně určuje koncové body v konfiguračním souboru. Pokud jste ke službě nepřidávejte žádné koncové body, modul runtime přidá výchozí koncové body pro vás. V tomto příkladu protože služba má <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavena na `true`, služby má také publikování metadat povolena. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     Tento příklad explicitně určuje koncové body v konfiguračním souboru. Pokud jste ke službě nepřidávejte žádné koncové body, modul runtime přidá výchozí koncové body pro vás. V tomto příkladu protože služba má <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavena na `true`, služby má také publikování metadat povolena. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ### <a name="install-and-run-the-service"></a>Nainstalujte a spusťte službu  
   

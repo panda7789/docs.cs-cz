@@ -1,45 +1,47 @@
 ---
-title: "Analytické trasování WCF"
-ms.custom: 
+title: Analytické trasování WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 37dea97db8816f68f0331580cfa21daed7f69914
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 57e3ee18848031bce8ffbb54d26353fe36ee1def
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tato ukázka ukazuje, jak přidat vlastní trasování událostí do datového proudu analytické trasování, který [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené můžete snadno získat viditelnost do služeb bez placení snížení výkonu vysoké. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis události, které se integrují s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API, najdete v části <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.  
+ Další informace o <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API, najdete v části <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.  
   
  Další informace o trasování událostí v systému Windows, najdete v části [vylepšení ladění a optimalizace výkonu s ETW](http://go.microsoft.com/fwlink/?LinkId=166488).  
   
 ## <a name="disposing-eventprovider"></a>Uvolnění EventProvider  
- V tomto příkladu <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> třídy, které implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, je pravděpodobné, že můžete používat <xref:System.Diagnostics.Eventing.EventProvider>na prostředky po dobu jeho existence služby. Z tohoto důvodu a čitelnější, tato ukázka nikdy uvolní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu vaše služba má jiné požadavky pro trasování a vy musíte dispose tohoto prostředku a potom upravte tuto ukázku v souladu s doporučené postupy pro uvolnění nespravovaných prostředků. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]uvolnění nespravovaných prostředků, najdete v části [implementace metody Dispose](http://go.microsoft.com/fwlink/?LinkId=166436).  
+ V tomto příkladu <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> třídy, které implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, je pravděpodobné, že můžete používat <xref:System.Diagnostics.Eventing.EventProvider>na prostředky po dobu jeho existence služby. Z tohoto důvodu a čitelnější, tato ukázka nikdy uvolní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu vaše služba má jiné požadavky pro trasování a vy musíte dispose tohoto prostředku a potom upravte tuto ukázku v souladu s doporučené postupy pro uvolnění nespravovaných prostředků. Další informace o uvolnění nespravovaných prostředků najdete v tématu [implementace metody Dispose](http://go.microsoft.com/fwlink/?LinkId=166436).  
   
 ## <a name="self-hosting-vs-web-hosting"></a>Vlastní hostování vs. Hostování webů  
- Analytické trasování WCF na hostované webové služby, zadejte pole, s názvem "HostReference", který se používá k identifikaci služby, který je generování trasování. Trasování rozšiřitelnými uživatelskými mohl účastnit tohoto modelu a tento příklad znázorňuje osvědčené postupy, jak to udělat. Formát webového hostitele odkazovat při kanálu ' &#124;' znak zobrazí se ve skutečnosti ve výsledné řetězec může být jakýkoli z následujících akcí:  
+ Analytické trasování WCF na hostované webové služby, zadejte pole, s názvem "HostReference", který se používá k identifikaci služby, který je generování trasování. Trasování rozšiřitelnými uživatelskými mohl účastnit tohoto modelu a tento příklad znázorňuje osvědčené postupy, jak to udělat. Formát webového hostitele odkazovat při kanálu '&#124;' znak zobrazí se ve skutečnosti ve výsledné řetězec může být jakýkoli z následujících akcí:  
   
 -   Pokud aplikace není v kořenovém adresáři.  
   
-     \<Název_lokality >\<ApplicationVirtualPath > &#124;\< ServiceVirtualPath > &#124; \<ServiceName >  
+     \<Název_lokality >\<ApplicationVirtualPath >&#124;\<ServiceVirtualPath >&#124;\<ServiceName >  
   
 -   Pokud aplikace je v kořenovém adresáři.  
   
-     \<Název_lokality > &#124; \<ServiceVirtualPath > &#124; \<ServiceName >  
+     \<Název_lokality >&#124;\<ServiceVirtualPath >&#124;\<ServiceName >  
   
  Pro samoobslužné hostované služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]na analytické trasování není vyplnění pole "HostReference". `WCFUserEventProvider` – Třída v této ukázce chová konzistentně při použití s vlastním hostováním služby.  
   

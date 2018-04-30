@@ -16,14 +16,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 20ef713c67ee21aa8f7a92975bc6e6ce8798a087
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 53459517591c36430b9326d6605c4eb1b28a13e7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-a-data-contract-resolver"></a>Použití překladače kontraktů dat
-Překladače kontraktů dat umožňuje nakonfigurovat známé typy dynamicky. Známé typy jsou potřeba při serializaci nebo deserializaci typu kontraktu dat není očekávaný. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] známé typy, najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle zadat staticky. To znamená, budete muset znát možné typy operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to není PRAVDA a schopnost určit známé typy dynamicky je důležité.  
+Překladače kontraktů dat umožňuje nakonfigurovat známé typy dynamicky. Známé typy jsou potřeba při serializaci nebo deserializaci typu kontraktu dat není očekávaný. Další informace o známé typy najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle zadat staticky. To znamená, budete muset znát možné typy operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to není PRAVDA a schopnost určit známé typy dynamicky je důležité.  
   
 ## <a name="creating-a-data-contract-resolver"></a>Vytváření překladače kontraktů dat  
  Vytvoření překladače kontraktů dat zahrnuje implementace dvě metody, <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> a <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A>. Tyto dvě metody implementovat zpětná volání, které se používají během serializace a deserializace, v uvedeném pořadí. <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> Metoda je volána během serializace a trvá typ kontraktu dat a mapuje jej do `xsi:type` názvem a oborem názvů. <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> Metoda je volána při deserializaci a trvá `xsi:type` názvem a oborem názvů a přeloží na datový typ kontrakt. Mají obě tyto metody `knownTypeResolver` parametr, který je možné použít výchozí překladač typu v implementaci známé.  

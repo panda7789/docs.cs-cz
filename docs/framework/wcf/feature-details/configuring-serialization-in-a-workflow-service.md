@@ -1,27 +1,29 @@
 ---
-title: "Konfigurace serializace ve službě pracovních postupů"
-ms.custom: 
+title: Konfigurace serializace ve službě pracovních postupů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: aa70b290-a2ee-4c3c-90ea-d0a7665096ae
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f8138fb94de953f133ab21cc2320e0914bc380fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 47c66077da051fd70300e1961593e906fe8e77aa
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-serialization-in-a-workflow-service"></a>Konfigurace serializace ve službě pracovních postupů
-Služby pracovních postupů jsou [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služeb a tak mít možnost buď pomocí <xref:System.Runtime.Serialization.DataContractSerializer> (výchozí) nebo <xref:System.Xml.Serialization.XmlSerializer>. Při zápisu mimo pracovní postup služby typu serializátoru je zadán pro kontrakt služby nebo operace. Při vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] měnící nezadáte tyto služby pracovních postupů v kódu, ale místo jsou generovány při běhu pomocí odvození kontrakt. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Sbalit odvození najdete v tématu [použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  Serializátor je zadán pomocí <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> vlastnost. To je možné nastavit v návrháři, jak je znázorněno na následujícím obrázku.  
+Služby pracovních postupů jsou [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služeb a tak mít možnost buď pomocí <xref:System.Runtime.Serialization.DataContractSerializer> (výchozí) nebo <xref:System.Xml.Serialization.XmlSerializer>. Při zápisu mimo pracovní postup služby typu serializátoru je zadán pro kontrakt služby nebo operace. Při vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] měnící nezadáte tyto služby pracovních postupů v kódu, ale místo jsou generovány při běhu pomocí odvození kontrakt. Další informace o odvození kontrakt najdete v tématu [použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  Serializátor je zadán pomocí <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> vlastnost. To je možné nastavit v návrháři, jak je znázorněno na následujícím obrázku.  
   
  ![Nastavení serializátoru](../../../../docs/framework/wcf/feature-details/media/settingserialzier.png "SettingSerialzier")  
   
@@ -38,7 +40,7 @@ Receive approveExpense = new Receive
             };  
 ```  
   
- Známé typy lze na i služeb pracovních postupů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Známé typy najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy mohou být zadané v Návrháři nebo v kódu. Chcete-li zadat známé typy v návrháři, klikněte na tlačítko se třemi tečkami vedle vlastnosti KnownTypes v okně Vlastnosti pro <xref:System.ServiceModel.Activities.Receive> aktivity, jak je znázorněno na následujícím obrázku.  
+ Známé typy lze na i služeb pracovních postupů. Další informace o známé typy najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy mohou být zadané v Návrháři nebo v kódu. Chcete-li zadat známé typy v návrháři, klikněte na tlačítko se třemi tečkami vedle vlastnosti KnownTypes v okně Vlastnosti pro <xref:System.ServiceModel.Activities.Receive> aktivity, jak je znázorněno na následujícím obrázku.  
   
  ![Vlastnost KnownTypes](../../../../docs/framework/wcf/feature-details/media/knowntypes.png "KnownTypes")  
   

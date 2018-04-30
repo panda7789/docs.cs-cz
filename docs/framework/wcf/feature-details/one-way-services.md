@@ -1,28 +1,30 @@
 ---
-title: "Jednosměrné služby"
-ms.custom: 
+title: Jednosměrné služby
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], one-way service contracts
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d023d3623777a93cf72715410aed87fe8a63ee5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 380f6a10994c7eb69f4a59b222aa2d422151f247
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="one-way-services"></a>Jednosměrné služby
 Výchozí chování operace služby je vzor požadavku a odpovědi. V požadavku a odpovědi vzor, klient počká zprávy s odpovědí, i když představuje operaci služby v kódu jako `void` metoda. S Jednosměrná operace se přenášejí pouze jednu zprávu. Příjemce neodesílá zprávu odpovědi, ani nebude odesílatel očekávat jeden.  
@@ -31,7 +33,7 @@ Výchozí chování operace služby je vzor požadavku a odpovědi. V požadavku
   
 -   Když klient musí volat operace a nemá vliv výsledek operace na úrovni operaci.  
   
--   Při použití <xref:System.ServiceModel.NetMsmqBinding> nebo <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy. ([!INCLUDE[crabout](../../../../includes/crabout-md.md)] v tomto scénáři najdete v části [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).)  
+-   Při použití <xref:System.ServiceModel.NetMsmqBinding> nebo <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy. (Další informace o tomto scénáři najdete v tématu [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).)  
   
  Když je jednosměrná operace, neexistuje žádná zpráva odpovědi pro přenos informací o chybách zpět do klienta. Chybové stavy můžete zjistit pomocí funkce základní vazby, jako je například spolehlivé relace, nebo podle návrhu duplexní kontrakt služeb, který používá dvě jednosměrná operace – jednosměrného kontraktu z klienta ke službě volat operace služby a jiné jednosměrné smluvním vztahu mezi službou a klienta tak, aby služba můžete odesílat chyb zpět do klienta pomocí zpětné volání, které implementuje klienta.  
   

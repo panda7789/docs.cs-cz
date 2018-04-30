@@ -18,14 +18,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 94ec5e56862190026b43331488cbc699fe7dfda4
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a05e0af94cc84db117c7b8caf389d084cd4c3fd5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
-Cílem tohoto návodu je informace o vytváření animované tlačítko pro použití v [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace. Tento návod používá styly a šablonu pro vytvoření přizpůsobené tlačítko prostředek, který umožňuje opětovné použití kódu a oddělení tlačítko logiku z deklarace tlačítko. Tento názorný postup je zapsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
+Cílem tohoto návodu je informace o vytváření animované tlačítko pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá styly a šablonu pro vytvoření přizpůsobené tlačítko prostředek, který umožňuje opětovné použití kódu a oddělení tlačítko logiku z deklarace tlačítko. Tento názorný postup je zapsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
 > [!IMPORTANT]
 >  Tento postup vás provede kroky pro vytvoření aplikace zadáním nebo kopírování a vkládání [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do sady Microsoft Visual Studio. Pokud si přejete se dozvíte, jak použít nástroj návrhu (Microsoft Expression Blend) vytvořit stejnou aplikaci, najdete v článku [vytvoření tlačítka společností pomocí Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md).  

@@ -1,26 +1,27 @@
 ---
-title: "Regulární výraz aktivity"
-ms.custom: 
+title: Regulární výraz aktivity
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b8f24694-49db-4339-92ec-014e3d4ae63b
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3d40d33a5d93ecce07a2e264dcfe9fcde3778437
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 74aef126011789cfd48aa962973cc67a4132c224
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="regular-expression-activities"></a>Regulární výraz aktivity
-Tento příklad ukazuje, jak vytvořit sadu aktivit, které poskytují funkce regulární výraz <xref:System.Text.RegularExpressions> oboru názvů. Tyto vlastní aktivity lze použít v rámci aplikace pracovního postupu. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]regulární výrazy, najdete v části [N:System.Text.RegularExpressions](http://go.microsoft.com/fwlink/?LinkId=150434) Namespace.  
+Tento příklad ukazuje, jak vytvořit sadu aktivit, které poskytují funkce regulární výraz <xref:System.Text.RegularExpressions> oboru názvů. Tyto vlastní aktivity lze použít v rámci aplikace pracovního postupu. Další informace o regulárních výrazech najdete v tématu [N:System.Text.RegularExpressions](http://go.microsoft.com/fwlink/?LinkId=150434) Namespace.  
   
  V následující tabulce jsou vlastní aktivity v této ukázce.  
   
@@ -40,7 +41,7 @@ Tento příklad ukazuje, jak vytvořit sadu aktivit, které poskytují funkce re
 |Vzor (povinné)|Regulární výraz k vyhledání s.|  
 |Vstup (povinné)|Vstupní řetězec pro vyhledávání.|  
 |RegexOptions|Bitová kombinace OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
-|Návratová hodnota|`true`Pokud vstupní najde shoda v zadaný vzor; v opačném případě `false`.|  
+|Návratová hodnota|`true` Pokud vstupní najde shoda v zadaný vzor; v opačném případě `false`.|  
   
  Následující příklad kódu ukazuje, jak používat `IsMatch` vlastní aktivity.  
   

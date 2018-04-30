@@ -1,31 +1,31 @@
 ---
-title: "Dávkování zpráv v transakci"
-ms.custom: 
+title: Dávkování zpráv v transakci
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - batching messages [WCF]
 ms.assetid: 53305392-e82e-4e89-aedc-3efb6ebcd28c
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 0587624dd3b9bc12c6e421343ad2cdc1da6b970f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17d9bd3b58e8320bfe1f62ac56aff59ba52f4374
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="batching-messages-in-a-transaction"></a>Dávkování zpráv v transakci
-Zkontrolujte správnost a spolehlivé doručování zpráv ve frontě aplikací pomocí transakce. Transakce, ale jsou náročná operace a může výrazně snížit propustnost zpráv. Jeden způsob, jak zlepšit propustnost zpráva má mít aplikaci, čtení a zpracování více zpráv v rámci jedné transakce. Je nejvhodnější poměr mezi výkonem a obnovení: jak zvyšuje počet zpráv v dávce, takže nemá množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relace. A *relace* je seskupení související zprávy, které jsou zpracovávány jednu aplikaci a potvrzené jako na jednu jednotku. Relace se běžně používají, pokud skupina související zprávy musí být zpracován jako společně. Příkladem je nákupní webový server s online. *Dávky* se používají ke zpracování více, které nejsou v relaci zprávy způsobem, že zpráva zvyšuje propustnost. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]relace, viz [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracovává jednu aplikaci a potvrzené jako na jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zprávy v dávce. Dávkování zpráv v transakci je optimalizace, která se nezmění, jak je aplikace spuštěná.  
+Zkontrolujte správnost a spolehlivé doručování zpráv ve frontě aplikací pomocí transakce. Transakce, ale jsou náročná operace a může výrazně snížit propustnost zpráv. Jeden způsob, jak zlepšit propustnost zpráva má mít aplikaci, čtení a zpracování více zpráv v rámci jedné transakce. Je nejvhodnější poměr mezi výkonem a obnovení: jak zvyšuje počet zpráv v dávce, takže nemá množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relace. A *relace* je seskupení související zprávy, které jsou zpracovávány jednu aplikaci a potvrzené jako na jednu jednotku. Relace se běžně používají, pokud skupina související zprávy musí být zpracován jako společně. Příkladem je nákupní webový server s online. *Dávky* se používají ke zpracování více, které nejsou v relaci zprávy způsobem, že zpráva zvyšuje propustnost. Další informace o relacích najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracovává jednu aplikaci a potvrzené jako na jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zprávy v dávce. Dávkování zpráv v transakci je optimalizace, která se nezmění, jak je aplikace spuštěná.  
   
 ## <a name="entering-batching-mode"></a>Zadání dávkování režimu  
  <xref:System.ServiceModel.Description.TransactedBatchingBehavior> Ovládací prvky chování koncový bod dávkování. Přidání toto chování koncový bod pro koncový bod služby informuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] do dávky zpráv v transakci. Ne všechny zprávy vyžadují transakci, takže pouze zprávy, které vyžadují transakce jsou umístěny v dávce a označené jako pouze zprávy z operace `TransactionScopeRequired`  =  `true` a `TransactionAutoComplete`  =  `true` jsou za pro dávku. Pokud jsou všechny operace v kontrakt služby označené `TransactionScopeRequired`  =  `false` a `TransactionAutoComplete`  =  `false`, pak dávkování režimu se nikdy zadá.  

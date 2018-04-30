@@ -23,11 +23,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8489c0bf20d3d62501db269c5a72de657bcbbc97
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: fe4ef5b17013bf1a9abf5fd1ca0807fe4d335df4
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="schema-import-and-export"></a>Import a export schémat
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje nové Serializační stroj <xref:System.Runtime.Serialization.DataContractSerializer>. `DataContractSerializer` Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML (v obou směrech). Vedle sebe, serializátor [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje přidružené schéma import a export mechanismy schématu. *Schéma* formální, přesné a strojově čitelným popis obrazec XML, který produkuje serializátor nebo který deserializátor přístup. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jazyk definice schématu XML World Wide Web Consortium (W3C) (XSD) se používá jako jeho reprezentace schématu, která je široce vzájemná spolupráce s mnoha platformy třetí strany.  
@@ -68,9 +68,9 @@ ms.lasthandoff: 04/28/2018
   
  `XsdDataContractExporter` Podporuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, které mohou serializovat s příznakem `DataContractSerializer`. Další informace najdete v tématu [typy nepodporuje serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Všimněte si, že schématu generována pomocí `XsdDataContractExporter` je obvykle platný datový, `XsdDataContractImporter` můžete použít (Pokud <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> slouží k přizpůsobení schématu).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí <xref:System.Runtime.Serialization.XsdDataContractImporter>, najdete v části [import schématu pro generování tříd](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
+ Další informace o používání <xref:System.Runtime.Serialization.XsdDataContractImporter>, najdete v části [import schématu pro generování tříd](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí <xref:System.Runtime.Serialization.XsdDataContractExporter>, najdete v části [export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).  
+ Další informace o používání <xref:System.Runtime.Serialization.XsdDataContractExporter>, najdete v části [export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataContractSerializer>  

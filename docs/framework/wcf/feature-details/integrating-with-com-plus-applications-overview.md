@@ -1,30 +1,32 @@
 ---
-title: "Integrace s aplikacemi modelu COM+ – přehled"
-ms.custom: 
+title: Integrace s aplikacemi modelu COM+ – přehled
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0fbed530a1b968bb049ee20262eb2b8fa9ba13c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3c723bda93feac3eef18f302ab0c8ec7c702eb7a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte logiku aplikace založené na součást hostované v modelu COM +, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání. Obvyklým scénářem je, když chcete vystavit existující modelu COM + nebo podnikové služby obchodní logiky přes webové služby.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte logiku aplikace založené na součást hostované v modelu COM +, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání. Obvyklým scénářem je, když chcete vystavit existující modelu COM + nebo podnikové služby obchodní logiky přes webové služby.  
   
  Pokud jako webové služby je vystavený rozhraní komponenty modelu COM +, specifikace a kontrakt tyto služby jsou určeny automatické mapování, které se provádí v době inicializace aplikace. Následující seznam uvádí konceptuálního modelu pro toto mapování:  
   
@@ -51,9 +53,9 @@ ms.lasthandoff: 12/22/2017
   
 2.  Vyberte odpovídající hostování režim.  
   
-3.  Přidat webovou službu pro rozhraní pomocí nástroje modelu COM + Service Model Configuration (ComSvcConfig.exe). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]použít ComSvcConfig.exe najdete v tématu [postupy: použití modelu COM + Service Model Configuration Tool](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
+3.  Přidat webovou službu pro rozhraní pomocí nástroje modelu COM + Service Model Configuration (ComSvcConfig.exe). Další informace o tom, jak používat ComSvcConfig.exe najdete v tématu [postupy: použití modelu COM + Service Model Configuration Tool](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
   
-4.  Nakonfigurujte nastavení žádné další služby v konfiguračním souboru aplikace. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Konfigurace součásti najdete v tématu [postupy: Konfigurace služby nastavení modelu COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md).  
+4.  Nakonfigurujte nastavení žádné další služby v konfiguračním souboru aplikace. Další informace o tom, jak nakonfigurovat komponentu najdete v tématu [postupy: Konfigurace služby nastavení modelu COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md).  
   
 ## <a name="supported-interfaces"></a>Podporované rozhraní  
  Existují některá omezení na typu rozhraní, které mohou být zpřístupněny jako webovou službu. Nejsou podporovány následující typy rozhraní:  

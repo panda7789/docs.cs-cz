@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c652e58b20a6fe836e647ed07c6a84328ee4631e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3e7c8c5700159b5568a5a455b21f738d1be43dfe
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>Objekty DiscoveryClient a DynamicEndpoint
 <xref:System.ServiceModel.Discovery.DiscoveryClient> a <xref:System.ServiceModel.Discovery.DynamicEndpoint> jsou dvě třídy používané na straně klienta pro vyhledání služeb. <xref:System.ServiceModel.Discovery.DiscoveryClient> poskytuje seznam služeb, které odpovídají konkrétní nastavení kritérií a umožňuje vám umožní připojit se ke službám. <xref:System.ServiceModel.Discovery.DynamicEndpoint> provádí stejné operace a kromě toho se automaticky připojí k jedné ze služeb, které byl nalezen. Žádný koncový bod, mohou být provedeny do <xref:System.ServiceModel.Discovery.DynamicEndpoint>, kritéria hledání se dá přidat taky v konfiguraci, proto <xref:System.ServiceModel.Discovery.DynamicEndpoint> je užitečné, když potřebujete zjišťování ve vašem řešení, ale nechcete, aby k úpravě klienta logiku – potřebujete upravit koncových bodů. <xref:System.ServiceModel.Discovery.DiscoveryClient> na druhé straně může použít k získání lepší kontrolu nad vaše operace vyhledávání. K použití a výhody jednotlivých jsou podrobně uvedeno níže.  
@@ -92,7 +92,7 @@ static void discoveryClient_FindCompleted(object sender, FindCompletedEventArgs 
         }  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] provedení asynchronní najít volání najdete v tématu [asynchronní najít](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md).  
+ Další informace o tom, jak asynchronní najít volání najdete v tématu [asynchronní najít](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md).  
   
  Použití <xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> a <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveAsync%28System.ServiceModel.Discovery.ResolveCriteria%29> metody najít službu, závisí na jeho adresa koncového bodu. To je užitečné, když adresa koncového bodu není adresovatelné sítě. Vyřešte metody přijímají instanci <xref:System.ServiceModel.Discovery.ResolveCriteria> který umožňuje zadat adresu koncového bodu služby se řešení, maximální délka trvání operace řešení a sadu rozšíření. Následující příklad ukazuje způsob použití <xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> metoda řešení služby.  
   

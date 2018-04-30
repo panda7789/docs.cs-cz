@@ -1,24 +1,26 @@
 ---
-title: "Korelace kontextové výměny"
-ms.custom: 
+title: Korelace kontextové výměny
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1e2852be-3601-45ae-b507-ccc465d45c60
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee22feab20e2c96f3e708a277f9048f739213520
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: bf84dfce2b2164d78bf07f840d66d6089a16ff23
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="context-exchange-correlation"></a>Korelace kontextové výměny
 Korelace kontextu je založené na mechanismu exchange kontext, který je popsané v [Exchange kontextu .NET – specifikace protokolu](http://go.microsoft.com/fwlink/?LinkId=166059). Korelace kontextové používá dobře známé kontextu hlavičky nebo soubor cookie k úpravě zprávy na správnou instanci. Použít korelace kontextu, na základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding>, nebo <xref:System.ServiceModel.NetTcpContextBinding> na zadaný pro koncový bod se musí použít <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Toto téma vysvětluje, jak používat kontextu korelace aktivitách zasílání zpráv ve službě pracovního postupu.  
@@ -54,7 +56,7 @@ SendReply ReplyToStartOrder = new SendReply
 ```  
   
 > [!NOTE]
->  V tomto příkladu jsou ve skutečnosti korelace používá dva typy: korelace kontextu a korelace požadavku a odpovědi. Korelace kontextové se používá, aby volání od klientů, směrovaly na správnou instanci. Korelace požadavku a odpovědi je používán <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity společně k implementaci obousměrný operaci modelovány pomocí tyto aktivity. V tomto příkladu je explicitně nakonfigurovaný jenom korelace kontextu a <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár používá výchozí korelace požadavku a odpovědi, které poskytuje implicitní <xref:System.ServiceModel.Activities.CorrelationHandle> správu <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Při použití **ReceiveAndSendReply** šablony aktivit v návrháře, korelace požadavku a odpovědi pracovního postupu explicitně nastaven. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace požadavku a odpovědi a správa popisovačů implicitní korelace, najdete v části [požadavku a odpovědi](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md) a [korelace – přehled](../../../../docs/framework/wcf/feature-details/correlation-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]**ReceiveAndSendReply** šabloně aktivit, najdete v části [ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer).  
+>  V tomto příkladu jsou ve skutečnosti korelace používá dva typy: korelace kontextu a korelace požadavku a odpovědi. Korelace kontextové se používá, aby volání od klientů, směrovaly na správnou instanci. Korelace požadavku a odpovědi je používán <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity společně k implementaci obousměrný operaci modelovány pomocí tyto aktivity. V tomto příkladu je explicitně nakonfigurovaný jenom korelace kontextu a <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár používá výchozí korelace požadavku a odpovědi, které poskytuje implicitní <xref:System.ServiceModel.Activities.CorrelationHandle> správu <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Při použití **ReceiveAndSendReply** šablony aktivit v návrháře, korelace požadavku a odpovědi pracovního postupu explicitně nastaven. Další informace o korelace požadavku a odpovědi a správa popisovačů implicitní korelace najdete v tématu [požadavku a odpovědi](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md) a [korelace – přehled](../../../../docs/framework/wcf/feature-details/correlation-overview.md). Další informace o **ReceiveAndSendReply** šabloně aktivit, najdete v části [ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer).  
   
  Následné <xref:System.ServiceModel.Activities.Receive> aktivit ve službě pracovní postup může odkazovat <xref:System.ServiceModel.Activities.CorrelationHandle> který byl inicializován nástrojem <xref:System.ServiceModel.Activities.SendReply> v předchozím příkladu.  
   
@@ -109,6 +111,6 @@ Send request2 = new Send
 };  
 ```  
   
- Všimněte si, že se v těchto příkladech, korelace kontextu explicitně nakonfigurovaný. Pokud pracovní postup klienta není hostují taky v <xref:System.ServiceModel.Activities.WorkflowServiceHost>, pak korelace musí být explicitně nakonfigurovaný, pokud aktivity jsou obsaženy v rámci <xref:System.ServiceModel.Activities.CorrelationScope> aktivity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]korelace kontextu, najdete v článku [NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) ukázka.  
+ Všimněte si, že se v těchto příkladech, korelace kontextu explicitně nakonfigurovaný. Pokud pracovní postup klienta není hostují taky v <xref:System.ServiceModel.Activities.WorkflowServiceHost>, pak korelace musí být explicitně nakonfigurovaný, pokud aktivity jsou obsaženy v rámci <xref:System.ServiceModel.Activities.CorrelationScope> aktivity. Další informace o kontextu korelace najdete v tématu [NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) ukázka.  
   
  Pokud klienta, která volá služby pracovního postupu není pracovního postupu, poté ji opakovaných volání uskutečnit tak dlouho, dokud ji explicitně předá zpět kontext, který je vrácen z prvního volání služby pracovního postupu. Proxy vygenerovala přidáním odkazu na službu v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ukládat a předat ve výchozím nastavení tento kontext.

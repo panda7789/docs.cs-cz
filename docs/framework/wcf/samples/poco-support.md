@@ -1,27 +1,29 @@
 ---
-title: "Podpora objektů POCO"
-ms.custom: 
+title: Podpora objektů POCO
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3846ca73-2819-4ca2-8367-dc739dde5a5b
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c471a6726d8f7e621d666e014b2363c088e2b0e0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9c67b39c8d3c48281eb0ec9c360de7eaff1cfad6
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="poco-support"></a>Podpora objektů POCO
-Tento příklad znázorňuje podporu serializace zrušit označení typy; To znamená typy, pro které nebyly použity atributy serializace, někdy označuje jako typy prostý staré CLR objektů POCO (). <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat pro všechny veřejné typy zrušit označení, které mají výchozí konstruktor. Kontrakty dat umožňují předat strukturovaných dat do a ze služby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Zrušit označení typy, viz [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+Tento příklad znázorňuje podporu serializace zrušit označení typy; To znamená typy, pro které nebyly použity atributy serializace, někdy označuje jako typy prostý staré CLR objektů POCO (). <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat pro všechny veřejné typy zrušit označení, které mají výchozí konstruktor. Kontrakty dat umožňují předat strukturovaných dat do a ze služby. Další informace o typech zrušit označení najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
  Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), ale používá komplexní čísla místo číselný primitivní typy. Je podobná [základní kontrakt dat](../../../../docs/framework/wcf/samples/basic-data-contract.md) ukázkové, vyjma toho, že <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy se nepoužívají.  
   

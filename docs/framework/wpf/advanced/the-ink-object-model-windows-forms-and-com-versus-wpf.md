@@ -1,8 +1,9 @@
 ---
-title: "Model inkoustových objektů: Windows Forms a COM vzhledem k platformě WPF"
+title: 'Model inkoustových objektů: Windows Forms a COM vzhledem k platformě WPF'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +16,21 @@ helpviewer_keywords:
 - ink [WPF], enabling
 - events [WPF], tablet pen
 ms.assetid: 577835be-b145-4226-8570-1d309e9b3901
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38c7692d433fb91584718984ef2ad81e563517db
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 06a2c2049ec7fe7046bd6dae2711fe8e46592fcf
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="the-ink-object-model-windows-forms-and-com-versus-wpf"></a>Model inkoustových objektů: Windows Forms a COM vzhledem k platformě WPF
 
-Jsou v podstatě tři platformách, které podporují digitální rukopisu: platformou Tablet PC Windows Forms, platformou Tablet PC COM a [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] platformy.  Windows Forms a COM platformy sdílení, podobně jako objekt modelu, ale objekt modelu pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] platformy se podstatně liší.  Toto téma popisuje rozdíly v hlavní tak, aby vývojáři, kteří již dříve pracovali s modelem jeden objekt může lépe pochopit dalších.  
+Jsou v podstatě tři platformách, které podporují digitální rukopisu: platformy Tablet PC Windows Forms, Tablet PC COM platformy a platformy Windows Presentation Foundation (WPF).  Windows Forms a COM platformy sdílení, podobně jako objekt modelu, ale objekt modelu pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] platformy se podstatně liší.  Toto téma popisuje rozdíly v hlavní tak, aby vývojáři, kteří již dříve pracovali s modelem jeden objekt může lépe pochopit dalších.  
   
 ## <a name="enabling-ink-in-an-application"></a>Povolení rukopisu v aplikaci  
  Všechny tři platformy dodávat objekty a ovládací prvky, které povolit aplikaci přijímat vstup z pera.  Windows Forms a platformy COM dodávají spolu s [Microsoft.Ink.InkPicture](https://msdn.microsoft.com/library/aa514604.aspx), [Microsoft.Ink.InkEdit](https://msdn.microsoft.com/library/ms835842.aspx), [Microsoft.Ink.InkOverlay](https://msdn.microsoft.com/library/ms833057.aspx) a [ Microsoft.Ink.InkCollector](https://msdn.microsoft.com/library/ms836493.aspx) třídy.  [Microsoft.Ink.InkPicture](https://msdn.microsoft.com/library/aa514604.aspx) a [Microsoft.Ink.InkEdit](https://msdn.microsoft.com/library/ms835842.aspx) jsou ovládací prvky, které můžete přidat aplikace do shromažďovat rukopisu.  [Microsoft.Ink.InkOverlay](https://msdn.microsoft.com/library/ms833057.aspx) a [Microsoft.Ink.InkCollector](https://msdn.microsoft.com/library/ms836493.aspx) se dá připojit ke stávajícím okně rukopisu enable windows a vlastní ovládací prvky.  
@@ -49,7 +51,7 @@ Jsou v podstatě tři platformách, které podporují digitální rukopisu: plat
   
  Následující ilustrace dvojice porovná objektové modely dat rukopisu.  Windows Forms a COM platformy [Microsoft.Ink.Ink](https://msdn.microsoft.com/library/aa515768.aspx?displayProperty=nameWithType) objekt omezí životnost [Microsoft.Ink.Stroke](https://msdn.microsoft.com/library/ms827842.aspx?displayProperty=nameWithType) objekty a pera pakety patří do jednotlivých tahy.  Dvě nebo více tahy může odkazovat stejné [Microsoft.Ink.DrawingAttributes](https://msdn.microsoft.com/library/ms837931.aspx?displayProperty=nameWithType) objektu, jak je znázorněno na následujícím obrázku.  
   
- ![Diagram objektového modelu rukopisu pro COM &#47; WinForms. ] (../../../../docs/framework/wpf/advanced/media/ink-inkownsstrokes.png "Ink_InkOwnsStrokes")  
+ ![Diagram objektového modelu rukopisu pro model COM&#47;Winforms. ] (../../../../docs/framework/wpf/advanced/media/ink-inkownsstrokes.png "Ink_InkOwnsStrokes")  
   
  Na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], každý <xref:System.Windows.Ink.Stroke?displayProperty=nameWithType> je common language runtime objekt, který existuje tak dlouho, dokud něco obsahuje odkaz na jeho.  Každý <xref:System.Windows.Ink.Stroke> odkazy <xref:System.Windows.Input.StylusPointCollection> a <xref:System.Windows.Ink.DrawingAttributes?displayProperty=nameWithType> objektu, která jsou také běžně používané objekty runtime jazyka.  
   
@@ -64,7 +66,7 @@ Jsou v podstatě tři platformách, které podporují digitální rukopisu: plat
 |Stiskněte tlačítko test|<xref:System.Windows.Ink.StrokeCollection.HitTest%2A>|[Microsoft.Ink.Ink.HitTest](https://msdn.microsoft.com/library/aa515934.aspx)|  
 |Zkopírujte rukopisu|<xref:System.Windows.Controls.InkCanvas.CopySelection%2A>|[Microsoft.Ink.Ink.ClipboardCopy](https://msdn.microsoft.com/library/microsoft.ink.ink.clipboardcopy(v=vs.100).aspx)|  
 |Vložení rukopisu|<xref:System.Windows.Controls.InkCanvas.Paste%2A>|[Microsoft.Ink.Ink.ClipboardPaste](https://msdn.microsoft.com/library/microsoft.ink.ink.clipboardpaste(v=vs.100).aspx)|  
-|Přístup na kolekci tahy vlastní vlastnosti|<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>(vlastnosti jsou uloženy interně a přístupných přes <xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>, <xref:System.Windows.Ink.StrokeCollection.RemovePropertyData%2A>, a <xref:System.Windows.Ink.StrokeCollection.ContainsPropertyData%2A>)|Použití [Microsoft.Ink.Ink.ExtendedProperties](https://msdn.microsoft.com/library/microsoft.ink.ink.extendedproperties(v=vs.100).aspx)|  
+|Přístup na kolekci tahy vlastní vlastnosti|<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A> (vlastnosti jsou uloženy interně a přístupných přes <xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>, <xref:System.Windows.Ink.StrokeCollection.RemovePropertyData%2A>, a <xref:System.Windows.Ink.StrokeCollection.ContainsPropertyData%2A>)|Použití [Microsoft.Ink.Ink.ExtendedProperties](https://msdn.microsoft.com/library/microsoft.ink.ink.extendedproperties(v=vs.100).aspx)|  
   
 ### <a name="sharing-ink-between-platforms"></a>Sdílení rukopisu mezi platformami  
  I když platformy mají různé objektové modely pro data rukopisu, sdílení dat mezi platformy je velmi snadné. Následující příklady uložte rukopisu z aplikace Windows Forms a načtení rukopisu do aplikace Windows Presentation Foundation.  

@@ -23,18 +23,18 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 34c53389694aa48742becfd713796feb8111d888
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bdfd273f7a541cac4f1fd8a03a976d73e997b718
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-set-the-security-mode"></a>Postupy: Nastavení režimu zabezpečení
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] zabezpečení má tři běžné režimy zabezpečení, které se nacházejí na nejvíce předdefinované vazby: přenos zpráv a "přenos s pověřením zpráv." Dva další režimy, které jsou specifické pro dvě vazby: v režimu "pouze přenos pověření" nalezen <xref:System.ServiceModel.BasicHttpBinding>a "I" režim, v nalezen <xref:System.ServiceModel.NetMsmqBinding>. Ale v tomto tématu soustřeďuje na tři běžných režimů zabezpečení: <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message>, a <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.  
   
  Všimněte si, že ne každé předdefinované vazba podporuje všechny tyto režimy. Toto téma nastaví režim s <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> třídy a ukazuje, jak nastavení režimu prostřednictvím kódu programu i prostřednictvím konfigurace.  
   
- Další informace najdete v tématu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md), [zabezpečení služby](../../../docs/framework/wcf/securing-services.md), a [zabezpečení služeb a klientů](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] přenosu režim a zpráv najdete v tématu [zabezpečení přenosu](../../../docs/framework/wcf/feature-details/transport-security.md) a [zabezpečení zpráv](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
+ Další informace najdete v tématu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md), [zabezpečení služby](../../../docs/framework/wcf/securing-services.md), a [zabezpečení služeb a klientů](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md). Další informace o režim přenosu a zpráv najdete v tématu [zabezpečení přenosu](../../../docs/framework/wcf/feature-details/transport-security.md) a [zabezpečení zpráv](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
   
 ### <a name="to-set-the-security-mode-in-code"></a>Nastavení režimu zabezpečení v kódu  
   

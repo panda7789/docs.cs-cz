@@ -1,23 +1,24 @@
 ---
-title: "Vyžaduje argumenty a skupiny přetížení"
-ms.custom: 
+title: Vyžaduje argumenty a skupiny přetížení
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8b6025fb65c5e2d4d0683d302638f8a1d2803662
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 47e94c65ff722d3b4f98b026d69ecd31bc02b934
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="required-arguments-and-overload-groups"></a>Vyžaduje argumenty a skupiny přetížení
 Aktivity lze nakonfigurovat tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro provedení. `RequiredArgument` Atribut slouží k označení, že některé argumenty u aktivit jsou povinné a `OverloadGroup` atribut slouží k seskupení kategorie povinnými argumenty. Pomocí atributy mohou aktivity tvůrci poskytnout jednoduché nebo komplexní aktivity ověření konfigurace.  
@@ -73,7 +74,7 @@ public sealed class Add : CodeActivity<int>
   
  **Nebyla zadána hodnota pro argument požadované aktivity 'Operand1'.**  
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)]informace o kontrole a zpracování chyb při ověřování a upozornění, v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
+>  Další informace o kontrole a zpracování chyb při ověřování a upozornění najdete v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
   
 ## <a name="using-overload-groups"></a>Použití skupin přetížení  
  Přetížení skupiny zadejte metodu, která určuje, které kombinace argumenty jsou platné v aktivitě. Argumenty jsou seskupeny dohromady pomocí <xref:System.Activities.OverloadGroupAttribute>. Každou skupinu je zadaný název, který je zadán <xref:System.Activities.OverloadGroupAttribute>, aktivita je platná, pokud je vázána jen jednu sadu argumentů ve skupině přetížení. V následujícím příkladu převzaty z [OverloadGroups](../../../docs/framework/windows-workflow-foundation/samples/overloadgroups.md) ukázce `CreateLocation` třída definovaná.  
@@ -113,7 +114,7 @@ class CreateLocation: Activity
 }  
 ```  
   
- Cílem této aktivity je zadejte umístění v USA. K tomuto účelu uživatele aktivity umístění můžete zadat pomocí jednoho ze tří skupin argumentů. Pokud chcete zadat platné kombinace argumenty, jsou definovány tři skupiny přetížení. `G1`obsahuje `Latitude` a `Longitude` argumenty. `G2`obsahuje `Street`, `City`, a `State`. `G3`obsahuje `Street` a `Zip`. `Name`je také požadovaný argument, ale není součástí skupiny přetížení. Pro tuto aktivitu platná `Name` by musel být vázána společně s všechny argumenty ze skupiny přetížení pouze jeden.  
+ Cílem této aktivity je zadejte umístění v USA. K tomuto účelu uživatele aktivity umístění můžete zadat pomocí jednoho ze tří skupin argumentů. Pokud chcete zadat platné kombinace argumenty, jsou definovány tři skupiny přetížení. `G1` obsahuje `Latitude` a `Longitude` argumenty. `G2` obsahuje `Street`, `City`, a `State`. `G3` obsahuje `Street` a `Zip`. `Name` je také požadovaný argument, ale není součástí skupiny přetížení. Pro tuto aktivitu platná `Name` by musel být vázána společně s všechny argumenty ze skupiny přetížení pouze jeden.  
   
  V následujícím příkladu převzaty z [databáze Access aktivity](../../../docs/framework/windows-workflow-foundation/samples/database-access-activities.md) ukázku, existují dvě přetížení skupin: `ConnectionString` a `ConfigFileSectionName`. Pro tuto aktivitu. Chcete-li být platný, buď `ProviderName` a `ConnectionString` argumenty musí být vázán, nebo `ConfigName` argument, ale ne obojí.  
   

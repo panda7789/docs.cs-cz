@@ -1,31 +1,31 @@
 ---
-title: "Povolení toku transakcí"
-ms.custom: 
+title: Povolení toku transakcí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-caps.latest.revision: 
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 814df9ff4fb11b0aa59270ac251b5dbd9ed7fe96
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffc7a1af9c9a021e93c0fca14c0d7d2826f8af6a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="enabling-transaction-flow"></a>Povolení toku transakcí
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje vysoce flexibilní možnosti pro řízení toku transakcí. Nastavení toku transakcí služby lze vyjádřit pomocí kombinace atributů a konfigurace.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje vysoce flexibilní možnosti pro řízení toku transakcí. Nastavení toku transakcí služby lze vyjádřit pomocí kombinace atributů a konfigurace.  
   
 ## <a name="transaction-flow-settings"></a>Nastavení toku transakcí  
  Nastavení toku transakce jsou generovány pro koncový bod služby v důsledku průnik následující tři hodnoty:  
@@ -58,10 +58,10 @@ ms.lasthandoff: 12/22/2017
   
 |Příchozí zprávy|Nastavení TransactionFlow|Záhlaví transakce|Výsledek zpracování zprávy|  
 |----------------------|-----------------------------|------------------------|-------------------------------|  
-|Transakce odpovídá formátu očekávanému protokolu|Povolených nebo povinné|`MustUnderstand`se rovná `true`.|Proces|  
-|Transakce není ve formátu očekávanému protokolu|Povinné|`MustUnderstand`se rovná `false`.|Odmítnuta, protože je požadována transakce|  
-|Transakce není ve formátu očekávanému protokolu|Povoleno|`MustUnderstand`se rovná `false`.|Odmítnuta, protože nebyl pochopen záhlaví|  
-|Všechny formátu protokolu transakcí|NotAllowed|`MustUnderstand`se rovná `false`.|Odmítnuta, protože nebyl pochopen záhlaví|  
+|Transakce odpovídá formátu očekávanému protokolu|Povolených nebo povinné|`MustUnderstand` se rovná `true`.|Proces|  
+|Transakce není ve formátu očekávanému protokolu|Povinné|`MustUnderstand` se rovná `false`.|Odmítnuta, protože je požadována transakce|  
+|Transakce není ve formátu očekávanému protokolu|Povoleno|`MustUnderstand` se rovná `false`.|Odmítnuta, protože nebyl pochopen záhlaví|  
+|Všechny formátu protokolu transakcí|NotAllowed|`MustUnderstand` se rovná `false`.|Odmítnuta, protože nebyl pochopen záhlaví|  
 |Žádná transakce|Povinné|Není k dispozici|Odmítnuta, protože je požadována transakce|  
 |Žádná transakce|Povoleno|Není k dispozici|Proces|  
 |Žádná transakce|NotAllowed|Není k dispozici|Proces|  
@@ -78,7 +78,7 @@ ms.lasthandoff: 12/22/2017
   
  Pokud vazba zakázal toku transakcí, ale některé z operací na kontraktu služby vyžaduje příchozí transakce, je vyvolána výjimka ověření při spuštění služby.  
   
- Většina vazeb stojící [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje obsahovat `transactionFlow` a `transactionProtocol` atributů, které vám umožní nakonfigurovat konkrétní vazby tak, aby přijímal příchozí transakce. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]nastavení konfigurační prvky, najdete v části [ \<vazby >](../../../../docs/framework/misc/binding.md).  
+ Většina vazeb stojící [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje obsahovat `transactionFlow` a `transactionProtocol` atributů, které vám umožní nakonfigurovat konkrétní vazby tak, aby přijímal příchozí transakce. Další informace o nastavení konfigurační prvky najdete v tématu [ \<vazby >](../../../../docs/framework/misc/binding.md).  
   
  Správce nebo nástroje pro nasazení slouží ke konfiguraci transakce toku požadavky nebo omezení v době nasazení pomocí konfiguračního souboru toku transakcí úrovni koncového bodu.  
   
@@ -101,7 +101,7 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Supp
  Kromě toho služby by měl být nastaven na přijímání příchozích transakcí pouze od klientů, kteří budou mít ověří a autorizuje. Příchozí transakce by měla pouze přípustné, které pocházejí z vysoce důvěryhodné klienty.  
   
 ## <a name="policy-assertions"></a>Kontrolní výrazy zásad  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]kontrolní výrazy zásad se používá k řízení toku transakcí. Kontrolních výrazů zásad najdete v dokumentu zásady služby, který je generován totožný kontrakty, konfiguraci a atributy. Klient může získat dokument zásad služby pomocí HTTP GET nebo WS-MetadataExchange požadavek odpověď. Klienti potom může zpracovat zásady dokumentu a zjistěte, které operace na kontraktu služby může podporovat nebo vyžadovat toku transakcí.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kontrolní výrazy zásad se používá k řízení toku transakcí. Kontrolních výrazů zásad najdete v dokumentu zásady služby, který je generován totožný kontrakty, konfiguraci a atributy. Klient může získat dokument zásad služby pomocí HTTP GET nebo WS-MetadataExchange požadavek odpověď. Klienti potom může zpracovat zásady dokumentu a zjistěte, které operace na kontraktu služby může podporovat nebo vyžadovat toku transakcí.  
   
  Výrazy zásad toku transakcí ovlivnit tok transakcí zadáním hlavičky SOAP, klient by měl poslat služby představují transakce. Všechny hlavičky transakce musí být označené jako `MustUnderstand` rovna `true`. Všechny zprávy s hlavičku označena jinak se odmítne kvůli chybě protokolu SOAP.  
   

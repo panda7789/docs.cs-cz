@@ -1,24 +1,26 @@
 ---
-title: "Postupy: vytvoření koncového bodu služby v konfiguraci"
-ms.custom: 
+title: 'Postupy: vytvoření koncového bodu služby v konfiguraci'
+ms.custom: ''
 ms.date: 06/16/2016
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b96ccdb7e80faa35748a41947ed97f273cb330e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ecb7345dbbff04388edb39dae9e5c05f2c40fd75
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-a-service-endpoint-in-configuration"></a>Postupy: vytvoření koncového bodu služby v konfiguraci
 Koncové body mají klienti přístup k funkci [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nabídky služeb. Můžete definovat jeden nebo více koncových bodů pro službu pomocí kombinace adresy koncových bodů relativní a absolutní, nebo pokud nejsou definovány žádné koncové body služby, modul runtime, obsahuje některé ve výchozím nastavení za vás. Toto téma ukazuje, jak přidat koncové body pomocí konfiguračního souboru, které obsahují relativní a absolutní adresy.  
@@ -94,7 +96,7 @@ Koncové body mají klienti přístup k funkci [!INCLUDE[indigo1](../../../../in
 ```  
   
 ## <a name="example"></a>Příklad  
- První koncový bod definice znázorňuje následující ukázka určuje relativní adresu, která znamená, že adresa koncového bodu je kombinací základní adresu a relativní adresy následující pravidla složení identifikátor URI (Uniform Resource). Relativní adresa je prázdná (""), takže adresa koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je http://localhost: 8000/servicemodelsamples nebo služby.  
+ První koncový bod definice znázorňuje následující ukázka určuje relativní adresu, která znamená, že adresa koncového bodu je kombinací základní adresu a relativní adresy následující pravidla složení identifikátor URI (Uniform Resource). Relativní adresa je prázdná (""), takže adresa koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je http://localhost:8000/servicemodelsamples/service.  
   
 ```xml  
 <endpoint address=""   
@@ -103,7 +105,7 @@ Koncové body mají klienti přístup k funkci [!INCLUDE[indigo1](../../../../in
 ```  
   
 ## <a name="example"></a>Příklad  
- Druhý definice služby endpoint také určuje relativní adresu, jak je znázorněno v následující ukázka konfigurace. Relativní adresu "test", připojí se k základní adresu. Adresa skutečný koncový bod je http://localhost: 8000/servicemodelsamples/service/testování.  
+ Druhý definice služby endpoint také určuje relativní adresu, jak je znázorněno v následující ukázka konfigurace. Relativní adresu "test", připojí se k základní adresu. Adresa skutečný koncový bod je http://localhost:8000/servicemodelsamples/service/test.  
   
 ```xml  
 <endpoint address="/test"  
@@ -112,7 +114,7 @@ Koncové body mají klienti přístup k funkci [!INCLUDE[indigo1](../../../../in
 ```  
   
 ## <a name="example"></a>Příklad  
- Třetí definice služby endpoint určuje absolutní adresu, jak je znázorněno v následující ukázka konfigurace. Základní adresa hraje žádný atribut role v adrese. Adresa skutečný koncový bod je http://localhost:8001/hello nebo servicemodelsamples.  
+ Třetí definice služby endpoint určuje absolutní adresu, jak je znázorněno v následující ukázka konfigurace. Základní adresa hraje žádný atribut role v adrese. Adresa skutečný koncový bod je http://localhost:8001/hello/servicemodelsamples.  
   
 ```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
@@ -130,7 +132,7 @@ Koncové body mají klienti přístup k funkci [!INCLUDE[indigo1](../../../../in
 ```  
   
 ## <a name="example"></a>Příklad  
- Chcete-li použít výchozí koncové body poskytované modulem runtime, nezadávejte žádné koncové body služby v kódu nebo konfiguračního souboru. Modul runtime vytvoří v tomto příkladu jsou výchozí koncové body po otevření služby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]výchozí koncové body, vazby a chování, viz [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Chcete-li použít výchozí koncové body poskytované modulem runtime, nezadávejte žádné koncové body služby v kódu nebo konfiguračního souboru. Modul runtime vytvoří v tomto příkladu jsou výchozí koncové body po otevření služby. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ```xml  
 <configuration>  

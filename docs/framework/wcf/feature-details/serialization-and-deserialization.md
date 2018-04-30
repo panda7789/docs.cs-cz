@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4d5caa913a49205c387c22a615b2b8da2dba0a77
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2343ebe5a2a029ddb40da98d28f5c442aa7b6962
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje nové Serializační stroj <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
@@ -54,7 +54,7 @@ ms.lasthandoff: 04/28/2018
  [!code-vb[c_StandaloneDataContractSerializer#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_standalonedatacontractserializer/vb/source.vb#2)]  
   
 ### <a name="specifying-known-types"></a>Zadání známé typy  
- Pokud Polymorfismus je součástí serializována typy, které již nejsou zpracovávány pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut nebo jinému kontrolnímu mechanismu, musí být seznam možných známé typy předaný konstruktoru serializátor pomocí `knownTypes` parametr. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] známé typy, najdete v části [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Pokud Polymorfismus je součástí serializována typy, které již nejsou zpracovávány pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut nebo jinému kontrolnímu mechanismu, musí být seznam možných známé typy předaný konstruktoru serializátor pomocí `knownTypes` parametr. Další informace o známé typy najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
  Následující příklad ukazuje třídu, `LibraryPatron`, který obsahuje kolekci určitého typu, `LibraryItem`. Definuje třídu sekundu `LibraryItem` typu. Třetí a čtyřmi třídy (`Book` a `Newspaper`) dědí `LibraryItem` třídy.  
   
@@ -267,7 +267,7 @@ ms.lasthandoff: 04/28/2018
   
 -   <xref:System.Runtime.Serialization.NetDataContractSerializer.Serialize%2A> a <xref:System.Runtime.Serialization.NetDataContractSerializer.Deserialize%2A> metody jsou aliasy pro <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%2A> a <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> metody. Tyto existovat více konzistentní programovací model poskytnout binární nebo SOAP serializace.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tyto funkce, najdete v části [binární serializace](../../../../docs/standard/serialization/binary-serialization.md).  
+ Další informace o těchto funkcích najdete v tématu [binární serializace](../../../../docs/standard/serialization/binary-serialization.md).  
   
  Formáty XML, který `NetDataContractSerializer` a `DataContractSerializer` použití obvykle nejsou kompatibilní. To znamená pokus o s jedním z těchto serializátorů serializaci a deserializaci k ostatním není podporováno.  
   

@@ -1,12 +1,13 @@
 ---
-title: "Přizpůsobení informačního kanálu (služby WCF Data Services)"
-ms.custom: 
+title: Přizpůsobení informačního kanálu (služby WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,19 +18,20 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2c5e33490a94346880986fdf66a4c5907084c8cd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c59bfdd22125f10b8a35afc8c264b6b2869a3998
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavit data jako informačního kanálu. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entity a vztahy do formátu XML, který může být zahrnutý v textu zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Definuje výchozí vlastnost entity mapování mezi data, která je součástí entity a elementy Atom. Další informace najdete v tématu [OData: formát Atom](http://go.microsoft.com/fwlink/?LinkID=185794).  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavit data jako informačního kanálu. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entity a vztahy do formátu XML, který může být zahrnutý v textu zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Definuje výchozí vlastnost entity mapování mezi data, která je součástí entity a elementy Atom. Další informace najdete v tématu [OData: formát Atom](http://go.microsoft.com/fwlink/?LinkID=185794).  
   
  Můžete mít aplikační scénář, který vyžaduje serializovat data vlastnost vrácený službou data způsobem, vlastní, nikoli ve standardním formátu informačního kanálu. S [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], serializace v informačním kanálu dat můžete přizpůsobit tak, aby vlastnosti entity, může být namapovaný na nepoužívané elementů a atributů položku nebo na vlastní elementy položky v informačním kanálu.  
   
@@ -53,19 +55,19 @@ ms.lasthandoff: 01/19/2018
  Další informace najdete v tématu [postupy: přizpůsobení kanály pomocí zprostředkovatele Entity Framework](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md).  
   
 > [!NOTE]
->  Vzhledem k tomu, že rozšíření do datového modelu Entity Designer nepodporuje, je nutné ručně upravit soubor XML, který obsahuje datový model. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]soubor EDMX, který je generovaný [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje, viz [.edmx souboru přehled](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).  
+>  Vzhledem k tomu, že rozšíření do datového modelu Entity Designer nepodporuje, je nutné ručně upravit soubor XML, který obsahuje datový model. Další informace o souboru .edmx, který je generovaný [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje, viz [.edmx souboru přehled](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).  
   
 ### <a name="custom-feed-attributes"></a>Vlastní kanál atributy  
  V následující tabulce jsou uvedeny atributy XML, které přizpůsobit informační kanály, které můžete přidat do konceptuálního schématu definice language (CSDL), která definuje datový model. Tyto atributy odpovídají vlastnosti <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> použití se zprostředkovatelem reflexe.  
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|`FC_ContentKind`|Určuje typ obsahu. Následující klíčová slova definovat syndikace typy obsahu.<br /><br /> `text:`Hodnota vlastnosti se zobrazí v informačním kanálu jako text.<br /><br /> `html:`Hodnota vlastnosti se zobrazí v informačním kanálu jako kód HTML.<br /><br /> `xhtml:`Hodnota vlastnosti se zobrazí v informačním kanálu jako kód HTML formátu XML.<br /><br /> Tato klíčová slova jsou ekvivalentem hodnoty <xref:System.Data.Services.Common.SyndicationTextContentKind> výčtu použití se zprostředkovatelem reflexe.<br /><br /> Tento atribut není podporovaná, až `FC_NsPrefix` a `FC_NsUri` atributy se používají.<br /><br /> Pokud zadáte hodnotu `xhtml` pro `FC_ContentKind` atribut, ujistěte se, že hodnota vlastnosti obsahuje správně formátovaný XML. Služba data vrací hodnotu bez provedení všechny transformace. Je nutné zajistit, aby měly všechny předpony – element XML v vráceného souboru XML. identifikátor URI oboru názvů a předpony, které jsou definované v informačním kanálu namapované.|  
+|`FC_ContentKind`|Určuje typ obsahu. Následující klíčová slova definovat syndikace typy obsahu.<br /><br /> `text:` Hodnota vlastnosti se zobrazí v informačním kanálu jako text.<br /><br /> `html:` Hodnota vlastnosti se zobrazí v informačním kanálu jako kód HTML.<br /><br /> `xhtml:` Hodnota vlastnosti se zobrazí v informačním kanálu jako kód HTML formátu XML.<br /><br /> Tato klíčová slova jsou ekvivalentem hodnoty <xref:System.Data.Services.Common.SyndicationTextContentKind> výčtu použití se zprostředkovatelem reflexe.<br /><br /> Tento atribut není podporovaná, až `FC_NsPrefix` a `FC_NsUri` atributy se používají.<br /><br /> Pokud zadáte hodnotu `xhtml` pro `FC_ContentKind` atribut, ujistěte se, že hodnota vlastnosti obsahuje správně formátovaný XML. Služba data vrací hodnotu bez provedení všechny transformace. Je nutné zajistit, aby měly všechny předpony – element XML v vráceného souboru XML. identifikátor URI oboru názvů a předpony, které jsou definované v informačním kanálu namapované.|  
 |`FC_KeepInContent`|Označuje, že hodnota vlastnosti odkazované mají být použity v části obsah informačního kanálu i v namapované umístění. Platné hodnoty jsou `true` a `false`. Chcete-li výsledné informačního kanálu zpětně kompatibilní s dřívějšími verzemi nástroje [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], zadejte hodnotu `true` a ujistěte se, že hodnota je obsažena v části obsah informačního kanálu.|  
 |`FC_NsPrefix`|Předpona oboru názvů XML elementu bez syndikace mapování. Tento atribut se musí používat s `FC_NsUri` atribut a nelze jej použít s `FC_ContentKind` atribut.|  
 |`FC_NsUri`|Identifikátor URI oboru element XML bez syndikace mapování. Tento atribut se musí používat s `FC_NsPrefix` atribut a nelze jej použít s `FC_ContentKind` atribut.|  
 |`FC_SourcePath`|Cesta k vlastnosti entity, na němž je tato kanálu mapování pravidlo vztahuje. Tento atribut je podporována pouze v případě je používán `EntityType` elementu.<br /><br /> <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> Vlastnost nelze odkazovat přímo komplexního typu. Pro komplexní typy, je nutné použít výraz cesty kde názvů vlastností oddělených zpětné lomítko (`/`) znaků. Například následující hodnoty jsou povolené pro typ entity `Person` s ve vlastnosti integer `Age` a komplexní vlastnost<br /><br /> `Address`:<br /><br /> `Age`<br /><br /> `Address/Street`<br /><br /> <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> Vlastnost nelze nastavit na hodnotu, která obsahuje mezeru nebo libovolný znak, který není platný název vlastnosti.|  
-|`FC_TargetPath`|Název elementu target výsledné informačního kanálu pro mapování vlastnost. Tento element může být element definované specifikací Atom nebo vlastního elementu.<br /><br /> Následující klíčová slova jsou předdefinované syndikace cílová cesta hodnoty, které odkazují na konkrétní umístění v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu.<br /><br /> `SyndicationAuthorEmail:``atom:email` Podřízený element `atom:author` elementu.<br /><br /> `SyndicationAuthorName:``atom:name` Podřízený element `atom:author` elementu.<br /><br /> `SyndicationAuthorUri:``atom:uri` Podřízený element `atom:author` elementu.<br /><br /> `SyndicationContributorEmail:``atom:email` Podřízený element `atom:contributor` elementu.<br /><br /> `SyndicationContributorName:``atom:name` Podřízený element `atom:contributor` elementu.<br /><br /> `SyndicationContributorUri:``atom:uri` Podřízený element `atom:contributor` elementu.<br /><br /> `SyndicationCustomProperty:`Element vlastní vlastnosti. Při mapování na prvek vlastní, cíl musí být výraz cesty, ve kterém jsou vnořených elementů oddělených zpětné lomítko (`/`) a atributy jsou určené ampersand (`@`). V následujícím příkladu, řetězec `UnitsInStock/@ReorderLevel` hodnotu vlastnosti se mapuje na atribut s názvem `ReorderLevel` na podřízený element s názvem `UnitsInStock` kořenového prvku položku.<br /><br /> `<Property Name="ReorderLevel" Type="Int16"               m:FC_TargetPath="UnitsInStock/@ReorderLevel"               m:FC_NsPrefix="Northwind"               m:FC_NsUri="http://schemas.examples.microsoft.com/dataservices"               m:FC_KeepInContent="false"               />`<br /><br /> Pokud jsou cílem název vlastního elementu, `FC_NsPrefix` a `FC_NsUri` atributy musí být také zadána.<br /><br /> `SyndicationPublished:``atom:published` Elementu.<br /><br /> `SyndicationRights:``atom:rights` Elementu.<br /><br /> `SyndicationSummary:``atom:summary` Elementu.<br /><br /> `SyndicationTitle:``atom:title` Elementu.<br /><br /> `SyndicationUpdated:``atom:updated` Elementu.<br /><br /> Tato klíčová slova jsou ekvivalentem hodnoty <xref:System.Data.Services.Common.SyndicationItemProperty> výčtu použití se zprostředkovatelem reflexe.|  
+|`FC_TargetPath`|Název elementu target výsledné informačního kanálu pro mapování vlastnost. Tento element může být element definované specifikací Atom nebo vlastního elementu.<br /><br /> Následující klíčová slova jsou předdefinované syndikace cílová cesta hodnoty, které odkazují na konkrétní umístění v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu.<br /><br /> `SyndicationAuthorEmail:` `atom:email` Podřízený element `atom:author` elementu.<br /><br /> `SyndicationAuthorName:` `atom:name` Podřízený element `atom:author` elementu.<br /><br /> `SyndicationAuthorUri:` `atom:uri` Podřízený element `atom:author` elementu.<br /><br /> `SyndicationContributorEmail:` `atom:email` Podřízený element `atom:contributor` elementu.<br /><br /> `SyndicationContributorName:` `atom:name` Podřízený element `atom:contributor` elementu.<br /><br /> `SyndicationContributorUri:` `atom:uri` Podřízený element `atom:contributor` elementu.<br /><br /> `SyndicationCustomProperty:` Element vlastní vlastnosti. Při mapování na prvek vlastní, cíl musí být výraz cesty, ve kterém jsou vnořených elementů oddělených zpětné lomítko (`/`) a atributy jsou určené ampersand (`@`). V následujícím příkladu, řetězec `UnitsInStock/@ReorderLevel` hodnotu vlastnosti se mapuje na atribut s názvem `ReorderLevel` na podřízený element s názvem `UnitsInStock` kořenového prvku položku.<br /><br /> `<Property Name="ReorderLevel" Type="Int16"               m:FC_TargetPath="UnitsInStock/@ReorderLevel"               m:FC_NsPrefix="Northwind"               m:FC_NsUri="http://schemas.examples.microsoft.com/dataservices"               m:FC_KeepInContent="false"               />`<br /><br /> Pokud jsou cílem název vlastního elementu, `FC_NsPrefix` a `FC_NsUri` atributy musí být také zadána.<br /><br /> `SyndicationPublished:` `atom:published` Elementu.<br /><br /> `SyndicationRights:` `atom:rights` Elementu.<br /><br /> `SyndicationSummary:` `atom:summary` Elementu.<br /><br /> `SyndicationTitle:` `atom:title` Elementu.<br /><br /> `SyndicationUpdated:` `atom:updated` Elementu.<br /><br /> Tato klíčová slova jsou ekvivalentem hodnoty <xref:System.Data.Services.Common.SyndicationItemProperty> výčtu použití se zprostředkovatelem reflexe.|  
   
 > [!NOTE]
 >  Názvy a hodnoty atributů jsou malá a velká písmena. Atributy mohou být použity buď `EntityType` element nebo na jeden nebo více `Property` elementů, ale ne na obou.  

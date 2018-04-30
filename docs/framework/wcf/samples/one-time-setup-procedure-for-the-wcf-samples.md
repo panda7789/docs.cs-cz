@@ -1,24 +1,26 @@
 ---
-title: "Jednorázový postup nastavení pro ukázky Windows Communication Foundation"
-ms.custom: 
+title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-caps.latest.revision: "83"
+caps.latest.revision: 83
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bab723e4e52db9936e635f1348dff86d75de274d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: acb89c8c1819024ebdb77720654ab7280333e456
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ukázky jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresáře. Tento postup jednorázové instalační program vytvoří složku na disku; také přidá virtuální adresář pro službu IIS s názvem **ServiceModelSamples**.  
@@ -26,11 +28,11 @@ Většina [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ukázky jsou h
  **ServiceModelSamples** virtuální adresář se používá pro vytváření a spouštění všechny ukázky, které používají služby hostované službou IIS. Toto je pouze virtuálního adresáře, který se vyžaduje ke spuštění ukázky. Vytváření ukázku nahradí všechny dříve nasazené služby na tento virtuální adresář; pouze nedávno integrovaný Ukázka bude nasazen a dostupný v tento virtuální adresář.  
   
 > [!NOTE]
->  Je nutné spustit všechny příkazy pod účtem místního správce. Pokud používáte systém Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], nebo Windows Server 2008 R2, je nutné spustit také příkazovém řádku se zvýšenými oprávněními. Uděláte to tak, klikněte pravým tlačítkem na ikonu Příkazový řádek a pak klikněte na tlačítko **spustit jako správce**. Všechny příkazy v tomto tématu se musí spustit v příkazovém řádku, který má nastavení správnou cestu.  Nejjednodušší způsob, jak toho docílit, je pomocí příkazového řádku Visual Studio. Otevřete tuto výzvu klikněte na **spustit**, vyberte **všechny programy**, přejděte dolů k položce **Visual Studio 2010**, vyberte **nástroje sady Visual Studio**, Klikněte pravým tlačítkem na **Visual Studio – příkazový řádek (2010)**a potom klikněte na **spustit jako správce**. Pokud nemáte nainstalované v edicích sady Visual Studio Express, tento příkaz není k dispozici a budete muset přidat "C:\Windows\Microsoft.Net\Framework\v4.0" do systémové cesty.  
+>  Je nutné spustit všechny příkazy pod účtem místního správce. Pokud používáte systém Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], nebo Windows Server 2008 R2, je nutné spustit také příkazovém řádku se zvýšenými oprávněními. Uděláte to tak, klikněte pravým tlačítkem na ikonu Příkazový řádek a pak klikněte na tlačítko **spustit jako správce**. Všechny příkazy v tomto tématu se musí spustit v příkazovém řádku, který má nastavení správnou cestu.  Nejjednodušší způsob, jak toho docílit, je pomocí příkazového řádku Visual Studio. Otevřete tuto výzvu klikněte na **spustit**, vyberte **všechny programy**, přejděte dolů k položce **Visual Studio 2010**, vyberte **nástroje sady Visual Studio**, Klikněte pravým tlačítkem na **Visual Studio – příkazový řádek (2010)** a potom klikněte na **spustit jako správce**. Pokud nemáte nainstalované v edicích sady Visual Studio Express, tento příkaz není k dispozici a budete muset přidat "C:\Windows\Microsoft.Net\Framework\v4.0" do systémové cesty.  
   
 ### <a name="one-time-setup-procedure-for-wcf-samples"></a>Jednorázový postup nastavení pro ukázky WCF  
   
-1.  Ujistěte se, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je nastavený. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak nastavit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], najdete v části [Internetu informace o pokyny k hostování služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).  
+1.  Ujistěte se, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je nastavený. Další informace o tom, jak nastavit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], najdete v části [Internetu informace o pokyny k hostování služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).  
   
 2.  Ujistěte se, že [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] je nainstalovaná. Hledání následující adresář pro v4.0 (nebo novější): **\Windows\Microsoft.NET\Framework**  
   
@@ -88,7 +90,7 @@ Většina [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ukázky jsou h
     > [!NOTE]
     >  Z bezpečnostních důvodů nezapomeňte odebrat definici virtuální adresář a oprávnění udělená ve výše uvedené kroky instalace spuštěním dávkový soubor s názvem Cleanupvroot.bat po skončení s ukázky.  
   
-13. Ukázky, samoobslužných hostovaných (není hostovaný ve službě IIS) vyžadují oprávnění k registraci adresy protokolu HTTP na počítači pro naslouchání. Oprávnění pro rezervaci oboru názvů HTTP pochází z uživatelský účet použitý ke spuštění ukázky. Ve výchozím nastavení mají účty správců oprávnění k registraci žádné adresy protokolu HTTP. Účty správců jiné musí udělit oprávnění pro obory názvů HTTP používaný ukázky. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Postup konfigurace oboru názvů rezervace najdete v tématu [konfigurace HTTP a HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md).  
+13. Ukázky, samoobslužných hostovaných (není hostovaný ve službě IIS) vyžadují oprávnění k registraci adresy protokolu HTTP na počítači pro naslouchání. Oprávnění pro rezervaci oboru názvů HTTP pochází z uživatelský účet použitý ke spuštění ukázky. Ve výchozím nastavení mají účty správců oprávnění k registraci žádné adresy protokolu HTTP. Účty správců jiné musí udělit oprávnění pro obory názvů HTTP používaný ukázky. Další informace o tom, jak nakonfigurovat vyhrazení oboru názvů najdete v tématu [konfigurace HTTP a HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md).  
   
 14. Některé ukázky vyžadují služby Řízení front zpráv. V tématu [instalaci řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md) pokyny k instalaci.  
   

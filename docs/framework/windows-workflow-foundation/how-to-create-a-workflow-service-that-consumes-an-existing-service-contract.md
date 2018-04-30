@@ -14,17 +14,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 09c3f7656284dd73dd5f50c4ef9f77cd5adcbfe7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c7c28d8c2edbda5a42a290786b0ff40e3ab6dd5b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>Postupy: vytvoření služby pracovního postupu, který využívá existující smlouvy služby
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Funkce lepší integrace mezi webové služby a pracovní postupy ve formě vývoj kontrakt první pracovního postupu. Nástroj pro vývoj kontrakt první pracovního postupu můžete navrhnout první kontrakt v kódu. Nástroj potom automaticky generuje šablonu aktivit v sadě nástrojů pro operace v kontraktu.  
   
 > [!NOTE]
->  Toto téma obsahuje podrobné pokyny k vytvoření pracovního postupu první kontrakt služby. [!INCLUDE[crabout](../../../includes/crabout-md.md)] vývoj pracovního postupu první kontraktu služby, najdete v části [kontrakt první pracovní postup služby vývoj](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md).  
+>  Toto téma obsahuje podrobné pokyny k vytvoření pracovního postupu první kontrakt služby. Další informace o vývoj pracovního postupu první kontraktu služby najdete v tématu [kontrakt první pracovní postup služby vývoj](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md).  
   
 ### <a name="creating-the-workflow-project"></a>Vytvoření projektu pracovního postupu  
   

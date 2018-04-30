@@ -1,33 +1,33 @@
 ---
-title: "Vytváření uživatelem definovaných vazeb"
-ms.custom: 
+title: Vytváření uživatelem definovaných vazeb
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fe9be6ed74569875fd26f9a4913756e0366d757a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 05476adccca0deb5fd82b62f99f06939664cc876
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
 Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:  
   
--   Vytvoření vlastní vazby, na základě <xref:System.ServiceModel.Channels.CustomBinding> třídy, která je kontejner, který je vyplnit prvky vazeb. Vlastní vazba se pak přidá do koncového bodu služby. Můžete vytvořit vlastní vazby, které buď programově, nebo v konfiguraci aplikace souboru. Pokud chcete použít prvku vazby z konfiguračního souboru aplikace, musíte rozšířit prvku vazby <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vlastní vazby, najdete v části [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md) a <xref:System.ServiceModel.Channels.CustomBinding>.  
+-   Vytvoření vlastní vazby, na základě <xref:System.ServiceModel.Channels.CustomBinding> třídy, která je kontejner, který je vyplnit prvky vazeb. Vlastní vazba se pak přidá do koncového bodu služby. Můžete vytvořit vlastní vazby, které buď programově, nebo v konfiguraci aplikace souboru. Pokud chcete použít prvku vazby z konfiguračního souboru aplikace, musíte rozšířit prvku vazby <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Další informace o vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md) a <xref:System.ServiceModel.Channels.CustomBinding>.  
   
 -   Můžete vytvořit třídu odvozenou od standardní vazby. Například můžete odvození třídy z <xref:System.ServiceModel.WSHttpBinding> a přepsání <xref:System.ServiceModel.Channels.CustomBinding.CreateBindingElements%2A> metoda získat prvky vazby a vložit vlastní vazby element nebo vytvořit konkrétní hodnotu pro zabezpečení.  
   
@@ -38,7 +38,7 @@ Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:
   
  Existují tři hlavní typy elementů vazby: prvky vazeb protokolu, kódování prvky vazeb a elementů přenosové vazby.  
   
- Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které fungují na zprávy. Kanály a naslouchací procesy vytvořené tyto prvky vazeb můžete přidat, odebrat nebo změnit obsah zprávy. Danou vazbu může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje několik prvky vazeb protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
+ Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které fungují na zprávy. Kanály a naslouchací procesy vytvořené tyto prvky vazeb můžete přidat, odebrat nebo změnit obsah zprávy. Danou vazbu může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje několik prvky vazeb protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
  Kódování prvku vazby – tyto prvky představují transformace mezi zprávu a kódování připraveni k přenosu v drátové síti. Typické [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby obsahovat přesně jeden kódování prvku vazby. Příklady kódování prvky vazeb <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Pokud element kódování vazba není určena pro vazbu, bude použito výchozí kódování. Výchozí hodnota je text při přenosu HTTP a binární jinak.  
   

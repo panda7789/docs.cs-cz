@@ -21,14 +21,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: fad7970711435cdabecd883f5e1dc44c64bd2c93
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d30769c854dad04a333509f64169a257fc461ad0
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-use-transport-security-and-message-credentials"></a>Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv
-Zabezpečení služby přenosu a zpráva pověření používá nejlepší režimy zabezpečení přenosu a zpráv v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Transport layer security poskytuje v sum, integrity a důvěrnosti, zatímco zpráva vrstvy zabezpečení poskytuje přihlašovací údaje, které nejsou možné pomocí mechanismy zabezpečení striktní přenosu. Toto téma ukazuje základní kroky pro implementaci přenosu zpráv přihlašovací údaje pomocí <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nastavení režimu zabezpečení, najdete v části [postupy: nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
+Zabezpečení služby přenosu a zpráva pověření používá nejlepší režimy zabezpečení přenosu a zpráv v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Transport layer security poskytuje v sum, integrity a důvěrnosti, zatímco zpráva vrstvy zabezpečení poskytuje přihlašovací údaje, které nejsou možné pomocí mechanismy zabezpečení striktní přenosu. Toto téma ukazuje základní kroky pro implementaci přenosu zpráv přihlašovací údaje pomocí <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> vazby. Další informace o nastavení režimu zabezpečení najdete v tématu [postupy: nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
   
  Při nastavování režimu zabezpečení na `TransportWithMessageCredential`, přenos určuje skutečné mechanismus, který poskytuje zabezpečení transportní vrstvy. Pro protokol HTTP je tento mechanismus Secure Sockets Layer (SSL) přes protokol HTTP (HTTPS); pro TCP je protokol SSL přes TCP nebo systému Windows.  
   

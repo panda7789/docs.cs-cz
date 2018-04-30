@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9d4463a04ac2113778d9ea0d315beeef7d564764
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: aebd21186f7d038dfa5d7c3c65f833d41f4a1f71
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="data-contract-equivalence"></a>Ekvivalence kontraktů dat
 Pro klienta k úspěšnému odeslání dat určitého typu služby nebo k službě úspěšně posílat data do klienta odeslané typ nemusí nutně existovat na koncové straně příjmu. Jediným požadavkem je, že kontrakty dat obou typů být ekvivalentní. (V některých případech striktní ekvivalenční se nevyžaduje, jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).)  
@@ -37,7 +37,7 @@ Pro klienta k úspěšnému odeslání dat určitého typu služby nebo k služb
 > [!NOTE]
 >  Všimněte si, že kontraktů dat názvy a obory názvů, jakož i názvy datových členů malých a velkých písmen.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] názvy kontraktu dat a obory názvů, jakož i názvy členů data, najdete v části [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md).  
+ Další informace o názvy kontraktu dat a obory názvů a názvy členů dat najdete v tématu [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md).  
   
  Pokud existují dva typy na jedné straně (odesílatel nebo příjemce) a jejich kontrakty dat nejsou ekvivalentní (například mají různé datové členy), by neměl jim poskytnout se stejným názvem a oborem názvů. Díky tomu může způsobit vyvolání výjimky.  
   

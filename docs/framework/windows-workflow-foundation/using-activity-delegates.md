@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: efec9885ae804263f7ae4c6d1d5c3bc4f39831c9
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.openlocfilehash: a8b30882ef2e75f21c3b90d0e13ff06b52fe5229
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-activity-delegates"></a>Použití delegátů aktivity
 Delegáti aktivity povolit aktivity autorům vystavit zpětná volání s konkrétní podpisy, pro které uživatelé aktivity zadat na základě aktivity obslužné rutiny. K dispozici jsou dva typy aktivity delegáti: <xref:System.Activities.ActivityAction%601> se používá k definování delegáti aktivity, které nemají návratovou hodnotu, a <xref:System.Activities.ActivityFunc%601> se používá k definování delegáti aktivity, které mají návratovou hodnotu.  
@@ -38,7 +38,7 @@ V příkladech v tomto tématu použijte syntaxi inicializace objektu. Syntaxe i
   
  [!code-csharp[CFX_ActivityExample#7](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#7)]  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Inicializátory objektu, najdete v části [postup: inicializovat objekty bez volání konstruktoru (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=161015) a [postupy: Deklarace objektu pomocí inicializátoru objektu](http://go.microsoft.com/fwlink/?LinkId=161016).  
+ Další informace o inicializátory objektů najdete v tématu [postupy: Inicializace objektů bez volání konstruktoru (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=161015) a [postupy: Deklarace objektu pomocí inicializátoru objektu](http://go.microsoft.com/fwlink/?LinkId=161016).  
   
  V následujícím příkladu <xref:System.Activities.Statements.TryCatch> aktivita se používá v pracovním postupu. <xref:System.ApplicationException> Je vyvolána v tomto pracovním postupu a jsou zpracována <xref:System.Activities.Statements.Catch%601> aktivity. Obslužná rutina pro <xref:System.Activities.Statements.Catch%601> aktivity aktivity akce je <xref:System.Activities.Statements.WriteLine> aktivity a podrobnosti výjimky je plynoucích prostřednictvím se pomocí `ex` <xref:System.Activities.DelegateInArgument%601>.  
   

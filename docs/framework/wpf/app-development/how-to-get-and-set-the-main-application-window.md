@@ -1,12 +1,13 @@
 ---
-title: "Postupy: získání a nastavení hlavní okno aplikace"
-ms.custom: 
+title: 'Postupy: získání a nastavení hlavní okno aplikace'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,22 +18,23 @@ helpviewer_keywords:
 - windows objects [WPF], getting
 - getting windows objects [WPF]
 ms.assetid: ec902bc4-4a59-46f5-8ec1-963b46789356
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9aa02b0d5ff4456cf5ef86fa0d4f8431fe3d846b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9bdc96c509f88650edd93ba4a7f595e2b161db39
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-get-and-set-the-main-application-window"></a>Postupy: získání a nastavení hlavní okno aplikace
 Tento příklad ukazuje, jak k získání a nastavení hlavního okna aplikace.  
   
 ## <a name="example"></a>Příklad  
- První <xref:System.Windows.Window> , je vytvořena v rámci instance [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace je automaticky nastaven na <xref:System.Windows.Application> jako hlavní okno aplikace. První <xref:System.Windows.Window> být instancí bude pravděpodobně možné okně, které je zadán jako počáteční [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] (viz <xref:System.Windows.Application.StartupUri%2A>).  
+ První <xref:System.Windows.Window> vytvoření instance v rámci Windows Presentation Foundation (WPF) aplikace je automaticky nastaven na <xref:System.Windows.Application> jako hlavní okno aplikace. První <xref:System.Windows.Window> být instancí bude pravděpodobně možné okně, které je zadán jako počáteční [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] (viz <xref:System.Windows.Application.StartupUri%2A>).  
   
  První <xref:System.Windows.Window> může také být vytvořena instance pomocí kódu. Jedním z příkladů je otevřete okno při spuštění aplikace, jako jsou následující:  
   

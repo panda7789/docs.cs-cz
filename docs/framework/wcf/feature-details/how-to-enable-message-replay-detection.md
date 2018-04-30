@@ -24,16 +24,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 55cd4b928c640f506e058f6a441189842bc9b8a3
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: cada24098f5800f56d7dd50119c3fe3394ba14cd
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-enable-message-replay-detection"></a>Postupy: Povolení zjišťování opakování zpráv
 Opakování útoku nastane, když útočník zkopíruje datového proudu zpráv mezi dvěma účastníky a replays datový proud na jeden nebo více stran. Pokud omezeny, budou počítače podřízené útoku zpracovat datového proudu jako legitimní zprávy, což vede k řadu chybný důsledky, jako je například redundantní objednávky položky.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zpráva rozpoznání opětovného přehrání najdete v tématu [zjišťování opakování zpráv](http://go.microsoft.com/fwlink/?LinkId=88536).  
+ Další informace o zjišťování opakování zpráv najdete v tématu [zjišťování opakování zpráv](http://go.microsoft.com/fwlink/?LinkId=88536).  
   
  Následující postup ukazuje různé vlastnosti, které můžete použít k řízení opakování použitím zjišťování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   

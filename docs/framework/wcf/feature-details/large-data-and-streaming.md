@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b37af67a3deeed4e55939ff1c1baf73752233e94
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: e367c11b48e6f4034afb1f42ded3498d748848a7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je založený na jazyce XML komunikaci infrastruktury. Protože XML data je běžně zakódován ve formátu standardního textu definované v [XML 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojáři a architektům jsou obvykle zajímá přenosová nároků (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje speciální výzvy pro efektivní přenos binární data.  
@@ -246,7 +246,7 @@ public class UploadStreamMessage
   
  Proto omezení maximální velikost příchozí zprávy není dostatek v tomto případě. `MaxBufferSize` Vlastnost je potřeba omezit paměť, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyrovnávací paměti. Je důležité, abyste tuto možnost nastavíte na hodnotu bezpečné (nebo jej zachovat na výchozí hodnota) při streamování. Předpokládejme například, musí přijmout služby souborů až do 4 GB velikost a jejich uložení na místní disk. Také Předpokládejme, že vaše paměti je omezené tak, že můžete pouze buffer 64 KB dat najednou. Potom byste měli nastavit `MaxReceivedMessageSize` do 4 GB a `MaxBufferSize` na 64 KB. Také v implementaci služby musíte zajistit číst pouze z příchozího datového proudu v bloky dat 64 KB a nečtěte další blok před předchozí byl zapsaný na disk a zrušených z paměti.  
   
- Je také důležité si uvědomit, že tato kvóta pouze to, do vyrovnávací paměti provádí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a nemůže chránit proti žádné ukládání do vyrovnávací paměti, abyste provedli v implementaci vlastní služba nebo klienta. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] dodatečné informace o zabezpečení, najdete v části [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+ Je také důležité si uvědomit, že tato kvóta pouze to, do vyrovnávací paměti provádí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a nemůže chránit proti žádné ukládání do vyrovnávací paměti, abyste provedli v implementaci vlastní služba nebo klienta. Další informace o dodatečné informace o zabezpečení najdete v tématu [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
   
 > [!NOTE]
 >  Rozhodnutí použít ve vyrovnávací paměti nebo přenášené datovými proudy přenosy je místní rozhodnutí koncového bodu. Pro přenosy protokolu HTTP režim přenosu nešířily připojení nebo proxy servery a jiných zprostředkovatelů. Nastavení režimu přenosu se nereflektují v popisu rozhraní služby. Po generování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta ke službě, je nutné upravit konfigurační soubor pro služby určena pro použití s přenášené datovými proudy přenosy nastavení režimu. TCP a přenosy pojmenovaný kanál režim přenosu rozšířena jako výraz zásad.  

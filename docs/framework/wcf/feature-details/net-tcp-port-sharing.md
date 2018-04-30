@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c7abf272cb1d069b0fbdcd561256580de5a82c29
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d9427d091855a4f658cc971ceca1116cfd74e2ab
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje nový protokol sítě založené na protokolu TCP (net.tcp://) pro komunikaci s vysokým výkonem. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také zavádí novou součást systému, služba Net.TCP Port Sharing umožňující portů net.tcp ke sdílení více procesy uživatele.  
@@ -56,7 +56,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="using-nettcp-port-sharing-in-an-application"></a>Použití v aplikaci pro sdílení portů Net.tcp  
  Nejjednodušší způsob, jak používat port net.tcp:// sdílení v vaše [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace je vystavit služby pomocí <xref:System.ServiceModel.NetTcpBinding> a potom povolit služby Sdílení portů Net.TCP pomocí <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> vlastnost.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] jak to udělat, najdete v části [postupy: Konfigurace používání sdílení portů ve službě WCF](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md).  
+ Další informace o tom, jak to udělat najdete v tématu [postupy: Konfigurace používání sdílení portů ve službě WCF](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md).  
   
 ## <a name="security-implications-of-port-sharing"></a>Sdílení portů vliv na zabezpečení  
  I když služba Net.TCP Port Sharing zajišťuje vrstvu zpracování mezi aplikacemi a sítě, musí být aplikace, které používají sdílení portů stále zabezpečený, jako kdyby byly přímo naslouchání v síti. Aplikace, které používají sdílení portů konkrétně byste měli zvážit, proces oprávnění, pod kterým poběží. Zvažte spuštění vaší aplikace pomocí vestavěný účet Síťová služba, který se spouští s minimálním počtem proces oprávnění požadovaná pro síťovou komunikaci.  

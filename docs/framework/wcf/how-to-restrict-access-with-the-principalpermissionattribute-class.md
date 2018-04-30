@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute"
-ms.custom: 
+title: 'Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 5162f5c4-8781-4cc4-9425-bb7620eaeaf4
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: da91e3456fdca863980c89f45e0cc28db19170be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dffeae6a114563ea6b030c303bd3ed3f3a27f4f5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute
 Řízení přístupu k prostředkům v počítači domény systému Windows je úloha základní zabezpečení. Například pouze určité uživatelé by měli být schopní zobrazit citlivá data, jako jsou informace o mzdách. Toto téma vysvětluje, jak omezit přístup k metodě pomocí vyžadování, které uživatel patří do předdefinované skupiny. Pracovní vzorek, najdete v části [autorizace přístupu k operacím služby](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md).  
@@ -50,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-demand-user-membership"></a>Vyžádání uživatele členství  
   
-1.  Otevřete [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] soubor kódu, který obsahuje kód kontraktu implementovaná službu. [!INCLUDE[crabout](../../../includes/crabout-md.md)]implementace kontraktu, najdete v části [implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md).  
+1.  Otevřete [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] soubor kódu, který obsahuje kód kontraktu implementovaná službu. Další informace o implementaci kontraktu najdete v tématu [implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md).  
   
 2.  Použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> atribut každá metoda, která musí být omezeno na konkrétní skupinu. Nastavte <xref:System.Security.Permissions.SecurityAttribute.Action%2A> vlastnost <xref:System.Security.Permissions.SecurityAction.Demand> a <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A> vlastnost na název skupiny. Příklad:  
   

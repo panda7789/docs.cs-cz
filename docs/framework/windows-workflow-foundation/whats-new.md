@@ -17,14 +17,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6604c4fccec50369d83cede58ff2931c2015c5b9
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 73f4364d92c366dc6750144668f722fea93bca2b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>Co&#39;s nové v modelu Windows Workflow Foundation
-Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] několik vzorů vývoj změny z předchozích verzí. Pracovní postupy jsou nyní snazší vytvoření, spuštění a udržovat a implementaci hostitel nové funkce. [!INCLUDE[crabout](../../../includes/crabout-md.md)] migrace na rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi, najdete v části [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
+Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] několik vzorů vývoj změny z předchozích verzí. Pracovní postupy jsou nyní snazší vytvoření, spuštění a udržovat a implementaci hostitel nové funkce. Další informace o migraci rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi najdete v tématu [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
   
 ## <a name="workflow-activity-model"></a>Model aktivity pracovního postupu  
  Aktivita je nyní základní jednotka vytvoření pracovního postupu, nikoli pomocí <xref:System.Workflow.Activities.SequentialWorkflowActivity> nebo <xref:System.Workflow.Activities.StateMachineWorkflowActivity> třídy. <xref:System.Activities.Activity> Třída poskytuje základní abstrakci chování pracovního postupu. Autoři aktivity poté můžete implementovat buď <xref:System.Activities.CodeActivity> pro funkce základní vlastní aktivitu, nebo <xref:System.Activities.NativeActivity> pro funkce vlastní aktivity, které používá spektra modulu runtime. <xref:System.Activities.Activity> je třída používaná autory aktivity k express nové chování deklarativně z hlediska dalších <xref:System.Activities.NativeActivity>, <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, nebo <xref:System.Activities.DynamicActivity> objekty, ať už jsou zákaznických nebo součástí [předdefinované aktivity Knihovna](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md).  

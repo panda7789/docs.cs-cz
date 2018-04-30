@@ -19,11 +19,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: a50b3d3ec2a99d53bc7d5817f3ed530ef92d474b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1475891cf83c05552da247ffb04a866d80a396ea
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je SOAP na základě zpráv distribuované programovací platforma a zabezpečení zpráv mezi klienty a služby je důležité chránit data. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje platformu univerzální a vzájemná spolupráce pro výměnu zabezpečených zpráv na základě existující infrastruktura zabezpečení a standardy rozpoznaný zabezpečení protokolu SOAP zprávy.  
@@ -98,7 +98,7 @@ ms.lasthandoff: 04/28/2018
   
 -   *Režim zabezpečení zprávy*na druhé straně, používá zabezpečení WS (a dalších specifikacích) k implementaci zabezpečení přenosu. Vzhledem k tomu, že zabezpečení zpráv se použije přímo ke zprávám SOAP a se nachází v obálky protokolu SOAP, společně s dat aplikací, má výhodu v podobě probíhá přenos nezávislý, více rozšiřitelný a zajistit – koncové zabezpečení (oproti point-to-point); má nevýhodou je několikrát pomalejší než režim zabezpečení přenosu, protože se musí řešit XML povaha protokolu SOAP zprávy.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Tyto rozdíly, najdete v části [zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).  
+ Další informace o těchto rozdílech najdete v tématu [zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).  
   
  Třetí režim zabezpečení používá oba režimy předchozí a přináší výhody obou. Tento režim se nazývá `TransportWithMessageCredential`. V tomto režimu zabezpečení zpráv se používá k ověření klienta a zabezpečení přenosu se používá k ověření serveru a zajištění důvěrnosti zpráv a integrita. Díky tomu `TransportWithMessageCredential` režim zabezpečení je téměř tak rychlý jako režim zabezpečení přenosu a zajišťuje rozšiřitelnost ověřování klienta stejným způsobem jako zabezpečení zpráv. Ale na rozdíl od režim zabezpečení zprávy, neposkytuje dokončení – koncové zabezpečení.  
   

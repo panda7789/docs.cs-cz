@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 17528db182676ae69694c4e416ee10bff1ae6ef2
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 32fb7be6f8c465994b40814a94efd95d42a481da
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="c-expressions"></a>Výrazy jazyka C#
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporovány v systému Windows Workflow Foundation (WF). Nové projekty workflow C# vytvořené v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] cílených [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití jazyka C# výrazy a pracovní postup projekty Visual Basic použití výrazů jazyka Visual Basic. Existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] projekty workflow, které používají výrazy jazyka Visual Basic mohou být migrovány do [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] bez ohledu na projekt jazyka a jsou podporovány. Toto téma obsahuje přehled výrazy jazyka C# v [!INCLUDE[wf1](../../../includes/wf1-md.md)].  
@@ -45,7 +45,7 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka 
  ![Automaticky vytvoří aktivity pořadí](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")  
   
 > [!NOTE]
->  Výrazy jazyka C# jsou podporovány pouze v sadě Visual Studio a nejsou podporovány v Návrháři znovu hostovaných pracovních postupů. [!INCLUDE[crabout](../../../includes/crabout-md.md)] nové funkce WF45 podporované v Návrháři znovu hostované, viz [podporu pro nové funkce Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md).  
+>  Výrazy jazyka C# jsou podporovány pouze v sadě Visual Studio a nejsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích WF45 v znovu hostované návrháři podporovány, naleznete v části [podporu pro nové funkce Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md).  
   
 ####  <a name="BackwardCompat"></a> Zpětné kompatibility  
  Výrazy jazyka Visual Basic v existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] C# projekty workflow, které se migrovaly [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] jsou podporovány. Když jsou výrazy jazyka Visual Basic zobrazit v Návrháři pracovních postupů, se nahradí text existující výrazu jazyka Visual Basic **v jazyce XAML byla nastavena hodnota**, pokud výraz jazyka Visual Basic je platné syntaxe jazyka C#. Pokud je jazyka Visual Basic výrazem platnou syntaxi C#, se zobrazí ve výrazu. Pokud chcete aktualizovat jazyka Visual Basic výrazy jazyka C#, můžete upravovat v Návrháři pracovních postupů a zadejte ekvivalentních výrazů jazyka C#. Není potřeba aktualizovat výrazy jazyka Visual Basic, C#, ale po výrazy jsou aktualizovány v Návrháři pracovních postupů se převedou do jazyka C# a nemusí se vrátí zpátky na Visual Basic.  
@@ -195,7 +195,7 @@ static void CompileExpressions(DynamicActivity dynamicActivity)
   
 -   `CompiledExpressionInvoker.SetCompiledExpressionRootForImplementation` je volána místo `CompiledExpressionInvoker.SetCompiledExpressionRoot`.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Práce s výrazy v kódu, najdete v části [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kód](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).  
+ Další informace o práci s výrazy v kódu najdete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kód](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).  
   
 ###  <a name="XamlWorkflows"></a> Pomocí jazyka C# výrazů v pracovních postupech XAML  
  Výrazy jazyka C# jsou podporovány v pracovních postupech XAML. Kompilované pracovních postupů XAML se zkompiluje do typu, a jsou přijít pracovních postupů XAML načten modulem runtime a zkompilovat do strom aktivity při spuštění pracovního postupu.  
@@ -219,7 +219,7 @@ ActivityXamlServicesSettings settings = new ActivityXamlServicesSettings
 DynamicActivity<int> wf = ActivityXamlServices.Load(new StringReader(serializedAB), settings) as DynamicActivity<int>;  
 ```  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Práce s pracovních postupů XAML, najdete v části [serializaci pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
+ Další informace o práci s pracovními postupy XAML najdete v tématu [serializaci pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
   
 ###  <a name="WFServices"></a> Použití jazyka C# výrazů v XAMLX služeb pracovních postupů  
  Výrazy jazyka C# jsou podporovány v XAMLX služeb pracovních postupů. Pokud služby pracovního postupu je hostován v IIS nebo WAS pak nejsou potřeba žádné další kroky, ale pokud je samoobslužně hostovaná služba XAML pracovního postupu, musí být zkompilovány výrazy jazyka C#. Kompilace výrazy jazyka C# ve vlastním hostováním služby pracovního postupu XAMLX, nejdřív načtěte soubor XAMLX do `WorkflowService`a pak `Body` z `WorkflowService` k `CompileExpressions` metody popsané v předchozí [pomocí jazyka C# výrazy v pracovních postupech kód](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md#CodeWorkflows) části. V následujícím příkladu je načtena XAMLX služby pracovních postupů, se kompilují výrazy jazyka C# a pak služby pracovního postupu je otevřen a čeká na požadavky.  

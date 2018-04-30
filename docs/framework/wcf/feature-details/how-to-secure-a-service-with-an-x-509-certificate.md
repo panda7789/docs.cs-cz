@@ -19,16 +19,16 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 31028b6fe2cc34a9ae5cabe410bef0d753fd9436
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 89ad47ad898184b99f32743855091c0985722f77
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Postupy: Zabezpečení služby certifikátem X.509
 Zabezpečení služby certifikátem X.509 je základní technika, většina vazeb v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] použít. Toto téma vás provede kroky konfigurace služba s vlastním hostováním společně s certifikátem X.509.  
   
- Předpokladem je platný certifikát, který slouží k ověření serveru. Certifikát musí být k serveru vydán důvěryhodnou certifikační autoritou. Pokud certifikát platný není, všechny klient pokouší použít službu nebude důvěřovat služby a v důsledku toho budou provedeny žádné připojení. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] pomocí certifikátů, najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Předpokladem je platný certifikát, který slouží k ověření serveru. Certifikát musí být k serveru vydán důvěryhodnou certifikační autoritou. Pokud certifikát platný není, všechny klient pokouší použít službu nebude důvěřovat služby a v důsledku toho budou provedeny žádné připojení. Další informace o používání certifikátů najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
 ### <a name="to-configure-a-service-with-a-certificate-using-code"></a>Pro konfiguraci služby pomocí certifikátu pomocí kódu  
   

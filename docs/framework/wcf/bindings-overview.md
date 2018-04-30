@@ -1,28 +1,28 @@
 ---
-title: "Vazby ve Windows Communication Foundation – přehled"
-ms.custom: 
+title: Vazby ve Windows Communication Foundation – přehled
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4bc4fc7559872a808c2de87e4926075614351030
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58b3691c186dc6a33c94d9f8a1af96be488d67df
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které slouží k zadání podrobností komunikace, které jsou potřebné pro připojení ke koncovému bodu [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby. Každý koncový bod v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba vyžaduje, aby vazba být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti definující vazby elementů vazby, které vazby jsou součástí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], a jak lze zadat vazbu pro koncový bod.  
@@ -40,7 +40,7 @@ Vazby jsou objekty, které slouží k zadání podrobností komunikace, které j
  Určuje základní přenosový protokol použít (například protokol TCP nebo HTTP).  
   
 ## <a name="the-elements-of-a-binding"></a>Prvky vazby  
- Vazba v podstatě se skládá ze seřazené zásobníku vazby prvky, z nichž každý určuje součástí komunikační informace požadované pro připojení ke koncovému bodu služby. Dvě nejnižší vrstvy v zásobníku se vyžaduje. Nad touto je elementu, který obsahuje zprávu kódování specifikace na bázi zásobníku je element vazby přenosu. Prvky volitelné vazby, které zadejte komunikační protokoly jsou vrstvu nad tyto dvě požadované prvky. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Tyto prvky vazeb a jejich správné řazení, najdete v části [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Vazba v podstatě se skládá ze seřazené zásobníku vazby prvky, z nichž každý určuje součástí komunikační informace požadované pro připojení ke koncovému bodu služby. Dvě nejnižší vrstvy v zásobníku se vyžaduje. Nad touto je elementu, který obsahuje zprávu kódování specifikace na bázi zásobníku je element vazby přenosu. Prvky volitelné vazby, které zadejte komunikační protokoly jsou vrstvu nad tyto dvě požadované prvky. Další informace o tyto prvky vazby a jejich správné řazení najdete v tématu [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
  Informace v vazbu může být složité a některá nastavení nemusí být kompatibilní s ostatními. Z tohoto důvodu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zahrnuje sadu vazby poskytované systémem. Tyto vazby jsou navrženy tak, aby pokrývalo většina požadavky aplikací. Následující třídy představují některé příklady vazby poskytované systémem:  
@@ -56,7 +56,7 @@ Vazby jsou objekty, které slouží k zadání podrobností komunikace, které j
  Úplný seznam, s popisy, všechny [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]-zadaný vazby, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).  
   
 ## <a name="using-your-own-bindings"></a>Použití vlastní vazby  
- Pokud žádný z vazby poskytované systémem zahrnuté nemá správnou kombinaci funkcí, které vyžaduje aplikaci služby, můžete vytvořit vlastní vazby. Chcete-li to provést dvěma způsoby. Můžete buď vytvořit novou vazbu z existující elementů vazby pomocí <xref:System.ServiceModel.Channels.CustomBinding> objekt nebo můžete vytvořit vazbu úplně uživatelem definované odvozené z <xref:System.ServiceModel.Channels.Binding> vazby. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Vytvoření vlastní vazby pomocí tyto dva přístupy, najdete v části [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md) a [Creating User-Defined vazby](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
+ Pokud žádný z vazby poskytované systémem zahrnuté nemá správnou kombinaci funkcí, které vyžaduje aplikaci služby, můžete vytvořit vlastní vazby. Chcete-li to provést dvěma způsoby. Můžete buď vytvořit novou vazbu z existující elementů vazby pomocí <xref:System.ServiceModel.Channels.CustomBinding> objekt nebo můžete vytvořit vazbu úplně uživatelem definované odvozené z <xref:System.ServiceModel.Channels.Binding> vazby. Další informace o vytvoření vlastní vazby pomocí tyto dva přístupy, najdete v části [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md) a [Creating User-Defined vazby](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
   
 ## <a name="using-bindings"></a>Používání vazeb  
  Používání vazeb zahrnuje dva základní kroky:  

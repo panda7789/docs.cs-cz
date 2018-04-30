@@ -1,28 +1,28 @@
 ---
-title: "Používání vazeb ke konfiguraci služeb a klientů"
-ms.custom: 
+title: Používání vazeb ke konfiguraci služeb a klientů
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-caps.latest.revision: 
+caps.latest.revision: 33
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e63bb0b44e19ec9186096a819801ea05195b5523
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 68c8c2c93ce29147247c332848025fd931bf7854
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Používání vazeb ke konfiguraci služeb a klientů
 Vazby jsou objekty, které zadejte podrobnosti komunikace požadované pro připojení ke koncovému bodu. Přesněji řečeno vazby obsahovat informace o konfiguraci, která se používá k vytvoření klienta služby Windows nebo modul runtime definováním specifika přenosy, formáty (kódování zpráv) a protokoly pro příslušné kanál koncového bodu nebo klienta. Chcete-li vytvořit funkční [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby, každý koncový bod služby vyžaduje vazbu. Toto téma vysvětluje, co jsou vazby, jak jsou definovány a jak konkrétní vazbu je zadán pro koncový bod.  
@@ -40,7 +40,7 @@ Vazby jsou objekty, které zadejte podrobnosti komunikace požadované pro přip
  Určuje kódování zpráv, například, text/XML, binární nebo zpráva přenosu optimalizace mechanismus (MTOM), která určuje, jak jsou zprávy reprezentovány jako bajtové datové proudy v drátové síti.  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]zahrnuje sadu vazby poskytované systémem, které jsou navrženy tak, aby pokrývalo většina scénáře a požadavky na aplikace. Následující třídy představují některé příklady vazby poskytované systémem:  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zahrnuje sadu vazby poskytované systémem, které jsou navrženy tak, aby pokrývalo většina scénáře a požadavky na aplikace. Následující třídy představují některé příklady vazby poskytované systémem:  
   
 -   <xref:System.ServiceModel.BasicHttpBinding>: HTTP protokol vazby vhodný pro připojení k webovým službám, který odpovídá WS-I Basic Profile 1.1 specifikace (například webových služeb ASP.NET [ASMX]-služby).  
   
@@ -53,7 +53,7 @@ Vazby jsou objekty, které zadejte podrobnosti komunikace požadované pro přip
  Úplný seznam vazeb poskytovaných systémem s popisy, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).  
   
 ## <a name="custom-bindings"></a>Vlastní vazby  
- Pokud kolekce vazby poskytované systémem nemá správnou kombinaci funkcí, které vyžaduje aplikaci služby, můžete vytvořit <xref:System.ServiceModel.Channels.CustomBinding> vazby. [!INCLUDE[crabout](../../../includes/crabout-md.md)]elementy <xref:System.ServiceModel.Channels.CustomBinding> vazby, najdete v části [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) a [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Pokud kolekce vazby poskytované systémem nemá správnou kombinaci funkcí, které vyžaduje aplikaci služby, můžete vytvořit <xref:System.ServiceModel.Channels.CustomBinding> vazby. Další informace o jednotlivých prvcích <xref:System.ServiceModel.Channels.CustomBinding> vazby, najdete v části [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) a [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 ## <a name="using-bindings"></a>Používání vazeb  
  Používání vazeb zahrnuje dva základní kroky:  

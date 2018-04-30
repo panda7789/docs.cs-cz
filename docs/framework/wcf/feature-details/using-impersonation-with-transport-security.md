@@ -1,27 +1,29 @@
 ---
-title: "Použití zosobnění se zabezpečením přenosu"
-ms.custom: 
+title: Použití zosobnění se zabezpečením přenosu
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 57b40493d0e9bcbbaaf1366c74ff116343f6ee96
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d5610a107a198a3d8fd0517dca6ca7e2f4d22cbb
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-impersonation-with-transport-security"></a>Použití zosobnění se zabezpečením přenosu
-*Zosobnění* přístup je schopnost serverová aplikace na identitu klienta. Je běžné pro služby použít zosobnění při ověření přístupu k prostředkům. Aplikace bude spuštěna pomocí účtu služby, ale když server přijme připojení klienta, zosobňuje klienta tak, aby kontroly přístupu se provádí pomocí pověření klienta. Zabezpečení přenosu je mechanizmus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s funkcí zosobnění. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zabezpečení zpráv pomocí zosobnění najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+*Zosobnění* přístup je schopnost serverová aplikace na identitu klienta. Je běžné pro služby použít zosobnění při ověření přístupu k prostředkům. Aplikace bude spuštěna pomocí účtu služby, ale když server přijme připojení klienta, zosobňuje klienta tak, aby kontroly přístupu se provádí pomocí pověření klienta. Zabezpečení přenosu je mechanizmus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s funkcí zosobnění. Další informace o zosobnění pomocí zabezpečení zpráv najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="five-impersonation-levels"></a>Pět úrovní zosobnění  
  Zabezpečení přenosu využívá pět úrovní zosobnění, jak je popsáno v následující tabulce.  
@@ -48,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Pojmenované kanály nelze použít s `Impersonate` nebo `Delegate` úroveň zosobnění. Pojmenovaný kanál nelze vynutit záruku na počítače v těchto úrovní zosobnění.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]pojmenované kanály, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Další informace o pojmenované kanály najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
 ### <a name="http-transport"></a>Přenos HTTP  
  Vazby, které používají přenos HTTP (<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.BasicHttpBinding>) podporují několik schémat ověřování, jak je popsáno v [ověřování protokolu HTTP Principy](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md). Zosobnění úroveň podporované závisí na schéma ověřování. Následující položky se používají s přenos HTTP:  
@@ -63,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Schéma ověřování protokolu Kerberos, které lze vybrat pouze prostřednictvím vyjednávání, lze použít s libovolnou úroveň zosobnění podporované.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]přenos protokolu HTTP, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Další informace o přenos HTTP najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  

@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e9f6d0e9d64c510b47b0697d02178f1c0a95f61b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 600d938b8981ddfabcb79028ae66b5b9d02107b7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-message-contracts"></a>Použití kontraktů zpráv
 Obvykle při sestavování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikací vývojáři zaměřit se na datové struktury a serializace problémy a nemusíte sami se týkají se strukturou zpráv, ve kterých se přenášejí data. Pro tyto aplikace je jednoduchá vytváření kontrakty dat pro parametry nebo návratové hodnoty. (Další informace najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
@@ -44,7 +44,7 @@ Obvykle při sestavování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md
 public BankingTransactionResponse PostBankingTransaction(BankingTransaction bt);  
 ```  
   
- Za normálních okolností kontraktu dat stačí definovat schéma pro zprávy. Například v předchozím příkladu je dostatečné pro většinu aplikací Pokud `BankingTransaction` a `BankingTransactionResponse` mít kontrakty dat zadat obsah základní protokolu SOAP zprávy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] kontrakty dat najdete v části [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Za normálních okolností kontraktu dat stačí definovat schéma pro zprávy. Například v předchozím příkladu je dostatečné pro většinu aplikací Pokud `BankingTransaction` a `BankingTransactionResponse` mít kontrakty dat zadat obsah základní protokolu SOAP zprávy. Další informace o kontraktech dat najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
  Ale někdy je nezbytné přesně řídit, jak strukturu zprávu SOAP odeslány prostřednictvím sítě. Nejběžnější scénáře je vkládání vlastní hlavičky SOAP. Další z typických možností je definovat vlastnosti zabezpečení pro záhlaví zprávy a text, který je, a rozhodnout, zda tyto prvky jsou digitálně podepsat a zašifrovat. Nakonec vyžadují zásobníky některých třetích stran protokolu SOAP zprávy se v určitém formátu. Zasílání zpráv ve stylu operations zadejte tento ovládací prvek.  
   

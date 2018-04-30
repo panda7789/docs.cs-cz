@@ -1,27 +1,29 @@
 ---
 title: AspNetRouteIntegration
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0638ce0e-d053-47df-a447-688e447a03fb
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bf4f96116e8a4e687e7818796fa4b95e1b9b171a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 93d248030c4b32bd7725cf9c6fbbb829a19f7845
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="aspnetrouteintegration"></a>AspNetRouteIntegration
-Tento příklad ukazuje, jak hostovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] směruje služby REST pomocí technologie ASP.NET. [Základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka zobrazuje vlastním hostováním verze tohoto scénáře a implementaci služby podrobněji popisuje. Toto téma se zaměřuje na funkce integrace technologie ASP.NET. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ASP.NET směrování, najdete v části <xref:System.Web.Routing>.  
+Tento příklad ukazuje, jak hostovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] směruje služby REST pomocí technologie ASP.NET. [Základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka zobrazuje vlastním hostováním verze tohoto scénáře a implementaci služby podrobněji popisuje. Toto téma se zaměřuje na funkce integrace technologie ASP.NET. Další informace o směrování ASP.NET najdete v tématu <xref:System.Web.Routing>.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Service poskytuje kolekci zákazníkům způsobem prostředků-zaměřené na konkrétní nebo REST. Stejně jako založený na protokolu SOAP [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, službu může být hostovaný v technologii ASP.NET pomocí souboru .svc. Je to ale často není upřednostňovaný pro scénáře HTTP protože vyžaduje s .svc v adrese URL pro službu. Kromě toho vyžaduje nasazení soubor .svc společně s knihovny služby. Tato omezení můžete zabránit hostování služby pomocí ASP.NET trasy, jak je ukázáno v této ukázce.  

@@ -1,31 +1,33 @@
 ---
-title: "Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX"
-ms.custom: 
+title: 'Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7cd0099e-dc3a-47e4-a38c-6e10f997f6ea
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e1b46239366c38b54a38e3ce62b59c81eeb3316c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 28051dbed626dc0073a38e72f2cdc21ea108a32e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-use-configuration-to-add-an-aspnet-ajax-endpoint"></a>Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje vytvořit službu, která umožňuje použití ASP.NET AJAX koncový bod k dispozici, které lze volat z jazyka JavaScript na webovém serveru klienta. Pokud chcete vytvořit takové koncový bod, můžete použít buď konfigurační soubor s jiných [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] koncových bodů, nebo použijte metodu, která nevyžaduje, aby všechny konfigurace – elementy. Toto téma popisuje postup konfigurace.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Umožňuje vytvořit službu, která umožňuje použití ASP.NET AJAX koncový bod k dispozici, které lze volat z jazyka JavaScript na webovém serveru klienta. Pokud chcete vytvořit takové koncový bod, můžete použít buď konfigurační soubor s jiných [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] koncových bodů, nebo použijte metodu, která nevyžaduje, aby všechny konfigurace – elementy. Toto téma popisuje postup konfigurace.  
   
  V části procedury, která umožňuje koncovému bodu služby k použití ASP.NET AJAX je konfigurace koncového bodu používat <xref:System.ServiceModel.WebHttpBinding> a přidat [ \<enableWebScript >](../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md) chování koncového bodu. Po dokončení konfigurace koncového bodu, jsou podobné těm, které jsou použity žádné kroky pro implementaci a hostitelem služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Příklad pracovní najdete v tématu [AJAX služby pomocí HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]konfigurace koncového bodu ASP.NET AJAX bez použití konfigurace najdete v tématu [postupy: Přidání aplikace ASP.NET AJAX konfigurace koncového bodu bez pomocí](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
+ Další informace o konfiguraci koncového bodu ASP.NET AJAX bez použití konfigurace najdete v tématu [postupy: Přidání aplikace ASP.NET AJAX konfigurace koncového bodu bez pomocí](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
   
 ### <a name="to-create-a-basic-wcf-service"></a>Chcete-li vytvořit základní služby WCF  
   
@@ -109,7 +111,7 @@ ms.lasthandoff: 12/22/2017
     %>  
     ```  
   
-2.  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]hostování ve službě IIS, najdete v části [postupy: hostování služby WCF ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
+2.  Další informace o hostování ve službě IIS najdete v tématu [postupy: hostování služby WCF ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
   
 ### <a name="to-call-the-service"></a>Pro volání služby  
   

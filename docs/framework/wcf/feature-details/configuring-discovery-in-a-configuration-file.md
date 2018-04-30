@@ -1,24 +1,26 @@
 ---
-title: "Konfigurace zjišťování v konfiguračním souboru"
-ms.custom: 
+title: Konfigurace zjišťování v konfiguračním souboru
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 43344fc5411236fbb7420fd4d58526b3e0351d4f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4ba224bbf27e5a61168040c944bb940c3e6b0d8c
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>Konfigurace zjišťování v konfiguračním souboru
 Existují čtyři hlavní skupiny nastavení konfigurace používané při zjišťování. Toto téma se stručně popisují každou a obsahuje příklady způsob jejich konfigurace. Následující každý oddíl bude odkaz na další podrobnější dokumentaci o každou oblast.  
@@ -148,7 +150,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </behavior>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> najdete v části [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md).  
+ Další informace o <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> najdete v části [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md).  
   
 ## <a name="binding-element-configuration"></a>Konfigurace vazeb – Element  
  Vazba element konfigurace je nejvíce zajímavé na straně klienta. Konfigurace můžete použít k určení kritérií hledání používá ke zjišťování služby z klientské aplikace WCF.  Následující příklad vytvoří vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClient> kanálu a určuje kritéria hledání, které zahrnuje typu a rozsahu. Kromě toho určuje hodnoty pro <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> a <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> vlastnosti.  
@@ -188,7 +190,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
     </client>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]najít, najdete v části kritéria [najít zjišťování a kritéria hledání](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zjišťování a vazba elementy najdete [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ Další informace o kritériích hledání najdete v části [najít zjišťování a kritéria hledání](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Další informace o zjišťování a vazba elementy najdete [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
   
 ## <a name="standard-endpoint-configuration"></a>Konfigurace standardní koncového bodu  
  Standardní koncové body jsou předdefinované koncové body, které mají výchozí hodnoty pro jednu nebo více vlastností (adresa, vazba, kontrakt) nebo jeden nebo více hodnoty vlastností, které nelze změnit. Rozhraní .NET 4 se dodává s 3 zjišťování související standardní koncové body: <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>, a <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> Je standardní koncový bod, který je předem nakonfigurován pro operace zjišťování přes vícesměrové vysílání UDP vazby. <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> Je standardní koncový bod, který je předem nakonfigurovaný k odeslání zpráv oznámení vazbu UDP. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Je standardní koncový bod, který používá zjišťování k vyhledání adresa koncového bodu služby zjištěné dynamicky za běhu.  Standardní vazby jsou zadané s <`endpoint`> elementu, který obsahuje typu atributu, který zadaný typ standardní koncového bodu pro přidání. Následující příklad ukazuje, jak přidat <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
@@ -280,4 +282,4 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </system.ServiceModel>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Standardní koncové body, najdete v části [standardní koncové body](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+ Další informace o standardních koncových bodů v tématu [standardní koncové body](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)

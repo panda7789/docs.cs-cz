@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 490b756a9beae09b20a36d3fc6a20c85aad76618
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 24ca6899e6ac2bb316c0543932d70abc13626aa2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, se kterými se zákazníci spustili do při vývoj klienti WCF a služeb. Pokud problém, který běží na není v tomto seznamu, doporučujeme že konfigurovat trasování pro služby. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče soubor trasování a získat podrobné informace o výjimkách, který může vyskytovat v rámci služby. Další informace o konfiguraci trasování najdete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči soubor trasování najdete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -64,7 +64,7 @@ Toto téma uvádí počet známé problémy, se kterými se zákazníci spustili
   
 <a name="BKMK_q1"></a>   
 ## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>Pokud klient nečinný nějakou dobu, po prvním požadavku se někdy zobrazí messagesecurityexception – na druhý žádosti. Co se děje?  
- Druhá žádost neúspěšně především dvou důvodů: Vypršel časový limit relace (1) nebo (2) je webový server, který je hostitelem služby je recykluje. V prvním případě relace je platný, dokud služba vyprší časový limit. Když službu neobdrží žádost od klienta v rámci doba zadaná v vazby služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončuje relaci zabezpečení. Výsledkem zprávy následné klienta <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit relaci zabezpečené službou odeslat další zprávy nebo použijte tokenu kontextu stavová zabezpečení. Tokeny kontextu zabezpečení stavová také povolit zabezpečené relace zůstanou zachovány i recyklovány webového serveru. [!INCLUDE[crabout](../../../includes/crabout-md.md)] pomocí tokenů stavová kontextu zabezpečení v zabezpečené relaci, najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Alternativně můžete zakázat zabezpečených relací. Při použití [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) vazby, můžete nastavit `establishSecurityContext` vlastnost `false` zakázání zabezpečených relací. Zakázání zabezpečených relací u dalších vazeb, musíte vytvořit vlastní vazby. Podrobnosti o vytváření vlastních vazeb najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některý z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
+ Druhá žádost neúspěšně především dvou důvodů: Vypršel časový limit relace (1) nebo (2) je webový server, který je hostitelem služby je recykluje. V prvním případě relace je platný, dokud služba vyprší časový limit. Když službu neobdrží žádost od klienta v rámci doba zadaná v vazby služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončuje relaci zabezpečení. Výsledkem zprávy následné klienta <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit relaci zabezpečené službou odeslat další zprávy nebo použijte tokenu kontextu stavová zabezpečení. Tokeny kontextu zabezpečení stavová také povolit zabezpečené relace zůstanou zachovány i recyklovány webového serveru. Další informace o používání tokenů stavová kontextu zabezpečení v zabezpečené relaci najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Alternativně můžete zakázat zabezpečených relací. Při použití [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) vazby, můžete nastavit `establishSecurityContext` vlastnost `false` zakázání zabezpečených relací. Zakázání zabezpečených relací u dalších vazeb, musíte vytvořit vlastní vazby. Podrobnosti o vytváření vlastních vazeb najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některý z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
   
 <a name="BKMK_q2"></a>   
 ## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a>Moje služba začne odmítnout nové klienty po asi 10 klienti komunikují s ním. Co se děje?  
@@ -145,7 +145,7 @@ public class MyServiceHost : ServiceHost
   
     4.  Zaregistrujte novou hlavního názvu služby k doméně pomocí nástroje SetSPN. Všimněte si, že musíte být správce domény, pokud to chcete provést.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] protokol Kerberos najdete v části [zabezpečení koncepty používané ve službě WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) a:  
+ Další informace o protokolu Kerberos najdete v tématu [zabezpečení koncepty používané ve službě WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) a:  
   
 -   [Ladění chyb u ověřování Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
   
@@ -175,7 +175,7 @@ public class MyServiceHost : ServiceHost
   
  Pokud je to tento případ, musí udělit přístup pro čtení oprávnění k účtu procesu pro soubor obsahující privátní klíč. Například pokud pracovní proces služby IIS běží pod účtem Bob, pak musíte poskytnout přístup pro čtení Bob k souboru, který obsahuje soukromý klíč.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] jak poskytnout správné uživatelský účet přístup k souboru, který obsahuje soukromý klíč pro konkrétní certifikát X.509, najdete v části [postup: usnadnit X.509 certifikáty přístup do WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
+ Další informace o tom, jak poskytnout správné uživatelský účet přístup k souboru, který obsahuje soukromý klíč pro konkrétní certifikát X.509 najdete v tématu [postup: usnadnit X.509 certifikáty přístup do WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
   
 <a name="BKMK_q88"></a>   
 ## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a>První parametr operace bylo změněno z velkých písmen na malá písmena; Teď Moje klienta vyvolá výjimku. Co se děje?  

@@ -1,34 +1,36 @@
 ---
-title: "Postupy: přizpůsobení vazby poskytované systémem"
-ms.custom: 
+title: 'Postupy: přizpůsobení vazby poskytované systémem'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a9b048b5c57d174ac921793ee8677622b88a0595
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1d70a4c4234047e7410ae4f631e48595a0859f37
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>Postupy: přizpůsobení vazby poskytované systémem
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti. Toto téma ukazuje, jak nastavit vlastnosti u elementů vazby k vytvoření vlastní vazby.  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti. Toto téma ukazuje, jak nastavit vlastnosti u elementů vazby k vytvoření vlastní vazby.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak přímo vytvářet a konfigurovat prvky vazeb bez použití vazby poskytované systémem, najdete v článku [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Další informace o tom, jak přímo vytvořit a nakonfigurovat prvky vazeb bez použití vazby poskytované systémem najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytváření a rozšíření vlastních vazeb, najdete v části [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+ Další informace o vytváření a rozšíření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
   
  V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny vazby jsou tvořeny *elementů vazby*. Každý prvek vazba je odvozena z <xref:System.ServiceModel.Channels.BindingElement> třídy. Vazby poskytované systémem, jako <xref:System.ServiceModel.BasicHttpBinding> vytvořit a nakonfigurovat vlastní prvky vazeb. Toto téma ukazuje, jak získávat přístup a měnit vlastnosti z těchto elementů vazby, které nejsou přímo přístupné na vazby; Konkrétně <xref:System.ServiceModel.BasicHttpBinding> třídy.  
   

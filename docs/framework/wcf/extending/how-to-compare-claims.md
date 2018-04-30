@@ -1,12 +1,13 @@
 ---
-title: "Postupy: Porovnávání deklarací"
-ms.custom: 
+title: 'Postupy: Porovnávání deklarací'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,19 +16,20 @@ helpviewer_keywords:
 - claims [WCF], comparing
 - claims [WCF]
 ms.assetid: 0c4ec84d-53df-408f-8953-9bc437f56c28
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bf7a621a7aa457b2993c761caa2ad576d216638b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5188ed17e3a10bfd93b885fcdd93e01391dd8256
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-compare-claims"></a>Postupy: Porovnávání deklarací
-Infrastruktura Identity modelu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] se používá k provádění kontroly autorizace. Běžné úlohy jako takový je k porovnání deklarací identity v kontextu autorizace deklarací potřeba provést požadovanou akci nebo přístupu k požadovanému zdroji. Toto téma popisuje, jak má být porovnán nároky, včetně typů předdefinované a vlastní deklarace identity. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]infrastruktury modelu Identity, najdete v části [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
+Infrastruktura Identity modelu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] se používá k provádění kontroly autorizace. Běžné úlohy jako takový je k porovnání deklarací identity v kontextu autorizace deklarací potřeba provést požadovanou akci nebo přístupu k požadovanému zdroji. Toto téma popisuje, jak má být porovnán nároky, včetně typů předdefinované a vlastní deklarace identity. Další informace o modelu Identity infrastruktury najdete v tématu [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
   
  Porovnání deklarace identity spočívá v porovnání tři části deklarace (typ práva a prostředků) proti stejné části v jiné deklarace identity, pokud chcete zobrazit, pokud jsou stejné. Podívejte se na téma v následujícím příkladu.  
   

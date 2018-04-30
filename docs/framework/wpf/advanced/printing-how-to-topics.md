@@ -1,34 +1,36 @@
 ---
-title: "Postupy: Témata tisku"
-ms.custom: 
+title: 'Postupy: Témata tisku'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - printing [WPF]
 - print system management [WPF]
 ms.assetid: 5f3d391a-4afd-49ee-ad99-ceb737c0c8a8
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9647ce04528df390620dba67619a538d96aa7068
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0865e0f2d28ec44647882c030050638144fa715d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
 Témata v této části ukazují, jak používat tisk a funkce správy tiskový systém součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a také nové [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] tiskové cestu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vyvolání dialogového okna Tisk](../../../../docs/framework/wpf/advanced/how-to-invoke-a-print-dialog.md)  
- Pokyny pro XAML značek deklarovat [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] Tisk objektu dialogového okna a použití kódu k vyvolání dialogu uvnitř [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] aplikace.  
+ Pokyny pro XAML značek deklarovat [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] Tisk objektu dialogového okna a použití kódu k vyvolání dialogu z v aplikaci Windows Presentation Foundation (WPF).  
   
  [Klonování tiskárny](../../../../docs/framework/wpf/advanced/how-to-clone-a-printer.md)  
  Pokyny k instalaci druhé tiskové fronty pomocí stejné vlastnosti jako existující tiskovou frontu.  

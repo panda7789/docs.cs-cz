@@ -19,14 +19,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 95e27941cece3bfb96c4567516d07bcbe07c7490
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 8cd3e7f5ac8f129e29ed080cbf510dfe106edfb7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="understanding-generated-client-code"></a>Principy generovaného klientského kódu
-[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje kód klienta a konfigurační soubor aplikace klienta pro použití při vytváření klientské aplikace. Toto téma obsahuje přehled používání příklady generovaný kód pro scénáře kontraktu služby na úrovni standard. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] vytvoření klientských aplikací pomocí generovaného kódu, najdete v části [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md).  
+[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje kód klienta a konfigurační soubor aplikace klienta pro použití při vytváření klientské aplikace. Toto téma obsahuje přehled používání příklady generovaný kód pro scénáře kontraktu služby na úrovni standard. Další informace o vytváření klientských aplikací pomocí generovaného kódu najdete v tématu [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md).  
   
 ## <a name="overview"></a>Přehled  
  Pokud používáte Visual Studio k vygenerování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] typů klientů pro svůj projekt, obvykle není nutné prozkoumat kód klienta vygenerovaný. Pokud nepoužíváte vývojového prostředí, které provádí stejné služby pro vás, můžete generovat kód klienta a pak pomocí tohoto kódu k vývoji klientskou aplikaci nástroje, jako je Svcutil.exe.  
@@ -73,10 +73,10 @@ ms.lasthandoff: 04/28/2018
   
  [!code-csharp[C_GeneratedCodeFiles#30](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#30)]  
   
- V takovém případě datový typ je typ podrobností vyvolané určité výjimky na straně klienta <xref:System.ServiceModel.FaultException%601> kde parametr typu podrobností je `microsoft.wcf.documentation.SampleFault`. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] datové typy, najdete v části [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] zpracování výjimek v klientech, najdete v části [odesílání a přijímání chyb](../../../../docs/framework/wcf/sending-and-receiving-faults.md).  
+ V takovém případě datový typ je typ podrobností vyvolané určité výjimky na straně klienta <xref:System.ServiceModel.FaultException%601> kde parametr typu podrobností je `microsoft.wcf.documentation.SampleFault`. Další informace o typech dat najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Další informace o zpracování výjimek v klientech najdete v tématu [odesílání a přijímání chyb](../../../../docs/framework/wcf/sending-and-receiving-faults.md).  
   
 ### <a name="finding-callback-contracts-for-duplex-services"></a>Hledání kontrakty zpětného volání pro duplexní služby  
- Pokud vyhledat kontraktu služby, pro který rozhraní kontrakt Určuje hodnotu <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> vlastnost a potom tento kontrakt určuje duplexního kontraktu. Duplexní kontrakty vyžadují klientská aplikace vytvořte třídu zpětného volání, která implementuje kontrakt zpětného volání a předat instance této třídy <xref:System.ServiceModel.DuplexClientBase%601?displayProperty=nameWithType> nebo <xref:System.ServiceModel.DuplexChannelFactory%601?displayProperty=nameWithType> používaný ke komunikaci se službou. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] duplexní klientů naleznete v tématu [postupy: přístup k službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md).  
+ Pokud vyhledat kontraktu služby, pro který rozhraní kontrakt Určuje hodnotu <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> vlastnost a potom tento kontrakt určuje duplexního kontraktu. Duplexní kontrakty vyžadují klientská aplikace vytvořte třídu zpětného volání, která implementuje kontrakt zpětného volání a předat instance této třídy <xref:System.ServiceModel.DuplexClientBase%601?displayProperty=nameWithType> nebo <xref:System.ServiceModel.DuplexChannelFactory%601?displayProperty=nameWithType> používaný ke komunikaci se službou. Další informace o klientech, duplexní najdete v tématu [postupy: přístup k službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md).  
   
  Následující kontrakt určuje kontraktu zpětného volání typu `SampleDuplexHelloCallback`.  
   

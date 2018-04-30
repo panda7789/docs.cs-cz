@@ -19,18 +19,18 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-caps.latest.revision: ''
+caps.latest.revision: 36
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 156ef0f063219f5e78084dd664b64699d33e6593
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 473669b4aaa0782fec32fb0e2d89875c4ab7a838
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="composite-formatting"></a>Složené formátování
 Složené formátování funkce .NET vezme jako vstupní seznam objektů a složený formátovací řetězec. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
@@ -64,7 +64,7 @@ Složené formátování funkce .NET vezme jako vstupní seznam objektů a slož
 ## <a name="format-item-syntax"></a>Syntaxe položky formátu  
  Jednotlivé položky formátu mají následující podobu a skládají se z následujících součástí:  
   
- `{` *index*[`,`*alignment*][`:`*formatString*]`}`  
+ `{` *Index*[`,`*zarovnání*] [`:`*formatString*]`}`  
   
  Jsou požadovány odpovídající složené závorky ("{" a "}").  
   
@@ -74,12 +74,12 @@ Složené formátování funkce .NET vezme jako vstupní seznam objektů a slož
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- Více položek formátu může odkazovat na stejný prvek v seznamu objektů zadáním stejného specifikátoru parametru. Například můžete zadáním složený formátovací řetězec formátu stejnou číselnou hodnotu ve formátu hexadecimální, vědecké a číslo: "0 x {0: x} {0:E} {0: n}", jak ukazuje následující příklad.  
+ Více položek formátu může odkazovat na stejný prvek v seznamu objektů zadáním stejného specifikátoru parametru. Například můžete zadáním složený formátovací řetězec formátu stejnou číselnou hodnotu ve formátu hexadecimální, vědecké a číslo: "0 x{0:X} {0:E} {0:N}", jak ukazuje následující příklad.  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
   
- Každá položka formátu může odkazovat na libovolný objekt v seznamu. Například pokud existují tři objekty, lze formátovat druhý, první a třetí objekt zadáním složeného řetězce formátu tímto způsobem: "{1} {0} {2}". Objekt, který není odkazován položkou formátu, je ignorován. A <xref:System.FormatException> je vyvolána za běhu, pokud specifikátor parametru označí položku mimo hranice seznamu objektů.  
+ Každá položka formátu může odkazovat na libovolný objekt v seznamu. Například pokud existují tři objekty, můžete naformátovat druhé, první a třetí objekt zadáním složený formátovací řetězec takto: "{1} {0} {2}". Objekt, který není odkazován položkou formátu, je ignorován. A <xref:System.FormatException> je vyvolána za běhu, pokud specifikátor parametru označí položku mimo hranice seznamu objektů.  
   
 ### <a name="alignment-component"></a>Součást Zarovnání  
  Volitelné *zarovnání* součást je znaménkem udávající šířku pole upřednostňovaného formátu. Pokud hodnota *zarovnání* je menší než délka formátovaný řetězec *zarovnání* je ignorován a délka formátovaný řetězec se používá jako šířka pole. Formátovaná data v poli je zarovnaný doprava pokud *zarovnání* kladné a v případě zarovnaný doleva *zarovnání* záporné. Pokud je vyžadováno odsazení obsahu, jsou použity prázdné znaky. Čárkou je povinný, pokud *zarovnání* je zadán.  
@@ -105,7 +105,7 @@ Složené formátování funkce .NET vezme jako vstupní seznam objektů a slož
 ### <a name="escaping-braces"></a>Řídicí znaky pro složené závorky  
  Levá a pravá složená závorka se interpretuje jako počátek a konec položky formátu. V důsledku toho je nutné použít sekvenci řídicích znaků pro zobrazení literální levé a pravé složené závorky. Chcete-li zobrazit jednu levou složenou závorku ("{"), zadejte dvě levé složené závorky ("{{"); chcete-li zobrazit jednu pravou složenou závorku ("}"), zadejte dvě pravé závorky ("}}"). Složené závorky v položce formátu jsou interpretovány postupně v pořadí, v jakém se vyskytují. Interpretace vnořených složených závorek není podporována.  
   
- Způsob, jakým jsou interpretovány složené závorky vložené pomocí řídicích znaků, může vést k neočekávaným výsledkům. Předpokládejte například položku formátu {{{0:D}}}, která je určena k zobrazování levé složené závorky, číselnou hodnotu formátovanou jako desítkové číslo a pravou složenou závorku. Položka formátu je však ve skutečnosti interpretována následujícím způsobem:  
+ Způsob, jakým jsou interpretovány složené závorky vložené pomocí řídicích znaků, může vést k neočekávaným výsledkům. Představte si třeba položky formátu "{{{0:D}}}", který slouží k zobrazení žádná levá složená závorka, číselnou hodnotu formátu desetinného čísla a pravé složené závorce. Položka formátu je však ve skutečnosti interpretována následujícím způsobem:  
   
 1.  První dvě levé složené závorky ("{{") jsou tvořeny řídicími znaky, a proto je výsledkem jedna levá závorka.  
   
@@ -137,7 +137,7 @@ Složené formátování funkce .NET vezme jako vstupní seznam objektů a slož
   
     -   Pro hodnoty data a času, pokud složeného formátování metoda s jinou hodnotou null <xref:System.IFormatProvider> argument je volána, požadavky modulu runtime <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud složené formátování metoda nemá <xref:System.IFormatProvider> parametr <xref:System.Globalization.DateTimeFormatInfo> objektu pro aktuální jazykovou verzi vlákna se používá.  
   
-    -   Pro jiné typy, pokud složené formátování volána s objekty <xref:System.IFormatProvider> argument, jeho hodnota (včetně `null`, pokud žádné <xref:System.IFormatProvider> zadaný objekt) je předán přímo na <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  V opačném <xref:System.Globalization.CultureInfo> předaný objekt, který představuje aktuální jazykovou verzi vlákna <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
+    -   Pro jiné typy objektů, pokud složené formátování metoda je volána s <xref:System.IFormatProvider> argument, jeho hodnota je předána přímo na <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace. V opačném `null` je předán <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
   
 4.  Typ elementu bez parametrů `ToString` metoda, která buď přepisuje <xref:System.Object.ToString?displayProperty=nameWithType> nebo dědí chování její základní třída, je volána. V takovém případě řetězec formátu určeného *formatString* součástí položku formátu, pokud je k dispozici, je ignorováno.  
   

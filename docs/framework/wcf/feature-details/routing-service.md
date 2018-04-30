@@ -1,24 +1,26 @@
 ---
-title: "Směrovací služba"
-ms.custom: 
+title: Směrovací služba
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7214a14b11ae1f91906c8d2140bc82836988390
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8ff2a99bc06ab0de2aedce98ea029f484e47053f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="routing-service"></a>Směrovací služba
 Služba Směrování je obecný prostředník SOAP, který funguje jako směrovač zpráv. Základní funkce služby směrování je umožňuje směrovat zprávy na základě obsahu zprávy, která umožňuje zprávu, která se předají do koncového bodu klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.  
@@ -98,12 +100,12 @@ Služba Směrování je obecný prostředník SOAP, který funguje jako směrova
   
  Pokud zaznamená službu Směrování <xref:System.ServiceModel.CommunicationException> při pokusu o odeslání zprávy, bude zpracování chyb probíhat.  Tyto výjimky typicky značí, že došlo k potížím při pokusu o komunikaci s koncového bodu definovaného klienta, například <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException>, nebo <xref:System.ServiceModel.CommunicationObjectFaultedException>.  Kód pro ošetření chyb rovněž catch a pokus opakujte při odesílání **TimeoutException** dojde, což je další běžné výjimku, který není odvozen od **communicationexception –**.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Chyba při zpracování úloh, naleznete v [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md).  
+ Další informace o zpracování chyb najdete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md).  
   
 ## <a name="backup-endpoints"></a>Zálohování koncové body  
  Kromě cílové koncové body klientů spojené s každou definici filtru ve filtru tabulky můžete také vytvořit seznam zálohování koncových bodů, které se zpráva bude směrovat na selhání přenosu. Pokud dojde k chybě a seznam zálohování je definován pro položku filtru, směrovací služby se pokusí odeslat zprávu na první koncový bod definované v seznamu. Pokud tento přenos pokus selže, služby zkuste další koncový bod a tento proces pokračovat, dokud se pokus o přenos úspěšně, vrátí že chybu související jiný přenos nebo všechny koncové body v záložním seznamu, aby vrátil chybu přenosu.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]zálohování koncové body, najdete v části [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md) a [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
+ Další informace o zálohování koncové body najdete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md) a [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
   
 ## <a name="streaming"></a>streamování  
  Služba směrování může úspěšně stream zpráv, pokud jste nastavili vazby pro podporu streamování.  Existují však některé podmínky, za kterých zprávy muset uložená do vyrovnávací paměti:  

@@ -1,12 +1,13 @@
 ---
-title: "Zdroj, obsah a datové soubory zdroje aplikací WPF"
-ms.custom: 
+title: Zdroj, obsah a datové soubory zdroje aplikací WPF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -24,19 +25,20 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 284c3b6788fd43a10d65cfa8bd6c032e4b1e1cd6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bcf0a725b7b3467a50a9f51850709dd972da217d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
-[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]aplikace často závisí na soubory, které obsahují data spustitelný soubor, jako například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]nabízí zvláštní podporu pro konfiguraci, identifikace a použití těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se pohybuje kolem konkrétní sadu typy souborů dat aplikace, včetně:  
+[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace často závisí na soubory, které obsahují data spustitelný soubor, jako například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikace a použití těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se pohybuje kolem konkrétní sadu typy souborů dat aplikace, včetně:  
   
 -   **Soubory prostředků**: datové soubory, které jsou zkompilovány do buď spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  Jeden rozlišení, aby mezi tyto tři typy souborů je, že zdrojových souborů a soubory obsahu se ví, že v čase vytvoření buildu; sestavení má explicitní znalosti z nich. Pro lokalitu zdroji souborů, ale sestavení může mít žádné znalosti z nich, nebo implicitní znalosti prostřednictvím sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkaz; v případě, není zaručeno, že odkazovaného webu zdrojový soubor skutečně existuje.  
   
- Chcete-li datové soubory aplikace [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] používá sada [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] schéma, které je podrobně popsaná v [Pack identifikátory URI v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)).  
+ Chcete-li datové soubory aplikace, Windows Presentation Foundation (WPF) používá sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] schéma, které je podrobně popsaná v [Pack identifikátory URI v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)).  
   
  Toto téma popisuje, jak konfigurovat a používat soubory dat aplikace.  
   
@@ -85,7 +87,7 @@ ms.lasthandoff: 12/22/2017
  Při sestavení projektu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] kompilovaný prostředku do sestavení.  
   
 ### <a name="using-resource-files"></a>Pomocí soubory prostředků  
- Chcete-li načíst soubor prostředků, můžete zavolat <xref:System.Windows.Application.GetResourceStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující souboru požadovaného prostředku. <xref:System.Windows.Application.GetResourceStream%2A>Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje soubor prostředků jako <xref:System.IO.Stream> a popisuje typ obsahu.  
+ Chcete-li načíst soubor prostředků, můžete zavolat <xref:System.Windows.Application.GetResourceStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující souboru požadovaného prostředku. <xref:System.Windows.Application.GetResourceStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje soubor prostředků jako <xref:System.IO.Stream> a popisuje typ obsahu.  
   
  Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetResourceStream%2A> načíst <xref:System.Windows.Controls.Page> prostředků souborů a nastavte jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`):  
   
@@ -165,7 +167,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> Hodnota je také s hodnotou obsahující cestu k souboru obsahu do výstupní složky sestavení.  
   
 ### <a name="using-content-files"></a>Pomocí souborů obsahu  
- Chcete-li načíst soubor obsahu, můžete zavolat <xref:System.Windows.Application.GetContentStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující soubor požadovaného obsahu. <xref:System.Windows.Application.GetContentStream%2A>Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje soubor obsahu jako <xref:System.IO.Stream> a popisuje typ obsahu.  
+ Chcete-li načíst soubor obsahu, můžete zavolat <xref:System.Windows.Application.GetContentStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující soubor požadovaného obsahu. <xref:System.Windows.Application.GetContentStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje soubor obsahu jako <xref:System.IO.Stream> a popisuje typ obsahu.  
   
  Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetContentStream%2A> načíst <xref:System.Windows.Controls.Page> obsahu souboru a nastavte jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`).  
   
@@ -227,7 +229,7 @@ ms.lasthandoff: 12/22/2017
  Při sestavení projektu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] zkopíruje zadané soubory do výstupní složky sestavení.  
   
 ### <a name="using-site-of-origin-files"></a>Pomocí lokality počátek souborů  
- Chcete-li načíst lokality zdrojový soubor, můžete zavolat <xref:System.Windows.Application.GetRemoteStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující požadovaného webu zdrojový soubor. <xref:System.Windows.Application.GetRemoteStream%2A>Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje lokalitě jako zdrojový soubor <xref:System.IO.Stream> a popisuje typ obsahu.  
+ Chcete-li načíst lokality zdrojový soubor, můžete zavolat <xref:System.Windows.Application.GetRemoteStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující požadovaného webu zdrojový soubor. <xref:System.Windows.Application.GetRemoteStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje lokalitě jako zdrojový soubor <xref:System.IO.Stream> a popisuje typ obsahu.  
   
  Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetRemoteStream%2A> načíst <xref:System.Windows.Controls.Page> lokality původu souboru a nastavte jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`).  
   

@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d9650fd6a4fa40cb425c9f15d4a12e6c73d8c599
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c182cf5e5cc9346645f15293060671a0a0ce1caf
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], může odesílat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  
@@ -52,11 +52,11 @@ ms.lasthandoff: 04/28/2018
   
 -   **Interoperabilita**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] implementuje moderní oborových standardů interoperability webové služby. [!INCLUDE[crabout](../../../includes/crabout-md.md)] najdete v části Podporované standardy [vzájemná spolupráce a integrace](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] implementuje moderní oborových standardů interoperability webové služby. Další informace o podporovaných standardy najdete v tématu [vzájemná spolupráce a integrace](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).  
   
 -   **Více vzorů zpráv**  
   
-     Zprávy se vyměňují v jednom z několika vzory. Nejběžnější vzor je požadavek nebo odpověď vzor, kde jeden koncový bod vyžaduje data z druhého koncového bodu. Druhý odpovědi koncového bodu. Existují další vzory, jako je jednosměrný zpráv, ve kterém jeden koncový bod odešle zprávu bez jakékoli očekávání odpověď. Složitější vzor je vzor duplexní exchange, kde dva koncové body připojení a odesílat data a zpět, podobně jako program pro zasílání rychlých zpráv. [!INCLUDE[crabout](../../../includes/crabout-md.md)] jak implementovat jiná zpráva exchange vzory pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [kontrakty](../../../docs/framework/wcf/feature-details/contracts.md).  
+     Zprávy se vyměňují v jednom z několika vzory. Nejběžnější vzor je požadavek nebo odpověď vzor, kde jeden koncový bod vyžaduje data z druhého koncového bodu. Druhý odpovědi koncového bodu. Existují další vzory, jako je jednosměrný zpráv, ve kterém jeden koncový bod odešle zprávu bez jakékoli očekávání odpověď. Složitější vzor je vzor duplexní exchange, kde dva koncové body připojení a odesílat data a zpět, podobně jako program pro zasílání rychlých zpráv. Další informace o tom, jak implementovat vzory jiná zpráva exchange pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [kontrakty](../../../docs/framework/wcf/feature-details/contracts.md).  
   
 -   **Metadata služby**  
   
@@ -72,11 +72,11 @@ ms.lasthandoff: 04/28/2018
   
 -   **Více přenosy a kódování**  
   
-     Na žádném z několik předdefinovaných přenosové protokoly a kódování nelze odesílat zprávy. Nejvíce běžné protokolu a kódování, je odesílání text kódovaný protokolu SOAP zprávy pomocí protokol HTTP (HyperText Transfer) pro použití na Internetu. Alternativně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje odesílání zpráv přes protokol TCP, pojmenované kanály nebo služby MSMQ. Tyto zprávy mohou být kódovaný jako text nebo pomocí optimalizované binární formát.  Binární data můžete efektivně pomocí standardní MTOM odeslat. Pokud zadaný přenosy ani kódování podle potřeby můžete vytvořit vlastní vlastní přenos nebo kódování. [!INCLUDE[crabout](../../../includes/crabout-md.md)] přenosy a nepodporuje kódování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).  
+     Na žádném z několik předdefinovaných přenosové protokoly a kódování nelze odesílat zprávy. Nejvíce běžné protokolu a kódování, je odesílání text kódovaný protokolu SOAP zprávy pomocí protokol HTTP (HyperText Transfer) pro použití na Internetu. Alternativně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje odesílání zpráv přes protokol TCP, pojmenované kanály nebo služby MSMQ. Tyto zprávy mohou být kódovaný jako text nebo pomocí optimalizované binární formát.  Binární data můžete efektivně pomocí standardní MTOM odeslat. Pokud zadaný přenosy ani kódování podle potřeby můžete vytvořit vlastní vlastní přenos nebo kódování. Další informace o přenosy a nepodporuje kódování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).  
   
 -   **Spolehlivé a zařazených do fronty zpráv**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje systém exchange spolehlivé zpráv pomocí spolehlivé relace implementuje přes WS-spolehlivé zasílání zpráv a pomocí služby MSMQ. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Podpora spolehlivé a zařazených do fronty zasílání zpráv v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [fronty a spolehlivé relace](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje systém exchange spolehlivé zpráv pomocí spolehlivé relace implementuje přes WS-spolehlivé zasílání zpráv a pomocí služby MSMQ. Další informace o zasílání zpráv zařazených do fronty a spolehlivé podporovat v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [fronty a spolehlivé relace](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).  
   
 -   **Trvanlivý zprávy**  
   
@@ -84,7 +84,7 @@ ms.lasthandoff: 04/28/2018
   
 -   **Transakce**  
   
-     WCF také podporuje transakce pomocí jedné z tři modely transakcí: WS-AtomicTtransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. [!INCLUDE[crabout](../../../includes/crabout-md.md)] Podpora transakcí v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).  
+     WCF také podporuje transakce pomocí jedné z tři modely transakcí: WS-AtomicTtransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. Další informace o transakci podporují v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] najdete v části [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).  
   
 -   **Rozhraní AJAX a podpora REST**  
   
@@ -92,7 +92,7 @@ ms.lasthandoff: 04/28/2018
   
 -   **Rozšíření**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Architektura má počet bodů rozšiřitelnosti. Pokud je potřeba další funkce, je počet vstupních bodů, které umožňují přizpůsobit chování služby. [!INCLUDE[crabout](../../../includes/crabout-md.md)] body rozšiřitelnosti k dispozici, najdete v části [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Architektura má počet bodů rozšiřitelnosti. Pokud je potřeba další funkce, je počet vstupních bodů, které umožňují přizpůsobit chování služby. Další informace o dostupných rozšíření najdete v části bodů [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).  
   
 ## <a name="wcf-integration-with-other-microsoft-technologies"></a>WCF integrace s jinými technologiemi společnosti Microsoft  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je flexibilní platforma. Z důvodu tuto flexibilitu potřebují extrémně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] se také používá v několika dalších produktů společnosti Microsoft. Porozuměním Základy [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], máte okamžitě využívat, pokud používáte některý z těchto produktů.  

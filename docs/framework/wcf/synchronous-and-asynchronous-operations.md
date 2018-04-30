@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 123186dd5f0d63693c04c0857709292ce122f918
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c626699dc5291f4d4f6d432e89708661b233f16d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
@@ -51,7 +51,7 @@ Toto téma popisuje implementace a volání operace asynchronní služby.
   
 -   Použijte asynchronní přístup v klientovi nebo volající aplikace v následujících případech:  
   
--   Pokud jsou volání operace z aplikace střední vrstvy. ([!INCLUDE[crabout](../../../includes/crabout-md.md)] takových scénářů, najdete v části [klientské aplikace střední vrstvy](../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).)  
+-   Pokud jsou volání operace z aplikace střední vrstvy. (Další informace o těchto scénářích najdete v tématu [klientské aplikace střední vrstvy](../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).)  
   
 -   Pokud jsou volání operace v rámci stránky ASP.NET, použijte asynchronní stránky.  
   

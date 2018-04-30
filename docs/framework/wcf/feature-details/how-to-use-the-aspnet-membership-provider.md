@@ -1,28 +1,30 @@
 ---
-title: "Postupy: Používání poskytovatele členství ASP.NET"
-ms.custom: 
+title: 'Postupy: Používání poskytovatele členství ASP.NET'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF and ASP.NET
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6c5042e73945c54da2b1ee71fc5ea61727dc73c8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 19fb83d21c77f3206c314a2e6c40562fcb75f151
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Postupy: Používání poskytovatele členství ASP.NET
 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Zprostředkovatele členství je funkce, která umožňuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojářům vytvářet weby, které umožňuje uživatelům vytvářet jedinečná uživatelská jména a hesla kombinace. S Pokud tuto funkci můžete každý uživatel zřídit účet s lokalitou a přihlášení výhradní přístup k webu a jeho služeb. Tím se liší od zabezpečení systému Windows, která vyžaduje, aby uživatelé mají účty v doméně systému Windows. Každý uživatel, který poskytuje své přihlašovací údaje (kombinace uživatelského jména a hesla), můžete místo toho použijte webu a jeho služeb.  
@@ -31,10 +33,10 @@ ms.lasthandoff: 12/22/2017
   
  Funkce členství vyžaduje použití databáze systému SQL Server k ukládání informací o uživateli. Tato funkce také obsahuje metody pro dotazování s dotaz uživatelé, kteří zapomenou své heslo.  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Vývojáři mohou využít těchto funkcí z bezpečnostních důvodů. Při integraci do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, musí uživatelé zadat uživatelské jméno a heslo kombinaci k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientské aplikace. K přenosu dat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, použijte vazbu, která podporuje pověření jména a hesla uživatele, například <xref:System.ServiceModel.WSHttpBinding> (v konfiguraci [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) a nastavit pověření klienta typ, který má `UserName`. Ve službě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení ověřuje uživatele na základě uživatelské jméno a heslo a také přiřazuje role určeného [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role.  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Vývojáři mohou využít těchto funkcí z bezpečnostních důvodů. Při integraci do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, musí uživatelé zadat uživatelské jméno a heslo kombinaci k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientské aplikace. K přenosu dat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, použijte vazbu, která podporuje pověření jména a hesla uživatele, například <xref:System.ServiceModel.WSHttpBinding> (v konfiguraci [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) a nastavit pověření klienta typ, který má `UserName`. Ve službě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení ověřuje uživatele na základě uživatelské jméno a heslo a také přiřazuje role určeného [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role.  
   
 > [!NOTE]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]neposkytuje metody k naplnění databáze s kombinací uživatelské jméno a heslo nebo Další informace o uživateli.  
+>  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] neposkytuje metody k naplnění databáze s kombinací uživatelské jméno a heslo nebo Další informace o uživateli.  
   
 ### <a name="to-configure-the-membership-provider"></a>Chcete-li konfigurovat členství  
   
@@ -71,7 +73,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  V konfiguračním souboru v části [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) elementu, přidejte [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element.  
   
-2.  Přidat [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) do části vazby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby elementu, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+2.  Přidat [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) do části vazby. Další informace o vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby elementu, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
 3.  Nastavte `mode` atribut `<security>` element `Message`.  
   

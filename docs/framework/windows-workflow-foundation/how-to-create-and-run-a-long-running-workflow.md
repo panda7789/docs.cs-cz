@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 10ca88533297e56d48b73b6368c2e8457380f543
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: c7776c9155ef2c2c5c4ea804285cd67e995ef119
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup
 Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinnosti pracovní postupy pro databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) ukázán základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady byly uvedeny počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a opětovné záložky. K prokázání efektivně trvalost pracovního postupu, je vyžadován složitější hostitel pracovního postupu spuštění a obnovení několik instancí pracovního postupu, která podporuje. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitele formuláře systému Windows, aplikace, která podporuje spouštění a obnovení více instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce jako sledování a správa verzí, které jsou ukázáno v kurzu následné kroky.  
@@ -703,7 +703,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     ```  
   
 ###  <a name="BKMK_WorkflowVersionMap"></a> Chcete-li povolit spuštění a obnovení více typů pracovního postupu  
- Chcete-li obnovit instanci pracovního postupu, hostitel má zajistit definice pracovního postupu. V tomto kurzu existují tři typy pracovního postupu a následné kroky kurzu zavádět několik verzí z těchto typů. `WorkflowIdentity` poskytuje způsob, jak hostitelskou aplikaci přidružení identifikační informace k instanci pracovního postupu trvalý. Postup v této části ukazují, jak vytvořit třídu nástroj vám pomůže při mapování identitu pracovního postupu z instance pracovního postupu trvalou na odpovídající definice pracovního postupu. [!INCLUDE[crabout](../../../includes/crabout-md.md)] `WorkflowIdentity` a správa verzí, najdete v části [pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
+ Chcete-li obnovit instanci pracovního postupu, hostitel má zajistit definice pracovního postupu. V tomto kurzu existují tři typy pracovního postupu a následné kroky kurzu zavádět několik verzí z těchto typů. `WorkflowIdentity` poskytuje způsob, jak hostitelskou aplikaci přidružení identifikační informace k instanci pracovního postupu trvalý. Postup v této části ukazují, jak vytvořit třídu nástroj vám pomůže při mapování identitu pracovního postupu z instance pracovního postupu trvalou na odpovídající definice pracovního postupu. Další informace o `WorkflowIdentity` a správu verzí, najdete v části [pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
   
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **třída**. Typ `WorkflowVersionMap` do **název** pole a klikněte na tlačítko **přidat**.  
   

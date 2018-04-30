@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 70f8c1f89a5570f5b77eaba1bf72c42706d88947
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 00b3687169aa2e5521a3e3348be2a45738e97093
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>Určování a zpracování chyb v kontraktech a službách
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace zpracování chyby situacích mapování objektů spravovaných výjimek na protokolu SOAP selhání objekty a objekty chybu protokolu SOAP na objekty spravovaných výjimek. Témata v této části popisují postup návrhu kontrakty vystavit chyba podmínek jako vlastní chyb SOAP, jak vracet tyto chyby v rámci implementace služby a jak klienti catch takové chyby.  
@@ -47,7 +47,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="map-exceptions-to-soap-faults"></a>Mapování výjimky na chyb SOAP  
  Prvním krokem při vytváření operace, která zpracovává chybové stavy je rozhodnout, za jakých podmínek klientskou aplikaci informováni o chybách. Některé operace mít chybové stavy, které jsou specifické pro jejich funkce. Například `PurchaseOrder` operace může vrátit konkrétní informace pro zákazníky, kteří jsou již povolen zahájíte nákupní objednávka. V ostatních případech, jako `Calculator` služby, další Obecné `MathFault` chybu protokolu SOAP, pravděpodobně bude moci popisují všechny chybové stavy v celé služby. Jakmile chybové stavy klientů služby jsou určeny, lze sestavit vlastní chybu protokolu SOAP a operace může být označen jako vrátí tuto chybu protokolu SOAP, když dojde k jeho odpovídající chybový stav.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Tento krok vývoje služby nebo klienta, najdete v části [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).  
+ Další informace o tomto kroku vývoje služba nebo klienta najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).  
   
 ## <a name="clients-and-services-handle-soap-faults-as-exceptions"></a>Služby a klienti zpracování chyb SOAP jako výjimky  
  Identifikace operace chybové stavy, definování vlastních chyb protokolu SOAP a označení tyto operace jako vrácení tyto chyby jsou první kroky v úspěšné zpracování chyb v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace. Dalším krokem je správně implementovat odesílání a příjem těchto chyb. Obvykle služby posílat chyb, které informují klientské aplikace o chybové stavy ale duplexní klientů můžete také odeslat chyb SOAP služby.  

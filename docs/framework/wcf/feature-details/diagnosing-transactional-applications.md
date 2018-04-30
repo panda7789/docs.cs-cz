@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a730daeadbed0f7453b8312612c096846d4e2cda
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 5b8171f382812480078b76588089871233bdf9ca
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
 Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce správy a diagnostických nástrojů k řešení potíží s transakční aplikace.  
@@ -58,7 +58,7 @@ Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/ind
 |Počet plynoucích transakcí za sekundu|Počet transakcí plynoucích do operací na tento koncový bod v rámci každou sekundu. Tento čítač se zvýší, když transakce je součástí zprávu, která je odeslána koncovému bodu.|  
   
 ## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] přístup k datům rozhraní WMI, najdete v části [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). Další informace o přístup k datům WMI najdete v tématu [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
  Počet jen pro čtení vlastnosti WMI znamenat nastavení transakcí na použité pro službu. V následujících tabulkách najdete tato nastavení.  
   

@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bcb64a4e03cae5e6186754dacb87e17a22d13001
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2516a80f8d92b4e64372be140d2ee3d5db4c7b54
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndikace
 Rozhraní API syndikace určená k poskytování formátu jazykově neutrální programovací model, který umožňuje syndikovaný obsah má být zapsán k přenosu v různých formátech. Abstraktní datového modelu se skládá z následujících tříd:  
@@ -43,7 +43,7 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
  [!code-csharp[S_UE_SyndicationBoth#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_syndicationboth/cs/service.cs#0)]  
   
- Podpora syndikace je postavený na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, která definuje <xref:System.ServiceModel.WebHttpBinding> vazby, který se používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior> chcete zpřístupnit informační kanály jako služby. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, najdete v části [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
+ Podpora syndikace je postavený na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, která definuje <xref:System.ServiceModel.WebHttpBinding> vazby, který se používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior> chcete zpřístupnit informační kanály jako služby. Další informace o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, najdete v části [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
   
 > [!NOTE]
 >  Specifikace Atom 1.0 umožňuje zadat v některém z jeho datum konstrukce zlomků sekund. Při serializaci a deserializaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace ignoruje zlomků sekund.  

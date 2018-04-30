@@ -16,22 +16,22 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 922b9c5c53e04719f3ed48d0ff6386f21bf83e99
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 170583239ed357904e723aebdaef9809938b5123
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-your-application"></a>Konfigurace vaší aplikace
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá konfigurační systém .NET a umožňuje vám nakonfigurovat služby v oboru počítače a aplikace.  
   
- Nastavení konfigurace definované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jsou umístěné v `<system.serviceModel>` skupinu oddílů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Postup konfigurace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, najdete v následujících tématech:  
+ Nastavení konfigurace definované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jsou umístěné v `<system.serviceModel>` skupinu oddílů. Další informace o tom, jak nakonfigurovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, najdete v následujících tématech:  
   
 -   [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)  
   
 -   [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
   
- Nastavení konfigurace definované aplikací, které jsou definovány v `<appSettings>` skupinu oddílů. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] nastavení aplikace v rozhraní .NET konfigurační soubory, najdete v části [ \<appSettings >](http://go.microsoft.com/fwlink/?LinkId=95159).  
+ Nastavení konfigurace definované aplikací, které jsou definovány v `<appSettings>` skupinu oddílů. Další informace o nastavení aplikace v konfiguračních souborech na rozhraní .NET najdete v tématu [ \<appSettings >](http://go.microsoft.com/fwlink/?LinkId=95159).  
   
 ## <a name="using-the-configuration-editor"></a>Pomocí editoru konfigurace  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] [Nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) umožňuje správcům a vývojářům umožňuje vytvořit a upravit nastavení konfigurace pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby, chování, služeb a diagnostiky bez přímou úpravou konfiguračních souborů XML.  
