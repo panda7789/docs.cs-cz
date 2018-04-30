@@ -1,30 +1,32 @@
 ---
-title: "Použití vlastní vazby s kanálem klienta zjišťování"
-ms.custom: 
+title: Použití vlastní vazby s kanálem klienta zjišťování
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 36f95e75-04f7-44f3-a995-a0d623624d7f
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 85c88132b1fa610b2bcb63635ae553ef47bb359c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a5c80a257efb5f6006a0cf6394a1079cf92d2471
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
-# <a name="using-a-custom-binding-with-the-discovery-client-channel"></a><span data-ttu-id="185ae-102">Použití vlastní vazby s kanálem klienta zjišťování</span><span class="sxs-lookup"><span data-stu-id="185ae-102">Using a Custom Binding with the Discovery Client Channel</span></span>
-<span data-ttu-id="185ae-103">Při použití vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, je nutné definovat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> vytvářející <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instance.</span><span class="sxs-lookup"><span data-stu-id="185ae-103">When using a custom binding with the <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, you must define a <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> that creates <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instances.</span></span>  
+# <a name="using-a-custom-binding-with-the-discovery-client-channel"></a><span data-ttu-id="3bf83-102">Použití vlastní vazby s kanálem klienta zjišťování</span><span class="sxs-lookup"><span data-stu-id="3bf83-102">Using a Custom Binding with the Discovery Client Channel</span></span>
+<span data-ttu-id="3bf83-103">Při použití vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, je nutné definovat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> vytvářející <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instance.</span><span class="sxs-lookup"><span data-stu-id="3bf83-103">When using a custom binding with the <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, you must define a <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> that creates <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instances.</span></span>  
   
-## <a name="creating-a-discoveryendpointprovider"></a><span data-ttu-id="185ae-104">Vytváření DiscoveryEndpointProvider</span><span class="sxs-lookup"><span data-stu-id="185ae-104">Creating a DiscoveryEndpointProvider</span></span>  
- <span data-ttu-id="185ae-105"><xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> Zodpovídá za vytvoření <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instance na vyžádání.</span><span class="sxs-lookup"><span data-stu-id="185ae-105">The <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> is responsible for creating <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instances on demand.</span></span> <span data-ttu-id="185ae-106">K definování zjišťování zprostředkovatele koncových bodů, odvození třídy z <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> a přepsat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> metoda a vraťte se nový koncový bod zjišťování.</span><span class="sxs-lookup"><span data-stu-id="185ae-106">To define a discovery endpoint provider, derive a class from <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> and override the <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> method and return a new discovery endpoint.</span></span> <span data-ttu-id="185ae-107">Následující příklad ukazuje, jak vytvořit poskytovatele koncový bod zjišťování.</span><span class="sxs-lookup"><span data-stu-id="185ae-107">The following example shows how to create a discovery endpoint provider.</span></span>  
+## <a name="creating-a-discoveryendpointprovider"></a><span data-ttu-id="3bf83-104">Vytváření DiscoveryEndpointProvider</span><span class="sxs-lookup"><span data-stu-id="3bf83-104">Creating a DiscoveryEndpointProvider</span></span>  
+ <span data-ttu-id="3bf83-105"><xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> Zodpovídá za vytvoření <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instance na vyžádání.</span><span class="sxs-lookup"><span data-stu-id="3bf83-105">The <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> is responsible for creating <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instances on demand.</span></span> <span data-ttu-id="3bf83-106">K definování zjišťování zprostředkovatele koncových bodů, odvození třídy z <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> a přepsat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> metoda a vraťte se nový koncový bod zjišťování.</span><span class="sxs-lookup"><span data-stu-id="3bf83-106">To define a discovery endpoint provider, derive a class from <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> and override the <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> method and return a new discovery endpoint.</span></span> <span data-ttu-id="3bf83-107">Následující příklad ukazuje, jak vytvořit poskytovatele koncový bod zjišťování.</span><span class="sxs-lookup"><span data-stu-id="3bf83-107">The following example shows how to create a discovery endpoint provider.</span></span>  
   
 ```  
 // Extend DiscoveryEndpointProvider class to change the default DiscoveryEndpoint  
@@ -39,7 +41,7 @@ public class UdpDiscoveryEndpointProvider : DiscoveryEndpointProvider
 }  
 ```  
   
- <span data-ttu-id="185ae-108">Jakmile definujete zprostředkovatele zjišťování koncových bodů, které můžete vytvořit vlastní vazby a přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, který odkazuje na zprostředkovatele zjišťování koncových bodů, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="185ae-108">Once you have defined the discovery endpoint provider you can create a custom binding and add the <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, which references the discovery endpoint provider as shown in the following example.</span></span>  
+ <span data-ttu-id="3bf83-108">Jakmile definujete zprostředkovatele zjišťování koncových bodů, které můžete vytvořit vlastní vazby a přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, který odkazuje na zprostředkovatele zjišťování koncových bodů, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="3bf83-108">Once you have defined the discovery endpoint provider you can create a custom binding and add the <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, which references the discovery endpoint provider as shown in the following example.</span></span>  
   
 ```  
 DiscoveryClientBindingElement discoveryBindingElement = new DiscoveryClientBindingElement();  
@@ -54,9 +56,9 @@ CustomBinding customBinding = new CustomBinding(new NetTcpBinding());
 customBinding.Elements.Insert(0, discoveryBindingElement);  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="185ae-109">pomocí kanálem klienta zjišťování, najdete v tématu [pomocí kanálem klienta zjišťování](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md).</span><span class="sxs-lookup"><span data-stu-id="185ae-109"> using the discovery client channel, see [Using the Discovery Client Channel](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md).</span></span> <span data-ttu-id="185ae-110">Úplný příklad, naleznete v tématu [– ukázka prvky vazby zjišťování](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)</span><span class="sxs-lookup"><span data-stu-id="185ae-110">For a complete code example, see [Discovery Binding Element Sample](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)</span></span>  
+ <span data-ttu-id="3bf83-109">Další informace o používání kanálem klienta zjišťování najdete v tématu [pomocí kanálem klienta zjišťování](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md).</span><span class="sxs-lookup"><span data-stu-id="3bf83-109">For more information about using the discovery client channel, see [Using the Discovery Client Channel](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md).</span></span> <span data-ttu-id="3bf83-110">Úplný příklad, naleznete v tématu [– ukázka prvky vazby zjišťování](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)</span><span class="sxs-lookup"><span data-stu-id="3bf83-110">For a complete code example, see [Discovery Binding Element Sample](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="185ae-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="185ae-111">See Also</span></span>  
- [<span data-ttu-id="185ae-112">Přehled zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="185ae-112">WCF Discovery Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
- [<span data-ttu-id="185ae-113">Použití kanálu klienta zjišťování</span><span class="sxs-lookup"><span data-stu-id="185ae-113">Using the Discovery Client Channel</span></span>](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)  
- [<span data-ttu-id="185ae-114">Ukázka elementu vazby zjišťování</span><span class="sxs-lookup"><span data-stu-id="185ae-114">Discovery Binding Element Sample</span></span>](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)
+## <a name="see-also"></a><span data-ttu-id="3bf83-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="3bf83-111">See Also</span></span>  
+ [<span data-ttu-id="3bf83-112">Přehled zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="3bf83-112">WCF Discovery Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ [<span data-ttu-id="3bf83-113">Použití kanálu klienta zjišťování</span><span class="sxs-lookup"><span data-stu-id="3bf83-113">Using the Discovery Client Channel</span></span>](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)  
+ [<span data-ttu-id="3bf83-114">Ukázka elementu vazby zjišťování</span><span class="sxs-lookup"><span data-stu-id="3bf83-114">Discovery Binding Element Sample</span></span>](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)
