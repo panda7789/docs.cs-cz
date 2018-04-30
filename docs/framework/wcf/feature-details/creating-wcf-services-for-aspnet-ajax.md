@@ -1,24 +1,26 @@
 ---
-title: "Vytváření služeb WCF pro ASP.NET AJAX"
-ms.custom: 
+title: Vytváření služeb WCF pro ASP.NET AJAX
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04c0402c-e617-4ba5-aedf-d17692234776
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c2e3ba1d360c55f10cde9447b3961d84ffe1cdb2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 64ab5c6bf4b555504562dbf68a60d032743df865
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="creating-wcf-services-for-aspnet-ajax"></a>Vytváření služeb WCF pro ASP.NET AJAX
 Microsoft ASP.NET AJAX umožňuje rychle vytvářet webové stránky, které zahrnují bohaté uživatelské prostředí s reakce a známé prvky uživatelského rozhraní. Poskytuje klientský skript knihovny, které jsou různé prohlížeče ECMAScript (JavaScript) a dynamické HTML (DHTML) technologie ASP.NET AJAX a se integruje s platformou ASP.NET 2.0 na serveru vývoj. Pomocí prvku ASP.NET AJAX, můžete zlepšit činnost koncového uživatele a efektivitu webových aplikací.  
@@ -31,13 +33,13 @@ Microsoft ASP.NET AJAX umožňuje rychle vytvářet webové stránky, které zah
   
  Pokud nepoužíváte šablony sady Visual Studio, existují dva způsoby vytvoření koncového bodu ASP.NET AJAX:  
   
--   Vytvořte koncový bod pomocí dynamický aktivace bez použití žádnou konfiguraci. Toto je nejzákladnější přístup, pokud jste obeznámeni s WCF konfigurační systém. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: Přidání koncového bodu ASP.NET AJAX bez použití konfigurace](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
+-   Vytvořte koncový bod pomocí dynamický aktivace bez použití žádnou konfiguraci. Toto je nejzákladnější přístup, pokud jste obeznámeni s WCF konfigurační systém. Další informace najdete v tématu [postupy: Přidání aplikace ASP.NET AJAX konfigurace koncového bodu bez pomocí](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
   
--   Přidání koncového bodu podporou AJAXU na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby pomocí konfigurace. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).  
+-   Přidání koncového bodu podporou AJAXU na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby pomocí konfigurace. Další informace najdete v tématu [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).  
   
  Popsané v modelu webového programování [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md) lze pomocí prvku ASP.NET AJAX služby. Konkrétně:  
   
--   Můžete použít <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributů k výběru mezi příkazy HTTP GET a POST protokolu HTTP. Pokud se používá správně, může to výrazně zlepšit výkon vaší aplikace. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Postupy: výběr mezi HTTP POST a HTTP GET požadavky pro koncové body ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md).  
+-   Můžete použít <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributů k výběru mezi příkazy HTTP GET a POST protokolu HTTP. Pokud se používá správně, může to výrazně zlepšit výkon vaší aplikace. Další informace najdete v tématu [postupy: výběr mezi HTTP POST a HTTP GET požadavky pro koncové body ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md).  
   
 -   Můžete použít <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> a <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnosti způsobí služby vrátit data XML místo výchozího JavaScript Object Notation (JSON). Díky tomuto pomocí rozhraní ASP.NET AJAX způsobí, že klient JavaScript pro příjem objektu XML DOM.  
   

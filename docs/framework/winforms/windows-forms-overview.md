@@ -1,27 +1,29 @@
 ---
-title: "Přehled produktu Windows Forms"
-ms.custom: 
+title: Přehled produktu Windows Forms
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bc9ff97583566bd950486d96bd100f05ef651c7e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2620d8314a11e0a90864120c40dbc3935cce75fe
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 V následujícím přehledu popisuje výhody inteligentní klientské aplikace, hlavní funkce programování modelu Windows Forms a použití Windows Forms k vytvoření inteligentní klienti, které naplňují potřeby pro podniky a koncoví uživatelé je aktuální.  
@@ -30,7 +32,7 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
  S Windows Forms vyvíjet inteligentní klienti. *Inteligentní klienti* graficky náročné aplikace, které se snadno nasadit a aktualizovat, můžete pracovat, pokud jsou připojené k nebo odpojení od Internetu a mají přístup k prostředkům v místním počítači způsobem bezpečnější než tradiční Aplikace pro systém Windows.  
   
 ### <a name="building-rich-interactive-user-interfaces"></a>Sestavování bohaté, interaktivní uživatelské rozhraní  
- Windows Forms je technologie inteligentní klienta pro [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], sadu spravovaných knihovny, které usnadňují běžné úkoly aplikace jako čtení a zápis do systému souborů. Při použití vývojového prostředí jako [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], můžete vytvořit Windows Forms čipové klientských aplikací, které zobrazují informace, žádají vstup od uživatele a komunikovat s vzdálené počítače přes síť.  
+ Windows Forms je technologie inteligentní klienta pro [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], sadu spravovaných knihovny, které usnadňují běžné úkoly aplikace jako čtení a zápis do systému souborů. Pokud používáte prostředí pro vývoj jako v aplikaci Visual Studio, můžete vytvořit Windows Forms čipové klientských aplikací, které zobrazují informace, žádají vstup od uživatele a komunikovat se vzdálenými počítači přes síť.  
   
  V systému Windows Forms *formuláře* je visual plochy, na kterém je zobrazit informace o uživateli. Přidání ovládacích prvků do formulářů a vývoj odpovědi na akce uživatele, jako je například kliknutí myší nebo stisknutí klávesy vytvoříte běžným formulářových aplikací Windows. A *řízení* je element diskrétní uživatelské rozhraní (UI), který zobrazuje data nebo přijímá data vstup.  
   
@@ -40,7 +42,7 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
   
  Windows Forms má bohaté ovládací prvky uživatelského rozhraní, které emulují funkce v vyšší kategorie aplikace, jako je Microsoft Office. Při použití <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.MenuStrip> ovládací prvek, můžete vytvořit panely nástrojů a nabídky, které obsahují text, obrázky, zobrazují podnabídky a hostovat další ovládací prvky, jako je například textová pole a pole se seznamem.  
   
- Pomocí [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] Návrhář formulářů Windows přetahování myší, můžete snadno vytvořit formulářových aplikací Windows. Vyberte ovládací prvky s ukazatelem a přidat požadované místo na formuláři. Návrhář poskytuje nástroje, jako je například řádky mřížky a snap provést starostí zarovnání ovládacích prvků. A zda používáte [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] nebo kompilace v příkazovém řádku, můžete použít <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> rozložení ovládacích prvků k vytvoření pokročilých na formulářích za kratší dobu.  
+ Pomocí sady Visual Studio a přetažení Návrháře formulářů můžete snadno vytvořit formulářových aplikací Windows. Vyberte ovládací prvky s ukazatelem a přidat požadované místo na formuláři. Návrhář poskytuje nástroje, jako je například řádky mřížky a snap provést starostí zarovnání ovládacích prvků. A zda používáte Visual Studio nebo zkompilovat na příkazovém řádku, můžete použít <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> rozložení ovládacích prvků k vytvoření pokročilých na formulářích za kratší dobu.  
   
  Nakonec, pokud je nutné vytvořit vlastní vlastní elementy uživatelského rozhraní <xref:System.Drawing> obor názvů obsahuje velké výběr třídy k vykreslení čar, kružnice a ostatním tvarům přímo na formuláři.  
   
@@ -54,7 +56,7 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
 |-----------------|----------------|  
 |Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|  
 |Pomocí <xref:System.Windows.Forms.ToolStrip> ovládací prvek|[Postupy: Vytvoření základního prvku ToolStrip se standardními položkami pomocí Návrháře](../../../docs/framework/winforms/controls/create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)|  
-|Vytváření grafických s<xref:System.Drawing>|[Začínáme s programováním grafiky](../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
+|Vytváření grafických s <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |Vytváření vlastních ovládacích prvků|[Postupy: Dědění ze třídy UserControl](../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ### <a name="displaying-and-manipulating-data"></a>Zobrazení a manipulace s daty  
@@ -64,7 +66,7 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
   
  Ovládací prvky vázané na data můžete jednoduše vytvořit pomocí okna zdroje dat. V okně se zobrazí zdroje dat, jako je například databáze, webové služby a objekty ve vašem projektu. Ovládací prvky vázané na data můžete vytvořit tak, že přetáhnete položky z tohoto okno do formuláře ve vašem projektu. Vám může také navázat existujících ovládacích prvků k datům přetažením objektů z okna zdroje dat do existujícího ovládacího prvku.  
   
- Jiný typ vazby dat, které můžete spravovat ve Windows Forms je *nastavení*. Většina inteligentní klientské aplikace musí zachovat určité informace o stavu jejich spuštění, například poslední známá velikost formuláře a zachovat data předvoleb uživatele, například výchozí umístění pro ukládání souborů. Funkce nastavení aplikace řeší tyto požadavky tím, že poskytuje snadný způsob, jak uložit oba typy nastavení v klientském počítači. Po definování těchto nastavení použít buď [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] nebo editor kódu, nastavení jsou nastavené jako trvalé jako XML a automaticky načíst zpět do paměti v době běhu.  
+ Jiný typ vazby dat, které můžete spravovat ve Windows Forms je *nastavení*. Většina inteligentní klientské aplikace musí zachovat určité informace o stavu jejich spuštění, například poslední známá velikost formuláře a zachovat data předvoleb uživatele, například výchozí umístění pro ukládání souborů. Funkce nastavení aplikace řeší tyto požadavky tím, že poskytuje snadný způsob, jak uložit oba typy nastavení v klientském počítači. Po definování těchto nastavení pomocí sady Visual Studio nebo editoru kódu, jsou nastavení uchován jako XML a automaticky načíst zpět do paměti v době běhu.  
   
 #### <a name="help-displaying-and-manipulating-data"></a>Zobrazení nápovědy a manipulace s daty  
  Podrobné informace o tom, jak tyto funkce používají najdete v následujících tématech nápovědy.  
@@ -77,20 +79,20 @@ V následujícím přehledu popisuje výhody inteligentní klientské aplikace, 
 |Pomocí nastavení aplikace|[Postupy: Vytváření nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)|  
   
 ### <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
- Poté, co jste napsali vaší aplikace, je nutné odeslat aplikace uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Při použití [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] technologie, můžete nasadit v rámci aplikace z [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] nástrojem pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
+ Poté, co jste napsali vaší aplikace, je nutné odeslat aplikace uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Při použití [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] technologie, můžete nasadit aplikace z Visual Studia pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
   
- [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]aplikace může být nakonfigurována, spustit pouze když je uživatel připojený k síti, nebo pokud online nebo offline. Pokud určíte, že aplikace má podporovat offline operace [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] přidá odkaz na aplikaci v uživatele **spustit** nabídky. Uživatel pak můžete otevřít aplikaci bez pomocí adresy URL.  
+ [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace může být nakonfigurována, spustit pouze když je uživatel připojený k síti, nebo pokud online nebo offline. Pokud určíte, že aplikace má podporovat offline operace [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] přidá odkaz na aplikaci v uživatele **spustit** nabídky. Uživatel pak můžete otevřít aplikaci bez pomocí adresy URL.  
   
- Při aktualizaci aplikace, můžete publikovat nový manifest nasazení a novou kopii aplikace na vašem webovém serveru. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]zjistí, že je k dispozici aktualizace, který se upgrade uživatele instalace; žádné další programování se vyžaduje k aktualizaci původního sestavení.  
+ Při aktualizaci aplikace, můžete publikovat nový manifest nasazení a novou kopii aplikace na vašem webovém serveru. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] zjistí, že je k dispozici aktualizace, který se upgrade uživatele instalace; žádné další programování se vyžaduje k aktualizaci původního sestavení.  
   
 #### <a name="help-deploying-clickonce-applications"></a>Pomůže nasazení aplikace ClickOnce  
  Pro úplnou Úvod do [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], najdete v části [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment). Podrobné informace o tom, jak tyto funkce používají najdete v následujících tématech nápovědy  
   
 |Popis|Téma nápovědy|  
 |-----------------|----------------|  
-|Nasazení aplikace s použitím[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|Nasazení aplikace s použitím [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
 |Aktualizace [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení|[Postupy: Správa aktualizací pro aplikaci ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
-|Správa zabezpečení pomocí[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
+|Správa zabezpečení pomocí [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ### <a name="other-controls-and-features"></a>Další ovládací prvky a funkce  
  Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úlohy rychlý a snadný, jako je podpora pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho využívá robustní zabezpečení systému Windows Forms [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. K tomuto systému můžete vydat bezpečnější aplikací pro vaše zákazníky.  

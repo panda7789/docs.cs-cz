@@ -1,12 +1,13 @@
 ---
-title: "Známé typy kontraktů dat"
-ms.custom: 
+title: Známé typy kontraktů dat
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,23 +17,24 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-caps.latest.revision: "42"
+caps.latest.revision: 42
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 24d26358c0bf0440b2fbba143629a0e4bda21cec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c9c180a0f1544fa187ddb53ec79a47f908c298d7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute> Třída umožňuje zadat v předstihu, typy, které by měl být zahrnutý během deserializace důvodů. Příklad pracovní najdete v tématu [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  
   
  Za normálních okolností při předávání parametry a návratové hodnoty mezi klientem a služby, oba koncové body sdílejí všechny kontrakty dat dat přenášených. Je to ale není velká písmena v následujících případech:  
   
--   Odeslaná data kontrakt je odvozená od kontrakt očekávaná data. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]v části o dědičnosti v [ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)). V takovém případě velikost přenášených dat nemá stejná data smlouvy podle očekávání tím přijímající koncový bod.  
+-   Odeslaná data kontrakt je odvozená od kontrakt očekávaná data. Další informace najdete v části o dědičnosti v [ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)). V takovém případě velikost přenášených dat nemá stejná data smlouvy podle očekávání tím přijímající koncový bod.  
   
 -   Deklarovaný typ informace předávají je rozhraní a třídy, struktury nebo výčet. Proto ho nemůže být známé předem který typ, implementuje rozhraní je ve skutečnosti odeslán, a proto přijímající koncový bod nemůže určit předem kontrakt dat přenášených dat.  
   

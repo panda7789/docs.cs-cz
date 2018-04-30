@@ -1,11 +1,12 @@
 ---
-title: "Rozšíření a zúžení převodů (Visual Basic)"
-ms.custom: 
+title: Rozšíření a zúžení převodů (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - widening conversions [Visual Basic]
@@ -25,14 +26,14 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], exceptions during conversion
 - conversions [Visual Basic], widening
 ms.assetid: 058c3152-6c28-4268-af44-2209e774f0bd
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2cf1f8d956935a9a363211abf94b4f1c2f538074
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 960b4e4c7184309b6a84247d86fb94ccb2faf877
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="widening-and-narrowing-conversions-visual-basic"></a>Rozšíření a zúžení převodů (Visual Basic)
 Důležitý aspekt s převod typu je, zda výsledek převodu je v rozsahu cílového datového typu.  
@@ -48,22 +49,22 @@ Důležitý aspekt s převod typu je, zda výsledek převodu je v rozsahu cílov
 |---|---|  
 |[SByte –](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|`SByte`, `Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
 |[Bajtů](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|`Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`|  
-|[Krátký](../../../../visual-basic/language-reference/data-types/short-data-type.md)|`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
+|[krátký](../../../../visual-basic/language-reference/data-types/short-data-type.md)|`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
 |[Ushort –](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|`UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`|  
-|[Celé číslo](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|`Integer`, `Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
+|[celé číslo](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|`Integer`, `Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
 |[Uinteger –](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|`UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[Dlouhá](../../../../visual-basic/language-reference/data-types/long-data-type.md)|`Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
+|[dlouhá](../../../../visual-basic/language-reference/data-types/long-data-type.md)|`Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
 |[Ulong –](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|`ULong`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
 |[Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|`Decimal`, `Single`, `Double`<sup>2</sup>|  
 |[Jeden](../../../../visual-basic/language-reference/data-types/single-data-type.md)|`Single`, `Double`|  
 |[Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|`Double`|  
 |Žádné výčtového typu ([výčtu](../../../../visual-basic/language-reference/statements/enum-statement.md))|Jeho zdrojovým typem integrální a žádný typ, do které rozšiřuje základní typ.|  
-|[Char –](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`Char`, `String`|  
-|`Char`pole|`Char`pole,`String`|  
+|[Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`Char`, `String`|  
+|`Char` Pole|`Char` pole, `String`|  
 |Jakýkoli typ|[Objekt](../../../../visual-basic/language-reference/data-types/object-data-type.md)|  
 |Všechny odvozený typ|Některé základní typ, ze kterého je odvozený <sup>3</sup>.|  
 |Jakýkoli typ|Všechny rozhraní, které implementuje.|  
-|[Nic](../../../../visual-basic/language-reference/nothing.md)|Datový typ nebo typ objektu.|  
+|[Nothing](../../../../visual-basic/language-reference/nothing.md)|Datový typ nebo typ objektu.|  
   
  <sup>1</sup> podle definice, každý typ dat rozšiřuje na sebe sama.  
   
@@ -97,11 +98,11 @@ Důležitý aspekt s převod typu je, zda výsledek převodu je v rozsahu cílov
 ## <a name="exceptions-during-conversion"></a>Výjimky při převodu  
  Rozšiřující převody vždy úspěšné, a proto se nevyvolá výjimku výjimky. Zužující převody, pokud se nezdaří, nejčastěji throw následující výjimky:  
   
--   <xref:System.InvalidCastException>– Pokud je mezi těmito dvěma typy definovaný žádný převod  
+-   <xref:System.InvalidCastException> – Pokud je mezi těmito dvěma typy definovaný žádný převod  
   
--   <xref:System.OverflowException>– (jenom integrální typy) Pokud převedená hodnota je příliš velký pro cílový typ  
+-   <xref:System.OverflowException> – (jenom integrální typy) Pokud převedená hodnota je příliš velký pro cílový typ  
   
- Pokud definuje třídu nebo strukturu [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) sloužit jako operátor převodu do nebo z třídy nebo struktura, která `CType` můžete vyvolat všechny výjimky považuje za vhodné. Kromě toho, který `CType` může volat [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] funkce nebo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody, které pak může vyvolat různé výjimky.  
+ Pokud definuje třídu nebo strukturu [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) sloužit jako operátor převodu do nebo z třídy nebo struktura, která `CType` můžete vyvolat všechny výjimky považuje za vhodné. Kromě toho, který `CType` může volat funkce jazyka Visual Basic nebo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody, které pak může vyvolat různé výjimky.  
   
 ## <a name="changes-during-reference-type-conversions"></a>Změny během převody typu odkazu  
  Převod z *odkazují na typ* zkopíruje jenom ukazatel na hodnotu. Vlastní hodnota nebudou zkopírovány ani změnit žádným způsobem. Jediné, co můžete změnit je datový typ proměnné, která uchovává ukazatele. V následujícím příkladu je datový typ převést z odvozené třídy na její základní třída, ale objekt, který teď přejděte obě proměnné je beze změny.  
@@ -121,6 +122,6 @@ shape = square
  [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
  [Postupy: převedení objektu na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
- [Převody pole](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)  
+ [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)  
  [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

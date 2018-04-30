@@ -1,11 +1,12 @@
 ---
-title: "Složené datové typy (Visual Basic)"
-ms.custom: 
+title: Složené datové typy (Visual Basic)
+ms.custom: ''
 ms.date: 04/25/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -17,17 +18,17 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e9adb407757dbee2f7ac5a94118623a62212faec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: caa832fc191ad925674e21b1237ac98328ce0bd7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="composite-data-types-visual-basic"></a>Složené datové typy (Visual Basic)
-Kromě základní datové typy [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zdroje, je možné sestavit položkami různých typů vytvořit *složené datové typy* například struktury, pole a třídy. Složené datové typy můžete vytvořit z základní typy a z jiných složené typy. Můžete například definovat pole elementy struktury nebo strukturu se členy pole.  
+Kromě základní datové typy jazyka Visual Basic dodávek, je možné sestavit položkami různých typů vytvořit *složené datové typy* například struktury, pole a třídy. Složené datové typy můžete vytvořit z základní typy a z jiných složené typy. Můžete například definovat pole elementy struktury nebo strukturu se členy pole.  
   
 ## <a name="data-types"></a>Datové typy  
  Složeného typu se liší od datového typu všech jeho součástí. Například pole `Integer` elementy není `Integer` datového typu.  
@@ -35,7 +36,7 @@ Kromě základní datové typy [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] zdroj
  Datového typu pole je obvykle reprezentována pomocí typ elementu, kulaté závorky a čárky podle potřeby. Například jednorozměrné pole z `String` elementy je reprezentován jako `String()`a dvourozměrná pole `Boolean` elementy je reprezentován jako `Boolean(,)`.  
   
 ## <a name="structure-types"></a>Typy struktur  
- Neexistuje žádný single – datový typ, která obsahuje všechny struktury. Místo toho každá definice struktury představuje jedinečné datového typu, i v případě, že dvě struktury definovat identické prvky ve stejném pořadí. Ale v případě, že vytvoříte dva nebo více instancí stejnou strukturu [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je stejného typu dat považuje za.  
+ Neexistuje žádný single – datový typ, která obsahuje všechny struktury. Místo toho každá definice struktury představuje jedinečné datového typu, i v případě, že dvě struktury definovat identické prvky ve stejném pořadí. Ale pokud vytvoříte dva nebo více instancí stejnou strukturu, Visual Basic je považuje za stejného datového typu.  
   
 ## <a name="tuples"></a>Řazené kolekce členů
 
@@ -76,5 +77,5 @@ Dim arrayE( , ) As Short = New Short(4, 10) {}
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
  [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Řešení potíží s datové typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Postupy: do proměnné umístit více než jednu hodnotu](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)
+ [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Postupy: Do proměnné umístit více než jednu hodnotu](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)

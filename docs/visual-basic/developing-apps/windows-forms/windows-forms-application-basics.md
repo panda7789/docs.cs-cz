@@ -1,25 +1,26 @@
 ---
-title: "Základy formulářové aplikace Windows (Visual Basic)"
+title: Základy formulářové aplikace Windows (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7872d3c7b19ec9cd7059cccf41e5fab50d85123b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: aaa7fbd679eceea53a673646173dc14dc4f209bc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
-Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost vytvářet aplikace Windows Forms, které běží místně na počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní Windows Forms pomocí. Aplikace Windows Forms jsou založeny na třídy z <xref:System.Windows.Forms> oboru názvů.  
+Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které běží místně na počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní Windows Forms pomocí. Aplikace Windows Forms jsou založeny na třídy z <xref:System.Windows.Forms> oboru názvů.  
   
 ## <a name="designing-windows-forms-applications"></a>Navrhování Windows Forms aplikace  
  Můžete vytvořit Windows Forms a aplikace služby systému Windows s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Další informace naleznete v následujících tématech:  
@@ -52,9 +53,9 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytvořte novou aplikaci Windows Forms s[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[Návod: Vytvoření jednoduché Windows Form](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|Vytvořte novou aplikaci Windows Forms s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[Návod: Vytvoření jednoduché Windows Form](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
 |Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
-|Vytváření grafiky s<xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
+|Vytváření grafiky s <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |Vytvořit vlastní ovládací prvky|[Postupy: Dědění ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ## <a name="displaying-and-manipulating-data"></a>Zobrazení a manipulace s daty  
@@ -77,19 +78,19 @@ Důležitou součástí [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] je schopnost
 |Použití okna zdroje dat|[Návod: Zobrazování dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
- Jakmile jste napsali vaší aplikace, je nutné ji odeslat uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Pomocí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, můžete nasadit v rámci aplikace z [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] nástrojem pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
+ Jakmile jste napsali vaší aplikace, je nutné ji odeslat uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Pomocí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, můžete nasadit v rámci aplikace z [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] nástrojem pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
   
- [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]aplikace může být nakonfigurována, spustit pouze když je uživatel připojený k síti, nebo pokud online nebo offline. Pokud určíte, že aplikace má podporovat offline operace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] přidá odkaz na aplikaci v uživatele **spustit** nabídky, takže uživatel může otevřít bez pomocí adresy URL.  
+ [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] aplikace může být nakonfigurována, spustit pouze když je uživatel připojený k síti, nebo pokud online nebo offline. Pokud určíte, že aplikace má podporovat offline operace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] přidá odkaz na aplikaci v uživatele **spustit** nabídky, takže uživatel může otevřít bez pomocí adresy URL.  
   
- Při aktualizaci aplikace, můžete publikovat nový manifest nasazení a novou kopii aplikace na vašem webovém serveru. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]zjistí, že je k dispozici aktualizace a upgrady instalace uživatele; žádné další programování se vyžaduje k aktualizaci původního sestavení.  
+ Při aktualizaci aplikace, můžete publikovat nový manifest nasazení a novou kopii aplikace na vašem webovém serveru. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] zjistí, že je k dispozici aktualizace a upgrady instalace uživatele; žádné další programování se vyžaduje k aktualizaci původního sestavení.  
   
  Pro úplnou Úvod do [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)], najdete v části [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment). Podrobné informace o použití těchto funkcí najdete v následujících tématech nápovědy:  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Nasazení aplikace s[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|Nasazení aplikace s [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
 |Aktualizace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] nasazení|[Postupy: Správa aktualizací pro aplikaci ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
-|Správa zabezpečení s[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
+|Správa zabezpečení s [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ## <a name="other-controls-and-features"></a>Další ovládací prvky a funkce  
  Existuje mnoho dalších funkcí ve Windows Forms, který implementující běžné úlohy rychlý a snadný, jako je podpora pro vytváření dialogových oken, tisk, přidání nápovědy a dokumentace a lokalizace aplikace pro více jazyků. Kromě toho využívá robustní zabezpečení systému Windows Forms [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], který vám umožňuje vytváření bezpečnější aplikací pro vaše zákazníky.  
