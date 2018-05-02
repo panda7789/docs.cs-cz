@@ -1,24 +1,26 @@
 ---
-title: "Zpracování chyb HTTP programování webové služby WCF"
-ms.custom: 
+title: Zpracování chyb HTTP programování webové služby WCF
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3c5f397d50a5a97801241afd8e64abf2e56b05dd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bcd0e6d1e6318404eb47741dc61ccf2ff9358b47
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-web-http-error-handling"></a>Zpracování chyb HTTP programování webové služby WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Zpracování chyb webových služeb HTTP umožňuje vracet chyby z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP webové služby, které zadejte stav HTTP kód a vrátí podrobnosti o chybě používá stejný formát jako operace (například XML nebo JSON).  
@@ -34,7 +36,7 @@ Public string Operation1()
 }  
 ```  
   
- Následující příklad ukazuje, jak se vrátit stavový kód HTTP a doplňující informace v uživatelsky definovaný typ. `MyErrorDetail`je typ definovaný uživatelem, který obsahuje další informace o této chybě, která došlo k chybě.  
+ Následující příklad ukazuje, jak se vrátit stavový kód HTTP a doplňující informace v uživatelsky definovaný typ. `MyErrorDetail` je typ definovaný uživatelem, který obsahuje další informace o této chybě, která došlo k chybě.  
   
 ```  
 Public string Operation2()  
@@ -56,9 +58,9 @@ Public string Operation2()
   
 -   Hodnota <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> vlastnost přímým přístupem <xref:System.ServiceModel.Web.OutgoingWebResponseContext>.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]jak tyto hodnoty ovlivňují formátování operaci, najdete v části [WCF Web HTTP formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).  
+ Další informace o tom, jak tyto hodnoty ovlivnit formátování operaci najdete v tématu [WCF Web HTTP formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).  
   
- <xref:System.ServiceModel.Web.WebFaultException>je <xref:System.ServiceModel.FaultException> a proto může sloužit jako programovací model selhání výjimky pro služby, které zveřejňují koncových bodů protokolu SOAP a také web koncových bodů protokolu HTTP.  
+ <xref:System.ServiceModel.Web.WebFaultException> je <xref:System.ServiceModel.FaultException> a proto může sloužit jako programovací model selhání výjimky pro služby, které zveřejňují koncových bodů protokolu SOAP a také web koncových bodů protokolu HTTP.  
   
 ## <a name="see-also"></a>Viz také  
  [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  

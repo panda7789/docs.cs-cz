@@ -13,17 +13,17 @@ ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: aaa7fbd679eceea53a673646173dc14dc4f209bc
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
-ms.translationtype: HT
+ms.openlocfilehash: 230229203029740b82e706fe2aa7ff8ee06c486a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které běží místně na počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní Windows Forms pomocí. Aplikace Windows Forms jsou založeny na třídy z <xref:System.Windows.Forms> oboru názvů.  
   
 ## <a name="designing-windows-forms-applications"></a>Navrhování Windows Forms aplikace  
- Můžete vytvořit Windows Forms a aplikace služby systému Windows s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Další informace naleznete v následujících tématech:  
+ Windows Forms a aplikace služby systému Windows můžete vytvořit pomocí sady Visual Studio. Další informace naleznete v následujících tématech:  
   
 -   [Začínáme s Windows Forms](../../../framework/winforms/getting-started-with-windows-forms.md). Poskytuje informace o tom, jak vytvořit a program Windows Forms.  
    
@@ -32,7 +32,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 -   [Aplikace služby systému Windows](../../../framework/windows-services/index.md). Seznam témat, která popisují, jak vytváření služeb systému Windows.  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>Sestavování bohaté, interaktivní uživatelské rozhraní  
- Windows Forms je komponenta čipové klienta [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], sadu spravovaných knihovny, které umožňují běžné úkoly aplikace jako čtení a zápis do systému souborů. Použití vývojového prostředí jako [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], můžete vytvořit Windows Forms aplikace, které zobrazují informace, žádají vstup od uživatele a komunikaci se vzdálenými počítači přes síť.  
+ Windows Forms je komponenta čipové klienta [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], sadu spravovaných knihovny, které umožňují běžné úkoly aplikace jako čtení a zápis do systému souborů. Použití vývojového prostředí, jako v aplikaci Visual Studio, můžete vytvořit Windows Forms aplikace, které zobrazují informace, žádají vstup od uživatele a komunikaci se vzdálenými počítači přes síť.  
   
  V systému Windows Forms formulář je visual prostor, na kterém je zobrazit informace o uživateli. Běžně vytváříte aplikace Windows Forms podle umístění ovládacích prvků ve formulářích a vývoj odpovědi na akce uživatele, jako je například kliknutí myší nebo stisknutí klávesy. A *řízení* je element diskrétní uživatelské rozhraní (UI), který zobrazuje data nebo přijímá data vstup.  
   
@@ -44,7 +44,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
  Windows Forms má bohaté ovládací prvky uživatelského rozhraní, které emulují funkce v vyšší kategorie aplikace, jako je Microsoft Office. Pomocí <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.MenuStrip> ovládací prvek, můžete vytvořit panely nástrojů a nabídky, které obsahují text, obrázky, zobrazují podnabídky a hostovat další ovládací prvky, jako je například textová pole a pole se seznamem.  
   
- Pomocí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] Návrhář formulářů přetahování myší, můžete snadno vytvořit formulářových aplikací Windows: právě ovládací prvky s ukazatelem pro výběr a umístit je na místo na formuláři. Návrhář poskytuje nástroje, jako je například mřížky a "snap řádky" provést starostí zarovnání ovládacích prvků. A zda používáte [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] nebo kompilace v příkazovém řádku, můžete použít <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> ovládací prvky pro vytvoření pokročilých rozložení s minimální čas a úsilí na formulářích.  
+ Pomocí přetahování myší forms návrháře Visual Studio, můžete snadno vytvořit formulářových aplikací Windows: právě ovládací prvky s ukazatelem pro výběr a umístit je na místo na formuláři. Návrhář poskytuje nástroje, jako je například mřížky a "snap řádky" provést starostí zarovnání ovládacích prvků. A zda používáte Visual Studio nebo zkompilovat na příkazovém řádku, můžete použít <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> ovládací prvky pro vytvoření pokročilých rozložení s minimální čas a úsilí na formulářích.  
   
 ### <a name="custom-ui-elements"></a>Vlastní prvky uživatelského rozhraní  
  Nakonec, pokud je nutné vytvořit vlastní vlastní elementy uživatelského rozhraní <xref:System.Drawing> obor názvů obsahuje všechny třídy, které potřebujete k vykreslení čar, kružnice a ostatním tvarům přímo na formuláři.  
@@ -53,7 +53,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytvořte novou aplikaci Windows Forms s [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[Návod: Vytvoření jednoduché Windows Form](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|Vytvořte novou aplikaci Windows Forms pomocí sady Visual Studio|[Návod: Vytvoření jednoduché Windows Form](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
 |Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |Vytváření grafiky s <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |Vytvořit vlastní ovládací prvky|[Postupy: Dědění ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
@@ -67,7 +67,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
  Můžete vytvořit ovládací prvky vázané na data snadno pomocí okna zdroje dat, která zobrazuje zdroje dat, jako je například databáze, webové služby a objekty ve vašem projektu. Ovládací prvky vázané na data můžete vytvořit tak, že přetáhnete položky z tohoto okno do formuláře ve vašem projektu. Vám může také navázat existujících ovládacích prvků k datům přetažením objektů z okna zdroje dat do existujícího ovládacího prvku.  
   
 ### <a name="settings"></a>Nastavení  
- Jiný typ vazby dat, které můžete spravovat ve Windows Forms, jsou nastavení. Většina inteligentních klientských aplikací musí zachovat určité informace o jejich stavu spuštění, jako je například velikost poslední známá formulářů a zachovat data předvolba uživatele, například výchozí umístění pro ukládání souborů. Funkce nastavení aplikace řeší tyto požadavky tím, že poskytuje snadný způsob, jak uložit oba typy nastavení v klientském počítači. Jednou definované pomocí [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] nebo editor kódu, tato nastavení jsou nastavené jako trvalé jako XML a automaticky načíst zpět do paměti v době běhu.  
+ Jiný typ vazby dat, které můžete spravovat ve Windows Forms, jsou nastavení. Většina inteligentních klientských aplikací musí zachovat určité informace o jejich stavu spuštění, jako je například velikost poslední známá formulářů a zachovat data předvolba uživatele, například výchozí umístění pro ukládání souborů. Funkce nastavení aplikace řeší tyto požadavky tím, že poskytuje snadný způsob, jak uložit oba typy nastavení v klientském počítači. Jakmile definovány pomocí sady Visual Studio nebo editoru kódu, tato nastavení jsou nastavené jako trvalé jako XML a automaticky načíst zpět do paměti v době běhu.  
   
  Podrobné informace o použití těchto funkcí najdete v následujících tématech nápovědy.  
   
@@ -78,7 +78,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 |Použití okna zdroje dat|[Návod: Zobrazování dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
- Jakmile jste napsali vaší aplikace, je nutné ji odeslat uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Pomocí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, můžete nasadit v rámci aplikace z [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] nástrojem pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
+ Jakmile jste napsali vaší aplikace, je nutné ji odeslat uživatelům, aby můžete nainstalovat a spustit ji v klientských počítačích. Pomocí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, které můžete nasadit aplikace z Visual Studia pomocí několika kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] spravuje všechny elementy a závislosti v aplikaci a zajistí, že je aplikace správně nainstalovat na klientském počítači.  
   
  [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] aplikace může být nakonfigurována, spustit pouze když je uživatel připojený k síti, nebo pokud online nebo offline. Pokud určíte, že aplikace má podporovat offline operace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] přidá odkaz na aplikaci v uživatele **spustit** nabídky, takže uživatel může otevřít bez pomocí adresy URL.  
   
