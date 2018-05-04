@@ -1,0 +1,11 @@
+### <a name="ensure-systemuri-uses-a-consistent-reserved-character-set"></a>Ujistěte se, že System.Uri používá konzistentní vyhrazené znakovou sadu
+
+|   |   |
+|---|---|
+|Podrobnosti|V <xref:System.Uri?displayProperty=fullName>některé teď konzistentně vlevo zakódovaným procent kódování znaků, které byly někdy dekódovat. K tomu dochází mezi vlastnosti a metody, které přístup k součástem cestu, query, fragment nebo informací o uživateli identifikátoru URI. Chování se změní, pouze pokud obě z následujících jsou splněny:<ul><li>Identifikátor URI obsahuje kódované podobě každého následující vyhrazené znaky: <code>:</code>, <code>'</code>, <code>(</code>, <code>)</code>, <code>!</code> nebo <code>*</code>.</li><li>Identifikátor URI obsahuje typu Unicode nebo kódovaný-vyhrazené znak. Pokud jsou splněny obě výše, jsou zakódovány vlevo kódovaného vyhrazené znaky. V předchozích verzích rozhraní .NET Framework se dekódovat.</li></ul>|
+|Návrh|Pro aplikace, které cílové verze rozhraní .NET Framework počínaje 4.7.2 se ve výchozím nastavení zapnutá nové dekódování chování. Pokud tato změna není žádoucí, můžete ji zakázat přidáním následující [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepnout <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Pro aplikace, které cílí na starší verze rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.7.2 počínaje verzí nové chování dekódování ve výchozím nastavení vypnutá. Můžete ji povolit přidáním následující [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepnout <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace::<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
+|Rozsah|Vedlejší|
+|Version|4.7.2|
+|Typ|Změna orientace|
+|Ovlivněné rozhraní API|<ul><li><xref:System.Uri?displayProperty=nameWithType></li></ul>|
+

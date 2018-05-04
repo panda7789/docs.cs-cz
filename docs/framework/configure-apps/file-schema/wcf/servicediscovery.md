@@ -1,29 +1,17 @@
 ---
 title: '&lt;serviceDiscovery&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a3c68a4a-fc95-43c5-aacb-785936c0cf39
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7469f06567ec8dab98592118ed392a680d4fb81a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 78f1c7be1d8285cd2fdf79af1e1220a7e48b2893
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicediscoverygt"></a>&lt;serviceDiscovery&gt;
 Určuje možnosti rozpoznání koncových bodů služby.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  

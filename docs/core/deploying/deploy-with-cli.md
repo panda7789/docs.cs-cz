@@ -9,11 +9,11 @@ ms.prod: dotnet-core
 ms.devlang: dotnet
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 21e824e6092b0d30e0499ff05c5471a291c8d269
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: cc243dba7182c9df451fa4bef286af2b49c6fa77
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 
@@ -63,11 +63,15 @@ Nasazení závislé na framework nasazení nemá žádné závislosti třetích 
       ```
    Tím se vytvoří verze (a nikoli ladění) verzi aplikace. Výsledné soubory jsou umístěny v adresáři s názvem *publikování* , je v podadresáři vašeho projektu *bin* adresáře.
 
-Proces publikování společně se soubory aplikace vysílá soubor databáze (.pdb) program, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné především pro ladění výjimek. Můžete se distribuovat soubory vaší aplikace. Ale uložte jej v případě, že chcete ladit sestavení pro vydání vaší aplikace.
+   Proces publikování společně se soubory aplikace vysílá soubor databáze (.pdb) program, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné především pro ladění výjimek. Můžete se distribuovat soubory vaší aplikace. Ale uložte jej v případě, že chcete ladit sestavení pro vydání vaší aplikace.
 
-Můžete nasadit kompletní sadu aplikací, které chcete systém souborů. Například můžete balíček je v souboru Zip, pomocí jednoduché `copy` příkaz nebo nasadit pomocí jakékoli instalačního balíčku podle svého výběru. Po instalaci, mohou uživatelé provádět vaší aplikace pomocí `dotnet` příkaz a poskytnutí názvu souboru, jako například `dotnet fdd.dll`.
+   Můžete nasadit kompletní sadu aplikací, které chcete systém souborů. Například můžete balíček je v souboru Zip, pomocí jednoduché `copy` příkaz nebo nasadit pomocí jakékoli instalačního balíčku podle svého výběru.
 
-Kromě binární soubory aplikace instalačním programem vaší by také buď vytvořit balíček instalačního programu sdílený framework nebo kontrolovat předpokladem je jako součást instalace aplikace.  Instalace sdílený framework vyžaduje správce nebo kořenový přístup.
+1. Spuštění aplikace
+
+   Po instalaci, mohou uživatelé provádět vaší aplikace pomocí `dotnet` příkaz a poskytnutí názvu souboru, jako například `dotnet fdd.dll`.
+
+   Kromě binární soubory aplikace instalačním programem vaší by také buď vytvořit balíček instalačního programu sdílený framework nebo kontrolovat předpokladem je jako součást instalace aplikace.  Instalace sdílený framework vyžaduje správce nebo kořenový přístup.
 
 ## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Nasazení závislé na Framework se závislostmi třetích stran
 

@@ -1,27 +1,15 @@
 ---
-title: "Postup: provedení dotazu, který vrací komplexní typy"
-ms.custom: 
+title: 'Postup: provedení dotazu, který vrací komplexní typy'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c2209fdb-70ef-4dea-8bb8-097fe96f5563
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: cae0cc50b18641634fc8109fb29eeb30e9cf7cd8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: b999033046eb251400f033314ae7eb197a8f110a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a>Postup: provedení dotazu, který vrací komplexní typy
 Toto téma ukazuje, jak provést [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotaz, který vrátí typ objektů, které obsahují vlastnost komplexního typu entity.  
@@ -37,7 +25,7 @@ Toto téma ukazuje, jak provést [!INCLUDE[esql](../../../../../includes/esql-md
   
 3.  Poklikejte na soubor EDMX zobrazíte model [okno prohlížeče modelu](http://msdn.microsoft.com/library/94e836e8-a5ea-47ff-aa3e-599d8a02ebfd) z Entity Designer. Na ploše Entity Designer, vyberte `Email` a `Phone` vlastnosti `Contact` typ entity, pak klikněte pravým tlačítkem a vyberte **Refaktorovat do nový komplexní typ**.  
   
-4.  Nový komplexní typ s vybranou `Email` a `Phone` vlastnosti je přidat do **prohlížeče modelu**. Komplexní typ je zadána výchozí název: Přejmenovat typ, který má `EmailPhone` v **vlastnosti** okno. Navíc nový `ComplexProperty` vlastnost je přidán do `Contact` typ entity. Přejmenovat vlastnosti`EmailPhoneComplexType.`  
+4.  Nový komplexní typ s vybranou `Email` a `Phone` vlastnosti je přidat do **prohlížeče modelu**. Komplexní typ je zadána výchozí název: Přejmenovat typ, který má `EmailPhone` v **vlastnosti** okno. Navíc nový `ComplexProperty` vlastnost je přidán do `Contact` typ entity. Přejmenovat vlastnosti `EmailPhoneComplexType.`  
   
      Informace o vytvoření a úprava komplexní typy s použitím průvodce Entity Data Model najdete v tématu [postup: Refaktorovat existující vlastnosti do komplexní vlastnost typu](http://msdn.microsoft.com/library/5b2eb3b3-693d-42cb-b43a-405812d677eb) a [postupy: vytvoření a upravit komplexní typy](http://msdn.microsoft.com/library/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
   

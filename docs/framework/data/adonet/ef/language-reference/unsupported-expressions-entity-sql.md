@@ -1,23 +1,14 @@
 ---
-title: "Nepodporované výrazy (entita SQL)"
+title: Nepodporované výrazy (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-ado
-ms.topic: article
 ms.assetid: 5e79da7e-e78a-413c-8fb0-f3f9cd84f579
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
 dev_langs:
 - sql
-ms.openlocfilehash: 075daf0e4f0477dda50231760fbb3d990a9f8468
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 6d1746bb51af4795f09c47f808cf9a29d0370f18
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unsupported-expressions"></a>Nepodporované výrazy
 

@@ -1,24 +1,12 @@
 ---
-title: "&lt;transport&gt; – &lt;netPeerTcpBinding&gt;"
-ms.custom: 
+title: '&lt;transport&gt; – &lt;netPeerTcpBinding&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c44d86d2-1160-44d7-9c7a-297b12eccc7f
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6cc5e0b2aa52c8fa37e6148f66dc24fca273a640
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c94336413424542f6fc6c0ef5b400b10ae715cd8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltnetpeertcpbindinggt"></a>&lt;transport&gt; – &lt;netPeerTcpBinding&gt;
 Určuje nastavení pro zabezpečení na úrovni přenosu při použití [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md).  
@@ -28,7 +16,7 @@ Určuje nastavení pro zabezpečení na úrovni přenosu při použití [ \<netP
 \<netPeerTcpBinding>  
 \<Vazba >  
 \<zabezpečení >  
-\<transport>  
+\<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
   

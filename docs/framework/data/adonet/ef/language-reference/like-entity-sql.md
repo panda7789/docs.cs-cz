@@ -1,24 +1,12 @@
 ---
 title: JAKO (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 021a999e79239e3da5c874cb459ac7f03fdb5661
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f2d06b364c577b581bb64af0436c133ca830bb2b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="like-entity-sql"></a>JAKO (entita SQL)
 Určuje, zda konkrétní znak `String` odpovídá zadanému vzoru.  
@@ -43,19 +31,19 @@ match [NOT] LIKE pattern [ESCAPE escape]
  Určuje, že se Negované výsledek jako.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud `string` odpovídá vzorku, jinak hodnota `false`.  
+ `true` Pokud `string` odpovídá vzorku, jinak hodnota `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]výrazy, které používají operátor LIKE se vyhodnocují prakticky stejně jako výrazy, které používají rovnosti jako kritéria filtru. Ale [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazy, které používají operátor LIKE může zahrnovat literály a zástupné znaky.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazy, které používají operátor LIKE se vyhodnocují prakticky stejně jako výrazy, které používají rovnosti jako kritéria filtru. Ale [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazy, které používají operátor LIKE může zahrnovat literály a zástupné znaky.  
   
  Následující tabulka popisuje syntaxe vzoru `string`.  
   
 |Zástupný znak|Popis|Příklad|  
 |------------------------|-----------------|-------------|  
-|%|Všechny `string` nula nebo více znaků.|`title like '%computer%'`Vyhledá všechny Tituly s slovo `"computer"` kdekoli v názvu.|  
-|_ (podtržítko)|Jednoho libovolného znaku.|`firstname like '_ean'`Vyhledá všechny názvy první čtyři písmeno, které končí `"ean`, "například Dean nebo pracovníka.|  
-|[ ]|Všechny jeden znak v zadaném rozsahu ([-f]) nebo nastavte ([abcdef]).|`lastname like '[C-P]arsen'`Najde poslední názvy konče "arsen" a počínaje mezi C a P, jako je například Carsen nebo Lomikar jednoho libovolného znaku.|  
-|[^]|Libovolný znak není v zadaném rozsahu ([^-f]), nebo nastavte ([^ abcdef]).|`lastname like 'de[^l]%'`Vyhledá všechny poslední názvy, které začínají řetězcem "de" a "l" jako písmeno nezahrnují.|  
+|%|Všechny `string` nula nebo více znaků.|`title like '%computer%'` Vyhledá všechny Tituly s slovo `"computer"` kdekoli v názvu.|  
+|_ (podtržítko)|Jednoho libovolného znaku.|`firstname like '_ean'` Vyhledá všechny názvy první čtyři písmeno, které končí `"ean`, "například Dean nebo pracovníka.|  
+|[ ]|Všechny jeden znak v zadaném rozsahu ([-f]) nebo nastavte ([abcdef]).|`lastname like '[C-P]arsen'` Najde poslední názvy konče "arsen" a počínaje mezi C a P, jako je například Carsen nebo Lomikar jednoho libovolného znaku.|  
+|[^]|Libovolný znak není v zadaném rozsahu ([^-f]), nebo nastavte ([^ abcdef]).|`lastname like 'de[^l]%'` Vyhledá všechny poslední názvy, které začínají řetězcem "de" a "l" jako písmeno nezahrnují.|  
   
 > [!NOTE]
 >  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Jako operátor a klauzule řídicí nelze použít pro `System.DateTime` nebo `System.Guid` hodnoty.  

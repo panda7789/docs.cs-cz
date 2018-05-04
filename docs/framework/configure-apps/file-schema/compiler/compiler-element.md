@@ -1,14 +1,6 @@
 ---
-title: "&lt;kompilátoru&gt; – Element"
-ms.custom: 
+title: '&lt;kompilátoru&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#compiler
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.codedom/compilers/compiler
@@ -18,25 +10,22 @@ helpviewer_keywords:
 - compiler configuration attributes
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 242a4780443026e751d76c7e80dd9a77cbbbddc7
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: b033e26d64f23398a4da6842bb4688cc94627d68
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcompilergt-element"></a>&lt;kompilátoru&gt; – Element
 Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.  
   
  \<konfigurace elementu >  
 \<system.codedom Element>  
-\<compilers Element>  
-\<compiler> Element  
+\<Kompilátory elementu >  
+\<kompilátoru > elementu  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -67,7 +56,7 @@ Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<providerOption> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|Určuje atributy verze kompilátoru jazyka zprostředkovatele.|  
+|[\<Hodnota providerOption > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|Určuje atributy verze kompilátoru jazyka zprostředkovatele.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -75,7 +64,7 @@ Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.
 |-------------|-----------------|  
 |[\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje kompilátor – nastavení konfigurace pro zprostředkovatele dostupný jazyk.|  
-|[\<compilers> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více `<compiler>` elementy.|  
+|[\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více `<compiler>` elementy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Každý `<compiler>` element určuje kompilátor – konfigurační atributy pro konkrétní jazyk zprostředkovatele. Zprostředkovatel rozšiřuje <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> třídy pro konkrétní jazyk; `<compiler>` element definuje kompilátoru a nastavení generátor kódu pro jazyk zprostředkovatele.  
@@ -112,6 +101,6 @@ Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.
  <xref:System.CodeDom.Compiler.CompilerInfo>  
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<compilers> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
  [Určení úplných názvů typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
  [kompilátoru Element pro kompilátory pro kompilaci (schéma nastavení ASP.NET)](https://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e(v=vs.100))

@@ -1,26 +1,14 @@
 ---
-title: '&amp;&amp;(A) (Entita SQL)'
-ms.custom: 
+title: '&amp;&amp; (A) (Entita SQL)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e7d24213-471d-4807-b85e-570375df89b5
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a132968c69320cdae1824bebdf51b764202084b1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 649b805c1d728c45120adf85f02533d36f7bcdff
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ampamp-and-entity-sql"></a>&amp;&amp;(A) (Entita SQL)
+# <a name="ampamp-and-entity-sql"></a>&amp;&amp; (A) (Entita SQL)
 Vrátí `true` Pokud jsou oba výrazy `true`, jinak hodnota `false` nebo `NULL`.  
   
 ## <a name="syntax"></a>Syntaxe  

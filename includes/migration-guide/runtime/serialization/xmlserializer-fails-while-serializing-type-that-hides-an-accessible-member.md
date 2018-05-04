@@ -3,7 +3,7 @@
 |   |   |
 |---|---|
 |Podrobnosti|Při serializaci odvozený typ <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> může selhat, pokud typ obsahuje nepřístupný pole nebo vlastnost, která skryje (prostřednictvím 'new' – klíčové slovo) pole nebo vlastnost se stejným názvem, který byl dříve přístupný (veřejné, např.) u základního typu.|
-|Návrh|Tento problém lze vyřešit tak, že nový, neskrývá člen přístupné <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> (jeho označením veřejné, třeba). Můžete taky následující nastavení konfigurace se vrátí k 4.0 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> chování, které problém opravíme:<pre><code class="language-xml">&lt;system.xml.serialization&gt;&#13;&#10;&lt;xmlSerializer useLegacySerializerGeneration=&quot;true&quot; /&gt;&#13;&#10;&lt;/system.xml.serialization&gt;&#13;&#10;</code></pre>|
+|Návrh|Tento problém lze vyřešit tak, že nový, neskrývá člen přístupné <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> (jeho označením veřejné, třeba). Můžete taky následující nastavení konfigurace se vrátí k 4.0 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> chování, které problém opravíme:<pre><code class="lang-xml">&lt;system.xml.serialization&gt;&#13;&#10;&lt;xmlSerializer useLegacySerializerGeneration=&quot;true&quot; /&gt;&#13;&#10;&lt;/system.xml.serialization&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.5|
 |Typ|Modul runtime|

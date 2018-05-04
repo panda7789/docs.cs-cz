@@ -1,27 +1,15 @@
 ---
-title: "Ladění LINQ na dotazy, datové sady"
-ms.custom: 
+title: Ladění LINQ na dotazy, datové sady
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e1c8a518dd3f8bc4c1123099522ad4a4f452c78f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c0d3347358fa3417f8b73fd848b4091fe7d74a15
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění LINQ na dotazy, datové sady
-[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]podporuje ladění z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiných-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkce ladění pracovat s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně krokování, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v ladicího programu. Však odložené dotazu ve má některé vedlejší účinky, které byste měli zvážit při ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód a některá omezení pomocí upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  
+[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] podporuje ladění z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiných-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkce ladění pracovat s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně krokování, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v ladicího programu. Však odložené dotazu ve má některé vedlejší účinky, které byste měli zvážit při ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód a některá omezení pomocí upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  
   
 ## <a name="viewing-results"></a>Zobrazení výsledků  
  Můžete zobrazit výsledek [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkaz pomocí datatips – okno kukátka a dialogové okno QuickWatch. Pomocí okna, zdroj je možné pozastavit ukazatele na dotazu v okně zdroje a datového tipu se zobrazí. Můžete zkopírovat [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] proměnné a vložte ho do okna kukátka nebo dialogového okna QuickWatch. V [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], dotazu, nebude hodnocen při vytvoření nebo deklarovat, ale jenom v případě, že dotaz proveden. To se označuje jako *odložené spouštění*. Proměnné dotazu proto nemá hodnotu, dokud je vyhodnocena. Další informace najdete v tématu [dotazy v LINQ na DataSet](../../../../docs/framework/data/adonet/queries-in-linq-to-dataset.md).  

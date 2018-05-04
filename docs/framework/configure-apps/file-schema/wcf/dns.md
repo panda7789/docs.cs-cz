@@ -1,24 +1,12 @@
 ---
 title: '&lt;DNS&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 81819dae-4825-43b7-bccd-f16d2d3d2f06
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4c7585cfa85d805a3d1454b0c16e38eee297280a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6125bf157d04a1b0298a183465d11a18ac3786f0
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltdnsgt"></a>&lt;DNS&gt;
 Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim ověřování certifikátu, pokud certifikát serveru obsahuje DNS se stejnou hodnotou. Je taky platná pro režim ověřování systému Windows Pokud hlavní název služby má stejnou hodnotu.  
@@ -41,7 +29,7 @@ Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|value|DNS certifikátu. DNS je standardní protokol používaná k nalezení počítače v síti založenou na protokolu IP. Uživatelé pamatovat zobrazované názvy, například [http://go.microsoft.com/fwlink/?prd=10929](http://go.microsoft.com/fwlink/?prd=10929) nebo [http://go.microsoft.com/fwlink/?LinkID=96165](http://go.microsoft.com/fwlink/?LinkID=96165), jednodušší než adresy na základě číslo, například 207.46.131.137.|  
+|value|DNS certifikátu. DNS je standardní protokol používaná k nalezení počítače v síti založenou na protokolu IP. Uživatelé pamatovat zobrazované názvy, například [ http://go.microsoft.com/fwlink/?prd=10929 ](http://go.microsoft.com/fwlink/?prd=10929) nebo [ http://go.microsoft.com/fwlink/?LinkID=96165 ](http://go.microsoft.com/fwlink/?LinkID=96165), jednodušší než adresy na základě číslo, například 207.46.131.137.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

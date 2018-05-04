@@ -1,30 +1,18 @@
 ---
-title: "Filtrování s DataView (LINQ na DataSet)"
-ms.custom: 
+title: Filtrování s DataView (LINQ na DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2f1eb878bcc38d8bbeed42638cc5ccda230f60f1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b457eb925f636656455ef8f3f02f9d2a78558325
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrování s DataView (LINQ na DataSet)
-Možnost filtrování dat pomocí konkrétních kritérií a potom prezentovat data ke klientovi pomocí ovládacího prvku uživatelského rozhraní je důležitým aspektem datové vazby. <xref:System.Data.DataView>poskytuje několik způsobů, jak filtrovat data a vrátit podmnožiny dat řádků kritéria filtru konkrétní schůzku. Kromě základě řetězec možností filtrování <xref:System.Data.DataView> taky poskytuje možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]výrazy umožňují mnohem složitější a výkonné filtrování operací než filtrování založené na řetězec.  
+Možnost filtrování dat pomocí konkrétních kritérií a potom prezentovat data ke klientovi pomocí ovládacího prvku uživatelského rozhraní je důležitým aspektem datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak filtrovat data a vrátit podmnožiny dat řádků kritéria filtru konkrétní schůzku. Kromě základě řetězec možností filtrování <xref:System.Data.DataView> taky poskytuje možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem složitější a výkonné filtrování operací než filtrování založené na řetězec.  
   
  Existují dva způsoby pro filtrování dat pomocí <xref:System.Data.DataView>:  
   

@@ -1,24 +1,12 @@
 ---
 title: '&lt;net.tcp&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 61b799afa1761e59c5cedf5b14eadcaf6fcaada0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 9312d5f7544a794f036f0a623df0d537eb96d145
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltnettcpgt"></a>&lt;net.tcp&gt;
 Určuje nastavení konfigurace sítě. TCP Port sdílení služby, která umožňuje více procesů sdílet stejný port TCP.  
@@ -63,7 +51,7 @@ Určuje nastavení konfigurace sítě. TCP Port sdílení služby, která umož�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`listenBacklog`|Celé číslo, které určuje maximální počet nezpracovaných připojení, které přijímají sdíleného připojení, ale ještě nejsou odeslaných [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby. Výchozí hodnota je 10.|  
+|`listenBacklog`|Celé číslo, které určuje maximální počet nezpracovaných připojení, které přijímají sdíleného připojení, ale nejsou ještě odeslaných do služby Windows Communication Foundation (WCF). Výchozí hodnota je 10.|  
 |`maxPendingAccepts`|Celé číslo, které určuje maximální počet nezpracovaných souběžných přijímá vláken pro naslouchání koncový bod pro službu sdílení. Výchozí hodnota je 2.|  
 |`MaxPendingConnections`|Maximální počet připojení, která naslouchací proces může mít čeká se na aplikace akceptovat. Při překročení této hodnoty kvóty na nový příchozí připojení zahozených místo čekání na přijmout. Funkce připojení jako zabezpečení zpráv může způsobit klienta otevřít víc než jedno připojení. Správci služeb by měl účet pro tyto další připojení při nastavování této hodnoty kvóty. Výchozí hodnota je 10.|  
 |`receiveTimeout`|A `TimeSpan` který určuje časový limit pro čtení dat rámcovacích a provádění připojení odeslání od připojení podtržení. Výchozí hodnota je "00: 00:10".|  
@@ -73,7 +61,7 @@ Určuje nastavení konfigurace sítě. TCP Port sdílení služby, která umož�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowAccounts>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekci elementů konfigurace, které obsahují `securityIdentifier` atribut k určení uživatelských účtů pro procesy, které hostují [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby a je uděleno oprávnění k připojení ke službě sdílení.|  
+|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekci elementů konfigurace, které obsahují `securityIdentifier` atribut k určení uživatelských účtů pro procesy, které hostují [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby a je uděleno oprávnění k připojení ke službě sdílení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -1,9 +1,6 @@
 ---
-title: "&lt;supportedRuntime&gt; – Element"
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
+title: '&lt;supportedRuntime&gt; – Element'
+ms.date: 04/10/2018
 ms.custom: updateeachrelease
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#supportedRuntime
@@ -15,12 +12,11 @@ ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 4b0967790f2bbf8fa9a889c56fa9c5168f7523bd
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 544aaf5a58b743c437b42764bdea3c6b7eea7c74
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; – Element
 
@@ -28,7 +24,7 @@ Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje. T
   
 [\<Konfigurace >](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
 &nbsp;&nbsp;[\<spuštění >](../../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime>**  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime >**  
   
 ## <a name="syntax"></a>Syntaxe
   
@@ -40,7 +36,7 @@ Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje. T
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**verze**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Platné hodnoty z `version` atributů najdete v tématu [hodnoty "runtime verze"](#version) části. **Poznámka:** prostřednictvím rozhraní .NET Framework 3.5 "*verzi modulu runtime*" hodnota má podobu *hlavní*. *méně závažné*. *sestavení*. Od verze [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pouze čísla hlavní verze a podverze jsou vyžadována (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|  
+|**Verze**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Platné hodnoty z `version` atributů najdete v tématu [hodnoty "runtime verze"](#version) části. **Poznámka:** prostřednictvím rozhraní .NET Framework 3.5 "*verzi modulu runtime*" hodnota má podobu *hlavní*. *méně závažné*. *sestavení*. Od verze [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pouze čísla hlavní verze a podverze jsou vyžadována (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|  
 |**sku**|Nepovinný atribut.<br /><br /> Hodnotu řetězce, který určuje skladové jednotky (SKU), který naopak určuje, jaké verze rozhraní .NET Framework podporuje tuto aplikaci.<br /><br /> Od verze rozhraní .NET Framework 4.0, použití `sku` se doporučuje atribut.  Pokud jsou k dispozici, znamená to verzi rozhraní .NET Framework, že cílem aplikace.<br /><br /> Platné hodnoty atributu, sku, najdete v článku [hodnoty "sku id"](#sku) části.|  
   
 ## <a name="remarks"></a>Poznámky
@@ -63,21 +59,21 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 ## <a name="runtime-version-values"></a>hodnoty "runtime verze"  
 `runtime` Atribut určuje verzi Common Language Runtime (CLR), která je nutná k dané aplikaci. Všimněte si, že všechny verze rozhraní .NET Framework v4.x zadejte `v4.0` CLR. Následující tabulka uvádí platné hodnoty pro *verzi modulu runtime* hodnotu `version` atribut.  
 
-|Verze rozhraní .NET Framework|`version`atribut|  
+|Verze rozhraní .NET Framework|`version` Atribut|  
 |----------------------------|-------------------------|  
 |1.0|"v1.0.3705"|  
 |1.1|"v1.1.4322"|  
 |2.0|"v2.0.50727"|  
 |3.0|"v2.0.50727"|  
 |3.5|"v2.0.50727"|  
-|4.0-4.7.1|"v4.0"|  
+|4.0 4.7.2|"v4.0"|  
 
 <a name="sku"></a>   
 ## <a name="sku-id-values"></a>hodnoty "sku id"
 
 `sku` Atribut target framework Přezdívka (TFM) používá k označení verzi rozhraní .NET Framework, který cílí a vyžaduje ke spuštění aplikace. Následující tabulka uvádí platné hodnoty, které jsou podporovány `sku` atribut od verze rozhraní .NET Framework 4.
   
-|Verze rozhraní .NET Framework|`sku`atribut|  
+|Verze rozhraní .NET Framework|`sku` Atribut|  
 |----------------------------|---------------------|  
 |4.0|". NETFramework, verze = v4.0 "|  
 |4.0, profil klienta|". NETFramework, verze = v4.0, profil = klienta "|  
@@ -95,6 +91,7 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |4.6.2|". NETFramework, verze = v4.6.2 "|  
 |4.7|". NETFramework, verze = v4.7 "|
 |4.7.1|". NETFramework, verze = v4.7.1 "|
+|4.7.2|". NETFramework, verze = v4.7.2 "|
 
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak určit verzi podporované runtime v konfiguračním souboru. Konfigurační soubor označuje, že aplikace cílí rozhraní .NET Framework 4.7.  

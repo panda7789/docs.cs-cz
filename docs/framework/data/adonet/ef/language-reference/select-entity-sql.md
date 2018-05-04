@@ -1,24 +1,12 @@
 ---
 title: Vyberte (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9a33bd0d-ded1-41e7-ba3c-305502755e3b
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 26d62b4ccab71d1d21a8f65f7feacb8cec727a94
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f815c08b9be11efc71b04678d9780cabcdd69ab5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="select-entity-sql"></a>Vyberte (entita SQL)
 Určuje prvky vrácených dotazem.  
@@ -33,10 +21,10 @@ SELECT VALUE [ ALL | DISTINCT ] [ topSubclause ] expr FROM fromClause [ WHERE wh
 ```  
   
 ## <a name="arguments"></a>Arguments  
- ALL  
+ VŠECHNY  
  Určuje, že duplicitní může zobrazit v sadě výsledků dotazu. VŠECHNY je výchozí.  
   
- DISTINCT  
+ ODLIŠNÉ  
  Určuje, že můžete pouze jedinečné výsledky se zobrazí v sadě výsledků dotazu.  
   
  HODNOTA  
@@ -50,7 +38,7 @@ SELECT VALUE [ ALL | DISTINCT ] [ topSubclause ] expr FROM fromClause [ WHERE wh
  `aliasedExpr`  
  Výraz ve tvaru:  
   
- `expr` as `identifier` &#124; `expr`  
+ `expr` jako `identifier`&#124; `expr`  
   
  `expr`  
  Literál nebo výraz.  
@@ -73,7 +61,7 @@ SELECT customers.Name FROM customers AS c
  Je také možné použití syntaxe spojení (FULL, vnitřní, vlevo, vnější, ON a vpravo). Dále je potřeba pro vnitřní spojení a je nChcete-li povolena křížové spojení.  
   
 ## <a name="row-and-value-select-clauses"></a>Řádek a hodnota klauzule FROM  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje dvě varianty klauzuli SELECT. První variant, vyberte řádek, je identifikována vyberte – klíčové slovo a umožňuje určit jednu nebo více hodnot, které by měl použít k projekci se. Protože implicitně přidání řádek obálku kolem hodnot vrácených výsledkem výrazu dotazu je vždy multimnožina řádků.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dvě varianty klauzuli SELECT. První variant, vyberte řádek, je identifikována vyberte – klíčové slovo a umožňuje určit jednu nebo více hodnot, které by měl použít k projekci se. Protože implicitně přidání řádek obálku kolem hodnot vrácených výsledkem výrazu dotazu je vždy multimnožina řádků.  
   
  Každý výraz dotazu v vyberte řádek zadejte alias. Pokud není zadaný žádný alias,[!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí generování alias pomocí pravidel pro vytvoření aliasu.  
   

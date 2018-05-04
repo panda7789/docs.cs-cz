@@ -2,7 +2,7 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.6.2 data Unicode v rámci upgradována z kódu Unicode standardní verzi 6.3 verzi 8.0.  Při žádosti kategorie znak Unicode v rozhraní .NET Framework 4.6.2, nemusí odpovídat některé výsledky výsledky v předchozích verzích rozhraní .NET Framework.  Tato změna většinou má vliv Čerokí slabik a nové značky samohlásky Tai Lue a styl podání znaky.|
+|Podrobnosti|V rozhraní .NET Framework 4.6.2 Unicode data upgradována z standardu Unicode verze 6.3 verzi 8.0.  Při žádosti kategorií znaků Unicode v rozhraní .NET Framework 4.6.2, nemusí odpovídat některé výsledky výsledky v předchozích verzích rozhraní .NET Framework.  Tato změna většinou má vliv Čerokí slabik a nové značky samohlásky Tai Lue a styl podání znaky.|
 |Návrh|Zkontrolujte kód a odebrat nebo změnit logiku, která závisí na pevně kategorií znaků Unicode.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|

@@ -1,24 +1,12 @@
 ---
-title: "Odvození relační strukturu datové sady z XML"
-ms.custom: 
+title: Odvození relační strukturu datové sady z XML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cd2f41c6-6785-420e-aa43-3ceb0bdccdce
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bae6e82eaf0f01847c304e094d98fe420e6f8b65
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 6ded5e893ccca973f8be5f070f68d9d8c7e09678
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="inferring-dataset-relational-structure-from-xml"></a>Odvození relační strukturu datové sady z XML
 Relační struktura nebo schéma z <xref:System.Data.DataSet> se skládá z tabulky, sloupce, omezení a vztahů. Při načítání <xref:System.Data.DataSet> ze souboru XML, můžete předem definovaná schématu, ale mohou být vytvořeny, explicitně nebo prostřednictvím odvozená z XML načítá. Další informace o načítání schématu a obsah <xref:System.Data.DataSet> ze souboru XML, najdete v části [načítání datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [načítání datovou sadu informace o schématu z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  

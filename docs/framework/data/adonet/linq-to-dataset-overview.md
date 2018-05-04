@@ -1,26 +1,12 @@
 ---
 title: LINQ na DataSet přehled
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: dc20a8fb-03f6-4b68-9c2b-7f7299e3070b
-caps.latest.revision: 3
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3e030ca62625e2b8870cf0eeb5694f4b889b3a7e
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: d269ea2899ffd8005aad9912cf9273a012e13edd
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linq-to-dataset-overview"></a>LINQ na DataSet přehled
 <xref:System.Data.DataSet> Je jedním z více často používaný součástí [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Je důležitou součástí odpojeném programování modelu, který [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] vychází z, a umožňuje explicitně ukládat data do mezipaměti z různých zdrojů. Pro prezentační vrstvy <xref:System.Data.DataSet> je úzce integrovaná s grafickým uživatelským rozhraním ovládací prvky pro datovou vazbu. Pro střední vrstvě poskytuje mezipaměti, který zachovává relační tvaru dat a zahrnuje rychle jednoduchý dotaz a hierarchii navigační služby. Běžné metoda používaná k snížit počet požadavků na databázi, které se má používat <xref:System.Data.DataSet> pro ukládání do mezipaměti ve střední vrstvě. Zvažte například řízené daty [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace. Podstatnou část dat aplikací často nemění příliš často a je společná pro relací nebo uživatele. Tato data je možné mít v paměti na webovém serveru, která omezuje počet požadavků v databázi a urychluje interakce uživatele. Další užitečné aspekt <xref:System.Data.DataSet> je, že umožňuje aplikaci tím podmnožiny dat z jedné nebo více zdroje dat do prostoru aplikace. Aplikace pak můžete upravit na data v paměti, při zachování jejich relačního modelu.  

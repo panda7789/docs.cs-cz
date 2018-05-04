@@ -1,27 +1,15 @@
 ---
-title: "Provádění dotazu XPath na datové sady"
-ms.custom: 
+title: Provádění dotazu XPath na datové sady
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3a13d6ee9345731e097d0bdc9b6e59772d29b554
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c785cc69289440918f45974c711ae0b112130c5d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Provádění dotazu XPath na datové sady
 Vztah mezi synchronizovaný <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje využívat XML služby, jako je dotaz XML Path Language (XPath), kteří se dostávají **XmlDataDocument** a může provádět určité funkce snadněji než přístup k **datovou sadu** přímo. Například místo pomocí **vyberte** metodu <xref:System.Data.DataTable> přejděte s jinými v **datovou sadu**, dotaz XPath můžete provádět na **XmlDataDocument**  který je synchronizován se službou **datovou sadu**, chcete-li získat seznam elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, vícesměrového vysílání jako <xref:System.Xml.XmlElement> uzlů, může být předána do **GetRowFromElement** metodu **XmlDataDocument**, vrátit odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky synchronizované **datovou sadu**.  

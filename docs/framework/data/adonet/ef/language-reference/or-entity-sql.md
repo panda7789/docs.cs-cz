@@ -1,26 +1,12 @@
 ---
 title: '|| (NEBO) (Entita SQL)'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8e649648-eb9a-4380-9d74-36e62260628c
-caps.latest.revision: ''
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: b44934aa0db73f872f0ab27a4c36c5c615855de1
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 09ae742f648f95819a8c6fc64d402c4f11c7748a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="-or-entity-sql"></a>|| (NEBO) (Entita SQL)
 Kombinuje dva `Boolean` výrazy.  

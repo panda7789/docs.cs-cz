@@ -12,11 +12,11 @@ ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 caps.latest.revision: 41
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 9478900be008588597c1dd9e75f704c751ebe344
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
-ms.translationtype: MT
+ms.openlocfilehash: 5a888440a76119eae7e4c525942878e0aa6ddafc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec se objekt typu <xref:System.String> jehož hodnota je text. Interně, je text uložený jako sekvenční jen pro čtení kolekce <xref:System.Char> objekty. Neexistuje žádné ukončení null znak na konci C# řetězec; řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, nikoli počet znaků Unicode. Chcete-li získat přístup k jednotlivé body kódu Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -125,12 +125,14 @@ string s = String.Empty;
 |-----------|-----------------|  
 |[Postupy: Změna obsahu řetězce](../../how-to/modify-string-contents.md)|Ukázky postupů k transformaci řetězce a upravovat obsah řetězce.|  
 |[Postupy: Porovnávání řetězců](../../how-to/compare-strings.md)|Ukazuje, jak provést pořadí a jazykovou verzi konkrétní porovnání hodnot řetězců.|  
-|[Postupy: Analýza řetězců využívajících String.Split ](../../how-to/parse-strings-using-split.md)|Obsahuje příklad kódu, která ukazuje, jak používat `String.Split` metoda analyzovat řetězce.|  
+|[Postupy: Zřetězení více řetězců](../../how-to/concatenate-multiple-strings.md)|Ukazuje různé způsoby, jak připojit více řetězce do jednoho.|
+|[Postupy: Analýza řetězců využívajících String.Split ](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ukazují, jak používat `String.Split` metoda analyzovat řetězce.|  
 |[Postupy: vyhledávání řetězců](../../how-to/search-strings.md)|Vysvětluje, jak používat v řetězcích vyhledávání pro určitý text nebo vzory.|  
 |[Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec a zjistěte, zda má platnou číselnou hodnotu.|  
-|[Postupy: Převedení řetězce na typ DateTime](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|Ukazuje, jak převést řetězec jako je například "01/24/2008" k <xref:System.DateTime?displayProperty=nameWithType> objektu.|  
+|[Interpolace řetězců](../../language-reference/tokens/interpolated.md)|Popisuje funkci interpolace řetězec, který poskytuje pohodlné syntaxe do řetězce formátu.|
 |[Základní operace s řetězci](../../../../docs/standard/base-types/basic-string-operations.md)|Obsahuje odkazy na témata, které používají <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> metody k provedení základní operace s řetězci.|  
-|[Analýza řetězců](../../../../docs/standard/base-types/parsing-strings.md)|Popisuje, jak vložit znaky nebo prázdné mezery na řetězec.|  
+|[Analýza řetězců](../../../standard/base-types/parsing-strings.md)|Popisuje, jak převést řetězcové vyjádření základních typů .NET instancí odpovídající typy.|  
+|[Analýza řetězců data a času v rozhraní .NET](../../../standard/base-types/parsing-datetime.md)|Ukazuje, jak převést řetězec jako je například "01/24/2008" k <xref:System.DateTime?displayProperty=nameWithType> objektu.|  
 |[Porovnávání řetězců](../../../../docs/standard/base-types/comparing.md)|Obsahuje informace o tom, jak porovnat řetězce a příklady v C# a Visual Basic.|  
 |[Používání třídy StringBuilder](../../../standard/base-types/stringbuilder.md)|Popisuje, jak vytvořit a upravit objekty dynamického řetězce pomocí <xref:System.Text.StringBuilder> třídy.|  
 |[LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|Poskytuje informace o tom, jak provádět různé operace s řetězci pomocí dotazů LINQ.|  

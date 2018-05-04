@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 5
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 70dd5606ba81619658eda24f8c4bfd4970d29308
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
-ms.translationtype: MT
+ms.openlocfilehash: 3f8df58503fe0dd4c3096250c920db250b06046b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -153,7 +153,7 @@ Asynchronní metody mají být neblokující operace. `await` Výrazu v asynchro
   
 `async` a `await` klíčová slova nejsou způsobit další vláken, který se má vytvořit. Asynchronní metody nevyžadují multithreading, protože asynchronní metoda není spuštěna ve vlastním vlákně. Metoda pracuje na aktuálním kontextu synchronizace a používá čas ve vlákně pouze v případě, že je metoda aktivní. Můžete použít <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> přesunout vázané na procesor pracovní vlákna na pozadí, ale na pozadí nemá přístup z více vláken usnadní proces, který se právě čeká na výsledky k dispozici.  
   
-Asynchronní přístup při asynchronním programování se doporučuje v téměř každém případě existujících přístupů. Konkrétně tento přístup je lepší, než <xref:System.ComponentModel.BackgroundWorker> třídy pro vázané na vstupně-výstupní operace, protože kód je jednodušší a nemusíte chránit proti časování. V kombinaci s <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metoda, je lepší, než asynchronní programování <xref:System.ComponentModel.BackgroundWorker> pro operace vázané na procesor protože asynchronní programování odděluje podrobnosti koordinaci spuštěním kódu z práce `Task.Run` přenese fondu.  
+Asynchronní přístup při asynchronním programování se doporučuje v téměř každém případě existujících přístupů. Konkrétně tento přístup je lepší, než <xref:System.ComponentModel.BackgroundWorker> třídy I/výstupních operací, protože kód je jednodušší a nemusíte chránit proti časování. V kombinaci s <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metoda, je lepší, než asynchronní programování <xref:System.ComponentModel.BackgroundWorker> pro operace vázané na procesor protože asynchronní programování odděluje podrobnosti koordinaci spuštěním kódu z práce `Task.Run` přenese fondu.  
   
 ##  <a name="BKMK_AsyncandAwait"></a> Async a operátoru await  
  Pokud určíte, že je metoda asynchronní metody pomocí [asynchronní](../../../../csharp/language-reference/keywords/async.md) modifikátor, povolte následující dvě možnosti.  

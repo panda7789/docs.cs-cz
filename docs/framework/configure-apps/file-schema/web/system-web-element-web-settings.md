@@ -1,13 +1,6 @@
 ---
-title: "&lt;System.Web&gt; – Element (webové nastavení)"
-ms.custom: 
+title: '&lt;System.Web&gt; – Element (webové nastavení)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Web.config configuration file [ASP.NET]
 - system.Web element
@@ -15,16 +8,14 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 59899178fd9fc8da2334883ed62d9f8655eb335b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7527ee9e7528a0da47529bae93e8112705e03a36
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsystemwebgt-element-web-settings"></a>&lt;System.Web&gt; – Element (webové nastavení)
 Obsahuje informace o správě procesy chování vrstvě hostování technologie ASP.NET.  
@@ -49,7 +40,7 @@ Obsahuje informace o správě procesy chování vrstvě hostování technologie 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<applicationPool >](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|Určuje nastavení konfigurace pro fondy aplikací služby IIS v soubor aspnet.config.|  
+|[\<ApplicationPool >](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|Určuje nastavení konfigurace pro fondy aplikací služby IIS v soubor aspnet.config.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

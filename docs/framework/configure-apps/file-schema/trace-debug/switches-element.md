@@ -1,13 +1,6 @@
 ---
-title: "&lt;přepínače&gt; – Element"
-ms.custom: 
+title: '&lt;přepínače&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/switches
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#switches
@@ -16,16 +9,14 @@ helpviewer_keywords:
 - switches element
 - trace switches, <switches> element
 ms.assetid: 4cf36786-b89a-40e2-a0f1-86bb9b783343
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 64cf3ba9e5529c4a46b2d5365931a47ad2ab211a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60a18ae8d89d6be69b2c10c07064f123d3f9c0f8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltswitchesgt-element"></a>&lt;přepínače&gt; – Element
 Obsahuje trasování – přepínače a úroveň, kde jsou nastaveny trasování – přepínače.  
@@ -51,7 +42,7 @@ Obsahuje trasování – přepínače a úroveň, kde jsou nastaveny trasování
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Přidat >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-switches.md)|Určuje úroveň, kde je nastaven na přepínač trasování.|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-switches.md)|Určuje úroveň, kde je nastaven na přepínač trasování.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

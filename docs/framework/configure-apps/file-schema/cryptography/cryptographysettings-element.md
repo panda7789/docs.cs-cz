@@ -1,13 +1,6 @@
 ---
-title: "&lt;cryptographySettings –&gt; – Element"
-ms.custom: 
+title: '&lt;cryptographySettings –&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptographySettings
@@ -15,16 +8,14 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 73a4f362be1612658e6911b7e7ea7a6c3e670e01
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 14b510df192dcff1f005eec4f029aa0f26b967a4
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcryptographysettingsgt-element"></a>&lt;cryptographySettings –&gt; – Element
 Obsahuje nastavení šifrování.  

@@ -1,24 +1,12 @@
 ---
-title: "* (Násobení) (Entita SQL)"
-ms.custom: 
+title: '* (Násobení) (Entita SQL)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 508ce246-4e86-47dd-a605-4af4bebb9891
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c7e2bcf15ab8d0cf24fdc6cb7e9db025784bd435
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ecb0a55e403dddc5f7e69947035c8aa1fe7560ad
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="-multiply-entity-sql"></a>* (Násobení) (entita SQL)
 Vynásobí dvou výrazů.  

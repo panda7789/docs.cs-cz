@@ -1,29 +1,19 @@
 ---
 title: '&lt;securityTokenHandlers&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f11a631d-4094-4e11-bb03-4ede74b30281
-caps.latest.revision: "5"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: de19fffdeae801163ec991ecf08d00b1286781d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 16827aa774a8a76f16106a8650423d0d7f084982
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsecuritytokenhandlersgt"></a>&lt;securityTokenHandlers&gt;
 Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.  
   
- \<system.identityModel >  
+ \<system.identityModel>  
 \<identityConfiguration >  
 \<securityTokenHandlers >  
   
@@ -51,9 +41,9 @@ Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový b
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Přidat >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Obslužná rutina tokenu zabezpečení se přidá do kolekce obslužná rutina tokenu.|  
-|[\<Clear >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/clear.md)|Vymaže všechny rutiny tokenu zabezpečení z kolekce obslužná rutina tokenu.|  
-|[\<Odebrat >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/remove.md)|Obslužná rutina tokenu zabezpečení se odebere z kolekce obslužná rutina tokenu.|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Obslužná rutina tokenu zabezpečení se přidá do kolekce obslužná rutina tokenu.|  
+|[\<clear>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/clear.md)|Vymaže všechny rutiny tokenu zabezpečení z kolekce obslužná rutina tokenu.|  
+|[\<remove>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/remove.md)|Obslužná rutina tokenu zabezpečení se odebere z kolekce obslužná rutina tokenu.|  
 |[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Poskytuje konfigurace pro kolekci tokenu obslužné rutiny.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  

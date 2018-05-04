@@ -1,29 +1,17 @@
 ---
-title: "Odvozování relační strukturu datové sady z schématu XML (XSD)"
-ms.custom: 
+title: Odvozování relační strukturu datové sady z schématu XML (XSD)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: eb4f6e3a63c901ec69ca5572a6f79d2f0ac4adfc
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 7599577c4e0f485e336e7f79a6c3bd17f0f0c316
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační strukturu datové sady z schématu XML (XSD)
 Tato část obsahuje přehled o relační schéma `DataSet` je sestaven z dokument schématu XML definition language (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek elementu schématu tabulky se generuje ve `DataSet`. Struktura tabulky je určen podle definice komplexního typu. Tabulky se vytváří v `DataSet` nejvyšší úrovně elementy ve schématu. Však tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element vnořen uvnitř jiné `complexType` případ vnořený elementu, ve kterém `complexType` element je namapovaný na `DataTable` v rámci `DataSet`.  
   
- Další informace o XSD, najdete v části schématu XML World Wide Web Consortium (W3C) 0: Úvod do doporučení, část 1 schématu XML: struktury doporučení a XML schéma část 2: datové typy doporučení, nacházející se v [http:// www.w3.org/](http://www.w3.org/TR/).  
+ Další informace o XSD, najdete v části schématu XML World Wide Web Consortium (W3C) 0: Úvod do doporučení, část 1 schématu XML: struktury doporučení a XML schéma část 2: datové typy doporučení, nacházející se v [ http://www.w3.org/ ](http://www.w3.org/TR/).  
   
  Následující příklad ukazuje schématu XML kde `customers` je podřízený element `MyDataSet` element, který je **datovou sadu** elementu.  
   

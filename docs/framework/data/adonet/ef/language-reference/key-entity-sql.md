@@ -1,24 +1,12 @@
 ---
-title: "KLÍČ (entita SQL)"
-ms.custom: 
+title: KLÍČ (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cbaa97a8-c89c-4460-8c74-00474695789f
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: aa18efd32998f881d49d7ebd71bad0cdf8122457
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c35cac018392aa9688866e280ff64fdf6a1453f5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="key-entity-sql"></a>KLÍČ (entita SQL)
 Extrahuje klíč odkaz nebo výraz entity.  

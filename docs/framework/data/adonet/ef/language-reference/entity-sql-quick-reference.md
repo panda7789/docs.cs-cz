@@ -1,24 +1,12 @@
 ---
-title: "Stručná referenční entity SQL"
-ms.custom: 
+title: Stručná referenční entity SQL
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 81fd76d09f9cc02e89ac34d5f8fa74bd7f9d92f9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 0617ce96acaf5a6eafb2658cfe218cc8f4135f6e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-sql-quick-reference"></a>Stručná referenční entity SQL
 Toto téma obsahuje Stručná referenční příručka pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy. Dotazy v tomto tématu jsou založené na modelu prodeje společnosti AdventureWorks.  
@@ -83,7 +71,7 @@ DATETIME '2006-12-25 01:01'
 ## <a name="type-constructors"></a>Konstruktory typu  
   
 ### <a name="row"></a>ŘÁDEK  
- [ŘÁDEK](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md) vytvoří anonymní, strukturálně typované (záznamů) hodnotu jako v:`ROW(1 AS myNumber, ‘Name’ AS myName).`  
+ [ŘÁDEK](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md) vytvoří anonymní, strukturálně typované (záznamů) hodnotu jako v: `ROW(1 AS myNumber, ‘Name’ AS myName).`  
   
  Příklad:  
   
@@ -98,7 +86,7 @@ SELECT VALUE row (product.ProductID as ProductID, product.Name
 |---------------|----------|  
 |1|Upravit soupeření|  
 |879|Všechny účely kolo úsporný režim|  
-|712|AWC Logo Cap|  
+|712|AWC Logo zakončení|  
 |...|...|  
   
 ### <a name="multiset"></a>MULTIMNOŽINA  
@@ -171,7 +159,7 @@ SELECT VALUE REF(p).Name FROM
 |-----------|  
 |Upravit soupeření|  
 |Všechny účely kolo úsporný režim|  
-|AWC Logo Cap|  
+|AWC Logo zakončení|  
 |...|  
   
 ### <a name="deref"></a>DEREF  
@@ -190,7 +178,7 @@ SELECT VALUE DEREF(REF(p)).Name FROM
 |-----------|  
 |Upravit soupeření|  
 |Všechny účely kolo úsporný režim|  
-|AWC Logo Cap|  
+|AWC Logo zakončení|  
 |...|  
   
 ### <a name="createref-and-key"></a>CREATEREF A KLÍČ  
@@ -233,7 +221,7 @@ SELECT Length(c. FirstName) As NameLen FROM
 |6|  
 |5|  
   
-### <a name="microsoft-provider-specific"></a>Microsoft Provider-Specific  
+### <a name="microsoft-provider-specific"></a>Zprostředkovatel specifické pro společnost Microsoft  
  [Funkce specifické pro zprostředkovatele Microsoft](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md) v `SqlServer` oboru názvů.  
   
  Příklad:  
@@ -327,7 +315,7 @@ SELECT a.AddressID, (SELECT VALUE DEREF(v) FROM
 ## <a name="select-value-and-select"></a>VYBERTE HODNOTU A VYBERTE  
   
 ### <a name="select-value"></a>VYBERTE HODNOTU  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]poskytuje v klauzuli SELECT VALUE tak, aby přeskočil konstrukce implicitní řádek. V klauzuli SELECT VALUE lze zadat pouze jednu položku. Když se používá tato klauzule, sestavený žádný řádek obálku kolem položky v klauzuli SELECT a kolekce požadovaný tvar je možné vytvořit, například: `SELECT VALUE a`.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje v klauzuli SELECT VALUE tak, aby přeskočil konstrukce implicitní řádek. V klauzuli SELECT VALUE lze zadat pouze jednu položku. Když se používá tato klauzule, sestavený žádný řádek obálku kolem položky v klauzuli SELECT a kolekce požadovaný tvar je možné vytvořit, například: `SELECT VALUE a`.  
   
  Příklad:  
   
@@ -341,11 +329,11 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
 |----------|  
 |Upravit soupeření|  
 |Všechny účely kolo úsporný režim|  
-|AWC Logo Cap|  
+|AWC Logo zakončení|  
 |...|  
   
 ### <a name="select"></a>VYBERTE  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]také poskytuje konstruktor row můžete vytvořit libovolný řádků. Vyberte trvá jeden či více elementů v projekci a má za následek záznam dat s poli, například: `SELECT a, b, c`.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] také poskytuje konstruktor row můžete vytvořit libovolný řádků. Vyberte trvá jeden či více elementů v projekci a má za následek záznam dat s poli, například: `SELECT a, b, c`.  
   
  Příklad:  
   
@@ -355,7 +343,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
 |----------|---------------|  
 |Upravit soupeření|1|  
 |Všechny účely kolo úsporný režim|879|  
-|AWC Logo Cap|712|  
+|AWC Logo zakončení|712|  
 |...|...|  
   
 ## <a name="case-expression"></a>VÝRAZ CASE  

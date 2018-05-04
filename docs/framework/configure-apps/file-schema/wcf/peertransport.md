@@ -1,29 +1,17 @@
 ---
-title: "&lt;– peerTransport&gt;"
-ms.custom: 
+title: '&lt;– peerTransport&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c1a5013a-9dd4-4a27-b114-795b8b323177
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6fb60d901d498c6db194e60a9229c0d5b69eee31
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: df192c6a602aa073f48fab4229b4be3fbeb2349d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltpeertransportgt"></a>&lt;– peerTransport&gt;
 Definuje sdílené přenos vlastní vazby.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
 \<customBinding >  
 \<Vazba >  

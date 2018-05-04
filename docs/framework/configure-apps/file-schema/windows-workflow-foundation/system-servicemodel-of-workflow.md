@@ -1,23 +1,13 @@
 ---
-title: "&lt;system.serviceModel&gt; pracovního postupu"
-ms.custom: 
+title: '&lt;system.serviceModel&gt; pracovního postupu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 54f8ae10491ebeed683a2ec289e60b9a90afd43b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 62047d68d559a34ead290cf18f77d032841210b2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsystemservicemodelgt-of-workflow"></a>&lt;system.serviceModel&gt; pracovního postupu
 Tento oddíl konfigurace obsahuje všechny elementy konfigurace pracovního postupu.  

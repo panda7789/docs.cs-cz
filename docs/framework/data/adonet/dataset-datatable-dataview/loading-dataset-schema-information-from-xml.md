@@ -1,27 +1,15 @@
 ---
-title: "Načítání informací o schématu sady dat z XML"
-ms.custom: 
+title: Načítání informací o schématu sady dat z XML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 43dfb23b-5cef-46f2-8d87-78f0fba1eb8c
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8b814715782710994f18163ccfcd3db342199145
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4b212a7233e6eec93cdce3e521b58e08745e35e0
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="loading-dataset-schema-information-from-xml"></a>Načítání informací o schématu sady dat z XML
 Schéma <xref:System.Data.DataSet> (jeho tabulek, sloupců, vztahů a omezení) je možné definovat prostřednictvím kódu programu, vytvořené **vyplnění** nebo **FillSchema** metody <xref:System.Data.Common.DataAdapter>, nebo načíst z Dokument XML. Načíst **datovou sadu** informace o schématu z dokumentu XML, můžete použít buď **ReadXmlSchema** nebo **InferXmlSchema** metodu **datovou sadu**. **ReadXmlSchema** umožňuje načíst nebo odvození **datovou sadu** informace o schématu z dokumentu obsahující schématu XML definition language (XSD) schématu nebo dokumentu XML se vloženého schématu XML. **InferXmlSchema** umožňuje odvození schématu z dokumentu XML při ignoruje určité obory názvů XML, který určíte.  
@@ -65,7 +53,7 @@ xmlStream.Close();
 ```  
   
 ## <a name="inferxmlschema"></a>InferXmlSchema  
- Můžete také určit, aby **datovou sadu** odvodit jeho schématu z dokumentu XML pomocí **InferXmlSchema** metodu **datovou sadu**. **InferXmlSchema** funguje stejně jako proveďte obojí **ReadXml** s **XmlReadMode** z **InferSchema** (načte data a také odvodí, že schéma) a  **ReadXmlSchema** Pokud žádné vložené schéma obsahuje dokument, který je čten. Ale **InferXmlSchema** poskytuje další možnost umožňuje zadat konkrétní obory názvů XML, který se má ignorovat při je odvodit schématu. **InferXmlSchema** má dva vyžaduje argumenty: umístění v dokumentu XML určeného názvu souboru datového proudu, nebo **XmlReader**; a obory názvů XML, který se má ignorovat operací pole řetězců.  
+ Můžete také určit, aby **datovou sadu** odvodit jeho schématu z dokumentu XML pomocí **InferXmlSchema** metodu **datovou sadu**. **InferXmlSchema** funguje stejně jako proveďte obojí **ReadXml** s **XmlReadMode** z **InferSchema** (načte data a také odvodí, že schéma) a **ReadXmlSchema** Pokud žádné vložené schéma obsahuje dokument, který je čten. Ale **InferXmlSchema** poskytuje další možnost umožňuje zadat konkrétní obory názvů XML, který se má ignorovat při je odvodit schématu. **InferXmlSchema** má dva vyžaduje argumenty: umístění v dokumentu XML určeného názvu souboru datového proudu, nebo **XmlReader**; a obory názvů XML, který se má ignorovat operací pole řetězců.  
   
  Zvažte například následující kód XML:  
   

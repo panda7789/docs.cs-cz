@@ -1,24 +1,12 @@
 ---
 title: ISNULL (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dc7a0173-3664-4c90-a57b-5cbb0a8ed7ee
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 57e90f013227f08ce365262da633a79d7abb5a8d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 70ec49fd4643c67c6ad08fdda9166eeb8a64d254
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="isnull-entity-sql"></a>ISNULL (entita SQL)
 Určuje, pokud má hodnotu null výrazu dotazu.  
@@ -37,7 +25,7 @@ expression IS [ NOT ] NULL
  Neguje EDM. Logická hodnota výsledek je NULL.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud `expression` vrátí hodnotu null; jinak hodnota `false`.  
+ `true` Pokud `expression` vrátí hodnotu null; jinak hodnota `false`.  
   
 ## <a name="remarks"></a>Poznámky  
  Použití `IS NULL` k určení, pokud element vnějšího spojení je null:  

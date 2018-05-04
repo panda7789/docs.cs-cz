@@ -1,29 +1,17 @@
 ---
 title: '&lt;clientCredentials&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1e6eef0d-a34e-4d74-b0f7-f65d2181858d
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eaf46953d7b2c3f89e1f5b107dc9ddf5d1597875
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5e2dc6c2737b06d76bad6cfc51531b9ca9e02ca5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltclientcredentialsgt"></a>&lt;clientCredentials&gt;
 Určuje pověření, která používá k ověření klienta ke službě.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<endpointBehaviors >  
 \<chování >  
@@ -66,7 +54,7 @@ Určuje pověření, která používá k ověření klienta ke službě.
 |[\<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověření klienta ke službě. Tento element je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateClientElement>.|  
 |[\<httpDigest >](../../../../../docs/framework/configure-apps/file-schema/wcf/httpdigest-element.md)|Určuje hodnotou hash používá k ověření klienta ke službě. Tento element je typu <xref:System.ServiceModel.Configuration.HttpDigestClientElement>.|  
 |[\<issuedToken >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní typ tokenu, který používá k ověření klienta k zabezpečení tokenu služby (STS). Tento element je typu <xref:System.ServiceModel.Configuration.IssuedTokenClientElement>.|  
-|[\<sdílené >](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje aktuální přihlašovací údaje partnera. Tento element je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
+|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje aktuální přihlašovací údaje partnera. Tento element je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
 |[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověřování klienta a poskytuje strukturu pro nastavení možností certifikátu. Tento certifikát musí být zadaný out-of-band ze služby do klienta. Tento element je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>.|  
 |[\<Windows >](../../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)|Určuje pověření systému Windows. Výchozí hodnota je přihlašovací údaje aktuálního vlákna. Tento element je typu <xref:System.ServiceModel.Configuration.WindowsClientElement>.|  
   

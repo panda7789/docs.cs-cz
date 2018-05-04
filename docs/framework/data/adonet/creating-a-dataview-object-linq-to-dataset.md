@@ -1,34 +1,22 @@
 ---
-title: "Vytvoření objektu DataView (LINQ na DataSet)"
-ms.custom: 
+title: Vytvoření objektu DataView (LINQ na DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 76057508-e12d-4779-a707-06a4c2568acf
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 895f692bc07e8e48904e0829e322788f2aa45337
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ee4005d6f7d8899b19b2bcc5c62501570165f03e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ na DataSet)
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Můžete vytvořit <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz přes <xref:System.Data.DataTable>, nebo si můžete vytvořit z představuje zadaný nebo beztypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není zkonstruovatelný přímo v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu.  
   
  Po <xref:System.Data.DataView> byl vytvořen, můžete svázat do ovládacího prvku uživatelského rozhraní v aplikaci Windows forms nebo aplikace ASP.NET, nebo změnit filtrování a řazení nastavení.  
   
- <xref:System.Data.DataView>Vytvoří index, který výrazně zvyšuje výkon operací, které mohou používat index, jako je například filtrování a řazení. Index <xref:System.Data.DataView> vychází i v případě <xref:System.Data.DataView> je vytvořena a při řazení nebo filtrování je upravit informace. Vytváření <xref:System.Data.DataView> a následně nastavení toto řazení nebo filtrování informace později způsobí index, který má být sestaven alespoň dvakrát: Jakmile při <xref:System.Data.DataView> je vytvořen, a znovu jakékoli vlastnosti řazení nebo filtrování jsou změny.  
+ <xref:System.Data.DataView> Vytvoří index, který výrazně zvyšuje výkon operací, které mohou používat index, jako je například filtrování a řazení. Index <xref:System.Data.DataView> vychází i v případě <xref:System.Data.DataView> je vytvořena a při řazení nebo filtrování je upravit informace. Vytváření <xref:System.Data.DataView> a následně nastavení toto řazení nebo filtrování informace později způsobí index, který má být sestaven alespoň dvakrát: Jakmile při <xref:System.Data.DataView> je vytvořen, a znovu jakékoli vlastnosti řazení nebo filtrování jsou změny.  
   
  Další informace o filtrování a řazení s <xref:System.Data.DataView>, najdete v části [filtrování s DataView](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md) a [řazení s DataView](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md).  
   

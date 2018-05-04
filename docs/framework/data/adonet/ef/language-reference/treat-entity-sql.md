@@ -1,24 +1,12 @@
 ---
-title: "ZPRACOVÁVAT (entita SQL)"
-ms.custom: 
+title: ZPRACOVÁVAT (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 248ea49bd66300e0cf000bee4861b9556ff081bb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 932f335bf6a502b031dcf09b8050e278a0bbe9f8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="treat-entity-sql"></a>ZPRACOVÁVAT (entita SQL)
 Objekt konkrétní základní typ zpracovává jako objekt zadaného typu odvozené.  

@@ -1,29 +1,17 @@
 ---
 title: '&lt;msmqIntegration&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: efa224477dfdf396af2403f509f252b8e0f2a55f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 36c71546dd481d634210901b20ddeaa86d5c81a4
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmsmqintegrationgt"></a>&lt;msmqIntegration&gt;
 Určuje přenos MSMQ pro vlastní vazby.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
 \<customBinding >  
 \<Vazba >  
@@ -72,10 +60,10 @@ Určuje přenos MSMQ pro vlastní vazby.
 |maxImmediateRetries|Celé číslo, které určuje maximální počet opakování okamžitou pokusí na zprávu, která je pro čtení z fronty aplikace... Výchozí hodnota je 5.<br /><br /> Pokud dojde k pokusu o maximální počet okamžitou opakovaných pokusů pro zprávu a zpráva není spotřebovávají aplikace, je zpráva odeslána do fronty opakování pro opakování novější někde v čase. Pokud nejsou zadány žádné opakování cykly, pak je buď odeslaných zpráv do fronty nezpracovatelná zpráva nebo záporné potvrzení budou odeslána zpět do odesílatele.|  
 |MaxReceivedMessageSize|Kladné celé číslo, které určuje maximální velikost zprávy v bajtech, včetně hlavičky. Odesílatel zprávy obdrží chybu protokolu SOAP po příliš velké vzhledem k příjemce zprávy. Příjemce zahodí zprávy a vytvoří položku události v protokolu trasování. Výchozí hodnota je 65536.|  
 |maxRetryCycles|Celé číslo, které určuje maximální počet cyklů opakování pokusu o doručení zprávy do přijímající aplikace. Výchozí hodnota je <xref:System.Int32.MaxValue>.<br /><br /> Cyklus jeden opakování se pokusí odeslat zprávu do aplikace zadaného počtu opakování. Počet provedených pokusů nastavena `maxImmediateRetries` atribut. Pokud aplikace využívat zprávu po byly vyčerpány pokusů na doručení, je zpráva odeslána do fronty opakování. Následné opakování cykly obsahovat zprávy do fronty aplikace návratu z fronty opakování pokusu o doručení do aplikace znovu po prodlevě určeného `retryCycleDelay` atribut. `maxRetryCycles` Atribut určuje počet cyklů opakování aplikace využívá při pokusu o doručení zprávy.|  
-|rejectAfterLastRetry|Logická hodnota, která určuje, jaká opatření se mají přijmout zprávy, která se nezdařila doručení po maximální počet opakovaných pokusů se pokusil.<br /><br /> `true`znamená, že záporné potvrzení se vrátí do odesílatele a zpráva je vyřazena; `false` znamená, že je zpráva odeslána do fronty poškozených zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je hodnota `false`, má přijímající aplikace může číst nezpracovatelná zpráva fronty ke zpracování poškozených zpráv (tedy zpráv, které selhaly doručení).<br /><br /> Služba MSMQ 3.0 nepodporuje záporné potvrzení vrácením odesílatele, tento atribut bude proto ignorován v MSMQ 3.0.|  
+|rejectAfterLastRetry|Logická hodnota, která určuje, jaká opatření se mají přijmout zprávy, která se nezdařila doručení po maximální počet opakovaných pokusů se pokusil.<br /><br /> `true` znamená, že záporné potvrzení se vrátí do odesílatele a zpráva je vyřazena; `false` znamená, že je zpráva odeslána do fronty poškozených zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je hodnota `false`, má přijímající aplikace může číst nezpracovatelná zpráva fronty ke zpracování poškozených zpráv (tedy zpráv, které selhaly doručení).<br /><br /> Služba MSMQ 3.0 nepodporuje záporné potvrzení vrácením odesílatele, tento atribut bude proto ignorován v MSMQ 3.0.|  
 |retryCycleDelay|A <xref:System.TimeSpan> , který určuje prodlevu mezi cykly opakovat při pokusu o doručení zprávy, která nelze doručit okamžitě. Výchozí hodnota je 00:10:00.<br /><br /> Cyklus jeden opakování se pokusí doručit zprávu přijímající aplikace zadaného počtu opakování. Počet provedených pokusů je zadána `maxImmediateRetries` atribut. Pokud aplikace využívat zprávu po zadaný počet opakování okamžitě, je zpráva odeslána do fronty opakování. Následné opakování cykly obsahovat zprávy do fronty aplikace návratu z fronty opakování pokusu o doručení do aplikace znovu po prodlevě určeného `retryCycleDelay` atribut. Počet cyklů opakování je zadána `maxRetryCycles` atribut.|  
 |serializationFormat|Určuje formátovací modul, který se používá k serializaci objektů, které se odesílají v rámci služby MSMQ zprávy. Platné hodnoty jsou<br /><br /> -ActiveX: ActiveX formátovací modul se používá při serializaci objektů COM.<br />-Binární: Serializuje objekt do binární paket.<br />-ByteArray: Serializuje objekt, který má pole bajtů.<br />-Datový proud: Serializuje objekt do datového proudu.<br />-Xml: Serializuje objekt, který má paket XML. Výchozí hodnota je XML.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
-|TimeToLive|A <xref:System.TimeSpan> určující, jak dlouho jsou zprávy platné předtím, než platnost a jsou umístěna do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00, což znamená 1 den.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `customDeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
+|timeToLive|A <xref:System.TimeSpan> určující, jak dlouho jsou zprávy platné předtím, než platnost a jsou umístěna do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00, což znamená 1 den.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `customDeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
 |useMsmqTracing|Logická hodnota, která určuje, zda zprávy zpracovávané touto vazbou má trasovat. Výchozí hodnota je `false`.<br /><br /> Pokud je povoleno sledování, sestava zprávy se vytváří a odesílají do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítači služby Řízení front zpráv.|  
 |useSourceJournal|Logická hodnota, která určuje, zda by měly být uložené kopie zprávy zpracovávané touto vazbou ve frontě deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Ve frontě aplikací, které chcete zachovat záznam zprávy, které mají zbývající počítače fronty odesílaných zpráv můžete zkopírovat do deníku fronty zpráv. Jakmile zprávu opustí fronty odesílaných zpráv a je obdržena potvrzení, že zpráva byla přijata v cílovém počítači, je udržováno kopie zprávy ve frontě deníku odesílající počítač systému.|  
   

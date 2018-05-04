@@ -1,27 +1,15 @@
 ---
-title: "Postup: provedení parametrizované uložené procedury pomocí objekt EntityCommand"
-ms.custom: 
+title: 'Postup: provedení parametrizované uložené procedury pomocí objekt EntityCommand'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4f5639bf-bb7f-4982-bb1d-c7caa4348888
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 767108465247e44a2b9713133a4211f14dc832fe
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 68589cf8906e35313e261e373cf87017ffe6f8f9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-execute-a-parameterized-stored-procedure-using-entitycommand"></a>Postup: provedení parametrizované uložené procedury pomocí objekt EntityCommand
 Toto téma ukazuje, jak provést parametrizované uložené procedury pomocí <xref:System.Data.EntityClient.EntityCommand> třídy.  

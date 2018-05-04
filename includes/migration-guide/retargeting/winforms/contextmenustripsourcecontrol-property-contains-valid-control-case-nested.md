@@ -1,0 +1,11 @@
+### <a name="contextmenustripsourcecontrol-property-contains-a-valid-control-in-the-case-of-nested-toolstripmenuitems"></a>Vlastnost ContextMenuStrip.SourceControl obsahuje platný ovládací prvek v případě vnořené ToolStripMenuItems
+
+|   |   |
+|---|---|
+|Podrobnosti|V rozhraní .NET Framework 4.7.1 a předchozích verzích <xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType> vlastnost nesprávně vnořené vrátí hodnotu null, když uživatel otevře nabídky v <xref:System.Windows.Forms.ToolStripMenuItem> ovládací prvky. V rozhraní .NET Framework 4.7.2 a novější, <xref:System.Windows.Forms.ContextMenuStrip.SourceControl> vlastnost je vždycky nastavený na skutečné zdrojového kódu.|
+|Návrh|<strong>Postup aktivování nebo zrušení těchto změn</strong>v pořadí pro aplikaci, abyste mohli využívat výhod tyto změny, musí běžet na rozhraní .NET Framework 4.7.2 nebo novější. Aplikace můžete využít tyto změny v některém z následujících způsobů:<ul><li>Jeho cílem 4.7.2 rozhraní .NET Framework. Tuto změnu je povoleno ve výchozím nastavení v aplikacích Windows Forms cílených na rozhraní .NET Framework 4.7.2 nebo novější.</li><li>Ji používá starší verze nebo rozhraní .NET Framework 4.7.1 a výslovný nesouhlas chování starší verze usnadnění přidáním následující [AppContext přepínač](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) k <code>&lt;runtime&gt;</code> části souboru app.config a jeho nastavení na hodnotu <code>false</code>, jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Aplikace, které cílí na rozhraní .NET Framework 4.7.2 nebo novější a chcete zachovat starší verze chování můžete vyjádřit výslovný souhlas s použitím ovládacího prvku hodnota staršího zdrojového explicitně nastavením tento přepínač AppContext na <code>true</code>.|
+|Rozsah|Edge|
+|Version|4.7.2|
+|Typ|Změna orientace|
+|Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType></li></ul>|
+

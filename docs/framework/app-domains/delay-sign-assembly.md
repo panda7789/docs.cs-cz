@@ -1,9 +1,6 @@
 ---
-title: "Zpoždění podepsání sestavení"
+title: Zpoždění podepsání sestavení
 ms.date: 07/31/2017
-ms.prod: .net-framework
-ms.technology: dotnet-bcl
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +12,13 @@ helpviewer_keywords:
 - strong-named assemblies, delaying assembly signing
 - partial assembly signing
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce40f08b8b31ae3a4647e8919b4ea862fc03506f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4457bd6d5efd7404cdba6c5fbdbffa9f9eb62141
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="delay-signing-an-assembly"></a>Zpoždění podepsání sestavení
 Organizace může mít úzce chráněného pár klíčů, vývojáři nemá přístup k každý den. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezen na pouze několika jednotlivcům. Při vývoji sestavení se silnými názvy, každé sestavení tohoto sestavení cíl odkazy silným názvem obsahuje token veřejného klíče dávat cíl sestavení silným názvem. To vyžaduje, aby veřejný klíč k dispozici během procesu vývoje.  

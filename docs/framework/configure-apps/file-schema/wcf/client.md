@@ -1,32 +1,20 @@
 ---
-title: '&lt;klienta&gt;'
-ms.custom: 
+title: '&lt;Klienta&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7d52d74c36ea1b1d722d781f554f8cc6691d53e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b8a006d3dee4149569b3f5b573d9d765504b0d65
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltclientgt"></a>&lt;klienta&gt;
+# <a name="ltclientgt"></a>&lt;Klienta&gt;
 `client` Element definuje seznam koncových bodů, které klient může připojit k.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<klient >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -52,14 +40,14 @@ ms.lasthandoff: 12/22/2017
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<koncový bod >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)|Obsahuje kolekci elementů koncový bod, které určují koncové body, které tento klient může připojit k.|  
+|[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)|Obsahuje kolekci elementů koncový bod, které určují koncové body, které tento klient může připojit k.|  
 |[\<metadata >](../../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)|Obsahuje nastavení pro zpracování metadat.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.serviceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|Kořenový element všechny konfigurační prvky Windows Communication Foundation (WCF).|  
+|[\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|Kořenový element všechny konfigurační prvky Windows Communication Foundation (WCF).|  
   
 ## <a name="remarks"></a>Poznámky  
  `client` Oddíl definuje seznam koncových bodů, které klient může připojit k. Každý koncový bod uvedený v oddílu klienta definuje vlastní vazby, chování a kontrakt. Je jedinečně identifikovaný kombinací `name` a `contract` atributy. Určuje kód klienta `name` pro připojení k koncový bod služby, který implementuje klienta. Pokud `name` atribut vynechán, koncový bod funguje jako výchozí koncový bod pro daný kontrakt se implementuje.  

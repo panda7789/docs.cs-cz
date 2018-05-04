@@ -1,29 +1,17 @@
 ---
-title: "&lt;položky&gt;"
-ms.custom: 
+title: '&lt;Položky&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 202e430c-c1b9-4343-abe2-ac78c181a3b7
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b1bd6fd679d3f6440ff685c8cd2646b1fa0a13e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b9cc7f7736ffefaca68a0f197bd064a99c4dca9a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltentriesgt"></a>&lt;položky&gt;
+# <a name="ltentriesgt"></a>&lt;Položky&gt;
 Směrování položku, která obsahují mapování mezi směrování filtry a cílové koncové body k odesílání zpráv do kdy odpovídá filtru.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<směrování >  
 \<routingTables >  
 \<Tabulka >  

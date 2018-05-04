@@ -1,33 +1,21 @@
 ---
-title: "&lt;certificate&gt; – &lt;peer&gt;"
-ms.custom: 
+title: '&lt;certificate&gt; – &lt;peer&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 48b69142-c957-4305-a042-c9d0c9a55c0e
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1449bab5d585183d73da5ca0d2234857d9d92151
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8d9bce4fe09284ed45ade3ae247d1b41ebb28613
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcertificategt-of-ltpeergt"></a>&lt;certificate&gt; – &lt;peer&gt;
 Určuje certifikát používají partnerského uzlu.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors>  
+\<serviceBehaviors >  
 \<chování >  
-\<serviceCredentials>  
+\<– serviceCredentials >  
 \<sdílené >  
 \<certifikátu >  
   

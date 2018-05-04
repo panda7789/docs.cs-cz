@@ -3,7 +3,7 @@
 |   |   |
 |---|---|
 |Podrobnosti|Přidá nový přetížení pro rozhraní .NET Framework 4.5 <xref:System.Windows.Threading.Dispatcher.Invoke%2A?displayProperty=nameWithType> , zahrnout parametr typu <xref:System.Action>. Když znovu zkompiluje existující kód kompilátory může vyřešit volání Dispatcher.Invoke metod, které mají <xref:System.Delegate> parametr jako volání metody Dispatcher.Invoke s <xref:System.Action> parametr. Pokud volání Dispatcher.Invoke přetížení s <xref:System.Delegate> parametr je vyhodnocena jako volání přetížení Dispatcher.Invoke s <xref:System.Action> parametr, může dojít k následující rozdíly v chování:<ul><li>Pokud dojde k výjimce <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter> a <xref:System.Windows.Threading.Dispatcher.UnhandledException> nejsou vyvolání událostí. Místo toho jsou zpracovávány výjimky <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException?displayProperty=name> událostí.</li><li>Volá, aby některé členy, jako například <xref:System.Windows.Threading.DispatcherOperation.Result>, zablokuje, dokud bude dokončena operace.</li></ul>|
-|Návrh|Předejdete tak nejednoznačnosti (a potenciální rozdíly v výjimek zpracování nebo blokování chování), kód volání Dispatcher.Invoke předat prázdný objekt [] jako druhý parametr vyvolat volání jistotu překladu přetížení metody rozhraní .NET 4.0.|
+|Návrh|Předejdete tak nejednoznačnosti (a potenciální rozdíly v výjimek zpracování nebo blokování chování), kód volání Dispatcher.Invoke předat prázdný objekt [] jako druhý parametr vyvolat volání jistotu překladu přetížení metody rozhraní .NET Framework 4.0.|
 |Rozsah|Vedlejší|
 |Version|4.5|
 |Typ|Změna orientace|

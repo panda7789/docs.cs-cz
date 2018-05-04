@@ -1,13 +1,6 @@
 ---
-title: "Postupy: určení sestavení & č. 39; s plně kvalifikovaný název"
-ms.custom: 
+title: 'Postupy: určení sestavení&#39;s plně kvalifikovaný název'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +10,15 @@ helpviewer_keywords:
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 009dae23-e1f6-4a64-9a9a-32e4c34802b0
-caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 841bec105f171f3450bfc33ee9052ddb85814a5e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 663e7456337a2d9c413b15236e7ba1de33fbfa9b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="how-to-determine-an-assembly39s-fully-qualified-name"></a>Postupy: určení sestavení & č. 39; s plně kvalifikovaný název
+# <a name="how-to-determine-an-assembly39s-fully-qualified-name"></a>Postupy: určení sestavení&#39;s plně kvalifikovaný název
 Chcete-li zjistit, plně kvalifikovaný název sestavení v globální mezipaměti sestavení, použijte nástroj globální mezipaměti sestavení ([Gacutil.exe](../../../docs/framework/tools/gacutil-exe-gac-tool.md)). V tématu [postupy: zobrazení obsahu globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md).  
   
  Pro sestavení, které nejsou v globální mezipaměti sestavení, můžete získat plně kvalifikovaný název sestavení v mnoha různými způsoby: můžete použít kód pro výstup informací na konzole nebo proměnné, nebo můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)prozkoumat metadat sestavení, který obsahuje plně kvalifikovaný název.  

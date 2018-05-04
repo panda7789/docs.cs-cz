@@ -1,24 +1,12 @@
 ---
-title: "Faktory ovlivňující výkon (rozhraní Entity Framework)"
-ms.custom: 
+title: Faktory ovlivňující výkon (rozhraní Entity Framework)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e27d6ec040557d682082a6fb5a05677ad52afae9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 581f3bc81c689909164ed3fec246371cf83245ff
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="performance-considerations-entity-framework"></a>Faktory ovlivňující výkon (rozhraní Entity Framework)
 Toto téma popisuje výkonové charakteristiky ADO.NET Entity Framework a poskytuje některé aspekty určené k pomoct zlepšit výkon aplikací rozhraní Entity Framework.  
@@ -32,9 +20,9 @@ Toto téma popisuje výkonové charakteristiky ADO.NET Entity Framework a poskyt
 |Otevření připojení k databázi|Střední<sup>1</sup>|podle potřeby.|Protože otevřené připojení k databázi spotřebovává cenné prostředku, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] otevře a uzavře připojení k databázi, podle potřeby. Můžete také explicitně otevřít připojení. Další informace najdete v tématu [Správa připojení a transakce](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).|  
 |Generování zobrazení|Vysoká|Jednou v každé doméně aplikace. (Může být předem vygenerovaná.)|Než rozhraní Entity Framework můžete zadávat dotazy na koncepční model, nebo uložit změny pro zdroj dat, musíte vygenerovat sadu zobrazení místní dotazu pro přístup k databázi. Z důvodu vysoké náklady na generování tato zobrazení můžete předběžnému generování zobrazení a přidat je do tohoto projektu v době návrhu. Další informace najdete v tématu [postupy: zobrazení Pre-Generate ke zlepšení výkonu dotazů](http://msdn.microsoft.com/library/b18a9d16-e10b-4043-ba91-b632f85a2579).|  
 |Příprava dotazu|Střední<sup>2</sup>|Jednou pro každý jedinečný dotaz.|Zahrnuje náklady na napište příkaz dotazu, generovat stromu příkazů na základě modelu a mapování metadat a definovat obrazec vrácená data. Protože teď Entity SQL dotazu příkazů a dotazů LINQ jsou uložené v mezipaměti, novější spuštěních stejný dotaz trvat méně času. Můžete nadále používat kompilované dotazů LINQ na snížení nákladů na tento v novější spuštěních a kompilované dotazy může být efektivnější než LINQ dotazů, které jsou automaticky uloží do mezipaměti. Další informace najdete v tématu [zkompilovat dotazy (LINQ to Entities)](../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md). Obecné informace o spuštění dotazu LINQ najdete v tématu [technologie LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md). **Poznámka:** technologie LINQ to Entities dotazy, které se vztahují `Enumerable.Contains` operátor do kolekcí v paměti neukládají do mezipaměti automaticky. Také Parametrizace kolekce v paměti v kompilovaném dotazů LINQ není povoleno.|  
-|Provádění dotazu|Low<sup>2</sup>|Jednou pro každý dotaz.|Náklady na provádění příkazu na zdroji dat pomocí zprostředkovatele dat ADO.NET. Protože většina zdroje dat do mezipaměti plány dotazů, novější spuštěních stejný dotaz může trvat i méně času.|  
-|Načítání a ověřování typů|Low<sup>3</sup>|Jednou pro každou <xref:System.Data.Objects.ObjectContext> instance.|Typy jsou načteny a ověřovat s typy, které definuje konceptuálního modelu.|  
-|Sledování|Low<sup>3</sup>|Jednou pro každý objekt, který vrací dotaz. <sup>4</sup>|Pokud dotaz používá <xref:System.Data.Objects.MergeOption.NoTracking> možnosti sloučení, tato fáze nemá vliv na výkon.<br /><br /> Pokud dotaz používá <xref:System.Data.Objects.MergeOption.AppendOnly>, <xref:System.Data.Objects.MergeOption.PreserveChanges>, nebo <xref:System.Data.Objects.MergeOption.OverwriteChanges> merge – možnost, výsledky jsou sledovány v dotazu <xref:System.Data.Objects.ObjectStateManager>. <xref:System.Data.EntityKey> Se vygeneruje pro každý sledovaný objekt, který dotaz vrátí, je použít k vytvoření <xref:System.Data.Objects.ObjectStateEntry> v <xref:System.Data.Objects.ObjectStateManager>. Pokud existující <xref:System.Data.Objects.ObjectStateEntry> pro nebyl nalezen <xref:System.Data.EntityKey>, je vrácen existující objekt. Pokud <xref:System.Data.Objects.MergeOption.PreserveChanges>, nebo <xref:System.Data.Objects.MergeOption.OverwriteChanges> možnost se používá, aktualizaci objektu před vrácením.<br /><br /> Další informace najdete v tématu [řešení Identity, řízení stavu a sledování změn](http://msdn.microsoft.com/library/3bd49311-0e72-4ea4-8355-38fe57036ba0).|  
+|Provádění dotazu|Nízká<sup>2</sup>|Jednou pro každý dotaz.|Náklady na provádění příkazu na zdroji dat pomocí zprostředkovatele dat ADO.NET. Protože většina zdroje dat do mezipaměti plány dotazů, novější spuštěních stejný dotaz může trvat i méně času.|  
+|Načítání a ověřování typů|Nízká<sup>3</sup>|Jednou pro každou <xref:System.Data.Objects.ObjectContext> instance.|Typy jsou načteny a ověřovat s typy, které definuje konceptuálního modelu.|  
+|Sledování|Nízká<sup>3</sup>|Jednou pro každý objekt, který vrací dotaz. <sup>4</sup>|Pokud dotaz používá <xref:System.Data.Objects.MergeOption.NoTracking> možnosti sloučení, tato fáze nemá vliv na výkon.<br /><br /> Pokud dotaz používá <xref:System.Data.Objects.MergeOption.AppendOnly>, <xref:System.Data.Objects.MergeOption.PreserveChanges>, nebo <xref:System.Data.Objects.MergeOption.OverwriteChanges> merge – možnost, výsledky jsou sledovány v dotazu <xref:System.Data.Objects.ObjectStateManager>. <xref:System.Data.EntityKey> Se vygeneruje pro každý sledovaný objekt, který dotaz vrátí, je použít k vytvoření <xref:System.Data.Objects.ObjectStateEntry> v <xref:System.Data.Objects.ObjectStateManager>. Pokud existující <xref:System.Data.Objects.ObjectStateEntry> pro nebyl nalezen <xref:System.Data.EntityKey>, je vrácen existující objekt. Pokud <xref:System.Data.Objects.MergeOption.PreserveChanges>, nebo <xref:System.Data.Objects.MergeOption.OverwriteChanges> možnost se používá, aktualizaci objektu před vrácením.<br /><br /> Další informace najdete v tématu [řešení Identity, řízení stavu a sledování změn](http://msdn.microsoft.com/library/3bd49311-0e72-4ea4-8355-38fe57036ba0).|  
 |Vyhodnocování objekty|Střední<sup>3</sup>|Jednou pro každý objekt, který vrací dotaz. <sup>4</sup>|Proces načítání vrácený <xref:System.Data.Common.DbDataReader> objekt a vytváření objektů a nastavení hodnoty vlastností, které jsou na základě hodnot v každé instanci <xref:System.Data.Common.DbDataRecord> třídy. Pokud objekt již existuje v <xref:System.Data.Objects.ObjectContext> a použije dotaz <xref:System.Data.Objects.MergeOption.AppendOnly> nebo <xref:System.Data.Objects.MergeOption.PreserveChanges> možností sloučení, tato fáze nemá vliv na výkon. Další informace najdete v tématu [řešení Identity, řízení stavu a sledování změn](http://msdn.microsoft.com/library/3bd49311-0e72-4ea4-8355-38fe57036ba0).|  
   
  <sup>1</sup> při Zprostředkovatel zdroje dat implementuje sdružování připojení, náklady na otevření připojení je distribuován do fondu. Zprostředkovatel rozhraní .NET pro SQL Server podporuje sdružování připojení.  

@@ -1,26 +1,12 @@
 ---
 title: Generování příkazu SQL ze stromy příkazů – doporučené postupy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-caps.latest.revision: 3
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 037d1eaa8d781d012cde7a1bd3b08aa7003edd77
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 0087c67b12b4b6ea36cabd5800b7be0a72fc4a90
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Generování příkazu SQL ze stromy příkazů – doporučené postupy
 Stromy příkazů dotazu výstup úzce model dotazů v SQL vyjádřit kombinací. Existují však určité běžné problémy pro zprostředkovatele zapisovače při generování SQL ze stromu příkazů výstupu. Toto téma popisuje tyto problémy. V dalším tématu ukázkového zprostředkovatele ukazuje, jak vyřešit tyto problémy.  

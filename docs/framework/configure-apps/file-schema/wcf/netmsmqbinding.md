@@ -1,31 +1,19 @@
 ---
 title: '&lt;netMsmqBinding&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-caps.latest.revision: "35"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e8f18988568d9b634b3ae5ec92d746c08ff00e77
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d4d28a799acecd335d8155a7ae67b6365b3f0023
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltnetmsmqbindinggt"></a>&lt;netMsmqBinding&gt;
 Definuje vazbu zařazených do fronty vhodný pro komunikaci mezi počítači.  
   
  \<system.ServiceModel>  
 \<vazby >  
-\<netMsmqBinding>  
+\<– netMsmqBinding >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -90,7 +78,7 @@ Definuje vazbu zařazených do fronty vhodný pro komunikaci mezi počítači.
 |`retryCycleDelay`|Hodnota časového rozpětí, který určuje prodlevu mezi opakování cyklů při pokusu o doručení zprávy, která nelze doručit okamžitě. Hodnota definuje jen minimální doba čekání, protože skutečná čekací dobu může být delší. Výchozí hodnota je 00:10:00. Další informace naleznete v tématu <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>.|  
 |`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje interval čas zadaný pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |`timeToLive`|Hodnota časového rozpětí, která určuje, jak dlouho zprávy jsou platné předtím, než se platnost a zařazena do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `DeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
-|`usingActiveDirectory`|Logická hodnota, která určuje, pokud mají být převedeny fronty adresy pomocí služby Active Directory.<br /><br /> MSMQ fronty adresy se může skládat z názvů cestu nebo přímé formátu. Pomocí přímého názvu formátu vyřeší MSMQ názvu počítače pomocí DNS, pro rozhraní NetBIOS nebo IP. S názvem cesty vyřeší MSMQ názvu počítače pomocí služby Active Directory.<br /><br /> Ve výchozím nastavení [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] zařazených do fronty přenosu převede identifikátor URI fronta zpráv přímého názvu formátu. Nastavením `UseActiveDirectory` vlastnost na hodnotu true, aplikace můžete určit, že zařazených do fronty přenosu by měla vyřešit název počítače pomocí služby Active Directory místo DNS, pro rozhraní NetBIOS nebo IP.|  
+|`usingActiveDirectory`|Logická hodnota, která určuje, pokud mají být převedeny fronty adresy pomocí služby Active Directory.<br /><br /> MSMQ fronty adresy se může skládat z názvů cestu nebo přímé formátu. Pomocí přímého názvu formátu vyřeší MSMQ názvu počítače pomocí DNS, pro rozhraní NetBIOS nebo IP. S názvem cesty vyřeší MSMQ názvu počítače pomocí služby Active Directory.<br /><br /> Ve výchozím nastavení Windows Communication Foundation (WCF) zařazených do fronty přenosu převede identifikátor URI k přímého názvu formátu fronty zpráv. Nastavením `UseActiveDirectory` vlastnost na hodnotu true, aplikace můžete určit, že zařazených do fronty přenosu by měla vyřešit název počítače pomocí služby Active Directory místo DNS, pro rozhraní NetBIOS nebo IP.|  
 |`useMsmqTracing`|Logická hodnota, která určuje, zda zprávy zpracovávané touto vazbou má trasovat. Výchozí hodnota je `false`. Pokud je povoleno sledování, sestava zprávy se vytváří a odesílají do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítači služby Řízení front zpráv.|  
 |`useSourceJournal`|Logická hodnota, která určuje kopie zprávy zpracovávané touto vazbou by měl být uložen v deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Ve frontě aplikací, které chcete zachovat záznam zprávy, které mají zbývající počítače fronty odesílaných zpráv můžete zkopírovat do deníku fronty zpráv. Jakmile zprávu opustí fronty odesílaných zpráv a je obdržena potvrzení, že zpráva byla přijata v cílovém počítači, je udržováno kopie zprávy ve frontě deníku odesílající počítač systému.|  
   

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Zobrazení obsahu sestavení"
-ms.custom: 
+title: 'Postupy: Zobrazení obsahu sestavení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,13 @@ helpviewer_keywords:
 - MSIL
 - viewing MSIL information
 ms.assetid: fb7baaab-4c0d-47ad-8fd3-4591cf834709
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b9c12c4811e8b23e86fca3960acdb4da06e38fbe
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: eadc320483d46503e7331ef57b0cc29b08f13f4c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
 Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pro zobrazení informací (MSIL intermediate language) Microsoft v souboru. Pokud se jedná o prohlížení je sestavení, můžete tyto informace zahrnují sestavení atributy, stejně jako odkazy na jiné moduly a sestavení. Tato informace může být užitečné při určování, zda je soubor sestavení nebo součástí sestavení, a zda má soubor odkazy na další moduly nebo sestavení.  
@@ -85,14 +75,14 @@ Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/i
   
 |– Direktiva|Popis|  
 |---------------|-----------------|  
-|**.Assembly extern \<**  *název sestavení***>**|Určuje jiná sestavení, která obsahuje položky, které odkazuje aktuální modul (v tomto příkladu `mscorlib`).|  
-|**.PublicKeyToken \<**  *tokenu***>**|Určuje token skutečný klíč odkazované sestavení.|  
-|**ver \<**  *číslo verze***>**|Určuje číslo verze odkazované sestavení.|  
-|**.Assembly \<**  *název sestavení***>**|Určuje název sestavení.|  
-|**algoritmus .hash \<**  *hodnota int32***>**|Určuje použitý algoritmus hash.|  
-|**ver \<**  *číslo verze***>**|Určuje číslo verze sestavení.|  
-|**.Module \<**  *název souboru***>**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá z pouze jeden soubor.|  
-|**.subsystem \<** *value* **>**|Určuje prostředí aplikace, které jsou potřebné pro program. V tomto příkladu hodnota 3 značí, že se tento spustitelný soubor spustit z konzoly.|  
+|**.Assembly extern \<**  *název sestavení* **>**|Určuje jiná sestavení, která obsahuje položky, které odkazuje aktuální modul (v tomto příkladu `mscorlib`).|  
+|**.PublicKeyToken \<**  *tokenu* **>**|Určuje token skutečný klíč odkazované sestavení.|  
+|**ver \<**  *číslo verze* **>**|Určuje číslo verze odkazované sestavení.|  
+|**.Assembly \<**  *název sestavení* **>**|Určuje název sestavení.|  
+|**algoritmus .hash \<**  *hodnota int32* **>**|Určuje použitý algoritmus hash.|  
+|**ver \<**  *číslo verze* **>**|Určuje číslo verze sestavení.|  
+|**.Module \<**  *název souboru* **>**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá z pouze jeden soubor.|  
+|**.Subsystem \<**  *hodnota* **>**|Určuje prostředí aplikace, které jsou potřebné pro program. V tomto příkladu hodnota 3 značí, že se tento spustitelný soubor spustit z konzoly.|  
 |**.corflags**|Aktuálně rezervované pole v metadatech.|  
   
  Manifest sestavení může obsahovat několik různých direktivy, v závislosti na obsahu sestavení. Rozsáhlého seznamu direktiv v manifestu sestavení najdete v dokumentaci ECMA, zejména "Oddílu II: Metadata definice a sémantiku" a "Oddílu III: soubor CIL instrukce nastavení". Dokumentace je k dispozici online; v tématu [ECMA C# a společné jazykové infrastruktury normy](http://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a [standardní standardy ECMA-335 - společné jazykové infrastruktury (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) na webu Ecma mezinárodní.  

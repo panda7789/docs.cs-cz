@@ -1,29 +1,17 @@
 ---
-title: "Oddíl &lt;extensions&gt;"
-ms.custom: 
+title: Oddíl &lt;extensions&gt;
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 53a59fb6-dede-47ec-9384-b3c2e8f0c1fa
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 04905ae0f40a1f9ca88b4a04d4e49b0ce895ca56
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 09cabfc6c03602c3b6de343a29b5b25755f2cf0f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltextensionsgt-section"></a>Oddíl &lt;extensions&gt;
 Tento konfigurační oddíl obsahuje kolekci rozšíření, která uživateli umožňuje vytvořit uživatelem definované vazby, chování a dalších aspektů rozšíření.  
   
-\<systém. ServiceModel >  
+\<system.ServiceModel>  
   
 ## <a name="syntax"></a>Syntaxe  
   

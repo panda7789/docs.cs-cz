@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Odkazování na sestavení se silným názvem"
-ms.custom: 
+title: 'Postupy: Odkazování na sestavení se silným názvem'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - assemblies [.NET Framework], strong-named
 - assembly binding, strong-named
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a5934f67387e29bfbd4f011ad2ba47f50d81b983
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7f78fff50d1a227061076790ad77f17debe3f690
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Postupy: Odkazování na sestavení se silným názvem
 Proces pro odkazování na typy nebo prostředky v sestavení se silným názvem je obvykle transparentní. Odkaz můžete provést v době kompilace (časné vazby) nebo za běhu.  
@@ -55,7 +45,7 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 1.  Pokud provedete spuštění odkaz na sestavení se silným názvem (například pomocí <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> metoda), musíte použít zobrazovaný název odkazovaného sestavení se silným názvem. Syntaxe názvu zobrazení je následující:  
   
-     \<*název sestavení*>**,** \< *číslo verze*>**,** \<  *jazyková verze*>**,** \< *tokenu veřejného klíče*>  
+     \<*název sestavení*>**,** \< *číslo verze*>**,** \< *jazykovou verzi*  > **,** \< *tokenu veřejného klíče*>  
   
      Příklad:  
   
@@ -73,11 +63,11 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
  Pomocí následujícího můžete vytisknout šestnáctkovém formátu veřejný klíč a tokenu veřejného klíče pro konkrétní sestavení [silného názvu (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) příkaz:  
   
- **sn - Tp \<**  *sestavení***>**  
+ **sn - Tp \<**  *sestavení* **>**  
   
  Pokud máte soubor veřejného klíče, můžete použít následující příkaz místo (Všimněte si rozdíl v případě na tuto možnost příkazového řádku):  
   
- **sn - tp \<**  *sestavení***>**  
+ **sn - tp \<**  *sestavení* **>**  
   
 ## <a name="see-also"></a>Viz také  
  [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

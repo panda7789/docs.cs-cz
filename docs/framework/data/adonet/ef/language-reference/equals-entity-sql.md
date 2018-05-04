@@ -1,24 +1,12 @@
 ---
-title: "= (Rovná) (entita SQL)"
-ms.custom: 
+title: = (Rovná) (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 948eb588-7080-4046-bb48-633b007393bf
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 27faf6c59afd4de2481f474053812b12182e3f58
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: bda314208a25426be321ba307be96067b1df2ac8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="-equals-entity-sql"></a>= (Rovná) (entita SQL)
 Porovnání rovnosti dvou výrazů.  
@@ -36,7 +24,7 @@ expression == expression
  Jakýkoli platný výraz. Oba výrazy musí mít implicitně převést datové typy.  
   
 ## <a name="result-types"></a>Typy výsledků  
- `true`Pokud levý výraz rovná pravý výraz; v opačném `false`.  
+ `true` Pokud levý výraz rovná pravý výraz; v opačném `false`.  
   
 ## <a name="remarks"></a>Poznámky  
  == Operátor je ekvivalentní =.  

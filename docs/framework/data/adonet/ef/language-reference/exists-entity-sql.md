@@ -1,24 +1,12 @@
 ---
 title: EXISTUJE (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d28ead43-4afb-4bdc-af64-efd2e05005d7
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 225487f6a0d7ec29689c01dd6355e7ba1aa6883e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d42b1c227362b13124f4bb21e55b6fda07f9c5ff
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="exists-entity-sql"></a>EXISTUJE (entita SQL)
 Určuje, zda kolekce je prázdný.  
@@ -37,7 +25,7 @@ Určuje, zda kolekce je prázdný.
  Určuje, že se Negované výsledek EXISTS.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud kolekce není prázdná. v opačném `false`.  
+ `true` Pokud kolekce není prázdná. v opačném `false`.  
   
 ## <a name="remarks"></a>Poznámky  
  EXISTS je jedním z [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nastavit operátory. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory set vyhodnocovány zleva doprava. Priorita informace pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nastavení operátory najdete [EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md).  

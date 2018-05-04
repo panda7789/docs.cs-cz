@@ -1,27 +1,15 @@
 ---
-title: "Spouštění příkazu"
-ms.custom: 
+title: Spouštění příkazu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 40494916-c25a-4cb8-8f7c-fcb8d378464e
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c4879c49a410dfb40999f3163d8b23158cb71f0e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 5ffa32b13330d61e450a42e35b933ce05d69b041
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="executing-a-command"></a>Spouštění příkazu
 Zprostředkovatel dat .NET Framework, jednotlivých součástí rozhraní .NET Framework má svou vlastní objekt příkazu, který dědí z <xref:System.Data.Common.DbCommand>. Zahrnuje zprostředkovatel dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlCommand> objektu, zahrnuje zprostředkovatel dat .NET Framework pro ODBC <xref:System.Data.Odbc.OdbcCommand> objektu a rozhraní .NET Framework Zprostředkovatel dat pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleCommand> objektu. Každá z těchto metod zpřístupňuje objekty pro provádění příkazů na základě typu příkazu a potřeby návratovou hodnotu, jak je popsáno v následující tabulce.  
@@ -35,7 +23,7 @@ Zprostředkovatel dat .NET Framework, jednotlivých součástí rozhraní .NET F
   
  Každý objekt silného typu příkazu podporuje také <xref:System.Data.CommandType> výčet, který určuje, jak se interpretují příkazového řetězce, jak je popsáno v následující tabulce.  
   
-|CommandType|Popis|  
+|Typ příkazu CommandType|Popis|  
 |-----------------|-----------------|  
 |`Text`|Příkaz SQL definování příkazy ve zdroji dat spouštění.|  
 |`StoredProcedure`|Název uložené procedury. Můžete použít `Parameters` vlastnost příkaz, který má přístup k vstupní a výstupní parametry a návratové hodnoty, bez ohledu na to, které `Execute` metoda je volána. Při použití `ExecuteReader`, návratové hodnoty a výstupní parametry nebudou přístupné, dokud `DataReader` je uzavřený.|  

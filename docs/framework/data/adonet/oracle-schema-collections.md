@@ -1,24 +1,12 @@
 ---
-title: "Kolekce schématu Oracle"
-ms.custom: 
+title: Kolekce schématu Oracle
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4f199a0fc0939bd5fae4fefb7440c46bd471e4b6
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b86de542e425d6fdc56f238f90063988bee95ffa
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="oracle-schema-collections"></a>Kolekce schématu Oracle
 Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následující kolekce konkrétní schématu kromě běžných kolekcemi schémat:  
@@ -112,10 +100,10 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |LAST_ANALYZED|DateTime|Datum naposledy analyzovali tento index.|  
 |STUPEŇ|String|Počet vláken na instanci pro skenování indexu.|  
 |INSTANCE|String|Počet instancí, přes který indexy ke skenování.|  
-|ROZDĚLENA NA ODDÍLY|String|Jestli je tento index rozdělena na oddíly (Ano &#124; NE).|  
+|ROZDĚLENA NA ODDÍLY|String|Jestli je tento index rozdělena na oddíly (Ano &#124; ne).|  
 |DOČASNÉ|String|Index, jestli je na dočasné tabulky.|  
-|GENERUJE|String|Zda je název indexu systém vygeneruje (Y &#124; N).|  
-|SEKUNDÁRNÍ|String|Jestli index je sekundární objekt vytvořený metodě ODCIIndexCreate zásobník Oracle9i dat (Y &#124; N).|  
+|GENERUJE|String|Jestli název indexu je generována (Y&#124;N).|  
+|SEKUNDÁRNÍ|String|Jestli index je sekundární objekt vytvořený metodě ODCIIndexCreate zásobník Oracle9i dat (Y&#124;N).|  
 |BUFFER_POOL|String|Název výchozí fond vyrovnávací paměti má být použit pro index bloky.|  
 |USER_STATS|String|Jestli statistiku byla zadána přímo uživatelem.|  
 |DOBA TRVÁNÍ|String|Určuje dobu trvání dočasné tabulky: 1) SYS$ relace: řádky zachovány po dobu trvání relace, 2) SYS$ transakce: řádky jsou odstraněny po potvrzení, Null 3) pro trvalé tabulku.|  
@@ -156,7 +144,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (textová data).|  
 |STAV|String|Stav objektu (platné, neplatné nebo není k dispozici).|  
 |DOČASNÉ|String|Jestli je dočasný objekt (aktuální relaci vidí pouze data, která je umístit tento objekt sám sebe).|  
-|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
+|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
 |SEKUNDÁRNÍ|String|Jestli se jedná o sekundární objekt vytvořený metodě ODCIIndexCreate zásobník Oracle9i dat (Y &#124; N).|  
 |VYTVOŘIT|DateTime|Datum vytvoření objektu.|  
   
@@ -166,7 +154,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |----------------|--------------|-----------------|  
 |SEQUENCE_OWNER|String|Název majitele pořadí.|  
 |SEQUENCE_NAME|String|Název pořadí.|  
-|MIN_VALUE|Desetinné číslo|Minimální hodnota pořadí.|  
+|MIN_VALUE –|Desetinné číslo|Minimální hodnota pořadí.|  
 |MAX_VALUE|Desetinné číslo|Maximální hodnota pořadí.|  
 |INCREMENT_BY|Desetinné číslo|Hodnota, podle kterého se zvýší pořadí.|  
 |CYCLE_FLAG|String|Pořadí wrap kolem v dosažení limitu.|  
@@ -209,7 +197,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |TEXT_LENGTH|Desetinné číslo|Délka textu zobrazení.|  
 |TEXT|String|Text ze zobrazení.|  
 |TYPE_TEXT_LENGTH|Desetinné číslo|Délka klauzuli typ typu zobrazení.|  
-|TYPE_TEXT|String|Typ klauzule typu zobrazení.|  
+|TYP|String|Typ klauzule typu zobrazení.|  
 |OID_TEXT_LENGTH|Desetinné číslo|Délka klauzuli OID s typem zobrazení.|  
 |OID_TEXT|String|S klauzulí OID typu zobrazení.|  
 |VIEW_TYPE_OWNER|String|Vlastník na typu zobrazení, pokud je zobrazení aktuálního zobrazení.|  
@@ -231,7 +219,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (textová data)|  
 |STAV|String|Stav objektu (platné, neplatné nebo není k dispozici).|  
 |DOČASNÉ|String|Jestli je dočasný objekt (aktuální relaci vidí pouze data, která je umístit tento objekt sám sebe).|  
-|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
+|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
 |SEKUNDÁRNÍ|String|Jestli se jedná o sekundární objekt vytvořený metodě ODCIIndexCreate zásobník Oracle9i dat (Y &#124; N).|  
   
 ## <a name="packages"></a>Balíčky  
@@ -247,7 +235,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (textová data).|  
 |STAV|String|Stav objektu (platné, neplatné nebo není k dispozici).|  
 |DOČASNÉ|String|Jestli je dočasný objekt (aktuální relaci vidí pouze data, která je umístit tento objekt sám sebe).|  
-|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
+|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
 |SEKUNDÁRNÍ|String|Jestli se jedná o sekundární objekt vytvořený metodě ODCIIndexCreate zásobník Oracle9i dat (Y &#124; N).|  
 |VYTVOŘIT|DateTime|Datum vytvoření objektu.|  
   
@@ -264,7 +252,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (textová data).|  
 |STAV|String|Stav objektu (platné, neplatné nebo není k dispozici).|  
 |DOČASNÉ|String|Jestli je dočasný objekt (aktuální relaci vidí pouze data, která je umístit tento objekt sám sebe).|  
-|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
+|GENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
 |SEKUNDÁRNÍ|String|Jestli se jedná o sekundární objekt vytvořený metodě ODCIIndexCreate zásobník Oracle9i dat (Y &#124; N).|  
 |VYTVOŘIT|DateTime|Datum vytvoření objektu.|  
   
@@ -301,7 +289,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |DEFERRABLE|String|Zda je deferrable omezení.|  
 |OVĚŘIT|String|Jestli všechna data dodržuje omezení (ověřit nebo nebyl OVĚŘEN.).|  
 |GENERUJE|String|Jestli název omezení je uživatel nebo vygenerované systémem.|  
-|BAD|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
+|ŠPATNÉ|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
 |VYUŽÍVAJÍ|String|Toho, jestli povolené omezení vynucené nebo nevynucené.|  
 |LAST_CHANGE|DateTime|Pokud bylo povoleno nebo zakázáno omezení poslední|  
 |INDEX_OWNER|String|Jméno uživatele, který je vlastníkem index|  
@@ -322,7 +310,7 @@ Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následujíc
 |DEFERRABLE|String|Zda je deferrable omezení.|  
 |OVĚŘIT|String|Jestli všechna data dodržuje omezení (ověřit nebo nebyl OVĚŘEN.).|  
 |GENERUJE|String|Jestli název omezení je uživatel nebo vygenerované systémem.|  
-|BAD|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
+|ŠPATNÉ|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Abyste se vyhnuli chybám, které jsou výsledkem této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
 |VYUŽÍVAJÍ|String|Toho, jestli povolené omezení vynucené nebo nevynucené.|  
 |LAST_CHANGE|DateTime|Pokud bylo omezení poslední povoleno nebo zakázáno.|  
 |INDEX_OWNER|String|Jméno uživatele, který vlastní index.|  

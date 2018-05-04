@@ -1,33 +1,21 @@
 ---
-title: "Zobrazení dat výkonu"
-ms.custom: 
+title: Zobrazení dat výkonu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 90820e49-9d46-41f6-9a3d-6c0741bbd8eb
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0858dec79f17906647a3244eb1686e91e53ac48d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: df7c5525738d23a1489bfeec75d2c6b1dbd29e94
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dataview-performance"></a>Zobrazení dat výkonu
 Toto téma popisuje výhody výkonu pomocí <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView> třída a ukládání do mezipaměti <xref:System.Data.DataView> ve webové aplikaci.  
   
 ## <a name="find-and-findrows"></a>Najít a FindRows  
- <xref:System.Data.DataView>Vytvoří index. Index obsahuje klíče ze jeden nebo více sloupců v tabulce nebo zobrazení. Tyto klíče jsou uložené ve struktuře, která umožňuje <xref:System.Data.DataView> k vyhledání řádků přidružené hodnoty klíče rychle a efektivně či řádku. Operace, které používají index, jako je například filtrování a řazení, najdete v části signifcant zvyšuje výkon. Index <xref:System.Data.DataView> vychází i v případě <xref:System.Data.DataView> je vytvořena a při řazení nebo filtrování je upravit informace. Vytváření <xref:System.Data.DataView> a následně nastavení toto řazení nebo filtrování informace později způsobí index, který má být sestaven alespoň dvakrát: Jakmile při <xref:System.Data.DataView> je vytvořen, a znovu jakékoli vlastnosti řazení nebo filtrování jsou změny. Další informace o filtrování a řazení s <xref:System.Data.DataView>, najdete v části [filtrování s DataView](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md) a [řazení s DataView](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md).  
+ <xref:System.Data.DataView> Vytvoří index. Index obsahuje klíče ze jeden nebo více sloupců v tabulce nebo zobrazení. Tyto klíče jsou uložené ve struktuře, která umožňuje <xref:System.Data.DataView> k vyhledání řádků přidružené hodnoty klíče rychle a efektivně či řádku. Operace, které používají index, jako je například filtrování a řazení, najdete v části signifcant zvyšuje výkon. Index <xref:System.Data.DataView> vychází i v případě <xref:System.Data.DataView> je vytvořena a při řazení nebo filtrování je upravit informace. Vytváření <xref:System.Data.DataView> a následně nastavení toto řazení nebo filtrování informace později způsobí index, který má být sestaven alespoň dvakrát: Jakmile při <xref:System.Data.DataView> je vytvořen, a znovu jakékoli vlastnosti řazení nebo filtrování jsou změny. Další informace o filtrování a řazení s <xref:System.Data.DataView>, najdete v části [filtrování s DataView](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md) a [řazení s DataView](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md).  
   
  Pokud chcete výsledky konkrétní dotaz na data, oproti Pokud dynamické zobrazení podmnožinu dat, můžete použít <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>, nikoli nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnost. <xref:System.Data.DataView.RowFilter%2A> Vlastnost nejlépe slouží v aplikaci vázané na data kde připojeného ovládacího prvku zobrazí filtrované výsledky. Nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnost znovu sestaví index pro data, přidávání režie k vaší aplikaci a snížení výkonu. <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody použití aktuální index bez nutnosti znovu sestavit index. Pokud chcete volat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> pouze jednou, měli byste použít stávající <xref:System.Data.DataView>. Pokud chcete volat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> vícekrát, měli byste vytvořit nový <xref:System.Data.DataView> znovu sestavit index na sloupci, kterou chcete hledat na a pak zavolají <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> metody. Další informace o <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody, najdete v části [hledání řádky](../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md).  
   

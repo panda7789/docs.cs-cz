@@ -1,31 +1,20 @@
 ---
-title: "&lt;Přidat&gt; Element pro &lt;přepínače&gt;"
-ms.custom: 
+title: '&lt;Přidat&gt; Element pro &lt;přepínače&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/switches/add
 helpviewer_keywords:
 - <add> element for <switches>
 - add element for <switches>
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4406caa4da1375bea9809843ca96774e24421d5d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0dc425327f6577606e1205a23fdaffcc39f6e01
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-element-for-ltswitchesgt"></a>&lt;Přidat&gt; Element pro &lt;přepínače&gt;
 Určuje úroveň, kde je nastaven na přepínač trasování.  
@@ -33,7 +22,7 @@ Určuje úroveň, kde je nastaven na přepínač trasování.
  \<Konfigurace >  
 \<System.Diagnostics >  
 \<přepínače >  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   

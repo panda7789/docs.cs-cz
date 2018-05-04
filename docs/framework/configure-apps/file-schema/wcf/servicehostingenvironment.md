@@ -1,30 +1,18 @@
 ---
 title: '&lt;serviceHostingEnvironment&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a08df7c620065bb483d276e3ead2c179040f1c9a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: e6c69e06b691e40b6b2c39a54be83d7bdbe3a650
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
 Tento element definuje typ, který vytvoří instanci služby hostování prostředí konkrétního přenosu. Pokud tento element je prázdné, použije se výchozí typ. Tento element dá použít jenom na aplikace či soubory konfiguraci na úrovni počítačů.  
   
- \<systém. ServiceModel >  
-\<ServiceHostingEnvironment >  
+ \<system.ServiceModel>  
+\<serviceHostingEnvironment >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,9 +39,9 @@ Tento element definuje typ, který vytvoří instanci služby hostování prost�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|aspNetCompatibilityEnabled|Logickou hodnotu udávající, zda je režim kompatibility ASP.NET je zapnutý pro aktuální aplikaci. Výchozí hodnota je `false`.<br /><br /> Když tento atribut je nastaven na `true`, požadavky na [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby procházet skrz kanál protokolu HTTP technologie ASP.NET a komunikaci v rámci jiných protokolů než HTTP je zakázáno. Další informace najdete v tématu [služby WCF a ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).|  
+|aspNetCompatibilityEnabled|Logickou hodnotu udávající, zda je režim kompatibility ASP.NET je zapnutý pro aktuální aplikaci. Výchozí hodnota je `false`.<br /><br /> Když tento atribut je nastaven na `true`, požadavky na služby Windows Communication Foundation (WCF) procházet skrz kanál protokolu HTTP technologie ASP.NET a komunikaci v rámci jiných protokolů než HTTP je zakázáno. Další informace najdete v tématu [služby WCF a ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).|  
 |minFreeMemoryPercentageToActivateService|Celé číslo, které určuje minimální množství volné paměti, která by měla být k dispozici systému, než [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby je možné aktivovat. **Upozornění:** zadání tohoto atributu společně s částečnou důvěryhodností v souboru web.config [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] v důsledku toho služba <xref:System.Security.SecurityException> spuštění služby.|  
-|multipleSiteBindingsEnabled|Logická hodnota, která určuje, zda je povoleno více vazby služby IIS na webu.<br /><br /> IIS se skládá z webů, které jsou kontejnery pro virtuální aplikace obsahující virtuální adresáře. Aplikace v síti je přístupná přes jeden nebo více vazby služby IIS. Vazbu služby IIS poskytuje dva kusy informací: protokol vazby a informace o vazbě. Vytvoření vazby protokolu definuje schéma, přes který probíhá komunikace a informace o vazbě je informace, které slouží pro přístup k webu. Příklad vazby protokolu může být protokolu HTTP, kdežto informace o vazbě může obsahovat IP adresu, Port, Hlavička hostitele, atd.<br /><br /> Služba IIS podporuje zadání více vazby služby IIS na webu, což vede k více základní adresy na schéma. Ale [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služba hostovaná na webu umožňuje vazbu na jedinou baseAddress na schéma.<br /><br /> Chcete-li povolit více vazby služby IIS na webovém serveru [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby, nastavte tento atribut na `true`. Všimněte si, že více vazba webu je podporována pouze pro protokol HTTP. Adresy koncových bodů v konfiguračním souboru musí být úplný identifikátor URI.|  
+|multipleSiteBindingsEnabled|Logická hodnota, která určuje, zda je povoleno více vazby služby IIS na webu.<br /><br /> IIS se skládá z webů, které jsou kontejnery pro virtuální aplikace obsahující virtuální adresáře. Aplikace v síti je přístupná přes jeden nebo více vazby služby IIS. Vazbu služby IIS poskytuje dva kusy informací: protokol vazby a informace o vazbě. Vytvoření vazby protokolu definuje schéma, přes který probíhá komunikace a informace o vazbě je informace, které slouží pro přístup k webu. Příklad vazby protokolu může být protokolu HTTP, kdežto informace o vazbě může obsahovat IP adresu, Port, Hlavička hostitele, atd.<br /><br /> Služba IIS podporuje zadání více vazby služby IIS na webu, což vede k více základní adresy na schéma. Však hostované na webu služby Windows Communication Foundation (WCF) umožňuje vazbu na jedinou baseAddress na schéma.<br /><br /> Pokud chcete povolit víc vazeb IIS na webu služby Windows Communication Foundation (WCF), nastavte tento atribut na `true`. Všimněte si, že více vazba webu je podporována pouze pro protokol HTTP. Adresy koncových bodů v konfiguračním souboru musí být úplný identifikátor URI.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   

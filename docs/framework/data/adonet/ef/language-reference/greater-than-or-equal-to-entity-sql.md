@@ -1,24 +1,12 @@
 ---
-title: "&gt;= (Větší než nebo rovno) (entita SQL)"
-ms.custom: 
+title: '&gt;= (Větší než nebo rovno) (entita SQL)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 70780ac4-0123-4da8-b731-8af856daffe3
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: b176e1efdc17b58083234d0437033bd43775f604
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1a1b75991ab97eefec67f2499bad4beb2234ea61
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="gt-greater-than-or-equal-to-entity-sql"></a>&gt;= (Větší než nebo rovno) (entita SQL)
 Porovná dva výrazy a určit, zda má levý výraz hodnotu větší než nebo rovna hodnotě pravý výraz.  
@@ -34,7 +22,7 @@ expression >= expression
  Jakýkoli platný výraz. Oba výrazy musí mít implicitně převést datové typy.  
   
 ## <a name="result-types"></a>Typy výsledků  
- `true`Pokud levý výraz má hodnotu větší než nebo rovna hodnotě pravý výraz; v opačném `false`.  
+ `true` Pokud levý výraz má hodnotu větší než nebo rovna hodnotě pravý výraz; v opačném `false`.  
   
 ## <a name="example"></a>Příklad  
  Následující dotaz Entity SQL používá > = – operátor porovnání k porovnání dvou výrazů k určení, zda levý výraz obsahuje hodnotu větší než nebo rovna hodnotě pravý výraz. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  

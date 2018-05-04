@@ -1,13 +1,6 @@
 ---
-title: "Vývoj kanálu"
-ms.custom: 
+title: Vývoj kanálu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - add-in pipeline [.NET Framework], segments
 - activation path for add-ins [.NET Framework]
@@ -16,23 +9,20 @@ helpviewer_keywords:
 - add-in pipeline [.NET Framework], about
 - add-ins [.NET Framework], pipeline development
 ms.assetid: 932788f2-b87d-44cf-82f9-04492a8b2722
-caps.latest.revision: "31"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 33646bbd7b0043cb5fc036b9b11aa4cf37cd537f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 2d889b7de4bc766deda9b91877ceefb4aebfc551
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pipeline-development"></a>Vývoj kanálu
 Kanál doplňku je cesta kanálu segmentů, které hostitelskou aplikaci a její add-in musí používat ke komunikaci mezi sebou.  
   
  Následující obrázek znázorňuje komunikační kanál a jeho segmentů.  
   
- ![Přidat & č. 45; ve model kanálu. ] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
+ ![Přidat&#45;ve model kanálu. ] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
 Kanál doplňku  
   
  Doplněk je na druhém konci hostitelskou aplikaci je na jednom konci kanálu. Spuštění z obou koncích a přesun do středu, hostitelskou aplikaci i v doplňku mají abstraktní základní třída, která definuje zobrazení objektu modelu, který obě sdílejí. Tyto typy (třídy) tvoří segmentu kanálu doplněk zobrazení a zobrazení hostitele segmentu doplněk kanálu. Segment kanálu doplněk zobrazení často obsahuje více než jeden abstraktní třídu, ale třídu, která v doplňku dědí z se označuje jako základní add-in.  
@@ -45,7 +35,7 @@ Kanál doplňku
   
  Následující obrázek znázorňuje typy, které tvoří segmenty kanálu. Názvy typů znázorněno na obrázku jsou libovolný, ale všechny typy s výjimkou hostitele a hostitele zobrazení atributů vyžadovat add-in, může být zjištěny pomocí metody, které vytvořit úložišti informace.  
   
- ![Přidat & č. 45; v modelu s povinné atributy pro typy. ] (../../../docs/framework/add-ins/media/addin-model.png "AddIn_Model")  
+ ![Přidat&#45;v modelu s povinné atributy pro typy. ] (../../../docs/framework/add-ins/media/addin-model.png "AddIn_Model")  
 Doplněk s typy  
   
  Následující tabulka popisuje segmenty kanálu pro aktivaci doplňku. Další informace o tyto segmenty najdete v tématu [kontrakty, zobrazení a adaptéry](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c).  
@@ -63,7 +53,7 @@ Doplněk s typy
 ## <a name="pipeline-activation-path"></a>Aktivační cesta kanálu  
  Následující obrázek znázorňuje aktivace typů, když je aktivován doplňku. Také ukazuje předávání objektů na hostitele, třeba výsledky výpočtu nebo kolekce objektů. Toto je Nejobvyklejším scénářem.  
   
- ![Přidat & č. 45; v modelu s aktivační cesta. ] (../../../docs/framework/add-ins/media/addin6.png "AddIn6")  
+ ![Přidat&#45;v modelu s aktivační cesta. ] (../../../docs/framework/add-ins/media/addin6.png "AddIn6")  
 Aktivační cesta z v doplňku na hostitele  
   
  Aktivační cesta kanálu dojde k následujícím způsobem:  

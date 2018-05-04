@@ -1,24 +1,12 @@
 ---
-title: "PŘÍPAD (entita SQL)"
-ms.custom: 
+title: PŘÍPAD (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9afc5e3bbf8e6fe732aca9e65c8ba5bd5f620c85
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ee878409e7698300b7bebbdac760422013f3b7de
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="case-entity-sql"></a>PŘÍPAD (entita SQL)
 Vyhodnotí sadu `Boolean` výrazy k určení výsledku.  
@@ -39,14 +27,14 @@ END
  `n`  
  Je zástupný symbol, který označuje, že více při `Boolean_expression` pak `result_expression` klauzule můžete použít.  
   
- POTOM`result_expression`  
- Výraz dochází při `Boolean_expression` vyhodnocuje `true`. `result expression`je jakýkoli platný výraz.  
+ POTOM `result_expression`  
+ Výraz dochází při `Boolean_expression` vyhodnocuje `true`. `result expression` Je jakýkoli platný výraz.  
   
  ELSE `else_result_expression`  
- Je výraz vrácena, pokud žádná operace porovnání vyhodnocen `true`. Pokud je tento argument vynechán a žádná operace porovnání se vyhodnocuje `true`, případě vrátí hodnotu null. `else_result_expression`je jakýkoli platný výraz. Datové typy `else_result_expression` a jakýkoli `result_expression` musí být stejné nebo musí být implicitní převod.  
+ Je výraz vrácena, pokud žádná operace porovnání vyhodnocen `true`. Pokud je tento argument vynechán a žádná operace porovnání se vyhodnocuje `true`, případě vrátí hodnotu null. `else_result_expression` Je jakýkoli platný výraz. Datové typy `else_result_expression` a jakýkoli `result_expression` musí být stejné nebo musí být implicitní převod.  
   
- KDY`Boolean_expression`  
- Je `Boolean` výrazu vyhodnoceného při použití vyhledávaná případu formátu. `Boolean_expression`je libovolný platný `Boolean` výraz.  
+ KDY `Boolean_expression`  
+ Je `Boolean` výrazu vyhodnoceného při použití vyhledávaná případu formátu. `Boolean_expression` je libovolný platný `Boolean` výraz.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrátí typ nejvyšší prioritu ze sady typy v `result_expression` a volitelné `else_result_expression`.  

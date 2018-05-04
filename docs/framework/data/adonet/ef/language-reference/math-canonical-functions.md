@@ -1,27 +1,15 @@
 ---
-title: "Matematické funkce kanonickém tvaru"
-ms.custom: 
+title: Matematické funkce kanonickém tvaru
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 33c8b500002b46d720533f681807889955de5982
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9d823eb45babca4b8f5dd717b4fb92c1984d1c8c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="math-canonical-functions"></a>Matematické funkce kanonickém tvaru
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]zahrnuje matematické funkce kanonickém tvaru.  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] zahrnuje matematické funkce kanonickém tvaru.  
   
  V následující tabulce jsou uvedeny výpočty [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   

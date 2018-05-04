@@ -1,27 +1,15 @@
 ---
-title: "Zabezpečení přístupu kódu a ADO.NET"
-ms.custom: 
+title: Zabezpečení přístupu kódu a ADO.NET
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e69073f757c07c5dd262900d4d8f7ad2cc83cdc4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ea5dbcc128f97ebbec72273378adb042bbe34e1e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework nabízí na základě rolí zabezpečení a také zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí běžnou infrastrukturu poskytl common language runtime (CLR). Na světě nespravovaného kódu většinu aplikací spustit s oprávněními uživatele nebo objekt zabezpečení. V důsledku toho počítačích může být poškozena a privátní data ohrožení zabezpečení při škodlivý nebo plný chyb softwaru je spustit uživatel, se zvýšenými oprávněními.  
@@ -38,11 +26,11 @@ Rozhraní .NET Framework nabízí na základě rolí zabezpečení a také zabez
   
  Existují tři typy kódu přístupová oprávnění:  
   
--   `Code access permissions`odvozena od <xref:System.Security.CodeAccessPermission> třídy. Oprávnění se vyžadují, aby bylo možné přístup k chráněným prostředkům, jako jsou soubory a proměnné prostředí a k provádění chráněné operace, jako je přístup k nespravovanému kódu.  
+-   `Code access permissions` odvozena od <xref:System.Security.CodeAccessPermission> třídy. Oprávnění se vyžadují, aby bylo možné přístup k chráněným prostředkům, jako jsou soubory a proměnné prostředí a k provádění chráněné operace, jako je přístup k nespravovanému kódu.  
   
--   `Identity permissions`představuje charakteristiky, které identifikují sestavení. Oprávnění k sestavení založené na důkaz, které mohou být položky, jako je například digitální podpis nebo odkud pochází kód. Oprávnění identity také odvodit z <xref:System.Security.CodeAccessPermission> základní třídy.  
+-   `Identity permissions` představuje charakteristiky, které identifikují sestavení. Oprávnění k sestavení založené na důkaz, které mohou být položky, jako je například digitální podpis nebo odkud pochází kód. Oprávnění identity také odvodit z <xref:System.Security.CodeAccessPermission> základní třídy.  
   
--   `Role-based security permissions`jsou založené na tom, jestli objekt se zadanou identitou nebo je členem zadané roli. <xref:System.Security.Permissions.PrincipalPermission> Třída umožňuje obou kontroly deklarativní a imperativní oprávnění vůči aktivní objekt zabezpečení.  
+-   `Role-based security permissions` jsou založené na tom, jestli objekt se zadanou identitou nebo je členem zadané roli. <xref:System.Security.Permissions.PrincipalPermission> Třída umožňuje obou kontroly deklarativní a imperativní oprávnění vůči aktivní objekt zabezpečení.  
   
  K určení, zda kód je oprávněn k přístupu k prostředkům nebo k provedení operace, systém zabezpečení modulu runtime prochází zásobník volání, porovnává udělená oprávnění jednotlivých volajícího, aby požadováné. Pokud žádné volající v zásobníku volání nemá požadované oprávnění, <xref:System.Security.SecurityException> je vyvolána a přístup je zamítnut.  
   
@@ -84,7 +72,7 @@ Rozhraní .NET Framework nabízí na základě rolí zabezpečení a také zabez
 |`AllowBlankPassword`|Povolí nebo zakáže použití prázdné heslo v připojovacím řetězci. Platné hodnoty jsou `true` (Chcete-li povolit použití prázdného hesla) a `false` (Chcete-li zakázat používání prázdná hesla). Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
 |`ConnectionString`|Identifikuje povolených připojovací řetězec. Je možné zjistit více připojovací řetězce. **Poznámka:** nezahrnují ID uživatele nebo heslo v připojovacím řetězci. V této verzi nelze změnit pomocí nástroje rozhraní .NET Framework konfigurace omezení řetězec připojení. <br /><br /> Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
 |`KeyRestrictions`|Určuje parametry připojovacího řetězce, které jsou povolené nebo zakázané. Ve formuláři jsou identifikovány parametrů řetězce připojení  *\<název parametru > =*. Můžete zadat víc parametrů oddělený středníkem (;). **Poznámka:** Pokud nezadáte `KeyRestrictions`, ale nastavit `KeyRestrictionBehavior` vlastnost `AllowOnly` nebo `PreventUsage`, jsou povolené žádné další parametry připojovacího řetězce. Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
-|`KeyRestrictionBehavior`|Identifikuje parametry, řetězec připojení jako pouze další parametry, které jsou povoleny (`AllowOnly`), nebo identifikuje další parametry, které nejsou povoleny (`PreventUsage`). `AllowOnly`je výchozí. Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
+|`KeyRestrictionBehavior`|Identifikuje parametry, řetězec připojení jako pouze další parametry, které jsou povoleny (`AllowOnly`), nebo identifikuje další parametry, které nejsou povoleny (`PreventUsage`). `AllowOnly` je výchozí. Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
 |`TypeID`|Získá jedinečný identifikátor pro tento atribut při implementaci v odvozené třídě. Zděděno z <xref:System.Attribute>.|  
 |`Unrestricted`|Určuje, zda je deklarovaná bez omezení oprávnění k prostředku. Zděděno z <xref:System.Security.Permissions.SecurityAttribute>.|  
   

@@ -1,26 +1,14 @@
 ---
-title: "&lt;useLegacyJit&gt; – Element"
-ms.custom: 
+title: '&lt;useLegacyJit&gt; – Element'
 ms.date: 04/26/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-bcl
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
-caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9d2a71e44db2d6e85ae730f4603bf191f54525c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd0ae1a44b41ddcae2149bcf685871a37dd01b06
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltuselegacyjitgt-element"></a>&lt;useLegacyJit&gt; – Element
 

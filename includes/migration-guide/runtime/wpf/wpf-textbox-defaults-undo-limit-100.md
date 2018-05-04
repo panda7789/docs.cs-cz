@@ -2,7 +2,7 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET 4.5 je výchozí limit vrácení zpět pro textové pole WPF 100 (na rozdíl od vrácení neomezená v rozhraní .NET 4.0)|
+|Podrobnosti|V rozhraní .NET Framework 4.5 je výchozí limit vrácení zpět pro textové pole WPF 100 (na rozdíl od vrácení neomezená v rozhraní .NET Framework 4.0)|
 |Návrh|Pokud limit 100 vrácení zpět je příliš nízké, může být explicitně nastavena limit s <xref:System.Windows.Controls.Primitives.TextBoxBase.UndoLimit>|
 |Rozsah|Edge|
 |Version|4.5|

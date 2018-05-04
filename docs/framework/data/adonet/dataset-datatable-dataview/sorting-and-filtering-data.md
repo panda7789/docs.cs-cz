@@ -1,34 +1,22 @@
 ---
-title: "Řazení a filtrování dat"
-ms.custom: 
+title: Řazení a filtrování dat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2411307623c714ae521d00dcffca05d3569a656e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 02a67a490eb8339663aac08c97c665ffee09f0df
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="sorting-and-filtering-data"></a>Řazení a filtrování dat
 <xref:System.Data.DataView> Nabízí několik způsobů řazení a filtrování dat v <xref:System.Data.DataTable>:  
   
 -   Můžete použít <xref:System.Data.DataView.Sort%2A> vlastnosti a určit jeden nebo více sloupců pořadí řazení a zahrnují (vzestupně) ASC a DESC (sestupně) parametry.  
   
--   Můžete použít <xref:System.Data.DataView.ApplyDefaultSort%2A> vlastnost pro automatické vytvoření pořadí řazení, ve vzestupném pořadí, na základě sloupec primárního klíče nebo sloupců tabulky. <xref:System.Data.DataView.ApplyDefaultSort%2A>kdy se vztahuje pouze **řazení** vlastnost je odkaz s hodnotou null nebo prázdný řetězec, a pokud tabulka má definovaný primární klíč.  
+-   Můžete použít <xref:System.Data.DataView.ApplyDefaultSort%2A> vlastnost pro automatické vytvoření pořadí řazení, ve vzestupném pořadí, na základě sloupec primárního klíče nebo sloupců tabulky. <xref:System.Data.DataView.ApplyDefaultSort%2A> kdy se vztahuje pouze **řazení** vlastnost je odkaz s hodnotou null nebo prázdný řetězec, a pokud tabulka má definovaný primární klíč.  
   
 -   Můžete použít <xref:System.Data.DataView.RowFilter%2A> vlastnosti k určení podmnožiny řádků podle jejich hodnot sloupců. Podrobnosti o platné výrazy pro **RowFilter** vlastnost, najdete v referenčních informacích pro <xref:System.Data.DataColumn.Expression%2A> vlastnost <xref:System.Data.DataColumn> třídy.  
   
@@ -47,7 +35,7 @@ ms.lasthandoff: 01/17/2018
     |**ModifiedOriginal**|**Původní** verze řádku všech **změněné** řádků.|  
     |**None**|Žádné řádky.|  
     |**OriginalRows**|**Původní** verze řádku všech **Unchanged**, **změněné**, a **odstraněné** řádků.|  
-    |**Unchanged**|**Aktuální** verze řádku všech **Unchanged** řádků.|  
+    |**Beze změny**|**Aktuální** verze řádku všech **Unchanged** řádků.|  
   
  Další informace o stavy řádků a řádek verzích najdete v tématu [stavy řádků a verze řádku](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
   

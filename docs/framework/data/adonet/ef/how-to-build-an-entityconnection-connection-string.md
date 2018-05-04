@@ -1,27 +1,15 @@
 ---
-title: "Postupy: sestavení řetězec připojení EntityConnection"
-ms.custom: 
+title: 'Postupy: sestavení řetězec připojení EntityConnection'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5bd1a748-3df7-4d0a-a607-14f25e3175e9
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9b8f8d882fcc33ba4febe976e5c812d81032d659
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0ff1e2b00895232b9310ea44ffd1b100b7b9cfc3
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-build-an-entityconnection-connection-string"></a>Postupy: sestavení řetězec připojení EntityConnection
 Toto téma představuje příklad, jak sestavit <xref:System.Data.EntityClient.EntityConnection>.  

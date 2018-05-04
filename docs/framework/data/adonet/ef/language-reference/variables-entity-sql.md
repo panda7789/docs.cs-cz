@@ -1,24 +1,12 @@
 ---
-title: "Proměnné (entita SQL)"
-ms.custom: 
+title: Proměnné (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3eed222a-f8f6-46b6-9cd5-220cc0e4e5d8
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d035f8d5616f2eb4c5a4db31857da2be0cd3d930
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f271ffc31875e7d94a27f4752b71bfe508fcb620
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="variables-entity-sql"></a>Proměnné (entita SQL)
 ## <a name="variable"></a>Proměnná  

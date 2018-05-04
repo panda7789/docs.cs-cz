@@ -1,29 +1,17 @@
 ---
-title: "Systém typů (entita SQL)"
-ms.custom: 
+title: Systém typů (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 818a505b-a196-41dd-aaac-2ccd5f7a2f1a
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e6eea471aa421cf5a154e6873c7ea64b71733bfd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3470ad17ae16e57edbbef13f30186b7e58fd0d2b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="type-system-entity-sql"></a>Systém typů (entita SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje několik typů:  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje několik typů:  
   
--   (Jednoduchý) primitivní typy, jako `Int32` a`String.`  
+-   (Jednoduchý) primitivní typy, jako `Int32` a `String.`  
   
 -   Nominální typy, které jsou definované ve schématu, jako například <xref:System.Data.Metadata.Edm.EntityType>, <xref:System.Data.Metadata.Edm.ComplexType>, a <xref:System.Data.Metadata.Edm.RelationshipType>.  
   
@@ -40,7 +28,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="references"></a>Odkazy  
  Odkaz je logické ukazatel na konkrétní entity v sadě konkrétní entity.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje následující operátory k vytváření, deconstruct a procházení odkazy:  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje následující operátory k vytváření, deconstruct a procházení odkazy:  
   
 -   [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)  
   

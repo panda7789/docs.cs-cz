@@ -1,24 +1,12 @@
 ---
-title: "&lt;message&gt; – &lt;wsDualHttpBinding&gt;"
-ms.custom: 
+title: '&lt;message&gt; – &lt;wsDualHttpBinding&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 75101744-eed8-4d61-91f4-5fc4473a21f2
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 60f0b1d767cba44d1eedc4fdd37ee6b038952ef8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 6881937f1bffe8fdc42c71fff8c36fccaacf0f7c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmessagegt-of-ltwsdualhttpbindinggt"></a>&lt;message&gt; – &lt;wsDualHttpBinding&gt;
 Definuje zabezpečení na úrovni zpráv [ \<– wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
@@ -81,7 +69,7 @@ Definuje zabezpečení na úrovni zpráv [ \<– wsDualHttpBinding >](../../../.
 |-----------|-----------------|  
 |Žádné|To umožňuje službu k interakci s anonymní klienty. Na straně služby to znamená, že služba nevyžaduje žádné pověření klienta. Na klientovi to znamená, že klient nenabízí žádné pověření klienta.|  
 |Windows|Umožňuje výměnu SOAP pod pro ověřený kontext pověření systému Windows. Pokud `negotiateServiceCredential` je atribut nastaven na `true`, buď provede vyjednávání SSPI nebo protokolu Kerberos (umožňuje vzájemnou spolupráci standard).|  
-|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatelského jména. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Jako takový [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] vynutí, že při použití uživatelské jméno pověření zabezpečené přenosu. Tento režim pověření výsledkem umožňuje vzájemnou spolupráci exchange nebo jiný umožňuje vzájemnou spolupráci vyjednávání na základě `negotiateServiceCredential` atribut.|  
+|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatelského jména. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Jako takový [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] vynutí, že při použití uživatelské jméno pověření zabezpečené přenosu. Tento režim pověření výsledkem umožňuje vzájemnou spolupráci exchange nebo jiný umožňuje vzájemnou spolupráci vyjednávání na základě `negotiateServiceCredential` atribut.|  
 |certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu. Pokud se používá režim zabezpečení zprávy a `negotiateServiceCredential` je atribut nastaven na `false`, klient musí být opatřena certifikát služby.|  
 |IssuedToken|Určuje vlastní token, obvykle vydávají služby tokenů zabezpečení.|  
   

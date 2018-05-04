@@ -1,29 +1,17 @@
 ---
-title: "&lt;– serviceCredentials&gt;"
-ms.custom: 
+title: '&lt;– serviceCredentials&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 96db336c-4f7a-4193-81a5-910b8ffd804f
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 00567c32b800bb98386e15b2ba822ccc9623d72b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a3d63e3d01c009834717a80a9ed9536fd1bdf838
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicecredentialsgt"></a>&lt;– serviceCredentials&gt;
 Určuje pověření, která se použije v ověřování služby a nastavení související s ověření pověření klienta.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  
@@ -65,7 +53,7 @@ Určuje pověření, která se použije v ověřování služby a nastavení sou
 |-------------|-----------------|  
 |[\<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)|Určuje certifikát, který chcete použít, pokud je k dispozici out-of-band klientský certifikát. Tento element také určuje nastavení ověření certifikátu klienta. Tento element je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>.|  
 |[\<issuedTokenAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)|Určuje aktuální vystavený token pro tuto službu. Tento element je typu <xref:System.ServiceModel.Configuration.IssuedTokenServiceElement>.|  
-|[\<sdílené >](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-servicecredentials.md)|Určuje, že aktuální přihlašovací údaje pro uzel sdílené. Tento element je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
+|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-servicecredentials.md)|Určuje, že aktuální přihlašovací údaje pro uzel sdílené. Tento element je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
 |[\<secureConversationAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationauthentication-of-servicecredential.md)|Určuje, že aktuální přihlašovací údaje pro zabezpečenou konverzaci. Tento element je typu <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>.|  
 |[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)|Určuje certifikát používají službu identifikovat. Tento element je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateServiceElement>.|  
 |[\<userNameAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)|Určuje nastavení pro ověření hesla uživatelské jméno. Tento element je typu <xref:System.ServiceModel.Configuration.UserNameServiceElement>.|  

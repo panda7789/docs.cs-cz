@@ -1,27 +1,15 @@
 ---
 title: '&lt;issuerMetadata&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e7eae2c0-cc17-4281-af59-e4eb8d54f92a
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 28746481bd24eb0d80304456ea8f34f505a016b9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f6b8d2f861c4d64a3b81407de4ce13b42d9b864
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltissuermetadatagt"></a>&lt;issuerMetadata&gt;
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<vazby >  
 \<– wsFederationHttpBinding >  
 \<Vazba >  

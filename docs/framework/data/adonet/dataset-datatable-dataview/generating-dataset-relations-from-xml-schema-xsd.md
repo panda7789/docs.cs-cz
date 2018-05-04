@@ -1,24 +1,12 @@
 ---
-title: "Generování datovou sadu vztahů ze schématu XML (XSD)"
-ms.custom: 
+title: Generování datovou sadu vztahů ze schématu XML (XSD)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4634e54c620fdd206582af94b825210331d11c14
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: fdf22c311ef7b4267f4a4da8566e4ea59504b103
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Generování datovou sadu vztahů ze schématu XML (XSD)
 V <xref:System.Data.DataSet>, vytvoří přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřazený podřízený. Existují tři způsoby, jak představují **datovou sadu** vztahu v rámci schématu schématu XML definition language (XSD):  
@@ -44,7 +32,7 @@ V <xref:System.Data.DataSet>, vytvoří přidružení mezi dvěma nebo více slo
 </xs:element>  
 ```  
   
- Proces mapování schématu XML vytváří tabulky v **datovou sadu** , odpovídají vnořené komplexní typy ve schématu. Vytvoří také další sloupce, které se používají jako nadřazený**-**podřízené sloupce pro generovaný tabulky. Všimněte si, že tyto nadřazených**-**podřízené sloupce zadejte relace, který není stejný jako při zadání omezení primárního klíče a cizího klíče.  
+ Proces mapování schématu XML vytváří tabulky v **datovou sadu** , odpovídají vnořené komplexní typy ve schématu. Vytvoří také další sloupce, které se používají jako nadřazený**-** podřízené sloupce pro generovaný tabulky. Všimněte si, že tyto nadřazených**-** podřízené sloupce zadejte relace, který není stejný jako při zadání omezení primárního klíče a cizího klíče.  
   
 ## <a name="msdatarelationship-annotation"></a>MSDATA:Relationship – Poznámka  
  **Msdata:Relationship** poznámky umožňuje explicitně zadat vztahů nadřazenosti a podřízenosti mezi elementy ve schématu, které nejsou vnořené. Následující příklad ukazuje strukturu **vztah** elementu.  

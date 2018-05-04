@@ -1,31 +1,19 @@
 ---
-title: "&lt;state&gt; služby WCF, &lt;workflowInstanceQuery&gt;"
-ms.custom: 
+title: '&lt;state&gt; služby WCF, &lt;workflowInstanceQuery&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: edb6cc424be51e03b3c34182a2b456a9658e2bc7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 69ebedec40243d3e6580b8350c1253fca83e0802
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltstategt-of-wcf-ltworkflowinstancequerygt"></a>&lt;state&gt; služby WCF, &lt;workflowInstanceQuery&gt;
 Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.  
   
  Další informace o sledování profil dotazů najdete v tématu [sledování profily](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<sledování >  
 \<trackingProfile >  
 \<pracovní postup >  

@@ -1,31 +1,19 @@
 ---
 title: '&lt;netHttpBinding&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b0d81ca0-87c5-4090-8baa-e390fd3656d2
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 20de5215033d0f315de36c995b4976891a124752
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f6d3085ce999caad7e605341ecdb6d7099da3590
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltnethttpbindinggt"></a>&lt;netHttpBinding&gt;
-Představuje vazbu, [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] služby můžete použít ke konfiguraci a vystavit koncové body, které mohou komunikovat prostřednictvím protokolu HTTP. Při použití s duplexního kontraktu, webové sokety se bude používat, v opačném případě se použije protokol HTTP.  
+Představuje vazbu služby Windows Communication Foundation (WCF) můžete použít ke konfiguraci a vystavit koncové body, které mohou komunikovat prostřednictvím protokolu HTTP. Při použití s duplexního kontraktu, webové sokety se bude používat, v opačném případě se použije protokol HTTP.  
   
  \<system.ServiceModel>  
 \<vazby >  
-\<netHttpBinding>  
+\<netHttpBinding >  
   
 ## <a name="syntax"></a>Syntaxe  
 
@@ -75,7 +63,7 @@ Představuje vazbu, [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] s
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`allowCookies`|Logická hodnota, která určuje, zda klient přijímá soubory cookie a rozšiřuje je na dalších požadavků. Výchozí hodnota je `false`.<br /><br /> Tuto vlastnost lze použít při používání ASMX webové služby, které používají soubory cookie. Tímto způsobem mohou být jisti, že soubory cookie, kterou vrátil server se automaticky zkopírují do všechny budoucí požadavky pro tuto službu.|  
-|`bypassProxyOnLocal`|Logická hodnota, která označuje, zda Nepoužívat proxy server pro místní adresy. Výchozí hodnota je `false`.<br /><br /> Internetových prostředků je místní, pokud má místní adresy. Místní adresa je ten, který je na stejném počítači, místní síti LAN nebo intranetu a identifikuje, syntakticky, absenci tečkou (.) jako identifikátory URI "http://webserver/" a "http://localhost/".<br /><br /> Nastavení tento atribut určuje, zda koncové body nakonfigurované BasicHttpBinding používat proxy server při přístupu k místním prostředkům. Pokud tento atribut je `true`, požadavky k místním prostředkům Internetu Nepoužívat proxy server. Použijte název hostitele (místo localhost), pokud chcete klientům jít přes proxy server při posuzování ke službám ve stejném počítači, když tento atribut je nastaven na `true`.<br /><br /> Když tento atribut je `false`, jsou vytvářeny všechny požadavky Internetu prostřednictvím proxy serveru.|  
+|`bypassProxyOnLocal`|Logická hodnota, která označuje, zda Nepoužívat proxy server pro místní adresy. Výchozí hodnota je `false`.<br /><br /> Internetových prostředků je místní, pokud má místní adresy. Místní adresa je ten, který je na stejném počítači, místní síti LAN nebo intranetu a identifikuje, syntakticky, absenci tečkou (.) jako identifikátory URI "http://webserver/"a"http://localhost/".<br /><br /> Nastavení tento atribut určuje, zda koncové body nakonfigurované BasicHttpBinding používat proxy server při přístupu k místním prostředkům. Pokud tento atribut je `true`, požadavky k místním prostředkům Internetu Nepoužívat proxy server. Použijte název hostitele (místo localhost), pokud chcete klientům jít přes proxy server při posuzování ke službám ve stejném počítači, když tento atribut je nastaven na `true`.<br /><br /> Když tento atribut je `false`, jsou vytvářeny všechny požadavky Internetu prostřednictvím proxy serveru.|  
 |`closeTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje interval čas zadaný pro dokončení operace uzavření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |`hostnameComparisonMode`|Určuje režim porovnání hostname HTTP použitá k analýze identifikátory URI. Tento atribut je typu `System.ServiceModel.HostnameComparisonMode`, což naznačuje, zda se ke zpřístupnění služby při shodujícím v identifikátoru URI používá název hostitele. Výchozí hodnota je `StrongWildcard`>, který ignoruje název hostitele se shodují.|  
 |`maxBufferPoolSize`|Celočíselná hodnota, která určuje maximální množství paměti přidělené pro použití správcem vyrovnávacích pamětí zpráv, které přijímají zprávy z tohoto kanálu. Výchozí hodnota je 524288 (0x80000) bajtů.<br /><br /> Správci vyrovnávacích minimalizuje náklady na používání vyrovnávací paměti pomocí fondu vyrovnávací paměti. Vyrovnávací paměti se vyžadují zpracování zpráv službou, při které pocházejí z kanálu. Pokud ve fondu vyrovnávací paměti při zpracování zprávy zatížení není dostatek paměti, musí správce vyrovnávací paměť přidělit další paměť z haldy CLR, což zvyšuje režii kolekce paměti. Rozsáhlé přidělení z paměti haldy CLR je jako ukazatel toho, že je příliš malá velikost fondu vyrovnávací paměti a že výkon lze zvýšit pomocí větší přidělení zvýšením limit určený tento atribut.|  

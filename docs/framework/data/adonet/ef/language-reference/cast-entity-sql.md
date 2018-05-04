@@ -1,24 +1,12 @@
 ---
-title: "PŘETYPOVÁNÍ (entita SQL)"
-ms.custom: 
+title: PŘETYPOVÁNÍ (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ff63831a240ebe33a5b7ddaccaca22bb56282bf1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b3ebd4a7fe9d9e1324210d9f4d1265115bd8617f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cast-entity-sql"></a>PŘETYPOVÁNÍ (entita SQL)
 Převod výrazu jednoho datového typu.  

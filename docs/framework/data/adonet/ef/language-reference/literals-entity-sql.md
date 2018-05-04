@@ -1,24 +1,12 @@
 ---
-title: "Literály (entita SQL)"
-ms.custom: 
+title: Literály (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 092ef693-6e5f-41b4-b868-5b9e82928abf
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7665d0cb2e3c0a3cff5f602e7b02c572a3dc341d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 90c065dff0f81a743cd66e224885de01f6129b56
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="literals-entity-sql"></a>Literály (entita SQL)
 Toto téma popisuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporu pro literály.  
@@ -78,7 +66,7 @@ TIME‘01:01:00.1234567’
 ```  
   
 ## <a name="datetimeoffset"></a>DateTimeOffset  
- Datetimeoffset literálu je nezávislé na národní prostředí a složený z část data, času součástí a posunutí část. Datum, čas a posunutí částí, které jsou povinné a neexistují žádné výchozí hodnoty. Datum část musí mít formát rrrr-MM-DD, kde je rrrr hodnotu roku čtyřmístné rozsahu 0001 až 9999, MM je od 1 do 12 měsíce a DD den hodnotu, která je platná pro daný měsíc. Časovou část musí mít formát hh: mm [: SS [.fffffff]], kde HH jsou hodiny hodnota mezi 0 a 23, MM je minut hodnotu mezi 0 a 59, SS je druhá hodnota mezi 0 a 59 a fffffff je zlomkové druhá hodnota mezi 0 a 9999999 tak. Všechny hodnoty rozsahy jsou inkluzivní. Zlomky sekund jsou volitelné. Sekund jsou volitelné, pokud jsou zadány zlomků sekund; v takovém případě se vyžadují sekund. Při sekund nebo zlomků nejsou zadané, použije se místo toho výchozí hodnota nula. Posunutí část musí mít formát {+ &#124;-} hh: mm, kde HH a MM mají stejný význam jako část času. Rozsah posun, ale musí být mezi-14: 00 a + 14:00  
+ Datetimeoffset literálu je nezávislé na národní prostředí a složený z část data, času součástí a posunutí část. Datum, čas a posunutí částí, které jsou povinné a neexistují žádné výchozí hodnoty. Datum část musí mít formát rrrr-MM-DD, kde je rrrr hodnotu roku čtyřmístné rozsahu 0001 až 9999, MM je od 1 do 12 měsíce a DD den hodnotu, která je platná pro daný měsíc. Časovou část musí mít formát hh: mm [: SS [.fffffff]], kde HH jsou hodiny hodnota mezi 0 a 23, MM je minut hodnotu mezi 0 a 59, SS je druhá hodnota mezi 0 a 59 a fffffff je zlomkové druhá hodnota mezi 0 a 9999999 tak. Všechny hodnoty rozsahy jsou inkluzivní. Zlomky sekund jsou volitelné. Sekund jsou volitelné, pokud jsou zadány zlomků sekund; v takovém případě se vyžadují sekund. Při sekund nebo zlomků nejsou zadané, použije se místo toho výchozí hodnota nula. Posunutí část musí mít formát {+&#124;-} hh: mm, kde HH a MM mají stejný význam jako část času. Rozsah posun, ale musí být mezi-14: 00 a + 14:00  
   
  Může existovat libovolný počet mezery mezi DATETIMEOFFSET symbol a literálu datové části, ale žádné nové řádky.  
   

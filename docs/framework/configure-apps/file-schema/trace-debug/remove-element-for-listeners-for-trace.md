@@ -1,31 +1,20 @@
 ---
-title: "&lt;Odebrat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;trasování&gt;"
-ms.custom: 
+title: '&lt;Odebrat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;trasování&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
 helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7bc4136fb917ee9b63b7cca26ba1834de21f542e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11f4b648ac1ffc614f18a3686eb2b6508a272980
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;Odebrat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;trasování&gt;
 Odebere naslouchací proces z **naslouchací procesy** kolekce.  

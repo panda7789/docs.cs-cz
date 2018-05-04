@@ -1,24 +1,12 @@
 ---
-title: "Standardní operátory dotazu v technologii LINQ to Entities dotazy"
-ms.custom: 
+title: Standardní operátory dotazu v technologii LINQ to Entities dotazy
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 94a024081acfcf4b1926f485c6dbfc2f394b418c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a65f759ef51d34cc3ac6d37fe3575b9e89aadf7c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Standardní operátory dotazu v technologii LINQ to Entities dotazy
 V dotazu zadejte informace, které chcete načíst z datového zdroje. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupené a ve tvaru před vrácením. LINQ poskytuje sadu metod standardní dotazu, které můžete použít v dotazu. Většina z nich pracovat pořadí; v tomto kontextu posloupnost je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkci dotazu standardní operátory dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé Čím více často používají standardní dotazu, operátory mít vyhrazený syntaxe – klíčové slovo, tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je jiné, srozumitelnější způsoby, jak vyjádřit dotaz než ekvivalentní na základě metod. Klauzule výraz dotazu jsou převedeny do volání metody dotazů v době kompilace. Seznam standardních operátorů dotazu s klauzulí výraz ekvivalentní dotazu najdete v tématu [standardní přehled operátory dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
@@ -80,7 +68,7 @@ V dotazu zadejte informace, které chcete načíst z datového zdroje. Dotaz mů
 ## <a name="type-methods"></a>Typ metody  
  Tyto dvě metody LINQ, které pracují s převod typů a testování jsou podporované v kontextu [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. To znamená, že se pouze na podporované typy, které mapují na odpovídající [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] typu. Seznam těchto typů najdete v tématu [konceptuálního modelu typy (CSDL)](http://msdn.microsoft.com/library/987b995f-e429-4569-9559-b4146744def4). Typ metody `Convert` a `OfType`.  
   
- `OfType`je podporován pro typy entit. `Convert`je podporován pro koncepční model primitivní typy.  C# `is` a `as` metody jsou také podporovány.  
+ `OfType` je podporován pro typy entit. `Convert` je podporován pro koncepční model primitivní typy.  C# `is` a `as` metody jsou také podporovány.  
   
 ## <a name="paging-methods"></a>Metody stránkování  
  Stránkovací operace vrácení jedné, konkrétní element z sekvenci. Element metody `ElementAt`, `First`, `FirstOrDefault`, `Last`, `LastOrDefault`, `Single`, `Skip`, `Take`, `TakeWhile`.  

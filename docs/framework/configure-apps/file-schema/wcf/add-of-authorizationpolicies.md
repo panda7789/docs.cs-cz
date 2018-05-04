@@ -1,34 +1,22 @@
 ---
-title: "&lt;add&gt; – &lt;authorizationPolicies&gt;"
-ms.custom: 
+title: '&lt;add&gt; – &lt;authorizationPolicies&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 613a03d8-4384-4556-bce2-8c23286c0bb0
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72af0529cea2e6810bdb7a518874a313e3ceab40
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 008f465134860141293776130ebd75cd39120f5e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltauthorizationpoliciesgt"></a>&lt;add&gt; – &lt;authorizationPolicies&gt;
 Určuje zásad autorizace pro transformace deklarací identity.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<chování >  
 \<serviceAuthorization >  
 \<authorizationPolicies >  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,7 +36,7 @@ Určuje zásad autorizace pro transformace deklarací identity.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`policyType`|Požadovaný atribut řetězec.<br /><br /> [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] Model řízení přístupu podporuje sadu zásad autorizace jako typy zřizování. Tento atribut určuje zásad autorizace, která umožňuje transformace jednu sadu vstupních deklarací identity na jinou sadu deklarací identity. Řízení přístupu může být povolen nebo odepřen, na základě.|  
+|`policyType`|Požadovaný atribut řetězec.<br /><br /> Model řízení přístupu Windows Communication Foundation (WCF) podporuje sadu zásad autorizace jako typy zřizování. Tento atribut určuje zásad autorizace, která umožňuje transformace jednu sadu vstupních deklarací identity na jinou sadu deklarací identity. Řízení přístupu může být povolen nebo odepřen, na základě.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -72,5 +60,5 @@ Určuje zásad autorizace pro transformace deklarací identity.
  <xref:System.IdentityModel.Policy.IAuthorizationPolicy>  
  [Autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
  [Postupy: Vytvoření vlastního správce autorizace pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
- [\<Přidat >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-authorizationpolicies.md)  
+ [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-authorizationpolicies.md)  
  [Zásady autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)

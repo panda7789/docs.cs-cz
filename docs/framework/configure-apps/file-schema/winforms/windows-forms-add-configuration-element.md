@@ -1,26 +1,17 @@
 ---
-title: "Přidejte konfigurační prvek Windows Forms"
-ms.custom: 
+title: Přidejte konfigurační prvek Windows Forms
 ms.date: 04/07/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms Add configuration element
 - configuring Windows Forms applications
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 331b2238ae87776938422484d34bb68b4653a56e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 529dbccd5ddb4dd1f1456fb9a6043f3c5f7b378d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="windows-forms-add-configuration-element"></a>Přidejte konfigurační prvek Windows Forms
 
@@ -45,19 +36,19 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 | `key`     | Požadovaný atribut. Předdefinované klíče název, který odpovídá konkrétní přizpůsobitelné funkce Windows Forms. |
 | `value`   | Požadovaný atribut. Hodnota pro přiřazení `key`. |
 
-### <a name="key-attribute-names-and-associated-values"></a>`key`názvy atributů a přidružené hodnoty
+### <a name="key-attribute-names-and-associated-values"></a>`key` názvy atributů a přidružené hodnoty
 
-| `key`Jméno | Hodnoty | Popis |
+| `key` Jméno | Hodnoty | Popis |
 | ---------- | ------ | ----------- |
-| "AnchorLayout.DisableSinglePassControlScaling" | "true" &#124;" false" | Určuje, zda jsou v jednom průchodu škálovat ukotvené ovládací prvky. "true" zakážete jeden předat škálování; jinak hodnota false. Najdete v části "Jedním předat škálování" v [poznámky](#Remarks) Další informace. |
-| "DpiAwareness" | "PerMonitorV2" &#124;" false" | Určuje, zda je aplikace využívající technologii DPI. Nastavit klíč k "PerMonitorV2" pro podporu sledování bodů na palec; jinak nastavte ji na hodnotu "false". Sledování bodů na PALEC je funkce přihlášení; Abyste mohli využívat Windows Forms vysoké DPI podpory, byste měli nastavit jeho hodnotu na "PerMonitorV2". Najdete v článku [poznámky](#remarks) části Další informace. |
-| "CheckedListBox.DisableHighDpiImprovements" | "true" &#124;" false" | Určuje, zda <xref:System.Windows.Forms.CheckedListBox> ovládací prvek využívá výhod škálování a rozložení vylepšení 4.7 rozhraní .NET Framework. "true" pro vyjádření výslovného nesouhlasu caling a rozložení vylepšení; jinak, "Nepravda". |
-| "DataGridView.DisableHighDpiImprovements" | "true" &#124;" false" | Určuje, zda <xref:System.Windows.Forms.DataGridView> řízení škálování a rozložení vylepšení 4.7 rozhraní .NET Framework. "true" pro vyjádření výslovného nesouhlasu sledování bodů na PALEC; "false" jinak. |
-| "DisableDpiChangedMessageHandling" | "true" &#124;" false" | "true" pro vyjádření výslovného nesouhlasu přijetí zprávy týkající se DPI škálování změny; "false" jinak. Najdete v článku [poznámky](#remarks) části Další informace. |
-| "EnableWindowsFormsHighDpiAutoResizing" | "true" &#124;" false" | Určuje, zda aplikace Windows Forms velikost automaticky z důvodu změn Škálování DPI. "true" Povolit Automatická změna velikosti; jinak hodnota false. |
-| "Form.DisableSinglePassControlScaling" | "true" &#124;" false" | Určuje, zda <xref:System.Windows.Forms.Form> bude změněno měřítko při jednom průchodu. "true" zakážete jednoho průchodu škálování; jinak hodnota false. Najdete v části "Jedním předat škálování" v [poznámky](#Remarks) Další informace. |
-| "MonthCalendar.DisableSinglePassControlScaling" | "true" &#124;" false" | Určuje, zda <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je škálovat při jednom průchodu. "true" zakážete jednoho průchodu škálování; jinak hodnota false. Najdete v části "Jedním předat škálování" v [poznámky](#Remarks) Další informace. |
-| "Toolstrip.DisableHighDpiImprovements" | "true" &#124;" false" | Určuje, zda <xref:System.Windows.Forms.ToolStrip> ovládací prvek využívá výhod škálování a rozložení vylepšení 4.7 rozhraní .NET Framework. "true" pro vyjádření výslovného nesouhlasu sledování bodů na PALEC; "false" jinak. |
+| "AnchorLayout.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda jsou v jednom průchodu škálovat ukotvené ovládací prvky. "true" zakážete jeden předat škálování; jinak hodnota false. Najdete v části "Jedním předat škálování" v [poznámky](#Remarks) Další informace. |
+| "DpiAwareness" | "PerMonitorV2"&#124;"false" | Určuje, zda je aplikace využívající technologii DPI. Nastavit klíč k "PerMonitorV2" pro podporu sledování bodů na palec; jinak nastavte ji na hodnotu "false". Sledování bodů na PALEC je funkce přihlášení; Abyste mohli využívat Windows Forms vysoké DPI podpory, byste měli nastavit jeho hodnotu na "PerMonitorV2". Najdete v článku [poznámky](#remarks) části Další informace. |
+| "CheckedListBox.DisableHighDpiImprovements" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.CheckedListBox> ovládací prvek využívá výhod škálování a rozložení vylepšení 4.7 rozhraní .NET Framework. "true" pro vyjádření výslovného nesouhlasu caling a rozložení vylepšení; jinak, "Nepravda". |
+| "DataGridView.DisableHighDpiImprovements" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.DataGridView> řízení škálování a rozložení vylepšení 4.7 rozhraní .NET Framework. "true" pro vyjádření výslovného nesouhlasu sledování bodů na PALEC; "false" jinak. |
+| "DisableDpiChangedMessageHandling" | "true"&#124;"false" | "true" pro vyjádření výslovného nesouhlasu přijetí zprávy týkající se DPI škálování změny; "false" jinak. Najdete v článku [poznámky](#remarks) části Další informace. |
+| "EnableWindowsFormsHighDpiAutoResizing" | "true"&#124;"false" | Určuje, zda aplikace Windows Forms velikost automaticky z důvodu změn Škálování DPI. "true" Povolit Automatická změna velikosti; jinak hodnota false. |
+| "Form.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.Form> bude změněno měřítko při jednom průchodu. "true" zakážete jednoho průchodu škálování; jinak hodnota false. Najdete v části "Jedním předat škálování" v [poznámky](#Remarks) Další informace. |
+| "MonthCalendar.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je škálovat při jednom průchodu. "true" zakážete jednoho průchodu škálování; jinak hodnota false. Najdete v části "Jedním předat škálování" v [poznámky](#Remarks) Další informace. |
+| "Toolstrip.DisableHighDpiImprovements" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.ToolStrip> ovládací prvek využívá výhod škálování a rozložení vylepšení 4.7 rozhraní .NET Framework. "true" pro vyjádření výslovného nesouhlasu sledování bodů na PALEC; "false" jinak. |
 
 ### <a name="child-elements"></a>Podřízené prvky
 
@@ -69,7 +60,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 | ------- | ----------- |
 | [`<System.Windows.Forms.ApplicationConfigurationSection>`](../../../../../docs/framework/configure-apps/file-schema/winforms/index.md) | Konfiguruje podporu pro nové funkce aplikace Windows Forms. |
 
-## <a name="a-nameremarks--remarks"></a><a name="remarks" />Poznámky
+## <a name="a-nameremarks--remarks"></a><a name="remarks" /> Poznámky
 
 Od verze 4.7 rozhraní .NET Framework, `<System.Windows.Forms.ApplicationConfigurationSection>` element umožňuje nakonfigurovat aplikace Windows Forms chcete využít výhod funkce přidané v posledních verzích rozhraní .NET Framework. 
 

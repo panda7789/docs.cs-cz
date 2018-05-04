@@ -1,13 +1,6 @@
 ---
-title: "Manifest sestavení"
-ms.custom: 
+title: Manifest sestavení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - assembly manifest
 - dynamic assemblies, assembly manifest
@@ -15,23 +8,20 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET Framework], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 41dc27798e9d39d391e5958b86f691e3a0062582
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d0f5d8e2e465e9dfa64a57c5ec7b99001f768492
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="assembly-manifest"></a>Manifest sestavení
 Všechna sestavení, zda statickou nebo dynamickou, obsahuje kolekci dat, která popisuje, jak elementů v sestavení vztahují k sobě navzájem. Manifest sestavení obsahuje tato metadata sestavení. Manifest sestavení obsahuje všechna metadata potřebná pro určení požadavky verze sestavení a zabezpečení identity a všechny metadata potřebná k definování oboru sestavení a odkazy na prostředky a třídy. Manifest sestavení může být uložená v buď PE soubor (příponou .exe nebo .dll) s kódem (MSIL intermediate language) Microsoft nebo v samostatný soubor PE, která obsahuje jenom manifestu informace o sestavení.  
   
  Následující obrázek znázorňuje, že mohou být uloženy různé způsoby manifest.  
   
- ![Jediný & č. 45; soubor sestavení](../../../docs/framework/app-domains/media/assemblytypes.gif "assemblytypes")  
+ ![Jediný&#45;soubor sestavení](../../../docs/framework/app-domains/media/assemblytypes.gif "assemblytypes")  
 Typy sestavení  
   
  Manifest pro sestavení s jeden přidružený soubor, je součástí souboru PE a vytváří jeden soubor sestavení. Vícesouborového sestavení můžete vytvořit samostatný soubor manifestu nebo s manifest začleněná do jednoho ze souborů PE v sestavení.  

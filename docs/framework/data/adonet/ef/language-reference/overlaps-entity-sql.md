@@ -1,24 +1,12 @@
 ---
-title: "PŘEKRYTÍ (entita SQL)"
-ms.custom: 
+title: PŘEKRYTÍ (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 41743e89-79cb-4d7b-8a27-355b45024b61
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 22593af3f79e78621764ba293e65505a72b194f8
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9b67e6824317b032f420501ffba385ec6fd651b9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="overlaps-entity-sql"></a>PŘEKRYTÍ (entita SQL)
 Určuje, zda mají dvě kolekce společné prvky.  
@@ -34,7 +22,7 @@ expression OVERLAPS expression
  Libovolný platný dotaz výraz, který vrátí kolekce k porovnání s kolekcí vrácená z jiného výrazu dotazu. Všechny výrazy musí být stejného typu nebo typu běžné základní nebo odvozené jako `expression`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud máte dvě kolekce společné prvky; v opačném `false`.  
+ `true` Pokud máte dvě kolekce společné prvky; v opačném `false`.  
   
 ## <a name="remarks"></a>Poznámky  
  PŘEKRYTÍ nabízí funkčně ekvivalentní takto:  

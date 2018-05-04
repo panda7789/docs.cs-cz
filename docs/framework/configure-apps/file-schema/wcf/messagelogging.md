@@ -1,29 +1,17 @@
 ---
 title: '&lt;messageLogging&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4e42b7449397bfe397cf9393ef774af5ba261856
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e137070b71cf8a481eef3ea16260c135e29b4932
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmessagelogginggt"></a>&lt;messageLogging&gt;
 Tento element definuje nastavení pro protokolování zpráv možnosti Windows Communication Foundation (WCF).  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<diagnostické >  
 \<messageLogging >  
   

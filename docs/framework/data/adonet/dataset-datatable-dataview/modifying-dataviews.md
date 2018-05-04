@@ -1,27 +1,15 @@
 ---
-title: "Úprava DataView"
-ms.custom: 
+title: Úprava DataView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 697a3991-b660-4a5a-8a54-1a2304ff158e
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c31f256bb86f007a9d083370d116464607cde236
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 3663b0317176495b13b1092652bd8bf4c79f30d2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="modifying-dataviews"></a>Úprava DataView
 Můžete použít <xref:System.Data.DataView> Pokud chcete přidat, odstranit ani změnit řádky dat v podkladové tabulce. Možnost používat **DataView** změnit data v základní tabulce je řízeno nastavení jedné z vlastností tři logické **DataView**. Tyto vlastnosti jsou <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>, a <xref:System.Data.DataView.AllowDelete%2A>. Jsou nastaveny na **true** ve výchozím nastavení.  

@@ -3,7 +3,7 @@
 |   |   |
 |---|---|
 |Podrobnosti|Spouštění aplikace z Visual Studio 2013, který používá EntityFramework 6.0 může být velmi pomalé.|
-|Návrh|Tento problém vyřešen v objektu EntityFramework 6.0.2. Aktualizujte prosím objektu EntityFramework, aby se zabránilo problémy s výkonem.|
+|Návrh|Tento problém vyřešen v objektu EntityFramework 6.0.2. Aktualizace objektu EntityFramework, aby se zabránilo problémy s výkonem.|
 |Rozsah|Edge|
 |Version|4.5|
 |Typ|Modul runtime|

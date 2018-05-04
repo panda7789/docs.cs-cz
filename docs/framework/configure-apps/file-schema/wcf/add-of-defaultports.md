@@ -1,35 +1,23 @@
 ---
-title: "&lt;add&gt; – &lt;defaultPorts&gt;"
-ms.custom: 
+title: '&lt;add&gt; – &lt;defaultPorts&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f162ce42-963b-4779-96a7-d6d8b4ea0d2f
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1efe61bf5f4276836c65e9c81d316dc0664f3de2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 28ddc98bd66c1f74f857448aa710d3998ddbd3dc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltdefaultportsgt"></a>&lt;add&gt; – &lt;defaultPorts&gt;
 Koncový bod výchozí komunikace, která klientská aplikace naslouchá.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  
 \<useRequestHeadersForMetadataAddress >  
 \<defaultPorts >  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   

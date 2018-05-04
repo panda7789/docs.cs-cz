@@ -1,28 +1,14 @@
 ---
 title: '&lt;wsFederationHttpBinding&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5d4e55f7ad2d4a347d51c3cd79647c070c11e2d
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: d89d0aeb68aed91b28ca7358a6140e171d3b36b2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltwsfederationhttpbindinggt"></a>&lt;wsFederationHttpBinding&gt;
 Definuje vazbu, která podporuje WS-Federation.  
@@ -150,7 +136,7 @@ wsFederationBinding – element
 |[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje kolekci standardní a vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Federace se nachází možnost identity sdílet mezi několika systémy pro ověřování a autorizaci. Tyto identity může označovat pro uživatele nebo počítače. Federované HTTP podporuje zabezpečení protokolu SOAP, jakož i ve smíšeném režimu zabezpečení, ale nepodporuje výhradně pomocí zabezpečení přenosu. Poskytuje tuto vazbu [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] podpora pro protokol WS-Federation. Nakonfigurované s touto vazbou služby musíte použít přenos HTTP.  
+ Federace se nachází možnost identity sdílet mezi několika systémy pro ověřování a autorizaci. Tyto identity může označovat pro uživatele nebo počítače. Federované HTTP podporuje zabezpečení protokolu SOAP, jakož i ve smíšeném režimu zabezpečení, ale nepodporuje výhradně pomocí zabezpečení přenosu. Tato vazba poskytuje podporu Windows Communication Foundation (WCF) pro protokol WS-Federation. Nakonfigurované s touto vazbou služby musíte použít přenos HTTP.  
   
  Vazby obsahovat zásobník elementů vazby. Zásobník elementů v vazby  
   

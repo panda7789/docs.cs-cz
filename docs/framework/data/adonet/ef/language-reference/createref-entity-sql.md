@@ -1,24 +1,12 @@
 ---
 title: CREATEREF (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 489828cf-a335-4449-9360-b0d92eec5481
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8de4266277be31fd51411d4b994f1b5de45f13df
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 44954dcc1f3407a768ba23fe87ac4b4abcf1bac5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="createref-entity-sql"></a>CREATEREF (entita SQL)
 Fabricates odkazy na entity v element entityset.  
@@ -37,7 +25,7 @@ CreateRef(entityset_identifier, row_typed_expression)
  Výraz typu řádek, který odpovídá na klíčové vlastnosti typu entity.  
   
 ## <a name="remarks"></a>Poznámky  
- `row_typed_expression`musí být strukturálně ekvivalentní typ klíče pro entitu. To znamená musí mít stejný počet a typy polí ve stejném pořadí jako klíče entit.  
+ `row_typed_expression` musí být strukturálně ekvivalentní typ klíče pro entitu. To znamená musí mít stejný počet a typy polí ve stejném pořadí jako klíče entit.  
   
  V následujícím příkladu objednávek a BadOrders jsou oba objekty entitysets typu pořadí a Id se považuje za jednu klíčovou vlastnost pořadí. Příklad ukazuje, jak jsme může vytvořit odkaz na entitu v BadOrders. Všimněte si, že může být dangling odkaz.  Odkaz na tedy nemusí ve skutečnosti identifikovat konkrétní entity. V takových případech `DEREF` operace na tento odkaz, vrátí hodnotu null.  
   

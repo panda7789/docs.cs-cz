@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e45c35d0b19833b6fd43c7fd5794ecf8bd3a9769
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 9733bb29701e4d1b46cc08c14b91e0357c935b42
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementace vašeho kontrakt služby ([implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operaci služby modulu runtime. Toto téma popisuje funkce služby poskytované systémem a operace chování a popisuje, kde najít další informace o vytvoření nové chování. Když některé chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
@@ -31,7 +31,7 @@ Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů
 ## <a name="overview"></a>Přehled  
  Kontrakt definuje vstupy, výstupy, datové typy a funkce služby daného typu. Implementace kontraktu služby vytvoří třídu, která při konfiguraci s vazbou na adresu, plnit kontrakt implementuje. Smluvními, vazby a informace o adrese jsou všechny známé klientem; bez, nelze provádět klienta pomocí služby.  
   
- Specifika operace, jako je například dělení na vlákna problémy nebo Správa instancí jsou však neprůhledného klientům. Když naimplementujete vaše kontrakt služby, můžete nakonfigurovat velký počet charakteristik operace pomocí *chování*. Chování jsou objekty, které upravují [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] modulu runtime, a to nastavením vlastnosti runtime nebo vložením typu přizpůsobení do modulu runtime. Další informace o změně modulu runtime tak, že vytvoříte vlastní chování najdete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+ Specifika operace, jako je například dělení na vlákna problémy nebo Správa instancí jsou však neprůhledného klientům. Když naimplementujete vaše kontrakt služby, můžete nakonfigurovat velký počet charakteristik operace pomocí *chování*. Chování jsou objekty, které upravují runtime Windows Communication Foundation (WCF), a to nastavením vlastnosti runtime nebo vložením typu přizpůsobení do modulu runtime. Další informace o změně modulu runtime tak, že vytvoříte vlastní chování najdete v tématu [rozšíření ServiceHost a vrstva modelu služby](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
   
  <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> a <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> atributy jsou nejčastěji užitečné chování a zveřejněte nejčastěji požadované funkce operaci. Protože jsou atributy, je použít na implementaci služby nebo operace. Další chování, jako <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>, jsou obvykle použije pomocí konfiguračního souboru aplikace, přestože je možné použít prostřednictvím kódu programu.  
   
@@ -74,7 +74,7 @@ Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů
   
  Použití <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> konstruktor k vytvoření těchto služeb. Poskytuje alternativu k implementaci vlastní <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> když chcete zadejte instanci určitý objekt pro použití službou typu singleton. Toto přetížení můžete použít, když vaše typem implementace služby je složité vytvořit (například pokud neimplementuje výchozí veřejný konstruktor, který nemá žádné parametry).  
   
- Všimněte si, že je-li do tohoto konstruktoru objekt, některé funkce související s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vytváření instancí pracovních chování jinak. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, pokud je k dispozici instance dobře známé objektu. Podobně se ignoruje jakýmkoli jiným mechanismem verzi instance. <xref:System.ServiceModel.ServiceHost> Třída vždy chová jako kdyby <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> je nastavena na <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pro všechny operace.  
+ Všimněte si, že je-li do tohoto konstruktoru objekt, jinak fungovat některé funkce související s k Windows Communication Foundation (WCF) chování vytváření instancí. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, pokud je k dispozici instance dobře známé objektu. Podobně se ignoruje jakýmkoli jiným mechanismem verzi instance. <xref:System.ServiceModel.ServiceHost> Třída vždy chová jako kdyby <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> je nastavena na <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pro všechny operace.  
   
 ## <a name="other-service-endpoint-contract-and-operation-behaviors"></a>Další služby, koncový bod, kontrakt a operace chování  
  Chování, služby, jako <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut, provoz mezi celé služby. Například pokud nastavíte <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType> musí vlákno synchronizace problémy v jednotlivých operací ve služby zpracování sami. Koncový bod chování fungovat přes koncový bod; mnoho chování poskytované systémem koncový bod se pro funkce klienta. Kontrakt chování fungovat na úrovni kontraktu a chování operace upravit operaci doručení.  

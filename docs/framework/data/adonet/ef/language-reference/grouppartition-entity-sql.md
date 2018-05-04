@@ -1,24 +1,12 @@
 ---
 title: GROUPPARTITION (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d0482e9b-086c-451c-9dfa-ccb024a9efb6
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 09d4d1e6d2e69d805c316f60e6d6e91d094e68cb
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9f0f917380e6422da753282216529580f87f1a1a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="grouppartition-entity-sql"></a>GROUPPARTITION (entita SQL)
 Vrátí kolekci argument hodnoty, které jsou k projekci mimo aktuální oddílu skupiny, ke kterému se vztahuje na agregaci. `GroupPartition` Agregace je agregace se na základě skupiny a nemá žádný formulář na základě kolekce.  
@@ -52,7 +40,7 @@ select p, Sum(ol.Quantity) from LOB.OrderLines as ol
   
  `GROUPPARTITION` Operátor můžete použít ve spojení s uživatelem definované agregační funkce.  
   
- `GROUPPARTITION`je speciální agregační operátor, který obsahuje odkaz na sadu seskupené vstupní. Tento odkaz lze použít kdekoli v dotazu kde GROUP BY je v oboru. Například  
+ `GROUPPARTITION` je speciální agregační operátor, který obsahuje odkaz na sadu seskupené vstupní. Tento odkaz lze použít kdekoli v dotazu kde GROUP BY je v oboru. Například  
   
 ```  
 select p, GroupPartition(ol.Quantity) from LOB.OrderLines as ol group by ol.Product as p  

@@ -1,13 +1,6 @@
 ---
-title: "&lt;Timespan_legacyformatmode –&gt; – Element"
-ms.custom: 
+title: '&lt;Timespan_legacyformatmode –&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,13 @@ helpviewer_keywords:
 - <TimeSpan_LegacyFormatMode> element
 - TimeSpan_LegacyFormatMode element
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: be4b26cdc79cef0854221172b8dea0bcc0f50981
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0faf2876680ef5ec3fc7373cae9f81eb091f47a1
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttimespanlegacyformatmodegt-element"></a>&lt;Timespan_legacyformatmode –&gt; – Element
 Určuje, zda modul runtime zachovává starší verze chování při formátování operací s <xref:System.TimeSpan?displayProperty=nameWithType> hodnoty.  

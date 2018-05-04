@@ -1,31 +1,19 @@
 ---
-title: "&lt;tracking&gt; služby WCF"
-ms.custom: 
+title: '&lt;tracking&gt; služby WCF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 70cfaf24-a91c-4e56-ac47-d2ed87a963b3
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7475c4a083d27e9c34e3662393981297c93580f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f09c8c59bf805ec7a061fba3ebfecd5fb457e402
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttrackinggt-of-wcf"></a>&lt;tracking&gt; služby WCF
 Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.  
   
  Další informace v pracovním postupu sledování a jeho konfigurace najdete v tématu [pracovního postupu pro sledování a trasování](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md) a [konfigurace sledování pro pracovní postup](../../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<sledování >  
   
 ## <a name="syntax"></a>Syntaxe  

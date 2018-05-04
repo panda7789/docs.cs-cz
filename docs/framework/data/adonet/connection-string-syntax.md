@@ -1,26 +1,12 @@
 ---
 title: Syntaxi připojovacího řetězce
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-caps.latest.revision: 11
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3939abaf376100e09d244afdb32662729a990ff7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ac7053d1b1b0865f33ae1bcd955493b4c62c7be6
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="connection-string-syntax"></a>Syntaxi připojovacího řetězce
 Má každý zprostředkovatel dat .NET Framework `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxi konkrétní připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. Následující tabulka uvádí zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  
@@ -138,9 +124,9 @@ Můžete také nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.D
  <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A> Vlastnost <xref:System.Data.OleDb.OleDbConnection> umožňuje získat nebo nastavit připojovací řetězec pro zdroj dat OLE DB, jako je například Microsoft Access. Můžete taky vytvořit `OleDb` připojovací řetězec za běhu pomocí <xref:System.Data.OleDb.OleDbConnectionStringBuilder> třídy.  
   
 ### <a name="oledb-connection-string-syntax"></a>Syntaxi OleDb připojovacího řetězce  
- Musíte zadat název zprostředkovatele pro <xref:System.Data.OleDb.OleDbConnection> připojovací řetězec. Připojí se k databázi Microsoft Access pomocí zprostředkovatele Jet následující připojovací řetězec. Všimněte si, že `UserID` a `Password` klíčová slova jsou volitelné, pokud databáze je nezabezpečené (výchozí).  
+ Musíte zadat název zprostředkovatele pro <xref:System.Data.OleDb.OleDbConnection> připojovací řetězec. Připojí se k databázi Microsoft Access pomocí zprostředkovatele Jet následující připojovací řetězec. Všimněte si, že `User ID` a `Password` klíčová slova jsou volitelné, pokud databáze je nezabezpečené (výchozí).  
   
-```  
+```   
 Provider=Microsoft.Jet.OLEDB.4.0; Data Source=d:\Northwind.mdb;User ID=Admin;Password=;   
 ```  
   

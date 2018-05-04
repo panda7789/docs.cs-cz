@@ -1,9 +1,6 @@
 ---
 title: ConnectionGroup.m_ConnectionList pole
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology: 
-ms.topic: reference
 topic_type:
 - apiref
 api_name:
@@ -15,18 +12,15 @@ api_type:
 ms.assetid: 186083cf-8dff-4600-a2ab-6fed4b4de6af
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6b89a621e5a438e2385f07bcaf910d799a49d32d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5844f8d63aa5646bfd7860dc0407528fb2eaf329
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="connectiongroupmconnectionlist-field"></a>ConnectionGroup.m\_ConnectionList pole
 
-`ConnectionGroup.m_ConnectionList`je <xref:System.Collections.ArrayList> připojení objektů, které slouží se identifikátor URI a sdílení stejné hodnoty pro některé další vlastnosti, jako třeba vypršení platnosti a ověřování.
+`ConnectionGroup.m_ConnectionList` je <xref:System.Collections.ArrayList> připojení objektů, které slouží se identifikátor URI a sdílení stejné hodnoty pro některé další vlastnosti, jako třeba vypršení platnosti a ověřování.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -41,7 +35,7 @@ private ArrayList m_ConnectionList
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:**<xref:System.Net>
+**Namespace:** <xref:System.Net>
 
 **Sestavení:** systému (v System.dll)
 

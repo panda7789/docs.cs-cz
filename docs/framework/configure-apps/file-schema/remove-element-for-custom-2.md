@@ -1,10 +1,6 @@
 ---
 title: '&lt;Odebrat&gt; element NameValueSectionHandler a DictionarySectionHandler'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 27b01120cb279dc23b3b081e35f17addc6d1897d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 61f1c98d3f12b5aa1d25595ca28328602683b073
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Odebrat > element NameValueSectionHandler a DictionarySectionHandler
 
@@ -40,7 +33,7 @@ Odebere dříve definovaném nastavení.
 
 |           | Popis |
 | --------- | ----------- |
-| **klíč**   | Požadovaný atribut.<br><br>Určuje název nastavení odebrat. |
+| **Klíč**   | Požadovaný atribut.<br><br>Určuje název nastavení odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 

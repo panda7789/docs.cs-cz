@@ -1,24 +1,26 @@
 ---
-title: "Inicializace vytváření instancí"
-ms.custom: 
+title: Inicializace vytváření instancí
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-caps.latest.revision: "31"
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0bc034028f8dacbac638c27e6fb8f48603cdcf2c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: f32b1c7159185bb9d4ccd99c916f00c552502748
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="instancing-initialization"></a>Inicializace vytváření instancí
 Tato ukázka rozšiřuje [Pooling](../../../../docs/framework/wcf/samples/pooling.md) ukázku definováním rozhraní, `IObjectControl`, který přizpůsobí inicializace objektu aktivace a deaktivace ho. Klient volá metody, které vrací objekt do fondu a která nevrátí objektu do fondu.  
@@ -27,7 +29,7 @@ Tato ukázka rozšiřuje [Pooling](../../../../docs/framework/wcf/samples/poolin
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="extensibility-points"></a>Body rozšiřitelnosti  
- Prvním krokem při vytváření [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] rozšíření je rozhodnutí o bodem rozšíření používat. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], termín *EndpointDispatcher* odkazuje na komponentu běhu odpovědný za převodu příchozí zprávy volání metod na uživatele služby a pro převod návratové hodnoty z dané metody pro odchozí zprávy. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba vytvoří EndpointDispatcher pro každý koncový bod.  
+ Prvním krokem při vytváření rozšíření pro Windows Communication Foundation (WCF) je rozhodnout bodem rozšíření používat. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], termín *EndpointDispatcher* odkazuje na komponentu běhu odpovědný za převodu příchozí zprávy volání metod na uživatele služby a pro převod návratové hodnoty z dané metody pro odchozí zprávy. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba vytvoří EndpointDispatcher pro každý koncový bod.  
   
  EndpointDispatcher nabízí koncový bod oboru (pro všechny zprávy přijatých nebo odeslaných službou) rozšiřitelnost pomocí <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> třídy. Tato třída umožňuje přizpůsobit různé vlastnosti tohoto ovládání chování EndpointDispatcher. Tato ukázka se zaměřuje na <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnost, která odkazuje na objekt, který poskytuje instancí třídy služby.  
   
@@ -165,7 +167,7 @@ if (activeObjectsCount == 0)
   
  Tato ukázka používá vlastní atribut. Když <xref:System.ServiceModel.ServiceHost> je vytvořená, prozkoumá atributy používané v definici služby typu a přidá do kolekce chování popis služby k dispozici chování.  
   
- <xref:System.ServiceModel.Description.IServiceBehavior> Rozhraní má tři metody: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,` a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. Tyto metody jsou volány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] při <xref:System.ServiceModel.ServiceHost> inicializace. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType>jako první; To umožňuje službu, kterou chcete být prověřovány za účelem nalezení nekonzistencí. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType>je volána vedle; Tato metoda je potřeba jenom v velmi pokročilých scénářích. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>Označuje se poslední a je zodpovědná za konfiguraci modulu runtime. Tyto parametry se předávají do <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:  
+ <xref:System.ServiceModel.Description.IServiceBehavior> Rozhraní má tři metody: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,` a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. Tyto metody jsou volány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] při <xref:System.ServiceModel.ServiceHost> inicializace. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> jako první; To umožňuje službu, kterou chcete být prověřovány za účelem nalezení nekonzistencí. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> je volána vedle; Tato metoda je potřeba jenom v velmi pokročilých scénářích. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> Označuje se poslední a je zodpovědná za konfiguraci modulu runtime. Tyto parametry se předávají do <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:  
   
 -   `Description`: Tento parametr obsahuje popis služby pro celé služby. To slouží ke kontrole popis data o koncové body služby, kontrakty, vazby a další data spojené s touto službou.  
   
@@ -214,7 +216,7 @@ public class PoolService : IPoolService
 ## <a name="hooking-activation-and-deactivation"></a>Zapojování aktivace a deaktivace  
  Primární cílem sdružování objektů je za účelem optimalizace krátkodobou objekty s relativně nákladné vytváření a inicializace. Proto je zvýšení výrazné výkonu přidělit aplikaci pokud správně používá. Vzhledem k tomu, že objekt se vrátí z fondu, je konstruktoru volat pouze jednou. Ale některé aplikace vyžadují některé úroveň kontroly tak, aby můžou inicializaci a čištění prostředky využívané během jednotlivý kontext. Například objekt používá pro sadu výpočty můžete resetovat jeho privátním polím před zpracováním další výpočtu. Tento druh inicializace konkrétní povolit služby Enterprise tím, že vývojář objekt přepsat `Activate` a `Deactivate` metody z <xref:System.EnterpriseServices.ServicedComponent> základní třídy.  
   
- Volání objektu fondu `Activate` metoda těsně před vrácením objekt z fondu. `Deactivate`je volána, když objekt vrátí zpět do fondu. <xref:System.EnterpriseServices.ServicedComponent> Základní třída má také `boolean` vlastnost s názvem `CanBePooled`, který slouží k upozornění fondu, zda objekt může být ve fondu další.  
+ Volání objektu fondu `Activate` metoda těsně před vrácením objekt z fondu. `Deactivate` je volána, když objekt vrátí zpět do fondu. <xref:System.EnterpriseServices.ServicedComponent> Základní třída má také `boolean` vlastnost s názvem `CanBePooled`, který slouží k upozornění fondu, zda objekt může být ve fondu další.  
   
  Tak, aby napodoboval tuto funkci, ukázky deklaruje veřejné rozhraní (`IObjectControl`) s zmíněnými členy. Toto rozhraní je implementováno pak službou třídy určené k poskytnutí konkrétní Inicializace kontextu. <xref:System.ServiceModel.Dispatcher.IInstanceProvider> Implementace musí upravit, aby tyto požadavky splňují. Nyní, pokaždé, když jste získat objekt voláním `GetInstance` metoda, je nutné zkontrolovat, zda objekt implementuje `IObjectControl.` Pokud ano, musí volat `Activate` metoda správně.  
   
@@ -272,7 +274,7 @@ else if (pool.Count < minPoolSize)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Initialization`  
   

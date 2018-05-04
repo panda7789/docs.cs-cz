@@ -1,41 +1,29 @@
 ---
-title: "Omezení DataTable"
-ms.custom: 
+title: Omezení DataTable
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 500dad1699843bae04aea6d5c16a1ccf53bb102a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 95bbba30bc9cd75d1694d7d8062bc9a6e6105084
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="datatable-constraints"></a>Omezení DataTable
 Omezení můžete vynutit omezení na datech v <xref:System.Data.DataTable>, aby udržení integrity dat. Omezení je automatické pravidlo použít na sloupec nebo související sloupce, který určuje postup, když je nějakým způsobem změnit hodnotu v řádku. Vynutí se omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> referenční téma.  
   
  Existují dva typy omezení v ADO.NET: <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint>. Ve výchozím nastavení, obě omezení jsou vytvořeny automaticky při vytvoření vztahu mezi dvěma nebo více tabulek přidáním <xref:System.Data.DataRelation> k **datovou sadu**. Toto chování však můžete zakázat zadáním **createConstraints** = **false** při vytváření vztah.  
   
-## <a name="foreignkeyconstraint"></a>ForeignKeyConstraint  
+## <a name="foreignkeyconstraint"></a>Objekt ForeignKeyConstraint  
  A **vlastnosti ForeignKeyConstraint** vynucuje pravidla o tom, jak rozšířit aktualizace a odstranění pro tabulky v relaci. Pokud hodnotu v řádku jedna tabulka je aktualizovat ani odstranit a stejné hodnoty se také používá v jednom nebo více souvisejících tabulek, například **vlastnosti ForeignKeyConstraint** Určuje, co se stane, že v související tabulky.  
   
  <xref:System.Data.ForeignKeyConstraint.DeleteRule%2A> a <xref:System.Data.ForeignKeyConstraint.UpdateRule%2A> vlastnosti **vlastnosti ForeignKeyConstraint** definovat akce, které mají být provedeny, když se uživatel pokusí provést odstranění nebo aktualizaci řádku související tabulky. Následující tabulka popisuje různá nastavení, které jsou k dispozici pro **DeletRule** a **UpdateRule** vlastnosti **vlastnosti ForeignKeyConstraint**.  
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Cascade**|Odstranění nebo aktualizaci související řádky.|  
+|**CASCADE**|Odstranění nebo aktualizaci související řádky.|  
 |**SetNull**|Nastavení hodnot v související řádky, které **DBNull**.|  
 |**SetDefault**|Nastavte hodnoty v související řádky na výchozí hodnotu.|  
 |**None**|Na související řádky provádět žádnou akci. Toto nastavení je výchozí.|  
@@ -71,7 +59,7 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Cascade**|Přijmout nebo odmítnout změny na podřízené řádky.|  
+|**CASCADE**|Přijmout nebo odmítnout změny na podřízené řádky.|  
 |**None**|V řádcích podřízené provádět žádnou akci. Toto nastavení je výchozí.|  
   
 ### <a name="example"></a>Příklad  

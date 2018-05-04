@@ -1,24 +1,12 @@
 ---
-title: "Konstruktor typu s názvem (entita SQL)"
-ms.custom: 
+title: Konstruktor typu s názvem (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 549dea04-d93d-4c87-a292-f81b1598dbfd
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: b572d09b812d43fa64e30a3058da9af01d29b747
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9ffaf55ed54e8479a56e6f9fc4d7a5efe47f8e2a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="named-type-constructor-entity-sql"></a>Konstruktor typu s názvem (entita SQL)
 Použít k vytvoření instance konceptuálního modelu nominální například Entity nebo komplexní typy.  

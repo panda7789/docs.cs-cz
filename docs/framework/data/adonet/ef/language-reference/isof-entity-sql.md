@@ -1,24 +1,12 @@
 ---
 title: ISOF (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5b2b0d34-d0a7-4bcd-baf2-58aa8456d00b
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 78bfcef336ad265b98069ed540f9156cf9cb65bd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7aecb8e2740ffd711278bfd5735c71c2dacf9c3c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="isof-entity-sql"></a>ISOF (entita SQL)
 Určuje, zda typ výrazu je zadaného typu nebo jeden z jeho podtypech.  
@@ -43,7 +31,7 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
  Typ k otestování `expression` proti. Typ musí být kvalifikovaný obor názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud `expression` je typu T a T je základní typ nebo odvozené typ `type`; hodnota null, pokud `expression` je null za běhu, jinak hodnota `false`.  
+ `true` Pokud `expression` je typu T a T je základní typ nebo odvozené typ `type`; hodnota null, pokud `expression` je null za běhu, jinak hodnota `false`.  
   
 ## <a name="remarks"></a>Poznámky  
  Výrazy `expression IS NOT OF (type)` a `expression IS NOT OF (ONLY type)` odpovídají syntakticky `NOT (expression IS OF (type))` a `NOT (expression IS OF (ONLY type))`, v uvedeném pořadí.  
@@ -55,7 +43,7 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
 |Null není pro (EntityType)|Vyvolá|  
 |NULL je z (ComplexType)|Vyvolá|  
 |NULL je z (RowType)|Vyvolá|  
-|ZPRACOVÁVAT (null AS EntityType) je pro (EntityType)|Returns DBNull|  
+|ZPRACOVÁVAT (null AS EntityType) je pro (EntityType)|Vrátí DBNull|  
 |ZPRACOVÁVAT (null AS ComplexType) je z (ComplexType)|Vyvolá|  
 |ZPRACOVÁVAT (null AS RowType) je z (RowType)|Vyvolá|  
 |JE typ entity (typu ENTITYTYPE)|Vrátí hodnotu true nebo false|  

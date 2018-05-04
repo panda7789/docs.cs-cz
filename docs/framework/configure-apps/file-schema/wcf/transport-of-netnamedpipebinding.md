@@ -1,24 +1,12 @@
 ---
-title: "&lt;transport&gt; – &lt;netNamedPipeBinding&gt;"
-ms.custom: 
+title: '&lt;transport&gt; – &lt;netNamedPipeBinding&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d9eff52d-4bde-4586-b56a-b0ec24611f8d
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 84811c70f2f3608c10d8886900169f804a8c9b62
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9116532c8b4aae2f7539706b97d564444195c79d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltnetnamedpipebindinggt"></a>&lt;transport&gt; – &lt;netNamedPipeBinding&gt;
 Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.  
@@ -28,7 +16,7 @@ Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.
 \<netNamedPipeBinding>  
 \<Vazba >  
 \<zabezpečení >  
-\<transport>  
+\<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
   

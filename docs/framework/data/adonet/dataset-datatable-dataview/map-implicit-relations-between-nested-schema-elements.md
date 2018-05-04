@@ -1,24 +1,12 @@
 ---
-title: "Mapa implicitní vztahy mezi elementy vnořené schématu"
-ms.custom: 
+title: Mapa implicitní vztahy mezi elementy vnořené schématu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 740d45c47f46c311ed703fa11ec86a9739930944
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1bce0c2815ac94787055794942807777232df295
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>Mapa implicitní vztahy mezi elementy vnořené schématu
 Schématu schématu XML definition language (XSD) může mít komplexní typy vnořit do sebe navzájem. V takovém případě proces mapování použije výchozí mapování a vytvoří následující <xref:System.Data.DataSet>:  
@@ -27,7 +15,7 @@ Schématu schématu XML definition language (XSD) může mít komplexní typy vn
   
 -   Pokud na nadřazené neexistuje žádné jedinečné omezení, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id kde *TableName* je název nadřazené tabulce.  
   
--   Omezení primárního klíče v nadřazené tabulce identifikace další sloupec jako primární klíč (nastavením **IsPrimaryKey** vlastnost **True**). Omezení jmenuje omezení *#*  kde  *#*  je 1, 2, 3 a tak dále. Například výchozí název pro první omezení je Constraint1.  
+-   Omezení primárního klíče v nadřazené tabulce identifikace další sloupec jako primární klíč (nastavením **IsPrimaryKey** vlastnost **True**). Omezení jmenuje omezení*#* kde *#* je 1, 2, 3 a tak dále. Například výchozí název pro první omezení je Constraint1.  
   
 -   Omezení cizího klíče na podřízenou tabulku identifikace další sloupec jako cizí klíč odkazující na primární klíč v nadřazené tabulce. Název omezení *ParentTable_ChildTable* kde *ParentTable* je název nadřazené tabulky a *tabulka* je název podřízené tabulky.  
   

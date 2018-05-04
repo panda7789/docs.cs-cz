@@ -1,29 +1,15 @@
 ---
 title: Využívání datové sady z webové služby XML
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-caps.latest.revision: ''
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9bfcd4d8dca38c9438c072c143cf7ba0eafd6ecf
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: da3eca875df9b80f66241a2ecb72c5ba5c1df309
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Využívání datové sady z webové služby XML
 <xref:System.Data.DataSet> Byl navržen odpojené návrh, v části pro usnadnění pohodlný přenos dat přes Internet. **Datovou sadu** je "serializovatelný", můžete zadat jako vstup nebo výstup webové služby XML bez další kódování požadované Streamovat obsah **datovou sadu** z webové služby XML na klienta a naopak. **Datovou sadu** se implicitně převést na datový proud XML formátu formát DiffGram, odesílají přes síť a potom znovu vytvořena z datového proudu XML jako **datovou sadu** na koncové straně příjmu. To vám dává velmi jednoduchá a flexibilní metodu pro přenášení a vrácení relačních dat pomocí webové služby XML. Další informace o formátu, formátu DiffGram najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
@@ -176,7 +162,7 @@ ms.lasthandoff: 03/22/2018
   
      Klienti XML webové služby vyžadují proxy server protokolu SOAP, aby bylo možné využívat zveřejněné metody. Můžete mít Visual Studio generovat tento proxy server za vás. Nastavením odkaz na existující webovou službu z Visual Studia dojde transparentně všechny chování popsané v tomto kroku. Pokud chcete vytvořit třídu proxy sami, pokračujte toto pojednání. Ve většině situací ale pomocí sady Visual Studio vytvořit třídu proxy pro klientskou aplikaci je dostatečná.  
   
-     Proxy server můžete vytvořit pomocí Web Services Description Language Tool. Například pokud webové služby XML je vystavený v http://myserver/data/DataSetSample.asmx adresu URL, příkaz ke například následující vytvořit proxy Visual Basic .NET k oboru názvů z **WebData.DSSample** a ukládá je v souboru Sample.vb.  
+     Proxy server můžete vytvořit pomocí Web Services Description Language Tool. Například, pokud webové služby XML je vystaven na adrese URL http://myserver/data/DataSetSample.asmx, vydejte příkaz například následující vytvořit proxy Visual Basic .NET k oboru názvů z **WebData.DSSample** a uložte ho sample.vb souboru.  
   
     ```console
     wsdl /l:VB -out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  

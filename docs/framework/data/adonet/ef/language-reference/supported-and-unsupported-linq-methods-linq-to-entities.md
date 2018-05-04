@@ -1,24 +1,12 @@
 ---
-title: "Podporované a nepodporované LINQ metody (LINQ to Entities)"
-ms.custom: 
+title: Podporované a nepodporované LINQ metody (LINQ to Entities)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 58fa10c62819979bfad15e4cae49118d25ed8670
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 6994632c88b4ac67c9340fc95f07687d99917933
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Podporované a nepodporované LINQ metody (LINQ to Entities)
 Tato část obsahuje informace o operátorech standardní dotaz Language-Integrated Query (LINQ), které jsou podporována nebo není podporována v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Mnoho LINQ standardní operátory dotazu má přetížené verze, která přijímá argument celé číslo. Argument celé číslo odpovídá index počítaný od nuly v pořadí, které pracuje, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto verze přetížené operátory standardní dotaz LINQ nepodporuje a pokus o použití je vyvolá výjimku.  
@@ -161,7 +149,7 @@ Tato část obsahuje informace o operátorech standardní dotaz Language-Integra
 |Metoda|Podpora|Podpis funkce jazyka Visual Basic|Podpis metody C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
 |<xref:System.Linq.Queryable.Cast%2A>|Podporované u primitivních typů EDM|`Function Cast(Of TResult) ( _ source As IQueryable _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> Cast<TResult>( this IQueryable source )`|  
-|<xref:System.Linq.Queryable.OfType%2A>|Podporované pro<xref:System.Data.Metadata.Edm.EntityType>|`Function OfType(Of TResult) ( _ source As IQueryable _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> OfType<TResult>( this IQueryable source )`|  
+|<xref:System.Linq.Queryable.OfType%2A>|Podporované pro <xref:System.Data.Metadata.Edm.EntityType>|`Function OfType(Of TResult) ( _ source As IQueryable _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> OfType<TResult>( this IQueryable source )`|  
   
 ## <a name="paging-methods"></a>Metody stránkování  
  Několik metod stránkování LINQ nepodporuje [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Další informace najdete v tématu [standardní operátory dotazu v technologii LINQ to Entities dotazy](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Následující tabulka uvádí podporované a nepodporované stránkování metody.  

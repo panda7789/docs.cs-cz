@@ -1,28 +1,18 @@
 ---
-title: "Používání domén aplikací"
-ms.custom: 
+title: Používání domén aplikací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application domains, about
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eade3728c8a51785214cf3d8de53d8a64a668f1f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ebd1de46eb2757098a369b58dd9a6c0009e5b95
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-application-domains"></a>Používání domén aplikací
 Aplikační domény zadejte jednotku pro izolaci pro modul common language runtime. Jsou vytvořeny a spustit uvnitř proces. Aplikační domény jsou obvykle vytvořené pomocí modulu runtime hostitele, který je zodpovědný za načítání modulu runtime do procesu a spuštění uživatelského kódu v rámci domény aplikace aplikace. Hostitel modulu runtime vytvoří proces a výchozí doménu aplikace a spustí spravovaný kód je uvnitř. Modulu runtime zahrnout ASP.NET, aplikace Microsoft Internet Explorer a prostředí systému Windows.  

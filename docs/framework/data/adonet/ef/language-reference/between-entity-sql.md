@@ -1,24 +1,12 @@
 ---
 title: MEZI (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4dcdd754-ae01-4e78-bf28-8a117fb2b73e
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3b27aee261e9195c2cb5f15e369cf26de4c0691a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: bab31ca0a6fd37f5179412b7a4936d564620135e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="between-entity-sql"></a>MEZI (entita SQL)
 Určuje, zda výraz výsledkem hodnota v zadaném rozsahu. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Mezi výraz má stejné funkce jako výraz jazyka Transact-SQL mezi.  
@@ -31,13 +19,13 @@ expression [ NOT ] BETWEEN begin_expression AND end_expression
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Jakýkoli platný výraz pro testování v rozsahu definovaného `begin_expression` a `end_expression`. `expression`musí být stejného typu, jak `begin_expression` a `end_expression`.  
+ Jakýkoli platný výraz pro testování v rozsahu definovaného `begin_expression` a `end_expression`. `expression` musí být stejného typu, jak `begin_expression` a `end_expression`.  
   
  `begin_expression`  
- Jakýkoli platný výraz. `begin_expression`musí být stejného typu, jak `expression` a `end_expression`. `begin_expression`musí být menší než `end_expression`, jinak bude Negované návratovou hodnotu.  
+ Jakýkoli platný výraz. `begin_expression` musí být stejného typu, jak `expression` a `end_expression`. `begin_expression` musí být menší než `end_expression`, jinak bude Negované návratovou hodnotu.  
   
  `end_expression`  
- Jakýkoli platný výraz. `end_expression`musí být stejného typu, jak `expression` a `begin_expression`.  
+ Jakýkoli platný výraz. `end_expression` musí být stejného typu, jak `expression` a `begin_expression`.  
   
  NENÍ  
  Určuje, že se Negované výsledek BETWEEN.  
@@ -46,7 +34,7 @@ expression [ NOT ] BETWEEN begin_expression AND end_expression
  Jako zástupný znak, který označuje `expression` by měla být v rozsahu indikován `begin_expression` a `end_expression`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Pokud `expression` mezi rozsah indikovaný `begin_expression` a `end_expression`, jinak hodnota `false`. `null`bude vrácen v případě `expression` je `null` nebo, pokud `begin_expression` nebo `end_expression` je `null`.  
+ `true` Pokud `expression` mezi rozsah indikovaný `begin_expression` a `end_expression`, jinak hodnota `false`. `null` bude vrácen v případě `expression` je `null` nebo, pokud `begin_expression` nebo `end_expression` je `null`.  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud chcete zadat rozsah vylučují, použijte místo BETWEEN větší než (>) a menší než (<) operátory.  

@@ -1,33 +1,21 @@
 ---
 title: '&lt;serviceSecurityAudit&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 25355acfd7bc82ccff33f68a690f3f02d1235438
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 293cd3118ace2e073933e4c124664c775902e7d8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 Určuje nastavení, které povolení auditování událostí zabezpečení během operací služby.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors>  
+\<serviceBehaviors >  
 \<chování >  
 \<serviceSecurityAudit>  
   
@@ -60,10 +48,10 @@ Určuje nastavení, které povolení auditování událostí zabezpečení běhe
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento element zobrazí slouží k provádění kontroly [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] události ověřování. Při auditování je povoleno, můžete auditovat buď ověření úspěšné nebo neúspěšné pokusy o (nebo oba). Události se zapisují na jednu ze tří protokolů událostí: aplikace, zabezpečení nebo v protokolu výchozí verzi operačního systému. Protokoly událostí lze všechny zobrazit pomocí prohlížeče událostí systému Windows.  
+ Tento element zobrazí slouží k provádění kontroly událostí ověřování Windows Communication Foundation (WCF). Při auditování je povoleno, můžete auditovat buď ověření úspěšné nebo neúspěšné pokusy o (nebo oba). Události se zapisují na jednu ze tří protokolů událostí: aplikace, zabezpečení nebo v protokolu výchozí verzi operačního systému. Protokoly událostí lze všechny zobrazit pomocí prohlížeče událostí systému Windows.  
   
  Podrobný příklad použití tohoto elementu konfigurace najdete v tématu [chování auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md).  
   

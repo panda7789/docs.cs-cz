@@ -1,13 +1,6 @@
 ---
-title: "&lt;Odebrat&gt; Element pro connectionManagement – (nastavení sítě)"
-ms.custom: 
+title: '&lt;Odebrat&gt; Element pro connectionManagement – (nastavení sítě)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/remove
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#remove
@@ -17,22 +10,20 @@ helpviewer_keywords:
 - <connectionManagement>, remove element
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 947150ce0ff9a5ec5fa87fef8c2e24f3ebf6b4cb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8d503e06139fc6ce14f4d2c50c46e4bcfeb1b860
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt-element-for-connectionmanagement-network-settings"></a>&lt;Odebrat&gt; Element pro connectionManagement – (nastavení sítě)
 Odebere ze seznamu pro správu připojení IP adresy nebo názvu DNS.  
   
  \<Konfigurace >  
-\<System.NET >  
+\<system.net>  
 \<connectionManagement – >  
 \<Odebrat >  
   

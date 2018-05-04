@@ -1,13 +1,6 @@
 ---
-title: "&lt;IPv6&gt; – Element (nastavení sítě)"
-ms.custom: 
+title: '&lt;IPv6&gt; – Element (nastavení sítě)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/ipv6
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#ipv6
@@ -15,22 +8,20 @@ helpviewer_keywords:
 - <ipv6> element
 - ipv6 element
 ms.assetid: 10b79aef-327b-4718-a892-e11f55e4d169
-caps.latest.revision: "19"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 4a98d1d21d7df4e88c668262e60397029fe44c5a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4b73e5d781829292513e809c39ac9de9dfc6d0e8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltipv6gt-element-network-settings"></a>&lt;IPv6&gt; – Element (nastavení sítě)
 Umožňuje Internet Protocol version 6 (IPv6) odpovědí z zastaralé členy <xref:System.Net.Dns> třídy.  
   
  \<Konfigurace >  
-\<System.NET >  
+\<system.net>  
 \<Nastavení >  
 \<IPv6 >  
   
@@ -58,7 +49,7 @@ Umožňuje Internet Protocol version 6 (IPv6) odpovědí z zastaralé členy <xr
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě <xref:System.Net> oboru názvů.|  
+|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto nastavení umožňuje podporu protokolu IPv6 pro zastaralé členy <xref:System.Net.Dns> – třída: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A>, a <xref:System.Net.Dns.Resolve%2A>. Pro ostatní členové <xref:System.Net?displayProperty=nameWithType> obor názvů, adresy IPv6 mohou vráceny, pokud je povolen protokol IPv6 v operačním systému.  

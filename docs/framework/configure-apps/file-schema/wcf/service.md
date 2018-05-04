@@ -1,29 +1,17 @@
 ---
-title: "&lt;služby&gt;"
-ms.custom: 
+title: '&lt;Služby&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 689dfae90baffa3e9895258d1635c7840d8df6b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a73e4699e0998338f09e1ed0504f5b1cfd73b225
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltservicegt"></a>&lt;služby&gt;
+# <a name="ltservicegt"></a>&lt;Služby&gt;
 `service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje taky koncových bodů, které službu vystavit.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<služby >  
 \<služby >  
   
@@ -43,13 +31,13 @@ ms.lasthandoff: 12/22/2017
 |Atribut|Popis|  
 |---------------|-----------------|  
 |behaviorConfiguration|Řetězec, který obsahuje název chování chování, který se má použít k vytvoření instance služby. Název chování musí být v rozsahu na bod, který je definován službu. Výchozí hodnota je prázdný řetězec.|  
-|name|Vyžaduje atribut řetězec, který určuje typ službu, kterou chcete vytvořit instanci. Toto nastavení musí rovnat platného typu. Musí být ve formátu`Namespace.Class.`|  
+|name|Vyžaduje atribut řetězec, který určuje typ službu, kterou chcete vytvořit instanci. Toto nastavení musí rovnat platného typu. Musí být ve formátu `Namespace.Class.`|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<koncový bod >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|Kolekce `endpoint` elementy, které zveřejňují této služby.|  
+|[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|Kolekce `endpoint` elementy, které zveřejňují této služby.|  
 |[\<hostitele >](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Určuje hostitele této instance služby. Tento element je typu <xref:System.ServiceModel.Configuration.HostElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  

@@ -1,29 +1,17 @@
 ---
 title: '&lt;remove&gt; elementu &lt;claimTypeRequirements&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8ef05bc4-1950-4ee4-95c5-1c6a394eff7e
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 49009cb7e988c27ccc426e29c6ac973e553a0f73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d1f9c963792336f0938113beefbdef770831e9d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt-of-ltclaimtyperequirementsgt-element"></a>&lt;remove&gt; elementu &lt;claimTypeRequirements&gt;
 Určuje typy deklarací identity k odebrání v federované přihlašovací údaje.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<vazby >  
 \<wsFederatedBinding >  
 \<Vazba >  

@@ -1,26 +1,14 @@
 ---
-title: "&lt;(Méně než) (Entita SQL)"
-ms.custom: 
+title: '&lt; (Méně než) (Entita SQL)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1fc2a039-3ad6-4b3c-b41d-09932e803f86
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 5bf1560c0bebafcfdbf79ca9a9906c9df23b7cae
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: e11f28fd05cb49524b5a0ff854f951385603602f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="lt-less-than-entity-sql"></a>&lt;(Méně než) (Entita SQL)
+# <a name="lt-less-than-entity-sql"></a>&lt; (Méně než) (Entita SQL)
 Porovná dva výrazy a určit, zda má hodnotu menší, než pravý výraz levý výraz.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,7 +22,7 @@ expression < expression
  Jakýkoli platný výraz. Oba výrazy musí mít implicitně převést datové typy.  
   
 ## <a name="result-types"></a>Typy výsledků  
- `true`Pokud levý výraz má hodnotu menší, než pravý výraz; v opačném `false`.  
+ `true` Pokud levý výraz má hodnotu menší, než pravý výraz; v opačném `false`.  
   
 ## <a name="example"></a>Příklad  
  Následující dotaz Entity SQL používá < – operátor porovnání k porovnání dvou výrazů k určení, zda má hodnotu menší, než pravý výraz levý výraz. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  

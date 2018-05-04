@@ -1,24 +1,12 @@
 ---
-title: "+ (Zřetězení řetězců) (Entita SQL)"
-ms.custom: 
+title: + (Zřetězení řetězců) (Entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 580130fa-6c7c-4f76-a47d-d22c27ccadf6
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 24591b54af97eaad705e4914764c7b2c21e5ed0e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1826d1267f0ee5ad8320cf1d1ab36f87adf765a5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="-string-concatenation-entity-sql"></a>+ (Zřetězení) (entita SQL)
 Zřetězí dva řetězce.  

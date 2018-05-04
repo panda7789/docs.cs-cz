@@ -1,27 +1,15 @@
 ---
-title: "Zpracování událostí DataAdapter"
-ms.custom: 
+title: Zpracování událostí DataAdapter
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 71524de2edbedb24cacc6727654aac5be0a48bb7
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f2b07b8d42069fa98ba51dea75f9695e7adce0b0
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="handling-dataadapter-events"></a>Zpracování událostí DataAdapter
 Technologie ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupní tři události, které můžete použít reagovat na změny dat ve zdroji dat. Následující tabulce je zobrazena `DataAdapter` události.  
@@ -33,7 +21,7 @@ Technologie ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupní tři ud�
 |`FillError`|Došlo k chybě během `Fill` operaci.|  
   
 ## <a name="rowupdating-and-rowupdated"></a>RowUpdating a RowUpdated  
- `RowUpdating`je vyvolána před všechny aktualizace na řádek z <xref:System.Data.DataSet> ve zdroji dat byla zpracována. `RowUpdated`je vyvolána po žádné aktualizace na řádek z `DataSet` ve zdroji dat byla zpracována. V důsledku toho můžete použít `RowUpdating` chcete upravit chování aktualizace, než se stane, znamená to zajistit další zpracování, když dojde k aktualizaci, chcete-li zachovat odkaz na aktualizované řádek, chcete-li zrušit aktuální aktualizace a plán pro dávku zpracovat na pozdější zpracování , a tak dále. `RowUpdated`je užitečné pro zpracování chyb a výjimek, ke kterým došlo během aktualizace. Můžete přidat informace o chybě do `DataSet`, stejně jako logika opakovaných pokusů a tak dále.  
+ `RowUpdating` je vyvolána před všechny aktualizace na řádek z <xref:System.Data.DataSet> ve zdroji dat byla zpracována. `RowUpdated` je vyvolána po žádné aktualizace na řádek z `DataSet` ve zdroji dat byla zpracována. V důsledku toho můžete použít `RowUpdating` chcete upravit chování aktualizace, než se stane, znamená to zajistit další zpracování, když dojde k aktualizaci, chcete-li zachovat odkaz na aktualizované řádek, chcete-li zrušit aktuální aktualizace a plán pro dávku zpracovat na pozdější zpracování , a tak dále. `RowUpdated` je užitečné pro zpracování chyb a výjimek, ke kterým došlo během aktualizace. Můžete přidat informace o chybě do `DataSet`, stejně jako logika opakovaných pokusů a tak dále.  
   
  <xref:System.Data.Common.RowUpdatingEventArgs> a <xref:System.Data.Common.RowUpdatedEventArgs> bylo předáno `RowUpdating` a `RowUpdated` události zahrnují následující: `Command` vlastnost, která odkazuje `Command` objektu používá k provedení aktualizace; `Row` vlastnost, která odkazuje `DataRow` objekt obsahující aktualizované informace; `StatementType` vlastnost, pro jaký typ aktualizace je prováděna; `TableMapping`, pokud je k dispozici; a `Status` operace.  
   

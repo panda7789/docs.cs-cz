@@ -1,14 +1,6 @@
 ---
-title: "&lt;Přidat&gt; Element pro &lt;sharedListeners&gt;"
-ms.custom: 
+title: '&lt;Přidat&gt; Element pro &lt;sharedListeners&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add
 helpviewer_keywords:
@@ -16,25 +8,22 @@ helpviewer_keywords:
 - <add> element for <sharedListeners>
 - add element for <sharedListeners>
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 490e58d4514667c5ec781dd76644012b0c97509d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 27d83ba706b4d93b4ac5426bf5bae59b4bfc0d9a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;Přidat&gt; Element pro &lt;sharedListeners&gt;
-Přidá naslouchací proces a `sharedListeners` kolekce. `sharedListeners`je to všechny kolekce naslouchacího procesu [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) , můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou uloženy do `Listeners` kolekce. Je nutné je přidat název, který [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat posluchače v `sharedListeners` kolekce v kódu v době běhu.  
+Přidá naslouchací proces a `sharedListeners` kolekce. `sharedListeners` je to všechny kolekce naslouchacího procesu [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) , můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou uloženy do `Listeners` kolekce. Je nutné je přidat název, který [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat posluchače v `sharedListeners` kolekce v kódu v době běhu.  
   
  \<Konfigurace >  
 \<System.Diagnostics >  
 \<sharedListeners > elementu  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -90,7 +79,7 @@ Přidá naslouchací proces a `sharedListeners` kolekce. `sharedListeners`je to 
  Tento element lze v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat `<add>` elementy přidat <xref:System.Diagnostics.TextWriterTraceListener> `textListener` k `sharedListeners` kolekce.   `textListener`název, který přidává `Listeners` kolekci pro zdroj trasování `TraceSourceApp`. `textListener` Naslouchací proces zapisuje do souboru myListener.log výstup trasování.  
+ Následující příklad ukazuje, jak používat `<add>` elementy přidat <xref:System.Diagnostics.TextWriterTraceListener> `textListener` k `sharedListeners` kolekce.   `textListener` název, který přidává `Listeners` kolekci pro zdroj trasování `TraceSourceApp`. `textListener` Naslouchací proces zapisuje do souboru myListener.log výstup trasování.  
   
 ```xml  
 <configuration>  

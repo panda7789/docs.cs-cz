@@ -1,24 +1,12 @@
 ---
 title: Architektura technologie ADO.NET
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-caps.latest.revision: "7"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d1f09901ef6eb30fe3f43ee19ab17ceaaa2b78e8
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 384f2397e0e2794c4326d635db9f81fe1078f374
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adonet-architecture"></a>Architektura technologie ADO.NET
 Zpracování dat má tradičně účinné především založeného na připojení, dvouvrstvá modelu. Jako zpracování dat stále používá vícevrstvé architektury, jsou programátory přepnutí do odpojeného přístup zajistit lepší škálovatelnost pro své aplikace.  
@@ -34,7 +22,7 @@ Zpracování dat má tradičně účinné především založeného na připojen
   
  Následující diagram znázorňuje vztah mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat a `DataSet`.  
   
- ![ADO.Net graphic](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
+ ![Obrázek ADO.Net](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
 Architektura technologie ADO.NET  
   
 ### <a name="choosing-a-datareader-or-a-dataset"></a>Výběr DataReader nebo datové sady  
@@ -60,12 +48,12 @@ Architektura technologie ADO.NET
  Je určen ADO.NET Entity Framework a umožňuje vývojářům vytvářet aplikace přístup dat programování s koncepční aplikační model místo programování přímo proti schématu relační úložiště. Cílem je snížit množství kód a údržby, které jsou potřeba pro aplikace orientované na data. Další informace najdete v tématu [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).  
   
 ## <a name="wcf-data-services"></a>WCF Data Services  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]slouží k nasazení služeb dat na webu nebo v intranetu. Strukturovaná data jako entity a vztahy podle specifikací modelu Entity Data Model. Data pro tento model nasazení je adresovat pomocí standardní protokol HTTP. Další informace najdete v tématu [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] slouží k nasazení služeb dat na webu nebo v intranetu. Strukturovaná data jako entity a vztahy podle specifikací modelu Entity Data Model. Data pro tento model nasazení je adresovat pomocí standardní protokol HTTP. Další informace najdete v tématu [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md).  
   
 ## <a name="xml-and-adonet"></a>Soubor XML a ADO.NET  
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]využívá power XML zajistit odpojené přístup k datům. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]byl navrženou ruční-na skladě s třídami XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]; obě jsou součástí jednoho systému.  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] využívá power XML zajistit odpojené přístup k datům. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] byl navrženou ruční-na skladě s třídami XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]; obě jsou součástí jednoho systému.  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]a třídy XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sloučit v `DataSet` objektu. `DataSet` Možné naplnit dat z XML zdroje, ať už je do souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní XML World Wide Web Consortium (W3C), která bude obsahovat schématem schématu definition language (XSD) schématu XML, bez ohledu na zdroji dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` formátu XML, je vynikající střední pro přesun dat mezi vrstvami, což `DataSet` na optimální volbu pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML – dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] a třídy XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sloučit v `DataSet` objektu. `DataSet` Možné naplnit dat z XML zdroje, ať už je do souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní XML World Wide Web Consortium (W3C), která bude obsahovat schématem schématu definition language (XSD) schématu XML, bez ohledu na zdroji dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` formátu XML, je vynikající střední pro přesun dat mezi vrstvami, což `DataSet` na optimální volbu pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML – dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  

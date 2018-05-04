@@ -1,32 +1,20 @@
 ---
-title: "&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;"
-ms.custom: 
+title: '&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ad6ad6f71ef015ad97a2688a7334e8a0c6e5af44
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 549574d0d6585a857f3e0979e814c827139c7536
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltbaseaddressprefixfiltergt"></a>&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;
-Reprezentuje element konfigurace, který určuje průchozí filtr, který poskytuje mechanismus pro hostování vyberte odpovídající vazby Internetové informační služby (IIS) [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] aplikace ve službě IIS.  
+Představuje konfiguraci element, který určuje průchozí filtr, který poskytuje mechanismus pro hostování aplikací Windows Communication Foundation (WCF) ve službě IIS, vyberte odpovídající vazby Internetové informační služby (IIS).  
   
- \<systém. ServiceModel >  
-\<ServiceHostingEnvironment >  
+ \<system.ServiceModel>  
+\<serviceHostingEnvironment >  
 \<baseAddressPrefixFilters >  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,7 +42,7 @@ Reprezentuje element konfigurace, který určuje průchozí filtr, který poskyt
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci elementů konfigurace, které určují průchozí filtrů, které poskytují mechanismus při hostování vyberte odpovídající vazby služby IIS [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] aplikace ve službě IIS.|  
+|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci elementů konfigurace, které určují průchozí filtrů, které poskytují mechanismus při hostování aplikace Windows Communication Foundation (WCF) ve službě IIS, vyberte odpovídající vazby služby IIS.|  
   
 ## <a name="remarks"></a>Poznámky  
  Předpona filtr poskytuje způsob, jak sdílené poskytovatelům hostingu zadejte identifikátory, které mají být použita služba. Umožňuje sdílené hostitele k hostování více aplikací s jiné základní adresy pro stejné schéma ve stejné lokalitě.  

@@ -14,11 +14,11 @@ ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
 caps.latest.revision: 29
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1cefa39313c3c551e8d05fbc31e528b86c6888d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: MT
+ms.openlocfilehash: a4f63c4b7b2d32afac9b0d086ecd64cd2b29366f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="volatile-c-reference"></a>volatile (Referenční dokumentace jazyka C#)
 `volatile` – Klíčové slovo označuje, že pole mohou být změněna více vláken, které jsou prováděny ve stejnou dobu. Pole, které jsou deklarovány `volatile` nevztahují kompilátoru optimalizace, které předpokládá přístup podle jednoho vlákna. Tím se zajistí, že aktuální hodnota je přítomen v poli za všech okolností.  
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
 -   Parametry obecného typu známé jako odkazové typy.  
   
--   <xref:System.IntPtr>a <xref:System.UIntPtr>.  
+-   <xref:System.IntPtr> a <xref:System.UIntPtr>.  
   
  Volatile – klíčové slovo lze použít pouze na pole třídě nebo struktuře. Místní proměnné nelze deklarovat `volatile`.  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[csrefKeywordsModifiers#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/volatile_1.cs)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořit a použít k provedení zpracování paralelně s u primární vlákno pomocné nebo pracovní vlákno. Základní informace o více vláken, viz [zřetězení](../../../standard/threading/index.md) a [zřetězení](../../programming-guide/concepts/threading/index.md).  
+ Následující příklad ukazuje, jak vytvořit a použít k provedení zpracování paralelně s u primární vlákno pomocné nebo pracovní vlákno. Základní informace o více vláken, viz [zřetězení (C#)](../../../standard/threading/index.md) a [dělení na spravovaná vlákna](../../programming-guide/concepts/threading/index.md).  
   
  [!code-csharp[csProgGuideThreading#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/volatile_2.cs)]  
   
@@ -56,6 +56,6 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)

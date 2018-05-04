@@ -1,24 +1,12 @@
 ---
-title: "Řadit podle (entita SQL)"
-ms.custom: 
+title: Řadit podle (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4321c5fd3f173b209d99e096ec0ebf8788437c3d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5cffd7a696496f92ae83822faff2f08e325eea93
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="order-by-entity-sql"></a>Řadit podle (entita SQL)
 Určuje pořadí řazení použít u objektů, vrátí se v příkazu SELECT.  
@@ -49,10 +37,10 @@ Určuje pořadí řazení použít u objektů, vrátí se v příkazu SELECT.
  DESC  
  Určuje, že hodnoty v zadané vlastnosti by měl být seřazeny sestupně, z nejvyšší hodnotu s nejnižší hodnotou.  
   
- LIMIT`n`  
+ LIMIT `n`  
  Pouze první `n` budou vybrány položky.  
   
- SKIP `n`  
+ PŘESKOČIT `n`  
  Přeskočí první `n` položky.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -94,9 +82,9 @@ ORDER BY ...
   
 -   ÚPLNÁ  
   
--   KEY  
+-   KLÍČ  
   
--   LEFT  
+-   VLEVO  
   
 -   POŘADÍ  
   

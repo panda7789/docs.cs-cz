@@ -1,24 +1,12 @@
 ---
-title: "Obrazec stromy příkazů"
-ms.custom: 
+title: Obrazec stromy příkazů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d7e2b25788b088d9da49bad206f8f2f11d0104a2
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9084e2616ac4ea540bdf755afd011d67a5c991fa
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="the-shape-of-the-command-trees"></a>Obrazec stromy příkazů
 Modul generování SQL je zodpovědný za generování back-end konkrétní dotaz SQL na základě výrazu stromu příkaz daný vstupní dotaz. Tato část popisuje vlastnosti, vlastnosti a struktura stromy příkazů dotazu.  
@@ -52,9 +40,9 @@ Modul generování SQL je zodpovědný za generování back-end konkrétní dota
 ### <a name="expression-types-not-present-in-output-query-command-trees"></a>Typy výrazů není k dispozici v stromy příkazů výstup dotazu  
  Následující typy výrazů nejsou platné ve stromu příkazů výstupu dotazu a není potřeba ji zpracovat zprostředkovatele:  
   
- DbDerefExpression  
+ Objekt DbDerefExpression  
   
- DbEntityRefExpression  
+ Třída DbEntityRefExpression  
   
  Třída DbRefKeyExpression  
   

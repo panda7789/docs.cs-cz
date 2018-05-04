@@ -1,13 +1,6 @@
 ---
-title: "Aplikační domény"
-ms.custom: 
+title: Aplikační domény
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - process boundaries for isolation
 - application isolation
@@ -19,16 +12,13 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fe2d8ea8be2781e747398e18cc99cc6ce6cf6dc5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 04028a2b350493a3cc8f2c92bafafd9658fc7c58
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="application-domains"></a>Aplikační domény
 Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolování aplikací. Tato izolace je nutné zajistit, že kód spuštěný v jedné aplikaci nemůže mít nepříznivý vliv na jiné nesouvisející aplikace.  
@@ -84,11 +74,11 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
  Existují tři možnosti pro načtení domény jazykově neutrální sestavení:  
   
--   <xref:System.LoaderOptimization>načte žádné sestavení jako jazykově neutrální, s výjimkou Mscorlib, které je vždy načteno domény jazykově neutrální. Toto nastavení se nazývá jednu doménu, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.  
+-   <xref:System.LoaderOptimization> načte žádné sestavení jako jazykově neutrální, s výjimkou Mscorlib, které je vždy načteno domény jazykově neutrální. Toto nastavení se nazývá jednu doménu, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.  
   
--   <xref:System.LoaderOptimization>načte všechna sestavení jako domény jazykově neutrální. Toto nastavení použijte, pokud je v procesu, všechny spouští stejný kód více domén aplikací.  
+-   <xref:System.LoaderOptimization> načte všechna sestavení jako domény jazykově neutrální. Toto nastavení použijte, pokud je v procesu, všechny spouští stejný kód více domén aplikací.  
   
--   <xref:System.LoaderOptimization>načte sestavení se silným názvem jako neutrální, pokud jejich a všechny jejich závislosti byly nainstalovány v globální mezipaměti sestavení. Další sestavení jsou načtena a kompilována samostatně pro každou doménu aplikace, ve kterém jsou načteny a proto mohou být uvolněna z procesu. Pomocí tohoto nastavení při spuštění více než jednu aplikaci ve stejném procesu, nebo pokud máte směs sestavení, které jsou sdíleny mnoho aplikační domény a sestavení, které musí být uvolněna z procesu.  
+-   <xref:System.LoaderOptimization> načte sestavení se silným názvem jako neutrální, pokud jejich a všechny jejich závislosti byly nainstalovány v globální mezipaměti sestavení. Další sestavení jsou načtena a kompilována samostatně pro každou doménu aplikace, ve kterém jsou načteny a proto mohou být uvolněna z procesu. Pomocí tohoto nastavení při spuštění více než jednu aplikaci ve stejném procesu, nebo pokud máte směs sestavení, které jsou sdíleny mnoho aplikační domény a sestavení, které musí být uvolněna z procesu.  
   
  Kompilována kód nemůže být sdílen sestavení kontextu, pomocí <xref:System.Reflection.Assembly.LoadFrom%2A> metodu <xref:System.Reflection.Assembly> třídy, nebo z obrazů pomocí přetížení <xref:System.Reflection.Assembly.Load%2A> metoda, která zadejte bajtová pole.  
   
@@ -126,7 +116,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
 |Doména AppDomain – metoda|Popis|  
 |----------------------|-----------------|  
 |<xref:System.AppDomain.CreateDomain%2A>|Vytvoří novou doménu aplikace. Je doporučeno používat přetížení této metody, která určuje <xref:System.AppDomainSetup> objektu. Toto je upřednostňovaný způsob, jak nastavit vlastnosti novou doménu, jako je například základ cesty aplikace nebo kořenový adresář pro aplikaci. umístění konfiguračního souboru pro doménu; a cestu vyhledávání, která je modul common language runtime sloužící k načtení sestavení do domény.|  
-|<xref:System.AppDomain.ExecuteAssembly%2A>a<xref:System.AppDomain.ExecuteAssemblyByName%2A>|Spustí sestavení v doméně aplikace. Toto je metoda instance, takže ho můžete použít ke spuštění kódu v jiné doméně aplikace, ke které máte odkaz.|  
+|<xref:System.AppDomain.ExecuteAssembly%2A> A <xref:System.AppDomain.ExecuteAssemblyByName%2A>|Spustí sestavení v doméně aplikace. Toto je metoda instance, takže ho můžete použít ke spuštění kódu v jiné doméně aplikace, ke které máte odkaz.|  
 |<xref:System.AppDomain.CreateInstanceAndUnwrap%2A>|Vytvoří instanci zadaného typu v doméně aplikace a vrátí proxy server. Tuto metodu použijte, chcete-li se vyhnout načtení sestavení obsahující vytvořený typ do volajícího sestavení.|  
 |<xref:System.AppDomain.Unload%2A>|Provede řádné vypnutí domény. Doména aplikace není odpojen, dokud všechny podprocesy spuštěné v doméně byla buď zastavena nebo již nejsou v doméně.|  
   

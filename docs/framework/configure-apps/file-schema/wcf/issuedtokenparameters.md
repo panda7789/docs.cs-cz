@@ -1,29 +1,17 @@
 ---
-title: "&lt;– issuedTokenParameters&gt;"
-ms.custom: 
+title: '&lt;– issuedTokenParameters&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bac725e0c4fe590623ac82ec45bcf669a2e57179
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 550b3412b193b996b8de800856d6833369fc4bc7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltissuedtokenparametersgt"></a>&lt;– issuedTokenParameters&gt;
 Určuje parametry pro token zabezpečení vydané ve scénáři federovaný zabezpečení.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
 \<customBinding >  
 \<Vazba >  
@@ -64,7 +52,7 @@ Určuje parametry pro token zabezpečení vydané ve scénáři federovaný zabe
 |inclusionMode|Určuje požadavky na zařazení tokenu. Tento atribut je typu <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>.|  
 |Velikost klíče|Celé číslo, které určuje velikost klíče tokenu. Výchozí hodnota je 256.|  
 |Typ_klíče.|Platná hodnota <xref:System.IdentityModel.Tokens.SecurityKeyType> určující typ klíče. Výchozí hodnota je `SymmetricKey`.|  
-|tokenType|Řetězec, který určuje typ tokenu. Výchozí hodnota je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML".|  
+|tokenType|Řetězec, který určuje typ tokenu. Ve výchozím nastavení je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -73,7 +61,7 @@ Určuje parametry pro token zabezpečení vydané ve scénáři federovaný zabe
 |[\<additionalRequestParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/additionalrequestparameters-element.md)|Kolekce konfigurační prvky, které zadejte parametry další požadavek.|  
 |[\<claimTypeRequirements >](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Určuje kolekci typů požadované deklarace identity.<br /><br /> V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí pověření musí mít sadu typy deklarací identity. Každý prvek v této kolekci Určuje typy deklarací identity požadované a volitelné očekávání měla objevit ve federované přihlašovací údaje.|  
 |[\<Issuer >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|Konfigurace element, který určuje koncového bodu, který vydá aktuální token.|  
-|[\<issuerMetadata >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|Konfigurace element, který určuje adresa koncového bodu metadat vydavatel tokenu.|  
+|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|Konfigurace element, který určuje adresa koncového bodu metadat vydavatel tokenu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

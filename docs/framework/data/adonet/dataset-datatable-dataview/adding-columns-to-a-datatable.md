@@ -1,27 +1,15 @@
 ---
-title: "Přidávání sloupců do DataTable"
-ms.custom: 
+title: Přidávání sloupců do DataTable
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6340baa434467ec4ccde501b4bb11d55a72c069b
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 8ee47ddce273e564673d96d2b2e276b68879373f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-columns-to-a-datatable"></a>Přidávání sloupců do DataTable
 A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazuje **sloupce** vlastnosti tabulky. Tato kolekce sloupců, společně s omezeními, definuje schéma a struktura tabulky.  
@@ -60,7 +48,7 @@ workTable.Columns.Add("Purchases", typeof(Double));
 > [!CAUTION]
 >  Pokud je název sloupce není zadaný pro sloupec, sloupec je uveden přírůstkové výchozí název sloupce*N,* počínaje "Column1", když je přidán do **DataColumnCollection**. Doporučujeme, abyste se zabránilo pojmenovávací konvenci "sloupec*N*" Pokud zadáte název sloupce, protože název zadáte může dojít ke konfliktu s existujícím názvem sloupce výchozí v **DataColumnCollection**. Pokud se zadaným názvem již existuje, je vyvolána výjimka.  
   
- Pokud používáte <xref:System.Xml.Linq.XElement> jako <xref:System.Data.DataColumn.DataType%2A> z <xref:System.Data.DataColumn> v <xref:System.Data.DataTable>, serializace XML nebude fungovat při čtení v datech. Například, pokud je zapsat <xref:System.Xml.XmlDocument> pomocí `DataTable.WriteXml` metoda při serializaci do formátu XML je další nadřazený uzel v <xref:System.Xml.Linq.XElement>. Chcete-li tento problém obejít, použijte <xref:System.Data.SqlTypes.SqlXml> zadejte místo <xref:System.Xml.Linq.XElement>. `ReadXml`a `WriteXml` pracovní správně s <xref:System.Data.SqlTypes.SqlXml>.  
+ Pokud používáte <xref:System.Xml.Linq.XElement> jako <xref:System.Data.DataColumn.DataType%2A> z <xref:System.Data.DataColumn> v <xref:System.Data.DataTable>, serializace XML nebude fungovat při čtení v datech. Například, pokud je zapsat <xref:System.Xml.XmlDocument> pomocí `DataTable.WriteXml` metoda při serializaci do formátu XML je další nadřazený uzel v <xref:System.Xml.Linq.XElement>. Chcete-li tento problém obejít, použijte <xref:System.Data.SqlTypes.SqlXml> zadejte místo <xref:System.Xml.Linq.XElement>. `ReadXml` a `WriteXml` pracovní správně s <xref:System.Data.SqlTypes.SqlXml>.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataColumn>  

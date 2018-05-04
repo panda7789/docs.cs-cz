@@ -1,26 +1,14 @@
 ---
-title: '&lt;servicePrincipalName&gt;'
-ms.custom: 
+title: '&lt;ServicePrincipalName&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3f3b85d3-20f2-4cd8-8a6a-ee18befbd165
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7f9b4ec506097cf010af78b3504def08102e0774
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e5c1f5a6986d57d20180560b12f5c7c5540a590d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltserviceprincipalnamegt"></a>&lt;servicePrincipalName&gt;
+# <a name="ltserviceprincipalnamegt"></a>&lt;ServicePrincipalName&gt;
 Určuje identity služby podle jeho hlavní název služby (SPN).  
   
  Další informace o nastavení hlavního názvu služby najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
@@ -53,7 +41,7 @@ Určuje identity služby podle jeho hlavní název služby (SPN).
 |[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Zabezpečený [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] klienta, která se připojuje k koncový bod s tuto identitu používá SPN při ověřování rozhraní SSPI ke koncovému bodu.  
+ Zabezpečené klienta Windows Communication Foundation (WCF), která se připojuje k koncový bod s tuto identitu používá SPN při ověřování rozhraní SSPI ke koncovému bodu.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.IdentityElement>  

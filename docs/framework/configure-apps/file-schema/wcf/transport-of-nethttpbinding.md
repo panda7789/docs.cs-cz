@@ -1,34 +1,22 @@
 ---
-title: "&lt;transport&gt; – &lt;netHttpBinding&gt;"
-ms.custom: 
+title: '&lt;transport&gt; – &lt;netHttpBinding&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 870e08f644f58d49f0165e1f97279adcf2e5445a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 6603e590632f0bc21a2d98482d1f42f03bb9d9e7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltnethttpbindinggt"></a>&lt;transport&gt; – &lt;netHttpBinding&gt;
 Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.  
   
 \<system.serviceModel>  
 \<vazby >  
-\<netHttpBinding>  
+\<netHttpBinding >  
 \<Vazba >  
 \<zabezpečení >  
-\<transport>  
+\<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -68,7 +56,7 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.
 |Žádné|Zprávy není zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování.|  
 |Ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.|  
-|Ntlm|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
+|NTLM|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
 |Windows|Určuje integrované ověřování systému Windows.|  
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType atribut  
@@ -78,7 +66,7 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.
 |Žádné|-Zprávy není zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování podle definice dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest.|  
 |Ověřování algoritmem Digest|Ověřování hodnotou hash podle určuje RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest.|  
-|Ntlm|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
+|NTLM|Určuje ověřování NTLM, pokud je to možné, a pokud ověřování systému Windows selže.|  
 |Windows|Určuje integrované ověřování systému Windows.|  
 |certifikát|Provede používá certifikát ověření klienta. Tato možnost funguje jenom v případě `Mode` atribut nadřazené `security` elementu je nastaven na přenos a nebude fungovat, pokud je nastavena na možnost TransportCredentialOnly.|  
   

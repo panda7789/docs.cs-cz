@@ -1,27 +1,15 @@
 ---
-title: "Zpracování událostí DataTable"
-ms.custom: 
+title: Zpracování událostí DataTable
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 30425680333bfebddcd7a34ac1cd2a07b1556d91
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: e6779f7d8be1cf795aeb4956b0fc257c9cb7a482
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="handling-datatable-events"></a>Zpracování událostí DataTable
 <xref:System.Data.DataTable> Objekt poskytuje řadu událostí, které může zpracovat aplikace. Následující tabulka popisuje `DataTable` události.  

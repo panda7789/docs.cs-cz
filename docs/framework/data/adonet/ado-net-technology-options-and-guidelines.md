@@ -1,24 +1,12 @@
 ---
-title: "Možnosti technologie ADO.NET a pokyny"
-ms.custom: 
+title: Možnosti technologie ADO.NET a pokyny
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: aa4cefb27ff3fde3f4f31d996a80b19b94ea57e2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 106fdbc121c3b1c15aaced5e0314e0651387cede
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Možnosti technologie ADO.NET a pokyny
 Platforma dat ADO.NET je více verzí strategie pro snížit množství kódování a údržby, které jsou potřeba pro vývojáře je povolením programu na modely dat koncepční entity. Tato platforma obsahuje ADO.NET Entity Framework a souvisejících technologiích.  
@@ -48,7 +36,7 @@ Platforma dat ADO.NET je více verzí strategie pro snížit množství kódová
  Technologie LINQ to SQL je relační mapování u objektu (nebo / M) implementace, která umožňuje modelu databázi systému SQL Server pomocí třídy rozhraní .NET Framework. Technologie LINQ to SQL umožňuje dotazování databáze pomocí LINQ, a také aktualizovat, insert a odstranění dat z něj. Technologie LINQ to SQL podporuje transakce, zobrazení a uložených procedur, poskytuje snadný způsob, jak integrovat ověřování dat a obchodní logiku pravidla do datového modelu. Návrhář relací objektů (Návrhář relací objektů) můžete model tříd entit a přidružení, které jsou založeny na objekty v databázi. Další informace najdete v tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="wcf-data-services"></a>WCF Data Services  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nasadí data services na webu nebo v síti intranet. Strukturovaná data jako entity a vztahy podle specifikací modelu Entity Data Model. Data pro tento model nasazení je adresovat pomocí standardní protokol HTTP. Další informace najdete v tématu [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nasadí data services na webu nebo v síti intranet. Strukturovaná data jako entity a vztahy podle specifikací modelu Entity Data Model. Data pro tento model nasazení je adresovat pomocí standardní protokol HTTP. Další informace najdete v tématu [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  

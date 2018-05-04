@@ -1,35 +1,26 @@
 ---
-title: "&lt;Přidat&gt; Element pro &lt;namedCaches&gt;"
-ms.custom: 
+title: '&lt;Přidat&gt; Element pro &lt;namedCaches&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - add element for <namedCaches>
 - <add> element for <namedCaches>
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 0000e92c89920b05e0ffc93fab58fb0bd6ea6b13
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d65dfd9a1560f2657f48b327277b64ab77014b47
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;Přidat&gt; Element pro &lt;namedCaches&gt;
 Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.  
   
- \<System.Runtime.Caching – >  
+ \<system.runtime.caching>  
 \<memoryCache >  
 \<namedCaches >  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,7 +53,7 @@ Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches >](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
   
 ## <a name="remarks"></a>Poznámky  
  `add` Element přidá položku do `namedCaches` kolekci pro mezipaměť. Můžete použít [vymazat](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md) element před použitím `add` elementu, který chcete být jisti, že neexistují žádné další s názvem mezipaměti v kolekci. Tento element lze použít v souboru machine.config a v souboru Web.config.  

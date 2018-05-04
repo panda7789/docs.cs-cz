@@ -1,27 +1,15 @@
 ---
 title: Navigace DataRelations
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e5e673f4-9b44-45ae-aaea-c504d1cc5d3e
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 84272a24dde909205d01f4ced5a57450c5fdbd7f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c46007fb86a76405fd99d6e943779238d6885aa8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="navigating-datarelations"></a>Navigace DataRelations
 Jeden z primární funkce <xref:System.Data.DataRelation> je umožnit navigační z jednoho <xref:System.Data.DataTable> do jiné v rámci <xref:System.Data.DataSet>. To umožňuje načíst všechny související <xref:System.Data.DataRow> objektů v jednom **DataTable** li zadán jeden **DataRow** z související **DataTable**. Například po navázání **DataRelation** mezi tabulku zákazníků a tabulku objednávky, můžete načíst všechny řádky pořadí pro konkrétního zákazníka řádek pomocí **Metoda GetChildRows**.  

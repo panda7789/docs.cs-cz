@@ -1,13 +1,6 @@
 ---
-title: "&lt;HttpWebRequest –&gt; – Element (nastavení sítě)"
-ms.custom: 
+title: '&lt;HttpWebRequest –&gt; – Element (nastavení sítě)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/httpWebRequest
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#httpWebRequest
@@ -15,22 +8,20 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dadb2d7635f132b44d6fca8c56f53b847ffb1ff9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d1dce38e5188824ba1412d3f2a285bd2304f147
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;HttpWebRequest –&gt; – Element (nastavení sítě)
 Přizpůsobí parametry webové žádosti.  
   
  \<Konfigurace >  
-\<System.NET >  
+\<system.net>  
 \<Nastavení >  
 \<httpWebRequest >  
   
@@ -64,7 +55,7 @@ Přizpůsobí parametry webové žádosti.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě <xref:System.Net> oboru názvů.|  
+|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení rozhraní .NET Framework výhradně vynucuje dokumentu RFC 2616 k analýze identifikátoru URI. Některé odezvy serveru může obsahovat řídicí znaky v zakázané pole, které způsobí, že <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> metoda k vyvolání <xref:System.Net.WebException>. Pokud **useUnsafeHeaderParsing** je nastaven na **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> nezpůsobí výjimku, v takovém případě; ale, bude vaše aplikace bude zranitelný vůči několika formulářů analýza útoky identifikátoru URI. Nejlepším řešením je změna serveru tak, aby odpověď neobsahuje řídicí znaky.  

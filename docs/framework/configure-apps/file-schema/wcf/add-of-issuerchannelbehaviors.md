@@ -1,24 +1,12 @@
 ---
-title: "&lt;add&gt; – &lt;issuerChannelBehaviors&gt;"
-ms.custom: 
+title: '&lt;add&gt; – &lt;issuerChannelBehaviors&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 50710506-e28f-45dd-ab7e-bff6f44173db
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bf66b3d3b531ae41329aade6a416c330957d83c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 75531e8ed50ae89f379db23d228804612f4bfccb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltissuerchannelbehaviorsgt"></a>&lt;add&gt; – &lt;issuerChannelBehaviors&gt;
 Přidá chování koncového bodu, který se má použít při komunikaci s služby tokenů zabezpečení.  
@@ -26,14 +14,14 @@ Přidá chování koncového bodu, který se má použít při komunikaci s slu�
 > [!NOTE]
 >  Pokud obsahuje všechny chování koncového bodu [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementu, bude vyvolána výjimka.  
   
- \<systém. ServiceModel >  
+ \<system.ServiceModel>  
 \<chování >  
 část endpointBehaviors  
 \<chování >  
 \<clientCredentials >  
 \<issuedToken >  
 \<issuerChannelBehaviors > elementu  
-\<Přidat >  
+\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,10 +47,10 @@ Přidá chování koncového bodu, který se má použít při komunikaci s slu�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<issuerChannelBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|Obsahuje kolekci [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] koncový bod chování klientů, který se má použít při komunikaci s určeným službám tokenu služby.|  
+|[\<issuerChannelBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|Obsahuje kolekce chování koncový bod klienta Windows Communication Foundation (WCF), který se má použít při komunikaci s určeným službám tokenu služby.|  
   
 ## <a name="remarks"></a>Poznámky  
- `issuerAddress`obsahuje identifikátor URI služby tokenů zabezpečení, který chce klienta ke komunikaci s. `behaviorConfiguration`odkazuje na koncový bod chování, které aplikace se používá v kanály vytvořené [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] získat vystavené tokeny od služby tokenů zabezpečení.  
+ `issuerAddress` obsahuje identifikátor URI služby tokenů zabezpečení, který chce klienta ke komunikaci s. `behaviorConfiguration` odkazuje na koncový bod chování, které aplikace používá v kanály vytvořen ve Windows Communication Foundation (WCF) k získání vystavené tokeny od služby tokenů zabezpečení.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.IssuerChannelBehaviors%2A>  

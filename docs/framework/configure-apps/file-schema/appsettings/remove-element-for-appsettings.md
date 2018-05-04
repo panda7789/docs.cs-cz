@@ -1,10 +1,6 @@
 ---
 title: '&lt;Odebrat&gt; element pro &lt;appSettings&gt;'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/remove
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2e803561ef20bb17ed7c637eb487027466b65077
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 21fedf064596979dbfb4190d9956da616295af3c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="remove-element-for-appsettings"></a>\<Odebrat > elementu pro \<appSettings >
 
@@ -42,7 +35,7 @@ Odebere vlastní nastavení aplikace.
 
 |         | Popis |
 | ------- | ----------- |
-| **klíč** | Požadovaný atribut.<br><br>Určuje název klíč k odebrání. |
+| **Klíč** | Požadovaný atribut.<br><br>Určuje název klíč k odebrání. |
 
 ### <a name="parent-element"></a>Nadřazený element
 

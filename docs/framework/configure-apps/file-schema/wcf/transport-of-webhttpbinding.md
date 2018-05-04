@@ -1,24 +1,12 @@
 ---
-title: "&lt;transport&gt; – &lt;webHttpBinding&gt;"
-ms.custom: 
+title: '&lt;transport&gt; – &lt;webHttpBinding&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 385831b820de77006dffb6206c34baa8620ca5da
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 17468bc2354dc2865f10384e918ffb821a28f059
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltwebhttpbindinggt"></a>&lt;transport&gt; – &lt;webHttpBinding&gt;
 Definuje nastavení zabezpečení na úrovni přenosu pro koncového bodu služby nastavena k přijímání požadavků HTTP.  
@@ -28,7 +16,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncového bodu služb
 \<webHttpBinding>  
 \<Vazba >  
 \<zabezpečení >  
-\<transport>  
+\<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
   

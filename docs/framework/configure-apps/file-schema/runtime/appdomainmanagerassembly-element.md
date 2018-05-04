@@ -1,27 +1,17 @@
 ---
-title: "&lt;appdomainmanagerassembly –&gt; – Element"
-ms.custom: 
+title: '&lt;appdomainmanagerassembly –&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - <appDomainManagerAssembly> element
 - appDomainManagerAssembly element
 ms.assetid: c7c56e39-a700-44f5-b94e-411bfce339d9
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 52e09e898fdcdbf8d14d3648b19e40bdc302daf0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7656f4819e8ed6d8c1c87eabcbd5862929d47cdc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltappdomainmanagerassemblygt-element"></a>&lt;appdomainmanagerassembly –&gt; – Element
 Určuje sestavení, které poskytuje správce domény aplikace pro výchozí doméně aplikace v procesu.  

@@ -1,27 +1,15 @@
 ---
-title: "Identifikátory (entita SQL)"
-ms.custom: 
+title: Identifikátory (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d58a5edd-7b5c-48e1-b5d7-a326ff426aa4
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 18bfb654a6f116f87ae7eeb6059fe994b9084c19
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 55b9ac101c7849c5b348ba8e48c695c0fa328105
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="identifiers-entity-sql"></a>Identifikátory (entita SQL)
-Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představují aliasy výraz dotazu, odkazy na proměnné, vlastnosti objektů, funkce a tak dále. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]nabízí dva typy identifikátorů: jednoduché identifikátory a identifikátory v uvozovkách.  
+Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představují aliasy výraz dotazu, odkazy na proměnné, vlastnosti objektů, funkce a tak dále. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nabízí dva typy identifikátorů: jednoduché identifikátory a identifikátory v uvozovkách.  
   
 ## <a name="simple-identifiers"></a>Jednoduché identifikátory  
  Jednoduchý identifikátor v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je posloupnost alfanumerické znaky a podtržítka. Identifikátor první znak musí být abecedním znakem (a-z nebo A-Z).  
@@ -37,7 +25,7 @@ Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esq
   
 -   Karty.  
   
--   Backspace.  
+-   BACKSPACE.  
   
 -   Další hranaté závorky (tedy hranaté závorky v rámci hranaté závorky, které zobrazit identifikátor).  
   
@@ -97,7 +85,7 @@ SELECT 1 AS X, 2 AS X …
 ```  
   
 ## <a name="scoping-rules"></a>Pravidla rozsahu  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]Definuje oboru pravidla, které určují, když konkrétní proměnné jsou viditelné v jazyce dotazu. Některé výrazy nebo příkazy zavést nové názvy. Oboru pravidla určují, kde se dají použít tyto názvy, a pokud nebo kde novou deklaraci se stejným názvem jako jiné můžete skrýt, jeho předchůdce.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Definuje oboru pravidla, které určují, když konkrétní proměnné jsou viditelné v jazyce dotazu. Některé výrazy nebo příkazy zavést nové názvy. Oboru pravidla určují, kde se dají použít tyto názvy, a pokud nebo kde novou deklaraci se stejným názvem jako jiné můžete skrýt, jeho předchůdce.  
   
  Když se názvy jsou definovány v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu, se nazývá být definován v rámci oboru. Obor obsahuje celou oblast dotazu. Všechny výrazy nebo odkazy na název v rámci určitého oboru můžete zobrazit názvy, které jsou definovány v rámci tohoto oboru. Před zahájením oboru a po jeho ukončení, nelze odkazovat názvy, které jsou definovány v rámci oboru.  
   
@@ -125,7 +113,7 @@ SELECT 1 AS X, 2 AS X …
 -   Pořadí vyhodnocování v rámci vyberte výrazu klauzule určuje pořadí, že jsou názvy vložena do oboru. Klauzule FROM se vyhodnocují jako první, následuje klauzule WHERE, klauzule GROUP BY, klauzule HAVING, klauzuli SELECT a nakonec v klauzuli ORDER BY.  
   
 ### <a name="aggregate-handling"></a>Souhrnné zpracování  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje dvě formy agregace: na základě kolekce agregované a na základě skupiny položky. Na základě kolekce agregace jsou upřednostňované konstrukce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], a na základě skupiny agregace jsou podporovány pro SQL kompatibility.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dvě formy agregace: na základě kolekce agregované a na základě skupiny položky. Na základě kolekce agregace jsou upřednostňované konstrukce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], a na základě skupiny agregace jsou podporovány pro SQL kompatibility.  
   
  Při rozpoznávání agregace, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poprvé pokusí o považovat za agregace se na základě kolekce. Pokud to nepomůže, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] transformuje agregační vstup na odkaz k agregaci vnoření a pokusí přeložit nové výrazu, jak je znázorněno v následujícím příkladu.  
   

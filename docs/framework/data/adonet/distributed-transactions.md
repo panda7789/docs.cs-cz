@@ -1,24 +1,12 @@
 ---
-title: "Distribuované transakce"
-ms.custom: 
+title: Distribuované transakce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
-caps.latest.revision: "7"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c2de777dbd8bf6ac18db95a1cf647d259a252f8d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 7792a719a73ca5183d57bcecc5d346153d824570
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="distributed-transactions"></a>Distribuované transakce
 Transakce je sada souvisejících úloh, které buď (Potvrdit) úspěšná nebo neúspěšná (přerušení) jako jednotku, mimo jiné. A *distribuované transakce* je transakci, která ovlivňuje několik prostředků. Pro distribuované transakce potvrzení musí všechny účastníky zaručit, že všechny změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud jeden účastník neprovede tento záruka, selže celá transakce a všechny změny dat v rámci oboru transakce jsou vráceny zpět.  
@@ -44,13 +32,13 @@ Transakce je sada souvisejících úloh, které buď (Potvrdit) úspěšná nebo
   
  Uvedení v distribuovaných transakcích je zvláště použít, když sdružování obchodní objekty. Pokud obchodní objekt je ve fondu s otevřené připojení, automatické transakce zařazení dochází pouze po otevření připojení. Pokud více transakcí se provádí pomocí objektu ve fondu firmy, otevřete připojení pro tento objekt nebude automaticky zapsat do nově initiated transakcí. V takovém případě můžete zakázat automatické transakce zařazení pro připojení a zařazení připojení v transakcích pomocí `EnlistTransaction`.  
   
- `EnlistTransaction`použije jeden argument typu <xref:System.Transactions.Transaction> tedy odkaz na stávající transakce. Po volání metody připojení `EnlistTransaction` metoda, všechny změny provedené v zdroje dat pomocí připojení jsou zahrnuty v transakci. Předání hodnotou null unenlists připojení z jeho aktuálního zařazení distribuované transakce. Všimněte si, že musí být připojení otevřeno před voláním `EnlistTransaction`.  
+ `EnlistTransaction` použije jeden argument typu <xref:System.Transactions.Transaction> tedy odkaz na stávající transakce. Po volání metody připojení `EnlistTransaction` metoda, všechny změny provedené v zdroje dat pomocí připojení jsou zahrnuty v transakci. Předání hodnotou null unenlists připojení z jeho aktuálního zařazení distribuované transakce. Všimněte si, že musí být připojení otevřeno před voláním `EnlistTransaction`.  
   
 > [!NOTE]
 >  Po připojení je explicitně zařazeny do transakce, nemůže být zrušení zařazené nebo zařazené v jiné transakci, dokud nebude dokončeno první transakce.  
   
 > [!CAUTION]
->  `EnlistTransaction`vyvolá výjimku, pokud připojení již zahájila transakci pomocí připojení <xref:System.Data.Common.DbConnection.BeginTransaction%2A> metoda. Ale pokud transakce je místní transakce spuštěna ve zdroji dat (například provádění příkazu BEGIN TRANSACTION explicitně pomocí <xref:System.Data.SqlClient.SqlCommand>), `EnlistTransaction` bude místní transakci vrátit zpět a uvést v existující distribuované transakce podle požadavku. Neobdrží Všimněte si, že místní transakce byla vrácena zpět a musí spravovat jakékoli místní transakce nebyla spuštěna pomocí <xref:System.Data.Common.DbConnection.BeginTransaction%2A>. Pokud používáte zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`) se systémem SQL Server, pokus o zařazení vyvolá výjimku. Všech ostatních případech pokračovat nezjištěné.  
+>  `EnlistTransaction` vyvolá výjimku, pokud připojení již zahájila transakci pomocí připojení <xref:System.Data.Common.DbConnection.BeginTransaction%2A> metoda. Ale pokud transakce je místní transakce spuštěna ve zdroji dat (například provádění příkazu BEGIN TRANSACTION explicitně pomocí <xref:System.Data.SqlClient.SqlCommand>), `EnlistTransaction` bude místní transakci vrátit zpět a uvést v existující distribuované transakce podle požadavku. Neobdrží Všimněte si, že místní transakce byla vrácena zpět a musí spravovat jakékoli místní transakce nebyla spuštěna pomocí <xref:System.Data.Common.DbConnection.BeginTransaction%2A>. Pokud používáte zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`) se systémem SQL Server, pokus o zařazení vyvolá výjimku. Všech ostatních případech pokračovat nezjištěné.  
   
 ## <a name="promotable-transactions-in-sql-server"></a>Možné zvýšit transakcí v systému SQL Server  
  Systém SQL Server podporuje možné zvýšit transakce, ve kterých místní transakce lightweight můžete bude automaticky povýšen na distribuovanou transakci pouze v případě potřeby. Možné zvýšit transakce nevyvolá přidaném starat se o distribuované transakce Pokud přidaném režie není nutné. Další informace a ukázku kódu najdete v tématu [System.Transactions – integrace s SQL serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md).  

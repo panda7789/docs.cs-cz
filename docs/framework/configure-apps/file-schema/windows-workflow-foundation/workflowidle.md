@@ -1,28 +1,18 @@
 ---
 title: '&lt;workflowIdle&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: b2ef703c-3e01-4213-9d2e-c14c7dba94d2
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2440f322ea7dbd3a6d6f9d56878273c49b26bfa6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 65bcc1ccd357fb7f331665aefbd975b11a2378cd
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltworkflowidlegt"></a>&lt;workflowIdle&gt;
 Chování služby, která určuje, kdy jsou instance nečinných pracovních postupů odpojeno a zachována.  
   
-\<systém. ServiceModel >  
+\<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  

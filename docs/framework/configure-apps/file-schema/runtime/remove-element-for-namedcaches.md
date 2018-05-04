@@ -1,32 +1,23 @@
 ---
 title: '&lt;Odebrat&gt; Element pro &lt;namedCaches&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - remove element for namedCaches
 - <remove> element for namedCaches
 ms.assetid: 24211ea5-163e-4fe5-aed8-004d8499760c
-caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 4b360b206586b263627ab6f6b7e0309f3055f38a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6ffaea24910a6b8f4a120d6b72219bff592fab17
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt-element-for-ltnamedcachesgt"></a>&lt;Odebrat&gt; Element pro &lt;namedCaches&gt;
 Odebere položku s názvem mezipaměti z `namedCaches` kolekci pro mezipaměť.  
   
- \<System.Runtime.Caching – >  
+ \<system.runtime.caching>  
 \<memoryCache >  
 \<namedCaches >  
 \<Odebrat >  
@@ -56,7 +47,7 @@ Odebere položku s názvem mezipaměti z `namedCaches` kolekci pro mezipaměť.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches >](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
   
 ## <a name="remarks"></a>Poznámky  
  `remove` Odebere element `namedCache` položku z kolekce s názvem mezipaměti pro mezipaměť.  

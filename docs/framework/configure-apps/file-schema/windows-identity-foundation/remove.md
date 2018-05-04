@@ -1,34 +1,22 @@
 ---
 title: '&lt;remove&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4058e2f1-7db4-4d1a-84dd-1b52836f2ae6
-caps.latest.revision: 5
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: fb62bbe8b52032708dddd62dd895e61ba8c1c5e9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: dfea0b0eb4b133308f10b523a659cc00f87252b8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt"></a>&lt;remove&gt;
 Odebere zadaný zabezpečení obslužná rutina tokenu z kolekce obslužná rutina tokenu.  
   
  \<system.identityModel>  
 \<identityConfiguration >  
-\<securityTokenHandlers>  
-\<remove>  
+\<securityTokenHandlers >  
+\<Odebrat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,7 +47,7 @@ Odebere zadaný zabezpečení obslužná rutina tokenu z kolekce obslužná ruti
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.|  
+|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód XML ukazuje použití `<add>` a `<remove>` elementy nahradit výchozí obslužnou rutinu tokenu relace obslužnou rutinu tokenu vlastní relaci. Soubor XML je převzat ze `ClaimsAwareWebFarm` ukázka.  

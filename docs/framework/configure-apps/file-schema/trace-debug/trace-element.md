@@ -1,13 +1,6 @@
 ---
-title: "&lt;trasování&gt; – Element"
-ms.custom: 
+title: '&lt;trasování&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#trace
@@ -17,16 +10,14 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d7ddcbdbdbbc2924d4f725d2fd401f873a4cfb0b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 59d5083632630513d2afc1f8d78400310451e46f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttracegt-element"></a>&lt;trasování&gt; – Element
 Obsahuje naslouchací procesy, které shromažďování, ukládání a směrovat trasovací zprávy.  
@@ -82,7 +73,7 @@ Obsahuje naslouchací procesy, které shromažďování, ukládání a směrovat
 |`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat `<trace>` elementu, který chcete přidat naslouchací proces `MyListener` k `Listeners` kolekce. `MyListener`Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `useGlobalLock` Je atribut nastaven na `false`, což způsobí, že globální zámek nechcete použít v případě naslouchací proces trasování je zaručeno bezpečné používání vláken. `autoflush` Je atribut nastaven na `true`, což způsobí, že naslouchací proces trasování k zápisu do souboru bez ohledu na to, jestli <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána. `indentsize` Je nastavena na hodnotu 0 (nula), což způsobí, že naslouchací proces pro odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.  
+ Následující příklad ukazuje, jak používat `<trace>` elementu, který chcete přidat naslouchací proces `MyListener` k `Listeners` kolekce. `MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `useGlobalLock` Je atribut nastaven na `false`, což způsobí, že globální zámek nechcete použít v případě naslouchací proces trasování je zaručeno bezpečné používání vláken. `autoflush` Je atribut nastaven na `true`, což způsobí, že naslouchací proces trasování k zápisu do souboru bez ohledu na to, jestli <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána. `indentsize` Je nastavena na hodnotu 0 (nula), což způsobí, že naslouchací proces pro odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.  
   
 ```xml  
 <configuration>  

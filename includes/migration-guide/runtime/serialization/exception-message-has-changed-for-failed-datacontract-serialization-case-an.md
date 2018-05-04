@@ -3,7 +3,7 @@
 |   |   |
 |---|---|
 |Podrobnosti|Od verze rozhraní .NET Framework 4.6, pokud zpráva o výjimce <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=name> nebo <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=name> vyjasněn selže k serializaci nebo deserializaci z důvodu chybějícího 'známé typy'.|
-|Návrh|Aplikace by neměl závisí na konkrétní výjimka zprávy. Pokud aplikace v závislosti na tuto zprávu, buď aktualizujte očekávat novou zprávu nebo (pokud možno) změňte ho na závisí pouze na typ výjimky.|
+|Návrh|Aplikace by neměl závisí na konkrétní výjimka zprávy. Pokud aplikace závisí na tuto zprávu, buď ji aktualizovat tak očekávat novou zprávu nebo (pokud možno) změňte ho na závisí pouze na typ výjimky.|
 |Rozsah|Edge|
 |Version|4.6|
 |Typ|Modul runtime|

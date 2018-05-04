@@ -1,14 +1,6 @@
 ---
-title: "&lt;Filtr&gt; Element pro &lt;přidat&gt; pro &lt;sharedListeners&gt;"
-ms.custom: 
+title: '&lt;Filtr&gt; Element pro &lt;přidat&gt; pro &lt;sharedListeners&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add/filter
 helpviewer_keywords:
@@ -18,17 +10,14 @@ helpviewer_keywords:
 - filters, trace listeners
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: bc3f97619c8ec28a61a9a51b431581383558a7d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3bbba1c805c6b300f7cf7b3d9112cde9df7607a8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltfiltergt-element-for-ltaddgt-for-ltsharedlistenersgt"></a>&lt;Filtr&gt; Element pro &lt;přidat&gt; pro &lt;sharedListeners&gt;
 Přidá filtr do naslouchací proces ve `sharedListeners` kolekce.  
@@ -36,7 +25,7 @@ Přidá filtr do naslouchací proces ve `sharedListeners` kolekce.
  \<Konfigurace >  
 \<System.Diagnostics >  
 \<sharedListeners > elementu  
-\<Přidat >  
+\<add>  
 \<Filtr >  
   
 ## <a name="syntax"></a>Syntaxe  

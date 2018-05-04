@@ -1,24 +1,15 @@
 ---
-title: "&lt;IDN&gt; – Element (nastavení Uri)"
-ms.custom: 
+title: '&lt;IDN&gt; – Element (nastavení Uri)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 44e2db95ec354fff4356a3619fa8230faf67544d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17f68fbb92797928be911e530232e8638793687f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltidngt-element-uri-settings"></a>&lt;IDN&gt; – Element (nastavení Uri)
 Určuje, zda analýza mezinárodní název domény (IDN) je použita na název domény.  

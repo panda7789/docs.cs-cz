@@ -1,24 +1,12 @@
 ---
 title: '&lt;soapProcessing&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e8707027-e6b8-4539-893d-3cd7c13fbc18
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1aeb100e1b8e160d30566cd43d67cbf49c6b5c4e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 780c0e9a1d88c9f00883753091b102fbe9d41aa5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsoapprocessinggt"></a>&lt;soapProcessing&gt;
 
@@ -60,7 +48,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 Zpracování protokolu SOAP je proces, kde se převedou zpráv mezi verzemi zprávy.
 
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] Směrovací služby můžete převést zprávy z jednoho protokolu na jiný. Pokud příchozí a odchozí verze zprávy liší, je vytvořit novou zprávu správnou verzi. Zpracování zpráv z jednoho <!--zz <xref:System.ServiceModel.Channel.MessageVersion> --> `MessageVersion` do jiného provádí vytváření nové [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprávu, která obsahuje část textu a relevantní záhlaví z příchozích [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprávy. Hlavičky, které jsou specifické pro adresování nebo které jsou pochopeny na úrovni směrovače, nejsou použít během vytváření nové zprávy WCF, protože tato záhlaví, jsou jiné verzi (v případě adresování hlavičky) nebo byly zpracovány jako součást komunikace mezi klientem a směrovači.
+Směrovací služby Windows Communication Foundation (WCF) můžete převést zprávy z jednoho protokolu na jiný. Pokud příchozí a odchozí verze zprávy liší, je vytvořit novou zprávu správnou verzi. Zpracování zpráv z jednoho <!--zz <xref:System.ServiceModel.Channel.MessageVersion> --> `MessageVersion` do jiného provádí vytváření nové [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprávu, která obsahuje část textu a relevantní záhlaví z příchozích [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprávy. Hlavičky, které jsou specifické pro adresování nebo které jsou pochopeny na úrovni směrovače, nejsou použít během vytváření nové zprávy WCF, protože tato záhlaví, jsou jiné verzi (v případě adresování hlavičky) nebo byly zpracovány jako součást komunikace mezi klientem a směrovači.
 
 Jestli je umístěn hlavičku odchozí zprávy je dáno, jestli byla označena jako porozumění, jako je předána příchozí vrstvy kanálu. Hlavičky, které nejsou porozuměl (například vlastní hlavičky) nejsou odebrány a proto procházet služba Směrování podle byly zkopírovány na odchozí zprávy. Tělo zprávy se zkopíruje na odchozí zprávy. Odchozí kanál potom odeslaná zpráva, na kterém všechny hlavičky a další data obálky konkrétní přejděte na tuto komunikaci protokol nebo přenos vytvořit a přidat.
 

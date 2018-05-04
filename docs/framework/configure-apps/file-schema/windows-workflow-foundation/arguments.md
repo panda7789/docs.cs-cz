@@ -1,30 +1,20 @@
 ---
-title: '&lt;argumenty&gt;'
-ms.custom: 
+title: '&lt;Argumenty&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: 0f327196-f468-4be3-b6c4-68ba981a1bd6
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f233c7fc7d7edd020a750938a45351bb028524d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ae2fd4a05cc8ca93cd74ccceb08a7a077b504f0c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltargumentsgt"></a>&lt;argumenty&gt;
+# <a name="ltargumentsgt"></a>&lt;Argumenty&gt;
 Představuje kolekci argumentů přidruženého k dotazu stavu aktivity.  
   
  Další informace o sledování profil dotazů najdete v tématu [sledování profily](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
   
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<sledování >  
 \<trackingProfile >  
 \<pracovní postup >  

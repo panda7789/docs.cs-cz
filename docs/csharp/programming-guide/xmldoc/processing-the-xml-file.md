@@ -12,11 +12,11 @@ ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
 caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1e6e983d4fc07aaadc294bc67e146ac600f4c5bc
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
-ms.translationtype: MT
+ms.openlocfilehash: 605724874d952befceea0f89ae48e6151c97f363
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který se označí ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md).) ID řetězec jednoznačně identifikuje konstruktu. Programy, které zpracovávají souboru XML slouží k identifikaci příslušnou položku metadata nebo reflexe rozhraní .NET Framework, která se použije v dokumentaci k ID řetězec.  
@@ -71,13 +71,13 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
     -   Návratový typ  
   
-    -   ELEMENT_TYPE_SENTINEL  
+    -   TYP ELEMENT_TYPE_SENTINEL  
   
 -   Pro převod operátory pouze (op_Implicit a op_Explicit) návratovou hodnotu metody zakódován ' ~' následuje návratový typ, jako kódování výše.  
   
 -   Pro obecné typy název typu bude následovat back značek a pak číslo určující počet parametrů obecného typu.  Například  
   
-     `<member name="T:SampleClass`2" >` is the tag for a type that is defined as `veřejnou třídu SampleClass\<T, U >'.  
+     ``<member name="T:SampleClass`2">`` je značky pro typ, který je definován jako `public class SampleClass<T, U>`.  
   
      Pro metody trvá obecné typy jako parametry, jsou parametry obecného typu zadané jako čísla, kterými back rysky (například \`0, 1).  Každý číslo představující zápis pole s nulovým základem pro obecné parametry typu.  
   
@@ -88,5 +88,5 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [/doc (C# Compiler Options)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
+ [/ DOC (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
  [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)

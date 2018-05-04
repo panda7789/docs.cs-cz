@@ -1,24 +1,12 @@
 ---
-title: "Přehled manipulace a nečinnosti"
-ms.custom: 
+title: Přehled manipulace a nečinnosti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dd31b89b-eab6-45a1-8d0b-11e0eb84b234
-caps.latest.revision: "7"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d6a0b8b62b997ab0dc7ff21375e82bda7e05d3c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7aec2756bfc3a7d4ccd394d54f19428d73b44fcb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manipulations-and-inertia-overview"></a>Přehled manipulace a nečinnosti
 *Manipulace* povolit uživatelům přesunout, otáčení a změna velikosti prvky uživatelského rozhraní (UI) pomocí *manipulátory*. Manipulator představuje myši nebo (v případě dotykovým ovládáním) pera nebo prstu.  
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
   
  Pro aplikace, aby zahrnovala vstupní primitivní v procesu manipulaci, vytvoří <xref:System.Windows.Input.Manipulations.Manipulator2D> struktura z podrobností o vstupní primitivní a předává strukturu pro manipulaci s procesor používá <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda. Manipulace s procesoru poté vyvolá události, které aplikace musí zpracovat aktualizace visual component vhodným způsobem.  
   
- ![Tok přímá manipulace & č. 45; modelu využití. ] (../../../docs/framework/common-client-technologies/media/manipulation-flow.png "Manipulation_Flow")  
+ ![Tok přímá manipulace&#45;modelu využití. ] (../../../docs/framework/common-client-technologies/media/manipulation-flow.png "Manipulation_Flow")  
   
  Manipulace s zpracování modelu  
   

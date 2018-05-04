@@ -1,16 +1,16 @@
 ---
-title: "Ukázka integrace názvového prostoru SystemWebRouting"
-ms.custom: 
+title: Ukázka integrace názvového prostoru SystemWebRouting
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-caps.latest.revision: 
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -18,7 +18,7 @@ ms.workload:
 - dotnet
 ms.openlocfilehash: de8869956a59cb47623dbc4d84763e19d6f181bf
 ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/27/2018
 ---
@@ -51,11 +51,11 @@ Tato ukázka může již nainstalován ve vašem počítači. Před pokračován
   
      Zobrazí se pro vzorovou výpis adresáře. Všimněte si, že neexistují žádné soubory s příponou souboru .svc.  
   
-3.  Na panelu Adresa přidat `movies` na adresu URL, takže to čte http://localhost: [port] / filmy a stiskněte klávesu ENTER.  
+3.  Na panelu Adresa přidat `movies` na adresu URL, takže to čte http://localhost:[port]/filmy a stiskněte klávesu ENTER.  
   
      Informační kanál filmy se zobrazí v prohlížeči.  
   
-4.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost: [port] / kanálů a stiskněte klávesu ENTER.  
+4.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port]/kanálů a stiskněte klávesu ENTER.  
   
      Informační kanál kanály se zobrazí v prohlížeči.  
   
@@ -81,11 +81,11 @@ Tato ukázka může již nainstalován ve vašem počítači. Před pokračován
   
 4.  Spustit aplikaci, tak, že kliknete pravým tlačítkem na webové aplikace a výběr **spravovat aplikace** a potom **Procházet**.  
   
-5.  Na panelu Adresa přidat `movies` na adresu URL, takže se čtení http://localhost: [port] / filmy a stiskněte klávesu ENTER.  
+5.  Na panelu Adresa přidat `movies` na adresu URL, takže se čtení http://localhost:[port]/filmy a stiskněte klávesu ENTER.  
   
      Informační kanál filmy se zobrazí v prohlížeči.  
   
-6.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost: [port] / kanálů a stiskněte klávesu ENTER.  
+6.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port]/kanálů a stiskněte klávesu ENTER.  
   
      Informační kanál kanály se zobrazí v prohlížeči.  
   

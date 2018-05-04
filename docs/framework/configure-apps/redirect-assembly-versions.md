@@ -1,14 +1,6 @@
 ---
 title: Přesměrování verzí sestavení
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - assembly binding, redirection
 - redirecting assembly binding to earlier version
@@ -16,17 +8,14 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-caps.latest.revision: 26
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 24343e1ee2e95cbeb7613d3b22dd7cdac848903b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 3459ebd2f1df38ac70e9211fd4865e227cd996cb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 Můžete přesměrovat kompilaci vazby odkazy na sestavení rozhraní .NET Framework, sestavení třetích stran nebo sestavení vlastní aplikace. Můžete přesměrovat aplikace používat jinou verzi sestavení v mnoha různými způsoby: pomocí zásad vydavatele prostřednictvím konfigurační soubor aplikace; nebo prostřednictvím konfiguračním souboru počítače. Tento článek popisuje, jak funguje sestavení – vazby v rozhraní .NET Framework a jak může být nakonfigurován.  
@@ -165,7 +154,7 @@ Můžete přesměrovat kompilaci vazby odkazy na sestavení rozhraní .NET Frame
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
- [\<bindingRedirect> Element](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  
+ [\<bindingRedirect – > elementu](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  
  [Bezpečnostní oprávnění k přesměrování vazby sestavení](../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)  
  [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  

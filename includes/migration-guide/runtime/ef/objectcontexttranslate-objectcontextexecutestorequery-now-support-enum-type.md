@@ -2,8 +2,8 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET 4.0, obecný parametr <code>T</code> z <code>ObjectContext.Translate</code> a <code>ObjectContext.ExecuteStoreQuery</code> metody nelze výčtu. Tento scénář se teď podporuje.|
-|Návrh|Pokud přeložit nebo ExecuteStoreQuery byla volána na typu výčtu v rozhraní .NET 4.0, byl vrácen '0'. Pokud toto chování žádoucí, měl by být volání nahrazen konstanta 0 (nebo ekvivalentní výčtu je).|
+|Podrobnosti|V rozhraní .NET Framework 4.0, obecný parametr <code>T</code> z <code>ObjectContext.Translate</code> a <code>ObjectContext.ExecuteStoreQuery</code> metody nelze výčtu. Tento scénář se teď podporuje.|
+|Návrh|Pokud přeložit nebo ExecuteStoreQuery byla volána na typu výčtu v rozhraní .NET Framework 4.0, byl vrácen '0'. Pokud toto chování žádoucí, měl by být volání nahrazen konstanta 0 (nebo ekvivalentní výčtu je).|
 |Rozsah|Edge|
 |Version|4.5|
 |Typ|Modul runtime|

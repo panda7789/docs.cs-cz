@@ -1,30 +1,18 @@
 ---
-title: '&lt;discoveryEndpoint&gt;'
-ms.custom: 
+title: '&lt;DiscoveryEndpoint&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fae2f48b-a635-4e4b-859d-a1432ac37e1c
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 51caf46f85e7edd1f8e4b9a08ab6a1198ccd9c79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a352fbfced08001f76dceaff283d6bca25f56f9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltdiscoveryendpointgt"></a>&lt;discoveryEndpoint&gt;
+# <a name="ltdiscoveryendpointgt"></a>&lt;DiscoveryEndpoint&gt;
 
 Tento element konfigurace definuje standardní koncový bod s pevnou zjišťování kontrakt. Při přidání konfigurace služby, určuje, kde přijímat zprávy zjišťování. Po přidání do konfigurace klienta Určuje, kam má posílat dotazy zjišťování.  
   
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<standardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe

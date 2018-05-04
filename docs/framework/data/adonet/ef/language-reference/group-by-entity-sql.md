@@ -1,24 +1,12 @@
 ---
 title: Seskupit podle (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cf4f4972-4724-4945-ba44-943a08549139
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ae83bfdadc9952cb8c3f8307fc8042c8e5d35b54
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 3b5edee08afef8418f19df433223818218ae909d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="group-by-entity-sql"></a>Seskupit podle (entita SQL)
 Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) výrazu mají být umístěny.  
@@ -31,7 +19,7 @@ Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../.
   
 ## <a name="arguments"></a>Arguments  
  `aliasedExpression`  
- Jakýkoli platný dotaz výraz, ve kterém se provádí seskupení. `expression`může být vlastnost nebo není agregační výraz, který odkazuje vlastnost vrácený klauzule FROM. Každý výraz v klauzuli GROUP BY musí být typ, který může být porovnána shoda. Tyto typy jsou obecně skalární primitiv například čísla, řetězce a data. Nelze seskupit podle kolekce.  
+ Jakýkoli platný dotaz výraz, ve kterém se provádí seskupení. `expression` může být vlastnost nebo není agregační výraz, který odkazuje vlastnost vrácený klauzule FROM. Každý výraz v klauzuli GROUP BY musí být typ, který může být porovnána shoda. Tyto typy jsou obecně skalární primitiv například čísla, řetězce a data. Nelze seskupit podle kolekce.  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud agregační funkce, které jsou zahrnuty v klauzuli SELECT \<seznamu výběru >, GROUP BY vypočítá souhrnnou hodnotu pro každou skupinu. Při zadání GROUP BY je každý název vlastnosti v jakékoli jiné než agregované výraz v seznamu select by měl být součástí seznamu GROUP BY nebo výraz GROUP BY musí přesně odpovídat výrazu seznamu výběru.  

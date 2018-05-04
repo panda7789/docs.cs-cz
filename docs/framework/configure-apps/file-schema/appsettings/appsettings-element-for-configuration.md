@@ -1,10 +1,6 @@
 ---
 title: '&lt;appSettings&gt; element pro &lt;konfigurace&gt;'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cebb9ba7ebeb483233276324289a4ddc5a0bc381
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d17400536b911ce0be4d2bf105b0b4d99d0916df
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="appsettings-element-for-configuration"></a>\<appSettings > elementu pro \<konfigurace >
 
@@ -41,7 +34,7 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 |           | Popis |
 | --------- | ----------- |
-| **soubor**  | Nepovinný atribut.<br><br>Určuje relativní cestu k externí soubor obsahující nastavení konfigurace vlastní aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou určené v  **\<Přidat >**,  **\<odebrat >**, a  **\<clear >** elementy a používá stejný dvojice klíč/hodnota formátovat jako těchto elementů.<br><br>Zadaná cesta je relativní vzhledem ke hlavní konfiguračního souboru. Aplikaci Windows Forms, to je binární složky (například */bin/ladění*), ne však umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů, cesta je relativní vůči kořenovému adresáři aplikace, kde *web.config* se nachází soubor.<br><br>Všimněte si, že modul runtime ignoruje atribut, pokud zadaný soubor nelze nalézt. |
+| **Soubor**  | Nepovinný atribut.<br><br>Určuje relativní cestu k externí soubor obsahující nastavení konfigurace vlastní aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou určené v  **\<Přidat >**,  **\<odebrat >**, a  **\<clear >** elementy a používá stejný dvojice klíč/hodnota formátovat jako těchto elementů.<br><br>Zadaná cesta je relativní vzhledem ke hlavní konfiguračního souboru. Aplikaci Windows Forms, to je binární složky (například */bin/ladění*), ne však umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů, cesta je relativní vůči kořenovému adresáři aplikace, kde *web.config* se nachází soubor.<br><br>Všimněte si, že modul runtime ignoruje atribut, pokud zadaný soubor nelze nalézt. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
@@ -59,7 +52,7 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 ## <a name="remarks"></a>Poznámky
 
- **\<AppSettings >** element ukládá informace o konfiguraci vlastní aplikaci, například databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo jiných vlastní konfigurační informace pro aplikace. Páry klíč – hodnota zadaná v  **\<appSettings >** element probíhal v kódu pomocí <xref:System.Configuration.ConfigurationSettings> – třída.
+**\<AppSettings >** element ukládá informace o konfiguraci vlastní aplikaci, například databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo jiných vlastní konfigurační informace pro aplikace. Páry klíč – hodnota zadaná v  **\<appSettings >** element probíhal v kódu pomocí <xref:System.Configuration.ConfigurationSettings> – třída.
 
 Můžete použít **soubor** atribut  **\<appSettings >** element *Web.config* a konfigurační soubory aplikace. Tento atribut určuje konfigurační soubor, který poskytuje další nastavení nebo přepíše nastavení zadaná  **\<appSettings >** element. **Souboru** atribut lze použít v týmu vývoj scénářích správy zdrojového kódu, například když uživatel chce pro přepsání nastavení projektu zadané v konfiguračním souboru aplikace.
 

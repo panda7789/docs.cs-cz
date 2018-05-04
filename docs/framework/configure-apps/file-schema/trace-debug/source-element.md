@@ -1,9 +1,6 @@
 ---
-title: "&lt;Zdroj&gt; – Element"
+title: '&lt;Zdroj&gt; – Element'
 ms.date: 09/29/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#source
@@ -13,12 +10,11 @@ helpviewer_keywords:
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d6c5c65be8a540fdbba64d5a604c0963f9797e0a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7c2a71b129a0ad7d1c2a72b18b8a69a111f9495
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsourcegt-element"></a>&lt;Zdroj&gt; – Element
 Určuje zdroj trasování, který iniciuje trasování zpráv.  

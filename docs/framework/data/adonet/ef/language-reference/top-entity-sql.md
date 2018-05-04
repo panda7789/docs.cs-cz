@@ -1,24 +1,12 @@
 ---
-title: "HORNÍ (entita SQL)"
-ms.custom: 
+title: HORNÍ (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4a4a0954-82e2-4eae-bcaf-7c4552f3532d
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 10967ac87fa8f8504dc9a6a29be99401e620085e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 25afda64aafcd5a97dee7ad4cee25b152ef55907
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="top-entity-sql"></a>HORNÍ (entita SQL)
 Klauzule SELECT může obsahovat volitelné nejvyšší dílčí klauzuli následující volitelné modifikátor všechna nebo DISTINCT. Dílčí klauzule TOP Určuje, že bude vrácen pouze první sadu řádků z výsledku dotazu.  
@@ -31,7 +19,7 @@ Klauzule SELECT může obsahovat volitelné nejvyšší dílčí klauzuli násle
   
 ## <a name="arguments"></a>Arguments  
  `n`  
- Číselný výraz, který určuje počet řádků, který se má vrátit. `n`může být jeden číselný literál nebo jeden parametr.  
+ Číselný výraz, který určuje počet řádků, který se má vrátit. `n` může být jeden číselný literál nebo jeden parametr.  
   
 ## <a name="remarks"></a>Poznámky  
  Výraz TOP musí být jeden číselný literál nebo jeden parametr. Pokud se použije konstantní literál, musí být typu literálu implicitně možné zvýšit na Edm.Int64 (bajtů, int16, int32 nebo int64 nebo žádný typ zprostředkovatele, který se mapuje na typ, který je možné zvýšit na Edm.Int64) a jeho hodnota musí být větší než nebo rovna hodnotě nula. V opačném případě bude vyvolána výjimka. Pokud parametr je použit jako výraz, typ parametru musí být také implicitně možné zvýšit na Edm.Int64, ale nebude žádné ověření skutečný parametr hodnoty během kompilace vzhledem k tomu, že jsou hodnoty parametru pozdní vázaný.  

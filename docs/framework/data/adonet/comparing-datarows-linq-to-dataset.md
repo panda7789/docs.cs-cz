@@ -1,30 +1,18 @@
 ---
-title: "Porovnání DataRows (LINQ na DataSet)"
-ms.custom: 
+title: Porovnání DataRows (LINQ na DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8fe0eadf-297b-487c-8d4b-7816753c2883
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 78f3e701e63d83a8aa6ae1350ed10229e0200d37
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 79fc91092badfd871a1409e2ee602272f3eae100
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="comparing-datarows-linq-to-dataset"></a>Porovnání DataRows (LINQ na DataSet)
-[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]definuje různé operátory set k porovnání zdrojové elementy, které chcete zobrazit, pokud jsou stejné. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]poskytuje následující sadu operátory:  
+[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] definuje různé operátory set k porovnání zdrojové elementy, které chcete zobrazit, pokud jsou stejné. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] poskytuje následující sadu operátory:  
   
 -   <xref:System.Linq.Enumerable.Distinct%2A>  
   

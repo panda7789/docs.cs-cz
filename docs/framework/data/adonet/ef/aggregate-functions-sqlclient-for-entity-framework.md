@@ -1,24 +1,12 @@
 ---
-title: "Agregační funkce (SqlClient rozhraní Entity Framework)"
-ms.custom: 
+title: Agregační funkce (SqlClient rozhraní Entity Framework)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 03303f01-b591-4efc-9875-f9c608edff0b
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 11779c07661edb8bfecda3b8ef955c35989294be
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 558e9f8480dd69e2277603e9bb1013acfbc29467
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aggregate-functions-sqlclient-for-entity-framework"></a>Agregační funkce (SqlClient rozhraní Entity Framework)
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agregační funkce. Agregační funkce provádět výpočty na sadě vstupní hodnoty a vrátit hodnotu. Tyto funkce jsou v oboru názvů SQL Server, která je k dispozici při použití SqlClient. Umožňuje vlastnost obor názvů zprostředkovatele Entity Frameworku chcete zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce.  
@@ -31,9 +19,9 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agrega
  [!code-sql[DP EntityServices Concepts#SQLSERVER_AVG](../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_avg)]|  
 |`CHECKSUM_AGG(` `collection` `)`|Vrátí kontrolního součtu hodnot v kolekci.<br /><br /> Hodnoty Null se ignorují.<br /><br /> **Argumenty**<br /><br /> Kolekce (`Int32`).<br /><br /> **Návratová hodnota**<br /><br /> `Int32`.<br /><br /> **Příklad**<br /><br /> [!code-csharp[DP EntityServices Concepts#SQLSERVER_CHECKSUM](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_checksum)]
  [!code-sql[DP EntityServices Concepts#SQLSERVER_CHECKSUM](../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_checksum)]|  
-|`COUNT(` `expression` `)`|Vrátí počet položek v kolekci jako `Int32`.<br /><br /> **Argumenty**<br /><br /> Kolekce (T) kde T představuje jeden z následujících typů:<br /><br /> `Guid`(nebyla vrácena v systému SQL Server 2000),<br /><br /> `Boolean`, `Double`, `DateTime`, `DateTimeOffset`, `Time`, `String`, nebo `Binary`.<br /><br /> **Návratová hodnota**<br /><br /> `Int32`.<br /><br /> **Příklad**<br /><br /> [!code-csharp[DP EntityServices Concepts#SQLSERVER_COUNT](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_count)]
+|`COUNT(` `expression` `)`|Vrátí počet položek v kolekci jako `Int32`.<br /><br /> **Argumenty**<br /><br /> Kolekce (T) kde T představuje jeden z následujících typů:<br /><br /> `Guid` (nebyla vrácena v systému SQL Server 2000),<br /><br /> `Boolean`, `Double`, `DateTime`, `DateTimeOffset`, `Time`, `String`, nebo `Binary`.<br /><br /> **Návratová hodnota**<br /><br /> `Int32`.<br /><br /> **Příklad**<br /><br /> [!code-csharp[DP EntityServices Concepts#SQLSERVER_COUNT](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_count)]
  [!code-sql[DP EntityServices Concepts#SQLSERVER_COUNT](../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_count)]|  
-|`COUNT_BIG(` `expression` `)`|Vrátí počet položek v kolekci jako `bigint`.<br /><br /> **Argumenty**<br /><br /> Kolekce (T) kde T představuje jeden z následujících typů:<br /><br /> `Guid`(nebyla vrácena v systému SQL Server 2000), `Boolean`, `Double`, `DateTime`, `DateTimeOffset`, `Time`, `String`, nebo `Binary`.<br /><br /> **Návratová hodnota**<br /><br /> `Int64`.<br /><br /> **Příklad**<br /><br /> [!code-csharp[DP EntityServices Concepts#SQLSERVER_COUNTBIG](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_countbig)]
+|`COUNT_BIG(` `expression` `)`|Vrátí počet položek v kolekci jako `bigint`.<br /><br /> **Argumenty**<br /><br /> Kolekce (T) kde T představuje jeden z následujících typů:<br /><br /> `Guid` (nebyla vrácena v systému SQL Server 2000), `Boolean`, `Double`, `DateTime`, `DateTimeOffset`, `Time`, `String`, nebo `Binary`.<br /><br /> **Návratová hodnota**<br /><br /> `Int64`.<br /><br /> **Příklad**<br /><br /> [!code-csharp[DP EntityServices Concepts#SQLSERVER_COUNTBIG](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_countbig)]
  [!code-sql[DP EntityServices Concepts#SQLSERVER_COUNTBIG](../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_countbig)]|  
 |`MAX(` `expression` `)`|Vrátí maximální hodnotu kolekci.<br /><br /> **Argumenty**<br /><br /> Kolekce (T) kde T představuje jeden z následujících typů: `Byte`, `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, `Decimal`, `DateTime`, `DateTimeOffset`, `Time` , `String`, `Binary`.<br /><br /> **Návratová hodnota**<br /><br /> Typ `expression`.<br /><br /> **Příklad**<br /><br /> [!code-csharp[DP EntityServices Concepts#SQLSERVER_MAX](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_max)]
  [!code-sql[DP EntityServices Concepts#SQLSERVER_MAX](../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_max)]|  
@@ -54,7 +42,7 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agrega
   
 |SQL Server 2000|SQL Server 2005|SQL Server 2008|  
 |---------------------|---------------------|---------------------|  
-|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
+|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[Agregační funkce (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
   
 ## <a name="see-also"></a>Viz také  
  [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  

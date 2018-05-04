@@ -1,24 +1,12 @@
 ---
 title: ANYELEMENT (entita SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 475a9ad6-8c8d-4f49-9970-af273e5360f1
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6e74fbac9c2c57c653f55f76bf165d7eaebd9cee
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 11d1dd4b09ff07519f3435d313de72c5b9a3edf4
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="anyelement-entity-sql"></a>ANYELEMENT (entita SQL)
 Extrahuje element z kolekce s více hodnotami.  

@@ -1,24 +1,12 @@
 ---
-title: "PŘEJDĚTE (entita SQL)"
-ms.custom: 
+title: PŘEJDĚTE (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f107f29d-005f-4e39-a898-17f163abb1d0
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e6d61e3fb03a1e0ee0cdf344bd61167ad3046a13
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c374261ad3702294f5720edb7881e21ba79d85bc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="navigate-entity-sql"></a>PŘEJDĚTE (entita SQL)
 Přejde přes vztahu mezi entity.  
@@ -46,7 +34,7 @@ navigate(instance-expresssion, [relationship-type], [to-end [, from-end] ])
  Pokud na kardinalitu pro ukončení je 1, bude vrácenou hodnotu `Ref<T>`. Pokud na kardinalitu na konec n, bude vrácenou hodnotu `Collection<Ref<T>>`.  
   
 ## <a name="remarks"></a>Poznámky  
- První třídy konstrukce v se vztahy [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] (EDM). Vztahy lze navázat mezi dva nebo více typy entit a uživatelé mohou přejít přes vztah z jednoho elementu end (entita) do jiné. `from`a `to` jsou podmíněně volitelné při překladu názvů v rámci relace nedochází k nejednoznačnosti.  
+ První třídy konstrukce v se vztahy [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] (EDM). Vztahy lze navázat mezi dva nebo více typy entit a uživatelé mohou přejít přes vztah z jednoho elementu end (entita) do jiné. `from` a `to` jsou podmíněně volitelné při překladu názvů v rámci relace nedochází k nejednoznačnosti.  
   
  NAVIGOVAT je platná v prostoru O a C.  
   

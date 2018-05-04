@@ -1,24 +1,12 @@
 ---
-title: "ŘÁDEK (entita SQL)"
-ms.custom: 
+title: ŘÁDEK (entita SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 06da96e8-55d7-486c-991a-4e514d837ff9
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d7b7e817330f4cd51eb163d437f17d6f546e721f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: eb5062399eec9d8453d8922e05698ca9124d94d7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="row-entity-sql"></a>ŘÁDEK (entita SQL)
 Vytvoří anonymní, strukturálně typové záznamů z jednoho nebo více hodnot.  

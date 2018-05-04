@@ -1,24 +1,12 @@
 ---
-title: "Generování SQL úpravy"
-ms.custom: 
+title: Generování SQL úpravy
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6696d80246d61cc2eac47266837d79661141b9b0
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b7bb390fd4e221c70d5ed8da5873c557fcde3c98
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="modification-sql-generation"></a>Generování SQL úpravy
 Tato část popisuje, jak vyvíjet modul úpravy SQL generování pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překladu stromu příkazů změny do příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  
@@ -89,9 +77,9 @@ The elements of the list are specified as type DbModificationClause, which speci
   
 -   Objekt DbAndExpression  
   
--   DbNotExpression  
+-   Třída DbNotExpression  
   
--   DbOrExpression  
+-   Třída DbOrExpression  
   
 ## <a name="modification-sql-generation-in-the-sample-provider"></a>Generování SQL změny ve zprostředkovateli ukázka  
  [Zprostředkovatele Entity Framework ukázka](http://go.microsoft.com/fwlink/?LinkId=180616) ukazuje součástí zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Jeho cílem databáze systému SQL Server 2005 a je implementovaný jako obálku nad System.Data.SqlClient ADO.NET 2.0 dat zprostředkovatele.  
@@ -103,7 +91,7 @@ The elements of the list are specified as type DbModificationClause, which speci
   
  Tyto informace se věnuje návštěvou typy konkrétní výrazů (uzly s trivial překlady byly vynechány).  
   
-### <a name="dbcomparisonexpression"></a>DbComparisonExpression  
+### <a name="dbcomparisonexpression"></a>Objekt DbComparisonExpression  
  Pokud je ExpressionTranslator vytvořený pomocí preserveMemberValues = true, a když konstanta vpravo DbConstantExpression (namísto DbNullExpression) se přidruží levý operand (DbPropertyExpressions), DbConstantExpression. Který se používá, pokud je třeba vytvořit pro identifikaci příslušného řádku vyberte příkaz return.  
   
 ### <a name="dbconstantexpression"></a>DbConstantExpression  
@@ -115,7 +103,7 @@ The elements of the list are specified as type DbModificationClause, which speci
 ## <a name="generating-an-insert-sql-command"></a>Generování příkazu Insert SQL  
  Pro danou DbInsertCommandTree ve zprostředkovateli ukázkové následuje příkaz insert generovaného jednu z níže dvě vložení šablon.  
   
- První šablonu, kterou má příkaz k provedení vložení, na základě hodnot v seznamu SetClauses a vyberte příkaz vrátit vlastnosti zadaná ve vlastnosti Returning vloženého řádku, pokud vlastnost Returning nebyla null. Element predikátem "@@ROWCOUNT > 0" je hodnota true, pokud byl vložit řádek. Element predikátem "keyMemberI = keyValueI &#124; scope_identity() "trvá tvar" keyMemberI = scope_identity() "pouze v případě keyMemeberI je klíč generovaný úložištěm, protože scope_identity() vrátí poslední hodnotu identity, které jsou vloženy do sloupce identity (generovaný úložištěm).  
+ První šablonu, kterou má příkaz k provedení vložení, na základě hodnot v seznamu SetClauses a vyberte příkaz vrátit vlastnosti zadaná ve vlastnosti Returning vloženého řádku, pokud vlastnost Returning nebyla null. Element predikátem "@@ROWCOUNT > 0" je hodnota true, pokud byl vložit řádek. Element predikátem "keyMemberI = keyValueI &#124; scope_identity()" trvá tvar "keyMemberI = scope_identity()" pouze v případě keyMemeberI je klíč generovaný úložištěm, protože scope_identity() vrátí poslední hodnotu identity, které jsou vloženy do (identity sloupec generovaný úložištěm).  
   
 ```  
 -- first insert Template  

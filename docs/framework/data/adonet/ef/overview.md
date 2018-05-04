@@ -1,24 +1,12 @@
 ---
-title: "Přehled Entity Framework"
-ms.custom: 
+title: Přehled Entity Framework
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2bfccccbcfa41f8ed67cb309a0e4a3dd9dda6b90
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8b07fb9b80d5d0d13967c807198194b3a2228202
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je sada technologií v ADO.NET, které podporují vývoj aplikací orientovaných na data softwaru. Architekty a vývojáře aplikací orientovaných na data jste měli problémy s potřeba dosáhnout dva velmi různé cíle. Se musí modelu entity, vztahy a logiku z obchodních problémů, které jsou v řešení problémů a také musí pracovat s moduly data používá k ukládání a načítání dat. Data může span více úložných systémů, každou s vlastní protokoly; i aplikace, které pracují s systémem jedno úložiště, musíte vyvážit požadavky na úložiště systému podle požadavků zápisu kódu aplikace efektivní a udržovatelný.  
@@ -47,7 +35,7 @@ ms.lasthandoff: 01/19/2018
   
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Dává životnosti modely tím, že umožňuje vývojářům dotazu entity a vztahy v modelu domény (volá *koncepční* modelu v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]) při spoléhat na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] přeložit ty na datové zdroje specifické příkazy operací. Tím se uvolní pevně zakódované závislosti na určitý zdroj dat aplikace.  
   
- Při práci s Code First, konceptuálního modelu je namapována na modelu úložiště v kódu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Lze odvodit konceptuálního modelu na základě typů objektů a další konfigurace, které definujete. Mapování metadat je generován během běhu založené na kombinaci jak definované typy domény a další informace o konfiguraci, kterou zadáte v kódu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]generuje databáze podle potřeby založené na metadatech. Další informace najdete v tématu [vytvoření a mapování konceptuálního modelu](http://go.microsoft.com/fwlink/?LinkID=235382).  
+ Při práci s Code First, konceptuálního modelu je namapována na modelu úložiště v kódu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Lze odvodit konceptuálního modelu na základě typů objektů a další konfigurace, které definujete. Mapování metadat je generován během běhu založené na kombinaci jak definované typy domény a další informace o konfiguraci, kterou zadáte v kódu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] generuje databáze podle potřeby založené na metadatech. Další informace najdete v tématu [vytvoření a mapování konceptuálního modelu](http://go.microsoft.com/fwlink/?LinkID=235382).  
   
  Při práci s nástroje Entity Data Model, vyjádřené v jazyce XML schémata konceptuální model modelu úložiště a mapování mezi nimi a definované v souborech, které mají odpovídající přípony názvů:  
   
@@ -73,7 +61,7 @@ ms.lasthandoff: 01/19/2018
   
 -   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]. Poskytuje podporu Language-Integrated Query (LINQ) pro dotazování typy entit, které jsou definované v konceptuálním modelu. Další informace najdete v tématu [technologie LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).  
   
--   [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialekt nezávislé na úložiště SQL, který pracuje přímo s entity v konceptuálním modelu, které podporují [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] koncepty. [!INCLUDE[esql](../../../../../includes/esql-md.md)]se používá současně s dotazy na objekt a které jsou spouštěny pomocí zprostředkovatel EntityClient. Další informace najdete v tématu [Entity SQL přehled](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md).  
+-   [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialekt nezávislé na úložiště SQL, který pracuje přímo s entity v konceptuálním modelu, které podporují [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] koncepty. [!INCLUDE[esql](../../../../../includes/esql-md.md)] se používá současně s dotazy na objekt a které jsou spouštěny pomocí zprostředkovatel EntityClient. Další informace najdete v tématu [Entity SQL přehled](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md).  
   
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje data zprostředkovatel EntityClient. Tento zprostředkovatel spravuje připojení, překládá dotazy entity do dotazy specifické pro zdroj dat a vrátí čtecí modul dat, který [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] používá k vyhodnotit entity data do objektů. Pokud objekt materialization není vyžadováno, zprostředkovatel EntityClient lze také použít jako standardní [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele dat povolením, spouštět [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy a využívat čtecí modul vrácený dat jen pro čtení. Další informace najdete v tématu [zprostředkovatel EntityClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
   
@@ -85,7 +73,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="DataProviders"></a>   
 ## <a name="data-providers"></a>Zprostředkovatelé dat  
- `EntityClient` Zprostředkovatele rozšiřuje [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele modelu podle přístup k datům z hlediska koncepční entity a vztahy. Se provádí dotazy, které používají [!INCLUDE[esql](../../../../../includes/esql-md.md)]. [!INCLUDE[esql](../../../../../includes/esql-md.md)]poskytuje základní dotazovací jazyk, který umožňuje `EntityClient` ke komunikaci s databází. Další informace najdete v tématu [zprostředkovatel EntityClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+ `EntityClient` Zprostředkovatele rozšiřuje [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele modelu podle přístup k datům z hlediska koncepční entity a vztahy. Se provádí dotazy, které používají [!INCLUDE[esql](../../../../../includes/esql-md.md)]. [!INCLUDE[esql](../../../../../includes/esql-md.md)] poskytuje základní dotazovací jazyk, který umožňuje `EntityClient` ke komunikaci s databází. Další informace najdete v tématu [zprostředkovatel EntityClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
   
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Obsahuje aktualizované SqlClient pro zprostředkovatele dat, která podporuje kanonický strom příkazů. Další informace najdete v tématu [SqlClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md).  
   

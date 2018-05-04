@@ -1,24 +1,14 @@
 ---
 title: '&lt;federationConfiguration&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
-caps.latest.revision: "9"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 0014e0224221cd5143709ba0a5b38f10e457b494
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 44014d620dcd03e055eb58b50a1428b8e1b41186
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltfederationconfigurationgt"></a>&lt;federationConfiguration&gt;
 Nakonfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) při použití federovaného ověřování pomocí protokolu WS-Federation. Nakonfiguruje <xref:System.Security.Claims.ClaimsAuthorizationManager> při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu založené na deklaracích identity.  
@@ -76,7 +66,7 @@ Nakonfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModu
   
 4.  Pokud název více `<federationConfiguration>` prvky jsou přítomna a ne nepojmenované `<federationConfiguration>` element nachází, je vyvolána výjimka.  
   
- Obvykle jediným `<federationConfiguration>` je definován oddíl. Tato část je výchozí konfigurace federace. Můžete určit více jednoznačně názvem `<federationConfiguration>` elementy; ale v takovém případě Pokud chcete načíst konfiguraci federace než nepojmenované, je nutné zadat obslužnou rutinu pro. <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>události a sadu <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost uvnitř obslužná rutina <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objekt inicializovat pomocí hodnoty z příslušné `<federationConfiguration>` element v konfiguračním souboru.  
+ Obvykle jediným `<federationConfiguration>` je definován oddíl. Tato část je výchozí konfigurace federace. Můžete určit více jednoznačně názvem `<federationConfiguration>` elementy; ale v takovém případě Pokud chcete načíst konfiguraci federace než nepojmenované, je nutné zadat obslužnou rutinu pro. <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated> události a sadu <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost uvnitř obslužná rutina <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objekt inicializovat pomocí hodnoty z příslušné `<federationConfiguration>` element v konfiguračním souboru.  
   
  `<federationConfiguration>` Element je reprezentována <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement> třídy. Samotný objekt konfigurace je reprezentována <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> třídy. Jediný <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> instance je nastavený na <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost a poskytuje federované konfigurace pro aplikaci.  
   

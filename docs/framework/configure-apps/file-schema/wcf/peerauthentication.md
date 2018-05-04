@@ -1,33 +1,21 @@
 ---
 title: '&lt;peerAuthentication&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ad545e6f-f06e-4549-ac92-09d758d5c636
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a900a1f3fc2e07cffe04833cc3c7d3ccd063e24a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: a8cc52fb2179bb5fc38635e4de0063a1dc1b1833
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltpeerauthenticationgt"></a>&lt;peerAuthentication&gt;
 Určuje nastavení ověřování pro certifikát sdílené používá sdílené uzel.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors>  
+\<serviceBehaviors >  
 \<chování >  
-\<serviceCredentials>  
+\<– serviceCredentials >  
 \<sdílené >  
 \<peerAuthentication >  
   
@@ -50,7 +38,7 @@ Určuje nastavení ověřování pro certifikát sdílené používá sdílené 
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`certificateValidationMode`|Volitelné výčtu. Určuje jeden ze tří režimů slouží k ověření přihlašovacích údajů. Tento atribut je typu <xref:System.ServiceModel.Security.X509CertificateValidationMode>. Pokud nastavena na `Custom`, pak `customCertificateValidator` musí být uveden také.|  
-|`customCertificateValidatorType`|Volitelný řetězec. Určuje typ a sestavení, které slouží k ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastaven na `Custom`. Tento atribut je typu <xref:System.IdentityModel.Selectors.X509CertificateValidator>. [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]poskytuje sdílené výchozí validátor certifikátu, který ověřuje certifikátu partnerského proti úložiště důvěryhodných osob. Také ověřuje, že certifikát řetězí platný kořenový. Můžete implementovat vlastní validátor zadejte odlišné chování a používat tento atribut tak, aby odkazovalo na vlastní validátor.|  
+|`customCertificateValidatorType`|Volitelný řetězec. Určuje typ a sestavení, které slouží k ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastaven na `Custom`. Tento atribut je typu <xref:System.IdentityModel.Selectors.X509CertificateValidator>. Windows Communication Foundation (WCF) poskytuje sdílené výchozí validátor certifikátu, který ověřuje certifikátu partnerského proti úložiště důvěryhodných osob. Také ověřuje, že certifikát řetězí platný kořenový. Můžete implementovat vlastní validátor zadejte odlišné chování a používat tento atribut tak, aby odkazovalo na vlastní validátor.|  
 |`revocationMode`|Volitelné výčtu. Určuje režim odvolání certifikátu. Tento atribut je typu <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode>. Systém ověří, že sdílené certifikát nebyl odvolaný podle vyhledá v seznamu odvolaných certifikátů. Tato kontrola může provést kontrolou online nebo seznam odvolaných certifikátů uložené v mezipaměti. Kontrola odvolání může být vypnuto nastavením tohoto atributu na hodnotu NoCheck.|  
 |`trustedStoreLocation`|Volitelné výčtu. Určuje umístění důvěryhodného úložiště, kde je ověřen certifikátu partnerského [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zabezpečení systému. Tento atribut je typu <xref:System.Security.Cryptography.X509Certificates.StoreLocation>.|  
   

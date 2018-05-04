@@ -1,29 +1,17 @@
 ---
 title: '&lt;msmqTransport&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 441ec2cd07d46d44f527da7799e9df6d3bec4408
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 203c6dce4f88433852a54c618718e280152db897
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
 Na přenos MSMQ způsobí kanálu pro přenos zpráv, když je zahrnutý do vlastní vazby.  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<vazby >  
 \<customBinding >  
 \<Vazba >  
@@ -73,9 +61,9 @@ Na přenos MSMQ způsobí kanálu pro přenos zpráv, když je zahrnutý do vlas
 |MaxReceivedMessageSize|Kladné celé číslo, které určuje maximální velikost zprávy v bajtech, včetně hlavičky. Odesílatel zprávy obdrží chybu protokolu SOAP po příliš velké vzhledem k příjemce zprávy. Příjemce zahodí zprávy a vytvoří položku události v protokolu trasování. Výchozí hodnota je 65536.|  
 |maxRetryCycles|Celé číslo, které určuje maximální počet cyklů opakování pokusu o doručení zprávy do přijímající aplikace. Výchozí hodnota je <xref:System.Int32.MaxValue>.<br /><br /> Cyklus jeden opakování se pokusí odeslat zprávu do aplikace zadaného počtu opakování. Počet provedených pokusů nastavena `maxImmediateRetries` atribut. Pokud aplikace využívat zprávu po byly vyčerpány pokusů na doručení, je zpráva odeslána do fronty opakování. Následné opakování cykly obsahovat zprávy do fronty aplikace návratu z fronty opakování pokusu o doručení do aplikace znovu po prodlevě určeného `retryCycleDelay` atribut. `maxRetryCycles` Atribut určuje počet cyklů opakování aplikace využívá při pokusu o doručení zprávy.|  
 |Třída QueueTransferProtocol|Určuje přenosu kanál komunikace ve frontě, která používá tuto vazbu. Platné hodnoty jsou<br /><br /> -Native: Použijte nativní protokol služby MSMQ.<br />-Srmp: Použijte spolehlivého zasílání zpráv protokolu Soap (SRMP).<br />-SrmpSecure: Používají přenos protokolu Soap spolehlivého zasílání zpráv protokolu zabezpečení (SRMPS).<br /><br /> Tento atribut je typu <xref:System.ServiceModel.QueueTransferProtocol>.<br /><br /> Vzhledem k tomu, že služby MSMQ nepodporuje služby Active Directory adresování při použití protokolu SOAP spolehlivého zasílání zpráv, by neměl nastavte tento atribut Srmp nebo Srmps při `u``seActiveDirectory` je nastaven na `true`.|  
-|rejectAfterLastRetry|Logická hodnota, která určuje, jaká opatření se mají přijmout zprávy, která se nezdařila doručení po maximální počet opakovaných pokusů se pokusil.<br /><br /> `true`znamená, že záporné potvrzení se vrátí do odesílatele a zpráva je vyřazena; `false` znamená, že je zpráva odeslána do fronty poškozených zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je hodnota `false`, má přijímající aplikace může číst nezpracovatelná zpráva fronty ke zpracování poškozených zpráv (tedy zpráv, které selhaly doručení).<br /><br /> Služba MSMQ 3.0 nepodporuje záporné potvrzení vrácením odesílatele, tento atribut bude proto ignorován v MSMQ 3.0.|  
+|rejectAfterLastRetry|Logická hodnota, která určuje, jaká opatření se mají přijmout zprávy, která se nezdařila doručení po maximální počet opakovaných pokusů se pokusil.<br /><br /> `true` znamená, že záporné potvrzení se vrátí do odesílatele a zpráva je vyřazena; `false` znamená, že je zpráva odeslána do fronty poškozených zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je hodnota `false`, má přijímající aplikace může číst nezpracovatelná zpráva fronty ke zpracování poškozených zpráv (tedy zpráv, které selhaly doručení).<br /><br /> Služba MSMQ 3.0 nepodporuje záporné potvrzení vrácením odesílatele, tento atribut bude proto ignorován v MSMQ 3.0.|  
 |retryCycleDelay|A <xref:System.TimeSpan> , který určuje prodlevu mezi cykly opakovat při pokusu o doručení zprávy, která nelze doručit okamžitě. Výchozí hodnota je 00:10:00.<br /><br /> Cyklus jeden opakování se pokusí doručit zprávu přijímající aplikace zadaného počtu opakování. Počet provedených pokusů je zadána `maxImmediateRetries` atribut. Pokud aplikace využívat zprávu po zadaný počet opakování okamžitě, je zpráva odeslána do fronty opakování. Následné opakování cykly obsahovat zprávy do fronty aplikace návratu z fronty opakování pokusu o doručení do aplikace znovu po prodlevě určeného `retryCycleDelay` atribut. Počet cyklů opakování je zadána `maxRetryCycles` atribut.|  
-|TimeToLive|A <xref:System.TimeSpan> určující, jak dlouho jsou zprávy platné předtím, než platnost a jsou umístěna do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00, což znamená 1 den.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `customDeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
+|timeToLive|A <xref:System.TimeSpan> určující, jak dlouho jsou zprávy platné předtím, než platnost a jsou umístěna do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00, což znamená 1 den.<br /><br /> Tento atribut nastavený zajistit, že zprávy dobou nepřestali být zastaralé dříve, než je přijímací aplikace. Zprávy ve frontě, který není přijímající aplikace v rámci zadaného časového intervalu říká, že je mít skončenou platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `customDeadLetterQueue` atribut, nebo odpovídající výchozí, aby na základě záruky.|  
 |Třída UseActiveDirectory|Logická hodnota, která určuje, zda mají být převedeny fronty adresy pomocí služby Active Directory.<br /><br /> MSMQ fronty adresy se může skládat z názvů cestu nebo přímé formátu. Pomocí přímého názvu formátu vyřeší MSMQ názvu počítače pomocí DNS, pro rozhraní NetBIOS nebo IP. S názvem cesty vyřeší MSMQ názvu počítače pomocí služby Active Directory. Ve výchozím nastavení Windows Communication Framework (WCF) zařazených do fronty přenosu převede identifikátor URI k přímého názvu formátu fronty zpráv. Nastavením tohoto atributu na `true`, aplikace, můžete určit, že zařazených do fronty přenosu by měla vyřešit název počítače pomocí služby Active Directory místo DNS, pro rozhraní NetBIOS nebo IP.|  
 |useMsmqTracing|Logická hodnota, která určuje, zda zprávy zpracovávané touto vazbou má trasovat. Výchozí hodnota je `false`.<br /><br /> Pokud je povoleno sledování, sestava zprávy se vytváří a odesílají do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítači služby Řízení front zpráv.|  
 |useSourceJournal|Logická hodnota, která určuje, zda by měly být uložené kopie zprávy zpracovávané touto vazbou ve frontě deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Ve frontě aplikací, které chcete zachovat záznam zprávy, které mají zbývající počítače fronty odesílaných zpráv můžete zkopírovat do deníku fronty zpráv. Jakmile zprávu opustí fronty odesílaných zpráv a je obdržena potvrzení, že zpráva byla přijata v cílovém počítači, je udržováno kopie zprávy ve frontě deníku odesílající počítač systému.|  

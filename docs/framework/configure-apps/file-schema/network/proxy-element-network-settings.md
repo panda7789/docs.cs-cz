@@ -1,13 +1,6 @@
 ---
-title: "&lt;proxy&gt; – Element (nastavení sítě)"
-ms.custom: 
+title: '&lt;proxy&gt; – Element (nastavení sítě)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#proxy
@@ -15,22 +8,20 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: b0b397e66e0f73d10f482bc9151a6fbacf3e774d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5ae716994f9b8222a633699367c94480179c97b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltproxygt-element-network-settings"></a>&lt;proxy&gt; – Element (nastavení sítě)
 Definuje proxy server.  
   
  \<Konfigurace >  
-\<System.NET >  
+\<system.net>  
 \<defaultProxy – >  
 \<proxy >  
   
@@ -54,7 +45,7 @@ Definuje proxy server.
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
 |`autoDetect`|Určuje, zda je automaticky zjišťován proxy serveru. Výchozí hodnota je `unspecified`.|  
-|`bypassonlocal`|Určuje, zda je u místních prostředků název proxy serveru. Místní prostředky zahrnují URI bez tečky (http://webserver) a na místním serveru (http://localhost, http://loopback nebo http://127.0.0.1). Výchozí hodnota je `unspecified`.|  
+|`bypassonlocal`|Určuje, zda je u místních prostředků název proxy serveru. Místní prostředky zahrnují místní server (http://localhost, http://loopback, nebo http://127.0.0.1) a identifikátoru URI bez období (http://webserver). Výchozí hodnota je `unspecified`.|  
 |`proxyaddress`|Určuje identifikátor URI k použití proxy serveru.|  
 |`scriptLocation`|Určuje umístění konfigurační skript.|  
 |`usesystemdefault`|Určuje, jestli se má používat nastavení proxy serveru aplikace Internet Explorer. Pokud nastavena na `true`, následující atributy se přepíše nastavení proxy serveru aplikace Internet Explorer. Výchozí hodnota je `unspecified`.|  

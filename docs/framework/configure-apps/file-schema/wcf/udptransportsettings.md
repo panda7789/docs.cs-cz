@@ -1,29 +1,17 @@
 ---
 title: '&lt;udpTransportSettings&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 842d92e9-6199-4ec5-b2d1-58533054e1f0
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 88b38fc7c67c404446000ca79d2c6191bfc7eed5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f1ec25a5747186ade1d721f266ff58fa5e559a49
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltudptransportsettingsgt"></a>&lt;udpTransportSettings&gt;
 Tento element konfigurace se zobrazí nastavení přenosu UDP pro [ \<udpDiscoveryEndpoint >](../../../../../docs/framework/configure-apps/file-schema/wcf/udpdiscoveryendpoint.md).  
   
-\<systém. ServiceModel >  
+\<system.ServiceModel>  
 \<standardEndpoints >  
 \<udpDiscoveryEndpoint >  
   
@@ -64,7 +52,7 @@ Tento element konfigurace se zobrazí nastavení přenosu UDP pro [ \<udpDiscove
 |maxUnicastRetransmitCount|Celé číslo, které určuje maximální počet, kolikrát zpráva by měla být přeneseny (kromě první odesílání).  Pokud je zpráva odeslána na adresu jednosměrového vysílání a příjmu zprávy odpovědi s odpovídající související s hlavičkou, může přenos ukončit již v rané fázi (před opětovným odesláním nakonfigurované stanovený počet).<br /><br /> Výchozí hodnota je 1.|  
 |multicastInterfaceId|Řetězec, který jednoznačně identifikuje síťový adaptér, který se má použít při odesílání a příjem přenosů vícesměrového vysílání na počítačích s více adresami. Za běhu, bude přenos používat hodnota atributu k vyhledávání index rozhraní, které se pak použije k nastavení `IP_MULTICAST_IF` a `IPV6_MULTICAST_IF` soketu možnosti.  Stejný index rozhraní se použije při připojení ke skupině vícesměrového vysílání, pokud je k dispozici.<br /><br /> Výchozí hodnota je `null`.|  
 |socketReceiveBufferSize|Celé číslo, které určuje velikost vyrovnávací paměti receive na základní soketu rozhraní WinSock.<br /><br /> Může uživatel přijímající kanál používat tento atribut na vazby pro řízení chování při přijetí dat v systému.  Například danou aplikaci, která spotřebovává příchozí zprávy WCF na maximální prahová hodnota, pomocí vyšší hodnota pro tento atribut by povolit zpráv zásobníku ve vyrovnávací paměti rozhraní WinSock při čekání na aplikaci, která bude moct jejich zpracování.  Pomocí na nižší hodnotu ve stejné situaci by způsobilo získávání ztracených zpráv. Tento atribut zpřístupňuje základní rozhraní WinSock `SO_RCVBUF` soketu možnost. Hodnota tohoto atributu musí být alespoň velikost `maxReceivedMessageSize`.   Jeho nastavení na hodnotu menší, než `maxReceivedMessageSize` způsobí výjimku modulu runtime.<br /><br /> Výchozí hodnota je 65536.|  
-|TimeToLive|Celé číslo, které určuje počet síťové segment směrování, které mohou procházet paketů vícesměrového vysílání.  Tento atribut zveřejňuje funkce související s `IP_MULTICAST_TTL` a `IP_TTL` soketu možnosti.<br /><br /> Výchozí hodnota je 1.|  
+|timeToLive|Celé číslo, které určuje počet síťové segment směrování, které mohou procházet paketů vícesměrového vysílání.  Tento atribut zveřejňuje funkce související s `IP_MULTICAST_TTL` a `IP_TTL` soketu možnosti.<br /><br /> Výchozí hodnota je 1.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
