@@ -1,3 +1,0 @@
-
-> [!IMPORTANT] 
-> Místo volání **String.Format** metoda nebo pomocí [složených formátovacích řetězců](~/docs/standard/base-types/composite-formatting.md), můžete použít *interpolované řetězce* Pokud je váš jazyk podporuje. Interpolované řetězce je řetězec, který obsahuje *interpolované výrazy*. Každý interpolované výraz je hodnota výrazu se vyřešil a zahrnuty ve výsledném řetězci, jakmile bude přiřazena řetězec. Další informace najdete v tématu [řetězec interpolace (referenční dokumentace jazyka C#)](~/docs/csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (referenční dokumentace jazyka Visual Basic)](~/docs/visual-basic/programming-guide/language-features/strings/interpolated-strings.md). 

@@ -1,2 +1,0 @@
-> [!NOTE]
->  Tento příklad kódu používá přetížení této přetížené metody, které se liší od konkrétního přetížení popsaného v tomto tématu. Pokud chcete příklad rozšířit na toto téma, změňte obsah funkce `selector`.

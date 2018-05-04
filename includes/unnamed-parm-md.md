@@ -1,1 +1,0 @@
-Některé metody, hlavně operátory, deklarují typ parametru, ale neurčují jeho název. Takový parametr se nazývá *nepojmenovaný parametr*. V dokumentaci pro tyto metody *__unnamed0* zastupuje nepojmenovaný parametr zástupný symbol.

@@ -1,4 +1,0 @@
-
-Ale při volání metody **String.Format** metoda, není nutné se zaměřit na konkrétní přetížení, které chcete volat. Místo toho můžete volat metodu s [složený formátovací řetězec](~/docs/standard/base-types/composite-formatting.md) , který obsahuje jednu nebo více položek formátu. Přiřadit každé položky formátu číselný index; index prvního začíná na 0. Kromě počáteční řetězec by měl mít vaše volání metody tolik další argumenty, protože má hodnoty indexu. Řetězec, jehož formát položky mají indexy 0 a 1 by měl mít například 2 argumenty; s indexy 0 až 5 by měl mít 6 argumenty. Vaše kompilátor jazyka pak vyřeší vaše volání metody na konkrétní přetížení **String.Format** metoda.   
- 
-Podrobnější dokumentaci k používání **String.Format** metodu, najdete v části [Začínáme s String.Format – metoda](#Starting) a [jakou metodu je volání?](#FTaskList).    

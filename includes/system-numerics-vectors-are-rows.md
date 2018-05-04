@@ -1,1 +1,0 @@
-Pro maticové transformace <xref:System.Numerics.Vector2>, <xref:System.Numerics.Vector3>, a <xref:System.Numerics.Vector4> instance jsou reprezentovány jako řádky: vektor *v* transformována matice *M* s *virtuálních počítačů*  násobení.

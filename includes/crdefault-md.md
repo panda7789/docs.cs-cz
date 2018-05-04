@@ -1,1 +1,0 @@
-Další informace naleznete v tématu

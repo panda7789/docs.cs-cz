@@ -1,1 +1,0 @@
-Nezávislý výrobce softwaru (ISV)

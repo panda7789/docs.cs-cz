@@ -1,1 +1,0 @@
-Příklad pro

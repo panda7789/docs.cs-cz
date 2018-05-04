@@ -1,1 +1,0 @@
-Typ elementu v řízené sekvenci

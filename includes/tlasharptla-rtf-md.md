@@ -1,1 +1,0 @@
-RTF (Rich Text Format)

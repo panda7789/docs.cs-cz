@@ -1,1 +1,0 @@
-Nepřímý přístup ke každé veřejné vlastnosti a události tohoto typu máte prostřednictvím odpovídající vlastnosti závislosti. Tato vlastnost závislosti je veřejné statické pole s názvem **XProperty** nebo **XEvent**, kde X je odpovídající vlastnost.

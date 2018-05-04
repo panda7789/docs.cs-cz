@@ -1,1 +1,0 @@
-jednotka nezávislá na zařízení (1/96 palce)

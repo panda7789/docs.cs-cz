@@ -1,1 +1,0 @@
-Globálně jedinečný identifikátor (GUID)

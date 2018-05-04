@@ -1,1 +1,0 @@
-Převod mohou používat normalizaci formuláře C i v případě, že vstupní znak je již plnou šířkou. Například řetězec "は゛" (což je už s plnou šířkou) normalizována na "ば". V tématu [Unicode normalization forms](http://unicode.org/reports/tr15).

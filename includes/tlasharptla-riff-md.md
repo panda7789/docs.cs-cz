@@ -1,1 +1,0 @@
-RIFF (Resource Interchange File Format)

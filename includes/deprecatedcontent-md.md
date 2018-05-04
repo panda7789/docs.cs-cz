@@ -1,1 +1,0 @@
-V tomto materiálu jsou popsané zastaralé typy a obory názvů. Další informace najdete v tématu [zastaralé typy v systému Windows Workflow Foundation 4.5](http://aka.ms/wfdeprecatedtypes).
