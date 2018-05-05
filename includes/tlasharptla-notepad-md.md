@@ -1,1 +1,0 @@
-<span data-ttu-id="f471a-101">Poznámkový blok</span><span class="sxs-lookup"><span data-stu-id="f471a-101">Microsoft Notepad</span></span>

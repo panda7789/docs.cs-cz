@@ -1,1 +1,0 @@
-<span data-ttu-id="477cf-101">Profil klienta rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="477cf-101">.NET Framework Client Profile</span></span>

@@ -1,1 +1,0 @@
-<span data-ttu-id="ca953-101">RIFF (Resource Interchange File Format)</span><span class="sxs-lookup"><span data-stu-id="ca953-101">Resource Interchange File Format (RIFF)</span></span>

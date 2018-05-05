@@ -1,1 +1,0 @@
-<span data-ttu-id="3d0ed-101">.NET Framework</span><span class="sxs-lookup"><span data-stu-id="3d0ed-101">.NET Framework</span></span>

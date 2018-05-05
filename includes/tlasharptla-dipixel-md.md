@@ -1,1 +1,0 @@
-<span data-ttu-id="c9b5f-101">jednotka nezávislá na zařízení (1/96 palce)</span><span class="sxs-lookup"><span data-stu-id="c9b5f-101">device-independent unit (1/96th inch)</span></span>

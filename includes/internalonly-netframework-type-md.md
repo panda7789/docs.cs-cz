@@ -1,1 +1,0 @@
-<span data-ttu-id="e9013-101">Tento typ podporuje infrastrukturu rozhraní .NET Framework a není určen pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="e9013-101">This type supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>

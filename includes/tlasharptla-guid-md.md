@@ -1,1 +1,0 @@
-<span data-ttu-id="b9331-101">Globálně jedinečný identifikátor (GUID)</span><span class="sxs-lookup"><span data-stu-id="b9331-101">globally unique identifier (GUID)</span></span>
