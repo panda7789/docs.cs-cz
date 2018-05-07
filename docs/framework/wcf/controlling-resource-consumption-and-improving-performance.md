@@ -1,32 +1,18 @@
 ---
 title: Řízení spotřeby prostředků a zlepšení výkonu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6e864e0a90dbb46f440e2eba2b676413c72e0da9
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 031261f50a0615efa7227d3655c90c3423e77796
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Řízení spotřeby prostředků a zlepšení výkonu
-Toto téma popisuje různé vlastnosti v jiné oblasti [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architekturu, která pracují pro řízení spotřeby prostředků a ovlivnit metriky výkonu.  
+Toto téma popisuje různé vlastnosti v různých oblastech architektury Windows Communication Foundation (WCF), která fungují pro řízení spotřeby prostředků a ovlivnit metrik výkonu.  
   
 ## <a name="properties-that-constrain-resource-consumption-in-wcf"></a>Vlastnosti, které omezit spotřeby prostředků ve službě WCF  
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] platí omezení na určité typy procesů pro účely zabezpečení a výkonu. Tato omezení mají dvě hlavní formy, kvóty a omezení. *Kvóty* jsou limity, které při dosažena nebo překročena spuštění okamžitou výjimky v určitém okamžiku v systému. *Omezí generovaný* jsou limity, které okamžitě nezpůsobí vyvolání výjimky. Místo toho po dosažení limit omezení zpracování pokračuje ale v rámci omezení nastavuje tuto hodnotu omezení. Omezené zpracování může aktivovat jinde výjimku, ale to závisí na aplikaci.  
+ Windows Communication Foundation (WCF) platí omezení na určité typy procesů pro účely zabezpečení a výkonu. Tato omezení mají dvě hlavní formy, kvóty a omezení. *Kvóty* jsou limity, které při dosažena nebo překročena spuštění okamžitou výjimky v určitém okamžiku v systému. *Omezí generovaný* jsou limity, které okamžitě nezpůsobí vyvolání výjimky. Místo toho po dosažení limit omezení zpracování pokračuje ale v rámci omezení nastavuje tuto hodnotu omezení. Omezené zpracování může aktivovat jinde výjimku, ale to závisí na aplikaci.  
   
  Kromě rozdíl mezi kvóty a omezení některé omezující vlastnosti jsou umístěné na úrovni serializace, některé na úrovni přenosu a některé na úrovni aplikace. Například kvótu <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType>, které je implementované všechny prvky vazeb přenosu poskytnuté systémem, je 65 536 bajtů ve výchozím nastavení má bránit škodlivý klienti účastnit denial-of-service útoky na služby tím, že na příliš mnoho paměti Spotřeba. (Obvykle, můžete zvýšit výkon snížením tuto hodnotu.)  
   

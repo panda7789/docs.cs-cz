@@ -1,24 +1,17 @@
 ---
-title: "bool (Referenční dokumentace jazyka C#)"
+title: bool (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - bool_CSharpKeyword
 - bool
 helpviewer_keywords:
 - bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1d52955d64a6c8063e4ea93ceb096459c1c5e984
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1045a459491b0d0d6a84c60f6e820297b47efd5f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bool-c-reference"></a>bool (Referenční dokumentace jazyka C#)
 `bool` – Klíčové slovo je zástupce <xref:System.Boolean?displayProperty=nameWithType>. Se používá k deklaraci proměnné, které chcete uložit logické hodnoty [true](../../../csharp/language-reference/keywords/true.md) a [false](../../../csharp/language-reference/keywords/false.md).  
@@ -52,7 +45,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  

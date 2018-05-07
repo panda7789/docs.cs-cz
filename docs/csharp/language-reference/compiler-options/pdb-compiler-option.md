@@ -1,10 +1,6 @@
 ---
-title: "-pdb (možnosti kompilátoru C#)"
+title: -pdb (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /pdb
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7528283765c2b6f4a9d5e84015526a95938a6281
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9f8158ec0d8de2b9249c4f69830c37480c34b390
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-pdb-c-compiler-options"></a>-pdb (možnosti kompilátoru C#)
 **- Pdb** – možnost kompilátoru Určuje název a umístění souboru pro symboly ladění.  

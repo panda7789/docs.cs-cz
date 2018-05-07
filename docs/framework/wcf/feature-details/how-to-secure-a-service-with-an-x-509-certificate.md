@@ -1,32 +1,20 @@
 ---
 title: 'Postupy: Zabezpečení služby certifikátem X.509'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-caps.latest.revision: 8
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 89ad47ad898184b99f32743855091c0985722f77
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 73fd9919d1403ef592e5b81c11b6eb659baea669
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Postupy: Zabezpečení služby certifikátem X.509
-Zabezpečení služby certifikátem X.509 je základní technika, většina vazeb v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] použít. Toto téma vás provede kroky konfigurace služba s vlastním hostováním společně s certifikátem X.509.  
+Zabezpečení služby certifikátem X.509 je základní technika, použít většinu vazby ve Windows Communication Foundation (WCF). Toto téma vás provede kroky konfigurace služba s vlastním hostováním společně s certifikátem X.509.  
   
  Předpokladem je platný certifikát, který slouží k ověření serveru. Certifikát musí být k serveru vydán důvěryhodnou certifikační autoritou. Pokud certifikát platný není, všechny klient pokouší použít službu nebude důvěřovat služby a v důsledku toho budou provedeny žádné připojení. Další informace o používání certifikátů najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
@@ -44,7 +32,7 @@ Zabezpečení služby certifikátem X.509 je základní technika, většina vaze
      [!code-csharp[C_SecureWithCertificate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#2)]
      [!code-vb[C_SecureWithCertificate#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#2)]  
   
-4.  Vytvoření instance <xref:System.Uri> třídy pro bázovou adresu služby. Protože `WSHttpBinding` používá přenos HTTP, identifikátor URI (Uniform Resource) musí začínat řetězcem schématu, nebo [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vyvolá výjimku při otevření službu.  
+4.  Vytvoření instance <xref:System.Uri> třídy pro bázovou adresu služby. Protože `WSHttpBinding` používá přenos HTTP, identifikátor URI (Uniform Resource) musí začínat řetězcem schéma této nebo Windows Communication Foundation (WCF) vyvolá výjimku, když je otevřen službu.  
   
      [!code-csharp[C_SecureWithCertificate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#3)]
      [!code-vb[C_SecureWithCertificate#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#3)]  

@@ -1,13 +1,6 @@
 ---
-title: "Použití transformací pro škálování barev"
-ms.custom: 
+title: Použití transformací pro škálování barev
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - transformations [Windows Forms], for scaling colors
 - colors [Windows Forms], scaling
 ms.assetid: df23c887-7fd6-4b15-ad94-e30b5bd4b849
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7515f34858ef6f4b0495ac6fc545ae498d45c7f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6cfe90cef42086672990c45c99961db3d29c3ff3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-transformations-to-scale-colors"></a>Použití transformací pro škálování barev
 Škálování transformace vynásobí jednu nebo více součástí čtyři barvu podle čísla. V následující tabulce jsou uvedeny položek matice barev, které představují škálování.  

@@ -1,24 +1,12 @@
 ---
 title: System.TimeSpan metody
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9333fee8-1454-4374-855b-8c14c002f48f
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: baec7609ce1d2f04b1c24165c53bc7cce425f06d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2cb7201c113fe72ce03d0308ab8f97dca585e602
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemtimespan-methods"></a>System.TimeSpan metody
 Podpora člen <xref:System.TimeSpan?displayProperty=nameWithType> výrazně závisí na verze rozhraní .NET Framework a Microsoft SQL Server, který používáte.  

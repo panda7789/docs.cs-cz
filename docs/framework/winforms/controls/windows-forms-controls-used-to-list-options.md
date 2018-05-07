@@ -1,27 +1,15 @@
 ---
-title: "Ovládací prvky Windows Forms používané k výpisu možností"
-ms.custom: 
+title: Ovládací prvky Windows Forms používané k výpisu možností
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms controls, listing options
 - option lists in Windows Forms
 ms.assetid: 5bc064c7-bc1f-4b62-8f4b-252f864b118e
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f43e8982dc9caaa57ffb6865bf9988243f42fa8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4f4dded135a2239d2c10fde71e068ccc03c97707
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-forms-controls-used-to-list-options"></a>Ovládací prvky Windows Forms používané k výpisu možností
 Pokud chcete uživatelům poskytnout seznam na výběr možnosti, můžete přidat řadu ovládacích prvků na formuláři Windows. V závislosti na tom, kolik chcete omezit vaši uživatelé vstup, můžete přidat <xref:System.Windows.Forms.ListBox> řízení, <xref:System.Windows.Forms.ComboBox> ovládací prvek, nebo <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku. Pomocí následujících odkazů k určení, který ovládací prvek nejlepší vyhovuje vašim potřebám.  

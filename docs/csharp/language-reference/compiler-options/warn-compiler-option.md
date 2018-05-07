@@ -1,10 +1,6 @@
 ---
-title: "-warn (možnosti kompilátoru C#)"
+title: -warn (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /warn
 helpviewer_keywords:
@@ -16,14 +12,11 @@ helpviewer_keywords:
 - w compiler option [C#]
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 6a1f2c55aa078adb213a93dc5aff7ced40793bfa
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 65a6348bb0364d79ed0e69daf3a31ea7aa1bf8ea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (možnosti kompilátoru C#)
 **-Warn** možnost určuje úroveň pro upozornění pro kompilátor zobrazovat.  

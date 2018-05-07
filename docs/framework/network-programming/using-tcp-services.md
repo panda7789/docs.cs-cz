@@ -1,12 +1,6 @@
 ---
-title: "Pomocí služby TCP"
-ms.custom: 
+title: Pomocí služby TCP
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +16,14 @@ helpviewer_keywords:
 - protocols, TCP
 - Internet, TCP
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 5fce23d35c5c90799960a8075b610e5b7294ef66
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d11566182cc9d0b4f2634350868ec94a0685d996
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-tcp-services"></a>Pomocí služby TCP
 <xref:System.Net.Sockets.TcpClient> Třída vyžaduje data z internetových prostředků pomocí protokolu TCP. Metody a vlastnosti **TcpClient** abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu TCP. Protože připojení k vzdálené zařízení je reprezentována jako datový proud, data můžete číst a zapisovat s techniky zpracování datového proudu rozhraní .NET Framework.  
@@ -110,7 +102,7 @@ public class TcpTimeClient {
 }  
 ```  
   
- <xref:System.Net.Sockets.TcpListener>slouží k monitorování portu TCP pro příchozí požadavky a poté vytvořit buď **soketu** nebo **TcpClient** který spravuje připojení ke klientovi. <xref:System.Net.Sockets.TcpListener.Start%2A> Metoda umožňuje naslouchá a <xref:System.Net.Sockets.TcpListener.Stop%2A> metoda zakáže naslouchá na portu. <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> Metoda přijímá příchozí požadavky na připojení a vytváří **TcpClient** pro zpracování požadavku a <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> metoda přijímá příchozí požadavky na připojení a vytváří **soketu**pro zpracování požadavku.  
+ <xref:System.Net.Sockets.TcpListener> slouží k monitorování portu TCP pro příchozí požadavky a poté vytvořit buď **soketu** nebo **TcpClient** který spravuje připojení ke klientovi. <xref:System.Net.Sockets.TcpListener.Start%2A> Metoda umožňuje naslouchá a <xref:System.Net.Sockets.TcpListener.Stop%2A> metoda zakáže naslouchá na portu. <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> Metoda přijímá příchozí požadavky na připojení a vytváří **TcpClient** pro zpracování požadavku a <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> metoda přijímá příchozí požadavky na připojení a vytváří **soketu**pro zpracování požadavku.  
   
  Následující příklad ukazuje, vytváření s použitím serveru sítě čas **TcpListener** monitorování portu TCP 13. Když je přijatá příchozí požadavek na připojení, čas server odpoví aktuální datum a čas z hostitelského serveru.  
   

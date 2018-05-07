@@ -1,23 +1,12 @@
 ---
 title: WorkflowApplication ReadLine hostitele
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f7b362be-cb42-40d7-b9ef-cfc4aed2455b
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f8426dd3835f53eeb85711a691c878ce2b877d09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8da8a5bb4c80a86fe5ae9e133ea545c00ee17fba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="workflowapplication-readline-host"></a>WorkflowApplication ReadLine hostitele
 Tato ukázka je obecný ReadLine hostitele. Můžete načíst a spustit žádný pracovní postup pomocí zahrnutou `ReadLine` aktivity (nebo ostatní aktivity, jako je získávající data z záložky pokračuje s řetězce). Výstup z `WriteLine` aktivity nebo nic zápis do <xref:System.Activities.Statements.WriteLine.TextWriter%2A> rozšíření se nasměruje do okna hostitele. Při nečinnosti instance, k dispozici záložky u dané instance se objeví v poli se seznamem. Vyberte záložku, vložení textu, některé a kliknutím na tlačítko Obnovit záložku pokračovat v provádění pracovního postupu. Můžete také zrušit, zrušení nebo ukončení vybrané pracovního postupu. Trvalost je ve výchozím – můžete vypnout hostitele a vrátí ji zpět a naplnění seznamu instanci s instancemi uloženy v databázi. Sledování se používá k výstupu <xref:System.Activities.WorkflowApplication>-úroveň události na hostitele s možností přidat podrobné sledování na úrovni aktivity.  
@@ -66,6 +55,6 @@ Tato ukázka je obecný ReadLine hostitele. Můžete načíst a spustit žádný
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ControllingWorkflowApplications`

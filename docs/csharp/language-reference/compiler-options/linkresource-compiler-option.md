@@ -1,10 +1,6 @@
 ---
-title: "-linkresource (možnosti kompilátoru C#)"
+title: -linkresource (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /linkresource
 helpviewer_keywords:
@@ -15,14 +11,11 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7da5a55fa96c11d79f8c616cf0f1f4e0ed109bfa
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 5c666b1c6440ac323830780ca5ca6930327ad9d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (možnosti kompilátoru C#)
 Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. Souboru prostředků nebyla přidána do výstupního souboru. Tím se liší od [– prostředek](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) možnost, která vložení zdrojového souboru do výstupního souboru.  
@@ -37,10 +30,10 @@ Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. 
  `filename`  
  Soubor prostředků rozhraní .NET Framework, do kterého chcete propojit ze sestavení.  
   
- `identifier`(volitelné)  
+ `identifier` (volitelné)  
  Logický název prostředku; název, který se používá k načtení prostředku. Výchozí hodnota je název souboru.  
   
- `accessibility-modifier`(volitelné)  
+ `accessibility-modifier` (volitelné)  
  Usnadnění prostředku: veřejné nebo soukromé. Výchozí hodnota je veřejná.  
   
 ## <a name="remarks"></a>Poznámky  

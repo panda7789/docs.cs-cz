@@ -1,29 +1,17 @@
 ---
 title: Zabezpečené relace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7b50602f-d7b5-42e9-8e92-1f0413df0d8b
-caps.latest.revision: 14
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 068615510d7e1d73ae260441ccef6536ee6ff317
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1c7229fba8e30632f08834eb36c1fb177de7a294
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="secure-sessions"></a>Zabezpečené relace
-Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je spolehlivé relace, které zaručit, jsou přijaty zprávy v pořadí, které byly odeslány. Témata v této části popisují vliv zabezpečení, které je třeba zvážit při vytváření spolehlivé relace. Další informace o spolehlivé relace najdete v tématu [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  
+Funkce služby Windows Communication Foundation (WCF) je spolehlivé relace, které zaručit, že jsou přijaty zprávy v pořadí, ve kterém byly odeslány. Témata v této části popisují vliv zabezpečení, které je třeba zvážit při vytváření spolehlivé relace. Další informace o spolehlivé relace najdete v tématu [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  
   
 > [!NOTE]
 >  Když zosobnění je potřeba na systému Windows XP, použijte zabezpečené relace bez tokenu kontextu zabezpečení stavová (SCT). V případě stavová SCTs používají s zosobnění, <xref:System.InvalidOperationException> je vyvolána výjimka. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  

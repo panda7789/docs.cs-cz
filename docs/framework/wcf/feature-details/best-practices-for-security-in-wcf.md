@@ -1,43 +1,31 @@
 ---
 title: Doporučené postupy pro zabezpečení ve WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
-caps.latest.revision: 19
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0545ff40247b7ff86cb6227fa8cf4af8666c3629
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 62675bc5cca2eccfcd4f210f96e5eeec93341399
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
-Následující části uvádějí osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Další informace o zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
+Následující části uvádějí osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí služby Windows Communication Foundation (WCF). Další informace o zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
   
 ## <a name="identify-services-performing-windows-authentication-with-spns"></a>Identifikoval služby, provádění ověřování systému Windows s SPN  
  Služby lze identifikovat pomocí hlavních názvů uživatelů (UPN) nebo hlavní názvy služby (SPN). Služby spuštěné pod účty počítače, jako je síťová služba mít SPN identity odpovídající počítači, na kterém se používáte. Služby spuštěné pod uživatelské účty mají identitu UPN odpovídající uživatel, který se spouští jako, i když `setspn` nástroje lze přiřadit název SPN pro uživatelský účet. Konfigurace služby tak, aby ho bylo možné identifikovat pomocí hlavního názvu služby a konfiguraci klientů připojení ke službě, aby používali tuto SPN provádět určité útokům obtížnější. Tyto pokyny platí pro vazby vyjednání protokolu Kerberos nebo rozhraní SSPI.  Klienti musí určovat název SPN stále v případě, kdy SSPI spadne zpět na protokol NTLM.  
   
 ## <a name="verify-service-identities-in-wsdl"></a>Ověření identity služby v jazyce WSDL  
- WS-SecurityPolicy umožňuje službám publikovat informace o své vlastní identity v metadatech. Pokud načteny prostřednictvím `svcutil` nebo jiné metody, jako <xref:System.ServiceModel.Description.WsdlImporter>, tyto informace identity převádějí na vlastnosti identity [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby adresy koncových bodů. Klienti, které není ověřte, zda identita tyto služby jsou správné a platné efektivně obejít ověřování služby. Škodlivý služby může zneužít těchto klientů k provedení předávání přihlašovacích údajů a další útoky "man uprostřed" tak, že změníte identitu uplatňovat v jeho WSDL.  
+ WS-SecurityPolicy umožňuje službám publikovat informace o své vlastní identity v metadatech. Pokud načteny prostřednictvím `svcutil` nebo jiné metody, jako <xref:System.ServiceModel.Description.WsdlImporter>, tyto informace identity převádějí na vlastnosti identity adresy koncových bodů služby WCF. Klienti, které není ověřte, zda identita tyto služby jsou správné a platné efektivně obejít ověřování služby. Škodlivý služby může zneužít těchto klientů k provedení předávání přihlašovacích údajů a další útoky "man uprostřed" tak, že změníte identitu uplatňovat v jeho WSDL.  
   
 ## <a name="use-x509-certificates-instead-of-ntlm"></a>Použití X509 certifikátů místo protokolu NTLM  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí dvě mechanismy pro ověřování peer-to-peer: X509 certifikáty (používané rovnocenného kanálu) a ověřování systému Windows, kde vyjednávání SSPI snížení úrovně z protokolu Kerberos k ověřování NTLM.  Ověřování pomocí certifikátů pomocí velikosti klíče 1 024 bitů nebo víc je upřednostňovaný NTLM z několika důvodů:  
+ WCF nabízí dva mechanismy pro ověřování peer-to-peer: X509 certifikáty (používané rovnocenného kanálu) a ověřování systému Windows, kde vyjednávání SSPI snížení úrovně z protokolu Kerberos k ověřování NTLM.  Ověřování pomocí certifikátů pomocí velikosti klíče 1 024 bitů nebo víc je upřednostňovaný NTLM z několika důvodů:  
   
 -   dostupnost vzájemné ověřování  
   

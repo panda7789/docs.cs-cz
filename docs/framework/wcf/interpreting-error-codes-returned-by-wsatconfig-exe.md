@@ -1,24 +1,12 @@
 ---
-title: "Interpretace kódů chyb vrácených nástrojem wsatConfig.exe"
-ms.custom: 
+title: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ab65f22b-0d69-4c21-9aaf-74acef0ca102
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 889a14d7d30c3c7750b38f55256ccc4ff004f10d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9df059618b45ae65ffb3e6e31a87d5531c79d947
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 Toto téma uvádí všechny kódy chyb generovaných nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe) a doporučené akce, které se provedou.  
@@ -32,7 +20,7 @@ Toto téma uvádí všechny kódy chyb generovaných nástroj WS-AtomicTransacti
 |2|Při pokusu o kontaktování služby MSDTC k načtení nastavení zabezpečení došlo k neočekávané chybě.|Zkontrolujte, zda služba koordinátoru MS DTC není vypnuta a vyřešte všechny problémy uvedené v vrácený výjimka.|  
 |3|Účet, který spustil WsatConfig.exe neměl dostatečná oprávnění ke čtení nastavení zabezpečení sítě.|Spusťte WsatConfig.exe v rámci uživatelského účtu správce.|  
 |4|Povolení "Síťového přístupu" pro služby MSDTC, než se pokusíte povolit podporu protokolu WS-AT.|Povolit "Síťového přístupu" pro služby MS DTC a znovu spusťte nástroj.|  
-|5|Zadaný port je mimo rozsah. Hodnota musí být v rozsahu od 1 do 65 535.|Opravte`-port:<portNum>`<br /><br /> Možnosti příkazového řádku, které je uvedené v chybové zprávě.|  
+|5|Zadaný port je mimo rozsah. Hodnota musí být v rozsahu od 1 do 65 535.|Opravte `-port:<portNum>`<br /><br /> Možnosti příkazového řádku, které je uvedené v chybové zprávě.|  
 |6|Na příkazovém řádku byla zadán certifikát neplatný koncový bod.  Certifikát nebyl nalezen nebo jej neuspěla v ověřování.|Opravte `-endpointCert` možnost příkazového řádku. Zajistěte, aby certifikát nemá privátní klíč, je určena k použití pro Ověřeníklienta i ServerAuthentication, je nainstalován v úložišti certifikátů LocalMachine\MY a je plně důvěryhodný.|  
 |7|Certifikát neplatný účty byla zadána na příkazovém řádku.|Opravte `-accountsCerts` možnost příkazového řádku. Zadaný certifikát byl buď nesprávně zadán nebo nebylo možné najít.|  
 |8|Výchozí hodnota časového limitu byla zadána mimo rozsah 1 do 3600 sekund.|Zadejte správný výchozí hodnotu časového limitu, které je uvedené.|  
@@ -46,9 +34,9 @@ Toto téma uvádí všechny kódy chyb generovaných nástroj WS-AtomicTransacti
 |17|Konfigurace ovladače http.sys se nezdařila. Nelze zrušit vazbu certifikátu SSL od předchozí portu.|Kód chyby vrácený v chybové zprávě použijte k mapování na příslušné systémové chybě. V případě potřeby pomocí httpcfg.exe nebo netsh.exe rezervace chybné portu.|  
 |18|Konfigurace ovladače http.sys se nezdařila. Nelze vytvořit vazbu zadaný certifikát na port, protože předchozí protokolu SSL vazby již existuje.|Jiná aplikace již převzetí vlastnictví těchto na konkrétní port. Změnit na jiný port nebo odinstalovat nebo změnit konfiguraci aktuální aplikace.|  
 |19|Restartování služby MS DTC se nezdařilo|V případě potřeby ručně restartujte služby MS DTC. Pokud potíže potrvají, obraťte se na Microsoft.|  
-|20|[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)]není nainstalován na vzdáleném počítači, nebo není správně nainstalován.|Nainstalujte [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] na počítači.|  
+|20|[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] není nainstalován na vzdáleném počítači, nebo není správně nainstalován.|Nainstalujte [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] na počítači.|  
 |21|Vzdálená konfigurace se nezdařila z důvodu vypršení časového limitu pro operaci.|Konfigurace služby WS-AT ve vzdáleném počítači volání by měl trvat déle než 90 sekund.|  
-|22|[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)]není nainstalován na vzdáleném počítači, nebo není správně nainstalován.|Nainstalujte [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] na počítači.|  
+|22|[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] není nainstalován na vzdáleném počítači, nebo není správně nainstalován.|Nainstalujte [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] na počítači.|  
 |23|Vzdálená konfigurace se nezdařilo kvůli výjimce ve vzdáleném počítači.|Zkontrolujte chybové zprávy pro nežádoucí položky|  
 |26|WsatConfig.exe byl předán neplatný argument.|Zkontrolujte chyby příkazového řádku.|  
 |27|`-accounts` Možnost příkazového řádku byl neplatný.|Opravte-`accounts` možnost příkazového řádku správně zadat uživatelský účet.|  

@@ -1,21 +1,12 @@
 ---
-title: "Serializace grafů objektů, které obsahují XElement objekty (C#)"
-ms.custom: 
+title: Serializace grafů objektů, které obsahují XElement objekty (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: fcbc3951-3cc4-4d0f-9259-e97549ed68f0
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8b7da4429360beb20fa304b592020d48666fe732
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f51a026642563e1c1690d9a49220aae462840211
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serializing-object-graphs-that-contain-xelement-objects-c"></a>Serializace grafů objektů, které obsahují XElement objekty (C#)
 Toto téma představuje možnost serializace grafů objektů, které obsahují odkazy na objekty typu <xref:System.Xml.Linq.XElement>. Do zařízení tento typ serializace, <xref:System.Xml.Linq.XElement> implementuje <xref:System.Xml.Serialization.IXmlSerializable> rozhraní.  

@@ -4,17 +4,11 @@ description: Další informace o vlastních šablon pro jakýkoli typ rozhraní 
 author: guardrex
 ms.author: mairaw
 ms.date: 08/11/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 1915c2609391d0aa1ff32ea9ebb011cf0f925aa8
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: fe888d0bfeeb51d77b73ec481b93fec9b40aa6ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro nové dotnet.
 

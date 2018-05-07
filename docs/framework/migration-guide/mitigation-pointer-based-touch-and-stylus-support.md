@@ -1,28 +1,19 @@
 ---
-title: "Omezení rizik: Na základě ukazatel Touch a podporu pera"
-ms.custom: 
+title: 'Omezení rizik: Na základě ukazatel Touch a podporu pera'
 ms.date: 04/07/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - retargeting changes
 - .NET Framework 4.7 retargeting changes
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-caps.latest.revision: "2"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 78a7365d9bc82111ebd27f40e999c24d8f9ebfde
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: da7d55b34bc21f0c11f13565d017587b4276bad3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Omezení rizik: Na základě ukazatel Touch a podporu pera
 

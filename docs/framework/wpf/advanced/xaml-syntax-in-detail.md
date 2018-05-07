@@ -1,13 +1,6 @@
 ---
-title: "Podrobná syntaxe XAML"
-ms.custom: 
+title: Podrobná syntaxe XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XML [WPF], namespaces
 - XAML [WPF], parsing of attributes
@@ -36,16 +29,11 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 88e66210fd8066e82a11d07ea0cfeb83808d646c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d98141c0ad96ef1bd3958ae8d3166aedde76f535
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje termíny, které se používají k popisu elementů XAML syntaxe. Tyto podmínky se často používají v dalších částech této dokumentace pro dokumentace WPF, konkrétně a pro ostatní rozhraní, využívající XAML nebo se základními koncepty XAML ve podporu jazyka XAML na úrovni System.Xaml povolené. Toto téma rozšíří na základní terminologii zavedená v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
@@ -134,7 +122,7 @@ Toto téma definuje termíny, které se používají k popisu elementů XAML syn
 ...  
 ```  
   
- Flagwise výčty, které podporují atributy, které jsou v jazyce XAML nastavit vyskytují jen vzácně v grafickém subsystému WPF. Je však jeden takový výčet <xref:System.Windows.Media.StyleSimulations>. Může například použijte syntaxi oddělených čárkou flagwise atribut upravit v příkladu v poznámky pro <xref:System.Windows.Documents.Glyphs> třídy; `StyleSimulations = "BoldSimulation"` může být `StyleSimulations = "BoldSimulation,ItalicSimulation"`. <xref:System.Windows.Input.KeyBinding.Modifiers%2A?displayProperty=nameWithType>je jinou vlastnost, kde lze zadat více než jednu hodnotu výčtu. Ale tato vlastnost se stane být zvláštní případ, protože <xref:System.Windows.Input.ModifierKeys> výčet podporuje vlastní typ převaděče. Převaděč typů pro modifikátory znaménko plus (+) používá jako oddělovač, nikoli čárkou (,). Tento převod podporuje tradičnější syntaxe představují kombinace kláves při programování pro Microsoft Windows, jako je například "Ctrl + Alt".  
+ Flagwise výčty, které podporují atributy, které jsou v jazyce XAML nastavit vyskytují jen vzácně v grafickém subsystému WPF. Je však jeden takový výčet <xref:System.Windows.Media.StyleSimulations>. Může například použijte syntaxi oddělených čárkou flagwise atribut upravit v příkladu v poznámky pro <xref:System.Windows.Documents.Glyphs> třídy; `StyleSimulations = "BoldSimulation"` může být `StyleSimulations = "BoldSimulation,ItalicSimulation"`. <xref:System.Windows.Input.KeyBinding.Modifiers%2A?displayProperty=nameWithType> je jinou vlastnost, kde lze zadat více než jednu hodnotu výčtu. Ale tato vlastnost se stane být zvláštní případ, protože <xref:System.Windows.Input.ModifierKeys> výčet podporuje vlastní typ převaděče. Převaděč typů pro modifikátory znaménko plus (+) používá jako oddělovač, nikoli čárkou (,). Tento převod podporuje tradičnější syntaxe představují kombinace kláves při programování pro Microsoft Windows, jako je například "Ctrl + Alt".  
   
 ### <a name="properties-and-event-member-name-references"></a>Vlastnosti a události člen název odkazy  
  Při zadávání atribut, můžete odkazovat na všechny vlastnosti nebo událostí, který již existuje jako člena typu CLR, která je vytvořena instance pro element obsahující objektu.  
@@ -267,7 +255,7 @@ Toto téma definuje termíny, které se používají k popisu elementů XAML syn
   
  `<Button Style="{StaticResource MyStyle}">My button</Button>`  
   
- Zde `StaticResource` identifikuje <xref:System.Windows.StaticResourceExtension> třída poskytuje implementaci rozšíření značek. Další řetězec `MyStyle` se používá jako vstup pro jiné než výchozí <xref:System.Windows.StaticResourceExtension> konstruktoru, kde parametr přijato z řetězce rozšíření deklaruje požadované <xref:System.Windows.ResourceKey>. `MyStyle`je očekáván [x: Key](../../../../docs/framework/xaml-services/x-key-directive.md) hodnotu <xref:System.Windows.Style> definována jako prostředek. [StaticResource – rozšíření značek](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md) využití požadavky, že prostředek se použít k zajištění <xref:System.Windows.Style> hodnotu vlastnosti prostřednictvím statických prostředků vyhledávání logiku v okamžiku načtení.  
+ Zde `StaticResource` identifikuje <xref:System.Windows.StaticResourceExtension> třída poskytuje implementaci rozšíření značek. Další řetězec `MyStyle` se používá jako vstup pro jiné než výchozí <xref:System.Windows.StaticResourceExtension> konstruktoru, kde parametr přijato z řetězce rozšíření deklaruje požadované <xref:System.Windows.ResourceKey>. `MyStyle` je očekáván [x: Key](../../../../docs/framework/xaml-services/x-key-directive.md) hodnotu <xref:System.Windows.Style> definována jako prostředek. [StaticResource – rozšíření značek](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md) využití požadavky, že prostředek se použít k zajištění <xref:System.Windows.Style> hodnotu vlastnosti prostřednictvím statických prostředků vyhledávání logiku v okamžiku načtení.  
   
  Další informace o rozšíření značek najdete v tématu [rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md). Referenční rozšíření značek a dalších XAML programování Funkce povolené v obecné .NET XAML implementaci, najdete v části [Namespace XAML (x:) Jazykové funkce](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md). WPF konkrétní rozšíření značek, najdete v části [WPF XAML rozšíření](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md).  
   
@@ -309,13 +297,13 @@ Toto téma definuje termíny, které se používají k popisu elementů XAML syn
   
  [!code-xaml[XAMLOvwSupport#TypeNameProp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#typenameprop)]  
   
- `Button.Background`funguje, protože kvalifikovaný vyhledávání pro tuto vlastnost na <xref:System.Windows.Controls.Button> úspěšné (<xref:System.Windows.Controls.Control.Background%2A> bylo zděděno z ovládacího prvku) a <xref:System.Windows.Controls.Button> je elementu objektu nebo základní třída. `Control.Background`funguje, protože <xref:System.Windows.Controls.Control> třída ve skutečnosti definuje <xref:System.Windows.Controls.Control.Background%2A> a <xref:System.Windows.Controls.Control> je <xref:System.Windows.Controls.Button> základní třídy.  
+ `Button.Background` funguje, protože kvalifikovaný vyhledávání pro tuto vlastnost na <xref:System.Windows.Controls.Button> úspěšné (<xref:System.Windows.Controls.Control.Background%2A> bylo zděděno z ovládacího prvku) a <xref:System.Windows.Controls.Button> je elementu objektu nebo základní třída. `Control.Background` funguje, protože <xref:System.Windows.Controls.Control> třída ve skutečnosti definuje <xref:System.Windows.Controls.Control.Background%2A> a <xref:System.Windows.Controls.Control> je <xref:System.Windows.Controls.Button> základní třídy.  
   
  Ale následující *typeName*. *memberName* příklad formuláře nefunguje a je proto zobrazen komentáři:  
   
  [!code-xaml[XAMLOvwSupport#TypeNameBadProp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#typenamebadprop)]  
   
- <xref:System.Windows.Controls.Label>je jiné třídy odvozené z <xref:System.Windows.Controls.Control>, a pokud jste měli zadali `Label.Background` v rámci <xref:System.Windows.Controls.Label> object element by už pracovali toto použití. Ale protože <xref:System.Windows.Controls.Label> není třídu nebo základní třídu <xref:System.Windows.Controls.Button>, zadaného chování procesoru XAML se pak zpracuje `Label.Background` jako přidružená vlastnost. `Label.Background`není k dispozici přidružená vlastnost a toto použití selže.  
+ <xref:System.Windows.Controls.Label> je jiné třídy odvozené z <xref:System.Windows.Controls.Control>, a pokud jste měli zadali `Label.Background` v rámci <xref:System.Windows.Controls.Label> object element by už pracovali toto použití. Ale protože <xref:System.Windows.Controls.Label> není třídu nebo základní třídu <xref:System.Windows.Controls.Button>, zadaného chování procesoru XAML se pak zpracuje `Label.Background` jako přidružená vlastnost. `Label.Background` není k dispozici přidružená vlastnost a toto použití selže.  
   
 ### <a name="basetypenamemembername-property-elements"></a>baseTypeName.memberName vlastností elementů  
  V podobá způsob jak *typeName*. *memberName* formuláře funguje pro atribut syntaxe *baseTypeName*. *memberName* syntaxe funguje pro syntaxi element vlastnosti. Pro instanci lze použít následující syntaxi:  

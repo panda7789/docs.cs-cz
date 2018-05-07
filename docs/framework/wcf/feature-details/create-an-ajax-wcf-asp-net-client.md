@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní"
-ms.custom: 
+title: 'Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 95012df8-2a66-420d-944a-8afab261013e
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: aafa15129e4a131c5f50eb3296a87fc141e1bda6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58971d11ab76112627dd81d53381236932268e25
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a>Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní
-Toto téma ukazuje, jak vytvořit, podporou AJAXU pomocí sady Visual Studio 2008 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby a klienta ASP.NET přistupujícího k ní. Kód pro službu a klienta jsou uvedeny v části Příklad po kroky pro jejich vytváření jsou popsány v části postupy.  
+Toto téma ukazuje, jak vytvořit služby technologie AJAX Windows Communication Foundation (WCF) a klienta ASP.NET přistupujícího k ní pomocí sady Visual Studio 2008. Kód pro službu a klienta jsou uvedeny v části Příklad po kroky pro jejich vytváření jsou popsány v části postupy.  
   
 ### <a name="to-create-the-aspnet-client-application"></a>Chcete-li vytvořit klienta aplikace ASP.NET  
   

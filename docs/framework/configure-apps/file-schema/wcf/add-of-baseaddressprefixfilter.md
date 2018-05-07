@@ -2,11 +2,11 @@
 title: '&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;'
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: 549574d0d6585a857f3e0979e814c827139c7536
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: e4408488036be210e3a8b9cf8b8f8f8c2e669a1d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltaddgt-of-ltbaseaddressprefixfiltergt"></a>&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;
 Představuje konfiguraci element, který určuje průchozí filtr, který poskytuje mechanismus pro hostování aplikací Windows Communication Foundation (WCF) ve službě IIS, vyberte odpovídající vazby Internetové informační služby (IIS).  
@@ -49,7 +49,7 @@ Představuje konfiguraci element, který určuje průchozí filtr, který poskyt
   
  Webové servery služby IIS jsou kontejnery pro virtuální aplikace, které obsahují virtuální adresáře. Aplikace v síti je přístupná přes jeden nebo více vazby služby IIS. Vazby služby IIS poskytují dva kusy informací: protokol vazby a informace o vazbě. Vazba protokol (například HTTP) definuje schéma, přes který probíhá komunikace a vazby informace (například IP adresu, Port, hostitel) obsahuje data používá pro přístup k webu.  
   
- Služba IIS podporuje zadání více vazby služby IIS pro každou lokalitu, což vede k více základní adresy pro každé schéma. Protože [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služba hostovaná na webu umožňuje vazby pouze jeden základní adresu pro každé schéma, můžete použít funkci filtru předponu a vyberte požadované základní adresu hostované služby. Příchozí základní adresy poskytované službou IIS, jsou filtrovány na základě seznamu filtru volitelné předponu.  
+ Služba IIS podporuje zadání více vazby služby IIS pro každou lokalitu, což vede k více základní adresy pro každé schéma. Protože služby WCF hostované na webu umožňuje vazby pouze jeden základní adresu pro každé schéma, můžete použít funkci filtru předponu a vyberte požadované základní adresu hostované služby. Příchozí základní adresy poskytované službou IIS, jsou filtrovány na základě seznamu filtru volitelné předponu.  
   
  Například váš web může obsahovat následující základní adresy.  
   

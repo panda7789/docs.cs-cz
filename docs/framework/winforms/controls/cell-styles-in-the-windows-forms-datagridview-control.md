@@ -1,28 +1,16 @@
 ---
-title: "Styly buňky v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Styly buňky v ovládacím prvku Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], cell styles
 - cells [Windows Forms], styles
 - data grids [Windows Forms], cell styles
 ms.assetid: dbb75ed6-8804-4232-8382-f9920c2e380c
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 915aba380b6fe35299de94720f216cda5ab66721
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 463fbbffe1e88991934f08fbe7e7445b2e233081
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cell-styles-in-the-windows-forms-datagridview-control"></a>Styly buňky v ovládacím prvku Windows Forms DataGridView
 Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prvek může mít svůj vlastní styl, jako je například textovém formátu, barva pozadí, barvu popředí a písma. Však obvykle více buněk sdílet vlastnosti konkrétní stylu.  
@@ -32,17 +20,17 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
 ## <a name="the-datagridviewcellstyle-class"></a>DataGridViewCellStyle – třída  
  <xref:System.Windows.Forms.DataGridViewCellStyle> Třída obsahuje následující vlastnosti související s vizuální styl:  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>a<xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> A <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A>a<xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> A <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>  
   
 -   <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A>  
   
  Tato třída také obsahuje následující vlastnosti související s formátování:  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>a<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> A <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>a<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> A <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>  
   
 -   <xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>  
   
@@ -66,7 +54,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
 |<xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A>|<xref:System.Windows.Forms.DataGridView>|Získá nebo nastaví výchozích stylů buňky používané střídavých řádků v ovládacím prvku. Použít k vytvoření účetní knihy vliv.|  
 |<xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A>|<xref:System.Windows.Forms.DataGridView>|Získá nebo nastaví výchozích stylů buňky používané ovládacího prvku záhlaví řádků. Pokud jsou povolené vizuální styly přepsány aktuální motiv.|  
 |<xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>|<xref:System.Windows.Forms.DataGridView>|Získá nebo nastaví výchozích stylů buňky používané ovládacího prvku záhlaví sloupců. Pokud jsou povolené vizuální styly přepsány aktuální motiv.|  
-|<xref:System.Windows.Forms.DataGridViewCell.Style%2A>|<xref:System.Windows.Forms.DataGridViewCell>a odvozených tříd|Získá nebo nastaví styly definované na úrovni buněk. Tyto styly přednost před akcemi zděděn z vyšší úrovně.|  
+|<xref:System.Windows.Forms.DataGridViewCell.Style%2A>|<xref:System.Windows.Forms.DataGridViewCell> a odvozených tříd|Získá nebo nastaví styly definované na úrovni buněk. Tyto styly přednost před akcemi zděděn z vyšší úrovně.|  
 |`InheritedStyle`|<xref:System.Windows.Forms.DataGridViewCell>, <xref:System.Windows.Forms.DataGridViewRow>, <xref:System.Windows.Forms.DataGridViewColumn>a jsou odvozené třídy|Získá všechny styly aktuálně u buněk, řádků nebo sloupec, včetně styly zděděn z vyšší úrovně.|  
   
  Jak je uvedeno nahoře, zjišťování hodnoty vlastnosti stylu automaticky vytvoří nový <xref:System.Windows.Forms.DataGridViewCellStyle> objektu, pokud vlastnost nebyla nastavena dříve. Abyste se vyhnuli zbytečně vytváření těchto objektů, tříd řádků a sloupců mají <xref:System.Windows.Forms.DataGridViewBand.HasDefaultCellStyle%2A> vlastnost, která můžete zkontrolovat, určete zda <xref:System.Windows.Forms.DataGridViewBand.DefaultCellStyle%2A> vlastnost byla nastavena. Podobně třídy buňky mají <xref:System.Windows.Forms.DataGridViewCell.HasStyle%2A> vlastnost, která určuje, zda <xref:System.Windows.Forms.DataGridViewCell.Style%2A> vlastnost byla nastavena.  
@@ -80,7 +68,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
   
 2.  <xref:System.Windows.Forms.DataGridViewRow.DefaultCellStyle%2A?displayProperty=nameWithType>  
   
-3.  <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType>(jenom pro buněk v řádky s lichou čísla indexů)  
+3.  <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType> (jenom pro buněk v řádky s lichou čísla indexů)  
   
 4.  <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A?displayProperty=nameWithType>  
   
@@ -92,7 +80,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
   
 1.  <xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType>  
   
-2.  <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A?displayProperty=nameWithType>nebo<xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A?displayProperty=nameWithType>  
+2.  <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A?displayProperty=nameWithType> Nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A?displayProperty=nameWithType>  
   
 3.  <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>  
   
@@ -110,7 +98,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
   
 1.  <xref:System.Windows.Forms.DataGridViewRow.DefaultCellStyle%2A?displayProperty=nameWithType>  
   
-2.  <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType>(jenom pro buněk v řádky s lichou čísla indexů)  
+2.  <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType> (jenom pro buněk v řádky s lichou čísla indexů)  
   
 3.  <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A?displayProperty=nameWithType>  
   
@@ -120,7 +108,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
   
  Následující tabulka popisuje, jak <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A> hodnotu vlastnosti u buněk příklad je zděděn z jeho obsahující sloupec.  
   
-|Vlastnost typu`DataGridViewCellStyle`|Příklad `ForeColor` hodnota načtené objektu|  
+|vlastnost typu `DataGridViewCellStyle`|Příklad `ForeColor` hodnota načtené objektu|  
 |----------------------------------------------|----------------------------------------------------|  
 |<xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType>|<xref:System.Drawing.Color.Empty?displayProperty=nameWithType>|  
 |<xref:System.Windows.Forms.DataGridViewRow.DefaultCellStyle%2A?displayProperty=nameWithType>|<xref:System.Drawing.Color.Red%2A?displayProperty=nameWithType>|  
@@ -133,7 +121,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
   
  Následující diagram ilustruje, jak budou různí <xref:System.Windows.Forms.DataGridViewCellStyle> vlastnosti může dědit vlastnosti jejich hodnoty z různých místech.  
   
- ![DataGridView – vlastnost & č. 45; hodnota dědičnosti](../../../../docs/framework/winforms/controls/media/datagridviewcells2.gif "DataGridViewCells2")  
+ ![DataGridView – vlastnost&#45;hodnotu dědičnosti](../../../../docs/framework/winforms/controls/media/datagridviewcells2.gif "DataGridViewCells2")  
   
  Využití výhod styl dědičnosti, můžete poskytnout příslušné styly pro celý ovládací prvek bez nutnosti zadávat stejné informace na více místech.  
   

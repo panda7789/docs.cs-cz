@@ -1,13 +1,6 @@
 ---
-title: "streamWriterBufferedDataLost – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: streamWriterBufferedDataLost – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - StreamWriter class, data buffering problems
 - managed debugging assistants (MDAs), StreamWriter data buffering
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - data buffering problems
 - streamWriterBufferedDataLost MDA
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f5a59b8735cf87e8b88036ffb317f7bbeb9f0885
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15957ce03925d75021d88bc81d12809c3fe31c2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost – pomocník spravovaného ladění (MDA)
 `streamWriterBufferedDataLost` Pomocník spravovaného ladění (MDA) se aktivuje při <xref:System.IO.StreamWriter> je zapsán do, ale <xref:System.IO.StreamWriter.Flush%2A> nebo <xref:System.IO.StreamWriter.Close%2A> metoda není volána následně před provedením instanci <xref:System.IO.StreamWriter> zničena. Pokud je povolena tato MDA, modul runtime určuje, zda veškerá data ve vyrovnávací paměti stále existuje v rámci <xref:System.IO.StreamWriter>. Pokud data ve vyrovnávací paměti neexistuje, MDA je aktivována. Volání <xref:System.GC.Collect%2A> a <xref:System.GC.WaitForPendingFinalizers%2A> metody můžete vynutit finalizační metody ke spuštění. Finalizační metody jinak poběží v zdánlivě libovolný dobu a může být vůbec na ukončení procesu. Explicitně systémem finalizační metody s Tento MDA povoleno pomůže spolehlivěji reprodukujte tento typ problému.  

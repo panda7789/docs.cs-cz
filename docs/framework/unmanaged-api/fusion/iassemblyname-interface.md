@@ -1,14 +1,6 @@
 ---
-title: "IAssemblyName – rozhraní"
-ms.custom: 
+title: IAssemblyName – rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IAssemblyName
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: f7f8e605-6b67-4151-936f-f04ecd671d90
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 902ad9f67d06306e79666f0e10d85bdb9c65c377
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aa12252c4f2a8e710a4a880af103aa324f8118ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iassemblyname-interface"></a>IAssemblyName – rozhraní
 Poskytuje metody pro popisující a práci s jedinečnou identitu sestavení.  
@@ -55,7 +43,7 @@ Poskytuje metody pro popisující a práci s jedinečnou identitu sestavení.
   
  **Záhlaví:** Fusion.h  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  

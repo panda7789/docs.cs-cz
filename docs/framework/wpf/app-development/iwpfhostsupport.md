@@ -1,34 +1,20 @@
 ---
 title: IWpfHostSupport
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - IWpfHostSupport interface [WPF]
 ms.assetid: cc5a0281-de81-4cc1-87e4-0e46b1a811e9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a516d5917c2106bc83842befac9b506312fcce1c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 51964358d27a16d9840e29be06c11f57de2fad23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iwpfhostsupport"></a>IWpfHostSupport
 Aplikace, které jsou hostiteli [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahu prostřednictvím PresentationHost.exe implementace tohoto rozhraní nabízí bod integrace mezi hostitelem a PresentationHost.exe.  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]může být hostitelem aplikací, jako jsou webové prohlížeče [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] obsahu, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a ztrátě XAML. K hostiteli [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] obsahu, [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] vytvořit instanci aplikace [WebBrowser – ovládací prvek](http://go.microsoft.com/fwlink/?LinkId=97911). Pro hostování, [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] vytvoří instanci PresentationHost.exe, která poskytuje hostované [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] obsahu pro zobrazení v hostiteli [WebBrowser – ovládací prvek](http://go.microsoft.com/fwlink/?LinkId=97911).  
+ [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] může být hostitelem aplikací, jako jsou webové prohlížeče [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] obsahu, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a ztrátě XAML. K hostiteli [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] obsahu, [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] vytvořit instanci aplikace [WebBrowser – ovládací prvek](http://go.microsoft.com/fwlink/?LinkId=97911). Pro hostování, [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] vytvoří instanci PresentationHost.exe, která poskytuje hostované [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] obsahu pro zobrazení v hostiteli [WebBrowser – ovládací prvek](http://go.microsoft.com/fwlink/?LinkId=97911).  
   
  Integrace ve povolené `IWpfHostSupport` umožňuje PresentationHost.exe na:  
   

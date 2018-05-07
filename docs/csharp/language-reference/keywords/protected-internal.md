@@ -1,16 +1,12 @@
 ---
-title: "chráněné vnitřní (C# referenční dokumentace)"
+title: chráněné vnitřní (C# referenční dokumentace)
 ms.date: 11/15/2017
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 author: sputier
-ms.author: wiwagn
-ms.openlocfilehash: f9004a5e8d65179c9ff2e30688e63c14c95ab431
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: a2a649f0fdb924c26380e7261bd935be736f0665
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# referenční dokumentace)
 `protected internal` – Kombinace klíčových slov je modifikátor přístupu členů. Chráněný člen interní je přístupný z aktuální sestavení nebo z typů, které jsou odvozeny od obsahující třídy. Porovnání `protected internal` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
@@ -55,7 +51,7 @@ class DerivedClass : BaseClass
     }
 } 
 ```  
- Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly2.cs`. První soubor obsahuje veřejný základní třídu, `BaseClass`a jinou třídu, `TestAccess`. `BaseClass`vlastní chráněný vnitřní člen, `myValue`, který přistupuje `TestAccess` typu. V souboru druhý pokus o přístup `myValue` prostřednictvím instance `BaseClass` vygeneruje chybu při přístupu do tohoto člena prostřednictvím instance odvozené třídy, `DerivedClass` bude úspěšné. 
+ Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly2.cs`. První soubor obsahuje veřejný základní třídu, `BaseClass`a jinou třídu, `TestAccess`. `BaseClass` vlastní chráněný vnitřní člen, `myValue`, který přistupuje `TestAccess` typu. V souboru druhý pokus o přístup `myValue` prostřednictvím instance `BaseClass` vygeneruje chybu při přístupu do tohoto člena prostřednictvím instance odvozené třídy, `DerivedClass` bude úspěšné. 
 
  Struktura členové nemohou být `protected internal` protože struct nemůže být zděděno.  
   
@@ -69,7 +65,7 @@ class DerivedClass : BaseClass
  [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)   
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)   
- [veřejné](../../../csharp/language-reference/keywords/public.md)   
- [privátní](../../../csharp/language-reference/keywords/private.md)   
- [interní](../../../csharp/language-reference/keywords/internal.md)   
+ [Veřejné](../../../csharp/language-reference/keywords/public.md)   
+ [Privátní](../../../csharp/language-reference/keywords/private.md)   
+ [Interní](../../../csharp/language-reference/keywords/internal.md)   
  [Otázky zabezpečení pro interní virtuální klíčová slova](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))

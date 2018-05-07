@@ -1,10 +1,6 @@
 ---
-title: "-target (možnosti kompilátoru C#)"
+title: -target (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /target
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 44dd99ef834f98a1a918c659d3057f8f6f91805a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7736b8850a7b09f7212e83e05acf0e1994bce0fe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-target-c-compiler-options"></a>-target (možnosti kompilátoru C#)
 **-Cíl** – možnost kompilátoru lze zadat v jedné ze čtyř podob:  
@@ -71,4 +64,4 @@ public class TestClass
 ## <a name="see-also"></a>Viz také  
  [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
- [-subsystemversion (C# Compiler Options)](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)
+ [-subsystemversion (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)

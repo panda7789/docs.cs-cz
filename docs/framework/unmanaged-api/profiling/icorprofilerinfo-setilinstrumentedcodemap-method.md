@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo::SetILInstrumentedCodeMap – metoda"
-ms.custom: 
+title: ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo.SetILInstrumentedCodeMap
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: bce1dcf8-b4ec-4e73-a917-f2df1ad49c8a
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 127f6d76e85ed30f1407d16f8d81c93dd2941960
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8ecb80de1ae46b072df4bab8357e78e7a22ae298
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
 Nastaví mapu kódu pro zadanou funkci pomocí zadané položek mapy (MSIL intermediate language) společnosti Microsoft.  
@@ -65,7 +53,7 @@ HRESULT SetILInstrumentedCodeMap(
  [v] Pole cor_il_map – struktury, z nichž každý určuje posun MSIL.  
   
 ## <a name="remarks"></a>Poznámky  
- Profileru často vloží příkazů v rámci zdrojový kód metody za účelem instrumentace dané metody (například upozornit, když je dosaženo zadaná zdrojová řádku). `SetILInstrumentedCodeMap`Umožňuje profileru mapovat původní pokynů MSIL do nového umístění. Můžete použít profileru [icorprofilerinfo::getiltonativemapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) metoda získat původní MSIL posunutí pro daný nativní posun.  
+ Profileru často vloží příkazů v rámci zdrojový kód metody za účelem instrumentace dané metody (například upozornit, když je dosaženo zadaná zdrojová řádku). `SetILInstrumentedCodeMap` Umožňuje profileru mapovat původní pokynů MSIL do nového umístění. Můžete použít profileru [icorprofilerinfo::getiltonativemapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) metoda získat původní MSIL posunutí pro daný nativní posun.  
   
  Ladicí program bude předpokládat, že každý staré posun odkazuje na MSIL posun v rámci kód MSIL původní, beze změny a že každý nový posun odkazuje na MSIL posun v rámci kód nové, instrumentovaného. Mapy by měly být seřazeny ve vzestupném pořadí. Pro krokování s fungovalo správně, postupujte podle následujících pokynů:  
   
@@ -100,7 +88,7 @@ HRESULT SetILInstrumentedCodeMap(
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

@@ -1,11 +1,6 @@
 ---
-title: "Seznam parametrů (Visual Basic)"
+title: Seznam parametrů (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
 - parameters [Visual Basic], Visual Basic
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], Visual Basic
 - procedures [Visual Basic], parameter lists
 ms.assetid: 5d737319-0c34-4df9-a23d-188fc840becd
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2c7190b618aa98c91b826ca7c065660d3b19c31a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 147a2501219db9f1f1c10f9cf1a81aa395b5ec2b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="parameter-list-visual-basic"></a>Seznam parametrů (Visual Basic)
 Určuje parametry, které procedura očekává, že když je volána. Několik parametrů jsou oddělené čárkami. Toto je syntaxe pro jeden parametr.  
@@ -95,10 +87,10 @@ parametername[( )] [ As parametertype ] [ = defaultvalue ]
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.InteropServices.DllImportAttribute>  
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)  
- [Postupy: přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
+ [Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)

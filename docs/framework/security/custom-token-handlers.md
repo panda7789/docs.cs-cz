@@ -1,24 +1,14 @@
 ---
-title: "Vlastní Token obslužné rutiny"
-ms.custom: 
+title: Vlastní Token obslužné rutiny
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5062669f-8bfc-420a-a25d-d8ab992ab10e
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 56fb7fcb162025ec05bc1171cb137d445c4dfee5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18be4babf7e9cfbfe9ebfb43da6f98a8544b2fe6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-token-handlers"></a>Vlastní Token obslužné rutiny
 Toto téma popisuje tokenu obslužné rutiny v WIF a jak se používají ke zpracování tokeny. Téma také popisuje, co je potřeba vytvořit vlastní tokenu obslužné rutiny pro typy tokenů, které nejsou podporované ve výchozím nastavení v WIF.  

@@ -1,19 +1,13 @@
 ---
 title: Co je nového v jazyce C# 6 – Průvodce v C#
 description: Informace o nových funkcích v C# verze 6
-keywords: Rozhraní .NET, .NET core
-author: BillWagner
 ms.date: 09/22/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: ea54e9a05120134eea8e1bc9d82302a7513b43e7
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 00aeb3ed940acfca748a1a9eb876fd0133baf6c0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 

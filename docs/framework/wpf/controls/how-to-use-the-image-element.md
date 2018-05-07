@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití elementu obrázku"
-ms.custom: 
+title: 'Postupy: Použití elementu obrázku'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - Image control [WPF]
 - rendering images [WPF]
 ms.assetid: 5b92e74b-1b56-4756-ac64-d5e9e08d9854
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 26beb6b0f5c446bbddd293e76ae79d062aa0fe48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11481533af7b3ad75b571f9f97251c123e0af1b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-the-image-element"></a>Postupy: Použití elementu obrázku
 Tento příklad ukazuje, jak mají být zahrnuty bitové kopie aplikace pomocí <xref:System.Windows.Controls.Image> elementu.  

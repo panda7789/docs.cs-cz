@@ -1,28 +1,16 @@
 ---
-title: "x:Shared – atribut"
-ms.custom: 
+title: x:Shared – atribut
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML [XAML Services], x:Shared attribute
 - x:Shared attribute [XAML Services]
 - Shared attribute in XAML [XAML Services]
 ms.assetid: c8cff434-2785-405f-9f95-16deb34c9e64
-caps.latest.revision: "16"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c9cc5e2bff9cc2591c7a12630da5422dbf73713a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bee37735382249d2919ef870ca495e6096532352
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
 Pokud nastavíte hodnotu `false`, mění chování WPF načtení prostředků tak, aby požadavky pro prostředek s atributy vytvoření nové instance pro každý požadavek místo sdílení stejné instanci pro všechny požadavky.  
@@ -36,7 +24,7 @@ Pokud nastavíte hodnotu `false`, mění chování WPF načtení prostředků ta
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `x:Shared`je namapovaná na oboru názvů jazyka XAML jazyka XAML a je rozpoznat jako platný element jazyka XAML rozhraní .NET Framework XAML Services a jeho čtečky XAML. Ale stanovené možnosti `x:Shared` jsou pouze relevantní pro aplikace WPF a pro analyzátor WPF XAML. V grafickém subsystému WPF `x:Shared` je užitečné jako atribut pouze při použití objektu, která existuje v rámci WPF <xref:System.Windows.ResourceDictionary>. Další použití nevyvolá výjimku, analýzy výjimky nebo jiné chyby, ale nemají žádný účinek.  
+ `x:Shared` je namapovaná na oboru názvů jazyka XAML jazyka XAML a je rozpoznat jako platný element jazyka XAML rozhraní .NET Framework XAML Services a jeho čtečky XAML. Ale stanovené možnosti `x:Shared` jsou pouze relevantní pro aplikace WPF a pro analyzátor WPF XAML. V grafickém subsystému WPF `x:Shared` je užitečné jako atribut pouze při použití objektu, která existuje v rámci WPF <xref:System.Windows.ResourceDictionary>. Další použití nevyvolá výjimku, analýzy výjimky nebo jiné chyby, ale nemají žádný účinek.  
   
  Význam `x:Shared` není zadané v specifikace jazyka XAML. Jiných implementacích XAML, jako jsou ty, které sestavení v rozhraní .NET Framework XAML Services neposkytují nutně sdílení prostředků podpory. Implementace takových XAML poskytovat podobné chování v podpůrné framework, který používá `x:Shared` hodnoty.  
   
@@ -48,7 +36,7 @@ Pokud nastavíte hodnotu `false`, mění chování WPF načtení prostředků ta
   
  Explicitní určení `x:Shared="true"` nevyužívá, protože již výchozí. Neexistuje žádné přímé kód ekvivalentní `x:Shared` v WPF objektu modelu, lze zadat pouze využití XAML a musí být zpracován jako výchozí chování WPF nebo v zprostředkující datový proud uzlu XAML v cestě zatížení Pokud zpracované pomocí rozhraní .NET Framework XAML Se rvices a jeho čtečky XAML.  
   
- Scénář pro `x:Shared="false"` je, pokud definujete <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> odvozené třídy jako prostředek a potom zavedení element prostředků do modelu obsahu. `x:Shared="false"`Umožňuje prostředek element potřeba zavést vícekrát ve stejné kolekci (například <xref:System.Windows.Controls.UIElementCollection>). Bez `x:Shared="false"` to je neplatný, protože kolekce vyžaduje jedinečnost její obsah. Ale `x:Shared="false"` chování vytvoří jiná instance stejné prostředku místo vrací stejnou instanci.  
+ Scénář pro `x:Shared="false"` je, pokud definujete <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> odvozené třídy jako prostředek a potom zavedení element prostředků do modelu obsahu. `x:Shared="false"` Umožňuje prostředek element potřeba zavést vícekrát ve stejné kolekci (například <xref:System.Windows.Controls.UIElementCollection>). Bez `x:Shared="false"` to je neplatný, protože kolekce vyžaduje jedinečnost její obsah. Ale `x:Shared="false"` chování vytvoří jiná instance stejné prostředku místo vrací stejnou instanci.  
   
  Jiné scénáře `x:Shared="false"` je, pokud použijete <xref:System.Windows.Freezable> prostředku pro animace hodnoty, ale chcete upravit prostředek na základě za animace.  
   

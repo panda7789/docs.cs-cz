@@ -1,14 +1,6 @@
 ---
 title: Vytváření zdrojových souborů pro aplikace klasické pracovní plochy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,13 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b73520dfc3d5123aedce77254f738a61a27ccd95
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: b8d5c151c728002ede0e29be77fa6e23aa2c1b3d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-resource-files-for-desktop-apps"></a>Vytváření zdrojových souborů pro aplikace klasické pracovní plochy
 Můžete zahrnout prostředky, například řetězce, Image nebo dat objektů, soubory prostředků, aby je bylo možné snadno do vaší aplikace. Rozhraní .NET Framework nabízí pět způsoby, jak vytvářet soubory prostředků:  
@@ -123,7 +111,7 @@ greeting=Hello, {0}!
   
  Textový soubor je převeden do souboru .resources pomocí následujícího příkazu:  
   
- **resgen GreetingResources.txt**  
+ **Nástroj Resgen GreetingResources.txt**  
   
  Následující příklad ukazuje zdrojový kód pro konzolovou aplikaci, která používá souboru .resources pro zobrazení zprávy pro uživatele.  
   

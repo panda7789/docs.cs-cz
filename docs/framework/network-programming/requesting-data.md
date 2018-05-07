@@ -1,12 +1,6 @@
 ---
-title: "Požadavek na Data"
-ms.custom: 
+title: Požadavek na Data
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,16 +17,14 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 76ea605444b5d1776c5a85891db4f3460e9df24b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 166a076eae69b351248bc67570cdaf50b43ab95c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="requesting-data"></a>Požadavek na Data
 Vývoj aplikací, které běží v distribuované provozní prostředí dnešní Internetu vyžaduje metodu efektivní, snadno použitelné pro načítání dat ze všech typů prostředků. Modulární protokoly umožňují vyvíjet aplikace, které pomocí jediného rozhraní k načtení dat z více internetových protokolech.  

@@ -1,24 +1,12 @@
 ---
-title: "3405 – EncryptedDataProcessingStart"
-ms.custom: 
+title: 3405 – EncryptedDataProcessingStart
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bdb6e4e8-ec85-4629-a43a-7836d445ecab
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3b53f52fdb9d0c639e1dd9f38b0197c6812d083b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 67462fa77bd3d9ca7932e4177ac4a9c0ae513697
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3405---encrypteddataprocessingstart"></a>3405 – EncryptedDataProcessingStart
 ## <a name="properties"></a>Vlastnosti  

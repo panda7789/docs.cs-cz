@@ -1,29 +1,15 @@
 ---
 title: Nástroje
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 89c907f9-313f-408c-992a-631f1eadf1da
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5badbb9142261fc1dc6c2b2d5af3c89c7af776b6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 6c4ada74c2fc6aba84eb1fe46f4d7cdee9978d13
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tools"></a>Nástroje
-Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] nástroje.  
+Toto téma uvádí všechny výjimky generované nástroje Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
@@ -88,7 +74,7 @@ Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../
 |ErrInputConflictsWithMode|Čtení ze zadaného vstupu není konzistentní s dalšími možnostmi.|  
 |ErrDuplicateValuePassedToTypeArg|Zadaná hodnota byl předán Zadaná možnost vícekrát. Každý typ lze zadat pouze jednou.|  
 |ErrInputEPRFileParseError|Reference koncového bodu nelze číst ze zadaného. Ověřte, že zadaný kód XML ve správném formátu a platné.|  
-|ErrCouldNotCreateCodeProvider|Pro zadanou hodnotu, která byla předána /{1} argument nelze vytvořit zprostředkovatel kódu. Ověřte, zda je správně nainstalován a nakonfigurován zprostředkovatele kódu.|  
+|ErrCouldNotCreateCodeProvider|Zprostředkovatel kódu nelze vytvořit zadanou hodnotu, která byla předána nebo{1} argument. Ověřte, zda je správně nainstalován a nakonfigurován zprostředkovatele kódu.|  
 |ErrPathTooLongDirOnly|Výsledná zadaná cesta je příliš dlouhý. Zkontrolujte zadaného argumentu.|  
 |HelpDataContractSerializer|Generovat datové typy, které používají serializátor kontraktu k serializaci a deserializaci.|  
 |ErrUnableToExportEndpoint|Došlo k chybě při exportu název zadaný koncový bod v určeném oboru názvů v zadaný typ služby nalezen v konfiguračním souboru načten pro sestavení.|  
@@ -138,7 +124,7 @@ Toto téma uvádí všechny výjimky generované [!INCLUDE[indigo1](../../../../
 |GeneratingFiles|Generování souborů...|  
 |ErrCannotSpecifyMultipleMappingsForNamespace|Zadané možnosti byla předána neplatná hodnota. Zadaný cílový obor názvů nelze mapovat na více oborů názvů CLR jako zadaný.|  
 |ErrCouldNotLoadReferenceAssemblyAt|Zadaný odkaz na sestavení nelze načíst.|  
-|ParametersOut|\<file>|  
+|ParametersOut|\<Soubor >|  
 |NoCodeWasGeneratedSuggestDCOnly|Generovat kontrakty z schémat, použijte Zadaná možnost.|  
 |ErrUnableToLoadInputConfig|Zadaný konfigurační soubor nelze načíst.|  
 |ErrUnexpectedDelimiter|Argument je neplatný oddělovač (': ' nebo '=') nelze spustit možnost.|  

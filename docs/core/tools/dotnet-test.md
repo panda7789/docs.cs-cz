@@ -4,16 +4,11 @@ description: Příkaz dotnet testu se používá k provedení testů jednotek v 
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 04af96bb53cc4fdac2e52311f9197eb1ee2b112d
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d85ca0bf75baa94e63358bd66d11bc29e8b9284b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-test"></a>test DotNet.
 

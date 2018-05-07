@@ -1,13 +1,6 @@
 ---
-title: "Z na podle animací – přehled"
-ms.custom: 
+title: Z na podle animací – přehled
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - animation [WPF], From/to/by
 - From/to/by animation
 ms.assetid: 516fce0a-e7f8-49b8-b018-53b3d409a8a3
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4c4c2c3b9cabb630b5762fdc49f6cb62eef28f71
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3095ec2c6307faaaa8049f23fffb5909cb3042d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje, jak použít z/do nebo podle animací pro animaci vlastností závislostí. From/k/podle animace vytvoří přechod mezi dvěma hodnotami.  
@@ -47,11 +35,11 @@ Toto téma popisuje, jak použít z/do nebo podle animací pro animaci vlastnost
   
  Animace z/do nebo pomocí třídy patří do <xref:System.Windows.Media.Animation> obor názvů a použijte následující konvence:  
   
- *\<Typ >*`Animation`  
+ *\<Typ >* `Animation`  
   
  Kde  *\<typ >* je typ hodnoty, které animuje třídy.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje následující třídy animace z/do nebo podle.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje následující třídy animace z/do nebo podle.  
   
 |Typ vlastnosti|Odpovídající z/do nebo pomocí třídy animace|  
 |-------------------|------------------------------------------------|  
@@ -149,7 +137,7 @@ Toto téma popisuje, jak použít z/do nebo podle animací pro animaci vlastnost
   
 -   Cesta animace generuje hodnoty výstup z <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [cesta animací přehled](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md).  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Můžete také vytvořit vlastní animace typy. Další informace najdete v tématu [vlastní animace přehled](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Můžete také vytvořit vlastní animace typy. Další informace najdete v tématu [vlastní animace přehled](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Animation.Timeline>  

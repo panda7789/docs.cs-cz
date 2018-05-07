@@ -1,28 +1,16 @@
 ---
-title: "Návod: Určení stylu obsahu WPF"
-ms.custom: 
+title: 'Návod: Určení stylu obsahu WPF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WPF Designer [Windows Forms], styling WPF content
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ae150e93958b622a772258ab41fa4281014dd567
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d02e48daad705b29cb7e179417f665c34857896e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-styling-wpf-content"></a>Návod: Určení stylu obsahu WPF
 Tento názorný postup ukazují, jak použít stylů do ovládacího prvku Windows Presentation Foundation (WPF) hostované ve formuláři Windows.  
@@ -83,7 +71,7 @@ Tento názorný postup ukazují, jak použít stylů do ovládacího prvku Windo
   
 3.  V panelu inteligentních značek pro `elementHost1`, klikněte na tlačítko **upravit hostované obsah** z rozevíracího seznamu.  
   
-     `UserControl1`Otevře se v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
+     `UserControl1` Otevře se v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
   
 4.  V zobrazení jazyka XAML, vložte následující XAML po `<UserControl>` počáteční značce.  
   
@@ -165,6 +153,6 @@ Tento názorný postup ukazují, jak použít stylů do ovládacího prvku Windo
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
  [Používání ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
- [WPF Designer](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [Návrhář WPF](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)

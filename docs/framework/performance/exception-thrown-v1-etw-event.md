@@ -1,27 +1,17 @@
 ---
-title: "Událost Trasování událostí pro Windows výjimky Thrown_V1"
-ms.custom: 
+title: Událost Trasování událostí pro Windows výjimky Thrown_V1
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ExceptionThrown_V1 event [.NET Framework]
 - ETW, ExceptionThrown_V1 event (CLR)
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
-caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 60013d0df8c63033f6da8d61479bacac7b944094
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dafa5846f779276ab81e8e30e7c7a50b9fbff853
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exception-thrownv1-etw-event"></a>Událost Trasování událostí pro Windows výjimky Thrown_V1
 Tato událost zaznamená informace o výjimky, které jsou vydány.  
@@ -30,7 +20,7 @@ Tato událost zaznamená informace o výjimky, které jsou vydány.
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`ExceptionKeyword`(0x8000)|Upozornění (2)|  
+|`ExceptionKeyword` (0x8000)|Upozornění (2)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   

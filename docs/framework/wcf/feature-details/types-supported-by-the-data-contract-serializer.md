@@ -1,31 +1,17 @@
 ---
 title: Typy podporované serializátorem kontraktu dat
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - serialization [WCF], supported types
 ms.assetid: 7381b200-437a-4506-9556-d77bf1bc3f34
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c53a11408254dc3c5f2abfb7d5d45305d3429280
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 9a6279b9850ce5cd3d23cffeaf233dec1b360deb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-supported-by-the-data-contract-serializer"></a>Typy podporované serializátorem kontraktu dat
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá <xref:System.Runtime.Serialization.DataContractSerializer> jako výchozí modul serializace k převedení dat do XML a převést zpět na data XML. <xref:System.Runtime.Serialization.DataContractSerializer> Je určená k serializaci *kontrakt dat* typy. Však podporuje mnoho dalších typů, které lze chápat tak, že má implicitní data kontrakt. Následuje seznam všech typů, které lze serializovat:  
+Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serialization.DataContractSerializer> jako výchozí modul serializace k převedení dat do XML a převést zpět na data XML. <xref:System.Runtime.Serialization.DataContractSerializer> Je určená k serializaci *kontrakt dat* typy. Však podporuje mnoho dalších typů, které lze chápat tak, že má implicitní data kontrakt. Následuje seznam všech typů, které lze serializovat:  
   
 -   Všechny veřejně viditelný typy, které mají konstruktor, který nemá žádné parametry.  
   
@@ -51,13 +37,13 @@ ms.lasthandoff: 04/28/2018
   
 -   K serializaci nebo deserializaci typ, který implementuje <xref:System.Runtime.Serialization.ISerializable> z částečně důvěryhodného kódu pomocí <xref:System.Runtime.Serialization.DataContractSerializer> vyžaduje <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> a <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A> oprávnění.  
   
--   Při spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kód na [částečné důvěryhodnosti](../../../../docs/framework/wcf/feature-details/partial-trust.md) režimu, serializace a deserializace `readonly` pole (obě `public` a `private`) není podporován. Je to proto, že generovaný IL je nelze ověřit a proto vyžaduje zvýšená oprávnění.  
+-   Při spuštění kódu WCF [částečné důvěryhodnosti](../../../../docs/framework/wcf/feature-details/partial-trust.md) režimu, serializace a deserializace `readonly` pole (obě `public` a `private`) není podporován. Je to proto, že generovaný IL je nelze ověřit a proto vyžaduje zvýšená oprávnění.  
   
 -   Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> jsou podporovány v prostředí s částečnou důvěryhodností. Však použít <xref:System.Runtime.Serialization.DataContractSerializer> se vztahují následující podmínky:  
   
     -   Všechny serializovatelný `[DataContract]` typy musí být veřejné.  
   
-    -   Všechny serializovatelný `[DataMember]` polí a vlastností v `[DataContract]` typ musí být veřejné a pro čtení a zápis. Serializace a deserializace `readonly` polí není podporováno při spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v aplikaci částečně důvěryhodné.  
+    -   Všechny serializovatelný `[DataMember]` polí a vlastností v `[DataContract]` typ musí být veřejné a pro čtení a zápis. Serializace a deserializace `readonly` polí není podporováno při spuštění WCF v aplikaci částečně důvěryhodné.  
   
     -   `[Serializable]` / `ISerializable]` Programovací model není podporována v prostředí s částečnou důvěryhodností.  
   
@@ -76,7 +62,7 @@ ms.lasthandoff: 04/28/2018
   
 -   Struktury a třídy jsou podporovány.  
   
--   <xref:System.Runtime.Serialization.DataContractSerializer> Nepodporuje programovací model používané <xref:System.Xml.Serialization.XmlSerializer> a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby. Konkrétně nepodporuje atributů, například <xref:System.Xml.Serialization.XmlElementAttribute> a <xref:System.Xml.Serialization.XmlAttributeAttribute>. Povolení podpory pro tento programovací model [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] musí přepnout používat <xref:System.Xml.Serialization.XmlSerializer> místo <xref:System.Runtime.Serialization.DataContractSerializer>.  
+-   <xref:System.Runtime.Serialization.DataContractSerializer> Nepodporuje programovací model používané <xref:System.Xml.Serialization.XmlSerializer> a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby. Konkrétně nepodporuje atributů, například <xref:System.Xml.Serialization.XmlElementAttribute> a <xref:System.Xml.Serialization.XmlAttributeAttribute>. Povolení podpory pro tento programovací model, musí se použít přepnout WCF <xref:System.Xml.Serialization.XmlSerializer> místo <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 -   <xref:System.DBNull> Typ považuje zvláštním způsobem. Je typu singleton, a při deserializaci deserializátor respektuje jednoznačné omezení a všechny body `DBNull` odkazy na instanci typu singleton. Protože `DBNull` je typu serializable se vyžaduje <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> oprávnění.  
   

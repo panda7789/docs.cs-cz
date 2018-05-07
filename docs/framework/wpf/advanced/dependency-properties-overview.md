@@ -1,10 +1,7 @@
 ---
-title: "Přehled vlastností závislostí"
-description: "Vlastnost, kterou je zajištěna WPF vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje vlastnosti systému WPF a možností vlastnost závislosti."
+title: Přehled vlastností závislostí
+description: Vlastnost, kterou je zajištěna WPF vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje vlastnosti systému WPF a možností vlastnost závislosti.
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology: dotnet-wpf
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,20 +14,15 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d90e47c400f24eb10f2d262f9cb0e757ff472f0a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 196e858c52c06c96d652209e86039bfcc81a785a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislostí
 
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje sadu služeb, které slouží k rozšíření funkcí [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost. Souhrnně, tyto služby jsou obvykle označují jako [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému. Vlastnosti, které je založeno [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému a možností vlastnost závislosti. To zahrnuje jak používat existující vlastností závislostí v jazyce XAML a v kódu. Tento přehled také zavádí specializované aspektů vlastností závislostí, jako je například metadata vlastnosti závislosti a jak vytvořit vlastní vlastnost závislosti v rámci vlastní třídy.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje sadu služeb, které slouží k rozšíření funkcí [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost. Souhrnně, tyto služby jsou obvykle označují jako [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému. Vlastnosti, které je založeno [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému a možností vlastnost závislosti. To zahrnuje jak používat existující vlastností závislostí v jazyce XAML a v kódu. Tento přehled také zavádí specializované aspektů vlastností závislostí, jako je například metadata vlastnosti závislosti a jak vytvořit vlastní vlastnost závislosti v rámci vlastní třídy.
 
 ## <a name="prerequisites"></a>Požadavky
 Toto téma předpokládá, že máte některé základní znalosti o [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] a objektově orientované programování. Chcete-li v následujících příkladech v tomto tématu byste měli také porozumět [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a vědět, jak napsat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Další informace najdete v tématu [návod: Můj první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
@@ -43,7 +35,7 @@ Toto téma předpokládá, že máte některé základní znalosti o [!INCLUDE[T
 Odkaz na sady SDK můžete identifikovat vlastností, které je vlastnost závislosti přítomností části informace o vlastnosti závislosti na stránce spravovaný odkaz pro danou vlastnost. Informace o vlastnosti závislosti část obsahuje odkaz <xref:System.Windows.DependencyProperty> identifikátor pole pro tuto vlastnost závislosti a také obsahuje seznam možností metadat, které jsou nastavené pro tuto vlastnost, informace o přepsání na třídě a další podrobnosti.
 
 ## <a name="dependency-properties-back-clr-properties"></a>Vlastnosti závislosti zpět vlastnosti CLR
-Vlastnosti závislosti a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému rozšířit funkce vlastnost o typ, který zálohuje vlastnosti, jako alternativní implementace pro standardní vzor zálohování vlastnost s soukromé pole. Název tohoto typu je <xref:System.Windows.DependencyProperty>. Další důležité typ, který definuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systém <xref:System.Windows.DependencyObject>. <xref:System.Windows.DependencyObject>definuje základní třídu, která můžete zaregistrovat a vlastní vlastnost závislosti.
+Vlastnosti závislosti a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému rozšířit funkce vlastnost o typ, který zálohuje vlastnosti, jako alternativní implementace pro standardní vzor zálohování vlastnost s soukromé pole. Název tohoto typu je <xref:System.Windows.DependencyProperty>. Další důležité typ, který definuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systém <xref:System.Windows.DependencyObject>. <xref:System.Windows.DependencyObject> definuje základní třídu, která můžete zaregistrovat a vlastní vlastnost závislosti.
 
 Následuje souhrn terminologii používané v tomto [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] dokumentace když hovoříte o vlastnosti závislosti:
 

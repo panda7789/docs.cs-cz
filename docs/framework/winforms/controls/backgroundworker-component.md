@@ -1,13 +1,6 @@
 ---
-title: "BackgroundWorker – komponenta"
-ms.custom: 
+title: BackgroundWorker – komponenta
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - BackgroundWorker component
 - background tasks
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: bef7b0ab-ce57-475a-a2d6-fb8a702a9417
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6d83ff69053a71626d0bf9a844d9e94235080d78
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 38505876e2f944139622a0d7cf7aaab9c510ef89
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="backgroundworker-component"></a>BackgroundWorker – komponenta
 `BackgroundWorker` Součást umožňuje formuláře nebo spuštění operace asynchronně ovládacího prvku.  

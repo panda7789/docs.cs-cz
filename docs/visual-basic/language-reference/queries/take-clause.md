@@ -1,12 +1,6 @@
 ---
-title: "Take – klauzule (Visual Basic)"
+title: Take – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryTake
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - queries [Visual Basic], Take
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ee289a24c15226126a526af116ed53b4a9055b35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0dddb411af1b4ee269e091c07553a94589d90b2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="take-clause-visual-basic"></a>Take – klauzule (Visual Basic)
 Vrátí zadaný počet souvislý elementů od začátku kolekce.  
@@ -53,8 +44,8 @@ Take count
 ## <a name="see-also"></a>Viz také  
  [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Select – klauzule](../../../visual-basic/language-reference/queries/select-clause.md)  
- [From – klauzule](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Order By – klauzule](../../../visual-basic/language-reference/queries/order-by-clause.md)  
- [Take While – klauzule](../../../visual-basic/language-reference/queries/take-while-clause.md)  
- [Skip – klauzule](../../../visual-basic/language-reference/queries/skip-clause.md)
+ [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)  
+ [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)  
+ [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)

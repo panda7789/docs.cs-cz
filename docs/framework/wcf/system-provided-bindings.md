@@ -1,28 +1,14 @@
 ---
 title: Vazby poskytované systémem
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
-caps.latest.revision: 60
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4ccdab56a90f4114836dd9f0a56cc495657ee9c8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 12382b0886970bc48345107008ee449d9653ec4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="system-provided-bindings"></a>Vazby poskytované systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit k koncový bod. Vazba obsahuje následující prvky:  
@@ -33,7 +19,7 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
   
 -   Kódování určuje přenosová kódování použité pro zprávy, které se odesílají do koncového bodu, například, text/XML, binární nebo zpráva přenosu optimalizace mechanismus (MTOM).  
   
- Toto téma představuje všechny poskytované systémem [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vazby. Pokud žádná z nich splňuje přesný kritéria pro vaši aplikaci, můžete vytvořit vlastní vazby. Další informace o vytváření vlastních vazeb najdete v tématu [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Toto téma představuje všechny vazby poskytované systémem Windows Communication Foundation (WCF). Pokud žádná z nich splňuje přesný kritéria pro vaši aplikaci, můžete vytvořit vlastní vazby. Další informace o vytváření vlastních vazeb najdete v tématu [vlastní vazby](../../../docs/framework/wcf/extending/custom-bindings.md).  
   
  Vazbu zabezpečené a vzájemná spolupráce, který podporuje protokol WS-Federation umožňuje organizacím, které jsou ve federaci efektivní ověřování a autorizaci uživatelů.  
   

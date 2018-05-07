@@ -1,24 +1,12 @@
 ---
-title: "Serializace ve formátu Json s programováním na úrovni zpráv"
-ms.custom: 
+title: Serializace ve formátu Json s programováním na úrovni zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5f940ba2-57ee-4c49-a779-957c5e7e71fa
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bfa8952c54f29d88cb4975c1924b9c3e94c1c226
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a2568c30d34e39aaf1708a9fb3e186f86b17f5b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serializing-in-json-with-message-level-programming"></a>Serializace ve formátu Json s programováním na úrovni zpráv
 WCF podporuje serializaci dat ve formátu JSON. Toto téma popisuje, jak říct WCF k serializaci vaší typy pomocí <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  

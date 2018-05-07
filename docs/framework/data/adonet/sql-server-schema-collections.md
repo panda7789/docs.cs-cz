@@ -1,24 +1,12 @@
 ---
-title: "Kolekcemi schémat serveru SQL"
-ms.custom: 
+title: Kolekcemi schémat serveru SQL
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e95c6dc6bceb367000f4aa174a368bf046bc1b93
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 248e5f4caf47f09742358240fa43f46169f0b1e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-server-schema-collections"></a>Kolekcemi schémat serveru SQL
 Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě běžných kolekcemi schémat. Schéma kolekce mírně lišit podle verze systému SQL Server, kterou používáte. Pokud chcete určit seznam podporovaných schématu kolekcí, volání **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají.  
@@ -27,7 +15,7 @@ Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuj
   
 |columnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
-|database_name|String|Název databáze.|  
+|Název databáze database_name|String|Název databáze.|  
 |DBID|Int16|ID databáze.|  
 |create_date|DateTime|Datum vytvoření databáze.|  
   
@@ -76,7 +64,7 @@ Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuj
 |TABLE_NAME|String|Název tabulky.|  
 |COLUMN_NAME|String|Název sloupce indexu je přidružen.|  
 |ordinal_position|Int32|Pořadové číslo pozice sloupce.|  
-|KeyType|Byte|Typ objektu.|  
+|Typ_klíče.|Byte|Typ objektu.|  
 |index_name|String|Název indexu.|  
   
 ## <a name="procedures"></a>Procedury  
@@ -153,7 +141,7 @@ Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuj
 |CHARACTER_SET_NAME|String|Zadejte jedinečný název pro znak nastavit, pokud v tomto sloupci textová data nebo text data vrátí. V opačném případě bude vrácena hodnota NULL.|  
 |COLLATION_CATALOG|String|Hlavní server vrátí, pokud je sloupec textová data nebo textová data, která určuje databázi, ve kterém je definovaný kolace, typu. V tomto sloupci, jinak hodnota je NULL.|  
   
-### <a name="columns-sql-server-2008"></a>Columns (SQL Server 2008)  
+### <a name="columns-sql-server-2008"></a>Sloupce (SQL Server 2008)  
  Od verze rozhraní .NET Framework verze 3.5 SP1 a SQL Server 2008, následující sloupce jsou přidané do kolekce schémat sloupců pro podporu nových typů prostorových filestream a zhuštěné sloupce. Tyto sloupce nejsou podporovány v dřívějších verzích rozhraní .NET Framework a SQL Server.  
   
 |columnName|Datový typ|Popis|  
@@ -223,7 +211,7 @@ Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuj
 |columnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
 |UID|Int16|ID uživatele, v této databázi jedinečné. 1 je vlastník databáze.|  
-|user_name|String|Uživatelské jméno nebo název skupiny, v této databázi jedinečné.|  
+|uživatelské_jméno|String|Uživatelské jméno nebo název skupiny, v této databázi jedinečné.|  
 |CREATEDATE formát|DateTime|Datum, kdy byla přidána k účtu.|  
 |updatedate|DateTime|Datum, kdy byl naposled změněn účet.|  
   

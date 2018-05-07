@@ -4,16 +4,11 @@ description: Příkaz pack dotnet vytvoří balíčky NuGet pro projekt .NET Cor
 author: mairaw
 ms.author: mairaw
 ms.date: 03/10/2018
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: fdbf3b23813f09ad9902f6b0457f176139b405a4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6e6136e22c4bac201cfa0e4af321329432c04936
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-pack"></a>pack DotNet.
 

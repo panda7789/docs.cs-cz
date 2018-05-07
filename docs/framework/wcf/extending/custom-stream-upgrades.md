@@ -1,24 +1,12 @@
 ---
-title: "Vlastní upgrady streamů"
-ms.custom: 
+title: Vlastní upgrady streamů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e3da85c8-57f3-4e32-a4cb-50123f30fea6
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 73359c293f7d29c16702e826ed6caa61149935bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 4bcd59cb5e420c551c611c8e676289f20d4354d0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-stream-upgrades"></a>Vlastní upgrady streamů
 Datový proud orientované přenosy například TCP a pojmenované kanály pracovat nepřetržitý proud bajtů mezi klientem a serverem. Tento datový proud je realizován pomocí <xref:System.IO.Stream> objektu. V případě upgradu datového proudu klient chce, aby se k přidání volitelné protokol vrstvy kanálu zásobníku a požádá druhém konci komunikační kanál Uděláte to tak. Upgrade datového proudu se skládá v nahrazení původní <xref:System.IO.Stream> objekt s některého upgradovaný.  
@@ -41,7 +29,7 @@ Datový proud orientované přenosy například TCP a pojmenované kanály praco
  Všimněte si, že v případě více upgradů iniciátor a dodavatel zapouzdření stavu počítače k vynucení, který upgradu přechody jsou platné pro každé spuštění.  
   
 ## <a name="how-to-implement-a-stream-upgrade"></a>Jak implementovat upgradu datového proudu  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje čtyři `abstract` třídy, které můžete implementovat:  
+ Windows Communication Foundation (WCF) poskytuje čtyři `abstract` třídy, které můžete implementovat:  
   
 -   <xref:System.ServiceModel.Channels.StreamUpgradeInitiator?displayProperty=nameWithType>  
   
@@ -78,7 +66,7 @@ Datový proud orientované přenosy například TCP a pojmenované kanály praco
 ## <a name="security-upgrades"></a>Upgrady zabezpečení  
  Přidání upgrade zabezpečení je specializovanou verzi procesu upgradu obecné datového proudu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]již poskytuje dva elementy vazby pro upgrade zabezpečení datového proudu. Konfigurace zabezpečení na úrovni přenosu je zapouzdřené pomocí <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> a <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> které mohou být konfigurovány a přidat do vlastní vazby. Tyto prvky vazeb rozšířit <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement> třídu, která vytvoří datový proud klientských a serverových upgradu zprostředkovatele. Tyto prvky vazeb mají metody, které vytvoření datového proudu specializované zabezpečení třídy upgradu zprostředkovatele, které nejsou `public`, takže pro tyto dva případy všechny musíte udělat je přidat do vazby prvku vazby.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] již poskytuje dva elementy vazby pro upgrade zabezpečení datového proudu. Konfigurace zabezpečení na úrovni přenosu je zapouzdřené pomocí <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> a <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> které mohou být konfigurovány a přidat do vlastní vazby. Tyto prvky vazeb rozšířit <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement> třídu, která vytvoří datový proud klientských a serverových upgradu zprostředkovatele. Tyto prvky vazeb mají metody, které vytvoření datového proudu specializované zabezpečení třídy upgradu zprostředkovatele, které nejsou `public`, takže pro tyto dva případy všechny musíte udělat je přidat do vazby prvku vazby.  
   
  Pro scénáře zabezpečení nejsou splněny ve výše uvedené prvky dvě vazby, tři související se zabezpečením `abstract` třídy jsou odvozené z výše uvedených iniciátor, dodavatel a zprostředkovatele základních tříd:  
   

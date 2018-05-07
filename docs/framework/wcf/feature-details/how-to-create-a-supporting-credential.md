@@ -1,29 +1,15 @@
 ---
 title: 'Postupy: vytvoření přihlašovacích údajů podpora'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e74ba51306ba8761d916f580b21de9b3ba9cb7f4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6ec7412d1de2bca349c7cfbf4a37c98ca60cc78d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-supporting-credential"></a>Postupy: vytvoření přihlašovacích údajů podpora
-Je možné, že schéma vlastní zabezpečení, která vyžaduje více než jedno pověření. Například služby vyžádat z klienta nejen uživatelské jméno a heslo, ale také přihlašovacích údajů, který prokáže, klient je víc než 18. Druhý přihlašovací údaje *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta.  
+Je možné, že schéma vlastní zabezpečení, která vyžaduje více než jedno pověření. Například služby vyžádat z klienta nejen uživatelské jméno a heslo, ale také přihlašovacích údajů, který prokáže, klient je víc než 18. Druhý přihlašovací údaje *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  
   
 > [!NOTE]
 >  Specifikace pro podporu přihlašovací údaje je součástí specifikace WS-SecurityPolicy. Další informace najdete v tématu [specifikací zabezpečení webových služeb](http://go.microsoft.com/fwlink/?LinkId=88537).  

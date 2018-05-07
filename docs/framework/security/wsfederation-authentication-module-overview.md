@@ -1,24 +1,14 @@
 ---
-title: "Přehled modulu ověřování WSFederation"
-ms.custom: 
+title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
-caps.latest.revision: "6"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: b9e76cbfc0afc682f6a7cd0bc95c254d25f77954
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abfd211629c3c77c87cbefbc27c6b18ab6872977
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-služba FAM). Toto téma vám pomůže pochopit, jak federovaného ověřování funguje a jak ji používat.  
@@ -41,7 +31,7 @@ Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v
 6.  RP extrahuje klienta deklarací z tokenu zabezpečení a provádí rozhodnutí o autorizaci.  
   
 ### <a name="using-the-federated-authentication-module-with-aspnet"></a>Modul federovaného ověřování pomocí technologie ASP.NET  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>(WS-služba FAM) je modul protokolu HTTP, která umožňuje přidat federovaného ověřování pro [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace. Federované ověřování umožňuje zpracovávat služby tokenů zabezpečení a vám umožní soustředit na obchodní logiku zápis logiku ověřování.  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WS-služba FAM) je modul protokolu HTTP, která umožňuje přidat federovaného ověřování pro [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace. Federované ověřování umožňuje zpracovávat služby tokenů zabezpečení a vám umožní soustředit na obchodní logiku zápis logiku ověřování.  
   
  Můžete nakonfigurovat WS-služba FAM k určení tokenů zabezpečení, které chcete použít k přesměrování neověřené požadavky. WIF umožňuje ověření uživatele dvěma způsoby:  
   
@@ -60,7 +50,7 @@ Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v
   
  Následující diagram znázorňuje celkové toku informací v případě, že pasivní přesměrování. Je žádost přesměrována automaticky prostřednictvím služby tokenů zabezpečení vytvořit přihlašovací údaje bez přihlašovací stránky:  
   
- ![Diagram časování pro přihlašování & č. 45; pomocí pasivní přesměrování](../../../docs/framework/security/media/signinusingpassiveredirect.gif "SignInUsingPassiveRedirect")  
+ ![Diagram časování pro přihlášení&#45;pomocí pasivní přesměrování](../../../docs/framework/security/media/signinusingpassiveredirect.gif "SignInUsingPassiveRedirect")  
   
  Následující diagram znázorňuje podrobněji na co se stane, když uživatel byl ověřen na službu STS a jejich tokeny zabezpečení jsou zpracovány <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>:  
   
@@ -68,7 +58,7 @@ Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v
   
  Následující diagram znázorňuje podrobněji na co se stane, když tokeny zabezpečení uživatele byl serializován do souborů cookie a jsou zachycen <xref:System.IdentityModel.Services.SessionAuthenticationModule>:  
   
- ![SAM časování diagram znázorňující přihlašovací & č. 45; v použití ovládacích prvků](../../../docs/framework/security/media/signinusingconrols-sam.gif "SignInUsingConrols_SAM")  
+ ![SAM časování diagram znázorňující přihlašovací&#45;v použití ovládacích prvků](../../../docs/framework/security/media/signinusingconrols-sam.gif "SignInUsingConrols_SAM")  
   
 ### <a name="events"></a>Události  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>, <xref:System.IdentityModel.Services.SessionAuthenticationModule>a jejich nadřazené třídy <xref:System.IdentityModel.Services.HttpModuleBase>, vyvolávání událostí v různých fázích zpracování požadavku HTTP. Dokáže zpracovat tyto události v `global.asax` soubor vaší [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace.  

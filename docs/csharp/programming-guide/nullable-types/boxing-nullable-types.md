@@ -1,22 +1,16 @@
 ---
-title: "Zabalení typů s povolenou hodnotou Null (Průvodce programováním v C#)"
+title: Zabalení typů s povolenou hodnotou Null (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - boxing [C#], nullable types
 - unboxing [C#], nullable types
 - nullable types [C#], boxing and unboxing
 ms.assetid: bdb5b626-abc0-405d-8f64-0f0a0bf883a4
-caps.latest.revision: "12"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 29fccba56f6758fdfd407fa1879baa9260b69187
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e2c7602bf45f1861d3a32a73824e9fedf0a4d29d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a>Zabalení typů s povolenou hodnotou Null (Průvodce programováním v C#)
 Objekty na základě typů s povolenou hodnotou Null se do pouze pole, pokud se objekt nesmí být nulová. Pokud <xref:System.Nullable%601.HasValue%2A> je `false`, odkaz na objekt je přiřazena k `null` místo zabalení. Příklad:  
@@ -73,6 +67,6 @@ int? i2 = (int?)iBoxed;
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
- [Postupy: identifikace typu s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Typy s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
+ [Postupy: Identifikace typu s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type.md)

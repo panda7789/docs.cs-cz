@@ -1,24 +1,12 @@
 ---
-title: "3390 – ClientSendPreambleStop"
-ms.custom: 
+title: 3390 – ClientSendPreambleStop
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fbf6e4ed-8538-417e-b4d1-a30b45ee6b5d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 413e075f2cd391cba3bf0cc15be2a664aa8a7eb9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ae0d6a630d8ab0e39ed85155e4d458132a96addc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3390---clientsendpreamblestop"></a>3390 – ClientSendPreambleStop
 ## <a name="properties"></a>Vlastnosti  

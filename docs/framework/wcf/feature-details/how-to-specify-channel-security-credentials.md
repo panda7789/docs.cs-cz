@@ -1,34 +1,22 @@
 ---
 title: 'Postupy: Zadejte pověření zabezpečení kanálu'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-caps.latest.revision: ''
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: e2aedb06ec694f6c7dfb12b70ab919ae23eed17e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: f25089f7f5ffa16bb46e0833b15b4cbc4a7735ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Zadejte pověření zabezpečení kanálu
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Monikeru služby umožňuje aplikacím COM volání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Většina [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby vyžadují klienta a zadejte pověření pro ověřování a autorizaci. Při volání metody [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, můžete zadat tyto přihlašovací údaje ve spravovaném kódu nebo v konfiguračním souboru aplikace. Při volání metody [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby z aplikace modelu COM, můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní k zadání přihlašovacích údajů. Toto téma se ilustrují různé způsoby, jak zadat přihlašovací údaje pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
+Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikacím COM volání služby WCF. Většina služeb WCF vyžadují klienta a zadejte pověření pro ověřování a autorizaci. Při volání služby WCF z klienta WCF, můžete tyto přihlašovací údaje ve spravovaném kódu nebo v konfiguračním souboru aplikace. Při volání služby WCF z aplikace modelu COM, můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní k zadání přihlašovacích údajů. Toto téma se ilustrují různé způsoby, jak zadat přihlašovací údaje pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
   
 > [!NOTE]
 >  <xref:System.ServiceModel.ComIntegration.IChannelCredentials> je rozhraní, na základě IDispatch a nebude používat funkci IntelliSense v prostředí Visual Studio.  
   
- Tento článek se použije [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby definované v [ukázka zabezpečení zpráv](../../../../docs/framework/wcf/samples/message-security-sample.md).  
+ V tomto článku budou používat služby WCF, které jsou definované v [ukázka zabezpečení zpráv](../../../../docs/framework/wcf/samples/message-security-sample.md).  
   
 ### <a name="to-specify-a-client-certificate"></a>Chcete zadat klientský certifikát  
   
@@ -40,7 +28,7 @@ ms.lasthandoff: 03/23/2018
   
 4.  Přidat `bindingNamespace=``http://Microsoft.ServiceModel.Samples` ke značce koncový bod v souboru App.config pro službu.  
   
-5.  Ukázka zabezpečení zpráv sestavit a spustit Service.exe. Použijte Internet Explorer a přejděte do služby URI (http://localhost: 8000/ServiceModelSamples/Service) k zajištění, že služba funguje.  
+5.  Ukázka zabezpečení zpráv sestavit a spustit Service.exe. Použijte Internet Explorer a přejděte do služby URI (http://localhost:8000/ServiceModelSamples/Service) zajistit, že služba funguje.  
   
 6.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko pro přidání do obslužná rutina kliknutí na následující kód:  
   

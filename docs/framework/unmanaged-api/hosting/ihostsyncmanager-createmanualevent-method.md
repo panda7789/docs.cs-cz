@@ -1,14 +1,6 @@
 ---
-title: "IHostSyncManager::CreateManualEvent – metoda"
-ms.custom: 
+title: IHostSyncManager::CreateManualEvent – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostSyncManager.CreateManualEvent
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 68661fbd-09cf-46dc-890b-e694f8a3880a
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 347eaa64b8a5e5b5c9494a779e3d583b10d80052
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ecf53606dd12b517d9ec31ab25f98452d35bdf98
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostsyncmanagercreatemanualevent-method"></a>IHostSyncManager::CreateManualEvent – metoda
 Vytvoří objekt Ruční vynulování události.  
@@ -58,7 +46,7 @@ HRESULT CreateManualEvent (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateManualEvent`úspěšně vrácena.|  
+|S_OK|`CreateManualEvent` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -67,7 +55,7 @@ HRESULT CreateManualEvent (
 |E_OUTOFMEMORY|Nedostatek paměti nebylo k dispozici k vytvoření objektu požadovaná událost.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateManualEvent`vytvoří `IHostManualEvent`, Ruční vynulování události objekt, který vyžaduje volání [ihostmanualevent::reset –](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-reset-method.md) metodu a nastavit do stavu signál. `CreateManualEvent`odpovídá Win32 `CreateEvent` funkce s hodnotou `true` zadaná pro `bManualReset` parametr.  
+ `CreateManualEvent` vytvoří `IHostManualEvent`, Ruční vynulování události objekt, který vyžaduje volání [ihostmanualevent::reset –](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-reset-method.md) metodu a nastavit do stavu signál. `CreateManualEvent` odpovídá Win32 `CreateEvent` funkce s hodnotou `true` zadaná pro `bManualReset` parametr.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -76,7 +64,7 @@ HRESULT CreateManualEvent (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  

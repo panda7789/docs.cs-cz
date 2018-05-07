@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Channels.IncompatibleExistingTransportManager
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5366ec64-e8ef-4a34-a2f6-7251d89f1be9
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 30adea272d7b6b3fc99f9f3c66de51d934043569
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e4e2e47ce799bab95a7cc59767366128eaf59ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelchannelsincompatibleexistingtransportmanager"></a>System.ServiceModel.Channels.IncompatibleExistingTransportManager
 Pro zadaný identifikátor URI byl nalezen stávající nekompatibilní správce přenosu.  

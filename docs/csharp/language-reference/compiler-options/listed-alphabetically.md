@@ -1,24 +1,17 @@
 ---
 title: Možnosti kompilátoru C# (abecední pořadí)
 ms.date: 04/12/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - compiler options [C#], listed alpabetically
 - C# language, compiler options listed alphabitically
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-caps.latest.revision: 25
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: deffa6556d02cd5449d4bc91cf051a591b1c333e
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: f0c9e0ff5881695cc9426610056677d6053376a2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kategorií, najdete v části [C# kompilátoru možnosti uvedené podle kategorie](listed-by-category.md).  
@@ -39,7 +32,7 @@ Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kateg
 |[-debug](debug-compiler-option.md)|Posílá informace pro ladění.|  
 |[-define](define-compiler-option.md)|Definuje symboly podmíněné kompilace.|  
 |[-delaysign](delaysign-compiler-option.md)|Podepíše sestavení pomocí pouze veřejné část složitý název klíče.|  
-|[-deterministickou](deterministic-compiler-option.md)|Způsobí, že kompilátor výstup sestavení jejichž binární obsah je stejný jako napříč kompilace Pokud vstupní hodnoty jsou identické.|
+|[-deterministic](deterministic-compiler-option.md)|Způsobí, že kompilátor výstup sestavení jejichž binární obsah je stejný jako napříč kompilace Pokud vstupní hodnoty jsou identické.|
 |[-doc](doc-compiler-option.md)|Určuje soubor dokumentace XML pro generování.|  
 |[-errorreport](errorreport-compiler-option.md)|Určuje, jak se budou zpracovávat chyby kompilátoru interní: řádku odeslání nebo žádný. Výchozí hodnota je none.|  
 |[-filealign](filealign-compiler-option.md)|Určuje zarovnání použité pro oddíly výstupního souboru.|  

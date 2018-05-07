@@ -1,38 +1,24 @@
 ---
 title: 'Postupy: Přístup ke službám pomocí duplexního kontraktu'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c80980ff5a5b1011c021bcaf0688747178ec5b9b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c0022e6ce3a63c1f497eeee82ca959cec1046cec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-services-with-a-duplex-contract"></a>Postupy: Přístup ke službám pomocí duplexního kontraktu
-Jedna z funkcí systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je schopnost vytvářet služby, která používá vzor duplexní zasílání zpráv. Tento vzor umožňuje službě ke komunikaci s klientem prostřednictvím zpětné volání. Toto téma ukazuje postup vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta v třídě klienta, který implementuje rozhraní zpětného volání.  
+Jedna z funkcí služby Windows Communication Foundation (WCF) je schopnost vytvářet služby, která používá vzor duplexní zasílání zpráv. Tento vzor umožňuje službě ke komunikaci s klientem prostřednictvím zpětné volání. Toto téma ukazuje postup vytvoření klienta WCF v třídě klienta, který implementuje rozhraní zpětného volání.  
   
  Duální vazbu zpřístupní IP adresu klienta ke službě. Klient musí použít zabezpečení zajistit, že připojení jenom k službám ho vztahy důvěryhodnosti.  
   
- Kurz týkající se vytváření základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a klienta, najdete v části [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md).  
+ Kurz týkající se vytváření základní služby WCF a klienta, najdete v části [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md).  
   
 ### <a name="to-access-a-duplex-service"></a>Pro přístup k duplexní služby  
   
@@ -80,7 +66,7 @@ Jedna z funkcí systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
     Dim site As InstanceContext = New InstanceContext(new CallbackHandler())  
     ```  
   
-6.  Vytvoření instance [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta pomocí konstruktoru, který vyžaduje <xref:System.ServiceModel.InstanceContext> objektu. Druhý parametr konstruktoru je název koncového bodu v konfiguračním souboru nalézt.  
+6.  Vytvoření instance klienta WCF pomocí konstruktoru, který vyžaduje <xref:System.ServiceModel.InstanceContext> objektu. Druhý parametr konstruktoru je název koncového bodu v konfiguračním souboru nalézt.  
   
     ```csharp  
     CalculatorDuplexClient wcfClient =   
@@ -91,7 +77,7 @@ Jedna z funkcí systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
     Dim wcfClient As New CalculatorDuplexClient(site, "default")  
     ```  
   
-7.  Volání metody [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta podle potřeby.  
+7.  Volání metody WCF klienta podle potřeby.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak vytvořit třídu klienta, který přistupuje k duplexního kontraktu.  

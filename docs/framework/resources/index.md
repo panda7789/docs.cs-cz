@@ -1,14 +1,6 @@
 ---
 title: Prostředky v aplikacích klasické pracovní plochy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
 - application resources
@@ -18,17 +10,13 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d8fa1521a5516a4be18352c1bce6abf93e40287f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 023099adeeebf21b7dba631bde75332524eb0cc3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resources-in-desktop-apps"></a>Prostředky v aplikacích klasické pracovní plochy
 Téměř každý produkční kvality aplikace má využívat prostředky. Prostředek je nespustitelná část dat, který je logicky nasazen s aplikací. Prostředek mohou být zobrazeny v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředků může obsahovat data v různých formách, včetně řetězce, Image a trvalé objekty. (K zápisu do souboru prostředků trvalé objekty, tyto objekty musí být serializovatelný.) Ukládání dat do souboru prostředků, můžete změnit data bez nutnosti rekompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje potřebu spoléhají na pevně data uložená na více místech.  
@@ -37,7 +25,7 @@ Téměř každý produkční kvality aplikace má využívat prostředky. Prost�
   
  Informace o prostředcích v technologii ASP.NET najdete v tématu [webové stránky ASP.NET: Přehled prostředků](http://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd) v Centru pro vývojáře aplikace Internet Explorer.  
   
- [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]aplikace používá model různých prostředků z aplikace klasické pracovní plochy a uložit jejich prostředky do souboru indexu (PRI) jeden balíček prostředků. Informace o prostředcích v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=241674) ve službě Windows Dev Center.  
+ [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace používá model různých prostředků z aplikace klasické pracovní plochy a uložit jejich prostředky do souboru indexu (PRI) jeden balíček prostředků. Informace o prostředcích v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=241674) ve službě Windows Dev Center.  
   
 ## <a name="creating-and-localizing-resources"></a>Vytváření a lokalizace prostředků  
  V aplikaci Nelokalizováno můžete soubory prostředků jako úložiště pro data aplikací, platí to hlavně o řetězce, které by jinak byla pevně zakódovaná na více místech ve zdrojovém kódu. Nejčastěji, můžete vytvořit prostředky jako text (TXT) nebo soubory XML (RESX) a pomocí [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) jejich kompilace do binární soubory RESOURCES. Tyto soubory můžete pak vloží ve spustitelném souboru aplikace kompilátorem jazyka. Další informace o vytváření prostředků najdete v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  

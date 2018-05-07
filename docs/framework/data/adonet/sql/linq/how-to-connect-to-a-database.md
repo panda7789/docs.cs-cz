@@ -1,27 +1,15 @@
 ---
-title: "Postupy: připojení k databázi"
-ms.custom: 
+title: 'Postupy: připojení k databázi'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a5447ce64803405668a2d486c7b3071b5ff923cb
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 924fe4fadd5dae9907fca61a556506db1e583669
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-connect-to-a-database"></a>Postupy: připojení k databázi
 <xref:System.Data.Linq.DataContext> Je hlavní přenos, podle kterého připojení k databázi, načtení objektů z něj a odeslání změn zpět do ní. Můžete použít <xref:System.Data.Linq.DataContext> stejně, jako byste použili [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>. Ve skutečnosti <xref:System.Data.Linq.DataContext> je inicializován s připojením nebo připojovací řetězec, který zadáte. Další informace najdete v tématu [DataContext metody (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  

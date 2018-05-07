@@ -1,26 +1,19 @@
 ---
-title: '&gt;Operátor (referenční dokumentace jazyka C#)'
+title: '&gt; Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '>_CSharpKeyword'
 helpviewer_keywords:
 - '> operator [C#]'
 - greater than operator (>) [C#]
 ms.assetid: 26d3cb69-9c0b-4cc5-858b-5be1abd6659d
-caps.latest.revision: 16
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fc7c173ecc97bd3ca3b76a92ccbabc0f40062ac7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1589c5e785b33db6106a0ef0a58202e771db9fa0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="gt-operator-c-reference"></a>&gt;Operátor (referenční dokumentace jazyka C#)
+# <a name="gt-operator-c-reference"></a>&gt; Operátor (referenční dokumentace jazyka C#)
 Všechny typy číselné a výčet definovat relační operátor "větší než" (`>`), který vrací `true` Pokud první operand je větší než druhý, `false` jinak.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -31,6 +24,6 @@ Všechny typy číselné a výčet definovat relační operátor "větší než"
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
- [explicitní](../../../csharp/language-reference/keywords/explicit.md)
+ [explicit](../../../csharp/language-reference/keywords/explicit.md)

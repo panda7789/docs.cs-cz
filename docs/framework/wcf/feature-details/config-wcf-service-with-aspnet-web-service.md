@@ -1,34 +1,22 @@
 ---
-title: "Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET"
-ms.custom: 
+title: 'Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 48e1cd90-de80-4d6c-846e-631878955762
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b4bd1dce4128e6f25294525f10226d98f732cd4e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 12c5645b53e8e931edabc1a13fc1749e40538044
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-wcf-service-to-interoperate-with-aspnet-web-service-clients"></a>Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET
-Ke konfiguraci [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] koncový bod služby jako vzájemná spolupráce s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby klientů, použijte <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> typ jako typ vazby pro svůj koncový bod služby.  
+Ke konfiguraci koncového bodu služby Windows Communication Foundation (WCF) jako vzájemná spolupráce s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby klientů, použijte <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> typ jako typ vazby pro svůj koncový bod služby.  
   
- Volitelně můžete umožnit podporu pro protokol HTTPS a ověření klienta transportní vrstvy na vazby. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Webové služby klienti nepodporují kódování MTOM zpráva, proto <xref:System.ServiceModel.BasicHttpBinding.MessageEncoding%2A?displayProperty=nameWithType> vlastnost by měla být ponecháno jeho výchozí hodnotu, která je <xref:System.ServiceModel.WSMessageEncoding.Text?displayProperty=nameWithType>. Klienti webové služby ASP.Net nepodporují WS-zabezpečení, proto <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> musí být nastavena na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>.  
+ Volitelně můžete umožnit podporu pro protokol HTTPS a ověření klienta transportní vrstvy na vazby. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Webové služby klienti nepodporují kódování MTOM zpráva, proto <xref:System.ServiceModel.BasicHttpBinding.MessageEncoding%2A?displayProperty=nameWithType> vlastnost by měla být ponecháno jeho výchozí hodnotu, která je <xref:System.ServiceModel.WSMessageEncoding.Text?displayProperty=nameWithType>. Klienti webové služby ASP.Net nepodporují WS-zabezpečení, proto <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> musí být nastavena na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>.  
   
- Chcete, aby metadata pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, které jsou k dispozici pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové nástroje pro generování proxy služby (to znamená, [Web Services Description Language Tool (Wsdl.exe)](http://go.microsoft.com/fwlink/?LinkId=73833), [(nástroj pro zjišťování webové služby Disco.exe)](http://go.microsoft.com/fwlink/?LinkId=73834)a přidat webový odkaz funkce v sadě Visual Studio), by měl vystavit koncový bod HTTP nebo získat metadata.  
+ Pro zpřístupnění metadata pro služby WCF pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové nástroje pro generování proxy služby (to znamená, [Web Services Description Language Tool (Wsdl.exe)](http://go.microsoft.com/fwlink/?LinkId=73833), [webové služby zjišťování nástroj (Disco.exe)](http://go.microsoft.com/fwlink/?LinkId=73834)a přidat webový odkaz funkce v sadě Visual Studio), by měl vystavit koncový bod HTTP nebo získat metadata.  
   
 ### <a name="to-add-a-wcf-endpoint-that-is-compatible-with-aspnet-web-service-clients-in-code"></a>Chcete-li přidat koncový bod WCF, který je kompatibilní s klienty webové služby ASP.NET v kódu  
   
@@ -51,7 +39,7 @@ Ke konfiguraci [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] koncový 
 4.  Povolení koncového bodu protokolu HTTP nebo získat metadata pro vaši službu. Podrobnosti najdete v tématu [postupy: publikování metadat služby promocí konfigurační soubor](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak přidat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod, který je kompatibilní s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových služeb klientům v kódu a případně v konfiguračních souborech.  
+ Následující příklad kódu ukazuje, jak přidat koncový bod WCF, který je kompatibilní s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových služeb klientům v kódu a případně v konfiguračních souborech.  
   
  [!code-csharp[C_HowTo-WCFServiceAndASMXClient#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/cs/program.cs#0)] 
  [!code-vb[C_HowTo-WCFServiceAndASMXClient#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/vb/program.vb#0)] 

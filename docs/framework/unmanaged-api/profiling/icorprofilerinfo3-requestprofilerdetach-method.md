@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo3::RequestProfilerDetach – metoda"
-ms.custom: 
+title: ICorProfilerInfo3::RequestProfilerDetach – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo3.RequestProfilerDetach Method
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 33a5c45bbb64029177a0a680243dd39a825683e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e69a15d70b8f1b9e271571be92f1f6717a9f196c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach – metoda
 Dá pokyn modulu runtime odpojit profileru.  
@@ -59,7 +47,7 @@ HRESULT RequestProfilerDetach(
 |CORPROF_E_IMMUTABLE_FLAGS_SET|Odpojení není možné, protože profileru nastavte neměnné příznaky při spuštění. Neproběhl pokus o odpojení; profileru je stále plně připojený.|  
 |CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Odpojení je obtížné, protože používá profileru instrumentovány kód Microsoft intermediate language (MSIL) nebo vložené `enter` / `leave` háky. Neproběhl pokus o odpojení; profileru je stále plně připojený.<br /><br /> **Poznámka:** Instrumentovány MSIL je kód je kód, který je poskytována profiler pomocí [setilfunctionbody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) metoda.|  
 |CORPROF_E_RUNTIME_UNINITIALIZED|Modul runtime ještě nebyla inicializována ve spravované aplikaci. (To znamená, modul runtime nebyla úplným načtením) Tento kód chyby mohou být vráceny, když se v rámci zpětného volání profileru požaduje odpojení [icorprofilercallback::Initialize –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) metoda.|  
-|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach`byla volána v nepodporované čase. K tomu dojde, pokud je na spravované vlákno, ale nikoli z volání metody [icorprofilercallback –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) metoda nebo z [icorprofilercallback –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) metody, které nemůžou tolerovat uvolnění paměti. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
+|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` byla volána v nepodporované čase. K tomu dojde, pokud je na spravované vlákno, ale nikoli z volání metody [icorprofilercallback –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) metoda nebo z [icorprofilercallback –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) metody, které nemůžou tolerovat uvolnění paměti. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
   
 ## <a name="remarks"></a>Poznámky  
  Během procesu odpojení odpojit vlákno (vlákno vytvořené speciálně pro odpojení profileru) příležitostně kontroluje, zda mají všechna vlákna byl ukončen okna profilování kódu. Profileru by měl poskytovat odhad jak dlouho to má trvat prostřednictvím `dwExpectedCompletionMilliseconds` parametr. Je dobré hodnota použít typické množství času stráví profileru do žádného zadané `ICorProfilerCallback*` metoda; tato hodnota by neměla být nižší než polovinu maximální množství času profileru očekává, že tráví.  
@@ -75,7 +63,7 @@ HRESULT RequestProfilerDetach(
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  

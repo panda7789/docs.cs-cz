@@ -1,14 +1,6 @@
 ---
-title: "ICLRStrongName::StrongNameKeyGen – metoda"
-ms.custom: 
+title: ICLRStrongName::StrongNameKeyGen – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRStrongName.StrongNameKeyGen
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: ac5c1245-9acf-4271-9c08-3d9b7c670df3
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3b434783d7537c5f6a3127183f66d4b0b3f77534
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 55b4fbb8785f788c9eb34f32b5078201f8253066
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrstrongnamestrongnamekeygen-method"></a>ICLRStrongName::StrongNameKeyGen – metoda
 Vytvoří nový pár veřejného a privátního klíče pro silné jméno použití.  
@@ -51,7 +39,7 @@ HRESULT StrongNameKeyGen (
   
 #### <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [v] Název požadovaný kontejner klíčů. `wszKeyContainer`musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
+ [v] Název požadovaný kontejner klíčů. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
   
  `dwFlags`  
  [v] Hodnota, která určuje, zda chcete ponechat klíč zaregistrován. Podporovány jsou následující hodnoty:  
@@ -67,7 +55,7 @@ HRESULT StrongNameKeyGen (
  [out] Velikost v bajtech z `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
  [Iclrstrongname::strongnamekeygen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) metoda vytvoří klíč 1024 bitů. Po načtení klíč by měly volat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělenou paměť.  
@@ -79,7 +67,7 @@ HRESULT StrongNameKeyGen (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [StrongNameKeyGenEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)  

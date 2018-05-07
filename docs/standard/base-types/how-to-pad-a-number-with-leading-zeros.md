@@ -1,13 +1,7 @@
 ---
-title: "Postupy: Zarovnání čísla úvodními nulami"
-ms.custom: 
+title: 'Postupy: Zarovnání čísla úvodními nulami'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7ea854f69e59c614d03f10ff546bd3181f5b51ff
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8ce3b59db027ffebf616a035b018629cb7aed30c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Zarovnání čísla úvodními nulami
 Úvodní nuly na celé číslo můžete přidat pomocí "D" [standardního řetězce formátu čísel](../../../docs/standard/base-types/standard-numeric-format-strings.md) s specifikátorem přesnosti. Můžete přidat pomocí úvodní nuly celé číslo a čísla s plovoucí desetinnou čárkou [vlastní číselný formátovací řetězec](../../../docs/standard/base-types/custom-numeric-format-strings.md). Toto téma ukazuje, jak používat obě metody k zarovnání čísla úvodními nulami.  
@@ -39,9 +28,9 @@ ms.lasthandoff: 12/23/2017
   
 2.  Určí, zda chcete zobrazit na celé číslo jako hodnotu decimal nebo šestnáctkové hodnoty.  
   
-    -   Chcete-li zobrazit celé číslo jako hodnotu decimal, volejte jeho `ToString(String)` metoda a předejte jí řetězec "D*n*" jako hodnotu `format` parametr, kde  *n*  představuje minimální délka řetězce.  
+    -   Chcete-li zobrazit celé číslo jako hodnotu decimal, volejte jeho `ToString(String)` metoda a předejte jí řetězec "D*n*" jako hodnotu `format` parametr, kde *n* představuje minimální délka řetězce.  
   
-    -   Pro zobrazení na celé číslo jako šestnáctkové hodnoty, volejte jeho `ToString(String)` metoda a předejte jí řetězec "X*n*" jako hodnotu `format` parametr, kde  *n*  představuje minimální délka řetězce.  
+    -   Pro zobrazení na celé číslo jako šestnáctkové hodnoty, volejte jeho `ToString(String)` metoda a předejte jí řetězec "X*n*" jako hodnotu `format` parametr, kde *n* představuje minimální délka řetězec.  
   
      Můžete také použít řetězec formátu metoda, jako například <xref:System.String.Format%2A> nebo <xref:System.Console.WriteLine%2A>, která používá [složené formátování](../../../docs/standard/base-types/composite-formatting.md).  
   
@@ -60,7 +49,7 @@ ms.lasthandoff: 12/23/2017
   
 4.  Přidáte počet úvodní nuly, které chcete zahrnout do formátovaný řetězec, který má délku nedoplněného číselných řetězců. Definuje celková délka doplněného řetězce.  
   
-5.  Volání celočíselnou hodnotu `ToString(String)` metoda a předejte jí řetězec "D*n*" pro desítkové řetězce a "X*n*" pro řetězce v šestnáctkovém, kde  *n*  představuje celková délka doplněného řetězce. Můžete také "D*n*" nebo "X*n*" naformátovat řetězec v metodu, která podporuje složené formátování.  
+5.  Volání celočíselnou hodnotu `ToString(String)` metoda a předejte jí řetězec "D*n*" pro desítkové řetězce a "X*n*" pro řetězce v šestnáctkovém, kde *n* představuje celkový počet Délka doplněného řetězce. Můžete také "D*n*" nebo "X*n*" naformátovat řetězec v metodu, která podporuje složené formátování.  
   
  Následující příklad doplní hodnotu celého čísla úvodními nulami pět.  
   

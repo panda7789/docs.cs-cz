@@ -1,13 +1,6 @@
 ---
-title: "Přehled příkazů"
-ms.custom: 
+title: Přehled příkazů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,19 +13,14 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-caps.latest.revision: "35"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3eb7d05cdf5f6a80a0a247a5f429052cc9a8368b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0d426d8cf174a61c724e97b5e7af5c1428679716
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
-<a name="introduction"></a>Tvorba příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] která poskytuje vstup zpracování více sémantického úrovni, než zařízení vstup. Příklady příkazů **kopie**, **Vyjmout**, a **vložení** nalézt operace v mnoha aplikacích.  
+<a name="introduction"></a> Tvorba příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] která poskytuje vstup zpracování více sémantického úrovni, než zařízení vstup. Příklady příkazů **kopie**, **Vyjmout**, a **vložení** nalézt operace v mnoha aplikacích.  
   
  Tento přehled definuje, jaké příkazy jsou v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], které třídy jsou součástí řídicího modelu a používání a vytvořit příkazy ve svých aplikacích.  
   
@@ -83,13 +71,13 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Commands"></a>   
 ### <a name="commands"></a>Příkazy  
- Příkazy v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou vytvořené pomocí implementace <xref:System.Windows.Input.ICommand> rozhraní.  <xref:System.Windows.Input.ICommand>poskytuje dvě metody, <xref:System.Windows.Input.ICommand.Execute%2A>, a <xref:System.Windows.Input.ICommand.CanExecute%2A>a událost, <xref:System.Windows.Input.ICommand.CanExecuteChanged>. <xref:System.Windows.Input.ICommand.Execute%2A>provede akce, které jsou spojeny pomocí příkazu. <xref:System.Windows.Input.ICommand.CanExecute%2A>Určuje, zda příkaz můžete spustit na aktuální příkaz cíl. <xref:System.Windows.Input.ICommand.CanExecuteChanged>je vyvolána správce příkaz, který centralizuje řídicího operace zjistí změnu v příkazu zdroji, které mohou zneplatnit příkaz, který byla vyvolána, ale ještě nebyla provedený vazba příkazu.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Implementace <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand> třídy a je hlavním cílem tohoto přehledu.  
+ Příkazy v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou vytvořené pomocí implementace <xref:System.Windows.Input.ICommand> rozhraní.  <xref:System.Windows.Input.ICommand> poskytuje dvě metody, <xref:System.Windows.Input.ICommand.Execute%2A>, a <xref:System.Windows.Input.ICommand.CanExecute%2A>a událost, <xref:System.Windows.Input.ICommand.CanExecuteChanged>. <xref:System.Windows.Input.ICommand.Execute%2A> provede akce, které jsou spojeny pomocí příkazu. <xref:System.Windows.Input.ICommand.CanExecute%2A> Určuje, zda příkaz můžete spustit na aktuální příkaz cíl. <xref:System.Windows.Input.ICommand.CanExecuteChanged> je vyvolána správce příkaz, který centralizuje řídicího operace zjistí změnu v příkazu zdroji, které mohou zneplatnit příkaz, který byla vyvolána, ale ještě nebyla provedený vazba příkazu.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Implementace <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand> třídy a je hlavním cílem tohoto přehledu.  
   
  Hlavní zdroje vstupu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou myši, klávesnice, rukopisu a směrované příkazy.  Vstupy více orientovaný na zařízení používat <xref:System.Windows.RoutedEvent> oznámit objekty v stránku aplikace, která je vstupní události.  A <xref:System.Windows.Input.RoutedCommand> se neliší.  <xref:System.Windows.Input.RoutedCommand.Execute%2A> a <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> metody <xref:System.Windows.Input.RoutedCommand> neobsahují aplikační logiku pro příkaz, ale spíš vyvolávání událostí směrované tunelového propojení a předána prostřednictvím stromu element, dokud narazí objekt s <xref:System.Windows.Input.CommandBinding>.  <xref:System.Windows.Input.CommandBinding> Obsahuje obslužné rutiny pro tyto události a je obslužných rutin, které k provedení příkazu.  Další informace o události směrování v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], najdete v části [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
   
  <xref:System.Windows.Input.RoutedCommand.Execute%2A> Metodu <xref:System.Windows.Input.RoutedCommand> vyvolá <xref:System.Windows.Input.CommandManager.PreviewExecuted> a <xref:System.Windows.Input.CommandManager.Executed> události na cíli příkazu.  <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> Metodu <xref:System.Windows.Input.RoutedCommand> vyvolá <xref:System.Windows.Input.CommandManager.CanExecute> a <xref:System.Windows.Input.CommandManager.PreviewCanExecute> události na cíli příkazu.  Tyto události tunelu a bublin prostřednictvím stromu element dokud narazí, k objektu, který má <xref:System.Windows.Input.CommandBinding> pro tuto konkrétní příkaz.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zdroje sadu běžných směrované příkazů rozloženy několik tříd: <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.NavigationCommands>, <xref:System.Windows.Input.ComponentCommands>, a <xref:System.Windows.Documents.EditingCommands>.  Tyto třídy skládat jenom z <xref:System.Windows.Input.RoutedCommand> objekty a není implementační logika příkazu.  Implementační logika odpovídá objektu, na kterém se spouští na příkaz.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zdroje sadu běžných směrované příkazů rozloženy několik tříd: <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.NavigationCommands>, <xref:System.Windows.Input.ComponentCommands>, a <xref:System.Windows.Documents.EditingCommands>.  Tyto třídy skládat jenom z <xref:System.Windows.Input.RoutedCommand> objekty a není implementační logika příkazu.  Implementační logika odpovídá objektu, na kterém se spouští na příkaz.  
   
 <a name="Command_Sources"></a>   
 ### <a name="command-sources"></a>Příkaz zdroje  
@@ -97,13 +85,13 @@ ms.lasthandoff: 01/19/2018
   
  Příkaz zdroje v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obecně implementovat <xref:System.Windows.Input.ICommandSource> rozhraní.  
   
- <xref:System.Windows.Input.ICommandSource>Zpřístupní vlastnosti pro tři: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>, a <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>:  
+ <xref:System.Windows.Input.ICommandSource> Zpřístupní vlastnosti pro tři: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>, a <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>:  
   
--   <xref:System.Windows.Input.ICommandSource.Command%2A>je příkaz provést při vyvolání příkazu zdroj.  
+-   <xref:System.Windows.Input.ICommandSource.Command%2A> je příkaz provést při vyvolání příkazu zdroj.  
   
--   <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>je objekt, na které se mají spustit příkaz.  Je vhodné poznamenat, že v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> vlastnost na <xref:System.Windows.Input.ICommandSource> se dá použít jenom když <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand>.  Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je nastavený na <xref:System.Windows.Input.ICommandSource> a příslušného příkazu není <xref:System.Windows.Input.RoutedCommand>, cíl příkaz je ignorováno. Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> není nastaven, element s fokus klávesnice budou cílem příkazu.  
+-   <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je objekt, na které se mají spustit příkaz.  Je vhodné poznamenat, že v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> vlastnost na <xref:System.Windows.Input.ICommandSource> se dá použít jenom když <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand>.  Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> je nastavený na <xref:System.Windows.Input.ICommandSource> a příslušného příkazu není <xref:System.Windows.Input.RoutedCommand>, cíl příkaz je ignorováno. Pokud <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> není nastaven, element s fokus klávesnice budou cílem příkazu.  
   
--   <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>příkaz implementuje vlastní datový typ používaný k předávání informací obslužné rutiny.  
+-   <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> příkaz implementuje vlastní datový typ používaný k předávání informací obslužné rutiny.  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Třídy implementující <xref:System.Windows.Input.ICommandSource> jsou <xref:System.Windows.Controls.Primitives.ButtonBase>, <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Documents.Hyperlink>, a <xref:System.Windows.Input.InputBinding>.  <xref:System.Windows.Controls.Primitives.ButtonBase>, <xref:System.Windows.Controls.MenuItem>, a <xref:System.Windows.Documents.Hyperlink> vyvolání příkazu při jsou kliknutí a uvádí <xref:System.Windows.Input.InputBinding> Vyvolá příkaz při <xref:System.Windows.Input.InputGesture> spojené s se provádí.  
   
@@ -140,7 +128,7 @@ ms.lasthandoff: 01/19/2018
   
  <xref:System.Windows.Input.CommandBinding> Třída obsahuje <xref:System.Windows.Input.CommandBinding.Command%2A> vlastnost, a <xref:System.Windows.Input.CommandBinding.PreviewExecuted>, <xref:System.Windows.Input.CommandBinding.Executed>, <xref:System.Windows.Input.CommandBinding.PreviewCanExecute>, a <xref:System.Windows.Input.CommandBinding.CanExecute> události.  
   
- <xref:System.Windows.Input.CommandBinding.Command%2A>obsahuje příkaz, který <xref:System.Windows.Input.CommandBinding> je bylo možné přidružit.  Obslužné rutiny událostí, které jsou připojené k <xref:System.Windows.Input.CommandBinding.PreviewExecuted> a <xref:System.Windows.Input.CommandBinding.Executed> události implementovat logiku příkaz.  Obslužné rutiny událostí připojené k <xref:System.Windows.Input.CommandBinding.PreviewCanExecute> a <xref:System.Windows.Input.CommandBinding.CanExecute> události určit, pokud příkaz můžete spustit na aktuální příkaz cíl.  
+ <xref:System.Windows.Input.CommandBinding.Command%2A> obsahuje příkaz, který <xref:System.Windows.Input.CommandBinding> je bylo možné přidružit.  Obslužné rutiny událostí, které jsou připojené k <xref:System.Windows.Input.CommandBinding.PreviewExecuted> a <xref:System.Windows.Input.CommandBinding.Executed> události implementovat logiku příkaz.  Obslužné rutiny událostí připojené k <xref:System.Windows.Input.CommandBinding.PreviewCanExecute> a <xref:System.Windows.Input.CommandBinding.CanExecute> události určit, pokud příkaz můžete spustit na aktuální příkaz cíl.  
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Input.CommandBinding> v kořenovém <xref:System.Windows.Window> aplikace.  <xref:System.Windows.Input.CommandBinding> Přidruží <xref:System.Windows.Input.ApplicationCommands.Open%2A> s <xref:System.Windows.Input.CommandManager.Executed> a <xref:System.Windows.Input.CommandBinding.CanExecute> obslužné rutiny.  
   
@@ -182,7 +170,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Command_Library"></a>   
 ## <a name="command-library"></a>Příkaz knihovny  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje sadu předdefinovaných příkazů.  Příkaz knihovny se skládá z následujících tříd: <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.NavigationCommands>, <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Documents.EditingCommands>a <xref:System.Windows.Input.ComponentCommands>.  Tyto třídy poskytují příkazy, jako <xref:System.Windows.Input.ApplicationCommands.Cut%2A>, <xref:System.Windows.Input.NavigationCommands.BrowseBack%2A> a <xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>, <xref:System.Windows.Input.MediaCommands.Play%2A>, <xref:System.Windows.Input.MediaCommands.Stop%2A>, a <xref:System.Windows.Input.MediaCommands.Pause%2A>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje sadu předdefinovaných příkazů.  Příkaz knihovny se skládá z následujících tříd: <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.NavigationCommands>, <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Documents.EditingCommands>a <xref:System.Windows.Input.ComponentCommands>.  Tyto třídy poskytují příkazy, jako <xref:System.Windows.Input.ApplicationCommands.Cut%2A>, <xref:System.Windows.Input.NavigationCommands.BrowseBack%2A> a <xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>, <xref:System.Windows.Input.MediaCommands.Play%2A>, <xref:System.Windows.Input.MediaCommands.Stop%2A>, a <xref:System.Windows.Input.MediaCommands.Pause%2A>.  
   
  Mnoho z těchto příkazů obsahovat sadu výchozí vstupní vazby.  Například pokud určíte, že vaše aplikace zpracovává příkaz Kopírovat, automaticky získáte klávesnice vazby "CTRL + C" získáte vazby pro další vstupní zařízení, jako například [!INCLUDE[TLA2#tla_tpc](../../../../includes/tla2sharptla-tpc-md.md)] pera gesta a řeči informace.  
   

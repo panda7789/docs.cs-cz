@@ -1,12 +1,6 @@
 ---
-title: "Take While – klauzule (Visual Basic)"
+title: Take While – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryTakeWhile
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - Take While clause [Visual Basic]
 - Take While statement [Visual Basic]
 ms.assetid: db8f9f2f-fc9f-4a6c-b0b8-1bf048147e11
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5c8add6c55bb9353bac3489e68f497cb32785aad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7e0a6bd77ca2594e9d74e669fcd9cddf91ee1cad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="take-while-clause-visual-basic"></a>Take While – klauzule (Visual Basic)
 Obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a obchází zbývající elementy.  
@@ -51,8 +42,8 @@ Take While expression
 ## <a name="see-also"></a>Viz také  
  [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Select – klauzule](../../../visual-basic/language-reference/queries/select-clause.md)  
- [From – klauzule](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Take – klauzule](../../../visual-basic/language-reference/queries/take-clause.md)  
- [Skip While – klauzule](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
- [Kde – klauzule](../../../visual-basic/language-reference/queries/where-clause.md)
+ [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule Take](../../../visual-basic/language-reference/queries/take-clause.md)  
+ [Klauzule Skip While](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
+ [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

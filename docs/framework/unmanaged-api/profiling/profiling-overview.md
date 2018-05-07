@@ -1,13 +1,6 @@
 ---
-title: "Přehled profilace"
-ms.custom: 
+title: Přehled profilace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - managed code, profiling API support
 - unmanaged code, combining with managed code in profiling
@@ -34,19 +27,16 @@ helpviewer_keywords:
 - security, profiling API considerations
 - stack depth [.NET Framework profiling]
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
-caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 84688ed80d0cb1b802290176400eb45998052a34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b38b64e1c86174bea11086e722ed86b0a0046e2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="profiling-overview"></a>Přehled profilace
-<a name="top"></a>Profileru je nástroj, který monitoruje provádění jiná aplikace. Běžné profileru language runtime (CLR) je dynamická knihovna (DLL), která se skládá z funkcí, které příjem zpráv z a odeslání zpráv do modulu CLR pomocí rozhraní API pro profilaci. Profileru knihovnu DLL modulu CLR zavedená v době běhu.  
+<a name="top"></a> Profileru je nástroj, který monitoruje provádění jiná aplikace. Běžné profileru language runtime (CLR) je dynamická knihovna (DLL), která se skládá z funkcí, které příjem zpráv z a odeslání zpráv do modulu CLR pomocí rozhraní API pro profilaci. Profileru knihovnu DLL modulu CLR zavedená v době běhu.  
   
  Tradiční nástroje pro profilaci zaměřit se na měření spuštění aplikace. To znamená že měření času stráveného v každé funkce nebo využití paměti aplikace v průběhu času. Profilace API cílí širší třídu diagnostických nástrojů, jako jsou nástroje pro pokrytí kódu a i rozšířené ladění pomůcky. Tato použití jsou všechny diagnostiky ve své podstatě. Profilace API nejen měří, ale také monitoruje spuštění aplikace. Z tohoto důvodu profilaci API by nikdy používat vlastní aplikace a spuštění aplikace by neměl závisí na (nebo mít vliv) profileru.  
   

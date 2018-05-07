@@ -1,9 +1,6 @@
 ---
-title: "Přehled modelu programování s přidělenými atributy (MEF)"
+title: Přehled modelu programování s přidělenými atributy (MEF)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -11,16 +8,13 @@ helpviewer_keywords:
 - MEF, attributed programming model
 - attributed programming model [MEF]
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
-caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 565cd9384e150f707b2e5e72342579d95c3a096e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: baa66f11404e2cee83b4d4b32ba02544c9438d7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Přehled modelu programování s přidělenými atributy (MEF)
 V Managed Extensibility Framework (MEF), *programovací model* je konkrétní metoda definování sady koncepční objektů, na kterých pracuje MEF. Tyto rámcové objekty zahrnují části, import a export. MEF používá tyto objekty, ale neurčuje, jak by měly být zastoupeny. Proto je možné, včetně přizpůsobit programovací modely celou řadu programovacích modelů.  
@@ -407,7 +401,7 @@ public class MyClass
 ## <a name="avoiding-discovery"></a>Zamezení zjišťování  
  V některých případech můžete chtít zabránit části zjišťovat v rámci katalogu. Část může být například základní třída má od doby, ale nepoužívá se. Existují dva způsoby, jak dosáhnout. První, můžete použít `abstract` – klíčové slovo k třídě část. Abstraktní třídy nikdy zadejte exportuje, i když poskytují zděděné export do tříd, které vycházejí z nich.  
   
- Pokud nemůže být provedena abstraktní třídu, můžete ho s uspořádání `PartNotDiscoverable` atribut. Součástí označených pomocí tento atribut nebude součástí žádné katalogů. Následující příklad ukazuje tyto vzory. `DataOne`Najde katalogu. Protože `DataTwo` je abstraktní, se nebudou vyhledány. Vzhledem k tomu `DataThree` použít `PartNotDiscoverable` atribut, nebudou vyhledány.  
+ Pokud nemůže být provedena abstraktní třídu, můžete ho s uspořádání `PartNotDiscoverable` atribut. Součástí označených pomocí tento atribut nebude součástí žádné katalogů. Následující příklad ukazuje tyto vzory. `DataOne` Najde katalogu. Protože `DataTwo` je abstraktní, se nebudou vyhledány. Vzhledem k tomu `DataThree` použít `PartNotDiscoverable` atribut, nebudou vyhledány.  
   
 ```vb  
 <Export()>  
@@ -588,7 +582,7 @@ public class User
   
  Exportuje deklarovat pomocí `Export` atribut nejsou zdědí podtřídy. Však součástí můžete exportovat samotné pomocí `InheritedExport` atribut. Podtřídy části bude dědit a zadejte stejné exportu, včetně názvu kontraktu a typ smlouvy. Na rozdíl od `Export` atribut `InheritedExport` lze použít pouze na úrovni třídy a nikoli na úrovni člena. Proto může být zděděna nikdy exportuje úrovni člena.  
   
- Následující čtyři třídy předvedení zásady importu a exportu dědičnosti. `NumTwo`dědí z `NumOne`, takže `NumTwo` naimportuje `IMyData`. Obyčejnou exportuje nedědí, takže `NumTwo` nebude nic exportovat. `NumFour`dědí z `NumThree`. Protože `NumThree` používá `InheritedExport`, `NumFour` má jeden exportu s typ smlouvy `NumThree`. Nikdy dědí exportuje úrovni člena, takže `IMyData` neexportoval.  
+ Následující čtyři třídy předvedení zásady importu a exportu dědičnosti. `NumTwo` dědí z `NumOne`, takže `NumTwo` naimportuje `IMyData`. Obyčejnou exportuje nedědí, takže `NumTwo` nebude nic exportovat. `NumFour` dědí z `NumThree`. Protože `NumThree` používá `InheritedExport`, `NumFour` má jeden exportu s typ smlouvy `NumThree`. Nikdy dědí exportuje úrovni člena, takže `IMyData` neexportoval.  
   
 ```vb  
 <Export()>  
@@ -812,7 +806,7 @@ public MyAddin myAddin { get; set; }
   
  Import a export můžete zadat zásady vytváření druhé, některé z těchto hodnot `Shared`, `NonShared`, nebo `Any`. Výchozí hodnota je `Any` pro obě importuje a exportuje. Exportu, která určuje `Shared` nebo `NonShared` bude odpovídá pouze importu stejné, nebo určuje určující `Any`. Podobně, která určuje importu `Shared` nebo `NonShared` bude odpovídá pouze exportu stejné, nebo určuje určující `Any`. Import a export zásadám nekompatibilní vytvoření nejsou považovány za shodné, stejným způsobem jako import a export, jejíž název nebo kontrakt typ smlouvy nejsou shody. Pokud import a export zadat `Any`, nebo nezadávejte vytvoření zásad a výchozí `Any`, vytvoření zásady, bude použita výchozí sdílet.  
   
- Následující příklad ukazuje, import a export zadání vytvoření zásady. `PartOne`neurčuje vytvoření zásady, takže výchozí hodnota je `Any`. `PartTwo`neurčuje vytvoření zásady, takže výchozí hodnota je `Any`. Vzhledem k tomu, jak importovat a exportovat výchozí nastavení `Any`, `PartOne` budou sdílet. `PartThree`Určuje `Shared` vytvoření zásady, takže `PartTwo` a `PartThree` budou sdílet stejnou kopii `PartOne`. `PartFour`Určuje `NonShared` vytvoření zásady, takže `PartFour` bude nesdílené v `PartFive`. `PartSix`Určuje `NonShared` vytváření zásad. `PartFive`a `PartSix` obdrží každou samostatnou kopii `PartFour`. `PartSeven`Určuje `Shared` vytváření zásad. Protože je ne exportovat `PartFour` s vytvoření zásady `Shared`, `PartSeven` import neodpovídá nic a nesmí být vyplněna.  
+ Následující příklad ukazuje, import a export zadání vytvoření zásady. `PartOne` neurčuje vytvoření zásady, takže výchozí hodnota je `Any`. `PartTwo` neurčuje vytvoření zásady, takže výchozí hodnota je `Any`. Vzhledem k tomu, jak importovat a exportovat výchozí nastavení `Any`, `PartOne` budou sdílet. `PartThree` Určuje `Shared` vytvoření zásady, takže `PartTwo` a `PartThree` budou sdílet stejnou kopii `PartOne`. `PartFour` Určuje `NonShared` vytvoření zásady, takže `PartFour` bude nesdílené v `PartFive`. `PartSix` Určuje `NonShared` vytváření zásad. `PartFive` a `PartSix` obdrží každou samostatnou kopii `PartFour`. `PartSeven` Určuje `Shared` vytváření zásad. Protože je ne exportovat `PartFour` s vytvoření zásady `Shared`, `PartSeven` import neodpovídá nic a nesmí být vyplněna.  
   
 ```vb  
 <Export()>  
@@ -959,7 +953,7 @@ public class PartSeven
   
  Pro kontejnery dlohotrvající složení částí zásadám vytváření nesdílené spotřeba paměti se může stát problém. Tyto části nesdílené lze vytvořit více než jednou a nebude uvolněno, dokud je zveřejněn kontejneru sám sebe. Zpracovat takové, poskytuje kontejner `ReleaseExport` metoda. Voláním této metody na export nesdíleného odebere tento export z kontejneru složení a zruší ho. Částí, které jsou používány pouze odebrané exportu, a tak dále hlouběji ve stromové struktuře, se taky odeberou a zlikvidován. Tímto způsobem se nedá uvolnit prostředky bez uvolnění kontejneru složení sám sebe.  
   
- `IPartImportsSatisfiedNotification`obsahuje jednu metodu s názvem `OnImportsSatisfied`. Tato metoda je volána kontejneru složení na všechny části, které implementují rozhraní při dokončení složení a rámci importy jsou připravené k použití. Části jsou vytvořené pomocí modulu složení k vyplnění importy dalších částí. Před importy části byly nastaveny, nelze provést všechny inicializace, který využívá nebo manipuluje importované hodnoty v rámci konstruktoru, pokud tyto hodnoty mají byl zadán jako požadavky pomocí `ImportingConstructor` atribut. To je obvykle upřednostňovanou metodou, ale v některých případech vkládání konstruktor nemusí být k dispozici. V takových případech lze provést inicializaci v `OnImportsSatisfied`, a měly by implementovat části `IPartImportsSatisfiedNotification`.  
+ `IPartImportsSatisfiedNotification` obsahuje jednu metodu s názvem `OnImportsSatisfied`. Tato metoda je volána kontejneru složení na všechny části, které implementují rozhraní při dokončení složení a rámci importy jsou připravené k použití. Části jsou vytvořené pomocí modulu složení k vyplnění importy dalších částí. Před importy části byly nastaveny, nelze provést všechny inicializace, který využívá nebo manipuluje importované hodnoty v rámci konstruktoru, pokud tyto hodnoty mají byl zadán jako požadavky pomocí `ImportingConstructor` atribut. To je obvykle upřednostňovanou metodou, ale v některých případech vkládání konstruktor nemusí být k dispozici. V takových případech lze provést inicializaci v `OnImportsSatisfied`, a měly by implementovat části `IPartImportsSatisfiedNotification`.  
   
 ## <a name="see-also"></a>Viz také  
  [Video Channel 9: Otevře aplikace s použitím spravovaných rozšíření Framework](http://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)  

@@ -1,10 +1,6 @@
 ---
 title: Obálky COM
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - wrapper classes
 - COM interop, COM wrappers
@@ -15,14 +11,11 @@ helpviewer_keywords:
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 60f5acf6ed8a7fe0bb2e6293666c33a479d25643
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 57483f099bb71a1ab685cedf148d4343c12983dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="com-wrappers"></a>Obálky COM
 COM se liší od objektový model rozhraní .NET Framework důležité několika způsoby:  

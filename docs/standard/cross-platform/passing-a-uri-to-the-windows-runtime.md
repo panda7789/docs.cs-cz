@@ -1,13 +1,7 @@
 ---
 title: Předávání identifikátorů URI do prostředí Windows Runtime
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - Windows Runtime, .NET Framework support for
 - Windows Runtime, passing a URI to
 ms.assetid: 3eb5ce6f-f304-4f87-8e81-0f25092f5ad4
-caps.latest.revision: 10
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5ed49555b7d87973849f30a502a46e508b6323e7
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.openlocfilehash: 7a31a1246fe311c36e7457327c79aeeef30e7813
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="passing-a-uri-to-the-windows-runtime"></a>Předávání identifikátorů URI do prostředí Windows Runtime
 Prostředí Windows Runtime metody přijímají pouze absolutní identifikátory URI. Pokud předáte relativní identifikátor URI k [!INCLUDE[wrt](../../../includes/wrt-md.md)] metody <xref:System.ArgumentException> je vyvolána výjimka. Tady je důvod, proč: při použití [!INCLUDE[wrt](../../../includes/wrt-md.md)] v rozhraní .NET Framework kódu <xref:Windows.Foundation.Uri?displayProperty=nameWithType> třídy se zobrazí jako <xref:System.Uri?displayProperty=nameWithType> v Intellisense. <xref:System.Uri?displayProperty=nameWithType> Třída umožňuje relativní identifikátory URI, ale <xref:Windows.Foundation.Uri?displayProperty=nameWithType> třída neexistuje. To platí také pro metody vystavit v [!INCLUDE[wrt](../../../includes/wrt-md.md)] součásti. Pokud příslušné součásti zpřístupní metodu, která přebírá identifikátor URI, zahrnuje podpis ve vašem kódu <xref:System.Uri?displayProperty=nameWithType>. Ale uživatelům vaší součásti, obsahuje podpis <xref:Windows.Foundation.Uri?displayProperty=nameWithType>. Identifikátor URI, který je předán do příslušné součásti musí být absolutní identifikátor URI.  

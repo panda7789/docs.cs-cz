@@ -4,16 +4,11 @@ description: Podporované verze systému macOS a .NET Core závislosti k vývoji
 author: guardrex
 ms.author: mairaw
 ms.date: 09/27/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 2644cd491d1d3ba07f48f57fd9416ec84316f7d8
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b1f4d3b49be7ba5349197187d6576b78db58798c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="prerequisites-for-net-core-on-macos"></a>Předpoklady pro .NET Core v systému macOS
 

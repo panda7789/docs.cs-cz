@@ -1,31 +1,19 @@
 ---
-title: "Optimalizace výkonu: Ovládací prvky"
-ms.custom: 
+title: 'Optimalizace výkonu: Ovládací prvky'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], improving performance
 - container recycling [WPF]
 - user interface virtualization [WPF]
 ms.assetid: 45a31c43-ea8a-4546-96c8-0631b9934179
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1b8008d104437454f36f6f425634c40968d5481a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9e4ceee26263a1d047aeda0881b955070de4326d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-controls"></a>Optimalizace výkonu: Ovládací prvky
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje celou řadu běžných součásti uživatelského rozhraní (UI), které se používají v většina aplikací systému Windows. Toto téma obsahuje postupy pro zvýšení výkonu uživatelské rozhraní.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zahrnuje celou řadu běžných součásti uživatelského rozhraní (UI), které se používají v většina aplikací systému Windows. Toto téma obsahuje postupy pro zvýšení výkonu uživatelské rozhraní.  
   
  
   
@@ -35,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  Virtualizace uživatelského rozhraní je důležitým aspektem ovládací prvky seznamu. Virtualizace uživatelského rozhraní Nezaměňovat s virtualizací datových. Uživatelského rozhraní virtualizace úložiště viditelné položky v paměti, ale v případě vazby dat ukládá celé datové struktury v paměti. Naproti tomu virtualizací datových ukládá jenom datové položky, které jsou zobrazeny na obrazovce v paměti.  
   
- Ve výchozím nastavení, je povolena virtualizace uživatelského rozhraní pro <xref:System.Windows.Controls.ListView> a <xref:System.Windows.Controls.ListBox> prvky, když jsou jejich položky seznamu vázané na data. <xref:System.Windows.Controls.TreeView>může být povolena virtualizace nastavením <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A?displayProperty=nameWithType> --> `IsVirtualizing` přidružená vlastnost k `true`. Pokud chcete povolit virtualizaci uživatelského rozhraní pro vlastní ovládací prvky, které jsou odvozeny od <xref:System.Windows.Controls.ItemsControl> nebo existující položka prvky, které používají <xref:System.Windows.Controls.StackPanel> třídy, jako například <xref:System.Windows.Controls.ComboBox>, můžete nastavit <xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A> k <xref:System.Windows.Controls.VirtualizingStackPanel> a nastavte <xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizing%2A> k `true`. Virtualizace uživatelského rozhraní pro tyto ovládací prvky můžete zakázat bohužel bez porozumění ho. Následuje seznam podmínek, které zakázat virtualizace uživatelského rozhraní.  
+ Ve výchozím nastavení, je povolena virtualizace uživatelského rozhraní pro <xref:System.Windows.Controls.ListView> a <xref:System.Windows.Controls.ListBox> prvky, když jsou jejich položky seznamu vázané na data. <xref:System.Windows.Controls.TreeView> může být povolena virtualizace nastavením <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A?displayProperty=nameWithType> --> `IsVirtualizing` přidružená vlastnost k `true`. Pokud chcete povolit virtualizaci uživatelského rozhraní pro vlastní ovládací prvky, které jsou odvozeny od <xref:System.Windows.Controls.ItemsControl> nebo existující položka prvky, které používají <xref:System.Windows.Controls.StackPanel> třídy, jako například <xref:System.Windows.Controls.ComboBox>, můžete nastavit <xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A> k <xref:System.Windows.Controls.VirtualizingStackPanel> a nastavte <xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizing%2A> k `true`. Virtualizace uživatelského rozhraní pro tyto ovládací prvky můžete zakázat bohužel bez porozumění ho. Následuje seznam podmínek, které zakázat virtualizace uživatelského rozhraní.  
   
 -   Kontejnery položek přidají přímo na <xref:System.Windows.Controls.ItemsControl>. Například pokud aplikace explicitně přidá <xref:System.Windows.Controls.ListBoxItem> objekty do <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ListBox> není Virtualizovat <xref:System.Windows.Controls.ListBoxItem> objekty.  
   
@@ -57,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Supporting"></a>   
 ## <a name="supporting-bidirectional-virtualization"></a>Podpora obousměrného virtualizace  
- <xref:System.Windows.Controls.VirtualizingStackPanel>má integrovanou podporu pro virtualizaci uživatelského rozhraní v jednom směru, vodorovně nebo svisle. Pokud chcete používat virtualizaci obousměrného pro vaše ovládací prvky, musí implementovat vlastní panel, který rozšiřuje <xref:System.Windows.Controls.VirtualizingStackPanel> třídy. <xref:System.Windows.Controls.VirtualizingStackPanel> Třída zpřístupňuje virtuální metody, jako <xref:System.Windows.Controls.VirtualizingStackPanel.OnViewportSizeChanged%2A>, <xref:System.Windows.Controls.VirtualizingStackPanel.LineUp%2A>, <xref:System.Windows.Controls.VirtualizingStackPanel.PageUp%2A>, a <xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelUp%2A>. Tyto virtuální metody umožňují zjistí změnu v viditelné části seznamu a odpovídajícím způsobem ji zpracovat.  
+ <xref:System.Windows.Controls.VirtualizingStackPanel> má integrovanou podporu pro virtualizaci uživatelského rozhraní v jednom směru, vodorovně nebo svisle. Pokud chcete používat virtualizaci obousměrného pro vaše ovládací prvky, musí implementovat vlastní panel, který rozšiřuje <xref:System.Windows.Controls.VirtualizingStackPanel> třídy. <xref:System.Windows.Controls.VirtualizingStackPanel> Třída zpřístupňuje virtuální metody, jako <xref:System.Windows.Controls.VirtualizingStackPanel.OnViewportSizeChanged%2A>, <xref:System.Windows.Controls.VirtualizingStackPanel.LineUp%2A>, <xref:System.Windows.Controls.VirtualizingStackPanel.PageUp%2A>, a <xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelUp%2A>. Tyto virtuální metody umožňují zjistí změnu v viditelné části seznamu a odpovídajícím způsobem ji zpracovat.  
   
 <a name="Optimizing"></a>   
 ## <a name="optimizing-templates"></a>Optimalizace šablony  
@@ -67,7 +55,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="deferred-scrolling"></a>Odložení posouvání  
  Ve výchozím nastavení když uživatel nastavuje tažením úchytu na scrollbar, zobrazení obsahu průběžně aktualizuje.  Pokud posouvání pomalá v vlastního ovládacího prvku, zvažte použití odložení posouvání.  V odložené posouvání, je obsah aktualizován pouze v případě, že uživatel uvolní jezdce.  
   
- Chcete-li implementovat odložené posouvání, nastavte <xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A> vlastnost `true`.  <xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>je přidružená vlastnost a lze nastavit u <xref:System.Windows.Controls.ScrollViewer> a libovolný ovládací prvek, který má <xref:System.Windows.Controls.ScrollViewer> v šabloně jeho ovládacího prvku.  
+ Chcete-li implementovat odložené posouvání, nastavte <xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A> vlastnost `true`.  <xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A> je přidružená vlastnost a lze nastavit u <xref:System.Windows.Controls.ScrollViewer> a libovolný ovládací prvek, který má <xref:System.Windows.Controls.ScrollViewer> v šabloně jeho ovládacího prvku.  
   
 <a name="Controls"></a>   
 ## <a name="controls-that-implement-performance-features"></a>Ovládací prvky, které implementují funkce výkonu  

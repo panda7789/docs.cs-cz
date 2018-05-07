@@ -1,23 +1,12 @@
 ---
 title: 118 - WorkflowInstanceUnhandledExceptionRecordWithId
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2ce4b193-e141-4cc4-86a3-2e8c984c110d
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d5449a619138d136fe4150bef99c682f156fd245
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eb69fc4760cd89294e24680b5aab83fcd058feb0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="118---workflowinstanceunhandledexceptionrecordwithid"></a>118 - WorkflowInstanceUnhandledExceptionRecordWithId
 ## <a name="properties"></a>Vlastnosti  
@@ -27,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|118|  
 |Klíčová slova|HealthMonitoring WFTracking|  
 |úroveň|Chyba|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované účastníkem sledování, trasování událostí pro Windows, když WorkflowInstanceUnhandledExceptionRecord vysílá instanci pracovního postupu.  

@@ -1,29 +1,17 @@
 ---
-title: "Postupy: Zrychlení a zpomalení animace"
-ms.custom: 
+title: 'Postupy: Zrychlení a zpomalení animace'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - decelerating animation [WPF]
 - accelerating animation [WPF]
 - animation [WPF], accelerating
 - animation [WPF], decelerating
 ms.assetid: 4f383b2c-f94d-4a4e-9a06-f56f5dae95f9
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c06518e3eada30bd4e22549a9ee3c8f16070f5ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b4bea64dbc88ce32c908289b9465b058c558a932
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-accelerate-or-decelerate-an-animation"></a>Postupy: Zrychlení a zpomalení animace
 Tento příklad ukazuje, jak zajistit animace urychlit a zpomalení v čase. V následujícím příkladu jsou animovaný několik obdélníků pomocí animací jiné <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> a <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> nastavení.  

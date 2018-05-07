@@ -1,38 +1,26 @@
 ---
-title: "Základní koncepty služby Windows Communication Foundation"
-ms.custom: 
+title: Základní koncepty služby Windows Communication Foundation
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], concepts
 - concepts [WCF]
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-caps.latest.revision: "39"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 651515095a0c9f9e970fff2d77421cfa804fa701
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 44b36fc917ceb30141d7d2235b8bb364d3b998c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
-Tento dokument poskytuje podrobný pohled [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] architektura. Je určena k vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verze [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klienta, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programování, najdete v části [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
+Tento dokument poskytuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Je určena k vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verze [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klienta, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programování, najdete v části [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="wcf-fundamentals"></a>Základy WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]je modulu runtime a sada rozhraní API pro vytváření systémy, které odesílají zprávy mezi služeb a klientů. Stejné infrastruktury a rozhraní API slouží k vytvoření aplikace, které komunikují s jinými aplikacemi ve stejném počítači systému nebo v systému, který se nachází v jiné společnosti a je k ní přistupovat přes Internet.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je modulu runtime a sada rozhraní API pro vytváření systémy, které odesílají zprávy mezi služeb a klientů. Stejné infrastruktury a rozhraní API slouží k vytvoření aplikace, které komunikují s jinými aplikacemi ve stejném počítači systému nebo v systému, který se nachází v jiné společnosti a je k ní přistupovat přes Internet.  
   
 ### <a name="messaging-and-endpoints"></a>Koncové body a zasílání zpráv  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]je založen na představu o komunikaci na základě zpráv a nic, který je možné modelovat jako zprávu (například požadavek HTTP nebo zprávy služby Řízení front zpráv (MSMQ)) může být reprezentován jednotným způsobem v programovací model. To umožňuje jednotné rozhraní API napříč různými mechanismy přenosu.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je založen na představu o komunikaci na základě zpráv a nic, který je možné modelovat jako zprávu (například požadavek HTTP nebo zprávy služby Řízení front zpráv (MSMQ)) může být reprezentován jednotným způsobem v programovací model. To umožňuje jednotné rozhraní API napříč různými mechanismy přenosu.  
   
  Model rozlišuje mezi *klienti*, což jsou aplikace, které zahájí komunikaci, a *služby*, což jsou aplikace, které klientům komunikovat s nimi a reagovat na událost, počkejte komunikace. Jednu aplikaci může fungovat jako klient a služba. Příklady najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md) a [Peer-to-Peer sítě](../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
@@ -43,7 +31,7 @@ Tento dokument poskytuje podrobný pohled [!INCLUDE[indigo1](../../../includes/i
 ### <a name="communication-protocols"></a>Komunikační protokoly  
  Jeden požadovaný element zásobníku komunikace *přenosu protokolu*. Prostřednictvím intranetu a Internetu pomocí běžných přenosy, jako je například HTTP a TCP nelze odesílat zprávy. Ostatní přenosy jsou zahrnuty podporující komunikaci s aplikací služby Řízení front zpráv a uzly na mřížku sdílené sítě. Další mechanismy přenosu lze přidat pomocí předdefinovaných rozšíření body [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
   
- Další požadovaný element v zásobníku komunikace je kódování, které určuje způsob formátování jakékoli dané zprávy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]poskytuje následující kódování:  
+ Další požadovaný element v zásobníku komunikace je kódování, které určuje způsob formátování jakékoli dané zprávy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje následující kódování:  
   
 -   Kódování, umožňuje vzájemnou spolupráci kódování textu.  
   
@@ -54,7 +42,7 @@ Tento dokument poskytuje podrobný pohled [!INCLUDE[indigo1](../../../includes/i
  Více kódování mechanismy (například komprese kódování) lze přidat pomocí předdefinovaných rozšíření body [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
   
 ### <a name="message-patterns"></a>Vzory zpráv  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]podporuje několik zasílání zpráv způsoby, včetně požadavku a odpovědi, jednosměrné a duplexní komunikace. Různé přenosy podporují různé vzorce zasílání zpráv a proto ovlivnit typy interakce, které podporují. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Rozhraní API a runtime také můžete bezpečně a spolehlivě odesílat zprávy pomoci.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje několik zasílání zpráv způsoby, včetně požadavku a odpovědi, jednosměrné a duplexní komunikace. Různé přenosy podporují různé vzorce zasílání zpráv a proto ovlivnit typy interakce, které podporují. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Rozhraní API a runtime také můžete bezpečně a spolehlivě odesílat zprávy pomoci.  
   
 ## <a name="wcf-terms"></a>Podmínky WCF  
  Další konceptů a termínů používaných v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] dokumentace patří.  
@@ -95,7 +83,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Komponenta, která řídí různé aspekty spuštění služby, koncový bod, určité operace nebo klienta. Chování jsou seskupené podle oboru: společné chování ovlivňuje všechny koncové body globálně, pouze související se službou aspekty ovlivnit chování služby, koncový bod chování ovlivňuje pouze vlastnosti týkající se koncový bod a úrovni operace chování ovlivňuje konkrétní operace. Například je omezování jeden chování služby, která určuje, jak služba reaguje při nad zpráv hrozí zahlcovat jeho funkce pro zpracování. Chování koncového bodu na druhé straně řídí pouze aspekty, které jsou relevantní pro koncové body, například jak a kde najít pověření zabezpečení.  
   
  vazby poskytované systémem  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]zahrnuje několik vazeb poskytovaných systémem. Toto jsou kolekce elementů, které jsou optimalizované pro určité scénáře vazby. Například <xref:System.ServiceModel.WSHttpBinding> je navržen pro interakci s službami, které implementují různé WS-* specifikace. Tyto předdefinované vazby ušetřit čas prezentací pouze možnosti, které mohou být správně použity pro konkrétní scénář. Pokud předdefinované vazbu nesplňuje vaše požadavky, můžete vytvořit vlastní vlastní vazby.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zahrnuje několik vazeb poskytovaných systémem. Toto jsou kolekce elementů, které jsou optimalizované pro určité scénáře vazby. Například <xref:System.ServiceModel.WSHttpBinding> je navržen pro interakci s službami, které implementují různé WS-* specifikace. Tyto předdefinované vazby ušetřit čas prezentací pouze možnosti, které mohou být správně použity pro konkrétní scénář. Pokud předdefinované vazbu nesplňuje vaše požadavky, můžete vytvořit vlastní vlastní vazby.  
   
  Konfigurace a kódování  
  Řízení aplikace, můžete udělat buď pomocí kódování, prostřednictvím konfigurace, nebo obojí. Konfigurace má výhodu v podobě povolení někdo než developer (například správce sítě) můžete nastavit parametry klienta a služby po zapsání kód a bez nutnosti její kompilace. Konfigurace pouze umožňuje nastavit hodnoty, jako jsou adresy koncových bodů, ale také umožňuje další ovládání povolením můžete přidat koncové body, vazeb a chování. Kódování umožňuje vývojáři zachovat přísnou kontrolu všech součástí služby nebo klienta, a všechna nastavení provést prostřednictvím konfigurace může být prověřovány a v případě potřeby přepsat kód.  
@@ -136,7 +124,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Kanál  
  Konkrétní implementaci prvku vazby. Představuje konfiguraci vazby a kanál je implementace přidružené k této konfiguraci. Proto je kanál, spojené s každou prvku vazby. Kanály skládat na sebe vytvořit konkrétní implementaci vazby: zásobník kanálu.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]klienta  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Klienta  
  Konstrukce klientskou aplikaci, která zveřejňuje operací služby jako metody (v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] programovací jazyk podle vaší volby, jako je například jazyka Visual Basic a Visual C#). Může být hostitelem všechny aplikace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienty, včetně aplikace, který je hostitelem služby. Proto je možné vytvořit službu, která zahrnuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienti dalších služeb.  
   
  A [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta lze automaticky generovány pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a přejdete na spuštěnou službu, která publikuje metadat.  

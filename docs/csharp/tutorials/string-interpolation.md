@@ -1,20 +1,14 @@
 ---
 title: Řetězec interpolace - C#
 description: Zjistěte, jak funguje interpolace řetězce v jazyce C# 6
-keywords: Rozhraní .NET, .NET core, C#, řetězec
 author: mgroves
-ms.author: wiwagn
 ms.date: 03/06/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: a9578d006861b987871071961437345c378a5b58
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 5b807429d05fcf59f4bb55c4d2429daa17835fb4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězce v jazyce C# #
 

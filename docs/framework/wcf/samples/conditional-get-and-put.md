@@ -1,24 +1,12 @@
 ---
-title: "Podmíněné operace Get a Put"
-ms.custom: 
+title: Podmíněné operace Get a Put
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3d22067f-57b8-4e0f-a571-a694512187ae
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 08efa127ed06ffc8cff3c7bb83af7be929329794
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f2d170da80de1186aa41b4821da52d58a0bb0e0e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="conditional-get-and-put"></a>Podmíněné operace Get a Put
 Tento příklad znázorňuje, jak používat nové podmíněného načtení a aktualizace rozhraní API pro programovací model WCF REST. Protože podmíněného načtení a aktualizace jsou nejvhodnější pro orientované prostředků a rozšiřuje služby REST, tato ukázka [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka. Tato ukázka se zaměřuje na přidání podpory pro podmíněné načtení a proveďte aktualizaci [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázkové pomocí nových rozhraní API byla zavedená v [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)].  
@@ -54,6 +42,6 @@ Tento příklad znázorňuje, jak používat nové podmíněného načtení a ak
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\ConditionalGetAndPut`

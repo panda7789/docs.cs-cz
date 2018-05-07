@@ -1,21 +1,15 @@
 ---
-title: "Objekty (Průvodce programováním v C#)"
+title: Objekty (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-caps.latest.revision: "26"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f8a8e283b42b27a40780068be42c03fc5047a511
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 553b0a5e75364bc5c294867852265575fb9271b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídě nebo struktuře je jako matrici, která určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která je přidělena a nakonfigurovaný podle plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty jsou také označovány jako instance a mohou být uloženy v proměnnou s názvem nebo v pole nebo kolekce. Kód klienta je kód, který používá tyto proměnné volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované například C# typické program se skládá z více objektů dynamicky interakci.  
@@ -66,10 +60,10 @@ Definice třídě nebo struktuře je jako matrici, která určuje, co můžete d
 -   [Události](../../../csharp/programming-guide/events/index.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [objekt](../../../csharp/language-reference/keywords/object.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [object](../../../csharp/language-reference/keywords/object.md)  
  [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
- [– Třída](../../../csharp/language-reference/keywords/class.md)  
- [Struktura](../../../csharp/language-reference/keywords/struct.md)  
- [New – operátor](../../../csharp/language-reference/keywords/new-operator.md)  
+ [class](../../../csharp/language-reference/keywords/class.md)  
+ [struct](../../../csharp/language-reference/keywords/struct.md)  
+ [new – operátor](../../../csharp/language-reference/keywords/new-operator.md)  
  [Obecný systém typů](../../../standard/base-types/common-type-system.md)

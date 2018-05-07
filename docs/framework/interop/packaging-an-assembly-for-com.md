@@ -1,10 +1,6 @@
 ---
 title: Zabalení sestavení pro model COM
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - exposing .NET Framework components to COM
 - COM interop, packaging assemblies
@@ -22,14 +18,11 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5c1e3ee38f98eae46c09ec2175f3c9af01288bd2
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: f2906159c7474b42f81bdf066855072466b6be63
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
 COM vývojáři mohou využít následující informace o spravovaných typů, že chtějí začlenit ve svých aplikacích:  

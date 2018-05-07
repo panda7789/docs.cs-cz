@@ -1,28 +1,19 @@
 ---
-title: "Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní"
-ms.custom: 
+title: Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, Invoke control pattern
 - control patterns, Invoke
 - Invoke control pattern
 ms.assetid: e5b1e239-49f8-468e-bfec-1fba02ec9ac4
-caps.latest.revision: "31"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 1d40bc94887df604577c025181ae7f5f2776cdc1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8ac28b481dc9e0749762a411502c8f9660cd0cd2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -40,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Vyvolání ovládacího prvku se obvykle provádí klepnutím nebo dvakrát kliknete na soubor nebo stisknutím ENTER, předdefinované klávesové zkratky nebo některé alternativní kombinace kláves.  
   
--   <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>je vyvolána na ovládací prvek, který byl aktivován (jako odpověď do ovládacího prvku jeho přidružené akce). Pokud je to možné by měl být událost vyvolána po dokončil akci a vrátí bez blokování ovládacího prvku. Událost Invoked by měl být vyvolána před obsluhy Invoke žádosti v následujících scénářích:  
+-   <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> je vyvolána na ovládací prvek, který byl aktivován (jako odpověď do ovládacího prvku jeho přidružené akce). Pokud je to možné by měl být událost vyvolána po dokončil akci a vrátí bez blokování ovládacího prvku. Událost Invoked by měl být vyvolána před obsluhy Invoke žádosti v následujících scénářích:  
   
     -   Není možné ani praktické počkejte na dokončení akce.  
   
@@ -59,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Element může zmizet z [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu okamžitě po vyvolání. Vyžadování informací o z zadaný element zpětného volání události pravděpodobně v důsledku nezdaří. Předběžné načítání informace uložené v mezipaměti je doporučená řešení.  
   
--   Ovládací prvky můžete implementovat několik vzorů ovládacích prvků. Například ovládacího prvku Barva výplně na [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] nástrojů implementuje i <xref:System.Windows.Automation.InvokePattern> a <xref:System.Windows.Automation.ExpandCollapsePattern> řízení vzory. <xref:System.Windows.Automation.ExpandCollapsePattern>zpřístupní v nabídce a <xref:System.Windows.Automation.InvokePattern> doplní aktivní výběr zvolené barvou.  
+-   Ovládací prvky můžete implementovat několik vzorů ovládacích prvků. Například ovládacího prvku Barva výplně na [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] nástrojů implementuje i <xref:System.Windows.Automation.InvokePattern> a <xref:System.Windows.Automation.ExpandCollapsePattern> řízení vzory. <xref:System.Windows.Automation.ExpandCollapsePattern> zpřístupní v nabídce a <xref:System.Windows.Automation.InvokePattern> doplní aktivní výběr zvolené barvou.  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
 ## <a name="required-members-for-iinvokeprovider"></a>Požadované členy pro IInvokeProvider  
@@ -67,7 +58,7 @@ ms.lasthandoff: 12/22/2017
   
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|– metoda|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>je asynchronní volání a musí vracet okamžitě bez blokování.<br /><br /> Toto chování je obzvláště důležité pro ovládací prvky, které přímo nebo nepřímo, spusťte modální dialogové okno při vyvolání. Libovolného automatizace uživatelského rozhraní klienta, který zahájené událost zůstane blokovaný, dokud modální dialogové okno je uzavřený.|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|– metoda|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> je asynchronní volání a musí vracet okamžitě bez blokování.<br /><br /> Toto chování je obzvláště důležité pro ovládací prvky, které přímo nebo nepřímo, spusťte modální dialogové okno při vyvolání. Libovolného automatizace uživatelského rozhraní klienta, který zahájené událost zůstane blokovaný, dokud modální dialogové okno je uzavřený.|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  

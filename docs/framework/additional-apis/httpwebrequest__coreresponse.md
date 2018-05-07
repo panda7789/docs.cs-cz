@@ -1,9 +1,6 @@
 ---
-title: HttpWebRequest._CoreResponse Field
+title: HttpWebRequest._CoreResponse pole
 ms.date: 01/29/2018
-ms.prod: .net-framework
-ms.technology: 
-ms.topic: reference
 topic_type:
 - apiref
 api_name:
@@ -13,19 +10,15 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.author: stwhi
-manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: e6493747cf6c894357223f011da026770778e26c
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 3627c9bf0d72ccec3a0d6d9c7c89b62f83dcd4b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="httpwebrequestcoreresponse-field"></a>HttpWebRequest. \_CoreResponse pole
 
-`HttpWebRequest._CoreResponse`je objektem (buď [CoreResponseData](coreresponsedata.md) nebo <xref:System.Exception>) obsahující výsledek analýzy odpovědi HTTP.
+`HttpWebRequest._CoreResponse` je objektem (buď [CoreResponseData](coreresponsedata.md) nebo <xref:System.Exception>) obsahující výsledek analýzy odpovědi HTTP.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -40,7 +33,7 @@ private object _CoreResponse
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:**<xref:System.Net>
+**Namespace:** <xref:System.Net>
 
 **Sestavení:** systému (v System.dll)
 

@@ -1,13 +1,6 @@
 ---
-title: "Sběrače (služby WCF Data Services)"
-ms.custom: 
+title: Sběrače (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c72d4ba56859e0afec4b26d7ce81668b443a4ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f3ff08dd4cd20e7ce226750a386cfddb27731923
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interceptors-wcf-data-services"></a>Sběrače (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]umožňuje aplikaci intercept zpráv žádostí, aby můžete přidat vlastní logiky do operace. Tato vlastní logiky můžete použít pro ověření dat v příchozí zprávy. Můžete ji použít i další omezit obor dotazu požadavku, jako třeba vložit vlastní zásady autorizace na základě žádosti.  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje aplikaci intercept zpráv žádostí, aby můžete přidat vlastní logiky do operace. Tato vlastní logiky můžete použít pro ověření dat v příchozí zprávy. Můžete ji použít i další omezit obor dotazu požadavku, jako třeba vložit vlastní zásady autorizace na základě žádosti.  
   
  Zachycení provádí speciálně s atributy metody ve službě data. Tyto metody jsou volány [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] v odpovídajícím bodě v zpracování zprávy. Sběrače jsou definovány na základě sady za entity, a metody interceptoru nemůže přijímat parametry z požadavku jako operací služby můžete. Metody interceptoru dotazů, které se nazývají při zpracování požadavku HTTP GET, musí vrátit, že má být vrácen výrazu lambda, která určuje, zda instanci entity lze sběrač nastavit podle výsledků dotazu. Tento výraz se používá služba data pro další upřesnění požadovanou operaci. Toto je definici příklad interceptoru dotazu.  
   

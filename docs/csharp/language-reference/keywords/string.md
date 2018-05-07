@@ -1,10 +1,6 @@
 ---
-title: "string (Referenční dokumentace jazyka C#)"
+title: string (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - string
 - string_CSharpKeyword
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8899eb75b1b7c556a1e92f173a4d0ca4135014c8
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: 748016682db6e02cadbfb8c767391a18d48e1286
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
 `string` Typ reprezentuje posloupnosti nula nebo více znaků Unicode. `string` je alias <xref:System.String> v rozhraní .NET.  

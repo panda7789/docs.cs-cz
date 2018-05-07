@@ -1,35 +1,21 @@
 ---
 title: Vzájemná spolupráce s aplikacemi POX
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 42f6bbb1a5605bd0a604f5cfe31ce5ea48d9bb10
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7522233723b6b91d5a7b27d3f82ca328e29ce3f7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interoperability-with-pox-applications"></a>Vzájemná spolupráce s aplikacemi POX
-"Prostý formát XML" aplikacemi (POX) komunikovat nahrazením nezpracovaná zpráv protokolu HTTP, které obsahují pouze data aplikací XML, který není umístěné do obálky protokolu SOAP. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] může poskytovat služby a klienti, kteří používají POX zprávy. Ve službě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lze použít k implementaci služby, které vystavují koncové body pro klienty, například webových prohlížečů a skriptovací jazyky, které odesílat a přijímat zprávy POX. Na straně klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model lze použít k implementaci klientů komunikujících s služeb založených na POX.  
+"Prostý formát XML" aplikacemi (POX) komunikovat nahrazením nezpracovaná zpráv protokolu HTTP, které obsahují pouze data aplikací XML, který není umístěné do obálky protokolu SOAP. Windows Communication Foundation (WCF) nabízejí služby a klienti, kteří používají POX zprávy. Ve službě slouží k implementaci služeb, které zveřejňují koncové body pro klienty, například webové prohlížeče a skriptovací jazyky, které odesílat a přijímat zprávy POX WCF. Na straně klienta programovací model WCF slouží k implementaci klientů komunikujících s služeb založených na POX.  
   
 > [!NOTE]
 >  Tento dokument byl původně zapsán pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0.  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.5 má integrovanou podporu pro práci s aplikacemi POX. Další informace najdete v tématu [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
   
 ## <a name="pox-programming-with-wcf"></a>POX programování s použitím technologie WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, které komunikují přes protokol HTTP pomocí zprávy POX [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+ Služby WCF, které komunikují přes protokol HTTP pomocí zprávy POX [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
 ```xml  
 <customBinding>  
@@ -46,9 +32,9 @@ ms.lasthandoff: 04/30/2018
   
 -   [ \<TextMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
   
- Standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kodér textu zprávy je speciálně nakonfigurovaný na použití <xref:System.ServiceModel.Channels.MessageVersion.None%2A> hodnotu, která umožňuje zpracovat XML zprávy datové části není přicházející uzavřen do obálky protokolu SOAP.  
+ Kodér textu zpráv WCF je speciálně nakonfigurovaný na použití standardu <xref:System.ServiceModel.Channels.MessageVersion.None%2A> hodnotu, která umožňuje zpracovat XML zprávy datové části není přicházející uzavřen do obálky protokolu SOAP.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienti, kteří komunikují přes protokol HTTP pomocí POX zprávy používají podobné vazbu (viz následující imperativní kód).  
+ Klienti WCF, které komunikují přes protokol HTTP pomocí POX zprávy použít vazbu podobné (viz následující imperativní kód).  
   
 ```  
 private static Binding CreatePoxBinding()  
@@ -63,7 +49,7 @@ private static Binding CreatePoxBinding()
   
  Protože klienti POX musí explicitně zadat identifikátory URI, na který budou posílat zprávy, se obvykle musíte nakonfigurovat <xref:System.ServiceModel.Channels.HttpTransportBindingElement> na režim ručního adresování nastavením <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> vlastnost `true` v elementu. To umožňuje zprávy explicitně používala kódu aplikace a není nutné vytvořit nový <xref:System.ServiceModel.ChannelFactory> pokaždé, když aplikace odešle zprávu do jiný identifikátor URI HTTP.  
   
- Protože zprávy POX nepoužívají hlavičky SOAP pro vyjádření protokolu důležité informace, často služby a klienti POX upravit kusy základní požadavek HTTP umožňuje odesílat nebo přijímat zprávy. Protokol HTTP specifické informace, jako je záhlaví HTTP a stavové kódy jsou prezentované v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model prostřednictvím dvě třídy:  
+ Protože zprávy POX nepoužívají hlavičky SOAP pro vyjádření protokolu důležité informace, často služby a klienti POX upravit kusy základní požadavek HTTP umožňuje odesílat nebo přijímat zprávy. Protokol HTTP specifické informace, jako je záhlaví HTTP a stavové kódy jsou prezentované v programovací model WCF přes dvě třídy:  
   
 -   <xref:System.ServiceModel.Channels.HttpRequestMessageProperty>, který obsahuje informace o požadavku HTTP, jako je například metoda a požadavek hlavičky HTTP.  
   

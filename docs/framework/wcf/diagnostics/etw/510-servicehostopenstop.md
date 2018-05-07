@@ -1,24 +1,12 @@
 ---
 title: 510 - ServiceHostOpenStop
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3377246a-e74c-4d4c-9dda-36d21bd5a48f
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 16039be8d87cc9439eab3dec304cd29742fd6702
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2c9f4ab5fddf4b704e3f356ed6b613db226cb0de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="510---servicehostopenstop"></a>510 - ServiceHostOpenStop
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|510|  
 |Klíčová slova|Hostitel služby|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované po dokončení ServiceHost otevřete.  

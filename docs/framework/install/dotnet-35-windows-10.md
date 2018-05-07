@@ -4,15 +4,11 @@ description: Zjistěte, jak nainstalovat rozhraní .NET Framework 3.5 na Windows
 author: rlander
 ms.author: mairaw
 ms.date: 03/30/2018
-ms.topic: article
-ms.prod: .net-framework
-ms.workload:
-- dotnet
-ms.openlocfilehash: 09c4f81da76bb6608c3e579c442cf686ffab1688
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 226449b8ee7c9360e6bfdc5bfa5dfeb59f19bd2b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Nainstalujte rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8
 

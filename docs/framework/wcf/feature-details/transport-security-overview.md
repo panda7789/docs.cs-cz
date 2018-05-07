@@ -1,35 +1,23 @@
 ---
 title: Přehled zabezpečení přenosu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-caps.latest.revision: 23
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: b697dc6a227c3b2a5646f4fcb11a39fd9d6339ff
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 12b491971a9f3faa57edb1ccf9fb59351ed45f3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
-Přenosu mechanismy zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] závisí na vazby a přenosu používá. Například při použití <xref:System.ServiceModel.WSHttpBinding> třída, přenos, je HTTP a primární mechanismus pro zabezpečení přenosu je Secure Sockets Layer (SSL) prostřednictvím protokolu HTTP, označovaného jako protokol HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenos, který je používán [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby poskytované systémem.  
+Mechanismy zabezpečení přenosu ve Windows Communication Foundation (WCF) závisí na vazby a přenos používá. Například při použití <xref:System.ServiceModel.WSHttpBinding> třída, přenos, je HTTP a primární mechanismus pro zabezpečení přenosu je Secure Sockets Layer (SSL) prostřednictvím protokolu HTTP, označovaného jako protokol HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenos, který se používá v vazby poskytované systémem WCF.  
   
 > [!NOTE]
->  Když se použije zabezpečení SSL v rozhraní .NET Framework 3.5 a později [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta používá k ověřování řetězu certifikátů v zprostředkující certifikáty v úložišti certifikátů i zprostředkující certifikáty obdržel během vyjednávání SSL certifikát služby. Rozhraní .NET framework 3.0 používá jenom nainstalovaná v místním úložišti certifikátů zprostředkující certifikáty.  
+>  Při použití zabezpečení SSL v rozhraní .NET Framework 3.5 a později klienta WCF používá zprostředkující certifikáty v úložišti certifikátů a zprostředkující certifikáty přijatých během vyjednávání SSL se službou provést ověření řetězu certifikátů certifikát. Rozhraní .NET framework 3.0 používá jenom nainstalovaná v místním úložišti certifikátů zprostředkující certifikáty.  
   
 > [!WARNING]
 >  Při zabezpečení přenosu se používá, <!--zz <xref:System.Treading.Thread.CurrentPrincipal%2A> --> `CurrentPrincipal` mohou být přepsány vlastnosti. Aby k této situaci sadu <!--zz <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermission%2A> --> `PrincipalPermission` na hodnotu None. <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> je chování služby, které lze nastavit u popisu služby.  
@@ -75,7 +63,7 @@ Přenosu mechanismy zabezpečení v [!INCLUDE[indigo1](../../../../includes/indi
  Díky tomu může server pro ověřování pomocí protokolu NTLM, pokud se protokol Kerberos nezdaří. Další informace o konfiguraci služby IIS v [!INCLUDE[iis601](../../../../includes/iis601-md.md)], najdete v části [vynucení ověřování protokolem NTLM](http://go.microsoft.com/fwlink/?LinkId=88598). Pro [!INCLUDE[iisver](../../../../includes/iisver-md.md)], ověřování systému Windows obsahuje ověřování NTLM. Další informace najdete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](http://go.microsoft.com/fwlink/?LinkID=88595).  
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
- <xref:System.ServiceModel.WSHttpBinding> Třída je určená pro vzájemná spolupráce pomocí služby, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu Secure Sockets Layer (SSL) je protokol HTTP nebo HTTPS. Chcete-li vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, která používá protokol SSL, který bude hostovat aplikaci používají službu IIS. Případně pokud vytváříte vlastním hostováním aplikací, použijte nástroj HttpCfg.exe pro vazbu certifikátu X.509 konkrétní port, na počítači. Číslo portu je zadaný jako součást [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace jako adresy koncového bodu. Pokud používáte režim přenosu, adresa koncového bodu musí obsahovat protokol HTTPS nebo k výjimce v době běhu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+ <xref:System.ServiceModel.WSHttpBinding> Třída je určená pro vzájemná spolupráce pomocí služby, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu Secure Sockets Layer (SSL) je protokol HTTP nebo HTTPS. Pokud chcete vytvořit aplikaci WCF, který používá protokol SSL, použijte k hostování aplikace služby IIS. Případně pokud vytváříte vlastním hostováním aplikací, použijte nástroj HttpCfg.exe pro vazbu certifikátu X.509 konkrétní port, na počítači. Číslo portu je zadán jako součást aplikace WCF jako adresy koncového bodu. Pokud používáte režim přenosu, adresa koncového bodu musí obsahovat protokol HTTPS nebo k výjimce v době běhu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  Pro ověřování klientů, nastavte <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.HttpTransportSecurity> třída na jednu z <xref:System.ServiceModel.HttpClientCredentialType> hodnot výčtu. Hodnoty výčtu jsou shodné s typy pověření klienta pro <xref:System.ServiceModel.BasicHttpBinding> a jsou navrženy pro hostování s služby IIS.  
   

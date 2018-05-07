@@ -1,27 +1,15 @@
 ---
-title: "Rozšíření hostování pomocí třídy ServiceHostFactory"
-ms.custom: 
+title: Rozšíření hostování pomocí třídy ServiceHostFactory
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bcc5ae1b-21ce-4e0e-a184-17fad74a441e
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4a7bcd2e0ba68499cad63ec47918fd2bd6bd80d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3773ca50111f609489b95145f1005cd005922b9b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-hosting-using-servicehostfactory"></a>Rozšíření hostování pomocí třídy ServiceHostFactory
-Standardní <xref:System.ServiceModel.ServiceHost> rozhraní API pro hostování služeb v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] je bod rozšiřitelnosti v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] architektura. Uživatelé mohou odvozovat vlastní hostitele z <xref:System.ServiceModel.ServiceHost>, obvykle k přepsání <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> používat <xref:System.ServiceModel.Description.ServiceDescription> výchozí koncové body imperativní přidávat nebo upravovat chování před otevřením službu.  
+Standardní <xref:System.ServiceModel.ServiceHost> rozhraní API pro hostování služby Windows Communication Foundation (WCF) je bod rozšiřitelnosti v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] architektura. Uživatelé mohou odvozovat vlastní hostitele z <xref:System.ServiceModel.ServiceHost>, obvykle k přepsání <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> používat <xref:System.ServiceModel.Description.ServiceDescription> výchozí koncové body imperativní přidávat nebo upravovat chování před otevřením službu.  
   
  V prostředí hostování na vlastním serveru nemáte vytvoření vlastní <xref:System.ServiceModel.ServiceHost> protože napsat kód, který vytvoří instanci hostitele a pak zavolají <xref:System.ServiceModel.ICommunicationObject.Open> na něm po vytvoření instance ho. Mezi tyto dva kroky můžete provést libovolně. Například může přidat novou <xref:System.ServiceModel.Description.IServiceBehavior>:  
   
@@ -91,4 +79,4 @@ public class DerivedFactory : ServiceHostFactory
   
  Když neexistuje žádné technické omezení na to, co chcete <xref:System.ServiceModel.ServiceHost> vrátíte z <xref:System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost%2A>, doporučujeme, abyste vaší implementace objektu pro vytváření co nejjednodušší. Pokud máte velké množství vlastní logiky, je lepší uvést tuto logiku uvnitř hostitele místo uvnitř objektu pro vytváření, tak, aby bylo možné znovu použitelné.  
   
- Neexistuje jeden další vrstvě pro hostování rozhraní API, které by se měla uvádět v tomto poli. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]má také <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.Activation.ServiceHostFactoryBase>, ze kterého <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.Activation.ServiceHostFactory> odvozena v uvedeném pořadí. Pro pokročilejší scénáře, kde musí vyměnit velké části systém metadat s vlastními přizpůsobené páskách těch, které neexistují.
+ Neexistuje jeden další vrstvě pro hostování rozhraní API, které by se měla uvádět v tomto poli. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] má také <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.Activation.ServiceHostFactoryBase>, ze kterého <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.Activation.ServiceHostFactory> odvozena v uvedeném pořadí. Pro pokročilejší scénáře, kde musí vyměnit velké části systém metadat s vlastními přizpůsobené páskách těch, které neexistují.

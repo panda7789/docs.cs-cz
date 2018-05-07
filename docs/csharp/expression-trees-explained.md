@@ -1,20 +1,13 @@
 ---
-title: "Stromy výrazů vysvětlené"
-description: "Další informace o stromů výrazů a jak jsou užitečné při překládání algoritmy pro externí provádění a provádějící kontrolu kódu před jeho provedením."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Stromy výrazů vysvětlené
+description: Další informace o stromů výrazů a jak jsou užitečné při překládání algoritmy pro externí provádění a provádějící kontrolu kódu před jeho provedením.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
-ms.openlocfilehash: 1de856a139ac7a6dee25f1dae54924e33f14a33b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 97cba9e5ec388729d23fb2689dfc1842a42af9b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expression-trees-explained"></a>Stromy výrazů vysvětlené
 

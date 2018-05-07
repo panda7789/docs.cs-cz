@@ -1,34 +1,22 @@
 ---
-title: "Ověřování ve WCF"
-ms.custom: 
+title: Ověřování ve WCF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 432ed9debeffad82125b567508ed46b46d4b8821
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a4f9b719024db1334b599f0f02fe01bc083bf3c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="authentication-in-wcf"></a>Ověřování ve WCF
-Následující témata ukazují počet různých mechanismech [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] , poskytovat ověřování, například, ověřování systému Windows, certifikáty X.509 a uživatelského jména a hesla.  
+Následující témata ukazují počet různé mechanismy ve Windows Communication Foundation (WCF), ověřování, například zadáte, ověřování systému Windows, certifikáty X.509 a uživatelského jména a hesla.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Používání poskytovatele členství ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
- Funkce ASP.NET zahrnují členství a zprostředkovatele rolí, databázi k ukládání páry uživatelské jméno a heslo pro ověřování a role uživatele pro ověřování. Toto téma vysvětluje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby můžete použít stejnou databázi k ověřování a autorizaci uživatelů.  
+ Funkce ASP.NET zahrnují členství a zprostředkovatele rolí, databázi k ukládání páry uživatelské jméno a heslo pro ověřování a role uživatele pro ověřování. Toto téma vysvětluje, jak můžete použít stejnou databázi k ověřování a autorizaci uživatelů služby WCF.  
   
  [Postupy: Použití validátoru vlastního uživatelského jména a hesla](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
  Ukazuje, jak integrovat validátor vlastní uživatelské jméno a heslo.  

@@ -1,24 +1,12 @@
 ---
-title: "501 – CompilationStart"
-ms.custom: 
+title: 501 – CompilationStart
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5d4a214f-e242-4475-8bc9-02409190dc2c
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f9bd107be114ae04c993da3900b12fa2fba2e8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b3fb07da3fa3350503541fe442e333055326b73
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="501---compilationstart"></a>501 – CompilationStart
 ## <a name="properties"></a>Vlastnosti  

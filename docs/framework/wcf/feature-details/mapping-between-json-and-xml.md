@@ -1,35 +1,23 @@
 ---
-title: "Mapování mezi JSON a XML"
-ms.custom: 
+title: Mapování mezi JSON a XML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 22ee1f52-c708-4024-bbf0-572e0dae64af
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 770be9ea5327b32286de64207a3cf07bca7449c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db34161ad3e2f7d2c9737e6a456b27bd70c5ebfb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mapping-between-json-and-xml"></a>Mapování mezi JSON a XML
-Čtení a zápis vyprodukované <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML přes obsah JavaScript Object Notation (JSON). JSON kóduje dat pomocí podmnožinu literály objekt jazyka JavaScript. Čtení a zápis, které jsou vyprodukované tuto továrnu se také používají při obsah JSON se odesílat nebo přijímat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikací pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.  
+Čtení a zápis vyprodukované <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML přes obsah JavaScript Object Notation (JSON). JSON kóduje dat pomocí podmnožinu literály objekt jazyka JavaScript. Čtení a zápis, které jsou vyprodukované tuto továrnu se také používají při obsah JSON se odesílat nebo přijímat aplikací Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.  
   
  Při inicializaci s obsah JSON, chová se stejným způsobem, který zajišťuje textovou čtečky XML přes instanci XML čtečka JSON. Zapisovač JSON, pokud zadané posloupnost volání, která na textovou čtečky XML vytváří určité instance XML, zapíše se obsah JSON. Mapování mezi tuto instanci XML a obsah JSON je popsaná v tomto tématu pro použití v pokročilých scénářích.  
   
- Interně JSON je reprezentován jako XML informační sadu při zpracování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Normálně není nutné být problémem tento interního vyjádření jako mapování je pouze logické: JSON je obvykle není fyzicky převést do formátu XML v paměti nebo převést na JSON ze souboru XML. Mapování znamená, že rozhraní API XML se používají pro přístup k obsahu JSON.  
+ Interně JSON je reprezentován jako XML informační sadu při zpracování WCF. Normálně není nutné být problémem tento interního vyjádření jako mapování je pouze logické: JSON je obvykle není fyzicky převést do formátu XML v paměti nebo převést na JSON ze souboru XML. Mapování znamená, že rozhraní API XML se používají pro přístup k obsahu JSON.  
   
- Při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá formát JSON, obvyklé scénáře je, že <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> automaticky zapojen podle <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> chování, nebo <xref:System.ServiceModel.Description.WebHttpBehavior> chování, pokud je to vhodné. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Rozumí mapování mezi JSON a XML informační sadu a chová, jako je se zabývají JSON přímo. (Je možné použít <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> se čtecí modul XML nebo zapisovač s vědomím, že soubor XML, splňuje následující mapování.)  
+ Používá-li WCF JSON, obvyklé scénáře je, že <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> automaticky zapojen podle <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> chování, nebo <xref:System.ServiceModel.Description.WebHttpBehavior> chování, pokud je to vhodné. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Rozumí mapování mezi JSON a XML informační sadu a chová, jako je se zabývají JSON přímo. (Je možné použít <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> se čtecí modul XML nebo zapisovač s vědomím, že soubor XML, splňuje následující mapování.)  
   
- V pokročilých scénářích může být nezbytné přímý přístup k následující mapování. Tyto scénáře nastat, pokud chcete k serializaci a deserializaci JSON vlastní způsoby, bez nutnosti spoléhat se na <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, nebo při plánování práce s <xref:System.ServiceModel.Channels.Message> typu přímo pro zprávy obsahující JSON. Mapování JSON XML se také používá pro protokolování zpráv. Když používáte funkci protokolování zpráv v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], JSON zprávy se zaznamená jako XML podle mapování popsané v další části.  
+ V pokročilých scénářích může být nezbytné přímý přístup k následující mapování. Tyto scénáře nastat, pokud chcete k serializaci a deserializaci JSON vlastní způsoby, bez nutnosti spoléhat se na <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, nebo při plánování práce s <xref:System.ServiceModel.Channels.Message> typu přímo pro zprávy obsahující JSON. Mapování JSON XML se také používá pro protokolování zpráv. Při použití funkce protokolování zpráv ve WCF, JSON zprávy se zaznamená jako XML podle mapování popsané v další části.  
   
  K objasnění konceptu mapování, v následujícím příkladu je dokumentu JSON.  
   
@@ -46,7 +34,7 @@ ms.lasthandoff: 12/22/2017
 </root>  
 ```  
   
- Kromě toho pokud JSON zpráv v příkladu je přijatých [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a přihlášení, zobrazí se fragment XML v předchozím protokolu.  
+ Kromě toho pokud zpráva JSON v příkladu je přijatých WCF a zaznamenávat, zobrazí se fragment XML v předchozím protokolu.  
   
 ## <a name="mapping-between-json-and-the-xml-infoset"></a>Mapování mezi JSON a XML informační sadu  
  Dříve, se mapování mezi JSON jak je popsáno v [RFC 4627](http://go.microsoft.com/fwlink/?LinkId=98808) (s výjimkou určitá omezení volný a některé další omezení přidat) a XML informační sadu (a ne textové XML) jako popsané v [informace XML Nastavit](http://go.microsoft.com/fwlink/?LinkId=98809) . V tomto tématu pro definice *informace položky* a polí v [hranaté závorky].  
@@ -157,7 +145,7 @@ ms.lasthandoff: 12/22/2017
   
 |[normalized hodnotu] z `JSON Type Attribute`na AII|Povolené [podřízené objekty] odpovídající EII|Mapování do formátu JSON|  
 |---------------------------------------------------------|---------------------------------------------------|---------------------|  
-|`string`(nebo absenci typu JSON AII)<br /><br /> A `string` a absence typu JSON AII jsou stejné díky `string` výchozí hodnota.<br /><br /> Ano `<root> string1</root>` mapuje JSON `string` "Řetězec1".|0 nebo více CIIs|JSON `string` (RFC JSON, část 2.5). Každý `char` je znak, který odpovídá [kód] z CÍ. Pokud žádné CIIs se mapuje na prázdný JSON `string`.<br /><br /> Příklad: Následující element mapuje JSON fragment:<br /><br /> `<root type="string">42</root>`<br /><br /> JSON fragment je "42".<br /><br /> Na XML tak, aby mapování JSON znaků, které musí být uvozené uvozovacími znaky znaků mapy, všechny ostatní znaky, které nejsou uvozené namapovat. Znak "/" je speciální – je řídicí sekvencí, i když nemá být (zapsaný se jako "\\/").<br /><br /> Příklad: Následující element mapuje JSON fragment.<br /><br /> `<root type="string">the "da/ta"</root>`<br /><br /> JSON fragment je " \\" da\\/ta\\"".<br /><br /> Na formát JSON pro mapování XML všechny uvozený znaky a znaky, které nejsou správně uvozeny zpětným lomítkem mapy na odpovídající [kód].<br /><br /> Příklad: Fragment JSON "\u0041BC" mapuje následující element XML.<br /><br /> `<root type="string">ABC</root>`<br /><br /> Řetězec může být uzavřena do prázdné znaky ("ws" v části 2 v dokumentech RFC JSON) získat není mapováno na XML.<br /><br /> Příklad: JSON fragmentovat "ABC", (nejsou mezery před první dvojitých uvozovek), se mapuje na následující element XML.<br /><br /> `<root type="string">ABC</root>`<br /><br /> Všechny prázdné znaky v kódu XML se mapuje na prázdné znaky na JSON.<br /><br /> Příklad: Následující element XML mapuje JSON fragment.<br /><br /> `<root type="string">  A BC      </root>`<br /><br /> JSON fragment je "BC".|  
+|`string` (nebo absenci typu JSON AII)<br /><br /> A `string` a absence typu JSON AII jsou stejné díky `string` výchozí hodnota.<br /><br /> Ano `<root> string1</root>` mapuje JSON `string` "Řetězec1".|0 nebo více CIIs|JSON `string` (RFC JSON, část 2.5). Každý `char` je znak, který odpovídá [kód] z CÍ. Pokud žádné CIIs se mapuje na prázdný JSON `string`.<br /><br /> Příklad: Následující element mapuje JSON fragment:<br /><br /> `<root type="string">42</root>`<br /><br /> JSON fragment je "42".<br /><br /> Na XML tak, aby mapování JSON znaků, které musí být uvozené uvozovacími znaky znaků mapy, všechny ostatní znaky, které nejsou uvozené namapovat. Znak "/" je speciální – je řídicí sekvencí, i když nemá být (zapsaný se jako "\\/").<br /><br /> Příklad: Následující element mapuje JSON fragment.<br /><br /> `<root type="string">the "da/ta"</root>`<br /><br /> JSON fragment je " \\" da\\/ta\\"".<br /><br /> Na formát JSON pro mapování XML všechny uvozený znaky a znaky, které nejsou správně uvozeny zpětným lomítkem mapy na odpovídající [kód].<br /><br /> Příklad: Fragment JSON "\u0041BC" mapuje následující element XML.<br /><br /> `<root type="string">ABC</root>`<br /><br /> Řetězec může být uzavřena do prázdné znaky ("ws" v části 2 v dokumentech RFC JSON) získat není mapováno na XML.<br /><br /> Příklad: JSON fragmentovat "ABC", (nejsou mezery před první dvojitých uvozovek), se mapuje na následující element XML.<br /><br /> `<root type="string">ABC</root>`<br /><br /> Všechny prázdné znaky v kódu XML se mapuje na prázdné znaky na JSON.<br /><br /> Příklad: Následující element XML mapuje JSON fragment.<br /><br /> `<root type="string">  A BC      </root>`<br /><br /> JSON fragment je "BC".|  
 |`number`|1 nebo více CIIs|JSON `number` (RFC JSON, část 2.4), které by mohly mít obklopená prázdný znak. Každý znak v kombinaci číslo nebo prázdný znak je znak, který odpovídá [kód] z CÍ.<br /><br /> Příklad: Následující element mapuje JSON fragment.<br /><br /> `<root type="number">    42</root>`<br /><br /> JSON fragment je 42<br /><br /> (Prázdný znak je zachovaná).|  
 |`boolean`|4 nebo 5 CIIs (která odpovídá `true` nebo `false`), případně ovinutých podle dalších prázdné CIIs.|Pořadí CÍ, která odpovídá řetězec "true" je namapována na literálové `true`, a CÍ pořadí, které odpovídá řetězci, "Nepravda" je namapována na literálové `false`. Které obaluje prázdný znak je zachovaná.<br /><br /> Příklad: Následující element mapuje JSON fragment.<br /><br /> `<root type="boolean"> false</root>`<br /><br /> JSON fragment je `false`.|  
 |`null`|Není povoleno.|Literálové `null`. Na JSON pro mapování XML `null` může být uzavřena do prázdné znaky ("ws" v části 2) získat není mapováno na XML.<br /><br /> Příklad: Následující element mapuje JSON fragment.<br /><br /> `<root type="null"/>`<br /><br /> or<br /><br /> `<root type="null"></root>`<br /><br /> :<br /><br /> Fragment JSON v obou případech je `Null`.|  
@@ -209,7 +197,7 @@ Ray.|0 nebo více EIIs|Začátek pole (levou hranatou závorku) jako část 2.3 
  `{"myLocalName1":"myValue1","myLocalName2":2,"myLocalName3":{"myNestedName1":true,"myNestedName2":null}}`  
   
 > [!NOTE]
->  V předchozí mapování neexistuje žádný krok kódování XML. Proto [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje pouze dokumentů JSON, kde všechny znaky v názvy klíčů jsou platné znaky v názvy elementů XML. Například dokument JSON {"<": "a"} není podporována, protože < není platný název elementu XML.  
+>  V předchozí mapování neexistuje žádný krok kódování XML. Proto WCF podporuje pouze dokumentů JSON, kde všechny znaky v názvy klíčů jsou platné znaky v názvy elementů XML. Například dokument JSON {"<": "a"} není podporována, protože < není platný název elementu XML.  
   
  Zpětné situaci (znaky v kódu XML, ale není ve formátu JSON) nezpůsobí potíže, protože předchozí mapování obsahuje kroky uvozovací znaky unescaping JSON.  
   

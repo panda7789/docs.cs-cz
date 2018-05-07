@@ -1,31 +1,17 @@
 ---
-title: "Výčtové typy v kontraktech dat"
-ms.custom: 
+title: Výčtové typy v kontraktech dat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7989996f7ed64ba4b85ddc1ca01538ec05e99e1a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ed4a0c572f651793a40cb5ffcaa32aef884c1cec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Výčtové typy v kontraktech dat
 Výčty může být vyjádřený v datovém modelu kontrakt. Toto téma vás provede několik příkladů, které vysvětlují programovací model.  
@@ -43,7 +29,7 @@ Výčty může být vyjádřený v datovém modelu kontrakt. Toto téma vás pro
  Můžete použít <xref:System.Runtime.Serialization.DataContractAttribute> vlastnosti (<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> a <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>) jako obvykle pro kontrakty dat výčtu.  
   
 ### <a name="enumeration-member-values"></a>Hodnoty člen výčtu  
- Obecně kontrakt dat zahrnuje názvy členů výčtu, nikoli číselné hodnoty. Ale když pomocí dat smlouvy modelu, pokud je na straně příjmu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, schéma exportovaný zachovává číselné hodnoty. Všimněte si, že to tak není při použití [používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+ Obecně kontrakt dat zahrnuje názvy členů výčtu, nikoli číselné hodnoty. Při použití datového modelu kontrakt, pokud je klient WCF straně příjmu, ale schéma exportovaný zachová číselné hodnoty. Všimněte si, že to tak není při použití [používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
   
  V předchozím příkladu Pokud `condition` je nastaven na `Used` a je serializovat data XML, je výsledný soubor XML `<condition>Used</condition>` a není `<condition>1</condition>`. Proto je ekvivalentní kontrakt dat z následující kontrakt dat `CarConditionEnum`.  
   

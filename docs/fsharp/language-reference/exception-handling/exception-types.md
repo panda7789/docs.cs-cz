@@ -1,17 +1,12 @@
 ---
 title: Typy výjimek (F#)
 description: 'Zjistěte, jak definovat a používat výjimky typů F #.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 6aaa5cd1b94f829b98d5aed5dcf6e30472a8b751
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 4462dd00ddf9524d1fd376ee1e73e81fcfd5d945
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exception-types"></a>Typy výjimek
 

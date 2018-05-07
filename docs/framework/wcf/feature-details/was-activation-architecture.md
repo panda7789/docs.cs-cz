@@ -1,24 +1,12 @@
 ---
 title: Architektura aktivace WAS
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7563510fdd44336cb5f8c50705edefd732082347
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0c91ebd605fbe503dd11da7167512648afd86449
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="was-activation-architecture"></a>Architektura aktivace WAS
 Toto téma rozepisuje a součástí aktivační služba procesů systému Windows (WAS).  
@@ -41,14 +29,14 @@ Toto téma rozepisuje a součástí aktivační služba procesů systému Window
  ![Architektura byla](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")  
   
 ### <a name="listener-adapters"></a>Naslouchací proces adaptéry  
- Naslouchací proces adaptéry jsou jednotlivé služby systému Windows, které implementují logiku komunikace sítě slouží k přijímání zpráv pomocí síťového protokolu, na kterém naslouchat. Následující tabulka uvádí adaptéry naslouchací proces pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] protokoly.  
+ Naslouchací proces adaptéry jsou jednotlivé služby systému Windows, které implementují logiku komunikace sítě slouží k přijímání zpráv pomocí síťového protokolu, na kterém naslouchat. Následující tabulka uvádí adaptéry naslouchací proces pro protokoly systému Windows Communication Foundation (WCF).  
   
 |Název služby adaptér naslouchání|Protokol|Poznámky|  
 |-----------------------------------|--------------|-----------|  
-|W3SVC|http|Součást společné, která poskytuje aktivace protokolu HTTP pro obě služby IIS 7.0 a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].|  
+|W3SVC|http|Běžné komponenta, která poskytuje aktivace protokolu HTTP pro službu IIS 7.0 a WCF.|  
 |NetTcpActivator|net.tcp|Závisí na službě NetTcpPortSharing.|  
 |NetPipeActivator|net.pipe||  
-|NetMsmqActivator|NET.MSMQ|Pro použití s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]– na základě aplikací služby Řízení front zpráv.|  
+|NetMsmqActivator|NET.MSMQ|Pro použití s aplikacemi na základě WCF služby Řízení front zpráv.|  
 |NetMsmqActivator|MSMQ.formatname|Poskytuje zpětné kompatibilitě se stávajícími aplikacemi služby Řízení front zpráv.|  
   
  Adaptéry naslouchací proces pro konkrétní protokoly jsou registrované během instalace v souboru applicationHost.config, jak je znázorněno v následujícím příkladu kódu XML.  

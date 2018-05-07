@@ -1,21 +1,12 @@
 ---
-title: "Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)"
-ms.custom: 
+title: 'Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a3d3f0f9380e13addac38e32d4cc095d60e19bcf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3ff51b0b5f04a44f83db2590bd7005097b1c0161
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)
 Tento příklad ukazuje postup slučovat data z různých zdrojů do sekvence nových typů.  

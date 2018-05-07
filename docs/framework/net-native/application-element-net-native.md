@@ -1,24 +1,14 @@
 ---
 title: Element &lt;Application&gt; (.NET Native)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
-caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c486faf43a1109b0391f40072ab267b72e1d07d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60145611981b53d4778e7c52c6138b6a9b58a592
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltapplicationgt-element-net-native"></a>Element &lt;Application&gt; (.NET Native)
 Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadat je k dispozici pro reflexi v době běhu a platí zásady reflexe modulu runtime pro všechny prvky programu v aplikaci.  
@@ -69,8 +59,8 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadat j
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Zásady platí pro všechny typy v určitém sestavení.|  
-|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Zásady platí pro všechny typy v konkrétní oboru názvů.|  
+|[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Zásady platí pro všechny typy v určitém sestavení.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Zásady platí pro všechny typy v konkrétní oboru názvů.|  
 |[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Platí pro konkrétní typ, jako je například třídu nebo strukturu zásad.|  
 |[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Zásada se vztahuje na vytvořený obecného typu. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může definovat zásady pro `List<String>` typu.|  
 |[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Zásady se vztahují k metodě na konkrétní typ.|  

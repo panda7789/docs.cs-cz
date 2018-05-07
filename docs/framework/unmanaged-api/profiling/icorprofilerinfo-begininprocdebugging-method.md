@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo::BeginInprocDebugging – metoda"
-ms.custom: 
+title: ICorProfilerInfo::BeginInprocDebugging – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo.BeginInprocDebugging
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: c5c82c69-99f8-4447-aee0-42cca0a5eb5c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 91306bbea7b099f7e9e408f8bf69625f1d7da68e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82e798e1a31f771c63e71f2a85f8cbb684b237bd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfobegininprocdebugging-method"></a>ICorProfilerInfo::BeginInprocDebugging – metoda
 Inicializuje ladění podpory v procesu. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.  

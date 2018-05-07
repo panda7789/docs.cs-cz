@@ -1,21 +1,12 @@
 ---
-title: "Průvodce programováním (technologie LINQ to XML) (C#)"
-ms.custom: 
+title: Průvodce programováním (technologie LINQ to XML) (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 4b1ffd10-ab81-4a0d-a0ca-e9876478d924
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7ee6ac9d13d265442e6d5b9f02c6d5788e75c50f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 03742916c973f9ddac8163fe231cba45750ff080
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-guide-linq-to-xml-c"></a>Průvodce programováním (technologie LINQ to XML) (C#)
 Tato část obsahuje informace o programování s koncepční a postupy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -23,9 +14,9 @@ Tato část obsahuje informace o programování s koncepční a postupy [!INCLUD
 ## <a name="who-should-read-this-documentation"></a>Komu je tato dokumentace určen  
  Tato dokumentace cílem vývojáře, kteří již pochopit C# a některé základní aspekty [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  
   
- Cílem této dokumentace je aby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] snadno použitelný pro všechny typy vývojářů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]usnadňuje programování XML. Nemusíte být vývojář odborné ji použít.  
+ Cílem této dokumentace je aby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] snadno použitelný pro všechny typy vývojářů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] usnadňuje programování XML. Nemusíte být vývojář odborné ji použít.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]založena na obecných tříd. Je proto velmi důležité, abyste rozuměli tomu použití obecné třídy. Navíc je užitečné, pokud jste se seznámili s delegáti, které jsou deklarované jako parametrizované typy. Pokud nejste obeznámeni s C# obecné třídy, přečtěte si téma [obecné třídy](../../../../csharp/programming-guide/generics/generic-classes.md).  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] založena na obecných tříd. Je proto velmi důležité, abyste rozuměli tomu použití obecné třídy. Navíc je užitečné, pokud jste se seznámili s delegáti, které jsou deklarované jako parametrizované typy. Pokud nejste obeznámeni s C# obecné třídy, přečtěte si téma [obecné třídy](../../../../csharp/programming-guide/generics/generic-classes.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -40,8 +31,8 @@ Tato část obsahuje informace o programování s koncepční a postupy [!INCLUD
 |[Úprava XML stromů (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)|Modelu DOM (Document Object), jako například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] můžete upravit strom XML na místě.|  
 |[Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)|Poskytuje informace o poznámky, události, streamování a další pokročilé scénáře.|  
 |[Technologie LINQ to XML zabezpečení (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-security.md)|Popisuje problémy se zabezpečením přidružené technologie LINQ to XML a obsahuje některé pokyny pro minimalizaci ohrožení zabezpečení.|  
-|[Dokumenty XML ukázkové (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|Obsahuje ukázkové XML dokumenty, které jsou používány mnoho příklady v této dokumentaci.|  
+|[Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|Obsahuje ukázkové XML dokumenty, které jsou používány mnoho příklady v této dokumentaci.|  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
+ [Začínáme (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
  [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)

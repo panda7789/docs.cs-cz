@@ -1,24 +1,12 @@
 ---
-title: "Výjimky IdentityModel"
-ms.custom: 
+title: Výjimky IdentityModel
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4ef34497-8ff5-4621-b773-7731cc721231
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 26bf6cb88d77fc9890a23c482913514f1dc856aa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ee0b5537a415e1ea53c653ae8e8485e94cc713fd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="identitymodel-exceptions"></a>Výjimky IdentityModel
 Toto téma uvádí všechny výjimky generované IdentityModel.  
@@ -91,8 +79,8 @@ Toto téma uvádí všechny výjimky generované IdentityModel.
 |SAMLSignatureAlreadyRead|Podpis je již pro čtení kontrolního výrazu SAML.|  
 |AlgorithmAndPrivateKeyMisMatch|Algoritmus zadané a privátní klíč nesouhlasí.|  
 |EmptyTransformChainNotSupported|Prázdný řetězec transformace není podporováno.|  
-|SspiWrapperEncryptDecryptAssert1|SSPIWrapper::EncryptDecryptHelper &#124;. Posun "je mimo rozsah.|  
-|SspiWrapperEncryptDecryptAssert2|SSPIWrapper::EncryptDecryptHelper &#124;. velikost "je mimo rozsah. SecurityTokenManagerCannotCreateAuthenticatorForRequirement = zabezpečení tokenu manager nemůže vytvořit ověřovací data tokenu pro konkrétní požadavky.|  
+|SspiWrapperEncryptDecryptAssert1|SSPIWrapper::EncryptDecryptHelper&#124;"posun" je mimo rozsah.|  
+|SspiWrapperEncryptDecryptAssert2|SSPIWrapper::EncryptDecryptHelper&#124;'size' je mimo rozsah. SecurityTokenManagerCannotCreateAuthenticatorForRequirement = zabezpečení tokenu manager nemůže vytvořit ověřovací data tokenu pro konkrétní požadavky.|  
 |UnableToCreateKeyedHashAlgorithm|Nelze vytvořit KeyedHashAlgorithm z konkrétní hodnoty pro konkrétní podpisový algoritmus.|  
 |SAMLUnableToLoadAssertion|\<Saml:assertion > elementu se nepodařilo načíst.|  
 |X509FindValueMismatchMulti|Konkrétní X509FindType vyžaduje typ argumentu findValue být jedna z hodnot 2. Argument findValue je jiného typu.|  

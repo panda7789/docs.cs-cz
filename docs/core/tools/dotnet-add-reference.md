@@ -4,16 +4,11 @@ description: Dotnet přidat odkaz na příkaz poskytuje vhodnou možnost přidat
 author: mairaw
 ms.author: mairaw
 ms.date: 09/19/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: c82696eee2fbe4bbad86e59cf5de1c2e74d048f6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ee9c058b83238655bd90a4bf5c809a9d0e4c13d6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-add-reference"></a>DotNet – přidání odkazu
 

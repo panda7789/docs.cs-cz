@@ -1,24 +1,17 @@
 ---
-title: "enum (Referenční dokumentace jazyka C#)"
+title: enum (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - enum
 - enum_CSharpKeyword
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 36d33387dda68270e0490eaa6c792f95d058651e
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.openlocfilehash: 72feb6ee25070a6930b01b69e0a726041d34b0c7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 `enum` – Klíčové slovo se používá k deklaraci výčet, odlišné typ, který se skládá ze sady pojmenované konstanty názvem seznamu enumerátor.  

@@ -1,13 +1,7 @@
 ---
-title: "Doporučené postupy pro výjimky"
-ms.custom: 
+title: Doporučené postupy pro výjimky
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 4c5ea19077ff9ce8e36a33601b7e5e87c64afe60
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dd38b59e39f938d6347457100243f09935444d88
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
@@ -82,7 +71,7 @@ Zavést nové třídy výjimky jenom v případě, že se netýká předdefinova
 
 - Throw – <xref:System.ArgumentException> výjimky nebo jeden z předdefinovaných tříd, které jsou odvozeny od <xref:System.ArgumentException> Pokud jsou předány neplatné parametry.
 
-## <a name="end-exception-class-names-with-the-word-exception"></a>Ukončete názvy tříd výjimek slovem`Exception`
+## <a name="end-exception-class-names-with-the-word-exception"></a>Ukončete názvy tříd výjimek slovem `Exception`
 
 Při vlastní výjimky je nutné, pojmenujte ji odpovídajícím způsobem a odvodí z <xref:System.Exception> třídy. Příklad:
 
@@ -110,7 +99,7 @@ Například na implementace rozhraní .NET, které podporují doménami aplikac�
 
 - Sestavení umístěte do společného základu cesty aplikace sdíleného oběma doménami aplikace.
 
-    \-nebo –
+    \- nebo –
 
 - Pokud domény nesdílejí společný základ cesty aplikace, podepište sestavení obsahující informace o výjimce silným názvem a nasaďte sestavení do globální mezipaměti sestavení (GAC).
 

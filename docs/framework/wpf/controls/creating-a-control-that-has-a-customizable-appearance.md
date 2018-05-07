@@ -1,13 +1,6 @@
 ---
-title: "Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit"
-ms.custom: 
+title: Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,20 +13,15 @@ helpviewer_keywords:
 - managing control states [WPF], VisualStateManager
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4da96c3e33c6f7827619b408568fbbfe96c50a11
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f539e7dbb105591375857122d738fddd87f6776
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]vám dává možnost vytvořit ovládací prvek, jejichž vzhled lze přizpůsobit. Například můžete změnit vzhled <xref:System.Windows.Controls.CheckBox> nad rámec jaká nastavení vlastnosti provede vytvořením nového <xref:System.Windows.Controls.ControlTemplate>. Následující obrázek znázorňuje <xref:System.Windows.Controls.CheckBox> používající výchozí <xref:System.Windows.Controls.ControlTemplate> a <xref:System.Windows.Controls.CheckBox> používající vlastní <xref:System.Windows.Controls.ControlTemplate>.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám dává možnost vytvořit ovládací prvek, jejichž vzhled lze přizpůsobit. Například můžete změnit vzhled <xref:System.Windows.Controls.CheckBox> nad rámec jaká nastavení vlastnosti provede vytvořením nového <xref:System.Windows.Controls.ControlTemplate>. Následující obrázek znázorňuje <xref:System.Windows.Controls.CheckBox> používající výchozí <xref:System.Windows.Controls.ControlTemplate> a <xref:System.Windows.Controls.CheckBox> používající vlastní <xref:System.Windows.Controls.ControlTemplate>.  
   
  ![Zaškrtávací políčko s výchozí šablony ovládacího prvku. ] (../../../../docs/framework/wpf/controls/media/ndp-checkboxdefault.png "NDP_CheckBoxDefault")  
 Zaškrtávací políčko, který používá výchozí šablonu pro ovládací prvek  
@@ -89,7 +77,7 @@ Vlastního ovládacího prvku NumericUpDown
   
  [!code-xaml[VSMCustomControl#VisualStructure](../../../../samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#visualstructure)]  
   
- Visual chování `NumericUpDown` ovládací prvek je, že hodnota je red písmeny, pokud je záporná.  Pokud změníte <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> v kódu při `Value` záporná, `NumericUpDown` bude vždy zobrazovat red zápornou hodnotu. Zadejte visual chování ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> přidáním <xref:System.Windows.VisualState> objekty ke <xref:System.Windows.Controls.ControlTemplate>.  Následující příklad ukazuje <xref:System.Windows.VisualState> pro objekty `Positive` a `Negative` stavy.  `Positive`a `Negative` se vzájemně vylučují (ovládací prvek, je vždy přesně jednu ze dvou), takže v příkladu umístí <xref:System.Windows.VisualState> objekty do jednoho <xref:System.Windows.VisualStateGroup>.  Pokud ovládací prvek přejde do `Negative` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> na červenou.  Pokud ovládací prvek, je `Positive` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí k němu původní hodnotu.  Definování <xref:System.Windows.VisualState> objekty v <xref:System.Windows.Controls.ControlTemplate> další popsané v [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+ Visual chování `NumericUpDown` ovládací prvek je, že hodnota je red písmeny, pokud je záporná.  Pokud změníte <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> v kódu při `Value` záporná, `NumericUpDown` bude vždy zobrazovat red zápornou hodnotu. Zadejte visual chování ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> přidáním <xref:System.Windows.VisualState> objekty ke <xref:System.Windows.Controls.ControlTemplate>.  Následující příklad ukazuje <xref:System.Windows.VisualState> pro objekty `Positive` a `Negative` stavy.  `Positive` a `Negative` se vzájemně vylučují (ovládací prvek, je vždy přesně jednu ze dvou), takže v příkladu umístí <xref:System.Windows.VisualState> objekty do jednoho <xref:System.Windows.VisualStateGroup>.  Pokud ovládací prvek přejde do `Negative` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> na červenou.  Pokud ovládací prvek, je `Positive` stavu, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí k němu původní hodnotu.  Definování <xref:System.Windows.VisualState> objekty v <xref:System.Windows.Controls.ControlTemplate> další popsané v [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
 > [!NOTE]
 >  Nastavte <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost v kořenovém <xref:System.Windows.FrameworkElement> z <xref:System.Windows.Controls.ControlTemplate>.  
@@ -212,17 +200,17 @@ Vlastního ovládacího prvku NumericUpDown
   
 -   A <xref:System.Windows.Controls.Primitives.RepeatButton> názvem `UpButton`.  
   
--   A <xref:System.Windows.Controls.Primitives.RepeatButton> názvem`DownButton.`  
+-   A <xref:System.Windows.Controls.Primitives.RepeatButton> názvem `DownButton.`  
   
  Ovládací prvek může být v následujících stavů:  
   
--   V`ValueStates`<xref:System.Windows.VisualStateGroup>  
+-   V `ValueStates`<xref:System.Windows.VisualStateGroup>  
   
     -   `Positive`  
   
     -   `Negative`  
   
--   V`FocusStates`<xref:System.Windows.VisualStateGroup>  
+-   V `FocusStates`<xref:System.Windows.VisualStateGroup>  
   
     -   `Focused`  
   

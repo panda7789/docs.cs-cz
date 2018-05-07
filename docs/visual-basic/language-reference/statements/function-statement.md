@@ -1,12 +1,6 @@
 ---
-title: "Function – příkaz (Visual Basic)"
+title: Function – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Function
 helpviewer_keywords:
@@ -34,14 +28,11 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Function statements
 - Handles keyword [Visual Basic], Function statements
 ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 52e9210f9e715b6055e6ed199ef1aa4b919c6dd6
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: b4a0c33d6d466975ca5dde1bd20ad2e1a9f560e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, který definovat `Function` postupu.  
@@ -183,7 +174,7 @@ End Function
 ## <a name="defining-a-function"></a>Definování funkcí  
  Můžete definovat `Function` postup jenom na úrovni modulu. Kontext deklarace pro funkci proto musí být třídy, struktury, modul nebo rozhraní a nemůže být zdrojový soubor, obor názvů, procedury nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](declaration-contexts-and-default-access-levels.md).  
   
- `Function`Výchozí nastavení postupy veřejný přístup. Můžete nastavit jejich úrovně přístupu s modifikátory přístupu.  
+ `Function` Výchozí nastavení postupy veřejný přístup. Můžete nastavit jejich úrovně přístupu s modifikátory přístupu.  
   
  A `Function` postupu můžou deklarovat datový typ hodnoty, která vrátí postupu. Můžete zadat jakýkoli datový typ nebo název výčet, struktury, třídu nebo rozhraní. Pokud nezadáte `returntype` vrátí parametr postupu `Object`.  
   
@@ -254,7 +245,7 @@ End Function
  [!code-vb[VbVbalrStatements#26](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_4.vb)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `DelayAsync` je `Async``Function` s návratovým typem <xref:System.Threading.Tasks.Task%601>. `DelayAsync`má `Return` příkaz, který vrátí celé číslo. Proto funkce deklaraci `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo. Tento postup je znázorněn v tomto prohlášení: `Dim result As Integer = Await delayTask`.  
+ V následujícím příkladu `DelayAsync` je `Async``Function` s návratovým typem <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má `Return` příkaz, který vrátí celé číslo. Proto funkce deklaraci `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo. Tento postup je znázorněn v tomto prohlášení: `Dim result As Integer = Await delayTask`.  
   
  `startButton_Click` Postup je příklad `Async Sub` postupu. Protože `DoSomethingAsync` je `Async` funkce, úlohy pro volání `DoSomethingAsync` musí být očekáváno, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. `startButton_Click``Sub` Postupu musí být definovány se `Async` modifikátor vzhledem k tomu, že má `Await` výrazu.  
   
@@ -266,7 +257,7 @@ End Function
  [Seznam parametrů](parameter-list.md)  
  [Příkaz Dim](dim-statement.md)  
  [Příkaz Call](call-statement.md)  
- [Z](of-clause.md)  
+ [z](of-clause.md)  
  [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)  
  [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)  

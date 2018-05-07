@@ -1,14 +1,6 @@
 ---
-title: "CoreClrDebugRuntimeInfo – struktura"
-ms.custom: 
+title: CoreClrDebugRuntimeInfo – struktura
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CoreClrDebugRuntimeInfo
 api_location:
@@ -24,17 +16,13 @@ helpviewer_keywords:
 ms.assetid: bd01c30f-b7a8-4179-9497-622b6599b1a6
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: effcc44b3f3b0926c1d711955fa77aa3e71a1592
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 88fcc5959054f1cdf7c9543674584a4bde26d896
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="coreclrdebugruntimeinfo-structure"></a>CoreClrDebugRuntimeInfo – struktura
 Představuje běžné instance jazyka runtime (CLR), který je načten do procesu ve vzdáleném počítači.  

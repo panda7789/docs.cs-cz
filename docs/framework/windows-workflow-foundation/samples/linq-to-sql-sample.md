@@ -1,23 +1,12 @@
 ---
-title: "Technologie LINQ to SQL ukázka"
-ms.custom: 
+title: Technologie LINQ to SQL ukázka
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5f39db9e-0e62-42c9-8c98-bb8b54cec98c
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 06273f3ac7dd159adac4c058a23c187f44417d94
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: a5c84dab941a50ddd5edb065004343cc304fd0f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-sql-sample"></a>Technologie LINQ to SQL ukázka
 Tento příklad znázorňuje postup vytvoření aktivity použití LINQ na entity dotazu SQL z tabulek v databáze systému SQL Server.  
@@ -36,8 +25,8 @@ Tento příklad znázorňuje postup vytvoření aktivity použití LINQ na entit
   
 |Vlastnost nebo vrací hodnotu|Popis|  
 |------------------------------|-----------------|  
-|`Collection`Vlastnost|Povinnou vlastnost, která určuje zdrojové kolekci.|  
-|`Predicate`Vlastnost|Povinnou vlastnost, která určuje filtr pro kolekce v podobě výrazu lambda.|  
+|`Collection` Vlastnost|Povinnou vlastnost, která určuje zdrojové kolekci.|  
+|`Predicate` Vlastnost|Povinnou vlastnost, která určuje filtr pro kolekce v podobě výrazu lambda.|  
 |Návratová hodnota|Filtrované kolekce.|  
   
 ## <a name="code-sample-that-uses-the-custom-activity"></a>Ukázka kódu, který používá vlastní aktivity  
@@ -94,7 +83,7 @@ new FindInSqlTable<Employee>
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Liiinq\LinqToSql`  
   

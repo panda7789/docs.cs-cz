@@ -1,13 +1,6 @@
 ---
-title: "Peverify.exe (nástroj PEVerify)"
-ms.custom: 
+title: Peverify.exe (nástroj PEVerify)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - portable executable files, PEVerify
 - verifying MSIL and metadata
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - PEverify.exe
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
-caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5acb6da7c68f899daa4144e897e9ec31fcfa868a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e70324192f56214d273ae2a819a9c08be7d49b1e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
 Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  
@@ -45,16 +35,16 @@ peverify filename [options]
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*filename*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
+|*Název souboru*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/break=** *maxErrorCount*|Zruší ověření po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
+|**/ Rozdělit =** *maxErrorCount*|Zruší ověření po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
 |**/Clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD úč.hod cyklu**<br /> Cyklus ověření metadat<br /><br /> **MD úč.hod čisté**<br /> Čisté ověření metadat<br /><br /> **Cyklus IL verze**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **Čistého IL Ver**<br /> Čisté ověřování MSIL<br /><br /> **MD úč.hod cyklus** a **IL verze cyklus** časy zahrnout čas potřebný k provést nezbytné postupy spuštění a vypnutí. **MD úč.hod čistý** a **čistého IL Ver** časy reflektovat čas potřebné k provedení ověření nebo pouze ověření.|  
-|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/HRESULT**|Zobrazí kódy chyb v šestnáctkovém formátu.|  
 |**/ Ignorovat =** *hex.code* [, *hex.code*]|Ignoruje zadané kódy chyb.|  
-|**/ignore=@** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
+|**/ Ignorovat = @** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
 |**/IL**|Provádí kontroly pro zabezpečení ověření MSIL typ pro metody implementované v sestavení určeného *filename*. Nástroj Vrátí podrobný popis pro jednotlivé problémy najít nezadáte **/quiet** možnost.|  
 |**/md**|Provádí ověřovací kontroly metadata sestavení s určeného *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
 |**/nologo**|Potlačí zobrazení informací o verzi a autorských právech produktu.|  

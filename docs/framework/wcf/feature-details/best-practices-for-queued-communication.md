@@ -1,32 +1,18 @@
 ---
 title: Doporučené postupy pro komunikaci ve frontě
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - queues [WCF], best practices
 - best practices [WCF], queued communication
 ms.assetid: 446a6383-cae3-4338-b193-a33c14a49948
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 082fa083dbba601cefc00e40bad7b91e14a45d44
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b54569ad3d11c3b9b1b96e2738bdf0582b63b0b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-queued-communication"></a>Doporučené postupy pro komunikaci ve frontě
-Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Následující části popisují doporučené postupy z hlediska scénář.  
+Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v systému Windows Communication Foundation (WCF). Následující části popisují doporučené postupy z hlediska scénář.  
   
 ## <a name="fast-best-effort-queued-messaging"></a>Rychlé a Best Effort zařazených do fronty zasílání zpráv  
  Pro scénáře, které vyžadují poskytuje oddělení, který zařazených do fronty zasílání zpráv a fast, vysoce výkonné zasílání zpráv s best effort záruky netransakční frontu použít a nastavte <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> vlastnost `false`.  
@@ -69,7 +55,7 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[i
   
  Při použití dávkování, mějte na paměti, že souběžnosti a omezování nepřeloží na souběžných dávky.  
   
- K dosažení vyšší propustnost a dostupnost, použít farmu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, které číst zprávy z fronty. To vyžaduje, aby všechny tyto služby vystavit stejné smlouvy na stejný koncový bod. Přístup farmy je nejvhodnější pro aplikace, které mají vysokou produkční počty zpráv, protože umožní několik služeb pro všechny číst ze stejné fronty.  
+ K dosažení vyšší propustnost a dostupnost, použijte farmu služby WCF, které čtou z fronty. To vyžaduje, aby všechny tyto služby vystavit stejné smlouvy na stejný koncový bod. Přístup farmy je nejvhodnější pro aplikace, které mají vysokou produkční počty zpráv, protože umožní několik služeb pro všechny číst ze stejné fronty.  
   
  Při použití farmy, mějte na paměti, že služby MSMQ 3.0 nepodporuje vzdálené zpracovaných čtení. MSMQ 4.0 podporuje vzdálené zpracovaných čtení.  
   
@@ -84,11 +70,11 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě v [!INCLUDE[i
  I když fronty jsou obvykle jednosměrné, v některých případech můžete chtít korelovat odpověď přijata na žádost odeslány dříve. Pokud budete potřebovat takové korelace, doporučujeme, abyste použili vlastní záhlaví zprávy protokolu SOAP, který obsahuje informace o korelace se zprávou. Obvykle odesílatel připojí tuto hlavičku se zprávou a příjemce při zpracování zprávy a odeslání odpovědi zpět s novou zprávu ve frontě s odpovědí, připojí záhlaví zprávy odesílatele, obsahující informace o korelace tak, aby odesílatel možné Identifikujte zprávu odpovědi s zprávu požadavku.  
   
 ## <a name="integrating-with-non-wcf-applications"></a>Integrace s aplikacemi bez WCF  
- Použití `MsmqIntegrationBinding` při integraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nebo klientů s jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nebo klientů. Jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace může být MSMQ aplikace napsané v System.Messaging modelu COM +, Visual Basic nebo C++.  
+ Použití `MsmqIntegrationBinding` při integraci služby WCF nebo klientů s bez WCF služby nebo klientů. Aplikace bez WCF může být MSMQ aplikace napsané v System.Messaging modelu COM +, Visual Basic nebo C++.  
   
  Při použití `MsmqIntegrationBinding`, mít na paměti následující:  
   
--   A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tělo zprávy není stejný jako text zprávy služby MSMQ. Při odesílání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávu pomocí vazbu zařazených do fronty [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] text zprávy je umístěn uvnitř zprávu služby MSMQ. Infrastruktura služby MSMQ je oblivious na tyto doplňující informace; se zobrazí pouze zprávy služby MSMQ.  
+-   Text zprávy WCF není stejný jako text zprávy služby MSMQ. Při odesílání zprávy WCF pomocí vazbu zařazených do fronty, tělo zprávy WCF je umístěn uvnitř zprávu služby MSMQ. Infrastruktura služby MSMQ je oblivious na tyto doplňující informace; se zobrazí pouze zprávy služby MSMQ.  
   
 -   `MsmqIntegrationBinding` podporuje typy oblíbených serializace. Na základě serializace typu, typ těla zprávy obecné zprávy <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, používá jiný typ parametry. Například <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.ByteArray> vyžaduje `MsmqMessage\<byte[]>` a <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.Stream> vyžaduje `MsmqMessage<Stream>`.  
   

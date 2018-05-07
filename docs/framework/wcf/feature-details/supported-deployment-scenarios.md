@@ -1,47 +1,33 @@
 ---
 title: Podporované scénáře nasazení
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 82fa7e1b9619502dfdd27d2de29a502bec0af4f4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d0afd12b1c17f9356146aa13c90f8db65ed9ec0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
-Podmnožinu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkcí podporovaných pro použití v částečně důvěryhodné aplikace slouží ke splnění požadavků některé, ale ne všechny scénáře použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Na serveru [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] splňuje požadavky na internetových sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] oprávnění na úrovni Medium Trust nastavit z bezpečnostních důvodů. Na straně klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporu částečné důvěryhodnosti je tak, aby splnily požadavky na nasazení technologie, jako [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]na aplikace prohlížeče XAML technologii, která umožňují plynulé a bezpečné nasazení aplikací klasické pracovní plochy umístěné na serverech.  
+Do něj podmnožinu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená ke splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru, sdíleného WCF splňuje požadavky na internetových poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] oprávnění na úrovni Medium Trust nastavit z bezpečnostních důvodů. Na straně klienta WCF částečnou důvěryhodností podporu slouží ke splnění požadavků nasazení technologie, jako [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]na aplikace prohlížeče XAML technologii, která umožňují hladkou a zabezpečenou nasazení aplikací klasické pracovní plochy umístěné na serverech.  
   
 ## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje podmnožinu funkcí v aplikacích spuštěných v některé z následujících sad standardní pojmenované oprávnění:  
+ WCF podporuje podmnožinu funkcí v aplikacích spuštěných v některé z následujících sad standardní pojmenované oprávnění:  
   
 -   Střední oprávnění vztahu důvěryhodnosti  
   
 -   Oprávnění pro zónu Internetu  
   
- Pokus o použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v částečně důvěryhodné aplikace s víc omezující oprávnění, které může vést k bezpečnostním výjimkám za běhu.  
+ Pokus o použití WCF v částečně důvěryhodné aplikace s víc omezující oprávnění může vést k bezpečnostním výjimkám za běhu.  
   
  Další informace o funkcích podporovaných v těchto sady oprávnění najdete v tématu [Kompatibilita funkcí s částečnou důvěřovat](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md).  
   
 ## <a name="partial-trust-on-the-server"></a>Částečná důvěryhodnost na serveru  
- Mnoho poskytovatelů komerční z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] hostování webových aplikací služby pověření, které aplikace běžící na jejich serverech spustit v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] úrovni Medium Trust sadu oprávnění. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, které mohou být spuštěny v těchto prostředích se používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> s zabezpečení na úrovni přenosu.  
+ Mnoho poskytovatelů komerční z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] hostování webových aplikací služby pověření, které aplikace běžící na jejich serverech spustit v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] úrovni Medium Trust sadu oprávnění. Služby WCF, které mohou být spuštěny v těchto prostředích se používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> s zabezpečení na úrovni přenosu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby spuštěné na úrovni Medium Trust hostitelská prostředí mohou chovat i jako střední vrstvy služby pomocí odesílání zpráv na jiné servery v reakci na požadavky klientů. Jsou podporované scénáře střední vrstvy na serveru, pokud hostitelské prostředí přidělili aplikace odpovídající <xref:System.Net.WebPermission> provádět odchozí požadavky k požadovanému serveru.  
+ Služby WCF, které jsou spuštěné na úrovni Medium Trust hostitelská prostředí mohou chovat i jako střední vrstvy služby pomocí odesílání zpráv na jiné servery v reakci na požadavky klientů. Jsou podporované scénáře střední vrstvy na serveru, pokud hostitelské prostředí přidělili aplikace odpovídající <xref:System.Net.WebPermission> provádět odchozí požadavky k požadovanému serveru.  
   
- Kromě SOAP zasílání zpráv pomocí jedné z podporovaných vazby protokolu SOAP, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje <xref:System.ServiceModel.WebHttpBinding> pro vytváření stylu webových služeb v částečně důvěryhodné aplikace. [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md), [syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md), a [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md) funkce [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jsou podporovány v částečné důvěryhodnosti.  
+ Kromě zasílání zpráv protokolu SOAP s jedním z podporovaných vazby protokolu SOAP a podporuje WCF <xref:System.ServiceModel.WebHttpBinding> pro vytváření stylu webových služeb v částečně důvěryhodné aplikace. [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md), [syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md), a [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md) všechny funkce služby WCF jsou podporovány v částečné důvěryhodnosti.  
   
  Pracovní postup služby vyžadují oprávnění úplné důvěryhodnosti a nelze použít v částečně důvěryhodné aplikace.  
   
@@ -50,7 +36,7 @@ Podmnožinu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkcí podp
 ## <a name="partial-trust-on-the-client"></a>Částečná důvěryhodnost na straně klienta  
  Určitá bezpečnostní opatření musí být provedeny, když stahování a spouštění kódu z nedůvěryhodné internetových serverů. Obě [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) a [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]aplikace prohlížeče XAML (XBAP) ujistěte se, technologie využití částečnou důvěryhodností udělit omezenými oprávněními (zónu Internetu) do nedůvěryhodného kódu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] slouží ke komunikaci s vzdálených serverů z v rámci částečně důvěryhodné aplikace nasazené buď [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) nebo XBAP. Zahrnuje sadu oprávnění zónu Internetu <xref:System.Net.WebPermission> pro původní hostitele, který umožňuje tyto aplikace ke komunikaci s jejich původním serveru pomocí kteréhokoli podporovaném [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby popsané v [funkce částečné důvěryhodnosti Kompatibilita](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md).  
+ WCF lze použít ke komunikaci s vzdálených serverů z v rámci částečně důvěryhodné aplikace nasazené buď [ClickOnce – nasazení](http://go.microsoft.com/fwlink/?LinkId=83712) nebo XBAP. Zahrnuje sadu oprávnění zónu Internetu <xref:System.Net.WebPermission> pro původní hostitele, který umožňuje tyto aplikace ke komunikaci s jejich původním serveru pomocí některé z podporovaných vazby WCF, které jsou popsané v [Kompatibilita funkcí s částečné důvěryhodnosti ](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení přístupu kódu](http://go.microsoft.com/fwlink/?LinkId=83717)  

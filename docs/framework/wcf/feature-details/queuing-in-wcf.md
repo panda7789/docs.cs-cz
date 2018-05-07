@@ -1,49 +1,35 @@
 ---
 title: Fronty ve WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8bf4a668fe882212da1c6626b66a4f55390a562f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7f0a6700dba8eb844cc471704095b29c2a2c7937
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queuing-in-wcf"></a>Fronty ve WCF
-Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tato část popisuje postup použití komunikace ve frontě v systému Windows Communication Foundation (WCF).  
   
 ## <a name="queues-as-a-wcf-transport-binding"></a>Vazba přenosu fronty jako službou WCF  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], smluv zadejte, co je během výměny. Kontrakty jsou výměny zpráv závislé na obchodní nebo specifické pro aplikaci. Používáno pro výměnu zpráv (nebo "jak") je zadána v vazby. Vazby do ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zapouzdření podrobnosti výměny zpráv. Vystavují knoflíky konfigurace pro uživatele k řízení různé aspekty přenos nebo protokolu, které představují vazby. Služba Řízení front v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] považuje jako všechny ostatní přenosu vazby, což je velký využít pro mnoho aplikací služby Řízení front. V současné době se řada aplikací pro řazení do fronty zapisují jinak z jiných vzdáleného volání procedur (RPC)-styl distribuovaných aplikací, což těžší postupujte podle a údržbu. S [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], styl psaní distribuované aplikace je podobný, což usnadňuje postupujte podle a udržovat. Kromě toho řešení se tento mechanismus exchange nezávisle na obchodní logiku, se snadno konfigurovat přenos nebo provést změny bez ovlivnění konkrétního kódu aplikace. Následující obrázek ukazuje strukturu pomocí služby MSMQ přenos klienta a služby WCF.  
+ Ve službě WCF smluv zadejte, co je během výměny. Kontrakty jsou výměny zpráv závislé na obchodní nebo specifické pro aplikaci. Používáno pro výměnu zpráv (nebo "jak") je zadána v vazby. Vazby ve WCF zapouzdřovat podrobnosti výměny zpráv. Vystavují knoflíky konfigurace pro uživatele k řízení různé aspekty přenos nebo protokolu, které představují vazby. Fronty ve WCF je zpracovaná jako všechny ostatní přenosu vazby, což je velký využít pro mnoho aplikací služby Řízení front. V současné době se řada aplikací pro řazení do fronty zapisují jinak z jiných vzdáleného volání procedur (RPC)-styl distribuovaných aplikací, což těžší postupujte podle a údržbu. S použitím technologie WCF styl psaní distribuované aplikace je podobný, usnadnit postupujte podle a údržbu. Kromě toho řešení se tento mechanismus exchange nezávisle na obchodní logiku, se snadno konfigurovat přenos nebo provést změny bez ovlivnění konkrétního kódu aplikace. Následující obrázek ukazuje strukturu pomocí služby MSMQ přenos klienta a služby WCF.  
   
  ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
   
- Jak je vidět na předchozím obrázku, klient a služba musí definovat pouze aplikace sémantiky, to znamená, kontrakt a implementaci. Služba nakonfiguruje vazbu zařazených do fronty se požadovaná nastavení. Klient použije [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta ke službě a ke generování konfiguračního souboru, který popisuje vazby používat k odesílání zpráv do služby. Proto odeslat zprávu ve frontě, vytvoří klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a vyvolá operace na něm. To způsobí, že zpráva, která má být odeslána do fronty přenosu a přenést do cílové fronty. Aplikace, která odesílá a přijímá zprávy jsou skryta všechny složitosti komunikace ve frontě.  
+ Jak je vidět na předchozím obrázku, klient a služba musí definovat pouze aplikace sémantiky, to znamená, kontrakt a implementaci. Služba nakonfiguruje vazbu zařazených do fronty se požadovaná nastavení. Klient použije [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta WCF na službu a ke generování konfiguračního souboru, který popisuje vazby používat k odesílání zpráv do služby. Odeslat zprávu ve frontě, proto klient vytvoří klienta WCF a vyvolá operace na něm. To způsobí, že zpráva, která má být odeslána do fronty přenosu a přenést do cílové fronty. Aplikace, která odesílá a přijímá zprávy jsou skryta všechny složitosti komunikace ve frontě.  
   
- Upozornění o zařazených do fronty závazné v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnují:  
+ Upozornění o vazbě zařazených do fronty ve WCF patří:  
   
--   Všechny operace služby musí být jednosměrné, protože výchozí zařazených do fronty závazné v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje duplexní komunikace pomocí front. Ukázka obousměrné komunikace ([obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md)) ukazuje, jak používat dvě jednosměrné kontrakty implementovat duplexní komunikace pomocí front.  
+-   Všechny služby, které musí být operace jednosměrné, protože výchozí vazby ve WCF zařazených do fronty nepodporuje duplexní komunikace pomocí front. Ukázka obousměrné komunikace ([obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md)) ukazuje, jak používat dvě jednosměrné kontrakty implementovat duplexní komunikace pomocí front.  
   
--   Generovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta pomocí metadat exchange vyžaduje další koncový bod HTTP na službu, takže může být dotazován přímo ke generování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a získat informace o vazbě správně nakonfigurovat zařazených do fronty komunikace.  
+-   Ke generování službou WCF klienta pomocí metadat exchange vyžaduje další koncový bod HTTP ve službě, takže může být dotazován přímo ke generování klienta WCF a získat informace o vazbě správně nakonfigurovat komunikace ve frontě.  
   
--   Podle další konfigurace mimo ve vazby ve frontě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je vyžadován. Například <xref:System.ServiceModel.NetMsmqBinding> třídu, která je součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyžaduje, abyste nakonfigurujte vazby a také minimálně konfigurovat služby Řízení front zpráv (MSMQ).  
+-   Podle toho, zařazených do fronty vazby, není nutná další konfigurace mimo WCF. Například <xref:System.ServiceModel.NetMsmqBinding> třídu, která je dodávána s použitím technologie WCF vyžaduje, abyste nakonfigurujte vazby a také minimálně konfigurovat služby Řízení front zpráv (MSMQ).  
   
- Následující části popisují konkrétní zařazených do fronty vazby součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], které jsou založené na služby MSMQ.  
+ Následující části popisují konkrétní zařazených do fronty vazeb dodávané s použitím technologie WCF, které jsou založeny na služby MSMQ.  
   
 ### <a name="msmq"></a>MSMQ  
- Zařazených do fronty přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá služby MSMQ pro jeho komunikaci ve frontě.  
+ Přenos zařazených do fronty ve WCF používá služby MSMQ pro jeho komunikaci ve frontě.  
   
  MSMQ dodává jako volitelná komponenta s Windows a spustí jako služba NT. Zachycení zprávy k přenosu v přenosové frontě pro doručení v cílové fronty. Správci frontu MSMQ implementovat protokol spolehlivého přenos zpráv tak, aby zprávy nejsou ztrátě při přenosu. Protokol může být nativní nebo založený na protokolu SOAP, jako je například protokolu SOAP spolehlivé zpráva SRMP (Protocol).  
   
@@ -54,7 +40,7 @@ Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1
  Další informace o MSMQ najdete v tématu [instalaci řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md).  
   
 ### <a name="netmsmqbinding"></a>– NetMsmqBinding  
- [ \<– NetMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) je ve frontě vazby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje pro dvě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncových bodů na komunikaci pomocí služby MSMQ. Vazba, tedy zpřístupní vlastnosti, které jsou specifické pro služby MSMQ. Ale ne všechny funkce služby MSMQ a vlastnosti jsou přístupné `NetMsmqBinding`. Compact `NetMsmqBinding` slouží optimální sadou funkcí, které by měl zjistit dostatečná většina zákazníků.  
+ [ \<– NetMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) je ve frontě vazby WCF poskytuje dva koncové body WCF na komunikaci pomocí služby MSMQ. Vazba, tedy zpřístupní vlastnosti, které jsou specifické pro služby MSMQ. Ale ne všechny funkce služby MSMQ a vlastnosti jsou přístupné `NetMsmqBinding`. Compact `NetMsmqBinding` slouží optimální sadou funkcí, které by měl zjistit dostatečná většina zákazníků.  
   
  `NetMsmqBinding` Manifesty základní koncepty služby Řízení front doposud popsané ve formě vlastnosti na vazby. Tyto vlastnosti se pak komunikovat s MSMQ postup přenosu a doručení zprávy. Popis kategorie vlastnost je v následujících částech. Další informace najdete v tématu koncepční témata, která popisují specifické vlastnosti více úplně.  
   
@@ -75,7 +61,7 @@ Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1
   
  Mnoho front systémy zadejte systémové fronty nedoručených zpráv. MSMQ poskytuje systémové netransakční frontu nedoručených zpráv pro zprávy, které nesplní doručení netransakční fronty a systémové transakční nedoručených zpráv fronty pro zprávy, které nesplní doručení transakcí fronty.  
   
- Pokud více klientů zasílání zpráv na jiné cílové fronty sdílet služby MSMQ, všechny zprávy od klientů přejděte do stejné fronty nedoručených zpráv. Toto není vždy vhodnější. Pro lepší izolace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a služby MSMQ v [!INCLUDE[wv](../../../../includes/wv-md.md)] zadejte vlastní frontu nedoručených zpráv (nebo frontu nedoručených zpráv specifické pro aplikaci), může uživatel zadat pro ukládání zpráv, které nesplní doručení. Proto různých klientů nesdílejí stejný frontu nedoručených zpráv.  
+ Pokud více klientů zasílání zpráv na jiné cílové fronty sdílet služby MSMQ, všechny zprávy od klientů přejděte do stejné fronty nedoručených zpráv. Toto není vždy vhodnější. Pro lepší izolaci, WCF a služby MSMQ v [!INCLUDE[wv](../../../../includes/wv-md.md)] zadejte vlastní frontu nedoručených zpráv (nebo frontu nedoručených zpráv specifické pro aplikaci), může uživatel zadat pro ukládání zpráv, které nesplní doručení. Proto různých klientů nesdílejí stejný frontu nedoručených zpráv.  
   
  Vazba má dvě vlastnosti, které vás zajímají:  
   
@@ -105,7 +91,7 @@ Tato část popisuje způsob použití komunikace ve frontě v [!INCLUDE[indigo1
 -   `UseActiveDirectory`: Logická hodnota označující, zda služby Active Directory musí být použit pro překlad adres fronty. Ve výchozím nastavení to je vypnuto. Další informace najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
- `MsmqIntegrationBinding` Se používá, pokud chcete, aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncového bodu pro komunikaci s existující služby MSMQ aplikace napsané v C, C++, COM nebo System.Messaging rozhraní API.  
+ `MsmqIntegrationBinding` Se používá, pokud chcete, aby koncový bod WCF ke komunikaci s existující služby MSMQ aplikace napsané v C, C++, COM nebo System.Messaging rozhraní API.  
   
  Vlastnosti vazby jsou stejné jako u `NetMsmqBinding`. Však platí následující rozdíly:  
   

@@ -1,20 +1,13 @@
 ---
-title: "Zpracování výjimek ve výrazech dotazů"
-description: "Postupy: zpracování výjimek ve výrazech dotazů."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Zpracování výjimek ve výrazech dotazů
+description: 'Postupy: zpracování výjimek ve výrazech dotazů.'
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 2bf0c397-13fb-4f68-bc2b-531c6c88a167
-ms.openlocfilehash: 376bd461bfeb51653471fd374a2215aa15872976
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 691373fabeb3934ecc454cbc3b36a5f7bf477bee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="handle-exceptions-in-query-expressions"></a>Zpracování výjimek ve výrazech dotazů
 

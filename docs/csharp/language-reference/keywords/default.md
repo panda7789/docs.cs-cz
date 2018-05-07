@@ -1,24 +1,17 @@
 ---
 title: default (Referenční dokumentace jazyka C#)
 ms.date: 08/04/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - default
 - default_CSharpKeyword
 helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
-caps.latest.revision: 11
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3885dbe2d82768d01cb1b3981bcaae65331d91d7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: fd419778742a534a5b7131ca6b22706a7c75994b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="default-c-reference"></a>default (Referenční dokumentace jazyka C#)
 

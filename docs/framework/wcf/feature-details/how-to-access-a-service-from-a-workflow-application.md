@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Přístup ke službě z aplikace pracovního postupu"
-ms.custom: 
+title: 'Postupy: Přístup ke službě z aplikace pracovního postupu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0ffac399e3f7cb3f860128b072251131ac356a2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f1ef07d92eea2b526259cd11caf56e45c83675d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Postupy: Přístup ke službě z aplikace pracovního postupu
-Toto téma popisuje způsob volání služby pracovního postupu z konzolové aplikace pracovního postupu. Závisí na dokončení [postupy: vytvoření služby pracovního postupu s aktivitami zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje způsob volání služby pracovního postupu z aplikace pracovního postupu, stejné metody slouží k volání žádné [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] službu z aplikace pracovního postupu.  
+Toto téma popisuje způsob volání služby pracovního postupu z konzolové aplikace pracovního postupu. Závisí na dokončení [postupy: vytvoření služby pracovního postupu s aktivitami zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje způsob volání služby pracovního postupu z aplikace pracovního postupu, stejné metody slouží k volání žádné služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.  
   
 ### <a name="create-a-workflow-console-application-project"></a>Vytvoření projektu konzolové aplikace pracovního postupu  
   

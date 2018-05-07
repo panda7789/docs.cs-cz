@@ -1,24 +1,12 @@
 ---
-title: "Postupy: Zadejte privátní úložiště polí"
-ms.custom: 
+title: 'Postupy: Zadejte privátní úložiště polí'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5a40e816-cc6e-43a0-b32a-9caaa0ab6912
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bdb25f21a94ac6eb521e08688e33903e8891caf4
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d8a9bacd88b08384e7619dc64ab86cb0651ac44d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-private-storage-fields"></a>Postupy: Zadejte privátní úložiště polí
 Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A> vlastnost <xref:System.Data.Linq.Mapping.DataAttribute> atribut k určení názvu na základní pole úložiště.  

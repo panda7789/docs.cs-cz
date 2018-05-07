@@ -1,30 +1,18 @@
 ---
-title: "Scénáře aplikací (služby WCF Data Services)"
-ms.custom: 
+title: Scénáře aplikací (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ba83265b8bd533101fcde785566b9774df588c46
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 81a75007f1d4a13828867e6419412ea9f4c28906
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénáře aplikací (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje základní sady scénáře pro vystavení a použití dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Toto téma vám ukazuje na témata, které jsou relevantní pro tyto scénáře.  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje základní sady scénáře pro vystavení a použití dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Toto téma vám ukazuje na témata, které jsou relevantní pro tyto scénáře.  
   
  Vystavení relační data z databáze jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu.  
  -   [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
@@ -48,7 +36,7 @@ ms.lasthandoff: 01/19/2018
 -   [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
   
  Využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v aplikaci klienta založeného na technologii Silverlight.  
- -   [WCF Data Services (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
+ -   [Datové služby WCF (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
   
 -   [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
@@ -73,7 +61,7 @@ ms.lasthandoff: 01/19/2018
   
 -   [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
--   [WCF Data Services (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
+-   [Datové služby WCF (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
   
  Vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu s binární rozsáhlý objekt, který je přístup a měnit jako datový proud.  
  -   [Zprostředkovatel streamování](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)  

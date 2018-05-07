@@ -1,31 +1,19 @@
 ---
-title: "Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0"
-ms.custom: 
+title: 'Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0f38c4a0-49a6-437c-bdde-ad1d138d3c4a
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c93b91123c7622bea125bfa702c53a697b1ac84c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 174ecd279f9380136532ce0d5105b7a71b6d88da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-wcf-services-to-interoperate-with-wse-30-clients"></a>Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Služba je úroveň kompatibilní s 3.0 vylepšení webové služby pro klienty Microsoft .NET (WSE) při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby jsou nakonfigurovány pro použití srpen 2004 verze specifikace WS-Addressing.  
+Služby Windows Communication Foundation (WCF) jsou úroveň kompatibilní s 3.0 vylepšení webové služby pro klienty rozhraní Microsoft .NET (WSE) při služby WCF, které jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing.  
   
 ### <a name="to-enable-a-wcf-service-to-interoperate-with-wse-30-clients"></a>Chcete-li povolit služby WCF pro spolupráci s klienty WSE 3.0  
   
-1.  Definovat vlastní vazby pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+1.  Definování vlastních vazeb pro služby WCF.  
   
      Chcete-li určit, že srpen 2004 verzi specifikace WS-Addressing se používá pro kódování zpráv, je třeba vytvořit vlastní vazby.  
   
@@ -35,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
     3.  Zadejte režim ověřování a verzi specifikace WS-zabezpečení, které se používají k zabezpečení zpráv, které jsou kompatibilní s WSE 3.0 přidáním podřízenou [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) k [ \<vazby >](../../../../docs/framework/misc/binding.md).  
   
-         Režim ověřování, nastavit `authenicationMode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Režim ověřování je přibližně ekvivalentem připraveného security assertion ve WSE 3.0. Následující tabulka mapuje režimy ověřování ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] do připraveného zabezpečení kontrolní výrazy ve WSE 3.0.  
+         Režim ověřování, nastavit `authenicationMode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Režim ověřování je přibližně ekvivalentem připraveného security assertion ve WSE 3.0. Následující tabulka mapuje režimy ověřování ve WCF připraveného zabezpečení kontrolní výrazy ve WSE 3.0.  
   
         |Režim ověřování WCF|Kontrolní výraz připraveného zabezpečení WSE 3.0|  
         |-----------------------------|----------------------------------------|  
@@ -46,11 +34,11 @@ ms.lasthandoff: 12/22/2017
         |<xref:System.ServiceModel.Configuration.AuthenticationMode.UserNameOverTransport>|`usernameOverTransportSecurity`|  
         |<xref:System.ServiceModel.Configuration.AuthenticationMode.UserNameForCertificate>|`usernameForCertificateSecurity`|  
   
-         \*Jeden z hlavních rozdílů mezi `mutualCertificate10Security` a `mutualCertificate11Security` kontrolní výrazy připraveného zabezpečení je verzi specifikace WS-zabezpečení, která WSE používá k zabezpečení protokolu SOAP zprávy. Pro `mutualCertificate10Security`, WS-Security 1.0 se používá, zatímco 1.1 WS-zabezpečení se používá pro `mutualCertificate11Security`. Pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], verzi specifikace WS-Security je uveden v `messageSecurityVersion` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
+         \* Jeden z hlavních rozdílů mezi `mutualCertificate10Security` a `mutualCertificate11Security` kontrolní výrazy připraveného zabezpečení je verzi specifikace WS-zabezpečení, která WSE používá k zabezpečení protokolu SOAP zprávy. Pro `mutualCertificate10Security`, WS-Security 1.0 se používá, zatímco 1.1 WS-zabezpečení se používá pro `mutualCertificate11Security`. Pro WCF, verzi specifikace WS-Security je uveden v `messageSecurityVersion` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
   
          Verze specifikaci WS-zabezpečení, která se používá k zabezpečení protokolu SOAP zprávy, nastavit `messageSecurityVersion` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Chcete-li zajistit vzájemnou funkční spolupráci s WSE 3.0, nastavte hodnotu `messageSecurityVersion` atribut <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10%2A>.  
   
-    4.  Zadejte, že je používán. srpna 2004 verzi specifikace WS-Addressing [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přidáním [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md) a nastavte `messageVersion` jeho hodnotou, čímž <xref:System.ServiceModel.Channels.MessageVersion.Soap11WSAddressingAugust2004%2A>.  
+    4.  Určení, že je verze srpen 2004 specifikace WS-Addressing používat technologie WCF přidáním [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md) a nastavte `messageVersion` jeho hodnotou, čímž <xref:System.ServiceModel.Channels.MessageVersion.Soap11WSAddressingAugust2004%2A>.  
   
         > [!NOTE]
         >  Při použití protokolu SOAP 1.2, nastavte `messageVersion` atribut <xref:System.ServiceModel.Channels.MessageVersion.Soap12WSAddressingAugust2004%2A>.  

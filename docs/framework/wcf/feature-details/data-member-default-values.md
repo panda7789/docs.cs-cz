@@ -1,13 +1,6 @@
 ---
-title: "Vychozí hodnoty datových členů"
-ms.custom: 
+title: Vychozí hodnoty datových členů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 33f093beb022804bbdbccf1177404e128d198dd1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 477921069411bb4b7ac32a5e93cc409bc7fbdec2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
 V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Například pro libovolného typu odkaz na výchozí hodnota je `null`, a pro typ integer je nula. Je občas žádoucí vynechat data člena z serializovaná data, když je nastaveno na výchozí hodnotu. Protože člen má výchozí hodnotu, nemusí být serializovány skutečnou hodnotu; Tato akce nemá využít výkonu.  
@@ -61,11 +49,11 @@ V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají ko
 ### <a name="schema-representation"></a>Reprezentace schématu  
  Podrobnosti o definice schématu XML jazyk (XSD) schématu reprezentaci datových členů při `EmitDefaultValue` je nastavena na `false` jsou popsané v [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto je však stručný přehled:  
   
--   Když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastaven na `false`, je zobrazena ve schématu jako specifické pro poznámky [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Neexistuje žádný způsob umožňuje vzájemnou spolupráci představují tyto informace. Konkrétně není pro tento účel použít atribut "Výchozí" ve schématu `minOccurs` atribut má vliv pouze <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> nastavení a `nillable` atribut má vliv pouze podle typu datový člen.  
+-   Když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastaven na `false`, je zobrazena ve schématu jako poznámky konkrétní na Windows Communication Foundation (WCF). Neexistuje žádný způsob umožňuje vzájemnou spolupráci představují tyto informace. Konkrétně není pro tento účel použít atribut "Výchozí" ve schématu `minOccurs` atribut má vliv pouze <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> nastavení a `nillable` atribut má vliv pouze podle typu datový člen.  
   
 -   Použít skutečné výchozí hodnota se nenachází ve schématu. Je přijímací koncový bod správně interpretovat chybí element.  
   
- Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je automaticky nastavena na `false` vždy, když [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-dříve zjištěna konkrétní poznámky uvedených. Je také nastavena na `false` pro odkazové typy, které mají `nillable` vlastnost nastavena na hodnotu `false` podporu konkrétní interoperabilita scénářů, které běžně nastat při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
+ Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je automaticky nastavena na `false` vždy, když je dříve zjištěna poznámky pro konkrétní WCF uvedených. Je také nastavena na `false` pro odkazové typy, které mají `nillable` vlastnost nastavena na hodnotu `false` podporu konkrétní interoperabilita scénářů, které běžně nastat při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>  

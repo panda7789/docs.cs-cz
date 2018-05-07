@@ -1,21 +1,12 @@
 ---
-title: "Přehled třídy XDocument (C#)"
-ms.custom: 
+title: Přehled třídy XDocument (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 63305603-ab54-49fc-84e4-f76eecc59549
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 5dcb221dadcae934c382d20a2a93149af9541db9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 999d570725acbf328858b0ef6c69f709317f10fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xdocument-class-overview-c"></a>Přehled třídy XDocument (C#)
 Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.  
@@ -25,12 +16,12 @@ Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.
   
  Všimněte si, že budete muset vytvořit <xref:System.Xml.Linq.XDocument> objekty, pokud potřebujete konkrétní funkce poskytované službou <xref:System.Xml.Linq.XDocument> třídy. V mnoha případech může spolupracovat přímo s <xref:System.Xml.Linq.XElement>. Práce přímo s <xref:System.Xml.Linq.XElement> je jednodušší programovací model.  
   
- <xref:System.Xml.Linq.XDocument>odvozená z <xref:System.Xml.Linq.XContainer>. Proto může obsahovat podřízené uzly. Ale <xref:System.Xml.Linq.XDocument> objekty může mít pouze jednu podřízenou <xref:System.Xml.Linq.XElement> uzlu. Tento údaj zohledňuje standardní XML, že v dokumentu XML může existovat jenom jeden kořenový element.  
+ <xref:System.Xml.Linq.XDocument> odvozená z <xref:System.Xml.Linq.XContainer>. Proto může obsahovat podřízené uzly. Ale <xref:System.Xml.Linq.XDocument> objekty může mít pouze jednu podřízenou <xref:System.Xml.Linq.XElement> uzlu. Tento údaj zohledňuje standardní XML, že v dokumentu XML může existovat jenom jeden kořenový element.  
   
 ## <a name="components-of-xdocument"></a>Součástí XDocument  
  <xref:System.Xml.Linq.XDocument> Může obsahovat následující prvky:  
   
--   Jeden <xref:System.Xml.Linq.XDeclaration> objektu. <xref:System.Xml.Linq.XDeclaration>Umožňuje určit příslušné části deklarace XML: verze XML, kódování dokumentu, a jestli je samostatné dokumentu XML.  
+-   Jeden <xref:System.Xml.Linq.XDeclaration> objektu. <xref:System.Xml.Linq.XDeclaration> Umožňuje určit příslušné části deklarace XML: verze XML, kódování dokumentu, a jestli je samostatné dokumentu XML.  
   
 -   Jeden <xref:System.Xml.Linq.XElement> objektu. Toto je kořenový uzel dokumentu XML.  
   

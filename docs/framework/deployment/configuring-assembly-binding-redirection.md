@@ -1,27 +1,17 @@
 ---
-title: "Konfigurace přesměrování vazby sestavení"
-ms.custom: 
+title: Konfigurace přesměrování vazby sestavení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: d266cbd8-bf91-41d1-baf0-afbc481a741f
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b53673d1ddb1de7fed087b4c5cb125e50f11b918
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 04743dc7a0fc821f2e3b94929e2384eb25c69f2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Konfigurace přesměrování vazby sestavení
 Ve výchozím nastavení používají aplikace sadu sestavení rozhraní .NET Framework, která jsou součástí na verzi modulu runtime používá ke kompilaci aplikace. Můžete použít **AppliesTo –** atributu u [ \<assemblybinding – >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element v konfiguračním souboru aplikace pro přesměrování odkazy na sestavení vazbu na konkrétní verzi rozhraní .NET Sestavení architektury. Tento volitelný atribut používá označíte, která verze se vztahuje na číslo verze rozhraní .NET Framework. Pokud žádné **AppliesTo –** atribut zadán,  **\<assemblybinding – >** element platí pro všechny verze rozhraní .NET Framework.  
@@ -43,7 +33,7 @@ Ve výchozím nastavení používají aplikace sadu sestavení rozhraní .NET Fr
 </runtime>  
 ```  
   
-  **\<Assemblybinding – >** prvky jsou pořadí-velká a malá písmena. Informace o všech sestavení rozhraní .NET Framework verze 1.0 přesměrování vazby sestavení by měl zadejte nejprve následuje informací o přesměrování vazby sestavení pro všechny sestavení rozhraní .NET Framework verze 1.1. Nakonec zadejte informace o přesměrování vazby sestavení pro žádné přesměrování sestavení rozhraní .NET Framework, který nepoužívá **AppliesTo –** atribut a proto se vztahuje na všechny verze rozhraní .NET Framework. V případě konfliktu v přesměrování se použije první odpovídající příkaz přesměrování v konfiguračním souboru.  
+ **\<Assemblybinding – >** prvky jsou pořadí-velká a malá písmena. Informace o všech sestavení rozhraní .NET Framework verze 1.0 přesměrování vazby sestavení by měl zadejte nejprve následuje informací o přesměrování vazby sestavení pro všechny sestavení rozhraní .NET Framework verze 1.1. Nakonec zadejte informace o přesměrování vazby sestavení pro žádné přesměrování sestavení rozhraní .NET Framework, který nepoužívá **AppliesTo –** atribut a proto se vztahuje na všechny verze rozhraní .NET Framework. V případě konfliktu v přesměrování se použije první odpovídající příkaz přesměrování v konfiguračním souboru.  
   
  Například pokud chcete přesměrovat jeden odkaz na sestavení rozhraní .NET Framework verze 1.0 a další odkaz na sestavení rozhraní .NET Framework verze 1.1, použijte vzor uvedené v následující pseudokódu.  
   

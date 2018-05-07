@@ -1,24 +1,12 @@
 ---
 title: Návrhář
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: bf28aae3-ddfb-4a86-b55d-1957f08c4e10
-caps.latest.revision: 4
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 51005e81aef752636e8ff8157bb99e72726eee30
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 9a579b7aae785e664103fecb6717247b8383576a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designer"></a>Návrhář
 Tato část obsahuje vzorků, které ukazují, jak používat [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].  

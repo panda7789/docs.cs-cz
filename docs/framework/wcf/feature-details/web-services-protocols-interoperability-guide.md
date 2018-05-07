@@ -1,34 +1,20 @@
 ---
 title: Průvodce interoperabilitou protokolů webových služeb
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6b962452b6127d259733418969f1fb7b5036b1e5
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 1ee8b485d8a46d2599958db2c71f4a6e84875169
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implementuje počet protokoly webových služeb. Mnoho z těchto protokolů obsahuje mnoho možností a bodů rozšiřitelnosti ponechány na uvážení implementátor. Toto téma obsahuje seznam webové protokoly služeb [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje. Další témata v této části poskytují podrobné informace o nasazení pro každý protokol podporována.  
+Windows Communication Foundation (WCF) implementuje počet protokoly webových služeb. Mnoho z těchto protokolů obsahuje mnoho možností a bodů rozšiřitelnosti ponechány na uvážení implementátor. Toto téma obsahuje seznam protokoly webových služeb, které implementuje WCF. Další témata v této části poskytují podrobné informace o nasazení pro každý protokol podporována.  
   
 ## <a name="web-services-protocols-implemented-by-wcf"></a>Protokoly implementované WCF webových služeb  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje podporu pro webové služby (WS) infrastruktury protokoly prostřednictvím kanálů a protokoly aplikací webové služby pomocí funkce kontrakty. Vzájemná funkční spolupráce pro protokoly aplikací se provádí pomocí jazyka popis schématu XML 1.0 (XSD) a Web Services Description Language (WSDL) 1.1.  
+ WCF poskytuje podporu pro webové služby (WS) infrastruktury protokoly prostřednictvím kanálů a protokoly aplikací pomocí funkce kontrakty webových služeb. Vzájemná funkční spolupráce pro protokoly aplikací se provádí pomocí jazyka popis schématu XML 1.0 (XSD) a Web Services Description Language (WSDL) 1.1.  
   
- Poskytuje interoperabilitu infrastruktury protokoly WS-* specifikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanály poskytují podporu pro řadu WS -\* protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanály jsou nakonfigurované pomocí elementů vazby. Následující tabulky obsahují úplný seznam WS -\* infrastruktury protokoly implementované zprostředkovatelem různé [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] elementů vazby.  
+ Poskytuje interoperabilitu infrastruktury protokoly WS-* specifikace. Kanály WCF poskytují podporu pro řadu WS -\* protokoly infrastruktury. Kanály WCF jsou nakonfigurované pomocí elementů vazby. Následující tabulky obsahují úplný seznam WS -\* infrastruktury protokoly implementované zprostředkovatelem různé prvky vazeb WCF.  
   
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement> podporuje specifikace v následující tabulce.  
   
@@ -68,7 +54,7 @@ ms.lasthandoff: 03/26/2018
 |-----------------------------|----------|  
 |WSS: Zabezpečení zpráv protokolu SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv protokolu SOAP 1.0](http://go.microsoft.com/fwlink/?LinkId=94684)|  
 |WSS: Uživatelské jméno Token profil 1.0|[Webové služby profil zabezpečení UsernameToken 1.0](http://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|WSS: X.509 Token Profile 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](http://go.microsoft.com/fwlink/?LinkId=95335)|  
+|WSS: X.509 tokenu profil 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](http://go.microsoft.com/fwlink/?LinkId=95335)|  
 |WSS: SAML 1.1 Token profil 1.0|[Zabezpečení webové služby: Profil tokenu SAML](http://go.microsoft.com/fwlink/?LinkId=96693)|  
 |WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv protokolu SOAP 1.1](http://go.microsoft.com/fwlink/?LinkId=91240)|  
 |WSS uživatelské jméno tokenu Profile 1.1|[Webové služby zabezpečení UsernameToken Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> neimplementuje založené na heslech odvození klíče;<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
@@ -105,7 +91,7 @@ ms.lasthandoff: 03/26/2018
   
 -   [Přenos WS Get pro načtení metadat](http://go.microsoft.com/fwlink/?LinkId=96708)  
   
- Kromě toho jsou implementované následující profily vzájemná funkční spolupráce mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]:  
+ Kromě toho jsou následující profily interoperabilita implementované napříč WCF:  
   
 -   [Basic Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=69313)  
   

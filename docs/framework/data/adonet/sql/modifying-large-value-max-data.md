@@ -1,27 +1,15 @@
 ---
-title: "Úprava dat (max) velké hodnoty v technologii ADO.NET"
-ms.custom: 
+title: Úprava dat (max) velké hodnoty v technologii ADO.NET
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e42ff73cda8fc63d9b8ae6061cfbdb9749a0a864
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 285803d92474efd3268816d1af06eb3ff4abbc79
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava dat (max) velké hodnoty v technologii ADO.NET
 Datové typy velkého objektu (LOB) jsou ty, které překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` – specifikátor pro `varchar`, `nvarchar`, a `varbinary` datové typy umožňující úložiště hodnoty větší než 2 ^ 32 bajtů. Proměnných Transact-SQL a sloupců tabulky můžou určovat `varchar(max)`, `nvarchar(max)`, nebo `varbinary(max)` datové typy. V technologii ADO.NET `max` datové typy můžete načíst pomocí `DataReader`a dá se zadat taky jako obě hodnoty vstupní a výstupní parametr bez žádným zvláštním způsobem. Pro velké `varchar` datové typy dat můžete načíst a aktualizovat postupně.  
@@ -44,7 +32,7 @@ Datové typy velkého objektu (LOB) jsou ty, které překračují maximální ve
 -   Velké `varchar` sloupce nelze použít jako dělení klíčové sloupce.  
   
 ## <a name="working-with-large-value-types-in-transact-sql"></a>Práce s typy velké hodnoty v Transact-SQL  
- Transact-SQL `OPENROWSET` jednorázové metoda připojení a přístup vzdálených dat je funkce. Obsahuje všechny informace o připojení, která je nezbytná k přístupu vzdálených dat ze zdroje dat OLE DB. `OPENROWSET`může být odkazováno v klauzuli FROM dotazu, jako by byl název tabulky. Ho lze také odkazovat jako cílová tabulka INSERT, UPDATE, nebo odstranit příkaz závisejí na možnostech zprostředkovatele OLE DB.  
+ Transact-SQL `OPENROWSET` jednorázové metoda připojení a přístup vzdálených dat je funkce. Obsahuje všechny informace o připojení, která je nezbytná k přístupu vzdálených dat ze zdroje dat OLE DB. `OPENROWSET` může být odkazováno v klauzuli FROM dotazu, jako by byl název tabulky. Ho lze také odkazovat jako cílová tabulka INSERT, UPDATE, nebo odstranit příkaz závisejí na možnostech zprostředkovatele OLE DB.  
   
  `OPENROWSET` Zahrnuje funkce `BULK` poskytovatel sady řádků, které umožňuje číst data přímo ze souboru bez načítání dat do cílové tabulky. To umožňuje používat `OPENROWSET` v jednoduchý příkaz INSERT SELECT.  
   
@@ -68,7 +56,7 @@ FROM OPENROWSET
   
  UPDATE  
   
- { *\<object>* }  
+ {  *\<objekt >* }  
   
  NASTAVENÍ  
   
@@ -78,10 +66,10 @@ FROM OPENROWSET
   
 |If|Pak...|  
 |--------|----------|  
-|Výraz je nastaven na hodnotu NULL|`@Length`je ignorován a hodnotou v *column_name* se zkrátí v zadaném `@Offset`.|  
-|`@Offset`má hodnotu NULL.|Operace aktualizace připojí výraz na konci existující *column_name* hodnotu a `@Length` je ignorována.|  
-|`@Offset`je větší než délka hodnoty column_name|SQL Server vrátí chybu.|  
-|`@Length`má hodnotu NULL.|Operace aktualizace odeberete všechna data z `@Offset` na konec `column_name` hodnotu.|  
+|Výraz je nastaven na hodnotu NULL|`@Length` je ignorován a hodnotou v *column_name* se zkrátí v zadaném `@Offset`.|  
+|`@Offset` má hodnotu NULL.|Operace aktualizace připojí výraz na konci existující *column_name* hodnotu a `@Length` je ignorována.|  
+|`@Offset` je větší než délka hodnoty column_name|SQL Server vrátí chybu.|  
+|`@Length` má hodnotu NULL.|Operace aktualizace odeberete všechna data z `@Offset` na konec `column_name` hodnotu.|  
   
 > [!NOTE]
 >  Ani `@Offset` ani `@Length` může být záporné číslo.  

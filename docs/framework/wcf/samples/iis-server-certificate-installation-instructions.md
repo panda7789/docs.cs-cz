@@ -1,24 +1,12 @@
 ---
-title: "Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)"
-ms.custom: 
+title: Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cfb168ae60765a57017aaec6bdedaf796491f602
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 46d1acf758dd50b881527a16570a1e4a45933958
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 Ke spuštění ukázky, které zabezpečeně komunikovat s Internetové informační služby (IIS), musíte vytvořit a nainstalovat certifikát serveru.  
@@ -47,7 +35,7 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
   
      ![Služba IIS certifikátu průvodce](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
   
-6.  Otestovat přístup ke službě v prohlížeči pomocí https://localhost/servicemodelsamples/service.svc adresa HTTPS.  
+6.  Testování přístup ke službě v prohlížeči pomocí protokolu HTTPS adresy https://localhost/servicemodelsamples/service.svc.  
   
 #### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>Pokud pomocí Httpcfg.exe byl dříve nakonfigurovaný protokol SSL  
   
@@ -76,7 +64,7 @@ PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");
   
 5.  Vyberte **ServiceModelSamples HTTPS Server** z **certifikát SSL** rozevíracího seznamu a klikněte na tlačítko **OK**.  
   
-6.  Otestovat přístup ke službě v prohlížeči pomocí https://localhost/servicemodelsamples/service.svc adresa HTTPS.  
+6.  Testování přístup ke službě v prohlížeči pomocí protokolu HTTPS adresy https://localhost/servicemodelsamples/service.svc.  
   
 > [!NOTE]
 >  Vzhledem k tomu, že testovací certifikát, který jste právě nainstalovali není důvěryhodný certifikát, kterým může dojít další upozornění zabezpečení aplikace Internet Explorer při procházení k místní webové adresy, které jsou zabezpečené s tímto certifikátem.  

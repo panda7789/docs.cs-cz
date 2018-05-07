@@ -1,29 +1,17 @@
 ---
-title: "DateTimePicker – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: DateTimePicker – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dates [Windows Forms], choosing from a list
 - dates [Windows Forms], Windows Forms controls
 - DateTimePicker control [Windows Forms]
 - date and time picker controls
 ms.assetid: 1dac1fbd-8f67-4910-9ccb-2c5462d0d855
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 514f4e4835a047c8c340c0026aa5b59f6f3f7822
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 02d8fd3bd09dfd97d9d3fc64cd624b9eb9402954
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datetimepicker-control-windows-forms"></a>DateTimePicker – ovládací prvek (Windows Forms)
 Windows Forms `DateTimePicker` řízení umožňuje uživateli vybrat jednu položku ze seznamu data nebo časy. Při použití představující datum, zobrazí se ve dvou částech: rozevírací seznam s datum tvaru v textovém a mřížky, které se zobrazí po kliknutí na šipku dolů vedle seznamu.  

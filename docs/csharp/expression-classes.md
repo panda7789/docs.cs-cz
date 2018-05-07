@@ -1,20 +1,13 @@
 ---
-title: "Framework typy podpůrné stromů výrazů"
-description: "Informace o typech framework podpora stromů výrazů vytváření stromů výrazů a postupy pro práci se strom výrazu rozhraní API."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Framework typy podpůrné stromů výrazů
+description: Informace o typech framework podpora stromů výrazů vytváření stromů výrazů a postupy pro práci se strom výrazu rozhraní API.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: ed89b286eee9b4c2e11bb27d18e50f777f94f33e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 3110f2a9534085aba95fcb5c8e76f66229e79f86
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Framework typy podpůrné stromů výrazů
 

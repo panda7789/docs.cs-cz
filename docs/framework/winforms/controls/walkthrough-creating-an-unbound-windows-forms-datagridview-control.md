@@ -1,13 +1,6 @@
 ---
-title: "Návod: Vytvoření nepřipojeného ovládacího prvku Windows Forms DataGridView"
-ms.custom: 
+title: 'Návod: Vytvoření nepřipojeného ovládacího prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - data [Windows Forms], unbound
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 5a8d6afa-1b4b-4b24-8db8-501086ffdebe
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d737959ee0ecab4c611cebf996741516fc7be031
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26c2241f4b0a3b23255de15b3d0c9f8bdd15de02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-an-unbound-windows-forms-datagridview-control"></a>Návod: Vytvoření nepřipojeného ovládacího prvku Windows Forms DataGridView
 Často můžete chtít zobrazit tabulková data, která nepochází z databáze. Můžete například zobrazit obsah dvourozměrná pole řetězců. <xref:System.Windows.Forms.DataGridView> Třída poskytuje snadný a vysoce přizpůsobitelné způsob pro zobrazení dat bez vazby ke zdroji dat. Tento návod ukazuje, jak k naplnění <xref:System.Windows.Forms.DataGridView> řídit a spravovat přidávání a odstraňování řádků v režimu "nevázaný". Ve výchozím nastavení uživatel může přidávat nové řádky. Abyste zabránili přidávání řádků, nastavte <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> vlastnost je `false`.  

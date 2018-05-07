@@ -1,24 +1,12 @@
 ---
-title: "Chyba – kontrakt"
-ms.custom: 
+title: Chyba – kontrakt
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b31b140e-dc3b-408b-b3c7-10b6fe769725
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9bf0f615ae338d9ad52cc8c40096e7130fb111ea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 37b9d7e3ec2135d60215232fae114baef1b54f36
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fault-contract"></a>Chyba – kontrakt
 Chyba – kontrakt příklad znázorňuje způsob ke sdělování informací chyby ze služby klienta. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat ke službě převést výjimku vnitřní chybu. Klient se pokusí provést dělení nulou vynutit chybový stav služby.  
@@ -109,7 +97,7 @@ catch (FaultException<MathFault> e)
 }  
 ```  
   
- Ve výchozím nastavení podrobnosti o neočekávané výjimky neodešlou do klienta aby podrobnosti o implementaci služby z uvozovací znaky hranice zabezpečení služby. `FaultContract`poskytuje způsob, jak popisuje chyb v kontraktu a označit určité typy výjimek podle potřeby pro přenos do klienta. `FaultException<T>`poskytuje mechanismus běhu pro odesílání chyb k příjemce.  
+ Ve výchozím nastavení podrobnosti o neočekávané výjimky neodešlou do klienta aby podrobnosti o implementaci služby z uvozovací znaky hranice zabezpečení služby. `FaultContract` poskytuje způsob, jak popisuje chyb v kontraktu a označit určité typy výjimek podle potřeby pro přenos do klienta. `FaultException<T>` poskytuje mechanismus běhu pro odesílání chyb k příjemce.  
   
  Je však užitečné při ladění, najdete v části interní podrobnosti o selhání služby. Chcete-li vypnout zabezpečené chování výše popsané, můžete určit, že podrobnosti o každé neošetřených výjimek na serveru by měl být součástí chybu, která je odeslána do klienta. To se provádí nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> k `true`. Můžete buď ho nastavit v kódu nebo v konfiguraci, jak znázorňuje následující ukázka.  
   
@@ -143,7 +131,7 @@ catch (FaultException<MathFault> e)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Faults`  
   

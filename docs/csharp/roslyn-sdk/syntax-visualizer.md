@@ -1,18 +1,13 @@
 ---
 title: Prozkoumejte kódu pomocí syntaxe vizualizér Roslyn v sadě Visual Studio
 description: Vizualizér syntaxe poskytuje vizuální nástroj, který chcete prozkoumat modely, které .NET SDK kompilátoru platformy generuje pro kód.
-author: billwagner
-ms.author: wiwagn
 ms.date: 03/07/2018
-ms.topic: conceptual
-ms.prod: .net
-ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 04452159c759a0c7236c1b93dc966e5e9c54574a
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 3029c868ad9b0384cf11e57a00b123acd1177806
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Prozkoumejte kódu pomocí syntaxe vizualizér Roslyn v sadě Visual Studio
 

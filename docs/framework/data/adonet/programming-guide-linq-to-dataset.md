@@ -1,24 +1,12 @@
 ---
-title: "Průvodce programováním (LINQ na DataSet)"
-ms.custom: 
+title: Průvodce programováním (LINQ na DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 977aedd7-0084-46a0-b56f-345787a55da1
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bf5734aca0d6ec6d54b690a5fb0f63ac2de306e8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 70fb2d38a055a6b376a711aae28ba69e6c2dd771
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-guide-linq-to-dataset"></a>Průvodce programováním (LINQ na DataSet)
 Tato část obsahuje koncepční informace a příklady pro programování s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  

@@ -1,21 +1,15 @@
 ---
-title: "Klíčová slova operátorů (Referenční dokumentace jazyka C#)"
+title: Klíčová slova operátorů (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - keywords [C#], operators
 - operators [C#], keywords
 ms.assetid: f745c81f-f8d8-4673-86a1-0f3a85cc63c3
-caps.latest.revision: "10"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1d30e85dd76f37c797ec212b9e0700ab93a21a67
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 19be5aadf68f7812f2cb4a4e694a6600c5203af4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operator-keywords-c-reference"></a>Klíčová slova operátorů (Referenční dokumentace jazyka C#)
 Umožňuje provádět různé akce, například vytváření objektů a kontrola běhového typu objektu, získávání velikost typu a další akce. Tato část obsahuje následující klíčová slova:  
@@ -26,7 +20,7 @@ Umožňuje provádět různé akce, například vytváření objektů a kontrola
   
 -   [je](../../../csharp/language-reference/keywords/is.md) kontroluje běhového typu objektu.  
   
--   [Nový](../../../csharp/language-reference/keywords/new.md)  
+-   [new](../../../csharp/language-reference/keywords/new.md)  
   
     -   [Operátor new](../../../csharp/language-reference/keywords/new-operator.md) vytvoří objekty.  
   
@@ -40,7 +34,7 @@ Umožňuje provádět různé akce, například vytváření objektů a kontrola
   
 -   [typeof](../../../csharp/language-reference/keywords/typeof.md) obdrželi **System.Type** objektu pro typ.  
   
--   [Hodnota TRUE](../../../csharp/language-reference/keywords/true.md)  
+-   [true](../../../csharp/language-reference/keywords/true.md)  
   
     -   [True – operátor](../../../csharp/language-reference/keywords/true-operator.md) vrátí logickou hodnotu true udávajících hodnotu true, v opačném případě vrátí hodnotu false.  
   
@@ -62,6 +56,6 @@ Umožňuje provádět různé akce, například vytváření objektů a kontrola
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)

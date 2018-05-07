@@ -1,26 +1,17 @@
 ---
-title: "Postupy: příkaz Ping na hostitele"
-ms.custom: 
+title: 'Postupy: příkaz Ping na hostitele'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 21370d87793bac9ea70e9faf7529e5d6ae16f4ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 62ab62520e42fcf3ecfb8bd7fd6b57485451e6e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-ping-a-host"></a>Postupy: příkaz Ping na hostitele
 Tento příklad ukazuje, jak na příkaz ping vzdálený hostitel.  

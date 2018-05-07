@@ -1,29 +1,18 @@
 ---
-title: "Manipulace s řetězci v .NET Frameworku"
-ms.custom: 
+title: Manipulace s řetězci v .NET Frameworku
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - strings [.NET Framework], manipulating
 - manipulating strings
 ms.assetid: d4568ff3-9f83-4549-acd8-47aec2194ac0
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b1db77672928ebf4a03b69b4bef1af80f04124b5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ca4e24cb882daf7efd14da83011d50d05a85232b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="manipulating-strings-in-net"></a>Manipulace s řetězci v .NET
 Rozhraní .NET poskytuje rozsáhlou sadu rutin, které umožňují efektivně vytvářet, porovnat a upravovat řetězce a také rychle analyzovat velké objemy dat pro vyhledávání, odeberte a nahraďte textové vzory a text.  

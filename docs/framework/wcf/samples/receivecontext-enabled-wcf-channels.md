@@ -1,24 +1,12 @@
 ---
-title: "Kanály WCF povolenou třídou ReceiveContext"
-ms.custom: 
+title: Kanály WCF povolenou třídou ReceiveContext
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d990d119-7321-4b8c-852b-10256f59f9b0
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 765efb43efc0ea60ebb71bc8cdb5bd8edf973c2c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e5ac914ae4d0c97ed617ea4a8d5a893ec740179
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="receivecontext-enabled-wcf-channels"></a>Kanály WCF povolenou třídou ReceiveContext
 Tento příklad znázorňuje užitečnost <xref:System.ServiceModel.Channels.ReceiveContext>-Povolit kanály WCF. Ukázka implementuje služby Vrátí součin dvou čísel pomocí NetMSMQ kanál.  
@@ -30,7 +18,7 @@ Tento příklad znázorňuje užitečnost <xref:System.ServiceModel.Channels.Rec
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\ReceiveContextProductGenerator`  
   
@@ -58,7 +46,7 @@ Tento příklad znázorňuje užitečnost <xref:System.ServiceModel.Channels.Rec
   
         2.  Klikněte na tlačítko **programy** a pak v části **programy a funkce**, klikněte na tlačítko **zapnout nebo vypnout funkce systému Windows**.  
   
-        3.  Rozbalte položku **Server Microsoft Message Queue (MSMQ)**, rozbalte položku **jádra serveru Microsoft Message Queue (MSMQ)**a pak zaškrtněte políčka pro následující funkce služby Řízení front zpráv k instalaci:  
+        3.  Rozbalte položku **Server Microsoft Message Queue (MSMQ)**, rozbalte položku **jádra serveru Microsoft Message Queue (MSMQ)** a pak zaškrtněte políčka pro následující funkce služby Řízení front zpráv k instalaci:  
   
             -   Server služby Řízení front zpráv  
   

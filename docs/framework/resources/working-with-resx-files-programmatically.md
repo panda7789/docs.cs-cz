@@ -1,14 +1,6 @@
 ---
 title: Práce se soubory .resx programově
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,17 +8,13 @@ helpviewer_keywords:
 - resource files, .resx files
 - .resx files
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 951bd2160baddf100a685af2d78ec49e2146077b
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 569f2d59bb2abf013a87bdaa694a7fcf36c70042
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="working-with-resx-files-programmatically"></a>Práce se soubory .resx programově
 Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML, včetně hlavičku, která musí odpovídat určitému schématu následuje data v dvojice název/hodnota, můžete zjistit, že ruční vytvoření těchto souborů je k chybám. Jako alternativu můžete vytvořit soubory .resx programově pomocí typy a členy v knihovně tříd rozhraní .NET Framework. Knihovna tříd rozhraní .NET Framework můžete použít také k načtení prostředků, které jsou uložené v soubory RESX. Toto téma vysvětluje, jak můžete použít typy a členy v <xref:System.Resources> obor názvů pro práci se soubory .resx.  
@@ -89,7 +77,7 @@ Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML,
   
  Pokud používáte C#, syntaxe vypadá takto:  
   
- **csc** *filename* **.cs -resource:** *.resourcesFilename*  
+ **CSC** *filename* **.cs-prostředků:** *.resourcesFilename*  
   
  Souboru .resources lze také vložit v satelitní sestavení pomocí [Linker sestavení (AL.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md), který má základní syntaxi:  
   

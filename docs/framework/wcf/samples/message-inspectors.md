@@ -1,24 +1,12 @@
 ---
-title: "Inspektoři zpráv"
-ms.custom: 
+title: Inspektoři zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7ed4f31e004ddeb69a29568b3892ab7379715457
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 05dbee820a002feb1f2a1672220be0c4a397f952
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-inspectors"></a>Inspektoři zpráv
 Tento příklad ukazuje, jak implementovat a nakonfigurovat klienta a služby inspektoři zpráv.  
@@ -52,7 +40,7 @@ public class SchemaValidationMessageInspector : IClientMessageInspector, IDispat
   
  Všechny zprávy inspector služby (odesílatel) musí implementovat dvě <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> metody <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29>.  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>je volána dispečera při obdržel, zpracovává zásobníku kanál a přiřazené k službě zprávu, ale předtím, než je deserializovat a odeslaných do operace. Pokud příchozí zpráva byla zašifrována, je zpráva již dešifrovat při dosažení inspector zprávy. Získá metodu `request` zpráva předán jako referenční parametr, který umožňuje zpráva, která má být prověřovány, s nimi manipulovat nebo nahradit podle potřeby. Návratová hodnota může být jakýkoli objekt a slouží jako objekt korelace stavu, který je předán <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A> při službu vrátí odpověď na aktuální zprávu. V této ukázce <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> deleguje kontroly (ověřování) zprávy metodu privátní, místní `ValidateMessageBody` a vrátí objekt žádné korelace stavu. Tato metoda zajišťuje, že žádné neplatné zprávy předat do služby.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> je volána dispečera při obdržel, zpracovává zásobníku kanál a přiřazené k službě zprávu, ale předtím, než je deserializovat a odeslaných do operace. Pokud příchozí zpráva byla zašifrována, je zpráva již dešifrovat při dosažení inspector zprávy. Získá metodu `request` zpráva předán jako referenční parametr, který umožňuje zpráva, která má být prověřovány, s nimi manipulovat nebo nahradit podle potřeby. Návratová hodnota může být jakýkoli objekt a slouží jako objekt korelace stavu, který je předán <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A> při službu vrátí odpověď na aktuální zprávu. V této ukázce <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> deleguje kontroly (ověřování) zprávy metodu privátní, místní `ValidateMessageBody` a vrátí objekt žádné korelace stavu. Tato metoda zajišťuje, že žádné neplatné zprávy předat do služby.  
   
 ```  
 object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel, System.ServiceModel.InstanceContext instanceContext)  
@@ -67,7 +55,7 @@ object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Cha
 }  
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29>je volána vždy, když je připravena k odeslání zpět na klienta nebo v případě jednosměrného zprávy, když se po zpracování příchozí zprávy odpovědi. To umožňuje rozšíření počítat se volané symetricky, bez ohledu na to MEP. Stejně jako u <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, zpráva se předá jako parametr odkazu a lze prověřovány, změnit nebo nahradit. Ověření zprávy, které se provádí v této ukázce je znovu delegovaný jako `ValidMessageBody` metoda, ale ošetření chyb při ověřování se v takovém případě mírně lišit.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29> je volána vždy, když je připravena k odeslání zpět na klienta nebo v případě jednosměrného zprávy, když se po zpracování příchozí zprávy odpovědi. To umožňuje rozšíření počítat se volané symetricky, bez ohledu na to MEP. Stejně jako u <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, zpráva se předá jako parametr odkazu a lze prověřovány, změnit nebo nahradit. Ověření zprávy, které se provádí v této ukázce je znovu delegovaný jako `ValidMessageBody` metoda, ale ošetření chyb při ověřování se v takovém případě mírně lišit.  
   
  Pokud dojde k chybě ověření ve službě, `ValidateMessageBody` vyvolá metoda <xref:System.ServiceModel.FaultException>-odvozené výjimky. V <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, tyto výjimky můžou být přepnuté do infrastruktury služby modelu, kde jsou automaticky převede na chyb SOAP a předává do klienta. V <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A>, <xref:System.ServiceModel.FaultException> výjimky nesmí být přepnuté do infrastruktury, protože transformace selhání výjimky vydané služby se vyskytuje před zpráva inspector je volána. Proto za následující implementaci zachytí známých `ReplyValidationFault` výjimku a nahradí odpovědi zpráv s explicitní chybovou zprávu. Tato metoda zajišťuje, že žádné neplatné zprávy jsou vráceny implementace služby.  
   
@@ -93,7 +81,7 @@ void IDispatchMessageInspector.BeforeSendReply(ref System.ServiceModel.Channels.
   
  Inspector zpráv klienta je velmi podobné. Tyto dvě metody, které musí být implementován z <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> jsou <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply%2A> a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A>.  
   
- <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A>je voláno, když má byla daná zpráva vytvořena, klientská aplikace nebo operaci formátování. Jako s inspektoři dispečera zpráv, můžete zprávu právě prověřovány nebo zcela nahradit. V této ukázce kontrolor deleguje do stejné místní `ValidateMessageBody` Pomocná metoda, která se také používá pro inspektoři odesílání zpráv.  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> je voláno, když má byla daná zpráva vytvořena, klientská aplikace nebo operaci formátování. Jako s inspektoři dispečera zpráv, můžete zprávu právě prověřovány nebo zcela nahradit. V této ukázce kontrolor deleguje do stejné místní `ValidateMessageBody` Pomocná metoda, která se také používá pro inspektoři odesílání zpráv.  
   
  Chování rozdíl mezi klientem a službou ověření (jako je zadaný v konstruktoru) je, že ověření klienta vyvolá místní výjimky, které jsou vloženy do uživatelského kódu, protože k nim dojde místně a ne z důvodu selhání služby. Pravidlo je obecně platí, že služba dispečera inspektoři throw chyb a že kontroly klienta výjimku výjimky.  
   
@@ -420,7 +408,7 @@ catch (Exception e)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageInspectors`  
   

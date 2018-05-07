@@ -1,31 +1,20 @@
 ---
-title: "Setrvání pracovního postupu aplikace"
-ms.custom: 
+title: Setrvání pracovního postupu aplikace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: abcff14c-f047-4195-ba26-d27f4a82c24e
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cf23b8e33766ea7a15135418142082a0e7b715ad
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e5c0cf23dd238c0c5a81519b5e6c415f4ef75f1d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="persisting-a-workflow-application"></a>Setrvání pracovního postupu aplikace
 Tento příklad ukazuje, jak spustit <xref:System.Activities.WorkflowApplication>ji uvolnit, kdy přestane nečinnosti a potom ho znovu načtěte mohla pokračovat v jeho zpracování.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- <xref:System.Activities.WorkflowApplication>je hostitel pro instanci jednoho pracovního postupu, který poskytuje jednoduché rozhraní a některé z běžnějších scénáře hostingu umožňuje. Jeden z těchto důvodů je dlouhá spouštění pracovních postupů, které usnadňují trvalost. Řízení hostitele trvalost provádí, buď pomocí volání operace trvalost na <xref:System.Activities.WorkflowApplication>, nebo zpracování <xref:System.Activities.WorkflowApplication> a událost označující, že <xref:System.Activities.WorkflowApplication> musí zachovat.  
+ <xref:System.Activities.WorkflowApplication> je hostitel pro instanci jednoho pracovního postupu, který poskytuje jednoduché rozhraní a některé z běžnějších scénáře hostingu umožňuje. Jeden z těchto důvodů je dlouhá spouštění pracovních postupů, které usnadňují trvalost. Řízení hostitele trvalost provádí, buď pomocí volání operace trvalost na <xref:System.Activities.WorkflowApplication>, nebo zpracování <xref:System.Activities.WorkflowApplication> a událost označující, že <xref:System.Activities.WorkflowApplication> musí zachovat.  
   
- Ukázkový pracovní postup je <xref:System.Activities.Statements.WriteLine> výzvy pro uživatele pro jejich název aktivity `ReadLine` aktivity pro příjem názvu jako vstup prostřednictvím obnovení <xref:System.Activities.Bookmark>a jiné <xref:System.Activities.Statements.WriteLine> pro zobrazování pohlednice zpět na uživatele. Při čekání na vstup je pracovní postup, to umožňuje bod přirozené trvalost. To se často označuje jako <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Idle> bodu. <xref:System.Activities.WorkflowApplication>Vyvolá <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Idle> událost vždy, když program pracovního postupu můžete nastavit jako trvalý, čeká na záložku obnovení a je prováděna žádné další kroky. V pracovním postupu Tato ukázka, která se dodává bod okamžitě po `ReadLine` aktivity zahájí provádění.  
+ Ukázkový pracovní postup je <xref:System.Activities.Statements.WriteLine> výzvy pro uživatele pro jejich název aktivity `ReadLine` aktivity pro příjem názvu jako vstup prostřednictvím obnovení <xref:System.Activities.Bookmark>a jiné <xref:System.Activities.Statements.WriteLine> pro zobrazování pohlednice zpět na uživatele. Při čekání na vstup je pracovní postup, to umožňuje bod přirozené trvalost. To se často označuje jako <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Idle> bodu. <xref:System.Activities.WorkflowApplication> Vyvolá <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Idle> událost vždy, když program pracovního postupu můžete nastavit jako trvalý, čeká na záložku obnovení a je prováděna žádné další kroky. V pracovním postupu Tato ukázka, která se dodává bod okamžitě po `ReadLine` aktivity zahájí provádění.  
   
  A <xref:System.Activities.WorkflowApplication> jsou nastaveny na provedení trvalost s <!--zz <xref:System.Runtime.Persistence.InstanceStore> --> `System.Runtime.Persistence.InstanceStore`. V tomto příkladu <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>. <!--zz <xref:System.Runtime.Persistence.InstanceStore> --> `System.Runtime.Persistence.InstanceStore` Musí být přiřazená k <xref:System.Activities.WorkflowApplication.InstanceStore%2A> vlastnost před <xref:System.Activities.WorkflowApplication> běží.  
   
@@ -62,7 +51,7 @@ Tento příklad ukazuje, jak spustit <xref:System.Activities.WorkflowApplication
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Persistence\InstancePersistence`  
   

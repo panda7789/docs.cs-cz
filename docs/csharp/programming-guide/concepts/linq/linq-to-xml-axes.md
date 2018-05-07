@@ -1,21 +1,12 @@
 ---
 title: Technologie LINQ to XML osy (C#)
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 3f7d54ff-b608-43a1-9e2d-e70668b72df8
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 212754ca8bafb8c8e2d0dbe076b88d3818e39a68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d12d35a6f9b02056946ba201a7bd5a961f64ba36
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-axes-c"></a>Technologie LINQ to XML osy (C#)
 Po vytvoření strom XML nebo načíst dokument XML do strom XML, můžete ji najít elementy a atributy a jejich hodnoty načíst dotazovat.  
@@ -38,5 +29,5 @@ Po vytvoření strom XML nebo načíst dokument XML do strom XML, můžete ji na
 |[Postupy: načtení hodnoty bez podstruktury elementu (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-retrieve-the-shallow-value-of-an-element.md)|Ukazuje, jak načíst bez podstruktury hodnotu elementu.|  
   
 ## <a name="see-also"></a>Viz také  
- [Metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
+ [Rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
  [Průvodce programováním (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

@@ -1,23 +1,17 @@
 ---
-title: "Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)"
+title: Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - abstract classes [C#]
 - sealed classes [C#]
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-caps.latest.revision: "14"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: dac7570c018bd577faac4540e4d800cc11143578
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aa7c951acadd2e7b60f6da17cd7bf357fbd02d95
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)
 [Abstraktní](../../../csharp/language-reference/keywords/abstract.md) – klíčové slovo lze vytvořit třídy a [třída](../../../csharp/language-reference/keywords/class.md) členy, kteří jsou neúplné a musí být implementován v odvozené třídě.  
@@ -53,9 +47,9 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[csProgGuideInheritance#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/abstract-and-sealed-classes-and-class-members_5.cs)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
  [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
  [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)  
- [Postupy: definování abstraktních a vlastností](../../../csharp/programming-guide/classes-and-structs/how-to-define-abstract-properties.md)
+ [Postupy: Definování abstraktních a vlastností](../../../csharp/programming-guide/classes-and-structs/how-to-define-abstract-properties.md)

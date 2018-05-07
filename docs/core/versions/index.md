@@ -4,16 +4,11 @@ description: Pochopit, jak funguje správa verzí .NET Core.
 author: bleroy
 ms.author: mairaw
 ms.date: 02/13/2018
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 437bea33f26c9ae445cf412657f4d23fcce18873
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0cfd620d2b6e6e60531b0e2aa938c1ed64b6af23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-versioning"></a>Správa verzí .NET core
 

@@ -1,20 +1,13 @@
 ---
-title: "Výsledky dotazu skupiny"
-description: "Jak výsledky skupiny."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Výsledky dotazu skupiny
+description: Jak výsledky skupiny.
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 2e4ec27f-06fb-4de7-8973-0189906d4520
-ms.openlocfilehash: ca68cf96a2c27bbd1999d5445c14fc93e8e2566c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cb7808bfdd86dd23882d0722b87b1e013a84141e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="group-query-results"></a>Výsledky dotazu skupiny
 
@@ -52,7 +45,7 @@ Seskupení je jedním z nejúčinnějších možnosti LINQ. Následující pří
  [!code-csharp[csProgGuideLINQ#18](../../../samples/snippets/csharp/concepts/linq/how-to-group-query-results_3.cs)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak chcete seskupit zdrojové elementy pomocí číselný rozsah jako klíč skupiny. Výsledky dotazu pak projekty do anonymní typ, který obsahuje pouze první a poslední název a percentilu rozsahu, ke kterému patří student. Anonymní typ se používá, protože není nutné k použití kompletní `Student` objekt, který chcete zobrazit výsledky. `GetPercentile`pomocné funkce pro výpočet percentilu podle Studentova průměrné skóre. Metoda vrátí celé číslo mezi 0 a 10.  
+ Následující příklad ukazuje, jak chcete seskupit zdrojové elementy pomocí číselný rozsah jako klíč skupiny. Výsledky dotazu pak projekty do anonymní typ, který obsahuje pouze první a poslední název a percentilu rozsahu, ke kterému patří student. Anonymní typ se používá, protože není nutné k použití kompletní `Student` objekt, který chcete zobrazit výsledky. `GetPercentile` pomocné funkce pro výpočet percentilu podle Studentova průměrné skóre. Metoda vrátí celé číslo mezi 0 a 10.  
   
  [!code-csharp[csProgGuideLINQ#50](../../../samples/snippets/csharp/concepts/linq/how-to-group-query-results_4.cs)]  
   
@@ -78,7 +71,7 @@ Seskupení je jedním z nejúčinnějších možnosti LINQ. Následující pří
  <xref:System.Linq.Enumerable.GroupBy%2A>  
  <xref:System.Linq.IGrouping%602>  
  [LINQ – výrazy dotazů](index.md)  
- [Group – klauzule](../language-reference/keywords/group-clause.md)  
+ [group – klauzule](../language-reference/keywords/group-clause.md)  
  [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)  
  [Provádění poddotazů na skupinách](perform-a-subquery-on-a-grouping-operation.md)  
  [Vytvoření vnořené skupiny](create-a-nested-group.md)  

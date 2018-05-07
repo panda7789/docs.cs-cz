@@ -1,11 +1,6 @@
 ---
-title: "Order By – klauzule (Visual Basic)"
+title: Order By – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryOrderBy
 - vb.QueryAscending
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Order By clause [Visual Basic]
 - Order By statement [Visual Basic]
 ms.assetid: fa911282-6b81-44c7-acfa-46b5bb93df75
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 21ee21942b966668a67b14aba72b8f9fc5ee903c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7c60156ee81618530b42d5f61dbcac6f59c4f675
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="order-by-clause-visual-basic"></a>Order By – klauzule (Visual Basic)
 Určuje pořadí řazení výsledků dotazu.  
@@ -60,5 +52,5 @@ Order By orderExp1 [ Ascending | Descending ] [, orderExp2 [...] ]
 ## <a name="see-also"></a>Viz také  
  [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Select – klauzule](../../../visual-basic/language-reference/queries/select-clause.md)  
- [From – klauzule](../../../visual-basic/language-reference/queries/from-clause.md)
+ [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

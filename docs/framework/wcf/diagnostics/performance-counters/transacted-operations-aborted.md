@@ -1,24 +1,12 @@
 ---
-title: "Počet přerušených transakčních operací"
-ms.custom: 
+title: Počet přerušených transakčních operací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d0ff844c-a33c-4ecf-8be5-b5b33635914a
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2371dfde8c82fbaa9a8ec7ece9085201b6e0f4fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f227197a5c2d1b96cc200ca598ba54641dc0bcf1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transacted-operations-aborted"></a>Počet přerušených transakčních operací
 Název čítače: Zpracovaných operací byla přerušena.  

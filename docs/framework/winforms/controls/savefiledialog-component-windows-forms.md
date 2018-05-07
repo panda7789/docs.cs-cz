@@ -1,27 +1,15 @@
 ---
-title: "SaveFileDialog – komponenta (Windows Forms)"
-ms.custom: 
+title: SaveFileDialog – komponenta (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Save File dialog box
 - SaveFileDialog component
 ms.assetid: 6f5d9321-37d7-4448-ac4c-a33c42b2a766
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b5b648f74d3b69a49950eb4e4c9419287aafa3f3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8fe9580114d6e21e698687ba398d60c0af72d57f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.SaveFileDialog> součást je předem nakonfigurovaný dialogové okno. Je stejný jako standardní dialogových oken Uložit soubor používaná systémem Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.  
@@ -34,7 +22,7 @@ Windows Forms <xref:System.Windows.Forms.SaveFileDialog> součást je předem na
  Vysvětluje, jak uložit soubor prostřednictvím instance <xref:System.Windows.Forms.SaveFileDialog> součásti v době běhu.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.SaveFileDialog>– Třída  
+ <xref:System.Windows.Forms.SaveFileDialog> – Třída  
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

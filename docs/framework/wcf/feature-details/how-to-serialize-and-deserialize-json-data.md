@@ -1,33 +1,19 @@
 ---
 title: 'Postupy: Serializace a deserializace dat protokolu JSON'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9152e0047102661664f9b158aa26f83fb1d3c25c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f51ffb180adfc8310c91ff3c1ec7b7725f6b8b15
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-serialize-and-deserialize-json-data"></a>Postupy: Serializace a deserializace dat protokolu JSON
 JSON (JavaScript Object Notation) je formát kódování efektivní dat, který umožňuje rychlé výměnu malé množství dat mezi prohlížeče klienta a podporou AJAXU webové služby.  
   
  Toto téma ukazuje, jak serializovat objekty typu .NET do data zakódovaná ve formátu JSON a jeho následné deserializaci data ve formátu JSON zpět do instance typy .NET pomocí <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Tento příklad používá kontrakt dat k předvedení serializace a deserializace uživatelem definované `Person` typu.  
   
- Za normálních okolností JSON serializace a deserializace zpracovává automaticky [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] při použití typy kontraktů dat v operace služby, které jsou přístupné přes podporou AJAXU koncové body. V některých případech, které budete potřebovat k práci s daty JSON přímo – je to ale scénář, který toto téma popisuje.  
+ Za normálních okolností JSON serializace a deserializace zpracovává automaticky Windows Communication Foundation (WCF) při použití typy kontraktů dat v operace služby, které jsou přístupné přes podporou AJAXU koncové body. V některých případech, které budete potřebovat k práci s daty JSON přímo – je to ale scénář, který toto téma popisuje.  
   
 > [!NOTE]
 >  Pokud dojde k chybě během serializace odchozí odpovědi na serveru nebo odpověď operace vyvolá výjimku z jiného důvodu, se nemusí získat vrácen do klienta jako chybu.  

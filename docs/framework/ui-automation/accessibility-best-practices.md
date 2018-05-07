@@ -1,27 +1,18 @@
 ---
-title: "Usnadnění – doporučené postupy"
-ms.custom: 
+title: Usnadnění – doporučené postupy
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-caps.latest.revision: "16"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 61f9ca1e8a79942b04afd8628282ceeb1e1b4b51
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: cf3d9aafa428b82b9e8817bcd31b9a6bd2cfeba4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessibility-best-practices"></a>Usnadnění – doporučené postupy
 > [!NOTE]
@@ -35,7 +26,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Enable_Programmatic_Access_to_all_UI_Elements_and_Text"></a>   
 ### <a name="enable-programmatic-access-to-all-ui-elements-and-text"></a>Povolit programový přístup ke všem prvky uživatelského rozhraní a Text  
- [!INCLUDE[TLA#tla_ui#initcap](../../../includes/tlasharptla-uisharpinitcap-md.md)]elementy musí povolit programový přístup. Pokud [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] je standard [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] řídit, podporu pro programový přístup je zahrnuta v ovládacím prvku. Pokud ovládací prvek je vlastního ovládacího prvku – ovládací prvek, který má byla rozčlenění z běžného ovládacího prvku nebo ovládací prvek, který má byla rozčlenění z ovládacího prvku – pak můžete zkontrolovat <xref:System.Windows.Automation.Peers.AutomationPeer> implementace pro oblasti, které může být nutné změny.  
+ [!INCLUDE[TLA#tla_ui#initcap](../../../includes/tlasharptla-uisharpinitcap-md.md)] elementy musí povolit programový přístup. Pokud [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] je standard [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] řídit, podporu pro programový přístup je zahrnuta v ovládacím prvku. Pokud ovládací prvek je vlastního ovládacího prvku – ovládací prvek, který má byla rozčlenění z běžného ovládacího prvku nebo ovládací prvek, který má byla rozčlenění z ovládacího prvku – pak můžete zkontrolovat <xref:System.Windows.Automation.Peers.AutomationPeer> implementace pro oblasti, které může být nutné změny.  
   
  Následující tento osvědčený postup umožňuje [!INCLUDE[TLA2#tla_at](../../../includes/tla2sharptla-at-md.md)] modulů plug-in pro manipulaci s prvky svůj produkt [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   

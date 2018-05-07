@@ -4,16 +4,11 @@ description: Příkaz dotnet nuget místní hodnoty – vymaže nebo vypíše m�
 author: karann-msft
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 1dfa50ff0971a82b3f6aafd86492fd57d8cf6a82
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d0c900a06b00fd5e6b7ad66527c6582483222c45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-nuget-locals"></a>místní hodnoty nuget DotNet.
 

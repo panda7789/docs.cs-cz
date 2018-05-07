@@ -1,24 +1,12 @@
 ---
-title: "3429 – WebSocketCloseStatusReceived"
-ms.custom: 
+title: 3429 – WebSocketCloseStatusReceived
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b4f16083-cb55-4215-af12-478d5e70301e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 299da37f622442cb928fb72aab1facc173944777
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ddd7f8966db0556fa1c25e7a3ddca8b16eefaf05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3429---websocketclosestatusreceived"></a>3429 – WebSocketCloseStatusReceived
 ## <a name="properties"></a>Vlastnosti  

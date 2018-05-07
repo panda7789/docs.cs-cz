@@ -1,30 +1,18 @@
 ---
-title: "Hostitel služby Windows"
-ms.custom: 
+title: Hostitel služby Windows
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-caps.latest.revision: "40"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3634d5c14b0d0fcc0113296dec4843585625698d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 14fdb278f89f30e0941a88c2c0a40c768717f8bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
-Tento příklad znázorňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby hostované ve spravované službě Windows. Služby systému Windows jsou řízena pomocí apletu služby v **ovládací panely** a dá se nakonfigurovat automatické spuštění po restartu systému. Ukázka se skládá z programu klienta a aplikace služby systému Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód pro hostování. V jiných hostitelských prostředích, jako jsou služby Aktivace procesů systému Windows (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.  
+Tento příklad znázorňuje službě Windows Communication Foundation (WCF) hostované ve spravované službě Windows. Služby systému Windows jsou řízena pomocí apletu služby v **ovládací panely** a dá se nakonfigurovat automatické spuštění po restartu systému. Ukázka se skládá z programu klienta a aplikace služby systému Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód pro hostování. V jiných hostitelských prostředích, jako jsou služby Aktivace procesů systému Windows (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.  
   
 > [!NOTE]
 >  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
@@ -34,7 +22,7 @@ Tento příklad znázorňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WindowsService`  
   

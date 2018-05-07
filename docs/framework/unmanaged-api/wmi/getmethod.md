@@ -1,11 +1,7 @@
 ---
-title: "Getmethod – funkce (referenční dokumentace nespravovaného rozhraní API)"
-description: "Getmethod – funkce načte informace o metodě."
+title: Getmethod – funkce (referenční dokumentace nespravovaného rozhraní API)
+description: Getmethod – funkce načte informace o metodě.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetMethod
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f22a2dfa7aae411cac960cbad2017718df8057e1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 65b8cb74a028892a3494e818f2b523f75e8766a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getmethod-function"></a>Getmethod – funkce
 Načte informace o zadanou metodu.
@@ -83,14 +76,14 @@ Tato funkce zabalí volání [IWbemClassObject::GetMethod](https://msdn.microsof
 
 Správa systému Windows můžete nastavit [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) ukazatel na `null` Pokud metoda nemá žádné parametry v.
 
-V `ppInSignature` a `ppOutSignature` popisují v a výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx). Vlastnosti v `ppInsignature` jsou pojmenované **Param***n*, kde  *n*  je pozice parametru v (například podpis – metoda jako `Param1`, `Param2`atd.). Vlastnosti v `ppOutSignature` se také nazývají **Param***n*, a názvem návratovou hodnotu **ReturnValue**. Další informace a příklady naleznete v tématu [IWbemClassObject::GetMethod metoda](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx).
+V `ppInSignature` a `ppOutSignature` popisují v a výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx). Vlastnosti v `ppInsignature` jsou pojmenované **Param *** n*, kde *n* je pozice parametru v podpis metody (například `Param1`, `Param2`atd.). Vlastnosti v `ppOutSignature` se také s názvem **Param *** n*, a názvem návratovou hodnotu **ReturnValue**. Další informace a příklady naleznete v tématu [IWbemClassObject::GetMethod metoda](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx).
 
 ## <a name="requirements"></a>Požadavky  
 **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

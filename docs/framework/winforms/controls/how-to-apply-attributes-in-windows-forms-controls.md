@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití atributů v ovládacích prvcích Windows Forms"
-ms.custom: 
+title: 'Postupy: Použití atributů v ovládacích prvcích Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - attributes [Windows Forms], applying
 - Windows Forms controls, applying attributes
 ms.assetid: af0a3f7f-155b-4ba1-83c4-9cf721331a06
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9e4d5bfb445ce6ed37ad1dc63d92fde833ac9870
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 49c2aaa48a48e33a71b5112db31991975011551d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-apply-attributes-in-windows-forms-controls"></a>Postupy: Použití atributů v ovládacích prvcích Windows Forms
 Vyvíjet komponenty a ovládací prvky, které správně komunikují s prostředím návrhu a správně spustit v době běhu, musíte použít atributy správně a členy třídy.  
@@ -58,7 +46,7 @@ Vyvíjet komponenty a ovládací prvky, které správně komunikují s prostřed
  [!code-vb[System.ComponentModel.AttributesDemoControl#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/VB/attributesdemocontrol.vb#20)]  
   
 ### <a name="typeconverter-attribute"></a>Atribut TypeConverter  
- <xref:System.ComponentModel.TypeConverterAttribute>je jiný atribut běžně používané úrovni třídy. Následující příklad kódu ukazuje pro jeho použití `LogEntry` třídy. Tento příklad také ukazuje implementaci <xref:System.ComponentModel.TypeConverter> pro `LogEntry` typu, s názvem `LogEntryTypeConverter`.  
+ <xref:System.ComponentModel.TypeConverterAttribute> je jiný atribut běžně používané úrovni třídy. Následující příklad kódu ukazuje pro jeho použití `LogEntry` třídy. Tento příklad také ukazuje implementaci <xref:System.ComponentModel.TypeConverter> pro `LogEntry` typu, s názvem `LogEntryTypeConverter`.  
   
  [!code-csharp[System.ComponentModel.AttributesDemoControl#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/CS/attributesdemocontrol.cs#5)]
  [!code-vb[System.ComponentModel.AttributesDemoControl#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/VB/attributesdemocontrol.vb#5)]  

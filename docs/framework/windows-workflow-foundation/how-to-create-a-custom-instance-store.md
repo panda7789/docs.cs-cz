@@ -1,26 +1,15 @@
 ---
-title: "Postupy: vytvoření vlastní Instance úložiště"
-ms.custom: 
+title: 'Postupy: vytvoření vlastní Instance úložiště'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 593c4e9d-8a49-4e12-8257-cee5e6b4c075
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: db9f09236764697aff4e57ace593827193c6e07d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 96f713765178011b9122afcb31e4721e9184d1d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-instance-store"></a>Postupy: vytvoření vlastní Instance úložiště
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]obsahuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, úložiště instance, které používá systém SQL Server se zachovat data pracovního postupu. Pokud vaše aplikace je potřeba zachovat data pracovního postupu na jiné médium, například jiné databázi nebo systému souborů, můžete implementovat vlastní instance úložiště. Vlastní instance úložiště je vytvořeno tím, že rozšíří abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy a metody, které jsou požadovány pro implementaci implementace. Pro úplnou implementaci vlastní instance úložiště, najdete v článku [podnikové procesu nákupu](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) ukázka.  
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] obsahuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, úložiště instance, které používá systém SQL Server se zachovat data pracovního postupu. Pokud vaše aplikace je potřeba zachovat data pracovního postupu na jiné médium, například jiné databázi nebo systému souborů, můžete implementovat vlastní instance úložiště. Vlastní instance úložiště je vytvořeno tím, že rozšíří abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy a metody, které jsou požadovány pro implementaci implementace. Pro úplnou implementaci vlastní instance úložiště, najdete v článku [podnikové procesu nákupu](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) ukázka.  
   
 ## <a name="implementing-the-begintrycommand-method"></a>Implementace metody BeginTryCommand  
  <xref:System.Runtime.DurableInstancing.InstanceStore.BeginTryCommand%2A> Odesílají na ukládání instance modul trvalost. Typ `command` parametr označuje příkazu, na který je spouštěna; tento parametr může být z následujících typů:  

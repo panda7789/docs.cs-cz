@@ -1,24 +1,15 @@
 ---
-title: "Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)"
-ms.custom: 
+title: Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-caps.latest.revision: "30"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0127ee0815c4ba6a697456fe45bd373bcf9ba4e4
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 6b943da442d2ec1210911cb9f4b6a0d56c7216d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 Většina dotazů v úvodní integrované Query Language ([!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]) dokumentace jsou zapsány pomocí syntaxe deklarativní dotazu LINQ. Syntaxe dotazu je však přeložit do volání metod pro rozhraní .NET common language runtime (CLR), při kompilaci kódu. Tato metoda volání vyvolají standardní operátory dotazu, které mají názvy jako `Where`, `Select`, `GroupBy`, `Join`, `Max`, a `Average`. Můžete je volat přímo pomocí syntaxe využívající metody místo syntaxe dotazu.  
@@ -48,7 +39,7 @@ Většina dotazů v úvodní integrované Query Language ([!INCLUDE[vbteclinq](~
  Abyste mohli začít používat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], není nutné používat lambdas hojně. Ale některé dotazy lze vyjádřit pouze v syntaxe využívající metody a některé z nich vyžadovat výrazy lambda. Po seznámení s lambdas, zjistíte, že jsou nástroje výkonný a flexibilní vaší [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sady nástrojů. Další informace najdete v tématu [výrazy Lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
 ## <a name="composability-of-queries"></a>Skládání dotazů  
- V předchozím příkladu kódu, Všimněte si, že `OrderBy` metoda je volána pomocí operátoru tečka na volání `Where`. `Where`Vytvoří filtrované pořadí a potom `Orderby` funguje v tomto pořadí tak, že ho řazení. Protože vrátit dotazy `IEnumerable`, můžete vytvořit v syntaxi metoda podle řetězení volání metod společně. Toto je kompilátor jaké na pozadí při psaní dotazy pomocí syntaxe dotazu. A protože proměnné dotazu neukládá výsledky dotazu, můžete upravit ji nebo ji použít jako základ pro nový dotaz kdykoli, i když nebyla spuštěna.  
+ V předchozím příkladu kódu, Všimněte si, že `OrderBy` metoda je volána pomocí operátoru tečka na volání `Where`. `Where` Vytvoří filtrované pořadí a potom `Orderby` funguje v tomto pořadí tak, že ho řazení. Protože vrátit dotazy `IEnumerable`, můžete vytvořit v syntaxi metoda podle řetězení volání metod společně. Toto je kompilátor jaké na pozadí při psaní dotazy pomocí syntaxe dotazu. A protože proměnné dotazu neukládá výsledky dotazu, můžete upravit ji nebo ji použít jako základ pro nový dotaz kdykoli, i když nebyla spuštěna.  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme s dotazy LINQ v jazyku C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+ [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

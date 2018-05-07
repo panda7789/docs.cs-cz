@@ -1,11 +1,6 @@
 ---
-title: "Resume – příkaz"
+title: Resume – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Resume
 - vb.ResumeNext
@@ -20,14 +15,11 @@ helpviewer_keywords:
 - execution
 - Resume statement [Visual Basic]
 ms.assetid: e24d058b-1a5c-4274-acb9-7d295d3ea537
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3cb4334f302c07c81b6b8a7d0626be08cc69b1ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1d03f631893be51529f29af824de0d684bf43804
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resume-statement"></a>Resume – příkaz
 Obnoví zpracování po dokončení rutiny chyba zpracování.  
@@ -70,6 +62,6 @@ Resume [ Next | line ]
  **Sestavení:** jazyka Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také  
- [Try... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
- [Error – příkaz](../../../visual-basic/language-reference/statements/error-statement.md)  
- [On Error – příkaz](../../../visual-basic/language-reference/statements/on-error-statement.md)
+ [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Příkaz Error](../../../visual-basic/language-reference/statements/error-statement.md)  
+ [Příkaz On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)

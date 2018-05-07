@@ -1,31 +1,17 @@
 ---
-title: "Fronty – přehled"
-ms.custom: 
+title: Fronty – přehled
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: eb5d0f51fbbb6c8bad9bfbbfd9977368fdbd0666
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 85c8cb1fbbda9be14754174c7cb7c76513bd94c7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queues-overview"></a>Fronty – přehled
-Tato část představuje obecné a základní koncepty za komunikace ve frontě. Následující části přejděte do podrobnosti o tom, jak jsou služby Řízení front konceptů popsaných v tomto poli označované v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tato část představuje obecné a základní koncepty za komunikace ve frontě. Následující části přejděte do podrobnosti o tom, jak služby Řízení front konceptů popsaných v tomto poli se objevují ve Windows Communication Foundation (WCF).  
   
 ## <a name="basic-queuing-concepts"></a>Základní koncepty služby Řízení front  
  Při návrhu distribuované aplikace se při výběru že správné přenosu pro komunikaci mezi služeb a klientů je důležité. Několika různými faktory ovlivňují druh přenosu použita. Důležitým faktorem – izolace mezi službou, klient a přenos – Určuje použití zařazených do fronty přenosu nebo přímý přenos, jako je například protokol TCP nebo HTTP. Vzhledem k povaze přímé přenosy, jako je například TCP a HTTP komunikace zcela zastaví pokud služba nebo klienta přestane fungovat nebo selhání sítě. Tato služba, klienta a sítě musí používat stejnou dobu pro aplikace pro práci. Ve frontě přenosů poskytují izolaci, což znamená, že pokud se služba nebo klienta selže nebo pokud komunikační propojení mezi nimi selže, klient a služba můžete nadále fungovat.  

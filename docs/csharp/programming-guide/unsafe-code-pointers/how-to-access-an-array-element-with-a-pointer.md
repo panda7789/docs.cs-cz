@@ -1,21 +1,14 @@
 ---
-title: "Postupy: Přístup k elementu pole pomocí ukazatele (Průvodce programováním v C#)"
+title: 'Postupy: Přístup k elementu pole pomocí ukazatele (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - pointers [C#], array access
 ms.assetid: 6c46f2af-a730-4855-8638-f136d9abaa12
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 737c1d7fc0bc0a739de5c0a6cbc5dc09f813133e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 92eb7a79c0e7522d1474537aeefbfdb083a11dc2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-an-array-element-with-a-pointer-c-programming-guide"></a>Postupy: Přístup k elementu pole pomocí ukazatele (Průvodce programováním v C#)
 V kontextu unsafe mohly přistupovat k elementu v paměti pomocí přístupu k elementu ukazatele, jak je znázorněno v následujícím příkladu:  
@@ -44,10 +37,10 @@ for (int i = 65; i < 123; i++)
 **Malá písmena:**  
 **ABCDEFGHIJKLMNOPQRSTUVWXYZ**   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
  [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
  [Typy](../../../csharp/language-reference/keywords/types.md)  
- [nezabezpečený](../../../csharp/language-reference/keywords/unsafe.md)  
+ [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
  [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)  
  [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)

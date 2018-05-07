@@ -1,23 +1,14 @@
 ---
-title: "Kolekce paměti automatické správy a uvolňování paměti"
-description: "Zjistěte, jak automatické paměti Správa je jedním ze služby, které poskytuje modul Common Language Runtime během spravovaného spouštění."
-keywords: "Rozhraní .NET, .NET core"
-author: dotnet-bot
-ms.author: dotnetcontent
+title: Kolekce paměti automatické správy a uvolňování paměti
+description: Zjistěte, jak automatické paměti Správa je jedním ze služby, které poskytuje modul Common Language Runtime během spravovaného spouštění.
 ms.date: 07/22/2016
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a99d849cc1092e36181da7b7ab767a41ff5ef234
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b9ce8b1fec5c6fc0808b86f06408c3f5d612e492
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="automatic-memory-management-and-garbage-collection"></a>Kolekce paměti automatické správy a uvolňování paměti
 

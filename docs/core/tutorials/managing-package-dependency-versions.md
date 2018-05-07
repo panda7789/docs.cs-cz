@@ -4,16 +4,11 @@ description: Další informace o správě verze závislosti balíčku pro knihov
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 7b508f3d83833361bd830bb232587df2ad090661
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 96d154f045303e32de606475e77ab2e6b4f7bcda
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>Správa verze závislosti balíčku pro .NET Core 1.0
 

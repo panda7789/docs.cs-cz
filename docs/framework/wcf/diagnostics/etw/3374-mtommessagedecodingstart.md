@@ -1,24 +1,12 @@
 ---
-title: "3374 – MtomMessageDecodingStart"
-ms.custom: 
+title: 3374 – MtomMessageDecodingStart
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 72afd61d-da6b-418e-b26a-efc7bdb0a218
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5ef46e357a3296d9fcc18ee7267ba2adf668f2f1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b8339a6f06fa53957c6e313b7652d89f1d73211
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3374---mtommessagedecodingstart"></a>3374 – MtomMessageDecodingStart
 ## <a name="properties"></a>Vlastnosti  

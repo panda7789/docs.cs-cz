@@ -1,24 +1,12 @@
 ---
-title: "Serializovatelné typy"
-ms.custom: 
+title: Serializovatelné typy
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2bf272e785968f9116cea20ad0c3f40eb786d1f2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e54fd860ce757257253dad097a52e634dbb5d8bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serializable-types"></a>Serializovatelné typy
 Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> serializuje všechny typy veřejně viditelný. Všechny veřejné vlastnosti a pole typu se serializují.  
@@ -38,7 +26,7 @@ Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializ
   
 -   Pole jen pro čtení, vlastnosti bez `get` nebo `set` metody a vlastnosti s interní nebo privátní `set` nebo `get` nejsou serializované metody. Tyto vlastnosti jsou ignorovány a nedojde k výjimce, s výjimkou pouze pro získání kolekce.  
   
--   <xref:System.Xml.Serialization.XmlSerializer>atributy (například `XmlElement`, `XmlAttribute`, `XmlIgnore`, `XmlInclude`a tak dále) jsou ignorovány.  
+-   <xref:System.Xml.Serialization.XmlSerializer> atributy (například `XmlElement`, `XmlAttribute`, `XmlIgnore`, `XmlInclude`a tak dále) jsou ignorovány.  
   
 -   Pokud se nevztahují <xref:System.Runtime.Serialization.DataContractAttribute> atribut k danému typu serializátor ignoruje kteréhokoli člena v tomto typu, ke kterému <xref:System.Runtime.Serialization.DataMemberAttribute> atribut se používá.  
   

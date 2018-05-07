@@ -1,28 +1,16 @@
 ---
-title: "Zosobnění klienta"
-ms.custom: 
+title: Zosobnění klienta
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - service behaviors, impersonation sample
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a17a3631b781e6a96eb8aec17b20e8ddca52890d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4c5d911bfbfcd33248e15b9fc822abdc9cf4046c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="impersonating-the-client"></a>Zosobnění klienta
 Ukázka zosobnění ukazuje, jak zosobnit volající aplikace ve službě, aby služba přístup jménem volající systémové prostředky.  
@@ -113,7 +101,7 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  Při spuštění vzorového operaci požadavky a odpovědi se zobrazují v oknech konzoly služby a klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.  
   
 > [!NOTE]
->  Služba musí běžet pod účtem správce nebo účet, který běží v části musí být udělena práva k registraci http://localhost: 8000/ServiceModelSamples URI vrstva HTTP. Tato oprávnění lze udělit nastavením [Namespace rezervace](http://go.microsoft.com/fwlink/?LinkId=95012) pomocí [Httpcfg.exe nástroj](http://go.microsoft.com/fwlink/?LinkId=95010).  
+>  Služba musí buď spustit pod účtem správce nebo účet jeho spuštění ve musí být udělena práva k registraci http://localhost:8000/ServiceModelSamples identifikátor URI s vrstvě protokolu HTTP. Tato oprávnění lze udělit nastavením [Namespace rezervace](http://go.microsoft.com/fwlink/?LinkId=95012) pomocí [Httpcfg.exe nástroj](http://go.microsoft.com/fwlink/?LinkId=95010).  
   
 > [!NOTE]
 >  V počítačích se systémem [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], zosobnění je podporováno pouze v případě, že aplikace Host.exe má oprávnění k zosobnění. (Ve výchozím nastavení mají pouze správci toto oprávnění.) Chcete-li přidat toto oprávnění k účtu, jako je služba spuštěná, přejděte na **nástroje pro správu**, otevřete **místní zásady zabezpečení**, otevřete **místní zásady**, klikněte na tlačítko **Přiřazení uživatelských práv**a vyberte **zosobnit klienta po ověření** a dvakrát klikněte na **vlastnosti** přidat uživatele nebo skupinu.  

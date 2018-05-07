@@ -4,17 +4,11 @@ description: Naučte se vytvářet knihovny pro .NET pomocí nástrojů příkaz
 author: cartermp
 ms.author: mairaw
 ms.date: 05/01/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 6bdb5b11a54ce23c676d10ef6e440fa46ea12f72
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a6db7a15c484122600afd54814d19ea11bd1abc1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihovny s křížové nástrojů platformy
 

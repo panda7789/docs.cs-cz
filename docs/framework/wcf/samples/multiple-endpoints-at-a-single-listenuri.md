@@ -1,24 +1,12 @@
 ---
-title: "Víc koncových bodů na jedné adrese ListenUri"
-ms.custom: 
+title: Víc koncových bodů na jedné adrese ListenUri
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 911ffad4-4d47-4430-b7c2-79192ce6bcbd
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 909fb35f9b8e4628df06918f207c3c86770a2d4e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f3eb2036ffbb7c5e8cae77ebc1a86e07d31626c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="multiple-endpoints-at-a-single-listenuri"></a>Víc koncových bodů na jedné adrese ListenUri
 Tento příklad znázorňuje služby, který je hostitelem víc koncových bodů na jedné `ListenUri`. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -50,7 +38,7 @@ Tento příklad znázorňuje služby, který je hostitelem víc koncových bodů
   
  Všechny tři koncové body jsou hostované ve stejné `ListenUri` a používat stejné `binding` -koncových bodů ve stejné `ListenUri` musí mít stejnou vazbu, protože jejich sdílení jednoho kanálu zásobníku, která přijímá zprávy v této fyzickou adresu na počítač. `address` Každý koncový bod je název URN; když adresy obvykle představují fyzického umístění, ve skutečnosti adresa může být jakýkoli druh identifikátor URI, protože adresa se používá pro porovnávání a filtrování účely, jak je ukázáno v této ukázce.  
   
- Protože všechny tři koncové body sdílet stejný `ListenUri`, pokud existuje, doručení zprávy [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] musíte se rozhodnout, kterému koncovému bodu zprávy je určené pro. Každý koncový bod má filtr zpráv, která se skládá ze dvou částí: Filtr adres a filtru smlouvy. Filtr adres odpovídá `To` protokolu SOAP zprávy na adresu koncového bodu služby. Například pouze zprávy adresované `To "Urn:OtherEcho"` jsou kandidáty pro třetí koncový bod této služby. Filtr smlouvy odpovídá akce přidružené těmto operacím konkrétní smlouvou. Příklad zprávy s akcí `IEcho`. `Echo`odpovídá filtry kontrakt druhé a třetí koncových bodů služby, protože obě tyto koncové body hostitele `IEcho` kontrakt.  
+ Protože všechny tři koncové body sdílet stejný `ListenUri`, při doručení zprávy zde Windows Communication Foundation (WCF) musíte se rozhodnout, kterému koncovému bodu zprávy je určené pro. Každý koncový bod má filtr zpráv, která se skládá ze dvou částí: Filtr adres a filtru smlouvy. Filtr adres odpovídá `To` protokolu SOAP zprávy na adresu koncového bodu služby. Například pouze zprávy adresované `To "Urn:OtherEcho"` jsou kandidáty pro třetí koncový bod této služby. Filtr smlouvy odpovídá akce přidružené těmto operacím konkrétní smlouvou. Příklad zprávy s akcí `IEcho`. `Echo` odpovídá filtry kontrakt druhé a třetí koncových bodů služby, protože obě tyto koncové body hostitele `IEcho` kontrakt.  
   
  Proto kombinace adresu filtr a kontraktů umožňuje směrovat každou zprávu, která dorazí na tuto službu `ListenUri` správný koncový bod. Třetí koncový bod je z další dvě hodnoty, protože přijímá zprávy odeslané na jinou adresu z dalších koncových bodů. První a druhý koncových bodů jsou rozlišené od sebe navzájem na základě jejich smluv (akce příchozí zprávy).  
   
@@ -86,7 +74,7 @@ calcClient.ChannelFactory.Endpoint.Behaviors.Add(
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\MultipleEndpointsSingleUri`  
   

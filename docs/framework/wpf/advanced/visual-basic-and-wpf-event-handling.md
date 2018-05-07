@@ -1,29 +1,15 @@
 ---
 title: Zpracování událostí v jazyku Visual Basic a WPF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic [WPF], event handlers
 - event handlers [WPF], Visual Basic
 ms.assetid: ad4eb9aa-3afc-4a71-8cf6-add3fbea54a1
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f61b63e7f80ec779d03c230bd4f24eed00098242
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 321b4547bffbbae3c16ef8dd046bdff65ebe0bf1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Zpracování událostí v jazyku Visual Basic a WPF
 Pro jazyk Visual Basic .NET Microsoft konkrétně, můžete použít konkrétní jazyk `Handles` – klíčové slovo přidružit obslužné rutiny událostí s instancemi místo připojení obslužných rutin událostí pomocí atributů nebo pomocí <xref:System.Windows.UIElement.AddHandler%2A> metoda. Ale `Handles` technika pro připojení k instancím obslužných rutin mají určitá omezení, protože `Handles` syntaxe nepodporuje některé funkce konkrétní směrované události [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] událostí systému.  

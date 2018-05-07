@@ -1,9 +1,6 @@
 ---
-title: "Implementace asynchronního vzoru založeného na úlohách"
+title: Implementace asynchronního vzoru založeného na úlohách
 ms.date: 06/14/2017
-ms.prod: .net
-ms.technology: dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -14,18 +11,13 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 238f164fec78fe5e6dae9e7880fabc0a386bf399
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0ed73e8d7279d5371c305e7bd29c08ac00f6a329
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na úlohách
 Asynchronní vzor založený na úkolech (TAP) můžete implementovat třemi způsoby: pomocí kompilátorů jazyka C# a Visual Basic v sadě Visual Studio, ručně nebo kombinací obou metod. Jednotlivé metody jsou podrobně popsány v následujících částech. Klepněte na vzor můžete implementovat výpočetních a I/čítači asynchronních operací. [Úlohy](#workloads) část se věnuje každý typ provozu.
@@ -50,7 +42,7 @@ Vzor TAP můžete implementovat ručně a dosáhnout tak lepší kontroly nad i
  Dalším užitečným použitím takového delegování je implementace optimalizace rychlé cesty a vrácení úkolu v mezipaměti.
 
 ## <a name="workloads"></a>Úkoly
-Jako metody TAP lze implementovat výpočetní i vstupně-výstupní asynchronní operace. Jsou-li však metody TAP vystaveny veřejně z knihovny, měly by být poskytnuty pouze pro úkoly, které se týkají vstupně-výstupních operací (mohou také zahrnovat výpočet, ale neměly by být čistě výpočetní). Pokud je metoda čistě výpočetních, by měly být vystaveny pouze jako synchronní implementace. Kód, který využívá ho může pak vyberte, zda chcete zabalit k vyvolání této synchronní metody do úlohy k přesměrování zpracování úloh práce na jiné vlákno nebo k dosažení stupně paralelního zpracování. A pokud je metoda vázané na vstupně-výstupní operace, by měly být vystaveny pouze jako asynchronní implementace.
+Jako metody TAP lze implementovat výpočetní i vstupně-výstupní asynchronní operace. Jsou-li však metody TAP vystaveny veřejně z knihovny, měly by být poskytnuty pouze pro úkoly, které se týkají vstupně-výstupních operací (mohou také zahrnovat výpočet, ale neměly by být čistě výpočetní). Pokud je metoda čistě výpočetních, by měly být vystaveny pouze jako synchronní implementace. Kód, který využívá ho může pak vyberte, zda chcete zabalit k vyvolání této synchronní metody do úlohy k přesměrování zpracování úloh práce na jiné vlákno nebo k dosažení stupně paralelního zpracování. A pokud je metoda I/čítači, by měly být vystaveny pouze jako asynchronní implementace.
 
 ### <a name="compute-bound-tasks"></a>Výpočetní úlohy
 Třída <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> je nejvhodnější pro zastoupení výpočetně náročných operací. Ve výchozím nastavení využívá speciální podporu v rámci třídy <xref:System.Threading.ThreadPool> za účelem poskytování účinného provádění a zároveň poskytuje významnou kontrolu nad tím, kdy, kde a jakým způsobem lze provádět asynchronní výpočty.

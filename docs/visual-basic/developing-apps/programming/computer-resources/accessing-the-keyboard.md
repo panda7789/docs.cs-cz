@@ -1,26 +1,17 @@
 ---
-title: "Přístup ke klávesnici (Visual Basic)"
-ms.custom: 
+title: Přístup ke klávesnici (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - keyboards [Visual Basic], accessing [Visual Basic]
 - My.Computer.Keyboard object [Visual Basic], tasks
 - keystrokes
 - CapsLock property
 ms.assetid: aa37d54c-5c98-4b44-b98a-c26d2a03c038
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 39ca8afbfd43d26b5d171a6a3789c61b992c1b50
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9f37c9ab0eb3b0943d1ae0720690a95e8c491704
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>Přístup ke klávesnici (Visual Basic)
 `My.Computer.Keyboard` Objektu poskytuje vlastnosti pro přístup k aktuální stav klávesnice, například jaké klíče jsou aktuálně stisknutí a poskytuje metody k odeslání stisknutí kláves do aktivního okna.  

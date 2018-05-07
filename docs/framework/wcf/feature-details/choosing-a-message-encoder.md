@@ -1,56 +1,44 @@
 ---
-title: "Výběr kodéru zprávy"
-ms.custom: 
+title: Výběr kodéru zprávy
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cb8ba8145d371a8773d860e88f073bcc5b732f1c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bf40d31e3ee04136a094b5045f2502e29caceec8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="choosing-a-message-encoder"></a>Výběr kodéru zprávy
-Toto téma popisuje kritéria pro výběr mezi kodéry zprávy, které jsou součástí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]: binární, text a zpráva přenosu optimalizace mechanismus (MTOM).  
+Toto téma popisuje kritéria pro výběr mezi kodéry zprávy, které jsou zahrnuté ve Windows Communication Foundation (WCF): binární, text a zpráva přenosu optimalizace mechanismus (MTOM).  
   
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], můžete určit, jak k přenosu dat v síti mezi koncovými body prostřednictvím *vazby*, který se skládá z posloupnost *elementů vazby*. Kodér zpráv je reprezentována prvku vazby v zásobníku vazby kódování zprávy. Vazba obsahuje prvky vazby volitelné protokolu, například element vazby a zabezpečení nebo spolehlivého zasílání zpráv prvku vazby, zprávu vyžaduje kódování prvku vazby a element vazby požadované přenosu.  
+ Ve službě WCF, můžete určit, jak k přenosu dat v síti mezi koncovými body prostřednictvím *vazby*, který se skládá z posloupnost *elementů vazby*. Kodér zpráv je reprezentována prvku vazby v zásobníku vazby kódování zprávy. Vazba obsahuje prvky vazby volitelné protokolu, například element vazby a zabezpečení nebo spolehlivého zasílání zpráv prvku vazby, zprávu vyžaduje kódování prvku vazby a element vazby požadované přenosu.  
   
  Element vazby kódování zprávy je umístěna nad prvku vyžaduje přenos vazby a prvky vazeb volitelné protokolu. Na straně pro odchozí kodéru zprávy serializuje odchozích <xref:System.ServiceModel.Channels.Message> a předává je pro přenos. Na straně pro příchozí kodéru zprávy přijme serializovaný formu <xref:System.ServiceModel.Channels.Message> z přenosu a předává jej do protokolu vyšší vrstvy, pokud existuje, nebo aplikaci, pokud není.  
   
- Při připojení k existující klient nebo server, nemusí mít volba o pomocí kódování konkrétní zprávu vzhledem k tomu, že budete muset kódování zpráv způsobem, který je očekáván druhé straně. Ale pokud píšete [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, můžete vystavit služby prostřednictvím několik koncových bodů, každý pomocí jiná zpráva kódování. To umožňuje klientům vybrat nejvhodnější kódování pro rozhovoru k službě přes koncový bod, který je nejvhodnější pro ně, jakož i poskytnutí vašim klientům flexibilitu zvolit si, že kódování, které je nejvhodnější pro ně. Pomocí několik koncových bodů také můžete kombinovat s jinými prvky vazby výhod jiná zpráva kódování.  
+ Při připojení k existující klient nebo server, nemusí mít volba o pomocí kódování konkrétní zprávu vzhledem k tomu, že budete muset kódování zpráv způsobem, který je očekáván druhé straně. Ale pokud píšete služby WCF, můžete vystavit služby prostřednictvím několik koncových bodů, každý pomocí jiná zpráva kódování. To umožňuje klientům vybrat nejvhodnější kódování pro rozhovoru k službě přes koncový bod, který je nejvhodnější pro ně, jakož i poskytnutí vašim klientům flexibilitu zvolit si, že kódování, které je nejvhodnější pro ně. Pomocí několik koncových bodů také můžete kombinovat s jinými prvky vazby výhod jiná zpráva kódování.  
   
 ## <a name="system-provided-encoders"></a>Kodéry poskytované systémem  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zahrnuje tři kodéry zprávy, které jsou reprezentované pomocí následujících tří tříd:  
+ WCF zahrnuje tři kodéry zprávy, které jsou reprezentované pomocí následujících tří tříd:  
   
--   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>, kodér textu zprávy, podporuje prostý kódování XML i kódování SOAP. Nešifrovaná režim kódování XML kodér textu zprávy se nazývá "prostý formát XML" (POX) ho odlišuje od založený na textu protokolu SOAP kódování. Chcete-li povolit POX, nastavte <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> vlastnost <xref:System.ServiceModel.Channels.MessageVersion.None%2A>. Použít kodér textu zprávy pro spolupráci s jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body.  
+-   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>, kodér textu zprávy, podporuje prostý kódování XML i kódování SOAP. Nešifrovaná režim kódování XML kodér textu zprávy se nazývá "prostý formát XML" (POX) ho odlišuje od založený na textu protokolu SOAP kódování. Chcete-li povolit POX, nastavte <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> vlastnost <xref:System.ServiceModel.Channels.MessageVersion.None%2A>. Použijte kodér textu zprávy pro spolupráci s koncových bodů jiný WCF.  
   
--   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, kodéru zprávy v binární používá kompaktní binární formát a je optimalizovaný pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] komunikaci a proto není umožňuje vzájemnou spolupráci. Toto je také nejvíce původce kodér všechny kodéry [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje.  
+-   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, kodéru zprávy v binární používá kompaktní binární formát a je optimalizován pro WCF pro komunikaci WCF a proto není umožňuje vzájemnou spolupráci. Toto je také většina kodér původce ze všech kodéry, které poskytuje WCF.  
   
--   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement -->`System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> prvku vazby Určuje kódování znaků, a správa verzí zpráva pro zprávy pomocí kódování MTOM. MTOM je technologie efektivní přenosu zpráv binární data v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy. Kodér MTOM se pokusí vytvořit rovnováhu mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové podobě, ale optimalizuje velkých bloků binárních dat tím, že je jako přenosu-je, bez převodu na text. Z hlediska efektivitu mezi kodéry [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje, MTOM je mezi text (nejpomalejší) a binární (nejrychlejší).  
+-   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>, prvku vazby Určuje kódování znaků, a správa verzí zpráva pro zprávy pomocí kódování MTOM. MTOM je technologie efektivní přenosu zpráv binární data v zpráv WCF. Kodér MTOM se pokusí vytvořit rovnováhu mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové podobě, ale optimalizuje velkých bloků binárních dat tím, že je jako přenosu-je, bez převodu na text. Z hlediska efektivitu mezi kodéry, které poskytuje WCF je MTOM (nejpomalejší) mezi textového a binárního souboru (nejrychlejší).  
   
 ## <a name="how-to-choose-a-message-encoder"></a>Jak vybrat kodéru zprávy  
  Následující tabulka popisuje běžných faktorů použitá pro výběr kodéru zprávy. Určení priority faktorů, které jsou důležité pro vaši aplikaci a potom vyberte kodéry zpráva které pracují nejlépe s tyto faktory. Je nutné zvážit všechny dalších faktorů, které nejsou uvedené v této tabulce a jakékoli vlastní zprávu kodéry, které mohou být vyžadovány ve vaší aplikaci.  
   
 |Koeficient|Popis|Kódovací moduly, které podporují tento faktor|  
 |------------|-----------------|---------------------------------------|  
-|Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>a <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> podporují pouze UTF8 a UTF16 Unicode (*big endian* a *little endian*) kódování. Je-li další kódování je vyžadovat, například UTF7 nebo ASCII, je nutné použít vlastní kodér. Vlastní kodér ukázkové, najdete v části [vlastní kodér zpráv](http://go.microsoft.com/fwlink/?LinkId=119857).|Text|  
+|Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> podporují pouze UTF8 a UTF16 Unicode (*big endian* a *little endian*) kódování. Je-li další kódování je vyžadovat, například UTF7 nebo ASCII, je nutné použít vlastní kodér. Vlastní kodér ukázkové, najdete v části [vlastní kodér zpráv](http://go.microsoft.com/fwlink/?LinkId=119857).|Text|  
 |Kontroly|Kontroly je schopnost zkontrolujte zprávy během přenosu. Kódování textu, ať už s nebo bez použití protokolu SOAP, povolí zpráv, které mají být zkontrolovány a analyzovat mnoho aplikací bez použití specializované nástroje. Všimněte si, že ovlivňuje použití přenosu zabezpečení na úrovni zprávy nebo přenosu, budete moci prohlédnout zprávy. Důvěrnost chrání zprávu z se zkontrolován a integrity chrání zprávu nebylo možné měnit.|Text|  
-|Spolehlivost|Spolehlivost je odolnost kodér přenosu chyb. Spolehlivost se dá zadat i na zprávu, přenos nebo aplikační vrstvu. Všechny standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kodéry předpokládá, že poskytuje další úroveň spolehlivosti. Kodér má moc moci provést zotavení po chybě přenosu.|Žádné|  
+|Spolehlivost|Spolehlivost je odolnost kodér přenosu chyb. Spolehlivost se dá zadat i na zprávu, přenos nebo aplikační vrstvu. Všechny standardní kodéry WCF předpokládají, že poskytuje další úroveň spolehlivosti. Kodér má moc moci provést zotavení po chybě přenosu.|Žádné|  
 |Jednoduchost|Jednoduchost představuje snadnou, pomocí kterého můžete vytvořit kodérů a dekodérů pro specifikace kódování. Kódování textu je zvláště výhodné pro jednoduchost a kódování textu POX má Další výhodou není vyžadující podporu pro zpracování protokolu SOAP.|Text (POX)|  
 |Velikost|Kódování určuje objem režie vynucená pro obsah. Velikost kódovaného zprávy přímo souvisí s maximální propustnost operací služby. Binární kódování je obecně kompaktnější než kódování textu. Pokud je velikost zprávy na prémiový, zvažte také komprese obsah zprávy během kódování. Komprese však přidá zpracování náklady pro odesílatele zprávy a příjemce.|binární|  
 |streamování|Streamování umožňuje aplikacím začala zpracovat zprávu, než dorazila celé zprávy. Efektivně pomocí vysílání datového proudu vyžaduje, aby důležitá data zprávy k dispozici na začátku zprávy tak, aby přijímající aplikace není potřeba počkat na jeho doručení. Kromě toho aplikace, které používají přenos přenášené datovými proudy musí uspořádání dat ve zprávě postupně tak, aby obsah nemá dopředného závislosti. V mnoha případech musí ohrožení mezi streamování obsahu a nutnosti nejmenší možný přenos pro tento obsah.|Žádné|  
 |3. stran nástroj podpory|Patří sem podporu pro kódování vývoj a diagnostiku. Vývojáři třetích stran provedli velké investice v sadách pro zpracování zprávy ve formátu POX a knihovny.|Text (POX)|  
-|Interoperabilita|Tento faktor odkazuje na schopnost [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kodéru pro spolupráci s jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.|Text<br /><br /> MTOM (částečné)|  
+|Interoperabilita|Tento faktor odkazuje na schopnost kodér WCF pro spolupráci s služby bez WCF.|Text<br /><br /> MTOM (částečné)|  
   
 Poznámka: Pokud používáte binární kodéru, pomocí nastavení IgnoreWhitespace při vytváření XMLReader nebude mít žádný vliv.  Například, pokud proveďte následující operace služby:  
 

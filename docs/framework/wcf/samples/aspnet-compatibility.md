@@ -1,27 +1,15 @@
 ---
-title: "Režim kompatibility ASP.NET"
-ms.custom: 
+title: Režim kompatibility ASP.NET
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 751fe96caa2be63e925b3107fa2c198b523bef72
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 35d9362fde21faf4998051e85f66fc4ddfb8b94b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
-Tento příklad ukazuje, jak povolit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Služby spuštěné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility účast ve plně [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace kanálu a mohl provádět použití [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce jako je například autorizace soubor nebo adresa URL, stav relace a <xref:System.Web.HttpContext> – třída. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relací a další [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce. Tento režim vyžaduje, aby vazby používají přenos HTTP a samotné služby musí být hostované ve službě IIS.  
+Tento příklad ukazuje, jak povolit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility ve Windows Communication Foundation (WCF). Služby spuštěné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility účast ve plně [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace kanálu a mohl provádět použití [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce jako je například autorizace soubor nebo adresa URL, stav relace a <xref:System.Web.HttpContext> – třída. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relací a další [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce. Tento režim vyžaduje, aby vazby používají přenos HTTP a samotné služby musí být hostované ve službě IIS.  
   
  V této ukázce klienta je konzolová aplikace (spustitelného souboru) a služba je hostovaná v Internetové informační služby (IIS).  
   
@@ -41,7 +29,7 @@ Tento příklad ukazuje, jak povolit [!INCLUDE[vstecasp](../../../../includes/vs
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebHost\ASPNetCompatibility`  
   
@@ -71,7 +59,7 @@ public interface ICalculatorSession
  Služba používá [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace uložit výsledek pro každou relaci klienta. To umožňuje službě udržet spuštěné výsledek u jednotlivých klientů přes několik volání do služby.  
   
 > [!NOTE]
->  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Stav relace a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relací jsou velmi různých věcí.  Najdete v článku [relace](../../../../docs/framework/wcf/samples/session.md) podrobnosti o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relací.  
+>  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Stav relace a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relací jsou velmi různých věcí.  Najdete v článku [relace](../../../../docs/framework/wcf/samples/session.md) podrobnosti o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relací.  
   
  Služba má dokonalou závislost [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stavu relace a vyžaduje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility, aby správně fungoval. Tyto požadavky jsou vyjádřeny deklarativně použitím `AspNetCompatibilityRequirements` atribut.  
   

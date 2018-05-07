@@ -1,26 +1,17 @@
 ---
-title: "Za popisky, které jsou pouze číselné, musí být uvedena dvojtečka."
+title: Za popisky, které jsou pouze číselné, musí být uvedena dvojtečka.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30801
 - bc30801
 helpviewer_keywords:
 - BC30801
 ms.assetid: 67743319-2d1c-496e-bfd9-22b046b43b5a
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f6c2615f37329ce70b4e6d51d3aa789947b6bec5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1d5fb54364042f7a39aa79aa6856e0f74de809b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="labels-that-are-numbers-must-be-followed-by-colons"></a>Za popisky, které jsou pouze číselné, musí být uvedena dvojtečka.
 Čísla řádků stejným pravidlům jako jiné druhy popisky a musí obsahovat středník.  
@@ -36,4 +27,4 @@ ms.lasthandoff: 10/18/2017
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [GoTo – příkaz](../../../visual-basic/language-reference/statements/goto-statement.md)
+ [Příkaz GoTo](../../../visual-basic/language-reference/statements/goto-statement.md)

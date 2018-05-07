@@ -1,23 +1,16 @@
 ---
-title: "CS3024 upozornění kompilátoru"
+title: CS3024 upozornění kompilátoru
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - CS3024
 helpviewer_keywords:
 - CS3024
 ms.assetid: fef9db31-9a7f-42d5-ad37-3e7faf661f95
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f175d102fa8a05b7f8c0a787564b933ff81cdf6c
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: c4c2f915d6172e3c30fc32c5c57fe9921c3f915d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compiler-warning-cs3024"></a>CS3024 upozornění kompilátoru
 Omezení typu "typ" není kompatibilní se specifikací CLS.  

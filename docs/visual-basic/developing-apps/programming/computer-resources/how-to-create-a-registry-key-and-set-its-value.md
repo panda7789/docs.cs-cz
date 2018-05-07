@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Vytvoření klíče registru a nastavení jeho hodnoty v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Vytvoření klíče registru a nastavení jeho hodnoty v jazyce Visual Basic'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - RegistryKey.CreateSubKey
 - RegistryKey.SetValue
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - registry keys [Visual Basic], setting values
 - examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d5f60dd4723e254b0af59a7794e251a082c9a40c
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 4f74d41aa8055e26f5a707829449ddd310ff576f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Postupy: Vytvoření klíče registru a nastavení jeho hodnoty v jazyce Visual Basic
 `CreateSubKey` Metodu `My.Computer.Registry` objekt můžete použít k vytvoření klíče registru.  

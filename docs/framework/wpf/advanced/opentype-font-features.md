@@ -1,13 +1,6 @@
 ---
-title: "Funkce písma OpenType"
-ms.custom: 
+title: Funkce písma OpenType
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-caps.latest.revision: "38"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6344fed6cf480e3d3f91a559c99b79f438afa985
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a8ee4107ee7db20f2948ea9a33ef853815a22665
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 Toto téma obsahuje přehled některé klíčové funkce [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] technologie písma v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -34,7 +22,7 @@ Toto téma obsahuje přehled některé klíčové funkce [!INCLUDE[TLA#tla_opent
   
 <a name="overview"></a>   
 ## <a name="opentype-font-format"></a>Formát písem OpenType  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Písma formát je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma, přidání podpory pro PostScript data písma. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma byla vyvinuta společně pomocí [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe Corporation. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]písem a operační systém, které podpora služeb [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem poskytují uživatelům jednoduchý způsob instalace a použití písem a zda písma obsahovat [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] jsou podrobněji popsány dále nebo jsou podrobněji popsány dále vývojového diagramu křížového procesu (PostScript).  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Písma formát je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma, přidání podpory pro PostScript data písma. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma byla vyvinuta společně pomocí [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe Corporation. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem a operační systém, které podpora služeb [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem poskytují uživatelům jednoduchý způsob instalace a použití písem a zda písma obsahovat [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] jsou podrobněji popsány dále nebo jsou podrobněji popsány dále vývojového diagramu křížového procesu (PostScript).  
   
  [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma řeší následující problémy developer:  
   
@@ -54,7 +42,7 @@ Toto téma obsahuje přehled některé klíčové funkce [!INCLUDE[TLA#tla_opent
  Najdete v článku [OpenType specifikace](http://go.microsoft.com/fwlink/?LinkId=96731) podrobnosti [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] formát písma.  
   
 ### <a name="advanced-typographic-extensions"></a>Pokročilé typografických rozšíření  
- Rozšířené typografických tabulky ([!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] rozložení tabulky) rozšířit funkci písem pomocí [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] nebo jsou podrobněji popsány dále vývojového diagramu křížového procesu. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]Rozložení písem obsahovat další informace, které rozšiřuje možnosti písma pro podporu vysoce kvalitní mezinárodní typografie. Většina [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem vystavit pouze podmnožinu celkového počtu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které jsou k dispozici. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]písma poskytují následující funkce.  
+ Rozšířené typografických tabulky ([!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] rozložení tabulky) rozšířit funkci písem pomocí [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] nebo jsou podrobněji popsány dále vývojového diagramu křížového procesu. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Rozložení písem obsahovat další informace, které rozšiřuje možnosti písma pro podporu vysoce kvalitní mezinárodní typografie. Většina [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem vystavit pouze podmnožinu celkového počtu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které jsou k dispozici. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma poskytují následující funkce.  
   
 -   Bohaté mapování mezi znaky a glyfy, které podporují ligatur, poziční formulářů, alternativ a jiné písmo nahrazení.  
   
@@ -103,7 +91,7 @@ Text s použitím OpenType horní a dolní indexy
   
 <a name="capitals"></a>   
 ## <a name="capitals"></a>Kapitálek  
- Kapitálek jsou sady typografických formuláře, které vykreslení textu v ve velkých glyfů. Obvykle, když text vykresleno jako všechny kapitálek, mezery mezi písmeny může vyskytovat příliš úzkou a váhu a podíl příliš velkou písmena. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]podporuje několik formáty stylů pro kapitálek, včetně kapitálek, petitových kapitálek, titulkových a mezery. Tyto formáty stylů umožňují řídit vzhled kapitálek.  
+ Kapitálek jsou sady typografických formuláře, které vykreslení textu v ve velkých glyfů. Obvykle, když text vykresleno jako všechny kapitálek, mezery mezi písmeny může vyskytovat příliš úzkou a váhu a podíl příliš velkou písmena. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] podporuje několik formáty stylů pro kapitálek, včetně kapitálek, petitových kapitálek, titulkových a mezery. Tyto formáty stylů umožňují řídit vzhled kapitálek.  
   
  Tento text se zobrazí standardní velkých písmen pro Pescadero písmo, za nímž následuje písmena ve tvaru "SmallCaps" a "AllSmallCaps". V takovém případě se používá stejnou velikost písma pro všechny tři nejčastější slova.  
   
@@ -136,7 +124,7 @@ Text s použitím kapitálkové mezery
   
 <a name="ligatures"></a>   
 ## <a name="ligatures"></a>Ligatur  
- Ligatur jsou dvě nebo více glyfů, které jsou do jedné glyf vytvořen. Chcete-li vytvořit z něj číst nebo atraktivní text. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]podporuje čtyři typy ligatur:  
+ Ligatur jsou dvě nebo více glyfů, které jsou do jedné glyf vytvořen. Chcete-li vytvořit z něj číst nebo atraktivní text. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] podporuje čtyři typy ligatur:  
   
 -   **Standardní ligatur**. Navržené pro zlepšení čitelnosti. Standardní ligatur zahrnují "fi", "fl" a "vypnuto".  
   
@@ -206,7 +194,7 @@ Text s použitím OpenType kontextové ozdobné znaky
   
 <a name="alternates"></a>   
 ## <a name="alternates"></a>Alternativ  
- Alternativy jsou glyfů, které pro standardní glyf se můžou nahradit. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]písma, jako je například Pericles písmo použité v následujících příkladech, může obsahovat alternativních glyfů, které můžete použít k vytvoření různých vzhled textu. Tento text se zobrazí standardní glyfů v písmu Pericles.  
+ Alternativy jsou glyfů, které pro standardní glyf se můžou nahradit. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, jako je například Pericles písmo použité v následujících příkladech, může obsahovat alternativních glyfů, které můžete použít k vytvoření různých vzhled textu. Tento text se zobrazí standardní glyfů v písmu Pericles.  
   
  ![Text s použitím standardní glyfů OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont01.gif "opentypefont01")  
 Text s použitím standardní glyfů OpenType  
@@ -254,7 +242,7 @@ Text s použitím OpenType historických tvarů
  Písem OpenType podporovat velký počet funkcí, které lze použít s číselných hodnot v textu.  
   
 ### <a name="fractions"></a>Zlomků  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]písem podpora styly zlomků, včetně proškrtnutých a skládaný.  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem podpora styly zlomků, včetně proškrtnutých a skládaný.  
   
  Následující text zobrazí zlomek styly písma Palatino Linotype.  
   
@@ -266,7 +254,7 @@ Text s použitím OpenType zkosené a standardní zlomky
  [!code-xaml[OpenTypeFontSamples#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#10)]  
   
 ### <a name="old-style-numerals"></a>Zasahují  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]písem podporují starý formát číslic stylu. Tento formát je vhodný pro zobrazení číslic v stylů, které již nejsou standardní. Následující text zobrazí datum 18 v standardní i starém stylu číslic formátech pro Palatino Linotype písmo.  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem podporují starý formát číslic stylu. Tento formát je vhodný pro zobrazení číslic v stylů, které již nejsou standardní. Následující text zobrazí datum 18 v standardní i starém stylu číslic formátech pro Palatino Linotype písmo.  
   
  ![Text s použitím OpenType zasahují](../../../../docs/framework/wpf/advanced/media/opentypefont24.gif "OpenTypeFont24")  
 Text s použitím OpenType zasahují  
@@ -281,7 +269,7 @@ Text s použitím OpenType starého stylu sady číslic
  [!code-xaml[OpenTypeFontSamples#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#11)]  
   
 ### <a name="proportional-and-tabular-figures"></a>Proporční a tabulkové obrázků  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]písem podporují obrázek přímo úměrná a tabulkové funkce, která řídí zarovnání šířky při použití číslic. Přímo úměrná obrázky s každý číslic zacházeno jako s jinou šířku – "1" je užší než "5". Tabulkové údaje jsou považovány za rovná width číslic, aby ve svislém směru, což zvyšuje čitelnost informace o finanční typu.  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem podporují obrázek přímo úměrná a tabulkové funkce, která řídí zarovnání šířky při použití číslic. Přímo úměrná obrázky s každý číslic zacházeno jako s jinou šířku – "1" je užší než "5". Tabulkové údaje jsou považovány za rovná width číslic, aby ve svislém směru, což zvyšuje čitelnost informace o finanční typu.  
   
  Následující text zobrazí dva následující obrázky přímo úměrná prvního sloupce pomocí Miramonte písma. Poznámka: šířka rozdíl mezi číslic "5" a "1". Druhý sloupec zobrazuje dvou číselných hodnot s šířek upravit pomocí funkce tabulkové obrázek.  
   
@@ -293,7 +281,7 @@ Text s použitím OpenType přímo úměrná a tabulkové obrázků
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet19)]  
   
 ### <a name="slashed-zero"></a>Proškrtnutých nula.  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]Podpora písem proškrtnutých nulový počet číslic formátu zdůraznit rozdíl mezi písmenem "O" a "0" číslic. Proškrtnutých nulový počet číslic se často používá pro identifikátory v finanční a obchodních informací.  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Podpora písem proškrtnutých nulový počet číslic formátu zdůraznit rozdíl mezi písmenem "O" a "0" číslic. Proškrtnutých nulový počet číslic se často používá pro identifikátory v finanční a obchodních informací.  
   
  Následující text zobrazuje identifikátor ukázka pořadí pomocí Miramonte písma. První řádek používá standardní číslic. Druhý řádek používá zkosené nulový počet číslic zajistit lepší kontrast s velkým písmenem "O".  
   

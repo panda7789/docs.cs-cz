@@ -1,28 +1,14 @@
 ---
-title: "Použití modelu spravovaného objektu dokumentu HTML"
-ms.custom: 
+title: Použití modelu spravovaného objektu dokumentu HTML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - managed HTML DOM
 ms.assetid: a017dd5c-cd7b-47e4-952c-f4f54cb48409
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 876cee67f917291214d6ea8b9abf7d2975c1fd25
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 95b14ae455ef8fcd0a81decec21b8305f2573643
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-managed-html-document-object-model"></a>Použití modelu spravovaného objektu dokumentu HTML
 Spravovaný model objektu dokumentu HTML (DOM) poskytuje obálku na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro třídy HTML vystavené Internet Explorer. Použít k manipulaci s stránky HTML, které jsou hostované v těchto tříd <xref:System.Windows.Forms.WebBrowser> ovládací prvek, nebo vytvářet nové stránky od začátku.  

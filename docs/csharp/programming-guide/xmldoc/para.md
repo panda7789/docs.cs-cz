@@ -1,9 +1,6 @@
 ---
-title: "&lt;para&gt; (C# Průvodce programováním)"
+title: '&lt;para&gt; (C# Průvodce programováním)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - <para>
 - para
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-caps.latest.revision: "11"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d33355cde9c499c66b98780c088882376d8d0411
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6b38a5c1321db8eae8eee1b8b167090dad50ebab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltparagt-c-programming-guide"></a>&lt;para&gt; (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
@@ -40,5 +34,5 @@ ms.lasthandoff: 11/21/2017
  V tématu [ \<souhrnné >](../../../csharp/programming-guide/xmldoc/summary.md) příklad použití \<para >.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

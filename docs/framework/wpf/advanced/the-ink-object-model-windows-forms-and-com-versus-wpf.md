@@ -1,10 +1,6 @@
 ---
 title: 'Model inkoustových objektů: Windows Forms a COM vzhledem k platformě WPF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-wpf
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,17 +12,11 @@ helpviewer_keywords:
 - ink [WPF], enabling
 - events [WPF], tablet pen
 ms.assetid: 577835be-b145-4226-8570-1d309e9b3901
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 06a2c2049ec7fe7046bd6dae2711fe8e46592fcf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: aead6d6bf3956c1b5af56d21fb7c15bd1b80bc0d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-ink-object-model-windows-forms-and-com-versus-wpf"></a>Model inkoustových objektů: Windows Forms a COM vzhledem k platformě WPF
 

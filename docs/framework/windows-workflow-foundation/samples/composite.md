@@ -1,24 +1,12 @@
 ---
 title: Složené
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 82d8e85d-8a19-49f4-a3ec-44b7ad543b0f
-caps.latest.revision: 4
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7948ed4cdb65d4cb815af9f849a305656926cebc
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 2462a271b31185066a74d6697f90189f33837a5c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="composite"></a>Složené
 Tato část obsahuje vlastní aktivity ukázky skládá z jiných aktivit v systému Windows Workflow Foundation (WF).  

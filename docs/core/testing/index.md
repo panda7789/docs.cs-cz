@@ -4,16 +4,11 @@ description: Testování částí se nikdy nebyl snazší. V tématu Jak použí
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 652378bc6518218d25d2db1b5d1eceb60e53cde5
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b3d8393cf285eae3493328b16c3dc038af208da6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>V .NET Core a .NET Standard testování částí
 

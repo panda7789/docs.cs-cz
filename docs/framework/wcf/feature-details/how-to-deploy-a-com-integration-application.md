@@ -1,31 +1,19 @@
 ---
-title: "Postupy: Nasazení aplikace integrací COM+"
-ms.custom: 
+title: 'Postupy: Nasazení aplikace integrací COM+'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2e5a0510-db3c-4988-a09c-696285836650
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: aca9df2be74dba308d3c4e4eb1c61b3e1afaa580
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 872d0f0c84c1ac0ea96a87ed24a386bb9bedcf85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-deploy-a-com-integration-application"></a>Postupy: Nasazení aplikace integrací COM+
 Jednou byly zapsány aplikace integrací COM +, můžete chtít nasadit virtuální počítač na jiný počítač. Toto téma popisuje postup přesunutí integrace aplikace modelu COM + z jednoho počítače do druhého.  
   
 ### <a name="moving-a-com-hosted-integration-app"></a>Přesunutí modelu COM + hostované integrace aplikace  
   
-1.  Ujistěte se, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nainstalován v obou počítačích.  
+1.  Zkontrolujte, zda je na obou počítačích nainstalován WCF.  
   
 2.  Exportujte aplikace z počítače A.  
   
@@ -35,11 +23,11 @@ Jednou byly zapsány aplikace integrací COM +, můžete chtít nasadit virtuál
   
 5.  Zkopírujte soubory Application.config a Application.manifest z kořenového adresáře aplikace na počítače A do kořenového adresáře aplikace v počítači B.  
   
-6.  Upravte adresy koncového bodu služby v souboru Application.config na počítači B identifikovat příslušný počítač. Můžete například změňte http://machineA/MyService k http://machineB/MyService.  
+6.  Upravte adresy koncového bodu služby v souboru Application.config na počítači B identifikovat příslušný počítač. Můžete například změnit http://machineA/MyService k http://machineB/MyService.  
   
 ### <a name="moving-a-web-hosted-integration-application"></a>Přesunutí integrace hostované webové aplikace  
   
-1.  Ujistěte se, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nainstalován v obou počítačích.  
+1.  Zkontrolujte, zda je na obou počítačích nainstalován WCF.  
   
 2.  Exportujte aplikace z počítače A.  
   

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití vlastní místní nabídky u objektu TextBox"
-ms.custom: 
+title: 'Postupy: Použití vlastní místní nabídky u objektu TextBox'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - custom context menus [WPF]
 - TextBox control [WPF], custom content menus
 ms.assetid: 842d3cd5-6fa0-4be4-8d90-6c7466213b1c
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4552031a08680af2f4d41702d2f76ed0c44af21b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: edcf6bdf381ae51a3354f9bc0b3c91d86e1f8f44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-custom-context-menu-with-a-textbox"></a>Postupy: Použití vlastní místní nabídky u objektu TextBox
 Tento příklad ukazuje, jak definovat a implementovat jednoduchý vlastní kontextovou nabídku pro <xref:System.Windows.Controls.TextBox>.  

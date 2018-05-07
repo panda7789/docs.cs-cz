@@ -1,10 +1,6 @@
 ---
-title: "&lt;Přidat&gt; element NameValueSectionHandler a DictionarySectionHandler"
+title: '&lt;Přidat&gt; element NameValueSectionHandler a DictionarySectionHandler'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/add
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e29d0007820bb0218338394fe199e7acfd66344e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aeb3e3a4be201369ca2df8d231498dd2400d3c07
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Přidat > element NameValueSectionHandler a DictionarySectionHandler
 
@@ -40,7 +33,7 @@ Přidá nastavení vlastní aplikace. Každý  **\<Přidat >** značka obsahuje 
 
 | Atribut | Popis |
 | --------- | ----------- |
-| **klíč**   | Požadovaný atribut.<br><br>Určuje název nastavení. |
+| **Klíč**   | Požadovaný atribut.<br><br>Určuje název nastavení. |
 | **value** | Požadovaný atribut.<br><br>Určuje hodnotu nastavení. |
 
 ## <a name="parent-element"></a>Nadřazený element

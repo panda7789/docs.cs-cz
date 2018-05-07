@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.GetConfigurationSection
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4872884d-4de9-4968-b703-380677830f0b
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5f9a0b43c13eaf24dbb04424947f7d8c02409ed8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9e5e4df76b1b3a1f4c44fb82b33529c845a68a93
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelgetconfigurationsection"></a>System.ServiceModel.GetConfigurationSection
 System.ServiceModel.GetConfigurationSection  

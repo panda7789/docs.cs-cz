@@ -1,21 +1,15 @@
 ---
-title: "Členové (Průvodce programováním v C#)"
+title: Členové (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-caps.latest.revision: "20"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 184d4f2976b8594c308efeb113a0490499e3460e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 61818b153bb74c5c0da053f381fd1ed9132c066b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="members-c-programming-guide"></a>Členové (Průvodce programováním v C#)
 Třídy a struktury mají členy, které zastupují jejich data a chování. Členy třídy a zahrnují všechny deklarované členy ve třídě, společně s všechny členy (s výjimkou konstruktory a finalizační metody) deklarované v všechny třídy v hierarchii dědičnosti. Soukromé členy základních tříd jsou zděděné, ale nejsou přístupné z odvozených tříd.  
@@ -36,7 +30,7 @@ Třídy a struktury mají členy, které zastupují jejich data a chování. Čl
 |[Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|Vnořené typy jsou typy deklarované v rámci jiného typu. Vnořené typy se často používají k popisu objektů, které jsou používány pouze typy, jež je obsahují.|  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
  [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
  [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  

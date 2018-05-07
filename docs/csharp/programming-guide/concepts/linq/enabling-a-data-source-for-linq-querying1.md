@@ -1,21 +1,12 @@
 ---
-title: "Povolení zdroje dat pro LINQ Querying1"
-ms.custom: 
+title: Povolení zdroje dat pro LINQ Querying1
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: bbb21c5cc0367e0bdc0dd935a5c91538c18c071b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5b67995f40bc0cb703003aa80b511268f21da8b8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Povolení zdroje dat pro dotazy LINQ
 Existují různé způsoby, jak rozšířit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] povolit jakýkoli zdroj dat do být dotazována v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] vzor. Zdrojem dat může být kromě jiného například datová struktura, webová služba, systém souborů nebo databáze. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Vzor usnadňuje klientům dotazy zdroj dat pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování je povolená, protože se syntaxe a vzor dotazu se nemění. Způsoby, ve kterém [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] lze rozšířit pro tyto datové zdroje zahrnují následující:  
@@ -39,7 +30,7 @@ Existují různé způsoby, jak rozšířit [!INCLUDE[vbteclinq](~/includes/vbte
  Nejlepší možnost pro povolení [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování vzdálený zdroj dat je implementace <xref:System.Linq.IQueryable%601> rozhraní. Ale to se liší od zprostředkovatele rozšíření, jako [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pro zdroj dat. Žádné modely zprostředkovatele pro rozšíření stávající [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] technologií, jako například [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], do jiné typy zdroje dat jsou k dispozici v [!INCLUDE[vs_orcas_long](~/includes/vs-orcas-long-md.md)].  
   
 ## <a name="iqueryable-linq-providers"></a>Zprostředkovatelé IQueryable LINQ  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]zprostředkovatelé, kteří implementují <xref:System.Linq.IQueryable%601> se v jejich složitost může výrazně lišit. Tato část pojednává o různých úrovních složitosti.  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatelé, kteří implementují <xref:System.Linq.IQueryable%601> se v jejich složitost může výrazně lišit. Tato část pojednává o různých úrovních složitosti.  
   
  Menší komplexní `IQueryable` zprostředkovatele může rozhraní s jedné metody webové služby. Tento typ zprostředkovatele je velmi specifický, protože v dotazech, které zpracovává, očekává konkrétní informace. Má uzavřený systém typů, pravděpodobně vystavující jeden typ výsledku. Většina spuštění dotazu nastane místně, například pomocí <xref:System.Linq.Enumerable> implementace standardní operátory dotazu. Méně složitý zprostředkovatel může ve stromu výrazů zkoumat pouze jeden výraz volání metody, který představuje dotaz, a nechat zbývající logiku dotazu zpracovat jinde.  
   

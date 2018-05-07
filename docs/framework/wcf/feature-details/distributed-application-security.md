@@ -1,43 +1,31 @@
 ---
 title: Zabezpečení distribuované aplikace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-caps.latest.revision: 32
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8b5bc311262aae1110f7d0249be60135e318785e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d8f34d0c6b0269cc4837313d6613e3cee0eb26c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="distributed-application-security"></a>Zabezpečení distribuované aplikace
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení je rozdělená do tří hlavních funkčním oblastem: přenos zabezpečení, řízení přístupu a auditování. Zabezpečení přenosu poskytuje integrity, šifrování a ověřování. Zabezpečení přenosu poskytuje jednu z následujících: přenosu zabezpečení, zabezpečení zpráv nebo `TransportWithMessageCredential`.  
+Zabezpečení Windows Communication Foundation (WCF) je rozdělená do tří hlavních funkčním oblastem: přenos zabezpečení, řízení přístupu a auditování. Zabezpečení přenosu poskytuje integrity, šifrování a ověřování. Zabezpečení přenosu poskytuje jednu z následujících: přenosu zabezpečení, zabezpečení zpráv nebo `TransportWithMessageCredential`.  
   
- Přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení zpráv najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o další dvě požadované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md) a [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ Přehled zabezpečení zpráv WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o další dvě požadované zabezpečení WCF najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md) a [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ## <a name="transfer-security-scenarios"></a>Scénáře zabezpečení přenosu  
- Běžné scénáře, které využívají [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení přenosu zahrnují následující:  
+ Běžné scénáře, které využívají zabezpečení přenosu WCF zahrnují následující:  
   
--   Zabezpečení přenosu pomocí systému Windows. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a služby jsou nasazeny v doméně systému Windows (nebo doménové struktury systému Windows). Zprávy obsahovat osobní data, takže požadavky na zahrnují vzájemné ověřování klienta a služby, zpráva integrity a důvěrnosti zpráv. Kromě toho se vyžaduje ověření, že konkrétní transakce došlo k chybě, například příjemce zprávy měli zaznamenat informace o podpisu.  
+-   Zabezpečení přenosu pomocí systému Windows. Klienta WCF a služby jsou nasazeny v doméně systému Windows (nebo doménové struktury systému Windows). Zprávy obsahovat osobní data, takže požadavky na zahrnují vzájemné ověřování klienta a služby, zpráva integrity a důvěrnosti zpráv. Kromě toho se vyžaduje ověření, že konkrétní transakce došlo k chybě, například příjemce zprávy měli zaznamenat informace o podpisu.  
   
--   Zabezpečení přenosu pomocí `UserName` a HTTPS. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a služby je třeba pro práci v síti Internet. Pověření klienta ověřování na základě databáze párů jméno a heslo uživatele. Nasazení služby na adresu HTTPS pomocí důvěryhodného certifikátu vrstvy SSL (Secure Sockets). Protože zprávy putovat po Internetu, klient a služba vyžaduje vzájemně ověření a utajení a integrity zprávy musí být zachováno při přenosu.  
+-   Zabezpečení přenosu pomocí `UserName` a HTTPS. Klienta WCF a služby musí být vyvinutá fungovat přes Internet. Pověření klienta ověřování na základě databáze párů jméno a heslo uživatele. Nasazení služby na adresu HTTPS pomocí důvěryhodného certifikátu vrstvy SSL (Secure Sockets). Protože zprávy putovat po Internetu, klient a služba vyžaduje vzájemně ověření a utajení a integrity zprávy musí být zachováno při přenosu.  
   
--   Zabezpečení přenosu pomocí certifikátů. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient a služba musí být vyvinutá fungovat prostřednictvím veřejného Internetu. Klient a služba mají obě certifikáty, které lze použít k zabezpečení zprávy. Klient a služba pomocí Internetu ke komunikaci mezi sebou a k provádění transakcí vysoké hodnoty, které vyžadují integrity zprávy, důvěrnost a vzájemné ověřování.  
+-   Zabezpečení přenosu pomocí certifikátů. Klienta WCF a služba musí být vyvinutá fungovat prostřednictvím veřejného Internetu. Klient a služba mají obě certifikáty, které lze použít k zabezpečení zprávy. Klient a služba pomocí Internetu ke komunikaci mezi sebou a k provádění transakcí vysoké hodnoty, které vyžadují integrity zprávy, důvěrnost a vzájemné ověřování.  
   
 ## <a name="integrity-confidentiality-and-authentication"></a>Integrity, šifrování a ověřování  
  Tři funkce – integrity, šifrování a ověřování – společně se nazývají zabezpečení přenosu. Přenos zabezpečení poskytuje funkce, které pomůžou zmírnit hrozby do distribuované aplikace. Následující tabulka stručně popisuje tři funkce, které tvoří zabezpečení přenosu.  
@@ -49,7 +37,7 @@ ms.lasthandoff: 04/30/2018
 |Ověřování|*Ověřování* je ověření uváděné identity. Například pokud používáte účet bank, je nutné, aby pouze skutečný vlastník účtu povoleno odstoupení fondů. Ověřování se dá zajistit řadu způsobem. Jedna společná metoda je systém uživatele a heslo. Druhý je použití certifikátu X.509. certifikát od třetích stran.|  
   
 ## <a name="security-modes"></a>Režimy zabezpečení  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] má několik režimů zabezpečení přenosu, které jsou popsané v následující tabulce.  
+ WCF má několik režimů zabezpečení přenosu, které jsou popsané v následující tabulce.  
   
 |Režim|Popis|  
 |----------|-----------------|  
@@ -60,11 +48,11 @@ ms.lasthandoff: 04/30/2018
 |Obě|Provede ochrany a ověřování na obou úrovních. Je k dispozici pouze v tomto režimu [ \<– netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) element.|  
   
 ## <a name="credentials-and-transfer-security"></a>Přihlašovací údaje a zabezpečení přenosu  
- A *pověření* jsou data, která se zobrazí k navázání uváděné identity nebo funkce. Prezentace pověření zahrnuje prezentací data a ověření vlastní data. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje celou řadu typů přihlašovacích údajů při přepravě a zpráva úrovně zabezpečení. Můžete zadat typ přihlašovacích údajů pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby.  
+ A *pověření* jsou data, která se zobrazí k navázání uváděné identity nebo funkce. Prezentace pověření zahrnuje prezentací data a ověření vlastní data. WCF podporuje celou řadu typů přihlašovacích údajů při přepravě a zpráva úrovně zabezpečení. Můžete zadat typ přihlašovacích údajů vazby WCF.  
   
  V mnoha zemích nebo oblastech licence ovladače je příkladem pověření. Licence obsahuje data představující identity jeden společnosti a možnosti. Obsahuje důkaz vlastnictví ve formě obrázku vlastník. Licence je vydán důvěryhodnou autoritou, většinou vládních licencování oddělení. Licence je zapečetěná a může obsahovat hologram, zobrazující, že nebyla manipulováno nebo padělat.  
   
- Jako příklad, zvažte dva typy podporovaných v pověření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
+ Jako příklad, zvažte dva typy přihlašovacích údajů, které jsou podporovány ve WCF: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
   
  Pro přihlašovací údaje uživatele název deklarovaná identita představuje uživatelské jméno a heslo uvede ověření u sebe. Jako důvěryhodnou autoritu v tomto případě je systém, který ověří uživatelské jméno a heslo.  
   
@@ -91,16 +79,16 @@ ms.lasthandoff: 04/30/2018
 |-------------|-----------------|  
 |Žádné|Umožňuje pracovat s anonymní klienty služby.|  
 |Windows|Umožňuje výměny zpráv protokolu SOAP dojde za ověřený kontext pověření systému Windows. Vybrat z protokolu Kerberos nebo NTLM jako ověřovací služba používá mechanismus vyjednávání SSPI.|  
-|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s názvem pověření uživatele. Všimněte si, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny kryptografické operace s uživatelským jménem, jako je například generování podpis nebo šifrování dat není povoleno. Jako takový [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vynutí, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
+|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s názvem pověření uživatele. Všimněte si, že všechny kryptografické operace s uživatelským jménem, jako je například generování podpis nebo šifrování dat není povoleno WCF. Jako takový WCF vynutí, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
 |certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu.|  
 |[!INCLUDE[infocard](../../../../includes/infocard-md.md)]|Umožňuje službě vyžadují, ověření klienta pomocí [!INCLUDE[infocard](../../../../includes/infocard-md.md)].|  
   
 ### <a name="programming-credentials"></a>Programování přihlašovací údaje  
- Pro každý typ pověření klienta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model k zadání hodnot přihlašovacích údajů a může validátory přihlašovacích údajů pomocí služby chování kanálu chování.  
+ Pro každý typ pověření klienta můžete programovací model WCF k zadání hodnot přihlašovacích údajů a přihlašovacích údajů validátory pomocí chování služby a chování kanálů.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení má dva typy přihlašovacích údajů: služby chování přihlašovacích údajů a chování přihlašovacích údajů kanálu. Přihlašovací údaje chování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zadejte skutečná data, a to, přihlašovací údaje použít ke splnění požadavků na zabezpečení vyjádřit pomocí vazby. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], třída klienta je běhové komponenty, která převede mezi volání operace a zprávy. Dědí všechny klienty <xref:System.ServiceModel.ClientBase%601> třídy. <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> Vlastnost na základní třída umožňuje určit různé hodnoty pověření klienta.  
+ Zabezpečení WCF má dva typy přihlašovacích údajů: služby chování přihlašovacích údajů a chování přihlašovacích údajů kanálu. Chování přihlašovacích údajů ve službě WCF zadejte skutečná data, a to, přihlašovací údaje používané k požadavkům na zabezpečení vyjádřit pomocí vazby. Ve službě WCF je třída klienta běhové komponenty, která převede mezi volání operace a zprávy. Dědí všechny klienty <xref:System.ServiceModel.ClientBase%601> třídy. <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> Vlastnost na základní třída umožňuje určit různé hodnoty pověření klienta.  
   
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], chování služby jsou atributy použité u třídy implementace kontraktu služby (rozhraní) k programovému řízení služby. <xref:System.ServiceModel.Description.ServiceCredentials> Třída umožňuje určit certifikáty pro služby přihlašovacích údajů a klientské nastavení ověřování pro různé typy pověření klienta.  
+ Chování služby ve službě WCF, jsou atributy použité u třídy implementace kontraktu služby (rozhraní) k programovému řízení služby. <xref:System.ServiceModel.Description.ServiceCredentials> Třída umožňuje určit certifikáty pro služby přihlašovacích údajů a klientské nastavení ověřování pro různé typy pověření klienta.  
   
 ### <a name="negotiation-model-for-message-security"></a>Vyjednávání modelu zabezpečení zpráv  
  Režim zabezpečení zpráv umožňuje provádět přenos zabezpečení tak, aby přihlašovací údaje služby je nakonfigurován na straně klienta vzdálené správy. Například pokud používáte certifikát uložený v úložišti certifikátů systému Windows, musíte použít nástroje, jako je modul snap-in konzoly Microsoft Management Console (MMC).  

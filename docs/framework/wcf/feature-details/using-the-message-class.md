@@ -1,34 +1,20 @@
 ---
 title: Používání třídy Message
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c63a0a88997a1c35b24562bcca3e0fdb40ebfd41
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0ff65d9173838a8eb8850253e62d822f06942f26
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-message-class"></a>Používání třídy Message
-<xref:System.ServiceModel.Channels.Message> Třída je nezbytné, aby [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Veškerá komunikace mezi klienty a služby ve výsledku <xref:System.ServiceModel.Channels.Message> instancí se odesílají a přijímají.  
+<xref:System.ServiceModel.Channels.Message> Třída je základní pro Windows Communication Foundation (WCF). Veškerá komunikace mezi klienty a služby ve výsledku <xref:System.ServiceModel.Channels.Message> instancí se odesílají a přijímají.  
   
- By obvykle interakci s <xref:System.ServiceModel.Channels.Message> přímo třídu. Místo toho [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vytvoří model služby, jako je například datové kontrakty, kontrakty zpráv a operace smlouvy, se používají k popisu příchozí a odchozí zprávy. Ale v některých pokročilé scénáře, které můžete naprogramovat pomocí <xref:System.ServiceModel.Channels.Message> přímo třídu. Například můžete chtít použít <xref:System.ServiceModel.Channels.Message> třídy:  
+ By obvykle interakci s <xref:System.ServiceModel.Channels.Message> přímo třídu. Místo toho konstrukce modelu služby WCF, například kontrakty dat, kontrakty zpráv a kontrakty operace, se používají k popisu příchozí a odchozí zprávy. Ale v některých pokročilé scénáře, které můžete naprogramovat pomocí <xref:System.ServiceModel.Channels.Message> přímo třídu. Například můžete chtít použít <xref:System.ServiceModel.Channels.Message> třídy:  
   
 -   Když potřebujete alternativní způsob vytváření odchozí obsah zprávy (například vytvoření zprávy přímo ze souboru na disku) namísto serializaci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty.  
   
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/28/2018
   
 -   Pokud je potřeba řešit zprávy obecné způsobem, bez ohledu na obsah zprávy (například v případě, že směrování nebo předávat zprávy při sestavování směrovač, Vyrovnávání zatížení nebo publikování-přihlášení k odběru systému).  
   
- Před použitím <xref:System.ServiceModel.Channels.Message> třídy, seznamte se s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přenos dat architektura v [architektury Přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md).  
+ Před použitím <xref:System.ServiceModel.Channels.Message> třídy, seznamte se s architekturou přenos dat WCF v [architektury Přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md).  
   
  A <xref:System.ServiceModel.Channels.Message> je kontejner pro obecné účely pro data, ale jeho návrhu přesně dodržuje návrh zprávy v protokolu SOAP. Stejně jako v protokolu SOAP, zpráva má tělo zprávy a hlaviček. Tělo zprávy obsahuje skutečné datová část dat, zatímco hlavičky obsahovat další data s názvem kontejnery. Pravidla pro čtení a zápis textu a hlavičky se liší, například hlavičky jsou vždy do vyrovnávací paměti v paměti a můžete získat přístup v žádné pořadí libovolný počet dobu, zatímco text lze číst pouze jednou a může být streamování. Za normálních okolností při použití protokolu SOAP, tělo zprávy je namapovaná na textu protokolu SOAP a záhlaví zprávy jsou namapované na hlavičky SOAP.  
   
@@ -181,7 +167,7 @@ ms.lasthandoff: 04/28/2018
  Přístup k datům XML v hlavičce můžete volat <xref:System.ServiceModel.Channels.MessageHeaders.GetReaderAtHeader%2A> a vrátit čtečky XML pro konkrétní hlavičky index. Pokud chcete k deserializaci obsahu hlavičky do objektu, použijte <xref:System.ServiceModel.Channels.MessageHeaders.GetHeader%60%601%28System.Int32%29> nebo jeden z dalšími přetíženími. Nejzákladnější přetížení deserializovat hlavičky pomocí <xref:System.Runtime.Serialization.DataContractSerializer> nakonfigurované ve výchozím způsobem. Pokud chcete použít jiný serializátor nebo jiné konfigurace systému `DataContractSerializer`, použijte jednu z přetížení, které provést `XmlObjectSerializer`. Existují také přetížení, které provést název hlavičky, obor názvů a volitelně seznam `Actor` hodnoty místo index; to je kombinací `FindHeader` a `GetHeader`.  
   
 ## <a name="working-with-properties"></a>Práce s vlastnostmi  
- A `Message` instance může obsahovat libovolný počet pojmenovaných objektů náhodné typy. Tato kolekce je přístupné přes `Properties` vlastnost typu `MessageProperties`. Implementuje kolekce <xref:System.Collections.Generic.IDictionary%602> rozhraní a funguje jako mapování z <xref:System.String> k <xref:System.Object>. Za normálních okolností se nemapují přímo na jakékoliv části zprávy v drátové síti hodnoty vlastností, ale spíš poskytovat různé zpráva zpracování pro různé kanály v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál zásobníku nebo <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> architektura služby. Příklad, naleznete v části [architektury Přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md).  
+ A `Message` instance může obsahovat libovolný počet pojmenovaných objektů náhodné typy. Tato kolekce je přístupné přes `Properties` vlastnost typu `MessageProperties`. Implementuje kolekce <xref:System.Collections.Generic.IDictionary%602> rozhraní a funguje jako mapování z <xref:System.String> k <xref:System.Object>. Za normálních okolností se nemapují přímo na jakékoliv části zprávy v drátové síti hodnoty vlastností, ale spíš poskytují různé zprávy zpracování pomocné parametry různé kanály v zásobníku kanálu WCF nebo na <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> architektura služby. Příklad, naleznete v části [architektury Přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md).  
   
 ## <a name="inheriting-from-the-message-class"></a>Která dědí z třídy Message  
  Pokud integrované zpráv typy vytvořené pomocí `CreateMessage` není vyhovovalo vašim požadavkům, vytvořte třídu, která je odvozena z `Message` třídy.  

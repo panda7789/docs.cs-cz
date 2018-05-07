@@ -1,24 +1,14 @@
 ---
-title: "Omezení rizik: PNG rámce v ikona objektů"
-ms.custom: 
+title: 'Omezení rizik: PNG rámce v ikona objektů'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ca87fefb-7144-4b4e-8832-5a939adbb4b2
-caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5968ea06ff659041db34a1dea54dfc78ec6f68ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c3ee5cc03f684acf103c96ecd14387f119bf0bdc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mitigation-png-frames-in-icon-objects"></a>Omezení rizik: PNG rámce v ikona objektů
 Od verze rozhraní .NET Framework 4.6 <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> metoda převede úspěšně ikony s PNG rámce do <xref:System.Drawing.Bitmap> objekty.  

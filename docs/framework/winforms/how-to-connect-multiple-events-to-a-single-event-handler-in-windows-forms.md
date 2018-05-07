@@ -1,14 +1,6 @@
 ---
-title: "Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms"
-ms.custom: 
+title: 'Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - vb
 helpviewer_keywords:
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - Windows Forms controls, events
 - menu items [Windows Forms], multicasting event-handling methods
 ms.assetid: 5a20749a-41b5-4acc-8eb1-9e5040b0a2c4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bfd955b4153c7a2bc54d8b52ff1801541c3a7559
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 527a76376a4c1d5ad051f4768ca2bd42c3548b3d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms
 Při návrhu aplikace možná bude nutné použít více událostí jedné obslužné rutině událostí nebo mít více událostí, použijte stejný postup. Je třeba často výkonné spoustu času tak, aby měl příkaz nabídky vyvolání stejné události, jak to dělá tlačítko ve formuláři, pokud jejich zpřístupnění stejné funkce. Můžete to provést pomocí zobrazení událostí okna vlastnosti v jazyce C# nebo `Handles` – klíčové slovo a **název třídy** a **název metody** rozevíracího seznamu polí v editoru kódu jazyka Visual Basic.  

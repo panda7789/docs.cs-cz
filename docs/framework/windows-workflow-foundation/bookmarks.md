@@ -1,23 +1,12 @@
 ---
 title: Bookmarks1
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9b51a346-09ae-455c-a70a-e2264ddeb9e2
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd30abdb158f07724e7acdf172546111e3330713
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8b7ca9549327087e30d6c72a8b784aa37ad09f3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bookmarks"></a>Záložky
 Záložky jsou mechanismus, který umožňuje aktivitu pasivně čekání na vstup bez podržíte do pracovního postupu vlákno. Pokud aktivita signalizuje, že se čeká na podnětem, může vytvořit záložky. To znamená modulu runtime, že provádění aktivity by neměl být považováno za dokončené i v případě metodu aktuálně prováděné (které vytvořili <xref:System.Activities.Bookmark>) vrátí.  
@@ -124,4 +113,4 @@ syncEvent.WaitOne();
  Když `ReadLine` aktivita se spustí, vytvoří <xref:System.Activities.Bookmark> s názvem `UserName` a potom počká, než záložku být obnoven. Hostitel shromažďuje k požadovaným datům a potom obnoví <xref:System.Activities.Bookmark>. Pracovní postup obnoví, zobrazí název a potom dokončí. Všimněte si, že žádný kód synchronizace je vyžadována s ohledem na obnovení záložky. A <xref:System.Activities.Bookmark> lze obnovit pouze při nečinnosti pracovního postupu, a pokud pracovní postup není nečinnosti, volání <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> zablokuje, dokud nebude nečinnosti pracovního postupu.  
   
 ## <a name="bookmark-resumption-result"></a>Výsledek obnovení záložek  
- <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A>Vrátí <xref:System.Activities.BookmarkResumptionResult> hodnota výčtu lze označit výsledky záložku obnovení žádosti. Návratové hodnoty jsou <xref:System.Activities.BookmarkResumptionResult.Success>, <xref:System.Activities.BookmarkResumptionResult.NotReady>, a <xref:System.Activities.BookmarkResumptionResult.NotFound>. Hostitelé a rozšíření můžete použít tuto hodnotu určit, jak pokračovat.
+ <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> Vrátí <xref:System.Activities.BookmarkResumptionResult> hodnota výčtu lze označit výsledky záložku obnovení žádosti. Návratové hodnoty jsou <xref:System.Activities.BookmarkResumptionResult.Success>, <xref:System.Activities.BookmarkResumptionResult.NotReady>, a <xref:System.Activities.BookmarkResumptionResult.NotFound>. Hostitelé a rozšíření můžete použít tuto hodnotu určit, jak pokračovat.

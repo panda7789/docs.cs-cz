@@ -1,13 +1,6 @@
 ---
-title: "Optimalizace výkonu: Chování objektu"
-ms.custom: 
+title: 'Optimalizace výkonu: Chování objektu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - object performance considerations [WPF]
 - Freezable objects [WPF], performance
 ms.assetid: 73aa2f47-1d73-439a-be1f-78dc4ba2b5bd
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 12c4dc202ac4db2c21b0a45b61608f5c03c24ac9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e1f56dec87de7a22aa8a0bfefe84222d74ba085
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-object-behavior"></a>Optimalizace výkonu: Chování objektu
 Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekty pomůže vám správné kompromisy mezi funkcí a výkonu.  
@@ -38,7 +26,7 @@ Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/
 ## <a name="not-removing-event-handlers-on-objects-may-keep-objects-alive"></a>Může objekty zachování není odebrání obslužné rutiny událostí na objekty  
  Odkaz na tento objekt je efektivně delegáta, který objekt předá jeho událost. Proto obslužné rutiny událostí můžete zachovat objekty zachování déle, než se očekávalo. Při provádění vyčištění objektu, který je zaregistrovaná pro naslouchání na objektu události, je nezbytné k odebrání tohoto delegáta před uvolněním objektu. Zachování nepotřebné objekty zachování zvyšuje využití paměti aplikaci. To platí hlavně pokud je objekt kořen logického stromu nebo vizuálním stromu.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]představuje vzor naslouchací proces slabé události pro události, které může být užitečné v situacích, kde je obtížné sledovat vztahy životnosti objektů mezi zdrojem a naslouchací proces. Některé stávající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události pomocí tohoto vzoru. Pokud implementujete objekty s vlastní události, může být tento vzor použití vám. Podrobnosti najdete v tématu [slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] představuje vzor naslouchací proces slabé události pro události, které může být užitečné v situacích, kde je obtížné sledovat vztahy životnosti objektů mezi zdrojem a naslouchací proces. Některé stávající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události pomocí tohoto vzoru. Pokud implementujete objekty s vlastní události, může být tento vzor použití vám. Podrobnosti najdete v tématu [slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md).  
   
  Je několik nástrojů, jako je například profileru CLR a práce nastavte prohlížeč, můžete poskytující informace o využití paměti zadané procesu. Zahrnuje několik velmi užitečné zobrazení přidělení profilu, včetně histogram přidělené typy, přidělení a volání grafů, časová osa zobrazení kolekce různých generací a výsledný stav spravovaná halda po CLR profileru Tyto kolekce a volání stromu zobrazující za metoda přidělování a načítání sestavení. Další informace najdete v tématu [rozhraní .NET Framework Developer Center](http://go.microsoft.com/fwlink/?LinkId=117435).  
   
@@ -80,8 +68,8 @@ Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
 |**Stav**|**Velikost**|  
 |---------------|--------------|  
-|Pozastaveny<xref:System.Windows.Media.SolidColorBrush>|212 bajtů|  
-|Bez pozastaveny<xref:System.Windows.Media.SolidColorBrush>|972 bajtů|  
+|Pozastaveny <xref:System.Windows.Media.SolidColorBrush>|212 bajtů|  
+|Bez pozastaveny <xref:System.Windows.Media.SolidColorBrush>|972 bajtů|  
   
  Následující příklad kódu ukazuje tento koncept:  
   
@@ -91,7 +79,7 @@ Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/
 ### <a name="changed-handlers-on-unfrozen-freezables-may-keep-objects-alive"></a>Změněné obslužné rutiny na nefixované Freezables může objekty zachování  
  Delegáta, který předá objekt <xref:System.Windows.Freezable> objektu <xref:System.Windows.Freezable.Changed> událostí je efektivně odkaz na tento objekt. Proto <xref:System.Windows.Freezable.Changed> obslužné rutiny událostí můžete zachovat objekty zachování déle, než se očekávalo. Při provádění vyčištění objektu, která je zaregistrovaná pro naslouchání na <xref:System.Windows.Freezable> objektu <xref:System.Windows.Freezable.Changed> událostí, je nezbytné k odebrání tohoto delegáta před uvolněním objektu.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]také zachytí <xref:System.Windows.Freezable.Changed> události interně. Například všechny vlastnosti závislosti, které trvat <xref:System.Windows.Freezable> jako hodnotu bude naslouchat na <xref:System.Windows.Freezable.Changed> události automaticky. <xref:System.Windows.Shapes.Shape.Fill%2A> Vlastnost, která přebírá <xref:System.Windows.Media.Brush>, tento princip je zobrazen.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také zachytí <xref:System.Windows.Freezable.Changed> události interně. Například všechny vlastnosti závislosti, které trvat <xref:System.Windows.Freezable> jako hodnotu bude naslouchat na <xref:System.Windows.Freezable.Changed> události automaticky. <xref:System.Windows.Shapes.Shape.Fill%2A> Vlastnost, která přebírá <xref:System.Windows.Media.Brush>, tento princip je zobrazen.  
   
  [!code-csharp[Performance#PerformanceSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml.cs#performancesnippet4)]
  [!code-vb[Performance#PerformanceSnippet4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/window1.xaml.vb#performancesnippet4)]  
@@ -110,7 +98,7 @@ Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
 <a name="User_Interface_Virtualization"></a>   
 ## <a name="user-interface-virtualization"></a>Virtualizace uživatelského rozhraní  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]také poskytuje varianta <xref:System.Windows.Controls.StackPanel> element, který automaticky "Virtualizuje" obsah podřízené vázané na data. V tomto kontextu slovo Virtualizovat odkazuje na techniku, podle kterého se generují podmnožinu objektů větší počet datových položek na základě položek, které jsou viditelné na obrazovce. Je náročné, jak z hlediska paměti a procesoru k vygenerování velkého počtu prvky uživatelského rozhraní při jen několik může být na obrazovce v daném okamžiku. <xref:System.Windows.Controls.VirtualizingStackPanel>(prostřednictvím funkce poskytované službou <xref:System.Windows.Controls.VirtualizingPanel>) vypočítá viditelné položky a funguje s <xref:System.Windows.Controls.ItemContainerGenerator> z <xref:System.Windows.Controls.ItemsControl> (například <xref:System.Windows.Controls.ListBox> nebo <xref:System.Windows.Controls.ListView>) pouze vytvořit elementů pro položky viditelné.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje varianta <xref:System.Windows.Controls.StackPanel> element, který automaticky "Virtualizuje" obsah podřízené vázané na data. V tomto kontextu slovo Virtualizovat odkazuje na techniku, podle kterého se generují podmnožinu objektů větší počet datových položek na základě položek, které jsou viditelné na obrazovce. Je náročné, jak z hlediska paměti a procesoru k vygenerování velkého počtu prvky uživatelského rozhraní při jen několik může být na obrazovce v daném okamžiku. <xref:System.Windows.Controls.VirtualizingStackPanel> (prostřednictvím funkce poskytované službou <xref:System.Windows.Controls.VirtualizingPanel>) vypočítá viditelné položky a funguje s <xref:System.Windows.Controls.ItemContainerGenerator> z <xref:System.Windows.Controls.ItemsControl> (například <xref:System.Windows.Controls.ListBox> nebo <xref:System.Windows.Controls.ListView>) pouze vytvořit elementů pro položky viditelné.  
   
  Jako optimalizace výkonu vizuální objekty pro tyto položky jsou pouze generována nebo zachovány zachování připojení, pokud jsou viditelné na obrazovce. Když jsou už v oblasti zobrazitelné ovládacího prvku, může být odebrán vizuální objekty. Toto je Nezaměňovat s virtualizací datových, kde datové objekty nejsou všechny obsažené v místní kolekce-místo datovým proudem, podle potřeby.  
   

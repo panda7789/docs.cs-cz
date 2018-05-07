@@ -1,30 +1,18 @@
 ---
 title: Rozhraní API ALink (referenční dokumentace nespravovaného rozhraní API)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: reference
 f1_keywords:
 - ALink
 helpviewer_keywords:
 - ALink API
 ms.assetid: f4a84be2-309c-439c-b686-6facb85f4654
-caps.latest.revision: 14
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 92c4d7c6693e3a2a011cb4ac39b42a1d96985a36
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a1056e1b8d544e514063c6c1ad20b447815960ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="alink-api-unmanaged-api-reference"></a>Rozhraní API ALink (referenční dokumentace nespravovaného rozhraní API)
 Podporuje vytváření sestavení rozhraní .NET Framework a nevázaný moduly.  

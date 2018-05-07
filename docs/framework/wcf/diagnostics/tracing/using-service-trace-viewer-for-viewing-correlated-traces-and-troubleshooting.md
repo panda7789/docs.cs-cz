@@ -1,30 +1,18 @@
 ---
-title: "Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů"
-ms.custom: 
+title: Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13c862c8191a9bc312de743fc3ed99396c600f8f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: bfc0d2c10bfdca253f2ce410a4cd38218b3f5cfe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting"></a>Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 Toto téma popisuje formát dat trasování, jak zobrazit a přístupy, které použití prohlížeče trasování služby problém s vaší aplikací.  
   
 ## <a name="using-the-service-trace-viewer-tool"></a>Pomocí nástroje prohlížeče trasování služby  
- [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] Nástroj prohlížeče trasování služeb umožňuje korelovat diagnostické trasování vyprodukované [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] naslouchací procesy najít kořenu způsobit chyby. Nástroj nabízí způsob, jak snadno zobrazit skupiny, a trasování filtru tak, aby můžete určit příčiny, opravte a zkontrolujte problémy s [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby. Další informace o použití tohoto nástroje najdete v tématu [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
+ Nástroj prohlížeče trasování služeb Windows Communication Foundation (WCF) umožňuje korelovat diagnostické trasování vyprodukované [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] naslouchací procesy najít kořenu způsobit chyby. Nástroj nabízí způsob, jak snadno zobrazit skupiny, a trasování filtru tak, aby můžete určit příčiny, opravte a zkontrolujte problémy s [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby. Další informace o použití tohoto nástroje najdete v tématu [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
   
  Toto téma obsahuje snímky obrazovky trasování generované systémem [trasování a protokolování zpráv](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázkové, při zobrazení pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Toto téma ukazuje, jak pochopit obsah trasování, aktivity a jejich korelace a jak analyzovat velké počty trasování, při řešení potíží.  
   
@@ -146,7 +134,7 @@ Toto téma popisuje formát dat trasování, jak zobrazit a přístupy, které p
   
  Když jsme v levém panelu vyberte aktivitu, jsme můžete zobrazit vnořených aktivit a trasování v horním pravém panelu. Proto je snížené hierarchické zobrazení seznamu aktivit na levé straně na základě vybrané nadřazené aktivity. Vybraná akce procesu přidat je první požadavek, a proto tato aktivita obsahuje aktivitu nastavit až zabezpečené relace (přenos pro přenos zpět z) a trasování pro vlastní zpracování přidat akci.  
   
- Když dvakrát kliknete na akci procesu přidat aktivitu v levém panelu, jsme najdete v části grafické reprezentace klienta [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] činnosti týkající se přidat. První aktivitu na levé straně je aktivita kořenové (0000), což je výchozí aktivity. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]přenosy mimo vedlejším aktivity. Pokud to není definován, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] přenosy mimo 0000. Druhá aktivita, proces přidat akci, zde přenáší mimo 0. Potom jsme najdete v části instalace zabezpečené relace.  
+ Když dvakrát kliknete na akci procesu přidat aktivitu v levém panelu, jsme najdete v části grafické reprezentace klienta [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] činnosti týkající se přidat. První aktivitu na levé straně je aktivita kořenové (0000), což je výchozí aktivity. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] přenosy mimo vedlejším aktivity. Pokud to není definován, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] přenosy mimo 0000. Druhá aktivita, proces přidat akci, zde přenáší mimo 0. Potom jsme najdete v části instalace zabezpečené relace.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace5.gif "e2eTrace5")  
 Graf zobrazení činnosti klienta WCF: vedlejším aktivity (sem 0), akce procesu a nastavit si zabezpečené relace  

@@ -1,24 +1,12 @@
 ---
-title: "4027 – WasDisconnected"
-ms.custom: 
+title: 4027 – WasDisconnected
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 940337a3-3094-488a-a1b5-0fb4ab16da73
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 02cf010589df421aaabe8794e0c5133293262aef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 03b879f1bc45528d70aa5b98b8b46e87903c7f4d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4027---wasdisconnected"></a>4027 – WasDisconnected
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|4027|  
 |Klíčová slova|ActivationServices|  
 |úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované při odpojení aktivační služba systému Windows.  

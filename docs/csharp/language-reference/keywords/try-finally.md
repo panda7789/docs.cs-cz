@@ -1,9 +1,6 @@
 ---
-title: "try-finally (Referenční dokumentace jazyka C#)"
+title: try-finally (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - finally
 - finally_CSharpKeyword
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - finally keyword [C#]
 - try-finally statement [C#]
 ms.assetid: c27623fb-7261-4464-862c-7a369d3c8f0a
-caps.latest.revision: "25"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 927b851419f2c5245518ee39bf847cb1f1664917
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 696eb531fe3e340f7fe0ae12483648119cf5a7eb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="try-finally-c-reference"></a>try-finally (Referenční dokumentace jazyka C#)
 Pomocí `finally` blok, můžete vyčistit všechny prostředky, které jsou přiděleny v [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blok a kód můžete spustit i v případě, že dojde k výjimce v `try` bloku. Obvykle prohlášení o `finally` bloku spustit, když opustí řízení `try` příkaz. Přenos řízení může nastat v důsledku normální spuštění, spuštění `break`, `continue`, `goto`, nebo `return` prohlášení, nebo propagace výjimku z `try` příkaz.  
@@ -45,10 +39,10 @@ Pomocí `finally` blok, můžete vyčistit všechny prostředky, které jsou př
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Zkuste, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)  
+ [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)  
  [Příkazy zpracování výjimek](../../../csharp/language-reference/keywords/exception-handling-statements.md)  
  [throw](../../../csharp/language-reference/keywords/throw.md)  
- [try-catch –](../../../csharp/language-reference/keywords/try-catch.md)  
- [Postupy: explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+ [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
+ [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

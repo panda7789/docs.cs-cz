@@ -2,19 +2,14 @@
 title: Další nástroje .NET core
 description: Přehled další nástroje, které podporují a rozšiřovat funkce .NET Core.
 author: mlacouture
-manager: wpickett
 ms.author: johalex
 ms.date: 01/19/2018
-ms.topic: conceptual
-ms.prod: dotnet-core
 ms.custom: mvc
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 2e33cdbcbe9c81e6c3af84f8f2795ee3dc6e28ae
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 578d42e5a0a11ae76410289142d47c8d65abe7aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-additional-tools"></a>Další nástroje .NET core
 

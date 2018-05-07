@@ -1,24 +1,17 @@
 ---
 title: partial (typ) (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - partialtype
 - partialtype_CSharpKeyword
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-caps.latest.revision: 24
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 5212984cc577ce05fc4697e0d648fb5545528562
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4f57149dd18deb08aa11b72d0a6d5f71b3838bd1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="partial-type-c-reference"></a>partial (typ) (Referenční dokumentace jazyka C#)
 Aby se daly rozdělit do několika souborů umožňují definice třídy, struktury nebo rozhraní definice částečné typu.  
@@ -39,6 +32,6 @@ Aby se daly rozdělit do několika souborů umožňují definice třídy, strukt
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
  [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)

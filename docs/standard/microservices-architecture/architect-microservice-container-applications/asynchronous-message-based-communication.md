@@ -1,21 +1,14 @@
 ---
 title: Asynchronní komunikaci na základě zpráv
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Asynchronní komunikaci na základě zpráv
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7c216dba3b763c310fe17e6294ae5f2b091f71f9
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: bee9a6215d2952f6c7f71607b1c4b1f44d1c0faf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikaci na základě zpráv
 

@@ -1,20 +1,13 @@
 ---
-title: "System.Delegate a klíčové slovo 'delegáta."
-description: "Další informace o třídách v rozhraní .NET Framework, které podporují Delegáti a ty mapování do – klíčové slovo 'delegovat'."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: System.Delegate a `delegate` – klíčové slovo
+description: Další informace o třídách v rozhraní .NET Framework, které podporují Delegáti a ty mapování do – klíčové slovo 'delegovat'.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 09c7da7c780389d3819cf23a533cc425b43ad5ff
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 2265d081b884a19cda6fc9d80a0f621a30c87e2a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate a `delegate` – klíčové slovo
 
@@ -136,8 +129,8 @@ I když odvozené třídy nelze vytvořit přímo, budete používat metody defi
 
 První, nejdůležitější fakt zapamatujte si je, že každý delegáta pracujete s je odvozený od `MulticastDelegate`. Vícesměrového vysílání delegáta znamená, že více než jeden cíl metoda lze uplatnit při vyvolání prostřednictvím delegáta. Původní návrh za mezi delegáti, kde může připojit a vyvolá metoda pouze jeden cíl a delegáti, kde může několik metod cílový připojit a vyvolá. Tento rozdíl ukázalo jako méně užitečné v praxi než původně představit. Dvěma různými třídami již byly vytvořeny a byly v rámci od prvního vydání veřejné.
 
-Metody, které budete používat nejvíce s delegáti `Invoke()` a `BeginInvoke()`  /  `EndInvoke()`. `Invoke()`vyvolá všechny metody, které byly připojeny k instanci konkrétního delegáta. Jak už jste viděli výše, obvykle vyvolání delegáti pomocí syntaxe volání metody na proměnnou delegáta. Jak uvidíte [dál v této série](delegates-patterns.md), existují vzorů, které pracovat přímo s těchto metod.
+Metody, které budete používat nejvíce s delegáti `Invoke()` a `BeginInvoke()`  /  `EndInvoke()`. `Invoke()` vyvolá všechny metody, které byly připojeny k instanci konkrétního delegáta. Jak už jste viděli výše, obvykle vyvolání delegáti pomocí syntaxe volání metody na proměnnou delegáta. Jak uvidíte [dál v této série](delegates-patterns.md), existují vzorů, které pracovat přímo s těchto metod.
 
 Teď, když jste se seznámili syntaxe jazyka a třídy, které podporují delegáti, Podívejme se na tom, jak silného typu delegáti se používají, vytvoření a volá.
 
-[Další](delegates-strongly-typed.md)
+[Next](delegates-strongly-typed.md)

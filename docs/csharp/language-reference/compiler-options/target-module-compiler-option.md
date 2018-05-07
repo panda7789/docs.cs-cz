@@ -1,10 +1,6 @@
 ---
-title: "-target: module (možnosti kompilátoru C#)"
+title: '-target: module (možnosti kompilátoru C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /target:module
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 679d659b2806fb875f908cee840a62278c99096f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d02a46390ca34b8063320df6ec237a00c0423c88
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target: module (možnosti kompilátoru C#)
 Tato možnost způsobí, že kompilátor není generování manifestu sestavení.  

@@ -1,31 +1,17 @@
 ---
 title: Směrovací služba
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-caps.latest.revision: 13
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8ff2a99bc06ab0de2aedce98ea029f484e47053f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: e3170108ae190c08a42cc7d80d66576a7b4f8a8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-service"></a>Směrovací služba
 Služba Směrování je obecný prostředník SOAP, který funguje jako směrovač zpráv. Základní funkce služby směrování je umožňuje směrovat zprávy na základě obsahu zprávy, která umožňuje zprávu, která se předají do koncového bodu klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.  
   
- <xref:System.ServiceModel.Routing.RoutingService> Je implementovaný jako [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v <xref:System.ServiceModel.Routing> oboru názvů. Směrovací služby vystavuje jeden nebo více koncových bodů služby které přijímají zprávy a pak trasy každou zprávu na jeden nebo více koncových bodů klienta na základě obsahu zprávy. Služba poskytuje následující funkce:  
+ <xref:System.ServiceModel.Routing.RoutingService> Je implementovaný jako služba Windows Communication Foundation (WCF) v <xref:System.ServiceModel.Routing> oboru názvů. Směrovací služby vystavuje jeden nebo více koncových bodů služby které přijímají zprávy a pak trasy každou zprávu na jeden nebo více koncových bodů klienta na základě obsahu zprávy. Služba poskytuje následující funkce:  
   
 -   Na základě obsahu směrování  
   
@@ -47,10 +33,10 @@ Služba Směrování je obecný prostředník SOAP, který funguje jako směrova
   
  I když je možné vytvořit zprostředkující služby, který má jeden nebo více těchto cílů, často takové implementace je vázaný na konkrétní scénář nebo řešení a nelze snadno použít pro nové aplikace.  
   
- Služba směrování poskytuje obecné, dynamicky Konfigurovatelný a modulární zprostředkovatel SOAP, který je kompatibilní s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a kanál modelů a umožňuje provádět na základě obsahu směrování založený na protokolu SOAP zprávy.  
+ Služba směrování poskytuje obecné, dynamicky Konfigurovatelný a modulární zprostředkovatel SOAP, který je kompatibilní s modelem služby WCF a kanál a umožňuje provádět na základě obsahu směrování založený na protokolu SOAP zprávy.  
   
 > [!NOTE]
->  Služba Směrování nepodporuje aktuálně směrování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby REST.  Ke směrování volání REST, zvažte použití <xref:System.Web.Routing> nebo [směrování žádostí na aplikace](http://go.microsoft.com/fwlink/?LinkId=164589) (http://go.microsoft.com/fwlink/?LinkId=164589).  
+>  Směrovací služby nepodporuje aktuálně směrování služby WCF REST.  Ke směrování volání REST, zvažte použití <xref:System.Web.Routing> nebo [směrování žádostí na aplikace](http://go.microsoft.com/fwlink/?LinkId=164589) (http://go.microsoft.com/fwlink/?LinkId=164589).  
   
 ## <a name="content-based-routing"></a>Na základě obsahu směrování  
  Umožňuje směrovat zprávy založené na jednu nebo více hodnot, které jsou součástí zprávy je založená na obsahu směrování. Směrovací služby kontroluje každou zprávu a trasy ho do cílového koncového bodu na základě obsah zprávy a směrování logiku, které vytvoříte. Na základě obsahu směrování poskytuje základ pro služby agregace, Správa verzí služeb a s prioritou směrování.  

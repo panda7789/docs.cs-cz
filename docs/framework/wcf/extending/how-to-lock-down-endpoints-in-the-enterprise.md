@@ -1,29 +1,15 @@
 ---
 title: 'Postupy: uzamčení koncových bodů v podnikové síti'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e5b10665e9a820c7057231c684769bddf9cb0c79
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: c91faf201c9a7cb0e5dd810059dbaa39b1e8eb05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: uzamčení koncových bodů v podnikové síti
-Velké podniky často vyžadují, že se aplikace vyvinuté souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalovat klienta validátoru koncový bod, který lze ověřit, zda všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klientské aplikace nainstalované na počítačích.  
+Velké podniky často vyžadují, že se aplikace vyvinuté souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalovat klienta validátoru koncový bod, který slouží k ověření všechny aplikace klienta Windows Communication Foundation (WCF) nainstalované v počítačích.  
   
  V takovém případě validátor je ověření klienta, protože toto chování koncový bod se přidá do klienta [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) oddíl v souboru machine.config. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] načte společné chování koncový bod pouze pro klientské aplikace a načte společné chování služby pouze pro aplikace služby. Chcete-li nainstalovat tento stejný validátor pro aplikace služby, musí být validátor chování služby. Další informace najdete v tématu [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) části.  
   

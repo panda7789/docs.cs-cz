@@ -1,20 +1,13 @@
 ---
-title: "Provedení levých vnějších spojení"
-description: "Postup provedení levých vnějších spojení."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Provedení levých vnějších spojení
+description: Postup provedení levých vnějších spojení.
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: f542cee6-3169-4dcf-a631-3a6a79ccd473
-ms.openlocfilehash: 0c28c85bf933a411403aefcb91801d28fe1c268e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aacab1ac6f4ab2c10b393cf0b2c578a13d9b9306
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="perform-left-outer-joins"></a>Provedení levých vnějších spojení
 Levé vnější spojení je výsledkem spojení v které každý prvek první kolekce se vrátí, bez ohledu na to, jestli má všechny korelační elementy v druhé kolekci. Je možné použít k provedení levé vnější spojení voláním LINQ <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> metoda na výsledcích skupiny spojení.  

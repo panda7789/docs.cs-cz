@@ -1,14 +1,6 @@
 ---
-title: "Icordebugappdomain2 – Interface1"
-ms.custom: 
+title: Icordebugappdomain2 – Interface1
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugAppDomain2
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 314d29f3-feb0-4a92-9530-b569c280cc31
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c811107fcf32696aee17810af06ac0b2ddc9102d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff6ffdd733cf6e7b923d88d057d7cd230c8d8541
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugappdomain2-interface1"></a>Icordebugappdomain2 – Interface1
 Poskytuje metody pro práci s pole, ukazatelů, ukazatelů na funkce a odkazové typy. Toto rozhraní je rozšíření rozhraní ICorDebugAppDomain.  
@@ -56,7 +44,7 @@ Poskytuje metody pro práci s pole, ukazatelů, ukazatelů na funkce a odkazové
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -2,19 +2,15 @@
 title: Pomocí generátoru serializátor Microsoft XML na .NET Core
 description: Přehled generátor serializátor XML společnosti Microsoft.
 author: mlacouture
-manager: wpickett
 ms.author: johalex
 ms.date: 01/19/2017
 ms.topic: tutorial
-ms.prod: dotnet-core
 ms.custom: mvc
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: d7332546cf7643ff808a29c83d13050571447666
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 98d85821784757db903c97e240c55a3d7bb656d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Pomocí generátoru serializátor Microsoft XML na .NET Core
 

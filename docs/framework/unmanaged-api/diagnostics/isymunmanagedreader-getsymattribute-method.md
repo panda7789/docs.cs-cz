@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedReader::GetSymAttribute – metoda"
-ms.custom: 
+title: ISymUnmanagedReader::GetSymAttribute – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedReader.GetSymAttribute
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: c675ce7e-76e7-45ff-8273-3b6489a2767c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9795d5c7937f3c66c799665ba0e07e70c2be0b66
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c9f22f23835f01022d5d62596b2cf63425759193
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedreadergetsymattribute-method"></a>ISymUnmanagedReader::GetSymAttribute – metoda
 Získá vlastní atribut na základě jeho názvu. Na rozdíl od metadata vlastní atributy jsou tyto vlastní atributy uložené v úložišti symbol.  

@@ -1,23 +1,16 @@
 ---
 title: 'Postupy: Získávání adresy proměnné (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - variables [C#], address of
 - pointers [C#], & operator
 - pointer expressions [C#], address-of operator
 ms.assetid: 44fe2cd9-a64f-4ef5-be2a-09ce807c0182
-caps.latest.revision: 19
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 63a49490effb8b7d365492e8518b7558ec03a705
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bb52aee3341194697b40b30ec14afced61a200be
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-obtain-the-address-of-a-variable-c-programming-guide"></a>Postupy: Získávání adresy proměnné (Průvodce programováním v C#)
 Pokud chcete získat adresu unární výraz, který vyhodnocuje pevné proměnné, použijte operátor adresy `&`:  

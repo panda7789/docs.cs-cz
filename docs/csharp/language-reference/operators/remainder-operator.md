@@ -1,24 +1,17 @@
 ---
 title: '% – operátor (Referenční dokumentace jazyka C#)'
 ms.date: 04/04/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '%_CSharpKeyword'
 helpviewer_keywords:
 - remainder operator [C#]
 - '% operator [C#]'
 ms.assetid: 3b74f4f9-fd9c-45e7-84fa-c8d71a0dfad7
-caps.latest.revision: 15
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 796b4a40347fc5881db27a8a8a28404c7c4e8c5b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: b906feb22aaec97e58da562b615baae01f3e0719
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-c-reference"></a>% – operátor (Referenční dokumentace jazyka C#)
 Operátor zbytku (`%`) vypočítá zbytek po dělení jeho první operand jeho sekundu. Všechny číselné typy obsahuje předdefinované zbývající operátory. 

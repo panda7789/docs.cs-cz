@@ -1,14 +1,6 @@
 ---
-title: "IHostSecurityManager::ImpersonateLoggedOnUser – metoda"
-ms.custom: 
+title: IHostSecurityManager::ImpersonateLoggedOnUser – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostSecurityManager.ImpersonateLoggedOnUser
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: acc49ba0-f1d9-45ad-871f-9d053a89dcbe
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bf01ca07544fcce59eef81707bb1ff2d1f375feb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dc57c9465bfafde17156eeec65e52d65c8af9038
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostsecuritymanagerimpersonateloggedonuser-method"></a>IHostSecurityManager::ImpersonateLoggedOnUser – metoda
 Požadavky kódu být spuštěn pomocí pověření aktuální identita uživatele.  
@@ -54,7 +42,7 @@ HRESULT ImpersonateLoggedOnUser (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ImpersonateLoggedOnUser`úspěšně vrácena.|  
+|S_OK|`ImpersonateLoggedOnUser` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -73,7 +61,7 @@ HRESULT ImpersonateLoggedOnUser (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IHostSecurityContext – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)  

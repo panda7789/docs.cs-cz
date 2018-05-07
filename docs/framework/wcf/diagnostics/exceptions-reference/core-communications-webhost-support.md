@@ -1,24 +1,12 @@
 ---
-title: "Základní komunikace: Podpora webového hostitele"
-ms.custom: 
+title: 'Základní komunikace: Podpora webového hostitele'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 034c501f-96f9-4ef7-9602-3ac21788fd3e
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d8fd3ab00f8a0bf26a463e30556826c09820869f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 724dc2eb66d058920fda07af899cd7464182c438
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="core-communications-webhost-support"></a>Základní komunikace: Podpora webového hostitele
 Toto téma uvádí všechny výjimky generované podpora webového hostitele.  

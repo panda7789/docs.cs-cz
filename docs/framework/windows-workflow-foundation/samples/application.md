@@ -1,24 +1,12 @@
 ---
 title: Aplikace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 22d27e12-ab04-432b-9695-9f74e098cff3
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c4aa2a1a2510bd915d9c1225c2a6be6e16712192
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: c37eaeca486d01a352df9cb53dc34650393a0b81
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="application"></a>Aplikace
 Tato část obsahuje ukázky související s pracovní postup aplikace Windows Workflow Foundation (WF).  

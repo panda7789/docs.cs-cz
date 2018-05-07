@@ -1,23 +1,16 @@
 ---
-title: "Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; musí být větší než nula."
+title: Argument &#39; &lt;název argumentu argumentname&gt; &#39; musí být větší než nula.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrArgument_GTZero1
 ms.assetid: f9939fbd-6c4f-4871-9452-9ea0267e948e
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 857ab77428dec212c4fc3eddd7b827a721c1f10d
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 101ebfbf86805ffc0db362cc433900027e064a72
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="argument-39ltargumentnamegt39-must-be-greater-than-zero"></a>Argument & č. 39; &lt;název argumentu argumentname&gt;& č. 39; musí být větší než nula.
+# <a name="argument-39ltargumentnamegt39-must-be-greater-than-zero"></a>Argument &#39; &lt;název argumentu argumentname&gt; &#39; musí být větší než nula.
 Argument není platný, protože je menší než nebo rovna hodnotě nula.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

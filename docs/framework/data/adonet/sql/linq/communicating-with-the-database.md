@@ -1,24 +1,12 @@
 ---
-title: "Komunikace s databází"
-ms.custom: 
+title: Komunikace s databází
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 659d9817-bcaa-457f-9639-169394177274
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6ec6a93f2a6eed130d5b7a65cc8780b365715f17
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a53a62378a2db3c51ac4738959748fdf1914f61f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="communicating-with-the-database"></a>Komunikace s databází
 Témata v této části popisují některé základní aspekty způsobu navázání a udržování komunikace s databází.  

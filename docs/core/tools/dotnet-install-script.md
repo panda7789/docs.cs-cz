@@ -4,17 +4,11 @@ description: Další informace o skriptů dotnet instalace k instalaci nástroje
 author: blackdwarf
 ms.author: mairaw
 ms.date: 09/11/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 96336df087ea2ad01584010f0715ad31e079b663
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: acdf49950ebb49751c55ae72b3f623e590489202
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-install-scripts-reference"></a>referenční skriptů instalace DotNet.
 

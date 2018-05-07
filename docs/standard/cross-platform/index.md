@@ -1,26 +1,15 @@
 ---
 title: Vývoj pro různé platformy s .NET Frameworkem
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: b153baaa-130c-4169-860b-e580591de91e
-caps.latest.revision: 13
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 92ed36d632aefbb566bedd87ddf6a2100807aac6
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.openlocfilehash: 875f40d891ffccf7ac8555413cd4d27ca8704542
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="developing-for-multiple-platforms-with-the-net-framework"></a>Vývoj pro různé platformy s .NET Frameworkem
 Pomocí rozhraní .NET Framework a Visual Studio můžete vyvíjet aplikace pro Microsoft i jiných společností než Microsoft platformy.  

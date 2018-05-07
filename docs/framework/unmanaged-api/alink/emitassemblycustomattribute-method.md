@@ -1,14 +1,6 @@
 ---
-title: "EmitAssemblyCustomAttribute – metoda"
-ms.custom: 
+title: EmitAssemblyCustomAttribute – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink.EmitAssemblyCustomAttribute
 - EmitAssemblyCustomAttribute
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: b72f5409-79af-4fa7-90a7-7630eec170f1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9cc7709ef060642f12a8bc7d048e520427a5c674
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: daf2c3dcaf16e949f8770121d8324cbfe6c7d05b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute – metoda
 Volání nastavení úrovně sestavení vlastní atributy.  

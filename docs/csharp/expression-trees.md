@@ -1,20 +1,13 @@
 ---
-title: "Stromy výrazů"
-description: "Další informace o stromů výrazů v .NET Core a jakým způsobem je použít k reprezentování kód jako struktury, které můžete prozkoumat, upravit a spustit."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Stromy výrazů
+description: Další informace o stromů výrazů v .NET Core a jakým způsobem je použít k reprezentování kód jako struktury, které můžete prozkoumat, upravit a spustit.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.openlocfilehash: 3935906d9fca81a094999eefdd49ae4ed56990bf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: db35dd99dadc4e49aaaebd5d3782409a206cafc5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expression-trees"></a>Stromy výrazů
 
@@ -30,19 +23,19 @@ Umožňující [Entity Framework](http://docs.efproject.net/en/latest/) přelož
 
 Zbývající části tohoto kurzu bude prozkoumejte, jaké jsou stromů výrazů, zkontrolujte framework třídy, které podporují stromů výrazů a ukazují, jak pracovat s stromů výrazů. Dozvíte se, jak číst stromů výrazů, vytváření stromů výrazů, jak vytvořit stromů výrazů upravené a jak ke spouštění kódu vytvořeného reprezentována stromů výrazů. Po přečtení, bude připravená k použití těchto struktur vytvořit bohaté adaptivní algoritmy.
 
-1. [Stromy výrazů vysvětlené](expression-trees-explained.md)
+1. [Vysvětlení stromů výrazů](expression-trees-explained.md)
 
     Pochopit strukturu a koncepty za *stromů výrazů*.
     
-2. [Framework typy podpůrné stromů výrazů](expression-classes.md)
+2. [Typy architektur podporující stromy výrazů](expression-classes.md)
     
     Další informace o struktury a třídy, které definují a manipulaci s stromů výrazů.
     
-3. [Provádění výrazy](expression-trees-execution.md)
+3. [Provádění výrazů](expression-trees-execution.md)
 
     Zjistěte, jak převést strom výrazu, který je reprezentován jako výraz Lambda do delegáta a provést Výsledný delegát.
 
-4. [Interpretace výrazy](expression-trees-interpreting.md)
+4. [Interpretace výrazů](expression-trees-interpreting.md)
 
     Zjistěte, jak procházet a prozkoumat *stromů výrazů* zjistit, co kód strom výrazu představuje.
 

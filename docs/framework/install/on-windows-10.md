@@ -1,52 +1,49 @@
 ---
-title: "Nainstalujte rozhraní .NET Framework na Windows 10"
-description: "Zjistěte, jak nainstalovat rozhraní .NET Framework na Windows 10 nebo Windows Server 2016."
+title: Nainstalujte rozhraní .NET Framework na Windows 10
+description: Zjistěte, jak nainstalovat rozhraní .NET Framework na Windows 10 nebo Windows Server 2016.
 author: rlander
 ms.author: mairaw
-keywords: "Rozhraní .NET framework, instalace"
-ms.date: 12/20/2017
-ms.topic: article
+ms.date: 04/10/2018
 ms.custom: updateeachrelease
-ms.prod: .net-framework
-ms.workload: dotnet
-ms.openlocfilehash: bd588dff62e5d4ac1c1059e697a07598ba272042
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: f069686866c4fd0e8e380af3ef448d282df34801
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Nainstalujte rozhraní .NET Framework na Windows 10 a Windows Server 2016
 
-Rozhraní .NET Framework je potřeba spustit mnoho aplikací v systému Windows. Podle pokynů v tomto článku by měly pomoci při instalaci rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.1](https://www.microsoft.com/download/details.aspx?id=56115&desc=dotnet47) je na nejnovější dostupnou verzi.
+Rozhraní .NET Framework je potřeba spustit mnoho aplikací v systému Windows. Podle pokynů v tomto článku by měly pomoci při instalaci rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) je na nejnovější dostupnou verzi.
 
 Může se zobrazila na této stránce po pokusu o spuštění aplikace a zobrazuje dialogové okno na svůj počítač podobné následující:
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-## <a name="net-framework-471"></a>Rozhraní .NET framework 4.7.1
+## <a name="net-framework-472"></a>Rozhraní .NET framework 4.7.2
 
-Rozhraní .NET Framework 4.7.1 je součástí:
+Rozhraní .NET Framework 4.7.2 je součástí:
 
-* [Windows 10 patří Creators Update (verze. 1709)](https://www.microsoft.com/software-download/windows10)
-* [Windows Server, verze. 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709)
+* [Aktualizace Windows 10. dubna 2018](https://www.microsoft.com/software-download/windows10)
 
 > [!div class="button"]
-[.NET Framework 4.7.1 stáhnout](https://www.microsoft.com/net/download/thank-you/net471?utm_source=ms-docs&utm_medium=referral)
+[.NET Framework 4.7.2 stáhnout](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
 
-[Rozhraní .NET Framework 4.7.1](https://www.microsoft.com/download/details.aspx?id=56115&desc=dotnet47) slouží ke spouštění aplikací, které jsou vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím 4.7.1.
+[Rozhraní .NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) slouží ke spouštění aplikací, které jsou vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím 4.7.1.
 
-Můžete nainstalovat [rozhraní .NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) na:
+Můžete nainstalovat [rozhraní .NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) na:
 
+* Windows 10 patří Creators Update (verze. 1709)
 * Windows 10 Creators Update (verze 1703)
 * Windows 10 Anniversary Update (verze 1607)
+* Windows Server, verze. 1709
 * Windows Server 2016
 
-Rozhraní .NET Framework 4.7.1 není podporována na:
+Rozhraní .NET Framework 4.7.2 není podporována na:
 
 * Windows 10 1507
 * Windows 10 1511
 
-Pokud používáte Windows 10 1507 nebo 1511 a chcete nainstalovat rozhraní .NET Framework 4.7.1, musíte nejprve provést upgrade na novější verzi Windows 10.
+Pokud používáte Windows 10 1507 nebo 1511 a chcete nainstalovat rozhraní .NET Framework 4.7.2, musíte nejprve provést upgrade na novější verzi Windows 10.
 
 ## <a name="net-framework-462"></a>.NET Framework 4.6.2
 

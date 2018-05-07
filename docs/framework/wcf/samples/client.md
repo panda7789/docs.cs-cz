@@ -1,27 +1,15 @@
 ---
 title: Klient
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 11a02fc857fa3c03b11b549013550e557933820e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 4c44ed4be9a3598ea79355737db678dd7a80a56a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="client"></a>Klient
-Tato část obsahuje příklady vysvětlující [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klientské aplikace.  
+Tato část obsahuje příklady vysvětlující Windows Communication Foundation (WCF) klientské aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Interoperabilita klientů](../../../../docs/framework/wcf/samples/client-interoperability.md)  

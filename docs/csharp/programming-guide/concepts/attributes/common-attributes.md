@@ -1,21 +1,12 @@
 ---
-title: "Mezi běžné atributy (C#)"
-ms.custom: 
+title: Mezi běžné atributy (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4e0a8912aa60e4c2918bb812963d83fae8d529f1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 771460f8547252448be1b74526ec2babb719c3fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-attributes-c"></a>Mezi běžné atributy (C#)
 Toto téma popisuje atributy, které se běžně používají v C# programy.  
@@ -28,7 +19,7 @@ Toto téma popisuje atributy, které se běžně používají v C# programy.
   
 -   [Volající – atributy s informacemi](#CallerInfo)  
   
-##  <a name="Global"></a>Globální atributy  
+##  <a name="Global"></a> Globální atributy  
  Většina atributy platí pro konkrétní jazyk prvky, jako jsou například třídy nebo metody; ale některé atributy jsou globální – se vztahují na modul nebo celý sestavení. Například <xref:System.Reflection.AssemblyVersionAttribute> atribut slouží k vložení informací o verzi do sestavení, například takto:  
   
 ```csharp  
@@ -80,7 +71,7 @@ Toto téma popisuje atributy, které se běžně používají v C# programy.
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|Manifest sestavení definuje vlastní atribut, který určuje konfigurace aplikace sestavení (například instalačních nebo ladicích).|  
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Definuje výchozí popisný aliasu pro manifest sestavení|  
   
-##  <a name="Obsolete"></a>Zastaralé atribut  
+##  <a name="Obsolete"></a> Zastaralé atribut  
  `Obsolete` Atribut určí program entity jako ten, který již není doporučeno pro použití. Každý použijte entity označeny jako zastaralé následně vydá upozornění nebo chybu, v závislosti na konfiguraci atributu. Příklad:  
   
 ```csharp  
@@ -117,9 +108,9 @@ b.NewMethod();
   
  `Obsolete` Atribut lze použít bez argumentů, ale včetně vysvětlení důvod, proč je zastaralé položky a doporučuje se co místo toho chcete použít.  
   
- `Obsolete` Atribut je jedno použití atribut a dají se použít k Každá entita, která umožňuje atributy. `Obsolete`je alias <xref:System.ObsoleteAttribute>.  
+ `Obsolete` Atribut je jedno použití atribut a dají se použít k Každá entita, která umožňuje atributy. `Obsolete` je alias <xref:System.ObsoleteAttribute>.  
   
-##  <a name="Conditional"></a>Podmíněný atribut  
+##  <a name="Conditional"></a> Podmíněný atribut  
  `Conditional` Atribut umožňuje provádění metody závisí na identifikátor předběžného zpracování. `Conditional` Atribut je alias <xref:System.Diagnostics.ConditionalAttribute>a dají se použít metody nebo třídy atributu.  
   
  V tomto příkladu `Conditional` je použitý na metodu, pokud chcete povolit nebo zakázat zobrazení diagnostické informace specifické pro aplikace:  
@@ -224,7 +215,7 @@ class SampleClass
 }  
 ```  
   
-##  <a name="CallerInfo"></a>Volající – atributy s informacemi  
+##  <a name="CallerInfo"></a> Volající – atributy s informacemi  
  Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku v zdrojový kód a název člena volajícího.  
   
  Chcete-li získat informace o subjektu volajícím člen, použijte atributy, které se použijí pro volitelné parametry. Každý volitelný parametr určí výchozí hodnotu. Následující tabulka uvádí informace o volajícím atributy, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> obor názvů:  
@@ -240,7 +231,7 @@ class SampleClass
 ## <a name="see-also"></a>Viz také  
  <xref:System.Reflection>  
  <xref:System.Attribute>  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
  [Atributy](../../../../../docs/standard/attributes/index.md)  
  [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

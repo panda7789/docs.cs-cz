@@ -1,14 +1,6 @@
 ---
-title: "ICLRMetaHost::RequestRuntimeLoadedNotification – metoda"
-ms.custom: 
+title: ICLRMetaHost::RequestRuntimeLoadedNotification – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRMetaHost.RequestRuntimeLoadedNotification
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 0d5ccc4d-0193-41f5-af54-45d7b70d5321
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b7866270d8c9234a375401dfd05b504a06ddbf4b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9ac041db64a874cc143657c601f30e4482dd2462
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrmetahostrequestruntimeloadednotification-method"></a>ICLRMetaHost::RequestRuntimeLoadedNotification – metoda
 Poskytuje funkci zpětného volání, která záruku, která se má volat při společné jazykové verzi modulu runtime (CLR) je prvním načtení, ale ještě nebyla spuštěna. Tato metoda nahrazuje [lockclrversion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) funkce.  
@@ -55,7 +43,7 @@ HRESULT RequestRuntimeLoadedNotification (
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pCallbackFunction`má hodnotu null.|  
+|E_POINTER|`pCallbackFunction` má hodnotu null.|  
   
 ## <a name="remarks"></a>Poznámky  
  Zpětné volání funguje následujícím způsobem:  
@@ -91,11 +79,11 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
   
  Pokud hostitel chtít načíst nebo způsobit jiný modul runtime načíst vícenásobné způsobem `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` parametry, které jsou k dispozici v zpětné volání funkce použije následujícím způsobem:  
   
--   `pfnCallbackThreadSet`musí být voláno vlákno, které může způsobit runtime zatížení předtím, než dojde k pokusu o takové zatížení.  
+-   `pfnCallbackThreadSet` musí být voláno vlákno, které může způsobit runtime zatížení předtím, než dojde k pokusu o takové zatížení.  
   
--   `pfnCallbackThreadUnset`musí být volána, když vlákno už způsobí zatížení runtime (a před návratem od počáteční zpětné volání).  
+-   `pfnCallbackThreadUnset` musí být volána, když vlákno už způsobí zatížení runtime (a před návratem od počáteční zpětné volání).  
   
--   `pfnCallbackThreadSet`a `pfnCallbackThreadUnset` jsou obě nejsou vícenásobně přístupné.  
+-   `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` jsou obě nejsou vícenásobně přístupné.  
   
 > [!NOTE]
 >  Hostování aplikací nesmějí provádět volání `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` mimo obor `pCallbackFunction` parametr.  
@@ -107,7 +95,7 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRMetaHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  

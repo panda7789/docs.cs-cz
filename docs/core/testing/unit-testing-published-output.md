@@ -4,15 +4,11 @@ description: Zjistěte, jak spustit testy na publikované výstup pomocí přík
 author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 2f750a8bb0907069691c4a4491beeb4b1733df29
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: dbce1b6e616916e60e56318b773e8fcecbc55580
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Testování publikované výstup s vstest dotnet.
 

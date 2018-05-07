@@ -1,13 +1,6 @@
 ---
-title: "Přehled modelu obsahu TextElement"
-ms.custom: 
+title: Přehled modelu obsahu TextElement
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - TextElement content model [WPF]
 - flow content elements [WPF], TextElement content model
 ms.assetid: d0a7791c-b090-438c-812f-b9d009d83ee9
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 95d25ff6819ba913b7e9270bc2d87dd77032c5c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4a50e8a10563fdc5e16ee2e2a46389e13b51e447
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="textelement-content-model-overview"></a>Přehled modelu obsahu TextElement
 Tento model obsahu přehled popisuje podporované obsah <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Paragraph> Třída je typ <xref:System.Windows.Documents.TextElement>. Model obsahu popisuje, jaké objekty elementy může být obsažený v jiné. Tento přehled obsahuje souhrn modelu obsahu použít pro objekty, které jsou odvozené z <xref:System.Windows.Documents.TextElement>. Další informace najdete v tématu [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
@@ -49,7 +37,7 @@ Tento model obsahu přehled popisuje podporované obsah <xref:System.Windows.Doc
   
 2.  Podle diagramu je vidět, existuje několik <xref:System.Windows.Documents.Block> elementy lze vybírat včetně <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.Table>, <xref:System.Windows.Documents.List>, a <xref:System.Windows.Documents.BlockUIContainer> (viz třídy odvozené bloku na předchozím obrázku). Řekněme, že chceme <xref:System.Windows.Documents.Table>. Podle na předchozím obrázku <xref:System.Windows.Documents.Table> obsahuje <xref:System.Windows.Documents.TableRowGroup> obsahující <xref:System.Windows.Documents.TableRow> elementy, které obsahují <xref:System.Windows.Documents.TableCell> elementy, které obsahují <xref:System.Windows.Documents.Block>-odvozené objektu. Následuje odpovídající segmentu pro <xref:System.Windows.Documents.Table> převzaty z na předchozím obrázku.  
   
-     ![Diagram: Nadřazené &#47; podřízené schématu pro tabulku](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
+     ![Diagram: Nadřazených&#47;podřízené schématu pro tabulku](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
   
      Následuje odpovídající značky.  
   
@@ -57,9 +45,9 @@ Tento model obsahu přehled popisuje podporované obsah <xref:System.Windows.Doc
   
 3.  Znovu jeden nebo více <xref:System.Windows.Documents.Block> elementy jsou nutné pod <xref:System.Windows.Documents.TableCell>. Chcete-li jednoduchý, umožňuje umístit text do buňky. Jsme můžete to provést pomocí <xref:System.Windows.Documents.Paragraph> s <xref:System.Windows.Documents.Run> elementu. Následuje odpovídající segmenty z diagram zobrazující, že <xref:System.Windows.Documents.Paragraph> může trvat <xref:System.Windows.Documents.Inline> elementu a že <xref:System.Windows.Documents.Run> ( <xref:System.Windows.Documents.Inline> element) může trvat jenom prostý text.  
   
-     ![Diagram: Nadřazené &#47; podřízené schéma pro odstavec](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
+     ![Diagram: Nadřazených&#47;podřízené schéma pro odstavec](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
   
-     ![Diagram: Nadřazené &#47; Podřízené schéma pro spuštění](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough4.png "Flow_Ovw_SchemaWalkThrough4")  
+     ![Diagram: Nadřazených&#47;podřízené schéma pro spuštění](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough4.png "Flow_Ovw_SchemaWalkThrough4")  
   
  Níže je celý příklad v kódu.  
   
@@ -69,9 +57,9 @@ Tento model obsahu přehled popisuje podporované obsah <xref:System.Windows.Doc
 ## <a name="working-with-textelement-content-programmatically"></a>Práce s obsahem TextElement prostřednictvím kódu programu  
  Obsah <xref:System.Windows.Documents.TextElement> je tvořený kolekcí a tak prostřednictvím kódu programu manipulace s obsah <xref:System.Windows.Documents.TextElement> objekty se provádí ve spolupráci s těchto kolekcí. Existují tři různé kolekce používá <xref:System.Windows.Documents.TextElement> -odvozených tříd:  
   
--   <xref:System.Windows.Documents.InlineCollection>: Představuje kolekci <xref:System.Windows.Documents.Inline> elementy. <xref:System.Windows.Documents.InlineCollection>definuje povolené podřízené obsah <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Span>, a <xref:System.Windows.Controls.TextBlock> elementy.  
+-   <xref:System.Windows.Documents.InlineCollection>: Představuje kolekci <xref:System.Windows.Documents.Inline> elementy. <xref:System.Windows.Documents.InlineCollection> definuje povolené podřízené obsah <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Span>, a <xref:System.Windows.Controls.TextBlock> elementy.  
   
--   <xref:System.Windows.Documents.BlockCollection>: Představuje kolekci <xref:System.Windows.Documents.Block> elementy. <xref:System.Windows.Documents.BlockCollection>definuje povolené podřízené obsah <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.ListItem>, <xref:System.Windows.Documents.TableCell>, <xref:System.Windows.Documents.Floater>, a <xref:System.Windows.Documents.Figure> elementy.  
+-   <xref:System.Windows.Documents.BlockCollection>: Představuje kolekci <xref:System.Windows.Documents.Block> elementy. <xref:System.Windows.Documents.BlockCollection> definuje povolené podřízené obsah <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.ListItem>, <xref:System.Windows.Documents.TableCell>, <xref:System.Windows.Documents.Floater>, a <xref:System.Windows.Documents.Figure> elementy.  
   
 -   <xref:System.Windows.Documents.ListItemCollection>: Tok obsahu elementu, který představuje konkrétní položku obsahu v seřazená nebo je neuspořádaného <xref:System.Windows.Documents.List>.  
   

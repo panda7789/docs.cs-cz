@@ -1,31 +1,20 @@
 ---
-title: "Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu"
-ms.custom: 
+title: 'Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 004998a8891d92e2d1f805b3353fbe93864dcf1d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a70b8e3d1f56eafc04b97a19a1582d9c664e587d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu
 Tento příklad ukazuje, jak používat k ukládání a načítání stavu v každé samostatné úloze, který vytváří lokální proměnné vláken <xref:System.Threading.Tasks.Parallel.For%2A> smyčky. Pomocí místní data, se můžete vyhnout nároky na velký počet přístupů do sdíleného stavu synchronizace. Místo na každé iteraci zápis do sdíleného prostředku, výpočty a uložení hodnoty, dokud nebudou dokončeny všechny iterace pro úlohu. Potom můžete zapisovat konečný výsledek jednou sdílený prostředek nebo předejte ji na jinou metodu.  

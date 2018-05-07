@@ -1,24 +1,17 @@
 ---
 title: override (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - override
 - override_CSharpKeyword
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-caps.latest.revision: 26
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 807fae02ca4e6f616c77877cc8815405baaf8428
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8f692dfdf8bd34ddb62623d86ec3dadd2b8dead3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="override-c-reference"></a>override (Referenční dokumentace jazyka C#)
 `override` Modifikátor je potřeba rozšířit nebo změnit abstraktní nebo virtuální implementace zděděné metoda, vlastnost, indexer nebo událostí.  
@@ -50,11 +43,11 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
- [abstraktní](../../../csharp/language-reference/keywords/abstract.md)  
- [virtuální](../../../csharp/language-reference/keywords/virtual.md)  
- [Nový](../../../csharp/language-reference/keywords/new.md)  
+ [abstract](../../../csharp/language-reference/keywords/abstract.md)  
+ [virtual](../../../csharp/language-reference/keywords/virtual.md)  
+ [new](../../../csharp/language-reference/keywords/new.md)  
  [Polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)

@@ -1,28 +1,19 @@
 ---
-title: "Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní"
-ms.custom: 
+title: Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, MultipleView control pattern
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-caps.latest.revision: "15"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 5ff185ddb145d51fe8bc32ac10f3a45b57ec954c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 777f529b3b925a965b24cf1a4b38b9d3b9adae7b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -38,7 +29,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
  Při implementaci vzoru více zobrazení ovládacích prvků, poznamenejte si následující pokyny a konvence:  
   
--   <xref:System.Windows.Automation.Provider.IMultipleViewProvider>by měla být implementována také na kontejner, který spravuje aktuální zobrazení, pokud se liší od ovládacího prvku, který poskytuje aktuální zobrazení. Například Průzkumník Windows obsahuje ovládací prvek seznamu pro aktuální obsah složky při zobrazení pro ovládací prvek je spravovat z aplikace v Průzkumníku Windows.  
+-   <xref:System.Windows.Automation.Provider.IMultipleViewProvider> by měla být implementována také na kontejner, který spravuje aktuální zobrazení, pokud se liší od ovládacího prvku, který poskytuje aktuální zobrazení. Například Průzkumník Windows obsahuje ovládací prvek seznamu pro aktuální obsah složky při zobrazení pro ovládací prvek je spravovat z aplikace v Průzkumníku Windows.  
   
 -   Ovládací prvek, který je možné seřadit její obsah se nepovažuje pro podporu více zobrazení.  
   

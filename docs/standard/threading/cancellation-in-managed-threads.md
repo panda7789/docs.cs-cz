@@ -1,31 +1,20 @@
 ---
-title: "Zrušení ve spravovaných vláknech"
-ms.custom: 
+title: Zrušení ve spravovaných vláknech
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5407beba999ede6131adbc17f56d139396429597
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a764912e46707b6f10e720f95a7d971ec4fc8e15
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
 Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework používá jednotný model pro spolupráci zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na prostý objekt názvem token zrušení. Objekt, který vyvolá jednu nebo více operací možné zrušit, třeba tak, že vytvoříte novou vláken nebo úlohy, předá tento token na každou operaci. Jednotlivé operace můžete zase předat jiné operace kopie tokenu. Později objekt, který vytvořili token slouží k vyžádání, že operace zastavit, co dělají. Pouze objekt požadavku můžete vydat žádost o zrušení a každý listener je odpovědná za vašeho povšimnutí žádosti a reagovat na ni příslušná a včas způsobem.  
@@ -156,7 +145,7 @@ Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhran
   
 -   Delegáti uživatele mají pokusit odpovědět na požadavky zrušení z knihovny kódu v časovém limitu.  
   
- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> jsou příklady třídy, které řídí tyto pokyny. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md)a [postupy: zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
+ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> jsou příklady třídy, které řídí tyto pokyny. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md)a [postupy: zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)

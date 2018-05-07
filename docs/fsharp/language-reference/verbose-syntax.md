@@ -1,17 +1,12 @@
 ---
 title: Podrobná syntaxe (F#)
 description: 'Informace o rozdílu mezi podrobné a jednoduchý syntaxe v programovací jazyk F #.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: fd040a66a789bc6717fd14e6a9f28274c9e3542b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b0bed66b4a76c5ab11e6c9e7aaf695f864e74ca0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 

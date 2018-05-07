@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.PortSharing.RoutingTableUnsupportedProtocol
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bcdb34f1-e9b1-4f04-8403-325c3385d86d
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7bc2b46623164755cedb8870d7b3f8a03072de09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e565c6f5725adfa760eef4cff189cdc7a2429423
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelportsharingroutingtableunsupportedprotocol"></a>System.ServiceModel.PortSharing.RoutingTableUnsupportedProtocol
 System.ServiceModel.PortSharing.RoutingTableUnsupportedProtocol  

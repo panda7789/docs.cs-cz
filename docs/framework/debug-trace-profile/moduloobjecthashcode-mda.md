@@ -1,13 +1,6 @@
 ---
-title: "moduloObjectHashcode – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: moduloObjectHashcode – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - managed debugging assistants (MDAs), hashcode modulus
 - Modulo object hash code
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - GetHashCode method
 - modulus of hashcodes
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
-caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 618196473e8e947e84b0506771bce84ee71a1c2d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e3c51dcb5e19f5fac5485a317d1d26884106cf51
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode – pomocník spravovaného ladění (MDA)
 `moduloObjectHashcode` Pomocník spravovaného ladění (MDA) změní chování <xref:System.Object> třída k provedení modulo operace na vrátil kód hash <xref:System.Object.GetHashCode%2A> metoda. Modulus výchozí pro tento MDA je 1, což způsobí, že <xref:System.Object.GetHashCode%2A> vrátit 0 pro všechny objekty.  

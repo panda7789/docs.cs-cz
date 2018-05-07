@@ -1,13 +1,6 @@
 ---
-title: "Typy rastrových obrázků"
-ms.custom: 
+title: Typy rastrových obrázků
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - jpeg files
 - TIFF files
@@ -27,16 +20,11 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6af28e7b50cb7e4a2a90153a053a83931c738214
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1a79f34daac4238093693947f5fb5e73bb56213d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků
 Rastrový obrázek je pole bitů, které určuje barvu každého obrazového bodu v obdélníková pole pixelů. Počet bitů věnované na jednotlivé pixelů určuje počet barev, které lze přiřadit k této pixelů. Například pokud každý pixelů je reprezentována 4 bits, pak dané pixelů lze přiřadit jedné z 16 různých barev (2 ^ 4 = 16). Následující tabulka uvádí několik příkladů počet barev, které mohou být přiřazeny pixelu reprezentované zadaný počet bitů.  
@@ -64,7 +52,7 @@ Rastrový obrázek je pole bitů, které určuje barvu každého obrazového bod
  ![Rastrový obrázek ukázkové](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
   
 ## <a name="graphics-file-formats"></a>Formáty souborů grafiky  
- Existuje mnoho standardní formáty pro ukládání bitmap ve souborů na disku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]podporuje grafiky souboru formáty popsané v následujících odstavcích.  
+ Existuje mnoho standardní formáty pro ukládání bitmap ve souborů na disku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] podporuje grafiky souboru formáty popsané v následujících odstavcích.  
   
 ### <a name="bmp"></a>BMP  
  BMP je standardní formát používaná systémem Windows pro uložení bitové kopie nezávislé na zařízení a nezávisle na aplikaci. V záhlaví souboru je zadaný počet bitů na pixel (1, 4, 8, 15, 24, 32 nebo 64) pro daný soubor BMP. Soubory BMP s 24 bitů na pixel jsou běžné. Soubory BMP nejsou obvykle komprimované a proto nejsou dobře hodí pro přenos přes Internet.  

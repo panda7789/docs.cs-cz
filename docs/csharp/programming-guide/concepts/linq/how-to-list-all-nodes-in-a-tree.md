@@ -1,21 +1,12 @@
 ---
-title: "Postupy: seznam všech uzlů ve stromu (C#)"
-ms.custom: 
+title: 'Postupy: seznam všech uzlů ve stromu (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0db9d8f895bec9e4806bb267c91a1b9fc4500689
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0ee4c51946ff6116fa37f4ca61bc42deed562532
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-c"></a>Postupy: seznam všech uzlů ve stromu (C#)
 Někdy je užitečné k zobrazení seznamu všech uzlů ve stromu. To může být užitečné při učení, přesně jak metody nebo vlastnosti ovlivňuje stromu. Jeden ze způsobů seznam obsahující všechny uzly v textové formě je ke generování výraz XPath, který přesně a konkrétně identifikuje libovolného uzlu ve stromu.  

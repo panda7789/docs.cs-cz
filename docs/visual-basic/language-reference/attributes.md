@@ -1,21 +1,14 @@
 ---
 title: Atributy (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - attributes [Visual Basic]
 ms.assetid: 5deb2b8a-1afd-4dbd-8ee8-f093d74ad0eb
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e2450f34992af4b6b100b9e4d21a46b7d54b335c
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b8a29454f860b5efa9ce24a6d258572c0e0f04dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributes-visual-basic"></a>Atributy (Visual Basic)
 Visual Basic poskytuje několik atributů, které umožňují, že objekty spolupráce s nespravovaným kódem a jeden atribut, který umožňuje členům modul bez názvu modulu získat přístup. Následující tabulka obsahuje seznam atributy používané jazyka Visual Basic.  

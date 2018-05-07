@@ -1,28 +1,14 @@
 ---
-title: "Parametry KURZORU REF v připojení OracleDataReader"
-ms.custom: 
+title: Parametry KURZORU REF v připojení OracleDataReader
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - vb
 ms.assetid: 801dff0f-2508-45aa-9416-f45d6887740c
-caps.latest.revision: 
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3cfee7568925c4898fd2c1480ebd4d9323bfc876
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c01b2b7f17f497d192d4db1ccd63b0a6bad26bf5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ref-cursor-parameters-in-an-oracledatareader"></a>Parametry KURZORU REF v připojení OracleDataReader
 Tento příklad Microsoft Visual Basicu provede PL/SQL uložené procedury, která vrátí parametr REF kurzor a přečte hodnotu jako <xref:System.Data.OracleClient.OracleDataReader>.  

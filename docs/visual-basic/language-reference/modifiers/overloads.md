@@ -1,10 +1,6 @@
 ---
-title: "Přetížení (Visual Basic)"
+title: Přetížení (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Overloads
 - Overloads
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - signature, hiding by
 ms.assetid: 0c6820b8-25b2-4664-bc59-5ca93c99c042
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a23a6b91681cbd814ac96464e1c340be99a0ecf0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b68c13d192845fc4bedf1b34a40165ccc1a5ff75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overloads-visual-basic"></a>Přetížení (Visual Basic)
 Určuje, že vlastnost nebo postup redeclares existující vlastnosti nebo postupy se stejným názvem.  
@@ -65,23 +58,23 @@ Určuje, že vlastnost nebo postup redeclares existující vlastnosti nebo postu
   
 -   **Volitelné modifikátor.** Není nutné použít `Overloads` modifikátor při definování více přetížené vlastnosti nebo postupy ve stejné třídě. Ale pokud používáte `Overloads` v jednom z deklarací, musíte použít ji ve všech z nich.  
   
--   **Stínový provoz a přetížení.** `Overloads`Můžete také použít stínové existujícího člena nebo sadu přetěžované členy v základní třídě. Při použití `Overloads` tímto způsobem je deklarovat vlastnosti nebo metody se stejným názvem a stejný seznam parametrů jako člen základní třídy a nezadáte `Shadows` – klíčové slovo.  
+-   **Stínový provoz a přetížení.** `Overloads` Můžete také použít stínové existujícího člena nebo sadu přetěžované členy v základní třídě. Při použití `Overloads` tímto způsobem je deklarovat vlastnosti nebo metody se stejným názvem a stejný seznam parametrů jako člen základní třídy a nezadáte `Shadows` – klíčové slovo.  
   
  Pokud používáte `Overrides`, kompilátor implicitně přidá `Overloads` tak, aby vaše knihovna rozhraní API pro práci s C# snadněji.  
   
  `Overloads` Modifikátor lze použít v těchto kontexty:  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Stínů](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
  [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)  
- [Postupy: definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+ [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

@@ -1,14 +1,6 @@
 ---
-title: "Rozhraní ICorProfilerInfo5"
-ms.custom: 
+title: Rozhraní ICorProfilerInfo5
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo5
 api_location:
@@ -18,17 +10,13 @@ api_type:
 ms.assetid: 7bd48c34-37ed-4230-9eec-39a17280f05d
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 75bbaf5fdf41a55719965203c50ddd0f5d48263a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ba082182ec7e2f639ef94baeb29203ee792fba0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfo5-interface"></a>Rozhraní ICorProfilerInfo5
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

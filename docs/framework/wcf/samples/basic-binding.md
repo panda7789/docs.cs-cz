@@ -1,24 +1,12 @@
 ---
-title: "Základní vazby"
-ms.custom: 
+title: Základní vazby
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2a0e8ac4-23e7-45ef-98dc-40691aac530a
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 89fb080a890ee866ab16882065bd35495fadfddb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 97529444b23c004604483d2cc4c61eea5ef07f85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="basic-binding"></a>Základní vazby
 Tato část obsahuje základní ukázky, která demonstruje použití atribut vazby elementu koncový bod.  

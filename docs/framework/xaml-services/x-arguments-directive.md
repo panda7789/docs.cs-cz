@@ -1,28 +1,16 @@
 ---
-title: "x:Arguments – direktiva"
-ms.custom: 
+title: x:Arguments – direktiva
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - x:Arguments directive [XAML Services]
 - Arguments directive in XAML [XAML Services]
 - XAML [XAML Services], x:Arguments directive
 ms.assetid: 87cc10b0-b610-4025-b6b0-ab27ca27c92e
-caps.latest.revision: "12"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb1f5986a0d9f9eb69ade0228925ec06164cee4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0e7f380ec176e80d2422878a2e676d64985d660
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xarguments-directive"></a>x:Arguments – direktiva
 Argumenty vytváření balíčků pro deklaraci jiné než výchozí konstruktor objektu element v jazyce XAML, nebo na prohlášení metoda objektu factory.  
@@ -55,7 +43,7 @@ Argumenty vytváření balíčků pro deklaraci jiné než výchozí konstruktor
 |`methodName`|Název metoda factory, která se má zpracovat žádné `x:Arguments` argumenty.|  
   
 ## <a name="dependencies"></a>Závislosti  
- `x:FactoryMethod`můžete upravit obor a chování kde `x:Arguments` platí.  
+ `x:FactoryMethod` můžete upravit obor a chování kde `x:Arguments` platí.  
   
  Pokud žádné `x:FactoryMethod` není zadaný, `x:Arguments` se vztahuje na alternativní podpisy (jiné než výchozí) z konstruktorů zálohování.  
   
@@ -66,7 +54,7 @@ Argumenty vytváření balíčků pro deklaraci jiné než výchozí konstruktor
   
  `x:Arguments` Použití XAML není použití elementu vlastnosti v typické smysl, protože kód direktivy neodkazuje typ obsahující objekt elementu. Je třeba více podobají jiné direktivy `x:Code` kde element demarks rozsahu, ve kterém by měl být kód interpretován jako jiné než výchozí podřízené obsah. V takovém případě typ jazyka XAML jednotlivých prvků objekt komunikuje informace o typy argumentů, který je používán XAML analyzátory k určení signatury metody, které objekt pro vytváření konkrétní konstruktor `x:Arguments` využití se pokouší odkazovat.  
   
- `x:Arguments`pro element objektu musí vytvářen předcházet další vlastnosti prvky, obsah, vnitřní text nebo řetězce inicializace objektu elementu. Objekt elementů v rámci `x:Arguments` může být atributy a inicializace řetězce podle typu XAML a jeho základní metoda konstruktoru nebo objekt pro vytváření. U objektu nebo argumenty můžete zadat vlastní XAML nebo XAML typy, které jsou jinak mimo výchozí obor názvů jazyka XAML odkazem zavedených předponu mapování.  
+ `x:Arguments` pro element objektu musí vytvářen předcházet další vlastnosti prvky, obsah, vnitřní text nebo řetězce inicializace objektu elementu. Objekt elementů v rámci `x:Arguments` může být atributy a inicializace řetězce podle typu XAML a jeho základní metoda konstruktoru nebo objekt pro vytváření. U objektu nebo argumenty můžete zadat vlastní XAML nebo XAML typy, které jsou jinak mimo výchozí obor názvů jazyka XAML odkazem zavedených předponu mapování.  
   
  XAML procesorů pomocí následujících pokynů určete, jak jsou argumenty zadaný v `x:Arguments` se má použít k vytvoření objektu. Pokud `x:FactoryMethod` není zadaný, se porovná informace do zadané `x:FactoryMethod` (Všimněte si, že hodnota `x:FactoryMethod` je název metody, a metodu s názvem může mít přetížení. Pokud `x:FactoryMethod` není zadán, informace se porovná sadu všechny přetížení veřejný konstruktor objektu. Logika zpracování XAML pak porovná počet parametrů a vybere přetížení s odpovídající Arita. Pokud existuje více než jednu shodu, procesor XAML musí porovnat typy parametrů na základě typů XAML elementů zadaného objektu. Pokud je stále více než jednu shodu, není definován chování procesoru XAML. Pokud `x:FactoryMethod` je zadán, ale metodu nelze přeložit, procesor XAML by měla vyvolat výjimku.  
   

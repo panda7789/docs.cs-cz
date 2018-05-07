@@ -1,27 +1,17 @@
 ---
-title: "SignTool.exe (nástroj pro podpis)"
-ms.custom: 
+title: SignTool.exe (nástroj pro podpis)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 326b952b742dc3400b7a84ba35594b61aeaabb6c
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 1728dee4d0d8d90b8a1e2b2a3f92fc256c6267c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (nástroj pro podpis)
 Sign Tool je nástroj příkazového řádku, který digitálně podepíše soubory, ověří podpisy v souborech a časová razítka souborů.  
@@ -68,7 +58,7 @@ signtool [command] [options] [file_name | ...]
 |Možnost Catdb|Popis|  
 |------------------|-----------------|  
 |`/d`|Určuje, že výchozí databáze katalogů je aktualizována. Pokud `/d` ani `/g` možnost se používá, nástroj pro podpis aktualizuje databázi součásti a ovladače systému.|  
-|`/g`*IDENTIFIKÁTOR GUID*|Určuje, že databáze katalogu identifikovaný globálně jedinečný identifikátor *GUID* se aktualizuje.|  
+|`/g` *IDENTIFIKÁTOR GUID*|Určuje, že databáze katalogu identifikovaný globálně jedinečný identifikátor *GUID* se aktualizuje.|  
 |`/r`|Odebere zadané katalogy z databáze katalogů. Pokud není tato možnost zadána, nástroj Sign Tool přidá určené katalogy do databáze katalogů.|  
 |`/u`|Určuje, že přidaným souborům katalogu bude přiřazen jedinečný název. V případě potřeby jsou soubory katalogu přejmenovány, aby se předešlo konfliktům názvů s existujícími soubory katalogu. Pokud není tato možnost zadána, přepíše nástroj Sign Tool jakýkoli existující katalog, který má stejný název jako přidávaný katalog.|  
   
@@ -79,11 +69,11 @@ signtool [command] [options] [file_name | ...]
 |Možnost příkazu sign|Popis|  
 |-------------------------|-----------------|  
 |`/a`|Automaticky vybere nejlepší podpisový certifikát. Nástroj Sign Tool vyhledá všechny platné certifikáty, které splňují všechny zadané podmínky, a vybere ten, který je platný pro co nejdelší dobu. Pokud tato možnost není k dispozici, očekává nástroj Sign Tool pouze jeden platný podpisový certifikát.|  
-|`/ac`  *soubor*|Přidá další certifikát z *souboru* na blok signatury.|  
+|`/ac`  *Soubor*|Přidá další certifikát z *souboru* na blok signatury.|  
 |`/as`|Připojí tento podpis. Pokud neexistuje žádný primární podpis, tento podpis se stane primárním podpisem.|  
 |`/c`  *CertTemplateName*|Určuje název šablony certifikátu (rozšíření Microsoft) pro podpisový certifikát.|  
 |`/csp`  *Název_csp*|Určuje poskytovatele CSP (Cryptographic Service Provider), který obsahuje kontejner soukromého klíče.|  
-|`/d`  *Desc*|Určuje popis podepsaného obsahu.|  
+|`/d`  *desc*|Určuje popis podepsaného obsahu.|  
 |`/du`  *ADRESA URL*|Určuje adresu URL (Uniform Resource Locator) pro rozšířený popis podepsaného obsahu.|  
 |`/f`  *SignCertFile*|Určuje podpisový certifikát v souboru. Pokud soubor má formát Personal Information Exchange (PFX) a chráněný heslem, použijte `/p` možnost zadat heslo. Pokud soubor neobsahuje privátních klíčů, použijte `/csp` a `/kc` možností určíte název kontejneru privátní klíče a CSP.|  
 |`/fd`|Určuje soubor algoritmu digest pro vytváření podpisů souborů. Výchozím je SHA1.|  
@@ -92,12 +82,12 @@ signtool [command] [options] [file_name | ...]
 |`/n`  *SubjectName*|Určuje název předmětu podpisového certifikátu. Tato hodnota může být podřetězec celého názvu subjektu.|  
 |`/nph`|V případě podpory potlačuje hodnoty hash stránek pro spustitelné soubory. Výchozí hodnota je určena proměnnou prostředí SIGNTOOL_PAGE_HASHES a verzí wintrust.dll. Tato možnost je ignorována pro soubory, které nejsou typu PE.|  
 |`/p`  *Heslo*|Určuje heslo, které má být použito při otevírání souboru PFX. (Použití `/f` můžete určit soubor PFX.)|  
-|`/p7`*Cesta*|Určuje, že soubor PKCS (Public Key Cryptography Standards) #7 je vytvořen pro každý zadaný soubor obsahu. Soubory PKCS #7 jsou pojmenované *cesta*\\*filename*.p7.|  
-|`/p7ce`*Hodnota*|Určuje volby pro podepsaný obsah PKCS #7. Nastavit *hodnotu* "Vložených" Vložit podepsaný obsah do souboru PKCS #7, nebo "DetachedSignedData" k vytvoření podepsaná data část odpojit souboru PKCS #7. Pokud `/p7ce` není možnost použít, je ve výchozím nastavení vložených podepsaného obsahu.|  
-|`/p7co` *\<OID >*|Určuje identifikátor objektu (OID), který identifikuje podepsaný obsah PKCS #7.|  
+|`/p7` *Cesta*|Určuje, že soubor PKCS (Public Key Cryptography Standards) #7 je vytvořen pro každý zadaný soubor obsahu. Soubory PKCS #7 jsou pojmenované *cesta*\\*filename*.p7.|  
+|`/p7ce` *Hodnota*|Určuje volby pro podepsaný obsah PKCS #7. Nastavit *hodnotu* "Vložených" Vložit podepsaný obsah do souboru PKCS #7, nebo "DetachedSignedData" k vytvoření podepsaná data část odpojit souboru PKCS #7. Pokud `/p7ce` není možnost použít, je ve výchozím nastavení vložených podepsaného obsahu.|  
+|`/p7co` *\<OID &GT;*|Určuje identifikátor objektu (OID), který identifikuje podepsaný obsah PKCS #7.|  
 |`/ph`|V případě podpory generuje hodnoty hash stránek pro spustitelné soubory.|  
 |`/r`  *RootSubjectName*|Určuje název předmětu kořenového certifikátu, jehož článkem musí podpisový certifikát být. Tato hodnota může být podřetězec celého názvu předmětu kořenového certifikátu.|  
-|`/s`  *StoreName*|Určuje úložiště k otevření při hledání certifikátu. Pokud není tato možnost zadána, `My` otevřít úložiště.|  
+|`/s`  *storeName*|Určuje úložiště k otevření při hledání certifikátu. Pokud není tato možnost zadána, `My` otevřít úložiště.|  
 |`/sha1`  *Hodnota hash*|Určuje algoritmus hash SHA1 podpisového certifikátu. Algoritmus hash SHA1 je obvykle použit, když více certifikátů splňuje kritéria stanovená ve zbývajících přepínačích.|  
 |`/sm`|Určuje použití úložiště počítače namísto úložiště uživatele.|  
 |`/t`  *ADRESA URL*|Určuje adresu URL časového razítka serveru. Pokud tato možnost (nebo `/tr`) nejsou k dispozici, podepsaný soubor nebude časovým razítkem. Pokud se opatření časovým razítkem nezdaří, vygeneruje se upozornění. Tuto možnost nelze použít s `/tr` možnost.|  
@@ -116,8 +106,8 @@ signtool [command] [options] [file_name | ...]
 |----------------------|-----------------|  
 |`/p7`|Opatří soubory PKCS #7 časovým razítkem.|  
 |`/t`  *ADRESA URL*|Určuje adresu URL časového razítka serveru. Soubor, který má být opatřen časovým razítkem, musí být nejprve podepsán. Buď `/t` nebo `/tr` možnost je povinná.|  
-|`/td`  *alg*|Požaduje algoritmus digest používaný serverem časového razítka RFC 3161. `/td`se používá s `/tr` možnost.|  
-|`/tp`*indexu*|Časové značky podpisu v *index*.|  
+|`/td`  *alg*|Požaduje algoritmus digest používaný serverem časového razítka RFC 3161. `/td` se používá s `/tr` možnost.|  
+|`/tp` *Index*|Časové značky podpisu v *index*.|  
 |`/tr`  *ADRESA URL*|Určuje adresu URL časového razítka serveru RFC 3161. Soubor, který má být opatřen časovým razítkem, musí být nejprve podepsán. Buď `/tr` nebo `/t` možnost je povinná.|  
   
  Příklad použití naleznete v tématu [přidání časová razítka na dříve podepsané soubory](http://msdn.microsoft.com/library/windows/desktop/aa375542.aspx).  
@@ -129,21 +119,21 @@ signtool [command] [options] [file_name | ...]
 |-------------------|-----------------|  
 |`/a`|Určuje, že všechny metody lze použít k ověření souboru. Nejprve se prohledají databáze katalogu a určí se, zda je soubor v katalogu podepsán. Pokud soubor není podepsán v žádném katalogu, nástroj Sign Tool se pokusí ověřit vložený podpis souboru. Tato možnost je doporučena při ověřování souborů, které mohou nebo nemusí být podepsány v katalogu. Mezi tyto soubory patří soubory systému Windows nebo ovladače.|  
 |`/ad`|Vyhledá katalog pomocí výchozí databáze katalogu.|  
-|`/ag`*CatDBGUID*|Vyhledá katalogu v databázi katalogu, která je identifikovaná *CatDBGUID*.|  
+|`/ag` *CatDBGUID*|Vyhledá katalogu v databázi katalogu, která je identifikovaná *CatDBGUID*.|  
 |`/all`|Ověří všechny podpisy v souboru, který obsahuje více podpisů.|  
 |`/as`|Vyhledá v katalogu pomocí databáze katalogů systémovou komponentu (ovladač).|  
-|`/c`*CatFile*|Určuje soubor katalogu podle názvu.|  
+|`/c` *CatFile*|Určuje soubor katalogu podle názvu.|  
 |`/d`|Určuje, že má nástroj Sign Tool vytisknout popis a adresu URL popisu.|  
 |`/ds`  *Index*|Ověřuje podpis na určené pozici.|  
-|`/hash` (`SHA1`&#124;`SHA256`)|Určuje volitelný hash algoritmus k použití pro hledání souboru v katalogu.|  
+|`/hash` (`SHA1`&#124;`SHA256`)|Určuje volitelný hashovací algoritmus k použití pro hledání souboru v katalogu.|  
 |`/kp`|Určuje, že by mělo být provedeno ověření pomocí zásady podepisování ovladačů v režimu jádra.|  
 |`/ms`|Používá několik sémantik pro ověřování. Toto je výchozí chování [WinVerifyTrust](http://msdn.microsoft.com/library/windows/desktop/aa388208.aspx) volání na [!INCLUDE[win8](../../../includes/win8-md.md)] a vyšší.|  
-|`/o`*Verze*|Ověřuje soubor podle verze operačního systému. *Verze* má následující formát: *PlatformID*:*VerMajor*. *VerMinor*. *BuildNumber*. *PlatformID* představuje základní hodnotu <xref:System.PlatformID> – člen výčtu. **Důležité:** použití `/o` přepínače doporučujeme. Pokud `/o` není zadán, SignTool.exe může vrátit neočekávané výsledky. Například, pokud neuvedete `/o` přepínače, systémových katalogů, které ověřit správně na se starším operačním systémem nemusí správně ověřit na novější operační systém.|  
+|`/o` *Verze*|Ověřuje soubor podle verze operačního systému. *Verze* má následující formát: *PlatformID*:*VerMajor*. *VerMinor*. *BuildNumber*. *PlatformID* představuje základní hodnotu <xref:System.PlatformID> – člen výčtu. **Důležité:** použití `/o` přepínače doporučujeme. Pokud `/o` není zadán, SignTool.exe může vrátit neočekávané výsledky. Například, pokud neuvedete `/o` přepínače, systémových katalogů, které ověřit správně na se starším operačním systémem nemusí správně ověřit na novější operační systém.|  
 |`/p7`|Ověří soubory PKCS #7. Žádné existující zásady nejsou použity pro ověřování PKCS #7. Podpis je zkontrolován a řetězec je sestaven pro podpisový certifikát.|  
 |`/pa`|Určuje, že mají být použity výchozí zásady ověření pomocí technologie Authenticode. Pokud `/pa` není určena možnost, nástroj pro podpis využívá zásady ověřování ovladačů systému Windows. Tuto možnost nelze použít s `catdb` možnosti.|  
-|`/pg`*PolicyGUID*|Určuje zásady ověření podle identifikátoru GUID. *PolicyGUID* odpovídá ActionID zásad ověření. Tuto možnost nelze použít s `catdb` možnosti.|  
+|`/pg` *PolicyGUID*|Určuje zásady ověření podle identifikátoru GUID. *PolicyGUID* odpovídá ActionID zásad ověření. Tuto možnost nelze použít s `catdb` možnosti.|  
 |`/ph`|Určuje, že nástroj Sign Tool má tisknout a ověřit hash hodnoty stránky.|  
-|`/r`*RootSubjectName*|Určuje název předmětu kořenového certifikátu, jehož článkem musí podpisový certifikát být. Tato hodnota může být podřetězec celého názvu předmětu kořenového certifikátu.|  
+|`/r` *RootSubjectName*|Určuje název předmětu kořenového certifikátu, jehož článkem musí podpisový certifikát být. Tato hodnota může být podřetězec celého názvu předmětu kořenového certifikátu.|  
 |`/tw`|Určuje, že by mělo být vygenerováno upozornění, pokud podpis nemá časové razítko.|  
   
  Příklady použití najdete v tématu [pomocí SignTool k ověření podpisu souboru](http://msdn.microsoft.com/library/windows/desktop/aa388171.aspx).  

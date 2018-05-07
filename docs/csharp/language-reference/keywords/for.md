@@ -1,24 +1,17 @@
 ---
 title: for (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - for
 - for_CSharpKeyword
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-caps.latest.revision: 39
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: cb7e83733fe026658f502b430975a0f8a27e9df3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9d7ab9e37be61384c33833381f44257169c81c31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="for-c-reference"></a>for (Referenční dokumentace jazyka C#)
 Pomocí `for` smyčku, můžete spustit příkaz nebo blok příkazů opakovaně dokud vyhodnotí zadaný výraz pro `false`. Tento druh smyčky je užitečný pro iterování přes pole a pro jiné aplikace, ve kterých víte předem kolikrát chcete, aby k iteraci smyčky.  
@@ -65,9 +58,9 @@ for (initializer; condition; iterator)
   
         -   volání metody  
   
-        -   předpony nebo přípony [přírůstek](../../../csharp/language-reference/operators/increment-operator.md) výrazu, jako například `++i` nebo`i++`  
+        -   předpony nebo přípony [přírůstek](../../../csharp/language-reference/operators/increment-operator.md) výrazu, jako například `++i` nebo `i++`  
   
-        -   předpony nebo přípony [snížení](../../../csharp/language-reference/operators/decrement-operator.md) výrazu, jako například `--i` nebo`i--`  
+        -   předpony nebo přípony [snížení](../../../csharp/language-reference/operators/decrement-operator.md) výrazu, jako například `--i` nebo `i--`  
   
         -   Vytvoření objektu pomocí [nové](../../../csharp/language-reference/keywords/new-operator.md)  
   
@@ -81,9 +74,9 @@ for (initializer; condition; iterator)
   
     -   volání metody  
   
-    -   předpony nebo přípony [přírůstek](../../../csharp/language-reference/operators/increment-operator.md) výrazu, jako například `++i` nebo`i++`  
+    -   předpony nebo přípony [přírůstek](../../../csharp/language-reference/operators/increment-operator.md) výrazu, jako například `++i` nebo `i++`  
   
-    -   předpony nebo přípony [snížení](../../../csharp/language-reference/operators/decrement-operator.md) výrazu, jako například `--i` nebo`i--`  
+    -   předpony nebo přípony [snížení](../../../csharp/language-reference/operators/decrement-operator.md) výrazu, jako například `--i` nebo `i--`  
   
     -   Vytvoření objektu pomocí [nové](../../../csharp/language-reference/keywords/new-operator.md)  
   
@@ -114,8 +107,8 @@ for (initializer; condition; iterator)
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [foreach v](../../../csharp/language-reference/keywords/foreach-in.md)  
- [pro příkaz (C++)](/cpp/cpp/for-statement-cpp)  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [for – příkaz (C++)](/cpp/cpp/for-statement-cpp)  
  [Příkazy iterace](../../../csharp/language-reference/keywords/iteration-statements.md)

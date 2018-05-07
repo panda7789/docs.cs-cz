@@ -1,24 +1,12 @@
 ---
-title: "Spolehlivé zasílání zpráv"
-ms.custom: 
+title: Spolehlivé zasílání zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 46d41fdf-b1f8-4968-8e54-c896848885fa
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c1a19490ed005320564258d0dd2779901c5b46cd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cff6d0e35f785c008e164f485067853a8d1ecf0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reliable-messaging"></a>Spolehlivé zasílání zpráv
 Toto téma uvádí všechny výjimky generované spolehlivé zasílání zpráv.  

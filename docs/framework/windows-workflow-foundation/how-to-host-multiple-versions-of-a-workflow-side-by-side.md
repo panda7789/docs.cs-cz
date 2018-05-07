@@ -1,29 +1,18 @@
 ---
-title: "Postupy: hostování více verzí pracovní postup-souběžného"
-ms.custom: 
+title: 'Postupy: hostování více verzí pracovní postup-souběžného'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 09c575df-e0a3-4f3b-9e01-a7ac59d65287
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 96ae4d3e02b923187b3e0f88a7b18e84094fa584
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d8fef8523f827ab91729054ee87544879b1f1aa3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-host-multiple-versions-of-a-workflow-side-by-side"></a>Postupy: hostování více verzí pracovní postup-souběžného
-`WorkflowIdentity`umožňuje vývojářům aplikací pracovního postupu pro definici pracovního postupu přidružení název a verzi a pro tyto informace k být přidružen k instanci pracovního postupu trvalý. Tyto informace identity lze použít vývojáři aplikace pracovního postupu povolit scénáře, jako je vedle sebe spouštění více verzí definice pracovního postupu a poskytuje základním kamenem pro další funkce, jako je například dynamická aktualizace. Tento krok v tomto kurzu ukazuje, jak používat `WorkflowIdentity` k hostování více verzí pracovního postupu ve stejnou dobu.  
+`WorkflowIdentity` umožňuje vývojářům aplikací pracovního postupu pro definici pracovního postupu přidružení název a verzi a pro tyto informace k být přidružen k instanci pracovního postupu trvalý. Tyto informace identity lze použít vývojáři aplikace pracovního postupu povolit scénáře, jako je vedle sebe spouštění více verzí definice pracovního postupu a poskytuje základním kamenem pro další funkce, jako je například dynamická aktualizace. Tento krok v tomto kurzu ukazuje, jak používat `WorkflowIdentity` k hostování více verzí pracovního postupu ve stejnou dobu.  
   
 > [!NOTE]
 >  Stažení dokončené verze nebo zobrazení na video s návodem kurzu, najdete v tématu [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
@@ -51,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  Každý krok v tomto kurzu Začínáme závisí na předchozí kroky. Pokud jste neprovedli předchozí kroky můžete stáhnout dokončenou verzi kurzem z [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
   
-###  <a name="BKMK_BackupCopy"></a>Vytvořit kopii NumberGuessWorkflowActivities projektu  
+###  <a name="BKMK_BackupCopy"></a> Vytvořit kopii NumberGuessWorkflowActivities projektu  
   
 1.  Otevřete **WF45GettingStartedTutorial** řešení v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] Pokud není otevřen.  
   
@@ -74,10 +63,10 @@ ms.lasthandoff: 12/22/2017
   
 9. Znovu ho otevřete **WF45GettingStartedTutorial** řešení v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
   
-###  <a name="BKMK_UpdateWorkflows"></a>Chcete-li aktualizovat pracovních postupů  
+###  <a name="BKMK_UpdateWorkflows"></a> Chcete-li aktualizovat pracovních postupů  
  V této části jsou aktualizované definice pracovního postupu. Dva `WriteLine` aktivity, které váš názor na odhad uživatele jsou aktualizované a nové `WriteLine` aktivity se přidá, který poskytuje další informace o hry, jakmile je uhádnout číslo.  
   
-####  <a name="BKMK_UpdateStateMachine"></a>Chcete-li aktualizovat StateMachine pracovního postupu  
+####  <a name="BKMK_UpdateStateMachine"></a> Chcete-li aktualizovat StateMachine pracovního postupu  
   
 1.  V **Průzkumníku řešení**v části **NumberGuessWorkflowActivities** projektu, klikněte dvakrát na **StateMachineNumberGuessWorkflow.xaml**.  
   
@@ -119,7 +108,7 @@ ms.lasthandoff: 12/22/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-####  <a name="BKMK_UpdateFlowchart"></a>Chcete-li aktualizovat vývojový diagram pracovního postupu  
+####  <a name="BKMK_UpdateFlowchart"></a> Chcete-li aktualizovat vývojový diagram pracovního postupu  
   
 1.  V **Průzkumníku řešení**v části **NumberGuessWorkflowActivities** projektu, klikněte dvakrát na **FlowchartNumberGuessWorkflow.xaml**.  
   
@@ -155,7 +144,7 @@ ms.lasthandoff: 12/22/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-####  <a name="BKMK_UpdateSequential"></a>Chcete-li aktualizovat sekvenční pracovní postup  
+####  <a name="BKMK_UpdateSequential"></a> Chcete-li aktualizovat sekvenční pracovní postup  
   
 1.  V **Průzkumníku řešení**v části **NumberGuessWorkflowActivities** projektu, klikněte dvakrát na **SequentialNumberGuessWorkflow.xaml**.  
   
@@ -191,7 +180,7 @@ ms.lasthandoff: 12/22/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-###  <a name="BKMK_UpdateWorkflowVersionMap"></a>Chcete-li aktualizovat WorkflowVersionMap zahrnující předchozí verze pracovního postupu  
+###  <a name="BKMK_UpdateWorkflowVersionMap"></a> Chcete-li aktualizovat WorkflowVersionMap zahrnující předchozí verze pracovního postupu  
   
 1.  Klikněte dvakrát na **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap.vb**) v části **NumberGuessWorkflowHost** projektu ho otevřete.  
   
@@ -559,7 +548,7 @@ ms.lasthandoff: 12/22/2017
     }  
     ```  
   
-###  <a name="BKMK_BuildAndRun"></a>Sestavení a spuštění aplikace  
+###  <a name="BKMK_BuildAndRun"></a> Sestavení a spuštění aplikace  
   
 1.  Stisknutím kombinace kláves CTRL + SHIFT + B pro sestavení aplikace a potom CTRL + F5 a spusťte.  
   

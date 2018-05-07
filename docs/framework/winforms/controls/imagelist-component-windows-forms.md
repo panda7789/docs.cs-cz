@@ -1,27 +1,15 @@
 ---
-title: "ImageList – komponenta (Windows Forms)"
-ms.custom: 
+title: ImageList – komponenta (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ImageList component [Windows Forms]
 - image controls
 ms.assetid: 83b48634-782b-464d-9b7d-568dc6e0bef2
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 946f024ee0c0bf421a00ef2708c436003949f3b1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 68296328a574997d5211bbd26ea4ca40be926e75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imagelist-component-windows-forms"></a>ImageList – komponenta (Windows Forms)
 Windows Forms `ImageList` komponenta se používá k ukládání Image, které pak lze zobrazit pomocí ovládacích prvků. Seznam obrázků můžete napsat kód pro jeden a konzistentní katalog bitové kopie.  

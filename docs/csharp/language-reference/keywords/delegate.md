@@ -1,9 +1,6 @@
 ---
-title: "delegate (Referenční dokumentace jazyka C#)"
+title: delegate (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - delegate_CSharpKeyword
 - delegate
@@ -12,14 +9,11 @@ helpviewer_keywords:
 - delegate keyword [C#]
 - function pointers [C#]
 ms.assetid: 0bb8cb6d-2f87-47c7-9d1f-d65c1cd01e9f
-caps.latest.revision: "24"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 179e89cea0e683b72e57536d4e4d86b019493aed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 923d746927063490236a721e8d2600889084dac0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegate-c-reference"></a>delegate (Referenční dokumentace jazyka C#)
 Deklarace typu delegáta je podobná podpis metody. Má návratovou hodnotu a libovolný počet parametrů libovolného typu:  
@@ -46,10 +40,10 @@ public delegate int TestDelegate(MyType m, long num);
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
  [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
  [Události](../../../csharp/programming-guide/events/index.md)  
- [Delegáti s pojmenované vs. Anonymní metody](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
+ [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
  [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)

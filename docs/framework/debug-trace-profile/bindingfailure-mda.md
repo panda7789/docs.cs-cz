@@ -1,13 +1,6 @@
 ---
-title: "bindingFailure – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: bindingFailure – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - binding failure
 - binding, failures
@@ -16,16 +9,13 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fc87000e5b3f3a0f464929764eaeafaab4c3089a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1a75efaf6703858fdb48a3f09635da1be4463d34
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure – pomocník spravovaného ladění (MDA)
 `bindingFailure` Pomocník spravovaného ladění (MDA) se aktivuje, když se nepodaří načíst sestavení.  
@@ -57,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Vyřešte příčinu založena na předchozí určení. Možným řešením možnosti jsou následující:  
   
-    -   Nainstalujte požadovaný sestavení v globální mezipaměti sestavení a volání. <xref:System.Reflection.Assembly.Load%2A>Metoda pro načtení sestavení identita.  
+    -   Nainstalujte požadovaný sestavení v globální mezipaměti sestavení a volání. <xref:System.Reflection.Assembly.Load%2A> Metoda pro načtení sestavení identita.  
   
     -   Zkopírujte požadované sestavení do adresáře aplikace a volání <xref:System.Reflection.Assembly.Load%2A> metoda pro načtení sestavení identita.  
   

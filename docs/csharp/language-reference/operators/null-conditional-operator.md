@@ -1,10 +1,6 @@
 ---
-title: "?? Operátor (referenční dokumentace jazyka C#)"
+title: ?? Operátor (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - ??_CSharpKeyword
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - ?? operator [C#]
 - conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 6c2372380d8162d3e7760bba4a43cdb1c568bf5b
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 8fa751654acaf5939fb8f8068c7323e365f7bdab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-c-reference"></a>?? Operátor (referenční dokumentace jazyka C#)
 `??` Operátor se označuje jako operátor slučování hodnotu null.  Vrátí levý operand, pokud hodnota operandu není null; v opačném případě vrátí pravý operand.  
@@ -36,7 +29,7 @@ ms.lasthandoff: 12/06/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
- [Typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
+ [Typy s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
  [Jaké přesně nemá 'Zrušit' znamená?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)

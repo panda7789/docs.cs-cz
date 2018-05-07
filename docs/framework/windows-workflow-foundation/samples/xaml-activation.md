@@ -1,23 +1,12 @@
 ---
 title: Aktivace XAML
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 486760e2-bb10-4ed5-8c02-fe7472498d2d
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 53665f39c6c0c7e5c7956912b05e3fd80659ddcb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8621b0ea7b390c81e76ac7eeedb0b547b44320d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-activation"></a>Aktivace XAML
 Tento příklad ukazuje, jak k hostování deklarativní pracovní postup ve službě IIS. Ukázka je základní pracovní postup volá `EchoService` má jednu operaci.  
@@ -27,7 +16,7 @@ Tento příklad ukazuje, jak k hostování deklarativní pracovní postup ve slu
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte k (stránce pro stažení) Chcete-li stáhnout všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte k (stránce pro stažení) Chcete-li stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\XAMLActivation`  
   
@@ -43,7 +32,7 @@ Tento příklad ukazuje, jak k hostování deklarativní pracovní postup ve slu
   
     2.  Spusťte WcfTestClient.exe.  
   
-4.  Nastavte adresu služby na WcfTestClient.exe stisknutím kláves CTRL + SHIFT + A a nastavení http://localhost:56133/Service.xamlx adresu služby.  
+4.  Stisknutím kombinace kláves CTRL + SHIFT + A a nastavení adresu služby nastavte adresu služby na WcfTestClient.exe http://localhost:56133/Service.xamlx.  
   
 5.  Provedení operace echo testování služby.  
   

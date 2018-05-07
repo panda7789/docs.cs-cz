@@ -1,24 +1,12 @@
 ---
-title: "3391 – HttpMessageReceiveFailed"
-ms.custom: 
+title: 3391 – HttpMessageReceiveFailed
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9fc527ed-57ad-46fe-8b81-940f4b992368
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b16c5d2dbf73e4042e84a2b747c4de16c858d228
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 103b83d1944dd873b87c37b01387bd9c05c14e43
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3391---httpmessagereceivefailed"></a>3391 – HttpMessageReceiveFailed
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|3391|  
 |Klíčová slova|HTTP|  
 |úroveň|Upozornění|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované při přijímat zprávy Http se nezdařilo.  

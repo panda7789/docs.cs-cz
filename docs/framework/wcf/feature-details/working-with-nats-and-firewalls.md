@@ -1,34 +1,20 @@
 ---
 title: Práce s překlady adres (NAT) a bránami firewall
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe74b4bd86a25a8e6b769be1abe5fd81e5ffe5f9
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 72582af358d363038d09b313632c023f3c054dbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server připojení k síti často nemají přímou a otevřete cestu pro komunikaci. Pakety jsou filtrovány, směrovat, analyzovat a transformovat na počítačích, koncový bod a zprostředkující počítače v síti. Sítě překlady adres (NAT) a brány firewall jsou běžných příkladů zprostředkující aplikací, které se můžou zapojit síťové komunikace.  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] přenosy a zpráva, že exchange vzory (MEPs) reagovat jinak na přítomnost zařízení NAT a brány firewall. Toto téma popisuje, jak zařízení NAT a brány firewall funkce společné síťové topologie. Doporučení pro konkrétní kombinace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přenosy MEPs jsou zadané a který pomoci zajistit robustnější aplikace na zařízení NAT a brány firewall v síti.  
+ Přenosy Windows Communication Foundation (WCF) a zpráva, že exchange vzory (MEPs) reagovat jinak na přítomnost zařízení NAT a brány firewall. Toto téma popisuje, jak zařízení NAT a brány firewall funkce společné síťové topologie. Doporučení pro konkrétní kombinace přenosy WCF a MEPs jsou uvedena, pomoci zajistit robustnější aplikace na zařízení NAT a brány firewall v síti.  
   
 ## <a name="how-nats-affect-communication"></a>Vliv komunikace zařízení NAT.  
  NAT byl vytvořen, aby několik počítačů sdílet jednu externí IP adresu. NAT se port přemapování mapuje interní IP adresu a port pro připojení na externí IP adresu s nové číslo portu. Nové číslo portu umožňuje NAT ke korelaci návratový provoz s původní komunikace. Mnoho domácí uživatelé teď mají IP adresu, která je jenom soukromě směrovatelné a spoléhají na NAT zajistit globální směrování paketů.  
@@ -45,7 +31,7 @@ Klient a server připojení k síti často nemají přímou a otevřete cestu pr
  Obvyklé konfigurace brány firewall domácí uživatel je zakázat příchozí připojení, pokud byl proveden odchozí připojení k tomuto počítači dříve. Obvyklé konfigurace brány firewall obchodní uživatele je zakázat příchozí připojení na všech portech kromě skupinu konkrétně identifikovat. Příkladem je bránu firewall, která znemožňuje připojení na všech portech s výjimkou porty 80 a 443 o poskytování služeb HTTP a HTTPS. Spravované brány firewall pro domácí i obchodní uživatele, které umožňují důvěryhodné uživatel nebo proces na počítači, chcete-li změnit konfiguraci brány firewall neexistují. Spravované brány firewall jsou častější pro domácí uživatele tam, kde nejsou žádné podnikové zásady řízení využití sítě.  
   
 ## <a name="using-teredo"></a>Použití Teredo  
- Teredo je přechodové technologie IPv6, která umožňuje přímé adresovatelnosti počítačů za adres (NAT) Teredo spoléhá na použití serveru, které se dají veřejně a globálně směrovat inzerovat potenciální připojení. Teredo server aplikace klient a server poskytuje společný bod schůzku výměně informací o připojení. Na počítačích pak požádat o dočasnou adresu Teredo a pakety se tunneled přes existující síť. Podpora Teredo v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyžaduje povolení podpory protokolu IPv6 a Teredo v operačním systému. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a novější operační systémy podporují Teredo. [!INCLUDE[wv](../../../../includes/wv-md.md)] a novější operační systémy podporovat protokol IPv6 ve výchozím nastavení a vyžadují jenom uživateli aktivaci Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] vyžadovat, aby uživatel povolit protokol IPv6 a Teredo. Další informace najdete v tématu [Teredo přehled](http://go.microsoft.com/fwlink/?LinkId=87571).  
+ Teredo je přechodové technologie IPv6, která umožňuje přímé adresovatelnosti počítačů za adres (NAT) Teredo spoléhá na použití serveru, které se dají veřejně a globálně směrovat inzerovat potenciální připojení. Teredo server aplikace klient a server poskytuje společný bod schůzku výměně informací o připojení. Na počítačích pak požádat o dočasnou adresu Teredo a pakety se tunneled přes existující síť. Podpora Teredo ve WCF vyžaduje povolení podpory protokolu IPv6 a Teredo v operačním systému. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a novější operační systémy podporují Teredo. [!INCLUDE[wv](../../../../includes/wv-md.md)] a novější operační systémy podporovat protokol IPv6 ve výchozím nastavení a vyžadují jenom uživateli aktivaci Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] vyžadovat, aby uživatel povolit protokol IPv6 a Teredo. Další informace najdete v tématu [Teredo přehled](http://go.microsoft.com/fwlink/?LinkId=87571).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Výběr vzorce výměny zpráv a přenosu  
  Výběr přenosu a MEP je proces třech krocích:  
@@ -64,7 +50,7 @@ Klient a server připojení k síti často nemají přímou a otevřete cestu pr
   
 -   Použít dosažitelný služby pro registraci koncových bodů nebo předávání provoz. Pomocí globálně dostupné připojení služby, jako je například Teredo server, se značně zvyšuje šance připojující úspěšně po omezující nebo neznámé síťové topologie.  
   
- V následujících tabulkách zkontrolujte jednosměrné, požadavku a odpovědi a duplexní MEPs a standardní TCP, TCP s Teredo a standard a duální přenosy HTTP v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ V následujících tabulkách zkontrolujte jednosměrné, požadavek odpověď a duplexní MEPs a standardní TCP, TCP s Teredo, a standardní a duální HTTP je určena k přenosu v WCF.  
   
 |Adresovatelnosti|Přímý server|Server přímé s NAT traversal|Server NAT|Server NAT s NAT traversal|  
 |--------------------|-------------------|--------------------------------------|----------------|-----------------------------------|  

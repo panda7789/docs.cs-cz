@@ -1,29 +1,18 @@
 ---
 title: Aktivita stromu kontroly
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 100d00e4-8c1d-4233-8fbb-dd443a01155d
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: efb7f8f1603de67f21aee7e1746670e324d5e238
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4f2ca6bff27cfe0e3362e2a3b95cd08a0f8d5297
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-tree-inspection"></a>Aktivita stromu kontroly
 Kontroly stromu aktivity se používá aplikace autory pracovního postupu ke kontrole pracovních hostovaných aplikací. Pomocí <xref:System.Activities.WorkflowInspectionServices>, pracovní postupy můžete vyhledávat konkrétní podřízené aktivity, jednotlivé aktivity a jejich vlastnosti můžete provést výčet a do mezipaměti metadat runtime aktivit v určitém čase. Toto téma obsahuje přehled <xref:System.Activities.WorkflowInspectionServices> a způsobu jeho použití kontrola strom aktivity.  
   
 ## <a name="using-workflowinspectionservices"></a>Pomocí WorkflowInspectionServices  
- <xref:System.Activities.WorkflowInspectionServices.GetActivities%2A> Metoda se používá k výčet všech aktivit ve stromové struktuře zadaný aktivity. <xref:System.Activities.WorkflowInspectionServices.GetActivities%2A>Vrátí vyčíslitelnou dotýká všechny aktivity v rámci stromu včetně podřízených prvků, obslužné rutiny delegáta, proměnné výchozí hodnoty a argument výrazy. V následujícím příkladu se vytváří definice pracovního postupu pomocí <xref:System.Activities.Statements.Sequence>, <xref:System.Activities.Statements.While>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.WriteLine>a výrazy. Po vytvoření definice pracovního postupu je volána a potom `InspectActivity` metoda je volána.  
+ <xref:System.Activities.WorkflowInspectionServices.GetActivities%2A> Metoda se používá k výčet všech aktivit ve stromové struktuře zadaný aktivity. <xref:System.Activities.WorkflowInspectionServices.GetActivities%2A> Vrátí vyčíslitelnou dotýká všechny aktivity v rámci stromu včetně podřízených prvků, obslužné rutiny delegáta, proměnné výchozí hodnoty a argument výrazy. V následujícím příkladu se vytváří definice pracovního postupu pomocí <xref:System.Activities.Statements.Sequence>, <xref:System.Activities.Statements.While>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.WriteLine>a výrazy. Po vytvoření definice pracovního postupu je volána a potom `InspectActivity` metoda je volána.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#45](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#45)]  
   

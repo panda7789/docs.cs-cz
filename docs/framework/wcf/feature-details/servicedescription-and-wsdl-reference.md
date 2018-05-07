@@ -1,36 +1,22 @@
 ---
 title: ServiceDescription and WSDL Reference
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: eedc025d-abd9-46b1-bf3b-61d2d5c95fd6
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7eadfaaae920071092f569fe2b8882875ed9497f
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: e70d653519c13d2f40fa2a579b674893e1b7ab02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicedescription-and-wsdl-reference"></a>ServiceDescription and WSDL Reference
-Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] mapuje webové služby popis Language (WSDL) dokumenty do a z <xref:System.ServiceModel.Description.ServiceDescription> instance.  
+Toto téma popisuje, jak Windows Communication Foundation (WCF) mapuje webové služby popis Language (WSDL) dokumenty do a z <xref:System.ServiceModel.Description.ServiceDescription> instance.  
   
 ## <a name="how-servicedescription-maps-to-wsdl-11"></a>Jak ServiceDescription mapuje WSDL 1.1  
- Můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] export WSDL dokumenty z <xref:System.ServiceModel.Description.ServiceDescription> instanci pro vaši službu. WSDL dokumenty jsou pro vaši službu automaticky generovány při publikování kocových bodů metadat.  
+ WCF můžete exportovat WSDL dokumenty z <xref:System.ServiceModel.Description.ServiceDescription> instanci pro vaši službu. WSDL dokumenty jsou pro vaši službu automaticky generovány při publikování kocových bodů metadat.  
   
  Můžete také importovat <xref:System.ServiceModel.Description.ServiceEndpoint> instancí <xref:System.ServiceModel.Description.ContractDescription> instance, a <xref:System.ServiceModel.Channels.Binding> instancí z WSDL dokumentů pomocí `WsdlImporter` typu.  
   
- Dokumenty WSDL exportované sadou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], importovat všechny definice schématu XML použité z externí dokumentů schématu XML. Pro každý cílový obor názvů, které typy dat použít v rámci služby se exportuje samostatný dokument schématu XML. Podobně se exportuje samostatný dokument WSDL pro každý cílový obor názvů služby měnící použití.  
+ WSDL dokumenty, exportované sadou WCF, importovat všechny definice schématu XML použité z externí dokumentů schématu XML. Pro každý cílový obor názvů, které typy dat použít v rámci služby se exportuje samostatný dokument schématu XML. Podobně se exportuje samostatný dokument WSDL pro každý cílový obor názvů služby měnící použití.  
   
 ### <a name="servicedescription"></a>ServiceDescription  
  A <xref:System.ServiceModel.Description.ServiceDescription> instance se mapuje `wsdl:service` elementu. A <xref:System.ServiceModel.Description.ServiceDescription> instance obsahuje kolekci <xref:System.ServiceModel.Description.ServiceEndpoint> instance, která každý mapování na jednotlivé `wsdl:port` elementy.  
@@ -41,7 +27,7 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
 |`Namespace`|Cílový obor názvů pro `wsdl:service` definice pro službu.|  
 |`Endpoints`|`wsdl:port` Definice pro službu.|  
   
-### <a name="serviceendpoint"></a>ServiceEndpoint  
+### <a name="serviceendpoint"></a>Koncového bodu služby  
  A <xref:System.ServiceModel.Description.ServiceEndpoint> instance se mapuje `wsdl:port` elementu. A <xref:System.ServiceModel.Description.ServiceEndpoint> instance obsahuje adresy, vazby a kontraktu.  
   
  Koncový bod chování, které implementují <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní můžete upravit `wsdl:port` element pro koncový bod jsou připojené k.  
@@ -49,13 +35,13 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
 |Vlastnosti|Mapování WSDL|  
 |----------------|------------------|  
 |`Name`|`wsdl:port` /@name Hodnotu pro koncový bod a `wsdl:binding` /@name hodnotu pro vazbu koncového bodu.|  
-|`Address`|Adresy pro `wsdl:port` definice pro koncový bod.<br /><br /> Přenos pro koncový bod Určuje formát adresy. Například pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-podporované přenosy ho může být adresa protokolu SOAP nebo odkaz na koncový bod.|  
-|`Binding`|`wsdl:binding` Definice pro koncový bod.<br /><br /> Na rozdíl od `wsdl:binding` definice, vazeb v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nejsou vázané na všechny jeden kontrakt.|  
+|`Address`|Adresy pro `wsdl:port` definice pro koncový bod.<br /><br /> Přenos pro koncový bod Určuje formát adresy. Pro podporované WCF přenosy se například může být adresa protokolu SOAP nebo odkaz na koncový bod.|  
+|`Binding`|`wsdl:binding` Definice pro koncový bod.<br /><br /> Na rozdíl od `wsdl:binding` definice vazby ve WCF nejsou vázané na všechny jeden kontrakt.|  
 |`Contract`|`wsdl:portType` Definice pro koncový bod.|  
 |`Behaviors`|Koncový bod chování, které implementují <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní můžete upravit `wsdl:port` pro koncový bod.|  
   
 ### <a name="bindings"></a>Vazby  
- Instance vazby pro `ServiceEndpoint` instance se mapuje `wsdl:binding` definice. Na rozdíl od `wsdl:binding` definice, které musí být přidružen konkrétní `wsdl:portType` definice [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby jsou nezávislé na jakékoli smlouvy.  
+ Instance vazby pro `ServiceEndpoint` instance se mapuje `wsdl:binding` definice. Na rozdíl od `wsdl:binding` definice, které musí být přidružen konkrétní `wsdl:portType` definice vazby WCF jsou nezávislé na jakékoli smlouvy.  
   
  Vazba se skládá z kolekce elementů vazby. Každý prvek popisuje určitý aspekt jak koncový bod komunikuje s klienty. Kromě toho má vazbu <xref:System.ServiceModel.Channels.MessageVersion> určující <xref:System.ServiceModel.EnvelopeVersion> a <xref:System.ServiceModel.Channels.AddressingVersion> pro koncový bod.  
   
@@ -72,10 +58,10 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
  <xref:System.ServiceModel.Channels.TransportBindingElement> Pro vazbu určuje přenos identifikátor URI (Uniform Resource) pro vazbu protokolu SOAP.  
   
 #### <a name="addressingversion"></a>Třídu AddressingVersion  
- `AddressingVersion` Na vazbu se mapuje na verzi adresování používány `wsd:port`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje SOAP 1.1 a SOAP 1.2 adresy a adresování WS 08/2004 a odkazy na koncový bod služby WS-Addressing 1.0.  
+ `AddressingVersion` Na vazbu se mapuje na verzi adresování používány `wsd:port`. Podporuje WCF SOAP 1.1 a SOAP 1.2 adresy a adresování WS 08/2004 a odkazy na koncový bod služby WS-Addressing 1.0.  
   
 #### <a name="envelopeversion"></a>EnvelopeVersion  
- `EnvelopeVersion` u vazby mapy na verzi protokolu SOAP používány `wsdl:binding`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje SOAP 1.1 a SOAP 1.2 vazby.  
+ `EnvelopeVersion` u vazby mapy na verzi protokolu SOAP používány `wsdl:binding`. Podporuje WCF SOAP 1.1 a SOAP 1.2 vazby.  
   
 ### <a name="contracts"></a>Kontrakty  
  <xref:System.ServiceModel.Description.ContractDescription> Instanci pro `ServiceEndpoint` instance se mapuje `wsdl:portType`. A `ContractDescription` instance popisuje všechny operace pro danou zakázku.  
@@ -84,7 +70,7 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
 |----------------|------------------|  
 |`Name`|`wsdl:portType` /@name Hodnotu pro daný kontrakt.|  
 |`Namespace`|Cílový obor názvů pro `wsdl:portType` definice.|  
-|`SessionMode`|`wsdl:portType` /@msc:usingSession Hodnotu pro daný kontrakt. Tento atribut je [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíření pro WSDL 1.1.|  
+|`SessionMode`|`wsdl:portType` /@msc:usingSession Hodnotu pro daný kontrakt. Tento atribut je rozšíření WCF pro WSDL 1.1.|  
 |`Operations`|`wsdl:operation` Definice pro kontrakt.|  
   
 ### <a name="operations"></a>Operace  
@@ -96,8 +82,8 @@ Toto téma popisuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
 |----------------|------------------|  
 |`Name`|`wsdl:portType` / `wsdl:operation` /@name Hodnotu pro operaci.|  
 |`ProtectionLevel`|Kontrolní výrazy ochrany v zásadách zabezpečení připojené k `wsdl:binding/wsdl:operation` zpráv pro tuto operaci.|  
-|`IsInitiating`|`wsdl:portType` / `wsdl:operation` /@msc:isInitiating Hodnotu pro operaci. Tento atribut je [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíření pro WSDL 1.1.|  
-|`IsTerminating`|`wsdl:portType` / `wsdl:operation` /@msc:isTerminating Hodnotu pro operaci. Tento atribut je [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíření pro WSDL 1.1.|  
+|`IsInitiating`|`wsdl:portType` / `wsdl:operation` /@msc:isInitiating Hodnotu pro operaci. Tento atribut je rozšíření WCF pro WSDL 1.1.|  
+|`IsTerminating`|`wsdl:portType` / `wsdl:operation` /@msc:isTerminating Hodnotu pro operaci. Tento atribut je rozšíření WCF pro WSDL 1.1.|  
 |`Messages`|`wsdl:portType` / `wsdl:operation` / `wsdl:input` a `wsdl:portType` / `wsdl:operation` / `wsdl:output` zprávy pro operaci.|  
 |`Faults`|`wsdl:portType` / `wsdl:operation` / `wsdl:fault` Definice pro operaci.|  
 |`Behaviors`|`DataContractSerializerOperationBehavior` a `XmlSerializerOperationBehavior` řešit vazby operace a zprávy operace.|  

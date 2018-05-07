@@ -1,29 +1,15 @@
 ---
 title: Načítání Identity nebo hodnoty automatické číslování
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
-caps.latest.revision: 7
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: ef070c737f6a108aa9c9285d2cc8e0a1144479bd
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ce3c888ce9e96d1f5768ce9cf3f3eef8cf8624e0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>Načítání Identity nebo hodnoty automatické číslování
 Primární klíče v relační databázi je sloupec nebo kombinace sloupců, které vždy obsahovat jedinečné hodnoty. Znalost hodnotu primárního klíče umožňuje umístit na řádek, který jej obsahuje. Relační databáze weby, jako je například SQL Server, Oracle a Microsoft Access/Jet podporují vytvoření automaticky zvyšování sloupce, které lze určit jako primární klíče. Tyto hodnoty generované serverem při přidávání řádků do tabulky. V systému SQL Server nastavte vlastnost identity sloupce v Oracle vytvoříte pořadí a v aplikaci Microsoft Access vytvořit sloupec Automatické číslo.  

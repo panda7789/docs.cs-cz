@@ -1,26 +1,16 @@
 ---
-title: "Jaký & č. 39; s ve Windows Identity Foundation 4.5"
-ms.custom: 
+title: Co&#39;s ve Windows Identity Foundation 4.5
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3b381f04-593b-471f-bd33-0362be1aade5
-caps.latest.revision: "13"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 81506cfb0c08bbbd99d76dc76010fdb933623e0d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0a5bc7d53405966bcb86750780473c4060d7ced3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="what39s-new-in-windows-identity-foundation-45"></a>Jaký & č. 39; s ve Windows Identity Foundation 4.5
+# <a name="what39s-new-in-windows-identity-foundation-45"></a>Co&#39;s ve Windows Identity Foundation 4.5
 První verze technologie Windows Identity Foundation (WIF) byla uvedena na trh jako samostatný produkt ke stažení a je známa pod označením WIF 3.5, protože byla uvedena ve stejném období jako technologie .NET 3.5 SP1. Počínaje verzí .NET 4.5 je technologie WIF součástí rozhraní .NET Framework. S přímo k dispozici v rámci třídy WIF umožňuje mnohem hlubší integrace založené na deklaracích identity v rozhraní .NET, což usnadňuje používat deklarace identity. Aplikace napsané pro WIF 3.5 bude nutné upravit, aby bylo možné využívat výhod nového modelu; informace najdete v tématu [pokyny pro migraci aplikaci vytvořené pomocí WIF 3.5 na verzi WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md).  
   
  Následuje přehled některých hlavních změn.  

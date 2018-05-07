@@ -1,21 +1,14 @@
 ---
-title: "Návratové hodnoty Main() (Průvodce programováním v C#)"
+title: Návratové hodnoty Main() (Průvodce programováním v C#)
 ms.date: 08/02/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 9f317879a4941adfd3d125c7697226f8a510254c
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 51a7d821b5705c0ddda96a34663ba0288e0f1da9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main() (C# Průvodce programováním)
 
@@ -90,10 +83,10 @@ Výhodou nové syntaxe je, že kompilátor vždy generuje správný kód.
 
 Když se vrátí vstupní bod aplikace `Task` nebo `Task<int>`, kompilátor vygeneruje nový vstupní bod, který volá metoda deklarované v kódu aplikace. Za předpokladu, že tento vstupní bod se nazývá `$GeneratedMain`, kompilátor generuje následující kód pro tyto vstupní body:
 
-- `static Task Main()`výsledky v kompilátoru emitování ekvivalent`private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
-- `static Task Main(string[])`výsledky v kompilátoru emitování ekvivalent`private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
-- `static Task<int> Main()`výsledky v kompilátoru emitování ekvivalent`private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
-- `static Task<int> Main(string[])`výsledky v kompilátoru emitování ekvivalent`private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task Main()` výsledky v kompilátoru emitování ekvivalent `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task Main(string[])` výsledky v kompilátoru emitování ekvivalent `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task<int> Main()` výsledky v kompilátoru emitování ekvivalent `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task<int> Main(string[])` výsledky v kompilátoru emitování ekvivalent `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
 
 > [!NOTE]
 >Pokud se používá v příkladech `async` modifikátor na `Main` metoda, kompilátor by generovat stejný kód.

@@ -1,13 +1,6 @@
 ---
-title: "Certmgr.exe (nástroj Certificate Manager)"
-ms.custom: 
+title: Certmgr.exe (nástroj Certificate Manager)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,13 @@ helpviewer_keywords:
 - CTLs
 - certificate revocation lists
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
-caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c303a9d91d12305bd8be4e111aaa8d6ac13eb77
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 96edfd0f94240d51a224f4522573a450ab027330
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
@@ -70,10 +60,10 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 |**/ del**|Odstraní certifikáty, soubory CTL a CRL z úložiště certifikátů.|  
 |**/e** *encodingType*|Určuje typ kódování certifikátu. Výchozí hodnota je `X509_ASN_ENCODING`.|  
 |**/f** *dwFlags*|Určuje příznak pro otevření úložiště. Toto je *dwFlags* byl předán parametr **příkaz CertOpenStore**. Výchozí hodnota je CERT_SYSTEM_STORE_CURRENT_USER. Tato možnost je považován za pouze, pokud **/y** možnost se používá.|  
-|**/h**[**nápovědu**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/n***osoby*|Určuje obecný název certifikátu, který se má přidat, odstranit nebo uložit. Tuto možnost lze použít u certifikátů. Nelze ji použít u souborů CTL nebo u CRL.|  
+|**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/ n** *osoby*|Určuje obecný název certifikátu, který se má přidat, odstranit nebo uložit. Tuto možnost lze použít u certifikátů. Nelze ji použít u souborů CTL nebo u CRL.|  
 |**/ Vložení**|Uloží do souboru certifikát X.509, soubor CTL nebo CRL z úložiště certifikátů. Soubor je uložen ve formátu X.509. Můžete použít **/7** možnost s **/put** možnost uložení souboru ve formátu PKCS #7. **/Put** možnost musí být následováno buď **/c**, **/CTL**, nebo **/CRL**. **Nebo všechny** možnost nelze použít s **/put**.|  
-|**/r** *umístění*|Určuje umístění registru v rámci systémového úložiště. Tato možnost je považován za pouze v případě, že zadáte **/s** možnost. *umístění* musí mít jednu z následujících akcí:<br /><br /> -   `currentUser`Označuje, že úložiště certifikátů je pod klíčem HKEY_CURRENT_USER. Toto nastavení je výchozí.<br />-   `localMachine`Označuje, že úložiště certifikátů je pod klíčem HKEY_LOCAL_MACHINE.|  
+|**/r** *umístění*|Určuje umístění registru v rámci systémového úložiště. Tato možnost je považován za pouze v případě, že zadáte **/s** možnost. *umístění* musí mít jednu z následujících akcí:<br /><br /> -   `currentUser` Označuje, že úložiště certifikátů je pod klíčem HKEY_CURRENT_USER. Toto nastavení je výchozí.<br />-   `localMachine` Označuje, že úložiště certifikátů je pod klíčem HKEY_LOCAL_MACHINE.|  
 |**/s**|Určuje, že je úložiště certifikátů systémovým úložištěm. Pokud nezadáte tuto možnost, se považuje za úložiště **StoreFile**.|  
 |**/SHA1** *sha1Hash*|Určuje hodnotu hash SHA1 certifikátu, souboru CTl nebo CRl, který se má přidat, odstranit nebo uložit.|  
 |**/v**|Určuje podrobný režim. Zobrazí detailní informace o certifikátech, souborech CTL a CRL. Tuto možnost nelze použít s **/ add**, **/del**, nebo **/put** možnosti.|  

@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugModule3 – rozhraní"
-ms.custom: 
+title: ICorDebugModule3 – rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugModule3
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 0b69f945-263a-4e11-8512-89d27f6ea296
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b864b057e274424a8515ab1bb122da74538c4c63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5fc4c0560c2aa0d66c1b40d78458a2d44284e232
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmodule3-interface"></a>ICorDebugModule3 – rozhraní
 Vytvoří čtečku symbolů pro dynamický modul.  
@@ -69,7 +57,7 @@ interface ICorDebugModule3 : IUnknown
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**4.5, 4, 3.5 SP1  
+ **Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1  
   
 ## <a name="see-also"></a>Viz také  
  [ICorDebugRemoteTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  

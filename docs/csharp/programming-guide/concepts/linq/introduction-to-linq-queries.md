@@ -1,29 +1,20 @@
 ---
-title: "Úvod do dotazů LINQ (C#)"
-ms.custom: 
+title: Úvod do dotazů LINQ (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - deferred execution [LINQ]
 - LINQ, queries
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-caps.latest.revision: "47"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ae7a2d03859e95d939ff4c62fa33e07917a873a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f74b762532f0fb2795625185e59360cdfb76b124
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
-A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk. V čase pro různé typy datových zdrojů, například SQL pro relační databáze a XQuery pro formát XML bylo vyvinuto různé jazyky. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz, které jsou vždy práce s objekty. Použijte stejný základní kódování vzory pro dotazování a transformace dat v dokumentech XML, databáze SQL, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcí .NET a dalších formát, pro který [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  
+A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk. V čase pro různé typy datových zdrojů, například SQL pro relační databáze a XQuery pro formát XML bylo vyvinuto různé jazyky. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz, které jsou vždy práce s objekty. Použijte stejný základní kódování vzory pro dotazování a transformace dat v dokumentech XML, databáze SQL, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcí .NET a dalších formát, pro který [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  
   
 ## <a name="three-parts-of-a-query-operation"></a>Tři části operace dotazu  
  Všechny [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu operations obsahovat tři odlišné akce:  
@@ -66,7 +57,7 @@ IQueryable<Customer> custQuery =
 > [!NOTE]
 >  Typy, jako <xref:System.Collections.ArrayList> podporující neobecnou <xref:System.Collections.IEnumerable> rozhraní lze také jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat. Další informace najdete v tématu [postup: dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).  
   
-##  <a name="query"></a>Dotaz  
+##  <a name="query"></a> Dotaz  
  Dotaz Určuje, jaké informace načíst ze zdroje dat nebo zdroje. Volitelně dotazu také určuje, jak tyto informace by měl být seřazeny, seskupené a ve tvaru před vrácením. Dotaz je uložené v proměnné dotazu a inicializovat pomocí výrazu dotazu. Chcete-li psát dotazy, C# obsahuje zavedla nové syntaxe dotazu.  
   
  Dotaz v předchozím příkladu vrátí sudá čísla z pole celé číslo. Výraz dotazu obsahuje tři klauzule: `from`, `where` a `select`. (Pokud jste obeznámeni s SQL, bude jste si všimli, že řazení klauzulích je obrácený od pořadí v systému SQL.) `from` Klauzuli určuje zdroje dat, `where` klauzule použije filtr a `select` klauzuli Určuje typ vrácený elementů. Tyto a další klauzule dotazu jsou podrobněji v [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md) části. Teď, důležité je, že v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], proměnné v dotazu samotné neprovede žádnou akci a vrátí žádná data. Ukládá jenom informace, které je potřeba mít výsledky, pokud je dotaz proveden v určitém okamžiku novější. Další informace o tom, jak se vytvářejí dotazy na pozadí najdete v tématu [standardní přehled operátory dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  
@@ -97,9 +88,9 @@ IQueryable<Customer> custQuery =
  Můžete taky přinutit, provádění umístěním `foreach` smyčky ihned po výrazu dotazu. Ale voláním `ToList` nebo `ToArray` také mezipaměti všechna data v objektu jedinou kolekci.  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme s dotazy LINQ v jazyku C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [Návod: Zápis dotazů v C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
  [Návod: Zápis dotazů v C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
  [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [foreach v](../../../../csharp/language-reference/keywords/foreach-in.md)  
+ [foreach, in](../../../../csharp/language-reference/keywords/foreach-in.md)  
  [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)

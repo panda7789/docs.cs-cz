@@ -4,15 +4,11 @@ description: Zjistěte, jak analyzovat závislosti třetích stran k portu z roz
 author: cartermp
 ms.author: mairaw
 ms.date: 02/15/2018
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: be8d5a60977c7863136a1661a60e3bf23c0eb93e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a5affd8f1c493a87b2a4f7cd4096d168d404626a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="analyze-your-third-party-dependencies"></a>Analýza závislostmi třetích stran
 

@@ -1,32 +1,20 @@
 ---
 title: Zabezpečení zpráv pomocí klientských certifikátů
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-caps.latest.revision: 16
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6e31c7a9e53e8b918661c0c6c544e697e2a772e6
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 570c7763da912de4e0d2729e7579a200f35c4941
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
-Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).  
+Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).  
   
  Ukázkovou aplikaci, najdete v části [certifikát zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-certificate.md).  
   
@@ -35,7 +23,7 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení.|Zpráva|  
-|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Pouze|  
+|Interoperabilita|Pouze WCF|  
 |Ověřování (Server)|Pomocí certifikátu služby|  
 |Ověřování (klient)|Pomocí klientského certifikátu|  
 |Integrita|Ano|  

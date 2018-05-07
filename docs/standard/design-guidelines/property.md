@@ -1,29 +1,18 @@
 ---
 title: Vlastnost návrhu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 6dcb164daea6809f0d0e9c221f182d5019385bc1
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 4a4aec965753fe8f89b8bd89469f8dc5739a6a7c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="property-design"></a>Vlastnost návrhu
 I když jsou vlastnosti technicky velmi podobné metody, se výrazně lišit podle toho scénáře jejich použití. Měla by se zobrazit jako inteligentní pole. Mají volání syntaxe polí a flexibilitu metod.  

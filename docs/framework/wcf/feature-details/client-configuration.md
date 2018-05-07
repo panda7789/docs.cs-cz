@@ -1,34 +1,20 @@
 ---
 title: Konfigurace klienta
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c2c0d17c7274cc9fdaf1b5080950ddb4f69f539a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 0fd3d1a15164447275ef488ac91b9a8bd240032d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
-Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] konfigurace klienta a zadejte adresy, vazby chování, smlouvy, "ABC" vlastnosti klienta koncového bodu, který používají klienti k připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jehož atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsané v části "Konfigurace koncových bodů" v tomto tématu.  
+Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k určení adresy, vazby, chování a kontrakt, vlastnosti "ABC" koncového bodu klientů, kteří klienti používat pro připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jehož atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsané v části "Konfigurace koncových bodů" v tomto tématu.  
   
  [ \<Koncový bod >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) také obsahuje element [ \<metadata >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element, který slouží k určení nastavení pro import a Export metadat, [ \<hlavičky >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) element, který obsahuje kolekci hlaviček vlastní adresu, a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element, který umožňuje ověření koncový bod pomocí dalších koncových bodů Výměna zpráv s ním. [ \<Hlavičky >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) elementy jsou součástí <xref:System.ServiceModel.EndpointAddress> a jsou popsané v [adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md) tématu. Odkazy na témata, které vysvětlují použití rozšíření metadata jsou uvedeny v části dílčí konfigurace Metadata v tomto tématu.  
   
 ## <a name="configuring-endpoints"></a>Konfigurace koncových bodů  
- Konfigurace klienta je navržena k umožnění klienta zadat jeden nebo více koncových bodů, každý s svůj vlastní název adres a smlouvy, s každou odkazující na [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) a [ \< chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) elementů v konfiguraci klienta, který se má použít ke konfiguraci tohoto koncového bodu. Konfigurační soubor klienta by měl mít název "App.config" vzhledem k tomu, že je to název, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] očekává modulu runtime. Následující příklad ukazuje konfigurační soubor klienta.  
+ Konfigurace klienta je navržena k umožnění klienta zadat jeden nebo více koncových bodů, každý s svůj vlastní název adres a smlouvy, s každou odkazující na [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) a [ \< chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) elementů v konfiguraci klienta, který se má použít ke konfiguraci tohoto koncového bodu. Konfigurační soubor klienta by měl s názvem "App.config", protože je to název, který modul runtime WCF očekává. Následující příklad ukazuje konfigurační soubor klienta.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

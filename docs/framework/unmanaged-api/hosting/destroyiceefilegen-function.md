@@ -1,14 +1,6 @@
 ---
-title: "DestroyICeeFileGen – funkce"
-ms.custom: 
+title: DestroyICeeFileGen – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - DestroyICeeFileGen
 api_location:
@@ -24,17 +16,13 @@ helpviewer_keywords:
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d6c3e326aa71adc1bc9abe350cfc0528c88905cf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8e108dd925432b8ec193863de4cb085dad50cdd1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="destroyiceefilegen-function"></a>DestroyICeeFileGen – funkce
 Zničí [iceefilegen –](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.  
@@ -57,7 +45,7 @@ HRESULT DestroyICeeFileGen (
  Tato metoda vrátí standardní kódy chyb COM.  
   
 ## <a name="remarks"></a>Poznámky  
- `DestroyICeeFileGen`zničí `ICeeFileGen` objekt vytvořený [createiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) funkce.  
+ `DestroyICeeFileGen` zničí `ICeeFileGen` objekt vytvořený [createiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) funkce.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -66,7 +54,7 @@ HRESULT DestroyICeeFileGen (
   
  **Knihovna:** MSCorPE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

@@ -1,28 +1,16 @@
 ---
-title: "Součást Časovač (Windows Forms)"
-ms.custom: 
+title: Součást Časovač (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Timer component [Windows Forms]
 - timers
 - timers [Windows Forms], creating
 ms.assetid: 6700e534-6382-43d5-98ed-14205435fff7
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cdb8d96b6d58afa86463243a385799950fb0fda0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 77ff87bcb8c325e87564dfbadf87729ed8a28209
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="timer-component-windows-forms"></a>Součást Časovač (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Timer> je komponenta, která se vyvolá událost v pravidelných intervalech. Tato součást je určená pro prostředí Windows Forms.  
@@ -38,10 +26,10 @@ Windows Forms <xref:System.Windows.Forms.Timer> je komponenta, která se vyvolá
  Popisuje, jak reagovat na vypršel časový limit intervaly v aplikacích založených na systému Windows.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>– Třída  
+ <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> – Třída  
  Poskytuje referenční informace k třídě použít časovačů Windows Forms a její členy.  
   
- <xref:System.Timers.Timer?displayProperty=nameWithType>– Třída  
+ <xref:System.Timers.Timer?displayProperty=nameWithType> – Třída  
  Referenční informace týkající se <xref:System.Timers.Timer?displayProperty=nameWithType> třídu, která je používána na serveru časovače.  
   
 ## <a name="related-sections"></a>Související oddíly  

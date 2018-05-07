@@ -1,13 +1,6 @@
 ---
-title: "Vytvoření ovládacího prvku vstupu inkoustu"
-ms.custom: 
+title: Vytvoření ovládacího prvku vstupu inkoustu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ink strokes [WPF], managing
 - managing ink strokes [WPF]
@@ -21,16 +14,11 @@ helpviewer_keywords:
 - DynamicRenderer objects [WPF]
 - StylusPlugIn objects [WPF]
 ms.assetid: c31f3a67-cb3f-4ded-af9e-ed21f6575b26
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7054728e8bf54a7cf7b71ea1224cab6a352176d4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b3dc71182b7553a429bb17e1888a4108ceb3e286
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-an-ink-input-control"></a>Vytvoření ovládacího prvku vstupu inkoustu
 Můžete vytvořit vlastní ovládací prvek, dynamicky a staticky vykreslí rukopisu. To znamená vykreslit element ink jako uživatel nevykresluje tah, způsobuje rukopisu se objeví "toku" z pera a zobrazí rukopisu po jeho se přidá do ovládacího prvku, buď pomocí pera, vložené ze schránky, nebo načíst ze souboru. Chcete-li dynamicky vykreslit rukopisu, musíte použít vlastní ovládací prvek <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. K vykreslení staticky rukopisu, je nutné přepsat metodu pera událostí (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, a <xref:System.Windows.UIElement.OnStylusUp%2A>) ke shromažďování <xref:System.Windows.Input.StylusPoint> data, vytvořte tahy a přidat je do <xref:System.Windows.Controls.InkPresenter> (která vykreslí element ink na ovládací prvek).  

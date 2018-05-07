@@ -1,21 +1,14 @@
 ---
-title: "Rozhodovací tabulky. Rozhraní .NET Framework pro Docker"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Rozhodovací tabulky, rozhraní .NET Framework pro Docker"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Rozhodovací tabulky. Rozhraní .NET Framework pro Docker
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Rozhodovací tabulky, rozhraní .NET Framework pro Docker
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 40e6a14e7e3515194185e1f4558c91ac29429108
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0e384fabca88d8ad6f93ae626140fb3d5dcaf971
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="decision-table-net-frameworks-to-use-for-docker"></a>Rozhodovací tabulky: rozhraní .NET Framework pro Docker
 

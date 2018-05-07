@@ -1,23 +1,16 @@
 ---
 title: '#definování (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '#define'
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-caps.latest.revision: 22
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ae72a1b6c19421c51348a0d93691ba3fe29a191c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1903b96de5f9dfa4efc252897a4a4bd18ed64924
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="define-c-reference"></a>#define (referenční dokumentace jazyka C#)
 Používáte `#define` k definování symbol. Při použití symbol jako výraz, který je předán [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktivy, výraz vyhodnotí jako `true`, jak ukazuje následující příklad:  
@@ -71,9 +64,9 @@ public class TestDefine
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [C# direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
- [Const](../../../csharp/language-reference/keywords/const.md)  
- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
+ [const](../../../csharp/language-reference/keywords/const.md)  
+ [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
  [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)  
  [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)

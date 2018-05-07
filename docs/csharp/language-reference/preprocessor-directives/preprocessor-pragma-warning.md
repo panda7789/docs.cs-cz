@@ -1,26 +1,19 @@
 ---
 title: '#– Direktiva pragma upozornění (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '#pragma warning'
 helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-caps.latest.revision: 17
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 5330b448dc2b328992b2d29699557d20df56dee4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 079045f4eb52f03afa8733620029396d80cb75fe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma – upozornění (Referenční dokumentace jazyka C#)
-`#pragma warning`můžete povolit nebo zakázat určité upozornění.  
+`#pragma warning` můžete povolit nebo zakázat určité upozornění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -66,6 +59,6 @@ public class D
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [C# direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
  [Chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md)

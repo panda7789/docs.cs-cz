@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití transformace na BitmapImage"
-ms.custom: 
+title: 'Postupy: Použití transformace na BitmapImage'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - bitmap images [WPF]
 - Transforms [WPF]
 ms.assetid: 5c042f8d-d569-45e4-ab32-868b89759bf2
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 53141f2d411d544da738625200e09680d467ed6f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8b82a7fbb6f80fce5cdfd8322cf826c8c807897f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-apply-a-transform-to-a-bitmapimage"></a>Postupy: Použití transformace na BitmapImage
 Tento příklad ukazuje, jak se má použít <xref:System.Windows.Media.Transform> k <xref:System.Windows.Media.Imaging.BitmapImage>.  

@@ -1,36 +1,22 @@
 ---
 title: 'Postupy: registrace a konfigurace Monikeru služby'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 52b3ec27560ca2dc47b7951cb209f33f307fa7ea
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1d245327c1e7d53de9a88c93ff0399d8e231a1df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: registrace a konfigurace Monikeru služby
-Před použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] monikeru služby v rámci aplikace modelu COM s typem kontrakt, je nutné zaregistrovat požadované s atributy typy v modelu COM a nakonfigurovat aplikaci COM a moniker s konfigurací požadovaná vazba.  
+Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontrakt, musíte zaregistrovat požadované s atributy typy v modelu COM a nakonfigurovat aplikaci COM a moniker s požadovaná vazba konfigurace.  
   
 ### <a name="to-register-the-required-attributed-types-with-com"></a>Registrace vyžaduje s atributy typy v modelu COM  
   
-1.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj k načtení metadat kontrakt z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Tím se vygeneruje zdrojový kód [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sestavení klienta a klientské aplikace konfiguračního souboru.  
+1.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj k načtení metadat kontrakt ze služby WCF. To generuje zdrojový kód je sestavení klienta WCF a konfiguračního souboru aplikace klienta.  
   
 2.  Ujistěte se, že typy v sestavení jsou označeny jako `ComVisible`. Uděláte to tak, přidejte následující atribut do souboru AssemblyInfo.cs v projektu sady Visual Studio.  
   
@@ -38,7 +24,7 @@ Před použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] moniker
     [assembly: ComVisible(true)]  
     ```  
   
-3.  Kompilace spravovaný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta jako sestavení se silným názvem. To vyžaduje podepsání pomocí páru kryptografických klíčů. Další informace najdete v tématu [podepsání sestavení se silným názvem](http://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
+3.  Zkompilujte spravovaného klienta WCF jako sestavení se silným názvem. To vyžaduje podepsání pomocí páru kryptografických klíčů. Další informace najdete v tématu [podepsání sestavení se silným názvem](http://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
   
 4.  Použijte nástroj Assembly Registration (Regasm.exe) s `/tlb` možnost zaregistrovat typy v sestavení s COM.  
   
@@ -49,7 +35,7 @@ Před použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] moniker
   
 ### <a name="to-configure-the-com-application-and-the-moniker-with-the-required-binding-configuration"></a>Konfigurace aplikace modelu COM a Přezdívka s konfigurací požadovaná vazba  
   
--   Umístěte definice vazba (vygenerované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) v konfiguračním souboru aplikace generovaného klienta) v konfiguračním souboru aplikace klienta. Například pro Visual Basic 6.0 spustitelný soubor s názvem CallCenterClient.exe, musí být umístěny konfiguraci do souboru s názvem CallCenterConfig.exe.config ve stejném adresáři jako spustitelný soubor. Klientská aplikace teď můžete použít přezdívka. Všimněte si, že pokud pomocí jedné z standardní typy poskytované vazby není potřeba Konfigurace vazeb [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+-   Umístěte definice vazba (vygenerované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) v konfiguračním souboru aplikace generovaného klienta) v konfiguračním souboru aplikace klienta. Například pro Visual Basic 6.0 spustitelný soubor s názvem CallCenterClient.exe, musí být umístěny konfiguraci do souboru s názvem CallCenterConfig.exe.config ve stejném adresáři jako spustitelný soubor. Klientská aplikace teď můžete použít přezdívka. Všimněte si, že pokud pomocí jedné z standardní typy poskytované WCF vazby není potřeba Konfigurace vazeb.  
   
      Následující typ je registrován.  
   

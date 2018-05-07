@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Konfigurace místního vystavitele"
-ms.custom: 
+title: 'Postupy: Konfigurace místního vystavitele'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,30 +8,25 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 15263371-514e-4ea6-90fb-14b4939154cd
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c24b039709a013f210a42d67c744c03489e4cf73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2b227398af3ea0dfd7cd866f1110ccc1737553c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-a-local-issuer"></a>Postupy: Konfigurace místního vystavitele
 Toto téma popisuje postup konfigurace klienta pro použití místního vystavitele pro vydané tokeny.  
   
  Často Pokud klient komunikuje s federované služby, služby určuje adresu tokenu služby, kterou je očekáván k vydání tokenu klient použije k vlastnímu ověření federované služby zabezpečení. V některých situacích může být klient nakonfigurován pro použití *místního vystavitele*.  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá místního vystavitele v případech, kdy je na adresu vystavitele federované vazby http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous nebo `null`. V takových případech musíte nakonfigurovat <xref:System.ServiceModel.Description.ClientCredentials> s adresou místního vystavitele a vazby, které používají ke komunikaci s této vystavitele.  
+ Windows Communication Foundation (WCF) používá místního vystavitele v případech, kdy je na adresu vystavitele federované vazby http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous nebo `null`. V takových případech musíte nakonfigurovat <xref:System.ServiceModel.Description.ClientCredentials> s adresou místního vystavitele a vazby, které používají ke komunikaci s této vystavitele.  
   
 > [!NOTE]
 >  Pokud <xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A> vlastnost `ClientCredentials` třída je nastaven na `true`, není zadána adresa místního vystavitele a vystavitele adresu zadanou [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) či jiné federované vazby je http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self, http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous, nebo je `null`, pak Windows [!INCLUDE[infocard](../../../../includes/infocard-md.md)] vystavitele se používá.  
   
 ### <a name="to-configure-the-local-issuer-in-code"></a>Konfigurace místního vystavitele v kódu  
   
-1.  Vytvoření proměnné typu<xref:System.ServiceModel.Security.IssuedTokenClientCredential>  
+1.  Vytvoření proměnné typu <xref:System.ServiceModel.Security.IssuedTokenClientCredential>  
   
 2.  Nastavte proměnnou na instance, kterou vrátil <xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A> vlastnost `ClientCredentials` třídy. Tato instance je vrácený <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost klienta (zděděno z <xref:System.ServiceModel.ClientBase%601>) nebo <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnost <xref:System.ServiceModel.ChannelFactory>:  
   

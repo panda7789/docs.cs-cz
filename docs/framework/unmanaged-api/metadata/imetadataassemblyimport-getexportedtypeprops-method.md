@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataAssemblyImport::GetExportedTypeProps – metoda"
-ms.custom: 
+title: IMetaDataAssemblyImport::GetExportedTypeProps – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataAssemblyImport.GetExportedTypeProps
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 25ca7623-5a55-4f09-b44a-36b03d142278
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7fc5bb8266814fc4f1333de78fce4b6af86893c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c76e46c75680d9fc0ad70e94da288f0c6b5e5ee1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps – metoda
 Získá sadu vlastností typu exportovaný podpisem Zadaná metadata.  
@@ -63,7 +51,7 @@ HRESULT GetExportedTypeProps (
  [v] Velikost v široké znaky z `szName`.  
   
  `pchName`  
- [out] Počet aktuálně vrácenou široké znaky`szName`  
+ [out] Počet aktuálně vrácenou široké znaky `szName`  
   
  `ptkImplementation`  
  [out] `mdFile`, `mdAssemblyRef`, Nebo `mdExportedType` metadata token, který obsahuje nebo povoluje přístup k vlastnosti exportovaný typu.  
@@ -81,7 +69,7 @@ HRESULT GetExportedTypeProps (
   
  **Knihovna:** používat jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

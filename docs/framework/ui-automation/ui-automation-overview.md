@@ -1,49 +1,40 @@
 ---
-title: "Přehled automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled automatizace uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, overview
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-caps.latest.revision: "35"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d86c70ec4421bc716b12044bac30f8f925c375f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b4752bf8f5fb75115618f95c4dab8b1359a1eb5b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
 >  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]je nové architektury usnadnění [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)], k dispozici ve všech operačních systémech, které podporují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)].  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nové architektury usnadnění [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)], k dispozici ve všech operačních systémech, které podporují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)].  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]zajišťují programový přístup k většině [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy na ploše, například povolení produktů využívajících technologie usnadnění obrazovky čtečky k poskytování informací o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] koncovým uživatelům a k manipulaci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] nástrojem znamená jiné než standardní vstup. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]také umožňuje skripty automatizovaných testů pro interakci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zajišťují programový přístup k většině [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy na ploše, například povolení produktů využívajících technologie usnadnění obrazovky čtečky k poskytování informací o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] koncovým uživatelům a k manipulaci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] nástrojem znamená jiné než standardní vstup. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] také umožňuje skripty automatizovaných testů pro interakci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]neumožňuje komunikaci mezi procesy spuštěné různými uživateli prostřednictvím **spustit jako** příkaz.  
+>  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] neumožňuje komunikaci mezi procesy spuštěné různými uživateli prostřednictvím **spustit jako** příkaz.  
   
  Automatizace uživatelského rozhraní klientské aplikace může být napsán s záruku, že bude fungovat na více rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Základní zakrývá případné rozdíly v rozhraní, které tvoří základ různými [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Například `Content` vlastnost [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] tlačítko `Caption` vlastnost [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] tlačítko a `ALT` vlastnost bitové kopie HTML jsou namapované na jednu vlastnost <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zobrazení.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje úplné funkce v [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)], a [!INCLUDE[TLA2#tla_winnetsvrfam](../../../includes/tla2sharptla-winnetsvrfam-md.md)].  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytuje úplné funkce v [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)], a [!INCLUDE[TLA2#tla_winnetsvrfam](../../../includes/tla2sharptla-winnetsvrfam-md.md)].  
   
  Zprostředkovatelé automatizace uživatelského rozhraní nabízejí některé podpora [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] klientské aplikace, pomocí předdefinovaných přemostění služby.  
   
 <a name="Providers_and_Clients"></a>   
 ## <a name="providers-and-clients"></a>Zprostředkovatelé a klientů  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]má čtyři hlavní součásti, jak je znázorněno v následující tabulce.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] má čtyři hlavní součásti, jak je znázorněno v následující tabulce.  
   
 |Součást|Popis|  
 |---------------|-----------------|  
@@ -74,16 +65,16 @@ ms.lasthandoff: 12/22/2017
   
 <a name="UI_Automation_Model"></a>   
 ## <a name="ui-automation-model"></a>Model automatizace uživatelského rozhraní  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Každá část zpřístupní [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] pro klientské aplikace jako <xref:System.Windows.Automation.AutomationElement>. Elementy jsou obsažené ve stromové struktuře, s plochou jako kořenový element. Klienty můžete filtrovat nezpracovaná zobrazení stromu jako zobrazení ovládacího prvku nebo zobrazení obsahu. Aplikace můžete také vytvořit vlastní zobrazení.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Každá část zpřístupní [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] pro klientské aplikace jako <xref:System.Windows.Automation.AutomationElement>. Elementy jsou obsažené ve stromové struktuře, s plochou jako kořenový element. Klienty můžete filtrovat nezpracovaná zobrazení stromu jako zobrazení ovládacího prvku nebo zobrazení obsahu. Aplikace můžete také vytvořit vlastní zobrazení.  
   
- <xref:System.Windows.Automation.AutomationElement>objekty vystavit běžné vlastnosti [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] představují elementy. Jednu z těchto vlastností je typ ovládacího prvku, který definuje základní vzhled a funkce jako jedna entita rozpoznatelném: například tlačítko nebo zaškrtávací políčko.  
+ <xref:System.Windows.Automation.AutomationElement> objekty vystavit běžné vlastnosti [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] představují elementy. Jednu z těchto vlastností je typ ovládacího prvku, který definuje základní vzhled a funkce jako jedna entita rozpoznatelném: například tlačítko nebo zaškrtávací políčko.  
   
  Kromě toho elementy vystavit vzory ovládacích prvků, které poskytují vlastnosti specifické pro jejich typy ovládacích prvků. Vzory ovládacích prvků vystavit také metody, které umožní klientům získat další informace o elementu a umožní zadání vstupu.  
   
 > [!NOTE]
 >  Neexistuje žádná souvislosti mezi typy ovládacích prvků a vzory ovládacích prvků. Vzor ovládacích prvků může podporovat více typy ovládacích prvků a ovládacího prvku mohou podporovat více vzorů ovládacích prvků, každý z nich vystavuje různých aspektů své chování. Například pole se seznamem má alespoň dva vzory ovládacích prvků: jeden, který představuje schopnost rozbalení a sbalení a druhé, které představuje mechanismus výběru. Konkrétní informace naleznete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md).  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]také poskytuje informace pro klientské aplikace prostřednictvím událostí. Na rozdíl od [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)], [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události, které nejsou založené na mechanismu požadavek všesměrového vysílání. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Klienti zaregistrovat pro konkrétní události oznámení a může tento konkrétní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti a řízení vzor předávat do jejich obslužné rutiny událostí. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událostí obsahuje odkaz na element, který je vyvolána. Zprostředkovatelé lze vylepšit výkon vyvolávání událostí selektivně, v závislosti na tom, jestli jsou všechny klienty naslouchá.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] také poskytuje informace pro klientské aplikace prostřednictvím událostí. Na rozdíl od [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)], [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události, které nejsou založené na mechanismu požadavek všesměrového vysílání. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Klienti zaregistrovat pro konkrétní události oznámení a může tento konkrétní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti a řízení vzor předávat do jejich obslužné rutiny událostí. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událostí obsahuje odkaz na element, který je vyvolána. Zprostředkovatelé lze vylepšit výkon vyvolávání událostí selektivně, v závislosti na tom, jestli jsou všechny klienty naslouchá.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  

@@ -1,24 +1,12 @@
 ---
-title: "Počet poškozených zpráv za sekundu"
-ms.custom: 
+title: Počet poškozených zpráv za sekundu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d193fdd1-02f1-44a0-906e-f632a8f574c3
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c8f22d200834927204918324ced70ac02c3c669f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6407cce120f5d534f88a12591ea2ad09bb5130d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queued-poison-messages-per-second"></a>Počet poškozených zpráv za sekundu
 Název čítače: Počet poškozených zpráv za sekundu.  

@@ -1,14 +1,6 @@
 ---
-title: "SetAssemblyFile – metoda"
-ms.custom: 
+title: SetAssemblyFile – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink.SetAssemblyFile
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 3a912787-f139-43ca-a841-8bbda3107ecf
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c0be76e93ab41860f7f3416d0baffe3e4daf84c7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1e557cc0da7bc684843ae3969242ffb84d811c44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="setassemblyfile-method"></a>SetAssemblyFile – metoda
 Přiřadí název sestavení, která má být sestaven. Není pro použití při vytváření nevázaných moduly.  

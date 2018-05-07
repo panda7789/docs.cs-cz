@@ -1,23 +1,12 @@
 ---
-title: "Pracovní postup trasování"
-ms.custom: 
+title: Pracovní postup trasování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b07dda940e35746a4d57c0cd300375692c6ab2f1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f4ce25efae0e42fa7c95ce5dffe8da8e31db05a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="workflow-tracing"></a>Pracovní postup trasování
 Pracovní postup trasování nabízí způsob, jak zachytit diagnostických informací s použitím rozhraní .NET Framework trasování – moduly naslouchání. Trasování můžete povolit, pokud se zjistí problém s aplikací a zakázané znovu, jakmile je problém vyřešen. Existují dva způsoby, které může povolit trasování ladění pro pracovní postupy. Můžete nakonfigurovat pomocí prohlížeče událostí trasování, nebo můžete použít <xref:System.Diagnostics> odesílat události trasování do souboru.  
@@ -33,7 +22,7 @@ Pracovní postup trasování nabízí způsob, jak zachytit diagnostických info
   
 4.  Výchozí velikost vyrovnávací paměti analytického trasování je jenom 4 kilobajtů (KB); Doporučujeme zvýšit velikost 32 KB. Chcete-li to provést, proveďte následující kroky.  
   
-    1.  V aktuálním adresáři framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz:`wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
+    1.  V aktuálním adresáři framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
   
     2.  Změna \<bufferSize > v souboru Windows.ApplicationServer.Applications.man 32 znaků. hodnota.  
   
@@ -45,10 +34,10 @@ Pracovní postup trasování nabízí způsob, jak zachytit diagnostických info
                   </channel>  
         ```  
   
-    3.  V aktuálním adresáři framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz:`wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`  
+    3.  V aktuálním adresáři framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`  
   
 > [!NOTE]
->  Pokud používáte profil klienta rozhraní .NET Framework 4, je nutné zaregistrovat manifest trasování událostí pro Windows tak, že spustíte následující příkaz z adresáře, rozhraní .NET Framework 4:`ServiceModelReg.exe –i –c:etw`  
+>  Pokud používáte profil klienta rozhraní .NET Framework 4, je nutné zaregistrovat manifest trasování událostí pro Windows tak, že spustíte následující příkaz z adresáře, rozhraní .NET Framework 4: `ServiceModelReg.exe –i –c:etw`  
   
 ## <a name="enabling-debug-tracing-using-systemdiagnostics"></a>Povolení ladění trasování pomocí System.Diagnostics  
  Tyto moduly pro naslouchání lze nakonfigurovat v souboru App.config pracovní postup aplikace nebo souboru Web.config pro službu pracovního postupu. V tomto příkladu [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) nakonfigurovaný tak, aby se uložily informace o trasování do souboru MyTraceLog.txt v aktuálním adresáři.  

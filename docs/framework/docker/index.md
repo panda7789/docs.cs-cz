@@ -1,22 +1,15 @@
 ---
 title: Docker v rozhraní .NET Framework
 description: Další informace o nasazování aplikací rozhraní .NET Framework s Docker použití kontejnerů Windows.
-keywords: Rozhraní .NET, .NET server, Docker, kontejnery Windows
 author: BillWagner
 ms.author: wiwagn
 ms.date: 09/28/2016
-ms.topic: article
-ms.prod: .net-framework
-ms.technology: dotnet-docker
-ms.devlang: dotnet
 ms.assetid: a27b2ae4-154e-4b2b-b221-0c4c05185274
-ms.workload:
-- wiwagn
-ms.openlocfilehash: a87b1b90b4ca896b7c1e43ff80ae2f9301101c88
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5fc99646b0bf5cb9e90743f4659f1fbdf4c267b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deploying-net-framework-applications-with-docker"></a>Nasazení aplikací .NET Framework pomocí Dockeru
 

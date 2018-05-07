@@ -2,11 +2,11 @@
 title: '&lt;message&gt; – &lt;netHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 9def5a35-475d-40d6-b716-ccdbd93863c7
-ms.openlocfilehash: 6e4cd2c000d577e26b54e09f24279e0fd74afcf1
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: be96306b61b3eb6bfb8d3305ccbb05bb3ec4549d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltmessagegt-of-ltnethttpbindinggt"></a>&lt;message&gt; – &lt;netHttpBinding&gt;
 Definuje nastavení pro zprávy úroveň zabezpečení [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
@@ -40,7 +40,7 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<basicHttpBinding >](.
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|UserName|-Vyžaduje ověření klienta k serveru pomocí pověření uživatelského jména. Toto pověření musí být zadán pomocí <`clientCredentials`> elementu.<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Proto [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] vynucuje, aby přenos být zabezpečeny při použití pověření uživatelského jména. Pro `basicHttpBinding`, to vyžaduje nastavení připojení SSL.|  
+|UserName|-Vyžaduje ověření klienta k serveru pomocí pověření uživatelského jména. Toto pověření musí být zadán pomocí <`clientCredentials`> elementu.<br />-WCF nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Proto WCF vynutí, aby přenos být zabezpečeny při použití pověření uživatelského jména. Pro `basicHttpBinding`, to vyžaduje nastavení připojení SSL.|  
 |certifikát|Vyžaduje, aby na server používá certifikát ověření klienta. V takovém případě musí být zadán pomocí pověření klienta <`clientCredentials`> a <`clientCertificate`>. Kromě toho pokud používáte režim zabezpečení zprávy, klient musí být opatřena certifikát služby. Přihlašovací údaje služby v takovém případě musí být zadán pomocí <xref:System.ServiceModel.Description.ClientCredentials> – třída nebo `ClientCredentials` element chování a zadání službu certifikátu pomocí \<serviceCertificate > elementu – ServiceCredentials.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  

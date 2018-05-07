@@ -1,24 +1,17 @@
 ---
-title: "In (generický modifikátor) (Visual Basic)"
+title: In (generický modifikátor) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.VarianceIn
 helpviewer_keywords:
 - contravariance, In keyword [Visual Basic]
 - In keyword [Visual Basic]
 ms.assetid: 59bb13c5-fe96-42b8-8286-86293d1661c5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 83e9aab4fc361754cfd750ae68f04b36dce13d0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d1d9209cd583ac96ece59660ad29c76a66d3395a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="in-generic-modifier-visual-basic"></a>In (generický modifikátor) (Visual Basic)
 Pro parametry obecného typu `In` – klíčové slovo určuje, že parametr typu je kontravariant.  
@@ -31,7 +24,7 @@ Pro parametry obecného typu `In` – klíčové slovo určuje, že parametr typ
 ## <a name="rules"></a>Pravidla  
  Můžete použít `In` – klíčové slovo v obecném rozhraní a delegáti.  
   
- Parametr typu lze deklarovat kontravariant v obecné rozhraní nebo delegáta, pokud je použit pouze jako typ metoda argumenty a nejsou používány jako návratový typ. metoda. `ByRef`parametry nemohou mít kovariantní nebo kontravariant.  
+ Parametr typu lze deklarovat kontravariant v obecné rozhraní nebo delegáta, pokud je použit pouze jako typ metoda argumenty a nejsou používány jako návratový typ. metoda. `ByRef` parametry nemohou mít kovariantní nebo kontravariant.  
   
  Kovariance a kontravariance jsou podporovány pro odkazové typy a není podporována u typů hodnot.  
   
@@ -54,4 +47,4 @@ Pro parametry obecného typu `In` – klíčové slovo určuje, že parametr typ
   
 ## <a name="see-also"></a>Viz také  
  [Odchylky obecných rozhraní](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
- [Na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+ [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

@@ -1,10 +1,6 @@
 ---
-title: "@ (Referenční dokumentace jazyka C#)"
+title: '@ (Referenční dokumentace jazyka C#)'
 ms.date: 02/09/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '@_CSharpKeyword'
 - '@'
@@ -14,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b62231afc3014f9fc2b9ac7bd39168f40e12c8d
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: bdf8735894594acab31586e539f90e426db97f24
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-c-reference"></a>@ (Referenční dokumentace jazyka C#)
 
@@ -28,7 +24,7 @@ ms.lasthandoff: 03/15/2018
 
    [!code-csharp[verbatim1](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#1)]
 
-1. Označuje, že řetězcový literál doslovné interpretovat. `@` Definuje znak v této instanci *typu verbatim řetězcový literál*. Jednoduchý řídicí sekvence (například `"\\"` pro zpětné lomítko), šestnáctková řídicí sekvence (, jako `"\x0041"` A velká písmena, a Unicode řídicí sekvence, jako například `"\u0041"` pro velká písmena A, se interpretují oznámena. Uvozovky řídicí sekvence (`""`) neinterpretuje oznámena; vyvolá jednoduché uvozovky. V následujícím příkladu definuje dvě cesty k souborům identické, jeden s použitím regulárních řetězcový literál a dalších pomocí typu verbatim řetězcový literál. Toto je jedna z více běžná použití služby typu verbatim textové literály.
+1. Označuje, že řetězcový literál doslovné interpretovat. `@` Definuje znak v této instanci *typu verbatim řetězcový literál*. Jednoduchý řídicí sekvence (, jako `"\\"` pro zpětné lomítko), šestnáctková řídicí sekvence (, jako `"\x0041"` pro velká A) a Unicode řídicí sekvence (například `"\u0041"` pro velká A) se interpretují oznámena. Uvozovky řídicí sekvence (`""`) neinterpretuje oznámena; vyvolá jednoduché uvozovky. Kromě toho v případě typu verbatim [interpolované řetězce](interpolated.md) složené závorce řídicích sekvencí (`{{` a `}}`) nejsou interpretovat oznámena; vytvářejí jeden závorek znaků. V následujícím příkladu definuje dvě cesty k souborům identické, jeden s použitím regulárních řetězcový literál a dalších pomocí typu verbatim řetězcový literál. Toto je jedna z více běžná použití služby typu verbatim textové literály.
 
    [!code-csharp[verbatim2](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#2)]
 

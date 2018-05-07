@@ -1,13 +1,7 @@
 ---
-title: "Zabezpečení na základě rolí"
-ms.custom: 
+title: Zabezpečení na základě rolí
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - role-based security, about role-based security
 - user authentication, principals
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - authentication [.NET Framework], principals
 - role-based security, principals
 ms.assetid: 578cc32b-5654-4d8b-9d8c-ebcbc5c75390
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 18b2883fd69f5cadf2fce3dc677e5d2b79806d0b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 596165bfac9c65898448714a4477b7f045bd87d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="role-based-security"></a>Zabezpečení na základě rolí
 Role se často používají v finanční nebo obchodní aplikace k vynucení zásad. Aplikace může například uložit omezení na velikost zpracovávané v závislosti na tom, zda uživatel zadal žádost je členem zadané roli transakce. Úředníci mohou být autorizace k provádění transakcí, které jsou menší než zadaná prahová hodnota, vedoucí mohou mít vyšší limit a místopředsedové mohou mít stále vyšší limit (nebo vůbec žádné omezení). Na základě rolí zabezpečení mohou sloužit také pokud aplikace vyžaduje více schválení pro dokončení akce. Takovém případě může být nákupní systém, ve kterém můžete každý zaměstnanec generovat nákupní žádost, ale pouze nákupní agent můžete převést tuto žádost nákupní objednávka, který lze odeslat buď do jiného dodavatele.  

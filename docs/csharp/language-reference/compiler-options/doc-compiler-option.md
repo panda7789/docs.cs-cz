@@ -1,9 +1,6 @@
 ---
-title: "-doc (možnosti kompilátoru C#)"
+title: -doc (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - FileProperties.BuildAction
 - /doc
@@ -15,14 +12,11 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-caps.latest.revision: "19"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c668c79ca2c68d1a497521581857085e57c71f5c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ac1275285a8ba403297e51438fbf0d47d811ca61
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (možnosti kompilátoru C#)
 **-Doc** možnost vám umožňuje umístit dokumentační komentáře v souboru XML.  

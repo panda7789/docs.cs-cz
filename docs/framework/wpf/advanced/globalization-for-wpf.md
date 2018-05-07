@@ -1,27 +1,17 @@
 ---
 title: Globalizace pro WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-wpf
-ms.topic: article
 helpviewer_keywords:
 - XAML [WPF], international user interface
 - XAML [WPF], globalization
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-caps.latest.revision: 35
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 909461811907c1eb3f494b29294db45dbbe8b01d
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: f648ea6bc06ca30c304921e461b3e405f28a0cf5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma představuje problémy, které byste měli vědět, když zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací elementy jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.  

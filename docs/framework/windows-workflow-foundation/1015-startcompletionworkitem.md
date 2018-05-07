@@ -1,23 +1,12 @@
 ---
 title: 1015 - StartCompletionWorkItem
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 96fd1d4e-c5d0-46ad-8a71-4b4b49ac7262
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bc317157ed7658a52aa60c9b74942f9e84d47257
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a2d4c866ec7d43e8ae40b5616a97c3b7adf1843
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1015---startcompletionworkitem"></a>1015 - StartCompletionWorkItem
 ## <a name="properties"></a>Vlastnosti  

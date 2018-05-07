@@ -1,30 +1,20 @@
 ---
-title: "Nezabezpečený intranetový klient a služba"
-ms.custom: 
+title: Nezabezpečený intranetový klient a služba
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-caps.latest.revision: "20"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 0cfd98d401921c47bd85f8d4089e3efb437ca6b7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d08e8b5f9a22fc558af6f8f7c2ca3049e4a692ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Nezabezpečený intranetový klient a služba
-Následující obrázek znázorňuje jednoduchý [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby vyvinuté tak, aby poskytují informace o do zabezpečené privátní sítě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Zabezpečení není vyžadována, protože data je nízkou důležitostí, sítě musí být ze své podstaty zabezpečené nebo zajišťuje vrstvu zabezpečení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury.  
+Následující obrázek znázorňuje jednoduchý vyvinuté tak, aby poskytují informace o zabezpečení privátní sítě pro aplikace WCF služby Windows Communication Foundation (WCF). Zabezpečení není vyžadována, protože data je nízkou důležitostí, sítě musí být ze své podstaty zabezpečení nebo zabezpečení zajišťuje vrstvu pod infrastruktury WCF.  
   
  ![Nezabezpečený intranetový klient a služba scénář](../../../../docs/framework/wcf/feature-details/media/unsecuredwebservice.gif "UnsecuredWebService")  
   
@@ -33,7 +23,7 @@ Následující obrázek znázorňuje jednoduchý [!INCLUDE[indigo1](../../../../
 |Režim zabezpečení.|Žádné|  
 |Přenos|TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
-|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]pouze|  
+|Interoperabilita|Pouze WCF|  
 |Ověřování|Žádné|  
 |Integrita|Žádné|  
 |Důvěrnost|Žádné|  
@@ -92,7 +82,7 @@ Následující obrázek znázorňuje jednoduchý [!INCLUDE[indigo1](../../../../
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, který přistupuje k zabezpečená koncový bod pomocí protokolu TCP.  
+ Následující kód ukazuje základní klienta WCF, který přistupuje k zabezpečená koncový bod pomocí protokolu TCP.  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  

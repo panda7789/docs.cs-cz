@@ -1,29 +1,15 @@
 ---
 title: Hostování služeb pracovních postupů
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 21c4ba6a85c2da655b3d0988917165bf84ae64d1
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 02d77b851dcd35108668ee6a42022e9721b84bd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-workflow-services"></a>Hostování služeb pracovních postupů
-Musí být hostované služby pracovního postupu pro něj reagovat na příchozí zprávy. Pracovní postup služby pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zasílání zpráv infrastruktury a jsou proto hostované podobným způsobem. Jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb, pracovní postup služby může být hostovaný ve spravované aplikaci, v rámci Internetové informační služby (IIS), nebo v rámci procesu aktivace služby WAS (Windows). Kromě toho může být hostovaný pracovní postup služby v systému Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentaci systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](http://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
+Musí být hostované služby pracovního postupu pro něj reagovat na příchozí zprávy. Služby pracovních postupů pomocí infrastruktury přenosu zpráv WCF a jsou proto hostované podobným způsobem. Jako služby WCF může být hostovaný pracovní postup služby ve spravované aplikaci, v rámci Internetové informační služby (IIS), nebo v rámci procesu aktivace služby WAS (Windows). Kromě toho může být hostovaný pracovní postup služby v systému Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentaci systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](http://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele WCF služeb najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
   
 ## <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci  
  K hostování služby pracovního postupu ve spravované aplikaci, použijte <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. <xref:System.ServiceModel.Activities.WorkflowServiceHost> Konstruktor vám umožňuje určit instanci typu singleton pracovního postupu služby, definice pracovního postupu služby nebo aktivitu, která používá pracovní postup aktivity zasílání zpráv. Volání metody <<!--zz xref:System.ServiceModel.Activities.WorkflowServiceHost.Open%2A--> `System.ServiceModel.Activities.WorkflowServiceHost.Open`> způsobí, že službu, kterou chcete zahájit naslouchání pro příchozí zprávy.  

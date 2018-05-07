@@ -1,28 +1,16 @@
 ---
-title: "ErrorProvider – komponenta (Windows Forms)"
-ms.custom: 
+title: ErrorProvider – komponenta (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - error messages [Windows Forms], displaying
 - errors [Windows Forms]
 - ErrorProvider component [Windows Forms]
 ms.assetid: c0f2e231-c5c9-413d-a507-75af2db499b6
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0dbebd020d4512b90215dae781f359a3a633c609
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 369aae07144d81f0519239e7f5d3b7e93716515d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="errorprovider-component-windows-forms"></a>ErrorProvider – komponenta (Windows Forms)
 Windows Forms `ErrorProvider` komponenta se používá k zobrazení uživatele nevtíravým způsobem, že je něco špatně. Se obvykle používá ve spojení s ověřování uživatelského vstupu ve formuláři, nebo zobrazení chyb v rámci datové sady.  

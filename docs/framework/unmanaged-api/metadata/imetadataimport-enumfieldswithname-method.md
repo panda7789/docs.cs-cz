@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport::EnumFieldsWithName – metoda"
-ms.custom: 
+title: IMetaDataImport::EnumFieldsWithName – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport.EnumFieldsWithName
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 42145e8d-000f-4d0b-ae43-c08201190fa2
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 77b5ba7e191d9aa0f1587e4ac1ec25e655c27b14
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6ed8bbbd9699fe707d638bb8d07064e508b6f2fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName – metoda
 Vytvoří výčet FieldDef tokeny zadaného typu se zadaným názvem.  
@@ -77,7 +65,7 @@ HRESULT EnumFieldsWithName (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName`úspěšně vrácena.|  
+|`S_OK`|`EnumFieldsWithName` úspěšně vrácena.|  
 |`S_FALSE`|Neexistují žádná pole pro vytvoření výčtu. V takovém případě `pcTokens` je nulová.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -87,7 +75,7 @@ HRESULT EnumFieldsWithName (
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  

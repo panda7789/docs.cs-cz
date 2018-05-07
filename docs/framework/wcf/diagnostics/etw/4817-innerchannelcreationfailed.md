@@ -1,24 +1,12 @@
 ---
-title: "4817 – InnerChannelCreationFailed"
-ms.custom: 
+title: 4817 – InnerChannelCreationFailed
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c1a20619-beda-49b9-bb64-76b6a009c32b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 09d41bc992bd7d328c91da3b503e988deec0b852
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9c99281e6abe27a8e59583102a712c9fa5a3854
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4817---innerchannelcreationfailed"></a>4817 – InnerChannelCreationFailed
 ## <a name="properties"></a>Vlastnosti  

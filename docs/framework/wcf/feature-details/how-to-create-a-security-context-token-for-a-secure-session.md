@@ -1,32 +1,20 @@
 ---
 title: 'Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
-caps.latest.revision: 14
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 579a980d8d71b5fe3e21e49e84a602b3be37eff1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ef2f02bb5ad6e7458ae11e7880fe403f3a6e9916
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci
-Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci může relace odolat službu recyklovány. Například při bezstavové SCT se používá v zabezpečené relaci a Internetové informační služby (IIS) je obnovit, pak data relace, která souvisí se službou se ztratí. Tato data relace zahrnuje mezipamětí tokenů SCT. Ano při příštím klient odešle služba bezstavové SCT, vrátí se chyba, protože nelze načíst klíč, který je přidružen SCT. Pokud se ale používá stavová SCT, klíč, který je přidružen SCT obsažené v SCT. Vzhledem k tomu, že klíč obsažené v SCT a proto obsažené v zprávu, není služba recyklovány vliv zabezpečené relace. Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá bezstavové SCTs v zabezpečené relaci. Toto téma podrobné informace o tom, jak použít stavová SCTs v zabezpečené relaci.  
+Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci může relace odolat službu recyklovány. Například při bezstavové SCT se používá v zabezpečené relaci a Internetové informační služby (IIS) je obnovit, pak data relace, která souvisí se službou se ztratí. Tato data relace zahrnuje mezipamětí tokenů SCT. Ano při příštím klient odešle služba bezstavové SCT, vrátí se chyba, protože nelze načíst klíč, který je přidružen SCT. Pokud se ale používá stavová SCT, klíč, který je přidružen SCT obsažené v SCT. Vzhledem k tomu, že klíč obsažené v SCT a proto obsažené v zprávu, není služba recyklovány vliv zabezpečené relace. Ve výchozím nastavení používá Windows Communication Foundation (WCF) bezstavové SCTs v zabezpečené relaci. Toto téma podrobné informace o tom, jak použít stavová SCTs v zabezpečené relaci.  
   
 > [!NOTE]
 >  Stavová SCTs nelze použít v zabezpečené relaci, která zahrnuje kontraktu, která je odvozena z <xref:System.ServiceModel.Channels.IDuplexChannel>.  
@@ -105,7 +93,7 @@ Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci mů�
  [!code-csharp[c_CreateStatefulSCT#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createstatefulsct/cs/secureservice.cs#2)]
  [!code-vb[c_CreateStatefulSCT#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_createstatefulsct/vb/secureservice.vb#2)]  
   
- Při ověřování systému Windows se používá v kombinaci s stavová SCT, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] není naplnit <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost s skutečné volající je identity, ale místo toho nastaví vlastnost na anonymní. Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení musíte znovu vytvořit obsah kontext zabezpečení služby pro každý požadavek z příchozí SCT, server není udržovat přehled o zabezpečení relací v paměti. Vzhledem k tomu, že není možné serializovat <xref:System.Security.Principal.WindowsIdentity> instance do SCT, <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost vrací anonymní identity.  
+ Při ověřování systému Windows se používá v kombinaci s stavová SCT, není naplnit WCF <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost s skutečné volající je identity, ale místo toho nastaví vlastnost na anonymní. Protože zabezpečení WCF nutné znovu vytvořit obsah kontext zabezpečení služby pro každý požadavek z příchozí SCT, server není udržování přehledu o zabezpečení relací v paměti. Vzhledem k tomu, že není možné serializovat <xref:System.Security.Principal.WindowsIdentity> instance do SCT, <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost vrací anonymní identity.  
   
  Následující konfigurace vykazuje toto chování.  
   

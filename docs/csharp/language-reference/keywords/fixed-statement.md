@@ -1,22 +1,16 @@
 ---
 title: fixed – příkaz (Referenční dokumentace jazyka C#)
 ms.date: 04/20/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - fixed_CSharpKeyword
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 5dd117461f792ec7a10b740fbad277de52d05623
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e1664f508cb861ffa73b800eeb0da3a1f1cdc432
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
 

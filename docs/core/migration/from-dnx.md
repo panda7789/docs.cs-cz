@@ -4,16 +4,11 @@ description: Migrujte pomocí nástrojů pro .NET Core rozhraní příkazového 
 author: blackdwarf
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: a3832221c2ea8d70415c155b25cfb3523589b1f7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: dd3c31b88b619799e6b2e2596127d64d84918ca0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX na .NET Core rozhraní příkazového řádku (project.json)
 

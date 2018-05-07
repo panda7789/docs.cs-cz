@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerCallback4::ReJITCompilationStarted – metoda"
-ms.custom: 
+title: ICorProfilerCallback4::ReJITCompilationStarted – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerCallback4.ReJITCompilationStarted
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 512fdd00-262a-4456-a075-365ef4133c4d
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 903db06089f7c68843b503c94483087ff9fce636
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3e21d42340378c576bfc65750fba26a257b82cb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilercallback4rejitcompilationstarted-method"></a>ICorProfilerCallback4::ReJITCompilationStarted – metoda
 Upozorní profileru, že kompilátoru za běhu (JIT) byla spuštěna znovu kompilovat funkci.  
@@ -41,7 +29,8 @@ Upozorní profileru, že kompilátoru za běhu (JIT) byla spuštěna znovu kompi
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-HRESULT ReJITCompilationStarted(    [in] FunctionID functionId,  
+HRESULT ReJITCompilationStarted(   
+    [in] FunctionID functionId,  
     [in] ReJITID    rejitId,  
     [in] BOOL       fIsSafeToBlock);  
 ```  
@@ -68,7 +57,7 @@ HRESULT ReJITCompilationStarted(    [in] FunctionID functionId,
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  

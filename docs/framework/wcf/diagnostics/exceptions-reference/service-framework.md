@@ -1,26 +1,12 @@
 ---
 title: Architektura služby
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 75f60b87-f80e-4377-ba7c-8e6becaa2b28
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 67e856aff583513fa8a16d289cf5190a9698c52c
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 859e718a56ab63c8e012e1851c0730f53cb707be
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-framework"></a>Architektura služby
 Toto téma uvádí všechny výjimky generované Data architektury služby.  
@@ -50,7 +36,7 @@ Toto téma uvádí všechny výjimky generované Data architektury služby.
 |ClientRuntimeRequiresFormatter0|Zadaný ClientOperation vyžaduje formátovací modul, protože třída SerializeRequest a DeserializeReply nejsou oba hodnotu false.|  
 |CommunicationObjectAborted1|Objekt zadaný komunikace nelze použít pro komunikaci, protože byla zastavena.|  
 |CommunicationObjectAbortedStack2|Objekt zadaný komunikace nelze použít pro komunikaci, protože byla zastavena: {1}|  
-|CommunicationObjectBaseClassMethodNotCalled|Objekt zadaný komunikace přepsal {1} virtuální funkce ale nevyvolá verze definované v základní třídě.|  
+|CommunicationObjectBaseClassMethodNotCalled|Objekt zadaný komunikace přepsal virtuální funkce {1} ale nevyvolá verze definované v základní třídě.|  
 |ContractIsNotSelfConsistentItHasOneOrMore2|Zadaný smlouva obsahuje jeden nebo více IsTerminating nebo jiných IsInitiating operace. Vlastnost SessionMode nastavenou na hodnotu SessionMode.Required nemá. Atributy IsInitiating a IsTerminating lze použít pouze v kontextu relace.|  
 |CouldnTCreateChannelForChannelType2|Typ zadaný kanálu byla požadována, ale Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
 |DispatchRuntimeRequiresFormatter0|Zadaný DispatchOperation vyžaduje formátovací modul, protože třídy DeserializeRequest a SerializeReply nejsou oba hodnotu false.|  

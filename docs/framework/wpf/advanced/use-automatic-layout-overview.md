@@ -1,27 +1,15 @@
 ---
-title: "Přehled automatického rozložení"
-ms.custom: 
+title: Přehled automatického rozložení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 75066b59d0f3a686c66fdbdd187ba4c18e786e6d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8693150099559ca09541eb790c134ca3d5277e78
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="use-automatic-layout-overview"></a>Přehled automatického rozložení
 Toto téma představuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace s lokalizovatelný [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. V minulosti, lokalizace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] byl časově náročný proces. Každý jazyk, který [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] byla přizpůsobena pro požadované úpravy po jednotlivých bodech. Dnes s správné návrhu a pravé kódování standardy, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] konstruovat tak, aby překladatelům při lokalizaci menší změny velikosti a přemístění udělat. Přístup pro zápis aplikace, které může být snadněji změněnou a přemístěných se nazývá Automatické rozložení a dosáhnout pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] návrh aplikace.  
@@ -30,13 +18,13 @@ Toto téma představuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#t
 ## <a name="advantages-of-using-automatic-layout"></a>Výhody používání automatického rozložení  
  Protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace systém je výkonný a flexibilní, poskytuje schopnost rozložení prvky v aplikaci, která lze upravit podle požadavků různých jazyků. V následujícím seznamu bodů některé z výhod automatického rozložení.  
   
--   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]zobrazí správně v libovolném jazyce.  
+-   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] zobrazí správně v libovolném jazyce.  
   
 -   Snižuje nutnost po převádějí text se znovu pozice a velikosti ovládacích prvků.  
   
 -   Snižuje nutnost znovu nastavte velikost okna.  
   
--   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]rozložení vykreslí správně v libovolném jazyce.  
+-   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rozložení vykreslí správně v libovolném jazyce.  
   
 -   Lokalizace může snížit do bodu, že se jedná o něco více než řetězec překlad.  
   
@@ -63,7 +51,7 @@ Tlačítko automaticky s možností změny velikosti
 |----------------------|-----------------|  
 |Nepoužívejte absolutní umístění.|-Nepoužívejte <xref:System.Windows.Controls.Canvas> protože umisťuje elementy absolutně.<br />-Použít <xref:System.Windows.Controls.DockPanel>, <xref:System.Windows.Controls.StackPanel>, a <xref:System.Windows.Controls.Grid> na pozici ovládací prvky.<br />-Informace o různých typech panelů, naleznete v [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md).|  
 |Nenastavujte s pevnou velikostí pro okno.|-Použít <xref:System.Windows.Window.SizeToContent%2A>.<br />-Například:<br /><br /> [!code-xaml[LocalizationGrid#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationGrid/CS/Pane1.xaml#2)]|  
-|Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A>.|<ul><li>Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A> pro kořenový element vaší aplikace.</li><li>[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje pohodlný způsob pro podporu vodorovné, obousměrné a svislém rozložení. V presentation framework <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Směr toku vzory jsou:<br /><br /> <ul><li><xref:System.Windows.FlowDirection.LeftToRight>(LrTb) – vodorovném rozložení pro Latin, východoasijské a tak dále.</li><li><xref:System.Windows.FlowDirection.RightToLeft>(RlTb) – obousměrné arabština, hebrejština a tak dále.</li></ul></li></ul>|  
+|Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A>.|<ul><li>Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A> pro kořenový element vaší aplikace.</li><li>[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje pohodlný způsob pro podporu vodorovné, obousměrné a svislém rozložení. V presentation framework <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Směr toku vzory jsou:<br /><br /> <ul><li><xref:System.Windows.FlowDirection.LeftToRight> (LrTb) – vodorovném rozložení pro Latin, východoasijské a tak dále.</li><li><xref:System.Windows.FlowDirection.RightToLeft> (RlTb) – obousměrné arabština, hebrejština a tak dále.</li></ul></li></ul>|  
 |Místo fyzické písem používejte složená písma.|<ul><li>Pomocí složeného písem <xref:System.Windows.Controls.Control.FontFamily%2A> vlastnost nemusí lokalizovat.</li><li>Vývojářům můžete použít jednu z následujících písem nebo vytvořit vlastní.<br /><br /> <ul><li>Globální uživatelské rozhraní</li><li>Serif globální sítě San</li><li>Globální Serif</li></ul></li></ul>|  
 |Přidejte XML: lang.|-Přidat `xml:lang` atribut v kořenovém elementu vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], například `xml:lang="en-US"` pro angličtinu aplikaci.<br />-Vzhledem k tomu použít složená písma `xml:lang` Pokud chcete zjistit, jaká písma používat, nastavte tuto vlastnost na podporu více jazyků scénářů.|  
   

@@ -1,23 +1,15 @@
 ---
-title: "Postupy: Upravte konfigurační soubor počítače. Chcete-li povolit podporu IPv6"
-ms.custom: 
+title: 'Postupy: Upravte konfigurační soubor počítače. Chcete-li povolit podporu IPv6'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5611b677-b9cc-43b8-a434-60e18d89aada
-caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: df0281d3be467309d2ee7a44af8f897885a8b2bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aef2300ccde12ae224e373ca4e19b4d10b9b4423
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-modify-the-computer-configuration-file-to-enable-ipv6-support"></a>Postupy: Upravte konfigurační soubor počítače. Chcete-li povolit podporu IPv6
 Následující příklad kódu ukazuje, jak upravit konfigurační soubor na počítači, *machine.config*, chcete-li povolit podporu IPv6. *Machine.config* soubor je uložen v *%Windir%\Microsoft.NET\Framework* složku v adresáři, kde byl nainstalován systém Windows. Je samostatný *machine.config* ze souborů v části *%Windir%\Microsoft.NET\Framework* pro každou verzi rozhraní .NET Framework na počítači nainstalovaná (třeba *C:\ WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config*).  

@@ -1,23 +1,12 @@
 ---
 title: 1012 - StartExecuteActivityWorkItem
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 29e9b1c6-c5d7-4b58-b59d-a06a923d3c80
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6a3b03e8ac24bc1652b88b71e8c25862a07c194f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d6b330bc454c39584e5027f757fd9d9d3434d941
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1012---startexecuteactivityworkitem"></a>1012 - StartExecuteActivityWorkItem
 ## <a name="properties"></a>Vlastnosti  

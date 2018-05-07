@@ -1,18 +1,12 @@
 ---
-title: "Refaktoring do čistého funkcí (C#)"
+title: Refaktoring do čistého funkcí (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4fe9a9250e0a87ecaa02258526b7cc796de8e387
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: ed9b33ed2b9669cb4412177086fc648865e4954a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refaktoring do čistého funkcí (C#)
 

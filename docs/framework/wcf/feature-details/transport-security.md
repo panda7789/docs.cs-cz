@@ -1,34 +1,24 @@
 ---
-title: "Zabezpečení přenosu"
-ms.custom: 
+title: Zabezpečení přenosu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 86c94153-e48d-4539-b6cf-cd8060582e7f
-caps.latest.revision: "7"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 364326e2ded11f7174adc891a5fd9bcdd3c98334
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7f804d34a47c5508839636a6fe5045ebce3972e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-security"></a>Zabezpečení přenosu
-Zabezpečení přenosu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] závisí na vybrané vazby. Přenos, který implementuje vazby určuje skutečné zabezpečení. Témata v této části popisují mechanismy, které jsou implementovány a jejich možnosti.  
+Zabezpečení přenosu ve Windows Communication Foundation (WCF) závisí na vybrané vazby. Přenos, který implementuje vazby určuje skutečné zabezpečení. Témata v této části popisují mechanismy, které jsou implementovány a jejich možnosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)  
- Vysvětluje základy zabezpečení přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Vysvětluje základy zabezpečení přenosu ve WCF.  
   
  [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)  
- Vysvětluje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje Secure Sockets Layer (SSL nebo HTTPS).  
+ Vysvětluje, jak WCF implementuje Secure Sockets Layer (SSL nebo HTTPS).  
   
  [Princip ověřování HTTP](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)  
  Popisuje schémat ověřování protokolu HTTP, jako je například Basic, ověřování algoritmem Digest, NT LAN Manager (NTLM) a dalších.  

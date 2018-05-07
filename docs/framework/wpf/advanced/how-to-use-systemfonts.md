@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Používání tipů SystemFonts"
-ms.custom: 
+title: 'Postupy: Používání tipů SystemFonts'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,22 +9,17 @@ helpviewer_keywords:
 - fonts [WPF], system fonts
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2579926dfc71028590e09993e2773ee2cfac1505
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 305d0cf18db5dc96b2d3cde863cf4ba2ae8dbb96
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání tipů SystemFonts
 Tento příklad ukazuje, jak používat statické prostředky <xref:System.Windows.SystemFonts> třídy za účelem styl nebo na tlačítko Přizpůsobit.  
   
 ## <a name="example"></a>Příklad  
- Systémové prostředky vystavit několik systému určit hodnoty vlastnosti a prostředky k vám pomůže vytvořit vizuální prvky, které jsou v souladu s nastavení systému. <xref:System.Windows.SystemFonts>je třída, která obsahuje obě hodnoty písma systému jako statické vlastnosti a vlastnosti, které odkazují na klíče prostředků, které lze použít pro přístup k tyto hodnoty dynamicky za běhu. Například <xref:System.Windows.SystemFonts.CaptionFontFamily%2A> je <xref:System.Windows.SystemFonts> hodnotu, a <xref:System.Windows.SystemFonts.CaptionFontFamilyKey%2A> je odpovídající klíč prostředku.  
+ Systémové prostředky vystavit několik systému určit hodnoty vlastnosti a prostředky k vám pomůže vytvořit vizuální prvky, které jsou v souladu s nastavení systému. <xref:System.Windows.SystemFonts> je třída, která obsahuje obě hodnoty písma systému jako statické vlastnosti a vlastnosti, které odkazují na klíče prostředků, které lze použít pro přístup k tyto hodnoty dynamicky za běhu. Například <xref:System.Windows.SystemFonts.CaptionFontFamily%2A> je <xref:System.Windows.SystemFonts> hodnotu, a <xref:System.Windows.SystemFonts.CaptionFontFamilyKey%2A> je odpovídající klíč prostředku.  
   
  V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít členy <xref:System.Windows.SystemFonts> jako statické vlastnosti nebo dynamické prostředků odkazy (s hodnotou statickou vlastnost jako klíč). Použít odkaz na dynamické prostředků metriky písma automaticky aktualizovat při aplikace běží; Jinak použijte odkaz na statické hodnoty.  
   

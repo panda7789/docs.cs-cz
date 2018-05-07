@@ -4,16 +4,11 @@ description: Příkaz dotnet sln poskytuje vhodnou možnost přidávat, odstraň
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 837d47c38119f9a7aa75c74576ed75b8ef3813dd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 845e666b9d8a8b206c7e1978a7dde9f33ffb8a32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-sln"></a>SLN – DotNet.
 

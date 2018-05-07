@@ -1,31 +1,19 @@
 ---
-title: "Postupy: vytvoření zprostředkovatele tokenu vlastní zabezpečení"
-ms.custom: 
+title: 'Postupy: vytvoření zprostředkovatele tokenu vlastní zabezpečení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - security [WCF], providing credentials
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 37e7f9541457c475bfe187485520df63a84f7555
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 480b968a15193bccb84ba491347dbba69e16fb52
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření zprostředkovatele tokenu vlastní zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlastní zabezpečení a postup pro integraci zprostředkovatele tokenu správce vlastní zabezpečení.  
@@ -33,7 +21,7 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlas
 > [!NOTE]
 >  Vytvořit vlastní zprostředkovatele tokenu, pokud v nalezen tokeny poskytované systémem <xref:System.IdentityModel.Tokens> obor názvů se neshodují vašim požadavkům.  
   
- Poskytovatele tokenu zabezpečení slouží k vytvoření tokenu vyjádření zabezpečení na základě informací v klienta služby Windows nebo pověření. Použití zprostředkovatele tokenu vlastní zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, musíte vytvořit vlastní pověření a implementace Správce tokenu zabezpečení.  
+ Poskytovatele tokenu zabezpečení slouží k vytvoření tokenu vyjádření zabezpečení na základě informací v klienta služby Windows nebo pověření. Použití zprostředkovatele tokenu vlastní zabezpečení ve Windows Communication Foundation (WCF) zabezpečení, musíte vytvořit vlastní pověření a implementace Správce tokenu zabezpečení.  
   
  Další informace o vlastní pověření a Správce tokenů zabezpečení najdete v článku [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   

@@ -1,36 +1,24 @@
 ---
-title: "Filtrování"
-ms.custom: 
+title: Filtrování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6f67a7f6ac423bd66d9d25b834edc9cf55a5d6a8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f599ac74aa63951f59c5e5c79d3fe37b2ab5100
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="filtering"></a>Filtrování
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Filtrování systému pomocí deklarativní filtrů odpovídající zprávy a provozní rozhodnutí. Filtry můžete použít k určení toho, co dělat s zpráva prověřením část zprávy. Proces řazení do fronty, například můžete použít dotaz XPath 1.0 Zkontrolujte priority element známé hlavičky k určení, zda chcete zprávu přesunout na začátek fronty.  
+Systému Windows Communication Foundation (WCF) filtrování systému pomocí deklarativní filtrů odpovídající zprávy a provozní rozhodnutí. Filtry můžete použít k určení toho, co dělat s zpráva prověřením část zprávy. Proces řazení do fronty, například můžete použít dotaz XPath 1.0 Zkontrolujte priority element známé hlavičky k určení, zda chcete zprávu přesunout na začátek fronty.  
   
- Filtrování systém se skládá z sadu tříd, které můžete efektivně určete, které sady filtrů jsou `true` pro konkrétní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy.  
+ Filtrování systém se skládá z sadu tříd, které můžete efektivně určete, které sady filtrů jsou `true` pro danou zprávu WCF.  
   
- Filtrování systém je základní součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zasílání zpráv; je navržen pro fungoval velmi rychle. Každá implementace filtru optimalizovaná pro určitý typ porovnání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy.  
+ Filtrování systém je základní součástí zasílání zpráv WCF; je navržená tak, aby fungoval velmi rychle. Každá implementace filtru optimalizovaná pro určitý typ porovnání zpráv WCF.  
   
  Filtrování systém není bezpečné pro přístup z více vláken. Aplikace musí zpracovat žádné uzamčení sémantiku. Podporuje však více čtečky, jeden zapisovače.  
   
 ## <a name="where-filtering-fits"></a>Kde vyhovuje filtrování  
- Filtrování se provádí po zprávu přijme a je součástí procesu odeslání zprávy do součásti příslušná aplikace. Návrh filtrování systému řeší požadavky na několik [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] subsystémy, včetně zasílání zpráv, směrování, zabezpečení, zpracování událostí a správa systému.  
+ Filtrování se provádí po zprávu přijme a je součástí procesu odeslání zprávy do součásti příslušná aplikace. Návrh filtrování systému řeší požadavky na několik WCF subsystémů, včetně zasílání zpráv, směrování, zabezpečení, zpracování událostí a správa systému.  
   
 ## <a name="filters"></a>Filtry  
  Modul filtr má dvě primární součásti, filtrů a filtru tabulky. Filtr Boolean rozhoduje o zprávu na základě zadaného uživatelem logických podmínek. Filtry implementovat <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
@@ -53,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="prefix-endpoint-address-filters"></a>Předpony filtry adres koncový bod  
   
-1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy identifikátor URI. Například filtr zadání http://www.adatum.com adresa odpovídá zprávy adresované do http://www.adatum.com/userA.  
+1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy identifikátor URI. Například filtr zadání adresy http://www.adatum.com odpovídá zprávy adresované do http://www.adatum.com/userA.  
   
 ### <a name="xpath-message-filters"></a>Filtry zpráv XPath  
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> Používá k určení, zda dokument XML obsahuje konkrétní prvky, atributy, text nebo jiné XML syntaktické konstrukce výraz XPath. Filtr je optimalizovaná tak, aby se velmi efektivní pro podmnožinu XPath strict. XML Path Language je podrobněji popsaná [W3C XML Path Language 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94779).  
@@ -79,7 +67,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> Třída optimalizuje odpovídající pro podmnožinu XPath, který obsahuje většinu scénáře zasílání zpráv a také podporuje úplné gramatika XPath 1.0. Ho optimalizovala algoritmy pro efektivní paralelní párování.  
   
- Tato tabulka obsahuje některé speciální `Match` metody, které provozují přes <xref:System.Xml.XPath.XPathNavigator> a <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator>. A <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> rozšiřuje <xref:System.Xml.XPath.XPathNavigator> třída přidáním <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> vlastnost. Tato vlastnost umožňuje pozice v dokumentu XML, který má uložit a načíst rychle bez nutnosti klonovat navigátoru přidělení nákladné paměti, <xref:System.Xml.XPath.XPathNavigator> vyžaduje pro takovou operaci. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] XPath modul musí často záznam pozice kurzoru v průběhu zpracování dotazů na dokumenty XML, proto <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> poskytuje důležité optimalizace pro zpracování zprávy.  
+ Tato tabulka obsahuje některé speciální `Match` metody, které provozují přes <xref:System.Xml.XPath.XPathNavigator> a <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator>. A <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> rozšiřuje <xref:System.Xml.XPath.XPathNavigator> třída přidáním <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> vlastnost. Tato vlastnost umožňuje pozice v dokumentu XML, který má uložit a načíst rychle bez nutnosti klonovat navigátoru přidělení nákladné paměti, <xref:System.Xml.XPath.XPathNavigator> vyžaduje pro takovou operaci. Modul WCF XPath musí často záznam pozice kurzoru v průběhu zpracování dotazů na dokumenty XML, proto <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> poskytuje důležité optimalizace pro zpracování zprávy.  
   
 ## <a name="customer-scenarios"></a>Scénáře zákazníka  
  Pomocí filtrování kdykoli chcete odeslat zprávu do různých zpracování moduly v závislosti na data obsažená ve zprávě. Dva typické scénáře jsou směrování zpráv na základě jeho akce kódu a zrušte multiplexní datového proudu zpráv na základě zprávy na koncový bod adresy.  

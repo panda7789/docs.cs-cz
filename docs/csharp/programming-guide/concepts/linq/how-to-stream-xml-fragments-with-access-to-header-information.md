@@ -1,21 +1,12 @@
 ---
-title: "Postupy: Stream fragmenty kódu XML se přístup k informacím o záhlaví (C#)"
-ms.custom: 
+title: 'Postupy: Stream fragmenty kódu XML se přístup k informacím o záhlaví (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 07fe45bb54c0d8b867cd3ae03fc3ed940243a538
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: af8f83ba746292289bb97f591103cc91d6febbad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Postupy: Stream fragmenty kódu XML se přístup k informacím o záhlaví (C#)
 Někdy je nutné ke čtení libovolně velké soubory XML a zapisovat vaše aplikace tak, aby nároky na paměť pro aplikace je předvídatelný. Pokud se pokusíte strom XML naplnění velký soubor XML, bude vaše využití paměti velikosti souboru – to znamená, nadměrné. Proto byste měli místo toho používat streamování techniku.  

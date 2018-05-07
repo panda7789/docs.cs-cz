@@ -1,24 +1,12 @@
 ---
-title: "Scénáře rovnocenných kanálů"
-ms.custom: 
+title: Scénáře rovnocenných kanálů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dae6e0f7-900c-45ee-8be9-3647698382fb
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f4f989c46deff9c38e4737e48e077bf07240fa98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 42b16ea394b9375be14aed4b2792d306fcb62f2d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peer-channel-scenarios"></a>Scénáře rovnocenných kanálů
 Rozhraní API kanálu Peer podporují následující scénáře vývoj.  

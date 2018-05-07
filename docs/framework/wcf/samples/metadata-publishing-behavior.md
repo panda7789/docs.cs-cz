@@ -1,30 +1,18 @@
 ---
-title: "Chování publikování metadat"
-ms.custom: 
+title: Chování publikování metadat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - service behaviors, metadata publishing sample
 - Metadata Publishing Behaviors Sample [Windows Communication Foundation]
 ms.assetid: 78c13633-d026-4814-910e-1c801cffdac7
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0892a4716f67509836c8ad3b9ed66ad226a9e748
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 547ff9fcaca8b9af7a7559a11ef4c4a8b5996174
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="metadata-publishing-behavior"></a>Chování publikování metadat
-Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publikování metadat služby. Aby se zabránilo neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zakáže publikování metadat služby. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován.  
+Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publikování metadat služby. Pokud chcete zabránit neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován.  
   
 > [!IMPORTANT]
 >  Tato ukázka pro přehlednost, ukazuje, jak vytvořit koncový bod publikování zabezpečená metadat. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené spotřebitelů a musí dát pozor před nasazením těchto koncových bodů a zajistit tak veřejně předání metadata služby příslušné. Najdete v článku [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázku pro vzorku, který zabezpečuje koncový bod metadat.  
@@ -66,7 +54,7 @@ Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publi
           contract="IMetadataExchange" />  
 ```  
   
- Nastaví Tato ukázka <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`, který taky zpřístupňuje metadata služby pomocí metody GET protokolu HTTP. Chcete-li povolit koncový bod metadat HTTP GET, musí mít službu základní adresu HTTP. Řetězec dotazu `?wsdl` se používá na základní adresa služby přístup k metadatům. Například zobrazíte WSDL pro službu ve webovém prohlížeči použijete http://localhost/servicemodelsamples/service.svc?wsdl adresu. Alternativně můžete toto chování vystavit metadat prostřednictvím protokolu HTTPS, nastavením <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> k `true`. To vyžaduje základní adresu HTTPS.  
+ Nastaví Tato ukázka <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`, který taky zpřístupňuje metadata služby pomocí metody GET protokolu HTTP. Chcete-li povolit koncový bod metadat HTTP GET, musí mít službu základní adresu HTTP. Řetězec dotazu `?wsdl` se používá na základní adresa služby přístup k metadatům. Například by zobrazíte WSDL pro službu ve webovém prohlížeči použít adresu http://localhost/servicemodelsamples/service.svc?wsdl. Alternativně můžete toto chování vystavit metadat prostřednictvím protokolu HTTPS, nastavením <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> k `true`. To vyžaduje základní adresu HTTPS.  
   
  Pro přístup k použití pro koncový bod služby MEX [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
@@ -93,7 +81,7 @@ Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publi
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Metadata`  
   

@@ -1,23 +1,15 @@
 ---
 title: O Namespace System.Net.PeerToPeer.Collaboration
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
-caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 24571209673d7706955bdb9ffbe21ad6da98e18a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d23fe51249df53b3874a8fd6fda60377f7366ee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>O Namespace System.Net.PeerToPeer.Collaboration
 <xref:System.Net.PeerToPeer.Collaboration> Obor názvů obsahuje třídy a rozhraní API, která slouží k implementaci aktivity spolupráce sdílené pomocí infrastruktury spolupráce Peer-to-Peer.  

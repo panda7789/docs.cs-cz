@@ -1,19 +1,15 @@
 ---
-title: "Nainstalujte rozhraní .NET Framework v systému Windows Vista"
-description: "Informace o instalaci rozhraní .NET Framework v systému Windows Vista."
+title: Nainstalujte rozhraní .NET Framework v systému Windows Vista
+description: Informace o instalaci rozhraní .NET Framework v systému Windows Vista.
+ms.custom: updateeachrelease
 author: rlander
 ms.author: mairaw
-keywords: "Rozhraní .NET framework, instalace"
 ms.date: 08/03/2017
-ms.topic: article
-ms.prod: .net-framework
-ms.devlang: dotnet
-ms.workload: dotnet
-ms.openlocfilehash: 5dc89529cdd3c5ab1f35e30a7ff601be88667de7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 595533b9f7c0dcc766914a1812001772d0ffa247
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="install-the-net-framework-on-windows-vista-and-windows-server-2008"></a>Nainstalujte rozhraní .NET Framework na Windows Vista a Windows Server 2008
 
@@ -21,7 +17,7 @@ Rozhraní .NET Framework je potřeba spustit mnoho aplikací v systému Windows.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) je na nejnovější verzi. Není podporována u Windows Vista a Windows Server 2008. Je součástí [Windows 10 patří Creators Update](https://www.microsoft.com/software-download/windows10) a [. 1709 verze Windows serveru 2016](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) je na nejnovější verzi. Není podporována u Windows Vista a Windows Server 2008. Je součástí [aktualizace Windows 10. dubna 2018](https://www.microsoft.com/software-download/windows10).
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 

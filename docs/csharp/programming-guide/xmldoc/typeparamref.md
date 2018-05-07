@@ -1,24 +1,17 @@
 ---
-title: "&lt;typeparamref&gt; (C# Průvodce programováním)"
+title: '&lt;typeparamref&gt; (C# Průvodce programováním)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - typeparamref
 helpviewer_keywords:
 - typeparamref C# XML tag
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 296761f72d3d306c4f37632d7110e31b62c44734
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 36e5a8998018839214da00287a2bf8dc2c5925a8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lttypeparamrefgt-c-programming-guide"></a>&lt;typeparamref&gt; (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
@@ -42,5 +35,5 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[csProgGuideDocComments#13](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/typeparamref_1.cs)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

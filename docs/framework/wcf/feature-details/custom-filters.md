@@ -1,24 +1,12 @@
 ---
-title: "Vlastní filtry"
-ms.custom: 
+title: Vlastní filtry
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 97cf247d-be0a-4057-bba9-3be5c45029d5
-caps.latest.revision: "5"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9d24e517a8fd63a3363d080ebbabf2c1e3306b76
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4140a944ed195e1defc1a0677d8e26ff4ff85beb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-filters"></a>Vlastní filtry
 Vlastní filtry umožňují definovat odpovídající logiky, která nelze provést pomocí filtrů zpráv systému. Například může vytvořit vlastní filtr, který vytvoří hodnotu hash elementu konkrétní zprávy a poté zkoumá hodnotu, která určí, zda filtr by měla vrátit hodnotu true nebo false.  

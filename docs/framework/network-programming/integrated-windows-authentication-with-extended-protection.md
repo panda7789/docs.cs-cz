@@ -1,23 +1,15 @@
 ---
-title: "Integrované ověřování systému Windows s rozšířené ochrany"
-ms.custom: 
+title: Integrované ověřování systému Windows s rozšířené ochrany
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
-caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: a453a2142ee8c3d1ab8d8d00e84e1ead60c46d91
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 88170162e4149580d532129666348d226540aced
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Integrované ověřování systému Windows s rozšířené ochrany
 Byly provedeny vylepšení, které mají vliv jak integrované ověřování systému Windows, které se provádí ověřování <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, a související třídy v <xref:System.Net> a související obory názvů. Byla přidána podpora pro rozšířená ochrana pro zvýšení zabezpečení.  
@@ -126,7 +118,7 @@ Byly provedeny vylepšení, které mají vliv jak integrované ověřování sys
  <xref:System.Net.Mail.SmtpClient.TargetName%2A> Vlastnost lze nastavit vlastní název SPN pro integrované ověřování systému Windows pro připojení k SMTP.  
   
 ## <a name="extended-protection-for-server-applications"></a>Rozšířená ochrana pro serverové aplikace  
- <xref:System.Net.HttpListener>automaticky poskytuje mechanismy ověřování vazby služeb, při provádění ověřování protokolu HTTP.  
+ <xref:System.Net.HttpListener> automaticky poskytuje mechanismy ověřování vazby služeb, při provádění ověřování protokolu HTTP.  
   
  Nejbezpečnější scénář je umožnit Rozšířená ochrana pro předpony HTTPS://. V takovém případě nastavte <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> k <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> s <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> nastavena na <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> nebo <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>, a <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> nastavena na <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> hodnotu <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> vloží <xref:System.Net.HttpListener> v režimu částečně odolný při <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> odpovídá plně zesílený režim.  
   

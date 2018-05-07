@@ -1,10 +1,6 @@
 ---
-title: "-definovat (možnosti kompilátoru C#)"
+title: -definovat (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /define
 helpviewer_keywords:
@@ -15,14 +11,11 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 273437a4250a393274fa20ad4c02b61dce35ed34
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a48a2e44da0b748cea718d97026b4df24dcce11f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-define-c-compiler-options"></a>-definovat (možnosti kompilátoru C#)
 **-Definovat** možnost definuje `name` jako symbol v kódu všechny zdrojové soubory vašeho programu.  

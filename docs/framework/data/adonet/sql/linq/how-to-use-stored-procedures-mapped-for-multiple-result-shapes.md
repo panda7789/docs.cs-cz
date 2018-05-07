@@ -1,27 +1,15 @@
 ---
-title: "Postupy: pomocí uložených procedur mapovaný pro více výsledků obrazců"
-ms.custom: 
+title: 'Postupy: pomocí uložených procedur mapovaný pro více výsledků obrazců'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c2b84dfe-7fec-489a-92de-45215cec4518
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: fde4dd9044ff2bc6d781d7ceafec2bde3df7e14d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 03a003bd5b09ae19b01dcc9880137661ba6fccae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Postupy: pomocí uložených procedur mapovaný pro více výsledků obrazců
 Pokud uložená procedura může vrátit více obrazců výsledek, nemohou být návratový typ typu důrazně do obrazců jeden projekce. I když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] může generovat všechny možné projekce typy, ho nemůže vědět pořadí, ve kterém bude vrácen.  

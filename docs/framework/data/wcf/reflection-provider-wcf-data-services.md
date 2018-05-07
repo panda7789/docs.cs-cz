@@ -1,31 +1,17 @@
 ---
-title: "Reflexe zprostředkovatele (služby WCF Data Services)"
-ms.custom: 
+title: Reflexe zprostředkovatele (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: ef5ba300-6d7c-455e-a7bd-d0cc6d211ad4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 617754fcd9515f080dc6cf8ae923c2c6fc34ad3a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3c6885ee7976461379513e8e579f58160146769a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reflection-provider-wcf-data-services"></a>Reflexe zprostředkovatele (služby WCF Data Services)
-Kromě úniku dat z datového modelu prostřednictvím rozhraní Entity Framework [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] můžou zpřístupnit data, která není definován výhradně ve model na základě entity. Zprostředkovatel reflexe poskytuje data v třídy, které návratové typy, které implementují <xref:System.Linq.IQueryable%601> rozhraní. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]odvození datový model pro tyto třídy pomocí reflexe a může překládat adresy vytvářet dotazy na prostředky do jazyka integrovaného dotazu (LINQ) – na základě dotazů vůči zveřejněné <xref:System.Linq.IQueryable%601> typy.  
+Kromě úniku dat z datového modelu prostřednictvím rozhraní Entity Framework [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] můžou zpřístupnit data, která není definován výhradně ve model na základě entity. Zprostředkovatel reflexe poskytuje data v třídy, které návratové typy, které implementují <xref:System.Linq.IQueryable%601> rozhraní. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] odvození datový model pro tyto třídy pomocí reflexe a může překládat adresy vytvářet dotazy na prostředky do jazyka integrovaného dotazu (LINQ) – na základě dotazů vůči zveřejněné <xref:System.Linq.IQueryable%601> typy.  
   
 > [!NOTE]
 >  Můžete použít <xref:System.Linq.Queryable.AsQueryable%2A> metodu pro návrat <xref:System.Linq.IQueryable%601> z libovolné třídy, který implementuje rozhraní <xref:System.Collections.Generic.IEnumerable%601> rozhraní. To umožňuje nejvíce obecné typy kolekcí má být použit jako zdroj dat pro služby data.  
@@ -102,7 +88,7 @@ Kromě úniku dat z datového modelu prostřednictvím rozhraní Entity Framewor
 |<xref:System.Data.Services.IUpdatable.SetValue%2A>|Poskytuje funkce pro nastavení hodnoty vlastnosti prostředku.|  
   
 ## <a name="handling-concurrency"></a>Zpracování souběžnosti  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje model optimistickou metodu souběžného tím, že vám definovat token souběžnosti pro entitu. Tento token souběžnosti, která obsahuje jednu nebo více vlastností entity, se službou data používá k určení, zda data, která jsou požadována, aktualizovaných nebo odstraněných došlo ke změně. Pokud token hodnoty získané z eTag v žádosti se liší od aktuální hodnoty entity, je vyvolána výjimka službou data. <xref:System.Data.Services.ETagAttribute> Platí pro typ entity k definování token souběžnosti ve zprostředkovateli reflexe. Token souběžnosti nemůže obsahovat vlastnost klíče nebo navigační vlastnost. Další informace najdete v tématu [aktualizaci dat služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje model optimistickou metodu souběžného tím, že vám definovat token souběžnosti pro entitu. Tento token souběžnosti, která obsahuje jednu nebo více vlastností entity, se službou data používá k určení, zda data, která jsou požadována, aktualizovaných nebo odstraněných došlo ke změně. Pokud token hodnoty získané z eTag v žádosti se liší od aktuální hodnoty entity, je vyvolána výjimka službou data. <xref:System.Data.Services.ETagAttribute> Platí pro typ entity k definování token souběžnosti ve zprostředkovateli reflexe. Token souběžnosti nemůže obsahovat vlastnost klíče nebo navigační vlastnost. Další informace najdete v tématu [aktualizaci dat služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
   
 ## <a name="using-linq-to-sql-with-the-reflection-provider"></a>Technologie LINQ to SQL pomocí reflexe zprostředkovatele  
  Protože ve výchozím nastavení jsou nativně podporovány rozhraní Entity Framework, je zprostředkovatel doporučené dat pro použití relačních dat s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Můžete ale poskytovateli reflexe třídy SQL se službou dat pomocí LINQ. <xref:System.Data.Linq.Table%601> Způsobit sad, které se vrátí pomocí metody na <xref:System.Data.Linq.DataContext> generované LINQ to SQL Návrhář relací objektů (Návrhář relací objektů) implementace <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje reflexe zprostředkovatele, který má přístup k tyto metody a vrátit entity data ze systému SQL Server pomocí generované třídy LINQ to SQL. Ale protože neimplementuje technologie LINQ to SQL <xref:System.Data.Services.IUpdatable> rozhraní, je nutné přidat konkrétní třídu, která rozšiřuje existující <xref:System.Data.Linq.DataContext> třídu přidat <xref:System.Data.Services.IUpdatable> implementace. Další informace najdete v tématu [postupy: vytvoření službu dat pomocí LINQ to SQL zdroj dat](../../../../docs/framework/data/wcf/create-a-data-service-using-linq-to-sql-wcf.md).  

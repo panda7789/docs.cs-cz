@@ -1,31 +1,22 @@
 ---
 title: Atomized XName a XNamespace objekty (technologie LINQ to XML) (C#)
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: cc3fdb907c46cf77ff6560b68ebc449380947e1c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 85799741246f484bcb17a1ae7e320bd477872238
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-c"></a>Atomized XName a XNamespace objekty (technologie LINQ to XML) (C#)
-<xref:System.Xml.Linq.XName>a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomized*; to znamená, pokud obsahují stejný kvalifikovaný název, se vztahují ke stejnému objektu. Dostaneme výkonnostních výhod pro dotazy: při porovnávání rovnosti dvou atomized názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt. Kód základní nemusí řetězec porovnání, které by byly časově náročná.  
+<xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomized*; to znamená, pokud obsahují stejný kvalifikovaný název, se vztahují ke stejnému objektu. Dostaneme výkonnostních výhod pro dotazy: při porovnávání rovnosti dvou atomized názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt. Kód základní nemusí řetězec porovnání, které by byly časově náročná.  
   
 ## <a name="atomization-semantics"></a>Sémantika atomizace  
  Atomizace znamená, že pokud dva <xref:System.Xml.Linq.XName> objekty mají stejnou místní název a jsou ve stejném oboru názvů, sdílejí stejnou instanci. Stejným způsobem, pokud dva <xref:System.Xml.Linq.XNamespace> objekty mají stejný obor názvů URI, které sdílejí stejnou instanci.  
   
  Pro třídu povolit atomized objekty musí být v konstruktoru pro třídu privátní, není veřejné. Je to proto, pokud byly veřejný konstruktor, můžete vytvořit objekt neatomizovaném. <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> operátor implicitní převod převést řetězec do implementace třídy <xref:System.Xml.Linq.XName> nebo <xref:System.Xml.Linq.XNamespace>. Toto je, jak získat instanci tyto objekty. Pomocí konstruktoru, nelze získat instanci, protože konstruktoru je nedostupná.  
   
- <xref:System.Xml.Linq.XName>a <xref:System.Xml.Linq.XNamespace> taky implementovat operátory rovnosti a nerovnosti k určení, zda dva objekty porovnávané jsou odkazy na stejnou instanci.  
+ <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> taky implementovat operátory rovnosti a nerovnosti k určení, zda dva objekty porovnávané jsou odkazy na stejnou instanci.  
   
 ## <a name="example"></a>Příklad  
  Následující kód vytvoří některé <xref:System.Xml.Linq.XElement> objekty a ukazuje, že identické názvy sdílet stejnou instanci.  

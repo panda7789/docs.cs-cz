@@ -1,30 +1,18 @@
 ---
-title: "Postupy: Vytvoření základní webové služby HTTP WCF"
-ms.custom: 
+title: 'Postupy: Vytvoření základní webové služby HTTP WCF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4dc60bbb51bc573840d0d45356f0cd84fd32db2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d147286fd2f8fe3f4f5e822598a07b51ae6d9791
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>Postupy: Vytvoření základní webové služby HTTP WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje vytvořit službu, která zveřejňuje koncový bod webové. Koncových bodů webové odesílat data XML nebo JSON, že neexistují žádné obálku protokolu SOAP. Toto téma ukazuje, jak vystavit takové koncový bod.  
+Windows Communication Foundation (WCF) umožňuje vytvoření který zveřejňuje koncový bod webové služby. Koncových bodů webové odesílat data XML nebo JSON, že neexistují žádné obálku protokolu SOAP. Toto téma ukazuje, jak vystavit takové koncový bod.  
   
 > [!NOTE]
 >  Jediný způsob, jak zabezpečit koncový bod webové je zveřejnění prostřednictvím protokolu HTTPS, pomocí zabezpečení přenosu. Při použití zabezpečení na základě zpráv, informace o zabezpečení je obvykle umístěny v hlavičkách protokolu SOAP a protože zprávy odeslané do koncových bodů protokolu SOAP obsahovat žádné obálku protokolu SOAP, není nikde umístit informace o zabezpečení a musíte spoléhat na zabezpečení přenosu.  
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[htBasicService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#0)]  
   
     > [!NOTE]
-    >  Ve výchozím nastavení <xref:System.ServiceModel.Web.WebInvokeAttribute> mapuje POST volání operace. Můžete však zadat metodu protokolu HTTP (například HEAD, PUT nebo odstraňte) pro mapování na operaci zadáním "metoda =" parametr. <xref:System.ServiceModel.Web.WebGetAttribute>nemá "metoda =" parametr a pouze mapy GET volání operace služby.  
+    >  Ve výchozím nastavení <xref:System.ServiceModel.Web.WebInvokeAttribute> mapuje POST volání operace. Můžete však zadat metodu protokolu HTTP (například HEAD, PUT nebo odstraňte) pro mapování na operaci zadáním "metoda =" parametr. <xref:System.ServiceModel.Web.WebGetAttribute> nemá "metoda =" parametr a pouze mapy GET volání operace služby.  
   
 2.  Implementujte kontrakt služby.  
   
@@ -57,9 +45,9 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[htBasicService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#3)]  
   
     > [!NOTE]
-    >  Pokud je nemůžete přidat koncový bod, <xref:System.ServiceModel.Web.WebServiceHost> automaticky vytvoří výchozí koncový bod. <xref:System.ServiceModel.Web.WebServiceHost>také přidá <xref:System.ServiceModel.Description.WebHttpBehavior> a zakáže stránku nápovědy HTTP a funkci GET webové služby popis Language (WSDL), takže koncový bod metadat nebudou v konfliktu s výchozí koncový bod HTTP.  
+    >  Pokud je nemůžete přidat koncový bod, <xref:System.ServiceModel.Web.WebServiceHost> automaticky vytvoří výchozí koncový bod. <xref:System.ServiceModel.Web.WebServiceHost> také přidá <xref:System.ServiceModel.Description.WebHttpBehavior> a zakáže stránku nápovědy HTTP a funkci GET webové služby popis Language (WSDL), takže koncový bod metadat nebudou v konfliktu s výchozí koncový bod HTTP.  
     >   
-    >  Přidání koncový bod-protokolu SOAP s adresou URL služby "" způsobí neočekávanému chování, když je proveden pokus o volání operace v koncovém bodě. Důvodem je, naslouchání identifikátoru URI koncového bodu je stejný jako identifikátor URI pro stránku nápovědy (stránka, ke které se zobrazí, když přejdete na adresu základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby).  
+    >  Přidání koncový bod-protokolu SOAP s adresou URL služby "" způsobí neočekávanému chování, když je proveden pokus o volání operace v koncovém bodě. Důvodem je naslouchání, identifikátor URI koncového bodu je stejný jako identifikátor URI pro stránku nápovědy (stránka, která se zobrazí, když přejdete na základní adresa služby WCF).  
   
      Můžete provést jednu z následujících akcí k tomu nedocházelo:  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>K volání operací služby namapované na GET v Internet Exploreru  
   
-1.  Otevřete Internet Explorer a zadejte "`http://localhost:8000/EchoWithGet?s=Hello, world!`" a stiskněte klávesu ENTER. Adresa URL obsahuje základní adresa služby ("http://localhost: 8000 /"), relativní adresa koncového bodu (""), operace služby k volání ("EchoWithGet") a otazník následuje seznam pojmenované parametry oddělených ampersandem (&).  
+1.  Otevřete Internet Explorer a zadejte "`http://localhost:8000/EchoWithGet?s=Hello, world!`" a stiskněte klávesu ENTER. Adresa URL obsahuje základní adresa služby ("http://localhost:8000/"), relativní adresa koncového bodu (""), operace služby k volání ("EchoWithGet") a otazník následuje seznam pojmenované parametry oddělených ampersandem (&).  
   
 ### <a name="to-call-service-operations-in-code"></a>K volání operací služby v kódu  
   

@@ -1,14 +1,6 @@
 ---
-title: "COR_HEAPINFO – struktura"
-ms.custom: 
+title: COR_HEAPINFO – struktura
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - COR_HEAPINFO
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: bfb2cd39-3e0b-4d51-ba0c-f009755c1456
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 991e018c3967693f5b87b71c77cdbadcd4ae0cfe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8fb1ae367c30bb038bfe25961e91f02f172f486c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="corheapinfo-structure"></a>COR_HEAPINFO – struktura
 Poskytuje obecné informace o kolekci halda paměti, včetně toho, jestli je vyčíslitelná.  
@@ -53,10 +41,10 @@ typedef struct _COR_HEAPINFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`areGCStructuresValid`|`true`Pokud jsou platné struktury kolekce paměti a mohou být uvedené halda; v opačném `false`.|  
+|`areGCStructuresValid`|`true` Pokud jsou platné struktury kolekce paměti a mohou být uvedené halda; v opačném `false`.|  
 |`pointerSize`|Velikost v bajtech, ukazatelů na cílové architektury.|  
 |`numHeaps`|Počet logických uvolňování paměti haldách v procesu.|  
-|`concurrent`|`TRUE`Pokud je to souběžné uvolňování paměti (pozadí) je povoleno; v opačném `FALSE`.|  
+|`concurrent`|`TRUE` Pokud je to souběžné uvolňování paměti (pozadí) je povoleno; v opačném `FALSE`.|  
 |`gcType`|Člen [CorDebugGCType](../../../../docs/framework/unmanaged-api/debugging/cordebuggctype-enumeration.md) výčtu, která určuje, zda má systém uvolňování běží na pracovní stanici nebo na serveru.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -71,7 +59,7 @@ typedef struct _COR_HEAPINFO {
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  

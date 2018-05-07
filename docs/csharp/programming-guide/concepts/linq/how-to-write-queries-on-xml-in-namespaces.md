@@ -1,21 +1,12 @@
 ---
-title: "Postupy: zápis dotazů na XML v oborech názvů (C#)"
-ms.custom: 
+title: 'Postupy: zápis dotazů na XML v oborech názvů (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 194e12f88f7c22c365a18bc2dd42a3dd26b5c569
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a5de5ffdafc2dd191a35860150e48a86a3603f3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Postupy: zápis dotazů na XML v oborech názvů (C#)
 Pokud chcete napsat dotaz na XML, který je v oboru názvů, je nutné použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  

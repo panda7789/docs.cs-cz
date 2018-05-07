@@ -1,31 +1,17 @@
 ---
 title: Čítače výkonu WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-caps.latest.revision: 37
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: be4ffac8444f6365dacb2b20db6abbb6792c2239
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 74bf11779e6ccf032f2c8c920b62b2f0e5d0625d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace.  
+Windows Communication Foundation (WCF) obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace.  
   
 ## <a name="enabling-performance-counters"></a>Povolení čítače výkonu  
  Můžete povolit čítače výkonu pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] přes z konfiguračního souboru app.config [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby následujícím způsobem:  
@@ -70,7 +56,7 @@ config.Save();
 >  Instance čítače výkonu se může uvolnit před poslední zprávy byly zpracovány dispečera koncový bod. Výsledkem může být data výkonu není zaznamenaná pro několik zprávy.  
   
 ## <a name="increasing-memory-size-for-performance-counters"></a>Zvýšit velikost paměti pro čítače výkonu  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]používá samostatné sdílené paměti pro jeho kategorie čítače výkonu.  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] používá samostatné sdílené paměti pro jeho kategorie čítače výkonu.  
   
  Ve výchozím nastavení je samostatnou sdílené paměti hodnotu čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globální výkonu čítač paměť je 524,288 bajtů. Proto tří [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] kategorie čítače výkonu mají výchozí velikost přibližně 128 KB. V závislosti na vlastnosti runtime [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] může dojít k vyčerpání aplikace na počítači, paměti čítače výkonu. V takovém případě [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zapíše chybu do protokolu událostí aplikace. Obsah chyba stavy nebyla načtena čítače výkonu, a položka obsahuje výjimku "System.InvalidOperationException: vlastní čítače souboru zobrazení je nedostatek paměti." Pokud je trasování povoleno na úrovni chyba, toto selhání je také trasovat. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování v používání vaší [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] aplikací pomocí čítače výkonu, které jsou povolené může způsobit snížení výkonu. Pokud jste správce počítače, byste ho měli nakonfigurovat přidělit dostatek paměti pro podporu maximální počet čítače výkonu, které může existovat kdykoli.  
   

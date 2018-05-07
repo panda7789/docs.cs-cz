@@ -1,26 +1,12 @@
 ---
 title: Přiřazování zpráv metodám podle elementu těla
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4ab8ddccafa8dbf1ecde8afbb07f0a61faa62be5
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a59f639fc0f1adad48bfda5fd8105340ac004cef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dispatch-by-body-element"></a>Přiřazování zpráv metodám podle elementu těla
 Tento příklad znázorňuje způsob implementace alternativní algoritmus pro přiřazení k operacím příchozí zprávy.  
@@ -82,7 +68,7 @@ private Message CreateMessageCopy(Message message,
 ```  
   
 ## <a name="adding-an-operation-selector-to-a-service"></a>Přidání selektor operace služby  
- Selektory operace odesílání služby jsou rozšíření pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dispečera. Pro výběr metody zpětného volání kanál duplexní kontrakty, existují také selektory operace klienta, které fungují velmi podobně, jako jsou zde popsané selektory operace odesílání, ale které nejsou výslovně zahrnuty v této ukázce.  
+ Selektory operace odesílání služby jsou rozšíření dispečera Windows Communication Foundation (WCF). Pro výběr metody zpětného volání kanál duplexní kontrakty, existují také selektory operace klienta, které fungují velmi podobně, jako jsou zde popsané selektory operace odesílání, ale které nejsou výslovně zahrnuty v této ukázce.  
   
  Jako většina rozšíření model služeb jsou selektory operace odesílání přidány do dispečera pomocí chování. A *chování* je objekt konfigurace, která přidá jeden nebo více rozšíření odesílání runtime (nebo modul runtime klienta) nebo v opačném případě se změní jeho nastavení.  
   
@@ -187,7 +173,7 @@ public interface IDispatchedByBody
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  
   

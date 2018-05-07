@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Umístění prvku ToolStripItem do prvku ToolStrip"
-ms.custom: 
+title: 'Postupy: Umístění prvku ToolStripItem do prvku ToolStrip'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], aligning items
 - toolbars [Windows Forms], positioning items
 ms.assetid: 11fd7c5b-ee5c-4993-9a11-89127ff0aa7a
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9512116356720d40c7d3835713a41964d8020597
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 952916d3cc79abde11d193e5738c1693a155f7b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-position-a-toolstripitem-on-a-toolstrip"></a>Postupy: Umístění prvku ToolStripItem do prvku ToolStrip
 Můžete přesunout nebo přidat <xref:System.Windows.Forms.ToolStripItem> levé nebo pravé straně <xref:System.Windows.Forms.ToolStrip>.  

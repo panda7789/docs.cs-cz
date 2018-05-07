@@ -1,27 +1,15 @@
 ---
 title: Contract2
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 305eeb65-a52f-459e-9aa8-0ef071eade16
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: abdbe581f53931d72a8d60f6b1767c03d5205c9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: d7af8df46fabcb96a8f7015e360ee2617b7273a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="contract"></a>Kontrakt
-Tato část obsahuje příklady vysvětlující kontrakty [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tato část obsahuje příklady vysvětlující kontrakty ve Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Kontrakty dat](../../../../docs/framework/wcf/samples/data-contracts.md)  

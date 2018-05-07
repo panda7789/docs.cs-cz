@@ -1,20 +1,13 @@
 ---
-title: "Interpretace výrazy"
-description: "Zjistěte, jak napsat kód pro zjištění strukturu strom výrazu se nezdařilo."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Interpretace výrazy
+description: Zjistěte, jak napsat kód pro zjištění strukturu strom výrazu se nezdařilo.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: e7c5f7404546c6f3812fc5cc3d0320c77816634d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 04622c0aa7323ac4cf16af94e31f1ef6987f87c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazy
 

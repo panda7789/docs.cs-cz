@@ -1,13 +1,6 @@
 ---
-title: "Rozšíření ladění pomocí atributů zobrazení ladicího programu"
-ms.custom: 
+title: Rozšíření ladění pomocí atributů zobrazení ladicího programu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,19 +13,16 @@ helpviewer_keywords:
 - display attributes for debugger
 - DebuggerBrowsableAttribute attribute
 ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
-caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ac5097326ae76a8790569c13fd8b1285b0cfeec0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2efa8cfb2b196d6f5a26354161e42c1f376e43b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Rozšíření ladění pomocí atributů zobrazení ladicího programu
-Atributů zobrazení ladicího programu povolit vývojář typu, který určuje a nejlépe rozumí modul runtime chování tohoto typu, také určit, co daný typ bude vypadat, který se zobrazí v ladicí program. Kromě toho ladicí program atributy, které poskytují zobrazení `Target` vlastnost lze použít na úrovni sestavení uživatelé bez vědomí zdrojového kódu. <xref:System.Diagnostics.DebuggerDisplayAttribute> Atribut ovládací prvky zobrazení typ nebo člen v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerBrowsableAttribute> Atribut určuje, zda a jak pole nebo vlastnost je zobrazena v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerTypeProxyAttribute> Atribut určuje typ substitute nebo proxy server, pro typ a mění způsob přidělování typ se zobrazí v ladicího programu. Při zobrazení proměnné, která má proxy server, nebo nahraďte typ proxy serveru znamená původní typ v okně zobrazení ladicího programu**.** Zadejte pouze veřejné členy proxy proměnné windowdisplays ladicí program. Soukromé členy nejsou zobrazeny.  
+Atributů zobrazení ladicího programu povolit vývojář typu, který určuje a nejlépe rozumí modul runtime chování tohoto typu, také určit, co daný typ bude vypadat, který se zobrazí v ladicí program. Kromě toho ladicí program atributy, které poskytují zobrazení `Target` vlastnost lze použít na úrovni sestavení uživatelé bez vědomí zdrojového kódu. <xref:System.Diagnostics.DebuggerDisplayAttribute> Atribut ovládací prvky zobrazení typ nebo člen v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerBrowsableAttribute> Atribut určuje, zda a jak pole nebo vlastnost je zobrazena v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerTypeProxyAttribute> Atribut určuje typ substitute nebo proxy server, pro typ a mění způsob přidělování typ se zobrazí v ladicího programu. Při zobrazení proměnné, která má proxy server, nebo nahraďte typ proxy serveru znamená původní typ v okně zobrazení ladicího programu **.** Zadejte pouze veřejné členy proxy proměnné windowdisplays ladicí program. Soukromé členy nejsou zobrazeny.  
   
 ## <a name="using-the-debuggerdisplayattribute"></a>Pomocí DebuggerDisplayAttribute  
  <xref:System.Diagnostics.DebuggerDisplayAttribute.%23ctor%2A> Konstruktor má jeden argument: řetězec, který se zobrazí ve sloupci Hodnota pro instance typu. Tento řetězec může obsahovat složené závorky ({a}). Text v páru složených závorek je vyhodnoceno jako výraz. Například následující kód C# způsobí "Count = 4" na zobrazí, když je vybrán znaménko plus (+) rozbalte zobrazení ladicího programu pro instanci `MyHashtable`.  
@@ -52,11 +42,11 @@ class MyHashtable
 ## <a name="using-the-debuggerbrowsableattribute"></a>Pomocí debuggerbrowsableattribute –  
  Použít <xref:System.Diagnostics.DebuggerBrowsableAttribute> pole nebo vlastnost k určení, jak pole nebo vlastnost se zobrazí v okně ladicí program. V konstruktoru pro tento atribut má jednu z <xref:System.Diagnostics.DebuggerBrowsableState> hodnoty výčtu, které určuje jednu z následujících stavů:  
   
--   <xref:System.Diagnostics.DebuggerBrowsableState.Never>Označuje, že člen není zobrazen v okně data.  Například pomocí této hodnoty pro <xref:System.Diagnostics.DebuggerBrowsableAttribute> na pole odebere pole z hierarchie; pole se nezobrazí, pokud rozbalíte kliknutím na symbol plus (+) pro instanci typu nadřazených typů.  
+-   <xref:System.Diagnostics.DebuggerBrowsableState.Never> Označuje, že člen není zobrazen v okně data.  Například pomocí této hodnoty pro <xref:System.Diagnostics.DebuggerBrowsableAttribute> na pole odebere pole z hierarchie; pole se nezobrazí, pokud rozbalíte kliknutím na symbol plus (+) pro instanci typu nadřazených typů.  
   
--   <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed>Označuje, že je člen zobrazí ale není rozšířit ve výchozím nastavení.  Toto je výchozí chování.  
+-   <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> Označuje, že je člen zobrazí ale není rozšířit ve výchozím nastavení.  Toto je výchozí chování.  
   
--   <xref:System.Diagnostics.DebuggerBrowsableState.RootHidden>Určuje, že člena samotného není vidět, ale pokud je pole nebo kolekce, zobrazí se jeho základní objekty.  
+-   <xref:System.Diagnostics.DebuggerBrowsableState.RootHidden> Určuje, že člena samotného není vidět, ale pokud je pole nebo kolekce, zobrazí se jeho základní objekty.  
   
 > [!NOTE]
 >  <xref:System.Diagnostics.DebuggerBrowsableAttribute> Nepodporuje Visual Basic v rozhraní .NET Framework verze 2.0.  

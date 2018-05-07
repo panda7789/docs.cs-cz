@@ -4,16 +4,11 @@ description: .NET core project.json csproj migrace
 author: blackdwarf
 ms.author: mairaw
 ms.date: 07/19/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 102b875072ed77a328bdb6a62ed6cc98612ff059
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: e3b788aa3dd6601e80773b8dc78942fc70fea9a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-net-core-projects-to-the-csproj-format"></a>Migrace .NET Core projekty do formátu .csproj
 

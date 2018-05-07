@@ -1,24 +1,12 @@
 ---
-title: "Kontrakty pro směrování"
-ms.custom: 
+title: Kontrakty pro směrování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9ceea7ae-ea19-4cf9-ba4f-d071e236546d
-caps.latest.revision: "7"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c026c57129672eb25bb244a4fc928b827398e08
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 64ebb673b17159967bb4acd4e3a5e0a3f89142f5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-contracts"></a>Kontrakty pro směrování
 Kontrakty pro směrování definovat vzory zprávy, které služba směrování může zpracovat.  Každá smlouva je bez psaní a umožňuje služba pro příjem zprávy bez vědomí zpráva schématu nebo akce. To umožňuje obecně směrování zpráv bez další konfigurace, pro jaké jsou specifikace základní zpráv směrovány služby směrování.  

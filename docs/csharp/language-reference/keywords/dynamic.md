@@ -1,24 +1,17 @@
 ---
-title: "dynamic (Referenční dokumentace jazyka C#)"
+title: dynamic (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - dynamic_CSharpKeyword
 helpviewer_keywords:
 - dynamic [C#]
 - dynamic keyword [C#]
 ms.assetid: 9e797102-cc83-4964-bf58-afe4f54d16bc
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: e3bf51ab62e195f7a5d1f0641f62380977c731ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 59957ce6b2a26c1d24dc1178630eef8551db3340
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dynamic-c-reference"></a>dynamic (Referenční dokumentace jazyka C#)
 `dynamic` Typ umožňuje operace, ve kterých se vyskytuje obejít kontrolu typu v čase kompilace. Tyto operace jsou místo toho vyřešeny za běhu. `dynamic` Typ zjednodušuje přístup k rozhraní API modelu COM, jako je například rozhraní API Office automatizace a také pro dynamické rozhraní API, jako je například IronPython knihovny a k HTML Document Object Model (DOM).  
@@ -70,9 +63,9 @@ obj = obj + 3;
  <xref:System.Dynamic.ExpandoObject?displayProperty=nameWithType>  
  <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>  
  [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
- [objekt](../../../csharp/language-reference/keywords/object.md)  
- [je](../../../csharp/language-reference/keywords/is.md)  
- [jako](../../../csharp/language-reference/keywords/as.md)  
+ [object](../../../csharp/language-reference/keywords/object.md)  
+ [is](../../../csharp/language-reference/keywords/is.md)  
+ [as](../../../csharp/language-reference/keywords/as.md)  
  [typeof](../../../csharp/language-reference/keywords/typeof.md)  
- [Postupy: bezpečné přetypování pomocí jako a je operátory](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)  
+ [Postupy: Bezpečné přetypování pomocí operátorů as a is](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)  
  [Návod: Vytváření a používání dynamických objektů](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

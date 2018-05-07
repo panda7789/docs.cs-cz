@@ -1,13 +1,6 @@
 ---
-title: "Optimalizace výkonu: Text"
-ms.custom: 
+title: 'Optimalizace výkonu: Text'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,19 +11,14 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f345893ca79d820ebb066d920cb49c6c46c47297
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 177f42dfa1c1be2b12d7e9e5283cf57f14c0880c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-text"></a>Optimalizace výkonu: Text
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zahrnuje podporu pro prezentaci textového obsahu prostřednictvím bohaté funkce [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládací prvky. Obecně lze rozdělit vykreslování textu v tři vrstvy:  
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje podporu pro prezentaci textového obsahu prostřednictvím bohaté funkce [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládací prvky. Obecně lze rozdělit vykreslování textu v tři vrstvy:  
   
 1.  Pomocí <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> objekty přímo.  
   
@@ -43,13 +31,13 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Glyph_Level"></a>   
 ## <a name="rendering-text-at-the-glyph-level"></a>Vykreslení textu na úrovni glyfy  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje podporu rozšířené textové včetně značek glyfy úrovni s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytávat a zachovat po formátování textu. Tyto funkce podporují kritické jiným textovým vykreslování požadavky v každé z následujících scénářů.  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje podporu rozšířené textové včetně značek glyfy úrovni s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytávat a zachovat po formátování textu. Tyto funkce podporují kritické jiným textovým vykreslování požadavky v každé z následujících scénářů.  
   
 -   Zobrazování dokumentů pevného formátu.  
   
 -   Tisk scénáře.  
   
-    -   [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]jako jazyk tiskárny zařízení.  
+    -   [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jako jazyk tiskárny zařízení.  
   
     -   [!INCLUDE[TLA#tla_mxdw](../../../../includes/tlasharptla-mxdw-md.md)].  
   
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 -   Reprezentace-formátovat dokument, včetně klientů pro předchozí verze [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a dalších výpočetních zařízení.  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Glyphs>a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro tiskové scénáře a prezentace-formátovat dokument. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje několik elementy pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, najdete v článku [typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md).  
+>  <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro tiskové scénáře a prezentace-formátovat dokument. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje několik elementy pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, najdete v článku [typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md).  
   
  Následující příklady ukazují, jak definovat vlastnosti <xref:System.Windows.Documents.Glyphs> objekt v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. <xref:System.Windows.Documents.Glyphs> Objekt představuje výstup <xref:System.Windows.Media.GlyphRun> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. V příkladech se předpokládá, že písem Arial, Kurýrní nové a časy New Roman jsou nainstalovány ve **C:\WINDOWS\Fonts** složky v místním počítači.  
   
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="using-drawglyphrun"></a>Pomocí DrawGlyphRun  
  Pokud máte vlastní ovládací prvek a chcete vykreslit glyfů, použijte <xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A> metoda.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]také poskytuje nižší úrovně služby pro vlastní text formátování prostřednictvím <xref:System.Windows.Media.FormattedText> objektu. Nejúčinnější způsob vykreslování textu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je vygenerováním textový obsah na úrovni glyfy pomocí <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun>. Náklady na této efektivity je však ztrátu snadno použitelný RTF, které jsou integrované funkce služby [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládací prvky, jako například <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje nižší úrovně služby pro vlastní text formátování prostřednictvím <xref:System.Windows.Media.FormattedText> objektu. Nejúčinnější způsob vykreslování textu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je vygenerováním textový obsah na úrovni glyfy pomocí <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun>. Náklady na této efektivity je však ztrátu snadno použitelný RTF, které jsou integrované funkce služby [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládací prvky, jako například <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument>.  
   
 <a name="FormattedText_Object"></a>   
 ## <a name="formattedtext-object"></a>Objekt FormattedText  
@@ -86,10 +74,10 @@ ms.lasthandoff: 12/22/2017
   
 <a name="FlowDocument_TextBlock_Label"></a>   
 ## <a name="flowdocument-textblock-and-label-controls"></a>FlowDocument TextBlock a ovládací prvky popisek  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsahuje více ovládacích prvků pro kreslení textu na obrazovce. Každý ovládací prvek je zaměřena na jiný scénář a má svou vlastní seznam funkcí a omezení.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje více ovládacích prvků pro kreslení textu na obrazovce. Každý ovládací prvek je zaměřena na jiný scénář a má svou vlastní seznam funkcí a omezení.  
   
 ### <a name="flowdocument-impacts-performance-more-than-textblock-or-label"></a>FlowDocument ovlivňuje výkon více než TextBlock nebo popisek  
- Obecně <xref:System.Windows.Controls.TextBlock> element byste měli použít, pokud text omezenou podporu vyžadovat, například stručný věty v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label>můžete použít, když je potřebná podpora minimální text. <xref:System.Windows.Documents.FlowDocument> Element je kontejner pro znovu přizpůsobitelným dokumenty, které podporují bohaté prezentace obsahu a proto má dopad na vyšší výkon než při použití <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.Label> ovládací prvky.  
+ Obecně <xref:System.Windows.Controls.TextBlock> element byste měli použít, pokud text omezenou podporu vyžadovat, například stručný věty v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> můžete použít, když je potřebná podpora minimální text. <xref:System.Windows.Documents.FlowDocument> Element je kontejner pro znovu přizpůsobitelným dokumenty, které podporují bohaté prezentace obsahu a proto má dopad na vyšší výkon než při použití <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.Label> ovládací prvky.  
   
  Další informace o <xref:System.Windows.Documents.FlowDocument>, najdete v části [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
   
@@ -160,7 +148,7 @@ Hypertextový odkaz, které jsou uvedeny na MouseEnter
   
 <a name="Text_Formatting_Features"></a>   
 ## <a name="text-formatting-features"></a>Funkce formátování textu  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje RTF služby, jako je automatické dělení slov. Tyto služby mohou ovlivnit výkon aplikace a musí být použit pouze v případě potřeby.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje RTF služby, jako je automatické dělení slov. Tyto služby mohou ovlivnit výkon aplikace a musí být použit pouze v případě potřeby.  
   
 ### <a name="avoid-unnecessary-use-of-hyphenation"></a>Vyhněte se použití nepotřebné dělení  
  Automatické dělení slov vyhledá pomlčka zarážky řádků textu a umožňuje pozic další zalomení řádků v <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty. Ve výchozím nastavení je funkce automatického dělení slov v tyto objekty zakázán. Můžete povolit tuto funkci nastavením vlastnosti objektu IsHyphenationEnabled `true`. Povolení této funkce však způsobí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahájíte [!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)] interoperabilitu, která může ovlivnit výkon aplikace. Doporučuje se, že nepoužijete automatické dělení slov Pokud to potřebujete.  

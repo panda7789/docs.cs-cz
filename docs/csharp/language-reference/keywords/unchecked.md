@@ -1,24 +1,17 @@
 ---
 title: unchecked (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - unchecked_CSharpKeyword
 - unchecked
 helpviewer_keywords:
 - unchecked keyword [C#]
 ms.assetid: 0c021f7c-923f-4b3d-a58f-55336f5ac27e
-caps.latest.revision: 23
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c05e7cb742d8e8f5a7804656a5ec13548d0498b1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d7a48950b7158be3cd589c20fbfe0661f3c9c5af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unchecked-c-reference"></a>unchecked (Referenční dokumentace jazyka C#)
 `unchecked` – Klíčové slovo je použít k potlačení kontrola Přetečení aritmetické operace integrální type a převody.  
@@ -43,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Zaškrtnuto a nezaškrtnuto](../../../csharp/language-reference/keywords/checked-and-unchecked.md)  
- [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md)
+ [checked](../../../csharp/language-reference/keywords/checked.md)

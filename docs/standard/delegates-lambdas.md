@@ -1,23 +1,16 @@
 ---
-title: "Delegáti a lambdas"
-description: "Zjistěte, jak delegáti definice typu, který zadejte podpis konkrétní metody, které je možné volat přímo nebo předán na jinou metodu a volat."
-keywords: "Rozhraní .NET, .NET core"
+title: Delegáti a lambdas
+description: Zjistěte, jak delegáti definice typu, který zadejte podpis konkrétní metody, které je možné volat přímo nebo předán na jinou metodu a volat.
 author: richlander
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d418733ada67a1cb751bbfa74afee2eeeee04976
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f8184b87fc62f378fe72138733f87de924da60f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegates-and-lambdas"></a>Delegáti a lambdas
 
@@ -50,9 +43,9 @@ public class Program
 
 Zjednodušilo procesu vývoje, .NET zahrnuje sadu delegáta typy, které můžete opakovaně používat a není nutné vytvářet nové typy programátory v jazyce. Jedná se o `Func<>`, `Action<>` a `Predicate<>`, a že lze použít na různých místech .NET API bez nutnosti definování nových typů delegáta. Samozřejmě existují určité rozdíly mezi tří jak uvidíte v jejich podpisy, které se většinou mají způsobem, jakým, které byly určeny k použití:
 
-*   `Action<>`používá se při je zapotřebí k provedení akce pomocí argumentů delegáta.
-*   `Func<>`používá se obvykle při transformaci mít k dispozici, to znamená, budete muset transformace argumenty delegáta do jiné výsledky. Projekce jsou typickým příkladem tohoto objektu.
-*   `Predicate<>`používá se při potřebujete zjistit, pokud argument splňuje podmínky delegáta. Můžete zapsat také jako `Func<T, bool>`.
+*   `Action<>` používá se při je zapotřebí k provedení akce pomocí argumentů delegáta.
+*   `Func<>` používá se obvykle při transformaci mít k dispozici, to znamená, budete muset transformace argumenty delegáta do jiné výsledky. Projekce jsou typickým příkladem tohoto objektu.
+*   `Predicate<>` používá se při potřebujete zjistit, pokud argument splňuje podmínky delegáta. Můžete zapsat také jako `Func<T, bool>`.
 
 Jsme teď můžete provést v našem příkladu výše a přepište pomocí `Func<>` delegovat místo vlastního typu. Tento program bude dále běžet stejně.
 

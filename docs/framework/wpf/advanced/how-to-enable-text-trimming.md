@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Povolení ořezávání textu"
-ms.custom: 
+title: 'Postupy: Povolení ořezávání textu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - documents [WPF], trimmng text
 - trimmng text [WPF]
 ms.assetid: dd8c9191-d2be-45fd-9fb4-3c75b65578c5
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cdaafa62815c75d8ab364a18d909d867f90052c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 97bc88b298500892fcc7d26e61f8052a05d9e593
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-text-trimming"></a>Postupy: Povolení ořezávání textu
 Tento příklad ukazuje použití a důsledků hodnoty, které jsou k dispozici v <xref:System.Windows.TextTrimming> výčtu.  

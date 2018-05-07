@@ -1,32 +1,22 @@
 ---
-title: "Klíčová slova a úrovně ETW CLR"
-ms.custom: 
+title: Klíčová slova a úrovně ETW CLR
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - CLR ETW keywords
 - CLR ETW levels
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72775d4cb478b6d9c9d2e65119c63f8a34ae47d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8332eba909c3ebe475e3f364f81a676733e4e3d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
-<a name="top"></a>Trasování událostí pro Windows (ETW) události lze filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) povolit filtrování událostí podle kategorie; se používají v kombinacích runtime a rundown zprostředkovatele. [Úrovně událostí](#levels) jsou identifikovány příznaky.  
+<a name="top"></a> Trasování událostí pro Windows (ETW) události lze filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) povolit filtrování událostí podle kategorie; se používají v kombinacích runtime a rundown zprostředkovatele. [Úrovně událostí](#levels) jsou identifikovány příznaky.  
   
 <a name="keywords"></a>   
 ## <a name="clr-etw-keywords"></a>CLR ETW – klíčová slova  
@@ -104,12 +94,12 @@ ms.lasthandoff: 12/22/2017
   
 |Klíčová slova a značky|Aplikační domény, sestavení, DCStart/DCEnd události modulu|Metoda DCStart/DCEnd události (včetně dynamických metoda události)|  
 |------------------------|----------------------------------------------------------------|----------------------------------------------------------------------|  
-|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|`DCStart`události.|Žádné|  
-|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|`DCEnd`události.|Žádné|  
-|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Žádné|`DCStart`události.|  
-|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Žádné|`DCEnd`události.|  
-|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Žádné|`DCStart`události.|  
-|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Žádné|`DCEnd`události.|  
+|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|`DCStart` události.|Žádné|  
+|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|`DCEnd` události.|Žádné|  
+|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Žádné|`DCStart` události.|  
+|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Žádné|`DCEnd` události.|  
+|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Žádné|`DCStart` události.|  
+|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Žádné|`DCEnd` události.|  
   
  [Zpět na začátek](#top)  
   

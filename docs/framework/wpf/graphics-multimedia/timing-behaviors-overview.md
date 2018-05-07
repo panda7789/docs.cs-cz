@@ -1,27 +1,15 @@
 ---
-title: "Přehled chování časování"
-ms.custom: 
+title: Přehled chování časování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - timing behaviors [WPF]
 - behaviors [WPF], timing
 ms.assetid: 5b714d46-bd46-48b8-b467-b4be89ba3091
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9305b69927a1ed0ad4f154ab972316f3dee951e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31a6b7d3b92e886d9c90fc39d69f31cf72b99666
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="timing-behaviors-overview"></a>Přehled chování časování
 Toto téma popisuje chování časování animace a jiných <xref:System.Windows.Media.Animation.Timeline> objekty.  
@@ -34,7 +22,7 @@ Toto téma popisuje chování časování animace a jiných <xref:System.Windows
 ## <a name="timeline-types"></a>Časová osa typy  
  A <xref:System.Windows.Media.Animation.Timeline> představuje segment času. Poskytuje vlastnosti, které vám umožní zadat délku segmentu, pokud by se měl spustit, kolikrát se bude opakovat, jak rychle čas hodnoty v tomto segmentu a další.  
   
- Třídy, které dědí z třídy časová osa poskytují další funkce, například přehrávání animace a média. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje následující <xref:System.Windows.Media.Animation.Timeline> typy.  
+ Třídy, které dědí z třídy časová osa poskytují další funkce, například přehrávání animace a média. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje následující <xref:System.Windows.Media.Animation.Timeline> typy.  
   
 |Typ časové osy|Popis|  
 |-------------------|-----------------|  
@@ -127,11 +115,11 @@ Toto téma popisuje chování časování animace a jiných <xref:System.Windows
 ## <a name="properties-that-control-the-speed-of-a-timeline"></a>Vlastnosti, které řídí rychlosti časové osy  
  <xref:System.Windows.Media.Animation.Timeline> Třída poskytuje tři vlastnosti pro zadání jeho rychlost:  
   
--   <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>– Určuje, že rychlost relativně k jeho nadřazeným prvkem, ve kterém čas hodnoty pro <xref:System.Windows.Media.Animation.Timeline>. Hodnoty větší než jedna zvýšení rychlosti <xref:System.Windows.Media.Animation.Timeline> a jeho podřízené <xref:System.Windows.Media.Animation.Timeline> objekty; hodnoty mezi 0 a 1 zpomalovat práci. Hodnota jednoho Určuje, že <xref:System.Windows.Media.Animation.Timeline> postupuje stejnou rychlostí jako svůj nadřazený uzel. <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> Nastavení časová osa kontejneru ovlivňuje všechny jeho podřízené <xref:System.Windows.Media.Animation.Timeline> také objekty.  
+-   <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> – Určuje, že rychlost relativně k jeho nadřazeným prvkem, ve kterém čas hodnoty pro <xref:System.Windows.Media.Animation.Timeline>. Hodnoty větší než jedna zvýšení rychlosti <xref:System.Windows.Media.Animation.Timeline> a jeho podřízené <xref:System.Windows.Media.Animation.Timeline> objekty; hodnoty mezi 0 a 1 zpomalovat práci. Hodnota jednoho Určuje, že <xref:System.Windows.Media.Animation.Timeline> postupuje stejnou rychlostí jako svůj nadřazený uzel. <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> Nastavení časová osa kontejneru ovlivňuje všechny jeho podřízené <xref:System.Windows.Media.Animation.Timeline> také objekty.  
   
--   <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>– Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy stráví urychlení. Příklad, naleznete v části [postupy: zvýšení nebo snížení hardwarové akcelerace animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md). 
+-   <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> – Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy stráví urychlení. Příklad, naleznete v části [postupy: zvýšení nebo snížení hardwarové akcelerace animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md). 
   
--   <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>-Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy stráví zpomaluje. Příklad, naleznete v části [postupy: zvýšení nebo snížení hardwarové akcelerace animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md).  
+-   <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> -Určuje procento <xref:System.Windows.Media.Animation.Timeline.Duration%2A> časové osy stráví zpomaluje. Příklad, naleznete v části [postupy: zvýšení nebo snížení hardwarové akcelerace animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  

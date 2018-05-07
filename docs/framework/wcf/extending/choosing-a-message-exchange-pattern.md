@@ -1,24 +1,12 @@
 ---
-title: "Výběr vzorce výměny zpráv"
-ms.custom: 
+title: Výběr vzorce výměny zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 961f5e84fb46a791127a9d80c0f03d2b87fdea77
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3466be98522eef0ebec6f6613f51566700a7cdb7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Výběr vzorce výměny zpráv
 Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zprávy exchange vzory* (nebo MEPs) jsou povinné pro kanál vyvíjíte. Toto téma popisuje možnosti dostupné a popisuje různé požadavky. Toto je první úloha v seznamu úkolů vývoj kanálu popsané v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -59,7 +47,7 @@ Tři vzory exchange základní zpráva. Shora dolů: datagram, požadavků a odp
 >  Pro přenosu UDP pouze MEP, která je podporována je datagram, protože UDP je ze své podstaty ještě efektivněji a zapomněli protokolu.  
   
 ## <a name="sessions-and-sessionful-channels"></a>Relace a Sessionful kanály  
- Na světě sítě jsou orientované na připojení protokoly (například TCP) a protokoly bez připojení (například UDP). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá termín relace rozumí abstrakce logické jako připojení. Relacemi WCF protokoly jsou podobná orientovaná na připojení síťové protokoly a protokoly nerelační WCF jsou podobná připojení méně síťových protokolů.  
+ Na světě sítě jsou orientované na připojení protokoly (například TCP) a protokoly bez připojení (například UDP). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá termín relace rozumí abstrakce logické jako připojení. Relacemi WCF protokoly jsou podobná orientovaná na připojení síťové protokoly a protokoly nerelační WCF jsou podobná připojení méně síťových protokolů.  
   
  V modelu objektu kanál každé logické relaci manifesty jako instanci kanál s relacemi. Proto všechny nové relace vytvoření klient a přijal na službu, odpovídá nové kanálu relací na každé straně. Následující diagram ukazuje, nahoře, struktura nerelační kanály a v dolní části, struktura relacemi kanály.  
   

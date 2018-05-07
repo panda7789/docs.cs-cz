@@ -1,18 +1,13 @@
 ---
 title: Začínáme s sémantického analýzy
 description: V tomto kurzu poskytuje přehled o práci s sémantického analysis pomocí .NET SDK kompilátoru.
-author: billwagner
-ms.author: wiwagn
 ms.date: 02/06/2018
-ms.topic: conceptual
-ms.prod: .net
-ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 8703670f650a16d1b6642eaaf4f82f0a73ab4c69
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 360d31b86a677adfe51ebd6752fca8475814fd89
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantického analýzy
 

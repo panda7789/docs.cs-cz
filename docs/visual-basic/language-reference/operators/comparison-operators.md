@@ -1,11 +1,6 @@
 ---
-title: "Operátory porovnání (Visual Basic)"
+title: Operátory porovnání (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.<>
 - vb.>=
@@ -35,35 +30,32 @@ helpviewer_keywords:
 - Is operator [Visual Basic]
 - comparison operators [Visual Basic], Visual Basicl
 ms.assetid: d6cb12a8-e52e-46a7-8aaf-f804d634a825
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: aa450f7978f46196663c7534b31597b04d80482a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4e37f55b4c873c3dbea22a8edf0e5e2b58824720
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="comparison-operators-visual-basic"></a>Operátory porovnání (Visual Basic)
 Níže jsou uvedeny operátory porovnání definované v jazyce Visual Basic.  
   
- `<`operátor  
+ `<` Operátor  
   
- `<=`operátor  
+ `<=` Operátor  
   
- `>`operátor  
+ `>` Operátor  
   
- `>=`operátor  
+ `>=` Operátor  
   
- `=`operátor  
+ `=` Operátor  
   
- `<>`operátor  
+ `<>` Operátor  
   
- [Is – operátor](../../../visual-basic/language-reference/operators/is-operator.md)  
+ [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)  
   
- [IsNot – operátor](../../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)  
   
- [Like – operátor](../../../visual-basic/language-reference/operators/like-operator.md)  
+ [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)  
   
  Tyto operátory porovnání dvou výrazů k určení, zda jsou stejné, a pokud ne, jak se liší. `Is`, `IsNot`, a `Like` jsou podrobně popsané na samostatné stránky nápovědy. Relační relační operátory jsou podrobně popsané na této stránce.  
   
@@ -97,14 +89,14 @@ result = string Like pattern
 ## <a name="remarks"></a>Poznámky  
  Následující tabulka obsahuje seznam relační relační operátory a podmínky určující, zda `result` je `True` nebo `False`.  
   
-|Operátor|`True`Pokud|`False`Pokud|  
+|Operátor|`True` Pokud|`False` Pokud|  
 |--------------|---------------|----------------|  
-|`<`(Méně než)|`expression1` < `expression2`|`expression1` >= `expression2`|  
-|`<=`(Je menší než nebo rovno)|`expression1` <= `expression2`|`expression1` > `expression2`|  
-|`>`(Větší než)|`expression1` > `expression2`|`expression1` <= `expression2`|  
-|`>=`(Je větší než nebo rovno)|`expression1` >= `expression2`|`expression1` < `expression2`|  
-|`=`(Rovno)|`expression1` = `expression2`|`expression1` <> `expression2`|  
-|`<>`(Není rovno)|`expression1` <> `expression2`|`expression1` = `expression2`|  
+|`<` (Méně než)|`expression1` < `expression2`|`expression1` >= `expression2`|  
+|`<=` (Je menší než nebo rovno)|`expression1` <= `expression2`|`expression1` > `expression2`|  
+|`>` (Větší než)|`expression1` > `expression2`|`expression1` <= `expression2`|  
+|`>=` (Je větší než nebo rovno)|`expression1` >= `expression2`|`expression1` < `expression2`|  
+|`=` (Rovno)|`expression1` = `expression2`|`expression1` <> `expression2`|  
+|`<>` (Není rovno)|`expression1` <> `expression2`|`expression1` = `expression2`|  
   
 > [!NOTE]
 >  [= – Operátor](../../../visual-basic/language-reference/operators/assignment-operator.md) se používá jako operátor přiřazení.  
@@ -122,11 +114,11 @@ result = string Like pattern
 ## <a name="comparing-strings"></a>Porovnávání řetězců  
  Při porovnávání řetězců se vyhodnotí výrazy řetězec na jejich abecedním pořadí, což závisí na základě `Option Compare` nastavení.  
   
- `Option Compare Binary`základů řetězec porovnání na pořadí řazení odvozené z interní binární reprezentace znaky. Pořadí řazení je určen podle znakové stránky. Následující příklad ukazuje typické binární řazení.  
+ `Option Compare Binary` základů řetězec porovnání na pořadí řazení odvozené z interní binární reprezentace znaky. Pořadí řazení je určen podle znakové stránky. Následující příklad ukazuje typické binární řazení.  
   
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`  
   
- `Option Compare Text`základů řetězec porovnání na pořadí řazení velká a malá písmena, textovou dáno národního prostředí vaší aplikace. Když nastavíte `Option Compare Text` a seřadit znaky v předchozím příkladu, platí následující pořadí řazení text:  
+ `Option Compare Text` základů řetězec porovnání na pořadí řazení velká a malá písmena, textovou dáno národního prostředí vaší aplikace. Když nastavíte `Option Compare Text` a seřadit znaky v předchozím příkladu, platí následující pořadí řazení text:  
   
  `(A=a) < (À= à) < (B=b) < (E=e) < (Ê= ê) < (Ø = ø) < (Z=z)`  
   
@@ -138,10 +130,10 @@ result = string Like pattern
   
 |Pokud jsou operandy|Porovnání se|  
 |---------------------|-------------------|  
-|Obě`String`|Seřadí porovnání založené na řetězci řazení charakteristiky.|  
+|Obě `String`|Seřadí porovnání založené na řetězci řazení charakteristiky.|  
 |Jedná se o číselné|Objekty převést na `Double`, číselné porovnání.|  
-|Jedna číslice a jeden`String`|`String` Jsou převedeny na `Double` a je provedeno číselné porovnání. Pokud `String` nelze převést na `Double`, <xref:System.InvalidCastException> je vyvolána výjimka.|  
-|Odkazové typy jiné než je buď nebo obě`String`|<xref:System.InvalidCastException> Je vyvolána výjimka.|  
+|Jedna číslice a jeden `String`|`String` Jsou převedeny na `Double` a je provedeno číselné porovnání. Pokud `String` nelze převést na `Double`, <xref:System.InvalidCastException> je vyvolána výjimka.|  
+|Odkazové typy jiné než je buď nebo obě `String`|<xref:System.InvalidCastException> Je vyvolána výjimka.|  
   
  Číselné porovnání považovat `Nothing` jako 0. Porovnání řetězců považovat `Nothing` jako `""` (prázdný řetězec).  
   
@@ -159,8 +151,8 @@ result = string Like pattern
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.InvalidCastException>  
- [= – Operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)  
+ [= – operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Řešení potíží s datové typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

@@ -1,14 +1,6 @@
 ---
-title: "IHostIoCompletionManager::CloseIoCompletionPort – metoda"
-ms.custom: 
+title: IHostIoCompletionManager::CloseIoCompletionPort – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostIoCompletionManager.CloseIoCompletionPort
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: e86ad7be-3758-498a-a972-5522d69dfbb3
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e74803cad610d5550ce8b52ce04295247617d907
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 761e3b22014bdd628ffc6763615a285a16a86309
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostiocompletionmanagercloseiocompletionport-method"></a>IHostIoCompletionManager::CloseIoCompletionPort – metoda
 Požadavky, že hostitel zavřete port, který se otevírá prostřednictvím starší volání [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
@@ -54,7 +42,7 @@ HRESULT CloseIoCompletionPort (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CloseIoCompletionPort`úspěšně vrácena.|  
+|S_OK|`CloseIoCompletionPort` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -63,7 +51,7 @@ HRESULT CloseIoCompletionPort (
 |E_INVALIDARG|Byl předán neplatný popisovač portu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `hPort`musí být popisovač pro port, který byl vytvořen starší volání `CreateIoCompletionPort`.  
+ `hPort` musí být popisovač pro port, který byl vytvořen starší volání `CreateIoCompletionPort`.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -72,7 +60,7 @@ HRESULT CloseIoCompletionPort (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  

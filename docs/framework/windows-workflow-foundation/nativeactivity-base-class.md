@@ -1,33 +1,22 @@
 ---
-title: "NativeActivity základní třída"
-ms.custom: 
+title: NativeActivity základní třída
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e53471a2d0245b1547ae5ee3c3a147e024aedefb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ca4a497f1e78989f9488507015526214ead6cae7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nativeactivity-base-class"></a>NativeActivity základní třída
-<xref:System.Activities.NativeActivity>je abstraktní třídy chráněný konstruktor. Jako <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> slouží k zápisu imperativní chování implementací <xref:System.Activities.NativeActivity.Execute%2A> metoda. Na rozdíl od <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> má přístup ke všem zveřejněné funkce modulu runtime pracovního postupu pomocí <xref:System.Activities.NativeActivityContext> byl předán objekt <xref:System.Activities.NativeActivity.Execute%2A> metoda.  
+<xref:System.Activities.NativeActivity> je abstraktní třídy chráněný konstruktor. Jako <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> slouží k zápisu imperativní chování implementací <xref:System.Activities.NativeActivity.Execute%2A> metoda. Na rozdíl od <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> má přístup ke všem zveřejněné funkce modulu runtime pracovního postupu pomocí <xref:System.Activities.NativeActivityContext> byl předán objekt <xref:System.Activities.NativeActivity.Execute%2A> metoda.  
   
 ## <a name="using-nativeactivitycontext"></a>Pomocí NativeActivityContext  
  Funkce modulu runtime pracovního postupu je přístupná prostřednictvím <xref:System.Activities.NativeActivity.Execute%2A> metoda pomocí členy `context` parametr typu <xref:System.Activities.NativeActivityContext>. Funkcí dostupných prostřednictvím <xref:System.Activities.NativeActivityContext> patří:  
   
 -   Získání a nastavení proměnných a argumenty.  
   
--   Plánování podřízené aktivity s<xref:System.Activities.NativeActivityContext.ScheduleActivity%2A>  
+-   Plánování podřízené aktivity s <xref:System.Activities.NativeActivityContext.ScheduleActivity%2A>  
   
 -   Přerušení aktivity provádění pomocí <xref:System.Activities.NativeActivityContext.Abort%2A>.  
   

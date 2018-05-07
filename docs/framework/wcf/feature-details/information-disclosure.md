@@ -1,26 +1,12 @@
 ---
 title: Zpřístupnění informací
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1b3da2dc36dca913c638ce269213903c2a024a04
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1f6c33787f920fbe7e795e27ff10d7a0c83db21e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, které informace jsou odhalil a zda jej lze použít uživatelem se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a jejich zmírnění pro každý.  
@@ -47,7 +33,7 @@ Zpřístupnění informací umožňuje útočníkovi získat cenné informace o 
   
 -   Odkazy na službu, jsou považovány za důvěryhodné. Vezměte v potaz při každém přenosu instance služby odkaz zajistit, aby nebyly zaměněny.  
   
--   Některé aplikace může být činnost koncového uživatele, který umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v referenčním a důvěryhodnosti data služby prokazuje vzdáleného hostitele. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje rozšíření, které musí body pro taková zařízení, ale uživatel je implementována.  
+-   Některé aplikace může být činnost koncového uživatele, který umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v referenčním a důvěryhodnosti data služby prokazuje vzdáleného hostitele. WCF poskytuje body rozšiřitelnosti pro taková zařízení, ale uživatel je musí implementovat.  
   
 ## <a name="ntlm"></a>NTLM  
  Ve výchozím nastavení v prostředí domény systému Windows, ověřování systému Windows používá protokol Kerberos k ověřování a autorizaci uživatelů. Pokud z nějakého důvodu nelze použít protokol Kerberos, použije se jako zálohu NT LAN Manager (NTLM). Tuto funkci můžete zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`. Problémy na vzít na vědomí při povolení protokolu NTLM patří:  

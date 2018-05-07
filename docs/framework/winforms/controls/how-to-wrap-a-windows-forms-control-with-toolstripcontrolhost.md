@@ -1,14 +1,6 @@
 ---
 title: 'Postupy: Zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - toolbars [Windows Forms], wrapping controls
 - ToolStrip control [Windows Forms], hosting controls
 ms.assetid: e2ce4990-661d-4882-a116-8a9eb575dc84
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 245d35989a4e9c5b580ae26458e246c9eb8ec2fe
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 09509705fc8e23b1b5e4fd8c67c12d0be84fc17a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost"></a>Postupy: Zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost
 <xref:System.Windows.Forms.ToolStripControlHost> umožňuje hostování libovolný ovládacích prvků Windows Forms pomocí <xref:System.Windows.Forms.ToolStripControlHost> konstruktor nebo tím, že rozšíří <xref:System.Windows.Forms.ToolStripControlHost> sám sebe. Je snazší zalomení ovládacího prvku tím, že rozšíří <xref:System.Windows.Forms.ToolStripControlHost> a implementace vlastnosti a metody, které zveřejňují často použít vlastnosti a metody ovládacího prvku. Mohou také vystavovat události pro ovládací prvek v <xref:System.Windows.Forms.ToolStripControlHost> úroveň.  

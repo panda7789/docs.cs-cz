@@ -1,24 +1,17 @@
 ---
-title: "operator (Referenční dokumentace jazyka C#)"
+title: operator (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - operator_CSharpKeyword
 - operator
 helpviewer_keywords:
 - operator keyword [C#]
 ms.assetid: 59218cce-e90e-42f6-a6bb-30300981b86a
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1d035319318a710ccee62a0c64ce5981767a21ca
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: d633a46e21f913aa8c05289dccfb63e71efd697e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operator-c-reference"></a>operator (Referenční dokumentace jazyka C#)
 Použití `operator` – klíčové slovo k přetížení předdefinované operátor nebo poskytovat převodu z uživatelem definované v třídě nebo struktuře deklaraci.  

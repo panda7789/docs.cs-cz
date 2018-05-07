@@ -1,24 +1,12 @@
 ---
-title: "207 – FaultProviderInvoked"
-ms.custom: 
+title: 207 – FaultProviderInvoked
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b730d903-01c2-4deb-85a4-da12f8a21fe4
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9035739f8625a07e8bf2b9bce2fe109880676405
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f97e74e7685d57b487f456625826ee9cd8e1760
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="207---faultproviderinvoked"></a>207 – FaultProviderInvoked
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|207|  
 |Klíčová slova|Řešení potíží s ServiceModel|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované po `FaultProvider` metoda byla volána.  
@@ -42,5 +30,5 @@ ms.lasthandoff: 12/22/2017
 |--------------------|--------------------|-----------------|  
 |TypeName|`xs:string`|Položka FullName CLR typu vyvolanou `FaultProvider`.|  
 |ExceptionTypeName|`xs:string`|Položka FullName CLR výjimky, `FaultProvider` má zpracovat.|  
-|HostReference|`xs:string`|Pro hostované webové služby v tomto poli jednoznačně identifikuje v hierarchii webové služby. Formát je definovaný jako "virtuální cesta aplikace název webu &#124; Virtuální cesta služby &#124; ServiceName}. Příklad: "Default Web Site/CalculatorApplication &#124;/CalculatorService.svc &#124; CalculatorService'.|  
+|HostReference|`xs:string`|Pro hostované webové služby v tomto poli jednoznačně identifikuje v hierarchii webové služby. Formát je definovaný jako "virtuální cesta aplikace název webu&#124;virtuální cestu služby&#124;ServiceName'. Příklad: "Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.|  
 |Domény aplikace|`xs:string`|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|

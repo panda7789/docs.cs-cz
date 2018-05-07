@@ -1,13 +1,6 @@
 ---
-title: "Ukázka zprostředkovatele s objekty COM: klient .NET a server COM"
-ms.custom: 
+title: 'Ukázka zprostředkovatele s objekty COM: klient .NET a server COM'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,13 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a3f752bb-8945-4e1b-8163-71def6e9f137
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ac82ed799e2dfcae605d48ef462b0b4c2756b5b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 85e7213342984276d8509fca8caefb2661865733
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Ukázka zprostředkovatele s objekty COM: klient .NET a server COM
 Tento příklad znázorňuje jak [klient .NET](#cpconcominteropsamplenetclientcomserveranchor1), vytvořené pro přístup k [COM server](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci COM coclass a volá členy třídy, provádění výpočtů hypotéky.  

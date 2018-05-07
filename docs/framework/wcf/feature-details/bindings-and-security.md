@@ -1,45 +1,33 @@
 ---
 title: Vazby a zabezpečení
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], security
 - WCF security
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-caps.latest.revision: 42
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 440bbcf03eef8f32a28073bfc9f5aeeb824a50fd
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 938b04f6c612f38be41d278273aa18d41677f84c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
-Vazby poskytované systémem, který je součástí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nabízejí rychlý způsob, jak program [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. S jednou výjimkou mít všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro potřebné požadavky na zabezpečení.  
+Vazby poskytované systémem zahrnuty s Windows Communication Foundation (WCF) nabízejí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mít všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro potřebné požadavky na zabezpečení.  
   
- Přehled [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí vazby, najdete v tématu [programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
+ Přehled zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování WCF pomocí vazeb najdete v tématu [programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
   
  Pokud jste již vybrali vazbu, najdete další informace o běhu chování, které jsou přidruženy zabezpečení v [chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).  
   
  Některé funkce zabezpečení nejsou programovatelný pomocí vazby poskytované systémem. Použití vlastní vazby další ovládací prvek, najdete v části [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
   
 ## <a name="security-functions-of-bindings"></a>Funkce zabezpečení vazeb  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje několik vazeb poskytovaných systémem, které splňují většinu potřeb. Pokud konkrétní vazba není stačí, můžete také vytvořit vlastní vazby. Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Další informace o vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ WCF zahrnuje několik vazeb poskytovaných systémem, které splňují většinu potřeb. Pokud konkrétní vazba není stačí, můžete také vytvořit vlastní vazby. Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Další informace o vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
- Každé vazby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] má dvě formy: jako rozhraní API a jako element XML, který je použit v konfiguračním souboru. Například `WSHttpBinding` (API) má protějšek v [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+ Každé vazby v WCF má dvě formy: jako rozhraní API a jako element XML, který je použit v konfiguračním souboru. Například `WSHttpBinding` (API) má protějšek v [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   
  V následující části jsou uvedeny oba formuláře pro každou vazbu a shrnuje funkce zabezpečení.  
   
@@ -149,7 +137,7 @@ Vazby poskytované systémem, který je součástí [!INCLUDE[indigo1](../../../
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
  V kódu pomocí <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy; v konfiguraci, použijte [ \<– msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).  
   
- Tato vazba je optimalizovaný pro vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů a služeb, které spolupracovat s jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body Microsoft služby Řízení front zpráv (MSMQ).  
+ Tato vazba je optimalizovaná pro vytváření klienti WCF a služeb, které spolupracovat s koncovými body jiný - WCF Microsoft řízení front zpráv MSMQ.  
   
  Ve výchozím nastavení tato vazba používá zabezpečení přenosu a poskytuje následující vlastnosti zabezpečení:  
   
@@ -162,7 +150,7 @@ Vazby poskytované systémem, který je součástí [!INCLUDE[indigo1](../../../
 ### <a name="netmsmqbinding"></a>– NetMsmqBinding  
  V kódu pomocí <xref:System.ServiceModel.NetMsmqBinding> třídy, v konfiguraci, pomocí [ \<– netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).  
   
- Tato vazba je určena pro použití při vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, které vyžadují služby MSMQ Podpora zpráv zařazených do fronty.  
+ Tato vazba je určena pro použití při vytváření služeb WCF, které vyžadují služby MSMQ Podpora zpráv ve frontě.  
   
  Ve výchozím nastavení tato vazba používá zabezpečení přenosu a poskytuje následující vlastnosti zabezpečení:  
   
@@ -232,7 +220,7 @@ Vazby poskytované systémem, který je součástí [!INCLUDE[indigo1](../../../
 |----------|-----------------|  
 |Žádné|Umožňuje pracovat s anonymní klienty služby.|  
 |Windows|Umožňuje výměny zpráv protokolu SOAP podle pro ověřený kontext pověření systému Windows.|  
-|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatele název. Všimněte si, že když režim zabezpečení je nastavený na `TransportWithMessageCredential`, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje odesílání heslo hodnotou hash nebo odvozování klíče pomocí hesla a použití tyto klíče pro režim zabezpečení zpráv. Jako takový [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vynutí, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
+|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatele název. Všimněte si, že když režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odesílání heslo hodnotou hash nebo odvozování klíče pomocí hesla a použití tyto klíče pro režim zabezpečení zpráv. Jako takový WCF vynutí, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
 |certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu.|  
 |IssuedToken|Umožňuje zadat vlastní token pomocí služby tokenů zabezpečení služby.|  
   

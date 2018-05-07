@@ -1,9 +1,6 @@
 ---
-title: "Dědičnost (Průvodce programováním v C#)"
+title: Dědičnost (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - abstract methods [C#]
 - abstract classes [C#]
@@ -12,14 +9,11 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-caps.latest.revision: "38"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: dc3d448d311fe0a67839757fa43a209d92141214
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6294669a05f5cc6c52de5164d89e29062ceb6bdd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 
@@ -32,7 +26,7 @@ Dědičnost, společně s zapouzdření a polymorfismus, je jedna z vlastností 
   
  Když definujete třídu k odvozování z jiné třídy, odvozené třídy získá implicitně všechny členy základní třídy, s výjimkou jeho konstruktory a finalizační metody. Odvozené třídy a tím můžete znovu použít kód v základní třídě bez nutnosti znovu implementaci. V odvozené třídě můžete přidat více členů. Odvozená třída tímto způsobem rozšiřuje funkce základní třídy.  
   
- Následující obrázek znázorňuje třídu `WorkItem` představující položku práce v některé obchodní proces. Všechny třídy, jako je odvozena z <xref:System.Object?displayProperty=nameWithType> a dědí všechny její metody. `WorkItem`Přidá svůj vlastní pět členy. Patří mezi ně konstruktor, protože nejsou zděděno konstruktory. Třída `ChangeRequest` dědí z `WorkItem` a představuje konkrétní typ pracovní položky. `ChangeRequest`Přidá dva členy více členů, které dědí z `WorkItem` a z <xref:System.Object>. Je nutné přidat vlastní konstruktor a také přidá `originalItemID`. Vlastnost `originalItemID` umožňuje `ChangeRequest` instance, která má být přidružen k původní `WorkItem` pro kterou platí žádost o změnu.  
+ Následující obrázek znázorňuje třídu `WorkItem` představující položku práce v některé obchodní proces. Všechny třídy, jako je odvozena z <xref:System.Object?displayProperty=nameWithType> a dědí všechny její metody. `WorkItem` Přidá svůj vlastní pět členy. Patří mezi ně konstruktor, protože nejsou zděděno konstruktory. Třída `ChangeRequest` dědí z `WorkItem` a představuje konkrétní typ pracovní položky. `ChangeRequest` Přidá dva členy více členů, které dědí z `WorkItem` a z <xref:System.Object>. Je nutné přidat vlastní konstruktor a také přidá `originalItemID`. Vlastnost `originalItemID` umožňuje `ChangeRequest` instance, která má být přidružen k původní `WorkItem` pro kterou platí žádost o změnu.  
   
  ![Třídy dědičnosti](../../../csharp/programming-guide/classes-and-structs/media/class_inheritance.png "Class_Inheritance")  
 Dědičnost třídy  
@@ -50,7 +44,7 @@ Dědičnost třídy
 ## <a name="interfaces"></a>Rozhraní  
  *Rozhraní* je odkaz na typ, který je trochu podobné abstraktní základní třída, která se skládá z jenom abstraktní členy. Pokud třída implementuje rozhraní, je třeba poskytnout implementaci pro všechny členy rozhraní. Třída může implementovat více rozhraní, i když lze odvozovat pouze jediné přímé základní třídy.  
   
- Rozhraní slouží k určení specifické možnosti pro třídy, které není nezbytně nutné "je" relace. Například <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní může být implementováno všechny třídy nebo struktura, která má k povolení kód klienta k určení, zda dva objekty typu jsou ekvivalentní (ale typ definuje ekvivalenční). <xref:System.IEquatable%601>neznamená stejný druh "je" vztah, který existuje mezi základní třídou a odvozené třídy (například `Mammal` je `Animal`). Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
+ Rozhraní slouží k určení specifické možnosti pro třídy, které není nezbytně nutné "je" relace. Například <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní může být implementováno všechny třídy nebo struktura, která má k povolení kód klienta k určení, zda dva objekty typu jsou ekvivalentní (ale typ definuje ekvivalenční). <xref:System.IEquatable%601> neznamená stejný druh "je" vztah, který existuje mezi základní třídou a odvozené třídy (například `Mammal` je `Animal`). Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
   
 ## <a name="preventing-further-derivation"></a>Brání další odvození  
  Třída zabránit jiné třídy, která dědí z něj nebo z jakéhokoli z jejích členů, deklarováním sám sebe nebo jako člen [zapečetěné](../../../csharp/language-reference/keywords/sealed.md). Další informace najdete v tématu [abstraktní a zapečetěné třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
@@ -59,7 +53,7 @@ Dědičnost třídy
  Odvozené třídy můžete skrýt členy základní třídy deklarace členy se stejným názvem a podpis. [Nové](../../../csharp/language-reference/keywords/new.md) modifikátor umožňuje explicitně znamenat, že člen není určen jako přepsání základní člena. Použití [nové](../../../csharp/language-reference/keywords/new.md) není vyžadována, ale pokud se budou generovat upozornění kompilátoru [nové](../../../csharp/language-reference/keywords/new.md) nepoužívá. Další informace najdete v tématu [Správa verzí pomocí nové klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [zároveň budete vědět, při použití přepsání a nová klíčová slova](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
- [– Třída](../../../csharp/language-reference/keywords/class.md)  
- [Struktura](../../../csharp/language-reference/keywords/struct.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [class](../../../csharp/language-reference/keywords/class.md)  
+ [struct](../../../csharp/language-reference/keywords/struct.md)

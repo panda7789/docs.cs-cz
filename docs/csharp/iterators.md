@@ -1,20 +1,13 @@
 ---
 title: Iterátory
 description: Zjistěte, jak používat integrované iterátory C# a jak vytvořit vlastní vlastní iterator metody.
-keywords: Rozhraní .NET, .NET core
-author: BillWagner
-ms.author: wiwagn
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: 403a286e9b1168b9e913b3cb2764e7fe262017d4
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: d9139f565fb1e426cc1b8cef530187877bdde0e9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iterators"></a>Iterátory
 

@@ -1,24 +1,12 @@
 ---
 title: Konfigurace a podpora metadat
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d22beac94d6055350961f62e43071b54a4916f04
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4dfeeba6db220e03ad981b13e2bb093bedcd43c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuration-and-metadata-support"></a>Konfigurace a podpora metadat
 Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky vazeb.  

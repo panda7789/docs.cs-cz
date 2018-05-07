@@ -1,13 +1,6 @@
 ---
-title: "Přehled datových šablon"
-ms.custom: 
+title: Přehled datových šablon
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b3f1efefa4d32e3512b0dda6eca237a5e4938bf7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: feed791ac876c13dbd637f0455d3cfdd83a86e05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-templating-overview"></a>Přehled datových šablon
 Ukázka datový model WPF vám poskytuje flexibilitu k definování prezentace dat. Ovládacích prvků WPF mít integrovanou funkci pro podporu přizpůsobení prezentace dat. Toto téma nejprve ukazuje, jak definovat <xref:System.Windows.DataTemplate> a pak zavádí další funkce Ukázka dat, jako je výběr šablony založené na vlastní logiky a podpora pro zobrazení hierarchické data.  
@@ -35,7 +23,7 @@ Ukázka datový model WPF vám poskytuje flexibilitu k definování prezentace d
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma se zaměřuje na funkce Ukázka dat a není Úvod datové vazby konceptů. Informace o konceptech vazby základní data, najdete v článku [přehled vazby dat](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
- <xref:System.Windows.DataTemplate>je o prezentaci dat a je jednou z mnoha funkce poskytované službou WPF stylů a Ukázka modelu. Úvod WPF stylů a Ukázka modelu, jako je například používání <xref:System.Windows.Style> nastavení vlastností pro ovládací prvky, najdete v článku [stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md) tématu.  
+ <xref:System.Windows.DataTemplate> je o prezentaci dat a je jednou z mnoha funkce poskytované službou WPF stylů a Ukázka modelu. Úvod WPF stylů a Ukázka modelu, jako je například používání <xref:System.Windows.Style> nastavení vlastností pro ovládací prvky, najdete v článku [stylů a ukázka](../../../../docs/framework/wpf/controls/styling-and-templating.md) tématu.  
   
  Kromě toho je důležité si uvědomit, `Resources`, které jsou v podstatě co povolit objekty, jako <xref:System.Windows.Style> a <xref:System.Windows.DataTemplate> možné použít opakovaně. Další informace o prostředcích, najdete v části [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
@@ -144,7 +132,7 @@ Ukázka datový model WPF vám poskytuje flexibilitu k definování prezentace d
   
 <a name="what_belongs_in_datatemplate"></a>   
 ### <a name="what-belongs-in-a-datatemplate"></a>Co patří šablonu DataTemplate?  
- V předchozím příkladu jsme aktivační události v rámci umístit <xref:System.Windows.DataTemplate> pomocí <xref:System.Windows.DataTemplate>.<xref:System.Windows.DataTemplate.Triggers%2A> vlastnost. <xref:System.Windows.Setter> Aktivační události nastaví hodnotu vlastnosti elementu ( <xref:System.Windows.Controls.Border> element), je v rámci <xref:System.Windows.DataTemplate>. Ale pokud vlastnosti, vaše `Setters` se týká nejsou vlastností elementů, které jsou v aktuálním <xref:System.Windows.DataTemplate>, může být vhodnější pro nastavení vlastností pomocí <xref:System.Windows.Style> , je pro <xref:System.Windows.Controls.ListBoxItem> – třída (Pokud je jsou vazbu ovládacího prvku <xref:System.Windows.Controls.ListBox>). Například, pokud chcete, aby vaše <xref:System.Windows.Trigger> pro animaci <xref:System.Windows.UIElement.Opacity%2A> hodnotu položky při myši odkazuje na položku, můžete definovat aktivační události v rámci <xref:System.Windows.Controls.ListBoxItem> stylu. Příklad, naleznete v části [Úvod do stylů a ukázka ukázková](http://go.microsoft.com/fwlink/?LinkID=160010).  
+ V předchozím příkladu jsme aktivační události v rámci umístit <xref:System.Windows.DataTemplate> pomocí <xref:System.Windows.DataTemplate>.<xref:System.Windows.DataTemplate.Triggers%2A> Vlastnost. <xref:System.Windows.Setter> Aktivační události nastaví hodnotu vlastnosti elementu ( <xref:System.Windows.Controls.Border> element), je v rámci <xref:System.Windows.DataTemplate>. Ale pokud vlastnosti, vaše `Setters` se týká nejsou vlastností elementů, které jsou v aktuálním <xref:System.Windows.DataTemplate>, může být vhodnější pro nastavení vlastností pomocí <xref:System.Windows.Style> , je pro <xref:System.Windows.Controls.ListBoxItem> – třída (Pokud je jsou vazbu ovládacího prvku <xref:System.Windows.Controls.ListBox>). Například, pokud chcete, aby vaše <xref:System.Windows.Trigger> pro animaci <xref:System.Windows.UIElement.Opacity%2A> hodnotu položky při myši odkazuje na položku, můžete definovat aktivační události v rámci <xref:System.Windows.Controls.ListBoxItem> stylu. Příklad, naleznete v části [Úvod do stylů a ukázka ukázková](http://go.microsoft.com/fwlink/?LinkID=160010).  
   
  Obecně platí, mějte na paměti, <xref:System.Windows.DataTemplate> se právě používá ke každému vygenerovaného <xref:System.Windows.Controls.ListBoxItem> (Další informace o tom, jak a kde se ve skutečnosti používá, najdete v článku <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> stránky.). Vaše <xref:System.Windows.DataTemplate> je se prezentace a vzhled datových objektů. Ve většině případů všechny aspekty prezentace, například jaké položku vypadá, když je vybraná nebo jak <xref:System.Windows.Controls.ListBox> vytvoří se položky, nejsou členy v definici <xref:System.Windows.DataTemplate>. Příklad, naleznete v části [stylů a ukázka ItemsControl](#DataTemplating_ItemsControl) části.  
   
@@ -156,7 +144,7 @@ Ukázka datový model WPF vám poskytuje flexibilitu k definování prezentace d
   
  [!code-xaml[DataTemplatingIntro_snip#ImportantTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#importanttemplate)]  
   
- Všimněte si v tomto příkladu <xref:System.Windows.DataTemplate>.<xref:System.Windows.FrameworkTemplate.Resources%2A> vlastnost. Prostředky, které jsou definované v tomto oddílu jsou sdíleny elementů v rámci <xref:System.Windows.DataTemplate>.  
+ Všimněte si v tomto příkladu <xref:System.Windows.DataTemplate>.<xref:System.Windows.FrameworkTemplate.Resources%2A> Vlastnost. Prostředky, které jsou definované v tomto oddílu jsou sdíleny elementů v rámci <xref:System.Windows.DataTemplate>.  
   
  K poskytování logiku vybrat, které <xref:System.Windows.DataTemplate> používat na základě `Priority` hodnota datového objektu, vytvořte podtřídu <xref:System.Windows.Controls.DataTemplateSelector> a přepsat <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> metoda. V následujícím příkladu <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> metoda obsahuje logiku a vrátí příslušné šablony založené na hodnotu `Priority` vlastnost. Šablonu, kterou chcete vrátit se nachází v prostředků zahrnují <xref:System.Windows.Window> elementu.  
   

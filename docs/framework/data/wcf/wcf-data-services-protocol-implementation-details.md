@@ -1,31 +1,19 @@
 ---
-title: "Podrobnosti implementace protokolu služeb WCF Data Services"
-ms.custom: 
+title: Podrobnosti implementace protokolu služeb WCF Data Services
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 712d689b-fada-4cbb-bcdb-d65a3ef83b4c
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f5f723ddf5c81550661c6b96de77b35984b1eeb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82218f1f8e14c9909d8b617c66b1f18a28e4dcee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-data-services-protocol-implementation-details"></a>Podrobnosti implementace protokolu služeb WCF Data Services
 ## <a name="odata-protocol-implementation-details"></a>Podrobnosti implementace protokolu OData  
  [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Vyžaduje, aby služba dat, která implementuje protokol zadali určité minimální sadu funkcí. Tyto funkce jsou popsány v dokumentech protokol z hlediska "by" a "musí." Další volitelné funkce jsou popsány z hlediska "nemusí." Toto téma popisuje tyto volitelné funkce, které nejsou implementované aktuálně [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Další informace najdete v tématu [dokumentace k protokolu OData](http://go.microsoft.com/fwlink/?LinkID=184554).  
   
 ### <a name="support-for-the-format-query-option"></a>Podpora pro možnost dotazu $format  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Protokol podporuje JavaScript Notation (JSON) a Atom informační kanály, a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje `$format` možností dotazu systému a tak dovolit klientským požádat o formát odpovědi informačního kanálu. Tuto možnost dotazu systému podporována službou data, musíte změnit hodnotu hlavičky Accept požadavku. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje vrácení Atom i JSON informačních kanálů. Však nepodporuje výchozí implementace `$format` možnost dotazu a pouze hodnotu hlavičky Accept používá k určení formátu odpovědi. Existují případy, pokud služby dat může potřebovat pro podporu `$format` dotazu možnost, například kdy klienti nelze nastavit hlavičku Accept. Pro podporu těchto scénářů, musíte rozšířit služby data pro zpracování této možnosti v identifikátoru URI. Tuto funkci můžete přidat k vaší službě data stažením [JSONP a formát adresy URL řízené podporu pro technologii ADO.NET Data Services](http://go.microsoft.com/fwlink/?LinkId=208228) ukázkový projekt z webu galerie kódů MSDN a její přidání do projektu služby data. Tato ukázka odebere `$format` možnost dotazu a změní hlavičku Accept pro `application/json`. Pokud zahrnete ukázka projektu a přidání `JSONPSupportBehaviorAttribute` ke svým datům třída služby povoluje službu pro zpracování `$format` dotazu možnost `$format=json`. Je potřeba další přizpůsobení tento ukázkový projekt zpracovávají také dříve `$format=atom` nebo dalších vlastních formátů.  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Protokol podporuje JavaScript Notation (JSON) a Atom informační kanály, a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje `$format` možností dotazu systému a tak dovolit klientským požádat o formát odpovědi informačního kanálu. Tuto možnost dotazu systému podporována službou data, musíte změnit hodnotu hlavičky Accept požadavku. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje vrácení Atom i JSON informačních kanálů. Však nepodporuje výchozí implementace `$format` možnost dotazu a pouze hodnotu hlavičky Accept používá k určení formátu odpovědi. Existují případy, pokud služby dat může potřebovat pro podporu `$format` dotazu možnost, například kdy klienti nelze nastavit hlavičku Accept. Pro podporu těchto scénářů, musíte rozšířit služby data pro zpracování této možnosti v identifikátoru URI. Tuto funkci můžete přidat k vaší službě data stažením [JSONP a formát adresy URL řízené podporu pro technologii ADO.NET Data Services](http://go.microsoft.com/fwlink/?LinkId=208228) ukázkový projekt z webu galerie kódů MSDN a její přidání do projektu služby data. Tato ukázka odebere `$format` možnost dotazu a změní hlavičku Accept pro `application/json`. Pokud zahrnete ukázka projektu a přidání `JSONPSupportBehaviorAttribute` ke svým datům třída služby povoluje službu pro zpracování `$format` dotazu možnost `$format=json`. Je potřeba další přizpůsobení tento ukázkový projekt zpracovávají také dříve `$format=atom` nebo dalších vlastních formátů.  
   
 ## <a name="wcf-data-services-behaviors"></a>Chování služeb WCF Data Services  
  Následující [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] chování nejsou výslovně definované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu:  

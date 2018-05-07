@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Získání posunu vizuálního objektu"
-ms.custom: 
+title: 'Postupy: Získání posunu vizuálního objektu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - visual objects [WPF], retrieving offset values from
 - retrieving offset values from visual objects [WPF]
 ms.assetid: 889a1dd6-1b11-445a-b351-fbb04c53ee34
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee18503bdd6100cbe7a62ac70d7ea0848fb124eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 97f4de9e2e40840962e4233b1de25843a4b885b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-get-the-offset-of-a-visual"></a>Postupy: Získání posunu vizuálního objektu
 Tyto příklady ukazují, jak načíst hodnoty posunu visual objektu, která je relativní k jeho nadřazeným prvkem, nebo jakékoli nadřazené nebo následníka.  

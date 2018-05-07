@@ -1,24 +1,12 @@
 ---
-title: "Objektový model zjišťování WCF"
-ms.custom: 
+title: Objektový model zjišťování WCF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8365a152-eacd-4779-9130-bbc48fa5c5d9
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 68d6e156612ce707aa678b6589510b710b73e38a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a325ee0fd6376f101ca8ccc6097e79c30198a011
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-discovery-object-model"></a>Objektový model zjišťování WCF
 Zjišťování WCF se skládá ze sady typy, které poskytují jednotný programovací model, který umožňuje zapisovat služby, které jsou zjistitelný v modulu runtime a klientů, které nalezne a použije tyto služby.  
@@ -83,10 +71,10 @@ Zjišťování WCF se skládá ze sady typy, které poskytují jednotný program
  <xref:System.ServiceModel.Discovery.AnnouncementClient> Třída poskytuje synchronní a asynchronní metody k odeslání zprávy oznámení. Existují dva typy oznámení zpráv, Hello a Bye. Uvítací zprávu posílá znamenat, že služba je k dispozici a je odeslána zpráva Bye indikující, že existující službu již není dostupná. Vytvoří vývojáře <xref:System.ServiceModel.Discovery.AnnouncementClient> instance, předávání instanci <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> jako parametr konstruktoru.  
   
 ## <a name="announcementendpoint"></a>AnnouncementEndpoint  
- <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>představuje standardní koncový bod s pevnou oznámení kontrakt. Služba nebo klienta se používá k odesílání a příjmu zprávy oznámení. Ve výchozím nastavení <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> třída je nastavený na použití verzi protokolu WS_Discovery 11.  
+ <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> představuje standardní koncový bod s pevnou oznámení kontrakt. Služba nebo klienta se používá k odesílání a příjmu zprávy oznámení. Ve výchozím nastavení <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> třída je nastavený na použití verzi protokolu WS_Discovery 11.  
   
 ## <a name="announcementservice"></a>AnnouncementService  
- <xref:System.ServiceModel.Discovery.AnnouncementService>je poskytované systémem implementace služby oznámení, která přijímá a zpracovává zprávy oznámení. Po přijetí zprávy Hello nebo Bye <xref:System.ServiceModel.Discovery.AnnouncementService> instance volá metodu příslušné virtuální <xref:System.ServiceModel.Discovery.AnnouncementService.OnBeginOnlineAnnouncement%2A> nebo <xref:System.ServiceModel.Discovery.AnnouncementService.OnBeginOfflineAnnouncement%2A>, která vyvolává oznámení události.  
+ <xref:System.ServiceModel.Discovery.AnnouncementService> je poskytované systémem implementace služby oznámení, která přijímá a zpracovává zprávy oznámení. Po přijetí zprávy Hello nebo Bye <xref:System.ServiceModel.Discovery.AnnouncementService> instance volá metodu příslušné virtuální <xref:System.ServiceModel.Discovery.AnnouncementService.OnBeginOnlineAnnouncement%2A> nebo <xref:System.ServiceModel.Discovery.AnnouncementService.OnBeginOfflineAnnouncement%2A>, která vyvolává oznámení události.  
   
 ## <a name="discoveryclient"></a>Objekty DiscoveryClient  
  <xref:System.ServiceModel.Discovery.DiscoveryClient> Třída se používá aplikace klienta k vyhledávání a odstraňování služby k dispozici. Poskytuje synchronní a asynchronní metody pro hledání a řešení služby založené na zadaný <xref:System.ServiceModel.Discovery.FindCriteria> a <xref:System.ServiceModel.Discovery.ResolveCriteria> v uvedeném pořadí. Vývojář vytvoří <xref:System.ServiceModel.Discovery.DiscoveryClient> instance a poskytuje instanci <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> jako parametr konstruktoru.  
@@ -98,10 +86,10 @@ Zjišťování WCF se skládá ze sady typy, které poskytují jednotný program
  Pokud je k dispozici v síti proxy zjišťování a <!--zz <xref:System.ServiceModel.Discover.DiscoveryClient> --> `DiscoveryClient` zasílá vícesměrového vysílání způsobem, žádosti o zjišťování, zjišťování proxy může odpovědět s uvítací zprávu potlačení vícesměrového vysílání. <!--zz <xref:System.ServiceModel.Discover.DiscoveryClient> --> `DiscoveryClient` Vyvolá `ProxyAvailable` událost, když obdrží Hello zprávy v reakci na zbývajících `Find` nebo `Resolve` požadavky. `ProxyAvailable` Události obsahuje <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> o zjišťování proxy. Je vývojáři tyto informace slouží k přejít z Ad hoc na spravovaný režim.  
   
 ## <a name="discoveryendpoint"></a>DiscoveryEndpoint  
- <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>představuje standardní koncový bod s pevnou zjišťování kontrakt. Služba nebo klienta se používá k odesílání nebo přijímání zprávy zjišťování. Ve výchozím nastavení <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> je nastavený na použití <!--zz <xref:System.ServiceModel.Discovery.DiscoveryMode.Managed>--> `Managed` režimu a verze WSDiscovery11 WS-Discovery.  
+ <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> představuje standardní koncový bod s pevnou zjišťování kontrakt. Služba nebo klienta se používá k odesílání nebo přijímání zprávy zjišťování. Ve výchozím nastavení <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> je nastavený na použití <!--zz <xref:System.ServiceModel.Discovery.DiscoveryMode.Managed>--> `Managed` režimu a verze WSDiscovery11 WS-Discovery.  
   
 ## <a name="discoverymessagesequencegenerator"></a>DiscoveryMessageSequenceGenerator  
- <xref:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator>slouží ke generování <xref:System.ServiceModel.Discovery.DiscoveryMessageSequence> když služba odesílá zprávy zjišťování nebo oznámení.  
+ <xref:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator> slouží ke generování <xref:System.ServiceModel.Discovery.DiscoveryMessageSequence> když služba odesílá zprávy zjišťování nebo oznámení.  
   
 ## <a name="discoveryservice"></a>DiscoveryService  
  <xref:System.ServiceModel.Discovery.DiscoveryService> Abstraktní třída poskytuje rozhraní pro příjem a zpracování `Probe` a `Resolve` zprávy. Když `Probe` je přijatá zpráva, <xref:System.ServiceModel.Discovery.DiscoveryService> vytvoří instanci <xref:System.ServiceModel.Discovery.FindRequestContext> na základě příchozí zprávy a vyvolá <xref:System.ServiceModel.Discovery.DiscoveryService.OnBeginFind%2A> virtuální metoda. Když `Resolve` je přijatá zpráva, <xref:System.ServiceModel.Discovery.DiscoveryService> vyvolá <xref:System.ServiceModel.Discovery.DiscoveryService.OnBeginResolve%2A> virtuální metoda. Může dědit vlastnosti z této třídy, které poskytují vlastní implementace zjišťování služby.  

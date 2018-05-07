@@ -1,20 +1,13 @@
 ---
-title: "Vytvoření vnořené skupiny"
-description: "Postup vytvoření vnořené skupiny."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Vytvoření vnořené skupiny
+description: Postup vytvoření vnořené skupiny.
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: e9f00708-362e-4d13-98c5-d77549347ba0
-ms.openlocfilehash: 232aa46d975d7c338bbc776e3867f2e566601fde
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: dd1158bfa1456342fe8967aed5e02ecebae591c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="create-a-nested-group"></a>Vytvoření vnořené skupiny
 

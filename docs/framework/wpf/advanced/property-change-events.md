@@ -1,13 +1,6 @@
 ---
-title: "Události změny vlastnosti"
-ms.custom: 
+title: Události změny vlastnosti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dependency properties [WPF], change events
 - property value changes [WPF]
@@ -20,19 +13,14 @@ helpviewer_keywords:
 - identifying changed property events [WPF]
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 46a11b072731daf420e35bc9c9cfd7d4fced1fe5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ac2a44eb92e384851bbe6ac860fd9b46d3377a06
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="property-change-events"></a>Události změny vlastnosti
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]definuje několik událostí, které jsou vyvolány v reakci na změnu v hodnotě vlastnosti. Vlastnost často je vlastnost závislosti. Samotné události je někdy směrované události a v některých případech je standard [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Definice události se liší v závislosti na scénáři, protože některé vlastnosti změny více správně směrování v stromu k elementu, zatímco jiné změny vlastnosti jsou obecně pouze o problém k objektu, kde vlastnost změnit.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] definuje několik událostí, které jsou vyvolány v reakci na změnu v hodnotě vlastnosti. Vlastnost často je vlastnost závislosti. Samotné události je někdy směrované události a v některých případech je standard [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Definice události se liší v závislosti na scénáři, protože některé vlastnosti změny více správně směrování v stromu k elementu, zatímco jiné změny vlastnosti jsou obecně pouze o problém k objektu, kde vlastnost změnit.  
   
 ## <a name="identifying-a-property-change-event"></a>Identifikace událost změny vlastnosti  
  Ne všechny události, které nahlásit změnu vlastnosti jsou explicitně označeny jako událost změněné vlastnosti, buď na základě vzoru podpis nebo vzoru pro pojmenovávání. Obecně platí, popis události v [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] dokumentace Určuje, jestli události je přímo vázaný na změně hodnoty vlastnosti a poskytuje křížové odkazy mezi vlastností a událostí.  
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  Pokud vaše je vlastnost vlastní závislosti, nebo pokud pracujete s odvozené třídě kde jste definovali kód vytváření instancí, je mnohem lepší mechanismus pro sledování změn vlastnosti, které je součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému: zpětná volání vlastnost systému <xref:System.Windows.CoerceValueCallback> a <xref:System.Windows.PropertyChangedCallback>. Další podrobnosti o tom, jak můžete použít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systém pro ověřování a převod, viz [závislostí vlastnost zpětná volání a ověření](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md) a [vlastní závislosti vlastnosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).  
   
 ### <a name="dependencypropertychanged-events"></a>DependencyPropertyChanged události  
- Je jinou dvojici typů, které jsou součástí scénáři událost změněné vlastnosti <xref:System.Windows.DependencyPropertyChangedEventArgs> a <xref:System.Windows.DependencyPropertyChangedEventHandler>. Události pro změny tyto vlastnosti nejsou směrovány; jsou standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události. <xref:System.Windows.DependencyPropertyChangedEventArgs>je data neobvyklé události vytváření sestav typu, protože není odvozena od <xref:System.EventArgs>; <xref:System.Windows.DependencyPropertyChangedEventArgs> je struktura, ne třídu.  
+ Je jinou dvojici typů, které jsou součástí scénáři událost změněné vlastnosti <xref:System.Windows.DependencyPropertyChangedEventArgs> a <xref:System.Windows.DependencyPropertyChangedEventHandler>. Události pro změny tyto vlastnosti nejsou směrovány; jsou standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události. <xref:System.Windows.DependencyPropertyChangedEventArgs> je data neobvyklé události vytváření sestav typu, protože není odvozena od <xref:System.EventArgs>; <xref:System.Windows.DependencyPropertyChangedEventArgs> je struktura, ne třídu.  
   
  Události, které používají <xref:System.Windows.DependencyPropertyChangedEventArgs> a <xref:System.Windows.DependencyPropertyChangedEventHandler> jsou mírně častější než `RoutedPropertyChanged` události. Je například událost, která používá tyto typy <xref:System.Windows.UIElement.IsMouseCapturedChanged>.  
   

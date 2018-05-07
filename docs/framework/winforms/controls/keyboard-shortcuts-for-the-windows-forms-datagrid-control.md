@@ -1,27 +1,15 @@
 ---
-title: "Klávesové zkratky pro ovládací prvek Windows Forms DataGrid"
-ms.custom: 
+title: Klávesové zkratky pro ovládací prvek Windows Forms DataGrid
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], navigation keys
 ms.assetid: a01780f9-20d5-4f5f-808f-c790c9a007a5
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3e80281f3a89737f060804aa5237705386232763
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c05ddd68beeffe70e048a439929fb31454812612
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a>Klávesové zkratky pro ovládací prvek Windows Forms DataGrid
 > [!NOTE]
@@ -40,8 +28,8 @@ ms.lasthandoff: 12/22/2017
 |Zvýrazněte znaků v aktuální buňky a umístěte kurzor na konec řádku. Stejné chování jako dvakrát klikněte na buňku.|F2|  
 |Pokud je fokus na buňku, přejděte na další buňky v řádku.<br /><br /> Pokud je fokus na poslední buňky v řádku, přesunout do první tabulky odkazů podřízené řádku a rozbalte ho.<br /><br /> Pokud je fokus na podřízené odkaz, přejděte na odkaz na další podřízené.<br /><br /> Pokud je fokus na odkaz poslední podřízené, přejděte na první buňky na další řádek.|KARTA|  
 |Pokud je fokus na buňku, přejděte na předchozí buňky v řádku.<br /><br /> Pokud je fokus na první buňky v řádku, přesunout do poslední rozšířené podřízené tabulky odkaz na předchozí řádek nebo přechod na poslední buňky v předchozím řádku.<br /><br /> Pokud je fokus na podřízené odkaz, přejděte na předchozí odkaz podřízené.<br /><br /> Pokud je fokus na první odkaz podřízené, přechod na poslední buňky na předchozí řádek.|SHIFT + TAB|  
-|Přesun na další ovládací prvek v pořadí.|CTRL + TAB|  
-|Přesun na předchozí ovládací prvek v pořadí.|CTRL + SHIFT + TAB|  
+|Přesun na další ovládací prvek v pořadí.|CTRL+TAB|  
+|Přesun na předchozí ovládací prvek v pořadí.|CTRL+SHIFT+TAB|  
 |Přesunout nahoru v nadřazené tabulce Pokud v podřízené tabulce Stejné chování jako při kliknutí na tlačítko Zpět.|ALT + ŠIPKA DOLEVA|  
 |Rozbalte podřízené tabulky odkazů. ALT + Šipka dolů rozšíří všechny odkazy, ne jenom ty, které vybraná.|ALT + Šipka dolů nebo CTRL + Plus|  
 |Sbalit podřízené tabulky odkazů. ALT + Šipka nahoru sbalí všechny odkazy, ne jenom ty, které vybraná.|ALT + Šipka nahoru nebo CTRL + minus|  

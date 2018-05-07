@@ -1,13 +1,6 @@
 ---
-title: "Používání vlastnosti AutomationID"
-ms.custom: 
+title: Používání vlastnosti AutomationID
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,14 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-caps.latest.revision: "21"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: fdd26f335fb2f9b8072103def5b00d91a6740817
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: bd5985dd531b13ca91efd9c0aa7987ff6a57e56a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
@@ -33,16 +24,16 @@ ms.lasthandoff: 01/19/2018
   
  Toto téma popisuje scénáře a ukázkový kód, který zobrazí jak a kdy <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> slouží k vyhledání prvek v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.  
   
- <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>jednoznačně identifikuje prvku automatizace uživatelského rozhraní z uzlů na stejné úrovni. Další informace o identifikátory vlastnosti související s řízení identifikace, najdete v části [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+ <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> jednoznačně identifikuje prvku automatizace uživatelského rozhraní z uzlů na stejné úrovni. Další informace o identifikátory vlastnosti související s řízení identifikace, najdete v části [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>není zárukou jedinečnou identitu v rámci stromu; obvykle musí kontejneru a oboru informace jsou užitečné. Aplikace může například obsahovat ovládacího prvku nabídka s více položek nabídek nejvyšší úrovně, které obsahovat více podřízených položek nabídky. Tyto položky sekundárním nabídce může být označeno obecné schématu, například "Item1", "Položky 2" a tak dále, což duplicitní identifikátory pro podřízené mezi nabídek na nejvyšší úrovni.  
+>  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> není zárukou jedinečnou identitu v rámci stromu; obvykle musí kontejneru a oboru informace jsou užitečné. Aplikace může například obsahovat ovládacího prvku nabídka s více položek nabídek nejvyšší úrovně, které obsahovat více podřízených položek nabídky. Tyto položky sekundárním nabídce může být označeno obecné schématu, například "Item1", "Položky 2" a tak dále, což duplicitní identifikátory pro podřízené mezi nabídek na nejvyšší úrovni.  
   
 ## <a name="scenarios"></a>Scénáře  
  Byly zjištěny tři primární scénáře aplikací klientů automatizace uživatelského rozhraní, které vyžadují použití <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> k dosažení přesnou a konzistentní výsledky při hledání elementů.  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>podporuje všechny elementy automatizace uživatelského rozhraní v zobrazení ovládacího prvku s výjimkou nejvyšší úrovně aplikace windows, elementů automatizace uživatelského rozhraní, které jsou odvozené z [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků, které nemají ID nebo x: Uid a elementy automatizace uživatelského rozhraní, které jsou odvozené z [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] , ovládací prvky nemají ID ovládacího prvku.  
+>  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> podporuje všechny elementy automatizace uživatelského rozhraní v zobrazení ovládacího prvku s výjimkou nejvyšší úrovně aplikace windows, elementů automatizace uživatelského rozhraní, které jsou odvozené z [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků, které nemají ID nebo x: Uid a elementy automatizace uživatelského rozhraní, které jsou odvozené z [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] , ovládací prvky nemají ID ovládacího prvku.  
   
 #### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>Použijte jedinečný a že je zjistitelný AutomationID a vyhledejte konkrétní element ve stromu automatizace uživatelského rozhraní  
   

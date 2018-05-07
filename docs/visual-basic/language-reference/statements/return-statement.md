@@ -1,12 +1,6 @@
 ---
-title: "Return – příkaz (Visual Basic)"
+title: Return – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Return
 helpviewer_keywords:
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - Return statement [Visual Basic]
 - expressions [Visual Basic], returning control to
 ms.assetid: ac86e7f0-5a67-42c3-9834-0e0381efa3ec
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b66d16a249164b8989f05f10c785b97055bfde9e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2f614045be1b91b9c747d961cdefd526ba1bab98
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="return-statement-visual-basic"></a>Return – příkaz (Visual Basic)
 Vrátí ovládací prvek na kód, který volá `Function`, `Sub`, `Get`, `Set`, nebo `Operator` postupu.  
@@ -55,11 +46,11 @@ Return expression
  [!code-vb[VbVbalrStatements#53](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/return-statement_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Get – příkaz](../../../visual-basic/language-reference/statements/get-statement.md)  
- [Set – příkaz](../../../visual-basic/language-reference/statements/set-statement.md)  
- [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Exit – příkaz](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [Try... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)  
+ [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)  
+ [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

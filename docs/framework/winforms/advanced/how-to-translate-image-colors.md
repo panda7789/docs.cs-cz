@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Překlad barev obrázků"
-ms.custom: 
+title: 'Postupy: Překlad barev obrázků'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - images [Windows Forms], changing colors
 - image colors [Windows Forms]
 ms.assetid: 2106fb9a-4d60-4dcf-9220-9f189a6c4d19
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a2147b9bc86aa7ec03e8455bb0dc51c89a8b282
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 48f506f76ff6e9ca648822d073b6f6a852b9ca8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-translate-image-colors"></a>Postupy: Překlad barev obrázků
 Překlad přidá hodnotu na jeden nebo více součástí čtyři barev. V následující tabulce jsou uvedeny položek matice barev, které představují překladů.  

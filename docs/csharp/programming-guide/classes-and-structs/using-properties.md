@@ -1,23 +1,16 @@
 ---
-title: "Použití vlastností (Průvodce programováním v C#)"
+title: Použití vlastností (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - set accessor [C#]
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 36345748e514f0e0a4c945d8ead149c7d8ca9a19
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: f0d470d2c38a07db9a936fc645b7a97aa12a7f84
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 Vlastnosti kombinovat aspektů pole a metody. Uživateli objektu, zdá být pole, vlastnosti přístupu k vlastnosti vyžaduje stejná syntaxe. Implementátor třídy, vlastnosti je jeden nebo dva bloky kódu představující [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu nebo [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Blok kódu pro `get` přistupujícího objektu je spuštěn, když je vlastnost číst; blokovat kód pro `set` přistupujícího objektu je spuštěn, když vlastnost je přiřazena nová hodnota. Vlastnost bez `set` přistupujícího objektu je považován za jen pro čtení. Vlastnost bez `get` přistupujícího objektu je považován za jen pro zápis. Vlastnost, která má oba přístupových objektů je pro čtení a zápis.  

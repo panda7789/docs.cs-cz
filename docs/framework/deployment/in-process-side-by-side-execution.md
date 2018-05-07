@@ -1,27 +1,17 @@
 ---
-title: "Vnitroprocesové souběžné provádění"
-ms.custom: 
+title: Vnitroprocesové souběžné provádění
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-caps.latest.revision: "25"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 023a8db1e34498c4c2cbe741225d218280c04e41
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ee9eb30d6966d8162b29286140c068d854f7911c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
 Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít v procesu souběžného hostování spustit více verzí common language runtime (CLR) v jediném procesu. Ve výchozím nastavení spravované komponenty COM s verzí rozhraní .NET Framework, které byly vytvořené s nástroji, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spustit.  

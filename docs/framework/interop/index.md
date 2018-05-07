@@ -1,10 +1,6 @@
 ---
 title: Spolupráce s nespravovaným kódem
 ms.date: 01/17/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - unmanaged code, interoperation
 - managed code, interoperation with unmanaged code
@@ -16,14 +12,11 @@ helpviewer_keywords:
 ms.assetid: ccb68ce7-b0e9-4ffb-839d-03b1cd2c1258
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 38c569633304ed9e6f86e7a04ef7b0dfa79b6704
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 583cfb6e3a5145c6c0dfc82ec9ff64c6d87414ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem
 

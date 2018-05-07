@@ -1,27 +1,18 @@
 ---
-title: "Postupy: Ověřování pomocí uživatelského jména a hesla"
+title: 'Postupy: Ověřování pomocí uživatelského jména a hesla'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 194a84ef7c2af3bfce6af3625eabf07d4d0b06fb
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: b37d296312be4c7694a2db55d85dd618e3252f14
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>Postupy: Ověřování pomocí uživatelského jména a hesla
 
-Toto téma ukazuje, jak povolit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby k ověření klienta s uživatelské jméno domény systému Windows a heslo. Předpokládá se, že máte funkční, služba WCF s vlastním hostováním. Pro příklad vytvoření základní vlastním hostováním WCF služby naleznete v tématu [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md). Toto téma předpokládá, že služba je nakonfigurována v kódu. Pokud byste chtěli vidět najdete příklad konfigurace podobně jako služby pomocí konfiguračního souboru [zpráva zabezpečení uživatelské jméno](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
+Toto téma ukazuje, jak povolit služby Windows Communication Foundation (WCF) k ověření klienta s uživatelské jméno domény systému Windows a heslo. Předpokládá se, že máte funkční, služba WCF s vlastním hostováním. Pro příklad vytvoření základní vlastním hostováním WCF služby naleznete v tématu [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md). Toto téma předpokládá, že služba je nakonfigurována v kódu. Pokud byste chtěli vidět najdete příklad konfigurace podobně jako služby pomocí konfiguračního souboru [zpráva zabezpečení uživatelské jméno](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
   
  Pro konfiguraci služby k ověření jeho klienty z uživatelského jména a hesla pomocí domény systému Windows <xref:System.ServiceModel.WSHttpBinding> a nastavit jeho `Security.Mode` vlastnost `Message`. Kromě toho je nutné zadat X509 certifikát, který se použije k zašifrování uživatelské jméno a heslo odeslaných z klienta ke službě.  
   

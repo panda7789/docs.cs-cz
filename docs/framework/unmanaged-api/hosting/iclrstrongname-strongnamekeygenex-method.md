@@ -1,14 +1,6 @@
 ---
-title: "ICLRStrongName::StrongNameKeyGenEx – metoda"
-ms.custom: 
+title: ICLRStrongName::StrongNameKeyGenEx – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRStrongName.StrongNameKeyGenEx
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 1f8b59d0-5b72-45b8-ab74-c2b43ffc806e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 581f486a2def90f44c0fb3f1bcf9d3bbcc1fc317
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b213285b3c533488cfa48198951275925c0e37ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrstrongnamestrongnamekeygenex-method"></a>ICLRStrongName::StrongNameKeyGenEx – metoda
 Generuje nový pár veřejného a privátního klíče pomocí zadané velikost klíče pro použití silným názvem.  
@@ -52,7 +40,7 @@ HRESULT StrongNameKeyGenEx (
   
 #### <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [v] Název požadovaný kontejner klíčů. `wszKeyContainer`musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
+ [v] Název požadovaný kontejner klíčů. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
   
  `dwFlags`  
  [v] Hodnota, která určuje, zda chcete ponechat klíč zaregistrován. Podporovány jsou následující hodnoty:  
@@ -71,7 +59,7 @@ HRESULT StrongNameKeyGenEx (
  [out] Velikost v bajtech z `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
  Vyžadují rozhraní .NET Framework verze 1.0 a 1.1 `dwKeySize` 1 024 bitů pro podepsání sestavení silným názvem; verze 2.0 přidá podporuje pro klíče 2048 bitů.  
@@ -85,7 +73,7 @@ HRESULT StrongNameKeyGenEx (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [StrongNameKeyGen – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)  

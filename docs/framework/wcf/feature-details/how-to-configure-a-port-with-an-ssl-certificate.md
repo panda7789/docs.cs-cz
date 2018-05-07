@@ -1,14 +1,6 @@
 ---
 title: 'Postupy: Konfigurace portu certifikát protokolu SSL'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,20 +9,14 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bbf3d4b9888d07a89d1b6a8225a7f7415e8c67cc
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c3cede1eb90b963f4c0b567a8df48925bca9b02d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu certifikát protokolu SSL
-Při vytváření vlastním hostováním [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby s <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu tohoto používá, musíte taky nakonfigurovat port společně s certifikátem X.509. Pokud nejsou vytváření samoobslužných hostované služby, můžete hostovat služby v Internetové informační služby (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+Při vytváření samoobslužných hostovaná služba Windows Communication Foundation (WCF) se <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu tohoto používá, musíte taky nakonfigurovat port společně s certifikátem X.509. Pokud nejsou vytváření samoobslužných hostované služby, můžete hostovat služby v Internetové informační služby (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  Konfigurace portu, na nástroj, který používáte závisí na operační systém, který běží na vašem počítači.  
   

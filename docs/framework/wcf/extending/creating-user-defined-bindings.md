@@ -1,28 +1,14 @@
 ---
 title: Vytváření uživatelem definovaných vazeb
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 05476adccca0deb5fd82b62f99f06939664cc876
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 82fe3baada73b89291311a891069c6ee3f19cf20
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
 Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:  
@@ -38,7 +24,7 @@ Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:
   
  Existují tři hlavní typy elementů vazby: prvky vazeb protokolu, kódování prvky vazeb a elementů přenosové vazby.  
   
- Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které fungují na zprávy. Kanály a naslouchací procesy vytvořené tyto prvky vazeb můžete přidat, odebrat nebo změnit obsah zprávy. Danou vazbu může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje několik prvky vazeb protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
+ Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které fungují na zprávy. Kanály a naslouchací procesy vytvořené tyto prvky vazeb můžete přidat, odebrat nebo změnit obsah zprávy. Danou vazbu může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. Windows Communication Foundation (WCF) obsahuje několik prvky vazby protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
  Kódování prvku vazby – tyto prvky představují transformace mezi zprávu a kódování připraveni k přenosu v drátové síti. Typické [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby obsahovat přesně jeden kódování prvku vazby. Příklady kódování prvky vazeb <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Pokud element kódování vazba není určena pro vazbu, bude použito výchozí kódování. Výchozí hodnota je text při přenosu HTTP a binární jinak.  
   

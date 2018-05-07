@@ -1,24 +1,14 @@
 ---
-title: "Nastavení zásad direktivy modulu runtime"
-ms.custom: 
+title: Nastavení zásad direktivy modulu runtime
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 698e8ef926740f33f8a0a192680b5cebb45c9d79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 51a0538670a834435aff8d2b6c81b78450fe47f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-directive-policy-settings"></a>Nastavení zásad direktivy modulu runtime
 > [!NOTE]
@@ -33,18 +23,18 @@ ms.lasthandoff: 12/22/2017
   
 -   Typy zásad reflexe určit, které metadata, která je k dispozici v době běhu pro reflexi:  
   
-    -   `Activate`ovládací prvky runtime přístup k konstruktory, chcete-li povolit aktivace instancí.  
+    -   `Activate` Ovládací prvky runtime přístup k konstruktory, chcete-li povolit aktivace instancí.  
   
-    -   `Browse`ovládací prvky dotazování na informace o programu elementy.  
+    -   `Browse` ovládací prvky dotazování na informace o programu elementy.  
   
-    -   `Dynamic`ovládací prvky runtime přístupu pro všechny typy a členy pro povolení dynamické programování.  
+    -   `Dynamic` ovládací prvky runtime přístupu pro všechny typy a členy pro povolení dynamické programování.  
   
      Následující tabulka uvádí typy zásad reflexe a prvky programu, pomocí kterých lze použít.  
   
     |Prvek|Aktivovat|Procházet|dynamické|  
     |-------------|--------------|------------|-------------|  
     |[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|  
-    |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|  
+    |[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|  
     |[\<AttributeImplies >](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|✓|✓|✓|  
     |[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)||✓|✓|  
     |[\<Pole >](../../../docs/framework/net-native/field-element-net-native.md)||✓|✓|  
@@ -52,7 +42,7 @@ ms.lasthandoff: 12/22/2017
     |[\<ImpliesType >](../../../docs/framework/net-native/impliestype-element-net-native.md)|✓|✓|✓|  
     |[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)||✓|✓|  
     |[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)||✓|✓|  
-    |[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|  
+    |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|  
     |[\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)|✓|✓|✓|  
     |[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)||✓|✓|  
     |[\<Subtypes >](../../../docs/framework/net-native/subtypes-element-net-native.md)|✓|✓|✓|  
@@ -62,20 +52,20 @@ ms.lasthandoff: 12/22/2017
   
 -   Typy zásad serializace určit, které metadata, která je k dispozici v době běhu k serializaci a deserializaci:  
   
-    -   `Serialize`ovládací prvky runtime přístup k konstruktory, pole a vlastnosti, aby instance typu do knihovny třetích stran, jako je například serializátor Newtonsoft JSON serializovat.  
+    -   `Serialize` ovládací prvky runtime přístup k konstruktory, pole a vlastnosti, aby instance typu do knihovny třetích stran, jako je například serializátor Newtonsoft JSON serializovat.  
   
-    -   `DataContractSerializer`Řídí přístup runtime konstruktory, pole a vlastnosti, aby instance typu bylo serializováno modulem <xref:System.Runtime.Serialization.DataContractSerializer> třídy.  
+    -   `DataContractSerializer` Řídí přístup runtime konstruktory, pole a vlastnosti, aby instance typu bylo serializováno modulem <xref:System.Runtime.Serialization.DataContractSerializer> třídy.  
   
-    -   `DataContractJsonSerializer`Řídí přístup runtime konstruktory, pole a vlastnosti, aby instance typu bylo serializováno modulem <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> třídy.  
+    -   `DataContractJsonSerializer` Řídí přístup runtime konstruktory, pole a vlastnosti, aby instance typu bylo serializováno modulem <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> třídy.  
   
-    -   `XmlSerializer`Řídí přístup runtime konstruktory, pole a vlastnosti, aby instance typu bylo serializováno modulem <xref:System.Xml.Serialization.XmlSerializer> třídy.  
+    -   `XmlSerializer` Řídí přístup runtime konstruktory, pole a vlastnosti, aby instance typu bylo serializováno modulem <xref:System.Xml.Serialization.XmlSerializer> třídy.  
   
      Následující tabulka uvádí typy zásad serializace a prvky programu, pomocí kterých lze použít.  
   
     |Prvek|serializace|DataContractSerializer|DataContractJsonSerializer|Třídy XmlSerializer|  
     |-------------|---------------|----------------------------|--------------------------------|-------------------|  
     |[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|✓|  
-    |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|✓|  
+    |[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|✓|  
     |[\<AttributeImplies >](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|✓|✓|✓|✓|  
     |[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)|||||  
     |[\<Pole >](../../../docs/framework/net-native/field-element-net-native.md)|✓||||  
@@ -83,7 +73,7 @@ ms.lasthandoff: 12/22/2017
     |[\<ImpliesType >](../../../docs/framework/net-native/impliestype-element-net-native.md)|✓|✓|✓|✓|  
     |[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|||||  
     |[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|||||  
-    |[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|✓|  
+    |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|✓|  
     |[\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)|✓|✓|✓|✓|  
     |[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|✓||||  
     |[\<Subtypes >](../../../docs/framework/net-native/subtypes-element-net-native.md)|✓|✓|✓|✓|  
@@ -93,18 +83,18 @@ ms.lasthandoff: 12/22/2017
   
 -   Typy spolupráce zásad určují, které metadata, která je k dispozici v době běhu předat odkazy typy, typy hodnot a ukazatelů na funkce COM a prostředí Windows Runtime:  
   
-    -   `MarshalObject`ovládací prvky nativní zařazování COM a prostředí Windows Runtime pro odkazové typy.  
+    -   `MarshalObject` ovládací prvky nativní zařazování COM a prostředí Windows Runtime pro odkazové typy.  
   
-    -   `MarshalDelegate`ovládací prvky nativní zařazování delegáta typů jako ukazatelů na funkce.  
+    -   `MarshalDelegate` ovládací prvky nativní zařazování delegáta typů jako ukazatelů na funkce.  
   
-    -   `MarshalStructure`ovládací prvky nativní zařazování COM a prostředí Windows Runtime pro typy hodnot.  
+    -   `MarshalStructure` ovládací prvky nativní zařazování COM a prostředí Windows Runtime pro typy hodnot.  
   
      Následující tabulka uvádí typy spolupráce zásad a prvky programu, pomocí kterých lze použít.  
   
     |Prvek|MarshalObject|MarshalDelegate|MarshalStructure|  
     |-------------|-------------------|---------------------|----------------------|  
     |[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|  
-    |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|  
+    |[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|  
     |[\<AttributeImplies >](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|✓|✓|✓|  
     |[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)||||  
     |[\<Pole >](../../../docs/framework/net-native/field-element-net-native.md)||||  
@@ -112,7 +102,7 @@ ms.lasthandoff: 12/22/2017
     |[\<ImpliesType >](../../../docs/framework/net-native/impliestype-element-net-native.md)|✓|✓|✓|  
     |[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)||||  
     |[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)||||  
-    |[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|  
+    |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|  
     |[\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)|✓|✓|✓|  
     |[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)||||  
     |[\<Subtypes >](../../../docs/framework/net-native/subtypes-element-net-native.md)|✓|✓|✓|  
@@ -126,7 +116,7 @@ ms.lasthandoff: 12/22/2017
 |Nastavení zásad|Popis|`Assembly`, `Namespace`, `Type`, a `TypeInstantiation` elementy|`Event`, `Field`, `Method`, `MethodInstantiation`, a `Property` elementy|  
 |--------------------|-----------------|-----------------------------------------------------------------------|--------------------------------------------------------------------------------|  
 |`All`|Umožňuje zásady pro všechny typy a členy, kteří řetězu .NET Native nástroj neodstraní.|✓||  
-|`Auto`|Určuje, že by měl používat výchozí zásady pro typ zásad pro daný element programu. Toto je stejný jako vynechání zásady pro tento typ zásad. `Auto`Obvykle se používá k označení, že zásady je zděděn z nadřazeného elementu.|✓|✓|  
+|`Auto`|Určuje, že by měl používat výchozí zásady pro typ zásad pro daný element programu. Toto je stejný jako vynechání zásady pro tento typ zásad. `Auto` Obvykle se používá k označení, že zásady je zděděn z nadřazeného elementu.|✓|✓|  
 |`Excluded`|Určuje, že zásada je zakázána pro element určitého programu. Například direktivy modulu runtime:<br /><br /> `<Type Name="BusinessClasses.Person" Browse="Excluded" Dynamic="Excluded" />`<br /><br /> Určuje, že metadata pro `BusinessClasses.Person` třída není k dispozici buď procházet nebo dynamicky vytvořit a upravit `Person` objekty.|✓|✓|  
 |`Included`|Umožňuje zásadu metadata pro nadřazený typ je k dispozici.||✓|  
 |`Public`|Umožňuje zásady pro veřejné typy nebo členy, pokud řetězu nástroj zjistí, že typ nebo člen je zbytečné a proto ji odstraní. Toto nastavení se liší od `Required Public`, což zajistí, aby metadata pro veřejné typy a členy je vždy k dispozici i v případě řetězu nástroj určuje, že není nutné.|✓||  

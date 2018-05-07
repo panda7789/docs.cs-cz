@@ -1,29 +1,17 @@
 ---
-title: "Ukázka samostatného diagnostického informačního kanálu"
-ms.custom: 
+title: Ukázka samostatného diagnostického informačního kanálu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7cf6bb08dc6607bf6c5b9e283ce449b603cb38d3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 1edd1c2184dde368fbd16299a836f1811dd24ba6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
-Tento příklad ukazuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Je základní program "Hello World", který ukazuje základy objektový model a jak nastavit na [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.  
+Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace Windows Communication Foundation (WCF). Je základní program "Hello World", který zobrazuje základní informace o objektu modelu a jak nastavit ve službě Windows Communication Foundation (WCF).  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]modely jako operace služby, které vracejí speciální datového typu, informační kanály syndikace <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> může serializovat informačního kanálu do formátů, jak technologie RSS 2.0 a Atom 1.0. Následující vzorový kód ukazuje kontrakt použít.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modely jako operace služby, které vracejí speciální datového typu, informační kanály syndikace <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> může serializovat informačního kanálu do formátů, jak technologie RSS 2.0 a Atom 1.0. Následující vzorový kód ukazuje kontrakt použít.  
   
 ```  
 [ServiceContract(Namespace = "")]  
@@ -60,7 +48,7 @@ WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http:/
 <%@ ServiceHost Language="C#|VB" Debug="true" Service="ProcessService" %>  
 ```  
   
- Protože tato služba přijímá požadavky pomocí standardní HTTP GET, můžete použít libovolného klienta RSS nebo ATOM podporující přístup ke službě. Například můžete zobrazit výstup této služby přechodem na http://localhost: 8000/diagnostiky nebo informační kanál /? formátu =, nebo http://localhost: 8000/diagnostiky nebo informační kanál atom /? formátu = rss v prohlížeči sítě podporující RSS, jako je například Internet Explorer 7.  
+ Protože tato služba přijímá požadavky pomocí standardní HTTP GET, můžete použít libovolného klienta RSS nebo ATOM podporující přístup ke službě. Například můžete zobrazit výstup této služby přechodem na http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss v prohlížeči sítě podporující RSS, jako je například Internet Explorer 7.  
   
  Můžete také [jak WCF syndikace objektu modelu mapy na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md) ke čtení syndikovaný dat a zpracování pomocí imperativní kódu.  
   
@@ -93,14 +81,14 @@ foreach (SyndicationItem i in feed.Items)
   
 3.  Spusťte konzolovou aplikaci.  
   
-4.  Je spuštěn konzolové aplikace, přejděte na http://localhost: 8000/diagnostiky nebo informační kanál /? formátu =, nebo http://localhost: 8000/diagnostiky nebo informační kanál atom /? formátu = rss pomocí podporující RSS prohlížeče.  
+4.  Je spuštěn konzolové aplikace, přejděte na http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss pomocí podporující RSS prohlížeče.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\DiagnosticsFeed`  
   

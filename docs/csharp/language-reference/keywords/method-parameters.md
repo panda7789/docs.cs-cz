@@ -1,23 +1,16 @@
 ---
 title: Parametry metody (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - methods [C#], parameters
 - method parameters [C#]
 - parameters [C#]
 ms.assetid: 680e39ff-775b-48b0-9f47-4186a5bfc4a1
-caps.latest.revision: ''
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 35d96066deb866e02f6bf624121376fe3ae94373
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 8a8d300661eec42030900dd9ee85a17e66aa0922
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="method-parameters-c-reference"></a>Parametry metody (Referenční dokumentace jazyka C#)
 

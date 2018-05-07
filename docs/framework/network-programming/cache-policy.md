@@ -1,12 +1,6 @@
 ---
-title: "Zásady mezipaměti"
-ms.custom: 
+title: Zásady mezipaměti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - time-based cache policies
 - location-based cache policies
@@ -16,21 +10,19 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: bafad45e6b6b546707c4f805f857e85549f0f071
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 36cf61982bb5a83e6031c35a19ba8ebf0b94aa6d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cache-policy"></a>Zásady mezipaměti
 Zásady mezipaměti definuje pravidla, které se používají k určení, zda požadavek můžete splnit pomocí uložené v mezipaměti kopie požadovaný prostředek. Aplikace, zadejte požadavky na mezipaměti klienta pro aktuálnosti, ale zásady efektivní mezipaměti je určen podle požadavků mezipaměti klienta, serveru vypršení platnosti obsahu požadavky a požadavky na opětovné ověření serveru. Požadavky na zásady a server mezipaměti klienta interakci vždy výsledkem nejvíce konzervativní zásady ukládání do mezipaměti, aby bylo zajištěno, že nejčerstvější obsah se vrátí do klientské aplikace.  
   
- Zásady mezipaměti jsou buď na základě umístění nebo založené na čase. Zásady na základě umístění mezipaměti definuje aktuálnosti položek v mezipaměti založené na požadovaný prostředek mohou odkud. Zásady založené na čase mezipaměti definuje aktuálnosti položek v mezipaměti pomocí době, kdy byla načtena prostředku, vrátí hlavičky s prostředek a aktuální čas. Většina aplikací můžete použít výchozí časové zásady ukládání do mezipaměti, která implementuje zásady ukládání do mezipaměti, zadané v dokumentu RFC 2616, k dispozici na [http://www.ietf.org](http://www.ietf.org/).  
+ Zásady mezipaměti jsou buď na základě umístění nebo založené na čase. Zásady na základě umístění mezipaměti definuje aktuálnosti položek v mezipaměti založené na požadovaný prostředek mohou odkud. Zásady založené na čase mezipaměti definuje aktuálnosti položek v mezipaměti pomocí době, kdy byla načtena prostředku, vrátí hlavičky s prostředek a aktuální čas. Většina aplikací můžete použít výchozí časové zásady ukládání do mezipaměti, která implementuje zásady ukládání do mezipaměti, zadané v dokumentu RFC 2616, k dispozici na [ http://www.ietf.org ](http://www.ietf.org/).  
   
  Třídy popsané v následující tabulce se používají k určení zásady mezipaměti.  
   

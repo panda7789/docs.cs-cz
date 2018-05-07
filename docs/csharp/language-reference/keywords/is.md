@@ -1,25 +1,17 @@
 ---
 title: is (Referenční dokumentace jazyka C#)
-keywords: je klíčové slovo (C#), je (C#)
 ms.date: 02/17/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - is_CSharpKeyword
 - is
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-caps.latest.revision: 20
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 44c15eb9d65adf10904f8777847b0653ff1dbc99
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c01152d016a852c15ffa1d1c82c16d6795965f31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#) #
 

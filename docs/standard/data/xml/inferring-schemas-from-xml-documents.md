@@ -1,30 +1,19 @@
 ---
-title: "Odvození schémata z dokumentů XML"
-ms.custom: 
+title: Odvození schémata z dokumentů XML
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
-caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8085ecb86018460f14a2532b55907472988b67b2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f8640a951acab512cbe2397df831a74700b5ad6c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Odvození schémata z dokumentů XML
 Toto téma popisuje postup použití <xref:System.Xml.Schema.XmlSchemaInference> třídy pro odvození schématu XML definition language (XSD) schématu ze struktury dokumentu XML.  

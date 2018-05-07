@@ -1,29 +1,18 @@
 ---
-title: "Vstupy XslCompiledTransform – třída"
-ms.custom: 
+title: Vstupy XslCompiledTransform – třída
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 834049f1-ab41-449e-9f10-4a1d0701bc48
-caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7aac1e85bdc27c9c8394eadcae841069115b369d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bc909b666b90d8c8825e7dbef33e48b6126bd7c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inputs-to-the-xslcompiledtransform-class"></a>Vstupy XslCompiledTransform – třída
 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda přijímá tři vstupních typů pro zdrojový dokument: objekt, který implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní <xref:System.Xml.XmlReader> objekt, který čte zdrojový dokument nebo řetězce URI.  
@@ -36,7 +25,7 @@ ms.lasthandoff: 12/23/2017
   
 -   <xref:System.Xml.XmlNode> Třída je založena na W3C Model DOM (Document Object) a obsahuje funkce pro úpravy.  
   
--   <xref:System.Xml.XPath.XPathDocument> Třída je jen pro čtení datové úložiště, na základě modelu dat XPath. <xref:System.Xml.XPath.XPathDocument>zpracovává doporučené třídu pro XSLT. Poskytuje vyšší výkon ve srovnání s <xref:System.Xml.XmlNode> třídy.  
+-   <xref:System.Xml.XPath.XPathDocument> Třída je jen pro čtení datové úložiště, na základě modelu dat XPath. <xref:System.Xml.XPath.XPathDocument> zpracovává doporučené třídu pro XSLT. Poskytuje vyšší výkon ve srovnání s <xref:System.Xml.XmlNode> třídy.  
   
 > [!NOTE]
 >  Transformace se vztahují k dokumentu jako celku. Jinými slovy Pokud předáte v uzlu než kořenový uzel dokumentu, toto nezabrání proces transformace přístup na všechny uzly v načíst dokumentu. K transformaci fragment uzlu, musíte vytvořit objekt obsahující pouze fragment uzlu a předat tento objekt, který chcete <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda. Další informace najdete v tématu [postupy: transformace Fragment uzlu](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md).  

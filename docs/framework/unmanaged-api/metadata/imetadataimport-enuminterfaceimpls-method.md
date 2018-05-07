@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport::EnumInterfaceImpls – metoda"
-ms.custom: 
+title: IMetaDataImport::EnumInterfaceImpls – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport.EnumInterfaceImpls
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 646d65ff81795ce0558651db9c3fe1bc7205ae08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 824337a8a87282e59c9fc5df18c71800339e8d7b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls – metoda
 Vytvoří výčet MethodDef tokeny představující implementace rozhraní.  
@@ -70,7 +58,7 @@ HRESULT EnumInterfaceImpls (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls`úspěšně vrácena.|  
+|`S_OK`|`EnumInterfaceImpls` úspěšně vrácena.|  
 |`S_FALSE`|Neexistují žádné MethodDef tokenů pro zobrazení výčtu. V takovém případě `pcImpls` je nastaven na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -80,7 +68,7 @@ HRESULT EnumInterfaceImpls (
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  

@@ -1,24 +1,17 @@
 ---
 title: get (Referenční dokumentace jazyka C#)
 ms.date: 03/10/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - get_CSharpKeyword
 - get
 helpviewer_keywords:
 - get keyword [C#]
 ms.assetid: a52de048-fbe0-41b0-82ec-8e4ac04d3a71
-caps.latest.revision: 11
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3cdf639065ee5bf0cb9e920061557991c0a4b921
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 671cadce0bd120ec0728562ec448b2ce6edf2dd7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-c-reference"></a>get (Referenční dokumentace jazyka C#)
 

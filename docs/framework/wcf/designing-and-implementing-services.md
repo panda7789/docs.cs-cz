@@ -1,33 +1,19 @@
 ---
 title: Navrhování a implementace služeb
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
-caps.latest.revision: 37
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9b954a8ac4f8507b095eb97d0724095cecc7b75b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
-ms.translationtype: MT
+ms.openlocfilehash: 02117b95cbf5a2ee16267a7b991ea9f854b813c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designing-and-implementing-services"></a>Navrhování a implementace služeb
 V této části se dozvíte, jak definovat a implementovat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] smluv. Smlouvy o poskytování služeb určuje, co koncový bod komunikuje s vnějším světem. Více konkrétní úrovni je prohlášení o sadu zprávy specifické pro uspořádány do základní zpráva exchange vzory (MEPs), jako je například požadavek nebo odpověď, jednosměrné a duplexní. Pokud smlouvy o poskytování služeb je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musí samozřejmě přijmout jednu zprávu (takže volající může informovat pozdrav) a může nebo nemusí vracet zprávy (v závislosti na provedla operaci).  
   
- Další informace o kontraktech a další základní [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] koncepty, najdete v části [základní Windows Communication Foundation koncepty](../../../docs/framework/wcf/fundamental-concepts.md). Toto téma se zaměřuje na pochopení kontraktů služby. Další informace o tom, jak sestavit klienty, kteří používají k připojení ke službám kontraktů služby najdete v tématu [klienta WCF – přehled](../../../docs/framework/wcf/wcf-client-overview.md).  
+ Další informace o kontraktech a dalších konceptech jádra Windows Communication Foundation (WCF) najdete v tématu [základní Windows Communication Foundation koncepty](../../../docs/framework/wcf/fundamental-concepts.md). Toto téma se zaměřuje na pochopení kontraktů služby. Další informace o tom, jak sestavit klienty, kteří používají k připojení ke službám kontraktů služby najdete v tématu [klienta WCF – přehled](../../../docs/framework/wcf/wcf-client-overview.md).  
   
 ## <a name="overview"></a>Přehled  
  Toto téma obsahuje základní úrovni koncepční orientaci k navrhování a implementace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Související témata poskytují podrobnější informace o specifika návrhu a implementace. Před navrhování a implementace vašeho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, je doporučeno, které:  
@@ -77,7 +63,7 @@ V této části se dozvíte, jak definovat a implementovat [!INCLUDE[indigo2](..
   
  Všimněte si, že kontrakt vyžaduje některé aspekty implementace kontraktu služby a konfiguraci spuštění přidat chování způsob. Sadu požadavků, které musí být splněny vystavit služby pro použití založený na předchozí sadu požadavků. Pokud kontraktu provede požadavky implementace, implementace může ještě vyžadovat další konfigurace a vazby, které umožňují službu spustit. Nakonec hostitelskou aplikaci musí zároveň podporovat všechny požadavky, které konfigurace služby a vazby přidat.  
   
- Tento proces sčítání požadavek je třeba vzít v úvahu při návrhu, implementaci, konfiguraci a hostování důležité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace služby. Kontrakt například můžete určit, že tato služba vyžaduje pro podporu relaci. Pokud ano, musíte nakonfigurovat vazby pro podporu tohoto smluvními požadavek nebo implementace služby nebude fungovat. Nebo pokud vaše služba vyžaduje integrované ověřování systému Windows a je hostovaná v Internetové informační služby (IIS), musí mít webovou aplikaci, ve kterém se služba nachází, integrované ověřování systému Windows zapnuté a anonymní podporu vypnutý. Další informace o funkcích a dopad typy jinou službu, pro hostitele aplikací najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+ Tento proces sčítání požadavek je důležité třeba vzít v úvahu při navrhování, implementace, konfigurace a hostování aplikace služby Windows Communication Foundation (WCF). Kontrakt například můžete určit, že tato služba vyžaduje pro podporu relaci. Pokud ano, musíte nakonfigurovat vazby pro podporu tohoto smluvními požadavek nebo implementace služby nebude fungovat. Nebo pokud vaše služba vyžaduje integrované ověřování systému Windows a je hostovaná v Internetové informační služby (IIS), musí mít webovou aplikaci, ve kterém se služba nachází, integrované ověřování systému Windows zapnuté a anonymní podporu vypnutý. Další informace o funkcích a dopad typy jinou službu, pro hostitele aplikací najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)  

@@ -1,33 +1,21 @@
 ---
-title: "StatusBar – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: StatusBar – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - StatusBar control [Windows Forms]
 - status bars [Windows Forms], creating
 ms.assetid: 6f543e27-cf78-4b7f-b4d0-6a8030155d48
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 945d9a658dd3d75dd0edb9f4eaca78334ee4d652
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 66ec834778bd0eeacea642250c5430be8929b732
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="statusbar-control-windows-forms"></a>StatusBar – ovládací prvek (Windows Forms)
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStripStatusLabel> Řízení nahrazuje a přidá funkce <xref:System.Windows.Forms.StatusBar> řízení; však <xref:System.Windows.Forms.StatusBar> řízení se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud si zvolíte.  
   
- Windows Forms <xref:System.Windows.Forms.StatusBar> řízení se používá ve formulářích jako oblast, obvykle zobrazují v dolní části okna, ve kterém aplikace můžete zobrazit různé typy informací o stavu. <xref:System.Windows.Forms.StatusBar>ovládací prvky může mít panelů stavového řádku na nich, které zobrazují ikony, které označují stav nebo řadu ikony v animace, který indikuje, že proces je v provozu. například aplikace Microsoft Word označující, že dokument je uložen.  
+ Windows Forms <xref:System.Windows.Forms.StatusBar> řízení se používá ve formulářích jako oblast, obvykle zobrazují v dolní části okna, ve kterém aplikace můžete zobrazit různé typy informací o stavu. <xref:System.Windows.Forms.StatusBar> ovládací prvky může mít panelů stavového řádku na nich, které zobrazují ikony, které označují stav nebo řadu ikony v animace, který indikuje, že proces je v provozu. například aplikace Microsoft Word označující, že dokument je uložen.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)  

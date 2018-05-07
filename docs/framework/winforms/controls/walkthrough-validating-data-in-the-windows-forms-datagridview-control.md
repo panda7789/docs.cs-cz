@@ -1,13 +1,6 @@
 ---
-title: "Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: 'Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - data validation [Windows Forms], Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: a4f1d015-2969-430c-8ea2-b612d179c290
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b2ede616b311119d174534e53cb3aaf9e366c7c4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8ad8caef5db13b1f917a6c27da523d3ded915d84
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a>Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView
 Pokud má uživatelům zobrazit funkce vstupního datového, máte často ověřit data do svého formuláře. <xref:System.Windows.Forms.DataGridView> Třída poskytuje vhodný způsob k provedení ověření, než se zaměřuje na úložiště dat data. Data můžete ověřit pomocí zpracování <xref:System.Windows.Forms.DataGridView.CellValidating> událost, která je vyvolána <xref:System.Windows.Forms.DataGridView> až aktuální buňky změní.  

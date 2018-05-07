@@ -1,21 +1,14 @@
 ---
 title: true – – operátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - true operator [C#]
 ms.assetid: acaba817-5da5-4364-b3b2-2e5c75ec1839
-caps.latest.revision: 19
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 96ab7679862959f3c99e31beac0bd5514228bd8d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 71f522b3860f7461f5c52dd77bb424f7ba0f9bf5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="true-operator-c-reference"></a>true – – operátor (Referenční dokumentace jazyka C#)
 Vrátí [bool](../../../csharp/language-reference/keywords/bool.md) hodnotu `true` znamená, že operand je hodnota true a vrátí `false` jinak.  
@@ -30,14 +23,14 @@ Vrátí [bool](../../../csharp/language-reference/keywords/bool.md) hodnotu `tru
   
  Pokud typ definuje operátor `true`, musí definovat také operátor [false](../../../csharp/language-reference/keywords/false.md).  
   
- Typ nelze přímo přetížení podmíněného logické operátory ([ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) a [&#124; &#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)), ale lze dosáhnout ekvivalentní vliv přetížení běžné logické operátory a operátory `true` a `false`.  
+ Typ nelze přímo přetížení podmíněného logické operátory ([ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) a [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md)), ale lze dosáhnout ekvivalentní vliv přetížení běžné logické operátory a operátory `true` a `false`.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
  [false](../../../csharp/language-reference/keywords/false.md)

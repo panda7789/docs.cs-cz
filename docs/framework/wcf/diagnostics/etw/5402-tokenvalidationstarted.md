@@ -1,24 +1,12 @@
 ---
-title: "5402 – TokenValidationStarted"
-ms.custom: 
+title: 5402 – TokenValidationStarted
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d3e9a727-92dd-4d5b-bca9-2ec98c1fde5c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eae30217dcf8b55347163587532b40cd6ae04a03
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 212c6cd3a341f46e6ba0ad4b8542d47f699fb7c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="5402---tokenvalidationstarted"></a>5402 – TokenValidationStarted
 ## <a name="properties"></a>Vlastnosti  

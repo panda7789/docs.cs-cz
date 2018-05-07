@@ -1,13 +1,6 @@
 ---
-title: "Trasování a instrumentace aplikací"
-ms.custom: 
+title: Trasování a instrumentace aplikací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,13 @@ helpviewer_keywords:
 - performance monitoring, tracing code
 - Trace class, instrumentation for .NET applications
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
-caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 20eea5ed6f69c17466aeb33617f418ac71a3e1b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 33d940a051c3185d8a3a04e77ea5899de0475ffc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
 Trasování je způsob, jak můžete monitorovat aplikace, když je spuštěná. Trasování a ladění instrumentace můžete přidat do vaší aplikace rozhraní .NET Framework při jeho vývoji a že instrumentace můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiné zařízení pro pozdější analýzu.  
@@ -102,7 +92,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
     -   Použití **sestavení** nabídky spolu s **ladění** stránky **stránky vlastností** dialogovém okně **Průzkumníku řešení**. Používejte při kompilaci v sadě Visual Studio.  
   
-         \-nebo –  
+         \- nebo –  
   
     -   Použití **trasování** a **ladění** direktivy kompilátoru příkazového řádku metody kompilace. Další informace najdete v tématu [Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Používejte při kompilaci z příkazového řádku.  
   
@@ -133,7 +123,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 |------------|------------|  
 |**Assert**|Zadaný text; nebo, pokud není zadaný žádný zásobníku volání. Výstup se zapíše pouze pokud podmínka zadaný jako argument **Assert** příkaz **false**.|  
 |**Selhání**|Zadaný text; nebo, pokud není zadaný žádný zásobníku volání.|  
-|**Zápis**|Zadaný text.|  
+|**zápis**|Zadaný text.|  
 |**Writeif –**|Zadaný text, pokud podmínky zadané jako argument **writeif –** příkaz je splněné.|  
 |**WriteLine**|Zadaný text a návrat.|  
 |**Writelineif –**|Zadaný text a znak konce řádku vrátit, pokud podmínky zadané jako argument **writelineif –** příkaz je splněné.|  
@@ -145,7 +135,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 > [!NOTE]
 >  V [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], **Debug.Write –**, **Debug.WriteIf**, **Debug.WriteLine**, a **Debug.WriteLineIf** nahradit metody **Debug.Print –** metoda, která byla k dispozici v dřívějších verzích jazyka Visual Basic.  
   
- **Zápisu** a **WriteLine** zápisu vždy metody text, zda jste zadali. **Assert –**, **writeif –**, a **writelineif –** vyžadují Boolean argument, který určuje, zda budou zapisovat zadaný text; zapíší zadaný text pouze pokud je výraz **true** (pro **writeif –** a **writelineif –**), nebo **false** (pro **Assert**). **Nezdaří** metoda vždy zapíše zadaný text. Další informace najdete v tématu [postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md) a odkaz na rozhraní .NET Framework.  
+ **Zápisu** a **WriteLine** zápisu vždy metody text, zda jste zadali. **Assert –**, **writeif –**, a **writelineif –** vyžadují Boolean argument, který určuje, zda budou zapisovat zadaný text; zapíší zadaný text pouze pokud ve výrazu je **true** (pro **writeif –** a **writelineif –**), nebo **false** (pro **Assert**). **Nezdaří** metoda vždy zapíše zadaný text. Další informace najdete v tématu [postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md) a odkaz na rozhraní .NET Framework.  
   
 ## <a name="security-concerns"></a>Aspekty zabezpečení  
  Pokud nezakážete trasování a ladění před nasazením aplikace ASP.NET, vaše aplikace může odhalit informace o sobě, který může zneužít škodlivý program. Další informace najdete v tématu [postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [kompilaci a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio), a [postupy: vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md) . Ladění je také možné konfigurovat pomocí Internetové informační služby (IIS).  

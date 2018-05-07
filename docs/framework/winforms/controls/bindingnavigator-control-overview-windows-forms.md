@@ -1,14 +1,6 @@
 ---
-title: "BindingNavigator – přehled ovládacího prvku (Windows Forms)"
-ms.custom: 
+title: BindingNavigator – přehled ovládacího prvku (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - DataNavigator
 helpviewer_keywords:
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - data [Windows Forms], navigating
 - data navigation
 ms.assetid: 4423eede-f8d1-4d02-822f-5bf8432680d0
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 921f8c7791620d51107fa2ff31a637094fc0c633
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ae1e8273c39122e094817e28379e52c19c573a3e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindingnavigator-control-overview-windows-forms"></a>BindingNavigator – přehled ovládacího prvku (Windows Forms)
 Můžete použít <xref:System.Windows.Forms.BindingNavigator> řízení k vytvoření standardizovaným způsobem uživatelům vyhledávat a měnit data na formuláři Windows. Často používáte <xref:System.Windows.Forms.BindingNavigator> s <xref:System.Windows.Forms.BindingSource> komponenty, aby uživatelům pohyb záznamů dat ve formuláři a interakci s záznamy.  
@@ -41,14 +27,14 @@ Můžete použít <xref:System.Windows.Forms.BindingNavigator> řízení k vytvo
   
 |Ovládací prvek|Funkce|  
 |-------------|--------------|  
-|<xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A>tlačítko|Vloží nový řádek do základního datového zdroje.|  
-|<xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A>tlačítko|Odstraní z podkladové zdroje dat na aktuálním řádku.|  
-|<xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A>tlačítko|Přesun na první položku v podkladovém zdroji dat|  
-|<xref:System.Windows.Forms.BindingNavigator.MoveLastItem%2A>tlačítko|Přejde na poslední položky v podkladovém zdroji dat.|  
-|<xref:System.Windows.Forms.BindingNavigator.MoveNextItem%2A>tlačítko|Přesun na další položku v podkladovém zdroji dat|  
-|<xref:System.Windows.Forms.BindingNavigator.MovePreviousItem%2A>tlačítko|Přesune na předchozí položky v podkladovém zdroji dat.|  
-|<xref:System.Windows.Forms.BindingNavigator.PositionItem%2A>textové pole|Vrátí aktuální pozici v podkladovém zdroji dat.|  
-|<xref:System.Windows.Forms.BindingNavigator.CountItem%2A>textové pole|Vrátí celkový počet položek v podkladovém zdroji dat.|  
+|<xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A> Tlačítko|Vloží nový řádek do základního datového zdroje.|  
+|<xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A> Tlačítko|Odstraní z podkladové zdroje dat na aktuálním řádku.|  
+|<xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A> Tlačítko|Přesun na první položku v podkladovém zdroji dat|  
+|<xref:System.Windows.Forms.BindingNavigator.MoveLastItem%2A> Tlačítko|Přejde na poslední položky v podkladovém zdroji dat.|  
+|<xref:System.Windows.Forms.BindingNavigator.MoveNextItem%2A> Tlačítko|Přesun na další položku v podkladovém zdroji dat|  
+|<xref:System.Windows.Forms.BindingNavigator.MovePreviousItem%2A> Tlačítko|Přesune na předchozí položky v podkladovém zdroji dat.|  
+|<xref:System.Windows.Forms.BindingNavigator.PositionItem%2A> Textové pole|Vrátí aktuální pozici v podkladovém zdroji dat.|  
+|<xref:System.Windows.Forms.BindingNavigator.CountItem%2A> Textové pole|Vrátí celkový počet položek v podkladovém zdroji dat.|  
   
  Pro každý ovládací prvek v této kolekci, je členem příslušné skupiny <xref:System.Windows.Forms.BindingSource> komponenty, která prostřednictvím kódu programu poskytuje stejné funkce. Například <xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.MoveFirst%2A> metodu <xref:System.Windows.Forms.BindingSource> součásti, <xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> metoda a tak dále.  
   

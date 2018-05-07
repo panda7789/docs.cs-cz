@@ -1,36 +1,22 @@
 ---
 title: Atributy ServiceModel a odkazy ServiceDescription
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4ab86b17-eab9-4846-a881-0099f9a7cc64
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ba8888c2a1bd3c16ab6d216c365870c0df0e499a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: cc7c36ff7a1c81227f118ee7113be8f7f9eb2e9f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>Atributy ServiceModel a odkazy ServiceDescription
-*Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třída) společně popisují všechny aspekty služby. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá popis stromu k sestavení běhu platný služby, chcete-li publikovat Web Services Description Language (WSDL), jazyk definice schématu XML (XSD) a výrazy zásad (metadata) o služby, který můžou klienti používat pro připojení k a používat službu a Generovat různé kódu a konfigurace souborů reprezentace strom hodnot popis.  
+*Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třída) společně popisují všechny aspekty služby. Windows Communication Foundation (WCF) používá k vytvoření platný služby modulu runtime Publikovat Web Services Description Language (WSDL), jazyk definice schématu XML (XSD) a výrazy zásad (metadata) o službě, který můžou klienti používat pro popis stromu připojení k a používat službu a ke generování různé kódu a konfigurace souborů reprezentace strom hodnot popis.  
   
  Toto téma popisuje, jak kontrakt související vlastnosti jsou získávány z kontrakt služby, a jak jsou implementované a přidány do stromu popis. V některých případech hodnoty atributu se převedou na chování vlastnosti a chování se pak vloží do stromu popis. Další informace o tom, jak jsou hodnoty stromu popis převést do metadat najdete v tématu [ServiceDescription a referenční dokumentace schématu WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md).  
   
 ## <a name="mapping-operations-to-the-description-tree"></a>Operace mapování do stromu popis  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, kontraktů služby jsou modelovány pomocí rozhraní (nebo třídy) k označení rozhraní nebo třídy a její metody jako seskupení operací, použijte atributy. Když <xref:System.ServiceModel.ServiceHost> třída je otevřen, všechny kontraktů služby a implementace jsou projeví přes a sloučit s informace o konfiguraci do stromu popis.  
+ V aplikacích WCF, jsou modelovány kontraktů služby pomocí rozhraní (nebo třídy) k označení rozhraní nebo třídy a její metody jako seskupení operací, použijte atributy. Když <xref:System.ServiceModel.ServiceHost> třída je otevřen, všechny kontraktů služby a implementace jsou projeví přes a sloučit s informace o konfiguraci do stromu popis.  
   
- Existují dva typy modelů operace: *parametr* modelu a *kontrakt zprávy* modelu. Parametr model používá spravované metody, které nemají parametru nebo typu návratovou hodnotu, která je označena kvalifikátorem <xref:System.ServiceModel.MessageContractAttribute?displayProperty=nameWithType> třídy. V tomto modelu vývojáři řídit serializace parametry a návratové hodnoty, ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] generuje hodnoty, které slouží k naplnění stromu popis pro tuto službu a její smlouvy.  
+ Existují dva typy modelů operace: *parametr* modelu a *kontrakt zprávy* modelu. Parametr model používá spravované metody, které nemají parametru nebo typu návratovou hodnotu, která je označena kvalifikátorem <xref:System.ServiceModel.MessageContractAttribute?displayProperty=nameWithType> třídy. V tomto modelu vývojáři řídit serializace parametry a návratové hodnoty, ale WCF generuje hodnoty, které slouží k naplnění stromu popis pro tuto službu a její smlouvy.  
   
  Jsou zadány v konfiguračních souborech vazby načíst přímo do <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A?displayProperty=nameWithType> vlastnost.  
   

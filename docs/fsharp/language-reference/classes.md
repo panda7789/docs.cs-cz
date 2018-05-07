@@ -1,17 +1,12 @@
 ---
 title: Třídy (F#)
 description: 'Zjistěte, jak F # třídy jsou typy, které představují objekty, které mohou mít vlastnosti, metod a události.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 0bfb45b6481576729bfe8d4bd016fb151757660a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 67164bd9f91c14f465bf05630259ad70cb8d90e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="classes"></a>Třídy
 

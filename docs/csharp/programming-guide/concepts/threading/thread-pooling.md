@@ -1,22 +1,12 @@
 ---
 title: Přístup z více vláken sdružování (C#)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 98ae68c1-ace8-44b9-9317-8920ac9ef2b6
-caps.latest.revision: 5
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 56fba1197fe81e60e27f300ec43879569d0a9d48
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.openlocfilehash: 42e1dcedc1897dc82bbd13f12882cbef6a5da4c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="thread-pooling-c"></a>Přístup z více vláken sdružování (C#)
 A *fondu vláken* je kolekce vláken, které lze použít k provedení některých úloh na pozadí. (Viz [zřetězení (C#)](../../../../csharp/programming-guide/concepts/threading/index.md) základní informace.) Zůstane primární bezplatné provést další úlohy asynchronně vlákno.  

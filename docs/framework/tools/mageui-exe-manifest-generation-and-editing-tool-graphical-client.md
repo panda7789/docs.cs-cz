@@ -1,27 +1,15 @@
 ---
-title: "MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)"
-ms.custom: 
+title: MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-caps.latest.revision: "38"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ec4ac8d89d2d3a7d0dce11e5057db80190e7b963
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0772fcb32ce4d7500b358db312241e489b3a24c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty, které jsou vytvořené s cílem MageUI.exe [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Při přidání nebo odebrání sestavení z manifestu nebo opětovné podepisování manifestů existující, MageUI.exe neaktualizuje manifest cíl [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Další informace najdete v tématu [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
@@ -40,7 +28,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |-------------|----------|--------------|-----------------|  
 |**Manifest aplikace**|**Soubor, nové**||Vytvoří nový manifest aplikace.|  
 |**Manifest nasazení**|**Soubor, nové**||Vytvoří nový manifest nasazení.|  
-|**Open**|**Soubor**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
+|**Otevřete**|**Soubor**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
 |**Zavřete**|**Soubor**|CTRL+F4|Zavře otevřený soubor.<br /><br /> Upravíte-li soubor před jeho uzavřením, požádá nástroj MageUI.exe o opětovné podepsání souboru veřejným klíčem, párem klíčů nebo uloženým certifikátem.|  
 |**Uložit**|**Soubor**|CTRL+S|Uloží soubor, na který je aktuálně zaměřen uživatelský vstup, na disk.|  
 |**Uložit jako**|**Soubor**||Uloží soubor na disk a umožní zadat název souboru nebo jeho umístění.|  
@@ -52,7 +40,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Vložení**|**Upravit**|CTRL+V|Vloží text ze schránky do aktuálního textového prvku.|  
 |**Odstranit**|**Upravit**||Odstraní aktuálně vybrané v seznamu, jako je například vztah důvěryhodnosti licenci na element **Manifest nasazení** kartě.|  
 |**Zavřete všechny**|**Window**||Zavře všechny soubory otevřené v nástroji MageUI.exe. Pokud je zapotřebí některé ze souborů uložit, vyzve nástroj MageUI.exe k jejich uložení. Nástroj MageUI.exe také vyžaduje výběr podepsaného klíče pro každý nepodepsaný nebo změněný soubor.|  
-|**O**|**Pomoc**||Zobrazuje verzi a informace o autorských právech nástroje MageUI.exe.|  
+|**o**|**Pomoc**||Zobrazuje verzi a informace o autorských právech nástroje MageUI.exe.|  
   
 ## <a name="preferences-dialog-box"></a>Dialogové okno Předvolby  
  **Předvolby** dialogové okno obsahuje následující prvky.  
@@ -73,7 +61,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Podepsat soubor certifikátu**|Podepíše manifest digitálním certifikátem uloženým v systému souborů.|  
 |**Soubor**|Poskytuje prostor pro zadání cesty k souboru .pfx představujícímu certifikát.|  
 |**...**|Otevře **zvolit soubor** dialogové okno pro výběr existující soubor .pfx.|  
-|**New**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech certifikátů používaných pro podpis [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v části [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).|  
+|**Nový**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech certifikátů používaných pro podpis [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v části [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Heslo**|Poskytuje prostor pro zadání hesla použitého k podepisování certifikátů. Pokud není použito, může být ponecháno prázdné.|  
 |**Přihlaste se s uložený certifikát**|Zobrazí seznam s vlastním výběrem digitálních certifikátů uložených v úložišti certifikátů počítače.|  
 |**Identifikátor URI pro vytvoření časového razítka**|Zobrazí adresu Uniform Resource Locator (URI) služby digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepisovat v případě, že digitální certifikát vyprší ještě před nasazením další verze aplikace. Další informace najdete v tématu [Windows root programu Certificate](http://go.microsoft.com/fwlink/?LinkId=159000) a [ClickOnce a kód Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
@@ -189,7 +177,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |----------------|-----------------|  
 |**Tato aplikace by měla vyhledat aktualizace**|Určuje, zda [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] by kontrola aktualizací aplikace. Pokud není toto políčko zaškrtnuto, aplikace nebude aktualizace vyhledávat pokud ho aktualizujete programově pomocí rozhraní API v <xref:System.Deployment.Application> oboru názvů.|  
 |**Vyberte, pokud aplikace by měla vyhledat aktualizace**|Nabízí dvě možnosti pro aktualizaci kontroly:<br /><br /> -   **Před spuštěním aplikace**. Kontrola aktualizace se provádí před provádění aplikací.<br />-   **Po spuštění aplikace**. Kontrola aktualizace začíná, jakmile byla inicializována hlavní formulář aplikace a bude spuštěna při příštím spuštění aplikace.|  
-|**Četnost kontroly aktualizací**|Určuje, jak často [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] vyhledávat aktualizace:<br /><br /> -   **Zkontrolujte pokaždé, když je aplikace spuštěná**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]pokaždé, když uživatel otevře aplikaci, provede kontrolu aktualizace.<br />-   **Zkontrolujte všechny**: vyberte časový interval a jednotka (hodiny, dny nebo týdny), které musí uplynout před vyhledáním aktualizace.|  
+|**Četnost kontroly aktualizací**|Určuje, jak často [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] vyhledávat aktualizace:<br /><br /> -   **Zkontrolujte pokaždé, když je aplikace spuštěná**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] pokaždé, když uživatel otevře aplikaci, provede kontrolu aktualizace.<br />-   **Zkontrolujte všechny**: vyberte časový interval a jednotka (hodiny, dny nebo týdny), které musí uplynout před vyhledáním aktualizace.|  
 |**Zadejte minimální požadovaná verze pro tuto aplikaci**|Volitelné. Určuje, že konkrétní verzi vaší aplikace je požadovanou instalaci, neumožňuje uživatelům z předchozích verzí.|  
 |**Verze**|Požadováno pokud **zadejte minimální požadovaná verze pro tuto aplikaci** je zaškrtnuté políčko. Zadané číslo verze musí být ve tvaru *N.N.N.N*. Pouze první hlavní číslo sestavení je požadovaná. Například pro verzi 1.0 aplikace, by mělo zahrnovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
   

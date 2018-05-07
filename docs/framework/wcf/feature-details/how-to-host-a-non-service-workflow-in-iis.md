@@ -1,24 +1,12 @@
 ---
-title: "Postupy: hostování bez služby pracovního postupu ve službě IIS"
-ms.custom: 
+title: 'Postupy: hostování bez služby pracovního postupu ve službě IIS'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f362562c-767d-401b-8257-916616568fd4
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4b7ffdc00a7723fd6b514fbb5577c48da15d719c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 70fd6aca94f2addd7ee568e897171ae1da86db67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-host-a-non-service-workflow-in-iis"></a>Postupy: hostování bez služby pracovního postupu ve službě IIS
 Pracovní postupy, které nejsou služby pracovního postupu může být hostovaný v rámci služby IIS / byla. To je užitečné, pokud budete potřebovat k hostování pracovní postup zapsaných správcem někdo jiný. Například pokud opětovným hostováním návrháře pracovních postupů a povolit uživatelům vytvářet své vlastní pracovní postupy.  Hostování pracovních bez služby ve službě IIS poskytuje podporu pro funkce, například recyklace, nečinnosti ukončení procesu, monitorování stavu procesu a aktivaci na základě zpráv. Pracovní postup služby hostované ve službě IIS obsahovat <xref:System.ServiceModel.Activities.Receive> aktivity a jsou aktivovat, pokud služba IIS přijme zprávu. Jiné než služba pracovní postupy neobsahují aktivity zasílání zpráv a ve výchozím nastavení nelze aktivovat odesláním zprávy.  Musí být odvozen od třídy <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> a definování kontraktu služby, který obsahuje operace vytvoření instance pracovního postupu. Toto téma vás provede procesem vytvoření jednoduchého pracovního postupu, definování kontraktu služby klienta můžete použít k aktivaci pracovního postupu a odvození třídy z <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> , který používá kontrakt služby tak, aby naslouchala pro vytváření žádostí o pracovní postup.  
@@ -332,7 +320,7 @@ Pracovní postupy, které nejsou služby pracovního postupu může být hostova
   
 8.  Zkopírujte soubor web.config do adresáře aplikace služby IIS.  
   
-9. Vyzkoušejte, jestli vytvoření koncového bodu funguje tak, že spuštění aplikace Internet Explorer a procházení k http://localhost/MyCreationEndpoint/Workflow1.xamlx. Internet Explorer musí zobrazí následující obrazovka:  
+9. Test ke zjištění, zda vytvoření koncového bodu pracuje kliknutím spuštění aplikace Internet Explorer a přejděte na http://localhost/MyCreationEndpoint/Workflow1.xamlx. Internet Explorer musí zobrazí následující obrazovka:  
   
      ![Testování služby](../../../../docs/framework/wcf/feature-details/media/testservice.gif "TestService")  
   

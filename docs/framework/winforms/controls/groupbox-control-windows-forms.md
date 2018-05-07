@@ -1,28 +1,16 @@
 ---
-title: "GroupBox – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: GroupBox – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], grouping
 - GroupBox control [Windows Forms]
 - grouping controls [Windows Forms]
 ms.assetid: ee7fb3ed-2fae-4df3-bdeb-15d42e5d7d75
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d2676184512ddd2f7e1e38f5c9783cdb45c0272
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ca302dc78b177241065cde60d1b887ad0d9813a3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="groupbox-control-windows-forms"></a>GroupBox – ovládací prvek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky používané k zajištění osobní seskupení pro další ovládací prvky. Obvykle použijete, skupinové rámečky dále dělit formuláře podle funkce. Například můžete mít formulář objednávky, který určuje poštovní možnosti, například které přes noc poskytovatel používat. Seskupování všechny možnosti v skupinový rámeček umožňuje uživateli logické vizuální upozornění. <xref:System.Windows.Forms.GroupBox> Ovládací prvek je podobný <xref:System.Windows.Forms.Panel> řízení; však pouze <xref:System.Windows.Forms.GroupBox> zobrazí popisek a jenom <xref:System.Windows.Forms.Panel> ovládací prvek může mít posuvníky.  

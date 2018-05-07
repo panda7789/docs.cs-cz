@@ -1,13 +1,6 @@
 ---
-title: "LinkLabel – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: LinkLabel – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Label control [Windows Forms]
 - links [Windows Forms], adding to Windows Forms
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Web page link control
 - LinkLabel control [Windows Forms]
 ms.assetid: af1fd04e-e126-4fd7-9a4e-13b49010c5ca
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5231813096413b66272b87aabd9adf0643c6e26d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea472636402b650b6e8d0352bd151d3bcf9e3bfd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linklabel-control-windows-forms"></a>LinkLabel – ovládací prvek (Windows Forms)
 Windows Forms `LinkLabel` řízení umožňuje přidat webových odkazů do formulářové aplikace Windows. Můžete použít `LinkLabel` řízení pro všechno, který můžete použít <xref:System.Windows.Forms.Label> řízení pro; můžete také nastavit část textu jako odkaz na objekt nebo webovou stránku.  
@@ -43,7 +31,7 @@ Windows Forms `LinkLabel` řízení umožňuje přidat webových odkazů do form
  Ukazuje, jak se zobrazovat na webové stránce v prohlížeči výchozí, když uživatel klikne Windows Forms `LinkLabel` ovládacího prvku.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.LinkLabel>– Třída  
+ <xref:System.Windows.Forms.LinkLabel> – Třída  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

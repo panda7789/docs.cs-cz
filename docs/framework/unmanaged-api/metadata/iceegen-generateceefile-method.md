@@ -1,14 +1,6 @@
 ---
-title: "ICeeGen::GenerateCeeFile – metoda"
-ms.custom: 
+title: ICeeGen::GenerateCeeFile – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICeeGen.GenerateCeeFile
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: cca4a9a1-731b-4411-9e04-00cffe7a56d8
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 10b579a3d0ff8cbe02a3b47231114521486d8e2b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d82952e34195ee813d4cd0217c904a5253859f99
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iceegengenerateceefile-method"></a>ICeeGen::GenerateCeeFile – metoda
 Generuje soubor základu kódu, který obsahuje kód základní momentálně načtených do této [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.  
@@ -47,7 +35,7 @@ HRESULT GenerateCeeFile ();
 ```  
   
 #### <a name="parameters"></a>Parametry  
- `GenerateCeeFile`nepřijímá žádné parametry.  
+ `GenerateCeeFile` nepřijímá žádné parametry.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -56,7 +44,7 @@ HRESULT GenerateCeeFile ();
   
  **Knihovna:** používat jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

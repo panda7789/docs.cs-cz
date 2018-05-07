@@ -1,45 +1,33 @@
 ---
 title: Zabezpečení WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, programming
 - security [WCF]
 - Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-caps.latest.revision: 21
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6b93bfff2cd97e10d9c0dba4373839337f36aacb
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: fb48ae39d269f21a7120ecf143dc4c4680efe39d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-security"></a>Zabezpečení WCF
-Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce zabezpečení a jejich použití ke zabezpečených zpráv.  
+Témata v této části popisují funkce zabezpečení Windows Communication Foundation (WCF) a jejich použití ke zabezpečených zpráv.  
   
  Další informace o systému Windows Server AppFabric a zabezpečení najdete v tématu [Model zabezpečení pro Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- Popisuje funkce zabezpečení v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Popisuje funkce zabezpečení ve WCF.  
   
  [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
- Popisuje základní terminologie a koncepty používané v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení.  
+ Popisuje základní terminologie a koncepty používané v zabezpečení WCF.  
   
  [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
- Popisuje scénáře a topologie, můžete nakonfigurovat s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Popisuje scénáře a topologie, které můžete konfigurovat s použitím technologie WCF.  
   
  [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
  Poskytuje přehled o chování WCF, které mají vliv na zabezpečení, jako je například nastavení přihlašovacích údajů.  
@@ -48,7 +36,7 @@ Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo
  Zobrazení orientované zabezpečení vazby, včetně témat, která ukazují, jak vytvořit vlastní zabezpečení vazby.  
   
  [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- Popisuje, jak zabezpečit zprávy pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce zabezpečení.  
+ Popisuje, jak zabezpečit zprávy pomocí funkce zabezpečení WCF.  
   
  [Ověřování](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
  Představuje běžné úlohy ověřování.  
@@ -60,13 +48,13 @@ Témata v této části popisují [!INCLUDE[indigo1](../../../../includes/indigo
  Obsahuje základní informace o federaci a postup vytvoření klientů, které komunikují se servery pro federované.  
   
  [Částečná důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust.md)  
- Popisuje, jak spustit částečně důvěryhodné scénáře a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] omezení při spuštění částečně důvěryhodného.  
+ Popisuje postup při spuštění částečně důvěryhodného spuštění částečně důvěryhodného scénářích a omezeních WCF.  
   
  [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
  Popisuje, jak auditování událostí zabezpečení.  
   
  [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
- Pokyny pro vytvoření zabezpečeného [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace.  
+ Pokyny pro vytváření zabezpečených aplikací WCF.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel>  

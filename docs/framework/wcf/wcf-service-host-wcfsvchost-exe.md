@@ -1,29 +1,15 @@
 ---
 title: Hostitel služby WCF (WcfSvcHost.exe)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-caps.latest.revision: 27
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1da8d7a08e7887e8ba3fd50a8f809e2ff551a7fd
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: c000ad3ba53f103cb1a24a9a7fbc71049ba707c7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Hostitel služby (WcfSvcHost.exe) umožňuje spuštění ladicího programu sady Visual Studio (F5) automaticky hostování a testovat službu, kterou jste implementovali. Potom můžete otestovat pomocí služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) nebo vlastního klienta najít a opravit všechny potenciální chyby.  
+Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožňuje spuštění ladicího programu sady Visual Studio (F5) automaticky hostování a testovat službu, kterou jste implementovali. Potom můžete otestovat pomocí služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe) nebo vlastního klienta najít a opravit všechny potenciální chyby.  
   
 ## <a name="wcf-service-host"></a>Hostitel služby WCF  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Hostitel služby zobrazí služeb v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projekt služby, načte konfiguraci projektu a pro každou službu, kterou najde hostitele, který se vytvoří instance. Nástroj je integrován do sady Visual Studio prostřednictvím [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Šablona služby a je volána, když začnete spusťte ladění svého projektu.  

@@ -1,27 +1,15 @@
 ---
-title: "Důvěryhodný subsystém"
-ms.custom: 
+title: Důvěryhodný subsystém
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ca07db06d4bff9660760c5abf8c9bc2f1f9f2944
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 59c44609017ab18a176624b7ef6d409005151c3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trusted-subsystem"></a>Důvěryhodný subsystém
 Klient přistupuje k jedné nebo více webových služeb, které jsou rozmístěny v síti. Webové služby jsou navržené tak, aby přístup k další prostředky (například databáze nebo jiných webových služeb) je zapouzdřené v obchodní logice webovou službu. Tyto prostředky musí být chráněny před neoprávněným přístupem. Následující obrázek znázorňuje proces důvěryhodný subsystém.  
@@ -43,13 +31,13 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou rozmístě
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení.|Zpráva|  
-|Interoperabilita|[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]pouze.|  
+|Interoperabilita|Windows Communication Foundation (WCF) jenom.|  
 |Ověřování (služba)|Služby tokenů zabezpečení ověřování a autorizaci klientů.|  
 |Ověřování (klient)|Důvěryhodný subsystém ověřuje klienta a prostředek ověřuje důvěryhodný subsystém služby.|  
 |Integrita|Ano|  
 |Důvěrnost|Ano|  
 |Přenos|HTTP mezi klientem a službou důvěryhodný subsystém.<br /><br /> NET. TCP mezi službou důvěryhodný subsystém a prostředků (služba back-end).|  
-|Vazba|<xref:System.ServiceModel.WSHttpBinding>a <xref:System.ServiceModel.NetTcpBinding> [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
+|Vazba|<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>Prostředek (služba Back-End)  
   

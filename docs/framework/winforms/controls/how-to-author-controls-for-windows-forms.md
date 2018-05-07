@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Vytváření ovládacích prvků pro Windows Forms"
-ms.custom: 
+title: 'Postupy: Vytváření ovládacích prvků pro Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], creating
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 125e3f1c32c5186cce0b28aa3f8d1eff1ef95a09
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0793193060bb3a21753b98d4772b53d347f567bb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživatelem a programu. Ovládací prvek můžete poskytnout nebo zpracování dat, přijímají vstup uživatele, reakce na události nebo proveďte libovolný počet dalších funkcí, které připojit aplikaci a uživatele. Protože ovládací prvek je v podstatě komponenta s grafickým rozhraním, může posloužit všechny funkce, která neobsahuje komponentu, a jejich interakci s uživatelem. Vytvoření ovládacích prvků k obsluze konkrétní účely a vytváření ovládacích prvků je jenom další programovacích úloh. Následující kroky si uvědomit, představují Přehled ovládacího prvku procesu vytváření. Odkazy poskytují další informace o jednotlivých kroků.  

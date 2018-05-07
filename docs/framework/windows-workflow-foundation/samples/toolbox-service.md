@@ -1,23 +1,12 @@
 ---
-title: "Sada nástrojů služby"
-ms.custom: 
+title: Sada nástrojů služby
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 742212d0-445e-41ed-9739-9ee848ce7f1b
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b800f2d250a918ea2b6c49b121c4ca9040b20631
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b3ea56d28d202bd8356fea1783b6675a708631d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolbox-service"></a>Sada nástrojů služby
 Tento příklad ukazuje, jak aktualizovat [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] sada nástrojů aktivit na základě kontextu pracovního postupu. Ukázka obsahuje pracovní postup, který změní obsah sady nástrojů založené na tom, jestli je vybrané vlastní aktivity.  
@@ -25,7 +14,7 @@ Tento příklad ukazuje, jak aktualizovat [!INCLUDE[vs2010](../../../../includes
 ## <a name="discussion"></a>Diskusní  
  Při vytváření obsahu pracovního postupu, chcete zákazníkům obecně jejich nástrojů jako závislé na kontextu. Uživatel například může chtít zajistit, že sady nástrojů ukazuje několik další aktivity, při přidání konkrétní aktivitu do pracovního postupu. Pokud aktivity budou odebrány z pracovního postupu, by měl sady nástrojů reagují odpovídajícím způsobem v závislosti na požadavcích domény.  
   
- V Návrháři znovu hostovaných pracovních postupů řídit ovládacího prvku sady nástrojů a zajistit, aby na základě změn modelu v pracovním postupu, hostitele spustí potřebné změny v ovládacím prvku panel nástrojů. Ale v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], sady nástrojů není řízené uživateli, a proto je potřeba rozhraní upravit její obsah. `IActivityToolboxService`je tohoto rozhraní.  
+ V Návrháři znovu hostovaných pracovních postupů řídit ovládacího prvku sady nástrojů a zajistit, aby na základě změn modelu v pracovním postupu, hostitele spustí potřebné změny v ovládacím prvku panel nástrojů. Ale v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], sady nástrojů není řízené uživateli, a proto je potřeba rozhraní upravit její obsah. `IActivityToolboxService` je tohoto rozhraní.  
   
  Rozhraní API poskytuje následující čtyři metody.  
   
@@ -62,6 +51,6 @@ public interface IActivityToolboxService
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\IActivityToolboxService`

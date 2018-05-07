@@ -1,34 +1,20 @@
 ---
 title: Konfigurace protokolování zpráv
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-caps.latest.revision: 40
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6e2d45e7b8769ee525835ad3dc50262a03a5a7b6
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 4c75b0f27e82b8cfe9327a9911d27d4e435ddf81
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro různé scénáře.  
   
 ## <a name="enabling-message-logging"></a>Povolení protokolování zpráv  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ve výchozím nastavení neprotokoluje zprávy. K aktivaci protokolování zpráv, je nutné přidat naslouchací k `System.ServiceModel.MessageLogging` zdroj trasování a nastavit atributy `<messagelogging>` element v konfiguračním souboru.  
+ Windows Communication Foundation (WCF) není protokolování zpráv ve výchozím nastavení. K aktivaci protokolování zpráv, je nutné přidat naslouchací k `System.ServiceModel.MessageLogging` zdroj trasování a nastavit atributy `<messagelogging>` element v konfiguračním souboru.  
   
  Následující příklad ukazuje, jak povolit protokolování a nastavte další možnosti.  
   

@@ -1,9 +1,6 @@
 ---
-title: "Připojení – třída"
+title: Připojení – třída
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology: 
-ms.topic: reference
 topic_type:
 - apiref
 api_name:
@@ -15,14 +12,11 @@ api_type:
 ms.assetid: 6f0b8902-f31c-4ab9-a8c9-de43228995ec
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 02303a584aca738718d3e69a0071b40690fa055a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7423136ab8e04c076e3e5e33efdf010f36d02242
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="connection-class"></a>Připojení – třída
 
@@ -41,7 +35,7 @@ internal class Connection : PooledStream
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:**<xref:System.Net>
+**Namespace:** <xref:System.Net>
 
 **Sestavení:** systému (v System.dll)
 

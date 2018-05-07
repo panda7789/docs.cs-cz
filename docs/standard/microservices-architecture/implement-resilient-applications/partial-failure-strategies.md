@@ -1,21 +1,14 @@
 ---
-title: "Strategie pro zpracování částečné selhání"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Strategie pro zpracování částečné selhání"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Strategie pro zpracování částečné selhání
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Strategie pro zpracování částečné selhání
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0b5fdb03e4b0d0c2d4e8aa8a897fd46d56707f11
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: f1b2b59af96bf28035eeb32eb15eaa4105677cf4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strategies-for-handling-partial-failure"></a>Strategie pro zpracování částečné selhání
 
@@ -35,16 +28,16 @@ Strategie pro práci s částečné selhání patří.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Odolnost proti chybám vzory**
+-   **Vzory odolnost proti chybám**
     [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
 
 -   **Přidání odolnost a optimalizace výkonu**
     [*https://msdn.microsoft.com/library/jj591574.aspx*](https://msdn.microsoft.com/library/jj591574.aspx)
 
--   **Bulkhead.** Úložiště GitHub. Implementace zásadám Polly. \
+-   **Přepážkovou.** Úložiště GitHub. Implementace zásadám Polly. \
     [*https://github.com/App-vNext/Polly/wiki/Bulkhead*](https://github.com/App-vNext/Polly/wiki/Bulkhead)
 
--   **Návrh odolný aplikací pro Azure**
+-   **Návrh odolný aplikací pro Azure.**
     [*https://docs.microsoft.com/azure/architecture/resiliency/*](https://docs.microsoft.com/azure/architecture/resiliency/)
 
 -   **Přechodná chyba zpracování**

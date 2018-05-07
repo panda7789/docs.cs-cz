@@ -1,24 +1,14 @@
 ---
-title: "Deklarace identity na základě autorizaci s použitím WIF"
-ms.custom: 
+title: Deklarace identity na základě autorizaci s použitím WIF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
-caps.latest.revision: "6"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: bc6a9d828f1ab666ddda687931785f3853b74374
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d2972ccef6829a2b7a052ba30258086443bd833
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="claims-based-authorization-using-wif"></a>Deklarace identity na základě autorizaci s použitím WIF
 V aplikaci předávající strany autorizace určuje, k jakým prostředkům má ověřená identita povolen přístup a jaké operace s těmito prostředky smí provádět. Nesprávná nebo slabá autorizace může vést k úniku informací nebo neoprávněným úpravám dat. Toto téma popisuje, jak webové aplikace a služby technologie ASP.NET pracující s deklaracemi mohou implementovat autorizaci s použitím technologie Windows Identity Foundation (WIF) a služby tokenů zabezpečení (STS), jako je například Služba řízení přístupu Microsoft Azure (ACS).  
@@ -52,7 +42,7 @@ V aplikaci předávající strany autorizace určuje, k jakým prostředkům m
   
 -   **Při vystavování tokenů**. Po ověření uživatele roli deklaraci identity vystavit poskytovatele identit služby tokenů zabezpečení nebo poskytovatel federace například Windows Azure přístup k řízení služby (ACS).  
   
--   **Transformace libovolný deklarace identity do typu deklarace role pomocí ClaimsAuthenticationManager**. ClaimsAuthenticationManager je komponenta, která je dodávána jako součást technologie WIF. Umožňuje zachytávat žádosti při spuštění aplikace, kontrolovat tokeny a transformovat je pomocí přidání, změny nebo odebrání deklarací. Další informace o tom, jak používat ClaimsAuthenticationManager pro transformaci deklarací identity najdete v tématu [postupy: implementace Role na základě řízení přístupu (RBAC) v deklaracích vědět ASP.NET aplikace pomocí WIF a ACS](http://go.microsoft.com/fwlink/?LinkID=247445) (http://go.microsoft.com/ fwlink /? LinkID = 247444).  
+-   **Transformace libovolný deklarace identity do typu deklarace role pomocí ClaimsAuthenticationManager**. ClaimsAuthenticationManager je komponenta, která je dodávána jako součást technologie WIF. Umožňuje zachytávat žádosti při spuštění aplikace, kontrolovat tokeny a transformovat je pomocí přidání, změny nebo odebrání deklarací. Další informace o tom, jak používat ClaimsAuthenticationManager pro transformaci deklarací identity najdete v tématu [postupy: implementace Role na základě řízení přístupu (RBAC) v deklaracích vědět ASP.NET aplikace pomocí WIF a ACS](http://go.microsoft.com/fwlink/?LinkID=247445) (http://go.microsoft.com/fwlink/?LinkID=247444).  
   
 -   **Mapování libovolné deklarace typu role použít konfigurační sekci samlSecurityTokenRequirement**– deklarativní přístup, kde se provádí transformaci deklarací identity pomocí pouze konfiguraci a žádné kódování se vyžaduje.  
   
@@ -70,4 +60,4 @@ V aplikaci předávající strany autorizace určuje, k jakým prostředkům m
   
 5.  Přístup je udělen, pokud je výsledkem hodnota true, a odepřen, pokud je výsledkem hodnota false. Pravidlo například může být, že věk uživatele je minimálně 21 let a žije ve státě Washington.  
   
- <xref:System.Security.Claims.ClaimsAuthorizationManager>je užitečné pro externího rozhodnutí logiku pro ověření na základě deklarace identity ve svých aplikacích. ClaimsAuthenticationManager je komponenta technologie WIF, která je dodávána jako součást technologie .NET 4.5. Komponenta ClaimsAuthorizationManager umožňuje zachytávat příchozí žádosti a implementovat jakoukoli logiku, která rozhoduje o autorizaci na základě obdržených deklarací. To je důležité, pokud je potřeba logiku autorizace změnit. V takovém případě používání komponenty ClaimsAuthorizationManager neovlivní integritu aplikace, a tím snižuje pravděpodobnost chyby v aplikaci v důsledku této změny. Další informace o tom, jak používat ClaimsAuthorizationManager implementovat řízení přístupu založené na deklaracích identity najdete v tématu [postupy: implementace autorizaci deklarací identity v deklaracích vědět ASP.NET aplikace pomocí WIF a ACS](http://go.microsoft.com/fwlink/?LinkID=247446).
+ <xref:System.Security.Claims.ClaimsAuthorizationManager> je užitečné pro externího rozhodnutí logiku pro ověření na základě deklarace identity ve svých aplikacích. ClaimsAuthenticationManager je komponenta technologie WIF, která je dodávána jako součást technologie .NET 4.5. Komponenta ClaimsAuthorizationManager umožňuje zachytávat příchozí žádosti a implementovat jakoukoli logiku, která rozhoduje o autorizaci na základě obdržených deklarací. To je důležité, pokud je potřeba logiku autorizace změnit. V takovém případě používání komponenty ClaimsAuthorizationManager neovlivní integritu aplikace, a tím snižuje pravděpodobnost chyby v aplikaci v důsledku této změny. Další informace o tom, jak používat ClaimsAuthorizationManager implementovat řízení přístupu založené na deklaracích identity najdete v tématu [postupy: implementace autorizaci deklarací identity v deklaracích vědět ASP.NET aplikace pomocí WIF a ACS](http://go.microsoft.com/fwlink/?LinkID=247446).

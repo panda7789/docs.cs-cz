@@ -1,22 +1,15 @@
 ---
-title: "Delegáti s pojmenované vs. Anonymní metody (Průvodce programováním v C#)"
+title: Delegáti s pojmenované vs. Anonymní metody (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d242f9ab1ecb1963f674d6094f05d78b77fbee9c
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 93e140859e44aab860577feede40df6eab4c8e00
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Delegáti s pojmenované vs. Anonymní metody (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) může být přidružen metodu s názvem. Pokud instanci delegáta můžete vytvořit pomocí metodu s názvem, metodu předávána jako parametr, například:  

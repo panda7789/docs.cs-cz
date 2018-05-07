@@ -1,23 +1,12 @@
 ---
-title: "Interval obnovování hostitele zámku"
-ms.custom: 
+title: Interval obnovování hostitele zámku
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f8ba94fc-27e0-4d8e-8f85-50a6d2a3cd43
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b7447d11e93cf33e69bc52d2cdec239c1be55bcd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 91d83259c766120f7e3ffc9e49f1cf1b18c32a18
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="host-lock-renewal-period"></a>Interval obnovování hostitele zámku
 **Interval obnovování hostitele zámku** vlastnost úložiště Instance pracovního postupu SQL umožňuje určit časové období, ve kterém hostitele obnovuje jeho zámku na instanci pracovního postupu. Zámek zůstane platný pro interval obnovování hostitele zámku + 30 sekund. Hostitel selže-li obnovit zámek (jinými slovy, prodloužit zapůjčení) během tohoto období vyprší platnost zámek a poskytovateli trvalost odemkne instance. Hodnota této vlastnosti je typu časový interval ve formátu hh: mm". Minimální povolená hodnota je "00: 00:01" (1 sekunda). Výchozí hodnota této vlastnosti je "00: 00:30" (30 sekund).  

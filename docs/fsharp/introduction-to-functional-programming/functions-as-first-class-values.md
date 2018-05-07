@@ -1,17 +1,12 @@
 ---
 title: Funkce jako hodnoty první třídy (F#)
 description: 'Zjistěte, jak funkce zvýší na první třídy stav v programovací jazyk F #.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 7db99aa23211ce4a7af5cdfcc809017fafb1d5a1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: cccff5fcf9de150da26422f80cae032ddf21014c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="functions-as-first-class-values"></a>Funkce jako hodnoty první třídy
 

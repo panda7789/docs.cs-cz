@@ -4,17 +4,13 @@ description: 'Další koncepty testů jednotek pro F # v .NET Core prostřednict
 author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.topic: conceptual
 dev_langs:
 - fsharp
-ms.prod: dotnet-core
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 11fab52cb426b0dbb173c9c6e2bd7b5766501964
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1989c82680cd0824780fa3c127318dc3b656476e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování knihovny F # v .NET Core pomocí testovacích dotnet a xUnit částí
 

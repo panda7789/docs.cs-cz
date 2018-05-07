@@ -1,10 +1,6 @@
 ---
 title: throw (Referenční dokumentace jazyka C#)
 ms.date: 03/02/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - throw
 - throw_CSharpKeyword
@@ -13,14 +9,13 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 088a8e70c5aaaae6f833f12cad1052c30fbb6bfa
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 319a4df6f52768cf256c0ad92ca65607b99ce32c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 Signály výskytem výjimku při spuštění programu.  

@@ -1,41 +1,27 @@
 ---
 title: 'Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2b728e6283a2f038b7e5ef4c535da41f4eb8ebef
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 048408adf8678c243a225a233cb1173c9b7f869f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF
-Toto téma popisuje postupy k migraci základní služby prvku ASP.NET AJAX ekvivalentní podporou AJAXU [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Ukazuje, jak vytvořit funkčně srovnatelný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] verzi služby prvku ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe, nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby lze použít k nahrazení služba ASP.NET AJAX.  
+Toto téma popisuje postupy migrace základní služby prvku ASP.NET AJAX do ekvivalentní služby technologie AJAX Windows Communication Foundation (WCF). Ukazuje, jak vytvořit funkčně srovnatelný WCF verzi služby prvku ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe, nebo službu WCF lze nahradit služba ASP.NET AJAX.  
   
- Migrace na existující službu prvku ASP.NET AJAX [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba AJAX nabízí následující výhody:  
+ Migrace existujících prvku ASP.NET AJAX služby služby WCF AJAX nabízí následující výhody:  
   
 -   Vaše služba AJAX můžou zpřístupnit jako SOAP služby s minimálními další konfigurace.  
   
--   Můžete využívat výhod [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce, jako je trasování a tak dále.  
+-   Můžete využívat funkce WCF například trasování a tak dále.  
   
  V následujících postupech se předpokládá, že používáte [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
  Kód, který vyplývá z postupů uvedených v tomto tématu najdete v příkladu postupy.  
   
- Další informace o vystavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přes koncový bod povolený AJAX, podívejte [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.  
+ Další informace o vystavení pomocí jazyka AJAX koncový bod služby WCF najdete v tématu [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.  
   
 ### <a name="to-create-and-test-the-aspnet-web-service-application"></a>Vytvoření a testování aplikace ASP.NET – webové služby  
   
@@ -62,7 +48,7 @@ Toto téma popisuje postupy k migraci základní služby prvku ASP.NET AJAX ekvi
   
 9. Tato odezva potvrdí, že teď máte funkční služba ASP.NET AJAX a, zejména v případě, že služba nyní vystavila koncový bod v Service1.asmx/HelloWorld, která reaguje na HTTP POST požadavky a vrátí XML.  
   
-     Teď jste se převést tuto službu používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba AJAX.  
+     Nyní jste připraveni k převedení této služby pomocí služby WCF AJAX.  
   
 ### <a name="to-create-an-equivalent-wcf-ajax-service-application"></a>Chcete-li vytvořit ekvivalentní aplikace služby WCF AJAX  
   
@@ -190,11 +176,11 @@ namespace ASPHello
   
  <xref:System.Xml.XmlDocument> Typ není podporován <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> protože není serializovatelný pomocí <xref:System.Xml.Serialization.XmlSerializer>. Můžete použít buď <xref:System.Xml.Linq.XDocument> zadejte nebo serializovat <xref:System.Xml.XmlDocument.DocumentElement%2A> místo.  
   
- Pokud ASMX webové služby se provádí upgrade a migrace souběžného k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, vyhněte se dva typy mapování se stejným názvem v klientovi. Tím dojde k výjimce v serializátorů Pokud stejný typ se používá v <xref:System.Web.Services.WebMethodAttribute> a <xref:System.ServiceModel.ServiceContractAttribute>:  
+ Pokud ASMX webových služeb jsou probíhá upgrade a migrace vedle sebe do služby WCF, vyhněte se dva typy mapování se stejným názvem v klientovi. Tím dojde k výjimce v serializátorů Pokud stejný typ se používá v <xref:System.Web.Services.WebMethodAttribute> a <xref:System.ServiceModel.ServiceContractAttribute>:  
   
--   Pokud [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nejprve přidání služby, vyvolání metody webové služby ASMX způsobí, že výjimka v <xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] definici stylu pořadí v proxy serveru má přednost před.  
+-   Pokud nejprve přidáte služby WCF, vyvolání metody webové služby ASMX způsobí, že výjimka v <xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> definici stylu WCF v pořadí proxy serveru má přednost před.  
   
--   Pokud nejprve přidáte ASMX webové služby, volání metody na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba způsobuje výjimka v <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> definici stylu webové služby v pořadí proxy serveru má přednost před.  
+-   Pokud nejprve přidáte ASMX webové služby, volání metody na službu WCF způsobí, že výjimka v <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> definici stylu webové služby v pořadí proxy serveru má přednost před.  
   
  Existují významné rozdíly v chování mezi <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a prvku ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>. Například <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> představuje slovník jako pole dvojic klíč/hodnota, zatímco prvku ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> představuje slovník jako skutečných objektů JSON. Tak, aby následující slovníku v prvku ASP.NET AJAX.  
   

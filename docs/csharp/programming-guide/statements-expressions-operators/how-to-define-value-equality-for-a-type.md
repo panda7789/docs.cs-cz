@@ -1,9 +1,6 @@
 ---
-title: "Postupy: Definování rovnosti hodnoty pro typ (Průvodce programováním v C#)"
+title: 'Postupy: Definování rovnosti hodnoty pro typ (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - overriding Equals method [C#]
 - object equivalence [C#]
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-caps.latest.revision: "15"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 933be6aa27b5720a9a9d8d7b45e1eed73f9cd60b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c0105371bd39c3999aafca867a7bb7a59fd367c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: Definování rovnosti hodnoty pro typ (Průvodce programováním v C#)
 Když definujete třídě nebo struktuře, je rozhodnout, zda má smysl k vytvoření vlastní definice rovnosti hodnoty (nebo ekvivalenční) pro typ. Obvykle byste implementovat rovnosti hodnoty, když se očekává, že objekty typu přidat do kolekce nějaká, nebo když je jejich primární účel k uložení sadu polí a vlastností. Vaše definice rovnosti hodnoty můžete založit na porovnání všechna pole a vlastnosti v typu, nebo může základní definice na podmnožinu. Ale v obou případech a v třídy a struktury vaší implementace postupujte podle pět záruky ekvivalenční:  
@@ -69,4 +63,4 @@ Když definujete třídě nebo struktuře, je rozhodnout, zda má smysl k vytvo�
   
 ## <a name="see-also"></a>Viz také  
  [Porovnání rovnosti](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

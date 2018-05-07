@@ -1,20 +1,13 @@
 ---
-title: "C# výrazy - přehled používání jazyka C#"
-description: "výrazy, operandy a operátory jsou stavební bloky jazyka C#"
-keywords: "Rozhraní .NET, csharp, výrazu, operátoru, operand"
-author: BillWagner
-ms.author: wiwagn
+title: C# výrazy - přehled používání jazyka C#
+description: výrazy, operandy a operátory jsou stavební bloky jazyka C#
 ms.date: 11/06/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.openlocfilehash: 7b7e321e6554818924a8a2b68afa4c787807bcba
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 8fa1c5d0464644b26eb457bca8ecaf007c288f42
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expressions"></a>Výrazy
 
@@ -43,10 +36,10 @@ Následující možnost shrne operátory jazyka C# na, výpis kategorií operát
     - `new T(...){...}`: Vytvoření objektu pomocí inicializátoru
     - `new {...}`: Inicializátor anonymní objekt
     - `new T[...]`: Při vytváření pole
-    - `typeof(T)`: Získat <xref:System.Type> objekt pro`T`
+    - `typeof(T)`: Získat <xref:System.Type> objekt pro `T`
     - `checked(x)`: Výraz v kontextu zaškrtnuté vyhodnocení
     - `unchecked(x)`: Vyhodnocení výrazu v kontextu nezaškrtnuto
-    - `default(T)`: Výchozí hodnota typu získat`T`
+    - `default(T)`: Výchozí hodnota typu získat `T`
     - `delegate {...}`: Anonymní funkce (anonymní metoda)
 * Unární
     - `+x`: Identity
@@ -55,7 +48,7 @@ Následující možnost shrne operátory jazyka C# na, výpis kategorií operát
     - `~x`: Bitovou negaci
     - `++x`: Přírůstek před
     - `--x`: Snížení před
-    - `(T)x`: Explicitně převést `x` na typ`T`
+    - `(T)x`: Explicitně převést `x` na typ `T`
     - `await x`: Asynchronně počkejte `x` k dokončení
 * Multiplikativní
     - `x * y`: Násobení
@@ -73,7 +66,7 @@ Následující možnost shrne operátory jazyka C# na, výpis kategorií operát
     - `x <= y`: Menší než nebo rovno
     - `x >= y`: Větší než nebo rovno
     - `x is T`: Návratový `true` Pokud `x` je `T`, `false` jinak
-    - `x as T`: Návratový `x` zadán jako `T`, nebo `null` Pokud `x` není`T`
+    - `x as T`: Návratový `x` zadán jako `T`, nebo `null` Pokud `x` není `T`
 * Rovnost
     - `x == y`: Rovná
     - `x != y`: Není rovno
@@ -84,13 +77,13 @@ Následující možnost shrne operátory jazyka C# na, výpis kategorií operát
 * Logický operátor OR
     - `x | y`: Celé číslo bitové nebo logická hodnota logické nebo
 * Podmiňovací operátor AND
-    - `x && y`: Vyhodnotí `y` pouze v případě `x` není`false`
+    - `x && y`: Vyhodnotí `y` pouze v případě `x` není `false`
 * Podmiňovací operátor OR
-    - `x || y`: Vyhodnotí `y` pouze v případě `x` není`true`
+    - `x || y`: Vyhodnotí `y` pouze v případě `x` není `true`
 * Nulové sloučení
     - `x ?? y`: Vyhodnocen `y` Pokud `x` má hodnotu null, k `x` jinak
 * Podmiňovací operátor
-    - `x ? y : z`: Vyhodnotí `y` Pokud `x` je `true`, `z` Pokud `x` je`false`
+    - `x ? y : z`: Vyhodnotí `y` Pokud `x` je `true`, `z` Pokud `x` je `false`
 * Přiřazení nebo anonymní funkce
     - `x = y`: Přiřazení
     - `x op= y`: Složené přiřazení; jsou podporované operátory

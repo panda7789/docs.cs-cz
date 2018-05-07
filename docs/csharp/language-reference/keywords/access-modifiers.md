@@ -1,21 +1,14 @@
 ---
 title: Modifikátory přístupu (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-caps.latest.revision: 15
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d63cf724a2364059e5f3327254a9ec95f7493e5e
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 9629b1727fc210025256724db8db82b13b63b7db
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="access-modifiers-c-reference"></a>Modifikátory přístupu (Referenční dokumentace jazyka C#)
 Modifikátory přístupu jsou klíčová slova slouží k zadání deklarované usnadnění člena nebo typu. Tato část představuje modifikátory čtyři přístupu:  

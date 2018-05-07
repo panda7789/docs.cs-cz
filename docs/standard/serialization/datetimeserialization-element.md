@@ -1,29 +1,16 @@
 ---
-title: "&lt;dateTimeSerialization&gt; – Element"
-ms.custom: 
+title: '&lt;dateTimeSerialization&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dateTimeSerialization element
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 492a3652ca7cd304b953006bb1b18a1edb3dcf51
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5e48753b5e8383a1ad946a29636e30ef07ceee9c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltdatetimeserializationgt-element"></a>&lt;dateTimeSerialization&gt; – Element
 Určuje režim serializace <xref:System.DateTime> objekty.  
@@ -69,4 +56,4 @@ Určuje režim serializace <xref:System.DateTime> objekty.
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<schemaImporterExtensions > elementu](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
  [\<Přidat > elementu pro \<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
- [\<System.XML.Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)
+ [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)

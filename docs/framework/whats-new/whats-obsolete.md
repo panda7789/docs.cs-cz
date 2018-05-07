@@ -1,10 +1,7 @@
 ---
-title: "Jaký & č. 39; s zastaralé v knihovně tříd rozhraní .NET Framework"
+title: Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
@@ -12,15 +9,13 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d5fc41473c4a3ea812013ee7e5204c22d0a694d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01969eff86e5b1e8e4e2bdc4950df9fb5291f5b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Jaký & č. 39; s zastaralé v knihovně tříd rozhraní .NET Framework
+# <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework se mění v čase. Každá nová verze přidává nové typy a členy typu, které přinášejí nové funkce. Existující typy a jejich členové také časem změnit. Například některé typy stane méně důležité, jako je technologie, které podporují nahrazena novou technologií a některé metody nejsou k dispozici novější metody, které jsou vhodnější nebo obsáhlejší.  
   
  Rozhraní .NET Framework a modul common language runtime usilují o podporu zpětné kompatibility (povolení aplikace vyvinuté pomocí jedné verze rozhraní .NET Framework ke spuštění na další verzi rozhraní .NET Framework). Díky tomu je obtížné stačí odstranit určitý typ nebo člen typu. Místo toho rozhraní .NET Framework označuje, že typ nebo člen typu by už použít označením jako zastaralé nebo zastaralé. Místo začne typ nebo člen zahrnuje označením tak, aby vývojáři víte ho bude odstraněn a čas reagovat na jeho odstranění. Existující kód, který používá typ nebo člen je však nadále spuštěna v nové verzi rozhraní .NET Framework.  
@@ -60,9 +55,9 @@ Rozhraní .NET Framework se mění v čase. Každá nová verze přidává nové
   
  Následující tabulka uvádí řetězcové hodnoty, které lze přiřadit `version` atribut k cílení na konkrétní verzi rozhraní .NET Framework.  
   
-|Verze rozhraní .NET Framework|`version`řetězec|
+|Verze rozhraní .NET Framework|`version` Řetězec|
 |-|-|  
-|4.7 (včetně 4.7.1)|V4.0|  
+|4.7 (včetně 4.7.1 a 4.7.2)|V4.0|  
 |4.6 (včetně 4.6.1 a 4.6.2)|V4.0|  
 |4.5 (včetně 4.5.1 a 4.5.2)|V4.0|  
 |4|V4.0|  
@@ -71,7 +66,7 @@ Rozhraní .NET Framework se mění v čase. Každá nová verze přidává nové
 |1.1|V1.1.4322|  
 |1.0|V1.0.3705|  
   
-## <a name="obsolete-lists-for-the-net-framework-45-and-46"></a>Zastaralé seznamy pro rozhraní .NET Framework 4.5 a 4.6  
+## <a name="obsolete-lists-for-the-net-framework-45-and-later-versions"></a>Zastaralé seznamy pro rozhraní .NET Framework 4.5 a novější verze  
  [Zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md)  
   
  [Zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md)  

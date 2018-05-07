@@ -1,21 +1,12 @@
 ---
-title: "Postupy: čtení a zápis kódovaného dokumentu (C#)"
-ms.custom: 
+title: 'Postupy: čtení a zápis kódovaného dokumentu (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 84f64e71-39a6-42c6-ad68-f052bb158a03
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a08fa9404c92bd64b07059df2f419bff5f80da3e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9fc6a7beaa4a7b9de21961e1095dd41fe2e407dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-read-and-write-an-encoded-document-c"></a>Postupy: čtení a zápis kódovaného dokumentu (C#)
 Chcete-li vytvořit dokument XML kódovaného, je přidat <xref:System.Xml.Linq.XDeclaration> do stromu XML nastavení kódování, které má název požadované kódu stránky.  

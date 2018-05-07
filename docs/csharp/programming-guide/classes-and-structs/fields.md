@@ -1,21 +1,14 @@
 ---
-title: "Pole (Průvodce programováním v C#)"
+title: Pole (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: acf4ade68235a196fd6d2f3c6c71279748f3dd71
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 31073772fd42244167b5e68959ebb373ec759025
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 A *pole* je proměnná typu, který je deklarován přímo v [třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md). Pole jsou *členy* jejich obsahující typu.  
@@ -53,8 +46,8 @@ A *pole* je proměnná typu, který je deklarován přímo v [třída](../../../
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [Použití konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  
  [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
  [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  

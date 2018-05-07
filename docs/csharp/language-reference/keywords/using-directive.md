@@ -1,21 +1,14 @@
 ---
 title: using – direktiva (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-caps.latest.revision: 31
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 02c50b1e7a54d776985b60570c898e7d0739c44c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 180c038987e7de6b39a8eae0e86871eea41a40bb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-directive-c-reference"></a>using – direktiva (Referenční dokumentace jazyka C#)
 `using` – Direktiva se třemi způsoby:  
@@ -87,9 +80,9 @@ class Program
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Použití oboru názvů](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Namespace klíčová slova](../../../csharp/language-reference/keywords/namespace-keywords.md)  
+ [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
  [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
- [Using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)
+ [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)

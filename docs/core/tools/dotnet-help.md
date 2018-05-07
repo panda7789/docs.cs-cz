@@ -4,16 +4,11 @@ description: Příkaz help dotnet ukazuje podrobnější dokumentaci online zada
 author: mairaw
 ms.author: mairaw
 ms.date: 08/17/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 189eeea87babbce16751c5875f62c990ebecc10a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 846ca15fa40a4cf9e1bd18c14cbcd9aef5cab97d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-help-reference"></a>odkaz na nápovědu DotNet.
 

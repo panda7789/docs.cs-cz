@@ -1,24 +1,12 @@
 ---
-title: "Zabezpečení přístupu k datům"
-ms.custom: 
+title: Zabezpečení přístupu k datům
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c26854af585fc026ba9abee77bc3b8a95bcaba79
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 85f40000ed1c4901342c697c97069a7ba55ed7f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="secure-data-access"></a>Zabezpečení přístupu k datům
 Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k dispozici v příslušné úložiště dat, nebo databáze. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo součásti, které vaše aplikace může obsahovat.  

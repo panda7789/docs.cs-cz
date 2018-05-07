@@ -2,24 +2,18 @@
 title: 'Postupy: Analýza řetězců využívajících String.Split (Průvodce C#)'
 description: String.Split vrací pole řetězců rozdělení ze sady oddělovače. Je snadný způsob, jak analyzovat řetězce.
 ms.date: 01/03/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - splitting strings [C#]
 - Split method [C#]
 - strings [C#], splitting
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
-author: BillWagner
-ms.author: wiwagn
 ms.custom: mvc
-ms.openlocfilehash: c6ccbe8e1287101d3b79d0ec84e530e0e525ff57
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e2d788b27f54ac068922f0ebe558a2aea8a475ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Postupy: Analýza řetězců využívajících String.Split (Průvodce C#)
 

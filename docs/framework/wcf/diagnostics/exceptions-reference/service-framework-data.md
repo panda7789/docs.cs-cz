@@ -1,24 +1,12 @@
 ---
-title: "Data architektury služby"
-ms.custom: 
+title: Data architektury služby
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2a2c8ddc-4e82-4e7f-a79f-97085c469517
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13f39da43ccd19e6568465f9303930d2dc16a639
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c65e9d473b5fe3f2b1c29824dcc1151abb0c3f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-framework-data"></a>Data architektury služby
 Toto téma uvádí všechny výjimky generované Data architektury služby.  

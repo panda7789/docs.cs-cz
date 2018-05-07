@@ -1,9 +1,6 @@
 ---
-title: "Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)"
+title: Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - read-only properties [C#]
 - read-only indexers [C#]
@@ -12,14 +9,11 @@ helpviewer_keywords:
 - asymmetric accessor accesibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-caps.latest.revision: "26"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a4905885323f59d8b8b2654a5331e02054334398
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bf9ead7934630d3974657107ca38e08bbd3bed85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
 [Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnosti nebo indexeru se nazývají *přístupové objekty*. Ve výchozím nastavení mají stejné viditelnost těchto přístupových objektů, nebo úroveň přístupu: u vlastnosti nebo indexeru, do které patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však vhodné omezit přístup na jednu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnosti `set` přistupujícího objektu, při zachování `get` přistupujícího objektu veřejně přístupná. Příklad:  
@@ -69,7 +63,7 @@ ms.lasthandoff: 11/21/2017
  `Name and ID in the derived class: John, John123`  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
  [Indexery](../../../csharp/programming-guide/indexers/index.md)  
  [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)

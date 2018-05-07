@@ -1,14 +1,6 @@
 ---
 title: 'Postupy: Připojení objektů k ovládacím prvkům Windows Forms DataGridView'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], object binding
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d8cb84608c0aeead00e56d2d91489954e4b7fca6
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 9580812be4e15a0b925c5737dc6dfe0e0fdaf407
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Připojení objektů k ovládacím prvkům Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak vytvořit vazbu kolekce objektů, které chcete <xref:System.Windows.Forms.DataGridView> řídit tak, aby každý objekt zobrazí jako samostatný řádek. Tento příklad také ukazuje, jak zobrazit vlastnosti typu výčtu v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> tak, aby seznamu rozevírací seznam obsahuje hodnoty výčtu.  

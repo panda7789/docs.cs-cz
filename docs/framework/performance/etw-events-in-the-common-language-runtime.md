@@ -1,28 +1,18 @@
 ---
-title: "Události Trasování událostí pro Windows v CLR (Common Language Runtime)"
-ms.custom: 
+title: Události Trasování událostí pro Windows v CLR (Common Language Runtime)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - CLR ETW events
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: 5bb9b6a2-7b57-4aea-8809-32b28bc73e88
-caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6ad262c2c813b5baa9dbde475e40cd445bd06701
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7855007c7566d3be0012bbff2cb124ee2681cb6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>Události Trasování událostí pro Windows v CLR (Common Language Runtime)
 Modul CLR (CLR) poskytuje trasování užitečné událostí pro Windows (ETW) diagnostické informace prostřednictvím širokou škálu ladění a profilování události. CLR ETW – události využít systému trasování Windows ETW k posílení existující profilace a ladění podpora poskytované modul common language runtime.  

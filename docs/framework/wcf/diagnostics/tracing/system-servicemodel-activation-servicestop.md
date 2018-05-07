@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Activation.ServiceStop
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f22be67e-0def-4f8e-ab31-6178cbdf98d4
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6d859fdaa15ec4498a7d9bee058f11b881596325
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 069396de3a3a2ddee18b72ec436d1b66edab1279
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelactivationservicestop"></a>System.ServiceModel.Activation.ServiceStop
 System.ServiceModel.Activation.ServiceStop  

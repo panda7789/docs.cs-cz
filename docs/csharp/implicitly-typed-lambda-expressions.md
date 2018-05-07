@@ -1,20 +1,13 @@
 ---
-title: "Implicitně typovaná lambda – výrazy"
-description: "Zjistěte, proč nelze používat deklarace proměnné implicitně typované deklarovat výrazu lambda."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Implicitně typovaná lambda – výrazy
+description: Zjistěte, proč nelze používat deklarace proměnné implicitně typované deklarovat výrazu lambda.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: a3851da9-e018-4389-9922-233db7d0f841
-ms.openlocfilehash: 663613af001f9727c48bd48553540305e47a6bab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f06c55f51c30c941d6d507ac8e2edd95c5152742
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implicitly-typed-lambda-expressions"></a>Implicitně typovaná lambda – výrazy
 

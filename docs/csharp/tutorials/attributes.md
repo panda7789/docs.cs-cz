@@ -1,20 +1,14 @@
 ---
 title: Atributy - C#
 description: Zjistěte, jak fungují atributy v jazyce C#.
-keywords: Rozhraní .NET, .NET core, C#, atributy
 author: mgroves
-ms.author: wiwagn
 ms.date: 03/06/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: dad02c64d22fe0f127057202c082680f13261d7b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: db6db50ac59e804225bdc11c435fef3d53fa685e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-attributes-in-c"></a>Pomocí atributů v jazyce C# #
 
@@ -79,7 +73,7 @@ Však nebude možné použít tento konstruktor se syntaxí atributu.
 
 [!code-csharp[Invalid attempt to use the attribute constructor](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGotcha2)]
 
-Výše způsobí chybu kompilátoru jako`Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
+Výše způsobí chybu kompilátoru jako `Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
 
 ## <a name="how-to-restrict-attribute-usage"></a>Jak omezit použití atributu
 
@@ -105,7 +99,7 @@ Když vytvoříte třídy atributu, ve výchozím nastavení, C# vám umožní p
 
 [!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample1)]
 
-Pokud se pokusíte umístí výše uvedený atribut něco, co není třídu nebo struktury, zobrazí se chyba kompilátoru jako`Attribute 'MyAttributeForClassAndStructOnly' is not valid on this declaration type. It is only valid on 'class, struct' declarations`
+Pokud se pokusíte umístí výše uvedený atribut něco, co není třídu nebo struktury, zobrazí se chyba kompilátoru jako `Attribute 'MyAttributeForClassAndStructOnly' is not valid on this declaration type. It is only valid on 'class, struct' declarations`
 
 [!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
 
@@ -119,7 +113,7 @@ Například můžete reflexe a získat informace o třídě:
 
 [!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
 
-Ta vypíše se něco podobného jako:`The assembly qualified name of MyClass is ConsoleApplication.MyClass, attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
+Ta vypíše se něco podobného jako: `The assembly qualified name of MyClass is ConsoleApplication.MyClass, attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
 
 Jakmile máte `TypeInfo` objektu (nebo `MemberInfo`, `FieldInfo`atd), můžete použít `GetCustomAttributes` metoda. Tato možnost vrátí kolekci `Attribute` objekty.
 Můžete také použít `GetCustomAttribute` a zadejte typ atributu.

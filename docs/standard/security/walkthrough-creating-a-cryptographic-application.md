@@ -1,13 +1,7 @@
 ---
-title: "Návod: Vytvoření šifrovací aplikace"
-ms.custom: 
+title: 'Návod: Vytvoření šifrovací aplikace'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 869d35a15a028e6df09dea281ac653ab8b9a28d6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 77debed932b78ae0aa1d8eebf54bd2d3bfbfea7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
 Tento návod ukazuje, jak k šifrování a dešifrování obsahu. Ukázky kódu jsou navrženy pro aplikace Windows Forms. Tuto aplikaci nepředvádí skutečných scénářích, například pomocí čipové karty. Místo toho ukazuje základní informace o šifrování a dešifrování.  

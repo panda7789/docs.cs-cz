@@ -1,24 +1,12 @@
 ---
-title: "3819 – RoutingServiceMovedToBackup"
-ms.custom: 
+title: 3819 – RoutingServiceMovedToBackup
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bf4086de-efd4-413c-9bc3-32a85b6b6722
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fbfbc1e55274b84a6fbf07b81933a73703737359
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 34f29a638ef57af8166b8c2806b15bd0300ab25b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3819---routingservicemovedtobackup"></a>3819 – RoutingServiceMovedToBackup
 ## <a name="properties"></a>Vlastnosti  

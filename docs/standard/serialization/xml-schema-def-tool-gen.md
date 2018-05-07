@@ -1,30 +1,17 @@
 ---
-title: "Postupy: použití nástroje definice schématu XML pro generování tříd a dokumentech schémat XML."
-ms.custom: 
+title: 'Postupy: použití nástroje definice schématu XML pro generování tříd a dokumentech schémat XML.'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - generating XML classes using XML Schema Definition tool
 - generating XML Schema Document using XML Schema Definition tool
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0e390b808f9eaa5d6b305284e1abe28f45f4d104
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c169a3068b240e8d4d1cdb1d307938ee113066fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Postupy: použití nástroje definice schématu XML pro generování tříd a dokumentech schémat XML.
 Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML, která popisuje třídu nebo ke generování třídy definované ve schématu XML. Následující postupy ukazují, jak provádět tyto operace.  
@@ -39,7 +26,7 @@ Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML
     xsd mySchema.xsd  
     ```  
   
-     Nástroj lze zpracovat pouze schémata, které odkazují na specifikaci World Wide Web Consortium XML ze dne 16. Obor názvů schématu XML jinými slovy, musí být "http://www.w3.org/2001/XMLSchema", jak je znázorněno v následujícím příkladu.  
+     Nástroj lze zpracovat pouze schémata, které odkazují na specifikaci World Wide Web Consortium XML ze dne 16. Jinými slovy, obor názvů schématu XML musí být "http://www.w3.org/2001/XMLSchema" jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8"?>  

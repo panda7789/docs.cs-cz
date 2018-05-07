@@ -1,32 +1,20 @@
 ---
-title: "Objekt Materialization (služby WCF Data Services)"
-ms.custom: 
+title: Objekt Materialization (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b093fce50de6a0437456f4fb0e025e3c853777e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 54f8cc876b373fcfa8e8e514abf50111942de88c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-materialization-wcf-data-services"></a>Objekt Materialization (služby WCF Data Services)
 Při použití **přidat odkaz na službu** dialogovém okně můžete využívat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v aplikaci klienta na základě rozhraní .NET Framework, ke každému typu entity v datovém modelu, který je zveřejněný prostřednictvím informačního kanálu se generují ekvivalentní datové třídy. Další informace najdete v tématu [generování dat služby klientské knihovny](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Data entity, který je vrácen dotazu je vyhodnocena do instance jednoho z těchto tříd služby data generovaného klienta. Informace o možnostech sloučení a řešení identity sledovaných objektů najdete v tématu [Správa služby kontextu dat](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]také umožňuje definovat vaše vlastní třídy klienta dat služby místo použití tříd nástroj generovaná data. To umožňuje používat vlastní datové třídy, také známé jako "prostý starý CLR objektu" (objektů POCO) datových tříd. Při použití těchto typů vlastních datových tříd, má atribut třída dat pomocí <xref:System.Data.Services.Common.DataServiceKeyAttribute> nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> a ujistěte se, že typ názvy na názvy typů shody klienta v datovém modelu datové služby.  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] také umožňuje definovat vaše vlastní třídy klienta dat služby místo použití tříd nástroj generovaná data. To umožňuje používat vlastní datové třídy, také známé jako "prostý starý CLR objektu" (objektů POCO) datových tříd. Při použití těchto typů vlastních datových tříd, má atribut třída dat pomocí <xref:System.Data.Services.Common.DataServiceKeyAttribute> nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> a ujistěte se, že typ názvy na názvy typů shody klienta v datovém modelu datové služby.  
   
  Po knihovny obdrží zprávu odpovědi dotazu, se bude realizována vrácená data z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu do instance dat klienta třídy služeb, které jsou typu dotazu. Obecný postup pro vyhodnocování tyto objekty vypadá takto:  
   

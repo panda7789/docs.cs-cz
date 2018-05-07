@@ -1,11 +1,7 @@
 ---
-title: "Metoda DeleteMethod – funkce (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce metody DeleteMethod odstraní zadanou metodu z definice třídy CIM."
+title: Metoda DeleteMethod – funkce (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce metody DeleteMethod odstraní zadanou metodu z definice třídy CIM.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - DeleteMethod
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 03b147d2fd76e34c6152a0b41ee14319811e9300
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd862910d0c9bb0274158c2c516211cef598a553
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deletemethod-function"></a>Metoda DeleteMethod – funkce
 Odstraní zadanou metodu z definice třídy CIM.
@@ -53,7 +46,7 @@ HRESULT Delete (
 [v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
 
 `wszName`  
-[v] Název metody, která odebere z tabulky třídy. `wszName`musí být ukazatel na platnou `LPCWSTR`.
+[v] Název metody, která odebere z tabulky třídy. `wszName` musí být ukazatel na platnou `LPCWSTR`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -76,7 +69,7 @@ Metoda odstranění není podporována pro [IWbemClassObject](https://msdn.micro
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

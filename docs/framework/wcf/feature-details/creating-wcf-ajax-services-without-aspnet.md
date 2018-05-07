@@ -1,33 +1,19 @@
 ---
 title: Vytváření služeb WCF AJAX bez ASP.NET
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ba4a7d1b-e277-4978-9f62-37684e6dc934
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b652bcd522a8eea81b3d1218fbd054ee0b2caea8
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 77a850408c3d952dbd4f682ea704d3248ae17c3e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-wcf-ajax-services-without-aspnet"></a>Vytváření služeb WCF AJAX bez ASP.NET
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Služby AJAX je přístupná z webové stránky povolen jazyk JavaScript, bez nutnosti prvku ASP.NET AJAX. Toto téma popisuje, jak vytvořit, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Služby Windows Communication Foundation (WCF) AJAX je přístupná z webové stránky povolen jazyk JavaScript, bez nutnosti prvku ASP.NET AJAX. Toto téma popisuje postup vytvoření služby WCF.  
   
- Pokyny k používání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pomocí prvku ASP.NET AJAX, najdete v části [vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md).  
+ Pokyny WCF pomocí prvku ASP.NET AJAX, najdete v části [vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md).  
   
- Existují tři části vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba AJAX:  
+ Existují tři části Vytvoření služby WCF AJAX:  
   
 -   Vytvoření AJAX koncový bod, který je přístupný z prohlížeče.  
   
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/28/2018
 -   Přístup ke službám WCF AJAX.  
   
 ## <a name="creating-an-ajax-endpoint"></a>Vytvoření koncového bodu AJAX  
- Nejzákladnější způsob, jak povolit podporu jazyka AJAX [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se má používat <xref:System.ServiceModel.Activation.WebServiceHostFactory> v souboru .svc přidružený k službě, jako v následujícím příkladu.  
+ Nejzákladnější způsob, jak povolit podporu AJAX ve službě WCF je použití <xref:System.ServiceModel.Activation.WebServiceHostFactory> v souboru .svc přidružený k službě, jako v následujícím příkladu.  
   
 ```  
 <%ServiceHost   
@@ -115,7 +101,7 @@ string[] GetCities(string firstLetters, int maxNumber);
 ```  
   
 ## <a name="accessing-ajax-services"></a>Přístup ke službám AJAX  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncové body AJAX vždy příjem požadavků JSON a XML.  
+ Koncových bodů WCF AJAX vždy příjem požadavků JSON a XML.  
   
  Požadavky HTTP POST s obsah typ "application/json" se považují za JSON a obsah typ, který označuje XML (například "text/xml") se považují za XML.  
   

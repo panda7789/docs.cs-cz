@@ -1,21 +1,19 @@
 ---
 title: Sestavení .NET Core ze zdroje.
 description: Naučte se vytvářet .NET Core a rozhraní příkazového řádku .NET Core ze zdrojového kódu.
-keywords: Zdroj rozhraní .NET, .NET core, sestavení
 author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 8b49079c-6ede-429a-92d7-ecd2fda1ab0e
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: a14e8dbf3f9be9910a2c50cfbcb3f52f4e7385e1
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
-ms.translationtype: MT
+ms.openlocfilehash: 36939da689a1db06a6d9f1b7e816e6e5cabcf59d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="build-net-core-from-source"></a>Sestavení .NET Core ze zdroje.
 
@@ -70,7 +68,7 @@ Můžete najít další možnosti sestavení s sestavení pomocí? nebo – help
 
 Sestavení umístí všechny jeho soubory generované v rámci `bin` adresář na bázi úložiště.
 Je *bin\Log* adresář, který obsahuje soubory protokolu vygenerovaných během sestavení (velmi užitečné při sestavení selže).
-Skutečný výstup je umístěn v *bin\Product\[platformu]. [Architektura procesoru]. [vytvořit typ]*  adresář, jako třeba *bin\Product\Windows_NT.x64.Release*.
+Skutečný výstup je umístěn v *bin\Product\[platformu]. [[ Architektura procesoru]. [vytvořit typ]*  adresář, jako třeba *bin\Product\Windows_NT.x64.Release*.
 
 Zatímco 'nezpracovaná' výstup sestavení je někdy vhodná, obvykle vás zajímá jenom balíčky NuGet, které jsou umístěny v `.nuget\pkg` podadresáři předchozí výstupnímu adresáři.
 

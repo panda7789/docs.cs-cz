@@ -1,17 +1,12 @@
 ---
 title: Zprostředkovatelé typů
 description: 'Zjistěte, jak poskytovatele typu F # je komponenta, která poskytuje typy, vlastnosti a metody pro použití ve vašich aplikacích.'
-author: cartermp
-ms.author: phcart
 ms.date: 04/02/2018
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 5b7bae6f960b9cfa91188e8eb80be949cda12b65
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 82d9afed7d77eae5f8b96854d40e96a32c4fae9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-providers"></a>Zprostředkovatelé typů
 

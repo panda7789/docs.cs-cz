@@ -1,10 +1,6 @@
 ---
-title: "-debug (možnosti kompilátoru C#)"
+title: -debug (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /debug
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d67d53e679a2d1255e87cfa426bf844089481061
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: ab9b299579f9ab4a854ce7ab220edc87e0c66745
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-debug-c-compiler-options"></a>-debug (možnosti kompilátoru C#)
 **– Ladění** možnost způsobí, že kompilátor generovat ladicí informace a jeho následné uložení do výstupní soubor nebo soubory.  

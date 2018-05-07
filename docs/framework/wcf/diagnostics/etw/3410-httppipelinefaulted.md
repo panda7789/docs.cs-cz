@@ -1,24 +1,12 @@
 ---
-title: "3410 – HttpPipelineFaulted"
-ms.custom: 
+title: 3410 – HttpPipelineFaulted
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8586c3c1-3da5-4f5b-b637-4671b14fb65e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0e44c0fabc093d4184ec37f87a9c256fe702b867
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ccce63b2cd8bc71c18c4ff9dd00574895f498447
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3410---httppipelinefaulted"></a>3410 – HttpPipelineFaulted
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|3410|  
 |Klíčová slova|HTTP|  
 |úroveň|Upozornění|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované při popisovač zpráv protokolu Http došlo k chybě.  

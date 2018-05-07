@@ -1,21 +1,12 @@
 ---
-title: "Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (C#)"
-ms.custom: 
+title: 'Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 74b7f40b09131cb6e4ed82d64933512c6e0499cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8cce9176c303efe0da4b546afabe2bf6d491e167
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (C#)
 Tento příklad ukazuje jeden ze způsobů sloučí obsah dva soubory a pak vytvořit sadu nové soubory, které uspořádání dat nový způsob.  

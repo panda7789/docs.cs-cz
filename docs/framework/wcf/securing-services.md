@@ -1,33 +1,21 @@
 ---
 title: Zabezpečení služeb
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuration [WCF], securing services
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-caps.latest.revision: 28
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: ffc985d528bfdcdd9b62772a8a8ba61823c95e76
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 6bdac5a65c51ff08cfa170c1a6e556c3532ee7c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
-Zabezpečení [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby se skládá ze dvou primární požadavky: přenos zabezpečení a autorizaci. (Třetí požadavek, auditování událostí zabezpečení, je popsaný v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno zabezpečení přenosu zahrnuje ověření (ověření identity služby a klient), důvěrnost (šifrování zpráv) a integrita (digitální podepisování, které zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení jenom mohou uživatelé s oprávněním ke čtení souboru. Pomocí funkce [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], jsou požadavky na dva primární snadno implementovat.  
+Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou primární požadavky: přenos zabezpečení a autorizaci. (Třetí požadavek, auditování událostí zabezpečení, je popsaný v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno zabezpečení přenosu zahrnuje ověření (ověření identity služby a klient), důvěrnost (šifrování zpráv) a integrita (digitální podepisování, které zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení jenom mohou uživatelé s oprávněním ke čtení souboru. Pomocí funkce [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], jsou požadavky na dva primární snadno implementovat.  
   
  S výjimkou produktů <xref:System.ServiceModel.BasicHttpBinding> – třída (nebo [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element v konfiguraci), ve výchozím nastavení pro všechny předdefinované vazby je povolené zabezpečení přenosu. Témata v této části se týkají dva základní scénáře: implementace zabezpečení přenosu a autorizace na intranetu službu hostované na Internetové informační služby (IIS) a implementaci zabezpečení přenosu a autorizace na službě hostované ve službě IIS.  
   

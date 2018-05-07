@@ -1,22 +1,12 @@
 ---
-title: "Řízení toku v asynchronních programech (C#)"
-ms.custom: 
+title: Řízení toku v asynchronních programech (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8b975b75f9ff31f43e722d3ceb28d08ed3b6ce11
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 7367b55a665a911a4d94f7b235cdc559a69854cd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="control-flow-in-async-programs-c"></a>Řízení toku v asynchronních programech (C#)
 Můžete napsat a udržovat asynchronní programy snadněji pomocí `async` a `await` klíčová slova. Ale výsledky může ať vás překvapí Pokud nevíte, jak funguje vašeho programu. Toto téma trasování, které toku řízení prostřednictvím programu jednoduché asynchronní tak, aby zobrazovalo při řízení přechází z jedné metody na jiný a jaké informace se přenáší pokaždé, když.  
@@ -125,7 +115,7 @@ Length of the downloaded string: 33946.
   
      **Nový projekt** otevře se dialogové okno.  
   
-3.  V **nainstalovaných šablonách** podokně vyberte **Visual C#**a potom zvolte **aplikaci WPF** ze seznamu typy projektů.  
+3.  V **nainstalovaných šablonách** podokně vyberte **Visual C#** a potom zvolte **aplikaci WPF** ze seznamu typy projektů.  
   
 4.  Zadejte `AsyncTracer` jako název projektu a klikněte **OK** tlačítko.  
   
@@ -362,7 +352,7 @@ FIVE:  Back in AccessTheWebAsync.
   
  Následující obrázek ukazuje ovládání po `client.GetStringAsync` (a `getStringTask`) jsou dokončeny.  
   
- ![Step FIVE](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace-FIVE")  
+ ![Krok 5](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace PĚT")  
   
  `AccessTheWebAsync` používá pro dokončení a řízení vrátí do `startButton_Click`, která čeká na dokončení.  
   
@@ -386,7 +376,7 @@ int contentLength = await getLengthTask;
   
  Následující obrázek ukazuje návratový řízení z `AccessTheWebAsync` k `startButton_Click`.  
   
- ![Step SIX](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-SIX")  
+ ![Krok 6](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace šest")  
   
 ## <a name="see-also"></a>Viz také  
  [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  

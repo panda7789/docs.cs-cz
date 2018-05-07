@@ -4,17 +4,13 @@ description: Další koncepty test jednotky v .NET Core prostřednictvím intera
 author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
-ms.topic: conceptual
 dev_langs:
 - vb
-ms.prod: dotnet-core
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: c573d0a4eae38a15f22730748022effdc00ff0a6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 501bbedca28af1eaaadb0848bfcffc93a7aac92a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-mstest"></a>Knihovny jazyka Visual Basic .NET Core pomocí testovacích dotnet a Mstestu testování částí
 

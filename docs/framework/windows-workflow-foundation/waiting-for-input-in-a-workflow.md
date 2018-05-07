@@ -1,26 +1,14 @@
 ---
-title: "Čekání na vstup v pracovním postupu"
-ms.custom: 
+title: Čekání na vstup v pracovním postupu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - programming [WF], bookmarks
 ms.assetid: 50a007c5-8ab7-4b9a-a7ec-1b7e2f4930fe
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1c32eac180a5aae599d084f3fcc4c44055f80428
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1173402ffe11676a1919ccb114b34d1c79df57fd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="waiting-for-input-in-a-workflow"></a>Čekání na vstup v pracovním postupu
 Témata v této části popisují způsob použití záložek a zasílání zpráv aktivity.  

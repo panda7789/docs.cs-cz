@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Animace objektu použitím klíčových snímků"
-ms.custom: 
+title: 'Postupy: Animace objektu použitím klíčových snímků'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - animation [WPF], objects with key frames
 - key frames [WPF], animating objects with
 ms.assetid: b1f15ba9-cac7-4cea-8699-5c6b55c05c5e
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5f513cda540b3337f1510ee0c46419a12023bcb6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7dc49bc6b3f9156507cb821bfc32b269365b206c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-an-object-by-using-key-frames"></a>Postupy: Animace objektu použitím klíčových snímků
 Tento příklad ukazuje, jak animace objekt, který je v tomto příkladu <xref:System.Windows.Controls.Page.Background%2A> vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku pomocí klíčových snímků.  
@@ -38,7 +26,7 @@ Tento příklad ukazuje, jak animace objekt, který je v tomto příkladu <xref:
 4.  Animace začne počítat od začátku a opakuje bez omezení.  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>je jediným typem klíče rámce, který můžete použít s <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídy. Klíč rámců jako <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> vytvořit nečekané změn v hodnoty, který je, změny barev v tomto příkladu dojde k najednou.  
+>  <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> je jediným typem klíče rámce, který můžete použít s <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídy. Klíč rámců jako <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> vytvořit nečekané změn v hodnoty, který je, změny barev v tomto příkladu dojde k najednou.  
   
  [!code-xaml[keyframes_snip#ObjectAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ObjectAnimationUsingKeyFramesExample.xaml#objectanimationusingkeyframeswholepage)]  
   

@@ -1,33 +1,21 @@
 ---
-title: "Co můžete dělat s technologie LINQ to SQL"
-ms.custom: 
+title: Co můžete dělat s technologie LINQ to SQL
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d8393866d8a13121913348404edd8e356f691b7e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 719c2e5c97d3f8c64de53831ac50b2e7156a38fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-you-can-do-with-linq-to-sql"></a>Co můžete dělat s technologie LINQ to SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje všechny klíčové funkce, které očekáváte jako vývojář SQL. Můžete dotazovat na informace a vložit, aktualizovat a odstranit informace z tabulky.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje všechny klíčové funkce, které očekáváte jako vývojář SQL. Můžete dotazovat na informace a vložit, aktualizovat a odstranit informace z tabulky.  
   
 ## <a name="selecting"></a>Výběr  
- Výběr (*projekce*) se dosahuje právě zápis [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazu v vlastní programovací jazyk a spouštění tento dotaz pro načtení výsledky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]samotný přeloží všechny potřebné operace do potřebné operace SQL, které jste se seznámili s. Další informace najdete v tématu [technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md).  
+ Výběr (*projekce*) se dosahuje právě zápis [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazu v vlastní programovací jazyk a spouštění tento dotaz pro načtení výsledky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] samotný přeloží všechny potřebné operace do potřebné operace SQL, které jste se seznámili s. Další informace najdete v tématu [technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md).  
   
  V následujícím příkladu jsou názvy společnosti zákazníků z Londýna načíst a zobrazí v okně konzoly.  
   
@@ -54,7 +42,7 @@ ms.lasthandoff: 01/17/2018
  K `Delete` položku, odebrání položky z kolekce, do které patří a pak volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext> potvrzení změn.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nerozpoznal kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, který má omezení u ní najdete v tématu [postupy: odstranění řádků z databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
+>  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nerozpoznal kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, který má omezení u ní najdete v tématu [postupy: odstranění řádků z databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
   
  V následujícím příkladu, zákazníkovi, který má `CustomerID` z `98128` se načítají z databáze. Potom po potvrzení, že byla načtena řádek zákazníka, <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> nazývá odebrat tento objekt z kolekce. Nakonec <xref:System.Data.Linq.DataContext.SubmitChanges%2A> nazývá předávat odstranění do databáze.  
   

@@ -1,20 +1,13 @@
 ---
-title: "Základy výrazů dotazů"
-description: "Seznámíte se základními pojmy související s výrazy dotazů"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Základy výrazů dotazů
+description: Seznámíte se základními pojmy související s výrazy dotazů
 ms.date: 11/30/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-ms.openlocfilehash: 7a1cf9eea4c5d75c6bcb6d2f0d5f68a07e3158d0
-ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.openlocfilehash: d211b0770bdc69f513e4129c818f96650de63e77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-expression-basics"></a>Základy výrazů dotazů
 

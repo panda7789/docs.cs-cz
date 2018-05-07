@@ -1,14 +1,6 @@
 ---
-title: "ICLRDebugging::OpenVirtualProcess – metoda"
-ms.custom: 
+title: ICLRDebugging::OpenVirtualProcess – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRDebugging.OpenVirtualProcess
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: e8ab7c41-d508-4ed9-8a31-ead072b5a314
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f1f71f42f10c3d25714998d1697b20a5ee13e055
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 51b5a9ecd85f0d40ac2fe2826cbbe7a56a6228d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess – metoda
 Získá rozhraní ICorDebugProcess, která odpovídá common language runtime (CLR) modul načíst v procesu.  
@@ -85,9 +73,9 @@ HRESULT OpenVirtualProcess(
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pDataTarget`je `null`.|  
+|E_POINTER|`pDataTarget` je `null`.|  
 |CORDBG_E_LIBRARY_PROVIDER_ERROR|[Iclrdebugginglibraryprovider –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) zpětného volání vrátí chybu nebo neposkytuje platný popisovač.|  
-|CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget`neimplementuje rozhraní target požadovaných dat pro tuto verzi modulu runtime.|  
+|CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` neimplementuje rozhraní target požadovaných dat pro tuto verzi modulu runtime.|  
 |CORDBG_E_NOT_CLR|Modul uvedené není modulu CLR. Tato HRESULT je také vrácena, pokud modul CLR nelze nalézt, protože byl poškozen paměti, modul není k dispozici nebo CLR verze je novější než verze shim.|  
 |CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|Tato verze modulu runtime nepodporuje tento ladění model. V současné době ladění modelu není podporována verze CLR před [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. `pwszVersion` Výstupní parametr je stále nastavené na správnou hodnotu po této chybě.|  
 |CORDBG_E_UNSUPPORTED_FORWARD_COMPAT|Je větší než verze, kterou tento ladicí program deklarace identity pro podporu verzi modulu CLR. `pwszVersion` Výstupní parametr je stále nastavené na správnou hodnotu po této chybě.|  
@@ -105,7 +93,7 @@ HRESULT OpenVirtualProcess(
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  

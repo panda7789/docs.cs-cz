@@ -1,9 +1,6 @@
 ---
-title: "&lt;kód&gt; (C# Průvodce programováním)"
+title: '&lt;kód&gt; (C# Průvodce programováním)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - code
 - <code>
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - code XML tag
 - <code> C# XML tag
 ms.assetid: f235e3bc-a709-43cf-8a9f-bd57cabdf6da
-caps.latest.revision: "10"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ab7136937a47f4941a140b4144996b99992c35a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: eec81e62b49e8e203037dd454805301f83637047
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltcodegt-c-programming-guide"></a>&lt;kód&gt; (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
@@ -40,5 +34,5 @@ ms.lasthandoff: 11/21/2017
  Najdete v části [ \<příklad >](../../../csharp/programming-guide/xmldoc/example.md) tématu příklad použití \<kód > značky.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

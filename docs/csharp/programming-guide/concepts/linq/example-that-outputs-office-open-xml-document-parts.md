@@ -1,21 +1,12 @@
 ---
-title: "Příklad, který produkuje části dokumentu Office Open XML (C#)"
-ms.custom: 
+title: Příklad, který produkuje části dokumentu Office Open XML (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 6cd37055-89b4-42e8-bf27-5a29717e35f3
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 42265df3bdaae7835cfd44346d78b3df212c8dfd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e63f6eafb32a6426d6c3fd7296c0e8fa6595efee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="example-that-outputs-office-open-xml-document-parts-c"></a>Příklad, který produkuje části dokumentu Office Open XML (C#)
 Toto téma ukazuje, jak otevřít dokument Office otevřít XML a přístup k části v něm.  

@@ -1,29 +1,18 @@
 ---
-title: "Výrazy kompilované XPath"
-ms.custom: 
+title: Výrazy kompilované XPath
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
-caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e6ff5661a7e78f9b37f16acc86834561fc697bcc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 80bee210b12c588163a3e11dfdab4dadda9ec0c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compiled-xpath-expressions"></a>Výrazy kompilované XPath
 <xref:System.Xml.XPath.XPathExpression> Objekt představuje kompilovaném dotazu XPath vrácených buď statických <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu <xref:System.Xml.XPath.XPathExpression> – třída nebo <xref:System.Xml.XPath.XPathNavigator.Compile%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy.  
@@ -49,8 +38,8 @@ ms.lasthandoff: 12/23/2017
   
 |W3C XPath návratový typ|Ekvivalentní typ rozhraní .NET framework|Popis|Metody|  
 |---------------------------|------------------------------------|-----------------|-------------|  
-|`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|Neseřazený kolekce uzlů bez duplicitní položky vytvořené v pořadí dokumentů.|<xref:System.Xml.XPath.XPathNavigator.Select%2A>nebo<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
-|`Boolean`|<xref:System.Boolean>|A `true` nebo `false` hodnotu.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>nebo<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
+|`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|Neseřazený kolekce uzlů bez duplicitní položky vytvořené v pořadí dokumentů.|<xref:System.Xml.XPath.XPathNavigator.Select%2A> Nebo <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
+|`Boolean`|<xref:System.Boolean>|A `true` nebo `false` hodnotu.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> Nebo<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
 |`Number`|<xref:System.Double>|Číslo s plovoucí desetinnou čárkou.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
 |`String`|<xref:System.String>|Posloupnosti znaků UCS.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
   

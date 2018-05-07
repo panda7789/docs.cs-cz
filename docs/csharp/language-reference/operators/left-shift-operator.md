@@ -1,26 +1,19 @@
 ---
-title: '&lt;&lt;Operátor (referenční dokumentace jazyka C#)'
+title: '&lt;&lt; Operátor (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - <<_CSharpKeyword
 helpviewer_keywords:
 - left shift operator (<<) [C#]
 - << operator [C#]
 ms.assetid: a654eb56-1ff7-4bf3-9064-b631be0cdccc
-caps.latest.revision: 18
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 400dbc799c68bb9e1bc00695954115f2eb6af7c6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bacb444c08b1f9d6e18278337015d8a427fdbe46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="ltlt-operator-c-reference"></a>&lt;&lt;Operátor (referenční dokumentace jazyka C#)
+# <a name="ltlt-operator-c-reference"></a>&lt;&lt; Operátor (referenční dokumentace jazyka C#)
 Operátor posunutí doleva (`<<`) posuny jeho první operand zbývajících podle počtu bitů určeného její druhý operand. Musí být typ Druhý operand [int](../../../csharp/language-reference/keywords/int.md) nebo typu, který má předdefinované implicitní číselný převod na `int`.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -40,5 +33,5 @@ Operátor posunutí doleva (`<<`) posuny jeho první operand zbývajících podl
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)

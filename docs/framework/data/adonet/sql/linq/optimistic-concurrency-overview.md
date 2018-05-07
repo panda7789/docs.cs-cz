@@ -1,27 +1,15 @@
 ---
-title: "Optimistickou metodu souběžného: Přehled"
-ms.custom: 
+title: 'Optimistickou metodu souběžného: Přehled'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c2e38512-d0c8-4807-b30a-cb7e30338694
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 616b035096dd636c65dba65bfe6b371db75bec8e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5b4603526896364285cb3c85d12568ed9031ed47
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimistic-concurrency-overview"></a>Optimistickou metodu souběžného: Přehled
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje optimistické řízení souběžného. Následující tabulka popisuje podmínky, které platí pro optimistickou metodu souběžného v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci:  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje optimistické řízení souběžného. Následující tabulka popisuje podmínky, které platí pro optimistickou metodu souběžného v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci:  
   
 |Podmínky|Popis|  
 |-----------|-----------------|  
@@ -29,7 +17,7 @@ ms.lasthandoff: 01/17/2018
 |konflikt souběžnosti|Situace, ve kterém pokusí odeslat konfliktní hodnoty, které mají některé sloupce řádku dvě nebo více uživatelů najednou.|  
 |kontrola souběžnosti|Metoda používaná k řešení konfliktů souběžnosti.|  
 |optimistické řízení souběžného|Postup, který nejprve prověří, zda dalších transakcí změnily hodnoty v řádku před umožňující změny, které mají být odeslána.<br /><br /> Rozdíl oproti *řízení pesimistické souběžnosti*, který zamkne záznam, aby nedocházelo ke konfliktům souběžnosti.<br /><br /> *Optimistické* řízení se říká, protože považuje za pravděpodobnost jednu transakci zasahovala do jiného pravděpodobně nebude.|  
-|řešení konfliktů.|Proces obnovení položku konfliktní opakujte dotaz na databázi a potom sjednocování rozdílů.<br /><br /> Při aktualizaci objektu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul sledování změny obsahuje následující data:<br /><br /> Zkontrolujte-hodnoty původně provést z databáze a použít pro aktualizaci.<br />-Nové databáze hodnoty z následných dotazu.<br /><br /> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pak určuje, zda objekt je v konfliktu (to znamená, zda jeden nebo více hodnot členů změnil). Pokud objekt je v konfliktu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vedle Určuje, které svých členů je v konfliktu.<br /><br /> Každý člen konfliktu, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zjistí přidá do seznamu konflikt.|  
+|řešení konfliktů.|Proces obnovení položku konfliktní opakujte dotaz na databázi a potom sjednocování rozdílů.<br /><br /> Při aktualizaci objektu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul sledování změny obsahuje následující data:<br /><br /> Zkontrolujte-hodnoty původně provést z databáze a použít pro aktualizaci.<br />-Nové databáze hodnoty z následných dotazu.<br /><br /> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pak určuje, zda objekt je v konfliktu (to znamená, zda jeden nebo více hodnot členů změnil). Pokud objekt je v konfliktu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vedle Určuje, které svých členů je v konfliktu.<br /><br /> Každý člen konfliktu, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zjistí přidá do seznamu konflikt.|  
   
  V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model *optimistickou metodu souběžného konflikt* nastane, když jsou splněny obě následující podmínky:  
   
@@ -52,7 +40,7 @@ ms.lasthandoff: 01/17/2018
 ||Správce|Pomocník pro|Oddělení|  
 |------|-------------|---------------|----------------|  
 |Původního stavu|Alfreds|Marie|Prodeje|  
-|Uživatel1|Alfred||Marketing|  
+|Uživatel1|Alfred||Marketingové|  
 |uživatel2||Marie|Služba|  
   
  Konflikty například to může vyřešit různými způsoby. Další informace najdete v tématu [postupy: Správa konfliktů změnu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md).  

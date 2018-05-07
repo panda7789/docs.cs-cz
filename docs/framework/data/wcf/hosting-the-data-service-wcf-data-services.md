@@ -1,13 +1,6 @@
 ---
-title: "Hostující službu Data (služby WCF Data Services)"
-ms.custom: 
+title: Hostující službu Data (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e8819e8127d16b83d531dc6bdcd3af88245c695e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3adf45e0876ae63b111a53461eee9aeee519b5b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostující službu Data (služby WCF Data Services)
 Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definovaný jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv žádostí, provádění aktualizací na zdroji dat a vygenerování odpovědí na zprávy, podle požadavků [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Datové služby však nelze vytvořit vazbu k a naslouchání soketu sítě pro příchozí požadavky HTTP. Tato funkce vyžaduje službu data využívá hostitelská komponenta.  

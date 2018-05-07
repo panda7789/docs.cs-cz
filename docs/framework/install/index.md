@@ -3,18 +3,12 @@ title: Průvodce instalací rozhraní .NET framework
 description: Informace o instalaci rozhraní .NET Framework v systému Windows.
 author: rlander
 ms.author: mairaw
-keywords: Rozhraní .NET framework, instalace
 ms.date: 08/03/2017
-ms.topic: article
-ms.prod: .net-framework
-ms.devlang: dotnet
-ms.workload:
-- dotnet
-ms.openlocfilehash: 722d34e7084fc46a5b3b3a97c73e2e14b1cc9d24
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6432c693562221969085206bc3d3a7ac77c8ba5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="installation-guide"></a>Průvodce instalací
 

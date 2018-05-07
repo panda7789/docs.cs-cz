@@ -1,14 +1,6 @@
 ---
-title: "CompareAssemblyIdentity – funkce"
-ms.custom: 
+title: CompareAssemblyIdentity – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CompareAssemblyIdentity
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 8b364ae1-8efa-4744-a7da-81fd093d84d6
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 266868a65a0db75b57d46d92a469b4b6ceaa88e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b48adcb8e9de49a312af77c8a9b80a07455ebfe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity – funkce
 Porovná dvě sestavení identity zjistěte, zda jsou ekvivalentní.  
@@ -71,10 +59,10 @@ STDAPI CompareAssemblyIdentity (
  [out] [AssemblyComparisonResult](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md) výčet, který obsahuje podrobné informace o porovnání.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `pfEquivalent`Vrátí logickou hodnotu, která určuje, zda jsou dvě sestavení ekvivalentní. `pResult`Vrátí jednu z `AssemblyComparisonResult` hodnoty uvést podrobnější důvod pro hodnotu `pfEquivalent`.  
+ `pfEquivalent` Vrátí logickou hodnotu, která určuje, zda jsou dvě sestavení ekvivalentní. `pResult` Vrátí jednu z `AssemblyComparisonResult` hodnoty uvést podrobnější důvod pro hodnotu `pfEquivalent`.  
   
 ## <a name="remarks"></a>Poznámky  
- `CompareAssemblyIdentity`kontroluje, zda `pwzAssemblyIdentity1` a `pwzAssemblyIdentity2` odpovídají. `pfEquivalent`je nastavena na `true` pod jednou nebo více z následujících podmínek:  
+ `CompareAssemblyIdentity` kontroluje, zda `pwzAssemblyIdentity1` a `pwzAssemblyIdentity2` odpovídají. `pfEquivalent` je nastavena na `true` pod jednou nebo více z následujících podmínek:  
   
 -   Identity dvě sestavení jsou ekvivalentní. Pro sestavení se silným názvem zajištění rovnocennosti vyžaduje název sestavení, verzi, token veřejného klíče a jazykovou verzi, která shodovat. Jednoduše pojmenované sestavení zajištění rovnocennosti vyžaduje shoda s název sestavení a jazykovou verzi.  
   
@@ -93,7 +81,7 @@ STDAPI CompareAssemblyIdentity (
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  

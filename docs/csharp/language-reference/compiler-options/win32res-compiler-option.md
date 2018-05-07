@@ -1,10 +1,6 @@
 ---
-title: "-win32res (možnosti kompilátoru C#)"
+title: -win32res (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /win32res
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 - -win32res compiler option [C#]
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4c24da8bb745847612d882d00eff7f03dbc60475
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3f7f5f323006024c393cb066284712ed60836372
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-win32res-c-compiler-options"></a>-win32res (možnosti kompilátoru C#)
 **-Win32res** možnost vloží prostředek systému Win32 ve výstupním souboru.  

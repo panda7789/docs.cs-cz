@@ -1,24 +1,12 @@
 ---
 title: WSStreamedHttpBinding
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d6259640bae2b4be4fac73883df8945bf1db7ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: f146e469a323dffa2cdb9b76b6956be97747b2de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wsstreamedhttpbinding"></a>WSStreamedHttpBinding
 Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamování scénářů, při použití přenosového protokolu HTTP.  
@@ -31,7 +19,7 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Binding\WSStreamedHttpBinding`  
   
@@ -39,7 +27,7 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
   
 1.  Vytvořte novou vazbu standardní  
   
-     Standardní vazeb v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] , jako je basicHttpBinding a netTcpBinding nakonfigurovat základní přenosy a zásobníku kanálu pro zvláštní požadavky. V této ukázce `WSStreamedHttpBinding` nakonfiguruje kanál zásobníku pro podporu streamování. Ve výchozím nastavení, WS-zabezpečení a spolehlivé zasílání zpráv nebyly přidány do zásobníku kanál vzhledem k tomu, jak funkce nepodporuje vysílání datového proudu. Novou vazbu je implementována ve třídě `WSStreamedHttpBinding` která je odvozena od <xref:System.ServiceModel.Channels.Binding>. `WSStreamedHttpBinding` Obsahuje následující prvky vazby: <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>, <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Poskytuje třídy `CreateBindingElements()` metoda konfigurace výsledný zásobník vazby, jak je znázorněno v následujícím ukázkovém kódu.  
+     Standardní vazby ve Windows Communication Foundation (WCF), jako je například basicHttpBinding a netTcpBinding nakonfigurovat základní přenosy a zásobníku kanálu pro zvláštní požadavky. V této ukázce `WSStreamedHttpBinding` nakonfiguruje kanál zásobníku pro podporu streamování. Ve výchozím nastavení, WS-zabezpečení a spolehlivé zasílání zpráv nebyly přidány do zásobníku kanál vzhledem k tomu, jak funkce nepodporuje vysílání datového proudu. Novou vazbu je implementována ve třídě `WSStreamedHttpBinding` která je odvozena od <xref:System.ServiceModel.Channels.Binding>. `WSStreamedHttpBinding` Obsahuje následující prvky vazby: <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>, <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Poskytuje třídy `CreateBindingElements()` metoda konfigurace výsledný zásobník vazby, jak je znázorněno v následujícím ukázkovém kódu.  
   
     ```  
     public override BindingElementCollection CreateBindingElements()  
@@ -145,7 +133,7 @@ public class StreamedEchoService : IStreamedEchoService
 ```  
   
 ## <a name="the-wsstreamedhttpbinding-sample-client"></a>Ukázka WSStreamedHttpBinding klienta  
- Pro klienta, který se používá k interakci s používáním služby `WSStreamedHttpBinding` se nachází v podadresáři klienta. Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí se výstraha zabezpečení při pokusu o přístup k adresou protokolu HTTPS v prohlížeči například https://localhost/servicemodelsamples/service.svc. Chcete-li povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta pro práci s testovací certifikát na místě, některé další kód byl přidán do klienta pro potlačení výstrahy zabezpečení. Kód a doprovodné třídy nejsou vyžadovány, při použití provozní certifikáty.  
+ Pro klienta, který se používá k interakci s používáním služby `WSStreamedHttpBinding` se nachází v podadresáři klienta. Protože certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí výstrahu zabezpečení při pokusu o přístupu adresou protokolu HTTPS v prohlížeči, jako například https://localhost/servicemodelsamples/service.svc. Chcete-li povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta pro práci s testovací certifikát na místě, některé další kód byl přidán do klienta pro potlačení výstrahy zabezpečení. Kód a doprovodné třídy nejsou vyžadovány, při použití provozní certifikáty.  
   
 ```  
 // WARNING: This code is only required for test certificates such as those created by makecert. It is   

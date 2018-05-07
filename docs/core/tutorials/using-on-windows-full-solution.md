@@ -4,16 +4,11 @@ description: Zjistěte, jak sestavit kompletní .NET Core řešení ve Visual St
 author: bleroy
 ms.author: mairaw
 ms.date: 11/16/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 8e37eb578f9c4ac63fbc120e6227098ea69d169d
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 52b8781cdc29ac776123402c982353ef437ce74f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core do systému Windows, pomocí Visual Studio 2017
 

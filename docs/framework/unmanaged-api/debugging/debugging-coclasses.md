@@ -1,28 +1,18 @@
 ---
-title: "Ladění tříd typu coclass"
-ms.custom: 
+title: Ladění tříd typu coclass
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - unmanaged coclasses [.NET Framework], debugging
 - debugging coclasses [.NET Framework]
 - coclasses [.NET Framework debugging]
 ms.assetid: 94f94159-108e-436c-99e7-dff3beeb2503
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d531aad148eb060261bc1c2a703e1a003307910
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 403815f38e0ce85d34d97f17b0af23246b5507e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debugging-coclasses"></a>Ladění tříd typu coclass
 Tato část popisuje nespravované typy coclass, které používá rozhraní API pro ladění.  

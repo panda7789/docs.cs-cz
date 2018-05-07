@@ -1,13 +1,7 @@
 ---
-title: "Postupy: vytvoření výčtu časových pásem přítomných na počítači"
-ms.custom: 
+title: 'Postupy: vytvoření výčtu časových pásem přítomných na počítači'
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - time zones [.NET Framework], enumerating
 - enumerating time zones [.NET Framework]
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2318a42040388adfe327f9d0075754daa1aa22a6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dfdc3993f6658ce5dc50050ed062c2de9d4cec29
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Postupy: vytvoření výčtu časových pásem přítomných na počítači
 
@@ -77,7 +66,7 @@ Tento příklad vyžaduje:
 
 * Aby byly importované následujících oborů názvů:
 
-  <xref:System>(v kódu jazyka C#)
+  <xref:System> (v kódu jazyka C#)
 
   <xref:System.Collections.ObjectModel>
 

@@ -1,29 +1,18 @@
 ---
-title: "Pořadí načítání uzlu podle indexu"
-ms.custom: 
+title: Pořadí načítání uzlu podle indexu
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
-caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 780af689f6aff86e2e96738c356df4a81128f4ef
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c3cfa371394e76aab832c3dd4b065eb811413322
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ordered-node-retrieval-by-index"></a>Pořadí načítání uzlu podle indexu
 World Wide Web Consortium (W3C) XML modelu DOM (Document Object) také popisuje seznamu, který má schopnost zvládat seřazený seznam uzlů, oproti sadě neuspořádaný zpracovávaných **XmlNamedNodeMap**. Seznamu v rozhraní Microsoft .NET Framework se nazývá **XmlNodeList**. Metody a vlastnosti, které vracejí **XmlNodeList** jsou:  

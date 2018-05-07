@@ -1,13 +1,6 @@
 ---
-title: "Data a datové objekty"
-ms.custom: 
+title: Data a datové objekty
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - DataFormats class [WPF]
 - DataObject class [WPF]
 ms.assetid: 5967d557-1867-420f-a524-ae3af78402da
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cb2354b61a0433981675ba55978f31937212cabc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff596dc7428c9d105a27999f216d33e735e35a22
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-and-data-objects"></a>Data a datové objekty
 Data, která se přenáší v rámci operace přetažení myší uloženo v datovém objektu.  Datový objekt koncepčně, se skládá z jednoho nebo více dvojic následující:  
@@ -47,7 +35,7 @@ Data, která se přenáší v rámci operace přetažení myší uloženo v dato
 |<xref:System.Windows.IDataObject.GetFormats%2A>|Vrátí seznam hodnot formáty, které jsou uloženy v data v tomto objektu dat, nebo lze převést na.|  
 |<xref:System.Windows.IDataObject.SetData%2A>|V tomto objektu data ukládá zadaná data.|  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje základní implementaci <xref:System.Windows.IDataObject> v <xref:System.Windows.DataObject> třídy. Stock <xref:System.Windows.DataObject> třída je pro mnoho běžných scénářů přenosu dat dostatečné.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje základní implementaci <xref:System.Windows.IDataObject> v <xref:System.Windows.DataObject> třídy. Stock <xref:System.Windows.DataObject> třída je pro mnoho běžných scénářů přenosu dat dostatečné.  
   
  Existuje několik předdefinovaných formátů, jako je například rastrového obrázku, CSV, soubor, HTML, RTF, řetězec, text a zvuku. Informace o formátech předem definované datové součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], najdete v článku <xref:System.Windows.DataFormats> třída referenční téma.  
   
@@ -86,7 +74,7 @@ Data, která se přenáší v rámci operace přetažení myší uloženo v dato
  Další příklady kódu, který se dotazuje na datový objekt k dispozici data formátů naleznete v tématu [seznamu formáty dat v datovém objektu](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md).  Příklady dotazů na datový objekt na přítomnost formát konkrétní dat najdete v tématu [určit, zda formát dat je přítomen v datovém objektu](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md).  
   
 ### <a name="retrieving-data-from-a-data-object"></a>Načítání dat z dat objektu  
- Načítání dat z dat objektu v určitém formátu jednoduše zahrnuje volání jedné z <xref:System.Windows.DataObject.GetData%2A> metody a určení formátu požadovaným datům.  Jeden z <xref:System.Windows.DataObject.GetDataPresent%2A> metody lze kontrolovat přítomnost konkrétní datové formátu.  <xref:System.Windows.DataObject.GetData%2A>vrací data v <xref:System.Object>; v závislosti na formát dat, tento objekt lze převést na specifický kontejner.  
+ Načítání dat z dat objektu v určitém formátu jednoduše zahrnuje volání jedné z <xref:System.Windows.DataObject.GetData%2A> metody a určení formátu požadovaným datům.  Jeden z <xref:System.Windows.DataObject.GetDataPresent%2A> metody lze kontrolovat přítomnost konkrétní datové formátu.  <xref:System.Windows.DataObject.GetData%2A> vrací data v <xref:System.Object>; v závislosti na formát dat, tento objekt lze převést na specifický kontejner.  
   
  Následující příklad kódu používá <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> přetížení zkontrolujte, jestli je k dispozici zadaná data formátu (nativní nebo automatický převod). Pokud zadaný formát je k dispozici, příklad načte data pomocí <xref:System.Windows.DataObject.GetData%28System.String%29> metoda.  
   

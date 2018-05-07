@@ -4,16 +4,11 @@ description: Příkaz clean dotnet vyčistí aktuální adresář.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/13/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 92db35df770b1e1d2438127c4b529d4cb480c8df
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 412f3aa3a942d2f48cd684af341227d193a6db02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-clean"></a>Vyčištění DotNet.
 

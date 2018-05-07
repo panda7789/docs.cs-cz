@@ -1,36 +1,22 @@
 ---
-title: "Přenosové kvóty"
-ms.custom: 
+title: Přenosové kvóty
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5e9d7fbf42f2ed9b8f68b1faf2e2425050b62eaa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6322bada88c6aef65b609f43fe92dda8dbab206
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-quotas"></a>Přenosové kvóty
 Přenosové kvóty jsou mechanismus zásad rozhodování, kdy připojení spotřebovává nadměrné prostředky. Kvótu je pevný limit, který brání použití další prostředky, jakmile dojde k překročení kvóty hodnota. Přenosové kvóty zabránit škodlivý nebo neúmyslnému útoku DOS.  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]přenosy mají výchozí hodnoty kvóty, které jsou založeny na konzervativní přidělení prostředků. Tyto výchozí hodnoty jsou vhodné pro vývojové prostředí a scénáře malé instalace. Správci služeb zkontrolujte přenosové kvóty a ladit jednotlivé hodnoty kvót, pokud instalace může být nedostatek prostředků, nebo pokud jsou právě připojení omezený navzdory dostupnost další prostředky.  
+ Přenosy Windows Communication Foundation (WCF) mají výchozí hodnoty kvóty, které jsou založeny na konzervativní přidělení prostředků. Tyto výchozí hodnoty jsou vhodné pro vývojové prostředí a scénáře malé instalace. Správci služeb zkontrolujte přenosové kvóty a ladit jednotlivé hodnoty kvót, pokud instalace může být nedostatek prostředků, nebo pokud jsou právě připojení omezený navzdory dostupnost další prostředky.  
   
 ## <a name="types-of-transport-quotas"></a>Typy přenosové kvóty  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]přenosy mít tři typy kvót:  
+ Přenosy WCF mít tři typy kvót:  
   
 -   *Časové limity* zmírnit útok na dostupnost služby útoků, které jsou závislé na příkazů systémové prostředky pro delší dobu.  
   
@@ -39,7 +25,7 @@ Přenosové kvóty jsou mechanismus zásad rozhodování, kdy připojení spotř
 -   *Limity velikosti kolekce* vázaný spotřeby prostředků, které nepřímo přidělit paměť nebo jsou v omezenou nabídkou.  
   
 ## <a name="transport-quota-descriptions"></a>Popisy kvóty přenosu  
- Tato část popisuje přenosové kvóty, které jsou k dispozici pro standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přenosy: HTTP (S), protokolu TCP/IP a pojmenované kanály. Vlastní přenosy můžou zpřístupnit vlastní konfigurovat kvóty, které nejsou uvedené v tomto seznamu. Najdete v dokumentaci pro vlastní přenos informace o jeho kvóty.  
+ Tato část popisuje přenosové kvóty, které jsou k dispozici pro standardní přenosy WCF: HTTP (S), protokolu TCP/IP a pojmenované kanály. Vlastní přenosy můžou zpřístupnit vlastní konfigurovat kvóty, které nejsou uvedené v tomto seznamu. Najdete v dokumentaci pro vlastní přenos informace o jeho kvóty.  
   
  Každé nastavení kvót má typ, minimální hodnota a výchozí hodnota. Maximální hodnota, která kvótu je omezena její typ. Vzhledem k omezením počítače není vždy možné nastavit kvótu na maximální hodnotu.  
   

@@ -1,21 +1,14 @@
 ---
-title: "Výjimky generované kompilátorem (Průvodce programováním v C#)"
+title: Výjimky generované kompilátorem (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - exceptions [C#], compiler-generated
 ms.assetid: 53b52f97-b366-4ed7-b05b-9eb78096b7f9
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d1417e42f588978d5fc1beca4ad55463502ee219
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a1746a492685cf25869bd06935bfd056de257fea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>Výjimky generované kompilátorem (Průvodce programováním v C#)
 Některé výjimky jsou vyvolány automaticky pomocí rozhraní .NET Framework common language runtime (CLR), pokud základní operace s chybou. Tyto výjimky a jejich chybové stavy jsou uvedeny v následující tabulce.  
@@ -34,9 +27,9 @@ Některé výjimky jsou vyvolány automaticky pomocí rozhraní .NET Framework c
 |<xref:System.TypeInitializationException>|Vyvolá, když statického konstruktoru výjimku a kompatibilní `catch` existuje klauzule k zachycení ho.|  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
  [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)  
- [try-catch –](../../../csharp/language-reference/keywords/try-catch.md)  
- [try-finally –](../../../csharp/language-reference/keywords/try-finally.md)  
- [try-catch-finally –](../../../csharp/language-reference/keywords/try-catch-finally.md)
+ [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
+ [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
+ [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)

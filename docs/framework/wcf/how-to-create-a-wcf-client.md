@@ -1,32 +1,18 @@
 ---
-title: "Postupy: Vytvoření klienta Windows Communication Foundation"
-ms.custom: 
+title: 'Postupy: Vytvoření klienta Windows Communication Foundation'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2591cad6354ec40f1fb6ead265c84a67adf3eec8
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
-ms.translationtype: MT
+ms.openlocfilehash: 962f1255f3c759d623850678005eff138353cc80
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>Postupy: Vytvoření klienta Windows Communication Foundation
-Toto je čtvrtý šesti úlohy, které jsou nutné k vytváření [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace. Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
+Toto je čtvrtý šesti úlohy, které jsou potřebné pro vytvoření aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
   
  Toto téma popisuje, jak načíst metadata z [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a použít ho k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy server, který mají přístup ke službě. Tato úloha je dokončit pomocí funkce Přidat odkaz na službu poskytované sadě Visual Studio. Tento nástroj získává metadata z koncového bodu služby MEX a vygeneruje soubor spravované zdrojového kódu pro proxy server na klienta v jazyce zvolili jste (C# ve výchozím nastavení). Kromě vytváření proxy serveru klienta, nástroj také vytvoří nebo aktualizuje klienta konfigurační soubor, který umožňuje aplikaci připojit ke službě v některém z jeho koncových bodů klienta.  
   
@@ -48,7 +34,7 @@ Toto je čtvrtý šesti úlohy, které jsou nutné k vytváření [!INCLUDE[indi
   
 3.  Přidat odkaz na System.ServiceModel do projektu GettingStartedClient kliknutím pravým tlačítkem myši **odkaz** ve složce projektu GettingStartedClient v Průzkumníku řešení a vyberte **přidat** Odkaz. V **přidat odkaz na** dialogovém okně vyberte **Framework** na levé straně dialogového okna. Zadejte do textového pole hledání sestavení v `System.ServiceModel`. V části center dialogového okna Vybrat **System.ServiceModel**, klikněte na tlačítko **přidat** tlačítko a klikněte na tlačítko **Zavřít** tlačítko. Uložte řešení klepnutím **Uložit vše** tlačítko níže v hlavní nabídce.  
   
-4.  Další wlll přidat odkaz na službu ve službě kalkulačky. Předtím, než můžete to udělat, musíte spustit až GettingStartedHost konzolové aplikace. Jakmile je na hostiteli spuštěn můžete klikněte pravým tlačítkem na složku odkazy v části GettingStartedClient projekt v Průzkumníku řešení a vyberte Přidat odkaz na službu a zadejte následující adresu URL do pole Adresa dialogového okna Přidat odkaz na službu: HYPERLINK "http:/ / localhost:8000/ServiceModelSamples/služby "http://localhost: 8000/ServiceModelSamples/služby a klikněte na tlačítko **přejděte** tlačítko. CalculatorService by pak zobrazí v seznamu služeb, klikněte na dvojitou hodnotu CalculatorService a bude rozbalit a zobrazit kontraktů služby implementované službu. Ponechte výchozí obor názvů a klikněte na **OK** tlačítko.  
+4.  Další wlll přidat odkaz na službu ve službě kalkulačky. Předtím, než můžete to udělat, musíte spustit až GettingStartedHost konzolové aplikace. Jakmile je na hostiteli spuštěn můžete klikněte pravým tlačítkem na složku odkazy v části GettingStartedClient projekt v Průzkumníku řešení a vyberte Přidat odkaz na službu a zadejte následující adresu URL do pole Adresa dialogového okna Přidat odkaz na službu: HYPERLINK "http://localhost:8000/ServiceModelSamples/Service" http://localhost:8000/ServiceModelSamples/Service a klikněte na **přejděte** tlačítko. CalculatorService by pak zobrazí v seznamu služeb, klikněte na dvojitou hodnotu CalculatorService a bude rozbalit a zobrazit kontraktů služby implementované službu. Ponechte výchozí obor názvů a klikněte na **OK** tlačítko.  
   
      Když přidáte, odkaz na službu pomocí sady Visual Studio nové položky se zobrazí v Průzkumníku řešení ve složce odkazů na služby v rámci GettingStartedClient projektu.  Pokud použijete [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj souboru zdrojového kódu a soubor app.config se budou generovat.  
   

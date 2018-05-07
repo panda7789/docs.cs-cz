@@ -1,11 +1,7 @@
 ---
-title: "Funkce PutClassWmi (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce PutClassWmi vytvoří novou třídu nebo aktualizuje stávající."
+title: Funkce PutClassWmi (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce PutClassWmi vytvoří novou třídu nebo aktualizuje stávající.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - PutClassWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 219cec2096cd3d1dfe1e0d3c0903b62692e444e6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3ce887d59d02cfc2e4d8c183aa495dcc1535853c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi – funkce
 Vytvoří novou třídu nebo aktualizuje stávající.  
@@ -84,7 +77,7 @@ Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubo
 | `WBEM_E_INVALID OPERATION` | 0x80041016 | Zadaná třída název je neplatný. |
 | `WBEM_E_CLASS_HAS_CHILDREN` | 0x80041025 | Došlo pokusu o provedení změny, které by způsobily neplatnost podtřídy. |
 | `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY` Byl zadán příznak, ale třída již existuje. |
-| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY`byl zadán v `lFlags`, a třída nebyla nalezena. |
+| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY` byl zadán v `lFlags`, a třída nebyla nalezena. |
 | `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | Požadované vlastnosti pro třídy, ne všechny byly nastaveny. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
@@ -104,7 +97,7 @@ Pokud volání funkce selže, můžete získat další informace o chybě při v
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

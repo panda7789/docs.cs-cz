@@ -1,20 +1,15 @@
 ---
 title: Metody – Průvodce C#
 description: Přehled metod, metoda parametry a návratové hodnoty – metoda
-keywords: Rozhraní .NET, rozhraní .NET core, C#
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/26/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 526cd6d269c7c089f6547fcf243b43e411037d13
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6a99ccc0157b044eb1a9ed7189de94ca69225d1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="methods"></a>Metody #
 

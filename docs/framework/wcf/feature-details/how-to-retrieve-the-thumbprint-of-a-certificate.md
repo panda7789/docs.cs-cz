@@ -1,31 +1,17 @@
 ---
 title: 'Postupy: načtení kryptografického otisku certifikátu'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0fe3635b73e17123e410f43efc8d382e0df85641
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d827c2c5f407c3041a31efbc06fcfed205bef458
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>Postupy: načtení kryptografického otisku certifikátu
-Při zápisu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikaci, která používá certifikátu X.509. certifikát pro ověřování, je často nutné k určení deklarací identity v certifikátu nalezeny. Například musíte zadat deklaraci identity kryptografický otisk při použití <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> výčet ve <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda. Hledání hodnota deklarace identity vyžaduje dva kroky. První otevřete modul snap-in Certifikáty konzoly Microsoft Management Console (MMC). (Viz [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).) Druhý podle postupu popsaného tady, vyhledejte příslušný certifikát a zkopírujte jeho kryptografický otisk (nebo jiné hodnoty deklarace identity).  
+Při psaní aplikace Windows Communication Foundation (WCF), která používá certifikátu X.509. certifikát pro ověřování, je často nutné zadat najdou deklarace v certifikátu. Například musíte zadat deklaraci identity kryptografický otisk při použití <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> výčet ve <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda. Hledání hodnota deklarace identity vyžaduje dva kroky. První otevřete modul snap-in Certifikáty konzoly Microsoft Management Console (MMC). (Viz [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).) Druhý podle postupu popsaného tady, vyhledejte příslušný certifikát a zkopírujte jeho kryptografický otisk (nebo jiné hodnoty deklarace identity).  
   
  Pokud používáte certifikát pro ověřování služby, je důležité si uvědomit, hodnota **vystaveno pro** sloupce (první sloupec v konzole). Při použití Secure Sockets Layer (SSL), jako je zabezpečení přenosu, jedním z první kontroly provést k porovnání základní adresa identifikátoru URI (Uniform Resource) služby **vystaveno pro** hodnotu. Hodnoty musí odpovídat nebo se zastavit proces ověřování.  
   

@@ -1,28 +1,18 @@
 ---
-title: "Profilace globálních statických funkcí"
-ms.custom: 
+title: Profilace globálních statických funkcí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - global static functions [.NET Framework profiling]
 - profiling global static functions [.NET Framework]
 - unmanaged global static functions [.NET Framework], profiling
 ms.assetid: 08a13a57-dc49-488d-b937-31e3051fda97
-caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 66f22557dd6020ff5040d5aaf76cb12e9ae9965c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8bb5d93c91de857ebbee63009cad73fba7e1d284
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="profiling-global-static-functions"></a>Profilace globálních statických funkcí
 Tato část popisuje nespravovaných funkcí rozhraní API, které používá profilaci API.  
@@ -59,7 +49,7 @@ Tato část popisuje nespravovaných funkcí rozhraní API, které používá pr
  [FunctionIDMapper2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionidmapper2-function.md)  
  Profileru upozorní, že daným identifikátorem funkce může namapovat na alternativní ID, které má být používány [functionenter3 –](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md), [functionleave3 –](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md), a [functiontailcall3 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3-function.md), nebo[functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md), [functionleave3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md), a [functiontailcall3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md) zpětných volání pro tuto funkci. Taky umožňuje profileru indikující, zda chce dostávat zpětných volání pro tuto funkci.  
   
- `FunctionIDMapper2`rozšiřuje [functionidmapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) fungovat s `clientData` parametr, který profilery může použít k rozlišení mezi moduly runtime.  
+ `FunctionIDMapper2` rozšiřuje [functionidmapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) fungovat s `clientData` parametr, který profilery může použít k rozlišení mezi moduly runtime.  
   
  [FunctionEnter3 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md)  
  Upozorní profileru, že se ovládací prvek předán do funkce.  

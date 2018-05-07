@@ -1,31 +1,20 @@
 ---
-title: "Obecná rozhraní"
-ms.custom: 
+title: Obecná rozhraní
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - generic interfaces [.NET Framework]
 - equality comparisons [.NET Framework]
 - generics [.NET Framework], interfaces
 - ordering comparisons [.NET Framework]
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
-caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b0735718db6317716055b9ee59cf90e869f2015c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cf9d1323918d42884f5e2fdf8a5905d13283c74c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-interfaces"></a>Obecná rozhraní
 Toto téma obsahuje přehled obecných rozhraní, které tvoří běžné funkce celé řady obecných typů.  
@@ -44,7 +33,7 @@ Toto téma obsahuje přehled obecných rozhraní, které tvoří běžné funkce
  <xref:System.Collections.Generic.Comparer%601> a <xref:System.Collections.Generic.EqualityComparer%601> obecné třídy poskytují základní třídy pro implementace <xref:System.Collections.Generic.IComparer%601> a <xref:System.Collections.Generic.IEqualityComparer%601> obecná rozhraní a také poskytují výchozí porovnání řazení a porovnávání prostřednictvím jejich odpovídajících <xref:System.Collections.Generic.Comparer%601.Default%2A?displayProperty=nameWithType> a <xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType> vlastnosti.  
   
 ### <a name="collection-functionality"></a>Kolekce funkcí  
- <xref:System.Collections.Generic.ICollection%601> Obecné rozhraní je základní rozhraní pro obecné typy kolekcí. Poskytuje základní funkce pro přidání, odebrání, kopírování a vytvoření výčtu prvků. <xref:System.Collections.Generic.ICollection%601>dědí z obou obecného <xref:System.Collections.Generic.IEnumerable%601> a neobecné <xref:System.Collections.IEnumerable>.  
+ <xref:System.Collections.Generic.ICollection%601> Obecné rozhraní je základní rozhraní pro obecné typy kolekcí. Poskytuje základní funkce pro přidání, odebrání, kopírování a vytvoření výčtu prvků. <xref:System.Collections.Generic.ICollection%601> dědí z obou obecného <xref:System.Collections.Generic.IEnumerable%601> a neobecné <xref:System.Collections.IEnumerable>.  
   
  <xref:System.Collections.Generic.IList%601> Obecné rozhraní rozšiřuje <xref:System.Collections.Generic.ICollection%601> obecné rozhraní s metody načítání.  
   

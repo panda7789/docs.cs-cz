@@ -1,24 +1,12 @@
 ---
-title: "3378 – SocketAsyncReadStop"
-ms.custom: 
+title: 3378 – SocketAsyncReadStop
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c7b5b73e-c1cd-41a5-9a0b-ab86af437f60
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 45fd581797bee0f710da0de431e19479c850ec7e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f282e58783635f4b2b12b24fa8160b602a5b8554
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3378---socketasyncreadstop"></a>3378 – SocketAsyncReadStop
 ## <a name="properties"></a>Vlastnosti  

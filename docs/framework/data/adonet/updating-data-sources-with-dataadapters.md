@@ -1,27 +1,15 @@
 ---
-title: "Aktualizace zdrojů dat s DataAdapters"
-ms.custom: 
+title: Aktualizace zdrojů dat s DataAdapters
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-caps.latest.revision: "8"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e99ff801894149a2324638bfacbc1d32ee937e0a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9d9eeb93cf0360f321c124bb6bce6ed02a9ea253
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat s DataAdapters
 `Update` Metodu <xref:System.Data.Common.DataAdapter> je volána k vyřešení změny z <xref:System.Data.DataSet> zpět do zdroje dat. `Update` Metoda, například `Fill` metoda, přijímá jako argumenty instanci `DataSet`a volitelné <xref:System.Data.DataTable> objekt nebo `DataTable` název. `DataSet` Instance je `DataSet` obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulka, ze kterých se budou načítat změny. Pokud žádné `DataTable` není zadaný, první `DataTable` v `DataSet` se používá.  
@@ -57,7 +45,7 @@ ms.lasthandoff: 01/17/2018
   
  Zpracování výjimek, které mohou nastat při volání `Update` metodu, můžete použít `RowUpdated` událostí reagovat na řádek aktualizace chyby, kdy k nim dojde (najdete v části [zpracování události DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)), nebo můžete nastavit `DataAdapter.ContinueUpdateOnError` k `true` před voláním `Update`a reagovat na informace o chybě, které jsou uložené v `RowError` vlastnost konkrétního řádku po dokončení aktualizace (najdete v části [informace o chybě řádek](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)).  
   
- **Poznámka:** volání `AcceptChanges` na `DataSet`, `DataTable`, nebo `DataRow` způsobí, že všechny `Original` hodnoty pro `DataRow` přepsání s `Current` hodnoty `DataRow`. Pokud hodnoty polí, které identifikují řádku jako jedinečný změnilo po volání `AcceptChanges` `Original` hodnoty budou už shodují s hodnotami v datovém zdroji. `AcceptChanges`je automaticky volána pro každý řádek během volání metodě aktualizace `DataAdapter`. Můžete zachovat původní hodnoty při volání metody aktualizace první nastavením `AcceptChangesDuringUpdate` vlastnost `DataAdapter` na hodnotu false, případně můžete vytvořit obslužnou rutinu události pro `RowUpdated` událostí a nastavení <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> k <xref:System.Data.UpdateStatus.SkipCurrentRow>. Další informace najdete v tématu [slučování obsah datovou sadu](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md) a [zpracování události DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ **Poznámka:** volání `AcceptChanges` na `DataSet`, `DataTable`, nebo `DataRow` způsobí, že všechny `Original` hodnoty pro `DataRow` přepsání s `Current` hodnoty `DataRow`. Pokud hodnoty polí, které identifikují řádku jako jedinečný změnilo po volání `AcceptChanges` `Original` hodnoty budou už shodují s hodnotami v datovém zdroji. `AcceptChanges` je automaticky volána pro každý řádek během volání metodě aktualizace `DataAdapter`. Můžete zachovat původní hodnoty při volání metody aktualizace první nastavením `AcceptChangesDuringUpdate` vlastnost `DataAdapter` na hodnotu false, případně můžete vytvořit obslužnou rutinu události pro `RowUpdated` událostí a nastavení <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> k <xref:System.Data.UpdateStatus.SkipCurrentRow>. Další informace najdete v tématu [slučování obsah datovou sadu](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md) a [zpracování události DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklady ukazují, jak provést aktualizace na upravené řádky explicitně nastavením `UpdateCommand` z `DataAdapter` a volání jeho `Update` metoda. Všimněte si, že zadaný parametr v klauzuli WHERE aktualizace příkaz nastaven pro použití `Original` hodnotu `SourceColumn`. To je důležité, protože `Current` hodnota může změnit a nemusí odpovídat hodnotě v datovém zdroji. `Original` Hodnota je hodnota, která byla použita k vyplnění `DataTable` ze zdroje dat.  

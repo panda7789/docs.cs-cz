@@ -1,23 +1,12 @@
 ---
 title: 2022 - ExecuteWorkItemStop
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 731a6355-3a33-46c5-9830-00b44a665812
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 005b95a98b7a30283be32ad1ea0b580a57a3b771
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 781b54568ba3e62b6ed6f75913ca9eb0bf0b49e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="2022---executeworkitemstop"></a>2022 - ExecuteWorkItemStop
 ## <a name="properties"></a>Vlastnosti  

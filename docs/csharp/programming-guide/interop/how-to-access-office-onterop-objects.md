@@ -1,10 +1,6 @@
 ---
-title: "Postupy: přístup k objektům spolupráce sady Office pomocí Visual C# funkcí (C# Průvodce programováním)"
+title: 'Postupy: přístup k objektům spolupráce sady Office pomocí Visual C# funkcí (C# Průvodce programováním)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - optional parameters [C#], Office programming
 - named and optional arguments [C#], Office programming
@@ -13,14 +9,11 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 751e8240c9385f516315ff3b53221d1e1348ae58
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 4e2599f34e80f70a36d6f497f908887aa6853121
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům spolupráce sady Office pomocí Visual C# funkcí (C# Průvodce programováním)
 Visual C# obsahuje funkce, které zjednodušují přístup k rozhraní API Office objekty. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a schopnost předání argumentů odkaz parametrů metody modelu COM, jako kdyby byly parametry s hodnotou.  
@@ -39,7 +32,7 @@ Visual C# obsahuje funkce, které zjednodušují přístup k rozhraní API Offic
   
 2.  Na **soubor** nabídky, přejděte na příkaz **nový**a potom klikněte na **projektu**. **Nový projekt** zobrazí se dialogové okno.  
   
-3.  V **nainstalovaných šablonách** podokně rozbalte **Visual C#**a potom klikněte na **Windows**.  
+3.  V **nainstalovaných šablonách** podokně rozbalte **Visual C#** a potom klikněte na **Windows**.  
   
 4.  Podívejte se v horní části **nový projekt** dialogovém okně Ujistěte se, že **rozhraní .NET Framework 4** (nebo novější verze) je jako cílové rozhraní vybrána.  
   
@@ -117,7 +110,7 @@ Visual C# obsahuje funkce, které zjednodušují přístup k rozhraní API Offic
   
 1.  Pro ilustraci další způsoby, ve kterém [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]a novější verze, zlepšuje Office programování, následující kód k otevření aplikace Word a vytvoří ikonu odkazující na sešit aplikace Excel.  
   
-     Vložte metoda `CreateIconInWordDoc`, zadané později v tomto kroku do `Program` třídy. `CreateIconInWordDoc`pojmenované a nepovinné argumenty používá ke snížení složitosti metoda volání [přidat](https://msdn.microsoft.com/library/microsoft.office.interop.word.documents.add.aspx) a [PasteSpecial](https://msdn.microsoft.com/library/microsoft.office.interop.word.selection.pastespecial.aspx). Tyto volání začlenit dva další nové funkce, zavedená v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] , volání metod modelu COM, které mají odkaz parametry zjednodušit. První můžete odeslat argumenty k parametrům reference, jako kdyby byly parametry s hodnotou. To znamená můžete odeslat hodnoty přímo, bez vytvoření proměnnou pro každý odkaz na parametr. Kompilátor vygeneruje dočasné proměnné, do kterých argument hodnoty a proměnné, zahodí se při návratu z volání. Druhý, můžete vynechat `ref` – klíčové slovo v seznamu argumentů.  
+     Vložte metoda `CreateIconInWordDoc`, zadané později v tomto kroku do `Program` třídy. `CreateIconInWordDoc` pojmenované a nepovinné argumenty používá ke snížení složitosti metoda volání [přidat](https://msdn.microsoft.com/library/microsoft.office.interop.word.documents.add.aspx) a [PasteSpecial](https://msdn.microsoft.com/library/microsoft.office.interop.word.selection.pastespecial.aspx). Tyto volání začlenit dva další nové funkce, zavedená v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] , volání metod modelu COM, které mají odkaz parametry zjednodušit. První můžete odeslat argumenty k parametrům reference, jako kdyby byly parametry s hodnotou. To znamená můžete odeslat hodnoty přímo, bez vytvoření proměnnou pro každý odkaz na parametr. Kompilátor vygeneruje dočasné proměnné, do kterých argument hodnoty a proměnné, zahodí se při návratu z volání. Druhý, můžete vynechat `ref` – klíčové slovo v seznamu argumentů.  
   
      `Add` Metoda má čtyři odkaz parametry, které jsou volitelné. V [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], nebo novější verze, pokud chcete použít výchozí hodnoty, můžete vynechat argumenty pro všechny parametry. V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] a starších verzí, je třeba zadat argument pro každý parametr a argument musí být proměnná, protože parametry jsou parametry odkaz.  
   

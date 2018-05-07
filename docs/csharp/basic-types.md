@@ -1,20 +1,13 @@
 ---
-title: "Základní typy - Průvodce C#"
-description: "Další informace o základní typy (číslice, řetězce a objekt) ve všech aplikacích jazyka C#"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-ms.author: wiwagn
+title: Základní typy - Průvodce C#
+description: Další informace o základní typy (číslice, řetězce a objekt) ve všech aplikacích jazyka C#
 ms.date: 10/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 398a73f72a9a31c6b2a19a626f704f65564f4fbd
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 2e62a461e41f4172bd6dd512a71babb998924978
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnných a hodnot  
 C# je jazyk silného typu. Všechny proměnné a konstanta má typ, stejně jako každý výraz, který se vyhodnotí na hodnotu. Každý podpis metody Určuje typ pro každý vstupní parametr a návratovou hodnotu. Knihovna tříd rozhraní .NET Framework definuje sadu předdefinovaných číselnými typy a také více komplexní typy, které představují širokou škálu Logická konstrukce, jako je například systém souborů, připojení k síti, kolekce a pole objektů a dat. Typické programu v C# používá typy z knihovny tříd a uživatelem definované typy, které model koncepty, které jsou specifické pro program problém domény.  

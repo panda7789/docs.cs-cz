@@ -1,22 +1,17 @@
 ---
 title: Začínáme - průvodce v C#
 description: Najít krátké, jednoduché návodů, které vám umožní rychle zjistěte úvodní C# – koncepce a psaní aplikací .NET Core.
-keywords: C#, Get spustili, získání, instalaci
 helpviewer_keywords:
 - Visual C#, getting started
 - getting started, Visual C#
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/23/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.openlocfilehash: 630815032925e5dac0477147c6265657face44a5
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 8c9b2803819b4ffcf0edce7994b9fdbc1c6c6951
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-c"></a>Začínáme s C# #
 

@@ -1,21 +1,12 @@
 ---
-title: "Vytváření stromů XML v jazyce C# (LINQ to XML)"
-ms.custom: 
+title: Vytváření stromů XML v jazyce C# (LINQ to XML)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: cc74234a-0bac-4327-9c8c-5a2ead15b595
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 2e37ee7cd61058157b9c6c7d37784e215faf900a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4fcd0c14970dd4aabe4d51335f9a0a0a991ef019
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-xml-trees-in-c-linq-to-xml"></a>Vytváření stromů XML v jazyce C# (LINQ to XML)
 Tato část obsahuje informace o vytváření stromů XML v jazyce C#.  

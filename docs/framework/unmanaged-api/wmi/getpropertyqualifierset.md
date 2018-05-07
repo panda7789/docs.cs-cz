@@ -1,11 +1,7 @@
 ---
-title: "Funkce GetPropertyQualifierSet (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce GetPropertyQualifierSet načte kvalifikátor nastavená pro vlastnost."
+title: Funkce GetPropertyQualifierSet (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce GetPropertyQualifierSet načte kvalifikátor nastavená pro vlastnost.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetPropertyQualifierSet
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7ca2981c8833abaafd5d206b66d6e91f34e2c91d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2951733211737f06cd737b20bd1537277be1be1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getpropertyqualifierset-function"></a>GetPropertyQualifierSet – funkce
 Načte kvalifikátor nastavit určité vlastnosti.
@@ -54,10 +47,10 @@ HRESULT GetPropertyQualifierSet (
 [v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
 
 `wszMethod`  
-[v] Název vlastnosti. `wszProperty`musí odkazovat na platný `LPCWSTR`. 
+[v] Název vlastnosti. `wszProperty` musí odkazovat na platný `LPCWSTR`. 
 
 `ppQualSet`  
-[out] Ukazatel rozhraní, které umožňuje přístup k kvalifikátory vlastnosti obdrží. `ppQualSet`nemůže být `null`. Pokud dojde k chybě, nevrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`. 
+[out] Ukazatel rozhraní, které umožňuje přístup k kvalifikátory vlastnosti obdrží. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, nevrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -87,7 +80,7 @@ Vzhledem k tomu, že vlastnosti systému žádné kvalifikátory, funkce vrátí
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

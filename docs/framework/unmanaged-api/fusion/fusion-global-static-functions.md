@@ -1,28 +1,18 @@
 ---
-title: "Fúze globálních statických funkcí"
-ms.custom: 
+title: Fúze globálních statických funkcí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - unmanaged global static functions [.NET Framework], fusion
 - fusion global static functions [.NET Framework]
 - global static functions [.NET Framework fusion]
 ms.assetid: 229b2188-9168-4b44-a987-e1f515494688
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 126edd5f25b56a069a87cd1bd50cce955334a342
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 86cb59c0935c193a9865d5ace5fe11c96226d9e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fusion-global-static-functions"></a>Fúze globálních statických funkcí
 Tato část popisuje nespravované globální statické funkce, které používá fusion rozhraní API.  

@@ -1,32 +1,21 @@
 ---
-title: "Vytváření asynchronních aktivit v WF"
-ms.custom: 
+title: Vytváření asynchronních aktivit v WF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 497e81ed-5eef-460c-ba55-fae73c05824f
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d06f825b96f66e35bdd30db272b99bb4e2e3e1e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8df876c9be020ece29683d1c101a4045b1c76322
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a>Vytváření asynchronních aktivit v WF
-<xref:System.Activities.AsyncCodeActivity>poskytuje základní třídu používat, že umožňuje odvozené aktivity pro implementaci asynchronního spuštění logiku autoři aktivity. To je užitečné pro vlastní aktivity, které musíte provést asynchronní pracovní bez podržte podprocesu plánovače pracovního postupu a blokuje veškeré aktivity, které pravděpodobně bude moci spustit souběžně. Toto téma obsahuje přehled o tom, jak vytvořit vlastní asynchronní aktivity pomocí <xref:System.Activities.AsyncCodeActivity>.  
+<xref:System.Activities.AsyncCodeActivity> poskytuje základní třídu používat, že umožňuje odvozené aktivity pro implementaci asynchronního spuštění logiku autoři aktivity. To je užitečné pro vlastní aktivity, které musíte provést asynchronní pracovní bez podržte podprocesu plánovače pracovního postupu a blokuje veškeré aktivity, které pravděpodobně bude moci spustit souběžně. Toto téma obsahuje přehled o tom, jak vytvořit vlastní asynchronní aktivity pomocí <xref:System.Activities.AsyncCodeActivity>.  
   
 ## <a name="using-asynccodeactivity"></a>Pomocí AsyncCodeActivity  
- <xref:System.Activities?displayProperty=nameWithType>vlastní aktivity autoři poskytuje různé základní třídy pro požadavky na autorizaci jiné aktivitě. Každé z nich představuje konkrétní sémantického a poskytuje Autor pracovního postupu (a aktivity runtime) odpovídající kontrakt. <xref:System.Activities.AsyncCodeActivity> Na základě aktivity je aktivitou, která provede práci asynchronně relativně k plánovač vláken a jehož logiky provádění vyjádřeného v spravovaný kód. V důsledku asynchronní, přejdete <xref:System.Activities.AsyncCodeActivity> může vyvolávat bod nečinnosti během provádění. Vzhledem k povaze volatile asynchronní práce <xref:System.Activities.AsyncCodeActivity> vždy vytvoří blok žádné zachovat po dobu trvání provádění aktivity. To zabrání modulu runtime pracovního postupu uložením k instanci pracovního postupu uprostřed asynchronní pracovní a rovněž zamezí k instanci pracovního postupu z uvolnění chvíli kód asynchronní provádění.  
+ <xref:System.Activities?displayProperty=nameWithType> vlastní aktivity autoři poskytuje různé základní třídy pro požadavky na autorizaci jiné aktivitě. Každé z nich představuje konkrétní sémantického a poskytuje Autor pracovního postupu (a aktivity runtime) odpovídající kontrakt. <xref:System.Activities.AsyncCodeActivity> Na základě aktivity je aktivitou, která provede práci asynchronně relativně k plánovač vláken a jehož logiky provádění vyjádřeného v spravovaný kód. V důsledku asynchronní, přejdete <xref:System.Activities.AsyncCodeActivity> může vyvolávat bod nečinnosti během provádění. Vzhledem k povaze volatile asynchronní práce <xref:System.Activities.AsyncCodeActivity> vždy vytvoří blok žádné zachovat po dobu trvání provádění aktivity. To zabrání modulu runtime pracovního postupu uložením k instanci pracovního postupu uprostřed asynchronní pracovní a rovněž zamezí k instanci pracovního postupu z uvolnění chvíli kód asynchronní provádění.  
   
 ### <a name="asynccodeactivity-methods"></a>AsyncCodeActivity metody  
- Aktivity, které jsou odvozeny od <xref:System.Activities.AsyncCodeActivity> můžete vytvořit logiku asynchronního spuštění přepsáním <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> metody s vlastní kód. Při volání modulem runtime, se předávají tyto metody <xref:System.Activities.AsyncCodeActivityContext>. <xref:System.Activities.AsyncCodeActivityContext>umožňuje autorovi aktivity poskytnutí sdílené mezi <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> /  <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> v daném kontextu <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> vlastnost. V následujícím příkladu `GenerateRandom` aktivity asynchronně generuje náhodné číslo.  
+ Aktivity, které jsou odvozeny od <xref:System.Activities.AsyncCodeActivity> můžete vytvořit logiku asynchronního spuštění přepsáním <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> metody s vlastní kód. Při volání modulem runtime, se předávají tyto metody <xref:System.Activities.AsyncCodeActivityContext>. <xref:System.Activities.AsyncCodeActivityContext> umožňuje autorovi aktivity poskytnutí sdílené mezi <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> /  <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> v daném kontextu <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> vlastnost. V následujícím příkladu `GenerateRandom` aktivity asynchronně generuje náhodné číslo.  
   
  [!code-csharp[CFX_ActivityExample#8](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#8)]  
   
@@ -36,7 +25,7 @@ ms.lasthandoff: 12/22/2017
   
  Všimněte si, že vzhledem k tomu, že je žádnou návratovou hodnotu `DisplayRandom` používá <xref:System.Action> místo <xref:System.Func%602> k vyvolání jeho delegáta a delegát nevrací žádnou hodnotu.  
   
- <xref:System.Activities.AsyncCodeActivity>také poskytuje <xref:System.Activities.AsyncCodeActivity.Cancel%2A> přepsat. Při <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> jsou požadované přepisy <xref:System.Activities.AsyncCodeActivity.Cancel%2A> je volitelný a může být přepsána tak aktivity můžete vyčistit stav nezpracovaných asynchronní při jeho zrušena nebo přerušena. Pokud vyčištění je možné, a `AsyncCodeActivity.ExecutingActivityInstance.IsCancellationRequested` je `true`, by měly volat aktivity <xref:System.Activities.AsyncCodeActivityContext.MarkCanceled%2A>. Jakékoli výjimky vyvolány z této metody jsou závažné k instanci pracovního postupu.  
+ <xref:System.Activities.AsyncCodeActivity> také poskytuje <xref:System.Activities.AsyncCodeActivity.Cancel%2A> přepsat. Při <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> jsou požadované přepisy <xref:System.Activities.AsyncCodeActivity.Cancel%2A> je volitelný a může být přepsána tak aktivity můžete vyčistit stav nezpracovaných asynchronní při jeho zrušena nebo přerušena. Pokud vyčištění je možné, a `AsyncCodeActivity.ExecutingActivityInstance.IsCancellationRequested` je `true`, by měly volat aktivity <xref:System.Activities.AsyncCodeActivityContext.MarkCanceled%2A>. Jakékoli výjimky vyvolány z této metody jsou závažné k instanci pracovního postupu.  
   
  [!code-csharp[CFX_ActivityExample#10](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#10)]  
   
@@ -54,7 +43,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CFX_ActivityExample#9](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#9)]  
   
 ### <a name="scheduling-actions-or-child-activities-using-asynccodeactivity"></a>Plánování akce nebo podřízené aktivity pomocí AsyncCodeActivity  
- <xref:System.Activities.AsyncCodeActivity>odvozené vlastních aktivit poskytují metodu pro provádění pracovní asynchronně s ohledem na vlákno pracovního postupu, ale neposkytuje možnost plánování podřízené aktivity nebo akce. Asynchronní chování však lze začlenit s plánování aktivit podřízené prostřednictvím složení. Asynchronní aktivitu vytvořili a pak se skládá <xref:System.Activities.Activity> nebo <xref:System.Activities.NativeActivity> odvozené aktivity zajistit asynchronní chování a plánování podřízené aktivity nebo akce. Například aktivita by bylo možné vytvořit odvozenou od <xref:System.Activities.Activity>a jako jeho implementace <xref:System.Activities.Statements.Sequence> obsahující asynchronní aktivitu jako i další aktivity, které implementují logiku aktivity. Další příklady skládání aktivity pomocí <xref:System.Activities.Activity> a <xref:System.Activities.NativeActivity>, najdete v části [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md), [možnosti vytváření aktivity](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md)a [složené](../../../docs/framework/windows-workflow-foundation/samples/composite.md) ukázky aktivity.  
+ <xref:System.Activities.AsyncCodeActivity> odvozené vlastních aktivit poskytují metodu pro provádění pracovní asynchronně s ohledem na vlákno pracovního postupu, ale neposkytuje možnost plánování podřízené aktivity nebo akce. Asynchronní chování však lze začlenit s plánování aktivit podřízené prostřednictvím složení. Asynchronní aktivitu vytvořili a pak se skládá <xref:System.Activities.Activity> nebo <xref:System.Activities.NativeActivity> odvozené aktivity zajistit asynchronní chování a plánování podřízené aktivity nebo akce. Například aktivita by bylo možné vytvořit odvozenou od <xref:System.Activities.Activity>a jako jeho implementace <xref:System.Activities.Statements.Sequence> obsahující asynchronní aktivitu jako i další aktivity, které implementují logiku aktivity. Další příklady skládání aktivity pomocí <xref:System.Activities.Activity> a <xref:System.Activities.NativeActivity>, najdete v části [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md), [možnosti vytváření aktivity](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md)a [složené](../../../docs/framework/windows-workflow-foundation/samples/composite.md) ukázky aktivity.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Action>  

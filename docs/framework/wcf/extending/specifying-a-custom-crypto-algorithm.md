@@ -1,29 +1,17 @@
 ---
-title: "Určení vlastního šifrovacího algoritmu"
-ms.custom: 
+title: Určení vlastního šifrovacího algoritmu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 965f121faa851722e6e2e7f92e805252f7e927c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d8fb22daac66c3ef80f148db03703fc5024d3438
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Určení vlastního šifrovacího algoritmu
 WCF umožňuje zadat vlastního šifrovacího algoritmu, který má použít při šifrování dat nebo výpočetní digitální podpisy. Uděláte to pomocí následujících kroků:  
   
-1.  Odvození třídy z<xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
+1.  Odvození třídy z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
   
 2.  Zaregistrovat algoritmus  
   
@@ -116,7 +104,7 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 </configuration>  
 ```  
   
- V části v rámci <`cryptoClasses`> element vytvoří mapování mezi SHA256CryptoServiceProvider a alias "SHA256CSP". <`nameEntry`> Element vytvoří mapování mezi alias "SHA256CSP" a zadaná adresa URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm).  
+ V části v rámci <`cryptoClasses`> element vytvoří mapování mezi SHA256CryptoServiceProvider a alias "SHA256CSP". <`nameEntry`> Element vytvoří mapování mezi alias "SHA256CSP" a zadaná adresa URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm ).  
   
  K registraci algoritmus vlastní kód používá <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> metoda. Tato metoda vytvoří obou mapování. Následující příklad ukazuje způsob volání této metody:  
   

@@ -1,20 +1,12 @@
 ---
-title: "Formátování WCF Web HTTP"
+title: Formátování WCF Web HTTP
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ab18e739b061ac6d28877eaac23c258a79f07a2d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abbfc74f33ddb676c8ac85eb712757615a2972ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-web-http-formatting"></a>Formátování WCF Web HTTP
 Programovací model WCF Web HTTP umožňuje dynamicky určí nejlepší formát pro operaci služby vrátit v odpovědi. Jsou podporovány dvě metody pro zjištění odpovídající formátu: automatické a explicitní.  
@@ -30,7 +22,7 @@ Programovací model WCF Web HTTP umožňuje dynamicky určí nejlepší formát 
   
 4.  Výchozí formát nastavení v WebHttpBehavior.  
   
- Pokud zpráva žádosti obsahuje hlavičku Accept [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] hledání infrastruktury pro typ, který podporuje. Pokud `Accept` záhlaví určuje priority pro jeho typy médií, jsou přijmout. Pokud je nalezen žádný vhodný formát v `Accept` záhlaví, hlavičku content-type zprávy požadavku se používá. Pokud není zadaný žádný vhodný typ obsahu, se používá formát výchozí nastavení pro operaci. Výchozí formát nastavena `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy. Pokud je zadán žádný výchozí formát operace, hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> vlastnost se používá. Automatické formátování spoléhá na <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> vlastnost. Pokud je tato vlastnost nastavená na `true`, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury určuje nejvhodnější používat. Automatický výběr formátu ve výchozím nastavení vypnutá pro zpětné kompatibility. Automatický výběr formátu lze povolit prostřednictvím kódu programu, nebo prostřednictvím konfigurace. Následující příklad ukazuje, jak povolit automatický výběr formátu v kódu.  
+ Pokud zpráva žádosti obsahuje hlavičku Accept pro typ, který podporuje vyhledá infrastrukturu Windows Communication Foundation (WCF). Pokud `Accept` záhlaví určuje priority pro jeho typy médií, jsou přijmout. Pokud je nalezen žádný vhodný formát v `Accept` záhlaví, hlavičku content-type zprávy požadavku se používá. Pokud není zadaný žádný vhodný typ obsahu, se používá formát výchozí nastavení pro operaci. Výchozí formát nastavena `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy. Pokud je zadán žádný výchozí formát operace, hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> vlastnost se používá. Automatické formátování spoléhá na <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> vlastnost. Pokud je tato vlastnost nastavená na `true`, určuje nejlepší formát pro infrastrukturu WCF. Automatický výběr formátu ve výchozím nastavení vypnutá pro zpětné kompatibility. Automatický výběr formátu lze povolit prostřednictvím kódu programu, nebo prostřednictvím konfigurace. Následující příklad ukazuje, jak povolit automatický výběr formátu v kódu.  
   
 ```csharp
 // This code assumes the service name is MyService and the service contract is IMyContract     

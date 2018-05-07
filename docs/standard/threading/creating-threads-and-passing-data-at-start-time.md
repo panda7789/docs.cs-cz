@@ -1,13 +1,7 @@
 ---
-title: "Vytváření vláken a předávání dat při spuštění"
-ms.custom: 
+title: Vytváření vláken a předávání dat při spuštění
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - threading [.NET Framework], passing data to threads
 - threading [.NET Framework], retrieving data from threads
 ms.assetid: 52b32222-e185-4f42-91a7-eaca65c0ab6d
-caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d17ef8a199061f56f00e39fa887e2e64f64427ec
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 96c0c898f103c058c370a0d108568056b1ff8196
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-threads-and-passing-data-at-start-time"></a>Vytváření vláken a předávání dat při spuštění
 Když je vytvořen procesu operačního systému, operační systém vloží vlákna ke spouštění kódu v procesu, včetně všech původní domény aplikace. Od tohoto okamžiku se lze vytvořit a zničen bez žádné podprocesy operačního systému nutně vytvořením nebo zničení aplikační domény. Pokud je spravovaný kód spouštěna kód, pak <xref:System.Threading.Thread> objektu pro přístup z více vláken provádění v aktuální doméně aplikace je možné získat načítání statických <xref:System.Threading.Thread.CurrentThread%2A> vlastnost typu <xref:System.Threading.Thread>. Toto téma popisuje vytváření vláken a alternativami pro předávání dat na postup přístup z více vláken.  

@@ -1,11 +1,7 @@
 ---
-title: "Funkce CreateInstanceEnumWmi (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce CreateInstanceEnumWmi vrací enumerátor obsahující instance dané třídy, které splňují kritéria pro výběr."
+title: Funkce CreateInstanceEnumWmi (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce CreateInstanceEnumWmi vrací enumerátor obsahující instance dané třídy, které splňují kritéria pro výběr.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - CreateInstanceEnumWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b796771b07dee28470d37ca3e4292c0a244e056b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1f9297d34b01c03075db67bd904a81e589bfcc10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="createinstanceenumwmi-function"></a>CreateInstanceEnumWmi – funkce
 Vrátí enumerátor, který vrátí instance dané třídy, které splňují kritéria zadaná výběru. 
@@ -79,7 +72,7 @@ Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD
 `authLevel`  
 [v] Úroveň ověřování.
 
-`impLevel`[v] Úroveň zosobnění.
+`impLevel` [v] Úroveň zosobnění.
 
 `pCurrentNamespace`   
 [v] Ukazatel na [Služby IWbem](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx) objekt, který představuje aktuální obor názvů.
@@ -101,7 +94,7 @@ Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubo
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení instance pro zadanou třídu. |
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
-| `WBEM_E_INVALID_CLASS` | 0x80041010 | `strFilter`neexistuje. |
+| `WBEM_E_INVALID_CLASS` | 0x80041010 | `strFilter` neexistuje. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
@@ -121,7 +114,7 @@ Pokud volání funkce selže, můžete získat další informace o chybě při v
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

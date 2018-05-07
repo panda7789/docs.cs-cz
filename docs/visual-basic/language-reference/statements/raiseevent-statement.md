@@ -1,11 +1,6 @@
 ---
-title: "RaiseEvent – příkaz"
+title: RaiseEvent – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.RaiseEventMethod
 - vb.RaiseEvent
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - RaiseEvent statement [Visual Basic]
 - event handlers, connecting events to
 ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e6ba5ce4b009e0d8c675db07b56b9811c595ae2f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 19949fbdb1c1c54556876323d839b16fc01608f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent – příkaz
 Aktivuje událost deklarovat na úrovni modulu v rámci třídy, formulář nebo dokumentu.  

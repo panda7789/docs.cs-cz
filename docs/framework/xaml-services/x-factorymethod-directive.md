@@ -1,28 +1,16 @@
 ---
-title: "x:FactoryMethod – direktiva"
-ms.custom: 
+title: x:FactoryMethod – direktiva
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML. x:FactoryMethod directive [XAML Services]
 - FactoryMethod directive in XAML [XAML Services]
 - x:FactoryMethod directive [XAML Services]
 ms.assetid: 829bcbdf-5318-4afb-9a03-c310e0d2f23d
-caps.latest.revision: "8"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58349c5440d0062c64346933e48b64de6c4c7b60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 75225e624abdd3dc0862a04fae409da48b3f0d1e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod – direktiva
 Určuje metodu než konstruktor, který se inicializovat objekt po vyřešení jeho základní typ měli použít procesor XAML.  
@@ -61,11 +49,11 @@ Určuje metodu než konstruktor, který se inicializovat objekt po vyřešení j
   
  Metoda factory musí vrátit instanci, která je přiřadit k příslušný objekt. Metodami pro vytváření, nikdy by měl vrátit hodnotu null.  
   
- `x:Arguments`funguje na princip nejlepší shodu pro podpis metody objektu pro vytváření. Odpovídající nejprve vyhodnotí počet parametrů. Pokud existuje více než jeden možný odpovídající počet parametrů, je typ parametru se určuje vyhodnotí a nejlepší shodu. Pokud je stále nejednoznačnosti po této fáze hodnocení, XAML procesoru chování není definován.  
+ `x:Arguments` funguje na princip nejlepší shodu pro podpis metody objektu pro vytváření. Odpovídající nejprve vyhodnotí počet parametrů. Pokud existuje více než jeden možný odpovídající počet parametrů, je typ parametru se určuje vyhodnotí a nejlepší shodu. Pokud je stále nejednoznačnosti po této fáze hodnocení, XAML procesoru chování není definován.  
   
- `x:FactoryMethod` Použití elementu není použití elementu vlastnosti v typické smysl, protože kód direktivy neodkazuje typ obsahující objekt elementu. Očekává se použití tohoto elementu je méně častých než použití atributu. `x:Arguments`(použití atributu nebo elementu) můžete použít společně s `x:FactoryMethod` použití elementu, ale to není konkrétně uvedené v částech využití.  
+ `x:FactoryMethod` Použití elementu není použití elementu vlastnosti v typické smysl, protože kód direktivy neodkazuje typ obsahující objekt elementu. Očekává se použití tohoto elementu je méně častých než použití atributu. `x:Arguments` (použití atributu nebo elementu) můžete použít společně s `x:FactoryMethod` použití elementu, ale to není konkrétně uvedené v částech využití.  
   
- `x:FactoryMethod`jako element musí předcházet další prvky vlastnost, musí předcházet žádné `x:Arguments` také k dispozici jako elementy a musí předcházet jakýkoli text obsahu nebo vnitřní text/inicializace.  
+ `x:FactoryMethod` jako element musí předcházet další prvky vlastnost, musí předcházet žádné `x:Arguments` také k dispozici jako elementy a musí předcházet jakýkoli text obsahu nebo vnitřní text/inicializace.  
   
 ## <a name="see-also"></a>Viz také  
  [x:Arguments – direktiva](../../../docs/framework/xaml-services/x-arguments-directive.md)

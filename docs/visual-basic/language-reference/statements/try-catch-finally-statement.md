@@ -1,12 +1,6 @@
 ---
 title: Try...Catch....Finally – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Try...Catch...Finally
 - vb.when
@@ -25,14 +19,11 @@ helpviewer_keywords:
 - Visual Basic code, handling errors while running
 - structured exception handling, Try...Catch...Finally statements
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
-caps.latest.revision: 69
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 701475d41d24ad89e6c83796f7cc5cd4b7802a32
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5e7037d1f89d56d1c65fe94e7c5fbafc7b3c40f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch....Finally – příkaz (Visual Basic)
 Poskytuje způsob, jak zpracovávat některé nebo všechny možné chyby, které mohou nastat v každém bloku kódu, při stále běhu kódu.  

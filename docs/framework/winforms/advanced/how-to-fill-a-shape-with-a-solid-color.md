@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vyplnění obrazce plnou barvou"
-ms.custom: 
+title: 'Postupy: Vyplnění obrazce plnou barvou'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - colors [Windows Forms], adding to shapes
 - shapes [Windows Forms], filling
 ms.assetid: 06088b31-bac9-4ef3-9ebe-06c2c764d6df
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f016404feeac47c5f77527b8baa68d70742d4763
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7f719417a6a1226d7dc4d600518711ba31920a6c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-fill-a-shape-with-a-solid-color"></a>Postupy: Vyplnění obrazce plnou barvou
 Vyplnění obrazce plnou barvou, vytvořte <xref:System.Drawing.SolidBrush> objektu a poté předat, <xref:System.Drawing.SolidBrush> objektu jako argument pro jednu z metod výplně <xref:System.Drawing.Graphics> třídy. Následující příklad ukazuje, jak k vyplnění elipsy s červenou barvu.  

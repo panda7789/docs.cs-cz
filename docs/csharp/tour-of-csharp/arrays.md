@@ -1,20 +1,13 @@
 ---
-title: "C# pole - přehled používání jazyka C#"
-description: "Pole jsou nejzákladnější typ kolekce v jazyce C#"
-keywords: "Rozhraní .NET, csharp, pole, kolekce"
-author: BillWagner
-ms.author: wiwagn
+title: C# pole - přehled používání jazyka C#
+description: Pole jsou nejzákladnější typ kolekce v jazyce C#
 ms.date: 08/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
-ms.openlocfilehash: d7d5ae9f99ba1629a6f0aec57bebf74853cab27f
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.openlocfilehash: c0fe65348ab2d41852ed9150571dcb0e5b8553f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="arrays"></a>Pole
 

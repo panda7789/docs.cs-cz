@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedServiceDetails
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d88b4823-08a4-4126-8304-d2c4c9d35b3e
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 26d49a7c1dccab2d8c3712a3592c778d814292cc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b007a8ed74e07030c6a42d30adaf57a735a609b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationservicehoststartedservicedetails"></a>System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedServiceDetails
 System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedServiceDetails  

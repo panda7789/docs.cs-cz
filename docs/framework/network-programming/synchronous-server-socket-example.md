@@ -1,12 +1,6 @@
 ---
-title: "Příklad soketu synchronní serveru"
-ms.custom: 
+title: Příklad soketu synchronní serveru
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +9,14 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 7a249277a82a1b234f83e2fe17510e997425f278
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6e5ec4bc17a1bbfa6de4e5640e51c90210e56799
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synchronous-server-socket-example"></a>Příklad soketu synchronní serveru
 V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů. Server je vytvořené s soket synchronního spuštění serverové aplikace je pozastaven, kdy čeká připojení z klienta. Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.  

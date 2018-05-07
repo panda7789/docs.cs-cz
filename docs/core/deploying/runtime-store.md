@@ -4,16 +4,11 @@ description: Toto téma vysvětluje runtime balíček úložiště a cílový ma
 author: bleroy
 ms.author: mairaw
 ms.date: 08/12/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 8fa3d309b16bd0c3b2b872f6447b7e99956abd81
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: aba1939cda8459d8b0d9438a97545c19d3c1926d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčku modulu runtime
 

@@ -1,13 +1,6 @@
 ---
-title: "Architektura programování aplikace služby"
-ms.custom: 
+title: Architektura programování aplikace služby
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,25 +14,22 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, service application code model
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
-caps.latest.revision: "15"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: 2d44ee323040346437261b51fddb707a30d1de6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0c760d0f9b65fc9b612a8bee8abb68fa5b4ecae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programování aplikace služby
 Aplikace služby systému Windows jsou založené na třídu, která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> třídy. Přepsání metody z této třídy a definovat funkce pro ně k určení chování služby.  
   
  Hlavní třídy účastnící se vytváření služby jsou:  
   
--   <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>– Můžete přepsat metody ze <xref:System.ServiceProcess.ServiceBase> třídy při vytváření služby a zadejte kód, určit, jak funkce služby v tomto zděděná třída.  
+-   <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> – Můžete přepsat metody ze <xref:System.ServiceProcess.ServiceBase> třídy při vytváření služby a zadejte kód, určit, jak funkce služby v tomto zděděná třída.  
   
--   <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType>a <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> – tyto třídy slouží k instalaci a odinstalaci služby.  
+-   <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType> a <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> – tyto třídy slouží k instalaci a odinstalaci služby.  
   
  Kromě toho třída s názvem <xref:System.ServiceProcess.ServiceController> lze použít k manipulaci s samotné služby. Tato třída není zahrnut do vytváření služby, ale lze spustit a zastavit službu, předejte příkazy k němu a vrátit řadu výčty.  
   

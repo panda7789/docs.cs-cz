@@ -1,23 +1,12 @@
 ---
 title: 2028 - CacheRootMetadataStop
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d799b707-ee16-4b04-8b6d-b87c0d60e71d
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 04111b134e32bb7bbb557b0b3f835891c5186bab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a097c95d6b28a30b1831483bd40c94682c5b6770
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="2028---cacherootmetadatastop"></a>2028 - CacheRootMetadataStop
 ## <a name="properties"></a>Vlastnosti  

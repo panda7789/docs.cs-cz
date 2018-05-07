@@ -1,23 +1,12 @@
 ---
 title: LINQ na objekty aktivity
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 403c82e8-7f2b-42f6-93cd-95c35bc76ead
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ff77211000cfdda9c35e5a0dcbc69fc0eaf5c3be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e2c2be52a88d8f9a886f0e59c027e1d6c737497c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-objects-activity"></a>LINQ na objekty aktivity
 Tento příklad znázorňuje postup vytvoření aktivitu pomocí LINQ na objekty dotazu elementů v kolekci.  
@@ -29,8 +18,8 @@ Tento příklad znázorňuje postup vytvoření aktivitu pomocí LINQ na objekty
   
 |Vlastnost nebo vrací hodnotu|Popis|  
 |------------------------------|-----------------|  
-|`Collection`Vlastnost|Povinnou vlastnost, která určuje zdrojové kolekci.|  
-|`Predicate`Vlastnost|Povinnou vlastnost, která určuje filtr pro kolekce v podobě výrazu lambda.|  
+|`Collection` Vlastnost|Povinnou vlastnost, která určuje zdrojové kolekci.|  
+|`Predicate` Vlastnost|Povinnou vlastnost, která určuje filtr pro kolekce v podobě výrazu lambda.|  
 |Návratová hodnota|Filtrované kolekce.|  
   
 ## <a name="code-sample-that-uses-the-custom-activity"></a>Ukázka kódu, který používá vlastní aktivity  
@@ -119,7 +108,7 @@ Activity sampleWorkflow = new Sequence
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Linq\LinqToObjects`  
   

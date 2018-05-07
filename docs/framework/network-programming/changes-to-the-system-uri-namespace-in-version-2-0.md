@@ -1,23 +1,15 @@
 ---
-title: "Změny v oboru názvů System.Uri v verze 2.0"
-ms.custom: 
+title: Změny v oboru názvů System.Uri v verze 2.0
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 3ebf74fbe7f2e207af8bf861efece58026148e2f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 169454edd04bfdb55affcc2be12140f42dd2f7ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Změny v oboru názvů System.Uri v verze 2.0
 Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> třídy. Tyto změny pevné nesprávné chování, rozšířeného použitelnost a rozšířené zabezpečení.  
@@ -53,19 +45,19 @@ Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> tř
   
 -   Odebrala se podpora název hostitele UNC; byla přijata specifikace IDN pro představující mezinárodní názvy hostitelů.  
   
--   <xref:System.Uri.LocalPath%2A>vždy vrátí hodnotu úplně neuvozené řetězec.  
+-   <xref:System.Uri.LocalPath%2A> vždy vrátí hodnotu úplně neuvozené řetězec.  
   
--   <xref:System.Uri.ToString%2A>není unescape uvozený '%', '?', nebo znakem '#'.  
+-   <xref:System.Uri.ToString%2A> není unescape uvozený '%', '?', nebo znakem '#'.  
   
--   <xref:System.Uri.Equals%2A>nyní zahrnuje <xref:System.Uri.Query%2A> část v kontrole rovnosti.  
+-   <xref:System.Uri.Equals%2A> nyní zahrnuje <xref:System.Uri.Query%2A> část v kontrole rovnosti.  
   
 -   Operátory "=="a"! =" jsou přepsat a propojit s <xref:System.Uri.Equals%2A> metoda.  
   
--   <xref:System.Uri.IsLoopback%2A>nyní vytvoří konzistentních výsledků.  
+-   <xref:System.Uri.IsLoopback%2A> nyní vytvoří konzistentních výsledků.  
   
 -   Identifikátor URI "`file:///path`" je už přeložit na "file://path".  
   
--   "#" teď považována za zakončením název hostitele. Tedy "http://consoto.com#fragment" teď převést na "http://contoso.com/#fragment".  
+-   "#" teď považována za zakončením název hostitele. Tedy "http://consoto.com#fragment"je nyní převedeno na"http://contoso.com/#fragment".  
   
 -   Chyby při kombinování základní identifikátor URI s fragment byl opraven.  
   

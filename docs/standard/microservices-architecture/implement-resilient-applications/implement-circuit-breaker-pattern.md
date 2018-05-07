@@ -1,21 +1,14 @@
 ---
-title: "Implementace vzoru jistič"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vzoru jistič"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace vzoru jistič
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vzoru jistič
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/12/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5d7db6899068f84f9165022cfbf17767a75e7db9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dea94d8eda3341cca5e3aaf6b3c8369c27381135
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-circuit-breaker-pattern"></a>Implementace vzoru jistič
 
@@ -147,7 +140,7 @@ Můžete si také prohlédnout tohoto typu chyby na spuštění při nasazení a
 
 Způsob eShopOnContainers řeší tento problém je pomocí opakování vzor, který jsme jsme si uváděli dříve. Je také proč, při spouštění řešení, mohou se zobrazovat protokolu trasování nebo upozornění takto:
 
-> "**Opakujte 1 implementováno s RetryPolicy na Polly**, kvůli: System.Net.Http.HttpRequestException: při odesílání požadavku došlo k chybě. ---&gt;System.Net.Http.CurlException: Nelze se připojit k serveru\\n v System.Net.Http.CurlHandler.ThrowIfCURLEError (Chyba CURLcode)\\n v \[... \].
+> "**Opakujte 1 implementováno s RetryPolicy na Polly**, kvůli: System.Net.Http.HttpRequestException: při odesílání požadavku došlo k chybě. ---&gt; System.Net.Http.CurlException: Nelze se připojit k serveru\\n v System.Net.Http.CurlHandler.ThrowIfCURLEError (Chyba CURLcode)\\n v \[... \].
 
 ## <a name="testing-the-circuit-breaker-in-eshoponcontainers"></a>Testování vypínač v eShopOnContainers
 
@@ -171,9 +164,9 @@ Tento požadavek zakáže middleware.
 
 Například když aplikace běží, můžete povolit middleware pomocí libovolného prohlížeče v následující identifikátor URI požadavku. Všimněte si, že řazení mikroslužbu používá port 5103.
 
-http://localhost:5103 / nedaří? povolit
+http://localhost:5103/failing?enable
 
-Potom můžete zkontrolovat stav pomocí identifikátoru URI [http://localhost:5103 / selhání](http://localhost:5103/failing), jak je znázorněno na obrázku 10-4.
+Potom můžete zkontrolovat stav pomocí identifikátoru URI [ http://localhost:5103/failing ](http://localhost:5103/failing), jak je znázorněno na obrázku 10-4.
 
 ![](./media/image4.png)
 
@@ -238,9 +231,9 @@ Policy.Handle<HttpResponseException>() // etc
 -   **Opakujte vzor**
     [*https://docs.microsoft.com/azure/architecture/patterns/retry*](https://docs.microsoft.com/azure/architecture/patterns/retry)
 
--   **Odolnost připojení** (Entity Framework Core) [ *https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
+-   **Odolnost připojení** (Entity Framework jader) [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
 
--   **Polly** (.NET odolnost a knihovna přechodná. selhání zpracování) [ *https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
+-   **Polly** (.NET odolnost a přechodná. selhání zpracování knihovny) [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
 
 -   **Vzor jistič**
     [*https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker*](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)

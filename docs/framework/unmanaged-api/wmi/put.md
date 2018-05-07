@@ -1,11 +1,7 @@
 ---
-title: "PUT – funkce (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce Put přiřadí novou hodnotu s názvem vlastnosti."
+title: PUT – funkce (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce Put přiřadí novou hodnotu s názvem vlastnosti.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - Put
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 09d3edc74b34688d5cc36e688f634850cfb60910
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f3ffe27bef6583b733fc04f2f25903d545daa74
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="put-function"></a>PUT – funkce
 Nastaví vlastnost s názvem na novou hodnotu.
@@ -93,7 +86,7 @@ Uživatele nelze vytvořit vlastnosti s názvy, které začínat ani končit pod
 
 Pokud je vlastnost nastavena `Put` funkce existuje v nadřazené třídě, výchozí hodnota vlastnosti je změnit, dokud se vlastnost typ neodpovídá typu nadřazené třídy. Pokud se nejedná o neshodě typů vlastnost neexistuje, je vlastnost ceated.
 
-Použití `vtType` parametr pouze při vytváření nové vlastnosti v definici třídy CIM a `pVal` je `null` nebo odkazuje na `VARIANT` typu `VT_NULL`. V takovém případě `vType` parametr určuje typ modelu CIM vlastnosti. V každém případě `vtType` musí být 0. `vtType`musí také být 0, pokud je základní objekt instancí (i když `Val` je `null`) vzhledem k tomu, že typem vlastnosti je pevná a nelze změnit.   
+Použití `vtType` parametr pouze při vytváření nové vlastnosti v definici třídy CIM a `pVal` je `null` nebo odkazuje na `VARIANT` typu `VT_NULL`. V takovém případě `vType` parametr určuje typ modelu CIM vlastnosti. V každém případě `vtType` musí být 0. `vtType` musí také být 0, pokud je základní objekt instancí (i když `Val` je `null`) vzhledem k tomu, že typem vlastnosti je pevná a nelze změnit.   
 
 ## <a name="example"></a>Příklad
 
@@ -104,7 +97,7 @@ Příklad, naleznete v části [IWbemClassObject::Put](https://msdn.microsoft.co
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

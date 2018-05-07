@@ -1,26 +1,14 @@
 ---
-title: "Deklarace identity WIF programovací Model"
-ms.custom: 
+title: Deklarace identity WIF programovací Model
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1bd84e6a1e6fb0d4808dca42af2e2916be1133a3
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 71327fb5a86c30d15ff060eff5cce170695e86a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wif-claims-programming-model"></a>Deklarace identity WIF programovací Model
 Vývojáři ASP.NET a Windows Communication Foundation (WCF) normálně používat rozhraní identita a IPrincipal pro práci s informací o identitě uživatele. V rozhraní .NET 4.5 Windows Identity Foundation (WIF) je integrována funkce tak, že deklarace identity jsou nyní vždy k dispozici pro všechny hlavní, jak je znázorněno v následujícím diagramu:  
@@ -31,19 +19,19 @@ Vývojáři ASP.NET a Windows Communication Foundation (WCF) normálně použív
   
  Deklarace identity je reprezentována <xref:System.Security.Claims.Claim> třídy. Tato třída obsahuje následující důležité vlastnosti:  
   
--   <xref:System.Security.Claims.Claim.Type%2A>představuje typ deklarace identity a většinou je to identifikátor URI. Například deklarace identity e-mailová adresa je reprezentován jako `http://schemas.microsoft.com/ws/2008/06/identity/claims/email`.  
+-   <xref:System.Security.Claims.Claim.Type%2A> představuje typ deklarace identity a většinou je to identifikátor URI. Například deklarace identity e-mailová adresa je reprezentován jako `http://schemas.microsoft.com/ws/2008/06/identity/claims/email`.  
   
--   <xref:System.Security.Claims.Claim.Value%2A>obsahuje hodnotu deklarace identity a je reprezentována jako řetězec. Například e-mailová adresa může být reprezentován jako "someone@contoso.com".  
+-   <xref:System.Security.Claims.Claim.Value%2A> obsahuje hodnotu deklarace identity a je reprezentována jako řetězec. Například e-mailová adresa může být reprezentován jako "someone@contoso.com".  
   
--   <xref:System.Security.Claims.Claim.ValueType%2A>představuje typ hodnota deklarace identity a většinou je to identifikátor URI. Například na řetězcový typ. vyjádřené `http://www.w3.org/2001/XMLSchema#string`. Typ hodnoty musí být QName podle schématu XML. Hodnota musí být ve formátu `namespace#format` povolit WIF na platnou hodnotu QName výstup. Pokud obor názvů není dobře definovaný obor názvů, generovaný soubor XML nelze pravděpodobně schématu ověřit, protože nebude publikovaného souboru XSD pro tento obor názvů. Výchozí typ hodnoty je `http://www.w3.org/2001/XMLSchema#string`. Najdete v tématu [http://www.w3.org/2001/XMLSchema](http://go.microsoft.com/fwlink/?LinkId=209155) pro typy dobře známou hodnotu, která můžete bezpečně.  
+-   <xref:System.Security.Claims.Claim.ValueType%2A> představuje typ hodnota deklarace identity a většinou je to identifikátor URI. Například na řetězcový typ. vyjádřené `http://www.w3.org/2001/XMLSchema#string`. Typ hodnoty musí být QName podle schématu XML. Hodnota musí být ve formátu `namespace#format` povolit WIF na platnou hodnotu QName výstup. Pokud obor názvů není dobře definovaný obor názvů, generovaný soubor XML nelze pravděpodobně schématu ověřit, protože nebude publikovaného souboru XSD pro tento obor názvů. Výchozí typ hodnoty je `http://www.w3.org/2001/XMLSchema#string`. Najdete v tématu [ http://www.w3.org/2001/XMLSchema ](http://go.microsoft.com/fwlink/?LinkId=209155) pro typy dobře známou hodnotu, která můžete bezpečně.  
   
--   <xref:System.Security.Claims.Claim.Issuer%2A>je identifikátor služby tokenů na zabezpečení (STS), která vydala deklarace identity. To může být reprezentován jako adresu URL Služba tokenů zabezpečení nebo název, který představuje službu tokenů zabezpečení, například `https://sts1.contoso.com/sts`.  
+-   <xref:System.Security.Claims.Claim.Issuer%2A> je identifikátor služby tokenů na zabezpečení (STS), která vydala deklarace identity. To může být reprezentován jako adresu URL Služba tokenů zabezpečení nebo název, který představuje službu tokenů zabezpečení, například `https://sts1.contoso.com/sts`.  
   
--   <xref:System.Security.Claims.Claim.OriginalIssuer%2A>je identifikátor služby tokenů zabezpečení, které původně vystavil deklarací identity, bez ohledu na to, kolik STSs v řetězu. To je reprezentována podobně jako <xref:System.Security.Claims.Claim.Issuer%2A>.  
+-   <xref:System.Security.Claims.Claim.OriginalIssuer%2A> je identifikátor služby tokenů zabezpečení, které původně vystavil deklarací identity, bez ohledu na to, kolik STSs v řetězu. To je reprezentována podobně jako <xref:System.Security.Claims.Claim.Issuer%2A>.  
   
--   <xref:System.Security.Claims.Claim.Subject%2A>je subjektu, jehož identita je právě zkontrolován. Obsahuje hlavičku <xref:System.Security.Claims.ClaimsIdentity>.  
+-   <xref:System.Security.Claims.Claim.Subject%2A> je subjektu, jehož identita je právě zkontrolován. Obsahuje hlavičku <xref:System.Security.Claims.ClaimsIdentity>.  
   
--   <xref:System.Security.Claims.Claim.Properties%2A>je slovník, který umožňuje vývojáři zadejte specifické pro aplikaci přenos dat do přenášený společně s dalšími vlastnostmi a lze použít pro vlastní ověřování.  
+-   <xref:System.Security.Claims.Claim.Properties%2A> je slovník, který umožňuje vývojáři zadejte specifické pro aplikaci přenos dat do přenášený společně s dalšími vlastnostmi a lze použít pro vlastní ověřování.  
   
 ## <a name="identity-delegation"></a>Delegování identity  
  Důležité vlastnost <xref:System.Security.Claims.ClaimsIdentity> je <xref:System.Security.Claims.ClaimsIdentity.Actor%2A>. Tato vlastnost umožňuje delegování pověření ve vícevrstvé systému střední vrstvy funguje jako klient provádět požadavky na back endové službě.  
@@ -77,7 +65,7 @@ ClaimsPrincipal claimsPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;
 |Typ ověřování|Identifikátor URI vygenerované v deklaraci "AuthenticationMethod"|  
 |-|-|  
 |Heslo|`urn:oasis:names:tc:SAML:1.0:am:password`|  
-|Kerberos|`urn:ietf:rfc:1510`|  
+|Pomocí protokolu Kerberos|`urn:ietf:rfc:1510`|  
 |SecureRemotePassword|`urn:ietf:rfc:2945`|  
 |TLSClient|`urn:ietf:rfc:2246`|  
 |X509|`urn:oasis:names:tc:SAML:1.0:am:X509-PKI`|  

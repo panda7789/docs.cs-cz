@@ -1,26 +1,12 @@
 ---
 title: 302 – UserDefinedWarningOccurred
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8d1f0bf1-0151-45e6-be92-573d397b54de
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ae455c9eec2335fcf6eb5473932bd8d9e5d2db95
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: c70857951309ef54ba460e96e948c9320269d30f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="302---userdefinedwarningoccurred"></a>302 – UserDefinedWarningOccurred
 ## <a name="properties"></a>Vlastnosti  
@@ -28,9 +14,9 @@ ms.lasthandoff: 03/23/2018
 |||  
 |-|-|  
 |ID|302|  
-|Klíčová slova|Troubleshooting, HealthMonitoring, UserEvents, ServiceModel, EndToEndMonitoring|  
+|Klíčová slova|Řešení potíží, HealthMonitoring, UserEvents, ServiceModel, EndToEndMonitoring|  
 |úroveň|Upozornění|  
-|Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované z uživatelského kódu. Vývojáři mohou emitování Tato událost při výskytu události definované vlastní upozornění ve své služby. To lze provést pomocí <xref:System.Diagnostics.Eventing> rozhraní API. Kromě toho je WCF vzorku, který zabalí toto rozhraní API a ukazuje, jak správně emitování této události.  

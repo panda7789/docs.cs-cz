@@ -1,31 +1,22 @@
 ---
-title: "Zachování dvojice název hodnota (C#)"
-ms.custom: 
+title: Zachování dvojice název hodnota (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 7b04b0f1-af64-42eb-8737-83f8861b5915
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 998cfad22c28248eb22fef5141caa96035d2d0b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ac1e6464618c00cba4ded92492fe4a687e1a25f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="maintaining-namevalue-pairs-c"></a>Zachování dvojice název hodnota (C#)
-Mnoho aplikací mít ke správě informací, která je lepší je ponechat jako dvojice název/hodnota. Tyto informace mohou být informace o konfiguraci nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]obsahuje některé metody, které usnadňují zachovat sadu dvojice název/hodnota. Buď můžete zachovat informace jako atributy nebo jako sada podřízené elementy.  
+Mnoho aplikací mít ke správě informací, která je lepší je ponechat jako dvojice název/hodnota. Tyto informace mohou být informace o konfiguraci nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje některé metody, které usnadňují zachovat sadu dvojice název/hodnota. Buď můžete zachovat informace jako atributy nebo jako sada podřízené elementy.  
   
  Jeden rozdíl mezi zajistit přitom ochranu informací jako atributy nebo jako podřízené prvky je, že atributy mít omezení, může být pouze jeden atribut s konkrétním názvem pro daný element. Toto omezení se nevztahuje na podřízené elementy.  
   
 ## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue a SetElementValue  
  Tyto dvě metody, které usnadňují zachování páry název/hodnota jsou <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> a <xref:System.Xml.Linq.XElement.SetElementValue%2A>. Tyto dvě metody mají podobnou sémantiku jako.  
   
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>můžete přidávat, upravovat nebo odebírat atributy elementu.  
+ <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> můžete přidávat, upravovat nebo odebírat atributy elementu.  
   
 -   Když zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> název atributu, který ještě neexistuje, metoda vytvoří nový atribut a přidá ji do zadaného elementu.  
   
@@ -33,7 +24,7 @@ Mnoho aplikací mít ke správě informací, která je lepší je ponechat jako 
   
 -   Když zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atribut a zadejte hodnotu null pro obsah, atribut je odebrán z jeho nadřazený objekt.  
   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A>můžete přidávat, upravovat nebo odebírat podřízené elementy elementu.  
+ <xref:System.Xml.Linq.XElement.SetElementValue%2A> můžete přidávat, upravovat nebo odebírat podřízené elementy elementu.  
   
 -   Když zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízený element, který ještě neexistuje, metoda vytvoří nového elementu a přidá ji do zadaného elementu.  
   

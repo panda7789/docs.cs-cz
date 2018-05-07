@@ -1,14 +1,6 @@
 ---
-title: "IHostSyncManager::CreateCrstWithSpinCount – metoda"
-ms.custom: 
+title: IHostSyncManager::CreateCrstWithSpinCount – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostSyncManager.CreateCrstWithSpinCount
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 7280fa8c-3639-4abf-91cb-bc343da742d1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 31830f97cff1c302ee573b8248eb1d83e696ac48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 50f292ab39bcf77d49d8a363b43b9233f350974c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostsyncmanagercreatecrstwithspincount-method"></a>IHostSyncManager::CreateCrstWithSpinCount – metoda
 Vytvoří objekt kritická sekce s počtem typu číselník pro synchronizaci.  
@@ -58,7 +46,7 @@ HRESULT CreateCrstWithSpinCount (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateCrstWithSpinCount`úspěšně vrácena.|  
+|S_OK|`CreateCrstWithSpinCount` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -67,7 +55,7 @@ HRESULT CreateCrstWithSpinCount (
 |E_OUTOFMEMORY|Nedostatek paměti nebylo k dispozici pro její vytvoření požadovaný kritické.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počet otočení se používá pouze v systému s více procesory. Počet typu číselník určuje počet opakovaných volající vlákno musí číselníku před provedením operace čekání na semafor, který je přidružen k dispozici kritická sekce. Pokud během operace typu číselník neuvolní části kritické, zabraňuje volající vlákno operace čekání. `CreateCrstWithSpinCount`odpovídá Win32 `InitializeCriticalSectionAndSpinCount` funkce.  
+ Počet otočení se používá pouze v systému s více procesory. Počet typu číselník určuje počet opakovaných volající vlákno musí číselníku před provedením operace čekání na semafor, který je přidružen k dispozici kritická sekce. Pokud během operace typu číselník neuvolní části kritické, zabraňuje volající vlákno operace čekání. `CreateCrstWithSpinCount` odpovídá Win32 `InitializeCriticalSectionAndSpinCount` funkce.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -76,7 +64,7 @@ HRESULT CreateCrstWithSpinCount (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  

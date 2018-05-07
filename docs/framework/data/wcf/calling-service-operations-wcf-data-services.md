@@ -1,30 +1,18 @@
 ---
-title: "Volání operace služby (služby WCF Data Services)"
-ms.custom: 
+title: Volání operace služby (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3411cec01295986438664cf0d51d3f15e960e411
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82bba149f06fc68f2f01e0e7641d98ebb861dbe6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Volání operace služby (služby WCF Data Services)
-[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Definuje operací služby pro službu data. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Umožňuje definovat tyto operace jako metody pro službu data. Jako další prostředky služby dat jsou tyto operace služby řešit pomocí identifikátory URI. Operace služby může vrátit kolekce typů entit, instance typu jedné entity a primitivní typy, jako je celé číslo a řetězec. Můžete se taky vrátit operaci služby `null` (`Nothing` v jazyce Visual Basic). [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny lze použít pro přístup k operace služby, které podporují požadavky HTTP GET. Tyto typy operací služby jsou definované jako metody, které mají <xref:System.ServiceModel.Web.WebGetAttribute> použít. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
+[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Definuje operací služby pro službu data. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje definovat tyto operace jako metody pro službu data. Jako další prostředky služby dat jsou tyto operace služby řešit pomocí identifikátory URI. Operace služby může vrátit kolekce typů entit, instance typu jedné entity a primitivní typy, jako je celé číslo a řetězec. Můžete se taky vrátit operaci služby `null` (`Nothing` v jazyce Visual Basic). [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny lze použít pro přístup k operace služby, které podporují požadavky HTTP GET. Tyto typy operací služby jsou definované jako metody, které mají <xref:System.ServiceModel.Web.WebGetAttribute> použít. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
   
  Operace služby, které jsou zveřejněné v metadata vrácená data službu, která implementuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. V metadatech, jsou vyjádřené operací služby `FunctionImport` elementy. Při generování silného typu <xref:System.Data.Services.Client.DataServiceContext>, nástroje Přidat odkaz na službu a DataSvcUtil.exe ignorovat tohoto elementu. Z tohoto důvodu nebude možné najít metodu v kontextu, které je možné volat operace služby přímo. Ale když můžete nadále používat [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta k volání operací služby v jednom z těchto způsobů:  
   

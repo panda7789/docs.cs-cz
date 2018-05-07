@@ -1,27 +1,18 @@
 ---
-title: "Přehled vlastností automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled vlastností automatizace uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, properties
 - properties, UI Automation
 ms.assetid: a6c31d7b-b33e-49b3-b5c1-31a345f9b7c8
-caps.latest.revision: "17"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 38237dd1885047eed5be06aba092c261f56f6da3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b3fe06a0cd07979a14f2029ac3ece590496ecf74
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-properties-overview"></a>Přehled vlastností automatizace uživatelského rozhraní
 > [!NOTE]
@@ -39,7 +30,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="property-identifiers"></a>Vlastnost identifikátory  
  Všech vlastností, je identifikován číslo a název. Názvy vlastností se používají pouze pro ladění a diagnostiky. Poskytovatelé numerická [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] k identifikaci příchozích požadavků vlastnost. Klientské aplikace, ale pouze použít <xref:System.Windows.Automation.AutomationProperty>, který zapouzdřuje číslo a název, k identifikaci vlastnosti chtějí načíst.  
   
- <xref:System.Windows.Automation.AutomationProperty>objekty, které představují konkrétní vlastnosti jsou k dispozici jako pole v různých tříd. Z bezpečnostních důvodů se zprostředkovateli automatizace uživatelského rozhraní od samostatnou sadu tříd, které jsou obsaženy v Uiautomationtypes.dll získat tyto objekty.  
+ <xref:System.Windows.Automation.AutomationProperty> objekty, které představují konkrétní vlastnosti jsou k dispozici jako pole v různých tříd. Z bezpečnostních důvodů se zprostředkovateli automatizace uživatelského rozhraní od samostatnou sadu tříd, které jsou obsaženy v Uiautomationtypes.dll získat tyto objekty.  
   
  V následující tabulce rozděluje vlastnosti třídy, které obsahují <xref:System.Windows.Automation.AutomationProperty> [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)].  
   
@@ -148,7 +139,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Localization"></a>   
 ## <a name="localization"></a>Lokalizace  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Zprostředkovatelé by měl v jazyce operačního systému k dispozici následující vlastnosti:  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Zprostředkovatelé by měl v jazyce operačního systému k dispozici následující vlastnosti:  
   
 -   <xref:System.Windows.Automation.AutomationElementIdentifiers.AcceleratorKeyProperty>  
   

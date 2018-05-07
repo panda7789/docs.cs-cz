@@ -1,10 +1,6 @@
 ---
-title: "-errorreport (možnosti kompilátoru C#)"
+title: -errorreport (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /errorreport
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 6d2fcb3f0bf4491de23b70c8beebf7ae495b2aa0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d7e001834d670e7c88488c6db887d1d8e671beef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (možnosti kompilátoru C#)
 Tato možnost nabízí pohodlný způsob, jak chybu interní kompilátoru C# nahlásit společnosti Microsoft.  
@@ -40,7 +33,7 @@ Tato možnost nabízí pohodlný způsob, jak chybu interní kompilátoru C# nah
  **prompt**  
  Dotaz, zda chcete poslat zprávu, když obdrží vnitřní chyby kompilátoru. **řádku** je výchozí hodnota při kompilaci aplikace ve vývojovém prostředí.  
   
- **queue**  
+ **Fronty**  
  Fronty zprávy o chybách. Při přihlášení s přihlašovacími údaji správce může hlásit případných selhání od posledního přihlášení. Nebudou vyzváni k odeslání zpráv o selhání více než jednou za tři dny. **fronty** při kompilaci aplikace na příkazovém řádku je výchozí hodnota.  
   
  **Odeslat**  

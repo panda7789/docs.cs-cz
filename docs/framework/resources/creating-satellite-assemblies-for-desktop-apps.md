@@ -1,14 +1,6 @@
 ---
 title: Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -31,17 +23,13 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2f75da3332c8172a6a888e6f40c66383866799ea
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: c308c7e16f106d00e5fd1b5ad820f8b330f4bbbf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 Soubory prostředků hrají roli centrální v lokalizovaných aplikací. Umožňují aplikace k zobrazení řetězce, obrázky a další data ve vlastních jazyce a jazykové verzi a zadejte alternativní dat, pokud nejsou k dispozici prostředky pro uživatele vlastní jazyk nebo jazykovou verzi. Rozhraní .NET Framework používá model střed a paprsek najít a načíst lokalizované prostředky. Rozbočovače je hlavní sestavení, které obsahuje nepřekládá spustitelného kódu a prostředků pro jednu jazykovou verzi, která se nazývá neutrální nebo výchozí jazykovou verzi. Představuje výchozí jazykovou verzi záložní jazykovou verzi pro aplikaci. používá se při žádné lokalizované prostředky jsou k dispozici. Můžete použít <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut a nastavit jazykovou verzi aplikace výchozí jazykovou verzi. Každý paprsek připojí k satelitní sestavení, které obsahuje prostředky pro jeden lokalizované jazykovou verzi, ale neobsahuje žádný kód. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykové verze bez nahrazení hlavního sestavení pro aplikaci.  
@@ -87,11 +75,11 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**-target:**lib|Určuje, že satelitní sestavení kompiluje soubor knihovny (DLL.dll). Protože satelitní sestavení neobsahuje spustitelného kódu a není hlavní sestavení aplikace, je nutné uložit satelitní sestavení jako knihovny DLL.|  
-|**-embed:**strings.de.resources|Určuje název souboru prostředků pro vložení při Al.exe kompiluje sestavení. Můžete vložit více RESOURCES souborů v satelitní sestavení, ale pokud postupujete podle modelu střed a paprsek, je nutné kompilovat jedno satelitní sestavení pro každou jazykovou verzi. Můžete však vytvořit samostatné RESOURCES soubory pro řetězce a objekty.|  
-|**-jazyková verze:**de|Určuje jazykovou verzi prostředku ke kompilaci. Modul CLR používá tyto informace při vyhledávání pro prostředky pro zadanou jazykovou verzi. Pokud tento parametr vynecháte, Al.exe stále zkompiluje prostředek, ale modul runtime nebude možné najít, když uživatel požaduje.|  
-|**-out:**Example.resources.dll|Určuje název souboru výstupního souboru. Název musí splňovat standardní pojmenování *baseName*.resources. *rozšíření*, kde *baseName* je název hlavní sestavení a *rozšíření* je platná přípona názvu souboru název (například .dll). Všimněte si, že modul runtime není schopna určit jazykovou verzi na základě jeho názvu souboru výstup; satelitní sestavení je nutné použít **/culture** možnost k jeho zadání.|  
-|**-šablony:**Example.dll|Určuje, ze kterého satelitní sestavení zdědí všechny metadata sestavení s výjimkou pole jazykovou verzi sestavení. Tato možnost ovlivní satelitní sestavení pouze v případě, že zadáte sestavení, který má [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).|  
+|**-target:** lib|Určuje, že satelitní sestavení kompiluje soubor knihovny (DLL.dll). Protože satelitní sestavení neobsahuje spustitelného kódu a není hlavní sestavení aplikace, je nutné uložit satelitní sestavení jako knihovny DLL.|  
+|**-vložení:** strings.de.resources|Určuje název souboru prostředků pro vložení při Al.exe kompiluje sestavení. Můžete vložit více RESOURCES souborů v satelitní sestavení, ale pokud postupujete podle modelu střed a paprsek, je nutné kompilovat jedno satelitní sestavení pro každou jazykovou verzi. Můžete však vytvořit samostatné RESOURCES soubory pro řetězce a objekty.|  
+|**-jazyková verze:** de|Určuje jazykovou verzi prostředku ke kompilaci. Modul CLR používá tyto informace při vyhledávání pro prostředky pro zadanou jazykovou verzi. Pokud tento parametr vynecháte, Al.exe stále zkompiluje prostředek, ale modul runtime nebude možné najít, když uživatel požaduje.|  
+|**-out:** Example.resources.dll|Určuje název souboru výstupního souboru. Název musí splňovat standardní pojmenování *baseName*.resources. *rozšíření*, kde *baseName* je název hlavní sestavení a *rozšíření* je platná přípona názvu souboru název (například .dll). Všimněte si, že modul runtime není schopna určit jazykovou verzi na základě jeho názvu souboru výstup; satelitní sestavení je nutné použít **/culture** možnost k jeho zadání.|  
+|**-šablony:** Example.dll|Určuje, ze kterého satelitní sestavení zdědí všechny metadata sestavení s výjimkou pole jazykovou verzi sestavení. Tato možnost ovlivní satelitní sestavení pouze v případě, že zadáte sestavení, který má [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).|  
   
  Úplný seznam možností, které jsou k dispozici s Al.exe, najdete v části [Linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md).  
   

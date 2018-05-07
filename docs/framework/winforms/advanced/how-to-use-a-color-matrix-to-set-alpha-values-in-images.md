@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití matice barev k nastavení alfa hodnot v obrázcích"
-ms.custom: 
+title: 'Postupy: Použití matice barev k nastavení alfa hodnot v obrázcích'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - matrices [Windows Forms], alpha values
 - bitmaps [Windows Forms], using color matrices for semi-transparent
 ms.assetid: a27121e6-f7e9-4c09-84e2-f05aa9d2a1bb
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5dde9417782e4404237a995364d65058f023c3e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ed129cd9487ba1416cd69b2e13f59747856cb598
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-color-matrix-to-set-alpha-values-in-images"></a>Postupy: Použití matice barev k nastavení alfa hodnot v obrázcích
 <xref:System.Drawing.Bitmap> – Třída (který dědí z <xref:System.Drawing.Image> třída) a <xref:System.Drawing.Imaging.ImageAttributes> třída poskytovat funkce pro načtení a nastavení hodnoty pixelů. Můžete použít <xref:System.Drawing.Imaging.ImageAttributes> třída změnit alpha hodnoty celého obrázku, nebo můžete volat <xref:System.Drawing.Bitmap.SetPixel%2A> metodu <xref:System.Drawing.Bitmap> třídy upravte hodnoty jednotlivých pixelů.  

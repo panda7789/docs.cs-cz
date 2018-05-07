@@ -1,30 +1,19 @@
 ---
-title: "Postupy: vytvoření vlastního návrháře aktivit"
-ms.custom: 
+title: 'Postupy: vytvoření vlastního návrháře aktivit'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 10fc7461c077d73fedb1e326f88156e4a816cdee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e4aab60a598be2d6df5546ab1c98a289b4aef04a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Postupy: vytvoření vlastního návrháře aktivit
 Návrháři vlastních aktivit jsou obvykle implementovány tak, aby jejich aktivity související s ostatními aktivitami, jejichž Designer může být přetažen na návrhovou plochu, která s nimi bez možnosti složení. Tato funkce vyžaduje, aby zadali Návrhář vlastní aktivity "rozevírací zónu" umístění libovolné aktivity a také způsob, jak spravovat výsledné kolekci elementů na návrhovou plochu. Toto téma popisuje, jak vytvořit vlastní aktivity návrháře obsahující rozevírací zóny a jak vytvořit Návrhář vlastní aktivity, který zajišťuje, že úpravy funkce potřebné ke správě kolekci elementů návrháře.  
   
  Návrháři vlastních aktivit obvykle dědí <xref:System.Activities.Presentation.ActivityDesigner> což je výchozí základní aktivitě návrháře typ pro všechny aktivity bez konkrétní návrháře. Tento typ poskytuje prostředí návrhu interakci s mřížku vlastností a konfigurace základní aspekty například správu barvy a ikony.  
   
- <xref:System.Activities.Presentation.ActivityDesigner>pomocí dvou ovládacích prvků pomocné rutiny, <xref:System.Activities.Presentation.WorkflowItemPresenter> a <xref:System.Activities.Presentation.WorkflowItemsPresenter> aby bylo snazší vývoj Návrháře vlastních aktivit. Běžné funkce jako přetahování podřízené elementy, odstranění, výběru a přidání těchto podřízených elementů, které zpracovávají. <xref:System.Activities.Presentation.WorkflowItemPresenter> Umožňuje jeden podřízený element uživatelského rozhraní uvnitř, zajištění "rozevírací zóně", je při <xref:System.Activities.Presentation.WorkflowItemsPresenter> může poskytnout podporu více prvky uživatelského rozhraní, včetně další funkce, jako je řazení, přesunutí, odstranění a přidání podřízených elementů.  
+ <xref:System.Activities.Presentation.ActivityDesigner> pomocí dvou ovládacích prvků pomocné rutiny, <xref:System.Activities.Presentation.WorkflowItemPresenter> a <xref:System.Activities.Presentation.WorkflowItemsPresenter> aby bylo snazší vývoj Návrháře vlastních aktivit. Běžné funkce jako přetahování podřízené elementy, odstranění, výběru a přidání těchto podřízených elementů, které zpracovávají. <xref:System.Activities.Presentation.WorkflowItemPresenter> Umožňuje jeden podřízený element uživatelského rozhraní uvnitř, zajištění "rozevírací zóně", je při <xref:System.Activities.Presentation.WorkflowItemsPresenter> může poskytnout podporu více prvky uživatelského rozhraní, včetně další funkce, jako je řazení, přesunutí, odstranění a přidání podřízených elementů.  
   
  Další část klíče scénáře, který potřebuje zvýraznění implementace Návrhář vlastní aktivity se týká způsob, ve kterém jsou visual úpravy svázán pomocí [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] datové vazby k instanci uložené v paměti co jsme jsou úpravy v návrháři. To lze provést stromu položku modelu, který zodpovídá taky pro povolení oznámení o změně a sledování událostí jako změny ve stavu.  
   

@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugEval::CreateValue – metoda"
-ms.custom: 
+title: ICorDebugEval::CreateValue – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugEval.CreateValue
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9a1c0b47-6f10-4fcb-844a-4ab2d7990140
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 64d55a951795cc5efc1bfc624dbe07575be153aa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6d67784daee055106f104d74d098b9926c6de2ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugevalcreatevalue-method"></a>ICorDebugEval::CreateValue – metoda
 Vytvoří hodnotu zadaného typu, s počáteční hodnotou nula nebo hodnotu null.  
@@ -61,7 +49,7 @@ HRESULT CreateValue (
  [out] Ukazatel na adresu "ICorDebugValue" objekt, který představuje hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateValue`vytvoří `ICorDebugValue` objekt daného typu za účelem používání ve vyhodnocení funkce. Tento objekt hodnota slouží k předávání konstanty uživatele jako parametry.  
+ `CreateValue` vytvoří `ICorDebugValue` objekt daného typu za účelem používání ve vyhodnocení funkce. Tento objekt hodnota slouží k předávání konstanty uživatele jako parametry.  
   
  Pokud je typ hodnoty primitivní typ, jeho počáteční hodnota je nulová nebo má hodnotu null. Použití [icordebuggenericvalue::SetValue –](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md) nastavit hodnotu primitivního typu.  
   

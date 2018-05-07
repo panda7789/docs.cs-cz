@@ -1,10 +1,6 @@
 ---
-title: "-recurse (možnosti kompilátoru C#)"
+title: -recurse (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /recurse
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - recurse compiler option [C#]
 - -recurse compiler option [C#]
 ms.assetid: 4e8212e5-04e3-45b1-8a42-41bc50e683b0
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b50454112bc7aee6c3e0f8fe674e8727ca9e49be
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7d18fb2b1710e074653e054d003be762d947d1be
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-recurse-c-compiler-options"></a>-recurse (možnosti kompilátoru C#)
 -Recurse – možnost umožňuje kompilovat soubory zdrojového kódu ve všech zadaný adresář (dir) nebo adresáři projektu.  
@@ -31,7 +24,7 @@ ms.lasthandoff: 01/19/2018
 ```  
   
 ## <a name="arguments"></a>Arguments  
- `dir`(volitelné)  
+ `dir` (volitelné)  
  Adresář, ve kterém chcete vyhledávání začít. Pokud není tento parametr zadán, začne vyhledávání v adresáři projektu.  
   
  `file`  

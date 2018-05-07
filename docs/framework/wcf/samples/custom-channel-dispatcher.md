@@ -1,30 +1,18 @@
 ---
-title: "Dispečer vlastního kanálu"
-ms.custom: 
+title: Dispečer vlastního kanálu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 813acf03-9661-4d57-a3c7-eeab497321c6
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c67425c67625fcfcfaac5ec689f4f70dbd3d64f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7cd27d485efe7fe91e7c59627bf14e188e85f386
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-channel-dispatcher"></a>Dispečer vlastního kanálu
 Tato ukázka ukazuje, jak vytvořit kanál zásobníku vlastní způsobem implementací <xref:System.ServiceModel.ServiceHostBase> přímo a jak vytvořit vlastní kanál dispečera v prostředí hostitele webu. Dispečera kanál komunikuje s <xref:System.ServiceModel.Channels.IChannelListener> tak, aby přijímal zprávy kanály a načte z zásobníku kanálu. Tato ukázka také poskytuje základní ukázka, jak vytvořit kanál zásobníku v prostředí webové hostitele pomocí <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
   
 ## <a name="custom-servicehostbase"></a>Vlastní ServiceHostBase  
- Tato ukázka implementuje základní typ <xref:System.ServiceModel.ServiceHostBase> místo <xref:System.ServiceModel.ServiceHost> abychom ukázali, jak nahradit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zásobník implementace vlastní zprávu zpracování vrstvu nad zásobníku kanálu. Potlačení virtuální metody <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> k vytvoření naslouchacího procesu kanálu a dispečera kanálu.  
+ Tato ukázka implementuje základní typ <xref:System.ServiceModel.ServiceHostBase> místo <xref:System.ServiceModel.ServiceHost> k ukazují, jak nahradit vlastní zprávu zpracování vrstvu nad zásobníku kanál implementace zásobník Windows Communication Foundation (WCF). Potlačení virtuální metody <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> k vytvoření naslouchacího procesu kanálu a dispečera kanálu.  
   
  K implementaci hostované webové služby, získat rozšíření služby <xref:System.ServiceModel.Activation.VirtualPathExtension> z <xref:System.ServiceModel.ServiceHostBase.Extensions%2A> kolekce a přidejte ho do <xref:System.ServiceModel.Channels.BindingParameterCollection> tak, aby přenosové vrstvy umí nakonfigurovat naslouchací proces kanálu nástroje na základě hostitelských nastaveních prostředí, který je Internetové informační služby (IIS) nebo nastavení služby Aktivace procesů systému Windows (WAS).  
   
@@ -34,7 +22,7 @@ Tato ukázka ukazuje, jak vytvořit kanál zásobníku vlastní způsobem implem
  Dispečera prvním otevření naslouchací proces kanálu nástroje a potom přijímá kanál odpověď typu singleton. S kanálem začne odesílat zprávy (počet požadavků) v nekonečné smyčce. Pro každý požadavek vytvoří zprávu odpovědi a odešle ho zpátky do klienta.  
   
 ## <a name="creating-a-response-message"></a>Vytváření zprávu odpovědi  
- Zpracování zpráv je implementován v typu `MyServiceManager`. V `HandleRequest` metody `Action` záhlaví zprávy nejdřív zkontroluje se zda žádost je podporováno. Předdefinované akce SOAP "http://tempuri.org/HelloWorld/Hello" je definována k poskytnutí filtrování zprávy. Toto je podobný koncept kontraktu služby ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace <xref:System.ServiceModel.ServiceHost>.  
+ Zpracování zpráv je implementován v typu `MyServiceManager`. V `HandleRequest` metody `Action` záhlaví zprávy nejdřív zkontroluje se zda žádost je podporováno. Předdefinované A akce SOAP "http://tempuri.org/HelloWorld/Hello" je definována k poskytnutí filtrování zprávy. Toto je podobný koncept kontraktu služby ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace <xref:System.ServiceModel.ServiceHost>.  
   
  Pro správnou velikost akce SOAP ukázku načte data pro požadovaný zprávu a vygeneruje odpovídající odpověď na žádost o podobná co je vidět v <xref:System.ServiceModel.ServiceHost> případu.  
   
@@ -62,6 +50,6 @@ Server replied: You said: Howdy. Message id: 5
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\CustomChannelDispatcher`

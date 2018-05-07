@@ -1,24 +1,12 @@
 ---
-title: "Rozšiřitelnost syndikace"
-ms.custom: 
+title: Rozšiřitelnost syndikace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4d941175-74a2-4b15-81b3-086e8a95d25f
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5322ff2c79ab5051b3a9aaaeaafe7db6c9c2f683
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8182aee9d8a526d995ab1266e5c654f29f4af3d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="syndication-extensibility"></a>Rozšiřitelnost syndikace
 Rozhraní API syndikace určená k poskytování formátu jazykově neutrální programovací model, který umožňuje syndikovaný obsah k zápisu do sítě v různých formátech. Abstraktní datového modelu se skládá z následujících tříd:  
@@ -35,7 +23,7 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
  Tyto třídy mapovat úzce konstrukce definované specifikací Atom 1.0, i když některé z názvů se liší.  
   
- Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0, přidejte do informační kanály syndikace, které nejsou definovány v specifikacích atributy a elementy. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Programovací model syndikace nabízí tyto způsoby práce s vlastní atributy a rozšíření, volného typu přístup a odvozování novou třídu.  
+ Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0, přidejte do informační kanály syndikace, které nejsou definovány v specifikacích atributy a elementy. Programovací model Windows Communication Foundation (WCF) syndikace nabízí tyto způsoby práce s vlastní atributy a rozšíření, volného typu přístup a odvozování novou třídu.  
   
 ## <a name="loosely-typed-access"></a>Přístup volného typu  
  Přidání rozšíření odvozením novou třídu vyžaduje zápis další kód. Další možností je přístup k rozšíření volného typu způsobem. Všechny typy definované v modelu abstraktní data syndikace obsahovat vlastností s názvem `AttributeExtensions` a `ElementExtensions` (s jedinou výjimkou <xref:System.ServiceModel.Syndication.SyndicationContent> má `AttributeExtensions` vlastnost, ale ne `ElementExtensions` vlastnost). Tyto vlastnosti jsou kolekce rozšíření nejsou zpracovávány `TryParseAttribute` a `TryParseElement` metody v uvedeném pořadí. Tato nezpracované rozšíření můžete přejít pomocí volání <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType> na `ElementExtensions` vlastnost <xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationPerson>, a <xref:System.ServiceModel.Syndication.SyndicationCategory>. Tato sada metod vyhledá všechna rozšíření se zadaným názvem a obor názvů, deserializuje jednotlivě do instance `TExtension` a vrací je jako kolekce `TExtension` objekty.  

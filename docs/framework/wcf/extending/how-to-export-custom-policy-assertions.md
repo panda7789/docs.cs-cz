@@ -1,30 +1,18 @@
 ---
-title: "Postupy: Export kontrolních výrazů vlastních zásad"
-ms.custom: 
+title: 'Postupy: Export kontrolních výrazů vlastních zásad'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d8620dec4997947df2dc7078e337a5e421d66c55
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4182007d32ea857aa333542b4df29da18b8062df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>Postupy: Export kontrolních výrazů vlastních zásad
-Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby. Aplikace služby můžete pomocí kontrolních výrazů vlastních zásad metadata služby komunikovat koncový bod, vazba nebo kontrakt informace o přizpůsobení do klientské aplikace. Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] export kontrolní výrazy ve výrazech zásad připojena v WSDL vazby na koncový bod, operace nebo zpráva tématům, v závislosti na možnosti nebo požadavky jsou komunikaci.  
+Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby. Aplikace služby můžete pomocí kontrolních výrazů vlastních zásad metadata služby komunikovat koncový bod, vazba nebo kontrakt informace o přizpůsobení do klientské aplikace. Windows Communication Foundation (WCF) můžete exportovat kontrolní výrazy ve výrazech zásad připojena v WSDL vazby na koncový bod, operace nebo zpráva tématům, v závislosti na možnosti nebo požadavků, které budou komunikovat.  
   
  Exportují se implementací kontrolních výrazů vlastních zásad <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní na <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> a buď vložení prvku vazby přímo do vazby koncového bodu služby nebo tím, že zaregistrujete prvku vazby v aplikaci konfigurační soubor. Export implementaci zásad měli přidat vaše vlastní zásady assertion jako <xref:System.Xml.XmlElement?displayProperty=nameWithType> instance na příslušné <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> předaný do <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> metoda.  
   

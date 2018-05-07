@@ -1,13 +1,6 @@
 ---
-title: "Správa deklarací a autorizace s modelem identity"
-ms.custom: 
+title: Správa deklarací a autorizace s modelem identity
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - authorization [WCF]
 - WCF security
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: db0a304a908e906b635672eed1a84f0277284ad7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 84f4485a85f83e910cc75b04282e1ad04aee72c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
-Autorizace je proces zjišťování entit, které mají oprávnění změnit, zobrazení nebo jinak přístup k prostředkům počítače. Například v obchodu, pouze správci mohou mít přístup k soubory své zaměstnance. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus vám umožňuje řídit autorizaci s použitím stávající společné jazykové konstrukty runtime (CLR). Druhá je model na základě deklarace označuje jako *modelu Identity*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]pomocí modelu Identity vytvoří deklarace identity ze příchozí zprávy; Třídy modelu identity lze rozšířit pro podporu nových typů deklarací identity pro schémata autorizace. Toto téma obsahuje přehled hlavní koncepty programování modelu Identity funkce, jakož i seznam nejdůležitější tříd, které používá funkci.  
+Autorizace je proces zjišťování entit, které mají oprávnění změnit, zobrazení nebo jinak přístup k prostředkům počítače. Například v obchodu, pouze správci mohou mít přístup k soubory své zaměstnance. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus vám umožňuje řídit autorizaci s použitím stávající společné jazykové konstrukty runtime (CLR). Druhá je model na základě deklarace označuje jako *modelu Identity*. WCF pomocí modelu Identity vytvoří deklarace identity ze příchozí zprávy; Třídy modelu identity lze rozšířit pro podporu nových typů deklarací identity pro schémata autorizace. Toto téma obsahuje přehled hlavní koncepty programování modelu Identity funkce, jakož i seznam nejdůležitější tříd, které používá funkci.  
   
 ## <a name="identity-model-scenarios"></a>Scénáře modelu identity  
  Následující scénáře představují použití modelu Identity.  
@@ -136,7 +124,7 @@ Autorizace je proces zjišťování entit, které mají oprávnění změnit, zo
  ![Správa deklarací a autorizace](../../../../docs/framework/wcf/feature-details/media/xsi-recap.gif "xsi_recap")  
   
 ## <a name="wcf-and-identity-model"></a>WCF a modelu Identity  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá infrastrukturu modelu Identity jako základ pro provádění autorizace. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> třída umožňuje určit *autorizace* zásady jako součást služby. Tyto zásady autorizace se označují jako *zásady autorizace externí*, a mohou provádět zpracování deklarace identity založené na místní zásady nebo interakci s vzdálené služby. Správce autorizací, reprezentována <xref:System.ServiceModel.ServiceAuthorizationManager> třída vyhodnotí zásady autorizace externí společně s zásady autorizace, které rozpoznají různých přihlašovacích údajů typy (tokeny) a naplní, co se nazývá  *autorizační kontext* s deklaracemi identity vhodné pro příchozí zprávy. Autorizační kontext je reprezentována <xref:System.IdentityModel.Policy.AuthorizationContext> třídy.  
+ WCF používá infrastrukturu modelu Identity jako základ pro provádění autorizace. Ve službě WCF <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> třída umožňuje určit *autorizace* zásady jako součást služby. Tyto zásady autorizace se označují jako *zásady autorizace externí*, a mohou provádět zpracování deklarace identity založené na místní zásady nebo interakci s vzdálené služby. Správce autorizací, reprezentována <xref:System.ServiceModel.ServiceAuthorizationManager> třída vyhodnotí zásady autorizace externí společně s zásady autorizace, které rozpoznají různých přihlašovacích údajů typy (tokeny) a naplní, co se nazývá  *autorizační kontext* s deklaracemi identity vhodné pro příchozí zprávy. Autorizační kontext je reprezentována <xref:System.IdentityModel.Policy.AuthorizationContext> třídy.  
   
 ## <a name="identity-model-programming"></a>Identity modelu programování  
  Následující tabulka popisuje model objektu použít k rozšíření modelu Identity programu. Všechny tyto třídy existovat buď <xref:System.IdentityModel.Policy> nebo <xref:System.IdentityModel.Claims> obory názvů.  

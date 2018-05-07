@@ -1,28 +1,14 @@
 ---
 title: Filtry zpráv
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - routing [WCF], message filters
 ms.assetid: cb33ba49-8b1f-4099-8acb-240404a46d9a
-caps.latest.revision: 8
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bd5019668e865d2fea835b450d992d45b5273ed7
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e129924de53fb0dba61798cc492729c8af69ed94
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-filters"></a>Filtry zpráv
 Implementace založená na obsahu směrování, služba Směrování používá <xref:System.ServiceModel.Dispatcher.MessageFilter> implementací, které kontrola určité části zprávy, jako je například adresu, název koncového bodu nebo konkrétní příkaz XPath. Pokud žádné filtry zpráv s [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vašim požadavkům, můžete vytvořit vlastní filtr tak, že vytvoříte novou implementací základu <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
@@ -38,14 +24,14 @@ Implementace založená na obsahu směrování, služba Směrování používá 
   
 |Typ filtru|Popis|Filtrování dat význam|Příklad filtru|  
 |------------------|-----------------|-------------------------|--------------------|  
-|Akce|Používá <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> třídy tak, aby odpovídaly zprávy obsahující určité akce.|Akce při filtrování.|\<filter name="action1" filterType="Action" filterData="http://namespace/contract/operation" />|  
-|EndpointAddress|Používá <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující konkrétní adresu.|Adresa pro filtrování po (v hlavičce na).|\<filter name="address1" filterType="EndpointAddress" filterData="http://host/vdir/s.svc/b"  />|  
-|EndpointAddressPrefix|Používá <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující předponu konkrétní adresu.|Adresa pro filtrování při porovnáváním nejdelší předpon.|\<filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/" />|  
-|A|Používá <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> třídu, která vždy vyhodnotí splněny obě podmínky před vrácením.|fulltextových dat filtru se nepoužívá; Místo toho Filtr1 a Filtr2 mají názvy odpovídající filtry zpráv (také v tabulce), které by měl být **a**ed společně.|\<filter name="and1" filterType="And" filter1="address1" filter2="action1" />|  
-|Vlastní|Uživatelem definovaný typ, který rozšiřuje <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy a má konstruktor trvá řetězec.|Atribut customType je typ plně kvalifikovaný název třídy Vytvoření; fulltextových dat filtru je řetězec, které mají být předána do konstruktoru, při vytváření filtru.|\<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />|  
+|Akce|Používá <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> třídy tak, aby odpovídaly zprávy obsahující určité akce.|Akce při filtrování.|\<Název filtru = "action1" filterType = "Action" fulltextových dat filtru = "http://namespace/contract/operation" / >|  
+|EndpointAddress|Používá <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující konkrétní adresu.|Adresa pro filtrování po (v hlavičce na).|\<Název filtru = "adresa1" filterType = fulltextových dat filtru "EndpointAddress" = "http://host/vdir/s.svc/b" / >|  
+|EndpointAddressPrefix|Používá <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující předponu konkrétní adresu.|Adresa pro filtrování při porovnáváním nejdelší předpon.|\<Název filtru = "prefix1" filterType = "EndpointAddressPrefix" fulltextových dat filtru = "http://host/" / >|  
+|A|Používá <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> třídu, která vždy vyhodnotí splněny obě podmínky před vrácením.|fulltextových dat filtru se nepoužívá; Místo toho Filtr1 a Filtr2 mají názvy odpovídající filtry zpráv (také v tabulce), které by měl být **a**ed společně.|\<Název filtru = "and1" filterType = "A" Filtr1 = "adresa1" Filtr2 = "action1" / >|  
+|Vlastní|Uživatelem definovaný typ, který rozšiřuje <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy a má konstruktor trvá řetězec.|Atribut customType je typ plně kvalifikovaný název třídy Vytvoření; fulltextových dat filtru je řetězec, které mají být předána do konstruktoru, při vytváření filtru.|\<Název filtru = "vlastní1" filterType = "Vlastní" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" fulltextových dat filtru = "Vlastní Data" / >|  
 |EndpointName|Používá <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> třídy tak, aby odpovídaly zprávy na základě názvu koncového bodu služby se dostali na.|Název koncového bodu služby, například: "serviceEndpoint1".  To by měl být jeden z koncových bodů zveřejněný ve službě Směrování.|\<Název filtru = "stock1" filterType = fulltextových dat filtru "Koncový bod" = "SvcEndpoint" / >|  
 |MatchAll|Používá <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> třídy. Tento filtr odpovídá všechny příchozí zprávy.|fulltextových dat filtru se nepoužije. Tento filtr bude vždy odpovídat všechny zprávy.|\<Název filtru = "matchAll1" filterType = "MatchAll" / >|  
-|XPath|Používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> třídy tak, aby odpovídaly konkrétní dotazů XPath v rámci zprávy.|Dotaz XPath pro použití při kontrole shody zprávy.|\<filter name="XPath1" filterType="XPath" filterData="//ns:element" />|  
+|XPath|Používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> třídy tak, aby odpovídaly konkrétní dotazů XPath v rámci zprávy.|Dotaz XPath pro použití při kontrole shody zprávy.|\<Název filtru = "XPath1" filterType = fulltextových dat filtru "XPath" = "//ns:element" / >|  
   
  V následujícím příkladu definuje filtr položky, které používají filtry XPath EndpointName a PrefixEndpointAddress zpráv. Tento příklad také ukazuje pomocí vlastního filtru pro RoundRobinFilter1 a RoundRobinFilter2 položky.  
   
@@ -80,7 +66,7 @@ Implementace založená na obsahu směrování, služba Směrování používá 
 |s12|http://www.w3.org/2003/05/soap-envelope|  
 |wsaAugust2004|http://schemas.xmlsoap.org/ws/2004/08/addressing|  
 |wsa10|http://www.w3.org/2005/08/addressing|  
-|sm|http://schemas.microsoft.com/serviceModel/2004/05/xpathfunctions|  
+|SM|http://schemas.microsoft.com/serviceModel/2004/05/xpathfunctions|  
 |tempuri|http://tempuri.org|  
 |Pož|http://schemas.microsoft.com/2003/10/Serialization|  
   

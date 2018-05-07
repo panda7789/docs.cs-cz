@@ -4,17 +4,11 @@ description: Informace o použití rozhraní .NET Core SDK a její nástroje na 
 author: guardrex
 ms.author: mairaw
 ms.date: 05/18/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 76165b515bace71ca9269e587a817876c0e9eecf
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 032d38ebe268503c8578aacbee4b9c342466fc7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Pomocí rozhraní .NET Core SDK a nástrojů v nepřetržité integrace (CI)
 

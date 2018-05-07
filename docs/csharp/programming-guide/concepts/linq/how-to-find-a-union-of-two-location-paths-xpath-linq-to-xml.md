@@ -1,21 +1,12 @@
 ---
-title: "Postupy: vyhledání spojení dvě cesty umístění (XPath-technologie LINQ to XML) (C#)"
-ms.custom: 
+title: 'Postupy: vyhledání spojení dvě cesty umístění (XPath-technologie LINQ to XML) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 48c5182a32a78dd7f32f73b8180f90c0787e197a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cd98c1da2f2f8653c5db36f89a63dfdc7a7ab691
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: vyhledání spojení dvě cesty umístění (XPath-technologie LINQ to XML) (C#)
 Výraz XPath umožňuje najít sjednocení výsledky dvě cesty XPath umístění.  

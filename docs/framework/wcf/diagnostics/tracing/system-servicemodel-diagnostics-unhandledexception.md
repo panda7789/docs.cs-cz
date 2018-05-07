@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Diagnostics.UnhandledException
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6807fdfc-1e7e-42ca-8efe-a05b51de2f8f
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8cc368d5574d6e21a8bcaa5384f9d139038cfaff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 88af7d99152452e908c17ce5248acbe2fb831004
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodeldiagnosticsunhandledexception"></a>System.ServiceModel.Diagnostics.UnhandledException
 System.ServiceModel.Diagnostics.UnhandledException  

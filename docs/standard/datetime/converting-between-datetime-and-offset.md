@@ -1,13 +1,7 @@
 ---
-title: "Převádění mezi DateTime a DateTimeOffset"
-ms.custom: 
+title: Převádění mezi DateTime a DateTimeOffset
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,25 +16,20 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2055df26618664ee130be417599f4ec46e439444
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dec0e5138ecf08783f11d21cd28d7291d27ea68d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Převádění mezi DateTime a DateTimeOffset
 
 I když <xref:System.DateTimeOffset> struktura nabízí vyšší úroveň povědomí o časovém pásmu než <xref:System.DateTime> struktury <xref:System.DateTime> parametry jsou častěji používají při volání metody. Z toho důvodu schopnost převést <xref:System.DateTimeOffset> hodnoty k <xref:System.DateTime> hodnoty a naopak je obzvláště důležité. Toto téma ukazuje, jak provést tyto převody způsobem, který zachovává co nejvíce informací časové pásmo.
 
 > [!NOTE]
-> Jak <xref:System.DateTime> a <xref:System.DateTimeOffset> typy mají určitá omezení, když představují časy v časových pásem. S jeho <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTime> může obsahovat pouze koordinovaný světový čas (UTC) a místní časové pásmo. <xref:System.DateTimeOffset>Zobrazuje čas posun od času UTC, ale neodráží aktuální časové pásmo, ke kterému posun patří. Podrobnosti o časových hodnotách a podpoře časových pásem najdete v tématu [volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).
+> Jak <xref:System.DateTime> a <xref:System.DateTimeOffset> typy mají určitá omezení, když představují časy v časových pásem. S jeho <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTime> může obsahovat pouze koordinovaný světový čas (UTC) a místní časové pásmo. <xref:System.DateTimeOffset> Zobrazuje čas posun od času UTC, ale neodráží aktuální časové pásmo, ke kterému posun patří. Podrobnosti o časových hodnotách a podpoře časových pásem najdete v tématu [volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).
 
 ## <a name="conversions-from-datetime-to-datetimeoffset"></a>Převod datového typu DateTime na DateTimeOffset
 

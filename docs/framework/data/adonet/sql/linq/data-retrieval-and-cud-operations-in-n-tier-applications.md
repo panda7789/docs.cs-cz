@@ -1,34 +1,22 @@
 ---
-title: "Operace vytvoření ve víceúrovňových aplikacích (technologie LINQ to SQL) a načtení dat"
-ms.custom: 
+title: Operace vytvoření ve víceúrovňových aplikacích (technologie LINQ to SQL) a načtení dat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6cdf1a859595c82b8eea60311c3c96353849e3dc
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ea27d6406ed588f2046dc938f5167a6c0200329e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace vytvoření ve víceúrovňových aplikacích (technologie LINQ to SQL) a načtení dat
 Při serializaci objektů entity například zákazníků nebo objednávky klienta přes síť, jsou tyto entity odpojit od jejich data kontextu. Data kontextu už sleduje, jejich změny nebo jejich přidružení s jinými objekty. Nejedná se o problém, dokud klienti jsou jen ke čtení dat. Také je poměrně jednoduché umožníte klientům přidat nové řádky k databázi. Ale pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je potřeba přiřadit entity nový kontext data před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Kromě toho pokud používáte kontrola optimistickou metodu souběžného s původní hodnoty, pak je také nutné způsob, jak poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metod jsou uvedeny umožnit entity vložena nový kontext dat po nějaké době odpojit.  
   
  I když jsou serializaci objektů proxy místě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] entity, musíte ještě vytvořit entitu na vrstva přístupu k datům (DAL) a jeho připojení k nové <xref:System.Data.Linq.DataContext?displayProperty=nameWithType>, aby bylo možné odeslat data do databáze.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je zcela je mi to o tom, jak se serializují entity. Další informace o tom, jak používat [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] a SQLMetal nástroje pro generování tříd, které jsou serializovatelný pomocí Windows Communication Foundation (WCF), najdete v části [postup: Zkontrolujte serializovatelný entity](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je zcela je mi to o tom, jak se serializují entity. Další informace o tom, jak používat [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] a SQLMetal nástroje pro generování tříd, které jsou serializovatelný pomocí Windows Communication Foundation (WCF), najdete v části [postup: Zkontrolujte serializovatelný entity](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md).  
   
 > [!NOTE]
 >  Volat pouze `Attach` metody na nový nebo deserializovat entity. Jediným způsobem pro entitu jako odpojit od jeho původní kontextu dat je pro něj k serializaci. Pokud se pokusíte připojit undetached entity pro nový kontext dat a dané entity má stále odložení zavaděče jeho předchozí kontextu dat nástroje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dojde k výjimce. Entity s odložené zavaděče ze dvou různých datových kontextů může způsobit nežádoucí výsledky při provádění insert, update a delete operací na dané entity. Další informace o odložených zavaděče najdete v tématu [odložení versus okamžitou načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
@@ -219,7 +207,7 @@ public void DeleteOrder(Order order)
 ```  
   
 ## <a name="updating-data"></a>Aktualizace dat  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]v těchto scénářích zahrnující optimistickou metodu souběžného podporuje aktualizace:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v těchto scénářích zahrnující optimistickou metodu souběžného podporuje aktualizace:  
   
 -   Optimistickou metodu souběžného na základě časová razítka nebo RowVersion čísla.  
   

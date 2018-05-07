@@ -1,14 +1,6 @@
 ---
 title: Zařazování dat s voláním platformy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - cpp
 helpviewer_keywords:
@@ -16,17 +8,13 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 24ae6da0b32cf15ee9104bd10ba5fe6bb03a9763
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 2eb55d8490eae64e909ada68223983c570ef9afa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NET Framework aplikace funkce prototypů ve spravovaném kódu, který představuje nespravované funkce. Chcete-li vytvořit prototyp, která umožňuje platformy vyvolání zařazování dat správně, musíte provést následující:  
@@ -45,10 +33,10 @@ Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NE
 |Nespravovaný typ v Wtypes.h|Nespravovaný typ jazyka C|Název spravované třídy|Popis|  
 |--------------------------------|-------------------------------|------------------------|-----------------|  
 |**POPISOVAČ**|**Void\***|<xref:System.IntPtr?displayProperty=nameWithType>|32bitová verze na 32bitové operační systémy Windows, 64 bitů v operačních systémech Windows 64-bit.|  
-|**BYTE**|**unsigned char**|<xref:System.Byte?displayProperty=nameWithType>|8 bitů|  
-|**SHORT**|**short**|<xref:System.Int16?displayProperty=nameWithType>|16 bitů|  
+|**BAJTŮ**|**unsigned char**|<xref:System.Byte?displayProperty=nameWithType>|8 bitů|  
+|**KRÁTKÝ**|**short**|<xref:System.Int16?displayProperty=nameWithType>|16 bitů|  
 |**WORD**|**short bez znaménka**|<xref:System.UInt16?displayProperty=nameWithType>|16 bitů|  
-|**INT**|**int**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
+|**CELÁ ČÍSLA**|**int**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
 |**UINT**|**int bez znaménka**|<xref:System.UInt32?displayProperty=nameWithType>|32bitová verze|  
 |**DLOUHÁ**|**long**|<xref:System.Int32?displayProperty=nameWithType>|32bitová verze|  
 |**BOOL**|**long**|<xref:System.Byte>|32bitová verze|  
@@ -56,11 +44,11 @@ Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NE
 |**ULONG –**|**dlouho bez znaménka**|<xref:System.UInt32?displayProperty=nameWithType>|32bitová verze|  
 |**CHAR –**|**char**|<xref:System.Char?displayProperty=nameWithType>|Uspořádání s ANSI.|  
 |**WCHAR**|**wchar_t**|<xref:System.Char?displayProperty=nameWithType>|Uspořádání pomocí kódování Unicode.|  
-|**LPSTR**|**char\***|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|  
+|**LPSTR**|**Char\***|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|  
 |**LPCSTR**|**Const char\***|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|  
 |**LPWSTR**|**wchar_t\***|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání pomocí kódování Unicode.|  
 |**LPCWSTR**|**Const wchar_t\***|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání pomocí kódování Unicode.|  
-|**PLOVOUCÍ DESETINNÁ ČÁRKA**|**Float**|<xref:System.Single?displayProperty=nameWithType>|32bitová verze|  
+|**PLOVOUCÍ DESETINNÁ ČÁRKA**|**Plovoucí desetinná čárka**|<xref:System.Single?displayProperty=nameWithType>|32bitová verze|  
 |**DOUBLE**|**Double**|<xref:System.Double?displayProperty=nameWithType>|64bitová verze|  
   
  Pro odpovídající typy v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C# a C++, najdete [Úvod do knihovně tříd rozhraní .NET Framework](../../../docs/standard/class-library-overview.md).  

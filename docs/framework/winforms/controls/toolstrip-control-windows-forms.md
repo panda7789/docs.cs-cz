@@ -1,30 +1,18 @@
 ---
-title: "ToolStrip – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: ToolStrip – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - toolbars [Windows Forms]
 - ToolStrip control [Windows Forms]
 ms.assetid: e5ef455a-e049-429c-8005-30c93132fb79
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3f5f8ca82cf128647e7dd80676cad629f8480a48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 49bf94959b2efb19ff6e3a273f4cd09905089b31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstrip-control-windows-forms"></a>ToolStrip – ovládací prvek (Windows Forms)
-<xref:System.Windows.Forms.ToolStrip>ovládací prvky jsou panely nástrojů, které může být hostitelem nabídek, ovládacích prvků a uživatelské ovládací prvky v aplikacích Windows Forms.  
+<xref:System.Windows.Forms.ToolStrip> ovládací prvky jsou panely nástrojů, které může být hostitelem nabídek, ovládacích prvků a uživatelské ovládací prvky v aplikacích Windows Forms.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
@@ -97,7 +85,7 @@ ms.lasthandoff: 12/22/2017
 -   [Editor kolekce položek ToolStrip](http://msdn.microsoft.com/library/ms233643\(v=vs.110\))  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ToolStrip>– Třída  
+ <xref:System.Windows.Forms.ToolStrip> – Třída  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.ToolStrip>  

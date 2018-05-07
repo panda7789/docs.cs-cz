@@ -1,38 +1,26 @@
 ---
-title: "Model programování webových služeb HTTP WCF"
-ms.custom: 
+title: Model programování webových služeb HTTP WCF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - web services programming model [WCF]
 - POX
 - REST
 ms.assetid: 2312a8d3-b66e-4623-ba42-978434300c7f
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f008cfe874ae9e38a71eb3cf5d6b2ed4e6cbdf7c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e063cdba74af9ee90b41d829a2a8b251a5cc96e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-web-http-programming-model"></a>Model programování webových služeb HTTP WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Model programování webových protokolu HTTP umožňuje vývojářům vystavit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby operace do koncových bodů protokolu SOAP. Témata v této části Zkontrolujte funkci podrobně.  
+Windows Communication Foundation (WCF) webové HTTP programovací Model umožňuje vývojářům vystavit operací služby WCF na koncové body protokolu SOAP. Témata v této části Zkontrolujte funkci podrobně.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)  
- Obsahuje přehled [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Model programování webových HTTP.  
+ Obsahuje přehled služby Windows Communication Foundation (WCF) webové HTTP programování modelu.  
   
  [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
- Popisuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Model programování webových HTTP a jak to funguje.  
+ Popisuje HTTP programovací Model Windows Communication Foundation (WCF) webových a jak to funguje.  
   
  [Postupy: Vytvoření základní webové služby HTTP WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
  Popisuje, jak napsat základní služby, která zveřejňuje koncový bod-protokolu SOAP.  

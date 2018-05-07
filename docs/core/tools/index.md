@@ -4,16 +4,11 @@ description: Přehled funkcí a nástrojů .NET Core rozhraní příkazového ř
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 9d84858c800d50a99b2327f71212833f7160b1e1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: e6519ef560026899344c7fc36d91c2409cf1df9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET core nástrojů rozhraní příkazového řádku (CLI)
 

@@ -1,14 +1,6 @@
 ---
 title: Import schématu pro generování tříd
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,20 +8,14 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4d7988630e2eba3e6d5ebdc8b15b23aeb280a66f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 338daa031ac2c1b31a121908643a15449c5401a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
-Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a variace.  
+Chcete-li vygenerovat třídy z schémat, které lze použít s Windows Communication Foundation (WCF), použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a variace.  
   
 ## <a name="the-import-process"></a>Proces importu  
  Proces importu schématu začíná <xref:System.Xml.Schema.XmlSchemaSet> a vytvoří <xref:System.CodeDom.CodeCompileUnit>.  
@@ -114,7 +100,7 @@ Generovat třídy z schémat, které lze použít s [!INCLUDE[indigo1](../../../
  [!code-xml[C_SchemaImportExport#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
   
 > [!NOTE]
->  Přidružení, může také zvážit seznamu. Například můžete zobrazit předchozí přidružení jako seznam komplexní `city` objekty, které mají náhodou dvě pole (pole řetězce a pole celé číslo). Obě vzory mít znázornění ve schématu XSD. Neexistuje žádný způsob k rozlišení mezi seznam a přidružení, takže pokud jsou tyto vzory vždy považovány za seznamy speciální poznámky, které jsou specifické pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je k dispozici ve schématu. Anotace označuje, že se zadaným vzorem představuje přidružení. Další informace najdete v tématu [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+>  Přidružení, může také zvážit seznamu. Například můžete zobrazit předchozí přidružení jako seznam komplexní `city` objekty, které mají náhodou dvě pole (pole řetězce a pole celé číslo). Obě vzory mít znázornění ve schématu XSD. Neexistuje žádný způsob, jak rozlišit mezi seznam a přidružení, takže tyto vzory jsou vždy považovány za seznamy, pokud je k dispozici ve schématu speciální poznámky, která je specifická pro WCF. Anotace označuje, že se zadaným vzorem představuje přidružení. Další informace najdete v tématu [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
  Za normálních okolností se importuje seznam jako kontrakt dat kolekce, která je odvozena ze seznamu obecný nebo jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pole, v závislosti na tom, zda schéma se následující standardní pojmenování pro kolekce. To je popsáno v podrobněji [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Přidružení jsou obvykle importovat, protože buď <xref:System.Collections.Generic.Dictionary%602> nebo kontrakt dat kolekce, která je odvozena z objekt slovníku. Zvažte například následující schéma.  
   

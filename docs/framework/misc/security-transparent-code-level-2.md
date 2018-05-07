@@ -1,31 +1,19 @@
 ---
-title: "Transparentní kód pro zabezpečení, úroveň 2"
-ms.custom: 
+title: Transparentní kód pro zabezpečení, úroveň 2
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transparency
 - level 2 transparency
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 66d3611117c02b60bcf4b3713cd2b5bd79856add
-ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
+ms.openlocfilehash: 0f15c3bc097bc034db41c95cd168104b8435aaf0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-transparent-code-level-2"></a>Transparentní kód pro zabezpečení, úroveň 2
 <a name="top"></a>

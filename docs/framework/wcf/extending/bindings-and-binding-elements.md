@@ -1,28 +1,14 @@
 ---
 title: Vazby a prvky vazeb
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - binding elements [WCF]
 ms.assetid: 765ff77b-7682-4ea3-90eb-e4d751e37379
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 232d2d23ea88c834d2e28bae99cd2e001f6efac6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 32b8b9e1fbb3ae16f4dd81620658569a9408057b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindings-and-binding-elements"></a>Vazby a prvky vazeb
 Vazby jsou kolekce elementů zvláštní konfiguraci, s názvem *elementů vazby*, které se vyhodnocují modulem runtime služby vždy, když klient nebo je vytvářen koncový bod služby. Typem a pořadím elementů vazby v rámci vazbu určuje výběr a pořadí překrývání kanály protokolu a přenosu v zásobníku kanál koncového bodu.  
@@ -32,7 +18,7 @@ Vazby jsou kolekce elementů zvláštní konfiguraci, s názvem *elementů vazby
  Vazba musí obsahovat přesně jeden element vazby přenosu. Každý element vazby přenosu znamená výchozí zprávu kódování vazby element, který je možné přepsat přidáním maximálně jeden element vazby pro vazby kódování zprávy. Kromě přenosu a prvky vazeb kodér vazby může obsahovat libovolný počet elementů vazby protokolu, které společně implementují funkce potřebné pro služby a odeslat zprávu protokolu SOAP z jednoho koncového bodu do jiného. Podrobnosti najdete v tématu [pomocí vazby na konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   
 ## <a name="extending-bindings-and-binding-elements"></a>Rozšiřování vazeb a elementů vazby  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]zahrnuje vazby poskytované systémem, které se týkají širokou škálu scénářů. (Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).) Může se stát, ale když potřebujete vytvořit a použít vazbu, která není součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Následující scénáře vyžadují vytvoření novou vazbu.  
+ Windows Communication Foundation (WCF) zahrnuje vazby poskytované systémem, které se týkají širokou škálu scénářů. (Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).) Může se stát, ale když potřebujete vytvořit a použít vazbu, která není součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Následující scénáře vyžadují vytvoření novou vazbu.  
   
 -   Pokud chcete používat nové prvku vazby (například nový přenos, kódování nebo element vazby protokolu), musíte vytvořit novou vazbu, která obsahuje daný element vazby. Například, pokud jste přidali vlastní `UdpTransportBindingElement` pro přenos UDP, by je potřeba vytvořit novou vazbu, aby jeho používání. Informace o provádění toto chování pomocí <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> zadejte najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   

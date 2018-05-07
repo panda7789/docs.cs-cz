@@ -4,16 +4,11 @@ description: Ukazuje, jak se použije ke spuštění testů jednotek selektivní
 author: smadala
 ms.author: mairaw
 ms.date: 03/22/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 77ac7ab5a46150bd3654d50e6686087c804b8440
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: caea91e9884dba6bc07a7ef6a99699e43d23399c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="running-selective-unit-tests"></a>Testy spuštění selektivní jednotek
 

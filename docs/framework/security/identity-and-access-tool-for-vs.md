@@ -1,27 +1,17 @@
 ---
-title: "Identita a přístup pro sadu Visual Studio 2012"
-ms.custom: 
+title: Identita a přístup pro sadu Visual Studio 2012
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 87b8f8f2-4074-44fd-9fd6-08278e877390
-caps.latest.revision: "3"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 079c3798f17f4929124cd5cb027baa5d40a1167a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 107028b89d576b27a2559fd0ae5298c849da2c94
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identita a přístup pro sadu Visual Studio 2012
-Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj můžete stáhnout z následující adresy URL: [http://go.microsoft.com/fwlink/?LinkID=245849](http://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo z v rámci sadu Visual Studio 11 vyhledáním "identity" přímo ve Správci rozšíření.  
+Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj můžete stáhnout z následující adresy URL: [ http://go.microsoft.com/fwlink/?LinkID=245849 ](http://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo z v rámci sadu Visual Studio 11 vyhledáním "identity" přímo ve Správci rozšíření.  
   
  Nástroj Identity and Access Tool for Visual Studio 11 přináší výrazně jednodušší možnosti vývoje díky následujícím hlavním funkcím:  
   

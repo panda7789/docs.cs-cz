@@ -1,22 +1,15 @@
 ---
-title: "Předávání parametrů typu hodnoty (Průvodce programováním v C#)"
+title: Předávání parametrů typu hodnoty (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c33ef23040ec6adaae97a440796e7c6a491c2d8c
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: b64968a89f010f3f904d3a281d346d2ddf999e2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Předávání parametrů typu hodnoty (Průvodce programováním v C#)
 A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) proměnná obsahuje jeho data přímo jako naproti tomu [typu odkazu](../../../csharp/language-reference/keywords/reference-types.md) proměnné, která obsahuje odkaz na jeho data. Předání typu hodnoty proměnné na metodu hodnotou znamená předávání kopii proměnnou metodě. Všechny změny na parametr, které provést uvnitř metody mít žádný vliv na původní data uložená v proměnné argument. Pokud chcete zavolat metodu ke změně hodnoty parametru, je nutné předat odkazu, pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také používat [v](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo předat hodnotu parametru odkazem předejdete kopie při zaručení, že hodnota nebudou změněny. Pro jednoduchost, použijte následující příklady `ref`.  

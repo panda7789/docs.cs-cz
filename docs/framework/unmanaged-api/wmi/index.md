@@ -3,18 +3,12 @@ title: Rozhraní WMI a čítače výkonu (referenční dokumentace nespravované
 description: Shrnuje rozhraní .NET Framework nespravovaného rozhraní API pro informace o rozhraní WMI a výkonu čítače.
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
 ms.date: 11/06/2017
-ms.topic: reference
-ms.prod: .net-framework
-ms.devlang: cpp
-ms.workload:
-- dotnet
-ms.openlocfilehash: c7959d6b6b7bafd728db5a579ff1376e686c5b74
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 2007c8aa74e1ccf3c4753343ac633b67a36daeb8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Windows Management Instrumentation (WMI) a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)
 
@@ -68,7 +62,7 @@ Rozhraní API obsahuje následující funkce:
 | [QualifierSet_Delete – funkce](qualifierset-delete.md) | Odstraní zadaný kvalifikátor podle názvu.  |
 | [QualifierSet_EndEnumeration – funkce](qualifierset-endenumeration.md) | Ukončí výčtu zahájena volání `QualifierSet_BeginEnumeration` funkce. |
 | [QualifierSet_Get – funkce](qualifierset-get.md) | Získá zadaný s názvem kvalifikátor.  |
-| [QualifierSet_GetNames function](qualifierset-getnames.md) | Načte názvy všech kvalifikátory nebo zadaný kvalifikátory, které jsou k dispozici na aktuální objekt nebo vlastnost. |
+| [QualifierSet_GetNames – funkce](qualifierset-getnames.md) | Načte názvy všech kvalifikátory nebo zadaný kvalifikátory, které jsou k dispozici na aktuální objekt nebo vlastnost. |
 | [QualifierSet_Next – funkce](qualifierset-next.md) | Načte další kvalifikátor v výčet, který je spuštěn s volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce. |
 | [QualifierSet_Put – funkce](qualifierset-put.md) | Zapíše kvalifikátor s názvem a hodnotou. |
 | [ResetSecurity – funkce](resetsecurity.md) | Přiřadí token poskytnutý zosobnění aktuální vlákno. |

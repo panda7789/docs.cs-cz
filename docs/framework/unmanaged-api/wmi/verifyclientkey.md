@@ -1,11 +1,7 @@
 ---
-title: "Funkce VerifyClientKey (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce VerifyClientKey zajistí, že klíč klienta má správné zabezpečení."
+title: Funkce VerifyClientKey (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce VerifyClientKey zajistí, že klíč klienta má správné zabezpečení.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - VerifyClientKey
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ada878ff8bc430ab2a2d48cac13a81b1f64d39f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea8a74633d3e950f6cf7ba87c00a9efa45206545
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="verifyclientkey-function"></a>VerifyClientKey – funkce
 Zajišťuje, že klíč klienta má správné zabezpečení.  
@@ -51,7 +44,7 @@ V případě selhání funkce návratová hodnota je kód chyby nenulové defino
   
  **Záhlaví:** WMINet_Utils.def  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -1,29 +1,15 @@
 ---
 title: Ukázky služby Windows Communication Foundation (WCF)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b27547189692ac6f83b1c41d5f88fac35c7925c0
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: 519f8e844fa26db32d91705af3db2eda81e8b993
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-wcf-samples"></a>Ukázky služby Windows Communication Foundation (WCF)
-Tyto ukázky poskytují pokyny o různých aspektech [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tyto ukázky poskytují pokyny o různých aspektech služby Windows Communication Foundation (WCF).  
   
 -   C# verze ukázky, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780).  
   

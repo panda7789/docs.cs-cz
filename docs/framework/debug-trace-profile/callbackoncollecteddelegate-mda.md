@@ -1,14 +1,6 @@
 ---
-title: "callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - cpp
 helpviewer_keywords:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - delegates [.NET Framework], garbage collection
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5459efbb07aa235bd7c1d34ffd6b56195fe0bf1c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0aa9ecd357a192eba64cc14f8940b264461b5e74
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)
 `callbackOnCollectedDelegate` Pomocník spravovaného ladění (MDA) se aktivuje, pokud je delegáta zařazen ze spravovaného na nespravovaný kód jako ukazatel na funkci a zpětné volání je umístěn na tento ukazatel na funkci po uvolnění z paměti delegát.  

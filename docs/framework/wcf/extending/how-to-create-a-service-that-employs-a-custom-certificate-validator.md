@@ -1,36 +1,22 @@
 ---
-title: "Postupy: vytvoření služby, který využívá validátor vlastní certifikát"
-ms.custom: 
+title: 'Postupy: vytvoření služby, který využívá validátor vlastní certifikát'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: bb0190ff-0738-4e54-8d22-c97d343708bf
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e0a48801b1d4674b81a0e4b54a80b69d026ce2af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: d4a1532ed91b17cf5bed909026ace695aeba8cd9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-service-that-employs-a-custom-certificate-validator"></a>Postupy: vytvoření služby, který využívá validátor vlastní certifikát
 Toto téma ukazuje, jak implementovat vlastní certifikát ověření a postup konfigurace klienta služby Windows nebo pověření nahradit logiku ověření certifikátu výchozí validátor vlastní certifikát.  
   
- Pokud certifikát X.509 slouží k ověření klienta a služby, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ve výchozím nastavení používá úložiště certifikátů systému Windows a rozhraní API pro šifrování a ověřit certifikát a ujistěte se, zda je důvěryhodný. Někdy funkce integrované certifikát ověření nestačí a je třeba změnit. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje snadný způsob, jak změnit logiku ověření tím, že se uživatelům přidat validátor vlastní certifikát. Pokud validátor vlastní certifikát není zadaný, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepoužívá logiku ověření integrované certifikátu ale spoléhá na vlastní validátor místo.  
+ Pokud certifikát X.509 slouží k ověření klienta a služby, Windows Communication Foundation (WCF) ve výchozím nastavení používá úložiště certifikátů systému Windows a rozhraní API pro šifrování k ověření certifikátu a ujistěte se, zda je důvěryhodný. Někdy funkce integrované certifikát ověření nestačí a je třeba změnit. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje snadný způsob, jak změnit logiku ověření tím, že se uživatelům přidat validátor vlastní certifikát. Pokud validátor vlastní certifikát není zadaný, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepoužívá logiku ověření integrované certifikátu ale spoléhá na vlastní validátor místo.  
   
 ## <a name="procedures"></a>Procedury  
   

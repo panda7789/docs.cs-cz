@@ -1,24 +1,12 @@
 ---
 title: Opětovného hostování návrháře pracovních postupů
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: bec1fc28-f902-4edb-86c5-436cec802c2b
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a37c37aa34db8f04a354d3b6e323c414b4c0ee07
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e4e061c078626a90641f84b5ea0875f63bb42f9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="rehosting-the-workflow-designer"></a>Opětovného hostování návrháře pracovních postupů
 [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] Můžete rehosted v prostředích mimo [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] pro účely vytváření, úpravu a sledování pracovních postupů.  

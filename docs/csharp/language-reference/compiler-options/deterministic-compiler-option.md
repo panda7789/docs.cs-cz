@@ -1,10 +1,6 @@
 ---
 title: -deterministickou (možnosti kompilátoru C#)
 ms.date: 04/12/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /deterministic
 helpviewer_keywords:
@@ -13,11 +9,11 @@ helpviewer_keywords:
 - /deterministic compiler option [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6dd597f726b5bbc40feb4cc6f5b03acabd92f4a
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: a2cb45ea6ed5c5795c910b2f6c3575b12f8189cf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-deterministic"></a>-deterministickou
 

@@ -1,9 +1,6 @@
 ---
 title: ServicePointManager.s_ServicePointTable pole
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology: 
-ms.topic: reference
 topic_type:
 - apiref
 api_name:
@@ -15,18 +12,15 @@ api_type:
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8dfdbab78d8efab13487575218820f8b0455248d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5450a0cb3e5bd39a86365b16d372c7e573a43496
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicepointmanagersservicepointtable-field"></a>ServicePointManager.s\_ServicePointTable pole
 
-`ServicePointManager.s_ServicePointTable`je <xref:System.Collections.Hashtable> obsahující seznam aktivních připojení protokolu HTTP (<xref:System.Net.ServicePoint>s) v <xref:System.AppDomain>.
+`ServicePointManager.s_ServicePointTable` je <xref:System.Collections.Hashtable> obsahující seznam aktivních připojení protokolu HTTP (<xref:System.Net.ServicePoint>s) v <xref:System.AppDomain>.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -41,7 +35,7 @@ private static Hashtable s_ServicePointTable
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:**<xref:System.Net>
+**Namespace:** <xref:System.Net>
 
 **Sestavení:** systému (v System.dll)
 

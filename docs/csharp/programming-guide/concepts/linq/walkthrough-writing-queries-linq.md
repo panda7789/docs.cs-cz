@@ -1,26 +1,17 @@
 ---
-title: "Návod: Zápis dotazů v C# (LINQ)"
-ms.custom: 
+title: 'Návod: Zápis dotazů v C# (LINQ)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: get-started-article
 helpviewer_keywords:
 - LINQ [C#], walkthroughs
 - LINQ [C#], writing queries
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-caps.latest.revision: "32"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8db1b59bd8de523ae74ca198302f814c2d43f25a
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 10ffdbd6430c0ad55b0a5d71f217a7cb18163741
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v C# (LINQ)
 Tento návod ukazuje funkce jazyka C#, které se používají k zápisu LINQ – výrazy dotazů.  
@@ -38,7 +29,7 @@ Tento návod ukazuje funkce jazyka C#, které se používají k zápisu LINQ –
   
      **Nový projekt** otevře se dialogové okno.  
   
-3.  Rozbalte položku **nainstalovaná**, rozbalte položku **šablony**, rozbalte položku **Visual C#**a potom zvolte **konzolové aplikace**.  
+3.  Rozbalte položku **nainstalovaná**, rozbalte položku **šablony**, rozbalte položku **Visual C#** a potom zvolte **konzolové aplikace**.  
   
 4.  V **název** textového pole zadejte jiný název nebo přijměte výchozí název a potom zvolte **OK** tlačítko.  
   
@@ -182,9 +173,9 @@ Tento návod ukazuje funkce jazyka C#, které se používají k zápisu LINQ –
 ## <a name="next-steps"></a>Další kroky  
  Jakmile se seznámíte s základní aspektů práce s dotazy v jazyce C#, jste připravení číst dokumentace a ukázky pro konkrétní typ LINQ zprostředkovatele, které vás zajímají:  
   
- [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
   
- [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+ [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
  [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
   
@@ -192,5 +183,5 @@ Tento návod ukazuje funkce jazyka C#, které se používají k zápisu LINQ –
   
 ## <a name="see-also"></a>Viz také  
  [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
- [Začínáme s dotazy LINQ v jazyku C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)

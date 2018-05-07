@@ -1,24 +1,12 @@
 ---
-title: "57402 – TraceCodeEventLogVerbose"
-ms.custom: 
+title: 57402 – TraceCodeEventLogVerbose
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d6b1d6a7-a067-40d9-842a-ef451cebe03b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 37d639e48c40debe3617e66d197a329bf26db1c3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f9e8a420d272546edeb27d557b907d4954ef7a32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="57402---tracecodeeventlogverbose"></a>57402 – TraceCodeEventLogVerbose
 ## <a name="properties"></a>Vlastnosti  

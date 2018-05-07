@@ -1,13 +1,6 @@
 ---
-title: "Chování AutoSize v ovládacím prvku TableLayoutPanel"
-ms.custom: 
+title: Chování AutoSize v ovládacím prvku TableLayoutPanel
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - AutoSize property [Windows Forms], tableLayoutPanel control
 - controls [Windows Forms], sizing
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - automatic sizing
 - AutoSizeMode property
 ms.assetid: 9233e0c3-2fa6-405e-8701-959479b1250e
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 06bd0686b31b52ccb8580a545910339d2e2cd5bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 497991106d151cfe1f3944977828e9c77c27e526
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="autosize-behavior-in-the-tablelayoutpanel-control"></a>Chování AutoSize v ovládacím prvku TableLayoutPanel
 ## <a name="distinct-autosize-behaviors"></a>Chování odlišné AutoSize  

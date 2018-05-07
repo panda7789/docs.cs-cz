@@ -1,11 +1,7 @@
 ---
 title: Nainstalujte rozhraní .NET Framework pro vývojáře
 ms.custom: updateeachrelease
-ms.date: 03/23/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: get-started-article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - .NET Framework redistributable package, downloading
 - .NET Framework, installing
@@ -14,14 +10,11 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b5cfa21306ccad78825d5f46c78c00a24ff67436
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 157ff544df95740a96cf74fdc740feed7acde7ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="install-the-net-framework-for-developers"></a>Nainstalujte rozhraní .NET Framework pro vývojáře
 
@@ -43,9 +36,10 @@ Následující tabulku použijte k rychlé odkazy nebo pro čtení Další podro
   
 |Verze rozhraní .NET Framework|Instalace pro vývojáře|Redistributable instalace|Podpora platformy|  
 |----------------------------|----------------------------|----------------------------------|----------------------|  
-|**4.7.1**|[NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[Na stránce 4.7.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Na stránce 4.7.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=852107)|Součástí: <br/>Windows 10 Fall Creators Update<br/>Windows Server, version 1709<br /><br /> Můžete nainstalovat na:<br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.7**|[NET Framework 4.7 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 web instalační program](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stažení stránky pro 4.7 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=825303)|Součástí: <br/>Windows 10 Creators Update<br /><br /> Můžete nainstalovat na:<br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.6.2**|[NET Framework 4.6.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=780617)|[Na stránce 4.6.2 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Na stránce 4.6.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=780601)|Součástí: <br /> Windows 10 Anniversary Update<br /><br /> Můžete nainstalovat na:<br /> Windows 10 November Update <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
+|**4.7.2**|[Rozhraní .NET framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261)|[Instalační program webové služby Stažení softwaru 4.7.2](http://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Stažení softwaru 4.7.2 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=863265)|Součástí: <br/>Aktualizace Windows 10. dubna 2018<br /><br /> Můžete nainstalovat na:<br/> <br/>Aktualizovat Creators patří Windows 10<br/>Aktualizace Windows 10 tvůrcům <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> V systému Windows Server verze 1709 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.7.1**|[NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[Na stránce 4.7.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Na stránce 4.7.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=852107)|Součástí: <br/>Aktualizovat Creators patří Windows 10<br/>Windows Server, verze. 1709<br /><br /> Můžete nainstalovat na:<br/> Aktualizace Windows 10 tvůrcům <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.7**|[NET Framework 4.7 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 web instalační program](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stažení stránky pro 4.7 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=825303)|Součástí: <br/>Aktualizace Windows 10 tvůrcům<br /><br /> Můžete nainstalovat na:<br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.6.2**|[NET Framework 4.6.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=780617)|[Na stránce 4.6.2 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Na stránce 4.6.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=780601)|Součástí: <br /> Windows 10 Anniversary Update<br /><br /> Můžete nainstalovat na:<br /> Aktualizace Windows 10 listopadu <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 |**4.6.1**|[NET Framework 4.6.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=690706)|[Na stránce 4.6.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=671729)<br /><br /> [Na stránce 4.6.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=671744)|Můžete nainstalovat na:<br /> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 |**4.6**|Součástí [!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)]. Další informace najdete v tématu [Vítá vás Visual Studio 2015](http://msdn.microsoft.com/library/dd831853\(v=vs.140\).aspx).<br /><br /> [Microsoft .NET Framework 4.6 cílení aktualizací Service pack](http://go.microsoft.com/fwlink/?LinkId=528261)|[Stáhněte si stránku pro 4.6 web instalační program](http://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [Stažení stránky pro 4.6 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=528233)|Součástí: <br /> Windows 10 <br />[!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)]<br /><br /> Můžete taky nainstalovat na:<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|  
 |**4.5.2**|[Rozhraní Microsoft .NET Framework 4.5.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=397702)<br /><br /> Pro použití s [Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=325532), Visual Studio 2012 nebo jiné integrovaného vývojového prostředí|[Na stránce 4.5.2 stahování webový instalační program](http://go.microsoft.com/fwlink/p/?LinkId=397703)<br /><br /> [Na stránce 4.5.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=397706)|Můžete nainstalovat na:<br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|  
@@ -73,7 +67,9 @@ Nainstalujte vývojář cílení pack vyvíjet na nejnovější verzi rozhraní 
 
 A *cílení pack* umožní aplikaci cílení na konkrétní verzi rozhraní .NET Framework při vývoji v sadě Visual Studio a některé vývojové prostředí. A *developer pack* obsahuje konkrétní verzi rozhraní .NET Framework a jeho doprovodné SDK společně s jeho odpovídající cílení pack.
 
-Sada vývojáře pro rozhraní .NET Framework 4.5.1 nebo 4.5.2, sada cílení pro rozhraní .NET Framework 4.6 a sada pro vývojáře pro rozhraní .NET Framework 4.6.1 4.6.2, 4.7 nebo 4.7.1 poskytuje referenční sestavení, jazykové verze na konkrétní rozhraní .NET Framework sady a soubory IntelliSense pro použití v integrovaném vývojovém prostředí, třeba v sadě Visual Studio.  Pokud používáte Visual Studio, sada pro vývojáře nebo cílení pack nainstalovaná verze rozhraní .NET Framework také přidá do cílové volby při vytvoření nového projektu.  Vyberte jednu z následujících možností:  
+Sada vývojáře pro rozhraní .NET Framework 4.5.1 nebo 4.5.2, sada cílení pro rozhraní .NET Framework 4.6 a sada pro vývojáře pro rozhraní .NET Framework 4.6.1 4.6.2, 4.7 4.7.1 nebo 4.7.2 poskytuje referenční sestavení, na konkrétní rozhraní .NET Framework verze jazykové sady a soubory IntelliSense pro použití v integrovaném vývojovém prostředí, třeba v sadě Visual Studio.  Pokud používáte Visual Studio, sada pro vývojáře nebo cílení pack nainstalovaná verze rozhraní .NET Framework také přidá do cílové volby při vytvoření nového projektu.  Vyberte jednu z následujících možností:  
+
+- [Rozhraní Microsoft .NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261)
 
 - [Rozhraní Microsoft .NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)
 
@@ -113,6 +109,8 @@ Web a offline instalační programy jsou určeny pro počítače x86 x 86 i na x
   
 1.  Otevřete stránku stahování pro verzi rozhraní .NET Framework, kterou chcete nainstalovat:  
 
+    - Rozhraní .NET framework 4.7.2 ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=863262) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=863265))
+
     - Rozhraní .NET framework 4.7.1 ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=852095) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=852107))
 
     - 4.7 rozhraní .NET framework ([instalačního programu webové](http://go.microsoft.com/fwlink/?LinkId=825299) nebo [offline instalačního programu](http://go.microsoft.com/fwlink/p/?LinkId=825303))
@@ -148,11 +146,11 @@ Web a offline instalační programy jsou určeny pro počítače x86 x 86 i na x
   
  **Poznámky k instalaci:**  
   
-- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a 4.5.2, a taky [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1, 4.6.2, 4.7 a 4.7.1 jsou na místě aktualizace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
+- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a 4.5.2, a taky [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1, 4.6.2, 4.7, 4.7.1 a 4.7.2 jsou na místě aktualizace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
   
-- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Jeho bodu verzích [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a jeho bod verzích a rozhraní .NET Framework 4.7 a jeho bod nahradit verzi [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Při instalaci těchto verzí systému, který má [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] nainstalovaná, budou nahrazeny sestavení.
+- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Jeho bodu verzích [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a jeho bod verzích a rozhraní .NET Framework 4.7 a jeho bod uvolní nahradit [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Při instalaci těchto verzí systému, který má [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] nainstalovaná, budou nahrazeny sestavení.
   
-- Odinstalace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jeho bodu verzích [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a jeho bod verze, nebo rozhraní .NET Framework 4.7 a jeho bod verzi také odebere existující [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] soubory. Pokud chcete přejít zpět do [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je nutné přeinstalovat a všechny aktualizace. (Viz [instalace rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/p/?LinkId=230665).)  
+- Odinstalace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jeho bodu verzích [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a jeho bod verze, nebo rozhraní .NET Framework 4.7 a jeho bod uvolní také odebere existující [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] soubory. Pokud chcete přejít zpět do [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je nutné přeinstalovat a všechny aktualizace. (Viz [instalace rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/p/?LinkId=230665).)  
   
 - Musíte mít pověření správce k instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jeho bodu verzích, rozhraní .NET Framework 4.6 a jeho verze bodu a 4.7 rozhraní .NET Framework a její verze bodu.
   
@@ -167,6 +165,8 @@ Web a offline instalační programy jsou určeny pro počítače x86 x 86 i na x
 > Jazykové sady neobsahují součásti rozhraní .NET Framework, které jsou nutné ke spuštění aplikace, takže je nutné spustit web nebo offline instalační program před instalací jazykové sady. Pokud jste již nainstalovali jazykovou sadu, odinstalujte ji, nainstalujte rozhraní .NET Framework a poté znovu nainstalujte jazykové sady.  
   
 1.  Otevřete stránku language pack stahování pro verzi rozhraní .NET Framework, který jste nainstalovali:  
+
+    - [Rozhraní .NET framework 4.7.2 jazykové sady](http://go.microsoft.com/fwlink/?LinkID=863258) 
   
     - [Rozhraní .NET framework 4.7.1 jazykové sady](http://go.microsoft.com/fwlink/?LinkID=852090) 
 
@@ -195,18 +195,18 @@ Následující tabulka uvádí podporované jazyky.
 | Arabština                | ar      |
 | Čeština                 | cs      |
 | Dánština                | da      |
-| Holandština                 | nl      |
-| Finština               | fi      |
-| Francouzština                | fr      |
+| Holandština                 | NL      |
+| Finština               | Fi      |
+| Francouzština                | FR      |
 | Němčina                | Německo      |
-| Řečtina                 | el      |
-| Hebrew                | mu      |
+| Řečtina                 | El      |
+| Hebrejština                | mu      |
 | Maďarština             | HU      |
-| Italština               | it      |
-| Japonština              | ja      |
+| Italština               | ho      |
+| Japonština              | Japonsko      |
 | Korejština                | Ko      |
 | Norština             | Ne      |
-| Polština                | pl      |
+| Polština                | PL      |
 | Portugalština (Brazílie)   | pt-BR   |
 | Portugalština (Portugalsko) | pt-PT   |
 | Ruština               | RU      |

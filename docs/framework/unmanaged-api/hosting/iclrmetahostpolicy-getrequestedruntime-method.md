@@ -1,14 +1,6 @@
 ---
-title: "ICLRMetaHostPolicy::GetRequestedRuntime – metoda"
-ms.custom: 
+title: ICLRMetaHostPolicy::GetRequestedRuntime – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRMetaHostPolicy.GetRequestedRuntime
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 59ec1832-9cc1-4b5c-983d-03407e51de56
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0501e104b2ed74656de125e668b7234efcbc9997
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e01affb5edb8b0766edf8548ae34cf8220bcc62d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime – metoda
 Poskytuje rozhraní pro upřednostňované verzí common language runtime (CLR) na základě hostování zásad, spravované sestavení, řetězec verze a konfiguraci datového proudu. Ve skutečnosti není načíst nebo aktivovat modulu CLR, ale jednoduše vrátí tato metoda [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, které představuje výsledek zásad. Tato metoda nahrazuje [getrequestedruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md), [getrequestedruntimeversion –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md), [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md), [corbindtoruntimebycfg –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md), a [getcorrequiredversion –](../../../../docs/framework/unmanaged-api/hosting/getcorrequiredversion-function.md) metody.  
@@ -72,11 +60,11 @@ HRESULT GetRequestedRuntime(
 ## <a name="remarks"></a>Poznámky  
  Když tato metoda bude úspěšná, má vedlejším účinkem kombinace další příznaky s aktuální příznaky spuštění výchozí vrácený runtime rozhraní, pokud jeden nebo více následujících prvků existovat v datovém proudu konfigurace v rámci `<configuration><runtime>` části:  
   
--   `<gcServer enabled="true"/>`způsobí, že `STARTUP_SERVER_GC` nastavit.  
+-   `<gcServer enabled="true"/>` způsobí, že `STARTUP_SERVER_GC` nastavit.  
   
--   `<etwEnable enabled="true"/>`způsobí, že `STARTUP_ETW` nastavit.  
+-   `<etwEnable enabled="true"/>` způsobí, že `STARTUP_ETW` nastavit.  
   
--   `<appDomainResourceMonitoring enabled="true"/>`způsobí, že `STARTUP_ARM` nastavit.  
+-   `<appDomainResourceMonitoring enabled="true"/>` způsobí, že `STARTUP_ARM` nastavit.  
   
  Výsledný výchozí `STARTUP_FLAGS` hodnota je bitová kombinace OR hodnot, které jsou nastavené v předchozím seznamu s příznaky spuštění výchozí.  
   
@@ -86,10 +74,10 @@ HRESULT GetRequestedRuntime(
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pwzVersion`není null a `pcchVersion` má hodnotu null.<br /><br /> -nebo-<br /><br /> `pwzImageVersion`není null a `pcchImageVersion` má hodnotu null.|  
-|E_INVALIDARG|`dwPolicyFlags`neurčuje `METAHOST_POLICY_HIGHCOMPAT`.|  
+|E_POINTER|`pwzVersion` není null a `pcchVersion` má hodnotu null.<br /><br /> -nebo-<br /><br /> `pwzImageVersion` není null a `pcchImageVersion` má hodnotu null.|  
+|E_INVALIDARG|`dwPolicyFlags` neurčuje `METAHOST_POLICY_HIGHCOMPAT`.|  
 |ERROR_INSUFFICIENT_BUFFER|Paměť přidělit `pwzVerison` je k dispozici.<br /><br /> -nebo-<br /><br /> Paměť přidělit `pwzImageVerison` je k dispozici.|  
-|CLR_E_SHIM_RUNTIMELOAD|`dwPolicyFlags`zahrnuje METAHOST_POLICY_APPLY_UPGRADE_POLICY a obě `pwzVersion` a `pcchVersion` mají hodnotu null.|  
+|CLR_E_SHIM_RUNTIMELOAD|`dwPolicyFlags` zahrnuje METAHOST_POLICY_APPLY_UPGRADE_POLICY a obě `pwzVersion` a `pcchVersion` mají hodnotu null.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -98,7 +86,7 @@ HRESULT GetRequestedRuntime(
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRMetaHostPolicy – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)  

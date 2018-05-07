@@ -1,13 +1,6 @@
 ---
-title: "Přehled vektorové grafiky"
-ms.custom: 
+title: Přehled vektorové grafiky
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - coordinate systems
 - graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 603b76c999933f177a9e48ddb819562b8e4dd8f8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31fec6d0d3769251d21783b4657d00b06431e942
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="vector-graphics-overview"></a>Přehled vektorové grafiky
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]Kreslení čar, obdélníků a ostatním tvarům na souřadnicový systém. Můžete vybrat z různých souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu s osou x tvořenou hodnotami odkazující na ose y míří dolů a doprava. Ve výchozím nastavení souřadnicový systém Měrná jednotka je pixelech.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Kreslení čar, obdélníků a ostatním tvarům na souřadnicový systém. Můžete vybrat z různých souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu s osou x tvořenou hodnotami odkazující na ose y míří dolů a doprava. Ve výchozím nastavení souřadnicový systém Měrná jednotka je pixelech.  
   
 ## <a name="the-building-blocks-of-gdi"></a>Stavební bloky rozhraní GDI +  
  ![Vektorová grafika](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art01.gif "AboutGdip02_Art01")  
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
   
  ![Vektorová grafika](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art02.gif "AboutGdip02_Art02")  
   
- Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení čáry, obdélníku nebo křivky, zadáte určité klíčové informace o položce, které se mají vykreslovat. Například můžete zadat řádek tím, že poskytuje dva body a zadáte obdélníku tím, že poskytuje bod, výšku a šířku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]funguje ve spojení s software ovladače zobrazení k určení, které pixelech musí být zapnutý zobrazíte řádku, obdélníku nebo křivky. Následující obrázek znázorňuje pixelů, které jsou zapnuté pro zobrazení průběhu z bodu (4, 2) do bodu (12, 8).  
+ Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení čáry, obdélníku nebo křivky, zadáte určité klíčové informace o položce, které se mají vykreslovat. Například můžete zadat řádek tím, že poskytuje dva body a zadáte obdélníku tím, že poskytuje bod, výšku a šířku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funguje ve spojení s software ovladače zobrazení k určení, které pixelech musí být zapnutý zobrazíte řádku, obdélníku nebo křivky. Následující obrázek znázorňuje pixelů, které jsou zapnuté pro zobrazení průběhu z bodu (4, 2) do bodu (12, 8).  
   
  ![Vektorová grafika](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art03.gif "AboutGdip02_Art03")  
   

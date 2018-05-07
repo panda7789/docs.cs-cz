@@ -1,23 +1,15 @@
 ---
-title: "Změny v ověřování protokolem NTLM pro HttpWebRequest v verze 3.5 SP1."
-ms.custom: 
+title: Změny v ověřování protokolem NTLM pro HttpWebRequest v verze 3.5 SP1.
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8bf0b428-5a21-4299-8d6e-bf8251fd978a
-caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 239834a732fe3bc1cb3e8e7f1d126d26c210d1f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f5affc15607ddae76ec90a90928cb42fa0ad49e1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>Změny v ověřování protokolem NTLM pro HttpWebRequest v verze 3.5 SP1.
 Byly provedeny změny zabezpečení v rozhraní .NET Framework verze 3.5 SP1 a novější, vliv na způsob integrované ověřování systému Windows, které se provádí ověřování <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Security.NegotiateStream>, a související třídy v oboru názvů System.Net. Tyto změny mohou ovlivnit aplikace, které používají tyto třídy webové požadavky a odpovědi přijímat, kde se používá integrované ověřování systému Windows, které jsou založené na protokolu NTLM. Tato změna může ovlivnit webové servery a klientské aplikace, které jsou nakonfigurovány pro použití integrovaného ověřování systému Windows.  
@@ -30,7 +22,7 @@ Byly provedeny změny zabezpečení v rozhraní .NET Framework verze 3.5 SP1 a n
 ## <a name="changes"></a>Změny  
  Proces ověřování NTLM používá s integrované ověřování systému Windows obsahuje výzvy od cílového počítače a odeslat zpátky do klientského počítače. Když počítač obdrží výzvu, že samotný vygeneroval, ověřování selže, pokud připojení je připojení zpětné smyčky (adresu IPv4 127.0.0.1, např.).  
   
- Při přístupu k služby spuštěné na webovém serveru interní, je běžné pro přístup ke službě pomocí podobné http://contoso/service nebo https://contoso/service adresy URL. Název "contoso" není často název počítače, na kterém je nasazený službu. <xref:System.Net> a související obory názvů podporovat použití služby Active Directory, DNS, pro rozhraní NetBIOS, místní počítač hostuje souboru (obvykle WINDOWS\system32\drivers\etc\hosts, např.) nebo soubor lmhosts v místním počítači (obvykle WINDOWS\system32\ drivers\etc\lmhosts, např.) k překladu názvů na adresy. Název "contoso" je vyřešit tak, aby požadavky odeslané na "contoso" se odesílají do počítače příslušného serveru.  
+ Při přístupu k služby spuštěné na webovém serveru interní, je běžné pro přístup ke službě pomocí adresy URL podobná http://contoso/service nebo https://contoso/service. Název "contoso" není často název počítače, na kterém je nasazený službu. <xref:System.Net> a související obory názvů podporovat použití služby Active Directory, DNS, pro rozhraní NetBIOS, místní počítač hostuje souboru (obvykle WINDOWS\system32\drivers\etc\hosts, např.) nebo soubor lmhosts v místním počítači (obvykle WINDOWS\system32\ drivers\etc\lmhosts, např.) k překladu názvů na adresy. Název "contoso" je vyřešit tak, aby požadavky odeslané na "contoso" se odesílají do počítače příslušného serveru.  
   
  Když nakonfigurovaný pro velká nasazení, je také běžné název jednoho virtuálního serveru, který má být poskytnut do nasazení s základní názvy počítačů nikdy používané klientské aplikace a koncoví uživatelé. Může například volání www.contoso.com serveru, ale v interní síti jednoduše použijte "contoso". Tento název se nazývá hlavičku hostitele v žádosti webového klienta. Podle specifikace protokolu HTTP určuje pole hlavičky požadavku hostitel Internetu hostitele a port číslo požadovaný prostředek. Tyto informace se získávají z původní URI zadané uživatelem nebo odkazující prostředků (obvykle adresu URL protokolu HTTP). V rozhraní .NET Framework verze 4, tyto informace můžete nastavit také klienta pomocí nové <xref:System.Net.HttpWebRequest.Host%2A> vlastnost.  
   
@@ -58,7 +50,7 @@ Byly provedeny změny zabezpečení v rozhraní .NET Framework verze 3.5 SP1 a n
   
  7. Ukončete program Editor registru a potom restartujte službu spustit a spusťte příkaz IISReset.  
   
- Méně bezpečné pracovní přibližně je zakázat kontrolu zpětné smyčky, jak je popsáno v [http://support.microsoft.com/kb/896861](http://go.microsoft.com/fwlink/?LinkID=179657). Zakáže ochranu proti útokům na reflexi. Proto je lepší omezit sadu alternativní názvy pouze ty, které očekáváte, že má počítač ve skutečnosti použít.  
+ Méně bezpečné pracovní přibližně je zakázat kontrolu zpětné smyčky, jak je popsáno v [ http://support.microsoft.com/kb/896861 ](http://go.microsoft.com/fwlink/?LinkID=179657). Zakáže ochranu proti útokům na reflexi. Proto je lepší omezit sadu alternativní názvy pouze ty, které očekáváte, že má počítač ve skutečnosti použít.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=nameWithType>  

@@ -1,26 +1,20 @@
 ---
-title: "Příkazy (Průvodce programováním v C#)"
+title: Příkazy (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-caps.latest.revision: "28"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 166130ca7a63127d0bd1df8328dc08b4a8cd7845
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 68f7f799ebbfe52c99820083eb22761c79f66483
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které program trvá jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarace proměnné, přiřazení hodnoty, volání metod ve smyčce přes kolekce a vytvoření větve na jeden nebo jiný blok kódu, v závislosti na dané podmínce. Pořadí, ve kterém jsou příkazy prováděna v programu se nazývá tok řízení toku spouštění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak se program reaguje na vstup obdrží za běhu.  
   
- Příkaz může obsahovat jeden řádek kódu, který končí středníkem nebo řadu jeden řádek příkazy v bloku. Příkaz blok není uzavřený v závorkách {} a může obsahovat vnořené bloky. Následující kód ukazuje dva příklady příkazů jeden řádek a zároveň se zablokují Víceřádkový příkaz:  
+ Příkaz může obsahovat jeden řádek kódu, který končí středníkem nebo řadu jeden řádek příkazy v bloku. Blok příkazu ohraničeno {} závorky a může obsahovat vnořené bloky. Následující kód ukazuje dva příklady příkazů jeden řádek a zároveň se zablokují Víceřádkový příkaz:  
   
  [!code-csharp[csProgGuideStatements#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_1.cs)]  
   
@@ -44,11 +38,11 @@ Akce, které program trvá jsou vyjádřeny v příkazech. Běžné akce zahrnuj
 |Prázdný příkaz|Prázdný příkaz se skládá z jedné středníkem. To se nic nestane. a lze použít v místech, kde příkazu je požadováno, ale není nutné provádět žádnou akci. Následující příklady ukazují dva používá pro prázdný příkaz:<br /><br /> [!code-csharp[csProgGuideStatements#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_4.cs)]|  
   
 ## <a name="embedded-statements"></a>Vložené – příkazy  
- Některé příkazy, včetně [provést](../../../csharp/language-reference/keywords/do.md), [při](../../../csharp/language-reference/keywords/while.md), [pro](../../../csharp/language-reference/keywords/for.md), a [foreach](../../../csharp/language-reference/keywords/foreach-in.md), mají embedded příkaz, který následuje, je vždy. Tento příkaz embedded může být jediný příkaz nebo více příkazů do hranatých závorek {} v bloku příkazu. Ani jeden řádek vložený příkazy můžou být uzavřená do hranatých závorek {}, jak je znázorněno v následujícím příkladu:  
+ Některé příkazy, včetně [provést](../../../csharp/language-reference/keywords/do.md), [při](../../../csharp/language-reference/keywords/while.md), [pro](../../../csharp/language-reference/keywords/for.md), a [foreach](../../../csharp/language-reference/keywords/foreach-in.md), mají embedded příkaz, který následuje, je vždy. Tato vložená příkaz může být jediný příkaz nebo více příkazů ohraničená {} hranaté závorce v bloku příkazu. Ani jeden řádek vložený příkazy můžou být uzavřená v {} závorky, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_5.cs)]  
   
- Vložené příkazu, který není uzavřený v závorkách {} nemůže být deklarace příkaz nebo příkaz s popiskem. To je ukázáno v následujícím příkladu:  
+ Vložené příkazu, který není uzavřený v {} závorky nemůže být deklarace příkaz nebo příkaz s popiskem. To je ukázáno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#27](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_6.cs)]  
   
@@ -78,4 +72,4 @@ Akce, které program trvá jsou vyjádřeny v příkazech. Běžné akce zahrnuj
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

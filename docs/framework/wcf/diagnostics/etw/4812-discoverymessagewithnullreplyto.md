@@ -1,24 +1,12 @@
 ---
-title: "4812 – DiscoveryMessageWithNullReplyTo"
-ms.custom: 
+title: 4812 – DiscoveryMessageWithNullReplyTo
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a40e6b7e-c2a6-4186-b1d6-c9560f24a959
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e086c4560515b85d2ea291a8fb71999f13af92eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff281dc7fe5dd277d9cd69cdea51bd155cc79546
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4812---discoverymessagewithnullreplyto"></a>4812 – DiscoveryMessageWithNullReplyTo
 ## <a name="properties"></a>Vlastnosti  

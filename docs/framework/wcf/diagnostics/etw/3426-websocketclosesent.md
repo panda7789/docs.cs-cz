@@ -1,24 +1,12 @@
 ---
 title: 3426 - WebSocketCloseSent
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2eedb6bb-c114-40bb-9b24-e5f00723a24a
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 209d15324027becc9bdd0a72e06017b2f0992d01
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c8c018f5f99070a9fb0e2538ae09b93cbf15c4e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3426---websocketclosesent"></a>3426 - WebSocketCloseSent
 ## <a name="properties"></a>Vlastnosti  

@@ -1,14 +1,6 @@
 ---
-title: "CoUninitializeCor – funkce"
-ms.custom: 
+title: CoUninitializeCor – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CoUninitializeCor
 api_location:
@@ -22,20 +14,16 @@ helpviewer_keywords:
 ms.assetid: 50a95b8b-9766-470e-bb29-2c7ecddfd4a1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b9f50892b44cf8ce22cc126fe22323c8b0bbe6be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 305a8d7b5a800c46ed814b1e654947859dc9bd03
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="couninitializecor-function"></a>CoUninitializeCor – funkce
-`CoUninitializeCor`je zastaralá.  
+`CoUninitializeCor` je zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   

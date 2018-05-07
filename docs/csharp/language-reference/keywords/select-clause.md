@@ -1,9 +1,6 @@
 ---
-title: "select – klauzule (Referenční dokumentace jazyka C#)"
+title: select – klauzule (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - select_CSharpKeyword
 - select
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - select keyword [C#]
 - select clause [C#]
 ms.assetid: df01e266-5781-4aaa-80c4-67cf28ea093f
-caps.latest.revision: "19"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f40bc26d1812e76ac618c5a0ddf23c4cef2700d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6e7277b5d714e48059fe1ed7e8b85e46a14a840c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="select-clause-c-reference"></a>select – klauzule (Referenční dokumentace jazyka C#)
 Ve výrazu dotazu `select` klauzuli Určuje typ hodnoty, které budou vytvořeny, když je proveden dotaz. Výsledkem je založena na vyhodnocení všechny předchozí klauzule a na všechny výrazy v `select` klauzule sám sebe. Výraz dotazu musí ukončit některým `select` klauzule nebo [skupiny](../../../csharp/language-reference/keywords/group-clause.md) klauzule.  
@@ -46,4 +40,4 @@ Ve výrazu dotazu `select` klauzuli Určuje typ hodnoty, které budou vytvořeny
  [partial (metoda) (referenční dokumentace jazyka C#)](../../../csharp/language-reference/keywords/partial-method.md)  
  [Anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
  [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Začínáme s dotazy LINQ v jazyku C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+ [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

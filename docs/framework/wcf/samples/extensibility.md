@@ -1,27 +1,15 @@
 ---
-title: "Rozšiřitelnost"
-ms.custom: 
+title: Rozšiřitelnost
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d1d8ea4987d918da79dcf1f69b842f19901e63a5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7cba21715a6a0347e910300de46c1e47fd6e30bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extensibility"></a>Rozšiřitelnost
-Tato část obsahuje ukázky, které pracují s vlastní rozšiřitelnosti a jiné funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tato část obsahuje ukázky, které pracují s vlastní rozšíření a dalších funkcí služby Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozšiřitelnost kanálů](../../../../docs/framework/wcf/samples/channels-extensibility.md)  
@@ -58,7 +46,7 @@ Tato část obsahuje ukázky, které pracují s vlastní rozšiřitelnosti a jin
  Ukazuje, jak body rozšiřitelnosti spotřebovat formáty dat vlastní zprávu.  
   
  [Vlastní filtr zpráv](../../../../docs/framework/wcf/samples/custom-message-filter.md)  
- ukazuje, jak nahradit zpráva filtry, které [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá k odeslání zprávy do koncových bodů.  
+ ukazuje, jak nahradit filtry zpráv, které Windows Communication Foundation (WCF) používá k odeslání zprávy do koncových bodů.  
   
  [Vlastní hostitel služby](../../../../docs/framework/wcf/samples/custom-service-host.md)  
  Ukazuje, jak používat vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> tříd pro úpravu běhového chování služby.  

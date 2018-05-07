@@ -1,25 +1,18 @@
 ---
 title: Začínáme s rozhraním .NET Framework
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3295d17b0ef4650c38f264dfc785eee7a452be86
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d62ae73c9a2789087785e1fba6b227245ee08a10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-the-net-framework"></a>Začínáme s rozhraním .NET Framework
 
@@ -60,7 +53,7 @@ Obecně platí by neměl odinstalovat verze rozhraní .NET Framework, které jso
 
 - Pokud aplikace, kterou použijete, závisí na konkrétní verzi rozhraní .NET Framework, je možné při odebrání této verze ukončit aplikaci.
 
-- Některé verze rozhraní .NET Framework jsou na místě aktualizace starší verze. Například [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] je na místě aktualizace na verzi 2.0 a rozhraní .NET Framework 4.7.1 je na místě aktualizace verze 4, 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 a 4.7. Další informace najdete v tématu [rozhraní .NET Framework verze a závislosti](../../../docs/framework/migration-guide/versions-and-dependencies.md).
+- Některé verze rozhraní .NET Framework jsou na místě aktualizace starší verze. Například [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] je na místě aktualizace na verzi 2.0 a rozhraní .NET Framework 4.7.2 je na místě aktualizace verze 4 až 4.7.1. Další informace najdete v tématu [rozhraní .NET Framework verze a závislosti](../../../docs/framework/migration-guide/versions-and-dependencies.md).
 
 Ve verzích systému Windows než Windows 8, pokud zvolíte možnost odebrat rozhraní .NET Framework, vždy používat **programy a funkce** v Ovládacích panelech odinstalujte jej. Verze rozhraní .NET Framework nikdy odeberte ručně. V systému Windows 8 a novější verze rozhraní .NET Framework je součástí operačního systému a nelze ho odinstalovat samostatně.
 
@@ -73,7 +66,7 @@ Pokud jste vývojář, zvolte žádný programovací jazyk, který podporuje roz
 
 K vývoji aplikací rozhraní .NET Framework nebo součástí, postupujte takto:
 
-1. Pokud není je předinstalován v operačním systému, nainstalujte verzi rozhraní .NET Framework, který bude cílit na vaše aplikace. Nejnovější verzi produkční je rozhraní .NET Framework 4.7.1, která je předinstalován v systému Windows 10 patří tvůrci aktualizací a je k dispozici ke stažení v dřívějších verzích operačního systému Windows. Požadavky na systém rozhraní .NET Framework, najdete v části [požadavky na systém](../../../docs/framework/get-started/system-requirements.md). Informace o instalaci jiných verzí rozhraní .NET Framework, najdete v části [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md). Další balíčky rozhraní .NET Framework vydávají vzdálené správy, což znamená, že jste vydané na základě postupného mimo všechny verze regulární ani do plánovaných cyklus. Informace o těchto balíčcích najdete v tématu [rozhraní .NET Framework a Out-of-Band verze](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).
+1. Pokud není je předinstalován v operačním systému, nainstalujte verzi rozhraní .NET Framework, který bude cílit na vaše aplikace. Nejnovější verzi produkční je rozhraní .NET Framework 4.7.2, který je předinstalován v systému Windows 10. dubna 2018 aktualizace a je k dispozici ke stažení v dřívějších verzích operačního systému Windows. Požadavky na systém rozhraní .NET Framework, najdete v části [požadavky na systém](../../../docs/framework/get-started/system-requirements.md). Informace o instalaci jiných verzí rozhraní .NET Framework, najdete v části [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md). Další balíčky rozhraní .NET Framework vydávají vzdálené správy, což znamená, že jste vydané na základě postupného mimo všechny verze regulární ani do plánovaných cyklus. Informace o těchto balíčcích najdete v tématu [rozhraní .NET Framework a Out-of-Band verze](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).
 
 2. Vyberte jazyk nebo jazyků – podpora rozhraní .NET Framework, který chcete používat pro vývoj aplikací. Počet jazyků, které jsou k dispozici, včetně [jazyka Visual Basic](../../visual-basic/index.md), [C#](../../csharp/index.md), [F #](../../fsharp/index.md)a C + +/ CLI od společnosti Microsoft. (Programovací jazyk, který umožňuje vyvíjet aplikace pro rozhraní .NET Framework dodržuje [specifikace společné jazykové infrastruktury (CLI)](http://go.microsoft.com/fwlink/?LinkId=199862).)
 

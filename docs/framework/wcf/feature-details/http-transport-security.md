@@ -1,29 +1,17 @@
 ---
 title: Zabezpečení přenosu HTTP
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-caps.latest.revision: 14
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2787c38603fd0f88878596a809d7e3c5cfdfb350
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: cc284f82f974d9b34ff1cf6732d2ee7b95528c44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
-Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implementace Secure Sockets Layer (SSL). SSL je široce používaných na Internetu k ověřování klienta a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje protokol SSL a jak jsou implementované v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implementace Secure Sockets Layer (SSL). SSL je široce používaných na Internetu k ověřování klienta a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje protokol SSL a jak jsou implementované ve Windows Communication Foundation (WCF).  
   
 ## <a name="basic-ssl"></a>Základní SSL  
  Jak funguje SSL je nejlepší vysvětlené prostřednictvím Typický scénář, v takovém případě bank webu. Přihlaste se pomocí uživatelského jména a hesla zákazníkům umožňuje webu. Uživatel můžete po ověřovaného, provádění transakcí, jako je například zůstatky na účtu zobrazení, platit faktur a peníze přesunuty z jednoho účtu do jiného.  
@@ -42,11 +30,11 @@ Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implem
  Každý certifikát má dva klíče, privátní klíč a veřejný klíč a dva jsou známé jako *exchange pár klíčů*. Stručně řečeno privátní klíč je zná pouze vlastník certifikátu při čtení z certifikátu veřejného klíče. Ani jeden klíč slouží k zašifrování a dešifrování ověřování algoritmem digest, hash, nebo jiného klíče, ale pouze rozporu operace. Například pokud klient zašifruje pomocí veřejného klíče, pouze webu můžete dešifrování zprávy pomocí soukromého klíče. Podobně pokud webu zašifruje s privátním klíčem, klient může dešifrovat veřejným klíčem. To poskytuje záruku klientovi zprávy jsou během výměny pouze s vlastník privátního klíče, protože je pak možné dešifrovat jenom zprávy zašifrované pomocí privátního klíče pomocí veřejného klíče. Lokality je zajištěno, že jej vymění zprávy s klientem, který má šifrované pomocí veřejného klíče. Toto exchange je bezpečné pouze pro počáteční handshake, ale, což je důvod, proč mnoho dalších slouží k vytvoření skutečné symetrického klíče. Nicméně veškerá komunikace závisí na službu s platný certifikát SSL.  
   
 ## <a name="implementing-ssl-with-wcf"></a>Implementace protokolu SSL s použitím technologie WCF  
- Zabezpečení přenosu HTTP (nebo SSL) je k dispozici externě na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Můžete implementovat SSL v jednom ze dvou způsobů; rozhodujícím faktorem je, jak je vaše aplikace hostována:  
+ Zabezpečení přenosu HTTP (nebo SSL) zajišťuje externě WCF. Můžete implementovat SSL v jednom ze dvou způsobů; rozhodujícím faktorem je, jak je vaše aplikace hostována:  
   
--   Pokud používáte Internetové informační služby (IIS) jako vaše [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hostitele, nastavit služby SSL pomocí infrastruktury služby IIS.  
+-   Pokud používáte Internetové informační služby (IIS) jako hostitele WCF, nastavit služby SSL pomocí infrastruktury služby IIS.  
   
--   Pokud vytváříte vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, můžete vázat certifikát SSL na adresu pomocí nástroje HttpCfg.exe.  
+-   Pokud vytváříte aplikace WCF vlastním hostováním, můžete vázat na adresu pomocí nástroje HttpCfg.exe certifikát SSL.  
   
 ### <a name="using-iis-for-transport-security"></a>Pomocí služby IIS pro zabezpečení přenosu  
   
@@ -61,7 +49,7 @@ Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implem
  Pro konfiguraci certifikátů pro použití s [!INCLUDE[iis601](../../../../includes/iis601-md.md)], najdete v části [Certificates_IIS_SP1_Ops](http://go.microsoft.com/fwlink/?LinkId=88602).  
   
 ### <a name="using-httpcfg-for-ssl"></a>Pomocí HttpCfg pro protokol SSL  
- Pokud vytváříte vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, stáhněte si nástroj HttpCfg.exe k dispozici [lokality nástrojů podpory systému Windows XP Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=29002).  
+ Pokud vytváříte aplikace WCF vlastním hostováním, stáhněte si nástroj HttpCfg.exe k dispozici na [lokality nástrojů podpory systému Windows XP Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=29002).  
   
  Další informace o použití nástroje HttpCfg.exe nastavit port společně s certifikátem X.509 najdete v tématu [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   

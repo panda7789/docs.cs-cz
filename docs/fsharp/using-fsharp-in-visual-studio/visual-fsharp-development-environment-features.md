@@ -1,17 +1,12 @@
 ---
 title: F# – funkce vývojového prostředí
 description: 'Další informace, které funkce sady Visual Studio 2012 jsou podporovány v jazyce F #.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: dd5c3165a73bd4f821a26d183094829dab7eaeae
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0ea2bfa439692045647efa29b2a051eb11f9f1dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-f-development-environment-features"></a>Visual F # – funkce vývojového prostředí
 

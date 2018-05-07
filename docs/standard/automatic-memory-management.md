@@ -1,13 +1,7 @@
 ---
-title: "Automatická správa paměti"
-ms.custom: 
+title: Automatická správa paměti
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - garbage collection, automatic memory management
 - memory, allocating
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - managed heap
 - runtime, automatic memory management
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5405b6fc080696b7e507e70dd8b04f8ddcc4bbb2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9f81db46c20b27517968078c96f9eb484a1aedec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="automatic-memory-management"></a>Automatická správa paměti
 Automatická správa paměti je jednou ze služby, které poskytuje modul Common Language Runtime během [spravované provádění](../../docs/standard/managed-execution-process.md). Uvolňování paměti Common Language Runtime spravuje přidělování a uvolňování paměti pro aplikaci. Pro vývojáře to znamená, že nemáte napsat kód pro provedení paměti, že úlohy správy při vývoji spravované aplikace. Automatická správa paměti může eliminovat běžné problémy, jako je například zapomenutí volného objektu a způsobuje nevracení paměti nebo pokusu o přístup k paměti pro objekt, který již byl uvolněn. Tato část popisuje, jak má systém uvolňování přiděluje a uvolní paměť.  

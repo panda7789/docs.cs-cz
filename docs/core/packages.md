@@ -4,16 +4,11 @@ description: Přečtěte si terminologie pro balíčky, metapackages a architekt
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: d70c474f7ac8a033362ff08b28fae0ad403bf372
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 915ccadbb4d2cca50fd1caa53d90aa05d83d9378
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metapackages a architektury
 

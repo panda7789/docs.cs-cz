@@ -1,13 +1,7 @@
 ---
-title: "Osvědčené postupy pro používání řetězců v .NET"
-ms.custom: 
+title: Osvědčené postupy pro používání řetězců v .NET
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,21 +17,16 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a4b92cd9d6b880f23d6acaf9e38e685184ec3bfe
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3bdc23c909be0f9df051d538ca93cbb0a8e31426
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
-<a name="top"></a>.NET poskytuje rozsáhlou podporu pro vývoj lokalizovaných a globálních aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo konkrétní jazykové verze při provádění běžných operací, jako je například řazení a zobrazování řetězců. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například řetězce, které jsou používány interně aplikaci obvykle zpracování stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězcová data, jako je například XML značky HTML značky, uživatelská jména, cesty k souborům a názvy objektů systému jsou interpretovány, jako kdyby byly zohledňující jazykovou verzi, může jemně chyb, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
+<a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj lokalizovaných a globálních aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo konkrétní jazykové verze při provádění běžných operací, jako je například řazení a zobrazování řetězců. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například řetězce, které jsou používány interně aplikaci obvykle zpracování stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězcová data, jako je například XML značky HTML značky, uživatelská jména, cesty k souborům a názvy objektů systému jsou interpretovány, jako kdyby byly zohledňující jazykovou verzi, může jemně chyb, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
   
  Toto téma zkoumá řazení řetězce, porovnání a metody velká a malá písmena v rozhraní .NET, uvede doporučení pro výběr odpovídající metody zpracování řetězců a poskytuje další informace o metodách zpracování řetězců. Také zkontroluje jak formátovaných dat, jako je například číselná data a data a času, používá k zobrazení a pro úložiště.  
   
@@ -147,17 +136,17 @@ ms.lasthandoff: 12/23/2017
   
  Porovnání, které používají sémantiku aktuální jazykové verze jsou výchozí hodnoty pro následující metody:  
   
--   <xref:System.String.Compare%2A?displayProperty=nameWithType>přetížení, které neobsahují <xref:System.StringComparison> parametr.  
+-   <xref:System.String.Compare%2A?displayProperty=nameWithType> přetížení, které neobsahují <xref:System.StringComparison> parametr.  
   
--   <xref:System.String.CompareTo%2A?displayProperty=nameWithType>přetížení.  
+-   <xref:System.String.CompareTo%2A?displayProperty=nameWithType> přetížení.  
   
 -   Výchozí hodnota <xref:System.String.StartsWith%28System.String%29?displayProperty=nameWithType> metody a <xref:System.String.StartsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> metoda s `null` <xref:System.Globalization.CultureInfo> parametr.  
   
 -   Výchozí hodnota <xref:System.String.EndsWith%28System.String%29?displayProperty=nameWithType> metody a <xref:System.String.EndsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> metoda s `null` <xref:System.Globalization.CultureInfo> parametr.  
   
--   <xref:System.String.IndexOf%2A?displayProperty=nameWithType>přetížení, které přijímají <xref:System.String> jako vyhledávání parametr a které nemají <xref:System.StringComparison> parametr.  
+-   <xref:System.String.IndexOf%2A?displayProperty=nameWithType> přetížení, které přijímají <xref:System.String> jako vyhledávání parametr a které nemají <xref:System.StringComparison> parametr.  
   
--   <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>přetížení, které přijímají <xref:System.String> jako vyhledávání parametr a které nemají <xref:System.StringComparison> parametr.  
+-   <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> přetížení, které přijímají <xref:System.String> jako vyhledávání parametr a které nemají <xref:System.StringComparison> parametr.  
   
  V každém případě doporučujeme volat přetížení, která má <xref:System.StringComparison> parametr, aby byl záměr metody volání zrušte.  
   
@@ -283,7 +272,7 @@ ms.lasthandoff: 12/23/2017
   
  Byste měli být opatrní při používání těchto metod, protože vynucení řetězce na velká nebo malá se často používá jako malá normalizace pro porovnávání řetězců bez ohledu na případ. Pokud ano, zvažte použití porovnávání.  
   
- <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> a <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> metody jsou také k dispozici. <xref:System.String.ToUpperInvariant%2A>je standardní způsob, jak normalizování velikosti písmen. Porovnání pomocí <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> jsou složení dvou volání: volání metody <xref:System.String.ToUpperInvariant%2A> na oba argumenty řetězce a provedení porovnání s použitím <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>.  
+ <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> a <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> metody jsou také k dispozici. <xref:System.String.ToUpperInvariant%2A> je standardní způsob, jak normalizování velikosti písmen. Porovnání pomocí <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> jsou složení dvou volání: volání metody <xref:System.String.ToUpperInvariant%2A> na oba argumenty řetězce a provedení porovnání s použitím <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>.  
   
  Přetížení jsou také k dispozici pro převod na velká a malá písmena v konkrétní jazykové verzi, předáním <xref:System.Globalization.CultureInfo> objekt, který představuje tuto jazykovou verzi metodě.  
   

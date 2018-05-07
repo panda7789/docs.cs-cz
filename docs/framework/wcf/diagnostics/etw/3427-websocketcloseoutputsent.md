@@ -1,24 +1,12 @@
 ---
-title: "3427 – WebSocketCloseOutputSent"
-ms.custom: 
+title: 3427 – WebSocketCloseOutputSent
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c9de20d8-9f53-432d-8100-c05387441f65
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2bf7cf17cb8565c8360b2de2832ff25ed097a1c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3aac43a312d6ff4f9e69eaf26ea118cbb857874f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3427---websocketcloseoutputsent"></a>3427 – WebSocketCloseOutputSent
 ## <a name="properties"></a>Vlastnosti  

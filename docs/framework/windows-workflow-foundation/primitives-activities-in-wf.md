@@ -1,26 +1,15 @@
 ---
 title: Primitiva aktivity v WF
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8e9009d1-236e-4d8e-86fc-e43132bf6dfc
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e411d922577dcb9d3ca322d61c0e10911a006027
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d87125d8d85fa33a49651dfabb840881b0e216ce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="primitives-activities-in-wf"></a>Primitiva aktivity v WF
-[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]poskytuje několik poskytované systémem aktivity, které poskytují vhodný mechanismus pro provádění běžných úloh.  
+[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] poskytuje několik poskytované systémem aktivity, které poskytují vhodný mechanismus pro provádění běžných úloh.  
   
 |Aktivita|Popis|  
 |--------------|-----------------|  

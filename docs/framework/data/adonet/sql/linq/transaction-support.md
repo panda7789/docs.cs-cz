@@ -1,27 +1,15 @@
 ---
-title: "Podpora transakcí"
-ms.custom: 
+title: Podpora transakcí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8cceb26e-8d36-4365-8967-58e2e89e0187
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 543ea3d1a0f767a10b36e040155e7e9304aca5a9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ff4d65c37e2d7f76c8c9f0de1de9717c8dca7b27
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transaction-support"></a>Podpora transakcí
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje tři modely odlišné transakcí. Následující seznam obsahuje tyto modely v pořadí provést kontroly.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje tři modely odlišné transakcí. Následující seznam obsahuje tyto modely v pořadí provést kontroly.  
   
 ## <a name="explicit-local-transaction"></a>Explicitní místní transakce  
  Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána, pokud <xref:System.Data.Linq.DataContext.Transaction%2A> je nastavena na (`IDbTransaction`) transakce, <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volání je provést v rámci stejné transakci.  
@@ -29,7 +17,7 @@ ms.lasthandoff: 01/17/2018
  Je vaší povinností potvrzení nebo vrácení změn transakce po úspěšné provedení transakce. Připojení odpovídající transakce musí odpovídat připojení používané pro tvorbu <xref:System.Data.Linq.DataContext>. Pokud se používá jiné připojení, je vyvolána výjimka.  
   
 ## <a name="explicit-distributable-transaction"></a>Explicitní distribuovatelného transakce  
- Můžete volat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] rozhraní API (mimo jiné včetně <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) v rámci oboru aktivní <xref:System.Transactions.Transaction>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zjistí, že volání je v oboru transakce a nevytvoří nové transakce. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]také je zabráněno v tomto případě Probíhá ukončování připojení. Můžete provést dotaz a <xref:System.Data.Linq.DataContext.SubmitChanges%2A> spuštěních v kontextu tuto transakci.  
+ Můžete volat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] rozhraní API (mimo jiné včetně <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) v rámci oboru aktivní <xref:System.Transactions.Transaction>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zjistí, že volání je v oboru transakce a nevytvoří nové transakce. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] také je zabráněno v tomto případě Probíhá ukončování připojení. Můžete provést dotaz a <xref:System.Data.Linq.DataContext.SubmitChanges%2A> spuštěních v kontextu tuto transakci.  
   
 ## <a name="implicit-transaction"></a>Implicitní transakce  
  Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kontroluje, zda volání je v oboru <xref:System.Transactions.Transaction> nebo, pokud `Transaction` vlastnost (`IDbTransaction`) je nastaven na spuštění uživatele místní transakce. Pokud najde ani transakce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spustí místní transakce (`IDbTransaction`) a používá je generovaný příkazy SQL. Po úspěšném dokončení všechny příkazy SQL [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] potvrdí místní transakci a vrátí.  

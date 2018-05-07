@@ -1,21 +1,12 @@
 ---
-title: "Přátelská sestavení (C#)"
-ms.custom: 
+title: Přátelská sestavení (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 20b8d4f2d58af510a28160d28e6ef740d293d835
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c9265a6ce53d97f1d0b8aaeb0f1aae3b7b75f2cf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="friend-assemblies-c"></a>Přátelská sestavení (C#)
 A *přátelského sestavení* je sestavení, které můžete přístup k jiné sestavení [interní](../../../../csharp/language-reference/keywords/internal.md) typy a členy. Pokud identifikovat sestavení jako přátelského sestavení, již není k označení typy a členy jako veřejné, aby k nim přístup ostatních sestavení. To je zvlášť vhodné v následujících scénářích:  
@@ -70,7 +61,7 @@ public class ClassWithFriendMethod
   
  <xref:System.Security.Permissions.StrongNameIdentityPermission> Třída rovněž poskytuje možnost sdílet typy, s následující rozdíly:  
   
--   <xref:System.Security.Permissions.StrongNameIdentityPermission>platí pro typ jednotlivých během přátelského sestavení celá sestava.  
+-   <xref:System.Security.Permissions.StrongNameIdentityPermission> platí pro typ jednotlivých během přátelského sestavení celá sestava.  
   
 -   Pokud se používají stovky typy v sestavení *A* , kterou chcete sdílet s sestavení *B*, budete muset přidat <xref:System.Security.Permissions.StrongNameIdentityPermission> ke všem z nich. Pokud používáte přátelského sestavení, musíte pouze deklarovat vztah friend jednou.  
   
@@ -84,4 +75,4 @@ public class ClassWithFriendMethod
  [Postupy: vytváření nepodepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
  [Postupy: vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
  [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

@@ -1,14 +1,6 @@
 ---
-title: "Postupy: Určení, kdy dojde k aktualizaci textu TextBox ve zdroji"
-ms.custom: 
+title: 'Postupy: Určení, kdy dojde k aktualizaci textu TextBox ve zdroji'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,23 +9,17 @@ helpviewer_keywords:
 - data binding [WPF], timing of source updates
 - timing of source updates [WPF]
 ms.assetid: ffb7b96a-351d-4c68-81e7-054033781c64
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 00fc64938e6a063ffbda77961f967e08c169ebd7
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: 52f3a8d3a5d78a211367722b3042eb50f6ac36d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>Postupy: Určení, kdy dojde k aktualizaci textu TextBox ve zdroji
 Toto téma popisuje postup použití <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost řídit načasování vazby zdroj aktualizací. Používá tématu <xref:System.Windows.Controls.TextBox> ovládací prvek jako příklad.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Controls.TextBox>.<xref:System.Windows.Controls.TextBox.Text%2A> Vlastnost má výchozí <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>. To znamená, že pokud má aplikace <xref:System.Windows.Controls.TextBox> s daty připojeného <xref:System.Windows.Controls.TextBox>.<xref:System.Windows.Controls.TextBox.Text%2A> vlastnost, kterou zadáte do text <xref:System.Windows.Controls.TextBox> neaktualizuje zdroji až <xref:System.Windows.Controls.TextBox> ztratí fokus (například když kliknete na tlačítko mimo <xref:System.Windows.Controls.TextBox>).  
+ <xref:System.Windows.Controls.TextBox>.<xref:System.Windows.Controls.TextBox.Text%2A> Vlastnost má výchozí <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>. To znamená, že pokud má aplikace <xref:System.Windows.Controls.TextBox> s daty připojeného <xref:System.Windows.Controls.TextBox>.<xref:System.Windows.Controls.TextBox.Text%2A> vlastnost, kterou zadáte do text <xref:System.Windows.Controls.TextBox> neaktualizuje zdroj, dokud <xref:System.Windows.Controls.TextBox> ztratí fokus (například když kliknete na tlačítko směrem od <xref:System.Windows.Controls.TextBox>).  
   
  Pokud chcete zdroji aktualizovat při psaní, nastavte <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vazby ke <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>. V následujícím příkladu, zvýrazněné řádky kódu ukazují, že `Text` vlastnosti obou <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.TextBlock> je vázána na stejnou vlastnost zdroje. <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> Vlastnost <xref:System.Windows.Controls.TextBox> vazba je nastaven na <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>.  
   

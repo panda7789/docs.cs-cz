@@ -1,28 +1,16 @@
 ---
-title: "Scénáře ovládacího prvku DataGridView (Windows Forms)"
-ms.custom: 
+title: Scénáře ovládacího prvku DataGridView (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data [Windows Forms], displaying in tabular format
 - data grids [Windows Forms], about data grids
 - DataGridView control [Windows Forms], scenarios
 ms.assetid: 09a5fd05-3447-47ec-a4ec-6082a2b7f0dd
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38e5337f775d98f8729c62b3481c3e839bff2252
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a320b40664e4fe2254109183731db346a5d7d0b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datagridview-control-scenarios-windows-forms"></a>Scénáře ovládacího prvku DataGridView (Windows Forms)
 S <xref:System.Windows.Forms.DataGridView> řízení, můžete zobrazit tabulková data z různých datových zdrojů. Pro jednoduché používá, můžete ručně naplnění <xref:System.Windows.Forms.DataGridView> a manipulovat s daty přímo prostřednictvím ovládacího prvku. Obvykle se však budete ukládat data do externího zdroje dat a vytvořit vazbu ovládacího prvku na přes <xref:System.Windows.Forms.BindingSource> součásti.  
@@ -80,7 +68,7 @@ S <xref:System.Windows.Forms.DataGridView> řízení, můžete zobrazit tabulkov
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle>objekty umožňují poskytovat barvy, písma, formátování a umístění informace na více úrovních a pro jednotlivé elementy ovládacího prvku.  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle> objekty umožňují poskytovat barvy, písma, formátování a umístění informace na více úrovních a pro jednotlivé elementy ovládacího prvku.  
   
 -   Styly buňky můžete vrstvu a sdílí několik elementů, takže můžete opakovaně použít kód.  
   

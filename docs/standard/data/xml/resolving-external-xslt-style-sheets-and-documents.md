@@ -1,26 +1,15 @@
 ---
-title: "Řešení externí XSLT šablony stylů a dokumentů"
-ms.custom: 
+title: Řešení externí XSLT šablony stylů a dokumentů
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
-caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 85176c45b768d1e8fe9efc408fd644bf33aa8c05
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6aa9c6717d89cf5529ef65b56811e614b6fc30f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resolving-external-xslt-style-sheets-and-documents"></a>Řešení externí XSLT šablony stylů a dokumentů
 Existují několikrát během transformace, kdy budete muset vyřešit externím prostředkům.  

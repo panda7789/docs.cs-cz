@@ -1,28 +1,14 @@
 ---
-title: "Trasování a protokolování zpráv"
-ms.custom: 
+title: Trasování a protokolování zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cae7d806ce68f6804f97195c9bf2571328af6dff
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
-ms.translationtype: MT
+ms.openlocfilehash: 5f0cca66798a9d84b01c9fde1147c28f14a953db
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tracing-and-message-logging"></a>Trasování a protokolování zpráv
 Tento příklad znázorňuje postup povolení trasování a protokolování zpráv. Výsledné trasování a protokolů zpráv jsou zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -31,7 +17,7 @@ Tento příklad znázorňuje postup povolení trasování a protokolování zpr�
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="tracing"></a>Trasování  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá mechanismus trasování definovaný v <xref:System.Diagnostics> oboru názvů. V tomto modelu trasování dat trasování je produkovaný trasování zdrojů, které implementují aplikace. Každý zdroj je identifikována názvem. Trasování uživatelé vytváří trasování – moduly naslouchání pro trasování zdrojů, pro které se chcete získat informace. Pro příjem dat trasování, je nutné vytvořit naslouchací proces pro zdroj trasování. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tento krok můžete provést přidáním následující kód do buď služby nebo klienta konfigurační soubor nastavením zdroj trasování modelu služby `switchValue`:  
+ Windows Communication Foundation (WCF) používá mechanismus trasování definovaný v <xref:System.Diagnostics> oboru názvů. V tomto modelu trasování dat trasování je produkovaný trasování zdrojů, které implementují aplikace. Každý zdroj je identifikována názvem. Trasování uživatelé vytváří trasování – moduly naslouchání pro trasování zdrojů, pro které se chcete získat informace. Pro příjem dat trasování, je nutné vytvořit naslouchací proces pro zdroj trasování. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tento krok můžete provést přidáním následující kód do buď služby nebo klienta konfigurační soubor nastavením zdroj trasování modelu služby `switchValue`:  
   
 ```xml  
 <system.diagnostics>  
@@ -141,7 +127,7 @@ Tento příklad znázorňuje postup povolení trasování a protokolování zpr�
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   

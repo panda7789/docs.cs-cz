@@ -1,20 +1,13 @@
 ---
-title: "Provádění poddotazů na skupinách"
-description: "Postup provádění poddotazů na skupinách."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Provádění poddotazů na skupinách
+description: Postup provádění poddotazů na skupinách.
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: d75a588e-9b6f-4f37-b195-f99ec8503855
-ms.openlocfilehash: f638b8a679a15891d04e02f1597d6bf7934a9e74
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 209d05c2fe8719fa9116061d199272366146f465
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="perform-a-subquery-on-a-grouping-operation"></a>Provádění poddotazů na skupinách
 

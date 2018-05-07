@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugEval2::CreateValueForType – metoda"
-ms.custom: 
+title: ICorDebugEval2::CreateValueForType – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugEval2.CreateValueForType
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: ea38ae20-7e0a-427a-be77-d78fae719d82
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 18e7eb5fc30c27fd2c4865dc61e2f75dc9e96068
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 683457c249915708becadaeda9dec265666e2023
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugeval2createvaluefortype-method"></a>ICorDebugEval2::CreateValueForType – metoda
 Získá ukazatel na nové ICorDebugValue zadaného typu, s počáteční hodnotou nula nebo hodnotu null.  
@@ -55,7 +43,7 @@ HRESULT CreateValueForType (
  [out] Ukazatel na adresu `ICorDebugValue` objekt, který představuje hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateValueForType`Umožňuje zobecnit [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) tím, že se k zadání typu libovolného objektu, včetně sestavený typy, jako `List<int>`. Jediným účelem: Tato metoda je ke generování hodnotu, která se dá předat do vyhodnocení funkce.  
+ `CreateValueForType` Umožňuje zobecnit [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) tím, že se k zadání typu libovolného objektu, včetně sestavený typy, jako `List<int>`. Jediným účelem: Tato metoda je ke generování hodnotu, která se dá předat do vyhodnocení funkce.  
   
  Typ musí být třídu nebo typ hodnoty. Tuto metodu nelze použít k vytvoření hodnoty pole nebo hodnoty řetězce.  
   
@@ -66,4 +54,4 @@ HRESULT CreateValueForType (
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

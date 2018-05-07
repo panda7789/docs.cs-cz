@@ -1,24 +1,12 @@
 ---
-title: "3306 – ClientBaseChannelFactoryAgedOutofCache"
-ms.custom: 
+title: 3306 – ClientBaseChannelFactoryAgedOutofCache
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d8af1dbf-ea3b-4931-94eb-6d21e30a886e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8048994f683bbce7df2e80523dcf695143532918
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3b302af20e99e5fb59b1feb5fb14039a9c8d45e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3306---clientbasechannelfactoryagedoutofcache"></a>3306 – ClientBaseChannelFactoryAgedOutofCache
 ## <a name="properties"></a>Vlastnosti  

@@ -1,13 +1,6 @@
 ---
-title: "Úvod do objektu GlyphRun a elementu Glyph"
-ms.custom: 
+title: Úvod do objektu GlyphRun a elementu Glyph
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], Glyphs element
 - Glyphs elements [WPF]
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - glyphs [WPF]
 - typography [WPF], GlyphRun object
 ms.assetid: 746ca769-a331-4435-9b95-f72a883b67c1
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa868b520224b27b3cd2b3dc99431728ad8ea527
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5750177c03cf859ebb884c5774b7ded03fa60628
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-the-glyphrun-object-and-glyphs-element"></a>Úvod do objektu GlyphRun a elementu Glyph
 Toto téma popisuje <xref:System.Windows.Media.GlyphRun> objektu a <xref:System.Windows.Documents.Glyphs> elementu.  
@@ -33,13 +21,13 @@ Toto téma popisuje <xref:System.Windows.Media.GlyphRun> objektu a <xref:System.
   
 <a name="text_glyphrunovw_intro"></a>   
 ## <a name="introduction-to-glyphrun"></a>Úvod do GlyphRun  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje podporu rozšířené textové včetně značek glyfy úrovni s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytávat a zachovat po formátování textu. Tyto funkce podporují kritické jiným textovým vykreslování požadavky v každé z následujících scénářů.  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje podporu rozšířené textové včetně značek glyfy úrovni s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytávat a zachovat po formátování textu. Tyto funkce podporují kritické jiným textovým vykreslování požadavky v každé z následujících scénářů.  
   
 1.  Zobrazování dokumentů pevného formátu.  
   
 2.  Tisk scénáře.  
   
-    -   [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]jako jazyk tiskárny zařízení.  
+    -   [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jako jazyk tiskárny zařízení.  
   
     -   [!INCLUDE[TLA#tla_mxdw](../../../../includes/tlasharptla-mxdw-md.md)].  
   
@@ -50,15 +38,15 @@ Toto téma popisuje <xref:System.Windows.Media.GlyphRun> objektu a <xref:System.
 3.  Reprezentace-formátovat dokument, včetně klientů pro předchozí verze [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a dalších výpočetních zařízení.  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Glyphs>a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro tiskové scénáře a prezentace-formátovat dokument. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje několik elementy pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, najdete v článku [typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md).  
+>  <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro tiskové scénáře a prezentace-formátovat dokument. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje několik elementy pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, najdete v článku [typografii v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md).  
   
 <a name="text_glyphrunovw_glyphrunobject"></a>   
 ## <a name="the-glyphrun-object"></a>Objekt GlyphRun  
  <xref:System.Windows.Media.GlyphRun> Objekt představuje pořadí glyfů z jednoho řez jediného písma v jednom velikosti a s styl vykreslování jedné.  
   
- <xref:System.Windows.Media.GlyphRun>zahrnuje obě podrobnosti písma, například glyfy <xref:System.Windows.Documents.Glyphs.Indices%2A> a umístění jednotlivých glyfů. Zahrnuje také původní [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] code body spustit byla vygenerována z informace o posunu mapování znak glyfy vyrovnávací paměti a příznaky za znak a za glyfů.  
+ <xref:System.Windows.Media.GlyphRun> zahrnuje obě podrobnosti písma, například glyfy <xref:System.Windows.Documents.Glyphs.Indices%2A> a umístění jednotlivých glyfů. Zahrnuje také původní [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] code body spustit byla vygenerována z informace o posunu mapování znak glyfy vyrovnávací paměti a příznaky za znak a za glyfů.  
   
- <xref:System.Windows.Media.GlyphRun>má odpovídající vysoké úrovně <xref:System.Windows.FrameworkElement>, <xref:System.Windows.Documents.Glyphs>. <xref:System.Windows.Documents.Glyphs>je možné ve stromové struktuře elementu a v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek k reprezentaci <xref:System.Windows.Media.GlyphRun> výstup.  
+ <xref:System.Windows.Media.GlyphRun> má odpovídající vysoké úrovně <xref:System.Windows.FrameworkElement>, <xref:System.Windows.Documents.Glyphs>. <xref:System.Windows.Documents.Glyphs> je možné ve stromové struktuře elementu a v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek k reprezentaci <xref:System.Windows.Media.GlyphRun> výstup.  
   
 <a name="text_glyphrunovw_glyphselement"></a>   
 ## <a name="the-glyphs-element"></a>Element glyfů  

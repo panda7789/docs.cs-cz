@@ -1,27 +1,15 @@
 ---
-title: "Rozšiřování kodérů a serializátorů"
-ms.custom: 
+title: Rozšiřování kodérů a serializátorů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 97aec970-d73c-469c-9b93-8b86be701c44
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3dcf0765e025209abdadb850711fb373716b6edb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: d5ba3e7b057968d81a8a33e195a760fc82a3670b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-encoders-and-serializers"></a>Rozšiřování kodérů a serializátorů
-Témata v této části popisují, jak rozšířit [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] systému serializace.  
+Témata v této části popisují, jak rozšířit serializace systém Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)  

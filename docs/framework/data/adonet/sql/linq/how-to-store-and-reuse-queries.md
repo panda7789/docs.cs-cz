@@ -1,30 +1,18 @@
 ---
-title: "Postupy: uložení a znovu používat dotazy"
-ms.custom: 
+title: 'Postupy: uložení a znovu používat dotazy'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: a012bd79-1809-45e3-adea-0229532396cc
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a1d0e0a094148e609dddcb703bd3840d091af8d3
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a2d16cd5dce033c563783a0882f3de73194cf2d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-store-and-reuse-queries"></a>Postupy: uložení a znovu používat dotazy
-Když máte aplikaci, která provádí mnohokrát strukturálně podobné dotazy, můžete zvýšit výkon často kompilování dotazu jednou a spouštění s odlišnými parametry několikrát. Například aplikace může mít načíst všechny zákazníky, kteří jsou z určitého města, kde je zadán Město v době běhu uživatelem ve formuláři. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje použití *zkompilovat dotazy* pro tento účel.  
+Když máte aplikaci, která provádí mnohokrát strukturálně podobné dotazy, můžete zvýšit výkon často kompilování dotazu jednou a spouštění s odlišnými parametry několikrát. Například aplikace může mít načíst všechny zákazníky, kteří jsou z určitého města, kde je zadán Město v době běhu uživatelem ve formuláři. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje použití *zkompilovat dotazy* pro tento účel.  
   
 > [!NOTE]
 >  Tento vzor využití představuje nejčastěji používá pro kompilované dotazy. Jiné postupy je možné. Například kompilované dotazy mohou být uloženy jako statické členy na částečné třídu, která rozšiřuje kód vygenerovaný návrháře.  

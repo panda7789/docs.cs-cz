@@ -1,22 +1,15 @@
 ---
 title: Anonymní typy (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-caps.latest.revision: 28
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 24ebf1c98e14eaf74572a6143ea6865d89735a6e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 40c709e8a68f3a095672a9d4b7aacde5c62e12af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Anonymní typy (Průvodce programováním v C#)
 Anonymní typy poskytují pohodlný způsob pro zapouzdření sadu vlastností jen pro čtení bez nutnosti explicitně zadat typ nejprve do jednoho objektu. Název typu je generován kompilátoru a není k dispozici na úrovni zdrojového kódu. Kompilátor odvodí typ každou vlastnost.  
@@ -61,7 +54,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
  Protože <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> metody pro anonymní typy jsou definovány z hlediska `Equals` a `GetHashCode` vlastností dvě instance stejného typu anonymní metody jsou stejné, pouze v případě, že jejich vlastnosti jsou stejné.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
- [Začínáme s dotazy LINQ v jazyku C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)

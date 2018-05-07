@@ -1,32 +1,20 @@
 ---
-title: "Postupy: přímo provádění dotazů SQL"
-ms.custom: 
+title: 'Postupy: přímo provádění dotazů SQL'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e491b9bf-741a-4296-9f51-76c25ddf6a82
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 000a7c50edacbae09675a9f9069f56aa6cd211f6
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b7a468ccbdf63ec5e74238ac4e59a2f385d2562b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-directly-execute-sql-queries"></a>Postupy: přímo provádění dotazů SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Přeloží dotazy, které zapisovat do parametrizované dotazy SQL (v textové podobě) a odešle je k systému SQL server pro zpracování.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží dotazy, které zapisovat do parametrizované dotazy SQL (v textové podobě) a odešle je k systému SQL server pro zpracování.  
   
- SQL nelze provést řadu metod, které mohou být místně dostupné pro vaši aplikaci. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pokusí se převést tyto místní metody na ekvivalentní operací a funkcí, které jsou k dispozici v prostředí SQL. Většina metody a operátory na [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] vestavěné typy mít přímý převody příkazy SQL. Některé je možné vytvořit z funkcí, které jsou k dispozici. Ty, které není možné vygenerovat výjimky v době běhu. Další informace najdete v tématu [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
+ SQL nelze provést řadu metod, které mohou být místně dostupné pro vaši aplikaci. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pokusí se převést tyto místní metody na ekvivalentní operací a funkcí, které jsou k dispozici v prostředí SQL. Většina metody a operátory na [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] vestavěné typy mít přímý převody příkazy SQL. Některé je možné vytvořit z funkcí, které jsou k dispozici. Ty, které není možné vygenerovat výjimky v době běhu. Další informace najdete v tématu [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
   
  V případech, kde [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazu je nedostatečná pro úlohu specializované, můžete použít <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> metodu pro spuštění příkazu jazyka SQL a pak převést výsledek dotazu přímo do objektů.  
   

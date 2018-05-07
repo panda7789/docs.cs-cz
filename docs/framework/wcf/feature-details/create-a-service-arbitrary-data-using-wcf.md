@@ -1,27 +1,15 @@
 ---
-title: "Postupy: vytvoření služby, je možné zadat libovolný dat pomocí programovací Model REST WCF"
-ms.custom: 
+title: 'Postupy: vytvoření služby, je možné zadat libovolný dat pomocí programovací Model REST WCF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 170149f5a6c495b3f22b9fd30f79ecdda87789b4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bc2643672743971da14c8bc4c75ac113f691bf4a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Postupy: vytvoření služby, je možné zadat libovolný dat pomocí programovací Model REST WCF
-Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služby. To je případ, kdy operace služby musí vrátit data ve formátu, které nepodporují[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Toto téma popisuje použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST vytvoření služby, který obdrží libovolná data.  
+Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služby. To je případ, kdy operace služby musí vracet, že data ve formátu nepodporuje byWCF. Toto téma popisuje použití programovací Model REST WCF k vytvoření služby, která přijímá libovolná data.  
   
 ### <a name="to-implement-the-service-contract"></a>K implementaci kontraktu služby  
   

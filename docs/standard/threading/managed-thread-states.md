@@ -1,28 +1,17 @@
 ---
-title: "Stavy spravovaných vláken"
-ms.custom: 
+title: Stavy spravovaných vláken
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - threading [.NET Framework], states
 ms.assetid: 63890d5e-6025-4a7c-aaf0-d8bfd54b455f
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 956472ef0e3b0bab85a4eb0b5585f1a4d1e0a991
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4266aea9bf206d127e2837955dcc00cc23f4119b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managed-thread-states"></a>Stavy spravovaných vláken
 Vlastnost <xref:System.Threading.Thread.ThreadState%2A?displayProperty=nameWithType> poskytuje bitová maska určující, aktuální stav vlákna. Vlákno je vždy alespoň v jedné z možných stavů v <xref:System.Threading.ThreadState> výčtu a může být ve více státech ve stejnou dobu.  
@@ -46,7 +35,7 @@ Vlastnost <xref:System.Threading.Thread.ThreadState%2A?displayProperty=nameWithT
 |Vlákno odpoví <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> požadavku.|<xref:System.Threading.ThreadState.Suspended>|  
 |Jiné vlákno volání <xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>.|<xref:System.Threading.ThreadState.Running>|  
 |Jiné vlákno volání <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.|<xref:System.Threading.ThreadState.AbortRequested>|  
-|Vlákno odpoví <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.|<xref:System.Threading.ThreadState.Aborted>, pak<xref:System.Threading.ThreadState.Stopped>|  
+|Vlákno odpoví <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.|<xref:System.Threading.ThreadState.Aborted>, pak <xref:System.Threading.ThreadState.Stopped>|  
   
  Protože <xref:System.Threading.ThreadState.Running> stavu má hodnotu 0, není možné provést bit test ke zjištění tento stav. Místo toho se dají použít následující testovací (v pseudo kód):  
   

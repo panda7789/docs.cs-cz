@@ -1,10 +1,6 @@
 ---
-title: "-nostdlib (možnosti kompilátoru C#)"
+title: -nostdlib (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /nostdlib
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: dd9d2b6a4a9c774aa339e840ad0020ee39cb10d3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1dc0ab70ca28626c4a3f505c13ec1d6f828a4b05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-nostdlib-c-compiler-options"></a>-nostdlib (možnosti kompilátoru C#)
 **-nostdlib** zabraňuje importu mscorlib.dll, která definuje obor názvů, celý systém.  

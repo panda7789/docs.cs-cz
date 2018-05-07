@@ -1,31 +1,19 @@
 ---
-title: "Federace a vystavené tokeny"
-ms.custom: 
+title: Federace a vystavené tokeny
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF, federation
 - issued tokens [WCF]
 - federation [WCF], issued tokens
 ms.assetid: 4c31ee7d-a820-4067-8b84-a83049021bb6
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 017d3e51022ad9980dc8f058415697c80a2a6b35
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6a5411b74b53cb5e3b18cced7fd8fc09e9a9676
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="federation-and-issued-tokens"></a>Federace a vystavené tokeny
-S [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], můžete vytvořit klientů komunikujících bezpečně s služby, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytnout mechanismy, které umožňují ověřování a autorizace mezi různé důvěryhodnosti sfér pomocí XML, protokolu SOAP a webové služby popis Language (WSDL).  
+S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří zabezpečeně komunikovat se službami, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytnout mechanismy, které umožňují ověřování a autorizace mezi různé důvěryhodnosti sfér pomocí XML, protokolu SOAP a webové služby popis Language (WSDL).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Federace](../../../../docs/framework/wcf/feature-details/federation.md)  
@@ -35,7 +23,7 @@ S [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], můžete vytvořit kl
  Jsou uvedené problémy návrhu znát při vytvoření federovaného služby nebo klientů.  
   
  [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
- Popisuje základní informace o vytvoření federovaného klienta s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Popisuje základní informace o vytvoření federovaného klienta s použitím technologie WCF.  
   
  [Postupy: Konfigurace přihlašovacích údajů ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
  Popisuje kroky k vytvoření federované služby.  

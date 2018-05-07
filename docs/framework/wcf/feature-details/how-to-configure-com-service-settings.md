@@ -1,34 +1,20 @@
 ---
-title: "Postupy: Konfigurace nastavení služby COM +"
-ms.custom: 
+title: 'Postupy: Konfigurace nastavení služby COM +'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1bdbdbae857685ddb447843fd704896de018b1c1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 43964331f6728db0f094eaceb63e2c306d2dd3ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby COM +
 Při aplikační rozhraní přidat nebo odebrat pomocí nástroje Konfigurace služby COM +, konfigurace webové služby je aktualizovat v rámci konfiguračního souboru aplikace. V modelu COM + hostované režimu, je umístěn soubor Application.config v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení). V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.  
   
 > [!NOTE]
->  Podepisování zpráv slouží jako ochrana proti manipulaci zpráv mezi klientem a serverem. Navíc zpráva nebo transport layer šifrování slouží k ochraně proti úniku informací z zpráv mezi klientem a serverem. Stejně jako u [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, měli byste použít omezení k omezit počet souběžných volání, připojení, instancí a čekající operace. To pomáhá zabránit nadměrné spotřeby prostředků. Omezení chování se specifikuje prostřednictvím nastavení konfiguračního souboru služby.  
+>  Podepisování zpráv slouží jako ochrana proti manipulaci zpráv mezi klientem a serverem. Navíc zpráva nebo transport layer šifrování slouží k ochraně proti úniku informací z zpráv mezi klientem a serverem. Stejně jako u služby Windows Communication Foundation (WCF), měli byste použít omezení omezit počet souběžných volání, připojení, instancí a čekající operace. To pomáhá zabránit nadměrné spotřeby prostředků. Omezení chování se specifikuje prostřednictvím nastavení konfiguračního souboru služby.  
   
 ## <a name="example"></a>Příklad  
  Vezměte v úvahu komponenty, která implementuje rozhraní následující:  
@@ -62,13 +48,13 @@ public interface IFinancesContract : IDisposable
   
  Klientské aplikace, které používají tuto službu potřebovat tak, aby odpovídala tento kontrakt, společně s použitím vazby, který je kompatibilní s verze zadaná v konfiguraci aplikace.  
   
- Následující příklad kódu ukazuje výchozí konfigurační soubor. Probíhá [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] webové služby, to odpovídá schématu konfigurace modelu služby na úrovni standard a lze ho upravovat v stejným způsobem jako ostatní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb konfigurační soubory.  
+ Následující příklad kódu ukazuje výchozí konfigurační soubor. Probíhá Windows Communication Foundation (WCF) webové služby, to odpovídá schématu konfigurace modelu služby na úrovni standard a lze upravit stejným způsobem jako ostatní konfigurační soubory služby WCF.  
   
  Typické úpravy by mělo zahrnovat:  
   
 -   Změna adresa koncového bodu z výchozího formuláře ApplicationName/ComponentName/InterfaceName na více použitelné podoby.  
   
--   Úprava oboru názvů služby z výchozího formuláře "http://tempuri.org/InterfaceID" relevantnější formuláře.  
+-   Úprava oboru názvů služby z výchozího "http://tempuri.org/InterfaceID" formuláře relevantnější formuláře.  
   
 -   Změna koncový bod používat různé přenosové vazby.  
   

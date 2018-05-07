@@ -1,24 +1,14 @@
 ---
 title: Element &lt;Type&gt; (.NET Native)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
-caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 654f3a360038266d246438838c9ad5821b0a50b9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ad20cf4528f5ca7d23f80570cc34712d33b74d93
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lttypegt-element-net-native"></a>Element &lt;Type&gt; (.NET Native)
 Platí pro konkrétní typ, jako je například třídu nebo strukturu zásady modulu runtime.  
@@ -91,9 +81,9 @@ Platí pro konkrétní typ, jako je například třídu nebo strukturu zásady m
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu.|  
-|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Reflexe zásad platí pro všechny typy v zadaném sestavení.|  
+|[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Reflexe zásad platí pro všechny typy v zadaném sestavení.|  
 |[\<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md)|Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu.|  
-|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Reflexe zásad platí pro všechny typy v oboru názvů.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Reflexe zásad platí pro všechny typy v oboru názvů.|  
 |`<Type>`|Reflexe zásada se vztahuje na typ a všechny její členy.|  
 |[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Reflexe zásada se vztahuje na sestavené obecné typy a všechny její členy.|  
   

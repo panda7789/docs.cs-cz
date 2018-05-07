@@ -1,13 +1,6 @@
 ---
-title: "Postupy: kreslení sekvence B &#233; zier křivky vyhlazení"
-ms.custom: 
+title: 'Postupy: kreslení sekvence B&#233;zier křivky vyhlazení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +8,13 @@ helpviewer_keywords:
 - splines [Windows Forms], drawing Bezier
 - Bezier splines [Windows Forms], drawing sequence of
 ms.assetid: 37a0bedb-20c2-4cf0-91fa-a5509e826b30
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f5bdd9ae29dcbb8397d2fe645e240572aad32a19
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8439e08109630b9a59c8e0359aa4d18e5241412c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-draw-a-sequence-of-b233zier-splines"></a>Postupy: kreslení sekvence B &#233; zier křivky vyhlazení
+# <a name="how-to-draw-a-sequence-of-b233zier-splines"></a>Postupy: kreslení sekvence B&#233;zier křivky vyhlazení
 Můžete použít <xref:System.Drawing.Graphics.DrawBeziers%2A> metodu <xref:System.Drawing.Graphics> připojené třída pro kreslení sekvence Bézierových křivek.  
   
 ## <a name="example"></a>Příklad  

@@ -4,18 +4,14 @@ description: Zjistěte, jak volat členy v knihovny tříd s Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
 dev_langs:
 - csharp
 - vb
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 7364f9a4dadf7c4a28dab0cff2fca80d0f3af62c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0a7002f2a5dba5a5aad32a83a43a933cd2cc5722
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="consuming-a-class-library-with-net-core-in-visual-studio-2017"></a>Použití knihovny tříd s .NET Core v Visual Studio 2017
 

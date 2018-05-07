@@ -1,13 +1,7 @@
 ---
-title: "Vytvoření výčtu řetězců formátu"
-ms.custom: 
+title: Vytvoření výčtu řetězců formátu
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 58004fa19f2ec3b1ca7570d6ca75702510148002
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8e04c6137bcb2b3da7e9883fde4de35737788587
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumeration-format-strings"></a>Vytvoření výčtu řetězců formátu
 Můžete použít <xref:System.Enum.ToString%2A?displayProperty=nameWithType> metodu pro vytvoření nového objektu řetězec, který představuje numerické, šestnáctkové nebo řetězcovou hodnotu člena výčtu. Tato metoda přijímá jeden výčet formátování řetězce zadejte hodnotu, která mají být vráceny.  

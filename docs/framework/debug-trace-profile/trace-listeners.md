@@ -1,13 +1,6 @@
 ---
-title: "Naslouchací procesy trasování"
-ms.custom: 
+title: Naslouchací procesy trasování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,13 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 444b0d33-67ea-4c36-9e94-79c50f839025
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 042b8a6f7c25c34fc06d5d0bfd4ebce6417b920f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 457310fbf12ef2d6143586116f76df1720b59a6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trace-listeners"></a>Naslouchací procesy trasování
 Při použití **trasování**, **ladění** a <xref:System.Diagnostics.TraceSource>, musí mít mechanismus pro shromažďování a záznamem zpráv, které se odesílají. Trasovací zprávy jsou přijímány *naslouchací procesy*. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  
@@ -41,7 +31,7 @@ Při použití **trasování**, **ladění** a <xref:System.Diagnostics.TraceSou
   
 -   <xref:System.Diagnostics.EventLogTraceListener> Přesměruje výstup do protokolu událostí.  
   
--   A <xref:System.Diagnostics.DefaultTraceListener> vysílá **zápisu** a **WriteLine** zprávy pro **OutputDebugString** a **Debugger.Log** metoda. V sadě Visual Studio to způsobí, že zprávy ladění zobrazí v okně výstupu. **Selhání** a k selhání **Assert** zprávy emitování také k **OutputDebugString** rozhraní API systému Windows a **Debugger.Log** metoda a příčina zprávu pole do Zobrazit. Toto chování je výchozí chování pro **ladění** a **trasování** zprávy, protože **DefaultTraceListener** je automaticky zahrnuta v každé `Listeners` kolekce a je automaticky zahrnuty pouze naslouchací proces.  
+-   A <xref:System.Diagnostics.DefaultTraceListener> vysílá **zápisu** a **WriteLine** zprávy pro **OutputDebugString** a **Debugger.Log** metoda. V sadě Visual Studio to způsobí, že zprávy ladění zobrazí v okně výstupu. **Selhání** a k selhání **Assert** zprávy emitování také k **OutputDebugString** rozhraní API systému Windows a **Debugger.Log** metoda a příčina zprávu pole jako zobrazí. Toto chování je výchozí chování pro **ladění** a **trasování** zprávy, protože **DefaultTraceListener** je automaticky zahrnuta v každé `Listeners` kolekce a je automaticky zahrnuty pouze naslouchací proces.  
   
 -   A <xref:System.Diagnostics.ConsoleTraceListener> směruje trasování nebo výstup do standardního výstupního nebo standardní chybový proud ladění.  
   

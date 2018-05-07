@@ -1,14 +1,6 @@
 ---
-title: "EnumerateCLRs – funkce"
-ms.custom: 
+title: EnumerateCLRs – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - EnumerateCLRs
 api_location:
@@ -24,17 +16,13 @@ helpviewer_keywords:
 ms.assetid: f8d50cb3-ec4f-4529-8fe3-bd61fd28e13c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6539b471d6a3075bb4cec69b382cf7702a439d5a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 56f7f36baa71a3e58dfa3314ebe06a018cfd3468
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumerateclrs-function"></a>EnumerateCLRs – funkce
 Poskytuje mechanismus pro vytvoření výčtu CLRs v procesu.  

@@ -1,24 +1,12 @@
 ---
-title: "Počet odmítnutých zpráv zařazených do fronty za sekundu"
-ms.custom: 
+title: Počet odmítnutých zpráv zařazených do fronty za sekundu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 77ea9aa3-b9e2-4a1d-a65e-5ca115ba0567
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b413c5076e41990a794b9aa33efd371480835353
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31091c6c9dd04ecd7294f69f9611f25e401df724
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queued-rejected-messages-per-second"></a>Počet odmítnutých zpráv zařazených do fronty za sekundu
 Název čítače: Počet odmítnutých za sekundu zpráv zařazených do fronty.  

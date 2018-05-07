@@ -1,31 +1,17 @@
 ---
-title: "Rozšíření značek připojení"
-ms.custom: 
+title: Rozšíření značek připojení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Binding
 helpviewer_keywords:
 - Binding markup extensions [WPF]
 - XAML [WPF], Binding markup extension
 ms.assetid: 83d6e2a4-1b0c-4fc8-bd96-b5e98800ab63
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cc6a0616c6b462ffe6aca0a9adf27ac2ac7b7828
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8fc860f52f8fde2aed3cae224c05bbcf08b864d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="binding-markup-extension"></a>Rozšíření značek připojení
 Odkládat údaje hodnotu vlastnosti na hodnotu vázané na data, vytvoření objektu zprostředkující výraz a interpretace kontextu dat, která se vztahuje k elementu a jeho vazby v době běhu.  
@@ -125,15 +111,15 @@ Odkládat údaje hodnotu vlastnosti na hodnotu vázané na data, vytvoření obj
  Datová vazba na základní úrovni popisující není zahrnutý v tomto tématu. V tématu [datové vazby přehled](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Data.MultiBinding>a <xref:System.Windows.Data.PriorityBinding> nepodporují [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] rozšíření syntaxe. Místo toho použijte vlastnost elementy. V tématu referenční témata pro <xref:System.Windows.Data.MultiBinding> a <xref:System.Windows.Data.PriorityBinding>.  
+>  <xref:System.Windows.Data.MultiBinding> a <xref:System.Windows.Data.PriorityBinding> nepodporují [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] rozšíření syntaxe. Místo toho použijte vlastnost elementy. V tématu referenční témata pro <xref:System.Windows.Data.MultiBinding> a <xref:System.Windows.Data.PriorityBinding>.  
   
  Hodnoty Boolean pro jazyk XAML se malá a velká písmena. Můžete například zadat buď `{Binding NotifyOnValidationError=true}` nebo `{Binding NotifyOnValidationError=True}`.  
   
  Vazby, které zahrnují ověření dat jsou obvykle určené explicitního `Binding` element spíš než jako `{Binding ...}` výraz a nastavení <xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A> nebo <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> ve výrazu neobvyklé. Důvodem je, že vlastnost doprovodné <xref:System.Windows.Data.Binding.ValidationRules%2A> nelze snadno nastavit ve formuláři výraz. Další informace najdete v tématu [ověření vazby implementace](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md).  
   
- `Binding`je rozšíření značek. Rozšíření značek jsou obvykle implementované při požadavku, abyste se vyhnuli hodnoty atributu být než literálových hodnot nebo obslužná rutina názvy a požadavek je globální více než převaděčů typů s atributy na určité typy nebo vlastnosti. Všechna rozšíření značek v XAML použití `{` a `}` znaků v jejich syntaxi atributů, což je konvence, podle kterého XAML procesor rozpozná, že rozšíření značek musí zpracovat obsahu řetězce. Další informace najdete v tématu [rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ `Binding` je rozšíření značek. Rozšíření značek jsou obvykle implementované při požadavku, abyste se vyhnuli hodnoty atributu být než literálových hodnot nebo obslužná rutina názvy a požadavek je globální více než převaděčů typů s atributy na určité typy nebo vlastnosti. Všechna rozšíření značek v XAML použití `{` a `}` znaků v jejich syntaxi atributů, což je konvence, podle kterého XAML procesor rozpozná, že rozšíření značek musí zpracovat obsahu řetězce. Další informace najdete v tématu [rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
- `Binding`je v tom, že rozšíření netypických značek <xref:System.Windows.Data.Binding> třídu, která implementuje funkce rozšíření pro implementaci XAML pro WPF také implementuje několik dalších metod a vlastností, které nesouvisí se XAML. Jiní členové jsou určené aby <xref:System.Windows.Data.Binding> více univerzální a nezávislý třídu, která může vyřešit mnoho scénáře datových vazeb kromě funguje jako rozšíření značek XAML.  
+ `Binding` je v tom, že rozšíření netypických značek <xref:System.Windows.Data.Binding> třídu, která implementuje funkce rozšíření pro implementaci XAML pro WPF také implementuje několik dalších metod a vlastností, které nesouvisí se XAML. Jiní členové jsou určené aby <xref:System.Windows.Data.Binding> více univerzální a nezávislý třídu, která může vyřešit mnoho scénáře datových vazeb kromě funguje jako rozšíření značek XAML.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Data.Binding>  

@@ -1,26 +1,14 @@
 ---
 title: Migrace aplikace pro Windows Store do .NET Native
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ce23d66f79f94af74250cff137499f6c8b1582ac
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a316cd8ed82f9833b23fe313b8f4c4903bd0a433
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] poskytuje statické kompilace aplikací ve službě Windows Store nebo na počítači pro vývojáře. Tím se liší od dynamická kompilace provádí kompilátoru v běhu (JIT) pro aplikace Windows Store nebo [generátor (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) na zařízení. Bez ohledu rozdíly [!INCLUDE[net_native](../../../includes/net-native-md.md)] pokusí zachování kompatibility s [aplikace .NET pro Windows Store](http://msdn.microsoft.com/library/windows/apps/br230302.aspx). Ve většině případů věcí, které fungují v aplikacích .NET pro Windows Store se taky pracovat s [!INCLUDE[net_native](../../../includes/net-native-md.md)].  Ale v některých případech se můžete setkat s nějaké změny. Tento dokument popisuje tyto rozdíly mezi standardní aplikace .NET pro Windows Store a [!INCLUDE[net_native](../../../includes/net-native-md.md)] v těchto oblastech:  
@@ -110,7 +98,7 @@ ms.lasthandoff: 03/26/2018
   
 -   [HttpClient](#HttpClient)  
   
--   [Interop](#Interop)  
+-   [Zprostředkovatel komunikace s objekty](#Interop)  
   
 -   [Nepodporované rozhraní API](#APIs)  
   
@@ -180,7 +168,7 @@ ms.lasthandoff: 03/26/2018
   
  Některé další chování rozdíly jsou popsané v následující témata.  
   
- **Proxy**  
+ **Proxy server**  
   
  [HttpBaseProtocolFilter](http://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třída nepodporuje konfiguraci nebo přepsání proxy serveru na základě požadavků.  To znamená, že všechny požadavky na [!INCLUDE[net_native](../../../includes/net-native-md.md)] používat systém nakonfigurován server proxy server nebo žádný proxy server, v závislosti na hodnotě <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> vlastnost.  V aplikacích .NET pro Windows Store je definované proxy serveru <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> vlastnost.  Na [!INCLUDE[net_native](../../../includes/net-native-md.md)], nastavení <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> hodnotu jinou než `null` vyvolá <xref:System.PlatformNotSupportedException> výjimka.  <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType> Vlastnost vrátí `false` na [!INCLUDE[net_native](../../../includes/net-native-md.md)], zatímco vrátí `true` v standardní aplikace rozhraní .NET Framework pro Windows Store.  
   

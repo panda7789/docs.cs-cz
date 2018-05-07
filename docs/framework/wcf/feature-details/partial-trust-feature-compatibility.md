@@ -1,38 +1,24 @@
 ---
 title: Kompatibilita funkcí s částečnou důvěryhodností
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-caps.latest.revision: 75
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 20cb6c1cd7a3b06b57bce02d5c3caacc7e2e42b7
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: f8c63079161e6be16e2d36f721aeb98937f72097
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporuje omezenou podmnožinou funkce při spuštění v prostředí s částečně důvěryhodné. Funkce podporované v částečné důvěryhodnosti jsou uspořádaná kolem konkrétní sadu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
+Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkcí v prostředí částečně důvěryhodné. Funkce podporované v částečné důvěryhodnosti jsou uspořádaná kolem konkrétní sadu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
   
 ## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje podmnožinu funkcí v aplikacích spuštěných v některé z následujících sad standardní pojmenované oprávnění:  
+ WCF podporuje podmnožinu funkcí v aplikacích spuštěných v některé z následujících sad standardní pojmenované oprávnění:  
   
 -   Střední oprávnění vztahu důvěryhodnosti  
   
 -   Oprávnění pro zónu Internetu  
   
- Pokus o použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v částečně důvěryhodné aplikace s víc omezující oprávnění, které může vést k bezpečnostním výjimkám za běhu.  
+ Pokus o použití WCF v částečně důvěryhodné aplikace s víc omezující oprávnění může vést k bezpečnostním výjimkám za běhu.  
   
 ## <a name="contracts"></a>Kontrakty  
  Kontrakty se vztahují následující omezení při spuštění v částečné důvěryhodnosti:  
@@ -66,7 +52,7 @@ ms.lasthandoff: 04/27/2018
  Kodéry zpráva přenosu optimalizace mechanismus (MTOM) nejsou podporovány.  
   
 ### <a name="security"></a>Zabezpečení  
- Částečně důvěryhodné aplikace můžou používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]na úrovni přenosu funkce zabezpečení pro zabezpečení komunikace. Zabezpečení na úrovni zpráva není podporováno. Konfigurace vazeb pro použití zprávy úroveň zabezpečení za následek výjimku za běhu.  
+ Částečně důvěryhodné aplikace můžete použít funkce zabezpečení na úrovni přenosu pro WCF pro zabezpečení komunikace. Zabezpečení na úrovni zpráva není podporováno. Konfigurace vazeb pro použití zprávy úroveň zabezpečení za následek výjimku za běhu.  
   
 ### <a name="unsupported-bindings"></a>Nepodporované vazby  
  Vazby, které používají spolehlivé zasílání zpráv, transakce nebo zabezpečení na úrovni zpráv nejsou podporovány.  
@@ -76,7 +62,7 @@ ms.lasthandoff: 04/27/2018
   
 -   Všechny serializovatelný `[DataContract]` typy musí být `public`.  
   
--   Všechny serializovatelný `[DataMember]` polí a vlastností v `[DataContract]` typ musí být veřejné a pro čtení a zápis. Serializace a deserializace [jen pro čtení](http://go.microsoft.com/fwlink/?LinkID=98854) polí není podporováno při spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v aplikaci částečně důvěryhodné.  
+-   Všechny serializovatelný `[DataMember]` polí a vlastností v `[DataContract]` typ musí být veřejné a pro čtení a zápis. Serializace a deserializace [jen pro čtení](http://go.microsoft.com/fwlink/?LinkID=98854) polí není podporováno při spuštění WCF v aplikaci částečně důvěryhodné.  
   
 -   `[Serializable]` /ISerializable programovací model není podporována v prostředí s částečnou důvěryhodností.  
   
@@ -89,7 +75,7 @@ ms.lasthandoff: 04/27/2018
 ### <a name="collection-types"></a>Typy kolekcí  
  Některé typy kolekcí obě implementovat <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.Collections.IEnumerable>. Příklady typů, které implementují <xref:System.Collections.Generic.ICollection%601>. Můžete implementovat tyto typy `public` implementace `GetEnumerator()`a explicitní implementaci `GetEnumerator()`. V takovém případě <xref:System.Runtime.Serialization.DataContractSerializer> vyvolá `public` implementace `GetEnumerator()`a ne explicitní implementace `GetEnumerator()`. Pokud žádná z `GetEnumerator()` implementace jsou `public` a všechny explicitní implementace, jsou pak <xref:System.Runtime.Serialization.DataContractSerializer> vyvolá `IEnumerable.GetEnumerator()`.  
   
- Pro kolekci typů při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] běží v prostředí s částečnou důvěryhodností, pokud žádná z `GetEnumerator()` implementace jsou `public`, nebo žádná z nich jsou explicitní implementace rozhraní a pak je vyvolána výjimka zabezpečení.  
+ Pro typy kolekcí, když WCF běží v prostředí s částečnou důvěryhodností, pokud žádná z `GetEnumerator()` implementace jsou `public`, nebo žádná z nich jsou explicitní implementace rozhraní a pak je vyvolána výjimka zabezpečení.  
   
 ### <a name="netdatacontractserializer"></a>NetDataContractSerializer  
  Mnoho typů kolekce rozhraní .NET Framework jako <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ArrayList>, <xref:System.Collections.Generic.Dictionary%602> a <xref:System.Collections.Hashtable> nejsou podporovány <xref:System.Runtime.Serialization.NetDataContractSerializer> v částečné důvěryhodnosti. Tyto typy mají `[Serializable]` atribut nastaven, a jak jsme uvedli dříve v části serializace, tento atribut není podporován v částečné důvěryhodnosti. <xref:System.Runtime.Serialization.DataContractSerializer> Zpracovává kolekce zvláštním způsobem a je proto nemůže získat kolem tohoto omezení, ale <xref:System.Runtime.Serialization.NetDataContractSerializer> nemá žádný takový mechanismus pro toto omezení obejít.  
@@ -108,7 +94,7 @@ ms.lasthandoff: 04/27/2018
  Příklad společné chování, naleznete v části [postup: uzamčení mimo provoz koncovými body v podnikové síti](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
   
 ## <a name="configuration"></a>Konfigurace  
- S jednou výjimkou mohou načíst pouze částečně důvěryhodného kódu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurační oddíly funkce v místní `app.config` souboru. Načíst [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace částech tento odkaz [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ConfigurationPermission(Unrestricted) vyžaduje oddílů v souboru machine.config nebo v kořenovém souboru web.config. Bez tohoto oprávnění, odkazuje na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurační oddíly (chování, vazby) mimo místní konfigurační soubor výsledky v výjimku při načtení konfigurace.  
+ S jednou výjimkou můžete částečně důvěryhodného kódu, načtěte jenom WCF konfigurační oddíly funkce v místní `app.config` souboru. Soubor web.config se načíst WCF konfiguračních oddílů, které odkazují na části WCF v souboru machine.config nebo v kořenové vyžaduje ConfigurationPermission(Unrestricted). Bez tohoto oprávnění odkazuje na WCF konfigurační oddíly (chování, vazby) mimo místní konfigurační soubor výsledky v výjimku při načtení konfigurace.  
   
  Jedinou výjimkou je konfigurace známé typ pro serializaci, jak je popsáno v části serializace v tomto tématu.  
   
@@ -121,7 +107,7 @@ ms.lasthandoff: 04/27/2018
  Protokolování událostí omezená je podporována v částečné důvěryhodnosti. Pouze služby Aktivace chyb a selhání protokolování trasování/zprávy se zaznamenávají do protokolu událostí. Maximální počet událostí, které mohou být protokolovány procesem je 5, aby se zabránilo nadměrnému zprávy zápis do protokolu událostí.  
   
 ### <a name="message-logging"></a>Protokolování zpráv  
- Zpráva protokolování nelze použít v případě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] běží v prostředí s částečnou důvěryhodností. Pokud je povoleno v částečné důvěryhodnosti, neselže aktivace služby, ale je zaznamenána žádná zpráva.  
+ Protokolování zpráv nefunguje, pokud WCF běží v prostředí s částečnou důvěryhodností. Pokud je povoleno v částečné důvěryhodnosti, neselže aktivace služby, ale je zaznamenána žádná zpráva.  
   
 ### <a name="tracing"></a>Trasování  
  Funkce s omezeným přístupem trasování je k dispozici při spuštění v prostředí s částečnou důvěryhodností. V <`listeners`> elementu v konfiguračním souboru, jsou pouze typy, které můžete přidat <xref:System.Diagnostics.TextWriterTraceListener> a nové <xref:System.Diagnostics.EventSchemaTraceListener>. Použijte standardní <xref:System.Diagnostics.XmlWriterTraceListener> může mít za následek protokoly neúplné nebo není správný.  
@@ -151,13 +137,13 @@ ms.lasthandoff: 04/27/2018
  Při použití trasování v prostředí s částečnou důvěryhodností, ujistěte se, že aplikace má dostatečná oprávnění k uložení výstup naslouchací proces trasování. Například při použití <xref:System.Diagnostics.TextWriterTraceListener> k zápisu výstupu trasování do textového souboru, zkontrolujte, zda má aplikace potřebné FileIOPermission potřeba úspěšně zapisovat do souboru trasování.  
   
 > [!NOTE]
->  Aby nedošlo k zaplavení trasovací soubory s duplicitní chybami [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zakáže trasování prostředku nebo akce po prvním selhání zabezpečení. Prvním je proveden pokus o přístup k prostředku nebo provedení akce není jeden trasování výjimky pro přístup každý prostředek, který selhal.  
+>  Aby nedošlo k zaplavení trasovací soubory s duplicitní chyby, WCF zakáže trasování prostředku nebo akce po prvním selhání zabezpečení. Prvním je proveden pokus o přístup k prostředku nebo provedení akce není jeden trasování výjimky pro přístup každý prostředek, který selhal.  
   
 ## <a name="wcf-service-host"></a>Hostitel služby WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Hostitel služby nepodporuje částečnou důvěryhodností. Pokud chcete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v částečné důvěryhodnosti, nepoužívejte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] šablona projektu knihovny služby v sadě Visual Studio k vytvoření služby. Místo toho vytvořte nový web v sadě Visual Studio tak, že zvolíte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webu šablony služby, která může hostovat službu na webovém serveru, na kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] částečné důvěryhodnosti je podporována.  
+ Hostitel služby WCF nepodporuje částečnou důvěryhodností. Pokud chcete použít službu WCF v částečné důvěryhodnosti, nepoužívejte šablona projektu knihovny služby WCF v sadě Visual Studio k vytvoření služby. Místo toho vytvořte nový web v sadě Visual Studio výběrem šablony webu služby WCF, která může hostovat službu na webovém serveru, které podporují WCF částečnou důvěryhodností.  
   
 ## <a name="other-limitations"></a>Další omezení  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je obecně omezený na aspekty zabezpečení při jeho způsobené hostitelskou aplikaci. Například pokud [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je hostován v aplikace prohlížeče XAML (XBAP), je předmětem XBAP omezení, jak je popsáno v [zabezpečení systému Windows Presentation Foundation částečné důvěryhodnosti](http://go.microsoft.com/fwlink/?LinkId=89138).  
+ WCF je obecně omezený na aspekty zabezpečení při jeho způsobené hostitelskou aplikaci. Například pokud je WCF hostovaná v aplikace prohlížeče XAML (XBAP), je předmětem XBAP omezení, jak je popsáno v [zabezpečení systému Windows Presentation Foundation částečné důvěryhodnosti](http://go.microsoft.com/fwlink/?LinkId=89138).  
   
  Při spuštění indigo2 v prostředí s částečnou důvěryhodností nejsou povoleny tyto další funkce:  
   
@@ -167,10 +153,10 @@ ms.lasthandoff: 04/27/2018
   
 -   Čítače výkonu  
   
- Použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce, které nejsou podporované v prostředí s částečnou důvěryhodností může mít za následek výjimky za běhu.  
+ Použití funkcí WCF, které nejsou podporované v prostředí s částečnou důvěryhodností může mít za následek výjimky za běhu.  
   
 ## <a name="unlisted-features"></a>Neuvedené funkce  
- Nejlepší způsob, jak zjistit, že je část informace nebo akce není dostupná, když je nainstalován v prostředí s částečnou důvěryhodností k pokusu o přístup k prostředku nebo provádět akce uvnitř `try` blok a potom `catch` selhání. Aby nedošlo k zaplavení trasovací soubory s duplicitní chybami [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zakáže trasování prostředku nebo akce po prvním selhání zabezpečení. Prvním je proveden pokus o přístup k prostředku nebo provedení akce není jeden trasování výjimky pro přístup každý prostředek, který selhal.  
+ Nejlepší způsob, jak zjistit, že je část informace nebo akce není dostupná, když je nainstalován v prostředí s částečnou důvěryhodností k pokusu o přístup k prostředku nebo provádět akce uvnitř `try` blok a potom `catch` selhání. Aby nedošlo k zaplavení trasovací soubory s duplicitní chyby, WCF zakáže trasování prostředku nebo akce po prvním selhání zabezpečení. Prvním je proveden pokus o přístup k prostředku nebo provedení akce není jeden trasování výjimky pro přístup každý prostředek, který selhal.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  

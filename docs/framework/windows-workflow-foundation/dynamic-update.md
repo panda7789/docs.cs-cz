@@ -1,23 +1,12 @@
 ---
-title: "Dynamická aktualizace"
-ms.custom: 
+title: Dynamická aktualizace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8b6ef19b-9691-4b4b-824c-3c651a9db96e
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee6b228d729958e9e5f14cadb1e378a2944c4f85
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfd10e4b93351c607ef270487a12bec19ded4ca8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dynamic-update"></a>Dynamická aktualizace
 Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři aplikace k aktualizaci definice pracovního postupu instance trvalou pracovního postupu. To může být implementace oprava chyb, nové požadavky, nebo aby bylo možné ošetřit neočekávané změny. Toto téma obsahuje přehled funkcí Dynamická aktualizace byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
@@ -38,7 +27,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
   
  Toto téma obsahuje přehled procesu dynamické aktualizace pro přidání nové aktivity na trvalou instanci kompilované Xaml pracovního postupu.  
   
-###  <a name="Prepare"></a>Příprava definice pracovního postupu pro dynamické aktualizace  
+###  <a name="Prepare"></a> Příprava definice pracovního postupu pro dynamické aktualizace  
  Prvním krokem v procesu dynamické aktualizace je příprava definice pracovního postupu požadované pro aktualizaci. To se provádí volání <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType> metoda a předávání definice pracovního postupu, který chcete upravit. Tato metoda ověří a potom provede stromu pracovního postupu k identifikaci všechny objekty, například veřejné a proměnné, které je třeba označit tak, že se má porovnat později s definice upravené pracovního postupu. Po jejím dokončení, je stromu pracovního postupu klonovat a připojené k původní definice pracovního postupu. Při aktualizaci mapy je aktualizovaná verze definice pracovního postupu se porovná se původní definice pracovního postupu a mapy aktualizace bude vytvořena podle rozdíly.  
   
  Příprava pracovního postupu Xaml pro dynamické aktualizace může být načten do <xref:System.Activities.ActivityBuilder>a potom <xref:System.Activities.ActivityBuilder> je předána do <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType>.  
@@ -69,7 +58,7 @@ DynamicUpdateServices.PrepareForUpdate(ab);
 > [!NOTE]
 >  Chcete-li stáhnout ukázkový kód, který doprovází toto téma, přečtěte si téma [dynamická aktualizace ukázkový kód](http://go.microsoft.com/fwlink/?LinkId=227905).  
   
-###  <a name="Update"></a>Aktualizace definice pracovního postupu tak, aby odrážela požadované změny  
+###  <a name="Update"></a> Aktualizace definice pracovního postupu tak, aby odrážela požadované změny  
  Jakmile definice pracovního postupu je připravena pro aktualizace, můžete provést požadované změny. Můžete přidat nebo odebrat aktivity, přidat, přesunout nebo odstranit veřejné proměnné, přidat nebo odebrat argumenty a provést změny podpis delegáti aktivity. Nelze odebrat aktivitu spuštěné ani změnit podpis spuštěné delegáta. Tyto změny pomocí kódu, nebo v Návrháři znovu hostovaných pracovních postupů. V následujícím příkladu, vlastní `VerifyAppraisal` aktivity se přidá do pořadí, které tvoří text `MortgageWorkflow` z předchozího příkladu.  
   
 ```csharp  
@@ -87,7 +76,7 @@ Sequence s = ab.Implementation as Sequence;
 s.Activities.Insert(2, va);  
 ```  
   
-###  <a name="Create"></a>Vytvoření mapy aktualizace  
+###  <a name="Create"></a> Vytvoření mapy aktualizace  
  Jakmile připravené pro aktualizaci definice pracovního postupu byla změněna, lze vytvořit mapy aktualizace. K vytvoření mapy dynamické aktualizace, <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.CreateUpdateMap%2A?displayProperty=nameWithType> metoda je volána. Tento příkaz vrátí <xref:System.Activities.DynamicUpdate.DynamicUpdateMap> obsahující informace o modulu runtime je potřeba upravit instanci trvalou pracovního postupu tak, aby může být načtena a pokračuje s novou definici pracovního postupu. V následujícím příkladu se vytvoří dynamické mapy pro upravenou `MortgageWorkflow` definice z předchozího příkladu.  
   
 ```csharp  
@@ -116,7 +105,7 @@ XamlServices.Save(xw, ab);
 sw.Close();  
 ```  
   
-###  <a name="Apply"></a>Použít aktualizace mapy pro instance požadované trvalou pracovních postupů  
+###  <a name="Apply"></a> Použít aktualizace mapy pro instance požadované trvalou pracovních postupů  
  Použití map aktualizace lze provést kdykoli po jeho vytvoření. Je možné ji provést, hned pomocí <xref:System.Activities.DynamicUpdate.DynamicUpdateMap> instanci, která vrátila <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.CreateUpdateMap%2A?displayProperty=nameWithType>, nebo je možné ji provést, později pomocí uložené kopie mapy aktualizace. Aktualizace instance pracovního postupu, načíst do <xref:System.Activities.WorkflowApplicationInstance> pomocí <xref:System.Activities.WorkflowApplication.GetInstance%2A?displayProperty=nameWithType>. Dále vytvořte <xref:System.Activities.WorkflowApplication> pomocí definice aktualizované pracovního postupu a požadovanou <xref:System.Activities.WorkflowIdentity>. To <xref:System.Activities.WorkflowIdentity> může být jiný než ten, který byl použitý k zachování původní pracovního postupu a většinou je, aby bylo zřejmé, že trvalou instanci se změnila. Jednou <xref:System.Activities.WorkflowApplication> je vytvořen, je načten pomocí přetížení <xref:System.Activities.WorkflowApplication.Load%2A?displayProperty=nameWithType> , která má <xref:System.Activities.DynamicUpdate.DynamicUpdateMap>a potom pomocí volání uvolněna z <xref:System.Activities.WorkflowApplication.Unload%2A?displayProperty=nameWithType>. To platí dynamická aktualizace a přetrvává k instanci pracovního postupu aktualizované.  
   
 ```csharp  

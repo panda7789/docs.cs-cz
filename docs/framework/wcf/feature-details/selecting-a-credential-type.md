@@ -1,33 +1,19 @@
 ---
 title: Výběr typu pověření
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-caps.latest.revision: 25
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ae5eb9a10f438f1bb76c51c3c9da68273d94ab57
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 756017462ccaf8a555b0634e8a43cfdd3bc63d32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
-*Přihlašovací údaje* jsou data [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které government problémy k prokázání přístupem v zemi nebo oblasti. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], přihlašovací údaje mohou mít mnoho forem, jako je například uživatelské jméno tokeny a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
+*Přihlašovací údaje* jsou data Windows Communication Foundation (WCF) používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které government problémy k prokázání přístupem v zemi nebo oblasti. Ve službě WCF přihlašovací údaje mohou mít mnoho forem, jako je například uživatelské jméno tokeny a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají ve WCF a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
   
  V mnoha jiných zemí a oblastí licence ovladače je příkladem pověření. Licence obsahuje data, která představuje identitu uživatele a možnosti. Obsahuje důkaz vlastnictví ve formě obrázku vlastník. Licence je vydán důvěryhodnou autoritou, většinou vládních oddělení licencování. Licence je zapečetěná a může obsahovat hologram, zobrazující, že nebyla manipulováno nebo padělat.  
   
- Prezentace pověření zahrnuje prezentací data a ověření vlastní data. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje celou řadu typů přihlašovacích údajů při přepravě a zpráva úrovně zabezpečení. Představte si třeba dva typy podporovaných v pověření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
+ Prezentace pověření zahrnuje prezentací data a ověření vlastní data. WCF podporuje celou řadu typů přihlašovacích údajů při přepravě a zpráva úrovně zabezpečení. Představte si třeba dva typy přihlašovacích údajů, které jsou podporovány ve WCF: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
   
  Pro název přihlašovací údaje uživatele uživatelské jméno představuje deklarovaná identita a heslo zajišťuje důkazy o u sebe. Jako důvěryhodnou autoritu v tomto případě je systém, který ověří uživatelské jméno a heslo.  
   
@@ -41,7 +27,7 @@ ms.lasthandoff: 04/30/2018
 |Žádné|Určuje, že klient nemusí k dispozici žádné pověření. Výsledkem anonymním klientem.|  
 |Základní|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu HTTP: Basic a ověřování algoritmem Digest](http://go.microsoft.com/fwlink/?LinkID=88313).|  
 |Ověřování algoritmem Digest|Určuje, ověřování hodnotou hash pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu HTTP: Basic a ověřování algoritmem Digest](http://go.microsoft.com/fwlink/?LinkID=88313).|  
-|NTLM|Určuje NT LAN Manager (NTLM) authentication. To se používá, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Můžete také zakázat jeho použití jako zálohu nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, které příčiny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
+|NTLM|Určuje NT LAN Manager (NTLM) authentication. To se používá, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Můžete také zakázat jeho použití jako zálohu nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, což způsobí, že WCF aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
 |Windows|Určuje ověřování systému Windows. Chcete-li zadat pouze protokol Kerberos v doméně systému Windows, nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false` (výchozí hodnota je `true`).|  
 |certifikát|Provede ověření klienta pomocí certifikátu X.509.|  
 |Heslo|Uživatel musí zadat uživatelské jméno a heslo. Ověření dvojici jméno a heslo uživatele pomocí ověřování systému Windows nebo jiné vlastní řešení.|  
@@ -53,17 +39,17 @@ ms.lasthandoff: 04/30/2018
 |-------------|-----------------|  
 |Žádné|Určuje, že klient nemusí pověření k dispozici. Výsledkem anonymním klientem.|  
 |Windows|Umožňuje výměny zpráv protokolu SOAP proběhnout v kontextu zabezpečení vytvořených pomocí pověření systému Windows.|  
-|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s názvem pověření uživatele. Všimněte si, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny kryptografické operace s uživatelskými jmény, například generování podpis nebo šifrování dat není povoleno. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zajišťuje, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
+|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s názvem pověření uživatele. Všimněte si, že všechny kryptografické operace s uživatelskými jmény, například generování podpis nebo šifrování dat není povoleno WCF. WCF zajistí, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
 |certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu X.509.|  
 |Vydané tokenu|Vlastní token typ nakonfigurovaný podle zásady zabezpečení. Výchozí typ tokenu je zabezpečení kontrolní výrazy Markup Language (SAML). Token je vydaný služby tokenu zabezpečení. Další informace najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>Model vyjednávání pověření služby  
  *Vyjednávání* je proces vytvoření vztahu důvěryhodnosti mezi sebou klient a služba nahrazením přihlašovací údaje. Proces je provést opakované mezi klientem a službu, která zveřejnit pouze informace potřebné pro další krok v procesu vyjednávání. V praxi konečný výsledek je doručování služby pověření klienta, který se má použít v další operacích.  
   
- S jednou výjimkou ve výchozím nastavení vazby poskytované systémem v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyjednávání přihlašovací údaje služby automaticky při použití zabezpečení na úrovni zpráv. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>, který není povolen zabezpečení ve výchozím nastavení.) Chcete-li toto chování zakázat, přečtěte si téma <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> vlastnosti.  
+ S jednou výjimkou ve výchozím nastavení vazby poskytované systémem ve WCF vyjednávat přihlašovací údaje služby automaticky při použití zabezpečení na úrovni zpráv. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>, který není povolen zabezpečení ve výchozím nastavení.) Chcete-li toto chování zakázat, přečtěte si téma <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> vlastnosti.  
   
 > [!NOTE]
->  Při použití zabezpečení SSL v rozhraní .NET Framework 3.5 nebo novější, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta používá k ověřování řetězu certifikátů v zprostředkující certifikáty v úložišti certifikátů i zprostředkující certifikáty obdržel během vyjednávání SSL certifikát služby. Rozhraní .NET framework 3.0 používá jenom nainstalovaná v místním úložišti certifikátů zprostředkující certifikáty.  
+>  Použijete zabezpečení SSL v rozhraní .NET Framework 3.5 a později klienta WCF pomocí zprostředkující certifikáty v úložišti certifikátů i zprostředkující certifikáty obdržel během vyjednávání SSL k ověření řetězu certifikátů se službou provést certifikát. Rozhraní .NET framework 3.0 používá jenom nainstalovaná v místním úložišti certifikátů zprostředkující certifikáty.  
   
 #### <a name="out-of-band-negotiation"></a>Out-of-Band vyjednávání  
  Pokud je zakázáno automatické vyjednávání, přihlašovací údaje služby musí být zřízená na straně klienta před odesláním všechny zprávy ve službě. To je také označován jako *out-of-band* zřizování. Například pokud typ zadané přihlašovací údaje je certifikát, a je zakázáno automatické vyjednávání, klient musí požádejte vlastníka služby přijímat a nainstalujte certifikát na počítači se systémem klientské aplikace. To lze provést, například, pokud chcete výhradně řídit, které klienti mají přístup k službě ve scénáři business-to-business. Tento out z – vzdálené vyjednávání lze provést v e-mailu a certifikát X.509 je uložen v úložišti certifikátů systému Windows, pomocí nástroje, jako je modul snap-in Certifikáty konzoly Microsoft Management Console (MMC).  
@@ -90,7 +76,7 @@ ms.lasthandoff: 04/30/2018
  Pokud klient Určuje platné uživatelské jméno a heslo, že pověření se používá k ověření klienta. Jinak jsou použita pověření aktuálního přihlášeného uživatele.  
   
 ### <a name="setting-client-credentials"></a>Nastavení přihlašovacích údajů klienta  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], klientské aplikace používají [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta se můžete připojit ke službám. Každý klient je odvozena z <xref:System.ServiceModel.ClientBase%601> třída a <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost na klientovi umožňuje specifikaci různých hodnot pověření klienta.  
+ Ve službě WCF klienta aplikací připojit ke službám pomocí klienta WCF. Každý klient je odvozena z <xref:System.ServiceModel.ClientBase%601> třída a <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost na klientovi umožňuje specifikaci různých hodnot pověření klienta.  
   
 #### <a name="setting-a-certificate"></a>Nastavení certifikátu  
  Chcete-li zřídit službu společně s certifikátem X.509, který se používá k ověření klienta pro službu, použijte <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential> – třída.  
@@ -98,7 +84,7 @@ ms.lasthandoff: 04/30/2018
 ## <a name="how-client-credentials-are-used-to-authenticate-a-client-to-the-service"></a>Jak pověření klienta slouží k ověření klienta ke službě  
  Poskytuje informace o pověření klienta vyžadované pro komunikaci se službou buď pomocí <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost nebo <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnost. Zabezpečený kanál používá tuto informaci k ověřování klienta ke službě. Ověřování se provádí prostřednictvím jednoho ze dvou režimů:  
   
--   Pověření klienta jsou použity jednou před odesláním první zprávu pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] instanci klienta vytvoření kontextu zabezpečení. Všechny zprávy aplikace jsou pak zabezpečené skrze kontext zabezpečení.  
+-   Pověření klienta jsou použity jednou před odesláním první zprávu pomocí instance klienta WCF vytvoření kontextu zabezpečení. Všechny zprávy aplikace jsou pak zabezpečené skrze kontext zabezpečení.  
   
 -   Pověření klienta slouží k ověření všechny aplikace zprávy odeslané do služby. V takovém případě je mezi klientem a službu navázat žádný kontext.  
   
@@ -106,7 +92,7 @@ ms.lasthandoff: 04/30/2018
  Pokud je použita první metoda, zavedených kontextu je trvale přidružen je identita klienta. To znamená po vytvoření kontext zabezpečení nelze změnit identitu přidruženou ke klientovi.  
   
 > [!IMPORTANT]
->  Je situaci znát při nelze přepnout identity (to znamená, když vytvoření zabezpečení kontext je na výchozí chování). Pokud vytvoříte službu, která komunikuje s druhou služby, identita použitý k otevření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta ke službě druhý nelze změnit. Pokud je povoleno více klientů používat první službu a službu zosobňuje klienti při přístupu ke službě druhý to všechno bude problém. Pokud službu znovu použije stejného klienta pro všechny volající, všechna volání do druhé služby hotovi s identitou první volající, který byl použitý k otevření klienta ke službě druhý. Jinými slovy služba používá identity první klienta pro všechny jeho klienty komunikovat se službou druhý. To může vést ke zvýšení úrovně oprávnění. Pokud není toto chování žádoucí vaší služby, musíte sledovat každou volajícího a vytvořit nového klienta ke službě druhý pro každý odlišné volajícího a zajistit, aby používal službu pouze správné klienta pro správné volající komunikovat se službou druhý.  
+>  Je situaci znát při nelze přepnout identity (to znamená, když vytvoření zabezpečení kontext je na výchozí chování). Pokud vytvoříte službu, která komunikuje s druhou služby, nelze změnit identitu použitý k otevření klienta WCF na službu druhý. Pokud je povoleno více klientů používat první službu a službu zosobňuje klienti při přístupu ke službě druhý to všechno bude problém. Pokud službu znovu použije stejného klienta pro všechny volající, všechna volání do druhé služby hotovi s identitou první volající, který byl použitý k otevření klienta ke službě druhý. Jinými slovy služba používá identity první klienta pro všechny jeho klienty komunikovat se službou druhý. To může vést ke zvýšení úrovně oprávnění. Pokud není toto chování žádoucí vaší služby, musíte sledovat každou volajícího a vytvořit nového klienta ke službě druhý pro každý odlišné volajícího a zajistit, aby používal službu pouze správné klienta pro správné volající komunikovat se službou druhý.  
   
  Další informace o pověření a zabezpečených relací najdete v tématu [důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   

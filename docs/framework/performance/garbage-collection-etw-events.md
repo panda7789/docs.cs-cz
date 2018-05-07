@@ -1,31 +1,21 @@
 ---
-title: "Události Trasování událostí pro Windows kolekci paměti"
-ms.custom: 
+title: Události Trasování událostí pro Windows kolekci paměti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - GC events
 - garbage collection events [.NET Framework]
 - ETW, garbage collection events (CLR)
 ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
-caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 133d48baa9613ea698b6d6a21f0dfe88a798859c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 13f7e935ab999ccc3cd3ea1e308e8d686bed4171
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows kolekci paměti
-<a name="top"></a>Tyto události shromažďovat informace týkající se uvolňování paměti. Mohou pomoci v diagnostice a ladění, včetně určení, jak často uvolňování byla provedena, kolik paměti byl uvolněn při uvolňování paměti a tak dále.  
+<a name="top"></a> Tyto události shromažďovat informace týkající se uvolňování paměti. Mohou pomoci v diagnostice a ladění, včetně určení, jak často uvolňování byla provedena, kolik paměti byl uvolněn při uvolňování paměti a tak dále.  
   
  Tato kategorie se skládá z následujících událostí:  
   
@@ -63,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -75,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|Win: UInt32| *n* Tý uvolňování paměti.|  
+|Počet|Win: UInt32|*n*tý uvolňování paměti.|  
 |Hloubka|Win: UInt32|Generování, jež jsou shromažďována.|  
 |Důvod|Win: UInt32|Proč byla aktivována uvolnění paměti:<br /><br /> 0x0 - přidělení haldy malé objektu.<br /><br /> 0x1 - vyvolané.<br /><br /> 0x2 - nedostatek paměti.<br /><br /> 0x3 - prázdný.<br /><br /> 0x4 - přidělení haldy velkého objektu.<br /><br /> 0x5 – volné místo (pro malé objektu haldy).<br /><br /> 0x6 – volné místo (pro velkého objektu haldy).<br /><br /> 0x7 - vyvolané ale nejsou vynucené jako blokování.|  
 |Typ|Win: UInt32|došlo k blokování uvolňování 0x0 - mimo kolekce paměti na pozadí.<br /><br /> 0x1 – kolekce paměti na pozadí.<br /><br /> 0x2 – uvolňování paměti blokování došlo k chybě během kolekce paměti na pozadí.|  
@@ -89,7 +79,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -101,7 +91,7 @@ ms.lasthandoff: 12/22/2017
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|Win: UInt32| *n* Tý uvolňování paměti.|  
+|Počet|Win: UInt32|*n*tý uvolňování paměti.|  
 |Hloubka|Win: UInt32|Generování, která nebyla shromážděna.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
@@ -113,7 +103,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -148,7 +138,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -175,7 +165,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -198,7 +188,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -216,7 +206,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -234,7 +224,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -258,7 +248,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události:  
   
@@ -276,7 +266,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -304,7 +294,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -322,7 +312,7 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -345,8 +335,8 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
-|`ThreadingKeyword`(0x10000)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -364,8 +354,8 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`GCKeyword`(0x1)|Informativní (4)|  
-|`ThreadingKeyword`(0x10000)|Informativní (4)|  
+|`GCKeyword` (0x1)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   

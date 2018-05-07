@@ -1,20 +1,13 @@
 ---
-title: "Zpracování hodnot null ve výrazech dotazů"
-description: "Postupy: zpracování hodnot null ve výrazech dotazů."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Zpracování hodnot null ve výrazech dotazů
+description: 'Postupy: zpracování hodnot null ve výrazech dotazů.'
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
-ms.openlocfilehash: d16256e31b073a599504ffef6501ed34430a7694
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ecd174462ef51a6dd7b7696abb9e111fc32d9ec7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="handle-null-values-in-query-expressions"></a>Zpracování hodnot null ve výrazech dotazů
 

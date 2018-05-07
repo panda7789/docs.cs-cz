@@ -1,25 +1,16 @@
 ---
-title: "Const – příkaz (Visual Basic)"
+title: Const – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Const
 helpviewer_keywords:
 - Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 720a465f1459b663a1fca2a48856f51762328459
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bb4c524fa5c29efbcbe485fb5e86c8cf0fa432e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="const-statement-visual-basic"></a>Const – příkaz (Visual Basic)
 Deklaruje a definuje jeden nebo více konstanty.  
@@ -44,7 +35,7 @@ Const constantlist
  `constantlist`  
  Požadováno. Seznam konstanty se deklarované v tomto příkazu.  
   
- `constant``[ ,``constant``... ]`  
+ `constant` `[ ,` `constant` `... ]`  
   
  Každý `constant` má následující syntaxe a částí:  
   
@@ -110,10 +101,10 @@ Const constantlist
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Strings.Asc%2A>  
  <xref:Microsoft.VisualBasic.Strings.AscW%2A>  
- [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md)  
- [#Const – direktiva](../../../visual-basic/language-reference/directives/const-directive.md)  
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
- [ReDim – příkaz](../../../visual-basic/language-reference/statements/redim-statement.md)  
+ [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)  
  [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [Konstanty a výčty](../../../visual-basic/programming-guide/language-features/constants-enums/index.md)  
  [Konstanty a výčty](../../../visual-basic/language-reference/constants-and-enumerations.md)  

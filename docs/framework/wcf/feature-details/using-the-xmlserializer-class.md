@@ -1,37 +1,23 @@
 ---
 title: Používání třídy XmlSerializer
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5a628215848d46ec3fe24030dfb1dd55fc3383bf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 72b08a58b8ed62a5db2bb210e73357cb3b5dab8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Chcete-li data v aplikaci do souboru XML, která se přenášejí mezi klienty a službách, procesu označovaného jako serializace můžete použít dvě různé serializace technologie.  
+Windows Communication Foundation (WCF) můžete použít dvě různé serializace technologie Chcete-li data v aplikaci do souboru XML, která se přenášejí mezi klienty a službách, procesu označovaného jako serializace.  
   
 ## <a name="datacontractserializer-as-the-default"></a>DataContractSerializer jako výchozí  
- Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá <xref:System.Runtime.Serialization.DataContractSerializer> třída určená k serializaci datové typy. Tento serializátor podporuje následující typy:  
+ Ve výchozím nastavení používá WCF <xref:System.Runtime.Serialization.DataContractSerializer> třída určená k serializaci datové typy. Tento serializátor podporuje následující typy:  
   
 -   Primitivní typy (pro příklad, celá čísla, řetězce a bajtové pole), a také některé speciální typy, jako například <xref:System.Xml.XmlElement> a <xref:System.DateTime>, které jsou považovány za primitiv.  
   
@@ -45,17 +31,17 @@ ms.lasthandoff: 04/30/2018
   
  Mnoho [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy spadají do poslední dvě kategorie a jsou tedy serializable. Pole Serializovatelné typy jsou také serializable. Úplný seznam najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
   
- <xref:System.Runtime.Serialization.DataContractSerializer>, Použít společně s datové typy kontraktů, je doporučeným způsobem, jak napsat nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Další informace najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ <xref:System.Runtime.Serialization.DataContractSerializer>, Použít společně s datové typy kontraktů, je doporučeným způsobem zápis nových služeb WCF. Další informace najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="when-to-use-the-xmlserializer-class"></a>Kdy použít třídy XmlSerializer  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje také <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby použijte. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad výsledný soubor XML a podporuje mnohem víc schématu XML definice jazyka (XSD) standardní. Také nevyžaduje žádné deklarativní atributy na Serializovatelné typy. Další informace najdete v tématu serializace XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dokumentaci. <xref:System.Xml.Serialization.XmlSerializer> Třída nepodporuje datové typy kontrakt.  
+ Také podporuje WCF <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída není jedinečný pro WCF. Je stejný serializace modul, který [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby použijte. <xref:System.Xml.Serialization.XmlSerializer> Třída podporuje mnoho užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje lepší kontrolu nad výsledný soubor XML a podporuje mnohem víc schématu XML definice jazyka (XSD) standardní. Také nevyžaduje žádné deklarativní atributy na Serializovatelné typy. Další informace najdete v tématu serializace XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dokumentaci. <xref:System.Xml.Serialization.XmlSerializer> Třída nepodporuje datové typy kontrakt.  
   
  Při použití Svcutil.exe nebo **přidat odkaz na službu** funkce v sadě Visual Studio pro generování kódu klienta pro službu třetí strany, nebo pro přístup schématu třetích stran, příslušné serializátor je automaticky vybrána pro vás. Pokud schéma není kompatibilní s <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Xml.Serialization.XmlSerializer> je vybrána.  
   
 ## <a name="manually-switching-to-the-xmlserializer"></a>Ručně přepnutí do třídy XmlSerializer  
  V některých případech může být nutné ručně přepnout <xref:System.Xml.Serialization.XmlSerializer>. K tomu dojde, například v následujících případech:  
   
--   K migraci aplikace z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových služeb [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], možná budete chtít znovu použít existující, <xref:System.Xml.Serialization.XmlSerializer>-smlouvy kompatibilní typy místo vytvoření nové datové typy.  
+-   K migraci aplikace z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby WCF, možná budete chtít znovu použít existující, <xref:System.Xml.Serialization.XmlSerializer>-smlouvy kompatibilní typy místo vytvoření nové datové typy.  
   
 -   Pokud přesnou kontrolu nad XML, který se zobrazí v zprávy je důležité, ale dokumentu webové služby popis Language (WSDL) není k dispozici, například při vytváření služby s typy, které je nutné v souladu s určitým standardizovaných, publikované schéma, je není kompatibilní s objektu DataContractSerializer.  
   
@@ -82,7 +68,7 @@ ms.lasthandoff: 04/30/2018
   
  Serializátor používaný pro službu je nedílnou součástí kontraktu a nelze změnit tak, že vyberete jinou vazbou nebo změnou dalších nastavení konfigurace.  
   
- Další důležité informace o zabezpečení, na které se týkají <xref:System.Xml.Serialization.XmlSerializer> třídy. První, důrazně doporučujeme že jakékoli [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, která používá <xref:System.Xml.Serialization.XmlSerializer> třída je podepsaný s klíčem, který je chráněna před vyzrazením. Toto doporučení platí, když ruční přepínač tak, aby <xref:System.Xml.Serialization.XmlSerializer> provádí a po automatické přepínač provádí (Svcutil.exe, přidat odkaz na službu nebo nástroj podobné). Důvodem je, že <xref:System.Xml.Serialization.XmlSerializer> Serializační stroj podporuje načítání *předem vygeneruje sestavení serializace* tak dlouho, dokud jsou podepsané stejným klíčem jako aplikace. Nepodepsané aplikace je zcela nechráněné z možnost škodlivý sestavení odpovídající očekávaný název sestavení předem vygenerovaná serializace je umístěn ve složce aplikace nebo do globální mezipaměti sestavení. Samozřejmě útočník musí nejprve získat přístup pro zápis do jednoho z těchto dvou umístění k pokusu o tuto akci.  
+ Další důležité informace o zabezpečení, na které se týkají <xref:System.Xml.Serialization.XmlSerializer> třídy. První, důrazně doporučujeme, aby všechny aplikace WCF, která používá <xref:System.Xml.Serialization.XmlSerializer> třída je podepsaný s klíčem, který je chráněna před vyzrazením. Toto doporučení platí, když ruční přepínač tak, aby <xref:System.Xml.Serialization.XmlSerializer> provádí a po automatické přepínač provádí (Svcutil.exe, přidat odkaz na službu nebo nástroj podobné). Důvodem je, že <xref:System.Xml.Serialization.XmlSerializer> Serializační stroj podporuje načítání *předem vygeneruje sestavení serializace* tak dlouho, dokud jsou podepsané stejným klíčem jako aplikace. Nepodepsané aplikace je zcela nechráněné z možnost škodlivý sestavení odpovídající očekávaný název sestavení předem vygenerovaná serializace je umístěn ve složce aplikace nebo do globální mezipaměti sestavení. Samozřejmě útočník musí nejprve získat přístup pro zápis do jednoho z těchto dvou umístění k pokusu o tuto akci.  
   
  Další hrozby, které existuje při každém použití <xref:System.Xml.Serialization.XmlSerializer> souvisí se oprávnění k zápisu. k dočasné složce systému. <xref:System.Xml.Serialization.XmlSerializer> Serializační stroj vytvoří a použije dočasné *sestavení serializace* v této složce. Je třeba si uvědomit, že jakýkoli proces s oprávnění k zápisu do dočasné složky může přepsat tyto sestavení serializace škodlivý kód.  
   
@@ -100,11 +86,11 @@ ms.lasthandoff: 04/30/2018
  <xref:System.ServiceModel.MessageHeaderArrayAttribute> Atribut není podporován při použití <xref:System.Xml.Serialization.XmlSerializer>.  
   
 > [!NOTE]
->  V takovém případě <xref:System.Xml.Serialization.XmlSerializer> následující výjimku, vydané před [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: "nemůže mít element deklarovaný na nejvyšší úrovni schématu `maxOccurs` > 1. Zadejte element obálku pro další pomocí `XmlArray` nebo `XmlArrayItem` místo `XmlElementAttribute`, nebo pomocí styl parametru Wrapped. "  
+>  V takovém případě <xref:System.Xml.Serialization.XmlSerializer> následující výjimku, vydané před WCF: "nemůže mít element deklarovaný na nejvyšší úrovni schématu `maxOccurs` > 1. Zadejte element obálku pro další pomocí `XmlArray` nebo `XmlArrayItem` místo `XmlElementAttribute`, nebo pomocí styl parametru Wrapped. "  
 >   
 >  Pokud se zobrazí takové výjimky, zjistěte, zda platí tato situace.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje <xref:System.Xml.Serialization.SoapIncludeAttribute> a <xref:System.Xml.Serialization.XmlIncludeAttribute> měnící atributů v kontrakty zpráv a operací, pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut místo.  
+ WCF nepodporuje <xref:System.Xml.Serialization.SoapIncludeAttribute> a <xref:System.Xml.Serialization.XmlIncludeAttribute> měnící atributů v kontrakty zpráv a operací, pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut místo.  
   
 ## <a name="types-that-implement-the-ixmlserializable-interface"></a>Typy, které implementují rozhraní IXmlSerializable  
  Typy, které implementují `IXmlSerializable` rozhraní plně podporuje `DataContractSerializer`. <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> Atribut by měl vždy použít pro tyto typy k řízení jejich schématu.  
@@ -125,7 +111,7 @@ ms.lasthandoff: 04/30/2018
   
  Při deserializaci členem datový typ, který implementuje `IXmlSerializable` a definované dříve je typ obsahu, deserializátor umisťuje čtecí modul XML pro element obálku pro člena dat a předá ovládání do <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> metoda. Metoda musí čtení celý elementu, včetně počáteční a koncové značky. Zajistěte, aby vaše `ReadXml` kód zpracovává případě elementu je prázdný. Kromě toho vaší `ReadXml` implementace neměli spoléhat na element obálky se s názvem určitým způsobem. Název je zvolen podle serializátoru, který se může lišit.  
   
- Je povoleno přiřadit `IXmlSerializable` obsah typy polymorphically, například k datům členy typu <xref:System.Object>. Je také povoleno pro instance typu mít hodnotu null. Nakonec je možné použít `IXmlSerializable` typy s objekt grafu zachovávání povoleno a <xref:System.Runtime.Serialization.NetDataContractSerializer>. Všechny tyto funkce vyžadují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] serializátor připojit určité atributy do elementu obálku ("žádné" a "typ" v oboru názvů Instance schématu XML a "Id", "Ref", "Type" a "Sestavení" v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-konkrétní obor názvů).  
+ Je povoleno přiřadit `IXmlSerializable` obsah typy polymorphically, například k datům členy typu <xref:System.Object>. Je také povoleno pro instance typu mít hodnotu null. Nakonec je možné použít `IXmlSerializable` typy s objekt grafu zachovávání povoleno a <xref:System.Runtime.Serialization.NetDataContractSerializer>. Všechny tyto funkce vyžadují serializátor WCF připojit určité atributy do elementu obálku ("žádné" a "typ" v oboru názvů Instance schématu XML a "Id", "Ref", "Type" a "Sestavení" v oboru názvů specifické WCF).  
   
 #### <a name="attributes-to-ignore-when-implementing-readxml"></a>Atributy, které mají ignorovat při implementaci ReadXml  
  Před předáním řízení pro vaše `ReadXml` kód, deserializátor prozkoumá XML element, zjistí tyto speciální atributy XML a funguje na ně. Například, pokud je "žádné" `true`, je deserializovat hodnotu null a `ReadXml` není volán. Pokud je zjištěn polymorfismus, obsah elementu se deserializovat, jako kdyby byl jiného typu. Typ polymorphically přiřazené implementace `ReadXml` je volána. V každém případě `ReadXml` implementace má tyto speciální atributy ignorovat, protože jsou zpracovávány deserializátor.  

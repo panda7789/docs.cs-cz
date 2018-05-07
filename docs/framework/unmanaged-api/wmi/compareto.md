@@ -1,11 +1,7 @@
 ---
-title: "Funkce CompareTo (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce CompareTo porovná objektu na jiný objekt rozhraní WMI."
+title: Funkce CompareTo (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce CompareTo porovná objektu na jiný objekt rozhraní WMI.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - CompareTo
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 038074b5bb3adc816caa226d3167395758d2ae57
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db4431da90842f4f96a0f09a2f28dc473d956ee3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compareto-function"></a>CompareTo – funkce
 Porovná objekt k jinému objektu správy systému Windows.  
@@ -58,7 +51,7 @@ HRESULT CompareTo (
 
 `pCompareTo`  
 
-[v] Objekt k porovnání. `pcompareTo`musí být platná [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance; nemůže být `null`.
+[v] Objekt k porovnání. `pcompareTo` musí být platná [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance; nemůže být `null`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -99,7 +92,7 @@ Nebo můžete zadat jeden složený příznak následujícím způsobem:
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

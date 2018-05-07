@@ -1,13 +1,6 @@
 ---
-title: "Doporučené postupy pro načtení sestavení"
-ms.custom: 
+title: Doporučené postupy pro načtení sestavení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - assemblies,binding
 - LoadFrom method
@@ -19,16 +12,13 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cb6671af34c22d824368de014362452ac9014279
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b05ec604f8493ba773d9de9af19acc70c023b8bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-assembly-loading"></a>Doporučené postupy pro načtení sestavení
 Tento článek popisuje způsoby, jak se vyhnout potížím typ identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalších chyb. Článek popisuje následující doporučení:  
@@ -79,7 +69,7 @@ Tento článek popisuje způsoby, jak se vyhnout potížím typ identity, který
   
 -   Pokud je sestavení načíst s <xref:System.Reflection.Assembly.LoadFrom%2A>, a testování cesta obsahuje sestavení se stejnou identitou, ale v jiném umístění, <xref:System.InvalidCastException>, <xref:System.MissingMethodException>, nebo může dojít k jiné neočekávanému chování.  
   
--   <xref:System.Reflection.Assembly.LoadFrom%2A>Požadavky <xref:System.Security.Permissions.FileIOPermissionAccess.Read?displayProperty=nameWithType> a <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery?displayProperty=nameWithType>, nebo <xref:System.Net.WebPermission>, na zadané cestě.  
+-   <xref:System.Reflection.Assembly.LoadFrom%2A> Požadavky <xref:System.Security.Permissions.FileIOPermissionAccess.Read?displayProperty=nameWithType> a <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery?displayProperty=nameWithType>, nebo <xref:System.Net.WebPermission>, na zadané cestě.  
   
 -   Pokud existuje nativních bitových kopií pro sestavení, se nepoužije.  
   

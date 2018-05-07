@@ -1,11 +1,6 @@
 ---
-title: "While...End While – příkaz (Visual Basic)"
+title: While...End While – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.While
 - vb.While...EndWhile
@@ -14,14 +9,11 @@ helpviewer_keywords:
 - While statement [Visual Basic]
 - While...End While statements [Visual Basic]
 ms.assetid: b931d1ce-e8ed-44d8-a13d-92a4f5458a1e
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5f831f233eaa4f1c38d56f3a89bda9b0cf1bccaa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9f46a6ec65faef4448bdd25e30a6cc0c605cd0f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whileend-while-statement-visual-basic"></a>While...End While – příkaz (Visual Basic)
 Spouští řadu příkazů, dokud danou podmínkou je `True`.  
@@ -42,7 +34,7 @@ End While
   
 |Termín|Definice|  
 |---|---|  
-|`condition`|Požadováno. `Boolean`výraz. Pokud `condition` je `Nothing`, Visual Basic považuje za `False`.|  
+|`condition`|Požadováno. `Boolean` Výraz. Pokud `condition` je `Nothing`, Visual Basic považuje za `False`.|  
 |`statements`|Volitelné. Jeden nebo více následujících příkazů `While`, která spustit pokaždé, když `condition` je `True`.|  
 |`Continue While`|Volitelné. Přenosy ovládacího prvku do další iterace `While` bloku.|  
 |`Exit While`|Volitelné. Přenosy ovládacího prvku z `While` bloku.|  
@@ -63,7 +55,7 @@ End While
  Lze vnořit `While` smyčky tím, že jeden smyčky v rámci jiného. Můžete také vnořovat různé druhy řídicí struktury v rámci jednu na druhou. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 ## <a name="exit-while"></a>Při ukončení  
- [Ukončete při](../../../visual-basic/language-reference/statements/exit-statement.md) příkaz můžete zadat jiný způsob, jak ukončit `While` smyčky. `Exit While`příkaz, který následuje okamžitě předá řízení `End While` příkaz.  
+ [Ukončete při](../../../visual-basic/language-reference/statements/exit-statement.md) příkaz můžete zadat jiný způsob, jak ukončit `While` smyčky. `Exit While` příkaz, který následuje okamžitě předá řízení `End While` příkaz.  
   
  Obvykle použijete `Exit While` po některé podmínka vyhodnocena (například v `If...Then...Else` struktura). Můžete chtít ukončit smyčku, pokud zjistíte podmínku, která umožňuje nepotřebné nebo dokonce znemožňují pokračujte iterace, třeba chybná hodnota nebo žádost o ukončení. Můžete použít `Exit While` při testování pro podmínku, která by mohla způsobovat *nekonečná smyčka*, což je smyčku, který by mohl spustit i nekonečné nebo velmi velký počet časy. Pak můžete použít `Exit While` abyste se vyhnuli smyčky.  
   
@@ -90,9 +82,9 @@ End While
   
 ## <a name="see-also"></a>Viz také  
  [Struktury smyčky](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- [Provést... Příkaz smyčky](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
- [Pro... Next – příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md)  
- [Boolean – datový typ](../../../visual-basic/language-reference/data-types/boolean-data-type.md)  
+ [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)  
  [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
- [Exit – příkaz](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [Continue – příkaz](../../../visual-basic/language-reference/statements/continue-statement.md)
+ [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Příkaz Continue](../../../visual-basic/language-reference/statements/continue-statement.md)

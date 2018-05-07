@@ -1,20 +1,12 @@
 ---
 title: Ukázky Windows Workflow
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.topic: article
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a1fb5f7ab268397b75f6d3e2c5c784c1a586c93c
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 667f19681823c802f3f3e4fc2b7eeed9c6d5e0e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 Tyto ukázky poskytují pokyny o různé funkce Windows Workflow Foundation (WF).  

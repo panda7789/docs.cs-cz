@@ -1,14 +1,6 @@
 ---
 title: 'Postupy: Vytvoření vlastního tokenu'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,22 +10,16 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c270b63586809044f1bb3e56841ae8cf590e7bb1
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: eb227075b1a696216e62e851aa8b10c7511ac93f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak integrovat s zprostředkovatele tokenu vlastní zabezpečovací a ověřovací data. Kompletní příklad najdete v článku [vlastní tokenu](../../../../docs/framework/wcf/samples/custom-token.md) ukázka.  
   
- A *token zabezpečení* je v podstatě elementu XML, který je používán [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] framework zabezpečení představují deklarace identity o odesílateli v zprávu protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce zabezpečení poskytuje různé tokeny pro režimy ověřování poskytované systémem. Mezi příklady patří token zabezpečení certifikátu X.509 reprezentována <xref:System.IdentityModel.Tokens.X509SecurityToken> třídu nebo token zabezpečení uživatelské jméno reprezentována <xref:System.IdentityModel.Tokens.UserNameSecurityToken> – třída.  
+ A *token zabezpečení* je v podstatě elementu XML, který je používán zabezpečení systému Windows Communication Foundation (WCF) představují deklarace identity o odesílateli v zprávu protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce zabezpečení poskytuje různé tokeny pro režimy ověřování poskytované systémem. Mezi příklady patří token zabezpečení certifikátu X.509 reprezentována <xref:System.IdentityModel.Tokens.X509SecurityToken> třídu nebo token zabezpečení uživatelské jméno reprezentována <xref:System.IdentityModel.Tokens.UserNameSecurityToken> – třída.  
   
  Zadané typy nepodporuje někdy režim ověřování nebo pověření. V takovém případě je potřeba vytvořit token zabezpečení vlastní zajistit reprezentaci XML vlastní pověření uvnitř zprávu protokolu SOAP.  
   

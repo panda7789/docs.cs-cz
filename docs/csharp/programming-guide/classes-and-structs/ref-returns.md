@@ -4,15 +4,11 @@ description: Zjistěte, jak definovat a použijte ref vrátit a místní hodnoty
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/04/2018
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.openlocfilehash: 98c58d083cb806a92e28c1c9d27effa1124fd153
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e749b9c9309a4b1a737a0c1d0b5e1cfe5748114a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ref-returns-and-ref-locals"></a>Vrátí REF a místní hodnoty ref
 

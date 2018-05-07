@@ -4,16 +4,11 @@ description: Příkaz vstest dotnet sestavení projektu a všechny jeho závisl�
 author: guardrex
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: e11b193ff7a8c639078c5cf279b7fbbeab553c92
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 981b56aa46afd5ca313ee0be0ca10843ef70e939
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-vstest"></a>vstest DotNet.
 

@@ -1,21 +1,12 @@
 ---
-title: "Vytváření vlastních atributů (C#)"
-ms.custom: 
+title: Vytváření vlastních atributů (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 38bdedb352cc79f7a4cc3d08eb6138e7d994514b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c1532d52e1e69c83a04ead7b771cd460f43d56b3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-custom-attributes-c"></a>Vytváření vlastních atributů (C#)
 Můžete vytvořit vlastní atributy definováním třídy atributu, třídu odvozenou z přímo nebo nepřímo <xref:System.Attribute>, které díky Identifikace definice atributu v metadatech rychlé a snadné. Předpokládejme, že chcete typy značky s názvem programátory, kteří napsali typu. Můžete třeba definovat vlastní `Author` třídy atributů:  
@@ -49,7 +40,7 @@ class SampleClass
 }  
 ```  
   
- `AttributeUsage`má parametr s názvem `AllowMultiple`, pomocí kterého můžete nastavit vlastní atribut jedno použití nebo multiuse. V následujícím příkladu kódu je vytvořen multiuse atribut.  
+ `AttributeUsage` má parametr s názvem `AllowMultiple`, pomocí kterého můžete nastavit vlastní atribut jedno použití nebo multiuse. V následujícím příkladu kódu je vytvořen multiuse atribut.  
   
 ```csharp  
 [System.AttributeUsage(System.AttributeTargets.Class |  
@@ -76,7 +67,7 @@ class SampleClass
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Reflection>  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
  [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)  
  [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  

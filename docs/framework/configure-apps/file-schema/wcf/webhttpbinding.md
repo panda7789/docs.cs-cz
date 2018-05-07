@@ -2,11 +2,11 @@
 title: '&lt;webHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
-ms.openlocfilehash: abc08f81ac05aa42ff7247edf662f8dd4482fd4a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 3a5a0844da401607b2049069e7195fa996c62fba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltwebhttpbindinggt"></a>&lt;webHttpBinding&gt;
 Definuje vazbu element, který slouží ke konfiguraci koncové body Windows Communication Foundation (WCF) webové služby, které reagují na požadavky HTTP místo protokolu SOAP zprávy.  
@@ -86,9 +86,9 @@ Definuje vazbu element, který slouží ke konfiguraci koncové body Windows Com
 |[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje kolekci standardní a vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Model programování webových umožňuje vývojářům vystavit [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] webové služby přes požadavky HTTP, které používají "prostý formát XML" (POX) styl zasílání zpráv místo zasílání zpráv na základě protokolu SOAP. Klientům pro komunikaci se službou pomocí požadavků HTTP, musí být nakonfigurované koncový bod služby [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) který má \<WebHttpBehavior > k němu připojen.  
+ Model programování webových WCF umožňuje vývojářům vystavit webových služeb WCF přes požadavky HTTP, které používají "prostý formát XML" (POX) styl zasílání zpráv místo zasílání zpráv na základě protokolu SOAP. Klientům pro komunikaci se službou pomocí požadavků HTTP, musí být nakonfigurované koncový bod služby [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) který má \<WebHttpBehavior > k němu připojen.  
   
- Podpora v [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] syndikace a ASP. Integrace jazyka AJAX jsou oba nástavbou Model programování webových. Další informace o modelu najdete v tématu [WCF Web HTTP programovací Model](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).  
+ Podpora ve WCF pro syndikace a ASP. Integrace jazyka AJAX jsou oba nástavbou Model programování webových. Další informace o modelu najdete v tématu [WCF Web HTTP programovací Model](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WebHttpBinding>  

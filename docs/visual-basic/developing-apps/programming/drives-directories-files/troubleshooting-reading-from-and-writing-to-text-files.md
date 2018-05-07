@@ -1,12 +1,6 @@
 ---
-title: "Řešení potíží: čtení a zápis do textových souborů (Visual Basic)"
-ms.custom: 
+title: 'Řešení potíží: čtení a zápis do textových souborů (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - troubleshooting file I/O
 - writing text to files [Visual Basic], troubleshooting
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - writing to files [Visual Basic], troubleshooting
 - reading text files [Visual Basic], troubleshooting
 ms.assetid: a8e9b44d-facb-4718-8c0f-466537171182
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e836f79cd05dbaa180cc7bf5413ce57004e3500b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5650298da99f8bc9a25c7d7ceea11a8a5bf968fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Řešení potíží: čtení a zápis do textových souborů (Visual Basic)
 Toto téma popisuje běžné problémy při práci s textem soubory a navrhne jejich řešení.  

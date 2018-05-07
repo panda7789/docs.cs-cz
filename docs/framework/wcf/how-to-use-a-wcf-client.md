@@ -1,33 +1,19 @@
 ---
-title: "Postupy: Používání klienta Windows Communication Foundation"
-ms.custom: 
+title: 'Postupy: Používání klienta Windows Communication Foundation'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF clients [WCF], using
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0330c386730c6b0436196bb5b85162bc4621c214
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 6667a8e9862054d7d8d5b20e70dfbe699de02eab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-windows-communication-foundation-client"></a>Postupy: Používání klienta Windows Communication Foundation
-Toto je poslední šesti úkoly vyžadované pro vytvoření základní [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace. Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
+Toto je poslední šesti úlohy, které jsou potřebné pro vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
   
- Jednou [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] proxy serveru bylo vytvořeno a nakonfigurováno, lze vytvořit instanci klienta a klientské aplikace můžete zkompilovat a použít ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Toto téma popisuje postupy pro vytváření instancí a použití [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta. Tento postup provádí tři věci:  
+ Jakmile byl vytvořen a nakonfigurován proxy server služby Windows Communication Foundation (WCF), lze vytvořit instanci klienta a klientské aplikace můžete zkompilovat a použít ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Toto téma popisuje postupy pro vytváření instancí a použití [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta. Tento postup provádí tři věci:  
   
 1.  Vytvoří [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta.  
   

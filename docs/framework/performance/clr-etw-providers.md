@@ -1,27 +1,17 @@
 ---
-title: "Poskytovatelé CLR ETW"
-ms.custom: 
+title: Poskytovatelé CLR ETW
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0b76b3a1d4969a5ed81e5fa90afb06050b780804
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e33e93ba42ad37d6a998fc80348af551aed18a4d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-etw-providers"></a>Poskytovatelé CLR ETW
 Modul CLR (CLR) má dva poskytovatelé: Zprostředkovatel runtime a sekvence daneho zprostředkovatele.  

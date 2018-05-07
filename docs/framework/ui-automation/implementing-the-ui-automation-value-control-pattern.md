@@ -1,28 +1,19 @@
 ---
-title: "Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní"
-ms.custom: 
+title: Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control patterns, Value
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-caps.latest.revision: "25"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 5f74b103092032e35cce47d893f9e3b6e9d7727b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: b9c748ccc695ae67306c293c10248c4f3f22c043
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -45,9 +36,9 @@ Příklad položky seznamu upravovat
   
 -   Můžete načíst textový obsah ovládacího prvku Víceřádkový úpravy, musí implementovat řízení <xref:System.Windows.Automation.Provider.ITextProvider>. Ale <xref:System.Windows.Automation.Provider.ITextProvider> nepodporuje nastavení hodnoty ovládacího prvku.  
   
--   <xref:System.Windows.Automation.Provider.IValueProvider>nepodporuje načtení formátování informace nebo podřetězcem hodnoty. Implementace <xref:System.Windows.Automation.Provider.ITextProvider> v těchto scénářích.  
+-   <xref:System.Windows.Automation.Provider.IValueProvider> nepodporuje načtení formátování informace nebo podřetězcem hodnoty. Implementace <xref:System.Windows.Automation.Provider.ITextProvider> v těchto scénářích.  
   
--   <xref:System.Windows.Automation.Provider.IValueProvider>musí být implementované ovládací prvky, jako **volby barev** ovládacího prvku pro výběr z [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] (ilustrované níže), který podporuje řetězec mapování mezi hodnotu barvu (například "žlutý") a ekvivalentní interní [!INCLUDE[TLA#tla_rgb](../../../includes/tlasharptla-rgb-md.md)]struktura.  
+-   <xref:System.Windows.Automation.Provider.IValueProvider> musí být implementované ovládací prvky, jako **volby barev** ovládacího prvku pro výběr z [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] (ilustrované níže), který podporuje řetězec mapování mezi hodnotu barvu (například "žlutý") a ekvivalentní interní [!INCLUDE[TLA#tla_rgb](../../../includes/tlasharptla-rgb-md.md)]struktura.  
   
  ![Výběr barvy s žlutý zvýrazněná. ] (../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Příklad mapování řetězec vzorníku barev  

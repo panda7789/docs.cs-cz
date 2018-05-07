@@ -1,24 +1,17 @@
 ---
 title: short (Referenční dokumentace jazyka C#)
 ms.date: 03/14/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - short
 - short_CSharpKeyword
 helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-caps.latest.revision: 17
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 6f73189891ecb52b81cfc1861a19194113ab2c32
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 657d5bb3866a3ad88226740ebf7ef12c3654e56b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="short-c-reference"></a>short (Referenční dokumentace jazyka C#)
 

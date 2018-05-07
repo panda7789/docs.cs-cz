@@ -1,20 +1,13 @@
 ---
-title: "C# delegáti - přehled používání jazyka C#"
-description: "Další informace pozdní vazba s C# delegáti"
-keywords: "Rozhraní .NET, csharp, delegáta, lambda, pozdní vazba"
-author: BillWagner
-ms.author: wiwagn
+title: C# delegáti - přehled používání jazyka C#
+description: Další informace pozdní vazba s C# delegáti
 ms.date: 08/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
-ms.openlocfilehash: bb304b2e5c762a44aab931b5e8f7fe9c99805eba
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1dcd078b275d951b049b0c5bb6e084a4083d042d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegates"></a>Delegáty
 

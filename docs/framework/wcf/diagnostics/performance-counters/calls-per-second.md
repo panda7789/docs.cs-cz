@@ -1,24 +1,12 @@
 ---
-title: "Počet volání za sekundu"
-ms.custom: 
+title: Počet volání za sekundu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0efb5a94-d83b-4793-b529-6fcbedb65c43
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 002c1aeb2f81c242adee5174340ea638ed85287f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 04eb5deaf8e6eb09be4e0bf404bec11b8ce84427
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="calls-per-second"></a>Počet volání za sekundu
 Název čítače: Počet volání za sekundu  

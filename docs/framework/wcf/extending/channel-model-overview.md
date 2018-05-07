@@ -1,34 +1,20 @@
 ---
-title: "Přehled modelu kanálu"
-ms.custom: 
+title: Přehled modelu kanálu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7f6f45b788d825fed3c8f5d627190dd8911ec4c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: df2993d9ba25c043aa66029aa00fae945d5cec9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Zásobník kanál je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model závisí na několika rozhraní a dalších typů souhrnně označované jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] model kanálu. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  
+Zásobník kanálu Windows Communication Foundation (WCF) je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model závisí na několika rozhraní a dalších typů souhrnně označované jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] model kanálu. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  
   
 ## <a name="channel-stack"></a>Kanál zásobníku  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Koncové body komunikovat s world pomocí komunikačního balíku volat zásobník kanálu. Následující diagram porovná zásobník kanál s další komunikace zásobníky, například protokol TCP/IP.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncové body komunikovat s world pomocí komunikačního balíku volat zásobník kanálu. Následující diagram porovná zásobník kanál s další komunikace zásobníky, například protokol TCP/IP.  
   
  ![Model kanálu](../../../../docs/framework/wcf/extending/media/wcfc-channelstackhighlevelc.gif "wcfc_ChannelStackHighLevelc")  
   
@@ -77,7 +63,7 @@ ms.lasthandoff: 12/22/2017
   
  Objekty Factory kanál jsou zodpovědní za vytváření kanály, které se používají pro odesílání zpráv a pro zavření všech kanálů vytvářely při zavření kanálu.  
   
- <xref:System.ServiceModel.ICommunicationObject>je základní rozhraní, které určuje základní stav počítače, ve kterém implementace všechny objekty komunikace. <xref:System.ServiceModel.Channels.CommunicationObject>poskytuje implementaci pro tento základní rozhraní, které mohou ostatní třídy kanál odvozovat z místo znovu implementace rozhraní. Ale to není potřeba: můžete implementovat vlastní kanál <xref:System.ServiceModel.ICommunicationObject> přímo a není dědí <xref:System.ServiceModel.Channels.CommunicationObject>. Žádné třídy na obrázku 3 jsou považovány za součást model kanálu; jsou k dispozici pro implementátory vlastní kanál, kteří chtějí vytvořit kanály pomocné rutiny.  
+ <xref:System.ServiceModel.ICommunicationObject> je základní rozhraní, které určuje základní stav počítače, ve kterém implementace všechny objekty komunikace. <xref:System.ServiceModel.Channels.CommunicationObject> poskytuje implementaci pro tento základní rozhraní, které mohou ostatní třídy kanál odvozovat z místo znovu implementace rozhraní. Ale to není potřeba: můžete implementovat vlastní kanál <xref:System.ServiceModel.ICommunicationObject> přímo a není dědí <xref:System.ServiceModel.Channels.CommunicationObject>. Žádné třídy na obrázku 3 jsou považovány za součást model kanálu; jsou k dispozici pro implementátory vlastní kanál, kteří chtějí vytvořit kanály pomocné rutiny.  
   
  ![Model kanálu](../../../../docs/framework/wcf/extending/media/wcfc-wcfcchannelsigure3omumtreec.gif "wcfc_WCFCChannelsigure3OMUMTreec")  
   

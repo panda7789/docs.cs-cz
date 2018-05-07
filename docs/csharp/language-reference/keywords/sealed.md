@@ -1,24 +1,17 @@
 ---
 title: sealed (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - sealed
 - sealed_CSharpKeyword
 helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
-caps.latest.revision: 30
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8248b451f0431286fdaba3583fc2031eb6cdbcd7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8cfeb77021aaf1b0eb23401be4d5f6fd50a40b03
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sealed-c-reference"></a>sealed (Referenční dokumentace jazyka C#)
 Při použití třídy, `sealed` modifikátor zabrání ostatním třídám dědění z něj. V následujícím příkladu třída `B` dědí z třídy `A`, ale neexistuje žádná třída může dědit vlastnosti z třídy `B`.  
@@ -70,11 +63,11 @@ sealed class B : A {}
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)  
  [Abstraktní a uzavřené třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
  [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
- [přepsání](../../../csharp/language-reference/keywords/override.md)  
- [virtuální](../../../csharp/language-reference/keywords/virtual.md)
+ [override](../../../csharp/language-reference/keywords/override.md)  
+ [virtual](../../../csharp/language-reference/keywords/virtual.md)

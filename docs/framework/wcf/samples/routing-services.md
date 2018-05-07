@@ -1,27 +1,15 @@
 ---
-title: "Směrovací služby"
-ms.custom: 
+title: Směrovací služby
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9a430b4c-46eb-4d15-afbc-8834f0e985ab
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a6b6fc83fe6e5e186b8d94c928c3a69c47a27818
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 1060a64d5b56e4b06b9004f85502a83869af4434
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-services"></a>Směrovací služby
-Tato část obsahuje vzorků, které ukazují, jak používat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] směrovače.  
+Tato část obsahuje vzorků, které ukazují, jak používat směrovači Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Hello World se směrovací službou](../../../../docs/framework/wcf/samples/hello-world-with-the-routing-service.md)  

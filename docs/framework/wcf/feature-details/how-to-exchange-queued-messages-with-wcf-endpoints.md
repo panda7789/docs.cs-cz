@@ -1,34 +1,20 @@
 ---
 title: 'Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2f44f3a58e0a8283753cb682f25cf2f167450724
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ab6ca46fad8ee1ededef5cc14a9654b79b2e6a8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF
-Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klientem a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, i když služba není k dispozici v době komunikace. Následující postupy ukazují, jak zajistit trvanlivý komunikace mezi klientem a služby pomocí standardní zařazených do fronty závazný při implementaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Fronty zajistit spolehlivé zasílání zpráv můžete mezi klientem a služby Windows Communication Foundation (WCF), i když služba není k dispozici v době komunikace. Následující postupy ukazují, jak zajistit trvanlivý komunikace mezi klientem a služby pomocí standardní zařazených do fronty závazný při implementaci služby WCF.  
   
- Tato část vysvětluje, jak používat <xref:System.ServiceModel.NetMsmqBinding> pro komunikaci mezi ve frontě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Tato část vysvětluje, jak používat <xref:System.ServiceModel.NetMsmqBinding> pro komunikaci mezi klienta WCF a služby WCF ve frontě.  
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>Použití služby Řízení front služby WCF  
   
@@ -54,7 +40,7 @@ Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klien
      [!code-csharp[S_Msmq_Transacted#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#4)]
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
-5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, kterou určuje adresu služby a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o používání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace, najdete v části [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, kterou určuje adresu služby a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o používání konfigurace WCF najdete v tématu [konfigurace Windows Communication Foundation aplikací](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
   
   
   
@@ -65,7 +51,7 @@ Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klien
   
 ### <a name="to-create-a-client-for-the-queued-service"></a>Vytvoření klienta pro službu ve frontě  
   
-1.  Následující příklad ukazuje, jak spouštět hostitelskou aplikaci a pomocí nástroje Svcutil.exe vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta.  
+1.  Následující příklad ukazuje, jak spouštět hostitelskou aplikaci a používat nástroje Svcutil.exe pro vytvoření klienta WCF.  
   
     ```  
     svcutil http://localhost:8000/ServiceModelSamples/service  
@@ -75,7 +61,7 @@ Fronty Ujistěte se, že spolehlivé zasílání zpráv může dojít mezi klien
   
   
   
-3.  Vytvoření oboru transakce k zápisu do transakční fronty, volání `SubmitPurchaseOrder` operaci a zavřete [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, jak je znázorněno v následujícím příkladu.  
+3.  Vytvoření oboru transakce k zápisu do transakční fronty, volání `SubmitPurchaseOrder` operace a zavřít klienta WCF, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  

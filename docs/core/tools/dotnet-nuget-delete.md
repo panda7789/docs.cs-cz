@@ -4,16 +4,11 @@ description: Příkaz dotnet-nuget-delete Odstraní nebo unlists balíčku ze se
 author: karann-msft
 ms.author: mairaw
 ms.date: 08/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 1e81501d526ae92336b808f98c7c192b55e89f98
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 639ade54bfed5eb2de89bdb3b7f451393b4be187
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-nuget-delete"></a>odstranění nuget DotNet.
 

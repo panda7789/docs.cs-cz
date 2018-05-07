@@ -4,16 +4,11 @@ description: Princip přenosem a zjistit nástroje, které vás může být uži
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 2f943caff23ddbfcd5c845c9f517d24aea089850
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bf4f50ca915f21cdda6b99ae6bdf9e837eca3ae7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="porting-to-net-core-from-net-framework"></a>Portování do .NET Core z rozhraní .NET Framework
 

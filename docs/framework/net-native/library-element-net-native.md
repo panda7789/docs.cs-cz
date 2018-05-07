@@ -1,24 +1,14 @@
 ---
 title: Element &lt;Library&gt; (.NET Native)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd2663bbd5ca93341455b7bd036469d25d91f4a6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f867d6f65a28c36037ff6617cce9d18bc39a67d6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltlibrarygt-element-net-native"></a>Element &lt;Library&gt; (.NET Native)
 Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu.  
@@ -51,8 +41,8 @@ Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Zásady platí pro všechny typy v určitém sestavení.|  
-|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Zásady platí pro všechny typy v konkrétní oboru názvů.|  
+|[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Zásady platí pro všechny typy v určitém sestavení.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Zásady platí pro všechny typy v konkrétní oboru názvů.|  
 |[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Platí pro konkrétní typ, jako je například třídu nebo strukturu zásad.|  
 |[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Zásada se vztahuje na vytvořený obecného typu. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může definovat zásady pro `List<String>` typu.|  
   
@@ -67,7 +57,7 @@ Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k
   
  `<Library>` Element slouží jako kontejner pro definování program elementy, jejichž metadat je vyžadována v době běhu; tento element není vyjádření zásad. Při kompilaci, nástrojů kompilátoru vyhledávat pouze v knihovně, které jsou určené, které `<Library>` element pro program prvky identifikovaná její podřízené elementy. Na rozdíl od nástroje kompilátoru hledání všechny knihovny, including.NET Framework základní knihovny, pro program prvky identifikovaná podřízených elementů [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) element.  
   
- `<Library>`direktivy, lze podmíněně využívat. Pokud název `<Library>` element zahájení a ukončení s hvězdičkou (*), `<Library>` – direktiva má význam jen v případě, že zadaný v rozmezí hvězdičky sestavení odkazuje aplikace. Například následující direktivy modulu runtime platí jenom v případě, že Utillities.dll sestavení odkazuje aplikace.  
+ `<Library>` direktivy, lze podmíněně využívat. Pokud název `<Library>` element zahájení a ukončení s hvězdičkou (*), `<Library>` – direktiva má význam jen v případě, že zadaný v rozmezí hvězdičky sestavení odkazuje aplikace. Například následující direktivy modulu runtime platí jenom v případě, že Utillities.dll sestavení odkazuje aplikace.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

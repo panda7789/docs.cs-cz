@@ -1,11 +1,7 @@
 ---
-title: "GetNames – funkce (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce GetNames načte názvy vlastností objektu."
+title: GetNames – funkce (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce GetNames načte názvy vlastností objektu.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetNames
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 80284900c318a3776168b781ce2e0e5e4a68f96d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 108946428cdfadcfb9c653b7e444bf278dfa2782
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getnames-function"></a>GetNames – funkce
 Načte podmnožinu nebo všechny názvy vlastností objektu. 
@@ -91,7 +84,7 @@ Příznaky, které lze předat jako `lEnumFlags` argument jsou bitová pole, kte
 
 | Příznaky skupina 1 |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_ALWAYS` | 0 | Vrátí všechny názvy vlastností. `strQualifierName`a `pQualifierVal` se nepoužívá. |
+| `WBEM_FLAG_ALWAYS` | 0 | Vrátí všechny názvy vlastností. `strQualifierName` a `pQualifierVal` se nepoužívá. |
 | `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Vrátí pouze vlastnosti, které mají kvalifikátor název určený správcem `strQualifierName` parametr. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Vrátí pouze vlastnosti, které nemají kvalifikátor název zadaný `strQualifierName` parametr. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Vrátí pouze vlastnosti, které mají kvalifikátor název zadaný `wszQualifierName` parametr a mají také stejná jako určeného hodnotu `pQualifierVal` struktura. Pokud tento příznak se používá, musíte zadat oba `wszQualifierName` a `pQualifierValue`. |
@@ -115,7 +108,7 @@ Funkce vždy přiděluje nový `SAFEARRAY` vrátí-li `WBEM_S_NO_ERROR`, a `pstr
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

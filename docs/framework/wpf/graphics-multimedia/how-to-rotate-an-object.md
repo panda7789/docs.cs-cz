@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Otočení objektu"
-ms.custom: 
+title: 'Postupy: Otočení objektu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - graphics [WPF], rotating objects [WPF]
 - rotating objects [WPF]
 ms.assetid: ee3466cd-e66f-4e8f-8a5a-71d77bc1e390
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b356ef1782ec5bba4f7288644a0802f029456bbf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7eb562d81bdd8c9187672b31ed08ed6ac27da41c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-rotate-an-object"></a>Postupy: Otočení objektu
 Tento příklad ukazuje, jak objektu. V příkladu se nejdřív vytvoří <xref:System.Windows.Media.RotateTransform> a pak specifikuje jeho <xref:System.Windows.Media.RotateTransform.Angle%2A> ve stupních.  

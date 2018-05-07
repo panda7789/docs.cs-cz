@@ -1,34 +1,20 @@
 ---
 title: Kontrakty dat s dopřednou kompatibilitou
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data contracts [WCF], forward compatibility
 ms.assetid: 413c9044-26f8-4ecb-968c-18495ea52cd9
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 554176d2b6ac0c1d5cbe817721c55d06f88457cc
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 95a72d5d09538bc6f663f2376c7f8f928909cd57
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="forward-compatible-data-contracts"></a>Kontrakty dat s dopřednou kompatibilitou
-Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] systém kontraktu dat je, že kontrakty můžete vyvíjet pevných způsoby se v čase. To znamená klient se starší verzí systému kontraktu dat může komunikovat se službou novější verzi stejné kontrakt dat nebo klient novější verzi kontraktu dat může komunikovat s starší verze stejné kontrakt dat. Další informace najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
+Funkce z Windows Communication Foundation (WCF) je systém kontraktu dat, měnící můžete rozvíjet časem pevných způsoby. To znamená klient se starší verzí systému kontraktu dat může komunikovat se službou novější verzi stejné kontrakt dat nebo klient novější verzi kontraktu dat může komunikovat s starší verze stejné kontrakt dat. Další informace najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
   
  Většina funkcí správy verzí na podle potřeby můžete použít při vytváření nové verze existující smlouvy data. Ale jedna z funkcí správy verzí, *odezvy*, musí být typu z první verze součástí správné fungování.  
   
@@ -48,7 +34,7 @@ Funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] systém kontraktu
  [!code-csharp[C_DataContract#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#8)]
  [!code-vb[C_DataContract#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#8)]  
   
- Když [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury zaznamená data, která není součástí původní kontrakt dat, data jsou uložené v určité vlastnosti a zachovají. Jiným způsobem s výjimkou dočasné úložiště není zpracován. Pokud objekt se vrátí zpět na místo původu, vrátí se také původní data (neznámé). Proto data udělal dobu odezvy na a z původní koncového bodu bez ztráty. Upozorňujeme však, že v případě potřeby data ke zpracování výchozí koncový bod této očekávání je unmet, a koncový bod musí nějakým způsobem zjistit a uložení změn.  
+ Když infrastruktury WCF zaznamená data, která není součástí původní kontrakt dat, data uložená ve vlastnosti a zachovají. Jiným způsobem s výjimkou dočasné úložiště není zpracován. Pokud objekt se vrátí zpět na místo původu, vrátí se také původní data (neznámé). Proto data udělal dobu odezvy na a z původní koncového bodu bez ztráty. Upozorňujeme však, že v případě potřeby data ke zpracování výchozí koncový bod této očekávání je unmet, a koncový bod musí nějakým způsobem zjistit a uložení změn.  
   
  <xref:System.Runtime.Serialization.ExtensionDataObject> Typ obsahuje žádné veřejné metody nebo vlastnosti. Proto není možné získat přímý přístup k datům uloženým v <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> vlastnost.  
   

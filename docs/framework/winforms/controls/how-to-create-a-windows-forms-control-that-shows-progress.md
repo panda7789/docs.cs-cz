@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh"
-ms.custom: 
+title: 'Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - progress [Windows Forms], reporting [Windows Forms]
 - FlashTrackBar custom control
 ms.assetid: 24c5a2e3-058c-4b8d-a217-c06e6a130c2f
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76ce5cd67b66dea47f5bd12e78bb27179b391257
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5773181b8883f0f94ff451808c8c97ce3407970e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a>Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh
 Následující příklad kódu ukazuje vlastního ovládacího prvku názvem `FlashTrackBar` který lze použít na úroveň nebo průběh aplikace se uživateli zobrazí. Přechod na základě vizuálně představují průběh.  
@@ -39,9 +27,9 @@ Následující příklad kódu ukazuje vlastního ovládacího prvku názvem `Fl
   
 -   Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metody můžete zajistit logiku k vykreslení ovládacího prvku.  
   
--   Computing oblasti k dispozici pro vykreslení ovládacího prvku pomocí jeho <xref:System.Windows.Forms.Control.ClientRectangle%2A> vlastnost. `FlashTrackBar`k tomu jeho `OptimizedInvalidate` metoda.  
+-   Computing oblasti k dispozici pro vykreslení ovládacího prvku pomocí jeho <xref:System.Windows.Forms.Control.ClientRectangle%2A> vlastnost. `FlashTrackBar` k tomu jeho `OptimizedInvalidate` metoda.  
   
--   Implementace serializace nebo stálosti pro vlastnost, když se změní v Návrháři formulářů. `FlashTrackBar`definuje `ShouldSerializeStartColor` a `ShouldSerializeEndColor` metody pro serializaci jeho `StartColor` a `EndColor` vlastnosti.  
+-   Implementace serializace nebo stálosti pro vlastnost, když se změní v Návrháři formulářů. `FlashTrackBar` definuje `ShouldSerializeStartColor` a `ShouldSerializeEndColor` metody pro serializaci jeho `StartColor` a `EndColor` vlastnosti.  
   
  V následující tabulce jsou uvedeny vlastní vlastnosti definované `FlashTrackBar`.  
   
@@ -66,7 +54,7 @@ Následující příklad kódu ukazuje vlastního ovládacího prvku názvem `Fl
 |`OnValueChanged`|Metoda, která vyvolává `ValueChanged` událostí.|  
   
 > [!NOTE]
->  `FlashTrackBar`používá <xref:System.EventArgs> třídu pro data události a <xref:System.EventHandler> pro delegát události.  
+>  `FlashTrackBar` používá <xref:System.EventArgs> třídu pro data události a <xref:System.EventHandler> pro delegát události.  
   
  Pro zpracování odpovídající *EventName* události, `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
   

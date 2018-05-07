@@ -1,13 +1,6 @@
 ---
 title: Ilasm.exe (IL Assembler)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MSIL generators
 - metadata, MSIL Assembler
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - Ilasm.exe
 - verifying MSIL performance
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
-caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2507acc7ddf41d921af0b86622b1e85208191767
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4009fe4910af81c685ee015c7801b040a90c25aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -52,38 +42,38 @@ ilasm [options] filename [[options]filename...]
 | Možnost | Popis |
 | ------ | ----------- |
 |**/32bitpreferred**|Vytvoří bitovou kopii s upřednostněním 32bitového kódu (PE32).|
-|**/ Alignment:**`integer`|Nastaví na hodnotu zadanou pomocí FileAlignment `integer` v hlavičce NT volitelné. Je-li v souboru zadána direktiva IL .alignment, tato možnost ji přepisuje.|
+|**/ Alignment:** `integer`|Nastaví na hodnotu zadanou pomocí FileAlignment `integer` v hlavičce NT volitelné. Je-li v souboru zadána direktiva IL .alignment, tato možnost ji přepisuje.|
 |**/appcontainer**|Vytváří *.dll* nebo *.exe* soubor, který běží v kontejneru aplikace systému Windows, jako výstup.|
 |**/arm**|Určí jako cílový procesor architekturu Advanced RISC Machine (ARM).<br /><br /> Pokud není zadaný žádný obrázek počtu bitů, výchozí hodnota je **/32bitpreferred**.|
-|**/ Základní:**`integer`|Nastaví na hodnotu zadanou pomocí ImageBase `integer` v hlavičce NT volitelné. Je-li v souboru zadána direktiva IL .imagebase, tato možnost ji přepisuje.|
+|**/Base:** `integer`|Nastaví na hodnotu zadanou pomocí ImageBase `integer` v hlavičce NT volitelné. Je-li v souboru zadána direktiva IL .imagebase, tato možnost ji přepisuje.|
 |**/Clock**|Měří a oznamuje následující časy kompilace v milisekundách pro zadaný zdrojový soubor .il:<br /><br /> **Celkový počet spuštění**: celkový čas strávený, provádění určitých operací, které následují.<br /><br /> **Spuštění**: načítání a soubor otevřít.<br /><br /> **Emitování MD**: generování metadat.<br /><br /> **REF Def řešení**: řešení odkazy na definice v souboru.<br /><br /> **Generování souboru CEE**: generování souboru bitové kopie v paměti.<br /><br /> **Zápis souboru PE**: zápis do souboru PE bitovou kopii.|
-|**/ debug**[:**IMPL**&#124; **OPT**]|Zahrnuje informace o ladění (názvy místních proměnných a argumentů a čísla řádků). Vytvoří soubor PDB.<br /><br /> **/ debug** bez další hodnoty zakáže optimalizace JIT a používá pořadí body ze souboru PDB.<br /><br /> **IMPL** zakáže optimalizace JIT a používá implicitní pořadí body.<br /><br /> **VÝSLOVNÝ** umožňuje optimalizaci JIT a používá implicitní pořadí body.|
+|**/ debug**[:**IMPL**&#124;**VÝSLOVNÝ**]|Zahrnuje informace o ladění (názvy místních proměnných a argumentů a čísla řádků). Vytvoří soubor PDB.<br /><br /> **/ debug** bez další hodnoty zakáže optimalizace JIT a používá pořadí body ze souboru PDB.<br /><br /> **IMPL** zakáže optimalizace JIT a používá implicitní pořadí body.<br /><br /> **VÝSLOVNÝ** umožňuje optimalizaci JIT a používá implicitní pořadí body.|
 |**/ DLL**|Vytváří *.dll* souboru jako výstup.|
-|**/ENC:**`file`|Vytvoří ze zadaného zdrojového souboru rozdíly pro funkci Upravit a pokračovat.<br /><br /> Tento argument slouží pouze k akademickému použití a při komerčním použití není podporován.|
+|**/ENC:** `file`|Vytvoří ze zadaného zdrojového souboru rozdíly pro funkci Upravit a pokračovat.<br /><br /> Tento argument slouží pouze k akademickému použití a při komerčním použití není podporován.|
 |**/exe**|Vytvoří jako výstup spustitelný soubor. Toto nastavení je výchozí.|
-|**/ flags:**`integer`|Nastaví na hodnotu zadanou pomocí ImageFlags `integer` v hlavičce běžné runtime jazyka. Je-li v souboru zadána direktiva IL .corflags, tato možnost ji přepisuje. V tématu CorHdr.h COMIMAGE_FLAGS seznam platných hodnot pro *celé číslo*.|
+|**/ Flags:** `integer`|Nastaví na hodnotu zadanou pomocí ImageFlags `integer` v hlavičce běžné runtime jazyka. Je-li v souboru zadána direktiva IL .corflags, tato možnost ji přepisuje. V tématu CorHdr.h COMIMAGE_FLAGS seznam platných hodnot pro *celé číslo*.|
 |**/fold**|Sloučí identická těla metod do jednoho.|
 |/**highentropyva**|Vytvoří výstupní spustitelný soubor podporující funkci ASLR s vysokou entropií. (Výchozí pro **/appcontainer**.)|
-|**/ include:**`includePath`|Nastaví cestu k vyhledávání souborů, které jsou součástí `#include`.|
+|**/ include:** `includePath`|Nastaví cestu k vyhledávání souborů, které jsou součástí `#include`.|
 |**/Itanium**|Určí jako cílový procesor Intel Itanium.<br /><br /> Pokud není zadaný žádný obrázek počtu bitů, výchozí hodnota je **/pe64**.|
-|**/ klíče:**`keyFile`|Zkompiluje `filename` silné podpisem pomocí privátní klíče součástí `keyFile`.|
+|**/Key:** `keyFile`|Zkompiluje `filename` silné podpisem pomocí privátní klíče součástí `keyFile`.|
 |**/Key:** @`keySource`|Zkompiluje `filename` silné podpisem pomocí soukromého klíče vytvořeného v `keySource`.|
 |**/ výpis**|Vytvoří na standardním výstupu soubor výpisu. Vynecháte-li tuto možnost, není vytvořen žádný soubor výpisu.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework 2.0 a vyšším.|
-|**/MDV:**`versionString`|Nastaví řetězec verze metadat.|
+|**/MDV:** `versionString`|Nastaví řetězec verze metadat.|
 |**/mSv:** `major`.`minor`|Nastaví verze datového proudu metadata, kde `major` a `minor` jsou celá čísla.|
 |**/noautoinherit**|Zakáže výchozí dědění ze <xref:System.Object> Pokud je zadán žádný základní třídy.|
 |**/nocorstub**|Potlačí generování zástupné procedury CORExeMain.|
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
-|**/ výstup:**`file.ext`|Určuje název výstupního souboru a příponu. Ve výchozím nastavení je název výstupního souboru shodný s názvem prvního zdrojového souboru. Výchozí přípona je *.exe*. Pokud zadáte **/dll** možnost, je výchozí rozšíření *.dll*. **Poznámka:** zadání **/výstup**: soubor.dll nenastaví **/dll** možnost. Pokud nezadáte **/dll**, výsledkem bude spustitelný soubor s názvem *soubor.dll*.|
+|**output:** `file.ext`|Určuje název výstupního souboru a příponu. Ve výchozím nastavení je název výstupního souboru shodný s názvem prvního zdrojového souboru. Výchozí přípona je *.exe*. Pokud zadáte **/dll** možnost, je výchozí rozšíření *.dll*. **Poznámka:** zadání **/výstup**: soubor.dll nenastaví **/dll** možnost. Pokud nezadáte **/dll**, výsledkem bude spustitelný soubor s názvem *soubor.dll*.|
 |**/optimize**|Optimalizuje dlouhé instrukce na krátké. Například `br` k `br.s`.|
 |**/pe64**|Vytvoří 64bitovou kopii (PE32+).<br /><br /> Pokud není zadaný žádný cílový procesor, výchozí hodnota je `/itanium`.|
 |**/ pdb**|Vytvoří soubor PDB bez povolení sledování informací o ladění.|
 |**/quiet**|Určuje tichý režim, který neoznamuje průběh sestavení.|
-|**/ Resource:**`file.res`|Obsahuje soubor zadaný prostředek v \*.res formátu výsledná *.exe* nebo *.dll* souboru. S lze zadat pouze jeden soubor .res **/Resource** možnost.|
+|**/ Resource:** `file.res`|Obsahuje soubor zadaný prostředek v \*.res formátu výsledná *.exe* nebo *.dll* souboru. S lze zadat pouze jeden soubor .res **/Resource** možnost.|
 |**/ssver:** `int`.`int`|Nastaví číslo verze podsystému ve volitelné hlavičce NT. Pro **/appcontainer** a **/arm** číslo minimální verze je 6.02.|
-|**/ stack:**`stackSize`|Nastaví hodnotu SizeOfStackReserve v hlavičce NT volitelné k `stackSize`.|
+|**/Stack:** `stackSize`|Nastaví hodnotu SizeOfStackReserve v hlavičce NT volitelné k `stackSize`.|
 |**/stripreloc**|Určuje, že není zapotřebí žádné přemisťování základu.|
-|**/Subsystem:**`integer`|Nastaví na hodnotu zadanou pomocí subsystému `integer` v hlavičce NT volitelné. Je-li v souboru zadána direktiva IL .subsystem, tento příkaz ji přepíše. Najdete v souboru winnt.h, IMAGE_SUBSYSTEM seznam platných hodnot pro `integer`.|
+|**/Subsystem:** `integer`|Nastaví na hodnotu zadanou pomocí subsystému `integer` v hlavičce NT volitelné. Je-li v souboru zadána direktiva IL .subsystem, tento příkaz ji přepíše. Najdete v souboru winnt.h, IMAGE_SUBSYSTEM seznam platných hodnot pro `integer`.|
 |**/x64**|Určí jako cílový procesor 64bitový procesor společnosti AMD.<br /><br /> Pokud není zadaný žádný obrázek počtu bitů, výchozí hodnota je **/pe64**.|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
 

@@ -1,32 +1,20 @@
 ---
 title: Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-caps.latest.revision: 18
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 056e743ff1849457f8a0e8ee509a56475f09435c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 05ffe731a578f8b8d2cdbdf5e3c9229e2b03821c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
-Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby zabezpečené pomocí protokolu Kerberos.  
+Následující příklad ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečené pomocí protokolu Kerberos.  
   
  Službu a klienta jsou ve stejné doméně nebo důvěryhodné domény.  
   
@@ -59,9 +47,9 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
 > [!NOTE]
 >  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, uživatelský účet služby musí mít přístup k hlavní název služby (SPN) registrované domény služby Active Directory. Můžete provést dvěma způsoby:  
   
-1.  Použití `NetworkService` nebo `LocalSystem` účet ke spuštění služby. Protože tyto účty mít přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] automaticky vygeneruje správné element SPN uvnitř koncový bod služby v metadatech služby (webové služby Popis jazyk nebo WSDL).  
+1.  Použití `NetworkService` nebo `LocalSystem` účet ke spuštění služby. Vzhledem k tomu, že tyto účty přístupu k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF správné element SPN uvnitř koncový bod služby automaticky vygeneruje v metadatech služby (Web Services Description Jazyk nebo WSDL).  
   
-2.  Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě musíte vytvořit název SPN pro příslušný účet domény. Jeden způsob, jak to provést, je pomocí nástroje Setspn.exe nástroj. Po vytvoření názvu SPN pro účet služby konfigurace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] publikovat tento hlavní název služby klientům služby prostřednictvím jeho metadata (WSDL). To se provádí nastavením identitu koncového bodu pro zveřejněné koncový bod, buď když konfiguračního souboru aplikace nebo kódu. Následující příklad publikuje identitu prostřednictvím kódu programu.  
+2.  Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě musíte vytvořit název SPN pro příslušný účet domény. Jeden způsob, jak to provést, je pomocí nástroje Setspn.exe nástroj. Po vytvoření názvu SPN pro účet služby nakonfigurujte WCF publikovat tento hlavní název služby klientům služby prostřednictvím jeho metadata (WSDL). To se provádí nastavením identitu koncového bodu pro zveřejněné koncový bod, buď když konfiguračního souboru aplikace nebo kódu. Následující příklad publikuje identitu prostřednictvím kódu programu.  
   
  Další informace o SPN, protokol Kerberos a služby Active Directory, naleznete v části [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330). Další informace o identitách koncový bod, najdete v části [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
   

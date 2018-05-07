@@ -1,23 +1,12 @@
 ---
 title: 39457 - TrackingRecordRaised
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5a2731d1-c731-4b79-bb69-016cb69ef481
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a8798352c38ce30a39c1ff021eef6c7b9a5167be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 104d3fb4b544172001051be7bccc3721cf8d6d1a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="39457---trackingrecordraised"></a>39457 - TrackingRecordRaised
 ## <a name="properties"></a>Vlastnosti  

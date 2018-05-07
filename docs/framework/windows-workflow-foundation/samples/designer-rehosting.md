@@ -1,23 +1,12 @@
 ---
-title: "Návrhář opětovného hostování"
-ms.custom: 
+title: Návrhář opětovného hostování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b676ad31-5f64-4d84-9a36-b4d7113a2f4d
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 44577450bb81e255caf22f306dcd0276821d262c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3caff782dcb7ce2434960e24c4586877788da653
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designer-rehosting"></a>Návrhář opětovného hostování
 Návrhář opětovného hostování je běžný scénář, který odkazuje na hostování na plátno návrhu pracovního postupu uvnitř vlastní aplikaci. Hostování aplikace, které mají zkušenosti se většina lidí je Visual Studio, ale existuje několik scénářů, kdy zobrazující návrháře pracovních postupů v aplikaci může být užitečné:  
@@ -50,7 +39,7 @@ Návrhář opětovného hostování je běžný scénář, který odkazuje na ho
 </Grid>  
 ```  
   
- Další ukázky vytvoří návrháře a přidruží jeho primární <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> s odpovídajícího kontejneru v uživatelském rozhraní. Existuje několik další řádky kódu v následujícím příkladu, které si zasloužila vysvětlení. <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> Volání je potřeba přidružit návrháře aktivit výchozí pro aktivity součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. <xref:System.Activities.Presentation.WorkflowDesigner.Load%2A>je volána předávat WF položku, kterou chcete upravit. Nakonec <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primární plátno) a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (mřížkou vlastností) jsou umístěny na plochu uživatelské rozhraní.  
+ Další ukázky vytvoří návrháře a přidruží jeho primární <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> s odpovídajícího kontejneru v uživatelském rozhraní. Existuje několik další řádky kódu v následujícím příkladu, které si zasloužila vysvětlení. <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> Volání je potřeba přidružit návrháře aktivit výchozí pro aktivity součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. <xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> je volána předávat WF položku, kterou chcete upravit. Nakonec <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primární plátno) a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (mřížkou vlastností) jsou umístěny na plochu uživatelské rozhraní.  
   
 ```csharp  
 protected override void OnInitialized(EventArgs e)  
@@ -135,6 +124,6 @@ protected override void OnInitialized(EventArgs e)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\DesignerRehosting\Basic`

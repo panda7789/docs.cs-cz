@@ -1,21 +1,12 @@
 ---
-title: "Připojení k operace (C#)"
-ms.custom: 
+title: Připojení k operace (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 158d035985dae0d1c1daf0f276a9df7b913f2263
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: caf93848450bcef35fef492985ef9703321b1dcb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="join-operations-c"></a>Připojení k operace (C#)
 A *spojení* dvou zdrojů dat je přidružení objektů v jeden zdroj dat s objekty, které sdílejí společný atribut v jiného zdroje dat.  
@@ -26,7 +17,7 @@ A *spojení* dvou zdrojů dat je přidružení objektů v jeden zdroj dat s obje
   
  Následující obrázek znázorňuje koncepční zobrazení dvě sady a elementů v rámci těchto sad, které jsou součástí vnitřní spojení a levé vnější spojení.  
   
- ![Dvě překrývající se kruhy zobrazující vnitřní &#47; vnější. ] (../../../../csharp/programming-guide/concepts/linq/media/joincircles.png "JoinCircles")  
+ ![Dvě překrývající se kruhy zobrazující vnitřní&#47;vnější. ] (../../../../csharp/programming-guide/concepts/linq/media/joincircles.png "JoinCircles")  
   
 ## <a name="methods"></a>Metody  
   
@@ -39,8 +30,8 @@ A *spojení* dvou zdrojů dat je přidružení objektů v jeden zdroj dat s obje
  <xref:System.Linq>  
  [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  [Anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
- [Formulovali spojení a dotazy smíšený produkt](http://msdn.microsoft.com/library/d8072ede-0521-4670-9bec-1778ceeb875b)  
- [JOIN – klauzule](../../../../csharp/language-reference/keywords/join-clause.md)  
+ [Formulování spojení a dotazů napříč produkty](http://msdn.microsoft.com/library/d8072ede-0521-4670-9bec-1778ceeb875b)  
+ [join – klauzule](../../../../csharp/language-reference/keywords/join-clause.md)  
  [Postupy: spojení pomocí složených klíčů](../../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)  
  [Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)  
  [Postupy: řazení výsledků Klauzule Join](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)  

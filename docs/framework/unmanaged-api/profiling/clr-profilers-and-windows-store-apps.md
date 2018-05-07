@@ -1,14 +1,6 @@
 ---
 title: Profilery CLR a aplikace pro Windows Store
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 applies_to:
@@ -20,17 +12,13 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d884b80ba8ccc42d1b6acc671db408305a095a7d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 20a1ed9b6b613b1e4d3e5363ab9995cc81295091
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR a aplikace pro Windows Store
 Toto téma popisuje, co je potřeba myslet při psaní diagnostické nástroje, které analýza spravovaného kódu běžících v rámci aplikace pro Windows Store.  Obsahuje také pokyny k úpravě existující nástroje vývoj, aby pracovaly při spuštění před aplikací pro Windows Store.  Chcete-li tyto informace pochopili, je vhodné, že pokud jste obeznámeni s Common Language Runtime profilace rozhraním API pro, již jste použili toto rozhraní API v diagnostický nástroj, běží správně u aplikací klasické pracovní plochy Windows a vy jste nyní zajímá úprava nástroj Chcete-li spustit správně pro aplikace pro Windows Store.  
@@ -154,7 +142,7 @@ NET Runtime version 4.0.30319.17929 - Loading profiler failed during CoCreateIns
  **Výběr aplikace pro Windows Store do profilu**  
  Nejprve budete chtít požádejte vaší profileru uživatele, které aplikace pro Windows Store ke spuštění.  Aplikací klasické pracovní plochy pravděpodobně by zobrazit dialogové okno Procházet souboru, a uživatel by najděte a vyberte soubor s příponou .exe.  Ale aplikace pro Windows Store se liší a zobrazí se dialogové okno Procházet pomocí nemá smysl.  Místo toho je lepší se uživateli zobrazí seznam aplikací pro Windows Store pro tohoto uživatele k výběru nainstalována.  
   
- Můžete použít [PackageManager třída](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.aspx) ke generování tohoto seznamu.  `PackageManager`je třída prostředí Windows Runtime, která je k dispozici pro aplikace klasické pracovní plochy a ve skutečnosti je *pouze* k dispozici pro aplikace klasické pracovní plochy.  
+ Můžete použít [PackageManager třída](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.aspx) ke generování tohoto seznamu.  `PackageManager` je třída prostředí Windows Runtime, která je k dispozici pro aplikace klasické pracovní plochy a ve skutečnosti je *pouze* k dispozici pro aplikace klasické pracovní plochy.  
   
  Následující příklad funkce ode z hypotetický uživatelského rozhraní profileru zapisují jako desktopová aplikace v C# yses `PackageManager` a vygenerujte seznam aplikací pro Windows:  
   
@@ -178,9 +166,9 @@ pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,
   
  Existuje několik položek, které budete muset získat správné:  
   
--   `packageFullName`můžete určit při iterování přes balíčky a metodou `package.Id.FullName`.  
+-   `packageFullName` můžete určit při iterování přes balíčky a metodou `package.Id.FullName`.  
   
--   `debuggerCommandLine`je vyzkoušíte zajímavější.  Chcete-li předat bloku vlastní prostředí do aplikace pro Windows Store, potřebujete napsat vlastní zneužívající vlastností prohlížeče fiktivní ladicí program.  Windows následujícímu tření aplikace pro Windows Store je pozastavit a potom připojí ladicí program spuštěním ladicí program s příkazovým řádkem jako v tomto příkladu:  
+-   `debuggerCommandLine` je vyzkoušíte zajímavější.  Chcete-li předat bloku vlastní prostředí do aplikace pro Windows Store, potřebujete napsat vlastní zneužívající vlastností prohlížeče fiktivní ladicí program.  Windows následujícímu tření aplikace pro Windows Store je pozastavit a potom připojí ladicí program spuštěním ladicí program s příkazovým řádkem jako v tomto příkladu:  
   
     ```Output  
     MyDummyDebugger.exe -p 1336 -tid 1424  
@@ -341,7 +329,7 @@ CreateEventEx(
   
  `AppContainerNamedObjects\<acSid>\MyNamedEvent`  
   
- `<acSid>`je aplikace pro Windows Store AppContainer SID.  Výše uvedené části tohoto tématu vám ukázal, jak iterovat balíčky nainstalované pro aktuálního uživatele.  Z ukázkový kód můžete získat ID balíčku.  A z ID balíčku, můžete získat `<acSid>` podobné následujícím kódem:  
+ `<acSid>` je aplikace pro Windows Store AppContainer SID.  Výše uvedené části tohoto tématu vám ukázal, jak iterovat balíčky nainstalované pro aktuálního uživatele.  Z ukázkový kód můžete získat ID balíčku.  A z ID balíčku, můžete získat `<acSid>` podobné následujícím kódem:  
   
 ```csharp  
 IntPtr acPSID;  

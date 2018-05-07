@@ -1,27 +1,15 @@
 ---
-title: "Přenos: UDP"
-ms.custom: 
+title: 'Přenos: UDP'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-caps.latest.revision: "48"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b7bb9f60340915f27c451d05bfbc28e1670c9d83
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 51f445d7f53f70fa206c53835b107da68749e3c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-udp"></a>Přenos: UDP
-Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] přenosu. Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], pomocí rozhraní kanálu a následující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] osvědčené postupy. Postup vytvoření vlastního přenosu jsou následující:  
+Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], pomocí rozhraní kanálu a následující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] osvědčené postupy. Postup vytvoření vlastního přenosu jsou následující:  
   
 1.  Rozhodněte, které kanálu [zpráva Exchange vzory](#MessageExchangePatterns) (IOutputChannel, IInputChannel, IDuplexChannel, třídu IRequestChannel nebo IReplyChannel) ChannelFactory a ChannelListener bude podporovat. Rozhodněte se, zda bude podporovat relacemi variace tato rozhraní.  
   
@@ -51,7 +39,7 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
   
      V této MEP je odeslána zpráva a odpoví. Vzor se skládá z dvojice požadavků a odpovědí. Volání požadavků a odpovědí příklady vzdálených volání procedur (RPC) a prohlížeč získá. Tento vzor se také označuje jako poloduplexní. V této MEP klienta kanály implementovat <xref:System.ServiceModel.Channels.IRequestChannel> a implementaci služby kanály <xref:System.ServiceModel.Channels.IReplyChannel>.  
   
--   Duplex (IDuplexChannel)  
+-   Duplexní režim (IDuplexChannel)  
   
      Duplexní MEP umožňuje libovolný počet zpráv, které mají být odeslány klientem a přijaté v libovolném pořadí. Duplexní MEP je třeba je telefonní hovor, kde je jednotlivých slov použitém zprávu. Vzhledem k tomu, že na obou stranách můžete odesílat a přijímat v této MEP, rozhraní implementované kanály klienta a služby je <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
@@ -61,7 +49,7 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
 >  Pro přenosu UDP pouze MEP, která je podporována je Datagram, protože UDP je ze své podstaty protokol "fire a zapomněli".  
   
 ### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>ICommunicationObject a životního cyklu objekt WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]obsahuje běžné stavu počítače, který se používá pro správu životního cyklu objekty jako <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> používané pro komunikaci. Nejsou k dispozici pět stavy, při kterých může existovat tyto objekty komunikace. Tyto stavy jsou reprezentované pomocí <xref:System.ServiceModel.CommunicationState> výčet a jsou následujícím způsobem:  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obsahuje běžné stavu počítače, který se používá pro správu životního cyklu objekty jako <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> používané pro komunikaci. Nejsou k dispozici pět stavy, při kterých může existovat tyto objekty komunikace. Tyto stavy jsou reprezentované pomocí <xref:System.ServiceModel.CommunicationState> výčet a jsou následujícím způsobem:  
   
 -   Vytvoří: Toto je stav <xref:System.ServiceModel.ICommunicationObject> při prvním vytvoření instance. V tomto stavu dojde k žádné vstupní a výstupní (I/O).  
   
@@ -79,7 +67,7 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
   
 <a name="ChannelAndChannelListener"></a>   
 ## <a name="channel-factory-and-channel-listener"></a>Postup kanálu a naslouchací proces kanálu  
- Dalším krokem při psaní vlastních přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klienta a z <xref:System.ServiceModel.Channels.IChannelListener> pro kanály služby. Vrstvy kanálu využívá vzor objekt factory pro vytváření kanálů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Poskytuje pomocné rutiny základní třídy pro tento proces.  
+ Dalším krokem při psaní vlastních přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klienta a z <xref:System.ServiceModel.Channels.IChannelListener> pro kanály služby. Vrstvy kanálu využívá vzor objekt factory pro vytváření kanálů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje pomocné rutiny základní třídy pro tento proces.  
   
 -   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje výše popsané v kroku 2. 
 
@@ -119,7 +107,7 @@ ArraySegment<byte> messageBuffer = EncodeMessage(message);
 this.socket.SendTo(messageBuffer.Array, messageBuffer.Offset, messageBuffer.Count, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
-### <a name="the-udpchannellistener"></a>The UdpChannelListener  
+### <a name="the-udpchannellistener"></a>UdpChannelListener  
  '' UdpChannelListener, který implementuje ukázce je odvozena z <xref:System.ServiceModel.Channels.ChannelListenerBase> třídy. Pro jediný soket UDP používá pro příjem datagramy. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčce. Data jsou potom převedou do zprávy pomocí rozhraní kódování zprávy.  
   
 ```csharp
@@ -268,7 +256,7 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
   
 -   Prostřednictvím vlastní vazby: vlastní vazby umožňuje uživateli vytvoření vlastní vazby založené na libovolnou sadu elementů vazby.  
   
--   Pomocí vazby poskytované systémem, který zahrnuje naše prvku vazby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje několik z těchto vazeb definovaná systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb je přidružen k profilu dobře definovaný.  
+-   Pomocí vazby poskytované systémem, který zahrnuje naše prvku vazby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje několik z těchto vazeb definovaná systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb je přidružen k profilu dobře definovaný.  
   
  Ukázka implementuje vazba profilu v `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři prvky vazeb v něm: `UdpTransportBindingElement`, `TextMessageEncodingBindingElement CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
   
@@ -488,6 +476,6 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\Udp`

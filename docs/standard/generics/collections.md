@@ -1,13 +1,7 @@
 ---
-title: "Obecné kolekce v rozhraní .NET"
-ms.custom: 
+title: Obecné kolekce v rozhraní .NET
 ms.date: 02/15/2018
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,21 +13,17 @@ helpviewer_keywords:
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 827d5a7edd335769ec5497518cbdf71181aacc2c
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 829ef35d2e26f67ea956a0838d93b9667ad58df4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-collections-in-net"></a>Obecné kolekce v rozhraní .NET
 
  Poskytuje řadu obecné třídy kolekcí v knihovně tříd rozhraní .NET <xref:System.Collections.Generic> a <xref:System.Collections.ObjectModel> obory názvů. Další podrobné informace o těchto tříd naleznete v tématu [běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md).  
   
-### <a name="systemcollectionsgeneric"></a>System.Collections.Generic  
+### <a name="systemcollectionsgeneric"></a>System.Collections.Generic –  
  Mnoho typů obecnou kolekci je analogických neobecné typy. <xref:System.Collections.Generic.Dictionary%602> je obecná verze <xref:System.Collections.Hashtable>; používá obecná struktura <xref:System.Collections.Generic.KeyValuePair%602> pro výčet místo <xref:System.Collections.DictionaryEntry>.  
   
  <xref:System.Collections.Generic.List%601> je obecná verze <xref:System.Collections.ArrayList>. Existují obecné <xref:System.Collections.Generic.Queue%601> a <xref:System.Collections.Generic.Stack%601> třídy, které odpovídají neobecné verzi.  

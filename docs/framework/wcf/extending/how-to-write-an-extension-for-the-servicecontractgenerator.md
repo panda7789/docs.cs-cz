@@ -1,24 +1,12 @@
 ---
-title: "Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator"
-ms.custom: 
+title: 'Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c62aa9ac582e93bb86399472e47c41fdb6fad2d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 43105553739e104ab862b3be3cf2082fbf6d499f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a>Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator
 Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceModel.Description.ServiceContractGenerator>. To lze provést implementací <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> rozhraní na chování operaci nebo implementaci <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní na chování kontrakt. Toto téma ukazuje, jak implementovat <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní na chování kontrakt.  
@@ -107,7 +95,7 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
        throw new Exception("There were errors during code compilation.");  
     ```  
   
-7.  <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29>je volána automaticky pro každé kontrakt chování na daný kontrakt, který implementuje <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Tato metoda pak můžete upravovat <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předaná. V tomto příkladu jsou přidány komentáře.  
+7.  <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> je volána automaticky pro každé kontrakt chování na daný kontrakt, který implementuje <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Tato metoda pak můžete upravovat <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předaná. V tomto příkladu jsou přidány komentáře.  
   
 ## <a name="see-also"></a>Viz také  
  [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)  

@@ -1,30 +1,16 @@
 ---
 title: Správa verzí služby dat (služby WCF Data Services)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - versioning, WCF Data Services
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e6d800b35a69c08ab9f7bd90165691eab7d8743f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0d77f54b5ef20db81c3c20f486ac7314f73aece8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí služby dat (služby WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Můžete vytvořit datové služby tak, aby klienti přístup k datům jako prostředky pomocí identifikátory URI, které jsou založeny na datový model. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje také definice operací služby. Po počátečním nasazení a potenciálně několikrát během své životnosti, tato data services bude pravděpodobně nutné změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musí se zvážit, zda chcete definovat novou verzi dat služby a jak nejlepší minimalizaci dopadů na existující klientské aplikace. Toto téma obsahuje pokyny k kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpracovává exchange mezi klienty a datové služby, které podporují různé verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu.  

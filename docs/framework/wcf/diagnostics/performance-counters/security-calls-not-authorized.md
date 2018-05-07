@@ -1,24 +1,14 @@
 ---
-title: "Počet neautorizovaných volání zabezpečení"
-ms.custom: 
+title: Počet neautorizovaných volání zabezpečení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cb6acdcd-7336-42e1-9ae8-ac891336cd58
-caps.latest.revision: "6"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 641d627868c69a5ec63e1acc3f262d315341d0ad
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3554644a7f73894703cc26ad11e4f7b9d58cab60
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-calls-not-authorized"></a>Počet neautorizovaných volání zabezpečení
 Název čítače: Neautorizovaných volání zabezpečení.  

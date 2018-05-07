@@ -1,27 +1,15 @@
 ---
-title: "Animace a časování přehledu systému"
-ms.custom: 
+title: Animace a časování přehledu systému
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - timing system [WPF]
 - animation [WPF]
 ms.assetid: 172cd5a8-a333-4c81-9456-fafccc19f382
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 87e3b1b63c8582a322f74659f03803d1dbb19621
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bfb9a337a604fe8d86d208344d4371748e28f285
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="animation-and-timing-system-overview"></a>Animace a časování přehledu systému
 Toto téma popisuje, jak používá systém časování animace, <xref:System.Windows.Media.Animation.Timeline>, a <xref:System.Windows.Media.Animation.Clock> třídy pro animaci vlastnosti.  

@@ -1,10 +1,6 @@
 ---
-title: "Funkce pro převod typů (Visual Basic)"
+title: Funkce pro převod typů (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.CUShort
 - vb.csng
@@ -85,14 +81,11 @@ helpviewer_keywords:
 - rounding numbers [Visual Basic], banker's rounding
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 117cd4ce038a533715bbc86558545f0f223dd149
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c9222bdb31f4fd7c792d5a50c100067e29e9d537
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Funkce pro převod typů (Visual Basic)
 Tyto funkce jsou kompilované vložené, což znamená, že kód převod je součástí kód, který se vyhodnotí výraz. Někdy je žádná volání procedury k provádění převodu, což zvyšuje výkon. Jednotlivé funkce převede výraz na určitého datového typu.  
@@ -127,22 +120,22 @@ CUShort(expression)
   
 |Název funkce|Návratový datový typ|Rozsah pro `expression` argument|  
 |-------------------|----------------------|-------------------------------------|  
-|`CBool`|[Boolean – datový typ](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Libovolný platný `Char` nebo `String` nebo číselný výraz.|  
-|`CByte`|[Byte – datový typ](../../../visual-basic/language-reference/data-types/byte-data-type.md)|0 do 255 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CChar`|[Char – datový typ](../../../visual-basic/language-reference/data-types/char-data-type.md)|Libovolný platný `Char` nebo `String` výraz; pouze první znak `String` je převést; hodnota může být 0 až 65535 (bez znaménka).|  
-|`CDate`|[Date – datový typ](../../../visual-basic/language-reference/data-types/date-data-type.md)|Platný reprezentace data a času.|  
-|`CDbl`|[Double – datový typ](../../../visual-basic/language-reference/data-types/double-data-type.md)|-1.79769313486231570E + 308 prostřednictvím - 4.94065645841246544E-324 pro záporné hodnoty; 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 kladné hodnoty.|  
-|`CDec`|[Decimal – datový typ](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|+/-79,228,162,514,264,337,593,543,950,335 pro škálovat nula čísla, který je čísla bez desetinných míst. Pro 28 desetinná čísla je rozsah +/-7,9228162514264337593543950335. Nejmenší možný počet nenulové je 0,0000000000000000000000000001 (+/-1E-28).|  
-|`CInt`|[Integer – datový typ](../../../visual-basic/language-reference/data-types/integer-data-type.md)|-2,147,483,648 prostřednictvím 2 147 483 647; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CLng`|[Long – datový typ](../../../visual-basic/language-reference/data-types/long-data-type.md)|-9,223,372,036,854,775,808 prostřednictvím 9,223,372,036,854,775,807; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CObj`|[Object – datový typ](../../../visual-basic/language-reference/data-types/object-data-type.md)|Jakýkoli platný výraz.|  
-|`CSByte`|[SByte – datový typ](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|-128 až 127; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CShort`|[Short – datový typ](../../../visual-basic/language-reference/data-types/short-data-type.md)|-32 768 do 32 767; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CSng`|[Single – datový typ](../../../visual-basic/language-reference/data-types/single-data-type.md)|-3.402823E + 38 prostřednictvím - 1, 401298E-45 pro záporné hodnoty; 1, 401298E-45 prostřednictvím 3.402823E + 38 kladné hodnoty.|  
-|`CStr`|[String – datový typ](../../../visual-basic/language-reference/data-types/string-data-type.md)|Vrátí pro `CStr` závisí na `expression` argument. V tématu [návratové hodnoty pro funkci CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).|  
-|`CUInt`|[Uinteger – datový typ](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|0 až 4 294 967 295 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CULng`|[Ulong – datový typ](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|0 až 18,446,744,073,709,551,615 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
-|`CUShort`|[Ushort – datový typ](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|0 až 65 535 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CBool`|[Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Libovolný platný `Char` nebo `String` nebo číselný výraz.|  
+|`CByte`|[Datový typ Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md)|0 do 255 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CChar`|[Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)|Libovolný platný `Char` nebo `String` výraz; pouze první znak `String` je převést; hodnota může být 0 až 65535 (bez znaménka).|  
+|`CDate`|[Datový typ Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|Platný reprezentace data a času.|  
+|`CDbl`|[Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)|-1.79769313486231570E + 308 prostřednictvím - 4.94065645841246544E-324 pro záporné hodnoty; 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 kladné hodnoty.|  
+|`CDec`|[Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|+/-79,228,162,514,264,337,593,543,950,335 pro škálovat nula čísla, který je čísla bez desetinných míst. Pro 28 desetinná čísla je rozsah +/-7,9228162514264337593543950335. Nejmenší možný počet nenulové je 0,0000000000000000000000000001 (+/-1E-28).|  
+|`CInt`|[Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|-2,147,483,648 prostřednictvím 2 147 483 647; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CLng`|[Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)|-9,223,372,036,854,775,808 prostřednictvím 9,223,372,036,854,775,807; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CObj`|[Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|Jakýkoli platný výraz.|  
+|`CSByte`|[Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|-128 až 127; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CShort`|[Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)|-32 768 do 32 767; jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CSng`|[Datový typ Single](../../../visual-basic/language-reference/data-types/single-data-type.md)|-3.402823E + 38 prostřednictvím - 1, 401298E-45 pro záporné hodnoty; 1, 401298E-45 prostřednictvím 3.402823E + 38 kladné hodnoty.|  
+|`CStr`|[Datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md)|Vrátí pro `CStr` závisí na `expression` argument. V tématu [návratové hodnoty pro funkci CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).|  
+|`CUInt`|[Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|0 až 4 294 967 295 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CULng`|[Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|0 až 18,446,744,073,709,551,615 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
+|`CUShort`|[Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|0 až 65 535 (bez znaménka); jsou zaokrouhleny zlomkové části. <sup>1</sup>|  
   
  <sup>1</sup> zlomkové části mohou podléhat zvláštním typem zaokrouhlení volané *banker je zaokrouhlení*. Další informace najdete v části "Poznámky".  
   
@@ -159,9 +152,9 @@ CUShort(expression)
   
      Pokud zlomkové části přesně 0,5, funkce pro převod celé číslo zaokrouhlit, aby nejbližší sudé celé číslo. Například 0,5 zaokrouhlí na 0 a 1.5 a 2.5, které obě zaokrouhlit na 2. To se někdy nazývá *banker je zaokrouhlení*, a jejím účelem je kompenzovat odchylka, které můžou hromadit při přidávání mnoho taková čísla společně.  
   
-     `CInt`a `CLng` se liší od <xref:Microsoft.VisualBasic.Conversion.Int%2A> a <xref:Microsoft.VisualBasic.Conversion.Fix%2A> funkce, které zkrátit, nikoli zaokrouhlit zlomkové části čísla. Navíc `Fix` a `Int` vždy vrátí hodnotu stejný datový typ. jako předáte v.  
+     `CInt` a `CLng` se liší od <xref:Microsoft.VisualBasic.Conversion.Int%2A> a <xref:Microsoft.VisualBasic.Conversion.Fix%2A> funkce, které zkrátit, nikoli zaokrouhlit zlomkové části čísla. Navíc `Fix` a `Int` vždy vrátí hodnotu stejný datový typ. jako předáte v.  
   
--   **Datum a čas převody.** Použití <xref:Microsoft.VisualBasic.Information.IsDate%2A> funkce k určení, pokud hodnotu lze převést datum a čas. `CDate`rozpozná literály data a času literály, ale není číselné hodnoty. Převést Visual Basic 6.0 `Date` hodnotu `Date` hodnotu v jazyce Visual Basic 2005 nebo novější verze, můžete použít <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> metoda.  
+-   **Datum a čas převody.** Použití <xref:Microsoft.VisualBasic.Information.IsDate%2A> funkce k určení, pokud hodnotu lze převést datum a čas. `CDate` rozpozná literály data a času literály, ale není číselné hodnoty. Převést Visual Basic 6.0 `Date` hodnotu `Date` hodnotu v jazyce Visual Basic 2005 nebo novější verze, můžete použít <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> metoda.  
   
 -   **Neutrální hodnoty data a času.** [Date – datový typ](../../../visual-basic/language-reference/data-types/date-data-type.md) vždy obsahuje informace o datu a času. Pro účely převod typů, Visual Basic považuje za 1/1/0001 (1. ledna roku 1) *neutrální hodnota* pro datum a 00:00:00 (půlnoc) se má nastavit neutrální hodnota pro dobu. Pokud převedete `Date` hodnotu na řetězec `CStr` nezahrnuje neutrální hodnoty ve výsledném řetězci. Například, pokud převedete `#January 1, 0001 9:30:00#` na řetězec, výsledkem je "9:30:00: 00"; potlačeno informace o datu. Informace o datu je však stále nachází na původní `Date` hodnotu a je možné obnovit s funkcemi, jako například <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> funkce.  
   
@@ -194,7 +187,7 @@ CUShort(expression)
  [!code-vb[VbVbalrFunctions#4](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_4.vb)]  
   
 ## <a name="cdate-example"></a>CDate – příklad  
- Následující příklad používá `CDate` funkce pro převod řetězců na `Date` hodnoty. Obecně se nedoporučuje pevně kódováno data a časy jako řetězce (jak je uvedeno v tomto příkladu). Použijte literály datum a čas literály, jako je například #Feb 12, &#1969; a # 4:45:23 PM #, místo toho.  
+ Následující příklad používá `CDate` funkce pro převod řetězců na `Date` hodnoty. Obecně se nedoporučuje pevně kódováno data a časy jako řetězce (jak je uvedeno v tomto příkladu). Použijte literály datum a čas literály, jako je například #Feb 12, 1969 # a # 4:45:23 PM #, místo toho.  
   
  [!code-vb[VbVbalrFunctions#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_5.vb)]  
   
@@ -245,7 +238,7 @@ CUShort(expression)
   
  [!code-vb[VbVbalrFunctions#15](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_15.vb)]  
   
- `CStr`vždy vykreslí `Date` hodnotu ve formátu standard krátké pro aktuální národní prostředí, například "6/15/2003 4:35:47 PM". Ale `CStr` potlačí *neutrální hodnoty* z 1/1/0001 pro datum a 00:00:00 po dobu.  
+ `CStr` vždy vykreslí `Date` hodnotu ve formátu standard krátké pro aktuální národní prostředí, například "6/15/2003 4:35:47 PM". Ale `CStr` potlačí *neutrální hodnoty* z 1/1/0001 pro datum a 00:00:00 po dobu.  
   
  Další podrobnosti o hodnot vrácených `CStr`, najdete v části [vrátit hodnoty pro funkci CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).  
   

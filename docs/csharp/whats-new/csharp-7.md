@@ -1,20 +1,13 @@
 ---
 title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Přehled nových funkcí, bude v příštích verzí 7 jazyka C#.
-keywords: C#, .NET, .NET Core, nejnovější funkce, co je nového
-author: BillWagner
-ms.author: wiwagn
 ms.date: 12/21/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 1951c60ee11d0d5c4856f5f92eee8ba690b11f8d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 440784edfb93d613f1427be2152cd92ae5566e3e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v C# 7.0
 

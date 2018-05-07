@@ -1,26 +1,15 @@
 ---
 title: 'Postupy: deserializovat vlastnosti Data Instance'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3863812bc3c83b346f2340bcfbc609a1024c3c6b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: badea2b9731b1144a727a5d5b83c92072027e1f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-deserialize-instance-data-properties"></a>Postupy: deserializovat vlastnosti Data Instance
-Mohou nastat situace, když uživatel nebo správce pracovního postupu chtít ručně zkontrolovat stav instance pracovního postupu trvalý. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>obsahuje zobrazení v tabulce instance, která zveřejňuje následující čtyři sloupce:  
+Mohou nastat situace, když uživatel nebo správce pracovního postupu chtít ručně zkontrolovat stav instance pracovního postupu trvalý. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> obsahuje zobrazení v tabulce instance, která zveřejňuje následující čtyři sloupce:  
   
 -   ReadWritePrimitiveDataProperties  
   

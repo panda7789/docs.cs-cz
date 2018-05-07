@@ -1,24 +1,12 @@
 ---
-title: "3430 – WebSocketUseVersionFromClientWebSocketFactory"
-ms.custom: 
+title: 3430 – WebSocketUseVersionFromClientWebSocketFactory
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fb04adb2-e629-4ae7-b3a6-5512f3927cb2
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c4d8aba7f2144f7550ba8fb30947d4d839d55b0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 99779178dbfa6690d681169c21bc97dbde6b7d1f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3430---websocketuseversionfromclientwebsocketfactory"></a>3430 – WebSocketUseVersionFromClientWebSocketFactory
 ## <a name="properties"></a>Vlastnosti  

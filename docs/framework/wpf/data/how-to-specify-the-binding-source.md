@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Určení zdroje připojení"
-ms.custom: 
+title: 'Postupy: Určení zdroje připojení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 23a4c180eb62dd152f1ed24c01b8103ccf1ec562
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 333a85bc59ded3fd42bef6aff5845c9a6ddeb49b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-binding-source"></a>Postupy: Určení zdroje připojení
 V datové vazbě zdrojového objektu vazby odkazuje na objekt, který je získat data z. Toto téma popisuje různé způsoby zadávání zdroji vazby.  

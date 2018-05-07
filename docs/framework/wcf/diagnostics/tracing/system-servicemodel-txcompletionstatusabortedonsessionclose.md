@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.TxCompletionStatusAbortedOnSessionClose
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7e142e9d-e81b-4309-974a-02e9cc064ea0
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 149a2bfac435185552c3871948b35bc860a43ae1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7ecc70f1c4d7184401dd29908968f628f2e6792a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodeltxcompletionstatusabortedonsessionclose"></a>System.ServiceModel.TxCompletionStatusAbortedOnSessionClose
 Zadaný transakce byla přerušena, protože nebyla při zavření relace a TransactionAutoCompleteOnSessionClose OperationBehaviorAttribute byl nastaven na hodnotu false.  

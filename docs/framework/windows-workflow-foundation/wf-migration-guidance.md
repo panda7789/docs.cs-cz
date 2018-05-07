@@ -1,19 +1,14 @@
 ---
-title: "Dokumentace k systému Windows Workflow Foundation (WF) migrace"
+title: Dokumentace k systému Windows Workflow Foundation (WF) migrace
 ms.date: 06/19/2017
-ms.prod: .net-framework
-ms.topic: article
 ms.assetid: 1da7f5ff-5a67-44ba-b165-f3e5de008e4a
-caps.latest.revision: "7"
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e46a5763b8f2e88ffad1773fa267a743110f0e40
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3726f05fde6923fcc2bad192183e1e182efb9332
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-foundation-wf-migration-guidance"></a>Dokumentace k systému Windows Workflow Foundation (WF) migrace
 

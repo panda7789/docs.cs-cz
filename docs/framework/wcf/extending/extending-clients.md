@@ -1,38 +1,24 @@
 ---
-title: "Rozšíření klientů"
-ms.custom: 
+title: Rozšíření klientů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - proxy extensions [WCF]
 ms.assetid: 1328c61c-06e5-455f-9ebd-ceefb59d3867
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2444488418b7647111cf4b89db0c41a8e66470d4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7eea247602d24c545e0de5fa9df50e83aae8ed7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-clients"></a>Rozšíření klientů
 V volající aplikace je zodpovědná za překladu volání metod v kódu aplikace do odchozí zprávy, když zavedete je základní kanály, překladu výsledky zpět do návratové hodnoty a výstupní parametry v vrstva modelu služby kód aplikace a vrací výsledky zpět na volajícího. Rozšíření modelů služby upravit nebo jsou implementovány provádění nebo komunikace chování a funkce zahrnující klienta nebo dispečera funkce, vlastní chování, zprávu a parametr zachycení a další funkce rozšiřitelnost.  
   
- Toto téma popisuje postup použití <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.ClientOperation> třídy v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klientská aplikace změnit výchozí chování při spuštění systému [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta nebo k zachycení nebo upravit zprávy, parametry nebo návratové hodnoty před nebo Po odeslání nebo načítat vrstvy kanálu. Další informace o rozšíření modulu runtime service najdete v tématu [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md). Další informace o chování, které upravit a vložit přizpůsobení objektů do modulu runtime klienta najdete v tématu [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
+ Toto téma popisuje postup použití <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.ClientOperation> třídy v aplikaci klienta Windows Communication Foundation (WCF) Chcete-li změnit výchozí chování při spuštění systému [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta nebo k zachycení nebo upravit zprávy, parametry, nebo návratové hodnoty před nebo po odeslání nebo načítat vrstvy kanálu. Další informace o rozšíření modulu runtime service najdete v tématu [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md). Další informace o chování, které upravit a vložit přizpůsobení objektů do modulu runtime klienta najdete v tématu [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
   
 ## <a name="clients"></a>Klienti  
  V klientovi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta nebo kanálem klienta převede volání metod zprávy odchozí a příchozí zprávy a pokuste se výsledky operace, které jsou vráceny do volající aplikace. (Další informace o typech klienta najdete v tématu [Architektura klienta WCF](../../../../docs/framework/wcf/feature-details/client-architecture.md).)  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]typů klientů mají runtime typy, které tuto funkci na úrovni koncového bodu a operace zpracování. Pokud aplikace zavolá operace, <xref:System.ServiceModel.Dispatcher.ClientOperation> překládá odchozí objekty do zprávy, zpracuje sběrače, potvrdí, že je v souladu se smlouvou cíl odchozí volání a předá odchozí zprávu, která se <xref:System.ServiceModel.Dispatcher.ClientRuntime>, což je zodpovědný za vytváření a správy odchozí kanály (a příchozí kanály v případě duplexní služby), zpracování velmi odchozí zprávy zpracování (například změna záhlaví), zpracování zpráv sběrače v obou směrech a směrování příchozí duplexní volání příslušné na straně klienta <xref:System.ServiceModel.Dispatcher.DispatchRuntime> objektu. Jak <xref:System.ServiceModel.Dispatcher.ClientOperation> a <xref:System.ServiceModel.Dispatcher.ClientRuntime> poskytují podobné služby, když jsou zprávy (včetně chyb) vrácen do klienta.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] typů klientů mají runtime typy, které tuto funkci na úrovni koncového bodu a operace zpracování. Pokud aplikace zavolá operace, <xref:System.ServiceModel.Dispatcher.ClientOperation> překládá odchozí objekty do zprávy, zpracuje sběrače, potvrdí, že je v souladu se smlouvou cíl odchozí volání a předá odchozí zprávu, která se <xref:System.ServiceModel.Dispatcher.ClientRuntime>, což je zodpovědný za vytváření a správy odchozí kanály (a příchozí kanály v případě duplexní služby), zpracování velmi odchozí zprávy zpracování (například změna záhlaví), zpracování zpráv sběrače v obou směrech a směrování příchozí duplexní volání příslušné na straně klienta <xref:System.ServiceModel.Dispatcher.DispatchRuntime> objektu. Jak <xref:System.ServiceModel.Dispatcher.ClientOperation> a <xref:System.ServiceModel.Dispatcher.ClientRuntime> poskytují podobné služby, když jsou zprávy (včetně chyb) vrácen do klienta.  
   
  Tyto dvě třídy runtime jsou hlavní rozšíření přizpůsobit zpracování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekty klienta a kanály. <xref:System.ServiceModel.Dispatcher.ClientRuntime> Třída umožňuje uživatelům zachytávat a rozšířit spuštění klienta mezi všechny zprávy ve smlouvě. <xref:System.ServiceModel.Dispatcher.ClientOperation> Třída umožňuje uživatelům zachytávat a rozšířit spuštění klienta pro všechny zprávy ve danou operaci.  
   

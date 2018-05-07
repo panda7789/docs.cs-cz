@@ -1,12 +1,6 @@
 ---
 title: + Operátor (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.+
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - strings [Visual Basic], concatenating
 - sum operator [Visual Basic]
 ms.assetid: 5694778f-0a2c-4539-8009-f66f318fb46d
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fb0d66db2d777c046ccec69acc1f2069d21baf6c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ccf79c700cf852c0febb9c3f3464cbacdd39296e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>+ – operátor (Visual Basic)
 Sečte dvě čísla nebo vrátí kladnou hodnotu číselného výrazu. Můžete také použít ke zřetězení dvou výrazů řetězec.  
@@ -63,26 +54,26 @@ Sečte dvě čísla nebo vrátí kladnou hodnotu číselného výrazu. Můžete 
 |Datové typy výrazů|Akce kompilátorem|  
 |---|---|  
 |Číselné datové typy jsou oba výrazy (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, nebo `Double`)|Přidáte. Datový typ výsledků je vhodné pro datové typy číselného typu `expression1` a `expression2`. Podívejte se na tabulky "Celočíselné aritmetiky" v [typy výsledků operátoru Data](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).|  
-|Jsou oba výrazy typu`String`|Zřetězení.|  
+|Jsou oba výrazy typu `String`|Zřetězení.|  
 |Jeden výraz je číselný datový typ a druhá je řetězec|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak implicitně převést `String` k `Double` a přidejte.<br /><br /> Pokud `String` nelze převést na `Double`, pak throw <xref:System.InvalidCastException> výjimka.|  
 |Jeden výraz je číselný datový typ, a druhá je [nic](../../../visual-basic/language-reference/nothing.md)|Přidat, s `Nothing` s hodnotou nula.|  
-|Jeden výraz je řetězec, a druhá je`Nothing`|Zřetězení s `Nothing` cenná jako "".|  
+|Jeden výraz je řetězec, a druhá je `Nothing`|Zřetězení s `Nothing` cenná jako "".|  
   
  Pokud je jeden výraz `Object` výrazu jazyka Visual Basic provede následující akce.  
   
 |Datové typy výrazů|Akce kompilátorem|  
 |---|---|  
-|`Object`výraz obsahuje číselnou hodnotu a druhá je číselný datový typ.|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak přidat.|  
-|`Object`výraz obsahuje číselnou hodnotu a druhá je typu`String`|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak implicitně převést `String` k `Double` a přidejte.<br /><br /> Pokud `String` nelze převést na `Double`, pak throw <xref:System.InvalidCastException> výjimka.|  
-|`Object`výraz obsahuje řetězec a druhá je číselný datový typ.|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, implicitně převést řetězec `Object` k `Double` a přidejte.<br /><br /> Pokud řetězec `Object` nelze převést na `Double`, pak throw <xref:System.InvalidCastException> výjimka.|  
-|`Object`výraz obsahuje řetězec a druhá je typu`String`|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak implicitně převést `Object` k `String` a zřetězení.|  
+|`Object` výraz obsahuje číselnou hodnotu a druhá je číselný datový typ.|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak přidat.|  
+|`Object` výraz obsahuje číselnou hodnotu a druhá je typu `String`|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak implicitně převést `String` k `Double` a přidejte.<br /><br /> Pokud `String` nelze převést na `Double`, pak throw <xref:System.InvalidCastException> výjimka.|  
+|`Object` výraz obsahuje řetězec a druhá je číselný datový typ.|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, implicitně převést řetězec `Object` k `Double` a přidejte.<br /><br /> Pokud řetězec `Object` nelze převést na `Double`, pak throw <xref:System.InvalidCastException> výjimka.|  
+|`Object` výraz obsahuje řetězec a druhá je typu `String`|Pokud `Option Strict` je `On`, pak vygenerována chyba kompilátoru.<br /><br /> Pokud `Option Strict` je `Off`, pak implicitně převést `Object` k `String` a zřetězení.|  
   
  Pokud jsou oba výrazy `Object` výrazy jazyka Visual Basic provede následující akce (`Option Strict Off` pouze).  
   
 |Datové typy výrazů|Akce kompilátorem|  
 |---|---|  
 |Obě `Object` výrazy uložení číselné hodnoty.|Přidáte.|  
-|Obě `Object` výrazy jsou typu`String`|Zřetězení.|  
+|Obě `Object` výrazy jsou typu `String`|Zřetězení.|  
 |Jeden `Object` výraz obsahuje číselnou hodnotu a dalších obsahuje řetězec|Implicitně převést řetězec `Object` k `Double` a přidejte.<br /><br /> Pokud řetězec `Object` nelze převést na číselnou hodnotu, pak throw <xref:System.InvalidCastException> výjimka.|  
   
  Pokud má jedna `Object` výraz vyhodnocen jako [nic](../../../visual-basic/language-reference/nothing.md) nebo <xref:System.DBNull>, `+` operátor považuje za `String` s hodnotou "".  
@@ -117,10 +108,10 @@ Sečte dvě čísla nebo vrátí kladnou hodnotu číselného výrazu. Můžete 
  Chcete-li odstranit nejednoznačnost, použijte `&` operátor místo `+` pro zřetězení.  
   
 ## <a name="see-also"></a>Viz také  
- [& – Operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
+ [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
  [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
  [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)  
- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+ [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

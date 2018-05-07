@@ -1,24 +1,14 @@
 ---
 title: Elementy direktivy modulu runtime
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e2566c5ebe8c94610c8f7e258da7c77adb86a49f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2b4e8f0902e0d3ebd010ff639b329707881c29fd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-directive-elements"></a>Elementy direktivy modulu runtime
 Formát souboru runtime (rd.xml) direktivy podporuje následující elementy direktivy modulu runtime. V tématu [direktivy modulu Runtime (rd.xml) referenci na konfigurační soubor](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) pro znázornění hierarchické.  
@@ -26,7 +16,7 @@ Formát souboru runtime (rd.xml) direktivy podporuje následující elementy dir
  [\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)  
  Platí zásady reflexe modulu runtime pro všechny typy používané aplikace a slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu. Toto je podřízený [ \<direktivy >](../../../docs/framework/net-native/directives-element-net-native.md) element.  
   
- [\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)  
+ [\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)  
  Runnntime zásad platí pro všechny typy v sestavení. Toto je podřízený [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md) elementy.  
   
  [\<AttributeImplies >](../../../docs/framework/net-native/attributeimplies-element-net-native.md)  
@@ -56,7 +46,7 @@ Formát souboru runtime (rd.xml) direktivy podporuje následující elementy dir
  [\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)  
  Sestavené obecné metody se týká zásady modulu runtime. Toto je podřízený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
   
- [\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)  
+ [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)  
  Modul runtime zásad platí pro všechny typy v oboru názvů.  
   
  [\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)  

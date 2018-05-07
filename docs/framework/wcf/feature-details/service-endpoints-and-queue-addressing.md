@@ -1,33 +1,19 @@
 ---
 title: Koncové body služby a adresování front
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f2244ccb1637f944f9e3349cf0d94caa2f6676bf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: a2f4807e447482ee790f2ca9a2ab4dbde531b1c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
-Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapování koncových bodů služby do fronty. Připomínáme, následující obrázek znázorňuje classic [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zařazených do fronty nasazení aplikace.  
+Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapování koncových bodů služby do fronty. Následující obrázek znázorňuje Připomínáme, classic, že nasazení aplikace Windows Communication Foundation (WCF) zařazených do fronty.  
   
  ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
   
- Pro klienta k odeslání zprávy do služby řeší klienta zprávy do cílové fronty. Pro službu ke čtení zpráv z fronty nastaví její adresu naslouchání do cílové fronty. Adresování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je založen na Uniform Resource Identifier URI, pokud nejsou názvy fronty služby Řízení front zpráv (MSMQ) na základě identifikátoru URI. Proto je důležité pochopit, jak vyřešit vytvořených pomocí služby MSMQ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Pro klienta k odeslání zprávy do služby řeší klienta zprávy do cílové fronty. Pro službu ke čtení zpráv z fronty nastaví její adresu naslouchání do cílové fronty. Adresování ve WCF je je na základě Uniform Resource Identifier URI názvy fronty služby Řízení front zpráv (MSMQ) nejsou na základě identifikátoru URI. Proto je důležité pochopit, jak vyřešit fronty vytvořené v MSMQ pomocí WCF.  
   
 ## <a name="msmq-addressing"></a>Adresování MSMQ  
  MSMQ používá k identifikaci fronty cesty a názvy ve formátu. Cesty, zadejte název hostitele a `QueueName`. Volitelně může být `Private$` mezi název hostitele a `QueueName` udávajících soukromou frontu, která není publikována ve službě Active Directory directory.  
@@ -37,11 +23,11 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
  Další informace o názvech služby MSMQ cestu a formát najdete v tématu [o služby Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=94837).  
   
 ## <a name="netmsmqbinding-and-service-addressing"></a>– NetMsmqBinding a adresování služeb  
- Při přiřazování zpráv do služby, je zvolen schéma v identifikátoru URI v závislosti na přenos používá pro komunikaci. Každý přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] má jedinečné schéma. Schéma musí odrážet povaha přenos používá pro komunikaci. Například net.tcp net.pipe, HTTP a tak dále.  
+ Při přiřazování zpráv do služby, je zvolen schéma v identifikátoru URI v závislosti na přenos používá pro komunikaci. Každý přenosu ve WCF má jedinečné schéma. Schéma musí odrážet povaha přenos používá pro komunikaci. Například net.tcp net.pipe, HTTP a tak dále.  
   
- Služby MSMQ zařazených do fronty přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpřístupní net.msmq schéma. Všechny řešit pomocí schéma net.msmq zprávy pomocí `NetMsmqBinding` kanálem zařazených do fronty přenosu služby MSMQ.  
+ Služby MSMQ zařadit do fronty přenosu ve WCF zpřístupňuje net.msmq schéma. Všechny řešit pomocí schéma net.msmq zprávy pomocí `NetMsmqBinding` kanálem zařazených do fronty přenosu služby MSMQ.  
   
- Adresování fronty v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle vzoru následující:  
+ Adresování fronty ve WCF je založena na vzoru následující:  
   
  NET.MSMQ: / / \< *název hostitele*> / [privátní /] \< *název fronty*>  
   
@@ -49,7 +35,7 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
 -   \<*název hostitele*> je název počítače, který je hostitelem cílové fronty.  
   
--   [privátní] je volitelné. Používá se při adresování cílové fronty, který je soukromou frontu. Chcete-li vyřešit veřejné fronty, nesmíte zadat privátní. Všimněte si, že na rozdíl od služby MSMQ cesty, neexistuje žádný "$" v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URI formuláře.  
+-   [privátní] je volitelné. Používá se při adresování cílové fronty, který je soukromou frontu. Chcete-li vyřešit veřejné fronty, nesmíte zadat privátní. Upozorňujeme, že, na rozdíl od služby MSMQ cesty se žádné "$" ve formátu WCF URI.  
   
 -   \<*Název fronty*> je název fronty. Název fronty najdete také dílčí fronta. Proto \< *název fronty*> = \< *název fronty*> [; *Název dílčí queue*].  
   
@@ -102,10 +88,10 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  NET.MSMQ: //localhost/ [privátní /] \< *vlastní zpráv písmeno fronty name*>.  
   
- A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby ověřuje, že všechny zprávy obdrží byla provedena do konkrétní fronty naslouchá na. Pokud cílovou frontu zprávy fronty, kterou je ve službě neodpovídá, službu nezpracovává zprávy. Jedná se o problém, který služby naslouchání do fronty nedoručených zpráv musí řešit, protože jakékoli zprávy do fronty nedoručených zpráv byl určen pro doručena jinde. Ke čtení zpráv z fronty nedoručených zpráv nebo z poškozených fronty, `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr je nutné použít. Příklad, naleznete v části [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
+ Služby WCF ověřuje, že všechny zprávy, které obdrží byla provedena do konkrétní fronty, kterou naslouchá na. Pokud cílovou frontu zprávy fronty, kterou je ve službě neodpovídá, službu nezpracovává zprávy. Jedná se o problém, který služby naslouchání do fronty nedoručených zpráv musí řešit, protože jakékoli zprávy do fronty nedoručených zpráv byl určen pro doručena jinde. Ke čtení zpráv z fronty nedoručených zpráv nebo z poškozených fronty, `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr je nutné použít. Příklad, naleznete v části [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding a adresování služeb  
- `MsmqIntegrationBinding` Se používá ke komunikaci s tradiční aplikacím služby MSMQ. K usnadnění vzájemná spolupráce pomocí stávající aplikaci služby MSMQ, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje pouze formátu název adresy. Proto musí odpovídat zprávy odeslané používá tuto vazbu schéma identifikátoru URI:  
+ `MsmqIntegrationBinding` Se používá ke komunikaci s tradiční aplikacím služby MSMQ. K usnadnění vzájemná spolupráce pomocí stávající aplikaci služby MSMQ, WCF podporuje pouze adresy název formátu. Proto musí odpovídat zprávy odeslané používá tuto vazbu schéma identifikátoru URI:  
   
  MSMQ.formatname:\<*název formátu MSMQ*>>  
   
@@ -115,7 +101,7 @@ Toto téma popisuje, jak klienti adres služby, které čtení z fronty a mapov�
   
  Při zadávání adresy pomocí SRMP `MsmqIntegrationBinding`, není potřeba, chcete-li přidat /msmq/ v přímém formátu názvu usnadní odeslání Internetové informační služby (IIS). Příklad: při adresování fronty abc pomocí SRMP protokolu místo přímé =http://adatum.com/msmq/private$/ abc, měli byste použít DIRECT =http://adatum.com/private$/ abc.  
   
- Všimněte si, že nemůžete použít net.msmq:// adresování s `MsmqIntegrationBinding`. Protože `MsmqIntegrationBinding` podporuje vlastní MSMQ formát název adresy, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, která používá tuto vazbu funkce vícesměrového vysílání a distribučního seznamu používat služby MSMQ. Jedinou výjimkou je zadání `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí být typu net.msmq:// formuláře, podobně jako na to, jak je zadán pomocí `NetMsmqBinding`.  
+ Všimněte si, že nemůžete použít net.msmq:// adresování s `MsmqIntegrationBinding`. Protože `MsmqIntegrationBinding` podporuje vlastní MSMQ formát název adresy, můžete použít službu WCF, která používá tuto vazbu funkce vícesměrového vysílání a distribučního seznamu používat služby MSMQ. Jedinou výjimkou je zadání `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí být typu net.msmq:// formuláře, podobně jako na to, jak je zadán pomocí `NetMsmqBinding`.  
   
 ## <a name="see-also"></a>Viz také  
  [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

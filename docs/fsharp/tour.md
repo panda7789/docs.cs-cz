@@ -1,20 +1,17 @@
 ---
-title: "Prohlídka F #"
-description: "Zkontrolujte některé z klíčových funkcích služby programovací jazyk v této ukázky s ukázky kódu F #."
-keywords: "Visual f #, f #, funkční programování, .NET, prohlídka"
+title: 'Prohlídka F #'
+description: 'Zkontrolujte některé z klíčových funkcích služby programovací jazyk v této ukázky s ukázky kódu F #.'
 author: cartermp
 ms.author: phcart
 ms.date: 02/28/2018
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 49775139-082e-442f-b5a2-dd402399b5d2
-ms.openlocfilehash: 7327573a25aa62af28570b4a8662235f3e41a972
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
-ms.translationtype: MT
+ms.openlocfilehash: 6821c74827b928cdd0c5aff101be4f9103986e3e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="tour-of-f"></a>Prohlídka F # #
 

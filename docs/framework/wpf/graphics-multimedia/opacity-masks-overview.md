@@ -1,28 +1,16 @@
 ---
-title: "Přehled masek krytí"
-ms.custom: 
+title: Přehled masek krytí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - brushes [WPF], opacity masks
 - masks [WPF], opacity
 - opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2f34fbf48328ea24815615345e855144b8b42d2b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 680d7441301b425c088d549f9e0e0d2b976cc69f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="opacity-masks-overview"></a>Přehled masek krytí
 Masky krytí umožňují provést části elementu nebo visual průhledných nebo částečně transparentní. Chcete-li vytvořit masky krytí, je použít <xref:System.Windows.Media.Brush> k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec se mapuje na element nebo visual a hodnota neprůhlednosti každého obrazového bodu štětce slouží k určení výsledného krytí jednotlivých odpovídající pixelů, elementu nebo visual.  
@@ -84,9 +72,9 @@ Příklad maskování krytí DrawingBrush
   
 <a name="argbsyntax"></a>   
 ### <a name="specifying-color-opacity-in-xaml"></a>Určení krytí barev v "XAML"  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivých barev. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)]šestnáctkové soustavě používá následující syntaxe:  
+ V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivých barev. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxe:  
   
- `#`**aa** *rrggbb*  
+ `#` **aa** *rrggbb*  
   
  *Aa* v předchozí řádek představuje letopočty šestnáctkové hodnoty slouží k zadání krytí barvy. *Rr*, *gg*, a *bb* každý představují dvoumístné šestnáctkové hodnoty používaný k zadání množství červená, zelená a modrá v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A-F. 0 je nejmenší hodnota a F je největší. Při použití hodnoty alfa 00 určuje barvu, která je zcela transparentní, zatímco při použití hodnoty alfa FF vytvoří barvu, která je plně neprůhledný.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápis slouží k určení dvě barvy. První je zcela neprůhledné, zatímco druhý je zcela transparentní.  
   

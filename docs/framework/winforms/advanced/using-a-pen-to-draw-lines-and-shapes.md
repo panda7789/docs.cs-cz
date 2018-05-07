@@ -1,29 +1,17 @@
 ---
-title: "Kreslení čar a obrazců pomocí pera"
-ms.custom: 
+title: Kreslení čar a obrazců pomocí pera
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - pens
 - examples [Windows Forms], drawing lines and shapes
 - examples [Windows Forms], pens
 - drawing
 ms.assetid: 8a7542ab-3e9e-443f-8405-2d6053528e20
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 35f43316e2535aae6622ccf7952f649cdb92fc81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 667a5b13c5e8cb5d9a693d6f8512b254f130d606
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>Kreslení čar a obrazců pomocí pera
 Použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] `Pen` objekty k vykreslení segmenty čáry, křivky a jsou podrobněji popsány dále tvarů. V této části *řádku* odkazuje na některý z těchto, není-li zadán rozumí pouze úsek čáry. Nastavte vlastnosti pera k řízení barvu, šířku, zarovnání a styl čar vykreslovány pomocí pera.  

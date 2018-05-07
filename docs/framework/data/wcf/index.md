@@ -1,38 +1,24 @@
 ---
 title: Datové služby WCF 4.5
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b5b27a51dcec17f72b86e77a7ee2ab773aec1dc3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 148e6e50e81552b2418abba9f6655234fc023c4c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-data-services-45"></a>Datové služby WCF 4.5
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)](dříve označované jako "ADO.NET Data Services") je součástí rozhraní .NET Framework, který umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantika [representational stavu Transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919). [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Data se získat přístup a změnit pomocí standardních operací protokolu HTTP z GET, PUT, POST a odstranění. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]používá pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které jsou spojené přidružení.  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] (dříve označované jako "ADO.NET Data Services") je součástí rozhraní .NET Framework, který umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantika [representational stavu Transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919). [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Data se získat přístup a změnit pomocí standardních operací protokolu HTTP z GET, PUT, POST a odstranění. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] používá pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které jsou spojené přidružení.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]používá [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol pro adresování a aktualizaci prostředky. Tímto způsobem můžete přistupovat z libovolného klienta, který podporuje tyto služby [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]můžete k vyžádání a zapisovat data k prostředkům pomocí známých přenos formáty: Atom, sadu standardy výměna a aktualizace dat jako soubor XML a JavaScript Object Notation (JSON) formátu exchange založený na textu dat, který je hojně používá v aplikaci AJAX.  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol pro adresování a aktualizaci prostředky. Tímto způsobem můžete přistupovat z libovolného klienta, který podporuje tyto služby [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] můžete k vyžádání a zapisovat data k prostředkům pomocí známých přenos formáty: Atom, sadu standardy výměna a aktualizace dat jako soubor XML a JavaScript Object Notation (JSON) formátu exchange založený na textu dat, který je hojně používá v aplikaci AJAX.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžou zpřístupnit data, která pochází z různých zdrojů jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály. Nástroje sady Visual Studio vytvářet usnadňují [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby pomocí datový model ADO.NET Entity Framework. Můžete také vytvořit [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály na základě třídy společných language runtime (CLR) a data i pozdní vazbou nebo netypové.  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] můžou zpřístupnit data, která pochází z různých zdrojů jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály. Nástroje sady Visual Studio vytvářet usnadňují [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby pomocí datový model ADO.NET Entity Framework. Můžete také vytvořit [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály na základě třídy společných language runtime (CLR) a data i pozdní vazbou nebo netypové.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]také obsahuje sadu klientské knihovny, jednu pro obecné klientské aplikace rozhraní .NET Framework a druhou speciálně pro aplikace programu Silverlight. Tyto knihovny klienta poskytují programovací model na základě objektů při přístupu [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu z prostředích, jako je rozhraní .NET Framework a program Silverlight.  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] také obsahuje sadu klientské knihovny, jednu pro obecné klientské aplikace rozhraní .NET Framework a druhou speciálně pro aplikace programu Silverlight. Tyto knihovny klienta poskytují programovací model na základě objektů při přístupu [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu z prostředích, jako je rozhraní .NET Framework a program Silverlight.  
   
 ## <a name="where-should-i-start"></a>Kde mám začít?  
  V závislosti na vašem zájmu, zvažte Začínáme s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] v jednom z následujících témat.  
@@ -93,7 +79,7 @@ ms.lasthandoff: 01/19/2018
  Chci používat Silverlight...  
  -   [Rychlý start Silverlight](http://go.microsoft.com/fwlink/?LinkID=192782)  
   
--   [WCF Data Services (Silverlight)](http://go.microsoft.com/fwlink/?LinkID=143149)  
+-   [Datové služby WCF (Silverlight)](http://go.microsoft.com/fwlink/?LinkID=143149)  
   
 -   [Začínáme s programem Silverlight](http://go.microsoft.com/fwlink/?LinkId=148366)  
   

@@ -1,24 +1,12 @@
 ---
-title: "4809 – DiscoveryMessageWithNullMessageId"
-ms.custom: 
+title: 4809 – DiscoveryMessageWithNullMessageId
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d8947028-ae7e-45a2-a438-43162894519e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 29f654ee95e045262136e62457988abd8e31b609
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 92ec4466e9c92d81f89ec0efbcc3abc67f10b105
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4809---discoverymessagewithnullmessageid"></a>4809 – DiscoveryMessageWithNullMessageId
 ## <a name="properties"></a>Vlastnosti  

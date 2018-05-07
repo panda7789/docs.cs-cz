@@ -1,30 +1,18 @@
 ---
-title: "Zpracování výjimek a chyb"
-ms.custom: 
+title: Zpracování výjimek a chyb
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ae8d16db6fefccf01692088e29676f6bfeace0e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: a7fb7b5dd5755b9d534d9a96af3db598a44b42b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
 Výjimky se používají ke komunikaci chyby místně v rámci služby nebo implementace klienta. Chyb, na druhé straně, se použijí ke komunikaci chyby napříč hranicemi služby, například ze serveru do klienta a naopak. Kromě chyb používají přenosové kanály mechanismy specifické pro přenos často ke komunikaci chyb na úrovni přenosu. Například přenos HTTP používá stavové kódy, jako je například 404 ke komunikaci neexistující adresu URL koncového bodu (neexistuje žádný koncový bod, který má být zaslán zpět chybu). Tento dokument se skládá ze tří oddílů, které poskytují pokyny k vlastním kanálu autoři. První část obsahuje pokyny k kdy a jak definovat a generování výjimek. Druhá část obsahuje pokyny ohledně generování a využívání chyb. Třetí část vysvětluje, jak poskytnout informace o trasování a řešení potíží s běžící aplikací usnadňuje uživateli vlastní kanál.  
   
 ## <a name="exceptions"></a>Výjimky  
- Mějte na paměti při vyvolání k výjimce dvě věci: nejprve musí být typu, který umožňuje uživatelům správně napsat správný kód, který může reagovat na výjimku. Druhý je poskytnout dostatek informací pro porozumět, co došlo k chybě, dopad selhání a jeho řešení. Následující části poskytují pokyny ohledně typy výjimek a zprávy pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] kanály. Je také obecné pokyny ohledně výjimky v rozhraní .NET obecných zásad návrhu pro dokument výjimky.  
+ Mějte na paměti při vyvolání k výjimce dvě věci: nejprve musí být typu, který umožňuje uživatelům správně napsat správný kód, který může reagovat na výjimku. Druhý je poskytnout dostatek informací pro porozumět, co došlo k chybě, dopad selhání a jeho řešení. Následující části poskytují pokyny ohledně typy výjimek a zprávy pro kanály Windows Communication Foundation (WCF). Je také obecné pokyny ohledně výjimky v rozhraní .NET obecných zásad návrhu pro dokument výjimky.  
   
 ### <a name="exception-types"></a>Typy výjimek  
  Všechny výjimky vyvolané kanály musí být buď <xref:System.TimeoutException?displayProperty=nameWithType>, <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>, nebo z odvozený typ. <xref:System.ServiceModel.CommunicationException>. (Výjimky jako <xref:System.ObjectDisposedException> může být rovněž vyvolána, ale pouze pro označení volající kód má došlo ke zneužití kanál. Pokud se používá kanál, se musí pouze throw dané výjimky.) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje sedm typy výjimek, které jsou odvozeny od <xref:System.ServiceModel.CommunicationException> a jsou určeny k použití podle kanály. Existují jiné <xref:System.ServiceModel.CommunicationException>-odvozené výjimky, které jsou určeny k použití podle dalších částí systému. Tyto typy výjimek jsou:  
@@ -127,7 +115,7 @@ public class FaultReason
 ### <a name="generating-faults"></a>Generování chyb  
  Tato část vysvětluje proces generování chybu v reakci na chybový stav zjištění v kanálu nebo ve vlastnosti zprávy vytvořený kanál. Typickým příkladem je odesílání zpět chybu v reakci na žádost o zprávu, která obsahuje neplatná data.  
   
- Při generování chybu, vlastní kanál vůbec Neposílat přímo odolnost, místo toho by měla vyvolat výjimku a nechat vrstvu nad rozhodněte, jestli se má převést této výjimky na chybu a postupy pro odesílání. Pro usnadnění tohoto převodu, by měl poskytovat kanál `FaultConverter` implementace, která můžete převést výjimky ve vlastním kanálu pro příslušné selhání. `FaultConverter`je definován jako:  
+ Při generování chybu, vlastní kanál vůbec Neposílat přímo odolnost, místo toho by měla vyvolat výjimku a nechat vrstvu nad rozhodněte, jestli se má převést této výjimky na chybu a postupy pro odesílání. Pro usnadnění tohoto převodu, by měl poskytovat kanál `FaultConverter` implementace, která můžete převést výjimky ve vlastním kanálu pro příslušné selhání. `FaultConverter` je definován jako:  
   
 ```  
 public class FaultConverter  
@@ -313,7 +301,7 @@ public class MessageFault
 }  
 ```  
   
- `IsMustUnderstandFault`Vrátí `true` Pokud je odolnost `mustUnderstand` selhání. `WasHeaderNotUnderstood`Vrátí `true` Pokud hlavička se zadaným názvem a oborem názvů je součástí selhání jako hlavičku NotUnderstood.  Funkce `false`.  
+ `IsMustUnderstandFault` Vrátí `true` Pokud je odolnost `mustUnderstand` selhání. `WasHeaderNotUnderstood` Vrátí `true` Pokud hlavička se zadaným názvem a oborem názvů je součástí selhání jako hlavičku NotUnderstood.  Funkce `false`.  
   
  Pokud je kanál, který vysílá hlavičku, která je označena MustUnderstand = true, pak tuto vrstvu by také implementovat vzor rozhraní API pro generování výjimek a měli převést `mustUnderstand` chyby způsobené této hlavičky užitečnější výjimce, jak je popsáno výše.  
   
@@ -379,7 +367,7 @@ udpsource.TraceInformation("UdpInputChannel received a message");
 ```  
   
 #### <a name="tracing-structured-data"></a>Trasování strukturovaných dat  
- <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>má <xref:System.Diagnostics.TraceSource.TraceData%2A> metody, která přijímá jeden nebo více objektů, které mají být zahrnuty v položce trasování. Obecně <xref:System.Object.ToString%2A?displayProperty=nameWithType> metoda je volána na každém objektu a výsledný řetězec je zapsán v rámci položky trasování. Při použití <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> výstup trasování, můžete předat <xref:System.Xml.XPath.IXPathNavigable?displayProperty=nameWithType> jako datový objekt k <xref:System.Diagnostics.TraceSource.TraceData%2A>. Výsledná položka trasování obsahuje XML poskytované <xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>. Tady je příklad položku s XML data aplikací:  
+ <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> má <xref:System.Diagnostics.TraceSource.TraceData%2A> metody, která přijímá jeden nebo více objektů, které mají být zahrnuty v položce trasování. Obecně <xref:System.Object.ToString%2A?displayProperty=nameWithType> metoda je volána na každém objektu a výsledný řetězec je zapsán v rámci položky trasování. Při použití <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> výstup trasování, můžete předat <xref:System.Xml.XPath.IXPathNavigable?displayProperty=nameWithType> jako datový objekt k <xref:System.Diagnostics.TraceSource.TraceData%2A>. Výsledná položka trasování obsahuje XML poskytované <xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>. Tady je příklad položku s XML data aplikací:  
   
 ```xml  
 <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">  

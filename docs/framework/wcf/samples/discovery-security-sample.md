@@ -1,24 +1,14 @@
 ---
-title: "Ukázka zabezpečení zjišťování"
-ms.custom: 
+title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-caps.latest.revision: "13"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: f50334c8477b8823ef1dfb6abcae640e439d5ddd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a701a516a93cf94f76950b7b1b1c7f3a9b41214e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součástí procesu zjišťování jako zabezpečené. Rozšíření zjišťování zprávy s zabezpečení snižuje různé typy útoků (zprávy změnou, odepření služby, opakování, falšování identity). Tato ukázka implementuje vlastní kanály, které výpočetní a ověřte podpisy zpráv compact podpis formátu (popsaný v části 8.2 specifikace WS-Discovery). Ukázka podporuje i [2005 zjišťování specifikace](http://go.microsoft.com/fwlink/?LinkId=177912) a [verze 1.1](http://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -48,7 +38,7 @@ Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součást
 > [!NOTE]
 >  `PrefixList` Byl přidán protokolu verze zjišťování 2008.  
   
- Vypočítat podpis, určuje ukázku rozšířené podpis položky. Podpis XML (`SignedInfo`) je vytvořený pomocí `ds` předponu oboru názvů, podle potřeby ve specifikaci WS-Discovery. Text a všechny hlavičky v zjišťování a adresování obory názvů se odkazuje v podpisu, aby nemohlo být manipulováno s. Každý odkazovaný element převede pomocí výhradní kanonizace (http://www.w3.org/2001/10/xml-exc-c14n#) a potom hodnotu hodnotu hash SHA-1 je počítaný (http://www.w3.org/2000/09/xmldsig#sha1). Na základě všechny odkazované elementy a jejich hodnoty digest, podpis hodnota je vypočítána pomocí algoritmu RSA (http://www.w3.org/2000/09/xmldsig#rsa-sha1).  
+ Vypočítat podpis, určuje ukázku rozšířené podpis položky. Podpis XML (`SignedInfo`) je vytvořený pomocí `ds` předponu oboru názvů, podle potřeby ve specifikaci WS-Discovery. Text a všechny hlavičky v zjišťování a adresování obory názvů se odkazuje v podpisu, aby nemohlo být manipulováno s. Každý odkazovaný element převede pomocí výhradní kanonizace (http://www.w3.org/2001/10/xml-exc-c14n# ), a pak je počítaný hodnotou hodnotu hash SHA-1 (http://www.w3.org/2000/09/xmldsig#sha1 ). Na základě všechny odkazované elementy a jejich hodnoty digest, podpis hodnota je vypočítána pomocí algoritmu RSA (http://www.w3.org/2000/09/xmldsig#rsa-sha1 ).  
   
  Zprávy jsou podepsané certifikátem zadaného klienta. Umístění úložiště, název a název subjektu certifikátu musí zadat při vytváření prvku vazby. `KeyId` v compact podpis představuje identifikátor klíče podpisového tokenu a je subjektu klíč identifikátor (identifikátor klíče subjektu) podpisový tokenu nebo (Pokud identifikátor klíče subjektu neexistuje) hash SHA-1 podpisový tokenu veřejného klíče.  
   
@@ -82,7 +72,7 @@ Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součást
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  
   

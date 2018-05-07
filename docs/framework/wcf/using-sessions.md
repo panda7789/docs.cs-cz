@@ -1,34 +1,20 @@
 ---
 title: Použití relací
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-caps.latest.revision: 32
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 172ef71bd3ae09e3c9f15cb0bdb48728a587605e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: e826e0952f95608fd8d85a5b1fad6b17d3fdacb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-sessions"></a>Použití relací
-V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, *relace* korelaci skupinu zpráv k konverzaci. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] relace se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací a jejich použití.  
+V aplikacích Windows Communication Foundation (WCF) *relace* korelaci skupinu zpráv k konverzaci. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] relace se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací a jejich použití.  
   
 ## <a name="sessions-in-windows-communication-foundation-applications"></a>Relace v aplikacích Windows Communication Foundation  
  Při kontrakt služby specifikuje, že vyžaduje relaci, je této smlouvy určující, zda všechna volání (který je základní výměny zpráv podporující volání) musí být součástí stejné konverzaci. Pokud kontrakt Určuje, že umožňuje relace, ale nevyžaduje jeden, klienti mohou připojit a buď vytvořit relaci nebo není vytvořit relaci. Pokud relace skončí a je odeslána zpráva prostřednictvím stejného kanálu, který je vyvolána výjimka.  

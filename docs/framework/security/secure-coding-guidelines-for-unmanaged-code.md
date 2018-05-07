@@ -1,29 +1,19 @@
 ---
-title: "Pokyny pro zabezpečení nespravovaného kódu"
-ms.custom: 
+title: Pokyny pro zabezpečení nespravovaného kódu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - code security, unmanaged code
 - unmanaged code, securing
 - security [.NET Framework], unmanaged code
 - secure coding, unmanaged code
 ms.assetid: a8d15139-d368-4c9c-a747-ba757781117c
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: adbdd005bba9e7276a77f2e78c53be43fdceffae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60e293ac8c9100876aa5a524bb5dda04e9f4183f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
 Kód knihovny musí volat nespravovaný kód (například nativního kódu rozhraní API, jako je například Win32). Protože to znamená přechod mimo zónu zabezpečení pro spravovaný kód, přičemž se řádně upozornění je vyžadován. Pokud je váš kód zabezpečení jazykově neutrální, kód a kód, který se volá musí mít nespravovaného kódu oprávnění (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> zadaného příznaku).  
@@ -56,8 +46,8 @@ Kód knihovny musí volat nespravovaný kód (například nativního kódu rozhr
   
 |– Klíčové slovo|Aspekty zabezpečení|  
 |-------------|-----------------------------|  
-|**bezpečné**|Zcela neškodné pro libovolný kód, dokonce škodlivý kód volat. Můžete použít stejně jako ostatní spravovaného kódu. Například funkci, která se získá čas, kdy je obvykle bezpečné.|  
-|**nativní**|Zabezpečení jazykově neutrální; nespravovaný kód, který vyžaduje tedy nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, která zastaví neoprávněného volajícího.|  
+|**Bezpečné**|Zcela neškodné pro libovolný kód, dokonce škodlivý kód volat. Můžete použít stejně jako ostatní spravovaného kódu. Například funkci, která se získá čas, kdy je obvykle bezpečné.|  
+|**Nativní**|Zabezpečení jazykově neutrální; nespravovaný kód, který vyžaduje tedy nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, která zastaví neoprávněného volajícího.|  
 |**unsafe**|Vstupní bod potenciálně nebezpečná nespravovaného kódu s zabezpečení potlačena. Vývojáři by měl použít největší opatrní při použití takových nespravovaného kódu a ujistěte se, že jiné ochrany jsou na místě, aby se zabránilo ohrožení zabezpečení. Vývojáři musí být zodpovědná, jako toto klíčové slovo přepíše systém zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také  

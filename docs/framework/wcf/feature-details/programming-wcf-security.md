@@ -1,42 +1,30 @@
 ---
 title: Programování zabezpečení WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-caps.latest.revision: 25
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 63f5c2c61a374b92b018419c83c9429e6ad796d8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 3eb645dcc5b8cc1c52818e290699ebadcd0943c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
-Toto téma popisuje základní programovací úlohy použité k vytvoření zabezpečeného [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace. Toto téma popisuje pouze ověřování, důvěrnost a integritu, souhrnně označované jako *přenosu zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
+Toto téma popisuje základní programovací úlohy použité k vytvoření zabezpečené aplikace Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integritu, souhrnně označované jako *přenosu zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
   
 > [!NOTE]
->  Cenné Úvod k koncepty zabezpečení, zejména v ohledem na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete na webu MSDN na sadu vzory a postupy kurzy [scénáře, vzory a implementace pokyny pro webové služby vylepšení (WSE) 3.0](http://go.microsoft.com/fwlink/?LinkID=88250).  
+>  Cenné Úvod k koncepty zabezpečení, zejména pokud jde o WCF, najdete na webu MSDN na sadu vzory a postupy kurzy [scénáře, vzory a implementace pokyny pro webové služby vylepšení (WSE) 3.0](http://go.microsoft.com/fwlink/?LinkID=88250).  
   
- Programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení je založena na nastavení následující tři kroky: režim zabezpečení, typu pověření klienta a hodnot přihlašovacích údajů. Abyste mohli provést tyto kroky buď prostřednictvím kódu nebo konfigurace.  
+ Programování zabezpečení WCF je založen na nastavení následující tři kroky: režim zabezpečení, typu pověření klienta a hodnot přihlašovacích údajů. Abyste mohli provést tyto kroky buď prostřednictvím kódu nebo konfigurace.  
   
 ## <a name="setting-the-security-mode"></a>Nastavení režimu zabezpečení  
- Následující příklad popisuje obecné kroky pro programování s režimem zabezpečení v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]:  
+ Následující části jsou vysvětleny obecné kroky pro programování s režimem zabezpečení ve WCF:  
   
 1.  Vyberte jeden z předdefinovaných vazby, které jsou vhodné pro vaše požadavky aplikací. Seznam voleb vazby najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Téměř každý vazby má ve výchozím nastavení zabezpečení povoleno. Jedinou výjimkou je <xref:System.ServiceModel.BasicHttpBinding> – třída (pomocí konfigurace, [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)).  
   

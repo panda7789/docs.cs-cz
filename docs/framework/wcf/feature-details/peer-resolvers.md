@@ -1,24 +1,12 @@
 ---
-title: "Překladače partnerských uzlů"
-ms.custom: 
+title: Překladače partnerských uzlů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 79c26ca9e167455dfbd664ea96e574c130cdc3d2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 760011dda4a3059a217dcfbfc3fddaa67edc9995
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
 Aby bylo možné připojit k mřížku, vyžaduje uzlem sdílené IP adresy dalších uzlů. IP adresy jsou získány kontaktováním překladač služby, která přebírá ID OK a vrátí seznam adres odpovídající do uzlů, které jsou registrovány ID tohoto konkrétního OK. Překladač udržuje seznam registrovaných adresy, které vytvoří tak, že každý uzel v mřížce zaregistrovat službu.  
@@ -28,7 +16,7 @@ Aby bylo možné připojit k mřížku, vyžaduje uzlem sdílené IP adresy dal�
 ## <a name="supported-peer-resolvers"></a>Překladače podporované partnerských uzlů  
  Rovnocenného kanálu podporuje dva typy překladače: řešení protokolu PNRP (Peer Name) a vlastní překladač služby.  
   
- Ve výchozím nastavení používá rovnocenného kanálu službu PNRP peer překladač pro zjišťování partnerské uzly a okolí v mřížce. Pro situacích nebo platformy, kde PNRP není k dispozici nebo je to vhodné [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje služby alternativní, na serveru zjišťování - <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>. Můžete také explicitně definovat vlastní překladač služby napsáním třídu, která implementuje <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> rozhraní.  
+ Ve výchozím nastavení používá rovnocenného kanálu službu PNRP peer překladač pro zjišťování partnerské uzly a okolí v mřížce. Pro situacích nebo platformy, kde PNRP není k dispozici nebo je to vhodné, Windows Communication Foundation (WCF) poskytuje služby alternativní, na serveru zjišťování - <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>. Můžete také explicitně definovat vlastní překladač služby napsáním třídu, která implementuje <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> rozhraní.  
   
 ### <a name="peer-name-resolution-protocol-pnrp"></a>Protokol PNRP (PNRP)  
  PNRP, výchozí překladač pro [!INCLUDE[wv](../../../../includes/wv-md.md)], je služba překladač distribuované, bez serveru. PNRP lze také na [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] nainstalováním Advanced Networking Pack. Jakékoli dvě se stejnou verzí PNRP mohou klienti vyhledat navzájem pomocí tohoto protokolu, pokud splňují určité podmínky (třeba nedostatek použitá podniková brána firewall). Všimněte si, že verze PNRP dodává s [!INCLUDE[wv](../../../../includes/wv-md.md)] je novější než verze zahrnuté do balíčku Advanced sítě. Zkontrolujte webu Microsoft Download Center aktualizace PNRP pro [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)].  

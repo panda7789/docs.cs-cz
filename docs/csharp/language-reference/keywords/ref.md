@@ -1,23 +1,17 @@
 ---
 title: ref (Referenční dokumentace jazyka C#)
 ms.date: 03/06/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 63f984f4004cfce9694e7e7405ec2477bc370731
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 8b36f94e9476b857066c292feb9e77e9c2199b7e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 

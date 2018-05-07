@@ -1,29 +1,19 @@
 ---
-title: "Regasm.exe (nástroj registrace sestavení)"
-ms.custom: 
+title: Regasm.exe (nástroj registrace sestavení)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Assembly Registration tool
 - assemblies [.NET Framework], registering
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b2762080c66c3c9451e7c7c3d4621d8cb9d4846e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11ccdb4c75af2b37595d9be977f2ab881ebe1184
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 Nástroj Assembly Registration načte metadata v rámci sestavení a přidá nezbytné položky registru, které umožní klientům modelu COM transparentní vytvoření tříd rozhraní .NET Framework. Jakmile je třída zaregistrována, může ji libovolný klient COM použít jako třídu COM. Třída je registrována pouze jednou, při instalaci sestavení. Instance tříd z modelu COM v rámci sestavení nelze vytvořit, dokud nedojde k jejich registraci.  
@@ -42,7 +32,7 @@ regasm assemblyFile [options]
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|*assemblyFile*|Sestavení, která mají být registrována pomocí modelu COM.|  
+|*AssemblyFile*|Sestavení, která mají být registrována pomocí modelu COM.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
@@ -58,7 +48,7 @@ regasm assemblyFile [options]
 |**/?** nebo   **/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 > [!NOTE]
->  Možnosti příkazového řádku nástroje Regasm.exe nerozlišují malá a velká písmena. Pro jednoznačnou identifikaci je potřeba zadat dostatek parametrů. Například  **/n**  je ekvivalentní **/nologo** a **/t:** *outfile.tlb* je ekvivalentní   **/tlb:**  *outfile.tlb*.  
+>  Možnosti příkazového řádku nástroje Regasm.exe nerozlišují malá a velká písmena. Pro jednoznačnou identifikaci je potřeba zadat dostatek parametrů. Například **/n** je ekvivalentní **/nologo** a **/t:** *outfile.tlb* je ekvivalentní **/tlb:**  *OutFile.tlb*.  
   
 ## <a name="remarks"></a>Poznámky  
  Můžete použít **/regfile** možnost k vygenerování soubor .reg, který obsahuje položky registru místo provedení změn přímo do registru. Registr lze na počítači aktualizovat importováním souboru .reg pomocí nástroje Editor registru (Regedit.exe). Soubor .reg neobsahuje žádné aktualizace registru, které lze provést pomocí funkcí registru definovaných uživatelem.  Všimněte si, že **/regfile** možnost vysílá pouze položky registru pro spravované třídy.  Tato možnost není emitování položky pro `TypeLibID`s nebo `InterfaceID`s.  

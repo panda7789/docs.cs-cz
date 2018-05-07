@@ -1,12 +1,6 @@
 ---
-title: "Naslouchání s Sockets"
-ms.custom: 
+title: Naslouchání s Sockets
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +15,14 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 6b799f57644420653b371ac0e65b414c807008b1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f85b63b151bcc20db635f56ec1dfec8df6c92241
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="listening-with-sockets"></a>Naslouchání s Sockets
 Naslouchací proces nebo server sockets otevřít port v síti a potom počkejte, než pro klienta pro připojení k tomuto portu. I když existují další rodiny adres sítě a protokoly, tento příklad ukazuje postup vytvoření vzdálené služby pro sítě TCP/IP.  

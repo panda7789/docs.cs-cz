@@ -1,21 +1,14 @@
 ---
-title: "Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework (Průvodce programováním v C#)"
+title: 'Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 570729e432146b4ef97e4c487f644b12b354bb4a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 830f86be43f1499bd87ff02690061b08f8f7f86d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework (Průvodce programováním v C#)
 Následující postup ukazuje, jak přidat události, které následují standardní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vzor třídy a struktury. Všechny události v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] jsou na základě knihovny tříd <xref:System.EventHandler> delegáta, který je definován následujícím způsobem:  
@@ -81,6 +74,6 @@ public delegate void EventHandler(object sender, EventArgs e);
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Delegate>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Události](../../../csharp/programming-guide/events/index.md)  
  [Delegáti](../../../csharp/programming-guide/delegates/index.md)

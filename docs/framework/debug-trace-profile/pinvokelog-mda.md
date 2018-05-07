@@ -1,13 +1,6 @@
 ---
-title: "pInvokeLog – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: pInvokeLog – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - signatures, platform invoke
 - MDAs (managed debugging assistants), platform invoke
@@ -16,16 +9,13 @@ helpviewer_keywords:
 - PInvokeLog MDA
 - managed debugging assistants (MDAs), platform invoke
 ms.assetid: b830444a-5003-49fe-b89b-b8bee22f7b1a
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 343ec424105d1c775592aba316b50da4010f7c8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 830a65a4490b1d084e3bb301e89293ccb9424b32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pinvokelog-mda"></a>pInvokeLog – pomocník spravovaného ladění (MDA)
 `pInvokeLog` Pomocník spravovaného ladění (MDA) je aktivována pro každý jedinečný nespravovaného podpis použít během provádění.  

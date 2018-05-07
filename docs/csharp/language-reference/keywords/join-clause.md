@@ -1,9 +1,6 @@
 ---
-title: "join – klauzule (Referenční dokumentace jazyka C#)"
+title: join – klauzule (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - join
 - join_CSharpKeyword
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-caps.latest.revision: "29"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 17c8f7f5ff6d1266421cdb87ae562028c61ae97f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a868c52cf753b1e4285586ec41c1993f519299d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 `join` Klauzule je užitečné pro přidružení elementy z jiné zdrojové pořadí, které nemají přímé relaci v objektu modelu. Jediným požadavkem je, že elementů v jednotlivých zdrojů sdílet určitou hodnotu, která může být porovnána shoda. Například distributora jídlo může mít seznam dodavatelé určité produktu a seznamu odběratelů. A `join` klauzuli lze použít, například můžete vytvořit seznam dodavatelů a zadané odběratelů tohoto produktu, kteří jsou ve stejné oblasti.  
@@ -88,7 +82,7 @@ ms.lasthandoff: 11/21/2017
  [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
  [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
  [Operace sjednocení](../../programming-guide/concepts/linq/join-operations.md)  
- [Group – klauzule](../../../csharp/language-reference/keywords/group-clause.md)  
+ [group – klauzule](../../../csharp/language-reference/keywords/group-clause.md)  
  [Postup: provedení levých vnějších spojení](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)  
  [Postupy: provádění vnitřních spojení](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)  
  [Postupy: provádění seskupených spojení](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)  

@@ -1,20 +1,14 @@
 ---
 title: v – modifikátor parametrů (referenční dokumentace jazyka C#)
 ms.date: 03/06/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3c15cc0dce5b37866fd826e3d6b9adcb00724672
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: aa6720430a1d93d7eacb098962c09efad09a179f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v – modifikátor parametrů (referenční dokumentace jazyka C#)
 

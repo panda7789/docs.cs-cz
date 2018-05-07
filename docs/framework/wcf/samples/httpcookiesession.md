@@ -1,27 +1,15 @@
 ---
 title: HttpCookieSession
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4c06efd7450afe93eaecca1e678eb6f8bf5de7a6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 54e2459f5b480d8f53df42a08d4ebc8ac07b128c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
-Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat soubory cookie HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služeb a klientů ASMX nebo mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ASMX služby a klienti.  
+Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat soubory cookie HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi služby Windows Communication Foundation (WCF) a klienti ASMX nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ASMX služby a klienti.  
   
  Když klient volání metody webové v ASMX webové služby, je na základě relace, [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] modul provede následující akce:  
   
@@ -40,7 +28,7 @@ Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat 
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\HttpCookieSession`  
   
@@ -94,7 +82,7 @@ InputQueue<RequestContext> requestQueue;
  Odpovídající kanálem klienta je v `HttpCookieSessionChannelFactory` třídy. Při vytvoření kanálu, vytváření kanálů zabalí kanál vnitřní žádosti s `HttpCookieRequestSessionChannel`. `HttpCookieRequestSessionChannel` Třída předává volání základní požadavku kanálu. Po ukončení klienta na server proxy, `HttpCookieRequestSessionChannel` odešle zprávu do služby, která určuje, že dochází k uzavření kanál. Proto zásobníku kanál služby můžete řádně vypnutí kanál relace, která je používána.  
   
 ## <a name="binding-and-binding-element"></a>Vazba a prvku vazby  
- Po vytvoření klienta a služby kanály, dalším krokem je integrovat do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modulu runtime. Kanály jsou viditelné na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prostřednictvím vazby a prvky vazeb. Vazba se skládá z jednoho či více elementů vazby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]nabízí několik vazeb definovaných systémem; například BasicHttpBinding nebo WSHttpBinding. `HttpCookieSessionBindingElement` Třída obsahuje implementaci pro prvku vazby. Přepíše naslouchací proces kanálu a kanál factory vytvoření metody, které uděláte nezbytné kanál naslouchání nebo kanál konkretizací objekt pro vytváření.  
+ Po vytvoření klienta a služby kanály, dalším krokem je integrovat do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modulu runtime. Kanály jsou viditelné na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prostřednictvím vazby a prvky vazeb. Vazba se skládá z jednoho či více elementů vazby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí několik vazeb definovaných systémem; například BasicHttpBinding nebo WSHttpBinding. `HttpCookieSessionBindingElement` Třída obsahuje implementaci pro prvku vazby. Přepíše naslouchací proces kanálu a kanál factory vytvoření metody, které uděláte nezbytné kanál naslouchání nebo kanál konkretizací objekt pro vytváření.  
   
  Příklad používá výrazy zásad pro popis služby. To umožňuje vzorku, který se publikovat požadavky na jeho kanál pro ostatní klienty, které můžou využívat službu. Tento element vazby například publikuje výrazy zásad umožníte potenciální klienty vědět, že podporuje relací. Vzhledem k tomu ukázka umožňuje `ExchangeTerminateMessage` vlastnost v elementu konfigurace vazeb, přidá nezbytné kontrolní výrazy zobrazit, že služba podporuje akce exchange navíc zprávu o ukončení relace konverzace. Klienti potom můžete pomocí této akce. Následující kód WSDL ukazuje výrazy zásad vytvořené z `HttpCookieSessionBindingElement`.  
   

@@ -1,10 +1,6 @@
 ---
-title: "-resource (možnosti kompilátoru C#)"
+title: -resource (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /resource
 helpviewer_keywords:
@@ -15,14 +11,11 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a305f98b09d390afbeba7b55ab44ff09abc74617
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: 8744d0f85859367ada51e4c44e767e681a3487bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (možnosti kompilátoru C#)
 Vloží zadaný prostředek do výstupního souboru.  
@@ -37,10 +30,10 @@ Vloží zadaný prostředek do výstupního souboru.
  `filename`  
  Soubor prostředků rozhraní .NET Framework, který chcete vložit do výstupního souboru.  
   
- `identifier`(volitelné)  
+ `identifier` (volitelné)  
  Logický název prostředku; název, který se používá k načtení prostředku. Výchozí hodnota je název názvu souboru.  
   
- `accessibility-modifier`(volitelné)  
+ `accessibility-modifier` (volitelné)  
  Usnadnění prostředku: veřejné nebo soukromé. Výchozí hodnota je veřejná.  
   
 ## <a name="remarks"></a>Poznámky  

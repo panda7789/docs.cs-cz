@@ -1,26 +1,14 @@
 ---
 title: Element &lt;Assembly&gt; (.NET Native)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a34e49e4d11f442f15db2f06b330b8b84a165a08
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: fa78c7085c9c20e6a8a165c90ec9e3c2d8304581
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltassemblygt-element-net-native"></a>Element &lt;Assembly&gt; (.NET Native)
 Modul runtime reflexe zásad platí pro všechny typy v zadaném sestavení.  
@@ -77,7 +65,7 @@ Modul runtime reflexe zásad platí pro všechny typy v zadaném sestavení.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Reflexe zásad platí pro všechny typy v oboru názvů podřízené.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásada se vztahuje na typ.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásada se vztahuje na typ.|  
 |[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Reflexe zásada se vztahuje na vytvořený obecného typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -85,7 +73,7 @@ Modul runtime reflexe zásad platí pro všechny typy v zadaném sestavení.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu. [ \<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md) element může obsahovat nula, jednu nebo více `<Assembly>` elementy.|  
-|[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu. [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md) element může obsahovat nula nebo jedna `<Assembly>` elementu.|  
+|[\<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md)|Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu. [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md) element může obsahovat nula nebo jedna `<Assembly>` elementu.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<Assembly>` Element definuje zásady modulu runtime pro všechny typy v sestavení. Liší se od [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md) element, který určuje knihovnu, ale závisí na její podřízené elementy definovat zásady reflexe modulu runtime. `<Assembly>` Element platí pro všechny typy v sestavení, pokud jsou přepsány podřízený element.  

@@ -1,13 +1,6 @@
 ---
-title: "Oblasti v rozhraní GDI+"
-ms.custom: 
+title: Oblasti v rozhraní GDI+
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - drawing [Windows Forms], regions
 - regions
 ms.assetid: 52184f9b-16dd-4bbd-85be-029112644ceb
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2d3805c2d67f5241425ef72d3802aba996d33cfb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dc7f10571163d447802c90cd61d71b11d0e695d4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="regions-in-gdi"></a>Oblasti v rozhraní GDI+
 Oblast je část v oblasti výstupní zařízení. Oblasti může být jednoduchý (jeden rámeček) nebo komplexní (kombinaci mnohoúhelníky a uzavřené křivky). Následující obrázek znázorňuje dvou oblastí: jeden zkonstruován z obdélníku a dalších vytvořený z cesty.  

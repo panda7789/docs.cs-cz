@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Channels.HttpAuthFailed
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a3254ef2-cd3d-4a8a-ae3d-a51fc389af53
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ed8a161ab1b6c62048155d82f3b444e9e6a6e6d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a5eb6d7d4e11b150b632c0ed425ace282a34047e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelchannelshttpauthfailed"></a>System.ServiceModel.Channels.HttpAuthFailed
 System.ServiceModel.Channels.HttpAuthFailed  

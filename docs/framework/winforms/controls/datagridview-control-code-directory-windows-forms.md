@@ -1,29 +1,17 @@
 ---
-title: "Adresář kódu ovládacího prvku DataGridView (Windows Forms)"
-ms.custom: 
+title: Adresář kódu ovládacího prvku DataGridView (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data grids [Windows Forms], examples
 - examples [Windows Forms], DataGridView control
 - DataGridView control [Windows Forms], examples
 - DataGridView control [Windows Forms], code directory
 ms.assetid: ea8bd66a-5ed6-491b-b9da-63873e275a0a
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2be2e3e5ea1c829fac16cdbf072ddb5be4728f62
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4e66d7c5456e20a46835f57fa8f7bc3fa3e7ada2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datagridview-control-code-directory-windows-forms"></a>Adresář kódu ovládacího prvku DataGridView (Windows Forms)
 Toto téma obsahuje odkazy na <xref:System.Windows.Forms.DataGridView>-související příklady kódu, dostupné v dokumentaci.  

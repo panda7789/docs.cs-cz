@@ -1,26 +1,17 @@
 ---
-title: "Výraz lambda nebude z této obslužné rutiny události odebrán."
+title: Výraz lambda nebude z této obslužné rutiny události odebrán.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc42326
 - vbc42326
 helpviewer_keywords:
 - BC42326
 ms.assetid: 63214dc6-0112-4245-8ebf-7c9e8f5a5782
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1a4c57d1f8f41d2d9ebb645d3f2628c32a2c4e4c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 69228bbb5f659a8e500e85dea1ef87cb43b0356e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a>Výraz lambda nebude z této obslužné rutiny události odebrán.
 Výraz lambda nebude z této obslužné rutiny události odebrán. Přiřadit výrazu lambda proměnné a použít k přidání a odebrání události.  
@@ -93,6 +84,6 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Lambda – výrazy](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
  [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)  
  [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

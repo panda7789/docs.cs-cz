@@ -1,24 +1,17 @@
 ---
 title: goto – příkaz (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - goto_CSharpKeyword
 - goto
 helpviewer_keywords:
 - goto keyword [C#]
 ms.assetid: 2c03c9c1-8119-44ef-b740-fb3d287a42fe
-caps.latest.revision: 22
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: aa12a7547cfcd4a2076b5b0a308139f8a823f482
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2dd70a30b885dcdae9637b02e8c34ac39f4879fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="goto-c-reference"></a>goto – příkaz (referenční dokumentace jazyka C#)
 `goto` Příkaz přenáší prvku aplikace přímo do příkaz s popiskem.  
@@ -42,7 +35,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [goto – příkaz](/cpp/cpp/goto-statement-cpp)  
+ [ – příkaz](/cpp/cpp/goto-statement-cpp)  
  [Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)

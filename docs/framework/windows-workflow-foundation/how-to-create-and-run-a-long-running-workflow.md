@@ -1,27 +1,15 @@
 ---
 title: 'Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-caps.latest.revision: 40
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c7776c9155ef2c2c5c4ea804285cd67e995ef119
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 63857ac96c85174407a4455d1ec582147bd33e3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup
 Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinnosti pracovní postupy pro databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) ukázán základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady byly uvedeny počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a opětovné záložky. K prokázání efektivně trvalost pracovního postupu, je vyžadován složitější hostitel pracovního postupu spuštění a obnovení několik instancí pracovního postupu, která podporuje. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitele formuláře systému Windows, aplikace, která podporuje spouštění a obnovení více instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce jako sledování a správa verzí, které jsou ukázáno v kurzu následné kroky.  

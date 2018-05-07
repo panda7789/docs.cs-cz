@@ -1,21 +1,15 @@
 ---
-title: "Obecné parametry typu (Průvodce programováním v C#)"
+title: Obecné parametry typu (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - generics [C#], type parameters
 - type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
-caps.latest.revision: "23"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b32db7eb6e7788167e110a91726e9dbfe19f31ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 35029b90fb7b905a87055596cf8dcd6a84ef9d36
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>Obecné parametry typu (Průvodce programováním v C#)
 Parametry typu v obecného typu nebo definici metody, je zástupný symbol pro konkrétního typu klienta Určuje, kdy se vytvořit instanci proměnné obecného typu. Obecný třídy, jako například `GenericList<T>` uvedené v [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md), nelze použít jako-je, protože není skutečně typu; se víc podobá plán, podle kterého typu. Chcete-li použít `GenericList<T>`, kód klienta musí deklarovat a vytvořit instanci typu vytvořený tak, že zadáte argument typu v závorkách úhlu. Argument typu pro tuto konkrétní třídu mohou být jakéhokoli typu rozpoznán překladačem. Libovolný počet instancí vytvořený typ lze vytvořit, každé z nich pomocí jiného typu argument, následujícím způsobem:  
@@ -42,6 +36,6 @@ Parametry typu v obecného typu nebo definici metody, je zástupný symbol pro k
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Generic>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
  [Rozdíly mezi šablonami C++ a obecnými typy C#](../../../csharp/programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md)

@@ -1,24 +1,14 @@
 ---
-title: "ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda"
-ms.custom: 
+title: ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b933dfe6-7833-40cb-aad8-40842dc3034f
-caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8e11dd1c24001c764c82ed3f11336873ee57b2e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 564f3b1cdfab2a3020b6bb5ac8d9af03c6532c8b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
 [Podporované v rozhraní .NET Framework 4.6 a novějších verzích]  
@@ -54,7 +44,7 @@ HRESULT EnumNgenModuleMethodsInliningThisMethod(
  [out] Ukazatel na adresu enumerátor  
   
 ## <a name="remarks"></a>Poznámky  
- `inlineeModuleId`a `inlineeMethodId` společně tvoří úplný identifikátor metodu, která může být vložená. Předpokládejme například, modul `A` definuje metodu `Simple.Add`:  
+ `inlineeModuleId` a `inlineeMethodId` společně tvoří úplný identifikátor metodu, která může být vložená. Předpokládejme například, modul `A` definuje metodu `Simple.Add`:  
   
 ```csharp  
 Simple.Add(int a, int b)   
@@ -68,7 +58,7 @@ Fancy.AddTwice(int a, int b)
 { return Simple.Add(a,b) + Simple.Add(a,b); }  
 ```  
   
- Umožňuje také předpokládají, že `Fancy.AddTwice` inlines volání do `SimpleAdd`. Profileru použít tento enumerátor najít všechny metody definované v modulu B, který vložené `Simple.Add`, a výsledkem by výčet `AddTwice`.  `inlineeModuleId`je identifikátor modulu `A`, a `inlineeeMethodId` je identifikátor `Simple.Add(int a, int b)`.  
+ Umožňuje také předpokládají, že `Fancy.AddTwice` inlines volání do `SimpleAdd`. Profileru použít tento enumerátor najít všechny metody definované v modulu B, který vložené `Simple.Add`, a výsledkem by výčet `AddTwice`.  `inlineeModuleId` je identifikátor modulu `A`, a `inlineeeMethodId` je identifikátor `Simple.Add(int a, int b)`.  
   
  Pokud `incompleteData` platí po funkce vrátí enumerátor neobsahuje všechny metody vložené dané metody. K tomu může dojít, pokud jeden nebo dosud nebyla načtena přímý nebo nepřímý závislosti inliners modulu. Pokud profileru potřebuje přesná data, jeho pokus opakovat později. Pokud další moduly jsou načteny, pokud možno na každém načtení modulu.  
   
@@ -88,7 +78,7 @@ Simple.Add(int a, int b)
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorProfilerInfo6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo6-interface.md)

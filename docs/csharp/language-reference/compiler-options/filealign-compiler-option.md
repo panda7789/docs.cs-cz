@@ -1,10 +1,6 @@
 ---
-title: "-filealign (možnosti kompilátoru C#)"
+title: -filealign (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /filealign
 helpviewer_keywords:
@@ -20,14 +16,11 @@ helpviewer_keywords:
 - -alignment compiler option [C#]
 - section alignment [C#]
 ms.assetid: 15cf1c98-3798-4ced-9f08-60619308a073
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f00db0cfd191de060b67aee4618d99740cb81248
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d51dd0d63bec251d879ffb5e59ce5f7edaf136b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-filealign-c-compiler-options"></a>-filealign (možnosti kompilátoru C#)
 **- Filealign** možnost umožňuje zadat velikost oddílů ve výstupním souboru.  

@@ -1,24 +1,12 @@
 ---
-title: "Zabezpečení aplikací rovnocenného kanálu"
-ms.custom: 
+title: Zabezpečení aplikací rovnocenného kanálu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7358852ffc50576f892c70fa2b212a8102d8ab85
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 725e629a187261a5bc50d880f75b942734df960b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-peer-channel-applications"></a>Zabezpečení aplikací rovnocenného kanálu
 Jako další vazby v části [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], `NetPeerTcpBinding` má povoleno ve výchozím nastavení zabezpečení a nabízí jak zabezpečení na základě přenosu a zprávy (nebo oba). Toto téma popisuje tyto dva typy zabezpečení. Typ zabezpečení je určen podle značky režimu bezpečnostní specifikací vazba (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  

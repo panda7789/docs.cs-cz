@@ -1,14 +1,6 @@
 ---
-title: "IReferenceIdentity – rozhraní"
-ms.custom: 
+title: IReferenceIdentity – rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IReferenceIdentity
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 9180ac5a-7019-4716-9f83-8a91d157239a
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c9696687f292d7dcaa3d430c1e269f0fedb05e98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4708fa173725e4c91a13f5b92cdbb1fdf8a8a4d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ireferenceidentity-interface"></a>IReferenceIdentity – rozhraní
 Představuje odkaz na jedinečný podpis objekt kódu.  
@@ -51,7 +39,7 @@ Představuje odkaz na jedinečný podpis objekt kódu.
   
  **Záhlaví:** Isolation.h  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  

@@ -1,28 +1,14 @@
 ---
 title: Konfigurace HTTP a HTTPS
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8d3317cd4bba7c9935bd7555f16599dc94725fbd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 70c947724abf8da68ec8f7e6d858e26fec62dce5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Konfigurace nastavení protokolu HTTP nebo HTTPS pomocí Internetové informační služby (IIS), nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované v části Nastavení služby IIS protokolu HTTP nebo HTTPS lze konfigurovat v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud služby WCF s vlastním hostováním, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  
@@ -79,7 +65,7 @@ netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
  Podrobné pokyny najdete v tématu [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 ## <a name="configuring-the-ip-listen-list"></a>Konfigurace seznamu naslouchání IP  
- Rozhraní API serveru HTTP se pouze váže k adresu IP a portu, jakmile se uživatel zaregistruje adresu URL. Ve výchozím nastavení rozhraní API serveru HTTP vytvoří vazbu k portu v adrese URL pro všechny IP adresy počítače. Dojde ke konfliktu, pokud má aplikace, která nepoužívá rozhraní API serveru HTTP dříve spojen tuto kombinaci IP adresy a portu. Seznam naslouchání IP umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb existovat společně s aplikací, které používají port pro některé adresy IP počítače. Pokud IP naslouchání seznam obsahuje všechny položky, rozhraní API serveru HTTP pouze sváže tyto IP adresy, které určuje, v seznamu. Úprava seznamu naslouchání IP vyžaduje oprávnění správce.  
+ Rozhraní API serveru HTTP se pouze váže k adresu IP a portu, jakmile se uživatel zaregistruje adresu URL. Ve výchozím nastavení rozhraní API serveru HTTP vytvoří vazbu k portu v adrese URL pro všechny IP adresy počítače. Dojde ke konfliktu, pokud má aplikace, která nepoužívá rozhraní API serveru HTTP dříve spojen tuto kombinaci IP adresy a portu. Seznam adres IP naslouchání umožňuje službám WCF existovat společně s aplikací, které používají port pro některé z IP adresy počítače. Pokud IP naslouchání seznam obsahuje všechny položky, rozhraní API serveru HTTP pouze sváže tyto IP adresy, které určuje, v seznamu. Úprava seznamu naslouchání IP vyžaduje oprávnění správce.  
   
 ### <a name="running-windows-xp-or-server-2003"></a>Spuštěný systém Windows XP nebo Server 2003  
  Pomocí nástroje httpcfg upravit naslouchání seznam adres IP, jak je znázorněno v následujícím příkladu. [Dokumentace nástrojů podpory systému Windows](http://go.microsoft.com/fwlink/?LinkId=94840) vysvětluje syntaxe pro nástroj httpcfg.exe.  
@@ -101,7 +87,7 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
  Rozhraní API serveru protokolu HTTP má některá nastavení Pokročilé konfigurace, které nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení se udržují v registru a platí pro všechny aplikace spuštěné na systémy, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [nastavení registru Http.sys pro službu IIS](http://go.microsoft.com/fwlink/?LinkId=94843). Většina uživatelů by neměl muset změnit tato nastavení.  
   
 ## <a name="issues-specific-to-windows-xp"></a>Potíže specifické pro systém Windows XP  
- Služba IIS nepodporuje sdílení portů na [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Pokud je služba IIS spuštěna a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba se pokusí použít obor názvů s stejný port, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu nepodaří spustit. Služba IIS a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obě výchozích nastavení používat port 80. Změnit přiřazení portů pro jednu ze služeb nebo pomocí seznamu naslouchání IP můžete přiřadit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu na síťový adaptér nepoužívá se službou IIS. Služby IIS 6.0 a novějším mají lepší využití rozhraní API serveru HTTP.  
+ Služba IIS nepodporuje sdílení portů na [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Pokud je spuštěna služba IIS a služby WCF se pokusí použít obor názvů s stejný port, služby WCF se nepodaří spustit. Služba IIS a WCF, které obě výchozích nastavení používat port 80. Buď změňte přiřazení portů pro jednu ze služeb nebo pomocí seznamu naslouchání IP můžete přiřadit služby WCF na síťový adaptér nepoužívá se službou IIS. Služby IIS 6.0 a novějším mají lepší využití rozhraní API serveru HTTP.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSDualHttpBinding>  

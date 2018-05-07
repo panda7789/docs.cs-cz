@@ -1,33 +1,19 @@
 ---
-title: "Adresy koncových bodů"
-ms.custom: 
+title: Adresy koncových bodů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - addresses [WCF]
 - Windows Communication Foundation [WCF], addresses
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58e6d383856d57e95a1ea5bd2658af2ec0b22ed5
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 46278e35c6966e473f5a800f7e99814efd7b943c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
-Každý koncový bod má adresu přidruženo, který se používá k vyhledat a identifikovat koncový bod. Tato adresa se skládá především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je znázorněná [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] programovací model pomocí <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiných koncovými body, které exchange zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují jiné záhlaví SOAP, vyžaduje ke zpřístupnění služby. Zadejte další volitelné hlavičky a podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentován v drátové síti WS-Addressing reference koncového bodu (EPR).  
+Každý koncový bod má adresu přidruženo, který se používá k vyhledat a identifikovat koncový bod. Tato adresa se skládá především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je reprezentována v programovací model Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu pomocí dalších koncových bodů, výměnu zpráv s ním a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují jiné záhlaví SOAP, vyžaduje ke zpřístupnění služby. Zadejte další volitelné hlavičky a podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentován v drátové síti WS-Addressing reference koncového bodu (EPR).  
   
 ## <a name="uri-structure-of-an-address"></a>Identifikátor URI Struktura adresy  
  Adresa URI pro většinu přenosy má čtyři části. Například čtyři části identifikátoru URI http://www.fabrikam.com:322/mathservice.svc/secureEndpoint může být uvedeno následujícím způsobem:  
@@ -63,7 +49,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledat a 
   
 -   Informace o vazbě: IP adresu, Port, Hlavička hostitele  
   
- Služba IIS můžete určit víc vazeb pro každou lokalitu, což vede k více základní adresy pro každé schéma. Před verzí [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporoval více adres pro schéma a, pokud byly zadané, došlo <xref:System.ArgumentException> během aktivace.  
+ Služba IIS můžete určit víc vazeb pro každou lokalitu, což vede k více základní adresy pro každé schéma. Před verzí [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], WCF nepodporoval více adres pro schéma a, pokud byly zadané, došlo <xref:System.ArgumentException> během aktivace.  
   
  [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] Umožňuje poskytovatelům internetových služeb pro hostování více aplikací s jiné základní adresy pro stejné schéma ve stejné lokalitě.  
   
@@ -111,7 +97,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledat a 
  Podrobnosti a příklady naleznete v tématu [podpora víc vazeb webu IIS](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md) a <xref:System.ServiceModel.ServiceHostingEnvironment.MultipleSiteBindingsEnabled%2A>.  
   
 ## <a name="extending-addressing-in-wcf-services"></a>Rozšíření adresování ve službách WCF  
- Adresování model výchozí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby používá adresa URI koncového bodu pro následující účely:  
+ Výchozí hodnota adresování modelu služby WCF používá adresa URI koncového bodu pro následující účely:  
   
 -   Chcete-li určit naslouchání adresu služby, umístění, ve kterém koncový bod přijímá zprávy,  
   

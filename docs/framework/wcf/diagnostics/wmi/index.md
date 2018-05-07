@@ -1,29 +1,15 @@
 ---
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2e01418844db4197cea2f9292f72b9089e77a596
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: a53fee8bfed9f5a0f5773c9dfcfbaab5f173ddad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI).  
+Windows Communication Foundation (WCF) zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI).  
   
 ## <a name="enabling-wmi"></a>Povolení služby WMI  
  Služba WMI je implementace Web-Based Enterprise Management (WBEM) standardní společnosti Microsoft. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM je oborový standard pro jak aplikace vystavit WMI pro externí nástroje pro správu.  

@@ -1,29 +1,15 @@
 ---
 title: Vlastní vazby
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-caps.latest.revision: 33
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5fc38becb4a737ada5102c187ddeaac73aaceb1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6880b04a3f8a82c1e109c32674804c5241913a8a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-bindings"></a>Vlastní vazby
 Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pokud jeden z vazby poskytované systémem nesplňuje požadavky na služby. Všechny vazby se vytvářejí na základě uspořádanou sadu elementů vazby. Vlastní vazby jde integrovat přímo ze sady elementů vazby poskytované systémem nebo může zahrnovat prvky uživatelem definované vlastní vazby. Vlastní vazby elementů, například můžete použít k povolení použití nové přenosy nebo kodéry na koncový bod služby. Pracovní příklady najdete v tématu [vazby ukázky vlastních](http://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08). Další informace najdete v tématu [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -55,7 +41,7 @@ Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pok
   
     -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
   
- V dolní části je element požadované přenosu. Můžete použít vlastní přenos nebo jeden z následujících elementů přenosové vazby [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje:  
+ V dolní části je element požadované přenosu. Můžete použít vlastní přenos nebo jeden z následujících elementů přenosové vazby, kterou poskytuje Windows Communication Foundation (WCF):  
   
 -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   

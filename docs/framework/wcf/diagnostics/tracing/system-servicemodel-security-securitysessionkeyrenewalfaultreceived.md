@@ -1,24 +1,14 @@
 ---
 title: System.ServiceModel.Security.SecuritySessionKeyRenewalFaultReceived
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 857542f7-adcb-4769-bf4e-a85b87e58dc8
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 2b223c14b693a5d0c1b67dc2a27a802232545d1e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b2ca83290ad70fe32bde124327e13f24519b160d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelsecuritysecuritysessionkeyrenewalfaultreceived"></a>System.ServiceModel.Security.SecuritySessionKeyRenewalFaultReceived
 System.ServiceModel.Security.SecuritySessionKeyRenewalFaultReceived  

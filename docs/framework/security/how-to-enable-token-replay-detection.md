@@ -1,24 +1,14 @@
 ---
-title: "Postupy: Povolení rozpoznání opětovného přehrání tokenu"
-ms.custom: 
+title: 'Postupy: Povolení rozpoznání opětovného přehrání tokenu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: a7c72d77b4894376fb6cb8aed2d1c6641a3977da
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b9c187998b4af41e1a56ed9a64625da7e4f95d5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-token-replay-detection"></a>Postupy: Povolení rozpoznání opětovného přehrání tokenu
 ## <a name="applies-to"></a>Platí pro  

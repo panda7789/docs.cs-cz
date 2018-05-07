@@ -1,21 +1,12 @@
 ---
-title: "Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)"
-ms.custom: 
+title: Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: e1e17ef2-68ff-4c26-b6e2-015668227fa5
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f662f23948f5d18c31a981a2f46d78f382ff5c96
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 48ca1173439559832ac7e578eac1e11c2bf34be2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)
 Některé více často používaných standardní operátory dotazu mít vyhrazené C# – klíčové slovo syntaxe jazyka umožňující volat v rámci *dotaz výrazu*. Výraz dotazu je jiné, srozumitelnější formu vyjadřující dotazu než jeho *na základě metod* ekvivalentní. Klauzule výraz dotazu jsou převedeny do volání metody dotazů v době kompilace.  

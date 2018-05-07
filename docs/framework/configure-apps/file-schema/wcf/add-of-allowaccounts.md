@@ -2,14 +2,14 @@
 title: '&lt;add&gt; – &lt;allowAccounts&gt;'
 ms.date: 03/30/2017
 ms.assetid: 763c7b1f-e7b0-4d99-a42c-4506fcb8da00
-ms.openlocfilehash: 20e1052a0517bb170cf796dd40d58c298185a958
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 2230b8d22a14c3df5eb3aa10872246febce015e9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltaddgt-of-ltallowaccountsgt"></a>&lt;add&gt; – &lt;allowAccounts&gt;
-Určuje, uživatelský účet pro procesy na tomto hostiteli [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby a je uděleno oprávnění k připojení ke službě sdílení.  
+Určuje uživatelský účet pro procesy, které hostování služby WCF a je uděleno oprávnění k připojení ke službě sdílení.  
   
  \<system.serviceModel.activation>  
   
@@ -37,7 +37,7 @@ Určuje, uživatelský účet pro procesy na tomto hostiteli [!INCLUDE[indigo2](
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekci elementů konfigurace, které obsahují `securityIdentifier` atribut k určení uživatelských účtů pro procesy, které hostují [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby a je uděleno oprávnění k připojení ke službě sdílení.|  
+|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekci elementů konfigurace, které obsahují `securityIdentifier` atribut zadejte uživatelské účty pro procesy, které hostování služby WCF a je uděleno oprávnění k připojení ke službě sdílení.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad konfigurace přidá pět výchozích identifikátory pro uživatelské účty do této kolekce.  

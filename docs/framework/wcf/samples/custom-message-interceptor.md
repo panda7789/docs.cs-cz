@@ -1,24 +1,12 @@
 ---
-title: "Vlastní zachycování zpráv"
-ms.custom: 
+title: Vlastní zachycování zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: acac4baa5be68d042dd1b0a11d7acfe609169e10
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 0ed34823251dcc010fc438bda1e746549b97f0f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-message-interceptor"></a>Vlastní zachycování zpráv
 Tento příklad znázorňuje použití model rozšiřitelnosti kanálu. Konkrétně ukazuje, jak implementovat vlastní vazby element, který vytváří objekty factory kanálu a naslouchací procesy kanál zachytávat všechny příchozí a odchozí zprávy na určitém místě v zásobníku spuštění. Ukázka zahrnuje také klienta a serveru, která ukazují použití tyto vlastní objekty pro vytváření.  
@@ -33,11 +21,11 @@ Tento příklad znázorňuje použití model rozšiřitelnosti kanálu. Konkrét
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\MessageInterceptor`  
   
- Ukázka popisuje doporučený postup pro vytvoření vlastní vrstveného kanál v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], pomocí rozhraní kanálu a následující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] osvědčené postupy. Postup vytvoření vlastní vrstveného kanál jsou následující:  
+ Ukázka popisuje doporučený postup pro vytvoření vlastní vrstveného kanál ve Windows Communication Foundation (WCF), pomocí rozhraní kanálu a následující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] osvědčené postupy. Postup vytvoření vlastní vrstveného kanál jsou následující:  
   
 1.  Rozhodnete, které tvarů kanál bude podporovat kanálu a naslouchací proces kanálu.  
   
@@ -63,7 +51,7 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 ```  
   
 ## <a name="adding-a-binding-element"></a>Přidání prvku vazby  
- Ukázka definuje element vlastní vazby: `InterceptingBindingElement`. `InterceptingBindingElement`trvá `ChannelMessageInterceptor` jako vstup a to pomocí `ChannelMessageInterceptor` k manipulaci s zprávy, které předáte ji. Toto je jediná třída, která musí být veřejné. Objekt pro vytváření, naslouchací proces a kanály mohou být interních implementací veřejné rozhraní běhu.  
+ Ukázka definuje element vlastní vazby: `InterceptingBindingElement`. `InterceptingBindingElement` trvá `ChannelMessageInterceptor` jako vstup a to pomocí `ChannelMessageInterceptor` k manipulaci s zprávy, které předáte ji. Toto je jediná třída, která musí být veřejné. Objekt pro vytváření, naslouchací proces a kanály mohou být interních implementací veřejné rozhraní běhu.  
   
 ```  
 public class InterceptingBindingElement : BindingElement  

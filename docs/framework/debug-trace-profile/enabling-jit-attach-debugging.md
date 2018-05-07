@@ -1,27 +1,17 @@
 ---
-title: "Povolení JIT – ladění Attach "
-ms.custom: 
+title: 'Povolení JIT – ladění Attach '
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - JIT-attach debugging
 - debugging [.NET Framework], JIT-attach debugging
 ms.assetid: f91fc5f7-de5a-4f23-b6ac-f450e63c662e
-caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 71b2e95076edbda3a67a84c9185d8b689c158e12
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 67db256f4c328b12d6cc30abfbe5d5ccc12e8b0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enabling-jit-attach-debugging"></a>Povolení JIT – ladění Attach 
 JIT – připojené ladění je fráze používají k popisu připojení ladicího programu procesu, když dojde k chybám, nebo ji můžete aktivovat konkrétní metody nebo funkce.  
@@ -30,15 +20,15 @@ JIT – připojené ladění je fráze používají k popisu připojení ladicí
   
 -   Nezpracované výjimky (v nativního a spravovaného kódu).  
   
--   <xref:System.Environment.FailFast%2A?displayProperty=nameWithType>Metoda nebo [RaiseFailFastException](http://go.microsoft.com/fwlink/?LinkId=182107) – funkce (rodiny Windows 7).  
+-   <xref:System.Environment.FailFast%2A?displayProperty=nameWithType> Metoda nebo [RaiseFailFastException](http://go.microsoft.com/fwlink/?LinkId=182107) – funkce (rodiny Windows 7).  
   
 -   Závažné chyby za běhu.  
   
  JIT – připojené ladění se aktivuje také při volání těchto metod a funkce:  
   
--   <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType>Metoda.  
+-   <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType> Metoda.  
   
--   <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=nameWithType>Metoda.  
+-   <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=nameWithType> Metoda.  
   
 -   [Debugbreak –](http://go.microsoft.com/fwlink/?LinkId=182106) – funkce (Win32).  
   

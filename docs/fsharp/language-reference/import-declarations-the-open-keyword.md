@@ -1,17 +1,12 @@
 ---
 title: 'Deklarace importu: Klíčové slovo open (F#)'
 description: 'Další informace o deklarace importu F # a jak určit modul nebo obor názvů jehož elementy bez použití plně kvalifikovaný název, můžete odkazovat.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: ddbc1086e2adbe8dae408f4d39fd5af888d7fd5e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 29f09297993b347464f1572ac9ca24902c786f4d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="import-declarations-the-open-keyword"></a>Deklarace importu: `open` – klíčové slovo
 

@@ -1,12 +1,6 @@
 ---
-title: "Zásady založené na čase mezipaměti"
-ms.custom: 
+title: Zásady založené na čase mezipaměti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - time-based cache policies
 - cache synchronization date policy
@@ -23,19 +17,17 @@ helpviewer_keywords:
 - minimum freshness policy
 - age of cached resources
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: f712f223ef5787e50ef6a0c26949ff99c13dee33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f25f04a144fa806297b018bf3548b8feb506f67d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="time-based-cache-policies"></a>Zásady založené na čase mezipaměti
-Zásady založené na čase mezipaměti definuje aktuálnosti položek v mezipaměti pomocí čas prostředku byl načteny, se k prostředku, vrácený hlavičky a aktuální čas. Při nastavení zásad založené na čase mezipaměti, můžete použít <xref:System.Net.Cache.HttpRequestCacheLevel.Default> zásady založené na čase nebo vytvořte vlastní zásadu založené na čase. Při použití výchozí zásady založené na čase prostředků získaných pomocí protokolu HTTP (Hypertext Transfer), přesný mezipaměti chování je určen podle hlavičky zahrnuty v odpovědi v mezipaměti a chování zadané v části 13 a 14 dokumentu RFC 2616 k dispozici na [http://www.ietf.org](http://www.ietf.org/). Příklad kódu, který ukazuje nastavení zásad založené na čase výchozí pro HTTP prostředky, najdete v části [postupy: nastavení zásady ukládání do mezipaměti Default Time-Based pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Příklady kódu, které ukazují, vytvoření a použití zásady mezipaměti najdete v tématu [konfiguraci ukládání do mezipaměti v síťových aplikací](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
+Zásady založené na čase mezipaměti definuje aktuálnosti položek v mezipaměti pomocí čas prostředku byl načteny, se k prostředku, vrácený hlavičky a aktuální čas. Při nastavení zásad založené na čase mezipaměti, můžete použít <xref:System.Net.Cache.HttpRequestCacheLevel.Default> zásady založené na čase nebo vytvořte vlastní zásadu založené na čase. Při použití výchozí zásady založené na čase prostředků získaných pomocí protokolu HTTP (Hypertext Transfer), přesný mezipaměti chování je určen podle hlavičky zahrnuty v odpovědi v mezipaměti a chování zadané v části 13 a 14 dokumentu RFC 2616 k dispozici na [ http://www.ietf.org ](http://www.ietf.org/). Příklad kódu, který ukazuje nastavení zásad založené na čase výchozí pro HTTP prostředky, najdete v části [postupy: nastavení zásady ukládání do mezipaměti Default Time-Based pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Příklady kódu, které ukazují, vytvoření a použití zásady mezipaměti najdete v tématu [konfiguraci ukládání do mezipaměti v síťových aplikací](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
   
 ## <a name="criteria-to-determine-freshness-of-cached-entries"></a>Kritéria k určení aktuálnosti položek v mezipaměti  
  Chcete-li přizpůsobit zásady založené na čase mezipaměti, můžete určit, že jedna nebo více z následujících kritérií použije k určení aktuálnosti položek v mezipaměti:  

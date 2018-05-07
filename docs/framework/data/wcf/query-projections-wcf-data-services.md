@@ -1,13 +1,6 @@
 ---
-title: "Projekce dotazu (služby WCF Data Services)"
-ms.custom: 
+title: Projekce dotazu (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6cd775ed31d0457308f86b3d5b6f40092bfa9690
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 903acaa7493dc83fd6bf50f5a578a067c15e6294
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazu (služby WCF Data Services)
 Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] ke snížení množství dat v informačním kanálu vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi. Další informace najdete v tématu [OData: Vyberte možností dotazu systému ($select)](http://go.microsoft.com/fwlink/?LinkId=186076).  
@@ -65,7 +53,7 @@ Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/sso
   
  Také data z `Customer` typu se promítá do instance `CustomerAddress` typ entity místo anonymního typu. Projekce do anonymní typy je podporována, ale data je jen pro čtení, protože anonymní typy jsou považovány za typy nonentity.  
   
- <xref:System.Data.Services.Client.MergeOption> Nastavení <xref:System.Data.Services.Client.DataServiceContext> se používají pro překlad identity během projekce dotazu. To znamená, že pokud instance `Customer` typ už v <xref:System.Data.Services.Client.DataServiceContext>, instanci `CustomerAddress` se stejnou identitou bude postupovat podle řešení identity, pravidla, která nastavuje<xref:System.Data.Services.Client.MergeOption>  
+ <xref:System.Data.Services.Client.MergeOption> Nastavení <xref:System.Data.Services.Client.DataServiceContext> se používají pro překlad identity během projekce dotazu. To znamená, že pokud instance `Customer` typ už v <xref:System.Data.Services.Client.DataServiceContext>, instanci `CustomerAddress` se stejnou identitou bude postupovat podle řešení identity, pravidla, která nastavuje <xref:System.Data.Services.Client.MergeOption>  
   
  Následující tabulka popisuje chování při projekci výsledky na typy entit a nonentity:  
   

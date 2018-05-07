@@ -1,26 +1,12 @@
 ---
 title: Povolení přístupu mezi databáze v systému SQL Server
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-caps.latest.revision: 10
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0f27f5bd63acbf532d3dca2a8c6fea0b1a59d659
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 22fa2b48d795fb81b4740ce882f9bff632deabbd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enabling-cross-database-access-in-sql-server"></a>Povolení přístupu mezi databáze v systému SQL Server
 Řetězení mezidatabázové vlastnictví nastane, když postup v jedné databáze závisí na objektech v jiné databázi. Řetěz mezidatabázové vlastnictví funguje stejným způsobem jako vlastnictví řetězení v rámci jedné databáze, s tím rozdílem, že řetězce rozděleno vlastnictví vyžaduje, aby všechny vlastníky objektů jsou namapované na stejný účet pro přihlášení. Pokud zdrojový objekt v databázi zdrojové a cílové objekty v cílové databází jsou vlastněny stejný účet pro přihlášení, nekontroluje systém SQL Server oprávnění pro cílové objekty.  

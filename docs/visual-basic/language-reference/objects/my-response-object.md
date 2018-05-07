@@ -1,25 +1,17 @@
 ---
-title: "My.Response – objekt"
+title: My.Response – objekt
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - My.MyWebExtension.Response
 - My.Response
 helpviewer_keywords:
 - My.Response object
 ms.assetid: 626359bc-3165-40b4-bfaf-2c610e26eb5b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 76d0e701107add0d5bd468ba7a829759739e0cd9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0a907d74112586e7b88c5a0a6f40080455454d7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="myresponse-object"></a>My.Response – objekt
 Získá <xref:System.Web.HttpResponse> objekt přidružený k <xref:System.Web.UI.Page>. Tento objekt umožňuje odeslat data odpovědi HTTP do klienta a obsahuje informace o této odpovědi.  
@@ -36,4 +28,4 @@ Získá <xref:System.Web.HttpResponse> objekt přidružený k <xref:System.Web.U
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Web.HttpResponse>  
- [My.Request – objekt](../../../visual-basic/language-reference/objects/my-request-object.md)
+ [Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)

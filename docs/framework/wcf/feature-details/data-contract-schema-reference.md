@@ -1,34 +1,20 @@
 ---
 title: Schéma kontraktů dat – referenční informace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 075f8d89caccd7723f3a1dc54fde695a8fb624ab
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 06bc79e059300d448ababa87974b590f54f7984c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci XML.  
   
 ## <a name="datacontractserializer-mappings"></a>Mapování DataContractSerializer  
- `DataContractSerializer` Mapuje typy CLR XSD při exportu metadata z [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby pomocí koncový bod metadat nebo [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Další informace najdete v tématu [serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md).  
+ `DataContractSerializer` Mapuje typy CLR XSD při exportu metadat ze služby Windows Communication Foundation (WCF) pomocí koncový bod metadat nebo [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Další informace najdete v tématu [serializátor kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md).  
   
  `DataContractSerializer` Také mapuje XSD typy CLR při Svcutil.exe se používá pro přístup k webové služby popis Language (WSDL) nebo XSD dokumentů a generovat kontrakty dat pro služby nebo klientů.  
   
@@ -105,7 +91,7 @@ Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runt
 |`choice`|Je zakázané|  
 |`sequence`|Nepodporuje mapuje datových členů sady kontraktu dat.|  
 |`attribute`|Je zakázané, i v případě použití = "prohibited" (s jedinou výjimkou). Jsou podporovány pouze volitelných atributů z oboru názvů schématu standardní serializace. Budou se nemapují do datových členů v kontrakt dat programovací model. V současné době pouze jeden takový atribut má význam a popsané v části ISerializable. Všechny další se ignorují.|  
-|`attributeGroup`|Je zakázané. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] verze v1 `DataContractSerializer` ignoruje přítomnost `attributeGroup` uvnitř `xs:complexType`.|  
+|`attributeGroup`|Je zakázané. Ve verzi v1 WCF `DataContractSerializer` ignoruje přítomnost `attributeGroup` uvnitř `xs:complexType`.|  
 |`anyAttribute`|Je zakázané.|  
 |(prázdný)|Mapuje kontraktu dat bez členů data.|  
   
@@ -215,7 +201,7 @@ Toto téma popisuje některé z schéma XML (XSD) používané <xref:System.Runt
   
  \* Při použití `simpleType` a `complexType,` mapování pro anonymní typy je stejné jako anonymní typy, s tím rozdílem, že neexistuje žádná kontrakty anonymní dat, a tudíž vytvoření kontraktu dat s názvem s názvem odvozené od názvu elementu. Pravidla pro anonymní typy jsou v následujícím seznamu:  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Podrobnosti implementace: Pokud `xs:element` název neobsahuje období, anonymního typu se mapuje na typ vnitřní, vnější datového typu kontraktu. Pokud název obsahuje tečky, výsledný typ kontraktu dat je nezávislá (není vnitřní typ).  
+-   Podrobnosti implementace WCF: Pokud `xs:element` název neobsahuje období, anonymního typu se mapuje na typ vnitřní, vnější datového typu kontraktu. Pokud název obsahuje tečky, výsledný typ kontraktu dat je nezávislá (není vnitřní typ).  
   
 -   Název kontraktu generované datové vnitřní typu je název kontraktu dat vnější typu, za nímž následuje období, název elementu a řetězce "Typ".  
   

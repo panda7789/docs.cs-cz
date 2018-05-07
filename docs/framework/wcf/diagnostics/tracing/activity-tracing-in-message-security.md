@@ -1,24 +1,14 @@
 ---
-title: "Trasování aktivit v zabezpečení zpráv"
-ms.custom: 
+title: Trasování aktivit v zabezpečení zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 68862534-3b2e-4270-b097-8121b12a2c97
-caps.latest.revision: "7"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: db9b05217bbbf91bfc3cd315801b4e511f82d04c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31882dfff746aa8e0e45698f70b0f19ae413d66a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-tracing-in-message-security"></a>Trasování aktivit v zabezpečení zpráv
 Toto téma popisuje aktivity trasování pro zpracování zabezpečení, který se stane následující tři fáze.  

@@ -1,24 +1,12 @@
 ---
-title: "Autorizace a oprávnění v systému SQL Server"
-ms.custom: 
+title: Autorizace a oprávnění v systému SQL Server
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-caps.latest.revision: "8"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9b5dd162aad85ea28e7d05cbfd2e72e7fc2fb235
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: bddbbd7eac29d33801042276e5f4ca9a05a83c1a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění v systému SQL Server
 Při vytváření databázových objektů, je třeba explicitně udělit oprávnění, aby byly dostupné pro uživatele. Všechny zabezpečitelné objekty má oprávnění, která lze udělit oprávnění příkazy using objekt zabezpečení.  
@@ -45,7 +33,7 @@ Při vytváření databázových objektů, je třeba explicitně udělit oprávn
 |Příkaz oprávnění|Popis|  
 |--------------------------|-----------------|  
 |UDĚLENÍ|Uděluje oprávnění.|  
-|REVOKE|Odvolá oprávnění. Toto je výchozí stav nového objektu. Oprávnění odvolává pro uživatele nebo roli stále možné zdědit z jiné skupiny nebo role, ke kterým je přiřazen k objektu zabezpečení.|  
+|ODVOLÁNÍ.|Odvolá oprávnění. Toto je výchozí stav nového objektu. Oprávnění odvolává pro uživatele nebo roli stále možné zdědit z jiné skupiny nebo role, ke kterým je přiřazen k objektu zabezpečení.|  
 |ODEPŘÍT|ODEPŘÍT odvolá oprávnění tak, aby nelze zdědit. ODEPŘÍT má přednost před všechna oprávnění, kromě ODEPŘÍT se nevztahuje na objekt vlastníky nebo členové `sysadmin`. Pokud ODEPŘETE oprávnění na objekt tak, aby `public` role pro všechny uživatele a role kromě vlastníky objektu se nezdařilo a `sysadmin` členy.|  
   
 -   Příkaz GRANT můžete přiřadit oprávnění do skupiny nebo role, která může být zděděn uživatele databáze. ODEPŘÍT příkaz však má přednost před jiné příkazy oprávnění. Proto uživatel, který bylo odepřeno oprávnění nemůže Zdědit ji z jiné role.  

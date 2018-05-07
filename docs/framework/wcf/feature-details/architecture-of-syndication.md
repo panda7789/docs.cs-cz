@@ -1,26 +1,12 @@
 ---
 title: Architektura syndikace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
-caps.latest.revision: 25
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2516a80f8d92b4e64372be140d2ee3d5db4c7b54
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f0a6b288860c343157f31f74d5a461fad1784e0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndikace
 Rozhraní API syndikace určená k poskytování formátu jazykově neutrální programovací model, který umožňuje syndikovaný obsah má být zapsán k přenosu v různých formátech. Abstraktní datového modelu se skládá z následujících tříd:  
@@ -37,16 +23,16 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
  Tyto třídy mapovat úzce konstrukce definované specifikací Atom 1.0, i když některé z názvů se liší.  
   
- V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], informační kanály syndikace jsou modelovat jako jiný typ pro operace služby, jeden kde návratový typ je jedním z odvozené třídy <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Načtení informačního kanálu je modelovaná jako výměně zpráv požadavků a odpovědí. Klient odešle že požadavek na službu a službu odpoví. Zpráva požadavku je nastaven protokol infrastruktury (například nezpracovaná HTTP) a zpráva odpovědi obsahuje datovou část, která se skládá z formátu obecně známý syndikace (RSS 2.0 nebo Atom 1.0). Služby, které implementují těchto výměn zpráv jsou označovány jako syndikace služby.  
+ Ve Windows Communication Foundation (WCF), informační kanály syndikace jsou modelovat jako jiný typ operace služby, jeden kde návratový typ je jedním z odvozené třídy <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Načtení informačního kanálu je modelovaná jako výměně zpráv požadavků a odpovědí. Klient odešle že požadavek na službu a službu odpoví. Zpráva požadavku je nastaven protokol infrastruktury (například nezpracovaná HTTP) a zpráva odpovědi obsahuje datovou část, která se skládá z formátu obecně známý syndikace (RSS 2.0 nebo Atom 1.0). Služby, které implementují těchto výměn zpráv jsou označovány jako syndikace služby.  
   
  Kontrakt služby syndikace obsahuje sadu operací, které vrací instanci třídy <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> třídy. Následující příklad ukazuje deklaraci rozhraní pro službu syndikace.  
   
  [!code-csharp[S_UE_SyndicationBoth#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_syndicationboth/cs/service.cs#0)]  
   
- Podpora syndikace je postavený na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, která definuje <xref:System.ServiceModel.WebHttpBinding> vazby, který se používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior> chcete zpřístupnit informační kanály jako služby. Další informace o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model REST, najdete v části [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
+ Podpora syndikace je nástavbou programovací Model REST WCF definující <xref:System.ServiceModel.WebHttpBinding> vazby, který se používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior> chcete zpřístupnit informační kanály jako služby. Další informace o programovací Model REST WCF najdete v tématu [programování přehled modelu WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md).  
   
 > [!NOTE]
->  Specifikace Atom 1.0 umožňuje zadat v některém z jeho datum konstrukce zlomků sekund. Při serializaci a deserializaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace ignoruje zlomků sekund.  
+>  Specifikace Atom 1.0 umožňuje zadat v některém z jeho datum konstrukce zlomků sekund. Při serializaci a deserializaci implementace WCF ignoruje zlomků sekund.  
   
 ## <a name="object-model"></a>Objektový Model  
  Objektový model pro syndikace se skládá ze skupin tříd v následujících tabulkách.  
@@ -88,7 +74,7 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
 ## <a name="extensibility"></a>Rozšiřitelnost  
   
--   Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definovány v specifikacích. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Programovací model syndikace nabízí dva způsoby práce s vlastní atributy a rozšíření: odvozování novou třídu a volného typu přístup. Další informace najdete v tématu [rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
+-   Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definovány v specifikacích. Programovací model syndikace WCF nabízí dva způsoby práce s vlastní atributy a rozšíření: odvozování novou třídu a volného typu přístup. Další informace najdete v tématu [rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  

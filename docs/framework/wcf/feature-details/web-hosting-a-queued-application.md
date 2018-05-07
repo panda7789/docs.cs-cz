@@ -1,29 +1,15 @@
 ---
 title: Webhosting frontové aplikace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7b7168d5283a0dbe1001631f855e493335576a80
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f396ffadeca81d86d867842b63cad3c63d67ff3a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="web-hosting-a-queued-application"></a>Webhosting frontové aplikace
-Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace, které hostují [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby využívají protokoly HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
+Služba aktivace procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace služby Windows Communication Foundation (WCF) tohoto hostitele. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
   
  BYL zahrnuje služba Aktivace řízení front zpráv (MSMQ), která aktivuje aplikace ve frontě, když jeden nebo více zpráv ukládány v jednom z fronty používá aplikace. Aktivace služby MSMQ je služby NT, který se automaticky spustí ve výchozím nastavení.  
   
@@ -49,7 +35,7 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivace a dobu ži
  Aktivace služby MSMQ spouští jako síťová služba. Je služba, která monitoruje fronty k aktivaci aplikace. Pro něj k aktivaci aplikací z fronty musíte zadat fronty pro SÍŤOVOU službu přístup k prohlížení zpráv ve svém seznamu řízení přístupu (ACL).  
   
 ### <a name="poison-messaging"></a>Zacházení s nezpracovatelnými zasílání zpráv  
- Zpracování v poškozených zpráv [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá kanál, který není pouze zjistí, že zprávy je poškozen, ale vybírá dispozice, v závislosti na konfiguraci uživatele. Ve frontě v důsledku toho není do jedné zprávy. Aplikace hostované webové zruší následných časy a zpráva bude přesunuta do fronty opakování. V okamžiku, závisí na zpoždění opakování cyklus zpráva se přesune ze fronty opakování hlavní fronty a zkuste to znovu. Ale vyžaduje zařazených do fronty kanálu jako aktivní. Pokud je aplikace recyklované službou WAS, pak zpráva zůstane v fronty opakování dokud dorazí další zprávu ve frontě hlavní aktivovat aplikaci ve frontě. Alternativní řešení v tomto případě je přesunout zprávu ručně z fronty opakování zpět do hlavní fronty se znovu aktivovat aplikaci.  
+ Zpracování ve WCF poškozených zpráv se zpracovává souborem kanál, který není pouze zjistí, že zprávy je poškozen, ale vybírá dispozice, v závislosti na konfiguraci uživatele. Ve frontě v důsledku toho není do jedné zprávy. Aplikace hostované webové zruší následných časy a zpráva bude přesunuta do fronty opakování. V okamžiku, závisí na zpoždění opakování cyklus zpráva se přesune ze fronty opakování hlavní fronty a zkuste to znovu. Ale vyžaduje zařazených do fronty kanálu jako aktivní. Pokud je aplikace recyklované službou WAS, pak zpráva zůstane v fronty opakování dokud dorazí další zprávu ve frontě hlavní aktivovat aplikaci ve frontě. Alternativní řešení v tomto případě je přesunout zprávu ručně z fronty opakování zpět do hlavní fronty se znovu aktivovat aplikaci.  
   
 ### <a name="subqueue-and-system-queue-caveat"></a>Dílčí fronta a přímý přístup fronty paměti systému  
  Aplikace hostované WAS nelze aktivovat, na základě zpráv ve frontě systému, jako jsou systémové fronty nedoručených zpráv nebo dílčí fronty, jako je například poškozených dílčí fronty. Jedná se o omezení pro tuto verzi produktu.  

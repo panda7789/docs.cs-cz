@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky"
-ms.custom: 
+title: 'Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - flicker [Windows Forms], reducing in Windows Forms
 - graphics [Windows Forms], reducing double-buffered flicker
 ms.assetid: 91083d3a-653f-4f15-a467-0f37b2aa39d6
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fc782ba262527a319cbb05cc6d36ca568afc55c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6e11e364af5dc361a24cdd88d72432d6ba4d4058
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls"></a>Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky
 Chcete-li vyřešit blikání problémy spojené s více operací Malování dvojité ukládání do vyrovnávací paměti používá vyrovnávací paměti. Pokud dvojité ukládání do vyrovnávací paměti je povoleno, všechny operace Malování vykresleny nejprve do vyrovnávací paměti místo kreslicí plochy na obrazovce. Po dokončení všech operací Malování vyrovnávací paměť je zkopírovat přímo do kreslicí plochy s ním spojená. Vzhledem k tomu, že pouze jeden grafické operace na obrazovce, blikání bitové kopie přidružený komplexní vykreslovací operace odstranění. Pro většinu aplikací, výchozí dvojité ukládání do vyrovnávací paměti zajišťuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] bude poskytovat nejlepší výsledky. Standardní ovládací prvky Windows Forms jsou dvojité vyrovnávací paměti ve výchozím nastavení. Můžete povolit výchozí dvojité ukládání do vyrovnávací paměti do svých formulářů a vytvořené ovládací prvky dvěma způsoby. Můžete buď sadu <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost `true`, nebo můžete volat <xref:System.Windows.Forms.Control.SetStyle%2A> metodu a nastavit <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> příznak, který `true`. Obě metody povolí, výchozí dvojité ukládání do vyrovnávací paměti pro formuláře nebo ovládacího prvku a poskytují blikání grafiky vykreslování. Volání <xref:System.Windows.Forms.Control.SetStyle%2A> metoda se doporučuje jenom pro vlastní ovládací prvky, pro které jste napsali všechny kód vykreslování.  
@@ -38,7 +26,7 @@ Chcete-li vyřešit blikání problémy spojené s více operací Malování dvo
      [!code-csharp[System.Windows.Forms.LegacyBufferedGraphics#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/CS/Class1.cs#31)]
      [!code-vb[System.Windows.Forms.LegacyBufferedGraphics#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/VB/Class1.vb#31)]  
   
- \-nebo –  
+ \- nebo –  
   
 -   Volání <xref:System.Windows.Forms.Control.SetStyle%2A> metodu a nastavit <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> příznak, který `true`.  
   

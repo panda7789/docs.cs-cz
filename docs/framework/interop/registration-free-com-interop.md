@@ -1,13 +1,6 @@
 ---
-title: "Zprostředkovatel komunikace s objekty COM bez registrace"
-ms.custom: 
+title: Zprostředkovatel komunikace s objekty COM bez registrace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - assemblies [.NET Framework], interop
 - COM interop, registration-free COM interop
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1eee55b2036028dd491dc82f9bce7c51aca878fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 32ee3babe054d55a45cc8826843252dba6aa2be7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spoluprací COM bez registrace se aktivuje komponentu bez uložení informací o sestavení pomocí registru systému Windows. Místo registrace komponenty v počítači během nasazení, vytvoření souborů manifestu Win32 stylu v době návrhu, které obsahují informace o aktivaci a vazeb. Tyto soubory manifestu, nikoli klíče registru přímé aktivace objektu.  

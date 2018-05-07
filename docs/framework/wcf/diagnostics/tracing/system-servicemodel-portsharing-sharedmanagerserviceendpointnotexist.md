@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.PortSharing.SharedManagerServiceEndpointNotExist
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2f9638ec-620c-477b-a6fc-2228aea1f875
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8996572c8941c3045d643353a7b081f8e74a4b62
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a700c42b55db40487cb798e7c0ea26bcfb02910f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelportsharingsharedmanagerserviceendpointnotexist"></a>System.ServiceModel.PortSharing.SharedManagerServiceEndpointNotExist
 System.ServiceModel.PortSharing.SharedManagerServiceEndpointNotExist  

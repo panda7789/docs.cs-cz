@@ -1,24 +1,17 @@
 ---
 title: C# direktivy preprocesoru
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - cs.preprocessor
 helpviewer_keywords:
 - preprocessor directives [C#]
 - keywords [C#], preprocessor directives
 ms.assetid: f2406090-b244-4f7e-ab72-3698fefed724
-caps.latest.revision: 13
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 6378c8df794a4ee75e7b5ca283b18b228ba46383
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 63a7bdb6d36794e0380ca84443926338fe926e4d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="c-preprocessor-directives"></a>C# direktivy preprocesoru
 Tato část obsahuje informace o následujících C# direktivy preprocesoru:
@@ -35,8 +28,8 @@ Tato část obsahuje informace o následujících C# direktivy preprocesoru:
 - [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md)
 - [#endregion](../../../csharp/language-reference/preprocessor-directives/preprocessor-endregion.md)
 - [#pragma](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma.md)
-- [#pragma – upozornění](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)
-- [#pragma – kontrolní součet](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
+- [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)
+- [#pragma checksum](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
 
 V tématech jednotlivých Další informace a příklady.
 
@@ -46,4 +39,4 @@ Direktivy preprocesoru musí být pouze pokyn na řádek.
 
 ## <a name="see-also"></a>Viz také
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

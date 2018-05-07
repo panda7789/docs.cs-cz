@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Definování obecného typu pomocí generování reflexe"
-ms.custom: 
+title: 'Postupy: Definování obecného typu pomocí generování reflexe'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - generics [.NET Framework], dynamic types
 - reflection emit, generic types
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d6096a54c6a530035bd32c24d427ba047f905476
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 34ed0d4752eb42f0bd3df8167d498b99d7af1080
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí generování reflexe
 Toto téma ukazuje, jak vytvořit jednoduché obecného typu se dva parametry typu, jak se má použít třída omezení, omezení rozhraní a zvláštní omezení pro parametry typu a postup vytvoření členy, které používají parametry typu třídy jako typy parametrů a návratové typy.  
@@ -74,7 +64,7 @@ Toto téma ukazuje, jak vytvořit jednoduché obecného typu se dva parametry ty
      [!code-csharp[EmitGenericType#7](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#7)]
      [!code-vb[EmitGenericType#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#7)]  
   
-7.  Zadejte pole. V tomto příkladu je typ pole určený parametrem typu `TFirst`. <xref:System.Reflection.Emit.GenericTypeParameterBuilder>odvozená z <xref:System.Type>, abyste mohli používat parametry obecného typu odkudkoli typ lze použít.  
+7.  Zadejte pole. V tomto příkladu je typ pole určený parametrem typu `TFirst`. <xref:System.Reflection.Emit.GenericTypeParameterBuilder> odvozená z <xref:System.Type>, abyste mohli používat parametry obecného typu odkudkoli typ lze použít.  
   
      [!code-cpp[EmitGenericType#21](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#21)]
      [!code-csharp[EmitGenericType#21](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#21)]
@@ -107,7 +97,7 @@ Toto téma ukazuje, jak vytvořit jednoduché obecného typu se dva parametry ty
      [!code-csharp[EmitGenericType#8](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#8)]
      [!code-vb[EmitGenericType#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#8)]  
   
-11. Vyvolání metody. `ExampleMethod`není obecná, ale patří do typ je obecný tak, aby bylo možné získat <xref:System.Reflection.MethodInfo> vyvolat, je nutné vytvořit typu vytvořený z definice typu `Sample`. Vytvořený typ používá `Example` třídy, která splňuje požadavky na `TFirst` protože je typu odkazu a má výchozí konstruktor bez parametrů a `ExampleDerived` třídy, který splňuje požadavky omezení na `TSecond`. (Kód pro `ExampleDerived` lze nalézt v ukázkovém kódu.) Tyto dva typy jsou předávány <xref:System.Type.MakeGenericType%2A> vytvoření sestavené typu. <xref:System.Reflection.MethodInfo> Je pak získat pomocí <xref:System.Type.GetMethod%2A> metoda.  
+11. Vyvolání metody. `ExampleMethod` není obecná, ale patří do typ je obecný tak, aby bylo možné získat <xref:System.Reflection.MethodInfo> vyvolat, je nutné vytvořit typu vytvořený z definice typu `Sample`. Vytvořený typ používá `Example` třídy, která splňuje požadavky na `TFirst` protože je typu odkazu a má výchozí konstruktor bez parametrů a `ExampleDerived` třídy, který splňuje požadavky omezení na `TSecond`. (Kód pro `ExampleDerived` lze nalézt v ukázkovém kódu.) Tyto dva typy jsou předávány <xref:System.Type.MakeGenericType%2A> vytvoření sestavené typu. <xref:System.Reflection.MethodInfo> Je pak získat pomocí <xref:System.Type.GetMethod%2A> metoda.  
   
      [!code-cpp[EmitGenericType#9](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#9)]
      [!code-csharp[EmitGenericType#9](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#9)]

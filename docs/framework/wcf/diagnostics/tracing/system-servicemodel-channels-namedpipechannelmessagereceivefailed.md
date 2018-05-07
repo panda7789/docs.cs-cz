@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 20e65df6-4539-428d-bf61-92e05c405bef
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 71fc7111e4f2dc4c93529c87823065f38386bce4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 40dcf0f5fd186e1630e864e30b1f4f756831991d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelchannelsnamedpipechannelmessagereceivefailed"></a>System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed
 System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed  

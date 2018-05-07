@@ -1,31 +1,17 @@
 ---
 title: Vlastní kodéry
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 90926fd334eb5ccef3a63f637d5273c408c0c13e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 4f7b011b038714ee8349e74f6be270c85aed0a7b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-encoders"></a>Vlastní kodéry
 Toto téma popisuje, jak vytvořit vlastní kodéry.  
   
- V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], můžete použít *vazby* určení způsobu přenosu dat v síti mezi koncovými body. Vazba je tvořen posloupnost *elementů vazby*. Vazba obsahuje prvky vazby volitelné protokol například zabezpečení, požadovanou *kodér zpráv* prvku vazby a element vazby požadované přenosu. Kodér zpráv je reprezentována zprávu kódování prvku vazby. Tři kodéry zprávy jsou součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: binární, zpráva přenosu optimalizace mechanismus (MTOM) a Text.  
+ Ve Windows Communication Foundation (WCF), můžete použít *vazby* určení způsobu přenosu dat v síti mezi koncovými body. Vazba je tvořen posloupnost *elementů vazby*. Vazba obsahuje prvky vazby volitelné protokol například zabezpečení, požadovanou *kodér zpráv* prvku vazby a element vazby požadované přenosu. Kodér zpráv je reprezentována zprávu kódování prvku vazby. Tři kodéry zprávy jsou součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: binární, zpráva přenosu optimalizace mechanismus (MTOM) a Text.  
   
  Kódování prvku vazby serializuje odchozí zprávy <xref:System.ServiceModel.Channels.Message> a předává je pro přenos, nebo přijme serializovaný formu zprávu z přenosu a předá ji do vrstvy protokolu, pokud existuje, nebo k aplikaci, pokud nejsou přítomny.  
   

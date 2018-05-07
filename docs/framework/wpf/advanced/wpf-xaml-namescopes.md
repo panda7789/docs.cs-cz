@@ -1,13 +1,6 @@
 ---
-title: "Obory názvů WPF XAML"
-ms.custom: 
+title: Obory názvů WPF XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - namescopes [WPF]
 - styles [WPF], namescopes in
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - XAML [WPF], namescopes
 - classes [WPF], FrameworkContentElement
 ms.assetid: 52bbf4f2-15fc-40d4-837b-bb4c21ead7d4
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c4caaa9453cb3cec76a8606afb5601919eba607a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c13dba48d21235c57be64d90b6547902e0428a6e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-xaml-namescopes"></a>Obory názvů WPF XAML
 XAML namescopes jsou koncept identifikující objekty, které jsou definovány v jazyce XAML. Názvy v jazyce XAML namescope slouží k vytvoření vztahů mezi názvy definované XAML objektů a jejich ekvivalenty u instance ve stromu k objektu. Obvykle XAML namescopes v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spravovaného kódu jsou vytvořeny při načítání jednotlivých stránek XAML kořeny pro aplikace XAML. XAML namescopes jako objekt programovací jsou definovány <xref:System.Windows.Markup.INameScope> rozhraní a také implementují třídu praktické <xref:System.Windows.NameScope>.  
@@ -47,7 +35,7 @@ XAML namescopes jsou koncept identifikující objekty, které jsou definovány v
 ### <a name="adding-objects-to-runtime-object-trees"></a>Přidání objektů do objektu Runtime stromů  
  V okamžiku, který je analyzovat XAML představuje okamžik v čase, který je vytvořen a definované namescope WPF XAML. Pokud přidáte objekt na strom objektu na místo v době po analýze XAML, který vytváří stromové struktuře, `Name` nebo `x:Name` hodnota u nového objektu informace v jazyce XAML namescope automaticky neaktualizuje. Umožňuje přidat název pro objekt do namescope WPF XAML po načtení XAML, musí volat odpovídající implementace <xref:System.Windows.Markup.INameScope.RegisterName%2A> na objekt, který definuje XAML namescope, který je obvykle kořenu stránky XAML. Pokud název není registrované, přidaný objekt nelze na něj odkazovat podle názvu prostřednictvím metody, jako <xref:System.Windows.FrameworkElement.FindName%2A>, a nemůžete použít tento název pro cílení na animace.  
   
- Nejběžnější scénáře pro vývojáře aplikací je, že použijete <xref:System.Windows.FrameworkElement.RegisterName%2A> registraci názvů v XAML namescope na aktuální kořenový adresář stránky. <xref:System.Windows.FrameworkElement.RegisterName%2A>je součástí scénářem důležité pro scénářů této cílové objekty pro animace. Další informace najdete v tématu [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+ Nejběžnější scénáře pro vývojáře aplikací je, že použijete <xref:System.Windows.FrameworkElement.RegisterName%2A> registraci názvů v XAML namescope na aktuální kořenový adresář stránky. <xref:System.Windows.FrameworkElement.RegisterName%2A> je součástí scénářem důležité pro scénářů této cílové objekty pro animace. Další informace najdete v tématu [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
   
  Když zavoláte <xref:System.Windows.FrameworkElement.RegisterName%2A> na objektu, než objekt, který definuje XAML namescope, název je pořád zaregistrovaný namescope XAML, která volání objektu se nachází v rámci, jako by se měla volat <xref:System.Windows.FrameworkElement.RegisterName%2A> na namescope XAML definice objektu.  
   
@@ -82,9 +70,9 @@ XAML namescopes jsou koncept identifikující objekty, které jsou definovány v
   
 <a name="Namescopes_and_Name_related_APIs"></a>   
 ## <a name="xaml-namescopes-and-name-related-apis"></a>XAML Namescopes a rozhraní API související s názvem  
- <xref:System.Windows.FrameworkElement>má <xref:System.Windows.FrameworkElement.FindName%2A>, <xref:System.Windows.FrameworkElement.RegisterName%2A> a <xref:System.Windows.FrameworkElement.UnregisterName%2A> metody. Pokud objekt, který volání těchto metod na vlastní XAML namescope, metody volání do metody relevantní namescope XAML. Jinak, zkontroluje nadřazeného elementu se pokud vlastní XAML namescope a tento proces pokračuje rekurzivně, dokud nebude nalezen XAML namescope (z důvodu chování procesoru XAML, existuje představuje záruku namescope XAML v kořenovém adresáři). <xref:System.Windows.FrameworkContentElement>je obdobou chování, s výjimkou který žádné <xref:System.Windows.FrameworkContentElement> se někdy vlastní XAML namescope. Metody existovat na <xref:System.Windows.FrameworkContentElement> tak, aby nakonec do může být přeposílán volání <xref:System.Windows.FrameworkElement> nadřazeného elementu.  
+ <xref:System.Windows.FrameworkElement> má <xref:System.Windows.FrameworkElement.FindName%2A>, <xref:System.Windows.FrameworkElement.RegisterName%2A> a <xref:System.Windows.FrameworkElement.UnregisterName%2A> metody. Pokud objekt, který volání těchto metod na vlastní XAML namescope, metody volání do metody relevantní namescope XAML. Jinak, zkontroluje nadřazeného elementu se pokud vlastní XAML namescope a tento proces pokračuje rekurzivně, dokud nebude nalezen XAML namescope (z důvodu chování procesoru XAML, existuje představuje záruku namescope XAML v kořenovém adresáři). <xref:System.Windows.FrameworkContentElement> je obdobou chování, s výjimkou který žádné <xref:System.Windows.FrameworkContentElement> se někdy vlastní XAML namescope. Metody existovat na <xref:System.Windows.FrameworkContentElement> tak, aby nakonec do může být přeposílán volání <xref:System.Windows.FrameworkElement> nadřazeného elementu.  
   
- <xref:System.Windows.NameScope.SetNameScope%2A>slouží k mapování nové namescope XAML na existující objekt. Můžete volat <xref:System.Windows.NameScope.SetNameScope%2A> více než jednou za účelem obnovení nebo zrušte XAML namescope, ale není běžné využití. Navíc <xref:System.Windows.NameScope.GetNameScope%2A> se obvykle nepoužívá z kódu.  
+ <xref:System.Windows.NameScope.SetNameScope%2A> slouží k mapování nové namescope XAML na existující objekt. Můžete volat <xref:System.Windows.NameScope.SetNameScope%2A> více než jednou za účelem obnovení nebo zrušte XAML namescope, ale není běžné využití. Navíc <xref:System.Windows.NameScope.GetNameScope%2A> se obvykle nepoužívá z kódu.  
   
 ### <a name="xaml-namescope-implementations"></a>Implementace Namescope XAML  
  Následující třídy implementují <xref:System.Windows.Markup.INameScope> přímo:  
@@ -97,9 +85,9 @@ XAML namescopes jsou koncept identifikující objekty, které jsou definovány v
   
 -   <xref:System.Windows.FrameworkTemplate>  
   
- <xref:System.Windows.ResourceDictionary>nepoužívá XAML názvy nebo namescopes; používá klíče místo, protože je implementace slovníku. Jediným důvodu <xref:System.Windows.ResourceDictionary> implementuje <xref:System.Windows.Markup.INameScope> je tak může být spojeno výjimky uživatelského kódu, které pomáhají vysvětlení rozdílu mezi true XAML namescope a jak <xref:System.Windows.ResourceDictionary> zpracovává klíčů a také, aby zajistil, že se nepoužije XAML namescopes <xref:System.Windows.ResourceDictionary> nadřazené elementy.  
+ <xref:System.Windows.ResourceDictionary> nepoužívá XAML názvy nebo namescopes; používá klíče místo, protože je implementace slovníku. Jediným důvodu <xref:System.Windows.ResourceDictionary> implementuje <xref:System.Windows.Markup.INameScope> je tak může být spojeno výjimky uživatelského kódu, které pomáhají vysvětlení rozdílu mezi true XAML namescope a jak <xref:System.Windows.ResourceDictionary> zpracovává klíčů a také, aby zajistil, že se nepoužije XAML namescopes <xref:System.Windows.ResourceDictionary> nadřazené elementy.  
   
- <xref:System.Windows.FrameworkTemplate>a <xref:System.Windows.Style> implementovat <xref:System.Windows.Markup.INameScope> prostřednictvím definice explicitního rozhraní. Explicitní implementace povolit tyto XAML namescopes chovat obvykle, když jsou přístupné prostřednictvím <xref:System.Windows.Markup.INameScope> rozhraní, které je, jak se předávají XAML namescopes podle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vnitřních procesů. Definice explicitního rozhraní nejsou součástí konvenční plochy rozhraní API, ale <xref:System.Windows.FrameworkTemplate> a <xref:System.Windows.Style>, protože potřebujete málokdy volání <xref:System.Windows.Markup.INameScope> metody na <xref:System.Windows.FrameworkTemplate> a <xref:System.Windows.Style> přímo a místo toho využije jiných rozhraní API například <xref:System.Windows.FrameworkElement.GetTemplateChild%2A>.  
+ <xref:System.Windows.FrameworkTemplate> a <xref:System.Windows.Style> implementovat <xref:System.Windows.Markup.INameScope> prostřednictvím definice explicitního rozhraní. Explicitní implementace povolit tyto XAML namescopes chovat obvykle, když jsou přístupné prostřednictvím <xref:System.Windows.Markup.INameScope> rozhraní, které je, jak se předávají XAML namescopes podle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vnitřních procesů. Definice explicitního rozhraní nejsou součástí konvenční plochy rozhraní API, ale <xref:System.Windows.FrameworkTemplate> a <xref:System.Windows.Style>, protože potřebujete málokdy volání <xref:System.Windows.Markup.INameScope> metody na <xref:System.Windows.FrameworkTemplate> a <xref:System.Windows.Style> přímo a místo toho využije jiných rozhraní API například <xref:System.Windows.FrameworkElement.GetTemplateChild%2A>.  
   
  Následující třídy definují vlastní namescope XAML pomocí <xref:System.Windows.NameScope?displayProperty=nameWithType> pomocná třída a připojení k jeho implementace namescope XAML prostřednictvím <xref:System.Windows.NameScope.NameScope%2A?displayProperty=nameWithType> přidružená vlastnost:  
   

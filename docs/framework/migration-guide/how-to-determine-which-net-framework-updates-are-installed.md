@@ -1,10 +1,7 @@
 ---
-title: "Postupy: určení, které rozhraní .NET Framework bezpečnostní aktualizace a opravy hotfix jsou nainstalovány."
-description: "Zjistěte, jak určit, které aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix jsou nainstalovány v počítači."
+title: 'Postupy: určení, které rozhraní .NET Framework bezpečnostní aktualizace a opravy hotfix jsou nainstalovány.'
+description: Zjistěte, jak určit, které aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix jsou nainstalovány v počítači.
 ms.date: 11/27/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -14,13 +11,11 @@ helpviewer_keywords:
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1ad61ce44c24f48b51c32eb554e8d37932d119af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6373def6859023377bf899f02d710c2ac6d83c44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Postupy: určení, které rozhraní .NET Framework bezpečnostní aktualizace a opravy hotfix jsou nainstalovány.
 

@@ -1,21 +1,12 @@
 ---
-title: "Přehled třídy XAttribute (C#)"
-ms.custom: 
+title: Přehled třídy XAttribute (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 5a630f24-f9ad-400e-831e-c14ebfc9e142
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: e9cfedb476f44ef8c3eaeb45bac571d17802d525
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e0020a8cd8841ef9a35781b534c82db5e15c257f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xattribute-class-overview-c"></a>Přehled třídy XAttribute (C#)
 Atributy jsou páry název/hodnota, které jsou spojeny s elementem. <xref:System.Xml.Linq.XAttribute> Třída reprezentuje atributy XML.  
@@ -83,7 +74,7 @@ Console.WriteLine(c);
 ```  
   
 ### <a name="attributes-are-not-nodes"></a>Atributy nejsou uzly  
- Existují určité rozdíly mezi atributy a elementy. <xref:System.Xml.Linq.XAttribute>objekty nejsou uzly ve stromové struktuře XML. Jsou páry název/hodnota, které jsou spojené s elementem XML. Na rozdíl od modelu DOM (Document Object), tím přesněji odráží strukturu XML. I když <xref:System.Xml.Linq.XAttribute> objekty nejsou ve skutečnosti uzly ve stromové struktuře XML, práce s <xref:System.Xml.Linq.XAttribute> je velmi podobný práce s objekty <xref:System.Xml.Linq.XElement> objekty.  
+ Existují určité rozdíly mezi atributy a elementy. <xref:System.Xml.Linq.XAttribute> objekty nejsou uzly ve stromové struktuře XML. Jsou páry název/hodnota, které jsou spojené s elementem XML. Na rozdíl od modelu DOM (Document Object), tím přesněji odráží strukturu XML. I když <xref:System.Xml.Linq.XAttribute> objekty nejsou ve skutečnosti uzly ve stromové struktuře XML, práce s <xref:System.Xml.Linq.XAttribute> je velmi podobný práce s objekty <xref:System.Xml.Linq.XElement> objekty.  
   
  Tento rozdíl je primárně důležitý pouze pro vývojáře, kteří jsou psaní kódu, který funguje s stromy XML na úrovni uzlu. Celá řada vývojářů nebude na těchto rozdílech nevadí.  
   

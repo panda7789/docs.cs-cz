@@ -1,21 +1,12 @@
 ---
-title: "Referenční dokumentace (technologie LINQ to XML)"
-ms.custom: 
+title: Referenční dokumentace (technologie LINQ to XML)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 815b45e2-3527-4dee-9986-b1277a693cde
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4405a9299e8ef33034fd731529bbdc947904a538
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b081bf2d2bd46cd817bb0a183f5a4829233538ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reference-linq-to-xml"></a>Referenční dokumentace (technologie LINQ to XML)
 Toto téma obsahuje odkazy na LINQ to XML referenční témata.  

@@ -1,28 +1,16 @@
 ---
-title: "Základní informace o vývoji ovládacích prvků Windows Forms"
-ms.custom: 
+title: Základní informace o vývoji ovládacích prvků Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - custom controls [Windows Forms], derivation types
 - programming concepts [Windows Forms], Windows Forms controls
 - controls [Windows Forms], creating
 ms.assetid: 6277bb81-90f7-4c5b-9f4b-b02bb42dd316
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bcf06f4dc0d8c70ae85d5add5a2fee078238d5e8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b455912468376d2f5de0ac1f30b4fcab5bb93309
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-forms-control-development-basics"></a>Základní informace o vývoji ovládacích prvků Windows Forms
 Ovládacího prvku Windows Forms je třída, která je odvozena přímo nebo nepřímo z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>. Následující seznam popisuje běžné scénáře pro vývoj Windows Forms – ovládací prvky:  
@@ -39,7 +27,7 @@ Ovládacího prvku Windows Forms je třída, která je odvozena přímo nebo nep
   
      V tomto scénáři odvozeny od základní třídy vlastního ovládacího prvku <xref:System.Windows.Forms.Control>. Vám může přidat, stejně jako přepsat vlastnosti, metod a události základní třídy. Abyste mohli začít, najdete v části [postup: vývoj jednoduchého prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md).  
   
- Základní třída pro ovládací prvky Windows Forms, <xref:System.Windows.Forms.Control>, poskytuje vložení požadované pro visual zobrazení na straně klienta aplikace pro systém Windows. <xref:System.Windows.Forms.Control>poskytuje popisovač okna, zpracovává směrování zpráv a poskytuje události myši a klávesnice, jakož i mnoho dalších uživatel událostí rozhraní. Poskytuje pokročilé rozložení a má vlastnosti specifické pro visual zobrazení, jako například <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, <xref:System.Windows.Forms.Control.Width%2A>a mnohé další. Kromě toho poskytuje zabezpečení, dělení na vlákna podporu a vzájemná funkční spolupráce s ovládacími prvky ActiveX. Protože mnoho infrastruktury od základní třídy, je poměrně snadné ho vyvíjet vlastní ovládací prvky Windows Forms.  
+ Základní třída pro ovládací prvky Windows Forms, <xref:System.Windows.Forms.Control>, poskytuje vložení požadované pro visual zobrazení na straně klienta aplikace pro systém Windows. <xref:System.Windows.Forms.Control> poskytuje popisovač okna, zpracovává směrování zpráv a poskytuje události myši a klávesnice, jakož i mnoho dalších uživatel událostí rozhraní. Poskytuje pokročilé rozložení a má vlastnosti specifické pro visual zobrazení, jako například <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, <xref:System.Windows.Forms.Control.Width%2A>a mnohé další. Kromě toho poskytuje zabezpečení, dělení na vlákna podporu a vzájemná funkční spolupráce s ovládacími prvky ActiveX. Protože mnoho infrastruktury od základní třídy, je poměrně snadné ho vyvíjet vlastní ovládací prvky Windows Forms.  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  

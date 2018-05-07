@@ -1,11 +1,7 @@
 ---
-title: "Funkce ConnectServerWmi (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce ConnectServerWmi DCOM používá k vytvoření připojení k oboru názvů WMI."
+title: Funkce ConnectServerWmi (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce ConnectServerWmi DCOM používá k vytvoření připojení k oboru názvů WMI.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - ConnectServerWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dc821bddf1d33ea1144fef0821b81cf027d8f92f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: de8447b9b090fc7f53df23346d61932bcb4dd6ea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 Vytvoří připojení přes DCOM k oboru názvů WMI v zadaném počítači.  
@@ -52,22 +45,22 @@ HRESULT ConnectServerWmi (
 ```  
 ## <a name="parameters"></a>Parametry
 
-`strNetworkResource`[v] Ukazatel na platnou `BSTR` obsahující cestu objektu správný obor názvů rozhraní WMI. Najdete v článku [poznámky](#remarks) části Další informace.
+`strNetworkResource` [v] Ukazatel na platnou `BSTR` obsahující cestu objektu správný obor názvů rozhraní WMI. Najdete v článku [poznámky](#remarks) části Další informace.
 
-`strUser`[v] Ukazatel na platnou `BSTR` obsahující uživatelské jméno. A `null` hodnota označuje aktuální kontext zabezpečení. Pokud je uživatel z jiné domény než aktuální, `strUser` může také obsahovat doména a uživatelské jméno, které jsou oddělené zpětným lomítkem. `strUser`Můžete také být v uživatele hlavní název (UPN) formátovat, suhc jako  *userName@domainName* . Najdete v článku [poznámky](#remarks) části Další informace.
+`strUser` [v] Ukazatel na platnou `BSTR` obsahující uživatelské jméno. A `null` hodnota označuje aktuální kontext zabezpečení. Pokud je uživatel z jiné domény než aktuální, `strUser` může také obsahovat doména a uživatelské jméno, které jsou oddělené zpětným lomítkem. `strUser` Můžete také být v uživatele hlavní název (UPN) formátovat, suhc jako *userName@domainName*. Najdete v článku [poznámky](#remarks) části Další informace.
 
-`strPassword`[v] Ukazatel na platnou `BSTR` obsahující heslo. A `null` označuje aktuální kontext zabezpečení. Prázdný řetězec ("") označuje platné heslo nulové délky.
+`strPassword` [v] Ukazatel na platnou `BSTR` obsahující heslo. A `null` označuje aktuální kontext zabezpečení. Prázdný řetězec ("") označuje platné heslo nulové délky.
 
-`strLocale`[v] Ukazatel na platnou `BSTR` určující správné národní prostředí pro načítání informací. Identifikátory národního prostředí Microsoft je formát řetězce "MS\_*xxx*", kde *xxx* je řetězce v šestnáctkovém formátu, který označuje identifikátor národního prostředí (LCID). Pokud je zadán neplatný národního prostředí, vrátí metoda `WBEM_E_INVALID_PARAMETER` s výjimkou ve Windows 7, kde bude místo něj použita výchozí národní prostředí serveru. Pokud se používá null1, aktuální národní prostředí. 
+`strLocale` [v] Ukazatel na platnou `BSTR` určující správné národní prostředí pro načítání informací. Identifikátory národního prostředí Microsoft je formát řetězce "MS\_*xxx*", kde *xxx* je řetězce v šestnáctkovém formátu, který označuje identifikátor národního prostředí (LCID). Pokud je zadán neplatný národního prostředí, vrátí metoda `WBEM_E_INVALID_PARAMETER` s výjimkou ve Windows 7, kde bude místo něj použita výchozí národní prostředí serveru. Pokud se používá null1, aktuální národní prostředí. 
  
-`lSecurityFlags`[v] Příznaky, které mají být předány `ConnectServerWmi` metoda. Hodnota nula (0) pro tento parametr je výsledkem volání `ConnectServerWmi` vrací pouze po vytvoření připojení k serveru. Výsledkem může být aplikace neodpovídá po neomezenou dobu Pokud server se přeruší. Platné hodnoty jsou:
+`lSecurityFlags` [v] Příznaky, které mají být předány `ConnectServerWmi` metoda. Hodnota nula (0) pro tento parametr je výsledkem volání `ConnectServerWmi` vrací pouze po vytvoření připojení k serveru. Výsledkem může být aplikace neodpovídá po neomezenou dobu Pokud server se přeruší. Platné hodnoty jsou:
 
 | Konstanta  | Hodnota  | Popis  |
 |---------|---------|---------|
 | `CONNECT_REPOSITORY_ONLY` | 0x40 | Vyhrazeno pro interní použití. Nepoužívejte. |
-| `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0x80 | `ConnectServerWmi`Vrátí za dvě minuty nebo méně. |
+| `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0x80 | `ConnectServerWmi` Vrátí za dvě minuty nebo méně. |
 
-`strAuthority`[v] Název domény uživatele. Může mít následující hodnoty:
+`strAuthority` [v] Název domény uživatele. Může mít následující hodnoty:
 
 | Hodnota | Popis |
 |---------|---------|
@@ -104,7 +97,7 @@ Tato funkce zabalí volání [IWbemLocator::ConnectServer](https://msdn.microsof
 
  Pro místní přístup k výchozí obor názvů `strNetworkResource` může být cesta jednoduchého objektu: "root\default" nebo "\\.\root\default". Pro přístup k výchozí obor názvů na vzdáleném počítači pomocí modelu COM nebo kompatibilní se službou Microsoft sítě, zahrnují název počítače: "\\myserver\root\default". Název počítače může také být, název DNS nebo IP adresu. `ConnectServerWmi` Funkce se může připojit i s počítači se systémem IPv6 pomocí adresy IPv6.
 
-`strUser`nemůže být prázdný řetězec. Jestliže se v doméně `strAuthority`, se nesmí být zahrnuto do `strUser`, nebo funkce vrátí hodnotu `WBEM_E_INVALID_PARAMETER`.
+`strUser` nemůže být prázdný řetězec. Jestliže se v doméně `strAuthority`, se nesmí být zahrnuto do `strUser`, nebo funkce vrátí hodnotu `WBEM_E_INVALID_PARAMETER`.
 
 
 ## <a name="requirements"></a>Požadavky  
@@ -112,7 +105,7 @@ Tato funkce zabalí volání [IWbemLocator::ConnectServer](https://msdn.microsof
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

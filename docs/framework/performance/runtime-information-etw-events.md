@@ -1,27 +1,17 @@
 ---
-title: "Události Trasování událostí pro Windows běhových informací"
-ms.custom: 
+title: Události Trasování událostí pro Windows běhových informací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5262d778151cfe0a0d7ed1750e0b71d4c9214a64
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4244196a957c67a807cdb705f6d74ee2b41869d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-information-etw-events"></a>Události Trasování událostí pro Windows běhových informací
 Informace o modulu runtime, SKU, číslo verze, způsobem, ve kterém byla aktivovaná modul runtime, včetně parametrů příkazového řádku, který byl spuštěn s, identifikátor GUID (pokud existuje) a další relevantní informace protokolu tyto události trasování událostí pro Windows. Pokud jsou v rámci procesu spouštění více moduly runtime informace poskytované tyto události (ClrInstanceID) pomáhá rozlišení moduly runtime.  

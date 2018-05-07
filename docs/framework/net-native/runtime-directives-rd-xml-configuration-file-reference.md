@@ -1,24 +1,14 @@
 ---
-title: "Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)"
-ms.custom: 
+title: Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
-caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f452a32b209c30175f95aec7a8a90e0783c10086
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 009d70423a3eb29c97f3279a288c37623dac927e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 Direktivy modulu runtime (. rd.xml) soubor je konfigurační soubor XML, který určuje, zda jsou k dispozici pro reflexi prvky určené programu. Tady je příklad souboru direktivy modulu runtime:  
@@ -214,27 +204,27 @@ Direktivy modulu runtime (. rd.xml) soubor je konfigurační soubor XML, který 
 ### <a name="specifying-policy-for-members"></a>Určení zásad pro členy  
  [Vlastnost](../../../docs/framework/net-native/property-element-net-native.md) a [pole](../../../docs/framework/net-native/field-element-net-native.md) elementy podporují tyto typy zásad:  
   
--   `Browse`– Ovládací prvky dotazování na informace o tomto členu, ale nepovolí žádné přístup k modulu runtime.  
+-   `Browse` – Ovládací prvky dotazování na informace o tomto členu, ale nepovolí žádné přístup k modulu runtime.  
   
--   `Dynamic`-Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování. Určuje také dotazování na informace o nadřazeném typu.  
+-   `Dynamic` -Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování. Určuje také dotazování na informace o nadřazeném typu.  
   
--   `Serialize`-Řídí runtime přístup k člen instance typu serializovat a deserializovat pomocí knihovny například serializátor Newtonsoft JSON povolit. Tuto zásadu lze použít k konstruktory, polí a vlastností.  
+-   `Serialize` -Řídí runtime přístup k člen instance typu serializovat a deserializovat pomocí knihovny například serializátor Newtonsoft JSON povolit. Tuto zásadu lze použít k konstruktory, polí a vlastností.  
   
  [Metoda](../../../docs/framework/net-native/method-element-net-native.md) a [událostí](../../../docs/framework/net-native/event-element-net-native.md) elementy podporují tyto typy zásad:  
   
--   `Browse`– Ovládací prvky dotazování na informace o tomto členu, ale neumožňuje přístup za běhu.  
+-   `Browse` – Ovládací prvky dotazování na informace o tomto členu, ale neumožňuje přístup za běhu.  
   
--   `Dynamic`-Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování. Určuje také dotazování na informace o nadřazeném typu.  
+-   `Dynamic` -Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování. Určuje také dotazování na informace o nadřazeném typu.  
   
  Jsou nastavení související s těmito typy zásad:  
   
--   `Auto`-Použijte výchozí chování. (Není zadávání zásad je stejné jako nastavení zásad na `Auto` Pokud něco ho přepíše.)  
+-   `Auto` -Použijte výchozí chování. (Není zadávání zásad je stejné jako nastavení zásad na `Auto` Pokud něco ho přepíše.)  
   
--   `Excluded`-Nikdy obsahovat metadata pro člena.  
+-   `Excluded` -Nikdy obsahovat metadata pro člena.  
   
--   `Included`-Povolte zásady, pokud nadřazený typ nachází ve výstupu.  
+-   `Included` -Povolte zásady, pokud nadřazený typ nachází ve výstupu.  
   
--   `Required`-Vyžadují řetězu nástroj zachovat tento člen i když se zobrazí na nevyužitá a povolíte zásady pro ni.  
+-   `Required` -Vyžadují řetězu nástroj zachovat tento člen i když se zobrazí na nevyužitá a povolíte zásady pro ni.  
   
 ## <a name="runtime-directives-file-semantics"></a>Sémantika souboru direktivy modulu runtime  
  Zásady lze definovat současně pro elementy vyšší úrovně a nižší úrovni. Například zásad lze definovat pro sestavení a některé typy obsažené v této sestavě. Pokud není uvedeno konkrétní prvek nižší úrovně, dědí zásady svého nadřazeného objektu. Například pokud `Assembly` nachází element ale `Type` elementy nejsou, zásady zadaný v `Assembly` element platí pro jednotlivé typy v sestavení. Zásady pro stejného elementu programu můžete taky použít několik elementů. Například samostatné [sestavení](../../../docs/framework/net-native/assembly-element-net-native.md) elementy může stejného elementu zásad definovat pro stejného sestavení jinak. Následující části popisují, jak zásady pro konkrétní typ vyřešen v těchto případech.  
@@ -248,9 +238,9 @@ Direktivy modulu runtime (. rd.xml) soubor je konfigurační soubor XML, který 
   
 1.  Pokud `Excluded` element přítomen, vyšší prioritu.  
   
-2.  `Required`má vyšší prioritu více není `Required`.  
+2.  `Required` má vyšší prioritu více není `Required`.  
   
-3.  `All`má vyšší prioritu než `PublicAndInternal`, který má vyšší prioritu než `Public`.  
+3.  `All` má vyšší prioritu než `PublicAndInternal`, který má vyšší prioritu než `Public`.  
   
 4.  Explicitní nastavení, má vyšší prioritu než `Auto`.  
   

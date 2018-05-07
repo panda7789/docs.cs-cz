@@ -1,21 +1,15 @@
 ---
-title: "Postupy: Potlačení metody ToString (Průvodce programováním v C#)"
+title: 'Postupy: Potlačení metody ToString (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - ToString method, overriding in C#
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
-caps.latest.revision: "21"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 5b0f7bf35e5bd565e0bfa46fe91cf86aedcd2d8e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 86394f5fed55f57df8928648548fcfca117b00d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Postupy: Potlačení metody ToString (Průvodce programováním v C#)
 Každé třídě nebo struktuře v jazyce C# implicitně dědí <xref:System.Object> třídy. Proto získá každý objekt v jazyce C# <xref:System.Object.ToString%2A> metoda, která vrátí řetězcovou reprezentaci tohoto objektu. Například všechny proměnné typu `int` mít `ToString` metoda, která umožňuje, aby vrátila jejich obsah jako řetězec:  
@@ -49,11 +43,11 @@ Každé třídě nebo struktuře v jazyce C# implicitně dědí <xref:System.Obj
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IFormattable>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [Řetězce](../../../csharp/programming-guide/strings/index.md)  
- [řetězec](../../../csharp/language-reference/keywords/string.md)  
- [Nový](../../../csharp/language-reference/keywords/new.md)  
- [přepsání](../../../csharp/language-reference/keywords/override.md)  
- [virtuální](../../../csharp/language-reference/keywords/virtual.md)  
+ [string](../../../csharp/language-reference/keywords/string.md)  
+ [new](../../../csharp/language-reference/keywords/new.md)  
+ [override](../../../csharp/language-reference/keywords/override.md)  
+ [virtual](../../../csharp/language-reference/keywords/virtual.md)  
  [Typy formátování](../../../standard/base-types/formatting-types.md)

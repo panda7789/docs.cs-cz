@@ -1,23 +1,12 @@
 ---
 title: 4210 - SqlExceptionCaught
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f0ce8af3-eb4c-48c8-b3d9-dd2f94b5574b
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fbcb566574e38e3c4688c16bd29a33ff7048bfa4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2493014e80e79ac2935c1bcc685147a74e48fb47
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4210---sqlexceptioncaught"></a>4210 - SqlExceptionCaught
 ## <a name="properties"></a>Vlastnosti  

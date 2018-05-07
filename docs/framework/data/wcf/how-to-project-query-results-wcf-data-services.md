@@ -1,13 +1,6 @@
 ---
-title: "Postupy: projektu výsledků dotazu (služby WCF Data Services)"
-ms.custom: 
+title: 'Postupy: projektu výsledků dotazu (služby WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: 474ac625-8770-43ba-8320-d3315ea9530f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 80c6216315ca1fb1200e12bca89ae8ef27652947
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4b75eb21cab7cd3acf25f7bcb9a3f009e8d5748b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-project-query-results-wcf-data-services"></a>Postupy: projektu výsledků dotazu (služby WCF Data Services)
 Projekce poskytuje mechanismus ke snížení objemu dat vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi. Projekce můžete provádět na výsledcích [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] buď pomocí dotazu `$select` dotaz možnost nebo pomocí [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ. Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  

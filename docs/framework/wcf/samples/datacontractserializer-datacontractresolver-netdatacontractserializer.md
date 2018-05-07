@@ -1,30 +1,18 @@
 ---
-title: "Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer"
-ms.custom: 
+title: Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1376658f-f695-45f7-a7e0-94664e9619ff
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5477f11b5bc00ff4816b3fac8d61b254ebaf5ba0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9dde936f2daff669aabe36c5f03203a472d435c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-datacontractserializer-and-datacontractresolver-to-provide-the-functionality-of-netdatacontractserializer"></a>Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
 Tento příklad znázorňuje způsob použití <xref:System.Runtime.Serialization.DataContractSerializer> odpovídajícími <xref:System.Runtime.Serialization.DataContractResolver> poskytuje stejné funkce jako <xref:System.Runtime.Serialization.NetDataContractSerializer>. Tento příklad ukazuje postup vytvoření odpovídající <xref:System.Runtime.Serialization.DataContractResolver> a jak ho přidat do <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- <xref:System.Runtime.Serialization.NetDataContractSerializer>se liší od <xref:System.Runtime.Serialization.DataContractSerializer> jedním způsobem důležité: <xref:System.Runtime.Serialization.NetDataContractSerializer> obsahuje informace o typu CLR v serializovaných XML, zatímco <xref:System.Runtime.Serialization.DataContractSerializer> neexistuje. Proto <xref:System.Runtime.Serialization.NetDataContractSerializer> lze použít pouze v případě, že jak serializaci a deserializaci končí sdílet stejné typy CLR. Doporučujeme však používat <xref:System.Runtime.Serialization.DataContractSerializer> vzhledem k tomu, že je lepší, než jeho výkon <xref:System.Runtime.Serialization.NetDataContractSerializer>. Můžete změnit informace, které je serializována v <xref:System.Runtime.Serialization.DataContractSerializer> přidáním <xref:System.Runtime.Serialization.DataContractResolver> k němu.  
+ <xref:System.Runtime.Serialization.NetDataContractSerializer> se liší od <xref:System.Runtime.Serialization.DataContractSerializer> jedním způsobem důležité: <xref:System.Runtime.Serialization.NetDataContractSerializer> obsahuje informace o typu CLR v serializovaných XML, zatímco <xref:System.Runtime.Serialization.DataContractSerializer> neexistuje. Proto <xref:System.Runtime.Serialization.NetDataContractSerializer> lze použít pouze v případě, že jak serializaci a deserializaci končí sdílet stejné typy CLR. Doporučujeme však používat <xref:System.Runtime.Serialization.DataContractSerializer> vzhledem k tomu, že je lepší, než jeho výkon <xref:System.Runtime.Serialization.NetDataContractSerializer>. Můžete změnit informace, které je serializována v <xref:System.Runtime.Serialization.DataContractSerializer> přidáním <xref:System.Runtime.Serialization.DataContractResolver> k němu.  
   
  Tato ukázka se skládá ze dvou projektů. První projekt používá <xref:System.Runtime.Serialization.NetDataContractSerializer> o serializaci objektu. Druhý projektu používá <xref:System.Runtime.Serialization.DataContractSerializer> s <xref:System.Runtime.Serialization.DataContractResolver> nabízí stejné funkce jako první projekt.  
   
@@ -89,7 +77,7 @@ class MyDataContractResolver : DataContractResolver
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\NetDcSasDcSwithDCR`  
   

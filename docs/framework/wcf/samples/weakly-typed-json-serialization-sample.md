@@ -1,31 +1,17 @@
 ---
 title: Ukázka slabě typované serializace JSON
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4cc75ff1078c35c177f0809d25cd32ca3b2b8e16
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: 66e68985da94df11a81ba6d387438fe29dd96d56
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
 Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelem definovaný typ musí být k dispozici na službu a klienta. Obvykle k tomu <xref:System.Runtime.Serialization.DataContractAttribute> tyto uživatelem definované typy je použit atribut a <xref:System.Runtime.Serialization.DataMemberAttribute> atribut se používá k jejich členové. Tento mechanismus platí i v případě práce s objekty jazyka JavaScript Object Notation (JSON), jak je popsáno v tématu [postup: serializaci a deserializaci JSON Data](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
   
- V některých scénářích [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služba nebo klienta musí přístup k objektům JSON vygenerovaných služba nebo klienta, který je mimo kontrolu vývojáře. Protože více webových služeb veřejně vystavit JSON rozhraní API, může stát nepraktické pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojáře vytvořit místní uživatelem definované typy do kterého mají být deserializována libovolné objekty JSON. Tato ukázka poskytuje mechanismus, který umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojářům pracovat s objekty JSON deserializovat, libovolný bez vytvoření uživatelem definované typy. To se označuje jako *slabě typované serializace* objektů JSON, protože typ, do kterého deserializuje objekt JSON není známý v době kompilace.  
+ V některých případech potřebuje přístup objekty JSON vygenerovaných služba nebo klienta, který je mimo kontrolu vývojáře služby Windows Communication Foundation (WCF) nebo klienta. Protože více webových služeb veřejně vystavit JSON rozhraní API, může stát nepraktické pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojáře vytvořit místní uživatelem definované typy do kterého mají být deserializována libovolné objekty JSON. Tato ukázka poskytuje mechanismus, který umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojářům pracovat s objekty JSON deserializovat, libovolný bez vytvoření uživatelem definované typy. To se označuje jako *slabě typované serializace* objektů JSON, protože typ, do kterého deserializuje objekt JSON není známý v době kompilace.  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
@@ -149,7 +135,7 @@ My favorite bands are Band ABC and Band XYZ.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Ajax\WeaklyTypedJson`  
   

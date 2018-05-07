@@ -1,21 +1,12 @@
 ---
-title: "Postupy: vytváření nepodepsaných přátelských sestavení (C#)"
-ms.custom: 
+title: 'Postupy: vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 854df39394ef10bf2404fb3f762586fb102fba7b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 676b9d3c641f45736af50bc2290426e261b591c4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Postupy: vytváření nepodepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití přátelských sestavení s sestavení, které jsou bez znaménka.  
@@ -103,4 +94,4 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
  [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
  [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
  [Postupy: vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

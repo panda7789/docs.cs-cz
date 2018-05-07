@@ -1,22 +1,12 @@
 ---
-title: "Postupy: Úprava dokument Office Open XML (C#)"
-ms.custom: 
+title: 'Postupy: Úprava dokument Office Open XML (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a6bfa60cce332deef2a72da836f96dbe37e65d2a
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 94304d506218117469d9abd213e6a844c1fb3be3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-modify-an-office-open-xml-document-c"></a>Postupy: Úprava dokument Office Open XML (C#)
 Toto téma představuje příklad, který otevře dokument Office Open XML, upraví se a uloží ho.  

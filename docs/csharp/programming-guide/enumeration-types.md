@@ -1,24 +1,17 @@
 ---
 title: Výčtové typy (C# Průvodce programováním)
 ms.date: 09/10/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - enumerations [C#]
 - enums [C#]
 - C# Language, enums
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
-caps.latest.revision: 17
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: cdaa609acfa34f3b0b3073d88f09fe735d48e9a2
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: a97c3569899e7cf99dd522024de8373c60076571
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Výčtové typy (C# Průvodce programováním)
 

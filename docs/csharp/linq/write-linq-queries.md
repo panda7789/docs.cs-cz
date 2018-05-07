@@ -1,20 +1,13 @@
 ---
-title: "Zápis dotazů LINQ v C#"
-description: "Tom, jak psát dotazy."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Zápis dotazů LINQ v C#
+description: Tom, jak psát dotazy.
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
-ms.openlocfilehash: f3efbfd232bd7e19d3db56289f57724c71dca064
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a9683dbf3c4101829054477824ccc7135f20f535
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="write-linq-queries-in-c"></a>Zápis dotazů LINQ v C#
 
@@ -92,4 +85,4 @@ int numCount = numbers.Where(n => n < 3 || n > 7).Count();
 ## <a name="see-also"></a>Viz také  
   [Návod: Zápis dotazů v C#](../programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
  [LINQ – výrazy dotazů](index.md)  
- [kde – klauzule](../language-reference/keywords/where-clause.md)
+ [where – klauzule](../language-reference/keywords/where-clause.md)

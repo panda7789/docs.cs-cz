@@ -1,23 +1,16 @@
 ---
-title: "Operátory (Průvodce programováním v C#)"
+title: Operátory (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - operators [C#]
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 267022b8c6b7f8faf301cae1a62f4dfaa8249f96
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: d2eace5782b3a070a22acf751fd68340fa939a0b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 V jazyce C# *operátor* je element program, který se použije na jeden nebo více *operandy* v výraz nebo příkaz. Operátory, které s jedním operandem, jako je například operátor přírůstku (`++`) nebo `new`, se označují jako *unární* operátory. Operátory, které provést dva operandy, jako je například aritmetické operátory (`+`,`-`,`*`,`/`), se označují jako *binární* operátory. Jeden operátor, operátor podmíněného (`?:`), má tři operandy a je jedinou Ternární operátor v jazyce C#.  
@@ -58,7 +51,7 @@ V jazyce C# *operátor* je element program, který se použije na jeden nebo ví
 |[zaškrtnutí](../../../csharp/language-reference/keywords/checked.md)(x)|Vyhodnocení výrazu ve zkontrolovaném kontextu|  
 |[nezaškrtnuté](../../../csharp/language-reference/keywords/unchecked.md)(x)|Vyhodnocení výrazu v nezkontrolovaném kontextu|  
 |[výchozí](../../../csharp/language-reference/keywords/default.md) (T)|Získání výchozí hodnoty typu T|  
-|[delegate](../../../csharp/language-reference/keywords/delegate.md) {}|Anonymní funkce (anonymní metoda)|  
+|[Delegát](../../../csharp/language-reference/keywords/delegate.md) {}|Anonymní funkce (anonymní metoda)|  
   
  **Unární operátory**  
   
@@ -84,24 +77,24 @@ V jazyce C# *operátor* je element program, který se použije na jeden nebo ví
   
 |Výraz|Popis|  
 |----------------|-----------------|  
-|x [+](../../../csharp/language-reference/operators/addition-operator.md) y|Sčítání, řetězení řetězců, kombinování delegátů|  
-|x [-](../../../csharp/language-reference/operators/subtraction-operator.md) y|Odčítání, odebrání delegátů|  
+|x [ + ](../../../csharp/language-reference/operators/addition-operator.md) y|Sčítání, řetězení řetězců, kombinování delegátů|  
+|x [ - ](../../../csharp/language-reference/operators/subtraction-operator.md) y|Odčítání, odebrání delegátů|  
   
  **Operátory posunutí**  
   
 |Výraz|Popis|  
 |----------------|-----------------|  
-|x [<\<](../../../csharp/language-reference/operators/left-shift-operator.md) y|Posun doleva|  
-|x [>>](../../../csharp/language-reference/operators/right-shift-operator.md) y|Posun doprava|  
+|x [ < \< ](../../../csharp/language-reference/operators/left-shift-operator.md) y|Posun doleva|  
+|x [ >> ](../../../csharp/language-reference/operators/right-shift-operator.md) y|Posun doprava|  
   
  **Relační a zadejte operátory**  
   
 |Výraz|Popis|  
 |----------------|-----------------|  
-|x [\<](../../../csharp/language-reference/operators/less-than-operator.md) y|Menší než|  
-|x [>](../../../csharp/language-reference/operators/greater-than-operator.md) y|Větší než|  
-|x [\<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) y|Menší nebo rovno|  
-|x [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) y|Větší nebo rovno|  
+|x [ \< ](../../../csharp/language-reference/operators/less-than-operator.md) y|Menší než|  
+|x [ > ](../../../csharp/language-reference/operators/greater-than-operator.md) y|Větší než|  
+|x [ \< = ](../../../csharp/language-reference/operators/less-than-equal-operator.md) y|Menší nebo rovno|  
+|x [ >= ](../../../csharp/language-reference/operators/greater-than-equal-operator.md) y|Větší nebo rovno|  
 |x [je](../../../csharp/language-reference/keywords/is.md) T|Vrátí hodnotu true, pokud x je T, jinak hodnotu false|  
 |x [jako](../../../csharp/language-reference/keywords/as.md) T|Vrátí x jako T, nebo hodnotu null, pokud x není T|  
   
@@ -109,20 +102,20 @@ V jazyce C# *operátor* je element program, který se použije na jeden nebo ví
   
 |Výraz|Popis|  
 |----------------|-----------------|  
-|x [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) y|Rovno|  
+|x [ == ](../../../csharp/language-reference/operators/equality-comparison-operator.md) y|Rovno|  
 |x [! =](../../../csharp/language-reference/operators/not-equal-operator.md) y|Nerovná se|  
   
  **Operátory logických, podmíněného a hodnotu Null.**  
   
 |Kategorie|Výraz|Popis|  
 |--------------|----------------|-----------------|  
-|Logický operátor AND|x [&](../../../csharp/language-reference/operators/and-operator.md) y|Bitový operátor AND celého čísla, logická hodnota operátoru AND|  
-|Logický operátor XOR|x [^](../../../csharp/language-reference/operators/xor-operator.md) y|Bitový operátor XOR celého čísla, logická hodnota operátoru XOR|  
+|Logický operátor AND|x [ & ](../../../csharp/language-reference/operators/and-operator.md) y|Bitový operátor AND celého čísla, logická hodnota operátoru AND|  
+|Logický operátor XOR|x [ ^ ](../../../csharp/language-reference/operators/xor-operator.md) y|Bitový operátor XOR celého čísla, logická hodnota operátoru XOR|  
 |Logický operátor OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|Bitový operátor OR celého čísla, logická hodnota operátoru OR|  
-|Podmiňovací operátor AND|x [&&](../../../csharp/language-reference/operators/conditional-and-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
-|Podmiňovací operátor OR|x [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
+|Podmiňovací operátor AND|x [ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
+|Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
 |Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-conditional-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|  
-|Podmiňovací operátor|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y : z|Vyhodnotí y, pokud x má hodnotu true; vyhodnotí z, pokud x má hodnotu false|  
+|Podmiňovací operátor|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y: z|Vyhodnotí y, pokud x má hodnotu true; vyhodnotí z, pokud x má hodnotu false|  
   
  **Přiřazení a anonymní operátory**  
   
@@ -130,7 +123,7 @@ V jazyce C# *operátor* je element program, který se použije na jeden nebo ví
 |----------------|-----------------|  
 |[=](../../../csharp/language-reference/operators/assignment-operator.md)|Přiřazení|  
 |x op= y|Složené přiřazení. Podporuje tyto operátory: [ += ](../../../csharp/language-reference/operators/addition-assignment-operator.md), [ -= ](../../../csharp/language-reference/operators/subtraction-assignment-operator.md), [ *= ](../../../csharp/language-reference/operators/multiplication-assignment-operator.md), [ /= ](../../../csharp/language-reference/operators/division-assignment-operator.md), [ %= ](../../../csharp/language-reference/operators/modulus-assignment-operator.md) , [&=](../../../csharp/language-reference/operators/and-assignment-operator.md), [&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md), [!=](../../../csharp/language-reference/operators/not-equal-operator.md), [<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md), [>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
-|(T x) [=>](../../../csharp/language-reference/operators/lambda-operator.md) y|Anonymní funkce (výraz lambda)|  
+|(T x) [ => ](../../../csharp/language-reference/operators/lambda-operator.md) y|Anonymní funkce (výraz lambda)|  
   
 ## <a name="associativity"></a>Asociativita  
  Pokud výraz obsahuje dva nebo více operátorů se stejnou prioritou, jsou vyhodnocovány na základě asociativity. Operátory asociativní zleva se vyhodnocují v pořadí zleva doprava. Například `x * y / z` je vyhodnoceno jako `(x * y) / z`. Operátory asociativní zprava se vyhodnocují v pořadí zprava doleva. Například operátor přiřazení je asociativní zprava. Pokud by nebyl, následující kód by způsobil chybu.  

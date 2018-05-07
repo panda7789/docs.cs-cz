@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedDocument::HasEmbeddedSource – metoda"
-ms.custom: 
+title: ISymUnmanagedDocument::HasEmbeddedSource – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedDocument.HasEmbeddedSource
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 385fc4d3-365c-4645-b7b0-6c4c5344b79f
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f2a903974ac5ac4182bb6fa1664d0c5954cefdb0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 350aecb9f9c99c9aa44ae6df6d31c7cb69ae5760
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanageddocumenthasembeddedsource-method"></a>ISymUnmanagedDocument::HasEmbeddedSource – metoda
 Vrátí `true` jestli má dokument zdroj vložených v symboly pro ladění; jinak vrátí `false`.  

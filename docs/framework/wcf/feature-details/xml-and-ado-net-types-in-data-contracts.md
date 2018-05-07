@@ -1,32 +1,18 @@
 ---
 title: Typy XML a ADO.NET v kontraktech dat
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7efef63668bb78bdc9a7d66654c9e33ef6c0138c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ae21174d19ad69f87165427cf5a0bfd29ac872db
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>Typy XML a ADO.NET v kontraktech dat
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Modelu kontraktu dat podporuje určité typy, které představují XML přímo. Když jsou tyto typy serializován do formátu XML, serializátoru, který zapíše obsah XML z těchto typů bez dalšího zpracování. Podporované typy jsou <xref:System.Xml.XmlElement>, pole <xref:System.Xml.XmlNode> (ale ne `XmlNode` zadejte sám sebe), stejně jako typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Data.DataSet> a <xref:System.Data.DataTable> typu, jakož i typové datové sady, běžně se používají při programování pro databázi. Tyto typy implementovat `IXmlSerializable` rozhraní a jsou proto serializovatelný v datech smlouvy modelu. Na konci tohoto tématu jsou uvedeny některé důležité informace pro tyto typy.  
+Datový model kontraktu Windows Communication Foundation (WCF) podporuje určité typy, které představují XML přímo. Když jsou tyto typy serializován do formátu XML, serializátoru, který zapíše obsah XML z těchto typů bez dalšího zpracování. Podporované typy jsou <xref:System.Xml.XmlElement>, pole <xref:System.Xml.XmlNode> (ale ne `XmlNode` zadejte sám sebe), stejně jako typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Data.DataSet> a <xref:System.Data.DataTable> typu, jakož i typové datové sady, běžně se používají při programování pro databázi. Tyto typy implementovat `IXmlSerializable` rozhraní a jsou proto serializovatelný v datech smlouvy modelu. Na konci tohoto tématu jsou uvedeny některé důležité informace pro tyto typy.  
   
 ## <a name="xml-types"></a>Typy XML  
   
@@ -48,7 +34,7 @@ ms.lasthandoff: 04/30/2018
 </MyDataContract>  
 ```  
   
- Všimněte si, že element obálky data člena `<myDataMember>` se stále nachází. Neexistuje žádný způsob odebrání tohoto elementu v datovém modelu kontrakt. Serializátorů, které zpracovávají tento model ( <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>) může vysílat speciální atributy do tohoto elementu obálku. Tyto atributy zahrnují standardní atribut "žádné" Instance schématu XML (povolení `XmlElement` být `null`) a podle atributu "typ" (povolení `XmlElement` použije polymorphically). Kromě toho jsou specifické pro následující atributy XML [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: "Id", "Ref", "Type" a "Sestavení". Tyto atributy mohou být vygenerované pro podporu použití `XmlElement` s povoleným režimem zachovávání objekt grafu nebo s <xref:System.Runtime.Serialization.NetDataContractSerializer>. (Další informace o režimu objekt grafu písmen a zachovávání s najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).)  
+ Všimněte si, že element obálky data člena `<myDataMember>` se stále nachází. Neexistuje žádný způsob odebrání tohoto elementu v datovém modelu kontrakt. Serializátorů, které zpracovávají tento model ( <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>) může vysílat speciální atributy do tohoto elementu obálku. Tyto atributy zahrnují standardní atribut "žádné" Instance schématu XML (povolení `XmlElement` být `null`) a podle atributu "typ" (povolení `XmlElement` použije polymorphically). Kromě toho jsou specifické pro WCF následující atributy XML: "Id", "Ref", "Type" a "Sestavení". Tyto atributy mohou být vygenerované pro podporu použití `XmlElement` s povoleným režimem zachovávání objekt grafu nebo s <xref:System.Runtime.Serialization.NetDataContractSerializer>. (Další informace o režimu objekt grafu písmen a zachovávání s najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).)  
   
  Pole nebo kolekce `XmlElement` jsou povoleny a jsou zpracovávány jako ostatní pole nebo kolekce. To znamená, existuje element obálku pro celou kolekci a element samostatné obálkové (podobně jako `<myDataMember>` v předchozím příkladu) pro každý `XmlElement` v poli.  
   
@@ -88,7 +74,7 @@ ms.lasthandoff: 04/30/2018
   
  Pole `XmlNode` , má za následek neplatný kód XML nelze serializovat. Například o pole dvou `XmlNode` instance, kde je první z nich `XmlElement` a druhý <xref:System.Xml.XmlAttribute> je neplatný, protože toto pořadí neodpovídá žádné platnou instanci XML (neexistuje žádné místní připojit atribut, který se).  
   
- U deserializace pole `XmlNode`, uzly jsou vytvořeny a naplněny s informacemi z příchozí XML. Platné nadřazené <xref:System.Xml.XmlDocument> zajišťuje deserializátor. Všechny uzly jsou deserializovat, včetně žádné atributy v elementu obálku data člena, ale s výjimkou atributy tam umístí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] serializátorů (například atributy slouží k určení, přiřazení polymorfní). Přímý přístup do paměti o definování všechny předpony oboru názvů XML fragment platí pro deserializaci pole `XmlNode` je stejný jako k deserializaci `XmlElement`.  
+ U deserializace pole `XmlNode`, uzly jsou vytvořeny a naplněny s informacemi z příchozí XML. Platné nadřazené <xref:System.Xml.XmlDocument> zajišťuje deserializátor. Všechny uzly jsou deserializovat, včetně žádné atributy v elementu obálku data člena, ale s výjimkou atributy tam umístili serializátorů WCF (například atributy slouží k určení, přiřazení polymorfní). Přímý přístup do paměti o definování všechny předpony oboru názvů XML fragment platí pro deserializaci pole `XmlNode` je stejný jako k deserializaci `XmlElement`.  
   
  Při použití serializátorů se zapnutým zachováním objekt grafu, rovnost objektů se zachová pouze na úroveň `XmlNode` pole, ne z individuálních `XmlNode` instance.  
   
@@ -142,7 +128,7 @@ ms.lasthandoff: 04/30/2018
   
  Při deserializaci členem datový typ, který implementuje `IXmlSerializable` a je typ obsahu jak je definována dříve, pozice deserializátor čtečky XML pro element obálku pro – datový člen a předejte jí řídit k <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> metoda. Metoda musí čtení celý elementu, včetně počáteční a koncové značky. Zajistěte, aby vaše `ReadXml` kód zpracovává případě elementu je prázdný. Kromě toho vaší `ReadXml` implementace neměli spoléhat na element obálky se s názvem určitým způsobem. Název je zvolen podle serializátoru, který se může lišit.  
   
- Je povoleno přiřadit `IXmlSerializable` obsah typy polymorphically, například k datům členy typu <xref:System.Object>. Je také povoleno pro instance typu mít hodnotu null. Nakonec je možné použít `IXmlSerializable` typy s objekt grafu zachovávání povoleno a <xref:System.Runtime.Serialization.NetDataContractSerializer>. Všechny tyto funkce vyžadují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] serializátor připojit určité atributy do elementu obálku ("žádné" a "typ" v oboru názvů Instance schématu XML a "Id", "Ref", "Type" a "Sestavení" v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-konkrétní obor názvů).  
+ Je povoleno přiřadit `IXmlSerializable` obsah typy polymorphically, například k datům členy typu <xref:System.Object>. Je také povoleno pro instance typu mít hodnotu null. Nakonec je možné použít `IXmlSerializable` typy s objekt grafu zachovávání povoleno a <xref:System.Runtime.Serialization.NetDataContractSerializer>. Všechny tyto funkce vyžadují serializátor WCF připojit určité atributy do elementu obálku ("žádné" a "typ" v oboru názvů Instance schématu XML a "Id", "Ref", "Type" a "Sestavení" v oboru názvů specifické WCF).  
   
 #### <a name="attributes-to-ignore-when-implementing-readxml"></a>Atributy, které mají ignorovat při implementaci ReadXml  
  Před předáním řízení pro vaše `ReadXml` kód, deserializátor prozkoumá XML element, zjistí tyto speciální atributy XML a funguje na ně. Například, pokud je "žádné" `true`, je deserializovat hodnotu null a `ReadXml` není volán. Pokud je zjištěn polymorfismus, obsah elementu se deserializovat, jako kdyby byl jiného typu. Implementace polymorphically přiřazené typu `ReadXml` je volána. V každém případě `ReadXml` implementace má tyto speciální atributy ignorovat, protože jsou zpracovávány deserializátor.  
@@ -200,16 +186,16 @@ ms.lasthandoff: 04/30/2018
   
 -   Zapisovače XML neumožňují obvykle deklaraci dokumentu XML (například \<? xml verze = "1.0'? >) uprostřed zápis jiného dokumentu. Nelze provést úplné dokumentu XML a serializovat jej jako `Array` z `XmlNode` – datový člen. K tomuto účelu muset buď pruhu deklaraci dokumentu nebo představují ho pomocí vlastní schéma kódování.  
   
--   Všechny zapisovače XML dodává s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] odmítnout pokyny pro zpracování XML (\<? … ? >) a zadejte definice dokumentu (\<! … >), protože nejsou povoleny v protokolu SOAP zprávy. Znovu můžete použít vlastní kódování mechanismus k vyřešení tohoto omezení. Pokud musí obsahovat tyto v výsledný soubor XML, můžete napsat vlastní kodér, který používá zapisovače XML, které je podporují.  
+-   Všechny zapisovače XML zadat s použitím technologie WCF odmítnout pokyny pro zpracování XML (\<? … ? >) a zadejte definice dokumentu (\<! … >), protože nejsou povoleny v protokolu SOAP zprávy. Znovu můžete použít vlastní kódování mechanismus k vyřešení tohoto omezení. Pokud musí obsahovat tyto v výsledný soubor XML, můžete napsat vlastní kodér, který používá zapisovače XML, které je podporují.  
   
--   Při implementaci `WriteXml`, vyhněte se volání <xref:System.Xml.XmlWriter.WriteRaw%2A> metoda zapisovače XML. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá různých XML kódování (včetně binární), je velmi obtížné nebo dokonce znemožňují použít `WriteRaw` tak, že výsledkem je použitelná v jakémkoli kódování.  
+-   Při implementaci `WriteXml`, vyhněte se volání <xref:System.Xml.XmlWriter.WriteRaw%2A> metoda zapisovače XML. WCF používá celou řadu XML kódování (včetně binární), je velmi obtížné nebo dokonce znemožňují použít `WriteRaw` tak, že výsledkem je použitelná v jakémkoli kódování.  
   
--   Při implementaci `WriteXml`, nepoužívejte <xref:System.Xml.XmlWriter.WriteEntityRef%2A> a <xref:System.Xml.XmlWriter.WriteNmToken%2A> metody, které jsou v zapisovače XML součástí podporována [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+-   Při implementaci `WriteXml`, nepoužívejte <xref:System.Xml.XmlWriter.WriteEntityRef%2A> a <xref:System.Xml.XmlWriter.WriteNmToken%2A> metody, které jsou v zapisovače XML zadat s použitím technologie WCF podporována.  
   
 ## <a name="using-dataset-typed-dataset-and-datatable"></a>Pomocí datové sady, typové datové sady a DataTable  
  Pomocí těchto typů je plně podporovaný v datový model kontrakt. Při použití těchto typů, zvažte následující:  
   
--   Schéma pro tyto typy (zejména <xref:System.Data.DataSet> a jeho typu odvozené třídy) nemusí být vzájemná spolupráce s některé jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] platformy, nebo může mít za následek nízký použitelnost při použití s tyto platformy. Kromě toho používání `DataSet` typu může mít vliv na výkon. Nakonec se může to ztížit pro vás na verzi aplikace v budoucnu. Zvažte použití explicitně definované datové typy kontraktů místo `DataSet` typy v vaše smlouvy.  
+-   Schéma pro tyto typy (zejména <xref:System.Data.DataSet> a jeho typu odvozené třídy) pravděpodobně vzájemná spolupráce s některé jiné WCF platformy, nebo může mít za následek nízký použitelnost při použití s tyto platformy. Kromě toho používání `DataSet` typu může mít vliv na výkon. Nakonec se může to ztížit pro vás na verzi aplikace v budoucnu. Zvažte použití explicitně definované datové typy kontraktů místo `DataSet` typy v vaše smlouvy.  
   
 -   Při importu `DataSet` nebo `DataTable` schématu, je důležité, chcete-li tyto typy. Pomocí příkazového řádku nástroje Svcutil.exe můžete to provést pomocí předání názvu sestavení System.Data.dll `/reference` přepínače. Pokud import schématu typové datové sady, musí být uveden typ typové datové sady. S Svcutil.exe, předat umístění sestavení typové datové sady `/reference` přepínače. Další informace o odkazující na typy najdete v tématu [import schématu pro generování tříd](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
   

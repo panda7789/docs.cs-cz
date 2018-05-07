@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Použití třídy FontSizeConverter"
-ms.custom: 
+title: 'Postupy: Použití třídy FontSizeConverter'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - FontSizeConverter objects [WPF]
 - typography [WPF], FontSizeConverter objects
 ms.assetid: 3b0592bd-7223-4860-a108-a5d72f3a9178
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fe6988f21c2e40c65a7e8acd48727ab48bd58e05
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 625beb06b526e2753abc6f982cf5834bfae1f202
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-the-fontsizeconverter-class"></a>Postupy: Použití třídy FontSizeConverter
 ## <a name="example"></a>Příklad  

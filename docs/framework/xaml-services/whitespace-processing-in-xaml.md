@@ -1,29 +1,17 @@
 ---
-title: "Zpracování prázdných znaků v jazyku XAML"
-ms.custom: 
+title: Zpracování prázdných znaků v jazyku XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - East Asian characters [XAML Services]
 - XAML [XAML Services], whitespace processing
 - whitespace processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-caps.latest.revision: "20"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c382be7dabca90ef201fa24cfb79472955347eef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f7d7ca900955b8899322533f9d69338042d88ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whitespace-processing-in-xaml"></a>Zpracování prázdných znaků v jazyku XAML
 Jazyk pravidel pro jazyk XAML stavu, je nutné zpracovat tuto významný mezerový znak [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Je také dokumenty zpracování další prázdný znak, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] implementace procesoru XAML a zapisovače XAML pro serializaci.  
@@ -70,7 +58,7 @@ Jazyk pravidel pro jazyk XAML stavu, je nutné zpracovat tuto významný mezerov
   
 <a name="east_asian_characters"></a>   
 ## <a name="east-asian-characters"></a>Východoasijské znaky  
- "Východoasijské znaky" je definován jako sadu [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] znak rozsahy U + 20000 U + 2FFFD a U + 30000 U + 3FFFD. Tato část se také někdy označuje jako "Znaky CJK". Další informace najdete v tématu [http://www.unicode.org](http://www.unicode.org/).  
+ "Východoasijské znaky" je definován jako sadu [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] znak rozsahy U + 20000 U + 2FFFD a U + 30000 U + 3FFFD. Tato část se také někdy označuje jako "Znaky CJK". Další informace najdete na webu [http://www.unicode.org](http://www.unicode.org/).  
   
 <a name="whitespace_and_text_content_models"></a>   
 ## <a name="whitespace-and-text-content-models"></a>Prázdné znaky a textového obsahu modely  

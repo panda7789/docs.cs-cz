@@ -4,17 +4,12 @@ description: Podrobný kurz znázorňující postup Začínáme s .NET Core v sy
 author: cartermp
 ms.author: mairaw
 ms.date: 03/08/2017
-ms.topic: get-started-article
-ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 23aec1b951c4b65d62bd4da4b4c94043b1411cf3
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 57045a91ce62a730493d219bdf7c30e90fe57759
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core v systému Windows nebo Linux/macOS pomocí příkazového řádku
 

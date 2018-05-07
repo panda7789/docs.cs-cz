@@ -1,27 +1,15 @@
 ---
-title: "ClearType – přehled"
-ms.custom: 
+title: ClearType – přehled
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eaeeeee921ac5cda3a4ce09dd3ebaeeb11aea3f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d434fa913d077d72f0f889dc69eccc8a9ed0e9b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
 Toto téma obsahuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] technologie v nalezen [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -29,7 +17,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharp
   
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>Přehled technologie  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]je technologie softwaru vyvinuté [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] která zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Crystal kapaliny), například přenosný počítač obrazovky, Pocket PC obrazovky a ploché monitory.  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]funguje díky přístupu k elementů stripe jednotlivých svislé barev v každé pixelů displeje. Před [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], nejnižší úroveň podrobností, která může zobrazovat počítač byl jednoho pixelů, ale s [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] spuštěna na monitoru LCD, můžete, zobrazuje se teď funkce textu malá jako zlomek pixel šířku. Navíc řešení zvyšuje ostrost jen nepatrnou podrobnosti zobrazení textu, výrazně usnadňují čtení přes dlouhé doby trvání.  
+ [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je technologie softwaru vyvinuté [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] která zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Crystal kapaliny), například přenosný počítač obrazovky, Pocket PC obrazovky a ploché monitory.  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funguje díky přístupu k elementů stripe jednotlivých svislé barev v každé pixelů displeje. Před [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], nejnižší úroveň podrobností, která může zobrazovat počítač byl jednoho pixelů, ale s [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] spuštěna na monitoru LCD, můžete, zobrazuje se teď funkce textu malá jako zlomek pixel šířku. Navíc řešení zvyšuje ostrost jen nepatrnou podrobnosti zobrazení textu, výrazně usnadňují čtení přes dlouhé doby trvání.  
   
  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] k dispozici v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je nejnovější generace [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] který má několik vylepšení přes nalezená verze v [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)].  
   
@@ -56,18 +44,18 @@ Text s ClearType starší a novější verze
  ![Text s vícenásobná okraje na bez podstruktury křivek](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-03.png "wcpsdk_mmgraphics_text_cleartype_overview_03")  
 Text s vícenásobná okraje na bez podstruktury křivek  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vyhlazení na úrovni směru osy y vyhlazování se žádné vícenásobná okraje. To je obzvláště důležité pro zlepšení čitelnosti asijské jazyky, které mají ideografickými znaky skoro stejné množství vodorovného a svislého bez podstruktury křivek.  
+ [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vyhlazení na úrovni směru osy y vyhlazování se žádné vícenásobná okraje. To je obzvláště důležité pro zlepšení čitelnosti asijské jazyky, které mají ideografickými znaky skoro stejné množství vodorovného a svislého bez podstruktury křivek.  
   
  Následující příklad ukazuje účinek antialiasingu směru osy y. V takovém případě horní a dolní část písmeno zobrazit smooth křivky.  
   
- ![Text s ClearType y & č. 45; směr anti & č. 45; aliasy](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
+ ![Text ClearType y&#45;směr anti&#45;aliasy](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
 Text s ClearType směru osy y vyhlazení  
   
 <a name="hardware_acceleration"></a>   
 ## <a name="hardware-acceleration"></a>Hardwarová akcelerace  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] můžete využít výhod hardwarovou akceleraci pro lepší výkon a snížit požadavky na zatížení a systému paměť procesoru. Pomocí shadery pixelů a grafické paměti grafické karty, [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] poskytuje rychlejší vykreslování textu, zvláště pokud použita animace.  
+ [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] můžete využít výhod hardwarovou akceleraci pro lepší výkon a snížit požadavky na zatížení a systému paměť procesoru. Pomocí shadery pixelů a grafické paměti grafické karty, [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] poskytuje rychlejší vykreslování textu, zvláště pokud použita animace.  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nedojde ke změně celého systému [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení. Zakázání [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nastaví [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vyhlazení ve stupních šedi režimu. Kromě toho [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neprovede žádné změny nastavení [ClearType aplikace ladění PowerToy](http://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
+ [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nedojde ke změně celého systému [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení. Zakázání [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nastaví [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vyhlazení ve stupních šedi režimu. Kromě toho [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neprovede žádné změny nastavení [ClearType aplikace ladění PowerToy](http://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
   
  Jeden z [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhodnutí o návrhu architektury je nezávislé rozložení lepší podpory vyšší rozlišení DPI monitorování, která stále se rozšiřujících rozlišení. Tato akce nemá na důsledek [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nejsou podporovány vykreslování textu alias nebo rastrových obrázků v některé východoasijských písem vzhledem k tomu, že jsou oba závislé na rozlišení.  
   

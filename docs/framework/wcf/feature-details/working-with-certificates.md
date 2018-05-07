@@ -1,36 +1,22 @@
 ---
 title: Práce s certifikáty
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3c023b27ace10919c51aa13e2635040d9d5b812b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f5566eacaabb5d3eb5579d015fad8149a2ed4f3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
-Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, digitální certifikáty X.509 jsou běžně používá k ověření klientů a serverů, šifrování a digitálnímu podepisování zpráv. Toto téma vysvětluje stručně funkce digitální certifikát X.509 a jejich v použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]a obsahuje odkazy na témata, která popisují tyto další koncepty nebo která ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a certifikáty.  
+Do programu zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně se používají k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. Toto téma stručně popisuje funkce digitální certifikát X.509 a jejich použití v WCF a obsahuje odkazy na témata, která popisují tyto další koncepty nebo která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
   
- Stručně řečeno, digitální certifikát je součástí *infrastruktury veřejných klíčů* (PKI), který je systém digitální certifikáty, certifikačních autorit a dalších registračním autoritám, které k ověřování platnosti každé strany zúčastněné v elektronické transakce pomocí kryptografie využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu pole, které obsahují data, jako například *subjektu* (entit, ke kterému je certifikát vystavený), data platnosti (Pokud je certifikát platný), vystavitele (na Entita, která vydala certifikát) a veřejný klíč. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], každý z těchto vlastností zpracovávány jako <xref:System.IdentityModel.Claims.Claim>, a jednotlivých deklarací identity se dále dělí do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikáty X.509](http://go.microsoft.com/fwlink/?LinkId=209952)Další informace o deklaracích identity a autorizace ve WCF najdete [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
+ Stručně řečeno, digitální certifikát je součástí *infrastruktury veřejných klíčů* (PKI), který je systém digitální certifikáty, certifikačních autorit a dalších registračním autoritám, které k ověřování platnosti každé strany zúčastněné v elektronické transakce pomocí kryptografie využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu pole, které obsahují data, jako například *subjektu* (entit, ke kterému je certifikát vystavený), data platnosti (Pokud je certifikát platný), vystavitele (na Entita, která vydala certifikát) a veřejný klíč. Ve službě WCF, každý z těchto vlastností zpracovávány jako <xref:System.IdentityModel.Claims.Claim>, a jednotlivých deklarací identity se dále dělí do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikáty X.509](http://go.microsoft.com/fwlink/?LinkId=209952)Další informace o deklaracích identity a autorizace ve WCF najdete [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
   
  Primární funkce certifikátu je ověřovat identitu vlastníka certifikátu ostatním uživatelům. Obsahuje certifikát *veřejný klíč* vlastníka, zatímco vlastník uchovává privátní klíč. Veřejný klíč slouží k šifrování zpráv posílaných vlastník certifikátu. Pouze vlastník má přístup k privátnímu klíči, takže pouze vlastník může dešifrovat tyto zprávy.  
   
@@ -46,7 +32,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
   
 -   **Úložiště aktuálního uživatele**. Interaktivní aplikace obvykle umístit certifikáty pro aktuálního uživatele počítače. Pokud vytváříte klientskou aplikaci, to je třeba obvykle umístit certifikáty, které ověření uživatele ke službě.  
   
- Tyto dvě úložiště se dále dělí do dílčí úložiště. Nejvíce důležité tyto při programování s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnují:  
+ Tyto dvě úložiště se dále dělí do dílčí úložiště. Nejdůležitější z těchto při programování s použitím technologie WCF patří:  
   
 -   **Důvěryhodné kořenové certifikační autority**. Certifikáty v tomto úložišti vám pomůže vytvořit řetěz certifikátů, které lze sledovat zpět k certifikátu certifikačního úřadu v tomto úložišti.  
   
@@ -99,7 +85,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
  Při vytváření vlastní ověřovací, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metoda. Příklad vlastní ověřování, naleznete v části [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) ukázka. Další informace najdete v tématu [vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
   
 ## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Pomocí Makecert.exe vytvořit řetěz certifikátů  
- Nástroj pro vytvoření certifikátu (Makecert.exe) vytvoří certifikáty X.509 a privátní klíč a veřejného páry klíčů. Můžete uložit privátní klíč, aby na disku a použít ho k vystavování a podepsat nové certifikáty, proto simulaci hierarchie zřetězené certifikáty. Nástroj je určen pro použití pouze jako pomocný při vývoji služeb a by měl být nikdy použit k vytvoření certifikátů, pro skutečné nasazení. Při vývoji [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, použijte následující postup k vytvoření řetěz s Makecert.exe.  
+ Nástroj pro vytvoření certifikátu (Makecert.exe) vytvoří certifikáty X.509 a privátní klíč a veřejného páry klíčů. Můžete uložit privátní klíč, aby na disku a použít ho k vystavování a podepsat nové certifikáty, proto simulaci hierarchie zřetězené certifikáty. Nástroj je určen pro použití pouze jako pomocný při vývoji služeb a by měl být nikdy použit k vytvoření certifikátů, pro skutečné nasazení. Při vývoji služby WCF, použijte následující kroky k vytvoření řetěz s Makecert.exe.  
   
 #### <a name="to-build-a-chain-of-trust-with-makecertexe"></a>Chcete-li vytvořit řetěz vztah důvěryhodnosti s Makecert.exe  
   
@@ -137,7 +123,7 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
  Můžete také nastavit režim do konfigurace pomocí `revocationMode` atribut i [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (z [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)) a [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (z [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)).  
   
 ## <a name="the-setcertificate-method"></a>Metoda SetCertificate  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], často musíte zadat certifikát nebo sada certifikáty služby, nebo je klient sloužící k ověření, šifrování nebo digitálně podepsat zprávu. To můžete provést programově pomocí `SetCertificate` metoda různých tříd, které představují certifikáty X.509. Následující třídy pomocí `SetCertificate` metoda k určení certifikátu.  
+ Ve službě WCF často musíte zadat certifikát nebo nastavit certifikátů službu nebo klienta, je použít k ověření, šifrování nebo digitálně podepsat zprávu. To můžete provést programově pomocí `SetCertificate` metoda různých tříd, které představují certifikáty X.509. Následující třídy pomocí `SetCertificate` metoda k určení certifikátu.  
   
 |Třída|Metoda|  
 |-----------|------------|  
@@ -179,9 +165,9 @@ Programu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení, 
   
  Mapování certifikátu X.509. certifikát na token, který představuje uživatelský účet systému Windows se považuje zvýšení úrovně oprávnění, protože po namapované, tokenu systému Windows lze použít k získání přístupu k chráněným prostředkům. Proto zásada domény vyžaduje certifikát X.509 ke splnění svých zásad před mapování. *SChannel* balíček zabezpečení vynucuje tento požadavek.  
   
- Při použití [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] nebo novější, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zajišťuje certifikátu odpovídá zásadám domény předtím, než je namapován na účet systému Windows.  
+ Při použití [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] nebo novější, WCF zajišťuje certifikátu odpovídá zásadám domény předtím, než je namapován na účet systému Windows.  
   
- V první verzi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], mapování se provádí bez konzultace ohledně zásad domény. Proto je možné, že starší aplikace, které používají k práci při spuštění v první verzi nepovede, pokud je povoleno mapování a certifikátu X.509 nesplňuje zásady domény.  
+ V první verzi služby WCF se provádí mapování bez konzultace ohledně zásad domény. Proto je možné, že starší aplikace, které používají k práci při spuštění v první verzi nepovede, pokud je povoleno mapování a certifikátu X.509 nesplňuje zásady domény.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels>  

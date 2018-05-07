@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath"
-ms.custom: 
+title: 'Postupy: Připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XmlDataProvider [WPF], binding to XML data
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92037be2280eaa248951ff9bad82b7a1581a4fd9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb8eb727fb6614440721c4d34a7d1828182d2f14
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath
 Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] dat pomocí <xref:System.Windows.Data.XmlDataProvider>.  
@@ -47,15 +35,15 @@ Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../
   
  **XPath** vlastnosti v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XmlNode.SelectNodes metoda zpracovává. Můžete upravit **XPath** dotazy získat odlišné výsledky. Zde jsou některé příklady pro <xref:System.Windows.Data.Binding.XPath%2A> dotaz na vázaného <xref:System.Windows.Controls.ListBox> z předchozího příkladu:  
   
--   `XPath="Book[1]"`Vrátí první prvek adresáře ("XML v akci"). Všimněte si, že **XPath** indexy jsou založené na 1, není 0.  
+-   `XPath="Book[1]"` Vrátí první prvek adresáře ("XML v akci"). Všimněte si, že **XPath** indexy jsou založené na 1, není 0.  
   
--   `XPath="Book[@*]"`Vrátí všechny elementy kniha s žádné atributy.  
+-   `XPath="Book[@*]"` Vrátí všechny elementy kniha s žádné atributy.  
   
--   `XPath="Book[last()-1]"`Vrátí druhou na posledním elementem adresáře ("představení Microsoft .NET").  
+-   `XPath="Book[last()-1]"` Vrátí druhou na posledním elementem adresáře ("představení Microsoft .NET").  
   
--   `XPath="*[position()>3]"`Vrátí všechny prvky kniha s výjimkou první 3.  
+-   `XPath="*[position()>3]"` Vrátí všechny prvky kniha s výjimkou první 3.  
   
- Při spuštění **XPath** dotaz vrátí <xref:System.Xml.XmlNode> nebo seznam XmlNodes –. <xref:System.Xml.XmlNode>je [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekt, což znamená, můžete použít <xref:System.Windows.Data.Binding.Path%2A> vlastnost pro vazbu [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti. Podívejte se na předchozí příklad znovu. Pokud zbytek příklad zůstává stejný a můžete změnit <xref:System.Windows.Controls.TextBlock> vytvoření vazby na následující, se zobrazí názvy vrácený XmlNodes – v <xref:System.Windows.Controls.ListBox>. V takovém případě je název všech vrácený uzlů "*kniha*".  
+ Při spuštění **XPath** dotaz vrátí <xref:System.Xml.XmlNode> nebo seznam XmlNodes –. <xref:System.Xml.XmlNode> je [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekt, což znamená, můžete použít <xref:System.Windows.Data.Binding.Path%2A> vlastnost pro vazbu [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti. Podívejte se na předchozí příklad znovu. Pokud zbytek příklad zůstává stejný a můžete změnit <xref:System.Windows.Controls.TextBlock> vytvoření vazby na následující, se zobrazí názvy vrácený XmlNodes – v <xref:System.Windows.Controls.ListBox>. V takovém případě je název všech vrácený uzlů "*kniha*".  
   
  [!code-xaml[XmlDataSourceVariation#XmlNodePath](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSourceVariation/CS/Page1.xaml#xmlnodepath)]  
   

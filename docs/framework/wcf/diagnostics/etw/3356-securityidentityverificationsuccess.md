@@ -1,24 +1,12 @@
 ---
-title: "3356 – SecurityIdentityVerificationSuccess"
-ms.custom: 
+title: 3356 – SecurityIdentityVerificationSuccess
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4fb4899c-bfcc-437e-b4d5-313b83b1ae29
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c6c6eb56a1b60078c1200527ad8463b194791601
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8afc63b006c88de55529c438759bd009daaada9a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3356---securityidentityverificationsuccess"></a>3356 – SecurityIdentityVerificationSuccess
 ## <a name="properties"></a>Vlastnosti  

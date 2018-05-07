@@ -1,27 +1,15 @@
 ---
-title: "Protokol kontextové výměny"
-ms.custom: 
+title: Protokol kontextové výměny
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8f19b228eadcf8dabfaba2fc31f4f49f1b4d149b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a682b94b1ab659515e618e79230d94f57f140717
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="context-exchange-protocol"></a>Protokol kontextové výměny
-Tato část popisuje protokol kontextové výměny byla zavedená v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] verzi. Tento protokol umožňuje kanálem klienta přijmout kontextu poskytl služby a použijte ho pro všechny následné žádosti do této služby, odešlou přes stejnou instanci kanálu klienta. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: soubory cookie protokolu HTTP nebo hlavičku protokolu SOAP.  
+Tato část popisuje protokol kontextové výměny uvedený ve Windows Communication Foundation (WCF) verzi rozhraní .NET Framework verze 3.5. Tento protokol umožňuje kanálem klienta přijmout kontextu poskytl služby a použijte ho pro všechny následné žádosti do této služby, odešlou přes stejnou instanci kanálu klienta. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: soubory cookie protokolu HTTP nebo hlavičku protokolu SOAP.  
   
  Protokol kontextové výměny je implementována ve vlastním kanálu vrstvě. Kanál komunikuje kontext do a z aplikace pomocí vrstvy <xref:System.ServiceModel.Channels.ContextMessageProperty> vlastnost. Hodnota kontextu pro přenos mezi koncovými body, je buď serializovanou jako hlavičku protokolu SOAP ve vrstvě kanálu nebo převést na nebo z vlastnosti zprávy, které představují požadavku HTTP a odpovědí. V takovém případě se očekává, že jeden z základní vrstvy kanálu převádí vlastnosti zprávy požadavku a odpovědi HTTP z soubory cookie HTTP, v uvedeném pořadí. Volba používáno k výměně kontextu se provádí pomocí <xref:System.ServiceModel.Channels.ContextExchangeMechanism> vlastnost <xref:System.ServiceModel.Channels.ContextBindingElement>. Platné hodnoty jsou `HttpCookie` nebo `SoapHeader`.  
   

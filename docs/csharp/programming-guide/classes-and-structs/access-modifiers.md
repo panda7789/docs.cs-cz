@@ -1,35 +1,28 @@
 ---
 title: Modifikátory přístupu (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-caps.latest.revision: 32
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a567dea6418ff9cfc94c8180a88c872bcf4c96a4
-ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.openlocfilehash: ec275d4782fee047b16fd114c4d22ceb03eecb11
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mít úrovni přístupu, který řídí, zda lze použít z jiný kód ve vaší sestavení nebo jiné sestavení. Následující modifikátory přístupu můžete použít k určení usnadnění typ nebo člen při deklarujte ji:  
   
- [veřejné](../../../csharp/language-reference/keywords/public.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
  Typ nebo člen je přístupná jiným kódem ve stejném sestavení nebo jiné sestavení, které na ni odkazuje. 
   
- [privátní](../../../csharp/language-reference/keywords/private.md)  
+ [private](../../../csharp/language-reference/keywords/private.md)  
  Typ nebo člen jsou přístupné pouze prostřednictvím kódu ve stejné třídě nebo struktuře.  
   
- [chráněný](../../../csharp/language-reference/keywords/protected.md)  
+ [protected](../../../csharp/language-reference/keywords/protected.md)  
  Typ nebo člen jsou přístupné pouze prostřednictvím kódu ve stejné třídě nebo ve třídě, která je odvozená od třídy.  
- [interní](../../../csharp/language-reference/keywords/internal.md)  
+ [internal](../../../csharp/language-reference/keywords/internal.md)  
  Typ nebo člen je přístupný kód ve stejném sestavení, ale nikoli z jiné sestavení.  
   
  [chráněné interní](../../../csharp/language-reference/keywords/protected-internal.md) typ nebo člen je přístupný pomocí žádný kód v sestavení, ve kterém je deklarovaná nebo v odvozené třídě v jiném sestavení. 
@@ -80,15 +73,15 @@ Všechny typy a členy typu mít úrovni přístupu, který řídí, zda lze pou
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  
- [privátní](../../../csharp/language-reference/keywords/private.md)  
- [veřejné](../../../csharp/language-reference/keywords/public.md)  
- [interní](../../../csharp/language-reference/keywords/internal.md)  
- [chráněný](../../../csharp/language-reference/keywords/protected.md)  
- [chráněné interní](../../../csharp/language-reference/keywords/protected-internal.md)  
- [privátní chráněný](../../../csharp/language-reference/keywords/private-protected.md)  
- [– Třída](../../../csharp/language-reference/keywords/class.md)  
- [Struktura](../../../csharp/language-reference/keywords/struct.md)  
- [rozhraní](../../../csharp/language-reference/keywords/interface.md)
+ [private](../../../csharp/language-reference/keywords/private.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
+ [internal](../../../csharp/language-reference/keywords/internal.md)  
+ [protected](../../../csharp/language-reference/keywords/protected.md)  
+ [protected internal](../../../csharp/language-reference/keywords/protected-internal.md)  
+ [private protected](../../../csharp/language-reference/keywords/private-protected.md)  
+ [class](../../../csharp/language-reference/keywords/class.md)  
+ [struct](../../../csharp/language-reference/keywords/struct.md)  
+ [interface](../../../csharp/language-reference/keywords/interface.md)

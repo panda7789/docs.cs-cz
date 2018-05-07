@@ -1,21 +1,12 @@
 ---
-title: "Postupy: serializace použití DataContractSerializer (C#)"
-ms.custom: 
+title: 'Postupy: serializace použití DataContractSerializer (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 73d45ec53770a8b1406098c6daaf11a18e499102
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1b2ec431698f23ea0c3e690cd57261bad8b1e4a5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-serialize-using-datacontractserializer-c"></a>Postupy: serializace použití DataContractSerializer (C#)
 Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Runtime.Serialization.DataContractSerializer>.  

@@ -1,31 +1,17 @@
 ---
 title: Vazby ve Windows Communication Foundation – přehled
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58b3691c186dc6a33c94d9f8a1af96be488d67df
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 38661c2ca0e3329f508e2740dfcdf69c0d5e4105
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
-Vazby jsou objekty, které slouží k zadání podrobností komunikace, které jsou potřebné pro připojení ke koncovému bodu [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby. Každý koncový bod v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba vyžaduje, aby vazba být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti definující vazby elementů vazby, které vazby jsou součástí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], a jak lze zadat vazbu pro koncový bod.  
+Vazby jsou objekty, které se používají a zadejte podrobnosti komunikace, které jsou potřebné pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba vyžaduje, aby vazba být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti definující vazby elementů vazby, které vazby jsou součástí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], a jak lze zadat vazbu pro koncový bod.  
   
 ## <a name="what-a-binding-defines"></a>Co definuje vazbu  
  Informace v vazbu může být velmi základní nebo velmi složité. Nejzákladnější vazba určuje pouze přenosový protokol (jako je například HTTP), musíte použít pro připojení ke koncovému bodu. Obecně platí informace, které obsahuje vazbu o tom, jak připojit ke koncovému bodu spadá do jedné z následujících kategorií.  

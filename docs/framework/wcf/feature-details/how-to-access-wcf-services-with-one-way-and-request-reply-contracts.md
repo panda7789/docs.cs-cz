@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď"
-ms.custom: 
+title: 'Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2ae2153ef7246194774535fd399d03dd109a221a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7a60d11432e95f56e8479d853e31895ba3fb266b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď
-Následující postupy popisují, jak získat přístup [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby jednosměrného kontraktu a kontraktů požadavek odpověď, který definuje a která nepoužívá vzoru duplexní komunikace.  
+Následující postupy popisují, jak pro přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktu požadavku a odpovědi a která nepoužívá vzoru duplexní komunikace.  
   
 ### <a name="to-define-the-service"></a>Chcete-li definovat službu  
   

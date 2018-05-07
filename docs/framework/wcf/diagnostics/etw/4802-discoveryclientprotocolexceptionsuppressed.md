@@ -1,24 +1,12 @@
 ---
-title: "4802 – DiscoveryClientProtocolExceptionSuppressed"
-ms.custom: 
+title: 4802 – DiscoveryClientProtocolExceptionSuppressed
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 568212f7-1060-4f5c-a7a0-1352c7cc743b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ecb147e35b830322240f69f533de7a588064e9d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5bb7772d668a6b635130c899ada9879c9c1f69a2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4802---discoveryclientprotocolexceptionsuppressed"></a>4802 – DiscoveryClientProtocolExceptionSuppressed
 ## <a name="properties"></a>Vlastnosti  

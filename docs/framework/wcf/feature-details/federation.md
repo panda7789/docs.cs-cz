@@ -1,14 +1,6 @@
 ---
 title: Federace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,25 +8,19 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0e7aef1f53675089ee311aa79a54abf60441b728
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d69de8c01a23eff5314220a10a51f6487080df41
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="federation"></a>Federace
-Toto téma obsahuje stručný přehled koncept federované zabezpečení. Také popisuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podporu pro nasazení architektury federované zabezpečení. Ukázkovou aplikaci, která demonstruje federace, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+Toto téma obsahuje stručný přehled koncept federované zabezpečení. Popisuje také podpora Windows Communication Foundation (WCF) pro nasazení architektury federované zabezpečení. Ukázkovou aplikaci, která demonstruje federace, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
 ## <a name="definition-of-federated-security"></a>Definice federované zabezpečení  
  Federované zabezpečení umožňuje čistou oddělení mezi službu, kterou klient přistupuje a přidružené postupů ověřování a autorizace. Federované zabezpečení taky umožňuje spolupráci mezi více systémy, sítě a organizace v různých důvěryhodnosti sfér.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje podporu pro vytváření a nasazování distribuovaných systémů, které využívají federované zabezpečení.  
+ WCF poskytuje podporu pro vytváření a nasazování distribuovaných systémů, které využívají federované zabezpečení.  
   
 ### <a name="elements-of-a-federated-security-architecture"></a>Prvky architektury federované zabezpečení  
  Architektura federované zabezpečení má tři klíčové prvky, jak je popsáno v následující tabulce.  
@@ -80,7 +66,7 @@ Toto téma obsahuje stručný přehled koncept federované zabezpečení. Také 
  Jakmile se uživatelé získat token zabezpečení od služby tokenů zabezpečení A, se nachází token, který má služba tokenů zabezpečení B. organizace B pokračuje k autorizaci požadavků uživatelů a vydá token zabezpečení pro uživatele z vlastní sadu tokenů zabezpečení. Uživatele můžete prezentovat token k prostředku v organizaci B a přístup ke službě.  
   
 ## <a name="support-for-federated-security-in-wcf"></a>Podpora pro federované zabezpečení ve WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] To podporuje pro nasazení architektury federované zabezpečení prostřednictvím [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+ WCF poskytuje připraveného podporu pro nasazení architektury federované zabezpečení prostřednictvím [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
  [ \<– WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) element poskytuje bezpečné, spolehlivé a umožňuje vzájemnou spolupráci vazby, která se používá jako podkladový přenosový mechanismus pro komunikaci styl požadavku a odpovědi HTTP nasazení jako přenosový formát pro kódování textu a XML.  
   
@@ -98,10 +84,10 @@ Toto téma obsahuje stručný přehled koncept federované zabezpečení. Také 
 -   K dispozici token, který má služba pro přístup ke službě.  
   
 ### <a name="phase-2-run-time-phase"></a>Fáze 2: Run-Time fáze  
- Během fáze spuštění klienta vytvoří objekt [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta a umožňuje volání pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Základní architektura [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpracovává výše uvedených kroků ve vzoru federované zabezpečení komunikace a umožňuje klientovi bez problémů používat službu.  
+ Během fáze spuštění klient vytvoří objekt třídy klienta WCF a zavolá pomocí klienta WCF. Základní architektury WCF zpracovává výše uvedených kroků ve vzoru federované zabezpečení komunikace a umožňuje klientovi bez problémů používat službu.  
   
 ## <a name="sample-implementation-using-wcf"></a>Ukázka implementace pomocí WCF  
- Následující obrázek znázorňuje implementaci ukázka pro federované zabezpečení architektury pomocí nativní podporu z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Následující obrázek znázorňuje implementaci ukázka pro federované zabezpečení architektury pomocí nativní podporu WCF.  
   
  ![Federační zabezpečení ve WCF](../../../../docs/framework/wcf/feature-details/media/federatedsecurityinwcf.gif "FederatedSecurityInWCF")  
   
@@ -300,7 +286,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
  ![Federační](../../../../docs/framework/wcf/feature-details/media/federationclienta.gif "FederationClientA")  
   
 ## <a name="summary"></a>Souhrn  
- Federované zabezpečení poskytuje čistou dělení zodpovědnosti a pomáhá k vytvoření zabezpečeného a škálovatelného služby architektury. Jako platforma pro vytváření a nasazování distribuované aplikace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje nativní podporu pro implementaci federované zabezpečení.  
+ Federované zabezpečení poskytuje čistou dělení zodpovědnosti a pomáhá k vytvoření zabezpečeného a škálovatelného služby architektury. WCF jako platforma pro vytváření a nasazování distribuovaných aplikací, poskytuje nativní podporu pro implementaci federované zabezpečení.  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)

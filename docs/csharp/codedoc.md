@@ -1,20 +1,13 @@
 ---
-title: "Dokumentace kódu s XML – komentáře"
-description: "Informace o dokumentu kódu s XML – dokumentační komentáře a generování souborů dokumentace XML v době kompilace."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Dokumentace kódu s XML – komentáře
+description: Informace o dokumentu kódu s XML – dokumentační komentáře a generování souborů dokumentace XML v době kompilace.
 ms.date: 02/14/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 709ef2ba2202e69ba35834789ad6e743a0f6b719
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1284f179c7debb323ea3bbd302df1f02bf8b31b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu s XML – komentáře
 
@@ -80,7 +73,7 @@ Jak před, následující příklad ukazuje `<returns>` značky v prvním `Add` 
 
 [!code-csharp[Returns Tag](../../samples/snippets/csharp/concepts/codedoc/returns-tag.cs)]
 
-### <a name="ltvaluegt"></a>&lt;Hodnota&gt;
+### <a name="ltvaluegt"></a>&lt;value&gt;
 
 `<value>` Značka je podobná `<returns>` značka, s tím rozdílem, že použijete pro vlastnosti.
 Za předpokladu, že vaše `Math` knihovny měl statickou vlastnost s názvem `PI`, zde je, jak použijete tuto značku:
@@ -96,9 +89,9 @@ To zahrnuje použití podřízených `<code>` značky.
 
 `code` Značky zachovává konce řádků a odsazení delší příklady.
 
-### <a name="ltparagt"></a>&lt;para&gt;
+### <a name="ltparagt"></a>&lt;Para&gt;
 
-Můžete použít `<para>` značky k formátování obsahu v rámci své nadřazené značky. `<para>`obvykle používá uvnitř značky, jako například `<remarks>` nebo `<returns>`, k rozdělení text do odstavcích.
+Můžete použít `<para>` značky k formátování obsahu v rámci své nadřazené značky. `<para>` obvykle používá uvnitř značky, jako například `<remarks>` nebo `<returns>`, k rozdělení text do odstavcích.
 Můžete ho naformátovat obsah `<remarks>` značky pro vaše definice třídy.
 
 [!code-csharp[Para Tag](../../samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
@@ -121,7 +114,7 @@ Prohlížení vaší `Math` knihovny, můžete uvidíte, že oba `Add` metody vy
 `cref` Atribut představuje odkaz na výjimku, která je k dispozici z aktuální prostředí kompilace.
 Může to být libovolný typ definovaný v projektu nebo odkazované sestavení. Kompilátor vás upozorní, pokud jeho hodnotu nelze přeložit.
 
-### <a name="ltseegt"></a>&lt;v tématu&gt;
+### <a name="ltseegt"></a>&lt;V tématu&gt;
 
 `<see>` Značka umožňuje vytvářet prokliknutelný odkaz na stránku dokumentace pro jiný element kódu. V našem příkladu další vytvoříme prokliknutelný odkaz mezi těmito dvěma `Add` metody.
 
@@ -164,7 +157,7 @@ Můžete použít stejné obecné metody, které jste vytvořili.
 
 [!code-csharp[Typeparamref Tag](../../samples/snippets/csharp/concepts/codedoc/typeparamref-tag.cs)]
 
-### <a name="ltlistgt"></a>&lt;seznam&gt;
+### <a name="ltlistgt"></a>&lt;list&gt;
 
 Můžete použít `<list>` značky na formát dokumentaci informace jako uspořádaného seznamu, neuspořádaný seznam nebo tabulky.
 Ujistěte se, neuspořádaný seznam každé matematické operace vaše `Math` knihovna podporuje.

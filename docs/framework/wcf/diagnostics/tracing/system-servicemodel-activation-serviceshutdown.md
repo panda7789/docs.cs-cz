@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Activation.ServiceShutdown
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fc356855-f996-4c0d-9ff9-503103803d91
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9100aa0dd0d910b203718991b119925a6fc1d7cf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d03ac5a05e6e6c8d10a8592fe39bc17067a03b73
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelactivationserviceshutdown"></a>System.ServiceModel.Activation.ServiceShutdown
 System.ServiceModel.Activation.ServiceShutdown  

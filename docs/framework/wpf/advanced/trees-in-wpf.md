@@ -1,31 +1,19 @@
 ---
-title: "Stromy v subsystému WPF"
-ms.custom: 
+title: Stromy v subsystému WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - logical tree [WPF]
 - element tree [WPF]
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 363d81ff0e4262ce0c8252ada3625bb9a157f5a1
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e7695fa94a7742d474cb998ff26a5cf009cdb6eb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trees-in-wpf"></a>Stromy v subsystému WPF
-V mnoha technologií prvky a součásti jsou uspořádány do stromové struktury, kde vývojáři přímo upravit objekt uzly ve stromu ovlivnit vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]definování vztahů mezi elementy program také používá několik metaphors struktura stromu. Ve většině případů WPF vývojáři můžete vytvořit aplikaci v kódu nebo definovat části aplikace v jazyce XAML při koncepčně zamyšlení jedná stromu objektu, ale bude volání rozhraní API konkrétní nebo pomocí konkrétní značek udělat tak místo některé obecné objekt stromu manipulaci API například můžete použít v modelu DOM. XML WPF zpřístupní dva pomocných tříd, které poskytují jedná je stromové zobrazení <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>. Vizuálním stromu podmínky a logickém stromu používají také v dokumentaci k WPF vzhledem k tomu, že tyto stejné struktury jsou užitečné pro seznámení s chováním některých klíčových funkcí WPF. Toto téma definuje, co představují vizuální strojové struktuře a logickém stromu, popisuje, jak takový stromy vztahují k celkové stromu koncepce objektu a zavádí <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>s.  
+V mnoha technologií prvky a součásti jsou uspořádány do stromové struktury, kde vývojáři přímo upravit objekt uzly ve stromu ovlivnit vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] definování vztahů mezi elementy program také používá několik metaphors struktura stromu. Ve většině případů WPF vývojáři můžete vytvořit aplikaci v kódu nebo definovat části aplikace v jazyce XAML při koncepčně zamyšlení jedná stromu objektu, ale bude volání rozhraní API konkrétní nebo pomocí konkrétní značek udělat tak místo některé obecné objekt stromu manipulaci API například můžete použít v modelu DOM. XML WPF zpřístupní dva pomocných tříd, které poskytují jedná je stromové zobrazení <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>. Vizuálním stromu podmínky a logickém stromu používají také v dokumentaci k WPF vzhledem k tomu, že tyto stejné struktury jsou užitečné pro seznámení s chováním některých klíčových funkcí WPF. Toto téma definuje, co představují vizuální strojové struktuře a logickém stromu, popisuje, jak takový stromy vztahují k celkové stromu koncepce objektu a zavádí <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>s.  
   
 
   

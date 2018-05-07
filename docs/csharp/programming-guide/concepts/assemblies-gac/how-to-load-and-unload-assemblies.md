@@ -1,21 +1,12 @@
 ---
-title: "Postupy: zavedení a uvolnění sestavení (C#)"
-ms.custom: 
+title: 'Postupy: zavedení a uvolnění sestavení (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 6a4f490f-3576-471f-9533-003737cad4a3
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: e4b7c9e257a1fff6236770ff39f5d26cd97224b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe9f78e145e6b7bc8ef138ff5cdb98aa345b90c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-load-and-unload-assemblies-c"></a>Postupy: zavedení a uvolnění sestavení (C#)
 Sestavení odkazuje vašeho programu bude automaticky načíst v čase vytvoření buildu, ale je také možné načíst konkrétní sestavení do aktuální domény aplikace za běhu. Další informace najdete v tématu [postupy: načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).  
@@ -33,6 +24,6 @@ Sestavení odkazuje vašeho programu bude automaticky načíst v čase vytvořen
 1.  Neexistuje žádný způsob, jak uvolnit jednotlivých sestavení bez uvolnění všech aplikací domén, které ji obsahují. Použití `Unload` metoda z <xref:System.AppDomain> uvolnění domény aplikace. Další informace najdete v tématu [postupy: uvolnění domény aplikace](../../../../framework/app-domains/how-to-unload-an-application-domain.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
  [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
- [Postupy: načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)
+ [Postupy: Načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)

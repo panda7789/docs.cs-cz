@@ -1,32 +1,20 @@
 ---
-title: "Dodatečné informace o zabezpečení ve Windows Forms"
-ms.custom: 
+title: Dodatečné informace o zabezpečení ve Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, secure calls to Windows API
 - security [Windows Forms]
 - security [Windows Forms], calling APIs
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5c86374066cea2926b0ac4510afbc17749182fea
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a1d8606eb972a6e3bea52f6230cb893a4bbb5aac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí s částečnou důvěryhodností než jinak v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, sítě a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení vliv na schopnost volat rozhraní API Win32 Microsoft nebo jiná rozhraní API, který nemůže být ověřen systémem zabezpečení. Zabezpečení ovlivní také dalších aspektů vaší aplikace, včetně souborů a dat přístupu a tisku. Další informace o přístupu k souborům a data v prostředí s částečnou důvěryhodností najdete v tématu [další soubor zabezpečení a přístup k datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí s částečnou důvěryhodností najdete v tématu [další Secure tiskem v systému Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md).  
+[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí s částečnou důvěryhodností než jinak v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, sítě a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení vliv na schopnost volat rozhraní API Win32 Microsoft nebo jiná rozhraní API, který nemůže být ověřen systémem zabezpečení. Zabezpečení ovlivní také dalších aspektů vaší aplikace, včetně souborů a dat přístupu a tisku. Další informace o přístupu k souborům a data v prostředí s částečnou důvěryhodností najdete v tématu [další soubor zabezpečení a přístup k datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí s částečnou důvěryhodností najdete v tématu [další Secure tiskem v systému Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md).  
   
  Následující části popisují, jak pracovat s schránky, provádět okno zpracování a volání rozhraní API Win32 z aplikací, které běží v prostředí s částečnou důvěryhodností.  
   
@@ -55,7 +43,7 @@ ms.lasthandoff: 01/19/2018
   
  Každá úroveň oprávnění identifikovaný <xref:System.Security.Permissions.UIPermissionWindow> výčtu umožňuje akce méně než úroveň nad ním. Následující tabulka uvádí akce, které jsou omezeny <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows> a <xref:System.Security.Permissions.UIPermissionWindow.SafeSubWindows> hodnoty. Pro přesné oprávnění, které jsou požadovány pro každého člena naleznete v tématu odkaz na tohoto člena v dokumentaci ke knihovně tříd rozhraní .NET Framework.  
   
- <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>oprávnění omezuje akce uvedené v následující tabulce.  
+ <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows> oprávnění omezuje akce uvedené v následující tabulce.  
   
 |Součást|Akce s omezeným přístupem|  
 |---------------|------------------------|  
@@ -87,13 +75,13 @@ ms.lasthandoff: 01/19/2018
   
 |Součást|Člen|  
 |---------------|------------|  
-|<xref:System.Windows.Forms.Application>|-   <xref:System.Windows.Forms.Application.AddMessageFilter%2A>– Metoda<br />-   <xref:System.Windows.Forms.Application.CurrentInputLanguage%2A>Vlastnost<br />-   `Exit`– Metoda<br />-   <xref:System.Windows.Forms.Application.ExitThread%2A>– Metoda<br />-   <xref:System.Windows.Forms.Application.ThreadException>události|  
-|<xref:System.Windows.Forms.CommonDialog>|-   <xref:System.Windows.Forms.CommonDialog.HookProc%2A>– Metoda<br />-   <xref:System.Windows.Forms.CommonDialog.OwnerWndProc%2A>\ – metoda<br />-   <xref:System.Windows.Forms.CommonDialog.Reset%2A>– Metoda<br />-   <xref:System.Windows.Forms.CommonDialog.RunDialog%2A>– Metoda|  
-|<xref:System.Windows.Forms.Control>|-   <xref:System.Windows.Forms.Control.CreateParams%2A>– Metoda<br />-   <xref:System.Windows.Forms.Control.DefWndProc%2A>– Metoda<br />-   <xref:System.Windows.Forms.Control.DestroyHandle%2A>– Metoda<br />-   <xref:System.Windows.Forms.Control.WndProc%2A>– Metoda|  
-|<xref:System.Windows.Forms.Help>|-   <xref:System.Windows.Forms.Help.ShowHelp%2A>metody<br />-   <xref:System.Windows.Forms.Help.ShowHelpIndex%2A>– Metoda|  
-|<xref:System.Windows.Forms.NativeWindow>|-   <xref:System.Windows.Forms.NativeWindow>– Třída|  
-|<xref:System.Windows.Forms.Screen>|-   <xref:System.Windows.Forms.Screen.FromHandle%2A>– Metoda|  
-|<xref:System.Windows.Forms.SendKeys>|-   <xref:System.Windows.Forms.SendKeys.Send%2A>– Metoda<br />-   <xref:System.Windows.Forms.SendKeys.SendWait%2A>– Metoda|  
+|<xref:System.Windows.Forms.Application>|-   <xref:System.Windows.Forms.Application.AddMessageFilter%2A> – Metoda<br />-   <xref:System.Windows.Forms.Application.CurrentInputLanguage%2A> Vlastnost<br />-   `Exit` – Metoda<br />-   <xref:System.Windows.Forms.Application.ExitThread%2A> – Metoda<br />-   <xref:System.Windows.Forms.Application.ThreadException> Události|  
+|<xref:System.Windows.Forms.CommonDialog>|-   <xref:System.Windows.Forms.CommonDialog.HookProc%2A> – Metoda<br />-   <xref:System.Windows.Forms.CommonDialog.OwnerWndProc%2A>\ – metoda<br />-   <xref:System.Windows.Forms.CommonDialog.Reset%2A> – Metoda<br />-   <xref:System.Windows.Forms.CommonDialog.RunDialog%2A> – Metoda|  
+|<xref:System.Windows.Forms.Control>|-   <xref:System.Windows.Forms.Control.CreateParams%2A> – Metoda<br />-   <xref:System.Windows.Forms.Control.DefWndProc%2A> – Metoda<br />-   <xref:System.Windows.Forms.Control.DestroyHandle%2A> – Metoda<br />-   <xref:System.Windows.Forms.Control.WndProc%2A> – Metoda|  
+|<xref:System.Windows.Forms.Help>|-   <xref:System.Windows.Forms.Help.ShowHelp%2A> Metody<br />-   <xref:System.Windows.Forms.Help.ShowHelpIndex%2A> – Metoda|  
+|<xref:System.Windows.Forms.NativeWindow>|-   <xref:System.Windows.Forms.NativeWindow> – Třída|  
+|<xref:System.Windows.Forms.Screen>|-   <xref:System.Windows.Forms.Screen.FromHandle%2A> – Metoda|  
+|<xref:System.Windows.Forms.SendKeys>|-   <xref:System.Windows.Forms.SendKeys.Send%2A> – Metoda<br />-   <xref:System.Windows.Forms.SendKeys.SendWait%2A> – Metoda|  
   
  Pokud aplikace nemá oprávnění k volání nespravovaného kódu, vaše aplikace musí požádat <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění nebo je nutné vzít v úvahu alternativní způsoby implementace funkce; v mnoha případech Windows Forms poskytuje spravovaná alternativa k rozhraní API Win32 funkce. Pokud není možnost znamená, že existují a aplikace musí přístup k nespravovanému kódu, budete muset zvýšit úroveň oprávnění pro aplikace.  
   

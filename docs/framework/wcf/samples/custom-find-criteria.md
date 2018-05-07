@@ -1,24 +1,12 @@
 ---
-title: "Vlastní kritérium hledání"
-ms.custom: 
+title: Vlastní kritérium hledání
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b2723929-8829-424d-8015-a37ba2ab4f68
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b57a9535b34441a8f1c86beeffa94046cf8944f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c9363add13e38ded75685e4115a5084629d6505
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-find-criteria"></a>Vlastní kritérium hledání
 Tento příklad znázorňuje, jak vytvořit vlastní rozsah odpovídající pomocí logiky a jak implementovat vlastní zjišťování služby. Klienti používají k zpřesnění a další sestavení nad funkce poskytované systémem najít zjišťování WCF vlastní rozsah odpovídající funkce. Scénáře, který popisuje tato ukázka je následující:  
@@ -56,7 +44,7 @@ Tento příklad znázorňuje, jak vytvořit vlastní rozsah odpovídající pomo
   
      Tato vlastní logiky projde všechny obory ve všech koncových bodů, které má služba. Pokud se žádné rozsahy pro koncový bod shodují oborů poskytnutý klientem, přidá službu zjišťování tohoto koncového bodu do odpovědi, která je odeslána zpět klientovi.  
   
-3.  **CustomDiscoveryExtension.cs**: poslední krok při provádění zjišťování služby je připojení Tato implementace vlastní zjišťování služby na hostitele služby. Pomocná třída použít zde je `CustomDiscoveryExtension` třídy. Tato třída rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension> třídy. Uživatel musí přepsat <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension.GetDiscoveryService%2A> metoda. V takovém případě metoda vrací instanci třídy služby vlastní zjišťování, který byl vytvořen ještě před. `PublishedEndpoints`je <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obsahující všechny koncové body aplikace, které jsou přidány do <xref:System.ServiceModel.ServiceHost>. Služba vlastní zjišťování to používá k naplnění svůj vnitřní seznam. Uživatel může přidat další koncový bod metadata.  
+3.  **CustomDiscoveryExtension.cs**: poslední krok při provádění zjišťování služby je připojení Tato implementace vlastní zjišťování služby na hostitele služby. Pomocná třída použít zde je `CustomDiscoveryExtension` třídy. Tato třída rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension> třídy. Uživatel musí přepsat <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension.GetDiscoveryService%2A> metoda. V takovém případě metoda vrací instanci třídy služby vlastní zjišťování, který byl vytvořen ještě před. `PublishedEndpoints` je <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obsahující všechny koncové body aplikace, které jsou přidány do <xref:System.ServiceModel.ServiceHost>. Služba vlastní zjišťování to používá k naplnění svůj vnitřní seznam. Uživatel může přidat další koncový bod metadata.  
   
  Nakonec otevřete Program.cs. Všimněte si, že jak <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a `CustomDiscoveryExtension` jsou přidány do hostitele. Jakmile to provádí a hostitele má koncový bod pro které bude přijímat zprávy zjišťování, aplikace můžete použít vlastní zjišťování služby.  
   
@@ -77,6 +65,6 @@ Tento příklad znázorňuje, jak vytvořit vlastní rozsah odpovídající pomo
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\CustomFindCriteria`

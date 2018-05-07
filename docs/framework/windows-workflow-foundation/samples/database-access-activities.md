@@ -1,23 +1,12 @@
 ---
-title: "Databáze Access aktivity"
-ms.custom: 
+title: Databáze Access aktivity
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dfc99593e1c705cff5069b5dd864d372f8afda8e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9c7627738d3c5313a4f3e6e4451daf78b87839a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="database-access-activities"></a>Databáze Access aktivity
 Databáze access aktivity umožňují přístup k databázi v rámci pracovního postupu. Tyto aktivity povolit přístup k databázím načtení nebo upravte informace a použití [ADO.NET](http://go.microsoft.com/fwlink/?LinkId=166081) pro přístup k databázi.  
@@ -27,7 +16,7 @@ Databáze access aktivity umožňují přístup k databázi v rámci pracovního
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte k (stránce pro stažení) Chcete-li stáhnout všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte k (stránce pro stažení) Chcete-li stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`  
   
@@ -252,7 +241,7 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 |Typ příkazu CommandType|Typ <xref:System.Data.Common.DbCommand> spouštění.|  
 |SQL|Příkaz SQL, který má být proveden.|  
 |Parametry|Kolekce parametrů příkazu jazyka SQL.|  
-|Výsledek|<xref:System.Data.DataSet>která se získá po provedení dotazu.|  
+|Výsledek|<xref:System.Data.DataSet> která se získá po provedení dotazu.|  
   
 ## <a name="configuring-connection-information"></a>Konfigurace informací o připojení  
  Všechny DbActivities sdílejí stejnou konfigurační parametry. Mohou být konfigurovány dvěma způsoby:  
@@ -324,7 +313,7 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
   
 ##### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1.  Otevřete řešení v[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)]  
+1.  Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)]  
   
 2.  Chcete-li zkompilovat řešení, stiskněte CTRL + SHIFT + B.  
   
@@ -335,6 +324,6 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`

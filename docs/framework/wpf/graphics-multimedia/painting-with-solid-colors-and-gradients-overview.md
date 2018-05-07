@@ -1,13 +1,6 @@
 ---
-title: "Přehled malování plnými barvami a přechody"
-ms.custom: 
+title: Přehled malování plnými barvami a přechody
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - solid colors [WPF], painting with
 - painting with gradients [WPF]
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with gradients
 - painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb71a1ae52b35b421474954410869f20fa004eb7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cea4b2dbd17178a6943b0f4a84182e65232330fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>Přehled malování plnými barvami a přechody
 Toto téma popisuje postup použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty k malování plné barvy, lineární přechody a paprskového přechody.  
@@ -74,7 +62,7 @@ Toto téma popisuje postup použití <xref:System.Windows.Media.SolidColorBrush>
   
 <a name="gradient"></a>   
 ## <a name="painting-an-area-with-a-gradient"></a>Vykreslování oblast s přechodem  
- Štětce přechodu vybarví oblast s více barev, které slučují do sebe navzájem podél osy. Můžete je používat vytvořit možnost vytvořit dojem světlým a shadow, udělíte vaše ovládací prvky trojrozměrné chování. Můžete je také použít k simulaci skla, chrome, horních a jiné technologie smooth plochy.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nabízí dva typy štětce přechodu: <xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>.  
+ Štětce přechodu vybarví oblast s více barev, které slučují do sebe navzájem podél osy. Můžete je používat vytvořit možnost vytvořit dojem světlým a shadow, udělíte vaše ovládací prvky trojrozměrné chování. Můžete je také použít k simulaci skla, chrome, horních a jiné technologie smooth plochy.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí dva typy štětce přechodu: <xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>.  
   
 <a name="lineargradientbrush"></a>   
 ## <a name="linear-gradients"></a>Lineární přechody  
@@ -159,9 +147,9 @@ RadialGradientBrushes s jiným nastavením GradientOrigin, Center, RadiusX a Rad
   
 <a name="argbsyntax"></a>   
 ### <a name="specifying-color-opacity-in-xaml"></a>Určení krytí barev v "XAML"  
- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivých barev. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)]šestnáctkové soustavě používá následující syntaxe:  
+ V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivých barev. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxe:  
   
- `#`**aa** *rrggbb*  
+ `#` **aa** *rrggbb*  
   
  *Aa* v předchozí řádek představuje letopočty šestnáctkové hodnoty slouží k zadání krytí barvy. *Rr*, *gg*, a *bb* každý představují dvoumístné šestnáctkové hodnoty používaný k zadání množství červená, zelená a modrá v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A-F. 0 je nejmenší hodnota a F je největší. Při použití hodnoty alfa 00 určuje barvu, která je zcela transparentní, zatímco při použití hodnoty alfa FF vytvoří barvu, která je plně neprůhledný.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápis slouží k určení dvě barvy. První je částečně transparentní (má při použití hodnoty alfa x20), zatímco druhý je zcela neprůhledný.  
   

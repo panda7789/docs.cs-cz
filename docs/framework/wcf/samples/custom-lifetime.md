@@ -1,33 +1,21 @@
 ---
-title: "Vlastní doba života"
-ms.custom: 
+title: Vlastní doba života
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 52806c07-b91c-48fe-b992-88a41924f51f
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1cbe73468e2ce1c8a4fe81a676c819b04d2ef760
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 1d9baa2d6eab476d5c8428208576f341e71fef2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-lifetime"></a>Vlastní doba života
-Tento příklad ukazuje, jak k zápisu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] rozšíření k poskytování služeb vlastní doba života sdílených [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] instancí služby.  
+Tento příklad znázorňuje jak napsat rozšíření Windows Communication Foundation (WCF) k poskytování služeb vlastní doba života sdílených [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] instancí služby.  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="shared-instancing"></a>Sdílené, vytváření instancí  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]nabízí několik zřizování instancí režimy pro vaše instance služby. Režim vytváření instancí sdílené zahrnuté v tomto tématu poskytuje způsob, jak sdílet instanci služby mezi více typů komunikačních kanálů. Klienty můžete buď vyřešit instance adresa koncového bodu místně nebo se obraťte na metoda factory ve službě k získání adresa koncového bodu spuštěné instance. Jakmile má adresa koncového bodu, může vytvořit nový kanál a spustit komunikace. Následující fragment kódu ukazuje, jak klientská aplikace vytvoří nový kanál ke stávající instanci služby.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí několik zřizování instancí režimy pro vaše instance služby. Režim vytváření instancí sdílené zahrnuté v tomto tématu poskytuje způsob, jak sdílet instanci služby mezi více typů komunikačních kanálů. Klienty můžete buď vyřešit instance adresa koncového bodu místně nebo se obraťte na metoda factory ve službě k získání adresa koncového bodu spuštěné instance. Jakmile má adresa koncového bodu, může vytvořit nový kanál a spustit komunikace. Následující fragment kódu ukazuje, jak klientská aplikace vytvoří nový kanál ke stávající instanci služby.  
   
 ```  
 // Create the first channel.  
@@ -51,7 +39,7 @@ IEchoService proxy2 = channelFactory2.CreateChannel();
  Ve výchozím nastavení má hodnotu časového limitu nečinnosti <xref:System.ServiceModel.InstanceContext> je jedna minuta. Ale tento příklad znázorňuje, jak můžete rozšířit pomocí vlastního rozšíření.  
   
 ## <a name="extending-the-instancecontext"></a>Rozšíření objekt InstanceContext.  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], <xref:System.ServiceModel.InstanceContext> je propojení mezi instance služby a `Dispatcher`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Umožňuje rozšířit tuto součást modulu runtime přidáním nového stavu nebo chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objektu: `IExtensibleObject<T>`, `IExtension<T>`, a `IExtensionCollection<T>`.  
+ V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], <xref:System.ServiceModel.InstanceContext> je propojení mezi instance služby a `Dispatcher`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Umožňuje rozšířit tuto součást modulu runtime přidáním nového stavu nebo chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objektu: `IExtensibleObject<T>`, `IExtension<T>`, a `IExtensionCollection<T>`.  
   
  `IExtensibleObject<T>` Rozhraní je implementováno modulem objekty, které chcete povolit rozšíření, které přizpůsobení jejich funkce.  
   
@@ -229,7 +217,7 @@ public class EchoService : IEchoService
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Lifetime`  
   

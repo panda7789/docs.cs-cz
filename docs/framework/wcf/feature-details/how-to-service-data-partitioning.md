@@ -1,24 +1,12 @@
 ---
-title: "Postupy: Vytvoření oddílů dat služby"
-ms.custom: 
+title: 'Postupy: Vytvoření oddílů dat služby'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-caps.latest.revision: "3"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c6a3f95f2ecea342072de010a6cee51069f755fa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 47e84555e38d2a71b7741c18de5f67349a622798
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-service-data-partitioning"></a>Postupy: Vytvoření oddílů dat služby
 Toto téma popisuje základní kroky potřebné k oddílu zprávy ve více instancích stejné cílové služby. Dělení na oddíly dat služby se obvykle používá, když potřebujete škálování služby, chcete-li poskytovat lepší kvalitu služby, nebo když potřebujete zpracování požadavků různých zákazníků, určitým způsobem. Zprávy ze vysoké hodnoty nebo zákazníků "Zlatá" možná muset zpracovat vyšší prioritu než zprávy od standardní zákazníka.  

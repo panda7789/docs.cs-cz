@@ -1,24 +1,14 @@
 ---
-title: "Ověřování zabezpečení a počet selhání ověření za sekundu"
-ms.custom: 
+title: Ověřování zabezpečení a počet selhání ověření za sekundu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 266c3bd3-2ffc-4471-94b7-3675443be1ac
-caps.latest.revision: "8"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 8159527f8f958c747a464641c69910c9df1b3d4e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e69dafaf2e415a0686594c4757bcf20dfd135944
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-validation-and-authentication-failures-per-second"></a>Ověřování zabezpečení a počet selhání ověření za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu.  

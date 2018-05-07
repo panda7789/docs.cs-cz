@@ -1,20 +1,13 @@
 ---
-title: "C# příkazy – přehled používání jazyka C#"
-description: "Vytvoříte akce programu v C# pomocí příkazů"
-keywords: "Rozhraní .NET, csharp, příkazy, syntaxe"
-author: BillWagner
-ms.author: wiwagn
+title: C# příkazy – přehled používání jazyka C#
+description: Vytvoříte akce programu v C# pomocí příkazů
 ms.date: 11/06/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
-ms.openlocfilehash: 99ec2489daf89926da9b8c4e148965412826a8a6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 2f25c07ccc0af27a503465b9414bf607c61d1b2e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="statements"></a>Příkazy
 
@@ -54,63 +47,63 @@ V následujícím seznamu uvedeny druhy příkazy, které lze použít a předst
 
  [!code-csharp[Expressions](../../../samples/snippets/csharp/tour/statements/Program.cs#L24-L31)]
 
-* `if`příkaz:
+* `if` příkaz:
 
  [!code-csharp[IfStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L33-L43)]
 
-* `switch`příkaz:
+* `switch` příkaz:
 
  [!code-csharp[SwitchStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L45-L60)]
 
-* `while`příkaz:
+* `while` příkaz:
 
  [!code-csharp[WhileStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L62-L70)]
 
-* `do`příkaz:
+* `do` příkaz:
 
  [!code-csharp[DoStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L72-L81)]
 
-* `for`příkaz:
+* `for` příkaz:
 
  [!code-csharp[ForStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L83-L89)]
 
-* `foreach`příkaz:
+* `foreach` příkaz:
 
  [!code-csharp[ForEachStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L91-L97)]
 
-* `break`příkaz:
+* `break` příkaz:
 
  [!code-csharp[BreakStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L99-L108)]
 
-* `continue`příkaz:
+* `continue` příkaz:
 
  [!code-csharp[ContinueStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L110-L118)]
 
-* `goto`příkaz:
+* `goto` příkaz:
 
  [!code-csharp[GotoStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L120-L129)]
 
-* `return`příkaz:
+* `return` příkaz:
 
  [!code-csharp[ReturnStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L131-L139)]
 
-* `yield`příkaz:
+* `yield` příkaz:
 
  [!code-csharp[YieldStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L141-L155)]
 
-* `throw`Příkazy a `try` příkazy:
+* `throw` Příkazy a `try` příkazy:
 
  [!code-csharp[TryThrow](../../../samples/snippets/csharp/tour/statements/Program.cs#L157-L183)]
 
-* `checked`a `unchecked` příkazy:
+* `checked` a `unchecked` příkazy:
 
  [!code-csharp[CheckedUncheckedStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L185-L196)]
 
-* `lock`příkaz:
+* `lock` příkaz:
 
  [!code-csharp[LockStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L257-L273)]
 
-* `using`příkaz:
+* `using` příkaz:
 
  [!code-csharp[UsingStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L198-L206)]
 

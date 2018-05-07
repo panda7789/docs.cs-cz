@@ -1,14 +1,6 @@
 ---
-title: "Přehled nastavení aplikace"
-ms.custom: 
+title: Přehled nastavení aplikace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - ApplicationsSettingsOverview
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f74595ce672079db69fd36fb2b2eb982bc90b448
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a827eeeca3f9d2719b4467bd19e66b3a40eb2c1f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="application-settings-overview"></a>Přehled nastavení aplikace
 Toto téma popisuje postup vytvoření a uložení dat nastavení jménem vaší aplikace a uživatele.  

@@ -1,22 +1,12 @@
 ---
 title: Serializace (C#)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 704ff2bf-02ab-4fea-94ea-594107825645
-caps.latest.revision: 3
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b045f092bef837d1345b5f3b31df0a5ec22fc010
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1f1b7fde18b59133088d83e3bf948e26b7a7b6aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serialization-c-"></a>Serializace (C#)
 Serializace je proces převodu objektu do datového proudu bajtů k uložení objektu nebo na přenos do paměti, databáze nebo souboru. Jeho hlavním účelem je pro uložení stavu objektu, aby bylo možné ho v případě potřeby znovu vytvořit. Zpětné proces se nazývá deserializace.  
@@ -32,7 +22,7 @@ Serializace je proces převodu objektu do datového proudu bajtů k uložení ob
  Serializace umožňuje vývojáři ho znovu vytvořit podle potřeby, poskytuje úložiště objektů, jakož i výměny dat a uložit stav objektu. Prostřednictvím serializace, vývojáři mohou provádět akce jako odesílání objektu do vzdálené aplikace prostřednictvím webové služby, předávání objektů z jedné domény na jiný, předávání objektů přes bránu firewall jako řetězec v kódu XML nebo zachování zabezpečení nebo informace o uživateli ve všech aplikacích.  
   
 ### <a name="making-an-object-serializable"></a>Umožnění serializace objektu  
- O serializaci objektu, je nutné objekt, který má být serializován datového proudu tak, aby obsahovala serializovaný objekt a <xref:System.Runtime.Serialization.Formatter>. <xref:System.Runtime.Serialization>obsahuje třídy, které jsou nezbytné pro serializaci a deserializaci objektů.  
+ O serializaci objektu, je nutné objekt, který má být serializován datového proudu tak, aby obsahovala serializovaný objekt a <xref:System.Runtime.Serialization.Formatter>. <xref:System.Runtime.Serialization> obsahuje třídy, které jsou nezbytné pro serializaci a deserializaci objektů.  
   
  Použít <xref:System.SerializableAttribute> atribut typ indikující, že instance tohoto typu lze serializovat. A <xref:System.Runtime.Serialization.SerializationException> je vyvolána výjimka, pokud se pokusíte k serializaci, ale typ nemá <xref:System.SerializableAttribute> atribut.  
   
@@ -47,7 +37,7 @@ Serializace je proces převodu objektu do datového proudu bajtů k uložení ob
  Binární serializace používá k vytvoření compact serializace pro účely třeba úložiště nebo sítě založené na soket datové proudy binárního kódování.  
   
 ### <a name="xml-serialization"></a>Serializace XML  
- Serializace XML serializuje veřejná pole a vlastnosti objektu, nebo parametry a návratové hodnoty metod, do datový proud XML, který odpovídá konkrétní jazyk (XSD) dokumentu definice schématu XML. Výsledky serializace XML v silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na XML. <xref:System.Xml.Serialization>obsahuje třídy, které jsou nezbytné pro serializaci a deserializaci XML.  
+ Serializace XML serializuje veřejná pole a vlastnosti objektu, nebo parametry a návratové hodnoty metod, do datový proud XML, který odpovídá konkrétní jazyk (XSD) dokumentu definice schématu XML. Výsledky serializace XML v silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na XML. <xref:System.Xml.Serialization> obsahuje třídy, které jsou nezbytné pro serializaci a deserializaci XML.  
   
  Atributy třídy a členy třídy můžete použít k řízení způsobu, <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy.  
   
@@ -67,7 +57,7 @@ Serializace je proces převodu objektu do datového proudu bajtů k uložení ob
 ## <a name="designer-serialization"></a>Serializace s použitím návrháře  
  Návrhář serializace je speciální forma serializace, který zahrnuje druh objektu trvalost obvykle spojené se nástroje pro vývoj. Návrhář serializace je proces převodu grafu objektu zdrojového souboru, který můžete později použít k obnovení grafu objektu. Zdrojový soubor může obsahovat kód, značka nebo i informace o tabulce SQL.  
   
-##  <a name="BKMK_RelatedTopics"></a>Příklady a související témata  
+##  <a name="BKMK_RelatedTopics"></a> Příklady a související témata  
  [Návod: Uchování objektu v sadě Visual Studio (C#)](../../../../csharp/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
  Ukazuje, jak serializace může být použita k uchování dat objektu mezi instancemi, který vám umožní ukládat hodnoty a je načtou při příštím vytvoření instance objektu.  
   

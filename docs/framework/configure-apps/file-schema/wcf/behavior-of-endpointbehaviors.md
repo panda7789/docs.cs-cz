@@ -2,11 +2,11 @@
 title: '&lt;behavior&gt; – &lt;endpointBehaviors&gt;'
 ms.date: 03/30/2017
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-ms.openlocfilehash: 0619d14444d835ed959a1a1db7cd37aaf0429728
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: e275fbc1b14469553094a4df838930be53937de2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltbehaviorgt-of-ltendpointbehaviorsgt"></a>&lt;behavior&gt; – &lt;endpointBehaviors&gt;
 `behavior` Element obsahuje kolekce nastavení pro chování koncový bod. Každý chování je indexované podle jeho `name`. Koncové body můžete propojit každý chování prostřednictvím tento název. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
@@ -52,7 +52,7 @@ ms.lasthandoff: 05/03/2018
 |[\<soapProcessing >](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|Definuje chování klienta endpoint použitý k zařazování zprávy mezi jinou vazbou typy a verze zprávy.|  
 |[\<synchronousReceive >](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|Určuje chování pro příjem zpráv v aplikaci služby nebo klienta. Nástroj nemá žádné atributy nebo podřízené elementy.|  
 |[\<transactedBatching >](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|Určuje, zda je podporováno dávkové zpracování transakcí, pro operace příjmu.|  
-|[\<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|Určuje WebHttpBehavior v koncovém bodě prostřednictvím konfigurace. Toto chování, pokud se používá ve spojení s \<webHttpBinding > standardní vazby umožňuje programovací model webových pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby.|  
+|[\<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|Určuje WebHttpBehavior v koncovém bodě prostřednictvím konfigurace. Toto chování, pokud se používá ve spojení s \<webHttpBinding > standardní vazby umožňuje programovací model webové služby WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

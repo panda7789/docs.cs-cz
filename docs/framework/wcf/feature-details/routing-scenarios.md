@@ -1,28 +1,14 @@
 ---
-title: "Scénáře směrování"
-ms.custom: 
+title: Scénáře směrování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - rounting [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ef101a9a5f78e1b85ac7cb983b4766088b83317
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 458b67de57be2bd0847ceccbc8a3aebd3b025f64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-scenarios"></a>Scénáře směrování
 I službu Směrování je vysoce přizpůsobitelné, může být výzvy k návrhu logiku efektivní směrování, při vytváření nové konfigurace od začátku.  Existují však několik běžných scénářů, které následují většina konfigurace služby směrování. Při těchto scénářích se přímo na konkrétní konfiguraci nemusí vztahovat, pochopení konfigurace služby směrování pro zpracování těchto scénářích se pomoci při Princip služby směrování.  

@@ -1,33 +1,21 @@
 ---
-title: "Použití akcí k implementaci chování na straně serveru"
-ms.custom: 
+title: Použití akcí k implementaci chování na straně serveru
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9d8ca19a5a49815130103672f43452ebbfedfae3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d4be2aa42c667460232f6aa3cd8dc707805750e0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
-Akcí OData, které poskytují způsob, jak implementovat chování, který funguje na prostředek načíst ze služby OData.  Například vezměte v úvahu digitální film jako prostředek, je mnoho věcí, které může provádět s digitální video: rezervace, míry nebo komentář nebo vrácení se změnami. Toto jsou příklady všechny akce, které mohou být prováděny WCF Data Service, která spravuje digitální filmy. Akce jsou popsané v odpovědi OData obsahující prostředků, na který lze vyvolat akci. Když uživatel požádá o prostředek, který představuje digitální film odpověď vrácená služby WCF Data Service obsahuje informace o akcích, které jsou k dispozici pro tento prostředek. Dostupnost akce mohou záviset na stav služby data nebo prostředků. Pro příklad, jakmile ji je rezervována digitální film nelze rezervována jiným uživatelem. Klienty můžete vyvolat akci jednoduše tak, že zadáte adresu URL. Například by http://MyServer/MovieService.svc/Movies (6) určit konkrétní digitální film a http://MyServer/MovieService.svc/Movies (6) / Checkout by vyvolání akce na konkrétní film. Akce vám umožní vystavit můžete povolit model služby bez vystavení datového modelu. Pokračování službu příkladu film s, můžete chtít umožnit uživateli hodnocení filmu, ale ne přímo vystavit data hodnocení jako prostředek. Míra akce chcete umožnit uživatelům hodnocení filmu, ale není přímo přistupovat ke hodnocení data jako prostředek může implementovat.  
+Akcí OData, které poskytují způsob, jak implementovat chování, který funguje na prostředek načíst ze služby OData.  Například vezměte v úvahu digitální film jako prostředek, je mnoho věcí, které může provádět s digitální video: rezervace, míry nebo komentář nebo vrácení se změnami. Toto jsou příklady všechny akce, které mohou být prováděny WCF Data Service, která spravuje digitální filmy. Akce jsou popsané v odpovědi OData obsahující prostředků, na který lze vyvolat akci. Když uživatel požádá o prostředek, který představuje digitální film odpověď vrácená služby WCF Data Service obsahuje informace o akcích, které jsou k dispozici pro tento prostředek. Dostupnost akce mohou záviset na stav služby data nebo prostředků. Pro příklad, jakmile ji je rezervována digitální film nelze rezervována jiným uživatelem. Klienty můžete vyvolat akci jednoduše tak, že zadáte adresu URL. Například http://MyServer/MovieService.svc/Movies(6) by identifikovat konkrétní digitální film a http://MyServer/MovieService.svc/Movies(6)/Checkout by vyvolání akce na konkrétní film. Akce vám umožní vystavit můžete povolit model služby bez vystavení datového modelu. Pokračování službu příkladu film s, můžete chtít umožnit uživateli hodnocení filmu, ale ne přímo vystavit data hodnocení jako prostředek. Míra akce chcete umožnit uživatelům hodnocení filmu, ale není přímo přistupovat ke hodnocení data jako prostředek může implementovat.  
   
 ## <a name="implementing-an-action"></a>Implementace akce  
- K implementaci akce služby, je nutné implementovat <xref:System.IServiceProvider>, [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx), a [IDataServiceInvokable](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceinvokable(v=vs.113).aspx) rozhraní. <xref:System.IServiceProvider>umožňuje získat vaši implementaci služby WCF Data Services [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx). [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) umožňuje součásti WCF Data Services k vytvoření, hledání, popis a vyvolání akce služby. [IDataServiceInvokable](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceinvokable(v=vs.113).aspx) umožňuje vyvolání kód, který implementuje chování se akce služby a získat výsledky, pokud existuje. Mějte na paměti, že jsou služby WCF Data Services za volání služby WCF, novou instanci služby se vytvoří pokaždé, když je volána službu.  Zajistěte, aby že žádné nepotřebné práci při vytváření služby.  
+ K implementaci akce služby, je nutné implementovat <xref:System.IServiceProvider>, [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx), a [IDataServiceInvokable](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceinvokable(v=vs.113).aspx) rozhraní. <xref:System.IServiceProvider> umožňuje získat vaši implementaci služby WCF Data Services [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx). [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) umožňuje součásti WCF Data Services k vytvoření, hledání, popis a vyvolání akce služby. [IDataServiceInvokable](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceinvokable(v=vs.113).aspx) umožňuje vyvolání kód, který implementuje chování se akce služby a získat výsledky, pokud existuje. Mějte na paměti, že jsou služby WCF Data Services za volání služby WCF, novou instanci služby se vytvoří pokaždé, když je volána službu.  Zajistěte, aby že žádné nepotřebné práci při vytváření služby.  
   
 ### <a name="iserviceprovider"></a>IServiceProvider  
- <xref:System.IServiceProvider>obsahuje metodu s názvem <xref:System.IServiceProvider.GetService%2A>. Tato metoda je volána služby WCF Data Services načíst počet poskytovatelé služeb, včetně poskytovatelům služeb metadata a data poskytovatelé akce. Po zobrazení dotazu pro zprostředkovatele dat služeb akce, vrátí vaše [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) implementace.  
+ <xref:System.IServiceProvider> obsahuje metodu s názvem <xref:System.IServiceProvider.GetService%2A>. Tato metoda je volána služby WCF Data Services načíst počet poskytovatelé služeb, včetně poskytovatelům služeb metadata a data poskytovatelé akce. Po zobrazení dotazu pro zprostředkovatele dat služeb akce, vrátí vaše [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) implementace.  
   
 ### <a name="idataserviceactionprovider"></a>IDataServiceActionProvider  
  [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) obsahuje metody, které vám umožní načíst informace o dostupné akce. Při implementaci [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) metadata jsou rozšířit služby, který je definovaný implementace služby [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) s akcemi a zpracování odesílání k těmto akcím podle potřeby.  
@@ -63,7 +51,7 @@ Akcí OData, které poskytují způsob, jak implementovat chování, který fung
 ## <a name="invoking-a-wcf-data-service-action"></a>Vyvolání akce WCF Data Service  
  Akce jsou vyvolány pomocí požadavku HTTP POST. Adresa URL určuje prostředky, za nímž následuje název akce. Parametry jsou předány v textu požadavku. Například pokud se služba s názvem MovieService, které poskytovaly akce vyvolaná rychlost. Můžete použít následující adresu URL pro vyvolání akce míra na konkrétní film:  
   
- http://MovieServer/MovieService.svc/Movies (1) nebo míry  
+ http://MovieServer/MovieService.svc/Movies(1)/Rate  
   
  Movies(1) určuje film, který si přejete rychlost a rychlost Určuje rychlost akci. Skutečná hodnota hodnocení bude v textu požadavku HTTP, jak je znázorněno v následujícím příkladu:  
   

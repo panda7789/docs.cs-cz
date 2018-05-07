@@ -1,28 +1,18 @@
 ---
-title: "Rozhraní fúze"
-ms.custom: 
+title: Rozhraní fúze
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - interfaces [.NET Framework fusion]
 - fusion interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], fusion
 ms.assetid: e2cf98b7-40c1-4f74-86c7-8a76dd9da677
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9226eba1b9f03138180430b2abb960f43f4b4260
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ec2fd3b309820f2bfb7f6091cc3db720db497408
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fusion-interfaces"></a>Rozhraní fúze
 Tato část popisuje nespravované rozhraní, která fusion rozhraní API používá pro přístup k vlastnostem prostředků aplikace a k nalezení správné verze tyto prostředky pro aplikaci.  

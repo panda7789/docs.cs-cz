@@ -1,27 +1,15 @@
 ---
-title: "Postupy: implementace zjistitelný služba, která zaregistruje se zjišťování Proxy"
-ms.custom: 
+title: 'Postupy: implementace zjistitelný služba, která zaregistruje se zjišťování Proxy'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee99c7c74f0e1e2d287802d46cf4b716cfa3b76d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0ceada8f65b98676d160ba096c63bf946a178cf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Postupy: implementace zjistitelný služba, která zaregistruje se zjišťování Proxy
-Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťování proxy. V předchozích tématu [postupy: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), implementována zjišťování proxy. V tomto tématu můžete vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která odesílá zprávy oznámení (`Hello` a `Bye`) na server proxy zjišťování způsobuje jeho registrace a zrušení registrace s proxy serverem zjišťování.  
+Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťování proxy. V předchozích tématu [postupy: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), implementována zjišťování proxy. V tomto tématu, vytvoření služby WCF, který odešle oznámení zprávy (`Hello` a `Bye`) na server proxy zjišťování způsobuje jeho registrace a zrušení registrace s proxy serverem zjišťování.  
   
 ### <a name="to-define-the-service-contract"></a>K definování kontraktu služby  
   

@@ -1,27 +1,15 @@
 ---
-title: "Pokyny pro návrh ovládacích prvků s podporou stylů"
-ms.custom: 
+title: Pokyny pro návrh ovládacích prvků s podporou stylů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - style design for controls [WPF]
 - controls [WPF], style design
 ms.assetid: c52dde45-a311-4531-af4c-853371c4d5f4
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6707a434f64838467033966c9093e1e415b1fb31
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4e807a323f6b454b1f07c8e0a9f99b17c9723df7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Pokyny pro návrh ovládacích prvků s podporou stylů
 Tento dokument shrnuje sadu osvědčené postupy vzít v úvahu při navrhování řídit, která chcete být snadno stylable a templatable. Jsme byla do této skupiny prostřednictvím spoustu omyl a osvědčené postupy při práci s styly ovládacího prvku motivu pro integrované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sadou ovládacích prvků. Jsme zjistili, že úspěšné stylů je tolik funkcí dobře navrženou objektový model jako je styl sám sebe. Předpokládanou cílovou skupinou pro tento dokument je ovládací prvek autora, ne Autor styl.  
@@ -53,7 +41,7 @@ Tento dokument shrnuje sadu osvědčené postupy vzít v úvahu při navrhován�
   
     -   Minimalizujte kontrakty co nejvíc.  
   
-    -   Návrh kolem předpoklad, že při návrhu čas (při používání nástroje návrhu) je běžné pro ovládací prvek šablonu neúplné stav. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nenabízí "skládání" stav infrastruktury, a aby ovládacích prvků mají být vytvořené s tím, že takový stav může být platný.  
+    -   Návrh kolem předpoklad, že při návrhu čas (při používání nástroje návrhu) je běžné pro ovládací prvek šablonu neúplné stav. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nenabízí "skládání" stav infrastruktury, a aby ovládacích prvků mají být vytvořené s tím, že takový stav může být platný.  
   
     -   Pokud nedodržíte kteréhokoli aspektu kontraktu šablony nevyvolá výjimku výjimky. Toho by neměl panelů generování výjimek, pokud mají příliš mnoho nebo příliš málo podřízených objektů.  
   
@@ -112,7 +100,7 @@ Tento dokument shrnuje sadu osvědčené postupy vzít v úvahu při navrhován�
   
 -   **Být v souladu s existující vzory stylů.** Kolikrát existuje více způsobů k vyřešení problému. Mít na paměti, a když možné konzistentní s existujícím řídit vzory stylů. To je obzvláště důležité pro ovládací prvky, které jsou odvozeny od základní stejného typu (například <xref:System.Windows.Controls.ContentControl>, <xref:System.Windows.Controls.ItemsControl>, <xref:System.Windows.Controls.Primitives.RangeBase>a tak dále).  
   
--   **Vystavení vlastností k podpoře běžných scénářů přizpůsobení bez retemplating**. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nepodporuje modulární, přizpůsobitelné částí, takže uživatel ovládací prvek je ponechán s pouze dvěma metody přizpůsobení: nastavení vlastností přímo nebo nastavení vlastností pomocí stylů. Si uvědomit je třeba surface omezený počet vlastností zaměřený na přizpůsobení s vysokou prioritou, velmi běžné scénáře, které by jinak vyžadovaly retemplating. Zde jsou doporučené postupy pro kdy a jak povolit scénáře přizpůsobení:  
+-   **Vystavení vlastností k podpoře běžných scénářů přizpůsobení bez retemplating**. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepodporuje modulární, přizpůsobitelné částí, takže uživatel ovládací prvek je ponechán s pouze dvěma metody přizpůsobení: nastavení vlastností přímo nebo nastavení vlastností pomocí stylů. Si uvědomit je třeba surface omezený počet vlastností zaměřený na přizpůsobení s vysokou prioritou, velmi běžné scénáře, které by jinak vyžadovaly retemplating. Zde jsou doporučené postupy pro kdy a jak povolit scénáře přizpůsobení:  
   
     -   Velmi běžné úpravy by měl vystaveny jako vlastnosti na ovládací prvek a využívat šablonou.  
   

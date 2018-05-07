@@ -1,21 +1,12 @@
 ---
-title: "Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (C#)"
-ms.custom: 
+title: 'Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3ae49f729b46bd794eb614f90ab83fc80d4021a6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 12ecf4c2c4b74cd58c4df0c355351232d09a84ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (C#)
 Toto téma ukazuje, jak získat následnickým elementům se zadaným názvem a atribut se zadanou hodnotou.  

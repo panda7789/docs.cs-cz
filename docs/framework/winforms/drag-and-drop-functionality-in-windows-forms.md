@@ -1,27 +1,15 @@
 ---
-title: "Přetažení funkce ve Windows Forms "
-ms.custom: 
+title: 'Přetažení funkce ve Windows Forms '
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - drag and drop [Windows Forms], Windows Forms
 - Windows Forms, drag and drop
 ms.assetid: 65cd2c03-8782-474e-b958-cbe43eeb902c
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 86234aca209c5533abf9025911b22c391b0ef22b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c43d5ad9203afad67601d9e36447db7c49a5a98e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="drag-and-drop-functionality-in-windows-forms"></a>Přetažení funkce ve Windows Forms 
 Windows Forms zahrnuje sadu metod, události a třídy, které implementují chování přetažení myší. Toto téma obsahuje přehled podpory přetažení myší v systému Windows Forms.  Viz také [operací přetažení myší a podpora schránky](http://msdn.microsoft.com/library/fe5ebfwe\(v=vs.110\)).  

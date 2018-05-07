@@ -4,17 +4,11 @@ description: Najdete v části schéma pro global.json souboru, který umožňuj
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/05/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: ac53a899e76c99527f2670d0a6bed3f8cc6ce31f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 7479774c7b9cdda233cf32d791c16e7fc6d733a8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="globaljson-reference"></a>odkaz na Global.JSON
 

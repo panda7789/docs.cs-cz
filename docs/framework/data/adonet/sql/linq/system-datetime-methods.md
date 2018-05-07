@@ -1,24 +1,12 @@
 ---
 title: System.DateTime metody
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4f80700c-e83f-4ab6-af0f-1c9a606e1133
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 74c07a2f873d715bd82fba19499b36e8ed305dcc
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 57ffb3a7f79607b449c6e300ca15396a3f99386b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemdatetime-methods"></a>System.DateTime metody
 Následující technologie LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v technologii LINQ dotazy SQL. Když metoda, operátor nebo vlastnost není podporována, technologie LINQ to SQL nemůže překládat člena pro spuštění systému SQL Server. Můžete použít tyto členy ve vašem kódu, ale, že se musí vyhodnotit na před dotaz převádějí do jazyka Transact-SQL nebo po výsledky byly získány z databáze.  

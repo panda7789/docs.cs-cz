@@ -1,9 +1,6 @@
 ---
-title: "&lt;výjimka&gt; (C# Průvodce programováním)"
+title: '&lt;výjimka&gt; (C# Průvodce programováním)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - exception
 - <exception>
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - <exception> C# XML tag
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
-caps.latest.revision: "16"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: bd859a09bfbe9f814bf57f0987fd49ded9ba7100
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: eca61416077896c9fa7d5828bbab79b399ad69d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltexceptiongt-c-programming-guide"></a>&lt;výjimka&gt; (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
@@ -29,7 +23,7 @@ ms.lasthandoff: 11/21/2017
   
 #### <a name="parameters"></a>Parametry  
  cref = " `member`"  
- Odkaz na výjimku, která je k dispozici z aktuální prostředí kompilace. Kompilátor kontroluje, zda výjimka existuje a překládá `member` na element kanonický název ve výstupu XML. `member`musí být v rámci dvojitých uvozovek nahoře ("").  
+ Odkaz na výjimku, která je k dispozici z aktuální prostředí kompilace. Kompilátor kontroluje, zda výjimka existuje a překládá `member` na element kanonický název ve výstupu XML. `member` musí být v rámci dvojitých uvozovek nahoře ("").  
   
  Další informace o tom, jak vytvořit cref odkaz na obecného typu najdete v tématu [ \<najdete v části >](../../../csharp/programming-guide/xmldoc/see.md).  
   
@@ -47,5 +41,5 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[csProgGuideDocComments#4](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/exception_1.cs)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

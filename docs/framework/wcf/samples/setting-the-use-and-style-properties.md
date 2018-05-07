@@ -1,24 +1,12 @@
 ---
-title: "Nastavení vlastností Use a Style"
-ms.custom: 
+title: Nastavení vlastností Use a Style
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6f69ce60e6c9ab98ef773fa54b1c057d3c2b3b48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 74d5baca77fd1af6260def762094b3ce01816179
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="setting-the-use-and-style-properties"></a>Nastavení vlastností Use a Style
 Tento příklad znázorňuje způsob použití vlastností použití a stylu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>. Tyto vlastnosti vliv na způsob formátování zprávy. Ve výchozím nastavení, je formátovaného textu zprávy se stylem nastavena na <xref:System.ServiceModel.OperationFormatStyle.Document>. Tato nastavení lze na úrovni kontraktu služby nebo úroveň kontrakt operaci.  
@@ -84,7 +72,7 @@ public interface IUseAndStyleCalculator
 }  
 ```  
   
- Rozdíl mezi různými <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> nastavení, je upravit ve službě, znovu vygenerovat klienta, spuštění vzorového a zkontrolujte soubor c:\logs\message.logs pomocí nástroje prohlížeče trasování služeb. Dopad na metadata také sledujte zobrazením http://localhost/ServiceModelSamples/service.svc?wsdl. Metadata pro služby je obvykle rozdělena na více stránkách. Stránka hlavní wsdl obsahuje WSDL vazby, ale zobrazit http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0 sledovat definice zpráv.  
+ Rozdíl mezi různými <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> nastavení, je upravit ve službě, znovu vygenerovat klienta, spuštění vzorového a zkontrolujte soubor c:\logs\message.logs pomocí nástroje prohlížeče trasování služeb. Také sledovat dopad na metadata zobrazením http://localhost/ServiceModelSamples/service.svc?wsdl. Metadata pro služby je obvykle rozdělena na více stránkách. Tato stránka hlavní wsdl obsahuje WSDL vazby, ale zobrazit http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0 sledovat definice zpráv.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   
@@ -101,7 +89,7 @@ public interface IUseAndStyleCalculator
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\UseAndStyle`  
   

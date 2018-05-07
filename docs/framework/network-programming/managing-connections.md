@@ -1,12 +1,6 @@
 ---
-title: "Správa připojení"
-ms.custom: 
+title: Správa připojení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,23 +17,21 @@ helpviewer_keywords:
 - downloading Internet resources, connections
 - ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: a4d0ca3b6aed1213405dc24f322b53a21dbd4fbe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8702f2329b262fc5c5965ae49365d46ba34091d6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managing-connections"></a>Správa připojení
 Aplikace, které používají protokol HTTP pro připojení k prostředkům dat můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a pomáhá jim dosáhnout optimálního škálování a výkon.  
   
  **Servisním místem** třída poskytuje aplikace s koncovým bodem, který lze aplikace připojí k přístup k internetovým prostředkům. Každý **servisním místem** obsahuje informace, že pomáhá optimalizovat připojení pomocí internetového serveru pomocí sdílení informací optimalizace mezi připojení ke zlepšení výkonu.  
   
- Každý **servisním místem** je identifikován pomocí identifikátor URI (Uniform Resource) a je zařazený do kategorie podle fragmenty identifikátor a hostitele schéma identifikátoru URI. Například stejné **servisním místem** instance by poskytují žádosti na identifikátory URI http://www.contoso.com/index.htm a http://www.contoso.com/news.htm?date=today, protože mají stejný identifikátor schématu (http) a hostitele fragmenty (www.contoso.com). Pokud aplikace už má trvalé připojení k serveru www.contoso.com, používá toto připojení k načtení oba požadavky, takže není nutné vytvořit dvě připojení.  
+ Každý **servisním místem** je identifikován pomocí identifikátor URI (Uniform Resource) a je zařazený do kategorie podle fragmenty identifikátor a hostitele schéma identifikátoru URI. Například stejné **servisním místem** instance by poskytnout požadavky identifikátory URI http://www.contoso.com/index.htm a http://www.contoso.com/news.htm?date=today vzhledem k tomu, že mají stejný identifikátor schématu (http) a hostitele fragmenty (www.contoso.com). Pokud aplikace už má trvalé připojení k serveru www.contoso.com, používá toto připojení k načtení oba požadavky, takže není nutné vytvořit dvě připojení.  
   
  **ServicePointManager –** je statická třída, která spravuje vytváření a zničení **servisním místem** instance. **ServicePointManager –** vytvoří **servisním místem** při aplikace požádá o prostředek Internet, který není v kolekci existující **servisním místem** instance. **Servisním místem** instance jsou zničen čas překročení jejich maximální doby nečinnosti nebo pokud je to číslo existující **servisním místem** překračuje maximální počet instancí **servisním místem**instancí aplikace. Můžete ovládat maximální dobu výchozí nečinnosti a maximální počet **servisním místem** instance podle nastavení <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> a <xref:System.Net.ServicePointManager.MaxServicePoints%2A> vlastnosti **ServicePointManager –**.  
   

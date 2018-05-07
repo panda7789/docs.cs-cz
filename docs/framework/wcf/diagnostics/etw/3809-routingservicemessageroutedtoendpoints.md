@@ -1,24 +1,12 @@
 ---
 title: 3809 - RoutingServiceMessageRoutedToEndpoints
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 22479cc6-72d1-48df-912c-fc37bddeb043
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8d7efae4ce7fb3efa4c3964c70a735b304867c65
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b31192e613b7e9f5e4ea1a382b529b693ae0e9a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3809---routingservicemessageroutedtoendpoints"></a>3809 - RoutingServiceMessageRoutedToEndpoints
 ## <a name="properties"></a>Vlastnosti  

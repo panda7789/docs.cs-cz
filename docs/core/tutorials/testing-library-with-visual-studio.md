@@ -4,20 +4,14 @@ description: Zjistěte, jak otestovat napsané v C# s použitím Visual Studio 2
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: devlang-csharp
-ms.devlang: csharp
 dev_langs:
 - csharp
 - vb
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 0356ea286238f4b722a42795c9456f7532766f7d
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 24d0f1366a8e4309bbfb5b548af7407de50eaf76
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny tříd s .NET Core v Visual Studio 2017
 

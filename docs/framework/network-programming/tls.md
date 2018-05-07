@@ -2,8 +2,6 @@
 title: Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework
 description: Osvědčené postupy zabezpečení TLS (Transport Layer) pomocí rozhraní .NET Framework
 ms.date: 03/15/2018
-ms.prod: .net-framework
-ms.topic: article
 helpviewer_keywords:
 - sending data, Internet security
 - protocols, Internet security
@@ -15,15 +13,11 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 author: blowdart
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7298c87c3e61103577d4262ab2dc2645d7e6265a
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 41814129d038f8cb1ab98db0c7a4e0cbd7e7cd54
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework
 

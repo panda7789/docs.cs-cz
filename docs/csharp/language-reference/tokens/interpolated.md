@@ -2,10 +2,6 @@
 title: $ – řetězec interpolace (referenční dokumentace jazyka C#)
 description: Řetězec interpolace poskytuje čitelnější a pohodlný syntaxe k formátování výstupu řetězec než tradiční řetězec složené formátování.
 ms.date: 03/26/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - $_CSharpKeyword
 - $
@@ -16,11 +12,11 @@ helpviewer_keywords:
 - interpolated string [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cabb40c9c449780c8c2a504aad3e53938e2ed957
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: c6915e49c442c80459dae85ac2598a0fa5ed3182
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – řetězec interpolace (referenční dokumentace jazyka C#)
 

@@ -1,24 +1,12 @@
 ---
 title: System.Runtime.Serialization.ElementIgnored
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 795fc64f-07af-4b88-9256-1b154d2b209d
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7ba610f2e4910d31928e47b757a61579ee7f76c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c7e77730b31a29354033410b29b060154ccd89b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemruntimeserializationelementignored"></a>System.Runtime.Serialization.ElementIgnored
 System.Runtime.Serialization.ElementIgnored  

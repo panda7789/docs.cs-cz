@@ -1,27 +1,15 @@
 ---
-title: "Integrace transakčních komponent služeb Enterprise Services"
-ms.custom: 
+title: Integrace transakčních komponent služeb Enterprise Services
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b6ce82d100341fec4415cf9fdb7159706b2accc4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8453b4199f5e6eae263ebc3fc1c457429c868d7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Integrace transakčních komponent služeb Enterprise Services
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje mechanismus automatického pro integraci do podnikové služby (viz [integrace s aplikacemi modelu COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Ale můžete chtít flexibilitu při vývoji služeb, které používají interně hostovaným v rámci služby podnikového transakčních komponent. Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] transakce funkce je založená na <xref:System.Transactions> infrastruktury, proces pro integraci služby Enterprise s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je stejná jako pro zadání vzájemná funkční spolupráce mezi <xref:System.Transactions> a Enterprise Služby, jak je uvedeno v [vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +](http://go.microsoft.com/fwlink/?LinkId=94949).  
+Windows Communication Foundation (WCF) poskytuje mechanismus automatického pro integraci do podnikové služby (viz [integrace s aplikacemi modelu COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Ale můžete chtít flexibilitu při vývoji služeb, které používají interně hostovaným v rámci služby podnikového transakčních komponent. Protože funkce transakce WCF je založený na <xref:System.Transactions> infrastruktury, proces pro integraci služby Enterprise s použitím technologie WCF je stejná jako pro zadání vzájemná funkční spolupráce mezi <xref:System.Transactions> a podnikové služby, jak je uvedeno v [Vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +](http://go.microsoft.com/fwlink/?LinkId=94949).  
   
  Zájmu poskytnutí požadované úrovně vzájemné funkční spolupráce mezi příchozí sdružení transakcí a kontextu transakce modelu COM +, musíte vytvořit implementace služby <xref:System.Transactions.TransactionScope> instance a použít na odpovídající hodnotu z <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   

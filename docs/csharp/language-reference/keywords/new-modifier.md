@@ -1,21 +1,14 @@
 ---
-title: "new – modifikátor (Referenční dokumentace jazyka C#)"
+title: new – modifikátor (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4653cdc15415f0601d07cecb78d1c8e492994b11
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: b66cfacc2203e0e529c19b5c566abad6c676f149
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="new-modifier-c-reference"></a>new – modifikátor (Referenční dokumentace jazyka C#)
 Když se použije jako modifikátor deklarace, `new` – klíčové slovo explicitně skryje člena, který je zděděn ze základní třídy. Skrytí zděděného členu odvozenou verzí člena nahradí verzi základní třídy. I když můžete skrýt členy, bez použití `new` modifikátor, zobrazí se upozornění kompilátoru. Pokud používáte `new` explicitně skrýt členem, potlačí toto upozornění.  

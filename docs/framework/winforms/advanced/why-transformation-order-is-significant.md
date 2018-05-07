@@ -1,31 +1,17 @@
 ---
-title: "Proč je důležité pořadí transformace"
-ms.custom: 
+title: Proč je důležité pořadí transformace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - transformations [Windows Forms], order signficance
 ms.assetid: 37d5f9dc-a5cf-4475-aa5d-34d714e808a9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cd3363a1afb8658ed3bb27359259cb752464507d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 943bfa73b54a1ac5d68d21d2bb6e271133db595a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="why-transformation-order-is-significant"></a>Proč je důležité pořadí transformace
 Jediný <xref:System.Drawing.Drawing2D.Matrix> objekt můžete uložit jednu transformaci nebo posloupnost transformace. K tomu se nazývá složený transformace. Matice složené transformace vynásobením matic jednotlivé transformací.  
@@ -35,7 +21,7 @@ Jediný <xref:System.Drawing.Drawing2D.Matrix> objekt můžete uložit jednu tra
   
  Jedním z důvodů, které pořadí je důležité je, že transformace jako otočení a škálování se provádí s ohledem na původ souřadnicový systém. Škálování objekt, který je umístěn na střed v původu vytvoří jiné výsledky než škálování objekt, který byl přesunut od počátku. Podobně otáčení objekt, který je umístěn na střed v původu vytvoří jiné výsledky než otáčení objekt, který byl přesunut od počátku.  
   
- Následující příklad kombinuje Změna velikosti, otáčení a překlad (v tomto pořadí) k vytvoření složeného transformace. Argument <xref:System.Drawing.Drawing2D.MatrixOrder.Append> předaný <xref:System.Drawing.Graphics.RotateTransform%2A> metoda určuje otočení bude sledovat změny velikosti. Podobně, argument <xref:System.Drawing.Drawing2D.MatrixOrder.Append> předaný <xref:System.Drawing.Graphics.TranslateTransform%2A> metoda určuje, že překlad bude postupovat podle otočení. <xref:System.Drawing.Drawing2D.MatrixOrder.Append>a <xref:System.Drawing.Drawing2D.MatrixOrder.Prepend> jsou členy <xref:System.Drawing.Drawing2D.MatrixOrder> výčtu.  
+ Následující příklad kombinuje Změna velikosti, otáčení a překlad (v tomto pořadí) k vytvoření složeného transformace. Argument <xref:System.Drawing.Drawing2D.MatrixOrder.Append> předaný <xref:System.Drawing.Graphics.RotateTransform%2A> metoda určuje otočení bude sledovat změny velikosti. Podobně, argument <xref:System.Drawing.Drawing2D.MatrixOrder.Append> předaný <xref:System.Drawing.Graphics.TranslateTransform%2A> metoda určuje, že překlad bude postupovat podle otočení. <xref:System.Drawing.Drawing2D.MatrixOrder.Append> a <xref:System.Drawing.Drawing2D.MatrixOrder.Prepend> jsou členy <xref:System.Drawing.Drawing2D.MatrixOrder> výčtu.  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.MiscLegacyTopics#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#21)]  

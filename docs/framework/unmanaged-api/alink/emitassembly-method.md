@@ -1,14 +1,6 @@
 ---
-title: "EmitAssembly – metoda"
-ms.custom: 
+title: EmitAssembly – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink2.EmitAssembly
 - EmitAssembly
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 605ff39e-e5cc-4bff-8196-e8d68a9715b9
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f012ea89fec0e64bc1639e6c47fb79249c25411a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1cd1c077a8f2a5fe3b2b46c2e1da2e92b5a797a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="emitassembly-method"></a>EmitAssembly – metoda
 Vytvoří sestavení. Volejte tuto metodu po zavřeny všechny ostatní soubory s výjimkou souboru sestavení. Tato metoda není volána při vytváření nevázaný moduly.  

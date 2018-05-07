@@ -1,24 +1,12 @@
 ---
-title: "Pořadí operátory"
-ms.custom: 
+title: Pořadí operátory
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d5e18a0c0ae959f83192ca6b50c16234eccb0629
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 01807e48c06bce1d451961bb6204d1f8e49d53f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sequence-operators"></a>Pořadí operátory
 Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory pořadí, které mají jednu nebo více následujících vlastností:  
@@ -54,7 +42,7 @@ Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
 ## <a name="differences-from-net"></a>Rozdíl oproti rozhraní .NET  
- Všechny podporované pracovní operátory pořadí podle očekávání v common language runtime (CLR) s výjimkou `Average`. `Average`Vrátí hodnotu stejného typu jako typ se průměr, zatímco v modulu CLR `Average` vždy vrátí hodnotu buď <xref:System.Double> nebo <xref:System.Decimal>. Argument zdroje je explicitně přetypování dvojité / decimal nebo selektor vrhá dvojité / decimal, výsledná SQL bude mít i takové převod a výsledkem bude podle očekávání.  
+ Všechny podporované pracovní operátory pořadí podle očekávání v common language runtime (CLR) s výjimkou `Average`. `Average` Vrátí hodnotu stejného typu jako typ se průměr, zatímco v modulu CLR `Average` vždy vrátí hodnotu buď <xref:System.Double> nebo <xref:System.Decimal>. Argument zdroje je explicitně přetypování dvojité / decimal nebo selektor vrhá dvojité / decimal, výsledná SQL bude mít i takové převod a výsledkem bude podle očekávání.  
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

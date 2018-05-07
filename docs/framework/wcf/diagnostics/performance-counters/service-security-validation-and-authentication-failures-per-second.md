@@ -1,24 +1,14 @@
 ---
-title: "Služba: Počet chyb ověřování zabezpečení za sekundu"
-ms.custom: 
+title: 'Služba: Počet chyb ověřování zabezpečení za sekundu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4af18009-e778-490b-9ba6-e76485285830
-caps.latest.revision: "9"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 85e6dae6b8358799370079c52c3d04e7c3221b80
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0dadf11888e55a96b15e09d5f4b326e8c5e18a02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-security-validation-and-authentication-failures-per-second"></a>Služba: Počet chyb ověřování zabezpečení za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu.  

@@ -1,21 +1,14 @@
 ---
-title: "Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 477b77f4c4768ed98f730b0f5360761b0b54b10c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 10751bb74ed648839fabec67ff7a71e458fb2a44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-custom-http-call-retries-with-exponential-backoff"></a>Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti
 

@@ -1,39 +1,33 @@
 ---
-title: "Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)"
+title: Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - conversions [C#], implicit numeric
 - implicit numeric conversions [C#]
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-caps.latest.revision: "12"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f6b1705dca357fd2a155fc1ea9c7fe0f65bad8a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2d417a2020656f300de0517526742679388f262e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)
 V následující tabulce jsou předdefinované implicitní číselné převody. Implicitní převody může dojít v mnoha situacích, včetně metoda vyvolání a přiřazení příkazy.  
   
 |From|Chcete-li|  
 |----------|--------|  
-|[SByte –](../../../csharp/language-reference/keywords/sbyte.md)|`short`, `int`, `long`, `float`, `double`, nebo`decimal`|  
-|[bajtů](../../../csharp/language-reference/keywords/byte.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo`decimal`|  
-|[krátký](../../../csharp/language-reference/keywords/short.md)|`int`, `long`, `float`, `double`, nebo`decimal`|  
-|[ushort –](../../../csharp/language-reference/keywords/ushort.md)|`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo`decimal`|  
-|[celá čísla](../../../csharp/language-reference/keywords/int.md)|`long`, `float`, `double`, nebo`decimal`|  
-|[uint](../../../csharp/language-reference/keywords/uint.md)|`long`, `ulong`, `float`, `double`, nebo`decimal`|  
-|[dlouhá](../../../csharp/language-reference/keywords/long.md)|`float`, `double`, nebo`decimal`|  
-|[Char](../../../csharp/language-reference/keywords/char.md)|`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo`decimal`|  
-|[plovoucí desetinná čárka](../../../csharp/language-reference/keywords/float.md)|`double`|  
-|[ulong –](../../../csharp/language-reference/keywords/ulong.md)|`float`, `double`, nebo`decimal`|  
+|[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|`short`, `int`, `long`, `float`, `double`, nebo `decimal`|  
+|[byte](../../../csharp/language-reference/keywords/byte.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[short](../../../csharp/language-reference/keywords/short.md)|`int`, `long`, `float`, `double`, nebo `decimal`|  
+|[ushort](../../../csharp/language-reference/keywords/ushort.md)|`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[int](../../../csharp/language-reference/keywords/int.md)|`long`, `float`, `double`, nebo `decimal`|  
+|[uint](../../../csharp/language-reference/keywords/uint.md)|`long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[long](../../../csharp/language-reference/keywords/long.md)|`float`, `double`, nebo `decimal`|  
+|[char](../../../csharp/language-reference/keywords/char.md)|`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[float](../../../csharp/language-reference/keywords/float.md)|`double`|  
+|[ulong](../../../csharp/language-reference/keywords/ulong.md)|`float`, `double`, nebo `decimal`|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -50,7 +44,7 @@ V následující tabulce jsou předdefinované implicitní číselné převody. 
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
  [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  

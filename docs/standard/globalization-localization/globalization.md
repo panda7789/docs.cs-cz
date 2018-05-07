@@ -1,13 +1,7 @@
 ---
 title: Globalizace
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 357d18843af0af2869d0ec98def6c733e51f9a4c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9eb57aa0d6645958691c0003b07db6e8bb844fc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="globalization"></a>Globalizace
 Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje lokalizované rozhraní a místní data pro uživatele ve více jazykových verzí. Před zahájením fáze návrhu, měli byste určit jazykové verze, které bude podporovat aplikace. I když aplikace cílí na jednu kulturu nebo oblasti jako jeho výchozí, můžete navrhnout a zapisuje tak, aby ho lze snadno rozšířit na uživatele ve dalších jazykové verze.  
@@ -45,11 +34,11 @@ Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje l
   
     -   [Použít soubory prostředků](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
   
-    -   [Vyhledávání a porovnávání řetězců](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
+    -   [Vyhledávání a porovnávání řetězců ](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
   
     -   [Testování rovnosti řetězce](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
   
-    -   [Uspořádání a řazení řetězců](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
+    -   [Uspořádání a řazení řetězců ](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
   
     -   [Vyhněte se zřetězení řetězců](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
   

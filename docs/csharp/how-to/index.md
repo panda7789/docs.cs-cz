@@ -1,17 +1,12 @@
 ---
 title: Postup články (Průvodce C#)
 description: Kolekce rychlé tipy a krátké, zaměřuje ukázky kódu
-author: billwagner
-ms.author: wiwagn
 ms.date: 12/20/2017
-ms.topic: article
-ms.prod: .net
-ms.devlang: devlang-csharp
-ms.openlocfilehash: dfb90870233acbe3898e8863f060cd15dd22c3c7
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: b8164abd84647fc9118acc6e0b84e7fd46838fe9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-c"></a>Postup (C#)
 

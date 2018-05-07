@@ -1,23 +1,12 @@
 ---
 title: 57398 - MaxInstancesExceeded
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f943d209-dfeb-43e5-b572-c9a06217936e
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ba48f19de1be3cfd2461e159b91fa365e24ee750
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d644c25ec2dee06eea4a5fb66c30792bb650f252
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="57398---maxinstancesexceeded"></a>57398 - MaxInstancesExceeded
 ## <a name="properties"></a>Vlastnosti  
@@ -27,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|57398|  
 |Klíčová slova|WFServices|  
 |úroveň|Upozornění|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Označuje, že systém dosáhl limit nastavený pro omezení 'MaxConcurrentInstances'.  

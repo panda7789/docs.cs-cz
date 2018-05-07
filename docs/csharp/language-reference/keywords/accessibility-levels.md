@@ -1,21 +1,15 @@
 ---
-title: "Úrovně přístupnosti (Referenční dokumentace jazyka C#)"
+title: Úrovně přístupnosti (Referenční dokumentace jazyka C#)
 ms.date: 12/06/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fed7d6d0eb3eda4d8d2e1847259dd8d23700d3e7
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 085e99dd96074bd0f5bfe9d26d4364033f442404
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessibility-levels-c-reference"></a>Úrovně přístupnosti (Referenční dokumentace jazyka C#)
 

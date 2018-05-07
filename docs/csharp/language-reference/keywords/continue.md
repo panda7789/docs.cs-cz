@@ -1,24 +1,17 @@
 ---
 title: continue (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - continue_CSharpKeyword
 - continue
 helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-caps.latest.revision: 20
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1ace2c90d03593b51b9ea461a47e122c5da1ab81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b3a9a17bb16ded19330cbc880b2e5e7271f269c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="continue-c-reference"></a>continue (Referenční dokumentace jazyka C#)
 `continue` Příkaz předá řízení do další iterace uzavření [při](../../../csharp/language-reference/keywords/while.md), [provést](../../../csharp/language-reference/keywords/do.md), [pro](../../../csharp/language-reference/keywords/for.md), nebo [foreach](../../../csharp/language-reference/keywords/foreach-in.md) příkaz, ve kterém se zobrazí.  
@@ -33,7 +26,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Příkaz BREAK](/cpp/cpp/break-statement-cpp)  
+ [break – příkaz](/cpp/cpp/break-statement-cpp)  
  [Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)

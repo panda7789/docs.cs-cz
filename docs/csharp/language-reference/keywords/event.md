@@ -1,10 +1,6 @@
 ---
 title: event (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - event
 - remove
@@ -13,14 +9,11 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-caps.latest.revision: 28
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f7e7f9f96714f8988eb91d77c63cc4f017d040f5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 55ccabaea4fcb7716378d92964030f7025202e05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="event-c-reference"></a>event (Referenční dokumentace jazyka C#)
 `event` – Klíčové slovo se používá k deklaraci událost v třídě vydavatele.  
@@ -39,10 +32,10 @@ ms.lasthandoff: 11/21/2017
   
 |– Klíčové slovo|Popis|Další informace|  
 |-------------|-----------------|--------------------------|  
-|[statické](../../../csharp/language-reference/keywords/static.md)|Zpřístupní události pro volající kdykoli, i v případě, že neexistuje žádná instance třídy.|[Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)|  
-|[virtuální](../../../csharp/language-reference/keywords/virtual.md)|Umožňuje odvozené třídy k potlačení chování událost pomocí [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo.|[Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)|  
-|[zapečetěná](../../../csharp/language-reference/keywords/sealed.md)|Určuje, že odvozené třídy jej již virtuální.||  
-|[abstraktní](../../../csharp/language-reference/keywords/abstract.md)|Kompilátor nevygeneruje `add` a `remove` bloky přístupového objektu události a proto odvozené třídy musí obsahovat vlastní implementaci.||  
+|[static](../../../csharp/language-reference/keywords/static.md)|Zpřístupní události pro volající kdykoli, i v případě, že neexistuje žádná instance třídy.|[Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)|  
+|[virtual](../../../csharp/language-reference/keywords/virtual.md)|Umožňuje odvozené třídy k potlačení chování událost pomocí [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo.|[Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)|  
+|[sealed](../../../csharp/language-reference/keywords/sealed.md)|Určuje, že odvozené třídy jej již virtuální.||  
+|[abstract](../../../csharp/language-reference/keywords/abstract.md)|Kompilátor nevygeneruje `add` a `remove` bloky přístupového objektu události a proto odvozené třídy musí obsahovat vlastní implementaci.||  
   
  Událost může být deklarován jako statické událost pomocí [statické](../../../csharp/language-reference/keywords/static.md) – klíčové slovo. To zpřístupňuje událost pro volající kdykoli, i v případě, že neexistuje žádná instance třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
@@ -53,9 +46,9 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Přidat](../../../csharp/language-reference/keywords/add.md)  
- [odebrat](../../../csharp/language-reference/keywords/remove.md)  
+ [add](../../../csharp/language-reference/keywords/add.md)  
+ [remove](../../../csharp/language-reference/keywords/remove.md)  
  [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
  [Postupy: kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

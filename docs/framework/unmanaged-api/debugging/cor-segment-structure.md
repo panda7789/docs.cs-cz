@@ -1,14 +1,6 @@
 ---
-title: "COR_SEGMENT – struktura"
-ms.custom: 
+title: COR_SEGMENT – struktura
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - COR_SEGMENT
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 93aeecb9-7fef-4545-8daf-f566dfc47084
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9414aa1c36ba059d9ee1101f6183dc8a669f9e6f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b816087f54e652f07dc791b7d66eb1af8f52f55e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="corsegment-structure"></a>COR_SEGMENT – struktura
 Obsahuje informace o oblasti spravovaná halda paměti.  
@@ -58,7 +46,7 @@ typedef struct _COR_SEGMENT {
 |`heap`|Číslo haldy, ve kterém se nachází oblasti paměti. Další informace naleznete v části Poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_SEGMENTS` Struktura představuje oblast spravovaná halda paměti.  `COR_SEGMENTS`objekty jsou členy [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) kolekce objektu, který je naplněn volání[icordebugprocess5::enumerateheapregions –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md) metoda.  
+ `COR_SEGMENTS` Struktura představuje oblast spravovaná halda paměti.  `COR_SEGMENTS` objekty jsou členy [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) kolekce objektu, který je naplněn volání[icordebugprocess5::enumerateheapregions –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md) metoda.  
   
  `heap` Pole je číslo procesoru, který odpovídá haldě nehlásí. Kolektory uvolňování paměti pracovních stanic jeho hodnota je vždy nula, protože pracovní stanice mají jenom jeden kolekce halda paměti. Pro Kolektory paměti serveru jeho hodnota odpovídá procesoru, který halda je připojen k. Všimněte si, že může existovat více nebo méně uvolňování haldách, než je skutečný procesory z důvodu podrobnosti implementace systému uvolňování paměti.  
   
@@ -69,7 +57,7 @@ typedef struct _COR_SEGMENT {
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  

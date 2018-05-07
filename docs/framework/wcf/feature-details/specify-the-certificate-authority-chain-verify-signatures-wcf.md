@@ -1,38 +1,24 @@
 ---
 title: 'Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - certificates [WCF], specifying the certificate authority certificate chain
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 29637ea7f0a1e533a6735ebfa6f428fe20039e48
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 14f7691046f9512e25006bd6cd02749eed825003
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)
-Když [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obdrží zprávu protokolu SOAP podepsána pomocí certifikátu X.509, ve výchozím nastavení ověřuje, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. K tomu je potřeba vyhledávání v úložišti certifikátů a určení, pokud pro tento certifikační autorita je klasifikován jako důvěryhodný certifikát. Aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] za účelem určení, musí být nainstalován řetězu certifikátů certifikační autority v úložišti certifikátů správné.  
+Když Windows Communication Foundation (WCF) obdrží zprávu protokolu SOAP podepsána pomocí certifikátu X.509, ve výchozím nastavení ověří, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. K tomu je potřeba vyhledávání v úložišti certifikátů a určení, pokud pro tento certifikační autorita je klasifikován jako důvěryhodný certifikát. Aby WCF za účelem určení musí být nainstalován řetězu certifikátů certifikační autority v úložišti certifikátů správné.  
   
 ### <a name="to-install-a-certification-authority-certificate-chain"></a>Chcete-li nainstalovat řetěz certifikátů certifikační autority  
   
--   Pro každý certifikační autoritu, kterou chce příjemce zprávu protokolu SOAP důvěřovat vystavené certifikáty X.509, který ukládání instalace řetězu certifikátů certifikační autority do certifikátu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je nakonfigurován k načtení certifikátů X.509 z.  
+-   Pro každý certifikační autoritu, kterou chce příjemce zprávu protokolu SOAP důvěřovat certifikátů X.509 vystavených, nainstalujte řetězu certifikátů certifikační autority do úložiště certifikátů, že WCF je nakonfigurovaný k načtení certifikátů X.509 z.  
   
-     Například pokud příjemce zprávu protokolu SOAP v úmyslu důvěřovat certifikátů X.509 vystavených společností Microsoft, řetězu certifikátů certifikační autority pro Microsoft musí být nainstalován v certifikátu uložit, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nastavena tak, aby Hledat certifikáty X.509 z. Úložiště certifikátů, ve kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vypadá pro certifikáty X.509 lze zadat v kódu nebo konfigurace. Například můžete zadat v kódu pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda nebo v konfiguraci několika způsoby, včetně [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) .  
+     Například pokud příjemce zprávu protokolu SOAP v úmyslu důvěřovat certifikátů X.509 vystavených společností Microsoft, řetězu certifikátů certifikační autority pro Microsoft musí být nainstalovaný v úložišti certifikátů, který je nastavený WCF a Hledat certifikáty X.509 z. Úložiště certifikátů, ve které WCF hledá certifikáty X.509 lze zadat v kódu nebo konfigurace. Například můžete zadat v kódu pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda nebo v konfiguraci několika způsoby, včetně [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) .  
   
      Protože systém Windows je dodáván s sadu výchozí řetězů certifikátů pro důvěryhodné certifikační autority, nemusí být potřeba instalovat řetěz certifikátů pro všechny certifikačních autorit.  
   
@@ -42,7 +28,7 @@ Když [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obdrží zprávu p
   
     2.  Importujte řetězu certifikátů certifikační autority.  
   
-         V Microsoft Management Console (MMC), otevřete modul snap-in Certifikáty. Pro certifikát úložiště, který [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je nakonfigurován k načtení certifikátů X.509 z vyberte **důvěryhodné kořenové** **certifikačních autorit**složky. V části **důvěryhodné kořenové certifikační autority** složku, klikněte pravým tlačítkem myši **certifikáty**složku, přejděte na příkaz **všechny úlohy**a potom klikněte na **importu** . Zadejte soubor exportovali v kroku.  
+         V Microsoft Management Console (MMC), otevřete modul snap-in Certifikáty. Úložiště certifikátů této WCF je nakonfigurované pro načtení certifikátů X.509 z vyberte **důvěryhodné kořenové** **certifikačních autorit**složky. V části **důvěryhodné kořenové certifikační autority** složku, klikněte pravým tlačítkem myši **certifikáty**složku, přejděte na příkaz **všechny úlohy**a potom klikněte na **importu** . Zadejte soubor exportovali v kroku.  
   
          Další informace o pomocí modulu snap-in Certifikáty konzoly MMC najdete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   

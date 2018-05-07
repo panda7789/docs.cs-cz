@@ -1,24 +1,12 @@
 ---
-title: "4035 – PendingSessionQueueRatio"
-ms.custom: 
+title: 4035 – PendingSessionQueueRatio
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fe40094f-6f2c-4dd8-b872-191c7812118e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e790ab0f0805e16d0609e6ffc211a5437435f381
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c0a64a069ea07085cc28f8e7b3461228ad5d5efe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4035---pendingsessionqueueratio"></a>4035 – PendingSessionQueueRatio
 ## <a name="properties"></a>Vlastnosti  

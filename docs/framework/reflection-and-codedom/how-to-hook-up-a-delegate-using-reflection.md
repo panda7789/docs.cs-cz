@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Připojení delegáta pomocí reflexe"
-ms.custom: 
+title: 'Postupy: Připojení delegáta pomocí reflexe'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - reflection, adding event-handler delegates
 - delegates [.NET Framework], adding event handlers with reflection
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2ff800eb78b07fc79193c2aa8cb71a461be2fc1d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d16c80dacbe71bb9052df1caa65fbd31e433957e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
 Pokud používáte reflexe načíst a spuštění sestavení, nelze použít jazykové funkce jako jazyka C# `+=` operátor nebo Visual Basic [AddHandler – příkaz](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) spojit události. Následující postupy ukazují, jak spojit stávající metodu pro událost získáním všechny potřebné typy prostřednictvím reflexe a postup vytvoření dynamické metody pomocí reflexe emitování a propojte ho až událost.  

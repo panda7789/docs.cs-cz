@@ -1,20 +1,13 @@
 ---
-title: "Delegáti silného typu"
-description: "Naučte se používat delegáty obecných typů deklarovat vlastních typů, při vytváření funkce, které vyžadují delegáti."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Delegáti silného typu
+description: Naučte se používat delegáty obecných typů deklarovat vlastních typů, při vytváření funkce, které vyžadují delegáti.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 564a683d-352b-4e57-8bac-b466529daf6b
-ms.openlocfilehash: 467ba18f8e032b9b3b8f480d4b10c92d0d7ba3b9
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 2e4cc1c7bfa0aaa90f3aaefa0da64c5486a9d10f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strongly-typed-delegates"></a>Delegáti silného typu
 
@@ -82,4 +75,4 @@ To by měl ušetřit čas a minimalizovat počet nových typů, které je potře
 
 V další článek zobrazí se několik běžných vzorů pro práci s Delegáti v praxi.
 
-[Další](delegates-patterns.md)
+[Next](delegates-patterns.md)

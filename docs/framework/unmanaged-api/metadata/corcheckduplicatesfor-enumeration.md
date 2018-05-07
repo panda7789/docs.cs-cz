@@ -1,14 +1,6 @@
 ---
-title: "CorCheckDuplicatesFor – výčet"
-ms.custom: 
+title: CorCheckDuplicatesFor – výčet
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorCheckDuplicatesFor
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: d8ec8d3c-70f7-4cc6-9957-68068fd8f49c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0c5a9376f6d56e2a21ee474e2724ce5eff8f6f63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9cdb1570b682088e92ff7c7a78d84259d02d8512
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="corcheckduplicatesfor-enumeration"></a>CorCheckDuplicatesFor – výčet
 Určuje metadata tokeny, které budou sloužit k duplicitní položky.  
@@ -114,7 +102,7 @@ typedef enum CorCheckDuplicatesFor {
   
  **Záhlaví:** CorHdr.h  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

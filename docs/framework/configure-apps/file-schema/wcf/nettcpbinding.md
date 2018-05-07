@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: f6cbdbb7c5569851055102cfe5d413e0b94376f3
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 0be428ef3b37222e1e8472591d2b54d950bef59f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltnettcpbindinggt"></a>&lt;NetTcpBinding&gt;
 Určuje bezpečné, spolehlivé a optimalizované vazbu vhodný pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje zásobníku runtime komunikace s zabezpečení systému Windows pro zabezpečení zpráv a ověřování, TCP pro doručování zpráv a zprávy v binární kódování.  
@@ -92,7 +92,7 @@ algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes
 ## <a name="remarks"></a>Poznámky  
  Tato vazba generuje běhu komunikačního balíku ve výchozím nastavení, která používá zabezpečení přenosu, TCP pro doručování zpráv a zprávy v binární kódování. Tato vazba je vhodné Windows Communication Foundation (WCF) poskytované systémem volbou pro komunikaci v síti Intranet.  
   
- Výchozí konfiguraci pro `netTcpBinding` je rychlejší než zadaná podle konfigurace `wsHttpBinding`, která je určena pouze pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]- na -[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] komunikace. Chování zabezpečení je možné konfigurovat pomocí volitelné `securityMode` atribut. Použití protokolu WS-ReliableMessaging je možné konfigurovat pomocí volitelné `reliableSessionEnabled` atribut. Ale spolehlivé zasílání zpráv ve výchozím nastavení vypnuté. Obecně platí, HTTP vazby poskytované systémem, jako `wsHttpBinding` a `basicHttpBinding` jsou nakonfigurovány, aby zapnout věcí ve výchozím nastavení, zatímco `netTcpBinding` vazby vypne věcí ve výchozím nastavení tak, že budete muset přihlásit k získat podporu, například pro jednu z WS-* specifikace. To znamená, že výchozí konfiguraci pro TCP je rychlejší při výměně zpráv mezi koncovými body než ty, které ve výchozím nastavení nakonfigurované pro vazby HTTP.  
+ Výchozí konfiguraci pro `netTcpBinding` je rychlejší než zadaná podle konfigurace `wsHttpBinding`, která je určena pouze pro komunikaci WCF. Chování zabezpečení je možné konfigurovat pomocí volitelné `securityMode` atribut. Použití protokolu WS-ReliableMessaging je možné konfigurovat pomocí volitelné `reliableSessionEnabled` atribut. Ale spolehlivé zasílání zpráv ve výchozím nastavení vypnuté. Obecně platí, HTTP vazby poskytované systémem, jako `wsHttpBinding` a `basicHttpBinding` jsou nakonfigurovány, aby zapnout věcí ve výchozím nastavení, zatímco `netTcpBinding` vazby vypne věcí ve výchozím nastavení tak, že budete muset přihlásit k získat podporu, například pro jednu z WS-* specifikace. To znamená, že výchozí konfiguraci pro TCP je rychlejší při výměně zpráv mezi koncovými body než ty, které ve výchozím nastavení nakonfigurované pro vazby HTTP.  
   
 ## <a name="example"></a>Příklad  
  Vazba je zadána v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut `<endpoint>` elementu. Pokud chcete nakonfigurovat netTcpBinding vazby a některá z jeho nastavení změnit, je nutné definovat Konfigurace vazeb. Koncový bod musí odkazovat Konfigurace vazeb s `bindingConfiguration` atribut. V následujícím příkladu je definována konfiguraci vazby.  

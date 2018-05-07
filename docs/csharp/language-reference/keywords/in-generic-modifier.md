@@ -1,20 +1,14 @@
 ---
-title: "in (generický modifikátor) (Referenční dokumentace jazyka C#)"
+title: in (generický modifikátor) (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 2af4e27034af0067e81a52c81991edaf5a5415d8
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 003ce26fe9ba315eefc748a406754026231004b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (generický modifikátor) (Referenční dokumentace jazyka C#)
 

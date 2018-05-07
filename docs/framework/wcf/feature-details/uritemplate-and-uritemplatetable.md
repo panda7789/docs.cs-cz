@@ -1,29 +1,15 @@
 ---
 title: UriTemplate a UriTemplateTable
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b0fedb812cee5cfa1e4c2ff921a78beb2a6c1beb
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 09726af0a124723de025f29927954a2100aebcb4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate a UriTemplateTable
-Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, který své služby reagovat na. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Přidá dva nové třídy pro umožnění vývojáři kontroly nad jejich identifikátory URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> tvoří základ, na základě identifikátoru URI odesílání stroje v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tyto třídy lze také na své vlastní, povolení vývojáři využít šablon a mechanismus mapování URI bez implementace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, který své služby reagovat na. Windows Communication Foundation (WCF) přidá dva nové třídy pro umožnění vývojáři kontroly nad jejich identifikátory URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> tvoří základ, na základě identifikátoru URI odesílání modulu ve službě WCF. Tyto třídy můžete použít taky u své vlastní, což umožňuje vývojářům umožní využít šablon a identifikátor URI mechanismus mapování bez implementace služby WCF.  
   
 ## <a name="templates"></a>Šablony  
  Šablona je způsob, jak popisuje sadu relativní identifikátory URI. Sada šablony URI v následující tabulce ukazuje, jak může být definovaná systémem, který načte různých typů informací o počasí.  
@@ -35,7 +21,7 @@ Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, k
 |Prognóza města|počasí / {stavu} / {města}|  
 |Aktivita prognózy|počasí / {stavu} / {města} / {aktivity}|  
   
- Tato tabulka popisuje sadu strukturálně podobné identifikátory URI. Každá položka je šablona identifikátor URI. Segmenty do složených závorek popisují proměnné. Segmenty není do složených závorek popisují řetězcové literály. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Tříd šablon povolit vývojář trvat příchozí URI, například "/ počasí nebo wa/Praha/prosté", a odpovídat na šablonu, která popisuje, "/weather/ {stavu} / {města} / {aktivity}".  
+ Tato tabulka popisuje sadu strukturálně podobné identifikátory URI. Každá položka je šablona identifikátor URI. Segmenty do složených závorek popisují proměnné. Segmenty není do složených závorek popisují řetězcové literály. Třídy šablon WCF povolit vývojář trvat příchozí URI, například "/ počasí nebo wa/Praha/prosté", a odpovídat na šablonu, která popisuje, "/weather/ {stavu} / {města} / {aktivity}".  
   
 ## <a name="uritemplate"></a>UriTemplate  
  <xref:System.UriTemplate> je třída, který zapouzdřuje šablonu identifikátor URI. Konstruktor přijímá řetězcový parametr, který definuje šablony. Tento řetězec obsahuje šablonu ve formátu popsané v další části. <xref:System.UriTemplate> Třída poskytuje metody, které vám umožňují odpovídat identifikátor URI příchozí do šablony, generovat identifikátor URI ze šablony, načte kolekci názvy proměnných, které jsou použité v šabloně, určete, jestli dvě šablony jsou ekvivalentní a vrátí šablony řetězec.  

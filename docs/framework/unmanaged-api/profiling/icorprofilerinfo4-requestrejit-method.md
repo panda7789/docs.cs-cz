@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo4::RequestReJIT – metoda"
-ms.custom: 
+title: ICorProfilerInfo4::RequestReJIT – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo4.RequestReJIT
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 781ed736-f30c-4816-920e-3552e36542c6
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4da57e95813afa1135482bef7cf6ab50ee6365cf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: be7184e07815ebe222b8ff8736c26fd3879c8777
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfo4requestrejit-method"></a>ICorProfilerInfo4::RequestReJIT – metoda
 Požadavky JIT rekompilace všech instancí určených funkcí.  
@@ -65,14 +53,14 @@ HRESULT RequestReJIT (
 |S_OK|Došlo pokusu o označte všechny metody pro opětovnou kompilaci JIT. Musí implementovat profileru [icorprofilercallback4::rejiterror –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md) metoda k určení, které metody byly úspěšně označen pro opětovnou kompilaci JIT.|  
 |CORPROF_E_CALLBACK4_REQUIRED|Musí implementovat profileru [icorprofilercallback4 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) rozhraní pro toto volání podporovaná.|  
 |CORPROF_E_REJIT_NOT_ENABLED|JIT rekompilace nebylo povoleno. Je nutné povolit JIT rekompilace během inicializace s použitím [icorprofilerinfo::seteventmask –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) metodu a nastavit `COR_PRF_ENABLE_REJIT` příznak.|  
-|E_INVALIDARG|`cFunctions`0, nebo `moduleIds` nebo `methodIds` je `NULL`.|  
+|E_INVALIDARG|`cFunctions` 0, nebo `moduleIds` nebo `methodIds` je `NULL`.|  
 |||  
 |E_OUTOFMEMORY|Modul CLR se nepodařilo dokončit požadavek, protože nedostatku paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
  Volání `RequestReJIT` tak, aby měl modul runtime znovu zkompiluje zadaný sady funkcí. Pak můžete použít kód profileru [icorprofilerfunctioncontrol –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md) rozhraní upravit kód, který se vygeneruje, když jsou překompilovat funkce. Aktuálně prováděné funkce a volání funkce jenom budoucí to nemá vliv. Pokud některé z určených funkcí byl dříve JIT překompilovat, požadavku opětovnou kompilaci je ekvivalentní návrat a nutnosti rekompilace funkce. Pokud chcete zachovat vratnost, když kompilátoru za běhu kompiluje původní verze funkce, považuje pouze původní verze jeho volané pro vložené rozhodnutí. Když JIT kompilátoru znovu zkompiluje funkci, považuje aktuální verze (Rekompilované nebo původní) jeho volané pro vložené.  
   
- Obvykle volá profileru `RequestReJIT` v reakci na vstup uživatele, vyžaduje, aby instrumentace profileru jedné nebo několika metod. `RequestReJIT`obvykle pozastaví modul runtime, aby bylo možné provést některé z svou práci a může potenciálně aktivační události kolekce paměti. Jako takový, by měly volat profileru `RequestReJIT` z vlákna ho dříve vytvořili, a z vlákna vytvořené CLR, aktuálně neprovádí profileru zpětné volání.  
+ Obvykle volá profileru `RequestReJIT` v reakci na vstup uživatele, vyžaduje, aby instrumentace profileru jedné nebo několika metod. `RequestReJIT` obvykle pozastaví modul runtime, aby bylo možné provést některé z svou práci a může potenciálně aktivační události kolekce paměti. Jako takový, by měly volat profileru `RequestReJIT` z vlákna ho dříve vytvořili, a z vlákna vytvořené CLR, aktuálně neprovádí profileru zpětné volání.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -81,7 +69,7 @@ HRESULT RequestReJIT (
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  

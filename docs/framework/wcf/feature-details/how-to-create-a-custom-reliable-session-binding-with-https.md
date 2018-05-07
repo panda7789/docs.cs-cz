@@ -1,24 +1,12 @@
 ---
-title: "Postupy: vytvoření vazby vlastní spolehlivé relace s protokolem HTTPS"
-ms.custom: 
+title: 'Postupy: vytvoření vazby vlastní spolehlivé relace s protokolem HTTPS'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fa772232-da1f-4c66-8c94-e36c0584b549
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e56b54b5d49fcd307821211e7db858299f9f446d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b3699593f783fff1227ec51194956e0cc8577dd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-reliable-session-binding-with-https"></a>Postupy: vytvoření vazby vlastní spolehlivé relace s protokolem HTTPS
 

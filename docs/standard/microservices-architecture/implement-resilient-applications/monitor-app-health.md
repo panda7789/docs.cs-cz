@@ -1,21 +1,14 @@
 ---
-title: "Monitorování stavu"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Monitorování stavu"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Monitorování stavu
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Monitorování stavu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 76821e27613335609527b867a6b94dac551f6235
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 81c4fc7662212bb3c6586a590d87e731220b7b7c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -27,7 +20,7 @@ V typické modelu služby odesílat zprávy o jejich stavu a zobrazují se tyto 
 
 ## <a name="implementing-health-checks-in-aspnet-core-services"></a>Implementace stavu změnami ASP.NET Core services
 
-Při vývoji aplikace ASP.NET Core mikroslužbu nebo webové aplikace, můžete použít knihovny s názvem `HealthChecks` od týmu ASP.NET. Předběžnou verzi je k dispozici v této [úložiště GitHub](https://github.com/dotnet-architecture/HealthChecks).
+Při vývoji aplikace ASP.NET Core mikroslužbu nebo webové aplikace, můžete použít out-of-band knihovny (není oficiální jako součást ASP.NETCore) s názvem `HealthChecks` od týmu ASP.NET. Je k dispozici v této [úložiště GitHub](https://github.com/dotnet-architecture/HealthChecks).
 
 Tato knihovna je snadno použitelný a poskytuje funkce, která umožňují, které jste ověřte, že žádné konkrétní externí prostředek pro vaši aplikaci (například databáze systému SQL Server nebo rozhraní API pro vzdálené) správně funguje. Při použití této knihovny, můžete také určit, co znamená, že je prostředek v pořádku, protože objasníme později.
 
@@ -202,4 +195,4 @@ Nakonec pokud byly ukládání všech datových proudů událostí, můžete Mic
     [*https://www.microsoft.com/en-us/cloud-platform/operations-management-suite*](https://www.microsoft.com/en-us/cloud-platform/operations-management-suite)
 
 >[!div class="step-by-step"]
-[Previous] (implement-circuit-breaker-pattern.md) [Next] (../secure-net-microservices-web-applications/index.md)
+[Předchozí] (implementace okruh dělení pattern.md) [Další] (.. /Secure-NET-microservices-Web-Applications/index.MD)

@@ -1,31 +1,17 @@
 ---
 title: Protokolování událostí ve WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - event logging [WCF]
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4028772caef8e5c0301ab3a6a0bde2f180d821ca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 78ad80188b8428bb718251045ef04ab803862a0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="event-logging-in-wcf"></a>Protokolování událostí ve WCF
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]trasuje interní události v protokolu událostí systému Windows.  
+Windows Communication Foundation (WCF) sleduje interní události v protokolu událostí systému Windows.  
   
 ## <a name="viewing-event-logs"></a>Zobrazení protokolů událostí  
  Ve výchozím nastavení je automaticky povoleno protokolování událostí a neexistuje žádný mechanismus ji zakázat. Události zapsané podle [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] lze zobrazit pomocí prohlížeče událostí. Chcete-li spustit tento nástroj, klikněte na tlačítko **spustit**, klikněte na tlačítko **ovládací panely**, dvakrát klikněte na **nástroje pro správu**a potom dvakrát klikněte na **Prohlížeč událostí**.  

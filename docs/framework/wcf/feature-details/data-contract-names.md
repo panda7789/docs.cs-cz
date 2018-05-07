@@ -1,34 +1,20 @@
 ---
-title: "Názvy kontraktu dat"
-ms.custom: 
+title: Názvy kontraktu dat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data contracts [WCF], naming
 ms.assetid: 31f87e6c-247b-48f5-8e94-b9e1e33d8d09
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 56744318e6ea29350fd02d1cb35e49e566894a23
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18ba9aa1f7af3733acd60924d0aa24ceb1b5126c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-names"></a>Názvy kontraktu dat
-Stejné typy někdy nesdílejí klienta a služby. Stále se můžete předat data do sebe navzájem tak dlouho, dokud kontrakty dat odpovídají na obou stranách. [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md) je založena na kontrakt dat a názvy datových členů, a proto se poskytuje mechanismus pro mapování typů a členů do těchto názvů. Toto téma popisuje pravidla pro pojmenovávání kontrakty dat a také výchozí chování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] infrastruktury při vytváření názvů.  
+Stejné typy někdy nesdílejí klienta a služby. Stále se můžete předat data do sebe navzájem tak dlouho, dokud kontrakty dat odpovídají na obou stranách. [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md) je založena na kontrakt dat a názvy datových členů, a proto se poskytuje mechanismus pro mapování typů a členů do těchto názvů. Toto téma popisuje pravidla pro pojmenovávání kontrakty dat a také výchozí chování infrastrukturu Windows Communication Foundation (WCF), při vytváření názvů.  
   
 ## <a name="basic-rules"></a>Základních pravidel  
  Základní pravidla týkající se pojmenování data, která smlouvy zahrnují:  
@@ -37,7 +23,7 @@ Stejné typy někdy nesdílejí klienta a služby. Stále se můžete předat da
   
 -   Datové členy mít pouze názvy, ale žádné obory názvů.  
   
--   Při zpracování datové kontrakty, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury je malá a velká písmena obory názvů a názvy kontrakty dat a datových členů.  
+-   Při zpracování datové kontrakty, infrastruktura WCF je malá a velká písmena obory názvů a názvy kontrakty dat a datových členů.  
   
 ## <a name="data-contract-namespaces"></a>Obory názvů kontraktu dat  
  Obor názvů kontraktu dat má formu z identifikátor URI (Uniform Resource). Identifikátor URI může být absolutní nebo relativní. Ve výchozím nastavení přiřazené kontrakty dat pro určitý typ oboru názvů, který pochází z běžných language runtime (CLR) obor názvů typu.  
@@ -45,7 +31,7 @@ Stejné typy někdy nesdílejí klienta a služby. Stále se můžete předat da
  Ve výchozím nastavení jsou všechny daném oboru názvů CLR (ve formátu *Clr.Namespace*) je namapovaný na obor názvů "http://schemas.datacontract.org/2004/07/Clr.Namespace". Pokud chcete přepsat toto výchozí nastavení, použít <xref:System.Runtime.Serialization.ContractNamespaceAttribute> atribut celého modulu nebo sestavení. Můžete taky řídit obor názvů kontraktu dat pro každý typ, nastavte <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>.  
   
 > [!NOTE]
->  Obor názvů "http://schemas.microsoft.com/2003/10/Serialization" je vyhrazena a nelze použít jako obor názvů kontraktu dat.  
+>  "http://schemas.microsoft.com/2003/10/Serialization"Obor názvů je vyhrazena a nelze použít jako obor názvů kontraktu dat.  
   
 > [!NOTE]
 >  Nejde přepsat výchozí obor názvů v typy kontraktů dat, které obsahují `delegate` deklarace.  

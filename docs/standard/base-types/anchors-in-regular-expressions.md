@@ -1,13 +1,7 @@
 ---
-title: "Kotvy v regulárních výrazech"
-ms.custom: 
+title: Kotvy v regulárních výrazech
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,18 +15,13 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e328c294a9b4ca3047c4ad1750ddedf64bac2218
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 2cbf0ceb7d5f8e56955f8989e5eb4efba99540bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a> Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí dojít ke shodě. Pokud použijete na ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo využívat znaků; Vypadá to shody na určené pozici. Například `^` Určuje, že porovnávání musí začít na začátku řádku nebo řetězec. Proto s regulárním výrazem `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. Následující tabulka uvádí ukotvení podporované regulární výrazy v rozhraní .NET.  

@@ -1,22 +1,16 @@
 ---
 title: Postupy pro C#
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - walkthroughs [C#]
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-caps.latest.revision: "28"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 92aef08636b7bba3a61367f8a707c82c75f8d3d3
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: aaf57e666faf18010c7f267f96e6958c73e58bcf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří dobrým místem, kde spustit získávání informací o produktu nebo oblasti určité funkce.  
@@ -75,5 +69,5 @@ Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří d
  Obsahuje podrobné příklady nejčastější scénáře nasazení.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../csharp/programming-guide/index.md)  
  [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-samples)

@@ -1,10 +1,6 @@
 ---
-title: "Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio"
+title: 'Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio'
 ms.date: 09/29/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - cs.build.commandline
 helpviewer_keywords:
@@ -19,14 +15,11 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 298006629bedf33e4d2521a88c010fcce824585c
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 0935cb62244691af7fa450fef9c1ab8f6c616579
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio
 

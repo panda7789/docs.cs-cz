@@ -1,13 +1,6 @@
 ---
-title: "pInvokeStackImbalance – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: pInvokeStackImbalance – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - signatures, platform invoke
 - stack depth
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - PInvokeStackImbalance MDA
 - managed debugging assistants (MDAs), platform invoke
 ms.assetid: 34ddc6bd-1675-4f35-86aa-de1645d5c631
-caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b9da05a84568a6168ed9f450afa48aa6864ed575
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9938db3f4a3d054fde52139c166fb6a2e2a402df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pinvokestackimbalance-mda"></a>pInvokeStackImbalance – pomocník spravovaného ladění (MDA)
 `pInvokeStackImbalance` Pomocník spravovaného ladění (MDA) se aktivuje, když modulu CLR zjistí, že hloubka zásobníku po volání nespravovaného neodpovídá očekávané zásobníku hloubka, danou konvence volání, které jsou zadané v <xref:System.Runtime.InteropServices.DllImportAttribute> atribut společně s prohlášení o parametrech v spravované podpis.  

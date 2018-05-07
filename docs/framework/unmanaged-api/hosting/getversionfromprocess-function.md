@@ -1,14 +1,6 @@
 ---
-title: "GetVersionFromProcess – funkce"
-ms.custom: 
+title: GetVersionFromProcess – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - GetVersionFromProcess
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: a9f7f824-64a1-408d-8607-91c7f19d21fe
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: db5054ab9b71eb93005fc0315acba82d807487ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b57d04a8a49371872c679a331b5ae9c45dce797
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess – funkce
 Získá číslo verze common language runtime (CLR), která souvisí s popisovačem určený proces.  
@@ -70,8 +58,8 @@ HRESULT GetVersionFromProcess (
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`pVersion`má hodnotu null a `cchBuffer` nemá hodnotu null, nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess`není platný popisovač procesu.<br /><br /> -nebo-<br /><br /> Modul CLR není načtená.|  
-|ERROR_INSUFFICIENT_BUFFER|`cchBuffer`je null nebo být menší než délka řetězec verze.|  
+|E_INVALIDARG|`pVersion` má hodnotu null a `cchBuffer` nemá hodnotu null, nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess` není platný popisovač procesu.<br /><br /> -nebo-<br /><br /> Modul CLR není načtená.|  
+|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` je null nebo být menší než délka řetězec verze.|  
 |E_NOTIMPL|Tato metoda není k dispozici v operačním systému Microsoft Windows 95, Microsoft Windows 98 nebo Microsoft Windows Millennium Edition.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -81,7 +69,7 @@ HRESULT GetVersionFromProcess (
   
  **Knihovna:** MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  

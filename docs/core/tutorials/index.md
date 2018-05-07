@@ -4,16 +4,11 @@ description: Výukové programy pro učení .NET Core k sestavení aplikace a kn
 author: richlander
 ms.author: mairaw
 ms.date: 03/16/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 251c03e278b56922efaf912f9f5692114929549d
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 858fc0b95772d4be14363a1dbcfcd533040b8040
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-tutorials"></a>.NET core kurzy
 

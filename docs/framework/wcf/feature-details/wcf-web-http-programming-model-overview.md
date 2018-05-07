@@ -1,42 +1,28 @@
 ---
 title: Přehled modelu webového programování HTTP služby WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-caps.latest.revision: 45
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f617aa68a052b60933db2dc4b2051c910af6b9b9
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 2c3498857c7c0e69c3678ba03f94c14f9b6d8e67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Programovací model WEB HTTP poskytuje základní prvky potřebné k vytvoření webové služby HTTP s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEBOVÉ služby HTTP jsou navržené tak, ke kterým přistupují širokou škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  
+Programovací model Windows Communication Foundation (WCF) WEB HTTP poskytuje základní prvky potřebné k vytvoření webové služby HTTP s použitím technologie WCF. Služby WCF WEB HTTP jsou navržené tak, ke kterým přistupují širokou škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  
   
--   **Identifikátory URI a zpracování URI** identifikátory URI hrají ústřední roli v návrhu webové služby HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Webového programování modelu používá HTTP <xref:System.UriTemplate> a <xref:System.UriTemplateTable> třídy nabízí možnosti zpracování identifikátor URI.  
+-   **Identifikátory URI a zpracování URI** identifikátory URI hrají ústřední roli v návrhu webové služby HTTP. WCF WEB HTTP, používá model programování <xref:System.UriTemplate> a <xref:System.UriTemplateTable> třídy nabízí možnosti zpracování identifikátor URI.  
   
--   **Podpora pro operace GET a POST** webové služby HTTP Ujistěte se, použijte příkaz GET pro načtení dat, kromě různé vyvolání příkazy pro úpravu dat a vzdálené volání. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Webového programování modelu používá HTTP <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> přidružit operací služby GET a další příkazy HTTP jako PUT, POST a odstraňovat.  
+-   **Podpora pro operace GET a POST** webové služby HTTP Ujistěte se, použijte příkaz GET pro načtení dat, kromě různé vyvolání příkazy pro úpravu dat a vzdálené volání. WCF WEB HTTP, používá model programování <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> přidružit operací služby GET a další příkazy HTTP jako PUT, POST a odstraňovat.  
   
--   **Více formátů data** stylu Web services zpracovat mnoho typů dat kromě protokolu SOAP zprávy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Webového programování modelu používá HTTP <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> pro podporu mnoha různých datových formátů včetně dokumentů XML, JSON datový objekt a proudy binární obsah, jako jsou bitové kopie, video soubory nebo prostý text.  
+-   **Více formátů data** stylu Web services zpracovat mnoho typů dat kromě protokolu SOAP zprávy. WCF WEB HTTP, používá model programování <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> pro podporu mnoha různých datových formátů včetně dokumentů XML, JSON datový objekt a proudy binární obsah, jako jsou bitové kopie, video soubory nebo prostý text.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP programovací model rozšiřuje rozsah [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro scénáře styl webové stránky, které zahrnují HTTP webové služby, služby AJAX a JSON a informační kanály syndikace (ATOM/RSS). Další informace o službách AJAX a JSON najdete v tématu [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md). Další informace o syndikace najdete v tématu [syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md).  
+ Programovací model WCF WEB HTTP rozšiřuje rozsah WCF tak, aby pokrýval scénáře webové stylu, které zahrnují HTTP webové služby, služby AJAX a JSON a informační kanály syndikace (ATOM/RSS). Další informace o službách AJAX a JSON najdete v tématu [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md). Další informace o syndikace najdete v tématu [syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md).  
   
  Neexistují žádná další omezení na typy dat, která lze vrátit ze HTTP webové služby. Jakýkoli serializovatelný typ mohou být vráceny z operace HTTP webové služby. Webový prohlížeč, který je omezení toho, jaká data typy lze zadat v adrese URL vyvolejte, protože mohou být operace HTTP webové služby. Další informace o jaké typy jsou podporovány ve výchozím nastavení najdete v článku **UriTemplate parametrů řetězce dotazu a adresy URL** části níže. Výchozí chování lze změnit tím, že poskytuje vlastní T:System.ServiceModel.Dispatcher.QueryStringConverter implementace, která určuje, jak převést parametry zadané v adrese URL skutečný parametr typu. Další informace najdete v tématu <xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
->  Služby, které jsou napsané pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model WEB HTTP nepoužívejte protokolu SOAP zprávy. Protože protokolu SOAP se nepoužívá, funkce zabezpečení poskytované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nelze použít. Můžete ale použít zabezpečení na základě přenosu hostováním služby prostřednictvím protokolu HTTPS. Další informace o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+>  Služby, které jsou napsané pomocí programovacího modelu WCF WEB HTTP nepoužívejte protokolu SOAP zprávy. Protože protokolu SOAP se nepoužívá, nelze použít funkce zabezpečení poskytované službou WCF. Můžete ale použít zabezpečení na základě přenosu hostováním služby prostřednictvím protokolu HTTPS. Další informace o zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
 > [!WARNING]
 >  Instalace rozšíření WebDAV pro službu IIS může způsobit vrátí chybu HTTP 405 jako protokol WebDAV rozšíření pokusí zpracovat všechny požadavky PUT HTTP webové služby. Chcete-li vyřešit tento problém můžete odinstalovat rozšíření WebDAV nebo zakázat rozšíření WebDAV pro svůj web. Další informace najdete v tématu [služby IIS a protokolu WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
@@ -64,12 +50,12 @@ ms.lasthandoff: 04/30/2018
   
 -   `Bind`() a `Match`() jsou inverses, takže můžete volat `Match`( `Bind`(x)) a vraťte se stejné prostředí, které jste začali s.  
   
- Existují mnohokrát (hlavně na serveru, kde odeslání požadavek na operaci služby podle identifikátoru URI je nutné) Chcete-li ke sledování sadu <xref:System.UriTemplate> objekty v datová struktura, která můžete nezávisle se vztahují na všechny uzavřeného šablony. <xref:System.UriTemplateTable> představuje sadu šablony URI a vybere nejlepší shodu určitou sadu šablon a kandidátem identifikátor URI. Toto není přidružený žádné konkrétní sadu síťových protokolů ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuté), můžete použít, kdykoli je to nutné.  
+ Existují mnohokrát (hlavně na serveru, kde odeslání požadavek na operaci služby podle identifikátoru URI je nutné) Chcete-li ke sledování sadu <xref:System.UriTemplate> objekty v datová struktura, která můžete nezávisle se vztahují na všechny uzavřeného šablony. <xref:System.UriTemplateTable> představuje sadu šablony URI a vybere nejlepší shodu určitou sadu šablon a kandidátem identifikátor URI. Abyste mohli používat, kdykoli je to nutné, to není přidružený žádné konkrétní sadu síťových protokolů (součást WCF).  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Model služby využívá <xref:System.UriTemplate> a <xref:System.UriTemplateTable> přidružit sadu identifikátory URI popsaného operací služby <xref:System.UriTemplate>. Operace služby je přidružen <xref:System.UriTemplate>, buď pomocí <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute>. Další informace o <xref:System.UriTemplate> a <xref:System.UriTemplateTable>, najdete v části [UriTemplate a UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
+ Model služby WCF využívá <xref:System.UriTemplate> a <xref:System.UriTemplateTable> přidružit sadu identifikátory URI popsaného operací služby <xref:System.UriTemplate>. Operace služby je přidružen <xref:System.UriTemplate>, buď pomocí <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute>. Další informace o <xref:System.UriTemplate> a <xref:System.UriTemplateTable>, najdete v části [UriTemplate a UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
   
 ## <a name="webget-and-webinvoke-attributes"></a>WebGet a WebInvoke atributy  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Ujistěte se, webové služby HTTP použití příkazů načtení (třeba HTTP GET) kromě různé vyvolání operace (například HTTP POST, PUT a DELETE). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Programovací model WEB HTTP umožňuje vývojářům služby ovládacího prvku na obou šablonu identifikátoru URI a akci spojenou s jejich operací služby pomocí <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute>. <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> povolit vám umožňují řídit, jak jednotlivé operace váže k identifikátory URI a metody HTTP přidružený tyto identifikátory URI. Například přidání <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> v následujícím kódu.  
+ Ujistěte se, služby WCF WEB HTTP použití příkazů načtení (třeba HTTP GET) kromě různé vyvolání operace (například HTTP POST, PUT a DELETE). Programovací model WCF WEB HTTP umožňuje vývojářům služby ovládacího prvku na obou šablonu identifikátoru URI a akci spojenou s jejich operací služby pomocí <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute>. <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> povolit vám umožňují řídit, jak jednotlivé operace váže k identifikátory URI a metody HTTP přidružený tyto identifikátory URI. Například přidání <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> v následujícím kódu.  
   
 ```  
 [ServiceContract]  
@@ -109,7 +95,7 @@ interface ICustomer
 }  
 ```  
   
- Zobrazíte kompletní ukázka [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, která používá [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webové HTTP programovací model najdete v tématu [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
+ Služby WCF, která používá programovací model WCF WEB HTTP ucelenou ukázku najdete v sekci [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
   
 ## <a name="uritemplate-query-string-parameters-and-urls"></a>Parametrů řetězce dotazu UriTemplate a adresy URL  
  Styl webové služby lze volat z webového prohlížeče zadáním adresy URL, která souvisí s operaci služby. Tyto operace služby může trvat parametrů řetězce dotazu, které je třeba zadat ve formátu řetězce v rámci adresy URL. Následující tabulka uvádí typy, které lze předat v rámci adresy URL a formát použitý.  
@@ -138,7 +124,7 @@ interface ICustomer
 |Typy, které mají `TypeConverterAttribute` typ, můžete převést do a z řetězcová reprezentace.|Závisí na převaděč typů.|  
   
 ## <a name="formats-and-the-wcf-web-http-programming-model"></a>Formáty a programovací Model WCF WEB HTTP  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP programovací model obsahuje nové funkce pro práci s mnoha různých datových formátů. Ve vrstvě vazbu <xref:System.ServiceModel.WebHttpBinding> lze číst a zapisovat následující různé druhy dat:  
+ Programovací model WCF WEB HTTP obsahuje nové funkce pro práci s mnoha různých datových formátů. Ve vrstvě vazbu <xref:System.ServiceModel.WebHttpBinding> lze číst a zapisovat následující různé druhy dat:  
   
 -   XML  
   
@@ -146,12 +132,12 @@ interface ICustomer
   
 -   Neprůhledné binární datové proudy  
   
- To znamená [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model WEB HTTP dokáže zpracovat libovolný typ dat, ale můžete být programové ošetření <xref:System.IO.Stream>.  
+ To znamená programovací model WCF WEB HTTP dokáže zpracovat libovolný typ dat, ale můžete být programové ošetření <xref:System.IO.Stream>.  
   
  [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] poskytuje podporu pro data JSON (AJAX) a také informační kanály syndikace (včetně ATOM a RSS). Další informace o těchto funkcích najdete v tématu [WCF Web HTTP formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md) a [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md).  
   
 ## <a name="wcf-web-http-programming-model-and-security"></a>Programovací Model WCF WEB HTTP a zabezpečení  
- Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací model WEB HTTP nepodporuje WS-* protokoly, jediný způsob, jak zabezpečit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webové služby HTTP je službu vystavit přes HTTPS pomocí protokolu SSL. Další informace o nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)], najdete v části [implementaci protokolu SSL ve službě IIS](http://go.microsoft.com/fwlink/?LinkId=131613)  
+ Protože programovací model WCF WEB HTTP nepodporuje WS-* protokoly, jediný způsob, jak zabezpečit webové služby WCF HTTP je službu vystavit přes HTTPS pomocí protokolu SSL. Další informace o nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)], najdete v části [implementaci protokolu SSL ve službě IIS](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>Řešení potíží s WCF WEB HTTP, programovací Model  
  Při volání metody WCF WEB HTTP services pomocí <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> k vytvoření kanálu, <xref:System.ServiceModel.Description.WebHttpBehavior> používá <xref:System.ServiceModel.EndpointAddress> nastavit i když soubor konfigurace jiné <xref:System.ServiceModel.EndpointAddress> je předán <xref:System.ServiceModel.Channels.ChannelFactoryBase%601>.  

@@ -1,13 +1,7 @@
 ---
-title: "Asynchronní volání synchronních metod"
-ms.custom: 
+title: Asynchronní volání synchronních metod
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -26,18 +20,13 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET Framework], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e7e6f402d9423a8ae1ee464499f1b794785c2b06
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cbe0178033338754c9e412dfcac993f042d943d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Asynchronní volání synchronních metod
 Rozhraní .NET Framework umožňuje libovolné metody asynchronní volání. K tomu můžete definovat delegáta se stejným podpisem jako metodu, kterou chcete volat; modul common language runtime automaticky definuje `BeginInvoke` a `EndInvoke` metody pro tento delegát s odpovídajícími podpisy.  
@@ -45,7 +34,7 @@ Rozhraní .NET Framework umožňuje libovolné metody asynchronní volání. K t
 > [!NOTE]
 >  Volá asynchronní delegáta, konkrétně `BeginInvoke` a `EndInvoke` metody, nejsou podporovány v rozhraní .NET Compact Framework.  
   
- `BeginInvoke` Metoda iniciuje asynchronní volání. Má stejné parametry jako metodu, kterou chcete provést asynchronně plus dva další volitelné parametry. První parametr je <xref:System.AsyncCallback> delegáta, který odkazuje na metodu, která se má volat po dokončení asynchronního volání. Druhý parametr je objekt definovaný uživatelem, který předává informace do metoda zpětného volání. `BeginInvoke`Vrátí okamžitě a nečeká na dokončení asynchronního volání. `BeginInvoke`Vrátí <xref:System.IAsyncResult>, které lze použít pro monitorování průběhu asynchronního volání.  
+ `BeginInvoke` Metoda iniciuje asynchronní volání. Má stejné parametry jako metodu, kterou chcete provést asynchronně plus dva další volitelné parametry. První parametr je <xref:System.AsyncCallback> delegáta, který odkazuje na metodu, která se má volat po dokončení asynchronního volání. Druhý parametr je objekt definovaný uživatelem, který předává informace do metoda zpětného volání. `BeginInvoke` Vrátí okamžitě a nečeká na dokončení asynchronního volání. `BeginInvoke` Vrátí <xref:System.IAsyncResult>, které lze použít pro monitorování průběhu asynchronního volání.  
   
  `EndInvoke` Metoda načítá výsledek asynchronního volání. Může být volána kdykoli po `BeginInvoke`. Pokud asynchronního volání nebyla dokončena, `EndInvoke` blokuje volající vlákno, dokud nebude dokončena. Parametry `EndInvoke` zahrnují `out` a `ref` parametry (`<Out>` `ByRef` a `ByRef` v jazyce Visual Basic) metody, která se má provést asynchronně, a <xref:System.IAsyncResult> vrácený `BeginInvoke`.  
   
@@ -66,7 +55,7 @@ Rozhraní .NET Framework umožňuje libovolné metody asynchronní volání. K t
 >  Bez ohledu na to, jaké metody můžete použít, vždy volat `EndInvoke` na dokončení asynchronního volání.  
   
 ## <a name="defining-the-test-method-and-asynchronous-delegate"></a>Definování testovací metoda a asynchronní delegáta  
- Příklady kódu ukazují různých způsobů volání stejnou metodu dlouho běžící `TestMethod`, asynchronně. `TestMethod` Metoda zobrazí zprávu konzoly pro zobrazení, zahájení zpracování, v režimu spánku několik sekund a pak ukončí. `TestMethod`má `out` parametr k předvedení způsobu, jakým tyto parametry jsou přidány do signatur `BeginInvoke` a `EndInvoke`. Dokáže zpracovat `ref` parametry podobně.  
+ Příklady kódu ukazují různých způsobů volání stejnou metodu dlouho běžící `TestMethod`, asynchronně. `TestMethod` Metoda zobrazí zprávu konzoly pro zobrazení, zahájení zpracování, v režimu spánku několik sekund a pak ukončí. `TestMethod` má `out` parametr k předvedení způsobu, jakým tyto parametry jsou přidány do signatur `BeginInvoke` a `EndInvoke`. Dokáže zpracovat `ref` parametry podobně.  
   
  Následující příklad kódu ukazuje definici `TestMethod` a delegáta s názvem `AsyncMethodCaller` který lze použít k volání `TestMethod` asynchronně. Kompilace ukázky kódu, musí obsahovat definice pro `TestMethod` a `AsyncMethodCaller` delegovat.  
   
@@ -75,7 +64,7 @@ Rozhraní .NET Framework umožňuje libovolné metody asynchronní volání. K t
  [!code-vb[AsyncDelegateExamples#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]  
   
 ## <a name="waiting-for-an-asynchronous-call-with-endinvoke"></a>Čekání na asynchronní volání s EndInvoke –  
- Nejjednodušší způsob, jak provedení metody asynchronně je spustit provedení metody voláním delegáta `BeginInvoke` metoda, některé pracovat na hlavní vlákno a pak zavolají delegáta `EndInvoke` metoda. `EndInvoke`volající vlákno mohou blokovat, protože nevrací až po dokončení asynchronního volání. To je dobrý technika pro použití s soubor nebo síťové operace.  
+ Nejjednodušší způsob, jak provedení metody asynchronně je spustit provedení metody voláním delegáta `BeginInvoke` metoda, některé pracovat na hlavní vlákno a pak zavolají delegáta `EndInvoke` metoda. `EndInvoke` volající vlákno mohou blokovat, protože nevrací až po dokončení asynchronního volání. To je dobrý technika pro použití s soubor nebo síťové operace.  
   
 > [!IMPORTANT]
 >  Protože `EndInvoke` mohou blokovat, můžete by měly nikdy volat z vlákna, které služeb uživatelské rozhraní.  
@@ -114,7 +103,7 @@ Rozhraní .NET Framework umožňuje libovolné metody asynchronní volání. K t
   
 -   Informace o stavu, který je předán `BeginInvoke` je formátovací řetězec, který používá metoda zpětného volání k formátování zprávu výstup. Protože je předána jako typ <xref:System.Object>, informace o stavu musí před použitím přetypovat na typ správné.  
   
--   Zpětné volání se provádí na <xref:System.Threading.ThreadPool> přístup z více vláken. <xref:System.Threading.ThreadPool>vlákna jsou vlákna na pozadí, které by neměly být aplikace spuštěna pokud hlavní vlákno skončí, takže hlavní vlákno v příkladu má do režimu spánku dostatečně dlouhou dobu na dokončení zpětného volání.  
+-   Zpětné volání se provádí na <xref:System.Threading.ThreadPool> přístup z více vláken. <xref:System.Threading.ThreadPool> vlákna jsou vlákna na pozadí, které by neměly být aplikace spuštěna pokud hlavní vlákno skončí, takže hlavní vlákno v příkladu má do režimu spánku dostatečně dlouhou dobu na dokončení zpětného volání.  
   
  [!code-cpp[AsyncDelegateExamples#5](../../../samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/callback.cpp#5)]
  [!code-csharp[AsyncDelegateExamples#5](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/callback.cs#5)]

@@ -1,13 +1,6 @@
 ---
-title: "Přehled 3D transformací"
-ms.custom: 
+title: Přehled 3D transformací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - 3-D transformations
 - transformations [WPF], 3-D
 ms.assetid: e45e555d-ac1e-4b36-aced-e433afe7f27f
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7b45c2c12393f296f916eaf8ea3f912958b54b09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0fb859905327b30c0ea509e5d07072b81dcf30e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3-d-transformations-overview"></a>Přehled 3D transformací
 Toto téma popisuje postup použití transformace na 3D modely v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] grafika systému. Transformace umožňuje vývojářům změnit umístění, změnit velikost a orientaci modely beze změny základní hodnoty, které je definovat.  
@@ -49,7 +37,7 @@ Porovnání souřadnicový systém
 ## <a name="translation-transformations"></a>Překlad transformace  
  3D transformace dědí z abstraktní základní třída <xref:System.Windows.Media.Media3D.Transform3D>; zahrnují tříd afinní transformace <xref:System.Windows.Media.Media3D.TranslateTransform3D>, <xref:System.Windows.Media.Media3D.ScaleTransform3D>, a <xref:System.Windows.Media.Media3D.RotateTransform3D>. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 3D systém také poskytuje <xref:System.Windows.Media.Media3D.MatrixTransform3D> třídu, která vám umožní zadat stejné transformace v operacích přesnější matice.  
   
- <xref:System.Windows.Media.Media3D.TranslateTransform3D>Přesune všechny body v Model3D ve směru posunutí vektoru zadáte pomocí <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetX%2A>, <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetY%2A>, a <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetZ%2A> vlastnosti. Například uveden jednoho vrcholu datovou krychli na (2,2,2), je posunutí vektor (0,1.6,1) by přesuňte této vrchol (2,2,2) (2,3.6,3). Vrchol datové krychle je stále místa (2,2,2) v modelu, ale nyní toto místo modelu došlo ke změně jeho relaci místa na světě tak, aby místo (2,2,2) v modelu (2,3.6,3) v prostoru world.  
+ <xref:System.Windows.Media.Media3D.TranslateTransform3D> Přesune všechny body v Model3D ve směru posunutí vektoru zadáte pomocí <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetX%2A>, <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetY%2A>, a <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetZ%2A> vlastnosti. Například uveden jednoho vrcholu datovou krychli na (2,2,2), je posunutí vektor (0,1.6,1) by přesuňte této vrchol (2,2,2) (2,3.6,3). Vrchol datové krychle je stále místa (2,2,2) v modelu, ale nyní toto místo modelu došlo ke změně jeho relaci místa na světě tak, aby místo (2,2,2) v modelu (2,3.6,3) v prostoru world.  
   
  ![Obrázek překlad](../../../../docs/framework/wpf/graphics-multimedia/media/transforms-translate.png "převede transformací")  
 Překlad s posunem  
@@ -59,7 +47,7 @@ Překlad s posunem
  [!code-xaml[animation3dgallery_snip#Translation3DAnimationExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/Translation3DAnimationExample.xaml#translation3danimationexamplewholepage)]  
   
 ## <a name="scale-transformations"></a>Škálování transformace  
- <xref:System.Windows.Media.Media3D.ScaleTransform3D>Změní měřítko modelu pomocí zadaného škálování vektoru nese odkaz centrálního bodu. Zadejte uniform škálování, které se stejnou hodnotou v osy X, Y a chcete-li změnit velikost modelu úměrně škáluje modelu. Například nastavení pro transformaci <xref:System.Windows.Media.ScaleTransform.ScaleX%2A>, <xref:System.Windows.Media.ScaleTransform.ScaleY%2A>, a <xref:System.Windows.Media.Media3D.ScaleTransform3D.ScaleZ%2A> vlastnosti 0,5 poloviny velikost modelu; nastavení stejné vlastnosti 2 zdvojnásobí jeho měřítka ve všechny tři osy.  
+ <xref:System.Windows.Media.Media3D.ScaleTransform3D> Změní měřítko modelu pomocí zadaného škálování vektoru nese odkaz centrálního bodu. Zadejte uniform škálování, které se stejnou hodnotou v osy X, Y a chcete-li změnit velikost modelu úměrně škáluje modelu. Například nastavení pro transformaci <xref:System.Windows.Media.ScaleTransform.ScaleX%2A>, <xref:System.Windows.Media.ScaleTransform.ScaleY%2A>, a <xref:System.Windows.Media.Media3D.ScaleTransform3D.ScaleZ%2A> vlastnosti 0,5 poloviny velikost modelu; nastavení stejné vlastnosti 2 zdvojnásobí jeho měřítka ve všechny tři osy.  
   
  ![Uniform objekt ScaleTransform3D](../../../../docs/framework/wpf/graphics-multimedia/media/threecubes-uniformscale-1.png "threecubes_uniformscale_1")  
 Příklad ScaleVector  
@@ -87,7 +75,7 @@ Otočení s nové centrum zadaný
   
  Otočit model "místo", zadejte jako střed otáčení skutečné center modelu. Protože geometry je obvykle modelován o původu, nejčastěji získáte očekávaný výsledek sadu transformace tak, že první změna velikosti modelu (škálování ji), potom nastavení její orientace (otáčení ho) a nakonec ani ji přesunout do požadovaného umístění ( Převod ji).  
   
- ![Rotaci kolem 60 stupňů v x & č. 45; a y & č. 45; osy](../../../../docs/framework/wpf/graphics-multimedia/media/twocubes-rotation2axes-1.png "twocubes_rotation2axes_1")  
+ ![Otočení o 60 stupňů v x&#45; a y&#45;osy](../../../../docs/framework/wpf/graphics-multimedia/media/twocubes-rotation2axes-1.png "twocubes_rotation2axes_1")  
 Příklad otočení  
   
  Osy úhel otočení fungovat i pro statické transformace a některé animace. Zvažte však otáčení model 60 stupňů okolo osy X, potom 45 stupňů kolem osy Z datové krychle. Můžete popsat Tato transformace jako dva samostatné afinní transformace nebo matice. Však může být obtížné plynule animace rotaci kolem definované tímto způsobem. I když počáteční a koncová pozice modelu vypočítávají podle buď přístup jsou stejné, jsou u neví zprostředkující pozic provedenou modelu. Quaternions představují alternativní způsob výpočetní interpolace mezi počáteční a koncová rotaci kolem.  

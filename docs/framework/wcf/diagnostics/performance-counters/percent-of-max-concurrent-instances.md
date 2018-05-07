@@ -1,24 +1,12 @@
 ---
-title: "Procenta maximálního počtu současných instancí"
-ms.custom: 
+title: Procenta maximálního počtu současných instancí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8228c15c-51ee-483d-b28b-e1f5c0ac643b
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8b031d2837f28b7324638f5d3c0f4ac84faac3a4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 033bb7eb4f3cb37f65e79d154c0bac2dcfdfd434
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="percent-of-max-concurrent-instances"></a>Procenta maximálního počtu současných instancí
 Název čítače: Procento maximálního počtu současných instancí  

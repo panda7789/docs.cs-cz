@@ -1,25 +1,17 @@
 ---
 title: Řešení potíží s ovládacím prvkem DataRepeater (Visual Studio)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - DataRepeater, troubleshooting
 ms.assetid: c0ab9469-eced-4f52-aa18-4bd8dd4f1a9a
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2d630dbf8601eeddd5ce3ea02696891a1087f71f
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 092bbe89bb73a40dee7161f014d40a581b0ddc06
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-the-datarepeater-control-visual-studio"></a>Řešení potíží s ovládacím prvkem DataRepeater (Visual Studio)
 V tomto tématu jsou uvedeny běžné problémy, které mohou nastat při práci se <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  

@@ -1,24 +1,17 @@
 ---
 title: into (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - into_CSharpKeyword
 - into
 helpviewer_keywords:
 - into keyword [C#]
 ms.assetid: 81ec62c1-f0b1-4755-8a31-959876e77f65
-caps.latest.revision: 18
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7f2400143e66c68942cdec3ebfa04cfdd8cfe983
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9bc7d50b77fe42861f92cc5bec946678d11d73d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="into-c-reference"></a>into (Referenční dokumentace jazyka C#)
 `into` Kontextové klíčové slovo lze použít k vytvoření dočasného identifikátor k ukládání výsledků [skupiny](../../../csharp/language-reference/keywords/group-clause.md), [spojení](../../../csharp/language-reference/keywords/join-clause.md) nebo [vyberte](../../../csharp/language-reference/keywords/select-clause.md) klauzule do nový identifikátor. Tento identifikátor může být sám generátor pro příkazy další dotaz. Při použití v `group` nebo `select` klauzuli použití nový identifikátor se někdy označuje jako *pokračování*.  
@@ -35,4 +28,4 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>Viz také  
  [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
  [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Group – klauzule](../../../csharp/language-reference/keywords/group-clause.md)
+ [group – klauzule](../../../csharp/language-reference/keywords/group-clause.md)

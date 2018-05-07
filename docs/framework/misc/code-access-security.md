@@ -1,14 +1,6 @@
 ---
-title: "Zabezpečení přístupu kódu"
-ms.custom: 
+title: Zabezpečení přístupu kódu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - named permission sets, code access security
 - call stacks
@@ -23,17 +15,13 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 04a46e30256b3b6df3de51346924cbb5fa057837
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: e01d3ecf3367baed6673a66015918337105eecb8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="code-access-security"></a>Zabezpečení přístupu kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  

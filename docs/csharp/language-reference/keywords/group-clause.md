@@ -1,9 +1,6 @@
 ---
-title: "group – klauzule (Referenční dokumentace jazyka C#)"
+title: group – klauzule (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - group
 - group_CSharpKeyword
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-caps.latest.revision: "24"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a2f67b2c90e1cced92d6fc7d47768b58bf155360
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2674986013afccf0a61267e49ca186d2ccb380e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 `group` Klauzule vrací posloupnost <xref:System.Linq.IGrouping%602> objekty, které obsahovat nula nebo více položek, které odpovídají hodnotě klíče pro skupinu. Například můžete seskupit posloupnost řetězce podle první písmeno každého řetězce. V takovém případě první písmeno je klíč a má typ [char](../../../csharp/language-reference/keywords/char.md)a je uložen ve `Key` vlastnost jednotlivých <xref:System.Linq.IGrouping%602> objektu. Kompilátor odvodí typ klíče.  

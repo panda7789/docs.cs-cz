@@ -1,24 +1,14 @@
 ---
-title: "Zabezpečení zpráv pomocí zabezpečení přenosu"
-ms.custom: 
+title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-caps.latest.revision: "21"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 461ec7d3cda41194317054ca2413b99f39ebda2c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 50e450f4241abc7d8b688c58a121f64c3ca0e709
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
 Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který vám pomůže zabezpečit zprávy odeslané do fronty.  
@@ -26,11 +16,11 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
 > [!NOTE]
 >  Než si přečtete prostřednictvím tohoto tématu, doporučujeme, abyste si přečetli [koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
   
- Následující obrázek poskytuje koncepční model komunikace ve frontě pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Tento obrázek a terminologie používá k popisu koncepty zabezpečení přenosu.  
+ Následující obrázek poskytuje konceptuální model komunikace ve frontě pomocí služby Windows Communication Foundation (WCF). Tento obrázek a terminologie používá k popisu koncepty zabezpečení přenosu.  
   
  ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
   
- Při odesílání zpráv zařazených do fronty pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s <xref:System.ServiceModel.NetMsmqBinding>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy je připojen jako text zprávy služby MSMQ. Zabezpečení přenosu zabezpečuje celé zprávy služby MSMQ (MSMQ hlavičky zpráv nebo vlastnosti a obsah zprávy). Protože se jedná do těla zprávy služby MSMQ, pomocí zabezpečení přenosu také zabezpečuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy.  
+ Při odesílání zpráv zařazených do fronty pomocí WCF s <xref:System.ServiceModel.NetMsmqBinding>, zpráv WCF je připojen jako text zprávy služby MSMQ. Zabezpečení přenosu zabezpečuje celé zprávy služby MSMQ (MSMQ hlavičky zpráv nebo vlastnosti a obsah zprávy). Protože se jedná do těla zprávy služby MSMQ, také pomocí zabezpečení přenosu zabezpečuje zpráv WCF.  
   
  Klíče koncept za zabezpečení přenosu je, že klient musí splňovat požadavky zabezpečení k získání zprávy do cílové fronty. To je rozdíl oproti zabezpečení zpráv, kde je pro aplikaci, která obdrží zprávu zabezpečené zprávy.  
   
@@ -49,19 +39,19 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
   
  MSMQ taky poskytuje možnost pro připojení certifikátu se zprávou, který není zaregistrován u služby Active Directory. V takovém případě zajišťuje zpráva byla podepsána pomocí certifikátu připojené.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]nabízí tyto možnosti jako součást služby MSMQ přenosu zabezpečení a jsou klíče pivot pro zabezpečení přenosu.  
+ WCF poskytuje obě tyto možnosti v rámci zabezpečení přenosu služby MSMQ a jsou klíče pivot pro zabezpečení přenosu.  
   
  Zabezpečení přenosu je ve výchozím nastavení zapnutá.  
   
  Zadána tyto základní informace v následujících částech jsou vlastnosti zabezpečení přenosu podrobností dodávat s <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>.  
   
 #### <a name="msmq-authentication-mode"></a>Režim ověřování služby MSMQ  
- <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> Stanoví, zda chcete použít zabezpečení domény systému Windows nebo externí zabezpečení založené na certifikátech zabezpečit zprávy. V obou režimech ověřování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá kanál zařazených do fronty přenosu `CertificateValidationMode` zadaný v konfiguraci služby. Režim ověření certifikátu určuje mechanismus používá k ověření platnosti certifikátu.  
+ <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> Stanoví, zda chcete použít zabezpečení domény systému Windows nebo externí zabezpečení založené na certifikátech zabezpečit zprávy. V obou režimech ověřování používá kanál zařazených do fronty přenosu WCF `CertificateValidationMode` zadaný v konfiguraci služby. Režim ověření certifikátu určuje mechanismus používá k ověření platnosti certifikátu.  
   
  Když je zapnuté zabezpečení přenosu, výchozí nastavení je <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.  
   
 #### <a name="windows-domain-authentication-mode"></a>Režim ověřování domény systému Windows  
- Možnost použití zabezpečení systému Windows vyžaduje integrace služby Active Directory. <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>je výchozí režim zabezpečení přenosu. Pokud je toto nastaveno, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál připojí k zprávy služby MSMQ SID systému Windows a používá svůj vnitřní certifikát získaný ze služby Active Directory. MSMQ používá tento vnitřní certifikát k zabezpečení zprávy. Přijímající správce front služby Active Directory používá k vyhledávání a najít certifikát odpovídající ověřit klienta a kontroluje, zda SID také odpovídá u klienta. Tento krok ověřování se spustí, pokud certifikát, buď generované interně u `WindowsDomain` režim ověřování nebo externě vygenerovat u `Certificate` režim ověřování, je připojen ke zprávě, i když je cílové fronty není označena jako vyžadování ověřování.  
+ Možnost použití zabezpečení systému Windows vyžaduje integrace služby Active Directory. <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> je výchozí režim zabezpečení přenosu. Pokud je toto nastaveno, kanál WCF připojí SID systému Windows k zprávy služby MSMQ a používá svůj vnitřní certifikát získaný ze služby Active Directory. MSMQ používá tento vnitřní certifikát k zabezpečení zprávy. Přijímající správce front služby Active Directory používá k vyhledávání a najít certifikát odpovídající ověřit klienta a kontroluje, zda SID také odpovídá u klienta. Tento krok ověřování se spustí, pokud certifikát, buď generované interně u `WindowsDomain` režim ověřování nebo externě vygenerovat u `Certificate` režim ověřování, je připojen ke zprávě, i když je cílové fronty není označena jako vyžadování ověřování.  
   
 > [!NOTE]
 >  Při vytváření fronty, můžete označit fronty jako ověřený fronty k označení, že fronty vyžaduje ověření klienta odesílání zpráv do fronty. Tím se zajistí, že jsou přijaty žádné neověřené zprávy ve frontě.  
@@ -71,9 +61,9 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
 #### <a name="certificate-authentication-mode"></a>Režim ověřování certifikátu  
  Možnost použití režimu ověřování certifikátu nevyžaduje, aby integrace služby Active Directory. Ve skutečnosti, v některých případech, například při instalaci služby MSMQ v režimu pracovní skupiny (bez integrace služby Active Directory) nebo pomocí protokol spolehlivého zasílání zpráv protokolu SOAP (SRMP) při přenosu protokolu k odesílání zpráv do fronty, pouze <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> funguje.  
   
- Při odesílání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpráv s <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál nepřipojí identifikátor SID systému Windows ke zprávy služby MSMQ. Jako takový cílová fronta seznamu ACL musí povolovat `Anonymous` přístup uživatelů k odeslání do fronty. Přijímající správce front kontroluje, zda zprávy služby MSMQ byla podepsána pomocí certifikátu, ale neprovádí žádné ověřování.  
+ Při odesílání zprávy WCF s <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>, kanál WCF nepřipojí identifikátor SID systému Windows ke zprávy služby MSMQ. Jako takový cílová fronta seznamu ACL musí povolovat `Anonymous` přístup uživatelů k odeslání do fronty. Přijímající správce front kontroluje, zda zprávy služby MSMQ byla podepsána pomocí certifikátu, ale neprovádí žádné ověřování.  
   
- Certifikát s jeho deklarace identity a informací o identitě se naplní v <xref:System.ServiceModel.ServiceSecurityContext> pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zařazených do fronty přenosu kanál. Služba možné využít tyto informace k vlastnímu ověřování odesílatele.  
+ Certifikát s jeho deklarace identity a informací o identitě se naplní v <xref:System.ServiceModel.ServiceSecurityContext> podle kanálu zařazených do fronty přenosu WCF. Služba možné využít tyto informace k vlastnímu ověřování odesílatele.  
   
 ### <a name="msmq-protection-level"></a>Úroveň ochrany služby MSMQ  
  Úroveň ochrany Určuje, jak chránit, ujistěte se, že není manipulováno zprávy služby MSMQ. Není zadán v <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> vlastnost. Výchozí hodnota je <xref:System.Net.Security.ProtectionLevel.Sign>.  

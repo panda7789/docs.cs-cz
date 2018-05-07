@@ -1,12 +1,12 @@
 ---
-title: "Třídy znaků v regulárních výrazech"
-ms.custom: 
+title: Třídy znaků v regulárních výrazech
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-caps.latest.revision: 
+caps.latest.revision: 58
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 98aaa5c7bbd28facf9cc06fd0d0898b72ea7dbc2
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
-ms.translationtype: MT
+ms.openlocfilehash: 538aa21712f1e2290fb009c24774059098c60c1e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 <a name="Top"></a> Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu. Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:  
@@ -58,7 +58,7 @@ ms.lasthandoff: 03/15/2018
  Rozhraní .NET podporuje výrazy odčítání třídy znaků, který umožňuje definovat sadu znaků jako výsledek vyloučení jedné třídy znaků z jiné třídě znaků. Další informace najdete v tématu [odčítání tříd znaků](#CharacterClassSubtraction).  
   
 > [!NOTE]
->  Znak třídy, které odpovídají znaky podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [{} \p](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, závisí na <xref:System.Globalization.CharUnicodeInfo> třída k zadání informací o znak kategorie.  Počínaje [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], jsou na základě kategorií znak [ve standardu Unicode, verze 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], jsou založené na [ve standardu Unicode, verze 6.3.0](http://www.unicode.org/versions/Unicode6.3.0/).  
+>  Znak třídy, které odpovídají znaky podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [{} \p](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, závisí na <xref:System.Globalization.CharUnicodeInfo> třída k zadání informací o znak kategorie.  Počínaje [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], jsou na základě kategorií znak [ve standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], jsou založené na [ve standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>Pozitivní skupina znaků: [ ]  
@@ -408,7 +408,7 @@ ms.lasthandoff: 03/15/2018
   
 <a name="SupportedUnicodeGeneralCategories"></a>   
 ## <a name="supported-unicode-general-categories"></a>Podporované obecné kategorie sady Unicode  
- Sada Unicode definuje obecné kategorie uvedené v následující tabulce. Další informace najdete v tématu "Formát souboru UCD" a "Hodnoty obecné kategorie" v tématu na [databáze znaků Unicode](http://www.unicode.org/reports/tr44/).  
+ Sada Unicode definuje obecné kategorie uvedené v následující tabulce. Další informace najdete v tématu "Formát souboru UCD" a "Hodnoty obecné kategorie" v tématu na [databáze znaků Unicode](https://www.unicode.org/reports/tr44/).  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  

@@ -1,24 +1,12 @@
 ---
-title: "Postupy: použití Svcutil.exe pro ověření kompilovaného kódu služby"
-ms.custom: 
+title: 'Postupy: použití Svcutil.exe pro ověření kompilovaného kódu služby'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d0d820fb-41c2-45b8-8f22-0fa5aeebbbaa
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b60356bd66a49c9599a8e0a9138d3b92dbe0b23c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9e7bdf98f578e9b5f9ef2be9c46ccbe811358467
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-svcutilexe-to-validate-compiled-service-code"></a>Postupy: použití Svcutil.exe pro ověření kompilovaného kódu služby
 Můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke zjištění chyby v implementace služby a konfigurace bez hostující službu.  

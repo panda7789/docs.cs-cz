@@ -1,13 +1,6 @@
 ---
-title: "Přehled událostí časování"
-ms.custom: 
+title: Přehled událostí časování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - timelines [WPF]
 - timing events [WPF]
 ms.assetid: 597e3280-0867-4359-a97b-5b2f4149e350
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 79669bdc4b5f9cfb8bdac92efa07e932cc14ac57
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a48d1621e5568d556a1177578cc662813d70a283
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="timing-events-overview"></a>Přehled událostí časování
 Toto téma popisuje, jak používat k dispozici na pět časování události <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty.  
@@ -67,7 +55,7 @@ Toto téma popisuje, jak používat k dispozici na pět časování události <x
   
 |Událost|Spouštěcí interaktivní operace|Další aktivační události|  
 |-----------|--------------------------------------|--------------------|  
-|**Byla dokončena**|Přeskočit k vyplnění|Hodiny dokončí.|  
+|**byla dokončena**|Přeskočit k vyplnění|Hodiny dokončí.|  
 |**CurrentGlobalSpeedInvalidated**|Pozastavit, pokračovat, Hledat, nastavit rychlost poměr, přejděte k vyplnění, zastavte|Hodiny obrátí, zrychluje, spuštění nebo zastavení.|  
 |**CurrentStateInvalidated**|Začít, přejděte k vyplnění, zastavte|Hodiny spustí, zastaví, nebo doplní.|  
 |**CurrentTimeInvalidated**|Začít, Hledat, přejděte k vyplnění, zastavte|Postupuje hodiny.|  

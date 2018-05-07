@@ -4,16 +4,11 @@ description: Naučte se vytvořit vlastní šablonu pro nový příkaz dotnet. v
 author: guardrex
 ms.author: mairaw
 ms.date: 08/12/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 9ff58634daa6d51c10df9a3c9a1af0fd6420c69c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: fee2709f54395b9926dae904a448cb92aafb5172
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření nové vlastní šablony pro dotnet.
 

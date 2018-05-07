@@ -1,33 +1,21 @@
 ---
-title: "Přenosy ve službě Windows Communication Foundation"
-ms.custom: 
+title: Přenosy ve službě Windows Communication Foundation
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transports [WCF]
 - WCF, transports
 - Windows Communication Foundation, transports
 ms.assetid: 005c894b-af70-48aa-a1c1-c99338083c27
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 62eb27919e762004667b3d5179c35cb04d9a9422
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6bb8e8b90c26533661684bd403b9ec439f1bb37e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Přenosy ve službě Windows Communication Foundation
-Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, konfigurace přenosu a nastavení, ladění vlastnosti.  
+Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít ve Windows Communication Foundation (WCF) jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, konfigurace přenosu a nastavení, ladění vlastnosti.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]zahrnuje další přenosy. Informace o přenosu služby Řízení front zpráv (MSMQ) najdete v tématu [fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md). Informace o přenosu peer-to-peer najdete v tématu [Peer-to-Peer sítě](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
+ WCF zahrnuje další přenosy. Informace o přenosu služby Řízení front zpráv (MSMQ) najdete v tématu [fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md). Informace o přenosu peer-to-peer najdete v tématu [Peer-to-Peer sítě](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
@@ -43,7 +31,7 @@ Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přeno
  Popisuje postup konfigurace elementů vazby přenosu HTTP a HTTPS.  
   
  [Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
- Popisuje způsob použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]omezený rezervace adresy URL.  
+ Popisuje, jak používat rezervace WCFURL omezený.  
   
  [Přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md)  
  Popisuje důležité informace o nastavení kvóty, které jsou k dispozici v přenosové vrstvě.  
@@ -52,7 +40,7 @@ Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přeno
  Popisuje postup konfigurace přenosové vrstvy, když jsou zprávy odesílané nebo přijímané za bránou firewall nebo když se nachází překlad síťových adres (NAT).  
   
  [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
- Popisuje postup používání sdílení portů Net.TCP komponenta [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Popisuje postup používání sdílení portů Net.TCP komponent služby WCF.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  

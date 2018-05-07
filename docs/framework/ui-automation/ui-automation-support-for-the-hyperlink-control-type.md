@@ -1,30 +1,19 @@
 ---
-title: "Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz"
-ms.custom: 
+title: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Hyperlink control type
 - UI Automation, Hyperlink control type
 - control types, Hyperlink
 ms.assetid: 110cceea-5932-4955-a1a6-13afc51422b2
-caps.latest.revision: 
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2cc63513214f43220ef26b479be353949fa89fa4
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: c8eb7bfc56b4dddaf352477e3817864700460db7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-support-for-the-hyperlink-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz
 > [!NOTE]
@@ -59,8 +48,8 @@ ms.lasthandoff: 03/19/2018
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Pokud je statický text popisku této vlastnosti musí vystavit odkaz u daného ovládacího prvku.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Hypertextový odkaz|Tato hodnota je stejný pro všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] architektury.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"hyperlink"|Lokalizovaný řetězec odpovídající typ ovládacího prvku hypertextový odkaz.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Zobrazení obsahu z vždy součástí ovládacího prvku hypertextový odkaz [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládacího prvku hypertextový odkaz je vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Hodnota TRUE|Zobrazení obsahu z vždy součástí ovládacího prvku hypertextový odkaz [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Ovládacího prvku hypertextový odkaz je vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
 ## <a name="required-ui-automation-control-patterns-and-properties"></a>Požadované vlastnosti a vzory ovládacích prvků automatizace uživatelského rozhraní  
@@ -70,7 +59,7 @@ ms.lasthandoff: 03/19/2018
 |---------------------------------------|--------------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IInvokeProvider>|Ano|Všechny ovládací prvky hypertextový odkaz musí podporovat vzoru Invoke.|  
 |<xref:System.Windows.Automation.Provider.IValueProvider>|Závisí|Ovládací prvky hypertextový odkaz by měly podporovat vzoru ovládacích prvků hodnota při odkaz obsahuje informace, které jsou použitelné a srozumitelné pro uživatele.|  
-|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|Například "http://www..."|Adresa URL pro internetovou nebo intranetovou adresu je příkladem hypertextový odkaz, který obsahuje informace, které jsou srozumitelné pro uživatele. Programová odkaz, ale má smysl pouze k aplikaci a nedoporučuje se používat pro vlastnost Value.|  
+|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|Například "http://www...."|Adresa URL pro internetovou nebo intranetovou adresu je příkladem hypertextový odkaz, který obsahuje informace, které jsou srozumitelné pro uživatele. Programová odkaz, ale má smysl pouze k aplikaci a nedoporučuje se používat pro vlastnost Value.|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Události automatizace požadované uživatelského rozhraní  

@@ -1,20 +1,13 @@
 ---
 title: Jazyk integrovaného dotazu (LINQ)
 description: Představuje jazyk integrovaného dotazu (LINQ) v jazyce C#
-keywords: Rozhraní .NET, rozhraní .NET core, LINQ, C#
-author: BillWagner
-ms.author: wiwagn
 ms.date: 11/30/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 007cc736-f5cf-4919-b99b-0c00ab2814ce
-ms.openlocfilehash: c4c26e2b7b0693ec940958a9b7d2d306001090e7
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 4afcc33f39d3b71f97bca358f7c6f8bc57439767
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="language-integrated-query-linq"></a>Jazyk integrovaného dotazu (LINQ)
 
@@ -42,7 +35,7 @@ Následující příklad ukazuje operaci dokončení dotazu. Dokončení operace
   
 -   Některé operace, jako například dotaz <xref:System.Linq.Enumerable.Count%2A> nebo <xref:System.Linq.Enumerable.Max%2A>, mít žádná ekvivalentní dotaz výrazu klauzule a proto musí být vyjádřena jako volání metody. Syntaxe využívající metody mohou být kombinovány s syntaxe dotazů různými způsoby. Další informace najdete v tématu [syntaxe využívající dotazy a syntaxe využívající metody v technologii LINQ](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).  
   
--   Stromy výrazů nebo delegáti, v závislosti na typu, který je použit dotaz na, mohou být zkompilovány výrazy dotazů. <xref:System.Collections.Generic.IEnumerable%601>dotazy jsou kompilovány na delegáty. <xref:System.Linq.IQueryable>a <xref:System.Linq.IQueryable%601> dotazy jsou zkompilovány do stromů výrazů. Další informace najdete v tématu [stromů výrazů](../expression-trees.md).  
+-   Stromy výrazů nebo delegáti, v závislosti na typu, který je použit dotaz na, mohou být zkompilovány výrazy dotazů. <xref:System.Collections.Generic.IEnumerable%601> dotazy jsou kompilovány na delegáty. <xref:System.Linq.IQueryable> a <xref:System.Linq.IQueryable%601> dotazy jsou zkompilovány do stromů výrazů. Další informace najdete v tématu [stromů výrazů](../expression-trees.md).  
 
 ## <a name="next-steps"></a>Další kroky
 

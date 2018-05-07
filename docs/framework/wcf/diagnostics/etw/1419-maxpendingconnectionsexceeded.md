@@ -1,24 +1,12 @@
 ---
-title: "1419 – MaxPendingConnectionsExceeded"
-ms.custom: 
+title: 1419 – MaxPendingConnectionsExceeded
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e48e438e-f4c1-4f4f-85d6-c6c820a81df9
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa6d2da359074bf2b60e9b1d27c0bd9c6853cfa5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 41cf2f344ac051cdad43aa1c4f6db66dd2e98ec0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1419---maxpendingconnectionsexceeded"></a>1419 – MaxPendingConnectionsExceeded
 ## <a name="properties"></a>Vlastnosti  

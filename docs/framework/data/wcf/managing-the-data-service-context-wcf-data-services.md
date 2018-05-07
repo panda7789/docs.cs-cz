@@ -1,24 +1,12 @@
 ---
-title: "Správa služby kontextu dat (služby WCF Data Services)"
-ms.custom: 
+title: Správa služby kontextu dat (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 15b19d09-7de7-4638-9556-6ef396cc45ec
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c993a4f09a7187b45331f6beb71a9637da87d20f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9b2b0bb709081ca7b0b2a1367f10e1f7a08c98c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>Správa služby kontextu dat (služby WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány službě zadaná data. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou bezstavové služby, není kontextu. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakce s službu data za účelem podpory funkcí, jako například Správa změn. Tato třída také spravuje identit a sleduje změny.  
@@ -29,9 +17,9 @@ ms.lasthandoff: 12/22/2017
  Ve výchozím nastavení, klient pouze bude realizována položku v odpovědi informačního kanálu do objektu entity, které nejsou již sledován pomocí <xref:System.Data.Services.Client.DataServiceContext>. To znamená, že se nepřepíšou změny objekty již v mezipaměti. Toto chování je řízen zadáním <xref:System.Data.Services.Client.MergeOption> hodnotu pro dotazy a operace načtení. Tato možnost je určený nastavením <xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>. Možnost sloučení výchozí hodnota je <xref:System.Data.Services.Client.MergeOption.AppendOnly>. To jenom bude realizována objekty pro entity, které nejsou již sledován, což znamená, že nejsou přepsat stávající objekty. Jiný způsob, jak zabránit změny k objektům v klientovi nepřepsal aktualizace ze služby dat slouží k zadání <xref:System.Data.Services.Client.MergeOption.PreserveChanges>. Pokud zadáte <xref:System.Data.Services.Client.MergeOption.OverwriteChanges>, hodnoty objektů na straně klienta jsou nahrazovány nejnovější hodnoty z položek v informačním kanálu odpovědi i v případě, že už byly provedeny změny těchto objektů. Když <xref:System.Data.Services.Client.MergeOption.NoTracking> možnost sloučení se používá, <xref:System.Data.Services.Client.DataServiceContext> nelze odeslat změny provedené u objektů klienta ke službě data. Pomocí této možnosti se změny vždy přepíší hodnotami z službu data.  
   
 ## <a name="managing-concurrency"></a>Správa souběžnosti  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje optimistickou metodu souběžného, který povoluje službu data ke zjištění konfliktu aktualizace. Zprostředkovatel dat služby lze nakonfigurovat tak, že služba data vyhledává změny entity pomocí token souběžnosti. Tento token obsahuje jednu nebo více vlastností typu entity, které se ověřují pomocí služby data k určení, zda došlo ke změně prostředku. Tokeny souběžnosti, které jsou součástí hlavičku eTag žádostí a odpovědí z službu data, jsou spravovaná pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta. Další informace najdete v tématu [aktualizaci dat služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje optimistickou metodu souběžného, který povoluje službu data ke zjištění konfliktu aktualizace. Zprostředkovatel dat služby lze nakonfigurovat tak, že služba data vyhledává změny entity pomocí token souběžnosti. Tento token obsahuje jednu nebo více vlastností typu entity, které se ověřují pomocí služby data k určení, zda došlo ke změně prostředku. Tokeny souběžnosti, které jsou součástí hlavičku eTag žádostí a odpovědí z službu data, jsou spravovaná pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta. Další informace najdete v tématu [aktualizaci dat služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
   
- <xref:System.Data.Services.Client.DataServiceContext> Sleduje změny provedené u objektů, které byly ručně nahlášeny pomocí <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>, <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A>, a <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A>, nebo <xref:System.Data.Services.Client.DataServiceCollection%601>. Když <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda je volána, klient odešle změny zpět na službu data. <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>může selhat, pokud změny dat v klientovi v konfliktu s změny ve službě data. V takovém případě musí dotaz pro daný prostředek entity znovu a přijímat data aktualizace. Chcete-li přepsat změny ve službě data, spustit dotaz pomocí <xref:System.Data.Services.Client.MergeOption.PreserveChanges> merge – možnost. Při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> znovu, jsou změny zachovaná v klientovi trvalé ke službě data tak dlouho, dokud k prostředku ve službě dat nebyly již provedeny další změny.  
+ <xref:System.Data.Services.Client.DataServiceContext> Sleduje změny provedené u objektů, které byly ručně nahlášeny pomocí <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>, <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A>, a <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A>, nebo <xref:System.Data.Services.Client.DataServiceCollection%601>. Když <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda je volána, klient odešle změny zpět na službu data. <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> může selhat, pokud změny dat v klientovi v konfliktu s změny ve službě data. V takovém případě musí dotaz pro daný prostředek entity znovu a přijímat data aktualizace. Chcete-li přepsat změny ve službě data, spustit dotaz pomocí <xref:System.Data.Services.Client.MergeOption.PreserveChanges> merge – možnost. Při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> znovu, jsou změny zachovaná v klientovi trvalé ke službě data tak dlouho, dokud k prostředku ve službě dat nebyly již provedeny další změny.  
   
 ## <a name="saving-changes"></a>Ukládají se změny  
  Změny jsou sledovány v <xref:System.Data.Services.Client.DataServiceContext> instance však nebyla odeslána na server okamžitě. Po skončení požadované změny pro zadanou aktivitu, volat <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> odeslat všechny změny ve službě data. A <xref:System.Data.Services.Client.DataServiceResponse> objektu se vrátí po <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> bylo dokončeno. <xref:System.Data.Services.Client.DataServiceResponse> Objekt zahrnuje posloupnost <xref:System.Data.Services.Client.OperationResponse> objektů, které se pak obsahují posloupnost <xref:System.Data.Services.Client.EntityDescriptor> nebo <xref:System.Data.Services.Client.LinkDescriptor> instancí, které představují změny trvalé, nebo k pokusu o. Při vytvoření nebo úpravě ve službě data entity <xref:System.Data.Services.Client.EntityDescriptor> obsahuje odkaz na aktualizovanou entitu, včetně všechny hodnoty generované serverem vlastností, jako je například vygenerovaného `ProductID` hodnota v předchozím příkladu. Klientská knihovna automaticky aktualizuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekt, který chcete mít tyto nové hodnoty.  

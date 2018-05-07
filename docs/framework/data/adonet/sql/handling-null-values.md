@@ -1,27 +1,15 @@
 ---
-title: "Zpracování hodnot Null"
-ms.custom: 
+title: Zpracování hodnot Null
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 23a502cc3a286ed5cb47c7bbe21253f312722409
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9c0b6d250dcedc9b5996c50ccdb2f183707e54e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot Null
 Hodnotu null v relační databázi se používá, pokud je hodnota ve sloupci neznámý nebo chybí. Null není prázdný řetězec (pro datové typy znaků nebo data a času) ani hodnotu nula (pro číselné datové typy). Specifikace ANSI SQL-92 stavy s hodnotou null musí být stejné pro všechny typy dat, tak, aby všechny hodnoty Null zpracovává konzistentně. <xref:System.Data.SqlTypes> Obor názvů obsahuje hodnotu null sémantiku implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy v <xref:System.Data.SqlTypes> má svou vlastní `IsNull` vlastnost a `Null` hodnotu, která lze přiřadit k instanci daného datového typu.  
@@ -32,7 +20,7 @@ Hodnotu null v relační databázi se používá, pokud je hodnota ve sloupci ne
 ## <a name="nulls-and-three-valued-logic"></a>Hodnoty Null a s hodnotou tři logiky  
  Povolení hodnoty null v definicích sloupce zavádí s hodnotou tři logiku do vaší aplikace. Porovnání lze vyhodnotit na jednu ze tří podmínek:  
   
--   True  
+-   Hodnota TRUE  
   
 -   False  
   
@@ -46,7 +34,7 @@ Hodnotu null v relační databázi se používá, pokud je hodnota ve sloupci ne
  ![Tabulka pravdivosti](../../../../../docs/framework/data/adonet/sql/media/truthtable-bpuedev11.gif "TruthTable_bpuedev11")  
   
 ### <a name="understanding-the-ansinulls-option"></a>Principy možnosti ANSI_NULLS  
- <xref:System.Data.SqlTypes>poskytuje stejnou sémantiku jako možnosti ANSI_NULLS nastavena na v systému SQL Server. Všech aritmetických operátorů (+, -, *, /, %), bitové operátory (~ &, &#124;), a většina funkce vrátí hodnotu null, pokud je některý z operandy nebo argumenty null, s výjimkou vlastnost `IsNull`.  
+ <xref:System.Data.SqlTypes> poskytuje stejnou sémantiku jako možnosti ANSI_NULLS nastavena na v systému SQL Server. Všech aritmetických operátorů (+, -, *, /, %), bitové operátory (~ &, &#124;), a většina funkce vrátí hodnotu null, pokud je některý z operandy nebo argumenty null, s výjimkou vlastnost `IsNull`.  
   
  Standardu ANSI SQL-92 nepodporuje *columnName* = NULL v klauzuli WHERE. V systému SQL Server možnosti ANSI_NULLS Určuje, jak výchozí možnost použití hodnoty Null v databázi a vyhodnocení porovnání s hodnotami null. Pokud ANSI_NULLS je zapnuté (výchozí), musí být operátoru IS NULL použít ve výrazech při testování hodnoty null. Například na toto porovnání vždy vypočítá Neznámý ANSI_NULLS je na:  
   

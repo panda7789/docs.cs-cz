@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5b670c80-a119-4114-8b1d-2b2034e5cb19
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e922b749792b541083b991340731796be1772c61
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f1a012f467aafb0257b0eea421874174e588b5ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationservicehostcreatedservicecontract"></a>System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract
 System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract  

@@ -1,20 +1,13 @@
 ---
-title: "Struktury – Průvodce C#"
-description: "Další informace o typu Struktura a jak vytvořit"
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-ms.author: wiwagn
+title: Struktury – Průvodce C#
+description: Další informace o typu Struktura a jak vytvořit
 ms.date: 10/12/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: 4c12e886ec388671fc47f08f8df6d6f2af8aac62
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 9fe4e0278ecf46f762a93aa489030c0a9e5563b3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="structs"></a>Struktury
 A *struktura* je typ hodnoty. Když je vytvořen struktury, obsahuje proměnnou, ke kterému je přiřazena struct struktura na skutečná data. Když struktura je přiřazen k nové proměnné, je zkopírována. Novou proměnnou a původní proměnná proto obsahovat dvě samostatné kopie stejná data. Změny provedené v jedné kopie nemají vliv na jiné kopie.
@@ -68,7 +61,7 @@ Jazykové funkce byla zavedená v C# 7.0 na posledních dvou příkladech. Prvn�
 
 Druhá ukazuje *binární literály*, které vám umožňují určit bit vzory přímo místo použití šestnáctkové soustavě.
 
-## <a name="nullable-types"></a>Typy s možnou hodnotou Null  
+## <a name="nullable-types"></a>Typy s povolenou hodnotou Null  
 Typy hodnot obyčejnou nemůže mít hodnotu [null](./language-reference/keywords/null.md). Ale můžete vytvořit typy s možnou hodnotou Null hodnot připojení **?** Po typ. Například **int?** je **int** typ, který může mít hodnotu [null](./language-reference/keywords/null.md). V CTS, s možnou hodnotou Null typy jsou instance typu Obecná struktura <xref:System.Nullable%601>. Typy s možnou hodnotou Null jsou zvláště užitečné, když jsou předávání dat do a z databáze, ve kterých může být číselné hodnoty null. Další informace najdete v tématu [typy s možnou hodnotou Null (C# programování průvodce)](./programming-guide/nullable-types/index.md).
 
 ## <a name="see-also"></a>Viz také

@@ -1,24 +1,12 @@
 ---
-title: "Datové typy a funkce"
-ms.custom: 
+title: Datové typy a funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 683413c5-0312-4e60-8619-9a97bdc6e62a
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f9f97f0ae0a75dd15edcb2256d991e987388f1ae
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a7205d7fbdeb2b6cffcf49fb30e2ff2a25137403
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-types-and-functions"></a>Datové typy a funkce
 V tématech uvedených v následující tabulce popisují LINQ SQL podpory pro členy, konstrukce a přetypování common language runtime (CLR). Podporované členy a konstrukce jsou k dispozici pro použití v vaše dotazy LINQ to SQL.  

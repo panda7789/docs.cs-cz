@@ -1,23 +1,12 @@
 ---
-title: "Trvalost schématu databáze"
-ms.custom: 
+title: Trvalost schématu databáze
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dc758f85b4f8b0bec5c00979f42d3f7b2ea7b182
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4dd49d08e522c842d0f21f176b4d77ac0adb4b47
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="persistence-database-schema"></a>Trvalost schématu databáze
 Toto téma popisuje veřejné zobrazení podporuje ukládání Instance pracovního postupu SQL.  
@@ -62,7 +51,7 @@ Toto téma popisuje veřejné zobrazení podporuje ukládání Instance pracovn�
 |Název sloupce|Typ sloupce|Popis|  
 |-----------------|-----------------|-----------------|  
 |ServiceDeploymentId|BigInt|Primární klíč pro toto zobrazení.|  
-|Název webu|nvarchar(max)|Představuje název lokality, která obsahuje službu pracovního postupu (například **Default Web Site**).|  
+|SiteName|nvarchar(max)|Představuje název lokality, která obsahuje službu pracovního postupu (například **Default Web Site**).|  
 |RelativeServicePath|nvarchar(max)|Představuje virtuální cestu vzhledem k lokalitě, která odkazuje na službu pracovního postupu. (např.)  **/app1/PurchaseOrderService.svc**).|  
 |RelativeApplicationPath|nvarchar(max)|Představuje virtuální cestu vzhledem k lokalitě, která odkazuje na aplikaci, která obsahuje službu pracovního postupu. (například **app1**).|  
 |ServiceName|nvarchar(max)|Představuje název pracovního postupu služby. (například **PurchaseOrderService**).|  

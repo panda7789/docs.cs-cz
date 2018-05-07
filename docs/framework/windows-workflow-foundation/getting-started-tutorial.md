@@ -1,27 +1,15 @@
 ---
 title: Začínáme Tutorial2
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WF [WF], getting started
 - Windows Workflow Foundation [WF], getting started
 ms.assetid: c2d3585f-6b1a-4d4f-9865-bd7cd31c5d42
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1be017762ed64f61516216c9d103547f88598254
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 7e1bfdc79eda8095d5d391afd61abb8473d8e7ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Tato část obsahuje sadu návod témata, které vám představí programování aplikace Windows Workflow Foundation (WF). Pomocí následujících postupů v těchto tématech, vytvoříte aplikaci, která je číslo hádání hra. První téma v tomto kurzu vás provede kroky k vytvoření vlastních aktivit, které jsou potřebné pro pracovní postup. V druhé tématu jsou tyto aktivity několik společně s integrovanou pracovního postupu aktivit do vývojový diagram pracovního postupu. V sekci třetí aplikace hostitele je nakonfigurována pro spuštění pracovního postupu a v posledním tématu uvádíme trvalost. Každý krok v tomto procesu závisí na předchozí kroky, proto doporučujeme, můžete dokončit v pořadí.  

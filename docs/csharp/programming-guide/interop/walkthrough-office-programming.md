@@ -1,10 +1,6 @@
 ---
 title: 'Postupy: Programování pro Office (C# a Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -13,13 +9,11 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7108ef10333b2ec7aded1b8f768c2953283ac625
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: cef2a907a8d7e6158239b88d5c8551c2c734faa0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v C# a Visual Basic, které vylepšují programování pro Microsoft Office. Užitečné C# – funkce zahrnují pojmenovaných a nepovinných argumentů a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy v lambda – výrazy a Inicializátory kolekcí.
@@ -164,7 +158,7 @@ Musíte mít aplikaci Microsoft Office Excel a v počítači nainstalována apli
   
 3.  Typ `ildasm` v okně příkazového řádku Visual Studia a potom stiskněte klávesu ENTER. Zobrazí se okno IL DASM.  
   
-4.  Na **soubor** nabídky v okně IL DASM vyberte **soubor** > **otevřete**. Klikněte dvakrát na **Visual Studio \<verze >**a potom dvakrát klikněte na **projekty**. Otevřete složku pro svůj projekt a podívejte se ve složce bin/Debug *název projektu*.dll. Klikněte dvakrát na *název projektu*.dll. Nové okno zobrazí atributy vašeho projektu, kromě odkazy na jiné moduly a sestavení. Všimněte si, že obory názvů `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` jsou součástí sestavení. Ve výchozím nastavení v sadě Visual Studio naimportuje kompilátor do vaší sestavení z odkazované PIA – typy, které potřebujete.  
+4.  Na **soubor** nabídky v okně IL DASM vyberte **soubor** > **otevřete**. Klikněte dvakrát na **Visual Studio \<verze >** a potom dvakrát klikněte na **projekty**. Otevřete složku pro svůj projekt a podívejte se ve složce bin/Debug *název projektu*.dll. Klikněte dvakrát na *název projektu*.dll. Nové okno zobrazí atributy vašeho projektu, kromě odkazy na jiné moduly a sestavení. Všimněte si, že obory názvů `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` jsou součástí sestavení. Ve výchozím nastavení v sadě Visual Studio naimportuje kompilátor do vaší sestavení z odkazované PIA – typy, které potřebujete.  
   
      Další informace najdete v tématu [postupy: zobrazení obsahu sestavení](../../../framework/app-domains/how-to-view-assembly-contents.md).  
   

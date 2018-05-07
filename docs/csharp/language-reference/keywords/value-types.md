@@ -1,10 +1,6 @@
 ---
-title: "Typy hodnot (Referenční dokumentace jazyka C#)"
+title: Typy hodnot (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - cs.valuetypes
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 281b811f2a8a1f2c364405b563f9f103899b492c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fdda6942c6883baaaea5e305a1e699a01e707d2b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (Referenční dokumentace jazyka C#)
 Typy hodnot se skládá ze dvou hlavních kategorií:  
@@ -36,9 +29,9 @@ Typy hodnot se skládá ze dvou hlavních kategorií:
   
     -   [Typy s plovoucí desetinnou čárkou](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
   
-    -   [Decimal](../../../csharp/language-reference/keywords/decimal.md)  
+    -   [decimal](../../../csharp/language-reference/keywords/decimal.md)  
   
--   [BOOL](../../../csharp/language-reference/keywords/bool.md)  
+-   [bool](../../../csharp/language-reference/keywords/bool.md)  
   
 -   Struktury definované uživatelem.  
   
@@ -107,7 +100,7 @@ Point p = new Point(); // Invoke default constructor for the struct.
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Typy](../../../csharp/language-reference/keywords/types.md)  
  [Referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  

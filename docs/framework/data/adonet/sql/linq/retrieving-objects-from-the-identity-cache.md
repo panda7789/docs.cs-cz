@@ -1,27 +1,15 @@
 ---
-title: "Načítání objektů z mezipaměti Identity"
-ms.custom: 
+title: Načítání objektů z mezipaměti Identity
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e7677f2fcfe854aad5d01c0e024955da2480c375
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: fe22dbdff0e5e9ea6bfe55fc24c492414e01cd6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Načítání objektů z mezipaměti Identity
 Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipaměti identity, které spravuje <xref:System.Data.Linq.DataContext>.  
@@ -41,7 +29,7 @@ Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipamět
   
  V těchto obecné forms `Function1`, `Function2`, a `predicate` jsou definovány takto.  
   
- `Function1`může být jedno z následujících:  
+ `Function1` může být jedno z následujících:  
   
 -   <xref:System.Linq.Queryable.Where%2A>  
   
@@ -53,7 +41,7 @@ Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipamět
   
 -   <xref:System.Linq.Queryable.SingleOrDefault%2A>  
   
- `Function2`může být jedno z následujících:  
+ `Function2` může být jedno z následujících:  
   
 -   <xref:System.Linq.Queryable.First%2A>  
   
@@ -63,7 +51,7 @@ Toto téma popisuje typy LINQ na dotazy SQL, které vracejí objekt z mezipamět
   
 -   <xref:System.Linq.Queryable.SingleOrDefault%2A>  
   
- `predicate`musí být výraz, ve kterém je nastavena vlastnost primárního klíče objektu na konstantní hodnotu. Pokud objekt má definovaný více než jeden vlastností primární klíč, každou vlastnost primárního klíče musí nastavit na konstantní hodnotu. Tady jsou příklady ve formátu `predicate` vyžaduje:  
+ `predicate` musí být výraz, ve kterém je nastavena vlastnost primárního klíče objektu na konstantní hodnotu. Pokud objekt má definovaný více než jeden vlastností primární klíč, každou vlastnost primárního klíče musí nastavit na konstantní hodnotu. Tady jsou příklady ve formátu `predicate` vyžaduje:  
   
 -   `c => c.PK == constant_value`  
   

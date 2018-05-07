@@ -1,29 +1,15 @@
 ---
 title: Streamování přenosu zpráv
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ed2aa57e044910ab9fd9c60dfd47eb7aaa0ce75e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 340c903e2cb34373514ea2f739cab57dc620df5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="streaming-message-transfer"></a>Streamování přenosu zpráv
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] přenosy podporují dva režimy pro přenos zpráv:  
+Přenosy Windows Communication Foundation (WCF) podporují dva režimy pro přenos zpráv:  
   
 -   Ve vyrovnávací paměti přenosy uložení celé zprávy vyrovnávací paměť v až do dokončení přenosu. Zprávu ve vyrovnávací paměti musí být zcela doručována předtím, než příjemce může číst.  
   
@@ -52,7 +38,7 @@ ms.lasthandoff: 04/30/2018
   
  Operace, které napříč přenášené datovými proudy přenosu může mít kontrakt s maximálně jeden vstupní nebo výstupní parametr. Tento parametr odpovídá celý text zprávy a musí být <xref:System.ServiceModel.Channels.Message>, odvozený typ <xref:System.IO.Stream>, nebo <xref:System.Xml.Serialization.IXmlSerializable> implementace. S návratovou hodnotou pro operace je ekvivalentní s výstupní parametr.  
   
- Některé [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce, jako je spolehlivé zasílání zpráv, transakce a zabezpečení na úrovni zprávu protokolu SOAP, závisí na ukládání do vyrovnávací paměti zpráv pro přenosy. Používání těchto funkcí může omezit nebo odstranit výkonu výhody pomocí vysílání datového proudu. K zabezpečení přenášené datovými proudy přenosu, použijte pouze zabezpečení na úrovni přenosu nebo použijte zabezpečení transportní vrstvy a zabezpečení jen ověřování zpráv.  
+ Některé funkce WCF, například spolehlivého zasílání zpráv a transakce a zabezpečení na úrovni zprávu protokolu SOAP, spoléhají na ukládání do vyrovnávací paměti zpráv pro přenosy. Používání těchto funkcí může omezit nebo odstranit výkonu výhody pomocí vysílání datového proudu. K zabezpečení přenášené datovými proudy přenosu, použijte pouze zabezpečení na úrovni přenosu nebo použijte zabezpečení transportní vrstvy a zabezpečení jen ověřování zpráv.  
   
  Hlavičky SOAP jsou vždy do vyrovnávací paměti, i když přenos režim je nastaven na přenášené datovými proudy. Hlavičky pro zprávu nesmí překročit velikost `MaxBufferSize` kvóty přenosu. Další informace o tomto nastavení najdete v tématu [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md).  
   

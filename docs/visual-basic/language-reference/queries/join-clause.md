@@ -1,11 +1,6 @@
 ---
-title: "Join – klauzule (Visual Basic)"
+title: Join – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryJoinIn
 - vb.QueryJoin
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Join statement [Visual Basic]
 - Join clause [Visual Basic]
 ms.assetid: 6dd37936-b27c-4e00-98ad-154b23f4de64
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2bb25c9dac8994e7f975539c1d036f0f0d9d239e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2186954ab6536988271629c4feba0a40563bfc3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="join-clause-visual-basic"></a>Join – klauzule (Visual Basic)
 Kombinuje dvě kolekce do jedné kolekce. Operace spojení je založena na odpovídající klíče a používá `Equals` operátor.  
@@ -50,7 +42,7 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
  Volitelné. Jeden nebo více dalších `Group Join` klauzule pro další upřesnění dotazu.  
   
  `key1` `Equals` `key2`  
- Požadováno. Identifikuje klíče pro kolekce se připojený. Je nutné použít `Equals` operátor k porovnání klíče z kolekce se připojený. Podmínky připojení můžete kombinovat pomocí `And` operátor k identifikaci několik klíčů. `key1`musí být z kolekce na levé straně `Join` operátor. `key2`musí být z kolekce na pravé straně `Join` operátor.  
+ Požadováno. Identifikuje klíče pro kolekce se připojený. Je nutné použít `Equals` operátor k porovnání klíče z kolekce se připojený. Podmínky připojení můžete kombinovat pomocí `And` operátor k identifikaci několik klíčů. `key1` musí být z kolekce na levé straně `Join` operátor. `key2` musí být z kolekce na pravé straně `Join` operátor.  
   
  Klíčů používaných v podmínku připojení může být výrazy, které obsahují více než jednu položku z kolekce. Každý výraz klíče však může obsahovat pouze položky z jeho příslušné kolekce.  
   
@@ -97,7 +89,7 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
 ## <a name="see-also"></a>Viz také  
  [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Select – klauzule](../../../visual-basic/language-reference/queries/select-clause.md)  
- [From – klauzule](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Group Join – klauzule](../../../visual-basic/language-reference/queries/group-join-clause.md)  
- [Kde – klauzule](../../../visual-basic/language-reference/queries/where-clause.md)
+ [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

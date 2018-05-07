@@ -1,13 +1,6 @@
 ---
-title: "Návod: Vytváření rozhraní ve stylu Průzkumníku s ovládacími prvky ListView a TreeView pomocí Návrháře"
-ms.custom: 
+title: 'Návod: Vytváření rozhraní ve stylu Průzkumníku s ovládacími prvky ListView a TreeView pomocí Návrháře'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer style interface
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d8d7991f706f8098e4ac475ae057771de200197
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0a0208194bd6cf24f61c58ece88e41b674e924fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Návod: Vytváření rozhraní ve stylu Průzkumníku s ovládacími prvky ListView a TreeView pomocí Návrháře
 Jednou z výhod sady Visual Studio je schopnost vytvářet profesionální aplikace Windows Forms v krátkou dobu. Běžný scénář vytváří uživatelské rozhraní (UI) s <xref:System.Windows.Forms.ListView> a <xref:System.Windows.Forms.TreeView> ovládacích prvků, které se podobá funkci Windows Explorer operačních systémů Windows. Průzkumník Windows zobrazí hierarchická struktura souborů a složek v počítači uživatele.  
@@ -57,7 +45,7 @@ Jednou z výhod sady Visual Studio je schopnost vytvářet profesionální aplik
   
     1.  Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
-    2.  Nastavte <xref:System.Windows.Forms.TreeView.ImageList%2A> vlastnosti`imagelist1.`  
+    2.  Nastavte <xref:System.Windows.Forms.TreeView.ImageList%2A> vlastnosti `imagelist1.`  
   
 7.  Přidat <xref:System.Windows.Forms.ListView> ovládací prvek s názvem `listView1` do formuláře a umístěte ho na pravé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti pro `listview1` postupujte takto:  
   
@@ -65,9 +53,9 @@ Jednou z výhod sady Visual Studio je schopnost vytvářet profesionální aplik
   
     2.  Nastavte <xref:System.Windows.Forms.ListView.View%2A> vlastnost <xref:System.Windows.Forms.View.Details>.  
   
-    3.  Otevřete Editor kolekce ColumnHeader kliknutím na symbol tří teček (![– snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) v <xref:System.Windows.Forms.ListView.Columns%2A> vlastnost**.** Přidejte tři sloupce a nastavte jejich <xref:System.Windows.Forms.ColumnHeader.Text%2A> vlastnost `Name`, `Type`, a `Last Modified`, v uvedeném pořadí. Klikněte na tlačítko **OK** zavřete dialogové okno.  
+    3.  Otevřete Editor kolekce ColumnHeader kliknutím na symbol tří teček (![– snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) v <xref:System.Windows.Forms.ListView.Columns%2A> vlastnost **.** Přidejte tři sloupce a nastavte jejich <xref:System.Windows.Forms.ColumnHeader.Text%2A> vlastnost `Name`, `Type`, a `Last Modified`, v uvedeném pořadí. Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
-    4.  Nastavte <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnosti`imageList1.`  
+    4.  Nastavte <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnosti `imageList1.`  
   
 8.  Implementaci kódu k naplnění <xref:System.Windows.Forms.TreeView> s uzly a podřízených uzlů. Přidejte tento kód, který `Form1` třídy.  
   

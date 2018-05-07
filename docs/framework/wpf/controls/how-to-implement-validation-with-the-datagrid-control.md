@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Implementace ověření pomocí ovládacího prvku DataGrid"
-ms.custom: 
+title: 'Postupy: Implementace ověření pomocí ovládacího prvku DataGrid'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - DataGrid [WPF], validation
 - validation [WPF], DataGrid
 ms.assetid: ec6078a8-1e42-4648-b414-f4348e81bda1
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 78846e2b6a1d73e011441b0ccb46b8aad365d5dd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 20fcc8ebafb25e4e4f176447972e7637aaa5cd7d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>Postupy: Implementace ověření pomocí ovládacího prvku DataGrid
 <xref:System.Windows.Controls.DataGrid> Řízení umožňuje provést ověření na úrovni buněk i řádek. S ověřováním na úrovni buněk ověřit jednotlivé vlastnosti vázaný datový objekt když uživatel aktualizuje hodnotu. S ověřováním na úrovni řádků ověřit celé datové objekty když uživatel provede změny na řádek. Můžete také poskytnout vlastní visual zpětnou vazbu pro chyby ověření, nebo použít výchozí vizuální zpětnou vazbu, <xref:System.Windows.Controls.DataGrid> řízení.  

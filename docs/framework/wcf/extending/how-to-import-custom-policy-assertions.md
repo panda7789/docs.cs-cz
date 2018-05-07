@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Import kontrolních výrazů vlastních zásad"
-ms.custom: 
+title: 'Postupy: Import kontrolních výrazů vlastních zásad'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1f41d787-accb-4a10-bfc6-a807671d1581
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 916f5b820ce9e1c30c13a9834548c83e32bc3579
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6155296e264bb3ae90aac2ee6b83797e632962e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Postupy: Import kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby.  Klientské aplikace můžete použít výrazy zásad v metadata služby ke konfiguraci klienta vazby nebo k přizpůsobení kontrakt služby pro koncový bod služby.  
@@ -51,7 +39,7 @@ Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu s
   
 3.  Proveďte vlastní vazby nebo kontrakt, který podporuje schopnosti nebo požadavek určeného výraz zásad. Kontrolní výrazy obvykle označují, že vazba vyžaduje konkrétní konfigurací nebo prvku konkrétní vazby. Proveďte tyto úpravy přímým přístupem <xref:System.ServiceModel.Description.PolicyConversionContext.BindingElements%2A?displayProperty=nameWithType> vlastnost. Další kontrolní výrazy vyžadují, že upravíte kontrakt.  Můžete používat a upravit pomocí kontrakt <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A?displayProperty=nameWithType> vlastnost.  Všimněte si, že vaše zásady – Importér může získat volat vícekrát pro stejnou vazbu a kontrakt, ale jinou zásadu alternativy, pokud Import zásady alternativní selže. Váš kód by měl být odolné vůči toto chování.  
   
-4.  Kontrolní výraz vlastní zásady pro odebrání z kolekce kontrolní výraz. Pokud neodeberete kontrolní výraz [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] předpokládá, že import zásady nebylo úspěšné a neimportuje přidružené vazby. Pokud jste použili <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> metoda vyhledat výraz vlastních zásad a jeho odebrání z kolekce v jednom kroku není nutné k provedení tohoto kroku.  
+4.  Kontrolní výraz vlastní zásady pro odebrání z kolekce kontrolní výraz. Pokud neodeberete kontrolní výraz systému Windows Communication Foundation (WCF) předpokládá, že import zásady nebylo úspěšné a neimportuje přidružené vazby. Pokud jste použili <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> metoda vyhledat výraz vlastních zásad a jeho odebrání z kolekce v jednom kroku není nutné k provedení tohoto kroku.  
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-a-configuration-file"></a>Program pro import vlastních zásad pro vložení do metadat systému pomocí konfiguračního souboru  
   

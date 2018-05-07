@@ -1,12 +1,6 @@
 ---
-title: "Postupy: použití třídy WebRequest Data žádosti"
-ms.custom: 
+title: 'Postupy: použití třídy WebRequest Data žádosti'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +11,14 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 463a59444d3f93e5560e149033fd845ac8cbe62d
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: e02ad4772d3ba84a2735a2e146a9979862d75989
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-request-data-using-the-webrequest-class"></a>Postupy: použití třídy WebRequest Data žádosti
 Následující postup popisuje kroky, které slouží k vyžádání prostředku ze serveru, například, webovou stránku nebo soubor. Prostředek musí být identifikovaného identifikátorem URI.  

@@ -1,34 +1,22 @@
 ---
 title: Aktivace podle konfigurace
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 21bb762e-c43e-4b0c-887b-5e434d665838
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d520a46bc3380fc5dff76f5df866ae3411d5a6a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 2829458d40e3efb180699122570b2775a90be9e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuration-based-activation"></a>Aktivace podle konfigurace
-Tento příklad ukazuje, jak aktivovat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby bez nutnosti .svc souboru.  
+Tento příklad znázorňuje postup aktivace služby Windows Communication Foundation (WCF) bez nutnosti .svc souboru.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\ConfigBasedActivation`  
   
@@ -41,7 +29,7 @@ Tento příklad ukazuje, jak aktivovat [!INCLUDE[indigo1](../../../../includes/i
 ### <a name="activation-of-services-without-requiring-a-svc-file"></a>Aktivace služby bez nutnosti soubor .svc  
  V [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], soubor .svc nebyla nutná pro aktivaci služby. Příčinou další správní režii, protože další soubor je potřeba nasadit a udržovat spolu s aplikací. S vydáním [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)], aktivačních komponent lze nakonfigurovat pomocí konfiguračního souboru aplikace.  
   
- [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]zavádí nový element konfigurace (<xref:System.ServiceModel.Configuration.ServiceActivationElement>) v <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection> konfiguračního souboru aplikace. <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection> Kolekci lze používat pouze kolekce služeb, které chcete aktivovat, jak je znázorněno v následujícím příkladu kódu.  
+ [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] zavádí nový element konfigurace (<xref:System.ServiceModel.Configuration.ServiceActivationElement>) v <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection> konfiguračního souboru aplikace. <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection> Kolekci lze používat pouze kolekce služeb, které chcete aktivovat, jak je znázorněno v následujícím příkladu kódu.  
   
 ```xml  
 <serviceActivations>  

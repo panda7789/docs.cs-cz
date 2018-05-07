@@ -1,21 +1,12 @@
 ---
-title: "Postupy: Přidání vlastních metod pro dotazů LINQ (C#)"
-ms.custom: 
+title: 'Postupy: Přidání vlastních metod pro dotazů LINQ (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 1a500f60-2e10-49fb-8b2a-d8d08e4817cb
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 01617ec2583361099eb5afb7957960ba39812680
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cd282b4b8ee4add759070317d9dbc3f78c07abf1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Postupy: Přidání vlastních metod pro dotazů LINQ (C#)
 Můžete rozšířit sadu metody, které můžete použít pro dotazy LINQ přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Kromě standardní průměr nebo maximální operace, například můžete vytvořit vlastní metoda aggregate vypočítat jednu hodnotu z pořadí hodnot. Můžete také vytvořit metodu, která funguje jako vlastní nebo konkrétní data transformace pro pořadí hodnot a vrátí nové pořadí. Příkladem takové metody jsou <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A>, a <xref:System.Linq.Enumerable.Reverse%2A>.  
@@ -215,4 +206,4 @@ foreach (var element in query)
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Collections.Generic.IEnumerable%601>  
- [Metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+ [Rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)

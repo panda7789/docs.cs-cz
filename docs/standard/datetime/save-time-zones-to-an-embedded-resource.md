@@ -1,13 +1,7 @@
 ---
-title: "Postupy: ukládání časových pásem do vloženého prostředku"
-ms.custom: 
+title: 'Postupy: ukládání časových pásem do vloženého prostředku'
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - time zone objects [.NET Framework], serializing
 - time zone objects [.NET Framework], saving
 ms.assetid: 3c96d83a-a057-4496-abb0-8f4b12712558
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 93dfc62df1c1d68e09a3734402924bbac1a074cb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4dd7e6db78b76d737cb4646c2fad79d96fb60aee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-save-time-zones-to-an-embedded-resource"></a>Postupy: ukládání časových pásem do vloženého prostředku
 

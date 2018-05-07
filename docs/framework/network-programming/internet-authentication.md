@@ -1,12 +1,6 @@
 ---
-title: "Ověřování v Internetu"
-ms.custom: 
+title: Ověřování v Internetu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - authentication [.NET Framework], classes
 - IAuthenticationModule interface
@@ -21,16 +15,14 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: fbf25ae866b338d2f1ac0ea11570e0d535e9137c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e44d752e5743d7d56bdce9b216b4cf5f5f920734
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="internet-authentication"></a>Ověřování v Internetu
 <xref:System.Net> Třídy podporují různé mechanismy ověřování klienta, včetně standardní Internet metod ověřování basic, algoritmem digest, vyjednávání protokolu NTLM a ověřování protokolu Kerberos, a také vlastních metod, které můžete vytvořit.  

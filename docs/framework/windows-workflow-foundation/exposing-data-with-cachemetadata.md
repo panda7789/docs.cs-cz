@@ -1,23 +1,12 @@
 ---
-title: "Vystavení dat s CacheMetadata"
-ms.custom: 
+title: Vystavení dat s CacheMetadata
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 34832f23-e93b-40e6-a80b-606a855a00d9
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a25e658d512cf0575a4e3902a9a951099675e29a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 386bbb8734e26eff8079f2913284668125a8a774
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exposing-data-with-cachemetadata"></a>Vystavení dat s CacheMetadata
 Před provedením aktivitu, modulu runtime pracovního postupu získá všechny informace o aktivitě, která je nutné, aby byla zachována jeho spuštění. Získá tyto informace při provádění modulu runtime pracovního postupu <xref:System.Activities.Activity.CacheMetadata%2A> metoda. Výchozí implementace této metody poskytuje modul runtime s všechny veřejné argumenty, proměnné a podřízené aktivity vystavené aktivity v době, kdy je se provedla; Pokud aktivita musí poskytnout další informace pro modul runtime než to (například soukromé členy, nebo aktivity plánování pomocí aktivity), k tomu lze přepsat tuto metodu.  
@@ -27,17 +16,17 @@ Před provedením aktivitu, modulu runtime pracovního postupu získá všechny 
   
 -   <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601>, nebo <xref:System.Activities.InOutArgument%601> (obecné argumenty): tyto argumenty jsou zveřejněné modulu runtime jako argumenty s názvem a zadejte rovna zveřejněné vlastnost název a typ, směr odpovídající argument a některá data ověření.  
   
--   <xref:System.Activities.Variable>nebo jakékoli její podtřídou: tito členové jsou viditelné na modulu runtime jako veřejné proměnné.  
+-   <xref:System.Activities.Variable> nebo jakékoli její podtřídou: tito členové jsou viditelné na modulu runtime jako veřejné proměnné.  
   
--   <xref:System.Activities.Activity>nebo jakékoli její podtřídou: tito členové jsou viditelné na modulu runtime jako veřejné podřízené aktivity. Výchozí chování může být implementováno výslovně voláním <xref:System.Activities.ActivityMetadata.AddImportedChild%2A>a předejte podřízené aktivity.  
+-   <xref:System.Activities.Activity> nebo jakékoli její podtřídou: tito členové jsou viditelné na modulu runtime jako veřejné podřízené aktivity. Výchozí chování může být implementováno výslovně voláním <xref:System.Activities.ActivityMetadata.AddImportedChild%2A>a předejte podřízené aktivity.  
   
--   <xref:System.Activities.ActivityDelegate>nebo jakékoli její podtřídou: tito členové jsou viditelné na modulu runtime jako veřejné delegáti.  
+-   <xref:System.Activities.ActivityDelegate> nebo jakékoli její podtřídou: tito členové jsou viditelné na modulu runtime jako veřejné delegáti.  
   
--   <xref:System.Collections.ICollection>typu <xref:System.Activities.Variable>: všechny elementy v kolekci jsou viditelné na modulu runtime jako veřejné proměnné.  
+-   <xref:System.Collections.ICollection> typu <xref:System.Activities.Variable>: všechny elementy v kolekci jsou viditelné na modulu runtime jako veřejné proměnné.  
   
--   <xref:System.Collections.ICollection>typu <xref:System.Activities.Activity>: všechny elementy v kolekci jsou viditelné na modulu runtime jako veřejné podřízené objekty.  
+-   <xref:System.Collections.ICollection> typu <xref:System.Activities.Activity>: všechny elementy v kolekci jsou viditelné na modulu runtime jako veřejné podřízené objekty.  
   
--   <xref:System.Collections.ICollection>typu <xref:System.Activities.ActivityDelegate>: všechny elementy v kolekci jsou viditelné na modulu runtime jako veřejné delegáti.  
+-   <xref:System.Collections.ICollection> typu <xref:System.Activities.ActivityDelegate>: všechny elementy v kolekci jsou viditelné na modulu runtime jako veřejné delegáti.  
   
  <xref:System.Activities.Activity.CacheMetadata%2A> Pro aktivity, které jsou odvozeny od <xref:System.Activities.Activity>, <xref:System.Workflow.Activities.CodeActivity>, a <xref:System.Activities.AsyncCodeActivity> také fungovat jako výše, vyjma následujících rozdílů:  
   

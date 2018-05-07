@@ -1,34 +1,20 @@
 ---
 title: Určování přenosu dat v kontraktech služby
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-caps.latest.revision: 38
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 852519dc1edc499511652f4027f4cd4eed6eef98
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7423a44f7779c8e4ef75fc68e33eeb4ac48a660a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Lze považovat za infrastrukturu zasílání zpráv. Operace služby můžete přijímat zprávy, jejich zpracování a jejich odeslání zprávy. Zprávy jsou popsány použití kontraktů operaci. Zvažte například následující kontrakt.  
+Windows Communication Foundation (WCF) lze považovat za infrastrukturu zasílání zpráv. Operace služby můžete přijímat zprávy, jejich zpracování a jejich odeslání zprávy. Zprávy jsou popsány použití kontraktů operaci. Zvažte například následující kontrakt.  
   
 ```csharp  
 [ServiceContract]  
@@ -65,7 +51,7 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- Kromě toho můžete použít odkaz na parametry aby parametr součástí požadavku a odpovědi. Parametry musí být typy, které lze serializovat (převést na XML). Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá komponenty s názvem <xref:System.Runtime.Serialization.DataContractSerializer> třída provést tento převod. Většina primitivní typy (například `int`, `string`, `float`, a `DateTime`.) jsou podporovány. Uživatelem definované typy musí mít normálně kontraktu dat. Další informace najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Kromě toho můžete použít odkaz na parametry aby parametr součástí požadavku a odpovědi. Parametry musí být typy, které lze serializovat (převést na XML). Ve výchozím nastavení používá WCF komponenty s názvem <xref:System.Runtime.Serialization.DataContractSerializer> třída provést tento převod. Většina primitivní typy (například `int`, `string`, `float`, a `DateTime`.) jsou podporovány. Uživatelem definované typy musí mít normálně kontraktu dat. Další informace najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ```csharp
 public interface IAirfareQuoteService  
@@ -100,7 +86,7 @@ Public Interface IAirfareQuoteService
 End Interface  
 ```  
   
- V některých případech `DataContractSerializer` není vhodný k serializaci vaší typy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje modul alternativní serializace <xref:System.Xml.Serialization.XmlSerializer>, který můžete použít také k serializaci parametrů. <xref:System.Xml.Serialization.XmlSerializer> Umožňuje používat větší kontrolu nad výsledné XML pomocí atributů, jako `XmlAttributeAttribute`. Chcete-li přejít k používání <xref:System.Xml.Serialization.XmlSerializer> určité operace nebo s celou službou, použít <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut operace nebo službu. Příklad:  
+ V některých případech `DataContractSerializer` není vhodný k serializaci vaší typy. WCF podporuje modul alternativní serializace <xref:System.Xml.Serialization.XmlSerializer>, který můžete použít také k serializaci parametrů. <xref:System.Xml.Serialization.XmlSerializer> Umožňuje používat větší kontrolu nad výsledné XML pomocí atributů, jako `XmlAttributeAttribute`. Chcete-li přejít k používání <xref:System.Xml.Serialization.XmlSerializer> určité operace nebo s celou službou, použít <xref:System.ServiceModel.XmlSerializerFormatAttribute> atribut operace nebo službu. Příklad:  
   
 ```csharp  
 [ServiceContract]  
@@ -261,7 +247,7 @@ End Class
 ## <a name="describing-messages-by-using-streams"></a>S popisem zprávy pomocí datové proudy  
  Dalším způsobem popisují zprávy v operacích je používat <xref:System.IO.Stream> třídu nebo jedna z jeho odvozených tříd ve smlouvě operaci, nebo jako člen textu kontrakt zprávy (v takovém případě se musí být jediným členem). Pro příchozí zprávy, musí být typ `Stream`– odvozené třídy nelze použít.  
   
- Místo vyvolání serializátor, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] načítá data z datového proudu a vloží ho přímo do odchozí zprávy, nebo načítá data z příchozí zprávy a vloží ho přímo do datového proudu. Následující příklad ukazuje použití datových proudů.  
+ Místo vyvolání serializátor, WCF načítá data z datového proudu a vloží ho přímo do odchozí zprávy, nebo načítá data z příchozí zprávy a vloží je přímo do datového proudu. Následující příklad ukazuje použití datových proudů.  
   
 ```csharp  
 [OperationContract]  
@@ -477,7 +463,7 @@ End Interface
 ```  
   
 ### <a name="serialization-behaviors"></a>Chování serializace  
- Jsou k dispozici ve dvou chování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> , jsou automaticky připojena v závislosti na serializátoru, který je používán pro konkrétní operaci. Protože tyto chování platí automaticky, obvykle nemáte zajímat, z nich.  
+ Dva chování jsou k dispozici ve službě WCF, <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> , jsou automaticky připojena v závislosti na serializátoru, který je používán pro konkrétní operaci. Protože tyto chování platí automaticky, obvykle nemáte zajímat, z nich.  
   
  Ale `DataContractSerializerOperationBehavior` má `MaxItemsInObjectGraph`, `IgnoreExtensionDataObject`, a `DataContractSurrogate` vlastnosti, které můžete použít k přizpůsobení procesu serializace. První dvě vlastnosti mají stejný význam, jak je popsáno v předchozí části. Můžete použít `DataContractSurrogate` vlastnost umožňující náhrady kontraktů dat, které jsou výkonný mechanismus pro přizpůsobení a rozšíření procesu serializace. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
   
@@ -571,7 +557,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
 ```  
   
 ### <a name="shared-type-serialization-object-graph-preservation-and-custom-serializers"></a>Sdílené serializace typu, objekt grafu zachovávání a vlastní Serializátorů  
- <xref:System.Runtime.Serialization.DataContractSerializer> Serializuje pomocí názvy kontraktu dat a .NET názvy typů. To je konzistentní s principů architektura orientovaná na služby a umožňuje pro vysoký stupeň flexibilitu – typy .NET můžete změnit bez ovlivnění přenosová kontrakt. Ve výjimečných případech můžete k serializaci skutečné názvy typů rozhraní .NET, a tím představení úzkou párování mezi klientem a serverem, podobné technologie vzdálené komunikace rozhraní .NET Framework. Toto není doporučený postup, s výjimkou ve výjimečných případech, které obvykle dochází při migraci na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ze vzdálené komunikace rozhraní .NET Framework. V takovém případě musíte použít <xref:System.Runtime.Serialization.NetDataContractSerializer> místo <xref:System.Runtime.Serialization.DataContractSerializer> třídy.  
+ <xref:System.Runtime.Serialization.DataContractSerializer> Serializuje pomocí názvy kontraktu dat a .NET názvy typů. To je konzistentní s principů architektura orientovaná na služby a umožňuje pro vysoký stupeň flexibilitu – typy .NET můžete změnit bez ovlivnění přenosová kontrakt. Ve výjimečných případech můžete k serializaci skutečné názvy typů rozhraní .NET, a tím představení úzkou párování mezi klientem a serverem, podobné technologie vzdálené komunikace rozhraní .NET Framework. Toto není doporučený postup, s výjimkou ve výjimečných případech, které obvykle dochází při migraci do WCF z vzdálené komunikace rozhraní .NET Framework. V takovém případě musíte použít <xref:System.Runtime.Serialization.NetDataContractSerializer> místo <xref:System.Runtime.Serialization.DataContractSerializer> třídy.  
   
  <xref:System.Runtime.Serialization.DataContractSerializer> Normálně serializuje grafy objektu jako objekt stromy. To znamená pokud na stejný objekt odkazuje víc než jednou, ho je serializováno více než jednou. Představte si třeba `PurchaseOrder` instanci, která má dvě pole typu s názvem adresu `billTo` a `shipTo`. Pokud jsou obě pole nastavená na stejnou instanci adresu, existují dvě instance stejné adresy po serializace a deserializace. To se provádí, protože neexistuje žádný standardní umožňuje vzájemnou spolupráci způsob k reprezentaci objektu grafy v XML (s výjimkou k dispozici na starší verze protokolu SOAP kódovaný standard <xref:System.Xml.Serialization.XmlSerializer>, jak je popsáno v předchozí části na `Style` a `Use`). Serializace grafů objektu jako stromy má určité nevýhody, například nejde serializovat, grafy s cyklické odkazy. V některých případech je nutné přepnout na true objekt serializace grafů, i když není umožňuje vzájemnou spolupráci. To můžete provést pomocí <xref:System.Runtime.Serialization.DataContractSerializer> zkonstruovat s `preserveObjectReferences` parametr nastaven na `true`.  
   

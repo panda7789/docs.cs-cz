@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Připojení k metodě"
-ms.custom: 
+title: 'Postupy: Připojení k metodě'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data binding [WPF], binding to methods using ObjectDataProvider
 - binding [WPF], to methods
 - methods [WPF], binding to
 ms.assetid: 5f55e71e-2182-42a0-88d1-700cc1427a7a
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 45f2a141b09c52085c13803b8d338fdc9eebf135
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58e243812f9c2dcb65dc37bfd50d9bcfb124e4f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-to-a-method"></a>Postupy: Připojení k metodě
 Následující příklad ukazuje, jak vytvořit vazbu k metoda pomocí <xref:System.Windows.Data.ObjectDataProvider>.  

@@ -1,35 +1,23 @@
 ---
 title: Terminologie zabezpečení WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - security [WCF], terminology
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-caps.latest.revision: 14
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 46f70ad623d852e051ff69fb68690114f8c39381
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 8024abdab01b2df151a6c0c2f5760e85ae119fd4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Může být obeznámeni některé z technologiím použitým když hovoříte o zabezpečení. Toto téma poskytuje krátké vysvětlení některých termínů zabezpečení, ale není určená k poskytování komplexní dokumentaci pro každou položku.  
   
- Další informace o termínů používaných v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dokumentaci najdete v tématu [základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md).  
+ Další informace o termínů používaných v dokumentaci k Windows Communication Foundation (WCF) najdete v tématu [základní Windows Communication Foundation koncepty](../../../../docs/framework/wcf/fundamental-concepts.md).  
   
  seznam řízení přístupu (ACL)  
  Seznam ochranu zabezpečení, která se vztahuje k objektu. (Objekt může být soubor, procesů, události či něco jinak museli popisovač zabezpečení.) Položku v seznamu ACL je položka řízení přístupu (ACE). Existují dva typy seznamů řízení přístupu: volitelný a systému.  
@@ -189,7 +177,7 @@ Může být obeznámeni některé z technologiím použitým když hovoříte o 
  Název uživatelského účtu (někdy označovány jako *přihlašovací uživatelské jméno*) a název domény určujícího doménu, ve kterém se nachází uživatelský účet. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je: someone@example.com (jako u e-mailovou adresu).  
   
 > [!NOTE]
->  Kromě standardní UPN formuláře [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přijímá UPN v podobě nižší úrovně, například cohowinery.com\someone.  
+>  Kromě standardní UPN formuláře WCF přijme UPN v podobě nižší úrovně, například cohowinery.com\someone.  
   
  X.509  
  Mezinárodní úrovni rozpoznaný standard pro certifikáty definující jejich požadované součásti.  

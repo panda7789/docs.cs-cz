@@ -1,28 +1,16 @@
 ---
-title: "Jak funguje vstup z klávesnice"
-ms.custom: 
+title: Jak funguje vstup z klávesnice
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - keyboard input [Windows Forms], about keyboard input
 - keyboards [Windows Forms], keyboard input
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 43b92051b6524a730735fea98d64ee64578b4e06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a0b814a18f4a8b25fba9fa0b36da44954590f056
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
 Windows Forms zpracovává vstup z klávesnice ve vyvolání události klávesnice v reakci na zpráv systému Windows. Většina aplikací Windows Forms zpracovat vstup z klávesnice výhradně pomocí zpracování události klávesnice. Nicméně budete muset pochopili, jak funguje zprávy klávesnice, můžete implementovat pokročilejší scénáře vstupu klávesnice, jako je například brání klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíčová data, že Windows Forms rozpozná a poskytuje přehled o tom, jak se směrují klávesnice zprávy. Informace o události klávesnice najdete v tématu [události klávesnice s použitím](../../../docs/framework/winforms/using-keyboard-events.md).  
@@ -74,9 +62,9 @@ Windows Forms zpracovává vstup z klávesnice ve vyvolání události klávesni
 |Úloha|Metoda|  
 |----------|------------|  
 |Zachytávat navigační klíč a zvýšit <xref:System.Windows.Forms.Control.KeyDown> událostí. Můžete například chtít KARTĚ a vraťte se ke zpracování v textovém poli.|Přepsání <xref:System.Windows.Forms.Control.IsInputKey%2A>. **Poznámka:** Alternativně může zpracovat <xref:System.Windows.Forms.Control.PreviewKeyDown> událostí a sadu <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A> z <xref:System.Windows.Forms.PreviewKeyDownEventArgs> k `true` pro klíče nebo klíče, které chcete.|  
-|Proveďte zvláštní zpracování vstupu nebo navigační prvku. Například chcete použití klávesy se šipkami ve vašem ovládací prvek seznamu, chcete-li změnit vybrané položky.|Přepsání<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|  
+|Proveďte zvláštní zpracování vstupu nebo navigační prvku. Například chcete použití klávesy se šipkami ve vašem ovládací prvek seznamu, chcete-li změnit vybrané položky.|přepsání <xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|  
 |Zachytávat navigační klíč a zvýšit <xref:System.Windows.Forms.Control.KeyPress> událostí. Například v ovládacím prvku číselník budete chtít že klíč k vícenásobné šipku stiskem tlačítka pro urychlení rozšiřování prostřednictvím položky.|Přepsání <xref:System.Windows.Forms.Control.IsInputChar%2A>.|  
-|Zvláštní zpracování vstupu nebo navigační během provádění <xref:System.Windows.Forms.Control.KeyPress> událostí. Například v seznamu řízení podržíte stisknutou klávesu "r" mezi položkami, které začínají písmeno r přeskočí.|Přepsání<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|  
+|Zvláštní zpracování vstupu nebo navigační během provádění <xref:System.Windows.Forms.Control.KeyPress> událostí. Například v seznamu řízení podržíte stisknutou klávesu "r" mezi položkami, které začínají písmeno r přeskočí.|přepsání <xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|  
 |Proveďte vlastní symbolické zpracování; například chcete zpracovávat klávesové zkratky vykreslovaných vlastníkem tlačítek obsažené v panelu nástrojů.|Přepsání <xref:System.Windows.Forms.Control.ProcessMnemonic%2A>.|  
   
 ## <a name="see-also"></a>Viz také  

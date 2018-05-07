@@ -1,21 +1,12 @@
 ---
-title: "Postupy: načtení XML ze souboru (C#)"
-ms.custom: 
+title: 'Postupy: načtení XML ze souboru (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 3ed38487-8028-4209-9872-c8dce0ed4dfe
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7db51b4b0d6cebb443a9ff43ac8916d3004c1ea5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b276359c9bfd0a45775cf5ecf1e821f776825309
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-load-xml-from-a-file-c"></a>Postupy: načtení XML ze souboru (C#)
 Toto téma ukazuje, jak načíst XML z identifikátoru URI pomocí <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> metoda.  

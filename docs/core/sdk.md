@@ -4,17 +4,12 @@ description: Zjistěte informace o rozhraní .NET Core SDK, což je sada knihove
 author: blackdwarf
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: e75774f24b18796a618264eb7cca64d3aa243e5e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 5fc04c3ef5a1502251a9caf0b6a5f5809faad5b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-sdk-overview"></a>Přehled sady SDK rozhraní .NET core 
 

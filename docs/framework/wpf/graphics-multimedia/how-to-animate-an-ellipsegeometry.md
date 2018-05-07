@@ -1,13 +1,6 @@
 ---
 title: 'Postupy: Animace EllipseGeometry'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - EllipseGeometry objects [WPF], animating
 - graphics [WPF], animation
 ms.assetid: 767b9b6e-9cb7-482e-b6c2-fee7750c3995
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cc9eea56d9070d33820f8e2ef1bd8eba3ec04303
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 223c435e3805fc897f5486f121cb4ffc922fb16d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-an-ellipsegeometry"></a>Postupy: Animace EllipseGeometry
 Tento příklad ukazuje, jak animace <xref:System.Windows.Media.Geometry> v rámci <xref:System.Windows.Shapes.Path> elementu. V následujícím příkladu <xref:System.Windows.Media.Animation.PointAnimation> se používá k animace <xref:System.Windows.Media.EllipseGeometry.Center%2A> z <xref:System.Windows.Media.EllipseGeometry>.  

@@ -1,20 +1,13 @@
 ---
-title: "Provádění seskupených spojení"
-description: "Postup provádění seskupených spojení."
-keywords: "Rozhraní .NET, rozhraní .NET core, C#"
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: Provádění seskupených spojení
+description: Postup provádění seskupených spojení.
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
-ms.openlocfilehash: 5e26473e19a5b6107d7aceea5e9829b48aa522b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fbdb1a69fa2f3b171935fa3a58cf9a045be0a494
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="perform-grouped-joins"></a>Provádění seskupených spojení
 

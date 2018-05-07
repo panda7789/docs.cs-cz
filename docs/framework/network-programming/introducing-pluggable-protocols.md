@@ -1,12 +1,6 @@
 ---
-title: "Představení modulární protokoly"
-ms.custom: 
+title: Představení modulární protokoly
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data requests, pluggable protocols
 - WebRequest class, pluggable protocols
@@ -28,16 +22,14 @@ helpviewer_keywords:
 - server identifiers
 - scheme identifiers
 ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
-caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 3cc7ad6b6270b74e2eb6aa4a2cc3a540175d540b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ef674855d1b9d6538e08ea2bb95f1f63e602d61d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introducing-pluggable-protocols"></a>Představení modulární protokoly
 Rozhraní Microsoft .NET Framework poskytuje implementaci vrstev, rozšiřitelný a spravovaných služeb Internetu, které může být integrovaná rychle a snadno do svých aplikací. Přístup k Internetu třídy v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů lze použít k implementaci webové i internetové aplikace.  

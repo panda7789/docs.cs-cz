@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Detekce stisknuté klávesy Enter"
-ms.custom: 
+title: 'Postupy: Detekce stisknuté klávesy Enter'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Enter key [WPF], detecting
 - keys [WPF], Enter
 ms.assetid: a66f39d2-ef4a-43a5-b454-a4ea0fe88655
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 21bb0dc8a38f8b49a4f5372c9dfc1e17e5114d6a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1de11cd30d1990dcd2bc927a69b60c66c721addb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-detect-when-the-enter-key-pressed"></a>Postupy: Detekce stisknuté klávesy Enter
 Tento příklad ukazuje, jak zjistit, kdy <xref:System.Windows.Input.Key.Enter> není stisknuta klávesa na klávesnici.  

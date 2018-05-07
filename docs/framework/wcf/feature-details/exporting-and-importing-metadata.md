@@ -1,34 +1,20 @@
 ---
 title: Export a import metadat
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - metadata [WCF], exporting and importing
 ms.assetid: 614a75bb-e0b0-4c95-b6d8-02cb5e5ddb38
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a2785f74d9a07b267d836a9f6e6749d259a1ab21
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 497feb80d5930a784022877cfaa6e6c76a3047a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exporting-and-importing-metadata"></a>Export a import metadat
-V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], Export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Import metadat služby je proces generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance nebo části z metadat služby.  
+Ve Windows Communication Foundation (WCF), Export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Import metadat služby je proces generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance nebo části z metadat služby.  
   
 ## <a name="exporting-metadata"></a>Export metadat  
- Pro export metadat z <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instance slouží provádění <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlExporter> Typ je implementace <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Pro export metadat z <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instance slouží provádění <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlExporter> Typ je implementace <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy součástí WCF.  
   
  <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> Typ generuje metadata webové služby popis Language (WSDL) s výrazy připojené zásad zapouzdřené v <xref:System.ServiceModel.Description.MetadataSet> instance. Můžete použít <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> instance interaktivně vyexportujte metadata pro <xref:System.ServiceModel.Description.ContractDescription> objekty a <xref:System.ServiceModel.Description.ServiceEndpoint> objekty. Můžete také exportovat kolekce <xref:System.ServiceModel.Description.ServiceEndpoint> objekty a jejich přidružení s názvem konkrétní služby.  
   
@@ -38,7 +24,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], Export metadat je pro
 ## <a name="importing-metadata"></a>Import metadat  
   
 ### <a name="importing-wsdl-documents"></a>Import dokumentů WSDL  
- Chcete-li importovat metadata služby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], použít implementaci <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> Typ je implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. <xref:System.ServiceModel.Description.WsdlImporter> Zadejte importy WSDL metadata připojené zásadám dodávat v <xref:System.ServiceModel.Description.MetadataSet> objektu.  
+ Chcete-li importovat metadata služby ve službě WCF, použijte implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> Typ je implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy součástí WCF. <xref:System.ServiceModel.Description.WsdlImporter> Zadejte importy WSDL metadata připojené zásadám dodávat v <xref:System.ServiceModel.Description.MetadataSet> objektu.  
   
  <xref:System.ServiceModel.Description.WsdlImporter> Typ umožňuje určit, jak importovat metadata. Můžete importovat všechny koncové body, všechny vazby, nebo všechny smluv. Můžete importovat všechny koncové body přidružené k specifické WSDL služby, vazba nebo typ portu. Můžete také importovat koncový bod pro specifického portu WSDL, vazby pro konkrétní vazbu WSDL nebo kontrakt pro konkrétní typ portu WSDL.  
   

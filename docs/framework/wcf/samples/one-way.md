@@ -1,24 +1,12 @@
 ---
-title: "Jednosměrný"
-ms.custom: 
+title: Jednosměrný
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a781963205f260c82d3db316680c9e8c33045434
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cb3619d56720333f23d933a8f356e8b0268c4d9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="one-way"></a>Jednosměrný
 Tento příklad znázorňuje služby kontaktu s operací jednosměrné služby. Klient není počkejte na dokončení stejně jako v případě s operací obousměrné služby operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služba v této ukázce je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolové aplikace.  
@@ -95,7 +83,7 @@ Processing Divide(22,7) - result: 3.14285714285714
 ```  
   
 > [!NOTE]
->  HTTP je podle definice požadavků a odpovědí protokolu; Když je žádosti se vrátí odpověď. To platí i pro operaci jednosměrné služby, který je zveřejněný prostřednictvím protokolu HTTP. Při volání operace služby vrátí kód stavu HTTP 202, předtím, než se spustí operace služby. Tento kód stavu znamená, že žádost byla přijata pro zpracování, ale zpracování dosud nebyl dokončen. Klient, který volal operaci bloky, dokud neobdrží 202 odpověď ze služby. To může způsobit některé neočekávanému chování při odesílání více jednosměrný zpráv pomocí vazby, který je nakonfigurován pro použití relací. `wsHttpBinding` Vazba použitá v této ukázce je nakonfigurovaný na použití relací ve výchozím nastavení k vytvoření kontextu zabezpečení. Ve výchozím nastavení jsou zaručené doručení v pořadí, v níž jsou odesílány zprávy v relaci. Z toho důvodu je odeslání o druhou zprávu v relaci není dokud zpracovala první zprávu zpracovat. Důsledkem je, klient až do dokončení zpracování v předchozí zprávě neobdrží 202 odpovědi na zprávy. Klient proto pravděpodobně bloku při každém volání další operace. Chcete-li tomu zabránit, nakonfiguruje této ukázky modulu runtime odesílání zpráv souběžně na různých instancí pro zpracování. Ukázka sady <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> k `PerCall` tak, aby každá zpráva může zpracovat jiné instance. <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>je nastavena na `Multiple` umožňuje více než jedno vlákno k odesílání zpráv v čase.  
+>  HTTP je podle definice požadavků a odpovědí protokolu; Když je žádosti se vrátí odpověď. To platí i pro operaci jednosměrné služby, který je zveřejněný prostřednictvím protokolu HTTP. Při volání operace služby vrátí kód stavu HTTP 202, předtím, než se spustí operace služby. Tento kód stavu znamená, že žádost byla přijata pro zpracování, ale zpracování dosud nebyl dokončen. Klient, který volal operaci bloky, dokud neobdrží 202 odpověď ze služby. To může způsobit některé neočekávanému chování při odesílání více jednosměrný zpráv pomocí vazby, který je nakonfigurován pro použití relací. `wsHttpBinding` Vazba použitá v této ukázce je nakonfigurovaný na použití relací ve výchozím nastavení k vytvoření kontextu zabezpečení. Ve výchozím nastavení jsou zaručené doručení v pořadí, v níž jsou odesílány zprávy v relaci. Z toho důvodu je odeslání o druhou zprávu v relaci není dokud zpracovala první zprávu zpracovat. Důsledkem je, klient až do dokončení zpracování v předchozí zprávě neobdrží 202 odpovědi na zprávy. Klient proto pravděpodobně bloku při každém volání další operace. Chcete-li tomu zabránit, nakonfiguruje této ukázky modulu runtime odesílání zpráv souběžně na různých instancí pro zpracování. Ukázka sady <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> k `PerCall` tak, aby každá zpráva může zpracovat jiné instance. <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> je nastavena na `Multiple` umožňuje více než jedno vlákno k odesílání zpráv v čase.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   
@@ -113,7 +101,7 @@ Processing Divide(22,7) - result: 3.14285714285714
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  
   

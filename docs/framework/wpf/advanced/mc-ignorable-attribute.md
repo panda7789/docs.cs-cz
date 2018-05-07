@@ -1,13 +1,6 @@
 ---
-title: "mc:Ignorable – atribut"
-ms.custom: 
+title: mc:Ignorable – atribut
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - mc XML namespace prefix [WPF]
 - mc:Ignorable attribute
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9767b721321b34030a2f276a90c618c658645207
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7b8a2ef6e27bc6b25776157e59bef04b883fcb1a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable – atribut
 Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] předpony oboru názvů v souboru kódu může být ignorována [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru. `mc:Ignorable` Podporuje atribut kompatibility značek pro vlastní obor názvů mapování i pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správy verzí.  
@@ -66,7 +54,7 @@ Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md
   
  Elementy nebo atributy, kde jsou předpony část název elementu označeny jako `mc:Ignorable` nevydá chyby při zpracování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru. Pokud tento atribut nelze přeložit na základní typ nebo programovací konstrukce, že element ignorován. Pozor ale ignoruje elementy může generovat stále další chyby analyzátoru element další požadavky, které jsou vedlejší účinky tohoto prvku nejsou zpracována. Model obsahu určitý element může například vyžadovat přesně jeden podřízený element, ale pokud byl zadaný podřízený element v `mc:Ignorable` předponu a zadaný podřízený element nebylo možné přeložit na typ, pak se [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] může procesoru vyvolá chybu.  
   
- `mc:Ignorable`platí jenom pro mapování oboru názvů na identifikátor řetězce. `mc:Ignorable`nelze použít u mapování oboru názvů do sestavení, které určují [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů a sestavení (nebo výchozí nastavení aktuální spustitelného souboru jako sestavení).  
+ `mc:Ignorable` platí jenom pro mapování oboru názvů na identifikátor řetězce. `mc:Ignorable` nelze použít u mapování oboru názvů do sestavení, které určují [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů a sestavení (nebo výchozí nastavení aktuální spustitelného souboru jako sestavení).  
   
  Pokud implementujete [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru, implementaci procesoru nesmí vyvolat analýza nebo zpracování chyb v řešení typu pro element nebo atribut, který je kvalifikován předponu, která je označena jako `mc:Ignorable`. Ale implementaci procesoru může být stále spojeno výjimky, které jsou výsledkem sekundární elementu nedaří se načíst nebo zpracovat, jako je například jeden podřízený element zadána dříve.  
   

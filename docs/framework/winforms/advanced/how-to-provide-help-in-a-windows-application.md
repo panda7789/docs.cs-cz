@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Poskytnutí nápovědy v aplikaci Windows"
-ms.custom: 
+title: 'Postupy: Poskytnutí nápovědy v aplikaci Windows'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Help [Windows Forms], Windows applications
 - HTML Help [Windows Forms], Windows Forms
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - HelpProvider component [Windows Forms]
 - forms [Windows Forms], providing Help
 ms.assetid: 7c4e5cec-2bd2-4f0b-8d75-c2b88929bd61
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d23e5d5d19e17aedd37d4d5f6cbc41429463ddfb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3df8f6eaee72ebdd6cbd03d0bdfde5a7d2270129
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
 Můžete použít nástroje <xref:System.Windows.Forms.HelpProvider> součásti pro připojení ke konkrétní ovládacích prvků ve Windows Forms témata nápovědy v souboru nápovědy. Soubor nápovědy může být HTML nebo HTMLHelp 1.x nebo větší formát.  

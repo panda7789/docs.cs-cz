@@ -1,31 +1,17 @@
 ---
-title: "Postupy: získání certifikátu (WCF)"
-ms.custom: 
+title: 'Postupy: získání certifikátu (WCF)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - certificates [WCF], obtaining
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5dcefa658aec37b9af3c4f9285ec76a0d549b868
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 368401d91aa2a83110631d583660d6ccebf8d4fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-obtain-a-certificate-wcf"></a>Postupy: získání certifikátu (WCF)
-K používání některé z [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce, které používají certifikáty X.509, je právě nejprve získat certifikáty.  
+K používání některé Windows Communication Foundation (WCF), funkce používají certifikáty X.509, je právě nejprve získat certifikáty.  
   
 ### <a name="to-obtain-an-x509-certificate"></a>K získání certifikátu X.509  
   

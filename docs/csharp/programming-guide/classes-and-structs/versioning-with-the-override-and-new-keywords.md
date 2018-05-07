@@ -1,21 +1,15 @@
 ---
-title: "Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)"
+title: Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-caps.latest.revision: "25"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: be51a5b3d3eecc58d43dcbbcb0802cce7fd16c45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2a6a6f59320d94cf97b1a07448000bd708d95559
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 Jazyka C# je navržen tak, aby Správa verzí mezi [základní](../../../csharp/language-reference/keywords/base.md) a odvozené třídy v různé knihovny můžete vyvíjet a zachování zpětné kompatibility. To znamená, například, že zavedení nového člena v na základní [třída](../../../csharp/language-reference/keywords/class.md) se stejným názvem jako člen v odvozené třídě je zcela podporované v jazyce C# a nevede k neočekávanému chování. Taky to znamená, že třídu musí explicitně stavu zda metoda je určena k přepsání zděděnou metodu, nebo zda je metoda nové metodu, která skryje s podobným názvem zděděna metoda.  
@@ -84,7 +78,7 @@ Jazyka C# je navržen tak, aby Správa verzí mezi [základní](../../../csharp/
  Další příklady `new` a `override`, najdete v části [zároveň budete vědět, při použití přepsání a nová klíčová slova](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
  [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)

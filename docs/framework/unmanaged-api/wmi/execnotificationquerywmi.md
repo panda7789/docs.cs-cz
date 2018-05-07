@@ -1,11 +1,7 @@
 ---
-title: "Funkce ExecNotificationQueryWmi (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce ExecNotificationQueryWmi provede dotaz přijímat události."
+title: Funkce ExecNotificationQueryWmi (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce ExecNotificationQueryWmi provede dotaz přijímat události.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - ExecNotificationQueryWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d6dd0926d2262f8d0aa125b86755017a65a95a7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4b5c26ab9c273b134915eea39078a83f569bcd32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="execnotificationquerywmi-function"></a>ExecNotificationQueryWmi – funkce
 Provede dotaz přijímat události. Volání vrátí okamžitě a volající může dotazovat vrácený enumerátor pro události, když dorazí. Uvolnění vrácený enumerátor zruší dotazu.  
@@ -77,7 +70,7 @@ HRESULT ExecNotificationQueryWmi (
 `authLevel`  
 [v] Úroveň ověřování.
 
-`impLevel`[v] Úroveň zosobnění.
+`impLevel` [v] Úroveň zosobnění.
 
 `pCurrentNamespace`   
 [v] Ukazatel na [Služby IWbem](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx) objekt, který představuje aktuální obor názvů.
@@ -127,7 +120,7 @@ Pokud volání funkce selže, můžete získat další informace o chybě při v
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

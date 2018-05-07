@@ -1,36 +1,24 @@
 ---
-title: "Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení"
-ms.custom: 
+title: 'Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4415edbe9f04cb56cefadcb3ae521994fac28ffb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 41936b407dfdb3fecee80b2513b557016cdcfe5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení
 Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpečení a postup při integraci s tokenu správce vlastní zabezpečení. Ověřovací data tokenu zabezpečení ověří obsah token zabezpečení, která je součástí příchozí zprávy. Pokud je ověření úspěšné, ověřovacích vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instance, při hodnocení, vrátí sadu deklarací identity.  
   
- Použít vlastního ověřovacího modulu tokenu zabezpečení v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], musíte nejdřív vytvořit vlastní pověření a zabezpečení implementace Správce tokenu. Další informace o vytváření vlastních přihlašovacích údajů a zabezpečení Správce tokenu najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací najdete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
+ Použití ověřovacího modulu tokenu vlastní zabezpečení ve Windows Communication Foundation (WCF), musíte nejprve vytvořit vlastní pověření a zabezpečení implementace Správce tokenu. Další informace o vytváření vlastních přihlašovacích údajů a zabezpečení Správce tokenu najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací najdete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## <a name="procedures"></a>Procedury  
   
@@ -45,7 +33,7 @@ Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpe�
      [!code-csharp[C_CustomTokenAuthenticator#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#1)]
      [!code-vb[C_CustomTokenAuthenticator#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#1)]  
   
- Vrátí kolekci zásady autorizace v předchozí kód <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.CanValidateToken%28System.IdentityModel.Tokens.SecurityToken%29> metoda. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]neposkytuje veřejné implementace tohoto rozhraní. Následující postup ukazuje, jak to provést pro vaše vlastní požadavky.  
+ Vrátí kolekci zásady autorizace v předchozí kód <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.CanValidateToken%28System.IdentityModel.Tokens.SecurityToken%29> metoda. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] neposkytuje veřejné implementace tohoto rozhraní. Následující postup ukazuje, jak to provést pro vaše vlastní požadavky.  
   
 #### <a name="to-create-a-custom-authorization-policy"></a>Chcete-li vytvořit vlastní zásady autorizace  
   

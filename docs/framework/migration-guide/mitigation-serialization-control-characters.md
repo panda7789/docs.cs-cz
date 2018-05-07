@@ -1,28 +1,19 @@
 ---
-title: "Omezení rizik: Serializace s objektu DataContractJsonSerializer. řídicí znaky"
-ms.custom: 
+title: 'Omezení rizik: Serializace s objektu DataContractJsonSerializer. řídicí znaky'
 ms.date: 04/07/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.7 retargeting changes
 - retargeting changes
 - DataContractJsonSerializer changes
 - serialization changes
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
-caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e92bc1ab55674a39331cef5d0450cd8e28ef55f2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0a00edbf2d5833349de14986f2a57a2c943f3ea8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Omezení rizik: Serializace s objektu DataContractJsonSerializer. řídicí znaky
 

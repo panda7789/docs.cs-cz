@@ -4,17 +4,12 @@ description: Naučte se vytvořit balíček NuGet příkazem 'dotnet pack'.
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: b85f6d53787cb513ae4c1e8147a066188b0e56c6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6be94c2e2cef443f69b2d6df7c2d490cb1fb629d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-nuget-package-with-cross-platform-tools"></a>Postup vytvoření balíčku NuGet se pro různé platformy nástroje
 

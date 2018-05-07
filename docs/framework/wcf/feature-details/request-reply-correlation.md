@@ -1,27 +1,15 @@
 ---
-title: "Korelace požadavku a odpovědi"
-ms.custom: 
+title: Korelace požadavku a odpovědi
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cf4379bf-2d08-43f3-9584-dfa30ffcb1f6
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38f4fc436afbcc5922badda22e9a6e565bc19a0c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c38854ad42ad4dddce5171482f3ddcfe5bd16b61
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="request-reply-correlation"></a>Korelace požadavku a odpovědi
-Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár implementovat obousměrný operace ve službě pracovního postupu a s <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár, který vyvolá obousměrný operaci v jiný Web Služba. Při vyvolání obousměrný operace v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, službu může být buď tradiční imperativní založené na kódu [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, nebo může být služby pracovních postupů. Použít korelace požadavku a odpovědi vazba obousměrná musí být použita, jako například <xref:System.ServiceModel.BasicHttpBinding>. Ať už vyvolání nebo implementace obousměrné operaci, jsou podobné kroků inicializace korelace a jsou popsané v této části.  
+Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár implementovat obousměrný operace ve službě pracovního postupu a s <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár, který vyvolá obousměrný operaci v jiný Web Služba. Při vyvolání obousměrný operace ve službě WCF, služba může být buď tradiční imperativní založené na kódu služby Windows Communication Foundation (WCF), nebo může být služby pracovních postupů. Použít korelace požadavku a odpovědi vazba obousměrná musí být použita, jako například <xref:System.ServiceModel.BasicHttpBinding>. Ať už vyvolání nebo implementace obousměrné operaci, jsou podobné kroků inicializace korelace a jsou popsané v této části.  
   
 ## <a name="using-correlation-in-a-two-way-operation-with-receivesendreply"></a>Použití v obousměrný operaci s přijímat nebo SendReply korelace  
  A <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár slouží k implementaci obousměrný operace ve službě pracovního postupu. Modul runtime používá k zajištění, že je správný volajícího odeslaných odpovědi korelace požadavku a odpovědi. Pokud je pracovní postup je hostováno pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>, což je případ pro pracovní postup služby a pak stačí výchozí korelace inicializace. V tomto scénáři <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pracovní postup používá pár a není nutná žádná konfigurace konkrétní korelace.  
@@ -72,7 +60,7 @@ SendReply ReplyToStartOrder = new SendReply
 // Construct a workflow using StartOrder and ReplyToStartOrder.  
 ```  
   
- Namísto výslovně konfigurace korelace, <xref:System.ServiceModel.Activities.CorrelationScope> lze aktivity. <xref:System.ServiceModel.Activities.CorrelationScope>poskytuje implicitní <xref:System.ServiceModel.Activities.CorrelationHandle> pro zasílání zpráv aktivity, které obsahuje. V tomto příkladu <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> je součástí páru <xref:System.ServiceModel.Activities.CorrelationScope>. Není nutná žádná konfigurace explicitní korelace.  
+ Namísto výslovně konfigurace korelace, <xref:System.ServiceModel.Activities.CorrelationScope> lze aktivity. <xref:System.ServiceModel.Activities.CorrelationScope> poskytuje implicitní <xref:System.ServiceModel.Activities.CorrelationHandle> pro zasílání zpráv aktivity, které obsahuje. V tomto příkladu <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> je součástí páru <xref:System.ServiceModel.Activities.CorrelationScope>. Není nutná žádná konfigurace explicitní korelace.  
   
 ```csharp  
 Receive StartOrder = new Receive  

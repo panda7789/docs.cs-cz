@@ -4,16 +4,11 @@ description: Vyhledejte prostředky, abyste Naučte se vytvářet aplikace .NET 
 author: johalex
 ms.author: johalex
 ms.date: 09/14/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: ba4e010f81cea00122fd450f02a75598bb7293b8
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 7e70cd4ba9891403f6b5890aa585dafb77c76898
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 

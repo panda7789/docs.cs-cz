@@ -1,21 +1,14 @@
 ---
-title: "Použití indexerů (Průvodce programováním v C#)"
+title: Použití indexerů (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 17bbfabe8a53fc51e81434d0a2bd9fb2b29c4695
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 82de2841a74f58905d3089bb0b320e7501a77045
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-indexers-c-programming-guide"></a>Použití indexerů (Průvodce programováním v C#)
 Indexery jsou syntaktické pohodlí, které vám umožní vytvořit [třída](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) , klient aplikace mají přístup k stejně jako pole. Indexery se nejčastěji implementují typy, jejichž primární účelem je zapouzdření k interní kolekce nebo pole. Předpokládejme například, že máte třídy s názvem TempRecord, který reprezentuje teplotní v Farenheit zjištěná v různých časech 10 během období 24 hodin. Třída obsahuje pole s názvem "temps" z typ float představují teploty a <xref:System.DateTime> představující datum teploty nebyly zaznamenány. Implementací indexer v této třídě, mohou klienti získat přístup teploty v instanci TempRecord jako `float temp = tr[4]` místo jako `float temp = tr.temps[4]`. Zápis indexer nejen zjednodušuje syntaxi pro klientské aplikace; také umožňuje třídě a jeho účel intuitivnější pro ostatní vývojáři pochopit.  

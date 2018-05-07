@@ -1,31 +1,20 @@
 ---
 title: EventWaitHandle
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - threading [.NET Framework], EventWaitHandle class
 - EventWaitHandle class
 - event wait handles [.NET Framework]
 - threading [.NET Framework], cross-process synchronization
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 665676a25aea48388ba01b8028af00049b113f2b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 697820b01bd629baa306d96002a98d92e44dab51
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 <xref:System.Threading.EventWaitHandle> Třída umožňuje vláken pro komunikaci mezi sebou signalizace a čekání signály. Obslužné rutiny událostí čekání (také označované jako události jednoduše) jsou popisovače čekání, které můžete signál, aby verze jeden nebo více podprocesů čekání. Po to bylo signalizováno, popisovač čekání událostí je obnovit ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Třída může představovat buď místní události popisovač čekání (místní události) nebo s názvem systémové události počkejte popisovač (s názvem události nebo událostí systému, viditelné pro všechny procesy).  
@@ -55,7 +44,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="features-common-to-automatic-and-manual-events"></a>Běžné funkce automatického nebo ručního události  
  Obvykle jeden nebo více podprocesů blokovat na <xref:System.Threading.EventWaitHandle> dokud odblokuje vlákno volá <xref:System.Threading.EventWaitHandle.Set%2A> metodu, která uvolní jeden vláken čekání (v případě událostí automatický reset) nebo všechny z nich (v případě ručního resetovat událostí). Vlákno můžete signál <xref:System.Threading.EventWaitHandle> a pak blokovat, jako atomickou operaci, voláním statické <xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=nameWithType> metoda.  
   
- <xref:System.Threading.EventWaitHandle>objekty lze použít s statických <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> a <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> metody. Protože <xref:System.Threading.EventWaitHandle> a <xref:System.Threading.Mutex> třídy obě jsou odvozeny od <xref:System.Threading.WaitHandle>, můžete použít obě třídy pomocí těchto metod.  
+ <xref:System.Threading.EventWaitHandle> objekty lze použít s statických <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> a <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> metody. Protože <xref:System.Threading.EventWaitHandle> a <xref:System.Threading.Mutex> třídy obě jsou odvozeny od <xref:System.Threading.WaitHandle>, můžete použít obě třídy pomocí těchto metod.  
   
 ### <a name="named-events"></a>Pojmenované události  
  Operační systém Windows umožňuje obslužné rutiny čekání na událost názvy. Pojmenované událost je celého systému. To znamená že po vytvoření pojmenovaného událostí je viditelná pro všechny vláken ve všech procesů. Proto s názvem události slouží k synchronizaci aktivity procesy a také vláken.  

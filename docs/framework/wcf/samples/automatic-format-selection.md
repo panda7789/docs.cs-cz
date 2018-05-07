@@ -1,27 +1,15 @@
 ---
-title: "Automatický výběr formátu"
-ms.custom: 
+title: Automatický výběr formátu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dab51e56-8517-4a6a-bb54-b55b15ab37bb
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: da09df968bffee9a07f1c03d5b771271a9d44129
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 9b9b4da4d5d3bdb3892feb49c033fbe4fc640cb0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="automatic-format-selection"></a>Automatický výběr formátu
-Tento příklad ukazuje, jak povolit automatický výběr formátu (XML nebo JSON) s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] programovací model, jakož i explicitně nastavení formátu v kód operace REST.  
+Tento příklad ukazuje, jak povolit automatický výběr formátu (XML nebo JSON) se zbytkem Windows Communication Foundation (WCF) programovací model, jakož i explicitně nastavení formátu v kód operace.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  Ukázkový soubor obsahuje službu společně s kód klienta, který slouží k žádosti o službu. Služba podporuje jeden HTTP `GET` operace (`EchoWithGet`) a jeden HTTP `POST` operace (`EchoWithPost`). Obě operace očekávat řetězec a pak se vraťte řetězec v odpovědi. Pomocí `GET` operace, řetězec je zadaný parametr řetězce dotazu identifikátoru URI. Pomocí `POST` operace, řetězec je k dispozici v textu požadavku na serializovanou ve formátu XML. Služba se bude moct vrátit odpovědi v XML nebo JSON, využívá nové automatický výběr formátu a imperativní formát výběru funkcí [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)].  
@@ -47,7 +35,7 @@ Tento příklad ukazuje, jak povolit automatický výběr formátu (XML nebo JSO
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AutomaticFormatSelection`  
   

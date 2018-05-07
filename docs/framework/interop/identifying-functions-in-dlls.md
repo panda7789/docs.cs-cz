@@ -1,13 +1,6 @@
 ---
-title: "Identifikace funkcí ve knihovnách DLL"
-ms.custom: 
+title: Identifikace funkcí ve knihovnách DLL
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - platform invoke, identifying functions
 - COM interop, DLL functions
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - identifying DLL functions
 - DLL functions
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8d182ec26d6d15ad3e4c93e9bfa8287ba028e424
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bc160678817266dc649f60dc3f2cc77044c05691
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="identifying-functions-in-dlls"></a>Identifikace funkcí ve knihovnách DLL
 Identitu funkce DLL se skládá z následujících elementů:  

@@ -1,32 +1,21 @@
 ---
 title: NoPersistScope aktivity
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9a0baeb7-a05c-4fac-b905-252758cb71bb
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bfc651403988fa7558f79a4c99e42fb776efec4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e4779bf28fc2fc1341cce5134a872b108278611c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nopersistscope-activity"></a>NoPersistScope aktivity
 Tento příklad ukazuje, jak k manipulaci s neserializovatelných a na jedno použití stavu v pracovním postupu. Je důležité, aby pracovní postupy Nepokoušejte se zachovat neserializovatelných stavu a je také důležité pro uvolnitelné objekty, které chcete vymazat, jakmile se používají v pracovním postupu.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- `NoPersistScope`vlastní aktivity a návrháři.  
+ `NoPersistScope` vlastní aktivity a návrháři.  
   
 ## <a name="using-the-nopersistzone-activity"></a>Pomocí aktivity NoPersistZone  
- Pokud ukázkový pracovní postup běží, vlastní aktivity volat `CreateTextWriter` vytvoří objekt typu <xref:System.IO.TextWriter> a ukládá je do proměnné pracovního postupu. <xref:System.IO.TextWriter>je <xref:System.IDisposable> objektu. To <xref:System.IO.TextWriter>, je používána k zápisu do souboru s názvem 'out.txt' v adresáři, ve kterém běží ukázku, která je nakonfigurována <xref:System.Activities.Statements.WriteLine> aktivitu jako ho vrátí jakýkoli text, kterou zadáte v konzole.  
+ Pokud ukázkový pracovní postup běží, vlastní aktivity volat `CreateTextWriter` vytvoří objekt typu <xref:System.IO.TextWriter> a ukládá je do proměnné pracovního postupu. <xref:System.IO.TextWriter> je <xref:System.IDisposable> objektu. To <xref:System.IO.TextWriter>, je používána k zápisu do souboru s názvem 'out.txt' v adresáři, ve kterém běží ukázku, která je nakonfigurována <xref:System.Activities.Statements.WriteLine> aktivitu jako ho vrátí jakýkoli text, kterou zadáte v konzole.  
   
  Echo logiku běží v rámci `NoPersistScope` aktivity (kód, pro který je také součástí této ukázce), což zabraňuje pracovního postupu byly trvalé. Pokud zadáte v `unload` v konzole, hostitel pokusí uložit instanci pracovního postupu, ale vyprší tuto operaci, protože pracovní postup pořád v rámci `NoPersistScope`. Pracovní postup také využívá vlastní aktivity volá `Dispose` k uvolnění <xref:System.IO.TextWriter> objektu až po dokončení pracovního postupu pomocí ho. `Dispose` Aktivity je umístěn v rámci <xref:System.Activities.Statements.TryCatch.Finally%2A> blokovat z <xref:System.Activities.Statements.TryCatch> činnosti, ve kterých <xref:System.IO.TextWriter> proměnné je deklarovaná zajistit, aby byl spouštěn i v případě, že k během provádění bloku Try by mělo dojít k výjimce.  
   
@@ -49,6 +38,6 @@ Tento příklad ukazuje, jak k manipulaci s neserializovatelných a na jedno pou
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NoPersistScope`

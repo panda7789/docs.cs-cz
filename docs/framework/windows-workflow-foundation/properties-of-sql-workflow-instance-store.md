@@ -1,23 +1,12 @@
 ---
-title: "Vlastnosti úložiště Instance pracovního postupu SQL"
-ms.custom: 
+title: Vlastnosti úložiště Instance pracovního postupu SQL
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 368e6a4514eafdf4d3c5b38c5e31ff21e56f67e6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 575a46a6f261a7666263fb8bdc67fd94a56c50ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti úložiště Instance pracovního postupu SQL
 Témata v této části poskytují informace o vlastnostech SQL úložiště Instance pracovního postupu.  

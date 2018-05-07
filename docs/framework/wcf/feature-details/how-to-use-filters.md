@@ -1,26 +1,12 @@
 ---
-title: "Postupy: Použití filtrů"
-ms.custom: 
+title: 'Postupy: Použití filtrů'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 94d45537ca3edd5f31f1ed31898857f002312a0b
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 2c8c5519d31d1d57c1c568599964b97043f806a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-filters"></a>Postupy: Použití filtrů
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou dva implementace služby kalkulačky, regularCalc a roundingCalc směrovány zprávy. Obě implementace podporují stejné operace; ale jedna služba zaokrouhlí na nejbližší celé číslo všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete použít zaokrouhlení verzi služby; Pokud žádné služby přání zpráva je mezi těmito dvěma službami skupinu s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  
@@ -145,7 +131,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
             filterData="http://localhost/routingservice/router/rounding/"/>  
     ```  
   
-     Pokud je přijata zpráva na adresu, která začíná "http://localhost/routingservice/router/rounding/", pak tento filtr se vyhodnocuje **true**. Vzhledem k tomu je základní adresa použitá v této konfiguraci je "http://localhost/routingservice/router" a "zaokrouhlení/calculator" je zadaná adresa roundingEndpoint, úplná adresa použitá pro komunikaci se tento koncový bod je "http://localhost/ routingservice/směrovače nebo zaokrouhlení/calculator", který by odpovídal tento filtr.  
+     Pokud je na adresu, která začíná přijata zpráva "http://localhost/routingservice/router/rounding/" pak tento filtr se vyhodnocuje **true**. Protože je základní adresa použitá v této konfiguraci je "http://localhost/routingservice/router"a je úplná adresa použitá pro komunikaci s tímto koncovým bodem adresa zadaná pro roundingEndpoint je "zaokrouhlení/calculator","http://localhost/routingservice/router/rounding/calculator", který odpovídá tomuto filtru.  
   
     > [!NOTE]
     >  Filtr PrefixEndpointAddress nevyhodnocuje název hostitele, při provádění shodu, protože je jeden hostitel lze odkazovat pomocí různých názvů hostitelů, které může všechny být platné způsoby odkazů na hostiteli z klientské aplikace. Všechny tyto například mohou odkazovat na stejného hostitele:  

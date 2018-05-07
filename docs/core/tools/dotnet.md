@@ -4,16 +4,11 @@ description: Další informace o příkazu dotnet (obecný ovladač pro rozhran�
 author: mairaw
 ms.author: mairaw
 ms.date: 03/20/2018
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: bf69be7eb8dfe454823236012113fa53ed39f2f4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c56ed032ccef6c6fd19a13214b04b384ffff28d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dotnet-command"></a>příkaz DotNet.
 

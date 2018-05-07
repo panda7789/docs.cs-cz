@@ -1,29 +1,19 @@
 ---
-title: "Přehled rozhraní .NET Framework"
-ms.custom: 
+title: Přehled rozhraní .NET Framework
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application development [.NET Framework]
 - common language runtime
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-caps.latest.revision: "34"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ffe4670ef07b0a9b541bf2099958aa943bba2f68
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0c844a81da036c5e96c2c619e3a3aae85f70f8ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 

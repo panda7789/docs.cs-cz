@@ -1,17 +1,12 @@
 ---
 title: Porovnávání vzorů (F#)
 description: 'Zjistěte, jak se používají vzory v jazyce F # k porovnání dat pomocí logické struktury, rozloží data na základní části nebo extrahovat informace z dat.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 31a5b321e5daecdc3add9a205d60b63b2c00ccd2
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 64f5b2534190552db71a67b30ece41bafed3d16e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 

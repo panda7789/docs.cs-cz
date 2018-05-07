@@ -1,11 +1,7 @@
 ---
-title: "GetErrorInfo – funkce (referenční dokumentace nespravovaného rozhraní API)"
-description: "GetErrorInfo – funkce načte informace o chybě z předchozího volání funkce."
+title: GetErrorInfo – funkce (referenční dokumentace nespravovaného rozhraní API)
+description: GetErrorInfo – funkce načte informace o chybě z předchozího volání funkce.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetErrorInfo
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d4b4acde080c61fbfd5cec319c1986b8c86352c4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ef52a4e503597e08eae407571f02bf63adafc4e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="geterrorinfo-function"></a>GetErrorInfo – funkce
 Načte informace o chybě z předchozího volání funkce.  
@@ -53,7 +46,7 @@ Tato funkce zabalí volání [IComThreadingInfo::GetErrorInfo](https://msdn.micr
   
  **Záhlaví:** WMINet_Utils.def  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

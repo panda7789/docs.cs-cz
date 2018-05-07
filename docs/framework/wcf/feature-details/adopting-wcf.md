@@ -1,39 +1,27 @@
 ---
-title: "Přijetí WCF"
-ms.custom: 
+title: Přijetí WCF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 49ba71e2-9468-4082-84c5-cf8daf95e34a
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 522d4d39df6df62a6bed2fdc9f6d72df1193faca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bcd6543e6cd47dc723b308acebec6f492fa14fb1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="adopting-windows-communication-foundation"></a>Přijetí WCF
-Můžete použít [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pro nový vývoj, když budete pokračovat, chcete-li zachovat stávající aplikace vyvinuté pomocí technologie ASP.NET. Protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je by měla být nejvhodnější volbou pro usnadnění komunikace s aplikace vytvořené pomocí rozhraní .NET Framework v žádném scénáři, mohl sloužit jako standardní nástroj pro širokou škálu problémy s komunikací softwaru způsobem řešení aby nelze ASP.NET.  
+Můžete používat Windows Communication Foundation (WCF) pro nový vývoj nadále zachovat stávající aplikace vyvinuté pomocí technologie ASP.NET. Protože WCF má být nejvhodnější volbou pro usnadnění komunikace s aplikace vytvořené pomocí rozhraní .NET Framework v žádném scénáři, mohl sloužit jako standardní nástroj pro řešení širokou škálu problémy s komunikací softwaru tak, že technologie ASP.NET nelze provést.  
   
- Nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] mohou být aplikace nasazeny na počítačích, stejný jako stávající webových služeb ASP.NET. Pokud existujících webových služeb ASP.NET použijte verzi rozhraní .NET Framework verze 2.0, pak můžete použít nástroj ASP.NET IIS Registration selektivně nasazení rozhraní .NET Framework 2.0 do aplikace služby IIS, ve kterém nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace jsou pro hostování. Tento nástroj je popsána v [ASP.NET IIS Registration Tool (Aspnet_regiis.exe)](http://go.microsoft.com/fwlink/?LinkId=94687), a je součástí uživatelské rozhraní konzoly pro správu služby IIS 6.0.  
+ Nové aplikace WCF můžete nasadit na stejný počítače jako existující webové služby ASP.NET. Pokud existujících webových služeb ASP.NET použijte verzi rozhraní .NET Framework verze 2.0, můžete použít ASP.NET IIS Registration Tool selektivně nasazení do aplikace služby IIS, ve kterých jsou nové aplikace WCF pro hostování rozhraní .NET Framework 2.0. Tento nástroj je popsána v [ASP.NET IIS Registration Tool (Aspnet_regiis.exe)](http://go.microsoft.com/fwlink/?LinkId=94687), a je součástí uživatelské rozhraní konzoly pro správu služby IIS 6.0.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]slouží k přidání nových funkcí do existující webových služeb ASP.NET přidáním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, které jsou nakonfigurovány na spuštění v režimu kompatibility ASP.NET do stávajících aplikací ASP.NET – webové služby ve službě IIS. Z důvodu režimu kompatibility ASP.NET, kód pro nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby můžete používat a aktualizovat stejné informace o stavu aplikace jako existující kódu ASP.NET pomocí <xref:System.Web.HttpContext> třídy. Aplikace můžou taky sdílet stejné knihovny tříd.  
+ WCF slouží k přidání nových funkcí do existující webových služeb ASP.NET přidáním služby WCF, které jsou nakonfigurovány na spuštění v režimu kompatibility ASP.NET do stávajících aplikací ASP.NET – webové služby ve službě IIS. Z důvodu režimu kompatibility ASP.NET, můžete používat a aktualizovat stejné informace o stavu aplikace jako existující kódu ASP.NET pomocí kód pro nové služby WCF <xref:System.Web.HttpContext> třídy. Aplikace můžou taky sdílet stejné knihovny tříd.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Klienti mohou používat webových služeb ASP.NET. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]služby, které jsou nakonfigurované <xref:System.ServiceModel.BasicHttpBinding> mohou být využívána klienty webové služby ASP.NET. ASP.NET – webové služby může existovat společně s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lze použít i pro přidání funkcí do existující webové služby ASP.NET. Všechny tyto způsoby zadané ve kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a webových služeb ASP.NET je možné společně použít, můžete chtít migrace webových služeb ASP.NET na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pouze v případě, že budete potřebovat funkce, které jsou poskytovány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a není webových služeb ASP.NET.  
+ Klienti WCF pomocí webových služeb ASP.NET. Služby WCF, které jsou nakonfigurovány s <xref:System.ServiceModel.BasicHttpBinding> mohou být využívána klienty webové služby ASP.NET. Webových služeb ASP.NET může existovat společně s aplikací služby WCF a WCF lze použít i pro přidání funkcí do existující webové služby ASP.NET. Zadány všechny tyto způsoby, ve kterých WCF a ASP.NET Web services můžete použít společně, můžete migrovat webových služeb ASP.NET na WCF pouze v případě, že budete potřebovat funkce, které jsou k dispozici službami WCF a není ASP.NET Web.  
   
  I v několika případech, kdy je nezbytné pečlivě zvažte, že migrace kód z jednoho technologie do jiného je málokdy správný přístup. Důvodem pro přijetí nové technologie je splňují nové požadavky, které nelze splnit s dřívější technologie a v takovém případě správný krokem je návrhu nové řešení ke splnění nově rozšířit sadu požadavků. Nové výhody návrhu z vašich zkušeností s stávajícího systému a moudrý získávají vzhledem k tomu, že byla navržená tak, že systému. Nový design použít také veškeré funkce nové technologie a ne reprodukci staré návrhu na nové platformě. Po vytváření prototypů klíčové prvky nového návrhu bude jednodušší opětovné použití kódu z existujícího systému v rámci nového.  
   
- V několika případech, kde Portování ze ASP.NET Web služeb na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je správným řešením v následujícím oddílu najdete některé pokyny o tom, jak pokračovat. Není Rady, jak migrovat služby a jak migraci klientů.  
+ Pro několik případů, kde portování z webových služeb ASP.NET na WCF je správným řešením, v následujícím oddílu najdete některé pokyny o tom, jak pokračovat. Není Rady, jak migrovat služby a jak migraci klientů.  
   
- Dokončení analýzy o tom, jak migrovat existující webové služby ASP.NET na WCF najdete v tématu [webových služeb ASP.NET a Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkID=71761). Tato část popisuje, jak implementovat kompatibilní služby WCF z metadat pro vás webovou službu ASP.NET a postup migrace kódu klienta a služby webové technologie ASP.NET do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Dokončení analýzy o tom, jak migrovat existující webové služby ASP.NET na WCF najdete v tématu [webových služeb ASP.NET a Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkID=71761). Tato část popisuje, jak implementovat kompatibilní služby WCF z metadat pro vás webovou službu ASP.NET a jak migrovat ASP.NET Web kód klienta a služby WCF.  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Načítání metadat a implementace kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  

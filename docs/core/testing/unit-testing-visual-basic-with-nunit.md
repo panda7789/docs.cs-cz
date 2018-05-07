@@ -3,17 +3,13 @@ title: Testování jazyka Visual Basic v .NET Core pomocí testovacích dotnet a
 description: Další koncepty test jednotky v .NET Core prostřednictvím interaktivní prostředí vytváření ukázkové řešení Visual Basic podrobné pomocí NUnit.
 author: rprouse
 ms.date: 12/01/2017
-ms.topic: conceptual
 dev_langs:
 - vb
-ms.prod: dotnet-core
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: b275d1da2c46b1ba8376bf0a77b4dcb8d6f76445
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 552b60dd3937abc413c1b4410213948f3b509526
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Knihovny jazyka Visual Basic .NET Core pomocí testovacích dotnet a NUnit testování částí
 

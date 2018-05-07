@@ -1,24 +1,12 @@
 ---
 title: Uložená do vyrovnávací paměti přijímat
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 9d46d9b9-96c9-4531-9695-ab526b4d704a
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: abec64433d10a23dca6186c6c9a553bbed12a017
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: ee53edafc94fd5efd4e412b1b9198a8763b79462
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="buffered-receive"></a>Uložená do vyrovnávací paměti přijímat
 Tento příklad ukazuje, jak nastavit a konfigurovat funkci vyrovnávací pamětí příjmu v systému Windows Workflow Foundation (WF). Uložená do vyrovnávací paměti přijímat umožňuje autorovi pracovní postup vytvoření pracovního postupu bez nutnosti starat o pořadí, ve kterém jsou přijaty zprávy. Funkci vyrovnávací pamětí příjmu vyrovnávacích pamětí zpráv místně a doručí je, když pracovní postup je připravený je přijmout.  
@@ -31,12 +19,12 @@ Tento příklad ukazuje, jak nastavit a konfigurovat funkci vyrovnávací pamět
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\BufferedReceive`  
   
 ## <a name="discussion"></a>Diskusní  
- V této ukázce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby je implementovaná pomocí [!INCLUDE[wf1](../../../../includes/wf1-md.md)] a má posloupnost <xref:System.ServiceModel.Activities.Receive> aktivity. Tento pracovní postup modelů proces schválení jednoduché úvěr tam, kde pracovního postupu očekává tři oznámení o úvěr schválení. A [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klientská aplikace odešle tři korelační oznámení v obráceném pořadí, než co služba očekává. Protože funkce receive ve vyrovnávací paměti je zapnutá ve službách, každou zprávu mimo pořadí uložená do vyrovnávací paměti na službu a zpracovat jako pracovní postup bude připravený je přijmout.  
+ V této ukázce je implementovaná pomocí služby Windows Communication Foundation (WCF) [!INCLUDE[wf1](../../../../includes/wf1-md.md)] a má posloupnost <xref:System.ServiceModel.Activities.Receive> aktivity. Tento pracovní postup modelů proces schválení jednoduché úvěr tam, kde pracovního postupu očekává tři oznámení o úvěr schválení. Klientská aplikace Windows Communication Foundation (WCF) odešle tři korelační oznámení v obráceném pořadí, než co služba očekává. Protože funkce receive ve vyrovnávací paměti je zapnutá ve službách, každou zprávu mimo pořadí uložená do vyrovnávací paměti na službu a zpracovat jako pracovní postup bude připravený je přijmout.  
   
  Funkce vyrovnávací pamětí příjmu vyžaduje <xref:System.ServiceModel.Activities.ReceiveContent> podpory z vazby, proto služba používá <xref:System.ServiceModel.NetMsmqBinding>. Žádná speciální konfigurace je požadované pro vazbu, takže se používají výchozí hodnoty.  
   
@@ -115,6 +103,6 @@ Tento příklad ukazuje, jak nastavit a konfigurovat funkci vyrovnávací pamět
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\BufferedReceive`

@@ -1,13 +1,6 @@
 ---
-title: "Kreslení formátovaného textu"
-ms.custom: 
+title: Kreslení formátovaného textu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - formatted text [WPF]
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 364362e8377f02b5d6518e6ae4d71b6dd1eafc02
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 978c97b8cae24bff4ebdea8f4e56a940e5907fa6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="drawing-formatted-text"></a>Kreslení formátovaného textu
 Toto téma obsahuje přehled funkce <xref:System.Windows.Media.FormattedText> objektu. Tento objekt poskytuje nízké úrovně řízení pro kreslení textu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -42,11 +30,11 @@ Pomocí metody FormattedText zobrazovaného textu
 >  Pro tyto vývojáře migrace z [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] rozhraní API, v tabulce v [Win32 migrace](#win32_migration) části seznamy [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText příznaky a přibližný ekvivalent v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
 ### <a name="reasons-for-using-formatted-text"></a>Důvody pro použití formátovaný Text  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsahuje více ovládacích prvků pro kreslení textu na obrazovce. Každý ovládací prvek je zaměřena na jiný scénář a má svou vlastní seznam funkcí a omezení. Obecně <xref:System.Windows.Controls.TextBlock> element byste měli použít, pokud text omezenou podporu vyžadovat, například stručný věty v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label>můžete použít, když je potřebná podpora minimální text. Další informace najdete v tématu [dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje více ovládacích prvků pro kreslení textu na obrazovce. Každý ovládací prvek je zaměřena na jiný scénář a má svou vlastní seznam funkcí a omezení. Obecně <xref:System.Windows.Controls.TextBlock> element byste měli použít, pokud text omezenou podporu vyžadovat, například stručný věty v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> můžete použít, když je potřebná podpora minimální text. Další informace najdete v tématu [dokumenty v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).  
   
  <xref:System.Windows.Media.FormattedText> Objekt poskytuje větší funkcí než formátování textu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků textu a může být užitečné v případech, ve které chcete použít jako element dekorativní text. Další informace najdete v následující části [převod formátu textu na objekt Geometry](#converting_formatted_text).  
   
- Kromě toho <xref:System.Windows.Media.FormattedText> objektu je užitečné pro vytváření orientované na text <xref:System.Windows.Media.DrawingVisual>-odvozené objekty. <xref:System.Windows.Media.DrawingVisual>je lightweight kreslení třídu, která se použije k vykreslení tvarů, Image nebo text. Další informace najdete v tématu [ukázka průchodu testu DrawingVisuals](http://go.microsoft.com/fwlink/?LinkID=159994).  
+ Kromě toho <xref:System.Windows.Media.FormattedText> objektu je užitečné pro vytváření orientované na text <xref:System.Windows.Media.DrawingVisual>-odvozené objekty. <xref:System.Windows.Media.DrawingVisual> je lightweight kreslení třídu, která se použije k vykreslení tvarů, Image nebo text. Další informace najdete v tématu [ukázka průchodu testu DrawingVisuals](http://go.microsoft.com/fwlink/?LinkID=159994).  
   
 ## <a name="using-the-formattedtext-object"></a>Pomocí objektu FormattedText  
  Chcete-li vytvořit formátovaný text, zavolejte <xref:System.Windows.Media.FormattedText.%23ctor%2A> konstruktor k vytvoření <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření počáteční formátovaný textový řetězec, můžete použít řadu formátování stylů.  
@@ -127,7 +115,7 @@ Grafické zobrazení v geometrické cesta textu
 |DT_PREFIXONLY|Žádné|Není podporováno.|  
 |DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Použití <xref:System.Windows.Media.FormattedText.TextAlignment%2A> vlastnost nastavená na hodnotu <xref:System.Windows.TextAlignment.Right>. (Jenom WPF)|  
 |DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Nastavte <xref:System.Windows.Media.FormattedText.FlowDirection%2A> vlastnost <xref:System.Windows.FlowDirection.RightToLeft>.|  
-|DT_SINGLELINE|Žádné|Není požadováno. <xref:System.Windows.Media.FormattedText>objekty chovat jako ovládací prvek jeden řádek, pokud buď <xref:System.Windows.Media.FormattedText.MaxTextWidth%2A> je nastavena nebo text obsahuje znak vrátit/odřádkování (CR/LF).|  
+|DT_SINGLELINE|Žádné|Není požadováno. <xref:System.Windows.Media.FormattedText> objekty chovat jako ovládací prvek jeden řádek, pokud buď <xref:System.Windows.Media.FormattedText.MaxTextWidth%2A> je nastavena nebo text obsahuje znak vrátit/odřádkování (CR/LF).|  
 |DT_TABSTOP|Žádné|Žádná podpora pro uživatelem definované karta zastavení pozic.|  
 |DT_TOP|<xref:System.Windows.Media.FormattedText.Height%2A>|Není požadováno. Horní zarovnání do bloku je výchozí. Ostatní svislé umístění hodnoty lze definovat pomocí <xref:System.Windows.Media.FormattedText.Height%2A> vlastnost k výpočtu odpovídající [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] pozice DrawText "y".|  
 |DT_VCENTER|<xref:System.Windows.Media.FormattedText.Height%2A>|Použití <xref:System.Windows.Media.FormattedText.Height%2A> vlastnost k výpočtu odpovídající [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] pozice DrawText "y".|  

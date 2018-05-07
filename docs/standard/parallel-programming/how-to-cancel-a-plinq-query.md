@@ -1,13 +1,7 @@
 ---
-title: "Postupy: Zrušení dotazu PLINQ"
-ms.custom: 
+title: 'Postupy: Zrušení dotazu PLINQ'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5ed3d38cdfd70e7588ba0c4d94816c7105c7cf3e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 074371a929d5dd2cf0efb763ec45395a8dfd0432
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Postupy: Zrušení dotazu PLINQ
 Následující příklady ukazují dva způsoby, jak zrušit PLINQ dotazu. V prvním příkladu ukazuje, jak zrušit dotaz, který se skládá z průchodu dat. nejčastěji. Druhý příklad ukazuje, jak zrušit dotaz, který obsahuje funkci uživatele, která náročné.  

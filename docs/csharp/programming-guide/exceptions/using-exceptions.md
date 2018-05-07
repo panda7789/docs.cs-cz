@@ -1,21 +1,15 @@
 ---
-title: "Použití výjimek (Průvodce programováním v C#)"
+title: Použití výjimek (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], about exceptions
 ms.assetid: 71472c62-320a-470a-97d2-67995180389d
-caps.latest.revision: "15"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 55c2cc0c6a1f852bd286b98927cc69f81119aeee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 43012ec1190117b1905b5e44010d5f57a1e543aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
 V jazyce C# chyby v programu v době běhu rozšířeny prostřednictvím programu pomocí mechanismus názvem výjimky. Výjimky vyvolané kód, který dojde k chybě a zachytila kód, který můžete chybu opravit. Výjimky může být vyvolána pomocí rozhraní .NET Framework common language runtime (CLR) nebo pomocí kódu v programu. Jakmile je vyvolána výjimka, rozšíří zásobníkem volání až `catch` se nachází příkaz pro výjimku. Nezachycená výjimky jsou zpracovávány obslužná rutina obecná výjimka poskytované systémem, který se zobrazí dialogové okno.  
@@ -24,7 +18,7 @@ V jazyce C# chyby v programu v době běhu rozšířeny prostřednictvím progra
   
  [!code-csharp[csProgGuideExceptions#1](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_1.cs)]  
   
- Jakmile je vyvolána výjimka, modul runtime zkontroluje aktuální příkaz a zkontrolujte, zda je v rámci `try` bloku. Pokud se jedná, všechny `catch` bloky přidružené `try` bloku se kontroluje, zda jejich zachycení výjimky. `Catch`bloky obvykle zadat typy výjimek; Pokud typ `catch` blok je stejného typu jako výjimka nebo základní třída výjimky, `catch` bloku dokáže zpracovat metodu. Příklad:  
+ Jakmile je vyvolána výjimka, modul runtime zkontroluje aktuální příkaz a zkontrolujte, zda je v rámci `try` bloku. Pokud se jedná, všechny `catch` bloky přidružené `try` bloku se kontroluje, zda jejich zachycení výjimky. `Catch` bloky obvykle zadat typy výjimek; Pokud typ `catch` blok je stejného typu jako výjimka nebo základní třída výjimky, `catch` bloku dokáže zpracovat metodu. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#2](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_2.cs)]  
   
@@ -34,7 +28,7 @@ V jazyce C# chyby v programu v době běhu rozšířeny prostřednictvím progra
   
  [!code-csharp[csProgGuideExceptions#3](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_3.cs)]  
   
- Před `catch` bloku se spustí, zkontroluje modulu runtime pro `finally` bloky. `Finally`bloky povolit programátorů vyčistit všechny nejednoznačný stavu, který může být zbyly ze přerušené `try` bloku, nebo chcete-li uvolnit všechny externí prostředky (například zpracovává grafiky, připojení databáze nebo souboru datové proudy) bez čekání uvolňování paměti kolekce v modulu runtime pro dokončení objekty. Příklad:  
+ Před `catch` bloku se spustí, zkontroluje modulu runtime pro `finally` bloky. `Finally` bloky povolit programátorů vyčistit všechny nejednoznačný stavu, který může být zbyly ze přerušené `try` bloku, nebo chcete-li uvolnit všechny externí prostředky (například zpracovává grafiky, připojení databáze nebo souboru datové proudy) bez čekání uvolňování paměti kolekce v modulu runtime pro dokončení objekty. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#4](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_4.cs)]  
   
@@ -49,5 +43,5 @@ V jazyce C# chyby v programu v době běhu rozšířeny prostřednictvím progra
 -   Když je dosaženo začátku vlákno, je ukončen vlákno.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)

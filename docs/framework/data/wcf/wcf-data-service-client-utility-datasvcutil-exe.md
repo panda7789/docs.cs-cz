@@ -1,28 +1,16 @@
 ---
-title: "Nástroj klienta WCF Data Service (DataSvcUtil.exe)"
-ms.custom: 
+title: Nástroj klienta WCF Data Service (DataSvcUtil.exe)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, generating client data classes
 - WCF Data Services, client library
 - WCF Data Services, consuming
 ms.assetid: 9d0af606-929b-4c03-b307-3ef5f705afce
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fcbbbe5180acaf943956310d4837a105d8d049d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3206947d06a1736116674b70e469c20f8f4fca86
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>Nástroj klienta WCF Data Service (DataSvcUtil.exe)
 DataSvcUtil.exe je nástroj příkazového řádku poskytovaný [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] , který využívá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu a vygeneruje třídy klienta dat služby, které jsou potřebné pro přístup ke službě data z klientské aplikace rozhraní .NET Framework. Tento nástroj může generovat datové třídy pomocí následujících zdrojů metadat:  
@@ -49,10 +37,10 @@ datasvcutil /out:file [/in:file | /uri:serviceuri] [/dataservicecollection] [/la
 |------------|-----------------|  
 |`/dataservicecollection`|Určuje, že je kód potřebný k připojení objektů k ovládacím prvkům je vytvořena také.|  
 |`/help`<br /><br /> -nebo-<br /><br /> `/?`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|`/in:` *\<souboru >*|Určuje .csdl nebo .edmx soubor nebo adresář, kde je umístěn soubor.|  
-|`/language:`[VB &#124; CSharp]|Určuje jazyk pro soubory generované zdrojového kódu. Výchozí hodnoty jazyka C#.|  
+|`/in:` *\<Soubor >*|Určuje .csdl nebo .edmx soubor nebo adresář, kde je umístěn soubor.|  
+|`/language:`[VB&#124;CSharp]|Určuje jazyk pro soubory generované zdrojového kódu. Výchozí hodnoty jazyka C#.|  
 |`/nologo`|Potlačí zprávu o autorských právech ze zobrazení.|  
-|`/out:` *\<souboru >*|Určuje název souboru zdrojového kódu, který obsahuje třídy generovaného klienta služby data.|  
+|`/out:` *\<Soubor >*|Určuje název souboru zdrojového kódu, který obsahuje třídy generovaného klienta služby data.|  
 |`/uri:` *\<řetězec >*|Identifikátor URI [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu.|  
 |`/version:`[1.0&#124;2.0]|Určuje nejvyšší přijatý verzi [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Verze je určena na základě `DataServiceVersion` atribut elementu DataService v metadatech služby vrácená data. Další informace najdete v tématu [verze datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md). Pokud zadáte `/dataservicecollection` parametru, je nutné také zadat `/version:2.0` povolit datové vazby.|  
   

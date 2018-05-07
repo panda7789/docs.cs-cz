@@ -1,28 +1,16 @@
 ---
-title: "Vykreslení textu použitím piktogramů"
-ms.custom: 
+title: Vykreslení textu použitím piktogramů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - text [WPF], drawing with Glyphs objects
 - Glyphs objects [WPF], drawing text
 - typography [WPF], Glyphs objects
 ms.assetid: 587ab17e-a419-4ad5-b6da-8933a8e83d97
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55ed079116d0f0e0c168984f16c5ff715667442f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e2b35eb6df140551d5db7d597826df53e37182fe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="draw-text-using-glyphs"></a>Vykreslení textu použitím piktogramů
 Toto téma vysvětluje, jak používat nízké úrovně <xref:System.Windows.Documents.Glyphs> objekt, který chcete zobrazit text v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  

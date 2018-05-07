@@ -1,27 +1,15 @@
 ---
-title: "Aktivace založená na konfiguraci v IIS a WAS"
-ms.custom: 
+title: Aktivace založená na konfiguraci v IIS a WAS
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fc0e954ae5cadbe7e70cd8a83d3d5841f4e0d142
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aa4a3c682ab1d5d7ca0869fee588934b9ed2bf75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Aktivace založená na konfiguraci v IIS a WAS
-Za normálních okolností při hostování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby v rámci Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS), je nutné zadat soubor .svc. Soubor .svc obsahuje název služby a objekt pro vytváření hostitele volitelné vlastní službu. Tento další soubor přidá režijní náklady na možnosti správy. Aktivace podle konfigurace funkce eliminuje požadavek na soubor .svc a proto přidružené režijní náklady.  
+Za normálních okolností při hostování služby Windows Communication Foundation (WCF) v rámci Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS), je nutné zadat soubor .svc. Soubor .svc obsahuje název služby a objekt pro vytváření hostitele volitelné vlastní službu. Tento další soubor přidá režijní náklady na možnosti správy. Aktivace podle konfigurace funkce eliminuje požadavek na soubor .svc a proto přidružené režijní náklady.  
   
 ## <a name="configuration-based-activation"></a>Aktivace podle konfigurace  
  Aktivace podle konfigurace trvá metadata, která umožňuje umístit do souboru .svc a umístí jej do souboru Web.config. V rámci <`serviceHostingEnvironment`> elementu je <`serviceActivations`> elementu. V rámci <`serviceActivations`> element jsou jeden nebo více <`add`> elementy, jeden pro každou hostovanou službu. <`add`> Element obsahuje atributy, které umožňují nastavit relativní adresu pro službu a typ služby nebo vytváření hostitele služby. Následující příklad kódu konfigurace ukazuje, jak se používá v této části.  

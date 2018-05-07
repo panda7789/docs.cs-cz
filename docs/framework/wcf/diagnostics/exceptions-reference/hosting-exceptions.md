@@ -1,24 +1,12 @@
 ---
-title: "Hostování – výjimky"
-ms.custom: 
+title: Hostování – výjimky
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ad9e14f8-fa17-4d59-b365-fe0e7ec17c98
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b296578efb6eb9b1e6372dbad647fdea22dbaddf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f2bc7d0ca09faa2598990437295d1abf0cff3c45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-exceptions"></a>Hostování – výjimky
 Toto téma uvádí všechny výjimky generované Hosting.  

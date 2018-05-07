@@ -1,14 +1,6 @@
 ---
-title: "IHostThreadPoolManager::GetMaxThreads – metoda"
-ms.custom: 
+title: IHostThreadPoolManager::GetMaxThreads – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostThreadPoolManager.GetMaxThreads
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: db268876-6178-4a81-aca3-318ee7f96001
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 84867f1b5dfdcfd7a50d01c9e51cb0c42da62f0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa6e0e2447cc3ff6766bb33bb603388f37ec3ce0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostthreadpoolmanagergetmaxthreads-method"></a>IHostThreadPoolManager::GetMaxThreads – metoda
 Získá maximální počet vláken, která udržuje hostitele současně ve fondu vláken.  
@@ -54,7 +42,7 @@ HRESULT GetMaxThreads (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetMaxThreads`úspěšně vrácena.|  
+|S_OK|`GetMaxThreads` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul common language runtime (CLR (nebyla načtena do procesu, nebo CLR je ve stavu, ve kterém it nelze spravovaného kódu nebo proces volání úspěšně spustit.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -74,7 +62,7 @@ HRESULT GetMaxThreads (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Threading.ThreadPool.GetMaxThreads%2A>  

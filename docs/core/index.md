@@ -4,16 +4,11 @@ description: .NET core je modulární a vysoce výkonné implementace rozhraní 
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: dee943a025bf4e3ad97685bde1735f0710023573
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 7a2548a177f6e62e9c76c336c6e270a139d9fce0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 

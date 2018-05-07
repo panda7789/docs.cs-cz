@@ -1,27 +1,18 @@
 ---
-title: "Přehled zabezpečení automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled zabezpečení automatizace uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, security model
 - security model, UI Automation
 ms.assetid: 1d853695-973c-48ae-b382-4132ae702805
-caps.latest.revision: "23"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: c9cec20d2ab011f2ec6d44dc5d899e3d83c4dba5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 293cee72e80e88215fccb3902eb88963814cb2ce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-security-overview"></a>Přehled zabezpečení automatizace uživatelského rozhraní
 > [!NOTE]
@@ -67,6 +58,6 @@ ms.lasthandoff: 12/22/2017
   
  Hodnota `level` atribut v tento kód je pouze příklad.  
   
- `UIAccess`je "false" ve výchozím nastavení; To znamená, pokud je vynechán atribut, nebo pokud neexistuje žádný manifest pro sestavení, aplikace nebude schopen získat přístup k chráněné [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
+ `UIAccess` je "false" ve výchozím nastavení; To znamená, pokud je vynechán atribut, nebo pokud neexistuje žádný manifest pro sestavení, aplikace nebude schopen získat přístup k chráněné [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
  Další informace o [!INCLUDE[TLA#tla_longhorn2](../../../includes/tlasharptla-longhorn2-md.md)] zabezpečení, podepisování aplikací a na vytváření sestavení manifesty, najdete v části "Vývojáře osvědčené postupy a pokyny pro aplikace v prostředí nejnižšího" na [MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/dnlong/html/AccProtVista.asp).

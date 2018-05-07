@@ -1,14 +1,6 @@
 ---
 title: Streamování zprostředkovatele (služby WCF Data Services)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bc66d4154f60e46e53de8ca72596e133dc84eb97
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
-ms.translationtype: MT
+ms.openlocfilehash: 119877802bc6d685cd5b440cedb6ab71b20abf45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Streamování zprostředkovatele (služby WCF Data Services)
 Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato binární data může představovat datové proudy videa a audia, bitové kopie, soubory dokumentů nebo jiných typů médií binární. Pokud entitu v datovém modelu obsahuje jeden nebo více binárních vlastností, vrátí službu data tato binární data kódovaná jako kódování base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velké binární data tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načtení binární data nezávisle na entity, do které patří. Toho dosahuje tím, že oddělíte binární data z entity do jednoho nebo více datových proudů.  
@@ -93,7 +79,7 @@ Datové služby můžou zpřístupnit binární data rozsáhlého objektu. Tato 
  Obecné informace o tom, jak vytvořit datové služby najdete v tématu [konfigurace službu Data](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).  
   
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Povolení velké binární proudy v hostitelském prostředí  
- Při vytváření datové služby v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou aplikaci, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] slouží k poskytování implementace protokolu HTTP. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] omezuje velikost zpráv protokolu HTTP na pouze 65 kB. Abyste mohli do datového proudu velké binární data do a z službu data, musíte také nakonfigurovat webovou aplikaci povolit velké binární soubory a používat pro přenos datových proudů. Chcete-li to provést, přidejte následující v `<configuration />` element souboru Web.config aplikace:  
+ Při vytváření datové služby v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace služby Windows Communication Foundation (WCF) slouží k poskytování implementace protokolu HTTP. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] omezuje velikost zpráv protokolu HTTP na pouze 65 kB. Abyste mohli do datového proudu velké binární data do a z službu data, musíte také nakonfigurovat webovou aplikaci povolit velké binární soubory a používat pro přenos datových proudů. Chcete-li to provést, přidejte následující v `<configuration />` element souboru Web.config aplikace:  
   
   
   

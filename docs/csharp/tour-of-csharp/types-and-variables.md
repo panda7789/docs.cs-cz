@@ -1,20 +1,13 @@
 ---
-title: "Typy C# a proměnné - přehled používání jazyka C#"
-description: "Další informace o definování typů a deklarace proměnné v jazyce C#"
-keywords: "Rozhraní .NET, csharp, typ, odkazují na typ, typ hodnoty"
-author: BillWagner
-ms.author: wiwagn
+title: Typy C# a proměnné - přehled používání jazyka C#
+description: Další informace o definování typů a deklarace proměnné v jazyce C#
 ms.date: 08/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 1f1031384520b9ed37246361da8bbc1b42addb0b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 752ff490ec91919dc54539c3e39f6d0c527d6260
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -26,29 +19,29 @@ Následující část obsahuje přehled C# na typ systému.
 
 * Typy hodnot
     - Jednoduché typy
-        * Podepsané integrální: `sbyte`, `short`, `int`,`long`
-        * Celé číslo bez znaménka: `byte`, `ushort`, `uint`,`ulong`
-        * Znaky znakové sady Unicode:`char`
-        * IEEE plovoucí desetinnou čárkou: `float`,`double`
-        * Decimal vysokou přesnost:`decimal`
-        * Logická hodnota:`bool`
+        * Podepsané integrální: `sbyte`, `short`, `int`, `long`
+        * Celé číslo bez znaménka: `byte`, `ushort`, `uint`, `ulong`
+        * Znaky znakové sady Unicode: `char`
+        * IEEE plovoucí desetinnou čárkou: `float`, `double`
+        * Decimal vysokou přesnost: `decimal`
+        * Logická hodnota: `bool`
     - Typy výčtu
-        * Uživatelem definované typy formuláře`enum E {...}`
+        * Uživatelem definované typy formuláře `enum E {...}`
     - Struktura typy
-        * Uživatelem definované typy formuláře`struct S {...}`
+        * Uživatelem definované typy formuláře `struct S {...}`
     - typy hodnot s povolenou hodnotou Null
         * Rozšíření všechny ostatní typy hodnot s `null` hodnota
 * Odkazové typy
     - Typy tříd
-        * Ultimate základní třídu všechny ostatní typy:`object`
-        * Řetězců v kódu Unicode:`string`
-        * Uživatelem definované typy formuláře`class C {...}`
+        * Ultimate základní třídu všechny ostatní typy: `object`
+        * Řetězců v kódu Unicode: `string`
+        * Uživatelem definované typy formuláře `class C {...}`
     - Typy rozhraní
-        * Uživatelem definované typy formuláře`interface I {...}`
+        * Uživatelem definované typy formuláře `interface I {...}`
     - Typy polí
-        * Jeden a více dimenzí, například `int[]` a`int[,]`
+        * Jeden a více dimenzí, například `int[]` a `int[,]`
     - Typů delegátů.
-        * Uživatelem definované typy formuláře`delegate int D(...)`
+        * Uživatelem definované typy formuláře `delegate int D(...)`
 
 Osm integrální typy poskytuje podporu pro hodnoty 8bitové, 16bitové, 32bitové a 64bitové verze v podobě podepsaný držitelem nebo bez znaménka.
 
@@ -65,18 +58,18 @@ To shrnuje C# na číselné typy.
 * Podepsaný celé číslo
     - `sbyte`: bity 8, rozsahu od -128 127
     - `short`: 16 bitů, rozsahu od-32 768-32 767
-    - `int`: 32 bity v rozsahu od--2,147,483,648 2 147 483 647
-    - `long`: 64 bitů, v rozsahu od –9,223,372,036,854,775,808 9,223,372,036,854,775,807
+    - `int`  : 32 bity v rozsahu od--2,147,483,648 2 147 483 647
+    - `long` : 64 bitů, v rozsahu od –9,223,372,036,854,775,808 9,223,372,036,854,775,807
 * Celé číslo bez znaménka
-    - `byte`: bity 8, v rozsahu od 0 – 255
-    - `ushort`: 16 bitů v rozsahu od 0 – 65 535
-    - `uint`: 32 bity v rozsahu od 0 - 4 294 967 295
-    - `ulong`: 64 bitů, v rozsahu od 0 - 18,446,744,073,709,551,615
+    - `byte`   : bity 8, v rozsahu od 0 – 255
+    - `ushort` : 16 bitů v rozsahu od 0 – 65 535
+    - `uint`   : 32 bity v rozsahu od 0 - 4 294 967 295
+    - `ulong`  : 64 bitů, v rozsahu od 0 - 18,446,744,073,709,551,615
 * Plovoucí desetinné čárky
-    - `float`: v rozsahu od 1.5 × 10 32 bity<sup>−45</sup> -3,4 × 10<sup>38</sup>, přesností 7 číslic
-    - `double`: 64 bitů, v rozsahu od 5.0 × 10<sup>−324</sup> -1.7 × 10<sup>308</sup>, přesností na 15 číslic
+    - `float`  : v rozsahu od 1.5 × 10 32 bity<sup>−45</sup> -3,4 × 10<sup>38</sup>, přesností 7 číslic
+    - `double` : 64 bitů, v rozsahu od 5.0 × 10<sup>−324</sup> -1.7 × 10<sup>308</sup>, přesností na 15 číslic
 * Desetinné číslo
-    - `decimal`: 128 bitů, rozsah je alespoň –7.9 × 10<sup>−28</sup> -7.9 × 10<sup>28</sup>, s přesností alespoň 28 číslic
+    - `decimal` : 128 bitů, rozsah je alespoň –7.9 × 10<sup>−28</sup> -7.9 × 10<sup>28</sup>, s přesností alespoň 28 číslic
     
 Programy C#, používají *typ deklarace* k vytvoření nové typy. Deklarace typu Určuje název a členů nového typu. Pěti kategorií C# na typů jsou uživatelské: typy, typy struktura, rozhraní typy, typy výčtu tříd a delegovat typy.
 

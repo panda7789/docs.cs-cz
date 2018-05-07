@@ -1,14 +1,6 @@
 ---
-title: "LoadStringRC – funkce"
-ms.custom: 
+title: LoadStringRC – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - LoadStringRC
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 752e49b4-987c-4c28-a118-1a0c1ed510c5
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2fd42a576e1315ea029f98b94d8dc84d2b92b5e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 463bcf451574700d02f933d024ea5c24cedd259d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="loadstringrc-function"></a>LoadStringRC – funkce
 Změní hodnotu HRESULT na chybovou zprávu pomocí výchozí jazykové verze aktuálního vlákna.  
@@ -69,7 +57,7 @@ HRESULT LoadStringRC (
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`szBuffer`má hodnotu null nebo `iMax` je nula (0).|  
+|E_INVALIDARG|`szBuffer` má hodnotu null nebo `iMax` je nula (0).|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud metoda nedokončí úspěšně, `szBuffer` obsahuje prázdný řetězec.  
@@ -81,7 +69,7 @@ HRESULT LoadStringRC (
   
  **Knihovna:** MSCorEE.dll a Mscorwks.dll. Pomocí MSCorEE.dll místo Mscorwks.dll zajistit, na které cílí správnou verzi rozhraní .NET Framework.  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [LoadStringRCEx – funkce](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  

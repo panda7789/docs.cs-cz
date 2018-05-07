@@ -1,23 +1,12 @@
 ---
 title: 4206 - UnlockInstanceException
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5a46dc5f-d517-4135-8905-25a42f01206b
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ffe33e52a67578e42ad9d28adfa2067e8830ab73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3c981888b491f2797a431c2103ba3f5f0bd17046
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4206---unlockinstanceexception"></a>4206 - UnlockInstanceException
 ## <a name="properties"></a>Vlastnosti  

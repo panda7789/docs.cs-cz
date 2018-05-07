@@ -1,13 +1,6 @@
 ---
-title: "Rozložení"
-ms.custom: 
+title: Rozložení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c9a5f33ab22779002e85d7a73b29ae74dac81c26
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 00c2b2bcb58e60c1a60d2d360f25089c079c0704
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozložení systému. Pochopení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytvoření uživatelského rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -97,7 +85,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
  První, nativní velikost vlastnosti <xref:System.Windows.UIElement> se vyhodnocují jako <xref:System.Windows.UIElement.Clip%2A> a <xref:System.Windows.UIElement.Visibility%2A>. Tím se vygeneruje hodnotu s názvem `constraintSize` předá do <xref:System.Windows.FrameworkElement.MeasureCore%2A>.  
   
- Za druhé, framework vlastnosti definované na <xref:System.Windows.FrameworkElement> zpracovávají, jenž ovlivňuje hodnotu `constraintSize`. Tyto vlastnosti obecně popisují základní charakteristiky velikosti <xref:System.Windows.UIElement>, například jeho <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, a <xref:System.Windows.FrameworkElement.Style%2A>. Každý z těchto vlastností, můžete změnit místo, které jsou nutné k zobrazení elementu. <xref:System.Windows.FrameworkElement.MeasureOverride%2A>pak je volán s `constraintSize` jako parametr.  
+ Za druhé, framework vlastnosti definované na <xref:System.Windows.FrameworkElement> zpracovávají, jenž ovlivňuje hodnotu `constraintSize`. Tyto vlastnosti obecně popisují základní charakteristiky velikosti <xref:System.Windows.UIElement>, například jeho <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, a <xref:System.Windows.FrameworkElement.Style%2A>. Každý z těchto vlastností, můžete změnit místo, které jsou nutné k zobrazení elementu. <xref:System.Windows.FrameworkElement.MeasureOverride%2A> pak je volán s `constraintSize` jako parametr.  
   
 > [!NOTE]
 >  Existuje rozdíl mezi vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A> a <xref:System.Windows.FrameworkElement.ActualWidth%2A>. Například <xref:System.Windows.FrameworkElement.ActualHeight%2A> vlastnost je vypočítaná hodnota na základě jiných vstupy výšky a rozložení systému. Hodnota se nastavuje pomocí rozložení systému samostatně, podle průchodu skutečné vykreslování a může proto funkce lag mírně za nastavte hodnotu vlastnosti, jako například <xref:System.Windows.FrameworkElement.Height%2A>, které jsou základem vstupní změny.  
@@ -108,11 +96,11 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
  Uspořádat průchodu začíná volání <xref:System.Windows.UIElement.Arrange%2A> metoda. Během průchodu uspořádat nadřazené <xref:System.Windows.Controls.Panel> element generuje obdélníku, která představuje hranice podřízený objekt. Tato hodnota je předán <xref:System.Windows.FrameworkElement.ArrangeCore%2A> metody pro zpracování.  
   
- <xref:System.Windows.FrameworkElement.ArrangeCore%2A> Metoda vyhodnocuje <xref:System.Windows.UIElement.DesiredSize%2A> z podřízených a vyhodnocuje všechny další okraje, které může mít vliv na velikost vykreslené elementu. <xref:System.Windows.FrameworkElement.ArrangeCore%2A>generuje `arrangeSize`, který je předán <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metodu <xref:System.Windows.Controls.Panel> jako parametr. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>generuje `finalSize` podřízeného. Nakonec <xref:System.Windows.FrameworkElement.ArrangeCore%2A> metoda nemá posledním vyhodnocení posunutí vlastností, jako je například okraj a zarovnání a vloží podřízený objekt v rámci jeho rozložení slot. Podřízený objekt nemusí být (a často nemá) zadejte celý přidělené místo. Ovládací prvek je pak vrácen do nadřazené <xref:System.Windows.Controls.Panel> a dokončení procesu rozložení.  
+ <xref:System.Windows.FrameworkElement.ArrangeCore%2A> Metoda vyhodnocuje <xref:System.Windows.UIElement.DesiredSize%2A> z podřízených a vyhodnocuje všechny další okraje, které může mít vliv na velikost vykreslené elementu. <xref:System.Windows.FrameworkElement.ArrangeCore%2A> generuje `arrangeSize`, který je předán <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metodu <xref:System.Windows.Controls.Panel> jako parametr. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> generuje `finalSize` podřízeného. Nakonec <xref:System.Windows.FrameworkElement.ArrangeCore%2A> metoda nemá posledním vyhodnocení posunutí vlastností, jako je například okraj a zarovnání a vloží podřízený objekt v rámci jeho rozložení slot. Podřízený objekt nemusí být (a často nemá) zadejte celý přidělené místo. Ovládací prvek je pak vrácen do nadřazené <xref:System.Windows.Controls.Panel> a dokončení procesu rozložení.  
   
 <a name="LayoutSystem_PanelsCustom"></a>   
 ## <a name="panel-elements-and-custom-layout-behaviors"></a>Prvky panelů a chování vlastní rozložení  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsahuje skupinu elementů, které jsou odvozeny od <xref:System.Windows.Controls.Panel>. Tyto <xref:System.Windows.Controls.Panel> elementy povolit mnoho složitých rozložení. Například překrývání elementy lze snadno dosáhnout pomocí <xref:System.Windows.Controls.StackPanel> elementu, zatímco další komplexní a free průchodu rozložení je možné pomocí <xref:System.Windows.Controls.Canvas>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje skupinu elementů, které jsou odvozeny od <xref:System.Windows.Controls.Panel>. Tyto <xref:System.Windows.Controls.Panel> elementy povolit mnoho složitých rozložení. Například překrývání elementy lze snadno dosáhnout pomocí <xref:System.Windows.Controls.StackPanel> elementu, zatímco další komplexní a free průchodu rozložení je možné pomocí <xref:System.Windows.Controls.Canvas>.  
   
  Následující tabulka shrnuje dostupné rozložení <xref:System.Windows.Controls.Panel> elementy.  
   
@@ -133,11 +121,11 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 -   Pamatujte na které změn hodnot vlastností vynutí rekurzivní aktualizace systému rozložení.  
   
-     Veřejné příznaky jsou označené vlastností závislostí, jejichž hodnoty může způsobit, že systém rozložení na inicializaci. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné různá vodítka, jehož vlastnost změny hodnot vynutí rekurzivního aktualizovat systém rozložení. Obecně platí, by měly mít jakákoli vlastnost, která může mít vliv na velikost pole ohraničující elementu <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+     Veřejné příznaky jsou označené vlastností závislostí, jejichž hodnoty může způsobit, že systém rozložení na inicializaci. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné různá vodítka, jehož vlastnost změny hodnot vynutí rekurzivního aktualizovat systém rozložení. Obecně platí, by měly mít jakákoli vlastnost, která může mít vliv na velikost pole ohraničující elementu <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
 -   Pokud je to možné, používat <xref:System.Windows.UIElement.RenderTransform%2A> místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
   
-     A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> může být velmi užitečný způsob, jak mít vliv na obsah [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Ale pokud efekt transformace nemusí mít vliv na pozici další elementy, je nejvhodnější použít <xref:System.Windows.UIElement.RenderTransform%2A> místo, protože <xref:System.Windows.UIElement.RenderTransform%2A> nevyvolá rozložení systému. <xref:System.Windows.FrameworkElement.LayoutTransform%2A>použije jeho transformaci a vynutí se tak, že aktualizace rozložení rekurzivní účet pro nové pozice ovlivněný prvek.  
+     A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> může být velmi užitečný způsob, jak mít vliv na obsah [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Ale pokud efekt transformace nemusí mít vliv na pozici další elementy, je nejvhodnější použít <xref:System.Windows.UIElement.RenderTransform%2A> místo, protože <xref:System.Windows.UIElement.RenderTransform%2A> nevyvolá rozložení systému. <xref:System.Windows.FrameworkElement.LayoutTransform%2A> použije jeho transformaci a vynutí se tak, že aktualizace rozložení rekurzivní účet pro nové pozice ovlivněný prvek.  
   
 -   Zabránit zbytečných volání <xref:System.Windows.UIElement.UpdateLayout%2A>.  
   

@@ -1,32 +1,20 @@
 ---
 title: Zabezpečení přenosu pomocí ověřování systému Windows
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-caps.latest.revision: 17
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5effb18435241b00c3036fd23e15ef5ce485b646
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d291cd3d00f8d0d40e0b8543d5347e1509cb8b90
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-security-with-windows-authentication"></a>Zabezpečení přenosu pomocí ověřování systému Windows
-Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a služby Zabezpečené zabezpečení systému Windows. Další informace o programování najdete v tématu [postupy: zabezpečení služby s pověřeními Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
+Následující příklad ukazuje klienta Windows Communication Foundation (WCF) a služby Zabezpečené zabezpečení systému Windows. Další informace o programování najdete v tématu [postupy: zabezpečení služby s pověřeními Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
   
  Intranet webové služby zobrazí informace lidských zdrojů. Klient je aplikace formuláře Windows. Aplikace je nasazená v doméně pomocí protokolu Kerberos řadiče domény zabezpečení.  
   
@@ -35,7 +23,7 @@ Následující scénář ukazuje [!INCLUDE[indigo1](../../../../includes/indigo1
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení.|Přenos|  
-|Interoperabilita|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Pouze|  
+|Interoperabilita|Pouze WCF|  
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí integrovaného ověřování systému Windows)<br /><br /> Ano (pomocí integrovaného ověřování systému Windows)|  
 |Integrita|Ano|  
 |Důvěrnost|Ano|  

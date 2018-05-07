@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugManagedCallback2::ExceptionUnwind – metoda"
-ms.custom: 
+title: ICorDebugManagedCallback2::ExceptionUnwind – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugManagedCallback2.ExceptionUnwind
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 64b85311f625e39dd25c48a60dde2fbaf66a957f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 92c4f488dcdc5712dcd2632f489fb0cd65d05ee6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind – metoda
 Poskytuje oznámení o stavu během procesu unwinding výjimka.  
@@ -63,7 +51,7 @@ HRESULT ExceptionUnwind (
  [v] Hodnota [CorDebugExceptionFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) výčet, který určuje další informace o výjimce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ExceptionUnwind`je volána v různých fázích během fáze unwind proces zpracování výjimek. `ExceptionUnwind`je možné volat vícekrát při unwinding jeden výjimka.  
+ `ExceptionUnwind` je volána v různých fázích během fáze unwind proces zpracování výjimek. `ExceptionUnwind` je možné volat vícekrát při unwinding jeden výjimka.  
   
  Pokud `dwEventType` = DEBUG_EXCEPTION_INTERCEPTED, ukazatelem na instrukce bude v listu rámečku vlákna v bodě pořadí před (to může být několik pokyny před) pokyn, se vyvolala výjimka.  
   
@@ -74,7 +62,7 @@ HRESULT ExceptionUnwind (
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  

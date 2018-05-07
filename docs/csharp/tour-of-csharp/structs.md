@@ -1,20 +1,13 @@
 ---
-title: "C# struktury - přehled používání jazyka C#"
-description: "Informace, že typů, názvem struktury hodnot Základy C#"
-keywords: "Rozhraní .NET, C#, struktura, typu hodnoty"
-author: BillWagner
-ms.author: wiwagn
+title: C# struktury - přehled používání jazyka C#
+description: Informace, že typů, názvem struktury hodnot Základy C#
 ms.date: 08/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.openlocfilehash: fa840d80bba98889f75863db2612f196d78bd3c5
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: dca21fe5c5f3f97bc067eb79229a608e89c0fcda
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="structs"></a>Struktury
 

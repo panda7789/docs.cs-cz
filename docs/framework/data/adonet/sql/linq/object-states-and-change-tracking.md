@@ -1,27 +1,15 @@
 ---
-title: "Stavy objektů a sledování změn"
-ms.custom: 
+title: Stavy objektů a sledování změn
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f7eb1a8afe87caece18432c66a8d8a268ce9fbd2
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 482299f90a92acec9307649ec04a89f8ce6be414
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, objekt je ve `Unchanged` stavu. Nový objekt, který sami vytvoříte nezná <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které zná [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou v `Deleted` stavu a nelze jej použít v tom, že <xref:System.Data.Linq.DataContext> instance.)  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, objekt je ve `Unchanged` stavu. Nový objekt, který sami vytvoříte nezná <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které zná [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou v `Deleted` stavu a nelze jej použít v tom, že <xref:System.Data.Linq.DataContext> instance.)  
   
 ## <a name="object-states"></a>Stavy objektů  
  Následující tabulka uvádí možné stavy pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty.  
@@ -45,9 +33,9 @@ ms.lasthandoff: 01/17/2018
 >  Přidat do objektu `Table` není v mezipaměti identity. Mezipaměti identity odráží pouze co je načtena z databáze. Po volání <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>, přidané entity se nezobrazí v dotazech v databázi, dokud <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je úspěšně dokončen.  
   
 ## <a name="deleting-objects"></a>Odstraňování objektů  
- Označit objekt sledovaných `o` k odstranění voláním <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>(e) na odpovídající <xref:System.Data.Linq.Table%601>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zvažuje odebrání objektu ze <xref:System.Data.Linq.EntitySet%601> jako aktualizace operace a hodnotě odpovídající cizího klíče nastavena na hodnotu null. Cíl operace (`o`) není odstraněný z její tabulkou. Například `cust.Orders.DeleteOnSubmit(ord)` označuje aktualizaci kde vztah mezi `cust` a `ord` je porušeno nastavením cizí klíč `ord.CustomerID` na hodnotu null. Nedojde k odstranění řádku odpovídající `ord`.  
+ Označit objekt sledovaných `o` k odstranění voláním <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>(e) na odpovídající <xref:System.Data.Linq.Table%601>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zvažuje odebrání objektu ze <xref:System.Data.Linq.EntitySet%601> jako aktualizace operace a hodnotě odpovídající cizího klíče nastavena na hodnotu null. Cíl operace (`o`) není odstraněný z její tabulkou. Například `cust.Orders.DeleteOnSubmit(ord)` označuje aktualizaci kde vztah mezi `cust` a `ord` je porušeno nastavením cizí klíč `ord.CustomerID` na hodnotu null. Nedojde k odstranění řádku odpovídající `ord`.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]provádí následující zpracováním, když je odstraněn objekt (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) z jeho tabulky:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provádí následující zpracováním, když je odstraněn objekt (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) z jeho tabulky:  
   
 -   Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána, `DELETE` operace pro tento objekt.  
   

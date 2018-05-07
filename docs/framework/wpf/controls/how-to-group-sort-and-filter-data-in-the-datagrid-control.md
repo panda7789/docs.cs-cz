@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid"
-ms.custom: 
+title: 'Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - DataGrid [WPF], group
 - DataGrid [WPF], filter
 ms.assetid: 03345e85-89e3-4aec-9ed0-3b80759df770
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e648b5a4a45c3583d496ac0ea6036d268d6d33a6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 675c1441201fa1578023d6ed758f389a38f3b79a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-group-sort-and-filter-data-in-the-datagrid-control"></a>Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid
 Je často užitečné k zobrazení dat v <xref:System.Windows.Controls.DataGrid> seskupování, řazení a filtrování dat různými způsoby. Skupina, řazení a filtrování dat v <xref:System.Windows.Controls.DataGrid>, navázat jej na <xref:System.Windows.Data.CollectionView> , která podporuje tyto funkce. Potom můžete pracovat s daty v <xref:System.Windows.Data.CollectionView> bez ovlivnění základní zdrojová data. Změny v zobrazení kolekce se projeví v <xref:System.Windows.Controls.DataGrid> uživatelské rozhraní (UI).  

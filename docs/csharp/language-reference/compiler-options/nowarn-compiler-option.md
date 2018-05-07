@@ -1,10 +1,6 @@
 ---
-title: "-nowarn (možnosti kompilátoru C#)"
+title: -nowarn (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /nowarn
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 2784e63b7c1e67b32fc448b4b112ad0252b1abd9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1c5e8bc7ad065c4662cd489930b2226e8a4b8962
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn (možnosti kompilátoru C#)
 **- Nowarn** možnost umožňuje potlačit kompilátoru zobrazování jeden nebo více upozornění. Více čísel upozornění oddělte čárkou.  

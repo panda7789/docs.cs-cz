@@ -1,13 +1,6 @@
 ---
-title: "Zabezpečení vlastností závislosti"
-ms.custom: 
+title: Zabezpečení vlastností závislosti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - wrappers [WPF], access
 - wrappers [WPF], security
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9cd6f9d7025de9f5deb836d48a8ce9c7134973d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 825b2a3dc79300f0cc26514398b8de0abee64fd4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
 Vlastnosti závislosti by měl být obecně považuje za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému brání schopnost provádět záruky zabezpečení o hodnotu vlastnosti závislosti.  

@@ -1,28 +1,18 @@
 ---
-title: "Nástroj pro analýzu sestavení (Mefx)"
-ms.custom: 
+title: Nástroj pro analýzu sestavení (Mefx)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Composition Analysis Tool [MEF]
 - MEF, Composition Analysis Tool
 - Mefx [MEF], Composition Analysis Tool
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d6e5ab22ff2fe382fa2a266e3180cb34f970cc48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6851ac334d439f2e5c0f6056f5226e3faa1503d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="composition-analysis-tool-mefx"></a>Nástroj pro analýzu sestavení (Mefx)
 Nástroj pro analýzu sestavení (sestavení Mefx) je aplikace příkazového řádku, která analyzuje knihovny (DLL.dll) a soubory aplikace (.exe) obsahující části Managed Extensibility Framework (MEF). Primárním účelem Mefx je vývojáři poskytnout způsob, jak diagnostikovat chyby složení ve svých aplikacích MEF bez nutnosti přidání komplikované trasování kódu do vlastní aplikace. Také může být užitečné při pochopit částí z knihovny od třetích stran. Toto téma popisuje, jak používat Mefx a poskytuje odkaz pro její syntaxe.  
@@ -83,7 +73,7 @@ MyAddin.AddIn
 ## <a name="finding-rejected-parts"></a>Hledání odmítl částí  
  Jakmile se načetl části k dispozici, Mefx používá modul složení MEF k jejich vytvoření. Částí, které nemůžou být složené úspěšně se označují jako *odmítl*. Chcete-li seznam odmítnutých částí, použijte `/rejected` akce.  
   
- Můžete použít `/verbose` možnost s `/rejected` akce tisknout podrobné informace o odmítnuta částí. V následujícím příkladu `ClassLibrary1` obsahuje knihovnu DLL `AddIn` součástí, které importy `MemberPart` a `ChainOne` částí. `ChainOne`Importuje `ChainTwo`, ale `ChainTwo` neexistuje. To znamená, že `ChainOne` byl odmítnut, který spustí `AddIn` zamítnutí.  
+ Můžete použít `/verbose` možnost s `/rejected` akce tisknout podrobné informace o odmítnuta částí. V následujícím příkladu `ClassLibrary1` obsahuje knihovnu DLL `AddIn` součástí, které importy `MemberPart` a `ChainOne` částí. `ChainOne` Importuje `ChainTwo`, ale `ChainTwo` neexistuje. To znamená, že `ChainOne` byl odmítnut, který spustí `AddIn` zamítnutí.  
   
 ```  
 mefx /file:ClassLibrary1.dll /rejected /verbose  

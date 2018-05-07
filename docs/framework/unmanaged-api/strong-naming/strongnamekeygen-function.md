@@ -1,14 +1,6 @@
 ---
-title: "StrongNameKeyGen – funkce"
-ms.custom: 
+title: StrongNameKeyGen – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - StrongNameKeyGen
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 883e413a-ad2f-4f7f-b1b9-aeb8fe5b65f8
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e3bb9530884f61345d439ec8662a088e1d152de7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5fce08434cb8864350fd333dcfcaa388a8031c09
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strongnamekeygen-function"></a>StrongNameKeyGen – funkce
 Vytvoří nový pár veřejného a privátního klíče pro silné jméno použití.  
@@ -52,7 +40,7 @@ BOOLEAN StrongNameKeyGen (
   
 #### <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [v] Název požadovaný kontejner klíčů. `wszKeyContainer`musí být neprázdný řetězec, nebo hodnotu null pro generování dočasný název.  
+ [v] Název požadovaný kontejner klíčů. `wszKeyContainer` musí být neprázdný řetězec, nebo hodnotu null pro generování dočasný název.  
   
  `dwFlags`  
  [v] Určuje, jestli chcete nechat klíč zaregistrován. Podporovány jsou následující hodnoty:  
@@ -68,7 +56,7 @@ BOOLEAN StrongNameKeyGen (
  [out] Velikost v bajtech z `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true`Při úspěšném dokončení; v opačném `false`.  
+ `true` Při úspěšném dokončení; v opačném `false`.  
   
 ## <a name="remarks"></a>Poznámky  
  `StrongNameKeyGen` Funkce vytvoří klíč 1024 bitů. Po načtení klíč by měly volat [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce k uvolnění přidělenou paměť.  
@@ -82,7 +70,7 @@ BOOLEAN StrongNameKeyGen (
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [StrongNameKeyGen – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)  

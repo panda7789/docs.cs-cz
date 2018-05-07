@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks"
-ms.custom: 
+title: 'Postupy: Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - 'documents [WPF], manipulating FlowDocuments through Blocks property [WPF], , '
 - ', '
 ms.assetid: cbb7291e-3f1b-433e-9e16-f4d93ced14e8
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8f6ea0a1ada69c33a738985c5340aab94453e895
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0190a5c0e343d625f9aa9e896a581dd54bf822dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-manipulate-a-flowdocument-through-the-blocks-property"></a>Postupy: Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks
 Následující příklady ukazují některé běžných operací, které lze provést na <xref:System.Windows.Documents.FlowDocument> prostřednictvím <xref:System.Windows.Documents.FlowDocument.Blocks%2A> vlastnost.  

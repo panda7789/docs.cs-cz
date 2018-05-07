@@ -1,28 +1,17 @@
 ---
-title: XSLT Compiler (xsltc.exe)
-ms.custom: 
+title: Kompilátoru XSLT (xsltc.exe)
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 36696617d1e28a370f6b15f15fb39bc816973f15
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: aef49f70f3a60151aa053a1a94a06bc71401531e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
+# <a name="xslt-compiler-xsltcexe"></a>Kompilátoru XSLT (xsltc.exe)
 Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestavení. Kompilované šablony stylů mohou být předány pak přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metoda. Podepsaná sestavení s xsltc.exe nelze vygenerovat.  
   
  Nástroj xsltc.exe je součástí sady Visual Studio. Další informace najdete v tématu [Visual Studio stáhne](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  

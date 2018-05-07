@@ -1,29 +1,17 @@
 ---
 title: .NET Framework – výkon
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-caps.latest.revision: 20
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: aa4db0e3e136eee1d2037ad6041ac6945d313776
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ebfe03ea99f7a9c66fb46f01b37f85daf9e919d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s vysoký výkon, doporučujeme návrhu a plánování výkonu stejně jako jakékoli jiné funkce aplikace by návrhu. Můžete použít nástroje poskytované společností Microsoft k měření výkonu vaší aplikace a, v případě potřeby zlepšení využití paměti, propustnost kódu a odezvy. Toto téma obsahuje seznam nástrojů analýzy výkonu, poskytuje Microsoft a poskytuje odkazy na další témata, které se týkají výkonu pro konkrétní oblasti vývoj aplikací.  
@@ -57,7 +45,7 @@ Pokud chcete vytvářet aplikace s vysoký výkon, doporučujeme návrhu a plán
 |Typ aplikace|Další informace naleznete v tématu|  
 |--------------|---------|  
 |Aplikace rozhraní .NET framework pro všechny platformy|[Kolekce paměti a výkon](../../../docs/standard/garbage-collection/performance.md)<br /><br /> [Tipy pro zvýšení výkonu](../../../docs/framework/performance/performance-tips.md)|  
-|[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]aplikace napsané v C++, C# a Visual Basic|[Osvědčené postupy z hlediska výkonu pro aplikace Windows Store pomocí C++, C# a Visual Basic](http://msdn.microsoft.com/library/windows/apps/hh750313.aspx)|  
+|[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace napsané v C++, C# a Visual Basic|[Osvědčené postupy z hlediska výkonu pro aplikace Windows Store pomocí C++, C# a Visual Basic](http://msdn.microsoft.com/library/windows/apps/hh750313.aspx)|  
 |Windows Phone|[Faktory ovlivňující výkon aplikace pro Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff967560\(v=vs.105\).aspx)<br /><br /> [Analýza aplikace Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/hh202934\(v=vs.105\).aspx)<br /><br /> [Získat aplikace pro Windows Phone rychlejší na webu Marketplace](http://msdn.microsoft.com/magazine/hh781024.aspx)|  
 |Windows Presentation Foundation (WPF)|[WPF – výkonnostní sada](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)|  
 |Silverlight|[Tipy pro zvýšení výkonu](http://msdn.microsoft.com/library/cc189071\(v=vs.95\).aspx)|  

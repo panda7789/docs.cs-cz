@@ -1,24 +1,12 @@
 ---
-title: "3351 – ServerMaxPooledConnectionsQuotaReached"
-ms.custom: 
+title: 3351 – ServerMaxPooledConnectionsQuotaReached
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b2ca1131-0017-4a5f-ab7b-2b0f73589e84
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 42a9dc55c558eaf9269e2ee21f678953b1f25b6f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 19876f05957a14d463b3d5057ceb818ddd0e2f0d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3351---servermaxpooledconnectionsquotareached"></a>3351 – ServerMaxPooledConnectionsQuotaReached
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|3351|  
 |Klíčová slova|kvóta|  
 |úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované, když je dosaženo podílu maximální ve fondu připojení serveru.  

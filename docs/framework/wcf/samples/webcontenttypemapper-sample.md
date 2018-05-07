@@ -1,31 +1,19 @@
 ---
-title: "WebContentTypeMapper – ukázka"
-ms.custom: 
+title: WebContentTypeMapper – ukázka
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 34adf191d3edbff33fe989cf036c32104a6754ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3b3d53b0fe619c74c5e7f3533194f4b5e7c18a16
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper – ukázka
-Tento příklad znázorňuje způsob namapování nové typy obsahu ke [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] formáty text zprávy.  
+Tento příklad znázorňuje způsob namapování nové typy obsahu do formáty text zpráv Windows Communication Foundation (WCF).  
   
  <xref:System.ServiceModel.Description.WebHttpEndpoint> Element připojí kodér zpráv Web, který umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] k přijetí JSON, XML nebo Nezpracovaná binární zprávy se stejný koncový bod. Kodér formátu textu zprávy určuje prohlížením hlavičku HTTP content-type požadavku. Tato ukázka představuje <xref:System.ServiceModel.Channels.WebContentTypeMapper> třídy, která umožňuje uživateli řídit mapování mezi typu obsahu a formátu textu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje sadu výchozích mapování pro typy obsahu. Například `application/json` mapy do formátu JSON a `text/xml` se mapuje na XML. Jakýkoli typ obsahu, který není mapován na XML nebo JSON je namapována na nezpracovaná binární formát.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje sadu výchozích mapování pro typy obsahu. Například `application/json` mapy do formátu JSON a `text/xml` se mapuje na XML. Jakýkoli typ obsahu, který není mapován na XML nebo JSON je namapována na nezpracovaná binární formát.  
   
  V některých případech (například nabízené stylu API) služba vývojáře neřídí obsahu typ vrácený klientem. Například klienti může vrátit formát JSON jako `text/javascript` místo `application/json`. V takovém případě vývojáře služby musíte zadat typ, který je odvozen od <xref:System.ServiceModel.Channels.WebContentTypeMapper> pro zpracování obsahu daného typu správně, jak je znázorněno v následujícím ukázkovém kódu.  
   
@@ -76,7 +64,7 @@ public class JsonContentTypeMapper : WebContentTypeMapper
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Ajax\WebContentTypeMapper`  
   

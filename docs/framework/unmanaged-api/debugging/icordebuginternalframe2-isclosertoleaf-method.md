@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugInternalFrame2::IsCloserToLeaf – metoda"
-ms.custom: 
+title: ICorDebugInternalFrame2::IsCloserToLeaf – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugInternalFrame2.IsCloserToLeaf Method
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: c1d3d1eb-8370-4f25-8297-3bd262b4740a
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7b6b769c25e0cd706eb57965b73d0fcfdcf9b9ea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6d26d4dc046841a891c8a36530bd579d100b8f5b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebuginternalframe2isclosertoleaf-method"></a>ICorDebugInternalFrame2::IsCloserToLeaf – metoda
 Kontroluje, zda `this` interní rámečku je blíž ke listu než zadaný objekt ICorDebugFrame.  
@@ -59,10 +47,10 @@ HRESULT IsCloserToLeaf([in] ICorDebugFrame * pFrameToCompare,
 |-------------|-----------------|  
 |S_OK|Porovnání se úspěšně provedla.|  
 |E_FAIL|Nelze provést porovnání.|  
-|E_INVALIDARG|`pFrameToCompare`nebo `pIsCloser` má hodnotu null.|  
+|E_INVALIDARG|`pFrameToCompare` nebo `pIsCloser` má hodnotu null.|  
   
 ## <a name="remarks"></a>Poznámky  
- `IsCloserToLeaf`slouží k implementaci zásad pro prokládání interní rámce s jiné rámce v zásobníku.  
+ `IsCloserToLeaf` slouží k implementaci zásad pro prokládání interní rámce s jiné rámce v zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -71,7 +59,7 @@ HRESULT IsCloserToLeaf([in] ICorDebugFrame * pFrameToCompare,
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorDebugInternalFrame2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)  

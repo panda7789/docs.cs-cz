@@ -1,28 +1,16 @@
 ---
-title: "Používání Návrháře s ovládacím prvkem Windows Forms DataGridView"
-ms.custom: 
+title: Používání Návrháře s ovládacím prvkem Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - tables [Windows Forms]
 - DataGridView control [Windows Forms], designer support
 - formatting [Windows Forms]
 ms.assetid: b66057a6-5983-4864-b4e7-8cbc88a7010c
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9df10ecabc8f61c3ef984adb6466f195395fd181
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 618e422c893d0f0c1870d5b9bf2360eb946dd3c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-designer-with-the-windows-forms-datagridview-control"></a>Používání Návrháře s ovládacím prvkem Windows Forms DataGridView
 Visual Studio poskytuje návrháře podpora `DataGridView` ovládací prvek, který umožňuje provádět mnoho úloh nastavení bez nutnosti psaní kódu. Tyto úlohy patří vazbu ovládacího prvku ke zdroji dat, úprava sloupce, které slouží k zobrazení dat a úpravě vzhled a chování základní ovládacího prvku.  

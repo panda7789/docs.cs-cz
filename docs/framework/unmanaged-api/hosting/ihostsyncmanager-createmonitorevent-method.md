@@ -1,14 +1,6 @@
 ---
-title: "IHostSyncManager::CreateMonitorEvent – metoda"
-ms.custom: 
+title: IHostSyncManager::CreateMonitorEvent – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostSyncManager.CreateMonitorEvent
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 524c7fd3-9b5c-46e7-99ba-555fd2fe33f0
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ae12db71f4eae0f7d887fda26e05401f4f23ee5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d7cff23fc0b58d316ce19950a982249e84b79ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostsyncmanagercreatemonitorevent-method"></a>IHostSyncManager::CreateMonitorEvent – metoda
 Vytvoří objekt monitorovanou událost automatického vynulování.  
@@ -58,7 +46,7 @@ HRESULT CreateMonitorEvent (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateMonitorEvent`úspěšně vrácena.|  
+|S_OK|`CreateMonitorEvent` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -67,7 +55,7 @@ HRESULT CreateMonitorEvent (
 |E_OUTOFMEMORY|Nedostatek paměti nebylo k dispozici k vytvoření objektu požadovaná událost.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateMonitorEvent`Vrátí `IHostAutoEvent` používající modulu CLR při implementaci spravovaný <xref:System.Threading.Monitor?displayProperty=nameWithType> typu. Tato metoda odpovídá Win32 `CreateEvent` funkce s hodnotou `false` zadaná pro `bManualReset` parametr.  
+ `CreateMonitorEvent` Vrátí `IHostAutoEvent` používající modulu CLR při implementaci spravovaný <xref:System.Threading.Monitor?displayProperty=nameWithType> typu. Tato metoda odpovídá Win32 `CreateEvent` funkce s hodnotou `false` zadaná pro `bManualReset` parametr.  
   
  Hostitele můžete použít soubor cookie k určení, které úloha čeká na monitoru voláním [iclrsyncmanager::getmonitorowner –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) metoda.  
   
@@ -78,7 +66,7 @@ HRESULT CreateMonitorEvent (
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  

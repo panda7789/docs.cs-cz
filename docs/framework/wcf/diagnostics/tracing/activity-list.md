@@ -1,27 +1,15 @@
 ---
 title: Seznam aktivit
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5540e185-ce8e-4db3-83b0-2b9f5bf71829
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5e7a371d43237b795536711cf1745030e14d6eca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: dc504c37b21a2d457f270331ab917747bafbb022
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-list"></a>Seznam aktivit
-Toto téma obsahuje seznam všech aktivit, které jsou definované [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
+Toto téma uvádí všechny aktivity, které jsou definované ve Windows Communication Foundation (WCF).  
   
 > [!NOTE]
 >  Můžete také definovat aktivity prostřednictvím kódu programu ke skupině uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
@@ -33,8 +21,8 @@ Toto téma obsahuje seznam všech aktivit, které jsou definované [!INCLUDE[ind
 |-----------|-------------------|-------------------|-----------------|  
 |A, M|Vedlejším aktivity|Není k dispozici (Toto není řídí ServiceModel)|Aktivita, jejíž ID je nastavena v TLS před volání ServiceModel kódu (na straně klienta nebo na straně serveru).<br /><br /> Příklad: Aktivita kde je volán otevřete na [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] klienta nebo serviceHost.open je volána.|  
 |B|Konstrukce<br /><br /> ChannelFactory. ContractType: '[Type]'.|Konstrukce||  
-|C|Otevřít<br /><br /> [Třídu ClientBase &#124; ChannelFactory]. ContractType: '[Type]'.|Otevřít||  
-|I|Zavřete [třídu ClientBase &#124; ChannelFactory]. ContractType: '[Type]'.|Zavřít||  
+|C|Otevřít<br /><br /> [Třídu ClientBase&#124;ChannelFactory]. ContractType: '[Type]'.|Otevřít||  
+|I|Zavřít [třídu ClientBase&#124;ChannelFactory]. ContractType: '[Type]'.|Zavřít||  
 |M|Vytvořte třídu ServiceHost. ServiceType: '[Type]'.|Konstrukce||  
 |N|Otevřete ServiceHost. ServiceType: '[Type]'.|Otevřít||  
 |Z|Zavřete ServiceHost. ServiceType: '[Type]'.|Zavřít||  

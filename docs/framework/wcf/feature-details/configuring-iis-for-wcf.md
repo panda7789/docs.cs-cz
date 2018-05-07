@@ -1,27 +1,15 @@
 ---
-title: "Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation"
-ms.custom: 
+title: Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1050d395-092e-44d3-b4ba-66be3b039ffb
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 511f5177e1b9d2660daf887cc13728aed2c9de0a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e34f46fbf3ccf12c6a89a7cac96143965d958d9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation
-Internetové informační služby (IIS) 7.0 má modulární návrh, který vám umožní selektivně nainstalovat komponenty, které jsou požadovány. Tento návrh vychází z technologie nové řízené manifest componentization byla zavedená v [!INCLUDE[wv](../../../../includes/wv-md.md)]. Existuje více než 40 samostatné funkce součástí [!INCLUDE[iisver](../../../../includes/iisver-md.md)] který lze nainstalovat nezávisle. To umožňuje odborníkům v oblasti IT snadno instalaci podle potřeby přizpůsobit. Toto téma popisuje postup konfigurace [!INCLUDE[iisver](../../../../includes/iisver-md.md)] pro použití s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a určit, které součásti jsou vyžadovány.  
+Internetové informační služby (IIS) 7.0 má modulární návrh, který vám umožní selektivně nainstalovat komponenty, které jsou požadovány. Tento návrh vychází z technologie nové řízené manifest componentization byla zavedená v [!INCLUDE[wv](../../../../includes/wv-md.md)]. Existuje více než 40 samostatné funkce součástí [!INCLUDE[iisver](../../../../includes/iisver-md.md)] který lze nainstalovat nezávisle. To umožňuje odborníkům v oblasti IT snadno instalaci podle potřeby přizpůsobit. Toto téma popisuje postup konfigurace [!INCLUDE[iisver](../../../../includes/iisver-md.md)] pro použití s Windows Communication Foundation (WCF) a určit, které součásti jsou vyžadovány.  
   
 ## <a name="minimal-installation-installing-was"></a>Minimální instalaci: Instalace WAS  
  Minimální instalaci celek [!INCLUDE[iisver](../../../../includes/iisver-md.md)] balíčku je instalace služby Aktivace procesů systému Windows (WAS). BYL je samostatná funkce a je funkce jen ze [!INCLUDE[iisver](../../../../includes/iisver-md.md)] která je k dispozici pro všechny [!INCLUDE[wv](../../../../includes/wv-md.md)] operační systémy (Home Basic, Home Premium, obchodní a Ultimate a Enterprise).  
@@ -40,28 +28,28 @@ Internetové informační služby (IIS) 7.0 má modulární návrh, který vám 
   
  Pokud vyberete kořenového uzlu služby WAS, jenom **Model procesu** dílčí je zaškrtnuto políčko ve výchozím nastavení. Upozorňujeme, že k této instalaci pouze instalujete WAS, protože neexistuje žádná podpora pro webový server.  
   
- Chcete-li [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nebo jakoukoli [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace fungovat, zkontrolujte **prostředí .NET** zaškrtávací políčko. To znamená, že všechny WAS součásti nutné k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] fungovat správně. Tyto jsou automaticky zkontrolovány po instalaci některé z těchto součástí.  
+ Chcete-li WCF nebo žádné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace fungovat, zkontrolujte **prostředí .NET** zaškrtávací políčko. To znamená, že všechny součásti WAS jsou povinné, aby WCF a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] fungovat správně. Tyto jsou automaticky zkontrolovány po instalaci některé z těchto součástí.  
   
 ## <a name="iis-70-default-installation"></a>Služby IIS 7.0: Výchozí instalace  
  Kontrolou **Internetová informační služba** funkce, některé dílčí uzly jsou automaticky zkontrolovány, jak je znázorněno na následujícím obrázku.  
   
  ![Výchozí nastavení pro funkce služby IIS 7.0](../../../../docs/framework/wcf/feature-details/media/wcfc-turningfeaturesonoroff2.gif "wcfc_TurningFeaturesOnOrOff2")  
   
- Toto je výchozí instalace [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. V této instalace, můžete použít [!INCLUDE[iisver](../../../../includes/iisver-md.md)] do služby statický obsah (například stránky HTML a jiný obsah). Však nelze spustit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nebo aplikace CGI nebo hostitele [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Toto je výchozí instalace [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. V této instalace, můžete použít [!INCLUDE[iisver](../../../../includes/iisver-md.md)] do služby statický obsah (například stránky HTML a jiný obsah). Však nelze spustit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nebo aplikace CGI nebo hostovat služby WCF.  
   
 ## <a name="iis-70-installation-with-aspnet-support"></a>Služba IIS 7.0: Instalace s podporou technologie ASP.NET  
  Je nutné nainstalovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aby [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] pracovní ve službě IIS 7.0. Po zkontrolování **ASP.NET**, obrazovky by měl vypadat jako na následujícím obrázku.  
   
  ![Asp.NET požadované nastavení](../../../../docs/framework/wcf/feature-details/media/wcfc-trunfeaturesonoroff3s.gif "wcfc_TrunFeaturesOnOrOFf3s")  
   
- Toto je minimální prostředí pro obě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace pro práci v [!INCLUDE[iisver](../../../../includes/iisver-md.md)].  
+ Toto je minimální prostředí pro obě WCF a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace pro práci v [!INCLUDE[iisver](../../../../includes/iisver-md.md)].  
   
 ## <a name="iis-70-installation-with-iis-60-compatibility-components"></a>Služby IIS 7.0: Instalace se součásti služby IIS 6.0 kompatibility  
  Při instalaci [!INCLUDE[iisver](../../../../includes/iisver-md.md)] v systému Visual Studio 2005 nebo některé jiné skripty pro automatizaci nebo nástrojích (například Adsutil.vbs), která konfigurovat virtuální aplikace, které používají [!INCLUDE[iis601](../../../../includes/iis601-md.md)] metabáze rozhraní API, ujistěte se, že můžete kontrolovat [!INCLUDE[iis601](../../../../includes/iis601-md.md)]  **Nástroje pro skriptování**. Toto automaticky kontroluje do dalších dílčí uzlů [!INCLUDE[iis601](../../../../includes/iis601-md.md)] **Kompatibilita správy**. Následující obrázek znázorňuje obrazovky po dokončení.  
   
  ![Nastavení kompatibility služby IIS 6.0 správy](../../../../docs/framework/wcf/feature-details/media/scfc-turnfeaturesonoroff5s.gif "scfc_TurnFeaturesOnOrOff5s")  
   
- Díky této instalace, budete mít všechno, co je potřeba použít [!INCLUDE[iisver](../../../../includes/iisver-md.md)], [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce a ukázky k dispozici na webu.  
+ Díky této instalace, budete mít všechno, co je potřeba použít [!INCLUDE[iisver](../../../../includes/iisver-md.md)], [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a funkce WCF a ukázky k dispozici na webu.  
   
 ## <a name="request-limits"></a>Omezení požadavků  
  Na [!INCLUDE[wv](../../../../includes/wv-md.md)] se službou IIS 7 výchozí hodnota z `maxUri` a `maxQueryStringSize` došlo ke změně nastavení. Ve výchozím nastavení umožňuje filtrování požadavků ve službě IIS 7.0 délka adresy URL počet 4 096 znaků a délku řetězce dotazu 2048 znaků. Chcete-li změnit tato výchozí nastavení do souboru App.config přidejte následující kód XML.  

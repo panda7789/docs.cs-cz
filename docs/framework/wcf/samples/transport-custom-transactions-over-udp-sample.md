@@ -1,27 +1,15 @@
 ---
-title: "Přenos: Ukázka vlastních transakcí přes UDP"
-ms.custom: 
+title: 'Přenos: Ukázka vlastních transakcí přes UDP'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7e26d0c25879b3b1b6ed873543f051de989ddd92
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: e395300df4cd9917b9662d4bc3b1e8d50d82914d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Přenos: Ukázka vlastních transakcí přes UDP
-Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázku v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] [rozšiřitelnost přenosů](../../../../docs/framework/wcf/samples/transport-extensibility.md). Ji rozšiřuje ukázka přenosu UDP pro podporu toku vlastní transakcí a demonstruje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> vlastnost.  
+Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázku ve Windows Communication Foundation (WCF)[rozšiřitelnost přenosů](../../../../docs/framework/wcf/samples/transport-extensibility.md). Ji rozšiřuje ukázka přenosu UDP pro podporu toku vlastní transakcí a demonstruje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> vlastnost.  
   
 ## <a name="code-changes-in-the-udp-transport-sample"></a>Změny kódu v ukázce přenosu UDP  
  K předvedení toku transakcí, ukázky změní kontrakt služby pro `ICalculatorContract` tak, aby vyžadovala oboru transakce pro `CalculatorService.Add()`. Ukázka také přidá další `System.Guid` parametr smlouvy o `Add` operaci. Tento parametr slouží k předávání identifikátor transakce klienta ke službě.  
@@ -57,7 +45,7 @@ byte[] txmsgBuffer =                TransactionMessageBuffer.WriteTransactionMes
 int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
- `TransactionMessageBuffer.WriteTransactionMessageBuffer`je pomocná metoda, která obsahuje novou funkci pro sloučení šíření token pro aktuální transakci s entitou, zprávu a umístěte ji do vyrovnávací paměti.  
+ `TransactionMessageBuffer.WriteTransactionMessageBuffer` je pomocná metoda, která obsahuje novou funkci pro sloučení šíření token pro aktuální transakci s entitou, zprávu a umístěte ji do vyrovnávací paměti.  
   
  Pro vlastní transakce tok přenosu, musíte znát implementace klienta, jaké operace služby vyžadují toku transakcí a předávat tyto informace k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Měla by být mechanismus pro přenos uživatelská transakce do přenosové vrstvy. V tomto příkladu "[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy inspektoři" pro získání těchto informací. Klient zpráva kontrolor implementována tady, se nazývá `TransactionFlowInspector`, provede následující úlohy:  
   
@@ -170,7 +158,7 @@ count = listenSocket.EndReceiveFrom(result, ref dummy);
 // read the transaction and message                       TransactionMessageBuffer.ReadTransactionMessageBuffer(buffer, count, out transaction, out msg);  
 ```  
   
- `TransactionMessageBuffer.ReadTransactionMessageBuffer()`je pomocná metoda, která obrátí proces serializace provádí `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.  
+ `TransactionMessageBuffer.ReadTransactionMessageBuffer()` je pomocná metoda, která obrátí proces serializace provádí `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.  
   
  Pokud transakce byla plynoucích v, je připojen ke zprávě v `TransactionMessageProperty`.  
   
@@ -269,7 +257,7 @@ if (transaction != null)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   

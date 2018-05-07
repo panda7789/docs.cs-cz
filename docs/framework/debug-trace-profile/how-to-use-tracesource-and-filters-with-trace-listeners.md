@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování"
-ms.custom: 
+title: 'Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - initializing trace listeners
 - configuration files [.NET Framework], trace listeners
@@ -21,19 +14,16 @@ helpviewer_keywords:
 - trace listeners, filters
 - trace listeners, initializing
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
-caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 559926fffa52b234dda25ba2f0fd658aa2382c16
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c7a912386d93e727a1f4cd2253ad06be76ae3385
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování
-Jeden z nových funkcí v rozhraní .NET Framework verze 2.0 je systém rozšířené trasování. Základním předpokladem je beze změny: trasování zprávy jsou odesílány prostřednictvím přepínače na naslouchací procesy, které nahlásit střední přidružené výstupní data. Základní rozdíl pro verzi 2.0 je, že trasování lze inicializovat pomocí instance <xref:System.Diagnostics.TraceSource> třídy. <xref:System.Diagnostics.TraceSource>je určen k fungovat jako systém rozšířené trasování a jde použít místo statických metod starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy stále existují, ale je doporučený postup použití <xref:System.Diagnostics.TraceSource> třídu pro trasování.  
+Jeden z nových funkcí v rozhraní .NET Framework verze 2.0 je systém rozšířené trasování. Základním předpokladem je beze změny: trasování zprávy jsou odesílány prostřednictvím přepínače na naslouchací procesy, které nahlásit střední přidružené výstupní data. Základní rozdíl pro verzi 2.0 je, že trasování lze inicializovat pomocí instance <xref:System.Diagnostics.TraceSource> třídy. <xref:System.Diagnostics.TraceSource> je určen k fungovat jako systém rozšířené trasování a jde použít místo statických metod starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy stále existují, ale je doporučený postup použití <xref:System.Diagnostics.TraceSource> třídu pro trasování.  
   
  Toto téma popisuje použití <xref:System.Diagnostics.TraceSource> kombinaci s konfiguračním souboru aplikace.  Je možné, však není doporučena pomocí trasování <xref:System.Diagnostics.TraceSource> bez použití konfiguračního souboru. Informace o trasování bez konfiguračního souboru, najdete v části [postupy: vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).  
   

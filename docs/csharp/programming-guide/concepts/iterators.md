@@ -1,19 +1,12 @@
 ---
-title: "Iterátory (C#)"
+title: Iterátory (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 48b09368ed0a84dc84793091b819ba7b4b6183f1
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 08fe529f46ccaae7b2e17367a47346265aa0e8b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iterators-c"></a>Iterátory (C#)
 *Iterator* slouží k krok prostřednictvím kolekcí, jako například seznamy a maticových.  

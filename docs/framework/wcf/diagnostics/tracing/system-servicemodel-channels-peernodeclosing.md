@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Channels.PeerNodeClosing
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 47a008f0-04d7-4cf3-9099-c056f78c9bfa
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: df596da4879d79e978fafd08457d53bec9a88a06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1431f501fa392bc2044aab59475b8e97a7199571
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelchannelspeernodeclosing"></a>System.ServiceModel.Channels.PeerNodeClosing
 Třídu PeerNode zahájil zavřete.  

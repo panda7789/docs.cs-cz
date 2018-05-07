@@ -1,21 +1,15 @@
 ---
-title: "Typy (Referenční dokumentace jazyka C#)"
+title: Typy (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - types [C#]
 - data types [C#], type system
 ms.assetid: 16b984df-f417-4e02-b1e6-4589d4a614ea
-caps.latest.revision: "13"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 2c7285e237b04c1290391c4bba3e62886dceb83c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d0fe09092b438af90658d599b6a5e63cb62af580
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-c-reference"></a>Typy (Referenční dokumentace jazyka C#)
 Zadáním systému jazyka C# obsahuje následujících kategorií:  
@@ -36,7 +30,7 @@ Zadáním systému jazyka C# obsahuje následujících kategorií:
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  
  [Přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  

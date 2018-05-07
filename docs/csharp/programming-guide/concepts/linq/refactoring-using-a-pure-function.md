@@ -1,21 +1,12 @@
 ---
-title: "Refaktoring pomocí čistý funkce (C#)"
-ms.custom: 
+title: Refaktoring pomocí čistý funkce (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3aba03afe75f0ef30a709d6a65ee03d56c13c820
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ac0cd63790d5600a96c868a8c7f446ceda737eb5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí čistý funkce (C#)
 Následující příklad refactors na předchozí příklad, [refaktoring pomocí metody rozšíření (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použije čistý funkce v tomto příkladu kód najít text odstavce je přesunuta do čistého statickou metodu `ParagraphText`.  

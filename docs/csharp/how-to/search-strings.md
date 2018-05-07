@@ -1,21 +1,16 @@
 ---
 title: 'Postupy: vyhledávání řetězců (Průvodce C#)'
 ms.date: 02/21/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - searching strings [C#]
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.author: wiwagn
-ms.openlocfilehash: cb381ee811846ae8ff0589d918be4f43b3e9ddc3
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: d1e132093cc59c7b41a3f7d5b522fca2e224f779
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-search-strings"></a>Postupy: vyhledávání řetězců
 

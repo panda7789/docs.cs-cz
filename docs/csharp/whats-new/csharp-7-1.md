@@ -1,18 +1,12 @@
 ---
-title: "Co je nového v C# 7.1"
-description: "Přehled nových funkcí v C# 7.1."
-keywords: "C# jazyka návrhu, 7.1, Visual Studio 2017"
-author: billwagner
-ms.author: wiwagn
+title: Co je nového v C# 7.1
+description: Přehled nových funkcí v C# 7.1.
 ms.date: 08/16/2017
-ms.topic: article
-ms.prod: .net
-ms.devlang: devlang-csharp
-ms.openlocfilehash: 02f1f8fc8f0a3221e00e2a3c43ce06423ca43672
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 00baec45d7582d3ac12c7b0865241f5cd8159246
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7.1
 
@@ -22,9 +16,9 @@ C# 7.1 přidá [výběr verze jazyka](#language-version-selection) konfiguračn�
 
 Mezi nové jazykové funkce v této verzi jsou:
 
-* [`async``Main` – metoda](#async-main)
+* [`async` `Main` – Metoda](#async-main)
   - Vstupní bod pro aplikace může mít `async` modifikátor.
-* [`default`literálové výrazy](#default-literal-expressions)
+* [`default` literálové výrazy](#default-literal-expressions)
   - Výchozí literálu výrazy můžete použít ve výrazech hodnot výchozí při lze odvodit typ cíle.
 * [Názvy elementů odvozené řazené kolekce členů](#inferred-tuple-element-names)
   - Názvy elementů řazené kolekce členů lze odvodit z inicializace řazené kolekce členů v mnoha případech.

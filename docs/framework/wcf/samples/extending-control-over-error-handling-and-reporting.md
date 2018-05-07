@@ -1,27 +1,15 @@
 ---
-title: "Rozšíření kontroly nad zpracováním a vykazováním chyb"
-ms.custom: 
+title: Rozšíření kontroly nad zpracováním a vykazováním chyb
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0ab2e105c9055760bbeaeef5e56a8cb18c538306
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 83df5ffb790ee69ab290ad703c46b421cd6a02e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
-Tento příklad ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidat ke službě se budou zpracovávat chyby. Klient vynutí několik chybové stavy. Služba zachytí chyby a zaznamenává je do souboru.  
+Tato ukázka ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách do služby Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidat ke službě se budou zpracovávat chyby. Klient vynutí několik chybové stavy. Služba zachytí chyby a zaznamenává je do souboru.  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
@@ -30,7 +18,7 @@ Tento příklad ukazuje, jak rozšířit řídit zpracování chyb a zpráv o ch
   
  V této ukázce `CalculatorErrorHandler` zadejte implementuje <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. V  
   
- <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>Metoda, `CalculatorErrorHandler` zapisuje do textového souboru Error.txt v c:\logs protokolu chyba. Upozorňujeme, že ukázku zaznamená chybu a nepotlačuje, díky kterému jej hlášené zpět klientovi.  
+ <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> Metoda, `CalculatorErrorHandler` zapisuje do textového souboru Error.txt v c:\logs protokolu chyba. Upozorňujeme, že ukázku zaznamená chybu a nepotlačuje, díky kterému jej hlášené zpět klientovi.  
   
 ```  
 public class CalculatorErrorHandler : IErrorHandler  
@@ -165,7 +153,7 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  
   

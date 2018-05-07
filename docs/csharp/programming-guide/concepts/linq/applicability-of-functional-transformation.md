@@ -1,21 +1,12 @@
 ---
-title: "Použitelnost funkční transformaci (C#)"
-ms.custom: 
+title: Použitelnost funkční transformaci (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: c78107bd-b006-4574-a3d4-bbf808388ff3
-caps.latest.revision: "4"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c7196e128a6d61b2b28e955a79561db2b9a5e51b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b913c8e43c5e7a9ede6cb693ff6d3c34f3631607
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="applicability-of-functional-transformation-c"></a>Použitelnost funkční transformaci (C#)
 Čistý funkční transformace platí v celé řadě situacích.  

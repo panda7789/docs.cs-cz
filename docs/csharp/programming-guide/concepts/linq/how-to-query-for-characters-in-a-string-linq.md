@@ -1,21 +1,12 @@
 ---
-title: "Postupy: dotazu na znaky v řetězci (LINQ) (C#)"
-ms.custom: 
+title: 'Postupy: dotazu na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-caps.latest.revision: "4"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 83d83ee9035624a988a3446267e8fc8231e86582
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: db535f55822fa40d8589ddf95f9f78adfa1b6f1e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: dotazu na znaky v řetězci (LINQ) (C#)
 Protože <xref:System.String> třída implementuje obecná <xref:System.Collections.Generic.IEnumerable%601> rozhraní, může být dotazován libovolný řetězec jako posloupnosti znaků. Je to ale není běžně se používají LINQ. Pro komplexní vzor odpovídající operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  

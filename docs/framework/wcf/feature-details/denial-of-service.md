@@ -1,28 +1,14 @@
 ---
 title: Útok DoS
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4734407868d9dae2acc422c0f07aad57d42d4566
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 52a22d96e981ff10d444569465d8e74ddf890836
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu přetížena systému.  
@@ -62,15 +48,15 @@ Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se 
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-hangs"></a>Neplatný implementace IAuthorizationPolicy může příčina služby zablokování  
  Volání <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metodu vadný provádění <xref:System.IdentityModel.Policy.IAuthorizationPolicy> rozhraní může způsobit, že služba přestane reagovat.  
   
- Omezení rizik: Použijte pouze důvěryhodný kód. To znamená, používají pouze kód, který jste vytvoření a otestování nebo která pochází z důvěryhodného zprostředkovatele. Nepovolit nedůvěryhodné rozšíření <xref:System.IdentityModel.Policy.IAuthorizationPolicy> zapojené do vašeho kódu bez termínu pozornost. To platí pro všechna rozšíření používat v implementaci služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Zajistěte, aby nebyly žádné rozdíl mezi kódu aplikace a cizí kód, který je připojen pomocí body rozšiřitelnosti.  
+ Omezení rizik: Použijte pouze důvěryhodný kód. To znamená, používají pouze kód, který jste vytvoření a otestování nebo která pochází z důvěryhodného zprostředkovatele. Nepovolit nedůvěryhodné rozšíření <xref:System.IdentityModel.Policy.IAuthorizationPolicy> zapojené do vašeho kódu bez termínu pozornost. To platí pro všechna rozšíření používat v implementaci služby. WCF neprovede žádné rozdíl mezi kódu aplikace a cizí kód, který je připojen pomocí body rozšiřitelnosti.  
   
 ## <a name="kerberos-maximum-token-size-may-need-resizing"></a>Token protokolu Kerberos maximální velikost může být nutné Změna velikosti  
- Pokud klient patří do velký počet skupin (přibližně 900, i když skutečný počet se liší v závislosti na skupiny), problému může dojít, pokud blok záhlaví zprávy překročí 64 kB. V takovém případě může zvýšit maximální velikost protokolu Kerberos tokenu, jak je popsáno v článek Microsoft Support "[ověřování protokolem Kerberos Internet Explorer nefunguje z důvodu nedostatek vyrovnávací paměti připojení do služby IIS](http://go.microsoft.com/fwlink/?LinkId=89176)." Také můžete potřebovat zvýšit maximální [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy velikost tak, aby dokázala pojmout větší token protokolu Kerberos.  
+ Pokud klient patří do velký počet skupin (přibližně 900, i když skutečný počet se liší v závislosti na skupiny), problému může dojít, pokud blok záhlaví zprávy překročí 64 kB. V takovém případě může zvýšit maximální velikost protokolu Kerberos tokenu, jak je popsáno v článek Microsoft Support "[ověřování protokolem Kerberos Internet Explorer nefunguje z důvodu nedostatek vyrovnávací paměti připojení do služby IIS](http://go.microsoft.com/fwlink/?LinkId=89176)." Také musíte zvýšit maximální velikost zprávy WCF, aby dokázala pojmout větší token protokolu Kerberos.  
   
 ## <a name="autoenrollment-results-in-multiple-certificates-with-same-subject-name-for-machine"></a>Automatický zápis má za následek víc certifikátů se stejným názvem subjektu pro počítač  
  *Automatický zápis* je schopnost [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] pro automatický zápis uživatelů a počítačů pro certifikáty. Pokud je počítač v doméně s povolenou funkcí, je automaticky vytvořen a vložit do úložiště osobních certifikátů místního počítače vždy, když je nový počítač připojený k certifikátu X.509. certifikát s zamýšlený účel ověření klienta síť. Automatický zápis ale používá stejný název subjektu pro všechny certifikáty, které vytvoří v mezipaměti.  
   
- Dopad je, že [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se nemusí podařit otevřete v doménách s automatickým zápisem. K tomu dochází, protože kritéria hledání výchozí služby X.509 pověření pravděpodobně nejednoznačný, protože existuje více certifikátů pomocí počítače plně kvalifikovaný název systému DNS (Domain Name). Jeden certifikát pochází z automatického zápisu; druhý může být vystavený certifikát.  
+ Dopad je, že služeb WCF nemusí fungovat otevřete v doménách s automatickým zápisem. K tomu dochází, protože kritéria hledání výchozí služby X.509 pověření pravděpodobně nejednoznačný, protože existuje více certifikátů pomocí počítače plně kvalifikovaný název systému DNS (Domain Name). Jeden certifikát pochází z automatického zápisu; druhý může být vystavený certifikát.  
   
  Toto riziko lze snížit odkazovat na přesný certifikát pomocí přesnější kritérium hledání na [ \<– serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Například použít <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> možnost a určete certifikát, jeho jedinečné kryptografickým (hodnota hash).  
   
@@ -82,7 +68,7 @@ Odmítnutí služby nastane, když je tak, že zprávy nelze zpracovat, nebo se 
 ## <a name="protect-configuration-files-with-acls"></a>Ochrana souborů konfigurace pomocí seznamů řízení přístupu  
  Povinné a nepovinné deklarací identity můžete zadat v souboru kódu a konfigurace [!INCLUDE[infocard](../../../../includes/infocard-md.md)] vystavené tokeny. To vede k odpovídající elementy se vygenerované v `RequestSecurityToken` zprávy, které se odesílají do zabezpečení token služby. Útočník můžete upravit kód nebo konfiguraci, aby požadované nebo volitelné deklarace identity, potenciálně získávání služby tokenů zabezpečení vystavit token, který neumožňuje přístup ke službě cíl.  
   
- Zmírnění: vyžadují přístup k počítači a upravte konfigurační soubor. Řízení přístupu pomocí souboru seznamy ACL zabezpečit konfigurační soubory. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyžaduje, aby kódu v adresáři aplikace nebo v globální mezipaměti sestavení předtím, než bude možné takový kód, který má být načten z konfigurace. Seznamy ACL directory použijte k zabezpečení adresáře.  
+ Zmírnění: vyžadují přístup k počítači a upravte konfigurační soubor. Řízení přístupu pomocí souboru seznamy ACL zabezpečit konfigurační soubory. WCF vyžaduje, aby kódu v adresáři aplikace nebo v globální mezipaměti sestavení předtím, než bude možné takový kód, který má být načten z konfigurace. Seznamy ACL directory použijte k zabezpečení adresáře.  
   
 ## <a name="maximum-number-of-secure-sessions-for-a-service-is-reached"></a>Bylo dosaženo maximálního počtu zabezpečených relací pro službu  
  Když klient úspěšně ověření služby a zabezpečené relace je vytvořených pomocí služby, uchovává informace o této relaci, dokud klient zruší ho nebo platnosti relace služby. Každý navázanou relaci započítává limit pro maximální počet aktivních souběžných relací se službou. Když je dosaženo tento limit, klienti, kteří se pokusí o vytvoření nové relace s touto službou odmítnuty až jeden nebo více aktivních relací vypršení platnosti nebo došlo ke zrušení klientem. Klient může mít více relací se službou a každé z nich těchto relací počty směrem k limit.  

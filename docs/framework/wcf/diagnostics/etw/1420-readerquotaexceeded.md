@@ -1,24 +1,12 @@
 ---
-title: "1420 – ReaderQuotaExceeded"
-ms.custom: 
+title: 1420 – ReaderQuotaExceeded
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d2e8cd7e-f7aa-476c-9857-1e04c4b52dc0
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eb9947c3391d063e31bc2e6fa2dd6b167aa8a040
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ddf9c78f8335fc3f1647ae05492b7fa9ad9261fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1420---readerquotaexceeded"></a>1420 – ReaderQuotaExceeded
 ## <a name="properties"></a>Vlastnosti  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|1420|  
 |Klíčová slova|kvóta|  
 |úroveň|Chyba|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Tato událost je vygenerované při překročení kvóty čtečky.  

@@ -1,22 +1,12 @@
 ---
 title: Language-Integrated Query (LINQ) (C#)
-ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-caps.latest.revision: 4
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0a721bba36eb1ed4ae94b99e25a1dcce33faef6e
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: c19e0eb658c428a3e511251f4851868de676d887
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="language-integrated-query-linq"></a>Jazyk integrovaného dotazu (LINQ)
 

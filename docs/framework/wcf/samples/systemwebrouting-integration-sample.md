@@ -1,26 +1,12 @@
 ---
 title: Ukázka integrace názvového prostoru SystemWebRouting
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: de8869956a59cb47623dbc4d84763e19d6f181bf
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 43785f84cb3852a35f1ed3bd555287842455a89b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemwebrouting-integration-sample"></a>Ukázka integrace názvového prostoru SystemWebRouting
 Tento příklad znázorňuje hostování vrstvě integrace s třídy v <xref:System.Web.Routing> oboru názvů. Třídy v <xref:System.Web.Routing> obor názvů povolit aplikaci použití adres URL, které neodpovídají přímo na fyzický prostředek. Použití směrování webové umožňuje vývojáři k vytvoření virtuální adresy pro protokol HTTP, která jsou pak mapována na skutečné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. To je užitečné, když musí být hostované služby WCF, bez nutnosti fyzického souboru či prostředku nebo když služby je nutné přistupovat pomocí adresy URL, které neobsahují soubory, jako je například HTML nebo .aspx. Tento příklad ukazuje, jak využívat <xref:System.Web.Routing.RouteTable> třídy za účelem vytvoření virtuální identifikátory URI, které jsou namapovány na spuštění služby definované v souboru global.asax. 
@@ -39,7 +25,7 @@ Tato ukázka může již nainstalován ve vašem počítači. Před pokračován
    
 `<InstallDrive>:\WF_WCF_Samples`  
    
- Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+ Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
    
 `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebRoutingIntegration`  
   
@@ -51,11 +37,11 @@ Tato ukázka může již nainstalován ve vašem počítači. Před pokračován
   
      Zobrazí se pro vzorovou výpis adresáře. Všimněte si, že neexistují žádné soubory s příponou souboru .svc.  
   
-3.  Na panelu Adresa přidat `movies` na adresu URL, takže to čte http://localhost:[port]/filmy a stiskněte klávesu ENTER.  
+3.  Na panelu Adresa přidat `movies` na adresu URL, takže to čte http://localhost:[port] / filmy a stiskněte klávesu ENTER.  
   
      Informační kanál filmy se zobrazí v prohlížeči.  
   
-4.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port]/kanálů a stiskněte klávesu ENTER.  
+4.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port] / kanálů a stiskněte klávesu ENTER.  
   
      Informační kanál kanály se zobrazí v prohlížeči.  
   
@@ -81,11 +67,11 @@ Tato ukázka může již nainstalován ve vašem počítači. Před pokračován
   
 4.  Spustit aplikaci, tak, že kliknete pravým tlačítkem na webové aplikace a výběr **spravovat aplikace** a potom **Procházet**.  
   
-5.  Na panelu Adresa přidat `movies` na adresu URL, takže se čtení http://localhost:[port]/filmy a stiskněte klávesu ENTER.  
+5.  Na panelu Adresa přidat `movies` na adresu URL, takže se čtení http://localhost:[port] / filmy a stiskněte klávesu ENTER.  
   
      Informační kanál filmy se zobrazí v prohlížeči.  
   
-6.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port]/kanálů a stiskněte klávesu ENTER.  
+6.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port] / kanálů a stiskněte klávesu ENTER.  
   
      Informační kanál kanály se zobrazí v prohlížeči.  
   

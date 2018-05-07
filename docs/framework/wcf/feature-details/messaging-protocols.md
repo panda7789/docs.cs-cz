@@ -1,31 +1,17 @@
 ---
-title: "Protokoly zasílání zpráv"
-ms.custom: 
+title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 75a39fa1d0301a48cec7ad61c968ee3fc82d189c
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: c900c8fde8b13b4766fb245de2bab46b5601f135
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Kanál zásobníku využívá kódování a přenos kanály transformace reprezentace interní zprávy do jeho přenosový formát a odesílat je pomocí konkrétního přenosu. Nejběžnější přenos používá funkční spolupráce při webové služby, je HTTP, a nejběžnější kódování používá webové služby jsou na základě XML SOAP 1.1, SOAP 1.2 a zpráva přenosu optimalizace mechanismus (MTOM).  
+Zásobník kanálu Windows Communication Foundation (WCF) aktivuje kódování a přenos kanály transformace reprezentace interní zprávy do jeho přenosový formát a odesílat je pomocí konkrétního přenosu. Nejběžnější přenos používá funkční spolupráce při webové služby, je HTTP, a nejběžnější kódování používá webové služby jsou na základě XML SOAP 1.1, SOAP 1.2 a zpráva přenosu optimalizace mechanismus (MTOM).  
   
- Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podrobnosti implementace pro následující protokoly zaměstnaní <xref:System.ServiceModel.Channels.HttpTransportBindingElement>.  
+ Toto téma obsahuje podrobnosti o implementaci WCF pro následující protokoly zaměstnaní <xref:System.ServiceModel.Channels.HttpTransportBindingElement>.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
@@ -33,7 +19,7 @@ ms.lasthandoff: 03/19/2018
 |SOAP 1.1 vazby HTTP|http://www.w3.org/TR/2000/NOTE-SOAP-20000508/, Část 7|  
 |SOAP 1.2 vazby HTTP|http://www.w3.org/TR/soap12-part2/, Část 7|  
   
- Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace podrobnosti pro následující protokoly <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívají.  
+ Toto téma obsahuje podrobné informace o implementaci WCF pro následující protokoly <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívají.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
@@ -48,7 +34,7 @@ W3C webových služeb adresování 1.0 - metadat|http://www.w3.org/TR/ws-addr-me
 |Vazba SOAP1.1 WSDL|http://www.w3.org/TR/wsdl/|  
 |Vazba SOAP1.2 WSDL|http://www.w3.org/Submission/wsdl11soap12/|  
   
- Toto téma popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace podrobnosti pro následující protokoly <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívá.  
+ Toto téma obsahuje podrobné informace o implementaci WCF pro následující protokoly <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> využívá.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-----------------------------|----------|  
@@ -70,46 +56,46 @@ W3C webových služeb adresování 1.0 - metadat|http://www.w3.org/TR/ws-addr-me
 |wsaw10|http://www.w3.org/2006/05/addressing/wsdl|  
 |XOP|http://www.w3.org/2004/08/xop/include|  
 |xmime|http://www.w3.org/2004/06/xmlmime<br /><br /> http://www.w3.org/2005/05/xmlmime|  
-dp|http://schemas.microsoft.com/net/2006/06/duplex|  
+distribučního bodu|http://schemas.microsoft.com/net/2006/06/duplex|  
   
 ## <a name="soap-11-and-soap-12"></a>SOAP 1.1 a SOAP 1.2  
   
 ### <a name="envelope-and-processing-model"></a>Obálky a zpracování modelu  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje zpracování obálky protokolu SOAP 1.1 Basic Profile 1.1 (základní parametr 11) a základní profil 1.0 (SSBP10). SOAP 1.2 obálky zpracování je implementována následující část SOAP12-1.  
+ WCF implementuje zpracování obálky protokolu SOAP 1.1 Basic Profile 1.1 (základní parametr 11) a základní profil 1.0 (SSBP10). SOAP 1.2 obálky zpracování je implementována následující část SOAP12-1.  
   
- Tato část popisuje některé volby implementace provedenou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s ohledem na základní parametr 11 a část SOAP12-1.  
+ Tato část popisuje některé volby implementace provedenou WCF s ohledem na základní parametr 11 a část SOAP12-1.  
   
 #### <a name="mandatory-header-processing"></a>Zpracování povinnou hlavičku  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dodržuje pravidla pro zpracování hlavičky označena `mustUnderstand` popsané v protokolu SOAP 1.1 a SOAP 1.2 specifikace, s následující rozdíly.  
+ WCF dodržuje pravidla pro zpracování hlavičky označena `mustUnderstand` popsané v protokolu SOAP 1.1 a SOAP 1.2 specifikace, s následující rozdíly.  
   
- Zprávu, která přejde [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanál zásobníku zpracovává jednotlivé kanály nakonfiguroval prvky přidružené vazeb, například, kódování textu zprávy, zabezpečení, spolehlivé zasílání zpráv a transakce. Každý kanál rozpozná hlavičky z přidružených oboru názvů a označí je jako rozumí. Jakmile zprávu zadá dispečera, přečte operaci formátování záhlaví očekávanou odpovídající kontrakt zprávy nebo operaci a značky, které jim rozumím jim. Pak dispečera ověřuje, zda nejsou žádné zbývající hlavičky rozumí ale označen jako `mustUnderstand` a vyvolá výjimku. Zprávy, které obsahují `mustUnderstand` hlavičky, které jsou zaměřeny na příjemce nejsou zpracovávány kód příjemce aplikace.  
+ Zpráva, která vstupuje do zásobníku kanálu WCF zpracovává jednotlivé kanály nakonfiguroval prvky přidružené vazeb, například, kódování textu zprávy, zabezpečení, spolehlivé zasílání zpráv a transakce. Každý kanál rozpozná hlavičky z přidružených oboru názvů a označí je jako rozumí. Jakmile zprávu zadá dispečera, přečte operaci formátování záhlaví očekávanou odpovídající kontrakt zprávy nebo operaci a značky, které jim rozumím jim. Pak dispečera ověřuje, zda nejsou žádné zbývající hlavičky rozumí ale označen jako `mustUnderstand` a vyvolá výjimku. Zprávy, které obsahují `mustUnderstand` hlavičky, které jsou zaměřeny na příjemce nejsou zpracovávány kód příjemce aplikace.  
   
  Například vrstvený zpracování umožňuje oddělení mezi infrastruktury vrstvy a aplikaci vrstvy protokolu SOAP uzlu:  
   
--   B1111: Hlavičky, které nejsou rozumí se zjistí po zpracovává zprávy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zásobník kanál infrastruktury, ale předtím, než je zpracován aplikací  
+-   B1111: Hlavičky, které nejsou rozumí zjištění po zpracování zprávy zásobník infrastruktury kanálu WCF, ale předtím, než je zpracován aplikací  
   
      `mustUnderstand` Hodnota hlavičky se liší mezi SOAP 1.1 a SOAP 1.2. Basic Profile 1.1 vyžaduje, aby `mustUnderstand` hodnota být 0 nebo 1 pro zprávy SOAP 1.1. SOAP 1.2 umožňuje 0, 1, `false`, a `true` hodnoty, ale doporučuje emitování kanonický reprezentace `xs:boolean` hodnoty (`false`, `true`).  
   
--   B1112: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vysílá `mustUnderstand` hodnoty 0 a 1 pro verze protokolu SOAP 1.1 a SOAP 1.2 obálky protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přijímá prostor celou hodnotu `xs:boolean` pro `mustUnderstand` záhlaví (0, 1, `false`, `true`)  
+-   B1112: Vysílá WCF `mustUnderstand` hodnoty 0 a 1 pro verze protokolu SOAP 1.1 a SOAP 1.2 obálky protokolu SOAP. WCF přijímá prostor celou hodnotu `xs:boolean` pro `mustUnderstand` záhlaví (0, 1, `false`, `true`)  
   
 #### <a name="soap-faults"></a>Chyb SOAP  
- Následuje seznam [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-konkrétní implementace chybu protokolu SOAP.  
+ Následuje seznam implementace selhání specifické WCF SOAP.  
   
--   B2121: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vrátí následující kódy chyb protokolu SOAP 1.1: `s11:mustUnderstand`, `s11:Client`, a `s11:Server`.  
+-   B2121: WCF vrátí následující kódy chyb protokolu SOAP 1.1: `s11:mustUnderstand`, `s11:Client`, a `s11:Server`.  
   
--   B2122: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vrátí následující kódy chyb protokolu SOAP 1.2: `s12:MustUnderstand`, `s12:Sender`, a `s12:Receiver`.  
+-   B2122: WCF vrátí následující kódy chyb protokolu SOAP 1.2: `s12:MustUnderstand`, `s12:Sender`, a `s12:Receiver`.  
   
 ### <a name="http-binding"></a>Vazba HTTP  
   
 #### <a name="soap-11-http-binding"></a>SOAP 1.1 vazby HTTP  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje vazby SOAP1.1 HTTP následující specifikace Basic Profile 1.1 oddíl 3.4 objasnění následující:  
+ WCF implementuje vazby SOAP1.1 HTTP následující specifikace Basic Profile 1.1 oddíl 3.4 objasnění následující:  
   
--   B2211: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby neimplementuje přesměrování požadavky HTTP POST.  
+-   B2211: Služby WCF neimplementuje přesměrování požadavky HTTP POST.  
   
--   B2212: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienti podporují soubory cookie protokolu HTTP v souladu s 3.4.8.  
+-   B2212: WCF klienti podporují soubory cookie protokolu HTTP v souladu s 3.4.8.  
   
 #### <a name="soap-12-http-binding"></a>SOAP 1.2 vazby HTTP  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jak je popsáno v protokolu SOAP 1.2 část 2 (SOAP12Part2) specifikace s následující objasnění, implementuje vazby protokolu SOAP 1.2 HTTP.  
+ WCF implementuje vazby SOAP 1.2 HTTP, jak je popsáno v protokolu SOAP 1.2 část 2 (SOAP12Part2) specifikace s následující objasnění.  
   
  Parametr volitelné akce pro zavedená SOAP 1.2 `application/soap+xml` typ média. Tento parametr je užitečné k optimalizaci odesílání zpráv bez nutnosti analyzovat do těla protokolu SOAP zprávy při adresování WS nepoužívá.  
   
@@ -120,7 +106,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  Když WS-Addressing je zakázána a příchozí požadavek neobsahuje parametr akce, zprávy `Action` považuje za není zadaný.  
   
 ## <a name="ws-addressing"></a>Adresování WS  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje 3 verze WS adresování:  
+ WCF implementuje 3 verze WS adresování:  
   
 -   Adresování WS 2004/08  
   
@@ -129,21 +115,21 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 -   Adresování WS 1.0 - metadat  
   
 ### <a name="endpoint-references"></a>Odkazy na koncový bod  
- Všechny verze WS-Addressing který [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje pomocí koncového bodu odkazy popisují koncové body.  
+ Všechny verze WS-Addressing implementující WCF pomocí koncového bodu odkazy popisují koncové body.  
   
 #### <a name="endpoint-references-and-ws-addressing-versions"></a>Odkazy na koncový bod a adresování WS verze  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje číslo infrastruktury protokolů, které používají služby WS-Addressing, zejména `EndpointReference` elementu a `W3C.WsAddressing.EndpointReferenceType` – třída (například WS-ReliableMessaging, WS-SecureConversation a WS-Trust). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje použití buď verzi WS-Addressing s ostatními protokoly infrastruktury. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncové body podporovat jednu verzi WS-Addressing na jeden koncový bod.  
+ WCF implementuje číslo infrastruktury protokolů, které používají služby WS-Addressing, zejména `EndpointReference` elementu a `W3C.WsAddressing.EndpointReferenceType` – třída (například WS-ReliableMessaging, WS-SecureConversation a WS-Trust). WCF podporuje jednu z verzí nástroje WS-Addressing s ostatními protokoly infrastruktury. Koncových bodů WCF podporovat jednu verzi WS-Addressing na jeden koncový bod.  
   
- Pro R3111, obor názvů pro `EndpointReference` element nebo typ použitý v zprávy se vyměňují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncového bodu musí odpovídat verzi WS adresování implementované tento koncový bod.  
+ Pro R3111, obor názvů pro `EndpointReference` element nebo typ použitý v zprávy vyměňují s koncovým bodem WCF musí odpovídat verzi WS adresování implementované tento koncový bod.  
   
- Například pokud [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje koncový bod protokolu WS-ReliableMessaging `AcksTo` hlavička bodem uvnitř `CreateSequenceResponse` používá verzi WS-Addressing, `EncodingBinding` element určuje pro tento koncový bod.  
+ Pokud koncový bod WCF implementuje WS-ReliableMessaging, například `AcksTo` hlavička bodem uvnitř `CreateSequenceResponse` používá verzi WS-Addressing, `EncodingBinding` element určuje pro tento koncový bod.  
   
 #### <a name="endpoint-references-and-metadata"></a>Odkazy na koncový bod a Metadata  
  Různé scénáře vyžadují komunikaci metadata nebo odkaz na metadata pro daný koncový bod.  
   
- B3121: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] využívá mechanismy popsána ve specifikaci WS-MetadataExchange (MEX) část 6 Zahrnout metadata pro koncový bod odkazy hodnotou nebo odkazem.  
+ B3121: WCF aktivuje mechanismy popsána ve specifikaci WS-MetadataExchange (MEX) část 6 Zahrnout metadata pro koncový bod odkazy hodnotou nebo odkazem.  
   
- Zvažte scénář, kde [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba vyžaduje, aby ověření pomocí tokenu zabezpečení kontrolní výrazy Markup Language (SAML) vydaný vydavatel tokenu v http://sts.fabrikam123.com. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncový bod popisuje tento požadavek ověřování pomocí `sp:IssuedToken` kontrolní výraz s vnořeným `sp:Issuer` assertion odkazující na vydavatel tokenu. Klientských aplikací, které přístup `sp:Issuer` assertion muset vědět, jak ke komunikaci s koncovým bodem tokenu vystavitele. Klient musí vědět, metadata o vydavatel tokenu. Pomocí rozšíření koncový bod odkaz metadata definovaná v MEX, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje odkaz na metadata vydavatel tokenu.  
+ Vezměte v úvahu scénář, kde služby WCF vyžaduje ověření pomocí tokenu zabezpečení kontrolní výrazy Markup Language (SAML) vydaný vydavatel tokenu v http://sts.fabrikam123.com. Koncový bod WCF popisuje tento požadavek ověřování pomocí `sp:IssuedToken` kontrolní výraz s vnořeným `sp:Issuer` assertion odkazující na vydavatel tokenu. Klientských aplikací, které přístup `sp:Issuer` assertion muset vědět, jak ke komunikaci s koncovým bodem tokenu vystavitele. Klient musí vědět, metadata o vydavatel tokenu. Pomocí rozšíření koncový bod odkaz metadata definovaná v MEX, WCF obsahuje odkaz na metadata vydavatel tokenu.  
   
 ```xml  
 <sp:IssuedToken>  
@@ -169,26 +155,26 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ### <a name="message-addressing-headers"></a>Adresování hlavičky zpráv  
   
 #### <a name="message-headers"></a>Hlavičky zpráv  
- Pro obě verze WS-Addressing [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá následující záhlaví zprávy podle specifikace `wsa:To`, `wsa:ReplyTo`, `wsa:Action`, `wsa:MessageID`, a `wsa:RelatesTo`.  
+ Pro obě verze WS-Addressing WCF používá následující záhlaví zprávy podle specifikace `wsa:To`, `wsa:ReplyTo`, `wsa:Action`, `wsa:MessageID`, a `wsa:RelatesTo`.  
   
- B3211: pro všechny verze WS-Addressing [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ctí, ale nevytváří předinstalované, WS-Addressing hlavičky zpráv `wsa:FaultTo` a `wsa:From`.  
+ B3211: Pro všechny verze WS-Addressing WCF ctí, ale nevytváří předinstalované, WS-Addressing hlavičky zpráv `wsa:FaultTo` a `wsa:From`.  
   
- Aplikace, které spolupracují s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace můžete přidat tyto zprávy hlavičky a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jejich zpracování odpovídajícím způsobem.  
+ Aplikace, které spolupracují s aplikací služby WCF můžete přidat, že tyto hlavičky zpráv a WCF se jejich zpracování odpovídajícím způsobem.  
   
 #### <a name="reference-parameters-and-properties"></a>Odkaz na parametry a vlastnosti  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje zpracování parametrů odkaz na koncový bod a p – referenční informace  
+ WCF implementuje zpracování parametrů odkaz na koncový bod a p – referenční informace  
   
  vlastnosti v souladu s příslušnými specifikace.  
   
- B3221: Pokud nakonfigurovaná pro použití služby WS-Addressing 2004/08 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body nerozlišují mezi zpracování vlastnosti odkazu a odkaz na parametry.  
+ B3221: Pokud nakonfigurovaná pro použití služby WS-Addressing 2004/08, koncových bodů WCF nerozlišují mezi zpracování vlastnosti odkazu a odkaz na parametry.  
   
 ### <a name="message-exchange-patterns"></a>Vzory Exchange zpráv  
- Pořadí zpráv zahrnutých v operaci volání webové služby se označuje jako *vzorce výměny zpráv*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje jednosměrné, požadavku a odpovědi a duplexní zprávu výměna vzory. Tato část vysvětluje, WS-Addressing požadavky na zpracování v závislosti na vzorce výměny zpráv používá zpráv.  
+ Pořadí zpráv zahrnutých v operaci volání webové služby se označuje jako *vzorce výměny zpráv*. WCF podporuje jednosměrné, požadavku a odpovědi a duplexní zprávu výměna vzory. Tato část vysvětluje, WS-Addressing požadavky na zpracování v závislosti na vzorce výměny zpráv používá zpráv.  
   
  V této části žadatel odešle první zprávy a příjemce obdrží první zprávu.  
   
 #### <a name="one-way-message"></a>Jednosměrné zpráv  
- Při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod je nakonfigurován pro podporu zprávy s dané `Action` sledovat jednosměrného vzor, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod dodržuje následující požadavky a chování. Pokud není uvedeno jinak, chování a pravidla platí pro obě verze WS-Addressing podporované v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]:  
+ Když se koncový bod WCF nakonfigurován pro podporu zprávy s danou `Action` sledovat jednosměrného vzor, koncový bod WCF dodržuje následující požadavky a chování. Pokud není uvedeno jinak, platí pro obě verze WS adresování podporované ve službě WCF chování a pravidla:  
   
 -   R3311: Žadatel musí zahrnovat `wsa:To`, `wsa:Action`a hlavičky pro všechny parametry odkaz určeného odkaz na koncový bod. Když se používá WS-Addressing 2004/08 a [Vlastnosti odkazu] jsou určené odkaz na koncový bod odpovídající hlavičky musí být přidaný do zprávy příliš.  
   
@@ -198,10 +184,10 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
      Pokud přenos HTTP je používán a kontrakt operaci deklaruje zprávu jednosměrné, odpověď HTTP pořád můžou použít pro odesílání zpráv infrastruktury – například může odesílat spolehlivé zasílání zpráv `SequenceAcknowledgement` zprávu na odpovědi HTTP.  
   
--   B3314: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] respondér neodesílá zprávu o chybě v odpovědi na zprávu jednosměrná.  
+-   B3314: Respondér WCF neodešle zprávu o chybě v odpovědi na zprávu jednosměrná.  
   
 #### <a name="request-reply"></a>Požadavek a odpověď  
- Při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod je nakonfigurován pro zprávu s danou `Action` podle vzoru požadavku a odpovědi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod řídí chování a požadavky uvedené níže. Pokud není uvedeno jinak, chování a pravidla platí pro obě verze WS-Addressing podporované v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]:  
+ Když se koncový bod WCF je nakonfigurován pro zprávu s danou `Action` podle vzoru požadavku a odpovědi, koncový bod WCF řídí chování a požadavky uvedené níže. Pokud není uvedeno jinak, platí pro obě verze WS adresování podporované ve službě WCF chování a pravidla:  
   
 -   R3321: Žadatel musí zahrnovat v požadavku `wsa:To`, `wsa:Action`, `wsa:MessageID`, tak i hlaviček pro všechny parametry odkaz nebo odkaz na vlastnosti (nebo obě) určeného odkaz na koncový bod.  
   
@@ -212,14 +198,14 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 -   R3324: Žadatel musí zahrnovat `wsa:To`, `wsa:Action`, a `wsa:RelatesTo` hlavičky v odpovědi, jakož i hlavičky pro všechny parametry odkaz nebo odkaz na vlastnosti (nebo obě) určeného `ReplyTo` odkaz na koncový bod v požadavek.  
   
 ### <a name="web-services-addressing-faults"></a>Webové služby adresování chyb  
- R3411: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vytváří následující chyb definované WS-Addressing 2004/08.  
+ R3411: WCF vytvoří následující chyb definované WS-Addressing 2004/08.  
   
 |Kód|příčina|  
 |----------|-----------|  
 |wsa:DestinationUnreachable|Zpráva dorazila po uplynutí `ReplyTo` , se liší od navázána pro tento kanál adresu; neexistuje žádný koncový bod naslouchá na adresu zadanou v hlavičce na.|  
 |wsa:ActionNotSupported|kanály infrastruktury nebo dispečera přiřazené ke koncovému bodu nerozpoznávají zadaná v akci `Action` záhlaví.|  
   
- R3412: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vytváří následující chyb definované WS-Addressing 1.0.  
+ R3412: WCF vytvoří následující chyb definované WS-Addressing 1.0.  
   
 |Kód|příčina|  
 |----------|-----------|  
@@ -234,7 +220,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ### <a name="wsdl-11-binding-and-ws-policy-assertions"></a>WSDL 1.1 vazby a WS-Policy kontrolní výrazy  
   
 #### <a name="indicating-use-of-ws-addressing"></a>Označující použití adresování WS  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod podporu pro konkrétní verzi WS-Addressing použije výrazy zásad.  
+ WCF pomocí kontrolních výrazů zásad označuje koncového bodu podporu pro konkrétní verzi WS-Addressing.  
   
  Následující výraz zásad má koncový bod zásad subjektu [WS-PA] a znamená, že zprávy odeslané a přijaté z koncového bodu musí používat WS-Addressing 2004/08.  
   
@@ -278,7 +264,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  Existují však vzory exchange zprávu, využívající má dva nezávislé konverzace HTTP připojení mezi žadatel a respondér, například nevyžádané jednosměrný zprávy odeslané respondér.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí funkce, pomocí kterého můžete dvě základní přenosové kanály formuláři složené duplexní kanál, kde jeden kanál je používána pro vstupní zprávy a druhý je používána pro zprávy výstup. V případě přenos HTTP poskytuje složené duplexní dvě připojení HTTP konverzace. Žadatel používá jedno připojení k odesílání zpráv do odpovídající partner a odpovídající partner dalších odesílání zprávy zpět na žadatel.  
+ WCF nabízí funkce, pomocí kterého můžete dvě základní přenosové kanály formuláři složené duplexní kanál, kde jeden kanál je používána pro vstupní zprávy a druhý je používána pro zprávy výstup. V případě přenos HTTP poskytuje složené duplexní dvě připojení HTTP konverzace. Žadatel používá jedno připojení k odesílání zpráv do odpovídající partner a odpovídající partner dalších odesílání zprávy zpět na žadatel.  
   
  Pro odpovědi, odešlou přes požadavky http samostatné ws-am kontrolní výraz je  
   
@@ -317,14 +303,14 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  Jediným rozdílem mezi těmito dvěma je sémantiky vzor výchozí akce popsané v 3.3.2 WS-ADDR a oddílu bodu 4.4.4 WS-ADDR10-WSDL, v uvedeném pořadí.  
   
- Je možné logicky tak, aby měl dva koncové body, které sdílejí stejné `portType` (nebo kontrakt, v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] terminologie), ale používání různých verzí WS adres. Ale vzhledem k tomu, že je definována akce `portType` a neměli měnit napříč koncovými body, které implementují `portType`, bude možné podporovat i výchozí akci zpracování.  
+ Je možné logicky tak, aby měl dva koncové body, které sdílejí stejné `portType` (nebo kontrakt, v terminologii WCF), ale používání různých verzí WS adres. Ale vzhledem k tomu, že je definována akce `portType` a neměli měnit napříč koncovými body, které implementují `portType`, bude možné podporovat i výchozí akci zpracování.  
   
- Chcete-li vyřešit tento sporům [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje jednu verzi `Action` atribut.  
+ Chcete-li vyřešit tento sporům, WCF podporuje jednu verzi `Action` atribut.  
   
- B3521: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá `wsaw10:Action` atributu u `wsdl:portType/wsdl:operation/[wsdl:input | wsdl:output | wsdl:fault]` dle WS-ADDR10-WSDL k určení `Action` identifikátor URI pro odpovídající zprávy, bez ohledu na verzi WS-Addressing používá koncový bod.  
+ B3521: Používá WCF `wsaw10:Action` atributu u `wsdl:portType/wsdl:operation/[wsdl:input | wsdl:output | wsdl:fault]` dle WS-ADDR10-WSDL k určení `Action` identifikátor URI pro odpovídající zprávy, bez ohledu na verzi WS-Addressing používá koncový bod.  
   
 #### <a name="use-endpoint-reference-inside-wsdl-port"></a>Použití koncový bod odkaz uvnitř WSDL portu  
- WS-ADDR10-WSDL části 4.1 rozšiřuje `wsdl:port` elementu, který chcete zahrnout `<wsa10:EndpointReference…/>` podřízený element k popisu koncový bod v WS-Addressing podmínky. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíří na adresování WS 2004/08, tento nástroj umožňuje `<wsa:EndpointReference…/>` vypadaly jako podřízeného prvku `wsdl:port`.  
+ WS-ADDR10-WSDL části 4.1 rozšiřuje `wsdl:port` elementu, který chcete zahrnout `<wsa10:EndpointReference…/>` podřízený element k popisu koncový bod v WS-Addressing podmínky. WCF rozšíří na adresování WS 2004/08, tento nástroj umožňuje `<wsa:EndpointReference…/>` vypadaly jako podřízeného prvku `wsdl:port`.  
   
 -   R3531: Pokud koncový bod má alternativu připojené zásady s `<wsaw10:UsingAddressing/>` výraz zásad, příslušné `wsdl:port` element může obsahovat podřízený element `<wsa10:EndpointReference …/>`.  
   
@@ -389,7 +375,7 @@ Content-Length: 0
 ```  
   
 ## <a name="soap-message-transmission-optimization-mechanism"></a>Mechanismus Optimalizace přenosu zpráv protokolu SOAP  
- Tato část popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podrobnosti implementace pro MTOM SOAP protokolu HTTP. Technologie MTOM je protokolu SOAP zprávy kódování mechanismus stejnou třídou jako kódování tradiční text/XML nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] binárního kódování. MTOM zahrnuje následující položky:  
+ Tato část popisuje podrobnosti implementace WCF pro MTOM SOAP protokolu HTTP. Technologie MTOM je protokolu SOAP zprávy kódování mechanismus stejnou třídou jako kódování tradiční text/XML nebo WCF binárního kódování. MTOM zahrnuje následující položky:  
   
 -   Kódování XML a mechanismus balení [XOP] popsaného který optimalizuje položky informace XML obsahující binární data s kódováním base64 na samostatné části binární.  
   
@@ -399,7 +385,7 @@ Content-Length: 0
   
 -   HTTP přenosu vazby.  
   
- Je možné použít MTOM s jiným protokolem než HTTP přenosy s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Ale v tomto tématu se zaměříme na protokolu HTTP.  
+ Je možné použít MTOM s jiným protokolem než HTTP přenosy s použitím technologie WCF. Ale v tomto tématu se zaměříme na protokolu HTTP.  
   
  Formát MTOM využívá velké sady specifikace, které se týkají MTOM sám sebe, XOP a MIME. Modularitu této sady specifikace ztěžuje poněkud rekonstrukci přesných požadavcích na sémantiku formátu a zpracování. Tato část popisuje požadavky na zpracování a formát pro vazbu protokolu HTTP MTOM.  
   
@@ -457,7 +443,7 @@ Content-Length: 0
     3.  Nahraďte `xop:Include` položky informace o elementu, který se zobrazí v `children` vlastnost každé položky se položky znak informace, které představují kódování base64 kanonický (viz XSD-2, 3.2.16 pomocí base64Binary) textu entity části standardu MIME v kroku 3b identifikuje (efektivně nahradit `xop:Include` položky informace o elementu s daty znovu vytvořena z součást balíčku).  
   
 #### <a name="http-content-type-header"></a>Hlavičku HTTP Content-Type  
- Následuje seznam [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objasnění, která pro formát hlavičky protokolu HTTP Content-Type kódování MTOM zprávy protokolu SOAP 1.x odvozené od požadavky uvedené v specifikace MTOM sám a jsou odvozené z MTOM a dokumentu RFC 2387.  
+ Toto je seznam WCF objasnění, která pro formát hlavičky protokolu HTTP Content-Type SOAP 1.x kódování MTOM zprávy odvozené od požadavky uvedené v specifikace MTOM sám a jsou odvozené z MTOM a dokumentu RFC 2387.  
   
 -   R4131: Hlavičku HTTP Content-Type musí mít hodnotu multipart/related (velká a malá písmena) a jeho parametry. Názvy parametrů jsou velká a malá písmena. Parametr pořadí není důležité.  
   
@@ -525,7 +511,7 @@ msg-id    =       [CFWS] "<" id-left "@" id-right ">" [CFWS]
   
  R4143: Musí následovat hodnota hlavičky Content-ID pro část MIME informační sadu `msg-id` produkční z RFC 2822 s `[CFWS]` předponu a příponu částí tento parametr vynechán.  
   
- Počet implementací MIME zmírnit požadavky pro hodnotu v rámci uzavřené "\<" a ">" jako e-mailovou adresu a použít `absoluteURI` v "\<", ">" Kromě e-mailovou adresu. Tato verze [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá hodnoty hlavičky Content-ID MIME ve tvaru:  
+ Počet implementací MIME zmírnit požadavky pro hodnotu v rámci uzavřené "\<" a ">" jako e-mailovou adresu a použít `absoluteURI` v "\<", ">" Kromě e-mailovou adresu. Tato verze služby WCF používá hodnoty hlavičky Content-ID MIME ve tvaru:  
   
 ```  
 Content-ID: <http://tempuri.org/0>   
@@ -571,12 +557,12 @@ mail-address   =     id-left "@" id-right
   
 -   R4151: Může optimalizovat libovolnou položku informace element, který obsahuje data s kódováním base64.  
   
--   B4152: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] optimalizuje položky element informace, které obsahují data s kódováním base64 a přesáhnout délku 1024 bajtů.  
+-   B4152: WCF optimalizuje položky element informace, které obsahují data s kódováním base64 a přesáhnout délku 1024 bajtů.  
   
- A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod nakonfigurovaný na použití MTOM vždycky odešlou kódování MTOM zprávy. I v případě, že žádné části splňují kritéria požadovaná, zpráva je stále kódování MTOM (serializovat jako balíček MIME s jedné součásti MIME obsahující obálku protokolu SOAP).  
+ Koncový bod WCF, který je nakonfigurovaný na použití MTOM vždycky odešlou kódování MTOM zprávy. I v případě, že žádné části splňují kritéria požadovaná, zpráva je stále kódování MTOM (serializovat jako balíček MIME s jedné součásti MIME obsahující obálku protokolu SOAP).  
   
 ### <a name="ws-policy-assertion-for-mtom"></a>Výraz WS-zásad pro MTOM  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Následující výraz zásad se používá k označení MTOM využití pomocí koncového bodu:  
+ WCF používá následující výraz zásad indikující bodem MTOM využití:  
   
 ```xml  
 <wsoma:OptimizedMimeSerialization ... />  
@@ -584,10 +570,10 @@ mail-address   =     id-left "@" id-right
   
 -   R4211: Předchozí výraz zásad má subjektu zásad koncového bodu a určuje, že všechny zprávy odesílané do a z koncového bodu musí být optimalizovány s použitím MTOM.  
   
--   B4212: Pokud nakonfigurovaná pro použití MTOM optimalizace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod přidá kontrolní výrazy zásad MTOM zásady připojené k odpovídající `wsdl:binding`.  
+-   B4212: Pokud nakonfigurovaný na použití MTOM optimalizace, koncový bod WCF přidá kontrolní výrazy zásad MTOM do zásady připojené k odpovídající `wsdl:binding`.  
   
 ### <a name="composition-with-ws-security"></a>Složení s WS-zabezpečení  
- MTOM je mechanismus kódování, který je podobný `text/xml` a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] binární XML. MTOM nabízí přirozené složení s WS-zabezpečení a jiné WS-* protokoly: zprávu zabezpečené pomocí protokolu WS-zabezpečení lze optimalizovat pomocí MTOM.  
+ MTOM je mechanismus kódování, který je podobný `text/xml` a WCF binární XML. MTOM nabízí přirozené složení s WS-zabezpečení a jiné WS-* protokoly: zprávu zabezpečené pomocí protokolu WS-zabezpečení lze optimalizovat pomocí MTOM.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -625,7 +611,7 @@ Content-Type: application/octet-stream
 ```  
   
 #### <a name="wcf-secure-soap-12-message-encoded-using-mtom"></a>Zabezpečení WCF SOAP 1.2 zpráva kódovaný pomocí MTOM  
- V tomto příkladu je zpráva kódované pomocí MTOM a SOAP 1.2, který je chráněný pomocí protokolu WS-zabezpečení. Binární části identifikovat pro kódování jsou obsah `BinarySecurityToken`, `CipherValue` z `EncryptedData` odpovídající šifrované podpisu a šifrovaný text. Všimněte si, že `CipherValue` z `EncryptedKey` nebyla určená pro optimalizaci podle [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], protože jeho délka je menší pak 1024 bajtů.  
+ V tomto příkladu je zpráva kódované pomocí MTOM a SOAP 1.2, který je chráněný pomocí protokolu WS-zabezpečení. Binární části identifikovat pro kódování jsou obsah `BinarySecurityToken`, `CipherValue` z `EncryptedData` odpovídající šifrované podpisu a šifrovaný text. Všimněte si, že `CipherValue` z `EncryptedKey` nebyla určená pro optimalizaci technologie WCF, protože jeho délka je menší pak 1024 bajtů.  
   
 ```  
 POST http://131.107.72.15/Mtom/service.svc/Soap12MtomSecureSignEncrypt HTTP/1.1  

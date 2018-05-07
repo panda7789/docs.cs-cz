@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView"
-ms.custom: 
+title: 'Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], detecting changes in cells
 - data grids [Windows Forms], detecting changes in cells
 ms.assetid: 7fa44d01-97f4-4ccb-a149-bc72628d2c36
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e1b34881b86d9962603118b93c9dc5d866794397
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3de58c1dd87d890f089366e6e85041f2983acc64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-perform-a-custom-action-based-on-changes-in-a-cell-of-a-windows-forms-datagridview-control"></a>Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek má určitý počet událostí můžete použít ke zjištění změny ve stavu <xref:System.Windows.Forms.DataGridView> buněk. Dva z nejčastěji používaných jsou <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.  

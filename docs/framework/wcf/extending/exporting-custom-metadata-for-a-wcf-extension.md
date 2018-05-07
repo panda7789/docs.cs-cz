@@ -1,27 +1,15 @@
 ---
-title: "Export vlastních metadat pro rozšíření WCF"
-ms.custom: 
+title: Export vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 53c93882-f8ba-4192-965b-787b5e3f09c0
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dbdbef495232fb1ffaeb8d1dc739c2db1355556d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 8d9f5e223bb47fc8997f6509ec882b282e1ee8b5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>Export vlastních metadat pro rozšíření WCF
-V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Vlastní metadata se skládá z elementů XML, které vývozci poskytované systémem metadata nelze exportovat. Obvykle obsahuje vlastní elementy WSDL pro uživatelem definované chování a prvky vazeb a výrazy zásad o možnostech a požadavky vazby a kontrakty.  
+Ve Windows Communication Foundation (WCF), export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Vlastní metadata se skládá z elementů XML, které vývozci poskytované systémem metadata nelze exportovat. Obvykle obsahuje vlastní elementy WSDL pro uživatelem definované chování a prvky vazeb a výrazy zásad o možnostech a požadavky vazby a kontrakty.  
   
  Tato část popisuje, export vlastního WSDL nebo výrazy zásad a není soustředit na samotný proces exportu. Další informace o tom, jak používat typy, které exportovat a importovat metadata bez ohledu na to, jestli je metadata vlastní nebo sestavený systému najdete v tématu [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
   

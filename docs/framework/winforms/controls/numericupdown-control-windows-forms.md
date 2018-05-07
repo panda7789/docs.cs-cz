@@ -1,13 +1,6 @@
 ---
-title: "NumericUpDown – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: NumericUpDown – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms controls, NumericUpDown control
 - spin button control [Windows Forms], up-down controls
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - spin button control
 - NumericUpDown control [Windows Forms]
 ms.assetid: 32b0c20d-4f37-4aea-873d-faded741d2db
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d57bccb12bfa9b0b193967a5a2ce3830dd6ef7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 24e2464eaa94f104d167add1f5fe696b7622ee09
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="numericupdown-control-windows-forms"></a>NumericUpDown – ovládací prvek (Windows Forms)
 Windows Forms `NumericUpDown` řízení vypadá kombinací textového pole a dvojice šipek, které uživatel můžete kliknutím na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu voleb. Uživatel může zvýšit a snížit počet kliknutím tlačítka nahoru a dolů, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla. Kliknutím na tlačítko šipka nahoru přesune hodnotu směrem k jeho maximální; Kliknutím na tlačítko šipka dolů přesune na minimum. Je například kde tento druh řízení může být užitečné pro ovládání hlasitosti na hudební přehrávač. Číselné ovládací prvky typu číselník – se používají v některých aplikacích ovládací panely systému Windows.  

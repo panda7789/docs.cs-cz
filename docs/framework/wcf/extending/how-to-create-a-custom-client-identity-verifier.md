@@ -1,30 +1,18 @@
 ---
-title: "Postupy: vytvoření Identity ověřovatel vlastní klienta"
-ms.custom: 
+title: 'Postupy: vytvoření Identity ověřovatel vlastní klienta'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b10dd9be996369385ca323b0409145a9cde46a1e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 99d46b19e744190c50a2ba316fe0f59a8f6cf07b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Postupy: vytvoření Identity ověřovatel vlastní klienta
-*Identity* funkce [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] umožňuje klientovi k určení předem očekávanou identitu služby. Vždy, když server se ověří na klienta, je identita kontrolovat očekávanou identitu. (Vysvětlení identit a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  
+*Identity* funkce služby Windows Communication Foundation (WCF) umožňuje klientům předem určit očekávanou identitu služby. Vždy, když server se ověří na klienta, je identita kontrolovat očekávanou identitu. (Vysvětlení identit a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  
   
  V případě potřeby ověření jde přizpůsobit pomocí ověřovatele vlastní identitu. Můžete například provést kontroly ověření identity další služby. V tomto příkladu kontroluje ověřovatele vlastní identitu další deklarace identity v certifikátu X.509 vrácená serverem. Ukázkovou aplikaci, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md).  
   

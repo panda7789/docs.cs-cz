@@ -1,20 +1,16 @@
 ---
 title: pomocí statické – direktiva (referenční dokumentace jazyka C#)
 ms.date: 03/10/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5838bede475cf2ad1b72518770241e86206a06bb
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: c9b7508c6e751f83fdc16a700ad68aa7de36e497
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-static-directive-c-reference"></a>pomocí statické – direktiva (referenční dokumentace jazyka C#)
 
@@ -40,9 +36,9 @@ Odstraněním potřeba explicitně odkazovat <xref:System.Math> třídy pokažd�
 
 [!code-csharp[using-static#2](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static2.cs#1)]
 
-`using static`Importuje pouze přístupné statické členy a vnořené typy, které jsou deklarované v zadaného typu.  Zděděné členy nebyly naimportovány.  Můžete importovat ze všech typů s názvem použití statické direktiva, včetně moduly jazyka Visual Basic.  Pokud funkce vysoké úrovně F # se zobrazí v metadatech jako statické členy s názvem typu, jehož jméno je platný identifikátor C#, lze importovat funkce F #.  
+`using static` Importuje pouze přístupné statické členy a vnořené typy, které jsou deklarované v zadaného typu.  Zděděné členy nebyly naimportovány.  Můžete importovat ze všech typů s názvem použití statické direktiva, včetně moduly jazyka Visual Basic.  Pokud funkce vysoké úrovně F # se zobrazí v metadatech jako statické členy s názvem typu, jehož jméno je platný identifikátor C#, lze importovat funkce F #.  
   
- `using static`Díky rozšiřující metody, které jsou deklarované v zadaný typ, který je k dispozici pro rozšíření metoda vyhledávání.  Názvy metod rozšíření však nejsou naimportovány do oboru pro neúplné odkaz v kódu.  
+ `using static` Díky rozšiřující metody, které jsou deklarované v zadaný typ, který je k dispozici pro rozšíření metoda vyhledávání.  Názvy metod rozšíření však nejsou naimportovány do oboru pro neúplné odkaz v kódu.  
   
  Metody se stejným názvem importovat z různých typů pomocí různých `using static` direktivy v oboru názvů na stejnou jednotku kompilace tvoří skupinu metoda.  Řešení přetížení v rámci těchto skupin metoda odpovídá normální C# pravidla.  
   

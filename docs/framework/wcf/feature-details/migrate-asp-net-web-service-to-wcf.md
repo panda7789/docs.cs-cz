@@ -1,27 +1,15 @@
 ---
-title: "Postupy: migrace kódu webové služby ASP.NET do služby Windows Communication Foundation"
-ms.custom: 
+title: 'Postupy: migrace kódu webové služby ASP.NET do služby Windows Communication Foundation'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e528c64f-c027-4f2e-ada6-d8f3994cf8d6
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e56d2481785a9a8486174e611001b9d800c7c869
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 90a6109a56299ec1bcaff4a35141abc194484772
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-migrate-aspnet-web-service-code-to-the-windows-communication-foundation"></a>Postupy: migrace kódu webové služby ASP.NET do služby Windows Communication Foundation
-Následující postup popisuje, jak migrovat webové služby ASP.NET do [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Následující postup popisuje, jak migrovat webové služby ASP.NET do služby Windows Communication Foundation (WCF).  
   
 ## <a name="procedure"></a>Postup  
   
@@ -85,9 +73,9 @@ Následující postup popisuje, jak migrovat webové služby ASP.NET do [!INCLUD
   
 7.  Testování změn.  
   
-8.  Přidejte odkazy na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sestavení System.ServiceModel a System.Runtime.Serialization do projektu ASP.NET – webové služby.  
+8.  Přidejte odkazy na sestavení WCF System.ServiceModel a System.Runtime.Serialization do projektu ASP.NET – webové služby.  
   
-9. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta ze schématu WSDL. Přidání modulu generovaná třída řešení.  
+9. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generovat třídu klienta WCF z schématu WSDL. Přidání modulu generovaná třída řešení.  
   
 10. Modul třídy generované v předchozím kroku obsahuje definici rozhraní.  
   
@@ -145,7 +133,7 @@ Následující postup popisuje, jak migrovat webové služby ASP.NET do [!INCLUD
     }  
     ```  
   
-13. Konfigurovat třídu, která je teď [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] typ tak, aby vyžadovala služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režim kompatibility ASP.NET, pokud webová služba ASP.NET spoléhali na žádné z následujících:  
+13. Konfigurovat třídu, která je nyní typ služby WCF, tak, aby vyžadovala režim kompatibility WCF ASP.NET, pokud webová služba ASP.NET spoléhali na některé z následujících:  
   
     -   <xref:System.Web.HttpContext> Třídy.  
   
@@ -167,14 +155,14 @@ Následující postup popisuje, jak migrovat webové služby ASP.NET do [!INCLUD
   
 14. Původní soubor .asmx a přejmenovat. asmx.old.  
   
-15. Vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby soubor služby, poskytněte rozšíření, .asmx a uložte ho do kořenové aplikace ve službě IIS.  
+15. Vytvořte soubor služby WCF pro službu, poskytněte rozšíření, .asmx a uložte ho do kořenové aplikace ve službě IIS.  
   
     ```xml  
     <%@Service Class="MyOrganization.Adder" %>  
     <%@Assembly Name="MyServiceAssembly" %>   
     ```  
   
-16. Přidat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace služby jeho souboru Web.config. Konfigurovat službu používat [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md), použijte službu soubor s příponou .asmx vytvořili v předchozích krocích a negeneruje WSDL pro sebe sama, ale pomocí jazyka WSDL z kroku 2. Také nakonfigurujte, aby používal režim kompatibility ASP.NET v případě potřeby.  
+16. Přidání konfigurace WCF pro službu jeho souboru Web.config. Konfigurovat službu používat [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md), použijte službu soubor s příponou .asmx vytvořili v předchozích krocích a negeneruje WSDL pro sebe sama, ale pomocí jazyka WSDL z kroku 2. Také nakonfigurujte, aby používal režim kompatibility ASP.NET v případě potřeby.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  

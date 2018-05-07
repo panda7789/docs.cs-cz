@@ -1,24 +1,17 @@
 ---
 title: lock – příkaz (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - lock_CSharpKeyword
 - lock
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-caps.latest.revision: 43
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: eb48c2b1554ad2817406eaef42b4cb336ea46862
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2ce870e8caa67d780ce603a6f1dbcc7cd303b842
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lock-statement-c-reference"></a>lock – příkaz (Referenční dokumentace jazyka C#)
 `lock` – Klíčové slovo označí blok příkaz jako důležitý oddíl získání zámku vzájemné vyloučení pro daný objekt, provádění příkazu a pak uvolnění uzamčení. Následující příklad obsahuje `lock` příkaz.  
@@ -54,11 +47,11 @@ class Account
   
  Obecně není vhodné používat na zamykání `public` typu nebo instancí mimo kontrolu vašeho kódu. Běžné konstrukce `lock (this)`, `lock (typeof (MyType))`, a `lock ("myLock")` porušují tyto obecné zásady:  
   
--   `lock (this)`problém je, pokud instance je přístupná veřejně.  
+-   `lock (this)` problém je, pokud instance je přístupná veřejně.  
   
--   `lock (typeof (MyType))`Pokud je problém `MyType` veřejně přístupný.  
+-   `lock (typeof (MyType))` Pokud je problém `MyType` veřejně přístupný.  
   
--   `lock("myLock")`problém je, protože jiný kód v procesu pomocí jednoho řetězce, budou sdílet stejnou zámek.  
+-   `lock("myLock")` problém je, protože jiný kód v procesu pomocí jednoho řetězce, budou sdílet stejnou zámek.  
   
  Osvědčeným postupem je definovat `private` objekt, který chcete zamknout, nebo `private static` objektová proměnná k ochraně dat, které jsou společné pro všechny instance.  
   
@@ -81,7 +74,7 @@ class Account
  <xref:System.Reflection.MethodImplAttributes>  
  <xref:System.Threading.Mutex>  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Dělení na vlákna](../../programming-guide/concepts/threading/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [Klíčová slova příkazů](../../../csharp/language-reference/keywords/statement-keywords.md)  

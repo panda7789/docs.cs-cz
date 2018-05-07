@@ -1,24 +1,12 @@
 ---
-title: "4815 – EndpointDiscoverabilityEnabled"
-ms.custom: 
+title: 4815 – EndpointDiscoverabilityEnabled
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cd027b98-da63-4046-8243-c09e30870b5f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e1fda87aadaad25407a33a6c2e0f844cf8ba34d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 750a0ecf6f6713feff8b163f58a357ad77f1e7e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4815---endpointdiscoverabilityenabled"></a>4815 – EndpointDiscoverabilityEnabled
 ## <a name="properties"></a>Vlastnosti  

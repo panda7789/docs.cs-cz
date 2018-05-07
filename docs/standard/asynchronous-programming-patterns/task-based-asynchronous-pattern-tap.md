@@ -1,13 +1,7 @@
 ---
-title: "Asynchronní vzor založený na úlohách (TAP)"
-ms.custom: 
+title: Asynchronní vzor založený na úlohách (TAP)
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 3c3d768414a5cd8a8a9fd4a7e120f74d70827729
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: fe69943a6f87bbbb7f29d1e4d6d30c26709725d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Asynchronní vzor založený na úlohách (TAP)
 Založený na úlohách asynchronní vzor (TAP) je založena na <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> typy v <xref:System.Threading.Tasks?displayProperty=nameWithType> obor názvů, které se používají k vyjádření libovolný asynchronní operace. TAP je doporučený asynchronní návrh vzoru pro nový vývoj.  
@@ -77,7 +66,7 @@ Založený na úlohách asynchronní vzor (TAP) je založena na <xref:System.Thr
   
  Pokud token zrušení vyžaduje zrušení před klepněte na metodu, která přijímá token je volána, klepněte na metoda by měla vrátit <xref:System.Threading.Tasks.TaskStatus.Canceled> úloh.  Pokud je však požadováno zrušení při spuštěné asynchronní operaci, asynchronní operace nemusí přijmout žádost o zrušení.  Vrácený úloh musí končit <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu, pouze pokud operaci končí v důsledku žádost o zrušení. Pokud zrušení je požadováno, ale stále vytvořeného výsledku nebo výjimku, úloha musí končit <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> nebo <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu. 
  
- Pro asynchronní metody, které chcete vystavit možnost především, bude zrušeno nemáte poskytují přetížení, které nepřijímá token zrušení. Pro metody, které nelze zrušit, neposkytujte přetížení, která přijímají token zrušení. To pomáhá volajícímu určit, zda je skutečně možné zrušit cílovou metodu.  Příjemce kód, který není požadavky zrušení může volat metodu, která přijímá <xref:System.Threading.CancellationToken> a zadejte <xref:System.Threading.CancellationToken.None%2A> jako hodnota argumentu. <xref:System.Threading.CancellationToken.None%2A>je funkčně srovnatelný výchozí <xref:System.Threading.CancellationToken>.  
+ Pro asynchronní metody, které chcete vystavit možnost především, bude zrušeno nemáte poskytují přetížení, které nepřijímá token zrušení. Pro metody, které nelze zrušit, neposkytujte přetížení, která přijímají token zrušení. To pomáhá volajícímu určit, zda je skutečně možné zrušit cílovou metodu.  Příjemce kód, který není požadavky zrušení může volat metodu, která přijímá <xref:System.Threading.CancellationToken> a zadejte <xref:System.Threading.CancellationToken.None%2A> jako hodnota argumentu. <xref:System.Threading.CancellationToken.None%2A> je funkčně srovnatelný výchozí <xref:System.Threading.CancellationToken>.  
   
 ## <a name="progress-reporting-optional"></a>Hlášení průběhu (volitelné)  
  Některé asynchronní operace těží z poskytování oznámení o průběhu. Ta se obvykle používají k aktualizaci uživatelského rozhraní informacemi o průběhu asynchronní operace. 

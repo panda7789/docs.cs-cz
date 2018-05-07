@@ -1,33 +1,19 @@
 ---
 title: Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WS-protocols
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-caps.latest.revision: 39
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 998920e4c1d7e0524da1c9843378e92517f4ee96
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 728dba65a99d71a52551b16e5f1822104ed40ea7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Pro zjednodušení konfigurace služby pro interoperabilita osvědčených postupů, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zavádí tři umožňuje vzájemnou spolupráci vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro spolupráci s organizace rozvoj z strukturovaných informace standardy (OASIS) standardů [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje jednu vzájemná spolupráce poskytnutými systémem vazbu: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnuje dvě umožňuje vzájemnou spolupráci vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma uvádí specifikace, které podporují umožňuje vzájemnou spolupráci vazby poskytované systémem.  
+Windows Communication Foundation (WCF) byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Pro zjednodušení konfigurace služby pro interoperabilita osvědčené postupy, WCF zavádí tři umožňuje vzájemnou spolupráci vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro spolupráci s organizace pro standardy rozvoj z strukturovaných informace standardy (OASIS), WCF zahrnuje jednu vzájemná spolupráce poskytnutými systémem vazbu: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace WCF zahrnuje dvě umožňuje vzájemnou spolupráci vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma uvádí specifikace, které podporují umožňuje vzájemnou spolupráci vazby poskytované systémem.  
   
 ## <a name="web-services-protocols-supported-by-basichttpbinding-wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding-bindings"></a>Webové služby protokoly podporované vazbami basicHttpBinding, wsHttpBinding, – ws2007HttpBinding a – wsDualHttpBinding  
   
@@ -41,11 +27,11 @@ ms.lasthandoff: 04/30/2018
 |--------------|--------------|-----------------------------|  
 |Přenos|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`, `WSHttpBinding`, a `WS2007HttpBinding` použít přenosy HTTP a HTTPS.|  
 |Zasílání zpráv|MTOM|[MTOM](http://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`, `wsHttpBinding`, a `ws2007HttpBinding` podporu zpráva přenosu optimalizace mechanismus (MTOM). Nepoužívá se ve výchozím nastavení. Chcete-li použít MTOM, nastavte `messageEncoding` atribut `"Mtom"`.<br /><br /> Příklad:<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
-|Metadata|WSDL 1.1|[WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Webové služby popis Language (WSDL) používá k popisu služby.|  
-|Metadata|WS-zásad|[WS-zásad](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu se používá k popisu služby požadavky a možnosti.|  
-|Metadata|WS-Policy 1.5|[WS-Policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu se používá k popisu služby požadavky a možnosti.|  
-|Metadata|WS-PolicyAttachment|[WS-PolicyAttachment](http://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje WS-PolicyAttachment připojit výrazy zásad v různých oborech v webové služby popis Language (WSDL).|  
-|Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
+|Metadata|WSDL 1.1|[WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> WCF Web Services popis Language (WSDL) používá k popisu služby.|  
+|Metadata|WS-zásad|[WS-zásad](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> WCF používá k popisu služby požadavků a možností specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu.|  
+|Metadata|WS-Policy 1.5|[WS-Policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> WCF používá k popisu služby požadavků a možností specifikace WS-Policy společně s kontrolní výrazy specifické pro doménu.|  
+|Metadata|WS-PolicyAttachment|[WS-PolicyAttachment](http://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> WCF implementuje WS-PolicyAttachment připojit výrazy zásad v různých oborech v webové služby popis Language (WSDL).|  
+|Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
   
 ### <a name="basichttpbinding"></a>basicHttpBinding  
   
@@ -70,7 +56,7 @@ ms.lasthandoff: 04/30/2018
 |Zabezpečení|WS-SecureConversation|[WS-SecureConversation](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Použijte k zajištění zabezpečené relace při `security/@mode` je nastavena na hodnotu "Zpráva" a `message/@establishSecurityContext` atribut je nastaven na hodnotu "PRAVDA" (výchozí).|  
 |Zabezpečení|WS-Trust|[WS-Trust](http://go.microsoft.com/fwlink/?LinkId=95318)<br /><br /> Používá WS-SecureConversation (viz výše).|  
 |Spolehlivé zasílání zpráv|WS-ReliableMessaging|[WS-ReliableMessaging](http://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> Použijte, pokud vazba je nakonfigurovaný na použití `reliableSession`.<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
-|Transakce|WS-AtomicTransaction|[WS-AtomicTransaction](http://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Používáno pro komunikaci mezi správci transakcí. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a klienti vždy používají místní transakce správce.|  
+|Transakce|WS-AtomicTransaction|[WS-AtomicTransaction](http://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Používáno pro komunikaci mezi správci transakcí. Klienti WCF a služby vždy používají správci místní transakcí.|  
 |Transakce|WS-spolupráce|[WS-spolupráce](http://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Pomocí toku kontext transakce při `flowTransactions` je atribut nastaven na "Povoleno" nebo "Požadováno".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
   
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>– wsFederationHttpBinding a – ws2007FederationHttpBinding  
@@ -109,7 +95,7 @@ ms.lasthandoff: 04/30/2018
 |Přenos|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)|  
 |Zasílání zpráv|SOAP 1.2|[Úvod do](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Zasílání zpráv|Adresování WS 2005/08|[Webové služby adresování 1.0 – základní](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](http://go.microsoft.com/fwlink/?LinkId=95330)|  
-|Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
+|Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
   
 ### <a name="mexhttpsbinding"></a>mexHttpsBinding  
  [\<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md) podporuje následující protokoly. Další informace o používání této vazbě najdete v tématu [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
@@ -119,7 +105,7 @@ ms.lasthandoff: 04/30/2018
 |Přenos|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> Zabezpečení přenosu je povolena.|  
 |Zasílání zpráv|SOAP 1.2|[Úvod do](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Zasílání zpráv|Adresování WS 2005/08|[Webové služby adresování 1.0 – základní](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](http://go.microsoft.com/fwlink/?LinkId=95330)|  
-|Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
+|Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-zásad.|  
   
 ## <a name="see-also"></a>Viz také  
  [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  

@@ -1,27 +1,15 @@
 ---
-title: "Povolení oznámení dotazů"
-ms.custom: 
+title: Povolení oznámení dotazů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: a5333e19-8e55-4aa9-82dc-ca8745e516ed
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c7b02ba7959a5cfc2205222655460026847c3098
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4cda3ce3bcae7741df66496c87ba6654e0bbfe6e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enabling-query-notifications"></a>Povolení oznámení dotazů
 Aplikace, které využívají oznámení dotazů mají společnou sadu požadavků. Váš zdroj dat musí být správně nakonfigurované pro podporu oznámení dotazů SQL a uživatel musí mít správná oprávnění na straně klienta a na straně serveru.  
@@ -90,7 +78,7 @@ CREATE SERVICE ContactChangeNotifications
 ### <a name="using-sqldependency"></a>Používání třídy SqlDependency  
  Chcete-li použít <xref:System.Data.SqlClient.SqlDependency>, služby Service Broker musí být povolena pro databázi systému SQL Server používá, a uživatelé musí mít oprávnění pro příjem oznámení. Objekty služby Service Broker, například fronty oznámení jsou předdefinovány.  
   
- Kromě toho <xref:System.Data.SqlClient.SqlDependency> automaticky spustí pracovní vlákna ke zpracování oznámení, když jsou odeslány do fronty, je také analyzuje zpráv služby Service Broker, odhalení příslušných informací jako argument data události. <xref:System.Data.SqlClient.SqlDependency>musí se inicializuje pomocí volání `Start` metodu pro vytvoření závislosti do databáze. Toto je statickou metodu, kterou je lze volat pouze jednou během inicializace aplikace pro každé připojení databáze vyžaduje. `Stop` Metoda by měla být volána při ukončení aplikace pro každé připojení závislost, která byla vytvořená.  
+ Kromě toho <xref:System.Data.SqlClient.SqlDependency> automaticky spustí pracovní vlákna ke zpracování oznámení, když jsou odeslány do fronty, je také analyzuje zpráv služby Service Broker, odhalení příslušných informací jako argument data události. <xref:System.Data.SqlClient.SqlDependency> musí se inicializuje pomocí volání `Start` metodu pro vytvoření závislosti do databáze. Toto je statickou metodu, kterou je lze volat pouze jednou během inicializace aplikace pro každé připojení databáze vyžaduje. `Stop` Metoda by měla být volána při ukončení aplikace pro každé připojení závislost, která byla vytvořená.  
   
 ### <a name="using-sqlnotificationrequest"></a>Pomocí SqlNotificationRequest  
  Naproti tomu <xref:System.Data.Sql.SqlNotificationRequest> vyžaduje, abyste implementovat celé infrastruktury naslouchání sami. Kromě toho je nutné definovat všechny podpůrné objekty služby Service Broker například fronty, služby a typy nepodporuje fronty zpráv. Tento ruční přístup je užitečné, pokud vaše aplikace vyžaduje speciální oznamující zprávy nebo oznámení chování, nebo pokud je aplikace součástí větší aplikace služby Service Broker.  

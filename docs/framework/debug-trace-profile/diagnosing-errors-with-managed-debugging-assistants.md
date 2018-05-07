@@ -1,14 +1,6 @@
 ---
-title: "Diagnostikování chyb pomocí asistentů spravovaného ladění"
-ms.custom: 
+title: Diagnostikování chyb pomocí asistentů spravovaného ladění
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - EHMDA
 helpviewer_keywords:
@@ -37,17 +29,13 @@ helpviewer_keywords:
 - output, managed debugging assistants
 - errors [.NET Framework], managed debugging assistants
 ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 12a96068412f05d48b8b006385c66f3efbbf9870
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 16a039a5edb0e1023551f97deefbf7874a19638b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="diagnosing-errors-with-managed-debugging-assistants"></a>Diagnostikování chyb pomocí asistentů spravovaného ladění
 Spravované ladění Pomocníci ladění (mda) pomůcek, které spolupracují se modul CLR (CLR) k poskytování informací o stav modulu runtime. Asistentům generovat informační zprávy o událostech runtime, které nelze jinak depeše. Mda můžete izolovat aplikace pevný najít chyby, které dojít, když přechod mezi spravovanými a nespravovanými kódu. Můžete povolit nebo zakázat všechny mda přidání klíče registru systému Windows nebo nastavením proměnné prostředí. Konkrétní mda můžete povolit pomocí nastavení konfigurace aplikace. Můžete nastavit další konfiguraci nastavení pro některé jednotlivé mda v konfiguračním souboru aplikace. Protože tyto konfigurační soubory jsou analyzovat při načtení modulu runtime, je nutné povolit MDA před spuštěním spravované aplikace. Nelze ji povolit pro aplikace, které jste již bylo zahájeno.  
@@ -134,21 +122,21 @@ Windows Registry Editor Version 5.00
 ### <a name="enabling-and-disabling-mdas-by-using-an-environment-variable"></a>Povolení a zákaz mda pomocí proměnné prostředí  
  MDA aktivace může také řízena proměnnou prostředí COMPLUS_MDA, která přepisuje klíč registru. Řetězec COMPLUS_MDA je velká a malá písmena, oddělený středníkem seznam názvů (mda) nebo jiné speciální řídicí řetězce. Spuštění v rámci spravované nebo nespravované ladicí program umožňuje sadu mda ve výchozím nastavení. K tomu je potřeba implicitně předřazení seznam oddělený středníkem mda povolené ve výchozím nastavení v části ladicí programy na hodnotu v prostředí proměnná nebo klíč registru. Speciální řídicí řetězce jsou následující:  
   
--   `0`-Deaktivuje všechny mda.  
+-   `0` -Deaktivuje všechny mda.  
   
--   `1`-Načte nastavení MDA z *ApplicationName*. mda.config.  
+-   `1` -Načte nastavení MDA z *ApplicationName*. mda.config.  
   
--   `managedDebugger`– Explicitně aktivuje všechny mda, které jsou aktivované implicitně při spuštění spravované spustitelný soubor v části ladicí program.  
+-   `managedDebugger` – Explicitně aktivuje všechny mda, které jsou aktivované implicitně při spuštění spravované spustitelný soubor v části ladicí program.  
   
--   `unmanagedDebugger`– Explicitně aktivuje všechny mda, které jsou aktivované implicitně při spuštění spustitelného souboru nespravované pod ladicí program.  
+-   `unmanagedDebugger` – Explicitně aktivuje všechny mda, které jsou aktivované implicitně při spuštění spustitelného souboru nespravované pod ladicí program.  
   
  Pokud jsou konfliktní nastavení, nejnovější nastavení přepsat předchozí nastavení:  
   
--   `COMPLUS_MDA=0`Zakáže všechny mda, včetně těch, které implicitně povoleno pod ladicí program.  
+-   `COMPLUS_MDA=0` Zakáže všechny mda, včetně těch, které implicitně povoleno pod ladicí program.  
   
--   `COMPLUS_MDA=gcUnmanagedToManaged`umožňuje `gcUnmanagedToManaged` kromě všech mda, které jsou implicitně povoleny v rámci ladicí program.  
+-   `COMPLUS_MDA=gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` kromě všech mda, které jsou implicitně povoleny v rámci ladicí program.  
   
--   `COMPLUS_MDA=0;gcUnmanagedToManaged`umožňuje `gcUnmanagedToManaged` ale zakáže mda, které by jinak implicitně povolit v části ladicí program.  
+-   `COMPLUS_MDA=0;gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` ale zakáže mda, které by jinak implicitně povolit v části ladicí program.  
   
 <a name="appConfig"></a>   
 ### <a name="enabling-and-disabling-mdas-by-using-application-specific-configuration-settings"></a>Povolení a zákaz mda pomocí nastavení konfigurace specifické pro aplikaci  

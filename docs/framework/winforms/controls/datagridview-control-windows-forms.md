@@ -1,13 +1,6 @@
 ---
-title: "DataGridView – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: DataGridView – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - tables [Windows Forms]
 - data grids [Windows Forms
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - datasets [Windows Forms], displaying in DataGridView control
 - DataGridView control [Windows Forms]
 ms.assetid: dbee73f2-bba6-4874-9389-cd21d44309be
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 51f6765e5960ddadd27a476f7229a76fbfe985e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3c642a2a0eccc5a2b08cee71ca719515b115b2f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datagridview-control-windows-forms"></a>DataGridView – ovládací prvek (Windows Forms)
 `DataGridView` Řízení poskytuje výkonný a flexibilní způsob, jak zobrazit data ve formátu tabulky. Můžete použít `DataGridView` řízení zobrazíte jen pro čtení zobrazení malé množství dat nebo je možné škálovat, aby bylo zřejmé, upravitelných zobrazeních velmi rozsáhlých datových sad.  

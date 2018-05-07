@@ -1,13 +1,6 @@
 ---
-title: "Přehled událostí automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled událostí automatizace uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, providers
 - UI Automation, events
@@ -16,28 +9,26 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-caps.latest.revision: "22"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 8b28d6aafc0e9680123859ee0e9a28dd71a2249c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2190e404479a940e638d6ee8b9fd7135d8fc0109
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-events-overview"></a>Přehled událostí automatizace uživatelského rozhraní
 > [!NOTE]
 >  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]oznámení o události je klíčovou funkcí pro usnadnění technologie, jako je například čtečky obrazovky a zvětšování zobrazení. Tyto události sledování klientů automatizace uživatelského rozhraní, které jsou aktivovány zprostředkovatelé automatizace uživatelského rozhraní když v se stane něco [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a využít tyto informace mají obdržet oznámení koncovým uživatelům.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] oznámení o události je klíčovou funkcí pro usnadnění technologie, jako je například čtečky obrazovky a zvětšování zobrazení. Tyto události sledování klientů automatizace uživatelského rozhraní, které jsou aktivovány zprostředkovatelé automatizace uživatelského rozhraní když v se stane něco [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a využít tyto informace mají obdržet oznámení koncovým uživatelům.  
   
  Zlepšení efektivity tím, že poskytovatel aplikace umožňuje aktivovat události selektivně, v závislosti na tom, jestli všechny klienty přihlášeni k události, nebo vůbec, pokud jsou pro všechny události, naslouchá žádní klienti.  
   
 <a name="Types_of_Events"></a>   
 ## <a name="types-of-events"></a>Typy událostí  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]události spadají do následujících kategorií.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události spadají do následujících kategorií.  
   
 |Událost|Popis|  
 |-----------|-----------------|  
@@ -50,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
  Tyto události může dosáhnout i v případě, že stav rozhraní nebylo změněno.  
   
--   `AutomationPropertyChangedEvent`(v závislosti na vlastnost, která se změnila)  
+-   `AutomationPropertyChangedEvent` (v závislosti na vlastnost, která se změnila)  
   
 -   `ElementSelectedEvent`  
   
@@ -60,7 +51,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="UI_Automation_Event_Identifiers"></a>   
 ## <a name="ui-automation-event-identifiers"></a>Identifikátory událostí automatizace uživatelského rozhraní  
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]události jsou identifikovány <xref:System.Windows.Automation.AutomationEvent> objekty. <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> Vlastnost obsahuje hodnotu, která jednoznačně identifikuje typ události.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] události jsou identifikovány <xref:System.Windows.Automation.AutomationEvent> objekty. <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> Vlastnost obsahuje hodnotu, která jednoznačně identifikuje typ události.  
   
  Možné hodnoty <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> jsou uvedeny v následující tabulce, společně s typu použitého pro argumenty událostí. Všimněte si, že identifikátory používané klienty a poskytovatelé stejně jako s názvem pole z různých tříd.  
   

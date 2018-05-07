@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Určení počátku transformace použitím relativních hodnot"
-ms.custom: 
+title: 'Postupy: Určení počátku transformace použitím relativních hodnot'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - origins of Transforms [WPF]
 - Transforms [WPF], origins of
 - graphics [WPF], origins of Transforms
 ms.assetid: f4dbc29d-93c7-41cd-96d8-5cfd8624b470
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d29a572e2989ffb800434fdaab9756cb651c0816
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff263af8fbedeec483eee213c07dd4ec169805de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-origin-of-a-transform-by-using-relative-values"></a>Postupy: Určení počátku transformace použitím relativních hodnot
 Tento příklad ukazuje, jak použít relativní hodnoty k určení původu <xref:System.Windows.UIElement.RenderTransform%2A> který se použije pro <xref:System.Windows.FrameworkElement>.  

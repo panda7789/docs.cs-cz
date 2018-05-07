@@ -1,12 +1,6 @@
 ---
-title: "/ – operátor (Visual Basic)"
+title: / – operátor (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb./
 helpviewer_keywords:
@@ -22,14 +16,11 @@ helpviewer_keywords:
 - / operator [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 335e97f2-c434-439e-9064-76973a051101
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2f221e863725b9aeb0b3fa3219b3a881541e2be0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 17eb3eddfae3cf7c818514a2fee20f646876a6ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>/ – operátor (Visual Basic)
 Provede podíl dvou čísel a vrátí výsledek s plovoucí desetinnou čárkou.  
@@ -75,8 +66,8 @@ expression1 / expression2
 |Operand datové typy|Chování Pokud `expression2` je nulová.|  
 |------------------------|---------------------------------------|  
 |S plovoucí desetinnou čárkou (`Single` nebo `Double`)|Vrátí infinity (<xref:System.Double.PositiveInfinity> nebo <xref:System.Double.NegativeInfinity>), nebo <xref:System.Double.NaN> (není číslo) Pokud `expression1` je také nula.|  
-|`Decimal`|Vyvolá<xref:System.DivideByZeroException>|  
-|Integrální (podepsané nebo bez znaménka)|Pokus o převod zpátky do integrální typ vyvolává <xref:System.OverflowException> protože celočíselných typů nelze přijmout <xref:System.Double.PositiveInfinity>, <xref:System.Double.NegativeInfinity>, nebo<xref:System.Double.NaN>|  
+|`Decimal`|Vyvolá <xref:System.DivideByZeroException>|  
+|Integrální (podepsané nebo bez znaménka)|Pokus o převod zpátky do integrální typ vyvolává <xref:System.OverflowException> protože celočíselných typů nelze přijmout <xref:System.Double.PositiveInfinity>, <xref:System.Double.NegativeInfinity>, nebo <xref:System.Double.NaN>|  
   
 > [!NOTE]
 >  `/` Může být operátor *přetížený*, což znamená, že třídu nebo strukturu lze znovu definovat své chování při operand má typ třídy nebo struktura. Pokud váš kód používá tento operátor na takové třídu nebo strukturu, ujistěte se, že rozumíte své Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  

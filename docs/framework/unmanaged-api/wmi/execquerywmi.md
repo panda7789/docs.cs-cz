@@ -1,11 +1,7 @@
 ---
-title: "Funkce ExecQueryWmi (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce ExecQueryWmi provede dotaz pro načtení objektů."
+title: Funkce ExecQueryWmi (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce ExecQueryWmi provede dotaz pro načtení objektů.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - ExecQueryWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 872109cb0472a8404c492c2867429fe783f898eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b482f2ca2e2d5c06e69945adb71aa6c0f5d26465
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="execquerywmi-function"></a>ExecQueryWmi – funkce
 Provede dotaz pro načtení objektů.  
@@ -84,7 +77,7 @@ Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD
 `authLevel`  
 [v] Úroveň ověřování.
 
-`impLevel`[v] Úroveň zosobnění.
+`impLevel` [v] Úroveň zosobnění.
 
 `pCurrentNamespace`   
 [v] Ukazatel na [Služby IWbem](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx) objekt, který představuje aktuální obor názvů.
@@ -131,7 +124,7 @@ Pokud volání funkce selže, můžete získat další informace o chybě při v
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

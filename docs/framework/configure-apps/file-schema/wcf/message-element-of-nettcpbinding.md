@@ -2,11 +2,11 @@
 title: element &lt;message&gt; – &lt;netTcpBinding&gt;
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-ms.openlocfilehash: 4e05182d40348b215f39bb85e0848ed608dcdf16
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 4a487d695cab259fc6b82fdf44b4c1bfdf5d04e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltmessagegt-element-of-ltnettcpbindinggt"></a>element &lt;message&gt; – &lt;netTcpBinding&gt;
 Definuje typ požadavků na zabezpečení na úrovni zpráv pro koncový bod nakonfigurované [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
@@ -63,7 +63,7 @@ Definuje typ požadavků na zabezpečení na úrovni zpráv pro koncový bod nak
 |-----------|-----------------|  
 |Žádné|To umožňuje službu k interakci s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na klientovi to znamená, že klient nenabízí žádné pověření klienta.|  
 |Windows|Umožňuje výměnu SOAP pod pro ověřený kontext pověření systému Windows.|  
-|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatelského jména. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Jako takový [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] vynutí, že při použití uživatelské jméno pověření zabezpečené přenosu. Tento režim pověření výsledkem umožňuje vzájemnou spolupráci exchange nebo jiný umožňuje vzájemnou spolupráci vyjednávání na základě `negotiateServiceCredential` atribut.|  
+|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatelského jména. WCF nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Jako takový WCF vynutí, že při použití uživatelské jméno pověření zabezpečené přenosu. Tento režim pověření výsledkem umožňuje vzájemnou spolupráci exchange nebo jiný umožňuje vzájemnou spolupráci vyjednávání na základě `negotiateServiceCredential` atribut.|  
 |certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu. Pokud se používá režim zabezpečení zprávy a `negotiateServiceCredential` je atribut nastaven na `false`, klient musí být zřízená s certifikát služby.|  
 |IssuedToken|Určuje vlastní token, obvykle vystavené pomocí zabezpečení tokenu služby (STS).|  
   

@@ -1,27 +1,18 @@
 ---
-title: "Přehled stromu automatizace uživatelského rozhraní"
-ms.custom: 
+title: Přehled stromu automatizace uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - automation tree
 - UI Automation, tree
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
-caps.latest.revision: "25"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 25a1ddb113916563c234eefb8cdc0746b04f3e66
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0823a569b19d46f32c1cb780470a935f20429c11
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-tree-overview"></a>Přehled stromu automatizace uživatelského rozhraní
 > [!NOTE]
@@ -43,7 +34,7 @@ ms.lasthandoff: 12/22/2017
   
  Zprostředkovatelé automatizace uživatelského rozhraní podporují filtrování podle u elementů, včetně definování vlastností <xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty> a <xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty> vlastnosti.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje tři výchozí zobrazení. Tato zobrazení jsou definovány podle typu filtrování provést; rozsah všechna zobrazení, je definován v aplikaci. Kromě toho aplikace můžete použít jiné filtry na vlastnosti; například obsahovat pouze povolené ovládacích prvků v zobrazení ovládacího prvku.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytuje tři výchozí zobrazení. Tato zobrazení jsou definovány podle typu filtrování provést; rozsah všechna zobrazení, je definován v aplikaci. Kromě toho aplikace můžete použít jiné filtry na vlastnosti; například obsahovat pouze povolené ovládacích prvků v zobrazení ovládacího prvku.  
   
 <a name="uiautomation_raw_view"></a>   
 ### <a name="raw-view"></a>Nezpracovaná zobrazení  

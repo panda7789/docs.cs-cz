@@ -1,29 +1,17 @@
 ---
 title: Přizpůsobení prostředí návrhu pracovních postupů
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - extending [WF], Workflow Designer
 ms.assetid: 98135077-0f5d-4d16-9337-01094e843537
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 37296298bda514d507b8fe65af516de74289d6a0
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 3deb29af353752389f77e0971a64dd3d1b4d1273
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customizing-the-workflow-design-experience"></a>Přizpůsobení prostředí návrhu pracovních postupů
-Scénáře pro navrhování vlastních aktivit a opětovného hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly značně zjednodušené [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Vývoj a nasazení je teď jednodušší a flexibilnější. Změny klíče infrastruktury je, že nový návrháře programovací model aktivity je založený na Windows Presentation Foundation (WPF). To vám umožňuje definovat deklarativně návrháře aktivit a opětovným hostováním [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v ostatních aplikacích s srovnávacích snadné. Při opětovném hostování, editor vlastního výrazu mohou být vytvořeny pro podporu technologie IntelliSense nebo doméně zjednodušené výraz. Integrace s [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] se stal plynulejší s použitím služby pracovních postupů. Ke zvýšení návrhu čas dojde v Návrháři opětovné hostování nástroje pracovní postup můžete použít Návrháře vlastních aktivit a položka stromu modelu.  
+Scénáře pro navrhování vlastních aktivit a opětovného hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly značně zjednodušené [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Vývoj a nasazení je teď jednodušší a flexibilnější. Změny klíče infrastruktury je, že nový návrháře programovací model aktivity je založený na Windows Presentation Foundation (WPF). To vám umožňuje definovat deklarativně návrháře aktivit a opětovným hostováním [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v ostatních aplikacích s srovnávacích snadné. Při opětovném hostování, editor vlastního výrazu mohou být vytvořeny pro podporu technologie IntelliSense nebo doméně zjednodušené výraz. Integrace s Windows Communication Foundation (WCF) stal plynulejší s použitím služby pracovních postupů. Ke zvýšení návrhu čas dojde v Návrháři opětovné hostování nástroje pracovní postup můžete použít Návrháře vlastních aktivit a položka stromu modelu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Použití vlastních návrhářů a šablon aktivity](../../../docs/framework/windows-workflow-foundation/using-custom-activity-designers-and-templates.md)  

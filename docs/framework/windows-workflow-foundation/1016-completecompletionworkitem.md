@@ -1,23 +1,12 @@
 ---
 title: 1016 - CompleteCompletionWorkItem
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 246929fb-6f14-440a-814b-cd8349350644
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3f9b09001212de6d5aa4f5fde577b9eeb9d967ee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3f0904a561a242cd3be528c9707a409b6f98e0fe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1016---completecompletionworkitem"></a>1016 - CompleteCompletionWorkItem
 ## <a name="properties"></a>Vlastnosti  

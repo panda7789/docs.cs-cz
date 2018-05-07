@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedMethod – rozhraní"
-ms.custom: 
+title: ISymUnmanagedMethod – rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedMethod
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: f204d74c-cc79-4092-83bb-60654be95649
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b6305625c3d02dbd126a284287e19b319e21eeba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 728acc09f739fe567fca4a2571cbabf1ba8838a2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedmethod-interface"></a>ISymUnmanagedMethod – rozhraní
 Představuje metodu v rámci úložiště symbolů. Toto rozhraní poskytuje přístup k pouze související symbol atributy metody, místo atributy související s typem.  

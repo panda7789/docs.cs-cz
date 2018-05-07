@@ -1,28 +1,19 @@
 ---
-title: "Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní"
-ms.custom: 
+title: Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, ExpandCollapse control pattern
 - ExpandCollapse control pattern
 - control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
-caps.latest.revision: "25"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 8e956008c6b80e0b2184adcf0a45b70efa21d752
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f593fb09e8c1056c28d351bfdf0218a0161fd9e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -43,7 +34,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Když <xref:System.Windows.Automation.ExpandCollapseState> ovládacího prvku je nastaven na <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>, jakékoliv <xref:System.Windows.Automation.ExpandCollapsePattern> funkce je aktuálně neaktivní pro ovládací prvek a pouze informace, které lze získat pomocí tohoto – vzor ovládacích prvků <xref:System.Windows.Automation.ExpandCollapseState>. Pokud později přidané žádné podřízené objekty, <xref:System.Windows.Automation.ExpandCollapseState> změny a <xref:System.Windows.Automation.ExpandCollapsePattern> funkce se aktivuje.  
   
--   <xref:System.Windows.Automation.ExpandCollapseState>odkazuje na viditelnost pouze; bezprostředně podřízené objekty neodkazuje na viditelnost všechny následné objekty.  
+-   <xref:System.Windows.Automation.ExpandCollapseState> odkazuje na viditelnost pouze; bezprostředně podřízené objekty neodkazuje na viditelnost všechny následné objekty.  
   
 -   Rozbalte a sbalit funkce je specifický pro ovládací prvek. Následují příklady toto chování.  
   

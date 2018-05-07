@@ -1,21 +1,15 @@
 ---
-title: "Implicitně typované lokální proměnné (Průvodce programováním v C#)"
+title: Implicitně typované lokální proměnné (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-caps.latest.revision: "23"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 26a4460acf70ff3748f12d74442f0ca568a587b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a3cb2490247a6e9fdb51b73d405173d29263393c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (Průvodce programováním v C#)
 Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu. `var` – Klíčové slovo instruuje kompilátor, aby odvození typu proměnné z výrazu na pravé straně příkazu inicializace. Odvozené typ může být předdefinovaný typ, anonymní typ, uživatelem definovaný typ nebo typem definovaným v knihovně tříd rozhraní .NET Framework. Další informace o tom, jak inicializovat pole s `var`, najdete v části [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
@@ -60,11 +54,11 @@ Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu.
 ## <a name="remarks"></a>Poznámky  
  Implicitně typované deklarace proměnných, které se vztahují následující omezení:  
   
--   `var`lze použít pouze při místní proměnné je deklarovaná a inicializovat v jednom příkazu; proměnnou nelze inicializovat na hodnotu null nebo ke skupině metoda nebo anonymní funkce.  
+-   `var` lze použít pouze při místní proměnné je deklarovaná a inicializovat v jednom příkazu; proměnnou nelze inicializovat na hodnotu null nebo ke skupině metoda nebo anonymní funkce.  
   
--   `var`nelze použít na pole v rozsahu třídy.  
+-   `var` nelze použít na pole v rozsahu třídy.  
   
--   Proměnných deklarovaných pomocí `var` nelze použít ve výrazu inicializace. Jinými slovy, je tento výraz právní`: int i = (i = 20);` , ale tento výraz způsobí chybu kompilace:`var i = (i = 20);`  
+-   Proměnných deklarovaných pomocí `var` nelze použít ve výrazu inicializace. Jinými slovy, je tento výraz právní`: int i = (i = 20);` , ale tento výraz způsobí chybu kompilace: `var i = (i = 20);`  
   
 -   Více implicitně typované proměnné nelze inicializovat v jednom příkazu.  
   
@@ -80,13 +74,13 @@ Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu.
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Implicitně Typovaná pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)  
- [Postupy: použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)  
+ [Implicitně typovaná pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)  
+ [Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu.](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)  
  [Anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
  [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
  [var](../../../csharp/language-reference/keywords/var.md)  
  [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
- [pro](../../../csharp/language-reference/keywords/for.md)  
- [foreach v](../../../csharp/language-reference/keywords/foreach-in.md)  
- [Using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)
+ [for](../../../csharp/language-reference/keywords/for.md)  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)

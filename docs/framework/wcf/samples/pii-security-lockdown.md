@@ -1,27 +1,17 @@
 ---
-title: "Bezpečnostní uzamčení PII"
-ms.custom: 
+title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-caps.latest.revision: "25"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 39f805da7570b81ff1f6593e82f5d0a9310ee9c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 81fc656784dadf0706e2ae3feda09cd08b886560
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
-Tento příklad ukazuje, jak řídit některé funkce související se zabezpečením služby [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby podle:  
+Tato ukázka ukazuje, jak řídit několik funkcí souvisejících se zabezpečením služby Windows Communication Foundation (WCF) podle:  
   
 -   Šifrování citlivých informací v konfiguračním souboru služby.  
   
@@ -34,7 +24,7 @@ Tento příklad ukazuje, jak řídit některé funkce související se zabezpeč
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
@@ -43,7 +33,7 @@ Tento příklad ukazuje, jak řídit některé funkce související se zabezpeč
   
  Rozhraní .NET Framework konfigurační soubory, které mohou obsahovat citlivé údaje, jako je například připojovací řetězce pro připojení k databázím. Ve scénářích sdílené, hostovat webové může být žádoucí k zašifrování těchto informací v konfiguračním souboru pro službu, aby byla data obsažená v konfiguračním souboru odolné vůči běžné zobrazení. .NET framework 2.0 nebo novější má možnost šifrování části konfiguračního souboru pomocí aplikace Windows Data Protection programovací rozhraní (DPAPI), nebo zprostředkovatele šifrování RSA. Aspnet_regiis.exe pomocí rozhraní DPAPI nebo RSA můžete šifrovat vyberte části konfiguračního souboru.  
   
- Ve scénářích hostované webové je možné, že služby v podadresářích adresáře dalších služeb. Výchozí hodnota pro určení hodnoty konfigurace sémantického umožňuje konfigurační soubory v adresáři vnořené přepsat hodnoty konfigurace v nadřazeném adresáři. V některých situacích může být žádoucí z různých důvodů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje konfigurace služby uzamykání hodnoty konfigurace tak, aby vnořené konfigurace generuje výjimky při spuštění vnořené služby pomocí přepsat hodnoty konfigurace.  
+ Ve scénářích hostované webové je možné, že služby v podadresářích adresáře dalších služeb. Výchozí hodnota pro určení hodnoty konfigurace sémantického umožňuje konfigurační soubory v adresáři vnořené přepsat hodnoty konfigurace v nadřazeném adresáři. V některých situacích může být žádoucí z různých důvodů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje konfigurace služby uzamykání hodnoty konfigurace tak, aby vnořené konfigurace generuje výjimky při spuštění vnořené služby pomocí přepsat hodnoty konfigurace.  
   
  Tento příklad znázorňuje postup řízení protokolování z známé identifikovatelné osobní informace (PII) v protokolech trasování a zprávy, jako je například uživatelské jméno a heslo. Ve výchozím nastavení protokolování známé PII je zakázáno, ale v některých situacích může být důležité při ladění aplikace protokolování PII. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kromě toho tato ukázka používá trasování a protokolování zpráv. Další informace najdete v tématu [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázka.  
   

@@ -1,20 +1,13 @@
 ---
-title: "Vzor aktualizované .NET Core událostí"
-description: "Zjistěte, jak vzor událostí .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování událostí bezpečné s async odběratele."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Vzor aktualizované .NET Core událostí
+description: Zjistěte, jak vzor událostí .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování událostí bezpečné s async odběratele.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: cf69cbe0a7adbd274d1cb9e9544dda77d9fa1740
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d0ad85479265041d895039d6c72f1f9909ea5fa8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Vzor aktualizované .NET Core událostí
 
@@ -86,4 +79,4 @@ Ty jsou hlavní aktualizace se vzorem událostí rozhraní .NET. Zobrazí se mno
 
 Další článek z této série umožňuje rozlišovat pomocí `delegates` a `events` v návrzích. Jsou podobné koncepty a tento článek vám pomůže zajistit nejlepší rozhodnutí pro vaše programy.
 
-[Další](distinguish-delegates-events.md)
+[Next](distinguish-delegates-events.md)

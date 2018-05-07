@@ -1,41 +1,27 @@
 ---
 title: Použití kontraktů zpráv
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-caps.latest.revision: 46
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 600d938b8981ddfabcb79028ae66b5b9d02107b7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ea0a107a67753e919439a6be2035ab77001641ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-message-contracts"></a>Použití kontraktů zpráv
-Obvykle při sestavování [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikací vývojáři zaměřit se na datové struktury a serializace problémy a nemusíte sami se týkají se strukturou zpráv, ve kterých se přenášejí data. Pro tyto aplikace je jednoduchá vytváření kontrakty dat pro parametry nebo návratové hodnoty. (Další informace najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
+Obvykle při sestavování aplikací Windows Communication Foundation (WCF), vývojáři zaměřit se na datové struktury a serializace problémy a nemusíte sami se týkají se strukturou zpráv, ve kterých se přenášejí data. Pro tyto aplikace je jednoduchá vytváření kontrakty dat pro parametry nebo návratové hodnoty. (Další informace najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
   
  Někdy úplnou kontrolu nad strukturou zprávu protokolu SOAP se ale stejně důležité jako kontrolu nad jeho obsah. To platí hlavně při interoperability je důležité, nebo přímo řídit zabezpečení problémy na úrovni zprávě, nebo část zprávy. V těchto případech můžete vytvořit *kontrakt zprávy* , můžete určit strukturu vyžaduje přesné protokolu SOAP zprávy.  
   
  Toto téma popisuje postup vytvoření kontraktu zprávy specifické pro vaši operaci pomocí různých atributů kontrakt zprávy.  
   
 ## <a name="using-message-contracts-in-operations"></a>Použití kontraktů zpráv v operacích  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje operace vymodelován buď *vzdálených volání (procedur RPC) styl* nebo *zasílání zpráv styl*. V operaci stylu RPC, můžete použít jakýkoli serializovatelný typ, a máte přístup k funkcím, které jsou k dispozici pro místní volání, jako například několik parametrů a `ref` a `out` parametry. V tomto stylu forma serializace vybrali řídí strukturu dat v podkladové zprávy a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] runtime vytvoří zprávy pro podporu operaci. Díky tomu mohou vývojáři, kteří se s protokolu SOAP a SOAP zprávy a pokuste se rychle a snadno vytvořit a používat aplikace služby.  
+ WCF podporuje operace vymodelován buď *vzdálených volání (procedur RPC) styl* nebo *zasílání zpráv styl*. V operaci stylu RPC, můžete použít jakýkoli serializovatelný typ, a máte přístup k funkcím, které jsou k dispozici pro místní volání, jako například několik parametrů a `ref` a `out` parametry. V tomto stylu forma serializace vybrali řídí strukturu dat v podkladové zprávy a modul runtime WCF vytvoří zprávy pro podporu operaci. Díky tomu mohou vývojáři, kteří se s protokolu SOAP a SOAP zprávy a pokuste se rychle a snadno vytvořit a používat aplikace služby.  
   
  Následující příklad kódu ukazuje operace služby modelován na styl RPC.  
   
@@ -263,7 +249,7 @@ public class PatientRecord
   
 -   `Relay`  
   
- `Actor` Nebo `Role` Určuje atribut identifikátor URI (Uniform Resource) uzlu, pro kterou je určená danou hlavičku. `MustUnderstand` Atribut určuje, zda uzel zpracování záhlaví musíte pochopit. `Relay` Atribut určuje, zda záhlaví přenos pro podřízené uzly. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] neprovede žádné zpracování těchto atributů pro příchozí zprávy, s výjimkou `MustUnderstand` atributu, jak je uvedeno v části "Správa verzí kontraktů zpráva" dál v tomto tématu. Však umožňuje číst a zapisovat podle potřeby, stejně jako následující popis těchto atributů.  
+ `Actor` Nebo `Role` Určuje atribut identifikátor URI (Uniform Resource) uzlu, pro kterou je určená danou hlavičku. `MustUnderstand` Atribut určuje, zda uzel zpracování záhlaví musíte pochopit. `Relay` Atribut určuje, zda záhlaví přenos pro podřízené uzly. WCF neprovede žádné zpracování těchto atributů pro příchozí zprávy, s výjimkou `MustUnderstand` atributu, jak je uvedeno v části "Správa verzí kontraktů zpráva" dál v tomto tématu. Však umožňuje číst a zapisovat podle potřeby, stejně jako následující popis těchto atributů.  
   
  Při odesílání zprávy, nejsou ve výchozím nastavení vygenerované těchto atributů. Toto můžete změnit dvěma způsoby. Nejprve může staticky nastavíte atributy na všechny požadované hodnoty tak, že změníte <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A?displayProperty=nameWithType>, a <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A?displayProperty=nameWithType> vlastnosti, jak je znázorněno v následujícím příkladu kódu. (Všimněte si, že je žádné `Role` vlastnost; nastavení <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> vlastnost vysílá `Role` atribut Pokud používáte SOAP 1.2).  
   
@@ -336,9 +322,9 @@ public class BankingTransaction
   
  Správa verzí hlaviček, platí následující pravidla:  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] proti hlavičkách chybí – odpovídající členové jsou ponechány na jejich výchozí hodnoty.  
+-   Do hlavičkách chybí není objektu WCF – odpovídající členové jsou ponechány na jejich výchozí hodnoty.  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také ignoruje neočekávané další hlavičky. Jedinou výjimkou tohoto pravidla je, pokud má navíc záhlaví `MustUnderstand` atribut nastaven na `true` v příchozí zprávu SOAP – v takovém případě je vyvolána výjimka, protože hlavičku, která je třeba chápat nelze zpracovat.  
+-   WCF také ignoruje neočekávané další hlavičky. Jedinou výjimkou tohoto pravidla je, pokud má navíc záhlaví `MustUnderstand` atribut nastaven na `true` v příchozí zprávu SOAP – v takovém případě je vyvolána výjimka, protože hlavičku, která je třeba chápat nelze zpracovat.  
   
  Zpráva subjekty mají podobné pravidla Správa verzí – chybí a dalších částí textu zprávy jsou ignorovány.  
   
@@ -383,7 +369,7 @@ public class PatientRecord : PersonRecord
 -   Při použití stejné zprávy sbalit ve více operací, několik typů zpráv vytvoří v souboru WSDL. Přidáním čísla "2", "3" a tak dále, pro následné používá, jsou vytvářeny jedinečné názvy. Při importu zpět schématu WSDL, vytvoří se více typy kontraktů zpráv a jsou identické s výjimkou jejich názvy.  
   
 ## <a name="soap-encoding-considerations"></a>Kódování důležité informace o protokolu SOAP  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje používat starší verze protokolu SOAP kódování styl XML, ale jeho použití se nedoporučuje. Při použití této styl (nastavením `Use` vlastnost `Encoded` na <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> u kontrakt služby), platí následující další aspekty:  
+ WCF umožňuje používat starší verze protokolu SOAP kódování styl XML, ale jeho použití se nedoporučuje. Při použití této styl (nastavením `Use` vlastnost `Encoded` na <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> u kontrakt služby), platí následující další aspekty:  
   
 -   Záhlaví zprávy nejsou podporovány; To znamená, že atribut <xref:System.ServiceModel.MessageHeaderAttribute> a pole atributu <xref:System.ServiceModel.MessageHeaderArrayAttribute> nejsou kompatibilní s kódováním protokolu SOAP.  
   

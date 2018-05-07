@@ -1,23 +1,12 @@
 ---
 title: 1023 - CompleteBookmarkWorkItem
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fc5dac57-b3eb-4826-b505-c6d269e4774d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6257cd9edcab7719bc52f785350d1b93e793c5b8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8677f25057486247e64879298755fe972bd373d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1023---completebookmarkworkitem"></a>1023 - CompleteBookmarkWorkItem
 ## <a name="properties"></a>Vlastnosti  

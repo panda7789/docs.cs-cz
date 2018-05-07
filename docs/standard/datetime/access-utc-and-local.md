@@ -1,13 +1,7 @@
 ---
-title: "Postupy: přístup k místním ČASEM a předdefinované objekty zóny"
-ms.custom: 
+title: 'Postupy: přístup k místním ČASEM a předdefinované objekty zóny'
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - time zones [.NET Framework], retrieving
 - time zones [.NET Framework], UTC
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 600dbb98264c4750db1ffb98b757ad191eaf4fe5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b7ddf7ba69d8bed84f62d329fd26794e2641d954
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: přístup k místním ČASEM a předdefinované objekty zóny
 

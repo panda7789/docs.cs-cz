@@ -1,14 +1,6 @@
 ---
 title: 'Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,17 +14,13 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
-caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cbdbf8a391235fc03140e032b35eb674a74dc88a
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: c8461e0a074e7bdf9e1e2631c3f65e16de7256fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Emitování reflexe používá stejné rozhraní API nastavit v úplné nebo částečné důvěryhodnosti, ale některé funkce vyžadují speciální oprávnění v částečně důvěryhodným kódem. Kromě toho emitování reflexe má funkci anonymně hostované dynamické metody, která je určená pro použití s částečnou důvěryhodností a transparentní pro zabezpečení sestavení.  

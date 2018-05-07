@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataDispenserEx::SetOption – metoda"
-ms.custom: 
+title: IMetaDataDispenserEx::SetOption – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataDispenserEx.SetOption
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9f1c7ccd-7fb2-41d8-aa00-24b823376527
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 96810ba0eab99d1df58f0b68b85ef4da8ce7084e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfe600b54eb03a07ea01375355c5ff94190e5d9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption – metoda
 Nastaví Zadaná možnost zadanou hodnotu pro aktuální obor metadat. Možnost určuje způsob zpracování volání do aktuálního oboru metadat.  
@@ -57,7 +45,7 @@ HRESULT SetOption (
 ## <a name="remarks"></a>Poznámky  
  V následující tabulce jsou uvedeny dostupné identifikátory GUID, `optionId` parametru může ukazovat na a odpovídající platné hodnoty pro `pValue` parametr.  
   
-|GUID|Popis|`pValue`Parametr|  
+|GUID|Popis|`pValue` Parametr|  
 |----------|-----------------|------------------------|  
 |MetaDataCheckDuplicatesFor|Ovládací prvky položek, které se kontroluje duplicity. Pokaždé, když zavoláte [imetadataemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) metoda, která vytvoří novou položku, můžete požádat metodu zkontrolujte, zda položka již existuje v aktuálním oboru. Například můžete zkontrolovat existenci `mdMethodDef` položky; v takovém případě při volání [imetadataemit::definemethod –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md), zkontroluje, že metoda již neexistuje v aktuálním oboru. Tato kontrola používá klíč, který jedinečně identifikuje dané metody: nadřazený typ, název a podpis.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [CorCheckDuplicatesFor](../../../../docs/framework/unmanaged-api/metadata/corcheckduplicatesfor-enumeration.md) výčtu.|  
 |MetaDataRefToDefCheck|Ovládací prvky, které odkazuje položky se převedou na definice. Ve výchozím nastavení bude modul metadata optimalizovat kód převádění odkazovaná položka k jeho definici, pokud odkazovaná položka je ve skutečnosti definovaná v aktuálním oboru.|Musí být typu variant typu UI4 a musí obsahovat kombinaci hodnot [CorRefToDefCheck](../../../../docs/framework/unmanaged-api/metadata/correftodefcheck-enumeration.md) výčtu.|  
@@ -80,7 +68,7 @@ HRESULT SetOption (
   
  **Knihovna:** používat jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  

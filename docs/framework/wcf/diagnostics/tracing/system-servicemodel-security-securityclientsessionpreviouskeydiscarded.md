@@ -1,24 +1,14 @@
 ---
 title: System.ServiceModel.Security.SecurityClientSessionPreviousKeyDiscarded
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 339f0e2a-452b-43eb-9f6d-f48ceb1414f3
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: be12e85a93d893ad1e37ff84d00cbd65e76d41d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b7df5f4d2fd9c96fc5a6cf437d3d09f757925ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelsecuritysecurityclientsessionpreviouskeydiscarded"></a>System.ServiceModel.Security.SecurityClientSessionPreviousKeyDiscarded
 System.ServiceModel.Security.SecurityClientSessionPreviousKeyDiscarded  

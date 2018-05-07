@@ -1,10 +1,6 @@
 ---
-title: "-keyfile (možnosti kompilátoru C#)"
+title: -keyfile (možnosti kompilátoru C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /keyfile
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fc80c1f6614cdfc8e2f56855d0a0315977316f4c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 45ab88609c26dd26a1f8bb3d68d1f579af9d3f77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (možnosti kompilátoru C#)
 Určuje název souboru obsahujícího kryptografický klíč.  

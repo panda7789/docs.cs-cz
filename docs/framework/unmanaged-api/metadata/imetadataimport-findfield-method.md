@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport::FindField – metoda"
-ms.custom: 
+title: IMetaDataImport::FindField – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport.FindField
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 38cd4e16-fbb2-471c-aa73-ac51a1931ad2
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3178d3ff3c64de5390e1150445f0c49c560aa32a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ac69bab45ccd39b6a055fe4d2f74950ab47da779
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimportfindfield-method"></a>IMetaDataImport::FindField – metoda
 Získá ukazatel na FieldDef token pole, která je uzavřena k zadanému <xref:System.Type> a má zadaný název a metadata podpis.  
@@ -71,7 +59,7 @@ HRESULT FindField (
   
  Podpis předaný `FindField` musí být vygenerováno v aktuálním oboru, protože podpis je vázána na konkrétní rozsah. Podpis můžete vložit token, který identifikuje nadřazeného typu třídy nebo hodnota. (Token je index do místní tabulky TypeDef). Nelze vytvořit podpis běhu mimo kontext aktuálního oboru a použít jako vstup pro tento podpis `FindField`.  
   
- `FindField`Vyhledá pouze pole, které byly definovány přímo v třídy nebo rozhraní; zděděné pole nenajde.  
+ `FindField` Vyhledá pouze pole, které byly definovány přímo v třídy nebo rozhraní; zděděné pole nenajde.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -80,7 +68,7 @@ HRESULT FindField (
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  

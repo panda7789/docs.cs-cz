@@ -1,24 +1,17 @@
 ---
-title: "@ (Možnosti kompilátoru C#)"
+title: '@ (Možnosti kompilátoru C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '@'
 helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fbb95e0619857f38260ae74366ba4bb860779530
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: facf2d45aff424d54dde45973cfec8cc8f93cb6a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-c-compiler-options"></a>@ (Možnosti kompilátoru C#)
 @ Možnost umožňuje zadat soubor, který obsahuje – možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.  

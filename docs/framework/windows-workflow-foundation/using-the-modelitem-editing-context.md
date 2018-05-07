@@ -1,26 +1,15 @@
 ---
-title: "Pomocí typem ModelItem úpravy kontextu"
-ms.custom: 
+title: Pomocí typem ModelItem úpravy kontextu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7f9f1ea5-0147-4079-8eca-be94f00d3aa1
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5d52c0a2305a3f38cf9a228f211021006ee8b131
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17334b5571148e494067683bdf96ebc4be4ea995
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-modelitem-editing-context"></a>Pomocí typem ModelItem úpravy kontextu
-<xref:System.Activities.Presentation.Model.ModelItem> Úpravy kontextu je objekt, který aplikace hostitele používá ke komunikaci pomocí návrháře. <xref:System.Activities.Presentation.EditingContext>poskytuje dvě metody, <xref:System.Activities.Presentation.EditingContext.Items%2A> a <xref:System.Activities.Presentation.EditingContext.Services%2A>, který může být použit  
+<xref:System.Activities.Presentation.Model.ModelItem> Úpravy kontextu je objekt, který aplikace hostitele používá ke komunikaci pomocí návrháře. <xref:System.Activities.Presentation.EditingContext> poskytuje dvě metody, <xref:System.Activities.Presentation.EditingContext.Items%2A> a <xref:System.Activities.Presentation.EditingContext.Services%2A>, který může být použit  
   
 ## <a name="the-items-collection"></a>Kolekce položek  
  <xref:System.Activities.Presentation.EditingContext.Items%2A> Kolekce slouží pro přístup k data, která jsou sdílena mezi hostiteli a návrháře nebo data, která je k dispozici pro všechny Designer. Tato kolekce má následující možnosti, přístup prostřednictvím <xref:System.Activities.Presentation.ContextItemManager> třídy:  

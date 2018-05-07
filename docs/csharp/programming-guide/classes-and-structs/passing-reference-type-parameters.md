@@ -1,22 +1,15 @@
 ---
-title: "Předávání parametrů typu odkazu (Průvodce programováním v C#)"
+title: Předávání parametrů typu odkazu (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 282929d82822f81f12dae91d2f422da51a0f43e5
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: ed6c822638c56b3ab95216581f6f39cacb9d06ee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Předávání parametrů typu odkazu (Průvodce programováním v C#)
 Proměnná [odkazují na typ](../../../csharp/language-reference/keywords/reference-types.md) neobsahuje data přímo; obsahuje odkaz na jeho data. Pokud předáte parametr typu odkazu podle hodnoty, je možné změnit data patřící do odkazovaného objektu, například hodnotu člena třídy. Však nelze změnit hodnotu odkaz sám; například nelze použít odkaz na stejnou přidělit paměť pro novou třídu a jej zachovat mimo metodu. Kvůli tomu předat pomocí parametru [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Pro jednoduchost, použijte následující příklady `ref`.  

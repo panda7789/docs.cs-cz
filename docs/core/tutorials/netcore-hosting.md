@@ -4,16 +4,11 @@ description: Hostování na .NET Core runtime z nativního kódu
 author: mjrousos
 ms.author: mairaw
 ms.date: 2/3/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: e09c849699bed63f0a271dfeede1e9e4b66e716f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 96f51c8480bf75b1d7f824a8c87d2cdd6c7f9dd6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-net-core"></a>Hostování rozhraní .NET Core
 

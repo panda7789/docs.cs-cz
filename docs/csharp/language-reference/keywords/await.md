@@ -1,29 +1,22 @@
 ---
-title: "await – – operátor (Referenční dokumentace jazyka C#)"
+title: await – – operátor (Referenční dokumentace jazyka C#)
 ms.date: 05/22/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - await_CSharpKeyword
 helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 23a3299492c538963e9a5dceaadc81a44d386b19
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: e32c7007ca98ce2153386665b60c45ff9e90cc3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor se použije pro úlohu v asynchronní metodu vložit bod pozastavení při provádění metody až do dokončení awaited úloh. Úloha reprezentuje probíhající práce.  
   
-`await`lze použít pouze v upraveném asynchronní metodu [asynchronní](../../../csharp/language-reference/keywords/async.md) – klíčové slovo. Tato metoda, definované pomocí `async` modifikátor a obvykle obsahují jeden nebo více `await` výrazy, se označuje jako *asynchronní metody*.  
+`await` lze použít pouze v upraveném asynchronní metodu [asynchronní](../../../csharp/language-reference/keywords/async.md) – klíčové slovo. Tato metoda, definované pomocí `async` modifikátor a obvykle obsahují jeden nebo více `await` výrazy, se označuje jako *asynchronní metody*.  
   
 > [!NOTE]
 >  `async` a `await` klíčová slova byly zavedeny v C# 5. Úvod do asynchronního programování, najdete v části [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).  
@@ -76,4 +69,4 @@ Protože použití `async` a `await` v položce aplikace bodu není podporováno
 ## <a name="see-also"></a>Viz také  
 [Asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md)   
 [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
-[asynchronní](../../../csharp/language-reference/keywords/async.md)
+[async](../../../csharp/language-reference/keywords/async.md)

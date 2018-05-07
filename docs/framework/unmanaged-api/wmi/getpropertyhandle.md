@@ -1,11 +1,7 @@
 ---
-title: "Funkce GetPropertyHandle (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce GetPropertyHandle vrací jedinečný popisovač identit, že bude vlastnost."
+title: Funkce GetPropertyHandle (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce GetPropertyHandle vrací jedinečný popisovač identit, že bude vlastnost.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetPropertyHandle
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3af852fb4b9899a7937f288ffb65d8ca84e4aef1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 103e81dfa0e455157cfce5914b711347b15b578d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getpropertyhandle-function"></a>GetPropertyHandle – funkce
 Vrací jedinečný popisovač, který identifikuje vlastnost.
@@ -87,7 +80,7 @@ Zpracovává se nedají načíst pro vlastnosti všech typů dat než `CIM_OBJEC
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

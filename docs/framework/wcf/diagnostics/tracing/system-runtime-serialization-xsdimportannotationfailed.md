@@ -1,24 +1,12 @@
 ---
 title: System.Runtime.Serialization.XsdImportAnnotationFailed
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f52ff1d8-7b0d-421c-bf08-a9fbd0e76968
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6f750971eb606500c544995072de07f60a7895b8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 57772f47311008c017d513dd3fba62f346b3a80f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemruntimeserializationxsdimportannotationfailed"></a>System.Runtime.Serialization.XsdImportAnnotationFailed
 System.Runtime.Serialization.XsdImportAnnotationFailed  

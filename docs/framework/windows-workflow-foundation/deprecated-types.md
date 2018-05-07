@@ -1,23 +1,12 @@
 ---
-title: "Zastaralé typy v modelu Windows Workflow Foundation"
-ms.custom: 
+title: Zastaralé typy v modelu Windows Workflow Foundation
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4aebe928-a964-4c1c-abf7-0dbbd3604b13
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5254beb4c338d14d11922312c74dfe1962d88921
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 899d21f23c0500a1df01916d1da210b2f9bea95b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deprecated-types-in-windows-workflow-foundation"></a>Zastaralé typy v modelu Windows Workflow Foundation
 V rozhraní .NET 4 týmem pracovního postupu vydané modul všechny nové pracovní postup v <xref:System.Activities> oboru názvů. Ve verzi beta verzi rozhraní .NET 4.5 jsme jsou označení většinu typů v "WF 3" <xref:System.Workflow.Activities>, <xref:System.Workflow.ComponentModel>, a <xref:System.Workflow.Runtime> obory názvů jako zastaralé.  

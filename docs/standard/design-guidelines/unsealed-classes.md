@@ -1,30 +1,19 @@
 ---
 title: Nezapečetěné třídy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - classes [.NET Framework], unsealed
 - unsealed classes
 - inheritance, classes
 ms.assetid: 9a3bd505-90f5-4053-9f0d-3cf5fa3d3ebf
-caps.latest.revision: 9
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: c798c3cc93f08b77be7d0a5e0d1232d5598aed6b
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 672d36c6b888ee9a89a76d5d417a7a7e92dd8f36
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unsealed-classes"></a>Nezapečetěné třídy
 Zapečetěné třídy nelze zděděno z a zabraňují rozšíření. Třídy, které je možné zdědit z se nazývají naproti nezapečetěných třídy.  

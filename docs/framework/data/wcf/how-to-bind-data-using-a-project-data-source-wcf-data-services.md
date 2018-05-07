@@ -1,13 +1,6 @@
 ---
-title: "Postupy: vytvoření vazby dat pomocí projektu zdroje dat (služby WCF Data Services)"
-ms.custom: 
+title: 'Postupy: vytvoření vazby dat pomocí projektu zdroje dat (služby WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - data binding, WCF Data Services
 - WCF Data Services, data binding
 ms.assetid: 2477af0a-676f-44f7-b73d-e66208785509
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 94ca7614e6df2d82216fa869309dff2da8eee634
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0807b8de6bad5e70fbf522cb1cc20872c59fe1b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: vytvoření vazby dat pomocí projektu zdroje dat (služby WCF Data Services)
 Vytvořením zdroje dat, které jsou založeny na generované datové objekty [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské aplikace. Když přidáte odkaz na datové služby pomocí **přidat odkaz na službu** dialogové okno, zdroj dat projektu je vytvořen společně s datové třídy generovaného klienta. Jeden zdroj dat se vytvoří pro každou sadu entit, že data služby vystavuje. Můžete vytvořit formuláře, které zobrazují data ze služby tak, že přetáhnete tyto položky zdroje dat z **zdroje dat** okna do návrháře. Tyto položky stát ovládacích prvků, které jsou vázány na zdroj dat. Během provádění tento zdroj dat je vázána na instanci systému <xref:System.Data.Services.Client.DataServiceCollection%601> třídy, která je vyplněn objekty, které jsou ke službě dat vrácených dotazem. Další informace najdete v tématu [vazby dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  

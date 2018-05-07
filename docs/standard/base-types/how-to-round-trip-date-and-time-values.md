@@ -1,13 +1,7 @@
 ---
 title: 'Postupy: Hodnoty data a času round-trip'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - time [.NET Framework], round-trip values
 - formatting strings [.NET Framework], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 6ded0a08970e55b7f1267cb229eaf668313392c6
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 26a1cafc7ed6e497e5aab9cd33654f3aa3d4d98c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
 V mnoha aplikacích hodnota data a času je určený pro jednoznačnou identifikaci jediný bod v čase. Toto téma ukazuje, jak k uložení a obnovení <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnota a datum a čas hodnotu s časem zónu informace tak, aby obnovená hodnota identifikuje ve stejnou dobu jako uložena hodnota.  

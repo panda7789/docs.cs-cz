@@ -1,27 +1,15 @@
 ---
-title: "Vlastní formátování zpráv"
-ms.custom: 
+title: Vlastní formátování zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c07435f3-5214-4791-8961-2c2b61306d71
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ea32656db90907ae523502fc1796466442ef4a4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 301c508a0c639985e226dc55f62431ad8bb9c12b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-message-formatters"></a>Vlastní formátování zpráv
-Obsah zprávy je často ve formátu XML, což je obvykle není vhodné formát pro aplikaci. Aplikace pracovat s objekty, získávání a nastavování jejich vlastností. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]používá *kontrakt dat* převést <xref:System.ServiceModel.Channels.Message> objektu na objekt jednoduše zvládne aplikace. Tyto procesy se nazývají serializace a deserializace. Upozorňujeme, že jsou popsat serializaci a deserializaci provádí přenosové vrstvy do a z přenosový formát zprávy, což je proces nesouvisejícími tyto stejných podmínek.  
+Obsah zprávy je často ve formátu XML, což je obvykle není vhodné formát pro aplikaci. Aplikace pracovat s objekty, získávání a nastavování jejich vlastností. Windows Communication Foundation (WCF) používá *kontrakt dat* převést <xref:System.ServiceModel.Channels.Message> objektu na objekt jednoduše zvládne aplikace. Tyto procesy se nazývají serializace a deserializace. Upozorňujeme, že jsou popsat serializaci a deserializaci provádí přenosové vrstvy do a z přenosový formát zprávy, což je proces nesouvisejícími tyto stejných podmínek.  
   
  Pokud potřebujete implementovat specializované převod mezi zpráv a objekty, které nelze provádět prostřednictvím kontraktu dat můžete použít vlastní zprávu při formátování. To lze proveďte změnou nebo rozšíření chování při spuštění operace konkrétní kontrakt na klienta nebo služby.  
   

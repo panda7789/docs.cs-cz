@@ -1,24 +1,12 @@
 ---
-title: "Spuštění vedle sebe v technologii ADO.NET"
-ms.custom: 
+title: Spuštění vedle sebe v technologii ADO.NET
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9f9ba96d-9f89-4f65-bb2f-6860879f4393
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bdb12ce6f697bbc42052e35c252c9cad6a5e962e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 793a48966192326e2a1273c6ea4b9c9eddda76fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="side-by-side-execution-in-adonet"></a>Spuštění vedle sebe v technologii ADO.NET
 Spuštění vedle sebe v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] je možnost spustit aplikaci na počítač, který má více verzí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] nainstalovaná, výhradně pomocí verze, pro které byl zpracován aplikace. Podrobné informace o konfiguraci spuštění vedle sebe najdete v tématu [spuštění vedle sebe](../../../../docs/framework/deployment/side-by-side-execution.md).  
@@ -26,7 +14,7 @@ Spuštění vedle sebe v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort
  Aplikace, kompilovat s použitím jednu verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] můžete spustit na jinou verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Doporučujeme však kompilaci verzi aplikace pro každou nainstalovanou verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]a jejich spuštění samostatně. V obou těchto případech byste měli vědět o změnách v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] mezi verzemi, které můžou ovlivnit dopřednou kompatibilitu nebo zpětné kompatibility vaší aplikace.  
   
 ## <a name="forward-compatibility-and-backward-compatibility"></a>Dopřednou kompatibilitu a zpětná kompatibilita  
- Dopřednou kompatibilitu znamená, že aplikace mohou být zkompilovány s dřívější verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], spustí se však stále úspěšně v novější verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]kód napsaný pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.1 není dopředně kompatibilní s novější verzí.  
+ Dopřednou kompatibilitu znamená, že aplikace mohou být zkompilovány s dřívější verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], spustí se však stále úspěšně v novější verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] kód napsaný pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.1 není dopředně kompatibilní s novější verzí.  
   
  Zpětná kompatibilita znamená, že aplikace je zkompilovaném pro novější verze [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], ale bude pokračovat v dřívějších verzích [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] beze ztrát funkcí. Samozřejmě to nebude případ funkce byla zavedená v nové verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
