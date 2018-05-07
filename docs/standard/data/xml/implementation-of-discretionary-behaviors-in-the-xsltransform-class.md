@@ -1,26 +1,15 @@
 ---
-title: "Implementace volitelné chování ve třídě XslTransform"
-ms.custom: 
+title: Implementace volitelné chování ve třídě XslTransform
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
-caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 98ad31039b5351a7dc4aa3cf033ae8cd0f896b7b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3c2ffa755c642b2a3c7dd47d7007bff7239f500f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>Implementace volitelné chování ve třídě XslTransform
 > [!NOTE]
@@ -40,7 +29,7 @@ ms.lasthandoff: 12/23/2017
 |Přidání atributu do jakoukoli jinou hodnotu než uzlu elementu.|Obnovení|7.1.3|  
 |Vytváření instancí část obsahu `xsl:attribute` element není textový uzel.|Obnovení|7.1.3|  
 |Dvě sady atributů mají stejnou prioritu importu a rozšířená název. Mají stejný atribut a neexistuje žádný jiný atribut nastavit s vyšší důležitostí obsahující společný atribut se stejným názvem.|Obnovení|7.1.4|  
-|`xsl:processing-instruction`atribut Name nepřinese ne dvojtečkou název (NCName) a cíl zpracování instrukcí.|Obnovení|7.3|  
+|`xsl:processing-instruction` atribut Name nepřinese ne dvojtečkou název (NCName) a cíl zpracování instrukcí.|Obnovení|7.3|  
 |Vytváření instancí obsah `xsl:processing-instruction` vytvoří uzly kromě textové uzly.|Obnovení|7.3|  
 |Výsledky vytváření instancí obsah `xsl:processing-instruction` obsahuje řetězec "`?>`".|Obnovení|7.3|  
 |Výsledky vytváření instancí obsah `xsl:comment` obsahuje řetězec "–", nebo končí "-".|Obnovení|7.4|  
@@ -50,11 +39,11 @@ ms.lasthandoff: 12/23/2017
 |Odkaz na URI ve funkci dokument obsahuje identifikátor fragmentu a dojde k chybě při zpracování identifikátor fragmentu.|Došlo k výjimce|12.1|  
 |Existuje více atributů se stejným názvem, které nejsou s názvem `cdata-section-elements` v `xls:output`, a tyto atributy mají stejnou prioritu importu.|Obnovení|16|  
 |Procesor nepodporuje hodnotu uvedenou v kódování znaků `encoding` atribut `xsl:output` elementu.|Obnovení|16.1|  
-|`disable-output-escaping`se používá pro textový uzel, a že textový uzel se používá k vytvoření něco jiného než textový uzel ve stromové struktuře výsledek.|`disable-output-escaping`atribut je ignorován|16.4|  
+|`disable-output-escaping` se používá pro textový uzel, a že textový uzel se používá k vytvoření něco jiného než textový uzel ve stromové struktuře výsledek.|`disable-output-escaping` atribut je ignorován|16.4|  
 |Fragment stromu výsledek převodu na číslo nebo řetězec, pokud fragment stromu výsledek obsahuje textový uzel se výstup uvozovací znaky povolit.|Ignorováno|16.4|  
 |Výstup uvozovací znaky je zakázán pro znaky, které nelze vyjádřit v kódování, procesor XSLT používá pro výstup.|Ignorováno|16.4|  
 |Přidání uzlu do oboru názvů pro element po podřízené objekty byly přidány k němu nebo po atributy přidané do ní|Obnovení|Chybující e25|  
-|`xsl:number`je NaN nekonečné nebo menší než 0,5.|Obnovení|Chybující e 24|  
+|`xsl:number` je NaN nekonečné nebo menší než 0,5.|Obnovení|Chybující e 24|  
 |Druhý argument funkce dokumentu sada uzlů je prázdný a je relativní identifikátor URI odkazu|Obnovení|Chybující typu e14.|  
   
  Oddíly z chyby najdete v World Wide Web Consortium (W3C) XSL transformace XSLT () verze 1.0 specifikace chybující, nacházející se v www.w3.org/1999/11/REC-xslt-19991116-errata.  
@@ -69,7 +58,7 @@ ms.lasthandoff: 12/23/2017
   
 -   Ne všechny procesory XSLT podporují stejné jazyky.  
   
--   S ohledem na jazyce, se mohou lišit různé procesory na jejich řazení pro konkrétní jazyk není zadaný na`xsl:sort.`  
+-   S ohledem na jazyce, se mohou lišit různé procesory na jejich řazení pro konkrétní jazyk není zadaný na `xsl:sort.`  
   
  Následující tabulka uvádí chování implementována pro každý typ dat v rozhraní .NET Framework implementace transformace pomocí <xref:System.Xml.Xsl.XslTransform>.  
   
@@ -83,7 +72,7 @@ ms.lasthandoff: 12/23/2017
   
 |Funkce|Odkaz na umístění|Poznámky|  
 |-------------|------------------------|-----------|  
-|`disable-output-escaping`atribut na `<xsl:text...>` a `<xsl:value-of...>` značky.|W3C XSLT 1.0 doporučení,<br /><br /> Část 16.4|`disable-output-escaping` Atribut je ignorován při `xsl:text` nebo `xsl:value-of` elementy používají `xsl:comment`, `xsl:processing-instruction`, nebo `xsl:attribute` element.<br /><br /> Výsledek fragmenty stromu, které obsahují text a výstup textu, který má řídicí sekvencí nejsou podporovány.<br /><br /> Atribut uvozovací znaky zakázat výstup se ignoruje, pokud transformace na <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> objektu.|  
+|`disable-output-escaping` atribut na `<xsl:text...>` a `<xsl:value-of...>` značky.|W3C XSLT 1.0 doporučení,<br /><br /> Část 16.4|`disable-output-escaping` Atribut je ignorován při `xsl:text` nebo `xsl:value-of` elementy používají `xsl:comment`, `xsl:processing-instruction`, nebo `xsl:attribute` element.<br /><br /> Výsledek fragmenty stromu, které obsahují text a výstup textu, který má řídicí sekvencí nejsou podporovány.<br /><br /> Atribut uvozovací znaky zakázat výstup se ignoruje, pokud transformace na <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> objektu.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Xsl.XslTransform>  

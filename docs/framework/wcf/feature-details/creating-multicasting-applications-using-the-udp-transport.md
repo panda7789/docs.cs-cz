@@ -1,24 +1,12 @@
 ---
-title: "Vytváření aplikací všesměrového vysílání pomocí přenosu UDP"
-ms.custom: 
+title: Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7485154a-6e85-4a67-a9d4-9008e741d4df
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 57c30c8b6b381be931789f3f64cbd26943bb2b34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 84b36029416a66ef03768aed7d0c789a41eed8ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 Malé zprávy na velký počet příjemců vícesměrového vysílání aplikace posílat ve stejnou dobu, aniž by bylo nutné vytvořit bod nebo bod připojení. Důraz takové aplikace je rychlost nad spolehlivost. Jinými slovy je důležité k odeslání včas dat, než se ujistěte se, že je ve skutečnosti přijatá žádné konkrétní zpráva. WCF teď podporuje zápis vícesměrového vysílání aplikací pomocí <xref:System.ServiceModel.UdpBinding>. Tento přenos je užitečný ve scénářích, kde se služba potřebuje k odeslání zprávy malý počet klientů současně. Běžícími aplikace je příkladem těchto služeb.  
@@ -102,7 +90,7 @@ while (true)
  Tento kód generuje uložené informace a pak použije kontrakt služby IStockTicker k odeslání zprávy vícesměrového vysílání volat služby naslouchá na správnou adresu UDP.  
   
 ### <a name="udp-and-reliable-messaging"></a>Spolehlivé zasílání zpráv a UDP  
- Vazba UDP nepodporuje spolehlivé zasílání zpráv z důvodu lightweight povaha protokol UDP. Pokud je nutné potvrdit, že vzdálený koncový bod přijímá zprávy, použijte přenos, který podporuje spolehlivé zasílání zpráv protokolu HTTP nebo TCP. Další informace o spolehlivé zasílání zpráv najdete v části http://go.microsoft.com/fwlink/?LinkId=231830  
+ Vazba UDP nepodporuje spolehlivé zasílání zpráv z důvodu lightweight povaha protokol UDP. Pokud je nutné potvrdit, že vzdálený koncový bod přijímá zprávy, použijte přenos, který podporuje spolehlivé zasílání zpráv protokolu HTTP nebo TCP. Další informace o spolehlivého zasílání zpráv najdete v tématu http://go.microsoft.com/fwlink/?LinkId=231830  
   
 ### <a name="two-way-multicast-messaging"></a>Zasílání zpráv obousměrný vícesměrového vysílání  
  Zprávy vícesměrového vysílání jsou obecně jednosměrné, podporuje UdpBinding exchange zprávu požadavku/odpovědi. Zprávy odeslané pomocí přenosu UDP obsahovat obě From a adresu. Musí dát pozor při pomocí adresa odesílatele, může to být neoprávněnému změně en trasy.  Adresu můžete zkontrolovat pomocí následujícího kódu:  

@@ -1,11 +1,7 @@
 ---
-title: "Funkce BeginMethodEnumeration (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce BeginMethodEnumeration začne výčet metod objektu"
+title: Funkce BeginMethodEnumeration (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce BeginMethodEnumeration začne výčet metod objektu
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - BeginMethodEnumeration
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7d843c40a8ab0dd1c48a08126b8c7472505a1732
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d87627b8bb3414860d994273396dbb4e64acdea7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="beginenumeration-function"></a>Funkce BeginEnumeration – funkce
 Zahájí výčet dostupné metody pro objekt.  
@@ -66,7 +59,7 @@ Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubo
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags`není zadaný příznaky je nulová. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags` není zadaný příznaky je nulová. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
@@ -80,7 +73,7 @@ Toto volání metody je podporována pouze, pokud se aktuální objekt definici 
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

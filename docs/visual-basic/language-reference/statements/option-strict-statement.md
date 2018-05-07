@@ -1,12 +1,6 @@
 ---
 title: Option Strict – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Strict
 - vb.OptionStrict
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
-caps.latest.revision: 49
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0e49c8f64d38b7f8d2dc1a34cf22925c15e3a505
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: de9703c43d32fba4a5f9d661546e0beb66c24602
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
 Omezuje převody typu implicitní data do pouze rozšiřující převody zakáže pozdní vazby a zakáže implicitní zadáte, která způsobí, že `Object` typu.  

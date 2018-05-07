@@ -1,17 +1,12 @@
 ---
 title: 'Konfigurace projektů (F #)'
 description: 'Naučte se používat v Návrháři projektu při práci s projekty F # v sadě Visual Studio.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: eac5b61d6b61d2aa1cb7b1606d60995a0355e975
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a6c9539945bbd32748ffca1434c984402bc3f17b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-projects-in-visual-studio"></a>Konfigurace projektů v sadě Visual Studio
 

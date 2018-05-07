@@ -1,32 +1,18 @@
 ---
 title: 'Postupy: vytváření dočasných certifikátů pro použití při vývoji'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5a096fd6e052fc744af5cee1ab0d322e1daafe6
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 8310e7c465d0e3494482b6a38a7b2a67b67ae842
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití při vývoji
-Při vývoji zabezpečení služby nebo klienta s použitím [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], je často potřeba zadat certifikát X.509, který se má použít jako pověření. Certifikát je obvykle součástí řetěz certifikátů s kořenovou autoritou nalezen v úložišti Důvěryhodné kořenové certifikační autority počítače. S řetěz certifikátů umožňuje určit obor sadu certifikáty, které obvykle kořenovou autoritou je z vaší organizace nebo organizační jednotka. To emulovat v době vývoje, můžete vytvořit dva certifikáty splňovat požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti důvěryhodných kořenových certifikačních autorit a druhý certifikát je vytvořený z první a je umístěn v osobním úložišti umístění místního počítače nebo osobním úložišti Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí [nástroje vytvoření certifikátu (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=248185), poskytnutá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK.  
+Při vývoji zabezpečení služby nebo klienta s použitím Windows Communication Foundation (WCF), je často potřeba zadat certifikát X.509, který se má použít jako pověření. Certifikát je obvykle součástí řetěz certifikátů s kořenovou autoritou nalezen v úložišti Důvěryhodné kořenové certifikační autority počítače. S řetěz certifikátů umožňuje určit obor sadu certifikáty, které obvykle kořenovou autoritou je z vaší organizace nebo organizační jednotka. To emulovat v době vývoje, můžete vytvořit dva certifikáty splňovat požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti důvěryhodných kořenových certifikačních autorit a druhý certifikát je vytvořený z první a je umístěn v osobním úložišti umístění místního počítače nebo osobním úložišti Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí [nástroje vytvoření certifikátu (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=248185), poskytnutá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK.  
   
 > [!IMPORTANT]
 >  Certifikáty, které generuje nástroj pro vytváření certifikační jsou k dispozici jenom pro účely testování. Pokud nasazujete službu nebo klienta, je nutné používat příslušný certifikát od certifikační autority. To může být buď z [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] certifikátů serveru ve vaší organizaci nebo třetí strany.  

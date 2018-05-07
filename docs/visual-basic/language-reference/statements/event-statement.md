@@ -1,11 +1,6 @@
 ---
-title: "Event – příkaz"
+title: Event – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Event
 - vb.Custom
@@ -23,14 +18,11 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4ba49d6582eb2ecac4846eaee570a4d92439a5d9
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 967eedcf1f4d0c9a19775f294167b915cca25a9c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definované události.  
@@ -72,7 +64,7 @@ End Event
 |`eventname`|Požadováno. Název události; dodržovat standardní zásady vytváření názvů proměnných.|  
 |`parameterlist`|Volitelné. Seznam lokální proměnné, které představují parametry této události. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
 |`Implements`|Volitelné. Označuje, že tato událost implementuje událost rozhraní.|  
-|`implementslist`|Požadováno pokud `Implements` pochází. Seznam `Sub` postupy se implementuje. Několik procedur se oddělují čárkami:<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Každý `implementedprocedure` má následující syntaxe a částí:<br /><br /> `interface`.`definedname`<br /><br /> -   `interface`-Vyžaduje. Název rozhraní, třídu nebo strukturu obsahující tento postup je implementace.<br />-   `Definedname`-Vyžaduje. Název, podle kterého postupu je definována v `interface`. To nemusí být stejný jako `name`, název, který tento postup používá k implementaci definovaný postupem.|  
+|`implementslist`|Požadováno pokud `Implements` pochází. Seznam `Sub` postupy se implementuje. Několik procedur se oddělují čárkami:<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Každý `implementedprocedure` má následující syntaxe a částí:<br /><br /> `interface`.`definedname`<br /><br /> -   `interface` -Vyžaduje. Název rozhraní, třídu nebo strukturu obsahující tento postup je implementace.<br />-   `Definedname` -Vyžaduje. Název, podle kterého postupu je definována v `interface`. To nemusí být stejný jako `name`, název, který tento postup používá k implementaci definovaný postupem.|  
 |`Custom`|Požadováno. Události deklarované jako `Custom` musí definovat vlastní `AddHandler`, `RemoveHandler`, a `RaiseEvent` přistupující objekty.|  
 |`delegatename`|Volitelné. Název delegáta, který určuje podpis obslužných rutin událostí.|  
 |`AddHandler`|Požadováno. Deklaruje `AddHandler` přistupujícího objektu, který určuje příkazy provést při přidání obslužné rutiny události, buď explicitně pomocí `AddHandler` příkaz nebo implicitně pomocí `Handles` klauzule.|  

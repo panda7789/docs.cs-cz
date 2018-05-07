@@ -1,18 +1,12 @@
 ---
-title: "Určuje existující složku TargetFilePath"
+title: Určuje existující složku TargetFilePath
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 2334f49e-d080-4ee2-b036-f95c7f76c3ec
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b36f704b60d5964bb1474603a787abb223b73165
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f476f80709b26defa8a38220da07c0587b7f1e0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="targetfilepath-specifies-an-existing-folder"></a>Určuje existující složku TargetFilePath
 Parametr `TargetFilePath` určuje existující adresář, ale musíte zadat název nového adresáře.  

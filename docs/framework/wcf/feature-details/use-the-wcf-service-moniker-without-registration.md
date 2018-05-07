@@ -1,33 +1,19 @@
 ---
-title: "Postupy: použití Monikeru služby Windows Communication Foundation bez registrace"
-ms.custom: 
+title: 'Postupy: použití Monikeru služby Windows Communication Foundation bez registrace'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 18f575e9bae37b66526d7b61a641374266ba627b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd61528770b16b13430be3691aef19c1cc743e9c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Postupy: použití Monikeru služby Windows Communication Foundation bez registrace
-Pro připojení k a komunikovat s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientská aplikace musí mít podrobnosti o adresu služby, konfigurace vazeb a kontrakt služby.  
+Pro připojení k a komunikovat se službou Windows Communication Foundation (WCF), musí mít klientské aplikace WCF podrobnosti o adresu služby, konfigurace vazeb a kontrakt služby.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Monikeru služby obvykle získá požadované kontrakt prostřednictvím předchozí registrace požadovaný atribut typy, ale můžou nastat případy, kdy to není možné. Přezdívka místo registrace, můžete získat definici kontraktu ve formě dokumentem definice jazyka WSDL (Web Services) prostřednictvím `wsdl` parametr nebo prostřednictvím Metadata Exchange prostřednictvím použití `mexAddress` parametr.  
+ Monikeru služby WCF obvykle získá požadované kontrakt prostřednictvím předchozí registrace požadovaný atribut typy, ale můžou nastat případy, kdy to není možné. Přezdívka místo registrace, můžete získat definici kontraktu ve formě dokumentem definice jazyka WSDL (Web Services) prostřednictvím `wsdl` parametr nebo prostřednictvím Metadata Exchange prostřednictvím použití `mexAddress` parametr.  
   
  To umožňuje scénáře, jako je rozdělení tabulky aplikace Excel, kde některé hodnoty buněk se počítá pomocí interakce webové služby. V tomto scénáři nemusí být vhodný k registraci sestavení kontraktu služby ve všech klientech, které může otevřít dokument. `wsdl` Parametr nebo `mexAddress` parametr povoluje samostatná řešení.  
   
@@ -56,7 +42,7 @@ public interface IAffiliate
 }  
 ```  
   
- K vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta pro vzdálené služby lze použít následující příklad Přezdívka řetězec.  
+ Lze použít k vytvoření klienta WCF pro službu vzdáleného následující příklad Přezdívka řetězec.  
   
 ```  
 service4:mexAddress="http://servername/Affiliates/service.svc/mex",  
@@ -65,7 +51,7 @@ contract=IAffiliate, contractNamespace=http://Microsoft.ServiceModel.Demo,
 binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/  
 ```  
   
- Během provádění klientská aplikace, klient provede `WS-MetadataExchange` poskytnutým `mexAddress`. To může vrátit adresy, vazby a podrobnosti smlouvy pro několik služeb. `address`, `contract`, `contractNamespace`, `binding` a `bindingNamespace` parametry slouží k identifikaci zamýšlené služby. Jakmile tyto parametry byly spárovány, vytvoří Přezdívka [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta s definicí příslušné smlouvy a volání můžete provedeny poté pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, stejně jako u typu kontraktu.  
+ Během provádění klientská aplikace, klient provede `WS-MetadataExchange` poskytnutým `mexAddress`. To může vrátit adresy, vazby a podrobnosti smlouvy pro několik služeb. `address`, `contract`, `contractNamespace`, `binding` a `bindingNamespace` parametry slouží k identifikaci zamýšlené služby. Jakmile tyto parametry byly spárovány, přezdívka vytvoří klienta WCF s definicí příslušné smlouvy a volání pak lze pomocí klienta WCF, stejně jako u typu kontraktu.  
   
 > [!NOTE]
 >  Pokud Přezdívka je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chyba s oznámením "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, kterou používáte Přezdívka je správný a služba není k dispozici.  

@@ -1,13 +1,7 @@
 ---
-title: "Standardní řetězce formátu TimeSpan"
-ms.custom: 
+title: Standardní řetězce formátu TimeSpan
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,21 +17,16 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 02dd73cd7f8f6be07b298e6fb1aac2b4759d21bb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 82774ffaf03b7eaad6240a0361bede076053de0c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
-<a name="Top"></a>Standardní <xref:System.TimeSpan> řetězec formátu používá jeden specifikátor formátu pro definování textovou reprezentaci hodnoty <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
+<a name="Top"></a> Standardní <xref:System.TimeSpan> řetězec formátu používá jeden specifikátor formátu pro definování textovou reprezentaci hodnoty <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
   
  Řetězcové vyjádření <xref:System.TimeSpan> hodnoty jsou vytvářeny voláním přetížení <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType> metoda, stejně jako metodami, které podporují složené formátování, jako například <xref:System.String.Format%2A?displayProperty=nameWithType>. Další informace najdete v tématu [typy formátování](../../../docs/standard/base-types/formatting-types.md) a [složené formátování](../../../docs/standard/base-types/composite-formatting.md). Následující příklad ukazuje použití standardní řetězce formátu v operacích formátování.  
   
@@ -49,13 +38,13 @@ ms.lasthandoff: 12/23/2017
  [!code-csharp[Conceptual.TimeSpan.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/parseexample1.cs#3)]
  [!code-vb[Conceptual.TimeSpan.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/parseexample1.vb#3)]  
   
-<a name="top"></a>Následující tabulka uvádí specifikátory formátu intervalu (běžný čas).  
+<a name="top"></a> Následující tabulka uvádí specifikátory formátu intervalu (běžný čas).  
   
 |Specifikátor formátu|Název|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
 |"c"|Konstantní (neutrální) formátu|Tento specifikátor není zohledňující jazykovou verzi. Používá formát `[-][d’.’]hh’:’mm’:’ss[‘.’fffffff]`.<br /><br /> ("T" a "T" řetězce formátu poskytovat stejné výsledky.)<br /><br /> Další informace: [The konstantní ("c") specifikátor formátu](#Constant).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
-|"g"|Obecné krátké formátu|Tento specifikátor výstupy pouze to, co je potřeba. Je zohledňující jazykovou verzi a má podobu `[-][d’:’]h’:’mm’:’ss[.FFFFFFF]`.<br /><br /> Další informace: [obecné krátké ("g") specifikátor formátu](#GeneralShort).|`New TimeSpan(1, 3, 16, 50, 500)`-> 1:3:16:50.5 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)`-> 1:3:16:50, 5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)`-> 1:3:16:50.599 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)`-> 1:3:16:50 599 (fr-FR)|  
-|"G"|Obecný dlouhý formát|Tento specifikátor vždy výstupy dny a sedm míst za desetinnou čárkou. Je zohledňující jazykovou verzi a má podobu `[-]d’:’hh’:’mm’:’ss.fffffff`.<br /><br /> Další informace: [obecné dlouho ("G") specifikátor formátu](#GeneralLong).|`New TimeSpan(18, 30, 0)`-> 0:18:30:00.0000000 (en US)<br /><br /> `New TimeSpan(18, 30, 0)`-> 0:18:30:00 0000000 (fr-FR)|  
+|"g"|Obecné krátké formátu|Tento specifikátor výstupy pouze to, co je potřeba. Je zohledňující jazykovou verzi a má podobu `[-][d’:’]h’:’mm’:’ss[.FFFFFFF]`.<br /><br /> Další informace: [obecné krátké ("g") specifikátor formátu](#GeneralShort).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50, 5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50 599 (fr-FR)|  
+|"G"|Obecný dlouhý formát|Tento specifikátor vždy výstupy dny a sedm míst za desetinnou čárkou. Je zohledňující jazykovou verzi a má podobu `[-]d’:’hh’:’mm’:’ss.fffffff`.<br /><br /> Další informace: [obecné dlouho ("G") specifikátor formátu](#GeneralLong).|`New TimeSpan(18, 30, 0)` -> 0:18:30:00.0000000 (en US)<br /><br /> `New TimeSpan(18, 30, 0)` -> 0:18:30:00 0000000 (fr-FR)|  
   
 <a name="Constant"></a>   
 ## <a name="the-constant-c-format-specifier"></a>Specifikátor formátu konstantní ("c")  
@@ -77,7 +66,7 @@ ms.lasthandoff: 12/23/2017
  Na rozdíl od specifikátorů formátu "G" a "g" specifikátor "c" Formát není zohledňující jazykovou verzi. Vyvolá řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu výchozí a která je společná pro všechny předchozí verze rozhraní .NET Framework, než [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Výchozí hodnota je "c" <xref:System.TimeSpan> řetězec formátu; <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metoda formátuje hodnotu časového intervalu pomocí řetězce "c" formátu.  
   
 > [!NOTE]
->  <xref:System.TimeSpan>také podporuje "t" a "T" standardní řetězce formátu, které jsou stejné chování jako standardní formátovací řetězec "c".  
+>  <xref:System.TimeSpan> také podporuje "t" a "T" standardní řetězce formátu, které jsou stejné chování jako standardní formátovací řetězec "c".  
   
  Následující příklad vytvoří dvě instance <xref:System.TimeSpan> objekty, je používá k provádění aritmetických operací a zobrazuje výsledek. V každém případě používá složené formátování pro zobrazení <xref:System.TimeSpan> hodnotu na základě specifikace formátu "c".  
   

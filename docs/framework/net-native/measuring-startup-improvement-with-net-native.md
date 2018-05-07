@@ -1,27 +1,17 @@
 ---
-title: "Měření zlepšení spuštění pomocí .NET Native"
-ms.custom: 
+title: Měření zlepšení spuštění pomocí .NET Native
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 03324850fbcb0264816b71cf8a8c6ad6a9688058
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b010307baa8634a4bb62310318d1d718a2525d4a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
-[!INCLUDE[net_native](../../../includes/net-native-md.md)]výrazně zlepší doba spuštění aplikace. Tomuto vylepšení je zvláště patrné na přenosné zařízení úsporný a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentace potřebné k měření tomuto vylepšení spuštění.  
+[!INCLUDE[net_native](../../../includes/net-native-md.md)] výrazně zlepší doba spuštění aplikace. Tomuto vylepšení je zvláště patrné na přenosné zařízení úsporný a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentace potřebné k měření tomuto vylepšení spuštění.  
   
  Usnadňujících vyšetřování výkonu rozhraní .NET Framework a Windows pomocí představuje rozhraní události trasování událostí pro Windows (ETW), umožňuje aplikaci, kterou chcete upozornit, když dojde k událostem tooling volat. Potom můžete nástroj nazvaný nástroje PerfView můžete snadno zobrazit a analyzovat události trasování událostí pro Windows. Toto téma vysvětluje, jak:  
   
@@ -32,7 +22,7 @@ ms.lasthandoff: 12/22/2017
 -   Pokud chcete zobrazit tyto události pomocí nástroje PerfView.  
   
 ## <a name="using-eventsource-to-emit-events"></a>Pomocí EventSource pro vydávání událostí  
- <xref:System.Diagnostics.Tracing.EventSource>poskytuje základní třídu, ze které chcete vytvořit vlastního zprostředkovatele událostí. Obecně platí, že vytvořit podtřídou třídy <xref:System.Diagnostics.Tracing.EventSource> a zabalení `Write*` metody s vlastními metody události. Vzor singleton se obecně používají pro každou <xref:System.Diagnostics.Tracing.EventSource>.  
+ <xref:System.Diagnostics.Tracing.EventSource> poskytuje základní třídu, ze které chcete vytvořit vlastního zprostředkovatele událostí. Obecně platí, že vytvořit podtřídou třídy <xref:System.Diagnostics.Tracing.EventSource> a zabalení `Write*` metody s vlastními metody události. Vzor singleton se obecně používají pro každou <xref:System.Diagnostics.Tracing.EventSource>.  
   
  Například v následujícím příkladu třída slouží k měření dvě vlastnosti výkonu:  
   
@@ -104,7 +94,7 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  Všechny události uvedené v levém podokně vyberte (Ctrl + A) a vyberte **Enter** klíč. Nyní byste měli vidět časová razítka z jednotlivých událostí. Tato časová razítka se vztahují k zahájení trasování, takže budete muset odečtena čas jednotlivých událostí z čas zahájení procesu k identifikaci uplynulý čas od spuštění. Pokud používáte kombinaci kláves Ctrl + kliknutí vybrat dvě časová razítka, se zobrazí rozdíl mezi zobrazovat ve stavovém řádku v dolní části stránky. Díky tomu budete moci prohlédnout uplynulý čas mezi všechny dvě události v zobrazení (včetně procesu spuštění). Můžete otevřít na místní nabídku pro zobrazení a vybrat z mnoha možností užitečné, jako je export do souborů CSV nebo otevřít aplikaci Microsoft Excel uložit nebo zpracování dat.  
   
- Zopakováním postupu pro původní aplikace a verze, který jste vytvořili pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězec, můžete porovnat rozdíl ve výkonu.   [!INCLUDE[net_native](../../../includes/net-native-md.md)]aplikace obecně spustit rychleji než jinou hodnotu než[!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace. Pokud vás zajímají podrobnější tápat nástroje PerfView můžete také poznat části kódu, které trvá nejvíce času. Další informace, podívejte se [nástroje PerfView kurzy](http://channel9.msdn.com/Series/PerfView-Tutorial) nebo si můžete přečíst [položku blogu hovou Morrison](http://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
+ Zopakováním postupu pro původní aplikace a verze, který jste vytvořili pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězec, můžete porovnat rozdíl ve výkonu.   [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace obecně spustit rychleji než jinou hodnotu než[!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace. Pokud vás zajímají podrobnější tápat nástroje PerfView můžete také poznat části kódu, které trvá nejvíce času. Další informace, podívejte se [nástroje PerfView kurzy](http://channel9.msdn.com/Series/PerfView-Tutorial) nebo si můžete přečíst [položku blogu hovou Morrison](http://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Diagnostics.Tracing.EventSource>

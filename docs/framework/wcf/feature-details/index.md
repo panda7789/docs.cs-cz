@@ -1,33 +1,19 @@
 ---
 title: Podrobnosti o funkcích WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - features [WCF]
 - WCF, features
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 91b22cbcabba95d8cc91ffbc0b74b51e61dae393
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c97bd891f0bbb58f8b267296b9b53e00a5486622
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-feature-details"></a>Podrobnosti o funkcích WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+Windows Communication Foundation (WCF) umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
@@ -40,7 +26,7 @@ ms.lasthandoff: 04/30/2018
  Popisuje, jak můžete přizpůsobit serializace dat pro součinnosti nebo budoucí kompatibility.  
   
  [Relace, vytváření instancí a souběžnost](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)  
- Popisuje vytváření instancí a relace režimy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a postup výběru správného režimu pro vaši aplikaci.  
+ Popisuje vytváření instancí a relace režimy WCF a postup výběru správného režimu pro vaši aplikaci.  
   
  [Přenosy](../../../../docs/framework/wcf/feature-details/transports.md)  
  Popisuje postup konfigurace přenosové vrstvy, nejnižší úroveň zásobníku kanálu.  
@@ -52,7 +38,7 @@ ms.lasthandoff: 04/30/2018
  Vysvětluje, jak vytvořit zpracovaných operací, které můžete se vrátit zpět v případě potřeby.  
   
  [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)  
- Popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení vám pomůže vytvořit aplikace, které mají utajení a integrity. Ověřování a autorizace je taky dostupné, jako jsou funkce auditování.  
+ Popisuje, jak vytvářet aplikace, které mají utajení a integrity pomáhá zabezpečení WCF. Ověřování a autorizace je taky dostupné, jako jsou funkce auditování.  
   
  [Síť rovnocenných počítačů](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
  Podrobné informace o tom, jak vytvořit sdílené služeb a klientů.  
@@ -67,16 +53,16 @@ ms.lasthandoff: 04/30/2018
  Popisuje, který je hostitelem. Služby mohou být hostovány systémem jiná aplikace, nebo může být vlastním hostováním.  
   
  [Interoperabilita a integrace](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
- Popisuje způsob použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání, pokud máte významné investice v logiku aplikace založené na součást hostované v modelu COM +.  
+ Popisuje, jak používat WCF a rozšířit existující logiky, místo aby ho přepsání, pokud máte významné investice v logiku aplikace založené na součást hostované v modelu COM +.  
   
  [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
- Popisuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programovací Model Web, který umožňuje vývojářům vystavit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby operace do koncových bodů protokolu SOAP.  
+ Popisuje WCF Web programovací Model, který umožňuje vývojářům vystavit operací služby WCF na koncové body protokolu SOAP.  
   
  [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)  
- Popisuje podporu snadno vystavit informační kanály syndikace z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje podporu snadno vystavit informační kanály syndikace ze služby WCF.  
   
  [Integrace jazyka AJAX a podpora JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
- Popisuje podporu pro ASP.NET asynchronní JavaScript a XML (AJAX) a formát dat JavaScript Object Notation (JSON), které povoluje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby vystavit operations klientům AJAX.  
+ Popisuje podporu pro ASP.NET asynchronní JavaScript a XML (AJAX) a data formátu JavaScript Object Notation (JSON) umožňující služby WCF vystavit operations klientům AJAX.  
   
  [Zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
  Popisuje podporu, aby umožnil services zjistitelný za běhu způsobem vzájemná spolupráce pomocí protokolu WS-Discovery.  

@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Řazení výsledků dotazu pomocí LINQ (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Řazení výsledků dotazu pomocí LINQ (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - sorting query results, multiple columns
 - sorting data [Visual Basic]
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 07a4584d-9fd8-4a1d-b7d9-ccf2efa5c84e
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5e034548a61b91eededd8dc21445beb7ac68007e
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 260d9e70888e153638d56ce806f9d15cf840389c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-sort-query-results-by-using-linq-visual-basic"></a>Postupy: Řazení výsledků dotazu pomocí LINQ (Visual Basic)
 Language-Integrated Query (LINQ) usnadňuje přístup k informacím databáze a spouštět dotazy.  

@@ -1,11 +1,6 @@
 ---
-title: "Char – datový typ (Visual Basic)"
+title: Char – datový typ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Char
 helpviewer_keywords:
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 16ff547fccbf4481d31ca79537962cc7090fc9b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e672402535215ca30d19cc480e39b42b0364f137
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
 Blokování nepodepsaného kódu (2bajtová) 16bitové body v rozmezí od 0 do 65535. Každý *code bodu*, nebo kód znaku, představuje jeden znak Unicode.  
@@ -54,13 +46,13 @@ charVar = "Z"C
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** `Char`je typu bez znaménka a nemůže představují zápornou hodnotu. V každém případě byste neměli používat `Char` pro uložení číselné hodnoty.  
+-   **Záporná čísla.** `Char` je typu bez znaménka a nemůže představují zápornou hodnotu. V každém případě byste neměli používat `Char` pro uložení číselné hodnoty.  
   
 -   **Spolupráce aspekty.** Pokud rozhraní s komponentami nezapíše pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že typy znaků mají různé datové šířka (8 bitů) v jiných prostředích. Pokud předáte 8bitové argument pro tyto součásti, deklarujte ji jako `Byte` místo `Char` v váš nový kód jazyka Visual Basic.  
   
 -   **Rozšíření.** `Char` Datový typ rozšiřuje na `String`. To znamená, že můžete převést `Char` k `String` a nebude narazíte <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Připojování znak typu literálu `C` na řetězec délce jednoho znaku literál vynutí, aby `Char` datového typu. `Char`nemá žádné – znak typu identifikátoru.  
+-   **Znaky typu.** Připojování znak typu literálu `C` na řetězec délce jednoho znaku literál vynutí, aby `Char` datového typu. `Char` nemá žádné – znak typu identifikátoru.  
   
 -   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.Char?displayProperty=nameWithType> struktura.  
   
@@ -71,8 +63,8 @@ charVar = "Z"C
  <xref:Microsoft.VisualBasic.Strings.Chr%2A>  
  <xref:Microsoft.VisualBasic.Strings.ChrW%2A>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [String – datový typ](../../../visual-basic/language-reference/data-types/string-data-type.md)  
+ [Datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Postupy: volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

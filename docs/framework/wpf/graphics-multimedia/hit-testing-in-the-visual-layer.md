@@ -1,13 +1,6 @@
 ---
-title: "Spuštění testování ve vizuální vrstvě"
-ms.custom: 
+title: Spuštění testování ve vizuální vrstvě
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - hit testing functionality [WPF]
 - visual layer [WPF], hit testing functionality
 ms.assetid: b1a64b61-14be-4d75-b89a-5c67bebb2c7b
-caps.latest.revision: "42"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f1bdecedece4581eaf8a010eddc0974e44fe88ab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60da11af51722e86a61c5e3298fafba2221f000b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>Spuštění testování ve vizuální vrstvě
 Toto téma poskytuje přehled o počtu testování funkce poskytované službou visual vrstvy. Přístupů testování podpory umožňuje určit, zda hodnota geometrie nebo bodu spadá do vykreslené obsah <xref:System.Windows.Media.Visual>, což umožňuje implementovat rozhraní chování uživatelů, jako je například obdélníku výběru vybrat více objektů.  
@@ -61,7 +49,7 @@ Diagram platné oblasti ověření pozice
   
  Na následujícím obrázku objekt kroužek je nad hranaté i trojúhelníček objekty. Pokud vás zajímá jenom podle testování vizuální objekt, jehož hodnota pořadí z-order je nejvyšší, můžete nastavit visual přístupů testu výčtu vrátit <xref:System.Windows.Media.HitTestResultBehavior.Stop> z <xref:System.Windows.Media.HitTestResultCallback> zastavit traversal ověření pozice po první položka.  
   
- ![Diagram z & č. 45; pořadí vizuálním stromu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-2.png "wcpsdk_mmgraphics_visuals_hittest_2")  
+ ![Diagram vykreslování&#45;pořadí vizuálním stromu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-2.png "wcpsdk_mmgraphics_visuals_hittest_2")  
 Diagram pořadí vykreslování vizuálním stromu  
   
  Pokud chcete vytvořit výčet všech vizuální objekty v rámci konkrétní bodu nebo geometry, vrátí <xref:System.Windows.Media.HitTestResultBehavior.Continue> z <xref:System.Windows.Media.HitTestResultCallback>. To znamená, že test pro vizuální objekty, které jsou pod jiné objekty, můžete přístupů, i když jsou zcela skryt. Najdete ukázkový kód v části "Použití stiskněte tlačítko Test výsledky zpětného volání" Další informace.  

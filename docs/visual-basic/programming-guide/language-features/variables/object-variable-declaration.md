@@ -1,13 +1,6 @@
 ---
-title: "Deklarace proměnné objektu (Visual Basic)"
-ms.custom: 
+title: Deklarace proměnné objektu (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - early binding [Visual Basic]
 - declarations [Visual Basic], class
@@ -19,14 +12,11 @@ helpviewer_keywords:
 - declaring classes [Visual Basic]
 - late binding [Visual Basic]
 ms.assetid: 2a5a41a3-1aa8-4236-b1f0-2382af7bf715
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: cdca188d778e9884f918d97eba492a29c64af826
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f5f77b81380d997e078a9f52ac4aae6f6e975575
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-variable-declaration-visual-basic"></a>Deklarace proměnné objektu (Visual Basic)
 Příkaz normální deklarace slouží k deklarace proměnné objektu. Pro datový typ, můžete buď zadat `Object` (který je [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md)) nebo více určité třídy, ze kterého má být vytvořen objekt.  
@@ -137,9 +127,9 @@ Dim anyForm As System.Windows.Forms.Form
 ## <a name="see-also"></a>Viz také  
  [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
  [Přiřazení objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)  
- [Hodnoty proměnné objektu](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
+ [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
  [Postupy: deklarace objektové proměnné a přiřazení objektu k v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)  
- [Postupy: přístup ke členům v objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)  
- [New – operátor](../../../../visual-basic/language-reference/operators/new-operator.md)  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Postupy: Přístup ke členům v objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)  
+ [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

@@ -1,26 +1,18 @@
 ---
-title: "Postupy: informace o uživateli přiřadit skupiny připojení"
-ms.custom: 
+title: 'Postupy: informace o uživateli přiřadit skupiny připojení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 27cc8c14bc0c4418cd7ffbb4eb606c0b2cd7500c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 51e000019999056fd707c1fbf4fa1a9b0a8e7bc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: informace o uživateli přiřadit skupiny připojení
 
@@ -43,7 +35,7 @@ ms.lasthandoff: 12/22/2017
     Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
     ```  
   
-2.  Vytvořte žádost pro konkrétní adresy URL. Například následující kód vytvoří žádost pro adresu URL`http://www.contoso.com.`  
+2.  Vytvořte žádost pro konkrétní adresy URL. Například následující kód vytvoří žádost pro adresu URL `http://www.contoso.com.`  
   
     ```csharp  
     WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  

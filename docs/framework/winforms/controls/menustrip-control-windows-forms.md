@@ -1,27 +1,15 @@
 ---
-title: "MenuStrip – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: MenuStrip – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MenuStrip control [Windows Forms]
 - menus
 ms.assetid: e361bf98-eed8-4ed3-9dfb-5a2e865e3ce6
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: efa19aa185dac2d3eb821d2d7c29b02cbb0d1a65
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eb4ea812318e5a7df6a1bffefa5d47bf2c929f2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="menustrip-control-windows-forms"></a>MenuStrip – ovládací prvek (Windows Forms)
 Tato aplikace skupiny řízení příkazy a jsou snadno přístupné.  

@@ -1,11 +1,6 @@
 ---
-title: "Aggregate – klauzule (Visual Basic)"
+title: Aggregate – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryAggregateIn
 - vb.QueryAggregate
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Aggregate statement [Visual Basic]
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 47017414a92bfbca0df4ce6e2b70398a01762d37
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1db4b7fdcf9c8a38c2c49eca9d874eccea90ab1d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate – klauzule (Visual Basic)
 Jeden nebo více agregační funkce se vztahuje na kolekci.  
@@ -87,7 +79,7 @@ Aggregate element [As type] In collection _
 ## <a name="see-also"></a>Viz také  
  [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Select – klauzule](../../../visual-basic/language-reference/queries/select-clause.md)  
- [From – klauzule](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Kde – klauzule](../../../visual-basic/language-reference/queries/where-clause.md)  
- [Group By – klauzule](../../../visual-basic/language-reference/queries/group-by-clause.md)
+ [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)  
+ [Klauzule Group By](../../../visual-basic/language-reference/queries/group-by-clause.md)

@@ -1,13 +1,6 @@
 ---
-title: "asynchronousThreadAbort – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: asynchronousThreadAbort – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - asynchronous thread aborts
 - AsynchronousThreadAbort MDA
@@ -15,16 +8,13 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - MDAs (managed debugging assistants), asynchronous thread aborts
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
-caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ecd99b098a619d4ad132432f4fd163d32598c2ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd759a4167a667919a443bc6492c049631ad222c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="asynchronousthreadabort-mda"></a>asynchronousThreadAbort – pomocník spravovaného ladění (MDA)
 `asynchronousThreadAbort` Pomocník spravovaného ladění (MDA) se aktivuje, když se pokusí vlákna zavést asynchronní přerušení do jiné vlákno. Synchronní vlákno přerušení Neaktivujte `asynchronousThreadAbort` (mda).
@@ -80,4 +70,4 @@ void FireMda()
 ```
 
 ## <a name="see-also"></a>Viz také
- <xref:System.Threading.Thread>[Diagnostikování chyb pomocí Pomocníci spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+ <xref:System.Threading.Thread> [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

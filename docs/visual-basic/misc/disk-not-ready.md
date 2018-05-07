@@ -1,21 +1,14 @@
 ---
-title: "Disk není připraven"
+title: Disk není připraven
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID71
 ms.assetid: 5e2528f5-81b3-4e5e-a294-a43cc738a42e
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3f4b6871f45e45420d3826eb45b2eb50d50f5ded
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1867abed0a5b9def7e3b7858f5e15c3e6cc74601
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="disk-not-ready"></a>Disk není připraven
 Pro vybranou jednotku není žádný disk nebo dvířka je otevřený.  

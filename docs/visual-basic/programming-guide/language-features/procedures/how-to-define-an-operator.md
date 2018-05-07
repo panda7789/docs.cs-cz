@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Definice operátora (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Definice operátora (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], defining
 - Visual Basic code, procedures
@@ -19,14 +13,11 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 51921ee38204fd528ed19436806fc9433abbdc5e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c759ebf38ab0727aeada218d288b5ac01e3ecd03
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-an-operator-visual-basic"></a>Postupy: Definice operátora (Visual Basic)
 Pokud jste definovali třídu nebo strukturu, můžete definovat chování standardní operátor (například `*`, `<>`, nebo `And`) Pokud je jedna nebo obě sady operandy typu třídu nebo strukturu.  
@@ -48,10 +39,10 @@ Pokud jste definovali třídu nebo strukturu, můžete definovat chování stand
   
 ## <a name="see-also"></a>Viz také  
  [Procedury operátoru](./operator-procedures.md)  
- [Postupy: definice operátora převodu](./how-to-define-a-conversion-operator.md)  
- [Postupy: volání procedury operátora](./how-to-call-an-operator-procedure.md)  
- [Postupy: použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)  
- [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Postupy: definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
- [Mod – operátor](../../../../visual-basic/language-reference/operators/mod-operator.md)
+ [Postupy: Definice operátoru převodu](./how-to-define-a-conversion-operator.md)  
+ [Postupy: Volání procedury operátoru](./how-to-call-an-operator-procedure.md)  
+ [Postupy: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)  
+ [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [Operátor Mod](../../../../visual-basic/language-reference/operators/mod-operator.md)

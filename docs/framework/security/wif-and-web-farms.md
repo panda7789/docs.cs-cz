@@ -1,24 +1,14 @@
 ---
-title: "WIF a webové farmy"
-ms.custom: 
+title: WIF a webové farmy
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
-caps.latest.revision: "9"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 93c3e4251943afa383002043d9259184be82d929
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ed6a7fbe550dad85cf505eaf20a446803b84c96f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wif-and-web-farms"></a>WIF a webové farmy
 Pokud používáte Windows Identity Foundation (WIF) k zabezpečení prostředků předávající stranu aplikace, který je nasazen ve webové farmě, je nutné provést určité kroky k zajištění, že WIF může zpracovat tokeny z instancí RP aplikace spuštěné v různých počítače ve farmě. Dané zpracování zahrnuje ověřování token podpisů relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování odesílal tokeny zabezpečení.  
@@ -65,7 +55,7 @@ Pokud používáte Windows Identity Foundation (WIF) k zabezpečení prostředk�
 -   Pokud vaše aplikace zjistí přehraná tokeny postupujte podle podobná distribuované ukládání do mezipaměti strategie pro mezipaměť opětovného přehrání tokenu odvozené z <xref:System.IdentityModel.Tokens.TokenReplayCache> a přejdete na vaše opětovného přehrání tokenu, ukládání do mezipaměti služby v rámci [ \< tokenReplayCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) konfigurační prvek.  
   
 > [!IMPORTANT]
->  Všechny příklad XML a kódu v tomto tématu jsou převzaty z [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) ukázkové (http://go.microsoft.com/fwlink/?LinkID=248408).  
+>  Všechny příklad XML a kódu v tomto tématu jsou převzaty z [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) (http://go.microsoft.com/fwlink/?LinkID=248408) ukázka.  
   
 > [!IMPORTANT]
 >  V příkladech v tomto tématu jsou uvedeny jako-je a není určena pro použití v produkčním kódu bez úprav.  
@@ -98,7 +88,7 @@ public interface ISessionSecurityTokenCacheService
 }  
 ```  
   
- Následující kód ukazuje implementaci WCF služby ukládání do mezipaměti. V tomto příkladu výchozí, se používá implementované WIF tokenu mezipaměť v paměti relace. Alternativně může implementovat trvanlivý mezipaměti databázi. `ISessionSecurityTokenCacheService`definuje rozhraní uvedené výše. V tomto příkladu jsou jako stručný výtah zobrazeny všechny metody potřebnou k implementaci rozhraní.  
+ Následující kód ukazuje implementaci WCF služby ukládání do mezipaměti. V tomto příkladu výchozí, se používá implementované WIF tokenu mezipaměť v paměti relace. Alternativně může implementovat trvanlivý mezipaměti databázi. `ISessionSecurityTokenCacheService` definuje rozhraní uvedené výše. V tomto příkladu jsou jako stručný výtah zobrazeny všechny metody potřebnou k implementaci rozhraní.  
   
 ```  
 using System;  

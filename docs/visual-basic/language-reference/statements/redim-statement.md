@@ -1,11 +1,6 @@
 ---
-title: "ReDim – příkaz (Visual Basic)"
+title: ReDim – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.ReDim
 - vb.Preserve
@@ -31,14 +26,11 @@ helpviewer_keywords:
 - declaration statements [Visual Basic]
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8cec66ee33bfd82b3abd623a0130f5635aa3d1d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9536ea8a6274e0b4a2589caf5aefa271a3567d32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim – příkaz (Visual Basic)
 Přidělí prostor úložiště pro proměnné pole.  
@@ -86,7 +78,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="behavior"></a>Chování  
   
--   **Pole nahrazení.** `ReDim`uvolní existující pole a vytvoří nové pole s stejné pořadí. Nové pole nahrazuje pole vydaných v proměnné pole.  
+-   **Pole nahrazení.** `ReDim` uvolní existující pole a vytvoří nové pole s stejné pořadí. Nové pole nahrazuje pole vydaných v proměnné pole.  
   
 -   **Inicializace bez zachovat.** Pokud nezadáte `Preserve`, `ReDim` inicializuje prvky nové pole pomocí výchozí hodnota pro datového typu.  
   
@@ -99,7 +91,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
  `Dim` Příkaz vytvoří nové pole s tři dimenze. Každá dimenze je deklarovaný s mez 10, takže index pole pro každý dimenze může být v rozsahu od 0 až 10. V následující diskusi tři dimenze jsou označovány jako vrstvy, řádků a sloupců.  
   
- První `ReDim` vytvoří nové pole, které nahradí stávající pole v proměnné `intArray`. `ReDim`zkopíruje všechny elementy z existující pole do nové pole. Také přidá na konec každý řádek v každé vrstvě 10 více sloupců a inicializuje elementů v tyto nové sloupce na hodnotu 0 (výchozí hodnota `Integer`, což je typ elementu pole).  
+ První `ReDim` vytvoří nové pole, které nahradí stávající pole v proměnné `intArray`. `ReDim` zkopíruje všechny elementy z existující pole do nové pole. Také přidá na konec každý řádek v každé vrstvě 10 více sloupců a inicializuje elementů v tyto nové sloupce na hodnotu 0 (výchozí hodnota `Integer`, což je typ elementu pole).  
   
  Druhý `ReDim` vytvoří jiné nové pole a zkopíruje všechny prvky, které vyhovují. Pět sloupce jsou však ztraceny od konce každý řádek v každé vrstvě. To není problém, pokud dokončíte používání těchto sloupců. Zmenšení velikosti velké pole můžete uvolnit paměť, která již nepotřebujete.  
   
@@ -109,8 +101,8 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IndexOutOfRangeException>  
- [Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md)  
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
- [Erase – příkaz](../../../visual-basic/language-reference/statements/erase-statement.md)  
- [Nic](../../../visual-basic/language-reference/nothing.md)  
+ [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Erase](../../../visual-basic/language-reference/statements/erase-statement.md)  
+ [Nothing](../../../visual-basic/language-reference/nothing.md)  
  [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)

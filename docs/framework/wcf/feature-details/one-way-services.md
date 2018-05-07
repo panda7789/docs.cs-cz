@@ -1,30 +1,16 @@
 ---
 title: Jednosměrné služby
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], one-way service contracts
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 380f6a10994c7eb69f4a59b222aa2d422151f247
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 03efc27f2ba54ca22f03e3ece84770fe0dcadbb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="one-way-services"></a>Jednosměrné služby
 Výchozí chování operace služby je vzor požadavku a odpovědi. V požadavku a odpovědi vzor, klient počká zprávy s odpovědí, i když představuje operaci služby v kódu jako `void` metoda. S Jednosměrná operace se přenášejí pouze jednu zprávu. Příjemce neodesílá zprávu odpovědi, ani nebude odesílatel očekávat jeden.  
@@ -57,7 +43,7 @@ public interface IOneWayCalculator
  Úplný příklad, najdete v článku [jednosměrný](../../../../docs/framework/wcf/samples/one-way.md) ukázka.  
   
 ## <a name="clients-blocking-with-one-way-operations"></a>Klienti blokování pomocí Jednosměrná operace  
- Je důležité si uvědomit, že zatímco některé jednosměrné aplikace vrací také odchozí data se zapisují do síťové připojení, v několika scénářích implementaci vazby nebo služby může způsobit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta blokovat pomocí jednosměrné operace. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientské aplikace, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta nevrátí, dokud odchozí data byla zapsána na síťové připojení. To platí pro všechny zprávy exchange způsoby, včetně Jednosměrná operace; To znamená, že jakýkoli problém s zápis dat do přenosu vrácení, nemůže klient. V závislosti na problém, může být výsledkem výjimku nebo zpoždění při odesílání zpráv do služby.  
+ Je důležité si uvědomit, že, zatímco některé jednosměrné aplikace vrací také odchozí data se zapisují do síťového připojení, v několika scénářích implementaci vazby nebo služby může způsobit klienta WCF na blokovat, s využitím Jednosměrná operace. V klientských aplikací WCF objekt klienta WCF nevrací dokud odchozí data byla zapsána na síťové připojení. To platí pro všechny zprávy exchange způsoby, včetně Jednosměrná operace; To znamená, že jakýkoli problém s zápis dat do přenosu vrácení, nemůže klient. V závislosti na problém, může být výsledkem výjimku nebo zpoždění při odesílání zpráv do služby.  
   
  Například, pokud přenos nelze najít koncového bodu <xref:System.ServiceModel.EndpointNotFoundException?displayProperty=nameWithType> neprodleně mnohem je vyvolána výjimka. Také je však možné, že služba nelze číst data mimo přenosová z nějakého důvodu, což zabraňuje přenos klienta odesilatel operaci vrácení. V těchto případech Pokud <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A?displayProperty=nameWithType> období na přenos klienta vazby překročí, <xref:System.TimeoutException?displayProperty=nameWithType> je vyvolána – ale ne dokud byl překročen časový limit. Je také možné aktivovat mnoho zprávy na službu, službu nemohl zpracovat za určité míry. V takovém případě příliš, jednosměrné klientské bloky dokud služba dokáže zpracovat zprávy, nebo dokud je vyvolána výjimka.  
   

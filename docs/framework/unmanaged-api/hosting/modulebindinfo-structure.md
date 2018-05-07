@@ -1,14 +1,6 @@
 ---
-title: "ModuleBindInfo – struktura"
-ms.custom: 
+title: ModuleBindInfo – struktura
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ModuleBindInfo
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 632d4adc-dbc9-4ce8-9397-abc3285c1c69
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 399ba2471b4dc7c5e372a56a9dcab8117068a693
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dbaba00e029729fff5ad478a50134ff1e1858c0c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="modulebindinfo-structure"></a>ModuleBindInfo – struktura
 Poskytuje podrobné informace o odkazovaného modulu a sestavení, který jej obsahuje.  
@@ -56,7 +44,7 @@ typedef struct _ModuleBindInfo {
 |`lpModuleName`|Název odkazovaného modulu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ModuleBindInfo`byla předána jako parametr pro `IHostAssemblyStore::ProvideModule`. Hostitel poskytuje jedinečný identifikátor `dwAppDomainId` do common language runtime (CLR). Po volání [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) metoda vrátí hodnotu, modul runtime používá k určení identifikátor zda obsah `IStream` namapované. Pokud ano, načte modul runtime existující kopie místo přemapování datového proudu. Modul runtime také používá tento identifikátor jako klíč vyhledávání pro datové proudy, které jsou vráceny z volání `IHostAssemblyStore::ProvideAssembly` metoda. Proto musí být jedinečný pro požadavky modulu také jako požadavků sestavení na identifikátor.  
+ `ModuleBindInfo` byla předána jako parametr pro `IHostAssemblyStore::ProvideModule`. Hostitel poskytuje jedinečný identifikátor `dwAppDomainId` do common language runtime (CLR). Po volání [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) metoda vrátí hodnotu, modul runtime používá k určení identifikátor zda obsah `IStream` namapované. Pokud ano, načte modul runtime existující kopie místo přemapování datového proudu. Modul runtime také používá tento identifikátor jako klíč vyhledávání pro datové proudy, které jsou vráceny z volání `IHostAssemblyStore::ProvideAssembly` metoda. Proto musí být jedinečný pro požadavky modulu také jako požadavků sestavení na identifikátor.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -65,7 +53,7 @@ typedef struct _ModuleBindInfo {
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  

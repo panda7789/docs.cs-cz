@@ -1,14 +1,6 @@
 ---
 title: AddFile Method1
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink.AddFile
 - AddFile
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9e707abb-f905-4568-9356-12aa21d1b11c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 943ff2901ee0888860941e86d589060de729907d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 57a350fadfa77fdad545ca7ccf2f63d28607c2ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="addfile-method1"></a>AddFile Method1
 Přidá soubory do sestavení. Můžete také použít k vytvoření nepřipojeného moduly.  
@@ -58,7 +46,7 @@ HRESULT AddFile(
  Plně kvalifikovaný název souboru, který se má přidat.  
   
  `dwFlags`  
- Modelu COM + FileDef flags – například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags`Předaný [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ Modelu COM + FileDef flags – například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` Předaný [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
  [Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní, který se má použít pro vydávání metadata, v případě potřeby.  

@@ -1,27 +1,15 @@
 ---
-title: "Protokoly transakcí"
-ms.custom: 
+title: Protokoly transakcí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13784a3a5062705abba1b3bbb33a04e66bd22072
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8841a9cf414ae94da7e63bd7312a3c541ab6de1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transaction-protocols"></a>Protokoly transakcí
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]implementuje protokoly WS-Atomic Transactions a WS-spolupráce.  
+Windows Communication Foundation (WCF) implementuje protokoly WS-Atomic Transactions a WS-spolupráce.  
   
 |Specifikace či dokumentu|Version|Odkaz|  
 |-----------------------------|-------------|----------|  
@@ -64,14 +52,14 @@ ms.lasthandoff: 12/22/2017
   
 -   Zprávy aplikace.  
   
- První tři zpráva třídy jsou považovány za zprávy správce transakcí a jejich vazby konfigurace je popsaná v "Aplikace zpráva Exchange" dál v tomto tématu. Čtvrtý třída zprávy je aplikacích zpráv a je popsaný v části "Příklady zpráva" dál v tomto tématu. Tato část popisuje protokol vazby použít pro každý z těchto tříd pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ První tři zpráva třídy jsou považovány za zprávy správce transakcí a jejich vazby konfigurace je popsaná v "Aplikace zpráva Exchange" dál v tomto tématu. Čtvrtý třída zprávy je aplikacích zpráv a je popsaný v části "Příklady zpráva" dál v tomto tématu. Tato část popisuje protokol vazby používá pro každou z těchto tříd technologie WCF.  
   
  V tomto dokumentu se používají následující obory názvů XML a přidružené předpony.  
   
 |Předpona|Version|Namespace URI|  
 |------------|-------------|-------------------|  
-|s.11||[http://go.microsoft.com/fwlink/?LinkId=96014](http://go.microsoft.com/fwlink/?LinkId=96014)|  
-|wsa|Před 1.0<br /><br /> 1.0|http://www.w3.org/2004/08/Addressing<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96022](http://go.microsoft.com/fwlink/?LinkId=96022)|  
+|s11||[http://go.microsoft.com/fwlink/?LinkId=96014](http://go.microsoft.com/fwlink/?LinkId=96014)|  
+|wsa|Před 1.0<br /><br /> 1.0|http://www.w3.org/2004/08/addressing<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96022](http://go.microsoft.com/fwlink/?LinkId=96022)|  
 |wscoor|1.0<br /><br /> 1.1|[http://go.microsoft.com/fwlink/?LinkId=96078](http://go.microsoft.com/fwlink/?LinkId=96078)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
 |WSAT|1.0<br /><br /> 1.1|[http://go.microsoft.com/fwlink/?LinkId=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96081](http://go.microsoft.com/fwlink/?LinkId=96081)|  
 |t|1.3 před<br /><br /> 1.3|[http://go.microsoft.com/fwlink/?LinkId=96082](http://go.microsoft.com/fwlink/?LinkId=96082)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96100](http://go.microsoft.com/fwlink/?LinkId=96100)|  
@@ -96,12 +84,12 @@ ms.lasthandoff: 12/22/2017
 -   B1112: DNS musí být funkční mezi každý pár odesílatele příjemce v systému pro kontroly název subjektu X.509 proběhla úspěšně.  
   
 #### <a name="activation-and-registration-binding-configuration"></a>Aktivace a registrace vazby konfigurace  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vyžaduje duplexní vazby požadavek nebo odpověď s korelací přes protokol HTTPS. (Další informace o korelaci a popisy vzoru exchange zprávu požadavku/odpovědi, viz WS-Atomic Transactions části 8.)  
+ WCF vyžaduje duplexní vazby požadavek nebo odpověď s korelací přes protokol HTTPS. (Další informace o korelaci a popisy vzoru exchange zprávu požadavku/odpovědi, viz WS-Atomic Transactions části 8.)  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazeb protokolu 2PC  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje jednosměrné (datagram) zpráv přes protokol HTTPS. Korelace mezi zprávy je ponechán jako podrobností implementace.  
+ WCF podporuje jednosměrné (datagram) zpráv přes protokol HTTPS. Korelace mezi zprávy je ponechán jako podrobností implementace.  
   
- B1131: Implementace musí podporovat `wsa:ReferenceParameters` jak je popsáno v WS-Addressing k dosažení korelaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]na 2PC zprávy.  
+ B1131: Implementace musí podporovat `wsa:ReferenceParameters` jak je popsáno v WS-Addressing k dosažení korelace WCF na 2PC zpráv.  
   
 ### <a name="transaction-manager-mixed-security-binding"></a>Správce transakcí ve smíšeném vazby zabezpečení  
  Toto je alternativní (smíšený režim) vazby tohoto zabezpečení přenosu používá v kombinaci s modelem WS-koordinaci vystavený Token pro účely vytvoření identity. Aktivace a registrace jsou pouze elementy, které se liší mezi dvě vazby.  
@@ -112,7 +100,7 @@ ms.lasthandoff: 12/22/2017
 #### <a name="activation-message-binding-configuration"></a>Konfigurace vazeb zpráva aktivace  
  Aktivace zprávy obvykle neúčastnit interoperabilita vzhledem k tomu většinou dochází mezi aplikací a jeho místní správce transakcí.  
   
- B1221: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá duplexní vazbu HTTPS (popsané v [protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pro aktivaci zprávy. Požadavek a odpověď zprávy jsou korelační pomocí protokolu WS-Addressing 2004/08 pro WS-AT 1.0 a WS-Addressing 2005/08 1.1 WS-AT.  
+ B1221: WCF používá duplexní vazbu HTTPS (popsané v [protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pro aktivaci zprávy. Požadavek a odpověď zprávy jsou korelační pomocí protokolu WS-Addressing 2004/08 pro WS-AT 1.0 a WS-Addressing 2005/08 1.1 WS-AT.  
   
  Specifikace WS-Atomic Transactions, 8 část popisuje další podrobnosti o korelace a vzorce výměny zpráv.  
   
@@ -123,7 +111,7 @@ ms.lasthandoff: 12/22/2017
  Nový `t:IssuedTokens` záhlaví by měl být vygenerován pro připojení k odchozích `wscoor:CreateCoordinationContextResponse` zprávy.  
   
 #### <a name="registration-message-binding-configuration"></a>Konfigurace vazeb zpráva registrace  
- B1231: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá duplexní vazbu HTTPS (popsané v [protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)). Požadavek a odpověď zprávy jsou korelační pomocí protokolu WS-Addressing 2004/08 pro WS-AT 1.0 a WS-Addressing 2005/08 1.1 WS-AT.  
+ B1231: WCF používá duplexní vazbu HTTPS (popsané v [protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)). Požadavek a odpověď zprávy jsou korelační pomocí protokolu WS-Addressing 2004/08 pro WS-AT 1.0 a WS-Addressing 2005/08 1.1 WS-AT.  
   
  WS-AtomicTransaction, 8 část popisuje další podrobnosti o korelaci a popisy vzoru exchange zprávu.  
   
@@ -132,9 +120,9 @@ ms.lasthandoff: 12/22/2017
  `wsse:Timestamp` Element musí být podepsané pomocí `SecurityContextToken``STx` vystavené. Tento podpis je důkazem u sebe tokenu přidružený ke konkrétní transakci a slouží k ověřování účastník zapsání v transakci. Zpráva RegistrationResponse je odeslána zpět přes protokol HTTPS.  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazeb protokolu 2PC  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje jednosměrné (datagram) zpráv přes protokol HTTPS. Korelace mezi zprávy je ponechán jako podrobností implementace.  
+ WCF podporuje jednosměrné (datagram) zpráv přes protokol HTTPS. Korelace mezi zprávy je ponechán jako podrobností implementace.  
   
- B1241: Implementace musí podporovat `wsa:ReferenceParameters` jak je popsáno v WS-Addressing k dosažení korelaci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]na 2PC zprávy.  
+ B1241: Implementace musí podporovat `wsa:ReferenceParameters` jak je popsáno v WS-Addressing k dosažení korelace WCF na 2PC zpráv.  
   
 ## <a name="application-message-exchange"></a>Zprávy aplikace Exchange  
  Aplikace jsou volně používat konkrétní vazby pro aplikaci aplikace zprávy, dokud vazbu splňuje následující požadavky na zabezpečení:  
@@ -143,9 +131,9 @@ ms.lasthandoff: 12/22/2017
   
 -   R2002: Integrity a důvěrnosti `t:IssuedToken` musí být zadán.  
   
- `CoordinationContext` Hlavička obsahuje `wscoor:Identifier`. Při definici `xsd:AnyURI` umožňuje použití absolutní a relativní identifikátory URI, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje pouze `wscoor:Identifiers`, které jsou absolutní identifikátory URI.  
+ `CoordinationContext` Hlavička obsahuje `wscoor:Identifier`. Při definici `xsd:AnyURI` umožňuje použít absolutní a relativní identifikátory URI, WCF podporuje pouze `wscoor:Identifiers`, které jsou absolutní identifikátory URI.  
   
- B2003: Pokud `wscoor:Identifier` z `wscoor:CoordinationContext` je relativní identifikátor URI, bude vrácen chyb z transakcí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ B2003: Pokud `wscoor:Identifier` z `wscoor:CoordinationContext` je relativní identifikátor URI, bude vrácen chyb z transakční služby WCF.  
   
 ## <a name="message-examples"></a>Příklady zpráv  
   

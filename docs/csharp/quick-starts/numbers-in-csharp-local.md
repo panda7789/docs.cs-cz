@@ -1,19 +1,13 @@
 ---
 title: Čísla v jazyce C# kurzu - C# místní – elementy QuickStart
 description: Výuka C# prozkoumáním číselnými typy, jejich vlastnosti a metody.
-author: billwagner
-ms.author: wiwagn
 ms.date: 10/31/2017
-ms.topic: get-started-article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 6570693ea09ca2b548615291ba4f2b69f6d92482
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: cf8f00193b4fa66ff444fe8e40942c39e99d10b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="numbers-in-c-quickstart"></a>Čísla v jazyce C# rychlý start
 

@@ -1,10 +1,6 @@
 ---
 title: MustInherit (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - MustInherit
 - vb.MustInherit
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], MustInherit class
 - MustInherit keyword [Visual Basic]
 ms.assetid: b8f05185-90e3-4dd7-adc2-90d852fab5b4
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9d384986e42ee69a0f425c1590599aa2c82bc856
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5d622c1cff77a45c8de7772af7efbb73586f4400
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mustinherit-visual-basic"></a>MustInherit (Visual Basic)
 Určuje, že třídu lze použít pouze jako základní třída a že nelze vytvořit objekt přímo z něj.  
@@ -31,7 +24,7 @@ Určuje, že třídu lze použít pouze jako základní třída a že nelze vytv
   
  Další používání `MustInherit` třída je omezit proměnné na sadu související třídy. Můžete definovat základní třídy a všechny související třídy odvozena z něj. Není nutné poskytovat žádné funkce, které jsou společné pro všechny odvozené třídy základní třídy, ale může sloužit jako filtr pro přiřazení hodnoty k proměnné. Pokud náročné kód deklaruje proměnnou jako základní třída, Visual Basic umožňuje přiřadit pouze objekt z jednoho z odvozené třídy k této proměnné.  
   
- Rozhraní .NET Framework definuje několik `MustInherit` třídy mezi nimi <xref:System.Array>, <xref:System.Enum>, a <xref:System.ValueType>. <xref:System.ValueType>je příklad základní třídu, která omezuje proměnné. Všechny typy hodnot odvozena od <xref:System.ValueType>. Pokud je deklarovat proměnnou jako <xref:System.ValueType>, tuto proměnnou můžete přiřadit pouze typy hodnot.  
+ Rozhraní .NET Framework definuje několik `MustInherit` třídy mezi nimi <xref:System.Array>, <xref:System.Enum>, a <xref:System.ValueType>. <xref:System.ValueType> je příklad základní třídu, která omezuje proměnné. Všechny typy hodnot odvozena od <xref:System.ValueType>. Pokud je deklarovat proměnnou jako <xref:System.ValueType>, tuto proměnnou můžete přiřadit pouze typy hodnot.  
   
 ## <a name="rules"></a>Pravidla  
   
@@ -51,10 +44,10 @@ Určuje, že třídu lze použít pouze jako základní třída a že nelze vytv
 ## <a name="usage"></a>Použití  
  `MustInherit` Modifikátor můžete v tomto kontextu použít:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)  
+ [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)  
  [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
  [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

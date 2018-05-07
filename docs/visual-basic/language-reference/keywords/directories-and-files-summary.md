@@ -1,24 +1,16 @@
 ---
 title: Souhrn adresářů a souborů (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - files [Visual Basic]
 - directories [Visual Basic], Visual Basic
 - files [Visual Basic], summary
 ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7df9d0de955e6d9a225373d3711948886cff4c97
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 233da06a2bfb422a1184e8fe44004615b4bc6fde
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="directories-and-files-summary-visual-basic"></a>Souhrn adresářů a souborů (Visual Basic)
 Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořádány podle účelu a použití.  

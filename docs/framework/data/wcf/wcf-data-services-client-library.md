@@ -1,31 +1,19 @@
 ---
-title: "Klientská knihovna pro WCF Data Services"
-ms.custom: 
+title: Klientská knihovna pro WCF Data Services
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, client library
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8e8f5626ab7439b34377ba0200fd232c41017652
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 95ca3ab8768b59b52640cfd17d230a544a8b2052
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-data-services-client-library"></a>Klientská knihovna pro WCF Data Services
-Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]-založené služba dat v případě, že může posílat proces a požadavek HTTP [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu, vrátí datové služby. Tato interoperabilita umožňuje přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povoleno rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]zahrnuje knihovny klienta, které poskytují bohatší programovací prostředí spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály v rozhraní .NET Framework nebo aplikace programu Silverlight.  
+Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]-založené služba dat v případě, že může posílat proces a požadavek HTTP [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu, vrátí datové služby. Tato interoperabilita umožňuje přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povoleno rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zahrnuje knihovny klienta, které poskytují bohatší programovací prostředí spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály v rozhraní .NET Framework nebo aplikace programu Silverlight.  
   
  Jsou dvě hlavní třídy klientské knihovny <xref:System.Data.Services.Client.DataServiceContext> třídy a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy. <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány službě zadaná data. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou bezstavové služby, není kontextu. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakce s službu data za účelem podpory funkcí, jako například Správa změn. Tato třída také spravuje identit a sleduje změny. <xref:System.Data.Services.Client.DataServiceQuery%601> Třída reprezentuje dotazu oproti sadě konkrétní entity.  
   

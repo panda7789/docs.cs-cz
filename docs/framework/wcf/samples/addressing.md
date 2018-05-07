@@ -1,24 +1,12 @@
 ---
-title: "Adresování"
-ms.custom: 
+title: Adresování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 21339d071ac26f073d0495814744535bd84f3a22
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94ac903afb27f1b87f0ca8bf05cb891d0d9ee34c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="addressing"></a>Adresování
 Ukázka Addressing ukazuje různé aspekty a funkce adresy koncových bodů. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce se hostuje sama službu. Službu a klienta jsou konzolové aplikace. Služby definuje víc koncových bodů pomocí kombinace adresy relativní a absolutní koncových bodů.  
@@ -51,7 +39,7 @@ Ukázka Addressing ukazuje různé aspekty a funkce adresy koncových bodů. Uk�
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- V takovém případě je relativní adresa prázdná (""), takže adresa koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je http://localhost: 8000/servicemodelsamples nebo služby.  
+ V takovém případě je relativní adresa prázdná (""), takže adresa koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je http://localhost:8000/servicemodelsamples/service.  
   
  Druhý definice služby endpoint také určuje relativní adresu, jak je znázorněno v následující ukázka konfigurace.  
   
@@ -64,7 +52,7 @@ Ukázka Addressing ukazuje různé aspekty a funkce adresy koncových bodů. Uk�
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Relativní adresu "test", připojí se k základní adresu. Adresa skutečný koncový bod je http://localhost: 8000/servicemodelsamples/service/testování.  
+ Relativní adresu "test", připojí se k základní adresu. Adresa skutečný koncový bod je http://localhost:8000/servicemodelsamples/service/test.  
   
  Třetí definice služby endpoint určuje absolutní adresu, jak je znázorněno v následující ukázka konfigurace.  
   
@@ -74,7 +62,7 @@ Ukázka Addressing ukazuje různé aspekty a funkce adresy koncových bodů. Uk�
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Základní adresa hraje žádný atribut role v adrese. Adresa skutečný koncový bod je http://localhost:8001/hello nebo servicemodelsamples.  
+ Základní adresa hraje žádný atribut role v adrese. Adresa skutečný koncový bod je http://localhost:8001/hello/servicemodelsamples.  
   
  Čtvrtý adresa koncového bodu určuje absolutní adresu a různé přenosové – TCP. Základní adresa hraje žádný atribut role v adrese. Adresa skutečný koncový bod je net.tcp://localhost: 9000/servicemodelsamples nebo služby.  
   
@@ -143,7 +131,7 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Addressing`  
   

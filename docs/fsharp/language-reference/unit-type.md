@@ -1,17 +1,12 @@
 ---
 title: Typ jednotky (F#)
 description: 'Zjistěte, jak je "jednotkou" typ F # často používané pro udržení na místě, kde hodnota je vyžadováno pomocí syntaxe jazyka žádná hodnota, je potřeba nebo požadovaných.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 1a8c8f74e31c5426a9fb6a7143e9d2ac9a7104c0
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: fdd6b62f9d5c6d73407d5326c7d1f66d55780682
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unit-type"></a>Typ jednotky
 

@@ -1,29 +1,17 @@
 ---
 title: Pracovní postup zabezpečení
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bfd7c3e36bf28c364adf3cd230522cfc40a9503b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 8acfd0640478cf67309fe53a99707c7d96c5a635
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="workflow-security"></a>Pracovní postup zabezpečení
-Windows Workflow Foundation (WF) je integrovaná s několika různých technologií, jako je Microsoft SQL Server a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Interakci s těmito technologiemi může znamenat problémy se zabezpečením do vašeho pracovního postupu, pokud se to udělá nesprávně.  
+Windows Workflow Foundation (WF) je integrovaná do několika různých technologií, jako je Microsoft SQL Server a Windows Communication Foundation (WCF). Interakci s těmito technologiemi může znamenat problémy se zabezpečením do vašeho pracovního postupu, pokud se to udělá nesprávně.  
   
 ## <a name="persistence-security-concerns"></a>Otázky zabezpečení trvalost  
   
@@ -49,7 +37,7 @@ Windows Workflow Foundation (WF) je integrovaná s několika různých technolog
   
 ## <a name="considerations-for-workflowservicehost"></a>Důležité informace týkající se hostitele služby pracovního postupu  
   
--   [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] musí být zabezpečená koncových bodů použitých v pracovních postupech. Další informace najdete v tématu [WCF – Přehled zabezpečení](http://go.microsoft.com/fwlink/?LinkID=164975).  
+-   Koncové body Windows Communication Foundation (WCF) používaná v pracovních postupech by měl být zabezpečeny. Další informace najdete v tématu [WCF – Přehled zabezpečení](http://go.microsoft.com/fwlink/?LinkID=164975).  
   
 -   Ověřování na úrovni hostitele můžete implementovat pomocí <xref:System.ServiceModel.ServiceAuthorizationManager>. V tématu [postupy: vytvoření vlastního Správce autorizací pro službu](http://go.microsoft.com/fwlink/?LinkId=192228) podrobnosti. To také ukazují následující ukázka: [zabezpečení služeb pracovních postupů](../../../docs/framework/windows-workflow-foundation/samples/securing-workflow-services.md).  
   

@@ -1,24 +1,17 @@
 ---
-title: "Úvod k ovládacím prvkům Čára a Tvar (Visual Studio)"
+title: Úvod k ovládacím prvkům Čára a Tvar (Visual Studio)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Line control [Visual Basic], overview
 - Shape control [Visual Basic], overview
 - lines, drawing
 - shapes, drawing
 ms.assetid: 5c4e8b1a-0733-4020-af6c-f582f4026728
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e691d57c6de640c83556937eeddedf89e79b6846
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3ad740f7dd15194830959a5493970b4ba54ce142
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-the-line-and-shape-controls-visual-studio"></a>Úvod k ovládacím prvkům Čára a Tvar (Visual Studio)
 Ovládací prvky jazyka Visual Basic Power Pack Line a Shape jsou sadu tři grafické ovládacích prvků, které vám umožní kreslení čar a obrazců ve formulářích a kontejnerech. <xref:Microsoft.VisualBasic.PowerPacks.LineShape> Řízení slouží k vykreslení vodorovné, svislé a diagonálních čáry. <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> Řízení slouží k vykreslení kružnice a elipsy a <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> řízení slouží k vykreslení obdélníků a čtverce.  
@@ -55,6 +48,6 @@ Line a Shape hierarchie objektů
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.PowerPacks>  
- [Postupy: kreslení čar pomocí ovládacího prvku LineShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-lines-with-the-lineshape-control-visual-studio.md)  
- [Postupy: kreslení obrazců pomocí OvalShape a RectangleShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)  
- [Postupy: povolení přecházení mezi tvary pomocí tabulátoru](../../../visual-basic/developing-apps/windows-forms/how-to-enable-tabbing-between-shapes-visual-studio.md)
+ [Postupy: Kreslení čar pomocí ovládacího prvku LineShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-lines-with-the-lineshape-control-visual-studio.md)  
+ [Postupy: Kreslení obrazců pomocí ovládacích prvků OvalShape a RectangleShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)  
+ [Postupy: Povolení přecházení mezi tvary pomocí tabulátoru](../../../visual-basic/developing-apps/windows-forms/how-to-enable-tabbing-between-shapes-visual-studio.md)

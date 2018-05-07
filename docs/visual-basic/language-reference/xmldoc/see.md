@@ -1,24 +1,15 @@
 ---
-title: "&lt;v tématu&gt; (Visual Basic)"
-ms.custom: 
+title: '&lt;v tématu&gt; (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - see XML tag
 - <see> XML tag
 ms.assetid: 7e18f60b-ef4a-4678-a797-5eb918635ca9
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 010a3403d7748653648b323ad07f52bf93db2879
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e790f8abd216e198ff5077beab6f857e39981d2b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltseegt-visual-basic"></a>&lt;v tématu&gt; (Visual Basic)
 Určuje odkaz na druhý člen.  
@@ -31,7 +22,7 @@ Určuje odkaz na druhý člen.
   
 #### <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor ověří, že element daného kódu existuje a předá `member` k názvu elementu ve výstupu XML. `member`musí být v rámci dvojitých uvozovek nahoře ("").  
+ Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor ověří, že element daného kódu existuje a předá `member` k názvu elementu ve výstupu XML. `member` musí být v rámci dvojitých uvozovek nahoře ("").  
   
 ## <a name="remarks"></a>Poznámky  
  Použití `<see>` značku zadejte odkaz z v textu. Použití [ \<seealso >](../../../visual-basic/language-reference/xmldoc/seealso.md) označíte, text, který chcete zobrazit v části "V části Viz také".  

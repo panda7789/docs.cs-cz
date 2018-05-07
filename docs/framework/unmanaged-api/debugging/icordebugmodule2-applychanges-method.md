@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugModule2::ApplyChanges – metoda"
-ms.custom: 
+title: ICorDebugModule2::ApplyChanges – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugModule2.ApplyChanges
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 96fa3406-6a6f-41a1-88c6-d9bc5d1a16d1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4855b7a42d471304d000465a0437f29bdff05494
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5a406e945a67352bc7f126b40bd56f4a11dd693b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmodule2applychanges-method"></a>ICorDebugModule2::ApplyChanges – metoda
 Změny v metadatech a změny v kódu Microsoft (MSIL intermediate language) se vztahuje na běžící proces.  
@@ -65,7 +53,7 @@ HRESULT ApplyChanges (
  [v] Vyrovnávací paměť, která obsahuje aktualizované MSIL kód.  
   
 ## <a name="remarks"></a>Poznámky  
- `pbMetadata` Parametr je ve formátu metadat speciální delta (jako výstupní podle [imetadataemit2::savedeltatomemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata`přebírá předchozí metadat jako základ a popisuje jednotlivé změny, které chcete použít pro tento základní.  
+ `pbMetadata` Parametr je ve formátu metadat speciální delta (jako výstupní podle [imetadataemit2::savedeltatomemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` přebírá předchozí metadat jako základ a popisuje jednotlivé změny, které chcete použít pro tento základní.  
   
  Naopak `pbIL[`] parametr obsahuje nové MSIL pro metodu aktualizované a měl by úplně nahradit předchozí MSIL pro danou metodu  
   
@@ -82,4 +70,4 @@ HRESULT ApplyChanges (
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -1,9 +1,6 @@
 ---
-title: "Hello World! -- váš první program (Průvodce programováním v C#)"
+title: Hello World! -- váš první program (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: get-started-article
 f1_keywords:
 - cs.program
 - vs.csharp.startpage.firstapplication
@@ -11,17 +8,14 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-caps.latest.revision: "39"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1b6511394e69edd344c4f4a1bbc9da549a1a2a17
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 904657175d87e0d78e518248ed89b3720227360f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World! -- váš první program (Průvodce programováním v C#)
-Následující postup vytvoří C# verze tradiční "Hello, World!" program. Program zobrazí řetězec`Hello World!`  
+Následující postup vytvoří C# verze tradiční "Hello, World!" program. Program zobrazí řetězec `Hello World!`  
   
  Další příklady úvodní koncepty, najdete v části [Začínáme s Visual C# a Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).  
   
@@ -35,7 +29,7 @@ Následující postup vytvoří C# verze tradiční "Hello, World!" program. Pro
   
      **Nový projekt** otevře se dialogové okno.  
   
-3.  Rozbalte položku **nainstalovaná**, rozbalte položku **šablony**, rozbalte položku **Visual C#**a potom zvolte **konzolové aplikace**.  
+3.  Rozbalte položku **nainstalovaná**, rozbalte položku **šablony**, rozbalte položku **Visual C#** a potom zvolte **konzolové aplikace**.  
   
 4.  V **název** pole, zadejte název pro svůj projekt a potom zvolte **OK** tlačítko.  
   
@@ -47,7 +41,7 @@ Následující postup vytvoří C# verze tradiční "Hello, World!" program. Pro
   
      [!code-csharp[csProgGuide#21](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_1.cs)]  
   
-7.  Zvolte klávesu F5 a spusťte projekt. Zobrazí se okno příkazového řádku, která obsahuje řádek`Hello World!`  
+7.  Zvolte klávesu F5 a spusťte projekt. Zobrazí se okno příkazového řádku, která obsahuje řádek `Hello World!`  
   
  V dalším kroku se zkontrolují důležité části tohoto programu.  
   

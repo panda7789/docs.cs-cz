@@ -1,11 +1,6 @@
 ---
 title: -platform (Visual Basic)
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - platform compiler option [Visual Basic]
 - /platform compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09c7d677e614186d26a2ff8a1ce2fe5213cf7799
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: ec3a7e01e62b60688080fee95cf70e0ed38917f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-platform-visual-basic"></a>-platform (Visual Basic)
 Určuje, která verze modul common language runtime (CLR) platforma můžete spustit výstupní soubor.  
@@ -89,5 +84,5 @@ vbc -platform:x86 myFile.vb
   
 ## <a name="see-also"></a>Viz také  
  [/ target (Visual Basic)](target.md)  
- [Visual Basic Command-Line Compiler](index.md)  
+ [Visual Basic – kompilátor příkazového řádku](index.md)  
  [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

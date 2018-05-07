@@ -1,35 +1,23 @@
 ---
-title: "Vystavení dat jako služba (služby WCF Data Services)"
-ms.custom: 
+title: Vystavení dat jako služba (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, configuring
 - getting started, WCF Data Services
 - WCF Data Services, getting started
 ms.assetid: df0bbcee-f66f-4a88-abb4-4e73c8b9c908
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55e0bc058b92540c9b11965854d38e8d124e205c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1ab349125419a0589d68ccb821009f8227c942e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exposing-your-data-as-a-service-wcf-data-services"></a>Vystavení dat jako služba (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]se integruje s Visual Studio umožňují snadno definovat služby, která zveřejňuje data podle [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Vytvoření datové služby, který zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál zahrnuje následující základní kroky:  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] se integruje s Visual Studio umožňují snadno definovat služby, která zveřejňuje data podle [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Vytvoření datové služby, který zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál zahrnuje následující základní kroky:  
   
-1.  **Definování** **datový model**. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nativně podporuje datové modely, které jsou založeny na [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md). Další informace najdete v tématu [postupy: vytvoření službu Data pomocí datového zdroje ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).  
+1.  **Definování** **datový model**. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nativně podporuje datové modely, které jsou založeny na [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md). Další informace najdete v tématu [postupy: vytvoření službu Data pomocí datového zdroje ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).  
   
-     [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]také podporuje datové modely, které jsou založeny na common language runtime (CLR) objekty, které vrátit instanci třídy <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje nasazení datové služby, které jsou založeny na seznamu, pole a kolekcí v rozhraní .NET Framework. Chcete-li povolit vytvářet, aktualizovat a odstraňovat operations přes tyto datové struktury, musíte také implementovat <xref:System.Data.Services.IUpdatable> rozhraní. Další informace najdete v tématu [postupy: vytvoření služby Data pomocí poskytovatele reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).  
+     [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] také podporuje datové modely, které jsou založeny na common language runtime (CLR) objekty, které vrátit instanci třídy <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje nasazení datové služby, které jsou založeny na seznamu, pole a kolekcí v rozhraní .NET Framework. Chcete-li povolit vytvářet, aktualizovat a odstraňovat operations přes tyto datové struktury, musíte také implementovat <xref:System.Data.Services.IUpdatable> rozhraní. Další informace najdete v tématu [postupy: vytvoření služby Data pomocí poskytovatele reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).  
   
      Pro pokročilejší scénáře [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zahrnuje sadu poskytovatelů, které umožňují definovat datový model na základě typu dat pozdní vazbu. Další informace najdete v tématu [vlastní Data poskytovatelé](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).  
   

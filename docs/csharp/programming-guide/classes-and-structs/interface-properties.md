@@ -1,21 +1,15 @@
 ---
-title: "Vlastnosti rozhraní (Průvodce programováním v C#)"
+title: Vlastnosti rozhraní (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-caps.latest.revision: "13"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1da48adf73cccb28d9cff641948db52b40b8c1bb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bfa03c7ebe82f3f6a03666d908a5fa9d4e386172
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
 Vlastnosti lze deklarovat na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Následuje příklad přistupující objekt indexer rozhraní:  
@@ -56,9 +50,9 @@ Vlastnosti lze deklarovat na [rozhraní](../../../csharp/language-reference/keyw
  `Employee name: Hazem Abolrous`  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [Pomocí vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+ [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
  [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
  [Indexery](../../../csharp/programming-guide/indexers/index.md)  
  [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)

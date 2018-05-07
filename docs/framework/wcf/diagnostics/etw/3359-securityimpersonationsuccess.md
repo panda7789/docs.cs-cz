@@ -1,24 +1,12 @@
 ---
-title: "3359 – SecurityImpersonationSuccess"
-ms.custom: 
+title: 3359 – SecurityImpersonationSuccess
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 80bcea7c-ae57-4b89-8032-5f9787545b07
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5818d6d80e02bf0567a928973c2f18f417b4ab22
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 270387b3ab65c7485ab27e9617040c84999b8a40
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3359---securityimpersonationsuccess"></a>3359 – SecurityImpersonationSuccess
 ## <a name="properties"></a>Vlastnosti  

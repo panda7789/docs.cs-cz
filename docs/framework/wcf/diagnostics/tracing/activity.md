@@ -1,30 +1,18 @@
 ---
 title: Aktivita
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cbcf33aa734cde1d2458e46cd161f9ea5197a827
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 34281647f65157484c1e732bc67a6a4b2cf58db6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity"></a>Aktivita
-Toto téma popisuje aktivity trasování v [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] trasování modelu. Aktivity jsou zpracování jednotek, které pomůže uživateli zúžit obor selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Operace se například nezdaří, protože zpráva dešifrování se nezdařilo. Trasování pro operace a Chyba při dešifrování zprávy zobrazí ve stejné aktivitě, zobrazující přímé korelace mezi chyby dešifrování a chybu požadavku.  
+Toto téma popisuje aktivity trasování v modelu trasování Windows Communication Foundation (WCF). Aktivity jsou zpracování jednotek, které pomůže uživateli zúžit obor selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Operace se například nezdaří, protože zpráva dešifrování se nezdařilo. Trasování pro operace a Chyba při dešifrování zprávy zobrazí ve stejné aktivitě, zobrazující přímé korelace mezi chyby dešifrování a chybu požadavku.  
   
 ## <a name="configuring-activity-tracing"></a>Konfigurace trasování aktivity  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]obsahuje předem definovaná aktivity pro zpracování aplikace (viz [seznam aktivit](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)). Můžete také definovat aktivity prostřednictvím kódu programu ke skupině uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] obsahuje předem definovaná aktivity pro zpracování aplikace (viz [seznam aktivit](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)). Můžete také definovat aktivity prostřednictvím kódu programu ke skupině uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
   
  Pro vydávání trasování aktivity v době běhu, použijte `ActivityTracing` nastavení `System.ServiceModel` trasování zdroje nebo jiné [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nebo vlastního trasování zdrojů, jak je ukázáno v následujícím kódu konfigurace.  
   
@@ -49,9 +37,9 @@ Toto téma popisuje aktivity trasování v [!INCLUDE[indigo1](../../../../../inc
 ## <a name="defining-the-scope-of-an-activity"></a>Definování oboru aktivity  
  Aktivita je definován v době návrhu a označuje logické jednotky práce. Přímo souvisí s emitovaného trasování se stejným identifikátorem aktivity, jsou součástí stejné aktivity. Protože aktivitu můžete napříč hranicemi koncový bod (požadavek), jsou definovány dva obory pro aktivitu.  
   
--   `Global`obor na aplikaci. V tomto rozsahu aktivita je identifikována jeho 128-bit aktivity globálně jedinečný identifikátor, gAId. GAid je co rozšířena napříč koncovými body.  
+-   `Global` obor na aplikaci. V tomto rozsahu aktivita je identifikována jeho 128-bit aktivity globálně jedinečný identifikátor, gAId. GAid je co rozšířena napříč koncovými body.  
   
--   `Local`obor na jeden koncový bod. V tomto rozsahu aktivita je identifikována jeho gAId, společně s název zdroje trasování generování trasování aktivity a ID procesu Tato trojdílná se považuje za id místní aktivity, umístěné. , Které jsou uvedené se používá k definování hranice (místní) aktivity.  
+-   `Local` obor na jeden koncový bod. V tomto rozsahu aktivita je identifikována jeho gAId, společně s název zdroje trasování generování trasování aktivity a ID procesu Tato trojdílná se považuje za id místní aktivity, umístěné. , Které jsou uvedené se používá k definování hranice (místní) aktivity.  
   
 ## <a name="trace-schema"></a>Schéma trasování  
  Trasování může vygenerované pomocí žádné schéma a různé platformy Microsoft. "e2e" (pro "koncové") je běžně používané schéma. Toto schéma obsahuje identifikátor 128bitové (gAId), název zdroje trasování a ID procesu. Ve spravovaném kódu <xref:System.Diagnostics.XmlWriterTraceListener> vysílá trasování ve schématu E2E.  

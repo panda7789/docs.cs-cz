@@ -1,21 +1,14 @@
 ---
-title: "Postupy: Implementace uživatelem definovaných převodů mezi strukturami (Průvodce programováním v C#)"
+title: 'Postupy: Implementace uživatelem definovaných převodů mezi strukturami (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - user-defined conversions [C#]
 ms.assetid: 97839aef-8fbc-40d5-9769-6b569bc2710b
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7d86cbd48347e6951f6b6883a385d80d68697c9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 178d9e2f92c5c1989253a16d866052a1fc42c10e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-user-defined-conversions-between-structs-c-programming-guide"></a>Postupy: Implementace uživatelem definovaných převodů mezi strukturami (Průvodce programováním v C#)
 Tento příklad definuje dvě struktury `RomanNumeral` a `BinaryNumeral`a předvádí převody mezi nimi.  
@@ -39,5 +32,5 @@ Tento příklad definuje dvě struktury `RomanNumeral` a `BinaryNumeral`a předv
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Operátory převodu](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)

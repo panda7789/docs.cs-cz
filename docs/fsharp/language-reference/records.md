@@ -1,17 +1,12 @@
 ---
 title: Záznamy (F#)
 description: 'Zjistěte, jak F # záznamy představují jednoduché agregace pojmenovaných hodnot, případně se členy.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 1270bf4eaeba99a15b0f81b5477f4c3b98644f66
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 5bd1f76937bf5839b7da5cae7dea578747ec9b99
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="records"></a>Záznamy
 

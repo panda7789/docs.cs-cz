@@ -1,12 +1,6 @@
 ---
-title: '&lt;&lt;Operátor (Visual Basic)'
+title: '&lt;&lt; Operátor (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.<<
 helpviewer_keywords:
@@ -14,16 +8,13 @@ helpviewer_keywords:
 - << operator [Visual Basic]
 - operator <<, Visual Basic left shift operator
 ms.assetid: fdb93d25-81ba-417f-b808-41207bfb8440
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 56cfb227f7e5c68de802c1f2cfb842a770f65ae0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bdec015309526aeac2499bc7b459b6ccab6f1e4d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="ltlt-operator-visual-basic"></a>&lt;&lt;Operátor (Visual Basic)
+# <a name="ltlt-operator-visual-basic"></a>&lt;&lt; Operátor (Visual Basic)
 Provede aritmetický levém posun bitový.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,12 +38,12 @@ result = pattern << amount
   
  Pokud chcete zabránit posunutí ve více bits, než mohou být uloženy výsledek, Visual Basic zakrývá hodnotu `amount` s maskou velikost, která odpovídá datový typ `pattern`. Binární a z těchto hodnot se používá pro velikost shift. Velikost masek jsou následující:  
   
-|Datový typ`pattern`|Velikost maska (decimální):|Velikost maska (hexadecimální)|  
+|Datový typ `pattern`|Velikost maska (decimální):|Velikost maska (hexadecimální)|  
 |----------------------------|---------------------------|-------------------------------|  
-|`SByte`, `Byte`|7|& H00000007|  
-|`Short`, `UShort`|15|& H0000000F|  
-|`Integer`, `UInteger`|31|& H0000001F|  
-|`Long`, `ULong`|63|& H0000003F|  
+|`SByte`, `Byte`|7|&AMP; H00000007|  
+|`Short`, `UShort`|15|&AMP; H0000000F|  
+|`Integer`, `UInteger`|31|&AMP; H0000001F|  
+|`Long`, `ULong`|63|&AMP; H0000003F|  
   
  Pokud `amount` je nula, hodnota `result` je stejná jako hodnota `pattern`. Pokud `amount` je záporná, je jako hodnotu bez znaménka a maskovat s maskou správnou velikost.  
   
@@ -68,22 +59,22 @@ result = pattern << amount
   
  Výsledky v předchozím příkladu jsou následující:  
   
--   `result1`je 192 (0000 0000 1100 0000).  
+-   `result1` je 192 (0000 0000 1100 0000).  
   
--   `result2`je 3072 (0000 1100 0000 0000).  
+-   `result2` je 3072 (0000 1100 0000 0000).  
   
--   `result3`je-32 768 (1000 0000-0000 0000).  
+-   `result3` je-32 768 (1000 0000-0000 0000).  
   
--   `result4`je 384 (0000 0001 1000 0000).  
+-   `result4` je 384 (0000 0001 1000 0000).  
   
--   `result5`je 0 (posunuté 15 místa vlevo).  
+-   `result5` je 0 (posunuté 15 místa vlevo).  
   
  Velikost posunutí pro `result4` počítá se jako 17 a 15, který se rovná 1.  
   
 ## <a name="see-also"></a>Viz také  
- [Operátory bitového posunutí](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
  [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
- [<< = – operátor](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)  
+ [<<= – operátor](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
  [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

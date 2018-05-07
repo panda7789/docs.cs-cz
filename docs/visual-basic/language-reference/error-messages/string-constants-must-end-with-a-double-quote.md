@@ -1,26 +1,17 @@
 ---
-title: "Řetězcové konstanty musí končit dvojitými uvozovkami."
+title: Řetězcové konstanty musí končit dvojitými uvozovkami.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30648
 - bc30648
 helpviewer_keywords:
 - BC30648
 ms.assetid: eefb77a4-efbc-4000-8871-edce7ef7f2df
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 02f8c127f35a511c9f8529078e5c1eaedda2cfae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c195c6892097818f4292f0732c2444644fdcb96a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="string-constants-must-end-with-a-double-quote"></a>Řetězcové konstanty musí končit dvojitými uvozovkami.
 Řetězcové konstanty musí začínat a končit znaky uvozovek.  

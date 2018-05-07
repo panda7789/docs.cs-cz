@@ -1,28 +1,18 @@
 ---
-title: "Porovnání jazyka XPath a v technologii LINQ to XML1"
-ms.custom: 
+title: Porovnání jazyka XPath a v technologii LINQ to XML1
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c3fd07c1-6761-4e4b-8eb1-ddd780ed8d44
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 761df14ee4bdfa9ddeb3f742134f4f47f8bb283f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fe6b0b77f82a9fcb5475e31e096a636211faa578
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a>Porovnání jazyka XPath a technologie LINQ to XML
 Výraz XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nabízejí některé podobné funkce. Obě lze použít k dotazu strom XML vrácení takové výsledky jako kolekci elementů, kolekce atributů, kolekce uzlů nebo hodnota elementu nebo atributu. Existují však také některé rozdíly.  
   
 ## <a name="differences-between-xpath-and-linq-to-xml"></a>Rozdíly mezi XPath a LINQ to XML  
- Výraz XPath neumožňuje projekce nových typů. Ho může vrátit pouze kolekce uzlů ze stromu, zatímco [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může provést dotaz a projekt grafu objektu nebo strom XML v nový tvar. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]dotazy zahrnovat mnohem víc funkcí a jsou mnohem silnější než výrazech XPath.  
+ Výraz XPath neumožňuje projekce nových typů. Ho může vrátit pouze kolekce uzlů ze stromu, zatímco [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může provést dotaz a projekt grafu objektu nebo strom XML v nový tvar. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy zahrnovat mnohem víc funkcí a jsou mnohem silnější než výrazech XPath.  
   
  Výrazech XPath existovat v izolaci v řetězci. Visual Basic – kompilátor nemůže pomoct analyzovat výraz XPath v době kompilace. Naopak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou analyzovat a zkompilují theVisual základní kompilátoru. Kompilátor je schopen zachycení mnoho chyb dotazu.  
   

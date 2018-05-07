@@ -1,22 +1,12 @@
 ---
-title: "Množinové operace (Visual Basic)"
-ms.custom: 
+title: Množinové operace (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2b06e822-e030-438f-9db7-ee402bd3a706
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2e30c521635326afeea4aad9ce932d5206d06c6d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2620fa02c8f1f07edbf149c3202af8ab1decc072
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="set-operations-visual-basic"></a>Množinové operace (Visual Basic)
 Množinové operace v technologii LINQ naleznete v operacích dotazu, které produkují je sada výsledků dotazu, který je založen na přítomnosti nebo absenci ekvivalentní elementů v rámci stejné nebo samostatné kolekce (nebo sady).  
@@ -37,12 +27,12 @@ Množinové operace v technologii LINQ naleznete v operacích dotazu, které pro
 ### <a name="distinct"></a>Distinct  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType> metodu posloupnost znaků. Vrácený pořadí obsahuje jedinečný elementy ze vstupní pořadí.  
   
- ![Obrázek znázorňující chování Distinct &#40; &#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Odlišné")  
+ ![Obrázek znázorňující chování Distinct&#40;&#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Odlišné")  
   
 ### <a name="except"></a>S výjimkou  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType>. Vrácený pořadí obsahuje pouze elementy z první vstupní pořadí, které nejsou v druhé vstupní pořadí.  
   
- ![Obrázek znázorňující akce s výjimkou &#40; &#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/except.png "s výjimkou")  
+ ![Obrázek znázorňující akce s výjimkou&#40;&#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/except.png "s výjimkou")  
   
 ### <a name="intersect"></a>Intersect  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType>. Vrácený pořadí obsahuje prvky, které jsou společné pro objekty vstupních sekvencí.  
@@ -62,6 +52,6 @@ Množinové operace v technologii LINQ naleznete v operacích dotazu, které pro
 ## <a name="see-also"></a>Viz také  
  <xref:System.Linq>  
  [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [DISTINCT – klauzule](../../../../visual-basic/language-reference/queries/distinct-clause.md)  
+ [Klauzule Distinct](../../../../visual-basic/language-reference/queries/distinct-clause.md)  
  [Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)  
  [Postupy: hledání množinových rozdílů mezi dvěma seznamy (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md)

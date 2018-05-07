@@ -1,24 +1,12 @@
 ---
-title: "Přístup k informacím o identitě v rámci služby pracovních postupů"
-ms.custom: 
+title: Přístup k informacím o identitě v rámci služby pracovních postupů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0b832127-b35b-468e-a45f-321381170cbc
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 06638a9f5aa031bec07a9aac510ce832f75980fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a87c21215c37fefd8d9306fd0ccd0c5b2a1dfd11
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-identity-information-inside-a-workflow-service"></a>Přístup k informacím o identitě v rámci služby pracovních postupů
 Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda dostanete <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístup k informacím identity. Toto téma vás provede procesem implementace tato vlastnost spouštění, jakož i vlastní aktivity, která bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> aktivity za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a informace o identitě bude načten.  
@@ -102,7 +90,7 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-5.  Přepsání<xref:System.Activities.NativeActivity.CacheMetadata%2A>  
+5.  přepsání <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
   
     ```  
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
@@ -114,7 +102,7 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-6.  Přepsání<xref:System.Activities.NativeActivity.Execute%2A>  
+6.  přepsání <xref:System.Activities.NativeActivity.Execute%2A>  
   
     ```  
     protected override void Execute(NativeActivityContext context)  

@@ -1,13 +1,6 @@
 ---
-title: "Optimalizace výkonu: 2D grafika a obrázky"
-ms.custom: 
+title: 'Optimalizace výkonu: 2D grafika a obrázky'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,40 +12,35 @@ helpviewer_keywords:
 - 2-D graphics [WPF]
 - images [WPF], optimizing performance
 ms.assetid: e335601e-28c8-4d64-ba27-778fffd55f72
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 99fc5e179fe7652868d47d93fbdcabd47bc8cab9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4e6b72dae863e89d70ec70c2cb99a5874581e9ea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-2d-graphics-and-imaging"></a>Optimalizace výkonu: 2D grafika a obrázky
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje širokou škálu 2D grafika a vytváření bitové kopie funkce, které lze optimalizovat pro požadavky vaší aplikace. Toto téma obsahuje informace o optimalizaci výkonu v těchto oblastech.  
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje širokou škálu 2D grafika a vytváření bitové kopie funkce, které lze optimalizovat pro požadavky vaší aplikace. Toto téma obsahuje informace o optimalizaci výkonu v těchto oblastech.  
   
   
 <a name="Drawing_and_Shapes"></a>   
 ## <a name="drawing-and-shapes"></a>Kreslení a obrazců  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nabízí <xref:System.Windows.Media.Drawing> a <xref:System.Windows.Shapes.Shape> objekty představují grafické kreslení obsah. Ale <xref:System.Windows.Media.Drawing> objekty jsou jednodušší konstrukce než <xref:System.Windows.Shapes.Shape> objekty a lepší výkonové charakteristiky.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí <xref:System.Windows.Media.Drawing> a <xref:System.Windows.Shapes.Shape> objekty představují grafické kreslení obsah. Ale <xref:System.Windows.Media.Drawing> objekty jsou jednodušší konstrukce než <xref:System.Windows.Shapes.Shape> objekty a lepší výkonové charakteristiky.  
   
  A <xref:System.Windows.Shapes.Shape> umožňuje kreslení obrazce grafické na obrazovku. Protože jsou odvozeny od <xref:System.Windows.FrameworkElement> třídy, <xref:System.Windows.Shapes.Shape> objekty mohou být použity uvnitř panelů a většina ovládacích prvků.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nabízí několik vrstev přístupu k grafika a vykreslování služby. V horní vrstvě <xref:System.Windows.Shapes.Shape> objekty jsou snadno použitelné a poskytují řady užitečných funkcí, jako je například rozložení a zpracování událostí. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje několik objektů tvar připravené k použití. Všechny objekty tvar dědí <xref:System.Windows.Shapes.Shape> třídy. K dispozici tvar objekty zahrnují <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, a <xref:System.Windows.Shapes.Rectangle>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí několik vrstev přístupu k grafika a vykreslování služby. V horní vrstvě <xref:System.Windows.Shapes.Shape> objekty jsou snadno použitelné a poskytují řady užitečných funkcí, jako je například rozložení a zpracování událostí. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje několik objektů tvar připravené k použití. Všechny objekty tvar dědí <xref:System.Windows.Shapes.Shape> třídy. K dispozici tvar objekty zahrnují <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, a <xref:System.Windows.Shapes.Rectangle>.  
   
- <xref:System.Windows.Media.Drawing>objekty, na druhé straně není odvozena od <xref:System.Windows.FrameworkElement> třídy a zajištění světlejšího váhy implementace pro vykreslování tvarů, obrázky a text.  
+ <xref:System.Windows.Media.Drawing> objekty, na druhé straně není odvozena od <xref:System.Windows.FrameworkElement> třídy a zajištění světlejšího váhy implementace pro vykreslování tvarů, obrázky a text.  
   
  Existují čtyři typy <xref:System.Windows.Media.Drawing> objekty:  
   
--   <xref:System.Windows.Media.GeometryDrawing>Kreslení obrazce.  
+-   <xref:System.Windows.Media.GeometryDrawing> Kreslení obrazce.  
   
--   <xref:System.Windows.Media.ImageDrawing>Nakreslí obrázek.  
+-   <xref:System.Windows.Media.ImageDrawing> Nakreslí obrázek.  
   
--   <xref:System.Windows.Media.GlyphRunDrawing>Kreslení textu.  
+-   <xref:System.Windows.Media.GlyphRunDrawing> Kreslení textu.  
   
--   <xref:System.Windows.Media.DrawingGroup>Nakreslí kresby na další. Použijte skupinu kreslení kombinovat jiné kresby do jedné složené kreslení.  
+-   <xref:System.Windows.Media.DrawingGroup> Nakreslí kresby na další. Použijte skupinu kreslení kombinovat jiné kresby do jedné složené kreslení.  
   
  <xref:System.Windows.Media.GeometryDrawing> Objektu slouží k vykreslení geometrie obsahu. <xref:System.Windows.Media.Geometry> Třídy a konkrétní třídy, které jsou odvozeny od, jako například <xref:System.Windows.Media.CombinedGeometry>, <xref:System.Windows.Media.EllipseGeometry>, a <xref:System.Windows.Media.PathGeometry>, umožňují pro vykreslování 2D grafiky, jakož i poskytnutí vstupů do testování a výstřižek podpory. Objekty geometrie lze použít k definování oblast ovládacího prvku, například nebo k definování klip oblasti, kterou chcete použít na bitovou kopii. Jednoduché oblastech, jako je obdélníků a kroužky nebo složený oblasti vytvořit ze dvou nebo více objektů geometrie mohou být geometrie objekty. Složitější geometrickou oblasti lze vytvořit tím, že zkombinujete <xref:System.Windows.Media.PathSegment>-odvozené objekty, jako například <xref:System.Windows.Media.ArcSegment>, <xref:System.Windows.Media.BezierSegment>, a <xref:System.Windows.Media.QuadraticBezierSegment>.  
   
@@ -64,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="StreamGeometry_Objects"></a>   
 ## <a name="streamgeometry-objects"></a>StreamGeometry objekty  
- <xref:System.Windows.Media.StreamGeometry> Objekt je šedé – alternativa k <xref:System.Windows.Media.PathGeometry> pro vytvoření geometrické obrazce. Použití <xref:System.Windows.Media.StreamGeometry> když potřebujete popisují komplexní geometrie. <xref:System.Windows.Media.StreamGeometry>je optimalizovaná pro zpracování mnoho <xref:System.Windows.Media.PathGeometry> objekty a provede lépe ve srovnání s použitím mnoho jednotlivé <xref:System.Windows.Media.PathGeometry> objekty.  
+ <xref:System.Windows.Media.StreamGeometry> Objekt je šedé – alternativa k <xref:System.Windows.Media.PathGeometry> pro vytvoření geometrické obrazce. Použití <xref:System.Windows.Media.StreamGeometry> když potřebujete popisují komplexní geometrie. <xref:System.Windows.Media.StreamGeometry> je optimalizovaná pro zpracování mnoho <xref:System.Windows.Media.PathGeometry> objekty a provede lépe ve srovnání s použitím mnoho jednotlivé <xref:System.Windows.Media.PathGeometry> objekty.  
   
  Následující příklad používá syntaxi atributů k vytvoření trojúhelníkovou <xref:System.Windows.Media.StreamGeometry> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
@@ -78,7 +66,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Images"></a>   
 ## <a name="images"></a>Obrázky  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Vytvoření bitové kopie poskytuje výrazným vylepšením oproti možnosti vytváření bitové kopie v předchozích verzích [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Imaging možnosti, například zobrazení rastrový obrázek nebo pomocí bitovou kopii na běžného ovládacího prvku se primárně zpracovávaných Microsoft Windows zařízení rozhraní GDI (Graphics) nebo Microsoft Windows GDI + rozhraní (API). Těmto rozhraním API poskytuje základní funkce pro zpracování obrázků, ale chybějící funkce, například podporu rozšiřitelnosti kodeků a podporu HD bitové kopie. Rozhraní API Imaging WPF mít upravený tak, aby překonat nedostatků GDI a GDI + a zadejte novou sadu rozhraní API pro zobrazení a použití bitové kopie v rámci vaší aplikace.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vytvoření bitové kopie poskytuje výrazným vylepšením oproti možnosti vytváření bitové kopie v předchozích verzích [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Imaging možnosti, například zobrazení rastrový obrázek nebo pomocí bitovou kopii na běžného ovládacího prvku se primárně zpracovávaných Microsoft Windows zařízení rozhraní GDI (Graphics) nebo Microsoft Windows GDI + rozhraní (API). Těmto rozhraním API poskytuje základní funkce pro zpracování obrázků, ale chybějící funkce, například podporu rozšiřitelnosti kodeků a podporu HD bitové kopie. Rozhraní API Imaging WPF mít upravený tak, aby překonat nedostatků GDI a GDI + a zadejte novou sadu rozhraní API pro zobrazení a použití bitové kopie v rámci vaší aplikace.  
   
  Při použití bitové kopie, zvažte následující doporučení pro získání lepší výkon:  
   
@@ -91,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 -   Další informace najdete v tématu [Imaging přehled](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md).  
   
 ### <a name="bitmapscalingmode"></a>BitmapScalingMode  
- Při animaci škále všechny bitové mapy, výchozí vysoce kvalitní bitovou kopii znovu vzorkování algoritmus spotřebovat někdy dostatek systémových prostředků na způsobit snížení míry rámečku, účinně způsobující animace do trhaně. Nastavením <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A> vlastnost <xref:System.Windows.Media.RenderOptions> do objektu <xref:System.Windows.Media.BitmapScalingMode.LowQuality> hladší animaci lze vytvořit při škálování rastrový obrázek. <xref:System.Windows.Media.BitmapScalingMode.LowQuality>režim informuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modul vykreslování přepnutí z algoritmu optimalizované kvality se optimalizované rychlost algoritmem při zpracování obrázků.  
+ Při animaci škále všechny bitové mapy, výchozí vysoce kvalitní bitovou kopii znovu vzorkování algoritmus spotřebovat někdy dostatek systémových prostředků na způsobit snížení míry rámečku, účinně způsobující animace do trhaně. Nastavením <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A> vlastnost <xref:System.Windows.Media.RenderOptions> do objektu <xref:System.Windows.Media.BitmapScalingMode.LowQuality> hladší animaci lze vytvořit při škálování rastrový obrázek. <xref:System.Windows.Media.BitmapScalingMode.LowQuality> režim informuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modul vykreslování přepnutí z algoritmu optimalizované kvality se optimalizované rychlost algoritmem při zpracování obrázků.  
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Media.BitmapScalingMode> pro objekt bitové kopie.  
   

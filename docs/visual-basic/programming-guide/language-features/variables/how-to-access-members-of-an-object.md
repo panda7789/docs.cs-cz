@@ -1,25 +1,15 @@
 ---
-title: "Postupy: Přístup ke členům v objektu (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Přístup ke členům v objektu (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - members [Visual Basic], accessing
 - object variables [Visual Basic], accessing members
 ms.assetid: a0072514-6a79-4dd6-8d03-ca8c13e61ddc
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 85fa4932b449bf7b9ecb3902fc17fd954ea8cfac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 62be2955bd1f62fa5af4e54fb0af5e7dca29c421
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-members-of-an-object-visual-basic"></a>Postupy: Přístup ke členům v objektu (Visual Basic)
 Až budete mít proměnná objektu, který odkazuje na objekt, často chcete pracovat se členy tohoto objektu, například metody, vlastnosti, pole a události. Například po vytvoření nové <xref:System.Windows.Forms.Form> objekt, můžete chtít nastavit jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost nebo volání jeho <xref:System.Windows.Forms.Control.Focus%2A> metoda.  
@@ -84,6 +74,6 @@ Až budete mít proměnná objektu, který odkazuje na objekt, často chcete pra
  <xref:System.Windows.Forms.Form>  
  <xref:System.MemberAccessException>  
  [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
- [Deklarace proměnné objektu](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)  
- [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+ [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)  
+ [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

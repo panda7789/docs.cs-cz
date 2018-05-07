@@ -1,23 +1,16 @@
 ---
-title: "Nelze převést počáteční hodnota typu č. 39; &lt;type1&gt;& č. 39; mezní hodnota & č. 39;&lt; Type2&gt;& č. 39; a hodnota krok & č. 39;&lt; Type3&gt;& č. 39; do stejného typu"
+title: Nelze převést počáteční hodnotu typu &#39; &lt;type1&gt;&#39;, omezit hodnotu &#39; &lt;type2&gt; &#39; a krok hodnotu &#39; &lt;type3&gt; &#39; pro společný typ.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrForLoop_CommonType3
 ms.assetid: 21c45bcf-539c-488a-9cae-221558c37146
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 04bcc14bf1ce85423c5a5a99659955c62c74d8a5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d2369d58edc43306dc5de0e37ea328862b307ff3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="cannot-convert-start-value-of-type-39lttype1gt39-limit-value-of-39lttype2gt39-and-step-value-of-39lttype3gt39-to-a-common-type"></a>Nelze převést počáteční hodnota typu č. 39; &lt;type1&gt;& č. 39; mezní hodnota & č. 39;&lt; Type2&gt;& č. 39; a hodnota krok & č. 39;&lt; Type3&gt;& č. 39; do stejného typu
+# <a name="cannot-convert-start-value-of-type-39lttype1gt39-limit-value-of-39lttype2gt39-and-step-value-of-39lttype3gt39-to-a-common-type"></a>Nelze převést počáteční hodnotu typu &#39; &lt;type1&gt;&#39;, omezit hodnotu &#39; &lt;type2&gt; &#39; a krok hodnotu &#39; &lt;type3&gt; &#39; pro společný typ.
 Zadaný `For...Next` hodnoty řízení mají různé typy a proto nejsou platné vzhledem k tomu, že je nelze převést do stejného typu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

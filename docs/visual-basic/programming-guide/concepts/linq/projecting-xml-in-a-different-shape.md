@@ -1,22 +1,12 @@
 ---
-title: "Promítnutí kód XML v různých tvar (Visual Basic)"
-ms.custom: 
+title: Promítnutí kód XML v různých tvar (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2cf5f963b8675f22c9cab0297d8f48eb68f5aefb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d5fe201b14bdfa81bd4c750e17eaef6ba6e895f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Promítnutí kód XML v různých tvar (Visual Basic)
 Toto téma ukazuje příklad plánování XML, který je v jiné obrazce než zdrojového kódu XML.  

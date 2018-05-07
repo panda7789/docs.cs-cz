@@ -1,13 +1,6 @@
 ---
-title: "Přehled ovládacích prvků HScrollBar a VScrollBar (Windows Forms)"
-ms.custom: 
+title: Přehled ovládacích prvků HScrollBar a VScrollBar (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - HScrollBar
 - VScrollBar
@@ -18,21 +11,16 @@ helpviewer_keywords:
 - ScrollBar control [Windows Forms], about ScrollBar control
 - scroll bars [Windows Forms], about scroll bars
 ms.assetid: 8b307679-1cae-41d8-99aa-3d1efd207cd6
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8fbdb3778959d1691200cde49e485d8a63c6e645
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 572ba9f16d1c78e1825d0c9db7530c6c78175d27
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-overview-windows-forms"></a>Přehled ovládacích prvků HScrollBar a VScrollBar (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ScrollBar> používají se ovládací prvky pro navigaci v seznamu položek nebo velké množství informací posouváním buď vodorovně nebo svisle v rámci aplikace nebo ovládací prvek. Posuvníky jsou běžné element rozhraní systému Windows, proto <xref:System.Windows.Forms.ScrollBar> ovládací prvek se často používá s ovládacími prvky, které není odvozena od <xref:System.Windows.Forms.ScrollableControl> třídy. Podobně se celá řada vývojářů rozhodnete začlenit <xref:System.Windows.Forms.ScrollBar> řízení při vytváření vlastní uživatelské ovládací prvky.  
   
- <xref:System.Windows.Forms.HScrollBar> (Vodorovně) a <xref:System.Windows.Forms.VScrollBar> (svislé) ovládacích prvků fungovat nezávisle z jiných ovládacích prvků a mít vlastní sadu událostí, vlastnosti a metody. <xref:System.Windows.Forms.ScrollBar>ovládací prvky nejsou stejná jako integrované posuvníky, které jsou připojené k textová pole, seznamy, pole se seznamem nebo formulářů MDI ( <xref:System.Windows.Forms.TextBox> má ovládací prvek <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnosti chcete zobrazit nebo skrýt posuvníky, které jsou připojené k ovládacímu prvku).  
+ <xref:System.Windows.Forms.HScrollBar> (Vodorovně) a <xref:System.Windows.Forms.VScrollBar> (svislé) ovládacích prvků fungovat nezávisle z jiných ovládacích prvků a mít vlastní sadu událostí, vlastnosti a metody. <xref:System.Windows.Forms.ScrollBar> ovládací prvky nejsou stejná jako integrované posuvníky, které jsou připojené k textová pole, seznamy, pole se seznamem nebo formulářů MDI ( <xref:System.Windows.Forms.TextBox> má ovládací prvek <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnosti chcete zobrazit nebo skrýt posuvníky, které jsou připojené k ovládacímu prvku).  
   
  <xref:System.Windows.Forms.ScrollBar> Řídí použití <xref:System.Windows.Forms.ScrollBar.Scroll> události k monitorování přesun od jezdce (někdy označované jako úchytu) podél posuvníku. Pomocí <xref:System.Windows.Forms.ScrollBar.Scroll> událostí poskytuje přístup k hodnotě panelu přejděte, jako je právě přetáhli.  
   

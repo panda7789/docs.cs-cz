@@ -1,29 +1,17 @@
 ---
-title: "Postupy: výběr mezi HTTP POST a HTTP GET požadavky pro koncové body ASP.NET AJAX"
-ms.custom: 
+title: 'Postupy: výběr mezi HTTP POST a HTTP GET požadavky pro koncové body ASP.NET AJAX'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b47de82a-4c92-4af6-bceb-a5cb8bb8ede9
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa8aceace03d1abb3bb83de1262331485f12ded3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bebaaf7703bea1b3e491f4affbcefe3ed6ed1845
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>Postupy: výběr mezi HTTP POST a HTTP GET požadavky pro koncové body ASP.NET AJAX
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Umožňuje vytvořit službu, která zveřejňuje koncový bod podporou technologie ASP.NET AJAX, který lze volat z jazyka JavaScript na webovém serveru klienta. Ale základní postupy pro vytváření těchto služeb je popsané v [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) a [postupy: Přidání aplikace ASP.NET AJAX konfigurace koncového bodu bez pomocí](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
+Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje koncový bod podporou technologie ASP.NET AJAX, který lze volat z jazyka JavaScript na webovém serveru klienta. Ale základní postupy pro vytváření těchto služeb je popsané v [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) a [postupy: Přidání aplikace ASP.NET AJAX konfigurace koncového bodu bez pomocí](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
   
- Technologie ASP.NET AJAX podporuje operace, které používají akce HTTP POST a HTTP GET s HTTP POST se výchozí hodnota. Při vytváření operace, která nemá žádné vedlejší účinky a vrátí data, která změní občas nebo vůbec, použijte GET protokolu HTTP. Výsledky operace GET do mezipaměti, což znamená, že několik volání do stejné operace může způsobit pouze jeden požadavek pro vaši službu. Ukládání do mezipaměti není provádí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] , ale může probíhat na kterékoli úrovni (prohlížeč, na serveru proxy a jiných úrovních.) Ukládání do mezipaměti je výhodné, pokud chcete zvýšit výkon služby, ale nemusí být přijatelné, pokud často mění data, nebo pokud operace provede určitou akci.  
+ Technologie ASP.NET AJAX podporuje operace, které používají akce HTTP POST a HTTP GET s HTTP POST se výchozí hodnota. Při vytváření operace, která nemá žádné vedlejší účinky a vrátí data, která změní občas nebo vůbec, použijte GET protokolu HTTP. Výsledky operace GET do mezipaměti, což znamená, že několik volání do stejné operace může způsobit pouze jeden požadavek pro vaši službu. Ukládání do mezipaměti není provádí WCF, ale může probíhat na kterékoli úrovni (prohlížeč, na serveru proxy a jiných úrovních.) Ukládání do mezipaměti je výhodné, pokud chcete zvýšit výkon služby, ale nemusí být přijatelné, pokud často mění data, nebo pokud operace provede určitou akci.  
   
  Například pokud navrhujete služby ke správě uživatele Knihovna Hudba, operace, která vyhledává umělcem podle výhody title album pomocí GET, ale operace, která přidá album do vlastní kolekce uživatele musíte použít POST.  
   
@@ -33,7 +21,7 @@ ms.lasthandoff: 12/22/2017
   
  Operace HTTP GET používají žádné vstupní parametry nepodporuje operace POST, včetně komplexními datovými typy kontrakt. Ve většině případů doporučujeme však vyhnout příliš mnoho parametrů nebo parametry, které jsou v operacích GET příliš složité, protože snižuje efektivitu ukládání do mezipaměti.  
   
- Toto téma ukazuje, jak můžete vybrat, jestli GET a POST pomocí přidání <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy s příslušnými operacemi kontrakt služby. Další kroky (k implementaci, konfigurace a hostitelem služby), které je potřeba získat služba spuštěná jsou podobné těm, které používá služba žádné prvku ASP.NET AJAX v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Toto téma ukazuje, jak můžete vybrat, jestli GET a POST pomocí přidání <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy s příslušnými operacemi kontrakt služby. Další kroky (k implementaci, konfigurace a hostitelem služby), které jsou vyžadované k získání služba spuštěna jsou podobné těm, které používá služba žádné prvku ASP.NET AJAX v WCF.  
   
  Operace označené jako <xref:System.ServiceModel.Web.WebGetAttribute> vždy používá požadavek GET. Operace označené jako <xref:System.ServiceModel.Web.WebInvokeAttribute>, nebo není označena s žádným z těchto atributů, používá požadavek POST. <xref:System.ServiceModel.Web.WebInvokeAttribute> Umožňuje použít další příkazy HTTP, jiné než GET a POST (například PUT a DELETE) prostřednictvím <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> vlastnost. Tyto příkazy však nepodporuje prvku ASP.NET AJAX. Pokud máte v úmyslu používat službu ze stránky ASP.NET pomocí ovládacího prvku správce skriptu, nepoužívejte <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> vlastnost.  
   
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-create-a-wcf-service-that-responds-to-http-get-or-http-post-requests"></a>Vytvoření služby WCF, odpoví na HTTP GET nebo POST protokolu HTTP požadavky  
   
-1.  Zadejte základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kontrakt služby s rozhraním označené jako <xref:System.ServiceModel.ServiceContractAttribute> atribut. Označit každou operaci s <xref:System.ServiceModel.OperationContractAttribute>. Přidat <xref:System.ServiceModel.Web.WebGetAttribute> atribut ke stanovení, zda operace by měla odpovídat na požadavky HTTP GET. Můžete také přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut k explicitnímu zadání HTTP POST, nebo není uveden atribut, který se standardně HTTP POST.  
+1.  Definování kontraktu základní služby WCF s rozhraním označené jako <xref:System.ServiceModel.ServiceContractAttribute> atribut. Označit každou operaci s <xref:System.ServiceModel.OperationContractAttribute>. Přidat <xref:System.ServiceModel.Web.WebGetAttribute> atribut ke stanovení, zda operace by měla odpovídat na požadavky HTTP GET. Můžete také přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut k explicitnímu zadání HTTP POST, nebo není uveden atribut, který se standardně HTTP POST.  
   
     ```  
     [ServiceContract]  
@@ -96,7 +84,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-call-the-service"></a>Pro volání služby  
   
-1.  Operace GET vaší služby bez žádný kód klienta, můžete otestovat pomocí prohlížeče. Například pokud vaše služba je nakonfigurována na adrese "http://example.com/service.svc", do panelu Adresa prohlížeče zadáním příkazu "http://example.com/service.svc/LookUpArtist?album=SomeAlbum" vyvolá službu a způsobí, že odpověď na být stáhnout nebo zobrazit.  
+1.  Operace GET vaší služby bez žádný kód klienta, můžete otestovat pomocí prohlížeče. Například, pokud vaše služba je nakonfigurována na "http://example.com/service.svc"adresa, zadáním příkazu"http://example.com/service.svc/LookUpArtist?album=SomeAlbum" do prohlížeče adresního řádku vyvolá službu a způsobí, že odpověď na stažení nebo zobrazit.  
   
 2.  Služby můžete použít s operacemi GET stejným způsobem jako jiné služby prvku ASP.NET AJAX – zadáním službu Řízení adresu URL do kolekce skripty správce skript AJAX technologie ASP.NET. Příklad, naleznete v části [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md).  
   

@@ -1,27 +1,15 @@
 ---
-title: "Základní služba HTTP"
-ms.custom: 
+title: Základní služba HTTP
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 27048b43-8a54-4f2a-9952-594bbfab10ad
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 687eba2a346b3f554c8a7618bebe2e9c04f4d5b5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 0d00ee21fa328c32549f89d8d5fc4c767f64582c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
-Tento příklad ukazuje, jak implementovat založené na protokolu HTTP, na základě vzdáleného volání Procedur služby - často se používá označuje jako "POX" (prostý formát XML) služby – pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST programovací model. Tato ukázka se skládá ze dvou komponent: vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba HTTP (Service.cs) a konzolovou aplikaci (Program.cs), která vytvoří službu a provádí volání do ní.  
+Tento příklad znázorňuje způsob implementace služby založené na protokolu HTTP, na základě RPC - často se používá označení "POX" (prostý formát XML) služby – pomocí modelu programování REST Windows Communication Foundation (WCF). Tato ukázka se skládá ze dvou komponent: vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba HTTP (Service.cs) a konzolovou aplikaci (Program.cs), která vytvoří službu a provádí volání do ní.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Služby zpřístupní 2 operations `EchoWithGet` a `EchoWithPost`, která vrací řetězec, který byl předán jako vstup.  
@@ -49,7 +37,7 @@ Tento příklad ukazuje, jak implementovat založené na protokolu HTTP, na zák
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicHttpService`  
   

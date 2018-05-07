@@ -1,29 +1,17 @@
 ---
-title: "Metadata vlastností závislosti"
-ms.custom: 
+title: Metadata vlastností závislosti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - APIs [WPF], metadata
 - dependency properties [WPF], metadata
 - metadata [WPF], for dependency properties
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5b5c4ee554e8a0148c7d8d8044735f66778e7117
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0aa1d2962b0bccea7a0901877b29550319aaa3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Vlastnost metadata, systém, která přesahuje, může být hlášené o vlastnosti prostřednictvím reflexe nebo obecné generování sestav zahrnuje [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] charakteristiky. Metadata pro vlastnost závislosti lze také přiřadit jednoznačně podle třídy, která definuje vlastnost závislosti, jde změnit, pokud vlastnost závislosti je přidat do jiné třídy a je možné přepsat konkrétně všechny odvozené třídy, které dědí Vlastnost závislosti z definující základní třídy.  
@@ -48,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="metadata-apis"></a>Metadat rozhraní API  
  Typ, který hlásí většinu informace o metadatech, které používá systém vlastnost je <xref:System.Windows.PropertyMetadata> třídy. Metadata instance jsou zadány volitelně při vlastností závislostí jsou registrované vlastnosti systému a lze jej zadat znovu pro další typy, které se přidaly jako vlastníci nebo přepsat metadat, který dědí ze základní třídy závislosti definici vlastnosti. (Pro případy, kdy registrace vlastnost neurčuje metadata, výchozí <xref:System.Windows.PropertyMetadata> je vytvořena s výchozími hodnotami pro tuto třídu.) Registrované metadata se vrátí jako <xref:System.Windows.PropertyMetadata> při volání různých <xref:System.Windows.DependencyProperty.GetMetadata%2A> přetížení, které získat metadata z vlastnost závislosti na <xref:System.Windows.DependencyObject> instance.  
   
- <xref:System.Windows.PropertyMetadata> Je pak třída odvozená z zajistit více konkrétních metadat pro architektury oddělení, jako jsou třídy úrovni rozhraní WPF. <xref:System.Windows.UIPropertyMetadata>Přidá animace reporting, a <xref:System.Windows.FrameworkPropertyMetadata> poskytuje vlastnosti úrovni rozhraní WPF uvedených v předchozí části. Když jsou vlastnosti závislosti registrováno, lze registrovat pomocí těchto <xref:System.Windows.PropertyMetadata> odvozených třídách. Když je zkontrolován metadata, základní <xref:System.Windows.PropertyMetadata> typ může potenciálně přetypovat odvozené třídy tak, aby můžete prozkoumat podrobnější vlastnosti.  
+ <xref:System.Windows.PropertyMetadata> Je pak třída odvozená z zajistit více konkrétních metadat pro architektury oddělení, jako jsou třídy úrovni rozhraní WPF. <xref:System.Windows.UIPropertyMetadata> Přidá animace reporting, a <xref:System.Windows.FrameworkPropertyMetadata> poskytuje vlastnosti úrovni rozhraní WPF uvedených v předchozí části. Když jsou vlastnosti závislosti registrováno, lze registrovat pomocí těchto <xref:System.Windows.PropertyMetadata> odvozených třídách. Když je zkontrolován metadata, základní <xref:System.Windows.PropertyMetadata> typ může potenciálně přetypovat odvozené třídy tak, aby můžete prozkoumat podrobnější vlastnosti.  
   
 > [!NOTE]
 >  Vlastnost charakteristiky, které lze zadat v <xref:System.Windows.FrameworkPropertyMetadata> jsou někdy označovány v této dokumentaci jako "příznaky". Při vytváření nové instance metadata pro použití v závislostí vlastnost registrace nebo přepsání metadata, zadáte tyto hodnoty pomocí flagwise výčtu <xref:System.Windows.FrameworkPropertyMetadataOptions> a potom zadejte pravděpodobně zřetězených hodnoty výčtu k <xref:System.Windows.FrameworkPropertyMetadata> konstruktor. Nicméně, po sestavený, tyto charakteristiky možnost jsou zveřejněné v rámci <xref:System.Windows.FrameworkPropertyMetadata> jako řadu logická hodnota vlastnosti, nikoli vytváření hodnota výčtu. Logická hodnota vlastnosti umožňují kontrolovat každý podmíněného, nikoli by bylo potřeba použít masky pro hodnotu výčtu flagwise získání informací o vás zajímá. Konstruktor používá zřetězených <xref:System.Windows.FrameworkPropertyMetadataOptions> abychom zachovali délka podpis konstruktor přiměřené, zatímco skutečná sestavené metadata zpřístupní diskrétní vlastnosti aby dotazování intuitivnější metadat.  
@@ -75,13 +63,13 @@ ms.lasthandoff: 12/22/2017
   
  Při přepsání metadata vlastnosti rozdílná metadata jsou sloučit nebo nahradit.  
   
--   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>sloučí. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
+-   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> sloučí. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
   
 -   Skutečné vlastnost chování systému pro <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> je, že jsou uchovány a přidat do tabulky, s pořadí provádění systémem vlastnost tom, že se zpětná volání nejvíce odvozené třídy jsou vyvolány nejprve implementace všech vlastníků metadata v hierarchii.  
   
--   <xref:System.Windows.PropertyMetadata.DefaultValue%2A>nahrazuje. Pokud nezadáte <xref:System.Windows.PropertyMetadata.DefaultValue%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.DefaultValue%2A> pochází z nejbližším podřízeném objektu, který je zadaný v metadatech.  
+-   <xref:System.Windows.PropertyMetadata.DefaultValue%2A> nahrazuje. Pokud nezadáte <xref:System.Windows.PropertyMetadata.DefaultValue%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.DefaultValue%2A> pochází z nejbližším podřízeném objektu, který je zadaný v metadatech.  
   
--   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>implementace jsou nahrazena. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
+-   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace jsou nahrazena. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
   
 -   Vlastnost chování systému je pouze <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> ve okamžitou metadata volat. Žádné odkazy na jiné <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace v hierarchii se zachovají.  
   

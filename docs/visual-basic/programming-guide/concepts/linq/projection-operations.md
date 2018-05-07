@@ -1,22 +1,12 @@
 ---
 title: Operace projekce (Visual Basic)
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4927a27795881c34b689a2054ee8697575b53026
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f4d1f7531ee69ebdbfb4ccd283f9f5dcb2f000af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="projection-operations-visual-basic"></a>Operace projekce (Visual Basic)
 Projekce odkazuje na operaci transformace objekt do nový formulář, který často se skládá jenom z těchto vlastností, které budou následně použity. Pomocí projekce můžete vytvořit nový typ, který je sestaven z každého objektu. Můžete projektu vlastnosti a na něm provádět matematické funkce. Můžete také promítnout původní objekt bez provedení změn.  
@@ -88,17 +78,17 @@ MsgBox(sb.ToString())
 ```  
   
 ## <a name="select-versus-selectmany"></a>Vyberte a označit více  
- Pracovní i `Select()` a `SelectMany()` z hodnot zdroj je vytvořit hodnotu výsledek (nebo hodnoty). `Select()`vytvoří jednu výslednou hodnotu pro každou zdrojovou hodnotu. Kolekce, která má stejný počet elementů jako zdrojové kolekci je proto celkový výsledek. Naproti tomu `SelectMany()` vytváří jeden celkový výsledek, který obsahuje zřetězených podřízených kolekcí z každé zdrojové hodnotě. Funkce transformace, který je předán jako argument pro `SelectMany()` musí vrátit vyčíslitelná pořadí hodnot pro každou hodnotu zdroje. Tyto vyčíslitelná pořadí jsou pak zřetězených podle `SelectMany()` vytvoření jeden velký pořadí.  
+ Pracovní i `Select()` a `SelectMany()` z hodnot zdroj je vytvořit hodnotu výsledek (nebo hodnoty). `Select()` vytvoří jednu výslednou hodnotu pro každou zdrojovou hodnotu. Kolekce, která má stejný počet elementů jako zdrojové kolekci je proto celkový výsledek. Naproti tomu `SelectMany()` vytváří jeden celkový výsledek, který obsahuje zřetězených podřízených kolekcí z každé zdrojové hodnotě. Funkce transformace, který je předán jako argument pro `SelectMany()` musí vrátit vyčíslitelná pořadí hodnot pro každou hodnotu zdroje. Tyto vyčíslitelná pořadí jsou pak zřetězených podle `SelectMany()` vytvoření jeden velký pořadí.  
   
  Následující dva obrázky ukazují koncepční rozdíl mezi tyto dvě metody akce. V každém případě předpokládá, že funkce selektor (transformace) vybere pole květy z každé zdrojové hodnoty.  
   
  Tento obrázek znázorňuje způsob `Select()` vrátí kolekce, která má stejný počet elementů jako zdrojové kolekci.  
   
- ![Koncepční obrázek akce vyberte &#40; &#41; ] (../../../../csharp/programming-guide/concepts/linq/media/selectaction.png "SelectAction")  
+ ![Koncepční obrázek akce vyberte&#40;&#41;](../../../../csharp/programming-guide/concepts/linq/media/selectaction.png "SelectAction")  
   
  Tento obrázek znázorňuje způsob `SelectMany()` zřetězí zprostředkující pořadí polí do jednu hodnotu konečný výsledek, který obsahuje každou hodnotu z každé zprostředkující pole.  
   
- ![Obrázek znázorňující akce označit více &#40; &#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/selectmany.png "Označit více")  
+ ![Obrázek znázorňující akce označit více&#40;&#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/selectmany.png "Označit více")  
   
 ### <a name="code-example"></a>Příklad kódu  
  Následující příklad porovnává chování `Select()` a `SelectMany()`. Kód vytvoří "bouquet" květy provedením první dvě položky z každé seznam názvů květina ve zdrojové kolekci. V tomto příkladu "jedna hodnota", transformační funkce <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> používá, je sám kolekci hodnot. To vyžaduje nadbytečné `For Each` smyčky, aby bylo možné vytvořit výčet každý řetězec v každé dílčí pořadí.  
@@ -182,8 +172,8 @@ End Sub
 ## <a name="see-also"></a>Viz také  
  <xref:System.Linq>  
  [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [Select – klauzule](../../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md)  
  [Postupy: kombinace dat s LINQ pomocí spojení](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)  
  [Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)  
- [Postupy: vrácení výsledku dotazu LINQ jako specifického typu](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)  
+ [Postupy: Vrácení výsledku dotazu LINQ jako specifického typu](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)  
  [Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)

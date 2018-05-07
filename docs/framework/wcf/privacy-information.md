@@ -1,34 +1,22 @@
 ---
-title: "Windows Communication Foundation – informace o ochraně osobních údajů"
-ms.custom: 
+title: Windows Communication Foundation – informace o ochraně osobních údajů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, privacy information
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-caps.latest.revision: "34"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2d0172b91393e4e9e373a247c33be938a3160e14
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: e9c4130cd4680d4cd68ca8c6ba36c38b5d065f58
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
-Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Při vytváření aplikace pomocí [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], verze 3.0, vaše aplikace může mít vliv na vaši koncoví uživatelé o ochraně osobních údajů. Například aplikace může shromažďovat explicitně kontaktní informace o uživateli, nebo může požádat nebo poslat informace přes Internet na webové stránky. Pokud vložíte technologie společnosti Microsoft v aplikaci, že technologie může mít svůj vlastní chování, které by mohly ovlivnit ochranu osobních údajů. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]neodesílá žádné informace společnosti Microsoft z vaší aplikace Pokud jste nebo koncový uživatel se rozhodnete odeslat do us.  
+Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Když vytvoříte aplikaci pomocí Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaši koncoví uživatelé o ochraně osobních údajů. Například aplikace může shromažďovat explicitně kontaktní informace o uživateli, nebo může požádat nebo poslat informace přes Internet na webové stránky. Pokud vložíte technologie společnosti Microsoft v aplikaci, že technologie může mít svůj vlastní chování, které by mohly ovlivnit ochranu osobních údajů. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] neodesílá žádné informace společnosti Microsoft z vaší aplikace Pokud jste nebo koncový uživatel se rozhodnete odeslat do us.  
   
 ## <a name="wcf-in-brief"></a>WCF v Brief  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]distribuované zasílání zpráv rozhraní používá rozhraní Microsoft .NET Framework, která umožňuje vývojářům vytvářet distribuované aplikace. Přenášená mezi dvěma aplikacemi zprávy obsahují informace hlavičky a text.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] distribuované zasílání zpráv rozhraní používá rozhraní Microsoft .NET Framework, která umožňuje vývojářům vytvářet distribuované aplikace. Přenášená mezi dvěma aplikacemi zprávy obsahují informace hlavičky a text.  
   
  Záhlaví může obsahovat směrování zpráv, informace o zabezpečení, transakce a další v závislosti na služby, které aplikace používá. Ve výchozím nastavení jsou obvykle šifrované zprávy. Jedinou výjimkou je při použití `BasicHttpBinding`, který byl navržený pro použití s webovými službami-zabezpečené, starší verze. Jako návrháře aplikací jste zodpovědní za konečný návrh. Zprávy v těle protokolu SOAP obsahovat data, specifické pro aplikaci; však tato data, jako je například osobní informace definované aplikací, může být zabezpečené pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce šifrování nebo důvěrnosti. Následující části popisují funkce, které mohou mít vliv na ochranu osobních údajů.  
   
@@ -45,7 +33,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Hostování nevystavuje žádné konkrétní informace v síti a není jej ponechat data v počítači.  
   
 ## <a name="message-security"></a>Zabezpečení zpráv  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]funkce zabezpečení poskytuje funkce zabezpečení pro aplikace zasílání zpráv. Funkce zabezpečení poskytuje zahrnují ověřování a autorizace.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce zabezpečení poskytuje funkce zabezpečení pro aplikace zasílání zpráv. Funkce zabezpečení poskytuje zahrnují ověřování a autorizace.  
   
  Ověřování se provádí pomocí předání přihlašovacích údajů mezi klienty a služby. Ověřování může být buď prostřednictvím zabezpečení na úrovni přenosu nebo prostřednictvím protokolu SOAP zprávy úroveň zabezpečení, následujícím způsobem:  
   
@@ -58,7 +46,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
 |Data|Úložiště|  
 |----------|-------------|  
 |Přihlašovací údaje prezentace, například uživatelské jméno, certifikáty X.509, tokeny pomocí protokolu Kerberos a odkazy na přihlašovací údaje.|Standardní Windows pověření správu mechanismy, jako je Windows úložiště certifikátů.|  
-|Informace členství uživatele, například uživatelská jména a hesla.|[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]zprostředkovateli členství.|  
+|Informace členství uživatele, například uživatelská jména a hesla.|[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] zprostředkovateli členství.|  
 |Identity informace o službě, kterou používá k ověřování klientů.|Adresa koncového bodu služby.|  
 |Informace o subjektu volajícím.|V protokolech auditování.|  
   
@@ -84,7 +72,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Žádné osobní informace se uchovávají v počítači uživatele end.  
   
 ## <a name="queued-channels"></a>Kanály zařazených do fronty  
- Fronty ukládat zprávy z odesílající aplikací jménem přijímající aplikace a později předávat tyto zprávy do přijímající aplikace. Mohou pomoci při má přijímající aplikace je třeba přechodný zajišťování přenos zpráv z odesílání na přijímací aplikace. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]poskytuje podporu pro službu Řízení front pomocí Microsoft služby Řízení front zpráv (MSMQ) jako přenosového mechanismu.  
+ Fronty ukládat zprávy z odesílající aplikací jménem přijímající aplikace a později předávat tyto zprávy do přijímající aplikace. Mohou pomoci při má přijímající aplikace je třeba přechodný zajišťování přenos zpráv z odesílání na přijímací aplikace. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje podporu pro službu Řízení front pomocí Microsoft služby Řízení front zpráv (MSMQ) jako přenosového mechanismu.  
   
  Funkci ve frontě kanály nepřidá záhlaví zprávy. Místo toho se vytvoří zprávy služby Řízení front zpráv s příslušné služby Řízení front zpráv sady zpráv vlastnosti a volá metody služby Řízení front zpráv se umístí zprávy ve frontě služby Řízení front zpráv. Služba Řízení front zpráv je volitelná součást, která se dodává s verzí systému Windows.  
   
@@ -138,13 +126,13 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Klíče, které jsou odebrány:  
   
- \- For xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" and xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- Xmlns:wst = "http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns:wst = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  WSt:BinarySecret  
   
  WSt:Entropy  
   
- \- For xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" and xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -152,13 +140,13 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Potenciálně osobní údaje, které byly odstraněny:  
   
- \- For xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" and xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:username  
   
  wsse:BinarySecurityToken  
   
- \-Pro xmlns:saml = "urn: oasis: názvy: tc: SAML:1.0:assertion" položky tučným písmem (dole) jsou odebrány:  
+ \- Pro xmlns:saml = "urn: oasis: názvy: tc: SAML:1.0:assertion" položky tučným písmem (dole) jsou odebrány:  
   
  \<Kontrolní výraz  
   
@@ -166,7 +154,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  MinorVersion="1"  
   
- AssertionId="[ID]"  
+ AssertionId = "[ID]"  
   
  Vystavitel = "[řetězec]"  
   
@@ -174,15 +162,15 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  >  
   
- \<Conditions NotBefore="[dateTime]" NotOnOrAfter="[dateTime]">  
+ \<Podmínky neplatí před = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
   
- \<AudienceRestrictionCondition>  
+ \<AudienceRestrictionCondition >  
   
  \<Audience>[uri]\</Audience>+  
   
- \</AudienceRestrictionCondition>*  
+ \</ AudienceRestrictionCondition > *  
   
- \<DoNotCacheCondition />*  
+ \<DoNotCacheCondition / > *  
   
  <\!--abstraktní základní typ  
   
@@ -194,9 +182,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Rady, jak >  
   
- \<AssertionIDReference>[ID]\</AssertionIDReference>*  
+ \<AssertionIDReference > [ID]\</AssertionIDReference > *  
   
- \<Assertion>[assertion]\</Assertion>*  
+ \<Kontrolní výraz > [assertion]\</Assertion > *  
   
  [žádné] *  
   
@@ -232,7 +220,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \</ SubjectConfirmation >?  
   
- \</Subject>  
+ \</ Předmět >  
   
  \</ SubjectStatement > *  
   
@@ -274,15 +262,15 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Atribut  
   
- AttributeName="[string]"  
+ AttributeName = "[řetězec]"  
   
- AttributeNamespace="[uri]"  
+ AttributeNamespace = "[uri]"  
   
  >  
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</Attribute>+  
+ \</ Atribut > +  
   
  \</ AttributeStatement > *  
   
@@ -290,7 +278,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Prostředek = "[uri]"  
   
- Decision="[Permit&#124;Deny&#124;Indeterminate]"  
+ Rozhodnutí = "[Povolit&#124;Odepřít&#124;neurčitém]"  
   
  >  
   
@@ -298,17 +286,17 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Akce Namespace = "[uri]" > [řetězec]\</Action > +  
   
- \<Evidence>  
+ \<Důkaz >  
   
- \<AssertionIDReference>[ID]\</AssertionIDReference>+  
+ \<AssertionIDReference > [ID]\</AssertionIDReference > +  
   
- \<Assertion>[assertion]\</Assertion>+  
+ \<Kontrolní výraz > [assertion]\</Assertion > +  
   
  \</ Důkazy >?  
   
  \</ AuthorizationDecisionStatement > *  
   
- \</Assertion>  
+ \</ Kontrolní výraz >  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informace z těla zprávy odstraněny, až protokolování dešifrovat nebo bez šifrování zprávy  
  Jak už bylo popsáno, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče a známé potenciálně osobní informace ze záhlaví zprávy zprávy zaznamenané dešifrovat nebo bez šifrování. Kromě toho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče a známé potenciálně osobní údaje z těla zprávy pro prvky těla a akce v následujícím seznamu, které popisují zabezpečení zprávy, které jsou zahrnuté v výměny klíčů.  
@@ -319,7 +307,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Pro tyto elementy textu, které zahrnují výměny klíčů jsou odebrány informace:  
   
- wst:RequestSecurityToken  
+ WSt:RequestSecurityToken  
   
  WSt:RequestSecurityTokenResponse  
   
@@ -368,7 +356,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  http://schemas.xmlsoap.org/ws/2004/04/security/trust/RSTR/SCT-Amend  
   
 #### <a name="no-information-is-removed-from-application-specific-headers-and-body-data"></a>Žádné informace se odebere z hlavičky specifické pro aplikace a Data textu  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]nesleduje osobní informace hlavičky specifické pro aplikaci (například řetězce dotazu) nebo text data (například číslo platební karty).  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nesleduje osobní informace hlavičky specifické pro aplikaci (například řetězce dotazu) nebo text data (například číslo platební karty).  
   
  Pokud protokolování zpráv je zapnutý, může být osobní údaje v hlavičkách konkrétní aplikace a tělo informace viditelné v protokolech. Nástroje pro nasazení aplikace znovu, zodpovídá za nastavení seznamy ACL v souborech konfigurace a protokolu. Si můžete také vypnout protokolování Pokud nechce tyto informace mají být zobrazeny, nebo mu může vyfiltrovat tyto informace ze souborů protokolu, po je protokolována.  
   
@@ -383,14 +371,14 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Pro obě zprávy protokolování a trasování naslouchací proces vlastního trasování je možné nakonfigurovat, které může poslat trasování a zprávy v drátové síti (například ke vzdálené databázi). Nástroje pro nasazení aplikace je zodpovědná za konfiguraci vlastní naslouchací procesy nebo uživatelům umožníte tak. Také je odpovědný žádné osobní údaje, které jsou zveřejněné ve vzdáleném umístění a správně použití seznamů řízení přístupu do tohoto umístění.  
   
 ### <a name="other-features-for-it-professionals"></a>Další funkce pro IT specialisty  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]má poskytovatel rozhraní WMI, který zveřejňuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] informace o konfiguraci infrastruktury prostřednictvím rozhraní WMI (dodávané se systémem Windows). Ve výchozím nastavení je k dispozici správcům rozhraní WMI.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] má poskytovatel rozhraní WMI, který zveřejňuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] informace o konfiguraci infrastruktury prostřednictvím rozhraní WMI (dodávané se systémem Windows). Ve výchozím nastavení je k dispozici správcům rozhraní WMI.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]konfigurace používá mechanismus konfigurace rozhraní .NET Framework. Konfigurační soubory, které jsou uložené na počítači. Vývojář aplikace a správce vytvořit konfigurační soubory a seznamu ACL pro všechny požadavky na aplikace. Konfigurační soubor může obsahovat adresy koncových bodů a odkazy na certifikáty v úložišti certifikátů. Certifikáty slouží k poskytování data aplikací můžete nakonfigurovat různé vlastnosti funkce, které používá aplikaci.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurace používá mechanismus konfigurace rozhraní .NET Framework. Konfigurační soubory, které jsou uložené na počítači. Vývojář aplikace a správce vytvořit konfigurační soubory a seznamu ACL pro všechny požadavky na aplikace. Konfigurační soubor může obsahovat adresy koncových bodů a odkazy na certifikáty v úložišti certifikátů. Certifikáty slouží k poskytování data aplikací můžete nakonfigurovat různé vlastnosti funkce, které používá aplikaci.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]také používá funkci rozhraní .NET Framework proces výpisu voláním <xref:System.Environment.FailFast%2A> metoda.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] také používá funkci rozhraní .NET Framework proces výpisu voláním <xref:System.Environment.FailFast%2A> metoda.  
   
 ### <a name="it-pro-tools"></a>IT specialista nástroje  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]také poskytuje následující IT odborníky v oblasti nástroje, které se dodávají v sadě Windows SDK.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] také poskytuje následující IT odborníky v oblasti nástroje, které se dodávají v sadě Windows SDK.  
   
 #### <a name="svctraceviewerexe"></a>SvcTraceViewer.exe  
  Prohlížeč zobrazí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasovací soubory. Prohlížeč zobrazí, ať informací obsažených v trasování.  

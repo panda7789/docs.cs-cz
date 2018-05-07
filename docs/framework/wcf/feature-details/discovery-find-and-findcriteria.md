@@ -1,26 +1,12 @@
 ---
 title: Hledání zjišťování a kritéria hledání
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 17ca5e12390e33525f0223917e4c72556a2a2ec7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 70739647ac5904159b71121e86aa98e92981d4ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 Operaci hledání zjišťování se spouští pomocí klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce v zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným WS-Discovery ProbeMatch zprávy odpovědi. Další informace o zprávách zjišťování najdete v tématu [specifikaci WS-Discovery](http://go.microsoft.com/fwlink/?LinkID=122347).  
@@ -33,7 +19,7 @@ Operaci hledání zjišťování se spouští pomocí klienta ke zjištění jed
   
  Kritéria vyhledávání patří:  
   
--   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> -Volitelné. Název kontraktu služby vyhledána a kritéria obvykle používaných při hledání služby. Pokud je zadán více než jeden název kontraktu, odpovědět pouze koncové body služby odpovídající všechny smlouvy. Všimněte si, že v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod podporuje pouze jeden kontrakt.  
+-   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> -Volitelné. Název kontraktu služby vyhledána a kritéria obvykle používaných při hledání služby. Pokud je zadán více než jeden název kontraktu, odpovědět pouze koncové body služby odpovídající všechny smlouvy. Všimněte si, že ve službě WCF koncový bod podporuje pouze jeden kontrakt.  
   
 -   <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> -Volitelné. Obory jsou absolutní identifikátory URI, který slouží ke kategorizaci koncových bodů jednotlivých služeb. Můžete použít ve scénářích, kde několik koncových bodů vystavit stejné smlouvy a chcete způsob, jak hledat pro podmnožinu koncových bodů. Pokud je zadán více než jednoho oboru, odpovědět pouze koncové body služby odpovídající všechny obory.  
   

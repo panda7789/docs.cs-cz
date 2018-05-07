@@ -2,10 +2,6 @@
 title: Get – funkce (referenční dokumentace nespravovaného rozhraní API)
 description: Funkce Get načte zadanou hodnotu vlastnosti.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - Get
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 69312030689ab1b87e3aadd040395f06e1c94ac8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2f837a526879f80177bc9979e1d7671edfcd8d4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-function"></a>Get – funkce
 Pokud existuje, načte zadanou hodnotu vlastnosti.
@@ -59,13 +52,13 @@ HRESULT Get (
 `wszName`  
 [v] Název vlastnosti.
 
-`lFlags`[v] Vyhrazena. Tento parametr musí být 0.
+`lFlags` [v] Vyhrazena. Tento parametr musí být 0.
 
-`pVal`[out] Pokud funkce vrátí úspěšně, obsahuje hodnotu `wszName` vlastnost. `pval` Argument je přiřazen správný typ a hodnotu pro kvalifikátor.
+`pVal` [out] Pokud funkce vrátí úspěšně, obsahuje hodnotu `wszName` vlastnost. `pval` Argument je přiřazen správný typ a hodnotu pro kvalifikátor.
 
-`pvtType`[out] Pokud funkce vrátí úspěšně, obsahuje [typ modelu CIM konstanta](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) určující typ vlastnosti. Jeho hodnota může být také `null`. 
+`pvtType` [out] Pokud funkce vrátí úspěšně, obsahuje [typ modelu CIM konstanta](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) určující typ vlastnosti. Jeho hodnota může být také `null`. 
 
-`plFlavor`[out] Pokud funkce vrátí úspěšně, obdrží informace o zdroji vlastnosti. Jeho hodnota může být `null`, nebo jeden z následujících WBEM_FLAVOR_TYPE konstanty definované v *WbemCli.h* hlavičkový soubor: 
+`plFlavor` [out] Pokud funkce vrátí úspěšně, obdrží informace o zdroji vlastnosti. Jeho hodnota může být `null`, nebo jeden z následujících WBEM_FLAVOR_TYPE konstanty definované v *WbemCli.h* hlavičkový soubor: 
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -98,7 +91,7 @@ Tato funkce zabalí volání [IWbemClassObject::Get](https://msdn.microsoft.com/
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

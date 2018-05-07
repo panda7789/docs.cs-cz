@@ -1,13 +1,6 @@
 ---
 title: Anonymní typy (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.AnonymousType
 helpviewer_keywords:
@@ -15,14 +8,11 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-caps.latest.revision: 46
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 530e21e1595f9bbc3436280418287413e2a48111
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 451fe45c9b5efbeb64b1066d6ba8e5f9b27300c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="anonymous-types-visual-basic"></a>Anonymní typy (Visual Basic)
 Visual Basic podporuje anonymní typy, které vám umožní vytvořit objekty bez nutnosti psaní definice třídy pro datový typ. Kompilátor místo, vygeneruje třídu pro vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které zadáte v deklarace objektu. Protože není určen název typu dat, se odkazuje jako *anonymního typu*.  
@@ -95,11 +85,11 @@ Visual Basic podporuje anonymní typy, které vám umožní vytvořit objekty be
 ## <a name="anonymous-types-from-query-expressions"></a>Anonymní typy z výrazy dotazů  
  Výrazy dotazů vždy nevyžadují vytvoření anonymní typy. Pokud je to možné, používají existující typ pro uložení dat sloupců. K tomu dochází, pokud dotaz vrátí buď celý záznamy ze zdroje dat, nebo pouze jedno pole z každý záznam. Následující příklady kódu `customers` je kolekce objektů `Customer` třídy. Třída má mnoho vlastností a nejméně jeden z nich můžete zahrnout do výsledku dotazu v libovolném pořadí. V první dva příklady jsou vyžadovány žádné anonymní typy, protože dotazy vybrat elementy typů s názvem:  
   
--   `custs1`obsahuje kolekci řetězce, protože `cust.Name` je řetězec.  
+-   `custs1` obsahuje kolekci řetězce, protože `cust.Name` je řetězec.  
   
      [!code-vb[VbVbalrAnonymousTypes#30](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_9.vb)]  
   
--   `custs2`obsahuje kolekci `Customer` objekty, protože každý element `customers` je `Customer` objektu a celého elementu je vybrána v dotazu.  
+-   `custs2` obsahuje kolekci `Customer` objekty, protože každý element `customers` je `Customer` objektu a celého elementu je vybrána v dotazu.  
   
      [!code-vb[VbVbalrAnonymousTypes#31](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_10.vb)]  
   
@@ -136,9 +126,9 @@ Visual Basic podporuje anonymní typy, které vám umožní vytvořit objekty be
  Další informace o kódu vytvořené kompilátor a funkci přepsaného metod najdete v tématu [anonymní definice typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Postupy: odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
- [Definice autonomního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)  
- [Klíč](../../../../visual-basic/language-reference/modifiers/key.md)
+ [Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
+ [Definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)  
+ [Key](../../../../visual-basic/language-reference/modifiers/key.md)

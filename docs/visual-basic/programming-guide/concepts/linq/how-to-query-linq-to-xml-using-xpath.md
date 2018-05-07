@@ -1,22 +1,12 @@
 ---
-title: "Postupy: dotazování technologie LINQ to XML s použitím XPath (Visual Basic)"
-ms.custom: 
+title: 'Postupy: dotazování technologie LINQ to XML s použitím XPath (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e1f69a20-1efa-452d-9089-c472fa84b3d5
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 97f885a76a79832b06f2f5d4a270d418bf244cb2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d8f23bd8417c3f59377e5e677b08e403ecc1122d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-query-linq-to-xml-using-xpath-visual-basic"></a>Postupy: dotazování technologie LINQ to XML s použitím XPath (Visual Basic)
 Toto téma představuje rozšiřující metody, které vám umožní zadat dotaz strom XML s použitím XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  

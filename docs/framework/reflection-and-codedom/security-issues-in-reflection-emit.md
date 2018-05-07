@@ -1,13 +1,6 @@
 ---
-title: "Bezpečnostní problémy v generování reflexe"
-ms.custom: 
+title: Bezpečnostní problémy v generování reflexe
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - partially trusted code
 - emitting dynamic assemblies, security
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2319ab244b2c2a296966692342df1f4967b85729
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 57db77b64ddcbe282fed035b52bb122901383ca4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje tři způsoby, jak emitování Microsoft mezilehlé jazyk MSIL, každou s vlastním problémy se zabezpečením:  
@@ -153,7 +143,7 @@ ms.lasthandoff: 12/22/2017
  Od verze [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při Emitování dynamických sestavení a dynamických metod. Tento příznak je vyžadována ve starších verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
   
 > [!NOTE]
->  <xref:System.Security.Permissions.ReflectionPermission>s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení v `FullTrust` a `LocalIntranet` nastaví oprávnění, ale ne v `Internet` sadu oprávnění. Proto v dřívějších verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], knihovny lze použít s Internet oprávnění jenom v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadovat kontrolu pozor, zabezpečení, protože chyby kódování může mít za následek celistvosti. [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] Umožňuje kód pro vypuštění ve scénářích s částečnou důvěryhodností bez vydání všechny požadavky na zabezpečení, protože generování kódu není ze své podstaty privilegovaného operace. To znamená že generovaný kód má žádná další oprávnění než sestavení, který vysílá ho. To umožňuje knihovny, které emitování kódu být transparentní pro zabezpečení a eliminuje nutnost assert <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje zápisu knihovnu zabezpečení.  
+>  <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení v `FullTrust` a `LocalIntranet` nastaví oprávnění, ale ne v `Internet` sadu oprávnění. Proto v dřívějších verzích [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], knihovny lze použít s Internet oprávnění jenom v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadovat kontrolu pozor, zabezpečení, protože chyby kódování může mít za následek celistvosti. [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] Umožňuje kód pro vypuštění ve scénářích s částečnou důvěryhodností bez vydání všechny požadavky na zabezpečení, protože generování kódu není ze své podstaty privilegovaného operace. To znamená že generovaný kód má žádná další oprávnění než sestavení, který vysílá ho. To umožňuje knihovny, které emitování kódu být transparentní pro zabezpečení a eliminuje nutnost assert <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje zápisu knihovnu zabezpečení.  
   
  Kromě toho [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k neveřejní typy a členy z částečně důvěryhodného dynamických metod. Starší verze [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přístup k neveřejní typy a členy; jde o oprávnění, které se nikdy udělení částečně důvěryhodným kódem.  
   

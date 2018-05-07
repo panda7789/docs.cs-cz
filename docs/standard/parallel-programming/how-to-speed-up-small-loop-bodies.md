@@ -1,31 +1,20 @@
 ---
 title: 'Postupy: Zrychlení malých smyček'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel loops, how to speed up
 ms.assetid: c7a66677-cb59-4cbf-969a-d2e8fc61a6ce
-caps.latest.revision: 18
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 856c2a60150cb7a376afb291e6806d7fc91f3d2b
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: bff41416dd2263c185cc94de045b2c8a26ea194d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-speed-up-small-loop-bodies"></a>Postupy: Zrychlení malých smyček
 Když <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> smyčky má malé tělo, jako například může pomaleji než ekvivalentní sekvenční smyčka, proveďte [pro](~/docs/csharp/language-reference/keywords/for.md) smyčky v jazyce C# a [pro](http://msdn.microsoft.com/library/c470a263-9b49-4308-8fd6-8592b84a7980) v jazyce Visual Basic. Pomalejší výkon je způsobená režie spojená s dělení dat a náklady na vyvolání delegáta na každé iteraci smyčky. Chcete-li vyřešit takových scénářů <xref:System.Collections.Concurrent.Partitioner> třída poskytuje <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> metoda, která umožňuje poskytovat sekvenční smyčka pro tělo delegáta, tak, aby delegáta je jenom jednou vyvolána na oddíl, namísto jednou za iteraci. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  

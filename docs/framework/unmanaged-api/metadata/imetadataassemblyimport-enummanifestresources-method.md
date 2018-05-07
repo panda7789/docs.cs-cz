@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataAssemblyImport::EnumManifestResources – metoda"
-ms.custom: 
+title: IMetaDataAssemblyImport::EnumManifestResources – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataAssemblyImport.EnumManifestResources
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9543b111-5705-40c9-935c-a3ffc7a581aa
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fa31441d060744bb17fc26a61daa7e655aa378fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 707e482a6952ee1266950dc181fbc85e5d6ef398
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataassemblyimportenummanifestresources-method"></a>IMetaDataAssemblyImport::EnumManifestResources – metoda
 Získá ukazatel na enumerátor pro prostředky v aktuální manifest sestavení odkazuje.  
@@ -66,7 +54,7 @@ HRESULT EnumManifestResources (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumManifestResources`úspěšně vrácena.|  
+|`S_OK`|`EnumManifestResources` úspěšně vrácena.|  
 |`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nastaven na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -76,7 +64,7 @@ HRESULT EnumManifestResources (
   
  **Knihovna:** používat jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

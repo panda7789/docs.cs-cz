@@ -1,13 +1,7 @@
 ---
-title: "Klíčové koncepty zabezpečení"
-ms.custom: 
+title: Klíčové koncepty zabezpečení
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - permissions [.NET Framework]
 - security [.NET Framework], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-caps.latest.revision: "22"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8e11e22d98954d9656357e11fbb4ca94ad673659
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c483baeca9efcbc4a38020a7b2f4fa221a6b4028
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="key-security-concepts"></a>Klíčové koncepty zabezpečení
 Rozhraní Microsoft .NET Framework nabízí na základě rolí zabezpečení pomohou adresu zabezpečení se o mobilního kódu a poskytovat podporu, která umožňuje součásti, které chcete zjistit, co uživatelé jsou oprávněni provést.  

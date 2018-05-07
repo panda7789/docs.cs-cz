@@ -1,31 +1,20 @@
 ---
-title: "Vlastní dělicí metody pro PLINQ a TPL"
-ms.custom: 
+title: Vlastní dělicí metody pro PLINQ a TPL
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, partitioners
 ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: bc409a528dd095d3defb0026a48430b10a3ba6f3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0868ce76f82ed0575154744d9ab02814a0bd990a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Vlastní dělicí metody pro PLINQ a TPL
 Učinit paralelní operace pro zdroj dat, jedním z nezbytné kroky je *oddílu* zdroje do více oddílů, které dostanete souběžně několik vláken. PLINQ a Task Parallel Library (TPL) zadejte výchozí dělicí metody, které fungují transparentně při psaní paralelního dotazu nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky. Pro pokročilejší scénáře můžete zařadit vlastní dělicí metody.  
@@ -97,10 +86,10 @@ Učinit paralelní operace pro zdroj dat, jedním z nezbytné kroky je *oddílu*
 |----------------------|-------------------------------------------|----------------------------------------|-----------------|  
 |<xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A>|Používá rozsah dělení|Vytváření oddílů datových dávek používá optimalizované pro seznamy pro partitionCount zadaný|Vytváření oddílů datových dávek používá vytvořením statické počet oddílů.|  
 |<xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A?displayProperty=nameWithType>|Výjimka vyvolává není podporována|Vytváření oddílů datových dávek používá optimalizované pro seznamy a dynamických oddílů|Vytváření oddílů datových dávek používá vytvořením dynamické počet oddílů.|  
-|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedInEachPartition%2A>|Vrátí`true`|Vrátí`true`|Vrátí`true`|  
-|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedAcrossPartitions%2A>|Vrátí`true`|Vrátí`false`|Vrátí`false`|  
-|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysNormalized%2A>|Vrátí`true`|Vrátí`true`|Vrátí`true`|  
-|<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>|Vrátí`false`|Vrátí`true`|Vrátí`true`|  
+|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedInEachPartition%2A>|Vrátí `true`|Vrátí `true`|Vrátí `true`|  
+|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysOrderedAcrossPartitions%2A>|Vrátí `true`|Vrátí `false`|Vrátí `false`|  
+|<xref:System.Collections.Concurrent.OrderablePartitioner%601.KeysNormalized%2A>|Vrátí `true`|Vrátí `true`|Vrátí `true`|  
+|<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>|Vrátí `false`|Vrátí `true`|Vrátí `true`|  
   
 ### <a name="dynamic-partitions"></a>Dynamických oddílů  
  Pokud máte v úmyslu dělicí metody pro použití v <xref:System.Threading.Tasks.Parallel.ForEach%2A> metodu, musí být moct vrátit dynamické počet oddílů. To znamená, že dělicí metody můžete zadat enumerátor pro nový oddíl na vyžádání v průběhu provádění smyčky. V podstatě vždy, když smyčky přidá nové paralelní úlohy, vyžádá nový oddíl pro tuto úlohu. Pokud budete potřebovat data, která mají být CR, pak odvozena od <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> tak, aby každá položka v každém oddílu je přiřazen jedinečný index.  
@@ -112,7 +101,7 @@ Učinit paralelní operace pro zdroj dat, jedním z nezbytné kroky je *oddílu*
   
 -   Pokud <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> je názvem s parametrem 0 nebo menší pro `partitionsCount`, throw <xref:System.ArgumentOutOfRangeException>. I když PLINQ a TPL se nikdy předat `partitionCount` rovná 0, přesto doporučujeme vám ochrany proti možnosti.  
   
--   <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A>a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> musí vracet vždycky `partitionsCount` počet oddílů. Pokud dělicí metody dojde data a nelze vytvořit libovolný počet oddílů, jak si vyžádal, metoda by měla vrátit enumerátor prázdná pro každý zbývající oddílů. Jinak vyvolá výjimku PLINQ a TPL <xref:System.InvalidOperationException>.  
+-   <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A> a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A> musí vracet vždycky `partitionsCount` počet oddílů. Pokud dělicí metody dojde data a nelze vytvořit libovolný počet oddílů, jak si vyžádal, metoda by měla vrátit enumerátor prázdná pro každý zbývající oddílů. Jinak vyvolá výjimku PLINQ a TPL <xref:System.InvalidOperationException>.  
   
 -   <xref:System.Collections.Concurrent.Partitioner%601.GetPartitions%2A>, <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderablePartitions%2A>, <xref:System.Collections.Concurrent.Partitioner%601.GetDynamicPartitions%2A>, a <xref:System.Collections.Concurrent.OrderablePartitioner%601.GetOrderableDynamicPartitions%2A> by měla vrátit nikdy `null` (`Nothing` v jazyce Visual Basic). Pokud tomu tak je, PLINQ / vyvolá TPL <xref:System.InvalidOperationException>.  
   

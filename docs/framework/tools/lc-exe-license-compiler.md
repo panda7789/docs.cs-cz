@@ -1,13 +1,6 @@
 ---
-title: "Lc.exe (kompilátor licencí)"
-ms.custom: 
+title: Lc.exe (kompilátor licencí)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Lc.exe
 - .licx file
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2e890ff68967d04d5c0f487508c9ce559f377e56
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c5a8b38e819c323a06faad2edba586cb18d26edc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (kompilátor licencí)
 License Compiler čte textové soubory, které obsahují licenční informace a vytváří binární soubor, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
@@ -52,13 +40,13 @@ License Compiler čte textové soubory, které obsahují licenční informace a 
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/complist:** *filename*|Určuje název souboru, který obsahuje seznam licencovaných součástí, jež chcete zahrnout do souboru .licenses. Jednotlivé komponenty se odkazují pomocí úplného názvu, vždy pouze jedna komponenta na řádek.<br /><br /> Uživatelé příkazového řádku mohou určit samostatný soubor pro každý formulář v projektu. Lc.exe akceptuje více vstupních souborů a vytváří jeden soubor .licenses.|  
-|**/h**[**nápovědu**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**i:** *modulu*|Určuje modulů, které obsahují součástí uvedených v **/complist** souboru. Chcete-li zadat více než jeden modul, použijte více **/i** příznaky.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**Company:** *cesta*|Určuje adresář, do kterého má být umístěn výstupní soubor .licenses.|  
 |**/ target:** *targetPE*|Určuje spustitelný soubor, pro který je generován soubor .licenses.|  
 |**/v**|Určuje režim podrobného vypisování; zobrazuje informace o průběhu kompilace.|  
-|**@***souboru*|Určuje soubor odpovědi (.rsp).|  
+|**@** *Soubor*|Určuje soubor odpovědi (.rsp).|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="example"></a>Příklad  

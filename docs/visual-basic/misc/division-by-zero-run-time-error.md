@@ -1,21 +1,14 @@
 ---
-title: "Chyba dělení nulou (Visual Basic Runtime)"
+title: Chyba dělení nulou (Visual Basic Runtime)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID11
 ms.assetid: 5b9bc5d6-792e-48bc-a974-012e07ad95f3
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ff247ce7d157d87f3776679c8d05f4cd08c45023
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 105a607a7b7bf6b6d3824d80f902a2f82ebe9607
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="division-by-zero-visual-basic-run-time-error"></a>Chyba dělení nulou (Visual Basic Runtime)
 Výraz, který používá jako dělitel má nulovou hodnotu.  

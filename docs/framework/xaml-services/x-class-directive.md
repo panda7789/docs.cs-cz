@@ -1,13 +1,6 @@
 ---
-title: "x:Class – direktiva"
-ms.custom: 
+title: x:Class – direktiva
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - x:Class
 - xClass
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Class attribute
 - x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-caps.latest.revision: "27"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b894a56caa3644bae140e7ec37cf5b55ab093a59
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7e6a2379640d2556b553d14d20398a0a14931393
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xclass-directive"></a>x:Class – direktiva
 Nakonfiguruje kompilace kódu XAML pro připojení částečné třídy mezi značek a kódu. Třídu kódu je definována v samostatném souboru kódu v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] jazyka, zatímco třídu kód se obvykle vytvoří pomocí generování kódu během kompilace XAML.  
@@ -47,12 +35,12 @@ Nakonfiguruje kompilace kódu XAML pro připojení částečné třídy mezi zna
 |`classname`|Požadováno. Určuje, [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] názvem částečné třídy, která se připojuje načíst XAML a vaše kódu pro tento jazyk XAML.|  
   
 ## <a name="dependencies"></a>Závislosti  
- `x:Class`lze zadat pouze v kořenovém elementu provozních XAML. `x:Class`je neplatný na libovolný objekt, který má nadřazený prvek v produkčním prostředí XAML. Další informace najdete v tématu [ \[MS-XAML\] části 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
+ `x:Class` lze zadat pouze v kořenovém elementu provozních XAML. `x:Class` je neplatný na libovolný objekt, který má nadřazený prvek v produkčním prostředí XAML. Další informace najdete v tématu [ \[MS-XAML\] části 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ## <a name="remarks"></a>Poznámky  
  `namespace` Hodnota může obsahovat další tečky uspořádat související obory názvů do názvu hierarchií, což je běžný postup při programování pro rozhraní .NET Framework. Pouze poslední tečky v řetězec `x:Class` hodnoty interpretována k oddělení `namespace` a `classname.` třídu, která se používá jako `x:Class` nemůže být vnořená třída. Vnořené třídy nejsou povoleny, protože určení význam teček pro `x:Class` řetězce je nejednoznačné, pokud jsou povolena vnořené třídy.  
   
- Ve stávající programovací modely, které používají `x:Class`, `x:Class` je v tom smyslu, že je zcela platné tak, aby měl stránky XAML, který nemá žádné kódu volitelné. Tuto funkci však komunikuje s akcemi sestavení jak je implementované rozhraní, které používají XAML. `x:Class`funkce je ovlivněny také role, že různé klasifikace zadaný XAML obsahu ve model aplikace a v příslušné akce sestavení. Pokud vaše XAML deklaruje atribut zpracování událostí hodnoty nebo vytvoří vlastní elementy, kde definující třídy jsou ve třídě kódu, je nutné zadat `x:Class` direktivy odkaz (nebo [x: Subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)) do příslušná třída pro kódu.  
+ Ve stávající programovací modely, které používají `x:Class`, `x:Class` je v tom smyslu, že je zcela platné tak, aby měl stránky XAML, který nemá žádné kódu volitelné. Tuto funkci však komunikuje s akcemi sestavení jak je implementované rozhraní, které používají XAML. `x:Class` funkce je ovlivněny také role, že různé klasifikace zadaný XAML obsahu ve model aplikace a v příslušné akce sestavení. Pokud vaše XAML deklaruje atribut zpracování událostí hodnoty nebo vytvoří vlastní elementy, kde definující třídy jsou ve třídě kódu, je nutné zadat `x:Class` direktivy odkaz (nebo [x: Subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)) do příslušná třída pro kódu.  
   
  Hodnota `x:Class` – direktiva musí být řetězec, který určuje plně kvalifikovaný název třídy, ale bez jakýchkoli informací sestavení (ekvivalentní <xref:System.Type.FullName%2A?displayProperty=nameWithType>). Pro jednoduché aplikace můžete vynechat údaje obor názvů CLR, pokud jsou kódu je také strukturovaná této způsobem (kód definice se zahájí na úrovni třídy).  
   
@@ -69,7 +57,7 @@ Nakonfiguruje kompilace kódu XAML pro připojení částečné třídy mezi zna
  Pro Windows Workflow Foundation `x:Class` názvy třídu vlastní aktivita tvoří zcela v jazyce XAML, nebo názvy třídu stránky XAML pro Návrhář aktivity s kódem v pozadí.  
   
 ## <a name="silverlight-usage-notes"></a>Poznámky pro použití programu Silverlight  
- `x:Class`pro Silverlight je popsána samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081).  
+ `x:Class` pro Silverlight je popsána samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081).  
   
 ## <a name="see-also"></a>Viz také  
  [x:Subclass – direktiva](../../../docs/framework/xaml-services/x-subclass-directive.md)  

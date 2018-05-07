@@ -1,28 +1,14 @@
 ---
-title: "Vstup z myši ve formulářové aplikaci Windows"
-ms.custom: 
+title: Vstup z myši ve formulářové aplikaci Windows
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, mouse input
 ms.assetid: 743c2f3c-219e-4a52-b6b8-2657096a2da6
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 56b267222f8e22d9d411d744f67d93cde6ba17a2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7b318bc40892d38a942e4a1048b0d9c16da813dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mouse-input-in-a-windows-forms-application"></a>Vstup z myši ve formulářové aplikaci Windows
 Windows Forms zahrnuje celou řadu událostí myši a další podporu ukazatele myši přizpůsobené, zachycení myši a přetažení myší chování.  

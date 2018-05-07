@@ -1,26 +1,12 @@
 ---
-title: "Směrování – úvod"
-ms.custom: 
+title: Směrování – úvod
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e0fe14f096ae0914235ea1d23b874f0aea906d9d
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 3ee7ea8271df47354a0897434bf8f203eaf09a51
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Poskytuje službu Směrování obecné modulární SOAP zprostředkující umožňující směrování zpráv na základě obsahu zprávy. Se službou směrování můžete vytvořit komplexní směrování logiku, která umožňuje implementovat scénáře, jako je služba agregace, verze služby, s prioritou směrování a směrování vícesměrového vysílání. Směrovací služby obsahuje také chyba zpracování, které umožňuje nastavit seznam zálohování koncových bodů, ke kterému jsou zprávy odesílány, pokud dojde k chybě při odesílání na cílové primární koncový bod.  
@@ -111,7 +97,7 @@ serviceHost.Description.Behaviors.Add(
      new RoutingBehavior(rc));  
 ```  
   
- Tento příklad konfiguruje službu Směrování a vystavit jeden koncový bod s adresou "http://localhost: 8000/routingservice/směrovače", který se používá pro příjem zpráv k odeslání. Protože zprávy jsou směrovány do koncových bodů požadavku a odpovědi, koncový bod služby používá <xref:System.ServiceModel.Routing.IRequestReplyRouter> kontrakt. Tato konfigurace také definuje koncový bod jednoho klienta "http://localhost: 8000/servicemodelsample nebo služby", jsou směrovány zprávy. Tabulka filtru (není vidět) s názvem "routingTable1" obsahuje směrování logikou používanou pro směrování zpráv a je přidružen koncový bod služby pomocí **RoutingBehavior** (pro konfigurační soubor) nebo  **RoutingConfiguration** (pro Programová konfigurace).  
+ Tento příklad konfiguruje službu Směrování a vystavit jeden koncový bod s adresou "http://localhost:8000/routingservice/router", který se používá pro příjem zpráv k odeslání. Protože zprávy jsou směrovány do koncových bodů požadavku a odpovědi, koncový bod služby používá <xref:System.ServiceModel.Routing.IRequestReplyRouter> kontrakt. Tato konfigurace také definuje koncový bod jednoho klienta "http://localhost:8000/servicemodelsample/service", jsou směrovány zprávy. Tabulka filtru (není vidět) s názvem "routingTable1" obsahuje směrování logikou používanou pro směrování zpráv a je přidružen koncový bod služby pomocí **RoutingBehavior** (pro konfigurační soubor) nebo  **RoutingConfiguration** (pro Programová konfigurace).  
   
 ### <a name="routing-logic"></a>Směrování logiky  
  K definování směrování logikou používanou pro směrování zpráv, je třeba určit, jaké data obsažená v příchozí zprávy můžou jednoznačně reagovali na ni. Například pokud všechny cílové koncové body, které jsou směrování sdílet stejné akce SOAP, hodnota akce obsažené v zpráva není vhodný indikátor které konkrétní koncového bodu zpráva by měl směrovat na. Pokud pro jeden konkrétní koncový bod musí jednoznačně směrování zpráv, by měl filtrovat na datech, která jednoznačně identifikuje cílového koncového bodu, který je zpráva směrována na.  
@@ -165,7 +151,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
 > [!NOTE]
 >  Ve výchozím nastavení vyhodnotí směrovací služby pouze záhlaví zprávy. Chcete-li povolit filtry pro přístup k textu zprávy, musíte nastavit <xref:System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly%2A> k `false`.  
   
- **Multicast**  
+ **Vícesměrové vysílání**  
   
  Při mnoho konfigurace směrování služby používat výhradní filtru logiky, která směrování zpráv do pouze jeden konkrétní koncový bod, můžete směrovat danou zprávou více cílové koncové body. Pro vícesměrové vysílání zprávu pro více cílů musí být splněné následující podmínky:  
   
@@ -173,7 +159,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
   
 -   Více filtrů musí vracet `true` při vyhodnocování zprávy.  
   
- Pokud jsou tyto podmínky splněny, zpráva se směruje na všechny koncové body všechny filtry, která se vyhodnotí jako `true`. V následujícím příkladu definuje konfigurace směrování, jejímž výsledkem zprávy směrovány do obou koncových bodů, pokud je adresa koncového bodu ve zprávě http://localhost: 8000/routingservice/směrovače nebo zaokrouhlení.  
+ Pokud jsou tyto podmínky splněny, zpráva se směruje na všechny koncové body všechny filtry, která se vyhodnotí jako `true`. V následujícím příkladu definuje konfigurace směrování, jejímž výsledkem zprávy směrovány do obou koncových bodů, pokud je adresa koncového bodu ve zprávě http://localhost:8000/routingservice/router/rounding.  
   
 ```xml  
 <!--ROUTING SECTION -->  

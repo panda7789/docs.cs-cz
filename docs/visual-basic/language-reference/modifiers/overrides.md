@@ -1,10 +1,6 @@
 ---
 title: Overrides (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - Overrides
 - vb.Overrides
@@ -17,14 +13,11 @@ helpviewer_keywords:
 - overriding, Overrides keyword
 - properties [Visual Basic], overriding
 ms.assetid: 9f5e6144-ce10-465e-842b-1a8f8760af90
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1bee6a6235b87a7e20f087a73bef76e0fc7bf124
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 81118b9e97f320bffdbb58e5e1a2859052c4cee5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overrides-visual-basic"></a>Overrides (Visual Basic)
 Určuje, že vlastnost nebo postup přepisuje stejně jako s názvem vlastnosti nebo postup zděděn ze základní třídy.  
@@ -61,11 +54,11 @@ Určuje, že vlastnost nebo postup přepisuje stejně jako s názvem vlastnosti 
   
  `Overrides` Modifikátor lze použít v těchto kontexty:  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
  [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  

@@ -1,25 +1,15 @@
 ---
-title: "Postupy: Načtení XML ze souboru, řetězce nebo proudu (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Načtení XML ze souboru, řetězce nebo proudu (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XML [Visual Basic], loading
 - LINQ to XML [Visual Basic], loading XML from files
 ms.assetid: 2b02dcec-4cca-4575-b4ad-89ceb87b984c
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 572e34b1cd4813fad35e6afaf2ec3d0d9dac470a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 241f6552e46d7689b42a409ba44bc747984773ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-load-xml-from-a-file-string-or-stream-visual-basic"></a>Postupy: Načtení XML ze souboru, řetězce nebo proudu (Visual Basic)
 Můžete vytvořit [XML – literály](../../../../visual-basic/language-reference/xml-literals/index.md) a naplnit je obsah z externího zdroje například souboru, řetězce nebo datový proud pomocí několika metod. Tyto metody jsou uvedeny v následujících příkladech.  
@@ -56,6 +46,6 @@ Můžete vytvořit [XML – literály](../../../../visual-basic/language-referen
  <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>  
  <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>  
  <xref:System.Xml.Linq.XNode.ReadFrom%2A?displayProperty=nameWithType>  
- [XML – literály](../../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)  
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
  [Zacházení s XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)

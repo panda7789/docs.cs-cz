@@ -1,13 +1,6 @@
 ---
-title: "Postupy: manipulace s tabulku & č. 39; sloupce s prostřednictvím vlastnosti sloupce"
-ms.custom: 
+title: 'Postupy: manipulace s tabulku&#39;sloupce s prostřednictvím vlastnosti sloupce'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +10,13 @@ helpviewer_keywords:
 - tables [WPF], manipulating columns
 - Columns property [WPF]
 ms.assetid: 3f8884f4-7e1f-456b-be06-fbd3cf469bf3
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8264e49b29f5a790e37c97c3683d7bf09e850c3e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 916764c621738ddc651580f1232e1f579a17e6f0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-manipulate-a-table39s-columns-through-the-columns-property"></a>Postupy: manipulace s tabulku & č. 39; sloupce s prostřednictvím vlastnosti sloupce
+# <a name="how-to-manipulate-a-table39s-columns-through-the-columns-property"></a>Postupy: manipulace s tabulku&#39;sloupce s prostřednictvím vlastnosti sloupce
 Tento příklad ukazuje některé z nejčastěji operací, které lze provést na sloupce tabulky prostřednictvím <xref:System.Windows.Documents.Table.Columns%2A> vlastnost.  
   
 ## <a name="example"></a>Příklad  

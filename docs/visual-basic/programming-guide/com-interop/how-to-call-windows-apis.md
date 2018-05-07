@@ -1,26 +1,17 @@
 ---
-title: "Postupy: Volání rozhraní API systému Windows (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Volání rozhraní API systému Windows (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - API calls [Visual Basic]
 - Windows API, calling
 - API calls [Visual Basic], platform invoke
 - calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 772db789fba4552a4645d2c6a242ba01944652ee
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: de568c3273d4d040c6566136e5d59e2155b86f8b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Postupy: Volání rozhraní API systému Windows (Visual Basic)
 Tento příklad definuje a volá `MessageBox` funkce v user32.dll a pak předá řetězec k němu.  

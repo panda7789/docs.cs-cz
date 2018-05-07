@@ -1,14 +1,6 @@
 ---
-title: "ToolStripProgressBar – přehled ovládacího prvku"
-ms.custom: 
+title: ToolStripProgressBar – přehled ovládacího prvku
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - ToolStripProgressBar
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - progress controls [Windows Forms]
 - ToolStripProgressBar control [Windows Forms], about ToolStripProgressBar control
 ms.assetid: ec3ab522-5fe4-4b4d-a551-bc19e84f4774
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ee73d87a65e9febed6ebd5ad981dcd548fc2404
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0ce2347be055cc1840341747f202125cbbf678c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstripprogressbar-control-overview"></a>ToolStripProgressBar – přehled ovládacího prvku
 <xref:System.Windows.Forms.ToolStripProgressBar> Kombinuje rafting a vykreslování funkce všech <xref:System.Windows.Forms.ToolStrip> ovládacích prvků pomocí jeho typické funkce sledování procesu. A <xref:System.Windows.Forms.ToolStripProgressBar> nejvíce obvykle hostovaný <xref:System.Windows.Forms.StatusStrip>a méně často podle <xref:System.Windows.Forms.ToolStrip>.  

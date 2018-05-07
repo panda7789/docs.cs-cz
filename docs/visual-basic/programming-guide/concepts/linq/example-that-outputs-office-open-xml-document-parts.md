@@ -1,22 +1,12 @@
 ---
-title: "Příklad, který produkuje části dokumentu Office Open XML (Visual Basic)"
-ms.custom: 
+title: Příklad, který produkuje části dokumentu Office Open XML (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 96596c86674f5df2b9949a07adab2f313a07633d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 2e4b03d89a5b1eabb5751d807ef78442a960389d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Příklad, který produkuje části dokumentu Office Open XML (Visual Basic)
 Toto téma ukazuje, jak otevřít dokument Office otevřít XML a přístup k části v něm.  

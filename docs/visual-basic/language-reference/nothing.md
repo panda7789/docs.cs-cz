@@ -1,9 +1,6 @@
 ---
 title: Nothing (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - Nothing
 - vb.Nothing
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - Nothing keyword [Visual Basic]
 - Nothing keyword [Visual Basic], syntax
 ms.assetid: 06176e2d-bbf7-4a37-afaa-a86ad21ee99f
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 6932fee01ec6f39f67fb1a26a9a5b5cbd47d9767
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fb1af7d748faac78b26177af453a0e858f9e97c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nothing-visual-basic"></a>Nothing (Visual Basic)
 Představuje výchozí hodnotu jakéhokoli datového typu. U typů odkazu, je výchozí hodnota `null` odkaz. U typů hodnot výchozí hodnota závisí na tom, zda hodnota typ s možnou hodnotou Null.  
@@ -27,7 +21,7 @@ Představuje výchozí hodnotu jakéhokoli datového typu. U typů odkazu, je v�
 >  Pro typy hodnot neumožňující hodnotu Null `Nothing` v jazyce Visual Basic se liší od `null` v jazyce C#. V jazyce Visual Basic, pokud nastavíte proměnnou typu hodnot neumožňující hodnotu Null na `Nothing`, proměnná nastavená na výchozí hodnotu pro příslušným deklarovaným typem. V jazyce C#, chcete-li přiřadit proměnné typu hodnot neumožňující hodnotu Null na `null`, dojde k chybě kompilace.  
   
 ## <a name="remarks"></a>Poznámky  
- `Nothing`představuje výchozí hodnotu datového typu. Výchozí hodnota závisí na tom, jestli je proměnná hodnota typu nebo typu odkazu.  
+ `Nothing` představuje výchozí hodnotu datového typu. Výchozí hodnota závisí na tom, jestli je proměnná hodnota typu nebo typu odkazu.  
   
  Proměnná *typ hodnoty* přímo obsahuje jeho hodnotu. Typy hodnot zahrnout všechny číselné datové typy, `Boolean`, `Char`, `Date`, všechny struktury a všechny výčty. Proměnná *odkazují na typ* ukládá odkaz na instanci objektu v paměti. Odkazové typy zahrnují třídy, pole, delegáti a řetězce. Další informace najdete v tématu [typy hodnot a typy odkazu](../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
   
@@ -53,12 +47,12 @@ Představuje výchozí hodnotu jakéhokoli datového typu. U typů odkazu, je v�
   
  Přiřadíte-li `Nothing` proměnné objektu už odkazuje na jakoukoli instanci objektu. Pokud proměnná měl dříve uvedených instance, jeho nastavení na hodnotu `Nothing` nezavře instance sám sebe. Ukončení instance a uvolnění paměti a systém prostředků s ním spojená, až poté, co má systém uvolňování (GC) zjistí, že neexistují žádné aktivní odkazy zbývající.  
   
- `Nothing`se liší od <xref:System.DBNull> objekt, který představuje Neinicializovaný variant nebo sloupci neexistující databáze.  
+ `Nothing` se liší od <xref:System.DBNull> objekt, který představuje Neinicializovaný variant nebo sloupci neexistující databáze.  
   
 ## <a name="see-also"></a>Viz také  
- [Dim – příkaz](../../visual-basic/language-reference/statements/dim-statement.md)  
- [Doba života objektu: Objekty vytváření a zničení](../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
+ [Příkaz Dim](../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Doba života objektu: Vytváření a zničení objektů](../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
  [Doba platnosti v jazyce Visual Basic](../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
- [Is – operátor](../../visual-basic/language-reference/operators/is-operator.md)  
- [IsNot – operátor](../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Operátor Is](../../visual-basic/language-reference/operators/is-operator.md)  
+ [Operátor IsNot](../../visual-basic/language-reference/operators/isnot-operator.md)  
  [Typy hodnot s povolenou hodnotou Null](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

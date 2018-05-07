@@ -2,18 +2,14 @@
 title: XML v jazyce Visual Basic
 description: Další informace o použití XML a LINQ XML funkcí v kódu jazyka Visual Basic.
 ms.date: 10/20/2017
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - LINQ to XML [Visual Basic]
 ms.assetid: 954b6e40-1246-4185-a018-4061724fcae9
-ms.openlocfilehash: 11918a9bca7cc71129db17a6a41f3508b1fe66df
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: edc611c3ec0eb719bccd8adfb87487751801383d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xml-in-visual-basic"></a>XML v jazyce Visual Basic
 

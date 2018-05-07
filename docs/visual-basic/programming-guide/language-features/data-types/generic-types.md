@@ -1,9 +1,6 @@
 ---
-title: "Obecné typy v jazyce Visual Basic (Visual Basic)"
+title: Obecné typy v jazyce Visual Basic (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - generic interfaces
 - data type arguments [Visual Basic], defining
@@ -39,14 +36,11 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-caps.latest.revision: "45"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 463391da61cbafe1f50a246307994cfa134dba38
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f86819f9bd3cbcceb4be696852655018868f4a56
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jeden programovací element, který přizpůsobí provádět stejné funkce pro různé datové typy. Při definování obecné třídy nebo postup nemáte definovat samostatné verze pro každý typ dat, pro které můžete chtít provést této funkce.  
@@ -157,10 +151,10 @@ A *obecného typu* je jeden programovací element, který přizpůsobí provád�
  [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Řešení potíží s datové typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Z](../../../../visual-basic/language-reference/statements/of-clause.md)  
- [Jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
- [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
+ [z](../../../../visual-basic/language-reference/statements/of-clause.md)  
+ [jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
+ [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
  [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)  
  [Iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)

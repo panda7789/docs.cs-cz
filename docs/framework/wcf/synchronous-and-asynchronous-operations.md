@@ -1,14 +1,6 @@
 ---
 title: Synchronní a asynchronní operace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,22 +8,16 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c626699dc5291f4d4f6d432e89708661b233f16d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 0b64d45797babff2da1649fb7469684342e65d47
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
   
- Mnoho aplikací volat metody asynchronně, protože umožní aplikaci pokračovat v provádění užitečné pracovní při volání metody, které běží. [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby a klienti mohou účastnit volání asynchronní operaci na dvou různých úrovních aplikace, které poskytují [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace i větší flexibilitu, chcete-li maximalizovat propustnost porovnán s interaktivity.  
+ Mnoho aplikací volat metody asynchronně, protože umožní aplikaci pokračovat v provádění užitečné pracovní při volání metody, které běží. Služby Windows Communication Foundation (WCF) a klienti mohou účastnit volání asynchronní operaci na dvou různých úrovních aplikace, které poskytují [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace i větší flexibilitu, chcete-li maximalizovat propustnost porovnán s interaktivity.  
   
 ## <a name="types-of-asynchronous-operations"></a>Typy asynchronních operací  
  Všechny služby měnící [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], bez ohledu na typy parametry a návratové hodnoty, použijte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] atributy zadat vzorce výměny zpráv konkrétní mezi klientem a službou. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] automaticky směruje příchozí a odchozí zprávy do příslušné službě operaci nebo spuštění kódu klienta.  

@@ -1,13 +1,6 @@
 ---
-title: "Přístup k prostředkům služby dat (služby WCF Data Services)"
-ms.custom: 
+title: Přístup k prostředkům služby dat (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, querying
 - getting started, WCF Data Services
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dddbd9cf8e11f09cf1c2dc36db49281d00e97aac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f1af991d7db9bfeeb0737e65a0517629f359f4a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Přístup k prostředkům služby dat (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavit data jako informační kanál s prostředky, které jsou adresovat pomocí identifikátory URI. Tyto prostředky jsou reprezentované podle pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md). V tomto modelu entity představují provozní jednotky dat, které jsou datové typy v doméně aplikace, jako je například zákazníky, objednávky, položky a produkty. Entity data se získat přístup a změnit pomocí sémantiky representational stavu transfer (REST), konkrétně standardní HTTP příkazy GET, PUT, POST a DELETE.  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavit data jako informační kanál s prostředky, které jsou adresovat pomocí identifikátory URI. Tyto prostředky jsou reprezentované podle pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md). V tomto modelu entity představují provozní jednotky dat, které jsou datové typy v doméně aplikace, jako je například zákazníky, objednávky, položky a produkty. Entity data se získat přístup a změnit pomocí sémantiky representational stavu transfer (REST), konkrétně standardní HTTP příkazy GET, PUT, POST a DELETE.  
   
 ## <a name="addressing-resources"></a>Přidělování prostředků  
  V [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], adresa žádná data vystavené datového modelu s použitím identifikátoru URI. Například následující identifikátor URI vrací informačního kanálu, který je zákazníkům sady entit, který obsahuje položky pro všechny instance typu entity zákazníka:  
@@ -66,7 +54,7 @@ http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders
 http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/Customer  
 ```  
   
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Můžete se také pro adresování prostředků na základě výsledků dotazu výrazů. Díky tomu je možné filtrovat sady prostředky v závislosti na vyhodnocený výraz. Například následující identifikátor URI filtry prostředky vrátit pouze objednávky zadané zákazníka, které byly součástí od 22. září 1997:  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Můžete se také pro adresování prostředků na základě výsledků dotazu výrazů. Díky tomu je možné filtrovat sady prostředky v závislosti na vyhodnocený výraz. Například následující identifikátor URI filtry prostředky vrátit pouze objednávky zadané zákazníka, které byly součástí od 22. září 1997:  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=ShippedDate gt datetime'1997-09-22T00:00:00'  
@@ -75,7 +63,7 @@ http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$fil
  Další informace najdete v tématu [OData: identifikátor URI konvence](http://go.microsoft.com/fwlink/?LinkId=185564).  
   
 ## <a name="system-query-options"></a>Možnosti dotazu systému  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]definuje sadu možností dotazu systému, které můžete použít k provádění operací tradiční dotaz na prostředky, jako je například filtrování, řazení a stránkování. Například následující identifikátor URI vrací sadu všech `Order` entity, společně s související `Order_Detail` entity, poštovní kódy, které není končit `100`:  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] definuje sadu možností dotazu systému, které můžete použít k provádění operací tradiční dotaz na prostředky, jako je například filtrování, řazení a stránkování. Například následující identifikátor URI vrací sadu všech `Order` entity, společně s související `Order_Detail` entity, poštovní kódy, které není končit `100`:  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')&$expand=Order_Details&$orderby=ShipCity  
@@ -83,7 +71,7 @@ http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(Sh
   
  Položek v informačním kanálu vrácený jsou také seřazené podle hodnoty vlastnosti MěstoPříjemce objednávky.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje následující [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] možností dotazu systému:  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje následující [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] možností dotazu systému:  
   
 |Možnost dotazu|Popis|  
 |------------------|-----------------|  
@@ -96,7 +84,7 @@ http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(Sh
 |`$inlinecount`|Požadavky, že počet entit, vrátí se v informačním kanálu být součástí informačního kanálu. Další informace najdete v tématu [OData: možnost dotazu Inlinecount systému ($inlinecount)](http://go.microsoft.com/fwlink/?LinkId=186975).|  
   
 ## <a name="addressing-relationships"></a>Adresování relace  
- Kromě adresování sad entit a instancí entit [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] taky umožňuje adres přidružení, které představují vztahy mezi entitami. Tato funkce je potřeba mít k vytvoření nebo změně vztah mezi dvě instance entity, jako je například odesílatel, která souvisí s danou pořadí v ukázková databáze Northwind. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje `$link` operátor konkrétně vyřešit přidružení mezi entitami. Následující identifikátor URI je třeba zadat ve zprávě požadavku HTTP PUT změnit na nový odesílatel odesílatel pro zadané pořadí.  
+ Kromě adresování sad entit a instancí entit [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] taky umožňuje adres přidružení, které představují vztahy mezi entitami. Tato funkce je potřeba mít k vytvoření nebo změně vztah mezi dvě instance entity, jako je například odesílatel, která souvisí s danou pořadí v ukázková databáze Northwind. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje `$link` operátor konkrétně vyřešit přidružení mezi entitami. Následující identifikátor URI je třeba zadat ve zprávě požadavku HTTP PUT změnit na nový odesílatel odesílatel pro zadané pořadí.  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper  

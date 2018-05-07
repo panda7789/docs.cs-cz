@@ -1,23 +1,14 @@
 ---
 title: Operátory (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - operators [Visual Basic]
 ms.assetid: 3d3421df-fcc5-4888-9249-d78f16774ce6
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 928bd5165c36fbd9fe082539f154a6f32ada8fcc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b6f590d81242d14e808e49c42bce8a4bfdc66f44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operators-visual-basic"></a>Operátory (Visual Basic)
 ## <a name="in-this-section"></a>V tomto oddílu  
@@ -27,19 +18,19 @@ ms.lasthandoff: 10/18/2017
   
  [Datové typy výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)  
   
- [DirectCast – operátor](../../../visual-basic/language-reference/operators/directcast-operator.md)  
+ [Operátor DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md)  
   
- [TryCast – operátor](../../../visual-basic/language-reference/operators/trycast-operator.md)  
+ [Operátor TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md)  
   
- [New – operátor](../../../visual-basic/language-reference/operators/new-operator.md)  
+ [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)  
   
  [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
   
  [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
   
- [Operátory bitového posunutí](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
   
- [Operátory porovnávání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
   
  [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
   

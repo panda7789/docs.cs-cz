@@ -1,20 +1,13 @@
 ---
-title: "Třídy a objekty v jazyce C# – přehled používání jazyka C#"
-description: "Nové jazyka C#? Přečtěte si tento přehled tříd, objekty a dědičnost"
-keywords: "Rozhraní .NET, csharp, třídu, instance, objekt, dědičnosti, polymorfismus"
-author: BillWagner
-ms.author: wiwagn
+title: Třídy a objekty v jazyce C# – přehled používání jazyka C#
+description: Nové jazyka C#? Přečtěte si tento přehled tříd, objekty a dědičnost
 ms.date: 08/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: 97559a6e7b24f4a61b49dd4f050747a6d0ccbda0
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 1a8c34588cce21f4f4164df57aa8044074c23783
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 

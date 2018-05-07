@@ -1,10 +1,6 @@
 ---
 title: MustOverride (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.MustOverride
 - MustOverride
@@ -19,14 +15,11 @@ helpviewer_keywords:
 - MustOverride keyword [Visual Basic]
 - properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a2f7bdba4b01bd307e0c52802509669f772b5eb5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5dabd90d29bc41d017436876af24a67fa87e8e17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
 Určuje, že vlastnost nebo postup není implementována v této třídě a musí být přepsána nastaveními v odvozené třídě před použitím.  
@@ -46,16 +39,16 @@ Určuje, že vlastnost nebo postup není implementována v této třídě a mus�
   
  `MustOverride` Modifikátor lze použít v těchto kontexty:  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
  [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
- [Přepsání](../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
  [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
  [Stínový provoz v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

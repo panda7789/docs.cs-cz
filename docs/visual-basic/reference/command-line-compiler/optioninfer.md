@@ -1,12 +1,6 @@
 ---
 title: -optioninfer
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - -optioninfer
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - /optioninfer compiler option [Visual Basic]
 - optioninfer compiler option [Visual Basic]
 ms.assetid: f6c09db1-0553-464a-abe3-d4510c61d6ed
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: df01fccd7276f0ec759065306ad3614d735f89ef
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: e7dbc4d5f06096978c4d93ea20677dcb60bc3fcb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-optioninfer"></a>-optioninfer
 Umožňuje použití odvození místního typu v deklarace proměnných.  
@@ -58,7 +49,7 @@ vbc -optioninfer+ test.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)  
  [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
  [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  

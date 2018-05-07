@@ -1,24 +1,12 @@
 ---
-title: "Počet zrušených zpracovaných operací za sekundu"
-ms.custom: 
+title: Počet zrušených zpracovaných operací za sekundu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 19fc993f-2b3d-4898-852e-3b98ec2153a5
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d80d18ed1e3911b0603f930e45bda3dffaff1f75
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dacdf93f4610df9161134a41ece19fd2a18637c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transacted-operations-aborted-per-second"></a>Počet zrušených zpracovaných operací za sekundu
 Název čítače: Transakční operace přerušených za sekundu.  

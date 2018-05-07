@@ -1,21 +1,15 @@
 ---
-title: "Zpracování výjimek (Průvodce programováním v C#)"
+title: Zpracování výjimek (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-caps.latest.revision: "24"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: dfdd8b8bdd89e4253dfc1afebc1e78140b121dd6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bbe9db48ab5cc1313c18fce66312f4334b40b9c5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
 A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blok využívá C# programátorům oddílu kód, který může být ovlivněn výjimku. Související [catch](../../../csharp/language-reference/keywords/try-catch.md) bloky se používají pro zpracování všech výsledné výjimek. A [nakonec](../../../csharp/language-reference/keywords/try-finally.md) blok obsahuje kód, který se spustí bez ohledu na to, zda je vyvolána výjimka `try` bloku, například uvolnění prostředků, které jsou přiděleny v `try` bloku. A `try` bloku vyžaduje jeden nebo více přidružené `catch` bloky, nebo `finally` bloku nebo obojí.  
@@ -61,9 +55,9 @@ A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blok využ�
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
- [try-catch –](../../../csharp/language-reference/keywords/try-catch.md)  
- [try-finally –](../../../csharp/language-reference/keywords/try-finally.md)  
- [try-catch-finally –](../../../csharp/language-reference/keywords/try-catch-finally.md)  
- [Using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)
+ [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
+ [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
+ [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)  
+ [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)

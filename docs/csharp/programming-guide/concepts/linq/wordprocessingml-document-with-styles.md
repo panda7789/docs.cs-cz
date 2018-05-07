@@ -1,21 +1,12 @@
 ---
 title: WordprocessingML dokument s Styles3
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 40e35de6-ac93-4bba-88ab-a018cbe93873
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 7a551d43114c5896e40230265447eeedb7fca2b2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 6d0d1026edf9a9dbef84eaf3d68412902749e121
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wordprocessingml-document-with-styles"></a>WordprocessingML dokument s styly
 Složitější dokumenty WordprocessingML mít odstavců, které jsou naformátované se styly.  

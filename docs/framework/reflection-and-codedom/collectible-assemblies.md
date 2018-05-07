@@ -1,24 +1,18 @@
 ---
-title: "Collectible sestavení pro generování dynamickém typu"
-description: 
+title: Collectible sestavení pro generování dynamickém typu
+description: ''
 ms.date: 08/29/2017
-ms.prod: .net
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - reflection, dynamic assembly
 - assemblies, collectible
 - collectible assemblies, retrieving
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0756fe317469898dd165e55be7125922f5b692f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 04a04e422fec14055d8ac3f50b9f2f18658a0f9f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collectible-assemblies-for-dynamic-type-generation"></a>Collectible sestavení pro generování dynamickém typu
 

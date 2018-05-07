@@ -1,23 +1,17 @@
 ---
-title: "Vytváření a vyvolávání výjimek (Průvodce programováním v C#)"
+title: Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - catching exceptions [C#]
 - throwing exceptions [C#]
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-caps.latest.revision: "28"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a4008323d264c02e0417e775077958f857ceed31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 91676830d88ddee79c72211ab43b7be32fa8724e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky jsou slouží k určení, že došlo k chybě při spuštění programu. Objekty výjimek, které popisují chybu vytvářejí a potom *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime pak hledá nejvíce kompatibilní obslužná rutina výjimky.  
@@ -70,7 +64,7 @@ Výjimky jsou slouží k určení, že došlo k chybě při spuštění programu
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
  [Hierarchie výjimek](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)  
  [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)

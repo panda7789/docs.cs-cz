@@ -1,11 +1,6 @@
 ---
-title: "Postupy: Převod hexadecimálních řetězců na čísla (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Převod hexadecimálních řetězců na čísla (Visual Basic)'
 ms.date: 01/31/2018
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - numbers [Visual Basic], hexadecimals
 - hexadecimals [Visual Basic], decimals
@@ -13,14 +8,13 @@ helpviewer_keywords:
 - decimals [Visual Basic], hexadecimals
 - string conversion [Visual Basic], hexadecimal to numbers
 ms.assetid: 76675807-eadb-4c08-bd50-e6c6ff4b8ced
-author: petrusha
+author: rpetrusha
 ms.author: ronpet
-ms.manager: wpickett
-ms.openlocfilehash: c35ac615e3f87710f934a1cf66e6546625298bd0
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: af0e6c1e30c116709ed98240de7bf3471fa842d4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-hexadecimal-strings-to-numbers-visual-basic"></a>Postupy: Převod hexadecimálních řetězců na čísla (Visual Basic)
 Tento příklad převede hexadecimální řetězec na celé číslo pomocí <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> metoda.  

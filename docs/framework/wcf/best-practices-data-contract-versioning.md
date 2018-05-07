@@ -1,37 +1,23 @@
 ---
 title: 'Osvědčené postupy: Správa verzí kontraktů dat'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - data contracts
 - service contracts
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6ea139f6b854a299760df4c7cb8c315b58701ab8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: a578235a0db0ba769cae0b2ade93edbfd72b5508
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-data-contract-versioning"></a>Osvědčené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. Další informace o kontraktech dat najdete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ## <a name="note-on-schema-validation"></a>Poznámka: v ověřování schématu  
- V hovoříte o Správa verzí kontraktů dat, je důležité si uvědomit, že data smlouvy schématu exportované sadou [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] nemá žádné podporu správy verzí, než fakt, že ve výchozím nastavení jsou označená jako volitelná elementy.  
+ V hovoříte o Správa verzí kontraktů dat, je důležité si uvědomit, že schéma kontraktu dat exportovat Windows Communication Foundation (WCF) nemá žádné podporu správy verzí, než fakt, že ve výchozím nastavení jsou označená jako volitelná elementy.  
   
  To znamená, že i nejběžnější Správa verzí scénář, jako je například přidávání nového člena dat, nelze implementovat způsobem, který je bezproblémové s ohledem na daném schématu. Novější verze kontraktu dat (s nového datového člena, např.) nelze ověřit pomocí staré schématu.  
   

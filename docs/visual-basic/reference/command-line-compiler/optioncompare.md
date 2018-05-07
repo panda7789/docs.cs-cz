@@ -1,11 +1,6 @@
 ---
 title: -optioncompare
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - /optioncompare
 - -optioncompare
@@ -16,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 033be2ce3845ed470d56c2097b89b81d10275046
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: c1906710ef10634187782f9355146dfa7ccb7748
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-optioncompare"></a>-optioncompare
 Určuje, jak jsou vytvářeny porovnání řetězců.  
@@ -62,7 +57,7 @@ vbc -optioncompare:binary projFile.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
  [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  
  [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  

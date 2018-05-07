@@ -1,17 +1,12 @@
 ---
 title: Události (F#)
 description: 'Zjistěte, jak F # události umožňují volání funkce přidružit uživatele akcí, které jsou důležité při programování pro grafické uživatelské rozhraní.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 5c5f152830d4d91a25c79a09800263cdd85ed8b7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: e90d3abc5b5222f60c4e08539ee40bf83ac70ec7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="events"></a>Události
 

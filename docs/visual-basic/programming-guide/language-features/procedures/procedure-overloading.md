@@ -1,12 +1,6 @@
 ---
-title: "Procedura přetížení (Visual Basic)"
-ms.custom: 
+title: Procedura přetížení (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - signatures
 - Overloads keyword [Visual Basic]
@@ -23,14 +17,11 @@ helpviewer_keywords:
 - procedure overloading
 - procedures [Visual Basic], parameter lists
 ms.assetid: fbc7fb18-e3b2-48b6-b554-64c00ed09d2a
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 65fd5a6763752c616f13891bfa5acabff6115d7c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0d1f2c4d8c88922659b3d91ed41d5e760e6e5233
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="procedure-overloading-visual-basic"></a>Procedura přetížení (Visual Basic)
 *Přetížení* procedury znamená jeho definováním v několika verze, používá stejný název, ale seznamy různých parametrů. Účelem přetížení je definovat několik úzce související verzí procedury bez nutnosti jejich odlišení podle názvu. To provedete pomocí různých seznam parametrů.  
@@ -56,13 +47,13 @@ ms.lasthandoff: 11/21/2017
   
 -   **Položky není součástí podpis**. Bez různých podpis nelze přetížení procedury. Nelze na konkrétní přetížení procedury pomocí různých pouze jeden nebo více z následujících položek:  
   
-    -   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a`Static`  
+    -   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
   
     -   Typ nebo parametr názvy parametrů  
   
     -   Zadejte parametr omezení (pro obecný postup)  
   
-    -   Klíčová slova – modifikátor parametrů, jako například `ByRef` a`Optional`  
+    -   Klíčová slova – modifikátor parametrů, jako například `ByRef` a `Optional`  
   
     -   Jestli vrátí hodnotu  
   
@@ -93,12 +84,12 @@ ms.lasthandoff: 11/21/2017
  [!code-vb[VbVbcnProcedures#57](./codesnippet/VisualBasic/procedure-overloading_4.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
- [Postupy: definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
- [Postupy: volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
- [Postupy: přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)  
- [Postupy: přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
+ [Procedury](./index.md)  
+ [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
+ [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
+ [Postupy: Přetížení procedury, která přebírá nepovinné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)  
+ [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
  [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)  
  [Řešení přetížení](./overload-resolution.md)  
- [Přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)  
  [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)

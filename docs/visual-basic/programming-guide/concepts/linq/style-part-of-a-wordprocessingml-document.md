@@ -1,22 +1,12 @@
 ---
-title: "Styl součástí WordprocessingML Document2"
-ms.custom: 
+title: Styl součástí WordprocessingML Document2
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 292cc094-9483-4192-ac3b-a5dc51fbac12
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d16363f377cc8a41ae8192e753ad70a8062588d6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 58767c51595a5a2c4c262df133c393dc700e0b10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>Styl části WordprocessingML dokumentu
 Toto téma ukazuje příklad styl součástí dokumentu Office Open XML WordprocessingML.  

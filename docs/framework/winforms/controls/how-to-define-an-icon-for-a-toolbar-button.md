@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Definování ikony pro tlačítko ToolBar"
-ms.custom: 
+title: 'Postupy: Definování ikony pro tlačítko ToolBar'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,22 +13,17 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: 84db98b4-8566-49ce-b2c8-1fd66a5eb3a0
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f7550fdc76cb3a025d8233ec538d38f23f9226a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9c396f861307d1c8e722beaf38c6cb914d0630c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button"></a>Postupy: Definování ikony pro tlačítko ToolBar
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStrip> Řízení nahrazuje a přidá funkce <xref:System.Windows.Forms.ToolBar> řízení; však <xref:System.Windows.Forms.ToolBar> řízení se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud si zvolíte.  
   
- <xref:System.Windows.Forms.ToolBar>tlačítka jsou moci zobrazit ikony v nich pro snazší identifikaci uživatelů. Toho je dosaženo pomocí přidávání obrázků na [ImageList – komponenta](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) součásti a poté přidružení <xref:System.Windows.Forms.ImageList> součásti s <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+ <xref:System.Windows.Forms.ToolBar> tlačítka jsou moci zobrazit ikony v nich pro snazší identifikaci uživatelů. Toho je dosaženo pomocí přidávání obrázků na [ImageList – komponenta](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) součásti a poté přidružení <xref:System.Windows.Forms.ImageList> součásti s <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
 ### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>Chcete-li nastavit ikony pro tlačítko toolbar prostřednictvím kódu programu  
   

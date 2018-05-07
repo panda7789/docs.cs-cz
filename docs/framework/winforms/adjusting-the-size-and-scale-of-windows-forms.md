@@ -1,28 +1,16 @@
 ---
-title: "Úprava velikosti a měřítka Windows Forms"
-ms.custom: 
+title: Úprava velikosti a měřítka Windows Forms
 ms.date: 04/07/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, changing size
 - Windows Forms, adjusting size
 - Windows Forms, changing scale
 ms.assetid: a014d2b3-3273-4521-95e1-00171033bf58
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eb05ba1045eff3dbcade62e5167953d1d2a17475
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 811153b8b2c8545371f794e7aafd05333f7b50f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a měřítka Windows Forms
 Toto téma obsahuje odkazy na informace o změně velikosti Windows Forms.  

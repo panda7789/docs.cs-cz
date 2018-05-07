@@ -1,29 +1,15 @@
 ---
 title: Přepsání identity služby kvůli ověřování
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5383a1d241134318ce48c8c0c9f39f831396730
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 6fbdd7f09c7ae15368972afbce896c5ecb39ccbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
 Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření klienta Určuje typ identity vystavené v metadatech služby. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut systému Windows.  
@@ -37,7 +23,7 @@ Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření k
  Ukázkovou aplikaci, která demonstruje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o identitě služby najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Ověřování protokolem Kerberos a Identity  
- Ve výchozím nastavení, pokud služba je nakonfigurovaný na použití pověření systému Windows [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) elementu, který obsahuje [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) nebo [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element se generuje ve schématu WSDL. Pokud je služba spuštěna pod `LocalSystem`, `LocalService`, nebo `NetworkService` účtu, služby (SPN) pro hlavní název je generována ve výchozím nastavení ve formě `host/` \< *hostname*> protože Tyto účty s přístupem k datům SPN počítače. Pokud služba běží pod jiným účtem, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] generuje UPN ve formě \< *uživatelské jméno*>@<*domainName*`>`. K tomu dochází, protože ověřování pomocí protokolu Kerberos vyžaduje, aby (UPN) nebo hlavní název služby je nutné zadat klienta k ověřování.  
+ Ve výchozím nastavení, pokud služba je nakonfigurovaný na použití pověření systému Windows [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) elementu, který obsahuje [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) nebo [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element se generuje ve schématu WSDL. Pokud je služba spuštěna pod `LocalSystem`, `LocalService`, nebo `NetworkService` účtu, služby (SPN) pro hlavní název je generována ve výchozím nastavení ve formě `host/` \< *hostname*> protože Tyto účty s přístupem k datům SPN počítače. Pokud služba běží pod jiným účtem, Windows Communication Foundation (WCF) generuje UPN ve formě \< *uživatelské jméno*>@<*domainName* `>` . K tomu dochází, protože ověřování pomocí protokolu Kerberos vyžaduje, aby (UPN) nebo hlavní název služby je nutné zadat klienta k ověřování.  
   
  Můžete taky nástroje Setspn.exe zaregistrovat další SPN se účtu služby v doméně. Potom můžete vytvořit hlavní název služby jako identitu služby. Si můžete stáhnout nástroj [nástroj Windows 2000 Resource Kit: Setspn.exe](http://go.microsoft.com/fwlink/?LinkId=91752). Další informace o tomto nástroji naleznete v tématu [přehled nástroje Setspn](http://go.microsoft.com/fwlink/?LinkId=61374).  
   

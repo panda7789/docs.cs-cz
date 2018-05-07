@@ -1,26 +1,17 @@
 ---
-title: "Postupy: Zkopírování adresáře do jiného adresáře v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Zkopírování adresáře do jiného adresáře v jazyce Visual Basic'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - I/O [Visual Basic], copying directories
 - I/O [Visual Basic], copying folders
 - folders [Visual Basic], copying
 - directories [Visual Basic], copying
 ms.assetid: 2a370bd7-10ba-4219-afc4-4519d031eb6c
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 72f20ee767902395439f420f14fc2e352297ad31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9b6e095d061619cf9d2e2d87a7247cbdbc51cbe2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>Postupy: Zkopírování adresáře do jiného adresáře v jazyce Visual Basic
 Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu pro zkopírování adresáře do jiného adresáře. Tato metoda zkopíruje obsah adresáře, jakož i daný adresář. Pokud cílový adresář neexistuje, bude vytvořen. Pokud adresář se stejným názvem existuje v cílovém umístění a `overwrite` je nastaven na `False`, se sloučí obsah dva adresáře. Během operace můžete zadat nový název pro adresář.  
@@ -44,7 +35,7 @@ Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu
   
 -   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `destinationDirectoryName`je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>)  
+-   `destinationDirectoryName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>)  
   
 -   Zadaný zdrojový adresář neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
@@ -54,7 +45,7 @@ Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu
   
 -   Zdrojová cesta a cílová cesta jsou stejné (<xref:System.IO.IOException>).  
   
--   `ShowUI`je nastavena na `UIOption.AllDialogs` a uživatel zrušil operaci, nebo nelze zkopírovat jeden nebo více souborů v adresáři (<xref:System.OperationCanceledException>).  
+-   `ShowUI` je nastavena na `UIOption.AllDialogs` a uživatel zrušil operaci, nebo nelze zkopírovat jeden nebo více souborů v adresáři (<xref:System.OperationCanceledException>).  
   
 -   Operace je cyklická (<xref:System.InvalidOperationException>).  
   
@@ -70,5 +61,5 @@ Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A>  
- [Postupy: hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
- [Postupy: získání kolekce souborů v adresáři](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+ [Postupy: Hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
+ [Postupy: Získání kolekce souborů z adresáře](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)

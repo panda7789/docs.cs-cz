@@ -1,27 +1,15 @@
 ---
-title: "Metadata vlastnosti rozhraní .NET Framework"
-ms.custom: 
+title: Metadata vlastnosti rozhraní .NET Framework
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - metadata [WPF], framework properties
 - framework property metadata [WPF]
 ms.assetid: 9962f380-b885-4b61-a62e-457397083fea
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4fec11a973572dce9e8d6f77bf65ce31ee77eb41
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d968bc7a3033bd994590520c5cd5062d3c212b4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="framework-property-metadata"></a>Metadata vlastnosti rozhraní .NET Framework
 Možnosti metadat vlastností Framework jsou hlášeny vlastností elementů objekt považuje za na rozhraní WPF v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektura. Obecné označení úrovni rozhraní WPF zahrnuje této funkce jako je například vykreslování, datové vazby, a vlastnost systému obecnější jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a spustitelné soubory. Metadata vlastnosti Framework je dotazován tak, že tyto systémy pro stanovení konkrétních funkcí vlastností určitý element vlastnosti.  
@@ -40,7 +28,7 @@ Možnosti metadat vlastností Framework jsou hlášeny vlastností elementů obj
   
 -   Vytváření sestav rozložení vlastnosti, které ovlivňují nadřazeného elementu elementu (<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>). Některé příklady, které jsou ve výchozím nastavení tyto příznaky jsou <xref:System.Windows.Documents.FixedPage.Left%2A?displayProperty=nameWithType> a <xref:System.Windows.Documents.Paragraph.KeepWithNext%2A?displayProperty=nameWithType>.  
   
--   <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>. Ve výchozím nastavení vlastností závislostí nedědí hodnoty. <xref:System.Windows.FrameworkPropertyMetadata.OverridesInheritanceBehavior%2A>Umožňuje cestu dědičnosti také projít, do vizuálním stromu, který je potřebný pro některé scénáře řízení skládání.  
+-   <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>. Ve výchozím nastavení vlastností závislostí nedědí hodnoty. <xref:System.Windows.FrameworkPropertyMetadata.OverridesInheritanceBehavior%2A> Umožňuje cestu dědičnosti také projít, do vizuálním stromu, který je potřebný pro některé scénáře řízení skládání.  
   
     > [!NOTE]
     >  Termín "dědí" v kontextu vlastnost hodnoty znamená něco konkrétní závislost vlastnosti; znamená to, že podřízené elementy může dědit vlastnosti hodnotu vlastnosti skutečné závislost z nadřazené elementy z důvodu funkce WPF úrovni rozhraní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému. Má co dělat přímo s spravovaného kódu typu a členy dědičnosti prostřednictvím odvozené typy. Podrobnosti najdete v tématu [dědičnost hodnotu vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).  
@@ -69,13 +57,13 @@ Možnosti metadat vlastností Framework jsou hlášeny vlastností elementů obj
 ## <a name="framework-property-metadata-merge-behavior"></a>Chování metadat sloučení vlastnost Framework  
  Při přepsání metadat vlastností framework charakteristiky rozdílná metadata jsou sloučit nebo nahradit.  
   
--   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>sloučí. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
+-   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> sloučí. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
   
 -   Skutečné vlastnost chování systému pro <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> je, že implementace pro všechny vlastníky metadata v hierarchii se zachovají a přidat do tabulky s pořadí provádění vlastnosti systému, který probíhá zpětná volání nejvíce hluboko odvozené třídy nejdříve volána. Zděděné zpětná volání spustit jenom jednou, počítání jako probíhá vlastní třídu, která je umístěna v metadatech.  
   
--   <xref:System.Windows.PropertyMetadata.DefaultValue%2A>nahrazuje. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.DefaultValue%2A> pochází z nejbližším podřízeném objektu, který je zadaný v metadatech.  
+-   <xref:System.Windows.PropertyMetadata.DefaultValue%2A> nahrazuje. Pokud nezadáte <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.DefaultValue%2A> pochází z nejbližším podřízeném objektu, který je zadaný v metadatech.  
   
--   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>implementace jsou nahrazena. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
+-   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace jsou nahrazena. Pokud přidáte nový <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>, že zpětné volání je uložená v metadatech. Pokud nezadáte <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> v hodnotě přepsání <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> se vyzval jako odkaz z nejbližším podřízeném objektu, který je zadaný v metadatech.  
   
 -   Vlastnost chování systému je pouze <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> ve okamžitou metadata volat. Žádné odkazy na jiné <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> implementace v hierarchii se zachovají.  
   

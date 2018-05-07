@@ -1,33 +1,19 @@
 ---
-title: "Rozšíření dispečerů"
-ms.custom: 
+title: Rozšíření dispečerů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4240a19401d97cd0636d13a94fd07ad4ef753388
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: bc700aefc3b50102dc0a3faabbbcd09c1c8fc4bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní kanály, převedena do volání metod v kódu aplikace a odesílání výsledky zpět k volajícímu. Rozšíření dispečerů umožňují upravit zpracování.  Můžete implementovat zprávy nebo parametr kontroly, které zkontrolovat nebo upravit obsah zprávy nebo parametry.  Můžete změnit způsob zprávy jsou směrovány do operace nebo zadejte některé další funkce.  
   
- Toto téma popisuje postup použití <xref:System.ServiceModel.Dispatcher.DispatchRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace změnit výchozí chování při spuštění systému dispečera nebo k zachycení nebo upravit zprávy, parametry, služby nebo návratové hodnoty před nebo následné k odesílání nebo načítání je z vrstvy kanálu. Další informace o zpracování zprávy runtime ekvivalentní klienta najdete v tématu [rozšíření klienti](../../../../docs/framework/wcf/extending/extending-clients.md). Zjistit roli, <xref:System.ServiceModel.IExtensibleObject%601> typy přehrání při přístupu ke sdílené stavu mezi různými objekty přizpůsobení modulu runtime naleznete v tématu [rozšiřitelné objekty](../../../../docs/framework/wcf/extending/extensible-objects.md).  
+ Toto téma popisuje postup použití <xref:System.ServiceModel.Dispatcher.DispatchRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> aplikace změnit výchozí chování při spuštění systému dispečera nebo k zachycení nebo upravit zprávy, parametry nebo může vracet služby třídy v Windows Communication Foundation (WCF) hodnoty před nebo po odeslání nebo načítat vrstvy kanálu. Další informace o zpracování zprávy runtime ekvivalentní klienta najdete v tématu [rozšíření klienti](../../../../docs/framework/wcf/extending/extending-clients.md). Zjistit roli, <xref:System.ServiceModel.IExtensibleObject%601> typy přehrání při přístupu ke sdílené stavu mezi různými objekty přizpůsobení modulu runtime naleznete v tématu [rozšiřitelné objekty](../../../../docs/framework/wcf/extending/extensible-objects.md).  
   
 ## <a name="dispatchers"></a>Dispečerů  
  Vrstva modelu služby provede převod mezi programovací model pro vývojáře a základní exchange zprávu, označovaného jako vrstvy kanálu. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dispečerů kanálu a koncového bodu (<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>, v uvedeném pořadí) jsou součásti služby zodpovědní za přijetí nové kanály, přijímání zpráv, operace odesílání a volání a zpracování odpovědi. Dispečer jsou objekty příjemce, ale implementace kontraktu zpětného volání v duplexní služby také vystavit jejich dispečera objekty pro kontrolu, změna nebo rozšíření.  
@@ -97,17 +83,17 @@ Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní
   
 4.  Součásti související se zabezpečením, můžete použít následující vlastnosti:  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A>Určuje, kde se zapisují událostí auditu.  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> Určuje, kde se zapisují událostí auditu.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A>Určuje, zda se služba pokusí zosobnit pomocí přihlašovacích údajů zadaných příchozí zprávy.  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A> Určuje, zda se služba pokusí zosobnit pomocí přihlašovacích údajů zadaných příchozí zprávy.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A>Určuje, zda zpráva úspěšné ověřování události se zapisují do protokolu událostí určeného <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A>.  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A> Určuje, zda zpráva úspěšné ověřování události se zapisují do protokolu událostí určeného <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A>.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A>ovládací prvky jak <xref:System.Threading.Thread.CurrentPrincipal%2A> je nastavena.  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A> ovládací prvky jak <xref:System.Threading.Thread.CurrentPrincipal%2A> je nastavena.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A>Určuje, jak se provádí auditování událostí autorizace.  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> Určuje, jak se provádí auditování událostí autorizace.  
   
-    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A>Určuje, jestli se má potlačit nekritické výjimky, ke kterým došlo během procesu protokolování.  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A> Určuje, jestli se má potlačit nekritické výjimky, ke kterým došlo během procesu protokolování.  
   
  Obvykle jsou vlastní rozšíření objekty přiřazeny k <xref:System.ServiceModel.Dispatcher.DispatchRuntime> vlastnost vložit do kolekce podle chování služby ani (objekt, který implementuje <xref:System.ServiceModel.Description.IServiceBehavior>), kontrakt chování (objekt, který implementuje <xref:System.ServiceModel.Description.IContractBehavior>), nebo koncový bod chování (objekt, který implementuje <xref:System.ServiceModel.Description.IEndpointBehavior>). Potom objekt instalaci chování je přidán do příslušné kolekce chování prostřednictvím kódu programu nebo implementací vlastní <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> objekt, který chcete povolit chování má být vložen pomocí konfiguračního souboru aplikace.  
   

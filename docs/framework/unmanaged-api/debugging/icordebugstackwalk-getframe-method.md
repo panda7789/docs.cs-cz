@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugStackWalk::GetFrame – metoda"
-ms.custom: 
+title: ICorDebugStackWalk::GetFrame – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugStackWalk.GetFrame Method
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 4083b505-5b59-44fb-8c5d-129db6a96c10
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6c095afd0513360876e5330a130a4d938e30f8db
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 548a8a7743c02be5734b677010627f847c5bc4b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugstackwalkgetframe-method"></a>ICorDebugStackWalk::GetFrame – metoda
 Získá aktuální rámec v [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu.  
@@ -56,13 +44,13 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
 |S_OK|Modul runtime byla úspěšně vrácena aktuální snímek.|  
 |E_FAIL|Aktuální snímek nebyla vrácena.|  
 |S_FALSE|Aktuální snímek je nativní zásobníku.|  
-|E_INVALIDARG|`pFrame`má hodnotu null.|  
+|E_INVALIDARG|`pFrame` má hodnotu null.|  
 |CORDBG_E_PAST_END_OF_STACK|Ukazatel na rámec je již na konec zásobníku; Proto je přístupná žádné další snímky.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugStackWalk`Vrátí pouze rámce skutečné zásobníku. Použití [icordebugthread3::getactiveinternalframes –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) metoda vrátí interní rámce. (Interní rámce jsou vloženy do zásobníku modulem runtime pro uložení dočasných dat datové struktury).  
+ `ICorDebugStackWalk` Vrátí pouze rámce skutečné zásobníku. Použití [icordebugthread3::getactiveinternalframes –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) metoda vrátí interní rámce. (Interní rámce jsou vloženy do zásobníku modulem runtime pro uložení dočasných dat datové struktury).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -71,7 +59,7 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorDebugStackWalk – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)  

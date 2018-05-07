@@ -1,13 +1,6 @@
 ---
-title: "Přehled tabulky"
-ms.custom: 
+title: Přehled tabulky
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - documents [WPF], tables
 - tables [WPF]
 ms.assetid: 5e1105f4-8fc4-473a-ba55-88c8e71386e6
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 922faa06456a1aa86ffd0c805ab33577280ccf4f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 631a14ae8eb17713186f7db66700026cc476024e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="table-overview"></a>Přehled tabulky
-<xref:System.Windows.Documents.Table>je úrovně blokovém elementu, které podporuje předložení mřížky obsah dokumentu toku. Flexibilita tohoto elementu je velmi užitečná, ale také umožňuje složitěji, pochopit a používat správně.  
+<xref:System.Windows.Documents.Table> je úrovně blokovém elementu, které podporuje předložení mřížky obsah dokumentu toku. Flexibilita tohoto elementu je velmi užitečná, ale také umožňuje složitěji, pochopit a používat správně.  
   
  Toto téma obsahuje následující části.  
   
@@ -55,11 +43,11 @@ ms.lasthandoff: 12/22/2017
   
 <a name="table_vs_Grid"></a>   
 ### <a name="how-is-table-different-then-grid"></a>Jak je tabulka různých pak mřížky?  
- <xref:System.Windows.Documents.Table>a <xref:System.Windows.Controls.Grid> sdílet některé běžné funkce, ale každý je nejvhodnější pro různé scénáře. A <xref:System.Windows.Documents.Table> je určená pro použití v rámci toku obsahu (najdete v části [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md) Další informace o toku obsahu). Mřížky jsou nejvhodnější uvnitř forms (v podstatě kamkoli mimo toku obsahu). V rámci <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Table> podporuje toku obsahu chování jako stránkování, přeformátování sloupců a výběru obsahu při <xref:System.Windows.Controls.Grid> neexistuje. A <xref:System.Windows.Controls.Grid> na druhé straně je nejvhodnější mimo <xref:System.Windows.Documents.FlowDocument> z mnoha důvodů včetně <xref:System.Windows.Controls.Grid> přidá elementy podle řádků a sloupců index, <xref:System.Windows.Documents.Table> neexistuje. <xref:System.Windows.Controls.Grid> Element umožňuje rozvrstvení podřízené obsahu, povolení více než jeden element existovat v jednom "buňky." <xref:System.Windows.Documents.Table>nepodporuje rozvrstvení. Podřízených elementů <xref:System.Windows.Controls.Grid> možné absolutně umístit relativně k oblasti hranic jejich "buňky". <xref:System.Windows.Documents.Table>Tato funkce není podporována. Nakonec <xref:System.Windows.Controls.Grid> vyžaduje méně prostředků pak <xref:System.Windows.Documents.Table> , zvažte použití <xref:System.Windows.Controls.Grid> ke zlepšení výkonu.  
+ <xref:System.Windows.Documents.Table> a <xref:System.Windows.Controls.Grid> sdílet některé běžné funkce, ale každý je nejvhodnější pro různé scénáře. A <xref:System.Windows.Documents.Table> je určená pro použití v rámci toku obsahu (najdete v části [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md) Další informace o toku obsahu). Mřížky jsou nejvhodnější uvnitř forms (v podstatě kamkoli mimo toku obsahu). V rámci <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Table> podporuje toku obsahu chování jako stránkování, přeformátování sloupců a výběru obsahu při <xref:System.Windows.Controls.Grid> neexistuje. A <xref:System.Windows.Controls.Grid> na druhé straně je nejvhodnější mimo <xref:System.Windows.Documents.FlowDocument> z mnoha důvodů včetně <xref:System.Windows.Controls.Grid> přidá elementy podle řádků a sloupců index, <xref:System.Windows.Documents.Table> neexistuje. <xref:System.Windows.Controls.Grid> Element umožňuje rozvrstvení podřízené obsahu, povolení více než jeden element existovat v jednom "buňky." <xref:System.Windows.Documents.Table> nepodporuje rozvrstvení. Podřízených elementů <xref:System.Windows.Controls.Grid> možné absolutně umístit relativně k oblasti hranic jejich "buňky". <xref:System.Windows.Documents.Table> Tato funkce není podporována. Nakonec <xref:System.Windows.Controls.Grid> vyžaduje méně prostředků pak <xref:System.Windows.Documents.Table> , zvažte použití <xref:System.Windows.Controls.Grid> ke zlepšení výkonu.  
   
 <a name="basic_table_structure"></a>   
 ### <a name="basic-table-structure"></a>Struktura základní tabulky  
- <xref:System.Windows.Documents.Table>poskytuje na základě mřížky prezentace skládající se z sloupců (reprezentována <xref:System.Windows.Documents.TableColumn> prvky) a řádky (reprezentována <xref:System.Windows.Documents.TableRow> elementy). <xref:System.Windows.Documents.TableColumn>elementy nejsou hostiteli obsahu; jednoduše definovat sloupce a vlastnosti sloupců. <xref:System.Windows.Documents.TableRow>elementy musí být uloženy ve <xref:System.Windows.Documents.TableRowGroup> element, který definuje seskupení řádků v tabulce. <xref:System.Windows.Documents.TableCell>elementy, které obsahují skutečný obsah předávané tabulky, musí být uloženy ve <xref:System.Windows.Documents.TableRow> elementu. <xref:System.Windows.Documents.TableCell>může obsahovat jenom elementy, které jsou odvozeny od <xref:System.Windows.Documents.Block>.  Platný podřízené elementy pro <xref:System.Windows.Documents.TableCell> zahrnout.  
+ <xref:System.Windows.Documents.Table> poskytuje na základě mřížky prezentace skládající se z sloupců (reprezentována <xref:System.Windows.Documents.TableColumn> prvky) a řádky (reprezentována <xref:System.Windows.Documents.TableRow> elementy). <xref:System.Windows.Documents.TableColumn> elementy nejsou hostiteli obsahu; jednoduše definovat sloupce a vlastnosti sloupců. <xref:System.Windows.Documents.TableRow> elementy musí být uloženy ve <xref:System.Windows.Documents.TableRowGroup> element, který definuje seskupení řádků v tabulce. <xref:System.Windows.Documents.TableCell> elementy, které obsahují skutečný obsah předávané tabulky, musí být uloženy ve <xref:System.Windows.Documents.TableRow> elementu. <xref:System.Windows.Documents.TableCell> může obsahovat jenom elementy, které jsou odvozeny od <xref:System.Windows.Documents.Block>.  Platný podřízené elementy pro <xref:System.Windows.Documents.TableCell> zahrnout.  
   
 -   <xref:System.Windows.Documents.BlockUIContainer>  
   
@@ -72,10 +60,10 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.Windows.Documents.Table>  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.TableCell>elementy nemusí hostovat přímo textového obsahu. Další informace o členství ve skupině pravidla pro tok obsahu elementy jako <xref:System.Windows.Documents.TableCell>, najdete v části [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
+>  <xref:System.Windows.Documents.TableCell> elementy nemusí hostovat přímo textového obsahu. Další informace o členství ve skupině pravidla pro tok obsahu elementy jako <xref:System.Windows.Documents.TableCell>, najdete v části [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Table>je podobná <xref:System.Windows.Controls.Grid> element ale k dispozici další možnosti a, proto vyžaduje větší režijní náklady na prostředek.  
+>  <xref:System.Windows.Documents.Table> je podobná <xref:System.Windows.Controls.Grid> element ale k dispozici další možnosti a, proto vyžaduje větší režijní náklady na prostředek.  
   
  V následujícím příkladu definuje jednoduché tabulce 2 × 3 s [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="table_containment"></a>   
 ### <a name="table-containment"></a>Tabulka členství ve skupině  
- <xref:System.Windows.Documents.Table>odvozená z <xref:System.Windows.Documents.Block> elementu a dodržuje běžné pravidla pro <xref:System.Windows.Documents.Block> elementů na úrovni.  A <xref:System.Windows.Documents.Table> element mohou být obsaženy kterýmkoli z těchto prvků:  
+ <xref:System.Windows.Documents.Table> odvozená z <xref:System.Windows.Documents.Block> elementu a dodržuje běžné pravidla pro <xref:System.Windows.Documents.Block> elementů na úrovni.  A <xref:System.Windows.Documents.Table> element mohou být obsaženy kterýmkoli z těchto prvků:  
   
 -   <xref:System.Windows.Documents.FlowDocument>  
   
@@ -135,7 +123,7 @@ ms.lasthandoff: 12/22/2017
   
  Následující obrázek ukazuje, jak tento příklad vykreslí (pouze barvy pozadí zobrazující).  
   
- ![Snímek obrazovky: Tabulky z & č. 45; pořadí](../../../../docs/framework/wpf/advanced/media/table-zorder.png "Table_ZOrder")  
+ ![Snímek obrazovky: Tabulky z&#45;pořadí](../../../../docs/framework/wpf/advanced/media/table-zorder.png "Table_ZOrder")  
   
 <a name="spanning_rows_or_columns"></a>   
 ### <a name="spanning-rows-or-columns"></a>Řádky nebo sloupce  

@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy (Visual Basic)."
-ms.custom: 
+title: 'Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy (Visual Basic).'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - data type arguments [Visual Basic], using
 - type parameters [Visual Basic], defining
@@ -32,14 +26,11 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-caps.latest.revision: "29"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c8594a23391793e1be3d969f7eacc199cbc6caa9
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 3570a1c851bb8fead33f4cd208489c4ae087a68d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy (Visual Basic).
 Můžete definice třídy, ze kterého můžete vytvořit objekty, které poskytují identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo několik *parametry typu* v definici. Třída může pak sloužit jako šablona pro objekty, které používají různé datové typy. Třídy definované tímto způsobem se nazývá *– obecná třída*.  
@@ -86,7 +77,7 @@ Můžete definice třídy, ze kterého můžete vytvořit objekty, které poskyt
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
  [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)  
- [Z](../../../../visual-basic/language-reference/statements/of-clause.md)  
+ [z](../../../../visual-basic/language-reference/statements/of-clause.md)  
  [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)  
  [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

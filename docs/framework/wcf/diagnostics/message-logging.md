@@ -1,27 +1,15 @@
 ---
-title: "Protokolování zpráv"
-ms.custom: 
+title: Protokolování zpráv
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6bce0682-75ef-4d65-a659-b328fba4a8b5
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: da73af529a20a8d2e3e7df0ebadf2aeee4acbf1c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 473ddb3b68f6bb7a13203015a44450a92994a3b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-logging"></a>Protokolování zpráv
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]poskytuje schopnost příchozí a odchozí zprávy pro offline používání protokolu. Protokolování zpráv umožňuje zjistit, jaké zprávu a zpráva textu vypadá jako. Tento typ protokolování je zvláště užitečné v umožňují vědět, co bylo předáno argumentů a jak přijímající koncový bod viděli argumenty, vyjádřené jako XML. Kromě toho protokolování zprávy, protože byla přijata umožňuje diagnostikovat poškozených zpráv také, najdete v části jak byly přijaty zprávy. Můžete také zkontrolovat zabezpečení použití tokenů částí šifrovaný a podepsaný a částí zůstává nedotčeno.  
+Windows Communication Foundation (WCF) poskytuje schopnost příchozí a odchozí zprávy pro offline používání protokolu. Protokolování zpráv umožňuje zjistit, jaké zprávu a zpráva textu vypadá jako. Tento typ protokolování je zvláště užitečné v umožňují vědět, co bylo předáno argumentů a jak přijímající koncový bod viděli argumenty, vyjádřené jako XML. Kromě toho protokolování zprávy, protože byla přijata umožňuje diagnostikovat poškozených zpráv také, najdete v části jak byly přijaty zprávy. Můžete také zkontrolovat zabezpečení použití tokenů částí šifrovaný a podepsaný a částí zůstává nedotčeno.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled toku zpráv](../../../../docs/framework/wcf/diagnostics/message-flow-overview.md)  

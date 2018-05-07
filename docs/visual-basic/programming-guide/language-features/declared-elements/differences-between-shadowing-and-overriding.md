@@ -1,24 +1,15 @@
 ---
-title: "Rozdíly mezi stínováním a přepsáním (Visual Basic)"
-ms.custom: 
+title: Rozdíly mezi stínováním a přepsáním (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - shadowing, vs. overriding
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2d67486d9c6af96d314abad7142ba86779d74f5d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 94ce3e7fe25b7942730e6e89a53654b03d91c42b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Rozdíly mezi stínováním a přepsáním (Visual Basic)
 Když definujete třídu, která dědí vlastnosti ze základní třídy, někdy chtějí znovu definovat jeden nebo více elementů základní třídu v odvozené třídě. Stínováním a přepsáním jsou k dispozici pro tento účel.  
@@ -36,8 +27,8 @@ Když definujete třídu, která dědí vlastnosti ze základní třídy, někdy
 |Opětovná definice elementu|Žádné deklarovaný typ elementu|Pouze postup nebo vlastnost s identické volací sekvence<sup>1</sup>|  
 |Úroveň přístupu tohoto elementu opětovná definice|Všechny úrovně přístupu|Nelze změnit úroveň přístupu tohoto přepsaný prvek|  
 |Přehlednosti a writability z opětovná definice elementu|Libovolnou kombinaci|Nelze změnit čitelnost nebo writability přepsané vlastnosti|  
-|Možnost ovládat opětovná definice|Základní třída prvku nelze vynutit nebo zakázat stínováním|Můžete zadat základní třída prvku `MustOverride`, `NotOverridable`, nebo`Overridable`|  
-|Použití – klíčové slovo|`Shadows`doporučení v odvozené třídě; `Shadows` předpokládá, že pokud ani `Shadows` ani `Overrides` zadaný<sup>2</sup>|`Overridable`nebo `MustOverride` požadované v základní třídě; `Overrides` požadované odvozené třídy|  
+|Možnost ovládat opětovná definice|Základní třída prvku nelze vynutit nebo zakázat stínováním|Můžete zadat základní třída prvku `MustOverride`, `NotOverridable`, nebo `Overridable`|  
+|Použití – klíčové slovo|`Shadows` doporučení v odvozené třídě; `Shadows` předpokládá, že pokud ani `Shadows` ani `Overrides` zadaný<sup>2</sup>|`Overridable` nebo `MustOverride` požadované v základní třídě; `Overrides` požadované odvozené třídy|  
 |Dědičnost opětovná definice elementu třídy odvozování z odvozené třídy|Stínový provoz element zdědí další odvozené třídy; stíněné element i nadále skryté<sup>3</sup>|Přepsání element zdědí další odvozené třídy; přepsaný prvek stále přepsat.|  
   
  <sup>1</sup> *volání pořadí* se skládá z typu elementu (`Function`, `Sub`, `Operator`, nebo `Property`), název, seznam parametrů a návratovým typem. Nejde přepsat procedury vlastnosti nebo naopak. Nejde přepsat jeden druh procedury (`Function`, `Sub`, nebo `Operator`) s jiného typu.  
@@ -62,8 +53,8 @@ Když definujete třídu, která dědí vlastnosti ze základní třídy, někdy
 ## <a name="see-also"></a>Viz také  
  [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
  [Stínový provoz v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)  
- [Postupy: skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)  
- [Postupy: skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)  
- [Postupy: přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)  
- [Stínů](../../../../visual-basic/language-reference/modifiers/shadows.md)  
- [Přepsání](../../../../visual-basic/language-reference/modifiers/overrides.md)
+ [Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)  
+ [Postupy: Skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)  
+ [Postupy: Přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)  
+ [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)

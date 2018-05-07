@@ -1,22 +1,12 @@
 ---
-title: "Platný obsah XElement a XDocument Objects2"
-ms.custom: 
+title: Platný obsah XElement a XDocument Objects2
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 400bb692-478a-40b6-ac1b-4ccbb4cbbd02
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5093ef1c2974bcb980d97d4839af35bb69044a90
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4b1d588f0ebbfec6d5cf7a58b63f92005db75acc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>Platný obsah XElement a XDocument objektů
 Toto téma popisuje platné argumenty, které lze předat konstruktorů a metod, které můžete použít k přidání obsahu do elementů a dokumenty.  
@@ -54,7 +44,7 @@ Toto téma popisuje platné argumenty, které lze předat konstruktorů a metod,
   
 -   <xref:System.Xml.Linq.XAttribute>  
   
--   Žádný typ, který implementuje<xref:System.Collections.Generic.IEnumerable%601>  
+-   Žádný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>  
   
  Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu, a jsou přidány všechny položky v kolekci. Pokud kolekce obsahuje <xref:System.Xml.Linq.XNode> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně. Pokud kolekce obsahuje text (nebo objekty, které jsou převedeny na text), je text v kolekci zřetězených a přidat jako uzel jednoho textu.  
   

@@ -1,13 +1,6 @@
 ---
-title: "Zdroje a kód"
-ms.custom: 
+title: Zdroje a kód
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - procedural code [WPF], accessing resources from
 - resources [WPF], creating with procedural code
 ms.assetid: c1cfcddb-e39c-41c8-a7f3-60984914dfae
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 772c44b63627204da7056a5707f2840a82053f11
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 27b72d4be9012caf388c90d52a61d9837713c71f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resources-and-code"></a>Zdroje a kód
 Tento přehled soustřeďuje na postupy [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředky můžete přistupovat ani je vytvářet pomocí kódu místo [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] syntaxe. Další informace o využití obecné prostředků a prostředky z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxe perspektivy, najdete v části [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
@@ -36,7 +24,7 @@ Tento přehled soustřeďuje na postupy [!INCLUDE[TLA#tla_winclient](../../../..
   
 <a name="accessing"></a>   
 ## <a name="accessing-resources-from-code"></a>Přístup k prostředkům z kódu  
- Klíče, které označují prostředky, pokud jsou definovány na základě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se taky používají k načtení specifické prostředky, pokud požádáte o prostředku v kódu. Nejjednodušší způsob, jak načíst prostředek z kódu je volat buď <xref:System.Windows.FrameworkElement.FindResource%2A> nebo <xref:System.Windows.FrameworkElement.TryFindResource%2A> metoda z úrovni rozhraní objektů v aplikaci. Chování rozdíl mezi tyto metody je, co se stane, pokud není nalezen požadovaný klíč. <xref:System.Windows.FrameworkElement.FindResource%2A>vyvolá výjimku. <xref:System.Windows.FrameworkElement.TryFindResource%2A> nebude vyvolat výjimku, ale vrátí `null`. Každá metoda přebírá klíč prostředku jako vstupní parametr a vrátí objekt volného typu. Obvykle klíč prostředku je řetězec, ale existují příležitostně neřetězcový použití; najdete v článku [pomocí objektů jako klíče](#objectaskey) podrobnosti. Obvykle by přetypovat na typ vyžadují vlastnost, která nastavíte žádosti o prostředek vráceného objektu. Vyhledávání logiku pro překlad kódu prostředků je stejná jako odkaz na dynamické prostředků [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] případu. Hledat prostředky spustí z volání prvku a potom pokračuje v následných nadřazené elementy v logickém stromu. Vyhledávání bude pokračovat a vyšší do prostředky aplikace, motivů a systémové prostředky v případě potřeby. Žádost o kód pro prostředek bude správně účet pro změny v modulu runtime ve slovnících prostředků, které byly provedeny po této slovník prostředků, které jsou načítány z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]a také pro změny prostředků systému v reálném čase.  
+ Klíče, které označují prostředky, pokud jsou definovány na základě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se taky používají k načtení specifické prostředky, pokud požádáte o prostředku v kódu. Nejjednodušší způsob, jak načíst prostředek z kódu je volat buď <xref:System.Windows.FrameworkElement.FindResource%2A> nebo <xref:System.Windows.FrameworkElement.TryFindResource%2A> metoda z úrovni rozhraní objektů v aplikaci. Chování rozdíl mezi tyto metody je, co se stane, pokud není nalezen požadovaný klíč. <xref:System.Windows.FrameworkElement.FindResource%2A> vyvolá výjimku. <xref:System.Windows.FrameworkElement.TryFindResource%2A> nebude vyvolat výjimku, ale vrátí `null`. Každá metoda přebírá klíč prostředku jako vstupní parametr a vrátí objekt volného typu. Obvykle klíč prostředku je řetězec, ale existují příležitostně neřetězcový použití; najdete v článku [pomocí objektů jako klíče](#objectaskey) podrobnosti. Obvykle by přetypovat na typ vyžadují vlastnost, která nastavíte žádosti o prostředek vráceného objektu. Vyhledávání logiku pro překlad kódu prostředků je stejná jako odkaz na dynamické prostředků [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] případu. Hledat prostředky spustí z volání prvku a potom pokračuje v následných nadřazené elementy v logickém stromu. Vyhledávání bude pokračovat a vyšší do prostředky aplikace, motivů a systémové prostředky v případě potřeby. Žádost o kód pro prostředek bude správně účet pro změny v modulu runtime ve slovnících prostředků, které byly provedeny po této slovník prostředků, které jsou načítány z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]a také pro změny prostředků systému v reálném čase.  
   
  Tady je příklad stručný kódu, který vyhledá prostředku pomocí klíče a používá vrácené hodnoty pro nastavení vlastnosti, implementovaný jako <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužné rutiny události.  
   

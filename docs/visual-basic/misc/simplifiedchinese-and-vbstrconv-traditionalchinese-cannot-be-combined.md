@@ -1,21 +1,14 @@
 ---
 title: Nelze kombinovat SimplifiedChinese a VbStrConv.TraditionalChinese
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrArgument_StrConvSCandTC
 ms.assetid: d8e6a11b-f549-43b5-8337-0594340e1325
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0fd6006fd346b0fe43958bfb6806759a3bcfb0f1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: e9bee8c0e9b534704bdd2bef7d61042886f0a91a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="simplifiedchinese-and-vbstrconvtraditionalchinese-cannot-be-combined"></a>Nelze kombinovat SimplifiedChinese a VbStrConv.TraditionalChinese
 Aplikace se pokouší se zkombinovat `VbStrConv` členy výčtu `SimplifiedChinese` a `TraditionalChinese`, které se vzájemně vylučují.  

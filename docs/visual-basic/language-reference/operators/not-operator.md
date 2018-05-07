@@ -1,12 +1,6 @@
 ---
-title: "Not – operátor (Visual Basic)"
+title: Not – operátor (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Not
 helpviewer_keywords:
@@ -20,14 +14,11 @@ helpviewer_keywords:
 - logical negation
 - operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ac160aef7b7dc8acb8bf0211b403599692f2373c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 332cee57c8d25d7f51737e01e70ba515d50bd6e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="not-operator-visual-basic"></a>Not – operátor (Visual Basic)
 Provede logickou negaci `Boolean` výrazu nebo bitovou negaci numerického výrazu.  

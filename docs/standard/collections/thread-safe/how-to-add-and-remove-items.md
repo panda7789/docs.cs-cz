@@ -1,36 +1,25 @@
 ---
-title: "Postupy: Přidávání a odebírání položek v ConcurrentDictionary"
-ms.custom: 
+title: 'Postupy: Přidávání a odebírání položek v ConcurrentDictionary'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 4ef7c8050b26cffeed03cc394193116f8f6797a9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6aa309f2c6c44934f491229ac43003a05301bacb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, získat, aktualizovat a odebrání položek z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato třída kolekce je implementace bezpečné pro přístup z více vláken. Doporučujeme vám, že použít kdykoli více vláken může se pokusit o přístup k prvkům.  
   
- <xref:System.Collections.Concurrent.ConcurrentDictionary%602>poskytuje několik vhodných metod, které není nutné, aby kód nejprve zkontrolujte, jestli existuje klíč, předtím než se pokusí přidat nebo odebrat data. Následující tabulka uvádí tyto metody pohodlí a popisuje jejich použití.  
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602> poskytuje několik vhodných metod, které není nutné, aby kód nejprve zkontrolujte, jestli existuje klíč, předtím než se pokusí přidat nebo odebrat data. Následující tabulka uvádí tyto metody pohodlí a popisuje jejich použití.  
   
 |Metoda|Použijte, když...|  
 |------------|---------------|  
@@ -44,7 +33,7 @@ Tento příklad ukazuje, jak přidat, získat, aktualizovat a odebrání polože
  [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)]
  [!code-vb[CDS#16](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/cds_concdict.vb#16)]  
   
- <xref:System.Collections.Concurrent.ConcurrentDictionary%602>je určená pro scénáře s více vlákny. Není nutné používat zámky v kódu k přidání nebo odebrání položky z kolekce. Vždycky je však možné jedno vlákno k načtení hodnoty a jiné vlákno okamžitě aktualizovat kolekci tím, že se stejným klíčem novou hodnotu.  
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602> je určená pro scénáře s více vlákny. Není nutné používat zámky v kódu k přidání nebo odebrání položky z kolekce. Vždycky je však možné jedno vlákno k načtení hodnoty a jiné vlákno okamžitě aktualizovat kolekci tím, že se stejným klíčem novou hodnotu.  
   
  Také i když všechny metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602> jsou bezpečné pro vlákna, ne všechny metody jsou atomic, konkrétně <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>. Uživatel delegáta, který je předán tyto metody je vyvolána mimo interní zámku slovník. (To se provádí zabránit blokování všechna vlákna neznámý kód). Proto je možné pro toto pořadí k událostem:  
   

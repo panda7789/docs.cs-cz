@@ -1,12 +1,6 @@
 ---
 title: '&amp;= – Operátor (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.&=
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - '&= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 0cf262fc-1a05-419a-a503-60013f111c8a
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 929a9e8c3384451679fc52ad478eb03219d67192
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c3db2d4095600f32af92d1a4ce1f806a3f032af0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="amp-operator-visual-basic"></a>&amp;= – Operátor (Visual Basic)
 Zřetězí `String` výraz, který se `String` proměnné nebo vlastnosti a výsledek přiřadí proměnné nebo vlastnosti.  
@@ -53,8 +44,8 @@ variableorproperty &= expression
  [!code-vb[VbVbalrOperators#3](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/and-assignment-operator_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [& – Operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
- [+= – Operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
+ [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
+ [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
  [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
  [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  

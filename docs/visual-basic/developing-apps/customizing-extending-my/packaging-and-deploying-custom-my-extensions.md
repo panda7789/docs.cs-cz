@@ -1,23 +1,16 @@
 ---
-title: "Balení a nasazení vlastních rozšíření oboru názvů My (Visual Basic)"
+title: Balení a nasazení vlastních rozšíření oboru názvů My (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: fd89c54b-0290-4c50-95a3-ff17d4487a21
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 94a9ea977d0add14ae9f0c9a889b008b94610ee0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 901d0b80a18d2f4d262cc65eb485dcc628bc6a08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="packaging-and-deploying-custom-my-extensions-visual-basic"></a>Balení a nasazení vlastních rozšíření oboru názvů My (Visual Basic)
 Visual Basic poskytuje snadný způsob můžete nasadit vaše vlastní `My` rozšíření oboru názvů pomocí šablony sady Visual Studio. Pokud vytváříte šablona projektu pro kterou vaše `My` rozšíření jsou nedílnou součástí nového typu projektu, můžete zahrnout pouze vaše vlastní `My` kód rozšíření projektu při exportu šablony. Další informace o exportu šablony projektů najdete v tématu [postupy: vytvoření šablony projektů](/visualstudio/ide/how-to-create-project-templates).  
@@ -103,5 +96,5 @@ Visual Basic poskytuje snadný způsob můžete nasadit vaše vlastní `My` roz�
 ## <a name="see-also"></a>Viz také  
  [Rozšíření My Namespace v jazyce Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
  [Rozšíření aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)  
- [Přizpůsobení výběru objektů jsou k dispozici v mé](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
+ [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
  [Stránka Moje rozšíření, Návrhář projektu](/visualstudio/ide/reference/my-extensions-page-project-designer-visual-basic)

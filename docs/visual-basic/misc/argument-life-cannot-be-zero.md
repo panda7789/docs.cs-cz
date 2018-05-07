@@ -1,23 +1,16 @@
 ---
-title: "Argument & č. 39; Životní & č. 39; nemůže být nula."
+title: Argument &#39;životnosti&#39; nesmí být nula.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrFinancial_LifeNEZero
 ms.assetid: c402da97-a2b2-4219-a83a-0cebbfdffef2
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 63130405550684a6e5d8c9c7bfcd1aa971045f2b
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 0a8cb22250c798ffa3f3211be88c6086449c1836
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="argument-39life39-cannot-be-zero"></a>Argument & č. 39; Životní & č. 39; nemůže být nula.
+# <a name="argument-39life39-cannot-be-zero"></a>Argument &#39;životnosti&#39; nesmí být nula.
 Argument `Life`, která musí být `Double` který určuje dobu životnosti asset, není platný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

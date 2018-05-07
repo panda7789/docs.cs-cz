@@ -1,22 +1,12 @@
 ---
-title: "Úvod do čistého funkční transformace (Visual Basic)"
-ms.custom: 
+title: Úvod do čistého funkční transformace (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 82bf3348-c503-4854-a91f-71f9835779ff
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 37dc4520d2ef4795ac906732b35444eeb917a814
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8c382363c757887802ed54b565b24422d0ac7db7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-pure-functional-transformations-visual-basic"></a>Úvod do čistého funkční transformace (Visual Basic)
 Tato část představuje funkční transformací, včetně základní koncepty a podpůrné jazyk vytvoří. Výrazně liší od objektově orientované a funkční transformace přístupy k programování, včetně pokynů pro přecházení ty druhé. Funkční transformace lze v mnoha scénáře programování, ale transformace XML slouží jako konkrétní příklad sem.  

@@ -1,29 +1,15 @@
 ---
 title: Zabezpečení zpráv ve WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ef96dd25903076fedc59ad1507674dd40dcfcc5
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 27f8354cf4d96f8da408cffa3cef42ab9609c76d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-in-wcf"></a>Zabezpečení zpráv ve WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] obsahuje dva hlavní režimy pro zajištění zabezpečení (`Transport` a `Message`) a třetí režim (`TransportWithMessageCredential`), kombinací obou. Toto téma popisuje zabezpečení zpráv a důvodů, proč ji používat.  
+Windows Communication Foundation (WCF) má dva hlavní režimy pro zajištění zabezpečení (`Transport` a `Message`) a třetí režim (`TransportWithMessageCredential`), kombinací obou. Toto téma popisuje zabezpečení zpráv a důvodů, proč ji používat.  
   
 ## <a name="what-is-message-security"></a>Co je zabezpečení zpráv?  
  Zabezpečení zpráv pomocí specifikace WS-zabezpečení zabezpečené zprávy. WS-Securityspecification popisuje vylepšení protokolu SOAP zprávy k zajištění důvěrnosti, integrity a ověřování na úrovni protokolu SOAP zprávy (namísto transportní).  
@@ -35,11 +21,11 @@ ms.lasthandoff: 04/30/2018
   
 -   Koncové zabezpečení. Zabezpečení přenosu, například vrstvy SSL (Secure Sockets) pouze zabezpečuje zprávy, když komunikace typu point-to-point. Pokud zpráva se směruje na jeden nebo více SOAP prostředníci (například router) dříve, než dorazila ultimate příjemce, samotné zprávy není chráněný, jakmile prostředník se čte z přenosu. Informace o ověřování klienta kromě toho je k dispozici pouze první zprostředkovatel a je třeba znovu přenést k příjemce ultimate způsobem out-of-band, v případě potřeby. To platí i v případě, že celá trasy, která používá zabezpečení SSL mezi jednotlivé směrování. Vzhledem k zabezpečení zpráv pracuje přímo s zprávu a zabezpečuje XML v něm, zůstává zabezpečení se zprávou bez ohledu na to, kolik prostředníci jsou související se situací, než dorazí ultimate příjemce. To umožňuje scénáři true-koncové zabezpečení.  
   
--   Vyšší flexibilita. Součástí zprávy, místo celé zprávy, může být podepsána nebo zašifrována. To znamená, že prostředníci můžete zobrazit části zprávy, které jsou určeny pro ně. Pokud odesílatel musí zpřístupněte součástí informace ve zprávě dodavatelů ale chce zajistit, že není manipulováno, je právě podepište ho ale ponechte bez šifrování. Vzhledem k tomu, že podpisu je součástí zprávy, ultimate příjemce může ověřit, že informace ve zprávě byla přijata Internet nedotčené. Jeden scénář pravděpodobně SOAP prostředník, služby směrování zprávy podle hodnota hlavičky akce. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nešifruje hodnotu akce, ale podepíše ho, pokud se používá k zabezpečení zpráv. Proto tyto informace jsou k dispozici pro všechny prostředníci, ale nikdo můžete ho změnit.  
+-   Vyšší flexibilita. Součástí zprávy, místo celé zprávy, může být podepsána nebo zašifrována. To znamená, že prostředníci můžete zobrazit části zprávy, které jsou určeny pro ně. Pokud odesílatel musí zpřístupněte součástí informace ve zprávě dodavatelů ale chce zajistit, že není manipulováno, je právě podepište ho ale ponechte bez šifrování. Vzhledem k tomu, že podpisu je součástí zprávy, ultimate příjemce může ověřit, že informace ve zprávě byla přijata Internet nedotčené. Jeden scénář pravděpodobně SOAP prostředník, služby směrování zprávy podle hodnota hlavičky akce. Ve výchozím nastavení WCF nešifruje hodnotu akce ale podepíše ho, pokud se používá k zabezpečení zpráv. Proto tyto informace jsou k dispozici pro všechny prostředníci, ale nikdo můžete ho změnit.  
   
 -   Podpora pro více přenosy. Můžete odeslat zabezpečené zprávy přes mnoho různých přenosy, jako jsou pojmenované kanály a TCP, aniž byste museli spoléhat na protokol pro zabezpečení. Zabezpečení transportní vrstvy všechny informace o zabezpečení je omezená na jedno konkrétní přenosové spojení a není k dispozici z samotný obsah zprávy. Zabezpečení zpráv umožňuje zprávu zabezpečení bez ohledu na to, jaký přenos použijete k přenosu zprávy a kontext zabezpečení je přímo vložena do zprávy.  
   
--   Podpora pro celou sadu přihlašovacích údajů a deklarace identity. Specifikaci WS-zabezpečení, která poskytuje rozšiřitelný rámec přenášet libovolného typu deklarace identity uvnitř zprávu SOAP vychází zabezpečení zpráv. Na rozdíl od zabezpečení přenosu není omezený sadu mechanismy ověřování nebo deklarace identity, které můžete použít možnosti přenosu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení zpráv obsahuje více typů ověřování a deklarace identity přenos a lze rozšířit na podporovat další typy podle potřeby. Z těchto důvodů například, scénáři federované přihlašovacích údajů není možné bez zabezpečení zpráv. Další informace o federační scénáře WCF podporuje, naleznete v části [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+-   Podpora pro celou sadu přihlašovacích údajů a deklarace identity. Specifikaci WS-zabezpečení, která poskytuje rozšiřitelný rámec přenášet libovolného typu deklarace identity uvnitř zprávu SOAP vychází zabezpečení zpráv. Na rozdíl od zabezpečení přenosu není omezený sadu mechanismy ověřování nebo deklarace identity, které můžete použít možnosti přenosu. Zabezpečení zpráv WCF obsahuje více typů ověřování a deklarace identity přenos a lze rozšířit na podporovat další typy podle potřeby. Z těchto důvodů například, scénáři federované přihlašovacích údajů není možné bez zabezpečení zpráv. Další informace o federační scénáře WCF podporuje, naleznete v části [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="how-message-and-transport-security-compare"></a>Jak porovnat zprávu a zabezpečení přenosu  
   

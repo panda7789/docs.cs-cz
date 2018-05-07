@@ -1,28 +1,16 @@
 ---
-title: "Typy sloupců v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Typy sloupců v ovládacím prvku Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - columns [Windows Forms], types
 - DataGridView control [Windows Forms], column types
 - data grids [Windows Forms], columns
 ms.assetid: f0a0a9f1-8757-4bfd-891f-d7d12870dbed
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92c6881fe876bba3fe0224a358a9b12767d53f0b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6630323b66265f478151ec80ab8b225c0b653917
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="column-types-in-the-windows-forms-datagridview-control"></a>Typy sloupců v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení používá několik typů sloupce a zobrazit informace o jeho povolit uživatelům změnit nebo přidat informace.  
@@ -53,7 +41,7 @@ ms.lasthandoff: 12/22/2017
  Hodnota buňky datový typ sloupce je zadán v <xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A> vlastnost sloupce.  
   
 ## <a name="datagridviewcheckboxcolumn"></a>DataGridViewCheckBoxColumn  
- <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> Se používá s <xref:System.Boolean> a <xref:System.Windows.Forms.CheckState> hodnoty. <xref:System.Boolean>hodnoty se zobrazí jako stavu dvou nebo tří stavů zaškrtávacích políček, v závislosti na hodnotě <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> vlastnost. Sloupec je vázána k <xref:System.Windows.Forms.CheckState> hodnoty, <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> hodnota vlastnosti je `true` ve výchozím nastavení.  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> Se používá s <xref:System.Boolean> a <xref:System.Windows.Forms.CheckState> hodnoty. <xref:System.Boolean> hodnoty se zobrazí jako stavu dvou nebo tří stavů zaškrtávacích políček, v závislosti na hodnotě <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> vlastnost. Sloupec je vázána k <xref:System.Windows.Forms.CheckState> hodnoty, <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> hodnota vlastnosti je `true` ve výchozím nastavení.  
   
  Obvykle hodnot v buňkách políčko jsou určené pro úložiště, jako další data, nebo provádění hromadné operace. Pokud chcete reagovat okamžitě, když uživatelé kliknou na buňku zaškrtávací políčko, může zpracovat <xref:System.Windows.Forms.DataGridView.CellClick> událostí, ale tato událost nastane dříve, než se aktualizuje hodnotu buňky. Pokud potřebujete v době, klepněte na tlačítko Nová hodnota, jednou z možností je pro výpočet, očekávané hodnoty, které je bude na základě aktuální hodnoty. Další možností je Potvrdit změnu okamžitě a zpracovat <xref:System.Windows.Forms.DataGridView.CellValueChanged> událost, která má odpovědět na ni. Potvrzení změn při kliknutí na buňky, je nutné zpracovat <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged> událostí. V obslužné rutině, pokud aktuální buňky buňku zaškrtávací políčko, zavolejte <xref:System.Windows.Forms.DataGridView.CommitEdit%2A> metoda a předejte jí <xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit> hodnotu.  
   

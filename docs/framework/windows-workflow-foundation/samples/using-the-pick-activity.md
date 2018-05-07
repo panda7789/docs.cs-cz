@@ -1,23 +1,12 @@
 ---
-title: "Pomocí aktivity vybrat"
-ms.custom: 
+title: Pomocí aktivity vybrat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 01cad73bfe5e741c104a8c8e5e9d66f7564c7067
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9617949d72fb1489f66fec205b260b807d011177
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-pick-activity"></a>Pomocí aktivity vybrat
 Tento příklad znázorňuje způsob použití <xref:System.Activities.Statements.Pick> aktivity.  
@@ -27,7 +16,7 @@ Tento příklad znázorňuje způsob použití <xref:System.Activities.Statement
  Tato ukázka vyzve uživatele k zadání v názvu v konzole a v daném časovém intervalu. <xref:System.Activities.Statements.Pick> Aktivita v ukázce má dvě větve, které jsou spouštěny podle o tom, jestli uživatel zadá v názvu během 5 sekund nebo ne. Pokud uživatel zadá v názvu během 5 sekund, je proveden první větve, který obsahuje vlastní `ReadLine` aktivity; v opačném případě jiné větev proveden, který obsahuje <xref:System.Activities.Statements.Delay> aktivity. Jakmile uživatelské jméno je zadán v v konzole, uživatelské jméno je vytištěno na konzole. Pokud vstup není zadán v rámci 5 sekund, je operace vypršel.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- <xref:System.Activities.Statements.Pick>aktivita.  
+ <xref:System.Activities.Statements.Pick> aktivita.  
   
 ## <a name="discussion"></a>Diskusní  
  Ukázka zahrnuje Návrháře pracovního postupu a programové pracovního postupu.  
@@ -61,6 +50,6 @@ Tento příklad znázorňuje způsob použití <xref:System.Activities.Statement
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`

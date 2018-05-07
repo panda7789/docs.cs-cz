@@ -1,13 +1,6 @@
 ---
-title: "Přehled geometrie"
-ms.custom: 
+title: Přehled geometrie
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - geometry classes [WPF]
 - graphics [WPF], geometry classes
 ms.assetid: 9fba8934-98b7-4af6-82f6-f4ef887f963a
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e58e3ea00a00b24e476fd158beb3b0515e607f9d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01c460ae18c489a21c860c6d2b10f551e6e68242
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="geometry-overview"></a>Přehled geometrie
 Tento přehled popisuje postup použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> třídy k popisu tvarů. V tomto tématu jsou také uvedeny rozdíly mezi <xref:System.Windows.Media.Geometry> objekty a <xref:System.Windows.Shapes.Shape> elementy.  
@@ -34,7 +22,7 @@ Tento přehled popisuje postup použití [!INCLUDE[TLA#tla_winclient](../../../.
 ## <a name="what-is-a-geometry"></a>Co je objekt Geometry?  
  <xref:System.Windows.Media.Geometry> Třídy a třídy, které jsou odvozeny od, jako například <xref:System.Windows.Media.EllipseGeometry>, <xref:System.Windows.Media.PathGeometry>, a <xref:System.Windows.Media.CombinedGeometry>, vám umožní popisují geometrie 2D obrazce. Tyto popisy geometrickou mít mnoho používá, takové definování obrazce k vyplnění na obrazovku nebo definování vstupů do testovacích a klip oblasti. Objekt geometry můžete použít i k definování cestu animace.  
   
- <xref:System.Windows.Media.Geometry>třeba obdélníků a kroužky nebo složené, vytvořené ze dvou nebo více objektů geometry, mohou být jednoduchý, objekty.  Složitější geometrie lze vytvořit pomocí <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> třídy, které vám umožní popisují oblouky a křivek.  
+ <xref:System.Windows.Media.Geometry> třeba obdélníků a kroužky nebo složené, vytvořené ze dvou nebo více objektů geometry, mohou být jednoduchý, objekty.  Složitější geometrie lze vytvořit pomocí <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> třídy, které vám umožní popisují oblouky a křivek.  
   
  Protože <xref:System.Windows.Media.Geometry> je typ <xref:System.Windows.Freezable>, <xref:System.Windows.Media.Geometry> objekty poskytují několik speciální funkce: můžete být deklarována jako [prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md), sdílené mezi více objektů, jen pro čtení ke zlepšení výkonu, klonovat, a provedené bezpečné pro přístup z více vláken. Další informace o různých funkcí poskytovaných <xref:System.Windows.Freezable> objekty, najdete [zmrazitelné objekty – přehled](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
   
@@ -187,7 +175,7 @@ PathGeometry s více obrázků
 ## <a name="composite-geometries"></a>Složené geometrie  
  Složené geometrie objekty mohou být vytvořeny pomocí <xref:System.Windows.Media.GeometryGroup>, <xref:System.Windows.Media.CombinedGeometry>, nebo voláním statické <xref:System.Windows.Media.Geometry> metoda <xref:System.Windows.Media.Geometry.Combine%2A>.  
   
--   <xref:System.Windows.Media.CombinedGeometry> Objektu a <xref:System.Windows.Media.Geometry.Combine%2A> metoda provádí logická operace kombinovat oblasti určené dvě geometrie. <xref:System.Windows.Media.Geometry>objekty, které mají žádné oblasti se zahodí. Pouze dva <xref:System.Windows.Media.Geometry> objekty mohou být kombinovány (i když tyto dvě geometrie může být také složené geometrie).  
+-   <xref:System.Windows.Media.CombinedGeometry> Objektu a <xref:System.Windows.Media.Geometry.Combine%2A> metoda provádí logická operace kombinovat oblasti určené dvě geometrie. <xref:System.Windows.Media.Geometry> objekty, které mají žádné oblasti se zahodí. Pouze dva <xref:System.Windows.Media.Geometry> objekty mohou být kombinovány (i když tyto dvě geometrie může být také složené geometrie).  
   
 -   <xref:System.Windows.Media.GeometryGroup> Třída vytvoří sloučení <xref:System.Windows.Media.Geometry> objekty obsahuje bez kombinování jejich oblasti. Libovolný počet <xref:System.Windows.Media.Geometry> můžete přidat objekty <xref:System.Windows.Media.GeometryGroup>. Příklad, naleznete v části [vytváření kompozitních tvaru](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md).  
   
@@ -219,11 +207,11 @@ PathGeometry s více obrázků
 ## <a name="other-geometry-features"></a>Další funkce geometrie  
  <xref:System.Windows.Media.Geometry> Třída rovněž poskytuje užitečné pomocné metody, jako jsou následující:  
   
--   <xref:System.Windows.Media.Geometry.GetArea%2A>-Získá oblasti <xref:System.Windows.Media.Geometry>.  
+-   <xref:System.Windows.Media.Geometry.GetArea%2A> -Získá oblasti <xref:System.Windows.Media.Geometry>.  
   
--   <xref:System.Windows.Media.Geometry.FillContains%2A>-Určuje, zda geometrie obsahuje jiné <xref:System.Windows.Media.Geometry>.  
+-   <xref:System.Windows.Media.Geometry.FillContains%2A> -Určuje, zda geometrie obsahuje jiné <xref:System.Windows.Media.Geometry>.  
   
--   <xref:System.Windows.Media.Geometry.StrokeContains%2A>-Určuje, zda tah <xref:System.Windows.Media.Geometry> obsahuje zadaný bod.  
+-   <xref:System.Windows.Media.Geometry.StrokeContains%2A> -Určuje, zda tah <xref:System.Windows.Media.Geometry> obsahuje zadaný bod.  
   
  Najdete v článku <xref:System.Windows.Media.Geometry> třídu pro úplný seznam všech její metody.  
   

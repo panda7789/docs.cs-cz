@@ -1,12 +1,6 @@
 ---
 title: = – operátor (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Assign
 - vb.=
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - = operator [Visual Basic]
 - = assignment statements [Visual Basic]
 ms.assetid: 2dac2e49-86c8-42f8-80c1-458452fb5e29
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 230005640b2b494e5413b14ba13a7cb82ee9f22b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 55b3a8201940a6fec351327aaa88e4ac1ee9246a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>= – operátor (Visual Basic)
 Přiřazuje hodnotu proměnné nebo vlastnosti.  
@@ -54,14 +45,14 @@ variableorproperty = value
  [!code-vb[VbVbalrOperators#9](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/assignment-operator_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [& = – operátor](../../../visual-basic/language-reference/operators/and-assignment-operator.md)  
- [* = – Operátor](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)  
- [+= – Operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
+ [&= – operátor](../../../visual-basic/language-reference/operators/and-assignment-operator.md)  
+ [*= – operátor](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)  
+ [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
  [-= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)  
  [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
  [\\= – Operátor](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)  
- [^ = – Operátor](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  
+ [^= – operátor](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
- [Operátory porovnávání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
- [Jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md)  
+ [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
  [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

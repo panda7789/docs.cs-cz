@@ -1,30 +1,18 @@
 ---
-title: "Programování služby na úrovni kanálů"
-ms.custom: 
+title: Programování služby na úrovni kanálů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8d8dcd85-0a05-4c44-8861-4a0b3b90cca9
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a1a6ef03b3ee0cc68809ec6ba80a7eadbc44cb1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: e48c519f6e10be4521d75345845eb5c019ec342c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-channel-level-programming"></a>Programování služby na úrovni kanálů
-Toto téma popisuje, jak napsat [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace bez použití služby <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> a jeho přidružený objekt modelu.  
+Toto téma popisuje, jak psát aplikace služby Windows Communication Foundation (WCF) bez použití <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> a jeho přidružený objekt modelu.  
   
 ## <a name="receiving-messages"></a>Přijímání zpráv  
  Bude připravená přijmout a zpracování zpráv, jsou požadovány následující kroky:  
@@ -40,14 +28,14 @@ Toto téma popisuje, jak napsat [!INCLUDE[indigo1](../../../../includes/indigo1-
 5.  Zavřete všechny objekty kanálu.  
   
 #### <a name="creating-a-binding"></a>Vytváření vazby  
- Prvním krokem při čekání na a přijímání zpráv vytváří vazbu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]se dodává s několik předdefinovaných nebo poskytované systémem vazby, které lze použít přímo po vytvoření instance jeden z nich. Kromě toho můžete také vytvořit vlastní vlastní vazby po vytvoření instance CustomBinding třídu, která je jaké kód v výpis 1.  
+ Prvním krokem při čekání na a přijímání zpráv vytváří vazbu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se dodává s několik předdefinovaných nebo poskytované systémem vazby, které lze použít přímo po vytvoření instance jeden z nich. Kromě toho můžete také vytvořit vlastní vlastní vazby po vytvoření instance CustomBinding třídu, která je jaké kód v výpis 1.  
   
  Následující příklad kódu vytvoří instanci <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> a přidá <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> k jeho elementy kolekce, která je kolekce elementů, které se používají k vytvoření kanálu zásobníku vazby. V tomto příkladu protože kolekce elementů je k dispozici pouze <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, výsledný zásobník kanál má pouze přenosu kanál protokolu HTTP.  
   
 #### <a name="building-a-channellistener"></a>Vytváření ChannelListener  
  Po vytvoření vazby, říkáme <!--zz<xref:System.ServiceModel.Channels.Binding.BuildChannelListener%601%2A?displayProperty=nameWithType>--> `System.ServiceModel.Channels.Binding.BuildChannelListener` vytvořit naslouchací proces kanálu, kde parametr typu je tvar kanál, který má vytvořit. V tomto příkladu používáme <xref:System.ServiceModel.Channels.IReplyChannel?displayProperty=nameWithType> vzhledem k tomu, že chceme přijímat příchozí zprávy v vzorce výměny zpráv požadavek nebo odpověď.  
   
- <xref:System.ServiceModel.Channels.IReplyChannel>používá se k přijetí žádosti, zpráv a odesílá zpět odpovídáte zprávy. Volání metody <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A?displayProperty=nameWithType> vrátí <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType>, který může být použit pro příjem zprávy žádosti a má být zaslán zpět zprávu odpovědi.  
+ <xref:System.ServiceModel.Channels.IReplyChannel> používá se k přijetí žádosti, zpráv a odesílá zpět odpovídáte zprávy. Volání metody <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A?displayProperty=nameWithType> vrátí <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType>, který může být použit pro příjem zprávy žádosti a má být zaslán zpět zprávu odpovědi.  
   
  Při vytváření naslouchací proces, jsme předat síťovou adresu, na kterém naslouchá, v takovém případě `http://localhost:8080/channelapp`. Obecně platí, každý kanál přenos podporuje jednu nebo může být několik adresu schémat, například přenos HTTP podporuje schémata http a https.  
   

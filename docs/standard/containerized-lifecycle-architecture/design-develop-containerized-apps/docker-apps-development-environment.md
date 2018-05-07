@@ -1,19 +1,14 @@
 ---
 title: Vývojové prostředí pro Docker aplikace
 description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
-ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ddd1006c8c6728d4d315442f409f8fa33e54f9a3
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 8db9f37e4fa8df63060982857d457c9e1ce90f60
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro Docker aplikace
 

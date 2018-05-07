@@ -1,31 +1,19 @@
 ---
-title: "Ověřování ze strany klienta"
-ms.custom: 
+title: Ověřování ze strany klienta
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd9c698962bbca04ac05473265d95fc00517b039
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: a5c1c5f907a797bff3dff490cbc953879ab69718
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="client-validation"></a>Ověřování ze strany klienta
 Služby často publikování metadat povolit automatické generování a konfigurace různých typů klientů proxy serveru. Pokud služba není důvěryhodný, klientské aplikace by měl ověřit, že metadata, splňuje zásady klientské aplikace týkající se zabezpečení, transakce, typ kontrakt služby a tak dále. Následující příklad ukazuje, jak zapsat klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že tento koncový bod služby lze bezpečně používat.  
   
  Službu zpřístupní čtyři koncové body služby. První koncový bod používá – WSDualHttpBinding, druhý koncový bod používá ověřování protokolem NTLM, třetí koncový bod umožňuje toku transakcí a čtvrtý koncový bod používá ověřování založené na certifikátu.  
   
- Klient použije <xref:System.ServiceModel.Description.MetadataResolver> třída načíst metadata pro službu. Klient vynucuje zásady zakazující duplexní vazby, ověřování protokolem NTLM a pomocí ověřování chování toku transakcí. Pro každou <xref:System.ServiceModel.Description.ServiceEndpoint> instance importovat z metadat služby, klientská aplikace přidá instanci `InternetClientValidatorBehavior` chování koncový bod <xref:System.ServiceModel.Description.ServiceEndpoint> před pokusem o použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta se můžete připojit ke koncovému bodu. Chování `Validate` metoda spustí před jakékoli operace služby, se nazývají a vynucuje zásady klienta po vyvolání výjimky `InvalidOperationExceptions`.  
+ Klient použije <xref:System.ServiceModel.Description.MetadataResolver> třída načíst metadata pro službu. Klient vynucuje zásady zakazující duplexní vazby, ověřování protokolem NTLM a pomocí ověřování chování toku transakcí. Pro každou <xref:System.ServiceModel.Description.ServiceEndpoint> instance importovat z metadat služby, klientská aplikace přidá instanci `InternetClientValidatorBehavior` chování koncový bod <xref:System.ServiceModel.Description.ServiceEndpoint> před pokusem o používání klienta Windows Communication Foundation (WCF) pro připojení k koncový bod. Chování `Validate` metoda spustí před jakékoli operace služby, se nazývají a vynucuje zásady klienta po vyvolání výjimky `InvalidOperationExceptions`.  
   
 ### <a name="to-build-the-sample"></a>Chcete-li sestavit ukázku  
   

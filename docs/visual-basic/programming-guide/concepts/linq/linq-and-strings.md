@@ -1,22 +1,12 @@
 ---
-title: "LINQ a řetězce (Visual Basic)"
-ms.custom: 
+title: LINQ a řetězce (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 75ddb201-d97a-4f98-8cdf-4ad51714529a
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b615f3dc76d72e7f73146498e0143f88c52278a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a76465b33a30d149cd6313e2628ee742e248ab3e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-and-strings-visual-basic"></a>LINQ a řetězce (Visual Basic)
 LINQ lze použít pro dotazování a Transformace řetězců a kolekcí řetězců. Může být obzvláště užitečný v případě částečně strukturovaných dat v textových souborů. Dotazů LINQ lze spojovat pomocí funkce tradiční řetězce a regulární výrazy. Například můžete použít <xref:System.String.Split%2A> nebo <xref:System.Text.RegularExpressions.Regex.Split%2A> metodu pro vytvoření pole řetězců, které můžete zadat dotaz nebo upravovat pomocí LINQ. Můžete použít <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metoda v `where` klauzuli jazyka LINQ. A můžete LINQ dotazů nebo upravit <xref:System.Text.RegularExpressions.MatchCollection> výsledků vrácených regulární výraz.  
@@ -70,4 +60,4 @@ LINQ lze použít pro dotazování a Transformace řetězců a kolekcí řetězc
   
 ## <a name="see-also"></a>Viz také  
  [Language-Integrated Query (LINQ) (Visual Basic)](index.md)  
- [Postupy: vygenerování XML ze souborů CSV](how-to-generate-xml-from-csv-files.md)
+ [Postupy: Generování XML ze souborů CSV](how-to-generate-xml-from-csv-files.md)

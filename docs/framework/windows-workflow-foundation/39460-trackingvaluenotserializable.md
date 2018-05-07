@@ -1,23 +1,12 @@
 ---
 title: 39460 - TrackingValueNotSerializable
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 476a29ad-24d8-4359-8c17-d4e20c1e1c15
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4d33c17f212f5413732fe982cf7ea06a610df0d2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0e5515563ba77426a5f45d92977014c456ab779
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="39460---trackingvaluenotserializable"></a>39460 - TrackingValueNotSerializable
 ## <a name="properties"></a>Vlastnosti  

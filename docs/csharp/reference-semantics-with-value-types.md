@@ -1,19 +1,13 @@
 ---
 title: Odkaz na sémantiku s typy hodnot
 description: Porozumět funkcím jazyk, které bezpečně minimalizovat kopírování struktury
-author: billwagner
-ms.author: wiwagn
 ms.date: 11/10/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 778897dc92f8a94178ebbbed7704c0dfe2397729
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 3c53a426a6adb37f5091e4ad61835fef6c9f7729
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reference-semantics-with-value-types"></a>Odkaz na sémantiku s typy hodnot
 

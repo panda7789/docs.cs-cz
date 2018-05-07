@@ -1,24 +1,12 @@
 ---
-title: "Postupy: Vytvoření služby pracovních postupů, která volá jinou službu pracovních postupů"
-ms.custom: 
+title: 'Postupy: Vytvoření služby pracovních postupů, která volá jinou službu pracovních postupů'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 99b3ee3e-aeb7-4e6f-8321-60fe6140eb67
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c99748e77f1fccd9512c8915d0f4068d0da51a41
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fda5a7286c3d20c7cdc2093e58bfe3fbdcf1d1c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-workflow-service-that-calls-another-workflow-service"></a>Postupy: Vytvoření služby pracovních postupů, která volá jinou službu pracovních postupů
 Někdy je nezbytné pro služby pracovního postupu, který chcete získat informace z jiné služby pracovního postupu.  Toto téma ukazuje, jak volat jeden služby pracovního postupu z druhého. V tomto tématu vytvoříme dvě služby pracovního postupu; ten, který má metodu, která obrátí vstupní řetězec a druhý, který převádí vstupního řetězce na velká písmena po Prohodit řetězec, který používá službu první.  
@@ -113,7 +101,7 @@ Někdy je nezbytné pro služby pracovního postupu, který chcete získat infor
   
     4.  **TargetType**: NestedServices.StringLibrary  
   
-8.  Nyní zavoláme vám první službě na upravené řetězec. Klikněte pravým tlačítkem na projekt a vyberte **přidat odkaz na službu**. Přidat odkaz na službu ve službě v http://localhost/NestedServices/StringReverserService.xamlx a sestavte projekt a vytvořit vlastní aktivitu pro přístup k první webové služby.  
+8.  Nyní zavoláme vám první službě na upravené řetězec. Klikněte pravým tlačítkem na projekt a vyberte **přidat odkaz na službu**. Přidat odkaz na službu na službu na http://localhost/NestedServices/StringReverserService.xamlx a sestavte projekt a vytvořit vlastní aktivitu pro přístup k první webové služby.  
   
 9. Přetáhněte instanci novou aktivitu do pracovního postupu, mezi **InvokeMethod** aktivity a **SendReplyToReceive** aktivity. Přiřaďte proměnnou StringToReverse vlastnost InputString nová aktivita a proměnné StringToReturn pro vlastnost StringToReturn.  
   

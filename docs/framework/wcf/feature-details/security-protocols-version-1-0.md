@@ -1,47 +1,37 @@
 ---
-title: "Protokoly zabezpečení verze 1.0"
-ms.custom: 
+title: Protokoly zabezpečení verze 1.0
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ee3402d2-1076-410b-a3cb-fae0372bd7af
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: ba5ce91f4cb3edd93698f7c0ba028186afdb8111
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b1e911b20ac8974dbc8cfa79e03fbd14f9beb17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-protocols-version-10"></a>Protokoly zabezpečení verze 1.0
-Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webové služby, které se týkají všech existujícího podnikového zasílání zpráv požadavky na zabezpečení. Tato část popisuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] podrobnosti o verzi 1.0 (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro protokoly zabezpečení následující webových služeb.  
+Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webové služby, které se týkají všech existujícího podnikového zasílání zpráv požadavky na zabezpečení. Tato část popisuje podrobnosti Windows Communication Foundation (WCF) verze 1.0 (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro protokoly zabezpečení následující webových služeb.  
   
 |Specifikace či dokumentu|Odkaz|  
 |-|-|  
-|WSS: Zabezpečení zpráv protokolu SOAP 1.0|http://docs.oasis-open.org/WSS/2004/01/oasis-200401-WSS-SOAP-Message-Security-1.0.PDF|  
-|WSS: Uživatelské jméno Token profil 1.0|http://docs.oasis-open.org/WSS/2004/01/oasis-200401-WSS-username-token-Profile-1.0.PDF|  
-|WSS: X509 Token profil 1.0|http://docs.oasis-open.org/WSS/2004/01/oasis-200401-WSS-x509-token-Profile-1.0.PDF|  
-|WSS: SAML 1.1 Token profil 1.0|http://docs.oasis-open.org/WSS/oasis-WSS-SAML-token-Profile-1.0.PDF|  
-|WSS: Zabezpečení zpráv SOAP 1.1|http://www.oasis-open.org/committees/download.php/16790/WSS-V1.1-spec-OS-SOAPMessageSecurity.PDF|  
-|WSS uživatelské jméno tokenu Profile 1.1|http://docs.oasis-open.org/WSS/2004/01/oasis-200401-WSS-username-token-Profile-1.0.PDF|  
-|WSS: X.509 tokenu Profile 1.1|http://www.oasis-open.org/committees/download.php/16785/WSS-V1.1-spec-OS-x509TokenProfile.PDF|  
-|WSS: Token protokolu Kerberos Profile 1.1|http://www.oasis-open.org/committees/download.php/16788/WSS-V1.1-spec-OS-KerberosTokenProfile.PDF|  
-|WSS: SAML 1.1 Token Profile 1.1|http://www.oasis-open.org/committees/download.php/16768/WSS-V1.1-spec-OS-SAMLTokenProfile.PDF|  
-|WS zabezpečené konverzace|http://msdn.microsoft.com/ws/2005/02/ws-Secure-conversation/|  
-|WS-Trust|http://msdn.microsoft.com/ws/2005/02/WS-Trust/|  
+|WSS: Zabezpečení zpráv protokolu SOAP 1.0|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf|  
+|WSS: Uživatelské jméno Token profil 1.0|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf|  
+|WSS: X509 Token profil 1.0|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf|  
+|WSS: SAML 1.1 Token profil 1.0|http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0.pdf|  
+|WSS: Zabezpečení zpráv SOAP 1.1|http://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf|  
+|WSS uživatelské jméno tokenu Profile 1.1|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf|  
+|WSS: X.509 tokenu Profile 1.1|http://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf|  
+|WSS: Token protokolu Kerberos Profile 1.1|http://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf|  
+|WSS: SAML 1.1 Token Profile 1.1|http://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf|  
+|WS zabezpečené konverzace|http://msdn.microsoft.com/ws/2005/02/ws-secure-conversation/|  
+|WS-Trust|http://msdn.microsoft.com/ws/2005/02/ws-trust/|  
 |Poznámka: aplikace:<br /><br /> Pomocí protokolu WS-Trust pro TLS Handshake|K publikování|  
 |Poznámka: aplikace:<br /><br /> Pomocí protokolu WS-Trust pro SPNEGO|K publikování|  
 |Poznámka: aplikace:<br /><br /> Webové služby adresování odkazy na koncový bod a Identity|K publikování|  
-|WS-SecurityPolicy 1.1<br /><br /> (2005/07)|http://msdn.microsoft.com/ws/2005/07/WS-Security-Policy/<br /><br /> ve znění chybující odeslána OASIS WS-SX technický výbor http://www.oasis-open.org/archives/ws-sx/200512/msg00017.html|  
+|WS-SecurityPolicy 1.1<br /><br /> (2005/07)|http://msdn.microsoft.com/ws/2005/07/ws-security-policy/<br /><br /> ve znění chybující odeslána OASIS WS-SX technický výbor http://www.oasis-open.org/archives/ws-sx/200512/msg00017.html|  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], verze 1, poskytuje 17 režimy ověřování, které lze použít jako základ pro konfigurace zabezpečení webové služby. Každý režimu je optimalizovaná pro společnou sadu požadavky na nasazení, jako například:  
+ WCF, verze 1, poskytuje 17 režimy ověřování, které lze použít jako základ pro konfigurace zabezpečení webové služby. Každý režimu je optimalizovaná pro společnou sadu požadavky na nasazení, jako například:  
   
 -   Přihlašovací údaje použité k ověření klienta a služby.  
   
@@ -71,17 +61,17 @@ Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webov
   
  Koncové body pomocí těchto režimech ověřování můžete express jejich požadavky na zabezpečení pomocí protokolu WS-SecurityPolicy (WS-SP). Tento dokument popisuje strukturu záhlaví zabezpečení a zpráv infrastruktury pro každý režim ověřování a obsahuje příklady zásad a zprávy.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]využívá WS-SecureConversation pro poskytování zabezpečených relací podpory k ochraně výměny více zpráv mezi aplikacemi.  Podrobné informace o nasazení naleznete v tématu "Zabezpečené relace" níže.  
+ WCF využívá WS-SecureConversation pro poskytování zabezpečených relací podpory k ochraně výměny více zpráv mezi aplikacemi.  Podrobné informace o nasazení naleznete v tématu "Zabezpečené relace" níže.  
   
- Kromě režimy ověřování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obsahuje nastavení pro kontrolu obecné ochrany mechanismy, které se vztahují na většinu režimy ověřování na základě zabezpečení zpráv, například: pořadí podpis versus operace šifrování, algoritmus sady odvození klíče a potvrzení podpisu.  
+ Kromě režimy ověřování WCF nabízí nastavení, které řídí obecné ochrany mechanismy, které se vztahují na většinu režimy ověřování na základě zabezpečení zpráv, například: pořadí podpis a šifrování, algoritmus sady, odvození klíče a potvrzení podpisu.  
   
  V tomto dokumentu se používají následující předpony a obory názvů.  
   
 |Předpona|Obor názvů|  
 |------------|---------------|  
-|s|http://www.w3.org/2003/05/SOAP-Envelope|  
-|SP|http://schemas.xmlsoap.org/ws/2005/07/securityPolicy|  
-|A|http://www.w3.org/2005/08/Addressing|  
+|s|http://www.w3.org/2003/05/soap-envelope|  
+|SP|http://schemas.xmlsoap.org/ws/2005/07/securitypolicy|  
+|a|http://www.w3.org/2005/08/addressing|  
 |wsse|BUDE URČENO – IDENTIFIKÁTOR URI OASIS WSS 1.0|  
 |wsse11|BUDE URČENO – IDENTIFIKÁTOR URI OASIS WSS 1.1|  
 |týkajících|Bude určeno – nástroj URI OASIS WSS 1.0|  
@@ -89,22 +79,22 @@ Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webov
 |WST|Bude určeno – WS-Trust 2005/02 identifikátor URI|  
 |wssc|Bude určeno – WS-SecureConversation 2005/02 identifikátor URI|  
 |wsaw|Bude určeno - WS-Addressing zásad obor názvů|  
-|WSP|http://schemas.xmlsoap.org/ws/2004/09/Policy|  
-|mssp|http://schemas.microsoft.com/ws/2005/07/securityPolicy|  
+|WSP|http://schemas.xmlsoap.org/ws/2004/09/policy|  
+|mssp|http://schemas.microsoft.com/ws/2005/07/securitypolicy|  
   
 ## <a name="1-token-profiles"></a>1. Token profily  
- Webové služby zabezpečení specifikace představují přihlašovací údaje jako tokeny zabezpečení. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje následující typy tokenů:  
+ Webové služby zabezpečení specifikace představují přihlašovací údaje jako tokeny zabezpečení. WCF podporuje následující typy tokenů:  
   
 ### <a name="11-usernametoken"></a>1.1 UsernameToken  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Následuje UsernameToken10 a UsernameToken11 profily s těmito omezeními:  
+ WCF se skládá z UsernameToken10 a UsernameToken11 profily s těmito omezeními:  
   
  Atribut R1101 PasswordType UsernameToken\Password elementu musí být buď vynechána, nebo musí mít hodnotu #PasswordText (výchozí).  
   
- Jeden můžete implementovat #PasswordDigest pomocí rozšíření. Bylo zjištěno, že byl #PasswordDigest často zaměněny být dostatečně zabezpečeného hesla ochranný mechanismus. Ale #PasswordDigest nemůže sloužit jako náhrada pro šifrování UsernameToken. Primární cílem #PasswordDigest je ochrana proti útoku formou opakovaného. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] režimy ověřování, hrozby útoku formou opakovaného přehrávání napraveny pomocí podpisy zpráv.  
+ Jeden můžete implementovat #PasswordDigest pomocí rozšíření. Bylo zjištěno, že byl #PasswordDigest často zaměněny být dostatečně zabezpečeného hesla ochranný mechanismus. Ale #PasswordDigest nemůže sloužit jako náhrada pro šifrování UsernameToken. Primární cílem #PasswordDigest je ochrana proti útoku formou opakovaného. V WCF režimy ověřování jsou zmírnit hrozby útoku formou opakovaného přehrávání použitím podpisy zpráv.  
   
- B1102 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nikdy vysílá hodnotu Nonce a vytvořen dílčí prvky UsernameToken.  
+ B1102 WCF nikdy vysílá hodnotu Nonce a vytvořen dílčí prvky UsernameToken.  
   
- Tyto prvky jsou určeny ke zjišťování opakování. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Místo toho používá podpisy zpráv.  
+ Tyto prvky jsou určeny ke zjišťování opakování. WCF použije podpisy zpráv.  
   
  OASIS WSS protokolu SOAP zprávy zabezpečení UsernameToken Profile 1.1 (UsernameToken11) zavedla odvození klíče z funkce hesla.  
   
@@ -113,11 +103,11 @@ Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webov
  Odůvodnění: hesla jsou obvykle považovány za příliš slabé má být použit pro kryptografické operace.  
   
 ### <a name="12-x509-token"></a>1.2 x 509 tokenu  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje certifikáty X509v3 jako typ přihlašovacích údajů a dodržuje X509TokenProfile1.0 a X509TokenProfile1.1 s těmito omezeními:  
+ WCF podporuje certifikáty X509v3 jako typ přihlašovacích údajů a dodržuje X509TokenProfile1.0 a X509TokenProfile1.1 s těmito omezeními:  
   
  Atribut R1201 The typ hodnoty v elementu BinarySecurityToken musí mít hodnotu #X509v3 obsahuje certifikát X509v3.  
   
- WSS X509 tokenu profil 1.0 a 1.1 definovat také #X509PKIPathv1 a PKCS&#7; jako typů hodnot. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Tyto typy nepodporuje.  
+ WSS X509 tokenu profil 1.0 a 1.1 definovat také #X509PKIPathv1 a PKCS7 # jako typů hodnot. WCF nepodporuje tyto typy.  
   
  R1202 Pokud rozšíření identifikátor klíče SubjectKeyIdentifier (subjektu) se nachází v X509 certifikát, by měl být wsse:KeyIdentifier používá pro externí odkazy na token, s typ hodnoty atributu jako #X509SubjectKeyIdentifier a jejího obsahu hodnota kódováním Base 64 rozšíření identifikátor klíče subjektu certifikátu.  
   
@@ -127,37 +117,37 @@ Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webov
   
  Pokud X509TokenProfile1.1 R1204 se používá, externí odkaz na X509 tokenu zabezpečení by MĚL použít kryptografický otisk zaváděné WS-zabezpečení 1.1.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje X509IssuerSerial. Ale existují problémy s interoperabilitou s X509IssuerSerial: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá k porovnání dvou hodnot X509IssuerSerial řetězec. Proto pokud jeden změní součástí název předmětu a odesílá do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] odkaz na certifikát služby, nemusí být nalezen.  
+ WCF podporuje X509IssuerSerial. Problémy s interoperabilitou s X509IssuerSerial se však: WCF používá k porovnání dvou hodnot X509IssuerSerial řetězec. Proto pokud jeden změní součástí název předmětu a odesílá do služby WCF odkaz na certifikát, se nemusí být nalezen.  
   
 ### <a name="13-kerberos-token"></a>1.3 Token protokolu Kerberos  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje KerberosTokenProfile1.1 pro účely ověřování systému Windows s těmito omezeními:  
+ WCF podporuje KerberosTokenProfile1.1 pro účely ověřování systému Windows s těmito omezeními:  
   
  R1301 A protokolu Kerberos Token musí mít hodnotu GSS zabalená AP_REQ v4 protokolu Kerberos, jak jsou definovány v GSS_API a specifikace protokolu Kerberos a musí mít atribut ValueType s GSS_Kerberosv5_AP_REQ # hodnotu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá GSS zabalené AP protokolu Kerberos-REQ, není úplné Asie-požadavků Toto je nejlepším postupem zabezpečení.  
+ Používá WCF GSS zabalené AP protokolu Kerberos-REQ, není úplné Asie-požadavků Toto je nejlepším postupem zabezpečení.  
   
 ### <a name="14-saml-v11-token"></a>1.4 SAML v1.1 Token  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje tokenu SAML WSS profily 1.0 a 1.1 pro tokeny SAML verze 1.1. Je možné implementovat jiných verzích formáty tokenu SAML.  
+ WCF podporuje tokenu SAML WSS profily 1.0 a 1.1 pro tokeny SAML verze 1.1. Je možné implementovat jiných verzích formáty tokenu SAML.  
   
 ### <a name="15-security-context-token"></a>1.5 Token kontextu zabezpečení  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje zabezpečení kontextu tokenu (SCT) byla zavedená v WS-SecureCoversation. SCT se používá k reprezentování kontextu zabezpečení nastavené v SecureConversation také jako binární vyjednávání protokoly TLS a rozhraní SSPI, které jsou popsané dál.  
+ WCF podporuje zabezpečení kontextu tokenu (SCT) byla zavedená v WS-SecureCoversation. SCT se používá k reprezentování kontextu zabezpečení nastavené v SecureConversation také jako binární vyjednávání protokoly TLS a rozhraní SSPI, které jsou popsané dál.  
   
 ## <a name="2-common-message-security-parameters"></a>2. Společné parametry zabezpečení zpráv  
   
 ### <a name="21-timestamp"></a>2.1 časové razítko  
- Přítomnost časového razítka je řízena pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vždy serializuje wsse:TimeStamp s wsse: vytvoření a wsse: vyprší platnost pole. Při podepisování se používá, je vždy podepisován wsse:TimeStamp.  
+ Přítomnost časového razítka je řízena pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. WCF vždy serializuje wsse:TimeStamp s wsse: vytvoření a wsse: vyprší platnost pole. Při podepisování se používá, je vždy podepisován wsse:TimeStamp.  
   
 ### <a name="22-protection-order"></a>2.2 ochrany pořadí  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje pořadí ochrany zprávy "Přihlášení před šifrování" a "Šifrovat před přihlášení" (1.1 zásady zabezpečení). "Podepsat před šifrovat" se doporučuje důvodů včetně: zprávy chráněné pomocí šifrování před přihlašovacích jsou otevřené podpis nahrazení útoky, pokud se používá mechanismus SignatureConfirmation 1.1 WS-zabezpečení a umožňuje podpis přes šifrovaný obsah těžší auditování.  
+ WCF podporuje pořadí ochrany zprávy "Přihlášení před šifrování" a "Šifrovat před přihlášení" (1.1 zásady zabezpečení). "Podepsat před šifrovat" se doporučuje důvodů včetně: zprávy chráněné pomocí šifrování před přihlašovacích jsou otevřené podpis nahrazení útoky, pokud se používá mechanismus SignatureConfirmation 1.1 WS-zabezpečení a umožňuje podpis přes šifrovaný obsah těžší auditování.  
   
 ### <a name="23-signature-protection"></a>2.3 podpis ochrany  
  Pokud se používá šifrování před přihlášení, se doporučuje k ochraně podpis před útoky hrubou silou pro uhodnutí šifrovaný obsah nebo podpisový klíč (zejména při vlastního tokenu se používá s slabé materiál klíče).  
   
 ### <a name="24-algorithm-suite"></a>2.4 algoritmus Suite  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje všechny sady algoritmus uvedené v 1.1 zásady zabezpečení.  
+ WCF podporuje všechny sady algoritmus uvedené v 1.1 zásady zabezpečení.  
   
 ### <a name="25-key-derivation"></a>2.5 odvození klíče  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]používá "Klíč odvození symetrické klíče", jak je popsáno v WS-SecureConversation.  
+ WCF používá "Klíč odvození symetrické klíče", jak je popsáno v WS-SecureConversation.  
   
 ### <a name="26-signature-confirmation"></a>2.6 potvrzení podpisu  
  Potvrzení podpisu může být jako ochranu před útoky střední man k ochraně sadu podpisy.  
@@ -172,13 +162,13 @@ Protokoly webových služeb zabezpečení zadejte mechanismy zabezpečení webov
 |LaxTimestampFirst|Stejné jako Lax s tím rozdílem, že první položky v záhlaví zabezpečení musí být wsse:Timestamp|  
 |LaxTimestampLast|Stejné jako hodnotě lax s tím rozdílem, že poslední položky v záhlaví zabezpečení musí být wsse:Timestamp|  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]podporuje všechny čtyři režimy pro rozvržení záhlaví zabezpečení. Příklady strukturu a zpráva záhlaví zabezpečení pro režimy ověřování níže podle režim "Strict".  
+ WCF podporuje všechny čtyři režimy pro rozvržení záhlaví zabezpečení. Příklady strukturu a zpráva záhlaví zabezpečení pro režimy ověřování níže podle režim "Strict".  
   
 ## <a name="2-common-message-security-parameters"></a>2. Společné parametry zabezpečení zpráv  
  Tato část obsahuje příklady zásad pro každý režim ověřování spolu s příklady zobrazující struktura záhlaví zabezpečení v zprávy vyměňují klienta a služby.  
   
 ### <a name="61-transport-protection"></a>6.1 přenosu ochrany  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]poskytuje pět režimy ověřování, které používají zabezpečené přenos k ochraně zprávy; UserNameOverTransport, CertificateOverTransport, KerberosOverTransport, IssuedTokenOverTransport a SspiNegotiatedOverTransport.  
+ WCF obsahuje pět režimy ověřování, které používají zabezpečené přenos k ochraně zprávy; UserNameOverTransport, CertificateOverTransport, KerberosOverTransport, IssuedTokenOverTransport a SspiNegotiatedOverTransport.  
   
  Tyto režimy ověřování jsou vytvářeny pomocí popsaných v SecurityPolicy vazby přenosu. Režim ověřování UsernameToken UserNameOverTransport je podepsaný token. Pro další režimy ověřování tokenu zobrazí jako podepsaný token či identifikaci. Příloha C.1.2 a C.1.3 SecurityPolicy popisují rozvržení záhlaví zabezpečení podrobně. Následující příklad hlavičky zabezpečení zobrazit striktní rozložení pro režim daného ověřování.  
   
@@ -560,7 +550,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
 ```  
   
 #### <a name="615-sspinegotiatedovertransport"></a>6.1.5 SspiNegotiatedOverTransport  
- Pomocí tohoto režimu vyjednávání protokolu slouží k provádění ověření klienta a serveru. Pokud je to možné, používá protokol Kerberos jinak NTLM. Výsledný SCT se zobrazí ve vrstvě protokolu SOAP či identifikaci token podpory, který se vždy odesílá z iniciátor k příjemce. Služba je kromě ověřit v přenosové vrstvě certifikát X.509. Vazba použitá je vazba přenosu. "SPNEGO" (vyjednávání) popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá protokol binární vyjednávání SSPI s WS-Trust. Příklady záhlaví zabezpečení v této části jsou po navázání SCT prostřednictvím SPNEGO handshake.  
+ Pomocí tohoto režimu vyjednávání protokolu slouží k provádění ověření klienta a serveru. Pokud je to možné, používá protokol Kerberos jinak NTLM. Výsledný SCT se zobrazí ve vrstvě protokolu SOAP či identifikaci token podpory, který se vždy odesílá z iniciátor k příjemce. Služba je kromě ověřit v přenosové vrstvě certifikát X.509. Vazba použitá je vazba přenosu. "SPNEGO" (vyjednávání) popisuje, jak WCF používá rozhraní SSPI binární vyjednávání protokolu WS-Trust. Příklady záhlaví zabezpečení v této části jsou po navázání SCT prostřednictvím SPNEGO handshake.  
   
  Zásady  
   

@@ -1,63 +1,49 @@
 ---
-title: "Vzájemná spolupráce a integrace"
-ms.custom: 
+title: Vzájemná spolupráce a integrace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0d925119-01a1-45c2-9ea0-23061323ad33
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fcd6f8454f77cfd2fbd80ed0f77ce1549025a4d6
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
+ms.openlocfilehash: 5a50a8ebece72a0f2f8dc95fd87e73bef5db3195
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interoperability-and-integration"></a>Vzájemná spolupráce a integrace
-Tato část popisuje vzájemná spolupráce a integrace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tato část obsahuje vzájemná spolupráce a integrace s Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Průvodce interoperabilitou protokolů webových služeb](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Toto téma obsahuje specifikace, které jsou podporovány a vazby, která je podporují.  
+ WCF vychází vzájemnou spolupráci s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Toto téma obsahuje specifikace, které jsou podporovány a vazby, která je podporují.  
   
  [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
- Popisuje, jak aplikací modelu COM + mohou být zpřístupněny jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje, jak aplikací modelu COM + mohou být zpřístupněny jako služby WCF.  
   
  [Integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)  
- Popisuje různé metody pro aplikace modelu COM volat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje různé metody pro aplikace modelu COM k volání služby WCF.  
   
  [Migrace aplikací vzdálené komunikace .NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md)  
- Popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lze použít s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vzdálenou komunikaci.  
+ Popisuje, jak se dají využít WCF s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vzdálenou komunikaci.  
   
  [Interoperabilita s Web Services Enhancements 3.0](../../../../docs/framework/wcf/feature-details/interoperability-with-web-services-enhancements-3-0.md)  
- Popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lze použít s webovými službami, které jsou implementované pomocí webové služby vylepšení (WSE) 3.0.  
+ Popisuje, jak lze pomocí webové služby je implementovaná pomocí webové služby vylepšení (WSE) 3.0 WCF.  
   
  [Migrace webových služeb WSE 3.0 na WCF](../../../../docs/framework/wcf/feature-details/migrating-wse-3-0-web-services-to-wcf.md)  
- Popisuje postup migrace WSE 3.0 webovou službu, kterou [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje postup migrace WSE 3.0 webovou službu na službu WCF.  
   
  [Interoperabilita s webovými službami ASP.NET](../../../../docs/framework/wcf/feature-details/interop-with-aspnet-web-services.md)  
- Popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] můžou spolupracovat s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
+ Popisuje, jak můžou WCF spolupracovat s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
   
  [Migrace webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou službu na službu WCF.  
   
  [Migrace webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou službu na službu WCF.  
   
  [Migrace webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/migrating-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Popisuje, jak migrovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou službu na službu WCF.  
   
  [Interoperabilita s aplikacemi POX](../../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md)  
- Popisuje, jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje služby a klienti, kteří používají "Prostý formát XML" (POX) zprávy.  
+ Popisuje, jak WCF poskytuje služby a klienti, kteří používají "Prostý formát XML" (POX) zprávy.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel>  

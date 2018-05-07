@@ -1,13 +1,6 @@
 ---
-title: "Obor názvů XAML mapování oboru názvů pro WPF XAML"
-ms.custom: 
+title: Obor názvů XAML mapování oboru názvů pro WPF XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,11 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 80f152f8cdf459f920d723df66756af680b4bcea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dbf9c9c16488a58a07aa29d16b3d00dd83c7c232
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnosti a účel dvě mapování oboru názvů jazyka XAML tak často, nalézt ve značce kořenového souboru WPF XAML. Také popisuje, jak vytvořit podobná mapování pro používání prvky, které jsou definovány v kódu nebo v samostatné sestavení.  
@@ -59,9 +47,9 @@ Dále toto téma vysvětluje přítomnosti a účel dvě mapování oboru názv�
   
  Syntaxe trvá následující možné pojmenované tokeny a následující hodnoty:  
   
- `clr-namespace:`Obor názvů CLR deklarované v rámci sestavení, které obsahuje veřejné typy vystavit jako elementy.  
+ `clr-namespace:` Obor názvů CLR deklarované v rámci sestavení, které obsahuje veřejné typy vystavit jako elementy.  
   
- `assembly=`Sestavení, které obsahuje některé nebo všechny odkazovaná [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] oboru názvů. Tato hodnota je obvykle jen název sestavení, ne cestu a nezahrnuje příponu (například .dll nebo .exe). Cesta k této sestavě je nutné vytvořit jako odkaz na projekt v souboru projektu, který obsahuje XAML chcete namapovat. Aby bylo možné začlenit správu verzí a podpis silného názvu `assembly` hodnota může být řetězec, podle definice <xref:System.Reflection.AssemblyName>, namísto názvu jednoduchým řetězcem.  
+ `assembly=` Sestavení, které obsahuje některé nebo všechny odkazovaná [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] oboru názvů. Tato hodnota je obvykle jen název sestavení, ne cestu a nezahrnuje příponu (například .dll nebo .exe). Cesta k této sestavě je nutné vytvořit jako odkaz na projekt v souboru projektu, který obsahuje XAML chcete namapovat. Aby bylo možné začlenit správu verzí a podpis silného názvu `assembly` hodnota může být řetězec, podle definice <xref:System.Reflection.AssemblyName>, namísto názvu jednoduchým řetězcem.  
   
  Všimněte si, že znak oddělující `clr-namespace` tokenu z její hodnota je dvojtečkou (:), zatímco znak oddělení `assembly` token z její hodnota je znak rovná se (=). Znak, který má používat mezi tyto dvě tokeny je středníkem. Navíc nebudou obsahovat žádné prázdné kdekoli v deklaraci.  
   
@@ -111,7 +99,7 @@ End Namespace
 ```  
   
 ### <a name="mapping-to-current-assemblies"></a>Mapování na aktuální sestavení  
- `assembly`Pokud lze vynechat `clr-namespace` odkazované je definovaný v rámci stejného sestavení jako aplikační kód, který odkazuje na vlastní třídy. Nebo ekvivalentní syntaxe pro tento případ slouží k zadání `assembly=`, s tokenem žádné řetězce následující symbolem rovná se.  
+ `assembly` Pokud lze vynechat `clr-namespace` odkazované je definovaný v rámci stejného sestavení jako aplikační kód, který odkazuje na vlastní třídy. Nebo ekvivalentní syntaxe pro tento případ slouží k zadání `assembly=`, s tokenem žádné řetězce následující symbolem rovná se.  
   
  Vlastní třídy nelze použít jako kořenový element stránky, pokud definované ve stejném sestavení. Částečné třídy nemusíte mapovat; pouze třídy, které nejsou třídu stránky v vaše aplikace musí být mapován, pokud máte v úmyslu odkazujte na ně jako elementy v jazyce XAML.  
   
@@ -124,9 +112,9 @@ End Namespace
 ## <a name="designer-namespaces-and-other-prefixes-from-xaml-templates"></a>Návrhář obory názvů a dalšími předponami ze šablon XAML  
  Pokud pracujete s vývojových prostředí nebo nástrojů návrhu pro jazyk XAML WPF, můžete si všimnout, že jsou ostatní definované obory názvů jazyka XAML / předpony v rámci kód XAML.  
   
- [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)]používá návrháře obor názvů, který je obvykle namapována na předponu `d:`. Novější šablony projektů pro grafický subsystém WPF předem namapovat, může tento obor názvů jazyka XAML pro podporu výměny XAML mezi [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] a dalších prostředích s návrhu. Tento obor názvů jazyka XAML návrhu se používá k perpetuate stav návrhu při vracení založených na XAML uživatelského rozhraní v návrháři. Používá se také pro funkce, jako `d:IsDataSource`, která umožňují zdroje dat modulu runtime v návrháře.  
+ [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] používá návrháře obor názvů, který je obvykle namapována na předponu `d:`. Novější šablony projektů pro grafický subsystém WPF předem namapovat, může tento obor názvů jazyka XAML pro podporu výměny XAML mezi [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] a dalších prostředích s návrhu. Tento obor názvů jazyka XAML návrhu se používá k perpetuate stav návrhu při vracení založených na XAML uživatelského rozhraní v návrháři. Používá se také pro funkce, jako `d:IsDataSource`, která umožňují zdroje dat modulu runtime v návrháře.  
   
- Může se zobrazit další předpona namapované je `mc:`. `mc:`je pro kompatibilitu značek a jsou využívány vzor kompatibility kód, který není nutně specifické pro jazyk XAML. Do určité míry kompatibility značek, které funkce lze použít k výměně XAML mezi architektury nebo bez ohledu na ostatní hranice základní implementace spolupráce mezi kontexty schématu XAML, zajišťují kompatibilitu pro omezené režimy v návrháři a tak dále. Další informace o konceptech kompatibility značek a jak se vztahují k WPF najdete v tématu [kompatibility značek (mc:) Jazykové funkce](../../../../docs/framework/wpf/advanced/markup-compatibility-mc-language-features.md).  
+ Může se zobrazit další předpona namapované je `mc:`. `mc:` je pro kompatibilitu značek a jsou využívány vzor kompatibility kód, který není nutně specifické pro jazyk XAML. Do určité míry kompatibility značek, které funkce lze použít k výměně XAML mezi architektury nebo bez ohledu na ostatní hranice základní implementace spolupráce mezi kontexty schématu XAML, zajišťují kompatibilitu pro omezené režimy v návrháři a tak dále. Další informace o konceptech kompatibility značek a jak se vztahují k WPF najdete v tématu [kompatibility značek (mc:) Jazykové funkce](../../../../docs/framework/wpf/advanced/markup-compatibility-mc-language-features.md).  
   
 ## <a name="wpf-and-assembly-loading"></a>WPF a načtení sestavení  
  Kontext WPF schématu XAML integruje s modelem aplikace WPF, které dále používá koncept definované CLR <xref:System.AppDomain>. Následující text popisuje, jak interpretovat kontext schématu XAML jak načíst sestavení nebo najít typy v době běhu nebo návrhu, založené na použití WPF <xref:System.AppDomain> a dalších faktorů.  

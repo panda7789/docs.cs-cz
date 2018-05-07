@@ -1,14 +1,6 @@
 ---
-title: "METAHOST_POLICY_FLAGS – výčet"
-ms.custom: 
+title: METAHOST_POLICY_FLAGS – výčet
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - METAHOST_POLICY_FLAGS
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 3bb4b526-0118-42e2-ba59-c95648528ce9
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 80abed08cc7659d4218dce445be81481bb5a665b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f980fb1336adaf43091e41b9e42ea008b00c033f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="metahostpolicyflags-enumeration"></a>METAHOST_POLICY_FLAGS – výčet
 Poskytuje vazby zásady, které jsou společné pro většinu modulu runtime. Tento výčet je používán [iclrmetahostpolicy::getrequestedruntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) metoda.  
@@ -60,10 +48,10 @@ typedef enum {
 |`METAHOST_POLICY_APPLY_UPGRADE_POLICY`|Pro výsledek vazby verze platí zásady upgradu, pokud není nalezena přesná shoda na základě obsahu HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\Policy\Upgrades. Tato akce nemá stejný účinek jako [RUNTIME_INFO_UPGRADE_VERSION](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md).|  
 |`METAHOST_POLICY_EMULATE_EXE_LAUNCH`|Vazba výsledky se vrátí, jako kdyby bitovou kopii zadaná pro volání nebyly spuštěny v nový proces. V současné době `GetRequestedRuntime` ignoruje sadu načíst moduly runtime a sváže s sadu nainstalované moduly runtime. Tento příznak umožňuje hostitelům určit, které runtime EXE vytvoří vazbu k při jeho spuštění.|  
 |`METAHOST_POLICY_SHOW_ERROR_DIALOG`|Zobrazí se dialogové okno chyby, pokud `GetRequestedRuntime` se nepodařilo najít modul runtime, který je kompatibilní s vstupní parametry. Od verze [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], toto dialogové okno chyby můžete mít formu funkce Windows dialogové okno s dotazem, zda uživatel chcete povolit příslušné funkce.|  
-|`METAHOST_POLICY_USE_PROCESS_IMAGE_PATH`|`GetRequestedRuntime`používá jako další vstup pro proces vytváření vazby bitovou kopii procesu (a všechny odpovídající soubor konfigurace). Ve výchozím nastavení `GetRequestedRuntime` nepřecházely k cesta bitové kopie proces (obvykle EXE, který byl použitý ke spuštění procesu) při určování modulu runtime pro vazbu.|  
-|`METAHOST_POLICY_ENSURE_SKU_SUPPORTED`|`GetRequestedRuntime`musí zkontrolovat, zda je nainstalována příslušné SKU, pokud v konfiguračním souboru nejsou dostupné žádné informace. To umožňuje aplikacím, které nemají konfigurační soubory řádně selhání na menší SKU než výchozí instalace rozhraní .NET Framework. Ve výchozím nastavení `GetRequestedRuntime` nekontroluje, jestli je nainstalovaná odpovídající verze SKU, pokud atribut SKU je uveden v konfiguračním souboru `<supportedRuntime />` elementu.|  
-|`METAHOST_POLICY_ENSURE_SKU_SUPPORTED`|`GetRequestedRuntime`musí zkontrolovat, zda je nainstalována příslušné SKU, pokud v konfiguračním souboru nejsou dostupné žádné informace. To umožňuje aplikacím, které nemají konfigurační soubory řádně selhání na menší SKU než výchozí instalace rozhraní .NET Framework. Ve výchozím nastavení `GetRequestedRuntime` nekontroluje, jestli je nainstalovaná odpovídající verze SKU, pokud atribut SKU je uveden v konfiguračním souboru `<supportedRuntime />` elementu.|  
-|`METAHOST_POLICY_IGNORE_ERROR_MODE`|`GetRequestedRuntime`třeba ignorovat SEM_FAILCRITICALERRORS (který je nastaven při volání [SetErrorMode](http://go.microsoft.com/fwlink/p/?LinkId=255242) funkce) a zobrazit dialogové okno chyby. Ve výchozím nastavení potlačí SEM_FAILCRITICALERRORS dialogové okno chyby. Ho může mít bylo zděděno z jiného procesu a tichou chyba může být žádoucí ve vašem scénáři.|  
+|`METAHOST_POLICY_USE_PROCESS_IMAGE_PATH`|`GetRequestedRuntime` používá jako další vstup pro proces vytváření vazby bitovou kopii procesu (a všechny odpovídající soubor konfigurace). Ve výchozím nastavení `GetRequestedRuntime` nepřecházely k cesta bitové kopie proces (obvykle EXE, který byl použitý ke spuštění procesu) při určování modulu runtime pro vazbu.|  
+|`METAHOST_POLICY_ENSURE_SKU_SUPPORTED`|`GetRequestedRuntime` musí zkontrolovat, zda je nainstalována příslušné SKU, pokud v konfiguračním souboru nejsou dostupné žádné informace. To umožňuje aplikacím, které nemají konfigurační soubory řádně selhání na menší SKU než výchozí instalace rozhraní .NET Framework. Ve výchozím nastavení `GetRequestedRuntime` nekontroluje, jestli je nainstalovaná odpovídající verze SKU, pokud atribut SKU je uveden v konfiguračním souboru `<supportedRuntime />` elementu.|  
+|`METAHOST_POLICY_ENSURE_SKU_SUPPORTED`|`GetRequestedRuntime` musí zkontrolovat, zda je nainstalována příslušné SKU, pokud v konfiguračním souboru nejsou dostupné žádné informace. To umožňuje aplikacím, které nemají konfigurační soubory řádně selhání na menší SKU než výchozí instalace rozhraní .NET Framework. Ve výchozím nastavení `GetRequestedRuntime` nekontroluje, jestli je nainstalovaná odpovídající verze SKU, pokud atribut SKU je uveden v konfiguračním souboru `<supportedRuntime />` elementu.|  
+|`METAHOST_POLICY_IGNORE_ERROR_MODE`|`GetRequestedRuntime` třeba ignorovat SEM_FAILCRITICALERRORS (který je nastaven při volání [SetErrorMode](http://go.microsoft.com/fwlink/p/?LinkId=255242) funkce) a zobrazit dialogové okno chyby. Ve výchozím nastavení potlačí SEM_FAILCRITICALERRORS dialogové okno chyby. Ho může mít bylo zděděno z jiného procesu a tichou chyba může být žádoucí ve vašem scénáři.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -74,7 +62,7 @@ typedef enum {
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  

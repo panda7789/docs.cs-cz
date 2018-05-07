@@ -1,11 +1,7 @@
 ---
-title: "Funkce QualifierSet_GetNames (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce QualifierSet_GetNames načte názvy kvalifikátory z na objekt nebo vlastnost."
+title: Funkce QualifierSet_GetNames (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce QualifierSet_GetNames načte názvy kvalifikátory z na objekt nebo vlastnost.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - QualifierSet_GetNames
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6077b448c2644f68d12679cf208ee921c2af119a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7c96439cf50c18e336baa70cf463b9463203290
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="qualifiersetgetnames-function"></a>QualifierSet_GetNames – funkce
 Načte názvy všech kvalifikátory nebo určitých kvalifikátory, které jsou k dispozici na aktuální objekt nebo vlastnost. 
@@ -62,7 +55,7 @@ HRESULT QualifierSet_GetNames (
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vraťte pouze názvy kvalifikátory specifické pro aktuální vlastnost nebo objekt. <br/> Pro vlastnost: vracet jenom kvalifikátory specifické pro vlastnost (včetně potlačení), a ne těchto kvalifikátory rozšíří z definice třídy. <br/> Pro instanci: vrátit pouze názvy kvalifikátor specifické pro instanci. <br/> Pro třídu: vracet jenom kvalifikátory specifické pro beiong třídy odvozené.
 |`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Vraťte se rozšíří pouze názvy kvalifikátory z jiného objektu. <br/> Pro vlastnost: vrátit se rozšíří pouze kvalifikátory k této vlastnosti z definice třídy a ne z samotné vlastnosti. <br/> Pro instanci: vrátí jenom ty kvalifikátory rozšíří z definice třídy. <br/> Pro třídu: vrátit pouze názvy kvalifikátor zděděn od nadřazené třídy. |
 
-`pstrNames`[out] Nový `SAFEARRAY` obsahující požadované názvy. Pole může obsahovat 0 elementy. Pokud dojde k chybě, nový `SAFEARRAY` nevrátí.
+`pstrNames` [out] Nový `SAFEARRAY` obsahující požadované názvy. Pole může obsahovat 0 elementy. Pokud dojde k chybě, nový `SAFEARRAY` nevrátí.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -87,7 +80,7 @@ Není pro daný objekt má nulové kvalifikátory, takže chybu počet řetězc�
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

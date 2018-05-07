@@ -1,10 +1,6 @@
 ---
-title: "Výchozí zpracování v ovládacím prvku Windows Forms DataGridView klávesnice a myši"
+title: Výchozí zpracování v ovládacím prvku Windows Forms DataGridView klávesnice a myši
 ms.date: 02/13/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-winforms
-ms.topic: article
 helpviewer_keywords:
 - data grids [Windows Forms], mouse handling
 - DataGridView control [Windows Forms], navigation keys
@@ -14,16 +10,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], mouse handling
 - navigation keys [Windows Forms], DataGridView control
 ms.assetid: 4519b928-bfc8-4e8b-bb9c-b1e76a0ca552
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 29e8afaefd35951288a4d8f5e5df2e3b5fbc4356
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: b0ed468fe7d38fbeda90d5347338bce14059b730
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>Výchozí zpracování v ovládacím prvku Windows Forms DataGridView klávesnice a myši
 
@@ -46,8 +37,8 @@ Následující tabulky popisují, jak mohou uživatelé komunikovat s <xref:Syst
 |END|Přejdete na poslední buňku na aktuálním řádku.|  
 |PAGE DOWN|Posune ovládací prvek dolů podle počtu řádků, které jsou plně zobrazené. Změní na aktivní poslední řádek plně zobrazených beze změny sloupců.|  
 |PAGE UP|Posune ovládacího prvku nahoru podle počtu řádků, které jsou plně zobrazené. Přesun zaměření na první řádek zobrazených beze změny sloupců.|  
-|TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přejdete k dalším buňky na aktuálním řádku. Pokud je zaměření již poslední buňky řádku, přejdete k první buňky v dalším řádku. Pokud je zaměření v poslední buňky v ovládacím prvku, přejdete na další ovládací prvek v pořadí nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přejdete k další ovládací prvek v pořadí nadřazeného kontejneru.|  
-|SHIFT+TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přejdete k předchozí buňku na aktuálním řádku. Pokud je zaměření již první buňky řádku, přejdete k poslední buňky v předchozím řádku. Pokud je zaměření v první buňky v ovládacím prvku, přejdete k předchozí ovládací prvek v pořadí nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přejdete k předchozí ovládací prvek v pořadí nadřazeného kontejneru.|  
+|KARTA|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přejdete k dalším buňky na aktuálním řádku. Pokud je zaměření již poslední buňky řádku, přejdete k první buňky v dalším řádku. Pokud je zaměření v poslední buňky v ovládacím prvku, přejdete na další ovládací prvek v pořadí nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přejdete k další ovládací prvek v pořadí nadřazeného kontejneru.|  
+|SHIFT + TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přejdete k předchozí buňku na aktuálním řádku. Pokud je zaměření již první buňky řádku, přejdete k poslední buňky v předchozím řádku. Pokud je zaměření v první buňky v ovládacím prvku, přejdete k předchozí ovládací prvek v pořadí nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přejdete k předchozí ovládací prvek v pořadí nadřazeného kontejneru.|  
 |CTRL+TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přejdete k další ovládací prvek v pořadí nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přejdete k dalším buňky na aktuálním řádku. Pokud je zaměření již poslední buňky řádku, přejdete k první buňky v dalším řádku. Pokud je zaměření v poslední buňky v ovládacím prvku, přejdete na další ovládací prvek v pořadí nadřazeného kontejneru.|  
 |CTRL+SHIFT+TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přejdete k předchozí ovládací prvek v pořadí nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přejdete k předchozí buňku na aktuálním řádku. Pokud je zaměření již první buňky řádku, přejdete k poslední buňky v předchozím řádku. Pokud je zaměření v první buňky v ovládacím prvku, přejdete k předchozí ovládací prvek v pořadí nadřazeného kontejneru.|  
 |CTRL + ŠIPKA|Přejdete k nejvíce buňky ve směru na šipku.|  
@@ -63,8 +54,8 @@ Následující tabulky popisují, jak mohou uživatelé komunikovat s <xref:Syst
 |ESC|Pokud ovládací prvek je v režimu úprav, zruší úpravy. Pokud ovládací prvek není v režimu úprav, vrátí všechny změny, které byly provedeny na aktuálním řádku Pokud ovládací prvek vázán na zdroj dat, který podporuje úpravy nebo byl implementován virtuálního režimu s oborem potvrzení na úrovni řádků.|  
 |BACKSPACE|Při úpravě buňku k odstranění znaku před ním.|  
 |DELETE|Při úpravě buňku k odstranění znaku po kurzor.|  
-|CTRL+ENTER|Neprovede žádné změny aktuální buňky bez přesouvání fokus. Také potvrzení všechny změny na aktuálním řádku, pokud je ovládací prvek vázán ke zdroji dat, který podporuje režim úprav nebo virtuální byl implementován s nízkoúrovňové potvrzení oboru.|  
-|CTRL+0|Zadá <xref:System.DBNull.Value?displayProperty=nameWithType> hodnotu do aktuální buňky, pokud lze upravovat buňky. Ve výchozím zobrazení hodnota <xref:System.DBNull> hodnotu buňky je hodnota <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellStyle> platí pro aktuální buňky.|  
+|CTRL + ENTER|Neprovede žádné změny aktuální buňky bez přesouvání fokus. Také potvrzení všechny změny na aktuálním řádku, pokud je ovládací prvek vázán ke zdroji dat, který podporuje režim úprav nebo virtuální byl implementován s nízkoúrovňové potvrzení oboru.|  
+|CTRL + 0|Zadá <xref:System.DBNull.Value?displayProperty=nameWithType> hodnotu do aktuální buňky, pokud lze upravovat buňky. Ve výchozím zobrazení hodnota <xref:System.DBNull> hodnotu buňky je hodnota <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellStyle> platí pro aktuální buňky.|  
   
 ### <a name="selection-keys"></a>Výběr klíče
 

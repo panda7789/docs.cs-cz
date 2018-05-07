@@ -1,14 +1,6 @@
 ---
-title: "Řídicí sekvence {} – rozšíření značek"
-ms.custom: 
+title: '{} Řídicí sekvence – rozšíření značek'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - '{}'
 helpviewer_keywords:
@@ -19,19 +11,13 @@ helpviewer_keywords:
 - quotation mark (") [XAML Services]
 - escape sequence [XAML Services]
 ms.assetid: 3ce3e2ad-a868-43f9-9c98-b29561cb146e
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8419a1e89d5e94b9868b0fd1fb81540253efca5d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a90f6928d68eddd29762e6206769dd7f07704e4c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="-escape-sequence--markup-extension"></a>{} – řídicí sekvence / rozšíření značek
+# <a name="-escape-sequence--markup-extension"></a>{} Řídicí sekvence / rozšíření značek
 Poskytuje řídicí sekvence XAML pro hodnoty atributu. Řídicí sekvence umožňuje následující hodnoty atributu budou interpretovat jako literál.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
@@ -59,7 +45,7 @@ Poskytuje řídicí sekvence XAML pro hodnoty atributu. Řídicí sekvence umož
 ## <a name="remarks"></a>Poznámky  
  Řídicí sekvence ({}) se používá, aby otevřete složená závorka ({}) můžete použít jako literál v jazyce XAML.  
   
- Otevřete závorek ({}) XAML čtečky obvykle používat k označení vstupní bod rozšíření značek; ale nejprve zkontrolujte další znak, který má-li zjistit, zda je pravé složené závorce (}). Jenom v případě, že sousedí na dva složené závorky ({}), se považují za řídicí sekvence.  
+ Otevřete závorek ({}) XAML čtečky obvykle používat k označení vstupní bod rozšíření značek; ale nejprve zkontrolujte další znak, který má-li zjistit, zda je pravé složené závorce (}). Pouze pokud jsou obě složené závorky ({}) jsou přiléhající, se považují za řídicí sekvence.  
   
  V případě řídicí sekvence čtečky XAML by měl zpracovat zbytek řetězec jako řetězec. Ale pokud řídicí sekvence je použité na člena, který má převodník typu, řetězec může převod typů při ke interpretuje se zapisovačem XAML.  
   

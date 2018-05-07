@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Spojení čar"
-ms.custom: 
+title: 'Postupy: Spojení čar'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,19 +14,14 @@ helpviewer_keywords:
 - lines [Windows Forms], joining
 - graphics [Windows Forms], joining lines
 ms.assetid: 9fc480c2-3c75-4fd1-8ab5-296a99e820e2
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d12cc7b4b4c878ec812190fd56a1face64118ab4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cecced7b32af7187cb1ef072921f0ff28f04adad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-join-lines"></a>Postupy: Spojení čar
-Spojení čar je běžné oblasti, která je tvořen dvěma řádky, jehož elementy end splňují nebo překrývat. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]poskytuje tři styly řádku spojení: ostrý bevelova křivka a zaokrouhleno. Čára – styl propojení je vlastnost <xref:System.Drawing.Pen> třídy. Pokud zadáte styl řádku spojení <xref:System.Drawing.Pen> objektu, že styl spojení se použije na všechny řádky, které jsou připojené v žádném <xref:System.Drawing.Drawing2D.GraphicsPath> objekt vykreslovány pomocí pera.  
+Spojení čar je běžné oblasti, která je tvořen dvěma řádky, jehož elementy end splňují nebo překrývat. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje tři styly řádku spojení: ostrý bevelova křivka a zaokrouhleno. Čára – styl propojení je vlastnost <xref:System.Drawing.Pen> třídy. Pokud zadáte styl řádku spojení <xref:System.Drawing.Pen> objektu, že styl spojení se použije na všechny řádky, které jsou připojené v žádném <xref:System.Drawing.Drawing2D.GraphicsPath> objekt vykreslovány pomocí pera.  
   
  Následující obrázek znázorňuje výsledky příklad spojení zkosení řádku.  
   

@@ -1,13 +1,6 @@
 ---
 title: Procedury funkcí (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Function procedures
 - return values [Visual Basic], function procedures
@@ -16,14 +9,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], Function procedures
 - syntax [Visual Basic], function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
-caps.latest.revision: 27
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ad4f55a9dd9fbd68c36dd53a01f97ddb03c2bb9b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 887c930cb757b012542c97d64a57a62882a2eed3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="function-procedures-visual-basic"></a>Procedury funkcí (Visual Basic)
 A `Function` postup je řada příkazů jazyka Visual Basic uzavřené do `Function` a `End Function` příkazy. `Function` Postup provede úlohu a potom se vrátí ovládací prvek volání kódu. Až se obnoví ovládací prvek, také vrátí hodnotu, voláním kódu.  
@@ -92,9 +82,9 @@ End Function
   
  Syntaxe volání `Function` postup je následující:  
   
- *lvalue*`=`*%{FunctionName/* `[(` *argumentlist*  `)]`  
+ *lvalue*`=`*%{FunctionName/* `[(` *argumentlist* `)]`  
   
- `If ((` *%{FunctionName/* `[(` *argumentlist* `)] / 3) <=` *výraz*  `) Then`  
+ `If ((` *%{FunctionName/* `[(` *argumentlist* `)] / 3) <=` *výraz* `) Then`  
   
  Při volání `Function` postupu, není nutné použít hodnoty. Pokud ho použít nechcete, všechny akce, které funkce jsou prováděny, ale vrácená hodnota je ignorována. <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> se často nazývá tímto způsobem.  
   

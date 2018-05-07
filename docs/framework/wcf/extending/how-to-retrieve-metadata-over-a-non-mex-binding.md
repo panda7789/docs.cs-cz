@@ -1,33 +1,19 @@
 ---
 title: 'Postupy: Načítání metadat přes vazbu jiného typu než MEX'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b469a08ad9759a2d5213f13256ec2def96107acc
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 198c343aa6f25d55e518990dc1dbd2667a8c17ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>Postupy: Načítání metadat přes vazbu jiného typu než MEX
 Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes jiný MEX vazby. Kód v této ukázce je založen na [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázka.  
   
 ### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>Pro načtení metadat přes vazbu bez MEX  
   
-1.  Určení vazba použitá v MEX koncovém bodě. Pro [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, můžete určit vazby MEX pomocí přístupu k souboru konfigurace služby. V takovém případě MEX vazba je definována v následující konfiguraci služby.  
+1.  Určení vazba použitá v MEX koncovém bodě. Pro služby Windows Communication Foundation (WCF) můžete určit vazby MEX pomocí přístupu k souboru konfigurace služby. V takovém případě MEX vazba je definována v následující konfiguraci služby.  
   
     ```xml  
     <services>  

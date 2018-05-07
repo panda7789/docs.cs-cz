@@ -1,29 +1,15 @@
 ---
 title: Publikování služby WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 9f76ab11e9697fc5af5c507d4dc9d944c433c918
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Služba publikování vám usnadní pokročíte z časná vývojového prostředí poskytované [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta ve skutečnosti nasazení aplikace do produkčního prostředí pro účely testování. Než provedete na plán konečné nasazení, můžete použít [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] službu publikování ověřte, že vaše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba provádí správně a je připravena k publikování. Můžete také nasadit vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby knihovny na různé cílové umístění pro testování.  
+Publikování služby Windows Communication Foundation (WCF) vám usnadní pokročíte z časná vývojového prostředí poskytované [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] testovacího klienta ve skutečnosti nasazení aplikace produkční prostředí pro účely testování. Než provedete na plán konečné nasazení, můžete použít publikování služby Windows Communication Foundation (WCF) ověřit, jestli vaše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba provádí správně a je připravena k publikování. Můžete také nasadit vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby knihovny na různé cílové umístění pro testování.  
   
 ## <a name="supported-services-and-target-locations"></a>Podporované služby a cílové umístění  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Služba publikování podporuje publikování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby vytvořené z sady [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovna šablon služeb a jejich odpovídající šablony položek, které zahrnují následující:  
@@ -51,13 +37,13 @@ ms.lasthandoff: 03/26/2018
   
 3.  **Publikovat** se zobrazí v okně. Klikněte **...** . Zadejte cílové umístění, které byste měli nasadit službu do tlačítko. Můžete vybrat k nasazení aplikace do místní služby IIS, systém souborů nebo serveru FTP. Pokud nasazení aplikace do místní služby IIS, můžete vybrat svůj web a kliknutím na vytvořit webovou aplikaci v části, **vytvořit novou webovou aplikaci** ikonu v pravém horním rohu.  
   
-4.  Po kliknutí na tlačítko **publikovat** v hlavním okně Visual Studio nasadí aplikaci do zadané cílové umístění a zkopíruje soubory Web.config, .svc a sestavení do cílový adresář. . Název .svc bude "ProjectName.ServiceName.svc". Po službu úspěšně publikována, naleznete v okně výstupu Visual Studio, která vypadá podobně jako "Připojení k HYPERLINK"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName..." hotlink. Můžete, stiskněte klávesu CTRL a klikněte na odkaz, otevře se stránka prohlížeče v sadě Visual Studio zobrazíte strukturu adresáře služby.  
+4.  Po kliknutí na tlačítko **publikovat** v hlavním okně Visual Studio nasadí aplikaci do zadané cílové umístění a zkopíruje soubory Web.config, .svc a sestavení do cílový adresář. . Název .svc bude "ProjectName.ServiceName.svc". Po službu úspěšně publikována, můžete najít hotlink v okně výstupu Visual Studio, které bude vypadat podobně jako "Připojení k HYPERLINK"http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName ...". Můžete, stiskněte klávesu CTRL a klikněte na odkaz, otevře se stránka prohlížeče v sadě Visual Studio zobrazíte strukturu adresáře služby.  
   
-     Pokud nelze přejděte na web, může to, protože directory prohlížeč není povolena ve službě IIS. Postupujte podle tipy v části "Věcí můžete zkusit" povolit. Alternativně můžete přímo zadat"HYPERLINK"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc" Chcete-li zobrazit stránku služby.  
+     Pokud nelze přejděte na web, může to, protože directory prohlížeč není povolena ve službě IIS. Postupujte podle tipy v části "Věcí můžete zkusit" povolit. Alternativně můžete přímo zadat"HYPERLINK"http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc" zobrazíte stránku služby.  
   
  Můžete použít **publikovat** zadat, pokud chcete zkopírovat sestavení, konfiguraci a soubor .svc pro všechny služby, které jsou definované v projektu do cílového umístění a přepsat existující soubory v cílovém umístění.  
   
- Pokud si zvolíte pro nasazení aplikace do místní služby IIS, se může zobrazit chyby týkající se instalace služby IIS. Zkontrolujte, zda je služba IIS správně nainstalován. Můžete zadat "HYPERLINK"http://localhost"http://localhost" v prohlížeči a zkontrolujte, zda se zobrazuje výchozí stránka služby IIS, protože.  V některých případech může být způsobeno problémy pomocí technologie ASP.NET nebo [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nesprávné registrace ve službě IIS. Otevřete příkazový řádek sady Visual Studio a spusťte příkaz "aspnet_regiis.exe - ir" o vyřešení problémů s registrací ASP.NET nebo spusťte příkaz "ServiceModelReg.exe – ia" na opravu WCF registrace problémy.  
+ Pokud si zvolíte pro nasazení aplikace do místní služby IIS, se může zobrazit chyby týkající se instalace služby IIS. Zkontrolujte, zda je služba IIS správně nainstalován. Můžete zadat "HYPERLINK"http://localhost" http://localhost" v prohlížeči a zkontrolujte jestli výchozí stránka služby IIS se zobrazuje, protože.  V některých případech může být způsobeno problémy pomocí technologie ASP.NET nebo [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nesprávné registrace ve službě IIS. Otevřete příkazový řádek sady Visual Studio a spusťte příkaz "aspnet_regiis.exe - ir" o vyřešení problémů s registrací ASP.NET nebo spusťte příkaz "ServiceModelReg.exe – ia" na opravu WCF registrace problémy.  
   
 ## <a name="files-generated-for-publishing"></a>Soubory vytvořené pro publikování  
  Před [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovna service může být Web hostovaný, tyto soubory jsou generovány nástrojem: soubory sestavení, soubor Web.config a .svc soubor. Všechny soubory se zkopírují do cílového umístění. Služba je pak publikován.  
@@ -68,7 +54,7 @@ ms.lasthandoff: 03/26/2018
 ### <a name="svc-file"></a>. Soubor SVC  
  Operaci publikování vygeneruje pro každý soubor *.svc [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, zda soubor existuje nebo Ne, aby platnosti verze. Existují dva různé typy souborů svc: jeden pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovny služby a knihovna syndikace Service a další pro sekvenční a stav počítače pracovního postupu služby knihovny. Generovaný objekt \*.svc soubor zkopírován do kořenové složky v cílovém umístění.  
   
-### <a name="webconfig-file"></a>Web.config File  
+### <a name="webconfig-file"></a>Soubor Web.config  
  Pokaždé, když pro konkrétní cílové umístění, publikování projektu služby se vytvoří soubor Web.config.  
   
  Vygenerovaný soubor Web.config obsahuje webové části, které jsou užitečné pro hostování webů a obsah souboru App.config pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] knihovny služby s následujícími změnami:  

@@ -1,13 +1,6 @@
 ---
-title: "Odvození místního typu (Visual Basic)"
-ms.custom: 
+title: Odvození místního typu (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - local type inference
 - vb.TypeInfer
@@ -19,14 +12,11 @@ helpviewer_keywords:
 - inference [Visual Basic]
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
-caps.latest.revision: "43"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d753d1fbdc60f70dcf0513d809f28a112243c111
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b33b8b2d17c240e380377528d4f5d2f511381a7d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)
 Visual Basic – kompilátor používá *odvození typu* k určení datové typy lokální proměnné deklarované bez `As` klauzule. Kompilátor odvodí typ proměnné z typu inicializace výrazu. To umožňuje deklarujte proměnné bez explicitně typu, s informacemi o tom, jak je znázorněno v následujícím příkladu. V důsledku deklarace obě `num1` a `num2` jsou silného typu jako celá čísla.  
@@ -68,7 +58,7 @@ Visual Basic – kompilátor používá *odvození typu* k určení datové typy
  [!code-vb[VbVbalrTypeInference#5](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_6.vb)]  
   
 ## <a name="option-infer"></a>Option Infer –  
- `Option Infer`povoluje, který zadáte, jestli je povolené odvození místního typu v konkrétním souboru. Chcete-li povolit nebo blokovat možnost, zadejte jednu z následujících příkazů na začátku souboru.  
+ `Option Infer` povoluje, který zadáte, jestli je povolené odvození místního typu v konkrétním souboru. Chcete-li povolit nebo blokovat možnost, zadejte jednu z následujících příkazů na začátku souboru.  
   
  `Option Infer On`  
   
@@ -82,9 +72,9 @@ Visual Basic – kompilátor používá *odvození typu* k určení datové typy
   
 ## <a name="see-also"></a>Viz také  
  [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [Statické a pozdní vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
- [Pro každou... Next – příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
- [Pro... Next – příkaz](../../../../visual-basic/language-reference/statements/for-next-statement.md)  
- [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md)  
- [/ optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
+ [Statické a dynamické vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
+ [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [Příkaz For...Next](../../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [/optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
  [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

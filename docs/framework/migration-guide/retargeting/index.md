@@ -1,23 +1,14 @@
 ---
 title: Změny cílení v rozhraní .NET Framework
 ms.date: 05/19/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-- app-compat
-ms.topic: article
-caps.latest.revision: 1
 ms.assetid: f8365847-6e39-4fd1-81d7-73bf02ddd79d
 author: conniey
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 05b0720a24b88c8792dfb9393e16c5637409c38d
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 06945a02061cbbed2ffe641cf8a77cea7faae87c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="retargeting-changes-in-the-net-framework"></a>Změny cílení v rozhraní .NET Framework
 

@@ -1,13 +1,6 @@
 ---
-title: "Přijetí vstupu z pera"
-ms.custom: 
+title: Přijetí vstupu z pera
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - ', '
 - ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b5fde62e2e1ab17b26c91051f68b7d4225450c60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 813c5f6060b3a59358b286c93a9077debd41a746
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení přes <xref:System.Windows.Input.Stylus> vstup a vytvoření digitálního <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použijte ho pro datový proud dat pocházejících z pera zařízení k zajištění optimálního výkonu.  
@@ -45,7 +33,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="architecture"></a>Architektura  
  <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Je vývoj [StylusInput](http://go.microsoft.com/fwlink/?LinkId=50753&clcid=0x409) rozhraní API, které jsou popsané v [přístup k a manipulace s vstup pera](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)v [Microsoft Windows XP Tablet PC Edition softwaru Development Kit 1.7](http://go.microsoft.com/fwlink/?linkid=11782&clcid=0x409).  
   
- Každý <xref:System.Windows.UIElement> má <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost, která je <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>. Můžete přidat <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> na element <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost k manipulaci s <xref:System.Windows.Input.StylusPoint> data, protože byla vygenerována. <xref:System.Windows.Input.StylusPoint>data se skládá ze všech vlastnostech podporovaných zprostředkovatelem digitizéru systému, včetně <xref:System.Windows.Input.StylusPoint.X%2A> a <xref:System.Windows.Input.StylusPoint.Y%2A> bodu dat, a také <xref:System.Windows.Input.StylusPoint.PressureFactor%2A> data.  
+ Každý <xref:System.Windows.UIElement> má <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost, která je <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>. Můžete přidat <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> na element <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost k manipulaci s <xref:System.Windows.Input.StylusPoint> data, protože byla vygenerována. <xref:System.Windows.Input.StylusPoint> data se skládá ze všech vlastnostech podporovaných zprostředkovatelem digitizéru systému, včetně <xref:System.Windows.Input.StylusPoint.X%2A> a <xref:System.Windows.Input.StylusPoint.Y%2A> bodu dat, a také <xref:System.Windows.Input.StylusPoint.PressureFactor%2A> data.  
   
  Vaše <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objekty jsou vloženy přímo do datového proudu dat pocházejících z <xref:System.Windows.Input.Stylus> zařízení, když přidáte <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> k <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost. Pořadí, ve kterém jsou moduly plug-in přidány do <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce určuje pořadí, ve kterém bude přijímat <xref:System.Windows.Input.StylusPoint> data. Například pokud přidáte modul plug-in filtr, který omezuje vstup pro konkrétní oblasti a pak přidat modul plug-in, který rozpoznává gesta, ve kterém byla zapsána, modul plug-in, který rozpoznává gesta obdrží filtrované <xref:System.Windows.Input.StylusPoint> data.  
   

@@ -1,21 +1,14 @@
 ---
-title: "Architektura orientovaná na služby"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Architektura orientovaná na služby"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Architektura orientovaná na služby
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Architektura orientovaná na služby
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 6a5f0f53f4208c9944adea33fe1aa3f35fed81ab
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ce4addefc7b6b1cf82551bf8304b7f06f1614796
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-oriented-architecture"></a>Architektura orientovaná na služby 
 

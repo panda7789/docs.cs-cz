@@ -1,26 +1,12 @@
 ---
 title: Korelace – přehled
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: edcc0315-5d26-44d6-a36d-ea554c418e9f
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6b5c5a1f59bd112c3edc52190b9243831d84feaf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: bea561cdaecce028011803f2f4392d788dbe0002
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="correlation-overview"></a>Korelace – přehled
 Korelace je mechanismus pro související zprávy služby pracovního postupu k sobě navzájem nebo stav instance aplikace, jako je například odpovědět na požadavek počáteční nebo konkrétní pořadí ID trvalého stavu pracovním postupu pořadí zpracování. Toto téma obsahuje přehled korelace. Na další témata v této části poskytují další informace pro každý typ korelace.  

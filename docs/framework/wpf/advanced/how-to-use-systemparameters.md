@@ -1,37 +1,23 @@
 ---
-title: "Postupy: Používání tipů SystemParameters"
-ms.custom: 
+title: 'Postupy: Používání tipů SystemParameters'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - classes [WPF], SystemParameters
 ms.assetid: 02e7a5de-94eb-4953-b91c-52e6c872ad5b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ec333fbc30374ff6f8e2e7674ab332644ff7aad0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 07b73d78a022e508f9ed8ca2e80b71bc2ab89910
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-systemparameters"></a>Postupy: Používání tipů SystemParameters
 Tento příklad ukazuje, jak k přístupu a použití vlastností <xref:System.Windows.SystemParameters> za účelem styl nebo na tlačítko Přizpůsobit.  
   
 ## <a name="example"></a>Příklad  
- Systémové prostředky vystavit několik nastavení systému, na základě prostředků, aby vám pomůže vytvořit vizuální prvky, které jsou konzistentní s nastavení systému. <xref:System.Windows.SystemParameters>je třída, která obsahuje vlastnosti hodnotu parametru systému a klíče prostředků, které vytvořit vazbu na hodnoty. Například <xref:System.Windows.SystemParameters.FullPrimaryScreenHeight%2A> je <xref:System.Windows.SystemParameters> hodnotu vlastnosti a <xref:System.Windows.SystemParameters.FullPrimaryScreenHeightKey%2A> je odpovídající klíč prostředku.  
+ Systémové prostředky vystavit několik nastavení systému, na základě prostředků, aby vám pomůže vytvořit vizuální prvky, které jsou konzistentní s nastavení systému. <xref:System.Windows.SystemParameters> je třída, která obsahuje vlastnosti hodnotu parametru systému a klíče prostředků, které vytvořit vazbu na hodnoty. Například <xref:System.Windows.SystemParameters.FullPrimaryScreenHeight%2A> je <xref:System.Windows.SystemParameters> hodnotu vlastnosti a <xref:System.Windows.SystemParameters.FullPrimaryScreenHeightKey%2A> je odpovídající klíč prostředku.  
   
  V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít členy <xref:System.Windows.SystemParameters> jako použití statickou vlastnost nebo dynamické prostředků odkazy (s hodnotou statickou vlastnost jako klíč). Pokud má hodnotu systém založený na Aktualizovat automaticky při aplikaci použít odkaz na dynamické prostředků spouští; Jinak použijte statický odkaz. Prostředek klíče měly přípona `Key` připojeným k názvu vlastnosti.  
   

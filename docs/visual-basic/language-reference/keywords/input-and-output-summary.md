@@ -1,23 +1,16 @@
 ---
-title: "Souhrn vstupu a výstupu (Visual Basic)"
+title: Souhrn vstupu a výstupu (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - input, Visual Basic functions
 - output, Visual Basic functions
 - I/O [Visual Basic], functions
 ms.assetid: 6b0cbb88-6593-43b8-8a40-a61563bc0ce9
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 51b7676bbe85655799280d5bad7f41241920f570
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 50664c271e4d6e1f13d7705299e2ba756b2d242f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="input-and-output-summary-visual-basic"></a>Souhrn vstupu a výstupu (Visual Basic)
 Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořádány podle účelu a použití.  
@@ -39,4 +32,4 @@ Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořá
   
 ## <a name="see-also"></a>Viz také  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
- [Členové knihovny prostředí Runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+ [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

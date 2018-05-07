@@ -1,24 +1,12 @@
 ---
 title: Přehled pracovního postupu systému Windows
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bc1aa65b413b87b27c05e7a12ce607d1cd30b89b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 568797259087129ab4fc87a1f3523b0cce88eb4b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-overview"></a>Přehled pracovního postupu systému Windows
 Pracovní postup je sada elementární jednotek nazývaných *aktivity* , jsou uloženy jako model, který popisuje reálného procesu. Pracovní postupy zadejte označení pořadí provádění a závislé vztahy mezi částí krátké nebo dlouhotrvající práce. Tento pracovní projdou modelu od začátku do konce a aktivity mohou být prováděny, uživatelé nebo funkce systému.  
@@ -34,7 +22,7 @@ Pracovní postup je sada elementární jednotek nazývaných *aktivity* , jsou u
   
  Každá z těchto tříd zabalí na core runtime aktivity vyjádřené <xref:System.Activities.ActivityInstance> zodpovědná za spuštění aktivity. Může být několik <xref:System.Activities.ActivityInstance> objektů v rámci současné spuštění domény aplikace.  
   
- Každý z předchozí interakce objektů tři hostitele je vytvořen ze stromu aktivit, které jsou označovány jako program pracovního postupu. Pomocí těchto typů nebo vlastní hostitele, který zabalí <xref:System.Activities.ActivityInstance>, pracovní postupy můžete spustit v rámci libovolného procesu systému Windows včetně konzolové aplikace založené na formulářích aplikace služby systému Windows, [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] weby, a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]služby.  
+ Každý z předchozí interakce objektů tři hostitele je vytvořen ze stromu aktivit, které jsou označovány jako program pracovního postupu. Pomocí těchto typů nebo vlastní hostitele, který zabalí <xref:System.Activities.ActivityInstance>, pracovní postupy můžete spustit v rámci libovolného procesu systému Windows včetně konzolové aplikace založené na formulářích aplikace služby systému Windows, [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] webové servery a (Windows Communication Foundation Služby WCF).  
   
  ![Součásti pracovního postupu v procesu hostitele](../../../docs/framework/windows-workflow-foundation/media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
 Součásti pracovního postupu v procesu hostitele  

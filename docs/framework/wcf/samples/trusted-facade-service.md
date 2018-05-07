@@ -1,27 +1,15 @@
 ---
-title: "Důvěryhodná služba facade"
-ms.custom: 
+title: Důvěryhodná služba facade
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c0d1d0473a821510ee70e386058a2b3249221dd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 08e115d297439910c16601051539a23a5a6bebc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trusted-facade-service"></a>Důvěryhodná služba facade
-Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího jedna služba jiné pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Infrastruktura zabezpečení.  
+Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího z jedné služby do jiného pomocí služby Windows Communication Foundation (WCF) Infrastruktura zabezpečení.  
   
  Je běžné vzoru návrhu ke zveřejnění funkce poskytované službou k veřejné síti pomocí průčelí za služby. Služba průčelí za většinou nachází v hraniční síti (označované také jako DMZ, demilitarizovaná zóna a monitorovaná podsíť) a komunikuje se službou back-end, který implementuje obchodní logiky a má přístup k interní data. Komunikační kanál mezi průčelí za služby a služby back-end přejde přes bránu firewall a je obvykle omezené pro pouze jedinému účelu.  
   
@@ -137,7 +125,7 @@ public string GetCallerIdentity()
 }  
 ```  
   
- Jak ukazuje předchozí kód, heslo není nastaven na `ClientCredentials` , pouze uživatelské jméno je nastavena. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]Infrastruktura zabezpečení vytvoří token zabezpečení uživatelské jméno bez zadání hesla v tomto případě tedy přesně co je nutné v tomto scénáři.  
+ Jak ukazuje předchozí kód, heslo není nastaven na `ClientCredentials` , pouze uživatelské jméno je nastavena. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení vytvoří token zabezpečení uživatelské jméno bez zadání hesla v tomto případě tedy přesně co je nutné v tomto scénáři.  
   
  Na službě back-end musí být ověřeny informací obsažených v tokenu zabezpečení, uživatelské jméno. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení se pokouší mapovat uživatele na účet systému Windows pomocí zadaného hesla. V takovém případě není zadané heslo a back-end službu není nutné k ověření uživatelského jména, protože již bylo provedeno ověření službou průčelí za. K implementaci tuto funkci v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vlastní `UserNamePasswordValidator` je k dispozici, pouze vynucuje, uživatelské jméno je zadána v tokenu a nebude provádět žádné další ověřování.  
   
@@ -298,7 +286,7 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  
   

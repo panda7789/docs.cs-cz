@@ -1,34 +1,20 @@
 ---
-title: "Konfigurace a rozšíření modulu runtime s chováním"
-ms.custom: 
+title: Konfigurace a rozšíření modulu runtime s chováním
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2ea157ea1ac73a287ba39c1468e7e9a5781d40a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 05fd96574f072f8e349f83d11aca20bc5269dfc7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
-Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která kontrolují a ověření konfigurace služby nebo změňte chování za běhu v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] klienta a aplikaci služby. Toto téma popisuje chování rozhraní, jak pro jejich implementaci a jak je přidáte do popisu služby (v aplikaci služby) nebo koncový bod (v aplikaci klienta) prostřednictvím kódu programu, nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [zadání běhového chování klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
+Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která zkontrolovat a ověřit konfiguraci služby nebo upravit chování za běhu v aplikacích pro klienta a služby Windows Communication Foundation (WCF). Toto téma popisuje chování rozhraní, jak pro jejich implementaci a jak je přidáte do popisu služby (v aplikaci služby) nebo koncový bod (v aplikaci klienta) prostřednictvím kódu programu, nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [zadání běhového chování klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
   
 ## <a name="behaviors"></a>Chování  
- Chování typy jsou přidány do služby nebo objekty popis koncový bod služby (na služba nebo klienta, v uvedeném pořadí) před tyto objekty používají [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vytvořit modul runtime, který provede [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Pokud tyto chování jsou volány během procesu vytváření modulu runtime jsou pak mít přístup k modulu runtime vlastnosti a metody, které upravují runtime sestavený kontrakt, vazeb a adresy.  
+ Chování typy jsou přidány do služby nebo objekty popis koncový bod služby (na služba nebo klienta, v uvedeném pořadí) před tyto objekty se používají ve Windows Communication Foundation (WCF) vytvořit modul runtime, který provede [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Pokud tyto chování jsou volány během procesu vytváření modulu runtime jsou pak mít přístup k modulu runtime vlastnosti a metody, které upravují runtime sestavený kontrakt, vazeb a adresy.  
   
 ### <a name="behavior-methods"></a>Chování metod  
  Mají všechny chování `AddBindingParameters` metody `ApplyDispatchBehavior` metoda, `Validate` metoda a `ApplyClientBehavior` metoda s jednou výjimkou: protože <xref:System.ServiceModel.Description.IServiceBehavior> nelze provést v klientovi, neimplementuje `ApplyClientBehavior`.  

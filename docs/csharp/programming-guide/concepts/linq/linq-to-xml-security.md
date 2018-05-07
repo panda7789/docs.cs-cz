@@ -1,21 +1,12 @@
 ---
-title: "Technologie LINQ to XML zabezpečení (C#)"
-ms.custom: 
+title: Technologie LINQ to XML zabezpečení (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: ef2c0dc9-ecf9-4c17-b24e-144184ab725f
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 281f979d0c7df2538f664199e4444db5166ba55e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f51c256091d503a34caadbdf46d08e05c3122238
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-security-c"></a>Technologie LINQ to XML zabezpečení (C#)
 Toto téma popisuje problémy se zabezpečením přidružené technologie LINQ to XML. Kromě toho obsahuje některé pokyny pro minimalizaci ohrožení zabezpečení.  

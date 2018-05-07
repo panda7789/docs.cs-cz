@@ -1,37 +1,25 @@
 ---
-title: "Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP"
-ms.custom: 
+title: Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - certificates [WCF], validation differences
 ms.assetid: 953a219f-4745-4019-9894-c70704f352e6
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 34be2fbc5b8148d7bfdeb5e5d07e5b73ac89a97e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 744d9208f6be47965b89ddd9555b99feab9e18b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
-Můžete použít certifikáty v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s zabezpečení zpráv vrstvy (SOAP) kromě zabezpečení přenosové vrstvy (TLS) přes protokol HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly ve způsobu, jak tyto certifikáty se ověřují.  
+Můžete použít certifikáty ve Windows Communication Foundation (WCF) s zabezpečení zpráv vrstvy (SOAP) kromě zabezpečení přenosové vrstvy (TLS) přes protokol HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly ve způsobu, jak tyto certifikáty se ověřují.  
   
 ## <a name="validation-of-https-client-certificates"></a>Ověřování HTTPS klientských certifikátů  
- Při použití protokolu HTTPS pro komunikaci mezi klientem a služby, certifikát, který klient používá k ověření služby musí podporovat řetězu vztah důvěryhodnosti. To znamená musí zřetězené důvěryhodné kořenové certifikační autoritě. Pokud ne, vyvolá vrstvě protokolu HTTP <xref:System.Net.WebException> se zprávou "vzdálený server vrátil chybu: (403) zakázán." [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]vyvolá výjimku jako <xref:System.ServiceModel.Security.MessageSecurityException>.  
+ Při použití protokolu HTTPS pro komunikaci mezi klientem a služby, certifikát, který klient používá k ověření služby musí podporovat řetězu vztah důvěryhodnosti. To znamená musí zřetězené důvěryhodné kořenové certifikační autoritě. Pokud ne, vyvolá vrstvě protokolu HTTP <xref:System.Net.WebException> se zprávou "vzdálený server vrátil chybu: (403) zakázán." Vyvolá výjimku jako WCF <xref:System.ServiceModel.Security.MessageSecurityException>.  
   
 ## <a name="validation-of-https-service-certificates"></a>Ověřování HTTPS služby certifikátů  
  Při použití protokolu HTTPS pro komunikaci mezi klientem a služby, certifikát, který se ověřuje serveru musí podporovat řetěz důvěryhodnosti ve výchozím nastavení. To znamená musí zřetězené důvěryhodné kořenové certifikační autoritě. Pokud chcete zobrazit, zda certifikát byl odvolán je provedena žádná kontrola online. Toto chování můžete přepsat pomocí registrace <xref:System.Net.Security.RemoteCertificateValidationCallback> zpětné volání, jak je znázorněno v následujícím kódu.  

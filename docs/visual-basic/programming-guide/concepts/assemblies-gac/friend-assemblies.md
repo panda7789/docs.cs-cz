@@ -1,22 +1,12 @@
 ---
-title: "Přátelská sestavení (Visual Basic)"
-ms.custom: 
+title: Přátelská sestavení (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9b3d5716-e6e4-47a7-a3e9-084d7fba5c28
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d3a37629582e4fc2606afaf606735464c0d247a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 91bc33f33c4fc34c6e0f3ae197ecd2b876161de3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="friend-assemblies-visual-basic"></a>Přátelská sestavení (Visual Basic)
 A *přátelského sestavení* je sestavení, které můžete přístup k jiné sestavení [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) typy a členy. Pokud identifikovat sestavení jako přátelského sestavení, již není k označení typy a členy jako veřejné, aby k nim přístup ostatních sestavení. To je zvlášť vhodné v následujících scénářích:  
@@ -65,7 +55,7 @@ End Class
   
  <xref:System.Security.Permissions.StrongNameIdentityPermission> Třída rovněž poskytuje možnost sdílet typy, s následující rozdíly:  
   
--   <xref:System.Security.Permissions.StrongNameIdentityPermission>platí pro typ jednotlivých během přátelského sestavení celá sestava.  
+-   <xref:System.Security.Permissions.StrongNameIdentityPermission> platí pro typ jednotlivých během přátelského sestavení celá sestava.  
   
 -   Pokud se používají stovky typy v sestavení *A* , kterou chcete sdílet s sestavení *B*, budete muset přidat <xref:System.Security.Permissions.StrongNameIdentityPermission> ke všem z nich. Pokud používáte přátelského sestavení, musíte pouze deklarovat vztah friend jednou.  
   
@@ -79,4 +69,4 @@ End Class
  [Postupy: vytváření nepodepsaných přátelských sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
  [Postupy: vytváření podepsaných přátelských sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
  [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Programování konceptů](../../../../visual-basic/programming-guide/concepts/index.md)
+ [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)

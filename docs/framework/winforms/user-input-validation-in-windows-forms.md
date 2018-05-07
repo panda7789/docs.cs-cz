@@ -1,31 +1,17 @@
 ---
-title: "Ověřování uživatelského vstupu ve Windows Forms"
-ms.custom: 
+title: Ověřování uživatelského vstupu ve Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, validating user input
 - validation [Windows Forms], Windows Forms user input
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1d0e3ec867e44c4f01b239e8e243259d7c951d96
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: adc138ad1e277f69f27f9f86fc5c3ea28a8d5cce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Při zadávání dat do aplikace, můžete ověřit platnost data předtím, než je vaše aplikace používá. Může vyžadovat určité textová pole nesmí být nulová délka, naformátovat pole jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo že řetězec neobsahuje žádné nebezpečné znaky, které by mohly být použity k ohrožení zabezpečení databáze. Windows Forms poskytuje několik způsobů ověření vstupu ve vaší aplikaci.  
@@ -56,7 +42,7 @@ Při zadávání dat do aplikace, můžete ověřit platnost data předtím, ne�
  Při použití datové vazby dat ve vašem ovládacím prvku je synchronizován se zdrojem dat během provádění <xref:System.Windows.Forms.Control.Validating> událostí. Pokud zrušíte <xref:System.Windows.Forms.Control.Validating> událostí, data nebudou synchronizovat se zdrojem dat.  
   
 > [!IMPORTANT]
->  Pokud máte vlastní ověření, který probíhá po <xref:System.Windows.Forms.Control.Validating> událostí, nebude to mít vliv datové vazby. Například, pokud máte kódu <xref:System.Windows.Forms.Control.Validated> událost, která se pokusí zrušit datové vazby, datové vazby přesto dojde. V tomto případě k provedení ověření v <xref:System.Windows.Forms.Control.Validated> událostí, změňte ovládacího prvku **režim aktualizace zdroje dat** vlastnost (**pod (datové vazby)**\\**(rozšířené)** ) z **OnValidation** k **nikdy**a přidejte *řízení*`.DataBindings["`*\<YOURFIELD >*  `"].WriteValue()` ověření kódu.  
+>  Pokud máte vlastní ověření, který probíhá po <xref:System.Windows.Forms.Control.Validating> událostí, nebude to mít vliv datové vazby. Například, pokud máte kódu <xref:System.Windows.Forms.Control.Validated> událost, která se pokusí zrušit datové vazby, datové vazby přesto dojde. V tomto případě k provedení ověření v <xref:System.Windows.Forms.Control.Validated> událostí, změňte ovládacího prvku **režim aktualizace zdroje dat** vlastnost (**pod (datové vazby)**\\ **(rozšířené)** ) z **OnValidation** k **nikdy**a přidejte *řízení*`.DataBindings["`*\<YOURFIELD >*  `"].WriteValue()` ověření kódu.  
   
 ### <a name="implicit-and-explicit-validation"></a>Implicitní a explicitní ověření  
  Proto když data ovládacího prvku získat ověřit? Toto je až vás jako na vývojáři. Můžete použít implicitním nebo explicitním ověření, v závislosti na potřebách vaší aplikace.  

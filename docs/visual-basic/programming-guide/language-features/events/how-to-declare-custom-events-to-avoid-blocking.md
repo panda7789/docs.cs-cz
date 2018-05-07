@@ -1,25 +1,16 @@
 ---
-title: "Postupy: Deklarování vlastních událostí k zabránění blokování (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Deklarování vlastních událostí k zabránění blokování (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - declaring events [Visual Basic], custom
 - events [Visual Basic], custom
 - custom events [Visual Basic]
 ms.assetid: 998b6a90-67c5-4d2c-8b11-366d3e355505
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4a36c855efb67752674615a61f2fa701974ce5f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3cb66aed71195d2fd2335fbd59cc499b3dbf808e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-declare-custom-events-to-avoid-blocking-visual-basic"></a>Postupy: Deklarování vlastních událostí k zabránění blokování (Visual Basic)
 Existují několika případech, kdy je důležité, že jedna obslužná rutina není blokovat obslužné rutiny události. Vlastní události povolit události na asynchronní volání jeho obslužné rutiny událostí.  
@@ -39,4 +30,4 @@ Existují několika případech, kdy je důležité, že jedna obslužná rutina
  <xref:System.Collections.ArrayList>  
  <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A>  
  [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)  
- [Postupy: deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)
+ [Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)

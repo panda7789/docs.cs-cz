@@ -1,14 +1,6 @@
 ---
 title: Ladění chyb ověřování systému Windows
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,31 +8,25 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 39c033d45488b827a4aee7439904db8094795db4
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d9226324b69e5c27738abb35bb155a43964b9127
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
-Pokud používáte ověřování systému Windows jako vhodný mechanismus zabezpečení, rozhraní pro zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Při výskytu chyb zabezpečení ve vrstvě rozhraní SSPI, jsou prezentované podle [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Toto téma obsahuje framework a sadu otázky, které pomohou diagnostikovat chyby.  
+Pokud používáte ověřování systému Windows jako vhodný mechanismus zabezpečení, rozhraní pro zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Při výskytu chyb zabezpečení ve vrstvě rozhraní SSPI, že jsou prezentované podle Windows Communication Foundation (WCF). Toto téma obsahuje framework a sadu otázky, které pomohou diagnostikovat chyby.  
   
  Přehled protokolu Kerberos najdete v tématu [protokolu Kerberos](http://go.microsoft.com/fwlink/?LinkID=86946); najdete v tématu Přehled SSPI, [SSPI](http://go.microsoft.com/fwlink/?LinkId=88941).  
   
- Pro ověřování systému Windows [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se většinou používá *Negotiate* zprostředkovatele podpory zabezpečení (SSP), který provádí vzájemné ověřování protokolem Kerberos mezi klientem a službou. Pokud není k dispozici, ve výchozím nastavení protokol Kerberos [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spadne zpět na NT LAN Manager (NTLM). Ale můžete nakonfigurovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používat pouze protokol Kerberos (a způsobí výjimku, pokud protokolu Kerberos není k dispozici). Můžete také nakonfigurovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používat s omezeným přístupem formuláře protokolu Kerberos.  
+ Pro ověřování systému Windows, se většinou používá WCF *Negotiate* zprostředkovatele podpory zabezpečení (SSP), který provádí vzájemné ověřování protokolem Kerberos mezi klientem a službou. Pokud protokol Kerberos není k dispozici, ve výchozím nastavení WCF přejde k NT LAN Manager (NTLM). Můžete ale nakonfigurovat WCF používají pouze protokol Kerberos, (a způsobí výjimku, pokud protokolu Kerberos není k dispozici). Můžete také nakonfigurovat WCF pro použití s omezeným přístupem formulářů protokolu Kerberos.  
   
 ## <a name="debugging-methodology"></a>Ladění metody  
  Základní metoda vypadá takto:  
   
 1.  Určí, jestli používáte ověřování systému Windows. Pokud používáte jiné schéma, toto téma se nevztahuje.  
   
-2.  Pokud jste si jistí, používáte ověřování systému Windows, zjistit, jestli vaše [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurace používá přímo pomocí protokolu Kerberos nebo Negotiate.  
+2.  Pokud jste si jistí, že používáte ověřování systému Windows, zjistěte, zda konfiguraci WCF používá přímo pomocí protokolu Kerberos nebo Negotiate.  
   
 3.  Jakmile zjistíte, zda je vaše konfigurace pomocí protokolu Kerberos nebo NTLM, rozumíte chybové zprávy v rámci správné.  
   
@@ -75,7 +61,7 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
 ### <a name="kerberos-protocol"></a>Protokol Kerberos  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Hlavní název služby/UPN problémy s protokolem Kerberos  
- Pokud používáte ověřování systému Windows a protokol je použít nebo vyjednaném rozhraní SSPI protokolu Kerberos, musí obsahovat adresu URL koncového bodu klienta používá plně kvalifikovaný název domény hostitele služby uvnitř adresu URL služby. Předpokladem je, že účet, pod kterým běží služba má přístup k klíč služby (SPN) pro hlavní název počítače (výchozí), který se vytvoří, když je počítač přidán do domény Active Directory, která se nejčastěji provádí spuštěním služby v rámci Účet služby sítě. Pokud služba nemá přístup ke klíči počítače hlavní název služby, je třeba zadat správný hlavní název služby nebo uživatele hlavní název (UPN) účtu, pod kterým je služba spuštěná v identitu koncového bodu klienta. Další informace o tom, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funguje s SPN a UPN, najdete v části [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pokud používáte ověřování systému Windows a protokol je použít nebo vyjednaném rozhraní SSPI protokolu Kerberos, musí obsahovat adresu URL koncového bodu klienta používá plně kvalifikovaný název domény hostitele služby uvnitř adresu URL služby. Předpokladem je, že účet, pod kterým běží služba má přístup k klíč služby (SPN) pro hlavní název počítače (výchozí), který se vytvoří, když je počítač přidán do domény Active Directory, která se nejčastěji provádí spuštěním služby v rámci Účet služby sítě. Pokud služba nemá přístup ke klíči počítače hlavní název služby, je třeba zadat správný hlavní název služby nebo uživatele hlavní název (UPN) účtu, pod kterým je služba spuštěná v identitu koncového bodu klienta. Další informace o fungování WCF s SPN a UPN najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
  Ve službě Vyrovnávání zatížení případech, například webových farem nebo webové zahrada běžnou praxí je definovat jedinečný účet pro každou aplikaci, k tomuto účtu přiřadit název SPN a ujistěte se, že všechny aplikace služby spuštěny v daném účtu.  
   
@@ -111,7 +97,7 @@ Pokud používáte ověřování systému Windows jako vhodný mechanismus zabez
 ### <a name="ntlm-protocol"></a>Protokol NTLM  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>Vyjednávání vrátí zprostředkovatele sdílených služeb k protokolu NTLM, ale je zakázaný protokol NTLM  
- <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> Je nastavena na `false`, který spustí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.  
+ <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> Je nastavena na `false`, což způsobí, že Windows Communication Foundation (WCF), aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.  
   
  Následující ukazuje, jak zakázat nouzového řešení ověření pomocí protokolu NTLM.  
   

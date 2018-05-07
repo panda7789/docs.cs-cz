@@ -1,26 +1,17 @@
 ---
 title: Kopírování hodnotu &#39;ByRef&#39; parametr &#39; &lt;parametername&gt; &#39; zpět na odpovídající argument zúží z typu &#39; &lt;NázevTypu1&gt; &#39; na typ &#39; &lt;NázevTypu2&gt;&#39;
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc32053
 - vbc32053
 helpviewer_keywords:
 - BC32053
 ms.assetid: 281564b7-99f7-451f-b10d-f985e831bb25
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 18c72e56e4b2cc9c2251de2417a9f12a6688323f
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1d35d7abc6f65dd2e09a54e3e4b817741043ae6c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="copying-the-value-of-39byref39-parameter-39ltparameternamegt39-back-to-the-matching-argument-narrows-from-type-39lttypename1gt39-to-type-39lttypename2gt39"></a>Kopírování hodnotu &#39;ByRef&#39; parametr &#39; &lt;parametername&gt; &#39; zpět na odpovídající argument zúží z typu &#39; &lt;NázevTypu1&gt; &#39; na typ &#39; &lt;NázevTypu2&gt;&#39;
 Postup je volána s argumentem, která rozšiřuje na s typem parametru odpovídající a je zužující převod parametr argument.  

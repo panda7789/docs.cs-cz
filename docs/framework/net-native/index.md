@@ -1,14 +1,6 @@
 ---
 title: Kompilování aplikací pomocí .NET Native
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - native compilation
 - .NET and native code
@@ -16,20 +8,16 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-caps.latest.revision: 27
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dec4d465b53f939f8fa711950ba6a000bd304e13
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 1ecc707bb07d6d17ae4115b483cc8f52083f3933
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilování aplikací pomocí .NET Native
-[!INCLUDE[net_native](../../../includes/net-native-md.md)]je předkompilace technologie pro vytváření a nasazování aplikací pro Windows, která je součástí sady Visual Studio 2015 a novější verze. Zkompiluje automaticky prodejní verze aplikace, které jsou zapsány v spravovaného kódu (C# nebo Visual Basic), že cílové rozhraní .NET Framework a Windows 10 do nativního kódu.  
+[!INCLUDE[net_native](../../../includes/net-native-md.md)] je předkompilace technologie pro vytváření a nasazování aplikací pro Windows, která je součástí sady Visual Studio 2015 a novější verze. Zkompiluje automaticky prodejní verze aplikace, které jsou zapsány v spravovaného kódu (C# nebo Visual Basic), že cílové rozhraní .NET Framework a Windows 10 do nativního kódu.  
   
  Aplikace, které cílí na rozhraní .NET Framework jsou obvykle zkompilovány do převodního jazyka (IL). V době běhu kompilátoru za běhu (JIT) překládá IL do nativního kódu. Naproti tomu [!INCLUDE[net_native](../../../includes/net-native-md.md)] zkompiluje aplikací pro Windows přímo do nativního kódu. Pro vývojáře to znamená:  
   
@@ -58,9 +46,9 @@ Ale [!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje více ne
   
 -   [!INCLUDE[net_native](../../../includes/net-native-md.md)] Runtime je optimalizovaná pro statické předkompilaci a v valná většina případů nabízí vyšší výkon. Ve stejnou dobu zůstane zachován funkce reflexe jádra, které vývojáři najít tak produktivitu.  
   
--   [!INCLUDE[net_native](../../../includes/net-native-md.md)]používá stejný zpět ukončení jako C++ compiler, která je optimalizovaná pro statické předkompilace scénáře.  
+-   [!INCLUDE[net_native](../../../includes/net-native-md.md)] používá stejný zpět ukončení jako C++ compiler, která je optimalizovaná pro statické předkompilace scénáře.  
   
- [!INCLUDE[net_native](../../../includes/net-native-md.md)]je přináší výhody výkonu C++ na vývojářům spravovaného kódu protože používá nástroje stejné nebo podobné jako C++ pod pokličkou, jak je znázorněno v této tabulce.  
+ [!INCLUDE[net_native](../../../includes/net-native-md.md)] je přináší výhody výkonu C++ na vývojářům spravovaného kódu protože používá nástroje stejné nebo podobné jako C++ pod pokličkou, jak je znázorněno v této tabulce.  
   
 ||[!INCLUDE[net_native](../../../includes/net-native-md.md)]|C++|  
 |-|----------------------------------------------------------------|-----------|  

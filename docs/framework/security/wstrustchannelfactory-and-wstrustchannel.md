@@ -1,24 +1,14 @@
 ---
 title: WSTrustChannelFactory a WSTrustChannel
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 96cec467-e963-4132-b18b-7d0b3a2e979f
-caps.latest.revision: "9"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 35f4449f7a826ea49be750cd750cb989c8c455fb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3fabd7e3cad76e17061751d0fe0bb4ae06bf6fb6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wstrustchannelfactory-and-wstrustchannel"></a>WSTrustChannelFactory a WSTrustChannel
 Pokud jste již obeznámeni s Windows Communication Foundation (WCF), víte, že klienta WCF již federační vědět. Podle konfigurace klienta WCF s <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby, můžete povolit federovaného ověřování do služby.  
@@ -107,7 +97,7 @@ IHelloService serviceChannel = channelFactory.CreateChannelWithIssuedToken<IHell
   
 -   Umožňuje ukládat do mezipaměti a opakovaně používat token, který je vrácen z <xref:System.ServiceModel.Security.WSTrustChannel.Issue%2A> metoda.  
   
--   <xref:System.ServiceModel.Security.WSTrustChannelFactory>a <xref:System.ServiceModel.Security.WSTrustChannel> povolit pro řízení kanál ukládání do mezipaměti, selhání a obnovení sémantiku podle doporučených postupů WCF.  
+-   <xref:System.ServiceModel.Security.WSTrustChannelFactory> a <xref:System.ServiceModel.Security.WSTrustChannel> povolit pro řízení kanál ukládání do mezipaměti, selhání a obnovení sémantiku podle doporučených postupů WCF.  
   
 ## <a name="see-also"></a>Viz také  
  [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)

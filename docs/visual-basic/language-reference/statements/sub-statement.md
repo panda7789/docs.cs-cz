@@ -1,12 +1,6 @@
 ---
-title: "Sub – příkaz (Visual Basic)"
+title: Sub – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Sub
 helpviewer_keywords:
@@ -35,14 +29,11 @@ helpviewer_keywords:
 - ByVal keyword [Visual Basic], Sub statements
 - Visual Basic code, Sub procedures
 ms.assetid: e347d700-d06c-405b-b302-e9b1edb57dfc
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0a2d0d5ffdca857a3a5ca58cd38b0930f254526f
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.openlocfilehash: 9a806f2ec979699f7ccf4012c6477bee11301b0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sub-statement-visual-basic"></a>Sub – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, který definovat `Sub` postupu.  
@@ -178,7 +169,7 @@ End Sub
 ## <a name="defining-a-sub-procedure"></a>Definování Sub – procedury  
  Můžete definovat `Sub` postup jenom na úrovni modulu. Kontext deklarace pro proceduru sub proto musí být třídy, struktury, modul nebo rozhraní a nemůže být zdrojový soubor, obor názvů, procedury nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](declaration-contexts-and-default-access-levels.md).  
   
- `Sub`Výchozí nastavení postupy veřejný přístup. Jejich úrovně přístupu můžete upravit pomocí modifikátory přístupu.  
+ `Sub` Výchozí nastavení postupy veřejný přístup. Jejich úrovně přístupu můžete upravit pomocí modifikátory přístupu.  
   
  Pokud postup používá `Implements` – klíčové slovo, obsahující třídu nebo strukturu, musíte mít `Implements` příkaz, který následuje jeho `Class` nebo `Structure` příkaz. `Implements` Příkaz musí zahrnovat každé rozhraní, který je uveden v `implementslist`. Ale název, podle kterého rozhraní definuje `Sub` (v `definedname`) nemusí odpovídat názvu tohoto postupu (v `name`).  
   
@@ -214,7 +205,7 @@ End Sub
   
  Můžete také označit [funkce příkaz](function-statement.md) s `Async` modifikátor. `Async` Funkce může mít návratový typ <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.Task>. Příklad později v tomto tématu je uveden `Async` funkce, která má návratový typ <xref:System.Threading.Tasks.Task%601>.  
   
- `Async``Sub` postupy se primárně používají pro obslužné rutiny událostí, kde nejde vrátit hodnotu. `Async``Sub` Procedury nelze očekáváno a volající `Async``Sub` procedury nelze zachytit výjimky, `Sub` postup vyvolává.  
+ `Async` `Sub` postupy se primárně používají pro obslužné rutiny událostí, kde nejde vrátit hodnotu. `Async``Sub` Procedury nelze očekáváno a volající `Async``Sub` procedury nelze zachytit výjimky, `Sub` postup vyvolává.  
   
  `Async` Procedury nelze deklarovat všechny [ByRef](../modifiers/byref.md) parametry.  
   
@@ -226,7 +217,7 @@ End Sub
  [!code-vb[VbVbalrStatements#58](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/sub-statement_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `DelayAsync` je `Async``Function` s návratovým typem <xref:System.Threading.Tasks.Task%601>. `DelayAsync`má `Return` příkaz, který vrátí celé číslo. Proto funkce deklaraci `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `Dim result As Integer = Await delayTask`.  
+ V následujícím příkladu `DelayAsync` je `Async``Function` s návratovým typem <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má `Return` příkaz, který vrátí celé číslo. Proto funkce deklaraci `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `Dim result As Integer = Await delayTask`.  
   
  `startButton_Click` Postup je příklad `Async Sub` postupu. Protože `DoSomethingAsync` je `Async` funkce, úlohy pro volání `DoSomethingAsync` musí být očekáváno, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. `startButton_Click``Sub` Postupu musí být definovány se `Async` modifikátor vzhledem k tomu, že má `Await` výrazu.  
   
@@ -238,7 +229,7 @@ End Sub
  [Seznam parametrů](parameter-list.md)  
  [Příkaz Dim](dim-statement.md)  
  [Příkaz Call](call-statement.md)  
- [Z](of-clause.md)  
+ [z](of-clause.md)  
  [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)  
  [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)  

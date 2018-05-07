@@ -1,21 +1,12 @@
 ---
 title: A-E – příkazy
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a670de2c80d69c97b5ee80768decca747e64efb6
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c3ef4c8bd0c09d41134f43692fb1683444b83d3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="a-e-statements"></a>A-E – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  

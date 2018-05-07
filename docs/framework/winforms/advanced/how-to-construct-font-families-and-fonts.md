@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vytváření rodin písem a písem"
-ms.custom: 
+title: 'Postupy: Vytváření rodin písem a písem'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - font families [Windows Forms], constructing
 - fonts [Windows Forms], constructing
 ms.assetid: d3a4a223-9492-4b54-9afd-db1c31c3cefd
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e152c525550554082d7d6c38a972ccc150adabb9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ceace5950ec135ea4d52081da7d1de7a820583ee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-construct-font-families-and-fonts"></a>Postupy: Vytváření rodin písem a písem
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]skupiny se stejného řezu, ale s různými styly písem do rodiny písem. Například typu Arial obsahuje následující písma:  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] skupiny se stejného řezu, ale s různými styly písem do rodiny písem. Například typu Arial obsahuje následující písma:  
   
 -   Arial Regular  
   
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Arial tučné, kurzíva  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]používá čtyři stylů pro formulář rodin: obyčejný, tučné, kurzíva a tučné kurzívy. Přídavných jmen jako *zúžit* a *zaokrouhlené* nejsou považovány za styly; namísto jsou součástí název rodiny. Arial úzké je třeba v dané rodině písem s následující členy:  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá čtyři stylů pro formulář rodin: obyčejný, tučné, kurzíva a tučné kurzívy. Přídavných jmen jako *zúžit* a *zaokrouhlené* nejsou považovány za styly; namísto jsou součástí název rodiny. Arial úzké je třeba v dané rodině písem s následující členy:  
   
 -   Arial úzké Regular  
   
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří regulární styl písmo Arial o velikosti 16 pixelů. V následujícím kódu, první argument předaný <xref:System.Drawing.Font.%23ctor%2A> konstruktor je <xref:System.Drawing.FontFamily> objektu. Druhý argument určuje velikost písma. měřeno v jednotkách identifikovaný čtvrtý argument. Třetí argument identifikuje styl.  
   
- <xref:System.Drawing.GraphicsUnit.Pixel>je členem skupiny <xref:System.Drawing.GraphicsUnit> výčtu a <xref:System.Drawing.FontStyle.Regular> je členem skupiny <xref:System.Drawing.FontStyle> výčtu.  
+ <xref:System.Drawing.GraphicsUnit.Pixel> je členem skupiny <xref:System.Drawing.GraphicsUnit> výčtu a <xref:System.Drawing.FontStyle.Regular> je členem skupiny <xref:System.Drawing.FontStyle> výčtu.  
   
  [!code-csharp[System.Drawing.FontsAndText#61](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#61)]
  [!code-vb[System.Drawing.FontsAndText#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#61)]  

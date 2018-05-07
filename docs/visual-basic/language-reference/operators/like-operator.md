@@ -1,11 +1,6 @@
 ---
-title: "Like – operátor (Visual Basic)"
+title: Like – operátor (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - Like
 - vb.Like
@@ -27,14 +22,11 @@ helpviewer_keywords:
 - data [Visual Basic], string comparisons
 - string comparison [Visual Basic], Like operators
 ms.assetid: 966283ec-80e2-4294-baa8-c75baff804f9
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ad5729515362bfd52b0c3b401f218a49f569726e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a9c672a397510c69c9ee67358689feff80d8831a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="like-operator-visual-basic"></a>Like – operátor (Visual Basic)
 Porovnání řetězce se vzorem.  
@@ -64,13 +56,13 @@ result = string Like pattern
 ## <a name="pattern-options"></a>Vzor možnosti  
  Shoda vzoru předdefinované poskytuje univerzální nástroj pro porovnání řetězců. Funkce porovnávání umožňují odpovídat každý znak v `string` proti konkrétní znak, zástupný znak, seznamu znaků nebo rozsah znaků. V následující tabulce jsou uvedeny povolených znaků v `pattern` a budou odpovídat.  
   
-|Znaků.`pattern`|Odpovídá v`string`|  
+|Znaků. `pattern`|Odpovídá v `string`|  
 |-----------------------------|-------------------------|  
 |`?`|Libovolný znak|  
 |`*`|Žádný nebo více znaků|  
 |`#`|Všechny jednu číslici (0 – 9)|  
-|`[charlist]`|Libovolný znak v`charlist`|  
-|`[!charlist]`|Libovolný znak není v`charlist`|  
+|`[charlist]`|Libovolný znak v `charlist`|  
+|`[!charlist]`|Libovolný znak není v `charlist`|  
   
 ## <a name="character-lists"></a>Znak zobrazí  
  Skupinu jeden nebo více znaků (`charlist`) uzavřeny do hranatých závorek (`[ ]`) lze nahradit libovolný znak v `string` a může obsahovat téměř jakoukoli znak kód, včetně číslic.  
@@ -112,9 +104,9 @@ result = string Like pattern
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Strings.InStr%2A>  
  <xref:Microsoft.VisualBasic.Strings.StrComp%2A>  
- [Operátory porovnávání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
+ [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
  [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
- [Postupy: porovnání řetězce se vzorem](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md)
+ [Postupy: Porovnání řetězce se vzorem](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md)

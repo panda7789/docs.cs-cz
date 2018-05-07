@@ -1,28 +1,19 @@
 ---
-title: "Typ pro proměnnou & č. 39; &lt;NázevProměnné&gt;& č. 39; nebudete ji odvodit, protože je vázána na pole v vymezeném oboru"
+title: Typ pro proměnnou &#39; &lt;NázevProměnné&gt; &#39; nebude odvodit, protože je vázána na pole ve vymezeném oboru
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc42110
 - bc42110
 helpviewer_keywords:
 - BC42110
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 39968407f4de5436df324320c99dede4d72e2808
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cb423e8dcced6956eb86d484607915030c91412b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Typ pro proměnnou & č. 39; &lt;NázevProměnné&gt;& č. 39; nebudete ji odvodit, protože je vázána na pole v vymezeném oboru
+# <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Typ pro proměnnou &#39; &lt;NázevProměnné&gt; &#39; nebude odvodit, protože je vázána na pole ve vymezeném oboru
 Typ pro proměnnou '\<NázevProměnné >, nebude ho odvodit, protože je vázána na pole v vymezeném oboru. Změňte název '\<NázevProměnné >', nebo použijte plně kvalifikovaný název (například 'Me.variablename' nebo 'MyBase.variablename').  
   
  Řídicí proměnná smyčky v kódu má stejný název jako pole třídy nebo jiných vymezeném oboru. Protože řídicí proměnná se používá bez `As` klauzuli je vázána na pole ve vymezeném oboru a kompilátor pro něj vytvořit novou proměnnou nebo odvození jeho typu.  
@@ -90,9 +81,9 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Option Infer – příkaz](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
- [Pro každou... Next – příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
- [Pro... Next – příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md)  
- [Postupy: odkazování na aktuální instanci objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)  
+ [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Postupy: Odkazování na aktuální instanci objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)  
  [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [ME, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+ [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)

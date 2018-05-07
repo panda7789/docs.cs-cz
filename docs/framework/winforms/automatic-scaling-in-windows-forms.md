@@ -1,23 +1,15 @@
 ---
-title: "Automatická změna měřítka ve Windows Forms"
+title: Automatická změna měřítka ve Windows Forms
 ms.date: 06/15/2017
-ms.prod: .net-framework
-ms.technology: dotnet-winforms
-ms.topic: article
 helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 519053576aac0f55dfbfa4c87dbed6096f45abca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e27c56d9a6d745c7d1ff83986e7996aa1bebc879
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 Automatické škálování umožňuje formulář a jeho ovládacích prvků, navržená tak, na jeden počítač se určité zobrazení řešení nebo systém písmo, správně zobrazený na jiný počítač s jiným zobrazením řešení nebo systém písmo. Zaručuje, formulář a jeho ovládacích prvků bude inteligentně velikosti být v souladu s nativní windows a další aplikace na počítače uživatelů i ostatní vývojáři. Podporu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro automatické škálování a vizuální styly umožňuje [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace udržovat konzistentní vzhled a chování ve srovnání s nativní aplikace systému Windows na počítači každého uživatele.
@@ -92,7 +84,7 @@ Windows Forms teď používá následující logice automaticky škálovat formu
 
 3. Při načtení formuláře, pokud hodnoty <xref:System.Windows.Forms.ContainerControl.CurrentAutoScaleDimensions%2A> a <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A> se liší, pak se <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A> metoda je volána škálování ovládacího prvku a její podřízené položky. Tato metoda pozastaví rozložení a počet volání <xref:System.Windows.Forms.Control.Scale%2A> metodu za účelem skutečné škálování. Pak se hodnota <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A> je aktualizovány k vyloučení progresivní škálování.
 
-4. <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>je také automaticky vyvolá v následujících situacích:
+4. <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A> je také automaticky vyvolá v následujících situacích:
 
     - V reakci <xref:System.Windows.Forms.Control.OnFontChanged%2A> událost, pokud je režim škálování <xref:System.Windows.Forms.AutoScaleMode.Font>.
   

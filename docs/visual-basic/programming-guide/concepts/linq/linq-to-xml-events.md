@@ -1,25 +1,15 @@
 ---
-title: "Technologie LINQ to XML události (Visual Basic)"
-ms.custom: 
+title: Technologie LINQ to XML události (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b19d8f19f9feb1d385f9900d76d2a7af8e89bbeb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 216c2af87d2ae3a767548ccaa1efe118215cc6a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-events-visual-basic"></a>Technologie LINQ to XML události (Visual Basic)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]události umožňují být upozorněni, když je změnit strom XML.  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události umožňují být upozorněni, když je změnit strom XML.  
   
  Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>. Obslužné rutiny události bude potom přijímat události pro změny, <xref:System.Xml.Linq.XObject> a všechny jeho podřízené položky. Můžete například přidat obslužné rutiny události ke kořenu stromu a zpracovat všechny změny do stromu z této obslužné rutiny události.  
   

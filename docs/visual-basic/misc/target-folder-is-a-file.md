@@ -1,18 +1,12 @@
 ---
-title: "Cílové složce je soubor"
+title: Cílové složce je soubor
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: c5e40bcb-2414-4484-b2b9-a9c391ad0029
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fb3625c032ecb7ef440dc4b8bf0ad2a552b62943
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: eab3cdf02493c9700f8402d138fc040553a6201d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="target-folder-is-a-file"></a>Cílové složce je soubor
 Při pokusu o provedení akce související s složky jsou určení souboru.  

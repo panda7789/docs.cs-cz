@@ -1,23 +1,16 @@
 ---
 title: -keyfile
 ms.date: 03/10/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - /keyfile compiler option [Visual Basic]
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 319d01e8162dbc3806b0d9ba59e90410acb1acd5
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 12895e4a18203a0d6c409a3b2117abbc59fab7a2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-keyfile"></a>-keyfile
 Určuje soubor, který obsahuje klíč nebo pár klíčů umožnit sestavení silným názvem.  

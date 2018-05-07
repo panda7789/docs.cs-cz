@@ -1,13 +1,7 @@
 ---
-title: "Používání třídy StringBuilder v rozhraní .NET"
-ms.custom: 
+title: Používání třídy StringBuilder v rozhraní .NET
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,18 +16,13 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET Framework], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: cf8755ae6530c22bac88d8d8c5a6e92d86432994
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ce2c47b172afee8745cdf5f68323d64dd550ea59
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Používání třídy StringBuilder v rozhraní .NET
 <xref:System.String> Objekt se nedá změnit. Pokaždé, když použijete jednu z metod v <xref:System.String?displayProperty=nameWithType> třídu, můžete vytvořit nový objekt řetězec v paměti, který vyžaduje nové přidělení místa pro tento nový objekt. V situacích, kdy potřebujete provést opakované změny řetězec, režijní náklady spojené s vytvářením novou <xref:System.String> objektu může být drahé. <xref:System.Text.StringBuilder?displayProperty=nameWithType> Třídu lze použít, pokud chcete upravit řetězec bez vytvoření nového objektu. Například pomocí <xref:System.Text.StringBuilder> třída může zvýšit výkon při zřetězení mnoha řetězců společně ve smyčce.  

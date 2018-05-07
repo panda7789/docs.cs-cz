@@ -1,14 +1,6 @@
 ---
 title: Rozhraní související s datovou vazbou
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - data [Windows Forms], data-binding interfaces
 - INotifyPropertyChanged interface
@@ -20,17 +12,11 @@ helpviewer_keywords:
 - data binding [Windows Forms], interfaces
 - IDataErrorInfo interface [Windows Forms], Windows Forms data binding
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5278ccd34e556c33e4bc5c9f460573b399f265be
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 6c4470b33977408fa4429d187dafd76241d0d9d9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interfaces-related-to-data-binding"></a>Rozhraní související s datovou vazbou
 S [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], můžete vytvořit vazba potřebám vaší aplikace a data, že pracujete s mnoha různých datových struktur. Můžete vytvořit vaše vlastní třídy, které poskytovat nebo přijímat data ve Windows Forms. Tyto objekty nabízejí různé úrovně funkčnosti a složitost od základní datové vazby k poskytování podpory návrhu, kontrola chyb, upozornění na změnu nebo i podpora pro strukturovaných vrácení zpět změny provedené s vlastními daty.  

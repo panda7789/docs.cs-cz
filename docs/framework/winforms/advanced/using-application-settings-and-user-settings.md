@@ -1,27 +1,15 @@
 ---
-title: "Použití nastavení aplikace a uživatelských nastavení"
-ms.custom: 
+title: Použití nastavení aplikace a uživatelských nastavení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - user settings [Windows Forms]
 - application settings [Windows Forms], how-to topics
 ms.assetid: 54682d3b-1cbf-4683-9351-012b8b4286b5
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 310fcad07ce7cf541312ff83e41d7e5fc2643898
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f5231ecc9fb3898d60241ea8a53b509daced8a0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-application-settings-and-user-settings"></a>Použití nastavení aplikace a uživatelských nastavení
 Od verze rozhraní .NET Framework 2.0, můžete vytvořit a přístup k hodnoty, které jsou nastavené jako trvalé mezi relacemi spuštění aplikace. Tyto hodnoty se nazývají *nastavení*. Nastavení může představovat uživatelské předvolby nebo cenné informace aplikaci potřebuje používat. Například může vytvořit řadu nastavení, které ukládají uživatelské předvolby pro barevné schéma aplikace. Nebo může být uložena připojovací řetězec, který určuje databázi, která vaše aplikace používá. Nastavení povolit, že jste do obou uchovávat informace, které je velmi důležité do aplikace mimo kódu a vytváření profilů, které ukládají požadavků jednotlivých uživatelů.  

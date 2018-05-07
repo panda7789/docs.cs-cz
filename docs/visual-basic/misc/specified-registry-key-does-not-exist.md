@@ -1,18 +1,12 @@
 ---
-title: "Zadaný klíč registru neexistuje."
+title: Zadaný klíč registru neexistuje.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 837e925a-aac5-4745-8eaa-d08bebbcbcd3
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 391c507e10d56b6d5263b571cf159a461510203e
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 2f3b2c72d3753ab9f8e4634d86dfa749f8f22ebc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specified-registry-key-does-not-exist"></a>Zadaný klíč registru neexistuje.
 Klíč registru, který byl zadán neexistuje.  

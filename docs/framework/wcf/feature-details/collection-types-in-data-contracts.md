@@ -1,14 +1,6 @@
 ---
 title: Typy kolekcí v kontraktech dat
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c771d78c5e78feabcfe883934ed7ea3589c938d2
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: dccc53f13889e2073579af19e86459fe56b069e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], jsou seznamy může být reprezentován pomocí pole nebo celou řadu dalších typů (obecný seznam, obecného <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro danou zákazníka. Tato kolekce se nazývají *seznam kolekcí*, bez ohledu na to jejich skutečným typem.  
@@ -86,7 +72,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
  Během serializace Pokud je deklarovaný typ rozhraní, lze skutečné instance typu použitého žádný typ, který implementuje rozhraní. Omezení jak jsme vysvětlili výše (s výchozí konstruktor a `Add` metoda) se nevztahují. Například můžete nastavit adresy v Customer2 na instanci Obecné <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> adresy, i když nelze deklarovat přímo data členem zadejte obecného <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>.  
   
- Během deserializace, pokud deklarovaný typ je rozhraní, pro Serializační stroj vybere typ, který implementuje rozhraní deklarované a vytvoření instance typu. Známé typy mechanismus (popsané v [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)) nemá žádný vliv zde; je součástí volba typu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Během deserializace, pokud deklarovaný typ je rozhraní, pro Serializační stroj vybere typ, který implementuje rozhraní deklarované a vytvoření instance typu. Známé typy mechanismus (popsané v [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)) nemá žádný vliv zde; volba typu je integrovaná do WCF.  
   
 ## <a name="customizing-collection-types"></a>Přizpůsobení typy kolekcí  
  Typy kolekcí lze přizpůsobit pomocí <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut, který se dá použít několika způsoby.  
@@ -235,7 +221,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
 ## <a name="collections-and-schema"></a>Kolekce a schématu  
  Všechny kolekce ekvivalentní mají stejnou reprezentaci ve schématu XML definition language (XSD) schématu. Z toho důvodu se obvykle nezobrazí stejného typu kolekce v kód klienta vygenerovaný jako ten, na serveru. Například může server použít kontraktu dat s obecný <xref:System.Collections.Generic.List%601> datového členu celé číslo, ale kód klienta vygenerovaný stejného člena dat se může stát pole celých čísel.  
   
- Kolekce slovníku jsou označené [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-poznámky určité schéma, které označují, že jsou slovník; jinak, jsou lišit od jednoduchých seznamů, které obsahují položky se klíč a hodnotu. Přesný popis zastoupení kolekce ve schématu kontraktu dat, najdete v části [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+ Kolekce slovníku jsou označené schématu poznámky pro konkrétní WCF, které označují, že jsou slovník; jinak jsou lišit od jednoduchých seznamů, které obsahují položky se klíč a hodnotu. Přesný popis zastoupení kolekce ve schématu kontraktu dat, najdete v části [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
  Ve výchozím nastavení nejsou typy generované neupravené kolekcí v importovaných kódu. Datové členy kolekce typů seznamu se importují jako pole a datové členy typy kolekcí slovník importují jako obecný slovníku.  
   

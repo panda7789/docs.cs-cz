@@ -1,10 +1,6 @@
 ---
 title: Partial (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Partial
 - partial
@@ -18,14 +14,11 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-caps.latest.revision: "36"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5129ef7737b1b07317d47f8d18e9aceb668bf05a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c94c3bf1a1e3e4c724f90690f52e97e8216cb9a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
 Označuje, že je typ deklarace částečnou definici typu.  
@@ -65,7 +58,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
 |`interfacenames`|Vyžaduje, pokud použijete `Implements`. Názvy rozhraní, které implementuje tohoto typu.|  
 |`variabledeclarations`|Volitelné. Příkazy, které deklarace další proměnné a událostí pro typ.|  
 |`proceduredeclarations`|Volitelné. Příkazy, které deklarace a definice dalších kroků pro typ.|  
-|`End Class`nebo`End Structure`|Ukončí toto částečné `Class` nebo `Structure` definice.|  
+|`End Class` Nebo `End Structure`|Ukončí toto částečné `Class` nebo `Structure` definice.|  
   
 ## <a name="remarks"></a>Poznámky  
  Visual Basic používá definice částečné třídy pro oddělení generovaného kódu z kódu uživatelem definovaných v samostatných zdrojové soubory. Například **Windows Form Designer** definuje částečné třídy pro ovládací prvky, jako <xref:System.Windows.Forms.Form>. Neměli upravovat generovaného kódu v těchto ovládacích prvků.  
@@ -88,9 +81,9 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
   
  `Partial` – Klíčové slovo lze použít v těchto kontexty:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
 ## <a name="example"></a>Příklad  
  Následující příklad rozdělí definice třídy `sampleClass` do dvou deklarace, z nichž každý definuje jiné `Sub` postupu.  
@@ -100,9 +93,9 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
  Dva částečné definice v předchozím příkladu může být ve stejném souboru zdroje nebo ve dvou různých zdrojové soubory.  
   
 ## <a name="see-also"></a>Viz také  
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
  [Propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md)  
- [Stínů](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [Částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)

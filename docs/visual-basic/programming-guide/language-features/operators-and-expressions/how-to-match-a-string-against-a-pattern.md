@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Porovnání řetězce se vzorem (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Porovnání řetězce se vzorem (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - comparison operators [Visual Basic], comparing strings
 - pattern matching
@@ -19,19 +13,16 @@ helpviewer_keywords:
 - pattern matching, empty strings
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 83433bdb41df0ce40d0979f3f44603f10ba1c7d5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aef378bfc32d6deff431a2caac1261a6cd7520c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
 Pokud chcete zjistit, zda výraz, který [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md) splňuje vzor, pak můžete použít [jako operátor](../../../../visual-basic/language-reference/operators/like-operator.md).  
   
- `Like`má dva operandy. Levý operand je řetězcového výrazu a pravý operand řetězec obsahující vzor, který se má použít k porovnání. `Like`Vrátí `Boolean` hodnotu, která určuje, zda splňuje řetězcového výrazu vzoru.  
+ `Like` má dva operandy. Levý operand je řetězcového výrazu a pravý operand řetězec obsahující vzor, který se má použít k porovnání. `Like` Vrátí `Boolean` hodnotu, která určuje, zda splňuje řetězcového výrazu vzoru.  
   
  Je možné porovnávat každý znak v řetězcového výrazu proti konkrétní znak, zástupný znak, seznamu znaků nebo rozsah znaků. Pozice specifikace v řetězci vzor odpovídají pozice znaků, které mají být obsažena ve řetězcového výrazu.  
   
@@ -72,7 +63,7 @@ Pokud chcete zjistit, zda výraz, který [String – datový typ](../../../../vi
      Upozorňujeme, že toto porovnání se malá a velká písmena.  
   
 ## <a name="matching-empty-strings"></a>Odpovídající prázdné řetězce  
- `Like`zpracovává sekvenci `[]` jako řetězec nulové délky (`""`). Můžete použít `[]` k ověření, zda je výraz celý řetězec prázdný, ale nemůžete ji použít k testování, pokud na konkrétní pozici v řetězcového výrazu je prázdný. Je-li prázdné pozice jednu z možností je potřeba provést testování pro můžete použít `Like` více než jednou.  
+ `Like` zpracovává sekvenci `[]` jako řetězec nulové délky (`""`). Můžete použít `[]` k ověření, zda je výraz celý řetězec prázdný, ale nemůžete ji použít k testování, pokud na konkrétní pozici v řetězcového výrazu je prázdný. Je-li prázdné pozice jednu z možností je potřeba provést testování pro můžete použít `Like` více než jednou.  
   
 #### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>Tak, aby odpovídaly znak ve výrazu řetězec seznam znaky ani žádný znak  
   
@@ -87,7 +78,7 @@ Pokud chcete zjistit, zda výraz, který [String – datový typ](../../../../vi
      [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_5.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Operátory porovnávání](../../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)  
  [Operátory a výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
- [Like – operátor](../../../../visual-basic/language-reference/operators/like-operator.md)  
- [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md)
+ [Operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md)  
+ [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)

@@ -1,13 +1,6 @@
 ---
-title: "Řazení událostí ve Windows Forms"
-ms.custom: 
+title: Řazení událostí ve Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - events [Windows Forms], order of
 - focus event order
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - validation events [Windows Forms], order of
 - application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 03d2661752e5c0acb36fe76a8fa72b0638b4ad54
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 10a6451827a16605ba738cf74b7f684b69adb5dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="order-of-events-in-windows-forms"></a>Řazení událostí ve Windows Forms
 Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zajímají hlavně o vývojáři nevadí, každá z těchto událostí zase zpracování. Když stav vyžaduje pečlivou zpracování události, například když jsou překreslování části formuláře, je nutné je třeba znát přesné pořadí, ve kterém jsou vyvolány události za běhu. Toto téma obsahuje některé podrobnosti v řádu události během několika fázích důležité v životního cyklu aplikací a ovládací prvky. Konkrétní podrobnosti o pořadí vstupních událostech myši najdete v tématu [události myši ve Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md). Přehled událostí ve Windows Forms najdete v tématu [Přehled událostí](../../../docs/framework/winforms/events-overview-windows-forms.md). Podrobnosti o způsob vytvoření obslužných rutin událostí najdete v tématu [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  

@@ -1,17 +1,12 @@
 ---
 title: 'Správa prostředků: Klíčové slovo use (F#)'
 description: "Další informace o F # – klíčové slovo 'použití' a 'pomocí, funkce, která můžete ovládat inicializace a verzi zdroje."
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 0e134bf5b302911324dd224316941fee693b787b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c75783080d1d87c6ee75aede500d3d0b3fdf8355
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resource-management-the-use-keyword"></a>Správa prostředků: Klíčové slovo use
 

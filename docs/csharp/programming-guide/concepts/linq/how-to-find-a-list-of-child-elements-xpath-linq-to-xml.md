@@ -1,26 +1,17 @@
 ---
-title: "Postupy: vyhledání seznam podřízené elementy (XPath-technologie LINQ to XML) (C#)"
-ms.custom: 
+title: 'Postupy: vyhledání seznam podřízené elementy (XPath-technologie LINQ to XML) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 7c589dd8-f680-4cdb-9d6a-78d57e2555e8
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ac1516dd9917e6d19e7563c43ec5bee8da3ee963
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 742b0843e3287bd8de6c7b1f5d3706d66e5d344f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-c"></a>Postupy: vyhledání seznam podřízené elementy (XPath-technologie LINQ to XML) (C#)
 Toto téma porovnává ose XPath podřízené elementy na [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> osy.  
   
- Výraz XPath je:`./*`  
+ Výraz XPath je: `./*`  
   
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá všechny podřízené prvky `Address` elementu.  

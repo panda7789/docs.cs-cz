@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Řízení rozsahu proměnné (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Řízení rozsahu proměnné (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], scope
 - declared elements [Visual Basic], scope
@@ -18,14 +12,11 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7284d344e3bf0fdd0f900f2a820d6c8db4a4bf74
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6e8d1178398711226b88fee7e6defd5162b91fcb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 Za normálních okolností je proměnná v *oboru*, nebo viditelné pro referenci v celé oblasti, ve kterém je deklarovat. V některých případech proměnnou na *úroveň přístupu* mohou mít vliv na svém oboru.  
@@ -100,4 +91,4 @@ Public strMsg As String
  [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
  [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
  [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
- [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md)
+ [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)

@@ -1,13 +1,7 @@
 ---
-title: "Metadata a komponenty popisující samy sebe"
-ms.custom: 
+title: Metadata a komponenty popisující samy sebe
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,18 +15,13 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ac08dcf305e8cc0c1a3be3b8300ed9981e7d84d4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3bc603d90ae4636ac50ab9cbabf7d176309498b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="metadata-and-self-describing-components"></a>Metadata a komponenty popisující samy sebe
 V minulosti součást softwaru (.exe nebo .dll), která byla zapsána v jednom jazyce nelze použít snadno softwarová součást, která byla zapsána v jiném jazyce. COM zadat krok k řešení tohoto problému. Rozhraní .NET Framework usnadňuje vzájemná spolupráce součásti i tím, že kompilátory pro vydávání další deklarativní informace do všech modulů a sestavení. Tyto informace, nazývané metadata, pomáhá součásti bezproblémově pracovat.  

@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - average operator [LINQ in Visual Basic]
 - aggregate operator [LINQ in Visual Basic]
@@ -21,14 +15,11 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: dbdc074bef64413b8b25709e48bba49f296ecb95
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 7c56fadfe722f8aaf236fb68e699c9d4d2889924
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)
 Language-Integrated Query (LINQ) usnadňuje přístup k informacím databáze a spouštět dotazy.  

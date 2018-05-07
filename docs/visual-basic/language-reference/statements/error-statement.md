@@ -1,12 +1,6 @@
 ---
-title: "Error – příkaz"
+title: Error – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.error
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], codes
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3cd3245fd3e9e62b1b6443e9787c97808a0d179d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3ecfe18392de15dc937d90565b49641415dd7e0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="error-statement"></a>Error – příkaz
 Simuluje došlo k chybě.  
@@ -74,6 +65,6 @@ Error 11   ' Simulate the "Division by zero" error.
  <xref:Microsoft.VisualBasic.ErrObject.Clear%2A>  
  <xref:Microsoft.VisualBasic.Information.Err%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.Raise%2A>  
- [On Error – příkaz](../../../visual-basic/language-reference/statements/on-error-statement.md)  
- [Resume – příkaz](../../../visual-basic/language-reference/statements/resume-statement.md)  
+ [Příkaz On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)  
+ [Příkaz Resume](../../../visual-basic/language-reference/statements/resume-statement.md)  
  [Chybové zprávy](../../../visual-basic/language-reference/error-messages/index.md)

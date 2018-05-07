@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - access levels [Visual Basic], properties
 - procedures [Visual Basic], defining
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - properties [Visual Basic], access levels
 - Property statement [Visual Basic], declaring mixed access levels
 ms.assetid: fdbb2d97-279a-4956-b26c-cbdfbc34915a
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 90fe20303f6f2ed692e54e44ee8cc65897531543
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8d25086fe6f8b5f5300006466ef49782cb065edf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a>Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)
 Pokud chcete `Get` a `Set` postupů na vlastnost, která má mít různé úrovně přístupu, můžete použít na úrovni mírnější `Property` prohlášení a více omezující úroveň buď `Get` nebo `Set` příkaz. Pokud chcete, aby určité části kódu, abyste mohli získat hodnotu vlastnosti a některé další části kódu, abyste mohli změnit hodnotu použijete u vlastnosti smíšenými úrovněmi přístupu.  
@@ -43,13 +34,13 @@ Pokud chcete `Get` a `Set` postupů na vlastnost, která má mít různé úrovn
      V předchozím příkladu `Get` procedura nemá stejný `Protected` přístup jako vlastnost samostatně, při `Set` procedura nemá `Private` přístup. Třída odvozená z `employee` můžete přečíst `salary` hodnotu, ale jenom `employee` ho může nastavit třídy.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
- [Procedury vlastností](./property-procedures.md)  
+ [Procedury](./index.md)  
+ [Procedury vlastnosti](./property-procedures.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)  
  [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)  
- [Postupy: vytvoření vlastnosti](./how-to-create-a-property.md)  
- [Postupy: volání procedury vlastnosti](./how-to-call-a-property-procedure.md)  
+ [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)  
+ [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)  
  [Postupy: deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)  
- [Postupy: vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
- [Postupy: získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+ [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
+ [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

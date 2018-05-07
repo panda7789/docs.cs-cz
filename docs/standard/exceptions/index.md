@@ -1,13 +1,7 @@
 ---
 title: Zpracování a generování výjimek
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - exceptions [.NET Framework], handling
 - runtime, exceptions
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - exceptions [.NET Framework]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
-caps.latest.revision: 16
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 82e314dacc9fb2657a3a7088a928b59d00282a5d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b71ffd9bfcfcb048f148ac1a3a418c03b9834ea2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Zpracování a generování výjimek v rozhraní .NET
 
@@ -61,7 +50,7 @@ Následující tabulka uvádí některé běžné výjimky s příklady, co mů�
 | Typ výjimky | Základní typ | Popis | Příklad |
 | -------------- | --------- | ----------- | ------- |
 | <xref:System.Exception> | <xref:System.Object> | Základní třída pro všechny výjimky. | Žádný (použijte třídu odvozenou této výjimky). |
-| <xref:System.IndexOutOfRangeException> | <xref:System.Exception> | Vyvolána modulem runtime pouze v případě, že pole je indexovaný nesprávně. | Indexování pole mimo platný rozsah:`arr[arr.Length+1]` |
+| <xref:System.IndexOutOfRangeException> | <xref:System.Exception> | Vyvolána modulem runtime pouze v případě, že pole je indexovaný nesprávně. | Indexování pole mimo platný rozsah: `arr[arr.Length+1]` |
 | <xref:System.NullReferenceException> | <xref:System.Exception> | Vyvolána modulem runtime pouze v případě, že se odkazuje objekt s hodnotou null. | `object o = null; o.ToString();` |
 | <xref:System.InvalidOperationException> | <xref:System.Exception> | Vyvolána metodami, když je v neplatném stavu. | Volání metody `Enumerator.GetNext()` po odebrání položky ze zdrojové kolekce. |
 | <xref:System.ArgumentException> | <xref:System.Exception> | Základní třída pro všechny výjimky argumentu. | Žádný (použijte třídu odvozenou této výjimky). |

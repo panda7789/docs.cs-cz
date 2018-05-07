@@ -1,13 +1,6 @@
 ---
 title: Architektura vstupu interoperability Windows Forms a WPF
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - input architecture [WPF interoperability]
 - messages [WPF]
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - WindowsFormsHost keyboard and messages [WPF]
 - modeless dialog boxes [WPF]
 ms.assetid: 0eb6f137-f088-4c5e-9e37-f96afd28f235
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a246a3297d212eabc31bf2ac9d000aeb56329d09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 250f34e3e5420a613bc7b1035c62af90665e71ee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-forms-and-wpf-interoperability-input-architecture"></a>Architektura vstupu interoperability Windows Forms a WPF
 Součinnosti mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vyžaduje, aby obě technologie bylo zpracování vstupních příslušné klávesnice. Toto téma popisuje, jak implementovat tyto technologie klávesnici a k povolení technologie smooth vzájemná spolupráce v hybridní aplikace zpracování zpráv.  
@@ -105,7 +93,7 @@ Součinnosti mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptl
   
 -   Příkaz klíčích a dialogové okno pole.  
   
--   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]zpracování akcelerátoru.  
+-   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] zpracování akcelerátoru.  
   
  Následující části popisují tyto části podrobněji.  
   
@@ -131,7 +119,7 @@ Součinnosti mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptl
   
 -   <xref:System.Windows.Forms.Control.IsInputChar%2A?displayProperty=nameWithType> Je metoda potlačena za účelem Ujistěte se, že všechny zprávy WM_CHAR předávány na hostované elementy.  
   
--   Pokud není stisknuta klávesa ALT, zpráva je WM_SYSCHAR. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]není předběžné zpracování této zprávy prostřednictvím <xref:System.Windows.Forms.Control.IsInputChar%2A> metoda. Proto <xref:System.Windows.Forms.Control.ProcessMnemonic%2A> je metoda potlačena k dotazu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.AccessKeyManager> pro registrované akcelerátoru. Pokud se akcelerátor registrovaných nenajde, <xref:System.Windows.Input.AccessKeyManager> procesy.  
+-   Pokud není stisknuta klávesa ALT, zpráva je WM_SYSCHAR. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] není předběžné zpracování této zprávy prostřednictvím <xref:System.Windows.Forms.Control.IsInputChar%2A> metoda. Proto <xref:System.Windows.Forms.Control.ProcessMnemonic%2A> je metoda potlačena k dotazu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.AccessKeyManager> pro registrované akcelerátoru. Pokud se akcelerátor registrovaných nenajde, <xref:System.Windows.Input.AccessKeyManager> procesy.  
   
 -   Pokud není stisknuta klávesa ALT, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.InputManager> třída zpracovává neošetřené vstup. Pokud vstup je akcelerátor, <xref:System.Windows.Input.AccessKeyManager> procesy. <xref:System.Windows.Input.InputManager.PostProcessInput> Událost je zpracovávána WM_CHAR zprávy, které nebyly zpracovány.  
   

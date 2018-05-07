@@ -1,27 +1,15 @@
 ---
-title: "Technologie LINQ to SQL N-vrstvá s webovými službami"
-ms.custom: 
+title: Technologie LINQ to SQL N-vrstvá s webovými službami
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9cb10eb8-957f-4beb-a271-5f682016fed2
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 79b9b1270f99720dec6b6369706f8a2f601d249e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 94b00c5b9a433aa53fecef10d865db76d5577c84
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Technologie LINQ to SQL N-vrstvá s webovými službami
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je určený pro použití na střední vrstvy v vrstva přístupu k datům volně vázány (DAL), třeba webové služby. Pokud prezentační vrstvou se webovou stránku ASP.NET, pak použijete <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru ke správě přenosů dat mezi uživatelské rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstvou není stránku ASP.NET, pak střední vrstvě a prezentační vrstvou musí používat ke správě serializace a deserializace dat některé další kroky.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je určený pro použití na střední vrstvy v vrstva přístupu k datům volně vázány (DAL), třeba webové služby. Pokud prezentační vrstvou se webovou stránku ASP.NET, pak použijete <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru ke správě přenosů dat mezi uživatelské rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstvou není stránku ASP.NET, pak střední vrstvě a prezentační vrstvou musí používat ke správě serializace a deserializace dat některé další kroky.  
   
 ## <a name="setting-up-linq-to-sql-on-the-middle-tier"></a>Nastavení technologie LINQ to SQL na střední vrstvy  
  Ve webové služby nebo vícevrstvé aplikace bude prostřední vrstva obsahuje kontextu dat a tříd entit. Tyto třídy můžete vytvořit ručně nebo pomocí buď SQLMetal.exe nebo [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] jak je popsáno na jiném místě v dokumentaci. V době návrhu máte možnost provést serializovatelné třídy entity. Další informace najdete v tématu [postup: Zkontrolujte serializovatelný entity](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Další možností je vytvořit samostatnou sadu tříd, které zapouzdření serializaci dat, a poté projektu do těchto Serializovatelné typy po vrácení dat ve vašem [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy.  
@@ -41,7 +29,7 @@ ms.lasthandoff: 01/19/2018
  Při vkládání dat, můžete vytvořit nový objekt a odešle střední vrstva prezentační vrstvy, nebo může mít střední vrstvy vytvořit objekt založené na hodnotách, které poskytuje. Obecně platí načítání a vkládání dat do vícevrstvé aplikace není lišit od procesu aplikace vrstvy 2. Další informace najdete v tématu [dotazování databáze](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md) a [provádění a odeslání změn dat](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md).  
   
 ## <a name="tracking-changes-for-updates-and-deletes"></a>Sledování změn pro aktualizace a odstranění  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje optimistickou metodu souběžného založená na časová razítka (nazývaná také RowVersions) a na původní hodnoty. Pokud tabulky databáze, které mají časová razítka, pak aktualizace a odstranění vyžadují málo další práci na střední vrstvě nebo prezentační vrstvy. Ale pokud je nutné použít původní hodnoty pro optimistickou metodu souběžného kontroly, pak prezentační vrstvou zodpovídá za sledování tyto hodnoty a jejich odesláním zpět v případě, že umožňuje aktualizace. Je to proto, že nejsou ve střední vrstvě sledovat změny, které byly provedeny entity v prezentační vrstvě. Ve skutečnosti původní načtení entity a případné aktualizace provedené na ni se obvykle provádí dvě zcela samostatné instance <xref:System.Data.Linq.DataContext>.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje optimistickou metodu souběžného založená na časová razítka (nazývaná také RowVersions) a na původní hodnoty. Pokud tabulky databáze, které mají časová razítka, pak aktualizace a odstranění vyžadují málo další práci na střední vrstvě nebo prezentační vrstvy. Ale pokud je nutné použít původní hodnoty pro optimistickou metodu souběžného kontroly, pak prezentační vrstvou zodpovídá za sledování tyto hodnoty a jejich odesláním zpět v případě, že umožňuje aktualizace. Je to proto, že nejsou ve střední vrstvě sledovat změny, které byly provedeny entity v prezentační vrstvě. Ve skutečnosti původní načtení entity a případné aktualizace provedené na ni se obvykle provádí dvě zcela samostatné instance <xref:System.Data.Linq.DataContext>.  
   
  Větší počet změn, které provede prezentační vrstvy, tím složitější bude sledovat tyto změny a balíček, který je zpět do střední vrstvy. Implementace mechanismus, který komunikuje změny je zcela až aplikace. Jediným požadavkem je, že [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] musí mít tyto původní hodnoty, které jsou požadovány pro optimistickou metodu souběžného kontroly.  
   

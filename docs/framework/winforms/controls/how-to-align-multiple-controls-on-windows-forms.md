@@ -1,29 +1,17 @@
 ---
-title: "Postupy: Zarovnání více ovládacích prvků ve Windows Forms"
-ms.custom: 
+title: 'Postupy: Zarovnání více ovládacích prvků ve Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - forms [Windows Forms], aligning controls
 - Windows Forms, aligning controls
 - controls [Windows Forms], positioning
 - controls [Windows Forms], aligning
 ms.assetid: b7175656-f532-49e9-b0b1-177d1b40af3e
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f106189297d4334f8752f3b96ff4bf63ea6d8b41
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 6520aef7d04694b6fcd7f50da84a2a9cea6e7b64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-align-multiple-controls-on-windows-forms"></a>Postupy: Zarovnání více ovládacích prvků ve Windows Forms
 Standardizace rozložení uživatelského rozhraní (UI) pro aplikace systému Windows, můžete umístit skupin ovládacích prvků pomocí jednoho příkazu.  

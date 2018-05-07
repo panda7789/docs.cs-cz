@@ -1,13 +1,6 @@
 ---
-title: "Postupy: příjem oznámení při hodiny, které & č. 39; s změny stavu"
-ms.custom: 
+title: 'Postupy: příjem oznámení, když hodiny, které&#39;s změny stavu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +8,13 @@ helpviewer_keywords:
 - clocks [WPF], notification of state changes
 - notifications [WPF], clocks' state changes
 ms.assetid: ecb10fc9-d0c2-45c3-b0a1-7b11baa733da
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 396e2c51894ad5ed11f8953bceb1bd36899cfc62
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d0eaca4d2a05d01e686efc15dfceebb6de4f4b64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-receive-notification-when-a-clock39s-state-changes"></a>Postupy: příjem oznámení při hodiny, které & č. 39; s změny stavu
+# <a name="how-to-receive-notification-when-a-clock39s-state-changes"></a>Postupy: příjem oznámení, když hodiny, které&#39;s změny stavu
 Hodiny <xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> dojde k události při jeho <xref:System.Windows.Media.Animation.Clock.CurrentState%2A> stává neplatným, například když hodiny spuštění nebo zastavení. Můžete zaregistrovat pro tuto událost s přímo pomocí <xref:System.Windows.Media.Animation.Clock>, nebo můžete zaregistrovat pomocí <xref:System.Windows.Media.Animation.Timeline>.  
   
  V následujícím příkladu <xref:System.Windows.Media.Animation.Storyboard> a dvě <xref:System.Windows.Media.Animation.DoubleAnimation> objekty se používají k animace šířku dvou tvaru. <xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated> Událostí se používá k naslouchání hodiny změny stavu.  

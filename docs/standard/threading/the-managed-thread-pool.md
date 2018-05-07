@@ -1,13 +1,7 @@
 ---
-title: "Spravovaný fond vláken"
-ms.custom: 
+title: Spravovaný fond vláken
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - threading [.NET Framework], thread pool
 - threading [.NET Framework], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e50fd66096d6bd58fb7db692449e7f8654b5ca76
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3894229ff5561e50d42a36f576a89ee7bf01c067
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-managed-thread-pool"></a>Spravovaný fond vláken
 <xref:System.Threading.ThreadPool> Třída poskytuje vaší aplikace pomocí fond pracovních vláken, které jsou spravovány nástrojem systému, což umožňuje soustředit se jenom na úlohy aplikace a nikoli vláken správy. Pokud máte krátké úlohy, které vyžadují zpracování na pozadí, spravovaný fond vláken je snadný způsob, jak využít výhod více vláken. Například počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] můžete vytvořit <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty, které asynchronní zpracovávat podprocesy z fondu podprocesů.  
@@ -93,7 +82,7 @@ ms.lasthandoff: 12/23/2017
 >  Můžete použít <xref:System.Threading.ThreadPool.SetMinThreads%2A> metoda zvýšit minimální počet nečinných vláken. Zbytečně zvýšení tyto hodnoty však může způsobit problémy s výkonem. Pokud ve stejnou dobu příliš mnoho úloh, spusťte všechny z nich může se zobrazí za pomalé. Ve většině případů budou líp fungovat fondu vláken se vlastní algoritmus pro přidělování vláken.  
   
 ## <a name="skipping-security-checks"></a>Přeskočení kontroly zabezpečení  
- Fond vláken také poskytuje <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType> metody. Tyto metody používáte jenom v případě, že jste si jisti, že zásobník volajícího je důležité pro všechny kontroly zabezpečení prováděné během provádění úlohy ve frontě. <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>a <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> obě zaznamenat volajícího zásobníku, která sloučí zásobník vlákno fondu vláken zahájení vlákno k provedení úlohy. Pokud kontrola zabezpečení se požaduje, musí být kontrolované celý zásobník. I když je kontrola poskytuje zabezpečení, je také nákladů na výkon.  
+ Fond vláken také poskytuje <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> a <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType> metody. Tyto metody používáte jenom v případě, že jste si jisti, že zásobník volajícího je důležité pro všechny kontroly zabezpečení prováděné během provádění úlohy ve frontě. <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> a <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> obě zaznamenat volajícího zásobníku, která sloučí zásobník vlákno fondu vláken zahájení vlákno k provedení úlohy. Pokud kontrola zabezpečení se požaduje, musí být kontrolované celý zásobník. I když je kontrola poskytuje zabezpečení, je také nákladů na výkon.  
   
 ## <a name="using-the-thread-pool"></a>Použití fondu vláken  
  Od verze [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], nejjednodušší způsob, jak používat fond vláken je použití [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md). Ve výchozím nastavení, jako jsou typy paralelní knihovny <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> podprocesy z fondu podprocesů použít ke spuštění úlohy. Můžete také použít fondu vláken voláním <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> ze spravovaného kódu (nebo `CorQueueUserWorkItem` z nespravovaného kódu) a předání <xref:System.Threading.WaitCallback> delegovat představující metodu, která provádí úkol. Další způsob použití fondu vláken je zařadit do fronty pracovních položek, které souvisí s operací počkejte pomocí <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> metoda a předávání <xref:System.Threading.WaitHandle> , když signál, nebo po vypršení časového limitu, volá metodu reprezentovanou <xref:System.Threading.WaitOrTimerCallback> delegovat. Podprocesy z fondu podprocesů slouží k vyvolání metody zpětného volání.  

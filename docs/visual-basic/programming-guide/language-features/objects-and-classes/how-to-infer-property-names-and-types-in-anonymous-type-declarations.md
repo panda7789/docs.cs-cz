@@ -1,25 +1,16 @@
 ---
-title: "Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - inferring property names [Visual Basic]
 - anonymous types [Visual Basic], inferring property names and types
 - inferring property types [Visual Basic]
 ms.assetid: 7c748b22-913f-4d9d-b747-6b7bf296a0bc
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 66b9f8c0346f74ff631969bda122de7913a551c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 80127c05d56162397cfa421122ddd9698750b376
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-infer-property-names-and-types-in-anonymous-type-declarations-visual-basic"></a>Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu (Visual Basic)
 Anonymní typy poskytují žádný mechanismus pro zadání přímo datové typy vlastností. Typy všech vlastností jsou odvodit. V následujícím příkladu, typy `Name` a `Price` jsou odvodit přímo z hodnoty, které se používají k inicializaci je.  
@@ -129,7 +120,7 @@ Anonymní typy poskytují žádný mechanismus pro zadání přímo datové typy
      [!code-vb[VbVbalrAnonymousTypes#16](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/how-to-infer-property-names-and-types-in-anonymous-type-declarations_10.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [Klíč](../../../../visual-basic/language-reference/modifiers/key.md)
+ [Key](../../../../visual-basic/language-reference/modifiers/key.md)

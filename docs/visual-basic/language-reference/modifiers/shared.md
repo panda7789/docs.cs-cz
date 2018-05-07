@@ -1,11 +1,6 @@
 ---
 title: Shared (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Shared
 helpviewer_keywords:
@@ -16,14 +11,11 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fce13c308a449e63eacc2bc4c94c274c7e25506a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b15dd08d69f372317b9140001e8072eeb66d44ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 Určuje, že jeden nebo více deklarované programovací elementy jsou spojeny s třídu nebo strukturu ve velkém a ne s konkrétní instanci třídu nebo strukturu.  
@@ -51,7 +43,7 @@ Určuje, že jeden nebo více deklarované programovací elementy jsou spojeny s
   
 ## <a name="behavior"></a>Chování  
   
--   **Úložiště.** Sdílené proměnné nebo událostí je uložené v paměti pouze po, bez ohledu na to, kolik nebo několik instancí vytvoření z jeho třídu nebo strukturu. Podobně sdílený postup nebo vlastnost obsahuje pouze jednu sadu lokální proměnné.  
+-   **úložiště.** Sdílené proměnné nebo událostí je uložené v paměti pouze po, bez ohledu na to, kolik nebo několik instancí vytvoření z jeho třídu nebo strukturu. Podobně sdílený postup nebo vlastnost obsahuje pouze jednu sadu lokální proměnné.  
   
 -   **Přístup k prostřednictvím proměnnou Instance.** Je možné získat přístup k prvku sdílené s kvalifikující s názvem proměnné, která obsahuje konkrétní instanci jeho třídu nebo strukturu. I když tento postup obvykle funguje podle očekávání, kompilátor vygeneruje upozornění a umožňuje přístup pomocí názvu třídu nebo strukturu místo proměnnou.  
   
@@ -87,22 +79,22 @@ Určuje, že jeden nebo více deklarované programovací elementy jsou spojeny s
   
  `Shared` Modifikátor lze použít v těchto kontexty:  
   
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Stínů](../../../visual-basic/language-reference/modifiers/shadows.md)  
- [Statické](../../../visual-basic/language-reference/modifiers/static.md)  
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Static](../../../visual-basic/language-reference/modifiers/static.md)  
  [Doba platnosti v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
- [Postupy](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

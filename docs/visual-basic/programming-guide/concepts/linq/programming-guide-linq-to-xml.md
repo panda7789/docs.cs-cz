@@ -1,22 +1,12 @@
 ---
-title: "Průvodce programováním (technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: Průvodce programováním (technologie LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f1f942bf-3404-4354-b4c5-4fe35e37a02b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a68c72dd30059063c86dc79be0dfd5a470b9d72c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 70c169cecc8ca4ede30216bc832a8518766cd1a5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-guide-linq-to-xml-visual-basic"></a>Průvodce programováním (technologie LINQ to XML) (Visual Basic)
 Tato část obsahuje informace o programování s koncepční a postupy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -24,9 +14,9 @@ Tato část obsahuje informace o programování s koncepční a postupy [!INCLUD
 ## <a name="who-should-read-this-documentation"></a>Komu je tato dokumentace určen  
  Tato dokumentace cílem vývojáře, kteří již pochopit jazyka Visual Basic a některé základní aspekty [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  
   
- Cílem této dokumentace je aby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] snadno použitelný pro všechny typy vývojářů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]usnadňuje programování XML. Nemusíte být vývojář odborné ji použít.  
+ Cílem této dokumentace je aby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] snadno použitelný pro všechny typy vývojářů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] usnadňuje programování XML. Nemusíte být vývojář odborné ji použít.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]založena na obecných tříd. Je proto velmi důležité, abyste rozuměli tomu použijte obecné typy a tříd. Další informace najdete v tématu [obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] založena na obecných tříd. Je proto velmi důležité, abyste rozuměli tomu použijte obecné typy a tříd. Další informace najdete v tématu [obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -41,8 +31,8 @@ Tato část obsahuje informace o programování s koncepční a postupy [!INCLUD
 |[Úprava XML stromů (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)|Modelu DOM (Document Object), jako například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] můžete upravit strom XML na místě.|  
 |[Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)|Poskytuje informace o poznámky, události, streamování a další pokročilé scénáře.|  
 |[Technologie LINQ to XML zabezpečení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-security.md)|Popisuje problémy se zabezpečením přidružené technologie LINQ to XML a obsahuje některé pokyny pro minimalizaci ohrožení zabezpečení.|  
-|[Dokumenty XML ukázkové (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|Obsahuje ukázkové XML dokumenty, které jsou používány mnoho příklady v této dokumentaci.|  
+|[Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|Obsahuje ukázkové XML dokumenty, které jsou používány mnoho příklady v této dokumentaci.|  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
+ [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
  [Technologie LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)

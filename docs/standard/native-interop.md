@@ -1,23 +1,16 @@
 ---
 title: Nativní interoperabilita
 description: Informace o rozhraní s nativní součásti v rozhraní .NET.
-keywords: Rozhraní .NET, .NET core
 author: blackdwarf
 ms.author: ronpet
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d9b0fa5ebe37e51c45a8a5d8a42ce9b9688cc7c1
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 7da86cfe483a2355c53206f4c491fbd07e4c3046
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="native-interoperability"></a>Nativní interoperabilita
 

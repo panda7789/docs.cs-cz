@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataAssemblyImport::FindAssembliesByName – metoda"
-ms.custom: 
+title: IMetaDataAssemblyImport::FindAssembliesByName – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataAssemblyImport.FindAssembliesByName
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4d6518fdcf1bef8eaea74818f69f46bb6df26e31
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6c7bf332d829a440fe216756f7a23ec1277e6c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName – metoda
 Získá pole sestavení se zadaným `szAssemblyName` parametr pomocí standardní pravidla zaměstnaní modul CLR (CLR) pro řešení odkazů.  
@@ -74,7 +62,7 @@ HRESULT FindAssembliesByName (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`FindAssembliesByName`úspěšně vrácena.|  
+|`S_OK`|`FindAssembliesByName` úspěšně vrácena.|  
 |`S_FALSE`|Neexistují žádné sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -82,9 +70,9 @@ HRESULT FindAssembliesByName (
   
  `FindAssembliesByName` Metoda vyžaduje CLR na inicializaci v procesu k vyvolání logice sestavení řešení. Proto musí volat [coinitializeee –](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) (předávání COINITEE_DEFAULT) před voláním `FindAssembliesByName`a pak postupujte podle pomocí volání [couninitializecor –](../../../../docs/framework/unmanaged-api/hosting/couninitializecor-function.md).  
   
- `FindAssembliesByName`Vrátí [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) ukazatele souboru, který obsahuje manifest sestavení pro název sestavení, který se předává v. Pokud název zadaného sestavení není plně určena (například pokud neobsahuje verze), může být vrácena více sestavení.  
+ `FindAssembliesByName` Vrátí [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) ukazatele souboru, který obsahuje manifest sestavení pro název sestavení, který se předává v. Pokud název zadaného sestavení není plně určena (například pokud neobsahuje verze), může být vrácena více sestavení.  
   
- `FindAssembliesByName`běžně používá kompilátoru, která se pokusí najít odkazované sestavení při kompilaci.  
+ `FindAssembliesByName` běžně používá kompilátoru, která se pokusí najít odkazované sestavení při kompilaci.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -93,7 +81,7 @@ HRESULT FindAssembliesByName (
   
  **Knihovna:** používat jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Jak běhové prostředí vyhledává sestavení](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  

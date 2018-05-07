@@ -1,26 +1,15 @@
 ---
-title: "Obory názvů a specifikace DTD v modelu DOM"
-ms.custom: 
+title: Obory názvů a specifikace DTD v modelu DOM
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1e9b55c4-76ad-4f54-8d96-7ce4b4cf1e05
-caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: cf085cf866ea6034679230115e588024fcd79a11
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 92d7a50d2db25f5e4d32734d550ce2d55a02e3c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="namespaces-and-dtds-in-the-dom"></a>Obory názvů a specifikace DTD v modelu DOM
 Podpora complicate obor názvů typu definice (specifikace DTD) dokumentu. Například následující kód XML obsahuje výchozí atributy, která obsahuje dvojtečky jejich názvy.  

@@ -1,29 +1,17 @@
 ---
-title: "Windows Forms – souřadnice"
-ms.custom: 
+title: Windows Forms – souřadnice
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms coordinates
 - screen coordinates
 - client coordinates
 - coordinates [Windows Forms], Windows Forms
 ms.assetid: cc06e61f-43b6-4408-a676-2542dcfcd96e
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8f4b42fd71dacb0071013067dc3c14add96c8aca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba6bf8c1a8ae5ab14a9b33ae431e34310046b2a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-forms-coordinates"></a>Windows Forms – souřadnice
 Souřadnicový systém pro formuláře Windows je založený na zařízení souřadnice a základní měrná jednotka služby při kreslení v systému Windows Forms je jednotka zařízení (obvykle pixelů). Bodů na obrazovce jsou popsané podle dvojic souřadnice x a y s souřadnice x zvýšení souřadnice y zvýšení shora dolů a doprava. Umístění počátek, relativně k obrazovce, budou lišit v závislosti na tom, jestli jsou zadání souřadnice obrazovky nebo klienta.  

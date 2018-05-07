@@ -1,25 +1,17 @@
 ---
 title: Static (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Static
 helpviewer_keywords:
 - static modifier
 - Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e08f46076281e766a5bc0b99cd61fee9cd41ece5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2cbd99a026a5ebf0e215ee5732d62ccf639d3836
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
 Určuje, že jeden nebo více deklarované lokální proměnné jsou nadále existovat a po ukončení procesu, ve které jsou deklarovány zachovat jejich nejnovější hodnoty.  
@@ -51,11 +43,11 @@ Určuje, že jeden nebo více deklarované lokální proměnné jsou nadále exi
   
  `Static` Modifikátor můžete v tomto kontextu použít:  
   
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Stínů](../../../visual-basic/language-reference/modifiers/shadows.md)  
- [Sdílené](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
  [Doba platnosti v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
  [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
  [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  

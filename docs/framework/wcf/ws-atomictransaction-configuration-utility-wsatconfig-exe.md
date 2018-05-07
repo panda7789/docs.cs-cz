@@ -1,24 +1,12 @@
 ---
-title: "Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)"
-ms.custom: 
+title: Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: adb44bfee98d01594c9babcf19e19fbf11ba3878
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ef2f34a6700d72c01977ea449041669a88c35e6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ws-atomictransaction-configuration-utility-wsatconfigexe"></a>Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 Nástroj WS-AtomicTransaction Configuration Utility slouží ke konfiguraci základní nastavení podpory protokolu WS-AtomicTransaction.  
@@ -46,16 +34,16 @@ wsatConfig [Options]
 |Možnosti|Popis|  
 |-------------|-----------------|  
 |-účty:\<účet >|Určuje textový soubor s oddělovači seznam účtů, které se můžou zapojit v WS-AtomicTransaction. Platnost tyto účty není zaškrtnuto.|  
-|-accountsCerts:\<jezdec > &#124; " Issuer\SubjectName">|Určuje textový soubor s oddělovači seznam certifikátů, které se můžou zapojit v WS-AtomicTransaction. Certifikáty jsou vypsány kryptografický otisk nebo pár Issuer\SubjectName. Použijte {prázdný} pro název subjektu, pokud je prázdná.|  
-|-endpointCert: < počítač &#124; \<jezdec > &#124; " Issuer\SubjectName">|Používá certifikát počítače nebo jiné místní koncový bod certifikát určený kryptografickým otiskem nebo Issuer\SubjectName pár. {PRÁZDNÝ} používá pro název subjektu, pokud je prázdná.|  
+|-accountsCerts:\<jezdec >&#124;"Issuer\SubjectName" >|Určuje textový soubor s oddělovači seznam certifikátů, které se můžou zapojit v WS-AtomicTransaction. Certifikáty jsou vypsány kryptografický otisk nebo pár Issuer\SubjectName. Použijte {prázdný} pro název subjektu, pokud je prázdná.|  
+|-endpointCert: < počítač&#124;\<jezdec >&#124;"Issuer\SubjectName" >|Používá certifikát počítače nebo jiné místní koncový bod certifikát určený kryptografickým otiskem nebo Issuer\SubjectName pár. {PRÁZDNÝ} používá pro název subjektu, pokud je prázdná.|  
 |-maxTimeout:\<sekundu >|Určuje maximální časový limit v sekundách. Platné hodnoty jsou 0 až 3600.|  
-|-sítě:\<povolit za &#124; zakázat >|Povolí nebo zakáže podporu WS-AtomicTransaction sítě.|  
+|-sítě:\<povolit&#124;zakázat >|Povolí nebo zakáže podporu WS-AtomicTransaction sítě.|  
 |-port:\<portNum >|Nastaví HTTPS port pro WS-AtomicTransaction.<br /><br /> Pokud před spuštěním tohoto nástroje je již povolena brána firewall, port se automaticky registruje v seznamu výjimek. Pokud je brána firewall neaktivní před spuštěním tohoto nástroje, žádné další je nakonfigurovaná týkající se brány firewall.<br /><br /> Pokud povolíte bránu firewall po dokončení konfigurace služby WS-AT, budete muset znovu spustit tento nástroj a zadejte číslo portu pomocí tohoto parametru. Pokud zakážete po dokončení konfigurace brány firewall, WS-AT i nadále fungovat bez další vstup.|  
 |-časový limit:\<sekundu >|Určuje výchozí časový limit v sekundách. Platné hodnoty jsou 1 až 3600.|  
-|-traceActivity:\<povolit za &#124; zakázat >|Povolí nebo zakáže trasování událostí aktivity.|  
-|-traceLevel:\<vypnout &#124; Chyba &#124; Kritické &#124; Upozornění &#124; informace o &#124; Podrobné &#124; Všechny >}|Určuje úroveň trasování.|  
-|-tracePII:\<povolit za &#124; zakázat >|Povolí nebo zakáže trasování identifikovatelné osobní údaje.|  
-|-traceProp:\<povolit za &#124; zakázat >|Povolí nebo zakáže trasování událostí šíření.|  
+|-traceActivity:\<povolit&#124;zakázat >|Povolí nebo zakáže trasování událostí aktivity.|  
+|-traceLevel:\<vypnout&#124;chyba&#124;kritické&#124;upozornění&#124;informace&#124; podrobné&#124;všechny >}|Určuje úroveň trasování.|  
+|-tracePII:\<povolit&#124;zakázat >|Povolí nebo zakáže trasování identifikovatelné osobní údaje.|  
+|-traceProp:\<povolit&#124;zakázat >|Povolí nebo zakáže trasování událostí šíření.|  
 |– restartování|Restartování služby MSDTC aktivovat změny okamžitě. Pokud není zadáno, změny se projeví po restartování služby MS DTC.|  
 |-Zobrazit|Zobrazí aktuální nastavení protokolu WS-AtomicTransaction.|  
 |-virtuální_server:\<virtuální_server >|Určuje název prostředku clusteru DTC.|  

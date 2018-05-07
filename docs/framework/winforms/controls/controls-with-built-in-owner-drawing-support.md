@@ -1,13 +1,6 @@
 ---
-title: "Ovládací prvky s vestavěnou podporou vykreslování vlastníkem"
-ms.custom: 
+title: Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - drawing [Windows Forms], owner
 - drawing [Windows Forms], custom
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: efd297dcc11005d6b6d47bb9ce3853a757046e8f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a5cbdc733a2f1cda3e708ceaae8604297f8da58a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
 Kreslení v systému Windows Forms, který je také označován jako vlastní kreslení, vlastníka je technika pro změnu vzhled určitých ovládacích prvků.  
@@ -53,7 +41,7 @@ Kreslení v systému Windows Forms, který je také označován jako vlastní kr
   
 -   <xref:System.Windows.Forms.ComboBox>  
   
--   <xref:System.Windows.Forms.MenuItem>(používané <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu>)  
+-   <xref:System.Windows.Forms.MenuItem> (používané <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu>)  
   
 -   <xref:System.Windows.Forms.TabControl>  
   
@@ -188,7 +176,7 @@ Kreslení v systému Windows Forms, který je také označován jako vlastní kr
 -   [Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)  
   
 ### <a name="toolstrip-control"></a>ToolStrip – ovládací prvek  
- <xref:System.Windows.Forms.ToolStrip>a odvozené ovládací prvky umožňují přizpůsobit kteréhokoli aspektu jejich vzhled.  
+ <xref:System.Windows.Forms.ToolStrip> a odvozené ovládací prvky umožňují přizpůsobit kteréhokoli aspektu jejich vzhled.  
   
  Poskytnout vlastní vykreslení pro <xref:System.Windows.Forms.ToolStrip> ovládací prvky, nastavení `Renderer` vlastnost <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.ToolStripManager>, <xref:System.Windows.Forms.ToolStripPanel>, nebo <xref:System.Windows.Forms.ToolStripContentPanel> k `ToolStripRenderer` objektu a zpracovat jeden nebo více mnoho kreslení událostí poskytované `ToolStripRenderer` třídy. Alternativně nastavte `Renderer` vlastnost, která má instance vlastní třídy odvozené od `ToolStripRenderer`, <xref:System.Windows.Forms.ToolStripProfessionalRenderer>, nebo <xref:System.Windows.Forms.ToolStripSystemRenderer> implementuje nebo přepsání konkrétní `On` *EventName* metody.  
   

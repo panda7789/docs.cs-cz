@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vykreslení intervalu podle snímků pomocí CompositionTarget"
-ms.custom: 
+title: 'Postupy: Vykreslení intervalu podle snímků pomocí CompositionTarget'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,21 +8,16 @@ helpviewer_keywords:
 - CompositionTarget objects [WPF], rendering per frame
 - rendering per frame using CompositionTarget objects [WPF]
 ms.assetid: 701246cd-66b7-4d69-ada9-17b3b433d95d
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eb7e917c59f11ed78f8d44fa4b674d8d572f3623
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7c080c6deca63eacdf0e1123f4ca8bbb495ed9ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a>Postupy: Vykreslení intervalu podle snímků pomocí CompositionTarget
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Animace modul poskytuje mnoho funkcí pro vytváření na základě snímků animace. Existují však scénáře aplikací, ve kterých potřebujete citlivější kontrolu nad vykreslování rámce za den. <xref:System.Windows.Media.CompositionTarget> Objekt poskytuje možnost vytvářet vlastní animace podle zpětného volání za rámce.  
   
- <xref:System.Windows.Media.CompositionTarget>je statická třída, která představuje zobrazení prostor, na kterém se přitahuje vaší aplikace. <xref:System.Windows.Media.CompositionTarget.Rendering> Událost se vyvolá pokaždé, když se nevykreslí scény aplikace. Obnovovací frekvence vykreslování je počet, kolikrát scény vykreslením za sekundu.  
+ <xref:System.Windows.Media.CompositionTarget> je statická třída, která představuje zobrazení prostor, na kterém se přitahuje vaší aplikace. <xref:System.Windows.Media.CompositionTarget.Rendering> Událost se vyvolá pokaždé, když se nevykreslí scény aplikace. Obnovovací frekvence vykreslování je počet, kolikrát scény vykreslením za sekundu.  
   
 > [!NOTE]
 >  Pro dokončení kódu ukázka pomocí <xref:System.Windows.Media.CompositionTarget>, najdete v části [pomocí ukázkových CompositionTarget](http://go.microsoft.com/fwlink/?LinkID=160045).  

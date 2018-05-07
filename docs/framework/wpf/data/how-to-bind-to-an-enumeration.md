@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Připojení k vyčíslení"
-ms.custom: 
+title: 'Postupy: Připojení k vyčíslení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - binding data [WPF], enumeration
 - data binding [WPF], enumeration
 - enumeration [WPF]
 ms.assetid: b9091eba-1119-424e-868b-d1a4168b3732
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72439cdc1c1017378a5b6b3f6b4bf41a9eee2537
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 921f15a32eeb5ccb20e879466fcfee3233bbd29e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-to-an-enumeration"></a>Postupy: Připojení k vyčíslení
 Tento příklad ukazuje, jak vytvořit vazbu na výčet vazbou metodě GetValues ve výčtu.  

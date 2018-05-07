@@ -1,18 +1,12 @@
 ---
 title: 'Výjimky: Funkce raise (F#)'
 description: "Zjistěte, jak F # 'vyvolat' funkce slouží k označení, že došlo k chybě nebo výjimečně vysoké počty podmínku."
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.assetid: b00da469-4789-4cdd-9f77-7a2e29f28637
-ms.openlocfilehash: 6bc62b13467b8cf4cfcb22f7d4a5f3464236f6d1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bad18bfbccd738a12e16a0e026ade22e96d4cfcb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exceptions-the-raise-function"></a>Výjimky: Funkce raise
 

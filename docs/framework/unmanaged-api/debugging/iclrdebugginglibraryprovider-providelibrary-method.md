@@ -1,14 +1,6 @@
 ---
-title: "ICLRDebuggingLibraryProvider::ProvideLibrary – metoda"
-ms.custom: 
+title: ICLRDebuggingLibraryProvider::ProvideLibrary – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRDebuggingLibraryProvider.ProvideLibrary Method
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 86f06245-9517-49be-8d8c-ca5deaf34c02
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cf6860a616312504e3d23177734cb532405bd714
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b0644258eb1622f388f55d0657c8922079fe4dc1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a>ICLRDebuggingLibraryProvider::ProvideLibrary – metoda
 Získá zprostředkovatele knihovny rozhraní zpětné volání, které umožňuje common language runtime (CLR) specifické pro verzi ladění lze knihoven najít a načíst na vyžádání.  
@@ -71,7 +59,7 @@ HRESULT ProvideLibrary(
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `ProvideLibrary`umožňuje zajistit moduly, které jsou potřebné pro ladění konkrétní soubory CLR například mscordbi.dll a souboru mscordacwks.dll ladicího programu. Obslužné rutiny modulu muset nadále platné dokud volání [iclrdebugging::canunloadnow –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) metoda označuje, že může být uvolněno na bod, který je odpovědností volajícího k bezplatným obslužné rutiny pro zpracování.  
+ `ProvideLibrary` umožňuje zajistit moduly, které jsou potřebné pro ladění konkrétní soubory CLR například mscordbi.dll a souboru mscordacwks.dll ladicího programu. Obslužné rutiny modulu muset nadále platné dokud volání [iclrdebugging::canunloadnow –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) metoda označuje, že může být uvolněno na bod, který je odpovědností volajícího k bezplatným obslužné rutiny pro zpracování.  
   
  Ladicí program může používat všechny dostupné prostředky sami nebo můžete pořídit ladění modulu.  
   
@@ -87,7 +75,7 @@ HRESULT ProvideLibrary(
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  

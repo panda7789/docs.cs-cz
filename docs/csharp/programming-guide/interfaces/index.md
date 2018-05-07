@@ -1,22 +1,15 @@
 ---
 title: Rozhraní (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-caps.latest.revision: 45
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f14d4bf48d117558a4019a8f016e194af27a9ebf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6ef872876e800674a58b440e0e4001b86b0f8244
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 Rozhraní obsahuje definice pro skupinu související funkce, [třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) můžete implementovat.  
@@ -66,21 +59,21 @@ Rozhraní obsahuje definice pro skupinu související funkce, [třída](../../..
  [Implementace explicitního rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)  
  Vysvětluje, jak vytvořit člena třídy, které jsou specifické pro rozhraní.  
   
- [Postupy: explicitní implementace členů rozhraní](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-interface-members.md)  
+ [Postupy: Explicitní implementace členů rozhraní](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-interface-members.md)  
  Poskytuje příklad explicitní implementace členů rozhraní.  
   
- [Postupy: explicitní implementace členů dvou rozhraní](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md)  
+ [Postupy: Explicitní implementace členů dvou rozhraní](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md)  
  Poskytuje příklad explicitní implementace členů rozhraní s použitím dědičnosti.  
   
-##  <a name="BKMK_RelatedSections"></a>Související oddíly  
+##  <a name="BKMK_RelatedSections"></a> Související oddíly  
   
 -   [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
   
--   [Indexery v rozhraní](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
+-   [Indexery v rozhraní](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
   
 -   [Postupy: implementace událostí rozhraní](../../../csharp/programming-guide/events/how-to-implement-interface-events.md)  
   
--   [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+-   [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
   
 -   [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
   
@@ -100,5 +93,5 @@ Rozhraní obsahuje definice pro skupinu související funkce, [třída](../../..
  [Rozhraní](http://msdn.microsoft.com/library/orm-9780596521066-01-13.aspx) v [Learning C# 3.0: Master the Fundamentals of C# 3.0](http://msdn.microsoft.com/library/orm-9780596521066-01.aspx)  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)

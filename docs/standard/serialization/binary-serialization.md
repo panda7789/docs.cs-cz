@@ -1,8 +1,6 @@
 ---
 title: Binární serializace
 ms.date: 01/02/2018
-ms.prod: .net
-ms.topic: article
 helpviewer_keywords:
 - binary serialization
 - serialization, about serialization
@@ -11,17 +9,13 @@ helpviewer_keywords:
 - binary serialization, .net core serialization
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
-caps.latest.revision: 5
 author: ViktorHofer
 ms.author: mairaw
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: af63ca4716a92c8fb3eb05d9addda466dbb04a4e
-ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
+ms.openlocfilehash: 63158dd2dda5388870d3d5878fe29cb004aec401
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="binary-serialization"></a>Binární serializace
 

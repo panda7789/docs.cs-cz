@@ -1,12 +1,6 @@
 ---
-title: "Obecné procedury v jazyce Visual Basic"
-ms.custom: 
+title: Obecné procedury v jazyce Visual Basic
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - generic methods [Visual Basic], type inference
 - generics [Visual Basic], type inference
@@ -18,14 +12,11 @@ helpviewer_keywords:
 - generics [Visual Basic], procedures
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e019ca32277f93f798e99e996a3670c8302ba9b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 686087e4520ea5e6e69e5906c628af3ad54749da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
 A *obecný postup*, také zavolat *obecná metoda*, je procedura definovaný s alespoň jeden typ parametru. To umožňuje přizpůsobit typy dat, které mají požadavky na jeho pokaždé, když se volá proceduru volajícího kódu.  
@@ -76,9 +67,9 @@ A *obecný postup*, také zavolat *obecná metoda*, je procedura definovaný s a
   
 ## <a name="see-also"></a>Viz také  
  [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Postupy: definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)  
- [Postupy: použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Postupy](../../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)  
+ [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [Procedury](../../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  [Parametry a argumenty procedury](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)  
  [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)  
  [Seznam parametrů](../../../../visual-basic/language-reference/statements/parameter-list.md)

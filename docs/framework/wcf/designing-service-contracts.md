@@ -1,37 +1,23 @@
 ---
 title: Navrhování kontraktů služby
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-caps.latest.revision: 34
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 14973d3612eb5739e0dfcd7b50409904ab5d6844
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 6d1e9ba7f5546923b222f2d495aacdb2c1caaf96
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou použité a další problémy, které vám pomůžou návrh operace, které odpovídají požadavky na vaše scénáře.  
   
 ## <a name="creating-a-service-contract"></a>Vytvoření kontraktu služby  
- Služby vystavit počet operací. V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, definujte operace vytváření metodu a označením pomocí <xref:System.ServiceModel.OperationContractAttribute> atribut. Potom k vytvoření kontraktu služby, seskupit vaše operace, buď deklarativně v rámci rozhraní označené pomocí <xref:System.ServiceModel.ServiceContractAttribute> atribut, nebo pomocí je definování v třídě s atributem stejné. (Základní příklad najdete v tématu [postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md).)  
+ Služby vystavit počet operací. V aplikacích Windows Communication Foundation (WCF), definujte operace vytváření metodu a označením pomocí <xref:System.ServiceModel.OperationContractAttribute> atribut. Potom k vytvoření kontraktu služby, seskupit vaše operace, buď deklarativně v rámci rozhraní označené pomocí <xref:System.ServiceModel.ServiceContractAttribute> atribut, nebo pomocí je definování v třídě s atributem stejné. (Základní příklad najdete v tématu [postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md).)  
   
  Všechny metody, které nemají <xref:System.ServiceModel.OperationContractAttribute> atribut nejsou operací služby a nejsou vystavené [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
   
@@ -82,7 +68,7 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
 >  Hodnota názvy parametrů v podpis operace jsou součástí kontraktu a velká a malá písmena. Pokud chcete použít stejný název parametru místně, ale název upravit v publikovaných metadat, najdete v článku <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType>.  
   
 #### <a name="data-contracts"></a>Kontrakty dat  
- Aplikace orientované na služby, jako je [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace jsou navržené pro spolupráci s co největší počet klientských aplikací v Microsoft i jiných společností než Microsoft platformy. Široké interoperability možné, se doporučuje, aby označíte vaší typů s <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontraktu dat, což je část kontrakt služby, který popisuje data, vaše operací služby Exchange.  
+ Aplikace orientované na služby, jako je aplikace Windows Communication Foundation (WCF) jsou navrženy pro spolupráci s co největší počet klientských aplikací v Microsoft i jiných společností než Microsoft platformy. Široké interoperability možné, se doporučuje, aby označíte vaší typů s <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontraktu dat, což je část kontrakt služby, který popisuje data, vaše operací služby Exchange.  
   
  Kontrakty dat jsou výslovný souhlas styl kontrakty: žádný typ nebo data člen je serializováno, pokud použijete explicitně atribut kontraktu dat. Kontrakty dat se nevztahují k oboru přístupu spravovaného kódu: private členy můžete serializovat a odeslat jinde veřejně přístupná. (Například základní kontrakt dat najdete v části [postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md).) [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zpracovává definici základní protokolu SOAP zprávy, které operace funkci povolit, jakož i serializace datové typy do a z textu zprávy. Tak dlouho, dokud datové typy musejí být serializovatelná, není potřeba myslet podpůrné infrastruktuře exchange zpráva při navrhování vaše operace.  
   

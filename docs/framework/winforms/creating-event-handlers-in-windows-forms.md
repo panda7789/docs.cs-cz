@@ -1,13 +1,6 @@
 ---
-title: "Vytváření obslužných rutin událostí ve Windows Forms"
-ms.custom: 
+title: Vytváření obslužných rutin událostí ve Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - event handling [Windows Forms]
 - Windows Forms controls, event handling
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - events [Windows Forms], event handlers
 - event handlers [Windows Forms]
 ms.assetid: 6514e530-c6b8-489c-a8d2-eda7b7072701
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a2fc73ee5e9f9e0a2f8351f8d38311801ebfb34
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 96697fa54b569b6d1ce092ebfc76ef593f2ac66f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-event-handlers-in-windows-forms"></a>Vytváření obslužných rutin událostí ve Windows Forms
 Obslužné rutiny události je procedura ve vašem kódu, který určuje, jaké akce provede, když dojde k události, například když uživatel klikne na tlačítko nebo fronta zpráv přijme nějakou zprávu. Pokud se vyvolá událost, jsou spustit obslužnou rutinu události nebo obslužné rutiny, které přijímají události. Události lze přiřadit k více obslužných rutin a metody, které zpracovávají konkrétní události lze změnit dynamicky. Návrhář formulářů Windows můžete také použít k vytvoření obslužné rutiny událostí.  

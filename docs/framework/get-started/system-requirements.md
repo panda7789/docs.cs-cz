@@ -2,11 +2,7 @@
 title: Požadavky na systém rozhraní .NET framework
 description: Zjistěte, co jsou hardware, operační systém a softwarové požadavky pro instalaci rozhraní .NET Framework 4.5 a novější verze.
 ms.custom: updateeachrelease
-ms.date: 02/02/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - software requirements
 - .NET Framework, system requirements
@@ -16,14 +12,11 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e0b6faf42f0fa47f6104454440033a6272efb224
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 22e1ee593fd9599fb1fc1ab7825c79f410f109c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -31,7 +24,7 @@ V tabulkách v tomto tématu najdete hardwaru, operačního systému a požadavk
 
 * Rozhraní .NET framework 4.5 a jeho bod uvolní (4.5.1 a 4.5.2).
 * Rozhraní .NET framework 4.6 a jeho bod uvolní (4.6.1 a 4.6.2).
-* 4.7 rozhraní .NET framework a její verze bodu (4.7.1).
+* 4.7 rozhraní .NET framework a jeho bod uvolní (4.7.1 a 4.7.2).
 
 Vývojové prostředí, které vám umožní vyvíjet aplikace pro rozhraní .NET Framework mít samostatnou sadu požadavků.
 
@@ -59,14 +52,15 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 | Operační systém | Podporované edice | Předinstalována s operačním systémem | Instalovat samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows 10 Fall Creators Update | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7.1 | |
-| Windows 10 Creators Update | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7 | Rozhraní .NET framework 4.7.1 | 
-| Windows 10 Anniversary Update | 32bitová verze a 64bitová verze | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1 |
-| Windows 10 November Update | 32bitová verze a 64bitová verze | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
+| Aktualizace Windows 10. dubna 2018 | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7.2 |--|
+| Aktualizovat Creators patří Windows 10 | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7.1 | Rozhraní .NET framework 4.7.2 |
+| Aktualizace Windows 10 tvůrcům | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7 | Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 | 
+| Windows 10 Anniversary Update | 32bitová verze a 64bitová verze | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
+| Aktualizace Windows 10 listopadu | 32bitová verze a 64bitová verze | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
 | Windows 10 | 32bitová verze a 64bitová verze | .NET Framework 4.6 | .NET Framework 4.6.1 <br/><br/> .NET Framework 4.6.2 |
-| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32bitové, 64bitové a ARM | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1 |
+| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32bitové, 64bitové a ARM | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
 | [!INCLUDE[win8](../../../includes/win8-md.md)] | 32bitové, 64bitové a ARM | [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
-| Windows 7 SP1|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1|
+| Windows 7 SP1|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
 | Windows Vista SP2|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
 | Windows XP |32bitová verze a 64bitová verze | -- | .NET Framework 4 |
 
@@ -86,11 +80,11 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 | Operační systém | Podporované edice | Předinstalována s operačním systémem | Instalovat samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows Server, version 1709 | 64bitových | Rozhraní .NET framework 4.7.1 | -- |
-| Windows Server 2016 | 64bitových | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | Rozhraní .NET framework 4.7<br/><br/> Rozhraní .NET framework 4.7.1 |
-| Windows Server 2012 R2 | 64bitových | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/> Rozhraní .NET framework 4.7.1 |
-| Windows Server 2012 (64bitová verze) | 64bitových| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1 |
-| Windows Server 2008 R2 SP1|64bitových | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1 |
+| Windows Server, verze. 1709 | 64bitových | Rozhraní .NET framework 4.7.1 | Rozhraní .NET framework 4.7.2 | 
+| Windows Server 2016 | 64bitových | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | Rozhraní .NET framework 4.7<br/><br/> Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
+| Windows Server 2012 R2 | 64bitových | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/> Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
+| Windows Server 2012 (64bitová verze) | 64bitových| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
+| Windows Server 2008 R2 SP1|64bitových | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 |
 | Windows Server 2008 SP2|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
 
  **Poznámky:**

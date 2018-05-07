@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerThreadEnum::Skip – metoda"
-ms.custom: 
+title: ICorProfilerThreadEnum::Skip – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerThreadEnum.Skip
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: acb8b029-4a96-4ed7-ae3c-310204e5ceea
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c1840722a250dd627a5214700dca95c48aa2e8d2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: af6aab2483f0e92dc20936fe2b01e12590d99ca7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerthreadenumskip-method"></a>ICorProfilerThreadEnum::Skip – metoda
 Posune kurzor enumerátor z aktuálního umístění tak, aby přeskočil zadaný počet elementů.  
@@ -54,7 +42,7 @@ HRESULT Skip (    [in] ULONG celt
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`celt`elementy byly vynechány.|  
+|S_OK|`celt` elementy byly vynechány.|  
 |S_FALSE|Méně než `celt` elementy byly přeskočeny, což naznačuje, že neexistují žádné další prvky.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -67,7 +55,7 @@ HRESULT Skip (    [in] ULONG celt
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorProfilerThreadEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  

@@ -1,21 +1,12 @@
 ---
-title: "Postupy: vyhledání související prvky (XPath-technologie LINQ to XML) (C#)"
-ms.custom: 
+title: 'Postupy: vyhledání související prvky (XPath-technologie LINQ to XML) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3b128c8aa801c445e5e8cd2b4aab4e55f22b086c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e5367c1b47f24dd269f5055f692c657ecd748b63
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Postupy: vyhledání související prvky (XPath-technologie LINQ to XML) (C#)
 Toto téma ukazuje, jak získat výběr na atribut, který odkazuje hodnota elementu jiného elementu.  

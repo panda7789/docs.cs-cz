@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataAssemblyImport::EnumFiles – metoda"
-ms.custom: 
+title: IMetaDataAssemblyImport::EnumFiles – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataAssemblyImport.EnumFiles
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: f0d721e2-b946-426d-8e20-9124bd04e4cb
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5ce0682f6f7719c902183778578d75dd19d56867
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a1995ed0b281978b45b01dbeda54b02094a30412
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles – metoda
 Vytvoří výčet souborů v aktuální manifest sestavení odkazuje.  
@@ -66,7 +54,7 @@ HRESULT EnumFiles (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFiles`úspěšně vrácena.|  
+|`S_OK`|`EnumFiles` úspěšně vrácena.|  
 |`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nastaven na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
@@ -76,7 +64,7 @@ HRESULT EnumFiles (
   
  **Knihovna:** používat jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

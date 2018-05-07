@@ -1,34 +1,20 @@
 ---
 title: Mechanismy řízení přístupu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WCF security
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 89606d1e02b58f5f627d28b7354def848cd5a350
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 57ead53dd9e6bc1b2e3624791c7cc0c7d437cd7d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu
-Můžete řídit přístup několik způsobem s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Toto téma stručně popisuje různé mechanismy a poskytuje návrhy na při použití každé; je určena k vám pomohou vybrat správný mechanismus používat. Technologie pro přístup k jsou uvedeny v pořadí podle složitost. Nejjednodušší je <xref:System.Security.Permissions.PrincipalPermissionAttribute>; nejvíce komplexní je modelem Identity.  
+Můžete řídit přístup způsobem několik Windows Communication Foundation (WCF). Toto téma stručně popisuje různé mechanismy a poskytuje návrhy na při použití každé; je určena k vám pomohou vybrat správný mechanismus používat. Technologie pro přístup k jsou uvedeny v pořadí podle složitost. Nejjednodušší je <xref:System.Security.Permissions.PrincipalPermissionAttribute>; nejvíce komplexní je modelem Identity.  
   
- Kromě těchto mechanismů, zosobnění a delegování s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je vysvětleno v [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Kromě těchto mechanismů zosobnění a delegování s použitím technologie WCF je vysvětleno v [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="principalpermissionattribute"></a>PrincipalPermissionAttribute  
  <xref:System.Security.Permissions.PrincipalPermissionAttribute> Se používá k omezení přístupu k metodě služby. Pokud je atribut použitý na metodu, může sloužit požadovat konkrétní volající identity nebo členství ve skupině Windows nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role. Pokud klient je ověřování pomocí certifikátu X.509, je uveden primární identitou, která se skládá z název předmětu a kryptografický otisk certifikátu.  
@@ -41,16 +27,16 @@ Můžete řídit přístup několik způsobem s [!INCLUDE[indigo1](../../../../i
  Funkce [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je zprostředkovatel členství. I když se zprostředkovatel členství není technicky mechanismu řízení přístupu, umožňuje řízení přístupu ke službě omezením sadu možné identit, kteří mohou přistupovat k koncový bod služby. Funkce členství zahrnuje databázi, která je možné naplnit kombinace uživatelské jméno a heslo, které umožňují uživatelům webu vytvářet účty s lokalitou. Pro přístup k službě, která používá zprostředkovatel členství, musí uživatel přihlásit pomocí své uživatelské jméno a heslo.  
   
 > [!NOTE]
->  Musíte nejprve naplnit databázi pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkci před [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby můžete použít pro účely ověření.  
+>  Musíte nejprve naplnit databázi pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkcí služby WCF mohli používat pro účely ověření.  
   
  Můžete také použít funkci členství, pokud již máte členství databáze z existující [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu a chcete povolit stejným uživatelům používat služby oprávnění se stejným uživatelská jména a hesla.  
   
- Další informace o používání funkce členství v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] najdete v tématu [postupy: použití poskytovatele členství prostředí ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md).  
+ Další informace o používání funkce členství ve službě WCF najdete v tématu [postupy: použití poskytovatele členství prostředí ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md).  
   
 ## <a name="aspnet-role-provider"></a>Zprostředkovatele rolí ASP.NET  
- Další funkce [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je schopnost spravovat autorizace pomocí rolí. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Zprostředkovatele rolí umožňuje vývojáři k vytvoření role pro uživatele a přiřadit k roli nebo role. Jako u zprostředkovatele členství, role a přiřazení jsou uloženy v databázi a je možné importovat pomocí nástroje poskytované subsystémem pro konkrétní implementaci [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí. Stejně jako u funkce členství [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] mohou vývojáři informace v databázi autorizovat uživatele služeb role. Zprostředkovatele rolí se třeba můžou použít v kombinaci s `PrincipalPermissionAttribute` popsané výše mechanismu řízení přístupu.  
+ Další funkce [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je schopnost spravovat autorizace pomocí rolí. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Zprostředkovatele rolí umožňuje vývojáři k vytvoření role pro uživatele a přiřadit k roli nebo role. Jako u zprostředkovatele členství, role a přiřazení jsou uloženy v databázi a je možné importovat pomocí nástroje poskytované subsystémem pro konkrétní implementaci [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí. Jako funkce členství s WCF mohou vývojáři informace v databázi autorizovat uživatele služeb role. Zprostředkovatele rolí se třeba můžou použít v kombinaci s `PrincipalPermissionAttribute` popsané výše mechanismu řízení přístupu.  
   
- Můžete také použít [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí, pokud máte existující [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role zprostředkovatele databáze a chcete použít stejnou sadu pravidel a přiřazení uživatelských ve vaší [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Můžete také [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí, pokud máte existující [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role zprostředkovatele databáze a chcete použít stejnou sadu pravidel a přiřazení uživatelských ve službě WCF.  
   
  Další informace o používání funkcí zprostředkovatele rolí, najdete v části [postupy: použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).  
   
@@ -59,7 +45,7 @@ Můžete řídit přístup několik způsobem s [!INCLUDE[indigo1](../../../../i
   
  Můžete také AzMan a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí, pokud již máte přístup do existující instalace AzMan a autorizovat uživatelé služby pomocí funkce kombinace AzMan nebo roli zprostředkovatele.  
   
- Další informace o AzMan a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí, najdete v části [postupy: použití Správce autorizací (AzMan) s prostředím ASP.NET 2.0](http://go.microsoft.com/fwlink/?LinkId=88951). Další informace o používání AzMan a zprostředkovatele rolí pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, najdete v části [postupy: použití zprostředkovatele rolí Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
+ Další informace o AzMan a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí, najdete v části [postupy: použití Správce autorizací (AzMan) s prostředím ASP.NET 2.0](http://go.microsoft.com/fwlink/?LinkId=88951). Další informace o používání AzMan a poskytovatel rolí pro služby WCF najdete v tématu [postupy: použití zprostředkovatele rolí Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
   
 ## <a name="identity-model"></a>Modelu identity  
  Identity Model je sada rozhraní API, které vám umožní spravovat deklarace identity a zásady, autorizace klientů. S modelem Identity můžete zkontrolovat všechny deklarace obsažené v přihlašovací údaje, které volající používá k ověření samotné služby, porovnání deklarace identity na sadě zásad pro službu a udělit nebo odepřít přístup podle porovnání.  

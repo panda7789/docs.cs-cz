@@ -1,13 +1,6 @@
 ---
-title: "Dynamické načtení a použití typů"
-ms.custom: 
+title: Dynamické načtení a použití typů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,19 +12,16 @@ helpviewer_keywords:
 - implicit late binding
 - reflection, dynamically using types
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0b924f1c1b46eb132070b6d582cf065f38a8a600
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9795fa411d3b81f9092ddab183c6978ee701ef67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dynamically-loading-and-using-types"></a>Dynamické načtení a použití typů
-Reflexe poskytuje infrastrukturu, jako používá kompilátory jazyka [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] a JScript implementovat implicitní pozdní vazba. Vazba je proces vyhledávání deklarace (tedy implementace), která odpovídá jednoznačně zadaného typu. Pokud k tomuto procesu dochází za běhu, spíše než v době kompilace, nazývá pozdní vazba. [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]umožňuje používat implicitní pozdní vazba v kódu; Visual Basic – kompilátor volá metodu helper, která používá reflexe získat typ objektu. Argumenty předávané Pomocná metoda způsobit odpovídající metodu, která má být volána v době běhu. Tyto argumenty jsou instance (objekt), na kterém má být vyvolána metoda, název vyvolaná metoda (string) a argumenty předávané vyvolaná metoda (pole objektů).  
+Reflexe poskytuje infrastrukturu, jako používá kompilátory jazyka [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] a JScript implementovat implicitní pozdní vazba. Vazba je proces vyhledávání deklarace (tedy implementace), která odpovídá jednoznačně zadaného typu. Pokud k tomuto procesu dochází za běhu, spíše než v době kompilace, nazývá pozdní vazba. [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] umožňuje používat implicitní pozdní vazba v kódu; Visual Basic – kompilátor volá metodu helper, která používá reflexe získat typ objektu. Argumenty předávané Pomocná metoda způsobit odpovídající metodu, která má být volána v době běhu. Tyto argumenty jsou instance (objekt), na kterém má být vyvolána metoda, název vyvolaná metoda (string) a argumenty předávané vyvolaná metoda (pole objektů).  
   
  V následujícím příkladu nastavení kompilátoru jazyka Visual Basic používá reflexe implicitně k volání metody na objekt, jehož typ není známý v době kompilace. A **HelloWorld** třída má **PrintHello** metoda, která vytiskne "Hello, World" zřetězen s nějaký text, který je předán **PrintHello** metoda. **PrintHello** metodu s názvem v tomto příkladu je ve skutečnosti <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>; umožňuje kód jazyka Visual Basic **PrintHello** metoda má být volána, jako kdyby byly v kompilaci známý typ objektu (helloObj) čas (časná vazba) a nikoli na běh (pozdní vazba).  
   
@@ -84,7 +74,7 @@ End Module
   
  Pokud existuje více než jednoho člena v sadě k dispozici, se budou předávat všechny tyto metody **BindToMethod**, který vybere odpovídající metodu a vrátí ji. V případě 2 v příkladu kódu, existují dvě metody s názvem **PrintValue**. Ve volání je vybrán odpovídající metodu **BindToMethod**.  
   
- <xref:System.Reflection.Binder.ChangeType%2A>provede převod argument (převod typu), který převádí skutečné argumenty typu formální argumenty vybrané metody. **ChangeType –** je volána pro každý argument i v případě, že typy přesně shodují.  
+ <xref:System.Reflection.Binder.ChangeType%2A> provede převod argument (převod typu), který převádí skutečné argumenty typu formální argumenty vybrané metody. **ChangeType –** je volána pro každý argument i v případě, že typy přesně shodují.  
   
  V případě 3 z příkladu kódu, skutečný argument typu **řetězec** s hodnotou "5.5" předaný metodě s argumentem formální typu **dvojité**. Volání úspěšné musí být řetězcovou hodnotu "5.5" převést na dvojitou hodnotu. **ChangeType –** provádí tento převod.  
   
@@ -106,7 +96,7 @@ End Module
 |Single|Double|  
 |Typ nereferenční|Typ odkazu|  
   
- <xref:System.Type> Třída má **získat** metody, které používají parametry typu **vazač** odkazy na konkrétní člena. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType>, a <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> vyhledejte konkrétní člen má aktuální typ tím, že poskytuje informace o podpis pro tento člen. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType>a <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> se nazývají zpět k vyberte danou podpis informace odpovídající metody.  
+ <xref:System.Type> Třída má **získat** metody, které používají parametry typu **vazač** odkazy na konkrétní člena. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType>, a <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> vyhledejte konkrétní člen má aktuální typ tím, že poskytuje informace o podpis pro tento člen. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> a <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> se nazývají zpět k vyberte danou podpis informace odpovídající metody.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>  

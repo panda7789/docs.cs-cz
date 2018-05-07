@@ -1,21 +1,12 @@
 ---
-title: "Visual Studio – sada IDE a nástrojů podpory pro výrazy LINQ (C#)"
-ms.custom: 
+title: Visual Studio – sada IDE a nástrojů podpory pro výrazy LINQ (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: c1f6cfdf-c96f-417f-acc8-4a049772ead3
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 577338cc70bf9c335b162ca32bb3fc026addd49e
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 866b8938d127bf20314bb13d2951e0aa5f666094
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-c"></a>Visual Studio – sada IDE a nástrojů podpory pro výrazy LINQ (C#)
 Integrované vývojové prostředí (IDE) sady Visual Studio poskytuje následující funkce, které podporují vývoj aplikací LINQ:  

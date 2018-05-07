@@ -1,13 +1,6 @@
 ---
-title: "Definování vlastnosti v ovládacích prvcích Windows Forms"
-ms.custom: 
+title: Definování vlastnosti v ovládacích prvcích Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,23 +8,18 @@ helpviewer_keywords:
 - properties [Windows Forms], defining in code
 - custom controls [Windows Forms], defining properties in code
 ms.assetid: c2eb8277-a842-4d99-89a9-647b901a0434
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 47b56a4112dc39adb12bb8f7c6db7656352ae930
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dc47d7152419d55b3e52aec70257e2b39e9aaca0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="defining-a-property-in-windows-forms-controls"></a>Definování vlastnosti v ovládacích prvcích Windows Forms
 Přehled vlastností najdete v tématu [přehled vlastností](http://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). Existuje několik důležitých rozhodnutí při definování vlastnosti:  
   
 -   Je nutné použít atributy pro vlastnosti, které definujete. Atributy určují, jak by měla návrhář zobrazit vlastnosti. Podrobnosti najdete v tématu [atributy doby návrhu pro součásti](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3).  
   
--   Změna vlastnosti ovlivní visual zobrazení ovládacího prvku, kontaktujte <xref:System.Windows.Forms.Control.Invalidate%2A> – metoda (která vlastního ovládacího prvku dědí z <xref:System.Windows.Forms.Control>) z `set` přistupujícího objektu. <xref:System.Windows.Forms.Control.Invalidate%2A>volá <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, která ho překreslí ovládacího prvku. Více volá, aby se <xref:System.Windows.Forms.Control.Invalidate%2A> mít za následek jediné volání <xref:System.Windows.Forms.Control.OnPaint%2A> pro efektivitu.  
+-   Změna vlastnosti ovlivní visual zobrazení ovládacího prvku, kontaktujte <xref:System.Windows.Forms.Control.Invalidate%2A> – metoda (která vlastního ovládacího prvku dědí z <xref:System.Windows.Forms.Control>) z `set` přistupujícího objektu. <xref:System.Windows.Forms.Control.Invalidate%2A> volá <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, která ho překreslí ovládacího prvku. Více volá, aby se <xref:System.Windows.Forms.Control.Invalidate%2A> mít za následek jediné volání <xref:System.Windows.Forms.Control.OnPaint%2A> pro efektivitu.  
   
 -   Knihovna tříd rozhraní .NET Framework poskytuje převaděčů typů pro běžné typy dat jako celá čísla, desetinná čísla, logické hodnoty a dalších. Účelem převaděče typů je obecně zajistit převod řetězcovou hodnotu (z dat řetězců na jiné datové typy). Běžné typy dat jsou přidruženy k výchozí převaděče typů, které převodu hodnoty na řetězce a řetězců do příslušné datové typy. Pokud definujete vlastnosti, která je vlastní (to znamená, nestandardní) datového typu, budete muset použít atribut, který určuje typ převaděč přidružení k této vlastnosti. Atribut také můžete přiřadit k vlastnosti vlastní editor typů uživatelského rozhraní. Editor typů uživatelského rozhraní poskytuje uživatelské rozhraní pro úpravu typu vlastnost nebo data. Výběr barvy a je příkladem editor typů uživatelského rozhraní. Na konci tohoto tématu jsou uvedeny příklady atributů.  
   

@@ -1,13 +1,6 @@
 ---
 title: Sub – procedury (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Sub procedures [Visual Basic], about Sub procedures
 - statement blocks
@@ -18,14 +11,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], Sub
 - syntax [Visual Basic], Sub procedures
 ms.assetid: 6a0a4958-ed0a-4d3d-8d31-0772c82bda58
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7258d57d2677042a2020097893a4f7a0adb35508
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 3286df1a5babfcf7d6b759ff5c9a920bb44f51ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub – procedury (Visual Basic)
 A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `End Sub` příkazy. `Sub` Postup provede úlohu a vrátí ovládací prvek pro volací kód, ale nevrací hodnotu volání kódu.  
@@ -39,7 +29,7 @@ A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `En
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe deklarace `Sub` postup je následující:  
   
- `[` *Modifikátory* `] Sub` *subname* `[(` *parameterlist*  `)]`  
+ `[` *Modifikátory* `] Sub` *subname* `[(` *parameterlist* `)]`  
   
  `' Statements of the Sub procedure.`  
   
@@ -52,11 +42,11 @@ A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `En
   
  Syntaxe pro každý parametr v seznamu parametrů je následující:  
   
- `[Optional] [ByVal | ByRef] [ParamArray]`  *Název parametru*`As`*datový typ*   
+ `[Optional] [ByVal | ByRef] [ParamArray]`  *Název parametru*`As`*datový typ*  
   
  Pokud se jedná o volitelný parametr, musíte také zadat výchozí hodnotu v rámci jeho deklaraci. Syntaxe pro určení výchozí hodnota je následující:  
   
- `Optional [ByVal | ByRef]`  *Název parametru*`As`*datový typ*`=`*defaultvalue*   
+ `Optional [ByVal | ByRef]`  *Název parametru*`As`*datový typ*`=`*defaultvalue*  
   
 ### <a name="parameters-as-local-variables"></a>Parametry jako lokální proměnné  
  Pokud ovládací prvek předává do procesu, každý parametr je považovat za místní proměnné. To znamená, že jeho životnost je stejný jako postup, a její obor je celý postup.  

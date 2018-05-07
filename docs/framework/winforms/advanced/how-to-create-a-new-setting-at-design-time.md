@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Vytvoření nového nastavení při návrhu"
-ms.custom: 
+title: 'Postupy: Vytvoření nového nastavení při návrhu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application settings [Windows Forms], design time
 - application settings [Windows Forms], creating
 ms.assetid: c5d60a66-6507-462f-a81f-e3bc0a804e16
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 04b86579f45c5a357f8759bf36ae41f7a5c6e98b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 618355948578bd8f15e8cf7bec6f599e3169b77a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-new-setting-at-design-time"></a>Postupy: Vytvoření nového nastavení při návrhu
 Můžete vytvořit nové nastavení v době návrhu pomocí Návrháře nastavení. Návrhář nastavení je rozhraní stylu mřížky, které vám umožní vytvořit nové nastavení a zadejte vlastnosti pro toto nastavení. Musíte zadat název, hodnotu, typ a obor pro nové nastavení. Po vytvoření nastavení je dostupné v kódu.  

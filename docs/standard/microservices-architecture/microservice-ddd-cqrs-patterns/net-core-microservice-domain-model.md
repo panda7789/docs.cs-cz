@@ -1,21 +1,14 @@
 ---
-title: "Implementace modelu mikroslužbu domény s .NET Core"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace modelu mikroslužbu domény s .NET Core"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace modelu mikroslužbu domény s .NET Core
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace modelu mikroslužbu domény s .NET Core
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0b954efffe2ee7e3e2bdaa49bd1057d72d69088c
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: e0c931405b8b7e3b52bdcbd511737b449dc74273
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-a-microservice-domain-model-with-net-core"></a>Implementace modelu mikroslužbu domény s .NET Core 
 
@@ -178,7 +171,7 @@ Například v předchozím příkladu kódu OrderAggregate neexistují několik 
 -   **Vaughn Vernon. Modelování agregace s DDD a Entity Framework.** Všimněte si, že toto je *není* Entity Framework Core.
     [*https://vaughnvernon.co/?p=879*](https://vaughnvernon.co/?p=879)
 
--   **Julie Lerman. Kódování řízené domény návrh: tipy pro zaměřené na Data Devs**
+-   **Julie Lerman. Kódování řízené domény návrh: tipy pro Devs zaměřené na Data**
     [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
 
 -   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**

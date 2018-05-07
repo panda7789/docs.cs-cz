@@ -1,29 +1,17 @@
 ---
-title: "Události náhledu"
-ms.custom: 
+title: Události náhledu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Preview events [WPF]
 - suppressing events [WPF]
 - events [WPF], Preview
 - events [WPF], suppressing
 ms.assetid: b5032308-aa9c-4d02-af11-630ecec8df7e
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a258a0e145e9a24e6e87bb511fdbd6166422a656
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d6c1ab32cb43730af2f935f4bd4405059994c12
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="preview-events"></a>Události náhledu
 Události náhledu, také známé jako tunelování události, jsou směrované události, kde směr trasy, která přenáší z kořenového adresáře aplikace směrem k elementu, který vyvolá událost a hlásí jako zdroj v datech události. Ne všechny události scénáře podporovat nebo vyžadují události náhledu; Toto téma popisuje situace, kdy události náhledu existují, jak aplikace nebo součásti pracovat, a případy, kdy vytvoření události náhledu ve vlastních součástech nebo třídy může být vhodné.  

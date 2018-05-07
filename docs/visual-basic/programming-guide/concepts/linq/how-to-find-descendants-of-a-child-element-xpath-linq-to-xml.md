@@ -1,22 +1,12 @@
 ---
-title: "Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a958af40-f754-4409-85f9-7746978d4cb3
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2e315735dc3d8e224fa620ab7b314ca8da886419
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c29e8badd757b41d765e7d68f7ecd45c8dea8a14
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak získat následnickým elementům podřízeného prvku s konkrétním názvem.  

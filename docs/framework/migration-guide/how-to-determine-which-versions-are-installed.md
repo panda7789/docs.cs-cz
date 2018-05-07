@@ -1,10 +1,6 @@
 ---
 title: 'Postupy: zjištění nainstalovaných verzí rozhraní .NET Framework'
-ms.date: 01/24/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 dev_langs:
 - csharp
 - vb
@@ -15,14 +11,11 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: edf1e5a53f6f578f943cf8775a798b5681d2d9dd
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 3677ff7cc27847d56802206c793a574d61b1464c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -98,11 +91,12 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
     |378675|Rozhraní .NET framework 4.5.1 nainstalované s Windows 8.1 nebo Windows Server 2012 R2|
     |378758|Rozhraní .NET framework 4.5.1 nainstalovaný na Windows 8, Windows 7 SP1 nebo Windows Vista SP2|
     |379893|.NET Framework 4.5.2|
-    |V systémech Windows 10: 393295<br /><br /> Na všech ostatních verzí operačního systému: 393297|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
-    |V systémech Windows 10 listopadu Update: 394254<br /><br /> Na všech ostatních verzí operačního systému: 394271|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
-    |On Windows 10 Anniversary Update: 394802<br /><br /> Na všech ostatních verzí operačního systému: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
-    |On Windows 10 Creators Update: 460798<br/><br/> Na všech ostatních verzí operačního systému: 460805 | Rozhraní .NET framework 4.7 |
-    |V systému Windows 10 spadají Creators aktualizace: 461308<br/><br/> Na všech ostatních verzí operačního systému: 461310 | Rozhraní .NET framework 4.7.1 |
+    |Na pouze systémy Windows 10: 393295<br /><br /> Na všech ostatních verzí operačního systému: 393297|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
+    |V systémech Windows 10 listopadu Update pouze: 394254<br /><br /> Na všech ostatních verzí operačního systému: 394271|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
+    |Na Windows 10 Anniversary aktualizovat pouze: 394802<br /><br /> Na všech ostatních verzí operačního systému: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
+    |Na Windows 10 Creators aktualizovat pouze: 460798<br/><br/> Na všech ostatních verzí operačního systému: 460805 | Rozhraní .NET framework 4.7 |
+    |V systému Windows 10 patří Creators aktualizovat pouze: 461308<br/><br/> Na všech ostatních verzí operačního systému: 461310 | Rozhraní .NET framework 4.7.1 |
+    |Na Windows 10. dubna 2018 pouze aktualizace: 461808<br/><br/> Na všech ostatních verzí operačního systému: 461814| Rozhraní .NET framework 4.7.2 |
     
 <a name="net_c"></a> 
 ## <a name="to-find-net-framework-versions-by-querying-the-registry-in-code-net-framework-1-4"></a>Vyhledání verze rozhraní .NET Framework podle v registru v kódu (rozhraní .NET Framework 1 – 4)
@@ -153,7 +147,9 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
     |4.7 rozhraní .NET framework nainstalované na všech ostatních verzí operačního systému Windows|460805|
     |Rozhraní .NET framework 4.7.1 nainstalovaný na Windows 10 patří Creators aktualizace|461308|
     |Rozhraní .NET framework 4.7.1 nainstalované na všech ostatních verzí operačního systému Windows|461310|
-
+    |Rozhraní .NET framework 4.7.2 nainstalovaná v systému Windows 10. dubna 2018 aktualizace|461808|
+    |Rozhraní .NET framework 4.7.2 nainstalované na všech ostatních verzí operačního systému Windows|461814|
+    
      Následující příklad kontroly `Release` hodnotu v registru na určit, zda [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo je nainstalovaná novější verze rozhraní .NET Framework.
 
      [!code-csharp[ListVersions#5](../../../samples/snippets/csharp/framework/migration-guide/versions-installed3.cs)]
@@ -186,7 +182,8 @@ Uživatelé můžou instalovat a spuštění několika verzí rozhraní .NET Fra
     |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|394802|
     |Rozhraní .NET framework 4.7|460798|
     |Rozhraní .NET framework 4.7.1|461308|
-    
+    |Rozhraní .NET framework 4.7.2|461808|
+
 <a name="clr_a"></a> 
 ## <a name="to-find-the-current-runtime-version-by-using-the-clrver-tool"></a>Pomocí nástroje Clrver najít aktuální verzi modulu runtime
 

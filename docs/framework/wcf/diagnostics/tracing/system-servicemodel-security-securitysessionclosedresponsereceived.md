@@ -1,24 +1,14 @@
 ---
 title: System.ServiceModel.Security.SecuritySessionClosedResponseReceived
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: aab624cb-30c6-4ac4-9dea-5ea03b5a4917
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 496555662f0b1c24ebb84dc07b0664078fa66751
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 419d81cbb43a6f50ca26b4ae2fb0d8f3167fb52e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelsecuritysecuritysessionclosedresponsereceived"></a>System.ServiceModel.Security.SecuritySessionClosedResponseReceived
 System.ServiceModel.Security.SecuritySessionClosedResponseReceived  

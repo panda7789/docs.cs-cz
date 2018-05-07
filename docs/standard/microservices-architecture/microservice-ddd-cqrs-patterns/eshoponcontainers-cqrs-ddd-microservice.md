@@ -1,21 +1,14 @@
 ---
-title: "Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 63e61a93aa2a162d7b48e0d423dab99dcea9d020
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6be8b52f42e3e37ff03e561af45c46f4dd283d9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="applying-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers
 
@@ -56,10 +49,10 @@ Existuje jenom jedna aplikace architektura: architektura systému nebo začátku
 -   **Gregu Young. Dokumenty CQRS**
     [*https://cqrs.files.wordpress.com/2010/11/cqrs\_documents.pdf*](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)
 
--   **Gregu Young. CQRS, úloha na bázi uživatelská rozhraní a událostí Sourcing**
+-   **Gregu Young. CQRS, úkolů na základě uživatelská rozhraní a zdroje událostí**
     [*http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/*](http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/)
 
--   **UDI Dahan. Vyjasněno, CQRS**
+-   **Udi Dahan. Vyčištěné CQRS**
     [*http://udidahan.com/2009/12/09/clarified-cqrs/*](http://udidahan.com/2009/12/09/clarified-cqrs/)
 
 -   **CQRS**

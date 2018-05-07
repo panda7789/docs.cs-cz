@@ -1,18 +1,12 @@
 ---
 title: Vztah mezi funkce jazyka a typy knihovny | Microsoft Docs
-description: "Jazykové funkce často spoléhají na knihovny typů pro implementaci. Pochopení relace."
-keywords: "C# jazyka návrhu, standardní knihovny"
-author: billwagner
-ms.author: wiwagn
+description: Jazykové funkce často spoléhají na knihovny typů pro implementaci. Pochopení relace.
 ms.date: 07/20/2017
-ms.topic: article
-ms.prod: .net
-ms.devlang: devlang-csharp
-ms.openlocfilehash: b7de4fdb4356e8822dba6aaaf67d615980ff09cd
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: dfae7972af0a251a92700d7d33bd6f971eb1870e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="relationships-between-language-features-and-library-types"></a>Vztahy mezi funkce jazyka a knihovny typů
 
@@ -20,9 +14,9 @@ Definice jazyka C# vyžaduje standardní knihovnu, kterou chcete mít určité t
 
 Tuto závislost na funkce standardní knihovny byl součástí jazyka C# od jeho první verzi. V této verzi zahrnuté příklady:
 
-* <xref:System.Exception>-použít pro všechny výjimky kompilátoru vygenerovat.
-* <xref:System.String>-C# `string` typ se jedná o synonymum <xref:System.String>.
-* <xref:System.Int32>-synonymum z `int`.
+* <xref:System.Exception> -použít pro všechny výjimky kompilátoru vygenerovat.
+* <xref:System.String> -C# `string` typ se jedná o synonymum <xref:System.String>.
+* <xref:System.Int32> -synonymum z `int`.
 
 Tento první verze je jednoduchý: standardní knihovna a kompilátor dodané společně a došlo jenom jedna verze jednotlivých.
 

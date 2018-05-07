@@ -1,11 +1,6 @@
 ---
 title: -netcf
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - /netcf
 - -netcf
@@ -16,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: db7cfa59-c315-401c-a59b-0daf355343d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f07fc7988c4329397e464f05d334648e98cb129d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 36b2cba14f15cebdcc7f371f53f46b657ab12758
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-netcf"></a>-netcf
 Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].  

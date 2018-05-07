@@ -1,24 +1,12 @@
 ---
-title: "Přístup k informacím OperationContext ze služby pracovních postupů"
-ms.custom: 
+title: Přístup k informacím OperationContext ze služby pracovních postupů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f63c2e2305eab5a97cf547bf607fbe97bb573376
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11c10e83c02ec0e2e74462e84c68fd2fcd3ff761
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>Přístup k informacím OperationContext ze služby pracovních postupů
 Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby pracovních postupů, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. Přepsání <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda, která se předá odkaz na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace tato vlastnost provádění načíst vlastní hlavičky, jakož i vlastní aktivity, který bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> informace budou načteny.  Toto téma také ukazuje, jak získat přístup na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí hlavičky prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  
@@ -105,7 +93,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-5.  Přepsání<xref:System.Activities.NativeActivity.CacheMetadata%2A>  
+5.  přepsání <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
   
     ```  
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
@@ -117,7 +105,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-6.  Přepsání<xref:System.Activities.NativeActivity.Execute%2A>  
+6.  přepsání <xref:System.Activities.NativeActivity.Execute%2A>  
   
     ```  
     protected override void Execute(  
@@ -298,7 +286,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-5.  Přepsání<xref:System.Activities.NativeActivity.CacheMetadata%2A>  
+5.  přepsání <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
   
     ```  
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
@@ -310,7 +298,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-6.  Přepsání<xref:System.Activities.NativeActivity.Execute%2A>  
+6.  přepsání <xref:System.Activities.NativeActivity.Execute%2A>  
   
     ```  
     protected override void Execute(  

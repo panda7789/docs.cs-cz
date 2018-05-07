@@ -1,22 +1,12 @@
 ---
-title: "Při načítání nebo analýza XML2 zachování prázdných znaků"
-ms.custom: 
+title: Při načítání nebo analýza XML2 zachování prázdných znaků
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ef6518e0-2c8d-462c-8b92-a16e9dc737ad
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d99cea37bb9817c40a6d3876b72ccdbd84d7e7ba
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 3341bfae8ff9de5e17ba18273c60b525f77bff16
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování mezer při načítání nebo analýzu kódu XML
 Toto téma popisuje, jak řídit chování mezer [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  

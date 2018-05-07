@@ -1,11 +1,6 @@
 ---
 title: -recurse
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - /recurse compiler option [Visual Basic]
 - -recurse compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: 84a0b670-33ae-44c4-a46a-b90388809317
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 195d4b8f8e88d22e63c29ab9152399eb5c4a19df
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bd5dde46cdea67825b14a6f5fa96a82c8bab8d3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-recurse"></a>-recurse
 Zkompiluje soubory zdrojového kódu ve všech zadaný adresář nebo adresáři projektu.  

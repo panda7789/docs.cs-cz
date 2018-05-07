@@ -1,21 +1,14 @@
 ---
-title: "Nelze vypočítat míra pomocí zadaných argumentů"
+title: Nelze vypočítat míra pomocí zadaných argumentů
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrFinancial_CannotCalculateRate
 ms.assetid: 17d5c8eb-4716-4b72-977f-a640c02e630d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bd5d86bf6b4c0be77fa42599e6c8e042190b89f1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 09b9ba853988a9320a75baadc9717af9df2db652
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cannot-calculate-rate-using-the-arguments-provided"></a>Nelze vypočítat míra pomocí zadaných argumentů
 Výpočet kurzu neobsahuje povinnými argumenty.  

@@ -1,30 +1,20 @@
 ---
-title: "Události Trasování událostí pro Windows zavaděče"
-ms.custom: 
+title: Události Trasování událostí pro Windows zavaděče
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-caps.latest.revision: "18"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ebdee4427bd0848e75e58443fefd439acaa27f64
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d4746e9e7c8c83caf09ccf51749e9e3cbe69ec52
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="loader-etw-events"></a>Události Trasování událostí pro Windows zavaděče
-<a name="top"></a>Tyto události shromažďovat informace týkající se načítání a uvolnění domény aplikace, sestavení a moduly.  
+<a name="top"></a> Tyto události shromažďovat informace týkající se načítání a uvolnění domény aplikace, sestavení a moduly.  
   
  Všechny události zavaděče jsou vyvolány v části `LoaderKeyword` – klíčové slovo (0x8). `DCStart` a `DCEnd` události jsou vyvolány v části `LoaderRundownKeyword` (0x8) s `StartRundown` / `EndRundown` povolena. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
   
@@ -46,15 +36,15 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|Událost|úroveň|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`(0x8)|`AppDomainLoad_V1`a`AppDomainUnLoad_V1`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`AppDomainDCEnd_V1`|Informativní (4)|  
+|`LoaderKeyword` (0x8)|`AppDomainLoad_V1` A `AppDomainUnLoad_V1`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`AppDomainDCEnd_V1`|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
-|`AppDomainLoad_V1`(přihlášení pro všechny domény aplikace)|156|Vyvolána vždy, když během doby platnosti procesu dojde k vytvoření domény aplikace.|  
+|`AppDomainLoad_V1` (přihlášení pro všechny domény aplikace)|156|Vyvolána vždy, když během doby platnosti procesu dojde k vytvoření domény aplikace.|  
 |`AppDomainUnLoad_V1`|157|Vyvolána vždy, když během doby platnosti procesu zničena domény aplikace.|  
 |`AppDomainDCStart_V1`|157|Vytvoří výčet aplikační domény při spuštění rundown.|  
 |`AppDomainDCEnd_V1`|158|Vytvoří výčet aplikační domény během rundown end.|  
@@ -77,9 +67,9 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|Událost|úroveň|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`(0x8)|`AssemblyLoad`a`AssemblyUnload`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`AssemblyDCEnd`|Informativní (4)|  
+|`LoaderKeyword` (0x8)|`AssemblyLoad` A `AssemblyUnload`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`AssemblyDCEnd`|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
@@ -109,9 +99,9 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|Událost|úroveň|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`(0x8)|`ModuleLoad_V2`a`ModuleUnload_V2`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`ModuleDCEnd_V2`|Informativní (4)|  
+|`LoaderKeyword` (0x8)|`ModuleLoad_V2` A `ModuleUnload_V2`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`ModuleDCEnd_V2`|Informativní (4)|  
 ||||  
   
  V následující tabulce jsou uvedeny informace o události.  
@@ -157,9 +147,9 @@ ms.lasthandoff: 12/22/2017
   
 |– Klíčové slovo za vyvolání události|Událost|úroveň|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`(0x8)|`DomainModuleLoad_V1`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informativní (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`DomainModuleDCEnd_V1`|Informativní (4)|  
+|`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informativní (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`DomainModuleDCEnd_V1`|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   

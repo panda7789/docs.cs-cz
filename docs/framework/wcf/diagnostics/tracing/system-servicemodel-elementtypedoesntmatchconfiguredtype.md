@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.ElementTypeDoesntMatchConfiguredType
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0bc74839-6e28-449b-80c9-b62ad7e58207
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3d159edd310e7276fe15de451a844ac6192c4858
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4770bcc25e7b602a3bd865f83e3f08661b28101d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelelementtypedoesntmatchconfiguredtype"></a>System.ServiceModel.ElementTypeDoesntMatchConfiguredType
 System.ServiceModel.ElementTypeDoesntMatchConfiguredType  

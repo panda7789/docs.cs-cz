@@ -1,17 +1,12 @@
 ---
 title: Dědičnost (F#)
 description: "Zjistěte, jak určit vztahy F # dědičnosti pomocí klíčového slova 'inherit'."
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 4ad1494071cabb2a89321d653ec23ad513a46ef1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3d0c0785fc595315a8283979b99d0ec4fc5cbc0d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inheritance"></a>Dědičnost
 

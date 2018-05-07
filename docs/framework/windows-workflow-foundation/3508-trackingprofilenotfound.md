@@ -1,23 +1,12 @@
 ---
 title: 3508 - TrackingProfileNotFound
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4cee3c4a-0490-4c94-aa19-ef7ce7287c02
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 34812b6ddefb69c053cfefa91d7227a7bf15f42e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94c7ce231df241778f7c6ec5fe5998eae364750d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3508---trackingprofilenotfound"></a>3508 - TrackingProfileNotFound
 ## <a name="properties"></a>Vlastnosti  
@@ -27,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 |ID|3508|  
 |Klíčová slova|WFServices|  
 |úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace nebo analytické|  
+|Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
  Označuje TrackingProfile nebyl nalezen v konfiguračním souboru nebo ActivityDefinitionId neodpovídá profil.  

@@ -1,13 +1,6 @@
 ---
-title: "loaderLock – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: loaderLock – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - deadlocks [.NET Framework]
 - LoaderLock MDA
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - loader locks
 - locks, threads
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2835f1fdbe2132feb929a5264d3b2772d8f66377
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dbc6cc814d23923f01eceea70bd2fe45b9cbff8a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="loaderlock-mda"></a>loaderLock – pomocník spravovaného ladění (MDA)
 `loaderLock` Pomocník spravovaného ladění (MDA) upozorní na pokusy provést spravovaného kódu na vlákno, které obsahuje zámek zavaděče operačního systému Microsoft Windows.  Takové spuštění je neplatná, protože může vést k zablokování a použití knihovny DLL před nebyly inicializovány zavaděčem operačního systému.  

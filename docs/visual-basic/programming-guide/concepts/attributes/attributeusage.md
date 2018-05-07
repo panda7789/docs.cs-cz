@@ -1,25 +1,15 @@
 ---
 title: AttributeUsage (Visual Basic)
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5f358068d00c042a979216cdda51dcc7e07abbc5
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: ae162c310511db160806501af895276a4a4bba5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
-Určuje, jak lze použít třídu vlastního atributu. `AttributeUsage`je atribut, který můžete použít pro vlastní atribut definice řídit, jak můžete použít nový atribut. Výchozí nastavení se při použití explicitně vypadat například takto:  
+Určuje, jak lze použít třídu vlastního atributu. `AttributeUsage` je atribut, který můžete použít pro vlastní atribut definice řídit, jak můžete použít nový atribut. Výchozí nastavení se při použití explicitně vypadat například takto:  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.All,   
@@ -98,7 +88,7 @@ End Class
  V takovém případě `Attr1` neplatí pro `DClass` prostřednictvím dědičnosti.  
   
 ## <a name="remarks"></a>Poznámky  
- `AttributeUsage` Se o jedno použití atribut – jej nelze použít více než jednou pro stejnou třídu. `AttributeUsage`je alias <xref:System.AttributeUsageAttribute>.  
+ `AttributeUsage` Se o jedno použití atribut – jej nelze použít více než jednou pro stejnou třídu. `AttributeUsage` je alias <xref:System.AttributeUsageAttribute>.  
   
  Další informace najdete v tématu [přístup k atributy podle pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).  
   

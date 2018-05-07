@@ -1,13 +1,6 @@
 ---
-title: "Maticové znázornění transformací"
-ms.custom: 
+title: Maticové znázornění transformací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,16 +16,11 @@ helpviewer_keywords:
 - transformations [Windows Forms], translation
 - affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c68a79f2a40117a980cb6206b74d42f885874aa8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4c840d8a5abc89493bc684526ce76d34307f4ba1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="matrix-representation-of-transformations"></a>Maticové znázornění transformací
 M x n matice je sady čísel uspořádané m řádků a sloupců n. Následující obrázek znázorňuje několik matice.  
@@ -90,11 +78,11 @@ M x n matice je sady čísel uspořádané m řádků a sloupců n. Následujíc
   
  Pokud jsme začít s bodem (2, 1) – reprezentována matice [2 1 1] – a vynásobit A, pak B a C, bod (2, 1) se má provést tři transformace v uvedeném pořadí.  
   
- [2 1 1] ABC = [-2, 5, 1]  
+ [2 1 1]ABC = [-2 5 1]  
   
  Spíše než v tři samostatné matic uložit tyto tři části složené transformace, můžete násobení A, B a C společně získat jeden přehled 3 x 3, který ukládá celý složený transformace. Předpokládejme ABC = D. Poté přiřadí bod násobí hodnotou D stejný výsledek jako bod násobí hodnotou A, pak B, pak C.  
   
- [2 1 1] D = [-2, 5, 1]  
+ [2 1 1]D = [-2 5 1]  
   
  Následující obrázek znázorňuje matic A, B, C a D.  
   

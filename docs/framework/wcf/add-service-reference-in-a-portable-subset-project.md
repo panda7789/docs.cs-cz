@@ -1,24 +1,12 @@
 ---
-title: "Přidání odkazu služby v přenosném dílčím projektu"
-ms.custom: 
+title: Přidání odkazu služby v přenosném dílčím projektu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a4074920d3ca616498c14511bf39763d7d87ed3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d094bb1d2d1155565e48850a2f41829a93cff84
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu
 Projekty přenosném dílčím povolit programátorům sestavení .NET udržovat stromu jednoho zdroje a sestavení systému, přičemž musí zároveň podporovat více implementace rozhraní .NET (plochy, Silverlight, Windows Phone a XBOX). Projekty přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít na žádnou implementaci rozhraní .NET.  
@@ -52,7 +40,7 @@ Projekty přenosném dílčím povolit programátorům sestavení .NET udržovat
   
 13. <xref:System.Runtime.Serialization.DataContractSerializer> Se vždycky použije pro chyb.  
   
-14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A>není podporována v přenosném dílčím projekty.  
+14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> není podporována v přenosném dílčím projekty.  
   
 ## <a name="see-also"></a>Viz také  
  [Přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  

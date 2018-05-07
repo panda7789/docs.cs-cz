@@ -1,26 +1,12 @@
 ---
 title: Obousměrná komunikace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9eb37e7e307bc9748113e5580ee96c8863d3ef89
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: dfc332533b714083d149b2c1c4892626d2990fb0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="two-way-communication"></a>Obousměrná komunikace
 Tento příklad ukazuje, jak provádět zpracovaných obousměrné komunikace ve frontě prostřednictvím služby MSMQ. V tomto příkladu `netMsmqBinding` vazby. V takovém případě je služba vlastním hostováním konzolovou aplikaci, která umožňuje sledovat službu přijetí zprávy ve frontě.  
@@ -86,7 +72,7 @@ public void SubmitPurchaseOrder(PurchaseOrder po, string reportOrderStatusTo)
  Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definovaný v oddílu System.ServiceModel konfiguračního souboru.  
   
 > [!NOTE]
->  Adresu název a koncový bod služby MSMQ fronty pomocí mírně odlišné adresování konvence. Název fronty služby MSMQ používá tečku (.) pro místní počítač a zpětné lomítko oddělovače v jeho cesty. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Adresa koncového bodu určuje net.msmq: schéma, používá "localhost" pro místní počítač a lomítka v jeho cesty. Čtení z fronty, který je hostován ve vzdáleném počítači, nahraďte "." a "localhost" na název vzdáleného počítače.  
+>  Adresu název a koncový bod služby MSMQ fronty pomocí mírně odlišné adresování konvence. Název fronty služby MSMQ používá tečku (.) pro místní počítač a zpětné lomítko oddělovače v jeho cesty. Adresa koncového bodu služby Windows Communication Foundation (WCF) určuje net.msmq: schéma, používá "localhost" pro místní počítač a lomítka v jeho cesty. Čtení z fronty, který je hostován ve vzdáleném počítači, nahraďte "." a "localhost" na název vzdáleného počítače.  
   
  Služba je sám sebou hostované. Pokud používáte přenos MSMQ, používá fronty musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služba zkontroluje existenci fronty a vytvoří, pokud je to nutné. Název fronty je číst z konfiguračního souboru. Základní adresa se používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování proxy ke službě.  
 
@@ -340,7 +326,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
   

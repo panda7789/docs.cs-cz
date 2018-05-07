@@ -3,19 +3,14 @@ title: Cílové rozhraní
 description: Další informace o cílové rozhraní pro aplikace .NET Core a knihovny.
 author: richlander
 ms.author: mairaw
-ms.date: 09/22/2017
-ms.topic: article
+ms.date: 04/16/2018
 ms.custom: updateeachrelease
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e9f47647a1d4dc82b2df2ea8905f8d0a1e705b96
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: fa8049c9e33f0f6b2f16fd8572d6500ba1860c2e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="target-frameworks"></a>Cílové rozhraní
 
@@ -31,13 +26,13 @@ Na základě balíčku cílové rozhraní (například .NET Standard a .NET Core
 
 ## <a name="latest-target-framework-versions"></a>Nejnovější target framework verze
 
-Následující tabulka definuje nejběžnější cílové rozhraní, jak se odkazuje a kterou verzi [.NET Standard](~/docs/standard/net-standard.md) implementace. Tyto target framework verze jsou nejnovější stabilní verze. Předběžných verzí se nezobrazí. Cílový Framework Přezdívka (TFM) je standardizovaná formát tokenu pro zadání cílové rozhraní aplikace .NET nebo knihovny. 
+Následující tabulka definuje nejběžnější cílové rozhraní, jak se odkazuje a kterou verzi [.NET Standard](~/docs/standard/net-standard.md) implementace. Tyto target framework verze jsou nejnovější stabilní verze. Předběžných verzí se nezobrazí. Cílový Framework Přezdívka (TFM) je standardizovaná formát tokenu pro zadání cílové rozhraní aplikace .NET nebo knihovny.
 
-| Cílová architektura      | Nejnovější verzi | Cílový Framework Přezdívka (TFM) | Implementováno <br/> Standardní verze rozhraní .NET |
-| :-------------------: | :------------: | :----------------------------: | :-------------------------------------: |
-| Standardní rozhraní .NET         | 2.0            | netstandard2.0                 | Není k dispozici                                     |
-| Aplikace .NET core | 2.0            | netcoreapp2.0                  | 2.0                                     |
-| .NET Framework        | 4.7.1          | net471                         | 2.0                                     |
+| Cílová architektura      | Latest (Nejnovější) <br/> Stabilní verze. | Cílový Framework Přezdívka (TFM) | Implementováno <br/> Standardní verze rozhraní .NET |
+| :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
+| Standardní rozhraní .NET         | 2.0                         | netstandard2.0                 | Není k dispozici                                     |
+| Aplikace .NET core | 2.0                         | netcoreapp2.0                  | 2.0                                     |
+| .NET Framework        | 4.7.2                       | net472                         | 2.0                                     |
 
 ## <a name="supported-target-framework-versions"></a>Podporované target framework verze
 
@@ -46,8 +41,8 @@ Cílové rozhraní se obvykle odkazuje TFM. V následující tabulce jsou uveden
 | Cílová architektura           | TFM |
 | -------------------------- | --- |
 | Standardní rozhraní .NET              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0 |
-| .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0 |
-| .NET Framework             | net11<br>net20<br>Net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471 |
+| .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0<br>netcoreapp2.1 |
+| .NET Framework             | net11<br>net20<br>Net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472 |
 | Windows Store              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | Malých rozhraní .NET Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
@@ -135,10 +130,10 @@ Následující cílové architektury jsou zastaralé. Balíčky cílené na tyto
 
 ## <a name="see-also"></a>Viz také
 
-[Balíčky, metabalíčky a architektury](~/docs/core/packages.md)  
-[Vývoj knihoven pomocí nástrojů pro různé platformy](~/docs/core/tutorials/libraries.md)  
-[.NET Standard](~/docs/standard/net-standard.md)  
-[Správa verzí rozhraní .NET core](~/docs/core/versions/index.md)  
+[Balíčky, metabalíčky a architektury](../core/packages.md)  
+[Vývoj knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)  
+[.NET Standard](net-standard.md)  
+[Správa verzí rozhraní .NET core](../core/versions/index.md)  
 [úložiště GitHub DotNet nebo standard](https://github.com/dotnet/standard)  
 [Úložiště GitHub nástroje NuGet](https://github.com/joelverhagen/NuGetTools)  
 [Profily Framework v rozhraní .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)

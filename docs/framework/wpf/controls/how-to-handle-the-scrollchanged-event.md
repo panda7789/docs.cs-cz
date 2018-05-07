@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Zpracování události ScrollChanged"
-ms.custom: 
+title: 'Postupy: Zpracování události ScrollChanged'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - ScrollViewer control [WPF], raising ScrollChanged events
 - ScrollChanged events [WPF]
 ms.assetid: 42c695d8-ee28-49d4-80fd-fc71e9be7f29
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c1b90566fd3f962a1e3a383c4edd93f09e6206c7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: da7c1d1174e3264b21763177487ebcb75a4b3192
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-handle-the-scrollchanged-event"></a>Postupy: Zpracování události ScrollChanged
 ## <a name="example"></a>Příklad  

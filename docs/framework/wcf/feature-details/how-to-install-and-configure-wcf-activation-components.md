@@ -1,37 +1,23 @@
 ---
-title: "Postupy: Instalace a konfigurace aktivačních komponent WCF"
-ms.custom: 
+title: 'Postupy: Instalace a konfigurace aktivačních komponent WCF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 78c63fe58872097058292a8b100b376959a2a0b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f362bd1e4a644488e85cdeca674d46ca340bde05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
-Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) na [!INCLUDE[wv](../../../../includes/wv-md.md)] hostitele [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, které není komunikaci pomocí protokolu HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
+Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) na [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služeb, které není komunikaci pomocí protokolu HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
   
--   Nainstalovat (nebo potvrďte instalace) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aktivačních komponent.  
+-   Nainstalovat (nebo potvrďte instalaci) aktivačních komponent WCF.  
   
 -   Konfigurace WAS pro podporu protokolu než HTTP. Následující postup umožňuje konfiguraci [!INCLUDE[wv](../../../../includes/wv-md.md)] pro Aktivace protokolem TCP.  
   
- Po instalaci a konfiguraci služby WAS, najdete v části [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) postupy k vytvoření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, která zveřejňuje jiným protokolem než HTTP koncový bod, který využívá WAS.  
+ Po instalaci a konfiguraci služby WAS, najdete v části [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) postupy k vytvoření služby WCF, který zveřejňuje jiným protokolem než HTTP koncový bod, který využívá WAS.  
   
 ### <a name="to-install-the-wcf-non-http-activation-components"></a>Chcete-li nainstalovat komponenty Aktivace jiným protokolem než HTTP WCF  
   
@@ -64,7 +50,7 @@ Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů s
     ```  
   
     > [!NOTE]
-    >  Tento příkaz je na jednom řádku textu. Tento příkaz povolí nebo\<*aplikace WCF*> přístup k aplikaci lze pomocí obou http://localhost*/\<aplikace WCF >* a net.tcp:// localhost nebo*\<aplikace WCF >*.  
+    >  Tento příkaz je na jednom řádku textu. Tento příkaz povolí nebo\<*aplikace WCF*> přístup k aplikaci lze pomocí obou http://localhost  */ \<aplikace WCF >* a net.tcp:// localhost nebo*\<aplikace WCF >*.  
   
      Odeberte net.tcp vazby webu, který jste přidali Tato ukázka.  
   

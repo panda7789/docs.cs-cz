@@ -1,28 +1,14 @@
 ---
-title: "Architektura ovládacího prvku DataGridView (Windows Forms)"
-ms.custom: 
+title: Architektura ovládacího prvku DataGridView (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], architecture
 ms.assetid: 1c6cabf0-02ee-4bbc-9574-b54bb7f5b19e
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3b3e51b87cdd766adcc10aa3f682647b28fbbe4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9fc1707b1691266d1844c411a08e7e8f35514ce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datagridview-control-architecture-windows-forms"></a>Architektura ovládacího prvku DataGridView (Windows Forms)
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek a jeho souvisejících tříd jsou navržené jako flexibilní a rozšiřitelný systém pro zobrazení a úpravy tabulková data. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms?displayProperty=nameWithType> oboru názvů a že jsou všechny pojmenované s předponou "DataGridView".  
@@ -67,9 +53,9 @@ DataGridViewElement – objektový model
  ![DataGridViewCell – objektový Model](../../../../docs/framework/winforms/controls/media/datagridviewcell.gif "DataGridViewCell")  
 DataGridViewCell objektový model  
   
- <xref:System.Windows.Forms.DataGridViewCell> Typ je abstraktní základní třídu, ze které jsou odvozeny všechny typy buňky. <xref:System.Windows.Forms.DataGridViewCell>a jeho odvozených typů nejsou ovládací prvky Windows Forms, ale některé ovládací prvky Windows Forms hostitele. Žádné úpravy funkce nepodporuje buňku je obvykle zpracovávány hostované ovládacího prvku.  
+ <xref:System.Windows.Forms.DataGridViewCell> Typ je abstraktní základní třídu, ze které jsou odvozeny všechny typy buňky. <xref:System.Windows.Forms.DataGridViewCell> a jeho odvozených typů nejsou ovládací prvky Windows Forms, ale některé ovládací prvky Windows Forms hostitele. Žádné úpravy funkce nepodporuje buňku je obvykle zpracovávány hostované ovládacího prvku.  
   
- <xref:System.Windows.Forms.DataGridViewCell>objekty neurčují vlastní vzhled a funkce Malování stejným způsobem, jak Windows Forms – ovládací prvky. Místo toho <xref:System.Windows.Forms.DataGridView> zodpovídá za vzhled jeho <xref:System.Windows.Forms.DataGridViewCell> objekty. Vzhled a chování buněk může výrazně ovlivnit interakcí s <xref:System.Windows.Forms.DataGridView> vlastnosti a události ovládacího prvku. Pokud máte speciální požadavky pro úpravy, které jsou nad rámec možností <xref:System.Windows.Forms.DataGridView> ovládací prvek, můžete implementovat vlastní třídu odvozenou od <xref:System.Windows.Forms.DataGridViewCell> nebo jedna z jejích podřízených tříd.  
+ <xref:System.Windows.Forms.DataGridViewCell> objekty neurčují vlastní vzhled a funkce Malování stejným způsobem, jak Windows Forms – ovládací prvky. Místo toho <xref:System.Windows.Forms.DataGridView> zodpovídá za vzhled jeho <xref:System.Windows.Forms.DataGridViewCell> objekty. Vzhled a chování buněk může výrazně ovlivnit interakcí s <xref:System.Windows.Forms.DataGridView> vlastnosti a události ovládacího prvku. Pokud máte speciální požadavky pro úpravy, které jsou nad rámec možností <xref:System.Windows.Forms.DataGridView> ovládací prvek, můžete implementovat vlastní třídu odvozenou od <xref:System.Windows.Forms.DataGridViewCell> nebo jedna z jejích podřízených tříd.  
   
  V následujícím seznamu jsou uvedeny třídy odvozené z <xref:System.Windows.Forms.DataGridViewCell>:  
   

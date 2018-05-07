@@ -1,11 +1,6 @@
 ---
 title: -sdkpath
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - sdkpath
 - -sdkpath
@@ -16,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: fec8a3f1-b791-4a37-8af7-344859f8212d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a25755bcbb8d42124cde531f641a611202ae5a1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 162c7d58350c381ec667e8a4cd11c03e83fcdf44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-sdkpath"></a>-sdkpath
 Určuje umístění mscorlib.dll a souboru Microsoft.VisualBasic.dll.  

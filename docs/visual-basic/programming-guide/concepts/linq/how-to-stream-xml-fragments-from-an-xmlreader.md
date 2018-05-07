@@ -1,22 +1,12 @@
 ---
 title: 'Postupy: Stream fragmenty XML z objekt XmlReader (Visual Basic)'
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f18c922208fb52ffa775bd36e76c74f04d60f3b1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 38a81e83421dffc997a2cbfd6d0996da5ece18d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Postupy: Stream fragmenty XML z objekt XmlReader (Visual Basic)
 Až budete mít ke zpracování velkých souborů XML, nemusí být vhodný načíst celý strom XML do paměti. Toto téma ukazuje, jak k vysílání datového proudu fragmenty pomocí <xref:System.Xml.XmlReader>.  

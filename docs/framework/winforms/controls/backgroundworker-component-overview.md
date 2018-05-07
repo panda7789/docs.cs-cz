@@ -1,14 +1,6 @@
 ---
-title: "BackgroundWorker – přehled komponenty"
-ms.custom: 
+title: BackgroundWorker – přehled komponenty
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -25,17 +17,11 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 64e9b3ab-7443-4a77-ab17-b8b8c0cb3f62
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 96fc5e1929589321872ba30d8c3821b4fd47ca8b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 32d9bc19e9112fc9b518a68060f9f84e0e04fa16
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="backgroundworker-component-overview"></a>BackgroundWorker – přehled komponenty
 Existuje mnoho běžně provádět operace, které může trvat dlouhou dobu spuštění. Příklad:  
@@ -58,7 +44,7 @@ Existuje mnoho běžně provádět operace, které může trvat dlouhou dobu spu
   
  <xref:System.ComponentModel.BackgroundWorker> Součást má k dispozici **sada nástrojů**v **součásti** kartě. Chcete-li přidat <xref:System.ComponentModel.BackgroundWorker> do svého formuláře, přetáhněte <xref:System.ComponentModel.BackgroundWorker> součásti do formuláře. Zobrazí se na hlavním panelu součástí a její vlastnosti se zobrazí v **vlastnosti** okno.  
   
- Chcete-li začít asynchronní operaci, použijte <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> metoda. <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>přijímá volitelný `object` parametr, který slouží k předání argumentů metodu pracovního procesu. <xref:System.ComponentModel.BackgroundWorker> Třídy zpřístupňuje <xref:System.ComponentModel.BackgroundWorker.DoWork> událostí, ke kterému je pracovní vlákno připojená prostřednictvím <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události.  
+ Chcete-li začít asynchronní operaci, použijte <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> metoda. <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> přijímá volitelný `object` parametr, který slouží k předání argumentů metodu pracovního procesu. <xref:System.ComponentModel.BackgroundWorker> Třídy zpřístupňuje <xref:System.ComponentModel.BackgroundWorker.DoWork> událostí, ke kterému je pracovní vlákno připojená prostřednictvím <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události.  
   
  <xref:System.ComponentModel.BackgroundWorker.DoWork> Trvá obslužné rutiny události <xref:System.ComponentModel.DoWorkEventArgs> parametr, který má <xref:System.ComponentModel.DoWorkEventArgs.Argument%2A> vlastnost. Tato vlastnost přijímá parametru z <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a se dá předat do pracovního procesu metodu, která bude volána v <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události. Následující příklad ukazuje, jak přiřadit výsledku z pracovní metodu s názvem `ComputeFibonacci`. Je součástí většího příkladu, které můžete najít v [postupy: implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md).  
   

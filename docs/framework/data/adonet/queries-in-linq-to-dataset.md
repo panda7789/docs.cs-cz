@@ -1,30 +1,18 @@
 ---
 title: Dotazy v LINQ na DataSet
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7e07da38f7a75226d48ef84cc8d2dafd48f6e795
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ef9334eec92ef06e5be07dae4391cdac43fed778
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ na DataSet
-Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk, například SQL pro relační databáze a XQuery pro formát XML. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]nabízí jednodušší a konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotaz, vždy pracujete s programováním objekty.  
+Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk, například SQL pro relační databáze a XQuery pro formát XML. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotaz, vždy pracujete s programováním objekty.  
   
  A [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu operace se skládá ze tří akcí: získat zdroj dat nebo zdroje, vytvořte dotaz a provést dotaz.  
   
@@ -37,7 +25,7 @@ Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyj�
  Na rozdíl od odložené dotazy, které vrací pořadí hodnot, jsou okamžitě provede dotazů, které vrátí hodnotu typu singleton. Některé příklady dotazů singleton <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Average%2A>, a <xref:System.Linq.Enumerable.First%2A>. Tyto spustit okamžitě protože výsledky dotazu jsou potřeba k výpočtu výsledek typu singleton. Například a hledat tak průměr výsledky dotazu dotaz musí provést tak, aby průměrný funkce obsahuje vstupní data pro práci s. Můžete také <xref:System.Linq.Enumerable.ToList%2A> nebo <xref:System.Linq.Enumerable.ToArray%2A> metody na dotazu chcete vynutit okamžitou provádění dotazu, který nevytváří hodnotu singleton. Tyto postupy, chcete-li vynutit okamžitou provádění může být užitečné, pokud chcete pro ukládání do mezipaměti výsledků dotazu. Další informace o spuštění dotazu odložené a okamžitou najdete v tématu [Začínáme s dotazy LINQ](http://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9).  
   
 ## <a name="queries"></a>Dotazy  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]dotazy můžete ve dvou různých syntaxí úpravě: výraz syntaxe využívající dotazy a syntaxe dotazu na základě metod.  
+ [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy můžete ve dvou různých syntaxí úpravě: výraz syntaxe využívající dotazy a syntaxe dotazu na základě metod.  
   
 ### <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu  
  Výrazy dotazů jsou syntaxe deklarativní dotazu. Tuto syntaxi umožňuje vývojáři psát dotazy v C# nebo Visual Basic ve formátu, podobně jako SQL. Pomocí syntaxe výrazu dotazu, můžete provést i komplexní filtrování, řazení a seskupování operací na zdroje dat s minimálním kódu. Další informace najdete v tématu [LINQ – výrazy dotazů](http://msdn.microsoft.com/library/40638f19-fb46-4d26-a2d9-a383b48f5ed4) a [základní operace dotazů (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  

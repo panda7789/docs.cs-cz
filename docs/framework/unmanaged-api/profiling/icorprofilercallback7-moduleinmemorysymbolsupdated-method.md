@@ -1,35 +1,23 @@
 ---
-title: ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
-ms.custom: ''
+title: ICorProfilerCallback7::ModuleInMemorySymbolsUpdated – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 api_name:
-- ICorProfiler7.ModuleInMemorySymbolsUpdated
+- ICorProfilerCallback7.ModuleInMemorySymbolsUpdated
 api_location:
 - mscorwks.dll
 - corprof.idl
 api_type:
 - COM
 ms.assetid: f362a896-3247-4894-9727-e48dbbcd2c78
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 898adf043e425c00d6e311e2f67c53ed65cacb33
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 9aa690378a32ffee2def672f02dc8b5582647a5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
+# <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated – metoda
 [Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
   
  Upozorní profileru při každé aktualizaci symbol datový proud přidružený modul v paměti.  
@@ -43,7 +31,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
 ```  
   
 #### <a name="parameters"></a>Parametry  
- `moduleId`  
+ [v] `moduleId`  
  Identifikátor v paměti modulu, jehož symbol datového proudu se aktualizuje.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -57,7 +45,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
  **Knihovna:** CorGuids.lib  
   

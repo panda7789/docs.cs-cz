@@ -1,30 +1,16 @@
 ---
-title: "Přehled ovládacího prvku Rozdělovač (Windows Forms)"
-ms.custom: 
+title: Přehled ovládacího prvku Rozdělovač (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Splitter
 helpviewer_keywords:
 - Splitter control [Windows Forms], about Splitter control
 ms.assetid: e2b6ab83-dfdd-40ec-9762-850702c82dcb
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 32d8829e7303ce23a22d0a01f2428a889ce4ae0f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9d36a0cc7117ab88dc575f0f9531c93814243f4c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="splitter-control-overview-windows-forms"></a>Přehled ovládacího prvku Rozdělovač (Windows Forms)
 > [!IMPORTANT]

@@ -1,26 +1,17 @@
 ---
 title: -Optimalizace
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - optimize compiler option [Visual Basic]
 - /optimize compiler option [Visual Basic]
 - optimization [Visual Basic], enabling
 - -optimize compiler option [Visual Basic]
 ms.assetid: fcba4a97-3622-4b87-a891-0f77deab4998
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7df1c873c166def9fde1bedc139470263e3e4437
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 2f066835c5f864538f281d4c58772e0e60c132f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-optimize"></a>-Optimalizace
 Povolí nebo zakáže optimalizace kompilátoru.  
@@ -56,7 +47,7 @@ vbc t2.vb -optimize
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)

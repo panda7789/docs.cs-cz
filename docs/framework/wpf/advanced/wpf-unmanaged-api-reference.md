@@ -1,24 +1,12 @@
 ---
-title: "WPF nespravované rozhraní API"
-ms.custom: 
+title: WPF nespravované rozhraní API
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2a2e8274-6556-46a2-80d3-a1812903cbcf
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 42843e4be907c7361f55a95abb4d91b4426a9f6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cf1832005daa8aaf7511073c8136dce7cea32e79
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-unmanaged-api-reference"></a>WPF nespravované rozhraní API
 Windows Presentation Foundation (WPF) knihovny vystavit počet nespravovaných funkcí, které jsou určeny pouze pro interní použití. Neměla být volána z uživatelského kódu.  

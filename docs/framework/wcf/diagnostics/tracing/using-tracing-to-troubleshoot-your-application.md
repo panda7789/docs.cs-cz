@@ -1,24 +1,12 @@
 ---
-title: "Řešení potíží s aplikací pomocí trasování"
-ms.custom: 
+title: Řešení potíží s aplikací pomocí trasování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7676b9bb-cbd1-41fd-9a93-cc615af6e2d0
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fb46ad5fe95405c78baf3173a982969e0e7092fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7613ff24161fd7dc159838fb232e2fc6742ab1a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-tracing-to-troubleshoot-your-application"></a>Řešení potíží s aplikací pomocí trasování
 Tato část obsahuje různé témata, které popisují, jak můžete použít trasování problém s vaší aplikací.  

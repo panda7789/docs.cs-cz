@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.ConfiguredExtensionTypeNotFound
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ef1c72d7-35c4-4886-80bb-b0a368da77e2
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 227543e265d1975664f9989c303c2b349e481362
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bbd2f13bd1b02c909ffd2723bef9d37d4e9109c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelconfiguredextensiontypenotfound"></a>System.ServiceModel.ConfiguredExtensionTypeNotFound
 System.ServiceModel.ConfiguredExtensionTypeNotFound  

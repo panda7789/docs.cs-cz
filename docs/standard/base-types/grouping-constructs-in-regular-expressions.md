@@ -1,13 +1,7 @@
 ---
-title: "Seskupovací konstrukce v regulárních výrazech"
-ms.custom: 
+title: Seskupovací konstrukce v regulárních výrazech
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 766f20f92cd4ac2d987137f86616a69df9f53600
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 0830ec4022ca789d9aac0d1ae2c10ae6f76cc75e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení podřetězce vstupní řetězce. Seskupovací konstrukce můžete provést následující akce:  
@@ -64,7 +53,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="matched-subexpressions"></a>Podvýrazy  
  Následující seskupovací konstrukce zaznamená odpovídající dílčím výrazu:  
   
- `(` *subexpression* `)`  
+ `(` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor platný regulární výraz. Zaznamená, že používají závorky jsou automaticky číslována zleva doprava na základě pořadí počáteční závorky v regulárním výrazu, od jednoho. Zachycení, které je číslem nula je text odpovídající celý regulární výraz.  
   
@@ -292,7 +281,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="group-options"></a>Možnosti pro skupiny  
  Následující seskupovací konstrukce použije nebo zakáže zadané možnosti v rámci dílčím výrazu:  
   
- `(?imnsx-imnsx:` *subexpression* `)`  
+ `(?imnsx-imnsx:` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor platný regulární výraz. Například `(?i-s:)` zapne nerozlišování a zakáže režim jeden řádek. Další informace o vložených možností můžete určit, najdete v části [možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
   
@@ -316,7 +305,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="zero-width-positive-lookahead-assertions"></a>Kontrolní výrazy s nulovou šířkou kladné dopředným vyhledáváním  
  Následující seskupovací konstrukce definuje nulovou šířkou kladné dopředného vyhledávání:  
   
- `(?=` *subexpression* `)`  
+ `(?=` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor regulárního výrazu. Pro úspěšné porovnání, vstupní řetězec musí odpovídat vzor regulárního výrazu v *dílčím výrazu*, i když odpovídající podřetězec není zahrnut ve výsledku porovnání. Nulovou šířkou kladné dopředného vyhledávání není zpětný krok.  
   
@@ -339,7 +328,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="zero-width-negative-lookahead-assertions"></a>Kontrolní výrazy s nulovou šířkou záporné dopředným vyhledáváním  
  Následující seskupovací konstrukce definuje výraz negativního dopředného vyhledávání s nulovou šířkou:  
   
- `(?!` *subexpression* `)`  
+ `(?!` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor regulárního výrazu. Pro úspěšné porovnání vstupní řetězec nesmí odpovídat vzor regulárního výrazu v *dílčím výrazu*, i když odpovídající řetězec není součástí výsledku porovnání.  
   
@@ -377,7 +366,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="zero-width-positive-lookbehind-assertions"></a>Kontrolní výrazy kladné zpětného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje výraz kladné zpětného vyhledávání s nulovou šířkou:  
   
- `(?<=` *subexpression* `)`  
+ `(?<=` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor regulárního výrazu. Pro úspěšné, porovnání *dílčím výrazu* musí objevit ve vstupním řetězci nalevo od aktuální pozice, přestože `subexpression` není zahrnut ve výsledku porovnání. Kladné zpětného vyhledávání s nulovou šířkou kontrolní mechanismus navrácení.  
   
@@ -402,7 +391,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="zero-width-negative-lookbehind-assertions"></a>Kontrolní výrazy negativního zpětného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje výraz negativního zpětného vyhledávání s nulovou šířkou:  
   
- `(?<!` *subexpression* `)`  
+ `(?<!` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor regulárního výrazu. Pro úspěšné, porovnání *dílčím výrazu* nesmí vyskytovat ve vstupním řetězci nalevo od aktuální pozici. Ale jakýkoli podřetězec, který neodpovídá `subexpression` není zahrnut ve výsledku porovnání.  
   
@@ -427,7 +416,7 @@ Seskupovací konstrukce vymezují podvýrazy regulární výraz a zachycení pod
 ## <a name="nonbacktracking-subexpressions"></a>Bez mechanismu navrácení podvýrazy  
  Následující seskupovací konstrukce představuje podvýraz (také označované jako "chamtivého" dílčím výrazu):  
   
- `(?>` *subexpression* `)`  
+ `(?>` *dílčím výrazu* `)`  
   
  kde *dílčím výrazu* je libovolný vzor regulárního výrazu.  
   

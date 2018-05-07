@@ -1,27 +1,17 @@
 ---
-title: "Metody rozšíření (Visual Basic)"
-ms.custom: 
+title: Metody rozšíření (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.ExtensionMethods
 helpviewer_keywords:
 - extending data types [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: b8020aae-374d-46a9-bcb7-8cc2390b93b6
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d3db3bc2b213b78ef2dceebcf56c9d5fbfa3016e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1cc2ccef09dd027c6f1e82f60ed4ac5f50db6ebe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují vývojářům přidání vlastních funkcí k typy dat, které jsou již definováni bez vytvoření nového odvozeného typu. Rozšiřující metody umožňují napíše metoda, kterou lze volat, jako by šlo metodu instance existující typu.  
@@ -38,7 +28,7 @@ Rozšiřující metody umožňují vývojářům přidání vlastních funkcí k
   
  [!code-vb[VbVbalrExtensionMethods#1](./codesnippet/VisualBasic/extension-methods_1.vb)]  
   
- Všimněte si, že metoda definice rozšíření je označen atributem rozšíření `<Extension()>`. Označení modul, ve kterém je definovaný metodu je volitelné, ale každá metoda rozšíření musí být označen. <xref:System.Runtime.CompilerServices>musí být importovány pro přístup atribut rozšíření.  
+ Všimněte si, že metoda definice rozšíření je označen atributem rozšíření `<Extension()>`. Označení modul, ve kterém je definovaný metodu je volitelné, ale každá metoda rozšíření musí být označen. <xref:System.Runtime.CompilerServices> musí být importovány pro přístup atribut rozšíření.  
   
  Rozšiřující metody lze deklarovat pouze v rámci moduly. Modul, ve kterém je definovaný rozšiřující metodu obvykle není modul stejný jako ten, ve kterém je volána. Místo toho se importuje modul, který obsahuje metodě rozšíření, pokud je nutné, aby do oboru. Po modul, který obsahuje `Print` je v oboru, lze volat metodu, jako by šlo metodu obyčejnou instance, které nepřijímá žádné argumenty, jako například `ToUpper`:  
   
@@ -48,9 +38,9 @@ Rozšiřující metody umožňují vývojářům přidání vlastních funkcí k
   
  [!code-vb[VbVbalrExtensionMethods#3](./codesnippet/VisualBasic/extension-methods_3.vb)]  
   
- Je volána metoda odesláním v argument řetězce pro `punc`:`example.PrintAndPunctuate(".")`  
+ Je volána metoda odesláním v argument řetězce pro `punc`: `example.PrintAndPunctuate(".")`  
   
- Následující příklad ukazuje `Print` a `PrintAndPunctuate` definované a volat. <xref:System.Runtime.CompilerServices>v modulu definice se naimportují Chcete-li povolit přístup k atributu rozšíření.  
+ Následující příklad ukazuje `Print` a `PrintAndPunctuate` definované a volat. <xref:System.Runtime.CompilerServices> v modulu definice se naimportují Chcete-li povolit přístup k atributu rozšíření.  
   
 ### <a name="code"></a>Kód  
   
@@ -186,10 +176,10 @@ End Module
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.CompilerServices>  
  <xref:System.Runtime.CompilerServices.ExtensionAttribute>  
- [Metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
- [Module – příkaz](../../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
+ [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Volitelné parametry](./optional-parameters.md)  
+ [Nepovinné parametry](./optional-parameters.md)  
  [Pole parametrů](./parameter-arrays.md)  
  [Přehled atributy](../../../../visual-basic/programming-guide/concepts/attributes/index.md)  
  [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

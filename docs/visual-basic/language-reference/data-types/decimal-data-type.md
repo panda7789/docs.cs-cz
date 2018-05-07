@@ -1,11 +1,6 @@
 ---
-title: "Decimal – datový typ (Visual Basic)"
+title: Decimal – datový typ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Decimal
 helpviewer_keywords:
@@ -25,14 +20,11 @@ helpviewer_keywords:
 - '@ identifier type character'
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 55a9293fa680a7a04cff4099654d4d66790e8d3d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9e256e93d7857c8674a1d711fa9cafd3ed9a29f5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="decimal-data-type-visual-basic"></a>Decimal – datový typ (Visual Basic)
 Blokování podepsané 128-bit (16 bajtů) hodnoty představující 96 bitů (12 bajtů) celá čísla škálovat podle proměnné power 10. Měřítko určuje počet číslic vpravo od desetinné čárky. ho rozsahu od 0 do 28. S měřítkem 0 (bez desetinných míst), je největší možná hodnota +/-79,228,162,514,264,337,593,543,950,335 (+/-7 .9228162514264337593543950335E + 28). S 28 desetinnými místy největší hodnota je +/-7,9228162514264337593543950335 a je nejmenší nenulovou hodnotu +/-0,0000000000000000000000000001 (+/-1E-28).  
@@ -44,7 +36,7 @@ Blokování podepsané 128-bit (16 bajtů) hodnoty představující 96 bitů (12
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Přesnost.** `Decimal`není typu data s plovoucí desetinnou čárkou. `Decimal` Struktura obsahuje binární celočíselná hodnota, spolu s přihlašovací bit a celé škálování faktor, který určuje, jaká část hodnoty je zlomek decimal. Z toho důvodu `Decimal` čísla mají přesnější reprezentaci v paměti, než je typy s plovoucí desetinnou čárkou (`Single` a `Double`).  
+-   **Přesnost.** `Decimal` není typu data s plovoucí desetinnou čárkou. `Decimal` Struktura obsahuje binární celočíselná hodnota, spolu s přihlašovací bit a celé škálování faktor, který určuje, jaká část hodnoty je zlomek decimal. Z toho důvodu `Decimal` čísla mají přesnější reprezentaci v paměti, než je typy s plovoucí desetinnou čárkou (`Single` a `Double`).  
   
 -   **Výkon.** `Decimal` Datový typ je nejpomalejší pro všechny číselné typy. Měli byste zvážit význam přesnost proti výkonu před volbou datovým typem.  
   
@@ -90,8 +82,8 @@ Dim bigDec3 As Decimal = 9223372036854775808D  ' No overflow.
  <xref:System.Decimal.%23ctor%2A?displayProperty=nameWithType>  
  <xref:System.Math.Round%2A?displayProperty=nameWithType>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Single – datový typ](../../../visual-basic/language-reference/data-types/single-data-type.md)  
- [Double – datový typ](../../../visual-basic/language-reference/data-types/double-data-type.md)  
+ [Datový typ Single](../../../visual-basic/language-reference/data-types/single-data-type.md)  
+ [Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

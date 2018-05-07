@@ -1,22 +1,12 @@
 ---
-title: "Práce s globální obory názvů (Visual Basic) (technologie LINQ to XML)"
-ms.custom: 
+title: Práce s globální obory názvů (Visual Basic) (technologie LINQ to XML)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0a8064d5-e02f-4315-ad48-6deaa443a2f0
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 376a6d2dfbca22fb8efc6395f478839d716e14d4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c1f34b374f956ec0a8b9658742e529d7ccb1b2ce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="working-with-global-namespaces-visual-basic-linq-to-xml"></a>Práce s globální obory názvů (Visual Basic) (technologie LINQ to XML)
 Jedním z klíčových funkcích služby literálů XML v jazyce Visual Basic je schopnost deklarace oborů názvů XML pomocí `Imports` příkaz. Pomocí této funkce lze deklarovat na obor názvů XML, který používá předpony nebo můžou deklarovat výchozí obor názvů XML.  

@@ -1,23 +1,12 @@
 ---
 title: 1038 - EnterNoPersistBlock
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 64f3e60a-614d-46a5-8d30-fa63417c3d91
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 44d75d8c867c6ae4e17b9f90167cc06da5f13f85
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbe0f9917af72b07fa65c79bd5e8b40d52880bf2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1038---enternopersistblock"></a>1038 - EnterNoPersistBlock
 ## <a name="properties"></a>Vlastnosti  

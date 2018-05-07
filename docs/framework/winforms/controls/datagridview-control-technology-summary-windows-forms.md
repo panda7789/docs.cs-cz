@@ -1,27 +1,15 @@
 ---
-title: "Souhrn technologie ovládacího prvku DataGridView (Windows Forms)"
-ms.custom: 
+title: Souhrn technologie ovládacího prvku DataGridView (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], about DataGridView control
 - data grids [Windows Forms], about data grids
 ms.assetid: 094498c3-a126-4a3f-83fe-f69e96c7717b
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e074229e4fe344633d277b77b6f7db881c154d8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cafd832e7105540ae684dd1feb4b33ab74f72836
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datagridview-control-technology-summary-windows-forms"></a>Souhrn technologie ovládacího prvku DataGridView (Windows Forms)
 Toto téma shrnuje informace o `DataGridView` řízení a třídy, které podporují jeho použití.  
@@ -63,8 +51,8 @@ Toto téma shrnuje informace o `DataGridView` řízení a třídy, které podpor
 |Oblast technologie|Třídy nebo rozhraní nebo konfigurační prvky|  
 |---------------------|-------------------------------------------------|  
 |Datová vazba|<xref:System.Windows.Forms.BindingSource>|  
-|Prezentace dat|<xref:System.Windows.Forms.DataGridView><br /><br /> <xref:System.Windows.Forms.DataGridViewCell>a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewRow>a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn>a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewCellStyle>|  
-|<xref:System.Windows.Forms.DataGridView>Rozšiřitelnost|<xref:System.Windows.Forms.DataGridViewCell>a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn>a odvozených tříd<br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingCell><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingControl>|  
+|Prezentace dat|<xref:System.Windows.Forms.DataGridView><br /><br /> <xref:System.Windows.Forms.DataGridViewCell> a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewRow> a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewCellStyle>|  
+|<xref:System.Windows.Forms.DataGridView> Rozšiřitelnost|<xref:System.Windows.Forms.DataGridViewCell> a odvozených tříd<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> a odvozených tříd<br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingCell><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingControl>|  
   
 ## <a name="whats-new"></a>Co je nového  
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek je navržený jako kompletního řešení pro zobrazení tabulková data s Windows Forms. Měli byste zvážit použití <xref:System.Windows.Forms.DataGridView> řízení před jiných řešení, jako například <xref:System.Windows.Forms.DataGrid>, při vytváření nové aplikace. Další informace najdete v tématu [rozdíly mezi systému Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  

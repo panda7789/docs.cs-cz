@@ -1,22 +1,16 @@
 ---
-title: "Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)"
+title: 'Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-caps.latest.revision: "34"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fc3c0f6910238ba20582280426b4a40e68b95dd8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3fce8a30e9ed663f06fa04c462fc1e1fd249d27a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)
 Pojmenované argumenty a volitelné argumenty, počínaje [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], zvýšení pohodlí, flexibilitu a čitelnost v C# – programování. Kromě toho tyto funkce výrazně usnadnit přístup k rozhraní modelu COM, jako je například Microsoft Office automatizace rozhraní API.  
@@ -33,7 +27,7 @@ Pojmenované argumenty a volitelné argumenty, počínaje [!INCLUDE[csharp_dev10
   
 2.  Na **soubor** nabídky, přejděte na příkaz **nový**a potom klikněte na **projektu**.  
   
-3.  V **kategorie šablony** podokně rozbalte **Visual C#**a potom klikněte na **Windows**.  
+3.  V **kategorie šablony** podokně rozbalte **Visual C#** a potom klikněte na **Windows**.  
   
 4.  Hledat v horní části **šablony** podokně Ujistěte se, že **rozhraní .NET Framework 4** se zobrazí v **cílové rozhraní** pole.  
   

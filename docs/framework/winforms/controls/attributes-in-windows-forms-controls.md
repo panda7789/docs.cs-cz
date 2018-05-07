@@ -1,29 +1,17 @@
 ---
-title: "Atributy v ovládacích prvcích Windows Forms"
-ms.custom: 
+title: Atributy v ovládacích prvcích Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - attributes [Windows Forms]
 - attributes [Windows Forms], data binding properties
 - attributes [Windows Forms], control properties
 - attributes [Windows Forms], classes
 ms.assetid: 2c5640e9-6c6c-49d7-a5e4-a768f6be7853
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13aad22dca249147e3037bcef6da755c264021db
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e06836e53a69394ad899bedc8e545dbff9b9c29d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributes-in-windows-forms-controls"></a>Atributy v ovládacích prvcích Windows Forms
 Rozhraní .NET Framework poskytuje celou řadu atributy, které můžete použít pro členy vlastní ovládací prvky a součásti. Některé z těchto atributů ovlivnit chování běhové třídy a jiné ovlivňují chování návrhu.  

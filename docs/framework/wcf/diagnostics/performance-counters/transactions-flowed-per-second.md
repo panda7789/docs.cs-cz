@@ -1,24 +1,12 @@
 ---
-title: "Počet plynoucích transakcí za sekundu"
-ms.custom: 
+title: Počet plynoucích transakcí za sekundu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b9f661e1-576c-48fc-9fdf-91853e0749e8
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 432ed6adbaa1f121f11680e0f9574a642565a6f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a71095b9fdd16d7e220be8a0aeb0a746bb50527e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transactions-flowed-per-second"></a>Počet plynoucích transakcí za sekundu
 Název čítače: Počet plynoucích transakcí za sekundu  

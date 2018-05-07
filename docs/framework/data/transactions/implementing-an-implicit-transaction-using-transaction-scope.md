@@ -1,26 +1,15 @@
 ---
-title: "Implementace implicitní transakci pomocí oboru transakce"
-ms.custom: 
+title: Implementace implicitní transakci pomocí oboru transakce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 49d1706a-1e0c-4c85-9704-75c908372eb9
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0b75091739b0ea97b63b35830f4946a78e49ff8f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f3184801ed6a81d65727c638ef733bc93a87c1e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakci pomocí oboru transakce
 <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
@@ -51,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="rolling-back-a-transaction"></a>Vrácení transakce zpět  
  Pokud byste chtěli vrácení zpět transakcí, neměli by jste volat <xref:System.Transactions.TransactionScope.Complete%2A> metody v rozsahu transakce. Například může vyvolat výjimku v rámci oboru. Transakce, ve kterém je součástí bude vrácena zpět.  
   
-##  <a name="ManageTxFlow"></a>Správa pomocí TransactionScopeOption toku transakcí  
+##  <a name="ManageTxFlow"></a> Správa pomocí TransactionScopeOption toku transakcí  
  Obor transakcí, které mohou být vnořené voláním metody, která používá <xref:System.Transactions.TransactionScope> z v rámci metody, která používá vlastní rozsah, jako je tomu u `RootMethod` metodu v následujícím příkladu  
   
 ```csharp  

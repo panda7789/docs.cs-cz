@@ -1,35 +1,21 @@
 ---
 title: 'Návod: Vytvoření vlastního klienta a pověření služby'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cf9f6c1ad5be3a2d63140f03f74713809624e277
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 8c5608276de935f07dca88e343143112b8fdcc20
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Návod: Vytvoření vlastního klienta a pověření služby
 Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a jak používat vlastní pověření z kódu aplikace.  
   
 ## <a name="credentials-extensibility-classes"></a>Přihlašovací údaje rozšíření třídy  
- <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy jsou hlavní vstupní body k [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] rozšiřitelnost zabezpečení. Tyto přihlašovací údaje třídy poskytují rozhraní API, které umožňují kódu aplikace, pokud chcete nastavit přihlašovací údaje informace a pro převod typů přihlašovacích údajů do tokenů zabezpečení. (*Tokeny zabezpečení* jsou formulář, který slouží k předání přihlašovacích údajů uvnitř protokolu SOAP zprávy.) Odpovědnosti tyto přihlašovací údaje třídy je možné rozdělit do dvou oblastech:  
+ <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy jsou hlavní vstupní body k rozšiřitelnosti zabezpečení Windows Communication Foundation (WCF). Tyto přihlašovací údaje třídy poskytují rozhraní API, které umožňují kódu aplikace, pokud chcete nastavit přihlašovací údaje informace a pro převod typů přihlašovacích údajů do tokenů zabezpečení. (*Tokeny zabezpečení* jsou formulář, který slouží k předání přihlašovacích údajů uvnitř protokolu SOAP zprávy.) Odpovědnosti tyto přihlašovací údaje třídy je možné rozdělit do dvou oblastech:  
   
 -   Poskytují rozhraní API pro aplikace, nastavení informací o přihlašovací údaje.  
   

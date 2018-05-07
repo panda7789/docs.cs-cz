@@ -1,22 +1,12 @@
 ---
-title: "Ladění stromů výrazů v sadě Visual Studio (Visual Basic)"
-ms.custom: 
+title: Ladění stromů výrazů v sadě Visual Studio (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ff1bee9c3c3fdeafab24368d2c7e8376d4ff7b97
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2addba2654067eaaf6c621c927e0992308879ae4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Ladění stromů výrazů v sadě Visual Studio (Visual Basic)
 Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů. Chcete-li získat rychlý přehled o výraz stromová struktura, můžete použít `DebugView` vlastnost, která je k dispozici pouze v režimu ladění. Další informace o ladění najdete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
@@ -34,7 +24,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
  Každý typ výrazu se zobrazí v vizualizér, jak je popsáno v následujících částech.  
   
 ## <a name="parameterexpressions"></a>ParameterExpressions  
- <xref:System.Linq.Expressions.ParameterExpression>názvy proměnných jsou zobrazeny symbolem "$" na začátku.  
+ <xref:System.Linq.Expressions.ParameterExpression> názvy proměnných jsou zobrazeny symbolem "$" na začátku.  
   
  Pokud parametr nemá název, je přiřazen automaticky vygenerovaným názvem, jako například `$var1` nebo `$var2`.  
   
@@ -47,7 +37,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Parameter(GetType(Integer), "num")  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `$num`  
   
@@ -58,7 +48,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Parameter(GetType(Integer))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `$var1`  
   
@@ -74,7 +64,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Dim expr As ConstantExpression = Expression.Constant(num)  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      10  
   
@@ -85,7 +75,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Dim expr As ConstantExpression = Expression.Constant(num)  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      10D  
   
@@ -100,7 +90,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Dim block As BlockExpression = Expression.Block(Expression.Constant("test"))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `.Block() {`  
   
@@ -115,7 +105,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Block(GetType(Object), Expression.Constant("test"))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `.Block<System.Object>() {`  
   
@@ -124,7 +114,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
      `}`  
   
 ## <a name="lambdaexpression"></a>LambdaExpression  
- <xref:System.Linq.Expressions.LambdaExpression>Zobrazí se objekty, spolu s jejich typů delegátů.  
+ <xref:System.Linq.Expressions.LambdaExpression> Zobrazí se objekty, spolu s jejich typů delegátů.  
   
  Pokud výrazu lambda nemá název, je přiřazen automaticky vygenerovaným názvem, jako například `#Lambda1` nebo `#Lambda2`.  
   
@@ -137,7 +127,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `.Lambda #Lambda1<System.Func'1[System.Int32]>() {`  
   
@@ -152,7 +142,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1), "SampleLamda", Nothing)  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `.Lambda SampleLambda<System.Func'1[System.Int32]>() {`  
   
@@ -178,7 +168,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Label(target, Expression.Constant(-1)))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `.Block() {`  
   
@@ -200,7 +190,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Goto(target), Expression.Label(target))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `.Block() {`  
   
@@ -224,7 +214,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Constant(1), Expression.Constant(2))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `1 #+ 2`  
   
@@ -235,7 +225,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
     Expression.Constant(10.0), GetType(Integer))  
     ```  
   
-     `DebugView`Vlastnost  
+     `DebugView` Vlastnost  
   
      `#(System.Int32)10D`  
   

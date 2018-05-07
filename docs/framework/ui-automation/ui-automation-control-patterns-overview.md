@@ -1,27 +1,18 @@
 ---
-title: "Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní"
-ms.custom: 
+title: Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-caps.latest.revision: "34"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: e675681d1de3aa46645047da61ae8aac2ea0ba31
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b02618676a1162681c67d34a2c6f43def07893c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -29,7 +20,7 @@ ms.lasthandoff: 12/22/2017
   
  Tento přehled zavádí [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] řízení vzory. Vzory ovládacích prvků umožňují zařadit do kategorií a vystavit funkcionalitu ovládacího prvku nezávislé na typ ovládacího prvku nebo vzhledu ovládacího prvku.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]používá řízení vzory představují společné chování ovládacího prvku. Například použít vzor Invoke ovládacích prvků pro ovládací prvky, které mohou být vyvolány (např. tlačítka) a vzoru ovládacích prvků posuv pro ovládací prvky, které mají posuvníky (například seznamy, seznamy nebo pole se seznamem). Protože každý – vzor ovládacích prvků představuje samostatnou funkci, mohou být kombinovány k popisu úplnou sadu funkcí konkrétní ovládacím prvkem podporována.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] používá řízení vzory představují společné chování ovládacího prvku. Například použít vzor Invoke ovládacích prvků pro ovládací prvky, které mohou být vyvolány (např. tlačítka) a vzoru ovládacích prvků posuv pro ovládací prvky, které mají posuvníky (například seznamy, seznamy nebo pole se seznamem). Protože každý – vzor ovládacích prvků představuje samostatnou funkci, mohou být kombinovány k popisu úplnou sadu funkcí konkrétní ovládacím prvkem podporována.  
   
 > [!NOTE]
 >  Agregace ovládací prvky – vytvořené s nástroji podřízených ovládacích prvků, které poskytují [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] pro funkce vystavené nadřízený objekt – měli implementovat všechny vzory ovládacích prvků obvykle spojené s každou podřízený ovládací prvek. Tyto stejné vzory ovládacích prvků zase, nejsou nutné k implementaci pomocí podřízených ovládacích prvků.  

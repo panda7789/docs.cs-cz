@@ -1,29 +1,18 @@
 ---
-title: "Pomocí ExpressionTextBox v Návrháři vlastní aktivity"
-ms.custom: 
+title: Pomocí ExpressionTextBox v Návrháři vlastní aktivity
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f82e73e7-a256-4a4d-82b7-c0d62f4ab5e7
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 708ebe4891469572365523a10bd2ee411283e528
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ad0c29e2661c82e663fd6b68fdcd74f542ef28b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-expressiontextbox-in-a-custom-activity-designer"></a>Pomocí ExpressionTextBox v Návrháři vlastní aktivity
 Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.View.ExpressionTextBox> v Návrháři vlastní aktivity. Vlastní aktivity, `MultiAssign`, přiřadí dvou řetězcových hodnot dvě proměnné řetězce. Některé <xref:System.Activities.Presentation.View.ExpressionTextBox> k vytvoření vazby ovládacích prvků <xref:System.Activities.InArgument>s a některé vytvořit vazbu k <xref:System.Activities.OutArgument>s.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- `ArgumentToExpressionConverter` Je převaděč typů použít při vytváření vazby výrazů pro argumenty. `ConverterParameter` Musí být nastavena na `In` nebo `Out` podle potřeby. `InOut`není podporována.  
+ `ArgumentToExpressionConverter` Je převaděč typů použít při vytváření vazby výrazů pro argumenty. `ConverterParameter` Musí být nastavena na `In` nebo `Out` podle potřeby. `InOut` není podporována.  
   
  `UseLocationExpression` Atribut se používá na `OutArgument`s k určení, zda výraz by měl být výraz L-value ("levém hodnota" nebo "umístění hodnota"). Ve většině případů je výraz L-value platný identifikátor jazyka Visual Basic slouží k určení, který `OutArgument` nevrátila je název proměnné nebo argumentu.  
   
@@ -52,7 +41,7 @@ Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.V
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\ExpressionTextBox`  
   

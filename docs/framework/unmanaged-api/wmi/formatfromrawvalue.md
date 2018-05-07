@@ -1,11 +1,7 @@
 ---
-title: "Funkce FormatFromRawValue (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce FormatFromRawValue převede nezpracovaných dat výkonu do zadaného formátu."
+title: Funkce FormatFromRawValue (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce FormatFromRawValue převede nezpracovaných dat výkonu do zadaného formátu.
 ms.date: 11/21/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - FormatFromRawValue
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3daa89ec0b40bb9c08898ecd682f05f0f0ce09a8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0710b26237b350f1dfbc7d2464b7a131373604e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="formatfromrawvalue-function"></a>FormatFromRawValue – funkce
 Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu je založené na čase.   
@@ -50,7 +43,7 @@ int FormatFromRawValue (
 ## <a name="parameters"></a>Parametry
 
 `dwCounterType`  
-[v] Typ čítače. Seznam typů čítač najdete v tématu [typy čítače výkonu rozhraní WMI](https://msdn.microsoft.com/library/aa394569(v=vs.85).aspx). `dwCounterType`mohou být jakéhokoli typu čítač s výjimkou `PERF_LARGE_RAW_FRACTION` a `PERF_LARGE_RAW_BASE`. 
+[v] Typ čítače. Seznam typů čítač najdete v tématu [typy čítače výkonu rozhraní WMI](https://msdn.microsoft.com/library/aa394569(v=vs.85).aspx). `dwCounterType` mohou být jakéhokoli typu čítač s výjimkou `PERF_LARGE_RAW_FRACTION` a `PERF_LARGE_RAW_BASE`. 
 
 `dwFormat`  
 [v] Formát, do kterého se mají převést data hrubý výkon. Může být jedna z následujících hodnot:
@@ -71,11 +64,11 @@ Sloučeny pomocí operátoru OR s jedním z následujících příznaků škálo
 `pTimeBase`  
 [v] Ukazatel na základní doba, v případě potřeby pro převod formátu. Pokud není čas základní informace potřebné pro převod formátu, hodnota tohoto parametru je ignorována.
 
-`pRawValue1`[v] Ukazatel [ `PDH_RAW_COUNTER` ](https://msdn.microsoft.com/library/windows/desktop/aa373060(v=vs.85).aspx) struktura, která reprezentuje hodnotu hrubý výkon.
+`pRawValue1` [v] Ukazatel [ `PDH_RAW_COUNTER` ](https://msdn.microsoft.com/library/windows/desktop/aa373060(v=vs.85).aspx) struktura, která reprezentuje hodnotu hrubý výkon.
 
-`pRawValue2`[v] Ukazatel [ `PDH_RAW_COUNTER` ](https://msdn.microsoft.com/library/windows/desktop/aa373060(v=vs.85).aspx) struktura, která reprezentuje hodnotu druhý hrubý výkon. Pokud je druhá hodnota hrubý výkon při zpracování je nezbytné, tento parametr by měl být `null`.
+`pRawValue2` [v] Ukazatel [ `PDH_RAW_COUNTER` ](https://msdn.microsoft.com/library/windows/desktop/aa373060(v=vs.85).aspx) struktura, která reprezentuje hodnotu druhý hrubý výkon. Pokud je druhá hodnota hrubý výkon při zpracování je nezbytné, tento parametr by měl být `null`.
 
-`pFmtValue`[out] Ukazatel [ `PDH_FMT_COUNTERVALUE` ](https://msdn.microsoft.com/library/windows/desktop/aa373050(v=vs.85).aspx) struktura, která přijímá hodnota formátovaný výkonu.
+`pFmtValue` [out] Ukazatel [ `PDH_FMT_COUNTERVALUE` ](https://msdn.microsoft.com/library/windows/desktop/aa373050(v=vs.85).aspx) struktura, která přijímá hodnota formátovaný výkonu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -96,7 +89,7 @@ Tato funkce zabalí volání [FormatFromRawValue](https://msdn.microsoft.com/lib
   
  **Knihovna:** PerfCounter.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

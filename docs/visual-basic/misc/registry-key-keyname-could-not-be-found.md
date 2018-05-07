@@ -1,20 +1,14 @@
 ---
-title: "Klíč registru & č. 39; &lt;keyname&gt;& č. 39; nebyl nalezen"
+title: Klíč registru &#39; &lt;keyname&gt; &#39; nebyl nalezen
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: ca4eb74f-8303-48fc-9ea8-d792fa4c810b
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 07361a2016723bee63d32bf423d04732d848de74
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 473c92b780de34286b47d71a23831961883d8481
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="registry-key-39ltkeynamegt39-could-not-be-found"></a>Klíč registru & č. 39; &lt;keyname&gt;& č. 39; nebyl nalezen
+# <a name="registry-key-39ltkeynamegt39-could-not-be-found"></a>Klíč registru &#39; &lt;keyname&gt; &#39; nebyl nalezen
 Nelze nalézt klíč registru.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

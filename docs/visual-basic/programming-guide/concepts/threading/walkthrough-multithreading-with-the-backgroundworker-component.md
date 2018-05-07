@@ -1,22 +1,12 @@
 ---
 title: Multithreading s komponentou BackgroundWorker (Visual Basic)
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e4cd9b2a-f924-470e-a16e-50274709b40e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bb0734b4bbf3f8bf5b27305754829f1a9f29f42a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 07700aa526866729f1ba1a8d846f22ce333c356d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-visual-basic"></a>Návod: Multithreading s komponentou BackgroundWorker (Visual Basic)
 Tento návod ukazuje, jak vytvořit vícevláknové aplikace Windows Forms, která hledá textového souboru pro výskytů slova. Ukazuje:  
@@ -279,4 +269,4 @@ Tento návod ukazuje, jak vytvořit vícevláknové aplikace Windows Forms, kter
 ## <a name="see-also"></a>Viz také  
  [Dělení na vlákna (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)  
  [Návod: Vytvoření jednoduché vícevláknové komponenty v jazyce Visual Basic](http://msdn.microsoft.com/library/05693b70-3566-4d91-9f2c-c9bc4ccb3001)  
- [Postupy: přihlášení a odhlášení odběru událostí](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)
+ [Postupy: Přihlášení a odhlášení odběru událostí](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)

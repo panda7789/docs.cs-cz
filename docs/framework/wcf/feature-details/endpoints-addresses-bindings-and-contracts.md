@@ -1,33 +1,19 @@
 ---
 title: 'Koncové body: adresy, vazby a kontrakty'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - endpoints [WCF]
 - Windows Communication Foundation [WCF], endpoints
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 477c23facd846580bac698ce6e61d02e11afe430
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0909d1d10ab8932f27f7ca6cba6207d57fa4f4cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
-Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce nabízené sítěmi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce nabízené službou WCF.  
   
  Každý koncový bod se skládá ze čtyř vlastností:  
   
@@ -39,12 +25,12 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
   
 -   Sada chování, které určují místní implementace podrobnosti koncového bodu.  
   
- Toto téma popisuje tuto strukturu koncový bod a vysvětluje, jak je reprezentována v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objektový model.  
+ Toto téma popisuje tuto strukturu koncový bod a vysvětluje, jak je reprezentována v objektový model WCF.  
   
 ## <a name="the-structure-of-an-endpoint"></a>Struktura koncový bod  
  Každý koncový bod se skládá z následujících akcí:  
   
--   Adresa: Adresa jednoznačně identifikuje koncový bod a říká potenciální příjemcům služby, kde se nachází. Je zobrazena v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objektový model pomocí <xref:System.ServiceModel.EndpointAddress> třídy. <xref:System.ServiceModel.EndpointAddress> Třída obsahuje:  
+-   Adresa: Adresa jednoznačně identifikuje koncový bod a říká potenciální příjemcům služby, kde se nachází. Je zobrazena v objektový model WCF pomocí <xref:System.ServiceModel.EndpointAddress> třídy. <xref:System.ServiceModel.EndpointAddress> Třída obsahuje:  
   
     -   A <xref:System.ServiceModel.EndpointAddress.Uri%2A> vlastnosti, která představuje adresu služby.  
   
@@ -60,7 +46,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
   
     -   Požadavky na nezbytné zabezpečení (například protokol SSL nebo SOAP zabezpečení zpráv).  
   
-     Další informace najdete v tématu [vazby WCF – přehled](../../../../docs/framework/wcf/bindings-overview.md). Vazba je znázorněná [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objektový model abstraktní základní třída <xref:System.ServiceModel.Channels.Binding>. Pro většinu scénářů uživatelé mohou používat jednu z vazby poskytované systémem. Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
+     Další informace najdete v tématu [vazby WCF – přehled](../../../../docs/framework/wcf/bindings-overview.md). Vazba je reprezentována v objektový model WCF abstraktní základní třída <xref:System.ServiceModel.Channels.Binding>. Pro většinu scénářů uživatelé mohou používat jednu z vazby poskytované systémem. Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
   
 -   Kontrakty: Kontrakt popisuje, jaké funkce koncový bod vystavuje klienta. Kontrakt určuje:  
   
@@ -74,7 +60,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
   
      Další informace o definování kontraktu najdete v tématu [navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md).  
   
--   Chování: Koncový bod chování můžete použít k přizpůsobení chování místní koncový bod služby. Koncový bod chování dosáhnout účastí procesu vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]modulu runtime. Je například chování koncového bodu <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnosti, která umožňuje zadat adresu odlišnou naslouchání adresu protokolu SOAP nebo webové služby popis Language (WSDL). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
+-   Chování: Koncový bod chování můžete použít k přizpůsobení chování místní koncový bod služby. Koncový bod chování dosáhnout účastí procesu vytváření WCFruntime. Je například chování koncového bodu <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnosti, která umožňuje zadat adresu odlišnou naslouchání adresu protokolu SOAP nebo webové služby popis Language (WSDL). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
   
 ## <a name="defining-endpoints"></a>Definování koncové body  
  Zadaný koncový bod služby buď imperativní pomocí kódu nebo deklarativně pomocí konfigurace. Další informace najdete v tématu [postupy: vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) a [postupy: vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
@@ -83,7 +69,7 @@ Veškerá komunikace s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] s
  Tato část popisuje účel vazby, koncových bodů a adresy; ukazuje, jak nakonfigurovat vazbu a koncový bod; a ukazuje, jak používat `ClientVia` chování a `ListenUri` vlastnost.  
   
  [Adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)  
- Popisuje, jak jsou řešeny koncové body v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Popisuje, jak popisuje koncových bodů WCF.  
   
  [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)  
  Popisuje, jak vazby slouží k zadání přenosu, kódování a podrobnosti protokolu povinné pro klienty a služby pro komunikaci mezi sebou.  

@@ -1,13 +1,6 @@
 ---
-title: "Globální a místní transformace"
-ms.custom: 
+title: Globální a místní transformace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - transformations [Windows Forms], global
 - transformations [Windows Forms], local
 ms.assetid: b601d66d-d572-4f11-9d2e-92f0dc8893f3
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8e8d05bd0c3e76d643d56b652c8849eef1045ea8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a5a8201f0adb44347bdd42081e0263176d179321
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="global-and-local-transformations"></a>Globální a místní transformace
 Globální transformaci je transformaci, která platí pro každou položku vykreslovány pomocí danou <xref:System.Drawing.Graphics> objektu. Místní transformace spočívá v tom, transformaci, která platí pro konkrétní položky, které se mají vykreslovat.  

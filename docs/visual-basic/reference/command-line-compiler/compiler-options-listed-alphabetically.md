@@ -1,22 +1,16 @@
 ---
 title: Možnosti kompilátoru jazyka Visual Basic v abecedním pořadí
 ms.date: 04/12/2018
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6e95c52c708128267ab6dc79a1b37d21b30bac2
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: dc25ff282772cc82b8ebe5d59e729a6a48afa8f8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru jazyka Visual Basic abecední
 Visual Basic – kompilátor příkazového řádku je k dispozici jako alternativu k kompilace programů z integrované vývojové prostředí (IDE) sady Visual Studio. Následuje seznam řadí abecedně možnosti příkazového řádku kompilátoru jazyka Visual Basic.  
@@ -37,7 +31,7 @@ Visual Basic – kompilátor příkazového řádku je k dispozici jako alternat
 |[-debug](../../../visual-basic/reference/command-line-compiler/debug.md)|Vytváří ladicí informace.|  
 |[-define](../../../visual-basic/reference/command-line-compiler/define.md)|Definuje symboly pro Podmíněná kompilace.|  
 |[-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)|Určuje, zda bude sestavení zcela nebo částečně podepsáno.|  
-|[-deterministickou](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Způsobí, že kompilátor výstup sestavení jejichž binární obsah je stejný jako napříč kompilace Pokud vstupní hodnoty jsou identické.|
+|[-deterministic](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Způsobí, že kompilátor výstup sestavení jejichž binární obsah je stejný jako napříč kompilace Pokud vstupní hodnoty jsou identické.|
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Zpracuje dokumentační komentáře do souboru XML.|  
 |[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Určuje, jak by měla Visual Basic – kompilátor zprávy o chybách interní kompilátoru.|  
 |[-filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|Určuje, kde chcete-li zarovnat na části výstupní soubor.|  

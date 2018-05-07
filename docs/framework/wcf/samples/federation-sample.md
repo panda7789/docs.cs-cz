@@ -1,32 +1,18 @@
 ---
 title: Ukázka federace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58a8ab012682d5acb04b201c36d931276426ffe8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 38581c7003c30038ee1a3438caa96b7f2782a23e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="federation-sample"></a>Ukázka federace
 Tento příklad znázorňuje federované zabezpečení.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje podporu pro nasazení architektury federované zabezpečení prostřednictvím `wsFederationHttpBinding`. `wsFederationHttpBinding` Poskytuje vazbu zabezpečeným, spolehlivým a vzájemná spolupráce, který zahrnuje použití protokolu HTTP jako podkladový přenosový mechanismus pro požadavek nebo odpověď komunikace a Text/XML jako přenosový formát pro kódování. Další informace o federace v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Windows Communication Foundation (WCF) poskytuje podporu pro nasazení architektury federované zabezpečení prostřednictvím `wsFederationHttpBinding`. `wsFederationHttpBinding` Poskytuje vazbu zabezpečeným, spolehlivým a vzájemná spolupráce, který zahrnuje použití protokolu HTTP jako podkladový přenosový mechanismus pro požadavek nebo odpověď komunikace a Text/XML jako přenosový formát pro kódování. Další informace o federace v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
   
  Tento scénář se skládá ze 4 částí:  
   
@@ -126,7 +112,7 @@ Tento příklad znázorňuje federované zabezpečení.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  
   

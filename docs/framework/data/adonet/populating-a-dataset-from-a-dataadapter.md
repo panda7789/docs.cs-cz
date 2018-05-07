@@ -1,39 +1,27 @@
 ---
-title: "Naplnění datové sady z modul DataAdapter"
-ms.custom: 
+title: Naplnění datové sady z modul DataAdapter
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c0991398a28e491d381d10dea8a14ed463c67c89
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ced280be0fa14077be893c59596ed65b424172c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z modul DataAdapter
 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Je rezidentní reprezentace data, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat. `DataSet` Představuje kompletní sadu dat, který obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat, `DataSet` může obsahovat data místní aplikace a data z více zdrojů dat. Interakce s existujícími zdroji dat jsou řízeny prostřednictvím `DataAdapter`.  
   
  `SelectCommand` Vlastnost `DataAdapter` je `Command` objekt, který načte data z datového zdroje. `InsertCommand`, `UpdateCommand`, A `DeleteCommand` vlastnosti `DataAdapter` jsou `Command` objekty, které spravují aktualizace dat ve zdroji dat podle změny provedené v datech v `DataSet`. Tyto vlastnosti jsou popsané v podrobněji [aktualizace zdroje dat s DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
   
- `Fill` Metodu `DataAdapter` se používá k naplnění `DataSet` s výsledky `SelectCommand` z `DataAdapter`. `Fill`vezme jako jeho argumenty `DataSet` vyplnit a `DataTable` objekt nebo název `DataTable` pro vyplnění pomocí řádků vrácených `SelectCommand`.  
+ `Fill` Metodu `DataAdapter` se používá k naplnění `DataSet` s výsledky `SelectCommand` z `DataAdapter`. `Fill` vezme jako jeho argumenty `DataSet` vyplnit a `DataTable` objekt nebo název `DataTable` pro vyplnění pomocí řádků vrácených `SelectCommand`.  
   
 > [!NOTE]
 >  Pomocí `DataAdapter` načíst všechny tabulky trvá určitou dobu, hlavně v případě, že je velký počet řádků v tabulce. Důvodem je, že přístup k databázi, vyhledání a zpracování dat, a potom přenos dat do klienta je časově náročná. Všechny tabulky stahování do klienta zamkne taky všechny řádky na serveru. Chcete-li zvýšit výkon, můžete použít `WHERE` klauzule výrazně omezit počet řádků, je vrácen do klienta. Můžete také snížit množství dat vrácen do klienta tak, že pouze explicitně uvedete požadované sloupce v `SELECT` příkaz. Jiné dobrým řešením je načíst řádky v dávkách (například několik set řádky v čase) a další dávku načíst pouze po dokončení aktuální dávkou klienta.  
   
- `Fill` Metoda používá `DataReader` objekt implicitně vrátí názvy sloupců a typy, které se používají k vytváření tabulek v `DataSet`a data k naplnění řádky z tabulky v `DataSet`. Tabulky a sloupce jsou vytvářeny, pouze pokud už neexistují; v opačném případě `Fill` používá existující `DataSet` schématu. Typy sloupců jsou vytvořené jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů podle tabulky v [mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md). Primární klíče, které nejsou vytvořeny, pokud existují ve zdroji dat a `DataAdapter` **.**`MissingSchemaAction` je nastavena na `MissingSchemaAction` **.** `AddWithKey`. Pokud `Fill` zjistí, že primární klíč pro tabulku existuje, přepíše data `DataSet` s daty ze zdroje dat pro řádky, kde hodnoty sloupec primárního klíče shodovat s hodnotami řádku vrátí ze zdroje dat. Pokud se nenajde žádný primární klíč, připojí se data k tabulky v `DataSet`. `Fill`používá všech mapování, která mohou existovat při naplňování `DataSet` (najdete v části [DataAdapter DataTable a mapování DataColumn](../../../../docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)).  
+ `Fill` Metoda používá `DataReader` objekt implicitně vrátí názvy sloupců a typy, které se používají k vytváření tabulek v `DataSet`a data k naplnění řádky z tabulky v `DataSet`. Tabulky a sloupce jsou vytvářeny, pouze pokud už neexistují; v opačném případě `Fill` používá existující `DataSet` schématu. Typy sloupců jsou vytvořené jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů podle tabulky v [mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md). Primární klíče, které nejsou vytvořeny, pokud existují ve zdroji dat a `DataAdapter` **.**`MissingSchemaAction` je nastavena na `MissingSchemaAction` **.** `AddWithKey`. Pokud `Fill` zjistí, že primární klíč pro tabulku existuje, přepíše data `DataSet` s daty ze zdroje dat pro řádky, kde hodnoty sloupec primárního klíče shodovat s hodnotami řádku vrátí ze zdroje dat. Pokud se nenajde žádný primární klíč, připojí se data k tabulky v `DataSet`. `Fill` používá všech mapování, která mohou existovat při naplňování `DataSet` (najdete v části [DataAdapter DataTable a mapování DataColumn](../../../../docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)).  
   
 > [!NOTE]
 >  Pokud `SelectCommand` vrátí výsledky z vnějšího spojení, `DataAdapter` nenastaví `PrimaryKey` výsledná hodnota `DataTable`. Je nutné definovat `PrimaryKey` sami, abyste měli jistotu, že jsou správně přeložit duplicitní řádky. Další informace najdete v tématu [definování primárních klíčů](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
@@ -70,7 +58,7 @@ adapter.Fill(customers, "Customers");
  Pokud `DataAdapter` komunikaci sady více výsledků, dojde k několika tabulkám ve `DataSet`. V tabulkách jsou uvedeny přírůstkové výchozí název tabulky*N*, od verze "Tabulka" pro Table0. Pokud je název tabulky předat jako argument k `Fill` metoda, v tabulkách jsou uvedeny přírůstkové výchozí název TableName*N*, od verze "TableName" pro TableName0.  
   
 ## <a name="populating-a-dataset-from-multiple-dataadapters"></a>Naplnění datové sady z více DataAdapters  
- Libovolný počet `DataAdapter` objekty lze použít s `DataSet`. Každý `DataAdapter` lze použít k vyplnění jeden nebo více `DataTable` objekty a vyřešte aktualizace zpět do zdroje dat relevantní. `DataRelation`a `Constraint` objekty mohou být přidány do `DataSet` místně, což umožňuje související data ze zdrojů dat v odlišných typů. Například `DataSet` může obsahovat data z databáze Microsoft SQL Server, k databázi IBM DB2 vystavenou přes OLE DB a zdroj dat, který datové proudy XML. Jeden nebo více `DataAdapter` objekty může zpracovávat komunikaci pro každý zdroj dat.  
+ Libovolný počet `DataAdapter` objekty lze použít s `DataSet`. Každý `DataAdapter` lze použít k vyplnění jeden nebo více `DataTable` objekty a vyřešte aktualizace zpět do zdroje dat relevantní. `DataRelation` a `Constraint` objekty mohou být přidány do `DataSet` místně, což umožňuje související data ze zdrojů dat v odlišných typů. Například `DataSet` může obsahovat data z databáze Microsoft SQL Server, k databázi IBM DB2 vystavenou přes OLE DB a zdroj dat, který datové proudy XML. Jeden nebo více `DataAdapter` objekty může zpracovávat komunikaci pro každý zdroj dat.  
   
 ### <a name="example"></a>Příklad  
  Následující příklad kódu naplní seznam zákazníků z `Northwind` databáze na serveru Microsoft SQL Server a seznam objednávky z `Northwind` databáze uložené v aplikaci Microsoft Access 2000. Vyplnění tabulky souvisejí s `DataRelation`, a pak je do seznamu zákazníků se zobrazují s objednávky tohoto zákazníka. Další informace o `DataRelation` objekty, najdete v části [přidání DataRelations](../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md) a [navigace DataRelations](../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datarelations.md).  
@@ -128,10 +116,10 @@ foreach (DataRow pRow in customerOrders.Tables["Customers"].Rows)
 }  
 ```  
   
-## <a name="sql-server-decimal-type"></a>SQL Server Decimal Type  
+## <a name="sql-server-decimal-type"></a>Decimal – typ SQL serveru  
  Ve výchozím nastavení `DataSet` ukládá data pomocí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] datové typy. Pro většinu aplikací tyto poskytují pohodlný reprezentace informace o zdroji dat. Tento zápis však může způsobit problém, když je typ dat ve zdroji dat desítkový nebo číselný datový typ SQL serveru. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] `decimal` Datový typ povoluje maximálně 28 platných číslic, zatímco SQL Server `decimal` datový typ umožňuje 38 platných číslic. Pokud `SqlDataAdapter` určuje během `Fill` operace, přesnost systému SQL Server `decimal` pole je větší než 28 znaků, že aktuálnímu řádku není přidáno do `DataTable`. Místo toho `FillError` dojde k události, které umožňuje určit, zda bude ztrátu přesnosti dojít a reagují odpovídajícím způsobem. Další informace o `FillError` událostí, najdete v části [zpracování události DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md). Získat systému SQL Server `decimal` hodnotu, můžete použít také <xref:System.Data.SqlClient.SqlDataReader> objekt a volání <xref:System.Data.SqlClient.SqlDataReader.GetSqlDecimal%2A> metoda.  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]2.0 zavedená rozšířenou podporu <xref:System.Data.SqlTypes> v `DataSet`. Další informace najdete v tématu [SqlTypes a datovou sadu](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedená rozšířenou podporu <xref:System.Data.SqlTypes> v `DataSet`. Další informace najdete v tématu [SqlTypes a datovou sadu](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
   
 ## <a name="ole-db-chapters"></a>OLE DB kapitolám  
  Hierarchická sady řádků či kapitolám (typ OLE DB `DBTYPE_HCHAPTER`, typ ADO `adChapter`) lze použít k vyplnění obsah `DataSet`. Když <xref:System.Data.OleDb.OleDbDataAdapter> zaznamená sloupec nepoužívaly kapitoly během `Fill` operace, `DataTable` se vytvoří nepoužívaly kapitoly ve sloupci a tato tabulka je plná sloupců a řádků z kapitoly. V tabulce vytvořené pro nepoužívaly kapitoly sloupec nazýval pomocí názvu nadřazené tabulky a název sloupce nepoužívaly kapitoly ve tvaru "*ParentTableNameChapteredColumnName*". Pokud tabulka již existuje v `DataSet` odpovídající názvu nepoužívaly kapitoly sloupce, v aktuální tabulce, naplní se kapitoly data. Pokud je existující tabulky, který odpovídá sloupci najít v kapitole žádný sloupec, nový sloupec přidán.  
@@ -178,10 +166,10 @@ adapter.Fill(customers, "Customers");
   
 ### <a name="tablename-customers"></a>Název tabulky: zákazníků  
   
-|CustomerID|CompanyName|Objednávky|  
+|CustomerID|NázevSpolečnosti|Objednávky|  
 |----------------|-----------------|------------|  
 |ALFKI|Alfreds Futterkiste|0|  
-|ANATR|Ana Trujillo Emparedados y helados|1|  
+|ANATR|ANA Trujillo Emparedados y helados|1|  
   
 ### <a name="tablename-customersorders"></a>Název tabulky: CustomersOrders  
   

@@ -1,28 +1,14 @@
 ---
-title: "Postupy: Vytvoření objektu StackPanel"
-ms.custom: 
+title: 'Postupy: Vytvoření objektu StackPanel'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - StackPanel control [WPF], creating
 ms.assetid: e7ce65cb-720a-4bb6-95b6-286b74488a58
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9226ac10e4f221cc381b7c59179b2667e20aa757
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 30f24d8dba7c09271a5957822439af6b64e05aca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-stackpanel"></a>Postupy: Vytvoření objektu StackPanel
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>.  

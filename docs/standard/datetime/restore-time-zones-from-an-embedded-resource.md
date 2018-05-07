@@ -1,13 +1,7 @@
 ---
-title: "Postupy: obnovení časových pásem ze vloženého prostředku"
-ms.custom: 
+title: 'Postupy: obnovení časových pásem ze vloženého prostředku'
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - time zones [.NET Framework], deserializing
 - time zones [.NET Framework], restoring
 ms.assetid: 6b7b4de9-da07-47e3-8f4c-823f81798ee7
-caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: efb133d972427a9619581d0670268cba9fbd3ee6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 31dd785c419d9a8e11eb23deabd2dfa71c4d6e9c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-restore-time-zones-from-an-embedded-resource"></a>Postupy: obnovení časových pásem ze vloženého prostředku
 

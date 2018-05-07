@@ -1,24 +1,17 @@
 ---
-title: "Delegate – příkaz"
+title: Delegate – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Delegate
 helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7e79a261f74cbc7aa067af63629e31bedf65d163
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fb9d8b2c2647ba8fd3b7cee4781f1574b6679b0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
 Používá k deklaraci delegáta. Delegát je odkaz na typ, který odkazuje `Shared` metoda typu nebo metodu instance objektu. Všechny postup s odpovídajícími typy parametrů a vraťte se může použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instanci delegáta.  
@@ -59,7 +52,7 @@ Používá k deklaraci delegáta. Delegát je odkaz na typ, který odkazuje `Sha
   
  Pokud chcete zadat výrazu lambda, použijte následující syntaxi:  
   
- `Function`([`parm` Jako `type`, `parm2` jako `type2`,...])`expression`  
+ `Function` ([`parm` Jako `type`, `parm2` jako `type2`,...]) `expression`  
   
  Podpis funkce musí odpovídat typu delegáta. Další informace o výrazy lambda najdete v tématu [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
@@ -71,11 +64,11 @@ Používá k deklaraci delegáta. Delegát je odkaz na typ, který odkazuje `Sha
  [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/delegate-statement_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [AddressOf – operátor](../../../visual-basic/language-reference/operators/addressof-operator.md)  
- [Z](../../../visual-basic/language-reference/statements/of-clause.md)  
+ [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [z](../../../visual-basic/language-reference/statements/of-clause.md)  
  [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
- [Postupy: použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)  
  [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
- [Na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+ [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

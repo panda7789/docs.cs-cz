@@ -1,22 +1,12 @@
 ---
-title: "Postupy: načtení kolekci atributů (technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: načtení kolekci atributů (technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a07e9645-b45b-403b-b698-f652f904c7d2
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 934559b5c27d243930c191dd3d601fbf8c5beb65
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fdb7f236339de242a887f3040e33b8d24eb114f4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>Postupy: načtení kolekci atributů (technologie LINQ to XML) (Visual Basic)
 Toto téma představuje <xref:System.Xml.Linq.XElement.Attributes%2A> metoda. Tato metoda načte atributy elementu.  

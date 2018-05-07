@@ -1,11 +1,6 @@
 ---
 title: -win32icon
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - win32icon compiler option [Visual Basic]
 - -win32icon compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: aecaab01-9353-46c5-941c-6edabd4eff92
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95b2e2b4542f2e396a136f6a3d9baeb3e0c037a3
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 045e621f0104c4c958d77d2443c1524b33410b7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-win32icon"></a>-win32icon
 Vloží soubor .ico ve výstupním souboru. Tento soubor .ico, který představuje výstupní soubor v **Průzkumníka souborů**.  
@@ -51,5 +46,5 @@ vbc -win32icon:rf.ico in.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

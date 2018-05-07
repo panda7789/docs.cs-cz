@@ -1,20 +1,13 @@
 ---
 title: Řazené kolekce členů – průvodce v C#
 description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v jazyce C#
-keywords: Rozhraní .NET, rozhraní .NET core, C#
-author: BillWagner
-ms-author: wiwagn
 ms.date: 11/23/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 1d1fc450503dc905e6b260a2b984e3ce2315fd45
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a5240c47dce695759c6e9b76b506077772b58aeb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="c-tuple-types"></a>Typy řazené kolekce členů C# #
 

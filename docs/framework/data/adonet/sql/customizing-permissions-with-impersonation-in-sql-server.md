@@ -1,24 +1,12 @@
 ---
-title: "Přizpůsobení oprávnění s zosobnění v systému SQL Server"
-ms.custom: 
+title: Přizpůsobení oprávnění s zosobnění v systému SQL Server
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7175542d8a9441d9f0d3eeb05acc67cf12d6a270
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ac2c6805a9ab49d95f68e56306d7d9fb8aab2a2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění s zosobnění v systému SQL Server
 Mnoho aplikací pomocí uložené procedury pro přístup k datům, spoléhat na vlastnictví řetězení omezit přístup k základní tabulky. Můžete udělit oprávnění pro spouštění na uložené procedury, odvolání nebo odmítnout oprávnění u základní tabulky. SQL Server oprávnění volajícího nekontroluje, pokud se uložené procedury a tabulky mít stejného vlastníka. Ale vlastnictví řetězení nefunguje Pokud objekty mají různé vlastníci, nebo v případě dynamických SQL.  
@@ -74,7 +62,7 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
   
 -   VLASTNÍK. Postup spuštění jako vlastník provede v rámci postupu vlastníka. Pokud se ve schématu vlastníkem vytvoří postup `dbo` nebo vlastník databáze postup bude vykonán neomezená oprávnění.  
   
--   SELF. Provádění jako vlastní spustí v kontextu zabezpečení Tvůrce uložené procedury. Jde o ekvivalent spuštění jako zadaného uživatele, pokud zadaný uživatel osobou vytvoření či změna postupu.  
+-   SÁM SEBOU. Provádění jako vlastní spustí v kontextu zabezpečení Tvůrce uložené procedury. Jde o ekvivalent spuštění jako zadaného uživatele, pokud zadaný uživatel osobou vytvoření či změna postupu.  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících zdrojích informací.  

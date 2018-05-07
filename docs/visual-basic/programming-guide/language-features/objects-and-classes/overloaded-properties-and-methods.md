@@ -1,10 +1,6 @@
 ---
 title: Přetížené vlastnosti a metody (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - properties [Visual Basic], overloading
 - methods [Visual Basic], overloading
@@ -16,13 +12,11 @@ helpviewer_keywords:
 - method overloading
 - Overloads keyword [Visual Basic], overloaded members
 ms.assetid: b686fb97-e7d7-4001-afaa-6650cba08f0d
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 96d5ef2462f5312baa5269865977596035a254d5
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c0aa7c4a13e049045743044a98020a1aab2cf1a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overloaded-properties-and-methods-visual-basic"></a>Přetížené vlastnosti a metody (Visual Basic)
 

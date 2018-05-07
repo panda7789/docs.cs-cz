@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.PortSharing.PortSharingDuplicatedPipe
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cc53c0a0-62e0-4295-be0b-a1df6966ecea
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e5502cb3b3c40ea6cd9765922d05710e8881a9bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3d5e8b25fd7d52cfb157e45ed164e97066d37774
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelportsharingportsharingduplicatedpipe"></a>System.ServiceModel.PortSharing.PortSharingDuplicatedPipe
 System.ServiceModel.PortSharing.PortSharingDuplicatedPipe  

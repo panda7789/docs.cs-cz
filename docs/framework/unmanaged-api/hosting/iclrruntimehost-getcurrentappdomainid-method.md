@@ -1,14 +1,6 @@
 ---
-title: "ICLRRuntimeHost::GetCurrentAppDomainId – metoda"
-ms.custom: 
+title: ICLRRuntimeHost::GetCurrentAppDomainId – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRRuntimeHost.GetCurrentAppDomainId
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 33800475-7815-4976-8aca-a1038761a2ef
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5e4e682ae71512e24d91ea7e4e12a8a2dd70f1de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbe6ac3c9f03de2224f933a7e44325f578ded48b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrruntimehostgetcurrentappdomainid-method"></a>ICLRRuntimeHost::GetCurrentAppDomainId – metoda
 Získá identifikátor číselné <xref:System.AppDomain> , právě probíhá.  
@@ -54,7 +42,7 @@ HRESULT GetCurrentAppDomainId(
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetCurrentAppDomainId`úspěšně vrácena.|  
+|S_OK|`GetCurrentAppDomainId` úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
@@ -71,7 +59,7 @@ HRESULT GetCurrentAppDomainId(
   
  **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.AppDomain>  

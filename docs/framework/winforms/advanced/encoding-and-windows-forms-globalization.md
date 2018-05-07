@@ -1,14 +1,6 @@
 ---
 title: Kódování a globalizace Windows Forms
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ListView control [Windows Forms], lack of Unicode support
 - DateTimePicker control [Windows Forms], lack of Unicode support
@@ -27,17 +19,11 @@ helpviewer_keywords:
 - localization [Windows Forms], character sets
 - globalization [Windows Forms], character sets
 ms.assetid: 22e8965d-a712-42b3-8167-3ee346bd70f9
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 16e54e1915370549124c202bce6ad09c4aca1a40
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e610b4fc5506043835377bf9f5750550d8aec694
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="encoding-and-windows-forms-globalization"></a>Kódování a globalizace Windows Forms
 Aplikace Windows Forms jsou zcela kódování Unicode, což znamená, že každý znak je reprezentována jedinečné číslo, bez ohledu na to, jakou platformu, program nebo jazyk. Další informace o kódování Unicode, najdete v článku [Unicode consortium webu](http://www.unicode.org).  

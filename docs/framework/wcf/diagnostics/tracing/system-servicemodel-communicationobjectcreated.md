@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.CommunicationObjectCreated
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4d0d4ab3-270c-408d-b48a-b53b02cb9263
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 60ef0261465c2264e67b6a25401dddf31ddeabea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d37a8a6201ecc47597140c5052f5590686cff567
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelcommunicationobjectcreated"></a>System.ServiceModel.CommunicationObjectCreated
 System.ServiceModel.CommunicationObjectCreated  

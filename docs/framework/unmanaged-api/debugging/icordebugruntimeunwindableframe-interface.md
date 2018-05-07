@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugRuntimeUnwindableFrame – rozhraní"
-ms.custom: 
+title: ICorDebugRuntimeUnwindableFrame – rozhraní
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugUnwindableFrame
 api_location:
@@ -22,23 +14,19 @@ helpviewer_keywords:
 ms.assetid: cd6a3982-6ed3-4909-808d-a66055e813e0
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 80b4212691784d88c92235a5c5c65acaee165201
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e2edc64cd9067ed89ae0e309c6a5630319ce835
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugruntimeunwindableframe-interface"></a>ICorDebugRuntimeUnwindableFrame – rozhraní
 Poskytuje podporu pro nespravované metody, které vyžadují modul CLR k uvolnění rámce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugRuntimeUnwindableFrame`je specializovanou verzi rozhraní ICorDebugFrame. Používá se nespravované metody, které vyžadují modulu runtime unwind rámce v aktuální zásobníku. Existující unwinding konvence nefungují, protože nepoužívají kompilována kódu. Když ladicí program zobrazí unwindable rámečku, měla by používat [icordebugstackwalk::Next –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md) metodu unwind ji, ale měli provést kontroly sám sebe. Když obdrží ladicí program `ICorDebugRuntimeUnwindableFrame`, může zavolat [icordebugstackwalk::getcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md) metoda pro načtení kontextu rámce.  
+ `ICorDebugRuntimeUnwindableFrame` je specializovanou verzi rozhraní ICorDebugFrame. Používá se nespravované metody, které vyžadují modulu runtime unwind rámce v aktuální zásobníku. Existující unwinding konvence nefungují, protože nepoužívají kompilována kódu. Když ladicí program zobrazí unwindable rámečku, měla by používat [icordebugstackwalk::Next –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md) metodu unwind ji, ale měli provést kontroly sám sebe. Když obdrží ladicí program `ICorDebugRuntimeUnwindableFrame`, může zavolat [icordebugstackwalk::getcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md) metoda pro načtení kontextu rámce.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -47,7 +35,7 @@ Poskytuje podporu pro nespravované metody, které vyžadují modul CLR k uvoln�
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  

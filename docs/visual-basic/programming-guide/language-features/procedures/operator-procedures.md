@@ -1,13 +1,6 @@
 ---
 title: Procedury operátoru (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
 - procedures [Visual Basic], operator
@@ -18,14 +11,11 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8fba5180da6498d280fa4192937c39d3e33168e8
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 63a16163900f1b4dc7dadef6a227f56b89f4e820
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
 Řada Visual Basic příkazů, které definují chování standardní operátor je procedury operátora (například `*`, `<>`, nebo `And`) na třídu nebo strukturu jste definovali. To se označuje taky jako *přetížení operátoru*.  
@@ -53,7 +43,7 @@ ms.lasthandoff: 04/26/2018
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe deklarace procedury operátora vypadá takto:  
   
- `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*   
+ `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*  
   
  `' Statements of the operator procedure.`  
   
@@ -77,7 +67,7 @@ ms.lasthandoff: 04/26/2018
   
  `Dim testStruct As`  *%{structurename/*  
   
- `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*   `10`  
+ `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*  `10`  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
  Následující strukturu ukládá hodnotu číslo se znaménkem 128-bit jako základních horní a nejnižší částí. Definuje, `+` operátor přidat dva `veryLong` hodnoty a generovat výsledném `veryLong` hodnotu.  

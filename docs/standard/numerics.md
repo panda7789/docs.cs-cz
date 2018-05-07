@@ -1,13 +1,7 @@
 ---
 title: Číslovky v architektuře .NET Framework
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - SIMD
 - System.Numerics.Vectors
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 074ed60a3cbc1949eea4a8d866cdb3bba7c0f196
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: a2a795fb52c123840c1ba7b82f77d6745feba89b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="numerics-in-the-net-framework"></a>Číslovky v architektuře .NET Framework
 Rozhraní .NET Framework podporuje standardní číselné integrální a s plovoucí desetinnou čárkou primitiv, a také <xref:System.Numerics.BigInteger>, typ integrální bez teoretické horní nebo dolní mez <xref:System.Numerics.Complex>, typ, který představuje komplexní čísla a sadu SIMD povoleno Vector typy v <xref:System.Numerics> oboru názvů.  

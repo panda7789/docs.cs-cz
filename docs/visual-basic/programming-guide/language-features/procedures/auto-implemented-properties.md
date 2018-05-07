@@ -1,12 +1,6 @@
 ---
-title: "Automaticky implementované vlastnosti (Visual Basic)"
-ms.custom: 
+title: Automaticky implementované vlastnosti (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.AutoProperty
 - vb.AutoImplementedProperty
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - properties [Visual Basic], auto-implemented
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 507d91f6176eb8bc3888be6f9843b5ffdd28a08f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bc83163a024bd50d3e256b4eb49861669f8c02c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Automaticky implementované vlastnosti (Visual Basic)
 *Automaticky implementované vlastnosti* vám umožní rychle určit vlastnost třídy bez nutnosti psaní kódu pro `Get` a `Set` vlastnost. Při psaní kódu automaticky implementované vlastnosti, Visual Basic – kompilátor automaticky vytvoří privátní pole pro uložení proměnné vlastnost kromě vytváření přidruženého `Get` a `Set` postupy.  
@@ -103,8 +94,8 @@ End Class
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)  
- [Postupy: deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)  
- [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)  
- [Jen pro čtení](../../../../visual-basic/language-reference/modifiers/readonly.md)  
+ [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)  
+ [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)  
+ [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)  
  [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)  
  [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

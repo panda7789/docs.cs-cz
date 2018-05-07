@@ -1,28 +1,16 @@
 ---
-title: "Postupy: použití mailto: odesílání e-mailu z stránku"
-ms.custom: 
+title: 'Postupy: použití mailto: odesílání e-mailu z stránku'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - 'sending mail from pages with mailto:'
 - mailto:, sending mail from pages
 - mail [WPF], sending from pages
 ms.assetid: b64b9518-df17-4232-94f2-455a4f77ee48
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6d7d218c0b77b2dc1c251e08dbc957d22785d948
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17686aa6c27928b71786230a4229c8909ddeb934
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-mailto-to-send-mail-from-a-page"></a>Postupy: použití mailto: odesílání e-mailu z stránku
 Tento příklad ukazuje, jak používat <xref:System.Windows.Documents.Hyperlink> ve spojení s **mailto:**[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)].  

@@ -1,13 +1,7 @@
 ---
-title: "Postupy: Přístup k hardwarovým šifrovacím zařízením"
-ms.custom: 
+title: 'Postupy: Přístup k hardwarovým šifrovacím zařízením'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - hardware encryption
 - CspParameters
 ms.assetid: b0e734df-6eb4-4b16-b48c-6f0fe82d5f17
-caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d9670c4a205e7700289a2e0d955e264c50a0e341
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c0d5b72e9067a5a6304d88d1e09716088637cbfd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-hardware-encryption-devices"></a>Postupy: Přístup k hardwarovým šifrovacím zařízením
 Můžete použít <xref:System.Security.Cryptography.CspParameters> třída pro přístup k hardwarovým šifrovacím zařízením. Tuto třídu můžete použít například k integraci vaší aplikace pomocí čipové karty, hardwaru generátoru náhodných čísel nebo hardwarové implementaci konkrétního šifrovacího algoritmu.  

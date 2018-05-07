@@ -1,12 +1,6 @@
 ---
-title: "Pomocí soketu asynchronní serveru"
-ms.custom: 
+title: Pomocí soketu asynchronní serveru
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,16 +17,14 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 128628815f99ecb0e3d89530211c8607d17d3fb9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ad52291f5f5f40a65d2f9ec1c07bfb3a3f39fc01
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Pomocí soketu asynchronní serveru
 Asynchronní serveru sockets používat asynchronní programovací model rozhraní .NET Framework ke zpracování žádosti o služby sítě. <xref:System.Net.Sockets.Socket> Třída dodržovat standardní rozhraní .NET Framework asynchronního vzoru pro pojmenovávání; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metody.  

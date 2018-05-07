@@ -1,22 +1,12 @@
 ---
-title: "Přidání prvky, atributy a uzly na strom XML (Visual Basic)"
-ms.custom: 
+title: Přidání prvky, atributy a uzly na strom XML (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 710397e2a2a200dc5129ed42ca34f25617a071c5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 86d28f5974e30a9b7f1a1e830cd40c3cd916e8ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Přidání prvky, atributy a uzly na strom XML (Visual Basic)
 Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat na stávající strom XML.  

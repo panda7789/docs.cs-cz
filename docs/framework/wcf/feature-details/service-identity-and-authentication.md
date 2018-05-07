@@ -1,31 +1,17 @@
 ---
 title: Identita a ověřování služby
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-caps.latest.revision: 32
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5bd550b7408e9db00daf7793cd0a7f1261e21ccf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 21184098f90be3b64cfccd5ab98a1824cee50e48
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové služby popis Language (WSDL). Tato hodnota, rozšíří do libovolného klienta se používá k ověřování. Jakmile klient inicializuje komunikaci pro koncový bod a služby se ověří na klienta, klient porovná hodnotu identitu koncového bodu se proces ověřování koncového bodu vrácená hodnota. Pokud se shodují, klient jistotu, že nekontaktoval koncový bod očekávanou službu. To funguje jako ochrana proti *phishing* tak, že zabrání se přesměruje na koncový bod hostitelem škodlivý služba klienta.  
@@ -35,7 +21,7 @@ Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové sl
 > [!NOTE]
 >  Použijete-li LanMan NT (NTLM) pro ověřování, identita služby není zkontrolovat, protože v rámci protokolu NTLM, klient nelze provést ověření serveru. NTLM se používá, když počítače jsou součástí pracovní skupiny systému Windows, nebo když se používá starší verzi systému Windows, který nepodporuje ověřování pomocí protokolu Kerberos.  
   
- Když klient zahájí zabezpečený kanál pro odeslání zprávy do služby, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] infrastruktury ověřuje službu a pouze odešle zprávu, pokud odpovídá identitě zadané v adresa koncového bodu, klient použije identitu služby.  
+ Když klient zahájí zabezpečený kanál k odeslání zprávy do služby nad ním, ověřuje službu infrastrukturu Windows Communication Foundation (WCF) a pouze odešle zprávu, pokud identita služby odpovídá identita zadaná v koncovém bodě Adresa, kterou klient používá.  
   
  Zpracování identity se skládá z těchto fází:  
   
@@ -45,7 +31,7 @@ Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové sl
   
  Identita, zpracování na straně klienta je obdobou ověřování klientů na službu. Služba Zabezpečené nespustí kód, dokud po ověření pověření klienta. Podobně klient neodesílá podle zprávy a pokuste se službu až po ověření přihlašovacích údajů služby, která se označuje předem z metadat služby.  
   
- <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost <xref:System.ServiceModel.EndpointAddress> třída reprezentuje identitu služby nazvaná klientem. Publikuje službu <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Při spuštění klienta Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod služby vygenerované konfigurace obsahuje hodnotu služby <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktury (Pokud je nakonfigurovaná s zabezpečení) ověří, zda má služba identita zadaná.  
+ <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost <xref:System.ServiceModel.EndpointAddress> třída reprezentuje identitu služby nazvaná klientem. Publikuje službu <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Při spuštění klienta Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod služby vygenerované konfigurace obsahuje hodnotu služby <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost. WCF infrastruktury (Pokud je nakonfigurovaná s zabezpečení) ověří, zda má služba identita zadaná.  
   
 > [!IMPORTANT]
 >  Metadata obsahuje Očekávaná identita služby, proto se doporučuje vystavit metadata služby prostřednictvím zabezpečené prostředky, například tak, že vytvoříte koncový bod HTTPS pro službu. Další informace najdete v tématu [postupy: zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
@@ -75,7 +61,7 @@ Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové sl
   
   
 ## <a name="setting-identity-programmatically"></a>Nastavení Identity prostřednictvím kódu programu  
- Služby není nutné explicitně zadat svou identitu, protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] automaticky určuje ho. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vám umožní určit identity na koncový bod, pokud je to nutné. Následující kód přidá nový koncový bod služby s konkrétní identity DNS.  
+ Služby není nutné explicitně zadat svou identitu, protože WCF automaticky určuje. Však WCF umožňuje zadat identity na koncový bod, pokud je to nutné. Následující kód přidá nový koncový bod služby s konkrétní identity DNS.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
@@ -99,13 +85,13 @@ Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové sl
   
  Pokud chcete ověřit pomocí zprávy nebo transportní vrstvy SSL (Secure Sockets) pro ověřování pomocí certifikátů X.509 je nakonfigurovaný kanál, jsou platné tyto hodnoty identity:  
   
--   DNS. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zajišťuje, že má certifikát zadaný během metody handshake SSL obsahuje DNS nebo `CommonName` (CN) atribut rovna hodnotě zadané v identity DNS na klientovi. Všimněte si, že tyto kontroly se provádějí kromě k určení platnost certifikátu serveru. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ověří, že certifikát serveru je vydán důvěryhodnou kořenovou autoritou.  
+-   DNS. WCF zajišťuje, že má certifikát zadaný během metody handshake SSL obsahuje DNS nebo `CommonName` (CN) atribut rovna hodnotě zadané v identity DNS na klientovi. Všimněte si, že tyto kontroly se provádějí kromě k určení platnost certifikátu serveru. Ve výchozím nastavení WCF ověří, že certifikát serveru je vydán důvěryhodnou kořenovou autoritou.  
   
--   Certifikát. Během metody handshake SSL [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zajistí, že vzdálený koncový bod poskytuje přesnou certifikát hodnota zadaná v identitě.  
+-   Certifikát. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou certifikát hodnota zadaná v identitě.  
   
 -   Odkaz na certifikát. Stejné jako certifikát.  
   
--   RSA. Během metody handshake SSL [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zajistí, že vzdálený koncový bod poskytuje přesnou RSA klíč zadaný v identitě.  
+-   RSA. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou RSA klíč zadaný v identitě.  
   
  Pokud službu ověřuje zpráva nebo transportní SSL pomocí pověření systému Windows pro ověřování a vyjedná přihlašovacích údajů, jsou platné tyto hodnoty identity:  
   

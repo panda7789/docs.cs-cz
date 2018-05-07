@@ -1,12 +1,6 @@
 ---
-title: "Transformace dat pomocí LINQ (C#)"
-ms.custom: 
+title: Transformace dat pomocí LINQ (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - LINQ [C#], data transformations
 - source elements [LINQ in C#]
@@ -16,17 +10,14 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-caps.latest.revision: "17"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0633e348c762879caa4e3f72a3662722b3894e4c
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c165f78c53cec0417d39320580b812ff01fef68b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
-[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]není jenom o načtení dat. Je také výkonný nástroj pro převod data. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence jako vstup a upravit v mnoho způsobů, jak vytvořit nové pořadí výstup. Můžete upravit pořadí samotné beze změny samotné prvky řazení a seskupování. Ale možná nejúčinnějších funkci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzule. Například můžete provádět následující úlohy:  
+[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není jenom o načtení dat. Je také výkonný nástroj pro převod data. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence jako vstup a upravit v mnoho způsobů, jak vytvořit nové pořadí výstup. Můžete upravit pořadí samotné beze změny samotné prvky řazení a seskupování. Ale možná nejúčinnějších funkci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzule. Například můžete provádět následující úlohy:  
   
 -   Sloučit více vstupních sekvencí do jediného výstupu pořadí, které má nového typu.  
   
@@ -69,7 +60,7 @@ ms.lasthandoff: 12/09/2017
  Další informace najdete v tématu [inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md) a [anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>Transformace objektů v paměti do jazyka XML  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]dotazy usnadňují transformace dat mezi v paměti datové struktury, databází SQL, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datových sad a XML datové proudy nebo dokumenty. Následující příklad transformuje objekty v strukturu dat v paměti do elementů XML.  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy usnadňují transformace dat mezi v paměti datové struktury, databází SQL, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datových sad a XML datové proudy nebo dokumenty. Následující příklad transformuje objekty v strukturu dat v paměti do elementů XML.  
   
  [!code-csharp[CsLINQGettingStarted#9](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_3.cs)]  
   
@@ -107,8 +98,8 @@ ms.lasthandoff: 12/09/2017
   
 ## <a name="see-also"></a>Viz také  
  [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
- [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
- [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+ [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
  [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
  [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Select – klauzule](../../../../csharp/language-reference/keywords/select-clause.md)
+ [select – klauzule](../../../../csharp/language-reference/keywords/select-clause.md)

@@ -1,29 +1,17 @@
 ---
-title: "Uživatelský vstup ve Windows Forms"
-ms.custom: 
+title: Uživatelský vstup ve Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - keyboard input [Windows Forms], using in Windows Forms
 - Windows Forms, user input
 - mouse input [Windows Forms], using in Windows Forms
 - keyboards [Windows Forms], keyboard input
 ms.assetid: 1486075f-1e06-4c9e-82c6-f948331db6d6
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7a9face3d38f7f64e3bda9d5dbe9ecfb7f730ee8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2a618dae8d5f2f5ea6a6581fff2758fe8419f511
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-input-in-windows-forms"></a>Uživatelský vstup ve Windows Forms
 Windows Forms zahrnuje uživatelského vstupu modelu na základě událostí, které jsou vyvolány při zpracování související zpráv systému Windows. Témata v této části poskytují informace o myši a klávesnice vstupu uživatele, včetně příkladů kódu, které ukazují, jak provádět určité úlohy.  

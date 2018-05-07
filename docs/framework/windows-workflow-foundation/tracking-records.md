@@ -1,23 +1,12 @@
 ---
-title: "Sledování záznamů"
-ms.custom: 
+title: Sledování záznamů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6c871f019179c091fc022be0bf03ad84fbe66dc1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b07175943f85b61024030c1e0251e24d1eb35c86
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tracking-records"></a>Sledování záznamů
 Modul runtime pracovního postupu je instrumentována pro vydávání sledování záznamů sledovat provádění instance pracovního postupu.  
@@ -60,15 +49,15 @@ Modul runtime pracovního postupu je instrumentována pro vydávání sledován�
   
  Například může být ke jednoduchou <xref:System.Activities.Statements.Sequence> aktivity, která obsahuje <xref:System.Activities.Statements.WriteLine> operaci s sledování záznamy vygenerované v následujícím pořadí:  
   
-1.  <xref:System.Activities.Tracking.WorkflowInstanceRecord>Označuje, že se spouští pracovní postup.  
+1.  <xref:System.Activities.Tracking.WorkflowInstanceRecord> Označuje, že se spouští pracovní postup.  
   
-2.  <xref:System.Activities.Tracking.ActivityScheduledRecord>Označuje, že bylo naplánováno aktivitu. V takovém případě je <xref:System.Activities.Statements.Sequence> aktivity.  
+2.  <xref:System.Activities.Tracking.ActivityScheduledRecord> Označuje, že bylo naplánováno aktivitu. V takovém případě je <xref:System.Activities.Statements.Sequence> aktivity.  
   
-3.  <xref:System.Activities.Tracking.ActivityScheduledRecord>představuje <xref:System.Activities.Statements.WriteLine> aktivity.  
+3.  <xref:System.Activities.Tracking.ActivityScheduledRecord> představuje <xref:System.Activities.Statements.WriteLine> aktivity.  
   
 4.  Existují dva <xref:System.Activities.Tracking.ActivityStateRecord> záznamy, které představují dvě aktivity dokončení.  
   
-5.  <xref:System.Activities.Tracking.WorkflowInstanceRecord>Označuje, že je dokončení pracovního postupu.  
+5.  <xref:System.Activities.Tracking.WorkflowInstanceRecord> Označuje, že je dokončení pracovního postupu.  
   
 ## <a name="see-also"></a>Viz také  
  [Windows Server App Fabric monitorování](http://go.microsoft.com/fwlink/?LinkId=201273)  

@@ -1,13 +1,6 @@
 ---
-title: "x:XData – vnitřní typ jazyka XAML"
-ms.custom: 
+title: x:XData – vnitřní typ jazyka XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - x:XData
 - XData
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - XData in XAML [XAML Services]
 - x:XData XAML directive element [XAML Services]
 ms.assetid: 7ce209c2-621b-4977-b643-565f7e663534
-caps.latest.revision: "17"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ec46d0363e5b10d3bd3bd3f9c8f4d3694abc1c8d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3a16379fd6104342529723bf6d0bc9fb4762cf92
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData – vnitřní typ jazyka XAML
-Umožňuje umístění XML datové ostrůvky v produkční XAML. Elementy XML v rámci `x:XData` by neměla být zpracována XAML procesorů, jako by byly součástí výchozí funguje oboru názvů jazyka XAML nebo jakékoli jiné oboru názvů jazyka XAML. `x:XData`může obsahovat libovolný ve správném formátu XML.  
+Umožňuje umístění XML datové ostrůvky v produkční XAML. Elementy XML v rámci `x:XData` by neměla být zpracována XAML procesorů, jako by byly součástí výchozí funguje oboru názvů jazyka XAML nebo jakékoli jiné oboru názvů jazyka XAML. `x:XData` může obsahovat libovolný ve správném formátu XML.  
   
 ## <a name="xaml-object-element-usage"></a>Použití elementu objektu XAML  
   

@@ -1,29 +1,15 @@
 ---
 title: Nepodporované scénáře
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-caps.latest.revision: 43
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cfeca11f7d78e8aa2d201238e3a485576b3e0c82
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5cc4e65ce4f93a352b651203757a484a9d90a85d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
-Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje rozhraní SSPI nebo Kerberos ověřovacích protokolů a proto [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spuštěna služba pomocí ověřování systému Windows na této platformě nepodporuje. Další mechanismy ověřování, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP nebo HTTPS jsou podporovány při spuštění [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pod Windows XP Home Edition.  
+Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé scénáře konkrétní zabezpečení. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spuštěna služba pomocí ověřování systému Windows na této platformě. Další mechanismy ověřování, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP nebo HTTPS jsou podporovány při spuštění WCF pod Windows XP Home Edition.  
   
 ## <a name="impersonation-scenarios"></a>Zosobnění scénáře  
   
@@ -31,7 +17,7 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
  Pokud klienta WCF provede asynchronní volání služby WCF pomocí ověřování systému Windows v zosobnění, může dojít ověřování pomocí identity procesu klientů namísto zosobněnou identitou.  
   
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Windows XP a zabezpečené kontextu tokenu souboru Cookie povoleno  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje zosobnění a <xref:System.InvalidOperationException> se vyvolá, když existují následující podmínky:  
+ WCF nepodporuje zosobnění a <xref:System.InvalidOperationException> se vyvolá, když existují následující podmínky:  
   
 -   Operační systém je [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
@@ -49,7 +35,7 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
 >  Požadavky na předchozí jsou konkrétní. Například <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> vytvoří element vazby, který má za následek identitu systému Windows, ale nevytváří SCT. Proto můžete použít je s `Required` možnost [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
 ### <a name="possible-aspnet-conflict"></a>Možný konflikt ASP.NET  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] můžete i povolit nebo zakázat zosobnění. Když [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] hostitele [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konflikt aplikace, mohou existovat mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nastavení konfigurace. V případě konfliktu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nastavení má přednost před, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, v takovém případě [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] přednost má nastavení zosobnění.  
+ WCF a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] můžete i povolit nebo zakázat zosobnění. Když [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace WCF je hostitelem konflikt mohou existovat mezi WCF a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nastavení konfigurace. Nastavení WCF v případě konfliktu, má přednost před, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, v takovém případě [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] přednost má nastavení zosobnění.  
   
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>Zosobnění může při načítání sestavení  
  Pokud zosobněného kontextu nemá přístupová práva k načtení sestavení a pokud je první modul CLR (CLR) se pokouší o načtení sestavení pro tuto doménu AppDomain <xref:System.AppDomain> ukládá do mezipaměti selhání. Následné pokusy o načtení tohoto sestavení (nebo sestavení) nezdaří, i po vrácení zosobnění a to i v případě vrácený kontextu má přístupová práva k načtení sestavení. Je to proto, že modul CLR nebude znovu pokoušet zatížení po změně kontextu uživatele. Je nutné restartovat doménu aplikace pro obnovení po selhání.  
@@ -63,13 +49,13 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
 ## <a name="cryptography"></a>Kryptografie  
   
 ### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>Algoritmus SHA-256 se podporuje jenom pro použití symetrického klíče  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje celou řadu podpisu a šifrování vytvoření algoritmy ověřování algoritmem digest, které můžete zadat v sadě algoritmus vazby poskytované systémem. Pro lepší zabezpečení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje algoritmy Secure Hash Algorithm (SHA) 2, konkrétně SHA-256, pro vytvoření hodnoty hash podpisu digest. Tato verze podporuje SHA-256 pouze pro použití symetrického klíče, jako jsou klíče protokolu Kerberos, a kde se certifikát X.509 nepoužívá k podepsání zprávy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje RSA podpisy (používá se v certifikátech X.509) pomocí algoritmu hash SHA-256 z důvodu aktuálního nedostatečná podpora pro RSA-SHA256 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
+ WCF podporuje celou řadu šifrování a podpis digest vytvoření algoritmy, které můžete zadat v sadě algoritmus vazby poskytované systémem. Pro lepší zabezpečení podporuje WCF Secure Hash Algorithm (SHA) 2 algoritmy, konkrétně SHA-256, pro vytvoření hodnoty hash podpisu digest. Tato verze podporuje SHA-256 pouze pro použití symetrického klíče, jako jsou klíče protokolu Kerberos, a kde se certifikát X.509 nepoužívá k podepsání zprávy. WCF nepodporuje RSA podpisy (používá se v certifikátech X.509) pomocí algoritmu hash SHA-256 z důvodu aktuálního nedostatečná podpora pro RSA-SHA256 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
   
 ### <a name="fips-compliant-sha-256-hashes-not-supported"></a>Kompatibilní se standardem FIPS hodnoty hash SHA-256 nepodporují  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje algoritmus SHA-256 kompatibilní se standardem FIPS hodnoty hash, takže algoritmus sady, které používají algoritmus SHA-256 nepodporují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v systémech, kdy je potřeba použít algoritmy splňující standard FIPS.  
+ WCF nepodporuje hodnoty hash SHA-256 kompatibilní se standardem FIPS, takže algoritmus sady, které používají algoritmus SHA-256 nepodporují WCF v systémech, kdy je potřeba použít algoritmy splňující standard FIPS.  
   
 ### <a name="fips-compliant-algorithms-may-fail-if-registry-is-edited"></a>Kompatibilní se standardem FIPS algoritmy může selhat v případě úpravy registru  
- Můžete povolit nebo zakázat zpracování standardů FIPS (Federal Information) - algoritmus kompatibilní s použitím místní zabezpečení nastavení Microsoft Management Console (MMC) snap - v. Můžete taky přejít na nastavení v registru. Upozorňujeme však, který [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepodporuje použití obnovte nastavení registru. Pokud je hodnota nastavena na jinou hodnotu než 1 nebo 0, nekonzistentní výsledky může proběhnout mezi modulu CLR a operační systém.  
+ Můžete povolit nebo zakázat zpracování standardů FIPS (Federal Information) - algoritmus kompatibilní s použitím místní zabezpečení nastavení Microsoft Management Console (MMC) snap - v. Můžete taky přejít na nastavení v registru. Upozorňujeme však, že WCF nepodporuje pomocí klíče registru obnovte nastavení. Pokud je hodnota nastavena na jinou hodnotu než 1 nebo 0, nekonzistentní výsledky může proběhnout mezi modulu CLR a operační systém.  
   
 ### <a name="fips-compliant-aes-encryption-limitation"></a>Omezení šifrování AES kompatibilní se standardem FIPS  
  Šifrování AES kompatibilní s FIPS v duplexní zpětná volání v úrovni zosobnění identifikace nefunguje.  
@@ -86,7 +72,7 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
 -   Použití `certutil` příkazu z příkazového řádku pro dotazování certifikáty. Další informace najdete v tématu [Certutil úlohy pro řešení problémů s certifikáty](http://go.microsoft.com/fwlink/?LinkId=120056).  
   
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>Zpráva zabezpečení nezdaří, pokud pomocí zosobnění technologie ASP.NET a kompatibilitu s technologií ASP.NET se vyžaduje  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] protože zabraňují ověřování klientů před tím, nejsou podporovány následující kombinace nastavení:  
+ WCF nepodporuje následující kombinace nastavení, protože zabraňují ověření klienta, ze které se vyskytují:  
   
 -   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Je povoleno zosobnění. K tomu je potřeba v souboru Web.config nastavení `impersonate` atribut <`identity`> elementu, který chcete `true`.  
   
@@ -94,7 +80,7 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
   
 -   Režim zabezpečení zpráv se používá.  
   
- Řešení je k vypnutí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility. Nebo, pokud [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je vyžadován režimu kompatibility, zakažte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce zosobnění a použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-místo toho zadat zosobnění. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Řešení je k vypnutí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility. Nebo, pokud [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] je vyžadován režimu kompatibility, zakažte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zosobnění funkci a místo toho použijte zadaný WCF zosobnění. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="ipv6-literal-address-failure"></a>Selhání literálu adres IPv6  
  Požadavky na zabezpečení úspěšná, když klient a služba jsou na stejném počítači, a literálu adresy IPv6 se používají pro službu.  
@@ -102,7 +88,7 @@ Z různých důvodů [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nep
  Literál IPv6 řeší pracovní, pokud klienta a služby jsou na různých počítačích.  
   
 ## <a name="wsdl-retrieval-failures-with-federated-trust"></a>Selhání načtení WSDL pomocí federovaného vztahu důvěryhodnosti  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyžaduje přesně jeden dokument WSDL pro každý uzel v řetězu federovaný vztah důvěryhodnosti. Dejte pozor, abyste nastavit smyčku při zadávání koncové body. Jedním ze způsobů, ve kterém mohou vyplývat smyčky je pomocí dvou nebo více odkazů ve stejném dokumentu WSDL a WSDL stahování řetězy federovaný vztah důvěryhodnosti. Běžný scénář, který může vytvořit tento problém je federované služby, kde jsou serverem tokenu zabezpečení a službě obsaženy uvnitř stejné ServiceHost.  
+ WCF vyžaduje přesně jeden dokument WSDL pro každý uzel v řetězu federovaný vztah důvěryhodnosti. Dejte pozor, abyste nastavit smyčku při zadávání koncové body. Jedním ze způsobů, ve kterém mohou vyplývat smyčky je pomocí dvou nebo více odkazů ve stejném dokumentu WSDL a WSDL stahování řetězy federovaný vztah důvěryhodnosti. Běžný scénář, který může vytvořit tento problém je federované služby, kde jsou serverem tokenu zabezpečení a službě obsaženy uvnitř stejné ServiceHost.  
   
  Příkladem takové situaci je služba s následující tři adresy koncových bodů:  
   

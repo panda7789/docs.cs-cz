@@ -1,28 +1,19 @@
 ---
-title: "Metody & č. 39; System.Nullable (Of T) & č. 39; nelze použít jako operandy & č. 39; AddressOf & č. 39; operátor"
+title: Metody &#39;System.Nullable (Of T)&#39; nelze používat jako operandy &#39;AddressOf&#39; – operátor
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc32126
 - bc32126
 helpviewer_keywords:
 - BC32126
 ms.assetid: 2325668b-e2ad-40ee-a1ec-30450236c20d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ce0e9bc6abd71f22e3f6c3486ef40493e74d820f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3a3e4fc033f47fb6a72076dff79f1eece8d01a30
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="methods-of-39systemnullableof-t39-cannot-be-used-as-operands-of-the-39addressof39-operator"></a>Metody & č. 39; System.Nullable (Of T) & č. 39; nelze použít jako operandy & č. 39; AddressOf & č. 39; operátor
+# <a name="methods-of-39systemnullableof-t39-cannot-be-used-as-operands-of-the-39addressof39-operator"></a>Metody &#39;System.Nullable (Of T)&#39; nelze používat jako operandy &#39;AddressOf&#39; – operátor
 Příkaz používá `AddressOf` operátor s operandem, který reprezentuje proceduru z <xref:System.Nullable%601> struktura.  
   
  **ID chyby:** BC32126  
@@ -71,6 +62,6 @@ End Module
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Nullable%601>  
- [AddressOf – operátor](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)  
  [Typy hodnot s povolenou hodnotou Null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)

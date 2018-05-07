@@ -1,12 +1,6 @@
 ---
-title: "Úrovně přístupu v jazyce Visual Basic"
-ms.custom: 
+title: Úrovně přístupu v jazyce Visual Basic
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - members [Visual Basic], accessing in Visual Basic
 - Friend access modifier
@@ -19,14 +13,11 @@ helpviewer_keywords:
 - Private access modifier
 - declared elements [Visual Basic], access level
 ms.assetid: 6e06c1ab-fd78-47f0-83a8-1152780b5e1a
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 87e43ac7e813cece1179bdaf24c86fa62adcb438
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6f8fda62e468e3735e3ae36afdebe440a8e4bc04
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="access-levels-in-visual-basic"></a>Úrovně přístupu v jazyce Visual Basic
 *Úroveň přístupu* deklarované elementu je v rozsahu možnost k němu přístup, to znamená, jaký kód má oprávnění číst nebo zapisovat do něj. Ten je daný nejen jak deklarovat elementu samotného, ale také úroveň přístupu tohoto kontejneru elementu. Kód, který nemůže získat přístup k elementu s obsahem. nemůžete použít žádnou z jeho prvky obsahují, i ty deklarován jako `Public`. Například `Public` v proměnné `Private` struktura je přístupná z uvnitř třídu, která obsahuje strukturu, ale nikoli z mimo třídy.  
@@ -90,13 +81,13 @@ Private numberForMeOnly As Integer
 |`Private`|Kontext deklarace:<br /><br /> Kód v typu, který deklaruje, že privátní element, včetně kódu v rámci omezením typů, můžete přístup k elementu|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Členové struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Členské proměnné<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáty|Modul<br /><br /> Třída<br /><br /> Struktura|  
   
 ## <a name="see-also"></a>Viz také  
- [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md)  
- [Statické](../../../../visual-basic/language-reference/modifiers/static.md)  
+ [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Static](../../../../visual-basic/language-reference/modifiers/static.md)  
  [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
  [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- [Deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
  [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
  [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Postupy: řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)  
+ [Postupy: Řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)  
  [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
  [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

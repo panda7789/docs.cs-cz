@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugCode::GetFunction – metoda"
-ms.custom: 
+title: ICorDebugCode::GetFunction – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugCode.GetFunction
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: c568b737-fdb2-4816-accd-051f5ab760f1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d05d5d7172a43ebaa04155fb42c2711eaf1ac085
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8d0e7f20be3f18e49dcc1b986460d5da0c3d7777
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugcodegetfunction-method"></a>ICorDebugCode::GetFunction – metoda
 Získá "ICorDebugFunction" přidružené k této "ICorDebugCode".  
@@ -51,7 +39,7 @@ HRESULT GetFunction (
  [out] Ukazatel na adresu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugCode`a `ICorDebugFunction` udržovat relaci 1: 1.  
+ `ICorDebugCode` a `ICorDebugFunction` udržovat relaci 1: 1.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -60,7 +48,7 @@ HRESULT GetFunction (
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  

@@ -1,17 +1,12 @@
 ---
 title: 'Výrazy shody (F #)'
 description: 'Zjistěte, jak výrazu shody F # poskytuje větvení ovládací prvek, který je založena na porovnávání výrazu sadu vzory.'
-author: cartermp
-ms.author: phcart
 ms.date: 04/19/2018
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: f6930f782384464f0d44b205ea77cbaf43898213
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 22cc4b7a87a60d8a5dcbe05ac5abec5560a37516
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="match-expressions"></a>Výrazy shody
 

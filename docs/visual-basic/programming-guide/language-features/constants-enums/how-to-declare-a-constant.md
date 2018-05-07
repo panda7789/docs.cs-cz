@@ -1,13 +1,6 @@
 ---
 title: 'Postupy: Deklarace konstanty (Visual Basic)'
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.constant
 helpviewer_keywords:
@@ -30,14 +23,11 @@ helpviewer_keywords:
 - module-level constants and variables
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 554f659e060087228fb43efd8b9d06103e21e980
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ce45e4df7f74cd68bde0fb2adba10197a11edb1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>Postupy: Deklarace konstanty (Visual Basic)
 Můžete použít `Const` příkaz deklarace konstanty a nastavení jeho hodnoty. Deklarováním konstanta, přiřaďte k hodnotě nějaký výstižný název. Jakmile je deklarovaná konstanta, nelze změnit ani přiřazena nová hodnota.  
@@ -75,7 +65,7 @@ Můžete použít `Const` příkaz deklarace konstanty a nastavení jeho hodnoty
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Const – příkaz](../../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)  
  [Datové typy konstanty a literálu](constant-and-literal-data-types.md)  
  [Přehled konstant](constants-overview.md) [postupy: deklarace konstanty](how-to-declare-a-constant.md) [uživatelem definované konstanty](user-defined-constants.md) [datové typy konstanty a literálu](constant-and-literal-data-types.md) [postup: skupiny Souvisejících hodnot konstant](how-to-group-related-constant-values-together.md) [přehled výčtů](enumerations-overview.md) [postupy: deklarace výčtů](how-to-declare-enumerations.md) [postupy: odkazování na člena výčtu](how-to-refer-to-an-enumeration-member.md) [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md) [postupy: iterace výčet](how-to-iterate-through-an-enumeration.md) [postupy: určení řetězce spojeného s hodnotou výčtu](how-to-determine-the-string-associated-with-an-enumeration-value.md) [Kdy použít výčet](when-to-use-an-enumeration.md)
 
@@ -83,5 +73,5 @@ Můžete použít `Const` příkaz deklarace konstanty a nastavení jeho hodnoty
  [Přehled konstant](constants-overview.md)  
  [Postupy: deklarace výčtů](how-to-declare-enumerations.md)  
  [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md)  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

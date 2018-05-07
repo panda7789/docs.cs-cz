@@ -1,12 +1,6 @@
 ---
-title: "Postupy: nastavení výchozích zásad založené na čase mezipaměti pro aplikaci"
-ms.custom: 
+title: 'Postupy: nastavení výchozích zásad založené na čase mezipaměti pro aplikaci'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +9,17 @@ helpviewer_keywords:
 - cache [.NET Framework], time-based policies
 - default time-based cache policy
 ms.assetid: 6bfce066-a2e7-4add-a05e-85c12ec9f07f
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 1d5166090a0682b71f74565e666c96ddadb7c6c1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 021a13b9124cf54712643e33cbf0ca77ec828b27
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a>Postupy: nastavení výchozích zásad založené na čase mezipaměti pro aplikaci
-Výchozí zásady založené na čase mezipaměti umožňuje aplikaci tak, aby měl své mezipaměti chování definované hlavičky odeslané s uložené v mezipaměti prostředků a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 [http://www.ietf.org](http://www.ietf.org/). To je vhodné mezipaměti chování pro většinu aplikací.  
+Výchozí zásady založené na čase mezipaměti umožňuje aplikaci tak, aby měl své mezipaměti chování definované hlavičky odeslané s uložené v mezipaměti prostředků a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 [ http://www.ietf.org ](http://www.ietf.org/). To je vhodné mezipaměti chování pro většinu aplikací.  
   
 ### <a name="to-set-the-default-automatic-policy-for-an-application"></a>Chcete-li nastavit automatické výchozí zásady pro aplikace  
   

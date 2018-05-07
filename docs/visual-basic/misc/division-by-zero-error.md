@@ -1,21 +1,14 @@
 ---
-title: "Chyba dělení nulou (Visual Basic)"
+title: Chyba dělení nulou (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID11
 ms.assetid: 7dc22e29-8baa-4d82-a1a6-2de64ba9b25d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f16b57c31941a818aa9c01740113de66b5f01f66
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1de26cdbb933bff6564740c3ebe55b3b8d343728
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="division-by-zero-visual-basic-error"></a>Chyba dělení nulou (Visual Basic)
 Hodnota výrazu použité jako dělitel je nula.  

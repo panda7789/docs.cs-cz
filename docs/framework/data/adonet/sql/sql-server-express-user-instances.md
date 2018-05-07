@@ -1,27 +1,15 @@
 ---
-title: "Instance systému SQL Server Express uživatele"
-ms.custom: 
+title: Instance systému SQL Server Express uživatele
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4b8b795454ab038b9e992c5e1187a0c4dcb46c76
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0af929de17a29d497ce6cf6c8cb055d416ab8761
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-server-express-user-instances"></a>Instance systému SQL Server Express uživatele
 Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je k dispozici pouze při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelskou instanci je samostatnou instanci SQL serveru Express databázový stroj, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích pro připojení a připojení k databázím SQL Server Express. Každá instance běží v kontextu zabezpečení jednotlivé uživatele, na jednu instanci každého uživatele zvlášť.  
@@ -54,11 +42,11 @@ sp_configure 'user instances enabled','0'
   
 -   `Data Source` – Klíčové slovo odkazuje nadřazená instance systému SQL Server Express, která generuje uživatelské instance. Je výchozí instance. \sqlexpress.  
   
--   `Integrated Security`je nastavena na `true`. Ověřování systému Windows se pokud chcete připojit k uživatelské instanci, je požadovaná; Přihlášení serveru SQL nejsou podporovány.  
+-   `Integrated Security` je nastavena na `true`. Ověřování systému Windows se pokud chcete připojit k uživatelské instanci, je požadovaná; Přihlášení serveru SQL nejsou podporovány.  
   
 -   `User Instance` Je nastaven na `true`, který vyvolá uživatelskou instanci. (Výchozí hodnota je `false`.)  
   
--   `AttachDbFileName` Klíčové slovo připojovacího řetězce se používá k připojení primární soubor databáze (MDF), které musí obsahovat úplnou cestu. `AttachDbFileName`také odpovídá "rozšířené vlastnosti" a "počáteční název souboru" klíče v rámci <xref:System.Data.SqlClient.SqlConnection> připojovací řetězec.  
+-   `AttachDbFileName` Klíčové slovo připojovacího řetězce se používá k připojení primární soubor databáze (MDF), které musí obsahovat úplnou cestu. `AttachDbFileName` také odpovídá "rozšířené vlastnosti" a "počáteční název souboru" klíče v rámci <xref:System.Data.SqlClient.SqlConnection> připojovací řetězec.  
   
 -   `|DataDirectory|` Náhradní řetězec v kanálu symboly odkazuje na adresář dat aplikace otevření připojení a poskytuje relativní cestu, která určuje umístění souborů .mdf a .ldf databáze a protokolu. Pokud chcete vyhledat tyto soubory jinde, musíte zadat úplnou cestu k souborům.  
   
@@ -71,8 +59,8 @@ Initial Catalog=InstanceDB;
 > [!NOTE]
 >  Můžete také <xref:System.Data.SqlClient.SqlConnectionStringBuilder> <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> vlastnosti, které chcete vytvořit připojovací řetězec na dobu běhu.  
   
-### <a name="using-the-124datadirectory124-substitution-string"></a>Pomocí &#124; DataDirectory &#124; Náhradní řetězec  
- `AttachDbFileName`byla rozšířena v ADO.NET 2.0 se zavedením `|DataDirectory|` (uzavřený v kanálu symboly) náhradní řetězec. `DataDirectory`se používá ve spojení s `AttachDbFileName` udávajících relativní cestu k souboru dat umožňuje vývojářům vytvářet připojovací řetězce, které jsou založeny na relativní cestu ke zdroji dat namísto zapotřebí zadat úplnou cestu.  
+### <a name="using-the-124datadirectory124-substitution-string"></a>Pomocí &#124;DataDirectory&#124; náhradní řetězec  
+ `AttachDbFileName` byla rozšířena v ADO.NET 2.0 se zavedením `|DataDirectory|` (uzavřený v kanálu symboly) náhradní řetězec. `DataDirectory` se používá ve spojení s `AttachDbFileName` udávajících relativní cestu k souboru dat umožňuje vývojářům vytvářet připojovací řetězce, které jsou založeny na relativní cestu ke zdroji dat namísto zapotřebí zadat úplnou cestu.  
   
  Fyzickému umístění, do které `DataDirectory` odkazuje na závisí na typu aplikace. V tomto příkladu souboru Northwind.mdf připojí se nachází ve složce \app_data aplikace.  
   
@@ -88,7 +76,7 @@ Initial Catalog=Northwind;
  Pokud připojovací řetězec má nesprávně naformátovaný náhradní řetězec <xref:System.ArgumentException> bude vyvolána.  
   
 > [!NOTE]
->  <xref:System.Data.SqlClient>Přeloží náhradní řetězce do úplné cesty proti systému souborů v místním počítači. Proto vzdálený server, HTTP a UNC se nepodporují názvy cest. Po otevření připojení, pokud server není umístěný v místním počítači, je vyvolána výjimka.  
+>  <xref:System.Data.SqlClient> Přeloží náhradní řetězce do úplné cesty proti systému souborů v místním počítači. Proto vzdálený server, HTTP a UNC se nepodporují názvy cest. Po otevření připojení, pokud server není umístěný v místním počítači, je vyvolána výjimka.  
   
  Když <xref:System.Data.SqlClient.SqlConnection> je otevřít, ho přesměruje z výchozí instance systému SQL Server Express na spuštění initiated instance spuštěna pod účtem volajícího.  
   
