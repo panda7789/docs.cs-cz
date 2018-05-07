@@ -1,22 +1,12 @@
 ---
-title: "Postupy: načtení kolekci elementů (technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: načtení kolekci elementů (technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2269f9de-8fb9-4666-b8a1-a4e754fa6a81
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a3d8cc558191b1ad672660e0d9ada4c4653cd1a7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7ebc33ec8d1901ecb795f63b2fd9812d1acba347
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-visual-basic"></a>Postupy: načtení kolekci elementů (technologie LINQ to XML) (Visual Basic)
 Toto téma ukazuje <xref:System.Xml.Linq.XContainer.Elements%2A> metoda. Tato metoda načte kolekci podřízených elementů elementu.  

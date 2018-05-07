@@ -1,22 +1,12 @@
 ---
-title: "Ukázkový soubor XML: Testování konfigurace v Namespace3"
-ms.custom: 
+title: 'Ukázkový soubor XML: Testování konfigurace v Namespace3'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: aff02614-30ee-45e1-bc0f-d64b193d20b8
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 58e0adcad36b42b0dc994a0c878ebd4e069186ca
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 2a572bb4d2618bdd6ef002389703ea63ee2ed21b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sample-xml-file-test-configuration-in-a-namespace"></a>Ukázkový soubor XML: Testování konfigurace v Namespace
 Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Toto je test konfiguračního souboru. XML je v oboru názvů.  
@@ -66,4 +56,4 @@ Následující soubor XML se používá v různých příklady v [!INCLUDE[sqlte
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Dokumenty XML ukázkové (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+ [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

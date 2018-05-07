@@ -1,26 +1,17 @@
 ---
-title: "Postupy: Vytváření popisků příkazů (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Vytváření popisků příkazů (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - colons (:)
 - statements [Visual Basic], labels
 - ': separator character'
 - Visual Basic code, labeling statements
 ms.assetid: 38f1ff43-2054-42cb-963b-1998e60c6ed4
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 190ec9fc2392e6e4adae9b2b612edd69d73cedfd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: df368bdba73ca35dd70bdd2f4e88cc10af894b5a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-label-statements-visual-basic"></a>Postupy: Vytváření popisků příkazů (Visual Basic)
 Blok příkazu jsou tvořeny řádků kódu oddělené dvojtečkou. Řádky kódu před sebou identifikační řetězec nebo celé číslo, které jsou označeny jako *s názvem bez přípony*. Příkaz popisky slouží k označení řádku kódu pro jeho rozpoznání pro použití s příkazy, jako `On Error Goto`.  
@@ -45,4 +36,4 @@ Blok příkazu jsou tvořeny řádků kódu oddělené dvojtečkou. Řádky kód
 ## <a name="see-also"></a>Viz také  
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
  [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- [Struktura programu a pravidla týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+ [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)

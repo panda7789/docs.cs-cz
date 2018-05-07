@@ -1,22 +1,12 @@
 ---
-title: "Postupy: tvoří řetěz volání metod osy (technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: tvoří řetěz volání metod osy (technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e4e22942-39bd-460f-b3c0-9f09e53d3aa9
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 39579d08d339ed8964520936d28ee289de5fb15d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b90cd757429639483f11427e2747c7dd3db9e07b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>Postupy: tvoří řetěz volání metod osy (technologie LINQ to XML) (Visual Basic)
 Volání metody osy a pak volání některá z rozšíření metoda OS je běžný vzor, který budete používat v kódu.  
@@ -49,7 +39,7 @@ Next
 <Name>Jessica Arnold</Name>  
 ```  
   
- Toto funguje, protože jeden z implementace `Elements` osy je jako metody rozšíření na <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XContainer>. <xref:System.Xml.Linq.XElement>odvozená z <xref:System.Xml.Linq.XContainer>, takže můžete volat <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metodu výsledky volání <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> metoda.  
+ Toto funguje, protože jeden z implementace `Elements` osy je jako metody rozšíření na <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XContainer>. <xref:System.Xml.Linq.XElement> odvozená z <xref:System.Xml.Linq.XContainer>, takže můžete volat <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metodu výsledky volání <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> metoda.  
   
 ## <a name="example"></a>Příklad  
  V některých případech můžete obnovit všechny elementy při hloubce určitý element když existuje může nebo nemusí být použité nadřazených. Například v následujícím dokumentu, můžete chtít načíst všechny `ConfigParameter` prvky, které jsou podřízené objekty `Customer` elementu, ale ne `ConfigParameter` tedy podřízenou `Root` elementu.  

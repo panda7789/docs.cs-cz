@@ -1,21 +1,16 @@
 ---
 title: '@ (Určení souboru odezvy) (Visual Basic)'
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - '@ (Specify Response File) compiler option [Visual Basic]'
 ms.assetid: a6847eaa-e5f9-4303-9421-45b55484b9ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af66000208dee0896792892a52dc6acdf5cb1e37
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 4ad4201dcc094364899984e13c85f2f43a6467ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-specify-response-file-visual-basic"></a>@ (Určení souboru odezvy) (Visual Basic)
 Určuje soubor, který obsahuje – možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.  
@@ -67,6 +62,6 @@ vbc @file1.rsp
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

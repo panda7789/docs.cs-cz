@@ -1,18 +1,12 @@
 ---
-title: "Technologie LINQ to XML pro uživatele XPath (Visual Basic)"
+title: Technologie LINQ to XML pro uživatele XPath (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 0e64911c-a7cc-4c20-b927-ca99078b5656
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bb0666ee1ae5626a4721ea597a53889e1acf8b0f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e4a84c373a4b355297db130c64ca3a1df5726c5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-for-xpath-users-visual-basic"></a>Technologie LINQ to XML pro uživatele XPath (Visual Basic)
 
@@ -45,4 +39,4 @@ Témata zobrazit počet výrazech XPath a jejich [!INCLUDE[sqltecxlinq](~/includ
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.XPath?displayProperty=nameWithType>  
  [Dotazování stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)  
- [Zpracování kódu XML dat pomocí jazyka XPath datový Model](../../../../standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
+ [Zpracování dat XML pomocí modelu dat XPath](../../../../standard/data/xml/process-xml-data-using-the-xpath-data-model.md)

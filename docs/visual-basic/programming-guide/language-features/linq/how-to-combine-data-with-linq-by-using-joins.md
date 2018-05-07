@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], joins
 - joins [LINQ in Visual Basic]
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 432be646ce4353fd4627a34f363e7562f6181e92
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f0279cc13e938b6f7853ef11fee1ef046f192316
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
 Visual Basic poskytuje `Join` a `Group Join` dotaz klauzule k vám umožní sloučit obsah na základě běžných hodnot mezi kolekce více kolekcí. Tyto hodnoty se označují jako *klíč* hodnoty. Vývojáři, kteří znají relační databáze koncepty rozpozná `Join` klauzule jako vnitřního spojení a `Group Join` klauzule jako prakticky LEFT OUTER JOIN.  
@@ -90,9 +81,9 @@ Visual Basic poskytuje `Join` a `Group Join` dotaz klauzule k vám umožní slou
 ## <a name="see-also"></a>Viz také  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
  [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [JOIN – klauzule](../../../../visual-basic/language-reference/queries/join-clause.md)  
- [Group Join – klauzule](../../../../visual-basic/language-reference/queries/group-join-clause.md)  
- [From – klauzule](../../../../visual-basic/language-reference/queries/from-clause.md)  
- [Kde – klauzule](../../../../visual-basic/language-reference/queries/where-clause.md)  
+ [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)  
+ [Klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)  
  [Dotazy](../../../../visual-basic/language-reference/queries/queries.md)  
  [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)

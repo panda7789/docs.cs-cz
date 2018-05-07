@@ -1,18 +1,12 @@
 ---
-title: "Cesta v registru zadané nezačíná název neplatný hive"
+title: Cesta v registru zadané nezačíná název neplatný hive
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: afb1a03b-4516-450b-aab1-827a93f9e99d
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 88bd789cb604f1f3239d3f4ba747d1794f140669
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 391ba85d944e301568d3b5973d6dab705bb9e783
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specified-registry-path-does-not-start-with-a-valid-hive-name"></a>Cesta v registru zadané nezačíná název neplatný hive
 Cesta zadaná registru nezačíná název neplatný hive. Neplatný hive názvů:  

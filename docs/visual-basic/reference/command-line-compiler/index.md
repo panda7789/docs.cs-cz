@@ -1,10 +1,6 @@
 ---
 title: Visual Basic – kompilátor příkazového řádku
 ms.date: 02/20/2018
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - compilers [Visual Basic], Visual Basic options
 - Visual Basic compiler
@@ -14,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 6b57c444-50c7-4b88-8f59-ed65cff5e05c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1a2f03a62488b746b623b7ead94c122b40178a97
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 1dd00fca2f2b24386773ac4868763cfb868e6b37
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-basic-command-line-compiler"></a>Visual Basic – kompilátor příkazového řádku
 

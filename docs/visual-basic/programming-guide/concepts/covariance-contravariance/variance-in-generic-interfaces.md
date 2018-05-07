@@ -1,39 +1,29 @@
 ---
-title: "Odchylky obecných rozhraní (Visual Basic)"
-ms.custom: 
+title: Odchylky obecných rozhraní (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cf4096d0-4bb3-45a9-9a6b-f01e29a60333
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d05ccdc97efd5dd193bbbe0d15dd227ec71910d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c18f014897ace71e437bd733ff6fcd1d4d8810dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="variance-in-generic-interfaces-visual-basic"></a>Odchylky obecných rozhraní (Visual Basic)
 Rozhraní .NET framework 4 zavedly odchylku podporu pro několik existujících obecných rozhraní. Podpora odchylku umožňuje implicitní převod tříd, které implementují tato rozhraní. Následující rozhraní jsou nyní variant:  
   
--   <xref:System.Collections.Generic.IEnumerable%601>(T je kovariant)  
+-   <xref:System.Collections.Generic.IEnumerable%601> (T je kovariant)  
   
--   <xref:System.Collections.Generic.IEnumerator%601>(T je kovariant)  
+-   <xref:System.Collections.Generic.IEnumerator%601> (T je kovariant)  
   
--   <xref:System.Linq.IQueryable%601>(T je kovariant)  
+-   <xref:System.Linq.IQueryable%601> (T je kovariant)  
   
--   <xref:System.Linq.IGrouping%602>(`TKey` a `TElement` jsou kovariantní)  
+-   <xref:System.Linq.IGrouping%602> (`TKey` a `TElement` jsou kovariantní)  
   
--   <xref:System.Collections.Generic.IComparer%601>(T je kontravariant)  
+-   <xref:System.Collections.Generic.IComparer%601> (T je kontravariant)  
   
--   <xref:System.Collections.Generic.IEqualityComparer%601>(T je kontravariant)  
+-   <xref:System.Collections.Generic.IEqualityComparer%601> (T je kontravariant)  
   
--   <xref:System.IComparable%601>(T je kontravariant)  
+-   <xref:System.IComparable%601> (T je kontravariant)  
   
  Kovariance umožňuje metodu tak, aby měl více odvozené návratový typ než definované parametr obecného typu rozhraní. Pro ilustraci funkci kovariance, zvažte tyto obecná rozhraní: `IEnumerable(Of Object)` a `IEnumerable(Of String)`. `IEnumerable(Of String)` Rozhraní nedědí `IEnumerable(Of Object)` rozhraní. Ale `String` typ dědit vlastnosti `Object` typ a v některých případech můžete chtít přiřazovat objekty z těchto rozhraní k sobě navzájem. To je znázorněno v následujícím příkladu kódu.  
   
