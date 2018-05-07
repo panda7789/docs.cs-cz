@@ -1,21 +1,14 @@
 ---
-title: "Tento systém neobsahuje podporu pro tradiční čínština národní prostředí"
+title: Tento systém neobsahuje podporu pro tradiční čínština národní prostředí
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrArgument_TCNotSupported
 ms.assetid: 95bace92-c7b9-4641-b71f-c088ddb418c9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fd292284fa1e620b16d4d61e6d5a326fb89b38cd
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 121e77069004025a471b542555fabb74e2ac9601
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="this-system-does-not-contain-support-for-the-traditional-chinese-locale"></a>Tento systém neobsahuje podporu pro tradiční čínština národní prostředí
 Jste se pokusili použít `VbStrConv.TraditionalChinese` – člen výčtu, ale váš systém nepodporuje tradiční čínština národní prostředí.  

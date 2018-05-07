@@ -1,22 +1,12 @@
 ---
-title: "Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)"
-ms.custom: 
+title: Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 916577107bd65559aed71dc9bb2921969a117e90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 74f0c1c4653709497cb264aac18b49f4fee4eefa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pokud nechcete čekat na dokončení. Pomocí následujících příkladech v tomto tématu, můžete přidat tlačítko zrušení k aplikaci, která stahuje obsah jeden web nebo seznam webů.  
@@ -26,7 +16,7 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
 > [!NOTE]
 >  Pro spuštění příkladů, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalovaný ve vašem počítači.  
   
-##  <a name="BKMK_CancelaTask"></a>Zrušení úlohy  
+##  <a name="BKMK_CancelaTask"></a> Zrušení úlohy  
  V prvním příkladu přidruží **zrušit** tlačítka s jeden stahování. Pokud si zvolíte tlačítko, zatímco aplikace je stahování obsahu, stahování je zrušeno.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
@@ -144,7 +134,7 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
     Download canceled.  
     ```  
   
-##  <a name="BKMK_CancelaListofTasks"></a>Zrušit seznam úloh  
+##  <a name="BKMK_CancelaListofTasks"></a> Zrušit seznam úloh  
  Můžete rozšířit předchozí příklad zrušit celou řadu úloh tím, že přidružíte stejné `CancellationTokenSource` instance s každý úkol. Pokud se rozhodnete **zrušit** tlačítko Zrušit všechny úlohy, které ještě nejsou úplné.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
@@ -256,7 +246,7 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
     Downloads canceled.  
     ```  
   
-##  <a name="BKMK_CompleteExamples"></a>Dokončit příklady  
+##  <a name="BKMK_CompleteExamples"></a> Dokončit příklady  
  Kód pro každou z předchozích příkladech v následujících částech. Všimněte si, že je nutné přidat odkaz pro <xref:System.Net.Http>.  
   
  Si můžete stáhnout z projektů [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046).  

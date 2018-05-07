@@ -1,13 +1,6 @@
 ---
 title: 'Postupy: Definování parametru pro proceduru (Visual Basic)'
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - procedure parameters [Visual Basic], defining data types for
 - procedures [Visual Basic], parameters
@@ -15,14 +8,11 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - procedure parameters [Visual Basic], defining
 ms.assetid: 7962808d-407e-4e84-984e-43e9857c53c9
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: eb4bac9208c03fd18e1904f58b247824d2c215da
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b058f593b8672da449dac250947563c75c8386bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Postupy: Definování parametru pro proceduru (Visual Basic)
 A *parametr* umožňuje volací kód, který předat hodnotu k postupu při jeho volání. Každý parametr pro proceduru deklarovat stejným způsobem jako deklarovat proměnnou, zadat jeho název a datový typ. Můžete také zadat mechanismus předávání, a zda se jedná o volitelný parametr.  

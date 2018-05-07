@@ -1,23 +1,16 @@
 ---
-title: "& č. 39; ReDim & č. 39; lze změnit pouze dimenze nejvíce vpravo"
+title: '&#39;ReDim&#39; lze změnit pouze dimenze nejvíce vpravo'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrArray_TypeMismatch
 ms.assetid: d53cf41b-7a7a-466c-a29a-920d99698fa9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 752e0e54c48b3b348a477787e5e911f1b1777667
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: efb98df13a7e3e378347b30b6fc00b90030ec194
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="39redim39-can-only-change-the-right-most-dimension"></a>& č. 39; ReDim & č. 39; lze změnit pouze dimenze nejvíce vpravo
+# <a name="39redim39-can-only-change-the-right-most-dimension"></a>&#39;ReDim&#39; lze změnit pouze dimenze nejvíce vpravo
 A `ReDim` příkaz pokusil použít `Preserve` – klíčové slovo Chcete-li změnit dimenze pole, které není poslední dimenze. Při použití `Preserve`, můžete změnit velikost pouze poslední dimenze pole. Pro všechny další dimenze musíte zadat stejnou velikost jako existující pole.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

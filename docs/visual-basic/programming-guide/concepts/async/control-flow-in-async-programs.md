@@ -1,22 +1,12 @@
 ---
-title: "Řízení toku v asynchronních programech (Visual Basic)"
-ms.custom: 
+title: Řízení toku v asynchronních programech (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 28d5d087b48e4c816cbe3a84966346be6cda772e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2de9c00e5094a1c40e64bdf5215157867372be8c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>Řízení toku v asynchronních programech (Visual Basic)
 Můžete napsat a udržovat asynchronní programy snadněji pomocí `Async` a `Await` klíčová slova. Ale výsledky může ať vás překvapí Pokud nevíte, jak funguje vašeho programu. Toto téma trasování, které toku řízení prostřednictvím programu jednoduché asynchronní tak, aby zobrazovalo při řízení přechází z jedné metody na jiný a jaké informace se přenáší pokaždé, když.  
@@ -30,7 +20,7 @@ Můžete napsat a udržovat asynchronní programy snadněji pomocí `Async` a `A
   
 -   `startButton_Click`, který volá `AccessTheWebAsync` a zobrazí výsledek.  
   
--   `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync`používá asynchronní <xref:System.Net.Http.HttpClient> metody <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, pro stažení obsahu.  
+-   `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync` používá asynchronní <xref:System.Net.Http.HttpClient> metody <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, pro stažení obsahu.  
   
  Číslované zobrazení řádky se zobrazí v strategické body v rámci programu, které vám pomohou pochopit, jak program se spustí a vysvětlit, co se stane, že v každém bodu, který je označen. Zobrazení řádků, které jsou označeny "Jeden"pomocí "šest." Popisky jasné, v pořadí, ve kterém program dosáhne tyto řádky kódu.  
   
@@ -296,7 +286,7 @@ Dim urlContents As String = Await getStringTask
  Výraz await pozastaví `AccessTheWebAsync` dokud `client.GetStringAsync` vrátí. Do té doby, vrátí ovládací prvek do volajícího `AccessTheWebAsync`, `startButton_Click`.  
   
 > [!NOTE]
->  Obvykle můžete await volání asynchronní metodu okamžitě. Například následující přiřazení může nahradit předchozí kód, který vytvoří a pak čeká `getStringTask`:`Dim urlContents As String = Await client.GetStringAsync("http://msdn.microsoft.com")`  
+>  Obvykle můžete await volání asynchronní metodu okamžitě. Například následující přiřazení může nahradit předchozí kód, který vytvoří a pak čeká `getStringTask`: `Dim urlContents As String = Await client.GetStringAsync("http://msdn.microsoft.com")`  
 >   
 >  V tomto tématu platí operátoru await pro umístění výstupní řádky, které označit toku řízení prostřednictvím programu později.  
   
@@ -343,7 +333,7 @@ FIVE:  Back in AccessTheWebAsync.
   
  ![Krok 5](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace PĚT")  
   
- `AccessTheWebAsync`používá pro dokončení a řízení vrátí do `startButton_Click`, která čeká na dokončení.  
+ `AccessTheWebAsync` používá pro dokončení a řízení vrátí do `startButton_Click`, která čeká na dokončení.  
   
 ### <a name="step-six"></a>Krok 6  
  Když `AccessTheWebAsync` signály, které je dokončená, zpracování, můžete pokračovat přes příkaz await v `startButton_Async`. Ve skutečnosti program nijak nesouvisí Další.  

@@ -1,22 +1,12 @@
 ---
-title: "Ukázkový soubor XML: Typické nákupní objednávka v Namespace3"
-ms.custom: 
+title: 'Ukázkový soubor XML: Typické nákupní objednávka v Namespace3'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 38260901-c9f9-4240-9cbf-652c8b05021d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 689570221e4777eee0ecc7f30c8af8b46d99654a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 94aa8d39b351a55183b7164bd4ceca875742f17d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>Ukázkový soubor XML: Typické nákupní objednávka v Namespace
 Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je typické nákupní objednávka. XML je v oboru názvů.  
@@ -64,4 +54,4 @@ Následující soubor XML se používá v různých příklady v [!INCLUDE[sqlte
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Dokumenty XML ukázkové (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+ [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

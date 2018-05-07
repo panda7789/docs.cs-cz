@@ -1,13 +1,6 @@
 ---
 title: Struktury rozhodování (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - statements [Visual Basic], control flow
 - If statement [Visual Basic], decision structures
@@ -16,14 +9,11 @@ helpviewer_keywords:
 - decision structures [Visual Basic]
 - conditional statements [Visual Basic], decision structures
 ms.assetid: 2e2e0895-4483-442a-b17c-26aead751ec2
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3b89d6f9b27e086b657c29f3353b63cdd855ae19
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1ede40d196b470a351aca4c60b33f074df14b86a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
 Visual Basic umožňuje testovacích podmínkách a provádět různé operace v závislosti na výsledky testu. Můžete otestovat podmínku true nebo false, pro různé hodnoty výrazu, nebo pro různé výjimky, které jsou generovány, pokud provádějí sérii příkazů.  

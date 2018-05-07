@@ -1,13 +1,6 @@
 ---
-title: "Inicializátory objektů: pojmenované a anonymní typy (Visual Basic)"
-ms.custom: 
+title: 'Inicializátory objektů: pojmenované a anonymní typy (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.ObjectInitializer
 helpviewer_keywords:
@@ -17,14 +10,11 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 349e4f7b4902eb18845fee7cb4d01b217849a4d2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 612b1dcea0f776dfd4580803e76f2785e7d28da6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Inicializátory objektů: pojmenované a anonymní typy (Visual Basic)
 Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt pomocí jeden výraz. Může se použít k vytvoření instance pojmenované typy a anonymní typy.  
@@ -140,6 +130,6 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt pom
  [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
  [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Postupy: odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
- [Klíč](../../../../visual-basic/language-reference/modifiers/key.md)  
+ [Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
+ [Key](../../../../visual-basic/language-reference/modifiers/key.md)  
  [Postupy: Deklarace objektu pomocí inicializátoru objektu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)

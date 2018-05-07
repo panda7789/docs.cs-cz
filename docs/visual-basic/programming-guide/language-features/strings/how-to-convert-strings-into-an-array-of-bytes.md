@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Převod řetězců na pole bajtů v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Převod řetězců na pole bajtů v jazyce Visual Basic'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - string conversion [Visual Basic], arrays
 - arrays [Visual Basic], converting strings to
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - examples [Visual Basic], string conversion
 - arrays [Visual Basic], byte arrays
 ms.assetid: f477d35c-a3fc-4a30-b1d4-cd0d353aae1d
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 6d527434dc0a61c9c771b42d05c1ee316094e7fd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: da4a47b955b91f4bb39ecd7832da30d76e75d553
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-strings-into-an-array-of-bytes-in-visual-basic"></a>Postupy: Převod řetězců na pole bajtů v jazyce Visual Basic
 Toto téma ukazuje, jak převést řetězec na pole bajtů.  

@@ -1,21 +1,14 @@
 ---
-title: "ConnectionTimeout musí být větší než 0."
+title: ConnectionTimeout musí být větší než 0.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrNetwork_BadConnectionTimeout
 ms.assetid: 15ac09a7-47f0-44f3-9e84-5bd10bd07450
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 49e52d7b219d834609658b652f78629c36f79e59
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ff1df6398ba2c10e72a6c57efcbfa6d2169fc367
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-connectiontimeout-must-be-greater-than-0"></a>ConnectionTimeout musí být větší než 0.
 Při odesílání a stahování souborů s [My.Computer.Network](xref:Microsoft.VisualBasic.Devices.Network), je nutné zadat `connectionTimeout` větší než `0`.  
