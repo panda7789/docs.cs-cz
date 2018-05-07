@@ -1,24 +1,12 @@
 ---
-title: "Asynchronní scénáře použití HTTP, TCP nebo pojmenovaného kanálu"
-ms.custom: 
+title: Asynchronní scénáře použití HTTP, TCP nebo pojmenovaného kanálu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a4d62402-43a4-48a4-9ced-220633ebc4ce
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76c4c225b333af6d376fa409a05ea5727ede6e8f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d08f70186a59b8717c4441167ee720ba1c20b9dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="asynchronous-scenarios-using-http-tcp-or-named-pipe"></a>Asynchronní scénáře použití HTTP, TCP nebo pojmenovaného kanálu
 Toto téma popisuje aktivity a přenosy pro různé Asynchronní požadavek nebo odpověď scénáře s více vlákny požadavky pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu.  
@@ -44,7 +32,7 @@ Toto téma popisuje aktivity a přenosy pro různé Asynchronní požadavek nebo
 #### <a name="propagation-is-disabled-on-either-sides-using-http"></a>Propagace je zakázána na buď stranách, pomocí protokolu HTTP  
  Pokud `propagateActivity` = `false` na obou stranách ProcessMessage neindikuje která ProcessAction aktivita se má přenést do. Proto nové dočasné ProcessAction aktivitu se nové ID vyvolání. Pokud požadavek na ServiceModel kód je nalezena shoda asynchronní odpovědi, ID aktivity lze načíst z lokální kontext. Skutečné aktivity ProcessAction lze přesunout do s ID tohoto.  
   
- ![Asynchronní scénáře použití HTTP &#47; TCP &#47; Pojmenovaný kanál](../../../../../docs/framework/wcf/diagnostics/tracing/media/async2.gif "Async2")  
+ ![Asynchronní scénáře použití HTTP&#47;TCP&#47;s názvem kanálu](../../../../../docs/framework/wcf/diagnostics/tracing/media/async2.gif "Async2")  
   
  Obrázek 2. Asynchronní klienta, bez zpětného volání, `propagateActivity` = `false` na obou stranách HTTP  
   
@@ -53,7 +41,7 @@ Toto téma popisuje aktivity a přenosy pro různé Asynchronní požadavek nebo
  Vytvoření procesu akce aktivity na asynchronní klienta při `propagateActivity` = `false` na volající nebo volaný a zprávu odpovědi nezahrnuje hlavičku akce.  
   
 #### <a name="propagation-is-enabled-on-both-sides-using-tcp-or-named-pipe"></a>Bylo povoleno šíření na obou stranách, pomocí TCP nebo pojmenované kanály  
- ![Asynchronní scénáře použití HTTP &#47; TCP &#47; Pojmenovaný kanál](../../../../../docs/framework/wcf/diagnostics/tracing/media/async3.gif "Async3")  
+ ![Asynchronní scénáře použití HTTP&#47;TCP&#47;s názvem kanálu](../../../../../docs/framework/wcf/diagnostics/tracing/media/async3.gif "Async3")  
   
  Obrázek 3. Asynchronní klienta, bez zpětného volání, `propagateActivity` = `true` na obou stranách pojmenovaný kanál/TCP  
   
@@ -66,7 +54,7 @@ Toto téma popisuje aktivity a přenosy pro různé Asynchronní požadavek nebo
   
  Podobně jako Fig.2, pokud `propagateActivity` = `false` na obou stranách ProcessMessage neindikuje která ProcessAction aktivita se má přenést do. Proto nové dočasné ProcessAction aktivitu se nové ID vyvolání. Pokud požadavek na ServiceModel kód je nalezena shoda asynchronní odpovědi, ID aktivity lze načíst z lokální kontext. Skutečné aktivity ProcessAction lze přesunout do s ID tohoto.  
   
- ![Asynchronní scénáře použití HTTP &#47; TCP &#47; Pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/media/async4.gif "Async4")  
+ ![Asynchronní scénáře použití HTTP&#47;TCP&#47; pojmenovaných kanálů](../../../../../docs/framework/wcf/diagnostics/tracing/media/async4.gif "Async4")  
   
  Obrázek 4. Asynchronní klienta, bez zpětného volání, `propagateActivity` = `false` na obou stranách pojmenovaný kanál/TCP  
   
@@ -86,7 +74,7 @@ Toto téma popisuje aktivity a přenosy pro různé Asynchronní požadavek nebo
  Obrázek 6. Asynchronní klienta se zpětné volání, `endCall` mimo zpětného volání  
   
 ### <a name="asynchronous-server-with-callback"></a>Asynchronní Server s zpětného volání  
- ![Asynchronní scénáře použití HTTP &#47; TCP &#47; S názvem & č. 45; Kanál](../../../../../docs/framework/wcf/diagnostics/tracing/media/aynchserver.gif "AynchServer")  
+ ![Asynchronní scénáře použití HTTP&#47;TCP&#47; pojmenované&#45;kanálu](../../../../../docs/framework/wcf/diagnostics/tracing/media/aynchserver.gif "AynchServer")  
   
  Na obrázku 7. Asynchronní server s zpětného volání  
   

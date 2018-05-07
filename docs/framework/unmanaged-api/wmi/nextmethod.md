@@ -1,11 +1,7 @@
 ---
-title: "Funkce NextMethod (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce NextMethod načte další metoda ve výčtu."
+title: Funkce NextMethod (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce NextMethod načte další metoda ve výčtu.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - NextMethod
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6b886b3ecbd1d5b5b8d212846b2bd8291fa43909
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cd4559663194cb845fb0cc040e1f6739e38caa0e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nextmethod-function"></a>NextMethod – funkce
 Načte metodu další v výčet, který začíná volání [BeginMethodEnumeration](beginmethodenumeration.md).  
@@ -92,7 +85,7 @@ Příklad, C++, najdete v článku [IWbemClassObject::NextMethod](https://msdn.m
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

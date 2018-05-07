@@ -1,22 +1,12 @@
 ---
-title: "Úprava prvky, atributy a uzly v Tree1 XML"
-ms.custom: 
+title: Úprava prvky, atributy a uzly v Tree1 XML
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 865cf54e-f8ac-4871-863b-a3e6fc61a4b9
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1c769885d958abeaa92e19ef0b20d695fbcc4b96
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 91a7cca2e39e5ddc62d6010fbe4efad9bd7ff3c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="modifying-elements-attributes-and-nodes-in-an-xml-tree"></a>Úprava prvky, atributy a uzly ve stromu XML
 Následující tabulka shrnuje metody a vlastnosti, které můžete použít k úpravě prvek a jeho podřízené elementy nebo jeho atributy.  

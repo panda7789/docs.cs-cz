@@ -1,22 +1,12 @@
 ---
-title: "Synchronizace vláken (Visual Basic)"
-ms.custom: 
+title: Synchronizace vláken (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 04f485d1-8333-4510-9e72-c334e7427e7e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 643dbb6fdceb4e1cfd074d3a532787562dbfd03b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9922230e1c7f2bd30c575bd66387feb4850a298b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="thread-synchronization-visual-basic"></a>Synchronizace vláken (Visual Basic)
 Následující části popisují funkce a třídy, které slouží k synchronizaci přístup k prostředkům v vícevláknové aplikace.  
@@ -29,11 +19,11 @@ Následující části popisují funkce a třídy, které slouží k synchroniza
   
  Základní informace o vícevláknové programování naleznete v tématu:  
   
--   [Dělení na spravovaná vlákna základy](../../../../standard/threading/managed-threading-basics.md)  
+-   [Základy dělení na spravovaná vlákna](../../../../standard/threading/managed-threading-basics.md)  
   
 -   [Použití vláken a dělení na vlákna](../../../../standard/threading/using-threads-and-threading.md)  
   
--   [Dělení na spravovaná vlákna osvědčené postupy](../../../../standard/threading/managed-threading-best-practices.md)  
+-   [Doporučené postupy dělení na spravovaná vlákna](../../../../standard/threading/managed-threading-best-practices.md)  
   
 ## <a name="the-lock-and-synclock-keywords"></a>Uzamčení a SyncLock – klíčová slova  
  Visual Basic `SyncLock` příkaz lze použít k zajištění, že blok kódu zcela dokončena bez přerušení jiná vlákna. To lze provést po dobu trvání blok kódu získávání zámku vzájemné vyloučení pro daný objekt.  
@@ -58,7 +48,7 @@ End Class
   
  Další informace o `SyncLock` příkaz, naleznete v následujících tématech:  
   
--   [SyncLock – příkaz](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
+-   [Příkaz SyncLock](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
   
 -   <xref:System.Threading.Monitor>  
   
@@ -90,7 +80,7 @@ End Try
   
  Existují dva typy událostí synchronizace: <xref:System.Threading.AutoResetEvent>, a <xref:System.Threading.ManualResetEvent>. Liší se pouze v tom, že <xref:System.Threading.AutoResetEvent> změny z signál na unsignaled automaticky vždycky, když se aktivuje vlákna. Naopak <xref:System.Threading.ManualResetEvent> umožňuje libovolný počet vláken, které chcete aktivovat podle jeho signalizovaného stavu a obnoví jenom se unsignaled stavu při jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metoda je volána.  
   
- Vláken můžete provedeny pro čekání na události ve volání jedné z metod čekání, jako například <xref:System.Threading.WaitHandle.WaitOne%2A>, <xref:System.Threading.WaitHandle.WaitAny%2A>, nebo <xref:System.Threading.WaitHandle.WaitAll%2A>. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>způsobí, že podproces Počkejte, dokud se změní na signál, jedna událost, <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> blokuje vlákno, dokud jeden nebo více událostí uvedené stát signál, a <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> blokuje vlákno, dokud všechny uvedené události stane signál. Událost se změní na signál, když jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda je volána.  
+ Vláken můžete provedeny pro čekání na události ve volání jedné z metod čekání, jako například <xref:System.Threading.WaitHandle.WaitOne%2A>, <xref:System.Threading.WaitHandle.WaitAny%2A>, nebo <xref:System.Threading.WaitHandle.WaitAll%2A>. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType> způsobí, že podproces Počkejte, dokud se změní na signál, jedna událost, <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> blokuje vlákno, dokud jeden nebo více událostí uvedené stát signál, a <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> blokuje vlákno, dokud všechny uvedené události stane signál. Událost se změní na signál, když jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda je volána.  
   
  V následujícím příkladu se vytvoří a spustí vlákna `Main` funkce. Nové vlákno čeká na k událost pomocí <xref:System.Threading.WaitHandle.WaitOne%2A> metoda. Vlákno je pozastaveno, dokud se změní na událost signál primární podprocesem, který spouští `Main` funkce. Jakmile bude signál události, vrátí pomocného vlákno. V takovém případě protože události se používá pouze pro jedno vlákno aktivace buď <xref:System.Threading.AutoResetEvent> nebo <xref:System.Threading.ManualResetEvent> třídy by bylo možné použít.  
   
@@ -157,8 +147,8 @@ End Module
  <xref:System.Threading.EventWaitHandle.Set%2A>  
  <xref:System.Threading.Monitor>  
  [Vícevláknové aplikace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)  
- [SyncLock – příkaz](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
+ [Příkaz SyncLock](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
  [Mutex – třídy](../../../../standard/threading/mutexes.md)  
  [Propojené operace](../../../../standard/threading/interlocked-operations.md)  
  [AutoResetEvent](../../../../standard/threading/autoresetevent.md)  
- [Synchronizace dat pro Multithreading](../../../../standard/threading/synchronizing-data-for-multithreading.md)
+ [Synchronizace dat pro vícevláknové zpracování](../../../../standard/threading/synchronizing-data-for-multithreading.md)

@@ -1,14 +1,6 @@
 ---
 title: Shromáždění inkoustu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,17 +13,11 @@ helpviewer_keywords:
 - properties [WPF], DefaultDrawingAttributes
 - DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5f3effe358ba2d7accf1b0eea3493f63cfea6598
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d441f606a577a2c0506a0f9ae510b3ea1045bba9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collecting-ink"></a>Shromáždění inkoustu
 [Windows Presentation Foundation](../../../../docs/framework/wpf/index.md) platformy shromažďuje digitální rukopisu v rámci základní ze svých funkcí. Toto téma popisuje metody pro kolekci rukopisu v systému Windows Presentation Foundation (WPF).  

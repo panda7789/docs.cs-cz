@@ -1,22 +1,12 @@
 ---
-title: "Mezi běžné atributy (Visual Basic)"
-ms.custom: 
+title: Mezi běžné atributy (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9528b7dcfa52c30954929d714bd098eb51886ebd
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5a91b0aa48a22db4ea7fb56a9c632ff0cb44dce5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-attributes-visual-basic"></a>Mezi běžné atributy (Visual Basic)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka Visual Basic.  
@@ -31,7 +21,7 @@ Toto téma popisuje atributy, které se běžně používají v aplikacích jazy
   
 -   [Visual Basic – atributy](#VB)  
   
-##  <a name="Global"></a>Globální atributy  
+##  <a name="Global"></a> Globální atributy  
  Většina atributy platí pro konkrétní jazyk prvky, jako jsou například třídy nebo metody; ale některé atributy jsou globální – se vztahují na modul nebo celý sestavení. Například <xref:System.Reflection.AssemblyVersionAttribute> atribut slouží k vložení informací o verzi do sestavení, například takto:  
   
 ```vb  
@@ -83,7 +73,7 @@ Toto téma popisuje atributy, které se běžně používají v aplikacích jazy
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|Manifest sestavení definuje vlastní atribut, který určuje konfigurace aplikace sestavení (například instalačních nebo ladicích).|  
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Definuje výchozí popisný aliasu pro manifest sestavení|  
   
-##  <a name="Obsolete"></a>Zastaralé atribut  
+##  <a name="Obsolete"></a> Zastaralé atribut  
  `Obsolete` Atribut určí program entity jako ten, který již není doporučeno pro použití. Každý použijte entity označeny jako zastaralé následně vydá upozornění nebo chybu, v závislosti na konfiguraci atributu. Příklad:  
   
 ```vb  
@@ -123,9 +113,9 @@ b.NewMethod()
   
  `Obsolete` Atribut lze použít bez argumentů, ale včetně vysvětlení důvod, proč je zastaralé položky a doporučuje se co místo toho chcete použít.  
   
- `Obsolete` Atribut je jedno použití atribut a dají se použít k Každá entita, která umožňuje atributy. `Obsolete`je alias <xref:System.ObsoleteAttribute>.  
+ `Obsolete` Atribut je jedno použití atribut a dají se použít k Každá entita, která umožňuje atributy. `Obsolete` je alias <xref:System.ObsoleteAttribute>.  
   
-##  <a name="Conditional"></a>Podmíněný atribut  
+##  <a name="Conditional"></a> Podmíněný atribut  
  `Conditional` Atribut umožňuje provádění metody závisí na identifikátor předběžného zpracování. `Conditional` Atribut je alias <xref:System.Diagnostics.ConditionalAttribute>a dají se použít metody nebo třídy atributu.  
   
  V tomto příkladu `Conditional` je použitý na metodu, pokud chcete povolit nebo zakázat zobrazení diagnostické informace specifické pro aplikace:  
@@ -218,7 +208,7 @@ Class SampleClass
 End Class  
 ```  
   
-##  <a name="CallerInfo"></a>Volající – atributy s informacemi  
+##  <a name="CallerInfo"></a> Volající – atributy s informacemi  
  Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku v zdrojový kód a název člena volajícího.  
   
  Chcete-li získat informace o subjektu volajícím člen, použijte atributy, které se použijí pro volitelné parametry. Každý volitelný parametr určí výchozí hodnotu. Následující tabulka uvádí informace o volajícím atributy, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> obor názvů:  
@@ -231,7 +221,7 @@ End Class
   
  Další informace o atributech volající informace najdete v tématu [informace o subjektu volajícím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).  
   
-##  <a name="VB"></a>Visual Basic – atributy  
+##  <a name="VB"></a> Visual Basic – atributy  
  Následující tabulka obsahuje seznam atributy, které jsou specifické pro Visual Basic.  
   
 |Atribut|Účel|  

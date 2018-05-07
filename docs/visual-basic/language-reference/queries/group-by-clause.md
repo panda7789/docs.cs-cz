@@ -1,11 +1,6 @@
 ---
-title: "Group By – klauzule (Visual Basic)"
+title: Group By – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryGroupByInto
 - vb.QueryGroupBy
@@ -17,14 +12,11 @@ helpviewer_keywords:
 - Group By statement [Visual Basic]
 - Group By clause [Visual Basic]
 ms.assetid: b1b5dcea-6654-473b-a2db-01f7e4c265d7
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b719bfa2ebe4c324acf82a03e215e481283845fe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7cf688dc2e0ccd10c8bfbe5f0308f0aa808fbef0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="group-by-clause-visual-basic"></a>Group By – klauzule (Visual Basic)
 Skupiny elementy výsledků dotazu. Můžete také použít k použití agregační funkce pro každou skupinu. Operace seskupení je založena na jeden nebo více klíčů.  
@@ -79,8 +71,8 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
 ## <a name="see-also"></a>Viz také  
  [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Select – klauzule](../../../visual-basic/language-reference/queries/select-clause.md)  
- [From – klauzule](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Order By – klauzule](../../../visual-basic/language-reference/queries/order-by-clause.md)  
- [AGGREGATE – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
- [Group Join – klauzule](../../../visual-basic/language-reference/queries/group-join-clause.md)
+ [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)  
+ [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)

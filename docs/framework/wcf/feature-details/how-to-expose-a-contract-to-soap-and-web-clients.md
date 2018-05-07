@@ -1,30 +1,18 @@
 ---
-title: "Postupy: vystavení kontraktu protokolu SOAP a webovými klienty"
-ms.custom: 
+title: 'Postupy: vystavení kontraktu protokolu SOAP a webovými klienty'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0f13ba797b0c0e5c8b0d1eef271baf62f920f199
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9a730fe94d1df8c887a2eaf20c1e338bd056ed5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>Postupy: vystavení kontraktu protokolu SOAP a webovými klienty
-Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] umožňuje koncové body k dispozici pouze na klienty protokolu SOAP. V [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), koncový bod je k dispozici pro klienty protokolu SOAP. Může nastat situace, kdy chcete zpřístupnit stejné smlouvy obou směrech, a to jako koncový bod webové a jako koncový bod protokolu SOAP. Toto téma ukazuje příklad toho, jak to udělat.  
+Ve výchozím nastavení Windows Communication Foundation (WCF) zpřístupňuje koncové body k dispozici pouze klientům protokolu SOAP. V [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), koncový bod je k dispozici pro klienty protokolu SOAP. Může nastat situace, kdy chcete zpřístupnit stejné smlouvy obou směrech, a to jako koncový bod webové a jako koncový bod protokolu SOAP. Toto téma ukazuje příklad toho, jak to udělat.  
   
 ### <a name="to-define-the-service-contract"></a>K definování kontraktu služby  
   
@@ -34,7 +22,7 @@ Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
      [!code-vb[htSoapWeb#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Ve výchozím nastavení <xref:System.ServiceModel.Web.WebInvokeAttribute> mapuje POST volání operace. Můžete však zadat metodu pro mapování na operaci zadáním "metoda =" parametr. <xref:System.ServiceModel.Web.WebGetAttribute>nemá "metoda =" parametr a pouze mapy GET volání operace služby.  
+    >  Ve výchozím nastavení <xref:System.ServiceModel.Web.WebInvokeAttribute> mapuje POST volání operace. Můžete však zadat metodu pro mapování na operaci zadáním "metoda =" parametr. <xref:System.ServiceModel.Web.WebGetAttribute> nemá "metoda =" parametr a pouze mapy GET volání operace služby.  
   
 2.  Implementujte kontrakt služby, jak je znázorněno v následujícím kódu.  
   
@@ -65,7 +53,7 @@ Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
   
 ### <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>K volání operací služby namapované na GET v Internet Exploreru  
   
-1.  Otevřete Internet Explorer a zadejte "`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`" a stiskněte klávesu ENTER. Adresa URL obsahuje základní adresa služby ("http://localhost: 8000 /"), relativní adresa koncového bodu (""), operace služby k volání ("EchoWithGet") a otazník následuje seznam pojmenované parametry oddělených ampersandem (&).  
+1.  Otevřete Internet Explorer a zadejte "`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`" a stiskněte klávesu ENTER. Adresa URL obsahuje základní adresa služby ("http://localhost:8000/"), relativní adresa koncového bodu (""), operace služby k volání ("EchoWithGet") a otazník následuje seznam pojmenované parametry oddělených ampersandem (&).  
   
 ### <a name="to-call-service-operations-on-the-web-endpoint-in-code"></a>K volání operací služby na koncový bod webové v kódu  
   
@@ -75,7 +63,7 @@ Ve výchozím nastavení [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]
      [!code-vb[htSoapWeb#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#6)]  
   
 > [!NOTE]
->  `Close()`je automaticky volána na konci kanálu `using` bloku.  
+>  `Close()` je automaticky volána na konci kanálu `using` bloku.  
   
 1.  Vytvoření kanálu a volání služby, jak je znázorněno v následujícím kódu.  
   

@@ -1,29 +1,15 @@
 ---
-title: "Datum a čas dat"
-ms.custom: 
+title: Datum a čas dat
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-caps.latest.revision: 
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 904b941a274cdd31485d35cf2d025f869638d448
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 2130c79ba79ce7e327a2a1b3adccd92e52153d85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="date-and-time-data"></a>Datum a čas dat
 SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové typy dat zahrnují rozšířené datové typy s větší rozsah, přesnost a časové pásmo a samostatné typy pro datum a čas. Počínaje verzí rozhraní .NET Framework 3.5 Service Pack (SP) 1, zprostředkovatel dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje úplnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro použití s SqlClient tyto nové funkce.  
@@ -44,7 +30,7 @@ SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a
 |`date`|`date` Datový typ má rozsah 1. ledna 01 do 31. prosince 9999 s přesností na 1 den. Výchozí hodnota je 1. ledna 1900. Velikost úložiště je 3 bajtů.|  
 |`time`|`time` Datový typ ukládá pouze hodnoty času ve 24hodinovém formátu. `time` Datový typ má rozsah 00:00:00.0000000 prostřednictvím 23:59:59.9999999 s přesností na 100 nanosekundách. Výchozí hodnota je 00:00:00.0000000 (půlnoc). `time` Uživatelem definované zlomková přesnost pro sekundy podporuje datový typ a velikost úložiště se liší od 3 do 6 bajtů, podle Zadaná přesnost.|  
 |`datetime2`|`datetime2` Datový typ kombinuje rozsah a přesnost `date` a `time` typy dat do jednoho datového typu.<br /><br /> Výchozí hodnoty a formáty literálu řetězce jsou stejné jako názvům definovaným v `date` a `time` datové typy.|  
-|`datetimeoffset`|`datetimeoffset` Datový typ má všechny funkce `datetime2` s posunem další časové pásmo. Posun v časových pásmech je reprezentován jako [+ &#124;-] hh: mm. HH jsou 2 číslic od 00 do 14, které představují počtem hodin za posun časového pásma. MM je 2 číslic od 00 do 59 představující počet minut, další v posun časového pásma. Podporované jsou formáty času na 100 nanosekundách. Povinné + nebo - přihlašovací Určuje, zda je posun v časových pásmech přidány nebo odečten od času UTC (Universal Time koordinovat nebo greenwichský střední čas) k získání místního času.|  
+|`datetimeoffset`|`datetimeoffset` Datový typ má všechny funkce `datetime2` s posunem další časové pásmo. Posun v časových pásmech je reprezentován jako [+&#124;-] hh: mm. HH jsou 2 číslic od 00 do 14, které představují počtem hodin za posun časového pásma. MM je 2 číslic od 00 do 59 představující počet minut, další v posun časového pásma. Podporované jsou formáty času na 100 nanosekundách. Povinné + nebo - přihlašovací Určuje, zda je posun v časových pásmech přidány nebo odečten od času UTC (Universal Time koordinovat nebo greenwichský střední čas) k získání místního času.|  
   
 > [!NOTE]
 >  Další informace o používání `Type System Version` – klíčové slovo, najdete v části <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
@@ -92,7 +78,7 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jed
 |Datum|System.DateTime|Datum|Datum|  
 |čas|System.TimeSpan|Čas|Čas|  
 |datetime2|System.DateTime|DateTime2|DateTime2|  
-|datetimeoffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
+|Datový typ DateTimeOffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
 |Data a času|System.DateTime|DateTime|DateTime|  
 |smalldatetime|System.DateTime|DateTime|DateTime|  
   
@@ -201,10 +187,10 @@ command.Parameters.AddWithValue( _
   
  Následující tabulka uvádí, které `SqlDbTypes` jsou odvozené z které typy CLR:  
   
-|Typ CLR|Inferred SqlDbType|  
+|Typ CLR|Odvozené SqlDbType|  
 |--------------|------------------------|  
 |DateTime|SqlDbType.DateTime|  
-|TimeSpan|SqlDbType.Time|  
+|Časový interval|SqlDbType.Time|  
 |DateTimeOffset|SqlDbType.DateTimeOffset|  
   
 ## <a name="retrieving-date-and-time-data"></a>Načítání datum a čas dat  

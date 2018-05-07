@@ -1,21 +1,14 @@
 ---
 title: Oficiální imagí Dockeru rozhraní .NET
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Oficiální imagí Dockeru rozhraní .NET
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: adbe63a2d2f93819b5b29c6dd8d8089cd35ad2f3
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d2105603fe1fcbacd995710c9b365ec406bad255
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="official-net-docker-images"></a>Oficiální imagí Dockeru rozhraní .NET
 

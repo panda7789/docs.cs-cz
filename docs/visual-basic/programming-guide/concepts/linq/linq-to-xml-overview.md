@@ -1,23 +1,12 @@
 ---
 title: Technologie LINQ to XML přehled (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 502661e0-bc5d-438d-94c2-7efb63bb6fbd
-caps.latest.revision: 3
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f4ccc81f1f7b875c7388dc09cc45521c6257c00d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 3818177c2ed14b1159b8e63e324894d7e89b72b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-overview-visual-basic"></a>Technologie LINQ to XML přehled (Visual Basic)
 XML byl široce přijat jako způsob formátování dat v mnoha kontexty. Například můžete vyhledat XML na webu, konfigurační soubory, soubory Microsoft Office Word a databází.  

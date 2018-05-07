@@ -1,32 +1,18 @@
 ---
 title: Integrace s aplikacemi modelu COM+ – přehled
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3c723bda93feac3eef18f302ab0c8ec7c702eb7a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 155365c72fd3f5915db12104f45a500f3176f67b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte logiku aplikace založené na součást hostované v modelu COM +, můžete použít [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšířit existující logiky, místo aby ho přepsání. Obvyklým scénářem je, když chcete vystavit existující modelu COM + nebo podnikové služby obchodní logiky přes webové služby.  
+Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte logiku aplikace založené na součást hostované v modelu COM +, můžete rozšířit existující logiky, místo aby ho přepsání WCF. Obvyklým scénářem je, když chcete vystavit existující modelu COM + nebo podnikové služby obchodní logiky přes webové služby.  
   
  Pokud jako webové služby je vystavený rozhraní komponenty modelu COM +, specifikace a kontrakt tyto služby jsou určeny automatické mapování, které se provádí v době inicializace aplikace. Následující seznam uvádí konceptuálního modelu pro toto mapování:  
   
@@ -84,7 +70,7 @@ ms.lasthandoff: 04/30/2018
  V rámci klientské aplikace, metody na <xref:System.ServiceModel.ComIntegration.PersistStreamTypeWrapper> objekt lze předat objekt v služby a podobně načíst objekt.  
   
 > [!NOTE]
->  Z důvodu povaze specifické pro platformu a vlastní serializace přístup, to je nejvhodnější pro použití mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+>  Z důvodu povaze specifické pro platformu a vlastní serializace přístup to je nejvhodnější pro použití mezi klienty WCF a služby WCF.  
   
 ## <a name="selecting-the-hosting-mode"></a>Výběr hostování režimu  
  Modelu COM + zpřístupní webové služby v jednom z následujících režimů hostingu:  
@@ -95,18 +81,18 @@ ms.lasthandoff: 04/30/2018
   
 -   Hostované Web  
   
-     Webová služba je hostována v rámci pracovní proces webového serveru. Tento režim nevyžaduje modelu COM + být active, když je obdržena úvodního požadavku. Pokud aplikace není aktivní, když je obdržena tuto žádost, se automaticky aktivuje před zpracování požadavku. Tento režim taky poskytuje webové služby a přístup k DCOM pro serverové aplikace, ale způsobí, že proces směrování pro žádosti webové služby. To obvykle vyžaduje, aby klient k povolení zosobnění. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], to lze provést pomocí <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, která je přístupná jako vlastnost obecná <xref:System.ServiceModel.ChannelFactory%601> třída, společně s <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> hodnota výčtu.  
+     Webová služba je hostována v rámci pracovní proces webového serveru. Tento režim nevyžaduje modelu COM + být active, když je obdržena úvodního požadavku. Pokud aplikace není aktivní, když je obdržena tuto žádost, se automaticky aktivuje před zpracování požadavku. Tento režim taky poskytuje webové služby a přístup k DCOM pro serverové aplikace, ale způsobí, že proces směrování pro žádosti webové služby. To obvykle vyžaduje, aby klient k povolení zosobnění. Ve WCF, to lze provést pomocí <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, která je přístupná jako vlastnost obecná <xref:System.ServiceModel.ChannelFactory%601> třída, společně s <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> hodnota výčtu.  
   
 -   Web hostovaný v procesu  
   
      Webové služby a logiku aplikace modelu COM + jsou hostované v rámci pracovní proces webového serveru. To umožňuje automatické aktivace režimu hostované webové aniž by to způsobilo procesu směrování pro žádosti webové služby. Nevýhodou je, že je serverová aplikace není umožněn přístup přes DCOM.  
   
 ### <a name="security-considerations"></a>Důležité informace o zabezpečení  
- Stejně jako jiné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služeb, nastavení zabezpečení pro službu zveřejněné jsou spravovány pomocí nastavení konfigurace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanálu. Tradiční nastavení zabezpečení DCOM např. nastavení modelu DCOM oprávnění celého systému nejsou vynucená. Pokud chcete vynutit role aplikací modelu COM +, musí být povolena "přístup na úrovni součásti kontroly" autorizace pro komponentu.  
+ Jako další služby WCF jsou nastavení zabezpečení pro službu zveřejněné spravovány pomocí nastavení konfigurace pro kanál WCF. Tradiční nastavení zabezpečení DCOM např. nastavení modelu DCOM oprávnění celého systému nejsou vynucená. Pokud chcete vynutit role aplikací modelu COM +, musí být povolena "přístup na úrovni součásti kontroly" autorizace pro komponentu.  
   
  Použití vazby zabezpečené můžete nechat komunikace otevřené manipulaci nebo informace o zpřístupnění. Chcete-li tomu zabránit, doporučujeme použít zabezpečené vazby.  
   
- Pro modelu COM +-hostované a webové hostované režimy klientské aplikace musí povolit proces serveru zosobnění uživatele klienta. To lze provést [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů podle nastavení úrovně k zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>.  
+ Pro modelu COM +-hostované a webové hostované režimy klientské aplikace musí povolit proces serveru zosobnění uživatele klienta. To lze provést v klientech WCF nastavením na úrovni zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>.  
   
  Pomocí Internetové informační služby (IIS) nebo proces aktivace služby WAS (Windows) pomocí přenosového protokolu HTTP nástroje Httpcfg.exe lze rezervovat adresu koncového bodu přenosu. V další konfigurace je důležité pro ochranu proti podvodným služby, které fungují jako služba určený. Abyste zabránili začínající na požadovaný koncový bod služby podvodný, legitimní službu lze nakonfigurovat pro spuštění jako služba NT. To umožňuje oprávněné službě deklarace identity adresa koncového bodu před žádné podvodný služby.  
   

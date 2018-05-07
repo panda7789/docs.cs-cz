@@ -1,28 +1,16 @@
 ---
-title: "Omezení serializace XamlWriter.Save"
-ms.custom: 
+title: Omezení serializace XamlWriter.Save
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XamlWriter.Save [WPF], serialization limitations of
 - limitations of XamlWriter.Save
 - serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c6f22b112807876102dbcb934698d18d85cd51c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbe8d517b8794f6aae7190457a077422d235acb8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>Omezení serializace XamlWriter.Save
 [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> Lze použít k serializaci obsah [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace jako [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Nicméně existují určitá omezení upozorňují na důležité v přesně to, co je serializováno. Tato omezení a některé obecné aspekty jsou popsány v tomto tématu.  
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Event_Handling_is_Not_Preserved"></a>   
 ## <a name="event-handling-is-not-preserved"></a>Zpracování událostí je, není zachována.  
- Když obslužné rutiny událostí, které jsou přidány prostřednictvím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se serializuje, že nejsou zachována. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]bez kódu (a také bez mechanismus související x: Code) nemá žádnou možnost serializace Procedurální logika modulu runtime. Protože serializace je úplný a samostatný a je omezený na logickém stromu, neexistuje žádné zařízení pro ukládání obslužné rutiny událostí. V důsledku toho atributy obslužná rutina události, atribut sám a řetězcovou hodnotu, kterou názvy obslužná rutina, se odeberou z výstupu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+ Když obslužné rutiny událostí, které jsou přidány prostřednictvím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se serializuje, že nejsou zachována. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] bez kódu (a také bez mechanismus související x: Code) nemá žádnou možnost serializace Procedurální logika modulu runtime. Protože serializace je úplný a samostatný a je omezený na logickém stromu, neexistuje žádné zařízení pro ukládání obslužné rutiny událostí. V důsledku toho atributy obslužná rutina události, atribut sám a řetězcovou hodnotu, kterou názvy obslužná rutina, se odeberou z výstupu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
 <a name="Realistic_Scenarios_for_Use_of_XAMLWriter_Save"></a>   
 ## <a name="realistic-scenarios-for-use-of-xamlwritersave"></a>Realistické scénáře pro použití XAMLWriter.Save  

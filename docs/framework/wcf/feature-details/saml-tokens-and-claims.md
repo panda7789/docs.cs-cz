@@ -1,14 +1,6 @@
 ---
 title: Tokeny a deklarace SAML
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,20 +10,14 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9bd10fe663ccb4c78af775baf3e76663ef9a91bd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 374fde23a1bf8df704f76500b4808c16d142ddd9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
-Zabezpečení kontrolní výrazy Markup Language (SAML) *tokeny* jsou reprezentace XML deklarací identity. Ve výchozím nastavení, tokeny SAML [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] se používá ve scénářích federované zabezpečení *vystavené tokeny*.  
+Zabezpečení kontrolní výrazy Markup Language (SAML) *tokeny* jsou reprezentace XML deklarací identity. Ve výchozím nastavení, tokeny SAML Windows Communication Foundation (WCF) používá ve scénářích federované zabezpečení jsou *vystavené tokeny*.  
   
  Tokeny SAML provádění příkazů, které jsou sady deklarací identity provedené jednu entitu o jinou entitou. Například ve scénářích federované zabezpečení příkazy jsou vytvářeny pomocí služby tokenů zabezpečení o uživateli v systému. Služby tokenů zabezpečení podepisuje tokeny SAML udávajících pravdivosti příkazy obsažených v tokenu. Kromě toho je přidružen kryptografických materiál klíče, který uživatel tokenu SAML prokáže znalosti o tokenu SAML. Toto ověření splňuje, že předávající stranu, která byla tokenu SAML, ve skutečnosti vydán pro tohoto uživatele. Například v Typický scénář:  
   
@@ -44,7 +30,7 @@ Zabezpečení kontrolní výrazy Markup Language (SAML) *tokeny* jsou reprezenta
 4.  Podpis přes tokenu SAML poskytuje předávající strany, aby vystavovala služby tokenů zabezpečení token. Podpis zprávy, které jsou vytvořené pomocí doklad klíč informuje předávající strany, zda byl token vydán klientovi.  
   
 ## <a name="from-claims-to-samlattributes"></a>Z deklarací identity k SamlAttributes  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], příkazy v tokenech SAML jsou modelovat jako <xref:System.IdentityModel.Tokens.SamlAttribute> objekty, které je možné importovat přímo z <xref:System.IdentityModel.Claims.Claim> objekty, zadaný <xref:System.IdentityModel.Claims.Claim> objekt má <xref:System.IdentityModel.Claims.Claim.Right%2A> vlastnost <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a <xref:System.IdentityModel.Claims.Claim.Resource%2A> Vlastnost je typu <xref:System.String>. Příklad:  
+ Ve službě WCF, příkazy v tokenech SAML jsou modelovat jako <xref:System.IdentityModel.Tokens.SamlAttribute> objekty, které je možné importovat přímo z <xref:System.IdentityModel.Claims.Claim> objekty, zadaný <xref:System.IdentityModel.Claims.Claim> objekt má <xref:System.IdentityModel.Claims.Claim.Right%2A> vlastnost <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a <xref:System.IdentityModel.Claims.Claim.Resource%2A> vlastnost je typ <xref:System.String>. Příklad:  
   
  [!code-csharp[c_CreateSTS#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#8)]
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  

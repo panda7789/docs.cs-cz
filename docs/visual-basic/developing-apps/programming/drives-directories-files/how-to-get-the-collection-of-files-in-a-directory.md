@@ -1,24 +1,15 @@
 ---
-title: "Postupy: Získání kolekce souborů z adresáře v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Získání kolekce souborů z adresáře v jazyce Visual Basic'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - folders, working with
 - files [Visual Basic], accessing
 ms.assetid: 6c8ba7e8-dd37-4853-92bf-762b67c98160
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1c9245ab2593dfed5201640ecf84713582890334
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c498928bd5fc58b8264e9098f49aabafc68c7fe6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>Postupy: Získání kolekce souborů z adresáře v jazyce Visual Basic
 Přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> metoda vrátit jen pro čtení kolekce řetězce představující názvy souborů v adresáři:  
@@ -42,9 +33,9 @@ Přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayP
   
 -   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `directory`neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
+-   `directory` neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
--   `directory`ukazuje na existující soubor (<xref:System.IO.IOException>).  
+-   `directory` ukazuje na existující soubor (<xref:System.IO.IOException>).  
   
 -   Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
   
@@ -56,5 +47,5 @@ Přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayP
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A>  
- [Postupy: hledání souborů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
- [Postupy: hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
+ [Postupy: Hledání souborů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
+ [Postupy: Hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)

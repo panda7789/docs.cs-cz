@@ -1,13 +1,6 @@
 ---
-title: "Funkce usnadnění"
-ms.custom: 
+title: Funkce usnadnění
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - easing functions [WPF], customizing
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 570a065d3f28befe8db4887ff908c3bd60a639a1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3ce7c1824dc53c154ba1091ea62c1b8950b757c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
 Funkce usnadnění můžete použít vlastní matematické vzorce pro své animace. Například můžete objekt reálně kolísají nebo chovat, jako by šlo na pružiny. Můžete použít klíč rámce, nebo i z/do nebo podle animací sblížit těchto důsledcích, ale bude potřeba významné množství práce a animace bude přesností menší než pomocí matematické vzorce.  
@@ -50,7 +38,7 @@ Funkce usnadnění můžete použít vlastní matematické vzorce pro své anima
   
 -   <xref:System.Windows.Media.Animation.ExponentialEase>: Vytvoří animace, která zrychluje a zpomaluje pomocí exponenciální vzorce.  
   
--   <xref:System.Windows.Media.Animation.PowerEase>: Vytvoří animace, která zrychluje a zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>p</sup> kde je rovno p<xref:System.Windows.Media.Animation.PowerEase.Power%2A> vlastnost.  
+-   <xref:System.Windows.Media.Animation.PowerEase>: Vytvoří animace, která zrychluje a zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>p</sup> kde p rovná <xref:System.Windows.Media.Animation.PowerEase.Power%2A>vlastnost.  
   
 -   <xref:System.Windows.Media.Animation.QuadraticEase>: Vytvoří animace, která zrychluje a zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>2</sup>.  
   

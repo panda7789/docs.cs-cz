@@ -1,28 +1,16 @@
 ---
-title: "Rozdělovač – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: Rozdělovač – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - multiple views
 - Splitter control [Windows Forms]
 - views [Windows Forms], multiple per frame
 ms.assetid: 6f287407-e895-4b07-a46a-a5bff8388d46
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2069d419d185cde366b463c5682f9d1395e551a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4340c4647ffda79bcd919e9bd778dcabab0fc511
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="splitter-control-windows-forms"></a>Rozdělovač – ovládací prvek (Windows Forms)
 Windows Forms `Splitter` ovládací prvky se používají ke změně velikosti ukotvených ovládacích prvků za běhu. `Splitter` Řízení se často používá ve formulářích s ovládacími prvky, které mají různých délek data k dispozici jako Průzkumník Windows, jejichž data podokna obsahovat informace o různých šířek v různých časech.  
@@ -35,7 +23,7 @@ Windows Forms `Splitter` ovládací prvky se používají ke změně velikosti u
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Splitter>– Třída  
+ <xref:System.Windows.Forms.Splitter> – Třída  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

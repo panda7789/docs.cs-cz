@@ -1,37 +1,23 @@
 ---
 title: Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 727ad032482829350b5cf88175c34d8ccc7b98b9
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3a4d771c3f2d5e7e6ec4fd6a1e229548e063a6d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
-Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] hostitele [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby, které není komunikaci pomocí protokolu HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
+Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služeb, které není komunikaci pomocí protokolu HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
   
--   Nainstalovat (nebo potvrďte instalace) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] požadované součásti aktivace.  
+-   Nainstalovat (nebo potvrďte instalaci) aktivačních komponent WCF vyžaduje.  
   
 -   Vytvořit web WAS s vazeb síťových protokolů, které chcete použít, nebo přidat novou vazbu protokolu na existující web.  
   
 -   Vytvořte aplikaci pro hostování vaší služeb a povolte tuto aplikaci používat požadovaných síťových protokolů.  
   
--   Sestavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, která zveřejňuje koncový bod jiným protokolem než HTTP.  
+-   Vytvoření služby WCF, který zveřejňuje koncový bod jiným protokolem než HTTP.  
   
 ## <a name="configuring-a-site-with-non-http-bindings"></a>Konfigurace sítě s jiným protokolem než HTTP vazby  
  Pokud chcete použít vazbu jiným protokolem než HTTP službou WAS, musí konfigurace WAS přidat vazby webu. Konfigurace úložiště pro WAS je soubor applicationHost.config umístěný v adresáři %windir%\system32\inetsrv\config. Toto úložiště konfigurace sdílí WAS a IIS 7.0.  
@@ -107,7 +93,7 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
 ## <a name="building-a-wcf-service-that-uses-was-for-non-http-activation"></a>Vytváření WCF služby, používá se pro aktivace jiným protokolem než HTTP  
  Po provedení kroků k instalaci a konfiguraci služby WAS (najdete v části [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), konfigurace služby k použití WAS pro aktivace je podobná konfigurace služby, který je hostován ve službě IIS.  
   
- Podrobné pokyny o vytváření WAS aktivované [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] najdete v tématu [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
+ Podrobné pokyny o vytváření služby WAS aktivované WCF najdete v tématu [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Hostování v Aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  

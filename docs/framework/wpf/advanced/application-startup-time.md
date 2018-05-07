@@ -1,13 +1,6 @@
 ---
-title: "Rychlejší spuštění aplikace"
-ms.custom: 
+title: Rychlejší spuštění aplikace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - splash screen [WPF], startup time
 - WPF [WPF], startup time
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: af07e1876666351d72eada56e7af3e787ccc90f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8452c41bc6d60d18fa058966299e3ca2b989604f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
 Množství času, která je požadována pro aplikaci WPF zahájíte se může značně lišit. Toto téma popisuje různé postupy pro snížení času spuštění dosahovaný a aktuálních pro aplikaci Windows Presentation Foundation (WPF).  
@@ -76,7 +64,7 @@ Množství času, která je požadována pro aplikaci WPF zahájíte se může z
  S moduly Ngen a JIT může mít nejhorší vliv. Je to proto musí být načteny mscorjit.dll a při JIT kompilátoru funguje na kód, pokud JIT kompilátor čte metadata sestavení musí se přístup počet stránek v Ngen bitové kopie.  
   
 ### <a name="ngen-and-clickonce"></a>Ngen a ClickOnce  
- Způsob, jak máte v plánu pro nasazení aplikace lze také nastavit rozdíl v čase zatížení. [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)]nasazení aplikace nepodporuje Ngen. Pokud se rozhodnete použít Ngen.exe pro vaši aplikaci, je nutné použít jiný mechanismus pro nasazení, jako je například Instalační služba systému Windows.  
+ Způsob, jak máte v plánu pro nasazení aplikace lze také nastavit rozdíl v čase zatížení. [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] nasazení aplikace nepodporuje Ngen. Pokud se rozhodnete použít Ngen.exe pro vaši aplikaci, je nutné použít jiný mechanismus pro nasazení, jako je například Instalační služba systému Windows.  
   
  Další informace najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
   

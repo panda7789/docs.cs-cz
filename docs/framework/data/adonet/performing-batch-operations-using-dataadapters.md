@@ -1,27 +1,15 @@
 ---
-title: "Provádění operací Batch pomocí DataAdapters"
-ms.custom: 
+title: Provádění operací Batch pomocí DataAdapters
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e72ed5af-b24f-486c-8429-c8fd2208f844
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e5c584bcd825e390b24da6c95ecb159a8280c639
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: e585d8a3c21f4a256a2e706389fc9f8adc7900da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>Provádění operací Batch pomocí DataAdapters
 Umožňuje podporu batch v ADO.NET <xref:System.Data.Common.DataAdapter> k seskupení operace INSERT, UPDATE a DELETE z <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable> k serveru, místo abyste odesílali jednu operaci najednou. Snížení počet zpátečních cest k serveru se obvykle výsledkem výrazné zvýšení výkonu. Dávková aktualizace jsou podporované pro zprostředkovatele dat .NET pro SQL Server (<xref:System.Data.SqlClient>) a Oracle (<xref:System.Data.OracleClient>).  
@@ -145,7 +133,7 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
 ### <a name="accessing-updated-rows"></a>Přístup k aktualizované řádky  
  Při zpracování dávky je zakázaná, řádek aktualizované lze přistupovat pomocí <xref:System.Data.Common.RowUpdatedEventArgs.Row%2A> vlastnost <xref:System.Data.Common.RowUpdatedEventArgs> třídy.  
   
- Pokud je povolená dávkové zpracování, jeden `RowUpdated` vygenerování události pro více řádků. Proto hodnotu `Row` vlastnost pro každý řádek má hodnotu null. `RowUpdating`události se generují stále pro každý řádek. <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> Metodu <xref:System.Data.Common.RowUpdatedEventArgs> třída umožňuje přístup k Zpracované řádky zkopírováním odkazy na řádky do pole. Pokud žádné řádky jsou zpracovávány, `CopyToRows` vyvolá <xref:System.ArgumentNullException>. Použití <xref:System.Data.Common.RowUpdatedEventArgs.RowCount%2A> vlastnost vrátí počet řádků, které zpracují dříve, než volání <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> metoda.  
+ Pokud je povolená dávkové zpracování, jeden `RowUpdated` vygenerování události pro více řádků. Proto hodnotu `Row` vlastnost pro každý řádek má hodnotu null. `RowUpdating` události se generují stále pro každý řádek. <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> Metodu <xref:System.Data.Common.RowUpdatedEventArgs> třída umožňuje přístup k Zpracované řádky zkopírováním odkazy na řádky do pole. Pokud žádné řádky jsou zpracovávány, `CopyToRows` vyvolá <xref:System.ArgumentNullException>. Použití <xref:System.Data.Common.RowUpdatedEventArgs.RowCount%2A> vlastnost vrátí počet řádků, které zpracují dříve, než volání <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> metoda.  
   
 ### <a name="handling-data-errors"></a>Zpracování chyb dat  
  Spuštění dávky má stejný účinek jako provádění každé jednotlivé příkaz. Příkazy jsou spouštěny v pořadí, příkazy byly přidány do dávky. Chyby jsou zpracovávány stejným způsobem jako v dávkovém režimu, protože se jedná o, když je zakázáno dávkovém režimu. Každý řádek se zpracovávají odděleně. Pouze řádky, které byly úspěšně zpracovány v databázi budou aktualizovány v odpovídající <xref:System.Data.DataRow> v rámci <xref:System.Data.DataTable>.  

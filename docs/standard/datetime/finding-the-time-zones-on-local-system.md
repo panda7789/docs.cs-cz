@@ -1,13 +1,7 @@
 ---
-title: "Hledání časových pásem definovaných v lokálním systému"
-ms.custom: 
+title: Hledání časových pásem definovaných v lokálním systému
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - time zones [.NET Framework], local
 - time zones [.NET Framework], finding local system time zones
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - UTC times, finding local system time zones
 - time zones [.NET Framework], UTC
 ms.assetid: 3f63b1bc-9a4b-4bde-84ea-ab028a80d3e1
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e61f05741c1edd86d9baad4f6ebc9f4e91318250
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: eb4196ff53a5c26be7c46a8168a30044836af2cf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="finding-the-time-zones-defined-on-a-local-system"></a>Hledání časových pásem definovaných v lokálním systému
 

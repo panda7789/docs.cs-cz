@@ -1,30 +1,16 @@
 ---
 title: Typy migrované z prostředí WPF do oboru názvů System.Xaml
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WPF XAML [XAML Services], migration to System.Xaml
 - XAML [XAML Services], System.Xaml and WPF
 - System.Xaml [XAML Services], types migrated from WPF
 ms.assetid: d79dabf5-a2ec-4e8d-a37a-67c4ba8a2b91
-caps.latest.revision: 14
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f4d4bc0b21770e5ac0c138c140334198d30a740a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d59ff8657f7750db8908aac15936f12838b27eaf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>Typy migrované z prostředí WPF do oboru názvů System.Xaml
 V [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] a [!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)], oba [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] a modelu Windows Workflow Foundation zahrnuté na implementace jazyka XAML. V sestavení WindowsBase PresentationCore a PresentationFramework řadu veřejné typy, které poskytuje rozšíření pro implementaci WPF XAML existuje. Veřejné typy, které poskytuje rozšíření pro Windows Workflow Foundation XAML, existovalo v System.Workflow.ComponentModel sestavení. V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], některé typy související s jazykem XAML se migrují do System.Xaml sestavení. Běžná implementace rozhraní .NET Framework XAML services jazyka umožňuje mnoho scénářů XAML rozšiřitelnosti, které byly původně definované implementací konkrétní framework XAML, ale jsou teď součástí celkovým [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] podporu jazyka XAML. Toto téma uvádí typy, které se migrují a popisuje problémy související s migrací.  

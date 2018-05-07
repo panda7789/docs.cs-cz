@@ -1,12 +1,6 @@
 ---
-title: "Set – příkaz (Visual Basic)"
+title: Set – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Set
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3b18e6c858e64e78d7ab85fdaafd70e510f7a02f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: dbc48d14bac54809e4ddd12c87429bf407169950
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="set-statement-visual-basic"></a>Set – příkaz (Visual Basic)
 Deklaruje `Set` procedura property sloužící k přidělování hodnotu vlastnosti.  
@@ -43,11 +34,11 @@ End Set
  `accessmodifier`  
  Volitelné na maximálně jedno z `Get` a `Set` příkazy v této vlastnosti. Může být jedna z následujících akcí:  
   
--   [Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)  
+-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
 -   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
--   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)  
+-   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
 -   `Protected Friend`  
   
@@ -86,7 +77,7 @@ End Set
   
 -   **Vrácení z procedury vlastnosti.** Když `Set` postup vrátí kód volání, provádění pokračuje následující příkaz, který poskytuje hodnota, která má být uložen.  
   
-     `Set`procedury vlastností může vrátit buď pomocí [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo [ukončovací příkaz](../../../visual-basic/language-reference/statements/exit-statement.md).  
+     `Set` procedury vlastností může vrátit buď pomocí [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo [ukončovací příkaz](../../../visual-basic/language-reference/statements/exit-statement.md).  
   
      `Exit Property` a `Return` příkazy způsobí okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazy může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
   
@@ -96,7 +87,7 @@ End Set
  [!code-vb[VbVbalrStatements#55](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/set-statement_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Get – příkaz](../../../visual-basic/language-reference/statements/get-statement.md)  
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Procedury vlastností](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
+ [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)

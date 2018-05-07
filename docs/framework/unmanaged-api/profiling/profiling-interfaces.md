@@ -1,28 +1,18 @@
 ---
-title: "Rozhraní pro profilaci"
-ms.custom: 
-ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
+title: Rozhraní pro profilaci
+ms.date: 04/10/2018
 helpviewer_keywords:
 - unmanaged interfaces [.NET Framework], profiling
 - profiling interfaces [.NET Framework]
 - interfaces [.NET Framework profiling]
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
-caps.latest.revision: "31"
-author: mairaw
-ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4f8c2a5ce5e1231c55f598e48d14bec896a4b5f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 059fadc5607e76b871083682136fda542ae9bacf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="profiling-interfaces"></a>Rozhraní pro profilaci
 Tato část popisuje nespravovaná rozhraní, které vám umožní profilu program, který je vykonáván common language runtime (CLR).  
@@ -54,7 +44,13 @@ Tato část popisuje nespravovaná rozhraní, které vám umožní profilu progr
   
  [ICorProfilerCallback7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-interface.md)  
  Poskytuje metody zpětného volání, která používá modul common language runtime profileru oznámit, že se aktualizuje symbol datový proud přidružený modul v paměti.  
-  
+
+[ICorProfilerCallback8 rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback8-interface.md)  
+Poskytuje metody zpětného volání, které používá modul common language runtime oznámit profileru, který má JIT – kompilace dynamické metody spuštění a dokončení.
+
+[ICorProfilerCallback9 rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback9-interface.md)  
+Poskytuje metody zpětného volání, která používá modul common language runtime oznámit profileru, který je dynamická metoda shromážděných a následně uvolňování paměti.
+
  [ICorProfilerFunctionControl – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md)  
  Poskytuje metody, které umožňují kódu profileru ke komunikaci s CLR řídit, jak by měla JIT kompilátoru generování kódu při nutnosti rekompilace konkrétní metody.  
   

@@ -1,13 +1,6 @@
 ---
-title: "Model vláken"
-ms.custom: 
+title: Model vláken
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -25,21 +18,16 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f598cecef2d0994692f197df09e9befc39a58723
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15115cc0ed14cb5605100ebe47abd5cd4dc02ec0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="threading-model"></a>Model vláken
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]slouží k uložení vývojáři z obtíže dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože programy s více vlákny složitá a obtížná k ladění, by měla při řešení jednovláknové existovat vyloučeno.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtíže dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože programy s více vlákny složitá a obtížná k ladění, by měla při řešení jednovláknové existovat vyloučeno.  
   
- Bez ohledu na tom, jak dobře navržen, ale ne [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] framework někdy budou moci poskytuje řešení s jedním podprocesem pro každý řazení problému. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]dodává zavřít, ale jsou stále situacích, kde více vláken zvýšit [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] výkonu odezvy nebo aplikace. Tento dokument po hovoříte o některé základní informace, jsou zde popsány některé z těchto situací a je uzavřen, přičemž se zabývat některé podrobnosti nižší úrovně.  
+ Bez ohledu na tom, jak dobře navržen, ale ne [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] framework někdy budou moci poskytuje řešení s jedním podprocesem pro každý řazení problému. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dodává zavřít, ale jsou stále situacích, kde více vláken zvýšit [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] výkonu odezvy nebo aplikace. Tento dokument po hovoříte o některé základní informace, jsou zde popsány některé z těchto situací a je uzavřen, přičemž se zabývat některé podrobnosti nižší úrovně.  
   
 
   
@@ -56,11 +44,11 @@ ms.lasthandoff: 12/22/2017
   
  Jak pak jsou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace by měl pro zpracování velkých operací? Co když kódu zahrnuje velké výpočtu nebo potřebuje k dotazování databáze na některé vzdáleného serveru? Obvykle je pro zpracování velkých operace v samostatné vlákno, a odpověď [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno volné zpravidla položky v <xref:System.Windows.Threading.Dispatcher> fronty. Po dokončení operace big ho může hlásit svůj výsledek zpět [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno pro zobrazení.  
   
- V minulosti [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] umožňuje [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementy, aby měly přístup jenom vlákno, které byly vytvořeny. To znamená, že vlákna na pozadí starosti některé dlouho běžící úlohy nelze aktualizovat v textovém poli Po dokončení. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]k tomu k zajištění integrity [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] součásti. Pole se seznamem může vypadat neobvyklé, pokud jeho obsah aktualizoval vlákna na pozadí během vykreslování.  
+ V minulosti [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] umožňuje [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementy, aby měly přístup jenom vlákno, které byly vytvořeny. To znamená, že vlákna na pozadí starosti některé dlouho běžící úlohy nelze aktualizovat v textovém poli Po dokončení. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] k tomu k zajištění integrity [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] součásti. Pole se seznamem může vypadat neobvyklé, pokud jeho obsah aktualizoval vlákna na pozadí během vykreslování.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]má integrovanou vzájemné vyloučení mechanismus, který vynucuje tato spolupráce. Většina tříd v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] odvozena od <xref:System.Windows.Threading.DispatcherObject>. Při vytváření <xref:System.Windows.Threading.DispatcherObject> ukládá odkaz na <xref:System.Windows.Threading.Dispatcher> propojené s aktuálně spuštěných vláken. V důsledku toho <xref:System.Windows.Threading.DispatcherObject> přidruží vlákno, které ji vytvoří. Při spuštění programu <xref:System.Windows.Threading.DispatcherObject> můžete volat jeho veřejné <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> metoda. <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>prozkoumá <xref:System.Windows.Threading.Dispatcher> přidružené k aktuální vlákno a porovná ho do <xref:System.Windows.Threading.Dispatcher> odkazovat na uložené během vytváření. Pokud se neshodují, <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> vyvolá výjimku. <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>je určena k volání na začátku každé metody, které patří k <xref:System.Windows.Threading.DispatcherObject>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má integrovanou vzájemné vyloučení mechanismus, který vynucuje tato spolupráce. Většina tříd v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] odvozena od <xref:System.Windows.Threading.DispatcherObject>. Při vytváření <xref:System.Windows.Threading.DispatcherObject> ukládá odkaz na <xref:System.Windows.Threading.Dispatcher> propojené s aktuálně spuštěných vláken. V důsledku toho <xref:System.Windows.Threading.DispatcherObject> přidruží vlákno, které ji vytvoří. Při spuštění programu <xref:System.Windows.Threading.DispatcherObject> můžete volat jeho veřejné <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> metoda. <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> prozkoumá <xref:System.Windows.Threading.Dispatcher> přidružené k aktuální vlákno a porovná ho do <xref:System.Windows.Threading.Dispatcher> odkazovat na uložené během vytváření. Pokud se neshodují, <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> vyvolá výjimku. <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> je určena k volání na začátku každé metody, které patří k <xref:System.Windows.Threading.DispatcherObject>.  
   
- Pokud pouze jedno vlákno můžete upravit [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], jak vlákna na pozadí komunikovat s uživatelem? Vlákna na pozadí můžete pokládat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno k provedení určité operace jeho jménem. Dělá to tak, že zaregistrujete pracovní položky pomocí <xref:System.Windows.Threading.Dispatcher> z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. <xref:System.Windows.Threading.Dispatcher> Třída nabízí dvě metody pro registraci pracovní položky: <xref:System.Windows.Threading.Dispatcher.Invoke%2A> a <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>. Obě metody naplánovat delegáta pro provedení. <xref:System.Windows.Threading.Dispatcher.Invoke%2A>je synchronní volání – to znamená, nevrací až [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken ve skutečnosti dokončí provádění delegát. <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>je asynchronní a vrátí okamžitě.  
+ Pokud pouze jedno vlákno můžete upravit [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], jak vlákna na pozadí komunikovat s uživatelem? Vlákna na pozadí můžete pokládat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno k provedení určité operace jeho jménem. Dělá to tak, že zaregistrujete pracovní položky pomocí <xref:System.Windows.Threading.Dispatcher> z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. <xref:System.Windows.Threading.Dispatcher> Třída nabízí dvě metody pro registraci pracovní položky: <xref:System.Windows.Threading.Dispatcher.Invoke%2A> a <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>. Obě metody naplánovat delegáta pro provedení. <xref:System.Windows.Threading.Dispatcher.Invoke%2A> je synchronní volání – to znamená, nevrací až [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken ve skutečnosti dokončí provádění delegát. <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> je asynchronní a vrátí okamžitě.  
   
  <xref:System.Windows.Threading.Dispatcher> Řadí elementy v příslušné fronty podle priority. Existují deset úrovně, které může být určen při přidávání se element <xref:System.Windows.Threading.Dispatcher> fronty. Tyto priority jsou zachována ve <xref:System.Windows.Threading.DispatcherPriority> výčtu. Podrobné informace o <xref:System.Windows.Threading.DispatcherPriority> úrovně lze nalézt v [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)] dokumentaci.  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
  ![Obrázek fronty dispečera](../../../../docs/framework/wpf/advanced/media/threadingdispatcherqueue.PNG "ThreadingDispatcherQueue")  
   
- [!INCLUDE[TLA#tla_word](../../../../includes/tlasharptla-word-md.md)]provede kontrolu pravopisu pomocí tento mechanismus. Kontrola pravopisu probíhá na pozadí pomocí čas nečinnosti [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. Podívejme se na kód.  
+ [!INCLUDE[TLA#tla_word](../../../../includes/tlasharptla-word-md.md)] provede kontrolu pravopisu pomocí tento mechanismus. Kontrola pravopisu probíhá na pozadí pomocí čas nečinnosti [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. Podívejme se na kód.  
   
  Následující příklad ukazuje XAML, který vytváří uživatelské rozhraní.  
   
@@ -105,7 +93,7 @@ ms.lasthandoff: 12/22/2017
   
  Kromě aktualizace textu na <xref:System.Windows.Controls.Button>, tato obslužná rutina zodpovídá za plánování první kontrola prime číslo přidáním delegátovi, aby se <xref:System.Windows.Threading.Dispatcher> fronty. Přetrvával po dokončení této obslužné rutiny události svou práci <xref:System.Windows.Threading.Dispatcher> vybere tohoto delegáta pro provedení.  
   
- Jak jsme už zmínili dřív, <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> je <xref:System.Windows.Threading.Dispatcher> člen používají k plánování delegáta pro provedení. V takovém případě vybereme možnost <xref:System.Windows.Threading.DispatcherPriority.SystemIdle> s prioritou. <xref:System.Windows.Threading.Dispatcher> Spustí jenom v případě, že neexistují žádné důležité události. ke zpracování tohoto delegáta. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]rychlost reakce je důležitější než číslo kontrola. Také jsme předání nové delegáta představující rutiny kontrola číslo.  
+ Jak jsme už zmínili dřív, <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> je <xref:System.Windows.Threading.Dispatcher> člen používají k plánování delegáta pro provedení. V takovém případě vybereme možnost <xref:System.Windows.Threading.DispatcherPriority.SystemIdle> s prioritou. <xref:System.Windows.Threading.Dispatcher> Spustí jenom v případě, že neexistují žádné důležité události. ke zpracování tohoto delegáta. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rychlost reakce je důležitější než číslo kontrola. Také jsme předání nové delegáta představující rutiny kontrola číslo.  
   
  [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberchecknextnumber)]
  [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberchecknextnumber)]  
@@ -143,7 +131,7 @@ ms.lasthandoff: 12/22/2017
   
  Po dokončení zpoždění, a rozhodli jsme se náhodně naše předpověď počasí, je čas zprávy zpět [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. Provedeme to pomocí naplánovaného volání `UpdateUserInterface` v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vláken pomocí daném vláknu <xref:System.Windows.Threading.Dispatcher>. Jsme předat řetězec popisující počasí pro toto volání metody naplánované.  
   
--   Aktualizace[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
+-   Aktualizace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
   
      [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherupdateui)]
      [!code-vb[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherupdateui)]  
@@ -154,7 +142,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="multiple-windows-multiple-threads"></a>Více oken, více vláken  
  Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace vyžadují více oken nejvyšší úrovně. Je zcela přijatelné pro jedno vlákno /<xref:System.Windows.Threading.Dispatcher> kombinace ke správě více oken, ale někdy několik vláken pracovat lépe. To platí hlavně v že případě je pravděpodobné, že jedna z windows bude monopolizovat všechny vlákno.  
   
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]Průzkumník funguje tímto způsobem. Každé nové okno Průzkumníka patří do procesu původní, ale se vytvoří pod kontrolou nezávislé vlákno.  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Průzkumník funguje tímto způsobem. Každé nové okno Průzkumníka patří do procesu původní, ale se vytvoří pod kontrolou nezávislé vlákno.  
   
  Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Frame> řízení, zobrazuje se webové stránky. Jsme můžete snadno vytvořit jednoduchou [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nahradit. Začneme s důležitou součást: možnost otevřete nové okno Průzkumníka. Když uživatel klikne na tlačítko "nové okno" tlačítko jsme spustit kopii naše okna v samostatných podprocesu. Tímto způsobem, dlouhodobé nebo blokování operací v jednom ze systému windows nebude uzamčení všechny ostatní systémy windows.  
   
@@ -177,18 +165,18 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowserthreadstart)]
  [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowserthreadstart)]  
   
- Tato metoda je výchozím bodem pro nové vlákno. Vytvoříme nové okno pod kontrolou tohoto podprocesu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]automaticky vytvoří nový <xref:System.Windows.Threading.Dispatcher> ke správě nové vlákno. Všechny budeme muset udělat, aby byly funkční okna je spustit <xref:System.Windows.Threading.Dispatcher>.  
+ Tato metoda je výchozím bodem pro nové vlákno. Vytvoříme nové okno pod kontrolou tohoto podprocesu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] automaticky vytvoří nový <xref:System.Windows.Threading.Dispatcher> ke správě nové vlákno. Všechny budeme muset udělat, aby byly funkční okna je spustit <xref:System.Windows.Threading.Dispatcher>.  
   
 <a name="stumbling_points"></a>   
 ## <a name="technical-details-and-stumbling-points"></a>Technické podrobnosti a Stumbling body  
   
 ### <a name="writing-components-using-threading"></a>Zápis součásti pomocí dělení na vlákna  
- [!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)] – Příručka vývojáře popisuje vzor jak součást můžou zpřístupnit asynchronní chování svým klientům (najdete v části [na základě událostí přehled asynchronních vzorů](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)). Předpokládejme například, jsme chtěli balíčku `FetchWeatherFromServer` metoda do komponenty opakovaně použitelný, které nepodporují grafiku. Následující standardní [!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)] vzor, to by vypadat podobně jako následující.  
+ Microsoft .NET Framework Developer's Guide popisuje vzor jak součást můžou zpřístupnit asynchronní chování svým klientům (viz [na základě událostí přehled asynchronních vzorů](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)). Předpokládejme například, jsme chtěli balíčku `FetchWeatherFromServer` metoda do komponenty opakovaně použitelný, které nepodporují grafiku. Tyto standardní vzor rozhraní Microsoft .NET Framework vypadat přibližně takto.  
   
  [!code-csharp[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#threadingarticleweathercomponent1)]
  [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent1)]  
   
- `GetWeatherAsync`by použijte jeden z technik popsaných výše, jako je například vytváření vlákna na pozadí, které udělají tuto práci asynchronně, není blokování volající vlákno.  
+ `GetWeatherAsync` by použijte jeden z technik popsaných výše, jako je například vytváření vlákna na pozadí, které udělají tuto práci asynchronně, není blokování volající vlákno.  
   
  Jedna z vašich nejdůležitějších částí tohoto vzoru volá *MethodName* `Completed` metoda ve stejném vlákně, který volá *MethodName* `Async` metodu začínat. Můžete tak učinit pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poměrně snadno uložením <xref:System.Windows.Threading.Dispatcher.CurrentDispatcher%2A>– ale pak komponentu které nepodporují grafiku může lze použít pouze ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, není v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)] programy.  
   
@@ -198,11 +186,11 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent2)]  
   
 ### <a name="nested-pumping"></a>Vnořené čerpání  
- Někdy není možné úplně zamčení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. Pojďme se podívat <xref:System.Windows.MessageBox.Show%2A> metodu <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox.Show%2A>nevrací, dokud uživatel klikne na tlačítko OK. Vytváří však okno, které musí mít smyčku zpráva, aby byla interaktivní. Když jsme čekají na uživatel kliknutím na tlačítko OK, neodpovídá původní okna aplikace na vstup uživatele. Nicméně, pokračovat ke zpracování malovat zprávy. Okno původní překreslí samotná popsaná a zjištěny.  
+ Někdy není možné úplně zamčení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] přístup z více vláken. Pojďme se podívat <xref:System.Windows.MessageBox.Show%2A> metodu <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox.Show%2A> nevrací, dokud uživatel klikne na tlačítko OK. Vytváří však okno, které musí mít smyčku zpráva, aby byla interaktivní. Když jsme čekají na uživatel kliknutím na tlačítko OK, neodpovídá původní okna aplikace na vstup uživatele. Nicméně, pokračovat ke zpracování malovat zprávy. Okno původní překreslí samotná popsaná a zjištěny.  
   
  ![MessageBox tlačítko "OK"](../../../../docs/framework/wpf/advanced/media/threadingnestedpumping.png "ThreadingNestedPumping")  
   
- Některé vlákno musí být starosti okno zprávy. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]vytvořit nové vlákno jenom pro okno zprávy, ale tohoto podprocesu by nemohl malovat zakázané elementy v okně původní (Nezapomeňte starší diskuzi o vzájemné vyloučení). Místo toho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá zprávu vnořené zpracování systému. <xref:System.Windows.Threading.Dispatcher> Třída obsahuje speciální metodu s názvem <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>, která ukládá aktuální bod spuštění aplikace pak začne smyčku nové zprávy. Po dokončení vnořené zpráva smyčky provádění obnoví po původní <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> volání.  
+ Některé vlákno musí být starosti okno zprávy. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvořit nové vlákno jenom pro okno zprávy, ale tohoto podprocesu by nemohl malovat zakázané elementy v okně původní (Nezapomeňte starší diskuzi o vzájemné vyloučení). Místo toho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá zprávu vnořené zpracování systému. <xref:System.Windows.Threading.Dispatcher> Třída obsahuje speciální metodu s názvem <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>, která ukládá aktuální bod spuštění aplikace pak začne smyčku nové zprávy. Po dokončení vnořené zpráva smyčky provádění obnoví po původní <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> volání.  
   
  V takovém případě <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> udržuje kontextu programu na volání <xref:System.Windows.MessageBox>.<xref:System.Windows.MessageBox.Show%2A>, a zahájí cyklus nové zprávy překreslit okno pozadí a zpracovat vstup okno zprávy. Když uživatel klikne na tlačítko OK a vymaže místním okně, ukončení vnořených smyčky a řízení obnoví po volání <xref:System.Windows.MessageBox.Show%2A>.  
   
@@ -213,7 +201,7 @@ ms.lasthandoff: 12/22/2017
   
  Při stisknutí levé tlačítko myši nad se třemi tečkami `handler2` se spustí. Po `handler2` skončí, události se předají <xref:System.Windows.Controls.Canvas> objekt, který používá `handler1` zpracovat. K tomu dojde pouze v případě `handler2` nemá explicitně označit objekt událostí jako zpracování.  
   
- Je možné, který `handler2` bude trvat značnou část doby zpracování této události. `handler2`může použít <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> zahájíte smyčku vnořené zpráv, který nevrací hodin. Pokud `handler2` neobsahuje označit událost jako zpracování, pokud je tato zpráva smyčky dokončení, událost byla předána do stromu, i když je velmi staré.  
+ Je možné, který `handler2` bude trvat značnou část doby zpracování této události. `handler2` může použít <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> zahájíte smyčku vnořené zpráv, který nevrací hodin. Pokud `handler2` neobsahuje označit událost jako zpracování, pokud je tato zpráva smyčky dokončení, událost byla předána do stromu, i když je velmi staré.  
   
 ### <a name="reentrancy-and-locking"></a>Vícenásobný přístup a zamykání  
  Uzamčení mechanismus [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] není chovat přesně tak, jak může jeden Představte si; jeden můžou očekávat vlákna ke zcela zastaví operaci žádosti o zámek. Ve skutečnosti vlákno nadále přijímat a zpracovávat zprávy s vysokou prioritou. To pomáhá zabránit blokování a dosáhnete rozhraní minimálně reakce, ale přináší možnost pro jemně chyby.  Velká většina času nemusíte nic vědět o tom, ale za výjimečných podmínek (obvykle zahrnující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno zprávy nebo komponenty COM STA) to může být vhodné s jistotou.  

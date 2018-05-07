@@ -1,22 +1,12 @@
 ---
-title: "Postupy: vyhledání Následnickým elementům (XPath-technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: vyhledání Následnickým elementům (XPath-technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e7e2dc9e-bda9-420d-a5b1-4fabf1cca46b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 32a8debaab957e2739a7b489554acc6f9affddfe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e5915eb06af427c0631049af6dfc30399cb775e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání Následnickým elementům (XPath-technologie LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak získat následnickým elementům s konkrétním názvem.  

@@ -1,24 +1,12 @@
 ---
-title: "Rozšiřitelnost kanálů"
-ms.custom: 
+title: Rozšiřitelnost kanálů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4cc3b20b-778a-4ae8-b58c-a3822fb13065
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 541770db6b9cc624fd08ab4db275bc63fa5deca9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 90a35700b85f73a0a0ff668d7c33274ae62dd718
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="channels-extensibility"></a>Rozšiřitelnost kanálů
 Tato část obsahuje příklady vysvětlující vlastní kanály.  

@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], parameters
 - procedure overloading [Visual Basic], optional parameters
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b4a863944d4f9ab265aab52578fbb704ca376de5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1da1d67726a9669477721aabc0aace0119aa7e56
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)
 Pokud procedury má jeden nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry, nelze definovat přetížené verze odpovídající některý z jeho implicitní přetížení. Další informace najdete v tématu "Implicitní přetížení pro volitelné parametry" v [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
@@ -70,13 +61,13 @@ Pokud procedury má jeden nebo více [volitelné](../../../../visual-basic/langu
 5.  Terminate – každý postup s `End Sub` nebo `End Function` příkaz podle potřeby.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
+ [Procedury](./index.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Volitelné parametry](./optional-parameters.md)  
+ [Nepovinné parametry](./optional-parameters.md)  
  [Pole parametrů](./parameter-arrays.md)  
  [Přetížení procedury](./procedure-overloading.md)  
  [Řešení potíží s procedurami](./troubleshooting-procedures.md)  
- [Postupy: definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
- [Postupy: volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
- [Postupy: přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
+ [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)  
+ [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)  
+ [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
  [Řešení přetížení](./overload-resolution.md)

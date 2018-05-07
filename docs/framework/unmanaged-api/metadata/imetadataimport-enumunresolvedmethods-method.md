@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport::EnumUnresolvedMethods – metoda"
-ms.custom: 
+title: IMetaDataImport::EnumUnresolvedMethods – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport.EnumUnresolvedMethods
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: eb3187d7-74cf-44b1-aeeb-7a8d2b60e3b7
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d4e77453fc11b77b602d4a89f0d90540c06b0a08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfd53309b2b5e96e28e9e063a8adfda430864115
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimportenumunresolvedmethods-method"></a>IMetaDataImport::EnumUnresolvedMethods – metoda
 Vytvoří výčet MemberDef tokeny představující nerozpoznané metody v aktuálním oboru metadat.  
@@ -66,7 +54,7 @@ HRESULT EnumUnresolvedMethods (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumUnresolvedMethods`úspěšně vrácena.|  
+|`S_OK`|`EnumUnresolvedMethods` úspěšně vrácena.|  
 |`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -81,7 +69,7 @@ HRESULT EnumUnresolvedMethods (
   
  **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  

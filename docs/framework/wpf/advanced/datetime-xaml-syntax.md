@@ -1,13 +1,6 @@
 ---
-title: "DateTime – syntaxe v jazyce XAML"
-ms.custom: 
+title: DateTime – syntaxe v jazyce XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DateTime XAML syntax [WPF], strings for
 - DateTime XAML syntax [WPF], where used
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - DateTime XAML text [WPF]
 - DateTime XAML syntax [WPF], format strings for
 ms.assetid: 5901710a-609b-40c8-9d65-f0016cd9090b
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f3010d3123e78a5e292c5ac78ef4894962fb8f9d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 286117cc0cce9fb54ea2c372360b13865fba77ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime – syntaxe v jazyce XAML
 Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>, mít vlastnosti, které používají <xref:System.DateTime> typu. I když obvykle zadejte počáteční datum nebo čas pro tyto ovládací prvky v kódu v době běhu je zadat v jazyce XAML počáteční datum nebo čas. Analyzátor WPF XAML zpracovává analýze <xref:System.DateTime> hodnoty pomocí předdefinovaných syntaxe text XAML. Toto téma popisuje, jaké jsou specifikace <xref:System.DateTime> XAML textových syntaxi.  
@@ -36,11 +24,11 @@ Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calen
  Nastavení kalendářních dat v jazyce XAML není vždy nutné a dokonce nemusí být žádoucí. Například můžete použít <xref:System.DateTime.Now%2A?displayProperty=nameWithType> vlastnost inicializovat data v době běhu, nebo můžete udělat všechny datum úpravy pro kalendář v kódu založené na vstup uživatele. Ale existují scénáře, kde můžete data pevný kódu do <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker> v šabloně ovládacího prvku. <xref:System.DateTime> XAML syntaxe musí být použita pro tyto scénáře.  
   
 ### <a name="datetime-xaml-syntax-is-a-native-behavior"></a>Syntaxe jazyka XAML data a času je nativní chování  
- <xref:System.DateTime>je třída, která je definována v knihovnách základní třídy modulu CLR. Z důvodu jak základní třídy knihovny vztahují k zbytek modulu CLR, není možné použít <xref:System.ComponentModel.TypeConverterAttribute> třídy a používání převaděče typů ke zpracování řetězců z XAML a převést tak, aby <xref:System.DateTime> v době běhu objektu modelu. Neexistuje žádné `DateTimeConverter` – třída, která poskytuje chování převod; převod chování popsané v tomto tématu je nativní pro analyzátor WPF XAML.  
+ <xref:System.DateTime> je třída, která je definována v knihovnách základní třídy modulu CLR. Z důvodu jak základní třídy knihovny vztahují k zbytek modulu CLR, není možné použít <xref:System.ComponentModel.TypeConverterAttribute> třídy a používání převaděče typů ke zpracování řetězců z XAML a převést tak, aby <xref:System.DateTime> v době běhu objektu modelu. Neexistuje žádné `DateTimeConverter` – třída, která poskytuje chování převod; převod chování popsané v tomto tématu je nativní pro analyzátor WPF XAML.  
   
 <a name="format_strings_for_datetime_xaml_syntax"></a>   
 ## <a name="format-strings-for-datetime-xaml-syntax"></a>Řetězce formátu data a času XAML syntaxe  
- Můžete zadat formát <xref:System.DateTime> s řetězci formátu. Řetězce formátu formalizujte syntaxe text, který slouží k vytvoření hodnoty. <xref:System.DateTime>hodnoty pro existující WPF řídí obecně pouze použití datum součástí <xref:System.DateTime> a není součástí čas.  
+ Můžete zadat formát <xref:System.DateTime> s řetězci formátu. Řetězce formátu formalizujte syntaxe text, který slouží k vytvoření hodnoty. <xref:System.DateTime> hodnoty pro existující WPF řídí obecně pouze použití datum součástí <xref:System.DateTime> a není součástí čas.  
   
  Při zadávání <xref:System.DateTime> v jazyce XAML, můžete použít některý z řetězce formátu zcela zaměnitelným významem.  
   

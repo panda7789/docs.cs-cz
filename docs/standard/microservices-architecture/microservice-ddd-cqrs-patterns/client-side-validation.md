@@ -1,21 +1,14 @@
 ---
 title: Ověřování na straně klienta (ověřování v prezentační vrstvy)
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Ověřování na straně klienta (ověřování v prezentační vrstvy)
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2057609c7f5c26668eac49cecce522135545e7dd
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 2adce39561dd2b97910155ebed595a2df7785c11
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentační vrstvy)
 

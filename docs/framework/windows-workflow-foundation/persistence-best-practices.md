@@ -1,24 +1,12 @@
 ---
 title: Trvalost osvědčené postupy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 6974c5a4-1af8-4732-ab53-7d694608a3a0
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cfea5b8728774a4e788f3f0d866c6741d5b0bbe9
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 68164cc937c1c718df39c96c3d6ac490ab025fae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="persistence-best-practices"></a>Trvalost osvědčené postupy
 Tento dokument popisuje osvědčené postupy pro pracovní postup návrhu a konfigurace související s trvalost pracovního postupu.  

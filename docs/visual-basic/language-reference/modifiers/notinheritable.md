@@ -1,10 +1,6 @@
 ---
 title: NotInheritable (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - NotInheritable
 - vb.NotInheritable
@@ -19,14 +15,11 @@ helpviewer_keywords:
 - sealed classes [Visual Basic]
 - classes [Visual Basic], not inheritable
 ms.assetid: 5c4da7c9-9562-4653-a947-1972e992f9f9
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 6e7de9fac10cf6a2d47ccc1351232271391cf112
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 537d10e68061758234922157b5df14302f1451b5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="notinheritable-visual-basic"></a>NotInheritable (Visual Basic)
 Určuje, že třídy nelze použít jako základní třída.  
@@ -36,9 +29,9 @@ Určuje, že třídy nelze použít jako základní třída.
   
  `NotInheritable` Modifikátor můžete v tomto kontextu použít:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)  
+ [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)  
  [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

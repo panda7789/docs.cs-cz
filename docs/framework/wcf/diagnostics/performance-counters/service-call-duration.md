@@ -1,24 +1,12 @@
 ---
-title: "Služby: Doba trvání volání"
-ms.custom: 
+title: 'Služby: Doba trvání volání'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dfe42a97-daf8-42c3-ba34-4bb8230cdebb
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e6bd06f7267a0ad493542f83126cb1fc07d2fe34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 80e506436e6398907f50ac6a95eb2f66410869a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-call-duration"></a>Služby: Doba trvání volání
 Název čítače: Doba volání  

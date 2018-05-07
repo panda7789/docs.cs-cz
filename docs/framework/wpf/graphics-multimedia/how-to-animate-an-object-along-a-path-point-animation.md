@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Animace objektu podél cesty (bodová animace)"
-ms.custom: 
+title: 'Postupy: Animace objektu podél cesty (bodová animace)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - animation [WPF], objects along paths (point animation)
 - point animation [WPF]
 ms.assetid: 1fa3f817-35bc-41a1-b366-f5a20b70da0c
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 399d6b8028b8715f38335089a723707657df4a98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 639e28d9b809d6fb5eed3a002bca1ffc40913896
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-an-object-along-a-path-point-animation"></a>Postupy: Animace objektu podél cesty (bodová animace)
 Tento příklad ukazuje, jak používat <xref:System.Windows.Media.Animation.PointAnimationUsingPath> objekt, který má animace <xref:System.Windows.Point> podél zakřivené cesty.  

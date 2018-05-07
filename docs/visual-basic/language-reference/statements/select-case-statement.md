@@ -1,11 +1,6 @@
 ---
-title: "Select...Case – příkaz (Visual Basic)"
+title: Select...Case – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Select
 - vb.Case
@@ -26,14 +21,11 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Select Case statements
 - Case statement [Visual Basic], Select...Case
 ms.assetid: 68877b65-5419-4bf0-a465-20cd0e4c7d44
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a7527763a05ec32af88c6ba66ef717d839c33154
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9d24b455d92cbd00b268df26283aab082b7703a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="selectcase-statement-visual-basic"></a>Select...Case – příkaz (Visual Basic)
 Používá jednu z několika skupin příkazů, v závislosti na hodnotě výrazu.  
@@ -82,7 +74,7 @@ End Select
   
  Pokud kód v rámci `Case` nebo `Case Else` blok příkazu není nutné spustit všechny více příkazy v bloku, blok ho můžete ukončit pomocí `Exit Select` příkaz. Toto okamžitě převede řízení pro následující příkaz `End Select`.  
   
- `Select Case`konstrukce mohou být použity. Všechny vnořené `Select Case` konstrukce musí mít odpovídající `End Select` příkaz a musí být zcela obsažen v rámci jednoho `Case` nebo `Case Else` příkaz blok vnější `Select Case` konstrukce, ve kterém je vnořený.  
+ `Select Case` konstrukce mohou být použity. Všechny vnořené `Select Case` konstrukce musí mít odpovídající `End Select` příkaz a musí být zcela obsažen v rámci jednoho `Case` nebo `Case Else` příkaz blok vnější `Select Case` konstrukce, ve kterém je vnořený.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá `Select Case` konstrukce k zápisu řádku odpovídající hodnotě proměnné `number`. Druhý `Case` příkaz obsahuje hodnotu, která odpovídá aktuální hodnota `number`, takže příkaz, který zapíše "6 až 8, včetně" spustí.  
@@ -91,7 +83,7 @@ End Select
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Interaction.Choose%2A>  
- [End – příkaz](../../../visual-basic/language-reference/statements/end-statement.md)  
- [If... Potom... Else – příkaz](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
- [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
- [Exit – příkaz](../../../visual-basic/language-reference/statements/exit-statement.md)
+ [Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)  
+ [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
+ [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
+ [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)

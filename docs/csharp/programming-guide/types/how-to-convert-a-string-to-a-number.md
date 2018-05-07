@@ -1,24 +1,17 @@
 ---
 title: 'Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - conversions [C#]
 - conversions [C#], string to int
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-caps.latest.revision: 34
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c5cecfdf822352d22713985d84cdd7025d0665c8
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 55ff87ef51f00a803276083052d4d86960e702e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)
 Můžete převést [řetězec](../../../csharp/language-reference/keywords/string.md) na číslo pomocí metody v <xref:System.Convert> třídy nebo pomocí `TryParse` nalezena metoda na různých číselnými typy (int, dlouhé, float, atd.).  

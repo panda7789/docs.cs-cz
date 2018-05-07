@@ -1,22 +1,12 @@
 ---
-title: "Přehled oborů názvů (technologie LINQ to XML)"
-ms.custom: 
+title: Přehled oborů názvů (technologie LINQ to XML)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b8eb31fa-4b26-4acf-8050-6e705687f458
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 082172720abd39634f7183367d4d7b8d53d2bb7e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0e8a3313a41338f28a225a6d94fe5a4eb5210b8a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="namespaces-overview-linq-to-xml"></a>Přehled oborů názvů (technologie LINQ to XML)
 Toto téma představuje obory názvů, <xref:System.Xml.Linq.XName> třída a <xref:System.Xml.Linq.XNamespace> třídy.  
@@ -28,7 +18,7 @@ Toto téma představuje obory názvů, <xref:System.Xml.Linq.XName> třída a <x
   
  Při použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s Visual Basic a XML – literály, musíte použít předpony oboru názvů při práci s dokumenty v oborech názvů.  
   
- V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], je třída, která představuje názvy XML <xref:System.Xml.Linq.XName>. Často se názvy XML v průběhu zobrazit [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API, a bez ohledu na název XML je potřeba, najdete <xref:System.Xml.Linq.XName> parametr. Nicméně, občas pracovat přímo se <xref:System.Xml.Linq.XName>. <xref:System.Xml.Linq.XName>obsahuje implicitní převod z řetězce.  
+ V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], je třída, která představuje názvy XML <xref:System.Xml.Linq.XName>. Často se názvy XML v průběhu zobrazit [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API, a bez ohledu na název XML je potřeba, najdete <xref:System.Xml.Linq.XName> parametr. Nicméně, občas pracovat přímo se <xref:System.Xml.Linq.XName>. <xref:System.Xml.Linq.XName> obsahuje implicitní převod z řetězce.  
   
  Další informace naleznete v tématu <xref:System.Xml.Linq.XNamespace> a <xref:System.Xml.Linq.XName>.  
   

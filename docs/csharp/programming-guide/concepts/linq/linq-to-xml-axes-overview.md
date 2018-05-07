@@ -1,21 +1,12 @@
 ---
-title: "Technologie LINQ to přehled osy XML (C#)"
-ms.custom: 
+title: Technologie LINQ to přehled osy XML (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 516792fb-461d-40a8-8a50-9993a51258fc
-caps.latest.revision: "4"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3472a6deefd8d4c3cafec2c538c8d0a8b9f2e470
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0fe8766e3bcde17b59d78f0659043b8d4f017066
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-axes-overview-c"></a>Technologie LINQ to přehled osy XML (C#)
 Po vytvoření strom XML nebo načíst dokument XML do strom XML, můžete ji najít elementy a atributy a jejich hodnoty načíst dotazovat. Načíst prostřednictvím kolekce *osy metody*, označovaný také *osy*. Některé z os jsou metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy, který vrací <xref:System.Collections.Generic.IEnumerable%601> kolekce. Některé z os jsou rozšiřující metody v <xref:System.Xml.Linq.Extensions> třídy. Osy, které jsou implementovány jako rozšiřující metody pracovat na kolekce a vrátí kolekce.  
@@ -24,7 +15,7 @@ Po vytvoření strom XML nebo načíst dokument XML do strom XML, můžete ji na
   
  Kromě osy metody, které vrací kolekce, jsou k dispozici dvě další metody, které se běžně používáte [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy. <xref:System.Xml.Linq.XContainer.Element%2A> Metoda vrátí hodnotu typu single <xref:System.Xml.Linq.XElement>. <xref:System.Xml.Linq.XElement.Attribute%2A> Metoda vrátí hodnotu typu single <xref:System.Xml.Linq.XAttribute>.  
   
- Mnoho důvodů [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy poskytují nejúčinnějších způsob, jak vyhledat stromu, extrahovat data z něj a transformovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]dotazy na objekty, které implementují pracovat <xref:System.Collections.Generic.IEnumerable%601>a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] OS vrátit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> kolekcí, a <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XAttribute> kolekce. Je nutné tyto kolekce a provádět své dotazy.  
+ Mnoho důvodů [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy poskytují nejúčinnějších způsob, jak vyhledat stromu, extrahovat data z něj a transformovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy na objekty, které implementují pracovat <xref:System.Collections.Generic.IEnumerable%601>a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] OS vrátit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> kolekcí, a <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XAttribute> kolekce. Je nutné tyto kolekce a provádět své dotazy.  
   
  Kromě osy metody, které načíst kolekce elementů a atributů jsou osy metody, které vám umožní iteraci v rámci stromu příliš podrobně. Místo práci s elementů a atributů, například můžete pracovat s uzly stromu. Uzly jsou jemnějšího úrovni členitosti než elementů a atributů. Při práci s uzly, můžete zkontrolovat komentáře XML, textové uzly zpracování pokynů a další. Tato funkce je důležitá, například pro někoho, kdo je psaní textovém editoru a chce pro uložení dokumentů ve formátu XML. Většina programátory v jazyce XML jsou primárně problémem s prvky, atributy a jejich hodnoty.  
   

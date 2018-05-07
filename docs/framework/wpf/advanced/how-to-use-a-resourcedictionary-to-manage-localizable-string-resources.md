@@ -1,14 +1,6 @@
 ---
 title: 'Postupy: Správa zdrojů lokalizovatelných řetězců pomocí ResourceDictionary'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - ResourceDictionary [WPF]
 - localization [WPF], packaging string resources
 ms.assetid: 19e7d9a5-20df-4ad3-b157-fe6515902e5e
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 70f8f02f315580c8056ee698b5e45b1a31a3dc74
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 76ff3f688b5d3e7122254990076edb21fe6ae119
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-resourcedictionary-to-manage-localizable-string-resources"></a>Postupy: Správa zdrojů lokalizovatelných řetězců pomocí ResourceDictionary
 Tento příklad ukazuje, jak používat <xref:System.Windows.ResourceDictionary> k prostředkům lokalizovatelný řetězec balíčku pro aplikace Windows Presentation Foundation (WPF).  

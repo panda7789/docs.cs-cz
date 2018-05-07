@@ -1,10 +1,6 @@
 ---
 title: Shadows (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Shadows
 - shadows
@@ -15,14 +11,11 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - names [Visual Basic], shadowing
 ms.assetid: 6bf687cd-0544-4797-b51b-911125ec57c6
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bb767c372cc05d61d569227af8eef0dc3c67489b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4ca4ec48ee63b71447056a2c5cb68e8948f27ad0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)
 Určuje, že deklarované programovací element redeclares a skryje stejně jako s názvem prvku, nebo sadu přetížené elementů v základní třídě.  
@@ -50,39 +43,39 @@ Určuje, že deklarované programovací element redeclares a skryje stejně jako
   
  `Shadows` Modifikátor lze použít v těchto kontexty:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Sdílené](../../../visual-basic/language-reference/modifiers/shared.md)  
- [Statické](../../../visual-basic/language-reference/modifiers/static.md)  
- [Privátní](../../../visual-basic/language-reference/modifiers/private.md)  
- [ME, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
+ [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Static](../../../visual-basic/language-reference/modifiers/static.md)  
+ [Private](../../../visual-basic/language-reference/modifiers/private.md)  
+ [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
  [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
  [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
  [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
- [Přetížení](../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
- [Přepsání](../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
  [Stínový provoz v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

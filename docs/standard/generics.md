@@ -1,23 +1,16 @@
 ---
-title: "Obecné typy (Obecné) – přehled"
-description: "Zjistěte, jak obecné fungovat jako kód šablony, které umožňují definovat bezpečnost typů datové struktury bez potvrzení typ skutečná data."
-keywords: "Rozhraní .NET, .NET core"
+title: Obecné typy (Obecné) – přehled
+description: Zjistěte, jak obecné fungovat jako kód šablony, které umožňují definovat bezpečnost typů datové struktury bez potvrzení typ skutečná data.
 author: kuhlenh
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: f36bae495631db68afb1404398cbf43e890d4f33
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ad6216998dff70ca7e36b52b374c5ffb9fd0cd45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-types-generics-overview"></a>Obecné typy (Obecné) – přehled
 

@@ -1,21 +1,12 @@
 ---
-title: "Množinové operace (C#)"
-ms.custom: 
+title: Množinové operace (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 7c589367-ef8f-4161-9050-642c47e6bf63
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b5b546d9df8752fd7afd6e0db4525bc923a74bbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 45b828f89b380b2649ab5ee80f5438d822de9443
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="set-operations-c"></a>Množinové operace (C#)
 Množinové operace v technologii LINQ naleznete v operacích dotazu, které produkují je sada výsledků dotazu, který je založen na přítomnosti nebo absenci ekvivalentní elementů v rámci stejné nebo samostatné kolekce (nebo sady).  
@@ -36,12 +27,12 @@ Množinové operace v technologii LINQ naleznete v operacích dotazu, které pro
 ### <a name="distinct"></a>Distinct  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType> metodu posloupnost znaků. Vrácený pořadí obsahuje jedinečný elementy ze vstupní pořadí.  
   
- ![Obrázek znázorňující chování Distinct &#40; &#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Odlišné")  
+ ![Obrázek znázorňující chování Distinct&#40;&#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Odlišné")  
   
 ### <a name="except"></a>S výjimkou  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType>. Vrácený pořadí obsahuje pouze elementy z první vstupní pořadí, které nejsou v druhé vstupní pořadí.  
   
- ![Obrázek znázorňující akce s výjimkou &#40; &#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/except.png "s výjimkou")  
+ ![Obrázek znázorňující akce s výjimkou&#40;&#41;. ] (../../../../csharp/programming-guide/concepts/linq/media/except.png "s výjimkou")  
   
 ### <a name="intersect"></a>Intersect  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType>. Vrácený pořadí obsahuje prvky, které jsou společné pro objekty vstupních sekvencí.  

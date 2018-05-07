@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vlastní vykreslení ovládacího prvku ToolStrip"
-ms.custom: 
+title: 'Postupy: Vlastní vykreslení ovládacího prvku ToolStrip'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,25 +16,20 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 94e7d7bd-a752-441c-b5b3-7acf98881163
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 40a0d683a6b9b91233cf9a5c1d133540e47192cd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 09d9654bf1a2670c77a4a3db2eae2ed7ab6dbfec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-custom-draw-a-toolstrip-control"></a>Postupy: Vlastní vykreslení ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> Ovládacích prvků mají následující přidružené vykreslování třídy (Malování):  
   
--   <xref:System.Windows.Forms.ToolStripSystemRenderer>poskytuje vzhled a stylu operačního systému.  
+-   <xref:System.Windows.Forms.ToolStripSystemRenderer> poskytuje vzhled a stylu operačního systému.  
   
--   <xref:System.Windows.Forms.ToolStripProfessionalRenderer>poskytuje vzhled a stylu systému Microsoft Office.  
+-   <xref:System.Windows.Forms.ToolStripProfessionalRenderer> poskytuje vzhled a stylu systému Microsoft Office.  
   
--   <xref:System.Windows.Forms.ToolStripRenderer>je abstraktní základní třída pro jiné třídy dvě vykreslování.  
+-   <xref:System.Windows.Forms.ToolStripRenderer> je abstraktní základní třída pro jiné třídy dvě vykreslování.  
   
  Pro vlastní kreslení (také označované jako vlastník kreslení) <xref:System.Windows.Forms.ToolStrip>, můžete přepsat jednu z tříd zobrazovací jednotky a změnit aspekt logiky vykreslování.  
   

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vytvoření soukromé kolekce písem"
-ms.custom: 
+title: 'Postupy: Vytvoření soukromé kolekce písem'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - private font collections [Windows Forms], creating
 - fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c0107b1ef1d5259835c6fb1666519d3fc06f4e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 824d42c40b07e8662395e7a1286b9a5a6112c415
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-private-font-collection"></a>Postupy: Vytvoření soukromé kolekce písem
 <xref:System.Drawing.Text.PrivateFontCollection> Třída dědí z <xref:System.Drawing.Text.FontCollection> abstraktní základní třída. Můžete použít <xref:System.Drawing.Text.PrivateFontCollection> objekt udržovat sadu písem speciálně pro vaši aplikaci. Kolekce privátní písem může zahrnovat nainstalovaný systém písma, jakož i písma, které nebyly nainstalovány v počítači. Chcete-li přidat soubor písma na kolekci privátní písma, zavolejte <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> metodu <xref:System.Drawing.Text.PrivateFontCollection> objektu.  
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
   
  ![Text písem](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")  
   
- Arial.tff (která byla přidána do kolekce privátní písem v následujícím příkladu kódu) je v souboru Arial regulární styl písma. Upozorňujeme však, že program výstup ukazuje několik dostupných stylů než regular pro typu Arial. Je to způsobeno [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete simulovat tučné, kurzíva a Tučná kurzíva styly ze standardního stylu. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]Můžete také vytvořit podtržení a přeškrtnutí ze standardního stylu.  
+ Arial.tff (která byla přidána do kolekce privátní písem v následujícím příkladu kódu) je v souboru Arial regulární styl písma. Upozorňujeme však, že program výstup ukazuje několik dostupných stylů než regular pro typu Arial. Je to způsobeno [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete simulovat tučné, kurzíva a Tučná kurzíva styly ze standardního stylu. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Můžete také vytvořit podtržení a přeškrtnutí ze standardního stylu.  
   
  Podobně [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete simulovat styl tučné kurzíva z tučné styl nebo styl kurzíva. Výstup programu ukazuje, že styl tučné kurzíva je k dispozici pro rodinu časy, i když je jedinou TimesBd.tff (Times New Roman, tučné) časy soubor v kolekci.  
   

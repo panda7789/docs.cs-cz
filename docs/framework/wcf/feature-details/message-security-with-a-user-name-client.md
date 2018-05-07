@@ -1,30 +1,20 @@
 ---
-title: "Zabezpečení zpráv s klientem uživatelského jména"
-ms.custom: 
+title: Zabezpečení zpráv s klientem uživatelského jména
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-caps.latest.revision: "15"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: dfda34c6bf165ebcecfd6d9a3710e785586d6cb1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7bda1bc18e2b5af1365c799c6f2be9d8d220e9ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpečení zpráv s klientem uživatelského jména
-Následující obrázek znázorňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečené pomocí zabezpečení na úrovni zpráv klienta a služby. Služba je ověření pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  
+Následující obrázek znázorňuje služba Windows Communication Foundation (WCF) a klient zabezpečené pomocí zabezpečení na úrovni zpráv. Služba je ověření pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  
   
  Ukázkovou aplikaci, najdete v části [uživatelské jméno zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-user-name.md).  
   
@@ -33,7 +23,7 @@ Následující obrázek znázorňuje [!INCLUDE[indigo1](../../../../includes/ind
 |Vlastnosti|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení.|Zpráva|  
-|Interoperabilita|[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]pouze|  
+|Interoperabilita|Windows Communication Foundation (WCF) pouze|  
 |Ověřování (Server)|Počáteční vyjednávání vyžaduje ověření serveru|  
 |Ověřování (klient)|Uživatelské jméno a heslo|  
 |Integrita|Ano, kontextu sdílené zabezpečení|  

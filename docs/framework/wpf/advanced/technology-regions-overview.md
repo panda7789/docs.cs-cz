@@ -1,13 +1,6 @@
 ---
-title: "Přehled technologie oblastí"
-ms.custom: 
+title: Přehled technologie oblastí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - window regions [WPF]
 - Win32 code [WPF], WPF interoperation
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - interoperability [WPF], airspace
 - Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 142973793fd002925bbe2b4b09ce8e6d34553031
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2fef7a0f3b4e01d7ce29baeb70fbdd7ea37f2c89
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud se používají více technologie prezentace v aplikaci, například WPF, Win32 nebo DirectX, sdílejí musí vykreslování oblasti v rámci běžných období nejvyšší úrovně. Toto téma popisuje problémy, které by mohly ovlivnit prezentace a vstup pro vaši aplikaci WPF součinnosti.  
@@ -55,19 +43,19 @@ Pokud se používají více technologie prezentace v aplikaci, například WPF, 
  ![Spolupráce diagram](../../../../docs/framework/wpf/advanced/media/migrationinteroparchitectarticle05.png "MigrationInteropArchitectArticle05")  
   
 ## <a name="transparency-and-top-level-windows"></a>Průhlednost a nejvyšší úrovně Windows  
- Okno správce v systému Windows zpracovává jenom skutečně [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] HWND. Proto každých [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> je popisovačem HWND. <xref:System.Windows.Window> HWND musíte dodržet obecná pravidla pro všechny HWND. V rámci této HWND [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kódu můžete provést, ať celkovým [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] podporovat. Ale pro interakce s další HWND na ploše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] musíte dodržet [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] zpracování a generování pravidel.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje obdélníkový windows pomocí [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]– HRGNs pro obdélníkový windows a windows vrstev pro platformu alpha za pixelů.  
+ Okno správce v systému Windows zpracovává jenom skutečně [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] HWND. Proto každých [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> je popisovačem HWND. <xref:System.Windows.Window> HWND musíte dodržet obecná pravidla pro všechny HWND. V rámci této HWND [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kódu můžete provést, ať celkovým [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] podporovat. Ale pro interakce s další HWND na ploše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] musíte dodržet [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] zpracování a generování pravidel.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje obdélníkový windows pomocí [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]– HRGNs pro obdélníkový windows a windows vrstev pro platformu alpha za pixelů.  
   
- Konstantní alpha a barvu klíče nejsou podporovány.  [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]Vrstvený okno Možnosti se liší podle platformy.  
+ Konstantní alpha a barvu klíče nejsou podporovány.  [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] Vrstvený okno Možnosti se liší podle platformy.  
   
  Vrstvený windows provádět celé okno průhledná (poloprůhledné) tak, že zadáte hodnotu alfa a platí pro každý pixel v okně.  ([!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ve skutečnosti alpha podporuje za pixelů, ale je velmi obtížné použít v programech, praktické, protože v tomto režimu potřebovali byste k vykreslení všechny podřízené HWND sami, včetně dialogová okna a rozevíracích seznamů).  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje HRGNs; Existují však ne spravované [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pro tuto funkci. Můžete použít platformy vyvolání a <xref:System.Windows.Interop.HwndSource> volat odpovídajícího [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Další informace najdete v tématu [volání nativních funkcí ze spravovaného kódu](/cpp/dotnet/calling-native-functions-from-managed-code).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje HRGNs; Existují však ne spravované [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pro tuto funkci. Můžete použít platformy vyvolání a <xref:System.Windows.Interop.HwndSource> volat odpovídajícího [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Další informace najdete v tématu [volání nativních funkcí ze spravovaného kódu](/cpp/dotnet/calling-native-functions-from-managed-code).  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]vrstvený windows mají různé možnosti v různých operačních systémech. Důvodem je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] k vykreslení, a vrstveného windows byly primárně určený pro [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] vykreslování, není [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslování.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vrstvený windows mají různé možnosti v různých operačních systémech. Důvodem je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] k vykreslení, a vrstveného windows byly primárně určený pro [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] vykreslování, není [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslování.  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]hardware podporuje accelerated vrstvený windows na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] a novější. Hardware accelerated vrstvený windows na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] vyžadovat podporu [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)], takže možnosti závisí na verzi [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] na tomto počítači.  
+-   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hardware podporuje accelerated vrstvený windows na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] a novější. Hardware accelerated vrstvený windows na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] vyžadovat podporu [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)], takže možnosti závisí na verzi [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] na tomto počítači.  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nepodporuje průhlednost barva klíče, protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nemůže zaručit k vykreslení barvu přesný jste požádali, zejména při vykreslování je akcelerován hardwaru.  
+-   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepodporuje průhlednost barva klíče, protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nemůže zaručit k vykreslení barvu přesný jste požádali, zejména při vykreslování je akcelerován hardwaru.  
   
 -   Pokud vaše aplikace běží na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], na základě systému windows na [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] povrchy blikat při [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslí aplikace.  (Pořadí vykreslování skutečné je, že [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] skryje okno vrstveného pak [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] nevykresluje a potom [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] okno vrstveného vrátí zpět).  Jinou hodnotu než[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vrstveného windows také mít toto omezení.  
   

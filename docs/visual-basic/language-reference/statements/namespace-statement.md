@@ -1,12 +1,6 @@
 ---
 title: Namespace – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Namespace
 helpviewer_keywords:
@@ -18,14 +12,11 @@ helpviewer_keywords:
 - root namespaces
 - declarations [Visual Basic], namespaces
 ms.assetid: a31fbd95-9ace-4c3d-bbb1-51222a2272b2
-caps.latest.revision: 39
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 90eb33bdbc01afc983869c919f9d7b2feab44037
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 15d8d8185d895502df594bbd931443af604bef67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="namespace-statement"></a>Namespace – příkaz
 Deklaruje název oboru názvů a způsobí, že zdrojový kód, který odpovídá deklaraci sestavují v daném oboru názvů.  

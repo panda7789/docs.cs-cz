@@ -1,25 +1,17 @@
 ---
 title: Souhrn konverze (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - data type conversion [Visual Basic], keywords
 - reference, type conversions
 - conversions [Visual Basic], Visual Basic
 - type conversion [Visual Basic], keywords
 ms.assetid: ae2c79a7-2d62-4fbe-8585-14360d11f987
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 87c87dbc9608e5973904343311b504e4586d7197
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: eacc9ebded8ab1ef9ec9c9448b4f1f602103037f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="conversion-summary-visual-basic"></a>Souhrn konverze (Visual Basic)
 Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořádány podle účelu a použití.  

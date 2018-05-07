@@ -1,11 +1,6 @@
 ---
 title: -delaysign
 ms.date: 03/10/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - delaysign compiler option [Visual Basic]
 - -delaysign compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d659e97f3b3a360456a1fcdaa9756934bb096334
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: c979ada9984ef345ffbb6b5e29c2f30595c3074d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-delaysign"></a>-delaysign
 Určuje, zda bude sestavení zcela nebo částečně podepsáno.  
@@ -50,7 +45,7 @@ Určuje, zda bude sestavení zcela nebo částečně podepsáno.
 3.  Nastavte hodnotu v **zpoždění podepsání** pole.  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
  [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

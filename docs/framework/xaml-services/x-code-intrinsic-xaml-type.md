@@ -1,13 +1,6 @@
 ---
-title: "x:Code – vnitřní typ jazyka XAML"
-ms.custom: 
+title: x:Code – vnitřní typ jazyka XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Code
 - x:Code
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - x:Code XAML directive element [XAML Services]
 - XAML [XAML Services], x:Code directive element
 ms.assetid: 87986b13-1a2e-4830-ae36-15f9dc5629e8
-caps.latest.revision: "19"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d39249a5d1c0e230d21e6d889b92d0b57c98e2ad
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 92be0b3b0fd1212c4254a449f902b85e998aa148
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xcode-intrinsic-xaml-type"></a>x:Code – vnitřní typ jazyka XAML
 Umožňuje, aby umísťování kódu v rámci provozní XAML. Takový kód můžete buď zkompilují žádnou implementaci procesoru XAML kompilovaný XAML nebo vlevo v produkčním prostředí XAML pro pozdější použití například výklad o modulu runtime.  
@@ -42,7 +30,7 @@ Umožňuje, aby umísťování kódu v rámci provozní XAML. Takový kód můž
 ## <a name="remarks"></a>Poznámky  
  Kód v rámci `x:Code` element direktivy jazyka XAML je stále interpretovat v rámci obecné obor názvů XML a obory názvů jazyka XAML zadat. Proto je obvykle potřeba uzavřete kód použitý pro `x:Code` uvnitř `CDATA` segmentu.  
   
- `x:Code`není povoleno pro všechny možné nasazení mechanismy provozních XAML. V konkrétní rozhraní (například WPF) musí být zkompilovány kód. V jiných rozhraní `x:Code` využití může obecně zakázán.  
+ `x:Code` není povoleno pro všechny možné nasazení mechanismy provozních XAML. V konkrétní rozhraní (například WPF) musí být zkompilovány kód. V jiných rozhraní `x:Code` využití může obecně zakázán.  
   
  Pro rozhraní, které umožňují spravované `x:Code` obsahu, kompilátoru správný jazyk pro `x:Code` obsah je dáno nastavení a cíle obsahující projekt, který se používá ke kompilaci aplikace.  
   

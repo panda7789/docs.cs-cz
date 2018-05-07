@@ -1,26 +1,12 @@
 ---
 title: Relace, vytváření instancí a souběžnost
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6dd96ea552bb92dd90c1c47abac744c55e2e67e5
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a3f56a08c695b4d92529d2c1bec625e9e8c6b6ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *Vytváření instancí* odkazuje na řízení životnost služby uživatelem definované objekty a jejich související <xref:System.ServiceModel.InstanceContext> objekty. *Concurrency* je termín určený k ovládacímu prvku počet vláken, které jsou prováděny v době <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  
@@ -30,7 +16,7 @@ A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *
 ## <a name="sessions"></a>Relace  
  Když kontraktu služby nastaví <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.SessionMode.Required?displayProperty=nameWithType>, tento kontrakt vlastně říká, že všechna volání (který je základní výměny zpráv podporující volání) musí být součástí stejné konverzaci. Pokud kontrakt Určuje, že umožňuje relace, ale nevyžaduje jeden, klienti mohou připojit a buď vytvořit relaci, nebo ne. Pokud relace skončí a a odeslání zprávy pomocí stejných na bázi relací, že se vyvolala výjimku kanálu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relace mají následující hlavní koncepční funkce:  
+ Relace WCF mají následující hlavní koncepční funkce:  
   
 -   Jsou explicitně iniciované a ukončila příkazem volající aplikace.  
   
@@ -38,9 +24,9 @@ A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *
   
 -   Relace korelovat skupinu zpráv k konverzaci. Význam této korelace je abstrakcí. Jeden kanál na bázi relace, například mohou souviset zprávy založené na sdílené síťové připojení, zatímco jiné kanál na bázi relací, mohou souviset zprávy založené na značku sdílené v textu zprávy. Funkce, které může být odvozen z relace závisí na povaze korelaci.  
   
--   Neexistuje žádné obecné datové úložiště přidružené [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relace.  
+-   Neexistuje obecné datové úložiště přidružené k relaci WCF.  
   
- Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace a funkce, poskytuje, můžete si všimnout, následující rozdíly mezi tento druh relace a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] relace:  
+ Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace a funkce, poskytuje, můžete si všimnout, následující rozdíly mezi tento druh relace a WCF relace:  
   
 -   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou vždy iniciovaných serverem.  
   
@@ -78,7 +64,7 @@ public class CalculatorService : ICalculatorInstance
   
  Použití <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> konstruktor k vytvoření těchto služeb. Poskytuje alternativu k implementaci vlastní <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> když chcete zadejte instanci určitý objekt pro použití službou typu singleton. Toto přetížení můžete použít, když vaše typem implementace služby je složité vytvořit (například pokud neimplementuje výchozí veřejný konstruktor bez parametrů).  
   
- Všimněte si, že je-li do tohoto konstruktoru objekt, některé funkce související s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vytváření instancí pracovních chování jinak. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, pokud je k dispozici instance objektu typu singleton. Podobně se ignoruje jiným mechanismem instance verze. <xref:System.ServiceModel.ServiceHost> Vždy se chová jako kdyby <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> je nastavena na <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pro všechny operace.  
+ Všimněte si, že je-li do tohoto konstruktoru objekt, jinak fungovat některé funkce související s k Windows Communication Foundation (WCF) chování vytváření instancí. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, pokud je k dispozici instance objektu typu singleton. Podobně se ignoruje jiným mechanismem instance verze. <xref:System.ServiceModel.ServiceHost> Vždy se chová jako kdyby <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> je nastavena na <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pro všechny operace.  
   
 ### <a name="sharing-instancecontext-objects"></a>Sdílení InstanceContext objekty  
  Můžete taky řídit, které kanálu relací nebo volání je přidružen který <xref:System.ServiceModel.InstanceContext> objektu tak, že provedete toto přidružení sami.  
@@ -92,7 +78,7 @@ public class CalculatorService : ICalculatorInstance
   
 -   <xref:System.ServiceModel.ConcurrencyMode.Multiple>: Každá instance služby může mít několik vláken zpracování zpráv současně. Implementace služby musí být vláken pro použití tohoto režimu souběžnosti.  
   
--   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: Každá instance služby zpracovává jednu zprávu najednou, ale přijímá volání operací vícenásobně. Služba přijímá těchto volání pouze, když se volají pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta.  
+-   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: Každá instance služby zpracovává jednu zprávu najednou, ale přijímá volání operací vícenásobně. Služba přijímá pouze těchto volání, když se volají pomocí objekt klienta WCF.  
   
 > [!NOTE]
 >  Princip fungování a způsob vývoje kód, který je bezpečně používá více než jedno vlákno, může být obtížné úspěšně zapisovat. Před použitím <xref:System.ServiceModel.ConcurrencyMode.Multiple> nebo <xref:System.ServiceModel.ConcurrencyMode.Reentrant> hodnoty, ujistěte se, že služby správně navržena pro tyto režimy. Další informace naleznete v tématu <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>.  

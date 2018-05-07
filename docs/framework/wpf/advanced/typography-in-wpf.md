@@ -1,28 +1,14 @@
 ---
-title: "Typografie v rozhraní WPF"
-ms.custom: 
+title: Typografie v rozhraní WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7cd424dfd936427edb855a92e54921c064c8a8fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 45f74a4dd2164f332314ad79a18eab49efb520d6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 Toto téma představuje hlavní typografických funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří zlepšení kvality a výkon při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] typografii podporu rozšířené mezinárodní text, rozšířenou podporu písma a nové aplikace programování text rozhraní (API).  
@@ -31,9 +17,9 @@ Toto téma představuje hlavní typografických funkce [!INCLUDE[TLA2#tla_wincli
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## <a name="improved-quality-and-performance-of-text"></a>Zlepšení kvality a výkonu textu  
- Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], což zlepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]je technologie softwaru vyvinuté [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] která zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Crystal kapaliny), například přenosný počítač obrazovky, Pocket PC obrazovky a ploché monitory. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]používá vykreslování dílčí pixelů, což umožňuje text, který se zobrazí s větší věrnost na jeho true obrazec zarovnání znaky na zlomkové části pixelů. Navíc řešení zvyšuje ostrost jen nepatrnou podrobnosti zobrazení textu, výrazně usnadňují čtení přes dlouhé doby trvání. Jiné zkvalitňování [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je směru osy y vyhlazení, který vyhladí tolní počítače a dolním okraji bez podstruktury křivek v textových znaků. Další informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce, najdete na [ClearType přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md).  
+ Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], což zlepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je technologie softwaru vyvinuté [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] která zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Crystal kapaliny), například přenosný počítač obrazovky, Pocket PC obrazovky a ploché monitory. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] používá vykreslování dílčí pixelů, což umožňuje text, který se zobrazí s větší věrnost na jeho true obrazec zarovnání znaky na zlomkové části pixelů. Navíc řešení zvyšuje ostrost jen nepatrnou podrobnosti zobrazení textu, výrazně usnadňují čtení přes dlouhé doby trvání. Jiné zkvalitňování [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je směru osy y vyhlazení, který vyhladí tolní počítače a dolním okraji bez podstruktury křivek v textových znaků. Další informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce, najdete na [ClearType přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md).  
   
- ![Text s ClearType y & č. 45; směr anti & č. 45; aliasy](../../../../docs/framework/wpf/advanced/media/typographyinwpf02.gif "TypographyInWPF02")  
+ ![Text ClearType y&#45;směr anti&#45;aliasy](../../../../docs/framework/wpf/advanced/media/typographyinwpf02.gif "TypographyInWPF02")  
 Text s ClearType směru osy y vyhlazení  
   
  Kanál vykreslování celý text může být accelerated hardwaru v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zadaný váš počítač splňuje minimální hardwarové požadavky. Vykreslení, který nelze provést pomocí hardwaru vrátí k vykreslování softwaru. Hardwarová akcelerace ovlivňuje všechny fáze kanálu vykreslování textu – ukládání jednotlivých glyfů skládání glyfů do glyfy spustí použití důsledky, použití [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] prolnutí algoritmus finální zobrazit výstup. Další informace o hardwarovou akceleraci najdete v tématu [vrstev vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).  
@@ -61,7 +47,7 @@ Text s použitím OpenType standard a protažených glyfů
   
 <a name="Enhanced_International_Text_Support"></a>   
 ## <a name="enhanced-international-text-support"></a>Podpora rozšířené mezinárodní textu  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje lepší mezinárodní text podporu tím, že poskytuje následující funkce:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje lepší mezinárodní text podporu tím, že poskytuje následující funkce:  
   
 -   Automatické-mezery mezi řádky ve všech systémech zápis pomocí adaptivní měření.  
   
@@ -71,7 +57,7 @@ Text s použitím OpenType standard a protažených glyfů
   
 <a name="Enhanced_Font_Support"></a>   
 ## <a name="enhanced-font-support"></a>Podpora rozšířené písma  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje lepší písma podporu tím, že poskytuje následující funkce:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje lepší písma podporu tím, že poskytuje následující funkce:  
   
 -   Unicode veškerého textu. Chování písma a výběr už vyžadují charset nebo kódové stránky.  
   
@@ -89,7 +75,7 @@ Text s použitím OpenType standard a protažených glyfů
   
 <a name="New_Text_APIs"></a>   
 ## <a name="new-text-application-programming-interfaces-apis"></a>Nový Text programování rozhraní API (Application)  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje několik text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pro vývojáře pro použití při včetně textu ve svých aplikacích. Tyto [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] jsou seskupené do tří kategorií:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje několik text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pro vývojáře pro použití při včetně textu ve svých aplikacích. Tyto [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] jsou seskupené do tří kategorií:  
   
 -   **Rozložení a uživatelské rozhraní**. Ovládací prvky pro běžné text [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)].  
   
@@ -101,9 +87,9 @@ Text s použitím OpenType standard a protažených glyfů
  Na nejvyšší úrovni funkčnosti, text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] zadejte běžné [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládací prvky jako například <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBlock>, a <xref:System.Windows.Controls.TextBox>. Tyto ovládací prvky poskytují základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementů v rámci aplikace a nabídka snadný způsob, jak pracovat s textem a k dispozici. Ovládací prvky jako například <xref:System.Windows.Controls.RichTextBox> a <xref:System.Windows.Controls.PasswordBox> povolit více rozšířené nebo specializuje zpracování textu. A třídy, jako <xref:System.Windows.Documents.TextRange>, <xref:System.Windows.Documents.TextSelection>, a <xref:System.Windows.Documents.TextPointer> povolit užitečné text manipulaci. Tyto [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládací prvky, jako poskytují vlastnosti <xref:System.Windows.Controls.Control.FontFamily%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontStyle%2A>, které umožňují řídit písmo, které slouží k vykreslení text.  
   
 #### <a name="using-bitmap-effects-transforms-and-text-effects"></a>Pomocí rastrový obrázek důsledky, transformace a textové efekty  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Umožňuje vytvořit vizuálně zajímavé používá textu používá funkce, například rastrový obrázek důsledky, transformace a efekty textu. Následující příklad ukazuje typický typ efekt stínu rozevírací použít na text.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Umožňuje vytvořit vizuálně zajímavé používá textu používá funkce, například rastrový obrázek důsledky, transformace a efekty textu. Následující příklad ukazuje typický typ efekt stínu rozevírací použít na text.  
   
- ![Stín textu zobrazovat s Měkkost & č. 61; 0,25](../../../../docs/framework/wpf/advanced/media/shadowtext01.jpg "ShadowText01")  
+ ![Stín textu zobrazovat Softness &#61; 0,25](../../../../docs/framework/wpf/advanced/media/shadowtext01.jpg "ShadowText01")  
 Text s stínu  
   
  Následující příklad ukazuje efekt stínu vyřaďte a šumu použít na text.  

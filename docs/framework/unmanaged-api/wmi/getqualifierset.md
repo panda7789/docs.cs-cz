@@ -1,11 +1,7 @@
 ---
-title: "Funkce GetQualifierSet (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce GetQualifierSet načte kvalifikátor nastavení pro třídy nebo instance."
+title: Funkce GetQualifierSet (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce GetQualifierSet načte kvalifikátor nastavení pro třídy nebo instance.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetQualifierSet
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 127e7862d0cb0d204e91cd5ee36f2d32f1453a8e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b50befa4346e17048598afd3d018dbde2fe8572
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
 Načte kvalifikátor pro instanci třídy nebo definici třídy.
@@ -53,7 +46,7 @@ HRESULT GetQualifierSet (
 [v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
 
 `ppQualSet`  
-[out] Ukazatel rozhraní, které umožňuje přístup k kvalifikátory třídy objektu obdrží. `ppQualSet`nemůže být `null`. Pokud dojde k chybě, nevrátí nový objekt a ukazatele je ponechán beze změny. 
+[out] Ukazatel rozhraní, které umožňuje přístup k kvalifikátory třídy objektu obdrží. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, nevrátí nový objekt a ukazatele je ponechán beze změny. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -78,7 +71,7 @@ Tato funkce zabalí volání [IWbemClassObject::GetQualifierSet](https://msdn.mi
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

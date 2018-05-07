@@ -1,27 +1,17 @@
 ---
-title: "Oblasti omezeného provádění"
-ms.custom: 
+title: Oblasti omezeného provádění
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - constrained execution regions
 - CERs
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
-caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4f046f26391d581bc1663e9a7041225ede99bd31
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7e653101faf9e0664f41e031c7bad05523825f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
 Oblasti omezeného provádění (CER) je součástí mechanismus pro vytváření spolehlivé spravovaného kódu. CER definuje oblast, ve kterém je omezené common language runtime (CLR) z vyvolání out-of-band výjimek, které by bránily provádění v celé jeho šíři kód v oblasti. V rámci oblasti je ve spouštění kódu, který by mělo za následek vyvolání výjimky out-of-band omezené uživatelského kódu. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Metoda musí předcházet okamžitě `try` bloku a označí `catch`, `finally`, a `fault` bloky jako omezené oblasti provádění. Jakmile označeno v omezené oblasti, kód musí volat pouze s kontrakty spolehlivosti silné jiný kód a kód by neměl přidělit nebo provádět virtuální volání metod neupravený nebo nespolehlivé, pokud kód je připravený pro zpracování chyby. Vlákno zpoždění CLR zruší pro kód, který spouští v CER.  
@@ -86,7 +76,7 @@ Oblasti omezeného provádění (CER) je součástí mechanismus pro vytvářen�
 ## <a name="reliability-trycatchfinally"></a>Spolehlivost try/catch/finally  
  Spolehlivost `try/catch/finally` je mechanismus se stejnou úroveň záruky předvídatelnost jako nespravované verze zpracování výjimek. `catch/finally` Blok je CER. Metody v bloku vyžadují předběžná příprava a musí být noninterruptible.  
   
- V rozhraní .NET Framework verze 2.0, kód informuje o tom modul runtime, zkuste je spolehlivá voláním <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> bezprostředně před bloku try. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>je členem skupiny <xref:System.Runtime.CompilerServices.RuntimeHelpers>, třídy podpory kompilátoru. Volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> přímo čeká na jeho dostupnost prostřednictvím kompilátory.  
+ V rozhraní .NET Framework verze 2.0, kód informuje o tom modul runtime, zkuste je spolehlivá voláním <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> bezprostředně před bloku try. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> je členem skupiny <xref:System.Runtime.CompilerServices.RuntimeHelpers>, třídy podpory kompilátoru. Volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> přímo čeká na jeho dostupnost prostřednictvím kompilátory.  
   
 ## <a name="noninterruptible-regions"></a>Noninterruptible oblastí  
  V oblasti noninterruptible skupiny sada pokynů do CER.  
@@ -111,11 +101,11 @@ Oblasti omezeného provádění (CER) je součástí mechanismus pro vytvářen�
   
 -   Volání metody prostřednictvím reflexe.  
   
--   <xref:System.Threading.Monitor.Enter%2A>nebo <xref:System.IO.FileStream.Lock%2A>.  
+-   <xref:System.Threading.Monitor.Enter%2A> nebo <xref:System.IO.FileStream.Lock%2A>.  
   
 -   Kontroly zabezpečení. Není provádět požadavky, pouze požadavky na propojení.  
   
--   <xref:System.Reflection.Emit.OpCodes.Isinst>a <xref:System.Reflection.Emit.OpCodes.Castclass> pro objekty modelu COM a proxy servery  
+-   <xref:System.Reflection.Emit.OpCodes.Isinst> a <xref:System.Reflection.Emit.OpCodes.Castclass> pro objekty modelu COM a proxy servery  
   
 -   Získání nebo nastavení polí na transparentní proxy server.  
   

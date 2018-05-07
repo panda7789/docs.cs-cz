@@ -1,26 +1,12 @@
 ---
 title: Řešení potíží – korelace
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2de3a8cac6e12d898173f8181b295c3e2e461cc7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c597012a5ff69ecb700c51e00ac7d1218962e9ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá k propojení zpráv služby pracovního postupu se vzájemně k sobě a k instanci pracovního postupu správný, ale pokud není správně nakonfigurována, nebude přijaty zprávy a aplikace nebude správně fungovat. Toto téma obsahuje přehled několik metod pro řešení potíží s korelace a také uvádí některé běžné problémy, které může dojít, když používáte korelace.  
@@ -146,7 +132,7 @@ supports the context protocol and has a valid context initialized.
  Další informace najdete v tématu [kontextová výměna](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md).  
   
 ## <a name="common-request-reply-correlation-issues"></a>Běžné problémy korelace požadavku a odpovědi  
- Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár implementovat obousměrný operace ve službě pracovního postupu a s <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár, který vyvolá obousměrný operaci v jiný Web Služba. Při vyvolání obousměrný operace ve službě WCF, služba může být buď tradiční imperativní založené na kódu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, nebo může být služby pracovních postupů. Použít korelace požadavku a odpovědi vazba obousměrná musí být použita, jako například <xref:System.ServiceModel.BasicHttpBinding>, a operace musí být obousměrné.  
+ Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár implementovat obousměrný operace ve službě pracovního postupu a s <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár, který vyvolá obousměrný operaci v jiný Web Služba. Při vyvolání obousměrný operace ve službě WCF, služba může být buď tradiční imperativní založené na kódu služby WCF, nebo může být služby pracovních postupů. Použít korelace požadavku a odpovědi vazba obousměrná musí být použita, jako například <xref:System.ServiceModel.BasicHttpBinding>, a operace musí být obousměrné.  
   
  Pokud službu pracovní postup obsahuje obousměrný operace paralelní nebo překrývající se <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> nebo <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> páry pak implicitní korelace zpracování Správa poskytovaná v rámci <xref:System.ServiceModel.Activities.WorkflowServiceHost>nemusí být plně dostačující, zejména ve scénářích velkými nároky a zprávy nebudou směrovány správně. Chcete-li zabránit výskytu tohoto problému, doporučujeme, aby vždy explicitně zadáte <xref:System.ServiceModel.Activities.CorrelationHandle> při použití korelace požadavku a odpovědi. Při použití **SendAndReceiveReply** a **ReceiveAndSendReply** šablony z části zasílání zpráv **sada nástrojů** v Návrháři pracovních postupů <xref:System.ServiceModel.Activities.CorrelationHandle> explicitně nakonfigurované ve výchozím nastavení. Při vytváření pracovního postupu pomocí kódu, <xref:System.ServiceModel.Activities.CorrelationHandle> je uveden v <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> první aktivitu v páru. V následujícím příkladu <xref:System.ServiceModel.Activities.Receive> aktivity je nakonfigurován pomocí explicitního <xref:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle%2A> zadaný v <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer>.  
   

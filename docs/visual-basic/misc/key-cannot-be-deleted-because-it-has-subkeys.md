@@ -1,18 +1,12 @@
 ---
-title: "Klíč nelze odstranit, protože obsahuje podklíče"
+title: Klíč nelze odstranit, protože obsahuje podklíče
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 71d7f28f-42ef-4eb7-a39e-512c40b79977
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3288f7c2d725529caaf28ee1cc109a6d050e2349
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a6ebf050453b599710c696920d8c4bcd2c92ad92
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="key-cannot-be-deleted-because-it-has-subkeys"></a>Klíč nelze odstranit, protože obsahuje podklíče
 Klíč nelze odstranit, protože obsahuje podklíče.  

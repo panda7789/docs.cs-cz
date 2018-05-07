@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.Activation.WebHostCompilation
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 33ee56f8-30bb-445a-964d-050294c85ac6
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6f6d782fb78730fcbb82eeded8c9e556e29dce9a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a8f418d76cc9b15e81f64e67241a005093d3c1a3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelactivationwebhostcompilation"></a>System.ServiceModel.Activation.WebHostCompilation
 System.ServiceModel.Activation.WebHostCompilation  

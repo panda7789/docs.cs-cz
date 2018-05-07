@@ -1,28 +1,17 @@
 ---
-title: "Použití TPL s dalšími asynchronními vzory"
-ms.custom: 
+title: Použití TPL s dalšími asynchronními vzory
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - tasks and APM
 ms.assetid: 7add905b-ff60-4353-af79-5089038d9a08
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 89ea927d2862aa447ad2b66c77eb493541b0e62d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1aa1dd482a931a49ba3c0f6759db12d45f744eec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-tpl-with-other-asynchronous-patterns"></a>Použití TPL s dalšími asynchronními vzory
 Task Parallel Library lze použít s tradiční rozhraní .NET Framework asynchronními vzory programovací různými způsoby.  

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Připojení doplňku k elementu"
-ms.custom: 
+title: 'Postupy: Připojení doplňku k elementu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - UIElements [WPF], binding adorners to
 - adorners [WPF], binding to specified UIElements
 ms.assetid: b2101611-a0ee-4137-bdb8-9b3673d2e6b9
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b3c657cde9da19f8ebc6b6d4d05077ed027781b0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb419ee5a57e81e7e3bc72ae04fd200703b80cd3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-an-adorner-to-an-element"></a>Postupy: Připojení doplňku k elementu
 Tento příklad ukazuje, jak se prostřednictvím kódu programu vytvořit vazbu adorner do určeného <xref:System.Windows.UIElement>.  
@@ -32,7 +20,7 @@ Tento příklad ukazuje, jak se prostřednictvím kódu programu vytvořit vazbu
 ## <a name="example"></a>Příklad  
  K vytvoření vazby adorner konkrétní <xref:System.Windows.UIElement>, postupujte takto:  
   
-1.  Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> získat <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> k být ozdobené. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>provede až vizuálním stromu, začínající v zadaném **prvků uživatelského rozhraní**a vrátí první vrstvu adorner najde. (Pokud se nenajdou žádné adorner vrstvy, metoda vrátí hodnotu null.)  
+1.  Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> získat <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> k být ozdobené. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> provede až vizuálním stromu, začínající v zadaném **prvků uživatelského rozhraní**a vrátí první vrstvu adorner najde. (Pokud se nenajdou žádné adorner vrstvy, metoda vrátí hodnotu null.)  
   
 2.  Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metoda pro vazbu adorner k cíli **prvků uživatelského rozhraní**.  
   

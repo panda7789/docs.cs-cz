@@ -1,11 +1,6 @@
 ---
-title: "Date – datový typ (Visual Basic)"
+title: Date – datový typ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Date
 helpviewer_keywords:
@@ -20,14 +15,11 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 190b40888dc4a42075b7b6b27bdb1bd403a7efb5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b7827206d6e145b559d9716df5ec4a98ac4ea0b5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 Obsahuje hodnoty IEEE 64-bit (8 bajtů), které reprezentují rozsahu od 1. ledna roku 0001 až 31. prosince 9999 roku datum a čas od 12:00:00: 00 (půlnoc) prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekundách uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota 100 nanosekundách představuje před začátkem 1. ledna roku 10000.  
@@ -70,7 +62,7 @@ Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)
   
 -   **Spolupráce aspekty.** Pokud jsou během propojení s součásti, které nejsou určeny pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, která data a času typy v jiných prostředích nejsou kompatibilní s jazykem Visual Basic `Date` typu. Pokud tyto součásti jsou předány argumentem datum a čas, deklarujte ji jako `Double` místo `Date` v jazyce Visual Basic kód a použít metody převod <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> a <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.  
   
--   **Znaky typu.** `Date`nemá žádnou – znak typu literálu nebo – znak typu identifikátoru. Ale kompilátor zpracovává literály uzavřené v rámci znaky (`# #`) jako `Date`.  
+-   **Znaky typu.** `Date` nemá žádnou – znak typu literálu nebo – znak typu identifikátoru. Ale kompilátor zpracovává literály uzavřené v rámci znaky (`# #`) jako `Date`.  
   
 -   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.DateTime?displayProperty=nameWithType> struktura.  
   
@@ -84,8 +76,8 @@ Dim someDateAndTime As Date = #8/13/2002 12:14 PM#
 ## <a name="see-also"></a>Viz také  
  <xref:System.DateTime?displayProperty=nameWithType>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Řetězce formátu standardní hodnoty data a času](../../../standard/base-types/standard-date-and-time-format-strings.md)  
- [Řetězce formátu vlastní hodnota data a času](../../../standard/base-types/custom-date-and-time-format-strings.md)  
+ [Standardní řetězce formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md)  
+ [Vlastní řetězce formátu data a času](../../../standard/base-types/custom-date-and-time-format-strings.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

@@ -1,24 +1,15 @@
 ---
 title: Dotazy (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 83a8b152e2125ba69623e3cefdda5752abc268ea
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: abe54fe163919c6ad6b746d70baac2482e80b948
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queries-visual-basic"></a>Dotazy (Visual Basic)
 Visual Basic umožňuje vytvářet [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy ve vašem kódu.  

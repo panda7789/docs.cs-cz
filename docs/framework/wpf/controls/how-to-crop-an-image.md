@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Oříznutí obrázku"
-ms.custom: 
+title: 'Postupy: Oříznutí obrázku'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,21 +8,16 @@ helpviewer_keywords:
 - images [WPF], cropping
 - cropping images [WPF]
 ms.assetid: c6bba109-c6e7-4cf8-bfe6-9cf8d01bb4fc
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 11f5b280635d2fe7b83d8c4496606ed02bc44149
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 46c559356447688e52508b823cc260c13128208f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-crop-an-image"></a>Postupy: Oříznutí obrázku
 Tento příklad ukazuje, jak oříznout k bitovou kopii pomocí <xref:System.Windows.Media.Imaging.CroppedBitmap>.  
   
- <xref:System.Windows.Media.Imaging.CroppedBitmap>slouží především při kódování oříznutý verze bitové kopie na Uložit si do souboru. Ořízne obrázek zobrazení účely najdete v tématu [vytvořit oblasti oříznutí](http://msdn.microsoft.com/library/56e4bed6-78d7-4292-b917-d72d0b3e4376) tématu.  
+ <xref:System.Windows.Media.Imaging.CroppedBitmap> slouží především při kódování oříznutý verze bitové kopie na Uložit si do souboru. Ořízne obrázek zobrazení účely najdete v tématu [vytvořit oblasti oříznutí](http://msdn.microsoft.com/library/56e4bed6-78d7-4292-b917-d72d0b3e4376) tématu.  
   
 ## <a name="example"></a>Příklad  
  Následující [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] definuje prostředky používané v rámci ukázky níže.  

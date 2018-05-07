@@ -1,21 +1,17 @@
 ---
 title: -deterministickou
 ms.date: 04/11/2018
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 273abf8811f04cd7f58599ce3421ca1f17c740d9
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: ffb1d27f614afc3b07f9d663831fc2071535236f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-deterministic"></a>-deterministickou
 

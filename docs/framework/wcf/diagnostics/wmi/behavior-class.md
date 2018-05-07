@@ -1,24 +1,12 @@
 ---
-title: "Behavior – třída"
-ms.custom: 
+title: Behavior – třída
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 75d117f5-87f9-40fb-84c6-9e2fef6da6af
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c3caaaaef3ff9d150a4d3ea6a522e54c1269842c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6fbe6bae02d580dc0b44c2a1922187dd2b166e5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="behavior-class"></a>Behavior – třída
 ## <a name="syntax"></a>Syntaxe  

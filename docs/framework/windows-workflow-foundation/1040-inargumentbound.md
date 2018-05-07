@@ -1,23 +1,12 @@
 ---
 title: 1040 - InArgumentBound
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7dfaad1b-36c0-4575-84c1-31d63b0eaf5d
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a86eeef0479b33e3c76223fa3ef2f74f4f337aa0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 984372c07ccfb11f2f05d5488fa5ffc95075db41
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="1040---inargumentbound"></a>1040 - InArgumentBound
 ## <a name="properties"></a>Vlastnosti  

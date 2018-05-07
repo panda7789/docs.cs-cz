@@ -1,34 +1,20 @@
 ---
-title: "Postupy: Implementace rozhraní PriorityBinding"
-ms.custom: 
+title: 'Postupy: Implementace rozhraní PriorityBinding'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0e6ab8826f2298a8660a85d739fbe3456374b476
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: cf0ed5c2b55358d3a583ac89e307b23b3ab08a9a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-prioritybinding"></a>Postupy: Implementace rozhraní PriorityBinding
-<xref:System.Windows.Data.PriorityBinding>v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funguje tak, že zadáte seznam vazeb. Seznam vazeb je nejnižší priorita seřazena z nejvyšší prioritou. Jestliže nejvyšší prioritou vazby vrací hodnotu úspěšně při zpracování nejsou nikdy potřeba zpracovat vazby v seznamu. Může to být případě, že nejvyšší prioritou vazby trvá dlouhou dobu k vyhodnocení, další nejvyšší prioritou, která vrátí hodnotu úspěšně bude používat, dokud vazbu s vyšší prioritou vrací hodnotu úspěšně.  
+<xref:System.Windows.Data.PriorityBinding> v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funguje tak, že zadáte seznam vazeb. Seznam vazeb je nejnižší priorita seřazena z nejvyšší prioritou. Jestliže nejvyšší prioritou vazby vrací hodnotu úspěšně při zpracování nejsou nikdy potřeba zpracovat vazby v seznamu. Může to být případě, že nejvyšší prioritou vazby trvá dlouhou dobu k vyhodnocení, další nejvyšší prioritou, která vrátí hodnotu úspěšně bude používat, dokud vazbu s vyšší prioritou vrací hodnotu úspěšně.  
   
 ## <a name="example"></a>Příklad  
  K předvedení způsobu <xref:System.Windows.Data.PriorityBinding> funguje, `AsyncDataSource` objekt byl vytvořen s následujícími třemi vlastnostmi: `FastDP`, `SlowerDP`, a `SlowestDP`.  

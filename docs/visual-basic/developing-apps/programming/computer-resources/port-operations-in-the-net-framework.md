@@ -1,24 +1,14 @@
 ---
-title: "Portové operace v rozhraní .NET Framework s jazykem Visual Basic"
-ms.custom: 
+title: Portové operace v rozhraní .NET Framework s jazykem Visual Basic
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - ports, Visual Basic
 ms.assetid: 1eba223b-7bd3-401a-b097-982bce96df1b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 77b8a464f2f64f701a5b99690756c0f22a410064
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 66b3729081540e8dede42556c58e44cd55b62666
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="port-operations-in-the-net-framework-with-visual-basic"></a>Portové operace v rozhraní .NET Framework s jazykem Visual Basic
 Přistupujete k sériovým portům počítače prostřednictvím [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy v <xref:System.IO.Ports?displayProperty=nameWithType> oboru názvů. Nejdůležitější třída <xref:System.IO.Ports.SerialPort>, poskytuje rozhraní pro synchronní a událostmi řízené vstupně-výstupních operací, přístup k PIN kódu a zalomení stavy a přístup k vlastnostem sériového zařízení. Může být uzavřen do <xref:System.IO.Stream> objekt, přístupný prostřednictvím <xref:System.IO.Ports.SerialPort.BaseStream> vlastnost. Zabalení <xref:System.IO.Ports.SerialPort> v <xref:System.IO.Stream> objekt umožňuje sériového portu, ke kterým přistupují třídy, které používají datových proudů. Obor názvů zahrnuje výčty, které zjednodušují ovládacího prvku sériových portů.  

@@ -1,39 +1,25 @@
 ---
-title: "Postupy: Implementace rozhraní ICommandSource"
-ms.custom: 
+title: 'Postupy: Implementace rozhraní ICommandSource'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - ICommandSource interfaces [WPF], implementing
 ms.assetid: 7452dd39-6e11-44bf-806a-31d87f3772ac
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d82a211f59fbdecdc932b7e57b242274e91cd5b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9308bfbbb7fff86ca5e93c1155cc29e4ee0d05f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-icommandsource"></a>Postupy: Implementace rozhraní ICommandSource
-Tento příklad ukazuje, jak vytvořit zdroj příkaz implementací <xref:System.Windows.Input.ICommandSource>.  Příkaz zdroj je objekt, který umí vyvolání příkazu.  <xref:System.Windows.Input.ICommandSource> Rozhraní zveřejňuje tři členy: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, a <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A>je příkaz, který bude vyvolán. <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> Je uživatelský datový typ, který je předán ze zdroje příkaz metodu, která zpracovává příkaz. <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> Je objekt, který se spouští na příkaz.  
+Tento příklad ukazuje, jak vytvořit zdroj příkaz implementací <xref:System.Windows.Input.ICommandSource>.  Příkaz zdroj je objekt, který umí vyvolání příkazu.  <xref:System.Windows.Input.ICommandSource> Rozhraní zveřejňuje tři členy: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, a <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A> je příkaz, který bude vyvolán. <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> Je uživatelský datový typ, který je předán ze zdroje příkaz metodu, která zpracovává příkaz. <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> Je objekt, který se spouští na příkaz.  
   
  V tomto příkladu se vytvoří třídu které podtřídy <xref:System.Windows.Controls.Slider> řízení a implementuje <xref:System.Windows.Input.ICommandSource>.  
   
 ## <a name="example"></a>Příklad  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje několik tříd, které implementují třídu <xref:System.Windows.Input.ICommandSource>, jako například <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.MenuItem>, a <xref:System.Windows.Controls.ListBoxItem>.  Příkaz zdroj definuje, jak se volá příkaz.   <xref:System.Windows.Controls.Button>a <xref:System.Windows.Controls.MenuItem> vyvolání příkazu při jsou kliknutí.  A <xref:System.Windows.Controls.ListBoxItem> Vyvolá příkaz po double klepnutí. Tyto třídy stane pouze příkaz zdroje při jejich <xref:System.Windows.Input.ICommandSource.Command%2A> je nastavena.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje několik tříd, které implementují třídu <xref:System.Windows.Input.ICommandSource>, jako například <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.MenuItem>, a <xref:System.Windows.Controls.ListBoxItem>.  Příkaz zdroj definuje, jak se volá příkaz.   <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.MenuItem> vyvolání příkazu při jsou kliknutí.  A <xref:System.Windows.Controls.ListBoxItem> Vyvolá příkaz po double klepnutí. Tyto třídy stane pouze příkaz zdroje při jejich <xref:System.Windows.Input.ICommandSource.Command%2A> je nastavena.  
   
  V tomto příkladu jsme se vyvolat příkaz když přesunete posuvník nebo přesněji, když <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> vlastnost je změnit.  
   

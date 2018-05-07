@@ -1,23 +1,12 @@
 ---
-title: "Pomocí aktivity InvokePowerShell"
-ms.custom: 
+title: Pomocí aktivity InvokePowerShell
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 956251a0-31ca-4183-bf76-d277c08585df
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4cf7092d6eac4fc2d70c4606f4a76f3a83ed9dcf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c5609556af94ed3e372538047ff6309a105975ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-invokepowershell-activity"></a>Pomocí aktivity InvokePowerShell
 Ukázka InvokePowerShell ukazuje, jak má být vyvolán pomocí příkazů prostředí Windows PowerShell `InvokePowerShell` aktivity.  
@@ -35,7 +24,7 @@ Ukázka InvokePowerShell ukazuje, jak má být vyvolán pomocí příkazů prost
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`  
   
@@ -73,9 +62,9 @@ new InvokePowerShell<Process>()
 },  
 ```  
   
- `Output`slouží k ukládání výstupu příkazu proměnnou.  
+ `Output` slouží k ukládání výstupu příkazu proměnnou.  
   
- Další volání ukazuje, jak následného zpracování krok spustit v každé jednotlivé výstup volání prostředí PowerShell. `InitializationAction`je nastavena na funkce, která vrací řetězcovou reprezentaci jednotlivých procesů. Kolekce tyto řetězce je vrácený v `Output` proměnné pomocí `InvokePowerShell<string>` aktivity.  
+ Další volání ukazuje, jak následného zpracování krok spustit v každé jednotlivé výstup volání prostředí PowerShell. `InitializationAction` je nastavena na funkce, která vrací řetězcovou reprezentaci jednotlivých procesů. Kolekce tyto řetězce je vrácený v `Output` proměnné pomocí `InvokePowerShell<string>` aktivity.  
   
  Úspěšné `InvokePowerShell` volání ukazují předávání dat do aktivity a získávání výstupy a chyby se.  
   
@@ -205,7 +194,7 @@ new ForEach<PSObject>
   
 1.  Pokud odkazující `InvokePowerShell` sestavení aktivit nebo projekt z jiného projektu za následek chyby sestavení, musíte ručně přidat `<SpecificVersion>True</SpecificVersion>` element do souboru .csproj nový projekt v řádku, který odkazuje na `InvokePowerShell`.  
   
-2.  Pokud není nainstalované prostředí Windows PowerShell, se následující chybová zpráva se zobrazí v sadě Visual Studio, jakmile přidáte `InvokePowerShell` aktivitu do pracovního postupu:`Workflow Designer encountered problems with your document. Could not load file or assembly ‘System.Management.Automation’ ... or one of its dependencies. The system cannot find the file specified.`  
+2.  Pokud není nainstalované prostředí Windows PowerShell, se následující chybová zpráva se zobrazí v sadě Visual Studio, jakmile přidáte `InvokePowerShell` aktivitu do pracovního postupu: `Workflow Designer encountered problems with your document. Could not load file or assembly ‘System.Management.Automation’ ... or one of its dependencies. The system cannot find the file specified.`  
   
 3.  V prostředí Windows PowerShell 2.0, prostřednictvím kódu programu volání `$input.MoveNext()` selže a skriptů pomocí `$input.MoveNext()` vytvořit neočekávaným chybám a výsledky. Chcete-li tento problém obejít, doporučujeme použít příkaz prostředí PowerShell `foreach` místo volání `MoveNext()` během iterace pole.  
   
@@ -214,6 +203,6 @@ new ForEach<PSObject>
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`

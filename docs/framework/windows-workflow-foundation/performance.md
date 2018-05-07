@@ -1,24 +1,12 @@
 ---
 title: Výkon systému Windows Workflow Foundation 4
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4db761d2e6ba0231cb83d4ef5d1ee663c99178c5
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 793645c442e960c43f00c3ea3c9b636a4c539706
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon systému Windows Workflow Foundation 4
 Dustinu Metzgar  
@@ -29,12 +17,12 @@ Dustinu Metzgar
   
  Microsoft [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] obsahuje hlavní revizi Windows Workflow Foundation (WF) s velkou investic ve výkonu.  Tato nová revize představuje významné návrhu změny z předchozích verzí [!INCLUDE[wf1](../../../includes/wf1-md.md)] dodávané jako součást rozhraní .NET Framework 3.0 a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Byla přepracována ze základní programovací model, modulu runtime a nástrojů výrazně zlepšit výkon a použitelnost. Toto téma ukazuje důležité výkonové charakteristiky tyto revize a porovná je s ohledem na předchozí verzi.  
   
- Výkon součásti jednotlivé pracovní postup se zvýšila pořadí podle velikosti mezi WF3 a WF4.  Zůstane mezery mezi programového ruční [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb pracovních postupů poměrně malý.  Latence pracovního postupu byla výrazně snižuje v WF4.  Trvalost výkonu zvýšilo faktorem 2.5 3.0.  Monitorování stavu prostřednictvím pracovního postupu pro sledování má výrazně menší režijní náklady.  Tyto jsou přesvědčivé migraci na nebo přijmout WF4 ve svých aplikacích.  
+ Výkon součásti jednotlivé pracovní postup se zvýšila pořadí podle velikosti mezi WF3 a WF4.  Zůstane mezery mezi zakódovaným na straně služby Windows Communication Foundation (WCF) a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb pracovních postupů poměrně malý.  Latence pracovního postupu byla výrazně snižuje v WF4.  Trvalost výkonu zvýšilo faktorem 2.5 3.0.  Monitorování stavu prostřednictvím pracovního postupu pro sledování má výrazně menší režijní náklady.  Tyto jsou přesvědčivé migraci na nebo přijmout WF4 ve svých aplikacích.  
   
 ## <a name="terminology"></a>Terminologie  
  Verze [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla zavedená v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] budeme ho označovat jako WF4 pro zbývající část tohoto tématu.  [!INCLUDE[wf1](../../../includes/wf1-md.md)] bylo zavedeno v rozhraní .net 3.0 a měl několik menších revize prostřednictvím [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] SP1. [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] Verzi Workflow Foundation budeme ho označovat jako WF3 pro zbývající část tohoto tématu. WF3 se dodává v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] -souběžného s WF4. Další informace o migraci artefaktů WF3 a WF4 v tématu: [příručka k migraci 4 Windows Workflow Foundation](http://go.microsoft.com/fwlink/?LinkID=153313)  
   
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] je jednotný programovací model pro vytváření aplikací orientovaných na služby společnosti Microsoft. To bylo poprvé dostupné v rámci rozhraní .net 3.0 společně s WF3 a nyní je jedním z klíčových součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+ Windows Communication Foundation (WCF) je jednotný programovací model pro vytváření aplikací orientovaných na služby společnosti Microsoft. To bylo poprvé dostupné v rámci rozhraní .net 3.0 společně s WF3 a nyní je jedním z klíčových součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
   
  Windows Server AppFabric je sada integrovaných technologií, které usnadňují sestavování, škálování a správu webových a kompozitních aplikací, které běží ve službě IIS. Poskytuje nástroje pro sledování a správu služeb a pracovních postupů. Další informace najdete v tématu [Windows Server AppFabric](http://msdn.microsoft.com/windowsserver/ee695849.aspx)  
   

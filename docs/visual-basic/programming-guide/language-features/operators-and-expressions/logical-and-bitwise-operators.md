@@ -1,12 +1,6 @@
 ---
-title: "Logické a bitové operátory v jazyce Visual Basic"
-ms.custom: 
+title: Logické a bitové operátory v jazyce Visual Basic
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - short-circuiting
 - Boolean expressions
@@ -27,14 +21,11 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ba48f722a11e93f82ae99aa407c3096a964e5ddd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 371d28629b39fb2808ca018ea69da3306a31f50c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Logické a bitové operátory v jazyce Visual Basic
 Logické operátory porovnání `Boolean` výrazy a vraťte se `Boolean` výsledek. `And`, `Or`, `AndAlso`, `OrElse`, A `Xor` operátory jsou *binární* vzhledem k tomu, že jejich trvat dva operandy, při `Not` operátor je *unární* vzhledem k tomu, jak dlouho trvá jeden operand. Některé z těchto operátorů můžete také provést bitové logické operace na celočíselné hodnoty.  
@@ -96,7 +87,7 @@ Logické operátory porovnání `Boolean` výrazy a vraťte se `Boolean` výsled
   
 -   Výsledkem je považována za decimal. Hodnota 001 je binární reprezentace 1, takže `x` = 1.  
   
- Bitové hodnotě `Or` operace je podobné, s tím rozdílem, že 1 je přiřazen k bit výsledek, pokud jedné nebo obou porovnání bits je 1. `Xor`přiřadí bit výsledek 1, pokud právě jeden z porovnání služby bits (ne obojí) je 1. `Not`má jeden operand Invertuje výběr všech bitů, včetně bit přihlášení a přiřadí tuto hodnotu na výsledek. To znamená, že pro přihlášení kladná čísla `Not` vždy vrátí hodnotu záporná a záporná čísla `Not` vždy vrátí hodnotu u kladné číslo nebo nula.  
+ Bitové hodnotě `Or` operace je podobné, s tím rozdílem, že 1 je přiřazen k bit výsledek, pokud jedné nebo obou porovnání bits je 1. `Xor` přiřadí bit výsledek 1, pokud právě jeden z porovnání služby bits (ne obojí) je 1. `Not` má jeden operand Invertuje výběr všech bitů, včetně bit přihlášení a přiřadí tuto hodnotu na výsledek. To znamená, že pro přihlášení kladná čísla `Not` vždy vrátí hodnotu záporná a záporná čísla `Not` vždy vrátí hodnotu u kladné číslo nebo nula.  
   
  `AndAlso` a `OrElse` operátory nepodporují bitové operace.  
   

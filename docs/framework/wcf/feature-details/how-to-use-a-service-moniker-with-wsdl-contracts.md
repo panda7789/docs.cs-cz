@@ -1,24 +1,12 @@
 ---
-title: "Postupy: Použití monikeru služby u kontraktů WSDL"
-ms.custom: 
+title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7c36ac73ced510c1ba3b7e16c71f764c46d6c8f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 838e7affcf47742c8f372879fcb33946d53ba43f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Pokud chcete mít zcela samostatné klienta zprostředkovatel komunikace s objekty COM, existují situace. Koncový bod MEX a klienta WCF, které pravděpodobně není registrována knihovny DLL pro zprostředkovatel komunikace s objekty COM, nemusí vystavit službu, kterou chcete volat. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předejte ji do monikeru služby WCF. Toto téma popisuje, jak volat ukázku získávání spuštění WCF pomocí Přezdívka WCF WSDL.  
@@ -27,7 +15,7 @@ Pokud chcete mít zcela samostatné klienta zprostředkovatel komunikace s objek
   
 1.  Otevření a sestavení GettingStarted ukázkové řešení.  
   
-2.  Otevřete Internet Explorer a přejděte k http://localhost/ServiceModelSamples/Service.svc Ujistěte se, že služba funguje.  
+2.  Otevřete Internet Explorer a přejděte do http://localhost/ServiceModelSamples/Service.svc a ujistěte se, že služba funguje.  
   
 3.  V souboru Service.cs přidejte následující atribut na třídě CalculatorService:  
   
@@ -37,7 +25,7 @@ Pokud chcete mít zcela samostatné klienta zprostředkovatel komunikace s objek
   
   
   
-5.  Vytvořte soubor WSDL pro aplikace pro čtení. Protože obory názvů byly přidány v krocích 3 a 4, můžete se dotázat na celý popis WSDL služby procházením http://localhost/ServiceModelSamples/Service.svc?wsdl aplikace Internet Explorer. Pak můžete soubor uložte z aplikace Internet Explorer jako serviceWSDL.xml. Pokud nezadáte obory názvů v krocích 3 a 4, nebudou vrácená z dotazu výše uvedenou adresu URL dokumentu WSDL dokončení WSDL. Dokument WSDL vrátil bude obsahovat několik příkazů importu, které import jiné dokumenty WSDL. Je nutné projít každý příkaz import a vytvořit úplný dokument WSDL kombinování WSDL vrácená ze služby s WSDL importovat.  
+5.  Vytvořte soubor WSDL pro aplikace pro čtení. Protože obory názvů byly přidány v krocích 3 a 4, můžete použít aplikaci Internet Explorer se dotázat na celý popis WSDL služby procházením http://localhost/ServiceModelSamples/Service.svc?wsdl. Pak můžete soubor uložte z aplikace Internet Explorer jako serviceWSDL.xml. Pokud nezadáte obory názvů v krocích 3 a 4, nebudou vrácená z dotazu výše uvedenou adresu URL dokumentu WSDL dokončení WSDL. Dokument WSDL vrátil bude obsahovat několik příkazů importu, které import jiné dokumenty WSDL. Je nutné projít každý příkaz import a vytvořit úplný dokument WSDL kombinování WSDL vrácená ze služby s WSDL importovat.  
   
 6.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko pro přidání do obslužná rutina kliknutí na následující kód:  
   

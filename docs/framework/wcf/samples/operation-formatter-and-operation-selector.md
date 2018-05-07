@@ -1,27 +1,15 @@
 ---
-title: "Formátovací modul a selektor operace"
-ms.custom: 
+title: Formátovací modul a selektor operace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a10be10687f03b5de45846faa9ca832ead193e19
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 469b7f2c99652cb6fceb2e8f12f1c74f0140b5ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
-Tento příklad ukazuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] body rozšiřitelnosti lze povolit data zpráv do jiného formátu z co [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] očekává. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formátování očekávat parametry metody, které mají být zahrnuty v části `soap:body` elementu. Ukázka ukazuje, jak implementovat vlastní operaci formátování, které analyzuje data parametr z řetězce dotazu HTTP GET místo a vyvolá metody pomocí tato data.  
+Tento příklad ukazuje, jak body rozšiřitelnosti Windows Communication Foundation (WCF) umožňuje povolit data zpráv do jiného formátu z co [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] očekává. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formátování očekávat parametry metody, které mají být zahrnuty v části `soap:body` elementu. Ukázka ukazuje, jak implementovat vlastní operaci formátování, které analyzuje data parametr z řetězce dotazu HTTP GET místo a vyvolá metody pomocí tato data.  
   
  Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje `ICalculator` kontrakt služby. Ho ukazuje, jak přidat, odečíst násobkem a dělení zprávy můžete změnit tak, aby požadavky klienta na server pomocí metody GET protokolu HTTP a HTTP POST s POX zprávy pro klienta a serveru odpovědi.  
   
@@ -31,7 +19,7 @@ Tento příklad ukazuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.
   
 -   `UriOperationSelector`, který implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> na serveru k provedení operace odesílání na základě názvu operace v požadavek GET.  
   
--   `EnableHttpGetRequestsBehavior`koncový bod chování (a odpovídající konfigurace), k modulu runtime přidává selektor potřebné operace.  
+-   `EnableHttpGetRequestsBehavior` koncový bod chování (a odpovídající konfigurace), k modulu runtime přidává selektor potřebné operace.  
   
 -   Ukazuje, jak nové formátování operaci vložení do modulu runtime.  
   
@@ -41,7 +29,7 @@ Tento příklad ukazuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="key-concepts"></a>Klíčové koncepty  
- `QueryStringFormatter`-Formátovací modul je součástí v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] který zodpovídá za převodu zprávy na pole objektů parametr a pole objektů parametr do zprávy. To se provádí na straně klienta pomocí <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> rozhraní a na serveru s <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> rozhraní. Povolit uživatelům získat zprávy požadavku a odpovědi z těchto rozhraní `Serialize` a `Deserialize` metody.  
+ `QueryStringFormatter` -Formátovací modul je součástí v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] který zodpovídá za převodu zprávy na pole objektů parametr a pole objektů parametr do zprávy. To se provádí na straně klienta pomocí <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> rozhraní a na serveru s <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> rozhraní. Povolit uživatelům získat zprávy požadavku a odpovědi z těchto rozhraní `Serialize` a `Deserialize` metody.  
   
  V této ukázce `QueryStringFormatter` implementuje obě tato rozhraní a je implementována na klientovi a serveru.  
   
@@ -49,7 +37,7 @@ Tento příklad ukazuje, jak [!INCLUDE[indigo1](../../../../includes/indigo1-md.
   
 -   Ukázce se používá <xref:System.ComponentModel.TypeConverter> – třída parametru data ve zprávě požadavku převést do a z řetězce. Pokud <xref:System.ComponentModel.TypeConverter> není k dispozici pro konkrétní typ, vrátí formátování ukázka výjimku.  
   
--   V `IClientMessageFormatter.SerializeRequest` metody na straně klienta, formátování vytvoří identifikátor URI s příslušnou adresu a připojí název operace jako příponu. Tento název se používá k odeslání do příslušné operaci na serveru. Potom provede pole objektů parametr a serializuje data parametru řetězce dotazu identifikátoru URI pomocí názvy parametrů a hodnot pomocí převedeny <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> a <xref:System.ServiceModel.Channels.MessageProperties.Via%2A> vlastností pak nastavení tento identifikátor URI. <xref:System.ServiceModel.Channels.MessageProperties>je přístupné přes <xref:System.ServiceModel.Channels.Message.Properties%2A> vlastnost.  
+-   V `IClientMessageFormatter.SerializeRequest` metody na straně klienta, formátování vytvoří identifikátor URI s příslušnou adresu a připojí název operace jako příponu. Tento název se používá k odeslání do příslušné operaci na serveru. Potom provede pole objektů parametr a serializuje data parametru řetězce dotazu identifikátoru URI pomocí názvy parametrů a hodnot pomocí převedeny <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> a <xref:System.ServiceModel.Channels.MessageProperties.Via%2A> vlastností pak nastavení tento identifikátor URI. <xref:System.ServiceModel.Channels.MessageProperties> je přístupné přes <xref:System.ServiceModel.Channels.Message.Properties%2A> vlastnost.  
   
 -   V `IDispatchMessageFormatter.DeserializeRequest` načte formátovací modul metoda na serveru, `Via` URI ve vlastnostech příchozí zpráva požadavku. Ho analyzuje dvojice název hodnota v řetězci dotazu identifikátoru URI do názvy parametrů a hodnoty a využije k vyplnění pole parametry předané do metodu názvy parametrů a hodnoty. Všimněte si, že operace odesílání již došlo, proto je přípona názvu operaci je ignorován v této metodě.  
   
@@ -177,7 +165,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Formatters\QuieryStringFormatter`  
   

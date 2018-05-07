@@ -1,29 +1,18 @@
 ---
-title: "Ukládání a zápis dokumentu"
-ms.custom: 
+title: Ukládání a zápis dokumentu
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 097b0cb1-5743-4c3a-86ef-caf5cbe6750d
-caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2138b9c47c6e41cd94e775eaed005d8a6fd976c9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 389ae0d95f3d612ca9c81ce69b74f8b58534d679
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="saving-and-writing-a-document"></a>Ukládání a zápis dokumentu
 Při spouštění a uložit <xref:System.Xml.XmlDocument>, uložený dokument se můžou lišit od původního následujícími způsoby:  
@@ -68,7 +57,7 @@ doc.Save(tw);
  Pro <xref:System.Xml.XmlDeclaration> členy <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDeclaration.WriteTo%2A>, a <xref:System.Xml.XmlNode.InnerXml%2A>, pokud <xref:System.Xml.XmlDeclaration.Encoding%2A> není nastavena vlastnost, bez kódování se zapíše. Jinak, kódování napsána v deklaraci XML je stejný jako kódování v nalezen <xref:System.Xml.XmlDeclaration.Encoding%2A> vlastnost.  
   
 ## <a name="writing-document-content-using-the-outerxml-property"></a>Obsah dokumentu zápis pomocí vlastnosti OuterXml  
- <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost je rozšíření Microsoft standardům World Wide Web Consortium (W3C) XML modelu DOM (Document Object). <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost se používá k získání kódu celý dokument XML nebo kód jeden uzel a jeho podřízené uzly. <xref:System.Xml.XmlNode.OuterXml%2A>vrátí kód, který představuje daný uzel a všechny jeho podřízené uzly.  
+ <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost je rozšíření Microsoft standardům World Wide Web Consortium (W3C) XML modelu DOM (Document Object). <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost se používá k získání kódu celý dokument XML nebo kód jeden uzel a jeho podřízené uzly. <xref:System.Xml.XmlNode.OuterXml%2A> vrátí kód, který představuje daný uzel a všechny jeho podřízené uzly.  
   
  Následující příklad kódu ukazuje, jak k uložení dokumentu v celé jeho šíři jako řetězec.  
   

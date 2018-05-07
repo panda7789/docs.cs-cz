@@ -1,21 +1,12 @@
 ---
 title: F-P – příkazy
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 ms.assetid: cdce7ab0-c52e-4d33-a29b-bf32cdacc79f
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1e2c3dc3d56dc494cbbd3197558c86d4ef4e2f4e
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 7b8fc3c078fddb007f5818f0ddb18205a7566501
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="f-p-statements"></a>F-P – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  

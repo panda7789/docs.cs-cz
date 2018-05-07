@@ -1,11 +1,6 @@
 ---
 title: -main
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - main compiler option [Visual Basic]
 - /main compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b22b4bb1b6649265eabc02beb6b0145f7c075b27
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 51a527dfddd2b78ac1c0559420298a66eb4b63f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-main"></a>-main
 Určuje třídu nebo modul, který obsahuje `Sub Main` postupu.  
@@ -59,7 +54,7 @@ vbc t2.vb t3.vb -main:Test2
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [Hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)

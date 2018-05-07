@@ -1,31 +1,17 @@
 ---
 title: Přenos WS s pověřením zpráv
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7b954e2d19f601476876beef6482ca10eb3f113b
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: acb2960fe3d563a05b0bdeee70af0d4093aae6f0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ws-transport-with-message-credential"></a>Přenos WS s pověřením zpráv
 Tento příklad znázorňuje použití přenosu zabezpečení SSL v kombinaci s pověření klienta provádí ve zprávě. V tomto příkladu `wsHttpBinding` vazby.  
   
- Ve výchozím nastavení `wsHttpBinding` vazby poskytuje komunikaci pomocí protokolu HTTP. Když nakonfigurován pro zabezpečení přenosu, vazba podporuje komunikaci přes protokol HTTPS. HTTPS poskytuje utajení a integrity ochrany pro zprávy, které jsou odeslány prostřednictvím sítě. Je ale omezený na přenos HTTPS podporuje sadu ověřovací mechanismy, které lze použít k ověření klienta ke službě. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] nabízí `TransportWithMessageCredential` režim zabezpečení, která je určená k překonání tohoto omezení. Pokud je nakonfigurovaná tento režim zabezpečení, zabezpečení přenosu se používá k zajištění důvěrnosti a integrity pro přenášená zprávy a provádět ověřování služby. Ověření klienta se však provádí umístěním pověření klienta přímo ve zprávě. To umožňuje použít libovolný typ přihlašovacích údajů, který podporuje režim zabezpečení zprávy pro ověřování klientů a zachovat přitom výkon výhodou režim zabezpečení přenosu.  
+ Ve výchozím nastavení `wsHttpBinding` vazby poskytuje komunikaci pomocí protokolu HTTP. Když nakonfigurován pro zabezpečení přenosu, vazba podporuje komunikaci přes protokol HTTPS. HTTPS poskytuje utajení a integrity ochrany pro zprávy, které jsou odeslány prostřednictvím sítě. Je ale omezený na přenos HTTPS podporuje sadu ověřovací mechanismy, které lze použít k ověření klienta ke službě. Nabízí Windows Communication Foundation (WCF) `TransportWithMessageCredential` režim zabezpečení, která je určená k překonání tohoto omezení. Pokud je nakonfigurovaná tento režim zabezpečení, zabezpečení přenosu se používá k zajištění důvěrnosti a integrity pro přenášená zprávy a provádět ověřování služby. Ověření klienta se však provádí umístěním pověření klienta přímo ve zprávě. To umožňuje použít libovolný typ přihlašovacích údajů, který podporuje režim zabezpečení zprávy pro ověřování klientů a zachovat přitom výkon výhodou režim zabezpečení přenosu.  
   
  V této ukázce `UserName` typ přihlašovacích údajů se používá k ověření klienta ke službě.  
   

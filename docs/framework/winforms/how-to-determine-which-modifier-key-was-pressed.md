@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Určení modifikační klávesy, která byla stisknuta"
-ms.custom: 
+title: 'Postupy: Určení modifikační klávesy, která byla stisknuta'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -31,16 +24,11 @@ helpviewer_keywords:
 - Keys.Alt enumeration member
 - modifier keys
 ms.assetid: 1e184048-0ae3-4067-a200-d4ba31dbc2cb
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d5f749d22c09d166e81ea08068f760f24960ec83
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1c89149fc07f89028b21fa513fd84dee4e890968
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-which-modifier-key-was-pressed"></a>Postupy: Určení modifikační klávesy, která byla stisknuta
 Když vytvoříte aplikaci, která podporuje stisknutí kláves uživatele, můžete také monitorovat modifikační klávesy třeba klávesy SHIFT, ALT a CTRL. Při stisknutí modifikační klávesy v kombinaci s jiných klíčů nebo kliknutími myši, vaše aplikace může reagovat správně. Například pokud stisknutí písmeno S to může způsobit jednoduše "s" zobrazí na obrazovce, ale pokud stisknutí kláves CTRL + S, mohou být uloženy aktuálním dokumentu. Pokud zpracováváte <xref:System.Windows.Forms.Control.KeyDown> událostí, <xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> vlastnost <xref:System.Windows.Forms.KeyEventArgs> obdržel událost obslužné rutiny Určuje, které modifikační klávesy stisknutí. Případně <xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> vlastnost <xref:System.Windows.Forms.KeyEventArgs> Určuje znak, která byla stisknuta stejně jako jakýkoli modifikační klávesy v kombinaci s bitové operace OR. Ale pokud jsou zpracování <xref:System.Windows.Forms.Control.KeyPress> událostí nebo myš událost, obslužné rutiny události neobdrží tyto informace. V takovém případě musíte použít <xref:System.Windows.Forms.Control.ModifierKeys%2A> vlastnost <xref:System.Windows.Forms.Control> třídy. V obou případech je třeba provést bitové operace AND příslušné <xref:System.Windows.Forms.Keys> hodnota a hodnota testování. <xref:System.Windows.Forms.Keys> Výčtu nabízí variace každý modifikační klávesy, proto je důležité provést bitové hodnotě a s správnou hodnotu. Například je reprezentována klávesu SHIFT <xref:System.Windows.Forms.Keys.Shift>, <xref:System.Windows.Forms.Keys.ShiftKey>, <xref:System.Windows.Forms.Keys.RShiftKey> a <xref:System.Windows.Forms.Keys.LShiftKey> správnou hodnotu pro testovací SHIFT, jako je modifikační klávesy <xref:System.Windows.Forms.Keys.Shift>. Podobně testování pro řadič a ALT jako modifikátory můžete využít <xref:System.Windows.Forms.Keys.Control> a <xref:System.Windows.Forms.Keys.Alt> hodnoty v uvedeném pořadí.  

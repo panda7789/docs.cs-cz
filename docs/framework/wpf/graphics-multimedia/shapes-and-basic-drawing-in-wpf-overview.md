@@ -1,13 +1,6 @@
 ---
-title: "Tvary a základní kresby v přehledu WPF"
-ms.custom: 
+title: Tvary a základní kresby v přehledu WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,26 +12,21 @@ helpviewer_keywords:
 - vectors [WPF], drawing
 - Shape objects [WPF]
 ms.assetid: 66d7a6d6-e3b6-47bc-8dfe-8a1b26f7d901
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2912215cb8fb0090cef58e0201cc355da1f0bf19
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: adbf982da25ff445d277b7c1b5911217d9825c02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>Tvary a základní kresby v přehledu WPF
 Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.Shapes.Shape> objekty. A <xref:System.Windows.Shapes.Shape> je typ <xref:System.Windows.UIElement> , umožňuje kreslení obrazce na obrazovku. Protože jsou prvky uživatelského rozhraní, <xref:System.Windows.Shapes.Shape> objekty mohou být použity uvnitř <xref:System.Windows.Controls.Panel> elementy a většina ovládacích prvků.  
   
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]nabízí několik vrstev přístupu k grafika a vykreslování služby. V horní vrstvě <xref:System.Windows.Shapes.Shape> objekty jsou snadno použitelné a poskytují řady užitečných funkcí, jako je například rozložení a účast v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] událostí systému.  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí několik vrstev přístupu k grafika a vykreslování služby. V horní vrstvě <xref:System.Windows.Shapes.Shape> objekty jsou snadno použitelné a poskytují řady užitečných funkcí, jako je například rozložení a účast v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] událostí systému.  
   
   
 <a name="shapes"></a>   
 ## <a name="shape-objects"></a>Objekty tvarů  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje řadu připravené k použití <xref:System.Windows.Shapes.Shape> objekty.  Všechny objekty tvar dědí <xref:System.Windows.Shapes.Shape> třídy. K dispozici tvar objekty zahrnují <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, a <xref:System.Windows.Shapes.Rectangle>. <xref:System.Windows.Shapes.Shape>objekty sdílejí následující běžné vlastnosti.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje řadu připravené k použití <xref:System.Windows.Shapes.Shape> objekty.  Všechny objekty tvar dědí <xref:System.Windows.Shapes.Shape> třídy. K dispozici tvar objekty zahrnují <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, a <xref:System.Windows.Shapes.Rectangle>. <xref:System.Windows.Shapes.Shape> objekty sdílejí následující běžné vlastnosti.  
   
 -   <xref:System.Windows.Shapes.Shape.Stroke%2A>: Popisuje, jak je vykresluje obrysu obrazce.  
   
@@ -83,7 +71,7 @@ Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.
   
 <a name="pathgeometry"></a>   
 ### <a name="pathgeometry-and-pathsegments"></a>PathGeometry a PathSegments  
- <xref:System.Windows.Media.PathGeometry>objekty, které se skládají z jedné nebo více <xref:System.Windows.Media.PathFigure> objekty; každá <xref:System.Windows.Media.PathFigure> představuje různé "obrázek" nebo tvaru. Každý <xref:System.Windows.Media.PathFigure> se sám skládá z jednoho nebo více <xref:System.Windows.Media.PathSegment> objekty, každý představuje připojené část obrázku nebo tvaru. Segment typy patří: <xref:System.Windows.Media.LineSegment>, <xref:System.Windows.Media.BezierSegment>, a <xref:System.Windows.Media.ArcSegment>.  
+ <xref:System.Windows.Media.PathGeometry> objekty, které se skládají z jedné nebo více <xref:System.Windows.Media.PathFigure> objekty; každá <xref:System.Windows.Media.PathFigure> představuje různé "obrázek" nebo tvaru. Každý <xref:System.Windows.Media.PathFigure> se sám skládá z jednoho nebo více <xref:System.Windows.Media.PathSegment> objekty, každý představuje připojené část obrázku nebo tvaru. Segment typy patří: <xref:System.Windows.Media.LineSegment>, <xref:System.Windows.Media.BezierSegment>, a <xref:System.Windows.Media.ArcSegment>.  
   
  V následujícím příkladu <xref:System.Windows.Shapes.Path> slouží k vykreslení kvadratické Bézierovy křivky.  
   
@@ -108,7 +96,7 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
  ![Cesta k obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-path.PNG "shape_ovw_path")  
   
- <xref:System.Windows.Shapes.Path.Data%2A> Řetězec atributu začíná příkaz "MoveTo (přesunout)" indikován M, který vytváří bod spuštění pro cestu v souřadnicový systém <xref:System.Windows.Controls.Canvas>. <xref:System.Windows.Shapes.Path>parametry dat rozlišují velká a malá písmena. Velké M Určuje absolutní umístění pro nový aktuální bod. Malá písmena m by znamenat relativních souřadnicích. První segment je krychlový začátku křivku Bézierových na (100,200) a končí na (400,175), vykresleného použití dvou řídit body (100,25) a (400,350). Tento segment uvedené v příkazu jazyka C v <xref:System.Windows.Shapes.Path.Data%2A> atribut řetězec. Znovu velké C označuje zadat absolutní cestu. malá písmena c by označit relativní cestu.  
+ <xref:System.Windows.Shapes.Path.Data%2A> Řetězec atributu začíná příkaz "MoveTo (přesunout)" indikován M, který vytváří bod spuštění pro cestu v souřadnicový systém <xref:System.Windows.Controls.Canvas>. <xref:System.Windows.Shapes.Path> parametry dat rozlišují velká a malá písmena. Velké M Určuje absolutní umístění pro nový aktuální bod. Malá písmena m by znamenat relativních souřadnicích. První segment je krychlový začátku křivku Bézierových na (100,200) a končí na (400,175), vykresleného použití dvou řídit body (100,25) a (400,350). Tento segment uvedené v příkazu jazyka C v <xref:System.Windows.Shapes.Path.Data%2A> atribut řetězec. Znovu velké C označuje zadat absolutní cestu. malá písmena c by označit relativní cestu.  
   
  Druhý segment začíná příkaz vodorovné absolutní "lineto" H, který určuje linií z předchozí cestou koncového bodu (400,175) pro nový koncový bod (280,175). Vzhledem k tomu, že je příkaz vodorovné "lineto", je hodnota zadaná *x*-koordinaci.  
   
@@ -116,7 +104,7 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
 <a name="fillpaint"></a>   
 ## <a name="painting-shapes"></a>Malování tvarů  
- <xref:System.Windows.Media.Brush>objekty se používají k vyplnění obrazce <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.Fill%2A>. V následujícím příkladu, tah a výplň <xref:System.Windows.Shapes.Ellipse> nejsou zadány. Všimněte si, že platného vstupu pro stopy vlastnosti mohou být buď – klíčové slovo nebo hexadecimální hodnoty barvy. Další informace o klíčových dostupnou barvu, najdete v části vlastnosti <xref:System.Windows.Media.Colors> třídy v <xref:System.Windows.Media> oboru názvů.  
+ <xref:System.Windows.Media.Brush> objekty se používají k vyplnění obrazce <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.Fill%2A>. V následujícím příkladu, tah a výplň <xref:System.Windows.Shapes.Ellipse> nejsou zadány. Všimněte si, že platného vstupu pro stopy vlastnosti mohou být buď – klíčové slovo nebo hexadecimální hodnoty barvy. Další informace o klíčových dostupnou barvu, najdete v části vlastnosti <xref:System.Windows.Media.Colors> třídy v <xref:System.Windows.Media> oboru názvů.  
   
 ```  
 <Canvas Background="LightGray">   
@@ -213,7 +201,7 @@ myPolygon.StrokeThickness = 2;
 ## <a name="transforming-shapes"></a>Transformace tvarů  
  <xref:System.Windows.Media.Transform> Třída poskytuje způsob, jak transformace obrazců do dvourozměrné roviny.  Různé typy transformace zahrnují otočení (<xref:System.Windows.Media.RotateTransform>), škálování (<xref:System.Windows.Media.ScaleTransform>), zkosení (<xref:System.Windows.Media.SkewTransform>) a překlad (<xref:System.Windows.Media.TranslateTransform>).  
   
- Běžné transformaci, kterou chcete použít pro obrazce je rotaci kolem.  Otočení obrazce, vytvoření <xref:System.Windows.Media.RotateTransform> a zadejte jeho <xref:System.Windows.Media.RotateTransform.Angle%2A>. <xref:System.Windows.Media.RotateTransform.Angle%2A> 45 otočí element 45 stupňů doprava; úhel 90 otočí element 90 stupňů po směru hodinových ručiček; a tak dále. Nastavte <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> vlastnosti, pokud chcete řídit bodem o tom, které element otočen. Hodnoty těchto vlastností jsou vyjádřeny v prostoru souřadnic prováděna transformace elementu. <xref:System.Windows.Media.RotateTransform.CenterX%2A>a <xref:System.Windows.Media.RotateTransform.CenterY%2A> mají výchozí hodnoty nula. Nakonec se vztahují <xref:System.Windows.Media.RotateTransform> do elementu. Pokud nechcete, aby transformace ovlivnit rozložení, nastavte tvaru <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  
+ Běžné transformaci, kterou chcete použít pro obrazce je rotaci kolem.  Otočení obrazce, vytvoření <xref:System.Windows.Media.RotateTransform> a zadejte jeho <xref:System.Windows.Media.RotateTransform.Angle%2A>. <xref:System.Windows.Media.RotateTransform.Angle%2A> 45 otočí element 45 stupňů doprava; úhel 90 otočí element 90 stupňů po směru hodinových ručiček; a tak dále. Nastavte <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> vlastnosti, pokud chcete řídit bodem o tom, které element otočen. Hodnoty těchto vlastností jsou vyjádřeny v prostoru souřadnic prováděna transformace elementu. <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> mají výchozí hodnoty nula. Nakonec se vztahují <xref:System.Windows.Media.RotateTransform> do elementu. Pokud nechcete, aby transformace ovlivnit rozložení, nastavte tvaru <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  
   
  V následujícím příkladu <xref:System.Windows.Media.RotateTransform> se používá k Otočit tvar 45 stupňů o tvaru levého horního rohu (0,0).  
   

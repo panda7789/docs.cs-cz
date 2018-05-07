@@ -1,24 +1,14 @@
 ---
 title: LINQ v jazyce Visual Basic
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - what's new [Visual Basic]
 ms.assetid: ddba5545-ff6e-46c3-8967-5c4280db5aca
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: acec0a067ef318d34c033529415afb5c321e19a2
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 58eeffc2445b71adee4fce2f8cff0c69a597f140
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-in-visual-basic"></a>LINQ v jazyce Visual Basic
 Tato část obsahuje přehledy, příklady a základní informace, které vám pomůžou pochopit a použití jazyka Visual Basic a [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  

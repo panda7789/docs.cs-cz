@@ -1,23 +1,16 @@
 ---
 title: -addmodule
 ms.date: 03/09/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - /addmodule compiler option [Visual Basic]
 - addmodule compiler option [Visual Basic]
 - -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c17d5541fe2d02ba88f4c5ef259b2248f371dfe5
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 2fefdf81ab25d2e109f265f0c895a3415ad5673d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-addmodule"></a>-addmodule
 Způsobí, že kompilátor zkontrolujte všechny informace ze zadané soubory, které jsou k dispozici do projektu, které jsou aktuálně kompilování typu.  
@@ -56,7 +49,7 @@ Způsobí, že kompilátor zkontrolujte všechny informace ze zadané soubory, k
  Při spuštění `t1`, vyprodukuje `802`.  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
  [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -1,13 +1,6 @@
 ---
-title: "Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], row sharing
 - data grids [Windows Forms], best practices
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - best practices [Windows Forms], dataGridView control
 - DataGridView control [Windows Forms], scaling
 ms.assetid: 8321a8a6-6340-4fd1-b475-fa090b905aaf
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ecd629bd38e08c8d6909ee4ad771f17b1554fc80
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 91153df539871de571375d7bf6d49d712a0c43b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení určená k poskytování maximální škálovatelnost. Pokud potřebujete zobrazit velké objemy dat, postupujte podle pokynů popsaných v tomto tématu, aby se zabránilo spotřebovává velké množství paměti nebo dlouhodobější snížení kvality odezvy uživatelského rozhraní (UI). Toto téma popisuje následující problémy:  
@@ -124,7 +112,7 @@ ms.lasthandoff: 12/22/2017
   
  Chcete-li zabránit vzniku odstranit řádky, použijte následující pokyny:  
   
--   Vyhněte se indexování <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce nebo iterace v rámci její `foreach` smyčky. Obvykle nebudete potřebovat pro přístup k řádky přímo. <xref:System.Windows.Forms.DataGridView>metody, které působí na řádky trvat řádek indexu argumenty spíš než řádek instance. Obslužné rutiny pro události související se řádek navíc zobrazí objektů argument událostí s vlastnostmi řádků, které můžete použít k manipulaci s řádky, aniž by to způsobilo, aby se mohly stát nesdílené.  
+-   Vyhněte se indexování <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce nebo iterace v rámci její `foreach` smyčky. Obvykle nebudete potřebovat pro přístup k řádky přímo. <xref:System.Windows.Forms.DataGridView> metody, které působí na řádky trvat řádek indexu argumenty spíš než řádek instance. Obslužné rutiny pro události související se řádek navíc zobrazí objektů argument událostí s vlastnostmi řádků, které můžete použít k manipulaci s řádky, aniž by to způsobilo, aby se mohly stát nesdílené.  
   
 -   Pokud potřebujete přístup k objektu řádku, použijte <xref:System.Windows.Forms.DataGridViewRowCollection.SharedRow%2A?displayProperty=nameWithType> metoda a předejte jí skutečné index řádku. Upozorňujeme však, že změnit objekt sdíleného řádku načteny prostřednictvím této metody slouží k úpravě všechny řádky, které sdílejí tento objekt. Řádek pro nové záznamy není sdílený s další řádky, ale tak nebude mít vliv, pokud upravíte ostatních řádků. Všimněte si také, že různé řádky reprezentována sdíleného řádku může mít jiný místní nabídky. Pro načtení správné místní nabídky z instance sdíleného řádku, použijte <xref:System.Windows.Forms.DataGridViewRow.GetContextMenuStrip%2A> metoda a předejte jí skutečné index řádku. Pokud máte přístup k sdíleného řádku <xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A> vlastnost místo toho použije index sdíleného řádku-1 a nebudou načteny správné místní nabídky.  
   

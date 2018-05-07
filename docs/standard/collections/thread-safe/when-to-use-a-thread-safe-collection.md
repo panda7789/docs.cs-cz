@@ -1,28 +1,17 @@
 ---
-title: "Kdy použít kolekci s bezpečnými vlákny"
-ms.custom: 
+title: Kdy použít kolekci s bezpečnými vlákny
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 61444afd5afe52cbcb0f64074ec4479bd6252358
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b224e758eb5b0e07c76f055f22bfe827789f07ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Zavádí pět nové typy kolekcí, které jsou speciálně určené pro podporu Vícevláknová přidávat a odebírat operace. K dosažení vláken, použít tyto nové typy různé druhy efektivní zamykání a mechanismy zámku bez synchronizace. Synchronizace přidá režie pro operaci. Množství práce, závisí na typ synchronizace, která se používá, druh operace, které se provádí a dalších faktorů, jako je počet vláken, které se pokoušíte získat přístup ke kolekci současně.  
@@ -46,7 +35,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue(T) vs. Queue(T)  
  V čistě producent – příjemce scénářích, kde je doba zpracování pro každý prvek velmi malé (pár pokynů), pak <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> může nabídnout menší výkony oproti <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> má externí zámek. V tomto scénáři <xref:System.Collections.Concurrent.ConcurrentQueue%601> poskytuje nejlepší výkon, když je služba Řízení front jedním vláknem a jedním vláknem vyřazuje z fronty. Pokud toto pravidlo, pak nevynutíte <xref:System.Collections.Generic.Queue%601> může provádět i mírně rychlejší než <xref:System.Collections.Concurrent.ConcurrentQueue%601> na počítačích, které mají víc jader.  
   
- Pokud doba zpracování je přibližně 500 FLOPS (operací s pohyblivou čárkou) nebo další, pak pravidlo dvou vláken nevztahuje na <xref:System.Collections.Concurrent.ConcurrentQueue%601>, který pak má velmi dobré škálovatelnost. <xref:System.Collections.Generic.Queue%601>nejsou adekvátní i v tomto scénáři.  
+ Pokud doba zpracování je přibližně 500 FLOPS (operací s pohyblivou čárkou) nebo další, pak pravidlo dvou vláken nevztahuje na <xref:System.Collections.Concurrent.ConcurrentQueue%601>, který pak má velmi dobré škálovatelnost. <xref:System.Collections.Generic.Queue%601> nejsou adekvátní i v tomto scénáři.  
   
  Ve smíšených producent – příjemce scénářích, kdy je velmi malý, bude čas zpracování <xref:System.Collections.Generic.Queue%601> má externí zámek škáluje líp, než <xref:System.Collections.Concurrent.ConcurrentQueue%601> nepodporuje. Ale pokud je doba zpracování přibližně 500 FLOPS nebo více, pak se <xref:System.Collections.Concurrent.ConcurrentQueue%601> poskytuje lepší škálovatelnost.  
   

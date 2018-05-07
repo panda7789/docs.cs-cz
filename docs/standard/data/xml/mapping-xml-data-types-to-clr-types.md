@@ -1,26 +1,15 @@
 ---
-title: "Mapování datové typy XML pro typy CLR"
-ms.custom: 
+title: Mapování datové typy XML pro typy CLR
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cabdfcad-f359-479b-b71c-8b2fad42ca49
-caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a90e7e58eba3938e8869ed48a118b44f47c2bf4e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d06876b91c72b939768d480e40631a8e85170bc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mapping-xml-data-types-to-clr-types"></a>Mapování datové typy XML pro typy CLR
 Následující tabulka popisuje výchozí mapování mezi datové typy XML a běžné typy language runtime (CLR).  
@@ -28,7 +17,7 @@ Následující tabulka popisuje výchozí mapování mezi datové typy XML a bě
 ## <a name="the-following-table-describes-the-default-mappings-of-an-xml-data-type-to-a-clr-type"></a>Následující tabulka popisuje výchozí mapování datového typu XML na typ CLR.  
   
 > [!NOTE]
->  `xs` a `xdt` předpony jsou namapované http://www.w3.org/2001/XMLSchema a obor názvů http://www.w3.org/2003/05/xpath-datatypes identifikátory URI.  
+>  `xs` a `xdt` předpony jsou namapované na http://www.w3.org/2001/XMLSchema a http://www.w3.org/2003/05/xpath-datatypes identifikátorů URI oboru názvů v uvedeném pořadí.  
   
 |Typ XML|Typ CLR|  
 |--------------|--------------|  

@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Asynchronní volání operací služby WCF"
-ms.custom: 
+title: 'Postupy: Asynchronní volání operací služby WCF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f8a22a5a5b9f388cdfb7b5e5edfa0a54b628aa0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8058f0fac8a0401f72f84e2d2e91c28c7e46d1e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
 Toto téma popisuje, jak mít klient přístup operace služby asynchronně. Implementuje službu v tomto tématu `ICalculator` rozhraní. Klienta můžete asynchronní volání operací na tomto rozhraní pomocí událostmi řízené asynchronní volání modelu. (Další informace o na základě událostí asynchronní volání modelu najdete v tématu [vícevláknové programování s asynchronním vzorem na základě událostí](http://go.microsoft.com/fwlink/?LinkId=248184)). Příklad, který ukazuje, jak implementovat asynchronní operace služby, naleznete v části [postupy: implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Další informace o synchronní a asynchronní operace najdete v tématu [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
@@ -39,7 +27,7 @@ Toto téma popisuje, jak mít klient přístup operace služby asynchronně. Imp
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
     ```  
   
-     Tím se vygeneruje, kromě synchronní a standard na základě delegáta asynchronních operací, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] třída klienta, který obsahuje:  
+     To vytváří, kromě synchronní a standard na základě delegáta asynchronních operací, třída klienta WCF, který obsahuje:  
   
     -   Dva <`operationName` > `Async` operací pro použití s na základě událostí asynchronní volání přístup. Příklad:  
   
@@ -51,7 +39,7 @@ Toto téma popisuje, jak mít klient přístup operace služby asynchronně. Imp
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    -   <xref:System.EventArgs?displayProperty=nameWithType>typy pro každou operaci (ve formátu <`operationName`>`CompletedEventArgs`) pro použití s na základě událostí asynchronní volání přístup. Příklad:  
+    -   <xref:System.EventArgs?displayProperty=nameWithType> typy pro každou operaci (ve formátu <`operationName`>`CompletedEventArgs`) pro použití s na základě událostí asynchronní volání přístup. Příklad:  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  

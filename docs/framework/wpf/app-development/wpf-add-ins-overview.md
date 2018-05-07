@@ -1,13 +1,6 @@
 ---
-title: "Přehled doplňků WPF"
-ms.custom: 
+title: Přehled doplňků WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - add-ins and XAML browser applications [WPF]
 - add-ins overview [WPF]
@@ -19,19 +12,14 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-caps.latest.revision: "36"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ffd45957b41cdfd8488aedd865aa70ef5b2634b2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 942f5706a83a9f9e9cd969701ed5625c57b76f83
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
-<a name="Introduction"></a>[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zahrnuje přidat model, vývojáři mohou použít k vytvoření aplikace, které podporují doplňku rozšíření. Tento model doplňku umožňuje vytváření doplňků, které integrovat a rozšířit funkce aplikace. V některých scénářích aplikací také potřebovat zobrazit [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] jsou poskytovány doplňků. Toto téma ukazuje, jak [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit tyto scénáře, architektura hlouběji, její výhody a její omezení.  
+<a name="Introduction"></a> [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zahrnuje přidat model, vývojáři mohou použít k vytvoření aplikace, které podporují doplňku rozšíření. Tento model doplňku umožňuje vytváření doplňků, které integrovat a rozšířit funkce aplikace. V některých scénářích aplikací také potřebovat zobrazit [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] jsou poskytovány doplňků. Toto téma ukazuje, jak [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit tyto scénáře, architektura hlouběji, její výhody a její omezení.  
   
 
   
@@ -115,7 +103,7 @@ ms.lasthandoff: 01/19/2018
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Typy nejsou učinit vzdáleným. K vyřešení problému, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vytvořené doplňky zobrazený z hostitele aplikací. Tato podpora je k dispozici ve [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dva typy: <xref:System.AddIn.Contract.INativeHandleContract> rozhraní a dvě statické metody implementované <xref:System.AddIn.Pipeline.FrameworkElementAdapters> – třída: <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> a <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>. Na vysoké úrovni se používají tyto typy a metody následujícím způsobem:  
   
-1.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]vyžaduje, aby [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] poskytované doplňky jsou třídy, které jsou odvozeny od přímo nebo nepřímo <xref:System.Windows.FrameworkElement>, jako jsou například tvarů, ovládací prvky, uživatelských ovládacích prvků, panelů rozložení a stránky.  
+1.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vyžaduje, aby [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] poskytované doplňky jsou třídy, které jsou odvozeny od přímo nebo nepřímo <xref:System.Windows.FrameworkElement>, jako jsou například tvarů, ovládací prvky, uživatelských ovládacích prvků, panelů rozložení a stránky.  
   
 2.  Bez ohledu na kontrakt deklaruje, že uživatelského rozhraní se předají mezi doplněk a hostitelskou aplikaci, musí být deklarována jako <xref:System.AddIn.Contract.INativeHandleContract> (ne <xref:System.Windows.FrameworkElement>); <xref:System.AddIn.Contract.INativeHandleContract> je učinit vzdáleným reprezentace doplněk [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] , může být předán přes hranice izolace.  
   
@@ -178,7 +166,7 @@ ms.lasthandoff: 01/19/2018
  Tyto úkoly popisují podrobně v následující témata.  
   
 ### <a name="configuring-the-pipeline-and-add-in-for-clickonce-deployment"></a>Konfigurace kanálu a Add-In pro nasazení pomocí technologie ClickOnce  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]je stažen do a spusťte ze složky bezpečné v [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nasazení mezipaměti. Aby [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] k hostování v, je nutné stáhnout sestavení kanálu a doplněk ke složce bezpečné. To můžete udělat, musíte nakonfigurovat manifest aplikace zahrnuje kanálu a sestavení doplňku pro stahování. Děje se tak snadno [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], i když kanálu a přidat v sestavení musí být na hostiteli [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projektu kořenovou složku v pořadí pro [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] ke zjištění sestavení kanálu.  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] je stažen do a spusťte ze složky bezpečné v [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nasazení mezipaměti. Aby [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] k hostování v, je nutné stáhnout sestavení kanálu a doplněk ke složce bezpečné. To můžete udělat, musíte nakonfigurovat manifest aplikace zahrnuje kanálu a sestavení doplňku pro stahování. Děje se tak snadno [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], i když kanálu a přidat v sestavení musí být na hostiteli [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projektu kořenovou složku v pořadí pro [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] ke zjištění sestavení kanálu.  
   
  V důsledku toho prvním krokem je vytvoření kanálu a doplňku sestavení [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] kořenové projektu nastavením jeho výstup každé kanálu sestavení a doplněk sestavení projektů. Následující tabulka uvádí výstupní cesta sestavení kanálu sestavení projektů a doplňku sestavení projektu nacházejí ve stejné složce řešení a kořenový jako hostitel [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projektu.  
   
@@ -202,7 +190,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  Klikněte pravým tlačítkem myši [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] projektu, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **publikovat**a potom klikněte na **soubory aplikace** tlačítko.  
   
-2.  V **soubory aplikace** dialogové okno, sada **stav publikování** jednotlivých kanálu a knihovny DLL pro doplněk **zahrnout (automaticky)**a nastavte **Skupina stažení** pro každý kanál a přidejte DLL k **(povinné)**.  
+2.  V **soubory aplikace** dialogové okno, sada **stav publikování** jednotlivých kanálu a knihovny DLL pro doplněk **zahrnout (automaticky)** a nastavte **Skupina stažení** pro každý kanál a přidejte DLL k **(povinné)**.  
   
 ### <a name="using-the-pipeline-and-add-in-from-the-application-base"></a>Použití kanálu a doplněk od základní aplikace  
  Když jsou kanálu a jsou nakonfigurovaní pro [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] nasazení, se stáhnou do stejné [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] složky mezipaměti jako [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. Použití kanálu a doplňky [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] kódu musí je můžete získat z aplikace základní. Různé typy a členy [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku pro použití kanálů a doplňky poskytovat zvláštní podporu pro tento scénář. Za prvé, je identifikovaný cestu <xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase> hodnota výčtu. Použijte tuto hodnotu s přetížení členy příslušné doplňku pro práci s kanály, které zahrnují následující:  
@@ -230,7 +218,7 @@ ms.lasthandoff: 01/19/2018
   
 -   Na straně hostitele aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] znovu zabalí a <xref:System.Windows.Interop.HwndSource> jako interní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] třídu odvozenou od <xref:System.Windows.Interop.HwndHost> a odebírá <xref:System.AddIn.Contract.INativeHandleContract>. Instance této třídy je vrácen rutinou <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> pro hostitelskou aplikaci.  
   
- <xref:System.Windows.Interop.HwndHost>existuje zobrazíte [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)], identifikovaný popisovače oken z [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]. Další informace najdete v tématu [WPF a vzájemná spolupráce Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md).  
+ <xref:System.Windows.Interop.HwndHost> existuje zobrazíte [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)], identifikovaný popisovače oken z [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]. Další informace najdete v tématu [WPF a vzájemná spolupráce Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md).  
   
  Souhrnně <xref:System.AddIn.Contract.INativeHandleContract>, <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>, a <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> existovat umožňující popisovač okna pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] mají být předány z doplňku hostitelskou aplikaci, kde je zapouzdřené pomocí <xref:System.Windows.Interop.HwndHost> a zobrazí hostitele aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   

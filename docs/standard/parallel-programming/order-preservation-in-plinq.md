@@ -1,31 +1,20 @@
 ---
-title: "Zachování pořadí v PLINQ"
-ms.custom: 
+title: Zachování pořadí v PLINQ
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 164dce7c58e1ce44972e0e390e4f0bf2be8de548
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0b98fdcd425ae62aca0149df5136c28edc023bf0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="order-preservation-in-plinq"></a>Zachování pořadí v PLINQ
 Cílem je v PLINQ, maximalizovat výkon při zachování správnosti. Dotaz by měl spustit co nejrychleji, ale stále správné výsledky. V některých případech správnost vyžaduje pořadí zdrojové sekvence dat; řazení však může být náročné. Proto ve výchozím nastavení, PLINQ nezachová pořadí zdrojové sekvence. V tomto ohledu PLINQ podobá [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], ale na rozdíl od LINQ na objekty, které zachováváno.  
@@ -108,26 +97,26 @@ Cílem je v PLINQ, maximalizovat výkon při zachování správnosti. Dotaz by m
 |<xref:System.Linq.ParallelEnumerable.Repeat%2A>|Není k dispozici (stejné jako výchozí <xref:System.Linq.ParallelEnumerable.AsParallel%2A>)|Nelze použít|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Obrátí|Neprovádí žádnou akci.|  
 |<xref:System.Linq.ParallelEnumerable.Select%2A>|Seřazené výsledky|Neuspořádané výsledky|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>(indexované)|Seřazené výsledky|Neuspořádané výsledky.|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A> (indexované)|Seřazené výsledky|Neuspořádané výsledky.|  
 |<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Seřazené výsledky.|Neuspořádané výsledky|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>(indexované)|Seřazené výsledky.|Neuspořádané výsledky.|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A> (indexované)|Seřazené výsledky.|Neuspořádané výsledky.|  
 |<xref:System.Linq.ParallelEnumerable.SequenceEqual%2A>|Seřazené porovnání|Neuspořádané porovnání|  
 |<xref:System.Linq.ParallelEnumerable.Single%2A>|Nelze použít|Nelze použít|  
 |<xref:System.Linq.ParallelEnumerable.SingleOrDefault%2A>|Nelze použít|Nelze použít|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|Přeskočí první  *n*  elementy|Přeskočí žádné  *n*  elementy|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|Přeskočí první *n* elementy|Přeskočí žádné *n* elementy|  
 |<xref:System.Linq.ParallelEnumerable.SkipWhile%2A>|Seřazené výsledky.|Nedeterministická. SkipWhile provádí aktuální pořadí|  
 |<xref:System.Linq.ParallelEnumerable.Sum%2A>|Nedeterministická výstup neasociativní či nekomutativní operace|Nedeterministická výstup neasociativní či nekomutativní operace|  
 |<xref:System.Linq.ParallelEnumerable.Take%2A>|Přebírá první `n` elementy|Přebírá všechny `n` elementy|  
 |<xref:System.Linq.ParallelEnumerable.TakeWhile%2A>|Seřazené výsledky|Nedeterministická. TakeWhile provádí aktuální pořadí|  
-|<xref:System.Linq.ParallelEnumerable.ThenBy%2A>|Doplňky`OrderBy`|Doplňky`OrderBy`|  
-|<xref:System.Linq.ParallelEnumerable.ThenByDescending%2A>|Doplňky`OrderBy`|Doplňky`OrderBy`|  
+|<xref:System.Linq.ParallelEnumerable.ThenBy%2A>|Doplňky `OrderBy`|Doplňky `OrderBy`|  
+|<xref:System.Linq.ParallelEnumerable.ThenByDescending%2A>|Doplňky `OrderBy`|Doplňky `OrderBy`|  
 |<xref:System.Linq.ParallelEnumerable.ToArray%2A>|Seřazené výsledky|Neuspořádané výsledky|  
 |<xref:System.Linq.ParallelEnumerable.ToDictionary%2A>|Nelze použít|Nelze použít|  
 |<xref:System.Linq.ParallelEnumerable.ToList%2A>|Seřazené výsledky|Neuspořádané výsledky|  
 |<xref:System.Linq.ParallelEnumerable.ToLookup%2A>|Seřazené výsledky|Neuspořádané výsledky|  
 |<xref:System.Linq.ParallelEnumerable.Union%2A>|Seřazené výsledky|Neuspořádané výsledky|  
 |<xref:System.Linq.ParallelEnumerable.Where%2A>|Seřazené výsledky|Neuspořádané výsledky|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>(indexované)|Seřazené výsledky|Neuspořádané výsledky|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A> (indexované)|Seřazené výsledky|Neuspořádané výsledky|  
 |<xref:System.Linq.ParallelEnumerable.Zip%2A>|Seřazené výsledky|Neuspořádané výsledky|  
   
  Neuspořádané výsledky nejsou aktivně nesprávním místě; jednoduše nemají žádné speciální řazení logiky na ně použity. V některých případech může uchovávat dotaz Neseřazený řazení zdrojové sekvence. Pro dotazy, které používají indexované vyberte operátor PLINQ zaručuje, že bude výstup elementy přijdete v pořadí podle zvyšující indexy, ale neposkytuje žádné záruky, o které indexy, které budou přiřazené pro prvky, které.  

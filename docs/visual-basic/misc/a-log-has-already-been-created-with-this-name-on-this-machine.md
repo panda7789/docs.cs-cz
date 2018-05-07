@@ -1,18 +1,12 @@
 ---
-title: "Protokol byl vytvořen s tímto názvem na tomto počítači"
+title: Protokol byl vytvořen s tímto názvem na tomto počítači
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 3dd78d9f-890e-4409-bebb-048fdf34711b
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f2052fd81fa5856914a676aa6985eeb51c892788
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: e433c2fa5c6d4b815819a72fb8116ca9f1a89f62
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="a-log-has-already-been-created-with-this-name-on-this-machine"></a>Protokol byl vytvořen s tímto názvem na tomto počítači
 Byl proveden pokus o vytvoření protokolu s názvem, který je již používán.  

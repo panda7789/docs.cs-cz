@@ -1,33 +1,19 @@
 ---
 title: Analytické trasování s ETW
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - diagnostics [WCF], analytic tracing
 - administration [WCF], analytic tracing
 - analytic tracing [WCF]
 ms.assetid: 1d518e47-a38d-41e8-93d7-8c3b361f6a56
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a16f66ed8443749764e66d2616ae566ad788d571
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: a0e3e3d27283e588b161e2209c5a682558d18f79
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="analytic-tracing-with-etw"></a>Analytické trasování s ETW
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]analytické trasování nabízí způsob, jak zachytit diagnostické informace během provádění [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]analytické trasování událostí jsou vygenerované v klíčové body [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zásobníku umožňující řešení potíží s [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby v produkčním prostředí. Analytické trasování pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služeb má minimální dopad na výkon produktu serveru, který je hostitelem [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služeb jako tyto události jsou velmi efektivně vygenerované relaci události trasování událostí pro Windows (ETW).  
+Analytické trasování Windows Communication Foundation (WCF) nabízí způsob, jak zachytit diagnostické informace během provádění [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] analytické trasování událostí jsou vygenerované v klíčové body [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zásobníku umožňující řešení potíží s [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby v produkčním prostředí. Analytické trasování pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služeb má minimální dopad na výkon produktu serveru, který je hostitelem [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služeb jako tyto události jsou velmi efektivně vygenerované relaci události trasování událostí pro Windows (ETW).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled analytického trasování](../../../../../docs/framework/wcf/diagnostics/etw/analytic-tracing-overview.md)  

@@ -1,13 +1,6 @@
 ---
-title: "Přehled toku dokumentů"
-ms.custom: 
+title: Přehled toku dokumentů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - ', '
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
-caps.latest.revision: "39"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a99bd2336de41366d27c15e4bc4cfb2b2aff3cd0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0cf8944298af62a512599fc52998a046c66fed9b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo je nastavená na jednu předdefinované rozložení, dokumenty toku dynamicky upravit a přeformátování obsah na základě proměnných runtime například volitelné uživatelské předvolby, řešení zařízení a velikost okna. Kromě toho dokumenty toku nabízejí dokumentu pokročilé funkce, jako je stránkování a sloupců. Toto téma obsahuje přehled toku dokumentů a postup jejich vytvoření.  
@@ -69,13 +57,13 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
 ## <a name="flow-document-types"></a>Tok typů dokumentů.  
  Zobrazení obsahu dokumentu toku a jak se zobrazuje je závislá na jaké objekt se používá k hostování toku obsahu. Existují čtyři ovládací prvky, které podporují zobrazení obsah toku: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, <xref:System.Windows.Controls.RichTextBox>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer>. Tyto ovládací prvky jsou popsány níže.  
   
- **Poznámka:** <xref:System.Windows.Documents.FlowDocument> je potřeba přímo hostitele toku obsahu, tak využívat všechny tyto ovládací prvky zobrazení <xref:System.Windows.Documents.FlowDocument> povolit toku obsahu hostování.
+ **Poznámka:** <xref:System.Windows.Documents.FlowDocument> je potřeba přímo hostitele toku obsahu, tak využívat všechny tyto ovládací prvky zobrazení <xref:System.Windows.Documents.FlowDocument> povolit toku obsahu hostování.  
   
 ### <a name="flowdocumentreader"></a>FlowDocumentReader  
- <xref:System.Windows.Controls.FlowDocumentReader>obsahuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení, včetně režimu zobrazení jednostránkové (-na stránkách), dva--na stránkách (formát čtení kniha) zobrazení a průběžné posouvání režimu zobrazení (neomezené). Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>. Pokud nepotřebujete schopnost dynamicky přepínání mezi režimy jiné zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují světlejšího váhy toku obsahu prohlížeče, opravené v režimu konkrétní zobrazení.  
+ <xref:System.Windows.Controls.FlowDocumentReader> obsahuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení, včetně režimu zobrazení jednostránkové (-na stránkách), dva--na stránkách (formát čtení kniha) zobrazení a průběžné posouvání režimu zobrazení (neomezené). Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>. Pokud nepotřebujete schopnost dynamicky přepínání mezi režimy jiné zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují světlejšího váhy toku obsahu prohlížeče, opravené v režimu konkrétní zobrazení.  
   
 ### <a name="flowdocumentpageviewer-and-flowdocumentscrollviewer"></a>FlowDocumentPageViewer a třídy FlowDocumentScrollViewer  
- <xref:System.Windows.Controls.FlowDocumentPageViewer>Zobrazuje obsah stránky na čas režimu zobrazení při <xref:System.Windows.Controls.FlowDocumentScrollViewer> ukazuje obsahu v průběžném režimu posouvání. Obě <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> opravě do režimu konkrétní zobrazení. Porovnání <xref:System.Windows.Controls.FlowDocumentReader>, což zahrnuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení (jako poskytované <xref:System.Windows.Controls.FlowDocumentReaderViewingMode> – výčet), za cenu probíhá další náročné než <xref:System.Windows.Controls.FlowDocumentPageViewer> nebo <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
+ <xref:System.Windows.Controls.FlowDocumentPageViewer> Zobrazuje obsah stránky na čas režimu zobrazení při <xref:System.Windows.Controls.FlowDocumentScrollViewer> ukazuje obsahu v průběžném režimu posouvání. Obě <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> opravě do režimu konkrétní zobrazení. Porovnání <xref:System.Windows.Controls.FlowDocumentReader>, což zahrnuje funkce, které uživateli umožňuje dynamicky zvolit různé režimy zobrazení (jako poskytované <xref:System.Windows.Controls.FlowDocumentReaderViewingMode> – výčet), za cenu probíhá další náročné než <xref:System.Windows.Controls.FlowDocumentPageViewer> nebo <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
  Ve výchozím nastavení je vždy zobrazen svislý posuvník a vodorovný posuvník se zobrazí v případě potřeby. Výchozí uživatelské rozhraní pro <xref:System.Windows.Controls.FlowDocumentScrollViewer> nezahrnuje panel nástrojů, nicméně <xref:System.Windows.Controls.FlowDocumentScrollViewer.IsToolBarVisible%2A> vlastnost slouží k povolení integrované panelu nástrojů.  
   
@@ -111,7 +99,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
 ### <a name="block-derived-classes"></a>Třídy odvozené bloku  
  **Odstavce**  
   
- <xref:System.Windows.Documents.Paragraph>se obvykle používá k seskupení obsahu do odstavec. Nejjednodušší a nejběžnější použití odstavce je vytvoření odstavec textu.  
+ <xref:System.Windows.Documents.Paragraph> se obvykle používá k seskupení obsahu do odstavec. Nejjednodušší a nejběžnější použití odstavce je vytvoření odstavec textu.  
   
  [!code-xaml[FlowOvwSnippets_snip#ParagraphExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/ParagraphExample.xaml#paragraphexamplewholepage)]  
   
@@ -122,7 +110,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **Část**  
   
- <xref:System.Windows.Documents.Section>slouží jenom k obsahovat jiné <xref:System.Windows.Documents.Block>-odvozené elementy. Nevztahuje se žádné výchozí formátování na elementy, které obsahuje. Ale libovolné vlastnosti hodnoty sady na <xref:System.Windows.Documents.Section> se vztahuje na jeho podřízené elementy. Oddíl můžete také prostřednictvím kódu programu iteraci v rámci jeho podřízené kolekce. <xref:System.Windows.Documents.Section>slouží k podobným způsobem \<DIV > značky v kódu HTML.  
+ <xref:System.Windows.Documents.Section> slouží jenom k obsahovat jiné <xref:System.Windows.Documents.Block>-odvozené elementy. Nevztahuje se žádné výchozí formátování na elementy, které obsahuje. Ale libovolné vlastnosti hodnoty sady na <xref:System.Windows.Documents.Section> se vztahuje na jeho podřízené elementy. Oddíl můžete také prostřednictvím kódu programu iteraci v rámci jeho podřízené kolekce. <xref:System.Windows.Documents.Section> slouží k podobným způsobem \<DIV > značky v kódu HTML.  
   
  V následujícím příkladu jsou tři odstavce definované v rámci jednoho <xref:System.Windows.Documents.Section>. V části má <xref:System.Windows.Documents.TextElement.Background%2A> hodnota vlastnosti červené, proto barvu pozadí odstavců je také red.  
   
@@ -133,7 +121,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **BlockUIContainer**  
   
- <xref:System.Windows.Documents.BlockUIContainer>umožňuje <xref:System.Windows.UIElement> elementy (tj. <xref:System.Windows.Controls.Button>) má být vložen v odvozených bloku toku obsahu. <xref:System.Windows.Documents.InlineUIContainer>(viz níže) slouží k vložení <xref:System.Windows.UIElement> elementy v odvozených vloženého toku obsahu. <xref:System.Windows.Documents.BlockUIContainer>a <xref:System.Windows.Documents.InlineUIContainer> jsou důležité, protože neexistuje jiný způsob, jak používat <xref:System.Windows.UIElement> v toku obsahu, pokud je obsažen v jednom z těchto dvou elementů.  
+ <xref:System.Windows.Documents.BlockUIContainer> umožňuje <xref:System.Windows.UIElement> elementy (tj. <xref:System.Windows.Controls.Button>) má být vložen v odvozených bloku toku obsahu. <xref:System.Windows.Documents.InlineUIContainer> (viz níže) slouží k vložení <xref:System.Windows.UIElement> elementy v odvozených vloženého toku obsahu. <xref:System.Windows.Documents.BlockUIContainer> a <xref:System.Windows.Documents.InlineUIContainer> jsou důležité, protože neexistuje jiný způsob, jak používat <xref:System.Windows.UIElement> v toku obsahu, pokud je obsažen v jednom z těchto dvou elementů.  
   
  Následující příklad ukazuje, jak používat <xref:System.Windows.Documents.BlockUIContainer> element hostitele <xref:System.Windows.UIElement> objektů v rámci toku obsahu.  
   
@@ -143,9 +131,9 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  ![Snímek obrazovky: Vložených prvků uživatelského rozhraní v toku obsahu](../../../../docs/framework/wpf/advanced/media/blockuicontainer.png "BlockUIContainer")  
   
- **Seznam**  
+ **seznam**  
   
- <xref:System.Windows.Documents.List>slouží k vytvoření seznamu s odrážkami nebo číselný. Nastavte <xref:System.Windows.Documents.List.MarkerStyle%2A> vlastnosti <xref:System.Windows.TextMarkerStyle> hodnotu výčtu, která určí styl seznamu. Následující příklad ukazuje postup vytvoření jednoduchého seznamu.  
+ <xref:System.Windows.Documents.List> slouží k vytvoření seznamu s odrážkami nebo číselný. Nastavte <xref:System.Windows.Documents.List.MarkerStyle%2A> vlastnosti <xref:System.Windows.TextMarkerStyle> hodnotu výčtu, která určí styl seznamu. Následující příklad ukazuje postup vytvoření jednoduchého seznamu.  
   
  [!code-xaml[FlowOvwSnippets_snip#ListExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/ListExample.xaml#listexamplewholepage)]  
   
@@ -156,12 +144,12 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **Tabulka**  
   
- <xref:System.Windows.Documents.Table>slouží k vytvoření tabulky. <xref:System.Windows.Documents.Table>je podobná <xref:System.Windows.Controls.Grid> elementu, ale k dispozici další možnosti a proto vyžaduje větší režijní náklady na prostředek. Protože <xref:System.Windows.Controls.Grid> je <xref:System.Windows.UIElement>, v toku obsahu jej nelze použít, pokud je součástí <xref:System.Windows.Documents.BlockUIContainer> nebo <xref:System.Windows.Documents.InlineUIContainer>. Další informace o <xref:System.Windows.Documents.Table>, najdete v části [tabulky přehled](../../../../docs/framework/wpf/advanced/table-overview.md).  
+ <xref:System.Windows.Documents.Table> slouží k vytvoření tabulky. <xref:System.Windows.Documents.Table> je podobná <xref:System.Windows.Controls.Grid> elementu, ale k dispozici další možnosti a proto vyžaduje větší režijní náklady na prostředek. Protože <xref:System.Windows.Controls.Grid> je <xref:System.Windows.UIElement>, v toku obsahu jej nelze použít, pokud je součástí <xref:System.Windows.Documents.BlockUIContainer> nebo <xref:System.Windows.Documents.InlineUIContainer>. Další informace o <xref:System.Windows.Documents.Table>, najdete v části [tabulky přehled](../../../../docs/framework/wpf/advanced/table-overview.md).  
   
 ### <a name="inline-derived-classes"></a>Vložené odvozené třídy  
  **Spustit**  
   
- <xref:System.Windows.Documents.Run>slouží jako neformátovaný text. By se dalo očekávat <xref:System.Windows.Documents.Run> objekty, které se použije hojně v toku obsahu. Však ve značkách <xref:System.Windows.Documents.Run> elementy nejsou potřeba explicitně použít. <xref:System.Windows.Documents.Run>je potřeba použít při vytváření nebo manipulace s toku dokumenty pomocí kódu. Například v kódu níže první <xref:System.Windows.Documents.Paragraph> Určuje <xref:System.Windows.Documents.Run> element explicitně při druhý není. Oba odstavce generovat výstup identické.  
+ <xref:System.Windows.Documents.Run> slouží jako neformátovaný text. By se dalo očekávat <xref:System.Windows.Documents.Run> objekty, které se použije hojně v toku obsahu. Však ve značkách <xref:System.Windows.Documents.Run> elementy nejsou potřeba explicitně použít. <xref:System.Windows.Documents.Run> je potřeba použít při vytváření nebo manipulace s toku dokumenty pomocí kódu. Například v kódu níže první <xref:System.Windows.Documents.Paragraph> Určuje <xref:System.Windows.Documents.Run> element explicitně při druhý není. Oba odstavce generovat výstup identické.  
   
  [!code-xaml[FlowOvwSnippets_snip#RunExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/RunSnippetsExample.xaml#runexample1)]  
   
@@ -169,7 +157,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **Značka span**  
   
- <xref:System.Windows.Documents.Span>Další prvky vloženého obsahu skupiny společně. Žádné vyplývajících vykreslování se použije k obsahu v rámci <xref:System.Windows.Documents.Span> elementu. Ale elementy, dědí <xref:System.Windows.Documents.Span> včetně <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Documents.Bold>, <xref:System.Windows.Documents.Italic> a <xref:System.Windows.Documents.Underline> formátování textu.  
+ <xref:System.Windows.Documents.Span> Další prvky vloženého obsahu skupiny společně. Žádné vyplývajících vykreslování se použije k obsahu v rámci <xref:System.Windows.Documents.Span> elementu. Ale elementy, dědí <xref:System.Windows.Documents.Span> včetně <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Documents.Bold>, <xref:System.Windows.Documents.Italic> a <xref:System.Windows.Documents.Underline> formátování textu.  
   
  Dole je příklad <xref:System.Windows.Documents.Span> používá tak, aby obsahovala vloženého obsahu včetně textu, <xref:System.Windows.Documents.Bold> elementu a <xref:System.Windows.Controls.Button>.  
   
@@ -181,7 +169,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **InlineUIContainer**  
   
- <xref:System.Windows.Documents.InlineUIContainer>umožňuje <xref:System.Windows.UIElement> elementy (tj. ovládacího prvku jako <xref:System.Windows.Controls.Button>) má být vložen v <xref:System.Windows.Documents.Inline> obsahu elementu. Tento element je ekvivalentní vložený <xref:System.Windows.Documents.BlockUIContainer> popsané výše. Dole je příklad, který používá <xref:System.Windows.Documents.InlineUIContainer> k vložení <xref:System.Windows.Controls.Button> vložený v <xref:System.Windows.Documents.Paragraph>.  
+ <xref:System.Windows.Documents.InlineUIContainer> umožňuje <xref:System.Windows.UIElement> elementy (tj. ovládacího prvku jako <xref:System.Windows.Controls.Button>) má být vložen v <xref:System.Windows.Documents.Inline> obsahu elementu. Tento element je ekvivalentní vložený <xref:System.Windows.Documents.BlockUIContainer> popsané výše. Dole je příklad, který používá <xref:System.Windows.Documents.InlineUIContainer> k vložení <xref:System.Windows.Controls.Button> vložený v <xref:System.Windows.Documents.Paragraph>.  
   
  [!code-xaml[FlowOvwSnippets_snip#InlineUIContainerExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/InlineUIContainerExample.xaml#inlineuicontainerexamplewholepage)]  
   
@@ -192,7 +180,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **Obrázek a Floater**  
   
- <xref:System.Windows.Documents.Figure>a <xref:System.Windows.Documents.Floater> slouží k vložení obsahu v dokumentech toku pomocí vlastnosti umístění, které se dají přizpůsobit nezávislé na primární tok obsahu. <xref:System.Windows.Documents.Figure>nebo <xref:System.Windows.Documents.Floater> elementy se často používají k zvýrazněte nebo věnované části obsahu hostitele podpora obrázky nebo další obsah v rámci hlavní tok obsahu, nebo se vložit volně související obsah, jako jsou oznámení o inzerovaném programu.  
+ <xref:System.Windows.Documents.Figure> a <xref:System.Windows.Documents.Floater> slouží k vložení obsahu v dokumentech toku pomocí vlastnosti umístění, které se dají přizpůsobit nezávislé na primární tok obsahu. <xref:System.Windows.Documents.Figure> nebo <xref:System.Windows.Documents.Floater> elementy se často používají k zvýrazněte nebo věnované části obsahu hostitele podpora obrázky nebo další obsah v rámci hlavní tok obsahu, nebo se vložit volně související obsah, jako jsou oznámení o inzerovaném programu.  
   
  Následující příklad ukazuje, jak pro vložení <xref:System.Windows.Documents.Figure> do odstavec textu.  
   
@@ -205,7 +193,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  ![Snímek obrazovky: Obrázek příkladu](../../../../docs/framework/wpf/advanced/media/flow-ovw-figure-example.png "Flow_Ovw_Figure_Example")  
   
- <xref:System.Windows.Documents.Figure>a <xref:System.Windows.Documents.Floater> lišit v několika způsoby a používají se pro různé scénáře.  
+ <xref:System.Windows.Documents.Figure> a <xref:System.Windows.Documents.Floater> lišit v několika způsoby a používají se pro různé scénáře.  
   
  **Obrázek:**  
   
@@ -219,15 +207,15 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
 -   Nelze umístit a vykreslí bez ohledu na místo, může být k dispozici pro ni. Nelze nastavit offset nebo ukotvení <xref:System.Windows.Documents.Floater>.  
   
--   Nemůže být dimenzovány pro více než jeden sloupec: ve výchozím nastavení, <xref:System.Windows.Documents.Floater> velikosti na jeden sloupec. Má <xref:System.Windows.Documents.Floater.Width%2A> vlastnost, která můžete nastavit na hodnotu absolutní pixelů, ale pokud je tato hodnota větší než jeden sloupec šířka je ignorována a floater je velikost na jeden sloupec. Můžete jeho velikost na méně než jeden sloupec nastavením šířky správné pixelů, ale nastavení velikosti není sloupec relativní, takže "0.5Column" není platný výraz pro <xref:System.Windows.Documents.Floater> šířku. <xref:System.Windows.Documents.Floater>žádná vlastnost výšky a je výška nelze nastavit, jeho výška závisí na obsahu  
+-   Nemůže být dimenzovány pro více než jeden sloupec: ve výchozím nastavení, <xref:System.Windows.Documents.Floater> velikosti na jeden sloupec. Má <xref:System.Windows.Documents.Floater.Width%2A> vlastnost, která můžete nastavit na hodnotu absolutní pixelů, ale pokud je tato hodnota větší než jeden sloupec šířka je ignorována a floater je velikost na jeden sloupec. Můžete jeho velikost na méně než jeden sloupec nastavením šířky správné pixelů, ale nastavení velikosti není sloupec relativní, takže "0.5Column" není platný výraz pro <xref:System.Windows.Documents.Floater> šířku. <xref:System.Windows.Documents.Floater> žádná vlastnost výšky a je výška nelze nastavit, jeho výška závisí na obsahu  
   
--   <xref:System.Windows.Documents.Floater>stránkuje: Pokud jeho obsah v jeho nastavená šířka rozšiřuje na více než 1 sloupce výšky, floater dělí a stránkuje k dalším sloupci další stránku, atd.  
+-   <xref:System.Windows.Documents.Floater> stránkuje: Pokud jeho obsah v jeho nastavená šířka rozšiřuje na více než 1 sloupce výšky, floater dělí a stránkuje k dalším sloupci další stránku, atd.  
   
- <xref:System.Windows.Documents.Figure>je vhodná k umístění obsahu samostatné místo řídit velikost a umístění a si jisti, že se obsah vejde po zadanou velikost. <xref:System.Windows.Documents.Floater>je vhodná pro umístění další přeuspořádat obsah, který toků podobná obsah hlavní stránky, ale je oddělená od jeho.  
+ <xref:System.Windows.Documents.Figure> je vhodná k umístění obsahu samostatné místo řídit velikost a umístění a si jisti, že se obsah vejde po zadanou velikost. <xref:System.Windows.Documents.Floater> je vhodná pro umístění další přeuspořádat obsah, který toků podobná obsah hlavní stránky, ale je oddělená od jeho.  
   
  **LineBreak**  
   
- <xref:System.Windows.Documents.LineBreak>způsobí, že dochází k výskytu obsah toku konec řádku. Následující příklad ukazuje použití <xref:System.Windows.Documents.LineBreak>.  
+ <xref:System.Windows.Documents.LineBreak> způsobí, že dochází k výskytu obsah toku konec řádku. Následující příklad ukazuje použití <xref:System.Windows.Documents.LineBreak>.  
   
  [!code-xaml[FlowOvwSnippets_snip#LineBreakExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/LineBreakExample.xaml#linebreakexamplewholepage)]  
   
@@ -295,7 +283,7 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **2.** Podle diagramu je vidět, existuje několik <xref:System.Windows.Documents.Block> elementy lze vybírat včetně <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.Table>, <xref:System.Windows.Documents.List>, a <xref:System.Windows.Documents.BlockUIContainer> (viz bloku odvozené třídy). Řekněme, že chceme <xref:System.Windows.Documents.Table>. Podle diagramu výše <xref:System.Windows.Documents.Table> obsahuje <xref:System.Windows.Documents.TableRowGroup> obsahující <xref:System.Windows.Documents.TableRow> elementy, které obsahují <xref:System.Windows.Documents.TableCell> elementy, které obsahují <xref:System.Windows.Documents.Block>-odvozené objektu. Níže je odpovídající segmentu pro <xref:System.Windows.Documents.Table> provedených od diagramu výše.  
   
- ![Diagram: Nadřazené &#47; podřízené schématu pro tabulku](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
+ ![Diagram: Nadřazených&#47;podřízené schématu pro tabulku](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
   
  Níže je odpovídající značky.  
   
@@ -303,9 +291,9 @@ Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo
   
  **3.** Znovu jeden nebo více <xref:System.Windows.Documents.Block> elementy jsou nutné pod <xref:System.Windows.Documents.TableCell>. Chcete-li jednoduchý, umožňuje umístit text do buňky. Jsme můžete to provést pomocí <xref:System.Windows.Documents.Paragraph> s <xref:System.Windows.Documents.Run> elementu. Níže je odpovídající segmenty z diagram zobrazující, že <xref:System.Windows.Documents.Paragraph> může trvat <xref:System.Windows.Documents.Inline> elementu a který <xref:System.Windows.Documents.Run> ( <xref:System.Windows.Documents.Inline> element) může trvat jenom prostý text.  
   
- ![Diagram: Nadřazené &#47; podřízené schéma pro odstavec](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
+ ![Diagram: Nadřazených&#47;podřízené schéma pro odstavec](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
   
- ![Diagram: Nadřazené &#47; Podřízené schéma pro spuštění](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough4.png "Flow_Ovw_SchemaWalkThrough4")  
+ ![Diagram: Nadřazených&#47;podřízené schéma pro spuštění](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough4.png "Flow_Ovw_SchemaWalkThrough4")  
   
  Níže je celý příklad v kódu.  
   

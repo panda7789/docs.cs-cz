@@ -1,13 +1,6 @@
 ---
-title: "Přehled animace"
-ms.custom: 
+title: Přehled animace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,20 +8,15 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-caps.latest.revision: "73"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 118d63bbbcd0cbb52d092af7002df2538df7790b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5fb9550ddce4ead900206c2ece2f976ab8b42c4b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="animation-overview"></a>Přehled animace
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje výkonnou sadu funkcí grafika a rozložení, které umožňují vytvářet atraktivní uživatelská rozhraní a přitažlivými dokumentů. Animace můžete nastavit atraktivní uživatelské rozhraní i více spectacular a dá se použít. Právě animace barvu pozadí nebo použití animovaný <xref:System.Windows.Media.Transform>, můžete vytvořit přechody výrazné obrazovky nebo poskytují užitečné vizuální upozornění.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje výkonnou sadu funkcí grafika a rozložení, které umožňují vytvářet atraktivní uživatelská rozhraní a přitažlivými dokumentů. Animace můžete nastavit atraktivní uživatelské rozhraní i více spectacular a dá se použít. Právě animace barvu pozadí nebo použití animovaný <xref:System.Windows.Media.Transform>, můžete vytvořit přechody výrazné obrazovky nebo poskytují užitečné vizuální upozornění.  
   
  Tento přehled obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace a časování systému. Zaměřuje se na animace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektů s použitím scénářů.  
 
@@ -46,9 +34,9 @@ ms.lasthandoff: 12/22/2017
   
 -   Program pak aktualizuje rámeček se nová hodnota a překreslí ho.  
   
- Před verzí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] vývojáři museli vytvářet a spravovat vlastní systémy časování a použít speciální vlastní knihovny. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zahrnuje efektivní časování systému, který je zveřejněný prostřednictvím spravovaného kódu a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a který je úzce integrována do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] framework. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]animace usnadňuje animace ovládací prvky a další grafické objekty.  
+ Před verzí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] vývojáři museli vytvářet a spravovat vlastní systémy časování a použít speciální vlastní knihovny. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje efektivní časování systému, který je zveřejněný prostřednictvím spravovaného kódu a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a který je úzce integrována do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] framework. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace usnadňuje animace ovládací prvky a další grafické objekty.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zpracovává všechny pracovní servisní Správa časování systému a efektivně překreslování obrazovky. Poskytuje třídy časování, které vám umožní soustředit se na důsledky, které chcete vytvořit, místo mechanismů dosažení těchto účinky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]také umožňuje snadno vytvářet své vlastní animace vystavení animace základní třídy, ze kterých může dědit vlastnosti třídy, k vytvoření vlastní animace. Tato vlastní animace získáte mnoho výkonnostních výhod třídy standardní animace.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zpracovává všechny pracovní servisní Správa časování systému a efektivně překreslování obrazovky. Poskytuje třídy časování, které vám umožní soustředit se na důsledky, které chcete vytvořit, místo mechanismů dosažení těchto účinky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také umožňuje snadno vytvářet své vlastní animace vystavení animace základní třídy, ze kterých může dědit vlastnosti třídy, k vytvoření vlastní animace. Tato vlastní animace získáte mnoho výkonnostních výhod třídy standardní animace.  
   
 <a name="thewpftimingsystem"></a>   
 ## <a name="wpf-property-animation-system"></a>WPF vlastnost animace systému  
@@ -62,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
 -   K dispozici musí být typu kompatibilní animace. (Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nenabízí, můžete vytvořit vlastní. Najdete v článku [vlastní animace přehled](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).)  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsahuje mnoho objektů, které mají <xref:System.Windows.Media.Animation.IAnimatable> vlastnosti. Ovládací prvky jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TabControl>a také <xref:System.Windows.Controls.Panel> a <xref:System.Windows.Shapes.Shape> objekty dědí <xref:System.Windows.DependencyObject>. Většina jejich vlastnosti jsou vlastnosti závislosti.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho objektů, které mají <xref:System.Windows.Media.Animation.IAnimatable> vlastnosti. Ovládací prvky jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TabControl>a také <xref:System.Windows.Controls.Panel> a <xref:System.Windows.Shapes.Shape> objekty dědí <xref:System.Windows.DependencyObject>. Většina jejich vlastnosti jsou vlastnosti závislosti.  
   
  Můžete použít animací téměř odkudkoli, včetně v styly a šablon ovládacích prvků. Animace nemusí být visual; můžete animace objektů, které nejsou součástí uživatelského rozhraní, pokud splňují kritéria, která jsou popsané v této části.  
   
@@ -268,7 +256,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="applyanimationstoproperty"></a>   
 ## <a name="applying-an-animation-to-a-property"></a>Použití animace do vlastnosti  
- V předchozích částech popisují různé typy animací a jejich vlastnosti časování. Tato část uvádí, jak se má použít pro vlastnost, kterou chcete animace animace. <xref:System.Windows.Media.Animation.Storyboard>objekty zadat jeden způsob, jak použít animace do vlastnosti. A <xref:System.Windows.Media.Animation.Storyboard> je *časová osa kontejneru* poskytující cílení informace pro animace obsahuje.  
+ V předchozích částech popisují různé typy animací a jejich vlastnosti časování. Tato část uvádí, jak se má použít pro vlastnost, kterou chcete animace animace. <xref:System.Windows.Media.Animation.Storyboard> objekty zadat jeden způsob, jak použít animace do vlastnosti. A <xref:System.Windows.Media.Animation.Storyboard> je *časová osa kontejneru* poskytující cílení informace pro animace obsahuje.  
   
 ### <a name="targeting-objects-and-properties"></a>Cílení na objekty a vlastnosti  
  <xref:System.Windows.Media.Animation.Storyboard> Třída poskytuje <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A> přidružené vlastnosti. Nastavením těchto vlastností na animace se zjistit animace co animace. Ale předtím, než animace, můžete vybrat objekt, objekt je obvykle třeba věnovat, název.  

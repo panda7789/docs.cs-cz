@@ -1,24 +1,12 @@
 ---
-title: "Tok transakcí do služeb pracovních postupů a mimo ně"
-ms.custom: 
+title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a38c0c224c93941efa767d142aa7738296a62f15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8b3d3e85b626d033c9ab50e93e3ceb3b86058a2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
 Pracovní postup služby a klienti mohou účastnit transakce.  Pro operaci služby, který se stane součástí vedlejším transakce, umístit <xref:System.ServiceModel.Activities.Receive> aktivita v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Volání pomocí <xref:System.ServiceModel.Activities.Send> nebo <xref:System.ServiceModel.Activities.SendReply> aktivita v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> bude také provést v rámci vedlejším transakce. Klientská aplikace pracovního postupu můžete vytvořit pomocí vedlejším transakce <xref:System.Activities.Statements.TransactionScope> aktivity a volání operací služby pomocí vedlejším transakce. Toto téma vás provede procesem vytvoření služby pracovního postupu a pracovní postup klienta, které se začlení transakcí.  
@@ -87,7 +75,7 @@ Pracovní postup služby a klienti mohou účastnit transakce.  Pro operaci slu�
   
 ### <a name="implement-the-workflow-service"></a>Implementace služby pracovního postupu  
   
-1.  Přidejte nový [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby pracovního postupu, nazývá `WorkflowService` k `Common` projektu. Na pravé tlačítko `Common` projekt, vyberte **přidat**, **novou položku...** , Vyberte **pracovního postupu** pod **nainstalovaných šablonách** a vyberte **pracovního postupu služby WCF**.  
+1.  Přidání nové služby pracovního postupu WCF, nazývá `WorkflowService` k `Common` projektu. Na pravé tlačítko `Common` projekt, vyberte **přidat**, **novou položku...** , Vyberte **pracovního postupu** pod **nainstalovaných šablonách** a vyberte **pracovního postupu služby WCF**.  
   
      ![Přidání služby pracovního postupu](../../../../docs/framework/wcf/feature-details/media/addwfservice.JPG "AddWFService")  
   
@@ -182,7 +170,7 @@ Pracovní postup služby a klienti mohou účastnit transakce.  Pro operaci slu�
   
 5.  Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity do textu <xref:System.Activities.Statements.TransactionScope> aktivity.  
   
-6.  Přetáhnout myší `PrintTransactionInfo` aktivita v rámci<xref:System.Activities.Statements.Sequence>  
+6.  Přetáhnout myší `PrintTransactionInfo` aktivita v rámci <xref:System.Activities.Statements.Sequence>  
   
 7.  Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `PrintTransactionInfo` aktivity a sady jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Klienta: začátku odeslat". Pracovní postup by měl nyní vypadat takto:  
   

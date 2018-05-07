@@ -1,12 +1,6 @@
 ---
-title: "Operátory řetězení v jazyce Visual Basic"
-ms.custom: 
+title: Operátory řetězení v jazyce Visual Basic
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - '& operator [Visual Basic], concatenation'
 - concatenation operators [Visual Basic]
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - + operator [Visual Basic], concatenation
 - concatenation operators [Visual Basic]
 ms.assetid: e59908c3-89e0-41ae-933d-3e8826c16a04
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3a444cca76fbc41807b0c8b69bcbaedbd75c36eb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ab268e513e6f019ed651c94deb5e423cfcca7587
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="concatenation-operators-in-visual-basic"></a>Operátory řetězení v jazyce Visual Basic
 Operátory řetězení více řetězců připojení do jednoho řetězce. Existují dva operátory zřetězení `+` a `&`. Jak provádět základní zřetězení operace, jako ukazuje následující příklad.  
@@ -46,7 +37,7 @@ Dim y As String = "Mic" + "ro" + "soft"
  Pokud tak učiníte velký počet manipulace na řetězec, například zřetězování, odstranění a nahrazení, může výkon zisku z <xref:System.Text.StringBuilder> třídy v <xref:System.Text> oboru názvů. Trvá další instrukce k vytvoření a inicializace <xref:System.Text.StringBuilder> objekt a jiné instrukce převést jeho konečná hodnota k `String`, ale tentokrát může obnovit, protože <xref:System.Text.StringBuilder> může pracovat rychleji.  
   
 ## <a name="see-also"></a>Viz také  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [Typy metod manipulace s řetězci v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
  [Aritmetické operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)  
  [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  

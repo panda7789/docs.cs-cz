@@ -1,21 +1,14 @@
 ---
-title: "Když zvolit rozhraní .NET Framework pro Docker kontejnery"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Když zvolit rozhraní .NET Framework pro Docker kontejnery"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Když zvolit rozhraní .NET Framework pro Docker kontejnery
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Když zvolit rozhraní .NET Framework pro Docker kontejnery
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: eec258ff01bcfeb834fa7a1138fdf822fd00c996
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: e707c8f0e721915e829e41628891928594010b92
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Když zvolit rozhraní .NET Framework pro Docker kontejnery
 
@@ -55,20 +48,20 @@ Do té doby Pokud všechny platformy a služby v Azure stále nepodporuje .NET C
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **.NET Core Guide**
+-   **Příručka pro základní rozhraní .NET**
     [*https://docs.microsoft.com/dotnet/core/index*](../../../core/index.md)
 
 -   **Portování z rozhraní .NET Framework na .NET Core**
     [*https://docs.microsoft.com/dotnet/core/porting/index*](../../../core/porting/index.md)
 
--   **Rozhraní .NET framework na Průvodce Docker**
+-   **Průvodce Docker v rozhraní .NET framework**
     [*https://docs.microsoft.com/dotnet/framework/docker/*](../../../framework/docker/index.md)
 
--   **.NET Components Overview**
+-   **Přehled součásti rozhraní .NET**
     [*https://docs.microsoft.com/dotnet/standard/components*](../../components.md)
 
 
 
 
 >[!div class="step-by-step"]
-[Previous] (net-core-container-scenarios.md) [Next] (container-framework-choice-factors.md)
+[Předchozí] (net – základní – kontejner scenarios.md) [Další] (kontejner framework – volba factors.md)

@@ -1,11 +1,6 @@
 ---
-title: "Single – datový typ (Visual Basic)"
+title: Single – datový typ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Single
 helpviewer_keywords:
@@ -25,14 +20,11 @@ helpviewer_keywords:
 - zeros, trailing
 - numbers [Visual Basic], floating point
 ms.assetid: 224a2795-4cd5-496c-8f7a-a4f05a06d45d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c91dbdf73ed1e26393518001ec8651557e5b780f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 770961f225b139aaddf34b42327bca63638c725d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="single-data-type-visual-basic"></a>Single – datový typ (Visual Basic)
 Blokování podepsané IEEE 32-bit (4bajtový) s plovoucí desetinnou čárkou čísla s jednoduchou přesností v rozmezí od - 3.4028235E + 38 prostřednictvím - 1, 401298E-45 pro záporné hodnoty a z 1, 401298E-45 prostřednictvím 3.4028235E + 38 kladné hodnoty. Čísla s jednoduchou přesností ukládat sblížení reálné číslo.  
@@ -57,9 +49,9 @@ Blokování podepsané IEEE 32-bit (4bajtový) s plovoucí desetinnou čárkou �
 ## <a name="see-also"></a>Viz také  
  <xref:System.Single?displayProperty=nameWithType>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Decimal – datový typ](../../../visual-basic/language-reference/data-types/decimal-data-type.md)  
- [Double – datový typ](../../../visual-basic/language-reference/data-types/double-data-type.md)  
+ [Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)  
+ [Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
- [Řešení potíží s datové typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+ [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

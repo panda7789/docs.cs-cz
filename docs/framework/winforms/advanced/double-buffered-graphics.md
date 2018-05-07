@@ -1,29 +1,17 @@
 ---
-title: "Grafiky s dvojitou vyrovnávací pamětí"
-ms.custom: 
+title: Grafiky s dvojitou vyrovnávací pamětí
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - double buffering
 - graphics [Windows Forms], double-buffered
 - flicker [Windows Forms], reducing with double buffering
 - examples [Windows Forms], double-buffered graphics
 ms.assetid: 4f6fef99-0972-436e-9d73-0167e4033f71
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e7e4445b0a729eb1f826d17340db02f0c56149b7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea4b4b8616ed0b3eab2ddd6b2ec57a39909a0fce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="double-buffered-graphics"></a>Grafiky s dvojitou vyrovnávací pamětí
 Blikání problém je běžný, při programování grafiky. Grafické operace, které vyžadují více operací komplexní Malování může způsobit vykreslené obrázky, které chcete blikat nebo mají v opačném případě nemůže být přijata vzhled. Chcete-li tyto problémy vyřešit, rozhraní .NET Framework poskytuje přístup k dvojité ukládání do vyrovnávací paměti.  

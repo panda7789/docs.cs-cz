@@ -1,14 +1,6 @@
 ---
-title: "EmitInternalExportedTypes – metoda"
-ms.custom: 
+title: EmitInternalExportedTypes – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - EmitInternalExportedTypes
 - IALink2.EmitInternalExportedTypes
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 28c8b00d-2c14-40b4-aed5-a1db0e2428eb
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 48ad5e34b926cf3dab562f57bb9206fa0ba70e6b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 55b9d185804f25c7431f2696d67753cc3ba02d1f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="emitinternalexportedtypes-method"></a>EmitInternalExportedTypes – metoda
 Vysílá typy, které jsou přidány do sestavení. Volejte tuto metodu po označuje, že byly přidány interní typy.  

@@ -1,17 +1,12 @@
 ---
 title: Členy (F#)
 description: 'Další informace o objektu členy v programovací jazyk F #.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: a37f14d138cc017cf78e3a0ff1d5b5bba2f09020
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6dcdb1d7fa061fb838d4aa8f7a2912fd168c3781
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="members"></a>Členové
 

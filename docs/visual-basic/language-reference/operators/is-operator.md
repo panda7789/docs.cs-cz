@@ -1,12 +1,6 @@
 ---
-title: "Is – operátor (Visual Basic)"
+title: Is – operátor (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.is
 helpviewer_keywords:
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4b1f3f0fa1fd782550c08c816f47b7541399198e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8beca1dc8788514224f70cacc5b8ede0974f5230
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="is-operator-visual-basic"></a>Is – operátor (Visual Basic)
 Porovná dvě proměnné objektových referencí.  
@@ -46,7 +37,7 @@ result = object1 Is object2
 ## <a name="remarks"></a>Poznámky  
  `Is` Operátor určuje, pokud dva odkazy na objekty odkazují na stejný objekt. Neprovede však porovnání hodnot. Pokud `object1` a `object2` odkazují na přesně stejnou instanci objektu, `result` je `True`; Pokud ne, `result` je `False`.  
   
- `Is`Můžete také použít s `TypeOf` – klíčové slovo, aby `TypeOf`... `Is` výraz, který testuje, zda je kompatibilní s datovým typem proměnné objektu.  
+ `Is` Můžete také použít s `TypeOf` – klíčové slovo, aby `TypeOf`... `Is` výraz, který testuje, zda je kompatibilní s datovým typem proměnné objektu.  
   
 > [!NOTE]
 >  `Is` – Klíčové slovo je používán také [vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md).  
@@ -59,8 +50,8 @@ result = object1 Is object2
  Jak ukazuje předchozí příklad, můžete použít `Is` operátor k testování obě časné a pozdní vazba objekty.  
   
 ## <a name="see-also"></a>Viz také  
- [Typeof – operátor](../../../visual-basic/language-reference/operators/typeof-operator.md)  
- [IsNot – operátor](../../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)  
  [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  

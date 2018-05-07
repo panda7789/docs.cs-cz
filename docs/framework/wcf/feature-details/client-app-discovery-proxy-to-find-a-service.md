@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby"
-ms.custom: 
+title: 'Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 62b41a75-cf40-4c52-a842-a5f1c70e247f
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 920f2f85333f23d1b07b6a8ddf2a05279ee477ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82b38d684d6a8de66d569c6fe09813f8ee1bea6a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby
-Toto téma je třetí tři témata, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [postupy: implementace zjistitelný služba, která registruje s proxy serverem zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), můžete implementovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která registruje zjišťování proxy. V tomto tématu můžete vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, který používá zjišťování proxy k vyhledání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Toto téma je třetí tři témata, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [postupy: implementace zjistitelný služba, která registruje s proxy serverem zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), implementovaná službu WCF, která registruje zjišťování proxy. V tomto tématu můžete vytvořit klienta WCF, který používá zjišťování proxy k vyhledání služby WCF.  
   
 ### <a name="implement-the-client"></a>Implementace klienta  
   

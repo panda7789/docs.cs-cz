@@ -1,13 +1,6 @@
 ---
-title: "Ovládací prvky vykreslované uživatelem"
-ms.custom: 
+title: Ovládací prvky vykreslované uživatelem
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,25 +9,20 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - user-drawn controls [Windows Forms]
 ms.assetid: 034af4b5-457f-4160-a937-22891817faa8
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e9e486058850616c2304ce0032c35baa855fdf2f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26b4f062c120bf543a5e597fc8c734e8cc336bd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-drawn-controls"></a>Ovládací prvky vykreslované uživatelem
 Rozhraní .NET Framework poskytuje možnost snadno vyvíjet vlastní ovládací prvky. Můžete vytvořit uživatelský ovládací prvek, což je sada standardních ovládacích prvků spojuje kód, nebo můžete navrhnout vlastní ovládací prvek od základů nahoru. Dědičnost i slouží k vytvoření ovládacího prvku, který dědí z existujícího ovládacího prvku a přidejte do jeho vyplývajících funkce. Libovolnou metodu použijete, rozhraní .NET Framework poskytuje funkce pro kreslení vlastní grafické rozhraní pro libovolný ovládací prvek, který vytvoříte.  
   
  Vykreslování ovládacího prvku provádí spuštění kódu v ovládacím prvku <xref:System.Windows.Forms.Control.OnPaint%2A> metoda. Jeden argument <xref:System.Windows.Forms.Control.OnPaint%2A> je metoda <xref:System.Windows.Forms.PaintEventArgs> objektu, který obsahuje všechny informace a funkce vyžadovaná k vykreslení ovládacího prvku. <xref:System.Windows.Forms.PaintEventArgs> Poskytuje jako vlastnosti dva hlavní objekty, které se použijí při vykreslování ovládacího prvku:  
   
--   <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>objekt - obdélníku, která reprezentuje část ovládací prvek, který budou vykreslovat. To může být celý ovládací prvek, nebo její část ovládacího prvku v závislosti na tom, jak se nevykreslí ovládacího prvku.  
+-   <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> objekt - obdélníku, která reprezentuje část ovládací prvek, který budou vykreslovat. To může být celý ovládací prvek, nebo její část ovládacího prvku v závislosti na tom, jak se nevykreslí ovládacího prvku.  
   
--   <xref:System.Drawing.Graphics>objekt - zapouzdří několik orientované grafické objekty a metody, které poskytují funkce, které jsou potřebné k vykreslení ovládacího prvku.  
+-   <xref:System.Drawing.Graphics> objekt - zapouzdří několik orientované grafické objekty a metody, které poskytují funkce, které jsou potřebné k vykreslení ovládacího prvku.  
   
  Další informace o <xref:System.Drawing.Graphics> objekt a jak ho použít, najdete v části [postupy: vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md).  
   

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Dědění ze třídy Control"
-ms.custom: 
+title: 'Postupy: Dědění ze třídy Control'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
 - Control class [Windows Forms], inheriting from
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - custom controls [Windows Forms], creating
 ms.assetid: 46ba0df3-5cf7-443c-a3b4-a72660172476
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bdc4a5c7f721fd350f5c604d4529f05afd62a42c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: da80d46f27d7cd721af7a9600d2b0cde84876d23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-inherit-from-the-control-class"></a>Postupy: Dědění ze třídy Control
 Pokud chcete vytvořit zcela vlastního ovládacího prvku na formuláři Windows používat, musí dědit z <xref:System.Windows.Forms.Control> třídy. Při dědění z <xref:System.Windows.Forms.Control> třída vyžaduje provést další plánování a implementace, můžete ho vám rovněž poskytne největší škálu možností. Když je zděděný z <xref:System.Windows.Forms.Control>, dědí velmi základní funkce, která umožňuje ovládací prvky fungovat. Funkci vyplývajících z <xref:System.Windows.Forms.Control> třída zpracovává vstupu uživatele prostřednictvím klávesnici a myš, definuje rozsah a velikost ovládacího prvku, poskytuje popisovačů systému windows a poskytuje zpracování zpráv a zabezpečení. Ho nebere v úvahu žádné Malování, který v tomto případě je skutečný vykreslování grafické rozhraní ovládacího prvku, ani nebude obsahovat žádné funkce interakce konkrétního uživatele. Je nutné zadat všechny tyto aspekty prostřednictvím vlastní kód.  

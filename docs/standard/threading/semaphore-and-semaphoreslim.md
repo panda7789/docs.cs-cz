@@ -1,13 +1,7 @@
 ---
 title: Semafor a SemaphoreSlim
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - counting semaphores
 - semaphores
@@ -16,23 +10,18 @@ helpviewer_keywords:
 - SemaphoreSlim class, about SemaphoreSlim class
 - threading [.NET Framework], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 3c7d196b54a831c807b7181c1c810c3e78a463a2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1f9c6df23ae1a142d208672a03ffeb74709a0a05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semafor a SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> Třída reprezentuje s názvem (systémové) nebo místní semafor. Je dynamické obálku kolem objekt semafor Win32. Win32 semaforů jsou počítání semaforů, které se dají použít k řízení přístupu k fondu zdrojů.  
   
- <xref:System.Threading.SemaphoreSlim> Třída reprezentuje lightweight rychlé semafor, který lze použít pro čekání na v rámci jednoho procesu, když očekávané velmi krátké době čekání. <xref:System.Threading.SemaphoreSlim>využívá co nejvíce na synchronizace primitiv poskytované common language runtime (CLR). Však poskytuje také obslužné rutiny čekání líné inicializovaného, na základě jádra podle potřeby pro podporu čekání na více semaforů. <xref:System.Threading.SemaphoreSlim>také podporuje použití tokenů zrušení, ale nepodporuje s názvem semaforů nebo použití popisovač čekání synchronizace.  
+ <xref:System.Threading.SemaphoreSlim> Třída reprezentuje lightweight rychlé semafor, který lze použít pro čekání na v rámci jednoho procesu, když očekávané velmi krátké době čekání. <xref:System.Threading.SemaphoreSlim> využívá co nejvíce na synchronizace primitiv poskytované common language runtime (CLR). Však poskytuje také obslužné rutiny čekání líné inicializovaného, na základě jádra podle potřeby pro podporu čekání na více semaforů. <xref:System.Threading.SemaphoreSlim> také podporuje použití tokenů zrušení, ale nepodporuje s názvem semaforů nebo použití popisovač čekání synchronizace.  
   
 ## <a name="managing-a-limited-resource"></a>Správa omezené prostředků  
  Vláken zadejte semaforu voláním <xref:System.Threading.WaitHandle.WaitOne%2A> metodu, která je zděděn z <xref:System.Threading.WaitHandle> třídy, v případě <xref:System.Threading.Semaphore?displayProperty=nameWithType> objekt, nebo <xref:System.Threading.SemaphoreSlim.Wait%2A?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.WaitAsync%2A?displayProperty=nameWithType> metoda, v případě <xref:System.Threading.SemaphoreSlim> objektu... Když se volání vrátí, počet na semaforu se odečte. Když vlákno požadavky položky a počet rovná nule, bloky přístup z více vláken. Jako vláken verze semaforu voláním <xref:System.Threading.Semaphore.Release%2A?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.Release%2A?displayProperty=nameWithType> metody pozastavených vláken mohou zadat. Pozastavených vláken na vstup do semaforu neexistuje žádné zaručenou pořadí, jako je například first in, použity nebo last-in, první ven (LIFO).  

@@ -1,21 +1,14 @@
 ---
-title: "Operaci nelze provést, protože cílový adresář je pod zdrojový adresář"
+title: Operaci nelze provést, protože cílový adresář je pod zdrojový adresář
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrIO_CyclicOperation
 ms.assetid: 850d3a24-5d51-4ac8-a912-630efcd75278
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0a17877b2335ee010a97f0b522bd4c399867cd7d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 68217023a980891200c18b5536ef902574d36257
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="could-not-complete-operation-since-target-directory-is-under-source-directory"></a>Operaci nelze provést, protože cílový adresář je pod zdrojový adresář
 Cyklická operace se nezdařila. Cyklická operace cyklus a proto nelze dokončit. Například objekt A pokusit dědění z objektu B, který zase dědí z objektu A.  

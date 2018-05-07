@@ -1,29 +1,18 @@
 ---
-title: "Mapování hierarchie objektů na XML Data"
-ms.custom: 
+title: Mapování hierarchie objektů na XML Data
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2191cb15a85e9b16ff0a21084668e80d3c197bfa
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 45f39701d409ba76e3c3f428f484b6fd5e538fbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na XML Data
 Když je dokument XML v paměti, je koncepční reprezentace stromu. Pro programování, nebudete mít hierarchii k objektu pro přístup k uzlu stromu. Následující příklad ukazuje, jak se změní obsah XML na uzly.  
@@ -203,7 +192,7 @@ public class Sample
 |\<! Položky DOCTYPE [\<! Počet ENTIT "123" >] >|\<! Položky DOCTYPE [\<! Počet ENTIT "123" >]|XmlNodeType.DocumentType|  
 |\<Položky >|\<Položky >|Očekáván element XmlNodeType.Element|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
-|Testování s převodem entity:&number;|Test s entitou: 123|XmlNodeType.Text|  
+|Testování s převodem entity: &number;|Test s entitou: 123|XmlNodeType.Text|  
 |\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|XmNodeType.Element|  
 |testování s podřízený element|testování s podřízený element|XmlNodeType.Text|  
@@ -212,7 +201,7 @@ public class Sample
 |\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
 |testování s oddílu CDATA|testování s oddílu CDATA|XmlTest.Text|  
-|<! [CDATA [\<456 >]]\>|<! [CDATA [\<456 >]]\>|XmlTest.CDATA|  
+|&LT;! [CDATA [\<456 &GT;]]\>|&LT;! [CDATA [\<456 &GT;]]\>|XmlTest.CDATA|  
 |DEF|DEF|XmlNodeType.Text|  
 |\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  

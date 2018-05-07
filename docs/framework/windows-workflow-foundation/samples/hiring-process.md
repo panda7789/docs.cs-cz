@@ -1,29 +1,17 @@
 ---
 title: Náborové procesu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8cfa23ab5f36b3a40de107a546dd4700a4523595
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 87327692e35e9386dab4cf906ab33cbe08d73fdd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hiring-process"></a>Náborové procesu
 Tento příklad ukazuje, jak implementovat obchodní proces, který používá aktivity zasílání zpráv a dvě pracovních hostované jako pracovní postup služby. Tyto pracovní postupy jsou součástí IT infrastruktury fiktivní společnosti nazývané Contoso, Inc.  
   
- `HiringRequest` Pracovní postup (implementovaný jako <xref:System.Activities.Statements.Flowchart>) požádá o autorizaci z několika správci v organizaci. K dosažení tohoto cíle, pracovní postup používá jiné existující služby v organizaci (v našem případě služby doručené pošty a k organizačním datům službě implementované jako prostý [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby).  
+ `HiringRequest` Pracovní postup (implementovaný jako <xref:System.Activities.Statements.Flowchart>) požádá o autorizaci z několika správci v organizaci. K dosažení tohoto cíle, pracovní postup používá jiné existující služby v organizaci (v našem případě služby doručené pošty a k organizačním datům službě implementované jako prostý služby Windows Communication Foundation (WCF)).  
   
  `ResumeRequest` Pracovního postupu (implementovaný jako <xref:System.Activities.Statements.Sequence>) publikuje úlohu publikování ve společnosti Contoso externí přenašečích webové stránky a spravuje získání obnoví. Účtování projektu je k dispozici v externí Web lokality po stanovenou dobu (dokud platnost vyprší časový limit) nebo dokud se zaměstnanci ze společnosti Contoso rozhodne jeho odebrání.  
   
@@ -64,7 +52,7 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Application\HiringProcess`  
   
@@ -111,7 +99,7 @@ Tento příklad ukazuje, jak implementovat obchodní proces, který používá a
 |ContosoHR|Obsahuje kontrakty dat, obchodní objekty a třídy úložiště.|  
 |HiringRequestService|Obsahuje definici pracovního postupu proces žádosti o zařazení.<br /><br /> Tento projekt je implementovaný jako konzolovou aplikaci, která svým hostitelem pracovního postupu (souboru xaml) jako služba.|  
 |ResumeRequestService|Služby pracovního postupu, který shromažďuje obnoví z kandidáty, dokud nevyprší časový limit, nebo někoho rozhodne, že proces musí být zastaven.<br /><br /> Tento projekt je implementovaný jako služby deklarativní pracovního procesu (xamlx).|  
-|OrgService|Služba, která zveřejňuje organizační údaje (zaměstnanci, pozice, PositionTypes a oddělení). Tato služba si lze představit jako modulu společnosti organizace z prostředek plánování ERP (Enterprise).<br /><br /> Tento projekt je implementovaný jako konzolovou aplikaci, která zveřejňuje [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby.|  
+|OrgService|Služba, která zveřejňuje organizační údaje (zaměstnanci, pozice, PositionTypes a oddělení). Tato služba si lze představit jako modulu společnosti organizace z prostředek plánování ERP (Enterprise).<br /><br /> Tento projekt je implementovaný jako konzolovou aplikaci, která zveřejňuje služby Windows Communication Foundation (WCF).|  
 |InboxService|Doručené pošty obsahující úkoly pro zaměstnance.<br /><br /> Tento projekt je implementovaný jako konzolovou aplikaci, která zveřejňuje služby WCF.|  
 |InternalClient|Webovou aplikaci pro interakci s procesem. Uživatelé spustit, zúčastnit a zobrazit jejich HiringProcess pracovních postupů. Pomocí této aplikace, mohou také spustit a monitorovat ResumeRequest procesy.<br /><br /> Tento web je implementováno interní do intranetu společnosti Contoso. Tento projekt je implementovaný jako webu technologie ASP.NET.|  
 |CareersWebSite|Externí web, který zveřejňuje otevřené pozice ve společnosti Contoso. Všechny potenciální candidate můžete přejděte na tento web a odesílání obnovení.|  

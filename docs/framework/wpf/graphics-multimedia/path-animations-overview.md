@@ -1,13 +1,6 @@
 ---
-title: "Přehled animací cesty"
-ms.custom: 
+title: Přehled animací cesty
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - animation [WPF], paths
 - path animations [WPF]
 ms.assetid: 979c732c-df74-47a6-be96-8e07b3707d53
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 10f2e27a2f68dd784c6fce66ae63873436923d63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 466e22a5b40ddb4f3674422ac7620832b44be51d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="path-animations-overview"></a>Přehled animací cesty
-<a name="introduction"></a>Toto téma představuje animací cesty, které vám umožní používat geometrickou cestu ke generování hodnot výstup. Cesta animací jsou užitečné pro přesunutí a otáčení objektů podél komplexní cesty.  
+<a name="introduction"></a> Toto téma představuje animací cesty, které vám umožní používat geometrickou cestu ke generování hodnot výstup. Cesta animací jsou užitečné pro přesunutí a otáčení objektů podél komplexní cesty.  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
@@ -56,11 +44,11 @@ ms.lasthandoff: 12/22/2017
   
  Cesta animace třídy patří do <xref:System.Windows.Media.Animation> obor názvů a použijte následující konvence:  
   
- *\<Typ >*`AnimationUsingPath`  
+ *\<Typ >* `AnimationUsingPath`  
   
  Kde  *\<typ >* je typ hodnoty, které animuje třídy.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje následující cestě třídy animace.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje následující cestě třídy animace.  
   
 |Typ vlastnosti|Třída animace odpovídající cesta|Příklad|  
 |-------------------|----------------------------------------|-------------|  

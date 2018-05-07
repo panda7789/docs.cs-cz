@@ -1,27 +1,15 @@
 ---
-title: "Vytvoření nového formuláře Windows Form"
-ms.custom: 
+title: Vytvoření nového formuláře Windows Form
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating a new form
 ms.assetid: c725559c-803e-4725-80fa-96aba93de29a
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e5f2769921241216d60c3ed1bb25edcf238830d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ddceec86938ef5f500c38eb90004dc1f9d11b122
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-a-new-windows-form"></a>Vytvoření nového formuláře Windows Form
 Toto téma obsahuje odkazy na témata, které popisují, jak vytvořit svoji první aplikaci Windows Forms. Navíc témata v této části představují některé základní slovník a pokyny, které byste měli vědět, kdy začnete vytvářet aplikace Windows Forms. Další informace o aplikacích Windows Forms, ovládací prvky můžete použít v nich, události a zpracování událostí a jak se zpracovat vstup od uživatele, najdete v seznamu související téma.  

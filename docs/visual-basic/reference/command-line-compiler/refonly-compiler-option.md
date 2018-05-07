@@ -1,10 +1,6 @@
 ---
 title: -refonly (Visual Basic)
 ms.date: 03/16/2018
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - -refonly
 helpviewer_keywords:
@@ -13,11 +9,11 @@ helpviewer_keywords:
 - refonly compiler option [Visual Basic]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f5135ef4d33ddde27416e48c28425aa5b029237b
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: e8f6c15084ac9b1a07aef8a0311edfcc4a93337c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-refonly-visual-basic"></a>-refonly (Visual Basic)
 
@@ -43,5 +39,5 @@ Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.
 
 ## <a name="see-also"></a>Viz také
 [-refout](refout-compiler-option.md)   
-[Visual Basic Command-Line Compiler](index.md)  
+[Visual Basic – kompilátor příkazového řádku](index.md)  
 [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)   

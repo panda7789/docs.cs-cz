@@ -1,13 +1,6 @@
 ---
-title: "Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate"
-ms.custom: 
+title: Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,19 +12,14 @@ helpviewer_keywords:
 - controls [WPF], appearance specified by state
 - templates [WPF], custom for existing controls
 ms.assetid: 678dd116-43a2-4b8c-82b5-6b826f126e31
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0019b739c794cbffa62b49749371c2a19f752267
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bbdc79fabf8dbe344baae66d718d79ac6375db7e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
-<a name="introduction"></a>A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální strukturu a visual chování ovládacího prvku. Můžete přizpůsobit vzhled ovládacího prvku tím, že it a nové <xref:System.Windows.Controls.ControlTemplate>. Při vytváření <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhled ovládacího prvku existující beze změny jeho funkci. Například můžete provést tlačítka ve vaší aplikaci zaokrouhlí místo výchozí odmocnina tvar, ale bude stále vyvolat tlačítko <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+<a name="introduction"></a> A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální strukturu a visual chování ovládacího prvku. Můžete přizpůsobit vzhled ovládacího prvku tím, že it a nové <xref:System.Windows.Controls.ControlTemplate>. Při vytváření <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhled ovládacího prvku existující beze změny jeho funkci. Například můžete provést tlačítka ve vaší aplikaci zaokrouhlí místo výchozí odmocnina tvar, ale bude stále vyvolat tlačítko <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
  Toto téma vysvětluje různé součásti <xref:System.Windows.Controls.ControlTemplate>, ukazuje vytvoření jednoduché <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>a vysvětluje, jak porozumět kontrakt řízení ovládacího prvku, abyste si můžete přizpůsobit její vzhled. Vzhledem k tomu, že vytvoříte <xref:System.Windows.Controls.ControlTemplate> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete změnit vzhled ovládacího prvku bez psaní jakéhokoli kódu. Návrhář, jako je například Microsoft Expression Blend, můžete taky vytvořit vlastní ovládací prvek šablony. Toto téma ukazuje, příklady v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , přizpůsobení vzhledu <xref:System.Windows.Controls.Button> a jsou uvedené kompletní příklad na konci tohoto tématu. Další informace o používání Expression Blend najdete v tématu [styly ovládacího prvku, který podporuje šablony](http://go.microsoft.com/fwlink/?LinkId=161153).  
   
@@ -93,7 +81,7 @@ Zaškrtávací políčko, který používá šablonu vlastního ovládacího prv
   
  V tomto příkladu <xref:System.Windows.Controls.Grid> má jeho <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType> vlastnost šablony vázána na <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>. Protože <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType> je šablona vázán, můžete vytvořit více tlačítek, které používají stejné <xref:System.Windows.Controls.ControlTemplate> a nastavte <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> různých hodnot na každé tlačítko. Pokud <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> byla šablona není vázána na vlastnost v elementu <xref:System.Windows.Controls.ControlTemplate>, nastavení <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> tlačítka by mělo mít žádný vliv na vzhled tlačítka.  
   
- Všimněte si, že názvy dvě vlastnosti nemusí být stejné. V předchozím příkladu <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Controls.Button> šablony je vázán k <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Controls.ContentPresenter>. To umožňuje obsah na tlačítko se umístí vodorovně. <xref:System.Windows.Controls.ContentPresenter>nemá vlastnost s názvem `HorizontalContentAlignment`, ale <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> mohou být vázány na <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>. Při šablony můžete vytvořit vazbu vlastnosti, se ujistěte, že zdrojové a cílové vlastnosti jsou stejného typu.  
+ Všimněte si, že názvy dvě vlastnosti nemusí být stejné. V předchozím příkladu <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Controls.Button> šablony je vázán k <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Controls.ContentPresenter>. To umožňuje obsah na tlačítko se umístí vodorovně. <xref:System.Windows.Controls.ContentPresenter> nemá vlastnost s názvem `HorizontalContentAlignment`, ale <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> mohou být vázány na <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>. Při šablony můžete vytvořit vazbu vlastnosti, se ujistěte, že zdrojové a cílové vlastnosti jsou stejného typu.  
   
  <xref:System.Windows.Controls.Control> Třída definuje několik vlastností, které se mají použít šablonu ovládacího prvku mít vliv na ovládací prvek, pokud jsou nastavená. Jak <xref:System.Windows.Controls.ControlTemplate> používá vlastnost závisí na vlastnosti. <xref:System.Windows.Controls.ControlTemplate> Musí používat vlastnost v jednom z následujících způsobů:  
   
@@ -200,9 +188,9 @@ Tlačítko, které používá šablonu vlastního ovládacího prvku ve stavu p�
   
 |Typ omezení|Hodnota z|Hodnota k|  
 |-------------------------|-------------------|-----------------|  
-|Ze zadané stavu do jiného zadaného stavu|Název<xref:System.Windows.VisualState>|Název<xref:System.Windows.VisualState>|  
-|Ze všech stavu do zadaného stavu|Nenastaveno|Název<xref:System.Windows.VisualState>|  
-|Ze zadané stavu k některému ze stavů|Název<xref:System.Windows.VisualState>|Nenastaveno|  
+|Ze zadané stavu do jiného zadaného stavu|Název <xref:System.Windows.VisualState>|Název <xref:System.Windows.VisualState>|  
+|Ze všech stavu do zadaného stavu|Nenastaveno|Název <xref:System.Windows.VisualState>|  
+|Ze zadané stavu k některému ze stavů|Název <xref:System.Windows.VisualState>|Nenastaveno|  
 |Ze všech jiných stavu|Nenastaveno|Nenastaveno|  
   
  Můžete mít více <xref:System.Windows.VisualTransition> objekty v <xref:System.Windows.VisualStateGroup> který odkazovat do stejného stavu, ale používají v pořadí, v předchozí tabulce určuje. V následujícím příkladu jsou uvedeny dvě <xref:System.Windows.VisualTransition> objekty. Když ovládacího prvku přejde z `Pressed` stavu na `MouseOver` stavu, <xref:System.Windows.VisualTransition> má oba <xref:System.Windows.VisualTransition.From%2A> a <xref:System.Windows.VisualTransition.To%2A> sada slouží. Když se ovládací prvek přejde ze stavu, který není `Pressed` k `MouseOver` stav, se používá jiný stav.  

@@ -1,14 +1,6 @@
 ---
 title: Architektura WPF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - properties [WPF], attached
 - attached properties [WPF]
@@ -24,17 +16,11 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 29c8e2d632c37a299389b1bdc7f3f19f7df2f7e7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 70afa7e193832837650d72837b25e26e3b64c180
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma obsahuje Průvodce hierarchie tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavní dílčích systémů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje způsob, jakým interagují. Také podrobnosti některé z těchto možností provedené architekty z [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -64,7 +50,7 @@ Toto téma obsahuje Průvodce hierarchie tříd Windows Presentation Foundation 
 ## <a name="systemwindowsdependencyobject"></a>System.Windows.DependencyObject  
  Jedním z primárních architektury filozofiemi použít v sestavení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] byl předvolbu pro vlastnosti prostřednictvím metody nebo události. Vlastnosti jsou deklarativní a umožní že vám umožní snadno určit záměr místo akce. Podporováno také modelu řízené nebo databázových systému pro zobrazení obsahu uživatelské rozhraní. Tato filosofie měl určený vliv vytváření další vlastnosti, které může vytvořit vazbu, aby bylo možné lépe řídit chování aplikace.  
   
- Aby bylo možné používat další systému vycházejí z vlastnosti bohatší vlastnosti systému, než co [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] poskytuje bylo potřeba. Jednoduchý příklad této zvučnost je oznámení o změnách. Pokud chcete povolit dva způsobem vazba, je nutné obou stranách vazby pro podporu upozornění na změnu. Aby bylo možné používat chování vázaný na hodnoty vlastností, budete muset být upozorněni, když se změní hodnota vlastnosti. [!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)] Má rozhraní, **INotifyPropertyChange**, což umožňuje objekt k publikování oznámení o změnách, ale je volitelné.  
+ Aby bylo možné používat další systému vycházejí z vlastnosti bohatší vlastnosti systému, než co [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] poskytuje bylo potřeba. Jednoduchý příklad této zvučnost je oznámení o změnách. Pokud chcete povolit dva způsobem vazba, je nutné obou stranách vazby pro podporu upozornění na změnu. Aby bylo možné používat chování vázaný na hodnoty vlastností, budete muset být upozorněni, když se změní hodnota vlastnosti. Rozhraní Microsoft .NET Framework má rozhraní, **INotifyPropertyChange**, což umožňuje objekt k publikování oznámení o změnách, ale je volitelné.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje bohatší vlastnost systém a odvozené z <xref:System.Windows.DependencyObject> typu. Vlastnost systému se skutečně "závislosti" Vlastnosti systému, že sleduje závislosti mezi vlastnost výrazy a při změně závislosti automaticky revalidates hodnot vlastností. Například, pokud máte vlastnost, která dědí (jako je <xref:System.Windows.Controls.Control.FontSize%2A>), systém se automaticky aktualizuje, pokud se vlastnost změní na nadřazený element, který dědí hodnotu.  
   

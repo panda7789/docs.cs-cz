@@ -1,21 +1,12 @@
 ---
-title: "Objektově orientované programování (Visual Basic)"
-ms.custom: 
+title: Objektově orientované programování (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 49794de4-64c3-473c-b8ed-fe98835df69c
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 950f080949dce0fc1a2834825d2f7c945007fb7b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e8936eb9031ef68ea333835d8433e1ba1a45990f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-oriented-programming-visual-basic"></a>Objektově orientované programování (Visual Basic)
 Visual Basic poskytuje úplnou podporu pro objektově orientované programování včetně zapouzdření, dědičnost a polymorfismus.  
@@ -83,9 +74,9 @@ End Structure
 
 Další informace naleznete v tématu:
 
-- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)
+- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
 
-- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
 
 ### <a name="class-members"></a>Členy třídy
 Každá třída může mít různé *třídy členy* , zahrnout vlastnosti, které popisují data třídy, metody, které definují chování třídy a události, které zajišťují komunikaci mezi různými třídami a objekty.
@@ -135,13 +126,13 @@ Většina vlastnosti mají metody nebo postupy, jak nastavit a získat hodnotu v
 
 Další informace naleznete v tématu:
   
--   [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Get – příkaz](../../../visual-basic/language-reference/statements/get-statement.md)  
+-   [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)  
   
--   [Set – příkaz](../../../visual-basic/language-reference/statements/set-statement.md)  
+-   [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)  
   
--   [Jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md)  
+-   [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
   
 -   [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
   
@@ -178,13 +169,13 @@ Ve většině případů deklarujte metodu v definici třídy. Však také podpo
 
 Další informace naleznete v tématu:
 
-- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
 
-- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
 
-- [Přetížení](../../../visual-basic/language-reference/modifiers/overloads.md)  
+- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
 
-- [Metody rozšíření](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
+- [Rozšiřující metody](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
 
 #### <a name="constructors"></a>Konstruktory  
 Konstruktory jsou metody třídy, které jsou spouštěny automaticky, když je vytvořen objekt daného typu. Konstruktory obvykle inicializovat datových členů nového objektu. Konstruktor lze spustit pouze po vytvoření třídy. Kromě toho kód v konstruktoru vždy spouští před jakýkoli jiný kód v třídě. Můžete však vytvořit více přetížení konstruktor stejným způsobem jako u jakékoliv jiné metody.
@@ -241,9 +232,9 @@ K dispozici jsou následující modifikátory přístupu:
 
 |Modifikátor jazyka Visual Basic|Definice|
 |---------------------------|----------------|
-|[Veřejné](../../../visual-basic/language-reference/modifiers/public.md)|Typ nebo člen je přístupná jiným kódem ve stejném sestavení nebo jiné sestavení, které na ni odkazuje.|
-|[Privátní](../../../visual-basic/language-reference/modifiers/private.md)|Typ nebo člen můžete přistupovat pouze kódu ve stejné třídě.|
-|[Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)|Typ nebo člen můžete přistupovat pouze kódu ve stejné třídě nebo v odvozené třídě.|
+|[Public](../../../visual-basic/language-reference/modifiers/public.md)|Typ nebo člen je přístupná jiným kódem ve stejném sestavení nebo jiné sestavení, které na ni odkazuje.|
+|[Private](../../../visual-basic/language-reference/modifiers/private.md)|Typ nebo člen můžete přistupovat pouze kódu ve stejné třídě.|
+|[Protected](../../../visual-basic/language-reference/modifiers/protected.md)|Typ nebo člen můžete přistupovat pouze kódu ve stejné třídě nebo v odvozené třídě.|
 |[Friend](../../../visual-basic/language-reference/modifiers/friend.md)|Typ nebo člen je přístupný kód ve stejném sestavení, ale nikoli z jiné sestavení.|
 |`Protected Friend`|Typ nebo člen je přístupná žádný kód ve stejném sestavení, nebo všechny odvozené třídy v jiném sestavení.|
 
@@ -274,11 +265,11 @@ Dim sampleObject = New SampleClass With
 
 Další informace naleznete v tématu:
 
-- [New – operátor](../../../visual-basic/language-reference/operators/new-operator.md)
+- [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)
 
-- [Inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 
-###  <a name="Static"></a>Sdílené třídy a členové  
+###  <a name="Static"></a> Sdílené třídy a členové  
  Sdíleného člena třídy je vlastnost, postup nebo pole, které platí pro všechny instance třídy.  
   
  Chcete-li definovat sdíleného člena:  
@@ -299,9 +290,9 @@ MsgBox(SampleClass.SampleString)
   
  Další informace naleznete v tématu:  
   
--   [Sdílené](../../../visual-basic/language-reference/modifiers/shared.md)  
+-   [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
   
--   [Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md)  
+-   [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
   
 ### <a name="anonymous-types"></a>Anonymní typy  
 Anonymní typy umožňují vytvářet objekty bez nutnosti psaní definice třídy pro datový typ. Kompilátor místo, vygeneruje třídu pro vás. Třída nemá žádný použitelný název a obsahuje vlastnosti, které zadáte v deklarace objektu.
@@ -348,7 +339,7 @@ End Class
 
 Další informace naleznete v tématu:
 
-- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
 
 - [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)
 
@@ -362,10 +353,10 @@ Následující modifikátory je možné určit, jak jsou přepsaná vlastnosti a
 |Modifikátor jazyka Visual Basic|Definice|
 |---------------------------|----------------|
 |[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)|Umožňuje člena třídy k přepsání v odvozené třídě.|
-|[Přepsání](../../../visual-basic/language-reference/modifiers/overrides.md)|Přepsání člena virtuální (přepisovatelné) definované v základní třídě.|
+|[Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)|Přepsání člena virtuální (přepisovatelné) definované v základní třídě.|
 |[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)|Zabrání přepsání dědičných třídy členem.|
 |[MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)|Vyžaduje, aby člena třídy k přepsání v odvozené třídě.|
-|[Stínů](../../../visual-basic/language-reference/modifiers/shadows.md)|Skryje členem zděděn ze základní třídy|
+|[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)|Skryje členem zděděn ze základní třídy|
 
 ## <a name="interfaces"></a>Rozhraní
 Rozhraní, jako jsou třídy, definovat sadu vlastností, metod a události. Ale na rozdíl od třídy, rozhraní neposkytují implementace. Jsou implementované třídy a definován jako samostatné entity z tříd. Rozhraní představuje kontraktu, v tomto třídu, která implementuje rozhraní musí implementovat všechny aspekty tohoto rozhraní přesně tak, jak je definována.
@@ -393,9 +384,9 @@ Další informace naleznete v tématu:
 
 - [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)  
 
-- [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
+- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
 
-- [Implements – příkaz](../../../visual-basic/language-reference/statements/implements-statement.md)  
+- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)  
 
 ## <a name="generics"></a>Obecné typy
 Třídy, struktury, rozhraní a metody v rozhraní .NET může zahrnovat *parametry typu* , definování typů objektů, které lze uložit nebo použít. Nejčastější obecných typů je kolekce, kde můžete určit typ objektů, které chcete uložit v kolekci.  
@@ -453,9 +444,9 @@ Další informace naleznete v tématu:
 
 - [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
 
-- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
 
-- [AddressOf – operátor](../../../visual-basic/language-reference/operators/addressof-operator.md)
+- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
 
 ## <a name="see-also"></a>Viz také
  [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)

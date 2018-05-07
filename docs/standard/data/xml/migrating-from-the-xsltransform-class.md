@@ -1,29 +1,18 @@
 ---
 title: Migrace z XslTransform – třída
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-caps.latest.revision: 3
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 07b90baf64ad00509cf5cadea4b9a3008237759b
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: bac8d1496463d1224021270347c9480e7ce391e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z XslTransform – třída
 Architektura XSLT byla změněna v [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] verzi. <xref:System.Xml.Xsl.XslTransform> Třída nahradila <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  

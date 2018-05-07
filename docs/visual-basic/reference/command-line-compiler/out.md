@@ -1,11 +1,6 @@
 ---
 title: -out (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - /out compiler option [Visual Basic]
 - -out compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: 9f148c15-0909-4cb8-a2db-777f8a8b45ae
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4cc3779f9efda8cf48107a7c16e31f8ff05a456d
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 234071d043b2649e2438ed20fe044fb89cdb9bf8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-out-visual-basic"></a>-out (Visual Basic)
 Určuje název souboru výstupního souboru.  
@@ -51,6 +46,6 @@ vbc t2.vb -out:t3.exe
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

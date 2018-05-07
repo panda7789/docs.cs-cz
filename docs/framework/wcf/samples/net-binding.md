@@ -1,24 +1,12 @@
 ---
-title: "Síťová vazba"
-ms.custom: 
+title: Síťová vazba
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4d10072a-ae0a-486a-b713-49703e26d9bf
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0559920a78003fa5b77ef7e966aeed0cd553444f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 37a02f763694ab7d39a699551f86e4f188a52917
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-binding"></a>Síťová vazba
 Tato část obsahuje ukázky, která demonstruje použití sítě vazby atributy elementu koncový bod.  

@@ -1,29 +1,18 @@
 ---
-title: "Ověření schématu pomocí objektem XPathNavigator nastaveným na"
-ms.custom: 
+title: Ověření schématu pomocí objektem XPathNavigator nastaveným na
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
-caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d06b82998deba05abe0fca1d4e93cd5c5ea319eb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 98403176c3af8e110bd8d7677fae715fee84baec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Ověření schématu pomocí objektem XPathNavigator nastaveným na
 Pomocí <xref:System.Xml.XmlDocument> třídu, můžete ověřit obsah XML, který je součástí <xref:System.Xml.XmlDocument> objektu dvěma způsoby. První způsob je ověřit obsah XML pomocí ověřování <xref:System.Xml.XmlReader> objekt a druhým způsobem je použití <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy. Můžete také provést jen pro čtení ověření obsahu pomocí XML <xref:System.Xml.XPath.XPathDocument> třídy.  

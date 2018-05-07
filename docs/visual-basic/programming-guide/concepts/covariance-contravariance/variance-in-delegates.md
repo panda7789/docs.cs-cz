@@ -1,22 +1,12 @@
 ---
-title: "Odchylky v delegátech (Visual Basic)"
-ms.custom: 
+title: Odchylky v delegátech (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 38e9353f-74f8-4211-a8f0-7a495414df4a
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9fe76a32f76f760497021289ec1c6ce673cec1b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d857f120be0fe810489ba69edb55af9cc0dd6940
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="variance-in-delegates-visual-basic"></a>Odchylky v delegátech (Visual Basic)
 Rozhraní .NET framework 3.5 byla zavedena podpora odchylku odpovídající metoda podpisy s typy delegáta v všechny Delegáti v C# a Visual Basic. To znamená, že můžete přiřadit deleguje pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo pracujících s parametry, které mají méně odvozené typy (kontravariance) než je určeno typ delegáta . To zahrnuje obecné a neobecné delegáti.  
@@ -129,9 +119,9 @@ End Sub
 ### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Obecní delegáti, které mají typ Variant parametry typu v rozhraní .NET Framework  
  Rozhraní .NET framework 4 zavedl podporu odchylky pro parametry obecného typu v několika existující obecní delegáti:  
   
--   `Action`Deleguje z <xref:System> obor názvů, například <xref:System.Action%601> a<xref:System.Action%602>  
+-   `Action` Deleguje z <xref:System> obor názvů, například <xref:System.Action%601> a <xref:System.Action%602>  
   
--   `Func`Deleguje z <xref:System> obor názvů, například <xref:System.Func%601> a<xref:System.Func%602>  
+-   `Func` Deleguje z <xref:System> obor názvů, například <xref:System.Func%601> a <xref:System.Func%602>  
   
 -   <xref:System.Predicate%601> Delegovat  
   
@@ -157,7 +147,7 @@ Public Delegate Sub DContravariant(Of In A)(ByVal a As A)
 ```  
   
 > [!IMPORTANT]
->  `ByRef`Parametry v jazyce Visual Basic nelze označit jako typ variant.  
+>  `ByRef` Parametry v jazyce Visual Basic nelze označit jako typ variant.  
   
  Je také možné podporovat odchylky a Kovariance v stejného delegáta, ale pro jiný typ parametry. To je ukázáno v následujícím příkladu.  
   

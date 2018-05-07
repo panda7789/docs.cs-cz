@@ -1,29 +1,17 @@
 ---
 title: Souhrn technologie ToolStrip
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], technology summary
 - status bars [Windows Forms], technology summary
 - toolbars [Windows Forms], technology summary
 - menus [Windows Forms], technology summary
 ms.assetid: e8d61973-7af9-429f-9df5-05a899c15a7b
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a4777a6cb30f641faf2305bc6d8bca55d243c94b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c4f7b13590457623bbdfd6e4c07317f3a0285fd0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstrip-technology-summary"></a>Souhrn technologie ToolStrip
 Toto téma shrnuje informace o `ToolStrip` řízení a třídy, které podporují jeho použití.  
@@ -54,7 +42,7 @@ Toto téma shrnuje informace o `ToolStrip` řízení a třídy, které podporuj�
   
 -   Sloučení `ToolStrip` ovládací prvky pomocí `ToolStripPanel`.  
   
- `ToolStrip`je rozšiřitelný základní třídu pro `MenuStrip`, `ContextMenuStrip`, a `StatusStrip`. Tyto ovládací prvky jsou <xref:System.Windows.Forms.ToolStripItem> kontejnery, které dědí společné chování a zpracování událostí rozšířit tak, aby každý implementace zabývá chování, která je vhodná pro ni. Ovládací prvky, které jsou odvozeny od <xref:System.Windows.Forms.ToolStripItem> jsou uvedeny v následující tabulce. Základní `ToolStrip` třída zpracovává Malování, vstup uživatele a přetažení myší události pro tyto ovládací prvky.  
+ `ToolStrip` je rozšiřitelný základní třídu pro `MenuStrip`, `ContextMenuStrip`, a `StatusStrip`. Tyto ovládací prvky jsou <xref:System.Windows.Forms.ToolStripItem> kontejnery, které dědí společné chování a zpracování událostí rozšířit tak, aby každý implementace zabývá chování, která je vhodná pro ni. Ovládací prvky, které jsou odvozeny od <xref:System.Windows.Forms.ToolStripItem> jsou uvedeny v následující tabulce. Základní `ToolStrip` třída zpracovává Malování, vstup uživatele a přetažení myší události pro tyto ovládací prvky.  
   
  `ToolStrip`, `MenuStrip`, `ContextMenuStrip`, A `StatusStrip` ovládací prvky nahradit předchozí nástrojů nabídky, místní nabídky a ovládací prvky stavového řádku, i když tyto ovládací prvky se zachovává kvůli zpětné kompatibilitě.  
   
@@ -101,7 +89,7 @@ Toto téma shrnuje informace o `ToolStrip` řízení a třídy, které podporuj�
  Příklad – hostování ovládacího prvku, naleznete v části [postupy: zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md).  
   
 ## <a name="rendering"></a>Vykreslování  
- <xref:System.Windows.Forms.ToolStrip>třídy implementovat vykreslování schéma, které se významně liší od jiných ovládacích prvků Windows Forms. Toto schéma snadno použít styly a motivů.  
+ <xref:System.Windows.Forms.ToolStrip> třídy implementovat vykreslování schéma, které se významně liší od jiných ovládacích prvků Windows Forms. Toto schéma snadno použít styly a motivů.  
   
  Chcete-li použít styl pro <xref:System.Windows.Forms.ToolStrip> a všechny <xref:System.Windows.Forms.ToolStripItem> objekty, které obsahuje, není nutné pro zpracování <xref:System.Windows.Forms.ToolStripItem.Paint> událost pro každou položku. Místo toho můžete nastavit <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost na jednu z <xref:System.Windows.Forms.ToolStripRenderMode> hodnoty jiné než <xref:System.Windows.Forms.ToolStripRenderMode.Custom>. Alternativně můžete nastavit <xref:System.Windows.Forms.ToolStrip.Renderer%2A> přímo na všechny třídy, která dědí z <xref:System.Windows.Forms.ToolStripRenderer> třídy. Nastavení této vlastnosti se automaticky nastaví <xref:System.Windows.Forms.ToolStrip.RenderMode%2A>.  
   
@@ -110,10 +98,10 @@ Toto téma shrnuje informace o `ToolStrip` řízení a třídy, které podporuj�
  Příklady vykreslování najdete v tématu [postupy: vytvoření a nastavení vlastní vykreslení ovládacího prvku ToolStrip ve Windows Forms](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md).  
   
 ## <a name="styles-and-themes"></a>Styly a motivů  
- <xref:System.Windows.Forms.ToolStrip>a související třídy poskytují snadný způsob, jak podporují vizuální styly a vlastní vzhled, které nevyžadují přepsání <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A> metody pro každou položku. Použití <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> a <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> a <xref:System.Windows.Forms.ToolStrip.Renderer%2A> vlastnosti.  
+ <xref:System.Windows.Forms.ToolStrip> a související třídy poskytují snadný způsob, jak podporují vizuální styly a vlastní vzhled, které nevyžadují přepsání <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A> metody pro každou položku. Použití <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> a <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> a <xref:System.Windows.Forms.ToolStrip.Renderer%2A> vlastnosti.  
   
 ## <a name="rafting-and-docking"></a>Rafting a dokování  
- Můžete raft, ukotvení nebo absolutní pozice <xref:System.Windows.Forms.ToolStrip> ovládací prvky. <xref:System.Windows.Forms.ToolStrip>položky jsou nastíněny <xref:System.Windows.Forms.ToolStrip.LayoutEngine%2A> kontejneru.  
+ Můžete raft, ukotvení nebo absolutní pozice <xref:System.Windows.Forms.ToolStrip> ovládací prvky. <xref:System.Windows.Forms.ToolStrip> položky jsou nastíněny <xref:System.Windows.Forms.ToolStrip.LayoutEngine%2A> kontejneru.  
   
  *Rafting* je schopnost panely nástrojů sdílet místo vodorovně nebo svisle. Může mít formuláři Windows <xref:System.Windows.Forms.ToolStripContainer> která naopak má panelů na formuláře levé, pravé, horní a dolní straně pro umístění a rafting <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.StatusStrip> ovládací prvky. Více <xref:System.Windows.Forms.ToolStrip> ovládací prvky zásobníku ve svislém směru, pokud jejich umístění v doleva nebo doprava <xref:System.Windows.Forms.ToolStripContainer>. Pokud je uvést do pravého horního nebo dolního jejich vodorovně zásobníku <xref:System.Windows.Forms.ToolStripContainer>. Můžete použít centrální <xref:System.Windows.Forms.ToolStripContentPanel> z <xref:System.Windows.Forms.ToolStripContainer> na pozici tradiční ovládací prvky na formuláři.  
   

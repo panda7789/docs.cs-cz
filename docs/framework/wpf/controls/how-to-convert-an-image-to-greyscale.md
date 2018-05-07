@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Převedení obrázku do odstínů šedi"
-ms.custom: 
+title: 'Postupy: Převedení obrázku do odstínů šedi'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - converting [WPF], images to grayscale
 - grayscale [WPF], converting images to
 ms.assetid: 77935ff0-4500-4307-9710-96999dcf579f
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eed39a0a0388d1d091a167addb8f81f25c8c04b3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a65d78462e7d2310ee4369a439e3adfbd43d7444
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-an-image-to-greyscale"></a>Postupy: Převedení obrázku do odstínů šedi
 Tento příklad ukazuje, jak převést bitovou kopii na ve stupních šedi pomocí <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>.  

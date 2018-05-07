@@ -1,17 +1,12 @@
 ---
 title: Odvození typu (F#)
 description: 'Zjistěte, jak kompilátor jazyka F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: b5f7861c0a638baebfe72c9b4cf7dca119339ae3
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 93e1568ebe71436ad8f7119ac9d9628cdf58012a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-inference"></a>Odvození typu
 

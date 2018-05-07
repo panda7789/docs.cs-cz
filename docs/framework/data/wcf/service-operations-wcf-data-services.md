@@ -1,13 +1,6 @@
 ---
-title: "Operace služby (služby WCF Data Services)"
-ms.custom: 
+title: Operace služby (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - service operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72af11330bc9190ea0c07e23f2e87e5f4840b677
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: da8d482fbf506749f9805edcbbaad3c893ad56b3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-operations-wcf-data-services"></a>Operace služby (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Umožňuje definovat operace služby ve službě data ke zveřejnění metody na serveru. Jako další prostředky služby dat jsou operací služby řešit identifikátory URI. Operace služby umožňují vystavit obchodní logiky v datové služby, jako třeba implementovat logiku ověření pro použití na základě rolí zabezpečení, nebo ke zveřejnění specializovaných dotazování možnosti. Operace služby jsou metody přidat k třídě služby data, která je odvozena od <xref:System.Data.Services.DataService%601>. Podobně jako všechny ostatní datové prostředky služby můžete zadat parametry pro metodu operaci služby. Například následující operace identifikátor URI služby (na základě [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) služba dat) předá hodnotu `London` k `city` parametr:  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje definovat operace služby ve službě data ke zveřejnění metody na serveru. Jako další prostředky služby dat jsou operací služby řešit identifikátory URI. Operace služby umožňují vystavit obchodní logiky v datové služby, jako třeba implementovat logiku ověření pro použití na základě rolí zabezpečení, nebo ke zveřejnění specializovaných dotazování možnosti. Operace služby jsou metody přidat k třídě služby data, která je odvozena od <xref:System.Data.Services.DataService%601>. Podobně jako všechny ostatní datové prostředky služby můžete zadat parametry pro metodu operaci služby. Například následující operace identifikátor URI služby (na základě [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) služba dat) předá hodnotu `London` k `city` parametr:  
   
 ```  
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'  
@@ -53,7 +41,7 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
   
 -   Metoda musí vrátit jednu z těchto možností:  
   
-    -   `void`(`Nothing` v jazyce Visual Basic)  
+    -   `void` (`Nothing` v jazyce Visual Basic)  
   
     -   <xref:System.Collections.Generic.IEnumerable%601>  
   
@@ -69,9 +57,9 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
   
 -   Metoda musí být opatřena poznámkou `[WebGet]` nebo `[WebInvoke]` atribut.  
   
-    -   `[WebGet]`umožňuje metoda k vyvolání pomocí požadavek GET.  
+    -   `[WebGet]` umožňuje metoda k vyvolání pomocí požadavek GET.  
   
-    -   `[WebInvoke(Method = "POST")]`umožňuje metoda k vyvolání pomocí požadavek POST. Další <xref:System.ServiceModel.Web.WebInvokeAttribute> metody nejsou podporovány.  
+    -   `[WebInvoke(Method = "POST")]` umožňuje metoda k vyvolání pomocí požadavek POST. Další <xref:System.ServiceModel.Web.WebInvokeAttribute> metody nejsou podporovány.  
   
 -   Operace služby, které může být opatřena poznámkou <xref:System.Data.Services.SingleResultAttribute> který určuje, že je vrácená hodnota z metody jedné entity, nikoli kolekci entit. Tento rozdíl určuje výsledný serializaci odpovědi a způsob, ve kterém jsou další navigační vlastnost traversals určený v identifikátoru URI. Například při použití AtomPub serializace, jeden prostředek typ instance reprezentována jako element položky a sady instancí jako element informačního kanálu.  
   
@@ -88,7 +76,7 @@ http://localhost:12345/Northwind.svc/GetOrdersByState?state='CA'&includeItems=tr
   
 |Platný návratové typy|Identifikátor URI pravidla|  
 |------------------------|---------------|  
-|`void`(`Nothing` v jazyce Visual Basic)<br /><br /> -nebo-<br /><br /> Typy entit<br /><br /> -nebo-<br /><br /> Primitivní typy|Identifikátor URI musí být jednou cestou segment, který je název operaci služby. Možnosti dotazu nejsou povoleny.|  
+|`void` (`Nothing` v jazyce Visual Basic)<br /><br /> -nebo-<br /><br /> Typy entit<br /><br /> -nebo-<br /><br /> Primitivní typy|Identifikátor URI musí být jednou cestou segment, který je název operaci služby. Možnosti dotazu nejsou povoleny.|  
 |<xref:System.Collections.Generic.IEnumerable%601>|Identifikátor URI musí být jednou cestou segment, který je název operaci služby. Protože výsledný typ není <xref:System.Linq.IQueryable%601> typu nejsou povoleny možnosti dotazu.|  
 |<xref:System.Linq.IQueryable%601>|Segmenty cesty dotazu kromě cestu, která je název operace služby jsou povoleny. Povolené jsou i možnosti dotazu.|  
   

@@ -1,28 +1,19 @@
 ---
-title: "Vysoká DPI podpora v rozhraní Windows Forms"
-ms.custom: 
+title: Vysoká DPI podpora v rozhraní Windows Forms
 ms.date: 05/16/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - High DPI in Windows Forms
 - Dynamic rescaling in Windows Forms
 - Windows Forms layout
 - Windows Forms dynamic resizing
 ms.assetid: 075ea4c3-900c-4f8a-9dd2-13ea6804346b
-caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a68c9278d4e8092be5c744109e56f7cb52498095
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a085658579c8cd3ba43fd07a7816581e03c3d64a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Vysoká DPI podpora v rozhraní Windows Forms
 

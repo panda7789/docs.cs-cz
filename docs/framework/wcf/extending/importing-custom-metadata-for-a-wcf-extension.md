@@ -1,27 +1,15 @@
 ---
-title: "Import vlastních metadat pro rozšíření WCF"
-ms.custom: 
+title: Import vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 78beb28f-408a-4c75-9c3c-caefe9595b1a
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9208a73f6a35e4c05ab9be612491f3f7db792a5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: bb7124cbce3fa38d00446b6568c85fc3136ee180
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>Import vlastních metadat pro rozšíření WCF
-V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] můžete importovat <xref:System.ServiceModel.Description.ServiceEndpoint> instancí <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí z WSDL dokumentů pro službu. Chcete-li importovat metadata služby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], použít implementaci <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny od <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které využít WS-Policy importovat logiku [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+Ve Windows Communication Foundation (WCF), import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] můžete importovat <xref:System.ServiceModel.Description.ServiceEndpoint> instancí <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí z WSDL dokumentů pro službu. Chcete-li importovat metadata služby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], použít implementaci <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny od <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které využít WS-Policy importovat logiku [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  Vlastní metadata se skládá z elementů XML, které společnost importers poskytované systémem metadata nelze importovat. Obvykle obsahuje vlastní rozšíření WSDL a kontrolních výrazů vlastních zásad.  
   

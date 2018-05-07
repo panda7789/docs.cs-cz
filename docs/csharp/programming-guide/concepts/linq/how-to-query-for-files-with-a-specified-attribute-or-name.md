@@ -1,21 +1,12 @@
 ---
-title: "Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)"
-ms.custom: 
+title: 'Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8e5ad9f6ea5d6d8ff97389fc6535dc34acca7d74
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ee366f551eb73059196cb4dcd61c1ca42bf55fda
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)
 Tento příklad ukazuje, jak najít všechny soubory, které mají příponu názvu zadaný soubor (například ".txt") v zadané adresářovém stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu podle času vytvoření.  

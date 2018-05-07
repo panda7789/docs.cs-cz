@@ -1,21 +1,14 @@
 ---
-title: "Argumenty příkazového řádku (Průvodce programováním v C#)"
+title: Argumenty příkazového řádku (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 025ed2c451c0a657ce71db56df603302097fc7ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 92b3f916b58f72ab2f2f542d3a611d35861afebe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Můžete odeslat argumenty, které mají `Main` metoda definováním metodu v jednom z následujících způsobů:  
@@ -72,7 +65,7 @@ long num = Convert.ToInt64(s);
   
      `Factorial 3`  
   
-5.  Příkaz vytvořil tento výstup:`The factorial of 3 is 6.`  
+5.  Příkaz vytvořil tento výstup: `The factorial of 3 is 6.`  
   
 > [!NOTE]
 >  Při spuštění aplikace v sadě Visual Studio, můžete zadat argumenty příkazového řádku v [stránka ladění, Návrhář projektu](/visualstudio/ide/reference/debug-page-project-designer).  
@@ -81,9 +74,9 @@ long num = Convert.ToInt64(s);
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Environment?displayProperty=nameWithType>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Main() a argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
  [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
- [Postupy: přístup příkazového řádku argumenty pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
+ [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
  [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
  [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)

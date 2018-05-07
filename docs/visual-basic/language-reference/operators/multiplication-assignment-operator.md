@@ -1,12 +1,6 @@
 ---
 title: '*= – operátor (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.*=
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - '*= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 96c86509-6eb8-4682-8226-3852e049376f
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2d0a2c638f3faaf20fadb745ef437941ee29d4f6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3863e6c7416057507e8ae569804ed4a1be6a5b50
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>*= – operátor (Visual Basic)
 Vynásobí hodnotou výrazu hodnotu proměnné nebo vlastnosti a výsledek přiřadí proměnné nebo vlastnosti.  
@@ -55,7 +46,7 @@ variableorproperty *= expression
  [!code-vb[VbVbalrOperators#5](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/multiplication-assignment-operator_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [* – Operátor](../../../visual-basic/language-reference/operators/multiplication-operator.md)  
+ [* – operátor](../../../visual-basic/language-reference/operators/multiplication-operator.md)  
  [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
  [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  

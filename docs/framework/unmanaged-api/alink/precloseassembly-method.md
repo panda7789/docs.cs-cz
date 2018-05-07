@@ -1,14 +1,6 @@
 ---
-title: "PreCloseAssembly – metoda"
-ms.custom: 
+title: PreCloseAssembly – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink.PreCloseAssembly
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 6d23ac54-15ea-4027-a172-9ebef43e8f56
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5a4d1f2eed036552ab17b6768b7b2d84f4a52c9c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82421fa83a6f0d24492d70f961e731b679c25728
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="precloseassembly-method"></a>PreCloseAssembly – metoda
 Zavře souboru sestavení. Volejte tuto metodu po zavření všechny ostatní soubory, ale před jeho zavřením souboru sestavení. Nevolejte tuto metodu pro nevázaný moduly.  

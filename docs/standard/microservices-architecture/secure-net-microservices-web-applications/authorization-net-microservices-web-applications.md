@@ -1,21 +1,14 @@
 ---
-title: "O autorizace v rozhraní .NET mikroslužeb a webové aplikace"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | O autorizace v rozhraní .NET mikroslužeb a webové aplikace"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: O autorizace v rozhraní .NET mikroslužeb a webové aplikace
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | O autorizace v rozhraní .NET mikroslužeb a webové aplikace
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 6cd7be9bc8216aecf85f99a76e859b411a8735b0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2ea56f5a28d115fc5d91a98604b82565c8bf5c78
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizace v rozhraní .NET mikroslužeb a webové aplikace
 
@@ -125,7 +118,7 @@ Příklad vlastní autorizace požadavku a obslužné rutiny pro kontrolu stář
 -   **Autorizace ASP.NET Core**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/introduction*](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)
 
--   **Role na základě autorizace**
+-   **Autorizace podle rolí**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/roles*](https://docs.microsoft.com/aspnet/core/security/authorization/roles)
 
 -   **Autorizace uživatele na základě zásad**

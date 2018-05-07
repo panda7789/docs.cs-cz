@@ -1,26 +1,15 @@
 ---
-title: "Vytvoření nové odkazy na Entity"
-ms.custom: 
+title: Vytvoření nové odkazy na Entity
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a42f81b3-0403-4e34-b346-7d2129804e54
-caps.latest.revision: "3"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 76093fbe7095c2aae7caa69147f6181c292ca734
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0fefea6f8dfd74dfd31c7c07a158e4935ab0e02c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-new-entity-references"></a>Vytvoření nové odkazy na Entity
 **CreateEntityReference** metoda vytvoří novou **XmlEntityReference** uzlu. XML modelu DOM (Document Object) zjistí, pokud již byl deklarován název entity se na ně odkazovat. Pokud ano, podřízené uzly **XmlEntityReference** uzlu se zkopírují z uzlu deklarace entity. Pokud není k dispozici žádná deklarace entity, který odpovídá, je připojen prázdný textový uzel jako jediným podřízeným entity uzlu odkazu. Protože podřízené uzly **XmlEntityReference** uzlu jsou kopie další uzly, tyto podřízené uzly jsou jen pro čtení a nelze jej změnit.  

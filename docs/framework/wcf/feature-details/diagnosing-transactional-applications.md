@@ -1,32 +1,18 @@
 ---
 title: Diagnostikování transakčních aplikací
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5b8171f382812480078b76588089871233bdf9ca
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 4fa85fea0651d7a31c5a50bbc9c1226421b976b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
-Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] funkce správy a diagnostických nástrojů k řešení potíží s transakční aplikace.  
+Toto téma popisuje, jak používat správu Windows Communication Foundation (WCF) a diagnostické funkce k řešení potíží s transakční aplikace.  
   
 ## <a name="performance-counters"></a>Čítače výkonu  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje standardní sadu čítačů výkonu pro vás k měření výkonu transakcí aplikace. Další informace najdete v tématu [čítače výkonu](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
+ WCF poskytuje standardní sadu čítačů výkonu pro vás k měření výkonu transakcí aplikace. Další informace najdete v tématu [čítače výkonu](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
   
  Čítače výkonu jsou omezená na tři různé úrovně: služby, koncový bod a operace, jak je popsáno v následujících tabulkách.  
   
@@ -58,7 +44,7 @@ Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/ind
 |Počet plynoucích transakcí za sekundu|Počet transakcí plynoucích do operací na tento koncový bod v rámci každou sekundu. Tento čítač se zvýší, když transakce je součástí zprávu, která je odeslána koncovému bodu.|  
   
 ## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). Další informace o přístup k datům WMI najdete v tématu [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ WCF zpřístupní dat kontroly služby za běhu prostřednictvím poskytovatele WCF Windows Management Instrumentation (WMI). Další informace o přístup k datům WMI najdete v tématu [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
  Počet jen pro čtení vlastnosti WMI znamenat nastavení transakcí na použité pro službu. V následujících tabulkách najdete tato nastavení.  
   
@@ -100,13 +86,13 @@ Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/ind
 ## <a name="tracing"></a>Trasování  
  Trasování umožňují monitorovat a analyzovat chyb v transakčních aplikací. Můžete povolit trasování pomocí těchto způsobů:  
   
--   Standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] trasování  
+-   Standardní trasování WCF  
   
-     Tento typ trasování je stejný jako trasování žádné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
+     Tento typ trasování je stejný jako trasování všechny aplikace WCF. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
 -   Trasování WS-AtomicTransaction  
   
-     WS-AtomicTransaction trasování je možné zapnout pomocí [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Tyto funkce trasování poskytuje přehled o stavu transakce a účastníky v systému. Také povolit trasování interní Model služby, můžete nastavit `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klíč registru na platnou hodnotu <xref:System.Diagnostics.SourceLevels> výčtu. Můžete povolit protokolování stejným způsobem jako ostatní zpráv [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace.  
+     WS-AtomicTransaction trasování je možné zapnout pomocí [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Tyto funkce trasování poskytuje přehled o stavu transakce a účastníky v systému. Také povolit trasování interní Model služby, můžete nastavit `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klíč registru na platnou hodnotu <xref:System.Diagnostics.SourceLevels> výčtu. Můžete povolit protokolování stejným způsobem jako ostatní aplikace WCF zpráv.  
   
 -   `System.Transactions` trasování  
   
@@ -131,7 +117,7 @@ Toto téma popisuje postup použití [!INCLUDE[indigo1](../../../../includes/ind
     </configuration>  
     ```  
   
-     To také umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] trasování, jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také využívá <xref:System.Transactions> infrastruktury.  
+     To také umožňuje trasování WCF, protože také využívá WCF <xref:System.Transactions> infrastruktury.  
   
 ## <a name="see-also"></a>Viz také  
  [Správa a diagnostika](../../../../docs/framework/wcf/diagnostics/index.md)  

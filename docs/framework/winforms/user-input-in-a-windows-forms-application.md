@@ -1,28 +1,14 @@
 ---
-title: "Uživatelský vstup ve formulářové aplikaci Windows"
-ms.custom: 
+title: Uživatelský vstup ve formulářové aplikaci Windows
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, user input
 ms.assetid: 9d61fa96-70f7-4754-885a-49a4a6316bdb
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 60135c09f63bd98f753e151c515938cbf13e70ee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4f1b96ab53b30d045a315b43abd0e38157e26c07
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-input-in-a-windows-forms-application"></a>Uživatelský vstup ve formulářové aplikaci Windows
 V systému Windows Forms uživatelský vstup se odesílají do aplikace ve formě zpráv systému Windows. Řadu přepisovatelné metody zpracování těchto zpráv v aplikaci, formuláře a řídit úroveň. Tyto metody přijímat zprávy myši a klávesnice, vyvolají události, které může být zpracována pro získání informací o myši nebo klávesové vstup. V mnoha případech bude schopna zpracovat veškerý vstup uživatele jednoduše tak, že zpracování těchto událostí formulářových aplikací Windows. V ostatních případech možná muset aplikaci přepsat jednu z metod, které zpracovávají zprávy, aby bylo možné zachytit určité zprávy dřív, než je přijat aplikace, formulář nebo ovládací prvek.  

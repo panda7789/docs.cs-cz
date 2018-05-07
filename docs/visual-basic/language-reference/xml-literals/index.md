@@ -1,12 +1,6 @@
 ---
 title: Literály XML (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - declaring XML literals [Visual Basic]
 - Visual Basic, XML literals
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], reference
 - literals [Visual Basic], XML
 ms.assetid: 16b28c40-8768-423f-bd9c-22ff10de2b54
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 846d9823722a3c7e93c3f45d7cc98e23832df822
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6b3664a29d5a780c7ce49f51f0ea13d064d578e2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xml-literals-visual-basic"></a>Literály XML (Visual Basic)
 Témata v této části dokumentů syntaxe literálů XML v jazyce Visual Basic. Literál XML syntaxe umožňuje začlenit přímo v kódu XML.  

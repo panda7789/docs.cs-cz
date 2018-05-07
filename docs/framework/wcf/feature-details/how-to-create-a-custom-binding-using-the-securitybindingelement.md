@@ -1,40 +1,28 @@
 ---
 title: 'Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-caps.latest.revision: 19
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 80fd6163db1b7b168be4e19b01c8eb9f15865f04
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1e288daeb717fa9fa041d552cac4ec5d0cd28808
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech zabezpečení možnostech, které [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech možností zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
   
 > [!WARNING]
 >  <xref:System.ServiceModel.Channels.SecurityBindingElement> nepodporuje <xref:System.ServiceModel.Channels.IDuplexSessionChannel> kanálu tvar, který se používá výchozí kanál obrazce pomocí protokolu TCP při přenosu <xref:System.ServiceModel.TransferMode> je nastaven na <xref:System.ServiceModel.TransferMode.Buffered>. Je nutné nastavit <xref:System.ServiceModel.TransferMode> k <xref:System.ServiceModel.TransferMode.Streamed> Chcete-li použít <xref:System.ServiceModel.Channels.SecurityBindingElement> v tomto scénáři.  
   
 ## <a name="creating-a-custom-binding"></a>Vytvoření vlastní vazby  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny vazby jsou tvořeny *elementů vazby*. Každý prvek vazba je odvozena z <xref:System.ServiceModel.Channels.BindingElement> třídy. Pro standardní vazby poskytované systémem prvky vazby vytvoříte a nakonfigurujete, i když můžete přizpůsobit některé z nastavení vlastností.  
+ Ve službě WCF se všechny vazby jsou složená z *elementů vazby*. Každý prvek vazba je odvozena z <xref:System.ServiceModel.Channels.BindingElement> třídy. Pro standardní vazby poskytované systémem prvky vazby vytvoříte a nakonfigurujete, i když můžete přizpůsobit některé z nastavení vlastností.  
   
  Naproti tomu Pokud chcete vytvořit vlastní vazby, prvky vazeb vytvoříte a nakonfigurujete a <xref:System.ServiceModel.Channels.CustomBinding> je vytvořený z elementů vazby.  
   

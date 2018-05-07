@@ -1,13 +1,6 @@
 ---
-title: "Přepsání metody OnPaint"
-ms.custom: 
+title: Přepsání metody OnPaint
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d9012d1a31eeaf50560b6166d32ac58662c5aa4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fc41158e9a3d5d331b391f0f28701612012becf7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
 Základní kroky pro všechny události definované v přepsání [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] jsou identické a jsou shrnuty v následujícím seznamu.  
@@ -93,7 +81,7 @@ public class PaintEventArgs : EventArgs {
 }  
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>je nutné překreslit rámeček a <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost odkazuje <xref:System.Drawing.Graphics> objektu. Třídy v <xref:System.Drawing?displayProperty=nameWithType> obor názvů se spravují třídy, které poskytují přístup k funkci [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], nové knihovny grafika systému Windows. <xref:System.Drawing.Graphics> Objekt má metody k vykreslení body, řetězce, řádky, oblouky, tři tečky a mnoho ostatním tvarům.  
+ <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> je nutné překreslit rámeček a <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost odkazuje <xref:System.Drawing.Graphics> objektu. Třídy v <xref:System.Drawing?displayProperty=nameWithType> obor názvů se spravují třídy, které poskytují přístup k funkci [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], nové knihovny grafika systému Windows. <xref:System.Drawing.Graphics> Objekt má metody k vykreslení body, řetězce, řádky, oblouky, tři tečky a mnoho ostatním tvarům.  
   
  Vyvolá ovládacího prvku jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metoda kdykoli bude potřeba změnit jeho visual zobrazení. Tato metoda vyvolá zase <xref:System.Windows.Forms.Control.Paint> událostí.  
   

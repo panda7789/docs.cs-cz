@@ -1,22 +1,12 @@
 ---
 title: 'Postupy: projektu grafu objektu (Visual Basic)'
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 946c09035c2856203c544c6e5378624989b0e96b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0a8bf33075ada306cf639006ab099115aad43348
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-project-an-object-graph-visual-basic"></a>Postupy: projektu grafu objektu (Visual Basic)
 Toto téma ukazuje, jak projektu nebo naplněn, grafu objektů ze souboru XML.  

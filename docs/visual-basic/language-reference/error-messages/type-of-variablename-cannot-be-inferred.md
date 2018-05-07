@@ -1,28 +1,19 @@
 ---
-title: "Typ & č. 39; &lt;NázevProměnné&gt;& č. 39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu"
+title: Typ &#39; &lt;NázevProměnné&gt; &#39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc30982
 - vbc30982
 helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 022e29e38a93d2880bbfa250e65a8b95b39ff140
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d6fdd9445b5336773d150c643c7bf1ca58a0c87a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ & č. 39; &lt;NázevProměnné&gt;& č. 39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu
+# <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ &#39; &lt;NázevProměnné&gt; &#39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu
 Jste napsali `For...Next` smyčky, ve kterém kompilátor nelze odvodit typ dat pro řídicí proměnná smyčky vzhledem k tomu, že jsou splněné následující podmínky:  
   
 -   Datový typ řídicí proměnná smyčky není zadaný s `As` klauzule.  
@@ -72,9 +63,9 @@ Dim n = 20
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Conversion.Val%2A>  
- [Pro... Next – příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [Option Infer – příkaz](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

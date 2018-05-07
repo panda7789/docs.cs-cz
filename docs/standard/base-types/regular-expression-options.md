@@ -1,13 +1,7 @@
 ---
-title: "Možnosti regulárních výrazů"
-ms.custom: 
+title: Možnosti regulárních výrazů
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: cc32a98930c4c1243f53fc9c5d2a10f339b4de11
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: f3c229b0fc463863b7113c7ba73890b84e86553b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 <a name="Top"></a> Ve výchozím nastavení při porovnání vstupní řetězec se znaky literálu v vzor regulárního výrazu je velká a malá písmena, prázdné znaky v vzor regulárního výrazu interpretována jako literál prázdné znaky a zaznamenávání skupiny v regulárním výrazu jsou pojmenované implicitně také jako explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možnosti regulárních výrazů. Tyto možnosti, které jsou uvedené v následující tabulce, mohou být zahrnuty vložené jako součást regulární výraz nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické vzor jako odpovídající metodu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
@@ -367,7 +356,7 @@ ms.lasthandoff: 03/15/2018
   
     |Vzor|Popis|  
     |-------------|-----------------|  
-    |(a+)|Porovnává písmenem "a" jeden nebo více krát. Toto je druhá zachytávající skupina.|  
+    |(+)|Porovnává písmenem "a" jeden nebo více krát. Toto je druhá zachytávající skupina.|  
     |(\1)|Porovná podřetězec zachycenou první zaznamenávání skupinu. Toto je třetí zachytávající skupina.|  
     |?|Odpovídat nula nebo jeden znak mezery.|  
     |((a+)(\1)?) +|Shoda vzoru jeden nebo více znaků "a následuje řetězec, který odpovídá skupině první zaznamenávání" následuje žádnou nebo jednu místo znaků jeden či více krát. Toto je první zachytávající skupina.|  

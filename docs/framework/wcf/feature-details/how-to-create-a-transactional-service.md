@@ -1,26 +1,12 @@
 ---
 title: 'Postupy: Vytvoření transakční služby'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9e39ecd346b5d5fb4113fd17abe9bde715a12aa4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d59c0b96b766f0692c7b84a02deed55e32dc655a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-transactional-service"></a>Postupy: Vytvoření transakční služby
 Tento příklad znázorňuje různé aspekty vytvoření transakční služby a použití transakci iniciované klientem ke koordinaci operací služby.  
@@ -104,7 +90,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
   
 ### <a name="supporting-multiple-transaction-protocols"></a>Podpora více protokoly transakcí  
   
-1.  Pro optimální výkon, musí používat protokol OleTransactions pro scénáře zahrnující klienta a služby napsané pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Protokol WS-AtomicTransaction (WS-AT) je však užitečné v případech, pokud je potřeba vzájemná funkční spolupráce s zásobníky protokol třetích stran. Můžete nakonfigurovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby tak, aby přijímal oba protokoly poskytováním více koncových bodů s příslušnou specifické pro protokol vazby, jak je znázorněno v následující ukázka konfigurace.  
+1.  Pro optimální výkon měli byste použít protokol OleTransactions pro scénáře zahrnující klienta a služby, které jsou vytvořené pomocí služby Windows Communication Foundation (WCF). Protokol WS-AtomicTransaction (WS-AT) je však užitečné v případech, pokud je potřeba vzájemná funkční spolupráce s zásobníky protokol třetích stran. Můžete nakonfigurovat služby WCF tak, aby přijímal oba protokoly poskytováním více koncových bodů s příslušnou specifické pro protokol vazby, jak je znázorněno v následující ukázka konfigurace.  
   
     ```xml  
     <service name="CalculatorService">  
@@ -139,7 +125,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
   
 ### <a name="controlling-the-completion-of-a-transaction"></a>Řízení dokončení transakce.  
   
-1.  Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] operace automaticky dokončit transakce, pokud jsou vyvolány žádné neošetřené výjimky. Toto chování můžete upravit pomocí <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost a <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda. Když operace je potřeba v rámci stejné transakci jako jiná operace (například operace MD a Dal), můžete zakázat chování automatického dokončování nastavením <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` jak je znázorněno v následujícím `Debit` příklad operaci. Transakce `Debit` není používá operaci dokončit, dokud nebudou metodu s <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost nastavena na hodnotu `true` je volána, jak je znázorněno v operaci `Credit1`, nebo když <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda je volána explicitně označit transakce jako dokončené, jak je znázorněno v operaci `Credit2`. Upozorňujeme, že pro účely obrázku jsou zobrazeny dvě platební operace a že jeden úvěrového operace by typičtější.  
+1.  Ve výchozím nastavení WCF operations automaticky dokončení transakcí, pokud jsou vyvolány žádné neošetřené výjimky. Toto chování můžete upravit pomocí <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost a <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda. Když operace je potřeba v rámci stejné transakci jako jiná operace (například operace MD a Dal), můžete zakázat chování automatického dokončování nastavením <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` jak je znázorněno v následujícím `Debit` příklad operaci. Transakce `Debit` není používá operaci dokončit, dokud nebudou metodu s <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost nastavena na hodnotu `true` je volána, jak je znázorněno v operaci `Credit1`, nebo když <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda je volána explicitně označit transakce jako dokončené, jak je znázorněno v operaci `Credit2`. Upozorňujeme, že pro účely obrázku jsou zobrazeny dvě platební operace a že jeden úvěrového operace by typičtější.  
   
     ```  
     [ServiceBehavior]  
@@ -195,7 +181,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
   
 ### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Řízení životního cyklu instance služby zasílání transakčních  
   
-1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti k určení, zda je základní instance služby vydané po dokončení transakce. Vzhledem k tomu, že se `true`, pokud není uvedeno jinak, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vykazuje aktivaci "v běhu" efektivní a předvídatelné chování. Volání do služby na následné transakce jsou zajištěná nové instance služby se žádné zbytky stav předchozí transakce. Přestože se často užitečné, v některých případech může chcete zachovat stav v rámci instance služby nad rámec dokončení transakce. Příklady tohoto by po nákladné načíst nebo rekonstruovat požadované stavu nebo obslužných rutin k prostředkům. To provedete nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Toto nastavení, instanci a všechny přidružené stavu bude k dispozici pro následující volání. Při použití tohoto nástroje věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to udělat Údržba instance s `runningTotal` proměnné.  
+1.  Používá WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti k určení, zda je základní instance služby vydané po dokončení transakce. Vzhledem k tomu, že se `true`, pokud není uvedeno jinak, WCF předměty efektivní a předvídatelné "v běhu" aktivace chování. Volání do služby na následné transakce jsou zajištěná nové instance služby se žádné zbytky stav předchozí transakce. Přestože se často užitečné, v některých případech může chcete zachovat stav v rámci instance služby nad rámec dokončení transakce. Příklady tohoto by po nákladné načíst nebo rekonstruovat požadované stavu nebo obslužných rutin k prostředkům. To provedete nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Toto nastavení, instanci a všechny přidružené stavu bude k dispozici pro následující volání. Při použití tohoto nástroje věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to udělat Údržba instance s `runningTotal` proměnné.  
   
     ```  
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  

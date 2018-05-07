@@ -1,24 +1,12 @@
 ---
-title: "Přenos MSMQ"
-ms.custom: 
+title: Přenos MSMQ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3f29a2fe-24df-4614-b64c-b0c084fb7003
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3c8f1283a27488c56a866973270409c22efc1fb1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a2e5384808b82f48bd1d4856bf893130da8c5f1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="msmq-transport"></a>Přenos MSMQ
 Toto téma uvádí všechny výjimky generované přenos MSMQ.  

@@ -1,25 +1,17 @@
 ---
 title: Private (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Private
 helpviewer_keywords:
 - Private keyword [Visual Basic]
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 07450c2a5443bf6bc147cad2cfc779072bfc363b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d7935cf691d961591ff5e3d2a290afb88de9165a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
 Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozici pouze v kontextu jejich deklarace, včetně v rámci všechny obsažené typy.  
@@ -39,35 +31,35 @@ Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozi
   
  `Private` Modifikátor lze použít v těchto kontexty:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)  
- [Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)  
+ [Public](../../../visual-basic/language-reference/modifiers/public.md)  
+ [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
  [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
  [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Postupy](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

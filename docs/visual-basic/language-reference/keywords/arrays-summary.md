@@ -1,22 +1,14 @@
 ---
 title: Souhrn polí (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - arrays [Visual Basic]
 ms.assetid: 167f77d4-7cb2-4a31-9dc9-0fd0b26fda7e
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c2aa58b187a055b180ce438ecb5c9d6151ce9714
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f4230d2e4a47d6a30ac8fc9ed0f82285a6109dd2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="arrays-summary-visual-basic"></a>Souhrn polí (Visual Basic)
 Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořádány podle účelu a použití.  
@@ -30,4 +22,4 @@ Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořá
   
 ## <a name="see-also"></a>Viz také  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
- [Členové knihovny prostředí Runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+ [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

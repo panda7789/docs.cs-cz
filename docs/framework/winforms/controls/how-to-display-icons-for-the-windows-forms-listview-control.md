@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView"
-ms.custom: 
+title: 'Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - ImageList component [Windows Forms], with ListView control
 - list views [Windows Forms], displaying icons
 ms.assetid: 9d577542-8595-429b-99e5-078770ec9d35
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b3a19bdd7007a7e47fa1a8ad975112e53c1b6eb5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0e597ed182739947014b4f405ee2dc3149b62849
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-display-icons-for-the-windows-forms-listview-control"></a>Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek může zobrazit ikony ze tří seznamů obrázků. Zobrazení seznamu, podrobnosti a SmallIcon zobrazení obrázků ze seznamu obrázků zadaný v <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnost. Zobrazuje obrázků ze seznamu obrázků zadaný v zobrazení LargeIcon <xref:System.Windows.Forms.ListView.LargeImageList%2A> vlastnost. Zobrazení seznamu lze také zobrazit další sadu ikony, nastavte v <xref:System.Windows.Forms.ListView.StateImageList%2A> vlastnost vedle velké nebo malé ikony. Další informace o seznamech obrázků najdete v tématu [ImageList – komponenta](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) a [postupy: Přidání nebo odebrání obrázků s komponentou Windows Forms ImageList](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  

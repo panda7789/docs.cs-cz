@@ -1,22 +1,12 @@
 ---
-title: "Postupy: filtru na názvy elementu (technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: filtru na názvy elementu (technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b1437b4a-48aa-4546-834a-d6d3ab015fe1
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1dd63c2de233c2b33ce16de6649a5ffecdc7ade7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 3c7ee9ceb2accef34e852396137107fb1f36350c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-filter-on-element-names-linq-to-xml-visual-basic"></a>Postupy: filtru na názvy elementu (technologie LINQ to XML) (Visual Basic)
 Při volání jedné z metod, které vracejí <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, můžete filtrovat podle názvu elementu.  

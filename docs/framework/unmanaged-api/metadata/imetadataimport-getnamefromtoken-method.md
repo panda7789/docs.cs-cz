@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport::GetNameFromToken – metoda"
-ms.custom: 
+title: IMetaDataImport::GetNameFromToken – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport.GetNameFromToken
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 32114ecf-8916-4ab2-a201-179c017344f1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: baa0c0e78f7912561b432effd2bf5503e0f06ae7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a39eac88537d47535844d1f05e0741cc94142f0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimportgetnamefromtoken-method"></a>IMetaDataImport::GetNameFromToken – metoda
 Získá název znakové sady UTF-8 objektu odkazuje token Zadaná metadata. Tato metoda je zastaralá.  
@@ -55,7 +43,7 @@ HRESULT GetNameFromToken (
  [out] Ukazatel na název objektu UTF-8 v haldě.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetNameFromToken`je zastaralá. Jako alternativu, volejte metodu k získání vlastností konkrétní typ tokenu požadované, například `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
+ `GetNameFromToken` je zastaralá. Jako alternativu, volejte metodu k získání vlastností konkrétní typ tokenu požadované, například `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

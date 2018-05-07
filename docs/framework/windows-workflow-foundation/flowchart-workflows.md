@@ -1,23 +1,12 @@
 ---
-title: "Vývojový diagram pracovních postupů"
-ms.custom: 
+title: Vývojový diagram pracovních postupů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b0a3475c-d22f-49eb-8912-973c960aebf5
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ddfa98a8b9de0b362a27b55d4cd9a4c02ac8a761
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dd013e47da881c16d1fa469dfc3e3c4f2a86b6e2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="flowchart-workflows"></a>Vývojový diagram pracovních postupů
 Vývojový diagram je dobře známé zlepší pro návrh programy. Vývojový diagram aktivity se obvykle používá k implementaci nesekvenční pracovní postupy, ale lze použít pro sekvenční pracovní postupy, pokud žádné `FlowDecision` uzly se používají.  
@@ -28,11 +17,11 @@ Vývojový diagram je dobře známé zlepší pro návrh programy. Vývojový di
 ## <a name="types-of-flow-nodes"></a>Typy uzlů toku  
  V závislosti na typu řízení toku požadováno, když provádí elementu se používají různé typy elementů. Typy prvků vývojový diagram patří:  
   
--   `FlowStep`-Modely krok spouštění v vývojový diagram.  
+-   `FlowStep` -Modely krok spouštění v vývojový diagram.  
   
--   `FlowDecision`-Větví provádění založené na podmínce logické, podobně jako <xref:System.Activities.Statements.If>.  
+-   `FlowDecision` -Větví provádění založené na podmínce logické, podobně jako <xref:System.Activities.Statements.If>.  
   
--   `FlowSwitch`– Spuštění větví podle výhradní přepínače, podobně jako <xref:System.Activities.Statements.Switch%601>.  
+-   `FlowSwitch` – Spuštění větví podle výhradní přepínače, podobně jako <xref:System.Activities.Statements.Switch%601>.  
   
  Každé propojení nemá `Action` vlastnost, která definuje <xref:System.Activities.ActivityAction> , můžete použít ke spuštění podřízené aktivity a jednu nebo více `Next` vlastnosti, které definují, které element nebo elementy provést po dokončení provádění aktuálního elementu.  
   

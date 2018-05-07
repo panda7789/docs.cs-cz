@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Použití matice barev k transformaci jedné barvy"
-ms.custom: 
+title: 'Postupy: Použití matice barev k transformaci jedné barvy'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,23 +8,18 @@ helpviewer_keywords:
 - image colors [Windows Forms], transforming
 - color matrices [Windows Forms], using
 ms.assetid: 44df4556-a433-49c0-ac0f-9a12063a5860
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d6c9273102dc8e8f0fe6be3e31d0f0b6e570c7af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 741259fcf853c82dfd13b43edc92e50d8767887b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>Postupy: Použití matice barev k transformaci jedné barvy
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulace s nimi bitové kopie. <xref:System.Drawing.Image>a <xref:System.Drawing.Bitmap> objekty jako 32bitové číslo úložiště barva každý pixelů: 8 bitů jednotlivých červená, zelená, modrá a alfa. Každý ze čtyř součástí je číslo od 0 do 255, kde 0 představuje žádné intenzitou a představující úplné intenzitou 255. Komponentu alfa Určuje průhlednost barvy: 0 je zcela průhledné a je plně neprůhledného 255.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulace s nimi bitové kopie. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty jako 32bitové číslo úložiště barva každý pixelů: 8 bitů jednotlivých červená, zelená, modrá a alfa. Každý ze čtyř součástí je číslo od 0 do 255, kde 0 představuje žádné intenzitou a představující úplné intenzitou 255. Komponentu alfa Určuje průhlednost barvy: 0 je zcela průhledné a je plně neprůhledného 255.  
   
  Barva vektor je 4-řazené kolekce členů ve formuláři (červená, zelená, modrá, alpha). Například vektoru barvu (0, 255, 0, 255) představuje neprůhledného barvu, která nemá žádné red nebo blue, ale má zelená úplné intenzitou.  
   
- Jiné konvence pro představující barvy používá číslo 1 pro úplné intenzitou. Pomocí této konvence, by barvu popsané v předchozím odstavci reprezentované pomocí vektoru (0, 1, 0, 1). [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]Při provádění transformací barev, používá jako úplné intenzitou konvenci 1.  
+ Jiné konvence pro představující barvy používá číslo 1 pro úplné intenzitou. Pomocí této konvence, by barvu popsané v předchozím odstavci reprezentované pomocí vektoru (0, 1, 0, 1). [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Při provádění transformací barev, používá jako úplné intenzitou konvenci 1.  
   
  Lineární transformace (otáčení, změnu velikosti a podobně) můžete použít barvu Vektorům vynásobením vektory barvu podle matice 4 x 4. Matice 4 x 4 však nelze použít pro překlad (nelineární). Pokud přidáte do každé vektorů barva fiktivní páté souřadnice (například číslo 1), můžete použít libovolnou kombinaci lineární transformace a překlady matice 5 × 5. Transformace skládající se z lineární transformace, za nímž následuje překlad nazývá afinní transformace.  
   

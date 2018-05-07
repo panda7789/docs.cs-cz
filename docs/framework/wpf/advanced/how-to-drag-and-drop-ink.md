@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Přetažení inkoustu"
-ms.custom: 
+title: 'Postupy: Přetažení inkoustu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - drag-and-drop ink
 - dropping ink [WPF]
 ms.assetid: 932dc410-2bf3-4486-ab31-13487ba59f60
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2151d7bf2ea7ccfc034d89cc637331256251618d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 48f0a501b9a04869443be2b50288946779a315f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-drag-and-drop-ink"></a>Postupy: Přetažení inkoustu
 ## <a name="example"></a>Příklad  

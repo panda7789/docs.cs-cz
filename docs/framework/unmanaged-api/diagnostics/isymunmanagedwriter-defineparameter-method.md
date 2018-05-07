@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedWriter::DefineParameter – metoda"
-ms.custom: 
+title: ISymUnmanagedWriter::DefineParameter – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedWriter.DefineParameter
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: a8e3dd32-6a44-4371-9a74-f417b11998c8
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7fe62a8f6b48d1a9931cc0310811d7fc42f7029b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6b01abc16334dbe091e7586efcce1c3e390a64e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter – metoda
 Definuje jeden parametr v aktuální metoda. Typ parametru jsou převzaty z parametru pozici (pořadí) v rámci signatury metody.  

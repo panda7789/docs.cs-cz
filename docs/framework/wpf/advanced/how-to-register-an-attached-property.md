@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Registrace připojené vlastnosti"
-ms.custom: 
+title: 'Postupy: Registrace připojené vlastnosti'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - attached properties [WPF], registering
 - registering attached properties [WPF]
 ms.assetid: eb47bd94-0451-4f8d-8fb6-95f7812ac05b
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 37c727eee7b56473808fec06ea42044fc742f7f2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6b0b461552811c5b3fca46a11f087f710e3b2e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-register-an-attached-property"></a>Postupy: Registrace připojené vlastnosti
 Tento příklad ukazuje způsob registrace přidružená vlastnost a poskytovat veřejné přístupových objektů, takže můžete použít vlastnost v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kód. Přidružené vlastnosti jsou definované pomocí syntaxe koncept [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Většina přidružené vlastnosti pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy jsou implementované také jako vlastnosti závislosti. Můžete použít na všech vlastností závislostí <xref:System.Windows.DependencyObject> typy.  

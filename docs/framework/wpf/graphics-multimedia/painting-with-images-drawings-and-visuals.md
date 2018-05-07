@@ -1,13 +1,6 @@
 ---
-title: "Kreslení pomocí obrázků, kreseb a vizuálních objektů"
-ms.custom: 
+title: Kreslení pomocí obrázků, kreseb a vizuálních objektů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with images
 - brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 01939eb8735e6764e0f0cba811091c7fdbd6797f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abb5733ed54ea430ba161db5ea2dcb33e99298ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>Kreslení pomocí obrázků, kreseb a vizuálních objektů
 Toto téma popisuje postup použití <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> objekty k vyplnění oblast s bitovou kopii, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>.  
@@ -69,15 +57,15 @@ Objekty, které vykresluje podle DrawingBrush
   
  A <xref:System.Windows.Media.DrawingBrush> vybarví oblast s <xref:System.Windows.Media.Drawing> objektu. A <xref:System.Windows.Media.Drawing> objekt popisuje viditelný obsah, například obrazce, rastrového obrázku, videa nebo na řádku textu. Různé typy výkresů popisují různé typy obsahu. Následuje seznam s různými typy kreslení objektů.  
   
--   <xref:System.Windows.Media.GeometryDrawing>– Kreslení obrazce.  
+-   <xref:System.Windows.Media.GeometryDrawing> – Kreslení obrazce.  
   
--   <xref:System.Windows.Media.ImageDrawing>– Nakreslí obrázek.  
+-   <xref:System.Windows.Media.ImageDrawing> – Nakreslí obrázek.  
   
--   <xref:System.Windows.Media.GlyphRunDrawing>– Nevykresluje text.  
+-   <xref:System.Windows.Media.GlyphRunDrawing> – Nevykresluje text.  
   
--   <xref:System.Windows.Media.VideoDrawing>– Hraje soubor zvuku a videa.  
+-   <xref:System.Windows.Media.VideoDrawing> – Hraje soubor zvuku a videa.  
   
--   <xref:System.Windows.Media.DrawingGroup>– Nevykresluje kresby na další. Použijte skupinu kreslení kombinovat jiné kresby do jedné složené kreslení.  
+-   <xref:System.Windows.Media.DrawingGroup> – Nevykresluje kresby na další. Použijte skupinu kreslení kombinovat jiné kresby do jedné složené kreslení.  
   
  Další informace o <xref:System.Windows.Media.Drawing> objekty, najdete [kreslení objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md).  
   
@@ -133,7 +121,7 @@ Zrcadlený vizuální objekt
   
 <a name="tilebrush"></a>   
 ## <a name="tilebrush-features"></a>Funkce TileBrush  
- <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> jsou typy <xref:System.Windows.Media.TileBrush> objekty. <xref:System.Windows.Media.TileBrush>objekty nabízejí značnou část ovládat, jak je pomocí bitové kopie, kreslení nebo visual vykresluje oblast. Například místo právě vykreslování oblast s jedné roztažené image, můžete malovat oblast s řadou dlaždice obrázků, které vytvářejí se vzorem.  
+ <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> jsou typy <xref:System.Windows.Media.TileBrush> objekty. <xref:System.Windows.Media.TileBrush> objekty nabízejí značnou část ovládat, jak je pomocí bitové kopie, kreslení nebo visual vykresluje oblast. Například místo právě vykreslování oblast s jedné roztažené image, můžete malovat oblast s řadou dlaždice obrázků, které vytvářejí se vzorem.  
   
  A <xref:System.Windows.Media.TileBrush> má tři hlavní komponenty: obsahu, dlaždice a oblasti výstup.  
   

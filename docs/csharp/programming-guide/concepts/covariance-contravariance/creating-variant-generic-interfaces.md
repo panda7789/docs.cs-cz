@@ -1,22 +1,12 @@
 ---
-title: "Vytváření variantních obecných rozhraní (C#)"
-ms.custom: 
+title: Vytváření variantních obecných rozhraní (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 585d1fc3ee6114532d7ddbfd30f5e09950d3b0b0
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 882bd0aa4497a99b2cf80e96f13f433ae74aad59
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Vytváření variantních obecných rozhraní (C#)
 Parametry obecného typu rozhraní jako kovariantní můžou deklarovat nebo kontravariant. *Kovariance* umožňuje metody rozhraní do mají více odvozené návratové typy než definované parametry obecného typu. *Kontravariance* umožňuje metody rozhraní tak, aby měl typy argumentů, které jsou odvozené menší než je určeno obecné parametry. Obecná rozhraní, které má kovariantní nebo kontravariant se označuje jako parametry obecného typu *variant*.  

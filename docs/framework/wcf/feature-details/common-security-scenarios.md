@@ -1,28 +1,16 @@
 ---
-title: "Běžné scénáře zabezpečení"
-ms.custom: 
+title: Běžné scénáře zabezpečení
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: d8881768d66e95ce1391ce1be1663bdc3107a347
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0fb51ea0624c4fa686e4e99ffb9c30decedfea10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-security-scenarios"></a>Běžné scénáře zabezpečení
 Témata v této části katalogu počet možných klienta a konfigurace zabezpečení služby. Konfigurace se liší podle počtu faktorů. Například jestli je služba nebo klienta na intranetu, nebo jestli poskytuje zabezpečení systému Windows nebo přenos (například HTTPS).  
@@ -32,7 +20,7 @@ Témata v této části katalogu počet možných klienta a konfigurace zabezpe�
  Příklad veřejné zabezpečená klienta a služby.  
   
  [Nezabezpečený intranetový klient a služba](../../../../docs/framework/wcf/feature-details/intranet-unsecured-client-and-service.md)  
- Základní [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby vyvinuté tak, aby poskytují informace o do zabezpečené privátní sítě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace.  
+ Základní služby Windows Communication Foundation (WCF) vyvinuté tak, aby poskytují informace o zabezpečení privátní sítě pro aplikace WCF.  
   
  [Zabezpečení přenosu pomocí základního ověřování](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)  
  Aplikace umožňuje klientům připojení pomocí vlastního ověřování.  
@@ -47,7 +35,7 @@ Témata v této části katalogu počet možných klienta a konfigurace zabezpe�
  Zobrazuje klienta a služby Zabezpečené certifikát.  
   
  [Zabezpečení zpráv pomocí anonymního klienta](../../../../docs/framework/wcf/feature-details/message-security-with-an-anonymous-client.md)  
- Ukazuje klienta a služby zabezpečené [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení zpráv.  
+ Zobrazuje klienta a služby Zabezpečené zabezpečení zpráv WCF.  
   
  [Zabezpečení zpráv pomocí klienta uživatelského jména](../../../../docs/framework/wcf/feature-details/message-security-with-a-user-name-client.md)  
  Klient je aplikace Windows Forms, která umožňuje klientům připojení pomocí domény uživatelské jméno a heslo.  

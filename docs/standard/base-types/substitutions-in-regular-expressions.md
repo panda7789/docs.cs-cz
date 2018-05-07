@@ -1,13 +1,7 @@
 ---
-title: "Nahrazení v regulárních výrazech"
-ms.custom: 
+title: Nahrazení v regulárních výrazech
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,28 +13,23 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: f93584b9dff721c8521d8cb58aaf5eab2c1fc931
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 53fd4ee63d49b3943fa0b1164591aaddaa764abc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
-<a name="Top"></a>Náhrady jsou prvky jazyka, které jsou rozpoznány jenom v rámci vzory pro nahrazování. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory pro nahrazování jsou poskytovány přetížení <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metoda, která mají `replacement` parametru a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda. Metody nahradí odpovídající vzor vzor, který je definován `replacement` parametr.  
+<a name="Top"></a> Náhrady jsou prvky jazyka, které jsou rozpoznány jenom v rámci vzory pro nahrazování. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory pro nahrazování jsou poskytovány přetížení <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metoda, která mají `replacement` parametru a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda. Metody nahradí odpovídající vzor vzor, který je definován `replacement` parametr.  
   
  Rozhraní .NET Framework definuje prvky substituce uvedené v následující tabulce.  
   
 |Substituce|Popis|  
 |------------------|-----------------|  
-|`$`*číslo*|Obsahuje poslední podřetězec zachytávající skupině, která je identifikovaná *číslo*, kde *číslo* je desítková hodnota v řetězci nahrazení. Další informace najdete v tématu [Nahrazování číslované skupiny](#Numbered).|  
-|`${`*název*`}`|Obsahuje poslední podřetězec s názvem skupiny, který je určen podle `(?<` *název* `> )` v řetězci nahrazení. Další informace najdete v tématu [nahrazování pojmenované skupiny](#Named).|  
+|`$` *Číslo*|Obsahuje poslední podřetězec zachytávající skupině, která je identifikovaná *číslo*, kde *číslo* je desítková hodnota v řetězci nahrazení. Další informace najdete v tématu [Nahrazování číslované skupiny](#Numbered).|  
+|`${` *Jméno* `}`|Obsahuje poslední podřetězec s názvem skupiny, který je určen podle `(?<` *název* `> )` v řetězci nahrazení. Další informace najdete v tématu [nahrazování pojmenované skupiny](#Named).|  
 |`$$`|Zahrnuje jediný literál "$" v řetězci pro nahrazení. Další informace najdete v tématu [nahraďte Symbol "$"](#DollarSign).|  
 |`$&`|Zahrnuje kopii celé shody v řetězci pro nahrazení. Další informace najdete v tématu [nahrazení celé shody](#EntireMatch).|  
 |<code>$\`</code>|Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu před shody](#BeforeMatch).|  

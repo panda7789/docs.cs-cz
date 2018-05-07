@@ -1,14 +1,6 @@
 ---
-title: "CreateALink – funkce"
-ms.custom: 
+title: CreateALink – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CreateALink
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: fc73bcb9-6af6-44d8-bc39-2f4400325dae
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 54a5afd8ee42fa122f3e18415be0b1d06c2f9302
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1e29c9c246649229900beba2fcc9ab482071ae46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="createalink-function"></a>CreateALink – funkce
 Vytvoří instanci Linker sestavení a nastaví ukazatele k zadanému rozhraní.  

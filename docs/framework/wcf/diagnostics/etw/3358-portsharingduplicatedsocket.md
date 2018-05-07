@@ -1,24 +1,12 @@
 ---
-title: "3358 – PortSharingDuplicatedSocket"
-ms.custom: 
+title: 3358 – PortSharingDuplicatedSocket
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c6e5c051-5597-49d1-a5ea-0a26ec04443d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c1e8374ddd4d375ad3eaf36daef19424c62eba91
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c88170a0a259c7e2a8db19bfd763488d33aa3d66
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3358---portsharingduplicatedsocket"></a>3358 – PortSharingDuplicatedSocket
 ## <a name="properties"></a>Vlastnosti  

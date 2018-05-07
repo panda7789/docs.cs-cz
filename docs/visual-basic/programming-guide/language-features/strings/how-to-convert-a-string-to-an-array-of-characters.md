@@ -1,12 +1,6 @@
 ---
-title: "Postupy: Převod řetězce na pole znaků v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Převod řetězce na pole znaků v jazyce Visual Basic'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - character arrays [Visual Basic], converting strings
 - arrays [Visual Basic], converting strings to
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - strings [Visual Basic], converting to arrays
 - string conversion [Visual Basic], arrays
 ms.assetid: 1b54b686-ab29-413b-adce-6bd5422376eb
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 59d0da52c8f78b93c76325e6242156c106deeaf1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c109143601e304b1ec15a60c71d65fe6bd15aae8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a>Postupy: Převod řetězce na pole znaků v jazyce Visual Basic
 Někdy je užitečné používat data o znaky v řetězec vašeho a pozice z těchto znaků v řetězci, například když analyzujete řetězec. Tento příklad ukazuje, jak můžete získat pole znaky v řetězci voláním řetězec <xref:System.String.ToCharArray%2A> metoda.  
@@ -39,6 +30,6 @@ Někdy je užitečné používat data o znaky v řetězec vašeho a pozice z tě
 ## <a name="see-also"></a>Viz také  
  <xref:System.String.Chars%2A>  
  <xref:System.Globalization.StringInfo?displayProperty=nameWithType>  
- [Postupy: přístup ke znakům v řetězcích](../../../../visual-basic/programming-guide/language-features/strings/how-to-access-characters-in-strings.md)  
+ [Postupy: Přístup ke znakům v řetězcích](../../../../visual-basic/programming-guide/language-features/strings/how-to-access-characters-in-strings.md)  
  [Převod mezi řetězci a ostatními typy dat v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
  [Řetězce](../../../../visual-basic/programming-guide/language-features/strings/index.md)

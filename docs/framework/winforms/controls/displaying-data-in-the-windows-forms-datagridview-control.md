@@ -1,29 +1,17 @@
 ---
-title: "Zobrazení dat v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Zobrazení dat v ovládacím prvku Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data [Windows Forms], displaying in tabular format
 - data grids [Windows Forms], displaying data
 - displaying data [Windows Forms], data grids
 - DataGridView control [Windows Forms], displaying data
 ms.assetid: b170b52a-2ebd-4948-ac2f-e52d494cebb2
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 193562b5dd00950ec483da94e2ea6ea059e88805
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 06df9bbcb1e8b1b53d061dbd219a25378a311072
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="displaying-data-in-the-windows-forms-datagridview-control"></a>Zobrazení dat v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení se používá k zobrazení dat z různých zdrojů externí data. Alternativně můžete přidávání řádků a sloupců do ovládacího prvku a ručně přidejte do ní data.  

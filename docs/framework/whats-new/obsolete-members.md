@@ -1,11 +1,7 @@
 ---
-title: "Zastaralé členy v rozhraní .NET Framework"
+title: Zastaralé členy v rozhraní .NET Framework
 ms.custom: updateeachrelease
 ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete members
 - members, obsolete in .NET Framework 4.5
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1d40c33295e1cd21815a426dc23f3621991d1f14
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: 94401a97a1be9453caa36259dfc5901f438eee40
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích, které jsou uspořádané podle sestavení. Pomocí následujících odkazů můžete zobrazit seznam zastaralé členy a doporučených alternativách v každé sestavení. Toto téma nemá seznam členů zastaralé typy. Seznam zastaralé typy najdete v tématu [zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md).  
@@ -31,7 +24,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
   
     -   [PresentationCore.dll](#PresentationCore)  
   
-    -   [PresentationFramework.dll](#PresFW)  
+    -   [Knihovně PresentationFramework.dll](#PresFW)  
   
     -   [System.Activities.dll](#Act)  
   
@@ -307,7 +300,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Windows.Data.ListCollectionView?displayProperty=nameWithType>|<xref:System.Windows.Data.ListCollectionView.OnBeginChangeLogging%2A>|Nahrazuje <xref:System.Windows.Data.ListCollectionView.OnAllowsCrossThreadChangesChanged%2A?displayProperty=nameWithType>.|  
   
 <a name="Act"></a>   
-### <a name="assembly-systemactivitiesdll"></a>Assembly: System.Activities.dll  
+### <a name="assembly-systemactivitiesdll"></a>Sestavení: System.Activities.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -315,7 +308,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Activities.Debugger.XamlDebuggerXmlReader?displayProperty=nameWithType>|<xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.Xaml.XamlReader%2CSystem.IO.TextReader%29?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Nepoužívejte tento konstruktor. Použití <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%29?displayProperty=nameWithType> nebo <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%2CSystem.Xaml.XamlSchemaContext%29?displayProperty=nameWithType> místo.|  
   
 <a name="ActPres"></a>   
-### <a name="assembly-systemactivitiespresentationdll"></a>Assembly: System.Activities.Presentation.dll  
+### <a name="assembly-systemactivitiespresentationdll"></a>Sestavení: System.Activities.Presentation.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -395,7 +388,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Data.SqlClient.SqlParameterCollection?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29> je zastaralá. Použití <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|  
   
 <a name="entity"></a>   
-### <a name="assembly-systemdataentitydll"></a>Assembly: System.Data.Entity.dll  
+### <a name="assembly-systemdataentitydll"></a>Sestavení: knihovně System.Data.Entity.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -414,7 +407,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Data.OracleClient.OracleParameterCollection?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.OracleClient.OracleParameterCollection.Add%28System.String%2CSystem.Object%29> je zastaralá. Použití <xref:System.Data.OracleClient.OracleParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|  
   
 <a name="design"></a>   
-### <a name="assembly-systemdesigndll"></a>Assembly: System.Design.dll  
+### <a name="assembly-systemdesigndll"></a>Sestavení: System.Design.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -467,7 +460,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Windows.Forms.Design.ControlDesigner?displayProperty=nameWithType>|<xref:System.Windows.Forms.Design.ControlDesigner.OnSetComponentDefaults%2A>|Tato metoda je zastaralá. Místo nich se používá <xref:System.Windows.Forms.Design.ControlDesigner.InitializeNewComponent%2A?displayProperty=nameWithType>.|  
   
 <a name="system"></a>   
-### <a name="assembly-systemdll"></a>Assembly: System.dll  
+### <a name="assembly-systemdll"></a>Sestavení: System.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -579,7 +572,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Security.Claims.DynamicRoleClaimProvider?displayProperty=nameWithType>|<xref:System.Security.Claims.DynamicRoleClaimProvider.AddDynamicRoleClaims%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Použití <xref:System.Security.Claims.ClaimsAuthenticationManager?displayProperty=nameWithType> přidání deklarace identity <xref:System.Security.Claims.ClaimsIdentity>.|  
   
 <a name="drawing"></a>   
-### <a name="assembly-systemdrawingdll"></a>Assembly: System.Drawing.dll  
+### <a name="assembly-systemdrawingdll"></a>Sestavení: System.Drawing.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -587,7 +580,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Drawing.Imaging.EncoderParameter?displayProperty=nameWithType>|<xref:System.Drawing.Imaging.EncoderParameter.%23ctor%28System.Drawing.Imaging.Encoder%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Tento konstruktor je zastaralá. Použití <xref:System.Drawing.Imaging.EncoderParameter.%23ctor%28System.Drawing.Imaging.Encoder%2CSystem.Int32%2CSystem.Drawing.Imaging.EncoderParameterValueType%2CSystem.IntPtr%29>.|  
   
 <a name="messaging"></a>   
-### <a name="assembly-systemmessagingdll"></a>Assembly: System.Messaging.dll  
+### <a name="assembly-systemmessagingdll"></a>Sestavení: System.Messaging.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -633,7 +626,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:System.Web.Configuration.AuthenticationMode?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationMode.Passport>|Toto pole je zastaralé. Ověřování produktu Passport již není podporována a byla nahrazena [Account Microsoft](http://go.microsoft.com/fwlink/?LinkId=733413).|  
 |<xref:System.Web.Configuration.AuthenticationSection?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>|Tato vlastnost je zastaralá. Ověřování produktu Passport již není podporována a byla nahrazena [Account Microsoft](http://go.microsoft.com/fwlink/?LinkId=733413).|  
 |<xref:System.Web.Configuration.HttpCapabilitiesBase?displayProperty=nameWithType>|<xref:System.Web.Configuration.HttpCapabilitiesBase.JavaScript%2A>|Doporučená alternativa je <xref:System.Web.Configuration.HttpCapabilitiesBase.EcmaScriptVersion%2A?displayProperty=nameWithType> vlastnost. A <xref:System.Version.Major%2A?displayProperty=nameWithType> verze hodnotu větší než nebo rovno 1 znamená podporu jazyka JavaScript.|  
-|<xref:System.Web.Configuration.SystemWebSectionGroup?displayProperty=nameWithType>|<xref:System.Web.Configuration.SystemWebSectionGroup.MobileControls%2A>|System.Web.Mobile.dll is obsolete.|  
+|<xref:System.Web.Configuration.SystemWebSectionGroup?displayProperty=nameWithType>|<xref:System.Web.Configuration.SystemWebSectionGroup.MobileControls%2A>|System.Web.Mobile.dll je zastaralá.|  
 |<xref:System.Web.Routing.UrlRoutingModule?displayProperty=nameWithType>|<xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A>|Tato metoda je zastaralá. Přepsání <xref:System.Web.Routing.UrlRoutingModule.Init%2A> metoda se má použít <xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A> událostí.|  
 |<xref:System.Web.Security.FormsAuthentication?displayProperty=nameWithType>|<xref:System.Web.Security.FormsAuthentication.Authenticate%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Doporučené alternativou je použít <xref:System.Web.Security.Membership?displayProperty=nameWithType> rozhraní API, například <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType>.|  
 |<xref:System.Web.Security.FormsAuthentication?displayProperty=nameWithType>|<xref:System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Doporučené alternativou je použít <xref:System.Web.Security.Membership?displayProperty=nameWithType> rozhraní API, například <xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>.|  
@@ -741,14 +734,14 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
  Sestavení IEHost.dll a IEExec.exe byly odebrány z rozhraní .NET Framework. Všechny jejich typy a jejich členové jsou zastaralé a nejsou podporovány v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Tato sestavení byla použita k hostování ovládacích prvků Windows Forms a spouštět spustitelné soubory v aplikaci Internet Explorer. Alternativy k této technologie patří ClickOnce, aplikace prohlížeče XAML (XBAP) a Microsoft Silverlight.  
   
 <a name="isymwrapper"></a>   
-### <a name="assembly-isymwrapperdll"></a>Assembly: ISymWrapper.dll  
+### <a name="assembly-isymwrapperdll"></a>Sestavení: ISymWrapper.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
 |<xref:System.Diagnostics.SymbolStore.SymBinder?displayProperty=nameWithType>|<xref:System.Diagnostics.SymbolStore.SymBinder.GetReader%28System.Int32%2CSystem.String%2CSystem.String%29>|Doporučená alternativa je <xref:System.Diagnostics.SymbolStore.SymBinder.GetReader%28System.IntPtr%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType>. <xref:System.Diagnostics.SymbolStore.ISymbolBinder1.GetReader%2A?displayProperty=nameWithType> ukazatel rozhraní pro import jako trvá <xref:System.IntPtr?displayProperty=nameWithType> místo <xref:System.Int32?displayProperty=nameWithType>a proto pracuje na 32bitové a 64bitové architektury.|  
   
 <a name="conversion"></a>   
-### <a name="assembly-microsoftbuildconversionv40dll"></a>Assembly: Microsoft.Build.Conversion.v4.0.dll  
+### <a name="assembly-microsoftbuildconversionv40dll"></a>Sestavení: Microsoft.Build.Conversion.v4.0.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -758,7 +751,7 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:Microsoft.Build.Conversion.ProjectFileConverter?displayProperty=nameWithType>|<xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory%28Microsoft.Build.BuildEngine.Engine%2CMicrosoft.Build.BuildEngine.ProjectLoadSettings%29>|Použití bez parametrů <xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory?displayProperty=nameWithType> metoda místo.|  
   
 <a name="engine"></a>   
-### <a name="assembly-microsoftbuildenginedll"></a>Assembly: Microsoft.Build.Engine.dll  
+### <a name="assembly-microsoftbuildenginedll"></a>Sestavení: Microsoft.Build.Engine.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -766,21 +759,21 @@ V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v
 |<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|<xref:Microsoft.Build.BuildEngine.Engine.%23ctor%28System.String%29>|Pokud předáváte umístění rozhraní .NET Framework jako <xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A>, stačí změnit bezparametrový <xref:Microsoft.Build.BuildEngine.Engine.%23ctor?displayProperty=nameWithType> konstruktor. Jinak, můžete definovat vlastní sady v registru nebo konfigurační soubor, nebo přidat elementy do stroje <xref:Microsoft.Build.BuildEngine.ToolsetCollection?displayProperty=nameWithType>. Použijte buď <xref:Microsoft.Build.BuildEngine.Engine.%23ctor?displayProperty=nameWithType> nebo <xref:Microsoft.Build.BuildEngine.Engine.%23ctor%28Microsoft.Build.BuildEngine.ToolsetDefinitionLocations%29?displayProperty=nameWithType> konstruktor místo.|  
   
 <a name="BuildFW"></a>   
-### <a name="assembly-microsoftbuildframeworkdll"></a>Assembly: Microsoft.Build.Framework.dll  
+### <a name="assembly-microsoftbuildframeworkdll"></a>Sestavení: Microsoft.Build.Framework.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
 |<xref:Microsoft.Build.Framework.XamlTypes.ContentType?displayProperty=nameWithType>|<xref:Microsoft.Build.Framework.XamlTypes.ContentType.ItemGroupName%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Použití <xref:Microsoft.Build.Framework.XamlTypes.ContentType.ItemType%2A?displayProperty=nameWithType> vlastnost místo.|  
   
 <a name="BuildUtil4"></a>   
-### <a name="assembly-microsoftbuildutilitiesv40dll"></a>Assembly: Microsoft.Build.Utilities.v4.0.dll  
+### <a name="assembly-microsoftbuildutilitiesv40dll"></a>Sestavení: Microsoft.Build.Utilities.v4.0.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
 |<xref:Microsoft.Build.Utilities.ToolTask?displayProperty=nameWithType>|<xref:Microsoft.Build.Utilities.ToolTask.EnvironmentOverride%2A>|Použití <xref:Microsoft.Build.Utilities.ToolTask.EnvironmentVariables%2A?displayProperty=nameWithType> vlastnost.|  
   
 <a name="data_entity_tasks"></a>   
-### <a name="assembly-microsoftdataentitybuildtasksdll"></a>Assembly: Microsoft.Data.Entity.Build.Tasks.dll  
+### <a name="assembly-microsoftdataentitybuildtasksdll"></a>Sestavení: Microsoft.Data.Entity.Build.Tasks.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  

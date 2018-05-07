@@ -1,13 +1,6 @@
 ---
-title: "Předdefinované typy obecných primitiv jazyka XAML"
-ms.custom: 
+title: Předdefinované typy obecných primitiv jazyka XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML language primitives [XAML Services]
 - XAML [XAML Services], built-in types
@@ -22,19 +15,14 @@ helpviewer_keywords:
 - x:Single [XAML Services]
 - x:Int32 [XAML Services]
 ms.assetid: 11de2f08-5b95-4989-b5ec-5178eb968184
-caps.latest.revision: "11"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6052e575b62994b54799cc1af88584f433b06ff8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15c359a9a7f9797fc03ce20c453905af01f925d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>Předdefinované typy obecných primitiv jazyka XAML
-XAML 2009 zavádí podporu úroveň jazyka XAML pro několik typů dat, které jsou často používané základní prvky v common language runtime (CLR) a ostatní programovací jazyky. Přidává podporu pro tyto primitiv jazyka XAML 2009: `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`, a`x:Array`  
+XAML 2009 zavádí podporu úroveň jazyka XAML pro několik typů dat, které jsou často používané základní prvky v common language runtime (CLR) a ostatní programovací jazyky. Přidává podporu pro tyto primitiv jazyka XAML 2009: `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`, a `x:Array`  
   
 <a name="previous_techniques_for_language_primitives_in_xaml_markup"></a>   
 ## <a name="previous-techniques-for-language-primitives-in-xaml-markup"></a>Předchozí techniky pro primitiva jazyka XAML značek  
@@ -86,7 +74,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
   
  Kromě číselné hodnoty textových syntaxi pro `x:Single` taky umožňuje tokeny `Infinity`, `-Infinity`, a `NaN`. Tyto tokeny jsou zpracovány jako malá a velká písmena.  
   
- `x:Single`ve formuláři exponenciální notace, může podporovat hodnoty, pokud je první znak v textových syntaxi `e` nebo `E`.  
+ `x:Single` ve formuláři exponenciální notace, může podporovat hodnoty, pokud je první znak v textových syntaxi `e` nebo `E`.  
   
  Definici specifikace jazyka XAML najdete v části [ \[MS-XAML\] částech 5.2.8 a 5.4.2](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
@@ -95,7 +83,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
   
  Kromě číselné hodnoty textových syntaxi pro `x:Double` umožňuje tokeny `Infinity`, `-Infinity`, a `NaN`. Tyto tokeny jsou zpracovány jako malá a velká písmena.  
   
- `x:Double`ve formuláři vědecká notace může podporovat hodnoty. Použít znak `e` nebo `E` zavádět exponentu část.  
+ `x:Double` ve formuláři vědecká notace může podporovat hodnoty. Použít znak `e` nebo `E` zavádět exponentu část.  
   
  Definici specifikace jazyka XAML najdete v části [ \[MS-XAML\] částech 5.2.9 a 5.4.3](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
@@ -105,12 +93,12 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
  Definici specifikace jazyka XAML najdete v části [ \[MS-XAML\] částech 5.2.11 a 5.4.5](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ### <a name="xint32"></a>x: Int32  
- Pro zálohování CLR `x:Int32` primitivní odpovídá <xref:System.Int32>. `x:Int32`je zpracovaná jako podepsané. V jazyce XAML, chybí znak plus (`+`) přihlášení syntaxe textu je implicitní jako podepsaný kladnou hodnotu.  
+ Pro zálohování CLR `x:Int32` primitivní odpovídá <xref:System.Int32>. `x:Int32` je zpracovaná jako podepsané. V jazyce XAML, chybí znak plus (`+`) přihlášení syntaxe textu je implicitní jako podepsaný kladnou hodnotu.  
   
  Definici specifikace jazyka XAML najdete v části [ \[MS-XAML\] částech 5.2.12 a 5.4.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ### <a name="xint64"></a>x: Int64  
- Pro zálohování CLR `x:Int64` primitivní odpovídá <xref:System.Int64>. `x:Int64`je zpracovaná jako podepsané. V jazyce XAML, chybí znak plus (`+`) přihlášení syntaxe textu je implicitní jako podepsaný kladnou hodnotu.  
+ Pro zálohování CLR `x:Int64` primitivní odpovídá <xref:System.Int64>. `x:Int64` je zpracovaná jako podepsané. V jazyce XAML, chybí znak plus (`+`) přihlášení syntaxe textu je implicitní jako podepsaný kladnou hodnotu.  
   
  Definici specifikace jazyka XAML najdete v části [ \[MS-XAML\] částech 5.2.13 a 5.4.7](http://go.microsoft.com/fwlink/?LinkId=114525).  
   

@@ -1,28 +1,18 @@
 ---
-title: "Třídy typu coclass hostování"
-ms.custom: 
+title: Třídy typu coclass hostování
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - hosting coclasses [.NET Framework]
 - unmanaged coclasses [.NET Framework], hosting
 - coclasses [.NET Framework hosting]
 ms.assetid: e32d8667-58ee-4760-814f-d22963881622
-caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 017147f4bc6cce11bf1824b5d63d3e254d459acd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8dbe16c1bd9293cd109e9ce7f1211d6651551bc5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-coclasses"></a>Třídy typu coclass hostování
 Tato část popisuje nespravované typy coclass rozhraní API, které používá rozhraní API hostování.  

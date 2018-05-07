@@ -1,12 +1,6 @@
 ---
-title: "Vztahy typů v operacích dotazu LINQ (C#)"
-ms.custom: 
+title: Vztahy typů v operacích dotazu LINQ (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - inferring type information [LINQ in C#]
 - data sources [LINQ in C#], type relationships
@@ -18,19 +12,16 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
-caps.latest.revision: "25"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a088a7f673a9f6aea7a0f50e18746259171bb7e2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 274c5eaee2b4bf0e1331fb7a4a1a89a432a567c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Vztahy typů v operacích dotazu LINQ (C#)
 Zápis dotazů efektivně, byste měli porozumět, jak typy proměnných v rámci dokončení dotazu operace všechny vztahují k sobě navzájem. Pokud budete rozumět tomu tyto vztahy se snadněji pochopit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a příklady kódu v dokumentaci. Kromě toho bude pochopit, co se děje na pozadí při proměnné jsou implicitně typované pomocí `var`.  
   
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]operace dotazů jsou silného typu ve zdroji dat, v samotném dotazu a při provádění dotazu. Typ proměnné v dotazu musí být kompatibilní s typem elementů ve zdroji dat a s typem proměnné iterace ve `foreach` příkaz. Tento silného typování zaručuje, že typ chyby jsou zachyceny v době kompilace při jejich lze opravit, než uživatelům stane je.  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operace dotazů jsou silného typu ve zdroji dat, v samotném dotazu a při provádění dotazu. Typ proměnné v dotazu musí být kompatibilní s typem elementů ve zdroji dat a s typem proměnné iterace ve `foreach` příkaz. Tento silného typování zaručuje, že typ chyby jsou zachyceny v době kompilace při jejich lze opravit, než uživatelům stane je.  
   
  K prokázání tyto relace typu, většina příkladů, které následují použijte explicitní zadáte pro všechny proměnné. Poslední příklad ukazuje, jak stejné zásady platí, i když použijete implicitní zadáte pomocí [var](../../../../csharp/language-reference/keywords/var.md).  
   
@@ -74,4 +65,4 @@ Zápis dotazů efektivně, byste měli porozumět, jak typy proměnných v rámc
  Další informace o `var`, najdete v části [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Začínáme s dotazy LINQ v jazyku C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+ [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

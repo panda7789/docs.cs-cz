@@ -1,32 +1,20 @@
 ---
-title: "Priorita hodnot závislých vlastností"
-ms.custom: 
+title: Priorita hodnot závislých vlastností
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dependency properties [WPF], classes as owners
 - dependency properties [WPF], metadata
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d95cd0545fa4800f159f4e5e0f661cf7bddc6548
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7719c39c82b69421477cadf9ae5caf9f9f55b457
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
-<a name="introduction"></a>Toto téma vysvětluje, jak do chodu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje priorit, podle které aspekty vlastnosti systému, na které se týkají platnou hodnotu vlastnosti.  
+<a name="introduction"></a> Toto téma vysvětluje, jak do chodu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje priorit, podle které aspekty vlastnosti systému, na které se týkají platnou hodnotu vlastnosti.  
     
   
 <a name="prerequisites"></a>   
@@ -117,7 +105,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="setcurrentvalue"></a>   
 ## <a name="setcurrentvalue"></a>SetCurrentValue  
- <xref:System.Windows.DependencyObject.SetCurrentValue%2A> Metoda je jiný způsob, jak nastavit vlastnost, ale není v pořadí podle priority. Místo toho <xref:System.Windows.DependencyObject.SetCurrentValue%2A> umožňuje změnit hodnotu vlastnosti bez přepsal zdroj předchozí hodnotu. Můžete použít <xref:System.Windows.DependencyObject.SetCurrentValue%2A> vždy, když chcete nastavit hodnotu bez nutnosti poskytnutí tuto hodnotu přednost před místním hodnoty. Například, pokud vlastnost nastavení triggerem a pak přiřadit jinou hodnotu prostřednictvím <xref:System.Windows.DependencyObject.SetCurrentValue%2A>, vlastnost systému stále respektuje aktivační události a vlastnost se změní, pokud dojde k akci aktivační události. <xref:System.Windows.DependencyObject.SetCurrentValue%2A>Umožňuje změnit hodnotu vlastnosti bez nutnosti poskytnutí zdroj s vyšší prioritou. Podobně můžete použít <xref:System.Windows.DependencyObject.SetCurrentValue%2A> ke změně hodnoty vlastnosti bez přepsal vazbu.  
+ <xref:System.Windows.DependencyObject.SetCurrentValue%2A> Metoda je jiný způsob, jak nastavit vlastnost, ale není v pořadí podle priority. Místo toho <xref:System.Windows.DependencyObject.SetCurrentValue%2A> umožňuje změnit hodnotu vlastnosti bez přepsal zdroj předchozí hodnotu. Můžete použít <xref:System.Windows.DependencyObject.SetCurrentValue%2A> vždy, když chcete nastavit hodnotu bez nutnosti poskytnutí tuto hodnotu přednost před místním hodnoty. Například, pokud vlastnost nastavení triggerem a pak přiřadit jinou hodnotu prostřednictvím <xref:System.Windows.DependencyObject.SetCurrentValue%2A>, vlastnost systému stále respektuje aktivační události a vlastnost se změní, pokud dojde k akci aktivační události. <xref:System.Windows.DependencyObject.SetCurrentValue%2A> Umožňuje změnit hodnotu vlastnosti bez nutnosti poskytnutí zdroj s vyšší prioritou. Podobně můžete použít <xref:System.Windows.DependencyObject.SetCurrentValue%2A> ke změně hodnoty vlastnosti bez přepsal vazbu.  
   
 <a name="animations"></a>   
 ## <a name="coercion-animations-and-base-value"></a>Převod, animace a základní hodnoty  

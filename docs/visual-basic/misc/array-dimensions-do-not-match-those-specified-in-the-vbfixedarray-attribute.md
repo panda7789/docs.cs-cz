@@ -1,23 +1,16 @@
 ---
-title: "Rozměry pole neodpovídají definicím zadaný v & č. 39; VBFixedArray & č. 39; atribut"
+title: Pole dimenze platformám zadaným v neodpovídají &#39;VBFixedArray&#39; atribut
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrArgument_ArrayDimensionsDontMatch
 ms.assetid: 71809e3b-8147-4314-9c4c-e4a5bc9a5530
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1a00268c6b53abae0eb6b39eda240ba1ba38bd2c
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 75ce46a0ba73a64cfed1fe62d2981a95490e355b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="array-dimensions-do-not-match-those-specified-in-the-39vbfixedarray39-attribute"></a>Rozměry pole neodpovídají definicím zadaný v & č. 39; VBFixedArray & č. 39; atribut
+# <a name="array-dimensions-do-not-match-those-specified-in-the-39vbfixedarray39-attribute"></a>Pole dimenze platformám zadaným v neodpovídají &#39;VBFixedArray&#39; atribut
 Vaše pole dimenze neodpovídají dimenzí, které jste zadali v `VBFixedArray` atribut.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

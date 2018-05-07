@@ -1,23 +1,14 @@
 ---
-title: "Výraz je příliš složitý."
+title: Výraz je příliš složitý.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID16
 ms.assetid: 736847d1-5e03-44c8-95e4-3ed2cef2746b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b6ee2d6376c382e1567cf3fa1e72483712f23567
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 118f567c16cde0675b73c6e1fa56c3b4cd16e664
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expression-too-complex"></a>Výraz je příliš složitý.
 Výraz s plovoucí desetinnou čárkou obsahuje příliš mnoho vnořené podvýrazy.  

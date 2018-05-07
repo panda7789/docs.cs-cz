@@ -1,23 +1,14 @@
 ---
-title: "Objektová proměnná nebo proměnná bloku With nebyla nastavena."
+title: Objektová proměnná nebo proměnná bloku With nebyla nastavena.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID91
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9e1f587e194acf744b6ec9b8f1bede3acef7b753
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b2bd1be83f57dbdc7a64b407dc1052074e19c74b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-variable-or-with-block-variable-not-set"></a>Objektová proměnná nebo proměnná bloku With nebyla nastavena.
 Odkazuje na neplatný objekt proměnnou.   Této chybě může dojít z několika důvodů:  
@@ -29,7 +20,7 @@ Odkazuje na neplatný objekt proměnnou.   Této chybě může dojít z několik
     > [!TIP]
     >  `Option Strict` Příkaz zakáže implicitní zadáte, která způsobí, že `Object` typu. Pokud není typu, dojde k chybě kompilace. V tématu [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
   
--   Pokoušíte se odkazovat na objekt, který je nastavený na`Nothing`  
+-   Pokoušíte se odkazovat na objekt, který je nastavený na `Nothing`  
   
      .  
   
@@ -61,6 +52,6 @@ Option Strict On
 5.  Zajistěte, aby vaše `With` bloku je inicializovat spuštěním `With` příkaz vstupní bod.  
   
 ## <a name="see-also"></a>Viz také  
- [Deklarace proměnné objektu](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)  
- [ReDim – příkaz](../../../visual-basic/language-reference/statements/redim-statement.md)  
- [S... End With – příkaz](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+ [Deklarace objektové proměnné](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)  
+ [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)  
+ [Příkaz With...End With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)

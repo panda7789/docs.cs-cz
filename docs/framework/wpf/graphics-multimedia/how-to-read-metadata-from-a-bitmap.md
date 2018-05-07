@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Čtení metadat z bitmapy"
-ms.custom: 
+title: 'Postupy: Čtení metadat z bitmapy'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - metadata [WPF], in images
 - metadata [WPF], reading from a bitmap
 ms.assetid: 920784ed-d96b-43e6-92d4-5dea5228f628
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 66af00a887532757a45cab7c2e18d48877189b92
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3f3371b1e90f91a98f47ac572a8e661ccfd8ef43
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-read-metadata-from-a-bitmap"></a>Postupy: Čtení metadat z bitmapy
 Tento příklad ukazuje, jak číst rastrového obrázku metadat pomocí dotazovacího jazyka pro metadata.  

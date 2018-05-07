@@ -1,12 +1,6 @@
 ---
-title: "Get – příkaz"
+title: Get – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Get
 helpviewer_keywords:
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c1ff062a5e3bf41794bd5b4c90f1e188d6d97480
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d6a6fdfd191de76871619dea3bd1794b487698aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-statement"></a>Get – příkaz
 Deklaruje `Get` procedury vlastnosti použít k získání hodnoty vlastnosti.  
@@ -69,7 +60,7 @@ End Get
   
 -   **Vrací z procedury.** Když `Get` postup vrátí kód volání, provádění pokračuje v rámci příkazu, který požadovaná hodnota vlastnosti.  
   
-     `Get`procedury vlastností můžete vrátit hodnotu buď pomocí [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo přiřazením návratovou hodnotu pro název vlastnosti. Další informace najdete v tématu "Vrátí hodnotu" v [funkce příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
+     `Get` procedury vlastností můžete vrátit hodnotu buď pomocí [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo přiřazením návratovou hodnotu pro název vlastnosti. Další informace najdete v tématu "Vrátí hodnotu" v [funkce příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
   
      `Exit Property` a `Return` příkazy způsobí okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazy může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
   
@@ -91,8 +82,8 @@ End Get
  [!code-vb[VbVbalrStatements#30](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_4.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Set – příkaz](../../../visual-basic/language-reference/statements/set-statement.md)  
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Exit – příkaz](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
  [Návod: Definování tříd](../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)

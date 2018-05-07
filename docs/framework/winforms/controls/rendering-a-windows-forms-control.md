@@ -1,13 +1,6 @@
 ---
-title: "Vykreslení ovládacího prvku Windows Forms"
-ms.custom: 
+title: Vykreslení ovládacího prvku Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms], graphics resources
 - custom controls [Windows Forms], invalidation and painting
 ms.assetid: aae8e1e6-4786-432b-a15e-f4c44760d302
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 587c9c8fb0bf634a2491acb1ae0b2f60979fa899
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a2d7a02e725e3f8065b80a6b30ea21158be43ea8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="rendering-a-windows-forms-control"></a>Vykreslení ovládacího prvku Windows Forms
 Vykreslování odkazuje na proces vytváření vizuální reprezentace na obrazovce uživatele. Windows Forms používá [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (nové Windows grafiky knihovny) pro vykreslování. Spravované třídy, které poskytují přístup k [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] v <xref:System.Drawing?displayProperty=nameWithType> obor názvů a jeho podobory.  
@@ -72,9 +60,9 @@ public System.Drawing.Graphics Graphics {get;}
 }  
 ```  
   
- <xref:System.Drawing.Graphics>je spravovaný třída, která zapouzdřuje kreslení funkce, jak je popsáno v diskusi o [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] dál v tomto tématu. <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> Je instance <xref:System.Drawing.Rectangle> struktury a definuje dostupné oblasti, ve kterém můžete vykreslení ovládacího prvku. Můžete vypočítat vývojář ovládacího prvku <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> pomocí <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastností ovládacího prvku, jak je popsáno v diskusi o geometrie později v tomto tématu.  
+ <xref:System.Drawing.Graphics> je spravovaný třída, která zapouzdřuje kreslení funkce, jak je popsáno v diskusi o [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] dál v tomto tématu. <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> Je instance <xref:System.Drawing.Rectangle> struktury a definuje dostupné oblasti, ve kterém můžete vykreslení ovládacího prvku. Můžete vypočítat vývojář ovládacího prvku <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> pomocí <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastností ovládacího prvku, jak je popsáno v diskusi o geometrie později v tomto tématu.  
   
- Ovládací prvek musí poskytnout vykreslování logiku přepsáním <xref:System.Windows.Forms.Control.OnPaint%2A> metoda, která dědí z <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control.OnPaint%2A>získá přístup k objektu grafiky a prostřednictvím kreslení obdélníku <xref:System.Drawing.Design.PaintValueEventArgs.Graphics%2A> a <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastnosti <xref:System.Windows.Forms.PaintEventArgs> do ní předán instance.  
+ Ovládací prvek musí poskytnout vykreslování logiku přepsáním <xref:System.Windows.Forms.Control.OnPaint%2A> metoda, která dědí z <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control.OnPaint%2A> získá přístup k objektu grafiky a prostřednictvím kreslení obdélníku <xref:System.Drawing.Design.PaintValueEventArgs.Graphics%2A> a <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastnosti <xref:System.Windows.Forms.PaintEventArgs> do ní předán instance.  
   
 ```vb  
 Protected Overridable Sub OnPaint(pe As PaintEventArgs)  
@@ -99,7 +87,7 @@ Protected Overridable Sub OnPaintBackground(pevent As PaintEventArgs)
 protected virtual void OnPaintBackground(PaintEventArgs pevent);  
 ```  
   
- <xref:System.Windows.Forms.Control.OnPaintBackground%2A>vybarví na pozadí (a tím tvaru) okna a záruku, že se rychlá při <xref:System.Windows.Forms.Control.OnPaint%2A> vybarví podrobnosti a může být pomalejší, protože požadavky jednotlivých Malování jsou sloučeny do jednoho <xref:System.Windows.Forms.Control.Paint> událostí, které pokrývá všechny oblasti, které mají být překreslen. Můžete chtít vyvolání <xref:System.Windows.Forms.Control.OnPaintBackground%2A> Pokud například chcete kreslení přechodu stejné barvy pozadí pro vlastní ovládací prvek.  
+ <xref:System.Windows.Forms.Control.OnPaintBackground%2A> vybarví na pozadí (a tím tvaru) okna a záruku, že se rychlá při <xref:System.Windows.Forms.Control.OnPaint%2A> vybarví podrobnosti a může být pomalejší, protože požadavky jednotlivých Malování jsou sloučeny do jednoho <xref:System.Windows.Forms.Control.Paint> událostí, které pokrývá všechny oblasti, které mají být překreslen. Můžete chtít vyvolání <xref:System.Windows.Forms.Control.OnPaintBackground%2A> Pokud například chcete kreslení přechodu stejné barvy pozadí pro vlastní ovládací prvek.  
   
  Při <xref:System.Windows.Forms.Control.OnPaintBackground%2A> má klasifikace podobných událostí a trvá stejný argument jako `OnPaint` metody <xref:System.Windows.Forms.Control.OnPaintBackground%2A> není metoda true událostí. Neexistuje žádné `PaintBackground` událostí a <xref:System.Windows.Forms.Control.OnPaintBackground%2A> nevyvolá – delegáti událostí. Při přepsání <xref:System.Windows.Forms.Control.OnPaintBackground%2A> metody odvozené třídě není nutné volat <xref:System.Windows.Forms.Control.OnPaintBackground%2A> metoda její základní třída.  
   

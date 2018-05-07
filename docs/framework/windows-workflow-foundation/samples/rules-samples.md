@@ -1,24 +1,12 @@
 ---
 title: Ukázky pravidla
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fe156790-3260-4d50-a4a6-e6bc80575af0
-caps.latest.revision: 4
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1c3f8f1f364e2875e0fc2f192ba59dca94209bb1
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: ddfbc724547d2ee94f59179cbd1efa1c98d235f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="rules-samples"></a>Ukázky pravidla
 Tato část obsahuje ukázky, která demonstruje použití modul pravidla pracovních postupů z [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].  

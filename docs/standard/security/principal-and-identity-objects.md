@@ -1,13 +1,7 @@
 ---
-title: "Objekty zabezpečení a identity"
-ms.custom: 
+title: Objekty zabezpečení a identity
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WindowsIdentity objects
 - GenericIdentity objects
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - WindowsPrincipal objects
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
-caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 02c8b4b9f46f051e42fb2ae85a39b6ff48ad2f1a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bfc9a08377a281f7325b120a873fc9b27b8ad856
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="principal-and-identity-objects"></a>Objekty zabezpečení a identity
 Spravovaný kód můžete zjistit identitu nebo roli objektu zabezpečení prostřednictvím <xref:System.Security.Principal.IPrincipal> objekt, který obsahuje odkaz na <xref:System.Security.Principal.IIdentity> objektu. Může to být užitečné k porovnání objektů identity a zabezpečení do známých pojmů jako účty uživatelů a skupin. Ve většině prostředí sítě představují uživatelské účty uživatele nebo programy, zatímco skupinové účty představují určité kategorie uživatelů a práv, které mohou mít. Objekty identity rozhraní .NET Framework podobně představují uživatele, zatímco role představují členství a kontexty zabezpečení. Objekt zabezpečení v rozhraní .NET Framework zapouzdří objekt identity a rolí. Aplikace rozhraní .NET framework udělit práva k objektu zabezpečení na základě svou identitu nebo běžně, členství v roli.  

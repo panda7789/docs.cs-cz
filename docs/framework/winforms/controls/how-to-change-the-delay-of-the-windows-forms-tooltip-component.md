@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Změna zpoždění součásti Windows Forms ToolTip"
-ms.custom: 
+title: 'Postupy: Změna zpoždění součásti Windows Forms ToolTip'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - tooltips [Windows Forms], delay values
 - examples [Windows Forms], tooltips
 ms.assetid: 08979ba7-dd84-477b-ab17-8d06e759be99
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f8506df062729a98adc1aa1e0dcb524aa4ec812c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 20dcd941b142daa672312edb618a1c3e4597442d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-change-the-delay-of-the-windows-forms-tooltip-component"></a>Postupy: Změna zpoždění součásti Windows Forms ToolTip
 Existuje více hodnot zpoždění, které se dají nastavit pro Windows Forms <xref:System.Windows.Forms.ToolTip> součásti. Jednotka měření pro tyto vlastnosti je milisekundách. <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> Vlastnost určuje, jak dlouho musí odkazovat uživatele na související ovládací prvek pro text popisu tlačítka se objeví. <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> Vlastnost nastaví počet milisekund, po je potřebná pro následné řetězce popisu tlačítka se objeví při pohybu myší z jednoho popisku přidruženého ovládacího prvku do jiného. <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> Vlastnost určuje dobu, se zobrazí řetězec popisku. Tyto hodnoty lze nastavit samostatně, nebo nastavením hodnoty <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost; ostatní vlastnosti jsou nastavené na hodnotu přiřazenou základě zpoždění <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost. Například, když <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> je nastavená na hodnotu N, <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> je nastaven na N, <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> je nastaven na hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> rozdělený podle pět (nebo N/5), a <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> nastavena na hodnotu, která je pětkrát hodnota <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost (nebo 5N).  

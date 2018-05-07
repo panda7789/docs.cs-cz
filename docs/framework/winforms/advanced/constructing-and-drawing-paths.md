@@ -1,13 +1,6 @@
 ---
-title: "Sestavování a kreslení cest"
-ms.custom: 
+title: Sestavování a kreslení cest
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - paths [Windows Forms], drawing
 - drawing paths [Windows Forms]
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - graphics paths [Windows Forms], drawing
 - examples [Windows Forms], drawing paths
 ms.assetid: f16ec921-56cf-46d1-9741-d7316ad06b23
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e6cec2356159b59e58ac6785a2988df7b2fac0e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 120bb3edcf8e35feca37f02dda5148ba4eebd0ea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="constructing-and-drawing-paths"></a>Sestavování a kreslení cest
 Cestu je posloupnost primitiv grafiky (řádky, obdélníky, křivek, text a podobně), které je možné s nimi manipulovat a vykreslovat jako na jednu jednotku. Cestu je možné rozdělit do *obrázky* které jsou otevřené nebo uzavřený. Obrázku může obsahovat několik primitiv.  

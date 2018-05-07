@@ -1,33 +1,19 @@
 ---
 title: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b1f17a5c21888a9fc778d9649f62478d43ba0e86
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 823a59f53823a2480655c4f8720504dd4199d0bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
 Rezervaci adresy URL můžete omezit, kdo může přijímat zprávy z adresy URL nebo sadu adres URL. Rezervace se skládá z šablony adresu URL, seznam řízení přístupu (ACL) a sadu příznaků. Adresa URL Šablona definuje adresy URL, které ovlivňuje rezervace. Další informace o způsobu zpracování adresy URL šablony najdete v tématu [směrování příchozích požadavků](http://go.microsoft.com/fwlink/?LinkId=136764). Seznam řízení přístupu řídí, jaké uživatel nebo skupina uživatelů je povoleno přijímat zprávy ze zadaných adres URL. V příznacích označuje, zda rezervace udělit oprávnění uživatele nebo skupinu tak, aby naslouchala na adresu URL přímo, nebo chcete delegovat oprávnění pro naslouchání na jiný proces.  
   
- Jako součást výchozí konfigurace operačního systému [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vytvoří rezervace globálně přístupné pro port 80 povolit všem uživatelům spouštět aplikace, které používají duální vazby HTTP pro duplexní komunikace. Vzhledem k tomu, že seznam řízení přístupu na tuto rezervaci je pro všechny uživatele, správci nelze explicitně povolí nebo zakáže oprávnění tak, aby naslouchala na adresu URL nebo sadu adres URL. Toto téma vysvětluje, jak odstranit tuto rezervaci a jak znovu vytvořit rezervaci s seznam ACL pro s omezeným přístupem.  
+ Jako součást výchozí konfigurace operačního systému Windows Communication Foundation (WCF) vytvoří rezervace globálně přístupné pro port 80 povolit všem uživatelům spouštět aplikace, které používají duální vazby HTTP pro duplexní komunikace. Vzhledem k tomu, že seznam řízení přístupu na tuto rezervaci je pro všechny uživatele, správci nelze explicitně povolí nebo zakáže oprávnění tak, aby naslouchala na adresu URL nebo sadu adres URL. Toto téma vysvětluje, jak odstranit tuto rezervaci a jak znovu vytvořit rezervaci s seznam ACL pro s omezeným přístupem.  
   
- Na [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)] můžete zobrazit všechny rezervace adresy URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními zadáním `netsh http show urlacl`.  Následující příklad ukazuje, jaké [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] by měla vypadat přibližně rezervaci adresy URL.  
+ Na [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)] můžete zobrazit všechny rezervace adresy URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními zadáním `netsh http show urlacl`.  Následující příklad ukazuje, co by měl vypadat rezervaci adresy URL WCF.  
   
 ```  
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
@@ -37,7 +23,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
             SDDL: D:(A;;GX;;;WD)  
 ```  
   
- Rezervace se skládá z adresy URL použije šablona, kdy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace používá dva vazbu HTTP pro duplexní komunikace. Adresy URL tento formulář slouží k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu pro odeslání zprávy zpět do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta při komunikaci přes duální vazbu protokolu HTTP. Všichni uděleno oprávnění tak, aby naslouchala na adresu URL, ale ne na delegovat naslouchání jiný proces. Nakonec seznamu ACL je popsána v zabezpečení popisovač Definition Language (SSDL). Další informace o SSDL najdete v tématu [SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)  
+ Rezervace se skládá z adresy URL šablonu pro aplikace WCF je používání duální vazbu HTTP pro duplexní komunikace. Služby WCF používají URL adresy tohoto formuláře pro odeslání zprávy zpět do klienta WCF při komunikaci přes duální vazbu protokolu HTTP. Všichni uděleno oprávnění tak, aby naslouchala na adresu URL, ale ne na delegovat naslouchání jiný proces. Nakonec seznamu ACL je popsána v zabezpečení popisovač Definition Language (SSDL). Další informace o SSDL najdete v tématu [SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)  
   
 ### <a name="to-delete-the-wcf-url-reservation"></a>Odstranit rezervaci adresy URL WCF  
   
@@ -48,7 +34,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
 3.  Pokud rezervace byla úspěšně odstraněna, zobrazí se následující zpráva. **Rezervaci adresy URL se úspěšně odstranil**  
   
 ## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a>Vytvoření nové skupiny zabezpečení a novou rezervaci adresy URL s omezeným přístupem  
- Chcete-li nahradit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rezervaci adresy URL omezenou rezervací musí nejprve vytvoříte novou skupinu zabezpečení. Provedete to jedním ze dvou způsobů: z příkazového řádku nebo z konzoly Správa počítače. Můžete mít pouze pro jednu.  
+ Chcete-li nahradit rezervaci adresy URL WCF omezenou rezervací musí nejprve vytvořit novou skupinu zabezpečení. Provedete to jedním ze dvou způsobů: z příkazového řádku nebo z konzoly Správa počítače. Můžete mít pouze pro jednu.  
   
 #### <a name="to-create-a-new-security-group-from-a-command-prompt"></a>Chcete-li vytvořit novou skupinu zabezpečení z příkazového řádku  
   

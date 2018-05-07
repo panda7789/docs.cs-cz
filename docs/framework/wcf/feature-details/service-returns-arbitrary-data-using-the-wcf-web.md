@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF"
-ms.custom: 
+title: 'Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 829e9f2bcf909bee41f53b4b7cabbb0803e77963
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 763d62750380f025ae369e1e917b46d4e51874e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF
-Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služby. To je případ, kdy operace služby musí vrátit data ve formátu, které nepodporují [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Toto téma popisuje použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webové HTTP programovací Model pro vytvoření těchto služeb. Tato služba obsahuje jednu operaci, která vrací datový proud.  
+Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služby. To je případ, kdy operace služby musí vrátit data ve formátu, není podporován službou WCF. Toto téma popisuje použití WCF WEB HTTP programovací Model k vytvoření těchto služeb. Tato služba obsahuje jednu operaci, která vrací datový proud.  
   
 ### <a name="to-implement-the-service-contract"></a>K implementaci kontraktu služby  
   
@@ -36,7 +24,7 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
         }  
     ```  
   
-     Vzhledem k tomu, že metoda vrátí <xref:System.IO.Stream>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] předpokládá, že operace má plnou kontrolu nad bajtů, které jsou vráceny z operace služby a se vztahuje na data, která je vrácena žádná formátování.  
+     Vzhledem k tomu, že metoda vrátí <xref:System.IO.Stream>, WCF předpokládá, že operace má plnou kontrolu nad bajtů, které jsou vráceny z operace služby, které se použijí bez formátování data, která je vrácena.  
   
 2.  Implementujte kontrakt služby. Smlouva obsahuje pouze jednu operaci (`GetImage`). Tato metoda generuje rastrový obrázek a pak ho uložit pro <xref:System.IO.MemoryStream> ve formátu .jpg. Operaci poté vrátí tohoto datového proudu volajícímu.  
   
@@ -62,7 +50,7 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
        }  
     ```  
   
-     Všimněte si, druhý poslední řádek kódu:`WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
+     Všimněte si, druhý poslední řádek kódu: `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
   
      Toto nastaví záhlaví typu obsahu `"image/jpeg"`. I když tento příklad ukazuje, jak vracet souboru JPG, ho můžete upravit tak, aby vracet libovolný typ dat, která je požadováno, v libovolném formátu. Operaci musí načíst nebo budou data generovat a zapisovat do datového proudu.  
   

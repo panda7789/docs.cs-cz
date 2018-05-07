@@ -1,26 +1,17 @@
 ---
 title: 'Postupy: Definice struktury (Visual Basic)'
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - declarations [Visual Basic], structures
 - structure statements [Visual Basic]
 - statements [Visual Basic], structure
 - structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8203327e189d095c9f7ceeb3b68ea24efe9ba882
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6128addd60609bfc88a1409648fb320bc7089974
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Postupy: Definice struktury (Visual Basic)
 Zahájit deklarace struktury s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md), a její `End` `Structure` příkaz. Mezi tyto dva příkazy, musí deklarovat alespoň jeden *element*. Elementy mohou být jakéhokoli typu dat, ale alespoň jeden musí být na sdíleném proměnnou nebo sdíleném, nevlastní událostí.  
@@ -69,8 +60,8 @@ Zahájit deklarace struktury s [Structure – příkaz](../../../../visual-basic
  [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Řešení potíží s datové typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [Proměnné struktury](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)  
  [Struktury a ostatní programovací elementy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
- [Třídy a struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [Struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
  [Uživatelský datový typ](../../../../visual-basic/language-reference/data-types/user-defined-data-type.md)

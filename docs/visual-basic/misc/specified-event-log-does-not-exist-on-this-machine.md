@@ -1,18 +1,12 @@
 ---
-title: "Zadaný protokol událostí v tomto počítači neexistuje."
+title: Zadaný protokol událostí v tomto počítači neexistuje.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 974a23e7-37ea-4de2-b282-4cf46600694f
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9f74b41f124797c52b5dd44f2da963b6547c22b6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9e45904d4f2f07403e3ca542c4adffc5db5dd2c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specified-event-log-does-not-exist-on-this-machine"></a>Zadaný protokol událostí v tomto počítači neexistuje.
 Byl proveden pokus o přístup k protokolu událostí, která na tomto počítači neexistuje.  

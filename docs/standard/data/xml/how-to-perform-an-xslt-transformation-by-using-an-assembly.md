@@ -1,29 +1,18 @@
 ---
-title: "Postup: provedení transformace XSLT pomocí sestavení"
-ms.custom: 
+title: 'Postup: provedení transformace XSLT pomocí sestavení'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
-caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d14c4338290856c09ca1d23ec6acc895450f83ea
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d8f29b1274e6e8436aed0dfb698ede4864a15417
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postup: provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metoda.  
@@ -189,7 +178,7 @@ xslt.Load(typeof(Transform))
 xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
 ```  
   
- v příkladu nahoře. Další informace o metodě Assembly.Load najdete v tématu<xref:System.Reflection.Assembly.Load%2A>  
+ v příkladu nahoře. Další informace o metodě Assembly.Load najdete v tématu <xref:System.Reflection.Assembly.Load%2A>  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Xsl.XslCompiledTransform>  

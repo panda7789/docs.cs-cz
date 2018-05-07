@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Kopírování ToolStripMenuItems"
-ms.custom: 
+title: 'Postupy: Kopírování ToolStripMenuItems'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - menu items [Windows Forms], copying and pasting
 - MenuStrip control [Windows Forms], arranging items
 - ToolStripMenuItems [Windows Forms], copying and pasting
 ms.assetid: 17ef4207-e92e-4db2-b648-27246e6517ad
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f83c1c86539d61ab1b7539bfc92b676773188774
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 238516f18037a75b1d254d95086e22a970fadf09
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-copy-toolstripmenuitems"></a>Postupy: Kopírování ToolStripMenuItems
 V době návrhu, můžete zkopírovat celý nabídek nejvyšší úrovně a jejich položky podnabídky na jiné místo, na <xref:System.Windows.Forms.MenuStrip>. Můžete také zkopírovat jednotlivé položky nabídky mezi nejvyšší úrovně nabídky nebo změní pozici položek nabídky v rámci nabídky.  

@@ -4,15 +4,11 @@ description: Další informace o Windows Pack kompatibility a jak můžete ji po
 author: terrajobst
 ms.author: mairaw
 ms.date: 11/13/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 4ef7d9c847d48ae7bbb2d553b1c05cb90a1c5a7a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6b25a2d5c197a6c9b0a7ead18370870ddc091e1c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-windows-compatibility-pack"></a>Pomocí balíčku Windows kompatibility
 

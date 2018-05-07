@@ -1,22 +1,12 @@
 ---
-title: "Odložené provedení příklad (Visual Basic)"
-ms.custom: 
+title: Odložené provedení příklad (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a4d2146901d9282b0df706b483afef79f714f660
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a9827b73ebc0df589a14032d99b32d1e1bc891ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deferred-execution-example-visual-basic"></a>Odložené provedení příklad (Visual Basic)
 Toto téma ukazuje, jak odložené provedení a opožděné vyhodnocení ovlivnit provádění vaší technologie LINQ to XML dotazy.  

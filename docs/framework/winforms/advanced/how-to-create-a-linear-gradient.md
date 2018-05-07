@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vytvoření lineárního přechodu"
-ms.custom: 
+title: 'Postupy: Vytvoření lineárního přechodu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - colors [Windows Forms], creating linear gradients
 - gradients
 ms.assetid: 6c88e1cc-1217-4399-ac12-cb37592b9f01
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 33979decf37e9adb29d94a6602a43f992d93aaa1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9eeedf1ef92bdf6e5e2724eeca5060765b0778f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-linear-gradient"></a>Postupy: Vytvoření lineárního přechodu
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]poskytuje vodorovné, svislé a diagonálních lineární přechody. Ve výchozím nastavení změní barvu v lineárního přechodu jednotně. Lineárního přechodu však můžete přizpůsobit tak, že změní barvu způsobem neuniformní.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje vodorovné, svislé a diagonálních lineární přechody. Ve výchozím nastavení změní barvu v lineárního přechodu jednotně. Lineárního přechodu však můžete přizpůsobit tak, že změní barvu způsobem neuniformní.  
   
  Následující příklad doplní řádku, třemi tečkami a obdélníku štětcem vodorovné lineárního přechodu.  
   
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
  V předchozím příkladu komponenty barvu změnit lineárně jako přesunout z vodorovné souřadnice 0 vodorovné souřadnice 200. Například bod, jehož první souřadnice je uprostřed mezi 0 a 200 bude mít blue komponenty, která je uprostřed mezi 0 a 255.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]Umožňuje upravit způsob, jakým barvu, která se liší od jeden okraj přechodu na druhý. Předpokládejme, že chcete vytvořit štětce přechodu, který změní z černé na červený podle následující tabulky.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Umožňuje upravit způsob, jakým barvu, která se liší od jeden okraj přechodu na druhý. Předpokládejme, že chcete vytvořit štětce přechodu, který změní z černé na červený podle následující tabulky.  
   
 |Vodorovné souřadnice|RGB součásti|  
 |---------------------------|--------------------|  

@@ -1,13 +1,7 @@
 ---
-title: "Přehled časových pásem"
-ms.custom: 
+title: Přehled časových pásem
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - time zones [.NET Framework], about time zones
 - transition time [.NET Framework]
@@ -21,18 +15,13 @@ helpviewer_keywords:
 - adjustment rule [.NET Framework]
 - time zones [.NET Framework], terminology
 ms.assetid: c4b7ed01-5e38-4959-a3b6-ef9765d6ccf1
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e93eee00983bc2ff1c466b1240629f1193358e96
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 85483e4319b56c0df150558ce6c6a3878a6fa041
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="time-zone-overview"></a>Přehled časových pásem
 

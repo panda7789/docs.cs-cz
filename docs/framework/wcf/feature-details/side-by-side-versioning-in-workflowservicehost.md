@@ -1,27 +1,15 @@
 ---
-title: "Práce s víc verzemi současně ve třídě WorkflowServiceHost"
-ms.custom: 
+title: Práce s víc verzemi současně ve třídě WorkflowServiceHost
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: db8f79fcdc1398b891933f5fef9f07410e5de11e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c2329fe69941341dff1536b213ca4f1b961889a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Práce s víc verzemi současně ve třídě WorkflowServiceHost
 <xref:System.ServiceModel.Activities.WorkflowServiceHost> Vedle sebe verze byla zavedená v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] poskytuje možnosti pro hostování více verzí služby pracovních postupů na jeden koncový bod. Souběžně sdílená funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu se vytvářejí pomocí nové definice pracovního postupu, při spuštění instance dokončení pomocí stávající definici pracovního postupu služby. Toto téma obsahuje přehled používání vedle sebe spuštění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
@@ -30,10 +18,10 @@ ms.lasthandoff: 12/22/2017
 >  Stáhněte si ukázku a podívejte se video s návodem verze vedle sebe služby pracovního postupu najdete v tématu [vedle sebe Správa verzí pomocí služby pracovních postupů Xamlx Web-Hosted](http://go.microsoft.com/fwlink/?LinkId=393746).  
   
 ## <a name="hosting-multiple-versions-in-a-workflow-service"></a>Hostování více verzí v služby pracovních postupů  
- <xref:System.ServiceModel.Activities.WorkflowServiceHost>obsahuje dvě vlastnosti, které můžete nakonfigurovat tak, aby více verzí pracovní postup provést vedle sebe: <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> a <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>. <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A>obsahuje podporovaných verzích služby pracovního postupu a <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> slouží k jednoznačné identifikaci jednotlivých služby pracovního postupu. K tomu je potřeba přidružení <xref:System.Activities.WorkflowIdentity> službou pracovního postupu. A <xref:System.Activities.WorkflowIdentity> obsahuje tři identifikační údaje. <xref:System.Activities.WorkflowIdentity.Name%2A>a <xref:System.Activities.WorkflowIdentity.Version%2A> obsahovat název a <xref:System.Version> a jsou povinné, a <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a může sloužit k určení požadovaných další řetězec obsahující informace, jako je název sestavení nebo jiné informace. Každý služby pracovního postupu, který je součástí <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> kolekce musí mít jedinečnou <xref:System.Activities.WorkflowIdentity>. A <xref:System.Activities.WorkflowIdentity> je jedinečný, pokud jsou některé jeho vlastnosti tři liší od jiného <xref:System.Activities.WorkflowIdentity>. A `null` <xref:System.Activities.WorkflowIdentity> je povolená hodnota pro <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>, ale mohou mít pouze jeden předchozí verzi služby pracovního postupu `null` <xref:System.Activities.WorkflowIdentity>.  
+ <xref:System.ServiceModel.Activities.WorkflowServiceHost> obsahuje dvě vlastnosti, které můžete nakonfigurovat tak, aby více verzí pracovní postup provést vedle sebe: <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> a <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>. <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> obsahuje podporovaných verzích služby pracovního postupu a <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> slouží k jednoznačné identifikaci jednotlivých služby pracovního postupu. K tomu je potřeba přidružení <xref:System.Activities.WorkflowIdentity> službou pracovního postupu. A <xref:System.Activities.WorkflowIdentity> obsahuje tři identifikační údaje. <xref:System.Activities.WorkflowIdentity.Name%2A> a <xref:System.Activities.WorkflowIdentity.Version%2A> obsahovat název a <xref:System.Version> a jsou povinné, a <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a může sloužit k určení požadovaných další řetězec obsahující informace, jako je název sestavení nebo jiné informace. Každý služby pracovního postupu, který je součástí <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> kolekce musí mít jedinečnou <xref:System.Activities.WorkflowIdentity>. A <xref:System.Activities.WorkflowIdentity> je jedinečný, pokud jsou některé jeho vlastnosti tři liší od jiného <xref:System.Activities.WorkflowIdentity>. A `null` <xref:System.Activities.WorkflowIdentity> je povolená hodnota pro <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>, ale mohou mít pouze jeden předchozí verzi služby pracovního postupu `null` <xref:System.Activities.WorkflowIdentity>.  
   
 > [!IMPORTANT]
->  A <xref:System.Activities.WorkflowIdentity> nesmí obsahovat žádné identifikovatelné osobní údaje (PII). <xref:System.Activities.WorkflowIdentity>se skládá ze tří částí: <xref:System.Activities.WorkflowIdentity.Name%2A> (<xref:System.String>), <xref:System.Activities.WorkflowIdentity.Version%2A> (<xref:System.Version>) a <xref:System.Activities.WorkflowIdentity.Package%2A> (<xref:System.String>). Informace o <xref:System.Activities.WorkflowIdentity> použít k vytvoření instance je pro všechny nakonfigurované sledování životního cyklu služeb v několika různých místech aktivity vygenerované modulem runtime. WF sledování nemá žádný mechanismus skrýt PII (citlivé uživatelských dat). Proto <xref:System.Activities.WorkflowIdentity> instance nesmí obsahovat žádná data PII tak, jak bude vygenerované modulem runtime v sledování záznamů a mohou být viditelná pro každý, kdo má přístup k zobrazení záznamů sledování.  
+>  A <xref:System.Activities.WorkflowIdentity> nesmí obsahovat žádné identifikovatelné osobní údaje (PII). <xref:System.Activities.WorkflowIdentity> se skládá ze tří částí: <xref:System.Activities.WorkflowIdentity.Name%2A> (<xref:System.String>), <xref:System.Activities.WorkflowIdentity.Version%2A> (<xref:System.Version>) a <xref:System.Activities.WorkflowIdentity.Package%2A> (<xref:System.String>). Informace o <xref:System.Activities.WorkflowIdentity> použít k vytvoření instance je pro všechny nakonfigurované sledování životního cyklu služeb v několika různých místech aktivity vygenerované modulem runtime. WF sledování nemá žádný mechanismus skrýt PII (citlivé uživatelských dat). Proto <xref:System.Activities.WorkflowIdentity> instance nesmí obsahovat žádná data PII tak, jak bude vygenerované modulem runtime v sledování záznamů a mohou být viditelná pro každý, kdo má přístup k zobrazení záznamů sledování.  
   
 ### <a name="rules-for-hosting-multiple-versions-of-a-workflow-service"></a>Pravidla pro hostování více verzí služby pracovních postupů  
  Pokud uživatel přidá další verzi <xref:System.ServiceModel.Activities.WorkflowServiceHost>, existuje několik podmínek, které je nutné splnit, aby služby pracovního postupu pro hostování se stejnou sadu koncových bodů a popis. Pokud některý z dalších verzí selže ke splnění těchto podmínek <xref:System.ServiceModel.Activities.WorkflowServiceHost> vyvolá výjimku při `Open` je volána. Každý zadaná hostitele jako další verze definice pracovního postupu musí splňovat následující požadavky (kde primární verze je definice služby pracovního postupu, který je zadán pro konstruktor hostitele). Musí být verze další pracovního postupu:  
@@ -55,7 +43,7 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.ServiceModel.Activities.WorkflowService.ImplementedContracts%2A> Může být jiný než primární verze.  
   
 ### <a name="configuring-the-definitionidentity"></a>Konfigurace DefinitionIdentity  
- Při vytvoření služby pracovních postupů pomocí návrháře pracovních postupů <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> se nastavuje pomocí **vlastnosti** okno. Klikněte na tlačítko mimo služby kořenové aktivity v Návrháři vyberte služby pracovního postupu, a vyberte **vlastnosti – okno** z **zobrazení** nabídky. Vyberte **WorkflowIdentity** ze seznamu rozevíracího seznamu, který se zobrazí vedle **DefinitionIdentity** vlastnost a potom rozbalte položku a zadejte požadovanou <xref:System.Activities.WorkflowIdentity> vlastnosti. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> nastavena <xref:System.Activities.WorkflowIdentity.Name%2A> `MortgageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `1.0.0.0`. <xref:System.Activities.WorkflowIdentity.Package%2A>je volitelný a v tomto příkladu je `null`.  
+ Při vytvoření služby pracovních postupů pomocí návrháře pracovních postupů <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> se nastavuje pomocí **vlastnosti** okno. Klikněte na tlačítko mimo služby kořenové aktivity v Návrháři vyberte služby pracovního postupu, a vyberte **vlastnosti – okno** z **zobrazení** nabídky. Vyberte **WorkflowIdentity** ze seznamu rozevíracího seznamu, který se zobrazí vedle **DefinitionIdentity** vlastnost a potom rozbalte položku a zadejte požadovanou <xref:System.Activities.WorkflowIdentity> vlastnosti. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> nastavena <xref:System.Activities.WorkflowIdentity.Name%2A> `MortgageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `1.0.0.0`. <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a v tomto příkladu je `null`.  
   
  ![DefinitionIdentity](../../../../docs/framework/wcf/feature-details/media/workflowservicedefinitionidentityv1.bmp "WorkflowServiceDefinitionIdentityv1")  
   

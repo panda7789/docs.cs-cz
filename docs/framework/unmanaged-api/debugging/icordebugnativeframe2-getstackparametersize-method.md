@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugNativeFrame2::GetStackParameterSize – metoda"
-ms.custom: 
+title: ICorDebugNativeFrame2::GetStackParameterSize – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugNativeFrame2.GetStackParameterSize Method
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: f6a449c8-a941-43ba-9a90-c98b29ae3c36
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fa7e67c252f2ece16c072e22d0333e085fbc4f65
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 76ff2e502859bff27ee29a280e0d247ca1bbf1e1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugnativeframe2getstackparametersize-method"></a>ICorDebugNativeFrame2::GetStackParameterSize – metoda
 Vrátí celková velikost všech parametrů v zásobníku na x86 operační systémy.  
@@ -54,9 +42,9 @@ HRESULT GetStackParameterSize([out] ULONG32 * pSize)
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Velikost zásobníku byl byla úspěšně vrácena.|  
-|S_FALSE|`GetStackParameterSize`na platformě není x86 byla volána.|  
+|S_FALSE|`GetStackParameterSize` na platformě není x86 byla volána.|  
 |E_FAIL|`The size of the parameters could not be returned`.|  
-|E_INVALIDARG|`pSize`Je `null`.|  
+|E_INVALIDARG|`pSize` je `null`.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
@@ -70,7 +58,7 @@ HRESULT GetStackParameterSize([out] ULONG32 * pSize)
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  [ICorDebugNativeFrame2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-interface.md)  

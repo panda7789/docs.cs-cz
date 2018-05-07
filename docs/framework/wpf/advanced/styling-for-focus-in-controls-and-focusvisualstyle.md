@@ -1,31 +1,19 @@
 ---
-title: "Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle"
-ms.custom: 
+title: Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - keyboard focus [WPF]
 - focus [WPF], visual styling
 - styles [WPF], focus visual style
 ms.assetid: 786ac576-011b-4d72-913b-558deccb9b35
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4d29fda788aa4ec79ad4278beefa16ee14208832
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c73c8bbfcf7631094ddf89641de9af38f86f88e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a>Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje dvě paralelní mechanismy pro změnu vzhled ovládacího prvku, když obdrží fokus klávesnice. První mechanizmus se pomocí nastavením vlastností pro vlastnosti, jako například <xref:System.Windows.UIElement.IsKeyboardFocused%2A> v rámci styl nebo šabloně, která se použije k ovládacímu prvku. Druhý mechanismus je poskytnout samostatné styl jako hodnotu <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost; "zaměřit vizuální styl" vytvoří samostatné vizuálním stromu pro adorner, který se vykreslí nad ovládacího prvku, nemusíte měnit vizuálním stromu ovládací prvek nebo jiných uživatelského rozhraní Element nahrazením ho. Toto téma popisuje scénáře, kde každý z těchto mechanismů je vhodné.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje dvě paralelní mechanismy pro změnu vzhled ovládacího prvku, když obdrží fokus klávesnice. První mechanizmus se pomocí nastavením vlastností pro vlastnosti, jako například <xref:System.Windows.UIElement.IsKeyboardFocused%2A> v rámci styl nebo šabloně, která se použije k ovládacímu prvku. Druhý mechanismus je poskytnout samostatné styl jako hodnotu <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost; "zaměřit vizuální styl" vytvoří samostatné vizuálním stromu pro adorner, který se vykreslí nad ovládacího prvku, nemusíte měnit vizuálním stromu ovládací prvek nebo jiných uživatelského rozhraní Element nahrazením ho. Toto téma popisuje scénáře, kde každý z těchto mechanismů je vhodné.  
    
   
 <a name="Purpose"></a>   

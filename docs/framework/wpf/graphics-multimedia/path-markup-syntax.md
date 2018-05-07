@@ -1,31 +1,17 @@
 ---
 title: Syntaxe značek cesty
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attribute usage in XAML [WPF]
 - XAML [WPF], attribute usage
 - graphics [WPF], PathGeometry class
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9cd8f9b14f114060ebec8e336c1212d61fa19c83
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 86901f357c43dc7c0c1402bf313e674603eaccbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="path-markup-syntax"></a>Syntaxe značek cesty
 Cesty, které jsou popsané v [tvarů a základní kreslení v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md) a [geometrie přehled](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md), ale toto téma popisuje podrobně výkonná a komplexní jazyk malý můžete zadat cestu geometrie více kompaktně pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -60,13 +46,13 @@ Cesty, které jsou popsané v [tvarů a základní kreslení v přehledu WPF](..
   
 |Použití atributu StreamGeometry XAML|  
 |-----------------------------------------|  
-|`<` *object* *property* `="`[ `fillRule`] `figureDescription`[ `figureDescription`]* `" ... />`|  
+|`<` *objekt* *vlastnost* `="`[ `fillRule`] `figureDescription`[ `figureDescription`] * `" ... />`|  
   
  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Atribut použití syntaxe <xref:System.Windows.Media.PathFigureCollection> se skládá z jednoho nebo více popisy obrázek.  
   
 |Použití atributu PathFigureCollection XAML|  
 |-----------------------------------------------|  
-|`<` *object* *property* `="` `figureDescription`[ `figureDescription`]* `" ... />`|  
+|`<` *objekt* *vlastnost* `="` `figureDescription`[ `figureDescription`] * `" ... />`|  
   
 |Termín|Popis|  
 |----------|-----------------|  
@@ -101,11 +87,11 @@ Cesty, které jsou popsané v [tvarů a základní kreslení v přehledu WPF](..
   
 |Syntaxe|  
 |------------|  
-|`L` *endPoint*<br /><br /> - nebo -<br /><br /> `l` *endPoint*|  
+|`L` *koncový bod*<br /><br /> - nebo -<br /><br /> `l` *koncový bod*|  
   
 |Termín|Popis|  
 |----------|-----------------|  
-|*endPoint*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Koncový bod řádku.|  
+|*koncový bod*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Koncový bod řádku.|  
 
 Velká `L` znamená, že `endPoint` jako absolutní hodnota; jedno malé písmeno `l` znamená, že `endPoint` je posun předchozího bodu nebo (0,0), pokud žádný neexistuje.
 

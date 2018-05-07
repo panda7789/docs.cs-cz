@@ -1,11 +1,6 @@
 ---
-title: "Of – klauzule (Visual Basic)"
+title: Of – klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - Of
 - vb.Of
@@ -22,14 +17,11 @@ helpviewer_keywords:
 - type parameters
 - data type arguments
 ms.assetid: 0db8f65c-65af-4089-ab7f-6fcfecb60444
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5ef3ac4ac88727b1dcae50fa14abde03f29a16fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9ace0ad55d9eb1618dbdafb0d49d1ff4b169a877
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="of-clause-visual-basic"></a>Of – klauzule (Visual Basic)
 Zavádí `Of` klauzuli, která identifikuje *parametr typu* na *Obecné* třídy, struktury, rozhraní, delegát nebo postupu. Informace v obecných typech najdete v tématu [obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
@@ -51,7 +43,7 @@ End Class
   
  Pokud dokončíte předchozí definice třídy, můžete vytvořit různé `dictionary` třídy z něj. Typy zadáte do `entryType` a `keyType` určit, jaký typ položky obsahuje třídy a jaký typ klíče přidruží každou položku. Z důvodu omezení, je nutné zadat na `keyType` typ, který implementuje <xref:System.IComparable>.  
   
- Následující příklad kódu vytvoří objekt, který obsahuje `String` položky a známými `Integer` klíč s každé z nich. `Integer`implementuje <xref:System.IComparable> a proto splňovat omezení na `keyType`.  
+ Následující příklad kódu vytvoří objekt, který obsahuje `String` položky a známými `Integer` klíč s každé z nich. `Integer` implementuje <xref:System.IComparable> a proto splňovat omezení na `keyType`.  
   
 ```  
 Dim d As New dictionary(Of String, Integer)  
@@ -59,21 +51,21 @@ Dim d As New dictionary(Of String, Integer)
   
  `Of` – Klíčové slovo lze použít v těchto kontexty:  
   
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IComparable>  
  [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
- [Na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+ [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

@@ -1,29 +1,18 @@
 ---
-title: "Kryptografický model rozhraní .NET framework"
-ms.custom: 
+title: Kryptografický model rozhraní .NET framework
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 842ebbe9104463a3c75f01f41a4fe5953b95303d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ced7ed2cb8d3ae3bb24211c6e7dafd1744fb9559
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-cryptography-model"></a>Kryptografický model rozhraní .NET framework
 Rozhraní .NET Framework poskytuje implementace mnoho standardní kryptografických algoritmů. Tyto algoritmy jsou snadno použitelné a mají nejbezpečnější možné výchozí vlastnosti. Kromě toho je velmi extensible Kryptografický model rozhraní .NET Framework objekt dědičnosti, datový proud návrh a konfigurace.  
@@ -52,7 +41,7 @@ Rozhraní .NET Framework poskytuje implementace mnoho standardní kryptografick�
   
 5.  <xref:System.Security.Cryptography.TripleDES>  
   
- <xref:System.Security.Cryptography.Aes>zdědí dvě třídy: <xref:System.Security.Cryptography.AesCryptoServiceProvider> a <xref:System.Security.Cryptography.AesManaged>. <xref:System.Security.Cryptography.AesCryptoServiceProvider> Třída je obálku kolem implementace rozhraní API kryptografie systému Windows (CAPI) Aes, zatímco <xref:System.Security.Cryptography.AesManaged> třída je zapsán zcela ve spravovaném kódu. Je také třetí typ implementace Cryptography Next Generation (CNG), v CAPI implementace a přidání do spravovaný. Je například algoritmus CNG <xref:System.Security.Cryptography.ECDiffieHellmanCng>. CNG algoritmy jsou k dispozici v systému Windows Vista nebo novější.  
+ <xref:System.Security.Cryptography.Aes> zdědí dvě třídy: <xref:System.Security.Cryptography.AesCryptoServiceProvider> a <xref:System.Security.Cryptography.AesManaged>. <xref:System.Security.Cryptography.AesCryptoServiceProvider> Třída je obálku kolem implementace rozhraní API kryptografie systému Windows (CAPI) Aes, zatímco <xref:System.Security.Cryptography.AesManaged> třída je zapsán zcela ve spravovaném kódu. Je také třetí typ implementace Cryptography Next Generation (CNG), v CAPI implementace a přidání do spravovaný. Je například algoritmus CNG <xref:System.Security.Cryptography.ECDiffieHellmanCng>. CNG algoritmy jsou k dispozici v systému Windows Vista nebo novější.  
   
  Můžete zvolit, které implementace je pro vás nejvhodnější.  Spravované implementace jsou k dispozici na všech platformách, které podporují rozhraní .NET Framework.  Implementace CAPI jsou dostupné ve starších operačních systémech a jsou už vyvíjených. CNG je velmi nejnovější implementace, kde bude probíhat vývoj nových. Spravované implementace však nejsou certifikovány podle na zpracování standardů FIPS (Federal Information) a může být pomalejší než obálkové třídy.  
   

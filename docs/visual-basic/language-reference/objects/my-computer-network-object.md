@@ -1,22 +1,14 @@
 ---
-title: "My.Computer.Network – objekt"
+title: My.Computer.Network – objekt
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - My.Computer.Network object
 ms.assetid: 94ddbade-aff1-42f8-a6c8-88b78c28c0db
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 19b9d2c81aee1428a66959e421ca7be536e541ab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 542d4af063e48314982f8e3a5c4e265a5ef4166d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mycomputernetwork-object"></a>My.Computer.Network – objekt
 Poskytuje vlastnosti, události a metody pro interakci s sítě, ke které je připojený počítač.  
@@ -27,11 +19,11 @@ Poskytuje vlastnosti, události a metody pro interakci s sítě, ke které je p�
  Další informace najdete v tématu [provádění síťových operací](../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:**<xref:Microsoft.VisualBasic.Devices?displayProperty=nameWithType>  
+ **Namespace:** <xref:Microsoft.VisualBasic.Devices?displayProperty=nameWithType>  
   
- **Třída:**<xref:Microsoft.VisualBasic.Devices.Network>  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Network>  
   
  **Sestavení:** jazyka Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také  
- [My.Computer – objekt](../../../visual-basic/language-reference/objects/my-computer-object.md)
+ [Objekt My.Computer](../../../visual-basic/language-reference/objects/my-computer-object.md)

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: určení, zda je na stránce hostované prohlížečem"
-ms.custom: 
+title: 'Postupy: určení, zda je na stránce hostované prohlížečem'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - hosted pages in browser [WPF]
 - pages [WPF], hosted in browser
 ms.assetid: 737e0f26-8371-49b4-9579-70879e51e1aa
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dd8a8b8c3bea291afbe41e0c36e0d708bff3ef57
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6eb83429cb4f9dac5f3561b41997d24bcaa2c62f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-if-a-page-is-browser-hosted"></a>Postupy: určení, zda je na stránce hostované prohlížečem
 Tento příklad ukazuje, jak zjistit, jestli <xref:System.Windows.Controls.Page> je hostovaná v prohlížeči.  

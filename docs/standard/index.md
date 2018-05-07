@@ -1,23 +1,16 @@
 ---
 title: Příručka pro platformu .NET
 description: Další informace o platformě .NET.
-keywords: Rozhraní .NET, .NET core
 author: cartermp
 ms.author: ronpet
 ms.date: 05/02/2017
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e363eac2c26e51ccd880227fe56c619f8c39aea3
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 26c3d58a9a0c62d45a6cd8298746ca09be4d372c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 

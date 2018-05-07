@@ -1,22 +1,12 @@
 ---
-title: "Klasifikace standardních operátorů dotazu podle metody provedení (Visual Basic)"
-ms.custom: 
+title: Klasifikace standardních operátorů dotazu podle metody provedení (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7f55b0be-9f6e-44f8-865c-6afbea50cc54
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 553a638cdaaebeaa5ab21850250b2d70536f557c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c1f97c4c1fcd081ccce985e1adbca9c6634843b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Klasifikace standardních operátorů dotazu podle metody provedení (Visual Basic)
 LINQ na objekty implementace metod operátor standardní dotaz spustit v jednom ze dvou způsobů hlavní: okamžitou nebo odloženě. Operátory dotazu, které používají odložené provedení lze dále rozdělit do dvou kategorií: streamování a bez vysílání datového proudu. Pokud víte, jak provést operátory různých dotazu, se vám mohou pomoci porozumět výsledky, které můžete získat z daný dotaz. To platí hlavně pokud zdroj dat se mění, nebo pokud vytváříte dotazu nad další dotaz. Toto téma klasifikuje standardních operátorů dotazu podle metody jejich provedení.  

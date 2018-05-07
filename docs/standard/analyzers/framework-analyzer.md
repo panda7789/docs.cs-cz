@@ -1,19 +1,15 @@
 ---
-title: "Rozhraní .NET zabezpečení analyzátorů - rozhraní .NET"
-description: "Další informace o použití analyzátorů zabezpečení rozhraní .NET v rozhraní .NET Framework analyzátorů balíčku můžete najít a řešit rizika zabezpečení"
-keywords: "Rozhraní .NET, .NET core"
+title: Rozhraní .NET zabezpečení analyzátorů - rozhraní .NET
+description: Další informace o použití analyzátorů zabezpečení rozhraní .NET v rozhraní .NET Framework analyzátorů balíčku můžete najít a řešit rizika zabezpečení
 author: billwagner
 ms.author: billwagner
 ms.date: 01/25/2018
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.openlocfilehash: 06a387d72d06609182c8894dd874b241a5d7b69c
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 904218c177ea45f82a73b4532ce3230af954aa85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-net-framework-analyzer"></a>Nástroje rozhraní .NET Framework Analyzer
 

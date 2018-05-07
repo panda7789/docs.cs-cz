@@ -1,12 +1,6 @@
 ---
 title: '&gt;&gt;= – Operátor (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.>>=
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - compound assignment statements [Visual Basic]
 - '>>= operator [Visual Basic]'
 ms.assetid: 2bcd9abb-7a8c-4229-b75d-8816ff1dc700
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0e7e388471b9adf424c55b1ad1042e5aed1ea8ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d0c0ea819741f80e30e55a960b1187699898a3bb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="gtgt-operator-visual-basic"></a>&gt;&gt;= – Operátor (Visual Basic)
 Provede aritmetický správné posun na hodnotě proměnné nebo vlastnosti a přiřadí výsledek zpět do proměnné nebo vlastnosti.  
@@ -57,9 +48,9 @@ variableorproperty >>= amount
  [!code-vb[VbVbalrOperators#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-assignment-operator_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [>> – Operátor](../../../visual-basic/language-reference/operators/right-shift-operator.md)  
+ [>> – operátor](../../../visual-basic/language-reference/operators/right-shift-operator.md)  
  [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
- [Operátory bitového posunutí](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
  [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
  [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

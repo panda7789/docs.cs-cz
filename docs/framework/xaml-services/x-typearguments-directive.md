@@ -1,13 +1,6 @@
 ---
-title: "x:TypeArguments – direktiva"
-ms.custom: 
+title: x:TypeArguments – direktiva
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - x:TypeArguments
 - xTypeArguments
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - TypeArguments attribute in XAML [XAML Services]
 - XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
-caps.latest.revision: "18"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e601fb5895460e52aa21836c542d0b1367527f09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94f09bdd3b6ee0b180e30bab0993f0b4e41730ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments – direktiva
 Předává chovaly zadejte argumenty obecného do konstruktoru objektu obecného typu.  
@@ -62,13 +50,13 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
 ```  
   
 ### <a name="liststring"></a>Seznam\<řetězec >  
- `<scg:List x:TypeArguments="sys:String" ...>`Vytvoří nový <xref:System.Collections.Generic.List%601> s <xref:System.String> argument typu.  
+ `<scg:List x:TypeArguments="sys:String" ...>` Vytvoří nový <xref:System.Collections.Generic.List%601> s <xref:System.String> argument typu.  
   
 ### <a name="dictionarystringstring"></a>Slovník\<řetězec, řetězec >  
- `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>`Vytvoří nový <xref:System.Collections.Generic.Dictionary%602> se dvěma <xref:System.String> argumenty typů.  
+ `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>` Vytvoří nový <xref:System.Collections.Generic.Dictionary%602> se dvěma <xref:System.String> argumenty typů.  
   
 ### <a name="queuekeyvaluepairstringstring"></a>Fronty < KeyValuePair\<řetězec, řetězec >>  
- `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>`Vytvoří nový <xref:System.Collections.Generic.Queue%601> s omezením na <xref:System.Collections.Generic.KeyValuePair%602> s argumenty typu vnitřní omezení <xref:System.String> a <xref:System.String>.  
+ `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>` Vytvoří nový <xref:System.Collections.Generic.Queue%601> s omezením na <xref:System.Collections.Generic.KeyValuePair%602> s argumenty typu vnitřní omezení <xref:System.String> a <xref:System.String>.  
   
 ## <a name="xaml-2006-and-wpf-generic-xaml-usages"></a>Použití obecné XAML XAML 2006 a WPF  
  Pro použití XAML 2006 a XAML, který se používá pro aplikace WPF, existují následující omezení `x:TypeArguments` a použití obecného typu z XAML v obecné:  
@@ -79,7 +67,7 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
   
 -   Element object kořenový element XAML pro obecné musí také deklarovat třídu pomocí `x:Class`. To platí i v případě, že definování WPF akce sestavení.  
   
--   `x:TypeArguments`nemůže odkazovat na vnořené obecná omezení.  
+-   `x:TypeArguments` nemůže odkazovat na vnořené obecná omezení.  
   
 ## <a name="xaml-2009-or-xaml-2006-with-no-wpf-30-or-wpf-35-dependency"></a>XAML 2009 nebo XAML 2006 bez grafického subsystému WPF 3.0 nebo WPF 3.5 závislostí  
  V rozhraní .NET Framework XAML Services pro XAML 2006 nebo XAML 2009 jsou mírnější omezení týkající se subsystému WPF pro obecné použití XAML. Můžete vytvořit instanci obecné objekt elementu všechny pozice v jazyce XAML kódu, které může podporovat základní typ systému a objekt modelu.  

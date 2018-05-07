@@ -1,17 +1,12 @@
 ---
 title: Vložené funkce (F#)
 description: 'Další informace o použití F # vložené funkce, které jsou integrovány přímo volající kód.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: cb0addd1456af1ab97e249b9c5ece4d9f0818fa3
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d265f9b4e828946c510bd8e84b14d5236ab511fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inline-functions"></a>Vložené funkce
 

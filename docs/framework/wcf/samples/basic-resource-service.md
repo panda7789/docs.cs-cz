@@ -1,27 +1,15 @@
 ---
-title: "Služba základních prostředků"
-ms.custom: 
+title: Služba základních prostředků
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4360063e-cc8c-4648-846e-c05a5af51a7a
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8bfcd632846510f8f62280bfb1620ba1f8c35ce3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3ec743bbbb6d18d972701c3149179d6f615d1884
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="basic-resource-service"></a>Služba základních prostředků
-Tento příklad znázorňuje způsob implementace založené na protokolu HTTP služby pomocí [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST programovací model, který zveřejňuje kolekce zákazníků, která podporuje načtení, přidání, odstranění a nahrazovat operace. Tato ukázka se skládá z komponenty 2 - vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba HTTP (Service.cs) a konzolovou aplikaci (program.cs), která vytvoří službu a provádí volání do ní.  
+Tento příklad ukazuje, jak implementovat pomocí modelu programování REST Windows Communication Foundation (WCF), který zveřejňuje kolekce zákazníků, která podporuje načtení služby založené na protokolu HTTP, přidat, odstranit a nahrazovat operace. Tato ukázka se skládá z komponenty 2 - vlastním hostováním [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba HTTP (Service.cs) a konzolovou aplikaci (program.cs), která vytvoří službu a provádí volání do ní.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Service poskytuje kolekci zákazníkům způsobem prostředků-zaměřené na konkrétní nebo REST. Stručně řečeno to zahrnuje, má jedinečné identifikátory pro kolekci množství zákazníků a každý zákazníka v kolekci. Služba podporuje odesílání HTTP `GET` v kolekci URI k načtení celou kolekci a HTTP `POST` v kolekci identifikátor URI pro přidání nového zákazníka do kolekce. Také v identifikátoru URI pro jednoho zákazníka, podporuje HTTP `GET` zákazník získat tak podrobné údaje, HTTP `PUT` nahradit podrobnosti zákazníka a HTTP `DELETE` zákazník odebrat z kolekce. Při přidání nového zákazníka do kolekce, služba přiřadí ji jedinečný identifikátor URI a ukládá identifikátor URI jako součást podrobnosti zákazníka. Navíc komunikuje identifikátor URI do klienta pomocí HTTP umístění hlavičky odpovědi.  
@@ -45,7 +33,7 @@ Tento příklad znázorňuje způsob implementace založené na protokolu HTTP s
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicResourceService`  
   

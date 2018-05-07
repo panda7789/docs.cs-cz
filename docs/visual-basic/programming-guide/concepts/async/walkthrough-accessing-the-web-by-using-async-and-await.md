@@ -1,22 +1,12 @@
 ---
-title: "Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)"
-ms.custom: 
+title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: de1219de72be5ddc022d898c904663bf92ca5ab6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7154ea12f2660074e3ad8251b9baaa3eeb3d453c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifikátoru async/await funkcí. Můžete napsat asynchronní kód, který vypadá jako synchronní kódu a nechat kompilátoru zpracování funkce zpětného volání obtížné a pokračování, které obvykle zahrnuje asynchronní kódu.  
@@ -56,7 +46,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
 ## <a name="prerequisites"></a>Požadavky  
  Visual Studio 2012 nebo novější musí být nainstalován v počítači. Další informace najdete v tématu [webu společnosti Microsoft](http://go.microsoft.com/fwlink/?LinkId=235233).  
   
-###  <a name="CreateWPFApp"></a>Chcete-li vytvořit aplikaci WPF  
+###  <a name="CreateWPFApp"></a> Chcete-li vytvořit aplikaci WPF  
   
 1.  Spuštění sady Visual Studio.  
   
@@ -71,7 +61,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
      Nový projekt se zobrazí v **Průzkumníku řešení**.  
   
 ##  <a name="BKMK_DesignWPFMainWin"></a>   
-###  <a name="MainWindow"></a>Při návrhu jednoduché MainWindow WPF  
+###  <a name="MainWindow"></a> Při návrhu jednoduché MainWindow WPF  
   
 1.  V editoru Visual Studio Code, vyberte **MainWindow.xaml** kartě.  
   
@@ -100,7 +90,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
      Další informace o WPF návrháře XAML najdete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).  
   
 ##  <a name="BKMK_AddReference"></a>   
-###  <a name="AddRef"></a>Chcete-li přidat odkaz  
+###  <a name="AddRef"></a> Chcete-li přidat odkaz  
   
 1.  V **Průzkumníku**, zvýrazněte názvem vašeho projektu.  
   
@@ -117,7 +107,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
 6.  Vyberte **OK** tlačítko dialogové okno zavřete.  
   
 ##  <a name="BKMK_AddStatesandDirs"></a>   
-###  <a name="ImportsState"></a>Chcete-li přidat potřebné příkazy importy  
+###  <a name="ImportsState"></a> Chcete-li přidat potřebné příkazy importy  
   
 1.  V **Průzkumníku řešení**, otevřete místní nabídku pro MainWindow.xaml.vb a potom zvolte **kód zobrazení**.  
   
@@ -130,7 +120,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
     ```  
   
 ##  <a name="BKMK_CreatSynchApp"></a>   
-###  <a name="synchronous"></a>Chcete-li vytvořit synchronní aplikace  
+###  <a name="synchronous"></a> Chcete-li vytvořit synchronní aplikace  
   
 1.  V okně návrhu MainWindow.xaml, dvakrát klikněte **spustit** tlačítko vytvořte `startButton_Click` obslužné rutiny událostí v MainWindow.xaml.vb.  
   
@@ -231,7 +221,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
     ```  
   
 ##  <a name="BKMK_TestSynchSol"></a>   
-###  <a name="testSynch"></a>K testování synchronní řešení  
+###  <a name="testSynch"></a> K testování synchronní řešení  
   
 1.  Zvolte klávesy F5 spusťte program a potom vyberte **spustit** tlačítko.  
   
@@ -257,7 +247,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
      Všimněte si, že bude trvat několik sekund zobrazí počty. Během této doby je blokována vlákna uživatelského rozhraní, kdy čeká požadované prostředky ke stažení. V důsledku toho nelze přesunout, maximalizovat, minimalizovat nebo i zavřete okno zobrazení po kliknutí **spustit** tlačítko. Tyto úsilí nezdaří, dokud začít zobrazí počet bajtů. Pokud web nereaguje, nemáte žádná informace o lokality, která se nezdařila. Je i obtížné čekání na zastavení a ukončení programu.  
   
 ##  <a name="BKMK_ConvertGtBtArr"></a>   
-###  <a name="GetURLContents"></a>Chcete-li převést GetURLContents asynchronní metody  
+###  <a name="GetURLContents"></a> Chcete-li převést GetURLContents asynchronní metody  
   
 1.  Převést synchronní řešení asynchronní řešení, je nejlepší místo k spuštění v `GetURLContents` protože volání <xref:System.Net.HttpWebRequest> metoda <xref:System.Net.HttpWebRequest.GetResponse%2A> a <xref:System.IO.Stream> metoda <xref:System.IO.Stream.CopyTo%2A> jsou, kde aplikace přistupuje k webové . Rozhraní .NET Framework usnadňuje převod zadáním asynchronní verze obě metody.  
   
@@ -272,7 +262,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
     Using response As WebResponse = webReq.GetResponseAsync()  
     ```  
   
-2.  `GetResponseAsync`Vrátí <xref:System.Threading.Tasks.Task%601>. V takovém případě *návratový proměnnou úloh*, `TResult`, má typ <xref:System.Net.WebResponse>. Tato úloha je promise k vytvoření skutečné třídě `WebResponse` objektu po požadovaná data byla stažena a je úloha spuštěná na dokončení.  
+2.  `GetResponseAsync` Vrátí <xref:System.Threading.Tasks.Task%601>. V takovém případě *návratový proměnnou úloh*, `TResult`, má typ <xref:System.Net.WebResponse>. Tato úloha je promise k vytvoření skutečné třídě `WebResponse` objektu po požadovaná data byla stažena a je úloha spuštěná na dokončení.  
   
      Načíst `WebResponse` z úlohy hodnoty, použijí [Await](../../../../visual-basic/language-reference/operators/await-operator.md) operátor k volání `GetResponseAsync`, jak ukazuje následující kód.  
   
@@ -339,7 +329,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
      Pomocí těchto několik změn, převod `GetURLContents` pro asynchronní metodu dokončení.  
   
 ##  <a name="BKMK_ConvertSumPagSzs"></a>   
-###  <a name="SumPageSizes"></a>Chcete-li převést SumPageSizes asynchronní metody  
+###  <a name="SumPageSizes"></a> Chcete-li převést SumPageSizes asynchronní metody  
   
 1.  Opakováním kroků v předchozím postupu pro `SumPageSizes`. Nejprve změnit volání `GetURLContents` pro asynchronní volání.  
   
@@ -379,7 +369,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
      Převod `SumPageSizes` k `SumPageSizesAsync` dokončení.  
   
 ##  <a name="BKMK_Cnvrtbttn1"></a>   
-###  <a name="startButton"></a>Chcete-li převést startButton_Click asynchronní metody  
+###  <a name="startButton"></a> Chcete-li převést startButton_Click asynchronní metody  
   
 1.  V obslužné rutině, změňte název metody volané z `SumPageSizes` k `SumPageSizesAsync`, pokud jste tak již neučinili.  
   
@@ -425,7 +415,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
      Převod projektu synchronní pro asynchronní zpracování je dokončena.  
   
 ##  <a name="BKMK_testAsynchSolution"></a>   
-###  <a name="testAsynch"></a>K testování asynchronní řešení  
+###  <a name="testAsynch"></a> K testování asynchronní řešení  
   
 1.  Zvolte klávesy F5 spusťte program a potom vyberte **spustit** tlačítko.  
   
@@ -436,7 +426,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
     -   Co je nejdůležitější – vlákna uživatelského rozhraní není blokován během stahování. Můžete přesunout nebo změňte velikost okna během stahování webové prostředky, počítají a zobrazit. Pokud jeden z webů je pomalé nebo přestane reagovat, můžete zrušit operaci tak, že zvolíte **Zavřít** tlačítko (x v poli red v pravém horním rohu).  
   
 ##  <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
-###  <a name="GetURLContentsAsync"></a>Chcete-li nahradit metoda GetURLContentsAsync pomocí metody rozhraní .NET Framework  
+###  <a name="GetURLContentsAsync"></a> Chcete-li nahradit metoda GetURLContentsAsync pomocí metody rozhraní .NET Framework  
   
 1.  Rozhraní .NET Framework 4.5 poskytuje mnoho asynchronní metody, které můžete použít. Jeden z nich, <xref:System.Net.Http.HttpClient> metoda <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>, nemá právě co potřebujete pro účely tohoto postupu. Můžete ho místo `GetURLContentsAsync` metoda, kterou jste vytvořili v předchozím kroku.  
   
@@ -461,7 +451,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
   
      Chování tuto verzi projekt by měl odpovídat chování, které je popsaný v části "postup testovací asynchronní řešení", ale s i méně úsilí od vás.  
   
-##  <a name="BKMK_CompleteCodeExamples"></a>Příklad  
+##  <a name="BKMK_CompleteCodeExamples"></a> Příklad  
  Následující kód obsahuje úplný příklad převod synchronního asynchronní řešení pomocí asynchronní `GetURLContentsAsync` metoda, která jste napsali. Všimněte si, že důrazně podobá řešení původní, synchronní.  
   
 ```vb  
@@ -684,8 +674,8 @@ End Class
   
 ## <a name="see-also"></a>Viz také  
  [Ukázka asynchronního: Přístup k webové návod (C# a Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)  
- [Await – operátor](../../../../visual-basic/language-reference/operators/await-operator.md)  
- [Asynchronní](../../../../visual-basic/language-reference/modifiers/async.md)  
+ [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)  
+ [Async](../../../../visual-basic/language-reference/modifiers/async.md)  
  [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
  [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)  
  [Asynchronní programování založené na úlohách (TAP)](http://go.microsoft.com/fwlink/?LinkId=204847)  

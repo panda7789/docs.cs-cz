@@ -1,23 +1,16 @@
 ---
 title: '#elif (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '#elif'
 helpviewer_keywords:
 - '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
-caps.latest.revision: 14
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1512bbbc46ce15570507c8b51540eef607d55dc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ecc5c4b48790d0cb6825883922f3903414bb2b26
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="elif-c-reference"></a>#elif (referenční dokumentace jazyka C#)
 Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. `#elif` Výraz vyhodnotí, pokud předchozím [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ani žádný předcházející, volitelné, `#elif` direktivy výrazy vyhodnocení `true`. Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Příklad:  
@@ -48,5 +41,5 @@ Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. `#elif` V�
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [C# direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)

@@ -1,28 +1,14 @@
 ---
-title: "Postupy: Zpracování události ContextMenuOpening"
-ms.custom: 
+title: 'Postupy: Zpracování události ContextMenuOpening'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ContextMenuOpening properties [WPF]
 ms.assetid: 789652fb-1951-4217-934a-7843e355adf4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5eec8646a48f94fb9ffdcad14849416732618a06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab4c4867981cd318738b7404d76f2f5932bb9059
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-handle-the-contextmenuopening-event"></a>Postupy: Zpracování události ContextMenuOpening
 <xref:System.Windows.FrameworkElement.ContextMenuOpening> Události lze zpracovat v aplikaci buď upravit existující kontextové nabídky před zobrazit nebo potlačit v nabídce, která by jinak zobrazí nastavením <xref:System.Windows.RoutedEventArgs.Handled%2A> vlastnost `true` v datech události. Typické důvod nastavení <xref:System.Windows.RoutedEventArgs.Handled%2A> k `true` události dat je nahradit nabídku zcela nový <xref:System.Windows.Controls.ContextMenu> objektu, který někdy vyžaduje zrušení operace a spuštění nové otevřete. Pokud píšete obslužné rutiny pro <xref:System.Windows.FrameworkElement.ContextMenuOpening> událostí, byste měli vědět o problémy načasování mezi <xref:System.Windows.Controls.ContextMenu> řízení a službou, která je odpovědná za otevírání a obecně umístění kontextové nabídky pro ovládací prvky. Toto téma popisuje některé techniky kódu pro různé kontextovou nabídku otevírání scénáře a znázorňuje případ kterých časové potíže pocházejí do play.  

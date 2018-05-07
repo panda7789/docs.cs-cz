@@ -1,14 +1,6 @@
 ---
 title: Návratové hodnoty REF (Visual Basic)
-ms.custom: ''
 ms.date: 04/28/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic]
 - ref return values [Visual Basic]
@@ -16,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: 5ef0cc69-eb3a-4a67-92a2-78585f223cb5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6055028ac92016cbc4b6f7bffa7f483e5ea76608
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c2979359f0ffafe46a62696485bbb87b211c1704
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="support-for-reference-return-values-visual-basic"></a>Podpora pro odkaz návratové hodnoty (Visual Basic)
 

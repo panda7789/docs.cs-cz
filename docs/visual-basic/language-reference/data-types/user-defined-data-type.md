@@ -1,10 +1,6 @@
 ---
-title: "Uživatelský datový typ"
+title: Uživatelský datový typ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - UserDefined
 - UDT
@@ -27,14 +23,11 @@ helpviewer_keywords:
 - user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: be913dca-a364-4a51-96a1-549a1b390b0a
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7e1876d61a2ce89b04c6e5061b868f0be365639f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 07f04fb111863ca18d4966a7f0f967f11719aeec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
 Obsahuje data ve formátu, který definujete. `Structure` Příkaz definuje formát.  
@@ -82,9 +75,9 @@ End Structure
  <xref:System.Runtime.InteropServices.StructLayoutAttribute>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Rozšíření](../../../visual-basic/language-reference/modifiers/widening.md)  
- [Zužující](../../../visual-basic/language-reference/modifiers/narrowing.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
+ [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
  [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

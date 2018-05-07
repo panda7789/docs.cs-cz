@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms"
-ms.custom: 
+title: 'Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - toolbars [Windows Forms], aligning items
 ms.assetid: cd483466-0f49-43df-addf-e2b5fcd64027
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58cad83b7253b71363f9ccf7fbda74e03803f381
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7951a545fd8cbd0ae30907922551216161171a8d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms"></a>Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms
 <xref:System.Windows.Forms.ToolStrip> Řízení plně podporuje rozložení funkce jako je například změna velikosti, mezery mezi <xref:System.Windows.Forms.ToolStripItem> na ovládací prvky relativně k sobě navzájem, uspořádání ovládacích prvků <xref:System.Windows.Forms.ToolStrip>a mezery mezi ovládací prvky vzhledem k <xref:System.Windows.Forms.ToolStrip>.  

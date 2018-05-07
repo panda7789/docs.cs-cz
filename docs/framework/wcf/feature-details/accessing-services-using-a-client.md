@@ -1,32 +1,18 @@
 ---
 title: Přístup ke službám pomocí klienta
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 209d10f9545be65870f584fa79444f7fab90211a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1369403b493683f58640047fe042708afc5d5b46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
-Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta nebo kanál objektů komunikovat se službami. [Klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základní klienta a kanál objektů a jejich používání.  
+Klientské aplikace musí vytvořit, nakonfigurovat a použít klienta nebo kanál objektů WCF komunikovat se službami. [Klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základní klienta a kanál objektů a jejich používání.  
   
  Toto téma obsahuje podrobné informace o některých problémech, s klientem aplikace a klienta a kanál objekty, které mohou být užitečné, v závislosti na vašem scénáři.  
   
@@ -42,7 +28,7 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
 -   Inicializace kanály interaktivně.  
   
 ### <a name="channel-and-session-lifetimes"></a>Kanál a trvání relace  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace zahrnuje dvě kategorie kanály, datagram a sessionful.  
+ Aplikace Windows Communication Foundation (WCF) obsahuje dvě kategorie kanály, datagram a sessionful.  
   
  A *datagram* kanál je kanál, ve kterém jsou bez korelace nejsou všechny zprávy. S datagram kanál Pokud vstupních nebo výstupních operací nezdaří, je obvykle neovlivní další operace, a lze opětovně použít stejný kanál. Z toho důvodu datagram kanály obvykle není poruch.  
   
@@ -79,11 +65,11 @@ Klientské aplikace musí vytvářet, konfigurovat a používat [!INCLUDE[indigo
  Podrobnější informace o práci s informace o chybě na úrovni aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) popisuje očekávané výjimky a ukazuje, jak k jejich zpracování. Další informace o tom, jak zpracovávat chyby při vývoji kanály najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
   
 ### <a name="client-blocking-and-performance"></a>Blokování klienta a výkonu  
- Když aplikace synchronně volá operaci požadavku a odpovědi, klientské bloky, dokud není přijata návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikace synchronně vyvolá operace na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] objekt klienta nebo kanálu klienta nevrací dokud vrstvy kanálu můžete zapsat data do sítě, nebo dokud je vyvolána výjimka. A při vzorce výměny zpráv jednosměrný (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) můžete provést některé klienty rychlejšího, Jednosměrná operace můžete taky zablokovat, v závislosti na vazby a co zprávy již byly Odeslat. Jednosměrná operace jsou pouze o zpráva systému exchange, ne další a ne menší. Další informace najdete v tématu [One-Way služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
+ Když aplikace synchronně volá operaci požadavku a odpovědi, klientské bloky, dokud není přijata návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikace synchronně vyvolá operace na objektu klienta WCF nebo kanál, klient se nevrátí, dokud vrstvy kanálu můžete zapsat data do sítě, nebo dokud je vyvolána výjimka. A při vzorce výměny zpráv jednosměrný (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) můžete provést některé klienty rychlejšího, Jednosměrná operace můžete taky zablokovat, v závislosti na vazby a co zprávy již byly Odeslat. Jednosměrná operace jsou pouze o zpráva systému exchange, ne další a ne menší. Další informace najdete v tématu [One-Way služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
   
  Bloky velkých objemů dat může zpomalit zpracování bez ohledu na to, co vzorce výměny zpráv na straně klienta. Chcete-li pochopit, jak zpracovávat tyto problémy, přečtěte si téma [velkého množství dat a Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
- Pokud vaše aplikace musí provést další práci při dokončení operace, měli byste vytvořit dvojici asynchronní metody na rozhraní kontraktu služby, vaše [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje klienta. Nejjednodušším způsobem je použití `/async` přepínač na [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Příklad, naleznete v části [postupy: asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
+ Pokud vaše aplikace musí provést další práci při dokončení operace, měli byste vytvořit dvojici asynchronní metody na rozhraní kontraktu služby, který implementuje vašeho klienta WCF. Nejjednodušším způsobem je použití `/async` přepínač na [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Příklad, naleznete v části [postupy: asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
  Další informace o většího výkonu klienta najdete v tématu [klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).  
   

@@ -1,25 +1,15 @@
 ---
-title: "Funkce Visual Basic podporující LINQ"
-ms.custom: 
+title: Funkce Visual Basic podporující LINQ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-caps.latest.revision: "51"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 42465dbb168b7961792aec6b3c2bb7ae8f0a3355
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: db2eff2f7c19a3c510e7b212f5bb406d7a885439
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
 Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje technologie v jazyce Visual Basic, podporuje syntaxe dotazu a dalších jazyků vytvoří přímo v jazyce. S [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], není nutné další informace o nový jazyk k dotazu vůči externího zdroje dat. Můžete dotazovat na data v relačních databází, úložiště XML nebo objekty v jazyce Visual Basic. Tato integrace možnosti dotazu do jazyka umožňuje kompilaci kontrola chyby syntaxe a bezpečnost typů. Tato integrace zajišťuje již znáte většinu co musíte vědět, abyste mohli psát dotazy bohatou a rozmanitých v jazyce Visual Basic.  
@@ -106,5 +96,5 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje technolo
  [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)  
  [Začínáme s dotazy LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md)  
- [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+ [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

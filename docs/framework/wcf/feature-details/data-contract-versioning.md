@@ -1,14 +1,6 @@
 ---
 title: Správa verzí kontraktů dat
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-caps.latest.revision: 35
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fd1679bb50a0dc6ee4997f7ae427c1cbdc0948ef
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1ba51c51f30293e05dee17f9cf78cc049e1c751f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
 Jak vyvíjet aplikace, budete také muset změnit data měnící použití služby. Toto téma vysvětluje, jak kontrakty dat verze. Toto téma popisuje mechanismy Správa verzí kontraktů dat. Úplný přehled a správa verzí závazné pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
@@ -110,7 +96,7 @@ Jak vyvíjet aplikace, budete také muset změnit data měnící použití služ
 ## <a name="schema-considerations"></a>Důležité informace o schématu  
  Vysvětlení, co schématu pro typy kontraktů dat vytváří, najdete v článku [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
- Schéma [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vytváří pro typy kontraktů dat umožňuje žádné předpisy pro správu verzí. To znamená schéma exportovaný z konkrétní verzi typu, obsahuje pouze data členů v této verzi. Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní schéma pro typ nezmění.  
+ Schéma WCF vytvoří pro typy kontraktů dat znamená žádné předpisy pro správu verzí. To znamená schéma exportovaný z konkrétní verzi typu, obsahuje pouze data členů v této verzi. Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní schéma pro typ nezmění.  
   
  Datové členy exportují do schématu jako volitelné elementy ve výchozím nastavení. To znamená `minOccurs` (atribut XML) hodnota nastavena na hodnotu 0. Členy požadovaná data jsou exportovaný s `minOccurs` nastavena na hodnotu 1.  
   

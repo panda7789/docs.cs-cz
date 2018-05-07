@@ -1,28 +1,16 @@
 ---
-title: "Postupy: Vytvoření textu se stínem"
-ms.custom: 
+title: 'Postupy: Vytvoření textu se stínem'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], shadow effects
 - shadow effects in text [WPF]
 - text [WPF], shadowed
 ms.assetid: 6ab9c754-6001-4708-b479-5367f2fd1a35
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b031b0dce8e1fd06399ded0b6d612a23323ae837
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b7740284afcda6eab41fb68be3b4a2f032cc77d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-text-with-a-shadow"></a>Postupy: Vytvoření textu se stínem
 Příklady v této části ukazují, jak vytvořit efekt stínu pro zobrazený text.  
@@ -30,7 +18,7 @@ Příklady v této části ukazují, jak vytvořit efekt stínu pro zobrazený t
 ## <a name="example"></a>Příklad  
  <xref:System.Windows.Media.Effects.DropShadowEffect> Objekt umožňuje vytvořit stínové důsledky pro celou řadu rozevírací [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] objekty. Následující příklad ukazuje efekt stínu rozevírací použít na text. V takovém případě stínové kopie je logicky shadow, což znamená rozostření barvu stínu.  
   
- ![Stín textu zobrazovat s Měkkost & č. 61; 0,25](../../../../docs/framework/wpf/advanced/media/shadowtext01.jpg "ShadowText01")  
+ ![Stín textu zobrazovat Softness &#61; 0,25](../../../../docs/framework/wpf/advanced/media/shadowtext01.jpg "ShadowText01")  
 Příklad textu logicky stínové  
   
  Můžete řídit šířku stínu nastavením <xref:System.Windows.Media.Effects.DropShadowEffect.ShadowDepth%2A> vlastnost. Hodnota `4.0` Určuje šířku stínové 4 pixelů. Můžete řídit Měkkost, nebo rozostření stínu změnou <xref:System.Windows.Media.Effects.DropShadowEffect.BlurRadius%2A> vlastnost. Hodnota `0.0` označuje bez rozostření. Následující příklad kódu ukazuje, jak vytvořit logicky stínové.  
@@ -42,7 +30,7 @@ Příklad textu logicky stínové
   
  Následující příklad ukazuje efekt stínu pevný rozevírací použít na text. V takovém případě se bude stín hranice.  
   
- ![Stín textu zobrazovat s Měkkost & č. 61; 0](../../../../docs/framework/wpf/advanced/media/shadowtext02.jpg "ShadowText02")  
+ ![Stín textu zobrazovat Softness &#61; 0](../../../../docs/framework/wpf/advanced/media/shadowtext02.jpg "ShadowText02")  
 Příklad textu pevný stínové  
   
  Můžete vytvořit pevný stínové nastavením <xref:System.Windows.Media.Effects.DropShadowEffect.BlurRadius%2A> vlastnost `0.0`, což naznačuje, že se používá bez rozostření. Směr stínu, můžete řídit úpravou <xref:System.Windows.Media.Effects.DropShadowEffect.Direction%2A> vlastnost. Nastavte směrovou hodnotu této vlastnosti na určitý stupeň mezi `0` a `360`. Následující obrázek znázorňuje směrovou hodnoty <xref:System.Windows.Media.Effects.DropShadowEffect.Direction%2A> nastavení vlastnosti.  

@@ -1,13 +1,6 @@
 ---
-title: "Přehled fokusu"
-ms.custom: 
+title: Přehled fokusu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - applications [WPF], focus
 - focus in applications [WPF]
 ms.assetid: 0230c4eb-0c8a-462b-ac4b-ae3e511659f4
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d35b65f88452085e601569b9dcfc62a541a1655f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 620839a0060469604d0affa6637c3cafac0f62c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="focus-overview"></a>Přehled fokusu
 V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] existují dvě hlavní koncepty, které se týkají fokus: fokus a logické fokus klávesnice.  Fokus klávesnice vztahuje k elementu, který přijímá vstup z klávesnice a logické fokus odkazuje na element v fokus obor, který má právě fokus.  Tyto koncepty jsou podrobněji v tomto přehledu.  Vysvětlení rozdílu v tyto koncepty je důležité pro vytvoření složitých aplikací, které mají více oblastech, kde lze získat fokus.  
@@ -69,11 +57,11 @@ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.m
  [!code-csharp[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FocusSnippets/CSharp/Window1.xaml.cs#focussetisfocusscope)]
  [!code-vb[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focussetisfocusscope)]  
   
- <xref:System.Windows.Input.FocusManager.GetFocusScope%2A>Vrátí fokus rozsah pro zadaný element.  
+ <xref:System.Windows.Input.FocusManager.GetFocusScope%2A> Vrátí fokus rozsah pro zadaný element.  
   
  Třídy v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] který jsou obory fokus ve výchozím nastavení jsou <xref:System.Windows.Window>, <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.ToolBar>, a <xref:System.Windows.Controls.ContextMenu>.  
   
- <xref:System.Windows.Input.FocusManager.GetFocusedElement%2A>Získá cílených element pro obor zadaný fokus.  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>Nastaví cílených element v oboru zadaný fokus.  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>se obvykle používá k nastavení počátečního cílených elementu.  
+ <xref:System.Windows.Input.FocusManager.GetFocusedElement%2A> Získá cílených element pro obor zadaný fokus.  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A> Nastaví cílených element v oboru zadaný fokus.  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A> se obvykle používá k nastavení počátečního cílených elementu.  
   
  Následující příklad nastaví element cílených na obor fokus a získá cílených elementu obor fokus.  
   
@@ -97,20 +85,20 @@ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.m
 ## <a name="navigating-focus-programmatically"></a>Navigace fokus prostřednictvím kódu programu  
  Další [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] pro práci s fokus jsou <xref:System.Windows.UIElement.MoveFocus%2A> a <xref:System.Windows.UIElement.PredictFocus%2A>.  
   
- <xref:System.Windows.FrameworkElement.MoveFocus%2A>změny fokus na další prvek v aplikaci.  A <xref:System.Windows.Input.TraversalRequest> slouží k určení směru.   <xref:System.Windows.Input.FocusNavigationDirection> Předaný <xref:System.Windows.UIElement.MoveFocus%2A> Určuje jinou pokynů fokus lze přesunout, například <xref:System.Windows.Input.FocusNavigationDirection.First>, <xref:System.Windows.Input.FocusNavigationDirection.Last>, <xref:System.Windows.Input.FocusNavigationDirection.Up> a <xref:System.Windows.Input.FocusNavigationDirection.Down>.  
+ <xref:System.Windows.FrameworkElement.MoveFocus%2A> změny fokus na další prvek v aplikaci.  A <xref:System.Windows.Input.TraversalRequest> slouží k určení směru.   <xref:System.Windows.Input.FocusNavigationDirection> Předaný <xref:System.Windows.UIElement.MoveFocus%2A> Určuje jinou pokynů fokus lze přesunout, například <xref:System.Windows.Input.FocusNavigationDirection.First>, <xref:System.Windows.Input.FocusNavigationDirection.Last>, <xref:System.Windows.Input.FocusNavigationDirection.Up> a <xref:System.Windows.Input.FocusNavigationDirection.Down>.  
   
  Následující příklad používá <xref:System.Windows.FrameworkElement.MoveFocus%2A> změnit cílených elementu.  
   
  [!code-csharp[focussample#FocusSampleMoveFocus](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#focussamplemovefocus)]
  [!code-vb[focussample#FocusSampleMoveFocus](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplemovefocus)]  
   
- <xref:System.Windows.FrameworkElement.PredictFocus%2A>Vrátí objekt, který by získat fokus, kdyby se musí změnit fokus.  V současné době pouze <xref:System.Windows.Input.FocusNavigationDirection.Up>, <xref:System.Windows.Input.FocusNavigationDirection.Down>, <xref:System.Windows.Input.FocusNavigationDirection.Left>, a <xref:System.Windows.Input.FocusNavigationDirection.Right> podporuje <xref:System.Windows.FrameworkElement.PredictFocus%2A>.  
+ <xref:System.Windows.FrameworkElement.PredictFocus%2A> Vrátí objekt, který by získat fokus, kdyby se musí změnit fokus.  V současné době pouze <xref:System.Windows.Input.FocusNavigationDirection.Up>, <xref:System.Windows.Input.FocusNavigationDirection.Down>, <xref:System.Windows.Input.FocusNavigationDirection.Left>, a <xref:System.Windows.Input.FocusNavigationDirection.Right> podporuje <xref:System.Windows.FrameworkElement.PredictFocus%2A>.  
   
 <a name="Focus_Events"></a>   
 ## <a name="focus-events"></a>Fokus události  
  Události související s fokus klávesnice jsou <xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>, <xref:System.Windows.Input.Keyboard.GotKeyboardFocus> a <xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus>, <xref:System.Windows.Input.Keyboard.LostKeyboardFocus>.  Události jsou definované jako připojené události na <xref:System.Windows.Input.Keyboard> třídy, ale jsou více snadno přístupné jako ekvivalentní směrované události na třídy base element.  Další informace o událostech, najdete v článku [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
   
- <xref:System.Windows.Input.Keyboard.GotKeyboardFocus>se vyvolá, když elementu získává fokus klávesnice.  <xref:System.Windows.Input.Keyboard.LostKeyboardFocus>se vyvolá, když element ztratí fokus klávesnice.  Pokud <xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus> události nebo <xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocusEvent> událost je zpracovávána a <xref:System.Windows.RoutedEventArgs.Handled%2A> je nastaven na `true`, pak se fokus nedojde ke změně.  
+ <xref:System.Windows.Input.Keyboard.GotKeyboardFocus> se vyvolá, když elementu získává fokus klávesnice.  <xref:System.Windows.Input.Keyboard.LostKeyboardFocus> se vyvolá, když element ztratí fokus klávesnice.  Pokud <xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus> události nebo <xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocusEvent> událost je zpracovávána a <xref:System.Windows.RoutedEventArgs.Handled%2A> je nastaven na `true`, pak se fokus nedojde ke změně.  
   
  Následující příklad připojí <xref:System.Windows.UIElement.GotKeyboardFocus> a <xref:System.Windows.UIElement.LostKeyboardFocus> obslužných rutin událostí pro <xref:System.Windows.Controls.TextBox>.  
   
@@ -126,7 +114,7 @@ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.m
  [!code-csharp[keyboardsample#KeyboardSampleLostFocus](../../../../samples/snippets/csharp/VS_Snippets_Wpf/KeyboardSample/CSharp/Window1.xaml.cs#keyboardsamplelostfocus)]
  [!code-vb[keyboardsample#KeyboardSampleLostFocus](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/KeyboardSample/visualbasic/window1.xaml.vb#keyboardsamplelostfocus)]  
   
- Události související s logické fokus jsou <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus>.  Tyto události jsou definovány na <xref:System.Windows.Input.FocusManager> jako připojené události, ale <xref:System.Windows.Input.FocusManager> nevystavuje obálky události CLR.  <xref:System.Windows.UIElement>a <xref:System.Windows.ContentElement> snadněji vystavit tyto události.  
+ Události související s logické fokus jsou <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus>.  Tyto události jsou definovány na <xref:System.Windows.Input.FocusManager> jako připojené události, ale <xref:System.Windows.Input.FocusManager> nevystavuje obálky události CLR.  <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement> snadněji vystavit tyto události.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Input.FocusManager>  

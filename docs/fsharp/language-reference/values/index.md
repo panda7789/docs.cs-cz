@@ -1,17 +1,12 @@
 ---
 title: Hodnoty (F#)
 description: 'Zjistěte, jak jsou množství, které mají určitý typ hodnoty v jazyce F #.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: b40e4a0409a9161a4ef48c8d4ad82b4da346538e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 610ff6cfc6d33cd22a175ca928bfb6e9f8974a36
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="values"></a>Hodnoty
 

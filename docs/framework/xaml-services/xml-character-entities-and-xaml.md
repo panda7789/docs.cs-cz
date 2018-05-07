@@ -1,13 +1,6 @@
 ---
-title: "Znakové entity XML a jazyk XAML"
-ms.custom: 
+title: Znakové entity XML a jazyk XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - '&'
 - '&amp'
@@ -27,16 +20,11 @@ helpviewer_keywords:
 - quotation mark (") [XAML Services]
 - less-than (<) character [XAML Services]
 ms.assetid: 6896d0ce-74f7-420a-9ab4-de9bbf390e8d
-caps.latest.revision: "23"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6b325c931579606f6d1d90eb821766a4110acfd5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ef489498cdc8716f7599124138f9ecf8945ac9a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro speciální znaky. Toto téma popisuje některé konkrétní znak entit a obecné požadavky na dalších konceptech XML v jazyce XAML.  
@@ -47,7 +35,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro speciáln
   
  Hlavní výjimkou je, který složené závorky ({a}) mají význam v jazyce XAML, protože tyto znaky informovat procesor XAML posloupnost znaků uvedené ve složených závorkách musí být interpretaci jako rozšíření značek. Další informace o rozšíření značek najdete v tématu [XAML přehled rozšíření značek pro](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
   
- Ale můžete pořád zobrazit složené závorky jako literály pomocí řídicí sekvence, které je specifický pro XAML místo XML. Další informace najdete v tématu [{} řídicí sekvence – rozšíření značek](escape-sequence-markup-extension.md).  
+ Ale můžete pořád zobrazit složené závorky jako literály pomocí řídicí sekvence, které je specifický pro XAML místo XML. Další informace najdete v tématu [ {} řídicí sekvence – rozšíření značek](escape-sequence-markup-extension.md).  
   
  Všimněte si, že zpětné lomítko (\\) nevyžaduje řídicí sekvence, pokud se zpracovává jako řetězec.  
   
@@ -62,7 +50,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro speciáln
 |< (menší – než znak)|\&lt;|Je nutné použít hodnotu atributu, ale \< je přijatelné jako obsah elementu stejně dlouho jako > nedodrží ho.|  
 |"(dvojité uvozovky)|\&Automatické formátování výše.|Je nutné použít hodnotu atributu, ale dvojité uvozovky (") se dá použít jako obsahu elementu. Všimněte si, že hodnoty atributu může být uzavřená pomocí přímých apostrof (') nebo pomocí dvojité uvozovky ("); podle toho, která znak zobrazí první definuje skříni hodnotu atributu a alternativní uvozovky lze jako literál v hodnotě.|  
 |' (jednoduché uvozovky)|\&APOS;|Je nutné použít hodnotu atributu, ale je přijatelné jako obsah elementu přímých apostrof ('). Všimněte si, že hodnoty atributu může být uzavřená pomocí přímých apostrof (') nebo pomocí dvojité uvozovky ("); podle toho, která znak zobrazí první definuje skříni hodnotu atributu a alternativní uvozovky lze jako literál v hodnotě.|  
-|(čísla mapování)|&#*[celé číslo]* ; nebo & #x*[šestnáctkových]*;|XAML podporuje mapování čísla do kódování, které je aktivní.|  
+|(čísla mapování)|&#*[celé číslo]* ; nebo & #x *[šestnáctkových]*;|XAML podporuje mapování čísla do kódování, které je aktivní.|  
 |(pevná místa)|&\#160; (za předpokladu, že kódování UTF-8)|Pro prvky toku dokumentu nebo prvky, které trvat text například WPF <xref:System.Windows.Controls.TextBox>, pevné mezery nejsou normalized mimo značku, i pro `xml:space="default"`. (Další informace najdete v tématu [zpracování prázdných znaků v jazyce XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).)|  
   
 <a name="xml_comment_format"></a>   

@@ -1,26 +1,17 @@
 ---
-title: "Konfigurace ukládání do mezipaměti v síťových aplikací"
-ms.custom: 
+title: Konfigurace ukládání do mezipaměti v síťových aplikací
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - cache [.NET Framework], configuring
 ms.assetid: 3f694a1c-de5d-47cf-a6eb-cfc369fb8a9f
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe70c8952451f5af8ac46549919ca164816819e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2213b5401c7b82771dcf7a1c982f1b3d0f347832
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-caching-in-network-applications"></a>Konfigurace ukládání do mezipaměti v síťových aplikací
 Chcete-li konfigurovat ukládání do mezipaměti, je nutné zadat zásady mezipaměti v aplikaci nebo <xref:System.Net.WebRequest> úroveň. Následující témata obsahují příklady kódu, která ukazují konfiguraci aplikace a požadavky na používání ukládání do mezipaměti.  
@@ -33,7 +24,7 @@ Chcete-li konfigurovat ukládání do mezipaměti, je nutné zadat zásady mezip
   
 -   [Postupy: Nastavení zásad mezipaměti pro žádost](../../../docs/framework/network-programming/how-to-set-cache-policy-for-a-request.md)  
   
- Můžete také nakonfigurovat zásady mezipaměti pomocí aplikace nebo počítač – konfigurační soubory. Pro další informace, najdete v tématu &#124; [ \<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+ Můžete také nakonfigurovat zásady mezipaměti pomocí aplikace nebo počítač – konfigurační soubory. Další informace najdete v tématu &#124; [ \<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  

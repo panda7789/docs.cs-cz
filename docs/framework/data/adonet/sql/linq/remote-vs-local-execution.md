@@ -1,27 +1,15 @@
 ---
-title: "Vzdálené vs. Místní spuštění"
-ms.custom: 
+title: Vzdálené vs. Místní spuštění
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: ee50e943-9349-4c84-ab1c-c35d3ada1a9c
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c402fad49526729ba09d8f4b86a5b022ca4a12cb
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9488cb4c15c2e0646d91bdba36e7d4e2be2efbbd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="remote-vs-local-execution"></a>Vzdálené vs. Místní spuštění
 Můžete se rozhodnout spustit své dotazy buď vzdáleně (to znamená, databázový stroj provede dotaz na databázi nástroje) nebo místně ([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provede dotaz proti místní mezipaměti).  
@@ -56,7 +44,7 @@ Můžete se rozhodnout spustit své dotazy buď vzdáleně (to znamená, databá
  Tyto dvě možnosti poskytují výkonný kombinaci možností: vzdálené spuštění rozsáhlých kolekcí a místní spuštění pro malé kolekce nebo kde je potřeba úplnou kolekci. Implementace vzdálené spuštění prostřednictvím <xref:System.Linq.IQueryable>a místní provádění proti v paměti <xref:System.Collections.Generic.IEnumerable%601> kolekce. Chcete-li vynutit místní provádění (tedy <xref:System.Collections.Generic.IEnumerable%601>), najdete v části [převést typ na obecný IEnumerable](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-type-to-a-generic-ienumerable.md).  
   
 ### <a name="queries-against-unordered-sets"></a>Dotazy na neuspořádaný sady  
- Všimněte si důležitý rozdíl mezi místní kolekce, která implementuje <xref:System.Collections.Generic.List%601> a kolekce, která poskytuje vzdálené dotazy prováděné vůči *neuspořádané sady* v relační databázi. <xref:System.Collections.Generic.List%601>metody, jako jsou ty, které používají hodnoty indexu vyžadují sémantiku seznamu, který nelze obvykle získat prostřednictvím vzdálený dotaz proti neuspořádaný sady. Z tohoto důvodu se tyto metody implicitně zatížení <xref:System.Data.Linq.EntitySet%601> umožňuje místní spuštění.  
+ Všimněte si důležitý rozdíl mezi místní kolekce, která implementuje <xref:System.Collections.Generic.List%601> a kolekce, která poskytuje vzdálené dotazy prováděné vůči *neuspořádané sady* v relační databázi. <xref:System.Collections.Generic.List%601> metody, jako jsou ty, které používají hodnoty indexu vyžadují sémantiku seznamu, který nelze obvykle získat prostřednictvím vzdálený dotaz proti neuspořádaný sady. Z tohoto důvodu se tyto metody implicitně zatížení <xref:System.Data.Linq.EntitySet%601> umožňuje místní spuštění.  
   
 ## <a name="see-also"></a>Viz také  
  [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

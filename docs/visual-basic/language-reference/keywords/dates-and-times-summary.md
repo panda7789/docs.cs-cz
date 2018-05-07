@@ -1,10 +1,6 @@
 ---
-title: "Souhrn dat a časů (Visual Basic)"
+title: Souhrn dat a časů (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - dates [Visual Basic], Visual Basic data types
 - dates [Visual Basic], run-time library members
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - time, Visual Basic keywords and run-time library members
 - time data types [Visual Basic]
 ms.assetid: 914d0563-b53c-492c-ac62-d833ce805f2f
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1462a7d6a15592a7912797a05b35a360a0d162a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bf8240f318200df0ce228449e3b2368e08430e22
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dates-and-times-summary-visual-basic"></a>Souhrn dat a časů (Visual Basic)
 Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořádány podle účelu a použití.  
@@ -37,4 +30,4 @@ Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořá
   
 ## <a name="see-also"></a>Viz také  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
- [Členové knihovny prostředí Runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
+ [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

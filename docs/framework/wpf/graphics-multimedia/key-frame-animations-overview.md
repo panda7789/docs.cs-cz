@@ -1,28 +1,16 @@
 ---
-title: "Přehled animací klíčových snímků"
-ms.custom: 
+title: Přehled animací klíčových snímků
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - animation [WPF], key-frame
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-caps.latest.revision: "29"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38f0f6ac030af08039438b7e766c3f0f5bed7534
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8a18e0637b0fea7a1a960b157123da10819b4687
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací jednotlivých klíč. Animací klíč jednotlivých umožňují animace pomocí více než dvě cílové hodnoty a řídit metodu interpolace animace.  
@@ -57,11 +45,11 @@ Toto téma vás seznámí s animací jednotlivých klíč. Animací klíč jedno
   
  Animace jednotlivých klíč třídy patří do <xref:System.Windows.Media.Animation> obor názvů a dodržovat následující konvence:  
   
- *\<Typ >*`AnimationUsingKeyFrames`  
+ *\<Typ >* `AnimationUsingKeyFrames`  
   
  Kde  *\<typ >* je typ hodnoty, které animuje třídy.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje následující třídy animace jednotlivých klíč.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje následující třídy animace jednotlivých klíč.  
   
 |Typ vlastnosti|Odpovídající z/do nebo podle animace – třída|Podporované metody interpolace|  
 |-------------------|------------------------------------------------|-------------------------------------|  
@@ -90,7 +78,7 @@ Toto téma vás seznámí s animací jednotlivých klíč. Animací klíč jedno
 ## <a name="target-values-key-frames-and-key-times"></a>Cílové hodnoty (klíčových snímků) a časy klíč  
  Stejně, jako jsou různé typy animací jednotlivých klíč pro animace různých typech vlastností, existují také různé typy objektů klíčových snímků: jeden pro každý typ hodnota animovaný a metodu interpolace podporovány. Typy klíčových snímků splňovat následující konvence:  
   
- *\<InterpolationMethod >\<typ >*`KeyFrame`  
+ *\<InterpolationMethod >\<typ >* `KeyFrame`  
   
  Kde  *\<InterpolationMethod >* je metodu interpolace používá klíčových snímků a  *\<typ >* je typ hodnoty, které animuje třídy. Animace klíč rámce, který podporuje všechny tři interpolace metody bude mít tři typy klíčových snímků, které můžete použít. Například můžete použít tři typy klíčů rámce s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>: <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>, <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>, a <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>. (Interpolace metody jsou popsané v podrobností v další části).  
   
@@ -290,7 +278,7 @@ Klíče křivkový s ovládacím prvkem body (0,25, 0,5) a (0,75, 1.0)
   
 6.  Vyřešte <xref:System.Windows.Media.Animation.KeyTime> hodnoty klíče snímků se neurčené klíče časy pomocí klíče rámce nejbližší je deklarovaná, které byly vyřešeny problémy s <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
-7.  Vyřešte zbývající <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty. <xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime> použít <xref:System.Windows.Media.Animation.KeyTime> hodnoty sousedních klíčů rámce k určení vypršela doba pro jejich vyřešení.  Cílem je zajistěte, aby byl rychlosti animace konstantní přeložit době klíčových snímků.  
+7.  Vyřešte zbývající <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty. <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> použít <xref:System.Windows.Media.Animation.KeyTime> hodnoty sousedních klíčů rámce k určení vypršela doba pro jejich vyřešení.  Cílem je zajistěte, aby byl rychlosti animace konstantní přeložit době klíčových snímků.  
   
 8.  Seřadit klíčových snímků v pořadí přeložit času (primární klíč) a pořadí deklarace (sekundární klíč), tj., použijte stabilní řazení podle přeložit klíčových snímků <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   

@@ -1,24 +1,12 @@
 ---
-title: "Kolekce a typy kolekcí v jazyku XAML"
-ms.custom: 
+title: Kolekce a typy kolekcí v jazyku XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 58f8e7c6-9a41-4f25-8551-c042f1315baa
-caps.latest.revision: "2"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b67fec476c95d82b769494d53e50550cad0c719b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5605c97b13503e18e2f698f2a19f715663052b08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collections-and-collection-types-for-xaml"></a>Kolekce a typy kolekcí v jazyku XAML
 Toto téma popisuje, jak definovat vlastnosti typů, které jsou určeny pro podporu kolekce a k podpoře syntaxe jazyka XAML pro vytvoření instance položky kolekce jako podřízené objekty element nadřazený objekt element nebo element vlastnosti.  
@@ -34,7 +22,7 @@ Toto téma popisuje, jak definovat vlastnosti typů, které jsou určeny pro pod
   
 2.  <xref:System.Collections.IDictionary> Rozhraní označuje dicionary kolekce.  
   
-3.  <xref:System.Array>představuje pole a pole podporuje <xref:System.Collections.IList> metody.  
+3.  <xref:System.Array> představuje pole a pole podporuje <xref:System.Collections.IList> metody.  
   
  V každé z těchto pojmech kolekce procesor rozhraní .NET Framework XAML Services XAML očekává, že volání `Add` metodu na konkrétní instanci typu vlastnost kolekce. Nebo ve scénáři serializace procesor XAML vytváří diskrétní instancí typ jazyka XAML pro každou položku najít v seznamu, slovníku nebo pole založené na každou kolekci konkrétní konceptu "Položky". Jsou to: <xref:System.Collections.IList.Item%2A>; <xref:System.Collections.IDictionary.Item%2A>; explicitní <xref:System.Array.System%23Collections%23IList%23Item%2A> pro <xref:System.Array>.  
   
@@ -49,8 +37,8 @@ Toto téma popisuje, jak definovat vlastnosti typů, které jsou určeny pro pod
 ## <a name="xaml-type-system-support-and-collections"></a>Podpora systému typu XAML a kolekce  
  Nad rámec základní mechanismy analýza XAML a naplnění nebo serializaci vlastnosti kolekce systém typů XAML, jak jsou implementované v rozhraní .NET Framework XAML Services zahrnuje několik funkcí návrhu, které náleží do kolekcí v jazyce XAML.  
   
-1.  <xref:System.Xaml.XamlType.IsCollection%2A>Vrátí hodnotu true, pokud je typ jazyka XAML zálohovaný pomocí typu, který poskytuje podporu kolekce XAML.  
+1.  <xref:System.Xaml.XamlType.IsCollection%2A> Vrátí hodnotu true, pokud je typ jazyka XAML zálohovaný pomocí typu, který poskytuje podporu kolekce XAML.  
   
-2.  <xref:System.Xaml.XamlType.IsDictionary%2A>a <xref:System.Xaml.XamlType.IsArray%2A> dále můžete určit, který režim kolekce podporuje typ jazyka XAML. Pro vlastní XAML procesorů, které jsou založené na rozhraní .NET Framework XAML Services a XAML zadejte systému, ale není na základě existující <xref:System.Xaml.XamlWriter> implementace, zároveň budete vědět, který režim kolekce slouží může být nezbytné, aby se vědět, jakým způsobem má být vyvolán pro kolekce zpracování.  
+2.  <xref:System.Xaml.XamlType.IsDictionary%2A> a <xref:System.Xaml.XamlType.IsArray%2A> dále můžete určit, který režim kolekce podporuje typ jazyka XAML. Pro vlastní XAML procesorů, které jsou založené na rozhraní .NET Framework XAML Services a XAML zadejte systému, ale není na základě existující <xref:System.Xaml.XamlWriter> implementace, zároveň budete vědět, který režim kolekce slouží může být nezbytné, aby se vědět, jakým způsobem má být vyvolán pro kolekce zpracování.  
   
 3.  Každý z předchozí hodnoty vlastností potenciálně vliv přepsání z <xref:System.Xaml.XamlType.LookupCollectionKind%2A> na typ jazyka XAML.

@@ -1,26 +1,12 @@
 ---
 title: Vytvoření dlouhodobé služby pracovního postupu
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1cd7cc70c50ac2aa56d8cca55037769aa0b6a64a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1ddb995b849a15451c36d5d11c95a4904a3e0496
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící služeb pracovních postupů mohou spustit pro dlouhou dobu. V určitém okamžiku pracovní postup může se stát, nečinnosti čeká se na některé další informace. V takovém případě pracovního postupu uložena v databázi SQL a bude odebrán z paměti. Jakmile bude k dispozici další informace k instanci pracovního postupu je načteno zpět do paměti a pokračuje v provádění.  V tomto scénáři jsou implementace velmi zjednodušené řazení systému.  Klient odešle zprávu počáteční služby pracovního postupu spustit pořadí. Vrátí pořadí ID klienta. V tomto okamžiku služby pracovního postupu se čeká na další zprávu od klienta a klient se přepne do stavu nečinnosti a uložena v databázi systému SQL Server.  Když klient odešle na další zprávu pořadí položku, služby pracovního postupu je načteno zpět do paměti a dokončí zpracování pořadí. V ukázce kódu vrátí řetězec s informacemi o tom, že položka se přidal do pořadí. Ukázka kódu není určené jako aplikace skutečných technologie, ale spíš jednoduchý příklad, který znázorňuje dlouhotrvající služeb pracovních postupů. Toto téma předpokládá, že víte, jak vytvořit [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] projekty a řešení.  
@@ -52,7 +38,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
   
 1.  Vytvořte prázdnou [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] řešení, pojmenujte ji `OrderProcessing`.  
   
-2.  Přidejte nový [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] projekt aplikace služby pracovního postupu s názvem `OrderService` k řešení.  
+2.  Přidat nový projekt aplikace pracovního postupu služby WCF s názvem `OrderService` k řešení.  
   
 3.  V dialogovém okně Vlastnosti projektu, vyberte **webové** kartě.  
   

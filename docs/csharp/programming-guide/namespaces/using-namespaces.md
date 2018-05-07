@@ -1,24 +1,17 @@
 ---
-title: "Použití oboru názvů (Průvodce programováním v C#)"
+title: Použití oboru názvů (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - cs.names
 helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f485992f5d4b7bc16aaefeec8c7c76ce39f48ef0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 773add221317a2154ac620acf766607ec22c629d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
 Obory názvů jsou nejčastěji používá v rámci programy C# dvěma způsoby. Za prvé tříd rozhraní .NET Framework použít obory názvů k uspořádání jeho mnoho tříd. Za druhé deklarace vlastní oborů názvů umožňují omezit rozsah třídy a metody názvy v projektech větší programování.  
@@ -94,9 +87,9 @@ Obory názvů jsou nejčastěji používá v rámci programy C# dvěma způsoby.
  Podívejte se na téma [postupy: použití aliasu globálního Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md) Další informace ohledně `global` alias.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
- [Namespace klíčová slova](../../../csharp/language-reference/keywords/namespace-keywords.md)  
- [. Operátor](../../../csharp/language-reference/operators/member-access-operator.md)  
- [:: – Operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+ [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
+ [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)  
+ [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
  [extern](../../../csharp/language-reference/keywords/extern.md)

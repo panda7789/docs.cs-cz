@@ -1,27 +1,15 @@
 ---
-title: "Postupy: vytvoření dynamicky databáze"
-ms.custom: 
+title: 'Postupy: vytvoření dynamicky databáze'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fb7f23c4-4572-4c38-9898-a287807d070c
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f92d34276855a7b7473dd15dd3828c4ea91c64d1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 122eb705838da00fedd77a01a5d8c4bd3b5f774e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-dynamically-create-a-database"></a>Postupy: vytvoření dynamicky databáze
 V technologii LINQ to SQL objektový model je namapována na relační databázi. Mapování je povolený pomocí mapování na základě atributů nebo soubor externí mapování k popisu struktury relační databáze. V obou případech je dostatek informací o relační databázi, můžete vytvořit novou instanci databáze pomocí <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda.  
@@ -34,7 +22,7 @@ V technologii LINQ to SQL objektový model je namapována na relační databázi
   
 -   Vytváříte klientská aplikace vyžadující místní databáze pro uložení stavu offline.  
   
- Můžete také <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda s SQL serverem pomocí souboru .mdf nebo název katalogu, v závislosti na připojovací řetězec. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]používá připojovací řetězec k definování databáze, který se má vytvořit a na serveru, který má být vytvořen databáze.  
+ Můžete také <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda s SQL serverem pomocí souboru .mdf nebo název katalogu, v závislosti na připojovací řetězec. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá připojovací řetězec k definování databáze, který se má vytvořit a na serveru, který má být vytvořen databáze.  
   
 > [!NOTE]
 >  Kdykoli je to možné, použijte integrované zabezpečení systému Windows pro připojení k databázi tak, aby hesla nejsou potřebné v připojovacím řetězci.  

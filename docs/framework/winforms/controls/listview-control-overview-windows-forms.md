@@ -1,14 +1,6 @@
 ---
-title: "ListView – přehled ovládacího prvku (Windows Forms)"
-ms.custom: 
+title: ListView – přehled ovládacího prvku (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - ListView
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - ListView control [Windows Forms], about ListView control
 - list views
 ms.assetid: c9ef56c1-3bb1-4101-9f4e-e95e720f2756
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b79fecb0a537f4c568b4a57e9ce2bfab8d8e1005
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f92b5f5ae40287c95da10ef96aad0fa764fa00e2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="listview-control-overview-windows-forms"></a>ListView – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazí seznam položky s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je v pravém podokně Průzkumníka Windows. Ovládací prvek má čtyři režimy zobrazení: LargeIcon, SmallIcon, seznamu a podrobností.  
@@ -42,21 +28,21 @@ Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazí sez
   
 |Člen ListView|Zobrazit|  
 |---------------------|----------|  
-|<xref:System.Windows.Forms.ListView.Alignment%2A>Vlastnost|<xref:System.Windows.Forms.View.SmallIcon>nebo<xref:System.Windows.Forms.View.LargeIcon>|  
-|<xref:System.Windows.Forms.ListView.AutoArrange%2A>Vlastnost|<xref:System.Windows.Forms.View.SmallIcon>nebo<xref:System.Windows.Forms.View.LargeIcon>|  
-|<xref:System.Windows.Forms.ListView.AutoResizeColumn%2A>– Metoda|<xref:System.Windows.Forms.View.Details>|  
-|<xref:System.Windows.Forms.ListView.Columns%2A>Vlastnost|<xref:System.Windows.Forms.View.Details>nebo<xref:System.Windows.Forms.View.Tile>|  
-|<xref:System.Windows.Forms.ListView.DrawSubItem>události|<xref:System.Windows.Forms.View.Details>|  
-|<xref:System.Windows.Forms.ListView.FindItemWithText%2A>– Metoda|<xref:System.Windows.Forms.View.Details>, <xref:System.Windows.Forms.View.List>, nebo<xref:System.Windows.Forms.View.Tile>|  
-|<xref:System.Windows.Forms.ListView.FindNearestItem%2A>– Metoda|<xref:System.Windows.Forms.View.SmallIcon>nebo<xref:System.Windows.Forms.View.LargeIcon>|  
-|<xref:System.Windows.Forms.ListView.GetItemAt%2A>– Metoda|<xref:System.Windows.Forms.View.Details>nebo<xref:System.Windows.Forms.View.Tile>|  
-|<xref:System.Windows.Forms.ListView.Groups%2A>Vlastnost|Všechna zobrazení s výjimkou<xref:System.Windows.Forms.View.List>|  
-|<xref:System.Windows.Forms.ListView.HeaderStyle%2A>Vlastnost|<xref:System.Windows.Forms.View.Details>.|  
-|<xref:System.Windows.Forms.ListView.InsertionMark%2A>Vlastnost|<xref:System.Windows.Forms.View.LargeIcon>, <xref:System.Windows.Forms.View.SmallIcon>, nebo<xref:System.Windows.Forms.View.Tile>|  
+|<xref:System.Windows.Forms.ListView.Alignment%2A> Vlastnost|<xref:System.Windows.Forms.View.SmallIcon> Nebo <xref:System.Windows.Forms.View.LargeIcon>|  
+|<xref:System.Windows.Forms.ListView.AutoArrange%2A> Vlastnost|<xref:System.Windows.Forms.View.SmallIcon> Nebo <xref:System.Windows.Forms.View.LargeIcon>|  
+|<xref:System.Windows.Forms.ListView.AutoResizeColumn%2A> – Metoda|<xref:System.Windows.Forms.View.Details>|  
+|<xref:System.Windows.Forms.ListView.Columns%2A> Vlastnost|<xref:System.Windows.Forms.View.Details> Nebo <xref:System.Windows.Forms.View.Tile>|  
+|<xref:System.Windows.Forms.ListView.DrawSubItem> Události|<xref:System.Windows.Forms.View.Details>|  
+|<xref:System.Windows.Forms.ListView.FindItemWithText%2A> – Metoda|<xref:System.Windows.Forms.View.Details>, <xref:System.Windows.Forms.View.List>, nebo <xref:System.Windows.Forms.View.Tile>|  
+|<xref:System.Windows.Forms.ListView.FindNearestItem%2A> – Metoda|<xref:System.Windows.Forms.View.SmallIcon> Nebo <xref:System.Windows.Forms.View.LargeIcon>|  
+|<xref:System.Windows.Forms.ListView.GetItemAt%2A> – Metoda|<xref:System.Windows.Forms.View.Details> Nebo <xref:System.Windows.Forms.View.Tile>|  
+|<xref:System.Windows.Forms.ListView.Groups%2A> Vlastnost|Všechna zobrazení s výjimkou <xref:System.Windows.Forms.View.List>|  
+|<xref:System.Windows.Forms.ListView.HeaderStyle%2A> Vlastnost|<xref:System.Windows.Forms.View.Details>.|  
+|<xref:System.Windows.Forms.ListView.InsertionMark%2A> Vlastnost|<xref:System.Windows.Forms.View.LargeIcon>, <xref:System.Windows.Forms.View.SmallIcon>, nebo <xref:System.Windows.Forms.View.Tile>|  
   
  Klíčové vlastnosti <xref:System.Windows.Forms.ListView> ovládací prvek je <xref:System.Windows.Forms.ListView.Items%2A>, který obsahuje položky zobrazené ovládacím prvkem. <xref:System.Windows.Forms.ListView.SelectedItems%2A> Vlastnost obsahuje kolekce položek v ovládacím prvku aktuálně vybranou. Uživatel může vybrat více položek, například přetáhnout několik položek najednou do jiného ovládacího prvku, pokud <xref:System.Windows.Forms.ListView.MultiSelect%2A> je nastavena na `true`. <xref:System.Windows.Forms.ListView> Řízení zobrazíte zaškrtnutí políček vedle položky, když <xref:System.Windows.Forms.ListView.CheckBoxes%2A> je nastavena na `true`.  
   
- <xref:System.Windows.Forms.ListView.Activation%2A> Vlastnost určuje, jaký typ akce uživatel musí přijmout aktivovat položku v seznamu: možnosti <xref:System.Windows.Forms.ItemActivation.Standard>, <xref:System.Windows.Forms.ItemActivation.OneClick>, a <xref:System.Windows.Forms.ItemActivation.TwoClick>. <xref:System.Windows.Forms.ItemActivation.OneClick>Aktivace vyžaduje jedním kliknutím aktivujte položky. <xref:System.Windows.Forms.ItemActivation.TwoClick>Aktivace vyžaduje, aby uživatel k dvakrát klikněte na panel aktivace položky; jedním kliknutím změní barvu textu položky. <xref:System.Windows.Forms.ItemActivation.Standard>Aktivace vyžaduje, aby uživatel k dvakrát klikněte na položku aktivovat, ale položka nezmění vzhled.  
+ <xref:System.Windows.Forms.ListView.Activation%2A> Vlastnost určuje, jaký typ akce uživatel musí přijmout aktivovat položku v seznamu: možnosti <xref:System.Windows.Forms.ItemActivation.Standard>, <xref:System.Windows.Forms.ItemActivation.OneClick>, a <xref:System.Windows.Forms.ItemActivation.TwoClick>. <xref:System.Windows.Forms.ItemActivation.OneClick> Aktivace vyžaduje jedním kliknutím aktivujte položky. <xref:System.Windows.Forms.ItemActivation.TwoClick> Aktivace vyžaduje, aby uživatel k dvakrát klikněte na panel aktivace položky; jedním kliknutím změní barvu textu položky. <xref:System.Windows.Forms.ItemActivation.Standard> Aktivace vyžaduje, aby uživatel k dvakrát klikněte na položku aktivovat, ale položka nezmění vzhled.  
   
  <xref:System.Windows.Forms.ListView> Řízení také podporuje vizuální styly a další funkce, které jsou k dispozici na platformě Windows XP, včetně seskupení, zobrazení tile a značky pro vložení. Další informace najdete v tématu [funkce systému Windows XP a Windows Forms – ovládací prvky](http://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0).  
   

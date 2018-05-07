@@ -1,21 +1,14 @@
 ---
-title: "Implementace čtení či dotazy v CQRS mikroslužbu"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace čtení či dotazy v CQRS mikroslužbu"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace čtení či dotazy v CQRS mikroslužbu
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace čtení či dotazy v CQRS mikroslužbu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/02/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ca9bcefb317d2b3c7c225b773918ca4a2484cb8f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8eca01acc2308097d1684be8bdb0f07edd86832f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-readsqueries-in-a-cqrs-microservice"></a>Implementace čtení či dotazy v CQRS mikroslužbu
 
@@ -198,11 +191,11 @@ Vidíte na obrázku výše některé ukázkové hodnoty na základě typů ViewM
 
 -   **Julie Lerman. Datové body - Dapper, rozhraní Entity Framework a hybridní aplikace (článek MSDN Mag.)**
 
-    *https://msdn.microsoft.com/Magazine/mt703432.aspx*
+    *https://msdn.microsoft.com/magazine/mt703432.aspx*
 
 -   **Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger**
 
-    *https://docs.microsoft.com/ASPNET/Core/tutorials/web-API-Help-Pages-Using-swagger?Tabs=Visual-Studio*
+    *https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio*
 
 >[!div class="step-by-step"]
 [Předchozí] (eshoponcontainers-cqrs-ddd-microservice.md) [Další] (ddd-zaměřené na konkrétní microservice.md)

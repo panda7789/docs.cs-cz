@@ -1,32 +1,20 @@
 ---
-title: "Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data grids [Windows Forms], sort modes
 - DataGridView control [Windows Forms], sort mode
 ms.assetid: 43715887-2df9-4da7-bcf1-b9c7c842b2bf
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 088d9f1f76e88d8be838cbf7050601835eff216a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9ebcfc435fcc7d2b0dfbfe3004d958c73dd1347c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView>sloupce mít tři režimy řazení. Režim řazení pro každý sloupec se specifikuje prostřednictvím <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> vlastnost sloupce, který může být nastaven na jednu z následujících <xref:System.Windows.Forms.DataGridViewColumnSortMode> hodnot výčtu.  
+<xref:System.Windows.Forms.DataGridView> sloupce mít tři režimy řazení. Režim řazení pro každý sloupec se specifikuje prostřednictvím <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> vlastnost sloupce, který může být nastaven na jednu z následujících <xref:System.Windows.Forms.DataGridViewColumnSortMode> hodnot výčtu.  
   
-|`DataGridViewColumnSortMode`Hodnota|Popis|  
+|`DataGridViewColumnSortMode` Hodnota|Popis|  
 |----------------------------------------|-----------------|  
 |<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>|Výchozí hodnoty pro textové pole sloupců. Pokud záhlaví sloupců se používají pro výběr, automaticky kliknutím na záhlaví sloupce seřadí <xref:System.Windows.Forms.DataGridView> podle tohoto sloupce a zobrazí glyf označující pořadí řazení.|  
 |<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>|Výchozí hodnoty pro sloupce bez – textové pole. Tento sloupec lze seřadit prostřednictvím kódu programu; však není určen pro řazení, takže žádné místo je vyhrazený pro řazení glyfů.|  

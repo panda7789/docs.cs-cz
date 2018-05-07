@@ -1,25 +1,16 @@
 ---
-title: "Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)"
-ms.custom: 
+title: 'Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - covariance, arrays
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0dd2d678bbfdeaa6b12b5b5a4f69d0fbca8c1944
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 63c7d187152fcb5ea84378c677aa687f334f63de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
 Vzhledem k tomu, že pole jsou objekty, můžete je používat v příkazech přiřazení jako ostatní typy objektů. Proměnné pole obsahuje ukazatele na data tvořících elementy pole a informace o pořadí a délku a přiřazení zkopíruje pouze tento ukazatel.  
@@ -53,5 +44,5 @@ Vzhledem k tomu, že pole jsou objekty, můžete je používat v příkazech př
 ## <a name="see-also"></a>Viz také  
  [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
  [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)  
- [Enum – příkaz](../../../../visual-basic/language-reference/statements/enum-statement.md)  
- [Převody pole](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
+ [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)

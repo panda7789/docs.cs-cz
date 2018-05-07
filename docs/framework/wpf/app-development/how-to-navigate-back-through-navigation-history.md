@@ -1,13 +1,6 @@
 ---
-title: "Postupy: přejděte zpátky pomocí historie navigace"
-ms.custom: 
+title: 'Postupy: přejděte zpátky pomocí historie navigace'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - history [WPF], navigating back
 - navigation [WPF], through navigation history (back)
 ms.assetid: 9343234b-d864-441d-b8a7-d895cba80a87
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e3bfc809dbe76c17859cb3fcd83f8a293a24b308
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9acbc5d3388a8df0ec7d7b5326f449f092f0cb03
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-navigate-back-through-navigation-history"></a>Postupy: přejděte zpátky pomocí historie navigace
 Tento příklad ukazuje, jak přejděte na položky zpět v historii navigace.  

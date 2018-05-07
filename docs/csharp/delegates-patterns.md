@@ -1,20 +1,13 @@
 ---
-title: "Obecné vzory pro delegáti"
-description: "Další informace o obecné vzory pro použití delegátů ve vašem kódu předejdete silné párování mezi vaší součásti."
-keywords: "Rozhraní .NET, .NET core"
-author: BillWagner
-ms.author: wiwagn
+title: Obecné vzory pro delegáti
+description: Další informace o obecné vzory pro použití delegátů ve vašem kódu předejdete silné párování mezi vaší součásti.
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: 83214800fb997e9274cacfd1bae85ab07c4515a2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fceab2b9c6bbd1d687566820366459ec57ae7a2d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-patterns-for-delegates"></a>Obecné vzory pro delegáti
 
@@ -242,4 +235,4 @@ Seznámili jste se začátku protokolu součásti, která by mohla být rozší�
 
 Třída protokolovacího nástroje můžete nastavit libovolný počet vylepšení nebo změny bez zavedení nejnovější změny. Podobně jako všechny třídy nelze změnit veřejné rozhraní API bez riziko nejnovější změny. Ale protože párování mezi protokolovacího nástroje a všechny moduly výstupu je pouze prostřednictvím delegáta, se podílejí žádné jiné typy (například rozhraní nebo základní třídy). Vazba je co nejmenší.
 
-[Další](events-overview.md)
+[Next](events-overview.md)

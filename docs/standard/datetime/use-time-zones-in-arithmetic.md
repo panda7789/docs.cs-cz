@@ -1,13 +1,7 @@
 ---
-title: "Postupy: používání časových pásem datum a čas aritmetické"
-ms.custom: 
+title: 'Postupy: používání časových pásem datum a čas aritmetické'
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - arithmetic operations [.NET Framework], dates and times
 - dates [.NET Framework], adding and subtracting
 ms.assetid: 83dd898d-1338-415d-8cd6-445377ab7871
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: bcffc98d763c125ac44c1048a7c89c8f6a1e89f1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9f9d326750cdef96be1aa6055d46b4ac08ec7a0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: používání časových pásem datum a čas aritmetické
 

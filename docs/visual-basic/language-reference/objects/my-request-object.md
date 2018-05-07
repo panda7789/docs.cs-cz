@@ -1,25 +1,17 @@
 ---
-title: "My.Request – objekt"
+title: My.Request – objekt
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - My.MyWebExtension.Request
 - My.Request
 helpviewer_keywords:
 - My.Request object
 ms.assetid: 93d5f0e2-6b60-4a2c-8652-d90216f6ad10
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e0e67c8fd85860eacc57bcc7dd7f15f97097efe3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 88c3a9a01b50a97b556fa94026df391248bdf912
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="myrequest-object"></a>My.Request – objekt
 Získá <xref:System.Web.HttpRequest> objekt pro požadovanou stránku.  
@@ -36,4 +28,4 @@ Získá <xref:System.Web.HttpRequest> objekt pro požadovanou stránku.
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Web.HttpRequest>  
- [My.Response – objekt](../../../visual-basic/language-reference/objects/my-response-object.md)
+ [Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)

@@ -1,24 +1,14 @@
 ---
 title: System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fc7a8357-4993-4488-9e4a-e544fbd45e3d
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: b316ffe44d86ef6946f989994085840a09e3e421
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f2a6d0e52bfc31138cb245c2f596dbbd9adfe572
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelsecurityissuancetokenproviderbeginsecuritynegotiation"></a>System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation
 System.ServiceModel.Security.IssuanceTokenProviderBeginSecurityNegotiation  

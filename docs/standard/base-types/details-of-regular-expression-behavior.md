@@ -1,13 +1,7 @@
 ---
-title: "Podrobnosti k chování regulárních výrazů"
-ms.custom: 
+title: Podrobnosti k chování regulárních výrazů
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5b471cd8e934880fc8095fbad68b460174ec338c
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: bc4d8fdc39153f227e8344ea1da52a0dba2688d0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární výraz objekt přiřazení vzorce která zahrnuje modul tradiční Nedeterministická konečné Automaton (NFA) jako je například použité Perl, Python, Emacs a Tcl. To je odlišné z rychlejší, ale omezenější, čistý regulární výraz moduly deterministický konečné Automaton (DFA) jako aplikace awk, egrep nebo lex. To je také odlišné od standardizované, ale pomalejší, k zařízení NFAs POSIX. Následující část popisuje tři typy modulů regulární výraz a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovaná pomocí modul tradiční NFA.  
@@ -48,7 +37,7 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
   
  Další funkce modulu regulárního výrazu rozhraní .NET Framework zahrnují následující:  
   
--   Líné kvantifikátory: `??`, `*?`, `+?`, `{`  *n*  `,` *m*`}?`. Tyto konstrukce řekněte modul navrácení nejprve hledání minimální počet opakování. Naproti tomu obyčejnou typu greedy kvantifikátory pokusit nejprve porovnat maximální počet opakování. Následující příklad ukazuje rozdíl mezi nimi. Regulární výraz odpovídá věty, které končí číslem a zaznamenávání skupiny slouží k extrakci toto číslo. Regulární výraz `.+(\d+)\.` zahrnuje typu greedy kvantifikátoru `.+`, což způsobí, že modul regulárních výrazů k zachycení pouze poslední číslice čísla. Naproti tomu regulární výraz `.+?(\d+)\.` zahrnuje opožděné kvantifikátoru `.+?`, což způsobí, že modul regulárních výrazů k zachycení celé číslo.  
+-   Líné kvantifikátory: `??`, `*?`, `+?`, `{` *n*`,`*m*`}?`. Tyto konstrukce řekněte modul navrácení nejprve hledání minimální počet opakování. Naproti tomu obyčejnou typu greedy kvantifikátory pokusit nejprve porovnat maximální počet opakování. Následující příklad ukazuje rozdíl mezi nimi. Regulární výraz odpovídá věty, které končí číslem a zaznamenávání skupiny slouží k extrakci toto číslo. Regulární výraz `.+(\d+)\.` zahrnuje typu greedy kvantifikátoru `.+`, což způsobí, že modul regulárních výrazů k zachycení pouze poslední číslice čísla. Naproti tomu regulární výraz `.+?(\d+)\.` zahrnuje opožděné kvantifikátoru `.+?`, což způsobí, že modul regulárních výrazů k zachycení celé číslo.  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lazy1.cs#1)]
      [!code-vb[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lazy1.vb#1)]  
@@ -139,13 +128,13 @@ Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární 
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]  
   
-     Regulární výraz `^[A-Z0-9]([-!#$%&'.*+/=?^`{} | ~ \w])* (? < = [A-Z0-9]) $"je definován, jak je znázorněno v následující tabulce.  
+     Regulární výraz `^[A-Z0-9]([-!#$%&'.*+/=?^` {}| ~ \w])* (? < = [A-Z0-9]) $"je definován, jak je znázorněno v následující tabulce.  
   
     |Vzor|Popis|  
     |-------------|-----------------|  
     |`^`|Začne porovnávání na začátku řetězce.|  
     |`[A-Z0-9]`|Porovná libovolný znak číselné nebo alfanumerické znaky. (Porovnání se velká a malá písmena.)|  
-    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])*<code>|Porovná nula nebo více výskytů libovolný znak, nebo libovolná z následujících znaků:-,!, #, $, % &,:,., *, +, /, =,?, ^, \`, {,}, &#124; nebo ~.|  
+    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])*<code>|Porovná nula nebo více výskytů libovolný znak, nebo libovolná z následujících znaků:-,!, #, $, % &,:,., *, +, /, =,?, ^, \`, {,}, &#124;, nebo ~.|  
     |`(?<=[A-Z0-9])`|Vyhledejte za předchozí znak, který musí být číselné nebo alfanumerické znaky. (Porovnání se velká a malá písmena.)|  
     |`$`|Ukončí porovnávání na konci řetězce.|  
   

@@ -1,13 +1,6 @@
 ---
-title: "Spolehlivé relace"
-ms.custom: 
+title: Spolehlivé relace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Windows Communication Foundation, sessions and instances
 - WCF, sessions and instances
@@ -16,24 +9,19 @@ helpviewer_keywords:
 - instances [WCF]
 - sessions [WCF]
 ms.assetid: 143951b3-3aa0-4540-b4b7-d33e77e874a1
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 16480996b96145873b1d1f84d56af6d1aa863710
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 396c76cbdb8eada881a5c87edfc2500dcdab3ad4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reliable-sessions"></a>Spolehlivé relace
 
-Tato část popisuje, co [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] spolehlivé relace je, čemu se používá, jak a kdy použít jednu, jaký vazby konfigurace podporují, a ukazatele na osvědčené postupy. Následující tabulka shrnuje informace o základní body a související témata v této části.
+Tato část popisuje jaké Windows Communication Foundation (WCF) je spolehlivé relace, čemu se používá, jak a kdy použít jednu, jaký vazby konfigurace podporují, a ukazatele na osvědčené postupy. Následující tabulka shrnuje informace o základní body a související témata v této části.
 
-Spolehlivá relace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje featrues zajištění, že zprávy odeslané mezi koncovými body se přenesou pomocí protokolu SOAP nebo přenos prostředníci a se dodávají jenom jednou a volitelně ve stejném pořadí, ve které byly odeslány.
+Spolehlivá relace WCF poskytuje featrues zajištění, že zprávy odeslané mezi koncovými body se přenesou pomocí protokolu SOAP nebo přenos prostředníci a se dodávají jenom jednou a volitelně ve stejném pořadí, ve které byly odeslány.
 
-Použít spolehlivé relace s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, použijte jednu z vazby poskytované systémem v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporu spolehlivé relace ve výchozím nastavení, nebo jako možnost, nebo vytvořit vlastní vlastní vazby, která podporuje relace.
+Spolehlivá relace používat s aplikací WCF, použijte jednu poskytované systémem vazbách ve WCF, které podporují spolehlivé relace ve výchozím nastavení, nebo jako možnost, nebo vytvořte vlastní vlastní vazby, která podporuje relace.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 

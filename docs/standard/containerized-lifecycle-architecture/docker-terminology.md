@@ -1,19 +1,14 @@
 ---
 title: Terminologie docker
 description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
-ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0e7119f9503b4fad64b1acd3f3c6569ea09649bc
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 7a8ec2233b7927c1e3f85f5a3536a889a6a55e22
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="docker-terminology"></a>Terminologie docker
 

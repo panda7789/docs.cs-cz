@@ -1,31 +1,19 @@
 ---
 title: Koncepty zabezpečení používané ve službě WCF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-caps.latest.revision: 15
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 74b16698d40747937a89f84f0d958178b42d2e44
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ac76f1742ab72de9f5180d1ea2fcbc668ec2140c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-concepts-used-in-wcf"></a>Koncepty zabezpečení používané ve službě WCF
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] zabezpečení je založena na koncepty již používán a nasadit v různých zabezpečení infrastruktury.  
+Zabezpečení Windows Communication Foundation (WCF) je založena na koncepty již používán a nasadit v různých zabezpečení infrastruktury.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje některé z těchto infrastruktury, jako je například vrstvy SSL (Secure Sockets) přes protokol HTTP (HTTPS). Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] překročí podpora existující infrastruktury zabezpečení implementací novější standardy, umožňuje vzájemnou spolupráci zabezpečení (jako je WS-Security) přes kódováním protokolu SOAP zprávy. Ať používáte existující mechanismy nebo nové umožňuje vzájemnou spolupráci standardů, koncepty zabezpečení za obě jsou stejné. Vysvětlení pojmů týkajících se stávající infrastruktury a novější standardy je důležitá pro implementaci doporučené model zabezpečení pro aplikace.  
+ WCF podporuje některé z těchto infrastruktury, jako je například vrstvy SSL (Secure Sockets) přes protokol HTTP (HTTPS). Ale WCF překročí podpora existující infrastruktury zabezpečení implementací novější standardy, umožňuje vzájemnou spolupráci zabezpečení (jako je WS-Security) přes kódováním protokolu SOAP zprávy. Ať používáte existující mechanismy nebo nové umožňuje vzájemnou spolupráci standardů, koncepty zabezpečení za obě jsou stejné. Vysvětlení pojmů týkajících se stávající infrastruktury a novější standardy je důležitá pro implementaci doporučené model zabezpečení pro aplikace.  
   
 ## <a name="introduction-to-security-for-wcf-web-services"></a>Úvod do zabezpečení pro webové služby WCF  
  Skupina Microsoft Patterns and Practices napsali hlouběji dokumentu na doprovodné materiály zabezpečení WCF, která je k dispozici ke stažení zde: [Příručka zabezpečení WCF](http://go.microsoft.com/fwlink/?LinkId=210210). Tento dokument White Paper popisuje základní zabezpečení koncepty, které se vztahují webové služby, klíčové koncepty zabezpečení WCF, scénáře aplikací intranetu a Internetu scénáře aplikací.  

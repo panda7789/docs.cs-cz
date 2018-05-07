@@ -1,22 +1,16 @@
 ---
-title: "Postupy: Vytvoření klíče v registru (Visual C#)"
+title: 'Postupy: Vytvoření klíče v registru (Visual C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - registry, adding keys and values [C#]
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-caps.latest.revision: "14"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f6cc79a8a914d3ef5b7c496db4dc0d2b3eb17768
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a1643310740a472ad0a1df978fa41f674f3dbcb5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-key-in-the-registry-visual-c"></a>Postupy: Vytvoření klíče v registru (Visual C#)
 Tento příklad přidá dvojice hodnot, "Název" a "Isabella", do aktuálního uživatele registru pod klíčem "Názvy".  
@@ -62,6 +56,6 @@ key.Close();
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO?displayProperty=nameWithType>  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Systém souborů a registr (C# Průvodce programováním)](../../../csharp/programming-guide/file-system/index.md)  
  [Čtení, zápis a odstranění z registru pomocí C#](http://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)

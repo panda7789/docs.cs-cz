@@ -1,27 +1,15 @@
 ---
-title: "ToolBar – ovládací prvek (Windows Forms)"
-ms.custom: 
+title: ToolBar – ovládací prvek (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - toolbars [Windows Forms]
 - ToolBar control [Windows Forms]
 ms.assetid: 6b40e9ce-6a7a-4784-bfc9-7f1d36b7462e
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 204c4229852d4e91d2af7a27163c7418b9a1e9b8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e21b31805eb0b840866313f16cc85ea33c84e515
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolbar-control-windows-forms"></a>ToolBar – ovládací prvek (Windows Forms)
 > [!NOTE]
@@ -48,7 +36,7 @@ ms.lasthandoff: 12/22/2017
  Viz také [postupy: definování ikony pro panelu nástrojů tlačítko pomocí návrháře](http://msdn.microsoft.com/library/ms233659\(v=vs.110\)), [postupy: přidání tlačítek na panelu nástrojů ovládacího prvku pomocí návrháře](http://msdn.microsoft.com/library/ms233650\(v=vs.110\)).  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ToolBar>– Třída  
+ <xref:System.Windows.Forms.ToolBar> – Třída  
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

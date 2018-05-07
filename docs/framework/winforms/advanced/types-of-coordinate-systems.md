@@ -1,13 +1,6 @@
 ---
-title: "Typy souřadnicových systémů"
-ms.custom: 
+title: Typy souřadnicových systémů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,19 +15,14 @@ helpviewer_keywords:
 - coordinate systems
 - transformations [Windows Forms], world
 ms.assetid: c61ff50a-eb1d-4e6c-83cd-f7e9764cfa9f
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 287b1c9eddef882041d9e4eac44a06190f3585a4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff53942cb90721d5411f99b261f90366d039e151
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-of-coordinate-systems"></a>Typy souřadnicových systémů
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]používá tři souřadnice mezery: world, stránky a zařízení. Souřadnice World jsou použita k modelování konkrétní grafické world souřadnice a souřadnice, které můžete předat metody v rozhraní .NET Framework. Stránka souřadnice naleznete souřadnicový systém používán kreslicí plochy, jako jsou formuláře nebo ovládacího prvku. Souřadnice zařízení jsou souřadnice používané fyzického zařízení přitahuje, jako je obrazovky nebo list papíru. Pokud provedete volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v prostoru souřadnic world. Před [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete nakreslení čáry na obrazovce, souřadnice předávat posloupnost transformace. Jeden transformace, názvem Světové transformace převede world souřadnice jiného a jiné transformace, názvem transformace stránky převede souřadnice stránky na zařízení souřadnice.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá tři souřadnice mezery: world, stránky a zařízení. Souřadnice World jsou použita k modelování konkrétní grafické world souřadnice a souřadnice, které můžete předat metody v rozhraní .NET Framework. Stránka souřadnice naleznete souřadnicový systém používán kreslicí plochy, jako jsou formuláře nebo ovládacího prvku. Souřadnice zařízení jsou souřadnice používané fyzického zařízení přitahuje, jako je obrazovky nebo list papíru. Pokud provedete volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v prostoru souřadnic world. Před [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete nakreslení čáry na obrazovce, souřadnice předávat posloupnost transformace. Jeden transformace, názvem Světové transformace převede world souřadnice jiného a jiné transformace, názvem transformace stránky převede souřadnice stránky na zařízení souřadnice.  
   
 ## <a name="transforms-and-coordinate-systems"></a>Systémy souřadnic a transformace  
  Předpokládejme, že chcete pro práci s souřadnicový systém, který má původ v těle klientské oblasti místo levého horního rohu. Řekněme například, které chcete počátek 100 pixelů od levého okraje klientské oblasti a 50 pixelů z horní části oblasti klienta. Následující obrázek znázorňuje souřadnicový systém.  

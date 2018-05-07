@@ -1,12 +1,6 @@
 ---
-title: "Rozměry pole v jazyce Visual Basic"
-ms.custom: 
+title: Rozměry pole v jazyce Visual Basic
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - dimensions, arrays
 - arrays [Visual Basic], dimensions
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 21e170ca5942862a26e05428fffaea7d1e875e19
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cf295288dd034d744dceb71b5c58278be5cc2a2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Rozměry pole v jazyce Visual Basic
 A *dimenze* je směr, ve kterém můžete měnit specifikace elementů tohoto pole. Pole, které obsahuje celkový počet prodeje za každý den v měsíci má jednu dimenzi (den v měsíci). Pole, které obsahuje celkový počet prodeje podle oddělení pro každý den v měsíci se dvěma rozměry (číslo oddělení a den v měsíci). Počet dimenzí pole se nazývá jeho *pořadí*.  
@@ -35,13 +26,13 @@ A *dimenze* je směr, ve kterém můžete měnit specifikace elementů tohoto po
   
  Následující ilustrace znázorňuje koncepční strukturu polí se různá pořadí. Každý prvek v tyto ilustrace zobrazuje hodnoty indexu, které k němu přístup. Například můžete první prvek pole dvourozměrná druhý řádek přístup zadáním indexy `(1, 0)`.  
   
- ![Grafický diagram jeden & č. 45; dimenzí pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimone.gif "ArrayExDimOne")  
+ ![Grafický diagram jednoho&#45;dimenzí pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimone.gif "ArrayExDimOne")  
 Jednorozměrné pole  
   
- ![Grafický diagram dva & č. 45; dimenzí pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimtwo.gif "ArrayExDimTwo")  
+ ![Grafický diagram dva&#45;dimenzí pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimtwo.gif "ArrayExDimTwo")  
 Dvourozměrná pole  
   
- ![Grafický diagram tři & č. 45; dimenzí pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimthree.gif "ArrayExDimThree")  
+ ![Grafický diagram tři&#45;dimenzí pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimthree.gif "ArrayExDimThree")  
 trojrozměrné pole  
   
 ### <a name="one-dimension"></a>Jednu dimenzi  

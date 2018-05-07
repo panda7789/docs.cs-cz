@@ -1,26 +1,17 @@
 ---
-title: "Obecné parametry použité jako typy volitelného parametru musí mít omezení třídy."
+title: Obecné parametry použité jako typy volitelného parametru musí mít omezení třídy.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc32124
 - bc32124
 helpviewer_keywords:
 - BC32124
 ms.assetid: 55aa8b2a-9ce3-4620-a710-2f9b0feb6143
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a13ea66f12e54db4e585577e20e1f5396669f1a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7e2b59f758ef236717a912694576b514e2ae8a60
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generic-parameters-used-as-optional-parameter-types-must-be-class-constrained"></a>Obecné parametry použité jako typy volitelného parametru musí mít omezení třídy.
 Postup je deklarovaný s volitelný parametr, který používá parametr typu, který není omezen být odkazového typu.  
@@ -38,7 +29,7 @@ Postup je deklarovaný s volitelný parametr, který používá parametr typu, k
 ## <a name="see-also"></a>Viz také  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)  
- [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
- [Volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
+ [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
  [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Nic](../../../visual-basic/language-reference/nothing.md)
+ [Nothing](../../../visual-basic/language-reference/nothing.md)

@@ -1,10 +1,6 @@
 ---
 title: Výchozí zařazování pro pole
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -12,17 +8,13 @@ helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 84f4015fd9bc5eb2de11b71530115d20c583d21d
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: b05ac1016710109110c3ff9d0d318a71fe0827f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V aplikaci, která obsahuje jenom spravovaného kódu modul common language runtime předá typy polí jako vstupně -výstupní parametry. Naproti tomu spolupráce vláken předá pole jako parametry ve výchozím nastavení.  
@@ -64,7 +56,7 @@ V aplikaci, která obsahuje jenom spravovaného kódu modul common language runt
 |Nespravovaný typ|Importovaný typ|  
 |--------------------|-------------------|  
 |**SafeArray (** *typ* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis. Bezpečné pole, které nejsou rank = 1, nebo dolní mez = 0 nelze zařadit jako **SZARRAY**.|  
-|*Typ***]** |**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis.|  
+|*Typ***]**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikost je známý jenom v případě, že součástí spravované podpis.|  
   
 ### <a name="safe-arrays"></a>Bezpečné pole  
  Při importu bezpečným polím z knihovny typů pro sestavení .NET pole jsou převedeny na jednorozměrné pole známé typu (například **int**). Stejné pravidel převodu typů, které se vztahují na parametry platí také pro elementy pole. Například bezpečným polím z **BSTR** typy bude spravované pole řetězců a bezpečným polím variant bude spravované pole objektů. **SAFEARRAY** zaznamenat z knihovny typů a uložit v typu elementu **SAFEARRAY** hodnotu <xref:System.Runtime.InteropServices.UnmanagedType> výčtu.  

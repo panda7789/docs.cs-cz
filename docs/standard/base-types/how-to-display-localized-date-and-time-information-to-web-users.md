@@ -1,13 +1,7 @@
 ---
-title: "Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům"
-ms.custom: 
+title: 'Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - formatting [.NET Framework], dates
 - parsing strings [.NET Framework], date and time strings
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - displaying date and time data
 - localized date displays [.NET Framework]
 ms.assetid: 377fe93c-32be-421a-a30a-be639a46ede8
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b6c68ddd29b8221a073b00ade87e3b9d3dc870b8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 63775d48ca2e11cfa121f3b7aeaff708d86e50de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Protože na webové stránce lze zobrazit kdekoliv na světě, analyzovat a formátuje hodnoty data a času operací neměli spoléhat na výchozí formát (což je nejčastěji formát jazykové verze místní webový server) při interakci s uživatelem. Místo toho by měla webových formulářů, které zpracovávají datum a čas uživatelský vstup řetězce analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času, které má být zobrazena uživateli ve formátu, který vyhovuje jazykovou verzi uživatele. Toto téma ukazuje, jak to udělat.  

@@ -1,20 +1,12 @@
 ---
 title: Kovariance a kontravariance (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 59224c46-9931-466b-8c6e-3648c3e609c6
-caps.latest.revision: 3
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1df3b01573ae1a9dc5c106efa5e387927c57c55f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 322cb452e0a3391812e58b68406657651f7a430f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="covariance-and-contravariance-visual-basic"></a>Kovariance a kontravariance (Visual Basic)
 Kovariance a kontravariance povolit v jazyce Visual Basic implicitní převod odkazu pro typy polí, typy delegáta a argumenty obecného typu. Kovariance zachovává kompatibility přiřazení a kontravariance obrátí ho.  

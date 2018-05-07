@@ -1,12 +1,6 @@
 ---
-title: "Operator – příkaz"
+title: Operator – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.operator
 helpviewer_keywords:
@@ -23,14 +17,11 @@ helpviewer_keywords:
 - Operator statement [Visual Basic]
 - CType function [Visual Basic], Operator statement
 ms.assetid: b12ec4af-1ad7-4a17-865b-c5ee96320ae5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1b6be45fd0a606f43c14d57f3f8ae0955f256ba6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cb7fe7929e4b6e61ca3b39be5615e09182f2fe0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operator-statement"></a>Operator – příkaz
 Deklaruje symbol operátoru, operandy a kód, který definovat procedury operátora na třídu nebo strukturu.  
@@ -78,7 +69,7 @@ End Operator
  `operand2`  
  Vyžaduje se pro binární operátory. Název a typ pravý operand binárního operátoru.  
   
- `operand1`a `operand2` mají následující syntaxe a částí:  
+ `operand1` a `operand2` mají následující syntaxe a částí:  
   
  `[ ByVal ] operandname [ As operandtype ]`  
   
@@ -122,13 +113,13 @@ End Operator
 ## <a name="matched-pairs"></a>Odpovídající páry  
  Je třeba definovat určité operátory jako odpovídající páry. Pokud definujete buď operátor takové pár, je nutné zadat dalších také. Odpovídající páry jsou následující:  
   
--   `=`a`<>`  
+-   `=` A `<>`  
   
--   `>`a`<`  
+-   `>` A `<`  
   
--   `>=`a`<=`  
+-   `>=` A `<=`  
   
--   `IsTrue`a`IsFalse`  
+-   `IsTrue` A `IsFalse`  
   
 ## <a name="data-type-restrictions"></a>Omezení typu dat  
  Každý operátor, který definujete musí zahrnovat třídu nebo strukturu, ve kterém můžete definovat. To znamená, že třídu nebo strukturu musí zobrazit jako datový typ následující:  
@@ -174,18 +165,18 @@ End Operator
  Pokud existuje riziko, převod procedury se nemusí zdařit, nebo to může dojít k neošetřené výjimce, je potřeba deklarovat mohla být `Narrowing`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá `Operator` příkaz k definování obrys strukturu, která obsahuje operátor postupy pro `And`, `Or`, `IsFalse`, a `IsTrue` operátory. `And`a `Or` každý trvat dva operandy typu `abc` a návratový typ `abc`. `IsFalse`a `IsTrue` každý trvat jednu operand typu `abc` a vrátí `Boolean`. Tyto definice povolit volací kód, který použije `And`, `AndAlso`, `Or`, a `OrElse` s operandy typu `abc`.  
+ Následující příklad kódu používá `Operator` příkaz k definování obrys strukturu, která obsahuje operátor postupy pro `And`, `Or`, `IsFalse`, a `IsTrue` operátory. `And` a `Or` každý trvat dva operandy typu `abc` a návratový typ `abc`. `IsFalse` a `IsTrue` každý trvat jednu operand typu `abc` a vrátí `Boolean`. Tyto definice povolit volací kód, který použije `And`, `AndAlso`, `Or`, a `OrElse` s operandy typu `abc`.  
   
  [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/operator-statement_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [IsFalse – operátor](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
- [IsTrue – operátor](../../../visual-basic/language-reference/operators/istrue-operator.md)  
- [Rozšíření](../../../visual-basic/language-reference/modifiers/widening.md)  
- [Zužující](../../../visual-basic/language-reference/modifiers/narrowing.md)  
+ [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
+ [Operátor IsTrue](../../../visual-basic/language-reference/operators/istrue-operator.md)  
+ [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
+ [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
  [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
  [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)  
- [Postupy: definice operátora](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
- [Postupy: definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
- [Postupy: volání procedury operátora](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)  
- [Postupy: použití třídy, která definuje operátory](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)
+ [Postupy: Definice operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
+ [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
+ [Postupy: Volání procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)  
+ [Postupy: Použití třídy, která definuje operátory](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)

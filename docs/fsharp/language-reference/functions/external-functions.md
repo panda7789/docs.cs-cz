@@ -1,17 +1,12 @@
 ---
 title: Externí funkce (F#)
 description: 'Další informace o podpoře jazyka F # pro volání funkcí v nativním kódu.'
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 28e74258d91ff2d9742caa7a6c06f515cd987c0a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 398697c5e0deab7f8d81ec5198ab1918bd865e13
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="external-functions"></a>Externí funkce
 

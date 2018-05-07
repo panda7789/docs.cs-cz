@@ -1,23 +1,15 @@
 ---
-title: "Mezipamětí PNRP"
-ms.custom: 
+title: Mezipamětí PNRP
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 270068d9-1b6b-4eb9-9e14-e02326bb88df
-caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dc9476b546ea55234c536a34416efc2bff0166de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dfa7da476bd56b34d3fcb7b7e0f3bcc33fee032b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pnrp-caches"></a>Mezipamětí PNRP
 Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce koncových bodů algorithmically vybrané sdílené udržovaný na partnerský uzel.  

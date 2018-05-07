@@ -1,14 +1,6 @@
 ---
 title: 'Postupy: vytvoření třídy WSFederationHttpBinding'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,20 +8,14 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f43b95df73b35b7dc7c34c2e16364dfa7bbdbee4
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 41fa1e7c0430f4723123b03f04d4fc74f9bfc589
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>Postupy: vytvoření třídy WSFederationHttpBinding
-V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceModel.WSFederationHttpBinding> – třída ([\<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, služby, která vyžaduje ověření pomocí tokenu zabezpečení vydaného služby tokenů zabezpečení klientů. Toto téma ukazuje, jak nastavit <xref:System.ServiceModel.WSFederationHttpBinding> v kódu a konfigurace. Po vytvoření vazby, můžete nastavit koncový bod pro tuto vazbu používají.  
+Ve Windows Communication Foundation (WCF), <xref:System.ServiceModel.WSFederationHttpBinding> – třída ([\<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, služby, která vyžaduje ověření pomocí tokenu zabezpečení vydaného služby tokenů zabezpečení klientů. Toto téma ukazuje, jak nastavit <xref:System.ServiceModel.WSFederationHttpBinding> v kódu a konfigurace. Po vytvoření vazby, můžete nastavit koncový bod pro tuto vazbu používají.  
   
  Základní kroky, které jsou uvedeny následujícím způsobem:  
   
@@ -38,7 +24,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
     > [!NOTE]
     >  <xref:System.ServiceModel.WSFederationHttpBinding> Také podporuje `None` jako režim zabezpečení. Tento režim není zabezpečená a se poskytuje pouze pro účely ladění. Pokud koncový bod služby se nasazuje s <xref:System.ServiceModel.WSFederationHttpBinding> s režim zabezpečení, který je nastavený na `None`, výsledná klient vazby (vygenerované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)) je <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> s režimem zabezpečení z `None`.  
   
-     Na rozdíl od jiných vazby poskytované systémem není nutné vyberte typ pověření klienta při použití `WSFederationHttpBinding`. Je to proto typu pověření klienta je vždy vystavený token. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Získá token zabezpečení ze zadaného vystavitele a uvede tento token ke službě pro ověření klienta.  
+     Na rozdíl od jiných vazby poskytované systémem není nutné vyberte typ pověření klienta při použití `WSFederationHttpBinding`. Je to proto typu pověření klienta je vždy vystavený token. WCF získá token zabezpečení ze zadaného vystavitele a uvede tento token ke službě pro ověření klienta.  
   
 2.  U federovaných klientů, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> na adresu URL služby tokenů zabezpečení. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> pro vazbu na použití ke komunikaci s služby tokenů zabezpečení.  
   
@@ -65,7 +51,7 @@ V [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], <xref:System.ServiceM
   
 4.  Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> vlastnost <xref:System.IdentityModel.Tokens.SecurityKeyType> `SymmetricKey` nebo.`AsymmetricKey` podle potřeby.  
   
-5.  Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> vlastnost na odpovídající hodnotu. Pokud není nastavena žádná hodnota, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] výchozí nastavení je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1", což naznačuje, tokeny SAML 1.1.  
+5.  Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> vlastnost na odpovídající hodnotu. Pokud není nastavena žádná hodnota, WCF výchozí "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1", což naznačuje, tokeny SAML 1.1.  
   
 6.  V klientovi požadováno, pokud není zadán žádný místního vystavitele; volitelné služby. Vytvoření <xref:System.ServiceModel.EndpointAddress> obsahující informace o adrese a identitě služby tokenů zabezpečení a přiřaďte <xref:System.ServiceModel.EndpointAddress> instance k <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> vlastnost.  
   

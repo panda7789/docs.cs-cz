@@ -1,24 +1,14 @@
 ---
 title: System.ServiceModel.Security.SecuritySessionCloseResponseSent
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 501defc3-d110-46ea-86d7-3563c35830f0
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: d5da2f84ae32f8e22cf4a09ee02705b4e645312c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 24e58589f4303e9c87390cbc890fb4afaa7566ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelsecuritysecuritysessioncloseresponsesent"></a>System.ServiceModel.Security.SecuritySessionCloseResponseSent
 System.ServiceModel.Security.SecuritySessionCloseResponseSent  

@@ -1,13 +1,7 @@
 ---
-title: "Typy formátování v rozhraní .NET"
-ms.custom: 
+title: Typy formátování v rozhraní .NET
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -31,21 +25,16 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-caps.latest.revision: "43"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 201212251bf99e5a5bab7685544079968bbebdb1
-ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
+ms.openlocfilehash: 10dd7e007ecd24ec3f127ab9c102cd758dfc7d75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="formatting-types-in-net"></a>Typy formátování v rozhraní .NET
-<a name="Introduction"></a>Formátování je proces převodu instance třídy, struktury nebo výčtové hodnoty na řetězcovou reprezentaci, často tak, aby výsledný řetězec, můžete se uživatelům zobrazí nebo deserializovat k obnovení původního datového typu. Tento převod může představovat určité problémy:  
+<a name="Introduction"></a> Formátování je proces převodu instance třídy, struktury nebo výčtové hodnoty na řetězcovou reprezentaci, často tak, aby výsledný řetězec, můžete se uživatelům zobrazí nebo deserializovat k obnovení původního datového typu. Tento převod může představovat určité problémy:  
   
 -   Způsob hodnoty se uloží interně nutně neodráží způsob, uživatelé mají k jejich zobrazení. Například telefonní číslo pravděpodobně uloží do formuláře 8009999999, která není srozumitelná. Má být místo toho zobrazen jako 800-999-9999. Najdete v článku [vlastní řetězce formátu](#customStrings) části pro příklad, který zformátuje číslo tímto způsobem.  
   
@@ -277,21 +266,21 @@ ms.lasthandoff: 01/10/2018
   
 <a name="FormatProviders"></a>   
 ## <a name="culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>Formátování zohledňující jazykovou verzi s použitím poskytovatelů formátu a rozhraní IFormatProvider  
- I když specifikátory formátu umožňují přizpůsobit formátování objektů, vytváření smysluplný řetězcovou reprezentaci objektů často vyžaduje další informace o formátování. Například formátování číslo jako hodnotu měny pomocí standardní formátovací řetězec "C" nebo vlastní řetězec formátu, jako "$ #, č. 00" vyžaduje minimálně informace o správného symbolu měny, oddělovač skupin a oddělovač desetinných míst na k dispozici pro zahrnutí do formátovaný řetězec. V rozhraní .NET, je k dispozici prostřednictvím tyto další formátování informace <xref:System.IFormatProvider> rozhraní, který je poskytnut jako parametr pro jeden nebo více přetížení `ToString` metoda číselnými typy a typy data a času. <xref:System.IFormatProvider>implementace se používají v rozhraní .NET pro podporu formátování specifické pro jazykovou verzi. Následující příklad ukazuje, jak řetězcovou reprezentaci objektu změní, když je formátován pomocí tří <xref:System.IFormatProvider> objekty, které představují různé jazykové verze.  
+ I když specifikátory formátu umožňují přizpůsobit formátování objektů, vytváření smysluplný řetězcovou reprezentaci objektů často vyžaduje další informace o formátování. Například formátování číslo jako hodnotu měny pomocí standardní formátovací řetězec "C" nebo vlastní řetězec formátu, jako "$ #, č. 00" vyžaduje minimálně informace o správného symbolu měny, oddělovač skupin a oddělovač desetinných míst na k dispozici pro zahrnutí do formátovaný řetězec. V rozhraní .NET, je k dispozici prostřednictvím tyto další formátování informace <xref:System.IFormatProvider> rozhraní, který je poskytnut jako parametr pro jeden nebo více přetížení `ToString` metoda číselnými typy a typy data a času. <xref:System.IFormatProvider> implementace se používají v rozhraní .NET pro podporu formátování specifické pro jazykovou verzi. Následující příklad ukazuje, jak řetězcovou reprezentaci objektu změní, když je formátován pomocí tří <xref:System.IFormatProvider> objekty, které představují různé jazykové verze.  
   
  [!code-csharp[Conceptual.Formatting.Overview#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/iformatprovider1.cs#11)]
  [!code-vb[Conceptual.Formatting.Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/iformatprovider1.vb#11)]  
   
  <xref:System.IFormatProvider> Rozhraní zahrnuje jednu metodu <xref:System.IFormatProvider.GetFormat%28System.Type%29>, který má jeden parametr, který určuje typ objektu, který poskytuje informace o formátování. Pokud metoda poskytnout objekt daného typu, vrátí se. Jinak vrátí hodnotu Null (`Nothing` v jazyce Visual Basic).  
   
- <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>je metoda zpětného volání. Při volání `ToString` přetížení metody, která zahrnuje <xref:System.IFormatProvider> parametr, zavolá <xref:System.IFormatProvider.GetFormat%2A> metoda této <xref:System.IFormatProvider> objektu. <xref:System.IFormatProvider.GetFormat%2A> Metoda odpovídá za vrátí objekt, který zajišťuje informace nezbytné k formátování, podle specifikace jeho `formatType` parametr, do `ToString` metoda.  
+ <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> je metoda zpětného volání. Při volání `ToString` přetížení metody, která zahrnuje <xref:System.IFormatProvider> parametr, zavolá <xref:System.IFormatProvider.GetFormat%2A> metoda této <xref:System.IFormatProvider> objektu. <xref:System.IFormatProvider.GetFormat%2A> Metoda odpovídá za vrátí objekt, který zajišťuje informace nezbytné k formátování, podle specifikace jeho `formatType` parametr, do `ToString` metoda.  
   
  Několik metod pro převod formátování nebo řetězec zahrnout parametr typu <xref:System.IFormatProvider>, ale hodnota parametru v mnoha případech se ignoruje při volání metody. Následující tabulka uvádí některé metody formátování, které používají parametr a typ <xref:System.Type> objekt, který se předat <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda.  
   
 |Metoda|Typ `formatType` parametr|  
 |------------|------------------------------------|  
-|`ToString`Metoda číselnými typy|<xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>|  
-|`ToString`Metoda typu datum a čas|<xref:System.Globalization.DateTimeFormatInfo?displayProperty=nameWithType>|  
+|`ToString` Metoda číselnými typy|<xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>|  
+|`ToString` Metoda typu datum a čas|<xref:System.Globalization.DateTimeFormatInfo?displayProperty=nameWithType>|  
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|<xref:System.ICustomFormatter?displayProperty=nameWithType>|  
 |<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>|<xref:System.ICustomFormatter?displayProperty=nameWithType>|  
   

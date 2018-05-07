@@ -1,10 +1,6 @@
 ---
-title: "Datový typ objektu"
+title: Datový typ objektu
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Object
 - vb.Variant
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - Object data type
 - Object data type [Visual Basic], reference
 ms.assetid: 61ea4a7c-3b3d-48d4-adc4-eacfa91779b2
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 847f2b50296ad1a1ba6f0009d1d6afced27f9abe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e9b1da5a88c12e0d883c3afe63be98c3fa3e9173
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-data-type"></a>Datový typ objektu
 Obsahuje adresy, které odkazují na objekty. Všechny odkaz (řetězec, pole, třídu nebo rozhraní) můžete přiřadit `Object` proměnné. `Object` Proměnné najdete také dat jakéhokoli typu hodnoty (numerickou `Boolean`, `Char`, `Date`, struktury nebo výčtové).  
@@ -58,7 +51,7 @@ datTyp = Type.GetTypeCode(myObject.GetType())
   
      Ale pokud převod mezi typy hodnot a `Object`, jazyka Visual Basic provádí operace názvem *zabalení* a *rozbalení*, ujistěte se, které provádění pomalejší.  
   
--   **Znaky typu.** `Object`nemá žádnou – znak typu literálu nebo – znak typu identifikátoru.  
+-   **Znaky typu.** `Object` nemá žádnou – znak typu literálu nebo – znak typu identifikátoru.  
   
 -   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.Object?displayProperty=nameWithType> třídy.  
   
@@ -76,7 +69,7 @@ objDb = myCollection.Item(1)
  <xref:System.Object>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
- [Postupy: určení, zda dva objekty souvisejí](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)  
- [Postupy: určení, zda dva objekty jsou identické](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+ [Postupy: Určení, zda dva objekty spolu souvisí](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)  
+ [Postupy: Určení, zda dva objekty jsou identické](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)

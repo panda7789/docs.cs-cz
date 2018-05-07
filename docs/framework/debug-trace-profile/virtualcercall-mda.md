@@ -1,13 +1,6 @@
 ---
-title: "virtualCERCall – pomocník spravovaného ladění (MDA)"
-ms.custom: 
+title: virtualCERCall – pomocník spravovaného ladění (MDA)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
 - virtualCERCall MDA
@@ -16,16 +9,13 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 010c5dd082c10556ed264306b7575cbe5399fda3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c2f2104768144da244679e5d0be884d70a3ba6b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall – pomocník spravovaného ladění (MDA)
 `virtualCERCall` Pomocník spravovaného ladění (MDA) je aktivován jako upozornění označující, že volání lokalitě v rámci graf volání (CER) oblasti omezeného provádění odkazuje na virtuální cíl, který je virtuální volání metody virtuální jiný koncový nebo volání pomocí rozhraní. Modul CLR (CLR) nelze předvídání metodu cílové těchto volání z mezilehlých jazyk a metadata analýzy samostatně. V důsledku toho stromu volání nelze připravit jako součást CER grafu a přerušení přístup z více vláken v tomto podstrom, nejde blokovat automaticky. Tato MDA upozorňuje na případy, kdy je CER může být potřeba rozšířit pomocí explicitního volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> metoda po další informace požadované pro výpočetní cíl volání se označuje za běhu.  

@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Přetížení logického stromu"
-ms.custom: 
+title: 'Postupy: Přetížení logického stromu'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - overriding the logical tree [WPF]
 - logical tree [WPF], overriding
 ms.assetid: 0ae4d074-8113-4b06-b4fa-e0f39d4967a6
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e487220f8b06515f3d37f7d55ab7ff6214c85d92
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0c7269b9ea052019e2e4f6def23b063903cbb5e1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-override-the-logical-tree"></a>Postupy: Přetížení logického stromu
 Ačkoli to není nezbytné ve většině případů, ovládacího prvku rozšířené autorům mít možnost přepsání logickém stromu.  

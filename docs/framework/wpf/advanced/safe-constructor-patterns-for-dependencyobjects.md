@@ -1,28 +1,16 @@
 ---
-title: "Zabezpečené vzory konstruktoru pro DependencyObjects"
-ms.custom: 
+title: Zabezpečené vzory konstruktoru pro DependencyObjects
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - constructor patterns for dependency objects [WPF]
 - dependency objects [WPF], constructor patterns
 - FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: db1b7f47ef135b1a174eecef7e53b41e6996256d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 03615c1c49f2acf2a7c7f0910860f36de0a4f2d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
 Konstruktory – třída obecně platí, by neměl volání zpětná volání, jako je například virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializace konstruktory odvozené třídy. Zadání virtuální může být provedena do stavu neúplná inicializace libovolného objektu. Ale samotného systému vlastnost volá a zveřejňuje zpětná volání interně v rámci systému vlastnost závislosti. Jednoduché operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> volání potenciálně zahrnuje zpětné volání někde pro zjišťování. Z tohoto důvodu byste měli být opatrní při nastavení hodnoty vlastností v textu konstruktor, který se může stát problematické, pokud váš typ se používá jako základní třída závislostí. Je určitý vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktory, které zabraňuje konkrétních problémů s stavy vlastnost závislosti a vyplývajících zpětná volání, které jsou zde uvedeny.  

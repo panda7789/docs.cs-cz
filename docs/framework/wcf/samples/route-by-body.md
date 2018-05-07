@@ -1,24 +1,12 @@
 ---
 title: Trasa podle textu
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: defd3a3e9df273739aaf3440fd34fad2cad44cd4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9a0c947a1dd7ac2a6c7af74baaa072aae67358c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="route-by-body"></a>Trasa podle textu
 Tento příklad znázorňuje způsob implementace služba, která přijímá zprávy objekty s žádnou akci protokolu SOAP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. Služba implementuje jedné `Calculate` operace, která přijímá <xref:System.ServiceModel.Channels.Message> požadavků parametr a vrátí <xref:System.ServiceModel.Channels.Message> odpovědi.  
@@ -28,7 +16,7 @@ Tento příklad znázorňuje způsob implementace služba, která přijímá zpr
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
- Ukázka ukazuje odesílání zpráv na základě obsahu textu. Integrované [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] mechanismu odesílání zpráv model služby je na základě zprávy akce. Existují však mnoho existujících webových služeb, které definují všechny své operace pomocí akce = "". Není možné vytvořit služby založené na jazyce WSDL, který udržuje odeslání zprávy s požadavky na informace o akci. Tento příklad znázorňuje kontraktu služby, která je založena na WSDL (schématu WSDL je součástí Service.wsdl, který se dodává s ukázkou). Kontrakt služby je kalkulačky, podobně jako používaný v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Ale `[OperationContract]` Určuje `Action=""` pro všechny operace.  
+ Ukázka ukazuje odesílání zpráv na základě obsahu textu. Předdefinované zpráva odesílání mechanismus modelu služby Windows Communication Foundation (WCF) je na základě zprávy akce. Existují však mnoho existujících webových služeb, které definují všechny své operace pomocí akce = "". Není možné vytvořit služby založené na jazyce WSDL, který udržuje odeslání zprávy s požadavky na informace o akci. Tento příklad znázorňuje kontraktu služby, která je založena na WSDL (schématu WSDL je součástí Service.wsdl, který se dodává s ukázkou). Kontrakt služby je kalkulačky, podobně jako používaný v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Ale `[OperationContract]` Určuje `Action=""` pro všechny operace.  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples"),    
@@ -46,7 +34,7 @@ Tento příklad znázorňuje způsob implementace služba, která přijímá zpr
     }  
 ```  
   
- Zadána kontraktu služby vyžaduje vlastní odesílání chování `DispatchByBodyBehavior` umožňující zpráv, které mají být odeslány mezi operacemi. Toto chování odesílání inicializuje `DispatchByBodyElementOperationSelector` selektor vlastní operace s tabulkou názvů operace s klíči QName elementů příslušných obálku. `DispatchByBodyElementOperationSelector`u počáteční značky prvního podřízeného obsahu vyhledá a vybere operaci v tabulce výše.  
+ Zadána kontraktu služby vyžaduje vlastní odesílání chování `DispatchByBodyBehavior` umožňující zpráv, které mají být odeslány mezi operacemi. Toto chování odesílání inicializuje `DispatchByBodyElementOperationSelector` selektor vlastní operace s tabulkou názvů operace s klíči QName elementů příslušných obálku. `DispatchByBodyElementOperationSelector` u počáteční značky prvního podřízeného obsahu vyhledá a vybere operaci v tabulce výše.  
   
  Klient používá automaticky generovaný z WSDL exportovali pomocí služby proxy [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
@@ -80,7 +68,7 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\RouteByBody`  
   

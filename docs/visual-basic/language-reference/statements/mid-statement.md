@@ -1,11 +1,6 @@
 ---
-title: "Mid – příkaz"
+title: Mid – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.MidB
 - vb.Mid
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Mid statement [Visual Basic]
 - strings [Visual Basic], replacing
 ms.assetid: 2b82d7a8-9646-4cb0-bec5-80abc98297bf
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 61d812ef91acc65728b04efc9aa99e3975e71d0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 90b805df902dcdfebe85421583dd54e9af04bec9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mid-statement"></a>Mid – příkaz
 Nahradí zadaný počet znaků `String` proměnné s znaky z jiné řetězce.  
@@ -42,19 +34,19 @@ Mid( _
  Požadováno. Název `String` proměnné, které chcete upravit.  
   
  `Start`  
- Požadováno. `Integer`výraz. Znak pozice v `Target` kde začíná nahrazení textu. `Start`používá indexu se základem jedna.  
+ Požadováno. `Integer` Výraz. Znak pozice v `Target` kde začíná nahrazení textu. `Start` používá indexu se základem jedna.  
   
  `Length`  
- Volitelné. `Integer`výraz. Počet znaků, který má nahradit. Pokud se vynechá, všechny `String` se používá.  
+ Volitelné. `Integer` Výraz. Počet znaků, který má nahradit. Pokud se vynechá, všechny `String` se používá.  
   
  `StringExpression`  
- Požadováno. `String`výraz, který nahradí část `Target`.  
+ Požadováno. `String` výraz, který nahradí část `Target`.  
   
 ## <a name="exceptions"></a>Výjimky  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException>|`Start`< = 0 nebo `Length` < 0.|  
+|<xref:System.ArgumentException>|`Start` < = 0 nebo `Length` < 0.|  
   
 ## <a name="remarks"></a>Poznámky  
  Počet znaků, nahradí se vždy menší než počet znaků v `Target`.  
@@ -72,9 +64,9 @@ Mid( _
 ## <a name="requirements"></a>Požadavky  
  **Namespace:** [Microsoft.VisualBasic –](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Modul:**`Strings`  
+ **Modul:** `Strings`  
   
- **Sestavení:**[!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]  
+ **Sestavení:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Strings.Mid%2A>  

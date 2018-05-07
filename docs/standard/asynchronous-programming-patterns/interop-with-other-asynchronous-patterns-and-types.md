@@ -1,13 +1,7 @@
 ---
-title: "Interoperabilita s jinými asynchronními vzory a typy"
-ms.custom: 
+title: Interoperabilita s jinými asynchronními vzory a typy
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a46358052eb93662408f9c01592f917eee4540b9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c92725a43e43877488ff9ba93007530c794dd290
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interoperabilita s jinými asynchronními vzory a typy
 Rozhraní .NET Framework 1.0 zavedená <xref:System.IAsyncResult> vzoru známé jako [asynchronní programování modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md), nebo `Begin/End` vzor.  Rozhraní .NET Framework 2.0, přidat [na základě událostí asynchronní vzor (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  Od verze rozhraní .NET Framework 4 [založený na úlohách asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) nahrazuje APM a EAP, ale umožňuje snadno vytvářet rutiny migraci ze starších vzory.  
@@ -94,7 +83,7 @@ Rozhraní .NET Framework 1.0 zavedená <xref:System.IAsyncResult> vzoru známé 
   
 <a name="EAP"></a>   
 ## <a name="tasks-and-the-event-based-asynchronous-pattern-eap"></a>Úlohy a asynchronní vzor (EAP) založených na událostech  
- Zabalení [na základě událostí asynchronní vzor (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) implementace je složitější než zabalení APM vzoru, protože vzoru EAP má menší struktury než vzoru APM a další variace.  K předvedení, se zabalí následující kód `DownloadStringAsync` metoda.  `DownloadStringAsync`přijímá identifikátor URI, vyvolá `DownloadProgressChanged` události při stahování za účelem hlášení více statistiky na průběh a vyvolá `DownloadStringCompleted` událost, pokud se provádí.  Konečný výsledek je řetězec, který obsahuje obsah na stránce na zadaný identifikátor URI.  
+ Zabalení [na základě událostí asynchronní vzor (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) implementace je složitější než zabalení APM vzoru, protože vzoru EAP má menší struktury než vzoru APM a další variace.  K předvedení, se zabalí následující kód `DownloadStringAsync` metoda.  `DownloadStringAsync` přijímá identifikátor URI, vyvolá `DownloadProgressChanged` události při stahování za účelem hlášení více statistiky na průběh a vyvolá `DownloadStringCompleted` událost, pokud se provádí.  Konečný výsledek je řetězec, který obsahuje obsah na stránce na zadaný identifikátor URI.  
   
  [!code-csharp[Conceptual.AsyncInterop#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/EAP1.cs#11)]
  [!code-vb[Conceptual.AsyncInterop#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/EAP1.vb#11)]  

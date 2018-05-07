@@ -1,12 +1,6 @@
 ---
-title: "Přehrávání zvuků (Visual Basic)"
-ms.custom: 
+title: Přehrávání zvuků (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - system sounds, playing
 - system sounds
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - sounds, background
 - playing sounds
 ms.assetid: f0d9e4ab-57c7-47b6-86d3-99ff07078040
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8be5cec634482bf99ddff4ff6b6af8e897c4909e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: decd845fde5bd4fad702cfe05fd63fcc180b63a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="playing-sounds-visual-basic"></a>Přehrávání zvuků (Visual Basic)
 `My.Computer.Audio` Objekt poskytuje metody pro přehrávání zvuku.  

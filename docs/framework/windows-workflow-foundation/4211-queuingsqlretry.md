@@ -1,23 +1,12 @@
 ---
 title: 4211 - QueuingSqlRetry
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: df569f88-c86b-4503-840d-1399b67f4df7
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1ffd44cf9d2333b22e3be809d05f2fa8c33d4cac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ede74eb642c5c2c79b90cf1458db424d9f83b087
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="4211---queuingsqlretry"></a>4211 - QueuingSqlRetry
 ## <a name="properties"></a>Vlastnosti  

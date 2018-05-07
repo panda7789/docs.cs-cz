@@ -1,11 +1,6 @@
 ---
-title: "Declare – příkaz"
+title: Declare – příkaz
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Declare
 - vb.Lib
@@ -32,14 +27,11 @@ helpviewer_keywords:
 - Visual Basic code, Sub procedures
 - Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2560f34a5130ef7453b50ffb4495b67bf1dfa4c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bc6949c7b52e87b7b39dd2690cac915a5f0d15aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="declare-statement"></a>Declare – příkaz
 Deklaruje odkaz na procedury implementované v externí soubor.  
@@ -125,7 +117,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
   
 -   **Znak sady.** Můžete zadat v `charsetmodifier` jak by měla jazyka Visual Basic zařazování řetězců při volání externí procedura. `Ansi` Modifikátor přesměruje jazyka Visual Basic přeuspořádat všechny řetězce na ANSI hodnoty a `Unicode` modifikátor přesměruje ho přeuspořádat všechny řetězce Unicode hodnoty. `Auto` Modifikátor přesměruje jazyka Visual Basic pro zařazování řetězců podle rozhraní .NET Framework pravidla, podle externího odkazu `name`, nebo `aliasname` -li zadána. Výchozí hodnota je `Ansi`.  
   
-     `charsetmodifier`také určuje, jak Visual Basic vyhledat externí procedura v rámci svého externího souboru. `Ansi`a `Unicode` i přímé jazyka Visual Basic k vyhledání beze změny jeho názvu během hledání. `Auto`přesměruje jazyka Visual Basic určit základní znaková sada spuštění platformy a které by mohly mít změnit název externí procedura následujícím způsobem:  
+     `charsetmodifier` také určuje, jak Visual Basic vyhledat externí procedura v rámci svého externího souboru. `Ansi` a `Unicode` i přímé jazyka Visual Basic k vyhledání beze změny jeho názvu během hledání. `Auto` přesměruje jazyka Visual Basic určit základní znaková sada spuštění platformy a které by mohly mít změnit název externí procedura následujícím způsobem:  
   
     -   Na platformě ANSI, jako je například systém Windows 95, Windows 98 nebo Windows Millennium Edition nejprve vyhledejte externí procedura bez úprav název. Pokud to nepomůže, připojte na konec názvu externí procedura "A" a znovu vyhledat.  
   
@@ -150,10 +142,10 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>  
- [Imports – příkaz (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [AddressOf – operátor](../../../visual-basic/language-reference/operators/addressof-operator.md)  
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
  [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)  
- [Call – příkaz](../../../visual-basic/language-reference/statements/call-statement.md)  
+ [Příkaz Call](../../../visual-basic/language-reference/statements/call-statement.md)  
  [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

@@ -1,31 +1,20 @@
 ---
-title: "Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu"
-ms.custom: 
+title: 'Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 4c65edd8959cbf5f83e3353770f71cad130953d1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4a89b3f25fb3d6e85c666e57f24e68c297c8c29a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu
 Následující příklad znázorňuje, jakým způsobem lze zapisovat metodu <xref:System.Threading.Tasks.Parallel.ForEach%2A>, která používá místní proměnné vlákna. Při provedení smyčky <xref:System.Threading.Tasks.Parallel.ForEach%2A> dochází k rozdělení kolekce prostředků na několik oddílů. Jednotlivé oddíly obdrží vlastní kopii „místní proměnné vlákna“. (Termín „místní proměnné vlákna“ je mírně nepřesný, protože v některých případech mohou být na stejném vlákně spuštěny dva oddíly.)  

@@ -1,21 +1,14 @@
 ---
-title: "Oddělovač nemůže být Nothing nebo prázdný řetězec."
+title: Oddělovač nemůže být Nothing nebo prázdný řetězec.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrTextFieldParser_DelimiterNothing
 ms.assetid: 8885fcd1-c201-409d-9a32-6ff2b13c0c13
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3deb1d8106619dbbf5f52a5606f3198001fa6a8f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: fb303d6ee929094c7fc47fb08252a14af57167fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="a-delimiter-cannot-be-nothing-or-an-empty-string"></a>Oddělovač nemůže být Nothing nebo prázdný řetězec.
 `TextFieldParser` Se nepodařilo načíst ze souboru, protože `Delimiters` je nastavena na `Nothing` nebo je prázdná `String` ("").  

@@ -1,21 +1,14 @@
 ---
-title: "Stav a data v aplikacích Docker"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Stav a data v aplikacích Docker"
-keywords: "Docker Mikroslužeb, ASP.NET, kontejner, SQL, CosmosDB a Docker"
+title: Stav a data v aplikacích Docker
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Stav a data v aplikacích Docker
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ef11d89c39ee02d52dab29f949d1ac6be981d87f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c5cfe617335d8150d069149ac87f79206b1b5eca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Docker
 

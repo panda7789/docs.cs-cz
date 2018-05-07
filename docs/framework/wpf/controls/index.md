@@ -1,35 +1,21 @@
 ---
 title: Ovládací prvky
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 66c6cc58423a2af8d0fd6de93b8884918888fb48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11c9c2cdd9e485fb87f5d8ead7790ded0428f7dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controls"></a>Ovládací prvky
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]se dodává s mnoha společné součásti uživatelského rozhraní, které se používají v téměř každé aplikace pro systém Windows, jako <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.ListBox>. Tyto objekty mají byly v minulosti označovány jako ovládací prvky. Při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK budou nadále používat "dohledem" volně rozumí všechny třídy, která představuje objekt viditelné v aplikaci, je důležité si uvědomit, že třídu není potřeba dědí <xref:System.Windows.Controls.Control> třídy tak, aby měl viditelné přítomnosti. Třídy, které dědí od <xref:System.Windows.Controls.Control> třída obsahovat <xref:System.Windows.Controls.ControlTemplate>, která umožňuje příjemci ovládacího prvku výrazně změnit vzhled ovládacího prvku bez nutnosti vytvoření nové podtřídy.  Toto téma popisuje, jak ovládací prvky (i ty, které dědí <xref:System.Windows.Controls.Control> třídy a ty, které nechcete) běžně se používají v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] se dodává s mnoha společné součásti uživatelského rozhraní, které se používají v téměř každé aplikace pro systém Windows, jako <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.ListBox>. Tyto objekty mají byly v minulosti označovány jako ovládací prvky. Při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK budou nadále používat "dohledem" volně rozumí všechny třídy, která představuje objekt viditelné v aplikaci, je důležité si uvědomit, že třídu není potřeba dědí <xref:System.Windows.Controls.Control> třídy tak, aby měl viditelné přítomnosti. Třídy, které dědí od <xref:System.Windows.Controls.Control> třída obsahovat <xref:System.Windows.Controls.ControlTemplate>, která umožňuje příjemci ovládacího prvku výrazně změnit vzhled ovládacího prvku bez nutnosti vytvoření nové podtřídy.  Toto téma popisuje, jak ovládací prvky (i ty, které dědí <xref:System.Windows.Controls.Control> třídy a ty, které nechcete) běžně se používají v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
 
 <a name="creating_an_instance_of_a_control"></a>   
 ## <a name="creating-an-instance-of-a-control"></a>Vytvoření Instance ovládacího prvku  
@@ -37,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[ControlsOverview#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
   
- Následující příklad vytvoří stejnou aplikaci v kódu. Pro vytvoření jako stručný výtah <xref:System.Windows.Controls.Grid>, `grid1`, byl vyloučen z vzorku. `grid1`má stejné definice sloupců a řádků, jak je vidět v předchozím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.  
+ Následující příklad vytvoří stejnou aplikaci v kódu. Pro vytvoření jako stručný výtah <xref:System.Windows.Controls.Grid>, `grid1`, byl vyloučen z vzorku. `grid1` má stejné definice sloupců a řádků, jak je vidět v předchozím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.  
   
  [!code-csharp[ControlsOverview#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)]
  [!code-vb[ControlsOverview#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
@@ -63,7 +49,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[ControlsOverview#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
   
 ### <a name="creating-a-style-for-a-control"></a>Vytváření styl pro ovládací prvek  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje možnost určit vzhled ovládacích prvků velkoobchodních, místo nastavení vlastnosti na každou instanci v aplikaci, tak, že vytvoříte <xref:System.Windows.Style>. Následující příklad vytvoří <xref:System.Windows.Style> , se použijí na každou <xref:System.Windows.Controls.Button> v aplikaci. <xref:System.Windows.Style>definice jsou obvykle definovány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] v <xref:System.Windows.ResourceDictionary>, například <xref:System.Windows.FrameworkElement.Resources%2A> vlastnost <xref:System.Windows.FrameworkElement>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje možnost určit vzhled ovládacích prvků velkoobchodních, místo nastavení vlastnosti na každou instanci v aplikaci, tak, že vytvoříte <xref:System.Windows.Style>. Následující příklad vytvoří <xref:System.Windows.Style> , se použijí na každou <xref:System.Windows.Controls.Button> v aplikaci. <xref:System.Windows.Style> definice jsou obvykle definovány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] v <xref:System.Windows.ResourceDictionary>, například <xref:System.Windows.FrameworkElement.Resources%2A> vlastnost <xref:System.Windows.FrameworkElement>.  
   
  [!code-xaml[ControlsOverview#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   

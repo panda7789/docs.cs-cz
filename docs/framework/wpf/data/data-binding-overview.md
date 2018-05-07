@@ -1,13 +1,6 @@
 ---
-title: "Přehled datových vazeb"
-ms.custom: 
+title: Přehled datových vazeb
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-caps.latest.revision: "78"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 817a7ba73c37c15afa1be402da38e828d2aba426
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b58cde738e2584662fa5f9ad90634931674f48b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]Datová vazba poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici. Elementy lze vázat na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mít integrovanou funkci, aby flexibilní stylů jeden datových položek, nebo kolekce datových položek. Třídění, filtrování a zobrazení skupiny lze vygenerovat nad data.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Datová vazba poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici. Elementy lze vázat na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mít integrovanou funkci, aby flexibilní stylů jeden datových položek, nebo kolekce datových položek. Třídění, filtrování a zobrazení skupiny lze vygenerovat nad data.  
   
  Funkce vazby dat v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má několik výhod oproti tradičním modely, včetně širokou škálu vlastnosti, které ze své podstaty podporují datovou vazbu, flexibilní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] reprezentace dat a vyčištění oddělení firmy logiku z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   
@@ -80,7 +68,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Vlastnost target musí být vlastnost závislosti. Většina <xref:System.Windows.UIElement> vlastnosti jsou vlastnosti závislosti a většina vlastnosti závislosti, s výjimkou těch jen pro čtení podporují datové vazby ve výchozím nastavení. (Jenom <xref:System.Windows.DependencyObject> typy můžete definovat vlastností závislostí a všechny <xref:System.Windows.UIElement>s odvozena od <xref:System.Windows.DependencyObject>.)  
   
--   I když není zadaný na obrázku, je třeba poznamenat, že vazba zdrojový objekt není omezena na probíhá vlastní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Datová vazba podporuje data ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Pokud chcete zadat některé příklady, může být zdrojem vazby <xref:System.Windows.UIElement>, libovolného objektu seznamu [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt, který je přidružen [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] data nebo webové služby nebo XmlNode, který obsahuje vaše [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Další informace najdete v tématu [vazby Přehled zdrojů](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+-   I když není zadaný na obrázku, je třeba poznamenat, že vazba zdrojový objekt není omezena na probíhá vlastní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Datová vazba podporuje data ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Pokud chcete zadat některé příklady, může být zdrojem vazby <xref:System.Windows.UIElement>, libovolného objektu seznamu [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt, který je přidružen [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] data nebo webové služby nebo XmlNode, který obsahuje vaše [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Další informace najdete v tématu [vazby Přehled zdrojů](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
   
  Během čtení prostřednictvím dalších [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] témata, je důležité mít na paměti, když vytvoříte vazbu, jsou vazby cíl vazby *k* zdroji vazby. Například, pokud jsou zobrazení některé základní [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data v <xref:System.Windows.Controls.ListBox> použití datových vazeb, jsou vazby vaše <xref:System.Windows.Controls.ListBox> k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data.  
   
@@ -94,11 +82,11 @@ ms.lasthandoff: 12/22/2017
   
  ![Datové vazby tok dat](../../../../docs/framework/wpf/data/media/databinding-dataflow.png "DataBinding_DataFlow")  
   
--   <xref:System.Windows.Data.BindingMode.OneWay>Vazba způsobí, že změny vlastnosti zdroj k automatické aktualizaci vlastnost target, ale pro vlastnost target nepřenese zpět na vlastnost zdroje. Tento typ vazby je vhodné v případě vázaného ovládacího prvku implicitně jen pro čtení. Například může svázat se zdrojem například běžícími nebo možná cílovou vlastnost nemá žádné rozhraní ovládacího prvku zadaná pro provádění změn, jako je například barvu pozadí vázané na data tabulky. Pokud není nutné ke sledování změn vlastnost target, pomocí <xref:System.Windows.Data.BindingMode.OneWay> vazby režimu zabraňuje nároky na <xref:System.Windows.Data.BindingMode.TwoWay> vazby režimu.  
+-   <xref:System.Windows.Data.BindingMode.OneWay> Vazba způsobí, že změny vlastnosti zdroj k automatické aktualizaci vlastnost target, ale pro vlastnost target nepřenese zpět na vlastnost zdroje. Tento typ vazby je vhodné v případě vázaného ovládacího prvku implicitně jen pro čtení. Například může svázat se zdrojem například běžícími nebo možná cílovou vlastnost nemá žádné rozhraní ovládacího prvku zadaná pro provádění změn, jako je například barvu pozadí vázané na data tabulky. Pokud není nutné ke sledování změn vlastnost target, pomocí <xref:System.Windows.Data.BindingMode.OneWay> vazby režimu zabraňuje nároky na <xref:System.Windows.Data.BindingMode.TwoWay> vazby režimu.  
   
--   <xref:System.Windows.Data.BindingMode.TwoWay>Vazba způsobí, že změny vlastnosti zdroj nebo vlastnost target automaticky aktualizovat na druhý. Tento typ vazby je vhodný pro upravovatelné formuláře nebo jiné plně interaktivní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře. Většinu vlastností výchozí <xref:System.Windows.Data.BindingMode.OneWay> vazby, ale některé vlastnosti závislosti (obvykle vlastností ovládacích prvků uživatele nelze upravit, jako <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> vlastnost <xref:System.Windows.Controls.CheckBox>) výchozí nastavení <xref:System.Windows.Data.BindingMode.TwoWay> vazby. Programový způsob, jak určit, zda vlastnost závislosti váže jednosměrné nebo obousměrné ve výchozím nastavení je získat metadata vlastnosti vlastnost použití <xref:System.Windows.DependencyProperty.GetMetadata%2A> a zkontrolujte logickou hodnotu <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A> vlastnost.  
+-   <xref:System.Windows.Data.BindingMode.TwoWay> Vazba způsobí, že změny vlastnosti zdroj nebo vlastnost target automaticky aktualizovat na druhý. Tento typ vazby je vhodný pro upravovatelné formuláře nebo jiné plně interaktivní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře. Většinu vlastností výchozí <xref:System.Windows.Data.BindingMode.OneWay> vazby, ale některé vlastnosti závislosti (obvykle vlastností ovládacích prvků uživatele nelze upravit, jako <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> vlastnost <xref:System.Windows.Controls.CheckBox>) výchozí nastavení <xref:System.Windows.Data.BindingMode.TwoWay> vazby. Programový způsob, jak určit, zda vlastnost závislosti váže jednosměrné nebo obousměrné ve výchozím nastavení je získat metadata vlastnosti vlastnost použití <xref:System.Windows.DependencyProperty.GetMetadata%2A> a zkontrolujte logickou hodnotu <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A> vlastnost.  
   
--   <xref:System.Windows.Data.BindingMode.OneWayToSource>je opakem <xref:System.Windows.Data.BindingMode.OneWay> vazby; aktualizuje vlastnosti zdroj při změně vlastnost target. Jeden příklad scénáře je, pokud potřebujete jenom znovu vyhodnotit zdrojové hodnoty z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
+-   <xref:System.Windows.Data.BindingMode.OneWayToSource> je opakem <xref:System.Windows.Data.BindingMode.OneWay> vazby; aktualizuje vlastnosti zdroj při změně vlastnost target. Jeden příklad scénáře je, pokud potřebujete jenom znovu vyhodnotit zdrojové hodnoty z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   
 -   Nejsou zobrazené na obrázku je <xref:System.Windows.Data.BindingMode.OneTime> vazby, což způsobí, že zdrojová vlastnost k chybě při inicializaci vlastnost target, ale nejsou rozšířena následné změny. To znamená, že pokud kontextu dat zde nevyskytlo změnu nebo objekt v kontextu změny dat, pak tato změna se nereflektují v vlastnost target. Tento typ vazby je vhodné, pokud používáte data, kde buď snímek aktuální stav je vhodné použít nebo data je skutečně statické. Tento typ vazby je také užitečné, pokud chcete inicializovat vaší vlastnost target s některé hodnoty z vlastnosti zdroje a kontextu dat není známa předem. To je v podstatě jednodušší forma <xref:System.Windows.Data.BindingMode.OneWay> vazby, který poskytuje lepší výkon v případech, kde zdrojové hodnoty nezmění.  
   
@@ -125,8 +113,8 @@ ms.lasthandoff: 12/22/2017
 |Hodnota UpdateSourceTrigger|Při aktualizaci zdrojové hodnoty|Příklad scénáře TextBox|  
 |-------------------------------|----------------------------------------|----------------------------------|  
 |LostFocus (výchozí pro <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>)|Když TextBox – ovládací prvek ztratí fokus|A <xref:System.Windows.Controls.TextBox> je spojeno s logiku ověření (viz oddíl ověření dat)|  
-|PropertyChanged.|Při psaní do<xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.TextBox>ovládací prvky v okně chatovací místnosti|  
-|Explicitní|Pokud aplikace zavolá<xref:System.Windows.Data.BindingExpression.UpdateSource%2A>|<xref:System.Windows.Controls.TextBox>ovládací prvky ve formuláři upravovat (aktualizuje hodnoty zdroje jenom v případě, že uživatel klikne na tlačítko pro odeslání)|  
+|PropertyChanged.|Při psaní do <xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.TextBox> ovládací prvky v okně chatovací místnosti|  
+|Explicitní|Pokud aplikace zavolá <xref:System.Windows.Data.BindingExpression.UpdateSource%2A>|<xref:System.Windows.Controls.TextBox> ovládací prvky ve formuláři upravovat (aktualizuje hodnoty zdroje jenom v případě, že uživatel klikne na tlačítko pro odeslání)|  
   
  Příklad, naleznete v části [řízení, když TextBox Text aktualizuje zdroj](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md).  
   
@@ -236,7 +224,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="how-to-implement-collections"></a>Postupy pro implementaci kolekce  
  Můžete vytvořit výčet přes jakoukoli kolekci, která implementuje <xref:System.Collections.IEnumerable> rozhraní. Ale nastavit dynamické vazby tak, aby vložení nebo odstranění v kolekci aktualizovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] automaticky, kolekce musí implementovat <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Toto rozhraní zpřístupní událost, která by měla být zvýšena při každé změně zdrojové kolekce.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje <xref:System.Collections.ObjectModel.ObservableCollection%601> třída, která je na předdefinované implementace shromažďování dat, která zveřejňuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Všimněte si, že aby plně podporoval přenášení hodnot dat ze zdrojové objekty k cílům, také musí implementovat každý objekt v kolekci, která podporuje vlastnosti vazbu <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [vazby Přehled zdrojů](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje <xref:System.Collections.ObjectModel.ObservableCollection%601> třída, která je na předdefinované implementace shromažďování dat, která zveřejňuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Všimněte si, že aby plně podporoval přenášení hodnot dat ze zdrojové objekty k cílům, také musí implementovat každý objekt v kolekci, která podporuje vlastnosti vazbu <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [vazby Přehled zdrojů](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
   
  Před implementací vlastní kolekce, zvažte použití <xref:System.Collections.ObjectModel.ObservableCollection%601> nebo jeden z existující kolekci třídy, jako například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ObjectModel.Collection%601>, a <xref:System.ComponentModel.BindingList%601>, mezi mnohé další. Pokud máte složitější scénář a chcete implementovat vlastní kolekci, zvažte použití <xref:System.Collections.IList>, který poskytuje negenerická kolekce objektů, které můžete individuálně získávat přístup index a proto nejlepší výkon.  
   
@@ -269,7 +257,7 @@ ms.lasthandoff: 12/22/2017
   
 |Typ kolekce zdroje|Typ zobrazení kolekce|Poznámky|  
 |----------------------------|--------------------------|-----------|  
-|<xref:System.Collections.IEnumerable>|Na základě vnitřní typ<xref:System.Windows.Data.CollectionView>|Nelze seskupit položky.|  
+|<xref:System.Collections.IEnumerable>|Na základě vnitřní typ <xref:System.Windows.Data.CollectionView>|Nelze seskupit položky.|  
 |<xref:System.Collections.IList>|<xref:System.Windows.Data.ListCollectionView>|Nejrychlejší.|  
 |<xref:System.ComponentModel.IBindingList>|<xref:System.Windows.Data.BindingListCollectionView>||  
   
@@ -373,7 +361,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[DataBindingLab#DefaultValidation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#defaultvalidation)]  
   
- A <xref:System.Windows.Controls.ValidationRule> objekt zkontroluje, zda hodnota vlastnosti je platný. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]má následující dva typy integrovanou <xref:System.Windows.Controls.ValidationRule> objekty:  
+ A <xref:System.Windows.Controls.ValidationRule> objekt zkontroluje, zda hodnota vlastnosti je platný. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má následující dva typy integrovanou <xref:System.Windows.Controls.ValidationRule> objekty:  
   
 -   A <xref:System.Windows.Controls.ExceptionValidationRule> kontroluje pro výjimky vydané během aktualizace zdrojová vlastnost vazby. V předchozím příkladu `StartPrice` je typu integer. Když uživatel zadá hodnotu, kterou nelze převést na celé číslo, je vyvolána výjimka, způsobuje vazby označen jako neplatný. Alternativní syntaxe nastavení <xref:System.Windows.Controls.ExceptionValidationRule> je explicitně nastavit <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> vlastnost `true` na vaše <xref:System.Windows.Data.Binding> nebo <xref:System.Windows.Data.MultiBinding> objektu.  
   

@@ -1,14 +1,6 @@
 ---
 title: Přehled panelů
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-caps.latest.revision: 48
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dd04413636c7d6182ff01712eecedbbd4ed02761
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 65f5fa9eeffdeb6e7bc869d159b4b33d75fd7570
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel> elementy jsou komponenty, které řídí vykreslování elementů – jejich velikost a dimenzí, jejich umístění a uspořádání obsahu jejich podřízené. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> elementy a také možnost vytvořit vlastní <xref:System.Windows.Controls.Panel> elementy.  
@@ -94,7 +80,7 @@ ms.lasthandoff: 04/09/2018
   
  Všechny odvozené <xref:System.Windows.Controls.Panel> element zpracovává omezení velikosti odlišně. Pochopení jak <xref:System.Windows.Controls.Panel> omezení obslužných rutin v vodorovné nebo svislé směru může stát rozložení předvídatelnější.  
   
-|**Název panelu**|**x-Dimension**|**y dimenze**|  
+|**Název panelu**|**Dimenze x**|**y dimenze**|  
 |--------------------|----------------------|----------------------|  
 |<xref:System.Windows.Controls.Canvas>|Omezená na obsah|Omezená na obsah|  
 |<xref:System.Windows.Controls.DockPanel>|Omezené|Omezené|  
@@ -107,7 +93,7 @@ ms.lasthandoff: 04/09/2018
   
 <a name="Panels_overview_Canvas_subsection"></a>   
 ### <a name="canvas"></a>Plátno  
- <xref:System.Windows.Controls.Canvas> Prvek umožní umístění obsahu na základě absolutní *x -* a *y -*souřadnice. Elementy lze rozlišovat v jedinečné umístění; nebo, pokud elementy zabírají stejné souřadnice, určuje pořadí, ve kterém se zobrazí v značek pořadí, ve kterém jsou vykreslovány elementy.  
+ <xref:System.Windows.Controls.Canvas> Prvek umožní umístění obsahu na základě absolutní *x -* a *y -* souřadnice. Elementy lze rozlišovat v jedinečné umístění; nebo, pokud elementy zabírají stejné souřadnice, určuje pořadí, ve kterém se zobrazí v značek pořadí, ve kterém jsou vykreslovány elementy.  
   
  <xref:System.Windows.Controls.Canvas> poskytuje flexibilní podporu rozložení všech <xref:System.Windows.Controls.Panel>. Vlastností výšky a šířky slouží k určení oblasti na plátno a elementy uvnitř přiřazené absolutní souřadnicích relativních k oblasti nadřazené <xref:System.Windows.Controls.Canvas>. Čtyři přidružené vlastnosti, <xref:System.Windows.Controls.Canvas.Left%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Canvas.Top%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Canvas.Right%2A?displayProperty=nameWithType> a <xref:System.Windows.Controls.Canvas.Bottom%2A?displayProperty=nameWithType>, povolit jemné řízení umístění objektu v rámci <xref:System.Windows.Controls.Canvas>, vývojáři je pozice a uspořádat prvky přesněji na obrazovce.  
   
@@ -245,7 +231,7 @@ ms.lasthandoff: 04/09/2018
   
  Podobně vlastní rozložení chování na základě odvozených třídách (například <xref:System.Windows.Controls.Canvas> nebo <xref:System.Windows.Controls.Grid>) lze definovat přepsáním jejich <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> a <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metody.  
   
- Následující kód ukazuje, jak vytvořit vlastní <xref:System.Windows.Controls.Panel> elementu. Tento nový <xref:System.Windows.Controls.Panel>definovaná jako `PlotPanel`, podporuje umístění podřízených elementů prostřednictvím pevně *x -* a *y -*souřadnice. V tomto příkladu <xref:System.Windows.Shapes.Rectangle> – element (není vidět) je nastavený na vykreslení bodu 50 (*x*) až 50 (*y*).  
+ Následující kód ukazuje, jak vytvořit vlastní <xref:System.Windows.Controls.Panel> elementu. Tento nový <xref:System.Windows.Controls.Panel>definovaná jako `PlotPanel`, podporuje umístění podřízených elementů prostřednictvím pevně *x -* a *y -* souřadnice. V tomto příkladu <xref:System.Windows.Shapes.Rectangle> – element (není vidět) je nastavený na vykreslení bodu 50 (*x*) až 50 (*y*).  
   
  [!code-cpp[PlotPanel#1](../../../../samples/snippets/cpp/VS_Snippets_Wpf/PlotPanel/CPP/PlotPanel.cpp#1)]
  [!code-csharp[PlotPanel#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PlotPanel/CSharp/PlotPanel.cs#1)]

@@ -1,36 +1,22 @@
 ---
 title: Zpracování škodlivých zpráv
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6fa35209b2dafc088605848a0dc96a53a2813dfd
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: b860e239d001a03da191d73de2f7b53e7073c7a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace mohou vzniknout, když aplikace založenou na fronty nemůže zpracovat zprávu z důvodu chyb. Splňovat požadavky na spolehlivost, aplikace přijímá zprávy v rámci transakce. Ruší se transakce, ve kterém byl přijat zprávu ve frontě zanechává zprávy ve frontě, zpráva se pokus o pod novou transakci. Pokud není problém, která způsobila zrušení vyřešen, může být zablokován má přijímající aplikace v smyčku přijímáním a přerušení stejná zpráva, dokud byl překročen maximální počet pokusů o doručení a výsledky poškozená zpráva.  
   
  Zpráva se může stát nezpracovatelná zpráva z mnoha důvodů. Nejčastější příčiny jsou specifické pro aplikaci. Například pokud aplikace přečte zprávu z fronty a provádí zpracování některé databáze, aplikace se pravděpodobně nepodaří získat zámek na databázi, způsobuje ho ji přerušit. Vzhledem k tomu, že databáze transakce byla přerušena, zůstane zprávy ve frontě, což způsobí, že aplikace znovu načíst zprávu podruhé a ujistěte se, další pokus o získání zámku v databázi. Zprávy se může stát také poškozených v případě, že obsahují neplatné informace. Nákupní objednávka může například obsahovat neplatný zákaznické číslo. V těchto případech může aplikace odpojit přerušení transakce a vynutit zpráva, která má být poškozená zpráva.  
   
- Ve výjimečných případech může selhat zprávy k získání odeslat do aplikace. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Vrstvy může být problém se zprávou, například pokud zpráva má nesprávný rámečku, přihlašovací údaje neplatná zpráva připojen nebo hlavičce neplatná akce. V těchto případech aplikace nikdy obdrží zprávu; zpráva však stále může stát nezpracovatelná zpráva a zpracovat ručně.  
+ Ve výjimečných případech může selhat zprávy k získání odeslat do aplikace. Vrstvě Windows Communication Foundation (WCF) může být problém se zprávou, například pokud zpráva má nesprávný rámečku, přihlašovací údaje neplatná zpráva připojen nebo hlavičce neplatná akce. V těchto případech aplikace nikdy obdrží zprávu; zpráva však stále může stát nezpracovatelná zpráva a zpracovat ručně.  
   
 ## <a name="handling-poison-messages"></a>Zpracování poškozených zpráv  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], poškozených zpracování zpráv poskytuje mechanismus pro přijímající aplikace k řešení zprávy, které nelze odeslat do aplikace nebo zprávy, které se odesílají do aplikace, ale které se nepodařilo zpracovat z důvodu důvody specifické pro aplikaci. Zpracování poškozených zpráv ke konfiguraci pomocí následující vlastnosti v každé vazeb k dispozici zařazených do fronty:  
+ Ve službě WCF zpracování poškozených zpráv poskytuje mechanismus pro přijímající aplikace k řešení zprávy, které nelze odeslat do aplikace nebo zprávy, které se odesílají do aplikace, ale které se nepodařilo zpracovat z důvodu konkrétní aplikace z důvodů. Zpracování poškozených zpráv ke konfiguraci pomocí následující vlastnosti v každé vazeb k dispozici zařazených do fronty:  
   
 -   `ReceiveRetryCount`. Celočíselná hodnota, která určuje maximální počet pokusů o opakování doručení zpráv z fronty aplikace do aplikace. Výchozí hodnota je 5. Toto je dostatečná v případech, kde okamžitou opakování odstraňuje problém, například s dočasné vzájemné zablokování v databázi.  
   
@@ -46,7 +32,7 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
   
 -   Odmítněte. Tato možnost je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. To se dá pokyn řízení front zpráv (MSMQ) k odeslání záporné potvrzení zpět do odesílání správce front, že aplikace nemůže přijímat zprávy. Zpráva se umístí do fronty odesílání správce front nedoručených zpráv.  
   
--   Přesunete. Tato možnost je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. Tento krok přesune poškozených zpráv do fronty zpráv poison pro pozdější zpracování zpracování zpráv poison aplikace. Fronty zpráv poison je dílčí fronta fronty aplikace. Zpracování zpráv poison aplikace může být [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která čte zprávy z fronty poškozených. Poškozených fronta je dílčí fronta fronty aplikace a lze řešit jako net.msmq://\<*název počítače*>/*applicationQueue*; poškozených, kde  *název počítače* je název počítače, na kterém je fronta umístěna a *applicationQueue* je název fronty pro konkrétní aplikace.  
+-   Přesunete. Tato možnost je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. Tento krok přesune poškozených zpráv do fronty zpráv poison pro pozdější zpracování zpracování zpráv poison aplikace. Fronty zpráv poison je dílčí fronta fronty aplikace. Zpracování zpráv poison aplikace může být služby WCF, který čte zprávy z fronty poškozených. Poškozených fronta je dílčí fronta fronty aplikace a lze řešit jako net.msmq://\<*název počítače*>/*applicationQueue*; poškozených, kde  *název počítače* je název počítače, na kterém je fronta umístěna a *applicationQueue* je název fronty pro konkrétní aplikace.  
   
  Tady jsou maximální počet pokusů o doručení pro zprávu:  
   
@@ -57,20 +43,20 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
 > [!NOTE]
 >  Žádné opakování jsou vytvářeny pro zprávu, která je úspěšně doručeno.  
   
- Můžete sledovat počet pokusů, dojde k pokusu o čtení zprávy, [!INCLUDE[wv](../../../../includes/wv-md.md)] udržuje vlastnosti trvanlivý zprávy, která vrátí počet přerušení a přesunutí počet vlastnost, která udává počet, kolikrát zprávu přesune mezi frontě aplikace a Podfronty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Kanál tyto používá k výpočtu receive počet opakování a počet cyklů opakování. Na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)], počet přerušení se udržuje v paměti pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanálu a se vynuluje, pokud aplikace. Navíc [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] channel mohou být uloženy přerušení počty až 256 zprávy v paměti kdykoli. Pokud je pro čtení 257th zprávy, se resetuje počet přerušení nejstarší zpráv.  
+ Můžete sledovat počet pokusů, dojde k pokusu o čtení zprávy, [!INCLUDE[wv](../../../../includes/wv-md.md)] udržuje vlastnosti trvanlivý zprávy, která vrátí počet přerušení a přesunutí počet vlastnost, která udává počet, kolikrát zprávu přesune mezi frontě aplikace a Podfronty. Kanál WCF tyto používá k výpočtu receive počet opakování a počet cyklů opakování. Na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)], počet přerušení je spravován v paměti kanál WCF a se vynuluje, pokud aplikace. Navíc kanál WCF mohou být uloženy že přerušení počty až 256 zprávy v paměti kdykoli. Pokud je pro čtení 257th zprávy, se resetuje počet přerušení nejstarší zpráv.  
   
  Přerušení počet a počet vlastnosti jsou k dispozici pro operace služby prostřednictvím kontext operaci přesunutí. Následující příklad kódu ukazuje, jak přistupovat k nim.  
   
  [!code-csharp[S_UE_MSMQ_Poison#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmq_poison/cs/service.cs#1)]  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje dvě vazby standardní zařazených do fronty:  
+ WCF poskytuje dvě vazby standardní zařazených do fronty:  
   
--   <xref:System.ServiceModel.NetMsmqBinding>. A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vazby, které jsou vhodné pro provedení komunikace na základě fronty s jinými [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncové body.  
+-   <xref:System.ServiceModel.NetMsmqBinding>. A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vazby, které jsou vhodné pro provedení komunikace na základě fronty pomocí dalších koncových bodů WCF.  
   
 -   <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Vazba, která je vhodná pro komunikaci se stávajícími aplikacemi služby Řízení front zpráv.  
   
 > [!NOTE]
->  Můžete změnit vlastnosti v těchto vazeb podle požadavků vaší [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Celý nezpracovatelná zpráva mechanismu pro zpracování je místní pro přijímající aplikace. Proces je neviditelná pro odesílající aplikací, pokud má přijímající aplikace nakonec zastaví a odešle záporné potvrzení zpátky do odesílatele. V takovém případě zpráva bude přesunuta do fronty nedoručených zpráv odesílatele.  
+>  Změnit vlastnosti v těchto vazeb v závislosti na požadavcích vaší služby WCF. Celý nezpracovatelná zpráva mechanismu pro zpracování je místní pro přijímající aplikace. Proces je neviditelná pro odesílající aplikací, pokud má přijímající aplikace nakonec zastaví a odešle záporné potvrzení zpátky do odesílatele. V takovém případě zpráva bude přesunuta do fronty nedoručených zpráv odesílatele.  
   
 ## <a name="best-practice-handling-msmqpoisonmessageexception"></a>Doporučené postupy: Zpracování msmqpoisonmessageexception –  
  Když služba zjistí, že zprávu poškozených, vyvolá zařazených do fronty přenosu <xref:System.ServiceModel.MsmqPoisonMessageException> obsahující `LookupId` poškozených zprávy.  
@@ -116,7 +102,7 @@ A *nezpracovatelná zpráva* je zprávu, která byla překročena maximální po
   
 -   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje zápornou potvrzení, zatímco [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nepodporují. Záporné potvrzení z přijímající správce front způsobí, že odesílání správce front k umístit odmítnuté zprávy do fronty nedoručených zpráv. Jako takový `ReceiveErrorHandling.Reject` není povolen u [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
--   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje dojde k pokusu o vlastnosti zprávy, která udržuje počet Počet doručení zpráv. Tato vlastnost počet přerušení není k dispozici na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesné hodnoty přečtení stejné zprávy o více než jednu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu ve farmě.  
+-   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje dojde k pokusu o vlastnosti zprávy, která udržuje počet Počet doručení zpráv. Tato vlastnost počet přerušení není k dispozici na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. WCF udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesné hodnoty přečtení stejné zprávy ve více než jeden služby WCF ve farmě.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  

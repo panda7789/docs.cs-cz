@@ -1,30 +1,18 @@
 ---
 title: Zastaralé typy v rozhraní .NET Framework
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f30b9e245ad38b0e861590e9b2ca3658a2b5e967
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a5668292eaae2b05bbc056196a35a9b8840b7177
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou v zastaralé [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], uspořádány sestavením. Pomocí následujících odkazů můžete zobrazit seznam zastaralé typy a doporučených alternativách v každé sestavení. Protože tyto typy jsou zastaralé, jsou jejich členové také zastaralé. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework, naleznete v části [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).  
@@ -188,7 +176,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="design"></a>   
-### <a name="assembly-systemdesigndll"></a>Assembly: System.Design.dll  
+### <a name="assembly-systemdesigndll"></a>Sestavení: System.Design.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -210,7 +198,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="system"></a>   
-### <a name="assembly-systemdll"></a>Assembly: System.dll  
+### <a name="assembly-systemdll"></a>Sestavení: System.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -488,7 +476,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="workflow_activities"></a>   
-### <a name="assembly-systemworkflowactivitiesdll"></a>Assembly: System.Workflow.Activities.dll  
+### <a name="assembly-systemworkflowactivitiesdll"></a>Sestavení: System.Workflow.Activities.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -519,7 +507,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="workflow_runtime"></a>   
-### <a name="assembly-systemworkflowruntimedll"></a>Assembly: System.Workflow.Runtime.dll  
+### <a name="assembly-systemworkflowruntimedll"></a>Sestavení: System.Workflow.Runtime.dll  
   
 |Typ|Zpráva|  
 |----------|-------------| 
@@ -585,7 +573,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="WindowsBase"></a>   
-### <a name="assembly-windowsbasedll"></a>Assembly: WindowsBase.dll  
+### <a name="assembly-windowsbasedll"></a>Sestavení: knihovně WindowsBase.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -604,7 +592,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="Engine"></a>   
-### <a name="assembly-microsoftbuildenginedll"></a>Assembly: Microsoft.Build.Engine.dll  
+### <a name="assembly-microsoftbuildenginedll"></a>Sestavení: Microsoft.Build.Engine.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -640,7 +628,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="VBCompat"></a>   
-### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>Assembly: Microsoft.VisualBasic.Compatibility.dll  
+### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>Sestavení: Microsoft.VisualBasic.Compatibility.dll  
   Informace o migraci z jazyka Visual Basic 6 najdete v tématu [jazyka Visual Basic 6.0 Resource Center](https://msdn.microsoft.com/library/windows/desktop/ms788229).
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -715,7 +703,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="VBCompatData"></a>   
-### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Assembly: Microsoft.VisualBasic.Compatibility.Data.dll  
+### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Sestavení: Microsoft.VisualBasic.Compatibility.Data.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  
@@ -772,7 +760,7 @@ ms.lasthandoff: 03/26/2018
  [Zpět na začátek](#introduction)  
   
 <a name="visualc"></a>   
-### <a name="assembly-microsoftvisualcdll"></a>Assembly: Microsoft.VisualC.dll  
+### <a name="assembly-microsoftvisualcdll"></a>Sestavení: Microsoft.VisualC.dll  
   
 |Typ|Zpráva|  
 |----------|-------------|  

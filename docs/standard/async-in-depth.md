@@ -1,23 +1,16 @@
 ---
-title: "Asynchronní podrobněji"
-description: "Zjistěte, jak zápis I/čítači a vázané na procesor asynchronní kódu je přehledné pomocí modelu .NET Task-based asynchronní."
-keywords: "Rozhraní .NET, rozhraní .NET core, Standard rozhraní .NET"
+title: Asynchronní podrobněji
+description: Zjistěte, jak zápis I/čítači a vázané na procesor asynchronní kódu je přehledné pomocí modelu .NET Task-based asynchronní.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b01aa5d0fade29d04313a9db2e44517b6512166b
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: fbee7e6ad0fad312e9e5524f7b3fcc7c417ad47b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="async-in-depth"></a>Asynchronní podrobněji
 

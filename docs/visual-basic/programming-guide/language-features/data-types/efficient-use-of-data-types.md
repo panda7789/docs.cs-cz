@@ -1,13 +1,6 @@
 ---
 title: Účinné používání datových typů (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - performance, data type efficiency
 - data types [Visual Basic], weak typing
@@ -20,14 +13,11 @@ helpviewer_keywords:
 - data types [Visual Basic], optimizing
 - ChrW function [Visual Basic], preferred to Chr
 ms.assetid: 28f5e4ba-ec24-4f37-b90a-e8ee822f778a
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4cac585cdc3072d595d2446e1937678f9ab03335
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6e71c4e2225bbcde3bb2bd20ae098f5600990051
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Účinné používání datových typů (Visual Basic)
 Nedeklarovaný proměnných a proměnných deklarovaných bez datový typ přiřazené `Object` datového typu. To umožňuje snadno vytvářet programy rychle, ale může to způsobit je provést pomaleji.  

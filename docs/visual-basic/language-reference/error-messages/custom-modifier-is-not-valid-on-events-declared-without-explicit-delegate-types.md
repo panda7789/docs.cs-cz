@@ -1,28 +1,19 @@
 ---
-title: "& č. 39; Vlastní & č. 39; Modifikátor není platný pro události deklarované bez explicitních typů delegátů."
+title: '&#39;Vlastní&#39; modifikátor není platný pro události deklarované bez explicitních typů delegátů.'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc31122
 - bc31122
 helpviewer_keywords:
 - BC31122
 ms.assetid: 6911f0d1-641a-473b-906d-8ee5681194be
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 844bd033ea05e373b04a04f80777af77179c1263
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3f08bbbbbac4a01dfbac8d15cf9285c01262618a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="39custom39-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types"></a>& č. 39; Vlastní & č. 39; Modifikátor není platný pro události deklarované bez explicitních typů delegátů.
+# <a name="39custom39-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types"></a>&#39;Vlastní&#39; modifikátor není platný pro události deklarované bez explicitních typů delegátů.
 Na rozdíl od jiných vlastní události `Custom Event` deklarace vyžaduje `As` klauzule následující název události, které explicitně určuje typ delegát pro událost.  
   
  Bez vlastní události může být definována buď pomocí `As` klauzule a explicitního delegovat typ, nebo pomocí parametru seznamu okamžitě následující název události.  
@@ -49,6 +40,6 @@ Na rozdíl od jiných vlastní události `Custom Event` deklarace vyžaduje `As`
  [!code-vb[VbVbalrEventError#2](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_3.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
  [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

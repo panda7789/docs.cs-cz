@@ -1,29 +1,15 @@
 ---
 title: Přehled globalizace a lokalizace WPF
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6f2bc9021ca376b7b27f74efed6866a907b480ad
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 957ba16886669acdfa5501ffe02501cbe6e57198
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 Pokud svůj produkt dostupnost pouze jeden jazyk, omezíte se zákazníkovi potenciální základní k zlomek naše world 6.5 miliardy naplnění. Pokud chcete, aby vaše aplikace k dosažení globální cílovou skupinu, nákladově efektivní lokalizace produktu je jedním z nejlepší a nejhospodárnějším možným způsobů spojit více zákazníků.  
@@ -198,7 +184,7 @@ Pokud svůj produkt dostupnost pouze jeden jazyk, omezíte se zákazníkovi pote
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Abbrechen|  
-|Button_3:System.Windows.Controls.Button.$Content|Tlačítko|Durchsuchen…|  
+|Button_3:System.Windows.Controls.Button.$Content|Tlačítko|Durchsuchen...|  
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||  
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Den Geben Sie Namen eines Programms, Ordners, Dokuments oder einer Internetresource.|  
 |TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Öffnen:|  
@@ -241,7 +227,7 @@ Pokud svůj produkt dostupnost pouze jeden jazyk, omezíte se zákazníkovi pote
   
  **FlowDirection**  
   
- *Homepage.xaml:*  
+ *Homepage.XAML:*  
   
  [!code-xaml[GlobalizationHomepage#Homepage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationHomepage/CS/Homepage.xaml#homepage)]  
   
@@ -249,11 +235,11 @@ Pokud svůj produkt dostupnost pouze jeden jazyk, omezíte se zákazníkovi pote
   
  Zkontrolujte, zda jsou i přechodu štětce pozadí obráceně správně při kořenu <xref:System.Windows.FrameworkElement.FlowDirection%2A> mění:  
   
- **FlowDirection="LeftToRight"**  
+ **FlowDirection = "LeftToRight"**  
   
  ![Tok zleva doprava](../../../../docs/framework/wpf/advanced/media/lefttoright.PNG "LeftToRight")  
   
- **FlowDirection="RightToLeft"**  
+ **FlowDirection = "RightToLeft"**  
   
  ![Tok zprava doleva](../../../../docs/framework/wpf/advanced/media/righttoleft.PNG "RightToLeft")  
   

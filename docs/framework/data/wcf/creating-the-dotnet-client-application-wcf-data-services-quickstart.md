@@ -1,29 +1,15 @@
 ---
 title: Vytvoření aplikace klienta rozhraní .NET Framework (rychlý start WCF Data Services)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-caps.latest.revision: 3
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0bdbb88cc3070c68c540a09ab0d6ce41f790d1c3
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 09981a7aee2db24d8464bbc7412b82a57ec8115b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>Vytvoření aplikace klienta rozhraní .NET Framework (rychlý start WCF Data Services)
 Toto je poslední úlohy [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] rychlý start. V této úloze bude konzolovou aplikaci do řešení přidat, přidejte odkaz na [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu na tuto novou klientskou aplikaci a přístup [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu z klientské aplikace pomocí generovaného klienta datových služba tříd a klienta knihovny.  

@@ -1,24 +1,12 @@
 ---
-title: "Doporučené postupy pro spolehlivé relace"
-ms.custom: 
+title: Doporučené postupy pro spolehlivé relace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b94f6e01-8070-40b6-aac7-a2cb7b4cb4f2
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c022db62103826aa89e9035fd36c050d1f7c0f84
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d9671e7e3124d535b66de8cd8468f76dcb32b10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-reliable-sessions"></a>Doporučené postupy pro spolehlivé relace
 
@@ -26,7 +14,7 @@ Toto téma popisuje osvědčené postupy pro spolehlivé relace.
 
 ## <a name="setting-maxtransferwindowsize"></a>Nastavení MaxTransferWindowSize
 
-Spolehlivé relace v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] použít okno přenosu pro uložení zpráv na klientovi a služby. Konfigurovatelná vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> Určuje, kolik zpráv, které mohou být uloženy okno přenosu.
+Spolehlivé relace v systému Windows Communication Foundation (WCF) použijte okno přenosu pro uložení zpráv na klientovi a služby. Konfigurovatelná vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> Určuje, kolik zpráv, které mohou být uloženy okno přenosu.
 
 U odesílatele to znamená, kolik zpráv, které mohou být uloženy okno přenos při čekání na potvrzení; na příjemce znamená to, kolik zpráv do vyrovnávací paměti pro službu.
 
@@ -56,7 +44,7 @@ Doporučujeme používat stejné `MaxTransferWindowSize` na odesílatele i pří
 
 *Řízení toku* mechanismus, který zajišťuje, aby odesílatele a příjemce držet krok mezi sebou, to znamená, jsou zprávy spotřebované a reagovali na ni tak rychle, jak jste se vytváří. Velikost okna přenosu na klient a služba zajistí odesílatele a příjemce v rámci přiměřené období synchronizace.
 
-Důrazně doporučujeme nastavit vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled%2A> k `true` když používáte spolehlivé relace mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.
+Důrazně doporučujeme nastavit vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled%2A> k `true` když používáte spolehlivé relace mezi klienta WCF a služby WCF.
 
 ## <a name="setting-maxpendingchannels"></a>Nastavení MaxPendingChannels
 

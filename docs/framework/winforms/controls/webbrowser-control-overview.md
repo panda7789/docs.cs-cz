@@ -1,31 +1,17 @@
 ---
-title: "WebBrowser – přehled ovládacího prvku"
-ms.custom: 
+title: WebBrowser – přehled ovládacího prvku
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - WebBrowser
 helpviewer_keywords:
 - WebBrowser control [Windows Forms], about
 - Web pages [Windows Forms], displaying in applications
 ms.assetid: 6e3e1cc2-9c48-4136-9659-e99e4e60b7e9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d2c1ed93769cc91d9622a86ea2d894cea57f5bcd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e69b71b3e354101d950d6f7011b13fc7c0de030
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser – přehled ovládacího prvku
 <xref:System.Windows.Forms.WebBrowser> Řízení poskytuje spravovaná obálka pro ovládací prvek WebBrowser ActiveX. Spravovaná obálka umožňuje zobrazení webové stránky v aplikacích Windows Forms klienta. Můžete použít <xref:System.Windows.Forms.WebBrowser> řízení duplicitní funkce procházení WWW aplikace Internet Explorer v aplikaci, nebo můžete zakázat výchozí funkce Internet Exploreru a použít ovládací prvek jako jednoduchý prohlížeče dokumentu HTML. Můžete také použít ovládací prvek přidejte do svého formuláře prvky jazyka DHTML na základě uživatelského rozhraní a skrýt skutečnost, že jsou hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tento přístup umožňuje bezproblémově kombinovat ovládací prvky webového s ovládacími prvky Windows Forms v jedné aplikaci.  
@@ -39,19 +25,19 @@ ms.lasthandoff: 12/22/2017
   
 |Název|Popis|  
 |----------|-----------------|  
-|<xref:System.Windows.Forms.WebBrowser.Document%2A>Vlastnost|Získá objekt, který poskytuje spravovaný přístup k modelu objektu dokumentu (DOM) HTML aktuální webové stránky.|  
-|<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>události|Nastane při dokončení načítání webové stránky.|  
-|<xref:System.Windows.Forms.WebBrowser.DocumentText%2A>Vlastnost|Získá nebo nastaví obsah aktuální webové stránky HTML.|  
-|<xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A>Vlastnost|Získá název aktuální webové stránky.|  
-|<xref:System.Windows.Forms.WebBrowser.GoBack%2A>– Metoda|Přejde na předchozí stránku v historii.|  
-|<xref:System.Windows.Forms.WebBrowser.GoForward%2A>– Metoda|Přejde na další stránku v historii.|  
-|<xref:System.Windows.Forms.WebBrowser.Navigate%2A>– Metoda|Přejde na zadané adrese URL.|  
-|<xref:System.Windows.Forms.WebBrowser.Navigating>události|Se vyskytuje před začátkem navigace, povolení akce, která má být zrušena.|  
-|<xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A>Vlastnost|Získá nebo nastaví objekt, který webovou stránku skriptovací kód můžete použít ke komunikaci s vaší aplikací.|  
-|<xref:System.Windows.Forms.WebBrowser.Print%2A>– Metoda|Vytiskne aktuální webové stránky.|  
-|<xref:System.Windows.Forms.WebBrowser.Refresh%2A>– Metoda|Znovu načte aktuální webové stránky.|  
-|<xref:System.Windows.Forms.WebBrowser.Stop%2A>– Metoda|Zastaví aktuální navigaci a zastavuje dynamické stránky prvky, jako jsou například zvuky a animace.|  
-|<xref:System.Windows.Forms.WebBrowser.Url%2A>Vlastnost|Získá nebo nastaví adresu URL aktuální webové stránky. Nastavení této vlastnosti přejde ovládacího prvku na novou adresu URL.|  
+|<xref:System.Windows.Forms.WebBrowser.Document%2A> Vlastnost|Získá objekt, který poskytuje spravovaný přístup k modelu objektu dokumentu (DOM) HTML aktuální webové stránky.|  
+|<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> Události|Nastane při dokončení načítání webové stránky.|  
+|<xref:System.Windows.Forms.WebBrowser.DocumentText%2A> Vlastnost|Získá nebo nastaví obsah aktuální webové stránky HTML.|  
+|<xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A> Vlastnost|Získá název aktuální webové stránky.|  
+|<xref:System.Windows.Forms.WebBrowser.GoBack%2A> – Metoda|Přejde na předchozí stránku v historii.|  
+|<xref:System.Windows.Forms.WebBrowser.GoForward%2A> – Metoda|Přejde na další stránku v historii.|  
+|<xref:System.Windows.Forms.WebBrowser.Navigate%2A> – Metoda|Přejde na zadané adrese URL.|  
+|<xref:System.Windows.Forms.WebBrowser.Navigating> Události|Se vyskytuje před začátkem navigace, povolení akce, která má být zrušena.|  
+|<xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> Vlastnost|Získá nebo nastaví objekt, který webovou stránku skriptovací kód můžete použít ke komunikaci s vaší aplikací.|  
+|<xref:System.Windows.Forms.WebBrowser.Print%2A> – Metoda|Vytiskne aktuální webové stránky.|  
+|<xref:System.Windows.Forms.WebBrowser.Refresh%2A> – Metoda|Znovu načte aktuální webové stránky.|  
+|<xref:System.Windows.Forms.WebBrowser.Stop%2A> – Metoda|Zastaví aktuální navigaci a zastavuje dynamické stránky prvky, jako jsou například zvuky a animace.|  
+|<xref:System.Windows.Forms.WebBrowser.Url%2A> Vlastnost|Získá nebo nastaví adresu URL aktuální webové stránky. Nastavení této vlastnosti přejde ovládacího prvku na novou adresu URL.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.WebBrowser>  

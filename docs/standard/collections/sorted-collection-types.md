@@ -1,13 +1,7 @@
 ---
-title: "Typy řazených kolekcí"
-ms.custom: 
+title: Typy řazených kolekcí
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - SortedDictionary collection type
 - SortedList class, grouping data in collections
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - SortedList collection type
 - collections [.NET Framework], SortedList collection type
 ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
-caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7efe53d472e1789d49acc3973acdf190c8ff6662
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 31b40167be4f2760eb7c88155e1733266e34d11d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sorted-collection-types"></a>Typy řazených kolekcí
 <xref:System.Collections.SortedList?displayProperty=nameWithType> Třídy, <xref:System.Collections.Generic.SortedList%602?displayProperty=nameWithType> – obecná třída a <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=nameWithType> obecné třídy jsou podobné <xref:System.Collections.Hashtable> – třída a <xref:System.Collections.Generic.Dictionary%602> obecné třídy v tom, že implementují <xref:System.Collections.IDictionary> rozhraní, ale zachovávají jejich elementy v řazení pořadí pomocí klíče a nemají o(1), která vložení a načtení charakteristik zatřiďovacích tabulkách. Tři třídy mají společnou několik funkcí:  
@@ -44,7 +33,7 @@ ms.lasthandoff: 12/23/2017
   
  Následující tabulka uvádí některé rozdíly mezi dvěma třídami seřazený seznam a <xref:System.Collections.Generic.SortedDictionary%602> třídy.  
   
-|<xref:System.Collections.SortedList>Neobecná třída a <xref:System.Collections.Generic.SortedList%602> – obecná třída|<xref:System.Collections.Generic.SortedDictionary%602>– Obecná třída|  
+|<xref:System.Collections.SortedList> Neobecná třída a <xref:System.Collections.Generic.SortedList%602> – obecná třída|<xref:System.Collections.Generic.SortedDictionary%602> – Obecná třída|  
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |Jsou indexované vlastnosti, které vracejí klíče a hodnoty, umožňuje efektivní indexované načtení.|Neindexované načítání.|  
 |Načítání je O (protokolu `n`).|Načítání je O (protokolu `n`).|  

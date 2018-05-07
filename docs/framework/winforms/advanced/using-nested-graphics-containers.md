@@ -1,13 +1,6 @@
 ---
-title: "Použití vnořených grafických kontejnerů"
-ms.custom: 
+title: Použití vnořených grafických kontejnerů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - graphics [Windows Forms], clipping
 - graphics [Windows Forms], transformations in nested objects
 ms.assetid: a0d9f178-43a4-4323-bb5a-d3e3f77ae6c1
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 512c8903611f025364a1af2cb6cbaaffc8d759eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba6bba84100a0ddcc87894710a6d3099ab0ccff5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-nested-graphics-containers"></a>Použití vnořených grafických kontejnerů
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]poskytuje kontejnery, které můžete použít k dočasnému nahradit nebo posílení součástí se stavem v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner voláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k vytvoření vnořené kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být spárována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje kontejnery, které můžete použít k dočasnému nahradit nebo posílení součástí se stavem v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner voláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k vytvoření vnořené kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být spárována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  
   
 ## <a name="transformations-in-nested-containers"></a>Transformace ve vnořených kontejnery  
  Následující příklad vytvoří <xref:System.Drawing.Graphics> objekt a kontejner, jež se <xref:System.Drawing.Graphics> objektu. Světové transformace <xref:System.Drawing.Graphics> objektu se překlad 100 jednotky ve směru osy x a 80 jednotky ve směru osy y. Světové transformace kontejneru je rotaci 30 stupňů. Kód provede volání `DrawRectangle(pen, -60, -30, 120, 60)` dvakrát. První volání <xref:System.Drawing.Graphics.DrawRectangle%2A> uvnitř kontejneru; volání je mezi volání <xref:System.Drawing.Graphics.BeginContainer%2A> a <xref:System.Drawing.Graphics.EndContainer%2A>. Druhé volání <xref:System.Drawing.Graphics.DrawRectangle%2A> po volání <xref:System.Drawing.Graphics.EndContainer%2A>.  

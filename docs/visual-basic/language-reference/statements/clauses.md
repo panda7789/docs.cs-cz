@@ -1,23 +1,14 @@
 ---
 title: Klauzule (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - clauses [Visual Basic]
 ms.assetid: 5e89f5f3-d129-4ed1-8857-30cd71cff95e
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1a4166cc480541f913dd47952782a6015c5348a2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a77a95879bd556b1dfb1503c4648d04629052189
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clauses-visual-basic"></a>Klauzule (Visual Basic)
 Témata v této části dokumentů klauzule runtime jazyka Visual Basic.  
@@ -25,7 +16,7 @@ Témata v této části dokumentů klauzule runtime jazyka Visual Basic.
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)  
   
- [Jako](../../../visual-basic/language-reference/statements/as-clause.md)  
+ [jako](../../../visual-basic/language-reference/statements/as-clause.md)  
   
  [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)  
   
@@ -33,9 +24,9 @@ Témata v této části dokumentů klauzule runtime jazyka Visual Basic.
   
  [V](../../../visual-basic/language-reference/statements/in-clause.md)  
   
- [Do](../../../visual-basic/language-reference/statements/into-clause.md)  
+ [do](../../../visual-basic/language-reference/statements/into-clause.md)  
   
- [Z](../../../visual-basic/language-reference/statements/of-clause.md)  
+ [z](../../../visual-basic/language-reference/statements/of-clause.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  

@@ -1,29 +1,17 @@
 ---
-title: "Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky"
-ms.custom: 
+title: Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], access keys
 - shortcuts [Windows Forms], controls
 - keyboard shortcuts [Windows Forms], controls
 - Windows Forms controls, labels
 ms.assetid: 6eaf868c-819f-4131-8f59-048e20c286f7
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5e64a2a858b9506ec08beff728e23da0f817f170
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b75a4f59cdba4ff732a92996086b77bc65cf46c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them"></a>Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky
 Přidat do Windows Forms – ovládací prvky mít vlastnosti a metody, které se používají k další specialize uživatele prostředí. Přizpůsobení uživatelského rozhraní tak, aby vyhovovala potřebám uživatele je velmi důležité dobře navrženou pro aplikace pro Windows.  

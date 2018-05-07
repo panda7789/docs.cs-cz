@@ -1,24 +1,12 @@
 ---
-title: "Postupy: Export vlastního WSDL"
-ms.custom: 
+title: 'Postupy: Export vlastního WSDL'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5c1e4b58-b76b-472b-9635-2f80d42a0734
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d4b34cc564dea5f189de29c9425c840ec96c80fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82f343d5e2637ff1330570a01b376e83567db4f4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-export-custom-wsdl"></a>Postupy: Export vlastního WSDL
 Toto téma vysvětluje, jak exportovat vlastní informace o schématu WSDL. Uděláte to tak bude definujeme nový atribut kód volá `WsdlDocumentationAttribute` , bude přidání vlastních informací do WSDL vygenerované službou.  
@@ -27,7 +15,7 @@ Toto téma vysvětluje, jak exportovat vlastní informace o schématu WSDL. Udě
   
 1.  Implementace <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní. Toto rozhraní může být implementováno na třídu, která implementuje některý z následujících rozhraní: <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, nebo <xref:System.ServiceModel.Description.IEndpointBehavior>. Můžete implementovat také na třídy odvozené od <xref:System.ServiceModel.Channels.BindingElement>. Tato ukázka implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> na třídu atributu, který implementuje <xref:System.ServiceModel.Description.IContractBehavior>.  
   
-2.  <xref:System.ServiceModel.Description.IWsdlExportExtension>definuje dvě metody <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> a <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. Tyto metody umožňují úprava nebo přidání (nebo obě upravit a přidat) Další informace o <xref:System.ServiceModel.Description.WsdlContractConversionContext>. Tato ukázka v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metoda, načte kolekci <xref:System.ServiceModel.Description.OperationDescription> objekty a pak provádí iteraci v kolekci vyhledává `WsdlDocumentationAttribute`. Pokud není nalezen, je extrahován text přidružený k atributu, elementu summary je generován a elementu summary je přidán do `DocumentationElement` operace.  
+2.  <xref:System.ServiceModel.Description.IWsdlExportExtension> definuje dvě metody <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> a <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. Tyto metody umožňují úprava nebo přidání (nebo obě upravit a přidat) Další informace o <xref:System.ServiceModel.Description.WsdlContractConversionContext>. Tato ukázka v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metoda, načte kolekci <xref:System.ServiceModel.Description.OperationDescription> objekty a pak provádí iteraci v kolekci vyhledává `WsdlDocumentationAttribute`. Pokud není nalezen, je extrahován text přidružený k atributu, elementu summary je generován a elementu summary je přidán do `DocumentationElement` operace.  
   
     ```  
             public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  

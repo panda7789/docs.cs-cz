@@ -1,24 +1,15 @@
 ---
-title: "Postupy: Vytvoření dokumentace XML v jazyce Visual Basic"
-ms.custom: 
+title: 'Postupy: Vytvoření dokumentace XML v jazyce Visual Basic'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - XML comments
 - XML documentation [Visual Basic], creating
 ms.assetid: 27b5b06c-09b9-496a-8245-f9542d846230
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 63b6485de5aba2ca49d54a057045bec2062d12dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7fb56da8a28367a6dcd5e28f208b4519510d7d95
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-xml-documentation-in-visual-basic"></a>Postupy: Vytvoření dokumentace XML v jazyce Visual Basic
 Tento příklad ukazuje, jak přidat dokumentační komentáře XML do vašeho kódu.  
@@ -47,4 +38,4 @@ Tento příklad ukazuje, jak přidat dokumentační komentáře XML do vašeho k
 ## <a name="see-also"></a>Viz také  
  [Dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)  
  [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)  
- [/ DOC](../../../visual-basic/reference/command-line-compiler/doc.md)
+ [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)

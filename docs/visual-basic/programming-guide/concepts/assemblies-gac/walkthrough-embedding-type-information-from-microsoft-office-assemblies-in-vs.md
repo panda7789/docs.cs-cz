@@ -1,22 +1,12 @@
 ---
-title: "Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)"
-ms.custom: 
+title: 'Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 26b44286-5066-4ad4-8e6a-c24902be347c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 26e6fee5147e8477c64f7eaf0dc2aeb928c13e15
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6a28e95f9c3cfcc2481c8f4f9f83303648df43cd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)
 Pokud vložit informace typu v aplikaci, která odkazuje na objekty modelu COM, můžete eliminovat potřebu primární spolupracující sestavení (PIA). Informace o vložených typu navíc umožňuje dosáhnout nezávislost verze pro vaši aplikaci. To znamená váš program může být napsán používat typy z více verzí knihovny COM bez nutnosti konkrétní PIA – pro každou verzi. Toto je běžný scénář pro aplikace, které používají objekty z knihovny Microsoft Office. Vložení informací o typu umožňuje ve stejném sestavení programu pro práci s různými verzemi nástroje Microsoft Office na různých počítačích bez nutnosti znovu nasaďte program nebo PIA – pro každou verzi systému Microsoft Office.  
@@ -30,7 +20,7 @@ Pokud vložit informace typu v aplikaci, která odkazuje na objekty modelu COM, 
   
 -   Druhý počítač, na kterém jsou nainstalované rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.  
   
-##  <a name="BKMK_createapp"></a>Chcete-li vytvořit aplikaci, která funguje s více verzemi systému Microsoft Office  
+##  <a name="BKMK_createapp"></a> Chcete-li vytvořit aplikaci, která funguje s více verzemi systému Microsoft Office  
   
 1.  Spuštění sady Visual Studio v počítači, na kterém je nainstalována aplikace Excel.  
   
@@ -106,7 +96,7 @@ Pokud vložit informace typu v aplikaci, která odkazuje na objekty modelu COM, 
   
 9. Stisknutím klávesy CTRL + F5 sestavit a spustit projekt. Ověřte, že sešit aplikace Excel byl vytvořen v umístění zadaném v ukázkový kód: C:\SampleFolder\SampleWorkbook.xls.  
   
-##  <a name="BKMK_publishapp"></a>Publikování aplikace do počítače, na kterém je nainstalovaná jiná verze systému Microsoft Office  
+##  <a name="BKMK_publishapp"></a> Publikování aplikace do počítače, na kterém je nainstalovaná jiná verze systému Microsoft Office  
   
 1.  Otevřete projekt vytvořené tento návod v sadě Visual Studio.  
   

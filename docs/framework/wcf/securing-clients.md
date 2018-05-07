@@ -1,31 +1,19 @@
 ---
 title: Zabezpečení klientů
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-caps.latest.revision: 22
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7d06df1a9c4ef5a7cb64f71d2f7afc77c41a0e6f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 34e7a3721fc70b5c418f0e473e09d9dacc8d9f15
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
-V [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], služba určuje požadavky na zabezpečení pro klienty. To znamená službu určuje jakém režimu zabezpečení používat a jestli klient musí poskytnout přihlašovací údaje. Proces zabezpečení klienta, proto je jednoduchý: použijte metadata získat ze služby (Pokud je publikována) a sestavení klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadejte pověření, je nutné získat přihlašovací údaje, které vyhovuje požadavku. Toto téma popisuje proces podrobněji. Další informace o vytvoření zabezpečeného služby najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
+Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená službu určuje jakém režimu zabezpečení používat a jestli klient musí poskytnout přihlašovací údaje. Proces zabezpečení klienta, proto je jednoduchý: použijte metadata získat ze služby (Pokud je publikována) a sestavení klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadejte pověření, je nutné získat přihlašovací údaje, které vyhovuje požadavku. Toto téma popisuje proces podrobněji. Další informace o vytvoření zabezpečeného služby najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
   
 ## <a name="the-service-specifies-security"></a>Služba určuje zabezpečení  
  Ve výchozím nastavení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vazby mají povolené funkce zabezpečení. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>.) Proto pokud služba byla vytvořena pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], existuje větší pravděpodobnost, že je provede zabezpečení, ověřování, důvěrnost a integrita. V takovém případě metadat, které poskytuje služba označí, co vyžaduje vytvořit zabezpečený komunikační kanál. Pokud metadata služby neobsahuje žádné požadavky na zabezpečení, neexistuje žádný způsob, jak ukládat zabezpečení schématu, jako je například vrstvy SSL (Secure Sockets) prostřednictvím protokolu HTTP, ve službě. Pokud však služba vyžaduje, aby klient k zadání pověření, pak klient developer, nástroje pro nasazení nebo správce musíte zadat skutečné pověření, které bude klient používat ke svému ověření ke službě.  

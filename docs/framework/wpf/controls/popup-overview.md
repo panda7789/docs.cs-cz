@@ -1,27 +1,15 @@
 ---
-title: "Přehled překryvných objektů"
-ms.custom: 
+title: Přehled překryvných objektů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], Popup
 - Popup control [WPF], about Popup control
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
-caps.latest.revision: "34"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0cb20895b5af35fec7274ca4c747740390104355
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c9261e2151f116b46a0c25d8dc775bf41bf932b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="popup-overview"></a>Přehled překryvných objektů
 <xref:System.Windows.Controls.Primitives.Popup> Řízení poskytuje způsob, jak zobrazit obsah v samostatném okně, které překrývat aktuální okno aplikace relativně k určené souřadnice element nebo obrazovky. Toto téma představuje <xref:System.Windows.Controls.Primitives.Popup> řízení a poskytuje informace o jeho použití.  
@@ -81,7 +69,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="popup-size"></a>Velikost v automaticky otevřeném okně.  
  Ve výchozím nastavení <xref:System.Windows.Controls.Primitives.Popup> je automaticky velikost na jeho obsah. Když dojde k automatickou, některé efekty rastrového obrázku může skrýt, protože výchozí velikost oblasti obrazovky, který je definován pro <xref:System.Windows.Controls.Primitives.Popup> obsah neposkytuje dost místa pro rastrový obrázek důsledky pro zobrazení.  
   
- <xref:System.Windows.Controls.Primitives.Popup>obsah může být skryty také při nastavení <xref:System.Windows.UIElement.RenderTransform%2A> na obsah. V tomto scénáři může být skrytý obsah, pokud obsah transformovaných <xref:System.Windows.Controls.Primitives.Popup> přesahuje oblasti původní <xref:System.Windows.Controls.Primitives.Popup>. Pokud efekt rastrového obrázku nebo transformace vyžaduje více místa, můžete definovat okraj kolem <xref:System.Windows.Controls.Primitives.Popup> obsahu, aby bylo možné poskytnout další oblasti pro ovládací prvek.  
+ <xref:System.Windows.Controls.Primitives.Popup> obsah může být skryty také při nastavení <xref:System.Windows.UIElement.RenderTransform%2A> na obsah. V tomto scénáři může být skrytý obsah, pokud obsah transformovaných <xref:System.Windows.Controls.Primitives.Popup> přesahuje oblasti původní <xref:System.Windows.Controls.Primitives.Popup>. Pokud efekt rastrového obrázku nebo transformace vyžaduje více místa, můžete definovat okraj kolem <xref:System.Windows.Controls.Primitives.Popup> obsahu, aby bylo možné poskytnout další oblasti pro ovládací prvek.  
   
 <a name="DefiningPopupPosition"></a>   
 ## <a name="defining-the-popup-position"></a>Definování pozici automaticky otevřeném okně.  

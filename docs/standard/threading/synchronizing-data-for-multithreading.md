@@ -1,30 +1,19 @@
 ---
-title: "Synchronizace dat pro vícevláknové zpracování"
-ms.custom: 
+title: Synchronizace dat pro vícevláknové zpracování
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - synchronization, threads
 - threading [.NET Framework], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 4e1e123b8c8440b766e5b8903170c8cb392f154a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 998e159cceded6da2e9c3068680c45bc1c9345a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro vícevláknové zpracování
 Když více vláken můžete volat vlastnosti a metody jednoho objektu, je velmi důležité synchronizovat těchto volání. V opačném případě může být jedno vlákno přerušení činnosti jiné vlákno a objekt může být ponecháno v neplatném stavu. Třídu, jejíž členové jsou chráněny před přerušení práce se nazývá bezpečné pro přístup z více vláken.  
@@ -64,7 +53,7 @@ Když více vláken můžete volat vlastnosti a metody jednoho objektu, je velmi
   
  Můžete také uspořádání metodu s **MethodImplAttribute** a **MethodImplOptions.Synchronized**, který má stejný účinek jako použití **monitorování** nebo jeden z kompilátoru klíčová slova se uzamknout celého obsahu metody.  
   
- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>slouží k přerušení vlákno blokování operace, jako je například čekání na přístup do synchronizované oblasti kódu mimo. **Thread.Interrupt** slouží také k přerušení vláken mimo operací, jako je <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>.  
+ <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> slouží k přerušení vlákno blokování operace, jako je například čekání na přístup do synchronizované oblasti kódu mimo. **Thread.Interrupt** slouží také k přerušení vláken mimo operací, jako je <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>.  
   
 > [!IMPORTANT]
 >  Zamknout typ – to znamená, `typeof(MyType)` v jazyce C#, `GetType(MyType)` v jazyce Visual Basic nebo `MyType::typeid` v jazyce C++ – Pokud chcete chránit `static` metody (`Shared` metody v jazyce Visual Basic). Místo toho použijte objekt privátní statické. Podobně, nepoužívejte `this` v jazyce C# (`Me` v jazyce Visual Basic) zámku metod, které. Místo toho použijte soukromý objekt. Třídy nebo instance může být uzamčen kódu než vlastní, potenciálně způsobuje zablokování nebo problémy s výkonem.  

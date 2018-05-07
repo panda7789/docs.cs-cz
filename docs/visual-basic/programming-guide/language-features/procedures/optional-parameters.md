@@ -1,12 +1,6 @@
 ---
-title: "Volitelné parametry (Visual Basic)"
-ms.custom: 
+title: Volitelné parametry (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - parameters [Visual Basic], optional
 - Visual Basic code, procedures
@@ -18,14 +12,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e57023f594cfe4cd79d59cc8541fcf18018de0ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a438455668310769c5267a6d42a2e694bb7b01dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
 Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici postupu. Platí následující pravidla:  
@@ -51,7 +42,7 @@ Sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 =
 Sub name(argument 1, , , argument 4)  
 ```  
   
- Následující příklad vytvoří několik volání `MsgBox` funkce. `MsgBox`jeden vyžaduje parametr a dva volitelné parametry.  
+ Následující příklad vytvoří několik volání `MsgBox` funkce. `MsgBox` jeden vyžaduje parametr a dva volitelné parametry.  
   
  První volání `MsgBox` poskytuje všechny tři argumenty v pořadí, které `MsgBox` definuje je. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
   
@@ -68,11 +59,11 @@ Sub name(argument 1, , , argument 4)
  Proceduru s volitelnými parametry lze definovat také pomocí přetěžování. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury – jednu s parametrem a druhou bez parametru. S rostoucím počtem volitelných parametrů se zvyšuje složitost. Výhodou ale je, že máte absolutní jistotu, zda volající program poskytl jednotlivé volitelné argumenty.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy](./index.md)  
+ [Procedury](./index.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Předávání argumentů podle hodnoty a podle Reference](./passing-arguments-by-value-and-by-reference.md)  
+ [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
  [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)  
  [Pole parametrů](./parameter-arrays.md)  
  [Přetížení procedury](./procedure-overloading.md)  
- [Volitelné](../../../../visual-basic/language-reference/modifiers/optional.md)  
+ [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)  
  [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)

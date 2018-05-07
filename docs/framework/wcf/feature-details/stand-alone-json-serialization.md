@@ -1,29 +1,15 @@
 ---
 title: Samostatná serializace JSON
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-caps.latest.revision: 32
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4d3c7234c25b0a968ca67b58a560e8c8b55bb73d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5a157dfd55e722b3e7be967a26e8d2ff5fd54afe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="stand-alone-json-serialization"></a>Samostatná serializace JSON
-JSON (JavaScript Object Notation) je formát dat, která je určená speciálně pro používat kód JavaScript spuštěný na webových stránkách otvírala v prohlížeči. Je výchozí formát dat používaný pomocí prvku ASP.NET AJAX služeb vytvořených v rámci [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+JSON (JavaScript Object Notation) je formát dat, která je určená speciálně pro používat kód JavaScript spuštěný na webových stránkách otvírala v prohlížeči. Je výchozí formát dat používaný pomocí prvku ASP.NET AJAX služby vytvořené v systému Windows Communication Foundation (WCF).  
   
  Tento formát můžete použít také v případě vytváření služeb AJAX bez integrace s ASP.NET – v takovém případě XML je výchozí nastavení ale JSON je možné vybrat.  
   
@@ -87,7 +73,7 @@ JSON (JavaScript Object Notation) je formát dat, která je určená speciálně
   
 -   Všechny vlastní nastavení, která používá <xref:System.Runtime.Serialization.CollectionDataContractAttribute> je ignorován v reprezentace JSON.  
   
--   Slovník nejsou způsob, jak pracovat přímo s JSON. Slovník\<řetězec, objekt > nemusí být podporována stejným způsobem v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podle očekávání v práci s jinými technologiemi JSON. Například pokud "abc" je namapovaná na "xyz" a "def" je namapována na 42 ve slovníku, reprezentace JSON není {"abc": "xyz", "def": 42}, ale [{"Klíč": "abc", "Value": "xyz"}, {"Klíč": "def", "Value": 42}] místo.  
+-   Slovník nejsou způsob, jak pracovat přímo s JSON. Slovník\<řetězec, objekt > nemusí být podporována stejně jako ve WCF podle očekávání v práci s jinými technologiemi JSON. Například pokud "abc" je namapovaná na "xyz" a "def" je namapována na 42 ve slovníku, reprezentace JSON není {"abc": "xyz", "def": 42}, ale [{"Klíč": "abc", "Value": "xyz"}, {"Klíč": "def", "Value": 42}] místo.  
   
 -   Pokud chcete pracovat přímo s JSON (přístup ke klíči a hodnotami dynamicky, bez předběžné definování kontraktu pevné), máte několik možností:  
   
@@ -108,7 +94,7 @@ JSON (JavaScript Object Notation) je formát dat, která je určená speciálně
  Typ formátu JSON nemá tak, aby odpovídaly v předchozí tabulce k deserializaci. Například `Int` obvykle mapuje JSON číslo, ale může být také úspěšně deserializovaný z JSON řetězce tak dlouho, dokud tento řetězec obsahuje platné číslo. To znamená, i {"d:": 42} a {"d:": "42"} jsou platné, pokud dojde `Int` data člena s názvem "d:".  
   
 ### <a name="polymorphism"></a>Polymorfismus  
- Polymorfní serializace se skládá z možnost odvozený typ, kde je očekávána jeho základní typ serializovat. Tato možnost je podporována pro serializaci JSON podle [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] srovnatelná způsob serializace XML je podporována. Například může serializovat `MyDerivedType` kde `MyBaseType` je očekávána nebo serializovat `Int` kde `Object` se očekává.  
+ Polymorfní serializace se skládá z možnost odvozený typ, kde je očekávána jeho základní typ serializovat. Toto je podporováno pro serializaci JSON technologie WCF porovnatelný z hlediska způsobem, jakým serializace XML je podporována. Například může serializovat `MyDerivedType` kde `MyBaseType` je očekávána nebo serializovat `Int` kde `Object` se očekává.  
   
  Při deserializaci odvozený typ, pokud základní typ je očekávané, pokud jsou deserializaci komplexního typu, může dojít ke ztrátě informací o typu. Například pokud <xref:System.Uri> kde serializován <xref:System.Object> je očekávané, výsledkem je to řetězec formátu JSON. Pokud se tento řetězec bude poté deserializován zpět do <xref:System.Object>, .NET <xref:System.String> je vrácen. Deserializátor nebude vědět, že řetězec byla původně typu <xref:System.Uri>. Obecně platí Pokud byla očekávána <xref:System.Object>, všechny řetězce JSON jsou deserializovat jako řetězce .NET a všechna pole JSON používaný k serializaci kolekcí .NET, slovníky, a pole jsou deserializovat jako .NET <xref:System.Array> typu <xref:System.Object>bez ohledu na to, co původní skutečným typem je. Logická hodnota JSON mapuje .NET <xref:System.Boolean>. Ale pokud byla očekávána <xref:System.Object>, JSON čísla se deserializovat jako buď .NET <xref:System.Int32>, <xref:System.Decimal> nebo <xref:System.Double>, kde je nejvhodnější typ automaticky vybráno.  
   
@@ -151,7 +137,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
   
  Kód jazyka JavaScript klienta ASP.NET AJAX automaticky převede takové řetězce do jazyka JavaScript `DateTime` instance. Pokud existují další řetězce, které mají podobné formuláře, které nejsou typu <xref:System.DateTime> v rozhraní .NET, jsou také převést.  
   
- Převod pouze probíhá pokud "/" znaky jsou uvozeny uvozovacím znakem (tedy JSON vypadá jako "\\/Date(700000+0500)\\/") a z tohoto důvodu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]na kodér JSON (povolené ve <xref:System.ServiceModel.WebHttpBinding>) vždy řídicí sekvence "/" znak.  
+ Převod pouze probíhá pokud "/" znaky jsou uvozeny uvozovacím znakem (tedy JSON vypadá jako "\\/Date(700000+0500)\\/") a pro tento důvod WCF JSON kodér (povolené ve <xref:System.ServiceModel.WebHttpBinding>) vždy řídicí sekvence znaků "/".  
   
 ### <a name="xml-in-json-strings"></a>XML v řetězcích JSON  
   
@@ -209,7 +195,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 {"x":50,"y":70,"radius":10,"__type":"Circle:#MyApp.Shapes"}  
 ```  
   
- Obě <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> používá [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a stránek technologie ASP.NET AJAX klienta nejprve vždy emitování pomocný parametr typu.  
+ Jak <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> používané WCF a ASP.NET AJAX stránky klient vždy emitování pomocný parametr typu první.  
   
 #### <a name="type-hints-apply-only-to-complex-types"></a>Pomocné parametry typu platí pouze pro komplexní typy  
  Neexistuje žádný způsob, jak emitování typ nápovědu pro jednoduché typy. Například, pokud má operace <xref:System.Object> návratový typ, ale vrátí kruh, může být reprezentace JSON, jako je uvedené výše a uchování informací o typu. Ale pokud identifikátor Uri je vrácena, reprezentace JSON je řetězec a skutečnost, že je řetězec představující identifikátoru Uri ztraceny. To platí pouze pro primitivní typy, ale také do kolekcí a pole.  

@@ -1,10 +1,6 @@
 ---
-title: "Nepovinné (Visual Basic)"
+title: Nepovinné (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Optional
 - vb.optional
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - Optional keyword [Visual Basic], contexts
 - Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3aa01c2c1ae731c8fe00fdee24521760db69e624
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f88020c7407fb9c91e06bc2ee177773171e344fe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optional-visual-basic"></a>Nepovinné (Visual Basic)
 Určuje, že při volání procedury lze vynechat argumentu procedury.  
@@ -31,13 +24,13 @@ Určuje, že při volání procedury lze vynechat argumentu procedury.
   
  `Optional` Modifikátor lze použít v těchto kontexty:  
   
--   [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+-   [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+-   [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 > [!NOTE]
 >  Při volání procedury s nebo bez volitelné parametry, můžete předat argumentů podle pozice nebo podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).  
@@ -74,5 +67,5 @@ End Function
   
 ## <a name="see-also"></a>Viz také  
  [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)  
- [Volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
+ [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

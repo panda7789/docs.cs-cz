@@ -1,11 +1,7 @@
 ---
-title: "Funkce QualifierSet_EndEnumeration (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce QualifierSet_EndEnumeration ukončí výčet."
+title: Funkce QualifierSet_EndEnumeration (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce QualifierSet_EndEnumeration ukončí výčet.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - QualifierSet_EndEnumeration
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7d8e6bb24eb471d807af2493f82b6be4f644124f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0e24acdde486f377cc9187aac088ce7a611cd4eb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="qualifiersetendenumeration-function"></a>QualifierSet_EndEnumeration – funkce
 Ukončí výčtu zahájena volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.  
@@ -71,7 +64,7 @@ Toto volání je doporučená, ale není povinný. Uvolní okamžitě prostředk
   
 **Záhlaví:** WMINet_Utils.idl  
   
-**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

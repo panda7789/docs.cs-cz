@@ -1,29 +1,18 @@
 ---
-title: "Windows Workflow Foundation funkce podrobností"
-ms.custom: 
+title: Windows Workflow Foundation funkce podrobností
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6943a7eaeaecf8f11de7c10237979067c83c24d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: dc3ff5669d23e57685c89937f7c2171053f938ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation funkce podrobností
-[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]Přidá do modelu Windows Workflow Foundation celou řadu funkcí. Tento dokument obsahuje několik nových funkcí a uvádí podrobnosti o scénářích, ve kterých mohou být užitečné.  
+[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] Přidá do modelu Windows Workflow Foundation celou řadu funkcí. Tento dokument obsahuje několik nových funkcí a uvádí podrobnosti o scénářích, ve kterých mohou být užitečné.  
   
 ## <a name="messaging-activities"></a>Aktivity zasílání zpráv  
- Zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) se používají k odesílání a příjmu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zprávy z pracovní postup.  <xref:System.ServiceModel.Activities.Receive>a <xref:System.ServiceModel.Activities.SendReply> aktivity se používají pro formuláře [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] operace, který je zveřejněný prostřednictvím WSDL stejně jako standardní služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] webové služby.  <xref:System.ServiceModel.Activities.Send>a <xref:System.ServiceModel.Activities.ReceiveReply> se používají k využívat webové službou WCF <xref:System.ServiceModel.ChannelFactory>; **přidat odkaz na službu** prostředí existuje taky pro Workflow Foundation, který generuje předem nakonfigurovaná aktivity.  
+ Zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) se používají k odesílání a příjmu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zprávy z pracovní postup.  <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity se používají k vytvoření operace služby Windows Communication Foundation (WCF), který je zveřejněný prostřednictvím WSDL stejně jako standardní [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] webové služby.  <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> se používají k využívat webové službou WCF <xref:System.ServiceModel.ChannelFactory>; **přidat odkaz na službu** prostředí existuje taky pro Workflow Foundation, který generuje předem nakonfigurovaná aktivity.  
   
 ### <a name="getting-started-with-messaging-activities"></a>Začínáme s aktivitami zasílání zpráv  
   
@@ -251,7 +240,7 @@ ms.lasthandoff: 12/22/2017
 -   Metoda musí být volána na objekt starší verze CLR. Místo vytváření vlastních aktivit k zabalení volání starší verze třídy, pokud se nachází v oboru během spouštění pracovního postupu <xref:System.Activities.Statements.InvokeMethod> lze použít.  
   
 ## <a name="error-handling-activities"></a>Chyba zpracování aktivity  
- <xref:System.Activities.Statements.TryCatch> Aktivity poskytuje mechanismus pro zachytávání výjimek, ke kterým došlo během provádění sady obsažené aktivity (podobně jako Try/Catch – konstrukce v C# / VB.). <xref:System.Activities.Statements.TryCatch>poskytuje na úrovni pracovního postupu zpracování výjimek. Pokud je vyvolána neošetřená výjimka, pracovní postup byl přerušen a nakonec nebude provedeno bloku. Toto chování je konzistentní s C#.  
+ <xref:System.Activities.Statements.TryCatch> Aktivity poskytuje mechanismus pro zachytávání výjimek, ke kterým došlo během provádění sady obsažené aktivity (podobně jako Try/Catch – konstrukce v C# / VB.). <xref:System.Activities.Statements.TryCatch> poskytuje na úrovni pracovního postupu zpracování výjimek. Pokud je vyvolána neošetřená výjimka, pracovní postup byl přerušen a nakonec nebude provedeno bloku. Toto chování je konzistentní s C#.  
   
 ### <a name="getting-started"></a>Začínáme  
   
@@ -269,7 +258,7 @@ ms.lasthandoff: 12/22/2017
  Je třeba provést sadu aktivit a určitou logiku je třeba provést, když dojde k chybě. Pokud během tohoto zpracování logiky chyb zjistí, že chyba není použitelná pro obnovení, bude znovu vyvolány výjimka, a nadřazené aktivity (nebo hostiteli) se bude zabývat problém.  
   
 ## <a name="pick-activity"></a>Vyberte aktivitu  
- <xref:System.Activities.Statements.Pick> Poskytuje aktivity toku řízení na základě událostí modelování v WF. <xref:System.Activities.Statements.Pick>obsahuje mnoho větví, kde každá větev čeká na konkrétní událost dřív, než spustíte. V této instalaci <xref:System.Activities.Statements.Pick> se chová podobně jako <xref:System.Activities.Statements.Switch%601> do které aktivita, budou spuštěny pouze jednu sadu událostí naslouchá. U každé větve je vynucená událost a události, která nastane spustí první odpovídající firemní pobočky. Všechny ostatní větve zůstanou zrušte a zastavte naslouchání událostem.  
+ <xref:System.Activities.Statements.Pick> Poskytuje aktivity toku řízení na základě událostí modelování v WF. <xref:System.Activities.Statements.Pick> obsahuje mnoho větví, kde každá větev čeká na konkrétní událost dřív, než spustíte. V této instalaci <xref:System.Activities.Statements.Pick> se chová podobně jako <xref:System.Activities.Statements.Switch%601> do které aktivita, budou spuštěny pouze jednu sadu událostí naslouchá. U každé větve je vynucená událost a události, která nastane spustí první odpovídající firemní pobočky. Všechny ostatní větve zůstanou zrušte a zastavte naslouchání událostem.  
   
 ### <a name="getting-started"></a>Začínáme  
   
@@ -305,7 +294,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  Dokumentace: [směrování](../../../docs/framework/wcf/feature-details/routing.md)  
   
-2.  Ukázky: [směrování služby &#91; Ukázky WCF &#93;](../../../docs/framework/wcf/samples/routing-services.md)  
+2.  Ukázky: [směrovací služby &#91;Ukázky WCF&#93;](../../../docs/framework/wcf/samples/routing-services.md)  
   
 3.  Blog: [pravidla směrování!](http://go.microsoft.com/fwlink/?LinkId=204956)  
   
@@ -323,7 +312,7 @@ ms.lasthandoff: 12/22/2017
 -   Klienti se dá nastavit jako větší odolnost proti selhání nebo nedostupnost služby.  
   
 ## <a name="wcf-discovery"></a>Zjišťování WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Zjišťování je framework technologie, která umožňuje začlenit mechanismus zjišťování k infrastruktuře aplikace. Můžete použít zjistitelnost služby a nakonfigurovat vaši klienti pro vyhledání služeb. Klienti už musí být pevný programového s koncovým bodem, provedení robustnější aplikace a odolnost proti chybám. Zjišťování je ideální platformu k sestavení možnosti automatické konfigurace do vaší aplikace.  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Zjišťování je framework technologie, která umožňuje začlenit mechanismus zjišťování k infrastruktuře aplikace. Můžete použít zjistitelnost služby a nakonfigurovat vaši klienti pro vyhledání služeb. Klienti už musí být pevný programového s koncovým bodem, provedení robustnější aplikace a odolnost proti chybám. Zjišťování je ideální platformu k sestavení možnosti automatické konfigurace do vaší aplikace.  
   
  Produkt je postavená na standardní WS-Discovery. Je navržen tak být umožňuje vzájemnou spolupráci, rozšiřitelný a obecné. Produkt podporuje dva režimy činnosti:  
   

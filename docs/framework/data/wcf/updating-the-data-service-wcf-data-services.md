@@ -1,13 +1,6 @@
 ---
-title: "Aktualizaci dat služby (služby WCF Data Services)"
-ms.custom: 
+title: Aktualizaci dat služby (služby WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bc8041dee12c8300e18e6321c717cbd80b93d650
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58bbe74fdeb0af5d7095b0b1a57fb8bd475032ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizaci dat služby (služby WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny využívat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu, knihovny překládá položek v informačním kanálu do instance třídy služeb dat klienta. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entit, které ohlásíte pomocí metody na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody povolit klientovi sledovat entity added a odstranila a taky změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny jsou odesílány zpět ke službě data jako založené na REST operace při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda.  
@@ -78,13 +66,13 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
 ## <a name="creating-and-modifying-relationship-links"></a>Vytvoření a úprava vztah odkazy  
  Když přidáte novou entitu pomocí <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> metoda nebo odpovídající *AddTo* metodu <xref:System.Data.Services.Client.DataServiceContext> třídy, která **přidat odkaz na službu** generuje dialogové okno, všechny vztahy, mezi nové entity a související entity nejsou definovány automaticky.  
   
- Můžete vytvořit a změnit vztahy mezi instancí entit a mají klientské knihovny ve službě data tyto změny projevily. Relace mezi entitami, které jsou definovány jako přidružení v modelu a <xref:System.Data.Services.Client.DataServiceContext> sleduje každý vztah jako odkaz objektu v kontextu. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]poskytuje následující metody na <xref:System.Data.Services.Client.DataServiceContext> třída vytvářet, upravovat a odstraňovat tyto odkazy:  
+ Můžete vytvořit a změnit vztahy mezi instancí entit a mají klientské knihovny ve službě data tyto změny projevily. Relace mezi entitami, které jsou definovány jako přidružení v modelu a <xref:System.Data.Services.Client.DataServiceContext> sleduje každý vztah jako odkaz objektu v kontextu. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] poskytuje následující metody na <xref:System.Data.Services.Client.DataServiceContext> třída vytvářet, upravovat a odstraňovat tyto odkazy:  
   
 |Metoda|Popis|  
 |------------|-----------------|  
 |<xref:System.Data.Services.Client.DataServiceContext.AddRelatedObject%2A>|Vytvoří nové propojení mezi dvěma objekty související entity. Voláním této metody je ekvivalentní volání <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> a <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> vytvořte nový objekt i definovat relaci s existujícím objektem.|  
 |<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A>|Vytvoří nové propojení mezi dvěma objekty související entity.|  
-|<xref:System.Data.Services.Client.DataServiceContext.SetLink%2A>|Aktualizuje existující propojení mezi dvěma objekty související entity. <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A>také se používá k odstranění odkazy s mohutnost nula nebo---1 (`0..1:1`) a 1: 1 (`1:1`). To provedete nastavením na objekt v relaci na `null`.|  
+|<xref:System.Data.Services.Client.DataServiceContext.SetLink%2A>|Aktualizuje existující propojení mezi dvěma objekty související entity. <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> také se používá k odstranění odkazy s mohutnost nula nebo---1 (`0..1:1`) a 1: 1 (`1:1`). To provedete nastavením na objekt v relaci na `null`.|  
 |<xref:System.Data.Services.Client.DataServiceContext.DeleteLink%2A>|Označí odkaz, který je sledování kontext k odstranění při <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda je volána. Tuto metodu použijte, když související objekt odstranit nebo změnit vztahu nejprve odstranit odkaz na existující objekt a potom přidání odkazu na nové související objekt.|  
 |<xref:System.Data.Services.Client.DataServiceContext.AttachLink%2A>|Upozorní kontextu existující propojení mezi dvěma objekty entity. Kontext předpokládá, že tento vztah již existuje ve službě data a nebude pokoušet vytvořit odkaz při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda. Tuto metodu použijte, když objekty přiřadit kontextu a muset také připojit propojení mezi dva. Pokud definujete nový vztah, měli byste místo toho použít <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A>.|  
 |<xref:System.Data.Services.Client.DataServiceContext.DetachLink%2A>|Zastaví sledování stanovený odkaz v kontextu. Tato metoda se používá k odstranění jeden mnoho (`*:*`) relace. Pro relaci odkazy mohutností jednoho, je nutné místo toho použít <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A>.|  

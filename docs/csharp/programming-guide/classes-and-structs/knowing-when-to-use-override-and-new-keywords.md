@@ -1,27 +1,21 @@
 ---
-title: "Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)"
+title: Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - override keyword [C#]
 - new keyword [C#]
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
-caps.latest.revision: "16"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b4d53f16f046839d56bc1dc37f7b2d8816c5956f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 61bfa87b7aaa7c17d4ba67c69fa1e57ee7415dc0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)
 V jazyce C# metoda v odvozené třídě, může mít stejný název jako metodu v základní třídě. Můžete určit, jak používat metody pomocí [nové](../../../csharp/language-reference/keywords/new.md) a [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova. `override` Modifikátor *rozšiřuje* metodu základní třídy a `new` modifikátor *skryje* ho. Rozdíl je předvedené v příkladech v tomto tématu.  
   
- V konzolové aplikaci, deklarovat následující dvě třídy `BaseClass` a `DerivedClass`. `DerivedClass`dědí z `BaseClass`.  
+ V konzolové aplikaci, deklarovat následující dvě třídy `BaseClass` a `DerivedClass`. `DerivedClass` dědí z `BaseClass`.  
   
 ```csharp  
 class BaseClass  
@@ -43,11 +37,11 @@ class DerivedClass : BaseClass
   
  V `Main` metody deklarujte proměnné `bc`, `dc`, a `bcdc`.  
   
--   `bc`je typu `BaseClass`, a jeho hodnota je typu `BaseClass`.  
+-   `bc` je typu `BaseClass`, a jeho hodnota je typu `BaseClass`.  
   
--   `dc`je typu `DerivedClass`, a jeho hodnota je typu `DerivedClass`.  
+-   `dc` je typu `DerivedClass`, a jeho hodnota je typu `DerivedClass`.  
   
--   `bcdc`je typu `BaseClass`, a jeho hodnota je typu `DerivedClass`. Jedná se o proměnnou věnovat pozornost.  
+-   `bcdc` je typu `BaseClass`, a jeho hodnota je typu `DerivedClass`. Jedná se o proměnnou věnovat pozornost.  
   
  Protože `bc` a `bcdc` mít typ `BaseClass`, pouze přímo přístupem `Method1`, pokud nechcete použít přetypování. Proměnné `dc` k dispozici obě `Method1` a `Method2`. Tyto relace jsou uvedené v následující kód.  
   
@@ -292,7 +286,7 @@ public static void TestCars1()
 }  
 ```  
   
- `TestCars1`vytvoří následující výstup. Všimněte si, zejména výsledky pro `car2`, které jsou pravděpodobně není co očekává. Typ objektu je `ConvertibleCar`, ale `DescribeCar` nepřistoupí verzi `ShowDetails` která je definovaná v `ConvertibleCar` třídy vzhledem k tomu, že metoda je deklarovaný s `new` modifikátor, není `override` modifikátor. V důsledku toho `ConvertibleCar` objekt zobrazí popis stejné jako `Car` objektu. Porovnejte výsledky pro `car3`, který je `Minivan` objektu. V takovém případě `ShowDetails` metoda, která je definována v `Minivan` třídy přepsání `ShowDetails` metoda, která je definována v `Car` třídy a popis, který se zobrazí popisuje minivan.  
+ `TestCars1` vytvoří následující výstup. Všimněte si, zejména výsledky pro `car2`, které jsou pravděpodobně není co očekává. Typ objektu je `ConvertibleCar`, ale `DescribeCar` nepřistoupí verzi `ShowDetails` která je definovaná v `ConvertibleCar` třídy vzhledem k tomu, že metoda je deklarovaný s `new` modifikátor, není `override` modifikátor. V důsledku toho `ConvertibleCar` objekt zobrazí popis stejné jako `Car` objektu. Porovnejte výsledky pro `car3`, který je `Minivan` objektu. V takovém případě `ShowDetails` metoda, která je definována v `Minivan` třídy přepsání `ShowDetails` metoda, která je definována v `Car` třídy a popis, který se zobrazí popisuje minivan.  
   
 ```csharp  
 // TestCars1  
@@ -308,7 +302,7 @@ public static void TestCars1()
 // ----------  
 ```  
   
- `TestCars2`Vytvoří seznam objektů, které mají typ `Car`. Instance hodnoty objekty z `Car`, `ConvertibleCar`, a `Minivan` třídy. `DescribeCar`je volána pro každý element seznamu. Následující kód ukazuje definici `TestCars2`.  
+ `TestCars2` Vytvoří seznam objektů, které mají typ `Car`. Instance hodnoty objekty z `Car`, `ConvertibleCar`, a `Minivan` třídy. `DescribeCar` je volána pro každý element seznamu. Následující kód ukazuje definici `TestCars2`.  
   
 ```csharp  
 public static void TestCars2()  
@@ -547,8 +541,8 @@ namespace OverrideAndNew2
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
- [Správa verzí pomocí nové klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
- [základní](../../../csharp/language-reference/keywords/base.md)  
- [abstraktní](../../../csharp/language-reference/keywords/abstract.md)
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+ [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
+ [base](../../../csharp/language-reference/keywords/base.md)  
+ [abstract](../../../csharp/language-reference/keywords/abstract.md)

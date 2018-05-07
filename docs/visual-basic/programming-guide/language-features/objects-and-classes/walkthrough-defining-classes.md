@@ -1,10 +1,6 @@
 ---
 title: Definice tříd (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - execution [Visual Basic], ending
 - objects [Visual Basic], initializing
@@ -19,13 +15,11 @@ helpviewer_keywords:
 - Terminate event [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9fc173ad853755c4b02a13abc0a80229bebffe64
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: aac30a8b0272ae6c141138a91585953237ab8098
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-defining-classes-visual-basic"></a>Návod: Definování tříd (Visual Basic)
 

@@ -1,29 +1,17 @@
 ---
-title: "Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView"
-ms.custom: 
+title: Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], basic features
 - columns [Windows Forms], DataGridView control
 - data grids [Windows Forms], examples
 - DataGridView control [Windows Forms], examples
 ms.assetid: 78085f26-d5d2-4b75-813e-e932b72fd06f
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c70e1a88384041a2a1d958e48c672a961752202b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3d6a44dce7dfd59d484d1a3495982a0d7d1f3e46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="basic-column-row-and-cell-features-in-the-windows-forms-datagridview-control"></a>Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView
 Mnoho základní chování `DataGridView` buněk, řádků a sloupců může měnit nastavení jedné vlastnosti. Témata v této části popisují některé z nejčastěji používaných těchto funkcí.  

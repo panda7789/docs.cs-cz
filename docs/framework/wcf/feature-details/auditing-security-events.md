@@ -1,42 +1,30 @@
 ---
 title: Auditování událostí zabezpečení
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-caps.latest.revision: 27
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 69b013389511ac2cfb31e22f7a39e98eb22fb977
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: e4219553f97f272577e8efdeb106b43e5f76ee59
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
-Aplikace vytvořené s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] může protokolovat události zabezpečení (úspěch, chyba nebo obě) se funkci auditování. Události se zapisují do protokolu událostí systému Windows a může být prověřen pomocí prohlížeče událostí.  
+Aplikace vytvořené s Windows Communication Foundation (WCF) může protokolovat události zabezpečení (úspěch, chyba nebo obě) se funkci auditování. Události se zapisují do protokolu událostí systému Windows a může být prověřen pomocí prohlížeče událostí.  
   
  Auditování poskytuje způsob, jak správce ke zjištění útoku, který má již došlo k chybě nebo právě probíhá. Kromě toho audit může pomoct vývojář pro ladění problémů souvisejících se zabezpečením. Například pokud k chybě v konfiguraci ověřování nebo Zásady vracení se změnami omylem odepře přístup k autorizovaným uživatelem, Vývojář můžete rychle zjistit a najít příčinu této chyby kontrolou protokolu událostí.  
   
- Další informace o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení, najdete v části [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], najdete v části [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+ Další informace o zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování WCF najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="audit-level-and-behavior"></a>Úroveň auditování a chování  
  Existují dvě úrovně audity zabezpečení:  
   
 -   Úrovně autorizace služby, ve kterém má volající oprávnění.  
   
--   Zpráva úrovni, ve kterém [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kontroluje platnost zpráv a ověří volajícího.  
+-   Úroveň zprávy, ve kterém WCF kontroluje platnost zpráv a ověří volajícího.  
   
  Můžete zkontrolovat obě audit úrovně pro úspěch nebo selhání, která se označuje jako *audit chování*.  
   

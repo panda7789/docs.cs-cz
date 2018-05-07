@@ -1,21 +1,14 @@
 ---
 title: Docker kontejnery, Image a registry
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Docker kontejnery, Image a registry"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Docker kontejnery, Image a registry
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 79dccadfba066c673e8ef7ea5eaf1051a434ff3a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 02ee40ebab37ae1898dc46e215728cba512a23e0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="docker-containers-images-and-registries"></a>Docker kontejnery, Image a registry
 

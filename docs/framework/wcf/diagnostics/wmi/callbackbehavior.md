@@ -1,24 +1,12 @@
 ---
 title: CallbackBehavior
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5387e197cdf26a393ba23fd5696eb095dfd17a70
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2755ac4f365536366b41e743110ce494063a5ecc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="callbackbehavior"></a>CallbackBehavior
 CallbackBehavior  
@@ -57,7 +45,7 @@ Přístup k typu: jen pro čtení
   
  Určuje, jestli služba podporuje jedno vlákno, více vláken nebo znovu zadaná volání.  
   
-### <a name="ignoreextensiondataobject"></a>ignoreExtensionDataObject  
+### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
  Datový typ: logická hodnota  
   
  Přístup k typu: jen pro čtení  

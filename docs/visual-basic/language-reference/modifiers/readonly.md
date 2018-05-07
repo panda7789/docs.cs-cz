@@ -1,11 +1,6 @@
 ---
 title: ReadOnly (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.ReadOnly
 helpviewer_keywords:
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - properties [Visual Basic], read-only
 - read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9ca1d2e4eddb3b88073d6fcd46b0de5c627ba809
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e2957bf49292dfcafab8e78f4b997247c34ad279
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="readonly-visual-basic"></a>ReadOnly (Visual Basic)
 Určuje, že proměnné nebo vlastnosti lze číst, ale nebyl zapsán.  
@@ -64,9 +56,9 @@ Určuje, že proměnné nebo vlastnosti lze číst, ale nebyl zapsán.
   
  `ReadOnly` Modifikátor lze použít v těchto kontexty:  
   
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="see-also"></a>Viz také  
  [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  

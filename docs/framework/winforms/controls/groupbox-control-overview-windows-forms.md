@@ -1,31 +1,17 @@
 ---
-title: "GroupBox – přehled ovládacího prvku (Windows Forms)"
-ms.custom: 
+title: GroupBox – přehled ovládacího prvku (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - GroupBox
 helpviewer_keywords:
 - GroupBox control [Windows Forms], about GroupBox control
 - grouping controls [Windows Forms], Windows Forms
 ms.assetid: 03bd8ff9-c905-4f01-9bc6-8438b11d0881
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1ae6fb9a0aa6552459b2847243047244d0806db2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 122e7a60cf31f3b7db506cb3bb69a2571e9115c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="groupbox-control-overview-windows-forms"></a>GroupBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky používané k zajištění osobní seskupení pro další ovládací prvky. Obvykle použijete, skupinové rámečky dále dělit formuláře podle funkce. Například můžete mít formulář objednávky, který určuje poštovní možnosti, například které přes noc poskytovatel používat. Seskupování všechny možnosti v skupinový rámeček umožňuje uživateli logické vizuální upozornění a v době návrhu lze snadno přesunout všechny ovládací prvky – při přesunutí jedné <xref:System.Windows.Forms.GroupBox> řídit, všechny její obsažené ovládací prvky příliš přesunout.  

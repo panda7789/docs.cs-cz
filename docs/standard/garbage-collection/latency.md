@@ -1,38 +1,27 @@
 ---
-title: "Latentní režimy"
-ms.custom: 
+title: Latentní režimy
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - garbage collection, intrusiveness
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
-caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d0ac0db376ad7cd4aa139ed0eb065a5ba33836c8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 913a5d6ab28d375dbfdd99dec6fd153bc94efee5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="latency-modes"></a>Latentní režimy
 Uvolnění objektů, musí uvolňování zastavení všech spuštěných vláken v aplikaci. V některých situacích, například pokud aplikace načte data nebo se zobrazí obsah můžete na kritické čas úplné uvolnění paměti a mít dopad na výkon. Míra interakce systému uvolňování můžete upravit podle nastavení <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> vlastnost na jednu z <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> hodnoty.  
   
  Latence odkazuje na čas, který má systém uvolňování intrudes ve vaší aplikaci. Uvolňování paměti během období s nízkou latencí, je více konzervativní a šetrnější v opětovného získání objekty. <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> Výčtu poskytuje dvě nastavení s nízkou latencí:  
   
--   <xref:System.Runtime.GCLatencyMode.LowLatency>Potlačí 2. generace kolekce a provádí pouze kolekce, generace 0 a 1. Lze pouze na krátkou dobu. Delší období Pokud systém je přetížena paměť, aktivují garbage collector v kolekci, která můžete stručně pozastavit aplikace a přerušit kritický pro čas operace. Toto nastavení je dostupné pouze pro uvolňování paměti pracovních stanic.  
+-   <xref:System.Runtime.GCLatencyMode.LowLatency> Potlačí 2. generace kolekce a provádí pouze kolekce, generace 0 a 1. Lze pouze na krátkou dobu. Delší období Pokud systém je přetížena paměť, aktivují garbage collector v kolekci, která můžete stručně pozastavit aplikace a přerušit kritický pro čas operace. Toto nastavení je dostupné pouze pro uvolňování paměti pracovních stanic.  
   
--   <xref:System.Runtime.GCLatencyMode.SustainedLowLatency>Potlačí popředí 2. generace kolekce a provede jenom generace 0, 1, 2. generace kolekce pozadí. Lze použít pro delší časové období a je k dispozici pro uvolňování paměti serveru a pracovní stanice. Toto nastavení nelze použít, pokud [souběžné uvolňování](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) je zakázána.  
+-   <xref:System.Runtime.GCLatencyMode.SustainedLowLatency> Potlačí popředí 2. generace kolekce a provede jenom generace 0, 1, 2. generace kolekce pozadí. Lze použít pro delší časové období a je k dispozici pro uvolňování paměti serveru a pracovní stanice. Toto nastavení nelze použít, pokud [souběžné uvolňování](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) je zakázána.  
   
  Během období s nízkou latencí jsou potlačovány 2. generace kolekce, pokud dojde k následujícímu:  
   

@@ -1,24 +1,12 @@
 ---
-title: "Integrace mezipaměti ASP.NET"
-ms.custom: 
+title: Integrace mezipaměti ASP.NET
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d56c435088be383821d17250e230cae848d2bab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 420ff192caf41a37b6229bf36e32124f3646d69c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
 Tento příklad ukazuje, jak využívat výstupní mezipaměti technologie ASP.NET pomocí programovacího modelu WCF WEB HTTP. Najdete v tématu [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázku vlastním hostováním verzi tento scénář, který popisuje implementace služby podrobněji. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  
@@ -31,12 +19,12 @@ Tento příklad ukazuje, jak využívat výstupní mezipaměti technologie ASP.N
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetCachingIntegration`  
   
 ## <a name="discussion"></a>Diskusní  
- Ukázce se používá <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> využívat ASP.NET ukládání výstupu do mezipaměti s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] služby. <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> Se použije k operacím služby a poskytuje název profilu mezipaměti v konfiguračním souboru, která má být použita k odpovědím z danou operaci.  
+ Ukázce se používá <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> využívat ASP.NET ukládání výstupu do mezipaměti ve službě Windows Communication Foundation (WCF). <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> Se použije k operacím služby a poskytuje název profilu mezipaměti v konfiguračním souboru, která má být použita k odpovědím z danou operaci.  
   
  V souboru Service.cs ukázkový projekt služby jak `GetCustomer` a `GetCustomers` operace jsou označené jako <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, který poskytuje název profilu mezipaměti "CacheFor60Seconds". V souboru Web.config projektu služby, je profil mezipaměti "CacheFor60Seconds" uvedených v části <`caching`> elementu <`system.web`>. Pro tento profil mezipaměti, hodnota `duration` atribut je "60", takže odpovědi související s tímto profilem se ukládat do mezipaměti ve výstupní mezipaměti technologie ASP.NET po dobu 60 sekund. Navíc pro tento profil mezipaměti `varmByParam` je nastavena na hodnotu "format" Ano požadavky s různými hodnotami `format` dotaz parametr řetězce jejich odpovědi v mezipaměti samostatně. Nakonec mezipaměti profilu `varyByHeader` atribut je nastaven na "Přijmout", aby jejich odpovědi v mezipaměti samostatně požadavků s různé hodnoty hlavičky Accept.  
   

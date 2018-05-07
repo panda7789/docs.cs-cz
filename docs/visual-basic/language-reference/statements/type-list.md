@@ -1,9 +1,6 @@
 ---
-title: "Seznam typů (Visual Basic)"
+title: Seznam typů (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - StructureConstraint
 - vb.StructureConstraint
@@ -27,14 +24,11 @@ helpviewer_keywords:
 - type parameters
 - constraints, Class keyword
 ms.assetid: 56db947a-2ae8-40f2-a70a-960764e9d0db
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 35e72414b236615dc230b654ccfeed290841fb31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5fbb07154fce27feb257b431c1726446b42fbfe0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-list-visual-basic"></a>Seznam typů (Visual Basic)
 Určuje, *parametry typu* pro *Obecné* programovací element. Několik parametrů jsou oddělené čárkami. Toto je syntaxe pro jeden typ parametru.  
@@ -98,14 +92,14 @@ Určuje, *parametry typu* pro *Obecné* programovací element. Několik parametr
  [!code-vb[VbVbalrStatements#5](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_3.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Z](../../../visual-basic/language-reference/statements/of-clause.md)  
- [New – operátor](../../../visual-basic/language-reference/operators/new-operator.md)  
+ [z](../../../visual-basic/language-reference/statements/of-clause.md)  
+ [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)  
  [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Object – datový typ](../../../visual-basic/language-reference/data-types/object-data-type.md)  
- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Postupy: použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)  
+ [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
  [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)  
  [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
- [Na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+ [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

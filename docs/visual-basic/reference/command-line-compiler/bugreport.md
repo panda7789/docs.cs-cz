@@ -1,23 +1,16 @@
 ---
 title: -bugreport
 ms.date: 03/08/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - -bugreport compiler option [Visual Basic]
 - bugreport compiler option [Visual Basic]
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 097435a3d8acda6325b27abaf3ca0fd2839d344e
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 0383a5e369ee4a8146764c13b2f12f48ebe52190
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-bugreport"></a>-bugreport
 Vytvoří soubor, který můžete použít, když soubor sestavy chyb.  

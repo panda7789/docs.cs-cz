@@ -1,26 +1,12 @@
 ---
 title: Hosting1
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8a6ec5d4-d191-49cc-bb0f-a07639dc60d4
-caps.latest.revision: 5
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 404c2d92b90822c20649c250e8ead8d162c4c085
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 0d7d6e21b6f56d092484d7b22e73a2c16a478cea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting"></a>Hostování
 Tato část obsahuje příklady vysvětlující hostitelské služby Windows Communication Foundation (WCF).  

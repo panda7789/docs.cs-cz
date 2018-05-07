@@ -1,12 +1,6 @@
 ---
-title: "On Error – příkaz (Visual Basic)"
+title: On Error – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.OnError
 helpviewer_keywords:
@@ -28,14 +22,11 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 96baa5d91d0a600b84ed832fb1e3b1ed71a9d89d
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: b2e32dcca2e29a178af6dc985da536b47f0ebae6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error – příkaz (Visual Basic)
 Umožňuje rutiny zpracování chyb a určuje umístění rutiny v rámci procedury; Můžete také použít zakázat rutiny chyba zpracování.  
@@ -89,16 +80,16 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  Všimněte si, že `On Error GoTo` příkaz traps všechny chyby, bez ohledu na třídy výjimek.  
   
 ## <a name="on-error-resume-next"></a>On Error Resume Next  
- `On Error Resume Next`způsobí, že provádění pokračujte s příkazem okamžitě následující příkaz, který způsobil chybu spuštění nebo s příkazem hned za nejnovější volání mimo procedury obsahující `On Error Resume Next` příkaz. Tento příkaz umožňuje provádění pokračovat i přes Chyba spuštění. Rutiny zpracování chyb, kde by dojít k chybě spíše než přenášení řízení do jiného umístění v rámci procesu můžete umístit. `On Error Resume Next` Neaktivní při jiné procedura je volána, proto by měl provést `On Error Resume Next` příkaz v každé názvem rutiny, pokud chcete, aby vložené chyba zpracování v rámci této rutiny.  
+ `On Error Resume Next` způsobí, že provádění pokračujte s příkazem okamžitě následující příkaz, který způsobil chybu spuštění nebo s příkazem hned za nejnovější volání mimo procedury obsahující `On Error Resume Next` příkaz. Tento příkaz umožňuje provádění pokračovat i přes Chyba spuštění. Rutiny zpracování chyb, kde by dojít k chybě spíše než přenášení řízení do jiného umístění v rámci procesu můžete umístit. `On Error Resume Next` Neaktivní při jiné procedura je volána, proto by měl provést `On Error Resume Next` příkaz v každé názvem rutiny, pokud chcete, aby vložené chyba zpracování v rámci této rutiny.  
   
 > [!NOTE]
 >  `On Error Resume Next` Konstrukce může být vhodnější než `On Error GoTo` při zpracování chyb vygenerovaných během přístupu k jiné objekty. Kontrola `Err` po každé interakci s objektem odebere nejednoznačnosti o tom, které byl objekt přistupují kód. Můžete si být jisti který objekt umístit kód chyby v `Err.Number`, a také objekt, který původně vytvořil chybu (objekt určený v `Err.Source`).  
   
 ## <a name="on-error-goto-0"></a>Na chyby GoTo 0  
- `On Error GoTo 0`zakáže zpracování chyb v aktuálním procesu. Neurčuje řádku 0 jako začátek kód pro ošetření chyb, i v případě, že procedura obsahuje řádek s číslem 0. Bez `On Error GoTo 0` příkaz obslužná rutina se automaticky zakáže při procedury je byl ukončen.  
+ `On Error GoTo 0` zakáže zpracování chyb v aktuálním procesu. Neurčuje řádku 0 jako začátek kód pro ošetření chyb, i v případě, že procedura obsahuje řádek s číslem 0. Bez `On Error GoTo 0` příkaz obslužná rutina se automaticky zakáže při procedury je byl ukončen.  
   
 ## <a name="on-error-goto--1"></a>Na GoTo chyby -1  
- `On Error GoTo -1`Zakáže výjimka v aktuálním procesu. Neurčuje řádku -1 jako začátek kód pro ošetření chyb, i v případě, že procedura obsahuje řádek s číslem -1. Bez `On Error GoTo -1` příkaz výjimku se automaticky zakáže při procedury je byl ukončen.  
+ `On Error GoTo -1` Zakáže výjimka v aktuálním procesu. Neurčuje řádku -1 jako začátek kód pro ošetření chyb, i v případě, že procedura obsahuje řádek s číslem -1. Bez `On Error GoTo -1` příkaz výjimku se automaticky zakáže při procedury je byl ukončen.  
   
  Chcete-li zabránit spuštěn, když došlo k žádné chybě kód pro ošetření chyb, označte jej `Exit Sub`, `Exit Function`, nebo `Exit Property` bezprostředně před rutiny zpracování chyb, jako v následujícím fragmentu:  
   

@@ -1,21 +1,14 @@
 ---
 title: Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: c88027156b55829f77357c1fdb1aef01a802b88a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a12012f115629a79734c18c3bc75733ae2fc8195
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-legacy-monolithic-net-framework-applications-to-windows-containers"></a>Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows
 

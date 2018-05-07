@@ -1,13 +1,6 @@
 ---
-title: "Řešení potíží s hybridními aplikacemi"
-ms.custom: 
+title: Řešení potíží s hybridními aplikacemi
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - overlapping controls [WPF]
 - Windows Forms [WPF], interoperability with
@@ -16,29 +9,24 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a23f439b9b14d16a5440fa3b757b972304fdfa3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 878761c030d4950e53ee24b76f7e29101584143a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
-<a name="introduction"></a>Toto téma uvádí některé běžné problémy, ke kterým dochází při vytváření hybridní aplikace, které používají obě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.  
+<a name="introduction"></a> Toto téma uvádí některé běžné problémy, ke kterým dochází při vytváření hybridní aplikace, které používají obě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.  
   
 
   
 <a name="overlapping_controls"></a>   
 ## <a name="overlapping-controls"></a>Překrývající se ovládací prvky  
- Ovládací prvky nesmí překrývat, jako byste očekávali. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]používá samostatné HWND pro každý ovládací prvek. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]použije jeden HWND pro veškerý obsah na stránce. Tento rozdíl implementace způsobí, že neočekávané chování překrývající se.  
+ Ovládací prvky nesmí překrývat, jako byste očekávali. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] používá samostatné HWND pro každý ovládací prvek. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použije jeden HWND pro veškerý obsah na stránce. Tento rozdíl implementace způsobí, že neočekávané chování překrývající se.  
   
  A [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řízení hostované v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vždy se zobrazí na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsah hostované v <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek se zobrazuje v pořadí vykreslování z <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku. Je možné překrývat <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky, ale hostované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah kombinovat nebo interakci.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah hostované v <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek se zobrazuje v pořadí vykreslování z <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku. Je možné překrývat <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky, ale hostované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah kombinovat nebo interakci.  
   
 <a name="child_property"></a>   
 ## <a name="child-property"></a>Podřízená – vlastnost  
@@ -46,7 +34,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="scaling"></a>   
 ## <a name="scaling"></a>Změna měřítka  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mají různé modely škálování. Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] škálování transformace dávat smysl [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, ale jiné nejsou. Například škálování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku na hodnotu 0, budou fungovat, ale pokud se pokusíte škálování stejný ovládací prvek zpět na hodnotu nula, velikost ovládacího prvku zůstává 0. Další informace najdete v tématu [aspekty rozložení pro WindowsFormsHost Element](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mají různé modely škálování. Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] škálování transformace dávat smysl [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, ale jiné nejsou. Například škálování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku na hodnotu 0, budou fungovat, ale pokud se pokusíte škálování stejný ovládací prvek zpět na hodnotu nula, velikost ovládacího prvku zůstává 0. Další informace najdete v tématu [aspekty rozložení pro WindowsFormsHost Element](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md).  
   
 <a name="adapter"></a>   
 ## <a name="adapter"></a>Adaptér  
@@ -95,11 +83,11 @@ ms.lasthandoff: 01/19/2018
   
 <a name="dispose"></a>   
 ## <a name="dispose"></a>Uvolnění.  
- Není správně uvolnění třídy může se nevrací prostředky. V hybridní aplikace, ujistěte se, že <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> třídy jsou zapomenuty a může se nevrací prostředky. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]uvolní <xref:System.Windows.Forms.Integration.ElementHost> určí, kdy se jeho nemodálním <xref:System.Windows.Forms.Form> nadřazených zavře. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]uvolní <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvků při ukončení aplikace. Je možné zobrazit <xref:System.Windows.Forms.Integration.WindowsFormsHost> element v <xref:System.Windows.Window> v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] zpráva smyčky. V takovém případě kódu dostávat oznámení, že se aplikace vypíná.  
+ Není správně uvolnění třídy může se nevrací prostředky. V hybridní aplikace, ujistěte se, že <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> třídy jsou zapomenuty a může se nevrací prostředky. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] uvolní <xref:System.Windows.Forms.Integration.ElementHost> určí, kdy se jeho nemodálním <xref:System.Windows.Forms.Form> nadřazených zavře. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uvolní <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvků při ukončení aplikace. Je možné zobrazit <xref:System.Windows.Forms.Integration.WindowsFormsHost> element v <xref:System.Windows.Window> v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] zpráva smyčky. V takovém případě kódu dostávat oznámení, že se aplikace vypíná.  
   
 <a name="enabling_visual_styles"></a>   
 ## <a name="enabling-visual-styles"></a>Povolení vizuální styly  
- [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]Visual styly na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řízení možná není zapnuté. <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> Metoda je volána v šabloně pro [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace. I když tato metoda není volána ve výchozím nastavení, pokud používáte [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] k vytvoření projektu, zobrazí se [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] visual styly pro ovládací prvky, pokud je k dispozici verze 6.0 Comctl32.dll. Je třeba zavolat <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda před vytvořením obslužné rutiny na vlákno. Další informace najdete v tématu [postupy: povolení vizuální styly v hybridní aplikace](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).  
+ [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] Visual styly na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řízení možná není zapnuté. <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> Metoda je volána v šabloně pro [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace. I když tato metoda není volána ve výchozím nastavení, pokud používáte [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] k vytvoření projektu, zobrazí se [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] visual styly pro ovládací prvky, pokud je k dispozici verze 6.0 Comctl32.dll. Je třeba zavolat <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda před vytvořením obslužné rutiny na vlákno. Další informace najdete v tématu [postupy: povolení vizuální styly v hybridní aplikace](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).  
   
 <a name="licensed_controls"></a>   
 ## <a name="licensed-controls"></a>Licencované ovládací prvky  

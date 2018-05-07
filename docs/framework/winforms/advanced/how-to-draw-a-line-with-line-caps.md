@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Kreslení čáry s ukončením"
-ms.custom: 
+title: 'Postupy: Kreslení čáry s ukončením'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - pens [Windows Forms], drawing lines
 - drawing lines [Windows Forms], line caps
 ms.assetid: eb68c3e1-c400-4886-8a04-76978a429cb6
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4048757e11724aa1e175d8b18c47f48d22d807e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: be492f2317d4677776cc9f89f546c935d271019b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-a-line-with-line-caps"></a>Postupy: Kreslení čáry s ukončením
-V jednom z několika obrazců názvem čar můžete nakreslit počáteční nebo konec řádku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]podporuje několik čar, například zaokrouhlit, hranaté, kosočtverec a šipku.  
+V jednom z několika obrazců názvem čar můžete nakreslit počáteční nebo konec řádku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] podporuje několik čar, například zaokrouhlit, hranaté, kosočtverec a šipku.  
   
 ## <a name="example"></a>Příklad  
  Můžete zadat čar na začátku řádku (počáteční cap), konci řádku (zakončení) nebo pomlček na přerušovanou čáru (dash cap).  

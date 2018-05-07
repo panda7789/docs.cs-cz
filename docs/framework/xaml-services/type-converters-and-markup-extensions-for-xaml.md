@@ -1,14 +1,6 @@
 ---
 title: Převaděče typů a rozšíření značek pro jazyk XAML
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - XAML [XAML Services], type converter services
 - XAML [XAML Services], value converters
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - value converters for XAML [XAML Services]
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
-caps.latest.revision: 13
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a6ab52105785dc1efbffe093cdafb12cdf8eac4d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 0c9cb7e87416860dda98df0da967ffbc070bc270
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ jazyka XAML a XAML zapisovače použít ke generování součásti grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentované jinak v datový proud uzlu XAML. V této dokumentaci sady, převaděčů typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převodníky hodnot.  
@@ -45,7 +31,7 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
   
 <a name="type_converters"></a>   
 ## <a name="type-converters"></a>Převaděče typů  
- V definici rozhraní .NET Framework XAML Services převaděče typů jsou třídy, které jsou odvozeny od CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] dříve, než vznikla XAML. Původnímu účelu se na podporu vlastnost windows a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Zavedení XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> převést na objekt textových syntaxi (jak se nachází v hodnotě atributu nebo hodnotu uzlu XAML). <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na text syntaxe. <xref:System.ComponentModel.TypeConverter> byla také použita v předchozích implementacích XAML konkrétní rozhraní v systému Windows Presentation Foundation (WPF) a Windows Communication Foundation (WCF). Další informace o <xref:System.ComponentModel.TypeConverter> v jazyce XAML, najdete v části [převaděčů typů pro jazyk XAML přehled](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md).  
+ V definici rozhraní .NET Framework XAML Services převaděče typů jsou třídy, které jsou odvozeny od CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v rozhraní Microsoft .NET Framework dříve, než vznikla XAML. Původnímu účelu se na podporu vlastnost windows a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Zavedení XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> převést na objekt textových syntaxi (jak se nachází v hodnotě atributu nebo hodnotu uzlu XAML). <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na text syntaxe. <xref:System.ComponentModel.TypeConverter> byla také použita v předchozích implementacích XAML konkrétní rozhraní v systému Windows Presentation Foundation (WPF) a Windows Communication Foundation (WCF). Další informace o <xref:System.ComponentModel.TypeConverter> v jazyce XAML, najdete v části [převaděčů typů pro jazyk XAML přehled](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md).  
   
 <a name="markup_extensions"></a>   
 ## <a name="markup-extensions"></a>Rozšíření značek  

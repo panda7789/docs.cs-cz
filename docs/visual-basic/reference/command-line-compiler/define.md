@@ -1,11 +1,6 @@
 ---
 title: -definovat (Visual Basic)
 ms.date: 03/10/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - -d compiler option [Visual Basic]
 - /d compiler option [Visual Basic]
@@ -16,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 136339c84ce80bff790c6683eef76065fb6d71ef
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 4de37c58543aed9ed13be8b0d2bcec9830ca9082
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-define-visual-basic"></a>-definovat (Visual Basic)
 Definuje podmíněného kompilátoru konstanty.  
@@ -59,7 +54,7 @@ Definuje podmíněného kompilátoru konstanty.
  [!code-vb[VbVbalrCompiler#45](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/define_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
  [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

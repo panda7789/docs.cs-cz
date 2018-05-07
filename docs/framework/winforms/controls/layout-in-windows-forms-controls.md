@@ -1,29 +1,17 @@
 ---
-title: "Rozložení v ovládacích prvcích Windows Forms"
-ms.custom: 
+title: Rozložení v ovládacích prvcích Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - layout [Windows Forms]
 - sizing [Windows Forms], automatic [Windows Forms]
 - Margin property [Windows Forms]
 - Padding property [Windws Forms]
 ms.assetid: 99400e3a-720e-4f56-b68f-89df911a251c
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e9112269da02bd7eff9838509673db7adbc3fb53
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11db7b49f37b4367f31b2c27c61225f8f71bde80
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="layout-in-windows-forms-controls"></a>Rozložení v ovládacích prvcích Windows Forms
 Přesné umístění ovládacích prvků ve formuláři je důležitá pro mnoho aplikací. <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů poskytuje celou řadu nástrojů rozložení toho chcete dosáhnout.  

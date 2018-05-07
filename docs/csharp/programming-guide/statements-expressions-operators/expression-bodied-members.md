@@ -1,20 +1,16 @@
 ---
 title: Výraz vozidlo členové (C# programování průvodce)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5690a2ddb9127bb0c9b06d3607e3d105fca9a2e8
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 800280ed9ceaf69b825bb2a3c2c3d0d5f829922d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Výraz vozidlo členové (C# programovací průvodce)
 Výraz definice textu umožňují poskytovat implementace člena ve formuláři velmi stručným a čitelné. Definici výraz text můžete použít vždy, když logiku pro všechny podporované člena, jako je například metody nebo vlastnosti, se skládá z jednoho výrazu. Definici výraz text má následující obecné syntaxi:

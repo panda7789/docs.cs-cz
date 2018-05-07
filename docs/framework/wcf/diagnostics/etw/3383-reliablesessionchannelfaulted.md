@@ -1,24 +1,12 @@
 ---
-title: "3383 – ReliableSessionChannelFaulted"
-ms.custom: 
+title: 3383 – ReliableSessionChannelFaulted
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f5948284-8536-4ab8-9c81-e22da5b56d62
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0ed820d69d6528ce9891d55dc65d3fc0419e426e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8d107848a80e965dc9cee42dacaedde2b20d9036
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3383---reliablesessionchannelfaulted"></a>3383 – ReliableSessionChannelFaulted
 ## <a name="properties"></a>Vlastnosti  

@@ -1,13 +1,6 @@
 ---
-title: "Vlastní vlastnosti závislosti"
-ms.custom: 
+title: Vlastní vlastnosti závislosti
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,11 @@ helpviewer_keywords:
 - wrappers [WPF], implementing
 - dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 588ab00d61a701dc43e2af5978a6023a93f367f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2623f34418aad7a0b29c52d1310fdc79afced790
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 Toto téma popisuje důvody, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojáři aplikací a součástí autoři může být potřeba vytvořit vlastnost vlastní závislosti a popisuje kroky implementace, jakož i některé možnosti implementace, které může zlepšit výkon, použitelnost, nebo všestrannost vlastnost.  
@@ -134,11 +122,11 @@ Toto téma popisuje důvody, [!INCLUDE[TLA#tla_winclient](../../../../includes/t
   
 -   Pokud vlastnost (nebo změny v jeho hodnota) má vliv [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], a na konkrétní ovlivňuje způsob rozložení systému by měla velikost nebo vykreslení vaší element na stránce, nastavte jeden nebo více z následujících příznaků: <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure>, <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange>, <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender>.  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure>Udává, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslování, kde objekt obsahující může vyžadovat více nebo méně místa v rámci nadřazené. Například vlastnost "Šířka" by měly mít tento příznak nastaven.  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure> Udává, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslování, kde objekt obsahující může vyžadovat více nebo méně místa v rámci nadřazené. Například vlastnost "Šířka" by měly mít tento příznak nastaven.  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange>Udává, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslení, který obvykle nevyžaduje změnu vyhrazené místo, ale znamenat, že se změnila umístění v prostoru. Například ve vlastnosti "Zarovnání" by měly mít tento příznak nastaven.  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange> Udává, že ke změně této vlastnosti vyžaduje změnu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vykreslení, který obvykle nevyžaduje změnu vyhrazené místo, ale znamenat, že se změnila umístění v prostoru. Například ve vlastnosti "Zarovnání" by měly mít tento příznak nastaven.  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender>Určuje, že některých dalších změn došlo, nebude mít vliv na rozložení a míru, ale nevyžaduje další vykreslení. Příkladem může být vlastnost, která změní barvu existujícího elementu, jako je například "Pozadí".  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender> Určuje, že některých dalších změn došlo, nebude mít vliv na rozložení a míru, ale nevyžaduje další vykreslení. Příkladem může být vlastnost, která změní barvu existujícího elementu, jako je například "Pozadí".  
   
     -   Tyto příznaky jsou často používá jako protokol v metadatech pro implementace vlastního přepsat vlastnost systém nebo rozložení zpětných volání. Například můžete mít <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> zpětné volání, které bude volat <xref:System.Windows.UIElement.InvalidateArrange%2A> Pokud žádnou vlastnost instance sestavy změnu hodnota a má <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> jako `true` ve svých metadatech.  
   
@@ -148,7 +136,7 @@ Toto téma popisuje důvody, [!INCLUDE[TLA#tla_winclient](../../../../includes/t
   
 -   Ve výchozím nastavení, datové vazby <xref:System.Windows.Data.Binding.Mode%2A> pro výchozí nastavení vlastnosti závislost na <xref:System.Windows.Data.BindingMode.OneWay>. Můžete kdykoli změnit vazby být <xref:System.Windows.Data.BindingMode.TwoWay> na instanci vazby; podrobnosti najdete v části [určení směru vazby](../../../../docs/framework/wpf/data/how-to-specify-the-direction-of-the-binding.md). Jako autor vlastnost závislosti, můžete vytvořit vlastnost použít, ale <xref:System.Windows.Data.BindingMode.TwoWay> režimu vazby ve výchozím nastavení. Příklad existující vlastnost závislosti je <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A?displayProperty=nameWithType>; tento scénář pro tuto vlastnost je, že <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> nastavení logiku a skládání z <xref:System.Windows.Controls.MenuItem> interakci s výchozí styl motivu. <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> Datová vazba vlastnost logiku nativně používá pro uchování stavu vlastnosti v souladu na jiné vlastnosti stavu a volání metod. Další příklad vlastnost, která sváže <xref:System.Windows.Data.BindingMode.TwoWay> ve výchozím nastavení je <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>.  
   
--   Můžete také povolit dědičnost vlastnosti v vlastnost vlastní závislosti nastavením <xref:System.Windows.FrameworkPropertyMetadataOptions.Inherits> příznak. Dědičnost vlastnosti je užitečné pro scénář, kde prvky nadřazené a podřízené elementy mají vlastnost společné, a má smysl pro podřízené elementy tak, aby měl tento konkrétní hodnota vlastnosti nastavena na stejnou hodnotu jako nadřazený ho nastavit. Ve vlastnosti zděditelné příklad je <xref:System.Windows.FrameworkElement.DataContext%2A>, který se používá pro operace povolující důležité scénář seznam podrobnosti pro prezentaci dat vazby. Tím, že <xref:System.Windows.FrameworkElement.DataContext%2A> zděditelné, všechny podřízené elementy dědění tohoto kontextu dat také. Z důvodu dědičnost hodnotu vlastnosti můžete určit kontext dat v kořenovém adresáři stránky nebo aplikace a není potřeba respecify pro vazby do ve všech možných podřízené elementy. <xref:System.Windows.FrameworkElement.DataContext%2A>je také dobrým příkladem pro ilustraci dědičnosti přepíše výchozí hodnotu, že ho může být vždy nastavená místně na žádné konkrétní podřízený element; Podrobnosti najdete v tématu [použití vzoru seznam-podrobnosti s hierarchické Data](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md). Dědičnost vlastnosti hodnota nemá možný výkon a proto měli šetřit; Podrobnosti najdete v tématu [dědičnost hodnotu vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).  
+-   Můžete také povolit dědičnost vlastnosti v vlastnost vlastní závislosti nastavením <xref:System.Windows.FrameworkPropertyMetadataOptions.Inherits> příznak. Dědičnost vlastnosti je užitečné pro scénář, kde prvky nadřazené a podřízené elementy mají vlastnost společné, a má smysl pro podřízené elementy tak, aby měl tento konkrétní hodnota vlastnosti nastavena na stejnou hodnotu jako nadřazený ho nastavit. Ve vlastnosti zděditelné příklad je <xref:System.Windows.FrameworkElement.DataContext%2A>, který se používá pro operace povolující důležité scénář seznam podrobnosti pro prezentaci dat vazby. Tím, že <xref:System.Windows.FrameworkElement.DataContext%2A> zděditelné, všechny podřízené elementy dědění tohoto kontextu dat také. Z důvodu dědičnost hodnotu vlastnosti můžete určit kontext dat v kořenovém adresáři stránky nebo aplikace a není potřeba respecify pro vazby do ve všech možných podřízené elementy. <xref:System.Windows.FrameworkElement.DataContext%2A> je také dobrým příkladem pro ilustraci dědičnosti přepíše výchozí hodnotu, že ho může být vždy nastavená místně na žádné konkrétní podřízený element; Podrobnosti najdete v tématu [použití vzoru seznam-podrobnosti s hierarchické Data](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md). Dědičnost vlastnosti hodnota nemá možný výkon a proto měli šetřit; Podrobnosti najdete v tématu [dědičnost hodnotu vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).  
   
 -   Nastavte <xref:System.Windows.FrameworkPropertyMetadataOptions.Journal> příznak indikující, pokud by měla být zjištěna nebo v navigačním deníku služeb vaší vlastnost závislosti. Příkladem je <xref:System.Windows.Controls.Primitives.Selector.SelectedIndex%2A> vlastnost; jakékoli položky vybrané ve výběru ovládacího prvku by měl nastavit jako trvalý, když je navigaci historie deníku.  
   

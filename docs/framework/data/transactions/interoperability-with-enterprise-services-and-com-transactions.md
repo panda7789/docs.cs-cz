@@ -1,23 +1,12 @@
 ---
-title: "Vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +"
-ms.custom: 
+title: Vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 246658ceb2fdbaa302753441ca5e34a1eef92b4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8b88fd60b2e70496009be2670e8e1e87f8d55201
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +
 <xref:System.Transactions> Obor názvů podporuje spolupráci mezi objekty transakce vytvořené pomocí tohoto oboru názvů a transakce vytvořené pomocí modelu COM +.  

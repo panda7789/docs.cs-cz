@@ -1,23 +1,12 @@
 ---
-title: "Vytváření vlastních toku řízení aktivit"
-ms.custom: 
+title: Vytváření vlastních toku řízení aktivit
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 27f409f6-2d1d-4cfb-9765-93eb2ad667d5
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 57c347043d1bbcf239841bc57c6a406cfc9af7f0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 124ecd23ca2a856b6efd0e75f816c6f188c9425f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-custom-flow-control-activities"></a>Vytváření vlastních toku řízení aktivit
 .Net Framework obsahuje celou řadu řízení toku aktivity, které fungují podobně jako abstraktní programovací struktury (například <xref:System.Activities.Statements.Flowchart>) nebo se standardní programovací příkazy (například <xref:System.Activities.Statements.If>). Toto téma popisuje architekturu jednoho z ukázkových projektů [Non-obecné ForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md).  

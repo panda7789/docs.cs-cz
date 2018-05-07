@@ -1,38 +1,24 @@
 ---
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1342f2383e7cf2aa15ea60be03c93044e4332612
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 45a3bf82662fcc01b732428d1ca351e4ae8ddca0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
-Tato část obsahuje běžné otázky a řešení potíží pomoci při používání front v [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+Tato část obsahuje běžné otázky a řešení potíží pomoci při používání front ve Windows Communication Foundation (WCF).  
   
 ## <a name="common-questions"></a>Nejčastější dotazy  
- **Otázka:** použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Beta 1 a I nainstalována oprava hotfix služby MSMQ. Je potřeba odebrat opravu hotfix?  
+ **Otázka:** I používá WCF Beta 1 a po instalaci opravy hotfix služby MSMQ. Je potřeba odebrat opravu hotfix?  
   
- **Odpověď:** Ano. Tato oprava hotfix již není podporována. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Teď funguje na MSMQ bez požadavek opravu hotfix.  
+ **Odpověď:** Ano. Tato oprava hotfix již není podporována. WCF nyní pracuje na MSMQ bez požadavek opravu hotfix.  
   
  **Otázka:** existují dvě vazeb pro služby MSMQ: <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Co je třeba použít a kdy?  
   
- **Odpověď:** použít <xref:System.ServiceModel.NetMsmqBinding> když chcete používat služby MSMQ jako přenosového mechanismu pro komunikaci ve frontě mezi dvěma [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Použít <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> když chcete používat existující aplikacím služby MSMQ pro komunikaci se nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace.  
+ **Odpověď:** použít <xref:System.ServiceModel.NetMsmqBinding> když chcete používat služby MSMQ jako přenosového mechanismu pro komunikaci mezi dvěma aplikacemi WCF ve frontě. Použít <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> když chcete používat existující aplikacím služby MSMQ pro komunikaci se nové aplikace WCF.  
   
  **Otázka:** muset upgradovat služby MSMQ používat <xref:System.ServiceModel.NetMsmqBinding> a `MsmqIntegration` vazby?  
   
@@ -54,7 +40,7 @@ Tato část obsahuje běžné otázky a řešení potíží pomoci při použív
   
  **Odpověď:** Ano.  
   
- **Otázka:** chcete integrovat existující aplikacím služby MSMQ nové [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů nebo serverů. Je potřeba upgradovat obou stranách Moje MSMQ infrastruktury?  
+ **Otázka:** chcete integrovat existující aplikacím služby MSMQ nových WCF klientů nebo serverů. Je potřeba upgradovat obou stranách Moje MSMQ infrastruktury?  
   
  **Odpověď:** ne. Nemáte k upgradu služby MSMQ 4.0 na obou stranách.  
   
@@ -145,9 +131,9 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
   
  **Otázka:** kdy použít název formátu veřejných nebo privátních a otevření hostitele služby na [!INCLUDE[wv](../../../../includes/wv-md.md)], zobrazí chybová zpráva. Proč?  
   
- **Odpověď:** [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] integrace kanál na [!INCLUDE[wv](../../../../includes/wv-md.md)] kontroluje, pokud lze otevřít dílčí fronty pro hlavní aplikace fronty pro zpracování poškozených zpráv. Název dílčí fronta je odvozená od msmq.formatname URI předán do naslouchací proces. Název dílčí fronty služby MSMQ lze pouze přímého názvu formátu. Proto se zobrazí chyba. Změňte na přímého názvu formátu fronty identifikátor URI.  
+ **Odpověď:** kanál integrační WCF na [!INCLUDE[wv](../../../../includes/wv-md.md)] kontroluje, pokud lze otevřít dílčí fronty pro hlavní aplikace fronty pro zpracování poškozených zpráv. Název dílčí fronta je odvozená od msmq.formatname URI předán do naslouchací proces. Název dílčí fronty služby MSMQ lze pouze přímého názvu formátu. Proto se zobrazí chyba. Změňte na přímého názvu formátu fronty identifikátor URI.  
   
- **Otázka:** při přijímání zprávy z aplikace služby MSMQ, zpráva umístěné ve frontě a není určen ke čtení přijímací [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Proč?  
+ **Otázka:** při přijímání zprávy z aplikace služby MSMQ, zpráva umístěné ve frontě a není určen ke čtení přijímající aplikace WCF. Proč?  
   
  **Odpověď:** zkontrolujte, zda zpráva má text. Pokud zpráva nemá žádné body, integrace služby MSMQ ignoruje zprávy. Implementace `IErrorHandler` informováni o výjimky a zkontrolujte trasování.  
   
@@ -193,7 +179,7 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
  **Odpověď:** Zkontrolujte konfiguraci vazby. Výchozí vazby má zabezpečení služby MSMQ přenosu zapnuté k podepsání zprávy. Vypněte jej.  
   
 ### <a name="remote-transacted-receives"></a>Obdrží vzdálené transakční  
- **Otázka:** při v počítači A jsou fronty a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která čte zprávy z fronty na počítači zprávy B (vzdálený transakční příjem scénář), nejsou číst zprávy z fronty. Informace o trasování označuje je přijetí se nezdařilo s zpráva "transakci nelze importovat." Jak tento problém lze vyřešit?  
+ **Otázka:** když v počítači A jsou fronty, a služby WCF, který čte zprávy z fronty na počítači zprávy B (vzdálený transakční příjem scénář), nejsou číst zprávy z fronty. Informace o trasování označuje je přijetí se nezdařilo s zpráva "transakci nelze importovat." Jak tento problém lze vyřešit?  
   
  **Odpověď:** existují tři možné důvody:  
   

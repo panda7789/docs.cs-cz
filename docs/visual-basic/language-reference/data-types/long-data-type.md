@@ -1,11 +1,6 @@
 ---
-title: "Long – datový typ (Visual Basic)"
+title: Long – datový typ (Visual Basic)
 ms.date: 01/31/2018
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Long
 helpviewer_keywords:
@@ -27,11 +22,11 @@ helpviewer_keywords:
 ms.assetid: b4770c34-1804-4f8c-b512-c10b0893e516
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51cf03afc6b2e77ccca74fc26365fc50110e1f71
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 687c235be76ef522758658fd1c5fe0cb1dbeb414
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="long-data-type-visual-basic"></a>Long – datový typ (Visual Basic)
 
@@ -84,7 +79,8 @@ Dim number = &H_0FAC_0326_1489_D68CL
 
 ## <a name="see-also"></a>Viz také
 
-<xref:System.Int64>[Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
+<xref:System.Int64>
+[Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
 [Integer – datový typ](../../../visual-basic/language-reference/data-types/integer-data-type.md)   
 [Short – datový typ](../../../visual-basic/language-reference/data-types/short-data-type.md)   
 [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   

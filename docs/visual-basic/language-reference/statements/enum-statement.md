@@ -1,12 +1,6 @@
 ---
-title: "Enum – příkaz (Visual Basic)"
+title: Enum – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Enum
 helpviewer_keywords:
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - variables [Visual Basic], enumeration
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7a8244318e0be8e50f3384b56cf63e59182b6cda
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 89de51f2551437d102ccdc5a0f1ff5f23b53e47f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enum-statement-visual-basic"></a>Enum – příkaz (Visual Basic)
 Výčet deklaruje a definuje hodnoty její členy.  
@@ -50,13 +41,13 @@ End Enum
   
      Volitelné. Určuje, jaký kód můžete přístup tento výčet. Může být jedna z následujících akcí:  
   
-    -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)  
+    -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
-    -   [Chráněný](../../../visual-basic/language-reference/modifiers/protected.md)  
+    -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
     -   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
-    -   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)  
+    -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
      Můžete zadat `Protected``Friend` pro povolení přístupu z kódu v rámci výčtu na třídu, odvozené třídě nebo do stejného sestavení.  
   
@@ -76,7 +67,7 @@ End Enum
   
      Požadováno. Seznam členů konstanty se deklarované v tomto příkazu. Na jednotlivé zdrojové řádky kódu se zobrazí více členů.  
   
-     Každý `member` má následující syntaxe a částí:`[<attribute list>] member name [ = initializer ]`  
+     Každý `member` má následující syntaxe a částí: `[<attribute list>] member name [ = initializer ]`  
   
     |Část|Popis|  
     |---|---|  
@@ -180,8 +171,8 @@ End Enum
 ## <a name="see-also"></a>Viz také  
  <xref:System.Enum>  
  <xref:Microsoft.VisualBasic.Strings.AscW%2A>  
- [Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md)  
- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
  [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Konstanty a výčty](../../../visual-basic/language-reference/constants-and-enumerations.md)

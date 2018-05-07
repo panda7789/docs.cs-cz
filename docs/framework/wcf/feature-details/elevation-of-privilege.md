@@ -1,29 +1,15 @@
 ---
 title: Zvýšení oprávnění
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6d93a8ae074e4016d7d8ec4b8734f0d14ead938f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c71936d087ef046848c75d1fa0638aaafbe43c9a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="elevation-of-privilege"></a>Zvýšení oprávnění
 *Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto původně udělí oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvyšuje sadu "pro čtení a zápisu."  
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="switching-identity-without-a-security-context"></a>Přepínání Identity bez kontextu zabezpečení  
  Následující se vztahují pouze na [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
   
- Po navázání připojení mezi klientem a serverem, identita klienta nezmění, kromě jednoho situaci: po [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] otevřít klienta, pokud jsou splněny všechny následující podmínky:  
+ Po navázání připojení mezi klientem a serverem, identita klienta nezmění, kromě jednoho situaci: Po otevření klienta WCF, pokud jsou splněny všechny následující podmínky:  
   
 -   Postup vytvoření kontextu zabezpečení (pomocí zabezpečení přenosu nebo relaci zabezpečení zpráv) je vypnuté (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> je nastavena na `false` v případě zabezpečení zpráv nebo není schopen vytvořit zabezpečení přenosu relace se používá v případě zabezpečení přenosu. Příkladem takových přenosu je HTTPS).  
   
@@ -46,7 +32,7 @@ ms.lasthandoff: 04/28/2018
   
 -   Při volání služby v kontextu zosobněného zabezpečení.  
   
- Pokud jsou splněné tyto podmínky, identita použitá k ověření klienta ke službě může změnit (nemusí být zosobněnou identitou ale identitě procesu místo) po [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta je otevřen. K tomu dochází, protože pověření systému Windows používá k ověření klienta ke službě se přenáší s každou zprávu a pověření použité pro ověřování se získávají z aktuální vlákno identitu systému Windows. Pokud se změní identitu Windows aktuální vlákno (například zosobněním různých volající), mohou také změnit pověření, které je připojen ke zprávě a použít k ověření klienta ke službě.  
+ Pokud jsou splněné tyto podmínky, může dojít ke změně identity použít k ověřování klienta ke službě (nemusí být zosobněnou identitou ale identitě procesu místo) po otevření klienta WCF. K tomu dochází, protože pověření systému Windows používá k ověření klienta ke službě se přenáší s každou zprávu a pověření použité pro ověřování se získávají z aktuální vlákno identitu systému Windows. Pokud se změní identitu Windows aktuální vlákno (například zosobněním různých volající), mohou také změnit pověření, které je připojen ke zprávě a použít k ověření klienta ke službě.  
   
  Pokud budete chtít mít deterministické chování při použití ověřování systému Windows společně s zosobnění je třeba explicitně nastavit pověření systému Windows nebo budete muset vytvořit kontext zabezpečení se službou. K tomu použijte relace zabezpečení zprávy nebo relace přenosu zabezpečení. Přenos net.tcp můžete například zadat relaci zabezpečení přenosu. Kromě toho musíte použít synchronní verzi klientské operace, při volání služby. Pokud vytvoříte kontextu zabezpečení zprávy, by neměl necháte připojení ke službě otevřete delší než interval obnovování nakonfigurované relace, protože identita můžete také změnit během procesu obnovení relace.  
   
@@ -59,9 +45,9 @@ ms.lasthandoff: 04/28/2018
 >  Při použití `BeginOpen` metoda, přihlašovací údaje zachytit nemůže zaručit jako přihlašovací údaje proces, který volá metodu.  
   
 ## <a name="token-caches-allow-replay-using-obsolete-data"></a>Token mezipamětí povolit opětovného přehrání pomocí zastaralá Data  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá místní autority zabezpečení (LSA) `LogonUser` funkce k ověření uživatele podle uživatelského jména a hesla. Protože funkce přihlášení je nákladná operace, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje mezipaměti tokeny, které představují ověřeným uživatelům zvýšit výkon. Ukládání do mezipaměti mechanismus uloží výsledky z `LogonUser` pro další použití. Tento mechanismus vypnutá ve výchozím nastavení; Chcete-li ji povolit, nastavte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> vlastnost `true`, nebo použijte `cacheLogonTokens` atribut [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).  
+ WCF používá místní autority zabezpečení (LSA) `LogonUser` funkce k ověření uživatele podle uživatelského jména a hesla. Funkce přihlášení je nákladná operace, a proto WCF umožňuje, abyste mezipaměť tokeny, které představují ověřeného uživatele, pokud chcete zvýšit výkon. Ukládání do mezipaměti mechanismus uloží výsledky z `LogonUser` pro další použití. Tento mechanismus vypnutá ve výchozím nastavení; Chcete-li ji povolit, nastavte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> vlastnost `true`, nebo použijte `cacheLogonTokens` atribut [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).  
   
- Můžete nastavit dobu to Live (TTL) pro uložené v mezipaměti tokeny pomocí nastavení <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> vlastnosti <xref:System.TimeSpan>, nebo použijte `cachedLogonTokenLifetime` atribut `userNameAuthentication` element; výchozí hodnota je 15 minut. Všimněte si, že i když token se uloží do mezipaměti, libovolného klienta, který představuje stejné uživatelské jméno a heslo lze použít s tokenem, i v případě, že uživatelský účet je odstraněn ze systému Windows, nebo došlo ke změně jeho heslo. Dokud hodnota TTL nevyprší a token se odebere z mezipaměti, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje ověření (potenciálně škodlivý) uživatele.  
+ Můžete nastavit dobu to Live (TTL) pro uložené v mezipaměti tokeny pomocí nastavení <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> vlastnosti <xref:System.TimeSpan>, nebo použijte `cachedLogonTokenLifetime` atribut `userNameAuthentication` element; výchozí hodnota je 15 minut. Všimněte si, že i když token se uloží do mezipaměti, libovolného klienta, který představuje stejné uživatelské jméno a heslo lze použít s tokenem, i v případě, že uživatelský účet je odstraněn ze systému Windows, nebo došlo ke změně jeho heslo. Dokud hodnota TTL nevyprší a token se odebere z mezipaměti, WCF umožňuje ověření (potenciálně škodlivý) uživatele.  
   
  Toto riziko lze snížit: snížit okno útoku nastavením `cachedLogonTokenLifetime` hodnotu na nejkratší dobu span uživatelé potřebují.  
   
@@ -91,7 +77,7 @@ ms.lasthandoff: 04/28/2018
   
 -   Služby počítače obsahuje dva nebo víc certifikátů se stejný veřejný klíč, ale obsahují různé informace.  
   
--   Služba načte certifikát, který odpovídá identifikátoru klíče subjektu, ale není ten, který má klient použít. Když [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obdrží zprávu a ověří podpis, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] mapuje informace v nezamýšleným certifikátu X.509 sadu deklarací identity, které jsou jiné a potenciálně zvýšenými z co očekává klienta.  
+-   Služba načte certifikát, který odpovídá identifikátoru klíče subjektu, ale není ten, který má klient použít. Když WCF obdrží zprávu a ověří podpis, WCF mapuje informace v nezamýšleným certifikátu X.509 sadu deklarací identity, které jsou jiné a potenciálně zvýšenými z co očekává klienta.  
   
  Toto riziko lze snížit odkaz X.509 certifikátu dalším způsobem, například pomocí <xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial>.  
   

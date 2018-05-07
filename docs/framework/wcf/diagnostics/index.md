@@ -1,14 +1,6 @@
 ---
 title: Správa a diagnostika
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, diagnostics
 - Windows Communication Foundation, administration
@@ -17,20 +9,14 @@ helpviewer_keywords:
 - administration [WCF]
 - WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fa5256f543a99618e00dc88e085dfee4ac76ebab
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: 552ddb842e0a922493feccee1e48e7d5e74291ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="administration-and-diagnostics"></a>Správa a diagnostika
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] poskytuje bohatou sadu funkcí, které umožňují monitorovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] taky zpřístupňuje dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). Při vyskytne chyba nebo spustí funguje nesprávně aplikace, můžete zobrazit, pokud nic významné došlo k chybě v protokolu událostí. Můžete také použít protokolování zpráv a trasování a zjistěte, jaké události jsou situaci klient server ve vaší aplikaci. Tyto funkce pomůže vývojáře a IT odborníky řešení potíží [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace při nepracuje správně.  
+Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které umožňují monitorovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] taky zpřístupňuje dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI). Při vyskytne chyba nebo spustí funguje nesprávně aplikace, můžete zobrazit, pokud nic významné došlo k chybě v protokolu událostí. Můžete také použít protokolování zpráv a trasování a zjistěte, jaké události jsou situaci klient server ve vaší aplikaci. Tyto funkce pomůže vývojáře a IT odborníky řešení potíží [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace při nepracuje správně.  
   
 > [!NOTE]
 >  Pokud se vám chyb s nejsou žádné konkrétní podrobné informace, měli byste povolit `includeExceptionDetailInFaults` atribut [ \<serviceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) konfigurační prvek. Tím se nastaví [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Odeslat podrobnosti výjimky pro klienty, které umožňuje detekovat mnoho běžných problémů bez nutnosti pokročilejší diagnostiku. Další informace najdete v tématu [odesílání a přijímání chyb](../../../../docs/framework/wcf/sending-and-receiving-faults.md).  

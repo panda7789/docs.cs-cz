@@ -3,20 +3,14 @@ title: Co je nového ve standardní rozhraní .NET
 description: Tento článek shrnuje nové funkce a vylepšení v každé nové verze .NET Standard nalezen.
 ms.custom: updateeachrelease
 ms.date: 04/12/2018
-ms.prod: .net
-ms.topic: article
 ms.technology: dotnet-standard
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 13efc4a927d744662ba8d2e1210d5f8fc166a472
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 0e422e6ff65439d105020a6305b66a8192586a8f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whats-new-in-the-net-standard"></a>Co je nového ve standardní rozhraní .NET
 

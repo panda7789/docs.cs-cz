@@ -1,21 +1,12 @@
 ---
-title: "Informace o subjektu volajícím (Visual Basic)"
-ms.custom: 
+title: Informace o subjektu volajícím (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: dfd9339e990b2a2a7c57acde3c91295a7154fdc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0074ad5bfa5907fb1d02cc92b8b5717897a36b3e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="caller-information-visual-basic"></a>Informace o subjektu volajícím (Visual Basic)
 Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího. Tyto informace jsou užitečné pro trasování, ladění a vytváření diagnostických nástrojů.  
@@ -63,7 +54,7 @@ End Sub
   
  Volitelné argumenty můžete explicitně zadat, chcete-li řídit nebo skrýt informace o volajícím.  
   
-###  <a name="MEMBERNAMES"></a>Názvy členů  
+###  <a name="MEMBERNAMES"></a> Názvy členů  
  Můžete použít `CallerMemberName` atribut Vyhněte se zadání název člena jako `String` argument volané metodě. Pomocí Tato technika tomuto problému vyhnout, **přejmenovat refaktoring** nezmění `String` hodnoty. Tato výhoda se hodí zvláště v těchto úlohách:  
   
 -   Použití trasování a diagnostických rutin.  
@@ -85,5 +76,5 @@ End Sub
 ## <a name="see-also"></a>Viz také  
  [Atributy (Visual Basic)](../../../visual-basic/language-reference/attributes.md)  
  [Mezi běžné atributy (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)  
- [Volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
+ [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
  [Programování konceptů (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)

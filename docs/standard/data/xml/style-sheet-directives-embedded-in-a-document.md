@@ -1,26 +1,15 @@
 ---
-title: "Direktivy list stylu vložených v dokumentu"
-ms.custom: 
+title: Direktivy list stylu vložených v dokumentu
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d79fb295-ebc7-438d-ba1b-05be7d534834
-caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b0d4589dc73b4effeff553e5b7bf5562a7602c2d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2fa671304c611db571b160cd1d960b83bf451c9a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Direktivy list stylu vložených v dokumentu
 V některých případech existující soubor XML obsahuje direktiva list stylu z `<?xml:stylesheet?>`. Aplikace Microsoft Internet Explorer to přijímá jako alternativu k `<?xml-stylesheet?>` syntaxe. Když se XML data obsahuje `<?xml:stylesheet?>` direktivy, jak je uvedené v následující data pokusu o načtení tato data do XML modelu DOM (Document Object) vyvolá výjimku.  

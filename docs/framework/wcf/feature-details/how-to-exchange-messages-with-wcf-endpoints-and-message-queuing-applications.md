@@ -1,40 +1,28 @@
 ---
-title: "Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front"
-ms.custom: 
+title: 'Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 62210fd8-a372-4d55-ab9b-c99827d1885e
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa6f9d0b9631420013593cb44903b5451549e8c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 807a34ac50ea317ace42ec12eddcd9ec7cf3736b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front
-Můžete integrovat existující aplikace služby Řízení front zpráv (MSMQ) s [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] aplikace pomocí integrace vazby služby MSMQ pro převod MSMQ zprávy do a z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zprávy. To umožňuje provádět volání do aplikacím služby MSMQ příjemce z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienty, jakož i volání do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby od odesílatele aplikacím služby MSMQ.  
+Pomocí integrace vazby služby MSMQ pro převod MSMQ zprávy do a z zpráv WCF můžete integrovat existující aplikace služby Řízení front zpráv (MSMQ) s aplikacemi Windows Communication Foundation (WCF). To umožňuje provádět volání do aplikacím služby MSMQ příjemce od klientů WCF a také volání do služby WCF z aplikacím služby MSMQ odesílatele.  
   
- V této části vám vysvětlíme, jak používat <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> pro komunikaci mezi ve frontě (1) a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a služby MSMQ aplikace napsané v System.Messaging a (2) klienta aplikace služby MSMQ a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ V této části vám vysvětlíme, jak používat <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> pro komunikaci mezi (1) klienta WCF a služby MSMQ aplikace napsané v System.Messaging a (2) k klientů služby MSMQ aplikace a služby WCF ve frontě.  
   
- Kompletní příklad, který ukazuje způsob volání služby MSMQ přijímající aplikace z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, najdete v článku [Windows Communication Foundation do řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázka.  
+ Kompletní příklad, který ukazuje způsob volání služby MSMQ přijímající aplikace z klienta WCF, najdete v článku [Windows Communication Foundation do řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázka.  
   
- Kompletní příklad, který ukazuje způsob volání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ze služby MSMQ klienta najdete v tématu [služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) ukázka.  
+ Kompletní příklad, který ukazuje způsob volání služby WCF z klienta služby MSMQ, najdete v článku [služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) ukázka.  
   
 ### <a name="to-create-a-wcf-service-that-receives-messages-from-a-msmq-client"></a>Vytvoření služby WCF, která přijímá zprávy od klientů služby MSMQ  
   
-1.  Definování rozhraní, které definuje kontrakt služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, která přijímá zprávy zařazené do fronty z aplikace služby MSMQ odesílatele, jak je znázorněno v následujícím příkladu kódu.  
+1.  Definujte rozhraní, které definuje kontrakt služby pro službu WCF, která přijímá zprávy ve frontě z aplikace služby MSMQ odesílatele, jak je znázorněno v následujícím příkladu kódu.  
   
      [!code-csharp[S_MsmqToWcf#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmqtowcf/cs/service.cs#1)]
      [!code-vb[S_MsmqToWcf#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmqtowcf/vb/service.vb#1)]  
@@ -54,12 +42,12 @@ Můžete integrovat existující aplikace služby Řízení front zpráv (MSMQ) 
   
 ### <a name="to-create-a-wcf-client-that-sends-messages-to-a-msmq-receiver-application"></a>Vytvoření klienta WCF, která odesílá zprávy k příjemce aplikaci služby MSMQ  
   
-1.  Definování rozhraní, které definuje kontrakt služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, který odešle zařazených do fronty zpráv k příjemce služby MSMQ, jak je znázorněno v následujícím příkladu kódu.  
+1.  Definujte rozhraní, které definuje kontrakt služby pro klienta WCF zasílá zařazených do fronty zpráv MSMQ příjemce, jak je znázorněno v následujícím příkladu kódu.  
   
      [!code-csharp[S_WcfToMsmq#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wcftomsmq/cs/proxy.cs#6)]
      [!code-vb[S_WcfToMsmq#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_wcftomsmq/vb/proxy.vb#6)]  
   
-2.  Klienta definovat třídu, která [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient používá k volání služby MSMQ příjemce.  
+2.  Definice třídy klienta, která používá klienta WCF pro volání služby MSMQ příjemce.  
   
      [!code-csharp[S_WcfToMsmq#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wcftomsmq/cs/snippets.cs#2)]
      [!code-vb[S_WcfToMsmq#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_wcftomsmq/vb/snippets.vb#2)]  

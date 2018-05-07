@@ -1,13 +1,6 @@
 ---
-title: "Přehled vykreslování grafiky WPF"
-ms.custom: 
+title: Přehled vykreslování grafiky WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-caps.latest.revision: "51"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cfb9a546ca33b848fbbcbd114951eddc5b000663
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 305af1025abb98950d90f46e75a9f261704a8ebe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] visual vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro vykreslování podporu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu.  
@@ -58,7 +46,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
 -   Globalizace  
   
- <xref:System.Windows.Media.Visual>je k dispozici jako veřejné abstraktní třída, ze které musí být odvozen podřízenými třídami. Následující obrázek znázorňuje hierarchii vizuální objekty, které jsou zveřejněné v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ <xref:System.Windows.Media.Visual> je k dispozici jako veřejné abstraktní třída, ze které musí být odvozen podřízenými třídami. Následující obrázek znázorňuje hierarchii vizuální objekty, které jsou zveřejněné v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
  ![Diagram třídy odvozené z Visual objektu](../../../../docs/framework/wpf/graphics-multimedia/media/visualclass01.png "VisualClass01")  
 Hierarchie tříd Visual  
@@ -86,7 +74,7 @@ Hierarchie tříd Visual
   
  Při vytváření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] řídit, například <xref:System.Windows.Controls.Button>, ovládacího prvku implicitně generuje vykreslování data pro kreslení sám sebe. Například nastavení <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost <xref:System.Windows.Controls.Button> způsobí, že k uložení reprezentace glyf vykreslování ovládacího prvku.  
   
- A <xref:System.Windows.Media.Visual> popisuje jeho obsah jako jeden nebo více <xref:System.Windows.Media.Drawing> objekty obsažené v <xref:System.Windows.Media.DrawingGroup>. A <xref:System.Windows.Media.DrawingGroup> také popisuje masky krytí, transformací, důsledky rastrového obrázku a jiné operace, které se použijí k jejímu obsahu. <xref:System.Windows.Media.DrawingGroup>operace se použijí v uvedeném pořadí při obsahu: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>, <xref:System.Windows.Media.DrawingGroup.Opacity%2A>, <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>, <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>, <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>a potom <xref:System.Windows.Media.DrawingGroup.Transform%2A>.  
+ A <xref:System.Windows.Media.Visual> popisuje jeho obsah jako jeden nebo více <xref:System.Windows.Media.Drawing> objekty obsažené v <xref:System.Windows.Media.DrawingGroup>. A <xref:System.Windows.Media.DrawingGroup> také popisuje masky krytí, transformací, důsledky rastrového obrázku a jiné operace, které se použijí k jejímu obsahu. <xref:System.Windows.Media.DrawingGroup> operace se použijí v uvedeném pořadí při obsahu: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>, <xref:System.Windows.Media.DrawingGroup.Opacity%2A>, <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>, <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>, <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>a potom <xref:System.Windows.Media.DrawingGroup.Transform%2A>.  
   
  Následující příklad uvádí pořadí, ve kterém <xref:System.Windows.Media.DrawingGroup> operací se používají při pořadí vykreslování.  
   
@@ -195,14 +183,14 @@ Visual panelu stromu Průzkumníka v aplikaci XamlPad
  Všimněte si jak <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>, a <xref:System.Windows.Controls.Button> hierarchie samostatné visual objektů v zobrazení ovládacích prvků každé **Průzkumníka Visual stromu** panelu aplikaci XamlPad. Důvodem je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mají ovládací prvky <xref:System.Windows.Controls.ControlTemplate> , který obsahuje vizuální strojové struktuře tohoto ovládacího prvku. Když odkazujete explicitně ovládacího prvku, implicitně referenční visual hierarchii.  
   
 ### <a name="profiling-visual-performance"></a>Profilace výkonu Visual  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje sadu nástrojů, které vám umožní analyzovat běhového chování vaší aplikace a zjistit typy optimalizací výkonu, která můžete použít na profilování výkonu. Tento nástroj Visual profileru nabízí bohaté a grafické zobrazení dat výkonu mapováním přímo do aplikace vizuálním stromu. Na tomto snímku obrazovky **využití procesoru** části Visual profileru vám dává přesné rozpis použití objektu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] služby, jako je vykreslování a rozložení.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje sadu nástrojů, které vám umožní analyzovat běhového chování vaší aplikace a zjistit typy optimalizací výkonu, která můžete použít na profilování výkonu. Tento nástroj Visual profileru nabízí bohaté a grafické zobrazení dat výkonu mapováním přímo do aplikace vizuálním stromu. Na tomto snímku obrazovky **využití procesoru** části Visual profileru vám dává přesné rozpis použití objektu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] služby, jako je vykreslování a rozložení.  
   
  ![Visual profileru zobrazení výstupu](../../../../docs/framework/wpf/graphics-multimedia/media/wpfperf-visualprofiler-04.png "WPFPerf_VisualProfiler_04")  
 Výstup zobrazení Visual profileru  
   
 <a name="visual_rendering_behavior"></a>   
 ## <a name="visual-rendering-behavior"></a>Chování Visual vykreslování  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zavádí několik funkcí, které ovlivňují chování vykreslování vizuální objekty: uchovávají režimu grafiky, vektorová grafika a nezávislé grafiky zařízení.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zavádí několik funkcí, které ovlivňují chování vykreslování vizuální objekty: uchovávají režimu grafiky, vektorová grafika a nezávislé grafiky zařízení.  
   
 ### <a name="retained-mode-graphics"></a>Udržení režimu grafiky  
  Jeden z klíčů k pochopení roli Visual objektu je pochopit rozdíl mezi **přímý režim** a **uchovávají režimu** grafické systémy. Standardní aplikace Win32 na základě GDI nebo GDI + používá systém grafiky přímý režim. To znamená, že aplikace je zodpovědná za překreslení část klientské oblasti, která je zrušena z důvodu akce, jako okno změnou velikosti, nebo změna jeho vzhled objektu.  
@@ -219,7 +207,7 @@ Diagram pořadí vykreslování WPF
  Jeden z největších výhod použití grafiky zachované režimu je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] můžete efektivně optimalizovat co musí být překreslen v aplikaci. I v případě, že máte komplexní scény s různými úrovněmi krytí, obvykle není potřeba psát kód speciální za účelem optimalizace překreslování. Toto porovnání s programováním Win32, ve kterém chcete věnovat značnou část úsilí v optimalizace vaší aplikace pomocí minimalizace množství překreslování v oblasti aktualizací. V tématu [překreslování v oblasti aktualizací](https://msdn.microsoft.com/library/dd162909.aspx) příklad typu složitost součástí optimalizace překreslování v aplikace Win32.  
   
 ### <a name="vector-graphics"></a>Vektorová grafika  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používá **vektorové grafiky** jako formát dat vykreslování. Vektorové grafiky, mezi které patří škálovatelné grafiky SVG (Vector), Windows metasoubory (WMF) a TrueType – ukládání dat vykreslování a přenášet jako seznam pokyny, které popisují, jak znovu vytvořit bitovou kopii pomocí grafiky primitiv. Například písma TrueType jsou outline písma, která popisují sadu čar, křivek a příkazy, nikoli pole pixelů. Jeden z klíčových výhod vektorová grafika je schopnost škálování jakékoli velikosti a řešení.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá **vektorové grafiky** jako formát dat vykreslování. Vektorové grafiky, mezi které patří škálovatelné grafiky SVG (Vector), Windows metasoubory (WMF) a TrueType – ukládání dat vykreslování a přenášet jako seznam pokyny, které popisují, jak znovu vytvořit bitovou kopii pomocí grafiky primitiv. Například písma TrueType jsou outline písma, která popisují sadu čar, křivek a příkazy, nikoli pole pixelů. Jeden z klíčových výhod vektorová grafika je schopnost škálování jakékoli velikosti a řešení.  
   
  Na rozdíl od vektorová grafika rastrový obrázek jako znázornění pixelů pomocí bitové kopie, před generovány pro konkrétní řešení úložiště datech pro vykreslení. Jedním z hlavní rozdílů mezi formáty rastrového obrázku a vektoru je věrnosti na bitovou kopii původního zdroje. Například při změně velikosti zdrojové bitové kopie rastrový obrázek grafické systémy stretch bitovou kopii, zatímco vektorové grafiky systémy škálování obrázku se zachováním přesnost bitové kopie.  
   
@@ -239,7 +227,7 @@ Rozdíly mezi rastrových a vektorová grafika
   
  Ne všechny aplikace jsou rozlišením DPI: některé pixelů hardwaru použít jako primární jednotka měření; Změna systému DPI nemá žádný vliv na tyto aplikace. Mnoho dalších aplikací používat palec jednotky popisují velikosti písem, ale slouží k popisu všem ostatním pixelů. Provádění DPI příliš malá nebo příliš velký může způsobit problémy rozložení pro tyto aplikace, protože aplikace text škáluje s nastavením DPI systému, ale nemá uživatelského rozhraní aplikace. Tento problém se odstranilo pro aplikace vyvinuté pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje automatické škálování pomocí nezávislé pixelů zařízení jako svůj primární jednotky měření místo hardwaru pixelů; Grafika a text škálovat správně bez další zátěže z vývojáře aplikace. Následující obrázek znázorňuje příklad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] textu a obrázků se zobrazí různá nastavení DPI.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje automatické škálování pomocí nezávislé pixelů zařízení jako svůj primární jednotky měření místo hardwaru pixelů; Grafika a text škálovat správně bez další zátěže z vývojáře aplikace. Následující obrázek znázorňuje příklad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] textu a obrázků se zobrazí různá nastavení DPI.  
   
  ![Grafika a text v různých nastavení DPI](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-dpi-setting-examples.png "graphicsmm_dpi_setting_examples")  
 Grafika a text v různých nastavení DPI  

@@ -1,27 +1,15 @@
 ---
-title: "Přehled multimédií"
-ms.custom: 
+title: Přehled multimédií
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - multimedia [WPF]
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 65553e18fc66825c9c0a991aba600b4b90d0d4c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7a986125cff1ff4812528212fa3aee7689af1f16
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
 Funkce multimédií [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám umožní integrovat audio a video do svých aplikací k vylepšení zkušeností uživatelů. Toto téma představuje multimédií funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -32,7 +20,7 @@ Funkce multimédií [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
 ## <a name="media-api"></a>Rozhraní API média  
  <xref:System.Windows.Controls.MediaElement> a <xref:System.Windows.Media.MediaPlayer> třídy se používají k prezentovat obsah zvuku a videa. Tyto třídy lze řídit, interaktivní nebo hodinami. Tyto třídy můžete použít na [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] 10 řízení pro přehrávání médií. Třídy, které použijete, závisí na scénáři.  
   
- <xref:System.Windows.Controls.MediaElement>je <xref:System.Windows.UIElement> který je podporován [rozložení](../../../../docs/framework/wpf/advanced/layout.md) a mohou být využívány jako obsah mnoho ovládacích prvků. Je také použít v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a zároveň i kód. <xref:System.Windows.Media.MediaPlayer>, na druhé straně je určená pro <xref:System.Windows.Media.Drawing> objekty a chybí podpora rozložení. Médium načtené pomocí možnosti <xref:System.Windows.Media.MediaPlayer> lze pouze zobrazit pomocí <xref:System.Windows.Media.VideoDrawing> nebo interakcí přímo s <xref:System.Windows.Media.DrawingContext>. <xref:System.Windows.Media.MediaPlayer>nelze použít v jazyce XAML.  
+ <xref:System.Windows.Controls.MediaElement> je <xref:System.Windows.UIElement> který je podporován [rozložení](../../../../docs/framework/wpf/advanced/layout.md) a mohou být využívány jako obsah mnoho ovládacích prvků. Je také použít v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a zároveň i kód. <xref:System.Windows.Media.MediaPlayer>, na druhé straně je určená pro <xref:System.Windows.Media.Drawing> objekty a chybí podpora rozložení. Médium načtené pomocí možnosti <xref:System.Windows.Media.MediaPlayer> lze pouze zobrazit pomocí <xref:System.Windows.Media.VideoDrawing> nebo interakcí přímo s <xref:System.Windows.Media.DrawingContext>. <xref:System.Windows.Media.MediaPlayer> nelze použít v jazyce XAML.  
   
  Další informace o kreslení objekty a kreslení kontextu najdete v tématu [kreslení objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md).  
   
@@ -88,7 +76,7 @@ Funkce multimédií [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
 ### <a name="controlling-a-mediaelement"></a>Řízení MediaElement  
  <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> a <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> vlastnosti řídí chování <xref:System.Windows.Controls.MediaElement> při <xref:System.Windows.FrameworkElement.IsLoaded%2A> je `true` nebo `false`, v uvedeném pořadí. <xref:System.Windows.Controls.MediaState> Jsou nastaveny vlastnosti ovlivnit chování přehrávání média. Například výchozí <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Play> a ve výchozím nastavení <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Close>. To znamená, že jakmile <xref:System.Windows.Controls.MediaElement> je načteno a posun začátku je dokončena, začne přehrávat média. Po dokončení přehrávání média se zavře a uvolnění prostředků všechna média.  
   
- <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> a <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> vlastnosti nejsou jediný způsob, jak ovládat média přehrávání. V režimu hodiny, můžete řídit hodiny <xref:System.Windows.Controls.MediaElement> a metody řízení interaktivní máte řídit, kdy <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. <xref:System.Windows.Controls.MediaElement>Tato soutěž o řízení zpracovává vyhodnocením následující priority.  
+ <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> a <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> vlastnosti nejsou jediný způsob, jak ovládat média přehrávání. V režimu hodiny, můžete řídit hodiny <xref:System.Windows.Controls.MediaElement> a metody řízení interaktivní máte řídit, kdy <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. <xref:System.Windows.Controls.MediaElement> Tato soutěž o řízení zpracovává vyhodnocením následující priority.  
   
 1.  <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>. Na místě, pokud je odpojen médií. To zajistí, že všechny prostředky média vydávají ve výchozím nastavení, i v případě <xref:System.Windows.Media.MediaClock> přidružen <xref:System.Windows.Controls.MediaElement>.  
   
@@ -107,7 +95,7 @@ Funkce multimédií [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="mediaplayer"></a>   
 ## <a name="mediaplayer-class"></a>Media Player – třída  
- Kde jako <xref:System.Windows.Controls.MediaElement> třída je framework element <xref:System.Windows.Media.MediaPlayer> třída je určen k použití v <xref:System.Windows.Media.Drawing> objekty. Kreslení objekty se používají, když můžete vzdát úrovně funkce framework získat výhody výkonu nebo když potřebujete <xref:System.Windows.Freezable> funkce. <xref:System.Windows.Media.MediaPlayer>umožňuje využívat výhody těchto funkcí současně mediální obsah ve svých aplikacích. Jako <xref:System.Windows.Controls.MediaElement>, <xref:System.Windows.Media.MediaPlayer> lze použít v nezávislých nebo není taktovací režimu, ale nemá mít <xref:System.Windows.Controls.MediaElement> uvolněna a načíst stavy objektu. Tím se snižuje složitost řízení přehrávání <xref:System.Windows.Media.MediaPlayer>.  
+ Kde jako <xref:System.Windows.Controls.MediaElement> třída je framework element <xref:System.Windows.Media.MediaPlayer> třída je určen k použití v <xref:System.Windows.Media.Drawing> objekty. Kreslení objekty se používají, když můžete vzdát úrovně funkce framework získat výhody výkonu nebo když potřebujete <xref:System.Windows.Freezable> funkce. <xref:System.Windows.Media.MediaPlayer> umožňuje využívat výhody těchto funkcí současně mediální obsah ve svých aplikacích. Jako <xref:System.Windows.Controls.MediaElement>, <xref:System.Windows.Media.MediaPlayer> lze použít v nezávislých nebo není taktovací režimu, ale nemá mít <xref:System.Windows.Controls.MediaElement> uvolněna a načíst stavy objektu. Tím se snižuje složitost řízení přehrávání <xref:System.Windows.Media.MediaPlayer>.  
   
 ### <a name="controlling-mediaplayer"></a>Řízení Media Player  
  Protože <xref:System.Windows.Media.MediaPlayer> je bezstavové, existují pouze dva způsoby řízení přehrávání médií.  

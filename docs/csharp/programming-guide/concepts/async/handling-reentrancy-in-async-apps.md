@@ -1,22 +1,12 @@
 ---
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-caps.latest.revision: 3
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0f0b6ba1985ab3cbbcc3490ae9b2ffcceb88f873
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: f2b43bd982b7dcd1f4641ae55f95595d14d70b0b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 Když zahrnete asynchronní kód ve vaší aplikaci, musí vzít v úvahu a pravděpodobně zabránit vícenásobný přístup, který odkazuje na nutnosti opětovného zadávání asynchronní operace předtím, než byla dokončena. Pokud nemáte identifikovat a zpracování možnosti pro vícenásobný přístup, může to způsobit neočekávané výsledky.  
@@ -568,13 +558,13 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
 ##### <a name="to-build-a-wpf-app"></a>Vytvoření aplikace WPF  
   
-1.  Start Visual Studio.  
+1.  Spuštění sady Visual Studio.  
   
 2.  Na řádku nabídek zvolte **soubor**, **nový**, **projektu**.  
   
      **Nový projekt** otevře se dialogové okno.  
   
-3.  V **nainstalovaných šablonách** podokně rozbalte **Visual C#**a potom rozbalte **Windows**.  
+3.  V **nainstalovaných šablonách** podokně rozbalte **Visual C#** a potom rozbalte **Windows**.  
   
 4.  V seznamu typy projektů, vyberte **aplikaci WPF**.  
   

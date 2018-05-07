@@ -1,9 +1,6 @@
 ---
-title: "try-catch (Referenční dokumentace jazyka C#)"
+title: try-catch (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - try
 - try_CSharpKeyword
@@ -13,14 +10,11 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-caps.latest.revision: "45"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 753beb554796ad0aa2c5e15c715240453de9a3e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f917d662366dc8ff540cdee6222199fe8f5606c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 Try-catch – příkaz se skládá z `try` bloku, za nímž následuje jeden nebo více `catch` klauzule, které určují obslužné rutiny pro různé výjimky.  
@@ -168,10 +162,10 @@ static void Main()
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)  
+ [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Zkuste, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)  
+ [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)  
  [Příkazy zpracování výjimek](../../../csharp/language-reference/keywords/exception-handling-statements.md)  
  [throw](../../../csharp/language-reference/keywords/throw.md)  
- [try-finally –](../../../csharp/language-reference/keywords/try-finally.md)  
- [Postupy: explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+ [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
+ [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

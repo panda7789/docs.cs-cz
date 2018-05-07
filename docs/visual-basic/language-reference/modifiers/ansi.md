@@ -1,11 +1,6 @@
 ---
 title: Ansi (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Ansi
 helpviewer_keywords:
@@ -13,14 +8,11 @@ helpviewer_keywords:
 - ANSI, Visual Basic
 - ANSI
 ms.assetid: 4f1fa6ff-5557-41ab-b6da-90baf4c15917
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: aa5724eb9123b2776c3a579e4244c55b3129816b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c7037acac58de56a396bd89f595ef897743ff4e9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ansi-visual-basic"></a>Ansi (Visual Basic)
 Určuje, že jazyka Visual Basic má zařazování všechny řetězce hodnoty American National Standards Institute (ANSI) bez ohledu na název externí procedura je deklarován.  
@@ -34,12 +26,12 @@ Určuje, že jazyka Visual Basic má zařazování všechny řetězce hodnoty Am
 ## <a name="remarks"></a>Poznámky  
  `Ansi` Modifikátor můžete v tomto kontextu použít:  
   
- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
  This – klíčové slovo není podporováno.  
   
 ## <a name="see-also"></a>Viz také  
- [Automaticky](../../../visual-basic/language-reference/modifiers/auto.md)  
- [Kódování Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)  
+ [Auto](../../../visual-basic/language-reference/modifiers/auto.md)  
+ [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)  
  [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

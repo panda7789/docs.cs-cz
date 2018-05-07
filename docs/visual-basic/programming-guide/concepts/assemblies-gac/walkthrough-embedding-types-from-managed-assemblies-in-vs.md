@@ -1,22 +1,12 @@
 ---
-title: "Návod: Vložení typů z řízených sestavení v sadě Visual Studio (Visual Basic)"
-ms.custom: 
+title: 'Návod: Vložení typů z řízených sestavení v sadě Visual Studio (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4411b40d8ffbdf2b74c49152db675286d91b43ea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1f6176746b783d020c809fb0b5d55d741ce0148b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení typů z řízených sestavení v sadě Visual Studio (Visual Basic)
 Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně spojte typy v aplikaci k dosažení nezávislost verze. To znamená váš program může být napsán používat typy z více verzí aplikace spravované knihovny aniž byste museli zopakovat pro každou verzi.  
@@ -86,7 +76,7 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 7.  Na **nástroje** nabídky, klikněte na tlačítko **vytvořit Guid**. V **vytvořit GUID** dialogové okno, klikněte na tlačítko **registru formátu** a pak klikněte na **kopie**. Klikněte na tlačítko **ukončení**.  
   
-8.  V `Guid` atribut, odstraňte ukázka GUID a vložte identifikátor GUID, který jste zkopírovali ze **vytvořit GUID** dialogové okno. Odebrání zkopírovaný GUID složené závorky ({}).  
+8.  V `Guid` atribut, odstraňte ukázka GUID a vložte identifikátor GUID, který jste zkopírovali ze **vytvořit GUID** dialogové okno. Odebrat složené závorky ({}) ze zkopírovaného identifikátor GUID.  
   
 9. Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.  
   
@@ -233,6 +223,6 @@ End Function
   
 ## <a name="see-also"></a>Viz také  
  [/ Link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)  
- [Programování konceptů](../../../../visual-basic/programming-guide/concepts/index.md)  
+ [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)  
  [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)  
  [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)

@@ -1,21 +1,14 @@
 ---
 title: Aplikace založené na procesu vývoje pro Docker
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Aplikace založené na procesu vývoje pro Docker
-keywords: Docker, Mikroslužeb, ASP.NET, kontejneru
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: dc91c7d5e2e27602afd6d583bf09adae3caea59e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 881817f4f1007edad85eefb9002d56764cbf2a02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="development-process-for-docker-based-applications"></a>Proces vývoje aplikace založené na Docker
 
@@ -41,7 +34,7 @@ Nainstalováním [Docker Community Edition (CE)](https://www.docker.com/communit
     [*https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker*](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
 
 -   **Visual Studio Code**. Oficiální web.
-    [*https://Code.VisualStudio.com/download*](https://code.visualstudio.com/download)
+    [*https://code.visualstudio.com/download*](https://code.visualstudio.com/download)
 
 -   **Docker Community Edition (CE) pro Mac a Windows**
     [*https://www.docker.com/community-editions*](https://www.docker.com/community-edition)

@@ -1,24 +1,12 @@
 ---
-title: "Zabezpečení (LINQ na DataSet)"
-ms.custom: 
+title: Zabezpečení (LINQ na DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6116b2b8-75f4-4d8b-aea6-c13e55cda50b
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 305ff1232b21def3c8e7dcb1bec529f81c4e701a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 43d529b6f74b58783cc2aaa7a81b2f75790b4e40
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-linq-to-dataset"></a>Zabezpečení (LINQ na DataSet)
 Toto téma popisuje problémy se zabezpečením v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  
@@ -29,9 +17,9 @@ Toto téma popisuje problémy se zabezpečením v [!INCLUDE[linq_dataset](../../
  To znamená, že pomocí předání odkazem na dotaz jinou částí kódu komponentu přijetí dotaz je se důvěryhodný s přístupem pro všechny veřejné a soukromé členy, které dotaz odkazuje na. Obecně platí [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy by neměly být předány do nedůvěryhodné součásti, pokud dotaz obsahuje byla pečlivě proveden tak, aby nevystavuje informace, které by měly být udržovány privátní.  
   
 ## <a name="external-input"></a>Externí vstup  
- Aplikace často trvat externí vstup (uživatele nebo jiné externí agenta) a provádět akce na základě těchto informací.  U [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], aplikace může vytvořit dotaz určitým způsobem, na základě externí vstup nebo použijte externí vstup v dotazu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]dotazy přijmout všude, kde parametry, že jsou přijaty literály. Vývojáři aplikací používejte parametrizované dotazy, nikoli vložení literály z externí agenta přímo do dotazu.  
+ Aplikace často trvat externí vstup (uživatele nebo jiné externí agenta) a provádět akce na základě těchto informací.  U [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], aplikace může vytvořit dotaz určitým způsobem, na základě externí vstup nebo použijte externí vstup v dotazu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy přijmout všude, kde parametry, že jsou přijaty literály. Vývojáři aplikací používejte parametrizované dotazy, nikoli vložení literály z externí agenta přímo do dotazu.  
   
- Žádný vstup přímo nebo nepřímo odvozené od uživatele nebo externí agenta může mít obsah, který využívá syntaxe jazyka cíl za účelem provedení neoprávněným akcím. Tomu se říká útok prostřednictvím injektáže SQL s názvem po útoku vzor, kde je cílové jazyka Transact-SQL. Uživatelský vstup vloženy přímo do dotazu se používá k vyřadit tabulku databáze, způsobit odepření služby nebo v opačném případě změňte povaha prováděnou operaci. I když je možné v sestavení dotazu [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], se provádí prostřednictvím rozhraní API modelu objektu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]dotazy nejsou pomocí zacházení s řetězci nebo zřetězení, jak jsou v Transact-SQL a nejsou náchylné k útokům Injektáž SQL v tom smyslu, tradiční skládá.  
+ Žádný vstup přímo nebo nepřímo odvozené od uživatele nebo externí agenta může mít obsah, který využívá syntaxe jazyka cíl za účelem provedení neoprávněným akcím. Tomu se říká útok prostřednictvím injektáže SQL s názvem po útoku vzor, kde je cílové jazyka Transact-SQL. Uživatelský vstup vloženy přímo do dotazu se používá k vyřadit tabulku databáze, způsobit odepření služby nebo v opačném případě změňte povaha prováděnou operaci. I když je možné v sestavení dotazu [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], se provádí prostřednictvím rozhraní API modelu objektu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy nejsou pomocí zacházení s řetězci nebo zřetězení, jak jsou v Transact-SQL a nejsou náchylné k útokům Injektáž SQL v tom smyslu, tradiční skládá.  
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

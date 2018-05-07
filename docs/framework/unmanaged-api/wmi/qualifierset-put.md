@@ -1,11 +1,7 @@
 ---
-title: "Funkce QualifierSet_Put (referenční dokumentace nespravovaného rozhraní API)"
-description: "Funkce QualifierSet_Put zapíše pojmenované kvalifikátor a její hodnotu."
+title: Funkce QualifierSet_Put (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce QualifierSet_Put zapíše pojmenované kvalifikátor a její hodnotu.
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - QualifierSet_Put
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1bf5c6dbf0f707942d58f4d7cf155636f0532724
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7ccb0aef0e998ffccd7526f9f0554bceb892001b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put – funkce
 Zapíše kvalifikátor s názvem a hodnotou. Nový kvalifikátor přepíše předchozí hodnotu se stejným názvem. Pokud kvalifikátor neexistuje, vytvoří se. 
@@ -57,9 +50,9 @@ HRESULT QualifierSet_Put (
 `wszName`   
 [v] Název kvalifikátor k zápisu.
 
-`pVal`[v] Ukazatel na platnou `VARIANT` obsahující kvalifikátor k zápisu. Tento parametr nemůže být `null`.
+`pVal` [v] Ukazatel na platnou `VARIANT` obsahující kvalifikátor k zápisu. Tento parametr nemůže být `null`.
 
-`lFlavor`[v] Jeden z následujících konstanty, které definuje typů kvalifikátor požadované pro tento kvalifikátor. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
+`lFlavor` [v] Jeden z následujících konstanty, které definuje typů kvalifikátor požadované pro tento kvalifikátor. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -90,7 +83,7 @@ Tato funkce zabalí volání [IWbemQualifierSet::Put](https://msdn.microsoft.com
   
  **Záhlaví:** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také  
 [Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

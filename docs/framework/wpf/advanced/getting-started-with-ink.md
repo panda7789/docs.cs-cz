@@ -1,14 +1,6 @@
 ---
-title: "Začínáme s inkoustem"
-ms.custom: 
+title: Začínáme s inkoustem
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,17 +11,11 @@ helpviewer_keywords:
 - animation [WPF], gradient brush colors
 - brushes [WPF], animating colors of
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 74227ebe815e971087569ff39ac0a3479c1b0d14
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 9a1b53d0513eeef377fe8e012a8d5d7ea3f8a984
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-with-ink"></a>Začínáme s inkoustem
 Zařadit digitálního do svých aplikací je jednodušší než kdy dřív. Element Ink byla vyvinuta ze se nezbytným důsledkem metodu COM a systém Windows Forms programování k dosažení úplné integrace do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Není nutné k instalaci modulu runtime knihovny nebo samostatné sady SDK.  
@@ -47,7 +33,7 @@ Zařadit digitálního do svých aplikací je jednodušší než kdy dřív. Ele
 #### <a name="got-ink"></a>Máte rukopisu?  
  Spuštění prvního [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, která podporuje rukopisu:  
   
-1.  Open Microsoft Visual Studio 2005  
+1.  Otevřete sadu Microsoft Visual Studio 2005  
   
 2.  Vytvořte novou **aplikace WPF (Windows)**  
   

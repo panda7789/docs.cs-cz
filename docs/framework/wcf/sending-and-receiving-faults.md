@@ -1,34 +1,20 @@
 ---
-title: "Chyby odesílání a přijímání"
-ms.custom: 
+title: Chyby odesílání a přijímání
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 248202e07d3b74f5d71b40155ae8f617f7ed15ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 76fb07a6c9a5e0efdbf21f153f5fc2aea7f1880e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sending-and-receiving-faults"></a>Chyby odesílání a přijímání
-Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Obvykle služby definuje vlastní chyby obsahu a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klienta může poslat tyto chyby při odpovídající chybový stav a jak klienta nebo aplikace služby zpracovává tyto chyby. Přehled zpracování chyb v [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Obvykle služby definuje vlastní chyby obsahu a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klienta může poslat tyto chyby při odpovídající chybový stav a jak klienta nebo aplikace služby zpracovává tyto chyby. Přehled zpracování chyb v aplikacích Windows Communication Foundation (WCF) najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
   
 ## <a name="sending-soap-faults"></a>Odesílání chyb SOAP  
  Deklarovaný chyb SOAP jsou ty, ve kterých se operace <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> určující vlastního typu chybu protokolu SOAP. Nedeklarovaný chyb SOAP jsou ty, které nejsou uvedené ve smlouvě operace.  
@@ -64,15 +50,15 @@ Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z 
   
 -   <xref:System.ServiceModel.CommunicationException>  
   
- <xref:System.TimeoutException>objekty jsou vyvolány, když překročí zadaný časový limit operace.  
+ <xref:System.TimeoutException> objekty jsou vyvolány, když překročí zadaný časový limit operace.  
   
- <xref:System.ServiceModel.CommunicationException>objekty jsou vyvolány po nějaké chyby použitelná pro obnovení komunikace na službu nebo klienta.  
+ <xref:System.ServiceModel.CommunicationException> objekty jsou vyvolány po nějaké chyby použitelná pro obnovení komunikace na službu nebo klienta.  
   
  <xref:System.ServiceModel.CommunicationException> Třída má dva důležité odvozené typy <xref:System.ServiceModel.FaultException> a Obecné <xref:System.ServiceModel.FaultException%601> typu.  
   
- <xref:System.ServiceModel.FaultException>jsou výjimky vyvolány, když naslouchací proces obdrží chybu, která není očekávané nebo uvedených ve smlouvě operace; obvykle proběhne, když je laděné aplikace a služby má <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavena na hodnotu `true`.  
+ <xref:System.ServiceModel.FaultException> jsou výjimky vyvolány, když naslouchací proces obdrží chybu, která není očekávané nebo uvedených ve smlouvě operace; obvykle proběhne, když je laděné aplikace a služby má <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavena na hodnotu `true`.  
   
- <xref:System.ServiceModel.FaultException%601>Při obdržení chybu, která je zadána v operaci kontraktu v reakci na obousměrný operace jsou výjimky vyvolány v klientovi (to znamená, metoda s <xref:System.ServiceModel.OperationContractAttribute> atribut s <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> nastavena na `false`).  
+ <xref:System.ServiceModel.FaultException%601> Při obdržení chybu, která je zadána v operaci kontraktu v reakci na obousměrný operace jsou výjimky vyvolány v klientovi (to znamená, metoda s <xref:System.ServiceModel.OperationContractAttribute> atribut s <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> nastavena na `false`).  
   
 > [!NOTE]
 >  Když [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba má <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavena na hodnotu `true` klienta vyskytne to jako nedeklarované <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Klienti můžou catch této konkrétní chyby nebo zpracování chyb v bloku catch pro <xref:System.ServiceModel.FaultException>.  
