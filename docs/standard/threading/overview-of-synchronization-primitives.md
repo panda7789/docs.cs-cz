@@ -1,33 +1,22 @@
 ---
-title: "Přehled primitiv synchronizace"
-ms.custom: 
+title: Přehled primitiv synchronizace
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - synchronization, threads
 - threading [.NET Framework],synchronizing threads
 - managed threading
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
-caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 79d6e384458e289c4da8587eae66486a054aad08
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e35c2337ff7e416cb5f2c869f8ede160e05d369f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
-<a name="top"></a>Rozhraní .NET Framework poskytuje celou řadu synchronizace primitiv pro řízení interakce vláken a vyloučení časování. To je možné zhruba rozdělit do tří kategorií: zamykání, signalizační a interlocked operace.  
+<a name="top"></a> Rozhraní .NET Framework poskytuje celou řadu synchronizace primitiv pro řízení interakce vláken a vyloučení časování. To je možné zhruba rozdělit do tří kategorií: zamykání, signalizační a interlocked operace.  
   
  Kategorie nejsou přehledně ani jasně definované: Některé mechanismy synchronizace mají charakteristické vlastnosti třídy více kategorií; události, které verze jedním vláknem a současně jsou funkčně jako zámky; verze všech zámku lze považovat za signál; a propojené operace lze použít k vytvoření zámky. Kategorie jsou však stále užitečné.  
   
@@ -67,7 +56,7 @@ ms.lasthandoff: 12/23/2017
   
  <xref:System.Threading.Monitor> Třída může poskytnout zamykání ve více doménách aplikace, pokud je objekt použitý pro zámek odvozena z <xref:System.MarshalByRefObject>.  
   
- <xref:System.Threading.Monitor>má spřažení vláken. To znamená, musí ukončit vlákno, které zadali monitorování voláním <xref:System.Threading.Monitor.Exit%2A> nebo <xref:System.Threading.Monitor.Wait%2A>.  
+ <xref:System.Threading.Monitor> má spřažení vláken. To znamená, musí ukončit vlákno, které zadali monitorování voláním <xref:System.Threading.Monitor.Exit%2A> nebo <xref:System.Threading.Monitor.Wait%2A>.  
   
  <xref:System.Threading.Monitor> Třída není instantiable. Její metody jsou statické (`Shared` v jazyce Visual Basic) a provádění akcí na instantiable zámek objektu.  
   
@@ -91,7 +80,7 @@ ms.lasthandoff: 12/23/2017
 #### <a name="readerwriterlock-class"></a>ReaderWriterLock – třída  
  <xref:System.Threading.ReaderWriterLockSlim> Třída řeší tento případ, kdy vlákno, které mění data, modul pro zápis, musí mít výhradní přístup k prostředku. Když v modulu pro zápis není aktivní, libovolný počet čtenářů má přístup k prostředku (například voláním <xref:System.Threading.ReaderWriterLockSlim.EnterReadLock%2A> metoda). Pokud vlákno vyžaduje výhradní přístup (například voláním <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A> metoda), následné čtečky požadavky bloku, dokud všechny existující čtečky se odpojili zámek a zapisovač zadal a byl ukončen zámek.  
   
- <xref:System.Threading.ReaderWriterLockSlim>má spřažení vláken.  
+ <xref:System.Threading.ReaderWriterLockSlim> má spřažení vláken.  
   
  Koncepční přehled, najdete v části [zamkne čtení a zápis](../../../docs/standard/threading/reader-writer-locks.md).  
   
@@ -104,13 +93,13 @@ ms.lasthandoff: 12/23/2017
   
  Koncepční přehled, najdete v části [semafor a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md).  
   
- <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>je lightweight semafor pro synchronizaci v jednom procesu hranici.  
+ <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> je lightweight semafor pro synchronizaci v jednom procesu hranici.  
   
  [Zpět na začátek](#top)  
   
 <a name="signaling"></a>   
 ## <a name="signaling"></a>Signálů  
- Nejjednodušší způsob, jak Počkejte, než je signál z jiné vlákno k volání <xref:System.Threading.Thread.Join%2A> metoda, která blokuje až do dokončení jiné vlákno. <xref:System.Threading.Thread.Join%2A>má dva přetížení, která umožňují blokované vlákno pro přerušení mimo dobu, po uplynutí zadaného intervalu.  
+ Nejjednodušší způsob, jak Počkejte, než je signál z jiné vlákno k volání <xref:System.Threading.Thread.Join%2A> metoda, která blokuje až do dokončení jiné vlákno. <xref:System.Threading.Thread.Join%2A> má dva přetížení, která umožňují blokované vlákno pro přerušení mimo dobu, po uplynutí zadaného intervalu.  
   
  Obslužné rutiny čekání poskytují mnohem širší čekání a možnosti signalizace.  
   
@@ -124,7 +113,7 @@ ms.lasthandoff: 12/23/2017
 #### <a name="event-wait-handles"></a>Obslužné rutiny čekání na události  
  Obslužné rutiny čekání na událost zahrnují <xref:System.Threading.EventWaitHandle> třída a odvozené třídy, <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.ManualResetEvent>. Vláken vydávají z popisovač čekání událost signalizace událostí popisovač čekání voláním jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda nebo pomocí <xref:System.Threading.WaitHandle.SignalAndWait%2A> metoda.  
   
- Obslužné rutiny buď sami automaticky resetovat, jako je Turniket, který umožňuje pouze jedno vlákno prostřednictvím pokaždé, když signalizace, nebo musí být ručně, obnovit jako bránu je uzavřen, dokud signál a pak otevřete, dokud ho někdo nezavře čekání událostí. Jak je určeno, jejich názvy, <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.ManualResetEvent> představují bývalé a druhé, v uvedeném pořadí. <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>je lightweight událost pro synchronizaci v jednom procesu hranici.  
+ Obslužné rutiny buď sami automaticky resetovat, jako je Turniket, který umožňuje pouze jedno vlákno prostřednictvím pokaždé, když signalizace, nebo musí být ručně, obnovit jako bránu je uzavřen, dokud signál a pak otevřete, dokud ho někdo nezavře čekání událostí. Jak je určeno, jejich názvy, <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.ManualResetEvent> představují bývalé a druhé, v uvedeném pořadí. <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> je lightweight událost pro synchronizaci v jednom procesu hranici.  
   
  <xref:System.Threading.EventWaitHandle> Může představovat buď typ události a může být místní nebo globální. Odvozené třídy <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.ManualResetEvent> jsou vždy místní.  
   
@@ -146,13 +135,13 @@ ms.lasthandoff: 12/23/2017
 ## <a name="lightweight-synchronization-types"></a>Typy zjednodušené synchronizace  
  Od verze [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], můžete použít primitiv synchronizace, které poskytují vysoký výkon vyhnout nákladné spoléhat na Win32 jádra objekty, například obslužné rutiny, kdykoli je to možné čekání. Obecně platí měli byste použít tyto typy po krátkou dobu čekání a jenom v případě, že jste se pokusili a nevyhovující původní typy synchronizace. Prosté typů nelze použít ve scénářích, které vyžadují komunikaci mezi procesy.  
   
--   <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>je Odlehčená verze <xref:System.Threading.Semaphore?displayProperty=nameWithType>.  
+-   <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> je Odlehčená verze <xref:System.Threading.Semaphore?displayProperty=nameWithType>.  
   
--   <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>je Odlehčená verze <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>.  
+-   <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> je Odlehčená verze <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>.  
   
--   <xref:System.Threading.CountdownEvent?displayProperty=nameWithType>představuje událost, která se změní na signál, když jeho počtu nula.  
+-   <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> představuje událost, která se změní na signál, když jeho počtu nula.  
   
--   <xref:System.Threading.Barrier?displayProperty=nameWithType>Umožňuje synchronizovat sebou bez použití ovládacího prvku hlavní vlákno více vláken. Bariéry brání každé vlákno z budete pokračovat, dokud všechna vlákna dosáhli Zadaný bod.  
+-   <xref:System.Threading.Barrier?displayProperty=nameWithType> Umožňuje synchronizovat sebou bez použití ovládacího prvku hlavní vlákno více vláken. Bariéry brání každé vlákno z budete pokračovat, dokud všechna vlákna dosáhli Zadaný bod.  
   
  [Zpět na začátek](#top)  
   

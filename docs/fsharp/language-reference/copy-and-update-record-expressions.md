@@ -2,16 +2,12 @@
 title: 'Kopírování a aktualizace záznamů výrazy (F #)'
 description: Další informace o zápisu, kopírování a aktualizace záznamů výraz, který kopíruje existující aktualizace záznamů, zadaná pole a vrátí aktualizované záznam.
 author: ChrSteinert
-ms.author: phcart
 ms.date: 06/04/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 98a515b5f053e9339588157185848e8315a580f4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 000746b6e76349ae6d8f338519a58034f4e29020
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="copy-and-update-record-expressions"></a>Kopírování a aktualizace záznamů výrazy
 

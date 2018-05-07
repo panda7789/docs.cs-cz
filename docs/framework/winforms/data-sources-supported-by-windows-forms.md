@@ -1,13 +1,6 @@
 ---
-title: "Zdroje dat podporované rozhraním Windows Forms"
-ms.custom: 
+title: Zdroje dat podporované rozhraním Windows Forms
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - collections [Windows Forms], binding to
 - OLE DB providers [Windows Forms], Windows Forms
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - DataSet class [Windows Forms], binding and Windows Forms
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5a0a4c2bca136377b9c6812008189dae009e195f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 4705c8a7153e94fa1cd23cf6c2f622d5cd66ec77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Datová vazba tradičně, už je použité v aplikacích využít dat uložených v databázích. S Windows Forms – datová vazba, můžete přístup k datům z databáze a také data v jiných struktur, jako je například pole a kolekcí, tak dlouho, dokud byly splněny určité minimální požadavky.  
@@ -50,13 +38,13 @@ Datová vazba tradičně, už je použité v aplikacích využít dat uloženýc
  pole nebo kolekce  
  Tak, aby fungoval jako zdroj dat, musí implementovat seznam <xref:System.Collections.IList> rozhraní; jeden Příkladem může být pole, které je instance <xref:System.Array> třídy. Další informace o pole najdete v tématu [postupy: vytvoření objekty z pole (Visual Basic)](http://msdn.microsoft.com/library/6b64e069-0387-400c-9081-3bdc581020c3).  
   
- Obecně platí, měli byste použít <xref:System.ComponentModel.BindingList%601> při vytváření seznamů objektů pro datovou vazbu. <xref:System.ComponentModel.BindingList%601>je obecná verze <xref:System.ComponentModel.IBindingList> rozhraní. <xref:System.ComponentModel.IBindingList> Rozšiřuje rozhraní <xref:System.Collections.IList> rozhraní přidáním vlastnosti, metod a události, které jsou nezbytné pro dvoucestné datovou vazbu.  
+ Obecně platí, měli byste použít <xref:System.ComponentModel.BindingList%601> při vytváření seznamů objektů pro datovou vazbu. <xref:System.ComponentModel.BindingList%601> je obecná verze <xref:System.ComponentModel.IBindingList> rozhraní. <xref:System.ComponentModel.IBindingList> Rozšiřuje rozhraní <xref:System.Collections.IList> rozhraní přidáním vlastnosti, metod a události, které jsou nezbytné pro dvoucestné datovou vazbu.  
   
  <xref:System.Collections.IEnumerable>  
  Ovládací prvky Windows Forms mohou být vázány na zdroje dat, které podporují pouze <xref:System.Collections.IEnumerable> rozhraní, pokud je vázána prostřednictvím <xref:System.Windows.Forms.BindingSource> součásti.  
   
- [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]datové objekty  
- [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]poskytuje řadu datové struktury vhodný vazba. Každý se liší v její vyspělosti a složitost.  
+ [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] datové objekty  
+ [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] poskytuje řadu datové struktury vhodný vazba. Každý se liší v její vyspělosti a složitost.  
   
 -   <xref:System.Data.DataColumn>. A <xref:System.Data.DataColumn> je základní stavební blok <xref:System.Data.DataTable>, v tom, že počet sloupců tvoří tabulku. Každý <xref:System.Data.DataColumn> má <xref:System.Data.DataColumn.DataType%2A> vlastnost, která určuje, jaké dat sloupce blokování (například značku automobilu v tabulce popisující aut). Vám může jednoduchý vytvořit vazbu ovládacího prvku (například <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost) na sloupec v tabulce data.  
   

@@ -1,20 +1,12 @@
 ---
-title: "Z důvodu interní chyby systému nelze získat názvy sériových portů."
+title: Z důvodu interní chyby systému nelze získat názvy sériových portů.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 789a1e94-28c2-4c20-8ee4-ad65fea37812
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 926e20e9069831fa9c1cf049b8010a1b0fbbcbca
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 3380fa7551e4ceb4e681c024da1b7c77e05eedc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unable-to-get-serial-port-names-because-of-an-internal-system-error"></a>Z důvodu interní chyby systému nelze získat názvy sériových portů.
 Vnitřní chyba došlo k chybě při `My.Computer.Ports.SerialPortNames` vlastnost byla volána.  

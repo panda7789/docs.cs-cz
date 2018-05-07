@@ -1,13 +1,6 @@
 ---
-title: "Model vláken inkoustu"
-ms.custom: 
+title: Model vláken inkoustu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application user interface thread [WPF]
 - stylus plug-in
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - ink collection plug-in
 - plug-ins [WPF], for ink
 ms.assetid: c85fcad1-cb50-4431-847c-ac4145a35c89
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c8eb0cf9f1cbb1be688f228b7bbd10a3a3ca6ed0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc0ff8a2345bd945dd2fffdfda80f00e1ab99c67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-ink-threading-model"></a>Model vláken inkoustu
 Jednou z výhod rukopisu v Tablet PC je, že ho dojem mnoho zápis s regulární pera a dokumentu.  K tomu, shromažďuje pera vstupní data mnohem vyšší rychlostí než myš nemá a vykreslí rukopisu jako uživatelské zápisy.  Aplikace uživatelské rozhraní (UI) vlákno není dostatečná pro shromažďování dat pera a vykreslování rukopisu, protože se zablokuje.  K řešení, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá dva další vlákna, pokud uživatel zapíše rukopisu.  
@@ -72,11 +60,11 @@ Jednou z výhod rukopisu v Tablet PC je, že ho dojem mnoho zápis s regulární
   
  Na předchozím obrázku toto chování probíhá:  
   
-1.  `StylusPlugin1`změní hodnoty x a y.  
+1.  `StylusPlugin1` změní hodnoty x a y.  
   
-2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>obdrží bodů upravené pera a vykreslí je ve vlákně dynamické vykreslování.  
+2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> obdrží bodů upravené pera a vykreslí je ve vlákně dynamické vykreslování.  
   
-3.  `StylusPlugin2`obdrží bodů upravené pera a další upraví hodnoty x a y.  
+3.  `StylusPlugin2` obdrží bodů upravené pera a další upraví hodnoty x a y.  
   
 4.  Aplikace shromažďuje body pera a když uživatel dokončí tahu, staticky vykreslí tahu.  
   
@@ -87,7 +75,7 @@ Jednou z výhod rukopisu v Tablet PC je, že ho dojem mnoho zápis s regulární
   
  Následující diagram znázorňuje vztah mezi vlákno pera a vlákna uživatelského rozhraní s ohledem na události pera <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>.  
   
- ![Ink modely vláken u &#40; Uživatelské rozhraní a pera &#41; ] (../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading_PluginCallbacks")  
+ ![Modely dělení na vlákna rukopisu &#40;uživatelského rozhraní a pera&#41;](../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading_PluginCallbacks")  
   
 ## <a name="rendering-ink"></a>Vykreslování rukopisu  
  Jako uživatel nevykresluje tah, <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> vykreslí rukopisu v samostatných vlákna tak rukopisu se zobrazí "tok" mezi pera i v případě, že vlákna uživatelského rozhraní je zaneprázdněný.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vizuálním stromu vychází vlákno dynamické vykreslování jako shromáždí pera body.  Po dokončení tahu, uživatel <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> požádá chcete být upozorněni, když aplikace nemá další průchodu vykreslování.  Po dokončení další průchodu vykreslování, aplikace <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> vyčistí jeho vizuálním stromu.  Následující diagram znázorňuje tento proces.  

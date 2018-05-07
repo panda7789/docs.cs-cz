@@ -1,26 +1,17 @@
 ---
 title: Vlastnosti osy XML (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - XML axis properties [Visual Basic]
 - Visual Basic code, XML
 - XML axis [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 7e400e20-5d1e-4d22-a65c-9df79d5c1621
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 94b75237512b292f3c93e42e4c43c10a9df94396
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c7593273893f1bb4961788b07fe716f234f0576f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xml-axis-properties-visual-basic"></a>Vlastnosti osy XML (Visual Basic)
 Témata v této části dokumentů syntaxe vlastnosti osy XML v jazyce Visual Basic. Vlastnosti osy XML usnadňují přístup přímo v kódu XML.  

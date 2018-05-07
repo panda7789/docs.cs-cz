@@ -1,13 +1,7 @@
 ---
-title: "Porovnávání řetězců v .NET"
-ms.custom: 
+title: Porovnávání řetězců v .NET
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -24,18 +18,13 @@ helpviewer_keywords:
 - Equals method
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a9c2597ed2321c7494eaf44c3c43c2edc4df1952
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c925b734c6d89bfa7240a7946c5bae4d8062a47a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="comparing-strings-in-net"></a>Porovnávání řetězců v .NET
 Rozhraní .NET poskytuje několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  
@@ -51,7 +40,7 @@ Rozhraní .NET poskytuje několik metod pro porovnání hodnot řetězců. Násl
 |<xref:System.String.IndexOf%2A?displayProperty=nameWithType>|Vrátí index umístění znaku nebo řetězec, od začátku řetězce, který je zkoumán. Vrací celočíselnou hodnotu.|  
 |<xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>|Vrátí index umístění znaku nebo řetězec, od konce řetězce, který je zkoumán. Vrací celočíselnou hodnotu.|  
   
-## <a name="compare"></a>Porovnání  
+## <a name="compare"></a>Porovnat  
  Statické <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda poskytuje důkladné porovnání dvou řetězců. Tato metoda je zohledňuje. Tato funkce slouží k porovnání dvou řetězců nebo dílčích řetězců dvou řetězců. Kromě toho přetížení jsou k dispozici tomto ohledu nebo ignorovat případ a kulturního odchylky. V následující tabulce jsou tři celočíselné hodnoty, tato metoda může vrátit.  
   
 |Návratová hodnota|Podmínka|  

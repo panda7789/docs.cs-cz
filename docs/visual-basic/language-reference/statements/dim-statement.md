@@ -1,12 +1,6 @@
 ---
 title: Dim – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Dim
 - Dim
@@ -35,14 +29,11 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-caps.latest.revision: 72
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 36e2d416e4653bfa6fe212b75b92ae2d90775d53
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c051572e83b915346d48ec12fb5d97f77b47e4c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dim-statement-visual-basic"></a>Dim – příkaz (Visual Basic)
 Deklaruje a přidělí prostor úložiště pro jeden nebo více proměnných.  

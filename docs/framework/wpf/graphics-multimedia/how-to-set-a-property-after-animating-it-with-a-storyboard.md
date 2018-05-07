@@ -1,31 +1,17 @@
 ---
-title: "Postupy: Nastavení vlastnosti po animaci pomocí scénáře"
-ms.custom: 
+title: 'Postupy: Nastavení vlastnosti po animaci pomocí scénáře'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - animation [WPF], changing property values after
 ms.assetid: 79466556-4dbf-40bd-9c1e-a77613b07077
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ffc534549f5b114a07f09326be72c1968d178a8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b8e9c08075b13f8d6f701d5ac6ae4f8ea8949184
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-a-property-after-animating-it-with-a-storyboard"></a>Postupy: Nastavení vlastnosti po animaci pomocí scénáře
 V některých případech může vypadat, že po byla animovaný nelze změnit hodnotu vlastnosti.  
@@ -43,7 +29,7 @@ V některých případech může vypadat, že po byla animovaný nelze změnit h
   
  Předchozí kód nezobrazí žádnou: poskytl žlutý, štětce zůstanou, které je hodnota <xref:System.Windows.Media.Animation.ColorAnimation> který animovaný stopy. Základní hodnota vlastnosti (základní hodnota) je ve skutečnosti změnit na modrou. Ale zůstává žlutý hodnota efektivní nebo aktuální, protože <xref:System.Windows.Media.Animation.ColorAnimation> stále přepisují základní hodnota. Pokud chcete hodnotu opět efektivní hodnota, je nutné zastavit animace z ovlivňující vlastnost. Existují tři způsoby, jak to provést pomocí animací scénáře:  
   
--   Nastavení animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnosti<xref:System.Windows.Media.Animation.FillBehavior.Stop>  
+-   Nastavení animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnosti <xref:System.Windows.Media.Animation.FillBehavior.Stop>  
   
 -   Odeberte celý scénáře.  
   

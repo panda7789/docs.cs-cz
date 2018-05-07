@@ -1,13 +1,7 @@
 ---
-title: "Zničení vláken"
-ms.custom: 
+title: Zničení vláken
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +9,13 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET Framework], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 3bdacb1cc54e3b67a1b4cef4f9fd274e65037faa
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8e6eff0caa76349ce441a662428e37e25e2a6518
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="destroying-threads"></a>Zničení vláken
 <xref:System.Threading.Thread.Abort%2A> Metoda se používá k zastavení spravované vlákno trvale. Při volání <xref:System.Threading.Thread.Abort%2A>, vyvolá modul common language runtime <xref:System.Threading.ThreadAbortException> ve vláknu cíl, který může zachytit vlákno cíl. Další informace naleznete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.  
@@ -36,7 +25,7 @@ ms.lasthandoff: 12/23/2017
   
  Jakmile vlákno byl přerušen, nelze ji restartovat.  
   
- <xref:System.Threading.Thread.Abort%2A> Metoda nezpůsobí vlákno k přerušení okamžitě, protože cíl vlákno může zachytit <xref:System.Threading.ThreadAbortException> a provést libovolné množství kód `finally` bloku. Můžete volat <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> Pokud potřebujete Počkejte, dokud vlákno skončila. <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>je blokování volání, která nevrátí dokud vlákno ve skutečnosti byla zastavena, provádění nebo vypršení časového limitu volitelné intervalu. Přerušené vlákno může volat <xref:System.Threading.Thread.ResetAbort%2A> metoda nebo provádět bez vazby zpracování v `finally` blokovat, takže pokud nezadáte vypršení časového limitu, není zaručena čekání na konec.  
+ <xref:System.Threading.Thread.Abort%2A> Metoda nezpůsobí vlákno k přerušení okamžitě, protože cíl vlákno může zachytit <xref:System.Threading.ThreadAbortException> a provést libovolné množství kód `finally` bloku. Můžete volat <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> Pokud potřebujete Počkejte, dokud vlákno skončila. <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> je blokování volání, která nevrátí dokud vlákno ve skutečnosti byla zastavena, provádění nebo vypršení časového limitu volitelné intervalu. Přerušené vlákno může volat <xref:System.Threading.Thread.ResetAbort%2A> metoda nebo provádět bez vazby zpracování v `finally` blokovat, takže pokud nezadáte vypršení časového limitu, není zaručena čekání na konec.  
   
  Vláken, které čekají na volání <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> metoda může být přerušeny jiná vlákna, které volají <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>.  
   

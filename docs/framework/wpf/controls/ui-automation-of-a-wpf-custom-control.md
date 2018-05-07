@@ -1,13 +1,6 @@
 ---
-title: "Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF"
-ms.custom: 
+title: Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - custom controls [WPF], improving accessibility
 - UI Automation [WPF], using with custom controls
 ms.assetid: 47b310fc-fbd5-4ce2-a606-22d04c6d4911
-caps.latest.revision: "34"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1a9d17408d6fa03b267c2a22890d2e17c0441389
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fbd19591c260b0ad160339b45fd762e7a87bbc74
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
-[!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)]poskytuje rozhraní jeden, zobecněný této automatizace, které můžou klienti použít k zkontrolujte nebo pracovat uživatelského rozhraní z různých platformy a rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)]Umožňuje (testovací) pro zajištění kvality kódu a usnadnění aplikace, jako jsou třeba čtečky obrazovky sloužící ke zkoumání prvky uživatelského rozhraní a simulovat uživatelské interakce s nimi z jiných kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] pro všechny platformy, najdete v části usnadnění.  
+[!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] poskytuje rozhraní jeden, zobecněný této automatizace, které můžou klienti použít k zkontrolujte nebo pracovat uživatelského rozhraní z různých platformy a rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje (testovací) pro zajištění kvality kódu a usnadnění aplikace, jako jsou třeba čtečky obrazovky sloužící ke zkoumání prvky uživatelského rozhraní a simulovat uživatelské interakce s nimi z jiných kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] pro všechny platformy, najdete v části usnadnění.  
   
  Toto téma popisuje postupy pro implementaci zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek, který spouští v aplikaci WPF. WPF podporuje [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] stromě objekty automatizace partnera, který je paralelní stromu prvky uživatelského rozhraní. Testování kódu a aplikace, které poskytují funkce pro usnadnění přístupu můžete použít sdílené objekty automatizace přímo (pro kódu v procesu) nebo přes rozhraní zobecněný poskytované [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)].  
   
@@ -63,7 +51,7 @@ ms.lasthandoff: 12/22/2017
  Přepsání <xref:System.Windows.UIElement.OnCreateAutomationPeer%2A> metodu pro vaše vlastní ovládací prvek, které se vrátí objekt zprostředkovatele, který musí být přímo nebo nepřímo z <xref:System.Windows.Automation.Peers.AutomationPeer>.  
   
 ### <a name="override-getpattern"></a>Přepsání GetPattern  
- Partnerské uzly automatizace zjednodušit některé aspekty implementace začlenění na straně serveru [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatelů, ale vlastního ovládacího prvku automatizace partnerské uzly musí stále zpracování vzor rozhraní. Jako-grafického subsystému WPF poskytovatelů, partnerské uzly podpora vzorů ovládacích prvků tím, že poskytuje implementace rozhraní <xref:System.Windows.Automation.Provider?displayProperty=nameWithType> obor názvů, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider>. Rozhraní pro vzor řízení se dá implementovat partnerem sám sebe nebo jiný objekt. Implementace druhé strany <xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A> vrátí objekt, který podporuje zadanému vzoru. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)]volání kódu <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> metoda a určuje <xref:System.Windows.Automation.Peers.PatternInterface> hodnota výčtu. Přepsání z <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> by měla vrátit objekt, který implementuje zadanému vzoru. Pokud vlastní ovládací prvek nemá vlastní implementaci vzor, můžete volat základní typ provádění <xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A> načíst jeho implementace nebo hodnota null, pokud vzor není podporovaná pro tento typ ovládacího prvku. Například vlastního ovládacího prvku NumericUpDown lze nastavit na hodnotu v rozsahu, takže jeho [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] by implementovat sdílené <xref:System.Windows.Automation.Provider.IRangeValueProvider> rozhraní. Následující příklad ukazuje způsob druhé strany <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> je metoda potlačena za účelem reagovat na <xref:System.Windows.Automation.Peers.PatternInterface.RangeValue?displayProperty=nameWithType> hodnotu.  
+ Partnerské uzly automatizace zjednodušit některé aspekty implementace začlenění na straně serveru [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatelů, ale vlastního ovládacího prvku automatizace partnerské uzly musí stále zpracování vzor rozhraní. Jako-grafického subsystému WPF poskytovatelů, partnerské uzly podpora vzorů ovládacích prvků tím, že poskytuje implementace rozhraní <xref:System.Windows.Automation.Provider?displayProperty=nameWithType> obor názvů, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider>. Rozhraní pro vzor řízení se dá implementovat partnerem sám sebe nebo jiný objekt. Implementace druhé strany <xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A> vrátí objekt, který podporuje zadanému vzoru. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] volání kódu <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> metoda a určuje <xref:System.Windows.Automation.Peers.PatternInterface> hodnota výčtu. Přepsání z <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> by měla vrátit objekt, který implementuje zadanému vzoru. Pokud vlastní ovládací prvek nemá vlastní implementaci vzor, můžete volat základní typ provádění <xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A> načíst jeho implementace nebo hodnota null, pokud vzor není podporovaná pro tento typ ovládacího prvku. Například vlastního ovládacího prvku NumericUpDown lze nastavit na hodnotu v rozsahu, takže jeho [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] by implementovat sdílené <xref:System.Windows.Automation.Provider.IRangeValueProvider> rozhraní. Následující příklad ukazuje způsob druhé strany <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> je metoda potlačena za účelem reagovat na <xref:System.Windows.Automation.Peers.PatternInterface.RangeValue?displayProperty=nameWithType> hodnotu.  
   
  [!code-csharp[CustomControlNumericUpDown#GetPattern](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#getpattern)]
  [!code-vb[CustomControlNumericUpDown#GetPattern](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#getpattern)]  

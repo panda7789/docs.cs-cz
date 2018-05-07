@@ -1,11 +1,6 @@
 ---
-title: "For...Next – příkaz (Visual Basic)"
+title: For...Next – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Step
 - vb.Next
@@ -28,14 +23,11 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For...Next statements
 - For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
-caps.latest.revision: "64"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8a50f44a167952c735c6ed2830ca87105413401b
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 8c54189499b7d5b52cf93b4a0ae6cc47356bf57e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazy zadaného počtu opakování.  
@@ -103,7 +95,7 @@ Next [ counter ]
   
  Můžete použít a zadat libovolný počet `Exit For` příkazy v `For`...`Next` Smyčky. Při použití uvnitř vnořené `For`...`Next` smyčky, `Exit For` ukončí nejvnitřnější smyčky a předá řízení další vyšší úroveň vnoření.  
   
- `Exit For`Po vyhodnocení nějaká podmínka se často používá (například v `If`... `Then`... `Else` struktura). Můžete chtít použít `Exit For` byly splněny následující podmínky:  
+ `Exit For` Po vyhodnocení nějaká podmínka se často používá (například v `If`... `Then`... `Else` struktura). Můžete chtít použít `Exit For` byly splněny následující podmínky:  
   
 -   Pokračovat v procházení je zbytečné nebo dokonce znemožňují. Chybná hodnota nebo žádost o ukončení může vytvořit tuto podmínku.  
   
@@ -132,7 +124,7 @@ Next [ counter ]
   
  Výchozí hodnota `step` je 1.  
   
-###  <a name="BKMK_Counter"></a>Argument čítače  
+###  <a name="BKMK_Counter"></a> Argument čítače  
  Následující tabulka udává, zda `counter` definuje novou místní proměnné, která je vymezen na celou `For…Next` smyčky. Toto rozhodnutí závisí na tom, zda `datatype` je k dispozici a zda `counter` je již definován.  
   
 |Je `datatype` přítomen?|Je `counter` již definována?|Výsledek (jestli `counter` definuje novou místní proměnné, která je vymezen na celou `For...Next` smyčky)|  

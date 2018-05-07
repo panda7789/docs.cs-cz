@@ -1,13 +1,7 @@
 ---
-title: "Provádění operací formátování"
-ms.custom: 
+title: Provádění operací formátování
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - date formatting [.NET Framework]
 - formatting [.NET Framework], how-to topics
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - formatting strings [.NET Framework], how-to topics
 - strings [.NET Framework], formatting
 ms.assetid: 36e7e096-4e6c-4cf2-9ab6-68073026ea0e
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a78c1caac318a19028472a2e4f6e8964f99abfba
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d789101231a37bb9a2b6b3c7830f6b679fd364d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="performing-formatting-operations"></a>Provádění operací formátování
 Následující témata obsahují podrobné pokyny k provedení určitých operací formátování.  

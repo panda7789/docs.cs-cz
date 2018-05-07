@@ -1,23 +1,15 @@
 ---
-title: "Seznam atributů (Visual Basic)"
+title: Seznam atributů (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - attribute list
 - attributes [Visual Basic], applying
 ms.assetid: 5880073a-68a4-4b6b-8a07-ace32959a4e2
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: adfb980380bb787280715ca0185950657e174eb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 35d031722a5eddd6adce5e32df62b86c500d305b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attribute-list-visual-basic"></a>Seznam atributů (Visual Basic)
 Určuje atributy, které se použijí na deklarované programovací element. Více atributů jsou oddělené čárkami. Toto je syntaxe pro jeden atribut.  
@@ -63,10 +55,10 @@ Určuje atributy, které se použijí na deklarované programovací element. Ví
   
  [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/attribute-list_1.vb)]  
   
- <xref:System.Runtime.InteropServices.DllImportAttribute>Označuje, že s atributy postup představuje vstupní bod v nespravované dynamická knihovna (DLL). Atribut poskytuje název DLL jako poziční argument a dalších informací jako proměnné inicializátory.  
+ <xref:System.Runtime.InteropServices.DllImportAttribute> Označuje, že s atributy postup představuje vstupní bod v nespravované dynamická knihovna (DLL). Atribut poskytuje název DLL jako poziční argument a dalších informací jako proměnné inicializátory.  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavení](../../../visual-basic/language-reference/modifiers/assembly.md)  
+ [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)  
  [Modul \<– klíčové slovo >](../../../visual-basic/language-reference/modifiers/module-keyword.md)  
  [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)  
- [Postupy: přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
+ [Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)

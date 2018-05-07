@@ -1,25 +1,16 @@
 ---
-title: "Analýza textových souborů pomocí objektu TextFieldParser (Visual Basic)"
-ms.custom: 
+title: Analýza textových souborů pomocí objektu TextFieldParser (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - TextFieldParser object, using
 - I/O [Visual Basic], parsing files
 - files [Visual Basic], parsing
 ms.assetid: fc31d6e6-af0c-403f-8a00-d556b2c57567
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 544b65a5197f6a1b68a54f12dbdc0c591bc512e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 520121ba549532c5ce73810347025949eee5a077
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="parsing-text-files-with-the-textfieldparser-object-visual-basic"></a>Analýza textových souborů pomocí objektu TextFieldParser (Visual Basic)
 `TextFieldParser` Objektu umožňuje analyzovat a zpracovat velmi velké soubory, které mají strukturu sloupce textu, například soubory protokolu nebo informace o starší databázi. Analýza textový soubor s `TextFieldParser` je podobná procházení textového souboru, metoda extrahovat textových polí je podobná metodám určený k tokenizaci řetězce s oddělovači.  

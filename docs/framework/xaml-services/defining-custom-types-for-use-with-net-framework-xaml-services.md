@@ -1,28 +1,14 @@
 ---
-title: "Definování vlastních typů pro práci s technologií .NET Framework XAML Services"
-ms.custom: 
+title: Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - defining custom types [XAML Services]
 ms.assetid: c2667cbd-2f46-4a7f-9dfc-53696e35e8e4
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c7cce479c7c7a5f6c7112f08f1e15f3bc7e4d366
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9edc7baa1a540a71997cf5b1ed010ad5c7960d17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, které nemají závislost na konkrétní architektury, existují některé osvědčené postupy pro jazyk XAML můžete provést. Pokud budete postupovat podle těchto postupech, můžete zjistit charakteristiky XAML vašeho typu a dejte mu odpovídající reprezentace v datový proud uzlu XAML pomocí systému XAML typ rozhraní .NET Framework XAML Services a jeho XAML čtení a zápis XAML. Toto téma popisuje osvědčené postupy pro definice typů, člen definice a CLR zapisujících typů nebo členy.  
@@ -83,7 +69,7 @@ Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, kt
 #### <a name="the-getpropertyname-accessor"></a>GetPropertyName přístupového objektu  
  Podpis pro `Get` *PropertyName* přistupujícího objektu musí být:  
   
- `public static object Get`*PropertyName* `(object` `target`  `)`  
+ `public static object Get` *PropertyName* `(object`  `target` `)`  
   
 -   `target` Objekt lze zadat jako typu konkrétnější v implementaci. Můžete použít k určení rozsahu využití vaší připojitelné člena; použití mimo zamýšlený rozsah vyvolá výjimku neplatné obsazení výjimky, které jsou pak prezentované podle chybu analýzy XAML. Název parametru `target` není povinné, ale je s názvem `target` podle konvence většina implementací.  
   
@@ -94,7 +80,7 @@ Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, kt
 #### <a name="the-setpropertyname-accessor"></a>SetPropertyName přístupového objektu  
  Podpis pro sadu*PropertyName* přistupujícího objektu musí být:  
   
- `public static void Set`*PropertyName* `(object` `target` `, object` `value`    `)`  
+ `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
   
 -   `target` Objekt lze zadat jako typu konkrétnější v implementaci pomocí stejné logiky a důsledky, jak je popsáno v předchozí části.  
   
@@ -103,7 +89,7 @@ Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, kt
  Mějte na paměti, že hodnota pro tuto metodu je vstupní pocházejících z použití XAML, obvykle v podobě atributu. Z formuláře atributu musí být hodnota převaděč podpora textových syntaxi a atributu u `Get` *PropertyName* přistupujícího objektu.  
   
 ### <a name="attachable-member-stores"></a>Připojitelné člen úložiště  
- Metody přístupových objektů nejsou obvykle dostatek prostředků k umístěte hodnoty připojitelné členů do grafu objektu, nebo k načtení hodnoty z grafu objektů a je správně serializovat. Tato funkce `target` objekty v předchozí signatury přistupujícího objektu musí být schopný ukládání hodnot. Mechanismus úložiště musí být v souladu se zásadou připojitelné člen, který je člen připojitelné k cílům, kde připojitelné člen není v seznamu členů. Rozhraní .NET framework XAML Services poskytuje implementaci technika pro připojitelné člen ukládá prostřednictvím rozhraní API <xref:System.Xaml.IAttachedPropertyStore> a <xref:System.Xaml.AttachablePropertyServices>. <xref:System.Xaml.IAttachedPropertyStore>XAML zapisovače používané ke zjišťování implementace úložiště a by měla být implementována na typ, který je `target` přistupujících objektů. Statické <xref:System.Xaml.AttachablePropertyServices> rozhraní API se používají v textu přístupové objekty a připojitelné odkazujte podle jeho <xref:System.Xaml.AttachableMemberIdentifier>.  
+ Metody přístupových objektů nejsou obvykle dostatek prostředků k umístěte hodnoty připojitelné členů do grafu objektu, nebo k načtení hodnoty z grafu objektů a je správně serializovat. Tato funkce `target` objekty v předchozí signatury přistupujícího objektu musí být schopný ukládání hodnot. Mechanismus úložiště musí být v souladu se zásadou připojitelné člen, který je člen připojitelné k cílům, kde připojitelné člen není v seznamu členů. Rozhraní .NET framework XAML Services poskytuje implementaci technika pro připojitelné člen ukládá prostřednictvím rozhraní API <xref:System.Xaml.IAttachedPropertyStore> a <xref:System.Xaml.AttachablePropertyServices>. <xref:System.Xaml.IAttachedPropertyStore> XAML zapisovače používané ke zjišťování implementace úložiště a by měla být implementována na typ, který je `target` přistupujících objektů. Statické <xref:System.Xaml.AttachablePropertyServices> rozhraní API se používají v textu přístupové objekty a připojitelné odkazujte podle jeho <xref:System.Xaml.AttachableMemberIdentifier>.  
   
 ## <a name="xaml-related-clr-attributes"></a>Atributy CLR související s XAML  
  Správně zapisujících vaší typy, členů a sestavení je důležité, aby sestavy informace systému typ jazyka XAML pro rozhraní .NET Framework XAML Services. To je důležité, pokud máte v úmyslu vaší typy pro použití s XAML systémy, které jsou přímo založené na rozhraní .NET Framework XAML Services XAML čtení a zápis XAML, nebo pokud můžete definovat, nebo pomocí rozhraní využívá XAML, které je založena na těchto XAML čtení a zápis XAML.  

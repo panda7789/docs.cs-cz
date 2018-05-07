@@ -1,39 +1,28 @@
 ---
 title: CountdownEvent
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 144bcde6c4c8fb227773fe613da8445f100ce66d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f98e2388cb31e62d974c8b0bae0bdf833f5963a5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="countdownevent"></a>CountdownEvent
-<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>je synchronizace primitivní, který odblokuje jeho vláken čekání po jejím signalizovala stanovený počet. <xref:System.Threading.CountdownEvent>je určen pro scénáře, ve kterých by jinak musíte použít <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim> a ručně snížení proměnné před signalizace události. Například v případě rozvětvení/spojení právě vytvořením <xref:System.Threading.CountdownEvent> má signál počet 5, a poté spuštění pět pracovních položek ve vlákně fondu a mít každý pracovní položka volání <xref:System.Threading.CountdownEvent.Signal%2A> po dokončení operace. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> snižuje počet signál o 1. Na hlavní vlákno volání <xref:System.Threading.CountdownEvent.Wait%2A> se zablokuje, dokud se počet signál je nula.  
+<xref:System.Threading.CountdownEvent?displayProperty=nameWithType> je synchronizace primitivní, který odblokuje jeho vláken čekání po jejím signalizovala stanovený počet. <xref:System.Threading.CountdownEvent> je určen pro scénáře, ve kterých by jinak musíte použít <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim> a ručně snížení proměnné před signalizace události. Například v případě rozvětvení/spojení právě vytvořením <xref:System.Threading.CountdownEvent> má signál počet 5, a poté spuštění pět pracovních položek ve vlákně fondu a mít každý pracovní položka volání <xref:System.Threading.CountdownEvent.Signal%2A> po dokončení operace. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> snižuje počet signál o 1. Na hlavní vlákno volání <xref:System.Threading.CountdownEvent.Wait%2A> se zablokuje, dokud se počet signál je nula.  
   
 > [!NOTE]
 >  Pro kód, který nemá k interakci se starší verze rozhraní .NET Framework synchronizace rozhraní API, zvažte použití <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> objekty nebo <xref:System.Threading.Tasks.Parallel.Invoke%2A> metoda bylo ještě jednodušší způsob vyjádření paralelismus rozvětvení spojení.  
   
- <xref:System.Threading.CountdownEvent>má tyto funkce:  
+ <xref:System.Threading.CountdownEvent> má tyto funkce:  
   
 -   Zrušit lze pomocí tokenů zrušení operace čekání.  
   

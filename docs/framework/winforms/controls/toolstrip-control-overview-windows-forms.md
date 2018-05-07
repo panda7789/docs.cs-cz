@@ -1,14 +1,6 @@
 ---
-title: "ToolStrip – přehled ovládacího prvku (Windows Forms)"
-ms.custom: 
+title: ToolStrip – přehled ovládacího prvku (Windows Forms)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Toolstrip
 helpviewer_keywords:
@@ -17,20 +9,14 @@ helpviewer_keywords:
 - toolbars [Windows Forms]
 - what's new [Windows Forms], toolbars
 ms.assetid: 81d067ed-297c-4dad-90de-1bcac15336ec
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 45dab820072b3eb0bcc448ce32251e3ff5a3e622
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3927f180e738541f2f2f8af6d03d281f6a601167
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip – přehled ovládacího prvku (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládací prvek a jeho přidružené třídy zadejte společná architektura pro kombinování prvky uživatelského rozhraní na panely nástrojů, stavové řádky a nabídky. <xref:System.Windows.Forms.ToolStrip>ovládací prvky nabízí bohaté prostředí návrhu, která zahrnuje aktivace na místě a úpravy, vlastní rozložení a rafting, což je možnost panelů nástrojů sdílet vodorovné nebo svislé místa.  
+Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládací prvek a jeho přidružené třídy zadejte společná architektura pro kombinování prvky uživatelského rozhraní na panely nástrojů, stavové řádky a nabídky. <xref:System.Windows.Forms.ToolStrip> ovládací prvky nabízí bohaté prostředí návrhu, která zahrnuje aktivace na místě a úpravy, vlastní rozložení a rafting, což je možnost panelů nástrojů sdílet vodorovné nebo svislé místa.  
   
  I když <xref:System.Windows.Forms.ToolStrip> nahrazuje a přidá funkce pro ovládací prvek v předchozích verzích <xref:System.Windows.Forms.ToolBar> se zachovává kvůli zpětné kompatibilitě a budoucí použití, v případě potřeby.  
   

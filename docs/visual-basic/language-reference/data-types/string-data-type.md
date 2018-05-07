@@ -1,11 +1,6 @@
 ---
-title: "String – datový typ (Visual Basic)"
+title: String – datový typ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.String
 helpviewer_keywords:
@@ -23,14 +18,11 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 90f126a5cca36969617446e81a8d13434e39df75
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 894638bbe50dad2cae1f74a2f7b7fe006f029d1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
 Obsahuje pořadí, bodů nepodepsaný kód (2bajtová) 16bitové rozsahu v rozmezí 0 až 65535. Každý *code bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec může obsahovat od 0 do přibližně dvě miliardy (2 ^ 31) znaky znakové sady Unicode.  
@@ -81,15 +73,15 @@ S = Microsoft.VisualBasic.Left(S, 4)
   
 -   **Spolupráce aspekty.** Pokud jsou během propojení s součásti, které nejsou určeny pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že řetězec znaků mají odlišné datové šířka (8 bitů) v jiných prostředích. Argument řetězce znaků 8bitové předáte pro tyto součásti, deklarujte ji jako `Byte()`, pole `Byte` elementy, místo `String` v váš nový kód jazyka Visual Basic.  
   
--   **Znaky typu.** Připojování znak typu identifikátoru `$` na všechny identifikátor vynutí ho k `String` datového typu. `String`nemá žádné – znak typu literálu. Ale kompilátor zpracovává literály uzavřena v uvozovkách (`" "`) jako `String`.  
+-   **Znaky typu.** Připojování znak typu identifikátoru `$` na všechny identifikátor vynutí ho k `String` datového typu. `String` nemá žádné – znak typu literálu. Ale kompilátor zpracovává literály uzavřena v uvozovkách (`" "`) jako `String`.  
   
 -   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.String?displayProperty=nameWithType>  
  [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- [Char – datový typ](../../../visual-basic/language-reference/data-types/char-data-type.md)  
+ [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn konverze](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Postupy: volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

@@ -1,13 +1,7 @@
 ---
 title: Složené formátování
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-caps.latest.revision: 36
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 473669b4aaa0782fec32fb0e2d89875c4ab7a838
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 4922470633f3dec8e2e2f898bdf544f5aa4deded
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="composite-formatting"></a>Složené formátování
 Složené formátování funkce .NET vezme jako vstupní seznam objektů a složený formátovací řetězec. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
@@ -123,19 +112,19 @@ Složené formátování funkce .NET vezme jako vstupní seznam objektů a slož
  [!code-vb[Formatting.Composite#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Escaping1.vb#2)]  
   
 ### <a name="processing-order"></a>Pořadí zpracování  
- Pokud volání složené formátování metoda obsahuje <xref:System.IFormatProvider> argument jehož hodnota není `null`, volání modulu runtime jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metodu pro žádosti o <xref:System.ICustomFormatter> implementace. Pokud je metoda moct vrátit <xref:System.ICustomFormatter> implementace, se uloží do mezipaměti pro pozdější použití.  
+ Pokud volání složené formátování metoda obsahuje <xref:System.IFormatProvider> argument jehož hodnota není `null`, volání modulu runtime jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metodu pro žádosti o <xref:System.ICustomFormatter> implementace. Pokud je metoda moct vrátit <xref:System.ICustomFormatter> implementace, se uloží do mezipaměti po dobu trvání volání složené formátování metoda.
   
- Jednotlivé hodnoty v seznamu parametrů, které odpovídají položce formátu, jsou převedeny na řetězec podle následujícího postupu. Pokud je splněna některá z podmínek v prvních třech krocích, je v tomto kroku vrácena řetězcová reprezentace hodnoty a následné kroky již nejsou provedeny.  
+ Každá hodnota v seznamu parametrů, která odpovídá položce formátu je převedeno na řetězec následujícím způsobem:  
   
-1.  Pokud je hodnota, která má být ve formátu `null`, prázdný řetězec ("") je vrácen.  
+1.  Pokud je hodnota, která má být ve formátu `null`, prázdný řetězec <xref:System.String.Empty?displayProperty=nameWithType> je vrácen.  
   
-2.  Pokud <xref:System.ICustomFormatter> implementace je k dispozici, volání modulu runtime jeho <xref:System.ICustomFormatter.Format%2A> metoda. Předává metodu položce formátu *formatString* hodnotu, pokud je přítomen, nebo `null` Pokud není, spolu s <xref:System.IFormatProvider> implementace.  
+2.  Pokud <xref:System.ICustomFormatter> implementace je k dispozici, volání modulu runtime jeho <xref:System.ICustomFormatter.Format%2A> metoda. Předává metodu položce formátu *formatString* hodnotu, pokud je přítomen, nebo `null` Pokud není, spolu s <xref:System.IFormatProvider> implementace. Pokud volání <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> metoda vrátí `null`, provádění pokračuje k dalšímu kroku; jinak výsledek <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> volání je vrácena.
   
 3.  Pokud hodnota implementuje <xref:System.IFormattable> rozhraní, rozhraní <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> metoda je volána. Metoda je předána *formatString* hodnotu, pokud je přítomen v položce formátu nebo `null` Pokud není. <xref:System.IFormatProvider> Argument je stanoven následujícím způsobem:  
   
-    -   Pro číselnou hodnotu, pokud složeného formátování metoda s jinou hodnotou null <xref:System.IFormatProvider> argument je volána, požadavky modulu runtime <xref:System.Globalization.NumberFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud složené formátování metoda nemá <xref:System.IFormatProvider> parametr <xref:System.Globalization.NumberFormatInfo> objektu pro aktuální jazykovou verzi vlákna se používá.  
+    -   Pro číselnou hodnotu, pokud složeného formátování metoda s jinou hodnotou null <xref:System.IFormatProvider> argument je volána, požadavky modulu runtime <xref:System.Globalization.NumberFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud nemá složené formátování metoda <xref:System.IFormatProvider> parametr <xref:System.Globalization.NumberFormatInfo> objektu pro aktuální jazykovou verzi vlákna se používá.  
   
-    -   Pro hodnoty data a času, pokud složeného formátování metoda s jinou hodnotou null <xref:System.IFormatProvider> argument je volána, požadavky modulu runtime <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud složené formátování metoda nemá <xref:System.IFormatProvider> parametr <xref:System.Globalization.DateTimeFormatInfo> objektu pro aktuální jazykovou verzi vlákna se používá.  
+    -   Pro hodnoty data a času, pokud složeného formátování metoda s jinou hodnotou null <xref:System.IFormatProvider> argument je volána, požadavky modulu runtime <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud nemá složené formátování metoda <xref:System.IFormatProvider> parametr <xref:System.Globalization.DateTimeFormatInfo> objektu pro aktuální jazykovou verzi vlákna se používá.  
   
     -   Pro jiné typy objektů, pokud složené formátování metoda je volána s <xref:System.IFormatProvider> argument, jeho hodnota je předána přímo na <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace. V opačném `null` je předán <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
   

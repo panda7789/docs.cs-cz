@@ -1,13 +1,7 @@
 ---
-title: "Izolované úložiště"
-ms.custom: 
+title: Izolované úložiště
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data storage using isolated storage
 - stores
@@ -24,21 +18,16 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-caps.latest.revision: "32"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0048c1946e5df59340bed211c5dbb81075047260
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 7ab12ac28728535c3bc984d6b37d82f5bf371ba2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
-<a name="top"></a>Pro [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] aplikace, izolované úložiště je mechanismus úložiště dat, který poskytuje izolace a zabezpečení tak, že definujete standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.  
+<a name="top"></a> Pro [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] aplikace, izolované úložiště je mechanismus úložiště dat, který poskytuje izolace a zabezpečení tak, že definujete standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.  
   
 > [!IMPORTANT]
 >  Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Místo toho použít třídy data aplikací v `Windows.Storage` obory názvů, které jsou součástí [!INCLUDE[wrt](../../../includes/wrt-md.md)] rozhraní API pro uložení místního data a soubory. Další informace najdete v tématu [data aplikací](/previous-versions/windows/apps/hh464917(v=win.10)) ve službě Windows Dev Center.  
@@ -131,9 +120,9 @@ ms.lasthandoff: 01/09/2018
   
 -   <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, je odvozena z <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType> a nabízí základní správu uložené sestavení souborů a aplikací. Instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile> třída představuje jedno úložiště umístěné v systému souborů.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>odvozená z <xref:System.IO.FileStream?displayProperty=nameWithType> a poskytuje přístup k souborům v úložišti.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> odvozená z <xref:System.IO.FileStream?displayProperty=nameWithType> a poskytuje přístup k souborům v úložišti.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageScope>je výčet, který umožňuje vytvořit a vybrat úložiště s příslušným typem izolace.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageScope> je výčet, který umožňuje vytvořit a vybrat úložiště s příslušným typem izolace.  
   
  Třídy izolovaného úložiště umožňují vytvořit, provádět výčty a odstranit izolované úložiště. Jsou dostupné prostřednictvím metody pro provádění těchto úkolů <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objektu. Některé operace vyžadují, abyste měli <xref:System.Security.Permissions.IsolatedStorageFilePermission> oprávnění představující právo spravovat izolované úložiště, je také potřeba mít operační systém oprávnění pro přístup k souboru nebo adresáře.  
   
@@ -177,7 +166,7 @@ ms.lasthandoff: 01/09/2018
 |[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob čtení struktury adresářů a souborů v izolovaném úložišti.|  
 |[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|Poskytuje příklad zápisu řetězce do souboru izolovaného úložiště a jeho zpětné čtení.|  
 |[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob odstraňování souborů a adresářů izolovaného úložiště.|  
-|[Souborová služba a datový proud I-O](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|  
+|[Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|  
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Odkaz  

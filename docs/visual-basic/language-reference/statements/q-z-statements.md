@@ -1,21 +1,12 @@
 ---
 title: Q-Z – příkazy
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 ms.assetid: 32a9e547-c1b7-40f2-8118-7eef1d19649e
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e61bf660feda2360b0eb43913bd65329e6944549
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ddaf49178d2eae4ccc6a67873cc131d43e2cd619
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="q-z-statements"></a>Q-Z – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  

@@ -1,26 +1,17 @@
 ---
 title: Jazyková nezávislost a jazykově nezávislé komponenty
 description: 'Zjistěte, jak můžete vyvíjet v jednom z mnoha jazyků podporovaných v rozhraní .NET, například C#, C + +/ CLI, F #, IronPython, jazyka Visual Basic, Visual COBOL a prostředí PowerShell.'
-keywords: Rozhraní .NET, .NET core
-author: dotnet-bot
-ms.author: dotnetcontent
 ms.date: 07/22/2016
-ms.topic: article
 dev_langs:
 - csharp
 - vb
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2745bc67c926f50c28f5fdfb122ee94a85f020ec
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 2e54f49f111c545a329a64ede400dc1354020f43
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 

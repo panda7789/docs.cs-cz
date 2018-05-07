@@ -1,23 +1,16 @@
 ---
-title: "Standardní rozhraní .NET"
-description: "Další informace o .NET Standard, její verze a implementace rozhraní .NET, které ji podporují."
-keywords: "Rozhraní .NET standard, PCL, rozhraní .NET"
+title: Standardní rozhraní .NET
+description: Další informace o .NET Standard, její verze a implementace rozhraní .NET, které ji podporují.
 author: mairaw
 ms.author: mairaw
 ms.date: 08/13/2017
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: f22405f4547edcc5034ed221fa144512a237b050
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
+ms.openlocfilehash: 832efe566aaab1e0add687cdb474bacdf5b5d829
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-standard"></a>Standardní rozhraní .NET
 

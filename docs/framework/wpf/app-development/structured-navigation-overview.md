@@ -1,31 +1,17 @@
 ---
-title: "Přehled strukturované navigace"
-ms.custom: 
+title: Přehled strukturované navigace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f9d20fb5b16fbf44bdf8431ae32afee105af7676
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9be4e753a229d97f2caf1d74b3b9b8239b99c694
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který mohou být hostovány systémem [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá ze stránek, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a nejsnadnější v hypertextové odkazy. Struktura stránek a způsoby, ve kterém se lze procházet, podle definice hypertextové odkazy, se označuje jako topologii navigace. Takové topologii vyhovuje celou řadu typů aplikací, zejména ty, které procházení dokumentů. Pro tyto aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli mít žádné konkrétní informace o dalších.  
@@ -160,7 +146,7 @@ Obsah, který mohou být hostovány systémem [!INCLUDE[TLA#tla_xbap](../../../.
 [!code-csharp[StructuredNavigationSample#ReturnCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#returncodebehind2)]
 [!code-vb[StructuredNavigationSample#ReturnCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#returncodebehind2)]  
   
- V tomto příkladu, pokud uživatel stiskne tlačítko Zrušit, hodnota `null` je vrácen do stránce volání. Pokud místo toho stisknutí tlačítka OK, je vrácena hodnota řetězce zadaná uživatelem. <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A>je `protected``virtual` metoda, kterou je možné volat vrátit na stránku volání vaše data. Vaše data musí být zabalené v instanci Obecné <xref:System.Windows.Navigation.ReturnEventArgs%601> hodnota typu, jehož typ argumentu určuje typ, který <xref:System.Windows.Navigation.ReturnEventArgs%601.Result%2A> vrátí. Tímto způsobem po deklarování <xref:System.Windows.Navigation.PageFunction%601> s argumentem konkrétního typu jsou oznamující, že <xref:System.Windows.Navigation.PageFunction%601> vrátí instanci typu, který je zadán argument typu. V tomto příkladu argument typu a v důsledku toho návratová hodnota je typu <xref:System.String>.  
+ V tomto příkladu, pokud uživatel stiskne tlačítko Zrušit, hodnota `null` je vrácen do stránce volání. Pokud místo toho stisknutí tlačítka OK, je vrácena hodnota řetězce zadaná uživatelem. <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> je `protected``virtual` metoda, kterou je možné volat vrátit na stránku volání vaše data. Vaše data musí být zabalené v instanci Obecné <xref:System.Windows.Navigation.ReturnEventArgs%601> hodnota typu, jehož typ argumentu určuje typ, který <xref:System.Windows.Navigation.ReturnEventArgs%601.Result%2A> vrátí. Tímto způsobem po deklarování <xref:System.Windows.Navigation.PageFunction%601> s argumentem konkrétního typu jsou oznamující, že <xref:System.Windows.Navigation.PageFunction%601> vrátí instanci typu, který je zadán argument typu. V tomto příkladu argument typu a v důsledku toho návratová hodnota je typu <xref:System.String>.  
   
  Když <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> nazývá volání potřebám stránky nějakým způsobem pro příjem vrácenou hodnotu <xref:System.Windows.Navigation.PageFunction%601>. Z tohoto důvodu <xref:System.Windows.Navigation.PageFunction%601> implementuje <xref:System.Windows.Navigation.PageFunction%601.Return> událost pro volání stránky pro zpracování. Když <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> je volána, <xref:System.Windows.Navigation.PageFunction%601.Return> se vyvolá, takže volání stránky můžete zaregistrovat s <xref:System.Windows.Navigation.PageFunction%601.Return> pro příjem oznámení.  
   

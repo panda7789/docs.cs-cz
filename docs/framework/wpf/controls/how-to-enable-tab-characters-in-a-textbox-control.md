@@ -1,27 +1,15 @@
 ---
-title: "Postupy: Povolení znaků tabulátoru v ovládacím prvku TextBox"
-ms.custom: 
+title: 'Postupy: Povolení znaků tabulátoru v ovládacím prvku TextBox'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - TextBox control [WPF], enabling tab characters
 - tab characters [WPF], enabling
 ms.assetid: 14b1b064-61f7-4958-be63-88d85b868d03
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 35bcd5b3f53e8da72e8bd598641f1da87d424a2d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9203a09408b4f88f3fbe8c0d87e365c1d05a1462
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-tab-characters-in-a-textbox-control"></a>Postupy: Povolení znaků tabulátoru v ovládacím prvku TextBox
 Tento příklad ukazuje, jak povolit přijetí karta znaků jako normální vstup v <xref:System.Windows.Controls.TextBox> ovládacího prvku.  

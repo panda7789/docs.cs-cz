@@ -1,31 +1,20 @@
 ---
 title: Připojené a odpojené podřízené úlohy
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, child tasks
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
-caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 298ccdc4628c840874d10832da29c10d6d496655
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 53f31402e78a15289bb996c63e1e8e3cd98e6aac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attached-and-detached-child-tasks"></a>Připojené a odpojené podřízené úlohy
 A *podřízené úlohy* (nebo *vnořené úlohy*) je <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> instance, který je vytvořen v jiné úlohy, která se označuje jako delegát uživatele *nadřazené úlohy*. Podřízené úlohy můžete odpojit nebo připojen. A *odpojené podřízené úlohy* je úkol, který provádí nezávisle na jeho nadřazený objekt. *Podřízené úlohy připojený* vnořené úloha, která je vytvořena s <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost, jehož nadřazeným prvkem není explicitně nebo ve výchozím nastavení zakazují ho připojovaný. Úkol může vytvořit libovolný počet připojené a odpojené podřízené úlohy, omezena pouze systémové prostředky.  

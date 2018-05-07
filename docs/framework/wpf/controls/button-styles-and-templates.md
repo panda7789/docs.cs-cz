@@ -1,14 +1,6 @@
 ---
-title: "Styly a šablony tlačítek"
-ms.custom: 
+title: Styly a šablony tlačítek
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - states [WPF], Button
 - parts [WPF], Button
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - templates [WPF], Button
 - ControlTemplate [WPF], Button
 ms.assetid: e223c759-f8c4-4717-acfb-b1e40bdf5f3b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d783b3141463ca2c74ddd649848ea49e154415b6
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 982a1497748883d55938f975164adb44822216cd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="button-styles-and-templates"></a>Styly a šablony tlačítek
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Button> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhledu ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
@@ -38,7 +24,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Button> o
 ## <a name="button-states"></a>Tlačítko stavy  
  Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.Button> ovládacího prvku.  
   
-|Název VisualState|VisualStateGroup Name|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Ve výchozím stavu.|  
 |Myš nad|CommonStates|Ukazatel myši je umístěn nad ovládacího prvku.|  
