@@ -2,16 +2,12 @@
 title: 'Začínáme s Azure Table storage pomocí F #'
 description: Ukládejte si strukturovaná data v cloudu pomocí Azure Table storage nebo Azure Cosmos DB.
 author: sylvanc
-ms.author: phcart
 ms.date: 03/26/2018
-ms.topic: conceptual
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 50721ca44bbae5c52984b08a30bc87507fbf063d
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ac81bc88db1436aa4d5f576da61a90839df04b99
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Cosmos DB tabulky rozhraní API služby Azure pomocí F # # 
 

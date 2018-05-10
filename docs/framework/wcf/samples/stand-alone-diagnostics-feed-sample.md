@@ -2,16 +2,16 @@
 title: Ukázka samostatného diagnostického informačního kanálu
 ms.date: 03/30/2017
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-ms.openlocfilehash: 1edd1c2184dde368fbd16299a836f1811dd24ba6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 730cf011208ea1b57929fff4a1953fd3a935335c
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
 Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace Windows Communication Foundation (WCF). Je základní program "Hello World", který zobrazuje základní informace o objektu modelu a jak nastavit ve službě Windows Communication Foundation (WCF).  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modely jako operace služby, které vracejí speciální datového typu, informační kanály syndikace <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> může serializovat informačního kanálu do formátů, jak technologie RSS 2.0 a Atom 1.0. Následující vzorový kód ukazuje kontrakt použít.  
+ WCF modely jako operace služby, které vracejí speciální datového typu, informační kanály syndikace <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> může serializovat informačního kanálu do formátů, jak technologie RSS 2.0 a Atom 1.0. Následující vzorový kód ukazuje kontrakt použít.  
   
 ```  
 [ServiceContract(Namespace = "")]  
@@ -31,9 +31,9 @@ Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo 
     }  
 ```  
   
- `GetProcesses` Je opatřen poznámkou operaci <xref:System.ServiceModel.Web.WebGetAttribute> atribut, který umožňuje určit jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] odešle zprávu žádosti HTTP GET na služby operations a zadejte formát zprávy odeslané.  
+ `GetProcesses` Je opatřen poznámkou operaci <xref:System.ServiceModel.Web.WebGetAttribute> atribut, který vám umožňuje řídit, jak WCF odešle zprávu, HTTP GET požadavky služby operations a určit formát zprávy odeslané.  
   
- Jako žádné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, informační kanály syndikace může být sám sebou hostované ve všech spravovaných aplikací. Syndikace služby vyžadují konkrétní vazbu ( <xref:System.ServiceModel.WebHttpBinding>) a chování konkrétní koncový bod ( <xref:System.ServiceModel.Description.WebHttpBehavior>) fungovat správně. Nové <xref:System.ServiceModel.Web.WebServiceHost> třída poskytuje pohodlné rozhraní API pro vytváření těchto koncových bodů bez konkrétní konfigurace.  
+ Stejně jako služby WCF informační kanály syndikace může být sám sebou hostované ve všech spravovaných aplikací. Syndikace služby vyžadují konkrétní vazbu ( <xref:System.ServiceModel.WebHttpBinding>) a chování konkrétní koncový bod ( <xref:System.ServiceModel.Description.WebHttpBehavior>) fungovat správně. Nové <xref:System.ServiceModel.Web.WebServiceHost> třída poskytuje pohodlné rozhraní API pro vytváření těchto koncových bodů bez konkrétní konfigurace.  
   
 ```  
 WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http://localhost:8000/diagnostics"));  

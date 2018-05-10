@@ -2,19 +2,19 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: a53fee8bfed9f5a0f5773c9dfcfbaab5f173ddad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3b06cc61714b3fdc63086d2b79b087540bece698
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
-Windows Communication Foundation (WCF) zpřístupní dat kontroly služby za běhu prostřednictvím [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele Windows Management Instrumentation (WMI).  
+Windows Communication Foundation (WCF) zpřístupní dat kontroly služby za běhu prostřednictvím poskytovatele WCF Windows Management Instrumentation (WMI).  
   
 ## <a name="enabling-wmi"></a>Povolení služby WMI  
  Služba WMI je implementace Web-Based Enterprise Management (WBEM) standardní společnosti Microsoft. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM je oborový standard pro jak aplikace vystavit WMI pro externí nástroje pro správu.  
   
- Zprostředkovatel rozhraní WMI je součást, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Obsahuje sadu objektů rozhraní WMI, které mají dvojice atribut hodnota. Dvojice může mít několik jednoduchých typů. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
+ Zprostředkovatel rozhraní WMI je součást, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Obsahuje sadu objektů rozhraní WMI, které mají dvojice atribut hodnota. Dvojice může mít několik jednoduchých typů. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. WCF zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
   
  Předdefinované zprostředkovatele rozhraní WMI je možné aktivovat v konfiguračním souboru aplikace. To se provádí prostřednictvím `wmiProviderEnabled` atribut [ \<diagnostics >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<system.serviceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, jak znázorňuje následující ukázka konfigurace.  
   
@@ -38,18 +38,18 @@ Windows Communication Foundation (WCF) zpřístupní dat kontroly služby za bě
   
  Je třeba si uvědomit, že pokud žádné protokolování zpráv trasování – moduly naslouchání pro protokolování zpráv nebo Ne `System.ServiceModel` trasování – moduly naslouchání pro trasování jsou zadané v konfiguračním souboru, změny jsou přijata žádná platit, i když přijímat změny jsou rozhraní WMI. Další informace o správné nastavení příslušných naslouchací procesy najdete v tématu [konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) a [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Úroveň trasování ze všech ostatních zdrojů trasování zadáno v konfiguraci je platná, když se aplikace spustí a nelze je změnit.  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zpřístupní `GetOperationCounterInstanceName` metoda pro skriptování. Tato metoda vrátí název instance čítače výkonu, pokud jste zadali s názvem operaci. Neověřuje však váš vstup. Proto pokud zadáte název nesprávný operace, je vrácen název nesprávné čítače.  
+ Zpřístupní WCF `GetOperationCounterInstanceName` metoda pro skriptování. Tato metoda vrátí název instance čítače výkonu, pokud jste zadali s názvem operaci. Neověřuje však váš vstup. Proto pokud zadáte název nesprávný operace, je vrácen název nesprávné čítače.  
   
- `OutgoingChannel` Vlastnost `Service` instance nepočítá kanály otevřít službou se připojit k jiné službě, pokud [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] klienta do cílové služby není vytvořena v rámci `Service` metoda.  
+ `OutgoingChannel` Vlastnost `Service` instance nepočítá kanály otevřít službou se připojit k jiné službě, pokud klienta WCF na cílové služby není vytvořena v rámci `Service` metoda.  
   
  **Upozornění:** podporuje pouze rozhraní WMI <xref:System.TimeSpan> hodnotu až 3 desetinných míst. Například, pokud vaše služba nastaví její vlastnosti, aby <xref:System.TimeSpan.MaxValue>, jeho hodnota se zkrátí po 3 desetinných míst, při zobrazení v rozhraní WMI.  
   
 ## <a name="security"></a>Zabezpečení  
- Protože [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele rozhraní WMI umožňuje zjišťování služeb v prostředí, postupujte opatrně extrémně pro udělení přístupu k němu. Pokud jste uvolnit výchozí přístup pouze správce, může povolit méně důvěryhodné strany přístup k citlivým datům ve vašem prostředí. Pokud jste povolte oprávnění pro vzdálený přístup k rozhraní WMI, konkrétně zahlcení útoky může dojít k. Pokud proces je přetížené nadměrné požadavky rozhraní WMI, může docházet ke snížení jeho výkon.  
+ Vzhledem k tomu, že zprostředkovatel rozhraní WMI WCF umožňuje zjišťování služeb v prostředí, postupujte opatrně extrémně pro udělení přístupu k němu. Pokud jste uvolnit výchozí přístup pouze správce, může povolit méně důvěryhodné strany přístup k citlivým datům ve vašem prostředí. Pokud jste povolte oprávnění pro vzdálený přístup k rozhraní WMI, konkrétně zahlcení útoky může dojít k. Pokud proces je přetížené nadměrné požadavky rozhraní WMI, může docházet ke snížení jeho výkon.  
   
  Kromě toho pokud jste uvolnit přístupová oprávnění pro soubor MOF, méně důvěryhodné strany můžete upravit chování rozhraní WMI a měnit objekty, které jsou načteny ve schématu WMI. Například pole můžete odebrat tak, že je důležitá data zakryté od správce nebo pole, která naplnit nebo způsobit výjimky jsou přidány do souboru.  
   
- Ve výchozím nastavení [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zprostředkovatele rozhraní WMI uděluje "provést metodu", "zapisovat zprostředkovatele" a "Povolit účet" oprávnění pro správce a oprávnění "Povolit účet" pro ASP.NET, místní služby a síťové služby. Konkrétně na jinou hodnotu než[!INCLUDE[wv](../../../../../includes/wv-md.md)] platforem ASP.NET účtu má přístup pro čtení k oboru názvů WMI ServiceModel. Pokud nechcete udělení těchto oprávnění určitou skupinu uživatelů, si deaktivovat zprostředkovatele rozhraní WMI (je zakázáno ve výchozím nastavení), nebo zakázat přístup pro určité uživatelské skupiny.  
+ Ve výchozím nastavení, zprostředkovatele rozhraní WCF WMI uděluje "provést metodu", "zapisovat zprostředkovatele" a "Povolit účet" oprávnění pro správce a oprávnění "Povolit účet" pro ASP.NET, místní služby a síťové služby. Konkrétně na jinou hodnotu než[!INCLUDE[wv](../../../../../includes/wv-md.md)] platforem ASP.NET účtu má přístup pro čtení k oboru názvů WMI ServiceModel. Pokud nechcete udělení těchto oprávnění určitou skupinu uživatelů, si deaktivovat zprostředkovatele rozhraní WMI (je zakázáno ve výchozím nastavení), nebo zakázat přístup pro určité uživatelské skupiny.  
   
  Kromě toho při pokusu o povolení rozhraní WMI prostřednictvím konfigurace není povolené rozhraní WMI z důvodu nedostatečných uživatelských oprávnění. Ale žádná událost se zapíše do protokolu událostí k zaznamenání této chyby.  
   
@@ -149,7 +149,7 @@ Whoami /user
  To poskytuje SID aktuálního uživatele, ale tuto metodu nelze použít k získání SID na každý libovolný uživatel. Další možností, jak získat identifikátor SID je použití [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) nástroje z [Windows 2000 Resource Kit Tools pro úlohy správy](http://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná SID dva uživatele (místní nebo doménový) a jako straně vliv vytiskne dva identifikátory SID na příkazový řádek. Další informace najdete v tématu [také známé identifikátory SID](http://go.microsoft.com/fwlink/?LinkId=186468).  
   
 ## <a name="accessing-remote-wmi-object-instances"></a>Přístup k rozhraní WMI Vzdálená instance objektů  
- Pokud budete potřebovat pro přístup k [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] instance rozhraní WMI na vzdáleném počítači, je nutné povolit paket o ochraně osobních údajů nástroje, které používáte pro přístup. Následující část popisuje, jak tyto dosáhnout pomocí WMI CIM Studio, testování služby WMI, jakož i rozhraní .NET SDK 2.0.  
+ Pokud potřebujete pro přístup k rozhraní WMI WCF instancí ve vzdáleném počítači, je nutné povolit paket o ochraně osobních údajů nástroje, které používáte pro přístup. Následující část popisuje, jak tyto dosáhnout pomocí WMI CIM Studio, testování služby WMI, jakož i rozhraní .NET SDK 2.0.  
   
 ### <a name="wmi-cim-studio"></a>Rozhraní WMI CIM Studio  
  Pokud jste nainstalovali [nástroje pro správu služby WMI](http://go.microsoft.com/fwlink/?LinkId=95185), můžete použít nástroje CIM Studio WMI k instancím přístup k rozhraní WMI. Nástroje jsou v následující složce  

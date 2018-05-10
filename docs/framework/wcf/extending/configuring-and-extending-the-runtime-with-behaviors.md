@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
-ms.openlocfilehash: 05fd96574f072f8e349f83d11aca20bc5269dfc7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: af95fa01fc9caffb8a4f0e85d3457c7f3fa60320
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
 Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která zkontrolovat a ověřit konfiguraci služby nebo upravit chování za běhu v aplikacích pro klienta a služby Windows Communication Foundation (WCF). Toto téma popisuje chování rozhraní, jak pro jejich implementaci a jak je přidáte do popisu služby (v aplikaci služby) nebo koncový bod (v aplikaci klienta) prostřednictvím kódu programu, nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [zadání běhového chování klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
   
 ## <a name="behaviors"></a>Chování  
- Chování typy jsou přidány do služby nebo objekty popis koncový bod služby (na služba nebo klienta, v uvedeném pořadí) před tyto objekty se používají ve Windows Communication Foundation (WCF) vytvořit modul runtime, který provede [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta. Pokud tyto chování jsou volány během procesu vytváření modulu runtime jsou pak mít přístup k modulu runtime vlastnosti a metody, které upravují runtime sestavený kontrakt, vazeb a adresy.  
+ Chování typy jsou přidány do služby nebo objekty popis koncový bod služby (na služba nebo klienta, v uvedeném pořadí) před tyto objekty se používají ve Windows Communication Foundation (WCF) vytvořit modul runtime, který spouští službu WCF nebo klienta WCF. Pokud tyto chování jsou volány během procesu vytváření modulu runtime jsou pak mít přístup k modulu runtime vlastnosti a metody, které upravují runtime sestavený kontrakt, vazeb a adresy.  
   
 ### <a name="behavior-methods"></a>Chování metod  
  Mají všechny chování `AddBindingParameters` metody `ApplyDispatchBehavior` metoda, `Validate` metoda a `ApplyClientBehavior` metoda s jednou výjimkou: protože <xref:System.ServiceModel.Description.IServiceBehavior> nelze provést v klientovi, neimplementuje `ApplyClientBehavior`.  
@@ -33,9 +33,9 @@ Chování umožňují upravit výchozí chování a přidat vlastní rozšířen
 > [!NOTE]
 >  Informace o vlastnosti runtime a typy rozšíření, které můžete použít k úpravě chování při spuštění klienta, najdete v části [rozšíření klienti](../../../../docs/framework/wcf/extending/extending-clients.md). Informace o vlastnosti runtime a typy rozšíření, které můžete použít k úpravě chování při spuštění služby odesílatele, najdete v části [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md).  
   
- Většina [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uživatelé není komunikovat s modulem runtime přímo; místo toho používají základní programovací model konstrukce jako koncové body, kontrakty, vazby, adresy a chování atributy třídy nebo chování v konfiguračních souborech. Tvoří tyto konstrukce *popis stromu*, což je specifikace dokončení pro vytváření modulu runtime pro podporu služby nebo klienta popsaného stromu popis.  
+ Většina uživatelů WCF nespolupracuje s modulem runtime přímo. Místo toho používají základní programovací model konstrukce jako koncové body, kontrakty, vazby, adresy a chování atributy třídy nebo chování v konfiguračních souborech. Tvoří tyto konstrukce *popis stromu*, což je specifikace dokončení pro vytváření modulu runtime pro podporu služby nebo klienta popsaného stromu popis.  
   
- Existují čtyři typy chování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]:  
+ Existují čtyři typy chování ve WCF:  
   
 -   Chování služby (<xref:System.ServiceModel.Description.IServiceBehavior> typy) povolte přizpůsobení celé služby modulu runtime včetně <xref:System.ServiceModel.ServiceHostBase>.  
   
@@ -64,24 +64,24 @@ Chování umožňují upravit výchozí chování a přidat vlastní rozšířen
   
 3.  Implementace vlastní <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> který rozšiřuje konfigurace. To umožňuje použití chování služby z konfigurační soubory aplikace.  
   
- Příklady chování služby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnují <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut, <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> chování.  
+ Příklady chování služby ve službě WCF <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut, <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> chování.  
   
 #### <a name="contract-behaviors"></a>Chování kontraktu  
  Sbalit chování, které implementují třídu <xref:System.ServiceModel.Description.IContractBehavior> rozhraní, se používají k rozšíření klient a služba runtime napříč kontraktu.  
   
- Pro přidání smlouvy chování do kontraktu dvěma způsoby.  První mechanismus je vytvoření vlastních atributů, který se má použít na rozhraní kontraktu. Když rozhraní kontraktu je předán buď <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] atributy na rozhraní. Pokud jsou všechny atributy implementace <xref:System.ServiceModel.Description.IContractBehavior>, ty jsou přidány do kolekce chování na <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> vytvořili pro toto rozhraní.  
+ Pro přidání smlouvy chování do kontraktu dvěma způsoby.  První mechanismus je vytvoření vlastních atributů, který se má použít na rozhraní kontraktu. Když rozhraní kontraktu je předán buď <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601>, WCF prozkoumá atributy na rozhraní. Pokud jsou všechny atributy implementace <xref:System.ServiceModel.Description.IContractBehavior>, ty jsou přidány do kolekce chování na <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> vytvořili pro toto rozhraní.  
   
  Můžete taky implementovat <xref:System.ServiceModel.Description.IContractBehaviorAttribute?displayProperty=nameWithType> na atribut chování vlastní kontrakt. V takovém případě chování je následující při použití:  
   
- •A rozhraní kontraktu. V takovém případě chování platí pro všechny smlouvy daného typu v žádný koncový bod a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ignoruje hodnotu <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> vlastnost.  
+ •A rozhraní kontraktu. V takovém případě chování se použije pro všechny smlouvy daného typu v žádný koncový bod a WCF ignoruje hodnotu <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> vlastnost.  
   
  Třída •A služby. V takovém případě chování platí pouze pro koncové body smlouvy, což je hodnota <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnost.  
   
- Třída •A zpětného volání. V takovém případě se použije chování koncovému bodu duplexní klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ignoruje hodnotu <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnost.  
+ Třída •A zpětného volání. V takovém případě chování se použije pro koncový bod duplexní klienta a WCF ignoruje hodnotu <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnost.  
   
  Druhý mechanismus je přidat do kolekce chování chování na <xref:System.ServiceModel.Description.ContractDescription>.  
   
- Příklady kontrakt chování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnují <xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=nameWithType> atribut. Další informace a příklady naleznete v tématu referenční téma.  
+ Příklady chování kontraktu ve WCF <xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=nameWithType> atribut. Další informace a příklady naleznete v tématu referenční téma.  
   
 #### <a name="endpoint-behaviors"></a>Koncový bod chování  
  Koncový bod chování, které implementují třídu <xref:System.ServiceModel.Description.IEndpointBehavior>, jsou primární mechanismus, pomocí kterého upravíte celé služby nebo dobu spuštění pro koncový bod konkrétní klienta.  
@@ -97,11 +97,11 @@ Chování umožňují upravit výchozí chování a přidat vlastní rozšířen
 #### <a name="operation-behaviors"></a>Operace chování  
  Operace chování, které implementují třídu <xref:System.ServiceModel.Description.IOperationBehavior> rozhraní, se používají k rozšíření klient a služba runtime pro každou operaci.  
   
- Pro přidání operace chování pro operaci dvěma způsoby. První mechanismus je vytvoření vlastních atributů, který se má použít na metodu, která modelů operaci. Když se operace přidá do buď <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přidá všechny <xref:System.ServiceModel.Description.IOperationBehavior> atributy ke kolekci chování na <xref:System.ServiceModel.Description.OperationDescription> vytvořené pro tuto operaci.  
+ Pro přidání operace chování pro operaci dvěma způsoby. První mechanismus je vytvoření vlastních atributů, který se má použít na metodu, která modelů operaci. Když se operace přidá do buď <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory>, WCF přidá všechny <xref:System.ServiceModel.Description.IOperationBehavior> atributy ke kolekci chování na <xref:System.ServiceModel.Description.OperationDescription> vytvořené pro tuto operaci.  
   
  Druhý mechanismus je přímo přidáním chování ke kolekci chování na vytvořený <xref:System.ServiceModel.Description.OperationDescription>.  
   
- Příklady chování operace v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnují <xref:System.ServiceModel.OperationBehaviorAttribute> a <xref:System.ServiceModel.TransactionFlowAttribute>.  
+ Příklady chování operace ve službě WCF <xref:System.ServiceModel.OperationBehaviorAttribute> a <xref:System.ServiceModel.TransactionFlowAttribute>.  
   
  Další informace a příklady naleznete v tématu referenční téma.  
   

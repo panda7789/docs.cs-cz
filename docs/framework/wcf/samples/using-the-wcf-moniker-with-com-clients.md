@@ -2,11 +2,11 @@
 title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 79040cd267d354d32b3e957dc70fcc65b09b0fc8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6d47b9c655db932bb9a4243533fbd01bcf25e0df
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tento příklad znázorňuje způsob použití monikeru služby Windows Communication Foundation (WCF) při integraci webových služeb na základě COM vývojových prostředí, jako je například Microsoft Office Visual Basic pro aplikace (Office VBA) nebo Visual Basic 6.0. Tato ukázka se skládá z klienta Windows Script Host (.vbs), podporující klientské knihovny DLL (.dll) a služby knihovny (DLL) hostované Internetové informační služby (IIS). Služba je služba kalkulačky a klient COM volá matematické operace – přidat, odečíst, násobit a dělit – ve službě. Činnost klienta je viditelný v systému windows pole zpráva.  
@@ -99,7 +99,7 @@ contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")
 WScript.Echo "Typed service moniker: 100 + 15.99 = " & typedServiceMoniker.Add(100, 15.99)  
 ```  
   
- Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje volání modelu COM pomocí zadaných Přezdívka ke komunikaci s klient COM [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Bez ohledu na použití modelu COM v aplikaci klienta komunikace se službou se skládá jenom z volání webové služby.  
+ Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient COM volání modelu COM pomocí zadaných Přezdívka ke komunikaci se službou WCF. Bez ohledu na použití modelu COM v aplikaci klienta komunikace se službou se skládá jenom z volání webové služby.  
   
 ## <a name="wsdl-contract"></a>Kontraktů WSDL  
  Používat Přezdívka kontraktu WSDL, není požadována žádná registrace knihovny klienta, ale WSDL kontrakt služby musí být načteny prostřednictvím mechanismus out-of-band například pomocí prohlížeče přístup WSDL koncový bod pro službu. Přezdívka můžete poté přistoupit v době provádění tohoto kontraktu.  
@@ -135,7 +135,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 -   Název a obor názvů kontraktu. Toto identifikační není nutná, protože schématu WSDL může obsahovat více než jeden kontrakt.  
   
     > [!NOTE]
-    >  Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby generovat samostatné soubory WSDL pro každý obor názvů, použití. Tyto jsou propojeny s použitím konstrukce import schématu WSDL. Protože moniker se očekává jenom jednu definici WSDL, službu buď musíte použít jeden obor názvů, jak je předvedeno v této ukázce nebo samostatné soubory je potřeba ručně sloučit.  
+    >  Ve výchozím nastavení, služby WCF generovat samostatné soubory WSDL pro každý obor názvů, použití. Tyto jsou propojeny s použitím konstrukce import schématu WSDL. Protože moniker se očekává jenom jednu definici WSDL, službu buď musíte použít jeden obor názvů, jak je předvedeno v této ukázce nebo samostatné soubory je potřeba ručně sloučit.  
   
  S vytvořená instance proxy s monikeru služby, klientská aplikace můžete volat metody pro proxy server, což vede k volání odpovídající operací služby infrastruktury přezdívka služby.  
   
@@ -144,7 +144,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 WScript.Echo "WSDL service moniker: 145 - 76.54 = " & wsdlServiceMoniker.Subtract(145, 76.54)  
 ```  
   
- Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje volání modelu COM pomocí Přezdívka kontraktu WSDL ke komunikaci s klient COM [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient COM volání modelu COM pomocí Přezdívka kontraktu WSDL ke komunikaci se službou WCF.  
   
 ## <a name="metadata-exchange-contract"></a>Metadata Exchange kontraktu  
  Pokud chcete používat Přezdívka s MEX kontraktu, stejně jako u kontraktů WSDL, není požadována žádná registrace klienta. V době provedení prostřednictvím interní použití systému Metadata Exchange se načítají, kontrakt služby.  
@@ -179,7 +179,7 @@ Set mexServiceMoniker = GetObject(mexMonikerString)
 WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9, 81.25)  
 ```  
   
- Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje volání modelu COM pomocí Přezdívka kontraktu MEX ke komunikaci s klient COM [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient COM volání modelu COM pomocí Přezdívka kontraktu MEX ke komunikaci se službou WCF.  
   
 #### <a name="to-set-up-and-build-the-sample"></a>Jak nastavit a sestavit ukázku  
   

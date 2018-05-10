@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 784b0fe3e2b23287d458f9aa4d8276e10dd6ed97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f7e2253c527cbb2b6f21b222b1e9691c2ecff01f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím své koncové body. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operací, které jsou k dispozici. Vazba Určuje, jak se komunikovat se službou a adresu určuje, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje identifikátor URI (Uniform Resource) představující adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, který představuje identitu zabezpečení služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelné záhlaví obsahují podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncovým bodem. Například záhlaví můžete určit, jak zpracovávat příchozí zprávy, kde má koncový bod odeslat zprávu odpovědi nebo které instanci služby pro použití ke zpracování příchozí zprávy z určitého uživatele, když jsou k dispozici více instancí.  
   
 ## <a name="definition-of-an-endpoint-address"></a>Definice adresu koncového bodu  
- V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], <xref:System.ServiceModel.EndpointAddress> modelů odkaz na koncový bod (EPR), jak je definované ve standardu adresování WS.  
+ Ve službě WCF <xref:System.ServiceModel.EndpointAddress> modelů odkaz na koncový bod (EPR), jak je definované ve standardu adresování WS.  
   
  Adresa URI pro většinu přenosy má čtyři části. Například tento identifikátor URI "http://www.fabrikam.com:322/mathservice.svc/secureEndpoint" má následující čtyři části:  
   
@@ -29,11 +29,11 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k 
   
 -   Path: /mathservice.svc/secureEndpoint  
   
- Součást EPR modelu je, že každý koncový bod odkaz přenášet některé odkaz parametry, které přidat velmi identifikační informace. V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], tyto parametry odkaz jsou modelovat jako instance <xref:System.ServiceModel.Channels.AddressHeader> třídy.  
+ Součást EPR modelu je, že každý koncový bod odkaz přenášet některé odkaz parametry, které přidat velmi identifikační informace. Ve službě WCF, jsou tyto parametry odkaz modelován jako instance <xref:System.ServiceModel.Channels.AddressHeader> třídy.  
   
  Adresa koncového bodu pro služby lze imperativní pomocí kódu nebo deklarativně pomocí konfigurace. Definování koncové body v kódu obvykle není praktické protože jsou obvykle liší od těch, které používá při služby je vyvíjen vazeb a adresy pro v nasazené službě. Obecně je praktičtější definovat koncové body služby pomocí konfigurace, nikoli kódu. Zachování vazby a adresování informace mimo kód vám umožní se změnit bez nutnosti znovu zkompiluje a znovu nasaďte aplikaci. Pokud žádné koncové body jsou nastaveny v kódu nebo v konfiguraci, modul runtime přidá jeden výchozí koncový bod na každé základní adresa pro každý kontrakt implementované službu.  
   
- Existují dva způsoby k zadání adresy koncového bodu služby v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Můžete zadat absolutní adresu pro každý koncový bod spojené s touto službou, nebo můžete zadat bázové adresy pro <xref:System.ServiceModel.ServiceHost> služby a pak zadejte adresu pro každý koncový bod přidruženého k této službě, která je definována relativně k této základní Adresa. Všechny tyto postupy můžete použít k určení adresy koncových bodů pro službu s konfigurací nebo kódu. Pokud nezadáte relativní adresa, služba používá základní adresu. Také může mít více základní adresy pro služby, ale každá služba je povolen pouze jeden základní adresa pro každý přenos. Pokud máte několik koncových bodů, z nichž každý je nakonfigurován s jinou vazbou, jejich adresy musí být jedinečný. Koncové body, které používají stejné vazby ale odlišným kontrakty můžete použít stejné adresy.  
+ Existují dva způsoby k zadání adresy koncového bodu pro služby ve službě WCF. Můžete zadat absolutní adresu pro každý koncový bod spojené s touto službou, nebo můžete zadat bázové adresy pro <xref:System.ServiceModel.ServiceHost> služby a pak zadejte adresu pro každý koncový bod přidruženého k této službě, která je definována relativně k této základní Adresa. Všechny tyto postupy můžete použít k určení adresy koncových bodů pro službu s konfigurací nebo kódu. Pokud nezadáte relativní adresa, služba používá základní adresu. Také může mít více základní adresy pro služby, ale každá služba je povolen pouze jeden základní adresa pro každý přenos. Pokud máte několik koncových bodů, z nichž každý je nakonfigurován s jinou vazbou, jejich adresy musí být jedinečný. Koncové body, které používají stejné vazby ale odlišným kontrakty můžete použít stejné adresy.  
   
  Při hostování službou IIS, kterou spravujete <xref:System.ServiceModel.ServiceHost> instance sami. Základní adresa je vždy adresu určenou v souboru .svc pro službu při hostování ve službě IIS. Proto je nutné použít relativní koncový bod adresy pro koncové body služby hostované službou IIS. Poskytuje adresu plně kvalifikovaný koncového bodu může vést k chybám v nasazení služby. Další informace najdete v tématu [nasazení služby WCF Internet Information Services-Hosted](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).  
   

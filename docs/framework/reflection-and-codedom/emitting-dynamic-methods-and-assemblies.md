@@ -9,11 +9,11 @@ helpviewer_keywords:
 - assemblies [.NET Framework], emitting dynamic assemblies
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6d5085b846a10fe86a87e19738e1b159e300c5d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 527da43807a0dbba8f5365c92f566053f10d49f5
+ms.sourcegitcommit: c03eef711abe961a85db2b4d0715257d1524aef6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
 Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> obor názvů, který povolí kompilátoru nebo nástroj pro vydávání metadata a Microsoft (MSIL intermediate language) v době běhu a volitelně generovat soubor přenosné spustitelný soubor (PE) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části, funkce poskytované <xref:System.Reflection.Emit> obor názvů se označuje jako reflexe emitování.  
@@ -45,7 +45,7 @@ Popisuje problémy související s vytvářením dynamické sestaveních pomocí
 Ukazuje, jak provést jednoduchý dynamické metody a dynamické metoda vázaný na instanci třídy.
 
 [Postupy: definování obecného typu pomocí reflexe emitování](how-to-define-a-generic-type-with-reflection-emit.md)   
-Ukazuje, jak chcete vytvořit jednoduché obecného typu s parametry dva typy, jak se má použít třídu rozhraní a zvláštní omezení pro parametry typu a postup vytvoření memers, které používají parametry typu třídy jako parametry a návratové typy.
+Ukazuje, jak vytvořit jednoduché obecného typu se dva parametry typu, jak se má použít třídu rozhraní a zvláštní omezení pro parametry typu a postup vytvoření členy, které používají parametry typu třídy jako parametry a návratové typy.
 
 [Postupy: definování obecné metody pomocí reflexe emitování](how-to-define-a-generic-method-with-reflection-emit.md)   
 Ukazuje, jak k vytváření, vydávání a vyvolání jednoduché obecná metoda.

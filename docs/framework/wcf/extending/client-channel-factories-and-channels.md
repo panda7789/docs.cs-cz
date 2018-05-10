@@ -2,11 +2,11 @@
 title: 'Klienta: Objekty pro vytváření kanálů a kanály'
 ms.date: 03/30/2017
 ms.assetid: ef245191-fdab-4468-a0da-7c6f25d2110f
-ms.openlocfilehash: c7890f5fafb4e53053c4c393a7c8af584bd7a520
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 91e19c692718ae02e2f125a791904f62fe8401f7
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="client-channel-factories-and-channels"></a>Klienta: Objekty pro vytváření kanálů a kanály
 Toto téma popisuje vytvářet objekty pro vytváření kanálů a kanály.  
@@ -19,7 +19,7 @@ Postup kanálu vytvoří kanály.
   
  Při zavření, objekty Factory kanál jsou zodpovědní za zavřením žádné kanály, které se vytvářely, které nejsou dosud zavřena. Všimněte si, že model asymetrické zde vzhledem k tomu, že při zavření naslouchací proces kanálu pouze zastaví přijetí nové kanály, ale nechá, které existující kanály otevřete tak, aby může i dál přijímání zpráv.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje pomocné rutiny základní třídy pro tento proces. (Diagram kanál pomocných tříd, popsané v tomto tématu, najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
+ WCF poskytuje pomocné rutiny základní třídy pro tento proces. (Diagram kanál pomocných tříd, popsané v tomto tématu, najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
   
 -   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje popsané v kroku 2 [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
   

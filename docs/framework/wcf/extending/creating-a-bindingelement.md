@@ -2,17 +2,17 @@
 title: Vytvoření BindingElement
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-ms.openlocfilehash: fdc3ec1fef86ad31434ea372740497969c7ae6a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 96924e97ad3fcc121ef7b28125301060d8448514
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
-Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>, v uvedeném pořadí) jsou místo, kde se přidružené k kanál továrny a moduly pro naslouchání kanálu aplikací modelu Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanály vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni služby kanálů](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavek na povolit pomocí kanálu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit použití z aplikace, jak je popsáno v kroku 4 v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
+Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>, v uvedeném pořadí) jsou místo, kde se přidružené k kanál továrny a moduly pro naslouchání kanálu aplikací modelu Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanály vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni služby kanálů](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavek na povolit v kanálu WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit použití z aplikace, jak je popsáno v kroku 4 v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
   
 ## <a name="overview"></a>Přehled  
- Vytváření <xref:System.ServiceModel.Channels.BindingElement> pro kanál umožňuje vývojářům používat ho [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. <xref:System.ServiceModel.Channels.BindingElement> objekty lze z <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> třídy pro připojení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikaci do kanálu bez nutnosti přesné typ informace kanálu.  
+ Vytváření <xref:System.ServiceModel.Channels.BindingElement> pro kanál umožňuje vývojářům používat v aplikaci WCF. <xref:System.ServiceModel.Channels.BindingElement> objekty lze z <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> třída připojit aplikace WCF do kanálu bez nutnosti přesné typ informace kanálu.  
   
  Jednou <xref:System.ServiceModel.Channels.BindingElement> byl vytvořen, můžete povolit v závislosti na požadavcích podle kroků zbývající kanál vývoj kroky popsané v další funkce [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
   

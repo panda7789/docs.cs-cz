@@ -2,17 +2,17 @@
 title: Prohlížení protokolů zpráv
 ms.date: 03/30/2017
 ms.assetid: 3012fa13-f650-45fb-aaea-c5cca8c7d372
-ms.openlocfilehash: 56e4fb1ea8c67c35df440a2088034327788f6f15
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4fa205b52e3d19d2421d93297b5689422775f719
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="viewing-message-logs"></a>Prohlížení protokolů zpráv
 Toto téma popisuje, jak můžete zobrazit protokoly zpráv.  
   
 ## <a name="viewing-message-logs-in-the-service-trace-viewer"></a>Při zobrazení zprávy přihlásí prohlížeče trasování služeb  
- Zpráva bude transformovat, jako je zpracován [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Proto zprávu protokolována odráží jenom obsah zprávy v místě, které ho protokolu byla zaznamenána, není obsah v drátové síti.  
+ Zprávu se transformuje, jako je zpracován WCF. Proto zprávu protokolována odráží jenom obsah zprávy v místě, které ho protokolu byla zaznamenána, není obsah v drátové síti.  
   
  Vzhledem k tomu, že výstup protokolování zpráv nemá žádný vztah k přenosu formát zprávy, vždy protokolování zpráv výstupy dekódované zprávy. Pokud jste nakonfigurovali protokolování správně zpráv, jakékoli zaznamenané zprávy musí být ve formátu prostého textu. Formát zprávy zaznamenané (prostý text) není například vliv použití kodéru zprávy v binární.  
   

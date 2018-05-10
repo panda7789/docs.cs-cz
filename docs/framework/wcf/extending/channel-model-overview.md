@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
-ms.openlocfilehash: df2993d9ba25c043aa66029aa00fae945d5cec9d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 13fe07d1521832ed12ba5770e0bd069ff9b917d2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
-Zásobník kanálu Windows Communication Foundation (WCF) je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model závisí na několika rozhraní a dalších typů souhrnně označované jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] model kanálu. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  
+Zásobník kanálu Windows Communication Foundation (WCF) je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model spoléhá na několik rozhraní a dalších typů souhrnně označované jako model kanálu WCF. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  
   
 ## <a name="channel-stack"></a>Kanál zásobníku  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Koncové body komunikovat s world pomocí komunikačního balíku volat zásobník kanálu. Následující diagram porovná zásobník kanál s další komunikace zásobníky, například protokol TCP/IP.  
+ Koncových bodů WCF komunikovat s world pomocí komunikačního balíku volat zásobník kanálu. Následující diagram porovná zásobník kanál s další komunikace zásobníky, například protokol TCP/IP.  
   
  ![Model kanálu](../../../../docs/framework/wcf/extending/media/wcfc-channelstackhighlevelc.gif "wcfc_ChannelStackHighLevelc")  
   

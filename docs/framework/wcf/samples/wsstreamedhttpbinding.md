@@ -2,11 +2,11 @@
 title: WSStreamedHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
-ms.openlocfilehash: f146e469a323dffa2cdb9b76b6956be97747b2de
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b0a4c316957a002f7541d230f96299e3f43ef778
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wsstreamedhttpbinding"></a>WSStreamedHttpBinding
 Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamování scénářů, při použití přenosového protokolu HTTP.  
@@ -51,7 +51,7 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
   
 2.  Přidat podporu konfigurace  
   
-     Ke zveřejnění přenos prostřednictvím konfigurace ukázku implementuje dva další třídy –`WSStreamedHttpBindingConfigurationElement` a `WSStreamedHttpBindingSection`. Třída `WSStreamedHttpBindingSection` je <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> která zveřejňuje `WSStreamedHttpBinding` k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] konfigurační systém. Hromadné implementace je delegovaný jako `WSStreamedHttpBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. Třída `WSStreamedHttpBindingConfigurationElement` má vlastnosti, které odpovídají vlastnosti `WSStreamedHttpBinding`a funkce pro mapování každý prvek konfigurace pro vazbu.  
+     Ke zveřejnění přenos prostřednictvím konfigurace ukázku implementuje dva další třídy –`WSStreamedHttpBindingConfigurationElement` a `WSStreamedHttpBindingSection`. Třída `WSStreamedHttpBindingSection` je <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> která zveřejňuje `WSStreamedHttpBinding` systému konfigurace WCF. Hromadné implementace je delegovaný jako `WSStreamedHttpBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. Třída `WSStreamedHttpBindingConfigurationElement` má vlastnosti, které odpovídají vlastnosti `WSStreamedHttpBinding`a funkce pro mapování každý prvek konfigurace pro vazbu.  
   
      Obslužná rutina se konfigurační systém zaregistrujte přidáním následující části do konfiguračního souboru služby.  
   
@@ -133,7 +133,7 @@ public class StreamedEchoService : IStreamedEchoService
 ```  
   
 ## <a name="the-wsstreamedhttpbinding-sample-client"></a>Ukázka WSStreamedHttpBinding klienta  
- Pro klienta, který se používá k interakci s používáním služby `WSStreamedHttpBinding` se nachází v podadresáři klienta. Protože certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí výstrahu zabezpečení při pokusu o přístupu adresou protokolu HTTPS v prohlížeči, jako například https://localhost/servicemodelsamples/service.svc. Chcete-li povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta pro práci s testovací certifikát na místě, některé další kód byl přidán do klienta pro potlačení výstrahy zabezpečení. Kód a doprovodné třídy nejsou vyžadovány, při použití provozní certifikáty.  
+ Pro klienta, který se používá k interakci s používáním služby `WSStreamedHttpBinding` se nachází v podadresáři klienta. Protože certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí výstrahu zabezpečení při pokusu o přístupu adresou protokolu HTTPS v prohlížeči, jako například https://localhost/servicemodelsamples/service.svc. Povolit klienta WCF pro práci s testovací certifikát na místě, se přidal některé další kód klienta pro potlačení výstrahy zabezpečení. Kód a doprovodné třídy nejsou vyžadovány, při použití provozní certifikáty.  
   
 ```  
 // WARNING: This code is only required for test certificates such as those created by makecert. It is   

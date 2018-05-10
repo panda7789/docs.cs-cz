@@ -2,11 +2,11 @@
 title: Publikování a načítání metadat prostřednictvím vlastní vazby
 ms.date: 03/30/2017
 ms.assetid: 904e11b4-d90e-45c6-9ee5-c3472c90008c
-ms.openlocfilehash: 607cf70e8e226e6c97a785f2478ad3a655b21a7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 528f7662ee3a1f956427e5e42f540816f55027f8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="publishing-and-retrieving-metadata-over-a-custom-binding"></a>Publikování a načítání metadat prostřednictvím vlastní vazby
 <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> Poskytuje podporu pro přidání koncový bod metadat do služby. Tyto koncové body metadat může reagovat na požadavky HTTP GET na adresu URL, která má `?wsdl` řetězce dotazu a požadavky metody GET přenosu WS definovaným ve specifikaci WS-MetadataExchange (MEX). Koncové body MEX implementovat <xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=nameWithType> kontrakt.  
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="retrieving-metadata-over-a-custom-binding"></a>Načítání metadat prostřednictvím vlastní vazby  
  Nejde načíst metadata z Get protokolu HTTP a HTTPS získat metadata koncové body pomocí standardní požadavků protokolu HTTP nebo HTTPS získat.  
   
- Pro načtení metadat z koncového bodu metadat MEX obecně můžete jedna z vazeb standardní MEX nepodporuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Další informace naleznete v tématu <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Typ a nástroje Svcutil.exe automaticky vyberte jednu z těchto standardní MEX vazeb na základě adresy Zadaná metadata koncového bodu.  
+ Pro načtení metadat z koncového bodu metadat MEX obecně slouží jedna z vazeb standardní MEX podporované službou WCF. Další informace naleznete v tématu <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Typ a nástroje Svcutil.exe automaticky vyberte jednu z těchto standardní MEX vazeb na základě adresy Zadaná metadata koncového bodu.  
   
  Pokud koncový bod metadat MEX používá jinou vazbou než jedna z vazeb standardní MEX, můžete nakonfigurovat vazby používané <xref:System.ServiceModel.Description.MetadataExchangeClient> pomocí kódu nebo pomocí zadáním <xref:System.ServiceModel.Description.IMetadataExchange> konfigurace koncového bodu klienta. Nástroje Svcutil.exe automaticky načte z konfiguračního souboru <xref:System.ServiceModel.Description.IMetadataExchange> konfigurace koncového bodu klienta, který má stejný název jako schéma identifikátoru URI pro adresa koncového bodu metadat.  
   

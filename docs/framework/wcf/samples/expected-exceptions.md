@@ -2,11 +2,11 @@
 title: Očekávané výjimky
 ms.date: 03/30/2017
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-ms.openlocfilehash: 9552bf5178e3309d46e0f9220311c9e1a811c4b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6c4af62e0870cdd670c46ead169033ff72902fc0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="expected-exceptions"></a>Očekávané výjimky
 Tento příklad znázorňuje, jak zachytit očekávané výjimky při použití typový klient. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS).  
@@ -16,9 +16,9 @@ Tento příklad znázorňuje, jak zachytit očekávané výjimky při použití 
   
  Tento příklad znázorňuje zachytávání a zpracování těchto dvou typů očekávané výjimky, které opravit programy musí zpracovat: `TimeoutException` a `CommunicationException`.  
   
- Výjimky, které jsou vyvolány z metody komunikace klienta Windows Communication Foundation (WCF) jsou očekávané nebo neočekávané. Neočekávané výjimky patří závažné chyby jako `OutOfMemoryException` a programovací chyby, jako jsou `ArgumentNullException` nebo `InvalidOperationException`. Obvykle se nedá nijak užitečné pro zpracování neočekávaným chybám, takže obvykle neměli je zachytit při volání metody [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] metoda komunikace s klientem.  
+ Výjimky, které jsou vyvolány z metody komunikace klienta Windows Communication Foundation (WCF) jsou očekávané nebo neočekávané. Neočekávané výjimky patří závažné chyby jako `OutOfMemoryException` a programovací chyby, jako jsou `ArgumentNullException` nebo `InvalidOperationException`. Obvykle je užitečný způsob, jak zpracovávat neočekávané chyby, takže obvykle že neměli je zachytit při volání metody komunikace klienta WCF.  
   
- Na očekávané výjimky z metody komunikace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zahrnují klienta `TimeoutException`, `CommunicationException`, a všechny odvozené třídy `CommunicationException`. Ty naznačují problém při komunikaci, která může bezpečně ošetřit přerušení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a vytváření sestav selhání komunikace. Vzhledem k tomu, že externí faktory mohou způsobit tyto chyby v jakékoli aplikaci, musíte správné aplikace zachytit tyto výjimky a obnovit, pokud k nim dojde.  
+ Očekávané výjimky z metody komunikace na klienta WCF zahrnují `TimeoutException`, `CommunicationException`, a všechny odvozené třídy `CommunicationException`. Ty naznačují problém při komunikaci, která se dají bezpečně zpracovat přerušuje klienta WCF a vytvářením zpráv o selhání komunikace. Vzhledem k tomu, že externí faktory mohou způsobit tyto chyby v jakékoli aplikaci, musíte správné aplikace zachytit tyto výjimky a obnovit, pokud k nim dojde.  
   
  Existuje několik odvozené třídy `CommunicationException` který lze vyvolat klienta. V některých případech aplikace i catch některé z těchto provést zvláštní zpracování, ale nechat řešeny jako ostatní `CommunicationException`. To lze provést tak, že nejprve zachytávání konkrétnější typ výjimky a potom zachytávání `CommunicationException` novější klauzule catch.  
   

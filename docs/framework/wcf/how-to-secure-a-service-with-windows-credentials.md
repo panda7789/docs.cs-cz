@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 5ed09947350a284dd7701b37bad93912f79f7e3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2fa8d753d5fb168c14ee71cbbf6de62e0e4aff9e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí pověření systému Windows
 Toto téma ukazuje, jak povolit přenos zabezpečení ve službě Windows Communication Foundation (WCF), který se nachází v doméně systému Windows a je volána klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  
@@ -75,7 +75,7 @@ Toto téma ukazuje, jak povolit přenos zabezpečení ve službě Windows Commun
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>Chcete-li použít vazby v klientovi s kódem  
   
-1.  Použití nástroje SvcUtil.exe pro generování kódu proxy z metadat služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy server kód dědí z <xref:System.ServiceModel.ClientBase%601> třídy, která zajistí, že má každý klient nezbytné konstruktory, metod a vlastností ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. V tomto příkladu obsahuje generovaný kód `CalculatorClient` třídy, které implementuje `ICalculator` rozhraní, povolení kompatibilitu s kódu služby.  
+1.  Použití nástroje SvcUtil.exe pro generování kódu proxy z metadat služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy server kód dědí z <xref:System.ServiceModel.ClientBase%601> třídy, která zajistí, že má každý klient nezbytné konstruktory, metod a vlastností pro komunikaci se službou WCF. V tomto příkladu obsahuje generovaný kód `CalculatorClient` třídy, které implementuje `ICalculator` rozhraní, povolení kompatibilitu s kódu služby.  
   
 2.  Tento postup kód je vložen na začátku `Main` metoda programu klienta.  
   

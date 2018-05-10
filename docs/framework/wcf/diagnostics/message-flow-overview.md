@@ -2,11 +2,11 @@
 title: Tok zpráv – přehled
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: 056737b9d057101568274ab8d24c0c0e2780f93a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: aea0ca4c5a8574f6039cd055561ce7da0099841b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
 V distribuované systému obsahující vzájemně propojené služby je potřeba určit příčinnou vztahy mezi službami. Je důležité pochopit různé součásti, které byly součástí toku požadavků na podporu kritické scénáře, jako je stav monitorování, řešení potíží a příčina analýzy. Chcete-li povolit korelace trasování mezi různé služby, v rozhraní .NET Framework 4 jsme doplnili podporu prostřednictvím následujících funkcí:  
@@ -25,7 +25,7 @@ V distribuované systému obsahující vzájemně propojené služby je potřeba
   
 2.  Pokud jste nepovolili analytické trasování, rozbalte položku **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **serveru aplikace – aplikace** . Vyberte **zobrazení**, **ukazují analytické a ladicí protokoly**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol**. Ponechte prohlížeče událostí otevřete tak, aby trasování je možné zobrazit.  
   
-3.  Otevřete ukázku vytvořené v [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md) v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. Všimněte si, že je nutné spustit [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] jako správce, aby bylo možné vytvořit službu. Pokud máte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky nainstalován, můžete otevřít [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), obsahující dokončený projekt vytvořený v tomto kurzu.  
+3.  Otevřete ukázku vytvořené v [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md) v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. Všimněte si, že je nutné spustit [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] jako správce, aby bylo možné vytvořit službu. Pokud máte Ukázky WCF nainstalován, můžete otevřít [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který obsahuje dokončený projekt vytvořený v tomto kurzu.  
   
 4.  Klikněte pravým tlačítkem myši **služby** projektu a vyberte **přidat**, **novou položku**. Vyberte **konfigurační soubor aplikace** a klikněte na tlačítko **OK**.  
   

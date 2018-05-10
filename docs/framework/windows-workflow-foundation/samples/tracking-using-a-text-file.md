@@ -2,11 +2,11 @@
 title: Sledování pomocí textového souboru
 ms.date: 03/30/2017
 ms.assetid: 56a82682-73c2-4b91-a206-4d8bb12c561b
-ms.openlocfilehash: 3ff786836dbf5b10d64702733c92579185ef2f3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: aa59ab8304c68873c938f42fc585be883b234ecc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="tracking-using-a-text-file"></a>Sledování pomocí textového souboru
 Tato ukázka ukazuje, jak rozšířit tak, že vytvoříte vlastní sledování účastník sledování v systému Windows Workflow Foundation (WF). Sledování členové jsou třídy rozhraní .NET Framework, které dostanou záznamy sledování z modulu runtime, jak budou vygenerované. Můžete vytvořit účastník sledování přenos sledování události, které chcete podle toho, která je vyžadována pro váš scénář. Například účastník sledování ETW (trasování událostí pro Windows) k dispozici jako součást [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Sledování účastník v této ukázce zapíše záznamy ve formátu XML do textového souboru.  
@@ -17,7 +17,7 @@ Tato ukázka ukazuje, jak rozšířit tak, že vytvoříte vlastní sledování 
 |Třída|Popis|  
 |-----------|-----------------|  
 |`TextFileTrackingExtensionElement`|A <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> se používá k definování konfigurační oddíl slouží ke konfiguraci sledování účastník textového souboru. To umožňuje uživatelům zadat cílové umístění souboru protokolu pomocí standardní soubory konfigurace rozhraní .NET Framework.|  
-|`TextFileTrackingBehavior`|Chování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] povolit uživatelům vložit rozšíření do modulu runtime. Toto chování účastník sledování přidá do služby při spuštění služby.|  
+|`TextFileTrackingBehavior`|Chování ve WCF umožňují uživatelům vložit rozšíření do modulu runtime. Toto chování účastník sledování přidá do služby při spuštění služby.|  
 |`TextFileTrackingParticipant`|Sledování člena, který přijímá sledování účastníky v době běhu a ukládá je do souboru protokolu ve formátu XML.|  
   
 ## <a name="behavior-extension-elements-configuration"></a>Konfigurace chování rozšíření elementy  

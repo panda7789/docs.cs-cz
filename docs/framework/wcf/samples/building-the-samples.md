@@ -2,17 +2,17 @@
 title: Ukázky vytváření Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
-ms.openlocfilehash: 5493972306092fc3309b0993d595f22c74c8603a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 637b862d81ce4eeddc56acb24a527e6937f33f64
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
 Ukázky Windows Communication Foundation (WCF) se dají vytvářet pomocí sady Visual Studio 2010 nebo pomocí **msbuild** příkazu z příkazového řádku. Oba postupy jsou popsány v tomto tématu.  
   
 > [!NOTE]
->  Před sestavení nebo s některým z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky, zkontrolujte, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+>  Před sestavení nebo s některým z ukázky WCF, ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 ### <a name="to-build-the-sample-using-a-command-prompt"></a>Chcete-li sestavit ukázku pomocí příkazového řádku  
   

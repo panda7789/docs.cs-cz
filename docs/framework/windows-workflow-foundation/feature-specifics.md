@@ -2,17 +2,17 @@
 title: Windows Workflow Foundation funkce podrobností
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: dc3ff5669d23e57685c89937f7c2171053f938ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0f9bc81609379414ce022499e20791073d259cdc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation funkce podrobností
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] Přidá do modelu Windows Workflow Foundation celou řadu funkcí. Tento dokument obsahuje několik nových funkcí a uvádí podrobnosti o scénářích, ve kterých mohou být užitečné.  
   
 ## <a name="messaging-activities"></a>Aktivity zasílání zpráv  
- Zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) se používají k odesílání a příjmu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zprávy z pracovní postup.  <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity se používají k vytvoření operace služby Windows Communication Foundation (WCF), který je zveřejněný prostřednictvím WSDL stejně jako standardní [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] webové služby.  <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> se používají k využívat webové službou WCF <xref:System.ServiceModel.ChannelFactory>; **přidat odkaz na službu** prostředí existuje taky pro Workflow Foundation, který generuje předem nakonfigurovaná aktivity.  
+ Zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) se používají k odesílání a přijímání zpráv WCF z pracovního postupu.  <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity se používají k vytvoření operace služby Windows Communication Foundation (WCF), který je zveřejněný prostřednictvím WSDL stejně jako standardní webové služby WCF.  <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> se používají k využívat webové službou WCF <xref:System.ServiceModel.ChannelFactory>; **přidat odkaz na službu** prostředí existuje taky pro Workflow Foundation, který generuje předem nakonfigurovaná aktivity.  
   
 ### <a name="getting-started-with-messaging-activities"></a>Začínáme s aktivitami zasílání zpráv  
   
@@ -34,11 +34,11 @@ ms.lasthandoff: 05/04/2018
  A `BestPriceFinder` volání služba k více službám letecká společnost najít nejlepší lístku cena pro daný postup.  Implementace této situace by vyžadovaly používat aktivity zpráva přijmout žádost o ceníku, načtení ceny z back endové služby a odpovědět na požadavek cena s nejlepší cenu.  Bude vám umožní používat ostatní aktivity out-of-box vytvořit obchodní logiku pro výpočet ceny nejlepší také vyžadovat.  
   
 ## <a name="workflowservicehost"></a>Hostitele služby pracovního postupu  
- <xref:System.ServiceModel.WorkflowServiceHost> Je pracovní postup out-of-box hostitele, který podporuje víc instancí, konfiguraci a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zasílání zpráv (i když pracovních postupů nemusí být hostovaná použít zasílání zpráv).  Je integrován se sadou trvalost, sledování a řízení instance pomocí sady chování služby.  Stejně jako [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]na <xref:System.ServiceModel.ServiceHost>, <xref:System.ServiceModel.WorkflowServiceHost> můžete samoobslužně hostovaná v konzole nebo WinForms/WPF aplikace nebo služba systému Windows nebo web hostovaný (jako soubor .xamlx) ve službě IIS nebo WAS.  
+ <xref:System.ServiceModel.WorkflowServiceHost> Je hostitel out-of-box pracovního postupu, která podporuje víc instancí, konfiguraci a zasílání zpráv WCF (i když nejsou vyžaduje použití zasílání zpráv aby bylo možné hostovat pracovních postupů).  Je integrován se sadou trvalost, sledování a řízení instance pomocí sady chování služby.  Stejně jako na WCF <xref:System.ServiceModel.ServiceHost>, <xref:System.ServiceModel.WorkflowServiceHost> můžete samoobslužně hostovaná v konzole nebo WinForms/WPF aplikace nebo služba systému Windows nebo web hostovaný (jako soubor .xamlx) ve službě IIS nebo WAS.  
   
 ### <a name="getting-started-with-workflow-service-host"></a>Začínáme s hostitele služby pracovního postupu  
   
--   V sadě Visual Studio 2010, vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projektu aplikace služby pracovního postupu: Tento projekt se nastavit tak, aby pomocí <xref:System.ServiceModel.WorkflowServiceHost> v prostředí webového hostitele.  
+-   V sadě Visual Studio 2010, vytvoření projektu aplikace služby WCF pracovního postupu: Tento projekt se nastavit tak, aby použít <xref:System.ServiceModel.WorkflowServiceHost> v prostředí webového hostitele.  
   
 -   Aby bylo možné hostovat pracovní postup zasílání zpráv, přidejte vlastní <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> , vytvoří instanci na základě zprávy.  
   
@@ -92,7 +92,7 @@ ms.lasthandoff: 05/04/2018
  Pracovní postup pořadí zpracování slouží ke zpracování vytvoření nového pořadí a aktualizace existujících příkazů, které jsou v procesu.  Implementace této situace se vyžaduje k hostování pracovní postup <xref:System.ServiceModel.WorkflowServiceHost> a používat aktivity zasílání zpráv.  Bude také vyžadovat korelace na základě `orderId` zajistit, že jsou provedeny aktualizace správné pracovního postupu.  
   
 ## <a name="simplified-configuration"></a>Zjednodušená konfigurace  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Schéma konfigurace je složitá a poskytuje uživatelům s mnoha pevný k nalezení funkcí. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], jsme se zaměřili na pomoc [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] uživatelé konfigurovat své služby s následující funkce:  
+ Konfigurační schéma služby WCF je složitý a poskytuje uživatelům s mnoha pevný k nalezení funkcí. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], jsme se zaměřili na pomoc uživatelům WCF své služby nakonfigurovat následující funkce:  
   
 -   Odebírá potřebu explicitní za služby konfigurace. Pokud nenakonfigurujete žádné \<služby > elementy služby a služby nedefinuje prostřednictvím kódu programu žádný koncový bod a potom sadu koncových bodů se automaticky přidat do vaší služby, jeden jednotlivých základní adresa služby a kontraktu implementované služby.  
   
@@ -100,7 +100,7 @@ ms.lasthandoff: 05/04/2018
   
 -   Standardní koncové body definovat opakovaně použitelné předkonfigurované koncových bodů, které mají pevné hodnoty pro jeden nebo více vlastností koncový bod (adresy, vazby a kontraktu) a umožňují definovat vlastní vlastnosti.  
   
--   Nakonec <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> umožňuje provádět Centrální správa [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfiguraci klienta, užitečné v situacích, ve kterých je konfigurace vybrali nebo změnit po doba načtení domény aplikace.  
+-   Nakonec <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> umožňuje provádět Centrální správa konfigurace klienta WCF, užitečný ve scénářích, ve kterých je konfigurace vybrali nebo změnit po doba načtení domény aplikace.  
   
 ### <a name="getting-started"></a>Začínáme  
   
@@ -116,7 +116,7 @@ ms.lasthandoff: 05/04/2018
   
 ### <a name="simplified-configuration-scenarios"></a>Zjednodušená konfigurace scénáře  
   
--   Vývojář zkušeného ASMX chce začít používat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Ale [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zdá se, že příliš složitý! Co je všechny tyto informace vyžadující zapisovat v konfiguračním souboru? V rozhraní .NET 4 můžete dokonce rozhodnout konfigurační soubor nemá vůbec.  
+-   Vývojář zkušeného ASMX se chce začít používat WCF. Ale WCF zdá se, že příliš složitý! Co je všechny tyto informace vyžadující zapisovat v konfiguračním souboru? V rozhraní .NET 4 můžete dokonce rozhodnout konfigurační soubor nemá vůbec.  
   
 -   Existující sady služby WCF jsou velmi obtížné konfiguraci a údržbu. Konfigurační soubor obsahuje tisíce řádky kód XML, které jsou velmi nebezpečné pro touch. Nápověda je potřeba ke snížení množství tohoto kódu na něco lepší správu bitlockeru.  
   
@@ -272,7 +272,7 @@ ms.lasthandoff: 05/04/2018
  Uživatel musí projít vyzváni k zadání vstupu. Za normálních podmínek by zprostředkovatel pomocí volání metody jako <xref:System.Console.ReadLine%2A> výzvou pro vstup uživatele. Problém s tímto nastavením je, že program čeká, dokud uživatel nezadá něco. V tomto scénáři je potřeba vypršení časového limitu odblokovat aktivitu blokování. Obvyklým scénářem je ten, který vyžaduje úlohu provést v rámci dané doby trvání. Vypršení časového limitu blokování aktivity je scénář, kde si vyberte přidá velké hodnoty.  
   
 ## <a name="wcf-routing-service"></a>Směrovací služby WCF  
- Směrovací služby je navržený jako obecný softwaru směrovač, který umožňuje určit jak [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]zprávy tok mezi klienty a služby.  Směrovací služby umožňuje oddělit klienty z vaší služby, který vám dává mnohem větší svobodu z hlediska konfigurace, může podporovat a flexibilitu máte při zvažování řešení pro hostování vaší služby.  V rozhraní .NET 3.5 služby a klienti byly úzce párované; Klient musí vědět o všech služeb ho nepotřebují, aby komunikoval s a kde se nachází. Kromě toho WCF v rozhraní .net Framework 3.5 měl následující omezení:  
+ Směrovací služby je navržený jako obecný softwaru směrovač, který umožňuje řídit způsob, jakým WCFmessages probíhá mezi klienty a služby.  Směrovací služby umožňuje oddělit klienty z vaší služby, který vám dává mnohem větší svobodu z hlediska konfigurace, může podporovat a flexibilitu máte při zvažování řešení pro hostování vaší služby.  V rozhraní .NET 3.5 služby a klienti byly úzce párované; Klient musí vědět o všech služeb ho nepotřebují, aby komunikoval s a kde se nachází. Kromě toho WCF v rozhraní .net Framework 3.5 měl následující omezení:  
   
 -   Zpracování chyb byl složitý, jak tuto logiku musel být pevně zakódované do klienta.  
   
@@ -312,7 +312,7 @@ ms.lasthandoff: 05/04/2018
 -   Klienti se dá nastavit jako větší odolnost proti selhání nebo nedostupnost služby.  
   
 ## <a name="wcf-discovery"></a>Zjišťování WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Zjišťování je framework technologie, která umožňuje začlenit mechanismus zjišťování k infrastruktuře aplikace. Můžete použít zjistitelnost služby a nakonfigurovat vaši klienti pro vyhledání služeb. Klienti už musí být pevný programového s koncovým bodem, provedení robustnější aplikace a odolnost proti chybám. Zjišťování je ideální platformu k sestavení možnosti automatické konfigurace do vaší aplikace.  
+ Zjišťování WCF je technologie framework, která umožňuje začlenit mechanismus zjišťování k infrastruktuře aplikace. Můžete použít zjistitelnost služby a nakonfigurovat vaši klienti pro vyhledání služeb. Klienti už musí být pevný programového s koncovým bodem, provedení robustnější aplikace a odolnost proti chybám. Zjišťování je ideální platformu k sestavení možnosti automatické konfigurace do vaší aplikace.  
   
  Produkt je postavená na standardní WS-Discovery. Je navržen tak být umožňuje vzájemnou spolupráci, rozšiřitelný a obecné. Produkt podporuje dva režimy činnosti:  
   

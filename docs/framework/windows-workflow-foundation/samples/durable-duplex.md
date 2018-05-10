@@ -2,11 +2,11 @@
 title: Trvanlivý duplexní přenos
 ms.date: 03/30/2017
 ms.assetid: 4e76d1a1-f3d8-4a0f-8746-4a322cdff6eb
-ms.openlocfilehash: 91490eb3ee6c11f29bb49d8343b807e74e8d3bc2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3df5ba962ef33594df1eaebc20789fa9e2d35244
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="durable-duplex"></a>Trvanlivý duplexní přenos
 Tento příklad ukazuje, jak připravit a nakonfigurovat systém exchange trvanlivý duplexní zpráv pomocí aktivity zasílání zpráv v systému Windows Workflow Foundation (WF). Trvanlivý duplexní zpráva exchange je obousměrný zpráva systému exchange, který probíhá po dlouhou dobu. Doba platnosti výměny zpráv může být delší než komunikační kanál životnost a doba platnosti v paměti instancí služby.  
@@ -41,7 +41,7 @@ Tento příklad ukazuje, jak připravit a nakonfigurovat systém exchange trvanl
 >  Vazba používá tato ukázka není zabezpečený. Při nasazování aplikace byste měli nakonfigurovat vaše vazby v závislosti na požadavcích zabezpečení vaší aplikace.  
   
 > [!NOTE]
->  Fronty použít v této ukázce nejsou transakcí. Příklad, který ukazuje, jak nastavit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] výměnu pomocí transakce front zpráv najdete v tématu [aktivace MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md) ukázka.  
+>  Fronty použít v této ukázce nejsou transakcí. Příklad, který ukazuje, jak nastavit výměny zpráv WCF pomocí front transakce, najdete v článku [aktivace MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md) ukázka.  
   
  Zpráva odeslaná Service1.xamlx Service2.xamlx odeslána, koncový bod klienta nakonfigurovanou adresu Service2.xamlx a vlastní vazby pomocí definována dříve. Zpětné volání z Service2.xamlx Service1.xamlx je odeslána pomocí koncový bod klienta s žádnou explicitně nakonfigurovanou adresu, protože adresa je převzat ze zpětného volání kontextu poslal Service1.xamlx. Následující příklad kódu definuje koncové body klientů.  
   

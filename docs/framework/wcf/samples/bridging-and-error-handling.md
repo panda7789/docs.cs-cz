@@ -2,14 +2,14 @@
 title: Přemostění a zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: 4ae87d1a-b615-4014-a494-a53f63ff0137
-ms.openlocfilehash: f13a55704422e8a958e55c489f6db11108b03c90
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 20f5af5736e5869ead0f7c50ce0fff22391ea730
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bridging-and-error-handling"></a>Přemostění a zpracování chyb
-Tento příklad znázorňuje použití směrování služby Windows Communication Foundation (WCF) přemostění komunikace mezi klientem a služba, která použít jiný vazby. Tento příklad také ukazuje, jak pomocí služby zálohování pro scénáře převzetí služeb při selhání. Služba směrování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] komponenty, která usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázka kalkulačku komunikovat pomocí služby směrování.  
+Tento příklad znázorňuje použití směrování služby Windows Communication Foundation (WCF) přemostění komunikace mezi klientem a služba, která použít jiný vazby. Tento příklad také ukazuje, jak pomocí služby zálohování pro scénáře převzetí služeb při selhání. Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF komunikovat pomocí služby směrování.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  

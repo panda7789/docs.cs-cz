@@ -2,21 +2,21 @@
 title: Technologie LINQ to SQL ukázka
 ms.date: 03/30/2017
 ms.assetid: 5f39db9e-0e62-42c9-8c98-bb8b54cec98c
-ms.openlocfilehash: a5c84dab941a50ddd5edb065004343cc304fd0f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3cfcaf3de1a22b8bb5505083f127a9888b99dbd8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="linq-to-sql-sample"></a>Technologie LINQ to SQL ukázka
 Tento příklad znázorňuje postup vytvoření aktivity použití LINQ na entity dotazu SQL z tabulek v databáze systému SQL Server.  
   
 > [!IMPORTANT]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Ukázky může být již nainstalován na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Ukázky WCF mohou již být nainstalován na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\Samples\WCFWFCardspace`  
 >   
->  Pokud tento adresář neexistuje, klikněte na odkaz ke stažení ukázkové v horní části této stránky. Všimněte si, že tento odkaz se stáhne a nainstaluje všechny [!INCLUDE[wf1](../../../../includes/wf1-md.md)], [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], a [!INCLUDE[infocard](../../../../includes/infocard-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, klikněte na odkaz ke stažení ukázkové v horní části této stránky. Všimněte si, že tento odkaz se stáhne a nainstaluje všechny [!INCLUDE[wf1](../../../../includes/wf1-md.md)], WCF, a [!INCLUDE[infocard](../../../../includes/infocard-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\Samples\WCFWFCardSpace\WF\Scenario\ActivityLibrary\Linq\LinqToSql`  
   

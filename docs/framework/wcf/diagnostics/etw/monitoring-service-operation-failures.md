@@ -2,11 +2,11 @@
 title: Sledování selhání operací služby
 ms.date: 03/30/2017
 ms.assetid: 59472ba3-8ebf-4479-bd7b-f440d5e636cb
-ms.openlocfilehash: 16ed779f77836fb68cf1edf1e01dbb3c0df01d45
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3d708b537789c8d0decf75df780300c1e185c4c8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="monitoring-service-operation-failures"></a>Sledování selhání operací služby
 Pokud je povolené analytické trasování pro aplikaci, selhání služby se dá snadno sledovat v prohlížeči událostí.  Toto téma ukazuje, jak k určení, kdy dojde k selhání operace služby, a jak zjistit, co způsobilo selhání.  
@@ -17,7 +17,7 @@ Pokud je povolené analytické trasování pro aplikaci, selhání služby se d�
   
 2.  Pokud jste nepovolili analytické trasování, rozbalte položku **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **serveru aplikace – aplikace** . Vyberte **zobrazení**, **ukazují analytické a ladicí protokoly**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol**. Ponechte prohlížeče událostí otevřete tak, aby trasování lze zobrazit po operaci služby se nezdaří.  
   
-3.  Dále otevřete vytvořené v ukázce [kurzu Začínáme](../../../../../docs/framework/wcf/getting-started-tutorial.md) v [!INCLUDE[vs_current_long](../../../../../includes/vs-current-long-md.md)] Všimněte si, že je nutné spustit [!INCLUDE[vs_current_long](../../../../../includes/vs-current-long-md.md)] jako správce, aby bylo možné vytvořit službu. Pokud máte [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] ukázky nainstalován, můžete otevřít [Začínáme](../../../../../docs/framework/wcf/samples/getting-started-sample.md), obsahující dokončený projekt vytvořený v tomto kurzu.  
+3.  Dále otevřete vytvořené v ukázce [kurzu Začínáme](../../../../../docs/framework/wcf/getting-started-tutorial.md) v [!INCLUDE[vs_current_long](../../../../../includes/vs-current-long-md.md)] Všimněte si, že je nutné spustit [!INCLUDE[vs_current_long](../../../../../includes/vs-current-long-md.md)] jako správce, aby bylo možné vytvořit službu. Pokud máte Ukázky WCF nainstalován, můžete otevřít [Začínáme](../../../../../docs/framework/wcf/samples/getting-started-sample.md), který obsahuje dokončený projekt vytvořený v tomto kurzu.  
   
 4.  V souboru Program.cs v projektu serveru, přidejte následující řádek kódu na začátek `Divide` metoda v `CalculatorService` třídy:  
   

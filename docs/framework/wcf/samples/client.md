@@ -2,21 +2,21 @@
 title: Klient
 ms.date: 03/30/2017
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
-ms.openlocfilehash: 4c44ed4be9a3598ea79355737db678dd7a80a56a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: cd172aefa640853c7ace1d9d7ad3fada73714642
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="client"></a>Klient
 Tato část obsahuje příklady vysvětlující Windows Communication Foundation (WCF) klientské aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Interoperabilita klientů](../../../../docs/framework/wcf/samples/client-interoperability.md)  
- Demonstruje vzájemná funkční spolupráce mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a další technologie.  
+ Demonstruje vzájemná funkční spolupráce mezi WCF a další technologie.  
   
  [Hlavičky adresy](../../../../docs/framework/wcf/samples/address-headers.md)  
- Ukazuje, jak mohou klienti předat parametry odkaz na službu pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Ukazuje, jak mohou klienti předat parametry odkaz služby WCF pomocí.  
   
  [Objekt pro vytváření kanálů](../../../../docs/framework/wcf/samples/channel-factory.md)  
  Ukazuje, jak klientská aplikace můžete vytvořit kanál s <xref:System.ServiceModel.ChannelFactory> třída místo generovaného klienta.  

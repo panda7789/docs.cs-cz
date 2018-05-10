@@ -2,17 +2,17 @@
 title: Model hierarchické konfigurace
 ms.date: 03/30/2017
 ms.assetid: 28dcc698-226c-4b77-9e51-8bf45a36216c
-ms.openlocfilehash: 4debeaf0bfd2558552a7943f3767a4f9b53ce550
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 233a8d4ba36835ab26e0c4a8cd044cf60d497a0b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hierarchical-configuration-model"></a>Model hierarchické konfigurace
 Tento příklad znázorňuje implementaci hierarchie konfigurační soubory pro služby. Také ukazuje, jak vazby, chování služby a chování koncový bod se dědí z vyšší úrovně v hierarchii.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Jedna z funkcí vytvořených pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] vylepšením ve model hierarchické konfigurace. Příkladem hierarchické konfigurace modelu může být definováno Machine.config -> Rootweb.config -> souboru Web.config. V [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], tyto vazby a chování, které jsou definovány v horní úrovně v hierarchii konfigurace se přidají k vašim službám s žádné explicitní konfigurací. Tento příklad ukazuje, jak je možné ke zjednodušení konfigurace služby podle konfigurace – elementy definované na počítači nebo na úrovni aplikace.  
+ Jedna z funkcí vytvořených pro WCF v [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] vylepšením ve model hierarchické konfigurace. Příkladem hierarchické konfigurace modelu může být definováno Machine.config -> Rootweb.config -> souboru Web.config. V [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], tyto vazby a chování, které jsou definovány v horní úrovně v hierarchii konfigurace se přidají k vašim službám s žádné explicitní konfigurací. Tento příklad ukazuje, jak je možné ke zjednodušení konfigurace služby podle konfigurace – elementy definované na počítači nebo na úrovni aplikace.  
   
  Tato ukázka obsahuje devět služby, které jsou definované v tři úrovně hierarchie. `Service1` je v kořenovém adresáři. `Service2` a `Service3` dědění výchozí elementy ze `Service1`. `Service4`, `Service5`, `Service6` a `Service7` jsou definovány na třetí úrovni v hierarchii, dědění výchozí elementy ze `Service3`. Nakonec `Service10` a `Service11` jsou čtvrtý úrovně v hierarchii.  
   

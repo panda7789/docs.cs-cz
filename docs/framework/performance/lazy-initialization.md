@@ -1,31 +1,19 @@
 ---
-title: "Opožděná inicializace"
-ms.custom: 
+title: Opožděná inicializace
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - lazy initialization in .NET, introduction
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f4998cc0c836cf46d79d854ad9a85e7eacf70d7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a826121a7f22d1db7287171c5add28e5fcd690cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že je její vytvoření odložení dokud nejprve se používá. (Pro toto téma podmínky *opožděné inicializace* a *opožděné konkretizaci* jsou shodné.) Opožděná inicializace slouží především zvyšování výkonu, vyhněte se plýtvání výpočtů a snížit požadavky na paměť programu. Jedná se o nejběžnějších scénářů:  
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Pokud máte objekt, který je nákladné, a chcete odložení svého vytvoření až po další náročná operace. Předpokládejme například, že váš program načte několik instancí objektů, když jeho spuštění, ale jenom některé z nich jsou vyžadovány okamžitě. Může zvýšit výkon při spuštění programu rozlišením inicializace objektů, které nejsou povinné, dokud požadované objekty byly vytvořeny.  
   
- I když můžete napsat vlastní kód pro provádění opožděné inicializace, doporučujeme použít <xref:System.Lazy%601> místo. <xref:System.Lazy%601>a jeho souvisejících typů také podporují vláken a zadejte zásadu šíření konzistentní výjimka.  
+ I když můžete napsat vlastní kód pro provádění opožděné inicializace, doporučujeme použít <xref:System.Lazy%601> místo. <xref:System.Lazy%601> a jeho souvisejících typů také podporují vláken a zadejte zásadu šíření konzistentní výjimka.  
   
  Následující tabulka uvádí typy, které poskytuje rozhraní .NET Framework verze 4 povolit opožděná inicializace v různých scénářích.  
   
@@ -86,7 +74,7 @@ ms.lasthandoff: 12/22/2017
   
  Některé <xref:System.Lazy%601> být konstruktory <xref:System.Threading.LazyThreadSafetyMode> parametr s názvem `mode`. Tyto konstruktory zadejte také další vlákno režim zabezpečení. Následující tabulka ukazuje, jak bezpečný přístup z <xref:System.Lazy%601> objektu je ovlivňován konstruktor parametrů, které určují bezpečný přístup z více vláken. Každý konstruktor má maximálně jeden takový parametr.  
   
-|Zabezpečení vlákna objektu|`LazyThreadSafetyMode``mode` parametr|Logická hodnota `isThreadSafe` parametru|Žádné parametry bezpečný přístup z více vláken|  
+|Zabezpečení vlákna objektu|`LazyThreadSafetyMode` `mode` Parametr|Logická hodnota `isThreadSafe` parametru|Žádné parametry bezpečný přístup z více vláken|  
 |---------------------------------|---------------------------------------------|--------------------------------------|---------------------------------|  
 |Plně bezpečný přístup z více vláken; pouze jedno vlákno současně pokusí k inicializaci hodnoty.|<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>|`true`|Ano.|  
 |Není bezpečný přístup z více vláken.|<xref:System.Threading.LazyThreadSafetyMode.None>|`false`|Nelze použít.|  
@@ -113,8 +101,8 @@ ms.lasthandoff: 12/22/2017
 |-----------------|------------------------|--------------------------------|---------------------------|  
 |Lazy(T)()|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|Ne|Ne|  
 |Lazy(T)(Func(T))|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|Ano|Ano|  
-|Lazy(T)(Boolean)|`True`(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) nebo `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Ne|Ne|  
-|Lazy(T)(Func(T), logická hodnota)|`True`(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) nebo `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Ano|Ano|  
+|Lazy(T)(Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) nebo `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Ne|Ne|  
+|Lazy(T)(Func(T), logická hodnota)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) nebo `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|Ano|Ano|  
 |Lazy(T)(LazyThreadSafetyMode)|Definované uživatelem|Ne|Ne|  
 |Lazy(T)(Func(T), LazyThreadSafetyMode)|Definované uživatelem|Ano|Ne, pokud uživatel zadá <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly>, jinak hodnota Ano.|  
   
@@ -137,7 +125,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[Lazy#7](../../../samples/snippets/csharp/VS_Snippets_Misc/lazy/cs/cs_lazycodefile.cs#7)]
  [!code-vb[Lazy#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#7)]  
   
- <xref:System.Threading.ThreadLocal%601>zabalí jeho objekt stejným způsobem jako <xref:System.Lazy%601>, se tyto základní rozdíly:  
+ <xref:System.Threading.ThreadLocal%601> zabalí jeho objekt stejným způsobem jako <xref:System.Lazy%601>, se tyto základní rozdíly:  
   
 -   Každé vlákno inicializuje místní proměnné pomocí jeho vlastní privátní data, která nejsou přístupné z jiných vláken.  
   

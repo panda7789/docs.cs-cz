@@ -2,11 +2,11 @@
 title: Integrace mezipaměti ASP.NET
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-ms.openlocfilehash: 420ff192caf41a37b6229bf36e32124f3646d69c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 744ecbff8b51565906ff4c619ba8c8aecff123c7
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
 Tento příklad ukazuje, jak využívat výstupní mezipaměti technologie ASP.NET pomocí programovacího modelu WCF WEB HTTP. Najdete v tématu [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázku vlastním hostováním verzi tento scénář, který popisuje implementace služby podrobněji. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  
@@ -28,7 +28,7 @@ Tento příklad ukazuje, jak využívat výstupní mezipaměti technologie ASP.N
   
  V souboru Service.cs ukázkový projekt služby jak `GetCustomer` a `GetCustomers` operace jsou označené jako <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, který poskytuje název profilu mezipaměti "CacheFor60Seconds". V souboru Web.config projektu služby, je profil mezipaměti "CacheFor60Seconds" uvedených v části <`caching`> elementu <`system.web`>. Pro tento profil mezipaměti, hodnota `duration` atribut je "60", takže odpovědi související s tímto profilem se ukládat do mezipaměti ve výstupní mezipaměti technologie ASP.NET po dobu 60 sekund. Navíc pro tento profil mezipaměti `varmByParam` je nastavena na hodnotu "format" Ano požadavky s různými hodnotami `format` dotaz parametr řetězce jejich odpovědi v mezipaměti samostatně. Nakonec mezipaměti profilu `varyByHeader` atribut je nastaven na "Přijmout", aby jejich odpovědi v mezipaměti samostatně požadavků s různé hodnoty hlavičky Accept.  
   
- Program.cs v projektu klienta ukazuje, jak mohou být klienta vytvořené pomocí <xref:System.Net.HttpWebRequest>. Všimněte si, že se jedná pouze jeden způsob pro přístup ke službě WCF. Je také možné přístup ke službě pomocí jiné třídy rozhraní .NET Framework jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanálu a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka a [automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md) ukázkové) ukazují, jak používat tyto třídy ke komunikaci s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Program.cs v projektu klienta ukazuje, jak mohou být klienta vytvořené pomocí <xref:System.Net.HttpWebRequest>. Všimněte si, že se jedná pouze jeden způsob pro přístup ke službě WCF. Je také možné přístup ke službě pomocí jiné třídy rozhraní .NET Framework jako kanálu WCF a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka a [automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md) ukázkové) ukazují, jak používat tyto třídy pro komunikaci se službou WCF.  
   
 ## <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
  Ukázka se skládá ze tří projektů:  

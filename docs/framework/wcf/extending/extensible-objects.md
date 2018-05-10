@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - extensible objects [WCF]
 ms.assetid: bc88cefc-31fb-428e-9447-6d20a7d452af
-ms.openlocfilehash: 4fdb3ddff6bda21ac7f9538645d92f15e0b443b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 95bd354e3aed8e0968debcac160383eb9c26cd0a
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extensible-objects"></a>Rozšiřitelné objekty
 Vzor extensible objektu se používá buď rozšířit existující třídy runtime s novými funkcemi nebo přidat nový stav na objekt. Rozšíření, které jsou připojené k jednomu rozšiřitelné objekty, aktivujte velmi různých fází zpracování pro přístup k sdílení stavu a funkce, které jsou připojené k běžné extensible objekt, který bude mít přístup k chování.  
@@ -56,7 +56,7 @@ where T : IExtensibleObject<T>
   
 -   <xref:System.ServiceModel.OperationContext> – Tato třída reprezentuje operaci informace, které shromažďuje modulu runtime pro každou operaci.  To zahrnuje informace, jako je záhlaví příchozích zpráv, příchozí vlastnosti zprávy, příchozí identity zabezpečení a další informace.  Rozšíření této třídy můžete buď rozšířit chování <xref:System.ServiceModel.OperationContext> nebo uložit stav pro každou operaci.  
   
--   <xref:System.ServiceModel.IContextChannel> – Toto rozhraní umožňuje kontrola každý stav pro kanály a proxy servery, které jsou vytvořené [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modulu runtime.  Rozšíření této třídy můžete buď rozšířit chování <xref:System.ServiceModel.IClientChannel> nebo můžete použít k uložení stavu pro každý kanál.  
+-   <xref:System.ServiceModel.IContextChannel> – Toto rozhraní umožňuje kontrola každý stav pro kanály a proxy servery, které jsou vytvořené modulem WCF runtime.  Rozšíření této třídy můžete buď rozšířit chování <xref:System.ServiceModel.IClientChannel> nebo můžete použít k uložení stavu pro každý kanál.  
   
 -  
   

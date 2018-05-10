@@ -2,11 +2,11 @@
 title: Vlastní demux
 ms.date: 03/30/2017
 ms.assetid: fc54065c-518e-4146-b24a-0fe00038bfa7
-ms.openlocfilehash: 76f8d60fdcc1fcba9942a78138e83104dfcd972b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e88672f152b87740feef1345b3eac213916a1527
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-demux"></a>Vlastní demux
 Tento příklad ukazuje, jak hlavičky zpráv MSMQ lze mapovat na jinou službu operations tak, aby Windows Communication Foundation (WCF) služeb, které používají <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> nejsou omezeny na použití jedné operace služby, jak je předvedeno v [ Zprávy služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) a [Windows Communication Foundation do řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázky.  
@@ -108,7 +108,7 @@ public static void Main()
  Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru.  
   
 > [!NOTE]
->  Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Adresa koncového bodu určuje schématu msmq.formatname a používá localhost pro místní počítač. Následující schéma je adresa správně formátovaný fronty podle názvu formátu MSMQ adresování pokyny.  
+>  Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. Adresa koncového bodu WCF určuje msmq.formatname schématu a používá localhost pro místní počítač. Následující schéma je adresa správně formátovaný fronty podle názvu formátu MSMQ adresování pokyny.  
   
 ```xml  
 <appSettings>  

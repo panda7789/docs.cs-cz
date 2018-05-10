@@ -7,31 +7,31 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 44b36fc917ceb30141d7d2235b8bb364d3b998c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 41bef6bf5a69a51738c6848050972a1a4e01c153
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
-Tento dokument poskytuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Je určena k vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verze [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klienta, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programování, najdete v části [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
+Tento dokument poskytuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Je určena k vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
   
 ## <a name="wcf-fundamentals"></a>Základy WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je modulu runtime a sada rozhraní API pro vytváření systémy, které odesílají zprávy mezi služeb a klientů. Stejné infrastruktury a rozhraní API slouží k vytvoření aplikace, které komunikují s jinými aplikacemi ve stejném počítači systému nebo v systému, který se nachází v jiné společnosti a je k ní přistupovat přes Internet.  
+ WCF je modul runtime a sada rozhraní API pro vytváření systémy, které odesílají zprávy mezi služeb a klientů. Stejné infrastruktury a rozhraní API slouží k vytvoření aplikace, které komunikují s jinými aplikacemi ve stejném počítači systému nebo v systému, který se nachází v jiné společnosti a je k ní přistupovat přes Internet.  
   
 ### <a name="messaging-and-endpoints"></a>Koncové body a zasílání zpráv  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je založen na představu o komunikaci na základě zpráv a nic, který je možné modelovat jako zprávu (například požadavek HTTP nebo zprávy služby Řízení front zpráv (MSMQ)) může být reprezentován jednotným způsobem v programovací model. To umožňuje jednotné rozhraní API napříč různými mechanismy přenosu.  
+ WCF je založena na představu o komunikaci na základě zpráv a nic, který je možné modelovat jako zprávu (například požadavek HTTP nebo zprávy služby Řízení front zpráv (MSMQ)) může být reprezentován jednotným způsobem v programovací model. To umožňuje jednotné rozhraní API napříč různými mechanismy přenosu.  
   
  Model rozlišuje mezi *klienti*, což jsou aplikace, které zahájí komunikaci, a *služby*, což jsou aplikace, které klientům komunikovat s nimi a reagovat na událost, počkejte komunikace. Jednu aplikaci může fungovat jako klient a služba. Příklady najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md) a [Peer-to-Peer sítě](../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
  Zprávy se posílají mezi koncovými body. *Koncové body* jsou míst, kde jsou zprávy odesílané nebo přijímané (nebo obě) a že definují všechny požadované informace o výměně zpráv. Služba vystavuje jeden nebo více koncových bodů aplikace (stejně jako nula nebo víc koncových bodů infrastruktury) a klient vytvoří koncový bod, který je kompatibilní s jedním z koncových bodů služby.  
   
- *Koncový bod* popisuje způsobem založené na standardu, kde by měly být odeslány zprávy, jak by měly být odeslány a co by měl vypadat zprávy. Služby můžou zpřístupnit tyto informace jako metadata, která klientů může zpracovat ke generování odpovídající [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienti a komunikační *zásobníky*.  
+ *Koncový bod* popisuje způsobem založené na standardu, kde by měly být odeslány zprávy, jak by měly být odeslány a co by měl vypadat zprávy. Službu můžete vystavit tyto informace jako metadata, která může zpracovat klientů pro generování příslušné klienti WCF a komunikace *zásobníky*.  
   
 ### <a name="communication-protocols"></a>Komunikační protokoly  
- Jeden požadovaný element zásobníku komunikace *přenosu protokolu*. Prostřednictvím intranetu a Internetu pomocí běžných přenosy, jako je například HTTP a TCP nelze odesílat zprávy. Ostatní přenosy jsou zahrnuty podporující komunikaci s aplikací služby Řízení front zpráv a uzly na mřížku sdílené sítě. Další mechanismy přenosu lze přidat pomocí předdefinovaných rozšíření body [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
+ Jeden požadovaný element zásobníku komunikace *přenosu protokolu*. Prostřednictvím intranetu a Internetu pomocí běžných přenosy, jako je například HTTP a TCP nelze odesílat zprávy. Ostatní přenosy jsou zahrnuty podporující komunikaci s aplikací služby Řízení front zpráv a uzly na mřížku sdílené sítě. Pomocí předdefinovaných rozšíření body služby WCF se dá přidat další mechanismy přenosu.  
   
- Další požadovaný element v zásobníku komunikace je kódování, které určuje způsob formátování jakékoli dané zprávy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje následující kódování:  
+ Další požadovaný element v zásobníku komunikace je kódování, které určuje způsob formátování jakékoli dané zprávy. WCF poskytuje následující kódování:  
   
 -   Kódování, umožňuje vzájemnou spolupráci kódování textu.  
   
@@ -39,13 +39,13 @@ Tento dokument poskytuje podrobný pohled na architekturu Windows Communication 
   
 -   Binární kódování pro efektivní přenos.  
   
- Více kódování mechanismy (například komprese kódování) lze přidat pomocí předdefinovaných rozšíření body [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
+ Více kódování mechanismy (například komprese kódování) lze přidat pomocí předdefinovaných rozšíření body služby WCF.  
   
 ### <a name="message-patterns"></a>Vzory zpráv  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje několik zasílání zpráv způsoby, včetně požadavku a odpovědi, jednosměrné a duplexní komunikace. Různé přenosy podporují různé vzorce zasílání zpráv a proto ovlivnit typy interakce, které podporují. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Rozhraní API a runtime také můžete bezpečně a spolehlivě odesílat zprávy pomoci.  
+ WCF podporuje několik zasílání zpráv způsoby, včetně požadavku a odpovědi, jednosměrné a duplexní komunikace. Různé přenosy podporují různé vzorce zasílání zpráv a proto ovlivnit typy interakce, které podporují. Rozhraní API WCF a prostředí runtime také dozvíte, jak bezpečně a spolehlivě odesílat zprávy.  
   
 ## <a name="wcf-terms"></a>Podmínky WCF  
- Další konceptů a termínů používaných v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] dokumentace patří.  
+ Další konceptů a termínů používaných v dokumentaci WCF patří.  
   
  – zpráva  
  Samostatná jednotka data, která se může skládat z několika částí, včetně text a záhlaví.  
@@ -56,7 +56,7 @@ Tento dokument poskytuje podrobný pohled na architekturu Windows Communication 
  endpoint  
  Konstrukce zprávy, které jsou odesílané nebo přijímané (nebo obě). Zahrnuje umístění (adresu), která definuje, kde lze odesílat zprávy, specifikaci komunikační mechanizmus (vazbu), který popisuje, jak by měly být odeslány zprávy, a definici pro sadu zpráv, které můžete odesílané nebo přijímané (nebo obě) v daném okamžiku umístění (kontraktu služby), který popisuje, jaké zprávy lze odeslat.  
   
- A [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby je vystaven na celém světě jako kolekce koncových bodů.  
+ Služby WCF je vystaven na světě jako kolekce koncových bodů.  
   
  koncový bod aplikace  
  Koncový bod vystavené aplikace a který odpovídá kontraktu služby implementované aplikace.  
@@ -83,13 +83,13 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Komponenta, která řídí různé aspekty spuštění služby, koncový bod, určité operace nebo klienta. Chování jsou seskupené podle oboru: společné chování ovlivňuje všechny koncové body globálně, pouze související se službou aspekty ovlivnit chování služby, koncový bod chování ovlivňuje pouze vlastnosti týkající se koncový bod a úrovni operace chování ovlivňuje konkrétní operace. Například je omezování jeden chování služby, která určuje, jak služba reaguje při nad zpráv hrozí zahlcovat jeho funkce pro zpracování. Chování koncového bodu na druhé straně řídí pouze aspekty, které jsou relevantní pro koncové body, například jak a kde najít pověření zabezpečení.  
   
  vazby poskytované systémem  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zahrnuje několik vazeb poskytovaných systémem. Toto jsou kolekce elementů, které jsou optimalizované pro určité scénáře vazby. Například <xref:System.ServiceModel.WSHttpBinding> je navržen pro interakci s službami, které implementují různé WS-* specifikace. Tyto předdefinované vazby ušetřit čas prezentací pouze možnosti, které mohou být správně použity pro konkrétní scénář. Pokud předdefinované vazbu nesplňuje vaše požadavky, můžete vytvořit vlastní vlastní vazby.  
+ WCF zahrnuje několik vazeb poskytovaných systémem. Toto jsou kolekce elementů, které jsou optimalizované pro určité scénáře vazby. Například <xref:System.ServiceModel.WSHttpBinding> je navržen pro interakci s službami, které implementují různé WS-* specifikace. Tyto předdefinované vazby ušetřit čas prezentací pouze možnosti, které mohou být správně použity pro konkrétní scénář. Pokud předdefinované vazbu nesplňuje vaše požadavky, můžete vytvořit vlastní vlastní vazby.  
   
  Konfigurace a kódování  
  Řízení aplikace, můžete udělat buď pomocí kódování, prostřednictvím konfigurace, nebo obojí. Konfigurace má výhodu v podobě povolení někdo než developer (například správce sítě) můžete nastavit parametry klienta a služby po zapsání kód a bez nutnosti její kompilace. Konfigurace pouze umožňuje nastavit hodnoty, jako jsou adresy koncových bodů, ale také umožňuje další ovládání povolením můžete přidat koncové body, vazeb a chování. Kódování umožňuje vývojáři zachovat přísnou kontrolu všech součástí služby nebo klienta, a všechna nastavení provést prostřednictvím konfigurace může být prověřovány a v případě potřeby přepsat kód.  
   
  operaci služby  
- Postup uvedený v kódu služby, která implementuje funkce pro operaci. Tato operace je vystaven na klienty jako metody na [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta. Metodu můžete vrátit hodnotu, může trvat libovolný počet argumentů, nebo nepřebírají žádné argumenty a vrátit žádná odpověď. Například operace, která funguje jako jednoduchý "Hello" slouží jako upozornění stavu klienta a zahájíte řady operací.  
+ Postup uvedený v kódu služby, která implementuje funkce pro operaci. Tato operace je pro klienty zpřístupněná jako metody pro klienta WCF. Metodu můžete vrátit hodnotu, může trvat libovolný počet argumentů, nebo nepřebírají žádné argumenty a vrátit žádná odpověď. Například operace, která funguje jako jednoduchý "Hello" slouží jako upozornění stavu klienta a zahájíte řady operací.  
   
  kontrakt služby  
  Sváže společně více souvisejících operací do jedné jednotky funkční. Nastavení úrovně služby, například obor názvů služby, odpovídající kontrakt zpětného volání a jiné těchto nastavení můžete definovat kontrakt. Ve většině případů kontrakt definované vytváření rozhraní ve programovací jazyk podle vašeho výběru a použití <xref:System.ServiceModel.ServiceContractAttribute> atribut rozhraní. Výsledky skutečných služby kódu implementací rozhraní.  
@@ -119,25 +119,25 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Služba má model zřizování instancí. Existují tři zřizování instancí modely: "single," ve kterém jeden objekt CLR služeb všichni klienti; " za volání"ve kterém se vytvoří nový objekt CLR pro zpracování jednotlivých volání klienta; a "na relaci," v které sadu CLR objekty, se vytvoří, jednou pro každou samostatné relaci. Volba zřizování instancí modelu závisí na požadavky na aplikace a vzoru očekávané využití služby.  
   
  klientské aplikace  
- Program, který výměny zpráv pomocí jednoho nebo víc koncových bodů. Klientská aplikace začne tím, že vytvoříte instanci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta a volání metody [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta. Je důležité si uvědomit, že jednu aplikaci může být klienta a služby.  
+ Program, který výměny zpráv pomocí jednoho nebo víc koncových bodů. Klientská aplikace začíná vytvoření instance klienta WCF a volání metod klienta WCF. Je důležité si uvědomit, že jednu aplikaci může být klienta a služby.  
   
  Kanál  
  Konkrétní implementaci prvku vazby. Představuje konfiguraci vazby a kanál je implementace přidružené k této konfiguraci. Proto je kanál, spojené s každou prvku vazby. Kanály skládat na sebe vytvořit konkrétní implementaci vazby: zásobník kanálu.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Klienta  
- Konstrukce klientskou aplikaci, která zveřejňuje operací služby jako metody (v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] programovací jazyk podle vaší volby, jako je například jazyka Visual Basic a Visual C#). Může být hostitelem všechny aplikace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienty, včetně aplikace, který je hostitelem služby. Proto je možné vytvořit službu, která zahrnuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienti dalších služeb.  
+ Klienta WCF  
+ Konstrukce klientskou aplikaci, která zveřejňuje operací služby jako metody (v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] programovací jazyk podle vaší volby, jako je například jazyka Visual Basic a Visual C#). Všechny aplikace, může hostovat klienta WCF, včetně aplikace, který je hostitelem služby. Proto je možné vytvořit službu, která zahrnuje klienti WCF dalších služeb.  
   
- A [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta lze automaticky generovány pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a přejdete na spuštěnou službu, která publikuje metadat.  
+ Klienta WCF pomocí automaticky generovány [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a přejdete na spuštěnou službu, která publikuje metadat.  
   
  metadata  
- Ve službě jsou popsané charakteristiky služby, která externí entity je potřeba pochopit ke komunikaci se službou. Metadata mohou být využívány službou [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta a doprovodné konfigurace, který klientská aplikace můžete použít k interakci se službou.  
+ Ve službě jsou popsané charakteristiky služby, která externí entity je potřeba pochopit ke komunikaci se službou. Metadata mohou být využívány službou [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro generování klienta WCF a doprovodné konfigurace, který klientská aplikace můžete použít k interakci se službou.  
   
  Metadata vystavené služba zahrnuje dokumentech schémat XML, které definují kontrakt dat služby, a WSDL dokumenty, které popisují metody služby.  
   
- Když je povolené, je automaticky generován metadata pro službu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zkontrolováním služba a její koncové body. K publikování metadat ze služby, je potřeba explicitně povolit chování metadat.  
+ Když je povolené, metadata pro službu automaticky generuje služba WCF zkontrolováním služba a její koncové body. K publikování metadat ze služby, je potřeba explicitně povolit chování metadat.  
   
  zabezpečení  
- V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], zahrnuje důvěrnost (šifrování zpráv, aby se zabránilo odposlouchávání), integritu (znamená pro zjišťování manipulaci se zprávou), ověřování (prostředky pro ověření serverů a klientů) a autorizaci (na řízení přístupu k prostředkům). Tyto funkce jsou k dispozici buď využívání stávající mechanismy zabezpečení, jako je například TLS přes protokol HTTP (také označované jako HTTPS), nebo implementovat jednu nebo více různých WS-* bezpečnostní specifikací.  
+ Ve službě WCF zahrnuje důvěrnost (šifrování zpráv, aby se zabránilo odposlouchávání), integritu (znamená pro zjišťování manipulaci se zprávou), ověřování (prostředky pro ověření serverů a klientů) a autorizace (řízení přístupu k prostředky). Tyto funkce jsou k dispozici buď využívání stávající mechanismy zabezpečení, jako je například TLS přes protokol HTTP (také označované jako HTTPS), nebo implementovat jednu nebo více různých WS-* bezpečnostní specifikací.  
   
  režim zabezpečení přenosu  
  Určuje, že důvěrnost, integritu a ověřování jsou poskytovány na mechanismy transport layer (jako je například HTTPS). Při použití přenosu jako protokol HTTPS, tento režim má výhodu v podobě se efektivní v jeho výkon a popsaných z důvodu jeho jejich rozšíření na Internetu. Nevýhodou je, že je tento druh zabezpečení samostatně použitá jednotlivých směrování v cestě komunikace, provedení komunikace náchylná k útoku "man uprostřed".  
@@ -149,7 +149,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Určuje použití přenosové vrstvy k zajištění důvěrnosti, ověřování a integritu zprávy, když všechny zprávy může obsahovat více přihlašovací údaje (deklarace identity) vyžaduje, že příjemci zprávy.  
   
  WS-*  
- Sdružená vlastnost rostoucí sadu specifikace webové služby (WS), jako je WS-zabezpečení, WS-ReliableMessaging a tak dále, které jsou implementované v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
+ Sdružená vlastnost rostoucí sadu webové služby (WS) specifikace, jako je WS-zabezpečení, WS-ReliableMessaging a tak dále, které jsou implementované ve WCF.  
   
 ## <a name="see-also"></a>Viz také  
  [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)  

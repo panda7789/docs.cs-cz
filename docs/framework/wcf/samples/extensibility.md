@@ -2,11 +2,11 @@
 title: Rozšiřitelnost
 ms.date: 03/30/2017
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-ms.openlocfilehash: 7cba21715a6a0347e910300de46c1e47fd6e30bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 010d6d7b17d3cb39e19c23550ca3522d6ea73a21
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extensibility"></a>Rozšiřitelnost
 Tato část obsahuje ukázky, které pracují s vlastní rozšíření a dalších funkcí služby Windows Communication Foundation (WCF).  
@@ -55,10 +55,10 @@ Tato část obsahuje ukázky, které pracují s vlastní rozšíření a další
  Ukazuje, jak procesy, jako jsou serializace, deserializace, schéma export a import schématu lze přizpůsobit pomocí kontraktu dat náhradního třídy.  
   
  [Rozšíření kontroly nad zpracováním a vykazováním chyb](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)  
- Ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní.  
+ Ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách pomocí služby WCF <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní.  
   
  [Inspektoři zpráv](../../../../docs/framework/wcf/samples/message-inspectors.md)  
  Ukazuje, jak implementovat a nakonfigurovat klienta a služby inspektoři zpráv.  
   
  [WebContentTypeMapper](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  
- Ukazuje, jak pro nové typy obsahu k mapování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formáty text zprávy.
+ Ukazuje, jak chcete namapovat nové typy obsahu k formáty text zpráv WCF.

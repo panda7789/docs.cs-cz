@@ -7,11 +7,11 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: e02b7317eef8e7124bd5ba9ceef201cddc9bbea1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ca0f78239e6e259ec5bd75e9f93af5c3a4b7adf1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Vývoj a nasazení služby WCF Data Services
 Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pro další základní informace o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], najdete v části [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) a [přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  
@@ -75,7 +75,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
 -   Při ladění datové služby může být velmi užitečný kontrolní program HTTP, který umožňuje kontrolovat obsah zpráv požadavků a odpovědí. K inspekci požadavků HTTP a odpovědí z datové služby lze využít jakýkoli síťový analyzátor paketů, který zobrazuje surové pakety.  
   
--   Při ladění datové služby může být užitečné získat o chybě z datové služby více informace než v běžném provozu. Další informace o chybě můžete získat od služby data podle nastavení <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnost v <xref:System.Data.Services.DataServiceConfiguration> k `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior> atribut na data služby třídu `true`. Další informace najdete v příspěvku [ladění služby WCF Data Services](http://go.microsoft.com/fwlink/?LinkId=201868). Můžete také povolit trasování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zobrazíte výjimek vyvolaných ve vrstvě zasílání zpráv protokolu HTTP. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
+-   Při ladění datové služby může být užitečné získat o chybě z datové služby více informace než v běžném provozu. Další informace o chybě můžete získat od služby data podle nastavení <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnost v <xref:System.Data.Services.DataServiceConfiguration> k `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior> atribut na data služby třídu `true`. Další informace najdete v příspěvku [ladění služby WCF Data Services](http://go.microsoft.com/fwlink/?LinkId=201868). Můžete také povolit trasování ve WCF zobrazíte výjimek vyvolaných ve vrstvě zasílání zpráv protokolu HTTP. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
 -   Datové služby je obvykle vyvinutý jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekt aplikace, ale můžete také vytvořit je služba data jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webový projekt v sadě Visual Studio. Informace o rozdílech mezi těmito dvěma typy projektů najdete v tématu [NIB: projekty webových aplikací a webových projektů v sadě Visual Studio](http://msdn.microsoft.com/library/2861815e-f5a2-4378-a2f8-b8a86dc012f5).  
   
@@ -116,7 +116,7 @@ Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../.
   
 -   Pokud nasadíte službu data, která používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset rozšířit datové struktury, data, nebo obě s daty nasazení služby. Visual Studio může automaticky vytvářet skripty (soubory .sql) k tomu v cílové databázi, a tyto skripty může být zahrnutý v balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [NIB: postupy: nasazení databáze s projekt webové aplikace](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, můžete to provedete pomocí **Průvodce publikováním databáze** v sadě Visual Studio. Další informace najdete v tématu [nasazení databáze pomocí Průvodce publikováním databáze](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).  
   
--   Protože [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace, můžete použít Windows Server AppFabric monitorovat datové služby nasadit do IIS a běžící v systému Windows Server. Další informace o používání Windows Server AppFabric ke sledování datové služby, najdete v příspěvku [sledování služby WCF Data Services s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005).  
+-   Protože [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje základní implementace WCF, Windows Server AppFabric můžete použít k monitorování datové služby nasadit do IIS a běžící v systému Windows Server. Další informace o používání Windows Server AppFabric ke sledování datové služby, najdete v příspěvku [sledování služby WCF Data Services s Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005).  
   
 ## <a name="see-also"></a>Viz také  
  [Hostování datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  

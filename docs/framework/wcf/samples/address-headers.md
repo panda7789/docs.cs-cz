@@ -2,11 +2,11 @@
 title: Hlavičky adresy
 ms.date: 03/30/2017
 ms.assetid: b0c94d4a-3bde-4b4d-bb6d-9f12bc3a6940
-ms.openlocfilehash: c0e3807aadc18c7737f3a5e354135721cbfccf3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 276649c17a04822eb27eb4e3ed9cbe711b384edc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="address-headers"></a>Hlavičky adresy
 Příklad hlavičky adresy znázorňuje, jak klienti můžete předat parametry referenční dokumentace ke službě pomocí Windows Communication Foundation (WCF).  
@@ -14,9 +14,9 @@ Příklad hlavičky adresy znázorňuje, jak klienti můžete předat parametry 
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
- Specifikace WS-Addressing definuje představu o odkaz na koncový bod jako způsob, jak konkrétní koncový bod webové služby. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], koncový bod odkazy jsou modelovány pomocí `EndpointAddress` třída - `EndpointAddress` je typ pole adresy `ServiceEndpoint` – třída.  
+ Specifikace WS-Addressing definuje představu o odkaz na koncový bod jako způsob, jak konkrétní koncový bod webové služby. Ve službě WCF, jsou modelovány pomocí odkazů na koncový bod `EndpointAddress` třída - `EndpointAddress` je typ pole adresy `ServiceEndpoint` – třída.  
   
- Část referenčního modelu koncový bod je, že každý odkaz přenášet některé odkaz parametry, které přidat velmi identifikační informace. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tyto parametry odkaz jsou modelovat jako instance `AddressHeader` třídy.  
+ Část referenčního modelu koncový bod je, že každý odkaz přenášet některé odkaz parametry, které přidat velmi identifikační informace. Ve službě WCF, jsou tyto parametry odkaz modelován jako instance `AddressHeader` třídy.  
   
  V této ukázce klienta přidá odkaz na parametr, který se `EndpointAddress` koncového bodu klienta. Služba hledá tento odkaz na parametr a používá jeho hodnotu v logice jeho operace služby "Hello".  
   

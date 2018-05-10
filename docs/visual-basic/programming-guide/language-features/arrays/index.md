@@ -1,11 +1,6 @@
 ---
 title: Pole v jazyce Visual Basic
-ms.custom: ''
 ms.date: 12/06/2017
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Array
 helpviewer_keywords:
@@ -14,12 +9,11 @@ helpviewer_keywords:
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
 author: rpetrusha
 ms.author: ronpet
-ms.manager: wpickett
-ms.openlocfilehash: d223ca8b0ff59a13c31fa777e5cb6a97918421c6
-ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+ms.openlocfilehash: 3b6c1db0131f2a150dc1b00dd5e6dafc3a418f05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/13/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="arrays-in-visual-basic"></a>Pole v jazyce Visual Basic
 Pole je sada hodnot, které jsou označovány jako *elementy*, které logicky se vztahují k sobě navzájem. Například může obsahovat pole počet studentů v každé úrovni ve škole gramatika; Každý element pole je počet studentů v jedné úrovni. Podobně pole může obsahovat Studentova tříd pro třídu; Každý element pole je jedné úrovni.    
@@ -165,7 +159,7 @@ Stejně jako lze pro jednorozměrné pole, můžete spolehnout na odvození typu
   
  [!code-vb[iterate-one-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate1d.vb)]  
   
- V následujícím příkladu prochází multidimenzionálního pole pomocí [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md) příkaz. <xref:System.Array.GetUpperBound%2A> Metoda má parametr, který určuje dimenzi. `GetUpperBound(0)`Vrátí nejvyšší index první dimenze a `GetUpperBound(1)` vrátí nejvyšší index druhý dimenze.
+ V následujícím příkladu prochází multidimenzionálního pole pomocí [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md) příkaz. <xref:System.Array.GetUpperBound%2A> Metoda má parametr, který určuje dimenzi. `GetUpperBound(0)` Vrátí nejvyšší index první dimenze a `GetUpperBound(1)` vrátí nejvyšší index druhý dimenze.
   
  [!code-vb[iterate-two-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate2d.vb)]  
   

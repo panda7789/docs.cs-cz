@@ -1,24 +1,14 @@
 ---
-title: "Psaní velkých a pohotově reagujících aplikací .NET Framework"
-ms.custom: 
+title: Psaní velkých a pohotově reagujících aplikací .NET Framework
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
-caps.latest.revision: "25"
 author: BillWagner
 ms.author: wiwagn
-manager: wpickett
-ms.workload: wiwagn
-ms.openlocfilehash: a33e065d9daa886c27cde31c8f16f9b9eaa45938
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 51b4758690257b999cce51f3e80fd263a6d5e275
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek obsahuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework, nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházet z přepisování C# a Visual Basic kompilátory ve spravovaném kódu a tento článek obsahuje několik příkladů skutečné z kompilátoru C#.  
@@ -94,7 +84,7 @@ public class BoxingExample
 var s = id.ToString() + ':' + size.ToString();  
 ```  
   
- Ale tohoto řádku kódu zavádí zabalení přidělení, protože se zkompiluje do <xref:System.String.Concat%28System.Object%2CSystem.Object%2CSystem.Object%29>.  Rozhraní .NET Framework musí pole znak, který má být vyvolán literálu`Concat`  
+ Ale tohoto řádku kódu zavádí zabalení přidělení, protože se zkompiluje do <xref:System.String.Concat%28System.Object%2CSystem.Object%2CSystem.Object%29>.  Rozhraní .NET Framework musí pole znak, který má být vyvolán literálu `Concat`  
   
  **Opravte například 1**  
   
@@ -175,7 +165,7 @@ public void WriteFormattedDocComment(string text)
   
  Na první řádek uvnitř `WriteFormattedDocComment`, `text.Split` volání přiděluje nový element tři pole jako argument pokaždé, když je volána.  Kompilátor má vyvolat kód přidělit pokaždé, když toto pole.  Je to způsobeno kompilátor není známo, pokud <xref:System.String.Split%2A> ukládá pole někde kde pole by se mohly změnit jiným kódem, které by ovlivnily pozdější volání `WriteFormattedDocComment`.  Volání <xref:System.String.Split%2A> také přiděluje řetězec pro každý řádek v `text` a přiděluje další paměť k provedení operace.  
   
- `WriteFormattedDocComment`má tři volání <xref:System.String.TrimStart%2A> metoda.  Dva jsou v informacích o vnitřní smyčky, které duplicitní práci a přidělení.  Chcete-li nejhorší záleží, volání <xref:System.String.TrimStart%2A> metoda bez argumentů přiděluje prázdné pole (pro `params` parametr) kromě výsledném řetězci.  
+ `WriteFormattedDocComment` má tři volání <xref:System.String.TrimStart%2A> metoda.  Dva jsou v informacích o vnitřní smyčky, které duplicitní práci a přidělení.  Chcete-li nejhorší záleží, volání <xref:System.String.TrimStart%2A> metoda bez argumentů přiděluje prázdné pole (pro `params` parametr) kromě výsledném řetězci.  
   
  Nakonec je volání <xref:System.String.Substring%2A> metodu, která obvykle přiděluje nový řetězec.  
   
@@ -279,7 +269,7 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
   
  Protože nové kompilátory použít dělení na vlákna, použijte tyto implementace vlákno statické pole (<xref:System.ThreadStaticAttribute> atribut) do mezipaměti <xref:System.Text.StringBuilder>, a pravděpodobně můžete vynecháte `ThreadStatic` deklarace.  Vlákno statické pole obsahuje jedinečnou hodnotu pro každý podproces, který se spustí tento kód.  
   
- `AcquireBuilder()`Vrátí uložená v mezipaměti <xref:System.Text.StringBuilder> instance, pokud je jedna po vymazáním a nastavení pole nebo mezipaměti na hodnotu null.  V opačném `AcquireBuilder()` vytvoří novou instanci a vrátí ji, ponechat sadu pole nebo mezipaměti na hodnotu null.  
+ `AcquireBuilder()` Vrátí uložená v mezipaměti <xref:System.Text.StringBuilder> instance, pokud je jedna po vymazáním a nastavení pole nebo mezipaměti na hodnotu null.  V opačném `AcquireBuilder()` vytvoří novou instanci a vrátí ji, ponechat sadu pole nebo mezipaměti na hodnotu null.  
   
  Když jste hotovi s <xref:System.Text.StringBuilder> , zavoláte `GetStringAndReleaseBuilder()` získat výsledném řetězci, uložte <xref:System.Text.StringBuilder> instance v mezipaměti na pole a pak vrátí výsledek.  Je možné pro provedení znovu zadat Tento kód a vytvořte více <xref:System.Text.StringBuilder> objekty (i když k tomu jenom občas dojde).  Nástroje kód uloží jenom poslední vydané <xref:System.Text.StringBuilder> instance pro pozdější použití.  Tento jednoduchý ukládání do mezipaměti strategie výrazně snížit přidělení v nové kompilátory.  Součásti rozhraní .NET Framework a MSBuild ("MSBuild") podobný postup použít ke zlepšení výkonu.  
   
@@ -417,7 +407,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- Uvidíte, že má nový kód s ukládáním do mezipaměti `SyntaxTree` pole s názvem `cachedResult`.  Pokud toto pole má hodnotu null, `GetSyntaxTreeAsync()` provádí práce a uloží výsledek v mezipaměti.  `GetSyntaxTreeAsync()`Vrátí `SyntaxTree` objektu.  Problém je, že když máte `async` – funkce typu `Task<SyntaxTree>`, a vrátí hodnotu typu `SyntaxTree`, kompilátor vydává kód přidělit úlohu pro uložení výsledek (pomocí `Task<SyntaxTree>.FromResult()`).  Úloha je označena jako dokončená a výsledkem je ihned k dispozici.  V kódu pro nové kompilátory <xref:System.Threading.Tasks.Task> objekty, které již byly dokončeny tak často to uchycení tyto přidělení zlepšila odezvu zaznamenatelný dopad došlo k chybě.  
+ Uvidíte, že má nový kód s ukládáním do mezipaměti `SyntaxTree` pole s názvem `cachedResult`.  Pokud toto pole má hodnotu null, `GetSyntaxTreeAsync()` provádí práce a uloží výsledek v mezipaměti.  `GetSyntaxTreeAsync()` Vrátí `SyntaxTree` objektu.  Problém je, že když máte `async` – funkce typu `Task<SyntaxTree>`, a vrátí hodnotu typu `SyntaxTree`, kompilátor vydává kód přidělit úlohu pro uložení výsledek (pomocí `Task<SyntaxTree>.FromResult()`).  Úloha je označena jako dokončená a výsledkem je ihned k dispozici.  V kódu pro nové kompilátory <xref:System.Threading.Tasks.Task> objekty, které již byly dokončeny tak často to uchycení tyto přidělení zlepšila odezvu zaznamenatelný dopad došlo k chybě.  
   
  **Opravte například 6**  
   
@@ -443,12 +433,12 @@ class Compilation { /*...*/
 }  
 ```  
   
- Tento kód změní typ `cachedResult` k `Task<SyntaxTree>` a využívá `async` pomocné funkce, která obsahuje původní kód `GetSyntaxTreeAsync()`.  `GetSyntaxTreeAsync()`Teď používá [null slučovací operátor](~/docs/csharp/language-reference/operators/null-conditional-operator.md) vrátit `cachedResult` , pokud není null.  Pokud `cachedResult` má hodnotu null, pak `GetSyntaxTreeAsync()` volání `GetSyntaxTreeUncachedAsync()` a ukládá do mezipaměti výsledek.  Všimněte si, že `GetSyntaxTreeAsync()` není await volání `GetSyntaxTreeUncachedAsync()` jako kód běžným způsobem.  Nepoužíváte await znamená že v případě `GetSyntaxTreeUncachedAsync()` vrátí jeho <xref:System.Threading.Tasks.Task> objekt, `GetSyntaxTreeAsync()` hned vrátí <xref:System.Threading.Tasks.Task>.  Nyní v mezipaměti výsledkem je, <xref:System.Threading.Tasks.Task>, takže neexistují žádné přidělení vrátit výsledky uložené v mezipaměti.  
+ Tento kód změní typ `cachedResult` k `Task<SyntaxTree>` a využívá `async` pomocné funkce, která obsahuje původní kód `GetSyntaxTreeAsync()`.  `GetSyntaxTreeAsync()` Teď používá [null slučovací operátor](~/docs/csharp/language-reference/operators/null-conditional-operator.md) vrátit `cachedResult` , pokud není null.  Pokud `cachedResult` má hodnotu null, pak `GetSyntaxTreeAsync()` volání `GetSyntaxTreeUncachedAsync()` a ukládá do mezipaměti výsledek.  Všimněte si, že `GetSyntaxTreeAsync()` není await volání `GetSyntaxTreeUncachedAsync()` jako kód běžným způsobem.  Nepoužíváte await znamená že v případě `GetSyntaxTreeUncachedAsync()` vrátí jeho <xref:System.Threading.Tasks.Task> objekt, `GetSyntaxTreeAsync()` hned vrátí <xref:System.Threading.Tasks.Task>.  Nyní v mezipaměti výsledkem je, <xref:System.Threading.Tasks.Task>, takže neexistují žádné přidělení vrátit výsledky uložené v mezipaměti.  
   
 ### <a name="additional-considerations"></a>Další informace  
  Zde naleznete několik více bodů o možných problémech ve velkých aplikací nebo aplikace, které zpracovávají velké množství dat.  
   
- **Slovník**  
+ **slovník**  
   
  Slovník ubiquitously slouží v mnoha aplikacích a když slovník jsou velmi vhodné a ze své podstaty efektivní.  Však se často používají nesprávně.  V sadě Visual Studio a nové kompilátory analýza ukazuje řadu slovníků obsahovala jeden element nebo byly prázdné.  Prázdná <xref:System.Collections.Generic.Dictionary%602> má deset polí a zabírá 48 bajtů v haldě na x86 počítače.  Slovník jsou skvělé, pokud potřebujete datová struktura mapování nebo asociovaných s konstanta čas vyhledávání.  Ale pokud máte pouze několik elementy, je odpady velké množství místa pomocí slovníku.  Místo toho, například je může interaktivně projděte `List<KeyValuePair\<K,V>>`, stejně tak rychlé.  Pokud používáte slovník pouze pro zatížení s daty a pak čtení z něj (velmi běžný vzor), pomocí seřazené pole vyhledávání N(log(N)) může být téměř jako rychlé, v závislosti na počtu prvky, které používáte.  
   

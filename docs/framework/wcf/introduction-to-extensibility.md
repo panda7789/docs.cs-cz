@@ -6,14 +6,14 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], extensibility
 - extensibility [WCF]
 ms.assetid: ef56c251-d63c-4b3f-944f-b0c67bfb0f68
-ms.openlocfilehash: 142478352c8eb1c893d8b95b960c6079f735fa06
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 7b302a7d0643ed61d12cfedf26348590d40d18f3
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="introduction-to-extensibility"></a>Úvod do rozšíření
-Aplikační model Windows Communication Foundation (WCF) je proto, aby vyřešila větší část požadavky na komunikaci všechny distribuované aplikace. Ale stále existují scénáře, které výchozí aplikačního modelu a implementace poskytované systémem nepodporují. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Model rozšiřitelnosti je určená pro podporu vlastní scénáře tím, že umožňuje, abyste upravili chování systému na všech úrovních, a to i do bodu nahrazení modelu celou aplikaci. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  
+Aplikační model Windows Communication Foundation (WCF) je proto, aby vyřešila větší část požadavky na komunikaci všechny distribuované aplikace. Ale stále existují scénáře, které výchozí aplikačního modelu a implementace poskytované systémem nepodporují. Model rozšiřitelnosti WCF je určená pro podporu vlastní scénáře tím, že umožňuje, abyste upravili chování systému na všech úrovních, a to i do bodu nahrazení modelu celou aplikaci. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  
   
 ## <a name="areas-to-extend"></a>Oblasti, které rozšiřují  
  Můžete rozšířit:  
@@ -25,7 +25,7 @@ Aplikační model Windows Communication Foundation (WCF) je proto, aby vyřešil
 -   Modul runtime hostitele. Tato zásada rozšiřuje vztah hostování domény aplikace do runtime kanál a aplikace.  
   
 ### <a name="extending-the-application-runtime"></a>Rozšíření doba spuštění aplikace  
- V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, je rozdíl mezi zprávy, které jsou určené pro odpovídající kanál a zprávy, které jsou určené pro vlastní aplikace. Kanál zprávy podporovat některé funkce související s kanál, například vytvoření zabezpečenou konverzaci nebo vytvoření spolehlivé relace. Tyto zprávy nejsou k dispozici pro doba spuštění aplikace; jsou zpracovávány předtím, než je zahrnuta aplikační vrstvu.  
+ V aplikacích WCF není rozdíl mezi zprávy, které jsou určené pro odpovídající kanál a zprávy, které jsou určené pro vlastní aplikace. Kanál zprávy podporovat některé funkce související s kanál, například vytvoření zabezpečenou konverzaci nebo vytvoření spolehlivé relace. Tyto zprávy nejsou k dispozici pro doba spuštění aplikace; jsou zpracovávány předtím, než je zahrnuta aplikační vrstvu.  
   
  Zprávy aplikace obsahovat data, která je určena pro klienta nebo operace služby, který jste nebo zákazníkovi vytvořil. Tyto zprávy jsou k dispozici pro systém rozšíření na úrovni aplikací v podobě zprávy nebo objekt, v závislosti na vašich potřeb.  
   

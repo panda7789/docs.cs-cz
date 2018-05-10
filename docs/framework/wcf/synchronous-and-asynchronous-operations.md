@@ -8,23 +8,23 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 0b64d45797babff2da1649fb7469684342e65d47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6c464dc79e0f38b72f724fafcef59916d766e2d0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
   
- Mnoho aplikací volat metody asynchronně, protože umožní aplikaci pokračovat v provádění užitečné pracovní při volání metody, které běží. Služby Windows Communication Foundation (WCF) a klienti mohou účastnit volání asynchronní operaci na dvou různých úrovních aplikace, které poskytují [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace i větší flexibilitu, chcete-li maximalizovat propustnost porovnán s interaktivity.  
+ Mnoho aplikací volat metody asynchronně, protože umožní aplikaci pokračovat v provádění užitečné pracovní při volání metody, které běží. Služby Windows Communication Foundation (WCF) a klienti mohou účastnit volání asynchronní operaci na dva různé úrovně aplikace, které poskytují i větší flexibilitu, chcete-li maximalizovat propustnost porovnán s interaktivity aplikací služby WCF .  
   
 ## <a name="types-of-asynchronous-operations"></a>Typy asynchronních operací  
- Všechny služby měnící [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], bez ohledu na typy parametry a návratové hodnoty, použijte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] atributy zadat vzorce výměny zpráv konkrétní mezi klientem a službou. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] automaticky směruje příchozí a odchozí zprávy do příslušné službě operaci nebo spuštění kódu klienta.  
+ Všechny služby měnící ve WCF, bez ohledu na to typy parametry a návratové hodnoty, použijte k určení vzorce výměny zpráv konkrétní mezi klientem a službou WCF atributy. WCF automaticky směruje příchozí a odchozí zprávy do příslušné službě operace nebo spuštěním kódu klienta.  
   
  Klient má pouze kontrakt služby, který určuje vzorce výměny zpráv pro konkrétní operaci. Klienti nabízejí jakékoli programovací model, která si vyberou, vývojář tak dlouho, dokud se zjištěnými základní vzorce výměny zpráv. Ano příliš, můžete služby implementovat operations žádným způsobem tak dlouho, dokud se zjištěnými vzoru zadané zprávy.  
   
- Nezávislost služby smlouvy buď z službu nebo implementace klienta umožňuje následující formy asynchronního spuštění v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace:  
+ Nezávislost kontrakt služby od služby nebo klienta implementace umožňuje následující formy asynchronního spuštění v aplikacích WCF:  
   
 -   Klienty můžete vyvolat operace žádosti a odpovědi asynchronně pomocí exchange synchronní zprávy.  
   
@@ -147,7 +147,7 @@ Function DoWork(ByVal data As String, ByRef inout As String, _out outonly As out
 >  <xref:System.ServiceModel.OperationContractAttribute> Atributu se použije pouze `BeginDoWork` metoda. Výsledný smlouva obsahuje jednu operaci WSDL s názvem `DoWork`.  
   
 ### <a name="client-side-asynchronous-invocations"></a>Asynchronní volání na straně klienta  
- A [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klientská aplikace můžete použít některou ze tří asynchronní volání modelů popsané  
+ Klientské aplikace WCF můžete použít některou ze tří asynchronní volání modelů popsané  
   
  Při použití modelu založený na úlohách, jednoduše volejte operace pomocí – klíčové slovo await, jak je znázorněno v následující fragment kódu.  
   
@@ -161,9 +161,9 @@ await simpleServiceClient.SampleMethodTaskAsync("hello, world");
 svcutil http://localhost:8000/servicemodelsamples/service/mex /async /tcv:Version35  
 ```  
   
- Když to uděláte, Svcutil.exe generuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] třída klienta s infrastrukturou událostí, která umožňuje volající aplikace k implementaci a přiřadit obslužné rutiny události přijmout odpověď a proveďte příslušnou akci. Úplný příklad najdete v tématu [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
+ Když to uděláte, Svcutil.exe vygeneruje třídy klienta WCF s infrastrukturou událostí, která umožňuje volající aplikace k implementaci a přiřadit obslužné rutiny události přijmout odpověď a proveďte příslušnou akci. Úplný příklad najdete v tématu [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
- Na základě událostí asynchronní modelu, ale je k dispozici pouze v [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)]. Kromě toho není podporován i při [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] při [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kanálem klienta je vytvořená pomocí <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. S [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kanálem klienta objekty, je nutné použít <xref:System.IAsyncResult?displayProperty=nameWithType> objekty k vyvolání vaše operace asynchronně. Chcete-li použít tuto metodu, zadejte **/async** příkaz možnost s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md), jako v následujícím příkladu.  
+ Na základě událostí asynchronní modelu, ale je k dispozici pouze v [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)]. Kromě toho není podporován i při [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] vytvoření kanálu klienta WCF pomocí <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. S objekty kanálu klienta WCF, je nutné použít <xref:System.IAsyncResult?displayProperty=nameWithType> objekty k vyvolání vaše operace asynchronně. Chcete-li použít tuto metodu, zadejte **/async** příkaz možnost s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md), jako v následujícím příkladu.  
   
 ```  
 svcutil http://localhost:8000/servicemodelsamples/service/mex /async   

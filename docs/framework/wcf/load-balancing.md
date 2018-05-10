@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: 9ad9c9c569137534addfa3b91f412fb0c0a4b808
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c9d554dfd8d21b6e0e5f4aef0f4402e16485c2e8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
-Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je jejich nasazením do Vyrovnávání zatížení sítě serverové farmy. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.  
+Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je jejich nasazením do Vyrovnávání zatížení sítě serverové farmy. Aplikace WCF může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.  
   
- Následující části popisují důležité informace pro vyrovnávání zatížení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace vytvořené pomocí různých vazby poskytované systémem.  
+ Následující části popisují důležité informace týkající se aplikace WCF vytvořené pomocí různých vazby poskytované systémem Vyrovnávání zatížení.  
   
 ## <a name="load-balancing-with-the-basic-http-binding"></a>Vyrovnávání zatížení s vazby základní HTTP  
- Z hlediska vyrovnávání zatížení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, které komunikují pomocí <xref:System.ServiceModel.BasicHttpBinding> nejsou jiné než jiné běžné typy HTTP síťový provoz (statický obsah HTML, stránek ASP.NET nebo webovými službami ASMX). [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kanály, které tuto vazbu používají jsou ze své podstaty bezstavové a ukončit jejich připojení Zavře kanál. Jako takový <xref:System.ServiceModel.BasicHttpBinding> pracuje s existující HTTP rozložení zátěže techniky.  
+ Z perspektivy aplikací služby WCF, které komunikují pomocí vyrovnávání zatížení <xref:System.ServiceModel.BasicHttpBinding> nejsou jiné než jiné běžné typy HTTP síťový provoz (statický obsah HTML, stránek ASP.NET nebo webovými službami ASMX). Kanály WCF, které tuto vazbu používají jsou ze své podstaty bezstavové a ukončit jejich připojení Zavře kanál. Jako takový <xref:System.ServiceModel.BasicHttpBinding> pracuje s existující HTTP rozložení zátěže techniky.  
   
  Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> pošle hlavičku připojení protokolu HTTP v zprávy s `Keep-Alive` hodnotu, která umožňuje klientům vytvořit trvalé připojení ke službám, které je podporují. Tato konfigurace nabízí lepší propustnost, protože dříve vytvořeno, že připojení lze opětovně použít k odeslání dalších zpráv na stejném serveru. Opakované použití připojení však může způsobit klientů se důrazně přidružené k určitému serveru ve farmě Vyrovnávání zatížení sítě, což snižuje efektivitu Vyrovnávání zatížení pomocí kruhového dotazování. Pokud je toto chování žádoucí, HTTP `Keep-Alive` lze vypnout na serveru pomocí <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> vlastnost s <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelsky definovaných <xref:System.ServiceModel.Channels.Binding>. Následující příklad ukazuje, jak to provést pomocí konfigurace.  
   

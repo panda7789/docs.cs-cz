@@ -1,12 +1,6 @@
 ---
-title: "Class – příkaz (Visual Basic)"
+title: Class – příkaz (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Class
 helpviewer_keywords:
@@ -19,14 +13,11 @@ helpviewer_keywords:
 - classes [Visual Basic], data members
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: df86ef0eec67d96f2f997dc5dac7ee2357c6362b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2346823e7b774c21171bd81023cc5b920d34d19a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="class-statement-visual-basic"></a>Class – příkaz (Visual Basic)
 Deklaruje název třídy a představuje definici proměnné, vlastností, události a postupy, které zahrnuje třídy.  
@@ -117,10 +108,10 @@ End Class
   
 ## <a name="see-also"></a>Viz také  
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [Třídy a struktury](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
- [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
- [Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md)  
- [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Doba života objektu: Objekty vytváření a zničení](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
+ [Struktury a třídy](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Doba života objektu: Vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
  [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Postupy: použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+ [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)

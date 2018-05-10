@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: 1d4ac2fe884a3c6696dc70ea2de9967a23fc6605
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 910da1073f0dc787be26d2c87b5bf49b4115aaef
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="what39s-new-in-windows-communication-foundation-45"></a>Co&#39;s ve Windows Communication Foundation 4.5
 Toto téma popisuje funkce, které jsou nové pro Windows Communication Foundation (WCF).  
@@ -73,7 +73,7 @@ Toto téma popisuje funkce, které jsou nové pro Windows Communication Foundati
  Abyste pomohli nových nebo stávajících vývojáři služeb WCF konfigurace služeb, editor souborů XML Visual Studio teď poskytuje popisy tlačítek pro každý element, konfigurace a její vlastnosti, které je součástí konfigurační soubor služby.  
   
 ## <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu  
- Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když je potřeba nakonfigurovat po nasazení služby. Při použití konfigurační soubory, odborník v oblasti IT pouze musí aktualizovat konfigurační soubor, není třeba žádné opětovnou kompilaci. Konfigurační soubory, však může být složité a obtížné. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurace – elementy odkazují názvy, které umožňuje vytváření konfigurační soubory k chybám a obtížná. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] také umožňuje konfigurovat služby v kódu. V dřívějších verzích [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] (4.0 a starší) konfigurace služby v kódu se snadno ve vlastním hostováním scénářů <xref:System.ServiceModel.ServiceHost> třída povolena, můžete nakonfigurovat koncové body a chování před volání ServiceHost.Open. Ve scénářích hostovaná na webu, ale nemáte přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webové hostované služby, bylo potřeba vytvořit `System.ServiceModel.ServiceHostFactory` vytvořené <xref:System.ServiceModel.Activation.ServiceHostFactory> a provést všechny potřebné konfigurace. Od verze rozhraní .NET 4.5, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje snadný způsob, jak nakonfigurovat i samoobslužně hostované a webové hostované služby v kódu. Další informace najdete v tématu [konfigurace služeb WCF v kódu](../../../docs/framework/wcf/configuring-wcf-services-in-code.md).  
+ Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když je potřeba nakonfigurovat po nasazení služby. Při použití konfigurační soubory, odborník v oblasti IT pouze musí aktualizovat konfigurační soubor, není třeba žádné opětovnou kompilaci. Konfigurační soubory, však může být složité a obtížné. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurace – elementy odkazují názvy, které umožňuje vytváření konfigurační soubory k chybám a obtížná. WCF také umožňuje konfigurovat služby v kódu. V dřívějších verzích systému konfigurace služby WCF (4.0 a starší) v kódu se snadno ve vlastním hostováním scénářů <xref:System.ServiceModel.ServiceHost> třída povolena, můžete nakonfigurovat koncové body a chování před volání ServiceHost.Open. Ve scénářích hostovaná na webu, ale nemáte přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webové hostované služby, bylo potřeba vytvořit `System.ServiceModel.ServiceHostFactory` vytvořené <xref:System.ServiceModel.Activation.ServiceHostFactory> a provést všechny potřebné konfigurace. Od verze rozhraní .NET 4.5, WCF poskytuje snadný způsob, jak nakonfigurovat i samoobslužně hostovaná a webové hostované služby v kódu. Další informace najdete v tématu [konfigurace služeb WCF v kódu](../../../docs/framework/wcf/configuring-wcf-services-in-code.md).  
   
 ## <a name="channelfactory-caching"></a>Ukládání do mezipaměti ChannelFactory  
  Pomocí klientských aplikací WCF <xref:System.ServiceModel.ChannelFactory%601> třída k vytvoření kanálu komunikace se službou WCF.  Vytváření <xref:System.ServiceModel.ChannelFactory%601> instance způsobuje zvýšení zatížení, protože se týká následující operace:  
@@ -107,7 +107,7 @@ Toto téma popisuje funkce, které jsou nové pro Windows Communication Foundati
  Hodnoty atributů v konfiguračních souborech pro vlastní atributy definované v projektu nyní podporu technologie intellisense pro usnadnění práce s konfigurací rychle a přesně.  
   
 ## <a name="configuration-tooltips"></a>Popisy tlačítek konfigurace  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] elementy a atributy teď snadněji muset popisů tlačítek v editoru XML a přesně zjistit účel elementu nebo atributu.  
+ WCF elementů a atributů teď snadněji muset popisů tlačítek v editoru XML a přesně zjistit účel elementu nebo atributu.  
   
 ## <a name="paste-data-as-classes"></a>Vkládání dat jako třídy  
  V projektu WCF typy dat definované v XML (jako jsou viditelné ve službě) lze vložit přímo do kódu stránky. Typ XML budou vloženy jako typ CLR. V tématu [generování tříd datových typů z XML](../../../docs/framework/wcf/generating-data-type-classes-from-xml.md) další podrobnosti.  

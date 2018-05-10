@@ -1,18 +1,12 @@
 ---
 title: Kolekce (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: get-started-article
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-caps.latest.revision: "6"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 271939b869433742f8b5720ba05955169ea5c410
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 85cbabf74a702a4d6442a29c3cf3d7b726ab38da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 Mnoho aplikací budete chtít vytvořit a spravovat skupiny související objekty. Existují dva způsoby do objektů skupiny: vytvořením pole objektů a vytvořením kolekce objektů.  
@@ -186,11 +180,11 @@ public class Galaxy
   
  V této části jsou popsány některé běžné třídy kolekce:  
   
--   <xref:System.Collections.Generic>třídy  
+-   <xref:System.Collections.Generic> Třídy  
   
--   <xref:System.Collections.Concurrent>třídy  
+-   <xref:System.Collections.Concurrent> Třídy  
   
--   <xref:System.Collections>třídy  
+-   <xref:System.Collections> Třídy  
   
 <a name="BKMK_Generic"></a>
 ### <a name="systemcollectionsgeneric-classes"></a>Třídy System.Collections.Generic  
@@ -472,7 +466,7 @@ public class Car : IComparable<Car>
   
  Následující příklad definuje třídu vlastní kolekci s názvem `AllColors`. Tato třída implementuje <xref:System.Collections.IEnumerable> rozhraní, které vyžaduje, aby <xref:System.Collections.IEnumerable.GetEnumerator%2A> být implementována metoda.  
   
- `GetEnumerator` Metoda vrací instanci třídy `ColorEnumerator` třídy. `ColorEnumerator`implementuje <xref:System.Collections.IEnumerator> rozhraní, které vyžaduje, aby <xref:System.Collections.IEnumerator.Current%2A> vlastnost <xref:System.Collections.IEnumerator.MoveNext%2A> metody a <xref:System.Collections.IEnumerator.Reset%2A> být implementována metoda.  
+ `GetEnumerator` Metoda vrací instanci třídy `ColorEnumerator` třídy. `ColorEnumerator` implementuje <xref:System.Collections.IEnumerator> rozhraní, které vyžaduje, aby <xref:System.Collections.IEnumerator.Current%2A> vlastnost <xref:System.Collections.IEnumerator.MoveNext%2A> metody a <xref:System.Collections.IEnumerator.Reset%2A> být implementována metoda.  
   
 ```csharp  
 private static void ListColors()  

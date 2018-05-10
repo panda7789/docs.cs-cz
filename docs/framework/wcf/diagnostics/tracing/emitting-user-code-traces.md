@@ -2,11 +2,11 @@
 title: Generování trasování v uživatelském kódu
 ms.date: 03/30/2017
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
-ms.openlocfilehash: 120827bff85d4bc347274cad1370d291caba1c3d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 18b424139f4c1656193f80cf76c704af2b2887e3
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="emitting-user-code-traces"></a>Generování trasování v uživatelském kódu
 Kromě povolení trasování v konfiguraci ke shromažďování dat instrumentace generované Windows Communication Foundation (WCF), můžete také generování trasování v uživatelském kódu prostřednictvím kódu programu. Tímto způsobem můžete vytvořit proaktivně instrumentace data, která můžete zobrazit později pro účely diagnostiky. Toto téma popisuje, jak můžete to provést.  
@@ -65,9 +65,9 @@ Trace.CorrelationManager.ActivityId = oldID;
  Pokud nastavíte `propagateActivity` atribut `true` pro `System.ServiceModel` zdroj trasování v konfiguraci klient a služba souborů, služba zpracování dojde k žádosti přidat do stejné aktivity, jako je definována v klientovi. Pokud službu definuje vlastní aktivity a přenosy, služba trasování se nezobrazí v aktivitě klienta rozšířen. Místo toho se v aktivitě korelační pomocí přenosu trasování na aktivitu, jejíž ID je rozšířena klientem.  
   
 > [!NOTE]
->  Pokud `propagateActivity` je atribut nastaven na `true` na klienta a služby, vedlejším aktivity v rámci operace služby je nastavený [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].  
+>  Pokud `propagateActivity` je nastavena na hodnotu `true` na klienta a služby, vedlejším aktivity v rámci operace služby je nastavený službou WCF.  
   
- Následující kód vám pomůže zkontrolovat, zda byl nastaven aktivitu v oboru podle [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].  
+ Následující kód slouží ke kontrole, zda aktivity byla nastavena v oboru službou WCF.  
   
 ```  
 // Check if an activity was set in scope by WCF, if it was   
@@ -135,7 +135,7 @@ Chyby napříč koncovými body pro daný požadavek se zobrazují ve stejné ak
  ![Použití prohlížeče trasování pro vydávání uživatele&#45;code trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace3.gif "e2eTrace3")  
 Zobrazení grafu chybě korelace  
   
- Pokud chcete získat předchozí trasování, nastaví `ActivityTracing` pro trasování zdrojů uživatele a `propagateActivity=true` pro `System.ServiceModel` zdroj trasování. Jsme nenastavili `ActivityTracing` pro `System.ServiceModel` zdroj trasování povolit uživatelský kód pro rozšíření aktivity kódu uživatele. (Pokud ServiceModel trasování aktivit je zapnutý, ID aktivity definované v klientovi není rozšířen úplně do kódu uživatele služby; Přenosy, ale korelovat aktivity kód klienta a služby uživatele do mezilehlých [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] aktivity.)  
+ Pokud chcete získat předchozí trasování, nastaví `ActivityTracing` pro trasování zdrojů uživatele a `propagateActivity=true` pro `System.ServiceModel` zdroj trasování. Jsme nenastavili `ActivityTracing` pro `System.ServiceModel` zdroj trasování povolit uživatelský kód pro rozšíření aktivity kódu uživatele. (Pokud ServiceModel trasování aktivit je zapnutý, ID aktivity definované v klientovi není rozšířen úplně do kódu uživatele služby; Přenosy, ale korelovat aktivity kód klienta a služby uživatele na zprostředkující WCF aktivity.)  
   
  Definování aktivity a šíření ID aktivity a umožňuje nám k provedení korelace přímé chyba napříč koncovými body. Tímto způsobem jsme rychleji najít hlavní příčinu chyby.  
   

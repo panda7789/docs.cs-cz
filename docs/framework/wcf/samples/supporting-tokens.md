@@ -2,11 +2,11 @@
 title: Podpora tokenů
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: 4f8cf62220955bef3f341c43b3c615f873387b2e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8d8ff3cf4d5a060d135cbcf40c043681ce72b6e0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
 Podpora tokenů ukázka ukazuje, jak přidat další tokeny pro zprávu, která používá WS-zabezpečení. V příkladu přidá token zabezpečení Binární X.509 kromě token zabezpečení uživatelské jméno. Token je předán v hlavičce protokolu WS-zabezpečení zprávy z klienta ke službě a součástí zprávy je podepsaný s privátním klíčem přidružené k tokenu zabezpečení X.509 prokázat u sebe certifikátu X.509 k příjemce. To je užitečné v případě, pokud je potřeba mít více deklarací identity přidružené k ověřování nebo autorizaci odesílatele zprávy. Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  
@@ -345,7 +345,7 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 ```  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- Při spuštění vzorového klienta nejprve vyzve k zadání uživatelského jména a hesla pro název token uživatele. Nezapomeňte poskytnout správné hodnoty pro váš účet system, protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ve službě mapuje hodnoty zadané v název tokenu uživatele do identity poskytované systémem. Klient se potom zobrazí odpověď ze služby. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění vzorového klienta nejprve vyzve k zadání uživatelského jména a hesla pro název token uživatele. Ujistěte se, zajistit správné hodnoty pro váš účet system, protože ve službě WCF mapuje hodnoty zadané v název tokenu uživatele do identity poskytované systémem. Klient se potom zobrazí odpověď ze služby. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
   
 ## <a name="setup-batch-file"></a>Instalační program dávkového souboru  
  Dávkový soubor Setup.bat zahrnutá v této ukázce umožňuje nakonfigurovat server se příslušné certifikáty spuštění aplikace hostované Internetové informační služby (IIS), která vyžaduje zabezpečení na základě certifikátu serveru. Tento dávkový soubor je nutné upravit v počítačích nebo pracovat v případě bez hostitele.  
@@ -464,6 +464,6 @@ iisreset
 -   Po dokončení spuštění ukázky, spusťte Cleanup.bat ve složce Ukázky.  
   
 > [!NOTE]
->  Tento skript neodebere certifikáty služby v klientském počítači při spuštění této ukázce mezi počítači. Pokud jste spustili [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vzorků, které používají certifikáty mezi počítači, je nutné vymazat certifikáty služby, které byly nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+>  Tento skript neodebere certifikáty služby v klientském počítači při spuštění této ukázce mezi počítači. Pokud spustíte Ukázky WCF, které používají certifikáty mezi počítači, je nutné vymazat certifikáty služby, které byly nainstalovány v CurrentUser - úložiště TrustedPeople. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
   
 ## <a name="see-also"></a>Viz také

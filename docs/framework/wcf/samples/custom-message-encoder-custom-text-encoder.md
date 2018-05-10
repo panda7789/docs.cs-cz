@@ -2,11 +2,11 @@
 title: 'Vlastní kodér zpráv: Vlastní kodér textu'
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: 975cfd44834ed31a5d723fdca0fe467cba63e68d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 369706ecdc2e37a5fb62a448a273b045fe424df8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Vlastní kodér zpráv: Vlastní kodér textu
 Tento příklad ukazuje, jak implementovat vlastní text kodéru zprávy pomocí služby Windows Communication Foundation (WCF).  
@@ -20,7 +20,7 @@ Tento příklad ukazuje, jak implementovat vlastní text kodéru zprávy pomocí
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Text`  
   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje jenom kódování UTF-8, UTF-16 a Big Endean Unicode. Kodér zpráv vlastní text v této ukázce podporuje všechny podporované platformy kódování znaků, které mohou být potřebné pro spolupráci. Ukázka se skládá z klientské konzoly program (.exe), služba knihovny (DLL) hostované Internetové informační služby (IIS) a text zprávy kodér knihovny (DLL). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ICalculator` rozhraní, která zpřístupňuje matematické operace (přidat, odečíst, násobit a dělit). Klient podá synchronní požadavky a odpovědi služby s výsledkem dané matematické operace. Klient a služba používá `CustomTextMessageEncoder` místo výchozího <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>.  
+ <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> Služby WCF podporuje jenom kódování UTF-8, UTF-16 a Big Endean Unicode. Kodér zpráv vlastní text v této ukázce podporuje všechny podporované platformy kódování znaků, které mohou být potřebné pro spolupráci. Ukázka se skládá z klientské konzoly program (.exe), služba knihovny (DLL) hostované Internetové informační služby (IIS) a text zprávy kodér knihovny (DLL). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ICalculator` rozhraní, která zpřístupňuje matematické operace (přidat, odečíst, násobit a dělit). Klient podá synchronní požadavky a odpovědi služby s výsledkem dané matematické operace. Klient a služba používá `CustomTextMessageEncoder` místo výchozího <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>.  
   
  Implementace vlastní kodér se skládá z objekt kodér zpráv, kodéru zprávy, zprávu kódování prvku vazby a obslužnou rutinu konfigurace a ukazuje následující:  
   
@@ -47,7 +47,7 @@ Tento příklad ukazuje, jak implementovat vlastní text kodéru zprávy pomocí
 4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="message-encoder-factory-and-the-message-encoder"></a>Zpráva kodér tovární nastavení a kodér zpráv  
- Když <xref:System.ServiceModel.ServiceHost> nebo klienta otevření kanálu, komponentu dobu návrhu `CustomTextMessageBindingElement` vytvoří `CustomTextMessageEncoderFactory`. Vytvoří objekt factory `CustomTextMessageEncoder`. Kodér zpráv pracuje v režimu datového i režim s vyrovnávací pamětí. Použije <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> číst a zapisovat zprávy v uvedeném pořadí. Oproti optimalizované XML čtení a zápis z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporující pouze ve formátu UTF-8, UTF-16 a Big-Endean Unicode tyto čtečky a zapisovače podporují všechny kódování podporovaná platforma.  
+ Když <xref:System.ServiceModel.ServiceHost> nebo klienta otevření kanálu, komponentu dobu návrhu `CustomTextMessageBindingElement` vytvoří `CustomTextMessageEncoderFactory`. Vytvoří objekt factory `CustomTextMessageEncoder`. Kodér zpráv pracuje v režimu datového i režim s vyrovnávací pamětí. Použije <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> číst a zapisovat zprávy v uvedeném pořadí. Oproti optimalizovaným čtečky XML a zapisovače služby WCF, které podporují pouze ve formátu UTF-8, UTF-16 a Big-Endean Unicode podporovat tyto čtení a zápis kódování všechny podporované platformy.  
   
  Následující příklad kódu ukazuje CustomTextMessageEncoder.  
   
@@ -190,11 +190,11 @@ public class CustomTextMessageEncoderFactory : MessageEncoderFactory
 ```  
   
 ## <a name="message-encoding-binding-element"></a>Element vazby kódování zprávy  
- Prvky vazeb povolit konfiguraci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] běhu zásobníku. Použít vlastní kodér zpráv v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, prvku vazby je vyžadována, vytvoří objekt factory kodér zpráv s požadovaným nastavením na příslušné úrovni v zásobníku spuštění.  
+ Prvky vazeb umožňuje konfiguraci spuštění zásobníku WCF. Použít vlastní kodér zpráv v aplikaci WCF, prvku vazby je potřeba, vytvoří objekt factory kodér zpráv s požadovaným nastavením na příslušné úrovni v zásobníku spuštění.  
   
- `CustomTextMessageBindingElement` Je odvozena z <xref:System.ServiceModel.Channels.BindingElement> základní třídy a dědí z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> třídy. To umožňuje dalších [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] součásti, které uznává tento element vazby jako zprávu kódování prvku vazby. Implementace <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> vrátí instanci objektu pro vytváření odpovídající kodér zpráv s požadovaným nastavením.  
+ `CustomTextMessageBindingElement` Je odvozena z <xref:System.ServiceModel.Channels.BindingElement> základní třídy a dědí z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> třídy. To umožňuje součásti WCF rozpoznat tento vazby element jako element vazby kódování zprávy. Implementace <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> vrátí instanci objektu pro vytváření odpovídající kodér zpráv s požadovaným nastavením.  
   
- `CustomTextMessageBindingElement` Se zobrazí nastavení pro `MessageVersion`, `ContentType`, a `Encoding` prostřednictvím vlastnosti. Kodér podporuje verze Soap11Addressing a Soap12Addressing1. Výchozí hodnota je Soap11Addressing1. Výchozí hodnota `ContentType` je "text/xml". `Encoding` Vlastnost můžete nastavit hodnotu kódování požadované znaků. Ukázka klient a služba používá kódování ISO 8859-1 (Latin1) znaků, který není podporována <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ `CustomTextMessageBindingElement` Se zobrazí nastavení pro `MessageVersion`, `ContentType`, a `Encoding` prostřednictvím vlastnosti. Kodér podporuje verze Soap11Addressing a Soap12Addressing1. Výchozí hodnota je Soap11Addressing1. Výchozí hodnota `ContentType` je "text/xml". `Encoding` Vlastnost můžete nastavit hodnotu kódování požadované znaků. Ukázka klient a služba používá kódování ISO 8859-1 (Latin1) znaků, který není podporována <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> služby WCF.  
   
  Následující kód ukazuje, jak programově vytvořit vazbu pomocí kodéru zpráv vlastní text.  
   

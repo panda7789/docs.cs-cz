@@ -2,17 +2,17 @@
 title: Přenos
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: 7daa486286e022b24be32df7335ddbd5db7233f0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: aa7535aa393544077a9802b5c3255d6e5f6accda
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transfer"></a>Přenos
 Toto téma popisuje přenosu v modelu trasování aktivity Windows Communication Foundation (WCF).  
   
 ## <a name="transfer-definition"></a>Definice přenosu  
- Přenosy mezi aktivitami představují příčinnou vztahy mezi událostmi v souvisejících činností v rámci koncové body. Dvě aktivity souvisejí s přenosy při řízení toků mezi tyto aktivity, například volání metody při překročení hranice aktivity. V [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)], když bajtů příchozí na službu, naslouchat na aktivity se přenese do aktivity přijímat bajtů, kde se má vytvořit objekt zprávy. Seznam trasování začátku do konce scénáře a jejich odpovídající aktivitu a trasování návrhu najdete v tématu [scénáře trasování začátku do konce](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
+ Přenosy mezi aktivitami představují příčinnou vztahy mezi událostmi v souvisejících činností v rámci koncové body. Dvě aktivity souvisejí s přenosy při řízení toků mezi tyto aktivity, například volání metody při překročení hranice aktivity. Ve WCF když bajtů je příchozí na službu, aktivity naslouchat na jsou přeneseny do aktivity přijímat bajtů kde se má vytvořit objekt zprávy. Seznam trasování začátku do konce scénáře a jejich odpovídající aktivitu a trasování návrhu najdete v tématu [scénáře trasování začátku do konce](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
   
  Chcete-li emitování přenos trasování, použijte `ActivityTracing` nastavení na zdroj trasování, jak je ukázáno v následujícím kódu konfigurace.  
   

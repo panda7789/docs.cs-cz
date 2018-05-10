@@ -8,11 +8,11 @@ helpviewer_keywords:
 - handling faults [WCF], specifying
 - handling faults [WCF], defining
 ms.assetid: c00c84f1-962d-46a7-b07f-ebc4f80fbfc1
-ms.openlocfilehash: b71aaf22c98c7f8e62b5c02449a45ec75567d064
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 99e0c22a66eb1d839f1594cf53373a74fc3dd02d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="defining-and-specifying-faults"></a>Definice a určení chyb
 Chyb SOAP nesou podmínku informace o chybě ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsahu a určit, které operace vrátit. Další informace o tom, jak služba nebo duplexní klienta, můžete odeslat těchto chyb a jak klienta služby nebo aplikace zpracovává tyto chyby najdete v tématu [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled zpracování chyb v aplikacích Windows Communication Foundation (WCF) najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -27,7 +27,7 @@ Chyb SOAP nesou podmínku informace o chybě ze služby pro klienta a v případ
 3.  Vaše operace označte tak, aby konkrétní SOAP chyb, které vyvolají jsou viditelné na klienty v jazyce WSDL.  
   
 ### <a name="defining-error-conditions-that-clients-should-know-about"></a>Definování chybové stavy, které byste se měli seznámit klientů  
- Chyb SOAP jsou veřejně popsané zprávy, které přenosu informací o selhání určité operace. Vzhledem k tomu, že jsou popsány společně s další operace zprávy WSDL, klienti vědět a proto očekávat zpracovat takové chyby při vyvolání operace. Ale protože [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby jsou zapsané ve spravovaném kódu, při rozhodování o tom, která chyba se podmínky ve spravovaném kódu se převedou na chyb a vrátí klientovi nabízí možnost oddělit chybové stavy a chyby ve službě z formální chyba konverzace, které máte s klientem.  
+ Chyb SOAP jsou veřejně popsané zprávy, které přenosu informací o selhání určité operace. Vzhledem k tomu, že jsou popsány společně s další operace zprávy WSDL, klienti vědět a proto očekávat zpracovat takové chyby při vyvolání operace. Ale protože služby WCF jsou zapsané ve spravovaném kódu, při rozhodování o tom, která chyba se podmínky ve spravovaném kódu se převedou na chyb a vrátí klientovi nabízí možnost oddělit chybové stavy a chyby ve službě z formální chyby konverzace máte s klientem.  
   
  Například následující příklad kódu ukazuje operace, která přebírá dvě celá čísla a vrátí jiné číslo. Několik výjimek může být vyvolána tady, proto při navrhování chyba – kontrakt, je třeba určit, které chybové stavy jsou důležité pro vašeho klienta. V tomto případě by měl zjistit službu <xref:System.DivideByZeroException?displayProperty=nameWithType> výjimka.  
   
@@ -84,7 +84,7 @@ End Class
   
  Podle protokolu SOAP standard, může mít chybu `Action`, `Code`a `Reason`. `Action` Řídí <xref:System.ServiceModel.FaultContractAttribute.Action%2A> vlastnost. <xref:System.ServiceModel.FaultException.Code%2A> Vlastnost a <xref:System.ServiceModel.FaultException.Reason%2A> vlastnost jsou obě vlastnosti <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> třída, která je nadřazená třída obecná <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>. `Code` Zahrnuje vlastnost <xref:System.ServiceModel.FaultCode.SubCode%2A> člen.  
   
- Při přístupu k jiné services generujících chyb, existují určitá omezení. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje pouze chyb s typy podrobností popisující schéma a které jsou kompatibilní s kontrakty dat. Například jako uvedených výše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nepodporuje chyb, které se používají atributy XML v jejich podrobnosti typy nebo chyb s více než jeden element nejvyšší úrovně v sekci podrobností.  
+ Při přístupu k jiné services generujících chyb, existují určitá omezení. WCF podporuje pouze chyb s typy podrobností, která popisuje schéma a které jsou kompatibilní s kontrakty dat. Příklad jak je uvedeno nahoře, WCF nepodporuje chyb, které se používají atributy XML v jejich podrobnosti typy nebo chyb s více než jeden element nejvyšší úrovně v části Podrobnosti.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.FaultContractAttribute>  

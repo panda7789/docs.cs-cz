@@ -2,11 +2,11 @@
 title: Šíření
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: 5d848a2b74402d0adf125488481f5b82e0b09781
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f4e92c6dec163d191c507dd80bb0d9dc129c6e96
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="propagation"></a>Šíření
 Toto téma popisuje rozšíření aktivity v modelu trasování Windows Communication Foundation (WCF).  
@@ -20,7 +20,7 @@ Toto téma popisuje rozšíření aktivity v modelu trasování Windows Communic
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing" propagateActivity="true" >  
 ```  
   
- Konfigurovat funkci, která způsobí, že je rozšíření aktivity [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] přidat hlavičku do odchozí zprávy, které obsahuje ID aktivity na TLS. To uvedete na následné trasování na straně serveru, jsme mohou korelovat aktivity klienta a serveru.  
+ Rozšíření aktivity je konfigurovat funkci, která způsobí, že WCF přidat hlavičku do odchozí zprávy, která zahrnuje ID aktivity na TLS. To uvedete na následné trasování na straně serveru, jsme mohou korelovat aktivity klienta a serveru.  
   
 ## <a name="propagation-definition"></a>Definice šíření  
  Pokud všechny následující podmínky použití aktivity M gAId rozšířena do aktivity N.  

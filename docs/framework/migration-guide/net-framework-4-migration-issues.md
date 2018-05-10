@@ -1,24 +1,17 @@
 ---
 title: Problémy s migrací rozhraní .NET framework 4
 ms.date: 05/02/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- mariaw
-ms.openlocfilehash: 05c86759b16fa4e1cbf31b7409601cb6b91cd08e
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: aa8cbe0cc87e656eeb8cd0234875a87ade9c05f5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET framework 4
 

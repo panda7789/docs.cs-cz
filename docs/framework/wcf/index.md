@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-ms.openlocfilehash: f3b8abb2a8e0079dc18624c5ac0408a2738f06b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 56054216dc6e90e789c230acb3d56565a9ba3d69
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a>Vývoj aplikací orientovaných na služby s použitím technologie WCF
 Tato část dokumentace obsahuje informace o Windows Communication Foundation (WCF), což je jednotná programovací model pro vytváření aplikací orientovaných na služby. Umožňuje vývojářům vytvářet bezpečné, spolehlivé a zpracovaných řešení, které integrovat do různých platforem a zajistit vzájemnou funkční spolupráci s stávajících investic.
@@ -34,7 +34,7 @@ Tato část dokumentace obsahuje informace o Windows Communication Foundation (W
  Popisuje základní informace o vytváření aplikací pro Windows Communication Foundation.  
   
  [Podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md)  
- Zobrazuje témata, ve kterých můžete zvolit, které [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce nebo funkce, které potřebujete využívat.  
+ Obsahuje témata, která umožňují zvolit, které WCF funkce nebo funkce budete muset použít.  
   
  [Rozšíření WCF](../../../docs/framework/wcf/extending/index.md)  
  Popisuje, jak upravit a rozšířit součásti režimu runtime WCF  
@@ -67,7 +67,7 @@ Tato část dokumentace obsahuje informace o Windows Communication Foundation (W
  Ukázky, které poskytují instrukce v různých aspektů Windows Communication Foundation  
   
  [Glosář Windows Communication Foundation](../../../docs/framework/wcf/glossary.md)  
- Zobrazuje seznam termínů specifických pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]  
+ Zobrazí seznam termínů konkrétní WCF  
   
  [Obecné referenční informace](../../../docs/framework/wcf/general-reference.md)  
  V části popisuje elementy, které se používají ke konfiguraci služby a klienti Windows Communication Foundation.  

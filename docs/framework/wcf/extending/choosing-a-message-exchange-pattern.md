@@ -2,11 +2,11 @@
 title: Výběr vzorce výměny zpráv
 ms.date: 03/30/2017
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-ms.openlocfilehash: 3466be98522eef0ebec6f6613f51566700a7cdb7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ac5ff841eb4e314c1c9d04c895d7a22766da003e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Výběr vzorce výměny zpráv
 Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zprávy exchange vzory* (nebo MEPs) jsou povinné pro kanál vyvíjíte. Toto téma popisuje možnosti dostupné a popisuje různé požadavky. Toto je první úloha v seznamu úkolů vývoj kanálu popsané v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -47,7 +47,7 @@ Tři vzory exchange základní zpráva. Shora dolů: datagram, požadavků a odp
 >  Pro přenosu UDP pouze MEP, která je podporována je datagram, protože UDP je ze své podstaty ještě efektivněji a zapomněli protokolu.  
   
 ## <a name="sessions-and-sessionful-channels"></a>Relace a Sessionful kanály  
- Na světě sítě jsou orientované na připojení protokoly (například TCP) a protokoly bez připojení (například UDP). [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá termín relace rozumí abstrakce logické jako připojení. Relacemi WCF protokoly jsou podobná orientovaná na připojení síťové protokoly a protokoly nerelační WCF jsou podobná připojení méně síťových protokolů.  
+ Na světě sítě jsou orientované na připojení protokoly (například TCP) a protokoly bez připojení (například UDP). WCF používá termín relace rozumí abstrakce logické jako připojení. Relacemi WCF protokoly jsou podobná orientovaná na připojení síťové protokoly a protokoly nerelační WCF jsou podobná připojení méně síťových protokolů.  
   
  V modelu objektu kanál každé logické relaci manifesty jako instanci kanál s relacemi. Proto všechny nové relace vytvoření klient a přijal na službu, odpovídá nové kanálu relací na každé straně. Následující diagram ukazuje, nahoře, struktura nerelační kanály a v dolní části, struktura relacemi kanály.  
   

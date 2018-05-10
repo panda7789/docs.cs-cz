@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 5a6ea4f3ba121f419d1a8c46fc2534988a93d554
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e752f6f4428d01474d643f1571935cb7d96d41ca
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, se kterými se zákazníci spustili do při vývoj klienti WCF a služeb. Pokud problém, který běží na není v tomto seznamu, doporučujeme že konfigurovat trasování pro služby. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče soubor trasování a získat podrobné informace o výjimkách, který může vyskytovat v rámci služby. Další informace o konfiguraci trasování najdete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči soubor trasování najdete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -153,7 +153,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q6"></a>   
 ## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a>Podle všeho jako jednosměrný a operace požadavek odpověď vracet přibližně stejnou rychlostí odpověď neobsahuje žádná data. Co se děje?  
- Určení, že operace je jedním ze způsobů pouze znamená, že operace kontrakt přijímá zprávy při zadávání a nevrací zprávu výstup. V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], všechna volání vrátí, když se odchozí data byla zapsána na sítě, nebo je vyvolána výjimka. Jednosměrná operace fungují stejně a můžete vyvolají, pokud služba nemůže najít nebo blokovat, pokud služba není připraven na příjem dat ze sítě. Obvykle v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], výsledkem je jednosměrný volání vrácením klientovi rychleji než požadavek odpověď; ale žádné podmínku, která zpomalí odesílání odchozí data v síti zpomalí Jednosměrná operace, jakož i operace požadavek odpověď. Další informace najdete v tématu [One-Way služby](../../../docs/framework/wcf/feature-details/one-way-services.md) a [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+ Určení, že operace je jedním ze způsobů pouze znamená, že operace kontrakt přijímá zprávy při zadávání a nevrací zprávu výstup. Ve službě WCF všechna volání vracet odchozí data byla zapsána na sítě, nebo je vyvolána výjimka. Jednosměrná operace fungují stejně a můžete vyvolají, pokud služba nemůže najít nebo blokovat, pokud služba není připraven na příjem dat ze sítě. Obvykle ve WCF, výsledkem je jednosměrný volání vrácením klientovi rychleji než požadavek odpověď; ale žádné podmínku, která zpomalí odesílání odchozí data v síti zpomalí Jednosměrná operace, jakož i operace požadavek odpověď. Další informace najdete v tématu [One-Way služby](../../../docs/framework/wcf/feature-details/one-way-services.md) a [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
 <a name="BKMK_q77"></a>   
 ## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>Používám certifikát X.509 s mé služby a získat System.Security.Cryptography.CryptographicException. Co se děje?  
@@ -169,7 +169,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q99"></a>   
 ## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a>Používám jeden z mých trasování nástrojů a získat endpointnotfoundexception –. Co se děje?  
- Pokud používáte nástroj trasování, který není poskytované systémem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] mechanismus trasování a zobrazí se <xref:System.ServiceModel.EndpointNotFoundException> určující, že došlo neshodě adres filtru, budete muset použít <xref:System.ServiceModel.Description.ClientViaBehavior> třída směrovat zprávy, které mají trasování nástroje a mít nástroj přesměruje tyto zprávy na adresu služby. <xref:System.ServiceModel.Description.ClientViaBehavior> Třída mění `Via` indikován adresování záhlaví zadat další síťová adresa odděleně od ultimate příjemce, `To` adresování záhlaví. Pokud v takovém případě však neměňte adresa koncového bodu, který se používá k navázání `To` hodnotu.  
+ Pokud používáte nástroj trasování, který není poskytované systémem mechanismus trasování WCF a zobrazí se <xref:System.ServiceModel.EndpointNotFoundException> určující, že došlo neshodě adres filtru, budete muset použít <xref:System.ServiceModel.Description.ClientViaBehavior> třída směrovat zprávy, které mají nástroj trasování a máte nástroj přesměruje tyto zprávy na adresu služby. <xref:System.ServiceModel.Description.ClientViaBehavior> Třída mění `Via` indikován adresování záhlaví zadat další síťová adresa odděleně od ultimate příjemce, `To` adresování záhlaví. Pokud v takovém případě však neměňte adresa koncového bodu, který se používá k navázání `To` hodnotu.  
   
  Následující příklad kódu ukazuje klientem příklad konfiguračního souboru.  
   

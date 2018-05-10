@@ -2,11 +2,11 @@
 title: Vlastní publikování WSDL
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: e475a37b5c8e868cf06d7764d561755112ed943e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b75aa2269d9c21a6f6d7f579d3c0b6f547a92332
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-wsdl-publication"></a>Vlastní publikování WSDL
 Tento příklad znázorňuje postup:  
@@ -230,7 +230,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
 </client>  
 ```  
   
- Jakmile byl zadán vlastní – Importér, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] systém metadat načte vlastní – Importér do jakéhokoli <xref:System.ServiceModel.Description.WsdlImporter> vytvořený pro tento účel. Této ukázce se používá <xref:System.ServiceModel.Description.MetadataExchangeClient> stáhnout metadata, <xref:System.ServiceModel.Description.WsdlImporter> správně nakonfigurovaná tak, aby import metadat pomocí vlastní – Importér ukázka vytvoří, a <xref:System.ServiceModel.Description.ServiceContractGenerator> zkompilovat upravené kontrakt informace do obou jazyka Visual Basic C# kódu a klienta, můžete použít v sadě Visual Studio pro podporu technologie Intellisense nebo zkompilovat do dokumentace XML.  
+ Jakmile byl zadán vlastní – Importér, načte metadata systém WCF vlastní – Importér do jakéhokoli <xref:System.ServiceModel.Description.WsdlImporter> vytvořený pro tento účel. Této ukázce se používá <xref:System.ServiceModel.Description.MetadataExchangeClient> stáhnout metadata, <xref:System.ServiceModel.Description.WsdlImporter> správně nakonfigurovaná tak, aby import metadat pomocí vlastní – Importér ukázka vytvoří, a <xref:System.ServiceModel.Description.ServiceContractGenerator> zkompilovat upravené kontrakt informace do obou jazyka Visual Basic C# kódu a klienta, můžete použít v sadě Visual Studio pro podporu technologie Intellisense nebo zkompilovat do dokumentace XML.  
   
 ```  
 /// From WSDL Documentation:  

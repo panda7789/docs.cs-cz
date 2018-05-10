@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d8dcd85-0a05-4c44-8861-4a0b3b90cca9
-ms.openlocfilehash: e48c519f6e10be4521d75345845eb5c019ec342c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4d1ee0671a45b12e70f8f43ed2ea83b0a22d6c98
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="service-channel-level-programming"></a>Programování služby na úrovni kanálů
 Toto téma popisuje, jak psát aplikace služby Windows Communication Foundation (WCF) bez použití <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> a jeho přidružený objekt modelu.  
@@ -28,7 +28,7 @@ Toto téma popisuje, jak psát aplikace služby Windows Communication Foundation
 5.  Zavřete všechny objekty kanálu.  
   
 #### <a name="creating-a-binding"></a>Vytváření vazby  
- Prvním krokem při čekání na a přijímání zpráv vytváří vazbu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se dodává s několik předdefinovaných nebo poskytované systémem vazby, které lze použít přímo po vytvoření instance jeden z nich. Kromě toho můžete také vytvořit vlastní vlastní vazby po vytvoření instance CustomBinding třídu, která je jaké kód v výpis 1.  
+ Prvním krokem při čekání na a přijímání zpráv vytváří vazbu. WCF se dodává s několik předdefinovaných nebo poskytované systémem vazby, které lze použít přímo po vytvoření instance jeden z nich. Kromě toho můžete také vytvořit vlastní vlastní vazby po vytvoření instance CustomBinding třídu, která je jaké kód v výpis 1.  
   
  Následující příklad kódu vytvoří instanci <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> a přidá <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> k jeho elementy kolekce, která je kolekce elementů, které se používají k vytvoření kanálu zásobníku vazby. V tomto příkladu protože kolekce elementů je k dispozici pouze <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, výsledný zásobník kanál má pouze přenosu kanál protokolu HTTP.  
   

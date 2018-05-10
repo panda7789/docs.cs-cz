@@ -2,11 +2,11 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 614b651d02b511927eda3909a40d1382c0842512
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 9002597ef662c78b6519ab0c04700cddf7ee3714
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="jsonp"></a>JSONP
 Tento příklad ukazuje, jak podporovala JSON s odsazení (JSONP) ve službě WCF REST services. JSONP je konvence používaná k vyvolání skripty napříč doménami a generování značek skriptu v aktuálním dokumentu. Výsledkem je vrácený v zadané zpětného volání funkce. JSONP je založena na nápad, které přidá značky, jako `<script src="http://..." >` můžete vyhodnotit skriptů z jakékoli domény a skriptu načíst tyto značky je vyhodnocován v rámci oboru, ve kterém může již definována dalších funkcí.  
@@ -36,7 +36,7 @@ proxy.GetCustomer(onSuccess, onFail, null);
 </system.serviceModel>  
 ```  
   
- ScriptManager spravuje interakci se službou a rychle skrývá složitosti implementace ručně JSONP přístup. Při `crossDomainScriptAccessEnabled` je nastaven na `true` a odpovědi formátu JSON, je operace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury zkontroluje identifikátor URI požadavku pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou dotazu zpětného volání parametr řetězce. V ukázce webová stránka volá službu WCF REST s následující identifikátor URI.  
+ ScriptManager spravuje interakci se službou a rychle skrývá složitosti implementace ručně JSONP přístup. Když `crossDomainScriptAccessEnabled` je nastaven na `true` a formát odpovědi operace je JSON, WCF infrastruktury zkontroluje identifikátor URI požadavku pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou řetězce dotazu zpětného volání parametr. V ukázce webová stránka volá službu WCF REST s následující identifikátor URI.  
   
 ```  
 http://localhost:33695/CustomerService/GetCustomer?callback=Sys._json0  
@@ -50,7 +50,7 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
   
  Tato odpověď JSONP obsahuje data zákazníků formátu JSON, obklopeno název funkce zpětného volání, která požadované webové stránky. ScriptManager bude provedení tohoto zpětného volání pomocí značky script k provádění požadavku napříč doménami a výsledek předat onSuccess obslužná rutina, která byla předána operaci GetCustomer proxy prvku ASP.NET AJAX.  
   
- Ukázkový soubor obsahuje dva webové aplikace ASP.NET: jeden obsahuje jenom [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a jinou obsahuje webová stránka .aspx, který zavolá službu. Při spuštění tohoto řešení [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] bude hostitelem dvou webů na jiné porty, které vytvoří prostředí, kde klienta a služby za provozu na různých doménách.  
+ Ukázkový soubor obsahuje dva webové aplikace ASP.NET: jeden právě služby WCF a obsahuje jinou webová stránka .aspx, který zavolá službu. Při spuštění tohoto řešení [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] bude hostitelem dvou webů na jiné porty, které vytvoří prostředí, kde klienta a služby za provozu na různých doménách.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
@@ -67,4 +67,4 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
   
 2.  Stisknutím klávesy F5 spusťte `http://localhost:26648/JSONPClientPage.aspx` v prohlížeči.  
   
-3.  Všimněte si, že po načtení stránky vstupy text "Název" a "Address" jsou naplněny podle hodnot.  Tyto hodnoty nebyly zadány volání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby po vykreslení stránky v prohlížeči.
+3.  Všimněte si, že po načtení stránky vstupy text "Název" a "Address" jsou naplněny podle hodnot.  Tyto hodnoty nebyly zadány volání služby WCF po vykreslení stránky v prohlížeči.

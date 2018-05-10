@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
-ms.openlocfilehash: 12382b0886970bc48345107008ee449d9653ec4f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 97a8e9fd8f0e2c906f14556fcdccd7ef0d3c8033
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="system-provided-bindings"></a>Vazby poskytované systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit k koncový bod. Vazba obsahuje následující prvky:  
@@ -30,7 +30,7 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
 >  Nikdy nepoužívejte duplexní kontrakty u vazeb, které nepodporují zabezpečení nebo které mají zabezpečení vypnutý, pokud je zabezpečení dat jiným způsobem.  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
- Následující vazby dodávají spolu s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
+ Následující vazby dodávají spolu s WCF.  
   
 |Vazba|Konfigurační Element|Popis|  
 |-------------|---------------------------|-----------------|  
@@ -40,14 +40,14 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
 |<xref:System.ServiceModel.WSFederationHttpBinding>|[\<wsFederationHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|Zabezpečení a vzájemná spolupráce vazbu, podporuje protokol WS-Federation, který umožňuje organizacím, které jsou ve federaci efektivní ověřování a autorizaci uživatelů.|  
 |<xref:System.ServiceModel.NetHttpBinding>|\<netHttpBinding >|Vazba určená pro použití protokolu HTTP nebo protokolu WebSocket služeb, která používá binárního kódování ve výchozím nastavení.|  
 |<xref:System.ServiceModel.NetHttpsBinding>|\<netHttpsBinding >|Zabezpečené vazby určené pro použití protokolu HTTP nebo protokolu WebSocket služeb, která používá binárního kódování ve výchozím nastavení.|  
-|<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|Zabezpečení a optimalizované vazbu vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace.|  
-|<xref:System.ServiceModel.NetNamedPipeBinding>|[\<– netNamedPipeBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)|Bezpečné, spolehlivé a optimalizované vazby, který je vhodný pro-počítače komunikace mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace.|  
-|<xref:System.ServiceModel.NetMsmqBinding>|[\<– netMsmqBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|Vazbu zařazených do fronty, který je vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace.|  
+|<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|Zabezpečení a optimalizované vazbu vhodný pro komunikaci mezi počítači mezi aplikací služby WCF.|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|[\<– netNamedPipeBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)|Bezpečné, spolehlivé a optimalizované vazby, který je vhodný pro-počítače komunikace mezi aplikací služby WCF.|  
+|<xref:System.ServiceModel.NetMsmqBinding>|[\<– netMsmqBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|Vazba zařazených do fronty, který je vhodný pro komunikaci mezi počítači mezi aplikací služby WCF.|  
 |<xref:System.ServiceModel.NetPeerTcpBinding>|[\<netPeerTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md)|Vazba, která umožňuje zabezpečenou, více komunikace počítače.|  
-|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding >](../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|Vazba, který je vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace a stávající aplikace služby Řízení front zpráv.|  
+|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding >](../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|Vazba, který je vhodný pro komunikaci mezi počítači mezi aplikace WCF a stávající zprávy služby Řízení front aplikace.|  
 |<xref:System.ServiceModel.BasicHttpContextBinding>|[\<Vazba basicHttpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpcontextbinding.md)|Vazbu, která je vhodná pro komunikaci s vyhovující profilu WS – základní webové služby umožňující soubory cookie protokolu HTTP, který se použije pro kontext výměny.|  
-|<xref:System.ServiceModel.NetTcpContextBinding>|[\<netTcpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpcontextbinding.md)|Zabezpečení a optimalizované vazbu vhodný pro komunikaci mezi počítači mezi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, které umožňuje hlavičky SOAP pro kontext výměny.|  
-|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Vazba použitá ke konfiguraci koncových bodů pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] webové služby, které se zveřejňují přes požadavky HTTP místo protokolu SOAP zprávy.|  
+|<xref:System.ServiceModel.NetTcpContextBinding>|[\<netTcpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpcontextbinding.md)|Zabezpečení a optimalizované vazbu vhodný pro komunikaci mezi počítači mezi aplikací služby WCF, který umožňuje hlavičky SOAP pro kontext výměny.|  
+|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Vazba použitá ke konfiguraci koncových bodů WCF webové služby, které jsou přístupné přes požadavky HTTP místo protokolu SOAP zprávy.|  
 |<xref:System.ServiceModel.WSHttpContextBinding>|[\<wsHttpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpcontextbinding.md)|Zabezpečený a |<xref:System.ServiceModel.UdpBinding>|\<udpBinding >|Vazba pro odesílání shluku jednoduché zpráv velký počet klientů najednou.|  
   
  V následující tabulce jsou uvedené funkce jednotlivých vazby poskytované systémem. Vazby se nacházejí ve sloupcích tabulky; funkce jsou uvedené na řádky a popsané v druhé tabulce. Následující tabulka poskytuje klíč pro zkratky vazby použít. Vyberte vazbu, určete, který sloupec splňuje všechny funkce řádků, které potřebujete.  

@@ -1,24 +1,15 @@
 ---
-title: "Změna, kam objekt My.Application.Log zapisuje informace (Visual Basic)"
-ms.custom: 
+title: Změna, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - My.Application.Log object, walkthroughs
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c4cd2e675bf1be4f065ee116795a95dae64d13d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ab46f192f2e9549d0568737236742a366ce7b3a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna místa, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o událostech, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepíší výchozí nastavení, a způsobit, že `Log` objektu k zápisu do jiných součástí naslouchajících protokolům.  
@@ -32,7 +23,7 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
 1.  Klikněte pravým tlačítkem na app.config v **Průzkumníku řešení** a zvolte **otevřete**.  
   
-     \-nebo –  
+     \- nebo –  
   
      Pokud není dostupný žádný soubor app.config:  
   
@@ -194,5 +185,5 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
  <xref:System.Diagnostics.TraceListener>  
  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType>  
  <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>  
- [Postupy: zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)  
- [Postupy: zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
+ [Postupy: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)  
+ [Postupy: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)

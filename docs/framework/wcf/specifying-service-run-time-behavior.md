@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-ms.openlocfilehash: 38035230cf4f5e411f7ec769a169528ada130749
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 61a81e342a16bd298cbebef2dc733b5ec631839c
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementace vašeho kontrakt služby ([implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operaci služby modulu runtime. Toto téma popisuje funkce služby poskytované systémem a operace chování a popisuje, kde najít další informace o vytvoření nové chování. Když některé chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
@@ -21,7 +21,7 @@ Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů
   
  <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> a <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> atributy jsou nejčastěji užitečné chování a zveřejněte nejčastěji požadované funkce operaci. Protože jsou atributy, je použít na implementaci služby nebo operace. Další chování, jako <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>, jsou obvykle použije pomocí konfiguračního souboru aplikace, přestože je možné použít prostřednictvím kódu programu.  
   
- Toto téma obsahuje přehled <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy, popisuje různé obory, na kterých mohou pracovat chování a poskytuje rychlý popis řadu poskytované systémem chování v různých obory, které může být zajímají k [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vývojáři.  
+ Toto téma obsahuje přehled <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy, popisuje různé obory, na kterých mohou pracovat chování a poskytuje rychlý popis řadu poskytované systémem chování v různých obory, které může být určen vývojářům WCF.  
   
 ## <a name="servicebehaviorattribute-and-operationbehaviorattribute"></a>ServiceBehaviorAttribute a OperationBehaviorAttribute  
  Nejdůležitější chování jsou <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy, které můžete použít k řízení:  
@@ -76,13 +76,13 @@ Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů
 ### <a name="service-behaviors"></a>Chování služby  
  Následujících chování pracovat na služby.  
   
--   <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. Použít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby k označení, zda lze tuto službu spustit [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] režimu kompatibility.  
+-   <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. U služby WCF indikující, zda lze tuto službu spustit [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] režimu kompatibility.  
   
 -   <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Určuje, jak služba povolí deklarace identity klienta.  
   
 -   <xref:System.ServiceModel.Description.ServiceCredentials>. Nakonfiguruje přihlašovací údaje služby. Tato třída slouží k zadání přihlašovacích údajů pro službu, jako je certifikát X.509.  
   
--   <xref:System.ServiceModel.Description.ServiceDebugBehavior>. Povolí ladění a informace o funkce pro pomoc [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior>. Povolí ladění a pomoct informace o funkcích služby WCF.  
   
 -   <xref:System.ServiceModel.Description.ServiceMetadataBehavior>. Ovládací prvky publikování metadat služby a související informace.  
   
@@ -95,13 +95,13 @@ Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů
   
 -   <xref:System.ServiceModel.CallbackBehaviorAttribute>. Nakonfiguruje implementaci služby zpětného volání v aplikaci duplexní klienta.  
   
--   <xref:System.ServiceModel.Description.CallbackDebugBehavior>. Povolí ladění na služby pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objekt zpětného volání.  
+-   <xref:System.ServiceModel.Description.CallbackDebugBehavior>. Povolí ladění služby WCF zpětného volání objektu.  
   
 -   <xref:System.ServiceModel.Description.ClientCredentials>. Umožňuje uživatelům konfigurovat přihlašovací údaje klienta a služby a také nastavení ověřování přihlašovacích údajů pro použití na klientovi služby.  
   
 -   <xref:System.ServiceModel.Description.ClientViaBehavior>. Používají klienti k určení identifikátor URI (Uniform Resource) pro který by měl být vytvořen kanál přenosu.  
   
--   <xref:System.ServiceModel.Description.MustUnderstandBehavior>. Dá pokyn [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zakázat `MustUnderstand` zpracování.  
+-   <xref:System.ServiceModel.Description.MustUnderstandBehavior>. Dá pokyn WCF zakázat `MustUnderstand` zpracování.  
   
 -   <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>. Dá pokyn modulu runtime použijte synchronního přijímat proces pro kanály.  
   

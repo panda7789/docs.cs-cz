@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 5162f5c4-8781-4cc4-9425-bb7620eaeaf4
-ms.openlocfilehash: a93726598b31ee57d583aca16012d615e90441f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 38e3c62aaf0e87860732bcb12c61da69b1c4346d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute
 Řízení přístupu k prostředkům v počítači domény systému Windows je úloha základní zabezpečení. Například pouze určité uživatelé by měli být schopní zobrazit citlivá data, jako jsou informace o mzdách. Toto téma vysvětluje, jak omezit přístup k metodě pomocí vyžadování, které uživatel patří do předdefinované skupiny. Pracovní vzorek, najdete v části [autorizace přístupu k operacím služby](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md).  
@@ -76,7 +76,7 @@ ms.lasthandoff: 05/04/2018
     </behaviors>  
     ```  
   
-     Nastavení této hodnoty na `UseAspNetRoles` znamená, že `Name` vlastnost `PrincipalPermissionAttribute` se použije k provádění porovnání řetězců. Když je certifikát použit jako pověření klienta, ve výchozím nastavení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zřetězí běžný název certifikátu a kryptografický otisk středníkem k vytvoření jedinečné hodnoty pro primární identitu klienta. S `UseAspNetRoles` nastavit jako `PrincipalPermissionMode` na službu, tato hodnota primární identity se porovná s `Name` hodnotu vlastnosti k určení přístupová práva uživatele.  
+     Nastavení této hodnoty na `UseAspNetRoles` znamená, že `Name` vlastnost `PrincipalPermissionAttribute` se použije k provádění porovnání řetězců. Pokud certifikát se používá jako pověření klienta, ve výchozím nastavení WCF zřetězí běžný název certifikátu a kryptografický otisk středníkem k vytvoření jedinečné hodnoty pro primární identitu klienta. S `UseAspNetRoles` nastavit jako `PrincipalPermissionMode` na službu, tato hodnota primární identity se porovná s `Name` hodnotu vlastnosti k určení přístupová práva uživatele.  
   
      Můžete taky při vytváření samoobslužné hostovanou službu, nastavte <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> vlastností v kódu, jak je znázorněno v následujícím kódu:  
   

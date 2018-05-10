@@ -2,16 +2,16 @@
 title: Ukázka slabě typované serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: 66e68985da94df11a81ba6d387438fe29dd96d56
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 294c00bd18b5fabba5baa20770fd593031a98994
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
 Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelem definovaný typ musí být k dispozici na službu a klienta. Obvykle k tomu <xref:System.Runtime.Serialization.DataContractAttribute> tyto uživatelem definované typy je použit atribut a <xref:System.Runtime.Serialization.DataMemberAttribute> atribut se používá k jejich členové. Tento mechanismus platí i v případě práce s objekty jazyka JavaScript Object Notation (JSON), jak je popsáno v tématu [postup: serializaci a deserializaci JSON Data](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
   
- V některých případech potřebuje přístup objekty JSON vygenerovaných služba nebo klienta, který je mimo kontrolu vývojáře služby Windows Communication Foundation (WCF) nebo klienta. Protože více webových služeb veřejně vystavit JSON rozhraní API, může stát nepraktické pro [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojáře vytvořit místní uživatelem definované typy do kterého mají být deserializována libovolné objekty JSON. Tato ukázka poskytuje mechanismus, který umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vývojářům pracovat s objekty JSON deserializovat, libovolný bez vytvoření uživatelem definované typy. To se označuje jako *slabě typované serializace* objektů JSON, protože typ, do kterého deserializuje objekt JSON není známý v době kompilace.  
+ V některých případech potřebuje přístup objekty JSON vygenerovaných služba nebo klienta, který je mimo kontrolu vývojáře služby Windows Communication Foundation (WCF) nebo klienta. Protože více webových služeb veřejně vystavit JSON rozhraní API, může stát nepraktické pro vývojáře WCF vytvořit místní uživatelem definované typy do kterého mají být deserializována libovolné objekty JSON. Tato ukázka poskytuje mechanismus, který umožňuje vývojářům WCF pro práci s objekty JSON deserializovat, libovolný bez vytvoření uživatelem definované typy. To se označuje jako *slabě typované serializace* objektů JSON, protože typ, do kterého deserializuje objekt JSON není známý v době kompilace.  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
@@ -22,7 +22,7 @@ Při serializaci uživatelem definovaný typ daného přenosový formát nebo de
 {"personal": {"name": "Paul", "age": 23, "height": 1.7, "isSingle": true, "luckyNumbers": [5,17,21]}, "favoriteBands": ["Band ABC", "Band XYZ"]}  
 ```  
   
- K deserializaci tento objekt [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta musí implementovat následující uživatelem definované typy.  
+ K deserializaci tento objekt, musí implementovat klienta WCF uživatelem definované typy.  
   
 ```  
 [DataContract]  

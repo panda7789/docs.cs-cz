@@ -2,18 +2,18 @@
 title: WebContentTypeMapper – ukázka
 ms.date: 03/30/2017
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
-ms.openlocfilehash: 3b3d53b0fe619c74c5e7f3533194f4b5e7c18a16
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 89f13599e23f3e60ae4d9bc973debc436f46c147
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper – ukázka
 Tento příklad znázorňuje způsob namapování nové typy obsahu do formáty text zpráv Windows Communication Foundation (WCF).  
   
- <xref:System.ServiceModel.Description.WebHttpEndpoint> Element připojí kodér zpráv Web, který umožňuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] k přijetí JSON, XML nebo Nezpracovaná binární zprávy se stejný koncový bod. Kodér formátu textu zprávy určuje prohlížením hlavičku HTTP content-type požadavku. Tato ukázka představuje <xref:System.ServiceModel.Channels.WebContentTypeMapper> třídy, která umožňuje uživateli řídit mapování mezi typu obsahu a formátu textu.  
+ <xref:System.ServiceModel.Description.WebHttpEndpoint> Element připojí kodér zpráv Web, který umožňuje WCF k přijetí JSON, XML nebo Nezpracovaná binární zprávy se stejný koncový bod. Kodér formátu textu zprávy určuje prohlížením hlavičku HTTP content-type požadavku. Tato ukázka představuje <xref:System.ServiceModel.Channels.WebContentTypeMapper> třídy, která umožňuje uživateli řídit mapování mezi typu obsahu a formátu textu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje sadu výchozích mapování pro typy obsahu. Například `application/json` mapy do formátu JSON a `text/xml` se mapuje na XML. Jakýkoli typ obsahu, který není mapován na XML nebo JSON je namapována na nezpracovaná binární formát.  
+ WCF poskytuje sadu výchozích mapování pro typy obsahu. Například `application/json` mapy do formátu JSON a `text/xml` se mapuje na XML. Jakýkoli typ obsahu, který není mapován na XML nebo JSON je namapována na nezpracovaná binární formát.  
   
  V některých případech (například nabízené stylu API) služba vývojáře neřídí obsahu typ vrácený klientem. Například klienti může vrátit formát JSON jako `text/javascript` místo `application/json`. V takovém případě vývojáře služby musíte zadat typ, který je odvozen od <xref:System.ServiceModel.Channels.WebContentTypeMapper> pro zpracování obsahu daného typu správně, jak je znázorněno v následujícím ukázkovém kódu.  
   

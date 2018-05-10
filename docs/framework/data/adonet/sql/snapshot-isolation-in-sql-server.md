@@ -1,27 +1,15 @@
 ---
-title: "Izolace snímku v systému SQL Server"
-ms.custom: 
+title: Izolace snímku v systému SQL Server
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a1d263f74f312b34c97f54cd970334017a797652
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b9167d7a92ba1b4951d0a9e3c9eea3565bbdc196
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímku v systému SQL Server
 Izolace snímku vylepšuje souběžnosti pro OLTP aplikace.  

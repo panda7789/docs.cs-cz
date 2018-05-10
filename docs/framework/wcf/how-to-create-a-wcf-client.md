@@ -5,22 +5,22 @@ helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-ms.openlocfilehash: 962f1255f3c759d623850678005eff138353cc80
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d2932293536f875d8986d8d49842cddc196ced0f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>Postupy: Vytvoření klienta Windows Communication Foundation
 Toto je čtvrtý šesti úlohy, které jsou potřebné pro vytvoření aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
   
- Toto téma popisuje, jak načíst metadata z [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a použít ho k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy server, který mají přístup ke službě. Tato úloha je dokončit pomocí funkce Přidat odkaz na službu poskytované sadě Visual Studio. Tento nástroj získává metadata z koncového bodu služby MEX a vygeneruje soubor spravované zdrojového kódu pro proxy server na klienta v jazyce zvolili jste (C# ve výchozím nastavení). Kromě vytváření proxy serveru klienta, nástroj také vytvoří nebo aktualizuje klienta konfigurační soubor, který umožňuje aplikaci připojit ke službě v některém z jeho koncových bodů klienta.  
+ Toto téma popisuje, jak načíst metadata ze služby WCF a použít ji k vytvoření WCF proxy server, který mají přístup ke službě. Tato úloha je dokončit pomocí funkce Přidat odkaz na službu poskytované sadě Visual Studio. Tento nástroj získává metadata z koncového bodu služby MEX a vygeneruje soubor spravované zdrojového kódu pro proxy server na klienta v jazyce zvolili jste (C# ve výchozím nastavení). Kromě vytváření proxy serveru klienta, nástroj také vytvoří nebo aktualizuje klienta konfigurační soubor, který umožňuje aplikaci připojit ke službě v některém z jeho koncových bodů klienta.  
   
 > [!NOTE]
 >  Můžete také [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro generování třídy proxy serveru a konfigurace místo použití přidat odkaz na službu v aplikaci Visual Studio.  
   
 > [!WARNING]
->  Při volání metody [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby z projektu knihovny tříd v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] můžete použít funkci Přidat odkaz na službu k automatickému generování proxy a přidružené konfigurační soubor.  Konfigurační soubor se nepoužijí projektu knihovny tříd. Musíte přidat nastavení v generované konfiguračního souboru do souboru app.config pro spustitelný soubor, který bude volat knihovny tříd.  
+>  Při volání služby WCF z projektu knihovny tříd v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] můžete použít funkci Přidat odkaz na službu k automatickému generování proxy a přidružené konfigurační soubor.  Konfigurační soubor se nepoužijí projektu knihovny tříd. Musíte přidat nastavení v generované konfiguračního souboru do souboru app.config pro spustitelný soubor, který bude volat knihovny tříd.  
   
  Klientská aplikace používá třídu vygenerovaný proxy server pro komunikaci se službou. Tento postup je popsaný v [postupy: používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md).  
   

@@ -2,11 +2,11 @@
 title: Důvěryhodná služba facade
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: 08e115d297439910c16601051539a23a5a6bebc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d5a4cfe63f2fc6facbe4ce78d1c0047349e303fd
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="trusted-facade-service"></a>Důvěryhodná služba facade
 Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího z jedné služby do jiného pomocí služby Windows Communication Foundation (WCF) Infrastruktura zabezpečení.  
@@ -21,7 +21,7 @@ Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícíh
   
 -   Back-end službu kalkulačky  
   
- Službu průčelí za zodpovídá za ověření žádosti a ověřování volající. Po úspěšném ověření a ověření se předá požadavek back-end službu pomocí řízené komunikační kanál z hraniční sítě k interní síti. Jako součást předaný požadavek službu průčelí za obsahuje informace o identitu volajícího, aby službě back-end tyto informace můžete použít v jeho zpracování. Identitu volajícího se přenášejí pomocí `Username` token zabezpečení uvnitř zprávu `Security` záhlaví. Ukázce se používá [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury zabezpečení k přenosu a získání informací z `Security` záhlaví.  
+ Službu průčelí za zodpovídá za ověření žádosti a ověřování volající. Po úspěšném ověření a ověření se předá požadavek back-end službu pomocí řízené komunikační kanál z hraniční sítě k interní síti. Jako součást předaný požadavek službu průčelí za obsahuje informace o identitu volajícího, aby službě back-end tyto informace můžete použít v jeho zpracování. Identitu volajícího se přenášejí pomocí `Username` token zabezpečení uvnitř zprávu `Security` záhlaví. Příklad používá k přenosu a získání informací o z Infrastruktura zabezpečení WCF `Security` záhlaví.  
   
 > [!IMPORTANT]
 >  Back-end službu důvěřuje průčelí za službu, kterou chcete ověřit volající. Z toho důvodu back-end službu neověřuje volající znovu; používá informace o identitě poskytovaný službou průčelí za v přesměrovaná žádosti. Díky tomuto vztahu důvěryhodnosti musí ověřit službě back-end službu průčelí za tak, aby zajistila, že přesměrovaná zpráva pochází z důvěryhodného zdroje – v takovém případě průčelí za službu.  
@@ -110,7 +110,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
   
  [ \<Zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) prvku vazby má na starosti přenosu uživatelského jména a extrakce počáteční volajícího. [ \<WindowsStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md) a [ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) postará o ověřování průčelí za a back-end služby a zpráv ochrany.  
   
- Předání žádosti, musí implementace služby průčelí za zadat uživatelské jméno počáteční volajícího, aby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Tato infrastruktura zabezpečení můžete umístit do přesměrovaná zpráva. Počáteční volajícího uživatelské jméno je součástí implementace služby průčelí za nastavením v `ClientCredentials` vlastnost na instanci proxy serveru klienta služby průčelí za používá ke komunikaci s back-end službu.  
+ Chcete-li předá žádost, implementace služby průčelí za poskytnout počáteční volajícího uživatelské jméno, že infrastruktura zabezpečení WCF to můžete umístit do přesměrovaná zpráva. Počáteční volajícího uživatelské jméno je součástí implementace služby průčelí za nastavením v `ClientCredentials` vlastnost na instanci proxy serveru klienta služby průčelí za používá ke komunikaci s back-end službu.  
   
  Následující kód ukazuje, jak `GetCallerIdentity` metoda se implementuje na průčelí za službu. Ostatní metody pomocí stejného vzoru.  
   
@@ -125,9 +125,9 @@ public string GetCallerIdentity()
 }  
 ```  
   
- Jak ukazuje předchozí kód, heslo není nastaven na `ClientCredentials` , pouze uživatelské jméno je nastavena. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení vytvoří token zabezpečení uživatelské jméno bez zadání hesla v tomto případě tedy přesně co je nutné v tomto scénáři.  
+ Jak ukazuje předchozí kód, heslo není nastaven na `ClientCredentials` , pouze uživatelské jméno je nastavena. Infrastruktura zabezpečení WCF vytvoří token zabezpečení uživatelské jméno bez zadání hesla v tomto případě tedy přesně co je nutné v tomto scénáři.  
   
- Na službě back-end musí být ověřeny informací obsažených v tokenu zabezpečení, uživatelské jméno. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení se pokouší mapovat uživatele na účet systému Windows pomocí zadaného hesla. V takovém případě není zadané heslo a back-end službu není nutné k ověření uživatelského jména, protože již bylo provedeno ověření službou průčelí za. K implementaci tuto funkci v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vlastní `UserNamePasswordValidator` je k dispozici, pouze vynucuje, uživatelské jméno je zadána v tokenu a nebude provádět žádné další ověřování.  
+ Na službě back-end musí být ověřeny informací obsažených v tokenu zabezpečení, uživatelské jméno. Ve výchozím nastavení zabezpečení WCF pokusí mapovat uživatele na účet systému Windows pomocí zadaného hesla. V takovém případě není zadané heslo a back-end službu není nutné k ověření uživatelského jména, protože již bylo provedeno ověření službou průčelí za. Tuto funkci implementovat ve WCF, vlastní `UserNamePasswordValidator` je k dispozici, pouze vynucuje, uživatelské jméno je zadána v tokenu a nebude provádět žádné další ověřování.  
   
 ```  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
@@ -208,7 +208,7 @@ public string GetCallerIdentity()
 }  
 ```  
   
- Informace o účtu služby průčelí za je extrahována pomocí `ServiceSecurityContext.Current.WindowsIdentity` vlastnost. Pro přístup k informacím o počáteční volající používá služba back-end `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` vlastnost. Hledá `Identity` deklarace identity s typem `Name`. Tento požadavek je automaticky generován [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení z informací obsažených v `Username` tokenu zabezpečení.  
+ Informace o účtu služby průčelí za je extrahována pomocí `ServiceSecurityContext.Current.WindowsIdentity` vlastnost. Pro přístup k informacím o počáteční volající používá služba back-end `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` vlastnost. Hledá `Identity` deklarace identity s typem `Name`. Infrastruktura zabezpečení WCF z informací obsažených v automaticky vygeneruje tuto deklaraci `Username` tokenu zabezpečení.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
  Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta. Můžete stisknutím klávesy ENTER v oknech konzoly služby průčelí za a back-end vypnutí služby.  

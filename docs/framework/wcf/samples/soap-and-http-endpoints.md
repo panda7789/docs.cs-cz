@@ -2,24 +2,24 @@
 title: Koncové body SOAP a HTTP
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
-ms.openlocfilehash: bf11563b937426c3c1701e7fed79e82e4e4669ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4c8a4695dbcaee2f0e7584418fbeac12815fa967
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="soap-and-http-endpoints"></a>Koncové body SOAP a HTTP
-Tento příklad znázorňuje způsob implementace služby vzdáleného volání procedur a vystavit ve formátu protokolu SOAP a "prostý formát XML" (POX) naformátovat pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] webové programování modelu. Najdete v článku [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázku další podrobnosti o vazby HTTP pro službu. Tato ukázka se zaměřuje na podrobnosti, které se vztahují k vystavení stejnou službu prostřednictvím protokolu SOAP a HTTP pomocí různých vazeb.  
+Tento příklad znázorňuje způsob implementace služby vzdáleného volání procedur a vystavit ve formátu protokolu SOAP a formát "Prostý formát XML" (POX) pomocí modelu programování WCF Web. Najdete v článku [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázku další podrobnosti o vazby HTTP pro službu. Tato ukázka se zaměřuje na podrobnosti, které se vztahují k vystavení stejnou službu prostřednictvím protokolu SOAP a HTTP pomocí různých vazeb.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Vystavení služby RPC prostřednictvím protokolu SOAP a HTTP pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Vystavení služby RPC prostřednictvím protokolu SOAP a HTTP pomocí WCF.  
   
 ## <a name="discussion"></a>Diskusní  
- Tato ukázka se skládá ze dvou komponent: projektu webové aplikace (služba), který obsahuje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby a aplikace konzoly (klient), která volá operací služby pomocí vazby protokolu SOAP a HTTP.  
+ Tato ukázka se skládá ze dvou komponent: projektu webové aplikace (služba), který obsahuje službu WCF a konzolové aplikace (klient), která volá operací služby pomocí vazby protokolu SOAP a HTTP.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Služby zpřístupní 2 operations –`GetData` a `PutData` – které odezvu řetězec, který byl předán jako vstup. Operace služby jsou opatřen poznámkou <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute>. Tyto atributy řídit projekce HTTP z těchto operací. Kromě toho jsou opatřen poznámkou <xref:System.ServiceModel.OperationContractAttribute>, což umožňuje jejich mají být exponovány přes vazby protokolu SOAP. Služby `PutData` metoda vrátí <xref:System.ServiceModel.Web.WebFaultException>, která se odešlou zpět přes protokol HTTP pomocí stavový kód HTTP a je odeslán zpět přes protokol SOAP jako chyba protokolu SOAP.  
+ Služby WCF zpřístupní 2 operations –`GetData` a `PutData` – které odezvu řetězec, který byl předán jako vstup. Operace služby jsou opatřen poznámkou <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute>. Tyto atributy řídit projekce HTTP z těchto operací. Kromě toho jsou opatřen poznámkou <xref:System.ServiceModel.OperationContractAttribute>, což umožňuje jejich mají být exponovány přes vazby protokolu SOAP. Služby `PutData` metoda vrátí <xref:System.ServiceModel.Web.WebFaultException>, která se odešlou zpět přes protokol HTTP pomocí stavový kód HTTP a je odeslán zpět přes protokol SOAP jako chyba protokolu SOAP.  
   
- Konfiguruje soubor Web.config [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby s 3 koncové body:  
+ V souboru Web.config Konfiguruje službu WCF s 3 koncové body:  
   
 -   ~/Service.svc/mex koncového bodu, který zveřejňuje metadata služby pro přístup založený na protokolu SOAP klienty.  
   

@@ -2,11 +2,11 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 5c2079f1aa90821448c88de53d311d064bb6e65b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c746897666ae78844df35c2989c803d852c3f70e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="srmp"></a>SRMP
 Tato ukázka ukazuje, jak provést zpracovaných komunikace ve frontě pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP.  
@@ -37,7 +37,7 @@ Tato ukázka ukazuje, jak provést zpracovaných komunikace ve frontě pomocí s
  Pokud chcete tuto ukázku spustit, služba IIS musí být nainstalován na službu a klientské počítače kromě služby MSMQ.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Ukázka ukazuje odesílání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zařazených do fronty zpráv přes protokol HTTP pomocí služby MSMQ. To je také označován SRMP zasílání zpráv. Když je odeslána zpráva zařazených do fronty, MSMQ na odesílání přenosů počítač zprávy, aby se využívá správce fronty pomocí přenosového protokolu TCP nebo HTTP. Výběrem SRMP označuje uživatele volba HTTP přenos pro přenos fronty. Zabezpečení SRMP umožňuje použití protokolu HTTPS.  
+ Ukázka ukazuje odesílání WCF pomocí služby MSMQ přes HTTP zpráv zařazených do fronty. To je také označován SRMP zasílání zpráv. Když je odeslána zpráva zařazených do fronty, MSMQ na odesílání přenosů počítač zprávy, aby se využívá správce fronty pomocí přenosového protokolu TCP nebo HTTP. Výběrem SRMP označuje uživatele volba HTTP přenos pro přenos fronty. Zabezpečení SRMP umožňuje použití protokolu HTTPS.  
   
 ## <a name="example"></a>Příklad  
  Ukázkový kód je založena na zpracovaných vzorku. Jak odeslat zprávu do fronty a přijímat zprávy z fronty pomocí SRMP je stejný jako odesílání a přijímání zpráv pomocí nativního protokolu.  

@@ -2,11 +2,11 @@
 title: Sdružování
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 2c864bd0c1d27e9c771a1b97e756c04b107ac2b8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6554ec9c5eaefaf8c9e39d2a8d92982716cc18c5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="pooling"></a>Sdružování
 Tento příklad znázorňuje postup rozšíření Windows Communication Foundation (WCF) pro podporu sdružování objektů. Ukázka ukazuje, jak vytvořit atribut, který je syntakticky a sémanticky podobná `ObjectPoolingAttribute` atribut funkce služby Enterprise. Sdružování objektů zajistí výrazné zvýšení výkonu aplikace na výkon. Pokud se nepoužívá správně však může mít opačný efekt. Sdružování objektů pomáhá snížit režii znovu vytvořit často používaných objektů, které vyžadují rozsáhlé inicializace. Však sdružování objekt fronty Pokud volání metody na objekt ve fondu používá značné množství času na dokončení, další požadavky při dosažení k maximální velikosti fondu. Proto může dojít k selhání obsluze některé objekt požadavky na vytvoření byla vrácena výjimka časového limitu.  
@@ -14,14 +14,14 @@ Tento příklad znázorňuje postup rozšíření Windows Communication Foundati
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
- Prvním krokem při vytváření [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] rozšíření je rozhodnutí o bodem rozšíření používat.  
+ Prvním krokem při vytváření rozšíření WCF je rozhodnout bodem rozšíření používat.  
   
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] termín *dispečera* odkazuje na komponentu běhu odpovědný za převodu příchozí zprávy volání metod na uživatele služby a pro převod návratové hodnoty z dané metody na odchozí zpráva. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba vytvoří dispečera pro každý koncový bod. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, pokud smlouvy přidružené tohoto klienta je duplexního kontraktu, musíte používat dispečera.  
+ Ve službě WCF termín *dispečera* odkazuje na komponentu běhu odpovědný za převodu příchozí zprávy volání metod na uživatele služby a pro převod návratové hodnoty z dané metody na odchozí zprávy. Služby WCF vytvoří dispečera pro každý koncový bod. Pokud je smlouva přidružené k tomuto klientovi duplexního kontraktu, musíte použít klienta WCF dispečera.  
   
  Kanál a koncový bod dispečerů nabízejí kanál- a rozšiřitelnost v rámci smlouvy díky zpřístupnění různé vlastnosti, které řídí chování dispečera. <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> Vlastnost můžete také zkontrolovat, upravit nebo přizpůsobit odesílající proces. Tato ukázka se zaměřuje na <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnost, která odkazuje na objekt, který poskytuje instancí třídy služby.  
   
 ## <a name="the-iinstanceprovider"></a>IInstanceProvider  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], dispečera vytváří instance třídy pomocí služby <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A>, který implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> rozhraní. Toto rozhraní obsahuje tři metody:  
+ Ve službě WCF, dispečera vytváří instance třídy pomocí služby <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A>, který implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> rozhraní. Toto rozhraní obsahuje tři metody:  
   
 -   <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29>: Při doručení zprávy dispečera volání <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metodu pro vytvoření instance třídy služeb, ke zpracování zprávy. Četnost volání této metody je dáno <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastnost. Například pokud <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> je nastavena na <xref:System.ServiceModel.InstanceContextMode.PerCall> pro zpracování jednotlivých zpráv, které dorazí, tak se vytvoří novou instanci třídy služby <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> je volána, když doručení zprávy.  
   
@@ -100,7 +100,7 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
   
  Tato ukázka používá vlastní atribut. Když <xref:System.ServiceModel.ServiceHost> sestavený prověří atributy používané v definici služby typu a přidá do kolekce chování popis služby k dispozici chování.  
   
- Rozhraní <xref:System.ServiceModel.Description.IServiceBehavior> má tři metody v ní – <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>, <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>, a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> Metoda se používá k zajištění, že chování může být použitá ke službě. V této ukázce implementace zajistí, že služba není nakonfigurována s <xref:System.ServiceModel.InstanceContextMode.Single>. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> Metoda slouží ke konfiguraci vazby služby. V tomto scénáři není potřeba. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> Slouží ke konfiguraci služby dispečerů. Tato metoda je volána [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] při <xref:System.ServiceModel.ServiceHost> inicializace. Tyto parametry se předávají do této metody:  
+ Rozhraní <xref:System.ServiceModel.Description.IServiceBehavior> má tři metody v ní – <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>, <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>, a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> Metoda se používá k zajištění, že chování může být použitá ke službě. V této ukázce implementace zajistí, že služba není nakonfigurována s <xref:System.ServiceModel.InstanceContextMode.Single>. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> Metoda slouží ke konfiguraci vazby služby. V tomto scénáři není potřeba. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> Slouží ke konfiguraci služby dispečerů. Tato metoda je volána službou WCF při <xref:System.ServiceModel.ServiceHost> inicializace. Tyto parametry se předávají do této metody:  
   
 -   `Description`: Tento argument obsahuje popis služby pro celé služby. To slouží ke kontrole popis data o koncové body služby, kontrakty, vazby a další data.  
   
@@ -177,7 +177,7 @@ InvalidOperationException(ResourceHelper.GetString("ExNullThrottle"));
   
  Kromě <xref:System.ServiceModel.Description.IServiceBehavior> implementace <xref:System.EnterpriseServices.ObjectPoolingAttribute> třída obsahuje několik členů k přizpůsobení fondu objektů pomocí argumenty atributu. Zahrnout tito členové <xref:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize%2A>, <xref:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize%2A>, a <xref:System.EnterpriseServices.ObjectPoolingAttribute.CreationTimeout%2A>, tak, aby odpovídaly objekt sdružování sada funkcí poskytovaných služeb .NET Enterprise.  
   
- Objekt sdružování chování teď jde přidat do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby podle zadávání poznámek k implementaci služby s nově vytvořené vlastní `ObjectPooling` atribut.  
+ Objekt sdružování chování nyní přidáte do služby WCF tak, že zadávání poznámek k implementaci služby s nově vytvořené vlastní `ObjectPooling` atribut.  
   
 ```  
 [ObjectPooling(MaxPoolSize=1024, MinPoolSize=10, CreationTimeout=30000)]      

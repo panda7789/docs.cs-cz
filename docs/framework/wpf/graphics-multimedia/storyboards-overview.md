@@ -1,13 +1,6 @@
 ---
-title: "Přehled scénářů"
-ms.custom: 
+title: Přehled scénářů
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - syntax [WPF], Storyboard
 - timelines [WPF]
 ms.assetid: 1a698c3c-30f1-4b30-ae56-57e8a39811bd
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 614b5cc4843dbb886fa9cb02c56b28452e9fae8a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 36922dce795443a4c1136f6442eff1c297f3c641
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="storyboards-overview"></a>Přehled scénářů
 Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboard> objekty uspořádání a použít animace. Popisuje, jak interaktivně manipulaci s <xref:System.Windows.Media.Animation.Storyboard> objekty a popisuje nepřímých vlastnost cílení na syntaxi.  
@@ -38,7 +26,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
 ## <a name="what-is-a-storyboard"></a>Co je scénáře?  
  Animace nejsou jenom užitečné typ časové osy. Ostatní časová osa třídy jsou k dispozici uspořádat nastaví časové osy a chcete použít časové osy pro vlastnosti. Kontejner časové osy odvozena od <xref:System.Windows.Media.Animation.TimelineGroup> třídy a zahrnují <xref:System.Windows.Media.Animation.ParallelTimeline> a <xref:System.Windows.Media.Animation.Storyboard>.  
   
- A <xref:System.Windows.Media.Animation.Storyboard> je typ osy kontejneru, která poskytuje cílení informace pro časové osy obsahuje. Scénář může obsahovat jakýkoli typ <xref:System.Windows.Media.Animation.Timeline>, včetně dalších kontejneru časové osy a animace. <xref:System.Windows.Media.Animation.Storyboard>objekty umožňují kombinovat časových os, která ovlivňují různé objekty a vlastnosti do jediné časové osy stromu, což usnadňuje uspořádání a řízení chování komplexní časování. Předpokládejme například, že chcete tlačítko, které provádí tyto tři věci.  
+ A <xref:System.Windows.Media.Animation.Storyboard> je typ osy kontejneru, která poskytuje cílení informace pro časové osy obsahuje. Scénář může obsahovat jakýkoli typ <xref:System.Windows.Media.Animation.Timeline>, včetně dalších kontejneru časové osy a animace. <xref:System.Windows.Media.Animation.Storyboard> objekty umožňují kombinovat časových os, která ovlivňují různé objekty a vlastnosti do jediné časové osy stromu, což usnadňuje uspořádání a řízení chování komplexní časování. Předpokládejme například, že chcete tlačítko, které provádí tyto tři věci.  
   
 -   Růst a měnit barvy, když uživatel vybere tlačítko.  
   
@@ -46,7 +34,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
 -   Zmenšení a vykreslit na 50 procent krytí, když se zakáže.  
   
- V takovém případě máte více sad animací, které se vztahují ke stejnému objektu, a chcete přehrávat v různou dobu, závisí na stavu tlačítka. <xref:System.Windows.Media.Animation.Storyboard>objekty umožňují uspořádat animace a použít je jeden nebo více objektů ve skupinách.  
+ V takovém případě máte více sad animací, které se vztahují ke stejnému objektu, a chcete přehrávat v různou dobu, závisí na stavu tlačítka. <xref:System.Windows.Media.Animation.Storyboard> objekty umožňují uspořádat animace a použít je jeden nebo více objektů ve skupinách.  
   
 <a name="wherecanyouuseastoryboard"></a>   
 ## <a name="where-can-you-use-a-storyboard"></a>Kde můžete použít Storyboard?  
@@ -72,10 +60,10 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
 |Scénáře je spuštěno pomocí...|Jednotlivých instancí|Styl|Šablony správy|Datová šablona|Příklad|  
 |--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard>a<xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard>a vlastnost<xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard>a<xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: aktivace animace při změně dat](http://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
-|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>– Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnost <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: aktivace animace při změně dat](http://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
+|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  Následující příklad používá <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> elementu a <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> použita k vyplnění, <xref:System.Windows.Shapes.Rectangle>.  
   
@@ -107,7 +95,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  [!code-csharp[storyboards_ovw_snip#105](../../../../samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#105)]  
   
- <xref:System.Windows.Freezable>typy jsou tyto třídy, které dědí od <xref:System.Windows.Freezable> třídy. Příklady <xref:System.Windows.Freezable> zahrnují <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.RotateTransform>, a <xref:System.Windows.Media.GradientStop>.  
+ <xref:System.Windows.Freezable> typy jsou tyto třídy, které dědí od <xref:System.Windows.Freezable> třídy. Příklady <xref:System.Windows.Freezable> zahrnují <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.RotateTransform>, a <xref:System.Windows.Media.GradientStop>.  
   
  Chcete-li povolit cílení <xref:System.Windows.Freezable> podle animace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijete [x: Name – direktiva](../../../../docs/framework/xaml-services/x-name-directive.md) přiřadit název. V kódu, můžete použít <xref:System.Windows.NameScope.RegisterName%2A> metoda zaregistrovat svůj název s elementem, pro který jste vytvořili <xref:System.Windows.NameScope>.  
   
@@ -123,7 +111,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  [!code-csharp[storyboards_ovw_snip#107](../../../../samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#107)]  
   
- <xref:System.Windows.Media.Animation.Storyboard>objekty pomocí názvu oborů přeložit <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost. Další informace o oborech název WPF najdete v tématu [WPF XAML Namescopes](../../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md). Pokud <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost je vynechána, cílem animace elementu, na který je definován, nebo v případě styly prvku s vzhledem.  
+ <xref:System.Windows.Media.Animation.Storyboard> objekty pomocí názvu oborů přeložit <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost. Další informace o oborech název WPF najdete v tématu [WPF XAML Namescopes](../../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md). Pokud <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost je vynechána, cílem animace elementu, na který je definován, nebo v případě styly prvku s vzhledem.  
   
  Někdy název nemůže být přiřazen, <xref:System.Windows.Freezable> objektu. Například pokud <xref:System.Windows.Freezable> je deklarován jako prostředek nebo použít k nastavení hodnoty vlastnosti ve stylu, nemůže být zadán název. Protože nemá název, nelze cílit přímo, ale je možné cílit nepřímo. Následující části popisují, jak používat nepřímé cílení.  
   
@@ -157,7 +145,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Následující kód ukazuje, jak animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> použít k nastavení  
   
- <xref:System.Windows.Shapes.Shape.Fill%2A>rámeček elementu.  
+ <xref:System.Windows.Shapes.Shape.Fill%2A> rámeček elementu.  
   
  [!code-xaml[storyboards_ovw_snip_XAML#32](../../../../samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#32)]  
   
@@ -217,7 +205,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
 ||  
 |-|  
-|`(`*OwnerPropertyArrayIndex* `).(` *CollectionChildrenPropertyArrayIndex* `)` `[` *CollectionIndex* `].(` *FreezablePropertyArrayIndex*`)`|  
+|`(` *OwnerPropertyArrayIndex* `).(` *CollectionChildrenPropertyArrayIndex* `)` `[` *CollectionIndex* `].(` *FreezablePropertyArrayIndex* `)`|  
   
  Kde *CollectionIndex* je index objektu v jeho pole nebo kolekce.  
   
@@ -234,7 +222,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
 <a name="controllable_storyboards"></a>   
 ## <a name="interactively-controlling-a-storyboard-in-xaml"></a>Interaktivně řízení Storyboard v jazyce XAML  
- Ke spuštění scénáře v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete použít <xref:System.Windows.Media.Animation.BeginStoryboard> aktivovat akce. <xref:System.Windows.Media.Animation.BeginStoryboard>Animace objektů a vlastností animace a spustí scénáři distribuuje. (Podrobnosti o tomto procesu najdete v tématu [animace a přehled systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).) Pokud zadáte název <xref:System.Windows.Media.Animation.BeginStoryboard> název zadáním jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnost, provedete ho ovladatelné scénáře. Pak můžete interaktivně ovládat scénáři po jeho spuštění. Následuje seznam akcí ovladatelné storyboard pomocí aktivačních událostí k řízení scénáře.  
+ Ke spuštění scénáře v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete použít <xref:System.Windows.Media.Animation.BeginStoryboard> aktivovat akce. <xref:System.Windows.Media.Animation.BeginStoryboard> Animace objektů a vlastností animace a spustí scénáři distribuuje. (Podrobnosti o tomto procesu najdete v tématu [animace a přehled systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).) Pokud zadáte název <xref:System.Windows.Media.Animation.BeginStoryboard> název zadáním jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnost, provedete ho ovladatelné scénáře. Pak můžete interaktivně ovládat scénáři po jeho spuštění. Následuje seznam akcí ovladatelné storyboard pomocí aktivačních událostí k řízení scénáře.  
   
 -   <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénáři.  
   

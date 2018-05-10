@@ -2,18 +2,18 @@
 title: Služby WCF a Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: ef98cb14b5f1ee6a2ce11c35627456459d3215b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ea917ee87b598fc3ad01df70d9aedfadfd1396a4
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
-Tento příklad znázorňuje způsob použití analytické trasování ve Windows Communication Foundation (WCF) pro vydávání událostí v události trasování pro Windows (ETW). Analytické trasování jsou události vygenerované v klíčové body [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zásobníku, který umožní řešení potíží s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v produkčním prostředí.  
+Tento příklad znázorňuje způsob použití analytické trasování ve Windows Communication Foundation (WCF) pro vydávání událostí v události trasování pro Windows (ETW). Analytické trasování jsou události vygenerované v klíčových bodů v zásobníku WCF, které umožňují řešení potíží s služby WCF v provozním prostředí.  
   
- Analytické trasování v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services je trasování, který lze zapnout v produkčním prostředí s minimálním dopadem na výkon. Toto trasování jsou vydávány jako události relaci trasování událostí pro Windows.  
+ Analytické trasování ve službách WCF je trasování, který lze zapnout v produkčním prostředí s minimálním dopadem na výkon. Toto trasování jsou vydávány jako události relaci trasování událostí pro Windows.  
   
- Tato ukázka obsahuje základní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby v události, které jsou vygenerované ze služby do protokolu událostí, který lze zobrazit pomocí prohlížeče událostí. Je také možné spustit relaci vyhrazené trasování událostí pro Windows, která naslouchá událostem z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Ukázka zahrnuje skript pro vytvoření vyhrazené relace trasování událostí pro Windows, která ukládá události v binární soubor, který lze číst pomocí prohlížeče událostí.  
+ Tato ukázka obsahuje základní služby WCF, ve kterém jsou události vygenerované ze služby do protokolu událostí, který lze zobrazit pomocí prohlížeče událostí. Je také možné spustit relaci vyhrazené trasování událostí pro Windows, která naslouchá události ze služby WCF. Ukázka zahrnuje skript pro vytvoření vyhrazené relace trasování událostí pro Windows, která ukládá události v binární soubor, který lze číst pomocí prohlížeče událostí.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
@@ -27,17 +27,17 @@ Tento příklad znázorňuje způsob použití analytické trasování ve Window
   
      Ve výchozím nastavení, služba začne naslouchat požadavkům na portu 1378 (http://localhost:1378/Calculator.svc).  
   
-4.  Spustit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe).  
+4.  Spuštění testovacího klienta WCF (WcfTestClient.exe).  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Testovacího klienta (WcfTestClient.exe) se nachází v \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] nainstalovat Dir > \Common7\IDE\ WcfTestClient.exe (výchozí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] dir instalace je C:\Program Files\Microsoft Visual Studio 10.0).  
+     Testovacího klienta WCF (WcfTestClient.exe) se nachází v \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] nainstalovat Dir > \Common7\IDE\ WcfTestClient.exe (výchozí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] dir instalace je C:\Program Files\Microsoft Visual Studio 10.0).  
   
-5.  V rámci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] testování klienta, přidejte službu tak, že vyberete **soubor**a potom **přidat službu**.  
+5.  V rámci testovacího klienta WCF, přidejte službu tak, že vyberete **soubor**a potom **přidat službu**.  
   
      Přidáte adresa koncového bodu do vstupního pole. Výchozí hodnota je http://localhost:1378/Calculator.svc.  
   
 6.  Otevřete Prohlížeč událostí aplikace.  
   
-     Před vyvoláním služby, spusťte Prohlížeč událostí a zkontrolujte, zda protokol událostí naslouchá pro sledování události vygenerované ze [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+     Před vyvoláním služby, spusťte Prohlížeč událostí a zkontrolujte, zda protokol událostí naslouchá pro sledování události vygenerované ze služby WCF.  
   
 7.  Z **spustit** nabídce vyberte možnost **nástroje pro správu**a potom **Prohlížeč událostí**.  Povolit **analytické** a **ladění** protokoly.  
   
@@ -51,7 +51,7 @@ Tento příklad znázorňuje způsob použití analytické trasování ve Window
   
 #### <a name="to-test-the-service"></a>K testování služby  
   
-1.  Přepněte zpět na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] testování klienta a dvakrát klikněte na `Divide` a ponechte výchozí hodnoty, které určují jmenovatel 0.  
+1.  Přepněte zpět na testovacího klienta WCF a dvakrát klikněte na `Divide` a ponechte výchozí hodnoty, které určují jmenovatel 0.  
   
      Pokud jmenovatel hodnotu 0, služba vyvolá chybu.  
   

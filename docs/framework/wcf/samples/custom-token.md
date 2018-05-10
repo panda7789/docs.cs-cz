@@ -2,11 +2,11 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 5850f97d6d3a66aacf82ab1cb2338240a75a00fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c7219b94861cd23f27b331d1d3e5509654263430
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předávat informace o platebních kartách klienta ke službě. Token je předán v záhlaví zprávy WS-zabezpečení a je podepsat a zašifrovat, pomocí vazby symetrický zabezpečení element společně s tělo zprávy a jiné záhlaví zprávy. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tento příklad znázorňuje, jak poskytnout token zabezpečení vlastní službě místo pomocí jedné z předdefinovaných tokenů. Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  
@@ -20,7 +20,7 @@ Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Win
   
 -   Jak služba může přijmout a ověřit token vlastní zabezpečení.  
   
--   Jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kódu služby můžete získat informace o tokeny přijaté zabezpečení včetně token vlastní zabezpečení.  
+-   Jak kódu služby WCF můžete získat informace o tokeny přijaté zabezpečení včetně token vlastní zabezpečení.  
   
 -   Jak certifikát X.509 serveru slouží k ochraně symetrický klíč použitý k podpisu a šifrování zpráv.  
   
@@ -114,9 +114,9 @@ channelFactory.Close();
 ```  
   
 ## <a name="custom-security-token-implementation"></a>Token implementace vlastního zabezpečení  
- Chcete-li povolit token vlastní zabezpečení v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vytvořit reprezentaci objektu tokenu vlastní zabezpečení. Ukázka má tento reprezentace v `CreditCardToken` třídy. Reprezentace objektu je zodpovědný za podržíte všechny relevantní informace o tokenu zabezpečení a které poskytují seznam klíčů zabezpečení obsažených v tokenu zabezpečení. V takovém případě platební karty token zabezpečení neobsahuje žádné klíč zabezpečení.  
+ Pokud chcete povolit token vlastní zabezpečení ve WCF, vytvořte reprezentaci objektu tokenu vlastní zabezpečení. Ukázka má tento reprezentace v `CreditCardToken` třídy. Reprezentace objektu je zodpovědný za podržíte všechny relevantní informace o tokenu zabezpečení a které poskytují seznam klíčů zabezpečení obsažených v tokenu zabezpečení. V takovém případě platební karty token zabezpečení neobsahuje žádné klíč zabezpečení.  
   
- Další část popisuje, co musíte udělat povolit vlastní token má být přenesen prostřednictvím sítě a spotřebovávají [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] koncový bod.  
+ Další část popisuje, co musíte udělat povolit vlastní token má být přenesen prostřednictvím sítě a spotřebovávají koncový bod WCF.  
   
 ```  
 class CreditCardToken : SecurityToken  
@@ -154,7 +154,7 @@ class CreditCardToken : SecurityToken
 ```  
   
 ## <a name="getting-the-custom-credit-card-token-to-and-from-the-message"></a>Získání tokenu do a ze zprávy vlastní platební karty  
- Serializátorů tokenu zabezpečení v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jsou zodpovědní za vytváření reprezentaci objektu tokenů zabezpečení z XML ve zprávě a vytvoření formuláře XML tokenů zabezpečení. Rovněž jsou zodpovědní za další funkce, jako je například čtení a zápis klíče identifikátory odkazující na tokeny zabezpečení, ale tento příklad používá jenom zabezpečení související s tokeny funkce. Chcete-li povolit vlastní tokenu je nutné implementovat vlastní serializátoru tokenů zabezpečení. V tomto příkladu `CreditCardSecurityTokenSerializer` třídu pro tento účel.  
+ Serializátorů tokenů zabezpečení ve WCF jsou zodpovědní za vytváření reprezentaci objektu tokenů zabezpečení z XML ve zprávě a vytvoření formuláře XML tokenů zabezpečení. Rovněž jsou zodpovědní za další funkce, jako je například čtení a zápis klíče identifikátory odkazující na tokeny zabezpečení, ale tento příklad používá jenom zabezpečení související s tokeny funkce. Chcete-li povolit vlastní tokenu je nutné implementovat vlastní serializátoru tokenů zabezpečení. V tomto příkladu `CreditCardSecurityTokenSerializer` třídu pro tento účel.  
   
  Ve službě vlastní serializátor přečte formulář XML vlastní tokenu a slouží k vyjádření objektu vlastní tokenu z něj.  
   

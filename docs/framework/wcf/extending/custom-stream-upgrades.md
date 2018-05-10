@@ -2,11 +2,11 @@
 title: Vlastní upgrady streamů
 ms.date: 03/30/2017
 ms.assetid: e3da85c8-57f3-4e32-a4cb-50123f30fea6
-ms.openlocfilehash: 4bcd59cb5e420c551c611c8e676289f20d4354d0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 84edac7a4dbaaf1a01332f5c0af29319c279dd1b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-stream-upgrades"></a>Vlastní upgrady streamů
 Datový proud orientované přenosy například TCP a pojmenované kanály pracovat nepřetržitý proud bajtů mezi klientem a serverem. Tento datový proud je realizován pomocí <xref:System.IO.Stream> objektu. V případě upgradu datového proudu klient chce, aby se k přidání volitelné protokol vrstvy kanálu zásobníku a požádá druhém konci komunikační kanál Uděláte to tak. Upgrade datového proudu se skládá v nahrazení původní <xref:System.IO.Stream> objekt s některého upgradovaný.  
@@ -66,7 +66,7 @@ Datový proud orientované přenosy například TCP a pojmenované kanály praco
 ## <a name="security-upgrades"></a>Upgrady zabezpečení  
  Přidání upgrade zabezpečení je specializovanou verzi procesu upgradu obecné datového proudu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] již poskytuje dva elementy vazby pro upgrade zabezpečení datového proudu. Konfigurace zabezpečení na úrovni přenosu je zapouzdřené pomocí <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> a <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> které mohou být konfigurovány a přidat do vlastní vazby. Tyto prvky vazeb rozšířit <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement> třídu, která vytvoří datový proud klientských a serverových upgradu zprostředkovatele. Tyto prvky vazeb mají metody, které vytvoření datového proudu specializované zabezpečení třídy upgradu zprostředkovatele, které nejsou `public`, takže pro tyto dva případy všechny musíte udělat je přidat do vazby prvku vazby.  
+ WCF již poskytuje dva elementy vazby pro upgrade zabezpečení datového proudu. Konfigurace zabezpečení na úrovni přenosu je zapouzdřené pomocí <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> a <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> které mohou být konfigurovány a přidat do vlastní vazby. Tyto prvky vazeb rozšířit <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement> třídu, která vytvoří datový proud klientských a serverových upgradu zprostředkovatele. Tyto prvky vazeb mají metody, které vytvoření datového proudu specializované zabezpečení třídy upgradu zprostředkovatele, které nejsou `public`, takže pro tyto dva případy všechny musíte udělat je přidat do vazby prvku vazby.  
   
  Pro scénáře zabezpečení nejsou splněny ve výše uvedené prvky dvě vazby, tři související se zabezpečením `abstract` třídy jsou odvozené z výše uvedených iniciátor, dodavatel a zprostředkovatele základních tříd:  
   

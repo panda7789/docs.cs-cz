@@ -4,11 +4,11 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 1186ad41fa1a6befcfcc4fa1f547605bb69e68bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 85694cbfe8c30b8430200f0ffbd01379f11b3f9d
+ms.sourcegitcommit: c03eef711abe961a85db2b4d0715257d1524aef6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduchého mikroslužbu CRUD řízené daty
 
@@ -251,11 +251,11 @@ catalog.api:
     - "5101:80"
 ```
 
-Soubory docker-compose.yml na úrovni řešení nejsou jenom flexibilnější než soubory konfigurace na úrovni projektu nebo mikroslužbu, ale také informace, ale také bezpečnější Pokud přepíšete deklarovat na docker-compose soubory pomocí proměnné prostředí hodnoty nastavené z nástrojů pro vaše nasazení, jako je z úlohy nasazení služby VSTS Docker. 
+Soubory docker-compose.yml na úrovni řešení nejsou jenom flexibilnější než konfigurační soubory na úrovni projektu nebo mikroslužbu, ale také bezpečnější Pokud přepíšete deklarovat na docker-compose soubory s hodnotami nastavenými z proměnné prostředí vaše nasazení nástroje, jako například z úlohy nasazení služby VSTS Docker. 
 
 Nakonec můžete získat tuto hodnotu z vašeho kódu pomocí konfigurace\["ConnectionString"\], jak je znázorněno v metodě ConfigureServices v předchozí příklad kódu.
 
-Ale pro provozní prostředí, můžete chtít další způsoby explorer na tom, jak ukládat tajné klíče jako připojovací řetězce. Obvykle, bude spravovat zvolené orchestrator, jako jsou aplikace [Docker Swarm správu tajné klíče](https://docs.docker.com/engine/swarm/secrets/).
+Pro produkční prostředí, můžete však prozkoumat další způsoby, jak na tom, jak ukládat tajné klíče jako připojovací řetězce. Obvykle, bude spravovat zvolené orchestrator, jako jsou aplikace [Docker Swarm správu tajné klíče](https://docs.docker.com/engine/swarm/secrets/).
 
 ### <a name="implementing-versioning-in-aspnet-web-apis"></a>Implementace správy verzí v rozhraní ASP.NET Web API
 

@@ -2,11 +2,11 @@
 title: Aktivace protokolem TCP
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: 3627307c74604f30c77927067d302baf41b1c536
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 9f08864c1d5139160ac25e0733ddcfc1c8557ad9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="tcp-activation"></a>Aktivace protokolem TCP
 Tento příklad znázorňuje hostování službu, která používá k aktivaci služby, který komunikuje přes protokol net.tcp služby Aktivace procesů systému Windows (WAS). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -143,7 +143,7 @@ Press <ENTER> to terminate client.
   
 2.  Ujistěte se, kterou jste udělali [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-     Kromě toho je nutné nainstalovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Aktivace jiným protokolem než HTTP součásti:  
+     Kromě toho je třeba nainstalovat součásti Aktivace jiným protokolem než HTTP WCF:  
   
     1.  Z **spustit** nabídce zvolte **ovládací panely**.  
   

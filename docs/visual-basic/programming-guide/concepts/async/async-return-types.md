@@ -1,22 +1,12 @@
 ---
-title: "Asynchronní návratové typy (Visual Basic)"
-ms.custom: 
+title: Asynchronní návratové typy (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 07890291-ee72-42d3-932a-fa4d312f2c60
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1a62556fb93a3d8547d880e4ea6770b206ead900
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0c6c02efd282f8581f3dc85905149acf7b3ea6ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="async-return-types-visual-basic"></a>Asynchronní návratové typy (Visual Basic)
 Asynchronní metody mít tři možné návratové typy: <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>a void. V jazyce Visual Basic, typ vrácené hodnoty void zapisuje jako [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) postupu. Další informace o asynchronní metody najdete v tématu [asynchronní programování s Async a Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).  
@@ -26,7 +16,7 @@ Asynchronní metody mít tři možné návratové typy: <xref:System.Threading.T
 > [!NOTE]
 >  Pokud chcete spustit v příkladu, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalovaná ve vašem počítači.  
   
-##  <a name="BKMK_TaskTReturnType"></a>Návratový typ Task(T)  
+##  <a name="BKMK_TaskTReturnType"></a> Návratový typ Task(T)  
  <xref:System.Threading.Tasks.Task%601> Vrátí typ se používá pro asynchronní metody, která obsahuje [vrátit](../../../../visual-basic/language-reference/statements/return-statement.md) příkaz, ve kterém má operand typu `TResult`.  
   
  V následujícím příkladu `TaskOfT_MethodAsync` asynchronní metody obsahuje příkaz return, který vrátí celé číslo. Proto deklarace metody musíte zadat návratový typ `Task(Of Integer)`.  
@@ -88,7 +78,7 @@ textBox1.Text &= String.Format("Value of result2 variable:   {0}" & vbCrLf, resu
 textBox1.Text &= String.Format("Value of resultTask.Result:  {0}" & vbCrLf, integerTask.Result)  
 ```  
   
-##  <a name="BKMK_TaskReturnType"></a>Návratový typ úlohy  
+##  <a name="BKMK_TaskReturnType"></a> Návratový typ úlohy  
  Asynchronní metody, které neobsahují žádný příkaz return nebo obsahují příkaz return, který nevrací operand obvykle mají návratový typ <xref:System.Threading.Tasks.Task>. Tyto metody by [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) postupy napsané spustit synchronně. Pokud používáte `Task` návratový typ pro asynchronní metody, můžete použít volání metody `Await` operátor volajícího dokončení pozastavit, dokud volané asynchronní metody dokončení.  
   
  V následujícím příkladu, asynchronní metody `Task_MethodAsync` neobsahuje příkaz return. Proto můžete zadat návratový typ `Task` pro metodu, která umožňuje `Task_MethodAsync` k být očekáváno. Definice `Task` neobsahuje typ `Result` vlastnost k uložení návratovou hodnotu.  
@@ -107,7 +97,7 @@ Async Function Task_MethodAsync() As Task
 End Function  
 ```  
   
- `Task_MethodAsync`je volána a očekávaná pomocí příkazu await místo await výrazu podobné volání příkazu pro synchronního `Sub` nebo metoda vrací void. Použití `Await` operátor v tomto případě neobsahuje hodnotu.  
+ `Task_MethodAsync` je volána a očekávaná pomocí příkazu await místo await výrazu podobné volání příkazu pro synchronního `Sub` nebo metoda vrací void. Použití `Await` operátor v tomto případě neobsahuje hodnotu.  
   
  Následující kód volá a čeká metoda `Task_MethodAsync`.  
   
@@ -130,7 +120,7 @@ textBox1.Text &= String.Format(vbCrLf & "Application can continue working while 
 Await simpleTask  
 ```  
   
-##  <a name="BKMK_VoidReturnType"></a>Typ vrácené hodnoty void  
+##  <a name="BKMK_VoidReturnType"></a> Typ vrácené hodnoty void  
  Primárním použitím `Sub` procedury je v obslužné rutiny událostí, kde není žádný návratový typ (označované jako typ vrácené hodnoty void v jiných jazycích). Void vrátit lze použít také k přepsání metody vrácení void nebo metod, které provádějí aktivity, které můžou být zařazené do kategorie jako "fire a zapomenete." Ale by měla vrátit `Task` kdykoli je to možné, protože nemůže být očekáváno asynchronní metody vrácení void. Všechny volající tato metoda musí být schopen dál dokončení bez čekání na volané asynchronní metody dokončení a volající musí být nezávislé na všechny hodnoty nebo které generuje asynchronní metody.  
   
  Volající asynchronní metody vrácení void nelze catch výjimky, které jsou vyvolány z metody a může způsobit selhání aplikace jsou takové neošetřené výjimky. Pokud dojde k výjimce v asynchronní metody, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, výjimka je uložen ve vrácené úloh a znovu vyvolány, když je očekáváno úlohu. Proto se ujistěte, že asynchronní metody, která může vytvořit výjimku má návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a že jsou očekáváno volání metody.  
@@ -154,7 +144,7 @@ Async Sub button1_Click(sender As Object, e As RoutedEventArgs) Handles button1.
 End Sub  
 ```  
   
-##  <a name="BKMK_Example"></a>Úplný příklad  
+##  <a name="BKMK_Example"></a> Úplný příklad  
  Následující projekt Windows Presentation Foundation (WPF) obsahuje příklady kódu z tohoto tématu.  
   
  Pokud chcete spustit projekt, proveďte následující kroky:  
@@ -305,5 +295,5 @@ End Sub
  <xref:System.Threading.Tasks.Task.FromResult%2A>  
  [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
  [Řízení toku v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)  
- [Asynchronní](../../../../visual-basic/language-reference/modifiers/async.md)  
- [Await – operátor](../../../../visual-basic/language-reference/operators/await-operator.md)
+ [Async](../../../../visual-basic/language-reference/modifiers/async.md)  
+ [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)

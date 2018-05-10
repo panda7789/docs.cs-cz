@@ -2,11 +2,11 @@
 title: Dispečer vlastního kanálu
 ms.date: 03/30/2017
 ms.assetid: 813acf03-9661-4d57-a3c7-eeab497321c6
-ms.openlocfilehash: 7cd27d485efe7fe91e7c59627bf14e188e85f386
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2f7bb67f45c3aa9eb0cb58fa2f30744d5500fab0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-channel-dispatcher"></a>Dispečer vlastního kanálu
 Tato ukázka ukazuje, jak vytvořit kanál zásobníku vlastní způsobem implementací <xref:System.ServiceModel.ServiceHostBase> přímo a jak vytvořit vlastní kanál dispečera v prostředí hostitele webu. Dispečera kanál komunikuje s <xref:System.ServiceModel.Channels.IChannelListener> tak, aby přijímal zprávy kanály a načte z zásobníku kanálu. Tato ukázka také poskytuje základní ukázka, jak vytvořit kanál zásobníku v prostředí webové hostitele pomocí <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
@@ -22,13 +22,13 @@ Tato ukázka ukazuje, jak vytvořit kanál zásobníku vlastní způsobem implem
  Dispečera prvním otevření naslouchací proces kanálu nástroje a potom přijímá kanál odpověď typu singleton. S kanálem začne odesílat zprávy (počet požadavků) v nekonečné smyčce. Pro každý požadavek vytvoří zprávu odpovědi a odešle ho zpátky do klienta.  
   
 ## <a name="creating-a-response-message"></a>Vytváření zprávu odpovědi  
- Zpracování zpráv je implementován v typu `MyServiceManager`. V `HandleRequest` metody `Action` záhlaví zprávy nejdřív zkontroluje se zda žádost je podporováno. Předdefinované A akce SOAP "http://tempuri.org/HelloWorld/Hello" je definována k poskytnutí filtrování zprávy. Toto je podobný koncept kontraktu služby ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementace <xref:System.ServiceModel.ServiceHost>.  
+ Zpracování zpráv je implementován v typu `MyServiceManager`. V `HandleRequest` metody `Action` záhlaví zprávy nejdřív zkontroluje se zda žádost je podporováno. Předdefinované A akce SOAP "http://tempuri.org/HelloWorld/Hello" je definována k poskytnutí filtrování zprávy. Toto je podobný koncept kontraktu služby WCF implementace <xref:System.ServiceModel.ServiceHost>.  
   
  Pro správnou velikost akce SOAP ukázku načte data pro požadovaný zprávu a vygeneruje odpovídající odpověď na žádost o podobná co je vidět v <xref:System.ServiceModel.ServiceHost> případu.  
   
  Speciálně zpracovává operaci HTTP GET, ve kterém můžete vyhledat službu z prohlížeče, zobrazí se, že zdařilo vrácením vlastní zprávu ve formátu HTML, v tomto případě. Pokud akce SOAP neodpovídá, Odeslat chybu zpět zpráva indikující, že tento požadavek není podporován.  
   
- Klient Tato ukázka je z něj normální [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, který nepředpokládá nic ze služby. Ano, službu speciálně navržené tak, aby odpovídaly, co můžete získat z něj normální [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.ServiceHost> implementace. V důsledku toho je v klientovi požadováno pouze kontraktu služby.  
+ Klient Tato ukázka je normální klienta WCF, který nepředpokládá nic ze služby. Ano, službu speciálně navržené tak, aby odpovídaly získáte od normální WCF<xref:System.ServiceModel.ServiceHost> implementace. V důsledku toho je v klientovi požadováno pouze kontraktu služby.  
   
 ## <a name="using-the-sample"></a>Pomocí vzorku  
  Spuštění klienta aplikace přímo vytvoří následující výstup.  

@@ -2,11 +2,11 @@
 title: Datové vazby v klientovi Windows Forms
 ms.date: 03/30/2017
 ms.assetid: a2a30b37-d6e2-4552-820e-e60b2bbe8829
-ms.openlocfilehash: a84aeedba89cc7a5c267a0fd1f6c4f604fe80d43
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 38991390f2d0dd272b8d07041b61e6cf16db0cae
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Datové vazby v klientovi Windows Forms
 Tento příklad znázorňuje způsob vytvoření vazby na data vrácená službou Windows Communication Foundation (WCF) v aplikaci Windows Forms.  
@@ -14,11 +14,11 @@ Tento příklad znázorňuje způsob vytvoření vazby na data vrácená službo
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto článku.  
   
- Tento příklad znázorňuje služba, která implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Ukázka se skládá z klienta aplikace Windows Forms (.exe) a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované Internetové informační služby (IIS).  
+ Tento příklad znázorňuje služba, která implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Ukázka se skládá z klienta aplikace Windows Forms (.exe) a služby WCF hostované Internetové informační služby (IIS).  
   
  Kontrakt je definována `IWeatherService` rozhraní, která zpřístupňuje operace s názvem `GetWeatherData`. Tato operace přijímá pole města a vrátí pole `WeatherData` objekty, které představují maximální a minimální prognózy teploty pro města.  
   
- Datové vazby v klientovi v aplikaci Windows Forms dojde. A `DataGridView` je definována v Návrháři formulářů Windows, což je grafické znázornění dat. Zprostředkovatel s názvem `BindingSource` se také vytvoří. Zdroj dat `BindingSource` je nastaven na data pole vrácené službou. Účelem `BindingSource` je poskytnout úroveň dereference mezi data a data zobrazení. Všechny interakce s daty, jako je například navigace, řazení, filtrování a aktualizace, se provádí pomocí volání `BindingSource` součásti. K provedení vazby dat k `DataGridView`, `datasource` z `DataGridView` pak nastavena na `BindingSource` objektu. Všechna data vrácená z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby se následně zobrazí graficky uživateli.  Pokaždé, když uživatel klikne na tlačítko, vrácená data se automaticky aktualizuje v vázaného na data `DataGridView`.  
+ Datové vazby v klientovi v aplikaci Windows Forms dojde. A `DataGridView` je definována v Návrháři formulářů Windows, což je grafické znázornění dat. Zprostředkovatel s názvem `BindingSource` se také vytvoří. Zdroj dat `BindingSource` je nastaven na data pole vrácené službou. Účelem `BindingSource` je poskytnout úroveň dereference mezi data a data zobrazení. Všechny interakce s daty, jako je například navigace, řazení, filtrování a aktualizace, se provádí pomocí volání `BindingSource` součásti. K provedení vazby dat k `DataGridView`, `datasource` z `DataGridView` pak nastavena na `BindingSource` objektu. Všechna data vrácená ze služby WCF se následně zobrazí graficky uživateli.  Pokaždé, když uživatel klikne na tlačítko, vrácená data se automaticky aktualizuje v vázaného na data `DataGridView`.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   

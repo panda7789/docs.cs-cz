@@ -2,20 +2,20 @@
 title: Vlastní doba života
 ms.date: 03/30/2017
 ms.assetid: 52806c07-b91c-48fe-b992-88a41924f51f
-ms.openlocfilehash: 1d9baa2d6eab476d5c8428208576f341e71fef2f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e41c970739b8036730fa601433ce7157e01d7e19
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-lifetime"></a>Vlastní doba života
-Tento příklad znázorňuje jak napsat rozšíření Windows Communication Foundation (WCF) k poskytování služeb vlastní doba života sdílených [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] instancí služby.  
+Tento příklad znázorňuje, jak napsat rozšíření Windows Communication Foundation (WCF) k poskytování služeb vlastní doba života pro sdílené instance služby WCF.  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="shared-instancing"></a>Sdílené, vytváření instancí  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí několik zřizování instancí režimy pro vaše instance služby. Režim vytváření instancí sdílené zahrnuté v tomto tématu poskytuje způsob, jak sdílet instanci služby mezi více typů komunikačních kanálů. Klienty můžete buď vyřešit instance adresa koncového bodu místně nebo se obraťte na metoda factory ve službě k získání adresa koncového bodu spuštěné instance. Jakmile má adresa koncového bodu, může vytvořit nový kanál a spustit komunikace. Následující fragment kódu ukazuje, jak klientská aplikace vytvoří nový kanál ke stávající instanci služby.  
+ WCF nabízí několik zřizování instancí režimy pro vaše instance služby. Režim vytváření instancí sdílené zahrnuté v tomto tématu poskytuje způsob, jak sdílet instanci služby mezi více typů komunikačních kanálů. Klienty můžete buď vyřešit instance adresa koncového bodu místně nebo se obraťte na metoda factory ve službě k získání adresa koncového bodu spuštěné instance. Jakmile má adresa koncového bodu, může vytvořit nový kanál a spustit komunikace. Následující fragment kódu ukazuje, jak klientská aplikace vytvoří nový kanál ke stávající instanci služby.  
   
 ```  
 // Create the first channel.  
@@ -34,12 +34,12 @@ ChannelFactory<IEchoService> channelFactory2 =
 IEchoService proxy2 = channelFactory2.CreateChannel();  
 ```  
   
- Na rozdíl od jiných zřizování instancí režimy režimu sdílení zřizování instancí má jedinečný způsob vydání instance služby. Když jsou uzavřeny všechny kanály pro instance služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] runtime spustí časovač. Pokud nikdo vytvoří připojení, než vyprší časový limit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uvolní instanci a deklarace identity prostředky. Jako součást procesu rušením [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyvolá <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda všech <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> implementace před uvolněním instance. Pokud všechny z nich vrátí `true` vydání instance. V opačném případě <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> implementace je zodpovědná za upozornění `Dispatcher` ze stavu nečinnosti pomocí metody zpětného volání.  
+ Na rozdíl od jiných zřizování instancí režimy režimu sdílení zřizování instancí má jedinečný způsob vydání instance služby. Pokud pro instanci zavřeny všechny kanály, běh služby WCF spustí časovač. Pokud nikdo vytvoří připojení, než vyprší časový limit, WCF uvolní instanci a deklarace identity prostředky. Jako součást procesu rušením vyvolá WCF <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda všech <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> implementace před uvolněním instance. Pokud všechny z nich vrátí `true` vydání instance. V opačném případě <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> implementace je zodpovědná za upozornění `Dispatcher` ze stavu nečinnosti pomocí metody zpětného volání.  
   
  Ve výchozím nastavení má hodnotu časového limitu nečinnosti <xref:System.ServiceModel.InstanceContext> je jedna minuta. Ale tento příklad znázorňuje, jak můžete rozšířit pomocí vlastního rozšíření.  
   
 ## <a name="extending-the-instancecontext"></a>Rozšíření objekt InstanceContext.  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], <xref:System.ServiceModel.InstanceContext> je propojení mezi instance služby a `Dispatcher`. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Umožňuje rozšířit tuto součást modulu runtime přidáním nového stavu nebo chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objektu: `IExtensibleObject<T>`, `IExtension<T>`, a `IExtensionCollection<T>`.  
+ Ve službě WCF <xref:System.ServiceModel.InstanceContext> je propojení mezi instance služby a `Dispatcher`. WCF umožňuje rozšířit tuto součást modulu runtime přidáním nového stavu nebo chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v WCF buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objektu: `IExtensibleObject<T>`, `IExtension<T>`, a `IExtensionCollection<T>`.  
   
  `IExtensibleObject<T>` Rozhraní je implementováno modulem objekty, které chcete povolit rozšíření, které přizpůsobení jejich funkce.  
   
@@ -80,7 +80,7 @@ class CustomLeaseExtension : IExtension<InstanceContext>, ICustomLease
 }  
 ```  
   
- Když [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyvolá <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda v <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> implementace toto volání se směruje na <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metodu `CustomLeaseExtension`. Pak se `CustomLeaseExtension` kontroluje stav privátní zobrazíte jestli <xref:System.ServiceModel.InstanceContext> nečinný. Pokud je nečinnosti se vrátí `true`. Jinak spustí časovač po zadanou dobu životnosti rozšířené.  
+ Když vyvolá WCF <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda v <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> implementace toto volání se směruje na <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metodu `CustomLeaseExtension`. Pak se `CustomLeaseExtension` kontroluje stav privátní zobrazíte jestli <xref:System.ServiceModel.InstanceContext> nečinný. Pokud je nečinnosti se vrátí `true`. Jinak spustí časovač po zadanou dobu životnosti rozšířené.  
   
 ```  
 public bool IsIdle  
@@ -116,7 +116,7 @@ void idleTimer_Elapsed(object sender, ElapsedEventArgs args)
   
  Neexistuje žádný způsob, jak obnovit časovač spuštěná, pokud dorazí novou zprávu pro instanci přesouvání do nečinného stavu.  
   
- Ukázka implementuje <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> zachytávat volání <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda a směrování je `CustomLeaseExtension`. <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> Implementace je součástí `CustomLifetimeLease` třídy. <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> Metoda je volána při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] je verze instance služby. Je však pouze jednu instanci konkrétní `ISharedSessionInstance` implementace v ServiceBehavior <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> kolekce. To znamená, že se nedá nijak zjistit, <xref:System.ServiceModel.InstanceContext> dochází k uzavření v době [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kontroluje <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda. Proto tato ukázka používá zámek k serializaci požadavky na přístup z více vláken <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda.  
+ Ukázka implementuje <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> zachytávat volání <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda a směrování je `CustomLeaseExtension`. <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> Implementace je součástí `CustomLifetimeLease` třídy. <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> Metoda je volána, když je chcete uvolnit instance služby WCF. Je však pouze jednu instanci konkrétní `ISharedSessionInstance` implementace v ServiceBehavior <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> kolekce. To znamená, že se nedá nijak zjistit, <xref:System.ServiceModel.InstanceContext> dochází k uzavření v době kontroluje WCF <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda. Proto tato ukázka používá zámek k serializaci požadavky na přístup z více vláken <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> metoda.  
   
 > [!IMPORTANT]
 >  Použití vláken uzamčení není doporučený postup protože serializace vážně mohou ovlivnit výkon vaší aplikace.  
@@ -160,7 +160,7 @@ public void NotifyIdle(InstanceContextIdleCallback callback,
   
  Před `ICustomLease.IsIdle` vlastnost je zaškrtnuta možnost vlastnost zpětné volání je třeba nastavit, protože to je nezbytné pro `CustomLeaseExtension` dispečera upozornit, když se stane nečinnosti. Pokud `ICustomLease.IsIdle` vrátí `true`, `isIdle` privátního člena je jednoduše nastavena v `CustomLifetimeLease` k `true` a volá metodu zpětného volání. Protože kód obsahuje zámek, jiná vlákna nelze změnit hodnotu této privátního člena. A při příštím kontroluje dispečera `ISharedSessionLifetime.IsIdle`, vrátí `true` a umožňuje dispečera verzi instance.  
   
- Teď, když základ pro vlastní rozšíření bylo dokončeno, musí být připojených k modelu služby. Spojit `CustomLeaseExtension` implementace k <xref:System.ServiceModel.InstanceContext>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> rozhraní k provedení zavádění z <xref:System.ServiceModel.InstanceContext>. V ukázce `CustomLeaseInitializer` třída implementuje toto rozhraní a přidá instanci `CustomLeaseExtension` k <xref:System.ServiceModel.InstanceContext.Extensions%2A> kolekci z inicializace jedinou metodou. Tato metoda je volána dispečera při inicializaci <xref:System.ServiceModel.InstanceContext>.  
+ Teď, když základ pro vlastní rozšíření bylo dokončeno, musí být připojených k modelu služby. Spojit `CustomLeaseExtension` implementace k <xref:System.ServiceModel.InstanceContext>, poskytuje WCF <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> rozhraní k provedení zavádění z <xref:System.ServiceModel.InstanceContext>. V ukázce `CustomLeaseInitializer` třída implementuje toto rozhraní a přidá instanci `CustomLeaseExtension` k <xref:System.ServiceModel.InstanceContext.Extensions%2A> kolekci z inicializace jedinou metodou. Tato metoda je volána dispečera při inicializaci <xref:System.ServiceModel.InstanceContext>.  
   
 ```  
 public void Initialize(InstanceContext instanceContext, Message message)  

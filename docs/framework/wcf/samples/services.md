@@ -2,30 +2,30 @@
 title: Services2
 ms.date: 03/30/2017
 ms.assetid: 462a2218-f8c6-4fb7-95bc-64765459c429
-ms.openlocfilehash: ef5de3fc51e43a88adb021b66732492f03d9d912
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2b6d8322caa32246d6171af50c7773342ac11de2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="services"></a>Služby
 Tato část obsahuje příklady vysvětlující služby Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Hostování](../../../../docs/framework/wcf/feature-details/hosting.md)  
- Demonstruje hostování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Demonstruje hostování služby WCF.  
   
  [Interoperabilita služeb](../../../../docs/framework/wcf/samples/service-interoperability.md)  
- Ukazuje interakce mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a další technologie služby.  
+ Ukazuje interakce mezi WCF a další technologie služby.  
   
  [Chování](../../../../docs/framework/wcf/samples/behaviors.md)  
- Demonstruje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby chování.  
+ Demonstruje chování služby WCF.  
   
  [Zabezpečení služby](../../../../docs/framework/wcf/samples/service-security.md)  
- Demonstruje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby zabezpečení.  
+ Demonstruje zabezpečení služby WCF.  
   
  [Zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)  
- Ukazuje, jak implementovat a nastavení typické služby a klienta pomocí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ Ukazuje, jak implementovat a nastavení typické služby a klienta pomocí WCF.  
   
  [Používání standardních koncových bodů](../../../../docs/framework/wcf/samples/usage-of-standard-endpoints.md)  
  Ukazuje, jak používat standardní koncové body v konfiguračních souborech na služby.  
@@ -55,7 +55,7 @@ Tato část obsahuje příklady vysvětlující služby Windows Communication Fo
  Představuje službu, která hostuje víc koncových bodů na jedné `ListenUri`.  
   
  [OperationContextScope](../../../../docs/framework/wcf/samples/operationcontextscope.md)  
- Ukazuje, jak odeslat na doplňující informace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] volat pomocí hlavičky.  
+ Ukazuje, jak odeslat další informace o volání WCF pomocí hlavičky.  
   
  [Popis služby](../../../../docs/framework/wcf/samples/service-description.md)  
  Ukazuje, jak službu můžete načíst jeho informace popisu služby za běhu.  

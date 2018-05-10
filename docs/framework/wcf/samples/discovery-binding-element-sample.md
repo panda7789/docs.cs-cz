@@ -2,20 +2,20 @@
 title: Zjišťování – ukázka prvky vazby
 ms.date: 03/30/2017
 ms.assetid: af513015-85bf-417b-8729-1bdff77ff6d6
-ms.openlocfilehash: 7dc38acbe91e03f579414294da07bff5cc53cc4c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 853f5cebfd745b3413d605dcfbf0e395e103b4f1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="discovery-binding-element-sample"></a>Zjišťování – ukázka prvky vazby
 Tento příklad znázorňuje způsob použití prvku vazby klienta zjišťování pro zjišťování služby. Tato funkce umožňuje vývojářům přidat kanálem klienta zjišťování do své existující zásobníku kanálu klienta provedení programovací model velmi intuitivní. Po otevření přiřazený kanál adresu služby, se vyřeší, pomocí zjišťování. Tato ukázka se skládá z následujících projektech:  
   
--   **CalculatorService**: zjistitelný [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+-   **CalculatorService**: zjistitelný služby WCF.  
   
--   **CalculatorClient**: A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientské aplikace, která se používá k hledání a volání CalculatorService kanálem klienta zjišťování.  
+-   **CalculatorClient**: A WCF klientské aplikace, která používá k hledání a volání CalculatorService kanálem klienta zjišťování.  
   
--   **DynamicCalculatorClient**: A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientské aplikace, která používá k hledání a volání CalculatorService dynamické koncový bod.  
+-   **DynamicCalculatorClient**: A WCF klientské aplikace, která používá k hledání a volání CalculatorService dynamické koncový bod.  
   
 > [!IMPORTANT]
 >  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  

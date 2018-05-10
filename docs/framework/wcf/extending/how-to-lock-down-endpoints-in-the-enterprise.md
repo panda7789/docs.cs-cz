@@ -2,16 +2,16 @@
 title: 'Postupy: uzamčení koncových bodů v podnikové síti'
 ms.date: 03/30/2017
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-ms.openlocfilehash: c91faf201c9a7cb0e5dd810059dbaa39b1e8eb05
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4ec14193bdcc24722ad8e2259781c4c185f3ca3f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: uzamčení koncových bodů v podnikové síti
 Velké podniky často vyžadují, že se aplikace vyvinuté souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalovat klienta validátoru koncový bod, který slouží k ověření všechny aplikace klienta Windows Communication Foundation (WCF) nainstalované v počítačích.  
   
- V takovém případě validátor je ověření klienta, protože toto chování koncový bod se přidá do klienta [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) oddíl v souboru machine.config. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] načte společné chování koncový bod pouze pro klientské aplikace a načte společné chování služby pouze pro aplikace služby. Chcete-li nainstalovat tento stejný validátor pro aplikace služby, musí být validátor chování služby. Další informace najdete v tématu [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) části.  
+ V takovém případě validátor je ověření klienta, protože toto chování koncový bod se přidá do klienta [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) oddíl v souboru machine.config. WCF načte společné chování koncový bod pouze pro klientské aplikace a načte společné chování služby pouze pro aplikace služby. Chcete-li nainstalovat tento stejný validátor pro aplikace služby, musí být validátor chování služby. Další informace najdete v tématu [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) části.  
   
 > [!IMPORTANT]
 >  Služba nebo koncový bod chování neoznačené <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut (APTCA), které jsou přidány do [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) oddílu konfiguračního souboru se nespustí, pokud je aplikace spuštěná v částečné důvěryhodnosti v takovém případě je vyvolána prostředí a žádná výjimka. Pokud chcete vynutit spuštění společné chování, například validátory, které je nutné buď:  

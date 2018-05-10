@@ -7,19 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], overview
 ms.assetid: f4dce0fb-6f54-47e6-8054-86d7f574b91c
-ms.openlocfilehash: 91e5e45d380ec6a8229a7272c841e1a345423c7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 46ca6294d68537e86a319b55d8c11e3ae0084738
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="endpoint-creation-overview"></a>Přehled vytváření koncových bodů
-Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nabídky služeb. Tato část popisuje strukturu koncový bod a popisuje, jak definovat koncový bod v konfiguraci a v kódu.  
+Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce, které nabízí služby WCF. Tato část popisuje strukturu koncový bod a popisuje, jak definovat koncový bod v konfiguraci a v kódu.  
   
 ## <a name="the-structure-of-an-endpoint"></a>Struktura koncový bod  
  Každý koncový bod obsahuje adresu, která určuje, kde najít koncový bod, vazbu, která určuje, jak klient může komunikovat s koncovým bodem a kontrakt, který identifikuje dostupné metody.  
   
--   **Adresa**. Adresa jednoznačně identifikuje koncový bod a potenciální spotřebitelé informuje, kde se služba nachází. Je zobrazena v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] objektový model pomocí <xref:System.ServiceModel.EndpointAddress> adresu, která obsahuje identifikátor URI (Uniform Resource) a vlastnosti adresy, které zahrnují identity, některé prvky webové služby popis Language (WSDL) a kolekce volitelné hlavičky. Volitelné hlavičky poskytují další podrobné adresování informace k identifikaci nebo interakci s koncovým bodem. Další informace najdete v tématu [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
+-   **Adresa**. Adresa jednoznačně identifikuje koncový bod a potenciální spotřebitelé informuje, kde se služba nachází. Je zobrazena v objektový model WCF pomocí <xref:System.ServiceModel.EndpointAddress> adresu, která obsahuje identifikátor URI (Uniform Resource) a vlastnosti adresy, které zahrnují identity, některé prvky webové služby popis Language (WSDL) a kolekce volitelné hlavičky. Volitelné hlavičky poskytují další podrobné adresování informace k identifikaci nebo interakci s koncovým bodem. Další informace najdete v tématu [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
   
 -   **Vazba**. Vazba Určuje, jak ke komunikaci s koncovým bodem. Vazba Určuje, jak koncový bod komunikuje s na světě, včetně které přenosový protokol použít (například TCP nebo HTTP), které kódování určené k použití pro zprávy (například textu nebo binárních) a jsou nezbytné (pro které požadavky na zabezpečení například Secure Sockets Layer [SSL] nebo zabezpečení protokolu SOAP zprávy). Další informace najdete v tématu [pomocí vazby na konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   

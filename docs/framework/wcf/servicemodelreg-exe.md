@@ -2,11 +2,11 @@
 title: Nástroj ServiceModel Registration (ServiceModelReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: 660bad0b80a80a21936c9c8a5d485fe05b8c8acf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5fab1a356cd035ed006bfe90d713e179907e0137
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>Nástroj ServiceModel Registration (ServiceModelReg.exe)
 Tento nástroj příkazového řádku umožňuje spravovat registraci komponent WCF a WF na jednom počítači. Za normálních podmínek by neměl budete muset použít tento nástroj jako WCF a konfigurace WF součástí při instalaci. Ale pokud dochází k potížím s aktivací prostřednictvím služby, můžete zkusit k registraci komponenty pomocí tohoto nástroje.  
@@ -41,7 +41,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 |`-?`|Zobrazí text nápovědy|  
   
 ## <a name="fixing-the-fileloadexception-error"></a>Oprava chyby FileLoadException  
- Pokud jste nainstalovali předchozí verze [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] na počítači, může dojít `FileLoadFoundException` při spuštění nástroje ServiceModelReg zaregistrovat nové instalace došlo k chybě. Tomu může dojít i v případě, že máte ručně odebrat soubory z předchozí instalace, ale zůstává nedotčeno nastavení souboru machine.config.  
+ Pokud jste nainstalovali předchozí verze služby WCF na počítači, může dojít `FileLoadFoundException` při spuštění nástroje ServiceModelReg zaregistrovat nové instalace došlo k chybě. Tomu může dojít i v případě, že máte ručně odebrat soubory z předchozí instalace, ale zůstává nedotčeno nastavení souboru machine.config.  
   
  Chybová zpráva je podobný následujícímu.  
   
@@ -50,7 +50,7 @@ Error: System.IO.FileLoadException: Could not load file or assembly 'System.Serv
 File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'  
 ```  
   
- Nezapomeňte přitom z chybová zpráva, že byl nainstalován System.ServiceModel verzi 2.0.0.0 sestavení pomocí předběžnou verzi zákazníka Technology Preview (CTP). Aktuální verze sestavení System.ServiceModel vydané 3.0.0.0 se místo toho. Proto je tento problém zjistil při chcete nainstalovat oficiální [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] verze na počítači, kde vydání časná CTP [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] byl nainstalován, ale není zcela odinstalována.  
+ Nezapomeňte přitom z chybová zpráva, že byl nainstalován System.ServiceModel verzi 2.0.0.0 sestavení pomocí předběžnou verzi zákazníka Technology Preview (CTP). Aktuální verze sestavení System.ServiceModel vydané 3.0.0.0 se místo toho. Tento problém je tedy došlo, pokud chcete nainstalovat oficiální verzi WCF na počítači, kde byla předběžnou verzi CTP WCF nainstalovaná, ale není zcela odinstalována.  
   
  ServiceModelReg.exe nelze vyčistit předchozí verze položky, ani můžete zaregistrovat na novou verzi položky. Jediným řešením je ruční úpravy souboru machine.config. Tento soubor v následujícím umístění lze vyhledat.  
   
@@ -58,7 +58,7 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
 %windir%\Microsoft.NET\Framework\v2.0.50727\config\machine.config   
 ```  
   
- Pokud používáte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] na 64bitový počítač, by také upravit stejný soubor v tomto umístění.  
+ Pokud používáte WCF na 64bitový počítač, by také upravit stejný soubor v tomto umístění.  
   
 ```  
 %windir%\Microsoft.NET\Framework64\v2.0.50727\config\machine.config   

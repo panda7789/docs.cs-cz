@@ -2,11 +2,11 @@
 title: Použití čítačů výkonu
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 2e25551494a433c53832127fdb0a32cb4eccac47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8784b4a481b8313d370aad1d8f265dcb44ab3ed6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-performance-counters"></a>Použití čítačů výkonu
 Tento příklad znázorňuje, jak získat přístup k čítače výkonu systému Windows Communication Foundation (WCF) a postup vytvoření čítače výkonu definovaný uživatelem. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -28,7 +28,7 @@ Tento příklad znázorňuje, jak získat přístup k čítače výkonu systému
   
  Tuto úlohu lze provést pomocí [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
   
- Když jsou povoleny čítače výkonu, celá sada [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] čítače výkonu je povolen pro službu. Rozhraní .NET Framework automaticky udržuje údaje o výkonu na třech úrovních: `ServiceModelService`, `ServiceModelEndpoint` a `ServiceModelOperation`. Každý z těchto úrovní má čítače výkonu, jako je například "Volání", "Volání za sekundu" a "Zabezpečení volání není oprávněn".  
+ Když jsou povoleny čítače výkonu, povolí se celá sada čítače výkonu WCF pro službu. Rozhraní .NET Framework automaticky udržuje údaje o výkonu na třech úrovních: `ServiceModelService`, `ServiceModelEndpoint` a `ServiceModelOperation`. Každý z těchto úrovní má čítače výkonu, jako je například "Volání", "Volání za sekundu" a "Zabezpečení volání není oprávněn".  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   
@@ -47,10 +47,10 @@ Tento příklad znázorňuje, jak získat přístup k čítače výkonu systému
   
 2.  Odeberte čítače výkonu, které jsou uvedeny tak, že je vyberete a stisknutím klávesy Delete.  
   
-3.  Přidat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] čítače tak, že kliknete pravým tlačítkem v podokně grafu a výběr **přidat čítače**. V **přidat čítače** dialogové okno, vyberte **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 nebo ServiceModelService 3.0.0.0** v objektu výkonu rozevírací seznam. Vyberte čítače, které chcete zobrazit v seznamu.  
+3.  Přidání čítačů WCF tak, že kliknete pravým tlačítkem v podokně grafu a výběr **přidat čítače**. V **přidat čítače** dialogové okno, vyberte **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 nebo ServiceModelService 3.0.0.0** v objektu výkonu rozevírací seznam. Vyberte čítače, které chcete zobrazit v seznamu.  
   
     > [!NOTE]
-    >  Neexistují žádné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] čítače výkonu pro službu, pokud nejsou žádné [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby spuštěné v počítači.  
+    >  Neexistují žádné čítače výkonu WCF pro služby, pokud neexistují žádné služby WCF na tomto počítači spuštěna.  
   
 ### <a name="to-use-the-configuration-editor-to-enable-counters"></a>Povolení čítačů pomocí editoru konfigurace  
   

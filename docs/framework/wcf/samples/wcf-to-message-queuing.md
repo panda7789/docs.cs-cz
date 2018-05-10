@@ -2,11 +2,11 @@
 title: Z WCF do Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 83c16fc097cc6eca76578730bcad0491b648c5c8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0864098a55cbd7b43100bf9e0a1836e749eb2bc9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Z WCF do Řízení front zpráv
 Tento příklad znázorňuje, jak můžete k aplikaci Windows Communication Foundation (WCF) odešle zprávu do aplikace služby Řízení front zpráv (MSMQ). Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě. Klienta a služby nemusíte používat ve stejnou dobu.  
@@ -95,9 +95,9 @@ Console.WriteLine("Order has been submitted:{0}", po);
 client.Close();  
 ```
 
- Klient použije k odeslání zprávy služby MSMQ do fronty vlastní klienta v daném pořadí. Vzhledem k tomu, že je aplikace, který obdrží a zpracuje zprávy aplikací služby MSMQ a ne [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, neexistuje žádný kontrakt implicitní služby mezi těmito dvěma aplikacemi. Ano nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.  
+ Klient použije k odeslání zprávy služby MSMQ do fronty vlastní klienta v daném pořadí. Protože aplikace, která přijímá a zpracovává zprávy služby MSMQ aplikace a aplikace WCF, už není žádná kontrakt implicitní služby mezi těmito dvěma aplikacemi. Ano nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.  
   
- Vlastní klienta je v podstatě stejný pro všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, které používají `MsmqIntegration` vazby k odesílání zpráv. Na rozdíl od ostatních klientů nebude obsahovat celou řadu operací služby. Je zpráva operaci odeslání jenom.  
+ Vlastní klienta je v podstatě stejný pro všechny aplikace WCF, které používají `MsmqIntegration` vazby k odesílání zpráv. Na rozdíl od ostatních klientů nebude obsahovat celou řadu operací služby. Je zpráva operaci odeslání jenom.  
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  

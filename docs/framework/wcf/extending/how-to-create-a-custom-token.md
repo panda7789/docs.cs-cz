@@ -10,20 +10,20 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-ms.openlocfilehash: eb227075b1a696216e62e851aa8b10c7511ac93f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2198d5548b09ba05eeb11466a6fd2d3a1262de94
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak integrovat s zprostředkovatele tokenu vlastní zabezpečovací a ověřovací data. Kompletní příklad najdete v článku [vlastní tokenu](../../../../docs/framework/wcf/samples/custom-token.md) ukázka.  
   
- A *token zabezpečení* je v podstatě elementu XML, který je používán zabezpečení systému Windows Communication Foundation (WCF) představují deklarace identity o odesílateli v zprávu protokolu SOAP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] funkce zabezpečení poskytuje různé tokeny pro režimy ověřování poskytované systémem. Mezi příklady patří token zabezpečení certifikátu X.509 reprezentována <xref:System.IdentityModel.Tokens.X509SecurityToken> třídu nebo token zabezpečení uživatelské jméno reprezentována <xref:System.IdentityModel.Tokens.UserNameSecurityToken> – třída.  
+ A *token zabezpečení* je v podstatě elementu XML, který je používán zabezpečení systému Windows Communication Foundation (WCF) představují deklarace identity o odesílateli v zprávu protokolu SOAP. Zabezpečení WCF poskytuje různé tokeny pro režimy ověřování poskytované systémem. Mezi příklady patří token zabezpečení certifikátu X.509 reprezentována <xref:System.IdentityModel.Tokens.X509SecurityToken> třídu nebo token zabezpečení uživatelské jméno reprezentována <xref:System.IdentityModel.Tokens.UserNameSecurityToken> – třída.  
   
  Zadané typy nepodporuje někdy režim ověřování nebo pověření. V takovém případě je potřeba vytvořit token zabezpečení vlastní zajistit reprezentaci XML vlastní pověření uvnitř zprávu protokolu SOAP.  
   
- Následující postupy ukazují, jak vytvořit token vlastní zabezpečení a jak integrovat s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení. Toto téma vytvoří platební karty token, který slouží k předávání informací o platební karty klienta k serveru.  
+ Následující postupy ukazují, jak vytvořit token vlastní zabezpečení a postup při integraci s Infrastruktura zabezpečení WCF. Toto téma vytvoří platební karty token, který slouží k předávání informací o platební karty klienta k serveru.  
   
  Další informace o vlastní pověření a Správce tokenů zabezpečení najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
@@ -43,7 +43,7 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
      [!code-csharp[c_CustomToken#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#4)]
      [!code-vb[c_CustomToken#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#4)]  
   
- V dalším kroku je nutné vytvořit třídu, která představuje token, který vlastní zabezpečení. Tato třída se používá pomocí tokenu poskytovatele, authenticator a serializátor třídy zabezpečení k předání informací o token zabezpečení do a z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení.  
+ V dalším kroku je nutné vytvořit třídu, která představuje token, který vlastní zabezpečení. Tato třída se používá poskytovatele tokenu zabezpečení, authenticator a třídy serializátor předávat informace o tokenu zabezpečení do a z Infrastruktura zabezpečení WCF.  
   
 #### <a name="to-create-a-custom-security-token-class"></a>Pro vytvoření třídy tokenu vlastní zabezpečení  
   
@@ -51,14 +51,14 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
   
 2.  Přepsání <xref:System.IdentityModel.Tokens.SecurityToken.Id%2A> vlastnost. Tato vlastnost slouží k získání místní identifikátor tokenu zabezpečení, který se používá k bod k reprezentaci XML tokenu zabezpečení z dalších prvků uvnitř zprávu protokolu SOAP. V tomto příkladu identifikátor tokenu lze buď předat ji jako parametr konstruktoru nebo novou náhodných je generována pokaždé, když se vytvoří instance tokenu zabezpečení.  
   
-3.  Implementace <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A> vlastnost. Tato vlastnost vrátí kolekci klíčů zabezpečení, které představuje instanci tokenu zabezpečení. Tyto klíče mohou být využívána [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] k podepisování nebo šifrování částí protokolu SOAP zprávy. V tomto příkladu platební karty token zabezpečení nemůže obsahovat žádné klíče zabezpečení; proto implementace vždy vrátí prázdnou kolekci.  
+3.  Implementace <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A> vlastnost. Tato vlastnost vrátí kolekci klíčů zabezpečení, které představuje instanci tokenu zabezpečení. Tyto klíče může sloužit k podepisování nebo šifrování částí zprávu SOAP WCF. V tomto příkladu platební karty token zabezpečení nemůže obsahovat žádné klíče zabezpečení; proto implementace vždy vrátí prázdnou kolekci.  
   
-4.  Přepsání <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> a <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> vlastnosti. Tyto vlastnosti jsou používány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro určení platnosti instance tokenu zabezpečení. V tomto příkladu platební karty token zabezpečení obsahuje pouze datum vypršení platnosti, proto `ValidFrom` vlastnost vrátí <xref:System.DateTime> představující datum a čas vytvoření instance.  
+4.  Přepsání <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> a <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> vlastnosti. Tyto vlastnosti jsou používány WCF pro určení platnosti instance tokenu zabezpečení. V tomto příkladu platební karty token zabezpečení obsahuje pouze datum vypršení platnosti, proto `ValidFrom` vlastnost vrátí <xref:System.DateTime> představující datum a čas vytvoření instance.  
   
      [!code-csharp[c_CustomToken#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#1)]
      [!code-vb[c_CustomToken#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#1)]  
   
- Když nového zabezpečení se vytvoří typ tokenu, vyžaduje implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> třídy. Implementace se používá v konfiguraci zabezpečení vazby element představující nový typ tokenu. Třída parametry token zabezpečení slouží jako šablonu, která se používá k porovnání instance tokenu zabezpečení pro při zpracování zprávy. Šablona nabízí další vlastnosti, které aplikace můžete použít k určení kritéria, která musí odpovídat tokenu zabezpečení k použití nebo ověření. Následující příklad nepřidává žádné další vlastnosti, takže jenom zabezpečení typ tokenu je nalezena shoda při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury vyhledávání pro instanci tokenu zabezpečení nebo ověření.  
+ Když nového zabezpečení se vytvoří typ tokenu, vyžaduje implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> třídy. Implementace se používá v konfiguraci zabezpečení vazby element představující nový typ tokenu. Třída parametry token zabezpečení slouží jako šablonu, která se používá k porovnání instance tokenu zabezpečení pro při zpracování zprávy. Šablona nabízí další vlastnosti, které aplikace můžete použít k určení kritéria, která musí odpovídat tokenu zabezpečení k použití nebo ověření. Následující příklad nepřidává žádné další vlastnosti, takže jenom zabezpečení typ tokenu je nalezena shoda při hledání infrastruktury WCF pro instanci tokenu zabezpečení nebo ověření.  
   
 #### <a name="to-create-a-custom-security-token-parameters-class"></a>Pro vytvoření třídy tokenu parametry vlastní zabezpečení  
   
@@ -72,17 +72,17 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
   
 5.  Implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.SupportsClientWindowsIdentity%2A> vlastnost určenou jen pro čtení. Tato vlastnost vrací `true` Pokud typ tokenu zabezpečení, který je reprezentována této třídy lze mapovat na účet systému Windows. Pokud ano, je reprezentována výsledek ověřování <xref:System.Security.Principal.WindowsIdentity> instance třídy. V tomto příkladu token nelze mapovat na účet systému Windows.  
   
-6.  Implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause%28System.IdentityModel.Tokens.SecurityToken%2CSystem.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle%29> metoda. Tato metoda je volána [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework zabezpečení, pokud se vyžaduje odkaz na instanci tokenu zabezpečení reprezentovaný touto třídou Parametry tokenu zabezpečení. Obě skutečné zabezpečení tokenu instance a <xref:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle> určující typ odkazu na element, který je vyžadován jsou předaná této metodě jako argumenty. V tomto příkladu jsou podporovány pouze interní odkazy platební karty token zabezpečení. <xref:System.IdentityModel.Tokens.SecurityToken> Třída má funkce k vytvoření interní odkazy; proto implementace nevyžaduje žádný další kód.  
+6.  Implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause%28System.IdentityModel.Tokens.SecurityToken%2CSystem.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle%29> metoda. Tato metoda je volána rámcem zabezpečení WCF, pokud se vyžaduje odkaz na instanci tokenu zabezpečení reprezentovaný touto třídou Parametry tokenu zabezpečení. Obě skutečné zabezpečení tokenu instance a <xref:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle> určující typ odkazu na element, který je vyžadován jsou předaná této metodě jako argumenty. V tomto příkladu jsou podporovány pouze interní odkazy platební karty token zabezpečení. <xref:System.IdentityModel.Tokens.SecurityToken> Třída má funkce k vytvoření interní odkazy; proto implementace nevyžaduje žádný další kód.  
   
-7.  Implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metoda. Tato metoda je volána [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] převést zabezpečení tokenu parametry třídy instance do instance <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> třídy. Výsledek slouží poskytovatelé tokenů zabezpečení pro vytvoření instance tokenu příslušné zabezpečení.  
+7.  Implementace <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metoda. Tato metoda je volána službou WCF k převedení instance třídy Parametry tokenu zabezpečení do instance <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> třídy. Výsledek slouží poskytovatelé tokenů zabezpečení pro vytvoření instance tokenu příslušné zabezpečení.  
   
      [!code-csharp[c_CustomToken#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#2)]
      [!code-vb[c_CustomToken#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#2)]  
   
- Tokeny zabezpečení, se přenáší uvnitř protokolu SOAP zprávy, které vyžaduje mechanismus překlad mezi reprezentace tokenu zabezpečení v paměti a na síťové vyjádření. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá serializátoru tokenů zabezpečení k provedení této úlohy. Každý vlastní token musí být doplněn vlastní zabezpečovací tokenu serializátoru, který lze serializaci a deserializaci token zabezpečení vlastní zprávu protokolu SOAP.  
+ Tokeny zabezpečení, se přenáší uvnitř protokolu SOAP zprávy, které vyžaduje mechanismus překlad mezi reprezentace tokenu zabezpečení v paměti a na síťové vyjádření. WCF používá serializátoru tokenů zabezpečení k provedení této úlohy. Každý vlastní token musí být doplněn vlastní zabezpečovací tokenu serializátoru, který lze serializaci a deserializaci token zabezpečení vlastní zprávu protokolu SOAP.  
   
 > [!NOTE]
->  Odvozené klíče jsou ve výchozím nastavení povolené. Pokud chcete vytvořit token vlastní zabezpečení a použít jako primární token [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] odvozena z něj klíč. Při to uděláte, zavolá serializátoru tokenů zabezpečení vlastní k zápisu <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> pro token vlastní zabezpečení při serializaci `DerivedKeyToken` k drátové síti. Na koncové straně příjmu, při deserializaci token vypnutí přenosu `DerivedKeyToken` serializátor očekává `SecurityTokenReference` element jako podřízený objekt nejvyšší úrovně v rámci samotného. Pokud serializátoru tokenů zabezpečení vlastní nebyla přidána `SecurityTokenReference` elementu při serializaci typ klauzule, je vyvolána výjimka.  
+>  Odvozené klíče jsou ve výchozím nastavení povolené. Pokud vytvoříte vlastní zabezpečovací token a použít jako primární token, WCF odvozena z něj klíč. Při to uděláte, zavolá serializátoru tokenů zabezpečení vlastní k zápisu <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> pro token vlastní zabezpečení při serializaci `DerivedKeyToken` k drátové síti. Na koncové straně příjmu, při deserializaci token vypnutí přenosu `DerivedKeyToken` serializátor očekává `SecurityTokenReference` element jako podřízený objekt nejvyšší úrovně v rámci samotného. Pokud serializátoru tokenů zabezpečení vlastní nebyla přidána `SecurityTokenReference` elementu při serializaci typ klauzule, je vyvolána výjimka.  
   
 #### <a name="to-create-a-custom-security-token-serializer"></a>Chcete-li vytvořit vlastní zabezpečovací serializátor  
   
@@ -138,7 +138,7 @@ Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:
      [!code-csharp[c_customToken#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#11)]
      [!code-vb[c_customToken#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#11)]  
   
- Třídě tokenu parametry vlastní zabezpečení vytvořené dříve slouží říct [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zabezpečení rozhraní, které musí být token zabezpečení vlastní použít při komunikaci se službou. Následující postup ukazuje, jak to lze provést.  
+ Třídě tokenu parametry vlastní zabezpečení vytvořené dříve se používá rozhraní zabezpečení WCF říct, že token zabezpečení vlastní musí použít při komunikaci se službou. Následující postup ukazuje, jak to lze provést.  
   
 #### <a name="to-integrate-the-custom-security-token-with-the-binding"></a>Pro integraci token zabezpečení vlastní vazby  
   

@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: 74bf11779e6ccf032f2c8c920b62b2f0e5d0625d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 1d9e6b83a78967193c4cb0343f6c77560354a837
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
 Windows Communication Foundation (WCF) obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace.  
   
 ## <a name="enabling-performance-counters"></a>Povolení čítače výkonu  
- Můžete povolit čítače výkonu pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] přes z konfiguračního souboru app.config [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby následujícím způsobem:  
+ Čítače výkonu služby WCF pomocí konfiguračního souboru app.config služby WCF můžete povolit následujícím způsobem:  
   
 ```xml  
 <configuration>  
@@ -32,9 +32,9 @@ Windows Communication Foundation (WCF) obsahuje velké sady čítačů výkonu m
   
 -   Vypnuto: Čítače výkonu ServiceModel * jsou zakázány.  
   
- Pokud chcete povolit čítače výkonu pro všechny [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] aplikace, nastavení konfigurace můžete umístit v souboru Machine.config.  Najdete v tématu **zvýšit velikost paměti pro čítače výkonu** části níže pro další informace o konfiguraci dostatek paměti pro čítače výkonu v počítači.  
+ Pokud chcete povolit čítače výkonu pro všechny aplikace, WCF, můžete umístit nastavení konfigurace v souboru Machine.config.  Najdete v tématu **zvýšit velikost paměti pro čítače výkonu** části níže pro další informace o konfiguraci dostatek paměti pro čítače výkonu v počítači.  
   
- Pokud používáte [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] body rozšiřitelnosti například vlastní operaci invokers jste měli také emitování čítače výkonu. Je to proto, pokud byste implementovat bod rozšiřitelnosti, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] může už negeneruje data čítače výkonu standardní ve výchozí cestě. Pokud jste neimplementuje podporu čítače výkonu ruční, nemusíte vidět data čítače výkonu, které očekáváte.  
+ Pokud používáte body rozšiřitelnosti WCF například vlastní operaci invokers, by také emitování čítače výkonu. Je to proto, že pokud budete implementovat bod rozšiřitelnosti, WCF může už negeneruje data čítače výkonu standardní ve výchozí cestě. Pokud jste neimplementuje podporu čítače výkonu ruční, nemusíte vidět data čítače výkonu, které očekáváte.  
   
  Můžete také povolit čítače výkonu ve vašem kódu následujícím způsobem  
   
@@ -56,11 +56,11 @@ config.Save();
 >  Instance čítače výkonu se může uvolnit před poslední zprávy byly zpracovány dispečera koncový bod. Výsledkem může být data výkonu není zaznamenaná pro několik zprávy.  
   
 ## <a name="increasing-memory-size-for-performance-counters"></a>Zvýšit velikost paměti pro čítače výkonu  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] používá samostatné sdílené paměti pro jeho kategorie čítače výkonu.  
+ WCF používá samostatné sdílené paměti pro jeho kategorie čítače výkonu.  
   
- Ve výchozím nastavení je samostatnou sdílené paměti hodnotu čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globální výkonu čítač paměť je 524,288 bajtů. Proto tří [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] kategorie čítače výkonu mají výchozí velikost přibližně 128 KB. V závislosti na vlastnosti runtime [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] může dojít k vyčerpání aplikace na počítači, paměti čítače výkonu. V takovém případě [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zapíše chybu do protokolu událostí aplikace. Obsah chyba stavy nebyla načtena čítače výkonu, a položka obsahuje výjimku "System.InvalidOperationException: vlastní čítače souboru zobrazení je nedostatek paměti." Pokud je trasování povoleno na úrovni chyba, toto selhání je také trasovat. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování v používání vaší [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] aplikací pomocí čítače výkonu, které jsou povolené může způsobit snížení výkonu. Pokud jste správce počítače, byste ho měli nakonfigurovat přidělit dostatek paměti pro podporu maximální počet čítače výkonu, které může existovat kdykoli.  
+ Ve výchozím nastavení je samostatnou sdílené paměti hodnotu čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globální výkonu čítač paměť je 524,288 bajtů. Tři kategorie čítače výkonu WCF tedy mít výchozí velikost přibližně 128KB. V závislosti na modulu runtime charakteristiky aplikací WCF na počítači, může být vyčerpání paměti čítače výkonu. V takovém případě WCF zapíše chybu do protokolu událostí aplikace. Obsah chyba stavy nebyla načtena čítače výkonu, a položka obsahuje výjimku "System.InvalidOperationException: vlastní čítače souboru zobrazení je nedostatek paměti." Pokud je trasování povoleno na úrovni chyba, toto selhání je také trasovat. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování v používání aplikace WCF s čítače výkonu, které jsou povolené mohlo způsobit snížení výkonu. Pokud jste správce počítače, byste ho měli nakonfigurovat přidělit dostatek paměti pro podporu maximální počet čítače výkonu, které může existovat kdykoli.  
   
- Můžete změnit velikost paměti čítače výkonu pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] kategorií v registru. To pokud chcete udělat, je nutné přidat novou hodnotu DWORD s názvem `FileMappingSize` do tří následujících umístění a nastavte ji na požadovanou hodnotu v bajtech. Restartujte svůj počítač tak, aby se projevily změny.  
+ Můžete změnit velikost paměti čítače výkonu WCF kategorií v registru. To pokud chcete udělat, je nutné přidat novou hodnotu DWORD s názvem `FileMappingSize` do tří následujících umístění a nastavte ji na požadovanou hodnotu v bajtech. Restartujte svůj počítač tak, aby se projevily změny.  
   
 -   HKLM\System\CurrentControlSet\Services\ServiceModelEndpoint 4.0.0.0\Performance  
   
@@ -123,7 +123,7 @@ ServiceName@ServiceBaseAddress
 >  Pokud máte operaci duplicitní názvy na kontraktu, zobrazí pouze jedna instance čítače pro obě operace.  
   
 ## <a name="programming-the-wcf-performance-counters"></a>Programování čítače výkonu WCF  
- Několik souborů jsou nainstalovány ve složce instalace sady SDK, takže může získat přístup [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] čítače výkonu prostřednictvím kódu programu. Tyto soubory jsou uvedené následujícím způsobem.  
+ Několik souborů jsou nainstalovány ve složce instalace sady SDK, aby mohli používat čítače výkonu WCF prostřednictvím kódu programu. Tyto soubory jsou uvedené následujícím způsobem.  
   
 -   _ServiceModelEndpointPerfCounters.vrg  
   

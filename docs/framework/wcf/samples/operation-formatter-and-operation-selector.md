@@ -2,14 +2,14 @@
 title: Formátovací modul a selektor operace
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-ms.openlocfilehash: 469b7f2c99652cb6fceb2e8f12f1c74f0140b5ec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: db548e99c99ba6f29cc1c6e998d0e7485cd41046
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
-Tento příklad ukazuje, jak body rozšiřitelnosti Windows Communication Foundation (WCF) umožňuje povolit data zpráv do jiného formátu z co [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] očekává. Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formátování očekávat parametry metody, které mají být zahrnuty v části `soap:body` elementu. Ukázka ukazuje, jak implementovat vlastní operaci formátování, které analyzuje data parametr z řetězce dotazu HTTP GET místo a vyvolá metody pomocí tato data.  
+Tento příklad znázorňuje, jak body rozšiřitelnosti Windows Communication Foundation (WCF) umožňuje povolit data zpráv do jiného formátu z co WCF očekává. Ve výchozím nastavení, formátování WCF očekávat parametry metody, které mají být zahrnuty v části `soap:body` elementu. Ukázka ukazuje, jak implementovat vlastní operaci formátování, které analyzuje data parametr z řetězce dotazu HTTP GET místo a vyvolá metody pomocí tato data.  
   
  Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje `ICalculator` kontrakt služby. Ho ukazuje, jak přidat, odečíst násobkem a dělení zprávy můžete změnit tak, aby požadavky klienta na server pomocí metody GET protokolu HTTP a HTTP POST s POX zprávy pro klienta a serveru odpovědi.  
   
@@ -29,7 +29,7 @@ Tento příklad ukazuje, jak body rozšiřitelnosti Windows Communication Founda
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="key-concepts"></a>Klíčové koncepty  
- `QueryStringFormatter` -Formátovací modul je součástí v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] který zodpovídá za převodu zprávy na pole objektů parametr a pole objektů parametr do zprávy. To se provádí na straně klienta pomocí <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> rozhraní a na serveru s <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> rozhraní. Povolit uživatelům získat zprávy požadavku a odpovědi z těchto rozhraní `Serialize` a `Deserialize` metody.  
+ `QueryStringFormatter` -Formátovací modul je součástí WCF, která je odpovědná za převodu zprávy na pole objektů parametr a pole objektů parametr do zprávy. To se provádí na straně klienta pomocí <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> rozhraní a na serveru s <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> rozhraní. Povolit uživatelům získat zprávy požadavku a odpovědi z těchto rozhraní `Serialize` a `Deserialize` metody.  
   
  V této ukázce `QueryStringFormatter` implementuje obě tato rozhraní a je implementována na klientovi a serveru.  
   
@@ -59,10 +59,10 @@ Tento příklad ukazuje, jak body rozšiřitelnosti Windows Communication Founda
   
  <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> Je nastaven na <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace.  
   
- Ve výchozím nastavení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] používá filtr adres přesnou shodu. Identifikátor URI na příchozí zpráva obsahuje příponu názvu operaci následuje řetězec dotazu, který obsahuje parametr data, takže chování koncového bodu také změní filtr adres jako předponu odpovídají filtru. Použije [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> pro tento účel.  
+ Ve výchozím nastavení používá WCF filtr adres přesnou shodu. Identifikátor URI na příchozí zpráva obsahuje příponu názvu operaci následuje řetězec dotazu, který obsahuje parametr data, takže chování koncového bodu také změní filtr adres jako předponu odpovídají filtru. Používá WCF<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> pro tento účel.  
   
 ### <a name="installing-operation-formatters"></a>Instalace operace formátování  
- Operace chování, které určují formátovací moduly jsou jedinečné. Jeden takové chování je vždy implementováno ve výchozím nastavení pro každou operaci vytvoření formátování potřebné operace. Ale tyto chování vypadat podobně jako jakékoli jiné operace chování; nejsou osobní jiných atributem. K instalaci nahrazení chování, implementace vyhledejte konkrétní formátování chování, které jsou nainstalované ve [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] typ zavaděč ve výchozím nastavení a nahraďte ji nebo přidat kompatibilní chování má spustit po výchozí chování.  
+ Operace chování, které určují formátovací moduly jsou jedinečné. Jeden takové chování je vždy implementováno ve výchozím nastavení pro každou operaci vytvoření formátování potřebné operace. Ale tyto chování vypadat podobně jako jakékoli jiné operace chování; nejsou osobní jiných atributem. K instalaci nahrazení chování, musí implementace vypadat pro konkrétní formátování chování, které jsou nainstalované ve WCF typ zavaděč ve výchozím nastavení a buď ho nahradit nebo přidejte kompatibilní chování má spustit po výchozí chování.  
   
  Tyto operace formátování chování se dá nastavit prostřednictvím kódu programu před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> nebo zadáním operaci chování, které se spustí až po výchozí nastavení. Ale ji nelze snadno nastavit tak, že chování koncového bodu (a proto konfigurace) protože modelu chování neumožňuje chování k upravit popis stromové struktuře a nahradit jiného chování.  
   

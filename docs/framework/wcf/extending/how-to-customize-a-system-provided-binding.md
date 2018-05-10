@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
-ms.openlocfilehash: 40efa49836561351dc14c2cb49d906a6d344a5bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 04b81689d7d625d519a0a9fc8b1fa6df3df16ada
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>Postupy: přizpůsobení vazby poskytované systémem
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti. Toto téma ukazuje, jak nastavit vlastnosti u elementů vazby k vytvoření vlastní vazby.  
@@ -18,7 +18,7 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
  Další informace o vytváření a rozšíření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
   
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] všechny vazby jsou tvořeny *elementů vazby*. Každý prvek vazba je odvozena z <xref:System.ServiceModel.Channels.BindingElement> třídy. Vazby poskytované systémem, jako <xref:System.ServiceModel.BasicHttpBinding> vytvořit a nakonfigurovat vlastní prvky vazeb. Toto téma ukazuje, jak získávat přístup a měnit vlastnosti z těchto elementů vazby, které nejsou přímo přístupné na vazby; Konkrétně <xref:System.ServiceModel.BasicHttpBinding> třídy.  
+ Ve službě WCF se všechny vazby jsou složená z *elementů vazby*. Každý prvek vazba je odvozena z <xref:System.ServiceModel.Channels.BindingElement> třídy. Vazby poskytované systémem, jako <xref:System.ServiceModel.BasicHttpBinding> vytvořit a nakonfigurovat vlastní prvky vazeb. Toto téma ukazuje, jak získávat přístup a měnit vlastnosti z těchto elementů vazby, které nejsou přímo přístupné na vazby; Konkrétně <xref:System.ServiceModel.BasicHttpBinding> třídy.  
   
  Prvky jednotlivé vazby jsou obsaženy v kolekci reprezentována <xref:System.ServiceModel.Channels.BindingElementCollection> třídy a přidají se v tomto pořadí: toku transakcí, spolehlivé relace, zabezpečení, složené duplexní, jednosměrné, zabezpečení datového proudu, kódování zpráv a přenosu. Všimněte si, že ne všechny prvky vazby uvedené jsou potřeba v každé vazby. Uživatelem definované vazby elementy může zobrazit i v této kolekci elementů vazby a musí se nacházet ve stejném pořadí jako výše popsané. Uživatelem definované přenos například musí být posledním prvkem kolekce elementů vazby.  
   

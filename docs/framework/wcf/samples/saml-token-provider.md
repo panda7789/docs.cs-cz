@@ -2,22 +2,22 @@
 title: Zprostředkovatel tokenů zabezpečení SAML
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 56c432b0874f59fed87c0d892732422161d668ed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 519bde6b2849328efdeb2f295bde4749fbb652ca
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="saml-token-provider"></a>Zprostředkovatel tokenů zabezpečení SAML
-Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele tokenu SAML. Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) se používá pro zadávání přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také se dodává s [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
+Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele tokenu SAML. Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) se používá pro zadávání přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. WCF se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. Dodává se také s WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
 -   Pokud máte úložiště přihlašovacích údajů, která tyto poskytovatele tokenů nemůže pracovat s.  
   
--   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel nabízí podrobné informace do kdy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework klienta používá přihlašovací údaje.  
+-   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel poskytuje podrobnosti pro případ použití rozhraní klienta WCF přihlašovací údaje.  
   
 -   Pokud vytváříte vlastní token.  
   
- Tento příklad ukazuje, jak vytvořit vlastní zprostředkovatele tokenů, který umožňuje získat z mimo tokenu SAML [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework klienta, který se má použít.  
+ Tento příklad ukazuje, jak vytvořit vlastní zprostředkovatele tokenů, který umožňuje získat z mimo rozhraní klienta WCF pro použití tokenu SAML.  
   
  Tento příklad znázorňuje to Shrneme, následující:  
   
@@ -25,7 +25,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
   
 -   Jak lze předat tokenu SAML přihlašovací údaje vlastního klienta.  
   
--   Jak se poskytují tokenu SAML [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework klienta.  
+-   Jak tokenu SAML zajišťuje rozhraní klienta WCF.  
   
 -   Jak server ověření klienta pomocí certifikátu X.509 serveru.  
   
@@ -110,7 +110,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
 </system.serviceModel>  
 ```  
   
- Následující kroky ukazují, jak vytvořit vlastní zprostředkovatele tokenu SAML a integrovat s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: framework zabezpečení:  
+ Následující kroky ukazují, jak vytvořit vlastní zprostředkovatele tokenu SAML a integraci s použitím technologie WCF: framework zabezpečení:  
   
 1.  Napište vlastní zprostředkovatele tokenu SAML.  
   

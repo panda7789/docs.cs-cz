@@ -2,11 +2,11 @@
 title: Proces schválení dokumentu
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: b1ef35f5a96399b669f0cda039bf1f6dd0fde979
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c28dafd3b0a1cb6dbee37fed2b3df8923ccd82c8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="document-approval-process"></a>Proces schválení dokumentu
 Tento příklad znázorňuje použití mnoha funkcí Windows Workflow Foundation (WF) a Windows Communication Foundation (WCF) společně. Společně se implementaci procesu scénáře schválení dokumentu. Klientská aplikace může odesílat dokumenty k schválení a schválit dokumenty. Aplikace Správce schválení existuje pro usnadnění komunikace mezi klienty a vynucování pravidel procesu schvalování. Proces schválení je pracovní postup, který můžete spustit několik typů schválení. Aktivity existovat získat jeden schválení, schválení kvora (procento sadu schvalovatelů) a komplexní schválení proces, který se skládá z jedné schválení v pořadí a kvora.  
@@ -29,7 +29,7 @@ Tento příklad znázorňuje použití mnoha funkcí Windows Workflow Foundation
   
 1.  Klient jako odběratel u být uživatelem v systému procesu schvalování.  
   
-2.  A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient odešle [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba hostovaná společností aplikace schválení správce.  
+2.  Klienta WCF odešle do služby WCF hostované aplikace schválení správce.  
   
 3.  Jedinečné ID uživatele je vrácen do klienta. Klienta můžete nyní účastnit schvalovací procesy.  
   
@@ -47,19 +47,19 @@ Tento příklad znázorňuje použití mnoha funkcí Windows Workflow Foundation
   
 10. Klient může obdrží žádost o schválení a odpovědět na požadavek v libovolném bodě v čase.  
   
-11. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby hostované na straně klienta může přijímat žádost o schválení od správce aplikace schválení.  
+11. Služby WCF hostované na straně klienta může přijímat žádost o schválení od správce aplikace schválení.  
   
 12. Dokument informace jsou poskytovány na straně klienta ke kontrole.  
   
 13. Uživatele můžete schválit nebo odmítnout dokumentu.  
   
-14. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta se používá k odeslání odpovědi schválení zpět do aplikace schválení správce.  
+14. Klienta WCF se používá k odesílání odpověď na žádost o zpět do aplikace schválení správce.  
   
  Z aplikace schválení správce schválení procesu funkce následujícím způsobem:  
   
 1.  Klient požádá o zapojit do procesu systému schválení.  
   
-2.  A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby schválení správcem obdrží žádost jako součást procesu systému schválení.  
+2.  Služby WCF na schválení správce přijme požadavek jako součást procesu systému schválení.  
   
 3.  Jedinečné ID se generuje pro klienta. Uživatelské informace jsou uloženy v databázi.  
   

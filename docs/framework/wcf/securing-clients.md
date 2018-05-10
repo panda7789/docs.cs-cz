@@ -6,17 +6,17 @@ helpviewer_keywords:
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 34e7a3721fc70b5c418f0e473e09d9dacc8d9f15
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: dfbe1fcce8a3b860e88dae4f5af43adfedbe9890
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená službu určuje jakém režimu zabezpečení používat a jestli klient musí poskytnout přihlašovací údaje. Proces zabezpečení klienta, proto je jednoduchý: použijte metadata získat ze služby (Pokud je publikována) a sestavení klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadejte pověření, je nutné získat přihlašovací údaje, které vyhovuje požadavku. Toto téma popisuje proces podrobněji. Další informace o vytvoření zabezpečeného služby najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
   
 ## <a name="the-service-specifies-security"></a>Služba určuje zabezpečení  
- Ve výchozím nastavení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vazby mají povolené funkce zabezpečení. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>.) Proto pokud služba byla vytvořena pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], existuje větší pravděpodobnost, že je provede zabezpečení, ověřování, důvěrnost a integrita. V takovém případě metadat, které poskytuje služba označí, co vyžaduje vytvořit zabezpečený komunikační kanál. Pokud metadata služby neobsahuje žádné požadavky na zabezpečení, neexistuje žádný způsob, jak ukládat zabezpečení schématu, jako je například vrstvy SSL (Secure Sockets) prostřednictvím protokolu HTTP, ve službě. Pokud však služba vyžaduje, aby klient k zadání pověření, pak klient developer, nástroje pro nasazení nebo správce musíte zadat skutečné pověření, které bude klient používat ke svému ověření ke službě.  
+ Vazby WCF mají ve výchozím nastavení povolena funkce zabezpečení. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>.) Proto pokud služba byla vytvořena pomocí WCF, existuje větší pravděpodobnost, že ji provede zabezpečení, ověřování, důvěrnost a integrita. V takovém případě metadat, které poskytuje služba označí, co vyžaduje vytvořit zabezpečený komunikační kanál. Pokud metadata služby neobsahuje žádné požadavky na zabezpečení, neexistuje žádný způsob, jak ukládat zabezpečení schématu, jako je například vrstvy SSL (Secure Sockets) prostřednictvím protokolu HTTP, ve službě. Pokud však služba vyžaduje, aby klient k zadání pověření, pak klient developer, nástroje pro nasazení nebo správce musíte zadat skutečné pověření, které bude klient používat ke svému ověření ke službě.  
   
 ## <a name="obtaining-metadata"></a>Získávání metadat  
  Při vytváření klienta, je použít k získání metadata pro službu, která bude klient komunikovat s prvním krokem. Tento krok můžete provést dvěma způsoby. První, pokud služba publikuje koncový bod metadat exchange (MEX) nebo jeho metadata zpřístupní protokol HTTP nebo HTTPS, si můžete stáhnout pomocí metadat [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md), který generuje obě soubory kódu pro klienta, jakož i konfigurační soubor. (Další informace o použití nástroje najdete v tématu [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).) Pokud službu nepublikuje koncový bod MEX a také zpřístupnění jeho metadata protokol HTTP nebo HTTPS, musí obrátíte creator služby dokumentace, která popisuje požadavky na zabezpečení a metadata.  

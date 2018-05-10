@@ -2,11 +2,11 @@
 title: Odstraňování problémů v kurzu Začínáme
 ms.date: 03/30/2017
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
-ms.openlocfilehash: 863e9dd1253624c025e830f589068068cb996413
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 12812bd1ef88eab14a8defed0b71657b0d33c618
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="troubleshooting-the-getting-started-tutorial"></a>Odstraňování problémů v kurzu Začínáme
 Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednictvím kurzu Začínáme a způsob jejich řešení.  
@@ -31,7 +31,7 @@ Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednict
   
 <a name="BKMK_q2"></a>   
 ## <a name="attempting-to-run-the-service-application-http-could-not-register-url-http8000servicemodelsamplesservice-your-process-does-not-have-access-rights-to-this-namespace"></a>Probíhá pokus o spuštění služby aplikace: HTTP nebylo možné zaregistrovat URL http://+:8000/ServiceModelSamples/Service/. Váš proces nemá přístupová práva na tento obor názvů.  
- Proces, který je hostitelem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby musí být spuštěna s oprávněními správce. Pokud používáte službu z uvnitř [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] musíte spustit [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] jako správce. Klepněte na tlačítko **spustit**, klikněte pravým tlačítkem na [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a vyberte **spustit jako správce**. Pokud používáte službu z příkazového řádku řádku je nutné spustit okně příkazového řádku jako správce podobným způsobem. Klikněte na tlačítko **spustit**, klikněte pravým tlačítkem na **příkazového řádku** a vyberte **spustit jako správce**.  
+ Proces, který je hostitelem služby WCF, musí být spuštěn s oprávněními správce. Pokud používáte službu z uvnitř [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] musíte spustit [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] jako správce. Klepněte na tlačítko **spustit**, klikněte pravým tlačítkem na [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a vyberte **spustit jako správce**. Pokud používáte službu z příkazového řádku řádku je nutné spustit okně příkazového řádku jako správce podobným způsobem. Klikněte na tlačítko **spustit**, klikněte pravým tlačítkem na **příkazového řádku** a vyberte **spustit jako správce**.  
   
 <a name="BKMK_q3"></a>   
 ## <a name="attempting-to-use-the-svcutilexe-tool-svcutil-is-not-recognized-as-an-internal-or-external-command-operable-program-or-batch-file"></a>Pokus o použití nástroje Svcutil.exe: 'svcutil' nebyl rozpoznán jako vnitřního ani vnějšího příkazu, spustitelného programu nebo dávkového souboru.  

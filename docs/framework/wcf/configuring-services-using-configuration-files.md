@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: abfe502c6b50234037cad786a658edc3d479cc9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 19ba0e585dfdd2ee47781b04a3d1a5bbdba60371
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem vám umožní poskytovat koncový bod a data o chování služby v okamžiku nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
   
- A [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba je konfigurovatelná pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] technologie konfigurace. Nejčastěji, jsou přidány elementy XML v souboru Web.config pro stránku Internetové informační služby (IIS), který je hostitelem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Prvky umožňují změnit podrobnosti, například adresy koncových bodů (skutečná adresami používaný ke komunikaci se službou) na základě počítače podle počítače. Kromě toho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] obsahuje několik poskytované systémem prvky, které vám umožní rychle vybrat nejzákladnější funkce pro služby. Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] se dodává s nový model výchozí konfigurace, který zjednodušuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] požadavky na konfiguraci. Pokud nezadáte žádné [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurace pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s některými standardní koncové body a výchozí chování nebo vazby. V praxi, zápis konfigurace je hlavní část programování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikací.  
+ Služby WCF je konfigurovatelná pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] technologie konfigurace. Nejčastěji jsou přidány elementy XML v souboru Web.config pro stránku Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, například adresy koncových bodů (skutečná adresami používaný ke komunikaci se službou) na základě počítače podle počítače. Kromě toho WCF obsahuje několik poskytované systémem prvky, které vám umožní rychle vybrat nejzákladnější funkce pro službu. Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], WCF se dodává s nový model výchozí konfigurace, která zjednodušuje požadavky na konfiguraci WCF. Pokud nezadáte žádnou konfiguraci WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s některými standardní koncové body a výchozí chování nebo vazby. V praxi, zápis konfigurace je hlavním součástí programování WCF aplikací.  
   
  Další informace najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md). Seznam nejčastějších běžně používané elementy, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
@@ -21,7 +21,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 >  Při nasazení scénářů vedle sebe, kde se nasadí dvě různé verze služby, je nutné zadat částečné názvy sestavení odkazovaných v konfiguračních souborech. Je to proto, že konfigurační soubor je sdílena mezi všemi verzemi služby a může být spuštěno různé verze rozhraní .NET Framework.  
   
 ## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Soubor Web.config a App.config  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá System.Configuration konfigurace systému [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+ WCF používá System.Configuration konfigurace systému [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
   
  Při konfiguraci služby v sadě Visual Studio, použijte soubor Web.config nebo App.config soubor můžete nakonfigurovat nastavení. Volba název konfiguračního souboru je určen podle hostitelského prostředí, které zvolíte pro službu. Pokud používáte k hostování služby IIS, použijte soubor Web.config. Pokud používáte jiné hostitelské prostředí, můžete používejte soubor App.config.  
   
@@ -115,7 +115,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
  [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
 ## <a name="how-to-use-binding-and-behavior-configurations"></a>Jak používat vazby a konfigurace chování  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje snadno sdílet konfigurace mezi koncovými body pomocí referenčního systému v konfiguraci. Namísto přímo přiřazení hodnoty konfigurace pro koncový bod, konfigurace související se vazby hodnoty jsou seskupené v `bindingConfiguration` elementů v `<binding>` oddílu. Konfigurace vazeb je pojmenovanou skupinu nastavení u vazby. Koncové body pak můžete odkazovat `bindingConfiguration` podle názvu.  
+ WCF umožňuje snadno sdílet konfigurace mezi koncovými body pomocí referenčního systému v konfiguraci. Namísto přímo přiřazení hodnoty konfigurace pro koncový bod, konfigurace související se vazby hodnoty jsou seskupené v `bindingConfiguration` elementů v `<binding>` oddílu. Konfigurace vazeb je pojmenovanou skupinu nastavení u vazby. Koncové body pak můžete odkazovat `bindingConfiguration` podle názvu.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

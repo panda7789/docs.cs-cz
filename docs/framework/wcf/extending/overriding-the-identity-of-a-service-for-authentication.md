@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: 6fbdd7f09c7ae15368972afbce896c5ecb39ccbe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3df1f2490f8636d52ac75fad2469adadec2a57da
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
 Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření klienta Určuje typ identity vystavené v metadatech služby. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut systému Windows.  
@@ -30,9 +30,9 @@ Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření k
 > [!NOTE]
 >  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, služby uživatelský účet musí mít přístup k hlavní název služby, která je zaregistrovaná u domény služby Active Directory. Můžete provést těmito způsoby:  
   
--   Použití účtu NetworkService nebo LocalSystem ke spouštění služby. Protože tyto účty mít přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] automaticky vygeneruje správné element SPN uvnitř koncový bod služby v metadatech služby (WSDL).  
+-   Použití účtu NetworkService nebo LocalSystem ke spouštění služby. Vzhledem k tomu, že tyto účty přístupu k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje správné element SPN uvnitř koncový bod služby v metadatech služby (WSDL).  
   
--   Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě vytvořte název SPN pro účet domény, což lze provést pomocí nástroje Setspn.exe nástroj. Jakmile vytvoříte název SPN pro účet služby, konfigurace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] publikovat tento hlavní název služby klientům služby prostřednictvím jeho metadata (WSDL). To se provádí nastavením identitu koncového bodu pro zveřejněné koncový bod, buď prostřednictvím konfiguračního souboru aplikace nebo kódu.  
+-   Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě vytvořte název SPN pro účet domény, což lze provést pomocí nástroje Setspn.exe nástroj. Jakmile vytvoříte název SPN pro účet služby, nakonfigurujte WCF publikovat tento hlavní název služby klientům služby prostřednictvím jeho metadata (WSDL). To se provádí nastavením identitu koncového bodu pro zveřejněné koncový bod, buď prostřednictvím konfiguračního souboru aplikace nebo kódu.  
   
  Další informace o SPN, protokol Kerberos a služby Active Directory, naleznete v části [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330).  
   
@@ -59,7 +59,7 @@ Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření k
   
   
 ### <a name="setting-identity-programmatically"></a>Nastavení Identity prostřednictvím kódu programu  
- Služby není nutné explicitně zadat svou identitu, protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] automaticky určuje ho. Ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vám umožní určit identity na koncový bod, pokud je to nutné. Následující kód přidá nový koncový bod služby s konkrétní identity DNS.  
+ Služby není nutné explicitně zadat svou identitu, protože WCF automaticky určuje. Však WCF umožňuje zadat identity na koncový bod, pokud je to nutné. Následující kód přidá nový koncový bod služby s konkrétní identity DNS.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  

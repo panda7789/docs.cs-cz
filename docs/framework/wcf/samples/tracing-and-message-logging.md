@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 5f0cca66798a9d84b01c9fde1147c28f14a953db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 13d23c0f69c65dd3bd6b2714dd710eb7f97a1c07
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="tracing-and-message-logging"></a>Trasování a protokolování zpráv
 Tento příklad znázorňuje postup povolení trasování a protokolování zpráv. Výsledné trasování a protokolů zpráv jsou zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -17,7 +17,7 @@ Tento příklad znázorňuje postup povolení trasování a protokolování zpr�
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="tracing"></a>Trasování  
- Windows Communication Foundation (WCF) používá mechanismus trasování definovaný v <xref:System.Diagnostics> oboru názvů. V tomto modelu trasování dat trasování je produkovaný trasování zdrojů, které implementují aplikace. Každý zdroj je identifikována názvem. Trasování uživatelé vytváří trasování – moduly naslouchání pro trasování zdrojů, pro které se chcete získat informace. Pro příjem dat trasování, je nutné vytvořit naslouchací proces pro zdroj trasování. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tento krok můžete provést přidáním následující kód do buď služby nebo klienta konfigurační soubor nastavením zdroj trasování modelu služby `switchValue`:  
+ Windows Communication Foundation (WCF) používá mechanismus trasování definovaný v <xref:System.Diagnostics> oboru názvů. V tomto modelu trasování dat trasování je produkovaný trasování zdrojů, které implementují aplikace. Každý zdroj je identifikována názvem. Trasování uživatelé vytváří trasování – moduly naslouchání pro trasování zdrojů, pro které se chcete získat informace. Pro příjem dat trasování, je nutné vytvořit naslouchací proces pro zdroj trasování. Ve službě WCF, to můžete provést přidáním následující kód do konfiguračního souboru služby nebo klienta nastavením zdroj trasování modelu služby `switchValue`:  
   
 ```xml  
 <system.diagnostics>  
@@ -55,12 +55,12 @@ Tento příklad znázorňuje postup povolení trasování a protokolování zpr�
   
 -   Korelovat aktivity prostřednictvím přenosů a šíření.  
   
--   Snížit náklady na výkon [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] trasování (například disk místo náklady souboru protokolu).  
+-   Snížit náklady na výkon trasování WCF (například místo na disku v souboru protokolu).  
   
  Další informace o trasování aktivity definovaný uživatelem, najdete v tématu [rozšíření trasování](../../../../docs/framework/wcf/samples/extending-tracing.md) ukázka.  
   
 ## <a name="message-logging"></a>Protokolování zpráv  
- Protokolování zpráv se dá nastavit klienta a služby všech [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Pokud chcete povolit protokolování zpráv, musíte přidat následující kód u klienta nebo služby:  
+ Jak na klientovi a všechny aplikace WCF je služba se dá zapnout protokolování zpráv. Pokud chcete povolit protokolování zpráv, musíte přidat následující kód u klienta nebo služby:  
   
 ```xml  
 <configuration>  

@@ -2,11 +2,11 @@
 title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 1573cdafafb5861099b275caa888c79d23cafeb1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 7105c66153625b4a7a2b9a2d61a2ab2821cab2af
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tento příklad znázorňuje, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě žádosti a odpovědi. Tato ukázka používá – msmqIntegrationBinding vazby. Služba je v tomto případě vlastním hostováním konzolovou aplikaci, abyste mohli pozorovat, že služby, která přijímá zprávy zařazené do fronty. K  
@@ -64,9 +64,9 @@ public class OrderProcessorService : IOrderProcessor
 }  
 ```
 
- Služba používá vlastní klienta `OrderResponseClient` k odeslání zprávy služby MSMQ do fronty. Vzhledem k tomu, že je aplikace, který obdrží a zpracuje zprávy aplikací služby MSMQ a ne [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, neexistuje žádný kontrakt implicitní služby mezi těmito dvěma aplikacemi. Proto nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.  
+ Služba používá vlastní klienta `OrderResponseClient` k odeslání zprávy služby MSMQ do fronty. Protože aplikace, která přijímá a zpracovává zprávy služby MSMQ aplikace a aplikace WCF, už není žádná kontrakt implicitní služby mezi těmito dvěma aplikacemi. Proto nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.  
   
- Vlastní proxy server je v podstatě stejný pro všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace, které používají `msmqIntegrationBinding` vazby k odesílání zpráv. Na rozdíl od jiných proxy nebude obsahovat celou řadu operací služby. Je zpráva operaci odeslání jenom.  
+ Vlastní proxy server je v podstatě stejný pro všechny aplikace WCF, které používají `msmqIntegrationBinding` vazby k odesílání zpráv. Na rozdíl od jiných proxy nebude obsahovat celou řadu operací služby. Je zpráva operaci odeslání jenom.  
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -212,7 +212,7 @@ static void PlaceOrder()
  Frontu MSMQ, ve kterém jsou přijaty odpovědi pořadí je zadána v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázka konfigurace.  
   
 > [!NOTE]
->  Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Adresa koncového bodu určuje schématu msmq.formatname a používá "localhost" pro místní počítač. Název formátu správně vytvořená následuje msmq.formatname v identifikátoru URI podle pokynů služby MSMQ.  
+>  Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. Adresa koncového bodu WCF určuje msmq.formatname schématu a používá "localhost" pro místní počítač. Název formátu správně vytvořená následuje msmq.formatname v identifikátoru URI podle pokynů služby MSMQ.  
   
 ```xml  
 <appSettings>  

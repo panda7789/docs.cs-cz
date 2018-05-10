@@ -8,16 +8,16 @@ helpviewer_keywords:
 - cryptographic provider [WCF], changing
 - cryptographic provider [WCF]
 ms.assetid: b4254406-272e-4774-bd61-27e39bbb6c12
-ms.openlocfilehash: be6033efc03e25967af8bbb3266b0f60df02eaba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 633e87bca302adc0963e1bf52d2470c9dbae81a5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificate39s-private-key"></a>Postupy: Změna zprostředkovatele kryptografických služeb pro certifikát X.509&#39;s privátním klíčem
 Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb používá k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do zabezpečení systému Windows Communication Foundation (WCF). Další informace o používání certifikátů najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Zabezpečení framework poskytuje způsob, jak zavést nové typy tokenů zabezpečení, jak je popsáno v [postupy: vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md). Je také možné použít vlastní token k nahrazení stávající poskytované systémem typy tokenů.  
+ Zabezpečení rozhraní WCF poskytuje způsob, jak zavést nové typy tokenů zabezpečení, jak je popsáno v [postupy: vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md). Je také možné použít vlastní token k nahrazení stávající poskytované systémem typy tokenů.  
   
  V tomto tématu se token zabezpečení poskytované systémem X.509 nahrazuje token vlastní X.509, který poskytuje jinou implementaci pro privátní klíč certifikátu. To je užitečné v situacích, kdy skutečná privátní klíč poskytuje různé zprostředkovatele kryptografických služeb než výchozí Windows zprostředkovatele kryptografických služeb. Příkladem alternativního zprostředkovatele kryptografických služeb je modul hardwarového zabezpečení, který provede všechny privátní klíče související kryptografických operací a privátní klíče nejsou uložené v paměti, a zlepšit zabezpečení systému.  
   
@@ -32,9 +32,9 @@ Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb pou
   
 2.  Přepsání <xref:System.IdentityModel.Tokens.SecurityKey.KeySize%2A> vlastnost určenou jen pro čtení. Tato vlastnost vrátí skutečná velikost klíče certifikátu pár veřejného a privátního klíče.  
   
-3.  Přepsání <xref:System.IdentityModel.Tokens.SecurityKey.DecryptKey%2A> metoda. Tato metoda je volána [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework zabezpečení k dešifrování symetrického klíče s privátním klíčem certifikátu. (Klíč byl dříve zašifrován pomocí veřejného klíče certifikátu.)  
+3.  Přepsání <xref:System.IdentityModel.Tokens.SecurityKey.DecryptKey%2A> metoda. Tato metoda je volána rámcem zabezpečení WCF k dešifrování symetrického klíče s privátním klíčem certifikátu. (Klíč byl dříve zašifrován pomocí veřejného klíče certifikátu.)  
   
-4.  Přepsání <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm%2A> metoda. Tato metoda je volána [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework zabezpečení získat instanci <xref:System.Security.Cryptography.AsymmetricAlgorithm> třídu, která představuje zprostředkovatele kryptografických služeb pro buď privátního nebo veřejného klíče certifikátu, v závislosti na parametrech předaný metodě.  
+4.  Přepsání <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm%2A> metoda. Tato metoda je volána rámcem zabezpečení WCF získat instanci <xref:System.Security.Cryptography.AsymmetricAlgorithm> třídu, která představuje zprostředkovatele kryptografických služeb pro buď privátního nebo veřejného klíče certifikátu, v závislosti na parametrech předaný metodě.  
   
 5.  Volitelné. Přepsání <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature%2A> metoda. Potlačí tuto metodu, pokud na různé implementace <xref:System.Security.Cryptography.HashAlgorithm> je vyžadován.  
   
@@ -45,7 +45,7 @@ Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb pou
      [!code-csharp[c_CustomX509Token#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#1)]
      [!code-vb[c_CustomX509Token#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#1)]  
   
- Následující postup ukazuje, jak integrovat vlastní X.509 zabezpečení asymetrického klíče implementace vytvořili v předchozím postupu se [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework zabezpečení, aby bylo možné nahradit token zabezpečení poskytované systémem X.509.  
+ Následující postup ukazuje, jak integrovat vlastní X.509 zabezpečení asymetrického klíče implementace vytvořen v předchozím postupu s framework zabezpečení WCF, chcete-li nahradit X.509 zabezpečení poskytované systémem tokenu.  
   
 #### <a name="to-replace-the-system-provided-x509-security-token-with-a-custom-x509-asymmetric-security-key-token"></a>Nahradit token zabezpečení poskytované systémem X.509 vlastní X.509 asymetrického klíče token zabezpečení  
   

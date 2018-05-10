@@ -2,11 +2,11 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: ab414cb5535ce2b9062520c9d82e139ebdfc04c4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4dc8cc2a3c6d9178f6507c87ae512a8929bd1380
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služby WAS (Windows), které se načítají z fronty zpráv. Této ukázce se používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) ukázka. Služba je v tomto případě hostované webové aplikace a klient se hostuje sama a výstupy ke konzole sledovat stav nákupních objednávek odeslána.  
@@ -19,11 +19,11 @@ Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služb
 >   
 >  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  Pokud tento adresář neexistuje, přejděte do Windows Communication Foundation (WCF) HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] ke stažení všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte do Windows Communication Foundation (WCF) HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] ke stažení všechny WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
- Proces aktivace služby WAS (Windows), nový mechanismus aktivace procesů pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)], poskytuje službě IIS jako funkce, které byly dřív dostupné jenom pro aplikace založené na protokolu HTTP pro aplikace, které pomocí jiných protokolů než HTTP. Windows Communication Foundation (WCF) používá ke komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje rozhraní adaptér naslouchání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], jako jsou například TCP, pojmenované kanály a služby MSMQ. Funkce pro přijímání požadavků pomocí jiných protokolů než HTTP je hostován spravované služby systému Windows, které jsou spuštěny v SMSvcHost.exe.  
+ Proces aktivace služby WAS (Windows), nový mechanismus aktivace procesů pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)], poskytuje službě IIS jako funkce, které byly dřív dostupné jenom pro aplikace založené na protokolu HTTP pro aplikace, které pomocí jiných protokolů než HTTP. Windows Communication Foundation (WCF) používá rozhraní adaptér naslouchání pro komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby MSMQ. Funkce pro přijímání požadavků pomocí jiných protokolů než HTTP je hostován spravované služby systému Windows, které jsou spuštěny v SMSvcHost.exe.  
   
  Adaptér naslouchání Net.Msmq služby (NetMsmqActivator) aktivuje zařazených do fronty aplikací založených na zprávy ve frontě.  
   
@@ -83,7 +83,7 @@ public class OrderProcessorService : IOrderProcessor
  Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definovaný v oddílu System.serviceModel konfiguračního souboru.  
   
 > [!NOTE]
->  Adresu název a koncový bod služby MSMQ fronty pomocí mírně odlišné adresování konvence. Název fronty služby MSMQ používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Adresa koncového bodu určuje net.msmq: schéma, používá "localhost" pro místní počítač a v jeho cesty používá lomítka. Čtení z fronty, která je hostována na vzdáleném počítači, nahraďte "." a "localhost" pro název vzdáleného počítače.  
+>  Adresu název a koncový bod služby MSMQ fronty pomocí mírně odlišné adresování konvence. Název fronty služby MSMQ používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. Adresa koncového bodu WCF určuje net.msmq: schéma, používá "localhost" pro místní počítač a v jeho cesty používá lomítka. Čtení z fronty, která je hostována na vzdáleném počítači, nahraďte "." a "localhost" pro název vzdáleného počítače.  
   
  .Svc soubor s názvem třídy se používá k hostování kódu služby ve WAS.  
   
@@ -215,7 +215,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná, jako je povinný aktivace WAS.  
   
-2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je nutné nainstalovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Aktivace jiným protokolem než HTTP součásti:  
+2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat součásti Aktivace jiným protokolem než HTTP WCF:  
   
     1.  Z **spustit** nabídce zvolte **ovládací panely**.  
   

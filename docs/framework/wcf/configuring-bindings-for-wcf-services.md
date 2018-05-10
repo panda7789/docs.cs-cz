@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-ms.openlocfilehash: 8fcb2fbf49984ce2b6aaf1f112575d05a3d7d038
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b91c8ff5a78ef2b2b2db5ea26ae7a1733a97ffd0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Konfigurace vazeb pro služby Windows Communication Foundation
 Při vytváření aplikace, budete chtít často odložení rozhodnutí, která správci po nasazení aplikace. Například je často žádný způsob, jak předem zjistit, co služba adresu nebo identifikátor URI (Uniform Resource), bude. Místo pevně kódováno adresu, je vhodnější umožňují správcům udělat po vytvoření služby. Tato možnost se provádí prostřednictvím konfigurace.  
@@ -39,9 +39,9 @@ Při vytváření aplikace, budete chtít často odložení rozhodnutí, která 
   
  Například zadání [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element označuje na používání protokolu HTTP jako přenosu pro koncový bod. To se používá k přenosu do koncového bodu v době běhu, když je otevřen služby pomocí tento koncový bod.  
   
- Existují dva typy vazeb: předdefinované a vlastní. Předdefinované vazby obsahovat užitečné kombinace elementů, které se používají v běžné scénáře. Pro seznam předdefinovaných vazby typy, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Pokud žádná vazba předdefinované kolekce má správnou kombinaci funkcí, které potřebuje aplikace služby, můžete vytvořit vlastní vazby splnění aplikace. Další informace o vlastních vazeb najdete v tématu [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+ Existují dva typy vazeb: předdefinované a vlastní. Předdefinované vazby obsahovat užitečné kombinace elementů, které se používají v běžné scénáře. Seznam předdefinovaných vazby typy, které poskytuje WCF najdete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Pokud žádná vazba předdefinované kolekce má správnou kombinaci funkcí, které potřebuje aplikace služby, můžete vytvořit vlastní vazby splnění aplikace. Další informace o vlastních vazeb najdete v tématu [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
- Následující čtyři příklady ilustrují nejběžnější konfigurace vazby používá pro nastavení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
+ Následující čtyři příklady ilustrují nejběžnější konfigurace vazby používá pro nastavení služby WCF.  
   
 #### <a name="specifying-an-endpoint-to-use-a-binding-type"></a>Určení použít typ vazby koncového bodu  
  V prvním příkladu znázorňuje, jak zadat koncovým bodem nakonfigurovaným s adresu, kontrakt a vazbu.  

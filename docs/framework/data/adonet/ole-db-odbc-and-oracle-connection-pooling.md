@@ -2,11 +2,11 @@
 title: OLE DB, rozhraní ODBC a Oracle připojení sdružování
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: 2e42b52bb75008fd34f3e4bef1788626d96368bc
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5b70f6aeeae565684158aeb135d0d3e765e694d1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>OLE DB, rozhraní ODBC a Oracle připojení sdružování
 Sdružování připojení může výrazně zvýšit výkon a škálovatelnost vaší aplikace. Tato část popisuje sdružování pro zprostředkovatele dat .NET Framework pro OLE DB, rozhraní ODBC a Oracle.  
@@ -26,8 +26,6 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
  Sdružování připojení pro zprostředkovatele dat .NET Framework pro ODBC je spravovat pomocí Správce ovladačů ODBC používaný pro připojení a nemá vliv zprostředkovatele dat .NET Framework pro ODBC.  
   
  Chcete-li povolit nebo zakázat sdružování připojení, otevřete **správce zdrojů dat ODBC** ve složce Nástroje pro správu v Ovládacích panelech. **Sdružování připojení** kartě můžete zadat parametry pro každý nainstalovaný ovladač ODBC sdružování připojení. Všimněte si, že změny sdružování připojení pro určitý ovladač ODBC ovlivní všechny aplikace, které používají tento ovladač ODBC.  
-  
- Další informace o sdružování připojení ODBC najdete v tématu [informace: často výzva otázky o sdružování připojení ODBC](http://support.microsoft.com/kb/169470).  
   
 ## <a name="connection-pooling-for-oracleclient"></a>Pro OracleClient sdružování připojení  
  Zprostředkovatel dat .NET Framework pro Oracle poskytuje sdružování připojení automaticky pro klientské aplikace ADO.NET. Můžete také zadat několik modifikátory řetězec připojení k řízení chování sdružování připojení (viz dále v tomto tématu "Řízení připojení sdružování s připojovací řetězec klíčová slova,").  

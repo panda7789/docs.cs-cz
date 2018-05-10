@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 97602a261f1e86cb70b38f21080c2a2e792605e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d513ddd41d87da7274f961969d261724b49aab65
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="token-provider"></a>Zprostředkovatel tokenu
-Tento příklad znázorňuje způsob implementace vlastního zprostředkovatele tokenu. Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) se používá pro zadávání přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také se dodává s [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
+Tento příklad znázorňuje způsob implementace vlastního zprostředkovatele tokenu. Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) se používá pro zadávání přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. WCF se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. Dodává se také s WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
 -   Pokud máte úložiště přihlašovacích údajů, která tyto poskytovatele tokenů nemůže pracovat s.  
   
--   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel nabízí podrobné informace do kdy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework klienta používá přihlašovací údaje.  
+-   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel poskytuje podrobnosti pro případ použití rozhraní klienta WCF přihlašovací údaje.  
   
 -   Pokud vytváříte vlastní token.  
   
@@ -108,7 +108,7 @@ Tento příklad znázorňuje způsob implementace vlastního zprostředkovatele 
 </system.serviceModel>  
 ```  
   
- Následující kroky ukazují, jak vyvíjet vlastní zprostředkovatele tokenu a integrovat s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework zabezpečení:  
+ Následující kroky ukazují, jak vyvíjet vlastní zprostředkovatele tokenu a integrovat do rozhraní zabezpečení WCF:  
   
 1.  Napište vlastního zprostředkovatele tokenu.  
   

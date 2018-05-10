@@ -8,33 +8,33 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], basic programming
 - Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-ms.openlocfilehash: de56725f926ec9f6d4cc39c8160fa7af0f3ab80a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: cbdc693197344fe570c1462f6ca3115018eb69d6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="basic-wcf-programming"></a>Základní programování WCF
 Tato část představuje základy vytváření aplikací pro Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Základní programovací životní cyklus](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
- Popisuje životní cyklus návrhu, vytváření a nasazování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klientské aplikace.  
+ Popisuje životní cyklus návrhu, vytváření a nasazování aplikací klienta a služby WCF.  
   
  [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)  
  Popisuje postup návrhu a implementace kontraktu služby, zvolte vzorce výměny zpráv, zadejte chyba – kontrakt a další základní aspekty služby.  
   
  [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)  
- Popisuje postup konfigurace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] službě pro podporu požadavků kontrakt, přizpůsobení chování místní runtime a označuje adresu k publikování služby.  
+ Popisuje postup konfigurace služby WCF na podporu požadavků kontrakt, přizpůsobení místní modul runtime chování a označuje adresu k publikování služby.  
   
  [Služby hostování](../../../docs/framework/wcf/hosting-services.md)  
  Popisuje základní informace o hostování služeb v aplikaci.  
   
  [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
- Popisuje, jak získat metadata ze služeb, která na převod [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kód klienta, popisovač problémy se zabezpečením a sestavení, konfiguraci a hostitele [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta.  
+ Popisuje, jak získat metadata ze služeb, převést, kód klienta WCF, zpracovávají problémy se zabezpečením a sestavení, konfiguraci a hostitele klienta WCF.  
   
  [Úvod do rozšířitelnosti](../../../docs/framework/wcf/introduction-to-extensibility.md)  
- Popisuje, jak rozšířit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] při vytváření vlastních řešení.  
+ Popisuje, jak rozšířit WCF při vytváření vlastních řešení.  
   
  [Řešení problémů s WCF – úvodní příručka](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
  Popisuje některé z nejběžnějších problémů, ke kterým došlo, co můžete dělat je můžete vyřešit a kde najít další informace o problému.  

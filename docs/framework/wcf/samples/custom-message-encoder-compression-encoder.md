@@ -2,11 +2,11 @@
 title: 'Vlastní kodér zpráv: Kompresní kodér'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 087bec47787c0a28eb30346904c8b876136b3eab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5dc665da3b28a98f1b3016d38ce706bf77dce06f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Vlastní kodér zpráv: Kompresní kodér
 Tento příklad ukazuje, jak implementovat vlastní kodér pomocí platformy Windows Communication Foundation (WCF).  
@@ -24,9 +24,9 @@ Tento příklad ukazuje, jak implementovat vlastní kodér pomocí platformy Win
  Tato ukázka se skládá z konzoly programu klienta (.exe), služba s vlastním hostováním program konzoly (.exe) a knihovny kodér zpráv komprese (.dll). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ISampleServer` rozhraní, které zpřístupňuje základní řetězec zobrazování operací (`Echo` a `BigEcho`). Klient zadává synchronní požadavků pro danou operaci a odpovědi služby opakováním zprávy zpět do klienta. Činnost klienta a služby je viditelná v konzole windows. Účelem této ukázce je ukazují, jak psát vlastní kodér a předvedení dopad komprese zprávy v drátové síti. Instrumentace můžete přidat do kompresní kodér zpráv vypočítat velikost zprávy, doba zpracování nebo obojí.  
   
 > [!NOTE]
->  V rozhraní .NET Framework 4, byla zapnuta automatickou dekompresi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienty, pokud server, který odesílá odpověď komprimované (vytvořeny pomocí algoritmu, například GZip a Deflate). Pokud služba je Web hostovaný v Internet Information Server (IIS), může služba IIS konfigurována pro službu pro odeslání komprimované odpovědi. Tato ukázka lze použít, pokud je požadavkem udělat komprese a dekomprese na klienta a služby, nebo pokud služba se hostuje sama.  
+>  V rozhraní .NET Framework 4 automatickou dekompresi byla zapnuta klienta WCF Pokud server, který odesílá odpověď komprimované (vytvořeny pomocí algoritmu, například GZip a Deflate). Pokud služba je Web hostovaný v Internet Information Server (IIS), může služba IIS konfigurována pro službu pro odeslání komprimované odpovědi. Tato ukázka lze použít, pokud je požadavkem udělat komprese a dekomprese na klienta a služby, nebo pokud služba se hostuje sama.  
   
- Ukázka ukazuje, jak vytvořit a integrovat vlastní kodér zpráv do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Knihovna GZipEncoder.dll je nasazeno pomocí klienta a služby. Tento příklad také znázorňuje dopad kompresi zprávy. Kód v GZipEncoder.dll ukazuje následující:  
+ Ukázka ukazuje, jak vytvářet a integrovat vlastní kodér zpráv do aplikace WCF. Knihovna GZipEncoder.dll je nasazeno pomocí klienta a služby. Tento příklad také znázorňuje dopad kompresi zprávy. Kód v GZipEncoder.dll ukazuje následující:  
   
 -   Vytváření vlastní kodér a kodér objekt pro vytváření.  
   
@@ -56,13 +56,13 @@ Tento příklad ukazuje, jak implementovat vlastní kodér pomocí platformy Win
   
 5.  Kodér vrstvy je implementovaný jako objekt pro vytváření tříd. Pouze factory kodér – třída musí být veřejně zpřístupněny pro vlastní kodér. Vrátí objekt factory prvku vazby při <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601> je vytvořen objekt. Zpráva kodéry můžou fungovat v režimu ve vyrovnávací paměti nebo streamování. Tento příklad znázorňuje režim s vyrovnávací pamětí a streamování režimu.  
   
- Pro každý režim je doplňujícími `ReadMessage` a `WriteMessage` metoda na abstraktní `MessageEncoder` třídy. Většina práce kódování probíhá v těchto metod. Ukázka zabalí existující text a zprávy v binární kodérů. To umožňuje vzorku, který se delegovat čtení a zápis síťové vyjádření zpráv vnitřní kodéru a umožňuje kompresní kodér komprimovat nebo dekomprimovat výsledky. Protože neexistuje žádný kanál pro kódování zpráv, jedná se o pouze model pro používání více kodéry v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Jakmile zpráva byla dekomprimovat, Výsledná zpráva je přidána na zásobník pro zásobník kanálu pro zpracování. Během komprese je výsledný komprimované zpráva zapsána přímo na zadaný datový proud.  
+ Pro každý režim je doplňujícími `ReadMessage` a `WriteMessage` metoda na abstraktní `MessageEncoder` třídy. Většina práce kódování probíhá v těchto metod. Ukázka zabalí existující text a zprávy v binární kodérů. To umožňuje vzorku, který se delegovat čtení a zápis síťové vyjádření zpráv vnitřní kodéru a umožňuje kompresní kodér komprimovat nebo dekomprimovat výsledky. Protože neexistuje žádný kanál pro kódování zprávy, jedná se o pouze model pro používání více kodéry ve WCF. Jakmile zpráva byla dekomprimovat, Výsledná zpráva je přidána na zásobník pro zásobník kanálu pro zpracování. Během komprese je výsledný komprimované zpráva zapsána přímo na zadaný datový proud.  
   
  Tato ukázka používá pomocné metody (`CompressBuffer` a `DecompressBuffer`) provést převod z vyrovnávací paměti do datových proudů používat `GZipStream` třídy.  
   
  Ve vyrovnávací paměti `ReadMessage` a `WriteMessage` třídy Zkontrolujte použití `BufferManager` třídy. Kodér je dostupné pouze prostřednictvím objektu pro vytváření kodér. Abstraktní `MessageEncoderFactory` třída poskytuje vlastnost s názvem `Encoder` pro přístup k aktuální kodér a metodu s názvem `CreateSessionEncoder` pro vytvoření kodér, který podporuje relací. Takové kodér lze ve scénáři, kde kanál podporuje relací, se seřadí a je spolehlivé. Tento scénář umožňuje optimalizace v každé relaci data zapsaná do sítě. Pokud to není žádoucí, základní metody by neměla být přetížený. `Encoder` Vlastnost poskytuje mechanismus pro přístup k méně relace kodér a výchozí implementaci `CreateSessionEncoder` vrátí metoda hodnotu vlastnosti. Protože ukázku zabalí existující kodér zajistit kompresi, `MessageEncoderFactory` implementace přijme `MessageEncoderFactory` představující kodér vnitřní objekt pro vytváření.  
   
- Teď, když jsou definovány kodér a objektu pro vytváření kodér, dá použít s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a služby. Tyto kodéry však musí být přidaný do zásobníku kanálu. Můžete odvození třídy z <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.ChannelFactory%601> třídy a přepsání `OnInitialize` metody pro tento objekt pro vytváření kodér přidat ručně. Můžete také vystavit objektu pro vytváření kodér prostřednictvím vlastní vazby elementu.  
+ Teď, když jsou definovány kodér a kodér factory, můžete použít s klienta WCF a služby. Tyto kodéry však musí být přidaný do zásobníku kanálu. Můžete odvození třídy z <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.ChannelFactory%601> třídy a přepsání `OnInitialize` metody pro tento objekt pro vytváření kodér přidat ručně. Můžete také vystavit objektu pro vytváření kodér prostřednictvím vlastní vazby elementu.  
   
  Pokud chcete vytvořit nové vlastní vazby element, odvození třídy z <xref:System.ServiceModel.Channels.BindingElement> třídy. Existuje však několik typů elementů vazby. Aby se zajistilo, že element vlastní vazby rozpoznán jako element vazby kódování zprávy, je také nutné implementovat <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> Zpřístupní metodu pro vytvoření nového vytváření kodér zpráv (`CreateMessageEncoderFactory`), které je implementováno vrátit instanci objektu pro vytváření odpovídající kodér zpráv. Kromě toho <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> má vlastnost označující adresování verze. Protože tato ukázka zabalí existující kodéry, Vzorová implementace také zabalí existující kodér elementů vazby a trvá vnitřní kodér vazby element jako parametr pro konstruktor a zpřístupňuje prostřednictvím vlastnosti. Následující vzorový kód ukazuje implementaci `GZipMessageEncodingBindingElement` třídy.  
   

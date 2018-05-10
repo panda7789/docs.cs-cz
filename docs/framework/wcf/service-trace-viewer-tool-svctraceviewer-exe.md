@@ -2,14 +2,14 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: d9cd87bba52297d37683127ece3dd9c31e9a9a70
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 215e34a3e7b075463ceeaa15386d3a347ffff064
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
-Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF) umožňuje analyzovat diagnostické trasování, které jsou generovány nástrojem [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrovat zprávy trasování v protokolu, aby mohli diagnostikovat, opravit a ověřte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby problémy.  
+Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF) umožňuje analyzovat diagnostické trasování, které jsou generovány nástrojem WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrovat zprávy trasování v protokolu, aby mohli diagnostikovat, opravit a ověřte problémů služby WCF.  
   
 ## <a name="configuring-tracing"></a>Konfigurace trasování  
  Diagnostické trasování poskytují informace o tom, co se děje v průběhu operace vaší aplikace. Jak již název napovídá, můžete provést operace z jejich zdroje do cíle a prostřednictvím zprostředkující body také.  
@@ -55,7 +55,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
 ### <a name="opening-and-viewing-wcf-trace-files"></a>Otevření a zobrazení souborů trasování WCF  
  Prohlížeče trasování služeb podporuje tři typy souborů:  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Trasování souboru (.svcLog)  
+-   Soubor (.svcLog) trasování WCF  
   
 -   Události trasování souboru (ETL)  
   
@@ -65,7 +65,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
   
 ##### <a name="to-open-a-trace-file"></a>Otevřete soubor trasování  
   
-1.  Spuštění prohlížeče trasování služeb pomocí okno příkazového řádku a přejděte k vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umístění instalace (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin) a pak zadejte `SvcTraceViewer.exe`.  
+1.  Spuštění prohlížeče trasování služeb pomocí okno příkazového řádku přejděte do umístění instalace WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin) a pak zadejte `SvcTraceViewer.exe`.  
   
 > [!NOTE]
 >  Nástroj prohlížeče trasování služeb můžete přidružit dva typy souborů: .svclog a .stvproj. Dva parametry na příkazovém řádku slouží k registraci a zrušit přípony souborů.  
@@ -87,7 +87,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
 >  Nedoporučuje se načíst soubor protokolu trasování, která je větší než 200 MB. Pokud se pokusíte načíst soubor o velikosti větší než tento limit, proces načítání může trvat dlouhou dobu, v závislosti na vaší prostředků počítače. Nástroj prohlížeče trasování služeb pravděpodobně přizpůsobivý po dlouhou dobu, nebo ho může spotřebovávat paměť váš počítač. Doporučujeme nakonfigurovat částečné načítání vyhnete se tomu tak. Další informace o tom, jak to udělat, najdete v tématu "Načtení trasování velké soubory".  
   
 #### <a name="event-tracing-and-crimson-tracing"></a>Trasování událostí a karmínově trasování  
- V prohlížeči nativní formát je trasování aktivit formátu, který [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vysílá. Trasování vygenerované v jiném formátu musí být převeden, než je v prohlížeči zobrazí. V současné době kromě formátu trasování aktivity, prohlížeč podporuje trasování událostí a karmínově trasování.  
+ V prohlížeči nativní formát je formát trasování aktivity, který vysílá WCF. Trasování vygenerované v jiném formátu musí být převeden, než je v prohlížeči zobrazí. V současné době kromě formátu trasování aktivity, prohlížeč podporuje trasování událostí a karmínově trasování.  
   
  Otevřete soubor, který neobsahuje trasování aktivity, pokusí se v prohlížeči převeďte soubor. Musíte zadat název a umístění souboru, který bude obsahovat data převedený trasování. Po převedení dat v prohlížeči zobrazí obsah nový soubor.  
   
@@ -104,7 +104,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
 -   V **projektu** kartě, můžete přidat soubory do projektu.  
   
 ### <a name="viewing-wcf-traces"></a>Zobrazení trasování WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vysílá trasování pomocí formátu trasování aktivity. V modelu trasování aktivity jednotlivých trasování jsou seskupené v aktivity podle jejich účel. Tok řízení logické přenášena mezi aktivitami. Během životního cyklu aplikace, například mnoho "aktivity odeslat zprávu" zobrazí a zmizí. Další informace o zobrazení trasování a aktivity a uživatelského rozhraní prohlížeče trasování služeb příliš najdete v tématu [pomocí prohlížeče trasování služeb pro zobrazení korelační trasování a Poradce při potížích s](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
+ WCF vysílá trasování pomocí formátu trasování aktivity. V modelu trasování aktivity jednotlivých trasování jsou seskupené v aktivity podle jejich účel. Tok řízení logické přenášena mezi aktivitami. Během životního cyklu aplikace, například mnoho "aktivity odeslat zprávu" zobrazí a zmizí. Další informace o zobrazení trasování a aktivity a uživatelského rozhraní prohlížeče trasování služeb příliš najdete v tématu [pomocí prohlížeče trasování služeb pro zobrazení korelační trasování a Poradce při potížích s](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
   
 #### <a name="switching-to-different-views"></a>Přepnutí na jiný zobrazení  
  Prohlížeče trasování služeb poskytuje následující různá zobrazení. Se zobrazí jako karty v levém podokně prohlížeče a také být přístup z **zobrazení** nabídky.  
@@ -217,7 +217,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
   
 -   Filtr nástrojů poskytuje přístup k předdefinované a vlastní filtry. Může být povoleno prostřednictvím **zobrazení** nabídky.  
   
--   Předem definovaný filtr prohlížeče můžete použít k filtrování selektivně části [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasování. Ve výchozím nastavení je nastavená na všech trasování infrastruktury předávat. Nastavení tohoto filtru, jsou definovány v **možnosti filtrování** dílčí nabídky v části **zobrazení** nabídky.  
+-   Předem definovaný filtr prohlížeče umožňuje selektivně filtrování částí trasování WCF. Ve výchozím nastavení je nastavená na všech trasování infrastruktury předávat. Nastavení tohoto filtru, jsou definovány v **možnosti filtrování** dílčí nabídky v části **zobrazení** nabídky.  
   
 -   Vlastní filtry XPath uživatelům plnou kontrolu nad filtrování. Lze definovat v **vlastní filtr** pod **zobrazení** nabídky.  
   
@@ -237,7 +237,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
  **Zrušte** tlačítko resetuje předdefinované a vlastní filtry umožňující všech trasování předávat.  
   
 #### <a name="filter-options"></a>Možnosti filtru.  
- V prohlížeči můžete automaticky odebrat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasování ze zobrazení. Můžete selektivně odebrat trasování, které konkrétní oblasti [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], například odebrání transakce související trasování ze zobrazení.  
+ V prohlížeči můžete automaticky odebrat trasování WCF ze zobrazení. Můžete selektivně odebrat trasování vysílaných určité oblasti služby WCF, například odebrání transakce související trasování ze zobrazení.  
   
  Nastavení tohoto filtru, jsou definovány v **možnosti filtrování** dílčí nabídky v části **zobrazení** nabídky.  
   
@@ -347,7 +347,7 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
 -   Zpětně krok: Pomocí **aktivity** nabídky, nebo klikněte na tlačítko "F9". Můžete také pomocí klávesy ŠIPKA "nahoru" v podokně trasování.  
   
 > [!NOTE]
->  To vám umožní přejít na aktivitu, ke kterým došlo v jiném procesu nebo i na jiném počítači, protože [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zprávy mohou přenášet aktivity ID, které jsou rozmístěny počítače.  
+>  To může trvat můžete aktivitu, ke kterým došlo v jiném procesu nebo i na jiném počítači, protože WCF zprávy mohou přenášet aktivity ID, které jsou rozmístěny počítače.  
   
 #### <a name="follow-transfer"></a>Postupujte podle přenosu  
  Přenos trasování jsou speciální trasování v trasovacím souboru. Aktivita může pro jinou aktivitu přenáší přenos trasování. Například "Aktivita A", mohou předávat "Aktivity b". V takovém případě není na ikonu "Aktivity A" s název "Na aktivitu:" a přenos přenos trasování. Tento přenos trasování je propojení mezi dvěma trasování. V "Aktivity B" mohou existovat i přenos trasování na konci aktivity převést zpět do "Aktivity A". Toto je podobná volání funkce v programech: A volá B, pak vrátí B.  
@@ -417,9 +417,9 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zprávy protokolu trasování: trasování, který je vygenerované při [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zaznamenána funkcí protokolování zpráv, když `System.ServiceModel.MessageLogging` zdroj trasování je povoleno. Kliknutím na toto trasování zobrazí zprávu. Existují čtyři body konfigurovat protokolování pro zprávu: ServiceLevelSendRequest, TransportSend, TransportReceive a ServiceLevelReceiveRequest, které lze zadat také pomocí `messageSource` atribut v protokolu trasování zpráv.|  
-|![Zprávy přijaté trasování](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Zprávy přijaté trasování: trasování, který je vygenerované při [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] přijata zpráva, pokud `System.ServiceModel` zdroj trasování je povoleno na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení na šipku korelace zprávu v aktivitě **grafu** zobrazení.|  
-|![Zprávy odeslané trasování](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Zprávy odeslané trasování: trasování, který je vygenerované při [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je odeslána zpráva, pokud `System.ServiceModel` zdroj trasování je povoleno na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení na šipku korelace zprávu v aktivitě **grafu** zobrazení.|  
+|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zprávy protokolu trasování: trasování, který je vygenerované při zaznamenání zprávu WCF funkcí protokolování zpráv, když `System.ServiceModel.MessageLogging` zdroj trasování je povoleno. Kliknutím na toto trasování zobrazí zprávu. Existují čtyři body konfigurovat protokolování pro zprávu: ServiceLevelSendRequest, TransportSend, TransportReceive a ServiceLevelReceiveRequest, které lze zadat také pomocí `messageSource` atribut v protokolu trasování zpráv.|  
+|![Zprávy přijaté trasování](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Zprávy přijaté trasování: trasování, který je vygenerované při příjmu zprávy WCF, pokud `System.ServiceModel` zdroj trasování je povoleno na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení na šipku korelace zprávu v aktivitě **grafu** zobrazení.|  
+|![Zprávy odeslané trasování](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Zprávy odeslané trasování: trasování, které jsou vydávány, když je odeslána zpráva WCF, pokud `System.ServiceModel` zdroj trasování je povoleno na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení na šipku korelace zprávu v aktivitě **grafu** zobrazení.|  
   
 ### <a name="activities"></a>Aktivity  
   
@@ -432,11 +432,11 @@ Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF)
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Aktivita prostředí](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Aktivita prostředí: aktivitu, která vytvoří, otevře se nebo se zavře [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] hostitele nebo klienta. Chybách, ke kterým došlo během těchto fází se zobrazí v této aktivitě.|  
+|![Aktivita prostředí](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Aktivita prostředí: aktivitu, která vytvoří, otevře nebo zavře WCF hostitele nebo klienta. Chybách, ke kterým došlo během těchto fází se zobrazí v této aktivitě.|  
 |![Naslouchání aktivity](../../../docs/framework/wcf/media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "d7b135f6-ec7d-45d7-9913-037ab30e4c26")|Naslouchání aktivity: aktivitu, která protokoly trasování související s naslouchací proces. Uvnitř této aktivity jsme můžete zobrazit žádosti o připojení a informace o naslouchací proces.|  
 |![Přijímat bajtů aktivity](../../../docs/framework/wcf/media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e")|Přijímat aktivity bajtů: aktivitu, které jsou seskupeny všechny trasování týkající se přijímání bajtů na připojení mezi dva koncové body. Tato aktivita je nezbytné v korelace s přenosu aktivity, které rozšíří jejich id aktivity, jako jsou ovladače http.sys. Chyby připojení, jako je například přerušení se zobrazí v této aktivitě.|  
-|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivitu zprávu zpracovat: aktivitu, která skupiny trasování související s vytvářením [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zprávy. V této aktivitě se zobrazí chyby z důvodu chybné obálky nebo chybnou zprávu. Uvnitř této aktivity jsme můžete prohlédnout hlavičky zpráv, které chcete zobrazit, pokud k ní id aktivity se rozšíří volající. Pokud je to pravda, pokud jsme přenést do procesu akce aktivity (další ikona), jsme můžete také přiřadit pro danou aktivitu šířený aktivity id korelace mezi volající a volaného trasování.|  
-|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zpracovat aktivity akce: aktivitu, které jsou seskupeny všechny trasování související s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] požadavku napříč dva koncové body. Pokud `propagateActivity` je nastaven na `true` u obou koncových bodů v konfiguraci všech trasování z obou koncové body jsou sloučeny do jedné aktivity pro přímé korelace. Tyto aktivity se obsahuje chyby kvůli přenos nebo zabezpečení zpracování, rozšíření na hranici kód uživatele a zpět (pokud existuje odpověď).|  
+|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivitu zprávu zpracovat: aktivitu, která skupiny trasování související s vytvářením zpráv WCF. V této aktivitě se zobrazí chyby z důvodu chybné obálky nebo chybnou zprávu. Uvnitř této aktivity jsme můžete prohlédnout hlavičky zpráv, které chcete zobrazit, pokud k ní id aktivity se rozšíří volající. Pokud je to pravda, pokud jsme přenést do procesu akce aktivity (další ikona), jsme můžete také přiřadit pro danou aktivitu šířený aktivity id korelace mezi volající a volaného trasování.|  
+|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zpracovat aktivity akce: aktivitu, které jsou seskupeny všechny trasování související s žádost WCF mezi dva koncové body. Pokud `propagateActivity` je nastaven na `true` u obou koncových bodů v konfiguraci všech trasování z obou koncové body jsou sloučeny do jedné aktivity pro přímé korelace. Tyto aktivity se obsahuje chyby kvůli přenos nebo zabezpečení zpracování, rozšíření na hranici kód uživatele a zpět (pokud existuje odpověď).|  
 |![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Spuštění uživatelského kódu aktivity: trasování aktivitu, která skupiny uživatelský kód pro zpracování požadavku.|  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  

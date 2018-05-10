@@ -2,11 +2,11 @@
 title: Vlastní hostitel služby
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: c081858d57d9575a616c7c057047b0593a177f3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c02ceb114a5346ea2a851f711f1ab9b50373cb75
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
 Tento příklad ukazuje, jak použít vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> tříd pro úpravu běhového chování služby. Tento přístup poskytuje opakovaně použitelné alternativu ke konfiguraci velký počet služeb v běžným způsobem. Ukázka také ukazuje, jak používat <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu se má použít vlastní hostitel služby v Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS) hostitelské prostředí.  
@@ -121,7 +121,7 @@ host.Open();
  Naše vlastní hostitel stále přečte konfigurace koncového bodu služby z konfiguračního souboru aplikace, stejně, jako by se měl jsme použili výchozí <xref:System.ServiceModel.ServiceHost> třída k hostování služby. Ale vzhledem k tomu, že jsme přidali logiku povolit publikování v rámci našeho vlastního hostitele metadat, jsme už musíte povolit explicitně chování publikování v konfiguraci metadat. Tento přístup má odlišné využít, když vytváříte aplikaci, která obsahuje několik služeb a chcete povolit publikování metadat na každý z nich bez nutnosti psaní stejné konfigurační prvky opakovaně.  
   
 ## <a name="using-a-custom-servicehost-in-iis-or-was"></a>Použití vlastní hostitel služby IIS nebo WAS  
- Použít vlastní služba hostitele ve scénářích hostování na vlastním serveru je jasné, protože je vaší aplikační kód, který se nakonec odpovědné za vytváření a otevírání instance hostitele služby. V IIS nebo WAS hostování prostředí, ale [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury je vytvoření dynamicky instance hostitele služby v reakci na příchozí zprávy. Hostitelé služeb z vlastní můžete použít i v tomto hostování prostředí, ale vyžadují některé další kód ve formuláři třídy ServiceHostFactory. Následující kód ukazuje odvozený ze <xref:System.ServiceModel.Activation.ServiceHostFactory> který vrátí instance naše vlastní `SelfDescribingServiceHost`.  
+ Použít vlastní služba hostitele ve scénářích hostování na vlastním serveru je jasné, protože je vaší aplikační kód, který se nakonec odpovědné za vytváření a otevírání instance hostitele služby. V IIS nebo WAS hostování prostředí ale infrastruktury WCF je dynamicky vytvoření instance hostitele služby v reakci na příchozí zprávy. Hostitelé služeb z vlastní můžete použít i v tomto hostování prostředí, ale vyžadují některé další kód ve formuláři třídy ServiceHostFactory. Následující kód ukazuje odvozený ze <xref:System.ServiceModel.Activation.ServiceHostFactory> který vrátí instance naše vlastní `SelfDescribingServiceHost`.  
   
 ```  
 public class SelfDescribingServiceHostFactory : ServiceHostFactory  
@@ -150,7 +150,7 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
                language=c# Debug="true" %>  
 ```  
   
- Zde jsme přidali další `Factory` atribut `@ServiceHost` direktivy a předaný modulu CLR zadejte název objektu pro vytváření naše vlastní jako hodnotu atributu. Když se služba IIS nebo WAS přijme zprávu o pro tuto službu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hosting infrastruktury nejprve vytvoří instanci třídy ServiceHostFactory a potom vytvořte instanci hostitele služby samotné voláním `ServiceHostFactory.CreateServiceHost()`.  
+ Zde jsme přidali další `Factory` atribut `@ServiceHost` direktivy a předaný modulu CLR zadejte název objektu pro vytváření naše vlastní jako hodnotu atributu. Když služba IIS nebo WAS obdrží zprávu pro tuto službu, nejprve vytvoří instanci třídy ServiceHostFactory infrastruktury hostování WCF a potom vytvořte instanci samotného hostitele služby voláním `ServiceHostFactory.CreateServiceHost()`.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
  I když tato ukázka poskytovat klient plně funkční a implementaci služby, je bod vzorku ukazují, jak chcete změnit chování služby prostřednictvím vlastní hostitele., proveďte následující kroky:  

@@ -2,21 +2,21 @@
 title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 20006f87f7ecba9c09f6c957f8b6355dec7fbd32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 145faaae709119708240863f85eb5352fb2c5a1b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.  
   
 ## <a name="discussion"></a>Diskusní  
- Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů ke Infrastruktura zabezpečení. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se dodává s [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
+ Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů ke Infrastruktura zabezpečení. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. WCF se dodává s [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
 -   Pokud máte úložiště přihlašovacích údajů, která předdefinované zprostředkovatel tokenu nemůže pracovat s.  
   
--   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel nabízí podrobné informace do kdy [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klient používá přihlašovací údaje.  
+-   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel poskytuje podrobnosti pro případ použití klienta WCF přihlašovací údaje.  
   
 -   Pokud vytváříte vlastní token.  
   
@@ -26,7 +26,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
   
 -   Jak klienta můžete nakonfigurovat vlastní zprostředkovatele tokenu.  
   
--   Jak vystavené tokeny můžete do mezipaměti a poskytnuté [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta.  
+-   Jak lze do mezipaměti a zadaný pro klienta WCF vystavené tokeny.  
   
 -   Jak server ověření klienta pomocí certifikátu X.509 serveru.  
   
@@ -109,7 +109,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
  Služby tokenů zabezpečení zpřístupní jeden koncový bod pomocí standardní wsHttpBinding. Služby tokenů zabezpečení odpovídá na žádosti od klientů pro tokeny a zadaný klient se ověří pomocí účtu Windows, vydá token, který obsahuje jméno uživatele klienta jako deklaraci v vydaných tokenu. Při vytváření tokenu služby tokenu zabezpečení přihlásí token pomocí privátní klíč přidružený CN = certifikát služby tokenů zabezpečení. Kromě toho vytvoří symetrického klíče a zašifruje pomocí veřejného klíče přidruženého CN = localhost certifikátu. Při vracení token do klienta, služby tokenů zabezpečení také vrátí symetrický klíč. Klient uvede vystavený token, který má službu kalkulačky a prokáže, že zná symetrický klíč podepsáním zprávu s tímto klíčem.  
   
 ## <a name="custom-client-credentials-and-token-provider"></a>Přihlašovací údaje vlastního klienta a zprostředkovatele tokenu  
- Následující kroky ukazují, jak vyvíjet vlastní zprostředkovatele tokenu, mezipamětí vystavené tokeny a integrovat s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]: zabezpečení.  
+ Následující kroky ukazují, jak vyvíjet vlastní zprostředkovatele tokenu, mezipamětí vystavené tokeny a integraci s použitím technologie WCF: zabezpečení.  
   
 #### <a name="to-develop-a-custom-token-provider"></a>K vývoji vlastního zprostředkovatele tokenu  
   

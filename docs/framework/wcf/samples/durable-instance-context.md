@@ -2,11 +2,11 @@
 title: Trvanlivý kontext instance
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: 75516bfa0cf5ac7bfb27eb5ee2c51d04c30bc9a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: fb331fc0e5f384f0ffb268c1c6f7a5ffc99478ec
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
 Tento příklad znázorňuje postup přizpůsobení povolit kontexty trvanlivý instanci modulu runtime Windows Communication Foundation (WCF). SQL Server 2005 používá jako své úložiště zálohování (SQL Server 2005 Express v tomto případě). Však také poskytuje přístup k vlastní úložiště mechanismy.  
@@ -14,7 +14,7 @@ Tento příklad znázorňuje postup přizpůsobení povolit kontexty trvanlivý 
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
- Tato ukázka zahrnuje rozšíření vrstvy kanálu a vrstva modelu služby z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Proto je potřeba pochopit základní koncepty před přechodem do podrobnosti implementace.  
+ Tato ukázka zahrnuje rozšíření vrstvy kanálu a vrstva modelu služby WCF. Proto je potřeba pochopit základní koncepty před přechodem do podrobnosti implementace.  
   
  Trvanlivý instance kontexty naleznete ve skutečných scénářích velmi často. Aplikaci nákupního košíku například má možnost pozastavit shopping polovině vzdálenosti prostřednictvím a pokračovat na další den. Takže když jsme navštěvovat nákupní košík následujícího dne, je obnoven naše původní kontextu. Je důležité si uvědomit, nákupní košík aplikace (na serveru) při jsme jsou odpojené nespravuje nákupní košík instance. Místo toho potrvají stavu do média odolná úložiště a použije při vytváření nové instance pro obnovené kontext. Instance služby, která může obsluhovat stejný kontextu není stejný jako předchozí instanci (to znamená, nemá stejnou adresu paměti).  
   
@@ -119,7 +119,7 @@ if (isFirstMessage)
 }  
 ```  
   
- Tyto implementace kanál se pak přidají do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] runtime kanál pomocí `DurableInstanceContextBindingElement` třídy a `DurableInstanceContextBindingElementSection` třídy správně. Najdete v článku [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) kanálu ukázková dokumentace pro další podrobnosti o elementů vazby a vazby element oddíly.  
+ Tyto implementace kanál se pak přidají do kanálu runtime WCF pomocí `DurableInstanceContextBindingElement` třídy a `DurableInstanceContextBindingElementSection` třídy správně. Najdete v článku [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) kanálu ukázková dokumentace pro další podrobnosti o elementů vazby a vazby element oddíly.  
   
 ## <a name="service-model-layer-extensions"></a>Rozšíření vrstvy modelu služby  
  Teď, když má ID kontextu cesty prostřednictvím vrstvy kanálu, můžete k přizpůsobení instance implementovat chování služby. V této ukázce Správce úložiště slouží k načtení a uložení stavu z nebo do trvalého úložiště. Jak je popsáno dříve, tato ukázka poskytuje správce úložiště, který používá systém SQL Server 2005 jako své úložiště zálohování. Je však také možné přidat vlastní úložiště mechanismy pro tuto příponu. K tomu veřejné rozhraní je deklarovaná, který musí implementovat všechny správce úložiště.  
@@ -228,9 +228,9 @@ else
   
  Potřebnou infrastrukturu pro čtení a zápisu instancí z trvalého úložiště je implementováno. Nyní musí vzít potřebné kroky, chcete-li změnit chování služby.  
   
- Jako první krok tohoto procesu se musí uložit ID kontextu, které pochází z vrstvy kanálu pro aktuální objekt InstanceContext. Parametr InstanceContext je součástí modulu runtime, která slouží jako propojení mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dispečera a instance služby. Slouží k poskytování dalších stavu a chování v instanci služby. To je důležité, protože komunikaci mezi relacemi ID kontextu jsou odeslány pouze s první zprávu.  
+ Jako první krok tohoto procesu se musí uložit ID kontextu, které pochází z vrstvy kanálu pro aktuální objekt InstanceContext. Parametr InstanceContext je komponenty modulu runtime, která slouží jako propojení mezi dispečera WCF a instance služby. Slouží k poskytování dalších stavu a chování v instanci služby. To je důležité, protože komunikaci mezi relacemi ID kontextu jsou odeslány pouze s první zprávu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] umožňuje rozšíření jeho komponenty runtime InstanceContext přidáním nového stavu a chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objekt - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
+ WCF umožňuje rozšíření jeho komponenty runtime InstanceContext přidáním nového stavu a chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v WCF buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objekt - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
   
 -   IExtensibleObject\<T > rozhraní je implementováno modulem objekty, které umožňují rozšíření, které přizpůsobit jejich funkce.  
   
@@ -278,7 +278,7 @@ public void Initialize(InstanceContext instanceContext, Message message)
   
  Jak bylo popsáno dříve ID kontextu je pro čtení z `Properties` kolekce `Message` třídy a předaný konstruktoru třídy extension. Tento příklad ukazuje, jak nelze vyměňovat informace mezi vrstvami konzistentním způsobem.  
   
- Další důležitý krok přepisují proces vytvoření instance služby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Umožňuje implementace chování vlastní vytváření instancí a jejich zapojování až modulu runtime použijte rozhraní IInstanceProvider. Nové `InstanceProvider` implementaci třídy chcete tuto úlohu. V konstruktoru byla přijata od instance zprostředkovatele je očekáván typ služby. To se později používá k vytvoření nové instance. V `GetInstance` implementace instance Správce úložiště je vytvořena hledá trvalou instance. Vrátí-li `null` pak novou instanci typu služby vytvořena a vrácena volajícímu.  
+ Další důležitý krok přepisují proces vytvoření instance služby. WCF umožňuje implementace chování vlastní vytváření instancí a jejich zapojování až modulu runtime použijte rozhraní IInstanceProvider. Nové `InstanceProvider` implementaci třídy chcete tuto úlohu. V konstruktoru byla přijata od instance zprostředkovatele je očekáván typ služby. To se později používá k vytvoření nové instance. V `GetInstance` implementace instance Správce úložiště je vytvořena hledá trvalou instance. Vrátí-li `null` pak novou instanci typu služby vytvořena a vrácena volajícímu.  
   
 ```  
 public object GetInstance(InstanceContext instanceContext, Message message)  
@@ -349,9 +349,9 @@ foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)
   
  V souhrnu, pokud tato ukázka má vytvořeného kanálu, který je povolený protokol vlastní přenosu pro kontext vlastní ID exchange a taky přepíše výchozí chování instance načíst z trvalého úložiště vytváření instancí.  
   
- Co je ponechán je způsob, jak uložit instanci služby do trvalého úložiště. Jak je popsáno dříve, již existuje požadované funkce pro uložení stavu v `IStorageManager` implementace. Jsme teď musíte integrovat o [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modulu runtime. Jiný atribut je požadován, se vztahuje na metody ve třídě implementace služby. Tento atribut by měl použít pro metody, které změní stav instance služby.  
+ Co je ponechán je způsob, jak uložit instanci služby do trvalého úložiště. Jak je popsáno dříve, již existuje požadované funkce pro uložení stavu v `IStorageManager` implementace. Jsme teď musíte integrovat to s modulem runtime WCF. Jiný atribut je požadován, se vztahuje na metody ve třídě implementace služby. Tento atribut by měl použít pro metody, které změní stav instance služby.  
   
- `SaveStateAttribute` Třída implementuje tuto funkci. Také implementuje `IOperationBehavior` třída změnit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modul runtime pro každou operaci. Když metoda je označena k tomuto atributu [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vyvolá runtime `ApplyBehavior` metoda při odpovídající `DispatchOperation` je vytvářen. V této implementaci metoda je jediný řádek kódu:  
+ `SaveStateAttribute` Třída implementuje tuto funkci. Také implementuje `IOperationBehavior` třída k úpravě runtime WCF pro každou operaci. Když se tento atribut je označen metodu, vyvolá WCF runtime `ApplyBehavior` metoda při odpovídající `DispatchOperation` je vytvářen. V této implementaci metoda je jediný řádek kódu:  
   
 ```  
 dispatch.Invoker = new OperationInvoker(dispatch.Invoker);  
@@ -373,7 +373,7 @@ return result;
 ```  
   
 ## <a name="using-the-extension"></a>Pomocí rozšíření  
- Kanál vrstvy a služby model vrstvy rozšíření hotovi i nyní je možné použít při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. Služby mít do zásobníku kanál použití vlastní vazby, přidejte kanál a potom označit implementace třídy služeb s odpovídajícími atributy.  
+ Jak provádí vrstvy kanálu a rozšíření vrstva modelu služby a můžete je teď používat v aplikacích WCF. Služby mít do zásobníku kanál použití vlastní vazby, přidejte kanál a potom označit implementace třídy služeb s odpovídajícími atributy.  
   
 ```  
 [DurableInstanceContext]  

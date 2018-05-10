@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c0e6cf23-63ac-47dd-bfe9-d5bdca826fac
-ms.openlocfilehash: 7be5ca95732b4ddadf851ccf839e31be3c5b47bf
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: f152146e7483c6b3c162fd81f20f359e6c82123a
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="query-execution"></a>Provádění dotazů
 Po vytvoření dotaz LINQ uživatelem je převést na strom příkazů. Stromu příkazů je reprezentace dotaz, který je kompatibilní s platformou Entity Framework. U zdroje dat je pak spustit strom příkazů. Během provádění dotazu se vyhodnocují všechny výrazy dotazů (všechny součásti dotaz), včetně těchto výrazů, které se používají v materialization výsledek.  
@@ -17,7 +17,10 @@ Po vytvoření dotaz LINQ uživatelem je převést na strom příkazů. Stromu p
  Na jaké výrazy dotazů bodu jsou spouštěny se může lišit. Dotazy LINQ jsou vždy spustit, když proměnné v dotazu je vstupní přes, ne v případě, že se vytvoří proměnné v dotazu. To se označuje jako *odložené spouštění*. Můžete taky přinutit, dotaz spustit okamžitě, který je užitečný pro ukládání do mezipaměti výsledky dotazu. To je popsán dále v tomto tématu.  
   
  Po provedení dotazu LINQ to Entities některé výrazy v dotazu může být na serveru provést, a některé části mohou být prováděny místně na klientovi. Klientské vyhodnocení výrazu proběhne před provedením dotazu na serveru. Pokud se na klientovi vyhodnotí výraz, je je nahrazena výsledkem vyhodnocení výrazu v dotazu a potom spustit dotaz na serveru. Vzhledem k tomu, že dotazy jsou spouštěny ve zdroji dat, konfigurace zdroje dat přepíše nastavení chování v klientovi. Například zpracování hodnotu null nebo přesnost číselné závisí na nastavení serveru. Jakékoli výjimky během provádění dotazu na serveru jsou předávány přímo až klienta.  
-  
+ 
+> [!TIP]
+> Vhodné souhrn operátorů dotazu ve formátu tabulky, který umožňuje rychle identifikovat chování při spuštění operátor, najdete v části [klasifikace z standardních operátorů dotazu podle způsobem spuštění (C#)](../../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md).
+
 ## <a name="deferred-query-execution"></a>Při provádění dotazu odložené  
  V dotazu, který vrací pořadí hodnot proměnné v dotazu samotné nikdy obsahuje výsledky dotazu a ukládá jenom příkazy dotazu. Spuštění dotazu je odložení, dokud proměnnou dotazu je vstupní přes `foreach` nebo `For Each` smyčky. To se označuje jako *odložené spouštění*; to znamená, dotaz provádění dojde k delší dobu, po dotazu je vytvořený. To znamená, že je spuštěn dotaz často chcete. To je užitečné, pokud například máte databázi, která se právě aktualizuje jiné aplikace. V aplikaci můžete vytvořit dotaz, který získat nejnovější informace a opakovaně spuštění dotazu a vrácení aktualizované informace o každém.  
   

@@ -2,17 +2,17 @@
 title: Zjednodušená konfigurace
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: a07ab26b19004df97f4ac65f711b03fc6a6ba445
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 9f35a5f4fa4ae6be63bd75a24f58b56dd236ee9c
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
-Konfigurace služby Windows Communication Foundation (WCF) může být složité úlohy. Existuje mnoho různých možností a není vždy snadno určit nastavení, které jsou vyžadovány. Při konfigurační soubory zvýšit flexibilitu [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, také se zdroji pro mnoho vyhledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] řeší tyto problémy a poskytuje způsob, jak snížit velikost a složitost konfigurace služby.  
+Konfigurace služby Windows Communication Foundation (WCF) může být složité úlohy. Existuje mnoho různých možností a není vždy snadno určit nastavení, které jsou vyžadovány. Při konfiguraci souborů zvýšíte flexibilitu služby WCF, jsou také zdroj pro mnoho vyhledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] řeší tyto problémy a poskytuje způsob, jak snížit velikost a složitost konfigurace služby.  
   
 ## <a name="simplified-configuration"></a>Zjednodušená konfigurace  
- V [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby konfigurační soubory, <`system.serviceModel`> obsahuje <`service`> element pro každou službu hostuje. <`service`> Kolekce obsahuje element <`endpoint`> elementy, které určují koncové body vystavený pro každou službu a volitelně sadu chování služby. <`endpoint`> Elementy zadejte adresy, vazby a kontraktu viditelné v koncovém bodě a volitelně Konfigurace vazeb a chování koncový bod. <`system.serviceModel`> Obsahuje také <`behaviors`> elementu, který umožňuje zadat chování služba nebo koncový bod. Následující příklad ukazuje <`system.serviceModel`> oddílu konfiguračního souboru.  
+ V modulu snap-in soubory konfigurace služby WCF <`system.serviceModel`> obsahuje <`service`> element u každé služby hostované. <`service`> Kolekce obsahuje element <`endpoint`> elementy, které určují koncové body vystavený pro každou službu a volitelně sadu chování služby. <`endpoint`> Elementy zadejte adresy, vazby a kontraktu viditelné v koncovém bodě a volitelně Konfigurace vazeb a chování koncový bod. <`system.serviceModel`> Obsahuje také <`behaviors`> elementu, který umožňuje zadat chování služba nebo koncový bod. Následující příklad ukazuje <`system.serviceModel`> oddílu konfiguračního souboru.  
   
 ```  
 <system.serviceModel>  
@@ -45,7 +45,7 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složité
 </system.serviceModel>  
 ```  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Umožňuje konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby jednodušší odebráním požadavek <`service`> elementu. Pokud nepřidáte <`service`> části nebo přidat žádné koncové body v <`service`> části a služby nedefinuje prostřednictvím kódu programu žádné koncové body a pak sadu výchozí koncové body se automaticky přidají do vaší služby, jeden pro každou Základní adresa služby a pro každou smlouvu implementované služby. V každé z těchto koncových bodů adresa koncového bodu odpovídá bázové adresy, vazby je dáno schéma základní adresa a kontrakt je implementované vaše služba. Pokud není potřeba žádné koncové body nebo chování služby a provedli změny nastavení vazby, není potřeba zadat konfigurační soubor služby vůbec. Pokud služba implementuje dva kontrakty a hostitele povolí přenosy HTTP a TCP hostitele služby vytvoří čtyři výchozí koncové body, jeden pro každou smlouvu použití každé přenosu. Chcete-li vytvořit výchozí koncové body hostitele služby musí znát které vazby použít. Tato nastavení jsou určené v <`protocolMappings`> části v rámci <`system.serviceModel`> části. <`protocolMappings`> Část obsahuje seznam přenosu protokolu schémata namapované na vazby typy. Hostitel služby používá základní adresy do ní předán k určení které vazby použít. Následující příklad používá <`protocolMappings`> elementu.  
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Umožňuje konfiguraci služby WCF jednodušší odebráním požadavek <`service`> elementu. Pokud nepřidáte <`service`> části nebo přidat žádné koncové body v <`service`> části a služby nedefinuje prostřednictvím kódu programu žádné koncové body a pak sadu výchozí koncové body se automaticky přidají do vaší služby, jeden pro každou Základní adresa služby a pro každou smlouvu implementované služby. V každé z těchto koncových bodů adresa koncového bodu odpovídá bázové adresy, vazby je dáno schéma základní adresa a kontrakt je implementované vaše služba. Pokud není potřeba žádné koncové body nebo chování služby a provedli změny nastavení vazby, není potřeba zadat konfigurační soubor služby vůbec. Pokud služba implementuje dva kontrakty a hostitele povolí přenosy HTTP a TCP hostitele služby vytvoří čtyři výchozí koncové body, jeden pro každou smlouvu použití každé přenosu. Chcete-li vytvořit výchozí koncové body hostitele služby musí znát které vazby použít. Tato nastavení jsou určené v <`protocolMappings`> části v rámci <`system.serviceModel`> části. <`protocolMappings`> Část obsahuje seznam přenosu protokolu schémata namapované na vazby typy. Hostitel služby používá základní adresy do ní předán k určení které vazby použít. Následující příklad používá <`protocolMappings`> elementu.  
   
 > [!WARNING]
 >  Změna výchozí konfigurační prvky, jako je například vazby nebo chování, může ovlivnit služby definované v nižších úrovních hierarchie konfigurace, protože by mohly používat tyto výchozí vazby a chování. Proto, kdo změní výchozí vazby a chování je potřeba vědět, že tyto změny mohou ovlivnit jiných služeb v hierarchii.  

@@ -2,14 +2,14 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 51f445d7f53f70fa206c53835b107da68749e3c2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4f69730831ec57efc782a95d7412496aa69a4afb
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transport-udp"></a>Přenos: UDP
-Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], pomocí rozhraní kanálu a následující [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] osvědčené postupy. Postup vytvoření vlastního přenosu jsou následující:  
+Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu ve WCF, pomocí rozhraní kanálu a následující osvědčené postupy WCF. Postup vytvoření vlastního přenosu jsou následující:  
   
 1.  Rozhodněte, které kanálu [zpráva Exchange vzory](#MessageExchangePatterns) (IOutputChannel, IInputChannel, IDuplexChannel, třídu IRequestChannel nebo IReplyChannel) ChannelFactory a ChannelListener bude podporovat. Rozhodněte se, zda bude podporovat relacemi variace tato rozhraní.  
   
@@ -49,7 +49,7 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
 >  Pro přenosu UDP pouze MEP, která je podporována je Datagram, protože UDP je ze své podstaty protokol "fire a zapomněli".  
   
 ### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>ICommunicationObject a životního cyklu objekt WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obsahuje běžné stavu počítače, který se používá pro správu životního cyklu objekty jako <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> používané pro komunikaci. Nejsou k dispozici pět stavy, při kterých může existovat tyto objekty komunikace. Tyto stavy jsou reprezentované pomocí <xref:System.ServiceModel.CommunicationState> výčet a jsou následujícím způsobem:  
+ Běžné stavu počítače, který se používá pro správu životního cyklu objektů, jako má WCF <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> používané pro komunikaci. Nejsou k dispozici pět stavy, při kterých může existovat tyto objekty komunikace. Tyto stavy jsou reprezentované pomocí <xref:System.ServiceModel.CommunicationState> výčet a jsou následujícím způsobem:  
   
 -   Vytvoří: Toto je stav <xref:System.ServiceModel.ICommunicationObject> při prvním vytvoření instance. V tomto stavu dojde k žádné vstupní a výstupní (I/O).  
   
@@ -67,7 +67,7 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
   
 <a name="ChannelAndChannelListener"></a>   
 ## <a name="channel-factory-and-channel-listener"></a>Postup kanálu a naslouchací proces kanálu  
- Dalším krokem při psaní vlastních přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klienta a z <xref:System.ServiceModel.Channels.IChannelListener> pro kanály služby. Vrstvy kanálu využívá vzor objekt factory pro vytváření kanálů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje pomocné rutiny základní třídy pro tento proces.  
+ Dalším krokem při psaní vlastních přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klienta a z <xref:System.ServiceModel.Channels.IChannelListener> pro kanály služby. Vrstvy kanálu využívá vzor objekt factory pro vytváření kanálů. WCF poskytuje pomocné rutiny základní třídy pro tento proces.  
   
 -   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje výše popsané v kroku 2. 
 
@@ -256,7 +256,7 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
   
 -   Prostřednictvím vlastní vazby: vlastní vazby umožňuje uživateli vytvoření vlastní vazby založené na libovolnou sadu elementů vazby.  
   
--   Pomocí vazby poskytované systémem, který zahrnuje naše prvku vazby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje několik z těchto vazeb definovaná systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb je přidružen k profilu dobře definovaný.  
+-   Pomocí vazby poskytované systémem, který zahrnuje naše prvku vazby. WCF poskytuje několik z těchto vazeb definovaná systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb je přidružen k profilu dobře definovaný.  
   
  Ukázka implementuje vazba profilu v `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři prvky vazeb v něm: `UdpTransportBindingElement`, `TextMessageEncodingBindingElement CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
   

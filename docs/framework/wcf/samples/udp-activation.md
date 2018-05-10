@@ -2,11 +2,11 @@
 title: Aktivace UDP
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: 6dd1ee02b51dc969af0ba1bc418b7fb20f6f0ed6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 9f7600bff17c015f28c3fb94ed5360561d45c65b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="udp-activation"></a>Aktivace UDP
 Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka. Ji rozšiřuje [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku, který se podporují procesu aktivace pomocí služby Aktivace procesů systému Windows (WAS).  
@@ -20,7 +20,7 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
 -   Služba (hostovaného v pracovním procesu aktivován WAS), která přijímá zprávy pomocí přenosového vlastní UDP.  
   
 ## <a name="udp-protocol-activator"></a>Aktivátor protokolu UDP  
- Aktivátor protokolu UDP je most mezi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Poskytuje datovou komunikaci pomocí protokolu UDP v přenosové vrstvě. Má dvě hlavní funkce:  
+ Aktivátor protokolu UDP je most mezi klienta WCF a služby WCF. Poskytuje datovou komunikaci pomocí protokolu UDP v přenosové vrstvě. Má dvě hlavní funkce:  
   
 -   BYL naslouchací proces adaptér (LA), která spolupracuje s WAS aktivovat procesy v reakci na příchozí zprávy.  
   
@@ -55,7 +55,7 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
  Naslouchací proces protokolu UDP je modul uvnitř Aktivátor protokolu, která naslouchá na koncový bod UDP jménem virtuální aplikace. Je implementována ve třídě `UdpSocketListener`. Koncový bod je reprezentován jako `IPEndpoint` pro které je extrahován číslo portu z vazby protokolu pro lokalitu.  
   
 ### <a name="control-service"></a>Služba Řízení  
- V této ukázce používáme [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ke komunikaci mezi aktivátoru a WAS pracovní proces. Služba, která se nachází v aktivační procedura je volána službu řízení.  
+ V této ukázce používáme WCF pro komunikaci mezi aktivátoru a WAS pracovní proces. Služba, která se nachází v aktivační procedura je volána službu řízení.  
   
 ## <a name="protocol-handlers"></a>Obslužné rutiny protokolu  
  Po volání adaptér naslouchání `WebhostOpenListenerChannelInstance`, správce proces WAS spustí pracovní proces, pokud není spuštěna. Potom Správce aplikací uvnitř pracovního procesu se načte UDP proces protokol obslužné rutiny (PPH) s požadavkem, pro který `ListenerChannelId`. PPH ve voláních oplátku `IAdphManager`.`StartAppDomainProtocolListenerChannel` Spustit obslužnou rutinu pro protokol AppDomain UDP (ADPH).  

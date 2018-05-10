@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: 4c75b0f27e82b8cfe9327a9911d27d4e435ddf81
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: cea307b4e3920ff6413d6db28c2ce1e640b673f9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro různé scénáře.  
@@ -66,7 +66,7 @@ Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro růz
   
  Odchozí zprávy protokolování se stane ihned po zpráva opustí uživatelského kódu a bezprostředně před zpráva je uložena v drátové síti.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zaznamenává zprávy na dvou různých úrovních, služby a přenosu. Také se protokolují poškozených zpráv. Tři kategorie jsou od sebe navzájem nezávislé a může být aktivovaný nezávisle v konfiguraci.  
+ WCF zaznamenává zprávy na dvou různých úrovních, služby a přenosu. Také se protokolují poškozených zpráv. Tři kategorie jsou od sebe navzájem nezávislé a může být aktivovaný nezávisle v konfiguraci.  
   
  Úroveň protokolování lze řídit nastavení `logMessagesAtServiceLevel`, `logMalformedMessages`, a `logMessagesAtTransportLevel` atributy `messageLogging` elementu.  
   
@@ -77,7 +77,7 @@ Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro růz
  Kódování nebo dekódovat pro nebo po Transport přenášený připraveni zprávy zaznamenané v této vrstvě. Pokud byly definovány filtry, jsou protokolovány jen zprávy, které splňují podmínky filtrů. Jinak jsou protokolovány všechny zprávy v přenosové vrstvě. Všechny zprávy infrastruktury jsou protokolovány v této vrstvě, včetně zpráv spolehlivého zasílání zpráv. V proudu zpráv jsou protokolovány pouze záhlaví. Kromě toho zabezpečených zpráv jsou protokolovány jako zašifrovaná na této úrovni, kromě případu, kdy zabezpečený přenos, jako se používá protokol HTTPS.  
   
 ### <a name="malformed-level"></a>Chybná úroveň  
- Poškozených zpráv jsou zprávy, které jsou odmítnut [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zásobníku v jakékoli fázi zpracování. Chybná zprávy se zaznamenávají jako-se: zašifrované, pokud jsou tedy XML bez správné a tak dále. `maxSizeOfMessageToLog` velikost zprávy, která je zaznamenána jako CDATA definován. Ve výchozím nastavení `maxSizeOfMessageToLog` je rovna 256 kB. Další informace o tento atribut najdete v části Další možnosti.  
+ Poškozených zpráv jsou zprávy, které jsou odmítnut zásobníku WCF v jakékoli fázi zpracování. Chybná zprávy se zaznamenávají jako-se: zašifrované, pokud jsou tedy XML bez správné a tak dále. `maxSizeOfMessageToLog` velikost zprávy, která je zaznamenána jako CDATA definován. Ve výchozím nastavení `maxSizeOfMessageToLog` je rovna 256 kB. Další informace o tento atribut najdete v části Další možnosti.  
   
 ### <a name="other-options"></a>Další možnosti  
  Kromě úrovně protokolování můžete uživatele určete následující možnosti:  

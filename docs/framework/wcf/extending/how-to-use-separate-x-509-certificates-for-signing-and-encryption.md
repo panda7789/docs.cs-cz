@@ -9,16 +9,16 @@ helpviewer_keywords:
 - ClientCredentials class
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
-ms.openlocfilehash: d171af8dbcbbdd51cc015986a2c69e0393fe56dc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d4c2e34b3e123e6fa9d8dc8e544f621b39861592
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování
 Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) používat různé certifikáty pro podepisování zpráv a šifrování na klientovi a služby.  
   
- Chcete-li samostatný certifikátů, který se má použít pro podepisování a šifrování, vlastní klienta nebo služby přihlašovací údaje (nebo obě) musí vytvořit, protože [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] neposkytuje rozhraní API nastavit několik certifikátů klienta nebo služby. Kromě toho zabezpečení Správce tokenu musí být za předpokladu, že využívat více certifikátů informace a vytvořte poskytovatele tokenu příslušné zabezpečení pro zadaný klíče směr využití a zprávy.  
+ Pokud chcete povolit samostatných certifikátů, který se má použít pro podepisování a šifrování, vlastní klienta nebo služba přihlašovací údaje (nebo obě) musí vytvořit, protože WCF neposkytuje rozhraní API pro nastavení více certifikátů klienta služby Windows nebo. Kromě toho zabezpečení Správce tokenu musí být za předpokladu, že využívat více certifikátů informace a vytvořte poskytovatele tokenu příslušné zabezpečení pro zadaný klíče směr využití a zprávy.  
   
  Následující diagram znázorňuje hlavní třídy, třídy dědí z (viz šipkou ukazující vzhůru) a návratové typy určité metod a vlastností.  
   

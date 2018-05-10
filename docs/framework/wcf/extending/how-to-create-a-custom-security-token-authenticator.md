@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 41936b407dfdb3fecee80b2513b557016cdcfe5e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ba554ed23ae039796f51f4a699d368c4a6c0587e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení
 Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpečení a postup při integraci s tokenu správce vlastní zabezpečení. Ověřovací data tokenu zabezpečení ověří obsah token zabezpečení, která je součástí příchozí zprávy. Pokud je ověření úspěšné, ověřovacích vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instance, při hodnocení, vrátí sadu deklarací identity.  
@@ -33,7 +33,7 @@ Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpe�
      [!code-csharp[C_CustomTokenAuthenticator#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#1)]
      [!code-vb[C_CustomTokenAuthenticator#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#1)]  
   
- Vrátí kolekci zásady autorizace v předchozí kód <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.CanValidateToken%28System.IdentityModel.Tokens.SecurityToken%29> metoda. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] neposkytuje veřejné implementace tohoto rozhraní. Následující postup ukazuje, jak to provést pro vaše vlastní požadavky.  
+ Vrátí kolekci zásady autorizace v předchozí kód <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.CanValidateToken%28System.IdentityModel.Tokens.SecurityToken%29> metoda. WCF neposkytuje veřejné implementace tohoto rozhraní. Následující postup ukazuje, jak to provést pro vaše vlastní požadavky.  
   
 #### <a name="to-create-a-custom-authorization-policy"></a>Chcete-li vytvořit vlastní zásady autorizace  
   
@@ -43,7 +43,7 @@ Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpe�
   
 3.  Implementace <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Issuer%2A> vlastnost určenou jen pro čtení. Tato vlastnost musí vrátit vystavitele sad deklarací identity, které jsou získány z tokenu. Vystavitel tokenu nebo autoritu, která je odpovědná za ověření tokenu obsah by měl odpovídat vystaviteli. Následující příklad používá vystavitele deklarace identity, která předaný Tato třída z vlastního ověřovacího modulu tokenu zabezpečení vytvořené v předchozím postupu. Ověřovací data tokenu zabezpečení vlastní používá sadu deklarací identity poskytované systémem (vrácený <xref:System.IdentityModel.Claims.ClaimSet.System%2A> vlastnost) představují Vystavitel tokenu uživatelské jméno.  
   
-4.  Implementace <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metoda. Tato metoda naplňuje instance <xref:System.IdentityModel.Policy.EvaluationContext> – třída (předaná jako argument) s deklaracemi identity, které jsou založeny na příchozí obsah tokenu zabezpečení. Vrátí metoda `true` když se provádí s vyhodnocení. V případech při implementaci spoléhá na přítomnost jiné zásady autorizace, které obsahují další informace o kontextu vyhodnocení, tato metoda může vrátit `false` Pokud není k dispozici požadované informace ještě v kontextu vyhodnocení. V takovém případě [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] bude volat metodu znovu po vyhodnocení všechny zásady autorizace vyvolala pro příchozí zprávy v případě, že nejméně jedna z těchto zásad autorizace Upravit kontext vyhodnocení.  
+4.  Implementace <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metoda. Tato metoda naplňuje instance <xref:System.IdentityModel.Policy.EvaluationContext> – třída (předaná jako argument) s deklaracemi identity, které jsou založeny na příchozí obsah tokenu zabezpečení. Vrátí metoda `true` když se provádí s vyhodnocení. V případech při implementaci spoléhá na přítomnost jiné zásady autorizace, které obsahují další informace o kontextu vyhodnocení, tato metoda může vrátit `false` Pokud není k dispozici požadované informace ještě v kontextu vyhodnocení. V takovém případě WCF, bude volat metodu znovu po vyhodnocení všechny zásady autorizace vyvolala pro příchozí zprávy v případě, že nejméně jedna z těchto zásad autorizace Upravit kontext vyhodnocení.  
   
      [!code-csharp[c_CustomTokenAuthenticator#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#2)]
      [!code-vb[c_CustomTokenAuthenticator#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#2)]  

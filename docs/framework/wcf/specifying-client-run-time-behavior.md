@@ -7,11 +7,11 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-ms.openlocfilehash: dbee1fecda66dc377513bdf8cae4645f009b6384
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: bc104c4f51ebc64154bd3d9b39ac2bca13b2fab1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
 Pokud chcete změnit chování běhové tak, aby vyhovovala klientská aplikace lze nakonfigurovat klienty Windows Communication Foundation (WCF), jako jsou služby Windows Communication Foundation (WCF). Tři atributy jsou k dispozici pro určení chování klienta. Můžete použít objekty zpětné volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributy změnit jejich chování. Pro atribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, lze použít k oddělení logické cílové z cílového okamžitou síť. Kromě toho můžete použít typů zpětného volání duplexní klientů některá chování straně služby. Další informace najdete v tématu [určení chování služby Run-Time](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
@@ -35,7 +35,7 @@ Pokud chcete změnit chování běhové tak, aby vyhovovala klientská aplikace 
   
 -   Můžete udělat tak pouze v řídí ladění scénáře.  
   
- Následující příklad kódu ukazuje klienta konfiguračního souboru, který se dá pokyn [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] k vrácení informací spravované výjimky z klienta objekt zpětného volání ve zprávách protokolu SOAP.  
+ Následující příklad kódu ukazuje klienta konfiguračního souboru, který se dá pokyn WCF k vrácení informací spravované výjimky z klienta objekt zpětného volání ve zprávách protokolu SOAP.  
   
  [!code-xml[SCA.CallbackContract#4](../../../samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/client.exe.config#4)]  
  

@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-ms.openlocfilehash: ab6e3a99f951d2977a079f49e4aa3eff250ee8d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 75657786135fd13222c6c7edd5acfa122cc72e52
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Nástroj Configuration Editor (SvcConfigEditor.exe)
-Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEditor.exe) umožňuje správcům a vývojářům umožňuje vytvořit a upravit nastavení konfigurace pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služeb pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vazby, chování, služeb a diagnostiky, aniž by museli přímo upravit konfigurační soubory XML.  
+Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEditor.exe) umožňuje správcům a vývojářům umožňuje vytvořit a upravit nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro vazby WCF, chování, služeb a diagnostiky aniž by museli přímo upravit konfigurační soubory XML.  
   
  Editor konfigurací služby naleznete ve složce C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin.  
   
 ## <a name="the-wcf-configuration-editor"></a>Editor konfigurací WCF  
- Editor konfigurací služby se dodává s průvodce, který vás provede všechny kroky v konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služba nebo klienta. Důrazně doporučujeme používat Průvodce místo editoru přímo.  
+ Editor konfigurací služby se dodává s průvodce, který vás provede všechny kroky v konfiguraci služby WCF nebo klienta. Důrazně doporučujeme používat Průvodce místo editoru přímo.  
   
- Pokud již máte některé konfigurační soubory, které dodržovat standardní System.Configuration schéma, můžete spravovat nastavení specifická pro vazby, chování, služby a diagnostiku pomocí uživatelského rozhraní. Editor konfigurací služba umožňuje spravovat nastavení pro existující [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] soubory konfigurace i spustitelné soubory, služby COM + a hostované webové služby. Při otevírání hostované webové služby pomocí služby Editor konfigurací, i službu na vlastní konfiguraci a zděděné konfigurace oddílů horní úrovni uzlů se zobrazí.  
+ Pokud již máte některé konfigurační soubory, které dodržovat standardní System.Configuration schéma, můžete spravovat nastavení specifická pro vazby, chování, služby a diagnostiku pomocí uživatelského rozhraní. Editor konfigurací služba umožňuje spravovat nastavení pro existující konfigurační soubory WCF a také spustitelné soubory, služby COM + a hostované webové služby. Při otevírání hostované webové služby pomocí služby Editor konfigurací, i službu na vlastní konfiguraci a zděděné konfigurace oddílů horní úrovni uzlů se zobrazí.  
   
- Protože [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nastavení konfigurace se nachází v `<system.serviceModel>` oddílu konfiguračního souboru editoru funguje výhradně na obsah tohoto elementu a k další prvky ve stejném souboru. Můžete přejít na existující konfigurační soubory přímo, nebo můžete vybrat sestavení, které obsahuje službu, virtuální adresář nebo služby COM +. Editor načte konfiguračního souboru pro tento konkrétní službu a umožňuje uživateli přidat nové prvky nebo upravit stávající elementy vnořených v `<system.serviceModel>` oddílu konfiguračního souboru.  
+ Protože nastavení konfigurace WCF se nachází v `<system.serviceModel>` oddílu konfiguračního souboru editoru funguje výhradně na obsah tohoto elementu a k další prvky ve stejném souboru. Můžete přejít na existující konfigurační soubory přímo, nebo můžete vybrat sestavení, které obsahuje službu, virtuální adresář nebo služby COM +. Editor načte konfiguračního souboru pro tento konkrétní službu a umožňuje uživateli přidat nové prvky nebo upravit stávající elementy vnořených v `<system.serviceModel>` oddílu konfiguračního souboru.  
   
  Editor podporuje technologii IntelliSense a vynucuje schématu dodržování předpisů. Výsledný výstup záruku, že se pro dosažení souladu s schéma konfiguračního souboru a syntakticky správnou datové hodnoty. Editor však nezaručuje, že konfigurační soubor je sémanticky neplatná. Jinými slovy editoru nezaručuje, že konfigurační soubor můžete pracovat na službu, kterou nakonfiguruje.  
   
@@ -45,7 +45,7 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
   
  C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe  
   
- Po spuštění editoru konfigurace služby, můžete použít **otevřít** chcete vyhledat služby nebo sestavení, které chcete spravovat, v nabídce. Konfigurační soubory můžete otevřít přímo, vyhledejte [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] /COM+ služeb a otevřete konfigurační soubory pro hostované webové služby.  
+ Po spuštění editoru konfigurace služby, můžete použít **otevřít** chcete vyhledat služby nebo sestavení, které chcete spravovat, v nabídce. Můžete otevřít konfigurační soubory přímo, procházet služby WCF /COM+ a otevřete konfigurační soubory pro hostované webové služby.  
   
  Editor konfigurací služby uživatelské rozhraní je rozdělené do následujících oblastech:  
   
@@ -57,7 +57,7 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
   
 ### <a name="opening-a-configuration-file"></a>Otevření konfiguračního souboru  
   
-1.  Spusťte Editor konfigurací služby pomocí okno příkazového řádku a přejděte k vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umístění instalace a pak zadejte `SvcConfigEditor.exe`.  
+1.  Spusťte Editor konfigurací služby pomocí okno příkazového řádku přejděte do umístění instalace WCF a pak zadejte `SvcConfigEditor.exe`.  
   
 2.  Z **soubor** nabídce vyberte možnost **otevřete** a klikněte na typ souboru, kterou chcete spravovat.  
   
@@ -208,7 +208,7 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
 3.  Vyberte rozšíření element vazby, kterou chcete upravit. Nastavení elementu se zobrazí v pravém podokně, kde můžete upravit.  
   
 ### <a name="diagnostics"></a>Diagnostika  
- **Diagnostiky** uzlu zobrazí všechna nastavení pro diagnostiku v konfiguračním souboru. Umožňuje zapnout čítače výkonu nebo vypnout, povolit nebo zakázat Windows Management Instrumentation (WMI), nakonfigurovat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasování a nakonfigurovat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] protokolování zpráv. Nastavení v **diagnostiky** uzlu odpovídají <`system.diagnostics`> části a `<diagnostics>` kapitoly `<system.serviceModel>` v konfiguračním souboru.  
+ **Diagnostiky** uzlu zobrazí všechna nastavení pro diagnostiku v konfiguračním souboru. Umožňuje zapnout čítače výkonu nebo vypnout, povolení nebo zakázání služby Windows Management Instrumentation (WMI), konfigurovat trasování WCF a konfigurace protokolování zpráv WCF. Nastavení v **diagnostiky** uzlu odpovídají <`system.diagnostics`> části a `<diagnostics>` kapitoly `<system.serviceModel>` v konfiguračním souboru.  
   
  Když kliknete **diagnostiky** uzlu, můžete zobrazit nebo provádět úlohy v zobrazení diagnostické **na stránce Souhrn** v **podokno Podrobnosti**.  
   
@@ -225,18 +225,18 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
 2.  Chcete-li povolit zprostředkovatele rozhraní WMI, klikněte na tlačítko **povolit zprostředkovatele rozhraní WMI** odkaz.  
   
 #### <a name="enabling-wcf-tracing"></a>Povolení trasování WCF  
- Můžete vytvořit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasovací soubor s standardní vlastnosti nebo nastavit vlastní trasovací soubor.  
+ Můžete vytvořit soubor trasování WCF s standardní vlastnosti nebo nastavit vlastní trasovací soubor.  
   
 1.  Klikněte **diagnostiky** uzlu.  
   
 2.  Klikněte na tlačítko **povolit trasování**.  
   
-3.  Klikněte **úroveň trasování** odkaz upravit úroveň trasování. Existují šesti úrovně trasování: vypnuté, kritická, chyba, upozornění, informace a podrobné. **Trasování aktivit** a **rozšířit aktivity** možnost umožňují používat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce trasování aktivity.  
+3.  Klikněte **úroveň trasování** odkaz upravit úroveň trasování. Existují šesti úrovně trasování: vypnuté, kritická, chyba, upozornění, informace a podrobné. **Trasování aktivit** a **rozšířit aktivity** možnost umožňují používat funkce trasování aktivity WCF.  
   
 4.  Klikněte na název naslouchacího procesu trasování určete trasovacího souboru a možnosti.  
   
 #### <a name="enabling-wcf-logging"></a>Povolení protokolování WCF  
- Můžete vytvořit [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasovací soubor s standardní vlastnosti nebo nastavit vlastní trasovací soubor.  
+ Můžete vytvořit soubor trasování WCF s standardní vlastnosti nebo nastavit vlastní trasovací soubor.  
   
 1.  Klikněte **diagnostiky** uzlu.  
   
@@ -316,7 +316,7 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
  V této části můžete nastavit výchozí typ vazby pro jiné protokoly, jako je například http, tcp, služby MSMQ nebo net.pipe prostřednictvím definované mapování mezi protokol adresu schémata a možné vazby. Můžete také přidat nové mapování pro jiné protokoly.  
   
 #### <a name="extensions"></a>Rozšíření  
- Nové vazby rozšíření, vazba element rozšíření rozšíření standardní koncový bod a chování rozšíření se dají registrovat pro použití v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurace. Rozšíření jsou páry název/typu. Název definuje název rozšíření v konfiguraci, zatímco typ implementuje rozšíření. Existují čtyři typy rozšíření:  
+ Nová rozšíření vazby, vazba element rozšíření rozšíření standardní koncový bod a chování rozšíření se dají registrovat pro použití v konfiguraci WCF. Rozšíření jsou páry název/typu. Název definuje název rozšíření v konfiguraci, zatímco typ implementuje rozšíření. Existují čtyři typy rozšíření:  
   
 -   Vazba rozšíření definovat typ celý vazby. Příklad: `basicHttpBinding`.  
   
@@ -326,7 +326,7 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
   
 -   Chování element rozšíření definovat element chování. Příklad: `clientVia`.  
   
- Rozšíření, které byly zaregistrovány v konfiguraci můžete použít jako libovolný jiný [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] součásti stejného typu.  
+ Rozšíření, které byly zaregistrovány v konfiguraci můžete použít jako jakoukoli jinou součástí WCF stejného typu.  
   
 ##### <a name="adding-a-new-extension"></a>Přidání nové rozšíření  
  Vyberte jeden z uzlů rozšíření v pokročilé uzly:  
@@ -343,11 +343,11 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
  V této části můžete zadat nastavení vytváření instancí služby hostování prostředí.  
   
 ### <a name="creating-a-configuration-file-using-the-wizard"></a>Vytvoření konfiguračního souboru pomocí Průvodce  
- Jeden způsob, jak vytvořit nový soubor konfigurace je pomocí Průvodce vytvořením Element služby. Průvodce vyhledá typů nainstalovaných služeb a další prvky kompatibilní s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] v počítači, včetně modelu COM + a Web hostovaný virtuální adresáře a načte je, aby vytváření konfigurace mnohem víc zjednodušený.  
+ Jeden způsob, jak vytvořit nový soubor konfigurace je pomocí Průvodce vytvořením Element služby. Průvodce vyhledá typů nainstalovaných služeb a další prvky kompatibilní s použitím technologie WCF v počítači, včetně modelu COM + a Web hostovaný virtuální adresáře a načte je, aby vytváření konfigurace mnohem víc zjednodušený.  
   
 #### <a name="creating-a-configuration-file"></a>Vytvoření konfiguračního souboru  
   
-1.  Spusťte Editor konfigurací služby pomocí okno příkazového řádku a přejděte k vaší [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umístění instalace a pak zadejte `SvcConfigEditor.exe`.  
+1.  Spusťte Editor konfigurací služby pomocí okno příkazového řádku přejděte do umístění instalace WCF a pak zadejte `SvcConfigEditor.exe`.  
   
 2.  Z **soubor** nabídce vyberte možnost **otevřete** a klikněte na tlačítko **spustitelný soubor**, **služby COM +**, nebo **WebHosted služby**, v závislosti na typu konfigurační soubor, který chcete vytvořit.  
   
@@ -370,7 +370,7 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
   
 2.  Na první stránce vyberte ve stromu aplikace modelu COM +. Pokud vaše aplikace modelu COM + nemůže najít ve stromu, ověřte, zda je nainstalována v služby komponent a zaregistrován v globální mezipaměti sestavení (GAC).  
   
-3.  Na další stránce vyberte metody, které chcete vystavit v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Všechny podporované metody v aplikace modelu COM + se zobrazují a ve výchozím nastavení zaškrtnuto.  
+3.  Na další stránce vyberte, které metody, kterou chcete vystavit jako služby WCF. Všechny podporované metody v aplikace modelu COM + se zobrazují a ve výchozím nastavení zaškrtnuto.  
   
 4.  Zvolte hostitelský metodu.  
   
@@ -390,6 +390,6 @@ Windows Communication Foundation (WCF) služba konfigurace Editor (SvcConfigEdit
     >  Můžete také přímo otevřít a upravit konfigurační soubor, který obsahuje kontrakty COM.  
   
 ## <a name="security"></a>Zabezpečení  
- Konfigurační soubor služby generované Editor konfigurací není zaručena bezpečnost pro zabezpečené. Podrobnosti najdete [zabezpečení](../../../docs/framework/wcf/feature-details/security.md) dokumentaci a zjistěte, jak zabezpečit vaše [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
+ Konfigurační soubor služby generované Editor konfigurací není zaručena bezpečnost pro zabezpečené. Podrobnosti najdete [zabezpečení](../../../docs/framework/wcf/feature-details/security.md) dokumentaci a zjistěte, jak zabezpečit služby WCF.  
   
- Kromě toho Editor konfigurací pouze slouží ke čtení a zápisu platný [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurace – elementy. Nástroj ignoruje kompatibilní se standardem schématu, uživatelsky definované prvky. Také nepokusí odeberte tyto prvky z konfigurace souboru nebo určit jejich důsledky pro známých [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] elementy. Je zodpovědností uživatele k určení, zda tyto prvky představovat hrozbu pro aplikace nebo systému.
+ Kromě toho můžete Editor konfigurací použít pouze ke čtení a zápisu platný WCF konfigurace – elementy. Nástroj ignoruje kompatibilní se standardem schématu, uživatelsky definované prvky. Také nepokusí odeberte tyto prvky z konfigurace souboru nebo určit jejich dopadu na známé prvky WCF. Je zodpovědností uživatele k určení, zda tyto prvky představovat hrozbu pro aplikace nebo systému.

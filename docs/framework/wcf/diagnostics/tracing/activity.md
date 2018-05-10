@@ -2,19 +2,19 @@
 title: Aktivita
 ms.date: 03/30/2017
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-ms.openlocfilehash: 34281647f65157484c1e732bc67a6a4b2cf58db6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3100d5bb60dc1b11d23b0705f4d6f23a3675ac51
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="activity"></a>Aktivita
 Toto téma popisuje aktivity trasování v modelu trasování Windows Communication Foundation (WCF). Aktivity jsou zpracování jednotek, které pomůže uživateli zúžit obor selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Operace se například nezdaří, protože zpráva dešifrování se nezdařilo. Trasování pro operace a Chyba při dešifrování zprávy zobrazí ve stejné aktivitě, zobrazující přímé korelace mezi chyby dešifrování a chybu požadavku.  
   
 ## <a name="configuring-activity-tracing"></a>Konfigurace trasování aktivity  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] obsahuje předem definovaná aktivity pro zpracování aplikace (viz [seznam aktivit](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)). Můžete také definovat aktivity prostřednictvím kódu programu ke skupině uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
+ WCF obsahuje předem definovaná aktivity pro zpracování aplikace (viz [seznam aktivit](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)). Můžete také definovat aktivity prostřednictvím kódu programu ke skupině uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
   
- Pro vydávání trasování aktivity v době běhu, použijte `ActivityTracing` nastavení `System.ServiceModel` trasování zdroje nebo jiné [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] nebo vlastního trasování zdrojů, jak je ukázáno v následujícím kódu konfigurace.  
+ Pro vydávání trasování aktivity v době běhu, použijte `ActivityTracing` nastavení `System.ServiceModel` trasování zdroje, nebo jiné WCF nebo vlastního trasování zdrojů, jak je ukázáno v následujícím kódu konfigurace.  
   
 ```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing">  
@@ -88,7 +88,7 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
 -   Aktivita označuje zpracování hranic, která může mít smysl pro správce systému nebo o podpoře.  
   
--   Každý [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] metoda, jak na klientovi a serveru, je vázaný podle od nová aktivita a pak (po práci) ukončení nová aktivita a vrátilo se do vedlejším aktivity.  
+-   Každá metoda WCF, jak na klientovi a serveru, je vázaný podle od nová aktivita a pak (po práci) ukončení nová aktivita a vrátilo se do vedlejším aktivity.  
   
 -   Dlouho spuštěný (probíhající) aktivity, například naslouchat pro připojení nebo čekání zprávy jsou reprezentované pomocí odpovídající značky spuštění a zastavení.  
   

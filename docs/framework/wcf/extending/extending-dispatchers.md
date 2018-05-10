@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: bc700aefc3b50102dc0a3faabbbcd09c1c8fc4bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 653b22adb5ed53c9c3eb44db598ad5d1c50ff1a9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní kanály, převedena do volání metod v kódu aplikace a odesílání výsledky zpět k volajícímu. Rozšíření dispečerů umožňují upravit zpracování.  Můžete implementovat zprávy nebo parametr kontroly, které zkontrolovat nebo upravit obsah zprávy nebo parametry.  Můžete změnit způsob zprávy jsou směrovány do operace nebo zadejte některé další funkce.  
@@ -16,7 +16,7 @@ Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní
  Toto téma popisuje postup použití <xref:System.ServiceModel.Dispatcher.DispatchRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> aplikace změnit výchozí chování při spuštění systému dispečera nebo k zachycení nebo upravit zprávy, parametry nebo může vracet služby třídy v Windows Communication Foundation (WCF) hodnoty před nebo po odeslání nebo načítat vrstvy kanálu. Další informace o zpracování zprávy runtime ekvivalentní klienta najdete v tématu [rozšíření klienti](../../../../docs/framework/wcf/extending/extending-clients.md). Zjistit roli, <xref:System.ServiceModel.IExtensibleObject%601> typy přehrání při přístupu ke sdílené stavu mezi různými objekty přizpůsobení modulu runtime naleznete v tématu [rozšiřitelné objekty](../../../../docs/framework/wcf/extending/extensible-objects.md).  
   
 ## <a name="dispatchers"></a>Dispečerů  
- Vrstva modelu služby provede převod mezi programovací model pro vývojáře a základní exchange zprávu, označovaného jako vrstvy kanálu. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dispečerů kanálu a koncového bodu (<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>, v uvedeném pořadí) jsou součásti služby zodpovědní za přijetí nové kanály, přijímání zpráv, operace odesílání a volání a zpracování odpovědi. Dispečer jsou objekty příjemce, ale implementace kontraktu zpětného volání v duplexní služby také vystavit jejich dispečera objekty pro kontrolu, změna nebo rozšíření.  
+ Vrstva modelu služby provede převod mezi programovací model pro vývojáře a základní exchange zprávu, označovaného jako vrstvy kanálu. V WCF kanál a koncový bod dispečerů (<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>, v uvedeném pořadí) jsou součásti služby zodpovědní za přijetí nové kanály, přijímání zpráv, operace odesílání a volání a zpracování odpovědi. Dispečer jsou objekty příjemce, ale implementace kontraktu zpětného volání v duplexní služby také vystavit jejich dispečera objekty pro kontrolu, změna nebo rozšíření.  
   
  Dispečera channel (a doprovodné <xref:System.ServiceModel.Channels.IChannelListener>) vrátí zprávy mimo základní slovník kanál a předává zprávy do jejich dispečerů příslušného koncového bodu. Má každý koncový bod dispečera <xref:System.ServiceModel.Dispatcher.DispatchRuntime> který směruje zprávy do příslušné <xref:System.ServiceModel.Dispatcher.DispatchOperation>, který zodpovídá za volání metody, která implementuje operaci. Různé požadované a volitelné rozšíření třídy jsou vyvolány na cestě. Toto téma vysvětluje, jak tyto součásti zapadají a jak můžete upravit vlastnosti a zařaďte vlastní kód pro rozšíření základní funkce.  
   
@@ -45,7 +45,7 @@ Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní
   
 -   Vlastní zprávu transformace. Uživatele můžete použít některé transformace na zprávu v modulu runtime (například pro správu verzí). Můžete to provést, znovu s rozhraními interceptoru zprávy.  
   
--   Vlastní datový Model. Uživatelé mohou mít datový model serializace nejsou podporovány ve výchozím nastavení v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (konkrétně, <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>, <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>a nezpracované zprávy). To můžete provést implementace rozhraní formátování zprávy. Příklad, naleznete v části [formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).  
+-   Vlastní datový Model. Uživatelé mohou mít datový model serializace nejsou podporovány ve výchozím nastavení ve službě WCF (konkrétně, <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>, <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>a nezpracované zprávy). To můžete provést implementace rozhraní formátování zprávy. Příklad, naleznete v části [formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).  
   
 -   Vlastní parametr ověření. Uživatele můžete vynutit, aby typové parametry jsou platné (na rozdíl od XML). To lze provést pomocí rozhraní inspector parametr.  
   
@@ -60,9 +60,9 @@ Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní
 -   Chování autorizace. Uživatele můžete implementovat řízení přístupu vlastní rozšíření běhu částí kontrakt nebo operace a přidáním kontrol zabezpečení na základě tokeny ve zprávě. Můžete to provést pomocí zachycování zpráv nebo parametr interceptoru rozhraní. Příklady najdete v tématu [rozšiřitelnost zabezpečení](../../../../docs/framework/wcf/samples/security-extensibility.md).  
   
     > [!CAUTION]
-    >  Vzhledem k tomu, že změna vlastnosti zabezpečení se může ohrozit zabezpečení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikací, důrazně doporučujeme provést změny související se zabezpečením dát pozor a důkladně otestovat před jejich nasazením.  
+    >  Vzhledem k tomu, že změna vlastnosti zabezpečení se může ohrozit zabezpečení aplikací služby WCF, doporučujeme provést změny související se zabezpečením dát pozor a důkladně otestovat před jejich nasazením.  
   
--   Validátory Runtime vlastní WCF. Můžete nainstalovat vlastní validátory, které zkontrolujte služby, smlouvy a vazby k vynucení zásad na podnikové úrovni s ohledem na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] aplikace. (Například najdete v části [postup: uzamčení mimo provoz koncovými body v podnikové síti](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).)  
+-   Validátory Runtime vlastní WCF. Vlastní validátory, které zkontrolujte služby, smlouvy a vazby k vynucení zásad podnikové úrovni s ohledem na aplikace WCF je možné nainstalovat. (Například najdete v části [postup: uzamčení mimo provoz koncovými body v podnikové síti](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).)  
   
 ### <a name="using-the-dispatchruntime-class"></a>Používání třídy DispatchRuntime  
  Použití <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třída změnit výchozí chování služby nebo jednotlivé koncový bod, nebo vložit objekty, které implementují vlastní úpravy jedno nebo obě následující procesy služeb (nebo procesy klienta v případě duplexní klienta):  

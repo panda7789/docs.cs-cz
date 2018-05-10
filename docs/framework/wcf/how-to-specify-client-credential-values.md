@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 82293d7f-471a-4549-8f19-0be890e7b074
-ms.openlocfilehash: e1133194fe925bca4fb79d8adc1975a2063450f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 9625400b855492ead12a5a2f1fa74f10164f6cdd
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-specify-client-credential-values"></a>Postupy: Zadání hodnot přihlašovacích údajů klienta
 Pomocí služby Windows Communication Foundation (WCF), službu určit, jak ověření klienta ke službě. Službu můžete například stanovení, ověření klienta s certifikátem.  
@@ -44,7 +44,7 @@ Pomocí služby Windows Communication Foundation (WCF), službu určit, jak ově
   
 1.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro generování kódu a konfigurace ze služby.  
   
-2.  Vytvoření instance [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta pomocí generovaného kódu.  
+2.  Vytvoření instance klienta WCF pomocí generovaného kódu.  
   
 3.  U třídy klienta nastavena <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost <xref:System.ServiceModel.ClientBase%601> třída na odpovídající hodnotu. Tento příklad nastaví vlastnost na certifikát X.509 pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential> třídy.  
   

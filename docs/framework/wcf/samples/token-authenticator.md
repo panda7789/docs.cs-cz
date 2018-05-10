@@ -2,11 +2,11 @@
 title: Ověřovací data tokenu
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: 35bba0b6a81ff11164636e906440db7e9b2ca25b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4681dea4fd39b039346d22c02c478323ff53e240
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá pro ověřování tokenu použít se zprávou, ověření, zda je konzistentní a ověřování identity přidružené k tokenu.  
@@ -23,11 +23,11 @@ Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve
   
 -   Jak server můžete ověřit pomocí vlastního ověřovacího modulu tokenu pověření klienta.  
   
--   Jak [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kódu služby sváže pomocí vlastního ověřovacího modulu tokenu.  
+-   Jak sváže kódu služby WCF pomocí vlastního ověřovacího modulu tokenu.  
   
 -   Jak server lze ověřit pomocí certifikátu X.509 serveru.  
   
- Tento příklad také ukazuje, jak je přístupná ze identitu volajícího [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] po dokončení procesu vlastních tokenů ověřování.  
+ Tento příklad také ukazuje, jak identitu volajícího je přístupný z WCF po dokončení procesu vlastních tokenů ověřování.  
   
  Službu zpřístupní jeden koncový bod pro komunikaci se službou, definovat pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována s standard `wsHttpBinding`, s režimem zabezpečení nastavena na zprávy - výchozí režim `wsHttpBinding`. Tato ukázka nastaví standardní `wsHttpBinding` používat uživatelské jméno ověřování klientů. Služba nakonfiguruje taky certifikát služby pomocí `serviceCredentials` chování. `securityCredentials` Chování umožňuje určit certifikát služby. Certifikát služby se používá klient k ověření služby a zajištění ochrany zprávy. Následující konfigurace odkazuje localhost certifikát nainstalovat během instalace ukázka, jak je popsáno v následujících pokynů pro instalaci.  
   

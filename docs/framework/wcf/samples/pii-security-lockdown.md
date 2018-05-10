@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 81fc656784dadf0706e2ae3feda09cd08b886560
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ec8af8c7df9335774b1f3953f88c2aad438963b6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tato ukázka ukazuje, jak řídit několik funkcí souvisejících se zabezpečením služby Windows Communication Foundation (WCF) podle:  
@@ -29,11 +29,11 @@ Tato ukázka ukazuje, jak řídit několik funkcí souvisejících se zabezpeče
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
 ## <a name="discussion"></a>Diskusní  
- Každý z těchto funkcí může být používat samostatně nebo společně k řízení aspektů zabezpečení služby. Nejedná se o základní příručka k zabezpečení [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Každý z těchto funkcí může být používat samostatně nebo společně k řízení aspektů zabezpečení služby. Nejedná se o základní příručka k zabezpečení služby WCF.  
   
  Rozhraní .NET Framework konfigurační soubory, které mohou obsahovat citlivé údaje, jako je například připojovací řetězce pro připojení k databázím. Ve scénářích sdílené, hostovat webové může být žádoucí k zašifrování těchto informací v konfiguračním souboru pro službu, aby byla data obsažená v konfiguračním souboru odolné vůči běžné zobrazení. .NET framework 2.0 nebo novější má možnost šifrování části konfiguračního souboru pomocí aplikace Windows Data Protection programovací rozhraní (DPAPI), nebo zprostředkovatele šifrování RSA. Aspnet_regiis.exe pomocí rozhraní DPAPI nebo RSA můžete šifrovat vyberte části konfiguračního souboru.  
   
- Ve scénářích hostované webové je možné, že služby v podadresářích adresáře dalších služeb. Výchozí hodnota pro určení hodnoty konfigurace sémantického umožňuje konfigurační soubory v adresáři vnořené přepsat hodnoty konfigurace v nadřazeném adresáři. V některých situacích může být žádoucí z různých důvodů. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporuje konfigurace služby uzamykání hodnoty konfigurace tak, aby vnořené konfigurace generuje výjimky při spuštění vnořené služby pomocí přepsat hodnoty konfigurace.  
+ Ve scénářích hostované webové je možné, že služby v podadresářích adresáře dalších služeb. Výchozí hodnota pro určení hodnoty konfigurace sémantického umožňuje konfigurační soubory v adresáři vnořené přepsat hodnoty konfigurace v nadřazeném adresáři. V některých situacích může být žádoucí z různých důvodů. Podporuje konfigurace služby WCF uzamykání hodnoty konfigurace tak, aby vnořené konfigurace generuje výjimky při spuštění vnořené služby pomocí přepsat hodnoty konfigurace.  
   
  Tento příklad znázorňuje postup řízení protokolování z známé identifikovatelné osobní informace (PII) v protokolech trasování a zprávy, jako je například uživatelské jméno a heslo. Ve výchozím nastavení protokolování známé PII je zakázáno, ale v některých situacích může být důležité při ladění aplikace protokolování PII. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kromě toho tato ukázka používá trasování a protokolování zpráv. Další informace najdete v tématu [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázka.  
   

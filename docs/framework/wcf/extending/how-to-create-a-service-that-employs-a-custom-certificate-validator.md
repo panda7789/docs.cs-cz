@@ -7,16 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: bb0190ff-0738-4e54-8d22-c97d343708bf
-ms.openlocfilehash: d4a1532ed91b17cf5bed909026ace695aeba8cd9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: cc768f5e5086e6eba1ccac9d969eac14e14ceb2f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-service-that-employs-a-custom-certificate-validator"></a>Postupy: vytvoření služby, který využívá validátor vlastní certifikát
 Toto téma ukazuje, jak implementovat vlastní certifikát ověření a postup konfigurace klienta služby Windows nebo pověření nahradit logiku ověření certifikátu výchozí validátor vlastní certifikát.  
   
- Pokud certifikát X.509 slouží k ověření klienta a služby, Windows Communication Foundation (WCF) ve výchozím nastavení používá úložiště certifikátů systému Windows a rozhraní API pro šifrování k ověření certifikátu a ujistěte se, zda je důvěryhodný. Někdy funkce integrované certifikát ověření nestačí a je třeba změnit. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] poskytuje snadný způsob, jak změnit logiku ověření tím, že se uživatelům přidat validátor vlastní certifikát. Pokud validátor vlastní certifikát není zadaný, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nepoužívá logiku ověření integrované certifikátu ale spoléhá na vlastní validátor místo.  
+ Pokud certifikát X.509 slouží k ověření klienta a služby, Windows Communication Foundation (WCF) ve výchozím nastavení používá úložiště certifikátů systému Windows a rozhraní API pro šifrování k ověření certifikátu a ujistěte se, zda je důvěryhodný. Někdy funkce integrované certifikát ověření nestačí a je třeba změnit. WCF poskytuje snadný způsob, jak změnit logiku ověření tím, že se uživatelům přidat validátor vlastní certifikát. Pokud validátor vlastní certifikát není zadaný, WCF nepoužívá logiku ověření integrované certifikátu ale spoléhá na vlastní validátor místo.  
   
 ## <a name="procedures"></a>Procedury  
   

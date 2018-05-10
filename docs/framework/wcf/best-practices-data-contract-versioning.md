@@ -7,11 +7,11 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-ms.openlocfilehash: a578235a0db0ba769cae0b2ade93edbfd72b5508
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 33db8749656a8bb001f0a1797c77451476a126f2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="best-practices-data-contract-versioning"></a>Osvědčené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. Další informace o kontraktech dat najdete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -21,7 +21,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
  To znamená, že i nejběžnější Správa verzí scénář, jako je například přidávání nového člena dat, nelze implementovat způsobem, který je bezproblémové s ohledem na daném schématu. Novější verze kontraktu dat (s nového datového člena, např.) nelze ověřit pomocí staré schématu.  
   
- Existují však mnoho scénářů, ve kterých není vyžaduje striktní schématu dodržování předpisů. Mnoho webových služeb platformy, včetně [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a XML webové služby vytvořené pomocí technologie ASP.NET, není ve výchozím nastavení provádět ověřování schématu a proto tolerovat dodatečné prvky, které nejsou popsané schéma. Při práci s takové platformy, jsou usnadňují implementaci mnoho scénářů správy verzí.  
+ Existují však mnoho scénářů, ve kterých není vyžaduje striktní schématu dodržování předpisů. Mnoho webových služeb platformy, včetně služby WCF a webové XML vytvořených pomocí technologie ASP.NET, neprovádějí ověřování schématu ve výchozím nastavení a proto tolerovat dodatečné prvky, které nejsou popsané schéma. Při práci s takové platformy, jsou usnadňují implementaci mnoho scénářů správy verzí.  
   
  Proto existují dvě sady dat smlouvy verze: jeden pro scénáře, kde platnosti striktní schématu je důležité, a další nastavení pro scénáře, když není nastaven.  
   
@@ -36,7 +36,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které m�
   
  Další informace najdete v tématu osvědčené postupy: [verze služby](../../../docs/framework/wcf/service-versioning.md).  
   
- V některých případech striktní schématu dodržování předpisů pro zprávy odeslané aplikace musí zaručit, ale nelze spoléhat na příchozí zprávy, které mají být úplně schématu kompatibilní. V tomto případě je nebezpečí, že příchozí zprávy může obsahovat nadbytečné data. Nadbytečné hodnoty jsou uloženy a vrácený [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a proto výsledkem odesílány zprávy neplatné schéma. K tomuto problému nedošlo, by měl být vypnuté funkci odezvy. Chcete-li to provést dvěma způsoby.  
+ V některých případech striktní schématu dodržování předpisů pro zprávy odeslané aplikace musí zaručit, ale nelze spoléhat na příchozí zprávy, které mají být úplně schématu kompatibilní. V tomto případě je nebezpečí, že příchozí zprávy může obsahovat nadbytečné data. Nadbytečné hodnoty jsou uloženy a vrácený WCF a proto výsledkem odesílány zprávy neplatné schéma. K tomuto problému nedošlo, by měl být vypnuté funkci odezvy. Chcete-li to provést dvěma způsoby.  
   
 -   Neimplementuje <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní na žádném z vašich typů.  
   

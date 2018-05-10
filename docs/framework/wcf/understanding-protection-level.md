@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
-ms.openlocfilehash: 0f17d6e787a48edd562559f52ac015edf7bc702c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 157e660a8b4d3866b9ab1994c409f82f16ac8359
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
 `ProtectionLevel` Vlastnost nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost řídí, jak je chráněný část (nebo celé) zprávy. Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.  
@@ -39,7 +39,7 @@ ms.lasthandoff: 05/04/2018
   
 -   `ProtectionLevel` Je způsob, jak vývojáři nastavit *minimální úroveň stanovenou* které musí dodržovat vazbu. Po nasazení služby se skutečná vazba zadaný v konfiguraci může nebo nemusí podporovat minimální úroveň. Ve výchozím nastavení, například <xref:System.ServiceModel.BasicHttpBinding> třída neposkytuje zabezpečení (i když může být povoleno). Proto pomocí kontrakt, který má jakékoli nastavení jiné než `None` způsobí výjimku, která je vyvolána.  
   
--   Pokud služba vyžaduje, aby minimální `ProtectionLevel` pro všechny zprávy je `Sign`, klient (možná vytvořené jinou hodnotu než[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] technologie) můžete šifrovat a podepsat všechny zprávy (které je větší než požadované minimum). V takovém případě [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nebude způsobí výjimku, protože klient má provádějí více než požadované minimum. Upozorňujeme však, který [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace (služby nebo klientů) nebude přepsání zabezpečeného Pokud je to možné část zprávy, ale bude splňovat minimální úroveň. Také Upozorňujeme, že pokud pomocí `Transport` jako režim zabezpečení, přenos může přepsání zabezpečení datového proudu zpráv protože ze své podstaty nelze zabezpečit na podrobnější úrovni.  
+-   Pokud služba vyžaduje, aby minimální `ProtectionLevel` pro všechny zprávy je `Sign`, klient (možná vytvořené technologie bez WCF) můžete šifrovat a podepsat všechny zprávy (což je více než požadované minimum). V takovém případě nebude WCF vyvolat výjimku, protože klient má více než minimální provádějí. Všimněte si však, že nebude přepsání zabezpečeného Pokud je to možné část zprávy aplikací služby WCF (služby nebo klientů), ale bude splňovat minimální úroveň. Také Upozorňujeme, že pokud pomocí `Transport` jako režim zabezpečení, přenos může přepsání zabezpečení datového proudu zpráv protože ze své podstaty nelze zabezpečit na podrobnější úrovni.  
   
 -   Pokud nastavíte `ProtectionLevel` explicitně buď na kteroukoli `Sign` nebo `EncryptAndSign`, pak musíte použít vazbu s povoleným zabezpečením nebo k výjimce.  
   

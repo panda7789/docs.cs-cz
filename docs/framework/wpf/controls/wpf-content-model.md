@@ -1,13 +1,6 @@
 ---
 title: Model obsahu WPF
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UIElement class [WPF], displaying content
 - content model [WPF], controls
@@ -18,19 +11,14 @@ helpviewer_keywords:
 - arbitrary content classes [WPF], content model
 - ContentControl class [WPF], displaying content
 ms.assetid: 214da5ef-547a-4cf8-9b07-4aa8a0e52cdd
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d708674682ffd7b0d13c9cbe828e28bbc26e260
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 48e96b04a3459aa18a52624758d5fa2347570fcf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-content-model"></a>Model obsahu WPF
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]je prezentace platforma, která poskytuje mnoho ovládací prvky a typy jako ovládací prvek, jehož primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek odvození od, byste měli porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládacího prvku.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je prezentace platforma, která poskytuje mnoho ovládací prvky a typy jako ovládací prvek, jehož primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek odvození od, byste měli porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládacího prvku.  
   
  Toto téma shrnuje modelu obsahu pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] řízení a řízení typů. Model obsahu popisuje, jaké obsahu lze v ovládacím prvku. Toto téma obsahuje také obsahu vlastnosti pro každý model obsahu. Vlastnost obsahu je vlastnost, která se používá k uložení obsahu objektu.  
   
@@ -40,7 +28,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="classes-that-contain-arbitrary-content"></a>Třídy, které obsahují libovolný obsah  
  Některé ovládací prvky může obsahovat objekt jakéhokoli typu, například řetězec, <xref:System.DateTime> objekt, nebo <xref:System.Windows.UIElement> který je kontejner pro další položky. Například <xref:System.Windows.Controls.Button> může obsahovat bitovou kopii a text; nebo <xref:System.Windows.Controls.CheckBox> může obsahovat hodnotu <xref:System.DateTime.Now%2A?displayProperty=nameWithType>.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]má čtyři tříd, které může obsahovat libovolný obsah. Následující tabulka uvádí třídy, které dědí <xref:System.Windows.Controls.Control>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má čtyři tříd, které může obsahovat libovolný obsah. Následující tabulka uvádí třídy, které dědí <xref:System.Windows.Controls.Control>.  
   
 |Třída, která obsahuje libovolné obsahu|Obsah|  
 |-------------------------------------------|-------------|  
@@ -122,7 +110,7 @@ TabControl používající různé typy ve vlastnosti záhlaví
  Příklad vytvoření <xref:System.Windows.Controls.TabItem> objekty, najdete v části <xref:System.Windows.Controls.HeaderedContentControl>.  
   
 ### <a name="controls-that-contain-a-collection-of-arbitrary-objects"></a>Ovládací prvky, které obsahují skupiny libovolný objekty  
- <xref:System.Windows.Controls.ItemsControl> Třída dědí z <xref:System.Windows.Controls.Control> a může obsahovat více položek, jako je například řetězce, objekty nebo jiných prvků. Jeho obsahu vlastnosti jsou <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> a <xref:System.Windows.Controls.ItemsControl.Items%2A>. <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>Obvykle se používá k naplnění <xref:System.Windows.Controls.ItemsControl> se shromažďováním dat. Pokud nechcete použít kolekci k naplnění <xref:System.Windows.Controls.ItemsControl>, můžete přidat položky pomocí <xref:System.Windows.Controls.ItemsControl.Items%2A> vlastnost.  
+ <xref:System.Windows.Controls.ItemsControl> Třída dědí z <xref:System.Windows.Controls.Control> a může obsahovat více položek, jako je například řetězce, objekty nebo jiných prvků. Jeho obsahu vlastnosti jsou <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> a <xref:System.Windows.Controls.ItemsControl.Items%2A>. <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> Obvykle se používá k naplnění <xref:System.Windows.Controls.ItemsControl> se shromažďováním dat. Pokud nechcete použít kolekci k naplnění <xref:System.Windows.Controls.ItemsControl>, můžete přidat položky pomocí <xref:System.Windows.Controls.ItemsControl.Items%2A> vlastnost.  
   
  Ovládací prvky dědí <xref:System.Windows.Controls.ItemsControl> a použít jeho modelu obsahu:  
   
@@ -231,7 +219,7 @@ TextBlock, který má ohraničení
   
 <a name="classes_that_provides_visual_feedback_about_a_uielement"></a>   
 ## <a name="classes-that-provide-visual-feedback-about-a-uielement"></a>Třídy, které poskytují vizuální zpětnou vazbu o prvků uživatelského rozhraní  
- <xref:System.Windows.Documents.Adorner> Třída poskytuje vizuální upozornění na uživatele. Například použít <xref:System.Windows.Documents.Adorner> přidat funkční obslužné rutiny na elementy nebo zadejte informace o prvku stavu. <xref:System.Windows.Documents.Adorner> Třída poskytuje rozhraní, takže můžete vytvořit vlastní ozdobného prvku. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]neposkytuje žádné implementovaná ozdobného prvku. Další informace najdete v tématu [ozdobného prvku přehled](../../../../docs/framework/wpf/controls/adorners-overview.md).  
+ <xref:System.Windows.Documents.Adorner> Třída poskytuje vizuální upozornění na uživatele. Například použít <xref:System.Windows.Documents.Adorner> přidat funkční obslužné rutiny na elementy nebo zadejte informace o prvku stavu. <xref:System.Windows.Documents.Adorner> Třída poskytuje rozhraní, takže můžete vytvořit vlastní ozdobného prvku. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neposkytuje žádné implementovaná ozdobného prvku. Další informace najdete v tématu [ozdobného prvku přehled](../../../../docs/framework/wpf/controls/adorners-overview.md).  
   
 <a name="classes_that_enable_users_to_enter_text"></a>   
 ## <a name="classes-that-enable-users-to-enter-text"></a>Třídy, které umožňují uživatelům zadávat Text  
@@ -261,7 +249,7 @@ TextBlock, který má ohraničení
   
 <a name="classes_that_format_text"></a>   
 ## <a name="classes-that-format-your-text"></a>Třídy, které formátování textu  
- <xref:System.Windows.Documents.TextElement>a jeho souvisejících tříd umožňují formátování textu. <xref:System.Windows.Documents.TextElement>objekty obsahovat a formátování textu v <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty. Oba typy primární <xref:System.Windows.Documents.TextElement> objekty jsou <xref:System.Windows.Documents.Block> elementy a <xref:System.Windows.Documents.Inline> elementy. A <xref:System.Windows.Documents.Block> element reprezentuje blok textu, například odstavce nebo seznamu. <xref:System.Windows.Documents.Inline> Element reprezentuje část textu v bloku. Mnoho <xref:System.Windows.Documents.Inline> třídy zadejte formátování textu, do které se použijí. Každý <xref:System.Windows.Documents.TextElement> má svou vlastní modelu obsahu. Další informace najdete v tématu [přehled modelu obsahu TextElement](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md).  
+ <xref:System.Windows.Documents.TextElement> a jeho souvisejících tříd umožňují formátování textu. <xref:System.Windows.Documents.TextElement> objekty obsahovat a formátování textu v <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty. Oba typy primární <xref:System.Windows.Documents.TextElement> objekty jsou <xref:System.Windows.Documents.Block> elementy a <xref:System.Windows.Documents.Inline> elementy. A <xref:System.Windows.Documents.Block> element reprezentuje blok textu, například odstavce nebo seznamu. <xref:System.Windows.Documents.Inline> Element reprezentuje část textu v bloku. Mnoho <xref:System.Windows.Documents.Inline> třídy zadejte formátování textu, do které se použijí. Každý <xref:System.Windows.Documents.TextElement> má svou vlastní modelu obsahu. Další informace najdete v tématu [přehled modelu obsahu TextElement](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Pokročilé](../../../../docs/framework/wpf/advanced/index.md)

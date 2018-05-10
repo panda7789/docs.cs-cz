@@ -1,23 +1,16 @@
 ---
-title: "Úvod k ovládacímu prvku DataRepeater (Visual Studio)"
+title: Úvod k ovládacímu prvku DataRepeater (Visual Studio)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - repeating data
 - DataRepeater, overview
 - DataRepeater
 ms.assetid: 78a52a1d-65f0-4ecb-97ff-53bc114300c5
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 699876cc568b22114e5ed8741c2fd0c053a137af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fc0cf9c358faf3e738eb3b24ec61577b88dbce4a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-the-datarepeater-control-visual-studio"></a>Úvod k ovládacímu prvku DataRepeater (Visual Studio)
 Visual Basic Power Pack <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládací prvek je posuvný kontejner pro ovládací prvky, které zobrazují opakované data, například řádků v tabulce databáze. Může sloužit jako alternativu k <xref:System.Windows.Forms.DataGridView> řízení, pokud potřebujete větší kontrolu nad rozložení data. <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> "Opakuje" skupinu souvisejících ovládacích prvků tak, že vytvoříte více instancí v posouvání zobrazení. To umožňuje uživatelům zobrazit více záznamů najednou.  
@@ -51,6 +44,6 @@ Visual Basic Power Pack <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovl
  Další přizpůsobení zahrnují řízení možnost Přidat nebo odstranit záznamy, přidání schopností vyhledávání a zobrazování souvisejících dat ve formátu, seznamu a podrobností. Další informace najdete v tématu [postupy: zákaz přidávání a odstraňování položek DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio.md), [postupy: vyhledávání dat v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-search-data-in-a-datarepeater-control-visual-studio.md), a [postupy: vytvoření hlavního a podrobného formuláře pomocí dvou pomocí Ovládacích prvků DataRepeater (Visual Studio)](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/datarepeater-control-visual-studio.md)  
- [Návod: Zobrazování dat v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio.md)  
- [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)
+ [Ovládací prvek DataRepeater](../../../visual-basic/developing-apps/windows-forms/datarepeater-control-visual-studio.md)  
+ [Návod: Zobrazení dat v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio.md)  
+ [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)

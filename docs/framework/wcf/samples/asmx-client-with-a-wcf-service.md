@@ -2,14 +2,14 @@
 title: Klient ASMX se službou WCF
 ms.date: 03/30/2017
 ms.assetid: 3ea381ee-ac7d-4d62-8c6c-12dc3650879f
-ms.openlocfilehash: 5a0262361eac35ac45c3861deee13133011754ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 93a881e486d82183fc42c524f3d83527c649516d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>Klient ASMX se službou WCF
-Tento příklad ukazuje postup vytvoření služby pomocí služby Windows Communication Foundation (WCF) a pak z jinou hodnotu než přístup ke službě[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientovi, například klient ASMX.  
+Tento příklad znázorňuje postup vytvoření služby pomocí služby Windows Communication Foundation (WCF) a pak z klienta bez WCF, jako je například klient ASMX se přístupu ke službě.  
   
 > [!NOTE]
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
@@ -33,7 +33,7 @@ public interface ICalculator
 }  
 ```  
   
- <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> mapování typů CLR na reprezentaci XML. <xref:System.Runtime.Serialization.DataContractSerializer> Jinak než XmlSerializer interpretuje některé reprezentace XML. Jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] generátory proxy serveru, jako je například Wsdl.exe, generovat více použitelné rozhraní při používání třídy XmlSerializer. <xref:System.ServiceModel.XmlSerializerFormatAttribute> Se použije na `ICalculator` rozhraní, aby třídy XmlSerializer je používána pro mapování typů CLR do formátu XML. Implementace služby vypočítá a vrátí odpovídající výsledek.  
+ <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> mapování typů CLR na reprezentaci XML. <xref:System.Runtime.Serialization.DataContractSerializer> Jinak než XmlSerializer interpretuje některé reprezentace XML. Generátory WCF bez proxy serveru, jako je například Wsdl.exe, generovat více použitelné rozhraní při používání třídy XmlSerializer. <xref:System.ServiceModel.XmlSerializerFormatAttribute> Se použije na `ICalculator` rozhraní, aby třídy XmlSerializer je používána pro mapování typů CLR do formátu XML. Implementace služby vypočítá a vrátí odpovídající výsledek.  
   
  Službu zpřístupní jeden koncový bod pro komunikaci se službou, definovat pomocí konfiguračního souboru (Web.config). Koncový bod se skládá z adresy, vazby a kontraktu. Službu zpřístupní koncový bod na základní adrese od hostitele Internetové informační služby (IIS). `binding` Je atribut nastaven na basicHttpBinding, která poskytuje HTTP komunikaci pomocí protokolu SOAP 1.1, který je kompatibilní s WS-I BasicProfile 1.1, jak je znázorněno v následující ukázka konfigurace.  
   
@@ -49,7 +49,7 @@ public interface ICalculator
 </services>  
 ```  
   
- Klient ASMX komunikuje s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby pomocí zadaných proxy server, který je generován nástroj webové služby popis Language (WSDL) (Wsdl.exe). Typové proxy je obsažený v souboru generatedClient.cs. Nástroj WSDL načte metadata pro zadanou službu a generuje typové proxy server pro použití klientem komunikovat. Ve výchozím nastavení rozhraní nevystavuje veškerá metadata. Ke zveřejnění metadata vyžadovaných ke generování proxy server, je nutné přidat [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) a nastavit jeho `httpGetEnabled` atribut `True` jak je znázorněno v následující konfiguraci.  
+ Klient ASMX komunikuje se službou WCF pomocí zadaných proxy server, který je generován nástroj webové služby popis Language (WSDL) (Wsdl.exe). Typové proxy je obsažený v souboru generatedClient.cs. Nástroj WSDL načte metadata pro zadanou službu a generuje typové proxy server pro použití klientem komunikovat. Ve výchozím nastavení rozhraní nevystavuje veškerá metadata. Ke zveřejnění metadata vyžadovaných ke generování proxy server, je nutné přidat [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) a nastavit jeho `httpGetEnabled` atribut `True` jak je znázorněno v následující konfiguraci.  
   
 ```xml  
 <behaviors>  

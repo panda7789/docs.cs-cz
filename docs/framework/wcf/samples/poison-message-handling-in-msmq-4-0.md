@@ -2,11 +2,11 @@
 title: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 25d99e6864b967b498fc53a6f6d78f476f4d938f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d0ddab7832e308336d5bfb1c5f75fd13fe63fe72
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 Tento příklad znázorňuje postup zpracování ve službě poškozených zpráv. Tato ukázka je založena na [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) ukázka. V tomto příkladu `netMsmqBinding`. Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.  
@@ -156,7 +156,7 @@ public class OrderProcessorService : IOrderProcessor
 ## <a name="processing-messages-from-the-poison-message-queue"></a>Zpracování zpráv z fronty poškozených zpráv  
  Služba poškozených zpráv čte zprávy z fronty konečné poškozených zpráv a zpracovává je.  
   
- Zprávy ve frontě nezpracovatelná zpráva jsou zprávy adresované do služby, která zpracovává zprávu, která může lišit od koncový bod služby nezpracovatelná zpráva. Proto při službu nezpracovatelná zpráva čte zprávy z fronty [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vrstvy kanálu najde neshody v koncových bodů a není odeslat zprávu. V takovém případě zprávy je řešit pořadí zpracování služby, ale je přijímání službou poškozená zpráva. Pokud chcete pokračovat i v případě, že zpráva je určena k jinému koncovému bodu, zobrazí se zpráva, musí přidáme `ServiceBehavior` filtru adresy, kde je kritérium přiřazování tak, aby odpovídaly žádný koncový bod služby je určeno zprávy. To je nutné úspěšně zpracovat zprávy, které můžete číst zprávy z fronty poškozená zpráva.  
+ Zprávy ve frontě nezpracovatelná zpráva jsou zprávy adresované do služby, která zpracovává zprávu, která může lišit od koncový bod služby nezpracovatelná zpráva. Proto když služba poškozených zpráv čte zprávy z fronty, vrstvy kanálu WCF najde neshody v koncových bodů a není odeslat zprávu. V takovém případě zprávy je řešit pořadí zpracování služby, ale je přijímání službou poškozená zpráva. Pokud chcete pokračovat i v případě, že zpráva je určena k jinému koncovému bodu, zobrazí se zpráva, musí přidáme `ServiceBehavior` filtru adresy, kde je kritérium přiřazování tak, aby odpovídaly žádný koncový bod služby je určeno zprávy. To je nutné úspěšně zpracovat zprávy, které můžete číst zprávy z fronty poškozená zpráva.  
   
  Implementace služby nezpracovatelná zpráva, samotné je velmi podobné implementace služby. Implementuje kontrakt a zpracovává objednávky. Tady je příklad kódu.  
 

@@ -2,21 +2,21 @@
 title: Import vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 78beb28f-408a-4c75-9c3c-caefe9595b1a
-ms.openlocfilehash: bb7124cbce3fa38d00446b6568c85fc3136ee180
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 99e2bd7c0ce1fd4a8154a0d6d9650487197d98d8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>Import vlastních metadat pro rozšíření WCF
-Ve Windows Communication Foundation (WCF), import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] můžete importovat <xref:System.ServiceModel.Description.ServiceEndpoint> instancí <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí z WSDL dokumentů pro službu. Chcete-li importovat metadata služby v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], použít implementaci <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny od <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které využít WS-Policy importovat logiku [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+Ve Windows Communication Foundation (WCF), import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například můžete importovat WCF <xref:System.ServiceModel.Description.ServiceEndpoint> instancí <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí z WSDL dokumentů pro službu. Chcete-li importovat metadata služby ve službě WCF, použijte implementace <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny od <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které využít WS-Policy importovat logiky ve službě WCF.  
   
  Vlastní metadata se skládá z elementů XML, které společnost importers poskytované systémem metadata nelze importovat. Obvykle obsahuje vlastní rozšíření WSDL a kontrolních výrazů vlastních zásad.  
   
  Tato část popisuje, jak importovat vlastní rozšíření WSDL a výrazy zásad. Nejsou zaměřeny na samotný proces import. Další informace o tom, jak používat typy, které exportovat a importovat metadata bez ohledu na to, zda se jedná o vlastní nebo systém nepodporuje metadata najdete v tématu [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
   
 ## <a name="overview"></a>Přehled  
- <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> Typ je implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. <xref:System.ServiceModel.Description.WsdlImporter> Typ naimportuje metadata WSDL s připojené zásady, které jsou seskupeny v <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> objektu. Výrazy zásad a WSDL rozšíření, které nelze rozpoznat společnosti importers výchozí jsou předány všechny registrované vlastní zásady a Importers k účetnictví WSDL pro import. Obvykle se Importers k účetnictví implementují podporovat prvky uživatelem definované vazby nebo upravit importované kontrakt.  
+ <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> Typ je implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy součástí WCF. <xref:System.ServiceModel.Description.WsdlImporter> Typ naimportuje metadata WSDL s připojené zásady, které jsou seskupeny v <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> objektu. Výrazy zásad a WSDL rozšíření, které nelze rozpoznat společnosti importers výchozí jsou předány všechny registrované vlastní zásady a Importers k účetnictví WSDL pro import. Obvykle se Importers k účetnictví implementují podporovat prvky uživatelem definované vazby nebo upravit importované kontrakt.  
   
  Tato část popisuje:  
   

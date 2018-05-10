@@ -1,14 +1,6 @@
 ---
 title: Známé typy kontraktů dat
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-caps.latest.revision: 42
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c9c180a0f1544fa187ddb53ec79a47f908c298d7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 00ae32ff394b1ce2acb38fb237527e934934b935
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute> Třída umožňuje zadat v předstihu, typy, které by měl být zahrnutý během deserializace důvodů. Příklad pracovní najdete v tématu [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  
@@ -43,7 +29,7 @@ ms.lasthandoff: 04/28/2018
 -   Některé typy, které zahrnují [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, mají členy, kteří jsou v jednom z výše uvedených tří skupin. Například <xref:System.Collections.Hashtable> používá <xref:System.Object> k uložení skutečných objektů v zatřiďovací tabulce. Při serializaci těchto typů, nemůže straně příjmu předem určit kontrakt dat pro tyto členy.  
   
 ## <a name="the-knowntypeattribute-class"></a>KnownTypeAttribute – třída  
- Pokud data dorazí na koncový bod přijímající [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] runtime pokusí deserializuje data do instance stejného typu language runtime (CLR). Typ, který je vytvořena instance pro deserializaci je zvolen zkontrolováním první příchozí zpráva k určení dat smlouvy, na které se shodují obsah zprávy. Modul deserializace se potom pokusí se najít typ CLR, který implementuje kontraktu dat, který je kompatibilní s obsah zprávy. Sadu candidate typů, které modul deserializace umožňuje během tohoto procesu se označuje jako deserializátor sadu "známé typy."  
+ Když data dorazí na koncový bod přijímající, pokusí se modul runtime WCF deserializuje data do instance stejného typu language runtime (CLR). Typ, který je vytvořena instance pro deserializaci je zvolen zkontrolováním první příchozí zpráva k určení dat smlouvy, na které se shodují obsah zprávy. Modul deserializace se potom pokusí se najít typ CLR, který implementuje kontraktu dat, který je kompatibilní s obsah zprávy. Sadu candidate typů, které modul deserializace umožňuje během tohoto procesu se označuje jako deserializátor sadu "známé typy."  
   
  Jedním ze způsobů umožníte modul deserializace vědět o typu je pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute>. Atribut nelze použít pro jednotlivé datové členy, jenom na celou datové typy kontrakt. Atribut se použije k *vnější typ* , může být třídu nebo strukturu. Ve své nejzákladnější využití použití atribut určuje typ jako "známý typ". To způsobí, že známý typ, který má být součástí sadu známé typy vždy, když objekt vnější typu nebo libovolného objektu uvedené prostřednictvím členů je deserializován. Více než jeden <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut lze použít do stejného typu.  
   
@@ -144,7 +130,7 @@ ms.lasthandoff: 04/28/2018
  [!code-vb[C_KnownTypeAttribute#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#10)]  
   
 ## <a name="additional-ways-to-add-known-types"></a>Další způsoby, jak přidat známé typy  
- Kromě toho mohou být přidány známé typy prostřednictvím konfiguračního souboru. To je užitečné, když není řídit typ, který vyžaduje pro správné deserializace, například při použití jiných výrobců knihovny s typů známé typy [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+ Kromě toho mohou být přidány známé typy prostřednictvím konfiguračního souboru. To je užitečné, když není řídit typ, který vyžaduje pro správné deserializace, například při použití jiných výrobců s Windows Communication Foundation (WCF) knihovny typů známé typy.  
   
  Následujícího konfiguračního souboru ukazuje, jak určit známý typ v konfiguračním souboru.  
   

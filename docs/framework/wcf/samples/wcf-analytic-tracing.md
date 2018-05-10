@@ -2,21 +2,21 @@
 title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 99b28dcc1cfb32f5f6835eadee1bded14375c216
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e13aa0f7d0dbc48bedad0a9c639695ed038b9303
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
-Tento příklad ukazuje, jak přidat vlastní trasování událostí do datového proudu analytické trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené můžete snadno získat viditelnost do služeb bez placení snížení výkonu vysoké. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis události, které se integrují s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+Tento příklad ukazuje, jak přidat vlastní trasování událostí do datového proudu analytické trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené můžete snadno získat viditelnost do služeb bez placení snížení výkonu vysoké. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API zápisu události, které se integrují se službou WCF.  
   
  Další informace o <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API, najdete v části <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.  
   
  Další informace o trasování událostí v systému Windows, najdete v části [vylepšení ladění a optimalizace výkonu s ETW](http://go.microsoft.com/fwlink/?LinkId=166488).  
   
 ## <a name="disposing-eventprovider"></a>Uvolnění EventProvider  
- V tomto příkladu <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> třídy, které implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby, je pravděpodobné, že můžete používat <xref:System.Diagnostics.Eventing.EventProvider>na prostředky po dobu jeho existence služby. Z tohoto důvodu a čitelnější, tato ukázka nikdy uvolní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu vaše služba má jiné požadavky pro trasování a vy musíte dispose tohoto prostředku a potom upravte tuto ukázku v souladu s doporučené postupy pro uvolnění nespravovaných prostředků. Další informace o uvolnění nespravovaných prostředků najdete v tématu [implementace metody Dispose](http://go.microsoft.com/fwlink/?LinkId=166436).  
+ V tomto příkladu <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> třídy, které implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování pro služby WCF, je pravděpodobné, že můžete používat <xref:System.Diagnostics.Eventing.EventProvider>na prostředky po dobu jeho existence služby. Z tohoto důvodu a čitelnější, tato ukázka nikdy uvolní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu vaše služba má jiné požadavky pro trasování a vy musíte dispose tohoto prostředku a potom upravte tuto ukázku v souladu s doporučené postupy pro uvolnění nespravovaných prostředků. Další informace o uvolnění nespravovaných prostředků najdete v tématu [implementace metody Dispose](http://go.microsoft.com/fwlink/?LinkId=166436).  
   
 ## <a name="self-hosting-vs-web-hosting"></a>Vlastní hostování vs. Hostování webů  
  Analytické trasování WCF na hostované webové služby, zadejte pole, s názvem "HostReference", který se používá k identifikaci služby, který je generování trasování. Trasování rozšiřitelnými uživatelskými mohl účastnit tohoto modelu a tento příklad znázorňuje osvědčené postupy, jak to udělat. Formát webového hostitele odkazovat při kanálu '&#124;' znak zobrazí se ve skutečnosti ve výsledné řetězec může být jakýkoli z následujících akcí:  
@@ -29,10 +29,10 @@ Tento příklad ukazuje, jak přidat vlastní trasování událostí do datovéh
   
      \<Název_lokality >&#124;\<ServiceVirtualPath >&#124;\<ServiceName >  
   
- Pro samoobslužné hostované služby [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]na analytické trasování není vyplnění pole "HostReference". `WCFUserEventProvider` – Třída v této ukázce chová konzistentně při použití s vlastním hostováním služby.  
+ Pro samoobslužné hostované služby analytické trasování WCF je není vyplňte pole "HostReference". `WCFUserEventProvider` – Třída v této ukázce chová konzistentně při použití s vlastním hostováním služby.  
   
 ## <a name="custom-event-details"></a>Podrobnosti o vlastní události  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]pro manifest zprostředkovatele události trasování událostí pro Windows definuje tři události, které mají být vysílaných [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby autoři z kódu služby. Následující tabulka ukazuje rozpis ze tří událostí.  
+ Manifest zprostředkovatele události trasování událostí pro Windows na WCF definuje tři události, které mají být vysílaných autorům služby WCF v kódu služby. Následující tabulka ukazuje rozpis ze tří událostí.  
   
 |Událost|Popis|ID události|  
 |-----------|-----------------|--------------|  
@@ -50,11 +50,11 @@ Tento příklad ukazuje, jak přidat vlastní trasování událostí do datovéh
   
      Ve webovém prohlížeči, klikněte na tlačítko **Calculator.svc**. Identifikátor URI dokumentu WSDL služby by se zobrazit v prohlížeči. Zkopírujte tento identifikátor URI.  
   
-4.  Spustit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] testovacího klienta (WcfTestClient.exe).  
+4.  Spuštění testovacího klienta WCF (WcfTestClient.exe).  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Testovacího klienta (WcfTestClient.exe) se nachází v \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] nainstalovat Dir > \Common7\IDE\ WcfTestClient.exe (výchozí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] dir instalace je C:\Program Files\Microsoft Visual Studio 10.0).  
+     Testovacího klienta WCF (WcfTestClient.exe) se nachází v \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] nainstalovat Dir > \Common7\IDE\ WcfTestClient.exe (výchozí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] dir instalace je C:\Program Files\Microsoft Visual Studio 10.0).  
   
-5.  V rámci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] testování klienta, přidejte službu tak, že vyberete **soubor**a potom **přidat službu**.  
+5.  V rámci testovacího klienta WCF, přidejte službu tak, že vyberete **soubor**a potom **přidat službu**.  
   
      Přidáte adresa koncového bodu do vstupního pole.  
   
@@ -64,7 +64,7 @@ Tento příklad ukazuje, jak přidat vlastní trasování událostí do datovéh
   
 7.  Otevřete Prohlížeč událostí aplikace.  
   
-     Před vyvoláním služby, spusťte Prohlížeč událostí a zkontrolujte, zda protokol událostí naslouchá pro sledování události vygenerované ze [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+     Před vyvoláním služby, spusťte Prohlížeč událostí a zkontrolujte, zda protokol událostí naslouchá pro sledování události vygenerované ze služby WCF.  
   
 8.  Z **spustit** nabídce vyberte možnost **nástroje pro správu**a potom **Prohlížeč událostí**. Povolit **analytické** a **ladění** protokoly.  
   

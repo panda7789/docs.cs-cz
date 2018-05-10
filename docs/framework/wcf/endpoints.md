@@ -4,14 +4,14 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - endpoints [WCF]
 ms.assetid: bd0c310f-dd9f-4081-9be2-3db5909850b6
-ms.openlocfilehash: 2588cc0bd70932aa91d300d8ecbe35cd2bcd7d00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b55abe937701f8708643efa2ea4cb62514b3521b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Koncové body Windows Communication Foundation
-Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nabídky služeb.  
+Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkci, která nabízí služby WCF.  
   
  Přehled o tom, jak vytvořit koncový bod, najdete v tématu [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). Každý koncový bod obsahuje:  
   
@@ -34,7 +34,7 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k 
  Popisuje strukturu koncový bod a také ukazuje, jak definovat koncový bod v konfiguraci a v kódu, jak používat výchozí koncové body, vazby a chování poskytované modulem runtime.  
   
  [Zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
- Popisuje, jak komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby dojde k prostřednictvím koncových bodů.  
+ Popisuje, jak probíhá komunikace se službou WCF pomocí koncových bodů.  
   
  [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  Demonstruje postup vytvoření koncového bodu služby v konfiguraci.  

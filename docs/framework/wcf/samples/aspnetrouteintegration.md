@@ -2,25 +2,25 @@
 title: AspNetRouteIntegration
 ms.date: 03/30/2017
 ms.assetid: 0638ce0e-d053-47df-a447-688e447a03fb
-ms.openlocfilehash: c2b2a47a0c817e23a06c39d622bca9c649cbadb4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 671857b0ace2e18f0dac7fd8033a20f3af889c8b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnetrouteintegration"></a>AspNetRouteIntegration
 Tento příklad znázorňuje způsob k hostování služby Windows Communication Foundation (WCF) REST pomocí směrování ASP.NET. [Základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka zobrazuje vlastním hostováním verze tohoto scénáře a implementaci služby podrobněji popisuje. Toto téma se zaměřuje na funkce integrace technologie ASP.NET. Další informace o směrování ASP.NET najdete v tématu <xref:System.Web.Routing>.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Service poskytuje kolekci zákazníkům způsobem prostředků-zaměřené na konkrétní nebo REST. Stejně jako založený na protokolu SOAP [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] službu, službu může být hostovaný v technologii ASP.NET pomocí souboru .svc. Je to ale často není upřednostňovaný pro scénáře HTTP protože vyžaduje s .svc v adrese URL pro službu. Kromě toho vyžaduje nasazení soubor .svc společně s knihovny služby. Tato omezení můžete zabránit hostování služby pomocí ASP.NET trasy, jak je ukázáno v této ukázce.  
+ Služby WCF poskytuje kolekci zákazníkům způsobem prostředků-zaměřené na konkrétní nebo REST. Stejně jako služby WCF na bázi protokolu SOAP může být služba hostovaný v technologii ASP.NET pomocí souboru .svc. Je to ale často není upřednostňovaný pro scénáře HTTP protože vyžaduje s .svc v adrese URL pro službu. Kromě toho vyžaduje nasazení soubor .svc společně s knihovny služby. Tato omezení můžete zabránit hostování služby pomocí ASP.NET trasy, jak je ukázáno v této ukázce.  
   
  Ukázka hostuje službu v ASP.NET přidáním <xref:System.ServiceModel.Activation.ServiceRoute> v souboru Global.asax. <xref:System.ServiceModel.Activation.ServiceRoute> Určuje typ služby ("služba" v tomto případě), typ objektu pro vytváření hostitele služby k používání pro službu (<xref:System.ServiceModel.Activation.WebServiceHostFactory> v takovém případě) a základní adresa pro službu HTTP ("~ / zákazníků v tomto případě).  
   
- Kromě toho zahrnuje v ukázkovém souboru Web.config, který přidá <xref:System.Web.Routing.UrlRoutingModule> (Chcete-li zapnout směrování ASP.NET) a zahrnuje konfiguraci pro službu. Na konkrétní konfiguraci nakonfiguruje [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby s výchozím <xref:System.ServiceModel.Description.WebHttpEndpoint> který má <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> nastavení `true`. V důsledku toho [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury vytvoří automatické stránku nápovědy HTML na základě v `http://localhost/Customers/help` , který poskytuje informace o tom, jak vytvořit HTTP požadavků a získání přístupu služby odpověď HTTP – například příklad Podrobnosti o odběrateli jsou reprezentované v XML a JSON.  
+ Kromě toho zahrnuje v ukázkovém souboru Web.config, který přidá <xref:System.Web.Routing.UrlRoutingModule> (Chcete-li zapnout směrování ASP.NET) a zahrnuje konfiguraci pro službu. Na konkrétní konfiguraci konfiguruje službu WCF s výchozím <xref:System.ServiceModel.Description.WebHttpEndpoint> který má <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> nastavení `true`. V důsledku toho infrastruktury WCF vytvoří automatické stránku nápovědy HTML na základě v `http://localhost/Customers/help` , který poskytuje informace o tom, jak vytvořit HTTP požadavků a získání přístupu služby odpověď HTTP – například příklad zákazníka Podrobnosti jsou reprezentované v XML a JSON.  
   
  Vystavení kolekci zákazníků (a obecně platí, žádný prostředek) tímto způsobem umožňuje klientům komunikovat se službou jednotným způsobem pomocí identifikátory URI a HTTP `GET`, `PUT`, `DELETE` a `POST`.  
   
- Program.cs v projektu klienta ukazuje, jak mohou být klienta vytvořené pomocí <xref:System.Net.HttpWebRequest>. Všimněte si, že toto je pouze jeden ze způsobů, jak přístup k [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Je také možné přístup ke službě pomocí jiné třídy rozhraní .NET Framework jako [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] kanálu a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka a [automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md) ukázkové) ukazují, jak používat tyto třídy ke komunikaci s [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.  
+ Program.cs v projektu klienta ukazuje, jak mohou být klienta vytvořené pomocí <xref:System.Net.HttpWebRequest>. Všimněte si, že se jedná pouze jeden způsob pro přístup ke službě WCF. Je také možné přístup ke službě pomocí jiné třídy rozhraní .NET Framework jako kanálu WCF a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka a [automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md) ukázkové) ukazují, jak používat tyto třídy pro komunikaci se službou WCF.  
   
  Tato ukázka se skládá ze 3 projekty:  
   

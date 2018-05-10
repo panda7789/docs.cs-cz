@@ -2,11 +2,11 @@
 title: Řešení potíží s aplikací pomocí trasování
 ms.date: 03/30/2017
 ms.assetid: 7676b9bb-cbd1-41fd-9a93-cc615af6e2d0
-ms.openlocfilehash: 7613ff24161fd7dc159838fb232e2fc6742ab1a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 684fd79e2aa8062ddeb183576cb449bf838aa6c3
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-tracing-to-troubleshoot-your-application"></a>Řešení potíží s aplikací pomocí trasování
 Tato část obsahuje různé témata, které popisují, jak můžete použít trasování problém s vaší aplikací.  
@@ -19,13 +19,13 @@ Tato část obsahuje různé témata, které popisují, jak můžete použít tr
  Popisuje, jak můžete použít nástroj prohlížeče trasování služeb k zobrazení, korelaci a analýze dat trasování.  
   
  [Významná trasování](../../../../../docs/framework/wcf/diagnostics/tracing/significant-traces.md)  
- Seznam hlavních trasování vysílaných [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].  
+ Seznam hlavních trasování vygenerované službou WCF.  
   
  [Ladění na klientovi](../../../../../docs/framework/wcf/diagnostics/tracing/debugging-on-the-client.md)  
  Umožňuje klientům ladění aplikace.  
   
  [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
- Popisuje trasování použitý pro E2E [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] scénáře synchronní wsHttp odpovědi, například a asynchronní jednosměrný požadavky protokolu TCP.  
+ Popisuje trasování používá pro scénáře E2E WCF, například, synchronní wsHttp odpovědi a asynchronní jednosměrný požadavky protokolu TCP.  
   
  [Generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)  
  Popisuje, jak pro vydávání trasování prostřednictvím kódu programu v uživatelském kódu tak, aby proaktivně vytvořením data instrumentace pro pozdější použití pro účely diagnostiky a korelace s trasování WCF.  

@@ -2,11 +2,11 @@
 title: Inicializace vytváření instancí
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: 75b8d2a2696d5900fd7bffe42dbaf62b9f6ce694
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ae01254760219f2b408ef9d9663c4158e2802be8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="instancing-initialization"></a>Inicializace vytváření instancí
 Tato ukázka rozšiřuje [Pooling](../../../../docs/framework/wcf/samples/pooling.md) ukázku definováním rozhraní, `IObjectControl`, který přizpůsobí inicializace objektu aktivace a deaktivace ho. Klient volá metody, které vrací objekt do fondu a která nevrátí objektu do fondu.  
@@ -15,12 +15,12 @@ Tato ukázka rozšiřuje [Pooling](../../../../docs/framework/wcf/samples/poolin
 >  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
   
 ## <a name="extensibility-points"></a>Body rozšiřitelnosti  
- Prvním krokem při vytváření rozšíření pro Windows Communication Foundation (WCF) je rozhodnout bodem rozšíření používat. V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], termín *EndpointDispatcher* odkazuje na komponentu běhu odpovědný za převodu příchozí zprávy volání metod na uživatele služby a pro převod návratové hodnoty z dané metody pro odchozí zprávy. A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba vytvoří EndpointDispatcher pro každý koncový bod.  
+ Prvním krokem při vytváření rozšíření pro Windows Communication Foundation (WCF) je rozhodnout bodem rozšíření používat. Ve službě WCF termín *EndpointDispatcher* odkazuje na komponentu běhu odpovědný za převodu příchozí zprávy volání metod na uživatele služby a pro převod návratové hodnoty z dané metody na odchozí zprávy . Služby WCF vytvoří EndpointDispatcher pro každý koncový bod.  
   
  EndpointDispatcher nabízí koncový bod oboru (pro všechny zprávy přijatých nebo odeslaných službou) rozšiřitelnost pomocí <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> třídy. Tato třída umožňuje přizpůsobit různé vlastnosti tohoto ovládání chování EndpointDispatcher. Tato ukázka se zaměřuje na <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnost, která odkazuje na objekt, který poskytuje instancí třídy služby.  
   
 ## <a name="iinstanceprovider"></a>IInstanceProvider  
- V [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], EndpointDispatcher vytváří instance třídy služeb pomocí instance zprostředkovatele, který implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> rozhraní. Toto rozhraní má jenom dvě metody:  
+ Ve službě WCF, EndpointDispatcher vytváří instance třídy služeb pomocí instance zprostředkovatele, který implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> rozhraní. Toto rozhraní má jenom dvě metody:  
   
 -   <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>: Při doručení zprávy, volání dispečera <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> metodu pro vytvoření instance třídy služeb, ke zpracování zprávy. Četnost volání této metody je dáno <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastnost. Například pokud <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> je nastavena na <xref:System.ServiceModel.InstanceContextMode.PerCall?displayProperty=nameWithType>, je vytvořit novou instanci třídy služeb pro zpracování jednotlivých zpráv, které dorazí, tak <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> je volána, když doručení zprávy.  
   
@@ -153,7 +153,7 @@ if (activeObjectsCount == 0)
   
  Tato ukázka používá vlastní atribut. Když <xref:System.ServiceModel.ServiceHost> je vytvořená, prozkoumá atributy používané v definici služby typu a přidá do kolekce chování popis služby k dispozici chování.  
   
- <xref:System.ServiceModel.Description.IServiceBehavior> Rozhraní má tři metody: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,` a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. Tyto metody jsou volány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] při <xref:System.ServiceModel.ServiceHost> inicializace. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> jako první; To umožňuje službu, kterou chcete být prověřovány za účelem nalezení nekonzistencí. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> je volána vedle; Tato metoda je potřeba jenom v velmi pokročilých scénářích. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> Označuje se poslední a je zodpovědná za konfiguraci modulu runtime. Tyto parametry se předávají do <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:  
+ <xref:System.ServiceModel.Description.IServiceBehavior> Rozhraní má tři metody: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,` a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. Tyto metody jsou volány WCF při <xref:System.ServiceModel.ServiceHost> inicializace. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> jako první; To umožňuje službu, kterou chcete být prověřovány za účelem nalezení nekonzistencí. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> je volána vedle; Tato metoda je potřeba jenom v velmi pokročilých scénářích. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> Označuje se poslední a je zodpovědná za konfiguraci modulu runtime. Tyto parametry se předávají do <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:  
   
 -   `Description`: Tento parametr obsahuje popis služby pro celé služby. To slouží ke kontrole popis data o koncové body služby, kontrakty, vazby a další data spojené s touto službou.  
   
@@ -189,7 +189,7 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
   
  Kromě <xref:System.ServiceModel.Description.IServiceBehavior> implementace `ObjectPoolingAttribute` třída obsahuje několik členů k přizpůsobení fondu objektů pomocí argumenty atributu. Zahrnout tito členové `MaxSize`, `MinSize`, `Enabled` a `CreationTimeout`, tak, aby odpovídaly objekt sdružování sada funkcí poskytovaných služeb .NET Enterprise.  
   
- Objekt sdružování chování teď jde přidat do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby podle zadávání poznámek k implementaci služby s nově vytvořené vlastní `ObjectPooling` atribut.  
+ Objekt sdružování chování nyní přidáte do služby WCF tak, že zadávání poznámek k implementaci služby s nově vytvořené vlastní `ObjectPooling` atribut.  
   
 ```  
 [ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]      

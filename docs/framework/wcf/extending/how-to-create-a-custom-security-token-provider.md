@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 480b968a15193bccb84ba491347dbba69e16fb52
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 16bdbf3aa2403a3af603b24df90391d36660dbd4
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření zprostředkovatele tokenu vlastní zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlastní zabezpečení a postup pro integraci zprostředkovatele tokenu správce vlastní zabezpečení.  
@@ -42,7 +42,7 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlas
   
 2.  Přepsání <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metoda, pokud již není přepsána.  
   
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Metoda odpovídá za vrací instanci třídy <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třída vhodné <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametr předaný metodě podle [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework zabezpečení. Změňte metodu vrátit implementaci zprostředkovatele tokenu vlastní zabezpečení (vytvořený v předchozím postupu) Pokud je metoda volána s parametrem tokenu příslušné zabezpečení. Další informace o tokenu správce zabezpečení najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Metoda odpovídá za vrací instanci třídy <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třída vhodné <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametr předaný metodě rámcem zabezpečení WCF. Změňte metodu vrátit implementaci zprostředkovatele tokenu vlastní zabezpečení (vytvořený v předchozím postupu) Pokud je metoda volána s parametrem tokenu příslušné zabezpečení. Další informace o tokenu správce zabezpečení najdete v tématu [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
 3.  Přidat vlastní logiky do způsob ho vrátit vašeho poskytovatele tokenu vlastní zabezpečení na základě povolení <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametr. Následující příklad vrátí poskytovatele tokenu vlastní zabezpečení, pokud jsou splněny požadavky na tokenu. Požadavky na zahrnují token zabezpečení X.509 a směr zprávy (aby token se používá pro výstup zpráv). Všech ostatních případech kód zavolá základní třídy, chcete-li udržovat poskytované systémem chování pro jiné požadavky na tokenu zabezpečení.  
   

@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - event logging [WCF]
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
-ms.openlocfilehash: 78ad80188b8428bb718251045ef04ab803862a0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ea0e6f3dc66bf40d631077c0dce20ea46f3a6688
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="event-logging-in-wcf"></a>Protokolování událostí ve WCF
 Windows Communication Foundation (WCF) sleduje interní události v protokolu událostí systému Windows.  
   
 ## <a name="viewing-event-logs"></a>Zobrazení protokolů událostí  
- Ve výchozím nastavení je automaticky povoleno protokolování událostí a neexistuje žádný mechanismus ji zakázat. Události zapsané podle [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] lze zobrazit pomocí prohlížeče událostí. Chcete-li spustit tento nástroj, klikněte na tlačítko **spustit**, klikněte na tlačítko **ovládací panely**, dvakrát klikněte na **nástroje pro správu**a potom dvakrát klikněte na **Prohlížeč událostí**.  
+ Ve výchozím nastavení je automaticky povoleno protokolování událostí a neexistuje žádný mechanismus ji zakázat. Události zapsané podle WCF lze zobrazit pomocí prohlížeče událostí. Chcete-li spustit tento nástroj, klikněte na tlačítko **spustit**, klikněte na tlačítko **ovládací panely**, dvakrát klikněte na **nástroje pro správu**a potom dvakrát klikněte na **Prohlížeč událostí**.  
   
 ### <a name="application-event-log"></a>Protokol událostí aplikace  
- **Protokolu událostí aplikace** obsahuje většinu událostí generovaných [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]. Položky budou indikovat, že určité funkce se nepodařilo spustit pro aplikaci. Příklady:  
+ **Protokolu událostí aplikace** obsahuje většinu události vygenerované službou WCF. Položky budou indikovat, že určité funkce se nepodařilo spustit pro aplikaci. Příklady:  
   
--   Protokolování zpráv nebo trasování: [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] , zapíše se událost do protokolu událostí při trasování a protokolování zpráv selže. Ne každý selhání trasování však aktivuje událost. Abyste zabránili v protokolu událostí se zcela naplněna trasování chyb, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] implementuje období přerušení spojení 10 minut pro takové události. To znamená, že pokud [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] selhání trasování zapíše do protokolu událostí, nebude proto znovu provádět minimálně 10 minut.  
+-   Protokolování zpráv nebo trasování: WCF zapíše událost do protokolu událostí při trasování a protokolování zpráv selže. Ne každý selhání trasování však aktivuje událost. Abyste zabránili v protokolu událostí se zcela naplněna selhání trasování, implementuje WCF období přerušení spojení 10 minut pro takové události. To znamená, že pokud WCF selhání trasování zapíše do protokolu událostí, nebude provádět proto znovu minimálně 10 minut.  
   
 -   Sdílené naslouchací proces: Službu WCF TCP Port Sharing protokoluje nějakou událost, když se nepodaří spustit.  
   

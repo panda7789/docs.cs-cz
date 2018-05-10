@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-ms.openlocfilehash: 455900b1ac5d10c02e6b1341e737eb6874c874f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b06cb45d6075c8de1da973a11e2edec6792df304
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu. Tato funkce je určena pro typ přizpůsobení a nahrazování v situacích, kde chcete změnit, jak je serializováno typu, deserializovat nebo předpokládané do metadata uživatele. Některé scénáře, kde lze použít náhradní je při kontraktu dat nebyl zadán pro typ, pole a vlastnosti nejsou označené jako <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatele chcete dynamicky vytvořte variace schématu.  
@@ -133,7 +133,7 @@ Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu
  Metoda je volána na začátku schématu exportu a importu. Metoda vrátí vlastní datové typy používá ve schématu exportovat nebo importovat. Byla předána metodě <xref:System.Collections.ObjectModel.Collection%601> ( `customDataTypes` parametr), což je kolekci typů. Metoda měli přidat další známé typy k této kolekci. Známé vlastní datové typy jsou potřebná k povolení serializace a deserializace pomocí vlastních dat <xref:System.Runtime.Serialization.DataContractSerializer>. Další informace najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
 ## <a name="implementing-a-surrogate"></a>Implementace náhradní  
- Chcete-li použít náhradní kontraktu dat v rámci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], je třeba provést několik zvláštní postupy.  
+ Pokud chcete použít náhradní kontraktu dat v rámci WCF, je třeba provést několik zvláštní postupy.  
   
 ### <a name="to-use-a-surrogate-for-serialization-and-deserialization"></a>Použít náhradní serializace a deserializace  
  Použití <xref:System.Runtime.Serialization.DataContractSerializer> k provedení serializace a deserializace dat pomocí náhradní. <xref:System.Runtime.Serialization.DataContractSerializer> Je vytvořené <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>. Musí být zadaná také náhradní.  
@@ -174,7 +174,7 @@ Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu
      [!code-csharp[C_IDataContractSurrogate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#9)]  
   
 ### <a name="to-use-a-surrogate-for-metadata-export"></a>Chcete-li použít náhradní pro Export metadat  
- Ve výchozím nastavení, pokud Export metadat z [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro službu, je třeba vytvořit WSDL i XSD schématu. Náhradní musí být přidán do komponentu starost generování schématu XSD pro typy kontraktů dat, <xref:System.Runtime.Serialization.XsdDataContractExporter>. K tomuto účelu použijte chování, který implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> změnit <xref:System.ServiceModel.Description.WsdlExporter>, nebo přímo upravit <xref:System.ServiceModel.Description.WsdlExporter> používá pro export metadat.  
+ Ve výchozím nastavení, pokud Export metadat z WCF pro služby je třeba vytvořit WSDL i XSD schématu. Náhradní musí být přidán do komponentu starost generování schématu XSD pro typy kontraktů dat, <xref:System.Runtime.Serialization.XsdDataContractExporter>. K tomuto účelu použijte chování, který implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> změnit <xref:System.ServiceModel.Description.WsdlExporter>, nebo přímo upravit <xref:System.ServiceModel.Description.WsdlExporter> používá pro export metadat.  
   
 ##### <a name="to-use-a-surrogate-for-metadata-export"></a>Chcete-li použít náhradní pro export metadat  
   

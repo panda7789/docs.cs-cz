@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - analytic tracing [WCF], overview
 ms.assetid: ae55e9cc-0809-442f-921f-d644290ebf15
-ms.openlocfilehash: d320b3dc0a82db06efb496db7313dea901178148
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 1d68e3132224a7b60720fe7c293b9eee14e3fbd5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="analytic-tracing-overview"></a>Analytické trasování – přehled
 Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] je vysoký výkon a nízkou podrobností trasování funkce nastavit nad událostí trasování pro Windows (ETW). Trasování událostí pro Windows se spustí na úrovni jádra k výrazně snížit režii trasování operací. Ho efektivně ukládá do vyrovnávací paměti události režimu uživatele a jádra a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování je k dispozici v případě, že byl vygenerované a přijaté protokoly za ním.  
   
  Další informace o trasování událostí pro Windows najdete v tématu [vylepšení ladění a optimalizace výkonu s ETW](http://go.microsoft.com/fwlink/?LinkId=164781).  
   
- Kromě použití protokolů událostí systému Windows, zabezpečení a aplikace pro analýzu aplikace, [!INCLUDE[wv](../../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavedená další protokoly pod uzlem protokoly aplikací a služeb nejvyšší úrovně. Účelem tyto nové protokoly je k uložení událostí pro konkrétní aplikaci nebo konkrétní součást místo globální události, které mají vliv systémové (jako je například typ události, které může záznam v protokolu událostí zabezpečení). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] kombinuje a korelaci protokolování [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] události trasování, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] protokolů zpráv a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů protokoly aplikací a služeb.  
+ Kromě použití protokolů událostí systému Windows, zabezpečení a aplikace pro analýzu aplikace, [!INCLUDE[wv](../../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavedená další protokoly pod uzlem protokoly aplikací a služeb nejvyšší úrovně. Účelem tyto nové protokoly je k uložení událostí pro konkrétní aplikaci nebo konkrétní součást místo globální události, které mají vliv systémové (jako je například typ události, které může záznam v protokolu událostí zabezpečení). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] kombinuje a korelaci protokolování událostí trasování WCF, protokolů zpráv WCF, a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů protokoly aplikací a služeb.  
   
 ## <a name="concepts-and-capabilities"></a>Koncepty a funkce  
- Následující koncepty a možnosti použít [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] analytické trasování.  
+ Následující koncepty a možnosti použít analytické trasování WCF.  
   
 ### <a name="enabling-wcf-diagnostics-settings"></a>Povolení nastavení diagnostiky WCF  
  Diagnostika WCF jsou povoleny v rámci \<system.serviceModel >\<diagnostics > konfigurační oddíl.  
@@ -33,7 +33,7 @@ Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/
 ### <a name="channels"></a>Kanály  
  Trasování událostí pro Windows umožňuje softwarové součásti přímé trasování událostí pro konkrétní cílové skupině pomocí kanálů. Například můžete poslat události pro jeden kanál správcům systému a události tohoto pozor vývojáři aplikace o jiném kanálu. Kanály jsou s názvem a registrovány v systému Windows tak, aby spotřebitelé můžete zobrazit události kanál pomocí prohlížeče událostí.  
   
- Analytické trasování funkce pro [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] v [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] zapíše do kanálu Microsoft-Windows-aplikace-Server-aplikace. Tento kanál navrženy speciálně pro uživatele, kteří chtějí monitorovat stav [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] služby v produkčním prostředí. Definuje malá, nastavte událostí, které lze použít v mnoha sledování stavu a scénáře řešení potíží.  
+ Analytické trasování funkce pro WCF v [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] zapíše do kanálu Microsoft-Windows-aplikace-Server-aplikace. Tento kanál je speciálně pro uživatele, kteří mají k monitorování stavu služby WCF v produkčním prostředí. Definuje malá, nastavte událostí, které lze použít v mnoha sledování stavu a scénáře řešení potíží.  
   
  Pokud chcete povolit manifest trasování událostí pro Windows tak, aby zpráv jsou správně dekódovat v protokolu událostí, pomocí nástroje ServiceModelReg na příkazovém řádku následujícím způsobem:  
   

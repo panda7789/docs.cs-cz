@@ -3,11 +3,11 @@ title: Shoda vzoru – průvodce v C#
 description: Další informace o výrazy v jazyce C# pro porovnávání
 ms.date: 01/24/2017
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 7bdb41085a1a110f5a097ad3fa2cb645237fcefd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0f95ac8b16939173e6cfd7304b9cbe52526b5169
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů #
 
@@ -45,7 +45,7 @@ V této aktualizované verzi `is` výraz jak testy proměnnou a přiřadí ji k 
 
 Jazyk pravidla pro vzor odpovídající výrazy umožňuje vyhnout se zneužití výsledky výrazu shody. V příkladu výše, proměnné `s`, `c`, a `r` pouze v oboru a výborný přiřazený, když se odpovídající vzor shody výrazy `true` výsledky. Pokud se pokusíte použít buď proměnné na jiné místo, vygeneruje kód chyby kompilátoru.
 
-Podívejme se na obě tato pravidla podrobně počínaje oboru. Proměnná `c` nachází v oboru pouze v `else` větev první `if` příkaz. Proměnná `s` nachází v oboru v metodě `ComputeArea`. Důvodem je, že každou větev `if` příkaz vytváří samostatný obor pro proměnné. Ale `if` příkaz sám nemá. To znamená proměnných deklarovaných v `if` příkaz jsou ve stejném oboru jako `if` – příkaz (metoda v tomto případě.) Toto chování není specifické pro porovnávání vzorů, ale je definovaný chování pro proměnné obory a `if` a `else` příkazy.
+Podívejme se na obě tato pravidla podrobně počínaje oboru. Proměnná `c` nachází v oboru pouze v `else` větev první `if` příkaz. Proměnná `s` nachází v oboru v metodě `ComputeAreaModernIs`. Důvodem je, že každou větev `if` příkaz vytváří samostatný obor pro proměnné. Ale `if` příkaz sám nemá. To znamená proměnných deklarovaných v `if` příkaz jsou ve stejném oboru jako `if` – příkaz (metoda v tomto případě.) Toto chování není specifické pro porovnávání vzorů, ale je definovaný chování pro proměnné obory a `if` a `else` příkazy.
 
 Proměnné `c` a `s` jsou přiřazeny, kdy příslušné `if` příkazy jsou splněny kvůli výborný přiřazené při true mechanismus.
 

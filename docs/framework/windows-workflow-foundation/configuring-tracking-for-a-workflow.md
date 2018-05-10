@@ -2,11 +2,11 @@
 title: Konfigurace sledování pro pracovní postup
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 70697d82242ab0704dd67129940a6660d300bef9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 23a20b014962b74b6408c8b3c9ac6764d4a42d56
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Konfigurace sledování pro pracovní postup
 Pracovní postup můžete provést třemi způsoby:  
@@ -46,7 +46,7 @@ instance.Extensions.Add(trackingParticipant);
 ```  
   
 ### <a name="configuring-workflow-service-tracking"></a>Konfigurace sledování služby pracovního postupu  
- Pracovní postup, mohou být zpřístupněny jako [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby, když jsou hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost> hostitele služby. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní .NET ServiceHost služby založené na pracovním postupu. Tato část vysvětluje postup konfigurace sledování pro [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu služby spuštěné <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurovaný pomocí souboru Web.config (pro hostované webové služby) nebo soubor App.config (pro služby hostované v samostatná aplikace, jako je například aplikace konzoly) zadáním chování služby nebo prostřednictvím kódu přidáním specifické pro sledování chování <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce hostitele služby.  
+ Pracovní postup, mohou být zpřístupněny jako služby WCF, když jsou hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost> hostitele služby. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní .NET ServiceHost služby založené na pracovním postupu. Tato část vysvětluje postup konfigurace sledování pro [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu služby spuštěné <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurovaný pomocí souboru Web.config (pro hostované webové služby) nebo soubor App.config (pro služby hostované v samostatná aplikace, jako je například aplikace konzoly) zadáním chování služby nebo prostřednictvím kódu přidáním specifické pro sledování chování <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce hostitele služby.  
   
  Pro pracovní postup služby hostované v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> element v konfiguračním souboru, jak je znázorněno v následujícím příkladu.  
   

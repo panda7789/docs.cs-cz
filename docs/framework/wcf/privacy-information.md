@@ -6,34 +6,34 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: e9c4130cd4680d4cd68ca8c6ba36c38b5d065f58
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e278b28e5c0015eeab549b04d3870dfa247a57ed
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
-Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Když vytvoříte aplikaci pomocí Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaši koncoví uživatelé o ochraně osobních údajů. Například aplikace může shromažďovat explicitně kontaktní informace o uživateli, nebo může požádat nebo poslat informace přes Internet na webové stránky. Pokud vložíte technologie společnosti Microsoft v aplikaci, že technologie může mít svůj vlastní chování, které by mohly ovlivnit ochranu osobních údajů. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] neodesílá žádné informace společnosti Microsoft z vaší aplikace Pokud jste nebo koncový uživatel se rozhodnete odeslat do us.  
+Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Když vytvoříte aplikaci pomocí Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaši koncoví uživatelé o ochraně osobních údajů. Například aplikace může shromažďovat explicitně kontaktní informace o uživateli, nebo může požádat nebo poslat informace přes Internet na webové stránky. Pokud vložíte technologie společnosti Microsoft v aplikaci, že technologie může mít svůj vlastní chování, které by mohly ovlivnit ochranu osobních údajů. WCF neodesílá žádné informace společnosti Microsoft z vaší aplikace Pokud jste nebo koncový uživatel se rozhodnete odeslat do us.  
   
 ## <a name="wcf-in-brief"></a>WCF v Brief  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] distribuované zasílání zpráv rozhraní používá rozhraní Microsoft .NET Framework, která umožňuje vývojářům vytvářet distribuované aplikace. Přenášená mezi dvěma aplikacemi zprávy obsahují informace hlavičky a text.  
+ WCF je architektura distribuované zasílání zpráv pomocí rozhraní Microsoft .NET Framework, která umožňuje vývojářům vytvářet distribuované aplikace. Přenášená mezi dvěma aplikacemi zprávy obsahují informace hlavičky a text.  
   
- Záhlaví může obsahovat směrování zpráv, informace o zabezpečení, transakce a další v závislosti na služby, které aplikace používá. Ve výchozím nastavení jsou obvykle šifrované zprávy. Jedinou výjimkou je při použití `BasicHttpBinding`, který byl navržený pro použití s webovými službami-zabezpečené, starší verze. Jako návrháře aplikací jste zodpovědní za konečný návrh. Zprávy v těle protokolu SOAP obsahovat data, specifické pro aplikaci; však tato data, jako je například osobní informace definované aplikací, může být zabezpečené pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce šifrování nebo důvěrnosti. Následující části popisují funkce, které mohou mít vliv na ochranu osobních údajů.  
+ Záhlaví může obsahovat směrování zpráv, informace o zabezpečení, transakce a další v závislosti na služby, které aplikace používá. Ve výchozím nastavení jsou obvykle šifrované zprávy. Jedinou výjimkou je při použití `BasicHttpBinding`, který byl navržený pro použití s webovými službami-zabezpečené, starší verze. Jako návrháře aplikací jste zodpovědní za konečný návrh. Zprávy v těle protokolu SOAP obsahovat data, specifické pro aplikaci; Tato data, jako je například osobní informace definované aplikací, ale lze zabezpečit pomocí funkce WCF šifrování nebo důvěrnosti. Následující části popisují funkce, které mohou mít vliv na ochranu osobních údajů.  
   
 ## <a name="messaging"></a>Zasílání zpráv  
- Každý [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zpráva má hlavičku adresy, která určuje cíl zprávy a kde se má zobrazit odpověď.  
+ Každá zpráva WCF má hlavičku adresy, která určuje cíl zprávy a kde se má zobrazit odpověď.  
   
  Komponenta adresy adresu koncového bodu je identifikátor URI (Uniform Resource) identifikující koncový bod. Adresa může být síťová adresa nebo logické adresy. Adresa může zahrnovat název počítače (název hostitele, plně kvalifikovaný název domény) a IP adresu. Adresa koncového bodu může obsahovat také globálně jedinečný identifikátor (GUID), nebo kolekce identifikátory GUID pro dočasné adresování použít pro každou adresu rozpoznat. Každá zpráva obsahuje ID zprávy, která je identifikátor GUID. Tato funkce se řídí odkaz standard adresování WS.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Vrstva zasílání zpráv nelze zapsat žádné osobní údaje v místním počítači. Však ho může pokud vývojář service vytvoří služba, která zveřejňuje informace (například pomocí v název koncového bodu jméno uživatele, nebo se včetně osobních údajů v Web pro koncový bod rozšířit osobní informace na úrovni sítě Služby s popisem jazyka, ale které nevyžadují klienti používat protokol https pro přístup k schématu WSDL). Navíc pokud běží Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro koncový bod, který zveřejňuje osobní údaje, výstup nástroje může obsahovat tyto informace a výstupní soubor je zapsán do místní pevný disk.  
+ Vrstva zasílání zpráv WCF nelze zapsat žádné osobní údaje v místním počítači. Však ho může pokud vývojář service vytvoří služba, která zveřejňuje informace (například pomocí v název koncového bodu jméno uživatele, nebo se včetně osobních údajů v Web pro koncový bod rozšířit osobní informace na úrovni sítě Služby s popisem jazyka, ale které nevyžadují klienti používat protokol https pro přístup k schématu WSDL). Navíc pokud běží Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro koncový bod, který zveřejňuje osobní údaje, výstup nástroje může obsahovat tyto informace a výstupní soubor je zapsán do místní pevný disk.  
   
 ## <a name="hosting"></a>Hostování  
- Hostování funkcí v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] umožňuje aplikacím můžete spustit na vyžádání nebo povolit sdílení portů mezi různými aplikacemi. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Aplikace může být hostovaný v Internetové informační služby (IIS), podobně jako [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)].  
+ Hostování funkcí ve službě WCF umožňuje aplikacím můžete spustit na vyžádání nebo povolit sdílení portů mezi různými aplikacemi. Aplikace WCF může být hostovaný v Internetové informační služby (IIS), podobně jako [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)].  
   
  Hostování nevystavuje žádné konkrétní informace v síti a není jej ponechat data v počítači.  
   
 ## <a name="message-security"></a>Zabezpečení zpráv  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] funkce zabezpečení poskytuje funkce zabezpečení pro aplikace zasílání zpráv. Funkce zabezpečení poskytuje zahrnují ověřování a autorizace.  
+ Zabezpečení WCF poskytuje funkce zabezpečení pro aplikace zasílání zpráv. Funkce zabezpečení poskytuje zahrnují ověřování a autorizace.  
   
  Ověřování se provádí pomocí předání přihlašovacích údajů mezi klienty a služby. Ověřování může být buď prostřednictvím zabezpečení na úrovni přenosu nebo prostřednictvím protokolu SOAP zprávy úroveň zabezpečení, následujícím způsobem:  
   
@@ -56,7 +56,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Auditování také záznamy, když správce upraví konfiguraci protokolování zpráv (ho na zapnutí a vypnutí funkce), protože protokolování zpráv může protokolovat data specifické pro aplikaci v záhlaví a obsah. Pro [!INCLUDE[wxp](../../../includes/wxp-md.md)], záznam se zaznamenají do protokolu událostí aplikace. Pro [!INCLUDE[wv](../../../includes/wv-md.md)] a [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], záznam se zaznamenají do protokolu událostí zabezpečení.  
   
 ## <a name="transactions"></a>Transakce  
- Transakce funkce poskytuje transakční služby [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace.  
+ Transakce funkce poskytuje transakční služby WCF aplikaci.  
   
  Záhlaví transakce používá v transakci šíření může obsahovat ID transakce nebo zařazení ID, které jsou identifikátory GUID.  
   
@@ -65,34 +65,34 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Transakce funkce implementuje WS-koordinace a WS-Atomic Transactions standardy.  
   
 ## <a name="reliable-sessions"></a>Spolehlivé relace  
- Spolehlivé relace v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zadejte přenos zpráv, když dojde k selhání přenos nebo prostředník. Poskytují přesně-jednou přenosu zpráv i v případě, že základní přenos odpojí (například připojení protokolu TCP v bezdrátové síti) nebo zruší zprávu (proxy serveru HTTP vyřadit zprávu příchozí nebo odchozí). Spolehlivé relace také obnovit zprávy změna (jak může dojít v případě více cest směrování), zachování pořadí, ve které byly odeslány zprávy.  
+ Spolehlivé relace ve WCF poskytují přenos zpráv, když dojde k přenosu nebo zprostředkující selhání. Poskytují přesně-jednou přenosu zpráv i v případě, že základní přenos odpojí (například připojení protokolu TCP v bezdrátové síti) nebo zruší zprávu (proxy serveru HTTP vyřadit zprávu příchozí nebo odchozí). Spolehlivé relace také obnovit zprávy změna (jak může dojít v případě více cest směrování), zachování pořadí, ve které byly odeslány zprávy.  
   
  Spolehlivé relace se implementují pomocí protokolu WS-ReliableMessaging (WS-RM). Zvyšují WS-RM hlavičky, které obsahují informace o relace, které slouží k identifikaci všechny zprávy, které jsou spojené s konkrétní spolehlivé relace. Každá relace WS-RM má identifikátor, který je identifikátor GUID.  
   
  Žádné osobní informace se uchovávají v počítači uživatele end.  
   
 ## <a name="queued-channels"></a>Kanály zařazených do fronty  
- Fronty ukládat zprávy z odesílající aplikací jménem přijímající aplikace a později předávat tyto zprávy do přijímající aplikace. Mohou pomoci při má přijímající aplikace je třeba přechodný zajišťování přenos zpráv z odesílání na přijímací aplikace. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje podporu pro službu Řízení front pomocí Microsoft služby Řízení front zpráv (MSMQ) jako přenosového mechanismu.  
+ Fronty ukládat zprávy z odesílající aplikací jménem přijímající aplikace a později předávat tyto zprávy do přijímající aplikace. Mohou pomoci při má přijímající aplikace je třeba přechodný zajišťování přenos zpráv z odesílání na přijímací aplikace. WCF poskytuje podporu pro službu Řízení front pomocí Microsoft služby Řízení front zpráv (MSMQ) jako přenosového mechanismu.  
   
  Funkci ve frontě kanály nepřidá záhlaví zprávy. Místo toho se vytvoří zprávy služby Řízení front zpráv s příslušné služby Řízení front zpráv sady zpráv vlastnosti a volá metody služby Řízení front zpráv se umístí zprávy ve frontě služby Řízení front zpráv. Služba Řízení front zpráv je volitelná součást, která se dodává s verzí systému Windows.  
   
  Žádné informace se uchovávají na počítači koncového uživatele na funkcí ve frontě kanály, protože používá služby Řízení front zpráv jako front infrastruktury.  
   
 ## <a name="com-integration"></a>Integrace COM+  
- Tato funkce zabalí stávající funkce COM a modelu COM + k vytvoření služby, které jsou kompatibilní s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Tato funkce nepoužívá konkrétní hlavičky a neuchovává data na počítači koncového uživatele je.  
+ Tato funkce zabalí stávající funkce COM a modelu COM + k vytvoření služby, které jsou kompatibilní se službou WCF services. Tato funkce nepoužívá konkrétní hlavičky a neuchovává data na počítači koncového uživatele je.  
   
 ## <a name="com-service-moniker"></a>Monikeru služby COM  
- To poskytuje nespravované obálka pro standardní [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta. Tato funkce nemá konkrétní hlavičky v drátové síti ani nemá zachovat data na počítači.  
+ To zajišťuje nespravované obálku standardní klienta WCF. Tato funkce nemá konkrétní hlavičky v drátové síti ani nemá zachovat data na počítači.  
   
 ## <a name="peer-channel"></a>Rovnocenný kanál  
- Rovnocenného kanálu umožňuje vývoj více stran aplikací pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Více stran zasílání zpráv dojde v kontextu mřížku. Mřížek jsou identifikovány názvem, který se můžete zapojit do uzlů. Každý uzel v rovnocenného kanálu vytvoří naslouchací proces TCP na portu zadán uživatel a navázat připojení s ostatními uzly v mřížce zajistit odolnost proti chybám. Pokud chcete připojit k jiné uzly v mřížce, uzly také exchange některá data, včetně adres naslouchací proces a IP adres je počítač, se jiné uzly v mřížce. Zprávy odeslané kolem v mřížce může obsahovat informace o zabezpečení, která se týkají odesílatele, aby se zabránilo falšování identity zprávu a manipulaci.  
+ Rovnocenného kanálu umožňuje vývoj více stran aplikací s použitím WCF. Více stran zasílání zpráv dojde v kontextu mřížku. Mřížek jsou identifikovány názvem, který se můžete zapojit do uzlů. Každý uzel v rovnocenného kanálu vytvoří naslouchací proces TCP na portu zadán uživatel a navázat připojení s ostatními uzly v mřížce zajistit odolnost proti chybám. Pokud chcete připojit k jiné uzly v mřížce, uzly také exchange některá data, včetně adres naslouchací proces a IP adres je počítač, se jiné uzly v mřížce. Zprávy odeslané kolem v mřížce může obsahovat informace o zabezpečení, která se týkají odesílatele, aby se zabránilo falšování identity zprávu a manipulaci.  
   
  Žádné osobní informace jsou uloženy na počítači uživatele end.  
   
 ## <a name="it-professional-experience"></a>Prostředí pro odborníky v oblasti IT  
   
 ### <a name="tracing"></a>Trasování  
- Diagnostika funkci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] infrastruktury protokoly zprávy, které předání modelu vrstev přenosu a služby a aktivit a událostí související se tyto zprávy. Tato funkce je ve výchozím nastavení vypnutý. Je povolena, pomocí konfiguračního souboru aplikace a chování trasování může být změněna pomocí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zprostředkovatele rozhraní WMI v době běhu. Když je povolené, vysílá infrastruktury trasování diagnostické trasování, která obsahuje zprávy, aktivity a zpracování události nakonfigurované naslouchací procesy. Formát a umístění výstupu určuje možnostmi konfigurace naslouchací proces správce, ale je obvykle formátovaný soubor XML. Správce je zodpovědný za nastavení seznamu řízení přístupu (ACL) pro trasovací soubory. Zejména při hostování podle aktivace systému Windows (WAS), správce Ujistěte se, že soubory nejsou zpracovat z veřejné virtuálního kořenového adresáře, pokud je, není žádoucí.  
+ Diagnostické funkce infrastruktury WCF zaznamená zprávy, které předáte přenosu a vrstvy modelu služby a aktivity a události související se tyto zprávy. Tato funkce je ve výchozím nastavení vypnutý. Je povolené, pomocí konfiguračního souboru aplikace a chování trasování, může se mění pomocí zprostředkovatele rozhraní WCF WMI v době běhu. Když je povolené, vysílá infrastruktury trasování diagnostické trasování, která obsahuje zprávy, aktivity a zpracování události nakonfigurované naslouchací procesy. Formát a umístění výstupu určuje možnostmi konfigurace naslouchací proces správce, ale je obvykle formátovaný soubor XML. Správce je zodpovědný za nastavení seznamu řízení přístupu (ACL) pro trasovací soubory. Zejména při hostování podle aktivace systému Windows (WAS), správce Ujistěte se, že soubory nejsou zpracovat z veřejné virtuálního kořenového adresáře, pokud je, není žádoucí.  
   
  Existují dva typy trasování: protokolování zpráv a Model služby diagnostické trasování, popsané v následující části. Každý typ je konfigurovaný pomocí vlastní zdroj trasování: <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> a <xref:System.ServiceModel>. Obě tyto zdroje protokolování trasování zachytit data, která je lokální vzhledem k aplikaci.  
   
@@ -115,14 +115,14 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Zprávy zaznamenané na této úrovni jsou dešifrovat i v případě, že by byly zabezpečená a šifrovaná v drátové síti.  
   
  Protokolování poškozených zpráv  
- Protokoly zpráv, který [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] infrastruktury nemůže pochopit nebo zpracovat.  
+ Zaznamenává zprávy, které infrastrukturu WCF nemůže pochopit nebo zpracovat.  
   
  Zprávy se zaznamenávají jako-je, který je šifrovaná, nebo není  
   
- Když jsou přihlášení zprávy dešifrovat nebo nezašifrované podobě, ve výchozím nastavení [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče zabezpečení a potenciálně osobní informace ze zprávy před jejich protokolování. Další části popisují, jaké informace se odebere a kdy. Správce počítače a nástroje pro nasazení aplikace musí provést určité akce konfigurace, chcete-li změnit výchozí chování do protokolu klíče a potenciálně osobní údaje.  
+ Zprávy se protokolují dešifrovaný nebo nezašifrované podobě, ve výchozím nastavení WCF odebere klíče zabezpečení a potenciálně osobní údaje z zprávy před jejich protokolování. Další části popisují, jaké informace se odebere a kdy. Správce počítače a nástroje pro nasazení aplikace musí provést určité akce konfigurace, chcete-li změnit výchozí chování do protokolu klíče a potenciálně osobní údaje.  
   
 #### <a name="information-removed-from-message-headers-when-logging-decryptedunencrypted-messages"></a>Informace o odebrat z hlavičky zpráv, pokud protokolování dešifrovat nebo bez šifrování zprávy  
- Když zprávy se protokolují v dešifrovat nezašifrované podobě zabezpečení klíčů a potenciálně osobní údaje jsou odebrány ve výchozím nastavení z hlavičky zpráv a obsah zpráv předtím, než jsou zaznamenány. V následujícím seznamu jsou co [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zvažuje klíče a potenciálně osobní údaje.  
+ Když zprávy se protokolují v dešifrovat nezašifrované podobě zabezpečení klíčů a potenciálně osobní údaje jsou odebrány ve výchozím nastavení z hlavičky zpráv a obsah zpráv předtím, než jsou zaznamenány. V následujícím seznamu uvedeny, co WCF považuje za klíče a potenciálně osobní údaje.  
   
  Klíče, které jsou odebrány:  
   
@@ -299,7 +299,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  \</ Kontrolní výraz >  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informace z těla zprávy odstraněny, až protokolování dešifrovat nebo bez šifrování zprávy  
- Jak už bylo popsáno, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče a známé potenciálně osobní informace ze záhlaví zprávy zprávy zaznamenané dešifrovat nebo bez šifrování. Kromě toho [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] odebere klíče a známé potenciálně osobní údaje z těla zprávy pro prvky těla a akce v následujícím seznamu, které popisují zabezpečení zprávy, které jsou zahrnuté v výměny klíčů.  
+ Jak se popisuje výš, WCF odebere klíče a známé potenciálně osobní informace ze záhlaví zprávy zprávy zaznamenané dešifrovat nebo bez šifrování. Kromě toho WCF odebere klíče a známé potenciálně osobní údaje z těla zprávy pro prvky těla a akce v následujícím seznamu, které popisují zabezpečení zprávy, které jsou zahrnuté v výměny klíčů.  
   
  Pro následující obory názvů:  
   
@@ -356,7 +356,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  http://schemas.xmlsoap.org/ws/2004/04/security/trust/RSTR/SCT-Amend  
   
 #### <a name="no-information-is-removed-from-application-specific-headers-and-body-data"></a>Žádné informace se odebere z hlavičky specifické pro aplikace a Data textu  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nesleduje osobní informace hlavičky specifické pro aplikaci (například řetězce dotazu) nebo text data (například číslo platební karty).  
+ WCF nesleduje osobní informace hlavičky specifické pro aplikaci (například řetězce dotazu) nebo text data (například číslo platební karty).  
   
  Pokud protokolování zpráv je zapnutý, může být osobní údaje v hlavičkách konkrétní aplikace a tělo informace viditelné v protokolech. Nástroje pro nasazení aplikace znovu, zodpovídá za nastavení seznamy ACL v souborech konfigurace a protokolu. Si můžete také vypnout protokolování Pokud nechce tyto informace mají být zobrazeny, nebo mu může vyfiltrovat tyto informace ze souborů protokolu, po je protokolována.  
   
@@ -371,26 +371,26 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Pro obě zprávy protokolování a trasování naslouchací proces vlastního trasování je možné nakonfigurovat, které může poslat trasování a zprávy v drátové síti (například ke vzdálené databázi). Nástroje pro nasazení aplikace je zodpovědná za konfiguraci vlastní naslouchací procesy nebo uživatelům umožníte tak. Také je odpovědný žádné osobní údaje, které jsou zveřejněné ve vzdáleném umístění a správně použití seznamů řízení přístupu do tohoto umístění.  
   
 ### <a name="other-features-for-it-professionals"></a>Další funkce pro IT specialisty  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] má poskytovatel rozhraní WMI, který zveřejňuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] informace o konfiguraci infrastruktury prostřednictvím rozhraní WMI (dodávané se systémem Windows). Ve výchozím nastavení je k dispozici správcům rozhraní WMI.  
+ WCF má poskytovatel rozhraní WMI, který zveřejňuje informace o konfiguraci infrastruktury WCF prostřednictvím rozhraní WMI (dodávané se systémem Windows). Ve výchozím nastavení je k dispozici správcům rozhraní WMI.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurace používá mechanismus konfigurace rozhraní .NET Framework. Konfigurační soubory, které jsou uložené na počítači. Vývojář aplikace a správce vytvořit konfigurační soubory a seznamu ACL pro všechny požadavky na aplikace. Konfigurační soubor může obsahovat adresy koncových bodů a odkazy na certifikáty v úložišti certifikátů. Certifikáty slouží k poskytování data aplikací můžete nakonfigurovat různé vlastnosti funkce, které používá aplikaci.  
+ Konfigurace WCF používá mechanismus konfigurace rozhraní .NET Framework. Konfigurační soubory, které jsou uložené na počítači. Vývojář aplikace a správce vytvořit konfigurační soubory a seznamu ACL pro všechny požadavky na aplikace. Konfigurační soubor může obsahovat adresy koncových bodů a odkazy na certifikáty v úložišti certifikátů. Certifikáty slouží k poskytování data aplikací můžete nakonfigurovat různé vlastnosti funkce, které používá aplikaci.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] také používá funkci rozhraní .NET Framework proces výpisu voláním <xref:System.Environment.FailFast%2A> metoda.  
+ WCF také používá funkci rozhraní .NET Framework proces výpisu voláním <xref:System.Environment.FailFast%2A> metoda.  
   
 ### <a name="it-pro-tools"></a>IT specialista nástroje  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] také poskytuje následující IT odborníky v oblasti nástroje, které se dodávají v sadě Windows SDK.  
+ WCF také poskytuje následující IT odborníky v oblasti nástroje, které se dodávají v sadě Windows SDK.  
   
 #### <a name="svctraceviewerexe"></a>SvcTraceViewer.exe  
- Prohlížeč zobrazí [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trasovací soubory. Prohlížeč zobrazí, ať informací obsažených v trasování.  
+ Prohlížeč zobrazí WCF trasovací soubory. Prohlížeč zobrazí, ať informací obsažených v trasování.  
   
 #### <a name="svcconfigeditorexe"></a>SvcConfigEditor.exe  
- Editor umožňuje uživatelům vytvářet a upravovat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] konfigurační soubory. Editor zobrazuje, ať informace je obsažena v konfiguračních souborech. Pro stejnou úlohu můžete provést pomocí textového editoru.  
+ Editor umožňuje uživatelům vytvářet a upravovat WCF konfigurační soubory. Editor zobrazuje, ať informace je obsažena v konfiguračních souborech. Pro stejnou úlohu můžete provést pomocí textového editoru.  
   
 #### <a name="servicemodelreg"></a>ServiceModel_Reg  
- Tento nástroj umožňuje uživatelům spravovat ServiceModel nainstaluje na počítač. Nástroj zobrazí stavové zprávy v okně konzoly, když běží a v procesu, se může zobrazovat informace o konfiguraci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] instalace.  
+ Tento nástroj umožňuje uživatelům spravovat ServiceModel nainstaluje na počítač. Nástroj zobrazí stavové zprávy v okně konzoly, když běží a v procesu, se může zobrazovat informace o konfiguraci instalace WCF.  
   
 #### <a name="wsatconfigexe-and-wsatuidll"></a>WSATConfig.exe a WSATUI.dll  
- Tyto nástroje povolit Odborníci v oblasti IT konfigurace umožňuje vzájemnou spolupráci podpory protokolu WS-AtomicTransaction sítě v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Nástroje pro zobrazení a povolit uživatelům změnit hodnoty nejčastěji používané WS-AtomicTransaction nastavení uložená v registru.  
+ Tyto nástroje povolit Odborníci v oblasti IT provést konfiguraci podpory sítě umožňuje vzájemnou spolupráci WS-AtomicTransaction ve WCF. Nástroje pro zobrazení a povolit uživatelům změnit hodnoty nejčastěji používané WS-AtomicTransaction nastavení uložená v registru.  
   
 ## <a name="cross-cutting-features"></a>Mezi vyjímání funkce  
  Následující funkce jsou mezi vyjímání. To znamená mohou být komponovaná s žádným z předchozích funkcí.  

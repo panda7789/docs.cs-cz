@@ -7,11 +7,11 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-ms.openlocfilehash: 6d1e9ba7f5546923b222f2d495aacdb2c1caaf96
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 163c551103a68ac320e482b1daa0a0c19b2b8fed
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou použité a další problémy, které vám pomůžou návrh operace, které odpovídají požadavky na vaše scénáře.  
@@ -19,7 +19,7 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
 ## <a name="creating-a-service-contract"></a>Vytvoření kontraktu služby  
  Služby vystavit počet operací. V aplikacích Windows Communication Foundation (WCF), definujte operace vytváření metodu a označením pomocí <xref:System.ServiceModel.OperationContractAttribute> atribut. Potom k vytvoření kontraktu služby, seskupit vaše operace, buď deklarativně v rámci rozhraní označené pomocí <xref:System.ServiceModel.ServiceContractAttribute> atribut, nebo pomocí je definování v třídě s atributem stejné. (Základní příklad najdete v tématu [postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md).)  
   
- Všechny metody, které nemají <xref:System.ServiceModel.OperationContractAttribute> atribut nejsou operací služby a nejsou vystavené [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
+ Všechny metody, které nemají <xref:System.ServiceModel.OperationContractAttribute> atribut nejsou operací služby a nejsou vystavené služby WCF.  
   
  Toto téma popisuje následující body rozhodnutí při navrhování kontraktu služby:  
   
@@ -34,7 +34,7 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
 -   Omezení pro operace vstupy a výstupy.  
   
 ## <a name="classes-or-interfaces"></a>Třídy nebo rozhraní  
- Třídy a rozhraní představují seskupení funkce, a proto i lze použít k definování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kontrakt služby. Doporučujeme však používat rozhraní, protože se přímo modelu kontraktů služby. Bez implementace rozhraní definovat více než seskupení metod s určitým podpisy. Implementace rozhraní kontraktu služby a jste implementovali [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby.  
+ Třídy a rozhraní představují seskupení funkce, a proto i lze použít k definování kontraktu služby WCF. Doporučujeme však používat rozhraní, protože se přímo modelu kontraktů služby. Bez implementace rozhraní definovat více než seskupení metod s určitým podpisy. Implementovat rozhraní kontraktu služby a služby WCF byla implementována.  
   
  Všechny výhody spravovaná rozhraní platí pro rozhraní kontraktu služby:  
   
@@ -70,12 +70,12 @@ Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké ope
 #### <a name="data-contracts"></a>Kontrakty dat  
  Aplikace orientované na služby, jako je aplikace Windows Communication Foundation (WCF) jsou navrženy pro spolupráci s co největší počet klientských aplikací v Microsoft i jiných společností než Microsoft platformy. Široké interoperability možné, se doporučuje, aby označíte vaší typů s <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontraktu dat, což je část kontrakt služby, který popisuje data, vaše operací služby Exchange.  
   
- Kontrakty dat jsou výslovný souhlas styl kontrakty: žádný typ nebo data člen je serializováno, pokud použijete explicitně atribut kontraktu dat. Kontrakty dat se nevztahují k oboru přístupu spravovaného kódu: private členy můžete serializovat a odeslat jinde veřejně přístupná. (Například základní kontrakt dat najdete v části [postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md).) [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zpracovává definici základní protokolu SOAP zprávy, které operace funkci povolit, jakož i serializace datové typy do a z textu zprávy. Tak dlouho, dokud datové typy musejí být serializovatelná, není potřeba myslet podpůrné infrastruktuře exchange zpráva při navrhování vaše operace.  
+ Kontrakty dat jsou výslovný souhlas styl kontrakty: žádný typ nebo data člen je serializováno, pokud použijete explicitně atribut kontraktu dat. Kontrakty dat se nevztahují k oboru přístupu spravovaného kódu: private členy můžete serializovat a odeslat jinde veřejně přístupná. (Například základní kontrakt dat najdete v části [postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md).) WCF zpracovává definici základní protokolu SOAP zprávy, které operace funkci povolit, jakož i serializace datové typy do a z textu zprávy. Tak dlouho, dokud datové typy musejí být serializovatelná, není potřeba myslet podpůrné infrastruktuře exchange zpráva při navrhování vaše operace.  
   
- I když typické [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] používá aplikace <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontrakty dat pro operace, můžete použít jiné mechanismy serializace. Standardní <xref:System.Runtime.Serialization.ISerializable>, <xref:System.SerializableAttribute> a <xref:System.Xml.Serialization.IXmlSerializable> mechanismy všechny fungují pro zpracování serializace datové typy do základní protokolu SOAP zprávy, které je přenos z jedné aplikace do jiné. Další strategie serializace můžete použít, pokud vaše datové typy vyžadují speciální podpory. Další informace o možnosti pro serializaci datových typů v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace, najdete v části [zadání přenos dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
+ I když používá Typická aplikace WCF <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy pro vytvoření kontrakty dat pro operace, můžete použít jiné mechanismy serializace. Standardní <xref:System.Runtime.Serialization.ISerializable>, <xref:System.SerializableAttribute> a <xref:System.Xml.Serialization.IXmlSerializable> mechanismy všechny fungují pro zpracování serializace datové typy do základní protokolu SOAP zprávy, které je přenos z jedné aplikace do jiné. Další strategie serializace můžete použít, pokud vaše datové typy vyžadují speciální podpory. Další informace o možnosti pro serializaci datových typů v aplikacích WCF najdete v tématu [zadání přenos dat v kontraktech služby](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
   
 #### <a name="mapping-parameters-and-return-values-to-message-exchanges"></a>Mapování parametry a návratové hodnoty na výměny zpráv  
- Operace služby jsou podporovány základní výměnou zpráv protokolu SOAP, které přenášejí data aplikací a zpět, kromě dat vyžaduje aplikaci, aby podporovala určité standardní zabezpečení, transakce a funkce související s relací. Protože to je případ, podpis operace služby stanoví určité základní *vzorce výměny zpráv* (MEP) podporující přenos dat a funkcím pro operace vyžaduje. Můžete zadat tří vzorů v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programovací model: požadavek nebo odpověď, jednosměrné a vzory duplexní zprávy.  
+ Operace služby jsou podporovány základní výměnou zpráv protokolu SOAP, které přenášejí data aplikací a zpět, kromě dat vyžaduje aplikaci, aby podporovala určité standardní zabezpečení, transakce a funkce související s relací. Protože to je případ, podpis operace služby stanoví určité základní *vzorce výměny zpráv* (MEP) podporující přenos dat a funkcím pro operace vyžaduje. Můžete zadat tří vzorů v programovací model WCF: požadavek nebo odpověď, jednosměrné a vzory duplexní zprávy.  
   
 ##### <a name="requestreply"></a>Požadavek nebo odpověď  
  Vzor požadavek nebo odpověď je jedním ve kterém žádost odesílatele (klientské aplikace) obdrží odpověď, pomocí kterého jsou korelována žádost. Toto je výchozí MEP, protože umožňuje operace, ve kterém jeden nebo více parametrů jsou předány operaci a návratovou hodnotu je předán zpět do volající. Například následující příklad kódu C# ukazuje operace základní služby, která přijímá jeden řetězec a vrátí řetězec.  
@@ -92,7 +92,7 @@ string Hello(string greeting);
 Function Hello (ByVal greeting As String) As String  
 ```  
   
- Tato operace podpisu stanoví formu základní výměny zpráv. Pokud neexistovala žádná korelace [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] nemůže zjistit, kterou operaci je určené návratovou hodnotu.  
+ Tato operace podpisu stanoví formu základní výměny zpráv. Pokud neexistovala žádná korelace WCF nemůže zjistit, kterou operaci je určené návratovou hodnotu.  
   
  Všimněte si, že pokud zadáte jiný základní vzor zprávy, dokonce i operace služby, které vracejí `void` (`Nothing` v jazyce Visual Basic) jsou požadavek nebo odpověď výměny zpráv. Výsledek pro vaši operaci je, že pokud klient asynchronně vyvolá operaci, klient se zastaví zpracovávání, dokud je přijatá návratový zpráva, i když je prázdná v případě, že normální zpráva. Následující příklad kódu C# ukazuje operaci, která nevrátí, dokud klient přijal prázdný zprávu v odpovědi.  
   
@@ -108,10 +108,10 @@ void Hello(string greeting);
 Sub Hello (ByVal greeting As String)  
 ```  
   
- V předchozím příkladu může zpomalit výkon klienta a kratší reakční doby, pokud trvá dlouhou dobu provést operaci, ale existují výhody požadavek nebo odpověď operace i když se vrátí `void`. Nejobvyklejší ten je, že chyb SOAP mohou být vráceny ve zprávě s odpovědí, který označuje, že došlo k nějaké chyby související se službou, v komunikaci nebo zpracování. SOAP chyb, které jsou určené v kontraktu služby se předávají do klientské aplikace jako <xref:System.ServiceModel.FaultException%601> objektu, kde parametr typu je typ zadaný v kontrakt služby. Díky tomu oznamující klientů o chybové stavy v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby snadné. Další informace o výjimek, chyb protokolu SOAP a zpracování chyb najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). Příkladem klienta a požadavek nebo odpověď služby najdete v sekci [postupy: vytvoření kontraktu požadavku a odpovědi](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md). Další informace o problémech s nástrojem vzoru požadavku a odpovědi najdete v tématu [služby požadavku a odpovědi](../../../docs/framework/wcf/feature-details/request-reply-services.md).  
+ V předchozím příkladu může zpomalit výkon klienta a kratší reakční doby, pokud trvá dlouhou dobu provést operaci, ale existují výhody požadavek nebo odpověď operace i když se vrátí `void`. Nejobvyklejší ten je, že chyb SOAP mohou být vráceny ve zprávě s odpovědí, který označuje, že došlo k nějaké chyby související se službou, v komunikaci nebo zpracování. SOAP chyb, které jsou určené v kontraktu služby se předávají do klientské aplikace jako <xref:System.ServiceModel.FaultException%601> objektu, kde parametr typu je typ zadaný v kontrakt služby. To usnadňuje oznamující klientů o chybové stavy v služby WCF. Další informace o výjimek, chyb protokolu SOAP a zpracování chyb najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). Příkladem klienta a požadavek nebo odpověď služby najdete v sekci [postupy: vytvoření kontraktu požadavku a odpovědi](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md). Další informace o problémech s nástrojem vzoru požadavku a odpovědi najdete v tématu [služby požadavku a odpovědi](../../../docs/framework/wcf/feature-details/request-reply-services.md).  
   
 ##### <a name="one-way"></a>Jednosměrné  
- Pokud klient [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] aplikace služby by neměl počkejte na dokončení operace a nezpracovává chyb SOAP, operaci můžete zadat vzor jednosměrný zprávy. Jednosměrná operace je taková, ve kterém klienta vyvolá operace a pokračuje ve zpracování po [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] zapíše zpráva k síti. Obvykle to znamená, že pokud je velmi velkých dat odeslaných v odchozí zprávy klient pokračuje, téměř okamžité spuštění (Pokud dojde k chybě při odesílání dat). Tento typ vzorce výměny zpráv podporuje chování jako událost od klienta k aplikaci služby.  
+ Pokud klient aplikace služby WCF nesmí počkejte na dokončení operace a nezpracovává chyb SOAP, operaci můžete zadat vzor jednosměrný zprávy. Jednosměrná operace je jedním ve kterém klienta vyvolá operace a bude pokračovat zpracování poté, co WCF zapíše zpráva k síti. Obvykle to znamená, že pokud je velmi velkých dat odeslaných v odchozí zprávy klient pokračuje, téměř okamžité spuštění (Pokud dojde k chybě při odesílání dat). Tento typ vzorce výměny zpráv podporuje chování jako událost od klienta k aplikaci služby.  
   
  Výměna zpráv, ve kterém jeden zprávy a nejsou přijaty žádné nemůže podporovat operace služby určující návratovou hodnotu než `void`; v takovém případě <xref:System.InvalidOperationException> je vyvolána výjimka.  
   

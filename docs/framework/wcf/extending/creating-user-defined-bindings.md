@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-ms.openlocfilehash: 82fe3baada73b89291311a891069c6ee3f19cf20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c9d37163770f2fd192a6fd2a03878b28f0237646
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
 Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:  
@@ -26,9 +26,9 @@ Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:
   
  Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které fungují na zprávy. Kanály a naslouchací procesy vytvořené tyto prvky vazeb můžete přidat, odebrat nebo změnit obsah zprávy. Danou vazbu může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. Windows Communication Foundation (WCF) obsahuje několik prvky vazby protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
- Kódování prvku vazby – tyto prvky představují transformace mezi zprávu a kódování připraveni k přenosu v drátové síti. Typické [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby obsahovat přesně jeden kódování prvku vazby. Příklady kódování prvky vazeb <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Pokud element kódování vazba není určena pro vazbu, bude použito výchozí kódování. Výchozí hodnota je text při přenosu HTTP a binární jinak.  
+ Kódování prvku vazby – tyto prvky představují transformace mezi zprávu a kódování připraveni k přenosu v drátové síti. Typické vazby WCF obsahovat přesně jeden kódování prvku vazby. Příklady kódování prvky vazeb <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Pokud element kódování vazba není určena pro vazbu, bude použito výchozí kódování. Výchozí hodnota je text při přenosu HTTP a binární jinak.  
   
- Element vazby přenosu – Tyhle elementy reprezentují přenosem kódování zprávy v protokolu přenosu. Typické [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vazby obsahovat přesně jeden element vazby přenos, který dědí z <xref:System.ServiceModel.Channels.TransportBindingElement>. Příklady přenosu elementů vazby <xref:System.ServiceModel.Channels.TcpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>a <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>.  
+ Element vazby přenosu – Tyhle elementy reprezentují přenosem kódování zprávy v protokolu přenosu. Typické vazby WCF obsahovat přesně jeden element vazby přenos, který dědí z <xref:System.ServiceModel.Channels.TransportBindingElement>. Příklady přenosu elementů vazby <xref:System.ServiceModel.Channels.TcpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>a <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>.  
   
  Při vytváření nové vazby, je důležité pořadí prvků přidané vazby. Vždy přidáte prvky vazeb v následujícím pořadí:  
   
@@ -41,10 +41,10 @@ Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:
 |Kódování|Text, binární, MTOM, vlastní|Ano*|  
 |Přenos|TCP, pojmenované kanály, HTTP, HTTPS, služby MSMQ, vlastní|Ano|  
   
- * Protože kódování je vyžadován pro každé vazby, pokud není zadán kódování, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přidá výchozí kódování pro vás. Výchozí hodnota je Text/XML pro přenosy protokolu HTTP a HTTPS a binární jinak.  
+ * Protože kódování je vyžadován pro každé vazby, pokud není zadán kódování, WCF přidá výchozí kódování pro vás. Výchozí hodnota je Text/XML pro přenosy protokolu HTTP a HTTPS a binární jinak.  
   
 ## <a name="creating-a-new-binding-element"></a>Vytváření nového elementu vazby  
- Kromě typy odvozené z <xref:System.ServiceModel.Channels.BindingElement> , jsou poskytovány [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], můžete vytvořit vlastní prvky vazeb. To umožňuje přizpůsobit způsob, jakým se vytvoří zásobník vazby a součásti, které v ní přejděte tak, že vytvoříte vlastní <xref:System.ServiceModel.Channels.BindingElement> kterou lze sestavit s další poskytované systémem typy v zásobníku.  
+ Kromě typy odvozené z <xref:System.ServiceModel.Channels.BindingElement> , jsou k dispozici WCF, můžete vytvořit vlastní prvky vazeb. To umožňuje přizpůsobit způsob, jakým se vytvoří zásobník vazby a součásti, které v ní přejděte tak, že vytvoříte vlastní <xref:System.ServiceModel.Channels.BindingElement> kterou lze sestavit s další poskytované systémem typy v zásobníku.  
   
  Například, pokud budete implementovat `LoggingBindingElement` , který poskytuje schopnost protokolovat zprávy do databáze, je nutné umístit nad kanál přenosu v zásobníku kanálu. V takovém případě aplikace vytvoří vlastní vazby, která tvoří `LoggingBindingElement` s `TcpTransportBindingElement`, jako v následujícím příkladu.  
   
@@ -64,7 +64,7 @@ Binding customBinding = new CustomBinding(
   
  Minimálně musí implementovat uživatelem definované vazby <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metoda a <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnost.  
   
- <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> Metoda vrátí novou <xref:System.ServiceModel.Channels.BindingElementCollection> obsahující prvky vazby pro vazbu. Kolekce je seřadit a by měl obsahovat prvky vazby protokolu nejprve, za nímž následuje kódování prvku vazby, za nímž následuje prvku vazby přenosu. Při použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prvky vazby poskytované systémem, je třeba postupovat podle prvku vazby řazení pravidla stanovená dokumentem [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md). Tato kolekce by měla odkazovat nikdy objekty odkazuje v rámci třídy uživatelem definované vazby; v důsledku toho musí vracet vazby autoři `Clone()` z <xref:System.ServiceModel.Channels.BindingElementCollection> při každém volání <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A>.  
+ <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> Metoda vrátí novou <xref:System.ServiceModel.Channels.BindingElementCollection> obsahující prvky vazby pro vazbu. Kolekce je seřadit a by měl obsahovat prvky vazby protokolu nejprve, za nímž následuje kódování prvku vazby, za nímž následuje prvku vazby přenosu. Při používání prvky vazby poskytované systémem WCF, je třeba postupovat podle prvku vazby řazení pravidla stanovená dokumentem [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md). Tato kolekce by měla odkazovat nikdy objekty odkazuje v rámci třídy uživatelem definované vazby; v důsledku toho musí vracet vazby autoři `Clone()` z <xref:System.ServiceModel.Channels.BindingElementCollection> při každém volání <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A>.  
   
  <xref:System.ServiceModel.Channels.Binding.Scheme%2A> Vlastnost představuje schéma identifikátoru URI pro přenosový protokol používána na vazby. Například *WSHttpBinding* a *NetTcpBinding* vrácení "http" a "net.tcp" z jejich odpovídajících <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnosti.  
   

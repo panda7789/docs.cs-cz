@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF clients [WCF], using
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-ms.openlocfilehash: 6667a8e9862054d7d8d5b20e70dfbe699de02eab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 79431588e27b02a40d5898929f1bdf644c8a79cd
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-use-a-windows-communication-foundation-client"></a>Postupy: Používání klienta Windows Communication Foundation
 Toto je poslední šesti úlohy, které jsou potřebné pro vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
   
- Jakmile byl vytvořen a nakonfigurován proxy server služby Windows Communication Foundation (WCF), lze vytvořit instanci klienta a klientské aplikace můžete zkompilovat a použít ke komunikaci s [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Toto téma popisuje postupy pro vytváření instancí a použití [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta. Tento postup provádí tři věci:  
+ Jakmile byl vytvořen a nakonfigurován proxy server služby Windows Communication Foundation (WCF), můžete vytvořit instanci klienta a klientské aplikace můžete zkompilovat a používaný ke komunikaci se službou WCF. Toto téma popisuje postupy pro vytváření instancí a pomocí klienta WCF. Tento postup provádí tři věci:  
   
-1.  Vytvoří [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta.  
+1.  Vytvoří instanci klienta WCF.  
   
 2.  Volání operace služby ze vygenerovaný proxy server.  
   

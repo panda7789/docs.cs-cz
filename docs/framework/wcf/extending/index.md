@@ -6,11 +6,11 @@ helpviewer_keywords:
 - extensibility [WCF]
 - Windows Communication Foundation, extensibility
 ms.assetid: c145e2f6-f402-41f5-8b5a-eee03978737b
-ms.openlocfilehash: 4990f14178551d9dccaca0f2899d8dbc4416cdc4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 24ad74f04a3ac31d0b0d0d87f0d74f88c0521f50
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extending-wcf"></a>Rozšíření WCF
 Windows Communication Foundation (WCF) umožňuje upravit a rozšířit běhu součásti přesněji řídit a rozšířit aplikace založené na služby. Témata v této části najdete podrobněji o architektuře rozšíření. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -26,10 +26,10 @@ Windows Communication Foundation (WCF) umožňuje upravit a rozšířit běhu so
  Vrstvy kanálu je umístěna pod vrstva modelu služby a je odpovědná za výměny zpráv mezi klienty a služby. Kanál rozšíření můžete implementovat nové funkce protokolu, například zabezpečení. Rozšíření kanál také přenosu funkce, například implementace nový síťový přenos pro přenos protokolu SOAP zprávy.  
   
  [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)  
- Zabezpečení v [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se skládá z zabezpečení přenosu (integrity, důvěrnost a ověřování), řízení přístupu (autorizace) a auditování. Třídy v nalezen `IdentityModel` oboru názvů používají [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pro řízení přístupu. Principy zabezpečení architektura umožňuje vytvořit typy vlastních deklarací identity pro přizpůsobení systémy kontroly vlastní přístup.  
+ Zabezpečení ve WCF se skládá z přenosu zabezpečení (integrity, důvěrnost a ověřování), řízení přístupu (autorizace) a auditování. Třídy v nalezen `IdentityModel` obor názvů se používá technologie WCF pro řízení přístupu. Principy zabezpečení architektura umožňuje vytvořit typy vlastních deklarací identity pro přizpůsobení systémy kontroly vlastní přístup.  
   
  [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Systém metadat je skupina třídy a rozhraní, které představují metadata potřebnou k implementaci aplikace založené na služby. Upravit nebo rozšíření třídy nebo implementovat a nakonfigurovat rozhraní pro export a import vlastních metadat, jako je například rozšíření webové služby popis Language (WSDL) nebo vlastní WS-PolicyAttachments kontrolní výrazy.  
+ Systém metadat WCF je skupina třídy a rozhraní, které představují metadata potřebnou k implementaci aplikace založené na služby. Upravit nebo rozšíření třídy nebo implementovat a nakonfigurovat rozhraní pro export a import vlastních metadat, jako je například rozšíření webové služby popis Language (WSDL) nebo vlastní WS-PolicyAttachments kontrolní výrazy.  
   
  [Rozšiřování kodérů a serializátorů](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
  Kodérů a serializátorů převede data z jednoho formátu do jiného. Témata v této části popisují, jak rozšířit zadané třídy zvláštních požadavků.  

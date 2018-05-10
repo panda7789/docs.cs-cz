@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: c8b2fe3300bacc76e63f9d533c613171d03600d7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0ca5eee4d4a1fd0dfaabbf9160488eb2d88f3d3d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data vystavení v protokolů zpráv, jakož i událostí generovaných protokolování zpráv.  
@@ -16,7 +16,7 @@ Toto téma popisuje, jak můžete chránit citlivá data vystavení v protokolů
 ## <a name="security-concerns"></a>Aspekty zabezpečení  
   
 ### <a name="logging-sensitive-information"></a>Protokolování citlivé informace.  
- Windows Communication Foundation (WCF) nemění žádná data v záhlaví specifické pro aplikaci a text. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] také nesleduje osobní údaje v záhlaví konkrétní aplikace a data textu.  
+ Windows Communication Foundation (WCF) nemění žádná data v záhlaví specifické pro aplikaci a text. WCF také nesleduje osobní údaje v záhlaví konkrétní aplikace a data textu.  
   
  Když je povoleno protokolování zpráv, osobní údaje v hlavičkách specifické pro aplikace, jako je řetězec dotazu; a body informace, například číslo platební karty, se může stát viditelné v protokolech. Nástroje pro nasazení aplikace je zodpovědná za prosadit řízení přístupu na soubory konfigurace a protokolu. Pokud nechcete, aby tento druh informací viditelný, měli vypnout protokolování nebo odfiltrovat část dat, pokud chcete sdílet v protokolech.  
   

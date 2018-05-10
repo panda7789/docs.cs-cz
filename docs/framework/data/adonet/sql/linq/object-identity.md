@@ -1,27 +1,15 @@
 ---
-title: "Identity – objekt"
-ms.custom: 
+title: Identity – objekt
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c788f2f9-65cc-4455-9907-e8388a268e00
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 21b8dbb934b778d792ff55d54f60fca92cac8e88
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 930295073f9f75cf4101bf6fa3834561a4db8f58
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-identity"></a>Identity – objekt
 Objekty v modulu runtime mají jedinečné identity. Dvě proměnné, které odkazují na stejný objekt ve skutečnosti odkazovat na stejnou instanci objektu. Z tohoto důvodu jsou okamžitě viditelné prostřednictvím dalších změny provedené mimo jiné cestě prostřednictvím jednu proměnnou.  
@@ -34,7 +22,7 @@ Objekty v modulu runtime mají jedinečné identity. Dvě proměnné, které odk
   
  V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], <xref:System.Data.Linq.DataContext> spravuje identity objektu. Vždy, když je nový řádek načíst z databáze, řádek je zaznamenána v tabulce identity na základě klíče. primární a se vytvoří nový objekt. Vždy, když je načíst tento stejný řádek, je původní instance objektu předávány zpět do aplikace. Tímto způsobem <xref:System.Data.Linq.DataContext> překládá koncept identity jak je vidět v databázi (tj. primárních klíčů) do koncept identity pohledu jazyk (instance). Aplikace se zobrazují pouze objekt ve stavu, že nejprve byla načtena. Nová data, pokud se liší, budou zahozeny. Další informace najdete v tématu [načítání objektů z mezipaměti Identity](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Tento postup se používá ke správě integritu místní objekty za účelem podpory optimistickou metodu aktualizace. Protože pouze změny, které se provádějí až po objekt, je nejprve vytvořen jsou provedeny v aplikaci, je záměr aplikace zrušte. Pokud mezitím došlo změnám mimo strana, jsou identifikovány v době `SubmitChanges()` je volána.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Tento postup se používá ke správě integritu místní objekty za účelem podpory optimistickou metodu aktualizace. Protože pouze změny, které se provádějí až po objekt, je nejprve vytvořen jsou provedeny v aplikaci, je záměr aplikace zrušte. Pokud mezitím došlo změnám mimo strana, jsou identifikovány v době `SubmitChanges()` je volána.  
   
 > [!NOTE]
 >  Pokud se objekt požadoval dotaz snadno identifikovat jako jeden již načten, se spustí žádný dotaz. V tabulce identity funguje jako mezipaměť všech dříve načíst objekty.  

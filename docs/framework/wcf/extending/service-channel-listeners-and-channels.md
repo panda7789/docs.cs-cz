@@ -2,11 +2,11 @@
 title: 'Služba: Moduly pro naslouchání kanálů a kanály'
 ms.date: 03/30/2017
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
-ms.openlocfilehash: 5f5acff6ca933006707a863ea5ba04cd01cfb93e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: eca7061243fa7f006079d19c3eaaf86ba906bca2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="service-channel-listeners-and-channels"></a>Služba: Moduly pro naslouchání kanálů a kanály
 Existují tři kategorie objektů kanál: kanály, kanál naslouchací procesy a objekty factory kanálu. Kanály jsou rozhraní mezi aplikací a zásobník kanálu. Kanál moduly pro naslouchání jsou zodpovědní za vytváření kanály na straně příjmu (nebo naslouchání), obvykle v reakci na nové příchozí zprávy nebo připojení. Objekty Factory kanál jsou zodpovědní za vytváření kanály na straně odesílání zahájíte komunikaci s koncovým bodem.  
@@ -21,7 +21,7 @@ Kanál naslouchání přijímání zpráv a doručování vrstvu nad prostředni
   
  Proces můžete ale implementace nesmíte používat ve skutečnosti fronty koncepčně modelovaná jako fronty uvnitř každý kanál. Naslouchací proces kanálu nástroje zodpovídá za příjmu zprávy z vrstvy níže nebo síti a jejich uvádění ve frontě. Kanál zodpovídá za načítání zpráv z fronty a předat je vrstvu nad při této vrstvy vyzve k zadání zprávy, například voláním `Receive` na kanálu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Poskytuje pomocné rutiny základní třídy pro tento proces. (Diagram kanál pomocných tříd, popsané v tomto tématu, najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
+ WCF poskytuje pomocné rutiny základní třídy pro tento proces. (Diagram kanál pomocných tříd, popsané v tomto tématu, najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
   
 -   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje popsané v kroku 2 [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
   

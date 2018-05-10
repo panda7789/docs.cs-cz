@@ -2,14 +2,14 @@
 title: Konfigurace služeb WCF v kódu
 ms.date: 03/30/2017
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
-ms.openlocfilehash: 2046ee00bef0f3e84a61151474c777d64005a30c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 714236bcdb562840323698622cdf3d0c6c89b6ca
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
-Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když je potřeba nakonfigurovat po nasazení služby. Při použití konfigurační soubory, odborník v oblasti IT pouze musí aktualizovat konfigurační soubor, není třeba žádné opětovnou kompilaci. Konfigurační soubory, však může být složité a obtížné. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurace – elementy odkazují názvy, které umožňuje vytváření konfigurační soubory k chybám a obtížná. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] také umožňuje konfigurovat služby v kódu. V dřívějších verzích [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] (4.0 a starší) konfigurace služby v kódu se snadno ve vlastním hostováním scénářů <xref:System.ServiceModel.ServiceHost> třída povolena, můžete nakonfigurovat koncové body a chování před volání ServiceHost.Open. Ve scénářích hostovaná na webu, ale nemáte přímý přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webové hostované služby, bylo potřeba vytvořit `System.ServiceModel.ServiceHostFactory` vytvořené <xref:System.ServiceModel.Activation.ServiceHostFactory> a provést všechny potřebné konfigurace. Od verze rozhraní .NET 4.5, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] poskytuje snadný způsob, jak nakonfigurovat i samoobslužně hostované a webové hostované služby v kódu.  
+Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když je potřeba nakonfigurovat po nasazení služby. Při použití konfigurační soubory, odborník v oblasti IT pouze musí aktualizovat konfigurační soubor, není třeba žádné opětovnou kompilaci. Konfigurační soubory, však může být složité a obtížné. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurace – elementy odkazují názvy, které umožňuje vytváření konfigurační soubory k chybám a obtížná. WCF také umožňuje konfigurovat služby v kódu. V dřívějších verzích systému konfigurace služby WCF (4.0 a starší) v kódu se snadno ve vlastním hostováním scénářů <xref:System.ServiceModel.ServiceHost> třída povolena, můžete nakonfigurovat koncové body a chování před volání ServiceHost.Open. Ve scénářích hostovaná na webu, ale nemáte přímý přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webové hostované služby, bylo potřeba vytvořit `System.ServiceModel.ServiceHostFactory` vytvořené <xref:System.ServiceModel.Activation.ServiceHostFactory> a provést všechny potřebné konfigurace. Od verze rozhraní .NET 4.5, WCF poskytuje snadný způsob, jak nakonfigurovat i samoobslužně hostovaná a webové hostované služby v kódu.  
   
 ## <a name="the-configure-method"></a>Metoda konfigurace  
  Jednoduše zadejte veřejnou statickou metodu s názvem `Configure` následující podpisem v třídě implementace služby:  
@@ -18,7 +18,7 @@ Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat slu
 public static void Configure(ServiceConfiguration config)  
 ```  
   
- Provede metodu konfigurace <xref:System.ServiceModel.ServiceConfiguration> instanci, která umožňuje vývojáři přidat koncové body a chování. Tato metoda je volána [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] před otevřením hostitele služby. Pokud je definována, nastavení konfigurace služby, který je zadaný v souboru app.config nebo web.config, bude ignorována.  
+ Provede metodu konfigurace <xref:System.ServiceModel.ServiceConfiguration> instanci, která umožňuje vývojáři přidat koncové body a chování. Tato metoda je volána službou WCF před otevřením hostitele služby. Pokud je definována, nastavení konfigurace služby, který je zadaný v souboru app.config nebo web.config, bude ignorována.  
   
  Následující fragment kódu ukazuje, jak definovat `Configure` metoda a přidání koncového bodu služby, chování koncového bodu a chování služby:  
   

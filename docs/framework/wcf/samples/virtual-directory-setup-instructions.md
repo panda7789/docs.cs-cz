@@ -2,11 +2,11 @@
 title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: a6fc8309563e78f919fe1e2009c1f46801c32913
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3ff578b69590071ef2135e777b3105e7c226563e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
 Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společný virtuální adresář s názvem servicemodelsamples, který je namapovaný na %SystemDrive%\inetpub\wwwroot\servicemodelsamples složky.  
@@ -35,12 +35,12 @@ Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společn
 7.  Click **OK**. Webová aplikace je nyní vytvořen pro ukázky WCF.  
   
     > [!NOTE]
-    >  Tato úloha musí provést pouze jednou, protože všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky použijte stejné servicemodelsamples webové aplikace.  
+    >  Tato úloha je nutné provést jenom jednou, protože všechny ukázky WCF používají stejné servicemodelsamples webové aplikace.  
   
     > [!NOTE]
     >  Pro účely této dokumentace termín `virtual directory` je totožná s `Web application`.  
   
-     Kromě vytvoření virtuálního adresáře, musíte taky nastavit její vlastnosti, aby povolit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spuštění služeb. Níže naleznete podrobnosti.  
+     Kromě vytvoření virtuálního adresáře, musíte taky nastavit jeho vlastnosti, chcete-li povolit spuštění služeb WCF. Níže naleznete podrobnosti.  
   
 #### <a name="to-create-a-virtual-directory-in-iis-51-or-60"></a>Chcete-li vytvořit virtuální adresář v IIS 5.1 nebo 6.0  
   
@@ -52,7 +52,7 @@ Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společn
   
 4.  V průvodci zadejte `servicemodelsamples` jako alias pro virtuální adresář, který vytvoříte.  
   
-5.  Nastavte cestu k % SystemDrive%\inetpub\wwwroot\servicemodelsamples. Většina [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky zkopírujte služby spustitelné soubory do tohoto umístění při sestavení.  
+5.  Nastavte cestu k % SystemDrive%\inetpub\wwwroot\servicemodelsamples. Většina Ukázky WCF zkopírujte služby spustitelné soubory do tohoto umístění při sestavení.  
   
 6.  Klikněte na tlačítko **Další**.  
   
@@ -65,7 +65,7 @@ Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společn
 8.  Klikněte na tlačítko **Další**a potom klikněte na **Dokončit** dokončete průvodce.  
   
     > [!NOTE]
-    >  Tato úloha musí provést pouze jednou, protože všechny [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ukázky používat stejné servicemodelsamples virtuální adresář.  
+    >  Tato úloha musí provést pouze jednou, protože všechny ukázky WCF používají stejné servicemodelsamples virtuální adresář.  
   
 #### <a name="to-set-additional-virtual-directory-properties-in-iis-70-or-75"></a>Chcete-li nastavit další virtuální adresář vlastnosti ve službě IIS 7.0 nebo 7.5  
   

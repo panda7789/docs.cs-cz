@@ -2,18 +2,18 @@
 title: Poskytovatel WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: 202923ab1d09b0ce836dbfce7360dd22a479a900
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d135466c402fa21b6a1b11f208ca900f58748bdb
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
-Tento příklad ukazuje, jak ke shromažďování dat ze služby Windows Communication Foundation (WCF) v době běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), která je integrována do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Tato ukázka také ukazuje, jak přidat objekt uživatelské rozhraní WMI pro službu. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak získat data z `ICalculator` služby za běhu.  
+Tento příklad ukazuje, jak ke shromažďování dat ze služby Windows Communication Foundation (WCF) v době běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), která je integrována do WCF. Tato ukázka také ukazuje, jak přidat objekt uživatelské rozhraní WMI pro službu. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak získat data z `ICalculator` služby za běhu.  
   
  Služba WMI je implementace Web-Based Enterprise Management (WBEM) standardní společnosti Microsoft. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM je oborový standard pro jak aplikace vystavit WMI pro externí nástroje pro správu.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implementuje zprostředkovatele rozhraní WMI, komponenty, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
+ WCF implementuje zprostředkovatele rozhraní WMI, komponenty, která zveřejňuje instrumentace za běhu prostřednictvím rozhraní WBEM kompatibilní. Nástroje pro správu můžete připojit ke službám prostřednictvím rozhraní za běhu. WCF zpřístupní atributy služeb, jako je adresy, vazby, chování a naslouchací procesy.  
   
  Předdefinované zprostředkovatele rozhraní WMI je aktivovaná v konfiguračním souboru aplikace. To se provádí prostřednictvím `wmiProviderEnabled` atribut [ \<diagnostics >](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, jak znázorňuje následující ukázka konfigurace:  
   
@@ -35,7 +35,7 @@ Tento příklad ukazuje, jak ke shromažďování dat ze služby Windows Communi
   
  Tato ukázka používá dva skriptů jazyka Java: jednu pro zobrazení výčtu služby spuštěné v počítači spolu s některé jejich vlastností a druhou pro zobrazení dat uživatelské rozhraní WMI. Skript otevře připojení ke zprostředkovateli rozhraní WMI, analyzuje data a zobrazí údaje získané.  
   
- Spustit vzorek k vytvoření spuštěnou instanci [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Když je služba spuštěná, spusťte skript každý Java pomocí následujícího příkazu na příkazovém řádku:  
+ Spusťte vzorek k vytvoření spuštěnou instanci služby WCF. Když je služba spuštěná, spusťte skript každý Java pomocí následujícího příkazu na příkazovém řádku:  
   
 ```  
 cscript EnumerateServices.js  
@@ -116,7 +116,7 @@ cscript EnumerateCustomObjects.js
   
  Výstup ukazuje, že je jediná služba na tomto počítači spuštěna. Službu zpřístupní jeden koncový bod, který implementuje `ICalculator` kontrakt. Nastavení chování a vazby, které jsou implementované v koncovém bodě jsou uvedeny jako součet jednotlivých elementů zasílání zpráv zásobníku.  
   
- Rozhraní WMI se neomezuje na vystavení správu instrumentace [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury. Aplikace můžou zpřístupnit vlastní položky dat specifické pro doménu prostřednictvím shodný mechanismus. Služba WMI je jednotná mechanismus kontroly a řízení webové služby.  
+ Rozhraní WMI se neomezuje na vystavení WMI infrastruktury WCF. Aplikace můžou zpřístupnit vlastní položky dat specifické pro doménu prostřednictvím shodný mechanismus. Služba WMI je jednotná mechanismus kontroly a řízení webové služby.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
   
@@ -129,7 +129,7 @@ cscript EnumerateCustomObjects.js
 4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Pokud jste nainstalovali [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] po instalaci technologie ASP.NET, musíte spustit "%WINDIR%\ Microsoft.Net\Framework\v3.0\Windows komunikace Foundation\servicemodelreg.exe "- r - x oprávnění účtu ASPNET k publikování objekty rozhraní WMI.  
+    >  Pokud jste nainstalovali WCF po instalaci technologie ASP.NET, budete muset spustit "%WINDIR%\ Microsoft.Net\Framework\v3.0\Windows komunikace Foundation\servicemodelreg.exe "- r - x oprávnění účtu ASPNET k publikování objekty rozhraní WMI.  
   
 5.  Zobrazit data z ukázkové prezentované prostřednictvím rozhraní WMI pomocí příkazů: `cscript EnumerateServices.js` nebo `cscript EnumerateCustomObjects.js`.  
   

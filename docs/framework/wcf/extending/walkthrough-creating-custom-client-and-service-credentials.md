@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-ms.openlocfilehash: 8c5608276de935f07dca88e343143112b8fdcc20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5ba6d2016a36809910561543a531dd4d44aac9b9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Návod: Vytvoření vlastního klienta a pověření služby
 Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a jak používat vlastní pověření z kódu aplikace.  
@@ -23,12 +23,12 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
  Jak <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy dědí z abstraktní <xref:System.ServiceModel.Security.SecurityCredentialsManager> třídu, která definuje kontrakt pro návrat <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  
   
- Další informace o třídách přihlašovací údaje a jak je začlenit do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Architektura zabezpečení, najdete v části [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
+ Další informace o třídách přihlašovací údaje a jak se vešly do architektury zabezpečení WCF najdete v tématu [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
- Výchozí implementace součástí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] podporovat typy poskytované systémem přihlašovacích údajů a vytvořit token správce, který je schopen zpracování těchto typů pověření zabezpečení.  
+ Výchozí implementace součástí WCF podporu poskytované systémem přihlašovacích údajů a vytvořit token správce, který je schopen zpracování těchto typů pověření zabezpečení.  
   
 ## <a name="reasons-to-customize"></a>Důvody k přizpůsobení  
- Existuje několik důvodů pro přizpůsobení tříd pověření klienta nebo služby. Přední je potřeba změnit výchozí [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] chování bezpečnostních s ohledem na zpracování typy poskytované systémem přihlašovacích údajů, hlavně pro z následujících důvodů:  
+ Existuje několik důvodů pro přizpůsobení tříd pověření klienta nebo služby. Musíme je potřeba změnit výchozí chování zabezpečení WCF s ohledem na zpracování typy poskytované systémem přihlašovacích údajů, hlavně pro z následujících důvodů:  
   
 -   Změny, které nejsou možné pomocí jiné body rozšíření.  
   
@@ -39,7 +39,7 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
  Toto téma popisuje, jak implementovat vlastní klienta a pověření služby a jak je používat z kódu aplikace.  
   
 ## <a name="first-in-a-series"></a>První ze série  
- Vytvoření třídy vlastní pověření je jenom první krok, protože důvod pro přizpůsobení přihlašovacích údajů je změna [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] chování týkající se zřizování přihlašovací údaje, serializace tokenu zabezpečení nebo ověřování. Další témata v této části popisují, jak vytvořit vlastní serializátorů a ověřovací data. Vytvoření vlastní pověření třídy v tomto ohledu je první téma v řadě. Následující akce (vytváření vlastní serializátorů a ověřovací data) lze provést pouze po vytvoření vlastní pověření. Další témata, která vycházejí v tomto tématu:  
+ Vytvoření třídy vlastní pověření je jenom první krok, protože důvod pro přizpůsobení přihlašovací údaje chcete změnit chování WCF týkající se zřizování přihlašovací údaje, serializace tokenu zabezpečení nebo ověřování. Další témata v této části popisují, jak vytvořit vlastní serializátorů a ověřovací data. Vytvoření vlastní pověření třídy v tomto ohledu je první téma v řadě. Následující akce (vytváření vlastní serializátorů a ověřovací data) lze provést pouze po vytvoření vlastní pověření. Další témata, která vycházejí v tomto tématu:  
   
 -   [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
   
@@ -55,7 +55,7 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
 2.  Volitelné. Přidáte nové metody nebo vlastnosti pro nové typy přihlašovacích údajů. Pokud je nemůžete přidat nové typy přihlašovacích údajů, tento krok přeskočte. Následující příklad přidá `CreditCardNumber` vlastnost.  
   
-3.  Přepsání <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metoda. Tato metoda je volána automaticky [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení, pokud je použita pověření vlastní klienta. Tato metoda je odpovědná za vytváření a vrací instanci třídy implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy.  
+3.  Přepsání <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metoda. Tato metoda je volána Infrastruktura zabezpečení WCF automaticky, pokud je použita pověření vlastní klienta. Tato metoda je odpovědná za vytváření a vrací instanci třídy implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy.  
   
     > [!IMPORTANT]
     >  Je důležité si uvědomit, že <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> je metoda potlačena za účelem vytvoření vlastní zabezpečení Správce tokenu. Správce tokenu zabezpečení, odvozené od <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>, musí vracet poskytovatele tokenu zabezpečení vlastní, odvozené od <xref:System.IdentityModel.Selectors.SecurityTokenProvider>, k vytvoření tohoto tokenu zabezpečení. Pokud nepostupujte podle tohoto vzoru pro vytváření tokenů zabezpečení, může vaše aplikace fungovat správně při <xref:System.ServiceModel.ChannelFactory> objekty jsou uložené v mezipaměti (což je výchozí chování pro proxy klienta WCF), potenciálně výsledné ke zvýšení oprávnění. Vlastní pověření objekt se uloží do mezipaměti jako součást <xref:System.ServiceModel.ChannelFactory>. Však vlastní <xref:System.IdentityModel.Selectors.SecurityTokenManager> je vytvořen v každé volání, které minimalizují ohrožení zabezpečení, dokud logice vytvoření tokenu je umístěn v <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  
@@ -89,7 +89,7 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
      [!code-csharp[c_CustomCredentials#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#3)]
      [!code-vb[c_CustomCredentials#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#3)]  
   
- Předchozí postup ukazuje, jak používat pověření klienta z kódu aplikace. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přihlašovací údaje můžete konfigurovat taky pomocí konfiguračního souboru aplikace. Pomocí konfigurace aplikace je často vhodnější pevně kódováno protože umožní Změna parametrů aplikace bez nutnosti upravit zdroj, nutnosti rekompilace a opětovné nasazení.  
+ Předchozí postup ukazuje, jak používat pověření klienta z kódu aplikace. Přihlašovací údaje WCF můžete nakonfigurovat také pomocí konfiguračního souboru aplikace. Pomocí konfigurace aplikace je často vhodnější pevně kódováno protože umožní Změna parametrů aplikace bez nutnosti upravit zdroj, nutnosti rekompilace a opětovné nasazení.  
   
  Následující postup popisuje, jak zajistit podporu pro konfiguraci vlastních přihlašovacích údajů.  
   
@@ -108,7 +108,7 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
      [!code-csharp[c_CustomCredentials#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#7)]
      [!code-vb[c_CustomCredentials#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#7)]  
   
- Jakmile máte konfigurační třídě obslužná rutina, lze ji integrovat do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] framework konfigurace. Umožňující vlastní klienta pověření pro použití v elementech chování klienta koncový bod, jak je vidět v dalším postupu.  
+ Až budete mít konfigurační třídě obslužná rutina, lze ji integrovat do rozhraní konfigurace WCF. Umožňující vlastní klienta pověření pro použití v elementech chování klienta koncový bod, jak je vidět v dalším postupu.  
   
 #### <a name="to-register-and-use-a-custom-client-credentials-configuration-handler-in-the-application-configuration"></a>K registraci a pomocí vlastního klienta pověření obslužná rutina konfigurace v konfiguraci aplikace  
   
@@ -146,7 +146,7 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
 2.  Volitelné. Přidání nových vlastností zajistit rozhraní API pro nové hodnoty přihlašovacích údajů, které se přidávají. Pokud je nemůžete přidat nové hodnoty přihlašovacích údajů, tento krok přeskočte. Následující příklad přidá `AdditionalCertificate` vlastnost.  
   
-3.  Přepsání <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metoda. Tato metoda je volána automaticky [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastruktury, když se používá přihlašovací údaje vlastního klienta. Metoda je odpovědná za vytváření a vrací instanci třídy implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> – třída (popsaný v dalším postupu).  
+3.  Přepsání <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metoda. Tato metoda je volána infrastruktura WCF automaticky, pokud je použita pověření vlastní klienta. Metoda je odpovědná za vytváření a vrací instanci třídy implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> – třída (popsaný v dalším postupu).  
   
 4.  Volitelné. Přepsání <xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> metoda. To je potřeba, pouze v případě přidání nových vlastností nebo interní pole pro implementaci vlastního klienta přihlašovací údaje.  
   

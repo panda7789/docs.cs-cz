@@ -4,18 +4,16 @@ metadata:
   title: Kolekce Interaktivní kurz – elementy QuickStart C#
   description: V tomto kurzu budete používat prohlížeč další C# interaktivně. Psaní kódu jazyka C# a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči.
   audience: Developer
-  ms.topic: get-started-article
+  ms.topic: quickstart
   ms.custom: mvc
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.prod: .net
-  ms.technology: devlang-csharp
-  ms.openlocfilehash: 08060fc95d94db91a429439e502a8f6dc2978c4d
-  ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+  ms.openlocfilehash: 79861f7a04939fafd77bd7a905b8fef0e94b8966
+  ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/28/2018
+  ms.lasthandoff: 05/07/2018
 items:
 - durationInMinutes: 1
   content: >

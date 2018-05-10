@@ -2,11 +2,11 @@
 title: Export vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 53c93882-f8ba-4192-965b-787b5e3f09c0
-ms.openlocfilehash: 8d9f5e223bb47fc8997f6509ec882b282e1ee8b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c2ae547f10e96a1fdc16fc428e98145fc81c59d5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>Export vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Vlastní metadata se skládá z elementů XML, které vývozci poskytované systémem metadata nelze exportovat. Obvykle obsahuje vlastní elementy WSDL pro uživatelem definované chování a prvky vazeb a výrazy zásad o možnostech a požadavky vazby a kontrakty.  
@@ -14,7 +14,7 @@ Ve Windows Communication Foundation (WCF), export metadat je proces popisující
  Tato část popisuje, export vlastního WSDL nebo výrazy zásad a není soustředit na samotný proces exportu. Další informace o tom, jak používat typy, které exportovat a importovat metadata bez ohledu na to, jestli je metadata vlastní nebo sestavený systému najdete v tématu [export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
   
 ## <a name="overview"></a>Přehled  
- Při publikování metadat pomocí <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> je zkontrolován a XSD a WSDL – včetně výrazy zásad – jsou generovány pro všechny vazby a kontrakty, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] může podporovat pomocí poskytované systémem atributy a vazeb. Ale chování vlastní atributy nebo prvky vazeb vyžadovat podporu předtím, než je možné exportovat správně.  
+ Při publikování metadat pomocí <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> je zkontrolován a XSD a WSDL – včetně výrazy zásad – jsou generovány pro všechny smlouvy a vazby, které podporují WCF pomocí poskytované systémem atributy a vazeb. Ale chování vlastní atributy nebo prvky vazeb vyžadovat podporu předtím, než je možné exportovat správně.  
   
  Tato část popisuje:  
   

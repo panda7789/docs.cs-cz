@@ -2,14 +2,14 @@
 title: 'Přenos: Součinnost TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: fb877e6d55214e9a268a88b33a4613ca8df0eb8f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8cdd88b354f2e07c84ccfda85c8552d37ca2f519
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
-Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexní relace TCP vlastní přenos Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšíření vrstvy kanálu rozhraní přenášených v síti s existující nasazené systémy. Následující kroky ukazují, jak vytvořit toto vlastní [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] přenosu:  
+Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexní relace TCP vlastní přenos Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšíření vrstvy kanálu rozhraní přenášených v síti s existující nasazené systémy. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  
   
 1.  Počínaje soket TCP vytvořit klientských a serverových implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> , pomocí DIME rámců zobrazit hranice zpráv.  
   
@@ -128,7 +128,7 @@ Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexn
   
  `binding.Elements.Add(new WseTcpTransportBindingElement());`  
   
- Obsahuje dva testy – jeden test nastaví typový klient pomocí kód, který vygenerovala z schématu WSDL WSE 3.0. Druhý test používá [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] jako klient a server tak, že odesílání zpráv přímo na základě kanál rozhraní API.  
+ Obsahuje dva testy – jeden test nastaví typový klient pomocí kód, který vygenerovala z schématu WSDL WSE 3.0. Druhý test používá WCF jako klient a server odesláním zprávy přímo na základě kanál rozhraní API.  
   
  Při spuštění ukázky, očekává se následující výstup.  
   
@@ -182,7 +182,7 @@ Symbols:
   
     2.  Nastavte projekt StockService jako počáteční projekt.  
   
-    3.  Otevřete StockService.cs v projektu StockService a Odkomentujte atribut [zásad] na `StockService` třídy. To zakáže zabezpečení od vzorku. Při [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] můžou spolupracovat s WSE 3.0 zabezpečené koncové body, aby tato ukázka se zaměřuje na vlastní přenos TCP je zakázána zabezpečení.  
+    3.  Otevřete StockService.cs v projektu StockService a Odkomentujte atribut [zásad] na `StockService` třídy. To zakáže zabezpečení od vzorku. Při WCF můžou spolupracovat s zabezpečené koncové body WSE 3.0, zabezpečení je vypnuté zachovat tato ukázka se zaměřuje na vlastní přenos TCP.  
   
     4.  Stisknutím klávesy F5 spusťte `TcpSyncStockService`. Služba se spustí v nové okno konzoly.  
   

@@ -2,11 +2,11 @@
 title: Verze služby
 ms.date: 03/30/2017
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-ms.openlocfilehash: efff9778f1cbe2ee5d97912ada0193c4e8ba137c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 75a19c62f52c1d9468976f7ebea72245d1d341eb
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně několikrát během své životnosti může potřebovat služby (a koncových bodů, které vystavují) se musí změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo k jiné řešení problémy. Každé změně zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu Správa verzí Windows Communication Foundation (WCF).  
@@ -34,7 +34,7 @@ Po počátečním nasazení a potenciálně několikrát během své životnosti
   
  Pro kontraktů služby kompatibility přidáním nových operací znamená vystavený službou, ale existující operace nelze odebrat nebo změnit sémanticky.  
   
- Pro datové kontrakty kompatibilita znamená nový typ schématu, které lze přidat definice ale existující definice typu schématu nelze změnit v nejnovější způsoby. Nejnovější změny mohou zahrnovat odebrání datových členů nebo incompatibly Změna datového typu. Tato funkce umožňuje službě některé zeměpisnou šířku při změně verze jeho kontrakty, aniž by vás klientů. V následujících dvou oddílech se popisuje pevná a dodatečné změny, které můžete provedeny [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kontraktů dat a služby.  
+ Pro datové kontrakty kompatibilita znamená nový typ schématu, které lze přidat definice ale existující definice typu schématu nelze změnit v nejnovější způsoby. Nejnovější změny mohou zahrnovat odebrání datových členů nebo incompatibly Změna datového typu. Tato funkce umožňuje službě některé zeměpisnou šířku při změně verze jeho kontrakty, aniž by vás klientů. V následujících dvou částech pevných a nejnovější změny, které můžete provést na WCF data a kontraktů služby.  
   
 ## <a name="data-contract-versioning"></a>Správa verzí kontraktů dat  
  Tato část pojednává o Správa verzí dat při použití <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.DataContractAttribute> třídy.  
@@ -53,7 +53,7 @@ Po počátečním nasazení a potenciálně několikrát během své životnosti
 ### <a name="lax-versioning"></a>Hodnotě lax Správa verzí  
  V mnoha jiných scénářích vývojáře služby můžete provést za předpokladu, že přidání nové, volitelné člena do kontrakt dat nebudou porušovat existující klienti. To vyžaduje, aby služba vývojáři prozkoumat, jestli existující klienti nejsou provádění ověřování schématu a s jejich ignorovat členy dat je neznámý. V těchto scénářích je možné využít výhod funkce kontraktu dat pro přidání nové členy pevných způsobem. Vývojář služby mohou být tento předpoklad s jistotou, pokud funkce kontraktu dat pro správu verzí, již byly použity pro první verzi služby.  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], Webových služeb ASP.NET a mnoho dalších podpora webové služby zásobníky *hodnotě lax Správa verzí*: to znamená, že nevyvolá výjimku výjimky pro nové členy dat je neznámý v přijatá data.  
+ Zásobníky podporu služby WCF, webových služeb ASP.NET a mnoho dalších webových *hodnotě lax Správa verzí*: to znamená, že nevyvolá výjimku výjimky pro nové členy dat je neznámý v přijatá data.  
   
  Je snadné se omylem domnívat, že přidání nového člena nebudou porušovat existující klienti. Pokud si nejste jistí, že všichni klienti dokáže zpracovat hodnotě lax Správa verzí, doporučuje se považovat data a postupujte podle pokynů striktní Správa verzí kontraktů jako neměnné.  
   
@@ -92,7 +92,7 @@ Po počátečním nasazení a potenciálně několikrát během své životnosti
 ## <a name="message-contract-versioning"></a>Správa verzí kontraktů zpráv  
  Pokyny pro Správa verzí kontraktů zpráv jsou velmi podobné kontrakty dat správy verzí. Pokud se vyžaduje striktní Správa verzí, by měl nemění vaše tělo zprávy ale místo toho vytvořte nové kontrakt zprávy s jedinečným názvem kvalifikovaný. Pokud víte, které můžete použít hodnotě lax Správa verzí, nelze přidat nové části textu zprávy, ale změnit nebo odebrat existující. Tyto pokyny platí i pro úplné a zabalit kontrakty zpráv.  
   
- Hlavičky zpráv můžete kdykoli přidat, i když striktní správy verzí je používán. Příznak MustUnderstand může mít vliv na správu verzí. Obecně platí, Správa verzí model pro hlavičky v [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] je, jak je popsáno v specifikace protokolu SOAP.  
+ Hlavičky zpráv můžete kdykoli přidat, i když striktní správy verzí je používán. Příznak MustUnderstand může mít vliv na správu verzí. Model správy verzí pro záhlaví ve WCF je obecně, jak je popsáno v specifikace protokolu SOAP.  
   
 ## <a name="service-contract-versioning"></a>Správa verzí kontraktů služby  
  Podobně jako správa verzí kontraktů dat, Správa verzí kontraktů služby také zahrnuje přidání, změně a odebrání operace.  
@@ -118,7 +118,7 @@ Po počátečním nasazení a potenciálně několikrát během své životnosti
  Seznam chyb, které jsou popsané v kontraktu služby není považováno za vyčerpávající. V každém okamžiku může operace vrátí chyb, které nejsou popsané v její smlouvy. Proto změna sadu chyb, které jsou popsané v kontraktu není považováno za nejnovější. Například přidávání nové chybu kontrakt pomocí <xref:System.ServiceModel.FaultContractAttribute> nebo odebrání existující chyby ze smlouvy.  
   
 ### <a name="service-contract-libraries"></a>Knihovny kontrakt služby  
- Organizace můžou mít zavedené knihovny kontrakty kde kontraktu je publikovaná v centrálním úložišti a služby implementátory implementace kontraktů z tohoto úložiště. Při publikování kontraktu služby do úložiště v tomto případě nemáte žádnou kontrolu nad kteří vytváří služby, které implementaci. Proto nelze změnit po publikování, kontrakt služby vykreslování efektivně neměnné. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] podporuje smlouvy dědičnosti, který můžete použít k vytvoření nové smlouvy, které rozšiřuje stávající smlouvy. Chcete-li tuto funkci používat, definujte nové rozhraní kontraktu služby, která dědí z původního rozhraní kontraktu služby a pak přidejte metody na nové rozhraní. Služba, která implementuje staré kontrakt a implementaci nové smlouvy. Změňte definici koncového bodu "versionOld" používat nové smlouvy. změňte. Klientům "versionOld" budou nadále vypadat jako zpřístupňuje "versionOld" kontrakt; koncový bod klientům "versionNew" zobrazí se koncový bod vystavit kontrakt "versionNew".  
+ Organizace můžou mít zavedené knihovny kontrakty kde kontraktu je publikovaná v centrálním úložišti a služby implementátory implementace kontraktů z tohoto úložiště. Při publikování kontraktu služby do úložiště v tomto případě nemáte žádnou kontrolu nad kteří vytváří služby, které implementaci. Proto nelze změnit po publikování, kontrakt služby vykreslování efektivně neměnné. WCF podporuje dědičnosti kontrakt, který můžete použít k vytvoření nové smlouvy, které rozšiřuje stávající smlouvy. Chcete-li tuto funkci používat, definujte nové rozhraní kontraktu služby, která dědí z původního rozhraní kontraktu služby a pak přidejte metody na nové rozhraní. Služba, která implementuje staré kontrakt a implementaci nové smlouvy. Změňte definici koncového bodu "versionOld" používat nové smlouvy. změňte. Klientům "versionOld" budou nadále vypadat jako zpřístupňuje "versionOld" kontrakt; koncový bod klientům "versionNew" zobrazí se koncový bod vystavit kontrakt "versionNew".  
   
 ## <a name="address-and-binding-versioning"></a>Adresa a správa verzí vazby  
  Změny adresa koncového bodu a vazby jsou nejnovější změny, pokud klienti podporují dynamicky zjišťování nové adresa koncového bodu nebo vazby. Jeden mechanismus pro implementaci tato funkce je pomocí registru Universal popis zjišťování a integrace (UDDI) a vzor volání UDDI, kde klient pokoušet o komunikaci s koncovým bodem a, při selhání, dotazuje dobře známé UDDI v registru pro aktuální koncový bod metadat. Klient potom použije adresu a vazbu z tato metadata ke komunikaci s koncovým bodem. Pokud tato komunikace úspěšná, klient ukládá do mezipaměti informace o adresu a vazba pro budoucí použití.  

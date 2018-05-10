@@ -1,34 +1,24 @@
 ---
-title: "Napište svůj první dotaz LINQ (Visual Basic)"
-ms.custom: 
+title: Napište svůj první dotaz LINQ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], writing
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-caps.latest.revision: "56"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c16bb28189d5525654328da2dc80d868bbe61bf5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f426aac5358837563081d2bf9783f6d4fe04d853
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v jazyce vyhrazené dotazu. V průběhu času různé jazyky byly vyvinuty pro různé typy datových zdrojů, například SQL pro relační databáze a XQuery pro formát XML. Díky tomu je nezbytné pro vývojáře aplikace Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která je podporována.  
   
- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]zjednodušuje situaci prostřednictvím nabídky konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz, které jsou vždy práce s objekty. Použijte stejný základní kódování vzory pro dotazování a transformovat data v dokumentů XML, databáze SQL, datové sady ADO.NET a entity, rozhraní .NET Framework kolekce a všechny další zdroje nebo formátu pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici. Tento dokument popisuje tři fáze vytváření a používání basic [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy.  
+ [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] zjednodušuje situaci prostřednictvím nabídky konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz, které jsou vždy práce s objekty. Použijte stejný základní kódování vzory pro dotazování a transformovat data v dokumentů XML, databáze SQL, datové sady ADO.NET a entity, rozhraní .NET Framework kolekce a všechny další zdroje nebo formátu pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici. Tento dokument popisuje tři fáze vytváření a používání basic [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy.  
   
 ## <a name="three-stages-of-a-query-operation"></a>Tři fáze operace dotazu  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]operace dotazů se skládá ze tří akcí:  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operace dotazů se skládá ze tří akcí:  
   
 1.  Získáte zdroj dat nebo zdroje.  
   

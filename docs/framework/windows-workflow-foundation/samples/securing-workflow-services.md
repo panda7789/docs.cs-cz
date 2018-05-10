@@ -2,11 +2,11 @@
 title: Zabezpečení služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 53f84ad5-1ed1-4114-8d0d-b12e8a021c6e
-ms.openlocfilehash: ac02b5ffcfc14ea4aab9e8aafd5f6a4cbcdef3b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5dbd724f3a2f8febfc74719584f4d69cbf75b567
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-workflow-services"></a>Zabezpečení služeb pracovních postupů
 Ukázka zabezpečené služby pracovního postupu ukazuje následujících postupů:  
@@ -21,7 +21,7 @@ Ukázka zabezpečené služby pracovního postupu ukazuje následujících postu
  Pomocí zabezpečení WCF pro zabezpečení komunikace mezi klientem a službou pracovního postupu, na základě deklarací autorizace  
   
 ## <a name="discussion"></a>Diskusní  
- Tento příklad znázorňuje použití [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Infrastruktura zabezpečení pro zabezpečení služby pracovního postupu, stejně jako normální [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby. Konkrétně používá vlastních deklarací identity pro ověřování. V takovém případě se použije <xref:System.ServiceModel.WSHttpBinding> a zpráv režim zabezpečení pomocí pověření systému Windows.  
+ Tento příklad znázorňuje použití Infrastruktura zabezpečení WCF pro zabezpečení služby pracovního postupu, stejně jako normální službou WCF. Konkrétně používá vlastních deklarací identity pro ověřování. V takovém případě se použije <xref:System.ServiceModel.WSHttpBinding> a zpráv režim zabezpečení pomocí pověření systému Windows.  
   
  Vlastní <xref:System.IdentityModel.Policy.IAuthorizationPolicy> (`CustomNameCheckerPolicy`) ověří uživatelské jméno systému Windows klienta a pro konkrétní znak. Pokud se nachází tento znak, vytvoří a přidá se <xref:System.IdentityModel.Policy.EvaluationContext>. Díky tomu vlastní zásady je provedení příkazu, klient má tento znak v uživatelské jméno. Tento požadavek můžete položit dotaz na po celou dobu volání. Můžete najít tento znak v `Constants.cs`.  
   

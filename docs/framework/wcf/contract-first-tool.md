@@ -2,11 +2,11 @@
 title: Nástroj Contract-First
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: b8d38cc31eacf1d8eb29aaaf7d6ef29056ff9b79
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f061f4dd37861c1cf3dd0cc8318de9f0f65b90e4
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
 Kontrakty služeb často potřebují vytvořena z existujících služeb. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], třídy kontraktu dat můžete automaticky vytvořen z existujících služeb pomocí nástroj contract-first. Pokud chcete používat nástroj contract-first, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat prostřednictvím protokolu HTTP.  
@@ -58,7 +58,7 @@ Kontrakty služeb často potřebují vytvořena z existujících služeb. V [!IN
  Chcete-li přidat výše kontraktu služby do projektu, klikněte pravým tlačítkem na projekt a vyberte **přidat nové...** . Vyberte definice schématu z podokna WCF šablony dialogového okna a název nového souboru SampleContract.xsd. Zkopírujte a vložte kód výše do zobrazení kódu nové souboru.  
   
 ## <a name="configuring-contract-first-options"></a>Kontrakt první možnosti konfigurace  
- Kontrakt první možnosti, lze nastavit v nabídce vlastnosti [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projektu. Chcete-li vývoj s včasným kontrakt, vyberte **povolit XSD jako typ Definition Language** zaškrtnutí políčka na stránce WCF okna vlastností projektu.  
+ Kontrakt první možnosti lze nastavit v nabídce vlastnosti projektu WCF. Chcete-li vývoj s včasným kontrakt, vyberte **povolit XSD jako typ Definition Language** zaškrtnutí políčka na stránce WCF okna vlastností projektu.  
   
  ![Kontrakt zobrazující možnosti projektu WCF&#45;první](../../../docs/framework/wcf/media/contractfirstoptions.png "ContractFirstOptions")  
   

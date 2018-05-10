@@ -7,20 +7,20 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: d29483995a1fbf7a8c9918db0c3b65f7deac1e44
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b0bde07dbeb70eaafbde4d90627d245554ad7ca6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Přístup ke službám pomocí klienta WCF
-Po vytvoření služby je dalším krokem je vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy serveru klienta. Klientská aplikace používá [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy serveru klienta ke komunikaci se službou. Klientské aplikace obvykle importovat metadata služby pro generování [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kód klienta, který slouží k vyvolání služby.  
+Po vytvoření služby, je dalším krokem vytvoření proxy server klienta WCF. Klientská aplikace používá proxy server klienta WCF pro komunikaci se službou. Klientské aplikace obvykle importovat metadata služby pro generování kódu klienta WCF, který slouží k vyvolání služby.  
   
- Základní kroky pro vytváření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta zahrnují následující:  
+ Základní kroky pro vytvoření klienta WCF zahrnují následující:  
   
 1.  Kompilace kódu služby.  
   
-2.  Vygenerovat [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy serveru klienta.  
+2.  Generovat proxy serveru klienta WCF.  
   
 3.  Vytvoří instanci proxy serveru klienta WCF.  
   
@@ -39,7 +39,7 @@ Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
 Svcutil.exe <list of WSDL and XSD files on file system>  
 ```  
   
- Výsledkem je soubor kód, který obsahuje [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] kód klienta, který klientská aplikace můžete použít k vyvolání služby.  
+ Výsledkem je soubor kód, který obsahuje kód klienta WCF, který klientská aplikace můžete použít k vyvolání služby.  
   
  Můžete taky nástroj pro generování konfigurační soubory.  
   
@@ -79,7 +79,7 @@ Public Interface ICalculator
 End Interface
 ```
   
- Nástroj ServiceModel Metadata nástroj a přidat odkaz na službu v sadě Visual Studio generuje následující [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] třída klienta. Třídy dědí z obecná <xref:System.ServiceModel.ClientBase%601> třídy a implementuje `ICalculator` rozhraní. Nástroj vytvoří také `ICalculator` rozhraní (není tady zobrazené).  
+ Nástroj ServiceModel Metadata nástroj a přidat odkaz na službu v sadě Visual Studio generuje následující třídy klienta WCF. Třídy dědí z obecná <xref:System.ServiceModel.ClientBase%601> třídy a implementuje `ICalculator` rozhraní. Nástroj vytvoří také `ICalculator` rozhraní (není tady zobrazené).  
   
 ```csharp
 public partial class CalculatorClient : System.ServiceModel.ClientBase<ICalculator>, ICalculator
@@ -147,7 +147,7 @@ End Class
 ```
   
 ## <a name="using-the-wcf-client"></a>Pomocí klienta WCF  
- Použít [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta, vytvořte instanci [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta a pak zavolají její metody, jak je znázorněno v následujícím kódu.  
+ Pokud chcete používat klienta WCF, vytvořit instanci třídy klienta WCF a pak volat jeho metody, jak je znázorněno v následujícím kódu.  
   
 ```csharp
 // Create a client object with the given client endpoint configuration.
@@ -172,7 +172,7 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 ```
   
 ## <a name="debugging-exceptions-thrown-by-a-client"></a>Ladění výjimky vyvolané klienta  
- Mnoho výjimky vyvolané [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] klienta jsou způsobeny výjimku ve službě. Příkladem takových jsou:  
+ Mnoho výjimky vyvolané klienta WCF jsou způsobeny výjimku ve službě. Příkladem takových jsou:  
   
 -   <xref:System.Net.Sockets.SocketException>: Stávající připojení bylo vzdáleným hostitelem nuceně uzavřeno.  
   

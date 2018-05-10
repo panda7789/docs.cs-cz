@@ -1,24 +1,12 @@
 ---
-title: "Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály"
-ms.custom: 
+title: Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7e90af1b-f8f6-41b9-a63a-8490ada502b1
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 428e8852c9b1706e88b1688b4a1f2e36c167fe28
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 03f4fdcaa5fc59efe7e92d2cb900212ed5ebae77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synchronous-scenarios-using-http-tcp-or-named-pipe"></a>Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
 Toto téma popisuje aktivity a přenosy pro různé synchronní požadavek nebo odpověď scénáře s jedním podprocesem klienta, pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu. V tématu [asynchronní scénáře použití HTTP, TCP nebo pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md) Další informace o Vícevláknová požadavky.  
@@ -56,9 +44,9 @@ Toto téma popisuje aktivity a přenosy pro různé synchronní požadavek nebo 
 #### <a name="closing-a-service-host"></a>Ukončování hostitele služby  
  Hostiteli služby zavřít aktivity (Z) je vytvořený z vedlejším aktivity.  
   
- ![Synchronní scénáře využívající HTTP &#47; TCP &#47; Pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/media/sync.gif "synchronizace")  
+ ![Synchronní scénáře využívající HTTP&#47;TCP&#47; pojmenovaných kanálů](../../../../../docs/framework/wcf/diagnostics/tracing/media/sync.gif "synchronizace")  
   
- V \<A: název >, `A` je symbol zástupce, který popisuje aktivitu v předchozí textu a v tabulce 3. `Name`je zkrácený název aktivity.  
+ V \<A: název >, `A` je symbol zástupce, který popisuje aktivitu v předchozí textu a v tabulce 3. `Name` je zkrácený název aktivity.  
   
  Pokud `propagateActivity` = `true`, proces akce na klientovi a služby mají stejné ID aktivity.  
   

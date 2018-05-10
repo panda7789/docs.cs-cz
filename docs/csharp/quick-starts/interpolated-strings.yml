@@ -9,13 +9,13 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  nextTutorialHref: list-collection
+  nextTutorialHref: list-collection.yml
   nextTutorialTitle: Kolekce v jazyce C#
-  ms.openlocfilehash: 03d46a90033d480046b63bdec3c4c83ab39c2f56
-  ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
-  ms.translationtype: MT
+  ms.openlocfilehash: 32f9c5f0226f80936b728e1c8a80e564d9930023
+  ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+  ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/18/2018
+  ms.lasthandoff: 05/07/2018
 items:
 - durationInMinutes: 2
   content: >

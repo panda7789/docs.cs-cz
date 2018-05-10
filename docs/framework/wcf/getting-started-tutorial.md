@@ -6,14 +6,14 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], getting started
 - getting started [WCF]
 ms.assetid: df939177-73cb-4440-bd95-092a421516a1
-ms.openlocfilehash: 4a095e5391f3b532211b82a190c7010f41283e31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 64d9fc09d56c417c2226d030ef6f5ee7204c4eb6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
-V tématech uvedených v této části jsou určeny k získáte rychlý ohrožení k Windows Communication Foundation (WCF) programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby a klientské aplikace. Služba vystavuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby specifikuje adresu, kde můžete najít službu, vazbu, která obsahuje informace, které popisují, jak klient musí komunikovat s službu a kontrakt, který definuje funkci poskytovaný službou svým klientům.  
+V tématech uvedených v této části jsou určeny k získáte rychlý ohrožení k Windows Communication Foundation (WCF) programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytvoření klienta a služby WCF aplikací. Služba vystavuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby specifikuje adresu, kde můžete najít službu, vazbu, která obsahuje informace, které popisují, jak klient musí komunikovat s službu a kontrakt, který definuje funkci poskytovaný službou svým klientům.  
   
  Po absolvování řady témat v tomto kurzu budete mít funkční službu a klienta, který volá službu. První tři témata popisují postup definování kontraktu služby, jak implementovat kontrakt služby a k hostování služby. Vytvořená služba se hostuje sama v konzolové aplikaci. Služby může být také hostovaný v rámci Internetové informační služby (IIS). Další informace o tom, jak to udělat najdete v tématu [postupy: hostování služby WCF ve službě IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md). Služba je nakonfigurována v kódu; služby však lze také nastavit v konfiguračním souboru. Další informace o použití konfiguračního souboru naleznete v části [konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md).  
   
@@ -30,7 +30,7 @@ V tématech uvedených v této části jsou určeny k získáte rychlý ohrožen
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
- Popisuje postup vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] sbalit pomocí uživatelské rozhraní. Kontrakt definuje funkce vystavené službou.  
+ Popisuje postup vytvoření kontraktu WCF pomocí uživatelské rozhraní. Kontrakt definuje funkce vystavené službou.  
   
  [Postupy: Implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
  Popisuje způsob implementace kontraktu služby. Jakmile kontraktu definovat, musí být implementované pomocí třídy služby.  
@@ -39,13 +39,13 @@ V tématech uvedených v této části jsou určeny k získáte rychlý ohrožen
  Popisuje postup konfigurace koncového bodu služby v kódu a k hostování služby v konzolové aplikaci. Stane aktivní, musí být služba nakonfigurována a hostovaným v rámci běhové prostředí. Toto prostředí vytvoří službu a ovládací prvky jeho kontextu a doba platnosti.  
   
  [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
- Popisuje, jak načíst metadata použít k vytvoření [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy serveru klienta z [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] služby. Tento proces používá funkci Přidat odkaz na službu v rámci sady Visual Studio 2011.  
+ Popisuje, jak načíst metadata použitý k vytvoření proxy server klienta WCF na službu WCF. Tento proces používá funkci Přidat odkaz na službu v rámci sady Visual Studio 2011.  
   
  [Postupy: Konfigurace klienta](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)  
  Popisuje postup konfigurace službou WCF klienta Konfigurace klienta vyžaduje zadání koncového bodu, který klient používá k přístupu ke službě.  
   
  [Postupy: Používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)  
- Popisuje postup použití [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] proxy server klienta k vyvolání operace služby.  
+ Popisuje, jak k používání proxy serveru klienta WCF k vyvolání operace služby.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel.ServiceContractAttribute>  

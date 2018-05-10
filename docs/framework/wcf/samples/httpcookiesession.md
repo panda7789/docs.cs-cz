@@ -2,14 +2,14 @@
 title: HttpCookieSession
 ms.date: 03/30/2017
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
-ms.openlocfilehash: 54e2459f5b480d8f53df42a08d4ebc8ac07b128c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 64a7cba7b1bbc55a4504e3af4784fcb2a84f0fa1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
-Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat soubory cookie HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi služby Windows Communication Foundation (WCF) a klienti ASMX nebo [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ASMX služby a klienti.  
+Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat soubory cookie HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi služby Windows Communication Foundation (WCF) a klienti ASMX nebo ASMX služby a klienti WCF.  
   
  Když klient volání metody webové v ASMX webové služby, je na základě relace, [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] modul provede následující akce:  
   
@@ -74,7 +74,7 @@ Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat 
 InputQueue<RequestContext> requestQueue;  
 ```  
   
- V případě, že když někdo volá <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> metoda a nejsou žádné zprávy ve frontě zpráv, kanál čeká na určenou dobu, před ukončením sám sebe. Tím vyčistíte kanály relace vytvořena pro jinou hodnotu než[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klientů.  
+ V případě, že když někdo volá <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> metoda a nejsou žádné zprávy ve frontě zpráv, kanál čeká na určenou dobu, před ukončením sám sebe. Vyčistí relaci kanály pro klienty bez WCF vytvoříte.  
   
  Používáme `channelMapping` sledovat `ReplySessionChannels`, a jsme naše základní nezavírejte `innerChannel` dokud zavřeli přijatých kanálů. Tímto způsobem `HttpCookieReplySessionChannel` může existovat mimo dobu životnosti `HttpCookieReplySessionChannelListener`. Také nemáme si dělat starosti naslouchací proces získávání uvolnění z paměti pod nám, protože přijatých kanálů zachovat odkaz na jejich naslouchací proces prostřednictvím `OnClosed` zpětného volání.  
   
@@ -82,7 +82,7 @@ InputQueue<RequestContext> requestQueue;
  Odpovídající kanálem klienta je v `HttpCookieSessionChannelFactory` třídy. Při vytvoření kanálu, vytváření kanálů zabalí kanál vnitřní žádosti s `HttpCookieRequestSessionChannel`. `HttpCookieRequestSessionChannel` Třída předává volání základní požadavku kanálu. Po ukončení klienta na server proxy, `HttpCookieRequestSessionChannel` odešle zprávu do služby, která určuje, že dochází k uzavření kanál. Proto zásobníku kanál služby můžete řádně vypnutí kanál relace, která je používána.  
   
 ## <a name="binding-and-binding-element"></a>Vazba a prvku vazby  
- Po vytvoření klienta a služby kanály, dalším krokem je integrovat do [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] modulu runtime. Kanály jsou viditelné na [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prostřednictvím vazby a prvky vazeb. Vazba se skládá z jednoho či více elementů vazby. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] nabízí několik vazeb definovaných systémem; například BasicHttpBinding nebo WSHttpBinding. `HttpCookieSessionBindingElement` Třída obsahuje implementaci pro prvku vazby. Přepíše naslouchací proces kanálu a kanál factory vytvoření metody, které uděláte nezbytné kanál naslouchání nebo kanál konkretizací objekt pro vytváření.  
+ Po vytvoření kanálů klienta a služby, je dalším krokem je na jejich integraci do modulu runtime WCF. Kanály jsou vystaveny prostřednictvím vazby a prvky vazeb WCF. Vazba se skládá z jednoho či více elementů vazby. WCF nabízí několik vazeb definovaných systémem; například BasicHttpBinding nebo WSHttpBinding. `HttpCookieSessionBindingElement` Třída obsahuje implementaci pro prvku vazby. Přepíše naslouchací proces kanálu a kanál factory vytvoření metody, které uděláte nezbytné kanál naslouchání nebo kanál konkretizací objekt pro vytváření.  
   
  Příklad používá výrazy zásad pro popis služby. To umožňuje vzorku, který se publikovat požadavky na jeho kanál pro ostatní klienty, které můžou využívat službu. Tento element vazby například publikuje výrazy zásad umožníte potenciální klienty vědět, že podporuje relací. Vzhledem k tomu ukázka umožňuje `ExchangeTerminateMessage` vlastnost v elementu konfigurace vazeb, přidá nezbytné kontrolní výrazy zobrazit, že služba podporuje akce exchange navíc zprávu o ukončení relace konverzace. Klienti potom můžete pomocí této akce. Následující kód WSDL ukazuje výrazy zásad vytvořené z `HttpCookieSessionBindingElement`.  
   

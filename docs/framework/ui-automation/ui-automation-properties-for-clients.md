@@ -1,13 +1,6 @@
 ---
-title: "Vlastnosti automatizace uživatelského rozhraní pro klienty"
-ms.custom: 
+title: Vlastnosti automatizace uživatelského rozhraní pro klienty
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,14 @@ helpviewer_keywords:
 - properties, UI Automation clients
 - UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-caps.latest.revision: "17"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: fdd748da4bb414726e2eae88dcab59cf60259a13
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 66ae453a8b82ea78acfb0dc423bce546324f901f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-properties-for-clients"></a>Vlastnosti automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
@@ -36,7 +27,7 @@ ms.lasthandoff: 12/22/2017
   
  Vzory ovládacích prvků také mít vlastnosti. Vzory ovládacích prvků vlastnosti jsou specifické pro vzoru. Například <xref:System.Windows.Automation.ScrollPattern> má vlastnosti, které umožňují klientskou aplikaci chcete zjistit, jestli je okno vodorovně nebo svisle posouvatelným a jaké jsou aktuální velikosti zobrazení a posuňte pozic. Vzory ovládacích prvků vystavit jejich vlastnosti prostřednictvím strukturou; například <xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]vlastnosti jsou jen pro čtení. Nastavení vlastností ovládacího prvku, musíte použít metodu vzoru vhodný ovládací prvek. Například použít <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> ke změně hodnot pozice posouvání okna.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti jsou jen pro čtení. Nastavení vlastností ovládacího prvku, musíte použít metodu vzoru vhodný ovládací prvek. Například použít <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> ke změně hodnot pozice posouvání okna.  
   
  Pro zlepšení výkonu, hodnoty vlastností ovládacích prvků a vzory ovládacích prvků můžete uložit do mezipaměti, když <xref:System.Windows.Automation.AutomationElement> objekty jsou načteny. Další informace najdete v tématu [ukládání do mezipaměti v klientech automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md).  
   
