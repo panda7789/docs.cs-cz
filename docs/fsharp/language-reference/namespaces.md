@@ -2,11 +2,11 @@
 title: Obory názvů (F#)
 description: 'Zjistěte, jak na obor názvů F # umožňuje uspořádat kódu do oblasti související funkce tím, že vám k seskupení prvků programu připojit název.'
 ms.date: 04/24/2017
-ms.openlocfilehash: 81d1648dbdc111984ddeb77d11b2bd81cbca57cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 151079864f18fff79dac108889b68b3acf1566a1
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="namespaces"></a>Jmenné prostory
 
@@ -88,23 +88,24 @@ type Banana(orientation : Orientation) =
     member val IsPeeled = false with get, set
     member val Orientation = orientation with get, set
     member val Sides: PeelState list = [ Unpeeled; Unpeeled; Unpeeled; Unpeeled] with get, set
-    
+
     member self.Peel() = BananaHelpers.peel self // Note the dependency on the BananaHelpers module.
     member self.SqueezeJuiceOut() = raise (DontSqueezeTheBananaException self) // This member depends on the exception above.
 
 module BananaHelpers =
-    let peel (b : Banana) =
-        let flip banana =
+    let peel (b: Banana) =
+        let flip (banana: Banana) =
             match banana.Orientation with
             | Up -> 
                 banana.Orientation <- Down
                 banana
             | Down -> banana
 
-        let peelSides banana =
-            for side in banana.Sides do
-                if side = Unpeeled then
-                    side <- Peeled
+        let peelSides (banana: Banana) =
+            banana.Sides
+            |> List.map (function
+                         | Unpeeled -> Peeled
+                         | Peeled -> Peeled)
 
         match b.Orientation with
         | Up ->   b |> flip |> peelSides

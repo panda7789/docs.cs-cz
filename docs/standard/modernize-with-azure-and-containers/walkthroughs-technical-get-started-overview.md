@@ -1,14 +1,14 @@
 ---
 title: Postupy a technická získat Začínáme přehled
-description: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery | postupy a technická získat Začínáme přehled
+description: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery | Postupy a technická získat Začínáme přehled
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/26/2017
-ms.openlocfilehash: b41fe9e8b492b1348cc5615f6254d5fd3ddebf25
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 04/28/2018
+ms.openlocfilehash: 27de9d1c5475855a22f2d8a3518982605277f6d9
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Postupy a technická získat Začínáme přehled
 
@@ -22,9 +22,11 @@ Následující kurzy get-started poskytovat konzistentní a komplexní technick�
 
 Každá z následující kurzy používá nové ukázkových eShopLegacy a eShopModernizing aplikací, které jsou k dispozici na webu GitHub na [ https://github.com/dotnet-architecture/eShopModernizing ](https://github.com/dotnet-architecture/eShopModernizing).
 
-- **Prohlídka eShop starší verze aplikací**
+- **Prohlídka eShop starší verze aplikací (aplikace směrného plánu modernizovat)**
 
-- **Containerize existující aplikace .NET s kontejnery Windows**
+- **Containerize existující webových aplikací ASP.NET (WebForms & MVC) s kontejnery Windows**
+
+- **Containerize stávající služby WCF (vícevrstvé aplikace) s kontejnery Windows**
 
 - **Nasazení aplikace systému Windows na základě kontejnery pro virtuální počítače Azure**
 
@@ -32,59 +34,61 @@ Každá z následující kurzy používá nové ukázkových eShopLegacy a eShop
 
 - **Nasazení aplikace na základě kontejnery Windows do Azure Service Fabric**
 
+
 ## <a name="walkthrough-1-tour-of-eshop-legacy-apps"></a>Návod 1: Prohlídka eShop starší verze aplikací
 
 ### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
 
 Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
 
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code)
+[návody eShopModernizing wiki](https://github.com/dotnet-architecture/eShopModernizing/wiki)
+
 
 ### <a name="overview"></a>Přehled
 
-V tomto návodu můžete prozkoumat počáteční implementace dva ukázkové starší verze aplikace. Obě ukázkových aplikací mít monolitický architektura a byly vytvořeny pomocí klasického ASP.NET. Jeden aplikace je založena na technologii ASP.NET 4.x MVC; druhý aplikace je založena na webových formulářů ASP.NET 4.x. Obě aplikace jsou v [úložiště GitHub eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing).
+V tomto návodu můžete prozkoumat počáteční implementace tři ukázkové starší verze aplikace. První dva ukázkové webové aplikace mají monolitický architekturu a byly vytvořeny pomocí klasického ASP.NET. Jeden aplikace je založena na technologii ASP.NET 4.x MVC; druhý aplikace je založena na webových formulářů ASP.NET 4.x. Třetí aplikace je 3vrstvé aplikace skládá klientskou aplikaci pro WinForms a straně serveru [Windows Communication Foundation (WCF)](../../framework/wcf/whats-wcf.md) služby.
 
-Můžete containerize obě ukázkové aplikace, podobným způsobem můžete containerize klasický [Windows Communication Foundation](../../framework/wcf/whats-wcf.md) aplikace (WCF), který se má používat jako desktopová aplikace. Příklad, naleznete v části [eShopModernizingWCFWinForms](https://github.com/dotnet-architecture/eShopModernizingWCFWinForms).
+Všechny tyto aplikace jsou k dispozici na [úložiště GitHub eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing).
 
 ### <a name="goals"></a>Cíle
 
 Hlavním cílem tohoto návodu je jednoduše a seznamte se s těmito aplikacemi a s jejich kódu a konfigurace. Aplikace můžete nakonfigurovat tak, aby se vygenerování a použití imitovaná data bez použití databáze SQL pro účely testování. Toto volitelné konfigurace je založená na vkládání závislostí odpojeného způsobem.
 
-### <a name="scenario"></a>Scénář
+### <a name="scenario-1-aspnet-web-apps"></a>Scénář 1: ASP.NET – webové aplikace
 
-Obrázek 5-1 znázorňuje jednoduchý scénář původní starší verze aplikací.
+Následující obrázek znázorňuje jednoduchý scénář původní starší verze webové aplikace ASP.NET.
 
-> ![Scénář jednoduchého architektura původní starší verze aplikací](./media/image5-1.png)
+> ![Scénář jednoduchého architektura původní starší verze webových aplikací ASP.NET](./media/image5-1.png)
 >
-> **Obrázek 5-1.** Scénář jednoduchého architektura původní starší verze aplikací
 
-Z hlediska domény obchodní obě aplikace nabízejí katalogu stejné funkce pro správu. Členové týmu enterprise eShop využije aplikace k zobrazení a úpravy katalogu produktů. Obrázek 5-2 je znázorněný na snímcích obrazovky počáteční aplikace.
+Z hlediska domény obchodní obě aplikace nabízejí katalogu stejné funkce pro správu. Členové týmu enterprise eShop využije aplikace k zobrazení a úpravy katalogu produktů. 
+
+Následující obrázek ukazuje na snímcích obrazovky počáteční aplikace.
 
 ![Aplikace ASP.NET MVC a webových formulářů ASP.NET (technologie existující nebo starší)](./media/image5-2.png)
 
-> **Obrázek 5-2.** Aplikace ASP.NET MVC a webových formulářů ASP.NET (technologie existující nebo starší)
+Závislosti v technologii ASP.NET 4.x nebo starší verze (buď pro MVC nebo webových formulářů) znamená, že tyto aplikace se na .NET Core nespustí, pokud kód je plně přepsaná pomocí ASP.NET MVC jádra. 
 
-Toto jsou webové aplikace, které se používají k procházení a upravit položky katalogu. Fakt, že obě aplikace poskytovat stejné funkce obchodní/funkční je jednoduše pro účely porovnání. Můžete zobrazit podobný proces modernizace pro aplikace, které byly vytvořeny pomocí architektury ASP.NET MVC a webových formulářů ASP.NET.
+### <a name="scenario-2-wcf-service-and-winforms-client-app-3-tier-app"></a>Scénář 2: Služby WCF a WinForms klienta aplikace (úroveň 3)
 
-Závislosti v technologii ASP.NET 4.x nebo starší verze (buď pro MVC nebo webových formulářů) znamená, že tyto aplikace se na .NET Core nespustí, pokud kód je plně přepsaná pomocí ASP.NET MVC jádra. Tento příklad ukazuje bodu, pokud nechcete, aby přepracování nebo přepisovat kód, můžete containerize existující aplikace a nadále používat stejné technologie .NET a má stejný kód. Uvidíte, jak můžete spouštět aplikace, jako jsou ty do kontejnerů bez uložení změn do starší verze kódu.
+Následující obrázek znázorňuje jednoduchý scénář původní vrstvy 3 starší verzi aplikace.
+
+> ![Scénář jednoduchého architektura původní starší verze 3vrstvé aplikace pomocí služby WCF a klientskou aplikaci WinForms](./media/image5-1.5.png)
+>
 
 ### <a name="benefits"></a>Výhody
 
-Výhody tohoto návodu jsou jednoduché: právě Seznamte se s konfigurací kód a aplikace založené na vkládání závislostí. Potom můžete experimentovat s tímto přístupem při containerize a nasazení do několika prostředí v budoucnu.
+Výhody tohoto návodu jsou jednoduché: právě Seznamte se s kódem a počáteční aplikace.
 
 ### <a name="next-steps"></a>Další kroky
 
 Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
 
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code)
+  - [Prohlídka na základě technologie ASP.NET MVC a webových formulářů "starší" aplikace](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
+  - [Prohlídka na službu WCF směrného plánu a WinForms (3vrstvé) "starší" aplikace](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
+
 
 ## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>Návod 2: Containerize existující aplikace .NET s kontejnery Windows
-
-### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
-
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
-
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
 
 ### <a name="overview"></a>Přehled
 
@@ -102,13 +106,20 @@ Cílem tohoto návodu je tak, aby zobrazovalo několik možností pro containeri
 
 Tento názorný postup se zaměřuje na Visual Studio Tools 2017 Docker přístup, ale jsou poměrně stejné z hlediska pomocí Dockerfiles tyto dva přístupy.
 
-### <a name="scenario"></a>Scénář
+### <a name="scenario-1-containerized-aspnet-web-apps"></a>Scénář 1: Kontejnerizované ASP.NET webové aplikace
 
-Obrázek 5-3 ukazuje tento scénář pro kontejnerizované eShop starší verze aplikací.
+Následující obrázek znázorňuje tento scénář pro kontejnerizované eShop starší verze webové aplikace aplikace.
 
-> ![Diagram architektury zjednodušené kontejnerizované aplikací ve vývojovém prostředí](./media/image5-3.png)
+> ![Diagram zjednodušení architektury kontejnerové aplikace ASP.NET ve vývojovém prostředí](./media/image5-3.png)
 >
-> **Obrázek 5-3.** Diagram architektury zjednodušené kontejnerizované aplikací ve vývojovém prostředí
+
+
+### <a name="scenario-2-containerized-wcf-service"></a>Scénář 2: Služby WCF Kontejnerizované
+
+Následující obrázek znázorňuje tento scénář pro 3vrstvé aplikace kontejnerizované službou WCF. 
+
+> ![Zjednodušená diagram architektury kontejnerové služby WCF ve vývojovém prostředí](./media/image5-3.5.png)
+>
 
 ### <a name="benefits"></a>Výhody
 
@@ -122,15 +133,18 @@ Rozdělení do kontejnerů v situacích, ideální, není nutné provádět jak�
 
 ### <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu: [https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
+
+  - [Postup containerize webové aplikace rozhraní .NET Framework s kontejnery Windows a Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+  - [Přidání podpory Docker do služby WCF](https://github.com/dotnet-architecture/eShopModernizing/wiki/22.-Adding-Docker-Support)
+
+
 
 ## <a name="walkthrough-3-deploy-your-windows-containers-based-app-to-azure-vms"></a>Návod 3: Nasazení aplikace systému Windows na základě kontejnery pro virtuální počítače Azure
 
 ### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
 
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
-
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
+Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing: [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
 
 ### <a name="overview"></a>Přehled
 
@@ -178,7 +192,46 @@ Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
 
-## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>Návod 4: Nasazení aplikace na základě kontejnery Windows do Kubernetes v Azure Container Service
+## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-azure-container-instances-aci"></a>Návod 4: Nasazení aplikace na základě kontejnery Windows do Azure kontejner instancí (ACI)
+
+### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
+
+Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
+
+[Nasazení aplikace do ACI (instance kontejner Azure)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
+
+### <a name="overview"></a>Přehled
+
+[Instance Azure kontejneru (ACI)](https://docs.microsoft.com/en-us/azure/container-instances/) je nejrychlejší způsob, jak mají dev/testovací/pracovní prostředí kontejnery, kde můžete nasadit jeden instancí kontejnerů.
+
+### <a name="goals"></a>Cíle
+
+Tento návod ukazuje základní scénáře při nasazování Windows kontejnery Azure kontejner instancí (ACI) a jak můžete nasadit aplikace eShopModernizing do ACI.
+
+### <a name="scenarios"></a>Scénáře
+
+Může být variace o nasazování aplikací eShopModernizing do ACI jako je nasazení jenom jednoho nebo všech aplikací (aplikace MVC, WebForms aplikaci nebo službu WCF). V následujícím scénáři znázorněném uvidíte aplikace ASP.NET MVC a kontejneru systému SQL Server oba dva nasazené jako kontejnery do ACI (instance kontejner Azure).
+
+![Nasazení na ACI z prostředí pro vývoj](./media/image5-3.5.6.png)
+
+### <a name="benefits"></a>Výhody
+
+Azure instancí kontejnerů umožňuje snadno vytvářet a spravovat Docker kontejnerů v Azure, aniž by museli zřizovat virtuální počítače nebo přijmou vyšší úrovně služby. S ACI můžete přímo nasazení kontejneru systému Windows v Azure a umístěte ji do internet s platný plně kvalifikovaný název domény (FQDN) v řádu sekund (za předpokladu, že máte připravené bitové kopie kontejneru systému Windows v registru Docker jako úložiště Docker Hub nebo kontejneru Azure Registr).
+
+### <a name="considerations"></a>Důležité informace
+
+Nasazení Windows kontejnery s buď úplné rozhraní .NET Framework / ASP.NET nebo SQL Server do Azure kontejner instancí (ACI) není dost tak rychlý jako nasazení na regulární Docker hostitele (např. Windows Server 2016 s kontejnery Windows), protože bitovou kopii Docker musí být Stáhnout (načtený z registru Docker) pokaždé, když a velikosti bitové kopie kontejneru SQL (15.1 GB) a bitovou kopii kontejneru ASP.NET (13.9 GB) jsou výrazně velký, ale je výrazně levnější než zachování vlastní hostitelů docker (trvale online Windows Server 2016 se virtuální počítač s Windows kontejnerů v Azure) není abychom zmínili celou orchestrator jako Kubernetes v Azure (AKS/ACS) nebo Azure Service Fabric, které jsou na druhé straně skvělé možnosti pro nasazení v produkčním prostředí.
+
+Jako hlavní uzavření pomocí Azure kontejner instancí je velmi poutavé možnost pro scénáře vývoje/testování a CI/CD kanály.
+
+## <a name="next-steps"></a>Další kroky
+
+Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu: 
+
+[https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)TBD)
+
+
+## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>Návod 5: Nasazení aplikace na základě kontejnery Windows do Kubernetes v Azure Container Service
 
 ### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
 
@@ -238,7 +291,7 @@ S Kubernetes mohou vývojáři průběhu od přemýšlení o fyzické a virtuál
 
 Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu: [https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD))
 
-## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>Návod 5: Nasazení aplikace na základě kontejnery Windows do Azure Service Fabric
+## <a name="walkthrough-6-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>Návod 6: Nasazení aplikace na základě kontejnery Windows do Azure Service Fabric
 
 ### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
 

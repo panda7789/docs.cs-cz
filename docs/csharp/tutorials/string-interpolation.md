@@ -1,119 +1,113 @@
 ---
-title: Řetězec interpolace - C#
-description: Zjistěte, jak funguje interpolace řetězce v jazyce C# 6
-author: mgroves
-ms.date: 03/06/2017
-ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: 5b807429d05fcf59f4bb55c4d2429daa17835fb4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+title: Interpolace řetězce v jazyce C#
+description: Zjistěte, jak k přidání do výsledku řetězec v jazyce C# s interpolace řetězec formátovaný výraz výsledky.
+author: pkulikov
+ms.date: 05/09/2018
+ms.openlocfilehash: 3e463ceb0902658107280559b7fb57849beb8153
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězce v jazyce C# #
 
-Řetězec interpolace je způsob zástupné symboly v řetězci se nahrazují hodnota proměnné řetězce. Před C# 6, je tím způsobem, jak to udělat pomocí <xref:System.String.Format%2A?displayProperty=nameWithType>. Tento postup funguje v pořádku, ale protože ji používá číslem zástupné symboly, může být těžší ke čtení a podrobnější.
+V tomto kurzu se dozvíte, jak používat [řetězec interpolace](../language-reference/tokens/interpolated.md) můžete naformátovat a zahrňte výsledky výraz ve výsledném řetězci. Příklady předpokládají, že jste obeznámeni s základní koncepty jazyka C# a rozhraní .NET typ formátování. Pokud jste ještě interpolace řetězec nebo formátování typ rozhraní .NET, podívejte se [rychlý start interpolace interaktivní řetězec](../quick-starts/interpolated-strings.yml) první. Další informace o typy formátování v rozhraní .NET najdete v tématu [typy formátování v .NET](../../standard/base-types/formatting-types.md) tématu.
 
-Jinými programovací jazyky předtím řetězec interpolace integrované do jazyka nějakou dobu. Například v jazyce PHP:
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-```php
-$name = "Jonas";
-echo "My name is $name.";
-// This will output "My name is Jonas."
-```
+## <a name="introduction"></a>Úvod
 
-V jazyce C# 6 máme nakonec tento styl interpolace řetězec. Můžete použít `$` před řetězec k označení, že ho měli nahraďte proměnné nebo výrazy pro jejich hodnoty.
+[Řetězec interpolace](../language-reference/tokens/interpolated.md) funkce je postavený na [složené formátování](../../standard/base-types/composite-formatting.md) funkci a poskytuje čitelnější a pohodlný syntaxe zahrnout výsledky výraz formátovaný výsledek řetězce.
 
-## <a name="prerequisites"></a>Požadavky
-Budete muset nastavit svůj počítač ke spuštění .NET core. Pokyny k instalaci najdete na [.NET Core](https://www.microsoft.com/net/core) stránky.
-Tuto aplikaci můžete spustit v systému Windows, Ubuntu Linux, systému macOS nebo v kontejner Docker. Budete muset nainstalovat editor vaše oblíbené kódu. Popisy níže použijte [Visual Studio Code](https://code.visualstudio.com/) který je typu open source pro různé platformy editor. Můžete však použít, ať nástroje umíte pracovat s.
+K identifikaci řetězcový literál jako interpolované řetězce, předřazení její `$` symbol. Můžete vložit libovolný platný C# výraz, který vrátí hodnotu ve formátu interpolované řetězce. V následujícím příkladu při vyhodnocení výrazu svůj výsledek je převést na řetězec a součástí výsledný řetězec:
 
-## <a name="create-the-application"></a>Vytvoření aplikace
+[!code-csharp-interactive[string interpolation example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#1)]
 
-Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci .NET Core. Pokud chcete použít Generátor příkazového řádku, vytvořit adresář pro svůj projekt `interpolated`a ve své oblíbené prostředí spustíte následující příkaz:
+Jako v příkladu výše ukazuje zahrnete výrazu ve formátu interpolované řetězce uzavřením s složené závorky:
 
 ```
-dotnet new console
+{<interpolatedExpression>}
 ```
 
-Tento příkaz vytvoří projekt .NET Core jen nejzákladnější s soubor projektu *interpolated.csproj*a soubor zdrojového kódu *Program.cs*. Budete muset provést `dotnet restore` Obnovit závislosti potřebné ke kompilaci tento projekt.
+Při kompilaci, interpolované řetězce obvykle převede na <xref:System.String.Format%2A?displayProperty=nameWithType> volání metody. Který zpřístupňuje všechny možnosti [řetězce složené formátování](../../standard/base-types/composite-formatting.md) funkce, které jsou k dispozici pro použití s také interpolované řetězce.
 
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+## <a name="how-to-specify-a-format-string-for-an-interpolated-expression"></a>Jak určit řetězec formátu pro interpolované výrazu
 
-Spuštění programu, použijte `dotnet run`. Měli byste vidět "Hello, World" výstup do konzoly.
-
-
-
-## <a name="intro-to-string-interpolation"></a>Úvod do řetězce interpolace
-
-S <xref:System.String.Format%2A?displayProperty=nameWithType>, zadejte "zástupné symboly" řetězec, který se nahrazují následující řetězec argumenty. Například:
-
-[!code-csharp[String.Format example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#StringFormatExample)]  
-
-Který výstup "Moje název je Matt hájů".
-
-V jazyce C# 6, místo použití `String.Format`, definujete interpolované řetězce je s předponou `$` symbolů a potom pomocí proměnné přímo v řetězci. Například:
-
-[!code-csharp[Interpolation example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExample)]  
-
-Nemusíte používat jenom proměnné. Můžete použít libovolný výraz v hranatých závorkách. Například:
-
-[!code-csharp[Interpolation expression example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExpressionExample)]  
-
-Které by výstup:
+Zadejte řetězec formátu, který je podporován typ výsledku výrazu podle interpolované výraz s dvojtečkou (":") a řetězec formátu:
 
 ```
-This is line number 1
-This is line number 2
-This is line number 3
-This is line number 4
-This is line number 5
+{<interpolatedExpression>:<formatString>}
 ```
 
-## <a name="how-string-interpolation-works"></a>Jak funguje řetězec interpolace
+Následující příklad ukazuje, jak zadat standardní a vlastní formát řetězce pro výrazy, které produkují data a času nebo číselných výsledků:
 
-Na pozadí, je tato syntaxe interpolace řetězec přeložit na `String.Format` kompilátorem. Ano, můžete provést [stejného typu, vy provedete krok před s `String.Format` ](../../standard/base-types/formatting-types.md).
+[!code-csharp-interactive[format string example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#2)]
 
-Můžete například přidat odsazení a formátování čísel:
+Další informace najdete v tématu [součást řetězce formátu](../../standard/base-types/composite-formatting.md#format-string-component) části [složené formátování](../../standard/base-types/composite-formatting.md) tématu. Tento oddíl obsahuje odkazy na témata, která popisují řetězce formátu Standardní a vlastní podporuje základní typy .NET.
 
-[!code-csharp[Interpolation formatting example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationFormattingExample)]  
+## <a name="how-to-control-the-field-width-and-alignment-of-the-formatted-interpolated-expression"></a>Tom, jak řídit šířku pole a zarovnání formátovaný interpolované výrazu
 
-Výše by výstup podobný:
+Zadejte šířku minimální pole a zarovnání výraz formátovaný výsledek podle interpolované výraz s použitím čárky (",") a konstantní výraz:
 
 ```
-998        5,177.67
-999        6,719.30
-1000       9,910.61
-1001       529.34
-1002       1,349.86
-1003       2,660.82
-1004       6,227.77
+{<interpolatedExpression>,<alignment>}
 ```
 
-Pokud název proměnné není nalezen, je generována chyba kompilace.
+Pokud *zarovnání* hodnota je kladné, výraz formátovaný výsledek je zarovnaný doprava; záporná, je zarovnaný doleva.
 
-Například:
+Pokud potřebujete k určení zarovnání a řetězec formátu, začněte s komponentou zarovnání:
 
-```csharp
-var animal = "fox";
-var localizeMe = $"The {adj} brown {animal} jumped over the lazy {otheranimal}";
-var adj = "quick";
-Console.WriteLine(localizeMe);
+```
+{<interpolatedExpression>,<alignment>:<formatString>}
 ```
 
-Pokud je kompilovat, dojde k chybám:
- 
-* `Cannot use local variable 'adj' before it is declared` - `adj` proměnná nebyl deklarován dokud *po* interpolované řetězce.
-* `The name 'otheranimal' does not exist in the current context` -názvem proměnné `otheranimal` nikdy i byla deklarována
+Následující příklad ukazuje, jak k určení zarovnání a používá zřetězit znaky ("|") a tím vymezit textová pole:
 
-## <a name="localization-and-internationalization"></a>Lokalizace a internacionalizace
+[!code-csharp-interactive[alignment example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#3)]
 
-Interpolované řetězce podporuje <xref:System.IFormattable?displayProperty=nameWithType> a <xref:System.FormattableString?displayProperty=nameWithType>, což může být užitečné pro internacionalizace.
+Jako příklad výstupu zobrazí, pokud přesahuje délku výraz formátovaný výsledek zadána šířka pole *zarovnání* hodnota je ignorována.
 
-Interpolované řetězce ve výchozím nastavení používá aktuální jazykovou verzi. Pokud chcete použít jinou jazykovou verzi, přetypovat interpolované řetězec jako `IFormattable`. Například:
+Další informace najdete v tématu [zarovnání součást](../../standard/base-types/composite-formatting.md#alignment-component) části [složené formátování](../../standard/base-types/composite-formatting.md) tématu.
 
-[!code-csharp[Interpolation internationalization example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
+## <a name="how-to-use-escape-sequences-in-an-interpolated-string"></a>Použití řídicích sekvencí v interpolované řetězce
 
-## <a name="conclusion"></a>Závěr 
+Interpolované řetězce podporují všechny řídicí sekvence, které lze použít v obyčejnou textové literály. Další informace najdete v tématu [řetězec řídicí sekvence](../programming-guide/strings/index.md#string-escape-sequences).
 
-V tomto kurzu jste zjistili, jak používat funkce interpolace řetězec jazyka C# 6. Je v podstatě přesnější způsob jednoduché psaní `String.Format` příkazy se některých aspektů pro pokročilejší použití. Další informace najdete v tématu [řetězec interpolace](../../csharp//language-reference/tokens/interpolated.md) tématu.
+Řídicí sekvence interpretovat oznámena, používat [typu verbatim](../language-reference/tokens/verbatim.md) řetězcový literál. Řetězec typu verbatim interpolované začíná `$` následuje znak `@` znak.
+
+Zahrnout závorek "{" nebo "}", ve výsledném řetězci, použijte dva složené závorky "{{" nebo "}}". Další informace najdete v tématu [uvozovací znaky složené závorky](../../standard/base-types/composite-formatting.md#escaping-braces) části [složené formátování](../../standard/base-types/composite-formatting.md) tématu.
+
+Následující příklad ukazuje, jak chcete zahrnout do výsledku řetězec složené závorky a vytvořit typu verbatim interpolované řetězce:
+
+[!code-csharp-interactive[escape sequence example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#4)]
+
+## <a name="how-to-use-a-ternary-conditional-operator--in-an-interpolated-expression"></a>Jak používat Ternární podmíněný operátor `?:` ve výrazu interpolované
+
+Jako dvojtečkou (":") má zvláštní význam v položku se interpolované výrazu, aby bylo možné používat [podmíněný operátor](../language-reference/operators/conditional-operator.md) ve výrazu, uzavřete ji v závorkách, jak ukazuje následující příklad:
+
+[!code-csharp-interactive[conditional operator example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#5)]
+
+## <a name="how-to-create-a-culture-specific-result-string-with-string-interpolation"></a>Postup vytvoření specifické pro jazykovou verzi výsledném řetězci s řetězec interpolace
+
+Ve výchozím nastavení používá interpolované řetězce aktuální jazykové verze, které jsou definované <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=nameWithType> vlastnost pro všechny operace formátování. Implicitní převod interpolované řetězce pro použití <xref:System.FormattableString?displayProperty=nameWithType> instance a volání jeho <xref:System.FormattableString.ToString(System.IFormatProvider)> metodu pro vytvoření specifické pro jazykovou verzi výsledný řetězec. Následující příklad ukazuje, jak to udělat:
+
+[!code-csharp-interactive[specify different cultures](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#6)]
+
+Jak ukazuje příklad, můžete použít jednu <xref:System.FormattableString> instanci pro generování vícenásobných řetězců výsledek pro různé jazykové verze.
+
+## <a name="how-to-create-a-result-string-using-the-invariant-culture"></a>Postup vytvoření výsledný řetězec pomocí neutrální jazykovou verzi
+
+Spolu s <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> metodu, můžete použít statickou <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> metoda přeložit interpolované řetězce do řetězce výsledek pro <xref:System.Globalization.CultureInfo.InvariantCulture>. Následující příklad ukazuje, jak to udělat:
+
+[!code-csharp-interactive[format with invariant culture](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#7)]
+
+## <a name="conclusion"></a>Závěr
+
+Tento kurz popisuje běžné scénáře řetězec interpolace využití. Další informace o řetězce interpolace najdete v tématu [řetězec interpolace](../language-reference/tokens/interpolated.md) tématu. Další informace o typy formátování v rozhraní .NET najdete v tématu [typy formátování v .NET](../../standard/base-types/formatting-types.md) a [složené formátování](../../standard/base-types/composite-formatting.md) témata.
+
+## <a name="see-also"></a>Viz také
+
+<xref:System.String.Format%2A?displayProperty=nameWithType>  
+<xref:System.FormattableString?displayProperty=nameWithType>  
+<xref:System.IFormattable?displayProperty=nameWithType>  
+[Řetězce](../programming-guide/strings/index.md)  

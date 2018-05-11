@@ -4,11 +4,11 @@ description: .NET core je modulární a vysoce výkonné implementace rozhraní 
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 7a2548a177f6e62e9c76c336c6e270a139d9fce0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f413e4efa8b33877917330855f4881c3fbf0854
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -31,14 +31,14 @@ Následující vlastnosti nejlepší definovat .NET Core:
 
 - A [modulu runtime .NET](https://github.com/dotnet/coreclr), který poskytuje systém typů, načítání sestavení, systém uvolňování paměti, nativní interoperabilita a další základní služby. 
 - Sadu [framework knihovny](https://github.com/dotnet/corefx), které poskytují základní nástroje primitivní datové typy, typy složení aplikace a. 
-- A [sadu SDK nástroje](https://github.com/dotnet/cli) a [kompilátory jazyka](https://github.com/dotnet/roslyn) které umožňují prostředí základní vývojáře k dispozici v [.NET Core SDK](sdk.md).
+- A [sadu SDK nástroje](https://github.com/dotnet/cli) a kompilátory jazyka ([Roslyn](https://github.com/dotnet/roslyn) a [F #](https://github.com/microsoft/visualfsharp)), povolit prostředí základní vývojáře k dispozici v [.NET Core SDK](sdk.md).
 - Hostitele aplikace 'dotnet', který se používá ke spouštění aplikací .NET Core. Vybere modul runtime a hostitelem modulu runtime, poskytuje načítání zásad sestavení a spuštění aplikace. Na stejném hostiteli je také použitý ke spuštění nástroje SDK mnohem stejným způsobem.
 
 ### <a name="languages"></a>Jazyky
 
 Jazyky C#, Visual Basic a F # umožňuje psát aplikace a knihovny pro .NET Core. Kompilátory spustit na .NET Core umožňuje vyvíjet pro .NET Core kdekoli spustí. Obecně platí nebudete používat kompilátory přímo, ale nepřímo pomocí nástrojů sady SDK.
 
-Kompilátory jazyka C#, Visual Basic a F # a nástrojů .NET Core jsou, nebo lze integrovat do několika textové editory a integrovaného vývojového prostředí, včetně Visual Studio, [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text a Vim, provedení .NET Core vývoj možnost ve vaší Oblíbené položky kódování prostředí a operačního systému. Tato integrace poskytuje, v části dobrý zaměstnance z [OmniSharp projektu](http://www.omnisharp.net/).
+Kompilátory jazyka C#, Visual Basic a F # a nástrojů .NET Core jsou, nebo lze integrovat do několika textové editory a integrovaného vývojového prostředí, včetně Visual Studio, [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text a Vim, provedení .NET Core vývoj možnost ve vaší Oblíbené položky kódování prostředí a operačního systému. Tato integrace poskytuje, v části dobrý zaměstnance z [OmniSharp projektu](http://www.omnisharp.net/) a [Ionide](http://ionide.io).
 
 ### <a name="net-apis-and-compatibility"></a>Rozhraní API technologie .NET a kompatibility
 

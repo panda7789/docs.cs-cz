@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/14/2018
 ms.custom: mvc
-ms.openlocfilehash: 5af7cf1d0f541661acb23ec2cad4bada5d9e03e2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 314626e276f50178e2855b8c8a1edc104546d574
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="string-interpolation"></a>Řetězec interpolace
 
@@ -169,4 +169,4 @@ Jste dokončili rychlé spuštění interpolace řetězec.
 
 Můžete pokračovat [seznamu kolekce](arrays-and-collections.md) rychlé spuštění ve vašem vývojovém prostředí.
 
-Další informace o řetězce interpolace v [řetězec interpolace](../language-reference/tokens/interpolated.md) téma v referenční dokumentace jazyka C#.
+Další informace najdete v tématu [řetězec interpolace](../language-reference/tokens/interpolated.md) tématu a [řetězec interpolace v jazyce C#](../tutorials/string-interpolation.md) kurzu.

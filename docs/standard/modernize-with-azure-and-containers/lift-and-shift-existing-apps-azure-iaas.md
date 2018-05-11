@@ -1,22 +1,22 @@
 ---
-title: Navýšení a posunutí existující aplikace Azure IaaS
+title: Navýšení a posunutí existující aplikace .NET do Azure IaaS (infrastruktura Cloud-Ready)
 description: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnerů.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/26/2017
-ms.openlocfilehash: b844373d4ea995b553d9a32ea51997fd664064bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 04/28/2018
+ms.openlocfilehash: 458b1bd1fc9fc24ce43d0926655fe0767aabc43c
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="lift-and-shift-existing-apps-azure-iaas"></a>Navýšení a posunutí existující aplikace Azure IaaS
+# <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Navýšení a posunutí existující aplikace .NET do Azure IaaS (infrastruktura Cloud-Ready)
 
 > Vizi: jako první krok, a snížit vaše místní investice a celkových nákladů na hardware sítě údržby, jednoduše opětovným hostováním existující aplikace v cloudu.
 
 Před získáním do *jak* Pokud chcete migrovat existující aplikace Azure infrastruktury jako služby (IaaS) platformu, je důležité k analýze důvodů, proč *proč* by chcete provést migraci přímo na IaaS v Azure. Scénář na této úrovni vyspělosti modernizace je v podstatě začít používat virtuální počítače v cloudu, místo nadále používat aktuální, místní infrastrukturu.
 
-Je jiný bod k analýze *proč* chcete migrovat do čistého cloudu IaaS místo jen přidat další pokročilé spravované služby v Azure. Je nutné určit, co případech může vyžadovat IaaS na prvním místě.
+Je jiný bod k analýze *proč* chcete migrovat do čistého cloudu IaaS místo jen přidat další pokročilé spravované služby v Azure. Zjistit, co případech může vyžadovat IaaS na prvním místě.
 
 Obrázek 2-1 umisťuje aplikace cloudové infrastruktury připravené pro použití v úrovni vyspělosti modernizace:
 
@@ -30,17 +30,17 @@ Hlavním důvodem pro migraci do cloudu, i na úrovni počáteční IaaS, je dos
 
 Když provedete rozhodnutí o přesunutí aplikace do cloudu, bude známější hlavním důvodem, proč můžete zvolit IaaS místo pokročilejší možnosti jako PaaS je jednoduše prostředí IaaS. Přesun do prostředí, který je podobný vaše aktuální, v místním prostředí nabízí nižší křivku learning, takže je nejrychlejší cestu do cloudu.
 
-Však trvá nejrychlejší cestu do cloudu neznamená, že získá využívat výhod z mít vaše aplikace běží v cloudu. Některé z organizací bude získat nejvýznamnějších výhody z cloudu migrace na Cloud DevOps-Ready a PaaS již přináší úrovni vyspělosti (optimalizovaných Cloudů).
+Však trvá nejrychlejší cestu do cloudu neznamená, že získá využívat výhod z mít vaše aplikace běží v cloudu. Některé z organizací bude získat nejvýznamnějších výhody z cloudu migrace na úrovni vyspělosti již přináší optimalizovaných Cloudů a cloudu nativní.
 
-Také se ukázalo, že aplikace budou snadněji modernizovat a přepracování v budoucnu když už běží v cloudu i na IaaS. To platí částečně protože již bylo dosaženo migrace dat aplikace. Také vaše organizace bude mít získávají dovednosti potřebné pro práci v cloudu a provedené k posunu pracuje v "kultury cloudu".
+Také se ukázalo, že aplikace budou snadněji modernizovat a rearchitect v budoucnu, pokud je již spuštěn v cloudu i na IaaS. Migrace dat aplikace již bylo dosaženo. Navíc bude mít vaše organizace získávají dovednosti potřebné pro práci v cloudu a k k posunu pro pracuje v "kultury cloudu".
 
 ## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Když k migraci na IaaS místo k PaaS
 
-Další části popisují DevOps připravené pro cloudové aplikace, které jsou nejčastěji založené na platformách PaaS a služby. Tyto aplikace umožňují většina výhody z migraci do cloudu.
+Další části popisují optimalizovaný pro cloudové aplikace, které jsou nejčastěji založené na platformách PaaS a služby. Tyto aplikace umožňují většina výhody z migraci do cloudu. 
 
-Pokud je vaším cílem je jednoduše pro přesun existujících aplikací do cloudu, nejprve určete existující aplikace, které bude vyžadovat významné změny spustit v Azure App Service. Tyto aplikace by měla být první kandidáty.
+Pokud je vaším cílem je jednoduše pro přesun existujících aplikací do cloudu, nejprve určete existující aplikace, které nebude vyžadovat významné změny spustit v Azure App Service. Tyto aplikace by měla být první kandidáty pro optimalizovaných Cloudů. 
 
-Pokud nechcete, aby nebo stále nelze přesunout do Windows kontejnery a nebo orchestrators jako Azure Service Fabric nebo Kubernetes, ještě, pak je kdy byste měli použít prostý virtuálních počítačích (IaaS).
+Potom pro aplikace, která stále nelze přesunout do Windows kontejnery a PaaS, jako je aplikační služby nebo orchestrators jako Azure Service Fabric, migrovat do jednoduchého prostý virtuálních počítačích (IaaS). 
 
 Ale mějte na paměti, že správně konfiguraci, zabezpečení a správě virtuálních počítačů vyžaduje mnohem víc času a IT odborných znalosti ve srovnání s použitím PaaS služby v Azure. Pokud uvažujete o virtuálních počítačích Azure, ujistěte se, že byste vzít v úvahu následné údržbě náročnost opravy, aktualizovat a spravovat prostředí virtuálních počítačů. Je virtuální počítače Azure IaaS.
 
@@ -54,7 +54,7 @@ Migrace do cloudu nemusí být obtížné. Ale čtením řada organizací Začí
 
 - Mapování integrované závislostí pro zjišťování vysokou spolehlivostí vícevrstvé aplikace
 
-- Inteligentní snižování na virtuálních počítačích Azure
+- Inteligentní správné nastavení velikosti virtuálních počítačů Azure
 
 - Kompatibility, vytváření sestav s pokyny pro nekompatibilních potenciálních problémů
 

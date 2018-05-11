@@ -9,11 +9,11 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 55ccabaea4fcb7716378d92964030f7025202e05
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b58e06c87ebf601daf231c83993ebe512f51ecd9
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="event-c-reference"></a>event (Referenční dokumentace jazyka C#)
 `event` – Klíčové slovo se používá k deklaraci událost v třídě vydavatele.  
@@ -21,7 +21,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak deklarace a vyvolávání událost, která používá <xref:System.EventHandler> jako nadřazený typ delegáta. Příklad kompletní kód, který také ukazuje, jak používat obecná <xref:System.EventHandler%601> delegovat typu a přihlášení k odběru na událost a vytvořte obslužnou rutinu události naleznete v tématu [postupy: publikování událostí tohoto neproporcionální vyplnění na rozhraní .NET Framework pokyny](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
   
- [!code-csharp[csrefKeywordsModifiers#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/event_1.cs)]  
+ [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
   
  Události jsou zvláštní druh vícesměrového vysílání delegáta, který jde volat jenom z ve třídě nebo struktuře, kde jsou deklarovány (třída vydavatel). Pokud ostatní třídy nebo struktury přihlášení k odběru události své metody obslužné rutiny události bude volat, pokud třída vydavatele vyvolá událost. Další informace a příklady kódu najdete v tématu [události](../../../csharp/programming-guide/events/index.md) a [delegáti](../../../csharp/programming-guide/delegates/index.md).  
   

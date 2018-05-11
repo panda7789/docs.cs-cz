@@ -2,11 +2,11 @@
 title: Moduly (F#)
 description: 'Zjistěte, jak modul F # je seskupení F # kódu, například hodnoty, typy a hodnoty funkce v programu F #.'
 ms.date: 04/24/2017
-ms.openlocfilehash: b503a78abed34cbb56a7a1ceaba61f851a125831
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ddb6a0762171f8acc94f0ba0cf29c4b6b3e4990e
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="modules"></a>Moduly
 
@@ -101,23 +101,24 @@ module rec RecursiveModule =
         member val IsPeeled = false with get, set
         member val Orientation = orientation with get, set
         member val Sides: PeelState list = [ Unpeeled; Unpeeled; Unpeeled; Unpeeled] with get, set
-        
+
         member self.Peel() = BananaHelpers.peel self // Note the dependency on the BananaHelpers module.
         member self.SqueezeJuiceOut() = raise (DontSqueezeTheBananaException self) // This member depends on the exception above.
 
-    module private BananaHelpers =
-        let peel (b : Banana) =
-            let flip banana =
+    module BananaHelpers =
+        let peel (b: Banana) =
+            let flip (banana: Banana) =
                 match banana.Orientation with
                 | Up -> 
                     banana.Orientation <- Down
                     banana
                 | Down -> banana
 
-            let peelSides banana =
-                for side in banana.Sides do
-                    if side = Unpeeled then
-                        side <- Peeled
+            let peelSides (banana: Banana) =
+                banana.Sides
+                |> List.map (function
+                             | Unpeeled -> Peeled
+                             | Peeled -> Peeled)
 
             match b.Orientation with
             | Up ->   b |> flip |> peelSides

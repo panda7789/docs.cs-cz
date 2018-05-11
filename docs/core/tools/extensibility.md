@@ -4,11 +4,11 @@ description: Zjistěte, jak můžete rozšířit nástroje rozhraní příkazov�
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
-ms.openlocfilehash: 9f1d90b15d70b25c6dfeab5dd013bb9756b37a3f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cabd3959a29878788916ae26589be408c12e0ca
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů .NET core rozhraní příkazového řádku
 
@@ -20,15 +20,15 @@ Nástroje příkazového řádku lze rozšířit třemi hlavními způsoby:
 
 1. [Pomocí balíčků NuGet při jednotlivých projektů](#per-project-based-extensibility)
 
-  Nástroje pro projekt jsou obsažené v kontextu projektu, ale umožňují snadno instalace prostřednictvím obnovení.
+   Nástroje pro projekt jsou obsažené v kontextu projektu, ale umožňují snadno instalace prostřednictvím obnovení.
 
 2. [Pomocí balíčků NuGet s vlastní cíle](#custom-targets)
 
-  Vlastní cíle umožňují snadno rozšířit procesu sestavení vlastní úlohy.
+   Vlastní cíle umožňují snadno rozšířit procesu sestavení vlastní úlohy.
 
 3. [Prostřednictvím systémové cesty](#path-based-extensibility)
 
-  Na základě cesty nástroje jsou vhodné pro obecné, mezi projekty nástroje, které lze použít na jednom počítači.
+   Na základě cesty nástroje jsou vhodné pro obecné, mezi projekty nástroje, které lze použít na jednom počítači.
 
 Tři rozšiřitelnost mechanismy uvedených výše se nevylučují. Můžete použít jednu, nebo všechny, nebo jejich kombinaci. Které z nich vybrat závislá převážně na cíl, který se pokoušíte dosáhnout s rozšíření.
 

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 70c947724abf8da68ec8f7e6d858e26fec62dce5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed9c7a444018e7c5e9ac00de82133cce633fac93
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Konfigurace nastavení protokolu HTTP nebo HTTPS pomocí Internetové informační služby (IIS), nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované v části Nastavení služby IIS protokolu HTTP nebo HTTPS lze konfigurovat v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud služby WCF s vlastním hostováním, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  
@@ -19,7 +19,7 @@ Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS
   
  Při spuštění [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)], použijte nástroj HttpCfg.exe. [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] Tento nástroj automaticky nainstaluje. Při spuštění [!INCLUDE[wxp](../../../../includes/wxp-md.md)], si můžete stáhnout nástroj na [nástrojů podpory systému Windows XP Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=88606). Další informace najdete v tématu [Httpcfg přehled](http://go.microsoft.com/fwlink/?LinkId=88605).  
   
- Při spuštění [!INCLUDE[wv](../../../../includes/wv-md.md)]nebo Windows 7, tato nastavení lze nakonfigurovat pomocí nástroje Netsh.exe.  
+ Při spuštění [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo Windows 7, tato nastavení lze nakonfigurovat pomocí nástroje Netsh.exe.  
   
 ## <a name="configuring-namespace-reservations"></a>Konfigurace Namespace rezervací  
  Namespace rezervace přiřadí práva pro část oboru názvů URL protokolu HTTP pro konkrétní skupinu uživatelů. Rezervace dává uživatelům práva k vytvoření služeb, které čekají na část oboru názvů. Rezervace jsou předpony adres URL, což znamená, že rezervace se vztahuje na všechny dílčí cesty rezervace cesty. Namespace rezervace povolit dva způsoby, jak použít zástupné znaky. Popisuje dokumentaci rozhraní API serveru HTTP [pořadí rozlišení mezi deklarace oboru názvů, které zahrnují zástupné znaky](http://go.microsoft.com/fwlink/?LinkId=94841).  

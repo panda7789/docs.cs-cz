@@ -3,11 +3,11 @@ title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Přehled nových funkcí, bude v příštích verzí 7 jazyka C#.
 ms.date: 12/21/2016
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 440784edfb93d613f1427be2152cd92ae5566e3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a78b30411d734d6dadc52b7dbd402763d4eb7f5e
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v C# 7.0
 
@@ -84,7 +84,7 @@ Nelze ověřit pole a nelze definovat vlastní metody
 > Řazené kolekce členů byly k dispozici před C# 7.0, ale měla neefektivní a měl neexistuje jazyková podpora.
 > Vynutila si, že prvky n-tice může být odkazováno pouze jako `Item1`, `Item2` a tak dále. C# 7.0 zavádí jazyková podpora pro řazené kolekce členů, která umožňuje sémantického názvy polí pomocí nové, efektivnější řazené kolekce členů typů řazené kolekce členů.
 
-Můžete vytvořit řazené kolekce členů přiřazením každého člena na hodnotu:
+Můžete vytvořit řazené kolekce členů přiřazením hodnoty pro každého člena:
 
 [!code-csharp[UnnamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#04_UnnamedTuple "Unnamed tuple")]
 
@@ -129,7 +129,7 @@ Můžete zadat taky podobné deconstruction pro libovolného typu v rozhraní .N
 
 [!code-csharp[PointWithDeconstruction](../../../samples/snippets/csharp/new-in-7/point.cs#11_PointWithDeconstruction "Point with deconstruction method")]
  
-Můžete rozbalit přiřazením řazené kolekce členů do jednotlivých polí `Point`:
+Můžete rozbalit přiřazením jednotlivých polí `Point` k řazené kolekce členů:
 
 [!code-csharp[DeconstructPoint](../../../samples/snippets/csharp/new-in-7/program.cs#12_DeconstructPoint "Deconstruct a point")]
 
