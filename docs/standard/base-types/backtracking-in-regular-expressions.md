@@ -1,13 +1,7 @@
 ---
 title: Zpětné navracení v regulárních výrazech
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,18 +16,13 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b3d7b5c42f43795f811af66d42ed364d482c8ced
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 7caf42ee45f31e374bd2cbf7c700992130281ff0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 <a name="top"></a> Zpětné navracení nastane, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), a modul regulárních výrazů se vrátí do předchozího uloženého stavu pokračujte jeho Vyhledání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -66,11 +55,11 @@ ms.lasthandoff: 03/23/2018
 |---------------|-------------------------|------------------------|------------|  
 |1|e|"needing a reed" (index 0)|Žádná shoda.|  
 |2|e|"eeding a reed" (index 1)|Možná shoda.|  
-|3|e{2}|"eding a reed" (index 2)|Možná shoda.|  
+|3|E{2}|"eding a reed" (index 2)|Možná shoda.|  
 |4|\w|"ding a reed" (index 3)|Možná shoda.|  
 |5|\b|"ing a reed" (index 4)|Možná shoda se nezdaří.|  
 |6|e|"eding a reed" (index 2)|Možná shoda.|  
-|7|e{2}|"ding a reed" (index 3)|Možná shoda se nezdaří.|  
+|7|E{2}|"ding a reed" (index 3)|Možná shoda se nezdaří.|  
 |8|e|"ding a reed" (index 3)|Shoda se nezdaří.|  
 |9|e|"ing a reed" (index 4)|Žádná shoda.|  
 |10|e|"ng a reed" (index 5)|Žádná shoda.|  
@@ -80,7 +69,7 @@ ms.lasthandoff: 03/23/2018
 |14|e|"reed" (index 9)|Žádná shoda.|  
 |15|e|"reed" (index 10)|Žádná shoda|  
 |16|e|"eed" (index 11)|Možná shoda.|  
-|17|e{2}|"ed" (index 12)|Možná shoda.|  
+|17|E{2}|"ed" (index 12)|Možná shoda.|  
 |18|\w|"d" (index 13)|Možná shoda.|  
 |19|\b|"" (index 14)|Shoda.|  
   

@@ -1,13 +1,7 @@
 ---
-title: "Postupy: Ověření platnosti e-mailového formátu řetězců"
-ms.custom: 
+title: 'Postupy: Ověření platnosti e-mailového formátu řetězců'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -24,18 +18,13 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0400fba20e614b441eb549f39d8e831811c55e5e
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 573a3e954bf15bdbcf8b1885c10f68a222329ac1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
 Následující příklad používá regulární výraz k ověření, že je řetězec ve formátu platné e-mailu.  
@@ -69,7 +58,7 @@ Následující příklad používá regulární výraz k ověření, že je řet
 |`(?("")("".+?(?<!\\)""@)`|Je-li první znak je znak uvozovek, odpovídat začátku uvozovky následuje alespoň jeden výskyt libovolný znak, za nímž následuje koncové uvozovky. Koncové uvozovky nesmí předcházet zpětné lomítko (\\). `(?<!` je začátku kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou. Řetězec by měl uzavřít s znaku zavináče (@).|  
 |<code>&#124;(([0-9a-z]</code>|Je-li první znak není uvozovky, odpovídat libovolný znak abecedy z do z nebo A až Z (porovnání se malá a velká písmena), nebo jakékoli číselné znak od 0 do 9.|  
 |`(\.(?!\.))`|Pokud další znak je dobou, shodovat se. Pokud není po dobu, Hledat na další znak a pokračovat na shodu. `(?!\.)` je negativního nulovou šířkou dopředného vyhledávání, která zabraňuje zobrazování v místní část e-mailovou adresu dvě po sobě jdoucí tečky.|  
-|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}\&#124;~\w]</code>|Pokud další znak není dobou, odpovídají libovolný znak nebo jeden z následujících znaků:-! #$% ' * +=? ^\`{} &#124; ~.|  
+|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}\&#124;~\w]</code>|Pokud další znak není dobou, odpovídají libovolný znak nebo jeden z následujících znaků:-! #$% ' * +=? ^\`{}&#124;~.|  
 |<code>((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^\`{}\&#124;~\w])*</code>|Shodují se vzorem alternace (období, za nímž následuje jiný období nebo jeden z a počet znaků) nula či více krát.|  
 |`@`|Shoda znak @.|  
 |`(?<=[0-9a-z])`|Pokračovat shody, pokud znak, který předchází @ – znak je A až Z, a až z nebo 0 až 9. `(?<=[0-9a-z])` Konstrukce definuje výraz kladné zpětného vyhledávání s nulovou šířkou.|  

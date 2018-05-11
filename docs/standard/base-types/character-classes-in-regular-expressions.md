@@ -1,13 +1,7 @@
 ---
 title: Třídy znaků v regulárních výrazech
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-caps.latest.revision: 58
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 538aa21712f1e2290fb009c24774059098c60c1e
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
-ms.translationtype: HT
+ms.openlocfilehash: 241bc9756118cd2db15356dcc2c724a24c84d0fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 <a name="Top"></a> Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu. Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:  
@@ -58,7 +47,7 @@ ms.lasthandoff: 04/18/2018
  Rozhraní .NET podporuje výrazy odčítání třídy znaků, který umožňuje definovat sadu znaků jako výsledek vyloučení jedné třídy znaků z jiné třídě znaků. Další informace najdete v tématu [odčítání tříd znaků](#CharacterClassSubtraction).  
   
 > [!NOTE]
->  Znak třídy, které odpovídají znaky podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [{} \p](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, závisí na <xref:System.Globalization.CharUnicodeInfo> třída k zadání informací o znak kategorie.  Počínaje [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], jsou na základě kategorií znak [ve standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], jsou založené na [ve standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+>  Znak třídy, které odpovídají znaky podle kategorie, jako například [\w](#WordCharacter) tak, aby odpovídaly znaků slova nebo [\p{} ](#CategoryOrBlock) tak, aby odpovídaly kategorie sady Unicode, závisí na <xref:System.Globalization.CharUnicodeInfo> třída k poskytování informací o kategorií znaků.  Počínaje [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], jsou na základě kategorií znak [ve standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prostřednictvím [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], jsou založené na [ve standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>Pozitivní skupina znaků: [ ]  
@@ -189,7 +178,7 @@ ms.lasthandoff: 04/18/2018
  [Zpět na začátek](#Top)  
   
 <a name="CategoryOrBlock"></a>   
-## <a name="unicode-category-or-unicode-block-p"></a>Kategorie nebo blok standardu Unicode: \p {}  
+## <a name="unicode-category-or-unicode-block-p"></a>Kategorie Unicode nebo blok Unicode: \p{}  
  Standard Unicode přiřadí každému znaku obecnou kategorii. Například určitý znak může být velké písmeno (reprezentována `Lu` kategorie), desítková číslice ( `Nd` kategorie), matematický symbol ( `Sm` kategorie), nebo oddělovač odstavců ( `Zl` kategorie). Určité množiny znaků sady Unicode zabírají také určité oblasti nebo bloky po sobě následujících bodů kódu. Například množina znaků základní Latinky se nalézá od \u0000 až do \u007F, zatímco množina znaků Arabštiny se nalézá od \u0600 až do \u06FF.  
   
  Konstrukce regulárního výrazu  
@@ -220,7 +209,7 @@ ms.lasthandoff: 04/18/2018
  [Zpět na začátek](#Top)  
   
 <a name="NegativeCategoryOrBlock"></a>   
-## <a name="negative-unicode-category-or-unicode-block-p"></a>Negativní kategorie nebo blok standardu Unicode: \P {}  
+## <a name="negative-unicode-category-or-unicode-block-p"></a>Negativní kategorie Unicode nebo blok Unicode: \P{}  
  Standard Unicode přiřadí každému znaku obecnou kategorii. Například určitý znak může být velké písmeno (reprezentována `Lu` kategorie), desítková číslice ( `Nd` kategorie), matematický symbol ( `Sm` kategorie), nebo oddělovač odstavců ( `Zl` kategorie). Určité množiny znaků sady Unicode zabírají také určité oblasti nebo bloky po sobě následujících bodů kódu. Například množina znaků základní Latinky se nalézá od \u0000 až do \u007F, zatímco množina znaků Arabštiny se nalézá od \u0600 až do \u06FF.  
   
  Konstrukce regulárního výrazu  

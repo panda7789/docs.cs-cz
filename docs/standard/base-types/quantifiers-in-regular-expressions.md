@@ -1,13 +1,7 @@
 ---
-title: "Kvantifikátory v regulárních výrazech"
-ms.custom: 
+title: Kvantifikátory v regulárních výrazech
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,18 +14,13 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ad4e8ab527ca59c21bf4771ca9d386866d9919f7
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 374ef3e015ee477c5979e2e31574aabfdd03dd1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí být ve vstupu pro shodu, která se má najít.  Následující tabulka uvádí kvantifikátory nepodporuje rozhraní .NET.  
@@ -41,9 +30,9 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
 |`*`|`*?`|Odpovídat počtu nula či více krát.|  
 |`+`|`+?`|Odpovídat jeden či více krát.|  
 |`?`|`??`|Shoda jednou nebo.|  
-|`{` *n* `}`|`{` *n* `}?`|Přesně shodují  *n*  časy.|  
-|`{` *n* `,}`|`{` *n* `,}?`|Odpovídají alespoň  *n*  časy.|  
-|`{` *n* `,` *m* `}`|`{` *n* `,` *m* `}?`|Odpovídat z  *n*  k *m* časy.|  
+|`{` *N* `}`|`{` *N* `}?`|Přesně shodují *n* časy.|  
+|`{` *N* `,}`|`{` *N* `,}?`|Odpovídají alespoň *n* časy.|  
+|`{` *n* `,` *m* `}`|`{` *n* `,` *m* `}?`|Odpovídat z *n* k *m* časy.|  
   
  Množství `n` a `m` jsou celočíselné konstanty. Obvykle jsou kvantifikátory typu greedy; způsobí modul regulárních výrazů tak, aby odpovídaly tolik výskyty určité vzory míře. Připojení `?` znak, který má kvantifikátor umožňuje opožděné; způsobí, že modul regulárních výrazů tak, aby odpovídaly počet výskytů míře. Úplný popis rozdíl mezi typu greedy a opožděné kvantifikátory, najdete v části [Hladové a líné kvantifikátory](#Greedy) dál v tomto tématu.  
   
@@ -107,7 +96,7 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
 |`\b`|Skončí na hranici slova.|  
   
 ### <a name="match-exactly-n-times-n"></a>Odpovídat přesně n krát: {n}  
- `{`  *n*  `}` Kvantifikátoru přesně odpovídá předchozí prvek  *n*  krát, kde  *n* je libovolné celé číslo. `{`*n*`}` je typu greedy kvantifikátor, jehož opožděný ekvivalent je `{`  *n*  `}?`.  
+ `{` *n* `}` kvantifikátoru přesně odpovídá předchozí prvek *n* krát, kde *n* je libovolné celé číslo. `{`*n* `}` je typu greedy kvantifikátor, jehož opožděný ekvivalent je `{` *n*`}?`.  
   
  Například regulární výraz `\b\d+\,\d{3}\b` pokusí porovnat hranici slova, za nímž následuje jeden nebo více desetinných číslic, za nímž následuje tři desetinných číslic, za nímž následuje hranici slova. Následující příklad ilustruje tento regulární výraz.  
   
@@ -125,7 +114,7 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
 |`\b`|Skončí na hranici slova.|  
   
 ### <a name="match-at-least-n-times-n"></a>Odpovídají alespoň n krát: {n,}  
- `{`  *n*  `,}` Kvantifikátoru porovnává předchozí prvek alespoň  *n*  krát, kde  *n* je libovolné celé číslo. `{`*n*`,}` je typu greedy kvantifikátor, jehož opožděný ekvivalent je `{`  *n*  `}?`.  
+ `{` *n* `,}` kvantifikátoru porovnává předchozí prvek alespoň *n* krát, kde *n* je libovolné celé číslo. `{`*n* `,}` je typu greedy kvantifikátor, jehož opožděný ekvivalent je `{` *n*`}?`.  
   
  Například regulární výraz `\b\d{2,}\b\D+` pokusí porovnat hranici slova a alespoň dvě číslice následovaný hranici slova a nečíselným znakem. Následující příklad ilustruje tento regulární výraz. Regulární výraz selže tak, aby odpovídaly fráze `"7 days"` vzhledem k tomu, že obsahuje pouze jednu číslici desítkové soustavy, ale úspěšně porovná větu `"10 weeks and 300 years"`.  
   
@@ -142,7 +131,7 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
 |`\D+`|Odpovídat nejméně jednu číslici desetinné číslo.|  
   
 ### <a name="match-between-n-and-m-times-nm"></a>Nalezena shoda mezi časy n a m: {n, m}  
- `{`  *n*  `,` *m* `}` kvantifikátoru porovnává předchozí prvek alespoň  *n*  dobu, ale ne víc než *m* krát, kde  *n*  a *m* jsou celá čísla. `{`*n*`,`*m* `}` je typu greedy kvantifikátor, jehož opožděný ekvivalent je `{`  *n*  `,` *m*`}?`.  
+ `{` *n*`,`*m* `}` kvantifikátoru porovnává předchozí prvek alespoň *n* časy, ale ne víc než *m*  krát, kde *n* a *m* jsou celá čísla. `{`*n*`,`*m* `}` je typu greedy kvantifikátor, jehož opožděný ekvivalent je `{` *n*`,`*m* `}?`.  
   
  V následujícím příkladu, regulární výraz `(00\s){2,4}` pokusí porovnat mezi dvěma a čtyřmi výskyty dvou číslic nula následované mezerou. Všimněte si, že závěrečná část vstupní řetězec obsahuje tento vzor pětkrát spíše než maximální počet čtyři. Ale pouze počáteční část tohoto podřetězce (až prostor a pátý pár nul) odpovídá regulární výraz.  
   
@@ -195,7 +184,7 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
 |`\(??`|Porovná nula nebo jeden výskyt levé závorky.|  
   
 ### <a name="match-exactly-n-times-lazy-match-n"></a>Odpovídat přesně n krát (opožděné porovnávání): {n}?  
- `{`  *n*  `}?` Kvantifikátoru přesně odpovídá předchozí prvek `n` krát, kde  *n*  je libovolné celé číslo. Je opožděné protějškem typu greedy kvantifikátoru `{`  *n*  `}+`.  
+ `{` *n* `}?` kvantifikátoru přesně odpovídá předchozí prvek `n` krát, kde *n* je libovolné celé číslo. Je opožděné protějškem typu greedy kvantifikátoru `{` *n*`}+`.  
   
  V následujícím příkladu, regulární výraz `\b(\w{3,}?\.){2}?\w{3,}?\b` slouží k identifikaci adresu webu. Všimněte si, že odpovídá "www.microsoft.com" a "msdn.microsoft.com", ale neodpovídá "mywebsite" nebo "mycompany.com".  
   
@@ -212,12 +201,12 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
 |`\b`|Ukončí porovnání na hranici slova.|  
   
 ### <a name="match-at-least-n-times-lazy-match-n"></a>Odpovídají alespoň n krát (opožděné porovnávání): {n,}?  
- `{`  *n*  `,}?` Kvantifikátoru porovnává předchozí prvek alespoň `n` krát, kde  *n*  je jakékoli číslo typu integer, ale co nejméně krát možné. Je opožděné protějškem typu greedy kvantifikátoru `{`  *n*  `,}`.  
+ `{` *n* `,}?` kvantifikátoru porovnává předchozí prvek alespoň `n` krát, kde *n* je jakékoli číslo typu integer, ale nejméně krát. Je opožděné protějškem typu greedy kvantifikátoru `{` *n*`,}`.  
   
- Podívejte se příklad `{`  *n*  `}?` kvantifikátoru v předchozí části Obrázek. Regulární výraz v tomto příkladu používá `{`  *n*  `,}` kvantifikátoru tak, aby odpovídaly řetězec, který obsahuje alespoň tři znaky následované období.  
+ Podívejte se příklad `{` *n* `}?` kvantifikátoru v předchozí části Obrázek. Regulární výraz v tomto příkladu používá `{` *n* `,}` kvantifikátoru tak, aby odpovídaly řetězec, který obsahuje alespoň tři znaky následované období.  
   
 ### <a name="match-between-n-and-m-times-lazy-match-nm"></a>Nalezena shoda mezi n až m krát (opožděné porovnávání): {n, m}?  
- `{`  *n*  `,` *m* `}?` kvantifikátoru porovnává předchozí prvek mezi `n` a `m` krát, kde  *n*  a *m* jsou celá čísla, ale nejméně krát. Je opožděné protějškem typu greedy kvantifikátoru `{`  *n*  `,` *m*`}`.  
+ `{` *n*`,`*m* `}?` kvantifikátoru porovnává předchozí prvek mezi `n` a `m` krát, kde *n* a *m* jsou celá čísla, ale nejméně krát. Je opožděné protějškem typu greedy kvantifikátoru `{` *n*`,`*m*`}`.  
   
  V následujícím příkladu, regulární výraz `\b[A-Z](\w*\s+){1,10}?[.!?]` odpovídá věty obsahující mezi slovy. jeden a 10. Odpovídá všechny věty ve vstupním řetězci s výjimkou jeden věty obsahující slova 18.  
   
@@ -261,7 +250,7 @@ Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí 
  Ve většině případů regulárních výrazů s typu greedy a opožděné kvantifikátory vracejí stejné shody. Při použití se zástupným znakem nejčastěji vracejí odlišné výsledky (`.`) metaznak, který odpovídá jakémukoliv znaku.  
   
 ## <a name="quantifiers-and-empty-matches"></a>Kvantifikátory a prázdné shody  
- Kvantifikátory `*`, `+`, a `{`  *n*  `,` *m* `}` a jejich opožděné protějšky nikdy opakovat po prázdná případy, kdy byl nalezen minimální počet zachycení. Toto pravidlo zabrání kvantifikátory zadat nekonečné smyčky odpovídá dílčím výrazu prázdný po neomezenou maximální počet možných skupiny zachycení nebo téměř nekonečné.  
+ Kvantifikátory `*`, `+`, a `{` *n*`,`*m* `}` a jejich opožděné protějšky nikdy opakovat po prázdnou odpovídat při minimální počet zachycení nebyl nalezen. Toto pravidlo zabrání kvantifikátory zadat nekonečné smyčky odpovídá dílčím výrazu prázdný po neomezenou maximální počet možných skupiny zachycení nebo téměř nekonečné.  
   
  Například následující kód ukazuje výsledek volání <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> metoda s regulární výraz `(a?)*`, který odpovídá žádnou nebo jednu "a" znak nula či více krát. Všimněte si, že jediné zachytávající skupiny zachytí každou "a" jako a taky <xref:System.String.Empty?displayProperty=nameWithType>, ta však není nalezena žádná druhá prázdný shoda, protože na první shodu prázdný způsobí, že kvantifikátor zastaví opakování.  
   
