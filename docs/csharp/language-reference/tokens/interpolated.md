@@ -12,11 +12,11 @@ helpviewer_keywords:
 - interpolated string [C#]
 author: pkulikov
 ms.author: ronpet
-ms.openlocfilehash: 7a2e281dfecdb7baeaeb58ad68232bcd7d371595
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
-ms.translationtype: HT
+ms.openlocfilehash: 407ca9e4744ea9be45867a08e87c502821226472
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – řetězec interpolace (referenční dokumentace jazyka C#)
 
@@ -28,7 +28,7 @@ Poskytuje řetězec interpolace čitelnější a pohodlný syntaxe pro vytvořen
 
 ## <a name="structure-of-an-interpolated-string"></a>Struktura interpolované řetězce
 
-K identifikaci řetězcový literál jako interpolované řetězce, předřazení její `$` symbol. Nemůže mít žádné mezer mezi `$` a `"` , začíná řetězec. To způsobí, že chyby kompilace.
+K identifikaci řetězcový literál jako interpolované řetězce, předřazení její `$` symbol. Nemůže mít žádné mezer mezi `$` a `"` , spustí řetězcový literál. To způsobí, že chyby kompilace.
 
 Struktura položky s interpolované výrazu je následující:
 
@@ -36,7 +36,7 @@ Struktura položky s interpolované výrazu je následující:
 {<interpolatedExpression>[,<alignment>][:<formatString>]}
 ```
 
-Prvky v hranatých závorkách jsou volitelné. Následující tabulka popisuje jednotlivé prvky.
+Prvky v hranatých závorkách jsou volitelné. Následující tabulka popisuje jednotlivé prvky:
 
 |Prvek|Popis|
 |-------------|-----------------|
@@ -54,11 +54,11 @@ Zahrnout závorek "{" nebo "}", v textu vyprodukované interpolované řetězce,
 
 Jako dvojtečkou (":") má zvláštní význam v interpolované výraz položku, aby bylo možné používat [podmíněný operátor](../operators/conditional-operator.md) ve výrazu interpolované uzavřete výrazu v závorkách.
 
-Následující příklad ukazuje, jak se zahrnuje do řetězce výsledek složená závorka a jak používat podmíněný operátor v interpolované výrazu:
+Následující příklad ukazuje, jak mají být zahrnuty závorek výsledný řetězec a jak používat podmíněný operátor v interpolované výrazu:
 
 [!code-csharp-interactive[example with ternary conditional operator](../../../../samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
-Doslovné interpolované řetězce použití `$` následuje znak `@` znak. Další informace o typu verbatim řetězců najdete v tématu [řetězec](../keywords/string.md) tématu.
+Řetězec typu verbatim interpolované začíná `$` následuje znak `@` znak. Další informace o typu verbatim řetězců najdete v tématu [řetězec](../keywords/string.md) a [typu verbatim identifikátor](verbatim.md) témata.
 
 > [!NOTE]
 > `$` Token musí být před `@` tokenu typu verbatim interpolované řetězce.
@@ -85,7 +85,7 @@ Následující příklad používá implicitní převod na <xref:System.Formatta
 
 ## <a name="additional-resources"></a>Další zdroje
 
-Pokud nový interpolace řetězec, podívejte se [řetězec interpolace v jazyce C#](../../quick-starts/interpolated-strings.yml) rychlý start. Další příklady najdete v tématu [řetězec interpolace v jazyce C#](../../tutorials/string-interpolation.md) kurzu.
+Pokud nový řetězec interpolace, podívejte se [řetězec interpolace v jazyce C#](../../quick-starts/interpolated-strings.yml) rychlý start. Další příklady najdete v tématu [řetězec interpolace v jazyce C#](../../tutorials/string-interpolation.md) kurzu.
 
 ## <a name="see-also"></a>Viz také  
  <xref:System.String.Format%2A?displayProperty=nameWithType>  

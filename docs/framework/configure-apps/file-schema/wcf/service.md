@@ -2,11 +2,11 @@
 title: '&lt;Služby&gt;'
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-ms.openlocfilehash: a73e4699e0998338f09e1ed0504f5b1cfd73b225
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 6e83e988920d24c6fe7615e40334919caf21652e
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="ltservicegt"></a>&lt;Služby&gt;
 `service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje taky koncových bodů, které službu vystavit.  
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/03/2018
   
 ```xml  
 <service behaviorConfiguration=String"  
-        name="String"  
+        name="String">  
 </service>  
 ```  
   

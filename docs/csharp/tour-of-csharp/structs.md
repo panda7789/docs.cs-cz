@@ -3,11 +3,11 @@ title: C# struktury - přehled používání jazyka C#
 description: Informace, že typů, názvem struktury hodnot Základy C#
 ms.date: 08/10/2016
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.openlocfilehash: dca21fe5c5f3f97bc067eb79229a608e89c0fcda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dac0952e6a55a16ecefec79f9789f9e2d44aada1
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="structs"></a>Struktury
 
@@ -23,7 +23,7 @@ Alternativou je aby bod struktury.
 
 Nyní pouze jeden objekt je vytvořena instance – jednu pro pole – a `Point` instance jsou uložené v řádku v poli.
 
-Konstruktory struktury jsou spuštěny se operátor new, ale neznamená, že paměť je právě přiděleny. Místo dynamické přidělování objektu a vrátí odkaz na jeho struktura konstruktor jednoduše vrátí hodnotu – struktura (obvykle do dočasného umístění v zásobníku) a tato hodnota je pak zkopíruje podle potřeby.
+Konstruktory struktury jsou spuštěny se `new` operátor, ale neznamená, že paměť je právě přiděleny. Místo dynamické přidělování objektu a vrátí odkaz na jeho struktura konstruktor jednoduše vrátí hodnotu – struktura (obvykle do dočasného umístění v zásobníku) a tato hodnota je pak zkopíruje podle potřeby.
 
 Pomocí třídy je možné pro dvě proměnné tak, aby odkazovaly na stejný objekt a proto možná pro operace na jednu proměnnou ovlivnit objekt odkazují jiné proměnné. S struktury proměnné každý mají své vlastní kopii dat a není možné pro operace na jeden, který bude mít vliv na druhý. Například výstup vytvořený podle následující fragment kódu závisí na tom bodu třídu nebo struktury.
 

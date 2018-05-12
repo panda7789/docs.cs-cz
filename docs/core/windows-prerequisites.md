@@ -4,11 +4,11 @@ description: Zjistěte, co závislosti, musíte na váš Windows počítače pro
 author: JRAlexander
 ms.author: johalex
 ms.date: 04/24/2018
-ms.openlocfilehash: 0f3867e07a9edcb318cd21eb5775219643c416e1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7c6f39f004ebc39ca714ce419a38d842fcf8f0cb
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core v systému Windows
 
@@ -46,7 +46,7 @@ V tématu [podporované verze operačního systému aplikace .NET Core 1.x](http
 * Instalaci .NET Core prostřednictvím *.zip* souboru. To může zahrnovat servery sestavení nebo položek konfigurace nebo disku CD.
 
 > [!NOTE]
-> *Windows 8.1 a starší verze, nebo Windows Server 2012 R2 a starších verzích:* Ujistěte se, že je aktuální instalace systému Windows a zahrnuje [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) který lze nainstalovat pomocí služby Windows Update. Pokud nemáte k dispozici tato aktualizace instalována, zobrazí chybu při spuštění aplikace .NET Core takto: `The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`.
+> *Windows 8.1 a starší verze, nebo Windows Server 2012 R2 a starších verzích:* Ujistěte se, že je aktuální instalace systému Windows a zahrnuje [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) který lze nainstalovat pomocí služby Windows Update. Pokud nemáte k dispozici tato aktualizace instalována, zobrazí chybu, při spuštění aplikace .NET Core takto: `The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky s Visual Studio 2017
 

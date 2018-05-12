@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 598ddfbe16a1a09326d811b4eafcf87f3ca6e971
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d349f8aff5e3d48a2bc738e848d2a251805e260
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
@@ -43,8 +43,8 @@ V Průvodci C# jsou několika oddílů. Můžete číst je popořadě, nebo pře
 * [Prohlídka jazyka C#](tour-of-csharp/index.md)
   * Tato část obsahuje přehled jazyka. Vztahuje se na prvky, které tvoří C# programy a funkce jazyka. Zobrazuje malé ukázky všechny elementy syntaxe jazyka C# a diskusí hlavní témata jazyka C#.
 
-* [Nejnovější funkce](whats-new/index.md)
-  * Další informace o nových funkcích v jazyce. Další informace o nových nástrojů, například C# interaktivní (C# na REPL) a platforma kompilátoru .NET SDK. Tato část uvádí, jak je jazyk vyvíjejí a jak nových nástrojů můžete zvýšit vaši produktivitu.
+* [Co je nového v jazyce C#](whats-new/index.md)
+  * Poskytuje přehled nových funkcí přidaných do nejnovější verze jazyka a historii jazyka C#.
 
 <!--
 * [.NET Compiler Platform SDK](roslyn-sdk/index.md)

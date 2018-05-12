@@ -1,13 +1,13 @@
 ---
 title: Interpolace řetězce v jazyce C#
-description: Zjistěte, jak k přidání do výsledku řetězec v jazyce C# s interpolace řetězec formátovaný výraz výsledky.
+description: Zjistěte, jak mají být zahrnuty výsledky výraz formátovaný výsledek řetězec v jazyce C# s interpolace řetězec.
 author: pkulikov
 ms.date: 05/09/2018
-ms.openlocfilehash: 3e463ceb0902658107280559b7fb57849beb8153
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
-ms.translationtype: HT
+ms.openlocfilehash: 447e87cd4aae49896f0efbb8ece6097181079266
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězce v jazyce C# #
 
@@ -23,7 +23,7 @@ K identifikaci řetězcový literál jako interpolované řetězce, předřazen�
 
 [!code-csharp-interactive[string interpolation example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#1)]
 
-Jako v příkladu výše ukazuje zahrnete výrazu ve formátu interpolované řetězce uzavřením s složené závorky:
+Jak ukazuje příklad patří uzavřením s složené závorky výrazu ve formátu interpolované řetězce:
 
 ```
 {<interpolatedExpression>}
@@ -65,7 +65,7 @@ Následující příklad ukazuje, jak k určení zarovnání a používá zřet�
 
 [!code-csharp-interactive[alignment example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#3)]
 
-Jako příklad výstupu zobrazí, pokud přesahuje délku výraz formátovaný výsledek zadána šířka pole *zarovnání* hodnota je ignorována.
+Jako příklad výstupu zobrazí, pokud délka výsledku formátovaný výrazu překračuje zadaný šířku pole, *zarovnání* hodnota je ignorována.
 
 Další informace najdete v tématu [zarovnání součást](../../standard/base-types/composite-formatting.md#alignment-component) části [složené formátování](../../standard/base-types/composite-formatting.md) tématu.
 
@@ -97,7 +97,7 @@ Jak ukazuje příklad, můžete použít jednu <xref:System.FormattableString> i
 
 ## <a name="how-to-create-a-result-string-using-the-invariant-culture"></a>Postup vytvoření výsledný řetězec pomocí neutrální jazykovou verzi
 
-Spolu s <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> metodu, můžete použít statickou <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> metoda přeložit interpolované řetězce do řetězce výsledek pro <xref:System.Globalization.CultureInfo.InvariantCulture>. Následující příklad ukazuje, jak to udělat:
+Spolu s <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> metodu, můžete použít statickou <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> metoda přeložit interpolované řetězce na řetězec výsledek pro <xref:System.Globalization.CultureInfo.InvariantCulture>. Následující příklad ukazuje, jak to udělat:
 
 [!code-csharp-interactive[format with invariant culture](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#7)]
 
