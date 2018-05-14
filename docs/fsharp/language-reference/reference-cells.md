@@ -2,11 +2,11 @@
 title: Referenční buňky (F#)
 description: 'Zjistěte, jak referenční buňky F # jsou umístění úložiště, které vám umožní vytvořit měnitelný hodnoty s sémantiku odkaz.'
 ms.date: 05/16/2016
-ms.openlocfilehash: d68726619bdfce5a9ed9bd94d6434427644cd9f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3a632425356a250f07e5babd2751b9923eec6552
+ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
@@ -81,6 +81,9 @@ Další informace o tom, jak předat odkazem najdete v tématu [parametry a argu
 >[!NOTE]
 Programátory v jazyce C# měli vědět, že tento ref funguje jinak v jazyce F # než v jazyce C#. Například použití ref při předání argumentu nemá stejného efektu v jazyce F # stejně jako v jazyce C#.
 
+>[!NOTE]
+`mutable` proměnné mohou být automaticky povýšen na `'a ref` zachycenou uzavření; najdete v části [hodnoty](values/index.md).
+
 ## <a name="consuming-c-ref-returns"></a>Přijímání C# `ref` vrátí
 
 Od verze 4.1 F #, můžete využívat `ref` vrátí vygenerované v jazyce C#.  Výsledkem volání je `byref<_>` ukazatel.
@@ -132,3 +135,5 @@ Aktuálně neexistuje žádný způsob, jak vygenerovat `ref` návratový v jazy
 [Parametry a argumenty](parameters-and-arguments.md)
 
 [Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)
+
+[Hodnoty](values/index.md)

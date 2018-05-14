@@ -2,11 +2,11 @@
 title: Rozlišovaná sjednocení (F#)
 description: 'Další informace o použití F # rozlišované sjednocení.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7949fd1685ca128f19dd0d0d4aec7236169cd375
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 617c659e26df52819a98294bcbfa081ab82fed03
+ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -16,14 +16,16 @@ Rozlišovaná sjednocení poskytuje podporu pro hodnoty, které může být jedn
 
 ```fsharp
 [ attributes ]
-type type-name =
+type [accessibility-modifier] type-name =
     | case-identifier1 [of [ fieldname1 : ] type1 [ * [ fieldname2 : ] type2 ...]
     | case-identifier2 [of [fieldname3 : ]type3 [ * [ fieldname4 : ]type4 ...]
 ...
 ```
 
 ## <a name="remarks"></a>Poznámky
-Rozlišovaná sjednocení jsou podobné typy union v jiných jazycích, ale jsou rozdíly. Jako s typu union v jazyce C++ nebo typu variant v jazyce Visual Basic odstraněny data uložená v hodnotě; může být jeden z několika různých možností. Na rozdíl od sjednocení v těchto dalších jazycích, ale každá z možných možností je uveden *případu identifikátor*. Case identifikátory jsou názvy pro různé druhy hodnoty, které by mohly být objekty tohoto typu; hodnoty jsou volitelné. Pokud nejsou zadány hodnoty, tak je ekvivalentní – případ výčtu. Pokud jsou v něm hodnoty, každá hodnota může být buď jednu hodnotu na zadaný typ nebo řazené kolekce členů, která agreguje více polí stejné nebo různých typů. Od F # 3.1 je jednotlivá pole zadejte název, ale název je volitelný, i když mají další pole v případě, že stejný název.
+Rozlišovaná sjednocení jsou podobné typy union v jiných jazycích, ale jsou rozdíly. Jako s typu union v jazyce C++ nebo typu variant v jazyce Visual Basic odstraněny data uložená v hodnotě; může být jeden z několika různých možností. Na rozdíl od sjednocení v těchto dalších jazycích, ale každá z možných možností je uveden *případu identifikátor*. Case identifikátory jsou názvy pro různé druhy hodnoty, které by mohly být objekty tohoto typu; hodnoty jsou volitelné. Pokud nejsou zadány hodnoty, tak je ekvivalentní – případ výčtu. Pokud jsou v něm hodnoty, každá hodnota může být buď jednu hodnotu na zadaný typ nebo řazené kolekce členů, která agreguje více polí stejné nebo různých typů. Jednotlivá pole můžete poskytnout název, ale název je volitelný, i když mají další pole v případě, že stejný název.
+
+Usnadnění pro rozlišovaná sjednocení výchozí `public`.
 
 Zvažte například následující deklaraci typu tvaru.
 

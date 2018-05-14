@@ -22,7 +22,7 @@ Volitelně můžete také budete muset **DGML editor** zobrazit grafy v vizualiz
 1. Spustit **instalační program sady Visual Studio** 
 1. Vyberte **upravit** 
 1. Vyberte **jednotlivých součástí** karta 
-1. Zaškrtněte políčko pro **SDK pro platformu .NET kompilátoru**. Naleznete je poslední v části **kompilátory, sestavení nástroje a moduly runtime** části.
+1. Zaškrtněte políčko pro **SDK pro platformu .NET kompilátoru**. Najdete v horní části v rámci **kompilátory, sestavení nástroje a moduly runtime** části.
 
 Volitelně můžete také budete muset **DGML editor** zobrazit grafy v vizualizér:
 

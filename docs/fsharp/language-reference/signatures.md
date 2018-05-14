@@ -2,11 +2,11 @@
 title: Podpisy (F#)
 description: 'Naučte se používat soubor podpisu F # uchovávání informací o veřejné podpisy sadu elementů F # program, jako jsou moduly, typy a obory názvů.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 04539a871dda9eedd1495e0e5b1f3f5026bae037
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e182a1a0ac7f3f9fab27026e582d83ee737822e
+ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="signatures"></a>Podpisy
 
@@ -64,6 +64,9 @@ Pravidla pro podpisy hodnoty jsou následující:
 
 
 - Vzor parametry (také označované jako *Arita*) podpisů a implementace musí být konzistentní.
+
+
+- Pokud názvy parametrů v souboru se liší od odpovídající soubor implementace, název v souboru podpis se použije místo toho, což může způsobit problémy při ladění nebo profilace. Pokud chcete být informováni o takové neshody povolit 3218 upozornění v souboru projektu nebo při vyvolání kompilátor (viz `--warnon` pod [– možnosti kompilátoru](compiler-options.md)).
 
 
 Následující příklad kódu ukazuje příklad podpis souboru, který má obor názvů, modulu, hodnota funkce a typ podpisy společně s příslušné atributy. Také ukazuje odpovídající soubor implementace.
