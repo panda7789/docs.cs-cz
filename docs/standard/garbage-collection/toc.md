@@ -4,6 +4,7 @@
 ### [Použití objektů implementujících rozhraní IDisposable](using-objects.md)
 ## [Uvolňování paměti](index.md)
 ### [Základy kolekce paměti](fundamentals.md)
+### [Halda pro velké objekty](large-object-heap.md)
 ### [Kolekce paměti a výkon](performance.md)
 ### [Vyvolané kolekce](induced.md)
 ### [Latentní režimy](latency.md)

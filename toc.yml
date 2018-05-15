@@ -593,3 +593,13 @@
             - name: Odkaz
               tocHref: /dotnet/visual-basic/reference/
               topicHref: /dotnet/visual-basic/reference/index
+        - name: Průvodce ML.NET
+          tocHref: /dotnet/machine-learning/
+          topicHref: /dotnet/machine-learning/index
+          items:
+            - name: Prostředky
+              tocHref: /dotnet/machine-learning/resources/
+              topicHref: /dotnet/machine-learning/resources/index
+            - name: Kurzy
+              tocHref: /dotnet/machine-learning/tutorials/
+              topicHref: /dotnet/machine-learning/tutorials/index

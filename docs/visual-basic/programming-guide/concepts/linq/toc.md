@@ -87,7 +87,6 @@
 ## [Postupy: Řízení předpon názvového prostoru (LINQ to XML)](how-to-control-namespace-prefixes-linq-to-xml.md)
 ## [Obor výchozích názvových prostorů](scope-of-default-namespaces.md)
 ## [Práce s globálními názvovými prostory (LINQ to XML)](working-with-global-namespaces-linq-to-xml.md)
-## [Názvové prostory (LINQ to XML)](namespaces-linq-to-xml.md)
 ## [Postupy: Vytváření dotazů na XML v názvových prostorech](how-to-write-queries-on-xml-in-namespaces.md)
 
 # [Serializace stromů XML](serializing-xml-trees.md)
@@ -229,5 +228,5 @@
 ### [Ukázkový soubor XML: Konsolidované nákupní objednávky](sample-xml-file-consolidated-purchase-orders.md)
 ### [Referenční informace (LINQ to XML)](reference-linq-to-xml.md)
 ## [LINQ to ADO.NET (stránka portálu)](linq-to-adonet-portal-page.md)
-## [Povolení zdroje dat pro dotazy v jazyce LINQ](enabling-a-data-source-for-linq-querying.md)
+## [Povolení zdroje dat pro dotazy LINQ](enabling-a-data-source-for-linq-querying.md)
 ## [Podpora integrovaného vývojového prostředí a nástrojů sady Visual Studio pro LINQ](visual-studio-ide-and-tools-support-for-linq.md)

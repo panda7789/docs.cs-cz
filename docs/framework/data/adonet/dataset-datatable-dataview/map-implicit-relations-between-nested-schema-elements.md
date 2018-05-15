@@ -1,39 +1,27 @@
 ---
-title: "Mapa implicitní vztahy mezi elementy vnořené schématu"
-ms.custom: 
+title: Mapa implicitní vztahy mezi elementy vnořené schématu
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 740d45c47f46c311ed703fa11ec86a9739930944
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1bce0c2815ac94787055794942807777232df295
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="map-implicit-relations-between-nested-schema-elements"></a><span data-ttu-id="e6cab-102">Mapa implicitní vztahy mezi elementy vnořené schématu</span><span class="sxs-lookup"><span data-stu-id="e6cab-102">Map Implicit Relations Between Nested Schema Elements</span></span>
-<span data-ttu-id="e6cab-103">Schématu schématu XML definition language (XSD) může mít komplexní typy vnořit do sebe navzájem.</span><span class="sxs-lookup"><span data-stu-id="e6cab-103">An XML Schema definition language (XSD) schema can have complex types nested inside one another.</span></span> <span data-ttu-id="e6cab-104">V takovém případě proces mapování použije výchozí mapování a vytvoří následující <xref:System.Data.DataSet>:</span><span class="sxs-lookup"><span data-stu-id="e6cab-104">In this case, the mapping process applies default mapping and creates the following in the <xref:System.Data.DataSet>:</span></span>  
+# <a name="map-implicit-relations-between-nested-schema-elements"></a><span data-ttu-id="1e6be-102">Mapa implicitní vztahy mezi elementy vnořené schématu</span><span class="sxs-lookup"><span data-stu-id="1e6be-102">Map Implicit Relations Between Nested Schema Elements</span></span>
+<span data-ttu-id="1e6be-103">Schématu schématu XML definition language (XSD) může mít komplexní typy vnořit do sebe navzájem.</span><span class="sxs-lookup"><span data-stu-id="1e6be-103">An XML Schema definition language (XSD) schema can have complex types nested inside one another.</span></span> <span data-ttu-id="1e6be-104">V takovém případě proces mapování použije výchozí mapování a vytvoří následující <xref:System.Data.DataSet>:</span><span class="sxs-lookup"><span data-stu-id="1e6be-104">In this case, the mapping process applies default mapping and creates the following in the <xref:System.Data.DataSet>:</span></span>  
   
--   <span data-ttu-id="e6cab-105">Jedna tabulka pro každou komplexních typů (nadřazené a podřízené).</span><span class="sxs-lookup"><span data-stu-id="e6cab-105">One table for each of the complex types (parent and child).</span></span>  
+-   <span data-ttu-id="1e6be-105">Jedna tabulka pro každou komplexních typů (nadřazené a podřízené).</span><span class="sxs-lookup"><span data-stu-id="1e6be-105">One table for each of the complex types (parent and child).</span></span>  
   
--   <span data-ttu-id="e6cab-106">Pokud na nadřazené neexistuje žádné jedinečné omezení, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id kde *TableName* je název nadřazené tabulce.</span><span class="sxs-lookup"><span data-stu-id="e6cab-106">If no unique constraint exists on the parent, one additional primary key column per table definition named *TableName*_Id where *TableName* is the name of the parent table.</span></span>  
+-   <span data-ttu-id="1e6be-106">Pokud na nadřazené neexistuje žádné jedinečné omezení, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id kde *TableName* je název nadřazené tabulce.</span><span class="sxs-lookup"><span data-stu-id="1e6be-106">If no unique constraint exists on the parent, one additional primary key column per table definition named *TableName*_Id where *TableName* is the name of the parent table.</span></span>  
   
--   <span data-ttu-id="e6cab-107">Omezení primárního klíče v nadřazené tabulce identifikace další sloupec jako primární klíč (nastavením **IsPrimaryKey** vlastnost **True**).</span><span class="sxs-lookup"><span data-stu-id="e6cab-107">A primary key constraint on the parent table identifying the additional column as the primary key (by setting the **IsPrimaryKey** property to **True**).</span></span> <span data-ttu-id="e6cab-108">Omezení jmenuje omezení *#*  kde  *#*  je 1, 2, 3 a tak dále.</span><span class="sxs-lookup"><span data-stu-id="e6cab-108">The constraint is named Constraint*#* where *#* is 1, 2, 3, and so on.</span></span> <span data-ttu-id="e6cab-109">Například výchozí název pro první omezení je Constraint1.</span><span class="sxs-lookup"><span data-stu-id="e6cab-109">For example, the default name for the first constraint is Constraint1.</span></span>  
+-   <span data-ttu-id="1e6be-107">Omezení primárního klíče v nadřazené tabulce identifikace další sloupec jako primární klíč (nastavením **IsPrimaryKey** vlastnost **True**).</span><span class="sxs-lookup"><span data-stu-id="1e6be-107">A primary key constraint on the parent table identifying the additional column as the primary key (by setting the **IsPrimaryKey** property to **True**).</span></span> <span data-ttu-id="1e6be-108">Omezení jmenuje omezení*#* kde *#* je 1, 2, 3 a tak dále.</span><span class="sxs-lookup"><span data-stu-id="1e6be-108">The constraint is named Constraint*#* where *#* is 1, 2, 3, and so on.</span></span> <span data-ttu-id="1e6be-109">Například výchozí název pro první omezení je Constraint1.</span><span class="sxs-lookup"><span data-stu-id="1e6be-109">For example, the default name for the first constraint is Constraint1.</span></span>  
   
--   <span data-ttu-id="e6cab-110">Omezení cizího klíče na podřízenou tabulku identifikace další sloupec jako cizí klíč odkazující na primární klíč v nadřazené tabulce.</span><span class="sxs-lookup"><span data-stu-id="e6cab-110">A foreign key constraint on the child table identifying the additional column as the foreign key referring to the primary key of the parent table.</span></span> <span data-ttu-id="e6cab-111">Název omezení *ParentTable_ChildTable* kde *ParentTable* je název nadřazené tabulky a *tabulka* je název podřízené tabulky.</span><span class="sxs-lookup"><span data-stu-id="e6cab-111">The constraint is named *ParentTable_ChildTable* where *ParentTable* is the name of the parent table and *ChildTable* is the name of the child table.</span></span>  
+-   <span data-ttu-id="1e6be-110">Omezení cizího klíče na podřízenou tabulku identifikace další sloupec jako cizí klíč odkazující na primární klíč v nadřazené tabulce.</span><span class="sxs-lookup"><span data-stu-id="1e6be-110">A foreign key constraint on the child table identifying the additional column as the foreign key referring to the primary key of the parent table.</span></span> <span data-ttu-id="1e6be-111">Název omezení *ParentTable_ChildTable* kde *ParentTable* je název nadřazené tabulky a *tabulka* je název podřízené tabulky.</span><span class="sxs-lookup"><span data-stu-id="1e6be-111">The constraint is named *ParentTable_ChildTable* where *ParentTable* is the name of the parent table and *ChildTable* is the name of the child table.</span></span>  
   
--   <span data-ttu-id="e6cab-112">Data vztah mezi nadřazenou a podřízenou tabulkou.</span><span class="sxs-lookup"><span data-stu-id="e6cab-112">A data relation between the parent and child tables.</span></span>  
+-   <span data-ttu-id="1e6be-112">Data vztah mezi nadřazenou a podřízenou tabulkou.</span><span class="sxs-lookup"><span data-stu-id="1e6be-112">A data relation between the parent and child tables.</span></span>  
   
- <span data-ttu-id="e6cab-113">Následující příklad ukazuje schéma kde **OrderDetail** je podřízený prvek **pořadí**.</span><span class="sxs-lookup"><span data-stu-id="e6cab-113">The following example shows a schema where **OrderDetail** is a child element of **Order**.</span></span>  
+ <span data-ttu-id="1e6be-113">Následující příklad ukazuje schéma kde **OrderDetail** je podřízený prvek **pořadí**.</span><span class="sxs-lookup"><span data-stu-id="1e6be-113">The following example shows a schema where **OrderDetail** is a child element of **Order**.</span></span>  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -65,16 +53,16 @@ ms.lasthandoff: 01/17/2018
 </xs:schema>  
 ```  
   
- <span data-ttu-id="e6cab-114">Proces mapování schématu XML vytvoří následující **datovou sadu**:</span><span class="sxs-lookup"><span data-stu-id="e6cab-114">The XML Schema mapping process creates the following in the **DataSet**:</span></span>  
+ <span data-ttu-id="1e6be-114">Proces mapování schématu XML vytvoří následující **datovou sadu**:</span><span class="sxs-lookup"><span data-stu-id="1e6be-114">The XML Schema mapping process creates the following in the **DataSet**:</span></span>  
   
--   <span data-ttu-id="e6cab-115">**Pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="e6cab-115">An **Order** and an **OrderDetail** table.</span></span>  
+-   <span data-ttu-id="1e6be-115">**Pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1e6be-115">An **Order** and an **OrderDetail** table.</span></span>  
   
     ```  
     Order(OrderNumber, EmpNumber, Order_Id)  
     OrderDetail(OrderNo, ItemNo, Order_Id)  
     ```  
   
--   <span data-ttu-id="e6cab-116">Jedinečná omezení **pořadí** tabulky.</span><span class="sxs-lookup"><span data-stu-id="e6cab-116">A unique constraint on the **Order** table.</span></span> <span data-ttu-id="e6cab-117">Všimněte si, že **IsPrimaryKey** je nastavena na **True**.</span><span class="sxs-lookup"><span data-stu-id="e6cab-117">Note that the **IsPrimaryKey** property is set to **True**.</span></span>  
+-   <span data-ttu-id="1e6be-116">Jedinečná omezení **pořadí** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1e6be-116">A unique constraint on the **Order** table.</span></span> <span data-ttu-id="1e6be-117">Všimněte si, že **IsPrimaryKey** je nastavena na **True**.</span><span class="sxs-lookup"><span data-stu-id="1e6be-117">Note that the **IsPrimaryKey** property is set to **True**.</span></span>  
   
     ```  
     ConstraintName: Constraint1  
@@ -84,7 +72,7 @@ ms.lasthandoff: 01/17/2018
     IsPrimaryKey: True  
     ```  
   
--   <span data-ttu-id="e6cab-118">Omezení cizího klíče na **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="e6cab-118">A foreign key constraint on the **OrderDetail** table.</span></span>  
+-   <span data-ttu-id="1e6be-118">Omezení cizího klíče na **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1e6be-118">A foreign key constraint on the **OrderDetail** table.</span></span>  
   
     ```  
     ConstraintName: Order_OrderDetail  
@@ -95,7 +83,7 @@ ms.lasthandoff: 01/17/2018
     RelatedColumns: Order_Id   
     ```  
   
--   <span data-ttu-id="e6cab-119">Vztah mezi **pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="e6cab-119">A relationship between the **Order** and **OrderDetail** tables.</span></span> <span data-ttu-id="e6cab-120">**Vnořené** pro tento vztah je nastavena na **True** protože **pořadí** a **OrderDetail** vnořené prvky ve schématu .</span><span class="sxs-lookup"><span data-stu-id="e6cab-120">The **Nested** property for this relationship is set to **True** because the **Order** and **OrderDetail** elements are nested in the schema.</span></span>  
+-   <span data-ttu-id="1e6be-119">Vztah mezi **pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1e6be-119">A relationship between the **Order** and **OrderDetail** tables.</span></span> <span data-ttu-id="1e6be-120">**Vnořené** pro tento vztah je nastavena na **True** protože **pořadí** a **OrderDetail** vnořené prvky ve schématu .</span><span class="sxs-lookup"><span data-stu-id="1e6be-120">The **Nested** property for this relationship is set to **True** because the **Order** and **OrderDetail** elements are nested in the schema.</span></span>  
   
     ```  
     ParentTable: Order  
@@ -108,7 +96,7 @@ ms.lasthandoff: 01/17/2018
     Nested: True  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="e6cab-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="e6cab-121">See Also</span></span>  
- [<span data-ttu-id="e6cab-122">Generování relací datové sady ze schématu XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="e6cab-122">Generating DataSet Relations from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- [<span data-ttu-id="e6cab-123">Mapování omezení schématu XML (XSD) k omezením datové sady</span><span class="sxs-lookup"><span data-stu-id="e6cab-123">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- [<span data-ttu-id="e6cab-124">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="e6cab-124">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="1e6be-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="1e6be-121">See Also</span></span>  
+ [<span data-ttu-id="1e6be-122">Generování relací datové sady ze schématu XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="1e6be-122">Generating DataSet Relations from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [<span data-ttu-id="1e6be-123">Mapování omezení schématu XML (XSD) k omezením datové sady</span><span class="sxs-lookup"><span data-stu-id="1e6be-123">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [<span data-ttu-id="1e6be-124">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="1e6be-124">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

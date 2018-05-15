@@ -1,13 +1,6 @@
 ---
-title: "&lt;Assert –&gt; – Element"
-ms.custom: 
+title: '&lt;Assert –&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/assert
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#assert
@@ -15,62 +8,60 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 9670cf0faa3e7f69b8f99b09fa26741991a60481
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab1644d23e4d6d78b62e701902e5ec39e134b38b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltassertgt-element"></a><span data-ttu-id="3de9b-102">&lt;Assert –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="3de9b-102">&lt;assert&gt; Element</span></span>
-<span data-ttu-id="3de9b-103">Určuje, jestli se má zobrazit okno se zprávou při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zprávy.</span><span class="sxs-lookup"><span data-stu-id="3de9b-103">Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.</span></span>  
+# <a name="ltassertgt-element"></a><span data-ttu-id="61878-102">&lt;Assert –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="61878-102">&lt;assert&gt; Element</span></span>
+<span data-ttu-id="61878-103">Určuje, jestli se má zobrazit okno se zprávou při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zprávy.</span><span class="sxs-lookup"><span data-stu-id="61878-103">Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.</span></span>  
   
- <span data-ttu-id="3de9b-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="3de9b-104">\<configuration></span></span>  
-<span data-ttu-id="3de9b-105">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="3de9b-105">\<system.diagnostics></span></span>  
-<span data-ttu-id="3de9b-106">\<Assert – ></span><span class="sxs-lookup"><span data-stu-id="3de9b-106">\<assert></span></span>  
+ <span data-ttu-id="61878-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="61878-104">\<configuration></span></span>  
+<span data-ttu-id="61878-105">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="61878-105">\<system.diagnostics></span></span>  
+<span data-ttu-id="61878-106">\<Assert – ></span><span class="sxs-lookup"><span data-stu-id="61878-106">\<assert></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3de9b-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3de9b-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="61878-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="61878-107">Syntax</span></span>  
   
 ```xml  
 <assert assertuienabled="true|false" logfilename="file name"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="3de9b-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="3de9b-108">Attributes and Elements</span></span>  
- <span data-ttu-id="3de9b-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="3de9b-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="61878-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="61878-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="61878-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="61878-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="3de9b-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="3de9b-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="61878-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="61878-110">Attributes</span></span>  
   
-|<span data-ttu-id="3de9b-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="3de9b-111">Attribute</span></span>|<span data-ttu-id="3de9b-112">Popis</span><span class="sxs-lookup"><span data-stu-id="3de9b-112">Description</span></span>|  
+|<span data-ttu-id="61878-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="61878-111">Attribute</span></span>|<span data-ttu-id="61878-112">Popis</span><span class="sxs-lookup"><span data-stu-id="61878-112">Description</span></span>|  
 |---------------|-----------------|  
-|`assertuienabled`|<span data-ttu-id="3de9b-113">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="3de9b-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="3de9b-114">Určuje, zda Pokud chcete zobrazit zprávu pole při **Debug.Assert –** vyhodnocen jako metoda **false**.</span><span class="sxs-lookup"><span data-stu-id="3de9b-114">Specifies whether to display a message box when the **Debug.Assert** method evaluates to **false**.</span></span>|  
-|`logfilename`|<span data-ttu-id="3de9b-115">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="3de9b-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="3de9b-116">Určuje název souboru pro zápis zprávy, když se **Debug.Assert –** vyhodnotí jako **false**.</span><span class="sxs-lookup"><span data-stu-id="3de9b-116">Specifies the name of the file to write the message to if **Debug.Assert** evaluates to **false**.</span></span>|  
+|`assertuienabled`|<span data-ttu-id="61878-113">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="61878-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="61878-114">Určuje, zda Pokud chcete zobrazit zprávu pole při **Debug.Assert –** vyhodnocen jako metoda **false**.</span><span class="sxs-lookup"><span data-stu-id="61878-114">Specifies whether to display a message box when the **Debug.Assert** method evaluates to **false**.</span></span>|  
+|`logfilename`|<span data-ttu-id="61878-115">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="61878-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="61878-116">Určuje název souboru pro zápis zprávy, když se **Debug.Assert –** vyhodnotí jako **false**.</span><span class="sxs-lookup"><span data-stu-id="61878-116">Specifies the name of the file to write the message to if **Debug.Assert** evaluates to **false**.</span></span>|  
   
-## <a name="assertuienabled-attribute"></a><span data-ttu-id="3de9b-117">assertuienabled atribut</span><span class="sxs-lookup"><span data-stu-id="3de9b-117">assertuienabled Attribute</span></span>  
+## <a name="assertuienabled-attribute"></a><span data-ttu-id="61878-117">assertuienabled atribut</span><span class="sxs-lookup"><span data-stu-id="61878-117">assertuienabled Attribute</span></span>  
   
-|<span data-ttu-id="3de9b-118">Hodnota</span><span class="sxs-lookup"><span data-stu-id="3de9b-118">Value</span></span>|<span data-ttu-id="3de9b-119">Popis</span><span class="sxs-lookup"><span data-stu-id="3de9b-119">Description</span></span>|  
+|<span data-ttu-id="61878-118">Hodnota</span><span class="sxs-lookup"><span data-stu-id="61878-118">Value</span></span>|<span data-ttu-id="61878-119">Popis</span><span class="sxs-lookup"><span data-stu-id="61878-119">Description</span></span>|  
 |-----------|-----------------|  
-|`true`|<span data-ttu-id="3de9b-120">Zobrazí okno se zprávou.</span><span class="sxs-lookup"><span data-stu-id="3de9b-120">Displays the message box.</span></span> <span data-ttu-id="3de9b-121">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="3de9b-121">This is the default.</span></span>|  
-|`false`|<span data-ttu-id="3de9b-122">Do pole zpráva nezobrazí.</span><span class="sxs-lookup"><span data-stu-id="3de9b-122">Does not display the message box.</span></span>|  
+|`true`|<span data-ttu-id="61878-120">Zobrazí okno se zprávou.</span><span class="sxs-lookup"><span data-stu-id="61878-120">Displays the message box.</span></span> <span data-ttu-id="61878-121">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="61878-121">This is the default.</span></span>|  
+|`false`|<span data-ttu-id="61878-122">Do pole zpráva nezobrazí.</span><span class="sxs-lookup"><span data-stu-id="61878-122">Does not display the message box.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="3de9b-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="3de9b-123">Child Elements</span></span>  
- <span data-ttu-id="3de9b-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="3de9b-124">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="61878-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="61878-123">Child Elements</span></span>  
+ <span data-ttu-id="61878-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="61878-124">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="3de9b-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="3de9b-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="61878-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="61878-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="3de9b-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="3de9b-126">Element</span></span>|<span data-ttu-id="3de9b-127">Popis</span><span class="sxs-lookup"><span data-stu-id="3de9b-127">Description</span></span>|  
+|<span data-ttu-id="61878-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="61878-126">Element</span></span>|<span data-ttu-id="61878-127">Popis</span><span class="sxs-lookup"><span data-stu-id="61878-127">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="3de9b-128">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3de9b-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`system.diagnostics`|<span data-ttu-id="3de9b-129">Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="3de9b-129">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
+|`configuration`|<span data-ttu-id="61878-128">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="61878-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="61878-129">Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="61878-129">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3de9b-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3de9b-130">Remarks</span></span>  
- <span data-ttu-id="3de9b-131">Oba atributy v  **\<assert >** element jsou volitelné.</span><span class="sxs-lookup"><span data-stu-id="3de9b-131">Both attributes in the **\<assert>** element are optional.</span></span> <span data-ttu-id="3de9b-132">Okna zpráv můžete zakázat bez zadání souboru pro zápis zprávy, které mají, nebo můžete zadat soubor k zápisu zprávy do při opuštění zprávy polí povoleno.</span><span class="sxs-lookup"><span data-stu-id="3de9b-132">You can disable message boxes without specifying a file to write the messages to, or you can specify a file to write messages to while leaving message boxes enabled.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="61878-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="61878-130">Remarks</span></span>  
+ <span data-ttu-id="61878-131">Oba atributy v  **\<assert >** element jsou volitelné.</span><span class="sxs-lookup"><span data-stu-id="61878-131">Both attributes in the **\<assert>** element are optional.</span></span> <span data-ttu-id="61878-132">Okna zpráv můžete zakázat bez zadání souboru pro zápis zprávy, které mají, nebo můžete zadat soubor k zápisu zprávy do při opuštění zprávy polí povoleno.</span><span class="sxs-lookup"><span data-stu-id="61878-132">You can disable message boxes without specifying a file to write the messages to, or you can specify a file to write messages to while leaving message boxes enabled.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3de9b-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="3de9b-133">Example</span></span>  
- <span data-ttu-id="3de9b-134">Následující příklad ukazuje, jak zakázat zobrazování okna zpráv při volání **Debug.Assert –** a zápis zpráv do `c:\log.txt`.</span><span class="sxs-lookup"><span data-stu-id="3de9b-134">The following example shows how to disable displaying message boxes when you call **Debug.Assert** and write the messages to `c:\log.txt`.</span></span>  
+## <a name="example"></a><span data-ttu-id="61878-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="61878-133">Example</span></span>  
+ <span data-ttu-id="61878-134">Následující příklad ukazuje, jak zakázat zobrazování okna zpráv při volání **Debug.Assert –** a zápis zpráv do `c:\log.txt`.</span><span class="sxs-lookup"><span data-stu-id="61878-134">The following example shows how to disable displaying message boxes when you call **Debug.Assert** and write the messages to `c:\log.txt`.</span></span>  
   
 ```xml  
 <configuration>  
@@ -80,6 +71,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3de9b-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="3de9b-135">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="61878-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="61878-135">See Also</span></span>  
  <xref:System.Diagnostics.Debug>  
- [<span data-ttu-id="3de9b-136">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="3de9b-136">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+ [<span data-ttu-id="61878-136">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="61878-136">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

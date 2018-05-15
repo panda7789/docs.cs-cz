@@ -1,14 +1,6 @@
 ---
-title: "Postupy: Řazení sloupce GridView při kliknutí na záhlaví"
-ms.custom: 
+title: 'Postupy: Řazení sloupce GridView při kliknutí na záhlaví'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,23 +10,17 @@ helpviewer_keywords:
 - ListView controls [WPF], sorting GridView columns
 - GridView controls [WPF], ListView control
 ms.assetid: 4865d720-d147-40ed-83a7-af7587f8aad8
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 018d5c39efc1459e8883cf67cfc7992860f45318
-ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
+ms.openlocfilehash: 30bcbd8b7cdd4c184560aaa4a2799137da51fc8a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a><span data-ttu-id="c319f-102">Postupy: Řazení sloupce GridView při kliknutí na záhlaví</span><span class="sxs-lookup"><span data-stu-id="c319f-102">How to: Sort a GridView Column When a Header Is Clicked</span></span>
-<span data-ttu-id="c319f-103">Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> zobrazení režimu a řazení dat obsahu, když uživatel klikne záhlaví sloupce.</span><span class="sxs-lookup"><span data-stu-id="c319f-103">This example shows how to create a <xref:System.Windows.Controls.ListView> control that implements a <xref:System.Windows.Controls.GridView> view mode and sorts the data content when a user clicks a column header.</span></span>  
+# <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a><span data-ttu-id="c6178-102">Postupy: Řazení sloupce GridView při kliknutí na záhlaví</span><span class="sxs-lookup"><span data-stu-id="c6178-102">How to: Sort a GridView Column When a Header Is Clicked</span></span>
+<span data-ttu-id="c6178-103">Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> zobrazení režimu a řazení dat obsahu, když uživatel klikne záhlaví sloupce.</span><span class="sxs-lookup"><span data-stu-id="c6178-103">This example shows how to create a <xref:System.Windows.Controls.ListView> control that implements a <xref:System.Windows.Controls.GridView> view mode and sorts the data content when a user clicks a column header.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c319f-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c319f-104">Example</span></span>  
- <span data-ttu-id="c319f-105">V následujícím příkladu definuje <xref:System.Windows.Controls.GridView> s tři sloupce, které vytvořit vazbu <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>, vlastnosti <xref:System.DateTime> struktura.</span><span class="sxs-lookup"><span data-stu-id="c319f-105">The following example defines a <xref:System.Windows.Controls.GridView> with three columns that bind to the <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, and <xref:System.DateTime.Day%2A>, properties of the <xref:System.DateTime> structure.</span></span>  
+## <a name="example"></a><span data-ttu-id="c6178-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c6178-104">Example</span></span>  
+ <span data-ttu-id="c6178-105">V následujícím příkladu definuje <xref:System.Windows.Controls.GridView> s tři sloupce, které vytvořit vazbu <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>, vlastnosti <xref:System.DateTime> struktura.</span><span class="sxs-lookup"><span data-stu-id="c6178-105">The following example defines a <xref:System.Windows.Controls.GridView> with three columns that bind to the <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, and <xref:System.DateTime.Day%2A>, properties of the <xref:System.DateTime> structure.</span></span>  
   
 ```xaml  
 <GridView>  
@@ -50,7 +36,7 @@ ms.lasthandoff: 01/25/2018
 </GridView>  
 ```  
   
- <span data-ttu-id="c319f-106">Následující příklad ukazuje datových položek, které jsou definovány jako <xref:System.Collections.ArrayList> z <xref:System.DateTime> objekty.</span><span class="sxs-lookup"><span data-stu-id="c319f-106">The following example shows the data items that are defined as an <xref:System.Collections.ArrayList> of <xref:System.DateTime> objects.</span></span> <span data-ttu-id="c319f-107"><xref:System.Collections.ArrayList> Je definován jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.ListView> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c319f-107">The <xref:System.Collections.ArrayList> is defined as the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> for the <xref:System.Windows.Controls.ListView> control.</span></span>  
+ <span data-ttu-id="c6178-106">Následující příklad ukazuje datových položek, které jsou definovány jako <xref:System.Collections.ArrayList> z <xref:System.DateTime> objekty.</span><span class="sxs-lookup"><span data-stu-id="c6178-106">The following example shows the data items that are defined as an <xref:System.Collections.ArrayList> of <xref:System.DateTime> objects.</span></span> <span data-ttu-id="c6178-107"><xref:System.Collections.ArrayList> Je definován jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.ListView> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c6178-107">The <xref:System.Collections.ArrayList> is defined as the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> for the <xref:System.Windows.Controls.ListView> control.</span></span>  
   
 ```xaml  
 <ListView.ItemsSource>  
@@ -71,7 +57,7 @@ ms.lasthandoff: 01/25/2018
 </ListView.ItemsSource>  
 ```  
   
- <span data-ttu-id="c319f-108">`s` a `p` identifikátory v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky odkazovat na mapování oboru názvů, které jsou definované v metadatech [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="c319f-108">The `s` and `p` identifiers in the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] tags refer to namespace mappings that are defined in the metadata of the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page.</span></span> <span data-ttu-id="c319f-109">Následující příklad ukazuje definici metadat.</span><span class="sxs-lookup"><span data-stu-id="c319f-109">The following example shows the metadata definition.</span></span>  
+ <span data-ttu-id="c6178-108">`s` a `p` identifikátory v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky odkazovat na mapování oboru názvů, které jsou definované v metadatech [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="c6178-108">The `s` and `p` identifiers in the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] tags refer to namespace mappings that are defined in the metadata of the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page.</span></span> <span data-ttu-id="c6178-109">Následující příklad ukazuje definici metadat.</span><span class="sxs-lookup"><span data-stu-id="c6178-109">The following example shows the metadata definition.</span></span>  
   
 ```xaml  
 <Window        
@@ -82,7 +68,7 @@ ms.lasthandoff: 01/25/2018
     xmlns:p="clr-namespace:System;assembly=mscorlib">  
 ```  
   
- <span data-ttu-id="c319f-110">Seřadit podle obsahu sloupce dat, v příkladu definuje obslužnou rutinu pro zpracování <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, která nastane po stisknutí tlačítka záhlaví sloupce.</span><span class="sxs-lookup"><span data-stu-id="c319f-110">To sort the data according to the contents of a column, the example defines an event handler to handle the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event that occurs when you press the column header button.</span></span> <span data-ttu-id="c319f-111">Následující příklad ukazuje, jak určit obslužné rutiny události pro <xref:System.Windows.Controls.GridViewColumnHeader> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c319f-111">The following example shows how to specify an event handler for the <xref:System.Windows.Controls.GridViewColumnHeader> control.</span></span>  
+ <span data-ttu-id="c6178-110">Seřadit podle obsahu sloupce dat, v příkladu definuje obslužnou rutinu pro zpracování <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, která nastane po stisknutí tlačítka záhlaví sloupce.</span><span class="sxs-lookup"><span data-stu-id="c6178-110">To sort the data according to the contents of a column, the example defines an event handler to handle the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event that occurs when you press the column header button.</span></span> <span data-ttu-id="c6178-111">Následující příklad ukazuje, jak určit obslužné rutiny události pro <xref:System.Windows.Controls.GridViewColumnHeader> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c6178-111">The following example shows how to specify an event handler for the <xref:System.Windows.Controls.GridViewColumnHeader> control.</span></span>  
   
 ```xaml  
 <ListView x:Name='lv' Height="150" HorizontalAlignment="Center"   
@@ -91,7 +77,7 @@ ms.lasthandoff: 01/25/2018
  >  
 ```  
   
- <span data-ttu-id="c319f-112">V příkladu definuje obslužnou rutinu události tak, aby směr řazení změny mezi vzestupné pořadí a sestupném pořadí pokaždé, když stisknutí tlačítka záhlaví sloupce.</span><span class="sxs-lookup"><span data-stu-id="c319f-112">The example defines the event handler so that the sort direction changes between ascending order and descending order each time you press the column header button.</span></span> <span data-ttu-id="c319f-113">Následující příklad ukazuje obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="c319f-113">The following example shows the event handler.</span></span>  
+ <span data-ttu-id="c6178-112">V příkladu definuje obslužnou rutinu události tak, aby směr řazení změny mezi vzestupné pořadí a sestupném pořadí pokaždé, když stisknutí tlačítka záhlaví sloupce.</span><span class="sxs-lookup"><span data-stu-id="c6178-112">The example defines the event handler so that the sort direction changes between ascending order and descending order each time you press the column header button.</span></span> <span data-ttu-id="c6178-113">Následující příklad ukazuje obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="c6178-113">The following example shows the event handler.</span></span>  
   
 ```csharp  
 public partial class Window1 : Window  
@@ -210,7 +196,7 @@ Partial Public Class Window1
 End Class
 ```  
   
- <span data-ttu-id="c319f-114">Následující příklad ukazuje algoritmus řazení, která je volána obslužná rutina události k řazení dat.</span><span class="sxs-lookup"><span data-stu-id="c319f-114">The following example shows the sorting algorithm that is called by the event handler to sort the data.</span></span> <span data-ttu-id="c319f-115">Řazení se provádí tak, že vytvoříte novou <xref:System.ComponentModel.SortDescription> struktura.</span><span class="sxs-lookup"><span data-stu-id="c319f-115">The sort is performed by creating a new <xref:System.ComponentModel.SortDescription> structure.</span></span>  
+ <span data-ttu-id="c6178-114">Následující příklad ukazuje algoritmus řazení, která je volána obslužná rutina události k řazení dat.</span><span class="sxs-lookup"><span data-stu-id="c6178-114">The following example shows the sorting algorithm that is called by the event handler to sort the data.</span></span> <span data-ttu-id="c6178-115">Řazení se provádí tak, že vytvoříte novou <xref:System.ComponentModel.SortDescription> struktura.</span><span class="sxs-lookup"><span data-stu-id="c6178-115">The sort is performed by creating a new <xref:System.ComponentModel.SortDescription> structure.</span></span>  
   
 ```csharp  
 private void Sort(string sortBy, ListSortDirection direction)  
@@ -236,9 +222,9 @@ Private Sub Sort(ByVal sortBy As String, ByVal direction As ListSortDirection)
 End Sub  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="c319f-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="c319f-116">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c6178-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="c6178-116">See Also</span></span>  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  
- [<span data-ttu-id="c319f-117">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="c319f-117">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [<span data-ttu-id="c319f-118">GridView – přehled</span><span class="sxs-lookup"><span data-stu-id="c319f-118">GridView Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [<span data-ttu-id="c319f-119">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="c319f-119">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ [<span data-ttu-id="c6178-117">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="c6178-117">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [<span data-ttu-id="c6178-118">GridView – přehled</span><span class="sxs-lookup"><span data-stu-id="c6178-118">GridView Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [<span data-ttu-id="c6178-119">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="c6178-119">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

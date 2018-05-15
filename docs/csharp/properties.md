@@ -1,175 +1,94 @@
 ---
 title: Vlastnosti
 description: Další informace o C# vlastnosti, které obsahují funkce pro ověření, počítaný hodnoty, opožděné vyhodnocení, a vlastnost změnit oznámení.
-keywords: Rozhraní .NET, .NET core
-author: BillWagner
-ms.author: wiwagn
-ms.date: 04/03/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-ms.openlocfilehash: 05e51d527dc3c05301fc85d7717c751dc46bf9fa
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.date: 04/25/2018
+ms.openlocfilehash: d4fa7b6117bec63c41318dd4bcc3850ce55a5907
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="properties"></a><span data-ttu-id="616a5-104">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="616a5-104">Properties</span></span>
+# <a name="properties"></a><span data-ttu-id="b26c4-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="b26c4-103">Properties</span></span>
 
-<span data-ttu-id="616a5-105">Vlastnosti jsou prvotřídní občanů v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="616a5-105">Properties are first class citizens in C#.</span></span> <span data-ttu-id="616a5-106">Jazyk definuje syntaxi, která umožňuje vývojářům psát kód, který přesně vyjadřoval jejich záměr návrhu.</span><span class="sxs-lookup"><span data-stu-id="616a5-106">The language defines syntax that enables developers to write code that accurately expresses their design intent.</span></span>
+<span data-ttu-id="b26c4-104">Vlastnosti jsou prvotřídní občanů v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="b26c4-104">Properties are first class citizens in C#.</span></span> <span data-ttu-id="b26c4-105">Jazyk definuje syntaxi, která umožňuje vývojářům psát kód, který přesně vyjadřoval jejich záměr návrhu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-105">The language defines syntax that enables developers to write code that accurately expresses their design intent.</span></span>
 
-<span data-ttu-id="616a5-107">Vlastnosti chovat jako pole, když k nim.</span><span class="sxs-lookup"><span data-stu-id="616a5-107">Properties behave like fields when they are accessed.</span></span>
-<span data-ttu-id="616a5-108">Na rozdíl od pole, ale vlastnosti jsou u přistupující objekty, které definují příkazy spustit, když je vlastnost získat přístup nebo přiřazená implementován.</span><span class="sxs-lookup"><span data-stu-id="616a5-108">However, unlike fields, properties are implemented with accessors that define the statements executed when a property is accessed or assigned.</span></span>
+<span data-ttu-id="b26c4-106">Vlastnosti chovat jako pole, když k nim.</span><span class="sxs-lookup"><span data-stu-id="b26c4-106">Properties behave like fields when they are accessed.</span></span>
+<span data-ttu-id="b26c4-107">Na rozdíl od pole, ale vlastnosti jsou u přistupující objekty, které definují příkazy spustit, když je vlastnost získat přístup nebo přiřazená implementován.</span><span class="sxs-lookup"><span data-stu-id="b26c4-107">However, unlike fields, properties are implemented with accessors that define the statements executed when a property is accessed or assigned.</span></span>
 
-## <a name="property-syntax"></a><span data-ttu-id="616a5-109">Syntaxe vlastností</span><span class="sxs-lookup"><span data-stu-id="616a5-109">Property Syntax</span></span>
+## <a name="property-syntax"></a><span data-ttu-id="b26c4-108">Syntaxe vlastností</span><span class="sxs-lookup"><span data-stu-id="b26c4-108">Property syntax</span></span>
 
-<span data-ttu-id="616a5-110">Syntaxe vlastností v představuje přirozené rozšíření na pole.</span><span class="sxs-lookup"><span data-stu-id="616a5-110">The syntax for properties is a natural extension to fields.</span></span> <span data-ttu-id="616a5-111">Pole definuje umístění úložiště:</span><span class="sxs-lookup"><span data-stu-id="616a5-111">A field defines a storage location:</span></span>
+<span data-ttu-id="b26c4-109">Syntaxe vlastností v představuje přirozené rozšíření na pole.</span><span class="sxs-lookup"><span data-stu-id="b26c4-109">The syntax for properties is a natural extension to fields.</span></span> <span data-ttu-id="b26c4-110">Pole definuje umístění úložiště:</span><span class="sxs-lookup"><span data-stu-id="b26c4-110">A field defines a storage location:</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Person class with public fields](../../samples/snippets/csharp/properties/Person.cs#1)]
 
-<span data-ttu-id="616a5-112">Obsahuje deklarace pro definici vlastnosti `get` a `set` přistupujícího objektu, který načítá a přiřadí hodnota této vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="616a5-112">A property definition contains declarations for a `get` and `set` accessor that retrieves and assigns the value of that property:</span></span>
+<span data-ttu-id="b26c4-111">Obsahuje deklarace pro definici vlastnosti `get` a `set` přistupujícího objektu, který načítá a přiřadí hodnota této vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="b26c4-111">A property definition contains declarations for a `get` and `set` accessor that retrieves and assigns the value of that property:</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
+[!code-csharp[Person class with public properties](../../samples/snippets/csharp/properties/Person.cs#2)]
 
-    // remaining implementation removed from listing
-}
-```
+<span data-ttu-id="b26c4-112">Syntaxe uvedené výše je *automaticky vlastnost* syntaxe.</span><span class="sxs-lookup"><span data-stu-id="b26c4-112">The syntax shown above is the *auto property* syntax.</span></span> <span data-ttu-id="b26c4-113">Kompilátor generuje umístění úložiště pro pole, který zálohuje vlastnost.</span><span class="sxs-lookup"><span data-stu-id="b26c4-113">The compiler generates the storage location for the field that backs up the property.</span></span> <span data-ttu-id="b26c4-114">Kompilátor také implementuje text `get` a `set` přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="b26c4-114">The compiler also implements the body of the `get` and `set` accessors.</span></span>
 
-<span data-ttu-id="616a5-113">Syntaxe uvedené výše je *automaticky vlastnost* syntaxe.</span><span class="sxs-lookup"><span data-stu-id="616a5-113">The syntax shown above is the *auto property* syntax.</span></span> <span data-ttu-id="616a5-114">Kompilátor generuje umístění úložiště pro pole, který zálohuje vlastnost.</span><span class="sxs-lookup"><span data-stu-id="616a5-114">The compiler generates the storage location for the field that backs up the property.</span></span> <span data-ttu-id="616a5-115">Kompilátor také implementuje text `get` a `set` přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="616a5-115">The compiler also implements the body of the `get` and `set` accessors.</span></span>
+<span data-ttu-id="b26c4-115">V některých případech je nutné inicializovat vlastnost na jinou hodnotu než výchozí u tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-115">Sometimes, you need to initialize a property to a value other than the default for its type.</span></span>  <span data-ttu-id="b26c4-116">C# umožňuje který nastavením hodnoty po pravé složené závorce pro vlastnost.</span><span class="sxs-lookup"><span data-stu-id="b26c4-116">C# enables that by setting a value after the closing brace for the property.</span></span> <span data-ttu-id="b26c4-117">Dáte možná přednost počáteční hodnota `FirstName` vlastnost, která má být prázdný řetězec místo `null`.</span><span class="sxs-lookup"><span data-stu-id="b26c4-117">You may prefer the initial value for the `FirstName` property to be the empty string rather than `null`.</span></span> <span data-ttu-id="b26c4-118">Zadáte, jak je uvedeno níže:</span><span class="sxs-lookup"><span data-stu-id="b26c4-118">You would specify that as shown below:</span></span>
 
-<span data-ttu-id="616a5-116">V některých případech je nutné inicializovat vlastnost na jinou hodnotu než výchozí u tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="616a5-116">Sometimes, you need to initialize a property to a value other than the default for its type.</span></span>  <span data-ttu-id="616a5-117">C# umožňuje který nastavením hodnoty po pravé složené závorce pro vlastnost.</span><span class="sxs-lookup"><span data-stu-id="616a5-117">C# enables that by setting a value after the closing brace for the property.</span></span> <span data-ttu-id="616a5-118">Dáte možná přednost počáteční hodnota `FirstName` vlastnost, která má být prázdný řetězec místo `null`.</span><span class="sxs-lookup"><span data-stu-id="616a5-118">You may prefer the initial value for the `FirstName` property to be the empty string rather than `null`.</span></span> <span data-ttu-id="616a5-119">Zadáte, jak je uvedeno níže:</span><span class="sxs-lookup"><span data-stu-id="616a5-119">You would specify that as shown below:</span></span>
+[!code-csharp[Person class with properties and initializer](../../samples/snippets/csharp/properties/Person.cs#3)]
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; } = string.Empty;
+<span data-ttu-id="b26c4-119">Konkrétní inicializace je nejvhodnější pro vlastnosti jen pro čtení, jak uvidíte později v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="b26c4-119">Specific initialization is most useful for read-only properties, as you'll see later in this article.</span></span>
 
-    // remaining implementation removed from listing
-}
-```
+<span data-ttu-id="b26c4-120">Můžete také definovat úložiště sami, jak je uvedeno níže:</span><span class="sxs-lookup"><span data-stu-id="b26c4-120">You can also define the storage yourself, as shown below:</span></span>
 
-<span data-ttu-id="616a5-120">To je velmi užitečné pro vlastnosti jen pro čtení, jak uvidíte později v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="616a5-120">This is most useful for read-only properties, as you'll see later in this topic.</span></span>
+[!code-csharp[Person class with properties and backing field](../../samples/snippets/csharp/properties/Person.cs#4)]
 
-<span data-ttu-id="616a5-121">Můžete také definovat úložiště sami, jak je uvedeno níže:</span><span class="sxs-lookup"><span data-stu-id="616a5-121">You can also define the storage yourself, as shown below:</span></span>
+<span data-ttu-id="b26c4-121">Pokud implementace vlastností jeden výraz, můžete použít *výraz vozidlo členy* pro mechanismu získání nebo nastavení:</span><span class="sxs-lookup"><span data-stu-id="b26c4-121">When a property implementation is a single expression, you can use *expression-bodied members* for the getter or setter:</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName
-    {
-        get { return firstName; }
-        set { firstName = value; }
-    }
-    private string firstName;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Person class with properties and expression bodied getters and setters](../../samples/snippets/csharp/properties/Person.cs#5)]
 
-<span data-ttu-id="616a5-122">Pokud implementace vlastností jeden výraz, můžete použít *výraz vozidlo členy* pro mechanismu získání nebo nastavení:</span><span class="sxs-lookup"><span data-stu-id="616a5-122">When a property implementation is a single expression, you can use *expression-bodied members* for the getter or setter:</span></span>
+<span data-ttu-id="b26c4-122">Tato zjednodušenou syntaxi se použije v případě potřeby v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="b26c4-122">This simplified syntax will be used where applicable throughout this article.</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName
-    {
-        get => firstName;
-        set => firstName = value;
-    }
-    private string firstName;
-    // remaining implementation removed from listing
-}
-```
+<span data-ttu-id="b26c4-123">Definici vlastnosti uvedené výše je vlastnost pro čtení a zápis.</span><span class="sxs-lookup"><span data-stu-id="b26c4-123">The property definition shown above is a read-write property.</span></span> <span data-ttu-id="b26c4-124">Všimněte si klíčové slovo `value` v přistupující objekt set.</span><span class="sxs-lookup"><span data-stu-id="b26c4-124">Notice the keyword `value` in the set accessor.</span></span> <span data-ttu-id="b26c4-125">`set` Přistupujícího objektu má vždy jeden parametr s názvem `value`.</span><span class="sxs-lookup"><span data-stu-id="b26c4-125">The `set` accessor always has a single parameter named `value`.</span></span> <span data-ttu-id="b26c4-126">`get` Přistupujícího objektu musí vracet hodnotu, která je převést na typ vlastnosti (`string` v tomto příkladu).</span><span class="sxs-lookup"><span data-stu-id="b26c4-126">The `get` accessor must return a value that is convertible to the type of the property (`string` in this example).</span></span>
 
-<span data-ttu-id="616a5-123">Tato zjednodušenou syntaxi se použije v případě potřeby v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="616a5-123">This simplified syntax will be used where applicable throughout this topic.</span></span>
+<span data-ttu-id="b26c4-127">To je základní informace o syntaxi.</span><span class="sxs-lookup"><span data-stu-id="b26c4-127">That's the basics of the syntax.</span></span> <span data-ttu-id="b26c4-128">Existuje mnoho různých variant, které podporují celou řadu různých idioms.</span><span class="sxs-lookup"><span data-stu-id="b26c4-128">There are many different variations that support a variety of different design idioms.</span></span> <span data-ttu-id="b26c4-129">Umožňuje prozkoumat a další možnosti syntaxe pro každou.</span><span class="sxs-lookup"><span data-stu-id="b26c4-129">Let's explore, and learn the syntax options for each.</span></span>
 
-<span data-ttu-id="616a5-124">Definici vlastnosti uvedené výše je vlastnost pro čtení a zápis.</span><span class="sxs-lookup"><span data-stu-id="616a5-124">The property definition shown above is a read-write property.</span></span> <span data-ttu-id="616a5-125">Všimněte si klíčové slovo `value` v přistupující objekt set.</span><span class="sxs-lookup"><span data-stu-id="616a5-125">Notice the keyword `value` in the set accessor.</span></span> <span data-ttu-id="616a5-126">`set` Přistupujícího objektu má vždy jeden parametr s názvem `value`.</span><span class="sxs-lookup"><span data-stu-id="616a5-126">The `set` accessor always has a single parameter named `value`.</span></span> <span data-ttu-id="616a5-127">`get` Přistupujícího objektu musí vracet hodnotu, která je převést na typ vlastnosti (`string` v tomto příkladu).</span><span class="sxs-lookup"><span data-stu-id="616a5-127">The `get` accessor must return a value that is convertible to the type of the property (`string` in this example).</span></span>
- 
-<span data-ttu-id="616a5-128">To je základní informace o syntaxi.</span><span class="sxs-lookup"><span data-stu-id="616a5-128">That's the basics of the syntax.</span></span> <span data-ttu-id="616a5-129">Existuje mnoho různých variant, které podporují celou řadu různých idioms.</span><span class="sxs-lookup"><span data-stu-id="616a5-129">There are many different variations that support a variety of different design idioms.</span></span> <span data-ttu-id="616a5-130">Umožňuje prozkoumat ty a další možnosti syntaxe pro každou.</span><span class="sxs-lookup"><span data-stu-id="616a5-130">Let's explore those, and learn the syntax options for each.</span></span>
+## <a name="scenarios"></a><span data-ttu-id="b26c4-130">Scénáře</span><span class="sxs-lookup"><span data-stu-id="b26c4-130">Scenarios</span></span>
 
-## <a name="scenarios"></a><span data-ttu-id="616a5-131">Scénáře</span><span class="sxs-lookup"><span data-stu-id="616a5-131">Scenarios</span></span>
+<span data-ttu-id="b26c4-131">Výše uvedených příkladech vám ukázal, jedním z nejjednodušších definice vlastnost: vlastnost pro čtení a zápis bez ověřování.</span><span class="sxs-lookup"><span data-stu-id="b26c4-131">The examples above showed one of the simplest cases of property definition: a read-write property with no validation.</span></span> <span data-ttu-id="b26c4-132">Zápis kódu chcete `get` a `set` přístupové objekty, můžete vytvořit mnoho různých scénářů.</span><span class="sxs-lookup"><span data-stu-id="b26c4-132">By writing the code you want in the `get` and `set` accessors, you can create many different scenarios.</span></span>
 
-<span data-ttu-id="616a5-132">Výše uvedených příkladech vám ukázal, jedním z nejjednodušších definice vlastnost: vlastnost pro čtení a zápis bez ověřování.</span><span class="sxs-lookup"><span data-stu-id="616a5-132">The examples above showed one of the simplest cases of property definition: a read-write property with no validation.</span></span> <span data-ttu-id="616a5-133">Zápis kódu chcete `get` a `set` přístupové objekty, můžete vytvořit mnoho různých scénářů.</span><span class="sxs-lookup"><span data-stu-id="616a5-133">By writing the code you want in the `get` and `set` accessors, you can create many different scenarios.</span></span>
+### <a name="validation"></a><span data-ttu-id="b26c4-133">Ověřování</span><span class="sxs-lookup"><span data-stu-id="b26c4-133">Validation</span></span>
 
-### <a name="validation"></a><span data-ttu-id="616a5-134">Ověřování</span><span class="sxs-lookup"><span data-stu-id="616a5-134">Validation</span></span>
+<span data-ttu-id="b26c4-134">Můžete napsat kód ve `set` přistupujícího objektu hodnoty reprezentována vlastnost musí být vždy platné.</span><span class="sxs-lookup"><span data-stu-id="b26c4-134">You can write code in the `set` accessor to ensure that the values represented by a property are always valid.</span></span> <span data-ttu-id="b26c4-135">Předpokládejme například, pro jedno pravidlo `Person` třída je, že název nemůže být prázdný nebo mezer.</span><span class="sxs-lookup"><span data-stu-id="b26c4-135">For example, suppose one rule for the `Person` class is that the name cannot be blank or white space.</span></span> <span data-ttu-id="b26c4-136">By zápisu, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="b26c4-136">You would write that as follows:</span></span>
 
-<span data-ttu-id="616a5-135">Můžete napsat kód ve `set` přistupujícího objektu hodnoty reprezentována vlastnost musí být vždy platné.</span><span class="sxs-lookup"><span data-stu-id="616a5-135">You can write code in the `set` accessor to ensure that the values represented by a property are always valid.</span></span> <span data-ttu-id="616a5-136">Předpokládejme například, pro jedno pravidlo `Person` třída je, že název nemůže být prázdný nebo mezer.</span><span class="sxs-lookup"><span data-stu-id="616a5-136">For example, suppose one rule for the `Person` class is that the name cannot be blank or white space.</span></span> <span data-ttu-id="616a5-137">By zápisu, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="616a5-137">You would write that as follows:</span></span>
+[!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#6)]
 
-```csharp
-public class Person
-{
-    public string FirstName
-    {
-        get => firstName;
-        set
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("First name must not be blank");
-            firstName = value;
-        }
-    }
-    private string firstName;
-    // remaining implementation removed from listing
-}
-```
+<span data-ttu-id="b26c4-137">V předchozím příkladu můžete zjednodušit pomocí`throw` výrazu v rámci ověření Metoda setter vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="b26c4-137">The preceding example can be simplified by using a`throw` expression as part of the property setter validation:</span></span>
 
-<span data-ttu-id="616a5-138">V předchozím příkladu vynucuje pravidlo, že křestní jméno nesmí být prázdný nebo mezer.</span><span class="sxs-lookup"><span data-stu-id="616a5-138">The example above enforces the rule that the first name must not be blank or white space.</span></span> <span data-ttu-id="616a5-139">Pokud vývojář zapíše</span><span class="sxs-lookup"><span data-stu-id="616a5-139">If a developer writes</span></span>
+[!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#7)]
+
+<span data-ttu-id="b26c4-138">V předchozím příkladu vynucuje pravidlo, že křestní jméno nesmí být prázdný nebo mezer.</span><span class="sxs-lookup"><span data-stu-id="b26c4-138">The example above enforces the rule that the first name must not be blank or white space.</span></span> <span data-ttu-id="b26c4-139">Pokud vývojář zapíše</span><span class="sxs-lookup"><span data-stu-id="b26c4-139">If a developer writes</span></span>
 
 ```csharp
 hero.FirstName = "";
 ```
 
-<span data-ttu-id="616a5-140">Vyvolá tuto přiřazení `ArgumentException`.</span><span class="sxs-lookup"><span data-stu-id="616a5-140">That assignment throws an `ArgumentException`.</span></span> <span data-ttu-id="616a5-141">Protože vlastnosti musí mít typ vrácené hodnoty void, sestavu chyb v přistupující objekt set podle došlo k výjimce.</span><span class="sxs-lookup"><span data-stu-id="616a5-141">Because a property set accessor must have a void return type, you report errors in the set accessor by throwing an exception.</span></span>
+<span data-ttu-id="b26c4-140">Vyvolá tuto přiřazení `ArgumentException`.</span><span class="sxs-lookup"><span data-stu-id="b26c4-140">That assignment throws an `ArgumentException`.</span></span> <span data-ttu-id="b26c4-141">Protože vlastnosti musí mít typ vrácené hodnoty void, sestavu chyb v přistupující objekt set podle došlo k výjimce.</span><span class="sxs-lookup"><span data-stu-id="b26c4-141">Because a property set accessor must have a void return type, you report errors in the set accessor by throwing an exception.</span></span>
 
-<span data-ttu-id="616a5-142">Který je jednoduchý případ ověření.</span><span class="sxs-lookup"><span data-stu-id="616a5-142">That is a simple case of validation.</span></span> <span data-ttu-id="616a5-143">Tato stejná syntaxe k ničemu potřeba ve vašem scénáři můžete rozšířit.</span><span class="sxs-lookup"><span data-stu-id="616a5-143">You can extend this same syntax to anything needed in your scenario.</span></span> <span data-ttu-id="616a5-144">Můžete zkontrolovat vztahy mezi různé vlastnosti nebo vyhodnotit proti případné externí podmínky.</span><span class="sxs-lookup"><span data-stu-id="616a5-144">You can check the relationships between different properties, or validate against any external conditions.</span></span> <span data-ttu-id="616a5-145">Všechny platné příkazy jazyka C# jsou platné v přistupujícího objektu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="616a5-145">Any valid C# statements are valid in a property accessor.</span></span>
+<span data-ttu-id="b26c4-142">Tato stejná syntaxe k ničemu potřeba ve vašem scénáři můžete rozšířit.</span><span class="sxs-lookup"><span data-stu-id="b26c4-142">You can extend this same syntax to anything needed in your scenario.</span></span> <span data-ttu-id="b26c4-143">Můžete zkontrolovat vztahy mezi různé vlastnosti nebo vyhodnotit proti případné externí podmínky.</span><span class="sxs-lookup"><span data-stu-id="b26c4-143">You can check the relationships between different properties, or validate against any external conditions.</span></span> <span data-ttu-id="b26c4-144">Všechny platné příkazy jazyka C# jsou platné v přistupujícího objektu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-144">Any valid C# statements are valid in a property accessor.</span></span>
 
-### <a name="read-only"></a><span data-ttu-id="616a5-146">jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="616a5-146">Read-only</span></span>
+### <a name="read-only"></a><span data-ttu-id="b26c4-145">jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="b26c4-145">Read-only</span></span>
 
-<span data-ttu-id="616a5-147">V tomto okamžiku jsou všechny definice vlastností, které jste viděli vlastností čtení/zápisu s veřejné přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="616a5-147">Up to this point, all the property definitions you have seen are read/write properties with public accessors.</span></span> <span data-ttu-id="616a5-148">Toto není platné pouze pro usnadnění přístupu pro vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="616a5-148">That's not the only valid accessibility for properties.</span></span>
-<span data-ttu-id="616a5-149">Můžete vytvořit vlastnosti jen pro čtení, nebo poskytnout jiné usnadnění přístupu k sadě a získat přístupové objekty.</span><span class="sxs-lookup"><span data-stu-id="616a5-149">You can create read-only properties, or give different accessibility to the set and get accessors.</span></span> <span data-ttu-id="616a5-150">Předpokládat, že vaše `Person` třída měli jenom povolit změna hodnoty `FirstName` vlastnost z jiné metody v dané třídě.</span><span class="sxs-lookup"><span data-stu-id="616a5-150">Suppose that your `Person` class should only enable changing the value of the `FirstName` property from other methods in that class.</span></span> <span data-ttu-id="616a5-151">Může poskytnout přistupující objekt set `private` usnadnění místo `public`:</span><span class="sxs-lookup"><span data-stu-id="616a5-151">You could give the set accessor `private` accessibility instead of `public`:</span></span>
+<span data-ttu-id="b26c4-146">V tomto okamžiku jsou všechny definice vlastností, které jste viděli vlastností čtení/zápisu s veřejné přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="b26c4-146">Up to this point, all the property definitions you have seen are read/write properties with public accessors.</span></span> <span data-ttu-id="b26c4-147">Toto není platné pouze pro usnadnění přístupu pro vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-147">That's not the only valid accessibility for properties.</span></span>
+<span data-ttu-id="b26c4-148">Můžete vytvořit vlastnosti jen pro čtení, nebo poskytnout jiné usnadnění přístupu k sadě a získat přístupové objekty.</span><span class="sxs-lookup"><span data-stu-id="b26c4-148">You can create read-only properties, or give different accessibility to the set and get accessors.</span></span> <span data-ttu-id="b26c4-149">Předpokládat, že vaše `Person` třída měli jenom povolit změna hodnoty `FirstName` vlastnost z jiné metody v dané třídě.</span><span class="sxs-lookup"><span data-stu-id="b26c4-149">Suppose that your `Person` class should only enable changing the value of the `FirstName` property from other methods in that class.</span></span> <span data-ttu-id="b26c4-150">Může poskytnout přistupující objekt set `private` usnadnění místo `public`:</span><span class="sxs-lookup"><span data-stu-id="b26c4-150">You could give the set accessor `private` accessibility instead of `public`:</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName { get; private set; }
+[!code-csharp[Using a private setter for a publicly readonly property](../../samples/snippets/csharp/properties/Person.cs#8)]
 
-    // remaining implementation removed from listing
-}
-```
+<span data-ttu-id="b26c4-151">Nyní `FirstName` vlastnost je přístupná z žádný kód, ale lze přiřadit pouze z jiných kódu v `Person` třídy.</span><span class="sxs-lookup"><span data-stu-id="b26c4-151">Now, the `FirstName` property can be accessed from any code, but it can only be assigned from other code in the `Person` class.</span></span>
 
-<span data-ttu-id="616a5-152">Nyní `FirstName` vlastnost je přístupná z žádný kód, ale lze přiřadit pouze z jiných kódu v `Person` třídy.</span><span class="sxs-lookup"><span data-stu-id="616a5-152">Now, the `FirstName` property can be accessed from any code, but it can only be assigned from other code in the `Person` class.</span></span>
+<span data-ttu-id="b26c4-152">Můžete přidat všechny – modifikátor přístupu omezující buď sadu nebo získat přístupové objekty.</span><span class="sxs-lookup"><span data-stu-id="b26c4-152">You can add any restrictive access modifier to either the set or get accessors.</span></span> <span data-ttu-id="b26c4-153">Žádné – modifikátor přístupu u jednotlivých přistupujícího objektu musí být omezenější než – modifikátor přístupu na definici vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-153">Any access modifier you place on the individual accessor must be more limited than the access modifier on the property definition.</span></span> <span data-ttu-id="b26c4-154">Výše je právní protože `FirstName` vlastnost je `public`, ale je přistupující objekt set `private`.</span><span class="sxs-lookup"><span data-stu-id="b26c4-154">The above is legal because the `FirstName` property is `public`, but the set accessor is `private`.</span></span> <span data-ttu-id="b26c4-155">Nelze deklarovat `private` vlastnost s `public` přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-155">You could not declare a `private` property with a `public` accessor.</span></span> <span data-ttu-id="b26c4-156">Vlastnost deklarace lze také deklarovat `protected`, `internal`, `protected internal`, nebo i `private`.</span><span class="sxs-lookup"><span data-stu-id="b26c4-156">Property declarations can also be declared `protected`, `internal`, `protected internal`, or, even `private`.</span></span>
 
-<span data-ttu-id="616a5-153">Můžete přidat všechny – modifikátor přístupu omezující buď sadu nebo získat přístupové objekty.</span><span class="sxs-lookup"><span data-stu-id="616a5-153">You can add any restrictive access modifier to either the set or get accessors.</span></span> <span data-ttu-id="616a5-154">Žádné – modifikátor přístupu u jednotlivých přistupujícího objektu musí být omezenější než – modifikátor přístupu na definici vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="616a5-154">Any access modifier you place on the individual accessor must be more limited than the access modifier on the property definition.</span></span> <span data-ttu-id="616a5-155">Výše je právní protože `FirstName` vlastnost je `public`, ale je přistupující objekt set `private`.</span><span class="sxs-lookup"><span data-stu-id="616a5-155">The above is legal because the `FirstName` property is `public`, but the set accessor is `private`.</span></span> <span data-ttu-id="616a5-156">Nelze deklarovat `private` vlastnost s `public` přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="616a5-156">You could not declare a `private` property with a `public` accessor.</span></span> <span data-ttu-id="616a5-157">Vlastnost deklarace lze také deklarovat `protected`, `internal`, `protected internal`, `private protected` nebo i `private`.</span><span class="sxs-lookup"><span data-stu-id="616a5-157">Property declarations can also be declared `protected`, `internal`, `protected internal`, `private protected` or even `private`.</span></span>   
+<span data-ttu-id="b26c4-157">Taky je platné umístit na víc omezující modifikátor `get` přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-157">It is also legal to place the more restrictive modifier on the `get` accessor.</span></span> <span data-ttu-id="b26c4-158">Například můžete mít `public` vlastnost, ale omezit `get` přistupujícího objektu `private`.</span><span class="sxs-lookup"><span data-stu-id="b26c4-158">For example, you could have a `public` property, but restrict the `get` accessor to `private`.</span></span> <span data-ttu-id="b26c4-159">Tento scénář se zřídka provádí v praxi.</span><span class="sxs-lookup"><span data-stu-id="b26c4-159">That scenario is rarely done in practice.</span></span>
 
-<span data-ttu-id="616a5-158">Taky je platné umístit na víc omezující modifikátor `get` přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="616a5-158">It is also legal to place the more restrictive modifier on the `get` accessor.</span></span> <span data-ttu-id="616a5-159">Například můžete mít `public` vlastnost, ale omezit `get` přistupujícího objektu `private`.</span><span class="sxs-lookup"><span data-stu-id="616a5-159">For example, you could have a `public` property, but restrict the `get` accessor to `private`.</span></span> <span data-ttu-id="616a5-160">Tento scénář se zřídka provádí v praxi.</span><span class="sxs-lookup"><span data-stu-id="616a5-160">That scenario is rarely done in practice.</span></span>
+<span data-ttu-id="b26c4-160">Úpravy vlastností můžete taky omezit tak, aby lze nastavit pouze v konstruktoru nebo inicializátoru vlastnost.</span><span class="sxs-lookup"><span data-stu-id="b26c4-160">You can also restrict modifications to a property so that it can only be set in a constructor or a property initializer.</span></span> <span data-ttu-id="b26c4-161">Můžete upravit `Person` třídy tak následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="b26c4-161">You can modify the `Person` class so as follows:</span></span>
 
-<span data-ttu-id="616a5-161">Úpravy vlastností můžete taky omezit tak, aby lze nastavit pouze v konstruktoru nebo inicializátoru vlastnost.</span><span class="sxs-lookup"><span data-stu-id="616a5-161">You can also restrict modifications to a property so that it can only be set in a constructor or a property initializer.</span></span> <span data-ttu-id="616a5-162">Můžete upravit `Person` třídy tak následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="616a5-162">You can modify the `Person` class so as follows:</span></span>
+[!code-csharp[A readonly auto implemented property](../../samples/snippets/csharp/properties/Person.cs#9)]
 
-```csharp
-public class Person
-{
-    public Person(string firstName)
-    {
-        this.FirstName = firstName;
-    }
-
-    public string FirstName { get; }
-
-    // remaining implementation removed from listing
-}
-```
-
-<span data-ttu-id="616a5-163">Tato funkce se nejčastěji používá pro inicializaci kolekce, které jsou zveřejněné jako jen pro čtení vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="616a5-163">This feature is most commonly used for initializing collections that are exposed as read-only properties:</span></span>
+<span data-ttu-id="b26c4-162">Tato funkce se nejčastěji používá pro inicializaci kolekce, které jsou zveřejněné jako jen pro čtení vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="b26c4-162">This feature is most commonly used for initializing collections that are exposed as read-only properties:</span></span>
 
 ```csharp
 public class Measurements
@@ -178,140 +97,54 @@ public class Measurements
 }
 ```
 
-### <a name="computed-properties"></a><span data-ttu-id="616a5-164">Počítané vlastnosti</span><span class="sxs-lookup"><span data-stu-id="616a5-164">Computed Properties</span></span>
+### <a name="computed-properties"></a><span data-ttu-id="b26c4-163">Počítané vlastnosti</span><span class="sxs-lookup"><span data-stu-id="b26c4-163">Computed properties</span></span>
 
-<span data-ttu-id="616a5-165">Vlastnost není nutné jednoduše vrátí hodnotu pole členů.</span><span class="sxs-lookup"><span data-stu-id="616a5-165">A property does not need to simply return the value of a member field.</span></span> <span data-ttu-id="616a5-166">Můžete vytvořit vlastnosti, které vracejí vypočtená hodnota.</span><span class="sxs-lookup"><span data-stu-id="616a5-166">You can create properties that return a computed value.</span></span> <span data-ttu-id="616a5-167">Umožňuje rozšířit `Person` objekt, který chcete vrátit úplný název, počítaný zřetězením názvy první a poslední:</span><span class="sxs-lookup"><span data-stu-id="616a5-167">Let's expand the `Person` object to return the full name, computed by concatenating the first and last names:</span></span>
+<span data-ttu-id="b26c4-164">Vlastnost není nutné jednoduše vrátí hodnotu pole členů.</span><span class="sxs-lookup"><span data-stu-id="b26c4-164">A property does not need to simply return the value of a member field.</span></span> <span data-ttu-id="b26c4-165">Můžete vytvořit vlastnosti, které vracejí vypočtená hodnota.</span><span class="sxs-lookup"><span data-stu-id="b26c4-165">You can create properties that return a computed value.</span></span> <span data-ttu-id="b26c4-166">Umožňuje rozšířit `Person` objekt, který chcete vrátit úplný název, počítaný zřetězením názvy první a poslední:</span><span class="sxs-lookup"><span data-stu-id="b26c4-166">Let's expand the `Person` object to return the full name, computed by concatenating the first and last names:</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
+[!code-csharp[A computed property](../../samples/snippets/csharp/properties/Person.cs#10)]
 
-    public string LastName { get; set; }
+<span data-ttu-id="b26c4-167">V příkladu výše používá [řetězec interpolace](../csharp/language-reference/tokens/interpolated.md) funkce vytvořit formátovaný řetězec pro úplný název.</span><span class="sxs-lookup"><span data-stu-id="b26c4-167">The example above uses the [string interpolation](../csharp/language-reference/tokens/interpolated.md) feature to create the formatted string for the full name.</span></span>
 
-    public string FullName { get { return $"{FirstName} {LastName}"; } }
-}
-```
+<span data-ttu-id="b26c4-168">Můžete použít také *výraz vozidlo člen*, který poskytuje více stručného způsob, jak vytvořit použití počítaných `FullName` vlastnost:</span><span class="sxs-lookup"><span data-stu-id="b26c4-168">You can also use an *expression-bodied member*, which provides a more succinct way to create the computed `FullName` property:</span></span>
 
-<span data-ttu-id="616a5-168">V příkladu výše používá [řetězec interpolace](../csharp/language-reference/tokens/interpolated.md) funkce vytvořit formátovaný řetězec pro úplný název.</span><span class="sxs-lookup"><span data-stu-id="616a5-168">The example above uses the [string interpolation](../csharp/language-reference/tokens/interpolated.md) feature to create the formatted string for the full name.</span></span>
+[!code-csharp[A computed property using an expression bodied member](../../samples/snippets/csharp/properties/Person.cs#11)]
 
-<span data-ttu-id="616a5-169">Můžete také použít *výraz vozidlo členy*, který poskytuje více stručného způsob, jak vytvořit použití počítaných `FullName` vlastnost:</span><span class="sxs-lookup"><span data-stu-id="616a5-169">You can also use *expression-bodied members*, which provides a more succinct way to create the computed `FullName` property:</span></span>
+<span data-ttu-id="b26c4-169">*Výraz vozidlo členy* použít *výrazu lambda* syntaxe definovat metody, které obsahují jeden výraz.</span><span class="sxs-lookup"><span data-stu-id="b26c4-169">*Expression-bodied members* use the *lambda expression* syntax to define methods that contain a single expression.</span></span> <span data-ttu-id="b26c4-170">Tento výraz zde, vrátí úplný název pro objekt osoby.</span><span class="sxs-lookup"><span data-stu-id="b26c4-170">Here, that expression returns the full name for the person object.</span></span>
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
+### <a name="cached-evaluated-properties"></a><span data-ttu-id="b26c4-171">V mezipaměti vyhodnotí vlastnosti</span><span class="sxs-lookup"><span data-stu-id="b26c4-171">Cached evaluated properties</span></span>
 
-    public string LastName { get; set; }
+<span data-ttu-id="b26c4-172">Můžete kombinovat koncept vypočítané vlastnosti s úložištěm a vytvořit *mezipaměti vyhodnotí vlastnost*.</span><span class="sxs-lookup"><span data-stu-id="b26c4-172">You can mix the concept of a computed property with storage and create a *cached evaluated property*.</span></span>  <span data-ttu-id="b26c4-173">Například můžete aktualizovat `FullName` vlastnost tak, aby formátování řetězce pouze došlo při prvním byl přístup:</span><span class="sxs-lookup"><span data-stu-id="b26c4-173">For example, you could update the `FullName` property so that the string formatting only happened the first time it was accessed:</span></span>
 
-    public string FullName =>  $"{FirstName} {LastName}";
-}
-```
- 
-<span data-ttu-id="616a5-170">*Výraz vozidlo členy* použít *výrazu lambda* syntaxe zadat metodu, která obsahují jeden výraz.</span><span class="sxs-lookup"><span data-stu-id="616a5-170">*Expression-bodied members* use the *lambda expression* syntax to define a method that contain a single expression.</span></span> <span data-ttu-id="616a5-171">Tento výraz zde, vrátí úplný název pro objekt osoby.</span><span class="sxs-lookup"><span data-stu-id="616a5-171">Here, that expression returns the full name for the person object.</span></span>
+[!code-csharp[Caching the value of a computed property](../../samples/snippets/csharp/properties/Person.cs#12)]
 
-### <a name="lazy-evaluated-properties"></a><span data-ttu-id="616a5-172">Opožděné vyhodnotí vlastnosti</span><span class="sxs-lookup"><span data-stu-id="616a5-172">Lazy Evaluated Properties</span></span>
+<span data-ttu-id="b26c4-174">Výše uvedený kód obsahuje chybu, když.</span><span class="sxs-lookup"><span data-stu-id="b26c4-174">The above code contains a bug though.</span></span> <span data-ttu-id="b26c4-175">Pokud kód aktualizace hodnotu buď `FirstName` nebo `LastName` vlastnost, dříve vyhodnotí `fullName` pole je neplatné.</span><span class="sxs-lookup"><span data-stu-id="b26c4-175">If code updates the value of either the `FirstName` or `LastName` property, the previously evaluated `fullName` field is invalid.</span></span> <span data-ttu-id="b26c4-176">Můžete změnit `set` přístupových objektů `FirstName` a `LastName` vlastnost tak, aby `fullName` pole se vypočítává znovu:</span><span class="sxs-lookup"><span data-stu-id="b26c4-176">You modify the `set` accessors of the `FirstName` and `LastName` property so that the `fullName` field is calculated again:</span></span>
 
-<span data-ttu-id="616a5-173">Můžete kombinovat koncept vypočítané vlastnosti s úložištěm a vytvořit *opožděné vyhodnocení vlastnost*.</span><span class="sxs-lookup"><span data-stu-id="616a5-173">You can mix the concept of a computed property with storage and create a *lazy evaluated property*.</span></span>  <span data-ttu-id="616a5-174">Například můžete aktualizovat `FullName` vlastnost tak, aby formátování řetězce pouze došlo při prvním byl přístup:</span><span class="sxs-lookup"><span data-stu-id="616a5-174">For example, you could update the `FullName` property so that the string formatting only happened the first time it was accessed:</span></span>
+[!code-csharp[Invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#13)]
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
+<span data-ttu-id="b26c4-177">Vyhodnotí této poslední verzi `FullName` vlastnost pouze v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="b26c4-177">This final version evaluates the `FullName` property only when needed.</span></span>
+<span data-ttu-id="b26c4-178">Pokud je platný dříve počítané verze, se používá.</span><span class="sxs-lookup"><span data-stu-id="b26c4-178">If the previously calculated version is valid, it's used.</span></span> <span data-ttu-id="b26c4-179">Další změnou stavu by způsobila neplatnost dříve počítané verze, bude přepočítána.</span><span class="sxs-lookup"><span data-stu-id="b26c4-179">If another state change invalidates the previously calculated version, it will be recalculated.</span></span> <span data-ttu-id="b26c4-180">Vývojáři, které používají tuto třídu není potřeba znát podrobnosti implementace.</span><span class="sxs-lookup"><span data-stu-id="b26c4-180">Developers that use this class do not need to know the details of the implementation.</span></span> <span data-ttu-id="b26c4-181">Žádná z těchto interní změny mají vliv na použití objektu osoby.</span><span class="sxs-lookup"><span data-stu-id="b26c4-181">None of these internal changes affect the use of the Person object.</span></span> <span data-ttu-id="b26c4-182">To je klíče důvod pomocí vlastnosti vystavit data členům v objektu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-182">That's the key reason for using Properties to expose data members of an object.</span></span>
 
-    public string LastName { get; set; }
+### <a name="attaching-attributes-to-auto-implemented-properties"></a><span data-ttu-id="b26c4-183">Atributy se připojuje k automaticky implementované vlastnosti</span><span class="sxs-lookup"><span data-stu-id="b26c4-183">Attaching attributes to auto-implemented properties</span></span>
 
-    private string fullName;
-    public string FullName
-    {
-        get
-        {
-            if (fullName == null)
-                fullName = $"{FirstName} {LastName}";
-            return fullName;
-        }
-    }
-}
-```
+<span data-ttu-id="b26c4-184">Počínaje 7.3 C#, atributy pole lze připojit k poli kompilátoru generované zálohování v automaticky implementované vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-184">Beginning with C# 7.3, field attributes can be attached to the compiler generated backing field in auto-implemented properties.</span></span> <span data-ttu-id="b26c4-185">Představte si třeba revize k `Person` třída, která přidává jedinečné číslo `Id` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="b26c4-185">For example, consider a revision to the `Person` class that adds a unique integer `Id` property.</span></span>
+<span data-ttu-id="b26c4-186">Psaní`Id` vlastnost pomocí ve automaticky implementované vlastnosti, ale váš návrh nevyvolá pro uchování `Id` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="b26c4-186">You write the`Id` property using an auto-implemented property, but your design does not call for persisting the `Id` property.</span></span> <span data-ttu-id="b26c4-187"><xref:System.NonSerializedAttribute> Lze připojit pouze na pole není vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-187">The <xref:System.NonSerializedAttribute> can only be attached to fields, not properties.</span></span> <span data-ttu-id="b26c4-188">Můžete připojit <xref:System.NonSerializedAttribute> základní pole pro `Id` vlastnost pomocí `field:` specifikátor pro atribut, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="b26c4-188">You can attach the <xref:System.NonSerializedAttribute> to the backing field for the `Id` property by using the `field:` specifier on the attribute, as shown in the following example:</span></span>
 
-<span data-ttu-id="616a5-175">Výše uvedený kód obsahuje chybu, když.</span><span class="sxs-lookup"><span data-stu-id="616a5-175">The above code contains a bug though.</span></span> <span data-ttu-id="616a5-176">Pokud kód aktualizace hodnotu buď `FirstName` nebo `LastName` vlastnost, dříve vyhodnotí `fullName` pole je neplatné.</span><span class="sxs-lookup"><span data-stu-id="616a5-176">If code updates the value of either the `FirstName` or `LastName` property, the previously evaluated `fullName` field is invalid.</span></span> <span data-ttu-id="616a5-177">Je potřeba aktualizovat `set` přístupových objektů `FirstName` a `LastName` vlastnost tak, aby `fullName` pole se vypočítává znovu:</span><span class="sxs-lookup"><span data-stu-id="616a5-177">You need to update the `set` accessors of the `FirstName` and `LastName` property so that the `fullName` field is calculated again:</span></span>
+[!code-csharp[Attaching attributes to a backing field](../../samples/snippets/csharp/properties/Person.cs#14)]
 
-```csharp
-public class Person
-{
-    private string firstName;
-    public string FirstName
-    {
-        get => firstName;
-        set
-        {
-            firstName = value;
-            fullName = null;
-        }
-    }
+<span data-ttu-id="b26c4-189">Tento postup funguje pro všechny atributy, které můžete připojit k poli zálohování na automaticky implementované vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-189">This technique works for any attribute you attach to the backing field on the auto-implemented property.</span></span>
 
-    private string lastName;
-    public string LastName
-    {
-        get => lastName;
-        set
-        {
-            lastName = value;
-            fullName = null;
-        }
-    }
+### <a name="implementing-inotifypropertychanged"></a><span data-ttu-id="b26c4-190">Implementace rozhraní INotifyPropertyChanged.</span><span class="sxs-lookup"><span data-stu-id="b26c4-190">Implementing INotifyPropertyChanged</span></span>
 
-    private string fullName;
-    public string FullName
-    {
-        get
-        {
-            if (fullName == null)
-                fullName = $"{FirstName} {LastName}";
-            return fullName;
-        }
-    }
-}
-```
+<span data-ttu-id="b26c4-191">Poslední scénář, kde je potřeba psát kód v přistupujícího objektu vlastnosti je podpora <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní sloužící k upozornění klientů vazby dat, která byla hodnota změněna.</span><span class="sxs-lookup"><span data-stu-id="b26c4-191">A final scenario where you need to write code in a property accessor is to support the <xref:System.ComponentModel.INotifyPropertyChanged> interface used to notify data binding clients that a value has changed.</span></span> <span data-ttu-id="b26c4-192">Při změně hodnoty vlastnosti, vyvolá objekt <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged?displayProperty=nameWithType> události označit změny.</span><span class="sxs-lookup"><span data-stu-id="b26c4-192">When the value of a property changes, the object raises the <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged?displayProperty=nameWithType> event to indicate the change.</span></span> <span data-ttu-id="b26c4-193">Datové vazby knihovny, pak aktualizovat zobrazení prvky založené na tuto změnu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-193">The data binding libraries, in turn, update display elements based on that change.</span></span> <span data-ttu-id="b26c4-194">Následující kód ukazuje, jak můžete implementovat `INotifyPropertyChanged` pro `FirstName` vlastnost této třídy osoby.</span><span class="sxs-lookup"><span data-stu-id="b26c4-194">The code below shows how you would implement `INotifyPropertyChanged` for the `FirstName` property of this person class.</span></span>
 
-<span data-ttu-id="616a5-178">Vyhodnotí této poslední verzi `FullName` vlastnost pouze v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="616a5-178">This final version evaluates the `FullName` property only when needed.</span></span>
-<span data-ttu-id="616a5-179">Pokud je platný dříve počítané verze, se používá.</span><span class="sxs-lookup"><span data-stu-id="616a5-179">If the previously calculated version is valid, it's used.</span></span> <span data-ttu-id="616a5-180">Další změnou stavu by způsobila neplatnost dříve počítané verze, bude přepočítána.</span><span class="sxs-lookup"><span data-stu-id="616a5-180">If another state change invalidates the previously calculated version, it will be recalculated.</span></span> <span data-ttu-id="616a5-181">Vývojáři, které používají tuto třídu není potřeba znát podrobnosti implementace.</span><span class="sxs-lookup"><span data-stu-id="616a5-181">Developers that use this class do not need to know the details of the implementation.</span></span> <span data-ttu-id="616a5-182">Žádná z těchto interní změny mají vliv na použití objektu osoby.</span><span class="sxs-lookup"><span data-stu-id="616a5-182">None of these internal changes affect the use of the Person object.</span></span> <span data-ttu-id="616a5-183">To je klíče důvod pomocí vlastnosti vystavit data členům v objektu.</span><span class="sxs-lookup"><span data-stu-id="616a5-183">That's the key reason for using Properties to expose data members of an object.</span></span>
- 
-### <a name="inotifypropertychanged"></a><span data-ttu-id="616a5-184">Rozhraní INotifyPropertyChanged.</span><span class="sxs-lookup"><span data-stu-id="616a5-184">INotifyPropertyChanged</span></span>
+[!code-csharp[invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#15)]
 
-<span data-ttu-id="616a5-185">Poslední scénář, kde je potřeba psát kód v přistupujícího objektu vlastnosti je podpora `INotifyPropertyChanged` rozhraní sloužící k upozornění klientů vazby dat, která byla hodnota změněna.</span><span class="sxs-lookup"><span data-stu-id="616a5-185">A final scenario where you need to write code in a property accessor is to support the `INotifyPropertyChanged` interface used to notify data binding clients that a value has changed.</span></span> <span data-ttu-id="616a5-186">Při změně hodnoty vlastnosti, vyvolá objekt `PropertyChanged` události označit změny.</span><span class="sxs-lookup"><span data-stu-id="616a5-186">When the value of a property changes, the object raises the `PropertyChanged` event to indicate the change.</span></span> <span data-ttu-id="616a5-187">Datové vazby knihovny, pak aktualizovat zobrazení prvky založené na tuto změnu.</span><span class="sxs-lookup"><span data-stu-id="616a5-187">The data binding libraries, in turn, update display elements based on that change.</span></span> <span data-ttu-id="616a5-188">Následující kód ukazuje, jak můžete implementovat `INotifyPropertyChanged` pro `FirstName` vlastnost této třídy osoby.</span><span class="sxs-lookup"><span data-stu-id="616a5-188">The code below shows how you would implement `INotifyPropertyChanged` for the `FirstName` property of this person class.</span></span>
+<span data-ttu-id="b26c4-195">`?.` Operátor je volána *null podmíněný operátor*.</span><span class="sxs-lookup"><span data-stu-id="b26c4-195">The `?.` operator is called the *null conditional operator*.</span></span> <span data-ttu-id="b26c4-196">Před vyhodnocením pravé straně operátoru zkontroluje pro odkaz s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="b26c4-196">It checks for a null reference before evaluating the right side of the operator.</span></span> <span data-ttu-id="b26c4-197">Konečným výsledkem je, že pokud neexistují žádné odběratele, kteří mají `PropertyChanged` událostí, neprovede se kód pro vyvolání události.</span><span class="sxs-lookup"><span data-stu-id="b26c4-197">The end result is that if there are no subscribers to the `PropertyChanged` event, the code to raise the event doesn't execute.</span></span> <span data-ttu-id="b26c4-198">By throw `NullReferenceException` bez zkontrolujte v takovém případě.</span><span class="sxs-lookup"><span data-stu-id="b26c4-198">It would throw a `NullReferenceException` without this check in that case.</span></span> <span data-ttu-id="b26c4-199">Další informace najdete na webu [`events`](delegates-events.md).</span><span class="sxs-lookup"><span data-stu-id="b26c4-199">For more information, see [`events`](delegates-events.md).</span></span> <span data-ttu-id="b26c4-200">Tento příklad také používá nové `nameof` operátor převést z názvu symbolu vlastnost textové reprezentace.</span><span class="sxs-lookup"><span data-stu-id="b26c4-200">This example also uses the new `nameof` operator to convert from the property name symbol to its text representation.</span></span>
+<span data-ttu-id="b26c4-201">Pomocí `nameof` můžete snížit počet chyb, které jste zadali název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b26c4-201">Using `nameof` can reduce errors where you have mistyped the name of the property.</span></span>
 
-```csharp
-public class Person : INotifyPropertyChanged
-{
-    public string FirstName
-    {
-        get => firstName;
-        set
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("First name must not be blank");
-            if (value != firstName)
-            {
-                PropertyChanged?.Invoke(this, 
-                    new PropertyChangedEventArgs(nameof(FirstName)));
-            }
-            firstName = value;
-        }
-    }
-    private string firstName;
+<span data-ttu-id="b26c4-202">Znovu implementace <xref:System.ComponentModel.INotifyPropertyChanged> je příklad případu, kde můžete napsat kód ve vaší přístupových objektů pro podporu scénářů, budete potřebovat.</span><span class="sxs-lookup"><span data-stu-id="b26c4-202">Again, implementing <xref:System.ComponentModel.INotifyPropertyChanged> is an example of a case where you can write code in your accessors to support the scenarios you need.</span></span>
 
-    public event PropertyChangedEventHandler PropertyChanged;
-    // remaining implementation removed from listing
-}
-```
+## <a name="summing-up"></a><span data-ttu-id="b26c4-203">Shrnutí</span><span class="sxs-lookup"><span data-stu-id="b26c4-203">Summing up</span></span>
 
-<span data-ttu-id="616a5-189">`?.` Operátor je volána *null podmíněný operátor*.</span><span class="sxs-lookup"><span data-stu-id="616a5-189">The `?.` operator is called the *null conditional operator*.</span></span> <span data-ttu-id="616a5-190">Před vyhodnocením pravé straně operátoru zkontroluje pro odkaz s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="616a5-190">It checks for a null reference before evaluating the right side of the operator.</span></span> <span data-ttu-id="616a5-191">Konečným výsledkem je, že pokud neexistují žádné odběratele, kteří mají `PropertyChanged` událostí, neprovede se kód pro vyvolání události.</span><span class="sxs-lookup"><span data-stu-id="616a5-191">The end result is that if there are no subscribers to the `PropertyChanged` event, the code to raise the event doesn't execute.</span></span> <span data-ttu-id="616a5-192">By throw `NullReferenceException` bez zkontrolujte v takovém případě.</span><span class="sxs-lookup"><span data-stu-id="616a5-192">It would throw a `NullReferenceException` without this check in that case.</span></span> <span data-ttu-id="616a5-193">Naleznete na stránce na [ `events` ](delegates-events.md) další podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="616a5-193">See the page on [`events`](delegates-events.md) for more details.</span></span> <span data-ttu-id="616a5-194">Tento příklad také používá nové `nameof` operátor převést z názvu symbolu vlastnost textové reprezentace.</span><span class="sxs-lookup"><span data-stu-id="616a5-194">This example also uses the new `nameof` operator to convert from the property name symbol to its text representation.</span></span>
-<span data-ttu-id="616a5-195">Pomocí `nameof` můžete snížit počet chyb, které jste zadali název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="616a5-195">Using `nameof` can reduce errors where you have mistyped the name of the property.</span></span>
-
-<span data-ttu-id="616a5-196">Znovu jedná se o příklad případu, kde můžete napsat kód ve vaší přístupových objektů pro podporu scénáře, které potřebujete.</span><span class="sxs-lookup"><span data-stu-id="616a5-196">Again, this is an example of a case where you can write code in your accessors to support the scenarios you need.</span></span>
-
-## <a name="summing-up"></a><span data-ttu-id="616a5-197">Shrnutí</span><span class="sxs-lookup"><span data-stu-id="616a5-197">Summing up</span></span>
-
-<span data-ttu-id="616a5-198">Vlastnosti jsou formuláře inteligentních polí ve třídě nebo objekt.</span><span class="sxs-lookup"><span data-stu-id="616a5-198">Properties are a form of smart fields in a class or object.</span></span> <span data-ttu-id="616a5-199">Z mimo objekt, zobrazí se jako pole v objektu.</span><span class="sxs-lookup"><span data-stu-id="616a5-199">From outside the object, they appear like fields in the object.</span></span> <span data-ttu-id="616a5-200">Však vlastnosti se dají implementovat pomocí úplné palety funkcí jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="616a5-200">However, properties can be implemented using the full palette of C# functionality.</span></span>
-<span data-ttu-id="616a5-201">Můžete zadat ověřování, jiný usnadnění, opožděné vyhodnocení nebo všechny požadavky potřebné pro vaše scénáře.</span><span class="sxs-lookup"><span data-stu-id="616a5-201">You can provide validation, different accessibility, lazy evaluation, or any requirements your scenarios need.</span></span>
+<span data-ttu-id="b26c4-204">Vlastnosti jsou formuláře inteligentních polí ve třídě nebo objekt.</span><span class="sxs-lookup"><span data-stu-id="b26c4-204">Properties are a form of smart fields in a class or object.</span></span> <span data-ttu-id="b26c4-205">Z mimo objekt, zobrazí se jako pole v objektu.</span><span class="sxs-lookup"><span data-stu-id="b26c4-205">From outside the object, they appear like fields in the object.</span></span> <span data-ttu-id="b26c4-206">Však vlastnosti se dají implementovat pomocí úplné palety funkcí jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="b26c4-206">However, properties can be implemented using the full palette of C# functionality.</span></span>
+<span data-ttu-id="b26c4-207">Můžete zadat ověřování, jiný usnadnění, opožděné vyhodnocení nebo všechny požadavky potřebné pro vaše scénáře.</span><span class="sxs-lookup"><span data-stu-id="b26c4-207">You can provide validation, different accessibility, lazy evaluation, or any requirements your scenarios need.</span></span>
