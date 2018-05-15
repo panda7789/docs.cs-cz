@@ -1113,7 +1113,7 @@
 # [Průvodce ML.NET](machine-learning/index.md)
 ## [Kurzy](machine-learning/tutorials/index.md)
 ### [Analýza mínění (klasifikace)](machine-learning/tutorials/sentiment-analysis.md)
-### [Předpověď doby cesty taxíkem (regrese)](machine-learning/tutorials/taxi-fare.md)
+### [Předpověď ceny jízdy taxíkem (regrese)](machine-learning/tutorials/taxi-fare.md)
 ## [Prostředky](machine-learning/resources/index.md)
 ### [Glosář strojového učení](machine-learning/resources/glossary.md)
 ### [Základy strojového učení](machine-learning/resources/basics.md)
