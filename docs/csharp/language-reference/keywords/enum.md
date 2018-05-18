@@ -1,4 +1,4 @@
-﻿---
+---
 title: enum (Referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 72feb6ee25070a6930b01b69e0a726041d34b0c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9714277f87095b709e37b582cd3435374d9a1555
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 `enum` – Klíčové slovo se používá k deklaraci výčet, odlišné typ, který se skládá ze sady pojmenované konstanty názvem seznamu enumerátor.  
@@ -20,13 +20,13 @@ ms.lasthandoff: 05/04/2018
   
  Ve výchozím nastavení první enumerátor má hodnotu 0 a hodnotu každé následných enumerátor je zvýšenou o hodnotu 1. Například v následujícím výčtu `Sat` je `0`, `Sun` je `1`, `Mon` je `2`, a tak dále.  
   
-```  
+```csharp  
 enum Day {Sat, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
  Výčty můžete použít inicializátory přepsat výchozí hodnoty, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp  
 enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
@@ -34,11 +34,11 @@ enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
   
  Každý typ výčtu je základní typ, který mohou být jakéhokoli typu integrální s výjimkou [char](../../../csharp/language-reference/keywords/char.md). Základní typ výčtu elementů výchozí hodnota je [int](../../../csharp/language-reference/keywords/int.md). Výčet integrální jiného typu, například deklarovat [bajtů](../../../csharp/language-reference/keywords/byte.md), použijte středník po identifikátor následovaný typem, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp  
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
- Seznam schválených typy výčtu [`byte`](../../../csharp/language-reference/keywords/byte.md), [`sbyte`](../../../csharp/language-reference/keywords/sbyte.md), [`short`](../../../csharp/language-reference/keywords/short.md), [`ushort`](../../../csharp/language-reference/keywords/ushort.md), [`int`](../../../csharp/language-reference/keywords/int.md), [`uint`](../../../csharp/language-reference/keywords/uint.md), [`long`](../../../csharp/language-reference/keywords/long.md) nebo [`ulong`](../../../csharp/language-reference/keywords/ulong.md).  
+ Seznam schválených typy výčtu [byte](../../../csharp/language-reference/keywords/byte.md), [sbyte](../../../csharp/language-reference/keywords/sbyte.md), [short](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), [int](../../../csharp/language-reference/keywords/int.md), [uint](../../../csharp/language-reference/keywords/uint.md), [long](../../../csharp/language-reference/keywords/long.md), nebo [ulong](../../../csharp/language-reference/keywords/ulong.md).  
   
  Proměnné typu `Day` lze přiřadit žádnou hodnotu v rozsahu základní typ; hodnoty nejsou omezeny na pojmenované konstanty.  
   
@@ -49,7 +49,7 @@ enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
   
  Základní typ Určuje, jak velké úložiště je přidělen pro každý enumerátor. Nicméně je nutné převést z explicitní přetypování `enum` typu integrální typ. Například následující příkaz přiřadí enumerátor `Sun` proměnné typu [int](../../../csharp/language-reference/keywords/int.md) pomocí přetypování převést z `enum` k `int`.  
   
-```  
+```csharp  
 int x = (int)Day.Sun;  
 ```  
   

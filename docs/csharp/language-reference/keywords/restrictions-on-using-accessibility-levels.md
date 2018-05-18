@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: bbe358822e885e5ddaba4cb9d982e89cefe1921e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd2f9b11523aac1cb720559db44aa36029d52ddb
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní přístupu (Referenční dokumentace jazyka C#)
 Když zadáte v deklaraci typu, zkontrolujte, zda usnadnění úroveň tohoto typu je závislé na úrovni přístupu člena nebo jiného typu. Například přímé základní třídu, musí být dostupné jako odvozené třídy. Následující deklarace způsobit chyby kompilátoru, protože základní třída `BaseClass` je méně přístupný než `MyClass`:  
   
-```  
+```csharp  
 class BaseClass {...}  
 public class MyClass: BaseClass {...} // Error  
 ```  
@@ -37,7 +37,7 @@ public class MyClass: BaseClass {...} // Error
 ## <a name="example"></a>Příklad  
  Následující příklad obsahuje chybné deklarace různých typů. Komentář následující každá deklarace značí chybu očekávané kompilátoru.  
   
-```  
+```csharp  
 // Restrictions on Using Accessibility Levels  
 // CS0052 expected as well as CS0053, CS0056, and CS0057  
 // To make the program work, change access level of both class B  

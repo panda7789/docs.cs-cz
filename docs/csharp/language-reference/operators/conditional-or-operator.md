@@ -8,11 +8,11 @@ helpviewer_keywords:
 - conditional-OR operator (||) [C#]
 - '|| operator [C#]'
 ms.assetid: 7d442d8e-400d-421f-b4d2-034bf82bcbdc
-ms.openlocfilehash: ce0834874f9c5b4c5154a798492600d6ac45a4c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d22e57d097edb0fe52b604e9c6431e167c410f0b
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="-operator-c-reference"></a>|| – operátor (Referenční dokumentace jazyka C#)
 Operátor podmíněného OR (`||`) provede logickou funkcí – nebo jeho `bool` operandy. Pokud je výsledkem první operand `true`, druhý operand, nebude hodnocen. Pokud je výsledkem první operand `false`, druhý operátor určuje, zda výraz OR jako celek vyhodnotí `true` nebo `false`.  
@@ -20,13 +20,13 @@ Operátor podmíněného OR (`||`) provede logickou funkcí – nebo jeho `bool`
 ## <a name="remarks"></a>Poznámky  
  Operaci  
   
-```  
+```csharp  
 x || y  
 ```  
   
  odpovídá operaci  
   
-```  
+```csharp  
 x | y  
 ```  
   

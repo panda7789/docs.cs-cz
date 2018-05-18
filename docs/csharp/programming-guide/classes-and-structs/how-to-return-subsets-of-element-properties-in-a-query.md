@@ -4,11 +4,11 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: f6ec0067cf993018cf58f397e2ad06939852a952
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b43e7e3aafda5ee5b6a49f271f725fb8eeeca59
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Postupy: Vrácení podmnožin vlastností elementu v dotazu (Průvodce programováním v C#)
 Použijte anonymní typ ve výrazu dotazu, pokud obě tyto podmínky:  
@@ -36,7 +36,7 @@ select new { First = student.FirstName, Last = student.LastName };
   
  Pokud to zkusíte v předchozím příkladu, pak se `Console.WriteLine` příkaz musíte změnit taky:  
   
-```  
+```csharp  
 Console.WriteLine(student.First + " " + student.Last);  
 ```  
   

@@ -2,11 +2,11 @@
 title: Struktury (F#)
 description: 'Další informace o F # strukturu, typ compact objektu, který je často efektivnější než třída pro typy s malé množství dat a jednoduché chování.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 728533e24dcfae219ae5ab3d410389e95fcfaee1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 57c4148aec1d6a19237d74aa99824ef475c3632e
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="structures"></a>Struktury
 
@@ -18,13 +18,13 @@ A *struktura* je typu compact objektu, který může být efektivnější než t
 [ attributes ]
 type [accessibility-modifier] type-name =
     struct
-        type-definition-elements
+        type-definition-elements-and-members
     end
 // or
 [ attributes ]
 [<StructAttribute>]
 type [accessibility-modifier] type-name =
-    type-definition-elements
+    type-definition-elements-and-members
 ```
 
 ## <a name="remarks"></a>Poznámky
@@ -32,7 +32,7 @@ Struktury jsou *typů hodnot*, což znamená, že jsou uložené přímo v záso
 
 V předchozích syntaxi jsou uvedeny dva formuláře. První není prostá syntaxe, ale přesto často se používá proto, že při použití `struct` a `end` klíčová slova, můžete vynechat `StructAttribute` atribut, který se zobrazí v druhý formulář. Parametr lze zapsat `StructAttribute` těsně `Struct`.
 
-*Elementy definice typu* v předchozí syntaxi představuje člen deklarace a definice. Struktury může mít konstruktory a měnitelný a neměnné pole a jejich můžou deklarovat členy a implementace rozhraní. Další informace najdete v tématu [členy](members/index.md).
+*– Definice – elementy a členy typu* v předchozí syntaxi představuje člen deklarace a definice. Struktury může mít konstruktory a měnitelný a neměnné pole a jejich můžou deklarovat členy a implementace rozhraní. Další informace najdete v tématu [členy](members/index.md).
 
 Struktury, nemůže se podílet na dědičnosti, nemůže obsahovat `let` nebo `do` vazby, a nemůže rekurzivně obsahovat pole vlastní typu (i když mohou obsahovat referenční buňky, které odkazují na vlastní typ).
 

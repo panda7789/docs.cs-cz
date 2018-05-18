@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-ms.openlocfilehash: e2524c907781bd3ce618acb0bdd087acb4b10f75
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3683b51dfd0ef653ab8bfff6705b96a37e21a10a
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="double-c-reference"></a>double (Referenční dokumentace jazyka C#)
 `double` – Klíčové slovo označuje jednoduchý typ, který ukládá 64bitové hodnoty s plovoucí desetinnou čárkou. Následující tabulka uvádí přesnost a přibližnou rozsah `double` typu.  
@@ -23,7 +23,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="literals"></a>Literály  
  Ve výchozím nastavení, je skutečně číselný literál na pravé straně operátoru přiřazení považován za `double`. Ale pokud budete chtít celé číslo považován za `double`, použít přípona d nebo D, například:  
   
-```  
+```csharp  
 double x = 3D;  
 ```  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - type conversion [C#], as keyword
 - as keyword [C#]
 ms.assetid: a9be126b-cbf4-4990-a70d-d0e1983cad0e
-ms.openlocfilehash: 6ea5346119259d70ac1a42f3f72a8b2746b8f536
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 092c30a858df7baeb35bdf28bae53802fb0916d4
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="as-c-reference"></a>as (Referenční dokumentace jazyka C#)
 Můžete použít `as` operátor provést určité typy převody mezi kompatibilní odkazové typy nebo [typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md). Následující kód ukazuje příklad.  
@@ -22,13 +22,13 @@ Můžete použít `as` operátor provést určité typy převody mezi kompatibil
 ## <a name="remarks"></a>Poznámky  
  `as` Operátor je jako operaci přetypování. Nicméně, pokud není možné, převod `as` vrátí `null` místo vyvolání k výjimce. Podívejte se na následující příklad:  
   
-```  
+```csharp  
 expression as type  
 ```  
   
  Kód je ekvivalentní výrazu následující vyjma toho, že `expression` proměnná vyhodnotí pouze jednou.  
   
-```  
+```csharp  
 expression is type ? (type)expression : (type)null  
 ```  
   

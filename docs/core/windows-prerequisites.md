@@ -3,12 +3,12 @@ title: Předpoklady pro .NET Core v systému Windows
 description: Zjistěte, co závislosti, musíte na váš Windows počítače pro vývoj a spouštění aplikací .NET Core.
 author: JRAlexander
 ms.author: johalex
-ms.date: 04/24/2018
-ms.openlocfilehash: 7c6f39f004ebc39ca714ce419a38d842fcf8f0cb
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.date: 05/14/2018
+ms.openlocfilehash: f27070c08755e5b650e32e01011bb7bac669c82d
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core v systému Windows
 
@@ -28,11 +28,11 @@ Tento článek ukazuje závislosti potřebné k vývoji aplikací .NET Core v sy
 * Windows Server 2008 R2 SP1 (celého serveru nebo jádra serveru)
 * Windows Server 2012 SP1 (celého serveru nebo jádra serveru)
 * Windows Server 2012 R2 (celého serveru nebo jádra serveru)
-* Windows Server 2016 (celý Server, Server Core nebo Nano Server)
+* Windows Server 2016 nebo novější verze (celý Server, Server Core nebo Nano Server)
 
 V tématu [.NET Core 2.x – podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy.
 
-V tématu [podporované verze operačního systému aplikace .NET Core 1.x](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy.
+V tématu [.NET Core 1.x – podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy.
 
 ## <a name="net-core-dependencies"></a>.NET core závislosti
 
@@ -46,7 +46,13 @@ V tématu [podporované verze operačního systému aplikace .NET Core 1.x](http
 * Instalaci .NET Core prostřednictvím *.zip* souboru. To může zahrnovat servery sestavení nebo položek konfigurace nebo disku CD.
 
 > [!NOTE]
-> *Windows 8.1 a starší verze, nebo Windows Server 2012 R2 a starších verzích:* Ujistěte se, že je aktuální instalace systému Windows a zahrnuje [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) který lze nainstalovat pomocí služby Windows Update. Pokud nemáte k dispozici tato aktualizace instalována, zobrazí chybu, při spuštění aplikace .NET Core takto: `The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
+> **Windows 8.1 a starší verze, nebo Windows Server 2012 R2 a starších verzích:**
+>
+> Ujistěte se, že je aktuální instalace systému Windows a zahrnuje [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows), který lze nainstalovat pomocí služby Windows Update. Pokud nemáte tato aktualizace instalována, zobrazí při spuštění aplikace .NET Core chybu takto: `The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
+>
+> **Pro systém Windows 7 nebo Windows Server 2008 R2:**
+>
+> Kromě KB2999226, ujistěte se, máte také [KB2533623](https://support.microsoft.com/en-us/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) nainstalována. Pokud nemáte tato aktualizace instalována, zobrazí se zpráva podobná následující při spuštění aplikace .NET Core: `The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`.
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky s Visual Studio 2017
 
@@ -96,6 +102,6 @@ Vývoj aplikací .NET Core 1.x v sadě Visual Studio, [stáhněte a nainstalujte
 >
 > * Na **pomoci** nabídce zvolte **o sadě Microsoft Visual Studio**.
 > * V **o sadě Microsoft Visual Studio** dialogové okno, zkontrolujte číslo verze.
->   * Pro aplikace .NET Core 2.1 Preview 1, Visual Studio 2017 15,6 operací verze Preview 6 nebo vyšší.
+>   * Pro aplikace .NET Core 2.1 RC, Visual Studio 2017 verze 15.7 nebo vyšší.
 >   * Pro aplikace .NET Core 2.0, Visual Studio 2017 verze 15.3 nebo vyšší.
 >   * Pro aplikace .NET Core 1.x, Visual Studio 2017 verze 15,0 nebo vyšší.

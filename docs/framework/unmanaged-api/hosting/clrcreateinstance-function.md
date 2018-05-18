@@ -17,11 +17,11 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f52cd6555e852a454ac56d0557f233def585dc2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ab16d78b210c2824bf6172f80d1b15e3533a05b
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="clrcreateinstance-function"></a>CLRCreateInstance – funkce
 Poskytuje jedno z tři rozhraní: [iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [iclrmetahostpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), nebo [iclrdebugging –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
@@ -57,7 +57,7 @@ HRESULT CLRCreateInstance(
 ## <a name="remarks"></a>Poznámky  
  Následující tabulka uvádí podporované kombinace pro `clsid` a `riid`.  
   
-|`rclsid`|`riid`|  
+|`clsid`|`riid`|  
 |--------------|------------|  
 |CLSID_CLRMetaHost|IID_ICLRMetaHost|  
 |CLSID_CLRMetaHostPolicy|IID_ICLRMetaHostPolicy|  

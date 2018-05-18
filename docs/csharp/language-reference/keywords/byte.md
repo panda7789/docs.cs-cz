@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - byte keyword [C#]
 ms.assetid: 111f1db9-ca32-4f0e-b497-4783517eda47
-ms.openlocfilehash: 71af48f1cbfa82bafdd4888f0985cd88d44976b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ac913bd0d1bd178211ad26a720a80e22877c961
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="byte-c-reference"></a>byte (Referenční dokumentace jazyka C#)
 
@@ -45,27 +45,27 @@ Níže jsou uvedeny některé příklady.
   
  Nelze implicitně převést bez literál číselné typy větší velikost úložiště na `byte`. Další informace o velikosti úložiště celočíselných typů najdete v tématu [tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md). Zvažte například následující dva `byte` proměnné `x` a `y`:  
   
-```  
+```csharp  
 byte x = 10, y = 20;  
 ```  
   
  Následující příkaz přiřazení bude k chybě kompilace vytvořit, protože výsledkem aritmetické výrazu na pravé straně operátoru přiřazení `int` ve výchozím nastavení.  
   
-```  
+```csharp  
 // Error: conversion from int to byte:  
 byte z = x + y;  
 ```  
   
  Chcete-li tento problém vyřešit, použijte přetypování:  
   
-```  
+```csharp  
 // OK: explicit conversion:  
 byte z = (byte)(x + y);  
 ```  
   
  Je ale možné použít následující příkazy, kde Cílová proměnná má stejnou velikost úložiště nebo větší velikost úložiště:  
   
-```  
+```csharp  
 int x = 10, y = 20;  
 int m = x + y;  
 long n = x + y;  
@@ -73,7 +73,7 @@ long n = x + y;
   
  Navíc není žádný implicitní převod z typů s plovoucí desetinnou čárkou na `byte`. Například následující příkaz vygeneruje Chyba kompilátoru, pokud se používá explicitní přetypování:  
   
-```  
+```csharp  
 // Error: no implicit conversion from double:  
 byte x = 3.0;   
 // OK: explicit conversion:  
@@ -82,14 +82,14 @@ byte y = (byte)3.0;
   
  Při volání přetížené metody, se musí použít přetypování. Zvažte například následující přetížené metody, které používají `byte` a [int](../../../csharp/language-reference/keywords/int.md) parametry:  
   
-```  
+```csharp  
 public static void SampleMethod(int i) {}  
 public static void SampleMethod(byte b) {}  
 ```  
   
  Pomocí `byte` přetypování zaručuje, že správný typ je volána, například:  
   
-```  
+```csharp  
 // Calling the method with the int parameter:  
 SampleMethod(5);  
 // Calling the method with the byte parameter:  

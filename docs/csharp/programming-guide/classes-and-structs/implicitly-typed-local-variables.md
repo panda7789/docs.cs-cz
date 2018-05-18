@@ -5,11 +5,11 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: a3cb2490247a6e9fdb51b73d405173d29263393c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c6c2bae39764e78fad2510bbc8937b0ac790bef5
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (Průvodce programováním v C#)
 Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu. `var` – Klíčové slovo instruuje kompilátor, aby odvození typu proměnné z výrazu na pravé straně příkazu inicializace. Odvozené typ může být předdefinovaný typ, anonymní typ, uživatelem definovaný typ nebo typem definovaným v knihovně tříd rozhraní .NET Framework. Další informace o tom, jak inicializovat pole s `var`, najdete v části [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
@@ -26,19 +26,19 @@ Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu.
   
 -   V [pro](../../../csharp/language-reference/keywords/for.md) příkaz inicializace.  
   
-    ```  
+    ```csharp  
     for(var x = 1; x < 10; x++)  
     ```  
   
 -   V [foreach](../../../csharp/language-reference/keywords/foreach-in.md) příkaz inicializace.  
   
-    ```  
+    ```csharp  
     foreach(var item in list){...}  
     ```  
   
 -   V [pomocí](../../../csharp/language-reference/keywords/using-statement.md) příkaz.  
   
-    ```  
+    ```csharp  
     using (var file = new StreamReader("C:\\myfile.txt")) {...}  
     ```  
   

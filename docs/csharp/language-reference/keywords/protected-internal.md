@@ -2,11 +2,11 @@
 title: chráněné vnitřní (C# referenční dokumentace)
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: a2a649f0fdb924c26380e7261bd935be736f0665
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ba2c811a1a4f095bcee65ed6678a7dc50fe94db
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# referenční dokumentace)
 `protected internal` – Kombinace klíčových slov je modifikátor přístupu členů. Chráněný člen interní je přístupný z aktuální sestavení nebo z typů, které jsou odvozeny od obsahující třídy. Porovnání `protected internal` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
@@ -14,7 +14,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="example"></a>Příklad  
  Chráněný vnitřní člen základní třídy je přístupná z libovolného typu v rámci jeho obsahující sestavení. Je také přístupné v odvozené třídě nachází v jiném sestavení pouze v případě, že dojde k přístupu pomocí proměnné typu odvozené třídy. Zvažte například následující segment kódu:  
 
-```
+```csharp
 // Assembly1.cs  
 // Compile with: /target:library  
 public class BaseClass   
@@ -32,7 +32,7 @@ class TestAccess
 }  
 ```  
   
-```  
+```csharp  
 // Assembly2.cs  
 // Compile with: /reference:Assembly1.dll  
 class DerivedClass : BaseClass   

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-ms.openlocfilehash: e39afea9fe11cdab9e5a6623499a96468aa9d091
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 85911647c089d51bafe2d65d1c5db907599b06d4
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují vývojářů a návrhářů, k vytvoření zajímavé vizuální efekty a k vytvoření konzistentního vzhledu jejich produktu. I když vývojáři a nebo Návrháři můžete přizpůsobit vzhled hojně na základě aplikace aplikace, je nutné povolit sdílení výskytu v rámci i mezi aplikacemi a údržby silné stylů a Ukázka modelu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje tento model.  
@@ -38,7 +38,7 @@ ms.lasthandoff: 05/04/2018
   
  ![Ve ListView](../../../../docs/framework/wpf/controls/media/stylingintro-triggers.png "StylingIntro_triggers")  
   
- Tato ukázka jednoduché fotografií používá stylů a ukázka k vytvoření vizuálně působivé možnosti uživatele. Ukázka má dva <xref:System.Windows.Controls.TextBlock> elementy a <xref:System.Windows.Controls.ListBox> ovládací prvek, který je vázaný na seznam bitové kopie. Kompletní příklad, najdete v části [Úvod do stylů a ukázka ukázková](http://go.microsoft.com/fwlink/?LinkID=160010).  
+ Tato ukázka jednoduché fotografií používá stylů a ukázka k vytvoření vizuálně působivé možnosti uživatele. Ukázka má dva <xref:System.Windows.Controls.TextBlock> elementy a <xref:System.Windows.Controls.ListBox> ovládací prvek, který je vázaný na seznam bitové kopie. Kompletní příklad, najdete v části [Úvod do stylů a ukázka ukázková](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 <a name="styling_basics"></a>   
 ## <a name="style-basics"></a>Základní informace o stylu  

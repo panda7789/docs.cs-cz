@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Instalace sestavení do globální mezipaměti sestavení"
-ms.custom: 
+title: 'Postupy: Instalace sestavení do globální mezipaměti sestavení'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
 - Gacutil.exe
@@ -15,16 +8,13 @@ helpviewer_keywords:
 - global assembly cache, installing assemblies
 - Global Assembly Cache tool
 ms.assetid: a7e6f091-d02c-49ba-b736-7295cb0eb743
-caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 98dd4d1e75fc37820a1b1f4eccfa48f978772687
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ed6519cb6bb7006f62ef83cd6baf8f2e32a44d19
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>Postupy: Instalace sestavení do globální mezipaměti sestavení
 Existují dva způsoby instalace sestavení se silným názvem do globální mezipaměti sestavení (GAC):  
@@ -74,7 +64,7 @@ gacutil -i hello.dll
   
 4.  Chcete-li zahájit proces přidávání sestavení do mezipaměti GAC, zvolte **soubory**, který je v části **zadejte Data aplikací** krok v **Průzkumníku řešení**.  
   
-5.  V **složek na cílovém počítači** podokně otevřete místní nabídku pro **cílový počítač**a potom zvolte **zobrazit předdefinované složku**, **[GlobalAssemblyCache]**.  
+5.  V **složek na cílovém počítači** podokně otevřete místní nabídku pro **cílový počítač**a potom zvolte **zobrazit předdefinované složku**, **[[ GlobalAssemblyCache]**.  
   
 6.  V případě jednotlivých projektů v rámci řešení obsahující sestavení, které chcete nainstalovat do globální mezipaměti sestavení:  
   

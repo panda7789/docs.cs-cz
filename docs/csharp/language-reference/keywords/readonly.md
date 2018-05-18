@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: c6071e7a3c3bfcc96c57ecb34632a911835685fd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d2f8a2f192dc319ad806aeef4bfbaeecc44b07a3
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 `readonly` – Klíčové slovo je modifikátor, který můžete použít na pole. Pokud obsahuje deklaraci pole `readonly` modifikátor, přiřazení pole zaváděné deklaraci může dojít pouze v rámci deklarace nebo v konstruktoru ve stejné třídě.  
@@ -25,7 +25,7 @@ ms.lasthandoff: 05/04/2018
   
 -   Pokud proměnná je inicializován v deklaraci, například:  
   
-    ```  
+    ```csharp  
     public readonly int y = 5;  
     ```  
   
@@ -34,7 +34,7 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  `readonly` – Klíčové slovo se liší od [const](../../../csharp/language-reference/keywords/const.md) – klíčové slovo. A `const` pole lze inicializovat pouze na deklaraci pole. A `readonly` pole jde inicializovat na deklaraci nebo v konstruktoru. Proto `readonly` pole může mít různé hodnoty v závislosti na konstruktoru použít. Navíc při `const` pole je argumentem konstanta kompilaci `readonly` pole lze použít pro modul runtime konstanty jako v následujícím příkladu:  
   
-```  
+```csharp  
 public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;  
 ```  
   

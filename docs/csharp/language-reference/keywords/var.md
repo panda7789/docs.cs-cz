@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - var keyword [C#]
 ms.assetid: 0777850a-2691-4e3e-927f-0c850f5efe15
-ms.openlocfilehash: 58c7e29840cfb536e2d1afd48b0ff2ca65b1c0c2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c311993ebcc5b5072959b2e79242bcdabd6de913
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="var-c-reference"></a>var (Referenční dokumentace jazyka C#)
 Od verze Visual C# 3.0, proměnné, které jsou deklarované v oboru metoda může mít implicitní "typ" `var`. Implicitně typovaná místní proměnné je silného typu stejně, jako kdyby měl typ deklarovaný sami, ale kompilátor Určuje typ. Následujících dvou prohlášení `i` stejné funkce:  
   
-```  
+```csharp  
 var i = 10; // implicitly typed  
 int i = 10; //explicitly typed  
 ```  

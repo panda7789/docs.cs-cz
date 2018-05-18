@@ -6,11 +6,11 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: bf25ddda2c7e381f0b43798b28179b18338d71cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2e63953e130dc83ce83bcdd2f8e9a2ffc7fe5f3
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro klienta kód napsaný v jazyce C#, F # a Visual Basic není žádný zřejmá rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definované v typu.  
@@ -29,13 +29,13 @@ Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům
   
  `WordCount` Metoda rozšíření můžete začlenění do oboru s tímto `using` – direktiva:  
   
-```  
+```csharp  
 using ExtensionMethods;  
 ```  
   
  A může být volána z aplikace pomocí následující syntaxe:  
   
-```  
+```csharp  
 string s = "Hello Extension Methods";  
 int i = s.WordCount();  
 ```  
@@ -46,7 +46,7 @@ int i = s.WordCount();
   
  Metody rozšíření budete pravděpodobně mnohem častěji volat, než implementovat své vlastní. Vzhledem k tomu, že metody rozšíření jsou volány pomocí syntaxe metody instance, není vyžadována žádná zvláštní znalost, abyste je mohli použít v klientském kódu. Pokud chcete povolit rozšiřující metody pro konkrétní typ, stačí přidat `using` direktivy pro obor názvů, ve kterém jsou definovány metody. Například pokud chcete použít standardní operátory dotazu, přidejte tuto `using` direktivy kódu:  
   
-```  
+```csharp  
 using System.Linq;  
 ```  
   

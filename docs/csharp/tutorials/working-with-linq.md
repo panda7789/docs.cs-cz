@@ -3,11 +3,11 @@ title: Práce s dotazy LINQ
 description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, zápis metody pro použití v dotazech LINQ a rozlišovat přes a opožděné vyhodnocení.
 ms.date: 03/28/2017
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 17c294a372a05a05d3893fce7b3adc426c6305fd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e5f9baab13cddfb9e294de1e1a6ce967ccbe0813
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="working-with-linq"></a>Práce s dotazy LINQ
 
@@ -200,7 +200,7 @@ Spustit ukázku a v tématu jak z balíčku Přeuspořádá na každý náhodně
 
 ## <a name="optimizations"></a>Optimalizace
 
-Ukázka, když jste sestavili dosavadní provede *v náhodně*, kde karty horní a dolní zůstaly stejné při každém spuštění. Pojďme si ho změnit a spusťte *se náhodně*, kde všechny 52 karty změní pozici. Pro mimo náhodného, můžete interleave z balíčku tak, aby první karty v dolní polovinu stane první karty v balíčku. To znamená, že poslední karty v horní polovině se změní na spodní kartu. To je právě změnu jeden řádek. Volání náhodný výběr chcete-li změnit pořadí horní a dolní polovina podlaží aktualizace:
+Ukázka, když jste sestavili dosavadní provede *se náhodně*, kde karty horní a dolní zůstaly stejné při každém spuštění. Pojďme si ho změnit a spusťte *v náhodně*, kde všechny 52 karty změní pozici. Pro v náhodného, můžete interleave z balíčku tak, aby první karty v dolní polovinu stane první karty v balíčku. To znamená, že poslední karty v horní polovině se změní na spodní kartu. To je právě změnu jeden řádek. Volání náhodný výběr chcete-li změnit pořadí horní a dolní polovina podlaží aktualizace:
 
 ```csharp
 shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
@@ -264,13 +264,13 @@ public static void Main(string[] args)
 }
 ```
 
-Všimněte si, že nemáte protokolu pokaždé, když přistupujete k dotazu. Přihlášení jenom v případě, že vytvoříte původní dotaz. Program stále trvá dlouhou dobu spuštění, ale nyní můžete zobrazit důvod, proč. Pokud spouštíte systému trpělivost systémem vnější náhodně s zapnout protokolování, přepněte zpět na vnitřní náhodně. Stále se zobrazí důsledky opožděné vyhodnocení. V prvního spuštění se provede 2592 dotazů, včetně všech generování hodnota a barvy.
+Všimněte si, že nemáte protokolu pokaždé, když přistupujete k dotazu. Přihlášení jenom v případě, že vytvoříte původní dotaz. Program stále trvá dlouhou dobu spuštění, ale nyní můžete zobrazit důvod, proč. Pokud spouštíte systému trpělivost systémem vnitřní náhodně s zapnout protokolování, přepněte zpět na vnější náhodně. Stále se zobrazí důsledky opožděné vyhodnocení. V prvního spuštění se provede 2592 dotazů, včetně všech generování hodnota a barvy.
 
 Je snadný způsob, jak aktualizovat Vyhněte se všechny tyto spuštění tohoto programu. Způsoby LINQ `ToArray()` a `ToList()` , způsobit dotaz pro spouštění a ukládání výsledků do pole nebo seznam, v uvedeném pořadí. Tyto metody slouží k mezipaměti dat výsledků dotazu než zdrojový dotaz spustit znovu.  Připojit dotazy, které generují balíčky karet pomocí volání `ToArray()` a spusťte dotaz znovu:
 
 [!CODE-csharp[Main](../../../samples/csharp/getting-started/console-linq/Program.cs?name=snippet1)]
 
-Spusťte znovu a vnitřní náhodně je dolů 30 dotazy. Znovu spustit s vnější náhodně a zobrazí se podobné vylepšení. (Je nyní provádí 162 dotazy).
+Spusťte znovu a vnější náhodně je dolů 30 dotazy. Znovu spustit s vnitřní náhodně a zobrazí se podobné vylepšení. (Je nyní provádí 162 dotazy).
 
 Nemáte nesprávně interpretovat v tomto příkladu důkladným, který by se měl například spouštět všechny dotazy. V tomto příkladu je určena pro zvýrazněte případy použití, kde opožděné vyhodnocení může způsobit problémy s výkonem. Je to způsobeno každý nový uspořádání balíčku karet je sestaven z předchozí uspořádání. Pomocí opožděné vyhodnocení znamená každou novou konfiguraci podlaží vychází z původní balíčku, i provádění kódu, který postavený `startingDeck`. Které způsobí, že velké množství další práci. 
 
@@ -324,4 +324,4 @@ Kompilace a znovu spusťte. Výstupem je trochu čisticí a kód je trochu troch
 
 Tato ukázka vám ukázal, můžete některé metody použité v technologii LINQ, jak vytvořit vlastní metody, které se snadno používat s dotazy LINQ povoleno kódu. Je také ukázal rozdíly mezi opožděné a přes vyhodnocení a o tom, že rozhodnutí může mít na výkon.
 
-Jste se dozvěděli o něco o jeden magician techniku. Magicians pomocí náhodně faro, protože můžou řídit, kdy každou kartu přesune z balíčku. V některých triky magician má člena cílové skupiny umístit karty nad z balíčku a posouvá několikrát, zároveň budete vědět, kde přejde karty. Další illusions vyžadují z balíčku nastavte určitým způsobem. Magician nastaví podlaží před provedením podvodné. Pak se bude náhodně podlaží 5krát pomocí vnitřní náhodně. Na fázi Jana můžete zobrazit, jak vypadá náhodných balíčku, náhodný výběr 3 vícekrát a mít podlaží nastavit, přesně jak chce.
+Jste se dozvěděli o něco o jeden magician techniku. Magicians pomocí náhodně faro, protože můžou řídit, kdy každou kartu přesune z balíčku. V některých triky magician má člena cílové skupiny umístit karty nad z balíčku a posouvá několikrát, zároveň budete vědět, kde přejde karty. Další illusions vyžadují z balíčku nastavte určitým způsobem. Magician nastaví podlaží před provedením podvodné. Pak se bude náhodně podlaží 5krát pomocí vnější náhodně. Na fázi Jana můžete zobrazit, jak vypadá náhodných balíčku, náhodný výběr 3 vícekrát a mít podlaží nastavit, přesně jak chce.

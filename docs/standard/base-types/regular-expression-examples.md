@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: e9fd53f2-ed56-4b09-b2ea-e9bc9d65e6d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8fb58f8e7a1fef711de28534fbe53dfc9d7084ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee4d884a0efbeb6e57ed727396bf3bcb39979774
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="regular-expression-examples"></a>Příklady regulárních výrazů
 Tato část obsahuje příklady kódu, které ilustrují použití regulárních výrazů v běžné aplikace.  
@@ -35,7 +35,7 @@ Tato část obsahuje příklady kódu, které ilustrují použití regulárních
  Poskytuje příklad, který odstraní neplatný jiných než alfanumerických znaků z řetězce.  
   
  [Postupy: Ověření platnosti e-mailového formátu řetězců](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)  
- Poskytuje příklad, který můžete použít k ověření, že je řetězec ve formátu platné e-mailu.  
+ Poskytuje příklad, který ověřuje, že je řetězec ve formátu platné e-mailu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Text.RegularExpressions>  

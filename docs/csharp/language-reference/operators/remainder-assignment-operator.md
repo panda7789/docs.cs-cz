@@ -7,11 +7,11 @@ helpviewer_keywords:
 - remainder assignment operator (%=) [C#]
 - '%= assignment operator (remainder assignment) [C#]'
 ms.assetid: 47e5f068-1d97-4010-bd3b-e21b5d3a77f5
-ms.openlocfilehash: 2b6a537ce189ab5a1c0c8c36995b6e9e98734e14
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aadcb5ef969ff408cc1e738fc0f5b67152fdc78b
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="-operator-c-reference"></a>%= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení zbytku.  
@@ -19,13 +19,13 @@ Operátor přiřazení zbytku.
 ## <a name="remarks"></a>Poznámky  
  K pomocí výrazu `%=` operátor přiřazení, jako například  
   
-```  
+```csharp  
 x %= y  
 ```  
   
  je ekvivalentem  
   
-```  
+```csharp  
 x = x % y  
 ```  
   

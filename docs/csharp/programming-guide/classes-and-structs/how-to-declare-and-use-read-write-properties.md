@@ -8,11 +8,11 @@ helpviewer_keywords:
 - read/write properties [C#]
 - accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: 1930d6c50c176ae1765bdb41af2c7484fb908328
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6a7083e1c0cf0dc5c076a69dee15fc39e234d53
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Postupy: deklarování a použití vlastností čtení zápisu (C# Průvodce programováním)
 Vlastnosti zajistí pohodlí veřejná data členů bez rizika, které jsou součástí nechráněné, neřízené a neověřených přístup k datům objektu. To se provádí prostřednictvím *přístupové objekty*: speciální metody, které přiřadit a načítání hodnot z základní datový člen. [Nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu umožňuje členům data přiřazen a [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu načte data hodnoty členů.  
@@ -43,7 +43,7 @@ Vlastnosti zajistí pohodlí veřejná data členů bez rizika, které jsou sou�
   
  Pokud samostatné `set` a `get` metody použité k jejich vlastnosti modelu, kód ekvivalentní může vypadat například takto:  
   
-```  
+```csharp  
 person.SetAge(person.GetAge() + 1);   
 ```  
   

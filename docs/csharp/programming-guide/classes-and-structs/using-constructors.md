@@ -4,11 +4,11 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: 80400cc1eae697c931833a5444969a231e23c06e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5fe6f10e3842c0c0aac4b2669f8ca367fa8c3be2
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
 Když [– třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá jeho konstruktoru. Konstruktory mít stejný název jako třídě nebo struktuře a obvykle inicializují datových členů nového objektu.  
@@ -29,7 +29,7 @@ Když [– třída](../../../csharp/language-reference/keywords/class.md) nebo [
   
  Konstruktory pro [struktura](../../../csharp/language-reference/keywords/struct.md) typy vypadat třída konstruktory, ale `structs` nemůže obsahovat explicitní výchozí konstruktor, protože je zadáno automaticky kompilátorem. Tento konstruktor inicializuje každé pole v `struct` na výchozí hodnoty. Další informace najdete v tématu [výchozí hodnoty tabulky](../../../csharp/language-reference/keywords/default-values-table.md). Však tato výchozí konstruktor je volána, pouze pokud `struct` je vytvořena s `new`. Například tento kód používá výchozí konstruktor pro <xref:System.Int32>, takže budete mít jistotu, že je inicializován na celé číslo:  
   
-```  
+```csharp  
 int i = new int();  
 Console.WriteLine(i);  
 ```  

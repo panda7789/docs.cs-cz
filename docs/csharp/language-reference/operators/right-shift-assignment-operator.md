@@ -7,11 +7,11 @@ helpviewer_keywords:
 - right shift assignment operator (>>=) [C#]
 - '>>= operator (right-shift assignment) [C#]'
 ms.assetid: b593778c-b9b4-440d-8b29-c1ac22cb81c0
-ms.openlocfilehash: 41203f6e7c9929bb349d29c40cf7cc6c24550c36
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ccc3f688d985b9e35404550f0c53a7acf8095dd5
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="gtgt-operator-c-reference"></a>&gt;&gt;= – Operátor (referenční dokumentace jazyka C#)
 Operátor přiřazení posunutí doprava.  
@@ -19,13 +19,13 @@ Operátor přiřazení posunutí doprava.
 ## <a name="remarks"></a>Poznámky  
  Výraz, který formuláře  
   
-```  
+```csharp  
 x >>= y  
 ```  
   
  vyhodnotí jako  
   
-```  
+```csharp  
 x = x >> y  
 ```  
   

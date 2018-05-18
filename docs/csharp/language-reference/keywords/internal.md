@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: e636cb1edfa19b08c52ff09439e66aeb1424046a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d2fcc19bb7bc6de373412e7728f3025647c0435d
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="internal-c-reference"></a>internal (Referenční dokumentace jazyka C#)
 `internal` – Klíčové slovo je [– modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md) pro různé typy a členy typu. 
@@ -20,7 +20,7 @@ ms.lasthandoff: 05/04/2018
   
 Vnitřní typy nebo členové jsou přístupné pouze v rámci soubory ve stejném sestavení jako v následujícím příkladu:  
   
-```  
+```csharp  
 public class BaseClass   
 {  
     // Only accessible within the same assembly  
@@ -39,7 +39,7 @@ public class BaseClass
 ## <a name="example"></a>Příklad  
  Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly1_a.cs`. První soubor obsahuje interní základní třída, `BaseClass`. V souboru druhý pokus o vytvoření instance `BaseClass` způsobí chybu.  
   
-```  
+```csharp  
 // Assembly1.cs  
 // Compile with: /target:library  
 internal class BaseClass   
@@ -48,7 +48,7 @@ internal class BaseClass
 }  
 ```  
   
-```  
+```csharp  
 // Assembly1_a.cs  
 // Compile with: /reference:Assembly1.dll  
 class TestAccess   
@@ -63,7 +63,7 @@ class TestAccess
 ## <a name="example"></a>Příklad  
  V tomto příkladu použijte stejné soubory, které jste použili v příkladu 1 a změňte úroveň usnadnění `BaseClass` k `public`. Také změnit úroveň usnadnění člena `IntM` k `internal`. V takovém případě může vytvořit instanci třídy, ale nemůže přístup k interní členovi.  
   
-```  
+```csharp  
 // Assembly2.cs  
 // Compile with: /target:library  
 public class BaseClass   
@@ -72,7 +72,7 @@ public class BaseClass
 }  
 ```  
   
-```  
+```csharp  
 // Assembly2_a.cs  
 // Compile with: /reference:Assembly1.dll  
 public class TestAccess   

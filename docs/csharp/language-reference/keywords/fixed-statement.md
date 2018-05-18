@@ -1,16 +1,16 @@
 ---
 title: fixed – příkaz (Referenční dokumentace jazyka C#)
-ms.date: 04/20/2018
+ms.date: 05/10/2018
 f1_keywords:
 - fixed_CSharpKeyword
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: e1664f508cb861ffa73b800eeb0da3a1f1cdc432
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: decf906efeebf1723b4c5d6f0c75ba57affe9a98
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
 
@@ -23,6 +23,12 @@ ms.lasthandoff: 05/04/2018
 Ukazatel lze inicializovat pomocí pole, řetězec, vyrovnávací paměti pevné velikosti nebo adresy proměnné. Následující příklad ukazuje použití proměnných adresy, pole a řetězce. Další informace o pevné velikosti vyrovnávací paměti najdete v tématu [pevnou velikost vyrovnávací paměti](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
 
 [!code-csharp[Initializing fixed size buffers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#2)]
+
+Od verze jazyka C# 7.3, `fixed` příkaz funguje na další typy nad rámec pole řetězce, vyrovnávací paměti pevné velikosti nebo nespravované proměnné. Žádný typ, který implementuje metodu s názvem `DangerousGetPinnableReference` lze připojit. `DangerousGetPinnableReference` Musí vrátit `ref` nespravovaný typ proměnné. Podívejte se na téma na [typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md) Další informace. Typy .NET <xref:System.Span%601?displayProperty=nameWithType> a <xref:System.ReadonlySpan%601?displayProperty=nameWithType> byla zavedená v rozhraní .NET 2.0 základní zkontrolujte pomocí tohoto vzoru a může být připnutý. To je ukázáno v následujícím příkladu:
+
+[!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
+
+Pokud vytvoříte typy, které by se měly podílet v tomto vzoru, přečtěte si téma <xref:System.Span%601.DangerousGetPinnableReference?displayProperty=nameWithType> příklad implementace vzoru.
 
 Více ukazatele jde inicializovat na jeden příkaz Pokud jsou všechny stejného typu:
 

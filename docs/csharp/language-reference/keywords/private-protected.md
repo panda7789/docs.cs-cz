@@ -2,11 +2,11 @@
 title: privátní chráněné (referenční dokumentace jazyka C#)
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: b85b227989c9f79aa11486310f540b92ce5bdda6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee36cc713dd5fdb90ae20ef992f8e75eca09597d
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="private-protected-c-reference"></a>privátní chráněné (referenční dokumentace jazyka C#)
 `private protected` – Kombinace klíčových slov je modifikátor přístupu členů. Privátní chráněného člena je přístupný pro typy odvozené od obsahující třídy, ale pouze v rámci jeho obsahující sestavení. Porovnání `private protected` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
@@ -14,7 +14,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="example"></a>Příklad  
  Privátní chráněného člena základní třídy je přístupná ze odvozené typy v jeho obsahující sestavení, pouze je-li statické typ proměnné typu odvozené třídy. Zvažte například následující segment kódu:  
   
- ```
+ ```csharp
  // Assembly1.cs  
  // Compile with: /target:library  
  public class BaseClass
@@ -38,7 +38,7 @@ ms.lasthandoff: 05/04/2018
  }
 ```  
   
-```  
+```csharp  
  // Assembly2.cs  
  // Compile with: /reference:Assembly1.dll  
  class DerivedClass2 : BaseClass

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: cf4295eea6a257fe053bf889f0c2f3d3fa5bb2a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa9006b6864b9b6b129eed323b0d6d7b29064189
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních vlastností (Průvodce programováním v C#)
 Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnosti neposkytuje implementace přístupové objekty vlastnosti – deklaruje, že podporuje vlastnosti třídy, ale ponechá přistupujícího objektu implementaci do odvozené třídy. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděn ze základní třídy.  
@@ -35,7 +35,7 @@ Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/la
   
 -   Modifikátory na vlastnosti jsou umístěny v deklaraci vlastnost sám sebe. Příklad:  
   
-    ```  
+    ```csharp  
     public abstract double Area  
     ```  
   
