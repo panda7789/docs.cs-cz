@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 157ff544df95740a96cf74fdc740feed7acde7ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: 10fdea17ca4ac32c1237d991114c40cce62949d1
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="install-the-net-framework-for-developers"></a>Nainstalujte rozhraní .NET Framework pro vývojáře
 
@@ -36,7 +36,7 @@ Následující tabulku použijte k rychlé odkazy nebo pro čtení Další podro
   
 |Verze rozhraní .NET Framework|Instalace pro vývojáře|Redistributable instalace|Podpora platformy|  
 |----------------------------|----------------------------|----------------------------------|----------------------|  
-|**4.7.2**|[Rozhraní .NET framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261)|[Instalační program webové služby Stažení softwaru 4.7.2](http://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Stažení softwaru 4.7.2 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=863265)|Součástí: <br/>Aktualizace Windows 10. dubna 2018<br /><br /> Můžete nainstalovat na:<br/> <br/>Aktualizovat Creators patří Windows 10<br/>Aktualizace Windows 10 tvůrcům <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> V systému Windows Server verze 1709 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.7.2**|[Rozhraní .NET framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=874338)|[Instalační program webové služby Stažení softwaru 4.7.2](http://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Stažení softwaru 4.7.2 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=863265)|Součástí: <br/>Aktualizace Windows 10. dubna 2018<br /><br /> Můžete nainstalovat na:<br/> <br/>Aktualizovat Creators patří Windows 10<br/>Aktualizace Windows 10 tvůrcům <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> V systému Windows Server verze 1709 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
 |**4.7.1**|[NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[Na stránce 4.7.1 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Na stránce 4.7.1 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=852107)|Součástí: <br/>Aktualizovat Creators patří Windows 10<br/>Windows Server, verze. 1709<br /><br /> Můžete nainstalovat na:<br/> Aktualizace Windows 10 tvůrcům <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
 |**4.7**|[NET Framework 4.7 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 web instalační program](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stažení stránky pro 4.7 offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=825303)|Součástí: <br/>Aktualizace Windows 10 tvůrcům<br /><br /> Můžete nainstalovat na:<br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
 |**4.6.2**|[NET Framework 4.6.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=780617)|[Na stránce 4.6.2 stahování webový instalační program](http://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Na stránce 4.6.2 stahování offline instalačního programu](http://go.microsoft.com/fwlink/?LinkId=780601)|Součástí: <br /> Windows 10 Anniversary Update<br /><br /> Můžete nainstalovat na:<br /> Aktualizace Windows 10 listopadu <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
@@ -69,7 +69,7 @@ A *cílení pack* umožní aplikaci cílení na konkrétní verzi rozhraní .NET
 
 Sada vývojáře pro rozhraní .NET Framework 4.5.1 nebo 4.5.2, sada cílení pro rozhraní .NET Framework 4.6 a sada pro vývojáře pro rozhraní .NET Framework 4.6.1 4.6.2, 4.7 4.7.1 nebo 4.7.2 poskytuje referenční sestavení, na konkrétní rozhraní .NET Framework verze jazykové sady a soubory IntelliSense pro použití v integrovaném vývojovém prostředí, třeba v sadě Visual Studio.  Pokud používáte Visual Studio, sada pro vývojáře nebo cílení pack nainstalovaná verze rozhraní .NET Framework také přidá do cílové volby při vytvoření nového projektu.  Vyberte jednu z následujících možností:  
 
-- [Rozhraní Microsoft .NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261)
+- [Rozhraní Microsoft .NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=874338)
 
 - [Rozhraní Microsoft .NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)
 

@@ -14,11 +14,11 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 04028a2b350493a3cc8f2c92bafafd9658fc7c58
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 811443dbd8e2483f7fc1b0f8c44afb4ebcd9efcf
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="application-domains"></a>Aplikační domény
 Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolování aplikací. Tato izolace je nutné zajistit, že kód spuštěný v jedné aplikaci nemůže mít nepříznivý vliv na jiné nesouvisející aplikace.  
@@ -74,11 +74,11 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
  Existují tři možnosti pro načtení domény jazykově neutrální sestavení:  
   
--   <xref:System.LoaderOptimization> načte žádné sestavení jako jazykově neutrální, s výjimkou Mscorlib, které je vždy načteno domény jazykově neutrální. Toto nastavení se nazývá jednu doménu, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.  
-  
--   <xref:System.LoaderOptimization> načte všechna sestavení jako domény jazykově neutrální. Toto nastavení použijte, pokud je v procesu, všechny spouští stejný kód více domén aplikací.  
-  
--   <xref:System.LoaderOptimization> načte sestavení se silným názvem jako neutrální, pokud jejich a všechny jejich závislosti byly nainstalovány v globální mezipaměti sestavení. Další sestavení jsou načtena a kompilována samostatně pro každou doménu aplikace, ve kterém jsou načteny a proto mohou být uvolněna z procesu. Pomocí tohoto nastavení při spuštění více než jednu aplikaci ve stejném procesu, nebo pokud máte směs sestavení, které jsou sdíleny mnoho aplikační domény a sestavení, které musí být uvolněna z procesu.  
+- <xref:System.LoaderOptimization.SingleDomain?displayProperty=nameWithType> načte žádné sestavení jako jazykově neutrální, s výjimkou Mscorlib, které je vždy načteno domény jazykově neutrální. Toto nastavení se nazývá jednu doménu, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.
+
+- <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> načte všechna sestavení jako domény jazykově neutrální. Toto nastavení použijte, pokud je v procesu, všechny spouští stejný kód více domén aplikací.
+
+- <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> načte sestavení se silným názvem jako neutrální, pokud jejich a všechny jejich závislosti byly nainstalovány v globální mezipaměti sestavení. Další sestavení jsou načtena a kompilována samostatně pro každou doménu aplikace, ve kterém jsou načteny a proto mohou být uvolněna z procesu. Pomocí tohoto nastavení při spuštění více než jednu aplikaci ve stejném procesu, nebo pokud máte směs sestavení, které jsou sdíleny mnoho aplikační domény a sestavení, které musí být uvolněna z procesu.
   
  Kompilována kód nemůže být sdílen sestavení kontextu, pomocí <xref:System.Reflection.Assembly.LoadFrom%2A> metodu <xref:System.Reflection.Assembly> třídy, nebo z obrazů pomocí přetížení <xref:System.Reflection.Assembly.Load%2A> metoda, která zadejte bajtová pole.  
   

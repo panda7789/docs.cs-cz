@@ -1,6 +1,6 @@
 ---
 title: Property – příkaz
-ms.date: 07/20/2015
+ms.date: 05/12/2018
 f1_keywords:
 - vb.PropertySet
 - vb.Property
@@ -11,11 +11,11 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Property statements
 - Property keyword [Visual Basic]
 ms.assetid: 3155edaf-8ebd-45c6-9cef-11d5d2dc8d38
-ms.openlocfilehash: 70738ecf739b8e50078903dc108fdc8f97d29636
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f3ced3f0c441518594820f75243c71fb0c3babd
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="property-statement"></a>Property – příkaz
 Deklaruje název vlastnosti a vlastnosti postupy používají k ukládání a načítání hodnoty vlastnosti.  
@@ -61,7 +61,9 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
     -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
-    -   `Protected Friend`  
+    - [Chráněné Friend](../../language-reference/modifiers/protected-friend.md) 
+
+    - [Privátní chráněný](../../language-reference/modifiers/private-protected.md)
   
      V tématu [úrovně v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   

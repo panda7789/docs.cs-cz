@@ -4,19 +4,19 @@ ms.date: 03/06/2018
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: aa6720430a1d93d7eacb098962c09efad09a179f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 58500cf2caa1446af6b663f1b765c0be92309f1d
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v – modifikátor parametrů (referenční dokumentace jazyka C#)
 
-`in` – Klíčové slovo způsobí, že argumenty předávané odkazem. Je třeba [ref](ref.md) nebo [out](out-parameter-modifier.md) klíčová slova, která kromě `in` argumenty nemůže být upraven zavolat metodu, zatímco `ref` argumenty může být změněna, `out` argumenty je třeba upravit volající, a tyto úpravy jsou lze zobrazit v volání kontextu.
+`in` – Klíčové slovo způsobí, že argumenty předávané odkazem. Je třeba [ref](ref.md) nebo [out](out-parameter-modifier.md) klíčová slova, která kromě `in` argumenty nelze změnit pomocí zavolat metodu. Zatímco `ref` argumenty může být změněna, `out` volající funkcí je třeba upravit argumenty, a tyto úpravy jsou lze zobrazit v volání kontextu.
 
 [!code-csharp-interactive[cs-in-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/InParameterModifier.cs#1)]  
 
-Předchozí příklad ukazuje `in` modifikátor není nutný, obvykle v lokalitě volání. Je potřeba jenom v deklaraci metoda.
+Předchozí příklad ukazuje, který `in` modifikátor není nutný, obvykle v lokalitě volání. Je potřeba jenom v deklaraci metoda.
 
 > [!NOTE] 
 > `in` – Klíčové slovo lze také s parametr obecného typu k určení, že parametr typu je kontravariant, jako součást `foreach` prohlášení, nebo jako součást `join` klauzuli v dotazu LINQ. Další informace o použití `in` – klíčové slovo v těchto kontextů, najdete v části [v](in.md), který obsahuje odkazy na všechny tyto používá.
@@ -47,9 +47,9 @@ class InOverloads
 
 ## <a name="overload-resolution-rules"></a>Pravidel řešení přetížení
 
-Rozumíte pravidla rozlišení přetížení pro metody s hodnotou oproti `in` argumenty prostřednictvím pochopení motivace pro `in` argumenty. Definování metod pomocí `in` parametrů je potenciální optimalizace výkonu. Některé `struct` argumenty typu mohou být velká velikost, a pokud jsou volány metody v úzkou smyčky nebo kód kritický pro cesty, náklady na kopírování tyto struktury je důležité. Metody deklarovat `in` parametry k určení, že argumenty může být předána odkazem bezpečně protože zavolat metodu nedojde ke změně stavu tohoto argumentu. Předání těchto argumentů odkazem zabraňuje (potenciálně) nákladné kopírování. 
+Rozumíte pravidla rozlišení přetížení pro metody s hodnotou oproti `in` argumenty porozuměním motivace pro `in` argumenty. Definování metod pomocí `in` parametrů je potenciální optimalizace výkonu. Některé `struct` argumenty typu mohou být velká velikost, a pokud jsou volány metody v úzkou smyčky nebo kód kritický pro cesty, náklady na kopírování tyto struktury je důležité. Metody deklarovat `in` parametry k určení, že argumenty může být předána odkazem bezpečně protože zavolat metodu nedojde ke změně stavu tohoto argumentu. Předání těchto argumentů odkazem zabraňuje (potenciálně) nákladné kopírování. 
 
-Určení `in` argumenty při volání lokalita je obvykle volitelné. Není žádný sémantického rozdíl mezi předání argumentů hodnotou a jejich předávání pomocí odkazu `in` modifikátor. `in` Modifikátor v lokalitě volání je volitelný, protože nemusíte znamenat, že hodnota argumentu může být změněn. Explicitně přidat `in` modifikátor v lokalitě volání zajistit argument odkaz, je předaná není hodnotou. Explicitně pomocí `in` má dva důsledky:
+Určení `in` pro argumenty při volání lokalita je obvykle volitelné. Není žádný sémantického rozdíl mezi předání argumentů hodnotou a jejich předávání pomocí odkazu `in` modifikátor. `in` Modifikátor v lokalitě volání je volitelný, protože nemusíte znamenat, že hodnota argumentu může být změněn. Explicitně přidat `in` modifikátor v lokalitě volání zajistit argument odkaz, je předaná není hodnotou. Explicitně pomocí `in` má tyto dvě důsledky:
 
 Nejprve zadání `in` na volání lokality vynutí kompilátoru vybrat metodu definovaný s odpovídající `in` parametr. Jinak, když dvě metody se liší pouze v přítomnosti z `in`, podle hodnoty přetížení je lepší shodu.
 

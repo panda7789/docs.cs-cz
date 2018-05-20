@@ -1,6 +1,6 @@
 ---
 title: Event – příkaz
-ms.date: 07/20/2015
+ms.date: 05/12/2018
 f1_keywords:
 - vb.Event
 - vb.Custom
@@ -18,11 +18,11 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: 967eedcf1f4d0c9a19775f294167b915cca25a9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d59dc8e7b01612af0e4c8f6c1018269580284c46
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definované události.  
@@ -58,7 +58,7 @@ End Event
 |Část|Popis|  
 |---|---|  
 |`attrlist`|Volitelné. Seznam atributů, které se vztahují k této události. Více atributů jsou oddělené čárkami. Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").|  
-|`accessmodifier`|Volitelné. Určuje, jaký kód můžete přístup k události. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)– kód, který můžete získat přístup k elementu, který deklaruje se k němu přístup.<br />-   [Chráněné](../../../visual-basic/language-reference/modifiers/protected.md)– pouze kód do své třídy nebo odvozené třídy k němu přístup.<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)– pouze pro kód ve stejném sestavení k němu přístup.<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)– jenom kód v elementu, který deklaruje se k němu přístup.<br /><br /> Můžete zadat `Protected Friend` pro povolení přístupu z kódu v události třídu, odvozené třídě nebo do stejného sestavení.|  
+|`accessmodifier`|Volitelné. Určuje, jaký kód můžete přístup k události. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)– kód, který můžete získat přístup k elementu, který deklaruje se k němu přístup.<br />-   [Chráněné](../../../visual-basic/language-reference/modifiers/protected.md)– pouze kód do své třídy nebo odvozené třídy k němu přístup.<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)– pouze pro kód ve stejném sestavení k němu přístup.<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)– jenom kód v elementu, který deklaruje se k němu přístup.<br /> -   [Protected Friend](../../language-reference/modifiers/protected-friend.md)-pouze kód v události třídu, odvozené třídě nebo do stejného sestavení k němu přístup. <br />- [Privátní chráněné](../../language-reference/modifiers/private-protected.md)-pouze kód v události nebo odvozená třída ve stejném sestavení k němu přístup.|  
 |`Shared`|Volitelné. Určuje, že tato událost není spojen s konkrétní instanci třídu nebo strukturu.|  
 |`Shadows`|Volitelné. Označuje, že tato událost redeclares a skryje stejně jako s názvem programovací prvek, nebo sadu přetížené elementů v základní třídě. Můžete stínové jakýkoli druh deklarovaný element s jakéhokoli jiného typu.<br /><br /> Element stíněné je k dispozici v rámci odvozené třídy, stín, s výjimkou z kde element stínového provozu je nedostupná. Například pokud `Private` element shadows element základní třídy, kód, který nemá oprávnění k přístupu `Private` element přistupuje k prvku základní třídy místo.|  
 |`eventname`|Požadováno. Název události; dodržovat standardní zásady vytváření názvů proměnných.|  

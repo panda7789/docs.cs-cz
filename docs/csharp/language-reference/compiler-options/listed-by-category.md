@@ -6,11 +6,11 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: a3352b9f929382c7d5b7d0c62ef4022560caf371
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f02ae84544a60a992177332d528dd7970f84bf3f
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 Následující možnosti kompilátoru jsou seřazeny podle kategorie. Abecední seznam najdete v tématu [Možnosti C# kompilátoru seřazeny abecedně](listed-alphabetically.md).  
@@ -30,12 +30,12 @@ Následující možnosti kompilátoru jsou seřazeny podle kategorie. Abecední 
 |[-doc](doc-compiler-option.md)|Určuje soubor XML, kde jsou zpracované dokumentační komentáře k zapsání.|  
 |[-out](out-compiler-option.md)|Určuje výstupní soubor.|  
 |[-pdb](pdb-compiler-option.md)|Určuje název souboru a umístění souboru pdb.|  
-|[-platform](platform-compiler-option.md)|Zadejte výstupní platformy.|  
-|[-preferreduilang](preferreduilang-compiler-option.md)|Zadejte jazyk pro výstup kompilátoru.|  
+|[-platform](platform-compiler-option.md)|Určuje výstupní platformy.|  
+|[-preferreduilang](preferreduilang-compiler-option.md)|Určuje jazyk pro výstup kompilátoru.|  
 |[-refout](refout-compiler-option.md)|Generovat odkaz na sestavení kromě primární sestavení.|  
 |[-refonly](refonly-compiler-option.md)|Generovat odkaz na sestavení namísto primární sestavení.|  
 |[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné z pěti možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: library](target-library-compiler-option.md), [-target: module ](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), nebo [-target: winmdobj](target-winmdobj-compiler-option.md).|  
-|-modulename:\<řetězec >|Zadejte název zdrojového modulu|  
+|-modulename:\<řetězec >|Určuje název zdrojového modulu|  
   
 ### <a name="net-framework-assemblies"></a>Sestavení rozhraní .NET framework  
   
@@ -91,7 +91,7 @@ Následující možnosti kompilátoru jsou seřazeny podle kategorie. Abecední 
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku pro všechny soubory zdrojového kódu v kompilace.|  
 |[– Nápověda](help-compiler-option.md)|Zobrazí seznam možností kompilátoru do stdout.|  
 |[-highentropyva](highentropyva-compiler-option.md)|Určuje, že spustitelný soubor podporuje adresu místa rozložení náhodné (technologie ASLR).|  
-|[-langversion](langversion-compiler-option.md)|Zadejte režim jazykové verze: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1 nebo nejnovější |  
+|[-langversion](langversion-compiler-option.md)|Určuje verzi jazyka: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 nebo nejnovější |  
 |[-main](main-compiler-option.md)|Určuje umístění **hlavní** metoda.|  
 |[-noconfig](noconfig-compiler-option.md)|Dá pokyn kompilátoru, aby kompilovat s csc.rsp.|  
 |[-nologo](nologo-compiler-option.md)|Potlačí informace kompilátoru.|  
@@ -100,7 +100,7 @@ Následující možnosti kompilátoru jsou seřazeny podle kategorie. Abecední 
 |[-unsafe](unsafe-compiler-option.md)|Umožňuje kompilace kódu, který používá [unsafe](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo.|  
 |[-utf8output](utf8output-compiler-option.md)|Zobrazí výstup kompilátoru pomocí kódování UTF-8.|  
 |-paralelní [+&#124;-]|Určuje, jestli se má používat souběžných sestavení (+).|  
-|-checksumalgorithm:\<alg >|Zadejte algoritmus pro výpočet kontrolní součet souboru zdroje uložené v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|  
+|-checksumalgorithm:\<alg >|Určuje algoritmus pro výpočet kontrolní součet souboru zdroje uložené v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|  
   
 ## <a name="obsolete-options"></a>Zastaralé možnosti  
   

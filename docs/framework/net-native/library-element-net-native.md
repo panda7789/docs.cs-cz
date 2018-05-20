@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f867d6f65a28c36037ff6617cce9d18bc39a67d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eabaf1dd99fce7cd4c45f80666534f904fcdfdf9
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="ltlibrarygt-element-net-native"></a>Element &lt;Library&gt; (.NET Native)
 Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu.  
@@ -57,7 +57,7 @@ Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k
   
  `<Library>` Element slouží jako kontejner pro definování program elementy, jejichž metadat je vyžadována v době běhu; tento element není vyjádření zásad. Při kompilaci, nástrojů kompilátoru vyhledávat pouze v knihovně, které jsou určené, které `<Library>` element pro program prvky identifikovaná její podřízené elementy. Na rozdíl od nástroje kompilátoru hledání všechny knihovny, including.NET Framework základní knihovny, pro program prvky identifikovaná podřízených elementů [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) element.  
   
- `<Library>` direktivy, lze podmíněně využívat. Pokud název `<Library>` element zahájení a ukončení s hvězdičkou (*), `<Library>` – direktiva má význam jen v případě, že zadaný v rozmezí hvězdičky sestavení odkazuje aplikace. Například následující direktivy modulu runtime platí jenom v případě, že Utillities.dll sestavení odkazuje aplikace.  
+ `<Library>` direktivy, lze podmíněně využívat. Pokud název `<Library>` element zahájení a ukončení s hvězdičkou (\*), `<Library>` – direktiva má význam jen v případě, že zadaný v rozmezí hvězdičky sestavení odkazuje aplikace. Například následující direktivy modulu runtime platí jenom v případě, že Utillities.dll sestavení odkazuje aplikace.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

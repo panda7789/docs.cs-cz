@@ -287,7 +287,7 @@
 ### [Začínáme s CLI pro .NET Core](fsharp/get-started/get-started-command-line.md)
 
 ## [Příručka stylu jazyka F#](fsharp/style-guide/index.md)
-### [Pravidla formátování jazyka F#](fsharp/style-guide/formatting.md)
+### [Pravidla formátování kódu F#](fsharp/style-guide/formatting.md)
 ### [Zásady kódování jazyka F#](fsharp/style-guide/conventions.md)
 ### [Pravidla návrhu komponent jazyka F#](fsharp/style-guide/component-design-guidelines.md)
 

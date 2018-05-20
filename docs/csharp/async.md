@@ -4,11 +4,11 @@ description: Další informace o C# úroveň jazyka asynchronní programovací m
 author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: 22a63ab55ba7f7888973f08ebdb3cbc149d6ac57
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b753b887da6f8836e0f4363a479c12c7364ea770
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -131,7 +131,7 @@ public async Task<int> GetDotNetCountAsync()
 {
     // Suspends GetDotNetCountAsync() to allow the caller (the web server)
     // to accept another request, rather than blocking on this one.
-    var html = await _httpClient.DownloadStringAsync("http://dotnetfoundation.org");
+    var html = await _httpClient.GetStringAsync("http://dotnetfoundation.org");
 
     return Regex.Matches(html, @"\.NET").Count;
 }

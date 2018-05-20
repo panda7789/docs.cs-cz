@@ -2,11 +2,11 @@
 title: '&lt;hostitele&gt;'
 ms.date: 03/30/2017
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
-ms.openlocfilehash: 9c48fff7473449192887bfd8cc201dd87cb4e7f7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: ec53568e9d1df9ebb04bc299f491e80674950c63
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="lthostgt"></a>&lt;hostitele&gt;
 Určuje nastavení pro hostitele služby.  
@@ -19,12 +19,11 @@ Určuje nastavení pro hostitele služby.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<host>  
-      <baseAddresses>  
-         <baseAddress baseAddress="string" />  
-      </baseAddresses>  
-      <timeOuts closeTimeout="TimeSpan"  
-         openTimeout="TimeSpan" >  
+<host>
+    <baseAddresses>  
+        <add baseAddress="string" />  
+    </baseAddresses>  
+    <timeOuts closeTimeout="TimeSpan" openTimeout="TimeSpan">  
 </host>  
 ```  
   

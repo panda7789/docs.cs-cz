@@ -9,14 +9,15 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: f00ae873e615f653d3e760f82b157a57fdaef6ed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c0b1481988a2e3199fc6d06ca30cb5194ab2f44c
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="foreach-in-c-reference"></a>foreach, in (Referenční dokumentace jazyka C#)
-`foreach` Příkaz opakuje skupinu embedded příkazy pro každý prvek v pole nebo kolekci objekt, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. `foreach` Příkaz se používá k procházení kolekce se získat informace, které, ale nelze použít k přidání nebo odebrání položky z kolekce zdroj předejdete nepředvídatelným vedlejší účinky. Pokud potřebujete přidat nebo odebrat položky z kolekce zdroje, použijte [pro](for.md) smyčky.
+
+`foreach` Příkaz opakuje skupinu embedded příkazy pro každý prvek v pole nebo kolekci objekt, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. [Foreach – příkaz](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement) se používá k procházení kolekce se získat informace, které, ale nelze použít k přidání nebo odebrání položky z kolekce zdroj předejdete nepředvídatelným vedlejší účinky. Pokud potřebujete přidat nebo odebrat položky z kolekce zdroje, použijte [pro](for.md) smyčky.
   
  Vložené příkazů pokračovat provést pro každý prvek v poli nebo kolekce. Po dokončení iterace pro všechny elementy v kolekci, je ovládací prvek přenesen na další následující příkaz `foreach` bloku.
   
@@ -31,7 +32,8 @@ ms.lasthandoff: 05/04/2018
  [Postupy: Přístup ke třídě kolekce pomocí příkazu foreach](../../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)  
 
 ## <a name="example"></a>Příklad
- Následující kód ukazuje tři příklady.
+
+Následující kód ukazuje tři příklady:
 
 > [!TIP]
 > Příklady a experimentovat s syntaxe zkuste jinou použití, které se více podobají váš případ použití, můžete upravit. Stisknutím klávesy "Spustit" spustit kód, potom upravit a znovu stiskněte "Spustit".
@@ -49,9 +51,12 @@ ms.lasthandoff: 05/04/2018
 [!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L51-L69)]
  
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
+
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>Viz také  
+
+[Foreach – příkaz (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)
 
 [Referenční dokumentace jazyka C#](../index.md)
 

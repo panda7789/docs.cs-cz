@@ -3,12 +3,12 @@ title: Předpoklady pro .NET Core v systému Windows
 description: Zjistěte, co závislosti, musíte na váš Windows počítače pro vývoj a spouštění aplikací .NET Core.
 author: JRAlexander
 ms.author: johalex
-ms.date: 05/14/2018
-ms.openlocfilehash: f27070c08755e5b650e32e01011bb7bac669c82d
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.date: 05/18/2018
+ms.openlocfilehash: 3d172c83f0a79744afbaeeff52d7fea62d9b98b6
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core v systému Windows
 
@@ -30,9 +30,11 @@ Tento článek ukazuje závislosti potřebné k vývoji aplikací .NET Core v sy
 * Windows Server 2012 R2 (celého serveru nebo jádra serveru)
 * Windows Server 2016 nebo novější verze (celý Server, Server Core nebo Nano Server)
 
-V tématu [.NET Core 2.x – podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy.
+V následujících článcích mají úplný seznam .NET Core podporované operační systémy pro verze:
 
-V tématu [.NET Core 1.x – podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy.
+* [.NET core 2.1 - podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
+* [.NET core 2.0 - podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)
+* [Základní 1.x - podporovaný operační systém verze rozhraní .NET](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
 
 ## <a name="net-core-dependencies"></a>.NET core závislosti
 

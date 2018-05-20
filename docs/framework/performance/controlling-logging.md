@@ -1,28 +1,16 @@
 ---
-title: "Řízení přihlašování rozhraní .NET Framework"
-ms.custom: 
+title: Řízení přihlašování rozhraní .NET Framework
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 90de9dd6bd32eb2142dceb98c142f3c50a0a5691
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58a9c0d02f4a24acc0df4d4a36d65e02f8bb7603
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controlling-net-framework-logging"></a>Řízení přihlašování rozhraní .NET Framework
 Pro zaznamenání událostí modulu Common Language Runtime (CLR) je možné použít trasování událostí systému Windows (ETW). Můžete vytvořit a zobrazit trasování pomocí následujících nástrojů:  
@@ -39,7 +27,7 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.  
 ```  
   
- Pokud zprostředkovatel CLR není uvedený, můžete ho nainstalujete na Windows Vista a novějších operačních systémech pomocí Windows [Wevtutil](http://go.microsoft.com/fwlink/?LinkID=150915) nástroj příkazového řádku. Otevřete okno příkazového řádku jako správce. Změňte adresář na výzvy [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] složky (% WINDIR%\Microsoft.NET\Framework[64]\v4.\<. NET verze > \). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:  
+ Pokud zprostředkovatel CLR není uvedený, můžete ho nainstalujete na Windows Vista a novějších operačních systémech pomocí Windows [Wevtutil](http://go.microsoft.com/fwlink/?LinkID=150915) nástroj příkazového řádku. Otevřete okno příkazového řádku jako správce. Změňte adresář na výzvy [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] složky (% WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET verze >\ ). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:  
   
  `wevtutil im CLR-ETW.man`  
   
@@ -64,9 +52,9 @@ Provider                                 GUID
   
     -   `-p` Parametr identifikuje zprostředkovatele identifikátor GUID.  
   
-    -   `0x1CCBD`Určuje kategorie události, které bude vyvolána.  
+    -   `0x1CCBD` Určuje kategorie události, které bude vyvolána.  
   
-    -   `0x5`Nastaví úroveň protokolování (v tomto případě verbose (5)).  
+    -   `0x5` Nastaví úroveň protokolování (v tomto případě verbose (5)).  
   
     -   `-ets` Parametr dá pokyn Logman odesílat příkazy pro relaci trasování událostí.  
   

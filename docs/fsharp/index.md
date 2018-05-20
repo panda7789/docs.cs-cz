@@ -3,11 +3,11 @@ title: Průvodce jazykem F#
 description: 'Tato příručka poskytuje přehled o různých studijních materiálů F # je funkční programovací jazyk, který běží na rozhraní .NET.'
 author: jackfoxy
 ms.date: 03/19/2018
-ms.openlocfilehash: 393214a5da7445d8ee3dced844da8592f4ca6d31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb829e904c006467e1470752b4fe8757ca694b05
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="f-guide"></a>Průvodce jazykem F#
 
@@ -49,6 +49,8 @@ F # je o produktivitu svou podstatou. Podpora nástrojů pro F # je všudypřít
 [Začínáme s F # pomocí rozhraní příkazového řádku .NET Core](get-started/get-started-command-line.md) Pokud chcete pomocí nástroje příkazového řádku.
 
 [Začínáme s F # a Xamarin](https://docs.microsoft.com/xamarin/cross-platform/platform/fsharp/) pro mobilní programování s F #.
+
+[F # pro poznámkové bloky Azure](https://notebooks.azure.com/Microsoft/libraries/samples/html/FSharp%20for%20Azure%20Notebooks.ipynb) kurzu pro učení F # v bezplatné hostované poznámkového bloku Jupyter.
 
 ## <a name="references"></a>Odkazy
 

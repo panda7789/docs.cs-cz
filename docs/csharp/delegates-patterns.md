@@ -3,11 +3,11 @@ title: Obecné vzory pro delegáti
 description: Další informace o obecné vzory pro použití delegátů ve vašem kódu předejdete silné párování mezi vaší součásti.
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: fceab2b9c6bbd1d687566820366459ec57ae7a2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9762841656aa362589d01ed011407aeedfe4a20
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="common-patterns-for-delegates"></a>Obecné vzory pro delegáti
 
@@ -27,7 +27,7 @@ Tím se odfiltrují pořadí čísel a pouze ty menší než hodnota 10.
 Prototyp Where je metoda:
 
 ```csharp
-public static IEnumerable<TSource> Where<in TSource> (IEnumerable<TSource> source, Func<TSource, bool> predicate);
+public static IEnumerable<TSource> Where<TSource> (this IEnumerable<TSource> source, Func<TSource, bool> predicate);
 ```
 
 V tomto příkladu se opakuje se všechny metody, které jsou součástí LINQ. Všechny spoléhají na delegáty pro kód, který spravuje specifického dotazu. Tento vzor návrhu rozhraní API je velice mocný zjišťovat a pochopit.

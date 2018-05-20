@@ -6,11 +6,11 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 808e25315b0010fd55112f2ed237485c3d0c40d4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 688736aa8556719789b02d7db25858f442b4309e
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 A *třída* je konstruktor, který umožňuje vytvořit vlastní typy společně seskupením proměnné jiné typy, metod a události. Třída je jako plán, podle kterého. Definuje data a chování typu. Pokud třída není deklarovaný jako statický, kód klienta můžete vytvořit *instance* ho. Tyto instance jsou *objekty* které jsou přiřazeny k proměnné. Instance třídy zůstane v paměti, dokud všechny odkazy na ni se dostala mimo rozsah. V té době modulu CLR označí je vhodné pro uvolňování paměti. Pokud třída je deklarován jako [statické](../../../csharp/language-reference/keywords/static.md), nelze vytvořit instance, a kód klienta pouze k němu přístup pomocí vlastní třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
@@ -83,10 +83,9 @@ Při vytvoření objektu je paměť přidělená v spravovaná halda a proměnn�
   
  Definice tříd můžete rozdělit mezi jiné zdrojové soubory. Další informace najdete v tématu [částečné třídy a metody](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  
   
-## <a name="description"></a>Popis  
- V následujícím příkladu je definována veřejnou třídu, která obsahuje jednoho pole, metodu a speciální metodu s názvem konstruktor. Další informace najdete v tématu [konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md). Instance třídy je pak vytvářet pomocí `new` – klíčové slovo.  
-  
 ## <a name="example"></a>Příklad  
+ V následujícím příkladu definuje veřejnou třídu, která obsahuje [automaticky implementované vlastnosti](auto-implemented-properties.md), metodu a speciální metodu s názvem konstruktor. Další informace najdete v tématu [vlastnosti](properties.md), [metody](methods.md), a [konstruktory](constructors.md) témata. Instance třídy jsou pak vytvořena s `new` – klíčové slovo.  
+  
  [!code-csharp[Class Example](~/samples/snippets/csharp/programming-guide/classes-and-structs/class-example.cs)] 
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  

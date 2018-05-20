@@ -1,12 +1,12 @@
 ---
-title: 'Pokyny formattin kód F #'
+title: 'F # – kód formátování pokyny'
 description: 'Přečtěte si pokyny pro formátování kódu F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: e5c700ca9ae3968243f11c1237b9e4b26e580dcf
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
-ms.translationtype: HT
+ms.openlocfilehash: 1433b6891a6a0ddcdc082c141365ae54fa40c27b
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="f-code-formatting-guidelines"></a>F # – kód formátování pokyny
 
@@ -324,19 +324,10 @@ let function1 arg1 arg2 arg3 arg4 =
 
 ### <a name="formatting-pipeline-operators"></a>Formátování operátorů kanálů
 
-Kanál `|>` má zobrazit na začátek řádku bezprostředně pod výraz se provozovat na:
+Kanál `|>` operátory má zobrazit pod pracují na výrazy.
 
 ```fsharp
-// OK
-let methods2 = System.AppDomain.CurrentDomain.GetAssemblies()
-               |> List.ofArray
-               |> List.map (fun assm -> assm.GetTypes())
-               |> Array.concat
-               |> List.ofArray
-               |> List.map (fun t -> t.GetMethods())
-               |> Array.concat
-
-// OK, but prefer previous
+// Preferred approach
 let methods2 =
     System.AppDomain.CurrentDomain.GetAssemblies()
     |> List.ofArray
@@ -481,6 +472,56 @@ Použijte camelCase pro soukromé hodnoty vázané na modul, včetně následuj�
 let emailMyBossTheLatestResults =
     ...
 ```
+
+### <a name="use-camelcase-for-parameters"></a>Použití camelCase parametrů
+
+Všechny parametry by měli používat camelCase v souladu s zásady vytváření názvů .NET.
+
+```fsharp
+module MyModule =
+    let myFunction paramOne paramTwo = ...
+
+type MyClass() =
+    member this.MyMethod(paramOne, paramTwo) = ...
+```
+
+### <a name="use-pascalcase-for-modules"></a>Použití PascalCase pro moduly
+
+Všechny moduly (nejvyšší úrovně, interní, privátní, vnořené) by měli používat PascalCase.
+
+```fsharp
+module MyTopLevelModule
+
+module Helpers =
+    module private SuperHelpers =
+        ...
+
+    ...
+```
+
+### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>Použít PascalCase pro typ deklarace, členů a popisky
+
+Třídy, rozhraní, struktury, výčty, delegáti, záznamy a rozlišovaná sjednocení by měly název s PascalCase. Členové v rámci typy a popisky pro záznamy a rozlišovaná sjednocení by měl používat také PascalCase.
+
+```fsharp
+type IMyInterface =
+    abstract Something: int
+
+type MyClass() =
+    member this.MyMethod(x, y) = x + y
+
+type MyRecord = { IntVal: int; StringVal: string }
+
+type SchoolPerson =
+    | Professor
+    | Student
+    | Advisor
+    | Administrator
+```
+
+### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>Použít PascalCase pro konstrukce vnitřní na rozhraní .NET
+
+Obory názvů, výjimky, události a projekt nebo`.dll` názvy měli použít také PascalCase. Nejen nemá to zkontrolujte spotřeby z jinými jazyky rozhraní .NET působí přirozenější k příjemce, je také konzistentní s zásady vytváření názvů .NET, kterými se můžete setkat.
 
 ### <a name="avoid-underscores-in-names"></a>Vyhněte se podtržítka v názvech
 

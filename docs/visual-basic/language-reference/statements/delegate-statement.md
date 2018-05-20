@@ -7,11 +7,11 @@ helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-ms.openlocfilehash: fb9d8b2c2647ba8fd3b7cee4781f1574b6679b0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3965dc2d71ec9356cdb38d5ddcd4e00f9259951a
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
 Používá k deklaraci delegáta. Delegát je odkaz na typ, který odkazuje `Shared` metoda typu nebo metodu instance objektu. Všechny postup s odpovídajícími typy parametrů a vraťte se může použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instanci delegáta.  
@@ -28,7 +28,7 @@ Používá k deklaraci delegáta. Delegát je odkaz na typ, který odkazuje `Sha
 |Termín|Definice|  
 |---|---|  
 |`attrlist`|Volitelné. Seznam atributů, které platí pro tohoto delegáta. Více atributů jsou oddělené čárkami. Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").|  
-|`accessmodifier`|Volitelné. Určuje, jaký kód můžete přístup delegáta. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md). Kód, který můžete získat přístup k elementu, který deklaruje delegáta k němu přístup.<br />-   [Chráněné](../../../visual-basic/language-reference/modifiers/protected.md). Pouze kódu v rámci tohoto delegáta nebo odvozená třída k němu přístup.<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md). Pouze kód v rámci stejného sestavení může přistupovat delegát.<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md). Jenom kód v rámci elementu, který deklaruje delegáta k němu přístup.<br /><br /> Můžete zadat `Protected Friend` pro povolení přístupu z kódu v rámci tohoto delegáta třídu, odvozené třídě nebo do stejného sestavení.|  
+|`accessmodifier`|Volitelné. Určuje, jaký kód můžete přístup delegáta. Může být jedna z následujících akcí:<br /><br /> - [Veřejné](../../../visual-basic/language-reference/modifiers/public.md). Kód, který můžete získat přístup k elementu, který deklaruje delegáta k němu přístup.<br />-   [Chráněné](../../../visual-basic/language-reference/modifiers/protected.md). Pouze kódu v rámci tohoto delegáta nebo odvozená třída k němu přístup.<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md). Pouze kód v rámci stejného sestavení může přistupovat delegát.<br />- [Privátní](../../../visual-basic/language-reference/modifiers/private.md). Jenom kód v rámci elementu, který deklaruje delegáta k němu přístup.<br /><br /> - [Protected Friend](../../language-reference/modifiers/protected-friend.md) kódu v rámci tohoto delegáta třídu, odvozené třídě nebo do stejného sestavení budou mít přístup delegáta jenom. <br />- [Privátní chráněné](../../language-reference/modifiers/private-protected.md) kódu v rámci třídy delegáta nebo v odvozené třídě ve stejném sestavení budou mít přístup delegáta jenom. |  
 |`Shadows`|Volitelné. Označuje, že tento delegát redeclares a skryje stejně jako s názvem programovací prvek, nebo sadu přetížené elementů v základní třídě. Můžete stínové jakýkoli druh deklarovaný element s jakéhokoli jiného typu.<br /><br /> Element stíněné je k dispozici v rámci odvozené třídy, stín, s výjimkou z kde element stínového provozu je nedostupná. Například pokud `Private` element shadows prvku základní třídy, kód, který nemá oprávnění k přístupu `Private` element přistupuje k prvku základní třídy místo.|  
 |`Sub`|Volitelné, ale buď `Sub` nebo `Function` musí zobrazit. Tento postup jako delegáta deklaruje `Sub` procedury, která nevrátí hodnotu.|  
 |`Function`|Volitelné, ale buď `Sub` nebo `Function` musí zobrazit. Tento postup jako delegáta deklaruje `Function` procedury, která vrátí hodnotu.|  

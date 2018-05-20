@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 5e79da7e-e78a-413c-8fb0-f3f9cd84f579
 dev_langs:
 - sql
-ms.openlocfilehash: 6d1746bb51af4795f09c47f808cf9a29d0370f18
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: bf20bb92010d5031e973cb1cc004b6b8f13d0091
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="unsupported-expressions"></a>Nepodporované výrazy
 
@@ -26,7 +26,7 @@ sal > any (select salary from employees)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)], ale nepodporuje takové konstrukce. Ekvivalentní výrazy může být napsán v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] následujícím způsobem:
 
 ```sql
-not exists(select 0 from employees as e where sal > e.salary)
+not exists(select 0 from employees as e where sal <= e.salary)
 exists(select 0 from employees as e where sal > e.salary)
 ```
 

@@ -2,11 +2,11 @@
 title: 'Průvodci správným stylem F #'
 description: 'Přečtěte si pět zásady dobrý F # – kód.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 317fc2c101449b0500a54dd9fea3d426757af5cd
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
-ms.translationtype: HT
+ms.openlocfilehash: 6d8c1336ca991040a8f6e13290d209cb3b70054d
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="f-style-guide"></a>Průvodci správným stylem F #
 
@@ -40,8 +40,8 @@ Tyto zásady měli mít na paměti, když napíšete F # – kód, zejména v sy
 
 ## <a name="next-steps"></a>Další kroky
 
-[Formátování pokyny F #](formatting.md) poskytovat pokyny k formátování kódu tak, aby se snadno čitelný.
+[F # – kód formátování pokyny](formatting.md) poskytovat pokyny k formátování kódu tak, aby se snadno čitelný.
 
 [F # – konvence kódování](conventions.md) poskytuje pokyny pro programovací idioms, které vám pomůžou dlouhodobé údržby větší F # F # základy kódu.
 
-[F # součást pokynů pro návrh](component-design-guidelines.md) je komplexní sadu pokyny k vytváření F # komponenty, například knihovny.
+[F # součást pokynů pro návrh](component-design-guidelines.md) obsahují pokyny pro vytváření F # komponenty, například knihovny.

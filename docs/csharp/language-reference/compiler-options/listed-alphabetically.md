@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: f0c9e0ff5881695cc9426610056677d6053376a2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1198249afe6933342aea1a05515e6766603ab147
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kategorií, najdete v části [C# kompilátoru možnosti uvedené podle kategorie](listed-by-category.md).  
@@ -27,7 +27,7 @@ Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kateg
 |[-baseaddress](baseaddress-compiler-option.md)|Určuje základní adresu pro knihovnu, která má být sestaven.|  
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor "Hlášení chyb". Tento soubor bude odeslán spolu se všemi informacemi, pokud se používá s - errorreport: řádku nebo - errorreport: Odeslat.|  
 |[-checked](checked-compiler-option.md)|Způsobí, že kompilátor generování kontroly přetečení.|  
-|-checksumalgorithm:\<alg >|Zadejte algoritmus pro výpočet kontrolní součet souboru zdroje uložené v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|  
+|-checksumalgorithm:\<alg >|Určuje algoritmus pro výpočet kontrolní součet souboru zdroje uložené v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|  
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku pro použití při otevírání zdrojové soubory.|  
 |[-debug](debug-compiler-option.md)|Posílá informace pro ladění.|  
 |[-define](define-compiler-option.md)|Definuje symboly podmíněné kompilace.|  
@@ -42,13 +42,13 @@ Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kateg
 |-přírůstkové|Umožňuje přírůstkovou kompilaci [zastaralé].|  
 |[-keycontainer](keycontainer-compiler-option.md)|Určuje kontejner klíče se silným názvem.|  
 |[-keyfile](keyfile-compiler-option.md)|Určuje soubor klíče se silným názvem.|  
-|[-langversion:\<řetězec >](langversion-compiler-option.md)|Zadejte režim jazykové verze: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1 nebo nejnovější |  
+|[-langversion:\<řetězec >](langversion-compiler-option.md)|Určuje verzi jazyka: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 nebo nejnovější |  
 |[-lib](lib-compiler-option.md)|Určuje další adresáře, ve kterém se bude vyhledávat pro odkazy.|  
 |[-link](link-compiler-option.md)|Zpřístupní informace o typu modelu COM v zadaném sestavení do projektu.|  
 |[-linkresource](linkresource-compiler-option.md)|Zadaný zdroj odkazuje na toto sestavení.|  
 |[-main](main-compiler-option.md)|Určuje typ, který obsahuje vstupní bod (ignorovat všechny ostatní vstupní body).|  
 |[-moduleassemblyname](moduleassemblyname-compiler-option.md)|Určuje sestavení, jehož neveřejným typům .netmodule přístup.|  
-|-modulename:\<řetězec >|Zadejte název zdrojového modulu|  
+|-modulename:\<řetězec >|Určuje název zdrojového modulu|  
 |[-noconfig](noconfig-compiler-option.md)|Dá pokyn kompilátoru, aby automaticky zahrnout CSC. Soubor konfigurace.|  
 |[-nologo](nologo-compiler-option.md)|Potlačí zpráva o autorských právech kompilátoru.|  
 |[-nostdlib](nostdlib-compiler-option.md)|Dá pokyn kompilátoru, aby standardní knihovně odkazů (mscorlib.dll).|  
@@ -65,7 +65,7 @@ Následující možnosti kompilátoru jsou seřazeny podle abecedy. Seznam kateg
 |[-refout](refout-compiler-option.md)|Generovat odkaz na sestavení kromě primární sestavení.|  
 |[-refonly](refonly-compiler-option.md)|Generovat odkaz na sestavení namísto primární sestavení.|  
 |[-resource](resource-compiler-option.md)|Vloží zadaný prostředek.|  
-|-ruleset:\<souboru >|Zadejte soubor ruleset zakazující diagnostiky specifické.|  
+|-ruleset:\<souboru >|Určuje soubor ruleset, která zakáže diagnostiky specifické.|  
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verze subsystému, můžete použít na spustitelný soubor.|  
 |[-target](target-compiler-option.md)|Určuje formát výstupního souboru, a to pomocí jedné ze čtyř možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: library](target-library-compiler-option.md), [-cíl: modul](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|  
 |[-unsafe](unsafe-compiler-option.md)|Umožňuje [unsafe](../../../csharp/language-reference/keywords/unsafe.md) kódu.|  

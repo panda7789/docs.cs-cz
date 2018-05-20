@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6d12740333d869b2fd43914437a6f5b5f62f843
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c0f831426762ddcb21e4c1c1191e20435a13deb
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -49,7 +49,7 @@ Rozhraní .NET Framework 4.7.2 si můžete stáhnout z těchto míst:
 
 Rozhraní .NET Framework 4.7.2 lze nainstalovat na Windows 10, Windows 8.1, Windows 7 SP1 a odpovídající serverových platforem počínaje systémem Windows Server 2008 R2 SP1. Rozhraní .NET Framework 4.7.2 můžete nainstalovat pomocí instalačního programu webové nebo offline instalačního programu. Doporučený způsob pro většinu uživatelů je použití webovou Instalační službu.
 
-Rozhraní .NET Framework 4.7.2 v sadě Visual Studio 2012 nebo později po instalaci můžete cílit [rozhraní .NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261). 
+Rozhraní .NET Framework 4.7.2 v sadě Visual Studio 2012 nebo později po instalaci můžete cílit [rozhraní .NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=874338). 
 
 ### <a name="whats-new-in-the-net-framework-472"></a>Co je nového v rozhraní .NET Framework 4.7.2
 

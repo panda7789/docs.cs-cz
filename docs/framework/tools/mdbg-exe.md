@@ -1,27 +1,17 @@
 ---
-title: "MDbg.exe (ladicí program z příkazového řádku .NET Framework)"
-ms.custom: 
+title: MDbg.exe (ladicí program z příkazového řádku .NET Framework)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - command-line debugger [.NET Framework]
 - MDbg.exe
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
-caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a4c4e06a5969aa6f7555a191f9950ddf64879e98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: be32659a270cd7c6b7e3551594934926eabf0d31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (ladicí program z příkazového řádku .NET Framework)
 Aplikace .NET Framework Command-Line Debugger pomáhá výrobcům nástrojů a vývojářům aplikací najít a opravit chyby v programech, které využívají .NET Framework Common Language Runtime. Tento nástroj používá API ladění za běhu k poskytování služeb ladění. Pomocí MDbg.exe můžete ladit pouze spravovaný kód; ladění nespravovaného kódu není podporováno.  
@@ -46,17 +36,17 @@ MDbg [ProgramName[arguments]] [options]
 |Příkaz|Popis|  
 |-------------|-----------------|  
 |**Asie a Tichomoří**[**zpracovat**] [*číslo*]|Přepne na jiný laděný proces nebo vypíše dostupné procesy. Čísla nejsou skutečnými ID procesů (PID), ale seznam indexovaný od 0.|  
-|****[**připojit**] [*pid*]|Připojí se k procesu nebo vytiskne dostupné procesy.|  
+|**a**[**připojit**] [*pid*]|Připojí se k procesu nebo vytiskne dostupné procesy.|  
 |**b**[**binárními**] [*ClassName.Method* &#124; *FileName:LineNo*]|Nastaví zarážku v zadané metodě. Moduly jsou prohledávány postupně.<br /><br /> -   **rozdělení** *FileName:LineNo* nastaví zarážky v umístění ve zdroji.<br />-   **rozdělení** *~ číslo* Nastaví zarážku na symbol nedávno zobrazí **x** příkaz.<br />-   **rozdělení** *modulu! ClassName.Method+IlOffset* Nastaví zarážku na plně kvalifikovaný umístění.|  
 |**blok**[**ingObjects**]|Zobrazí zámky monitoru, které blokují vlákna.|  
 |**certifikační autority**[**t**] [*exceptionType*]|Způsobí, že se ladicí program přeruší na všech výjimkách a nejen na neošetřených výjimkách.|  
 |**cl**[**earException**]|Označí aktuální výjimku jako ošetřenou, takže provádění může pokračovat. Pokud příčina chyby nebyla odstraněna, výjimka se může rychle objevit znovu.|  
-|**conf**[**Ign**] [*hodnota možnosti*]|Zobrazí všechny konfigurovatelné parametry a ukazuje, jak jsou parametry vyvolány bez jakékoli volitelné hodnoty. Pokud je zadána možnost, nastaví `value` jako aktuální možnost. V současné době jsou k dispozici následující možnosti:<br /><br /> -   `extpath`Nastaví cestu k vyhledání pro rozšíření, když `load` pomocí příkazu.<br />-   `extpath+`přidá cestu pro načítání rozšíření.|  
+|**conf**[**Ign**] [*hodnota možnosti*]|Zobrazí všechny konfigurovatelné parametry a ukazuje, jak jsou parametry vyvolány bez jakékoli volitelné hodnoty. Pokud je zadána možnost, nastaví `value` jako aktuální možnost. V současné době jsou k dispozici následující možnosti:<br /><br /> -   `extpath` Nastaví cestu k vyhledání pro rozšíření, když `load` pomocí příkazu.<br />-   `extpath+` přidá cestu pro načítání rozšíření.|  
 |**del**[**ete**]|Odstraní zarážku.|  
 |**de**[**tach**]|Odpojí se od laděného procesu.|  
 |**d**[**vlastní**] [*rámce*]|Přesune aktivní blok zásobníku směrem dolů.|  
 |**zobrazení výsledků**|Vrátí zprávu do konzoly.|  
-|**enableNotif**[**ověření**] *typeName* 0 &#124; 1|Povolí (1) nebo zakáže (0) vlastní oznámení pro zadaný typ.|  
+|**enableNotif**[**ověření**] *typeName* 0&#124;1|Povolí (1) nebo zakáže (0) vlastní oznámení pro zadaný typ.|  
 |**ex**[**ho**] [*exitcode*]|Ukončí prostředí MDbg.exe a volitelně určí ukončovací kód procesu.|  
 |**Fo**[**dosáhnout**] [*OtherCommand*]|Provede příkaz na všech vláknech. *OtherCommand* je platný příkaz, který funguje na jedno vlákno; **foreach** *OtherCommand* provádí stejný příkaz na všechna vlákna.|  
 |**f**[**unceval**] [`-ad` *Num*] *%{FunctionName/* [*argumentů...*  ]|Provádí funkce vyhodnocení na aktuální aktivní vlákno, kde je funkce, kterou chcete vyhodnotit *%{FunctionName/*. Název funkce musí být plně kvalifikovaný, včetně oborů názvů.<br /><br /> `-ad` Možnost určuje doménu aplikace sloužící k vyřešení funkce. Pokud `-ad` není určena možnost, doménu aplikace pro překlad výchozí doménu aplikace, kde se nachází vlákno, které se používá pro funkce vyhodnocování.<br /><br /> Pokud funkce, která se vyhodnocuje nejsou statické, musí být první parametr předána `this` ukazatel. Argumenty pro vyhodnocení funkce se vyhledávají ve všech aplikačních doménách.<br /><br /> Chcete-li požádat o hodnotu z domény aplikace, předpony proměnné s názvem domény modul a aplikace; například `funceval -ad 0 System.Object.ToString hello.exe#0!MyClass.g_rootRef`. Tento příkaz vyhodnotí funkce `System.Object.ToString` v doméně aplikace `0`. Protože `ToString` metoda je instance funkce, musí být první parametr `this` ukazatel.|  
@@ -80,13 +70,13 @@ MDbg [ProgramName[arguments]] [options]
 |**pro**[**cessenum**]|Zobrazí aktivní procesy.|  
 |**q**[**uit**] [*exitcode*]|Ukončí prostředí MDbg.exe, volitelně vypíše ukončovací kód procesu.|  
 |**RE**[**obnovit**] [`*` &#124; [`~`]*threadNumber*]|Obnoví aktuální vlákno nebo vlákno určeného *threadNumber* parametr.<br /><br /> Pokud *threadNumber* parametr je zadán jako `*` nebo pokud počet vláken začíná `~`, příkaz platí pro všechna vlákna kromě určenému *threadNumber*.<br /><br /> Obnovení nepozastaveného vlákna nebude mít žádný vliv.|  
-|**r**[**zrušení**] [`-d`(`ebug`) &#124; -`o`(`ptimize`) &#124;`-enc`] [[*path_to_exe*] [*args_to_exe*]]|Zastaví aktuální proces (pokud existuje) a spustí nový. Pokud je předán žádný argument spustitelný soubor, tento příkaz spustí program, který byl dříve provést s `run` příkaz. Pokud je zadán argument spustitelného souboru, zadaný program se spustí pomocí volitelně zadaných argumentů.<br /><br /> Pokud jsou události načtení třídy, načtení modulu a spuštění vlákna ignorovány (což ve výchozím nastavení jsou), program se zastaví na prvním spustitelném příkazu hlavního vlákna.<br /><br /> Pomocí některého z následujících příznaků můžete přinutit ladicí program, aby prováděl kompilaci kódu just-in-time (JIT):<br /><br /> -   `-d`*(* `ebug` *)* zakáže optimalizace. Toto je výchozí nastavení pro MDbg.exe.<br />-   `-o`*(* `ptimize` *)* vynutí kód ke spuštění více jako nemá mimo ladicí program, ale také díky zkušenosti s laděním obtížnější. Toto je výchozí nastavení pro použití mimo ladicí program.<br />-   `-enc`Povolí funkci upravit a pokračovat, ale způsobuje podle výkonu.|  
+|**r**[**zrušení**] [`-d`(`ebug`) &#124; -`o`(`ptimize`) &#124; `-enc`] [[*path_to_exe*] [*argumentů _to_exe*]]|Zastaví aktuální proces (pokud existuje) a spustí nový. Pokud je předán žádný argument spustitelný soubor, tento příkaz spustí program, který byl dříve provést s `run` příkaz. Pokud je zadán argument spustitelného souboru, zadaný program se spustí pomocí volitelně zadaných argumentů.<br /><br /> Pokud jsou události načtení třídy, načtení modulu a spuštění vlákna ignorovány (což ve výchozím nastavení jsou), program se zastaví na prvním spustitelném příkazu hlavního vlákna.<br /><br /> Pomocí některého z následujících příznaků můžete přinutit ladicí program, aby prováděl kompilaci kódu just-in-time (JIT):<br /><br /> -   `-d` *(* `ebug` *)* zakáže optimalizace. Toto je výchozí nastavení pro MDbg.exe.<br />-   `-o` *(* `ptimize` *)* vynutí kód ke spuštění více jako nemá mimo ladicí program, ale také díky zkušenosti s laděním obtížnější. Toto je výchozí nastavení pro použití mimo ladicí program.<br />-   `-enc` Povolí funkci upravit a pokračovat, ale způsobuje podle výkonu.|  
 |**Nastavit** *proměnná*=*hodnota*|Změní hodnotu kterékoli proměnné v rozsahu.<br /><br /> Můžete také vytvořit vlastní proměnné ladicího programu a přiřadit k nim referenční hodnoty z vaší aplikace. Tyto hodnoty se chovají jako popisovače původní hodnoty i tehdy, když je původní proměnná mimo rozsah. Všechny proměnné ladicí program musí začínat řetězcem `$` (například `$var`). Tyto popisovače můžete vymazat jejich nastavením na prázdnou hodnotu pomocí tohoto příkazu:<br /><br /> `set $var=`|  
 |**Setip –** [`-il`] *číslo*|Nastaví aktuální ukazatel příkazu (IP) v souboru na určenou pozici. Pokud zadáte `-il` možnost toto číslo představuje Microsoft (MSIL intermediate language) posun v metodě. Jinak číslo představuje číslo řádku ve zdroji.|  
 |**Zo**[**olit**] [*řádky*]|Určuje počet řádků, které chcete zobrazit.|  
 |**s**[**rok**]|Přesune spuštění do další funkce na aktuálním řádku, nebo přejde na další řádek, pokud neexistuje žádná funkce, do které by se dalo přejít.|  
-|**su**[**tráví**] [\* &#124; [~] *threadNumber*]|Pozastaví aktuální vlákno nebo vlákno určeného *threadNumber* parametr.  Pokud *threadNumber* je zadán jako `*`, příkaz platí pro všechna vlákna. Pokud počet vláken začíná `~`, příkaz platí pro všechna vlákna kromě určenému *threadNumber*. Pozastavená vláken jsou vyloučeny z spuštěna při spuštění procesu a to buď **přejděte** nebo **krok** příkaz. Pokud nejsou žádné jiné pozastaveno vláken v procesu a odešlete **přejděte** příkaz, proces nebude pokračovat. V takovém případě se stiskem kláves CTRL-C vrátíte zpět do procesu.|  
-|**sy**[**menšený symbol**] *commandName* [*commandValue*]|Určuje jeden z následujících příkazů:<br /><br /> -   `symbol path`[`"``value``"`]-Zobrazí nebo nastaví aktuální symbol cestu.<br />-   `symbol addpath``"` `value` `"` – Přidá do vašeho aktuální symbol cestě.<br />-   `symbol reload`[`"``module``"`]-Znovu načte všechny symboly nebo symboly pro zadaný modul.<br />-   `symbol list`[`module`]-Zobrazí aktuálně načtených symboly pro všechny moduly nebo zadaný modul.|  
+|**su**[**tráví**] [\* &#124; [~]*threadNumber*]|Pozastaví aktuální vlákno nebo vlákno určeného *threadNumber* parametr.  Pokud *threadNumber* je zadán jako `*`, příkaz platí pro všechna vlákna. Pokud počet vláken začíná `~`, příkaz platí pro všechna vlákna kromě určenému *threadNumber*. Pozastavená vláken jsou vyloučeny z spuštěna při spuštění procesu a to buď **přejděte** nebo **krok** příkaz. Pokud nejsou žádné jiné pozastaveno vláken v procesu a odešlete **přejděte** příkaz, proces nebude pokračovat. V takovém případě se stiskem kláves CTRL-C vrátíte zpět do procesu.|  
+|**sy**[**menšený symbol**] *commandName* [*commandValue*]|Určuje jeden z následujících příkazů:<br /><br /> -   `symbol path` [`"``value``"`]-Zobrazí nebo nastaví aktuální symbol cestu.<br />-   `symbol addpath` `"` `value` `"` -Přidá do vašeho aktuální symbol cestě.<br />-   `symbol reload` [`"``module``"`]-Znovu načte všechny symboly nebo symboly pro zadaný modul.<br />-   `symbol list` [`module`]-Zobrazí aktuálně načtených symboly pro všechny moduly nebo zadaný modul.|  
 |**t**[**odstranit vlákno**] [*newThread*] [-*nick Přezdívka*`]`|Příkaz vlákna bez parametrů zobrazí všechna spravovaná vlákna v aktuálním procesu. Vlákna jsou zpravidla identifikována číslem vlákna; pokud je však vlákno pojmenováno, zobrazí se místo čísla toto pojmenování. Můžete použít `-nick` parametr přiřadit přezdívku na vlákno.<br /><br /> -   **vlákno** `-nick` *threadName* přezdívku přiřadí aktuálně spuštěných vláken.<br /><br /> Pojmenování nesmí být číselné hodnoty. Pokud aktuální vlákno má již přiděleno pojmenování, staré pojmenování se nahradí novým. Pokud je nové pojmenování prázdný řetězec (""), pojmenování pro aktuální vlákno se odstraní a vláknu se nepřidělí další pojmenování.|  
 |**u**[**p**]|Přesune aktivní rámec zásobníku směrem nahoru.|  
 |**uwgc**[**zpracování**] [*var*] &#124; [*adresu*]|Vytiskne proměnnou sledovanou popisovačem. Popisovač lze zadat pomocí názvu nebo adresy.|  
