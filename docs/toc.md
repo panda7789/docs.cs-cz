@@ -285,7 +285,12 @@
 ### [Začínáme se sadou Visual Studio pro Mac](fsharp/get-started/get-started-with-visual-studio-for-mac.md)
 ### [Začínáme s nástrojem Visual Studio Code a Ionide](fsharp/get-started/get-started-vscode.md)
 ### [Začínáme s CLI pro .NET Core](fsharp/get-started/get-started-command-line.md)
-<!--## [Tutorials](fsharp/tutorials/index.md)-->
+
+## [Příručka stylu jazyka F#](fsharp/style-guide/index.md)
+### [Pravidla formátování kódu F#](fsharp/style-guide/formatting.md)
+### [Zásady kódování jazyka F#](fsharp/style-guide/conventions.md)
+### [Pravidla návrhu komponent jazyka F#](fsharp/style-guide/component-design-guidelines.md)
+
 ## Kurzy
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
 ### [Zprostředkovatelé typů](fsharp/tutorials/type-providers/index.md)
