@@ -5,11 +5,11 @@ helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: b95101d2f8e12f7c6fee5b410e7801f9d890182d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca70f0c8237a5d9cc4ad9e0bb8c1947c871ce064
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který se označí ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md).) ID řetězec jednoznačně identifikuje konstruktu. Programy, které zpracovávají souboru XML slouží k identifikaci příslušnou položku metadata nebo reflexe rozhraní .NET Framework, která se použije v dokumentaci k ID řetězec.  
@@ -42,7 +42,7 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
     -   ELEMENT_TYPE_PTR je reprezentován jako ' *' následující změny typu.  
   
-    -   Typu ELEMENT_TYPE_BYREF je reprezentován jako ' @' následující změny typu.  
+    -   Typu ELEMENT_TYPE_BYREF je reprezentován jako '\@' následující změny typu.  
   
     -   ELEMENT_TYPE_PINNED je reprezentován jako ' ^' následující změny typu. Kompilátor jazyka C# nikdy vygeneruje.  
   
