@@ -20,14 +20,17 @@ helpviewer_keywords:
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 573a3e954bf15bdbcf8b1885c10f68a222329ac1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 02c942dea3314581ce8f758bb9ed3ce88c2fe150
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
 Následující příklad používá regulární výraz k ověření, že je řetězec ve formátu platné e-mailu.  
+
+> [!NOTE]
+>  Doporučujeme používat <xref:System.Net.Mail.MailAddress?displayProperty=nameWithType> třídy Kontrola, zda je řetězec ve formátu platnou e-mailovou adresu. Kvůli tomu předat e-mailovou adresu řetězec, který má <xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktoru třídy, která vyvolává <xref:System.FormatException> Pokud řetězec obsahuje nerozpoznaný formát.  
   
 ## <a name="example"></a>Příklad  
  V příkladu je definován `IsValidEmail` metoda, která vrátí `true` Pokud řetězec obsahuje platnou e-mailovou adresu a `false` Pokud ne, ale žádné další akce.  
@@ -67,9 +70,6 @@ Následující příklad používá regulární výraz k ověření, že je řet
 |<code>&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+</code>|Pokud je znak, který následuje @ není levou hranatou závorku, jeden alfanumerický znak shodu s hodnotou A-Z, a-z nebo 0-9, za nímž následuje nula nebo více výskytů pomlčka, za nímž následuje žádnou nebo jednu alfanumerický znak s hodnotou A-Z, a-z nebo 0-9 , za nímž následuje období. Tento vzor lze opakovat, jeden či více krát a musí následovat název domény nejvyšší úrovně.|  
 |`[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`|Název domény nejvyšší úrovně musí začít a končit alfanumerickým znakem (a-z, A-Z a 0 – 9). Může být také dostupný od nuly do 22 znaků ASCII, které jsou buď alfanumerické nebo pomlčky.|  
 |`$`|Ukončí porovnávání na konci řetězce.|  
-  
-> [!NOTE]
->  Místo použití regulární výraz k ověření e-mailovou adresu, můžete použít <xref:System.Net.Mail.MailAddress?displayProperty=nameWithType> třídy. Pokud chcete zjistit, zda je platný e-mailovou adresu, předat e-mailovou adresu <xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktoru třídy.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  `IsValidEmail` a `DomainMapper` metody mohou být součástí knihovny metod nástroj regulární výraz nebo může být zahrnuta jako privátní statickou nebo instanci metody třídy aplikace.  

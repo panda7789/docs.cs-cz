@@ -1,13 +1,6 @@
 ---
 title: Omezení jazyka Visual Basic
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - limits
 - limitations [Visual Basic]
@@ -15,14 +8,11 @@ helpviewer_keywords:
 - limits, Visual Basic code
 - Visual Basic code, limitations
 ms.assetid: cf1646b7-5d24-48c6-9616-bda8a4849d91
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d06b743996969dcd7fc022bbb8ab625f3a151137
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
-ms.translationtype: HT
+ms.openlocfilehash: 57378c3aa18a5cc108c10e8654e55803f3cf9052
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-basic-limitations"></a>Omezení jazyka Visual Basic
 Starší verze jazyka Visual Basic vynutit hranice v kódu, jako je délka názvy proměnných, počet proměnných v moduly a velikost modulu povoleny. V jazyce Visual Basic .NET tato omezení mít byla zmírnit, která poskytuje větší svobodu v psaní a uspořádání kódu.  
@@ -37,7 +27,7 @@ Starší verze jazyka Visual Basic vynutit hranice v kódu, jako je délka názv
   
 -   **Rozměry pole.** Je maximální počet dimenzí, které můžou deklarovat pro pole. Toto nastavení omezuje počet indexů, můžete použít k určení k elementu pole. V tématu [pole dimenzí v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
   
--   **Délka řetězce.** Je maximální počet znaků Unicode, kam můžete ukládat v jednom řetězci. V tématu [řetězcový datový typ.](../../../visual-basic/language-reference/data-types/string-data-type.md).  
+-   **Délka řetězce.** Je maximální počet znaků Unicode, kam můžete ukládat v jednom řetězci. V tématu [řetězcový datový typ](../../../visual-basic/language-reference/data-types/string-data-type.md).  
   
 -   **Délka řetězce prostředí.** Je delší než 32768 znaků pro libovolný řetězec prostředí použít jako argument příkazového řádku. Jedná se o omezení na všech platformách.  
   
